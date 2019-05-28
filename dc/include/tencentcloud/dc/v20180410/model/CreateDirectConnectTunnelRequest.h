@@ -1,0 +1,436 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_DC_V20180410_MODEL_CREATEDIRECTCONNECTTUNNELREQUEST_H_
+#define TENCENTCLOUD_DC_V20180410_MODEL_CREATEDIRECTCONNECTTUNNELREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dc/v20180410/model/BgpPeer.h>
+#include <tencentcloud/dc/v20180410/model/RouteFilterPrefix.h>
+
+
+namespace TencentCloud
+{
+    namespace Dc
+    {
+        namespace V20180410
+        {
+            namespace Model
+            {
+                /**
+                * CreateDirectConnectTunnel请求参数结构体
+                */
+                class CreateDirectConnectTunnelRequest : public AbstractModel
+                {
+                public:
+                    CreateDirectConnectTunnelRequest();
+                    ~CreateDirectConnectTunnelRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取专线 ID，例如：dc-kd7d06of
+                     * @return DirectConnectId 专线 ID，例如：dc-kd7d06of
+                     */
+                    std::string GetDirectConnectId() const;
+
+                    /**
+                     * 设置专线 ID，例如：dc-kd7d06of
+                     * @param DirectConnectId 专线 ID，例如：dc-kd7d06of
+                     */
+                    void SetDirectConnectId(const std::string& _directConnectId);
+
+                    /**
+                     * 判断参数 DirectConnectId 是否已赋值
+                     * @return DirectConnectId 是否已赋值
+                     */
+                    bool DirectConnectIdHasBeenSet() const;
+
+                    /**
+                     * 获取专用通道名称
+                     * @return DirectConnectTunnelName 专用通道名称
+                     */
+                    std::string GetDirectConnectTunnelName() const;
+
+                    /**
+                     * 设置专用通道名称
+                     * @param DirectConnectTunnelName 专用通道名称
+                     */
+                    void SetDirectConnectTunnelName(const std::string& _directConnectTunnelName);
+
+                    /**
+                     * 判断参数 DirectConnectTunnelName 是否已赋值
+                     * @return DirectConnectTunnelName 是否已赋值
+                     */
+                    bool DirectConnectTunnelNameHasBeenSet() const;
+
+                    /**
+                     * 获取物理专线 owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID
+                     * @return DirectConnectOwnerAccount 物理专线 owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID
+                     */
+                    std::string GetDirectConnectOwnerAccount() const;
+
+                    /**
+                     * 设置物理专线 owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID
+                     * @param DirectConnectOwnerAccount 物理专线 owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID
+                     */
+                    void SetDirectConnectOwnerAccount(const std::string& _directConnectOwnerAccount);
+
+                    /**
+                     * 判断参数 DirectConnectOwnerAccount 是否已赋值
+                     * @return DirectConnectOwnerAccount 是否已赋值
+                     */
+                    bool DirectConnectOwnerAccountHasBeenSet() const;
+
+                    /**
+                     * 获取网络类型，分别为VPC、BMVPC，CCN，默认是VPC
+VPC：私有网络
+BMVPC：黑石网络
+CCN：云联网
+                     * @return NetworkType 网络类型，分别为VPC、BMVPC，CCN，默认是VPC
+VPC：私有网络
+BMVPC：黑石网络
+CCN：云联网
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置网络类型，分别为VPC、BMVPC，CCN，默认是VPC
+VPC：私有网络
+BMVPC：黑石网络
+CCN：云联网
+                     * @param NetworkType 网络类型，分别为VPC、BMVPC，CCN，默认是VPC
+VPC：私有网络
+BMVPC：黑石网络
+CCN：云联网
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取网络地域
+                     * @return NetworkRegion 网络地域
+                     */
+                    std::string GetNetworkRegion() const;
+
+                    /**
+                     * 设置网络地域
+                     * @param NetworkRegion 网络地域
+                     */
+                    void SetNetworkRegion(const std::string& _networkRegion);
+
+                    /**
+                     * 判断参数 NetworkRegion 是否已赋值
+                     * @return NetworkRegion 是否已赋值
+                     */
+                    bool NetworkRegionHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络统一 ID 或者黑石网络统一 ID
+                     * @return VpcId 私有网络统一 ID 或者黑石网络统一 ID
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置私有网络统一 ID 或者黑石网络统一 ID
+                     * @param VpcId 私有网络统一 ID 或者黑石网络统一 ID
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取专线网关 ID，例如 dcg-d545ddf
+                     * @return DirectConnectGatewayId 专线网关 ID，例如 dcg-d545ddf
+                     */
+                    std::string GetDirectConnectGatewayId() const;
+
+                    /**
+                     * 设置专线网关 ID，例如 dcg-d545ddf
+                     * @param DirectConnectGatewayId 专线网关 ID，例如 dcg-d545ddf
+                     */
+                    void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
+
+                    /**
+                     * 判断参数 DirectConnectGatewayId 是否已赋值
+                     * @return DirectConnectGatewayId 是否已赋值
+                     */
+                    bool DirectConnectGatewayIdHasBeenSet() const;
+
+                    /**
+                     * 获取专线带宽，单位：Mbps
+默认是物理专线带宽值
+                     * @return Bandwidth 专线带宽，单位：Mbps
+默认是物理专线带宽值
+                     */
+                    int64_t GetBandwidth() const;
+
+                    /**
+                     * 设置专线带宽，单位：Mbps
+默认是物理专线带宽值
+                     * @param Bandwidth 专线带宽，单位：Mbps
+默认是物理专线带宽值
+                     */
+                    void SetBandwidth(const int64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取BGP ：BGP路由
+STATIC：静态
+默认为 BGP 路由
+                     * @return RouteType BGP ：BGP路由
+STATIC：静态
+默认为 BGP 路由
+                     */
+                    std::string GetRouteType() const;
+
+                    /**
+                     * 设置BGP ：BGP路由
+STATIC：静态
+默认为 BGP 路由
+                     * @param RouteType BGP ：BGP路由
+STATIC：静态
+默认为 BGP 路由
+                     */
+                    void SetRouteType(const std::string& _routeType);
+
+                    /**
+                     * 判断参数 RouteType 是否已赋值
+                     * @return RouteType 是否已赋值
+                     */
+                    bool RouteTypeHasBeenSet() const;
+
+                    /**
+                     * 获取BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     * @return BgpPeer BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     */
+                    BgpPeer GetBgpPeer() const;
+
+                    /**
+                     * 设置BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     * @param BgpPeer BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     */
+                    void SetBgpPeer(const BgpPeer& _bgpPeer);
+
+                    /**
+                     * 判断参数 BgpPeer 是否已赋值
+                     * @return BgpPeer 是否已赋值
+                     */
+                    bool BgpPeerHasBeenSet() const;
+
+                    /**
+                     * 获取静态路由，用户IDC的网段地址
+                     * @return RouteFilterPrefixes 静态路由，用户IDC的网段地址
+                     */
+                    std::vector<RouteFilterPrefix> GetRouteFilterPrefixes() const;
+
+                    /**
+                     * 设置静态路由，用户IDC的网段地址
+                     * @param RouteFilterPrefixes 静态路由，用户IDC的网段地址
+                     */
+                    void SetRouteFilterPrefixes(const std::vector<RouteFilterPrefix>& _routeFilterPrefixes);
+
+                    /**
+                     * 判断参数 RouteFilterPrefixes 是否已赋值
+                     * @return RouteFilterPrefixes 是否已赋值
+                     */
+                    bool RouteFilterPrefixesHasBeenSet() const;
+
+                    /**
+                     * 获取vlan，范围：0 ~ 3000
+0：不开启子接口
+默认值是非0
+                     * @return Vlan vlan，范围：0 ~ 3000
+0：不开启子接口
+默认值是非0
+                     */
+                    int64_t GetVlan() const;
+
+                    /**
+                     * 设置vlan，范围：0 ~ 3000
+0：不开启子接口
+默认值是非0
+                     * @param Vlan vlan，范围：0 ~ 3000
+0：不开启子接口
+默认值是非0
+                     */
+                    void SetVlan(const int64_t& _vlan);
+
+                    /**
+                     * 判断参数 Vlan 是否已赋值
+                     * @return Vlan 是否已赋值
+                     */
+                    bool VlanHasBeenSet() const;
+
+                    /**
+                     * 获取TencentAddress，腾讯侧互联 IP
+                     * @return TencentAddress TencentAddress，腾讯侧互联 IP
+                     */
+                    std::string GetTencentAddress() const;
+
+                    /**
+                     * 设置TencentAddress，腾讯侧互联 IP
+                     * @param TencentAddress TencentAddress，腾讯侧互联 IP
+                     */
+                    void SetTencentAddress(const std::string& _tencentAddress);
+
+                    /**
+                     * 判断参数 TencentAddress 是否已赋值
+                     * @return TencentAddress 是否已赋值
+                     */
+                    bool TencentAddressHasBeenSet() const;
+
+                    /**
+                     * 获取CustomerAddress，用户侧互联 IP
+                     * @return CustomerAddress CustomerAddress，用户侧互联 IP
+                     */
+                    std::string GetCustomerAddress() const;
+
+                    /**
+                     * 设置CustomerAddress，用户侧互联 IP
+                     * @param CustomerAddress CustomerAddress，用户侧互联 IP
+                     */
+                    void SetCustomerAddress(const std::string& _customerAddress);
+
+                    /**
+                     * 判断参数 CustomerAddress 是否已赋值
+                     * @return CustomerAddress 是否已赋值
+                     */
+                    bool CustomerAddressHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 专线 ID，例如：dc-kd7d06of
+                     */
+                    std::string m_directConnectId;
+                    bool m_directConnectIdHasBeenSet;
+
+                    /**
+                     * 专用通道名称
+                     */
+                    std::string m_directConnectTunnelName;
+                    bool m_directConnectTunnelNameHasBeenSet;
+
+                    /**
+                     * 物理专线 owner，缺省为当前客户（物理专线 owner）
+共享专线时这里需要填写共享专线的开发商账号 ID
+                     */
+                    std::string m_directConnectOwnerAccount;
+                    bool m_directConnectOwnerAccountHasBeenSet;
+
+                    /**
+                     * 网络类型，分别为VPC、BMVPC，CCN，默认是VPC
+VPC：私有网络
+BMVPC：黑石网络
+CCN：云联网
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
+
+                    /**
+                     * 网络地域
+                     */
+                    std::string m_networkRegion;
+                    bool m_networkRegionHasBeenSet;
+
+                    /**
+                     * 私有网络统一 ID 或者黑石网络统一 ID
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 专线网关 ID，例如 dcg-d545ddf
+                     */
+                    std::string m_directConnectGatewayId;
+                    bool m_directConnectGatewayIdHasBeenSet;
+
+                    /**
+                     * 专线带宽，单位：Mbps
+默认是物理专线带宽值
+                     */
+                    int64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * BGP ：BGP路由
+STATIC：静态
+默认为 BGP 路由
+                     */
+                    std::string m_routeType;
+                    bool m_routeTypeHasBeenSet;
+
+                    /**
+                     * BgpPeer，用户侧bgp信息，包括Asn和AuthKey
+                     */
+                    BgpPeer m_bgpPeer;
+                    bool m_bgpPeerHasBeenSet;
+
+                    /**
+                     * 静态路由，用户IDC的网段地址
+                     */
+                    std::vector<RouteFilterPrefix> m_routeFilterPrefixes;
+                    bool m_routeFilterPrefixesHasBeenSet;
+
+                    /**
+                     * vlan，范围：0 ~ 3000
+0：不开启子接口
+默认值是非0
+                     */
+                    int64_t m_vlan;
+                    bool m_vlanHasBeenSet;
+
+                    /**
+                     * TencentAddress，腾讯侧互联 IP
+                     */
+                    std::string m_tencentAddress;
+                    bool m_tencentAddressHasBeenSet;
+
+                    /**
+                     * CustomerAddress，用户侧互联 IP
+                     */
+                    std::string m_customerAddress;
+                    bool m_customerAddressHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_DC_V20180410_MODEL_CREATEDIRECTCONNECTTUNNELREQUEST_H_

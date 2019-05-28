@@ -1,0 +1,16 @@
+# for c++
+*.d
+*.o
+*.a
+
+*.gz
+*.zip
+*.tgz
+*.tar.gz
+
+*~
+
+# for make
+build/
+sdk_build/
+example/cvm/v20170312/build/

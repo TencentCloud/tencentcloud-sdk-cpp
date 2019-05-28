@@ -1,0 +1,475 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/redis/v20180412/model/CreateInstancesRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Redis::V20180412::Model;
+using namespace rapidjson;
+using namespace std;
+
+CreateInstancesRequest::CreateInstancesRequest() :
+    m_zoneIdHasBeenSet(false),
+    m_typeIdHasBeenSet(false),
+    m_memSizeHasBeenSet(false),
+    m_goodsNumHasBeenSet(false),
+    m_periodHasBeenSet(false),
+    m_passwordHasBeenSet(false),
+    m_billingModeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_autoRenewHasBeenSet(false),
+    m_securityGroupIdListHasBeenSet(false),
+    m_vPortHasBeenSet(false),
+    m_redisShardNumHasBeenSet(false),
+    m_redisReplicasNumHasBeenSet(false),
+    m_replicasReadonlyHasBeenSet(false),
+    m_instanceNameHasBeenSet(false)
+{
+}
+
+string CreateInstancesRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_zoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_typeIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TypeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_typeId, allocator);
+    }
+
+    if (m_memSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MemSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_memSize, allocator);
+    }
+
+    if (m_goodsNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GoodsNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_goodsNum, allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BillingMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_billingMode, allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenew, allocator);
+    }
+
+    if (m_securityGroupIdListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIdList.begin(); itr != m_securityGroupIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_vPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vPort, allocator);
+    }
+
+    if (m_redisShardNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RedisShardNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_redisShardNum, allocator);
+    }
+
+    if (m_redisReplicasNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RedisReplicasNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_redisReplicasNum, allocator);
+    }
+
+    if (m_replicasReadonlyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReplicasReadonly";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_replicasReadonly, allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+uint64_t CreateInstancesRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void CreateInstancesRequest::SetZoneId(const uint64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetTypeId() const
+{
+    return m_typeId;
+}
+
+void CreateInstancesRequest::SetTypeId(const uint64_t& _typeId)
+{
+    m_typeId = _typeId;
+    m_typeIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::TypeIdHasBeenSet() const
+{
+    return m_typeIdHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetMemSize() const
+{
+    return m_memSize;
+}
+
+void CreateInstancesRequest::SetMemSize(const uint64_t& _memSize)
+{
+    m_memSize = _memSize;
+    m_memSizeHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::MemSizeHasBeenSet() const
+{
+    return m_memSizeHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetGoodsNum() const
+{
+    return m_goodsNum;
+}
+
+void CreateInstancesRequest::SetGoodsNum(const uint64_t& _goodsNum)
+{
+    m_goodsNum = _goodsNum;
+    m_goodsNumHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::GoodsNumHasBeenSet() const
+{
+    return m_goodsNumHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateInstancesRequest::SetPeriod(const uint64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
+}
+
+string CreateInstancesRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void CreateInstancesRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+int64_t CreateInstancesRequest::GetBillingMode() const
+{
+    return m_billingMode;
+}
+
+void CreateInstancesRequest::SetBillingMode(const int64_t& _billingMode)
+{
+    m_billingMode = _billingMode;
+    m_billingModeHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::BillingModeHasBeenSet() const
+{
+    return m_billingModeHasBeenSet;
+}
+
+string CreateInstancesRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void CreateInstancesRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string CreateInstancesRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void CreateInstancesRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+int64_t CreateInstancesRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void CreateInstancesRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void CreateInstancesRequest::SetAutoRenew(const uint64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
+}
+
+vector<string> CreateInstancesRequest::GetSecurityGroupIdList() const
+{
+    return m_securityGroupIdList;
+}
+
+void CreateInstancesRequest::SetSecurityGroupIdList(const vector<string>& _securityGroupIdList)
+{
+    m_securityGroupIdList = _securityGroupIdList;
+    m_securityGroupIdListHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::SecurityGroupIdListHasBeenSet() const
+{
+    return m_securityGroupIdListHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetVPort() const
+{
+    return m_vPort;
+}
+
+void CreateInstancesRequest::SetVPort(const uint64_t& _vPort)
+{
+    m_vPort = _vPort;
+    m_vPortHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::VPortHasBeenSet() const
+{
+    return m_vPortHasBeenSet;
+}
+
+int64_t CreateInstancesRequest::GetRedisShardNum() const
+{
+    return m_redisShardNum;
+}
+
+void CreateInstancesRequest::SetRedisShardNum(const int64_t& _redisShardNum)
+{
+    m_redisShardNum = _redisShardNum;
+    m_redisShardNumHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::RedisShardNumHasBeenSet() const
+{
+    return m_redisShardNumHasBeenSet;
+}
+
+int64_t CreateInstancesRequest::GetRedisReplicasNum() const
+{
+    return m_redisReplicasNum;
+}
+
+void CreateInstancesRequest::SetRedisReplicasNum(const int64_t& _redisReplicasNum)
+{
+    m_redisReplicasNum = _redisReplicasNum;
+    m_redisReplicasNumHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::RedisReplicasNumHasBeenSet() const
+{
+    return m_redisReplicasNumHasBeenSet;
+}
+
+bool CreateInstancesRequest::GetReplicasReadonly() const
+{
+    return m_replicasReadonly;
+}
+
+void CreateInstancesRequest::SetReplicasReadonly(const bool& _replicasReadonly)
+{
+    m_replicasReadonly = _replicasReadonly;
+    m_replicasReadonlyHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ReplicasReadonlyHasBeenSet() const
+{
+    return m_replicasReadonlyHasBeenSet;
+}
+
+string CreateInstancesRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreateInstancesRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+

@@ -1,0 +1,276 @@
+#
+# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(as_public_header
+  include/tencentcloud/as/v20180419/AsClient.h
+  )
+
+set(as_public_header_model
+  include/tencentcloud/as/v20180419/model/DisableAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesRequest.h
+  include/tencentcloud/as/v20180419/model/DisableAutoScalingGroupRequest.h
+  include/tencentcloud/as/v20180419/model/ModifyAutoScalingGroupRequest.h
+  include/tencentcloud/as/v20180419/model/AutoScalingNotification.h
+  include/tencentcloud/as/v20180419/model/ModifyScheduledActionRequest.h
+  include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsRequest.h
+  include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeAccountLimitsResponse.h
+  include/tencentcloud/as/v20180419/model/CreatePaiInstanceResponse.h
+  include/tencentcloud/as/v20180419/model/CreateLaunchConfigurationResponse.h
+  include/tencentcloud/as/v20180419/model/CreateLifecycleHookResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsResponse.h
+  include/tencentcloud/as/v20180419/model/CreatePaiInstanceRequest.h
+  include/tencentcloud/as/v20180419/model/SystemDisk.h
+  include/tencentcloud/as/v20180419/model/SpotMarketOptions.h
+  include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesRequest.h
+  include/tencentcloud/as/v20180419/model/ModifyScheduledActionResponse.h
+  include/tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesResponse.h
+  include/tencentcloud/as/v20180419/model/SetInstancesProtectionResponse.h
+  include/tencentcloud/as/v20180419/model/CompleteLifecycleActionRequest.h
+  include/tencentcloud/as/v20180419/model/CreateScalingPolicyResponse.h
+  include/tencentcloud/as/v20180419/model/CreateNotificationConfigurationResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeLaunchConfigurationsResponse.h
+  include/tencentcloud/as/v20180419/model/DeleteScalingPolicyResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeAutoScalingInstancesRequest.h
+  include/tencentcloud/as/v20180419/model/LimitedLoginSettings.h
+  include/tencentcloud/as/v20180419/model/ModifyAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/RemoveInstancesResponse.h
+  include/tencentcloud/as/v20180419/model/ModifyScalingPolicyResponse.h
+  include/tencentcloud/as/v20180419/model/SetInstancesProtectionRequest.h
+  include/tencentcloud/as/v20180419/model/DeleteNotificationConfigurationResponse.h
+  include/tencentcloud/as/v20180419/model/DetachInstancesResponse.h
+  include/tencentcloud/as/v20180419/model/CreateLaunchConfigurationRequest.h
+  include/tencentcloud/as/v20180419/model/AutoScalingGroup.h
+  include/tencentcloud/as/v20180419/model/AttachInstancesResponse.h
+  include/tencentcloud/as/v20180419/model/DeleteLifecycleHookResponse.h
+  include/tencentcloud/as/v20180419/model/PreviewPaiDomainNameResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeAccountLimitsRequest.h
+  include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h
+  include/tencentcloud/as/v20180419/model/ScalingPolicy.h
+  include/tencentcloud/as/v20180419/model/ModifyLoadBalancersResponse.h
+  include/tencentcloud/as/v20180419/model/DescribePaiInstancesRequest.h
+  include/tencentcloud/as/v20180419/model/CreateNotificationConfigurationRequest.h
+  include/tencentcloud/as/v20180419/model/DescribeScheduledActionsResponse.h
+  include/tencentcloud/as/v20180419/model/DeleteLifecycleHookRequest.h
+  include/tencentcloud/as/v20180419/model/ModifyLoadBalancersRequest.h
+  include/tencentcloud/as/v20180419/model/DeleteLaunchConfigurationRequest.h
+  include/tencentcloud/as/v20180419/model/ModifyScalingPolicyRequest.h
+  include/tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h
+  include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookResponse.h
+  include/tencentcloud/as/v20180419/model/InstanceTag.h
+  include/tencentcloud/as/v20180419/model/PaiInstance.h
+  include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h
+  include/tencentcloud/as/v20180419/model/DeleteScheduledActionResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeAutoScalingActivitiesResponse.h
+  include/tencentcloud/as/v20180419/model/ModifyNotificationConfigurationRequest.h
+  include/tencentcloud/as/v20180419/model/DataDisk.h
+  include/tencentcloud/as/v20180419/model/PreviewPaiDomainNameRequest.h
+  include/tencentcloud/as/v20180419/model/DeleteScalingPolicyRequest.h
+  include/tencentcloud/as/v20180419/model/LoginSettings.h
+  include/tencentcloud/as/v20180419/model/DetachInstancesRequest.h
+  include/tencentcloud/as/v20180419/model/Instance.h
+  include/tencentcloud/as/v20180419/model/CreateScheduledActionRequest.h
+  include/tencentcloud/as/v20180419/model/EnhancedService.h
+  include/tencentcloud/as/v20180419/model/DeleteLaunchConfigurationResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeScheduledActionsRequest.h
+  include/tencentcloud/as/v20180419/model/RunSecurityServiceEnabled.h
+  include/tencentcloud/as/v20180419/model/DeleteScheduledActionRequest.h
+  include/tencentcloud/as/v20180419/model/DescribeAutoScalingActivitiesRequest.h
+  include/tencentcloud/as/v20180419/model/ModifyDesiredCapacityRequest.h
+  include/tencentcloud/as/v20180419/model/CreateScheduledActionResponse.h
+  include/tencentcloud/as/v20180419/model/CreateLifecycleHookRequest.h
+  include/tencentcloud/as/v20180419/model/ScheduledAction.h
+  include/tencentcloud/as/v20180419/model/CompleteLifecycleActionResponse.h
+  include/tencentcloud/as/v20180419/model/Filter.h
+  include/tencentcloud/as/v20180419/model/DescribeLifecycleHooksRequest.h
+  include/tencentcloud/as/v20180419/model/LaunchConfiguration.h
+  include/tencentcloud/as/v20180419/model/TargetAttribute.h
+  include/tencentcloud/as/v20180419/model/ModifyNotificationConfigurationResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeAutoScalingInstancesResponse.h
+  include/tencentcloud/as/v20180419/model/DescribeLifecycleHooksResponse.h
+  include/tencentcloud/as/v20180419/model/CreateScalingPolicyRequest.h
+  include/tencentcloud/as/v20180419/model/DeleteNotificationConfigurationRequest.h
+  include/tencentcloud/as/v20180419/model/DescribeLaunchConfigurationsRequest.h
+  include/tencentcloud/as/v20180419/model/NotificationTarget.h
+  include/tencentcloud/as/v20180419/model/DeleteAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/AutoScalingGroupAbstract.h
+  include/tencentcloud/as/v20180419/model/EnableAutoScalingGroupRequest.h
+  include/tencentcloud/as/v20180419/model/MetricAlarm.h
+  include/tencentcloud/as/v20180419/model/DescribeNotificationConfigurationsRequest.h
+  include/tencentcloud/as/v20180419/model/LifecycleHook.h
+  include/tencentcloud/as/v20180419/model/ForwardLoadBalancer.h
+  include/tencentcloud/as/v20180419/model/DeleteAutoScalingGroupRequest.h
+  include/tencentcloud/as/v20180419/model/RemoveInstancesRequest.h
+  include/tencentcloud/as/v20180419/model/AttachInstancesRequest.h
+  include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesResponse.h
+  include/tencentcloud/as/v20180419/model/Activity.h
+  include/tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h
+  include/tencentcloud/as/v20180419/model/RunMonitorServiceEnabled.h
+  include/tencentcloud/as/v20180419/model/DescribeNotificationConfigurationsResponse.h
+  include/tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h
+  include/tencentcloud/as/v20180419/model/InternetAccessible.h
+  include/tencentcloud/as/v20180419/model/EnableAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/InstanceChargePrepaid.h
+  include/tencentcloud/as/v20180419/model/DescribePaiInstancesResponse.h
+  )
+
+set(as_src
+  src/v20180419/AsClient.cpp
+  src/v20180419/model/DisableAutoScalingGroupResponse.cpp
+  src/v20180419/model/ModifyLaunchConfigurationAttributesRequest.cpp
+  src/v20180419/model/DisableAutoScalingGroupRequest.cpp
+  src/v20180419/model/ModifyAutoScalingGroupRequest.cpp
+  src/v20180419/model/AutoScalingNotification.cpp
+  src/v20180419/model/ModifyScheduledActionRequest.cpp
+  src/v20180419/model/DescribeAutoScalingGroupsRequest.cpp
+  src/v20180419/model/CreateAutoScalingGroupResponse.cpp
+  src/v20180419/model/DescribeAccountLimitsResponse.cpp
+  src/v20180419/model/CreatePaiInstanceResponse.cpp
+  src/v20180419/model/CreateLaunchConfigurationResponse.cpp
+  src/v20180419/model/CreateLifecycleHookResponse.cpp
+  src/v20180419/model/DescribeAutoScalingGroupsResponse.cpp
+  src/v20180419/model/CreatePaiInstanceRequest.cpp
+  src/v20180419/model/SystemDisk.cpp
+  src/v20180419/model/SpotMarketOptions.cpp
+  src/v20180419/model/DescribeScalingPoliciesRequest.cpp
+  src/v20180419/model/ModifyScheduledActionResponse.cpp
+  src/v20180419/model/ModifyLaunchConfigurationAttributesResponse.cpp
+  src/v20180419/model/SetInstancesProtectionResponse.cpp
+  src/v20180419/model/CompleteLifecycleActionRequest.cpp
+  src/v20180419/model/CreateScalingPolicyResponse.cpp
+  src/v20180419/model/CreateNotificationConfigurationResponse.cpp
+  src/v20180419/model/DescribeLaunchConfigurationsResponse.cpp
+  src/v20180419/model/DeleteScalingPolicyResponse.cpp
+  src/v20180419/model/DescribeAutoScalingInstancesRequest.cpp
+  src/v20180419/model/LimitedLoginSettings.cpp
+  src/v20180419/model/ModifyAutoScalingGroupResponse.cpp
+  src/v20180419/model/RemoveInstancesResponse.cpp
+  src/v20180419/model/ModifyScalingPolicyResponse.cpp
+  src/v20180419/model/SetInstancesProtectionRequest.cpp
+  src/v20180419/model/DeleteNotificationConfigurationResponse.cpp
+  src/v20180419/model/DetachInstancesResponse.cpp
+  src/v20180419/model/CreateLaunchConfigurationRequest.cpp
+  src/v20180419/model/AutoScalingGroup.cpp
+  src/v20180419/model/AttachInstancesResponse.cpp
+  src/v20180419/model/DeleteLifecycleHookResponse.cpp
+  src/v20180419/model/PreviewPaiDomainNameResponse.cpp
+  src/v20180419/model/DescribeAccountLimitsRequest.cpp
+  src/v20180419/model/UpgradeLifecycleHookRequest.cpp
+  src/v20180419/model/ScalingPolicy.cpp
+  src/v20180419/model/ModifyLoadBalancersResponse.cpp
+  src/v20180419/model/DescribePaiInstancesRequest.cpp
+  src/v20180419/model/CreateNotificationConfigurationRequest.cpp
+  src/v20180419/model/DescribeScheduledActionsResponse.cpp
+  src/v20180419/model/DeleteLifecycleHookRequest.cpp
+  src/v20180419/model/ModifyLoadBalancersRequest.cpp
+  src/v20180419/model/DeleteLaunchConfigurationRequest.cpp
+  src/v20180419/model/ModifyScalingPolicyRequest.cpp
+  src/v20180419/model/InstanceMarketOptionsRequest.cpp
+  src/v20180419/model/UpgradeLifecycleHookResponse.cpp
+  src/v20180419/model/InstanceTag.cpp
+  src/v20180419/model/PaiInstance.cpp
+  src/v20180419/model/CreateAutoScalingGroupRequest.cpp
+  src/v20180419/model/DeleteScheduledActionResponse.cpp
+  src/v20180419/model/DescribeAutoScalingActivitiesResponse.cpp
+  src/v20180419/model/ModifyNotificationConfigurationRequest.cpp
+  src/v20180419/model/DataDisk.cpp
+  src/v20180419/model/PreviewPaiDomainNameRequest.cpp
+  src/v20180419/model/DeleteScalingPolicyRequest.cpp
+  src/v20180419/model/LoginSettings.cpp
+  src/v20180419/model/DetachInstancesRequest.cpp
+  src/v20180419/model/Instance.cpp
+  src/v20180419/model/CreateScheduledActionRequest.cpp
+  src/v20180419/model/EnhancedService.cpp
+  src/v20180419/model/DeleteLaunchConfigurationResponse.cpp
+  src/v20180419/model/DescribeScheduledActionsRequest.cpp
+  src/v20180419/model/RunSecurityServiceEnabled.cpp
+  src/v20180419/model/DeleteScheduledActionRequest.cpp
+  src/v20180419/model/DescribeAutoScalingActivitiesRequest.cpp
+  src/v20180419/model/ModifyDesiredCapacityRequest.cpp
+  src/v20180419/model/CreateScheduledActionResponse.cpp
+  src/v20180419/model/CreateLifecycleHookRequest.cpp
+  src/v20180419/model/ScheduledAction.cpp
+  src/v20180419/model/CompleteLifecycleActionResponse.cpp
+  src/v20180419/model/Filter.cpp
+  src/v20180419/model/DescribeLifecycleHooksRequest.cpp
+  src/v20180419/model/LaunchConfiguration.cpp
+  src/v20180419/model/TargetAttribute.cpp
+  src/v20180419/model/ModifyNotificationConfigurationResponse.cpp
+  src/v20180419/model/DescribeAutoScalingInstancesResponse.cpp
+  src/v20180419/model/DescribeLifecycleHooksResponse.cpp
+  src/v20180419/model/CreateScalingPolicyRequest.cpp
+  src/v20180419/model/DeleteNotificationConfigurationRequest.cpp
+  src/v20180419/model/DescribeLaunchConfigurationsRequest.cpp
+  src/v20180419/model/NotificationTarget.cpp
+  src/v20180419/model/DeleteAutoScalingGroupResponse.cpp
+  src/v20180419/model/AutoScalingGroupAbstract.cpp
+  src/v20180419/model/EnableAutoScalingGroupRequest.cpp
+  src/v20180419/model/MetricAlarm.cpp
+  src/v20180419/model/DescribeNotificationConfigurationsRequest.cpp
+  src/v20180419/model/LifecycleHook.cpp
+  src/v20180419/model/ForwardLoadBalancer.cpp
+  src/v20180419/model/DeleteAutoScalingGroupRequest.cpp
+  src/v20180419/model/RemoveInstancesRequest.cpp
+  src/v20180419/model/AttachInstancesRequest.cpp
+  src/v20180419/model/DescribeScalingPoliciesResponse.cpp
+  src/v20180419/model/Activity.cpp
+  src/v20180419/model/ModifyDesiredCapacityResponse.cpp
+  src/v20180419/model/RunMonitorServiceEnabled.cpp
+  src/v20180419/model/DescribeNotificationConfigurationsResponse.cpp
+  src/v20180419/model/ActivtyRelatedInstance.cpp
+  src/v20180419/model/InternetAccessible.cpp
+  src/v20180419/model/EnableAutoScalingGroupResponse.cpp
+  src/v20180419/model/InstanceChargePrepaid.cpp
+  src/v20180419/model/DescribePaiInstancesResponse.cpp
+  )
+
+set(as_include
+    include/tencentcloud/as
+  )
+
+add_library(as ${LIB_TYPE}
+  ${as_public_header}
+  ${as_public_header_model}
+  ${as_src})
+
+set_target_properties(as
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}as
+  )
+
+target_include_directories(as
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(as
+  core)
+
+#install(FILES ${as_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/as/v20180419)
+#install(FILES ${as_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/as/v20180419/model)
+install(DIRECTORY ${as_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS as
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )

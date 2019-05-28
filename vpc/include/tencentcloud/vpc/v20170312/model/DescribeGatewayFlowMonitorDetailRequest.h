@@ -1,0 +1,269 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEGATEWAYFLOWMONITORDETAILREQUEST_H_
+#define TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEGATEWAYFLOWMONITORDETAILREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Vpc
+    {
+        namespace V20170312
+        {
+            namespace Model
+            {
+                /**
+                * DescribeGatewayFlowMonitorDetail请求参数结构体
+                */
+                class DescribeGatewayFlowMonitorDetailRequest : public AbstractModel
+                {
+                public:
+                    DescribeGatewayFlowMonitorDetailRequest();
+                    ~DescribeGatewayFlowMonitorDetailRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取时间点。表示要查询这分钟内的明细。如：`2019-02-28 18:15:20`，将查询 `18:15` 这一分钟内的明细。
+                     * @return TimePoint 时间点。表示要查询这分钟内的明细。如：`2019-02-28 18:15:20`，将查询 `18:15` 这一分钟内的明细。
+                     */
+                    std::string GetTimePoint() const;
+
+                    /**
+                     * 设置时间点。表示要查询这分钟内的明细。如：`2019-02-28 18:15:20`，将查询 `18:15` 这一分钟内的明细。
+                     * @param TimePoint 时间点。表示要查询这分钟内的明细。如：`2019-02-28 18:15:20`，将查询 `18:15` 这一分钟内的明细。
+                     */
+                    void SetTimePoint(const std::string& _timePoint);
+
+                    /**
+                     * 判断参数 TimePoint 是否已赋值
+                     * @return TimePoint 是否已赋值
+                     */
+                    bool TimePointHasBeenSet() const;
+
+                    /**
+                     * 获取VPN网关实例ID，形如：`vpn-ltjahce6`。
+                     * @return VpnId VPN网关实例ID，形如：`vpn-ltjahce6`。
+                     */
+                    std::string GetVpnId() const;
+
+                    /**
+                     * 设置VPN网关实例ID，形如：`vpn-ltjahce6`。
+                     * @param VpnId VPN网关实例ID，形如：`vpn-ltjahce6`。
+                     */
+                    void SetVpnId(const std::string& _vpnId);
+
+                    /**
+                     * 判断参数 VpnId 是否已赋值
+                     * @return VpnId 是否已赋值
+                     */
+                    bool VpnIdHasBeenSet() const;
+
+                    /**
+                     * 获取专线网关实例ID，形如：`dcg-ltjahce6`。
+                     * @return DirectConnectGatewayId 专线网关实例ID，形如：`dcg-ltjahce6`。
+                     */
+                    std::string GetDirectConnectGatewayId() const;
+
+                    /**
+                     * 设置专线网关实例ID，形如：`dcg-ltjahce6`。
+                     * @param DirectConnectGatewayId 专线网关实例ID，形如：`dcg-ltjahce6`。
+                     */
+                    void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
+
+                    /**
+                     * 判断参数 DirectConnectGatewayId 是否已赋值
+                     * @return DirectConnectGatewayId 是否已赋值
+                     */
+                    bool DirectConnectGatewayIdHasBeenSet() const;
+
+                    /**
+                     * 获取对等连接实例ID，形如：`pcx-ltjahce6`。
+                     * @return PeeringConnectionId 对等连接实例ID，形如：`pcx-ltjahce6`。
+                     */
+                    std::string GetPeeringConnectionId() const;
+
+                    /**
+                     * 设置对等连接实例ID，形如：`pcx-ltjahce6`。
+                     * @param PeeringConnectionId 对等连接实例ID，形如：`pcx-ltjahce6`。
+                     */
+                    void SetPeeringConnectionId(const std::string& _peeringConnectionId);
+
+                    /**
+                     * 判断参数 PeeringConnectionId 是否已赋值
+                     * @return PeeringConnectionId 是否已赋值
+                     */
+                    bool PeeringConnectionIdHasBeenSet() const;
+
+                    /**
+                     * 获取NAT网关实例ID，形如：`nat-ltjahce6`。
+                     * @return NatId NAT网关实例ID，形如：`nat-ltjahce6`。
+                     */
+                    std::string GetNatId() const;
+
+                    /**
+                     * 设置NAT网关实例ID，形如：`nat-ltjahce6`。
+                     * @param NatId NAT网关实例ID，形如：`nat-ltjahce6`。
+                     */
+                    void SetNatId(const std::string& _natId);
+
+                    /**
+                     * 判断参数 NatId 是否已赋值
+                     * @return NatId 是否已赋值
+                     */
+                    bool NatIdHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量。
+                     * @return Offset 偏移量。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量。
+                     * @param Offset 偏移量。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取返回数量。
+                     * @return Limit 返回数量。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置返回数量。
+                     * @param Limit 返回数量。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     * @return OrderField 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     * @param OrderField 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * @return OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     */
+                    std::string GetOrderDirection() const;
+
+                    /**
+                     * 设置排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * @param OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     */
+                    void SetOrderDirection(const std::string& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 时间点。表示要查询这分钟内的明细。如：`2019-02-28 18:15:20`，将查询 `18:15` 这一分钟内的明细。
+                     */
+                    std::string m_timePoint;
+                    bool m_timePointHasBeenSet;
+
+                    /**
+                     * VPN网关实例ID，形如：`vpn-ltjahce6`。
+                     */
+                    std::string m_vpnId;
+                    bool m_vpnIdHasBeenSet;
+
+                    /**
+                     * 专线网关实例ID，形如：`dcg-ltjahce6`。
+                     */
+                    std::string m_directConnectGatewayId;
+                    bool m_directConnectGatewayIdHasBeenSet;
+
+                    /**
+                     * 对等连接实例ID，形如：`pcx-ltjahce6`。
+                     */
+                    std::string m_peeringConnectionId;
+                    bool m_peeringConnectionIdHasBeenSet;
+
+                    /**
+                     * NAT网关实例ID，形如：`nat-ltjahce6`。
+                     */
+                    std::string m_natId;
+                    bool m_natIdHasBeenSet;
+
+                    /**
+                     * 偏移量。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 返回数量。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     */
+                    std::string m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEGATEWAYFLOWMONITORDETAILREQUEST_H_

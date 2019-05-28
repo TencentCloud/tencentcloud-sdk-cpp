@@ -1,0 +1,320 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_SCF_V20180416_MODEL_CREATEFUNCTIONREQUEST_H_
+#define TENCENTCLOUD_SCF_V20180416_MODEL_CREATEFUNCTIONREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/Code.h>
+#include <tencentcloud/scf/v20180416/model/Environment.h>
+#include <tencentcloud/scf/v20180416/model/VpcConfig.h>
+
+
+namespace TencentCloud
+{
+    namespace Scf
+    {
+        namespace V20180416
+        {
+            namespace Model
+            {
+                /**
+                * CreateFunction请求参数结构体
+                */
+                class CreateFunctionRequest : public AbstractModel
+                {
+                public:
+                    CreateFunctionRequest();
+                    ~CreateFunctionRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60
+                     * @return FunctionName 创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60
+                     */
+                    std::string GetFunctionName() const;
+
+                    /**
+                     * 设置创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60
+                     * @param FunctionName 创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60
+                     */
+                    void SetFunctionName(const std::string& _functionName);
+
+                    /**
+                     * 判断参数 FunctionName 是否已赋值
+                     * @return FunctionName 是否已赋值
+                     */
+                    bool FunctionNameHasBeenSet() const;
+
+                    /**
+                     * 获取函数的代码. 注意：不能同时指定Cos与ZipFile
+                     * @return Code 函数的代码. 注意：不能同时指定Cos与ZipFile
+                     */
+                    Code GetCode() const;
+
+                    /**
+                     * 设置函数的代码. 注意：不能同时指定Cos与ZipFile
+                     * @param Code 函数的代码. 注意：不能同时指定Cos与ZipFile
+                     */
+                    void SetCode(const Code& _code);
+
+                    /**
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
+                     */
+                    bool CodeHasBeenSet() const;
+
+                    /**
+                     * 获取函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     * @return Handler 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     */
+                    std::string GetHandler() const;
+
+                    /**
+                     * 设置函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     * @param Handler 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     */
+                    void SetHandler(const std::string& _handler);
+
+                    /**
+                     * 判断参数 Handler 是否已赋值
+                     * @return Handler 是否已赋值
+                     */
+                    bool HandlerHasBeenSet() const;
+
+                    /**
+                     * 获取函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文
+                     * @return Description 函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文
+                     * @param Description 函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     * @return MemorySize 函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     */
+                    int64_t GetMemorySize() const;
+
+                    /**
+                     * 设置函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     * @param MemorySize 函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     */
+                    void SetMemorySize(const int64_t& _memorySize);
+
+                    /**
+                     * 判断参数 MemorySize 是否已赋值
+                     * @return MemorySize 是否已赋值
+                     */
+                    bool MemorySizeHasBeenSet() const;
+
+                    /**
+                     * 获取函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     * @return Timeout 函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     */
+                    int64_t GetTimeout() const;
+
+                    /**
+                     * 设置函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     * @param Timeout 函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     */
+                    void SetTimeout(const int64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     */
+                    bool TimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取函数的环境变量
+                     * @return Environment 函数的环境变量
+                     */
+                    Environment GetEnvironment() const;
+
+                    /**
+                     * 设置函数的环境变量
+                     * @param Environment 函数的环境变量
+                     */
+                    void SetEnvironment(const Environment& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
+                    /**
+                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     */
+                    std::string GetRuntime() const;
+
+                    /**
+                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     * @param Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     */
+                    void SetRuntime(const std::string& _runtime);
+
+                    /**
+                     * 判断参数 Runtime 是否已赋值
+                     * @return Runtime 是否已赋值
+                     */
+                    bool RuntimeHasBeenSet() const;
+
+                    /**
+                     * 获取函数的私有网络配置
+                     * @return VpcConfig 函数的私有网络配置
+                     */
+                    VpcConfig GetVpcConfig() const;
+
+                    /**
+                     * 设置函数的私有网络配置
+                     * @param VpcConfig 函数的私有网络配置
+                     */
+                    void SetVpcConfig(const VpcConfig& _vpcConfig);
+
+                    /**
+                     * 判断参数 VpcConfig 是否已赋值
+                     * @return VpcConfig 是否已赋值
+                     */
+                    bool VpcConfigHasBeenSet() const;
+
+                    /**
+                     * 获取函数日志投递到的CLS LogsetID
+                     * @return ClsLogsetId 函数日志投递到的CLS LogsetID
+                     */
+                    std::string GetClsLogsetId() const;
+
+                    /**
+                     * 设置函数日志投递到的CLS LogsetID
+                     * @param ClsLogsetId 函数日志投递到的CLS LogsetID
+                     */
+                    void SetClsLogsetId(const std::string& _clsLogsetId);
+
+                    /**
+                     * 判断参数 ClsLogsetId 是否已赋值
+                     * @return ClsLogsetId 是否已赋值
+                     */
+                    bool ClsLogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取函数日志投递到的CLS TopicID
+                     * @return ClsTopicId 函数日志投递到的CLS TopicID
+                     */
+                    std::string GetClsTopicId() const;
+
+                    /**
+                     * 设置函数日志投递到的CLS TopicID
+                     * @param ClsTopicId 函数日志投递到的CLS TopicID
+                     */
+                    void SetClsTopicId(const std::string& _clsTopicId);
+
+                    /**
+                     * 判断参数 ClsTopicId 是否已赋值
+                     * @return ClsTopicId 是否已赋值
+                     */
+                    bool ClsTopicIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60
+                     */
+                    std::string m_functionName;
+                    bool m_functionNameHasBeenSet;
+
+                    /**
+                     * 函数的代码. 注意：不能同时指定Cos与ZipFile
+                     */
+                    Code m_code;
+                    bool m_codeHasBeenSet;
+
+                    /**
+                     * 函数处理方法名称，名称格式支持 "文件名称.方法名称" 形式，文件名称和函数名称之间以"."隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符
+                     */
+                    std::string m_handler;
+                    bool m_handlerHasBeenSet;
+
+                    /**
+                     * 函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     */
+                    int64_t m_memorySize;
+                    bool m_memorySizeHasBeenSet;
+
+                    /**
+                     * 函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     */
+                    int64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
+
+                    /**
+                     * 函数的环境变量
+                     */
+                    Environment m_environment;
+                    bool m_environmentHasBeenSet;
+
+                    /**
+                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     */
+                    std::string m_runtime;
+                    bool m_runtimeHasBeenSet;
+
+                    /**
+                     * 函数的私有网络配置
+                     */
+                    VpcConfig m_vpcConfig;
+                    bool m_vpcConfigHasBeenSet;
+
+                    /**
+                     * 函数日志投递到的CLS LogsetID
+                     */
+                    std::string m_clsLogsetId;
+                    bool m_clsLogsetIdHasBeenSet;
+
+                    /**
+                     * 函数日志投递到的CLS TopicID
+                     */
+                    std::string m_clsTopicId;
+                    bool m_clsTopicIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_SCF_V20180416_MODEL_CREATEFUNCTIONREQUEST_H_

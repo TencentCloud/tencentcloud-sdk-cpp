@@ -1,0 +1,394 @@
+#
+# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(cvm_public_header
+  include/tencentcloud/cvm/v20170312/CvmClient.h
+  )
+
+set(cvm_public_header_model
+  include/tencentcloud/cvm/v20170312/model/LocalDiskType.h
+  include/tencentcloud/cvm/v20170312/model/AssociateInstancesKeyPairsResponse.h
+  include/tencentcloud/cvm/v20170312/model/RenewInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImageQuotaResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesProjectRequest.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstancesTypeResponse.h
+  include/tencentcloud/cvm/v20170312/model/HostResource.h
+  include/tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsRequest.h
+  include/tencentcloud/cvm/v20170312/model/DeleteKeyPairsResponse.h
+  include/tencentcloud/cvm/v20170312/model/TerminateInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeResponse.h
+  include/tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupResponse.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/AssociateSecurityGroupsRequest.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstancesTypeRequest.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceRequest.h
+  include/tencentcloud/cvm/v20170312/model/RunInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/DeleteImagesRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeHostsResponse.h
+  include/tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h
+  include/tencentcloud/cvm/v20170312/model/SystemDisk.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstanceRequest.h
+  include/tencentcloud/cvm/v20170312/model/InstanceTypeConfig.h
+  include/tencentcloud/cvm/v20170312/model/AllocateHostsRequest.h
+  include/tencentcloud/cvm/v20170312/model/LoginSettings.h
+  include/tencentcloud/cvm/v20170312/model/DescribeRegionsResponse.h
+  include/tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/AssociateInstancesKeyPairsRequest.h
+  include/tencentcloud/cvm/v20170312/model/ImportKeyPairResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesStatusResponse.h
+  include/tencentcloud/cvm/v20170312/model/ZoneInfo.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeKeyPairsResponse.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordRequest.h
+  include/tencentcloud/cvm/v20170312/model/InternetChargeTypeConfig.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImagesResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesVpcAttributeResponse.h
+  include/tencentcloud/cvm/v20170312/model/CreateKeyPairResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionRequest.h
+  include/tencentcloud/cvm/v20170312/model/DisassociateInstancesKeyPairsResponse.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResizeInstanceDisksRequest.h
+  include/tencentcloud/cvm/v20170312/model/RunInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstancesInternetMaxBandwidthResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitResponse.h
+  include/tencentcloud/cvm/v20170312/model/SyncImagesResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/RenewHostsRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeZonesRequest.h
+  include/tencentcloud/cvm/v20170312/model/StartInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/Tag.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceInternetBandwidthConfigsResponse.h
+  include/tencentcloud/cvm/v20170312/model/Placement.h
+  include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsRequest.h
+  include/tencentcloud/cvm/v20170312/model/SyncImagesRequest.h
+  include/tencentcloud/cvm/v20170312/model/DisassociateInstancesKeyPairsRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImageQuotaRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceFamilyConfigsResponse.h
+  include/tencentcloud/cvm/v20170312/model/CreateImageResponse.h
+  include/tencentcloud/cvm/v20170312/model/StopInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordResponse.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/Image.h
+  include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeRegionsRequest.h
+  include/tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImportImageOsResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeResponse.h
+  include/tencentcloud/cvm/v20170312/model/DataDisk.h
+  include/tencentcloud/cvm/v20170312/model/DescribeKeyPairsRequest.h
+  include/tencentcloud/cvm/v20170312/model/OperationCountLimit.h
+  include/tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsResponse.h
+  include/tencentcloud/cvm/v20170312/model/HostItem.h
+  include/tencentcloud/cvm/v20170312/model/Externals.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeRequest.h
+  include/tencentcloud/cvm/v20170312/model/CreateImageRequest.h
+  include/tencentcloud/cvm/v20170312/model/Instance.h
+  include/tencentcloud/cvm/v20170312/model/EnhancedService.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsResponse.h
+  include/tencentcloud/cvm/v20170312/model/RunSecurityServiceEnabled.h
+  include/tencentcloud/cvm/v20170312/model/ActionTimer.h
+  include/tencentcloud/cvm/v20170312/model/TagSpecification.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstancesInternetMaxBandwidthRequest.h
+  include/tencentcloud/cvm/v20170312/model/InstanceFamilyConfig.h
+  include/tencentcloud/cvm/v20170312/model/AssociateSecurityGroupsResponse.h
+  include/tencentcloud/cvm/v20170312/model/ImportImageRequest.h
+  include/tencentcloud/cvm/v20170312/model/SpotMarketOptions.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImportImageOsRequest.h
+  include/tencentcloud/cvm/v20170312/model/CreateKeyPairRequest.h
+  include/tencentcloud/cvm/v20170312/model/InstanceStatus.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/AllocateHostsResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionRequest.h
+  include/tencentcloud/cvm/v20170312/model/DisasterRecoverGroup.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceTypeConfigsRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h
+  include/tencentcloud/cvm/v20170312/model/StartInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesVpcAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/ChargePrepaid.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInternetChargeTypeConfigsResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeZonesResponse.h
+  include/tencentcloud/cvm/v20170312/model/ItemPrice.h
+  include/tencentcloud/cvm/v20170312/model/InstanceTypeQuotaItem.h
+  include/tencentcloud/cvm/v20170312/model/ImageOsList.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeHostsRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesRenewFlagResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesStatusRequest.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResizeInstanceDisksResponse.h
+  include/tencentcloud/cvm/v20170312/model/TerminateInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/SharePermission.h
+  include/tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h
+  include/tencentcloud/cvm/v20170312/model/ImportImageResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeResponse.h
+  include/tencentcloud/cvm/v20170312/model/OsVersion.h
+  include/tencentcloud/cvm/v20170312/model/ModifyImageAttributeResponse.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/RegionInfo.h
+  include/tencentcloud/cvm/v20170312/model/StopInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInternetChargeTypeConfigsRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImagesRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyImageAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/ResizeInstanceDisksResponse.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesRenewFlagRequest.h
+  include/tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/ImportKeyPairRequest.h
+  include/tencentcloud/cvm/v20170312/model/KeyPair.h
+  include/tencentcloud/cvm/v20170312/model/RenewInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/RunMonitorServiceEnabled.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstanceResponse.h
+  include/tencentcloud/cvm/v20170312/model/Filter.h
+  include/tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h
+  include/tencentcloud/cvm/v20170312/model/InternetBandwidthConfig.h
+  include/tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceTypeConfigsResponse.h
+  include/tencentcloud/cvm/v20170312/model/ResizeInstanceDisksRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceFamilyConfigsRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeInstanceInternetBandwidthConfigsRequest.h
+  include/tencentcloud/cvm/v20170312/model/StorageBlock.h
+  include/tencentcloud/cvm/v20170312/model/InternetAccessible.h
+  include/tencentcloud/cvm/v20170312/model/RenewHostsResponse.h
+  include/tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsResponse.h
+  include/tencentcloud/cvm/v20170312/model/Snapshot.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesProjectResponse.h
+  include/tencentcloud/cvm/v20170312/model/InstanceChargePrepaid.h
+  include/tencentcloud/cvm/v20170312/model/Price.h
+  )
+
+set(cvm_src
+  src/v20170312/CvmClient.cpp
+  src/v20170312/model/LocalDiskType.cpp
+  src/v20170312/model/AssociateInstancesKeyPairsResponse.cpp
+  src/v20170312/model/RenewInstancesRequest.cpp
+  src/v20170312/model/DescribeImageQuotaResponse.cpp
+  src/v20170312/model/ModifyInstancesProjectRequest.cpp
+  src/v20170312/model/ResetInstancesTypeResponse.cpp
+  src/v20170312/model/HostResource.cpp
+  src/v20170312/model/DeleteDisasterRecoverGroupsRequest.cpp
+  src/v20170312/model/DeleteKeyPairsResponse.cpp
+  src/v20170312/model/TerminateInstancesResponse.cpp
+  src/v20170312/model/ModifyInstancesChargeTypeResponse.cpp
+  src/v20170312/model/CreateDisasterRecoverGroupResponse.cpp
+  src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.cpp
+  src/v20170312/model/ModifyKeyPairAttributeRequest.cpp
+  src/v20170312/model/AssociateSecurityGroupsRequest.cpp
+  src/v20170312/model/ResetInstancesTypeRequest.cpp
+  src/v20170312/model/InquiryPriceResetInstanceRequest.cpp
+  src/v20170312/model/RunInstancesRequest.cpp
+  src/v20170312/model/DeleteImagesRequest.cpp
+  src/v20170312/model/DescribeInstancesResponse.cpp
+  src/v20170312/model/DescribeHostsResponse.cpp
+  src/v20170312/model/DeleteKeyPairsRequest.cpp
+  src/v20170312/model/SystemDisk.cpp
+  src/v20170312/model/ResetInstanceRequest.cpp
+  src/v20170312/model/InstanceTypeConfig.cpp
+  src/v20170312/model/AllocateHostsRequest.cpp
+  src/v20170312/model/LoginSettings.cpp
+  src/v20170312/model/DescribeRegionsResponse.cpp
+  src/v20170312/model/RebootInstancesRequest.cpp
+  src/v20170312/model/AssociateInstancesKeyPairsRequest.cpp
+  src/v20170312/model/ImportKeyPairResponse.cpp
+  src/v20170312/model/DescribeInstancesStatusResponse.cpp
+  src/v20170312/model/ZoneInfo.cpp
+  src/v20170312/model/InquiryPriceModifyInstancesChargeTypeResponse.cpp
+  src/v20170312/model/DescribeKeyPairsResponse.cpp
+  src/v20170312/model/ResetInstancesPasswordRequest.cpp
+  src/v20170312/model/InternetChargeTypeConfig.cpp
+  src/v20170312/model/DescribeImagesResponse.cpp
+  src/v20170312/model/ModifyInstancesVpcAttributeResponse.cpp
+  src/v20170312/model/CreateKeyPairResponse.cpp
+  src/v20170312/model/DescribeInstancesOperationLimitRequest.cpp
+  src/v20170312/model/ModifyInstancesChargeTypeRequest.cpp
+  src/v20170312/model/DescribeInstanceVncUrlRequest.cpp
+  src/v20170312/model/ModifyImageSharePermissionRequest.cpp
+  src/v20170312/model/DisassociateInstancesKeyPairsResponse.cpp
+  src/v20170312/model/InquiryPriceResizeInstanceDisksRequest.cpp
+  src/v20170312/model/RunInstancesResponse.cpp
+  src/v20170312/model/ResetInstancesInternetMaxBandwidthResponse.cpp
+  src/v20170312/model/ModifyInstancesAttributeResponse.cpp
+  src/v20170312/model/ModifyImageSharePermissionResponse.cpp
+  src/v20170312/model/DescribeInstancesOperationLimitResponse.cpp
+  src/v20170312/model/SyncImagesResponse.cpp
+  src/v20170312/model/DescribeZoneInstanceConfigInfosResponse.cpp
+  src/v20170312/model/ModifyInstancesAttributeRequest.cpp
+  src/v20170312/model/RenewHostsRequest.cpp
+  src/v20170312/model/DescribeZonesRequest.cpp
+  src/v20170312/model/StartInstancesRequest.cpp
+  src/v20170312/model/Tag.cpp
+  src/v20170312/model/DescribeInstanceInternetBandwidthConfigsResponse.cpp
+  src/v20170312/model/Placement.cpp
+  src/v20170312/model/DescribeDisasterRecoverGroupsRequest.cpp
+  src/v20170312/model/SyncImagesRequest.cpp
+  src/v20170312/model/DisassociateInstancesKeyPairsRequest.cpp
+  src/v20170312/model/DescribeImageQuotaRequest.cpp
+  src/v20170312/model/DescribeInstanceFamilyConfigsResponse.cpp
+  src/v20170312/model/CreateImageResponse.cpp
+  src/v20170312/model/StopInstancesResponse.cpp
+  src/v20170312/model/InstanceMarketOptionsRequest.cpp
+  src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.cpp
+  src/v20170312/model/ResetInstancesPasswordResponse.cpp
+  src/v20170312/model/InquiryPriceRunInstancesRequest.cpp
+  src/v20170312/model/Image.cpp
+  src/v20170312/model/DescribeDisasterRecoverGroupQuotaResponse.cpp
+  src/v20170312/model/DescribeRegionsRequest.cpp
+  src/v20170312/model/CreateDisasterRecoverGroupRequest.cpp
+  src/v20170312/model/DescribeImportImageOsResponse.cpp
+  src/v20170312/model/ModifyKeyPairAttributeResponse.cpp
+  src/v20170312/model/DataDisk.cpp
+  src/v20170312/model/DescribeKeyPairsRequest.cpp
+  src/v20170312/model/OperationCountLimit.cpp
+  src/v20170312/model/DeleteDisasterRecoverGroupsResponse.cpp
+  src/v20170312/model/HostItem.cpp
+  src/v20170312/model/Externals.cpp
+  src/v20170312/model/InquiryPriceModifyInstancesChargeTypeRequest.cpp
+  src/v20170312/model/CreateImageRequest.cpp
+  src/v20170312/model/Instance.cpp
+  src/v20170312/model/EnhancedService.cpp
+  src/v20170312/model/InquiryPriceResetInstancesTypeRequest.cpp
+  src/v20170312/model/DescribeInstanceVncUrlResponse.cpp
+  src/v20170312/model/DescribeDisasterRecoverGroupsResponse.cpp
+  src/v20170312/model/RunSecurityServiceEnabled.cpp
+  src/v20170312/model/ActionTimer.cpp
+  src/v20170312/model/TagSpecification.cpp
+  src/v20170312/model/ResetInstancesInternetMaxBandwidthRequest.cpp
+  src/v20170312/model/InstanceFamilyConfig.cpp
+  src/v20170312/model/AssociateSecurityGroupsResponse.cpp
+  src/v20170312/model/ImportImageRequest.cpp
+  src/v20170312/model/SpotMarketOptions.cpp
+  src/v20170312/model/DescribeImportImageOsRequest.cpp
+  src/v20170312/model/CreateKeyPairRequest.cpp
+  src/v20170312/model/InstanceStatus.cpp
+  src/v20170312/model/InquiryPriceRenewInstancesResponse.cpp
+  src/v20170312/model/AllocateHostsResponse.cpp
+  src/v20170312/model/DescribeImageSharePermissionRequest.cpp
+  src/v20170312/model/DisasterRecoverGroup.cpp
+  src/v20170312/model/InquiryPriceResetInstanceResponse.cpp
+  src/v20170312/model/DescribeInstanceTypeConfigsRequest.cpp
+  src/v20170312/model/DescribeImageSharePermissionResponse.cpp
+  src/v20170312/model/ModifyHostsAttributeResponse.cpp
+  src/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.cpp
+  src/v20170312/model/StartInstancesResponse.cpp
+  src/v20170312/model/ModifyInstancesVpcAttributeRequest.cpp
+  src/v20170312/model/ChargePrepaid.cpp
+  src/v20170312/model/DescribeInternetChargeTypeConfigsResponse.cpp
+  src/v20170312/model/DescribeZoneInstanceConfigInfosRequest.cpp
+  src/v20170312/model/DescribeZonesResponse.cpp
+  src/v20170312/model/ItemPrice.cpp
+  src/v20170312/model/InstanceTypeQuotaItem.cpp
+  src/v20170312/model/ImageOsList.cpp
+  src/v20170312/model/InquiryPriceRunInstancesResponse.cpp
+  src/v20170312/model/DescribeHostsRequest.cpp
+  src/v20170312/model/ModifyInstancesRenewFlagResponse.cpp
+  src/v20170312/model/DescribeInstancesStatusRequest.cpp
+  src/v20170312/model/InquiryPriceResizeInstanceDisksResponse.cpp
+  src/v20170312/model/TerminateInstancesRequest.cpp
+  src/v20170312/model/SharePermission.cpp
+  src/v20170312/model/DeleteImagesResponse.cpp
+  src/v20170312/model/ImportImageResponse.cpp
+  src/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.cpp
+  src/v20170312/model/RebootInstancesResponse.cpp
+  src/v20170312/model/InquiryPriceResetInstancesTypeResponse.cpp
+  src/v20170312/model/OsVersion.cpp
+  src/v20170312/model/ModifyImageAttributeResponse.cpp
+  src/v20170312/model/InquiryPriceRenewInstancesRequest.cpp
+  src/v20170312/model/DescribeInstancesRequest.cpp
+  src/v20170312/model/RegionInfo.cpp
+  src/v20170312/model/StopInstancesRequest.cpp
+  src/v20170312/model/DescribeInternetChargeTypeConfigsRequest.cpp
+  src/v20170312/model/DescribeImagesRequest.cpp
+  src/v20170312/model/ModifyImageAttributeRequest.cpp
+  src/v20170312/model/ResizeInstanceDisksResponse.cpp
+  src/v20170312/model/ModifyInstancesRenewFlagRequest.cpp
+  src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
+  src/v20170312/model/ModifyHostsAttributeRequest.cpp
+  src/v20170312/model/ImportKeyPairRequest.cpp
+  src/v20170312/model/KeyPair.cpp
+  src/v20170312/model/RenewInstancesResponse.cpp
+  src/v20170312/model/RunMonitorServiceEnabled.cpp
+  src/v20170312/model/ResetInstanceResponse.cpp
+  src/v20170312/model/Filter.cpp
+  src/v20170312/model/VirtualPrivateCloud.cpp
+  src/v20170312/model/InternetBandwidthConfig.cpp
+  src/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.cpp
+  src/v20170312/model/DescribeInstanceTypeConfigsResponse.cpp
+  src/v20170312/model/ResizeInstanceDisksRequest.cpp
+  src/v20170312/model/DescribeInstanceFamilyConfigsRequest.cpp
+  src/v20170312/model/DescribeInstanceInternetBandwidthConfigsRequest.cpp
+  src/v20170312/model/StorageBlock.cpp
+  src/v20170312/model/InternetAccessible.cpp
+  src/v20170312/model/RenewHostsResponse.cpp
+  src/v20170312/model/DisassociateSecurityGroupsResponse.cpp
+  src/v20170312/model/Snapshot.cpp
+  src/v20170312/model/ModifyInstancesProjectResponse.cpp
+  src/v20170312/model/InstanceChargePrepaid.cpp
+  src/v20170312/model/Price.cpp
+  )
+
+set(cvm_include
+    include/tencentcloud/cvm
+  )
+
+add_library(cvm ${LIB_TYPE}
+  ${cvm_public_header}
+  ${cvm_public_header_model}
+  ${cvm_src})
+
+set_target_properties(cvm
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}cvm
+  )
+
+target_include_directories(cvm
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(cvm
+  core)
+
+#install(FILES ${cvm_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cvm/v20170312)
+#install(FILES ${cvm_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cvm/v20170312/model)
+install(DIRECTORY ${cvm_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS cvm
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )

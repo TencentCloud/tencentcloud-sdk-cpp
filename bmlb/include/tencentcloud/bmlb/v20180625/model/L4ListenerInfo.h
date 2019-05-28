@@ -1,0 +1,394 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_BMLB_V20180625_MODEL_L4LISTENERINFO_H_
+#define TENCENTCLOUD_BMLB_V20180625_MODEL_L4LISTENERINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Bmlb
+    {
+        namespace V20180625
+        {
+            namespace Model
+            {
+                /**
+                * 查询绑定了某主机的四层监听器时返回的四层监听器信息。
+
+                */
+                class L4ListenerInfo : public AbstractModel
+                {
+                public:
+                    L4ListenerInfo();
+                    ~L4ListenerInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取监听器ID。
+                     * @return ListenerId 监听器ID。
+                     */
+                    std::string GetListenerId() const;
+
+                    /**
+                     * 设置监听器ID。
+                     * @param ListenerId 监听器ID。
+                     */
+                    void SetListenerId(const std::string& _listenerId);
+
+                    /**
+                     * 判断参数 ListenerId 是否已赋值
+                     * @return ListenerId 是否已赋值
+                     */
+                    bool ListenerIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义的监听器名称。
+                     * @return ListenerName 用户自定义的监听器名称。
+                     */
+                    std::string GetListenerName() const;
+
+                    /**
+                     * 设置用户自定义的监听器名称。
+                     * @param ListenerName 用户自定义的监听器名称。
+                     */
+                    void SetListenerName(const std::string& _listenerName);
+
+                    /**
+                     * 判断参数 ListenerName 是否已赋值
+                     * @return ListenerName 是否已赋值
+                     */
+                    bool ListenerNameHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例监听器协议类型，可选值tcp，udp。
+                     * @return Protocol 负载均衡实例监听器协议类型，可选值tcp，udp。
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置负载均衡实例监听器协议类型，可选值tcp，udp。
+                     * @param Protocol 负载均衡实例监听器协议类型，可选值tcp，udp。
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡监听器的监听接口，可选值1~65535。
+                     * @return LoadBalancerPort 负载均衡监听器的监听接口，可选值1~65535。
+                     */
+                    int64_t GetLoadBalancerPort() const;
+
+                    /**
+                     * 设置负载均衡监听器的监听接口，可选值1~65535。
+                     * @param LoadBalancerPort 负载均衡监听器的监听接口，可选值1~65535。
+                     */
+                    void SetLoadBalancerPort(const int64_t& _loadBalancerPort);
+
+                    /**
+                     * 判断参数 LoadBalancerPort 是否已赋值
+                     * @return LoadBalancerPort 是否已赋值
+                     */
+                    bool LoadBalancerPortHasBeenSet() const;
+
+                    /**
+                     * 获取用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。
+                     * @return Bandwidth 用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。
+                     */
+                    int64_t GetBandwidth() const;
+
+                    /**
+                     * 设置用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。
+                     * @param Bandwidth 用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。
+                     */
+                    void SetBandwidth(const int64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。
+                     * @return ListenerType 监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。
+                     */
+                    std::string GetListenerType() const;
+
+                    /**
+                     * 设置监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。
+                     * @param ListenerType 监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。
+                     */
+                    void SetListenerType(const std::string& _listenerType);
+
+                    /**
+                     * 判断参数 ListenerType 是否已赋值
+                     * @return ListenerType 是否已赋值
+                     */
+                    bool ListenerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取会话保持时间。单位：秒
+                     * @return SessionExpire 会话保持时间。单位：秒
+                     */
+                    int64_t GetSessionExpire() const;
+
+                    /**
+                     * 设置会话保持时间。单位：秒
+                     * @param SessionExpire 会话保持时间。单位：秒
+                     */
+                    void SetSessionExpire(const int64_t& _sessionExpire);
+
+                    /**
+                     * 判断参数 SessionExpire 是否已赋值
+                     * @return SessionExpire 是否已赋值
+                     */
+                    bool SessionExpireHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启了检查：1（开启）、0（关闭）。
+                     * @return HealthSwitch 是否开启了检查：1（开启）、0（关闭）。
+                     */
+                    int64_t GetHealthSwitch() const;
+
+                    /**
+                     * 设置是否开启了检查：1（开启）、0（关闭）。
+                     * @param HealthSwitch 是否开启了检查：1（开启）、0（关闭）。
+                     */
+                    void SetHealthSwitch(const int64_t& _healthSwitch);
+
+                    /**
+                     * 判断参数 HealthSwitch 是否已赋值
+                     * @return HealthSwitch 是否已赋值
+                     */
+                    bool HealthSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取响应超时时间，单位：秒。
+                     * @return TimeOut 响应超时时间，单位：秒。
+                     */
+                    int64_t GetTimeOut() const;
+
+                    /**
+                     * 设置响应超时时间，单位：秒。
+                     * @param TimeOut 响应超时时间，单位：秒。
+                     */
+                    void SetTimeOut(const int64_t& _timeOut);
+
+                    /**
+                     * 判断参数 TimeOut 是否已赋值
+                     * @return TimeOut 是否已赋值
+                     */
+                    bool TimeOutHasBeenSet() const;
+
+                    /**
+                     * 获取检查间隔，单位：秒。
+                     * @return IntervalTime 检查间隔，单位：秒。
+                     */
+                    int64_t GetIntervalTime() const;
+
+                    /**
+                     * 设置检查间隔，单位：秒。
+                     * @param IntervalTime 检查间隔，单位：秒。
+                     */
+                    void SetIntervalTime(const int64_t& _intervalTime);
+
+                    /**
+                     * 判断参数 IntervalTime 是否已赋值
+                     * @return IntervalTime 是否已赋值
+                     */
+                    bool IntervalTimeHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡监听器健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。
+                     * @return HealthNum 负载均衡监听器健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。
+                     */
+                    int64_t GetHealthNum() const;
+
+                    /**
+                     * 设置负载均衡监听器健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。
+                     * @param HealthNum 负载均衡监听器健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。
+                     */
+                    void SetHealthNum(const int64_t& _healthNum);
+
+                    /**
+                     * 判断参数 HealthNum 是否已赋值
+                     * @return HealthNum 是否已赋值
+                     */
+                    bool HealthNumHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡监听器不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。
+                     * @return UnhealthNum 负载均衡监听器不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。
+                     */
+                    int64_t GetUnhealthNum() const;
+
+                    /**
+                     * 设置负载均衡监听器不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。
+                     * @param UnhealthNum 负载均衡监听器不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。
+                     */
+                    void SetUnhealthNum(const int64_t& _unhealthNum);
+
+                    /**
+                     * 判断参数 UnhealthNum 是否已赋值
+                     * @return UnhealthNum 是否已赋值
+                     */
+                    bool UnhealthNumHasBeenSet() const;
+
+                    /**
+                     * 获取监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     * @return Status 监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     * @param Status 监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间戳。
+                     * @return AddTimestamp 创建时间戳。
+                     */
+                    std::string GetAddTimestamp() const;
+
+                    /**
+                     * 设置创建时间戳。
+                     * @param AddTimestamp 创建时间戳。
+                     */
+                    void SetAddTimestamp(const std::string& _addTimestamp);
+
+                    /**
+                     * 判断参数 AddTimestamp 是否已赋值
+                     * @return AddTimestamp 是否已赋值
+                     */
+                    bool AddTimestampHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 监听器ID。
+                     */
+                    std::string m_listenerId;
+                    bool m_listenerIdHasBeenSet;
+
+                    /**
+                     * 用户自定义的监听器名称。
+                     */
+                    std::string m_listenerName;
+                    bool m_listenerNameHasBeenSet;
+
+                    /**
+                     * 负载均衡实例监听器协议类型，可选值tcp，udp。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * 负载均衡监听器的监听接口，可选值1~65535。
+                     */
+                    int64_t m_loadBalancerPort;
+                    bool m_loadBalancerPortHasBeenSet;
+
+                    /**
+                     * 用于计费模式为固定带宽计费，指定监听器最大带宽值，可选值：0-1000，单位：Mbps。
+                     */
+                    int64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 监听器的类别：L4Listener（四层监听器），L7Listener（七层监听器）。
+                     */
+                    std::string m_listenerType;
+                    bool m_listenerTypeHasBeenSet;
+
+                    /**
+                     * 会话保持时间。单位：秒
+                     */
+                    int64_t m_sessionExpire;
+                    bool m_sessionExpireHasBeenSet;
+
+                    /**
+                     * 是否开启了检查：1（开启）、0（关闭）。
+                     */
+                    int64_t m_healthSwitch;
+                    bool m_healthSwitchHasBeenSet;
+
+                    /**
+                     * 响应超时时间，单位：秒。
+                     */
+                    int64_t m_timeOut;
+                    bool m_timeOutHasBeenSet;
+
+                    /**
+                     * 检查间隔，单位：秒。
+                     */
+                    int64_t m_intervalTime;
+                    bool m_intervalTimeHasBeenSet;
+
+                    /**
+                     * 负载均衡监听器健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2-10，单位：次。
+                     */
+                    int64_t m_healthNum;
+                    bool m_healthNumHasBeenSet;
+
+                    /**
+                     * 负载均衡监听器不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发不正常，可选值：2-10，单位：次。
+                     */
+                    int64_t m_unhealthNum;
+                    bool m_unhealthNumHasBeenSet;
+
+                    /**
+                     * 监听器当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 创建时间戳。
+                     */
+                    std::string m_addTimestamp;
+                    bool m_addTimestampHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_BMLB_V20180625_MODEL_L4LISTENERINFO_H_

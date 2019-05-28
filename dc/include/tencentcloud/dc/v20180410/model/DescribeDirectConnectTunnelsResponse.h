@@ -1,0 +1,90 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_DC_V20180410_MODEL_DESCRIBEDIRECTCONNECTTUNNELSRESPONSE_H_
+#define TENCENTCLOUD_DC_V20180410_MODEL_DESCRIBEDIRECTCONNECTTUNNELSRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dc/v20180410/model/DirectConnectTunnel.h>
+
+
+namespace TencentCloud
+{
+    namespace Dc
+    {
+        namespace V20180410
+        {
+            namespace Model
+            {
+                /**
+                * DescribeDirectConnectTunnels返回参数结构体
+                */
+                class DescribeDirectConnectTunnelsResponse : public AbstractModel
+                {
+                public:
+                    DescribeDirectConnectTunnelsResponse();
+                    ~DescribeDirectConnectTunnelsResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+
+
+                    /**
+                     * 获取专用通道列表
+                     * @return DirectConnectTunnelSet 专用通道列表
+                     */
+                    std::vector<DirectConnectTunnel> GetDirectConnectTunnelSet() const;
+
+                    /**
+                     * 判断参数 DirectConnectTunnelSet 是否已赋值
+                     * @return DirectConnectTunnelSet 是否已赋值
+                     */
+                    bool DirectConnectTunnelSetHasBeenSet() const;
+
+                    /**
+                     * 获取符合专用通道数量。
+                     * @return TotalCount 符合专用通道数量。
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 专用通道列表
+                     */
+                    std::vector<DirectConnectTunnel> m_directConnectTunnelSet;
+                    bool m_directConnectTunnelSetHasBeenSet;
+
+                    /**
+                     * 符合专用通道数量。
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_DC_V20180410_MODEL_DESCRIBEDIRECTCONNECTTUNNELSRESPONSE_H_

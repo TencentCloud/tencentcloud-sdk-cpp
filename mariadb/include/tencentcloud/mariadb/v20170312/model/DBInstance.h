@@ -1,0 +1,984 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MARIADB_V20170312_MODEL_DBINSTANCE_H_
+#define TENCENTCLOUD_MARIADB_V20170312_MODEL_DBINSTANCE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Mariadb
+    {
+        namespace V20170312
+        {
+            namespace Model
+            {
+                /**
+                * 描述云数据库实例的详细信息。
+                */
+                class DBInstance : public AbstractModel
+                {
+                public:
+                    DBInstance();
+                    ~DBInstance() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取实例 Id，唯一标识一个 TDSQL 实例
+                     * @return InstanceId 实例 Id，唯一标识一个 TDSQL 实例
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例 Id，唯一标识一个 TDSQL 实例
+                     * @param InstanceId 实例 Id，唯一标识一个 TDSQL 实例
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例名称，用户可修改
+                     * @return InstanceName 实例名称，用户可修改
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称，用户可修改
+                     * @param InstanceName 实例名称，用户可修改
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取实例所属应用 Id
+                     * @return AppId 实例所属应用 Id
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置实例所属应用 Id
+                     * @param AppId 实例所属应用 Id
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例所属项目 Id
+                     * @return ProjectId 实例所属项目 Id
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置实例所属项目 Id
+                     * @param ProjectId 实例所属项目 Id
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例所在地域名称，如 ap-shanghai
+                     * @return Region 实例所在地域名称，如 ap-shanghai
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置实例所在地域名称，如 ap-shanghai
+                     * @param Region 实例所在地域名称，如 ap-shanghai
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取实例所在可用区名称，如 ap-shanghai-1
+                     * @return Zone 实例所在可用区名称，如 ap-shanghai-1
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置实例所在可用区名称，如 ap-shanghai-1
+                     * @param Zone 实例所在可用区名称，如 ap-shanghai-1
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络 Id，基础网络时为 0
+                     * @return VpcId 私有网络 Id，基础网络时为 0
+                     */
+                    int64_t GetVpcId() const;
+
+                    /**
+                     * 设置私有网络 Id，基础网络时为 0
+                     * @param VpcId 私有网络 Id，基础网络时为 0
+                     */
+                    void SetVpcId(const int64_t& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网 Id，基础网络时为 0
+                     * @return SubnetId 子网 Id，基础网络时为 0
+                     */
+                    int64_t GetSubnetId() const;
+
+                    /**
+                     * 设置子网 Id，基础网络时为 0
+                     * @param SubnetId 子网 Id，基础网络时为 0
+                     */
+                    void SetSubnetId(const int64_t& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态：0 创建中，1 流程处理中， 2 运行中，3 实例未初始化，-1 实例已隔离，-2 实例已删除
+                     * @return Status 实例状态：0 创建中，1 流程处理中， 2 运行中，3 实例未初始化，-1 实例已隔离，-2 实例已删除
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置实例状态：0 创建中，1 流程处理中， 2 运行中，3 实例未初始化，-1 实例已隔离，-2 实例已删除
+                     * @param Status 实例状态：0 创建中，1 流程处理中， 2 运行中，3 实例未初始化，-1 实例已隔离，-2 实例已删除
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取内网 IP 地址
+                     * @return Vip 内网 IP 地址
+                     */
+                    std::string GetVip() const;
+
+                    /**
+                     * 设置内网 IP 地址
+                     * @param Vip 内网 IP 地址
+                     */
+                    void SetVip(const std::string& _vip);
+
+                    /**
+                     * 判断参数 Vip 是否已赋值
+                     * @return Vip 是否已赋值
+                     */
+                    bool VipHasBeenSet() const;
+
+                    /**
+                     * 获取内网端口
+                     * @return Vport 内网端口
+                     */
+                    int64_t GetVport() const;
+
+                    /**
+                     * 设置内网端口
+                     * @param Vport 内网端口
+                     */
+                    void SetVport(const int64_t& _vport);
+
+                    /**
+                     * 判断参数 Vport 是否已赋值
+                     * @return Vport 是否已赋值
+                     */
+                    bool VportHasBeenSet() const;
+
+                    /**
+                     * 获取外网访问的域名，公网可解析
+                     * @return WanDomain 外网访问的域名，公网可解析
+                     */
+                    std::string GetWanDomain() const;
+
+                    /**
+                     * 设置外网访问的域名，公网可解析
+                     * @param WanDomain 外网访问的域名，公网可解析
+                     */
+                    void SetWanDomain(const std::string& _wanDomain);
+
+                    /**
+                     * 判断参数 WanDomain 是否已赋值
+                     * @return WanDomain 是否已赋值
+                     */
+                    bool WanDomainHasBeenSet() const;
+
+                    /**
+                     * 获取外网 IP 地址，公网可访问
+                     * @return WanVip 外网 IP 地址，公网可访问
+                     */
+                    std::string GetWanVip() const;
+
+                    /**
+                     * 设置外网 IP 地址，公网可访问
+                     * @param WanVip 外网 IP 地址，公网可访问
+                     */
+                    void SetWanVip(const std::string& _wanVip);
+
+                    /**
+                     * 判断参数 WanVip 是否已赋值
+                     * @return WanVip 是否已赋值
+                     */
+                    bool WanVipHasBeenSet() const;
+
+                    /**
+                     * 获取外网端口
+                     * @return WanPort 外网端口
+                     */
+                    int64_t GetWanPort() const;
+
+                    /**
+                     * 设置外网端口
+                     * @param WanPort 外网端口
+                     */
+                    void SetWanPort(const int64_t& _wanPort);
+
+                    /**
+                     * 判断参数 WanPort 是否已赋值
+                     * @return WanPort 是否已赋值
+                     */
+                    bool WanPortHasBeenSet() const;
+
+                    /**
+                     * 获取实例创建时间，格式为 2006-01-02 15:04:05
+                     * @return CreateTime 实例创建时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置实例创建时间，格式为 2006-01-02 15:04:05
+                     * @param CreateTime 实例创建时间，格式为 2006-01-02 15:04:05
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例最后更新时间，格式为 2006-01-02 15:04:05
+                     * @return UpdateTime 实例最后更新时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置实例最后更新时间，格式为 2006-01-02 15:04:05
+                     * @param UpdateTime 实例最后更新时间，格式为 2006-01-02 15:04:05
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费标志：0 否，1 是
+                     * @return AutoRenewFlag 自动续费标志：0 否，1 是
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标志：0 否，1 是
+                     * @param AutoRenewFlag 自动续费标志：0 否，1 是
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取实例到期时间，格式为 2006-01-02 15:04:05
+                     * @return PeriodEndTime 实例到期时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string GetPeriodEndTime() const;
+
+                    /**
+                     * 设置实例到期时间，格式为 2006-01-02 15:04:05
+                     * @param PeriodEndTime 实例到期时间，格式为 2006-01-02 15:04:05
+                     */
+                    void SetPeriodEndTime(const std::string& _periodEndTime);
+
+                    /**
+                     * 判断参数 PeriodEndTime 是否已赋值
+                     * @return PeriodEndTime 是否已赋值
+                     */
+                    bool PeriodEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例所属账号
+                     * @return Uin 实例所属账号
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置实例所属账号
+                     * @param Uin 实例所属账号
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取TDSQL 版本信息
+                     * @return TdsqlVersion TDSQL 版本信息
+                     */
+                    std::string GetTdsqlVersion() const;
+
+                    /**
+                     * 设置TDSQL 版本信息
+                     * @param TdsqlVersion TDSQL 版本信息
+                     */
+                    void SetTdsqlVersion(const std::string& _tdsqlVersion);
+
+                    /**
+                     * 判断参数 TdsqlVersion 是否已赋值
+                     * @return TdsqlVersion 是否已赋值
+                     */
+                    bool TdsqlVersionHasBeenSet() const;
+
+                    /**
+                     * 获取实例内存大小，单位 GB
+                     * @return Memory 实例内存大小，单位 GB
+                     */
+                    int64_t GetMemory() const;
+
+                    /**
+                     * 设置实例内存大小，单位 GB
+                     * @param Memory 实例内存大小，单位 GB
+                     */
+                    void SetMemory(const int64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取实例存储大小，单位 GB
+                     * @return Storage 实例存储大小，单位 GB
+                     */
+                    int64_t GetStorage() const;
+
+                    /**
+                     * 设置实例存储大小，单位 GB
+                     * @param Storage 实例存储大小，单位 GB
+                     */
+                    void SetStorage(const int64_t& _storage);
+
+                    /**
+                     * 判断参数 Storage 是否已赋值
+                     * @return Storage 是否已赋值
+                     */
+                    bool StorageHasBeenSet() const;
+
+                    /**
+                     * 获取字符串型的私有网络Id
+                     * @return UniqueVpcId 字符串型的私有网络Id
+                     */
+                    std::string GetUniqueVpcId() const;
+
+                    /**
+                     * 设置字符串型的私有网络Id
+                     * @param UniqueVpcId 字符串型的私有网络Id
+                     */
+                    void SetUniqueVpcId(const std::string& _uniqueVpcId);
+
+                    /**
+                     * 判断参数 UniqueVpcId 是否已赋值
+                     * @return UniqueVpcId 是否已赋值
+                     */
+                    bool UniqueVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取字符串型的私有网络子网Id
+                     * @return UniqueSubnetId 字符串型的私有网络子网Id
+                     */
+                    std::string GetUniqueSubnetId() const;
+
+                    /**
+                     * 设置字符串型的私有网络子网Id
+                     * @param UniqueSubnetId 字符串型的私有网络子网Id
+                     */
+                    void SetUniqueSubnetId(const std::string& _uniqueSubnetId);
+
+                    /**
+                     * 判断参数 UniqueSubnetId 是否已赋值
+                     * @return UniqueSubnetId 是否已赋值
+                     */
+                    bool UniqueSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取原始实例ID（过时字段，请勿依赖该值）
+                     * @return OriginSerialId 原始实例ID（过时字段，请勿依赖该值）
+                     */
+                    std::string GetOriginSerialId() const;
+
+                    /**
+                     * 设置原始实例ID（过时字段，请勿依赖该值）
+                     * @param OriginSerialId 原始实例ID（过时字段，请勿依赖该值）
+                     */
+                    void SetOriginSerialId(const std::string& _originSerialId);
+
+                    /**
+                     * 判断参数 OriginSerialId 是否已赋值
+                     * @return OriginSerialId 是否已赋值
+                     */
+                    bool OriginSerialIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点数，2为一主一从，3为一主二从
+                     * @return NodeCount 节点数，2为一主一从，3为一主二从
+                     */
+                    uint64_t GetNodeCount() const;
+
+                    /**
+                     * 设置节点数，2为一主一从，3为一主二从
+                     * @param NodeCount 节点数，2为一主一从，3为一主二从
+                     */
+                    void SetNodeCount(const uint64_t& _nodeCount);
+
+                    /**
+                     * 判断参数 NodeCount 是否已赋值
+                     * @return NodeCount 是否已赋值
+                     */
+                    bool NodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取是否临时实例，0为否，非0为是
+                     * @return IsTmp 是否临时实例，0为否，非0为是
+                     */
+                    uint64_t GetIsTmp() const;
+
+                    /**
+                     * 设置是否临时实例，0为否，非0为是
+                     * @param IsTmp 是否临时实例，0为否，非0为是
+                     */
+                    void SetIsTmp(const uint64_t& _isTmp);
+
+                    /**
+                     * 判断参数 IsTmp 是否已赋值
+                     * @return IsTmp 是否已赋值
+                     */
+                    bool IsTmpHasBeenSet() const;
+
+                    /**
+                     * 获取独享集群Id，为空表示为普通实例
+                     * @return ExclusterId 独享集群Id，为空表示为普通实例
+                     */
+                    std::string GetExclusterId() const;
+
+                    /**
+                     * 设置独享集群Id，为空表示为普通实例
+                     * @param ExclusterId 独享集群Id，为空表示为普通实例
+                     */
+                    void SetExclusterId(const std::string& _exclusterId);
+
+                    /**
+                     * 判断参数 ExclusterId 是否已赋值
+                     * @return ExclusterId 是否已赋值
+                     */
+                    bool ExclusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取数字实例Id（过时字段，请勿依赖该值）
+                     * @return Id 数字实例Id（过时字段，请勿依赖该值）
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置数字实例Id（过时字段，请勿依赖该值）
+                     * @param Id 数字实例Id（过时字段，请勿依赖该值）
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取产品类型 Id
+                     * @return Pid 产品类型 Id
+                     */
+                    int64_t GetPid() const;
+
+                    /**
+                     * 设置产品类型 Id
+                     * @param Pid 产品类型 Id
+                     */
+                    void SetPid(const int64_t& _pid);
+
+                    /**
+                     * 判断参数 Pid 是否已赋值
+                     * @return Pid 是否已赋值
+                     */
+                    bool PidHasBeenSet() const;
+
+                    /**
+                     * 获取最大 Qps 值
+                     * @return Qps 最大 Qps 值
+                     */
+                    int64_t GetQps() const;
+
+                    /**
+                     * 设置最大 Qps 值
+                     * @param Qps 最大 Qps 值
+                     */
+                    void SetQps(const int64_t& _qps);
+
+                    /**
+                     * 判断参数 Qps 是否已赋值
+                     * @return Qps 是否已赋值
+                     */
+                    bool QpsHasBeenSet() const;
+
+                    /**
+                     * 获取付费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Paymode 付费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymode() const;
+
+                    /**
+                     * 设置付费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Paymode 付费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymode(const std::string& _paymode);
+
+                    /**
+                     * 判断参数 Paymode 是否已赋值
+                     * @return Paymode 是否已赋值
+                     */
+                    bool PaymodeHasBeenSet() const;
+
+                    /**
+                     * 获取实例处于异步任务时的异步任务流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Locker 实例处于异步任务时的异步任务流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLocker() const;
+
+                    /**
+                     * 设置实例处于异步任务时的异步任务流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Locker 实例处于异步任务时的异步任务流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocker(const int64_t& _locker);
+
+                    /**
+                     * 判断参数 Locker 是否已赋值
+                     * @return Locker 是否已赋值
+                     */
+                    bool LockerHasBeenSet() const;
+
+                    /**
+                     * 获取实例目前运行状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusDesc 实例目前运行状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatusDesc() const;
+
+                    /**
+                     * 设置实例目前运行状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatusDesc 实例目前运行状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatusDesc(const std::string& _statusDesc);
+
+                    /**
+                     * 判断参数 StatusDesc 是否已赋值
+                     * @return StatusDesc 是否已赋值
+                     */
+                    bool StatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取外网状态，0-未开通；1-已开通；2-关闭；3-开通中
+                     * @return WanStatus 外网状态，0-未开通；1-已开通；2-关闭；3-开通中
+                     */
+                    int64_t GetWanStatus() const;
+
+                    /**
+                     * 设置外网状态，0-未开通；1-已开通；2-关闭；3-开通中
+                     * @param WanStatus 外网状态，0-未开通；1-已开通；2-关闭；3-开通中
+                     */
+                    void SetWanStatus(const int64_t& _wanStatus);
+
+                    /**
+                     * 判断参数 WanStatus 是否已赋值
+                     * @return WanStatus 是否已赋值
+                     */
+                    bool WanStatusHasBeenSet() const;
+
+                    /**
+                     * 获取该实例是否支持审计。1-支持；0-不支持
+                     * @return IsAuditSupported 该实例是否支持审计。1-支持；0-不支持
+                     */
+                    uint64_t GetIsAuditSupported() const;
+
+                    /**
+                     * 设置该实例是否支持审计。1-支持；0-不支持
+                     * @param IsAuditSupported 该实例是否支持审计。1-支持；0-不支持
+                     */
+                    void SetIsAuditSupported(const uint64_t& _isAuditSupported);
+
+                    /**
+                     * 判断参数 IsAuditSupported 是否已赋值
+                     * @return IsAuditSupported 是否已赋值
+                     */
+                    bool IsAuditSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取机器型号
+                     * @return Machine 机器型号
+                     */
+                    std::string GetMachine() const;
+
+                    /**
+                     * 设置机器型号
+                     * @param Machine 机器型号
+                     */
+                    void SetMachine(const std::string& _machine);
+
+                    /**
+                     * 判断参数 Machine 是否已赋值
+                     * @return Machine 是否已赋值
+                     */
+                    bool MachineHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持数据加密。1-支持；0-不支持
+                     * @return IsEncryptSupported 是否支持数据加密。1-支持；0-不支持
+                     */
+                    int64_t GetIsEncryptSupported() const;
+
+                    /**
+                     * 设置是否支持数据加密。1-支持；0-不支持
+                     * @param IsEncryptSupported 是否支持数据加密。1-支持；0-不支持
+                     */
+                    void SetIsEncryptSupported(const int64_t& _isEncryptSupported);
+
+                    /**
+                     * 判断参数 IsEncryptSupported 是否已赋值
+                     * @return IsEncryptSupported 是否已赋值
+                     */
+                    bool IsEncryptSupportedHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 实例 Id，唯一标识一个 TDSQL 实例
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 实例名称，用户可修改
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 实例所属应用 Id
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 实例所属项目 Id
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 实例所在地域名称，如 ap-shanghai
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 实例所在可用区名称，如 ap-shanghai-1
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 私有网络 Id，基础网络时为 0
+                     */
+                    int64_t m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 子网 Id，基础网络时为 0
+                     */
+                    int64_t m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 实例状态：0 创建中，1 流程处理中， 2 运行中，3 实例未初始化，-1 实例已隔离，-2 实例已删除
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 内网 IP 地址
+                     */
+                    std::string m_vip;
+                    bool m_vipHasBeenSet;
+
+                    /**
+                     * 内网端口
+                     */
+                    int64_t m_vport;
+                    bool m_vportHasBeenSet;
+
+                    /**
+                     * 外网访问的域名，公网可解析
+                     */
+                    std::string m_wanDomain;
+                    bool m_wanDomainHasBeenSet;
+
+                    /**
+                     * 外网 IP 地址，公网可访问
+                     */
+                    std::string m_wanVip;
+                    bool m_wanVipHasBeenSet;
+
+                    /**
+                     * 外网端口
+                     */
+                    int64_t m_wanPort;
+                    bool m_wanPortHasBeenSet;
+
+                    /**
+                     * 实例创建时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 实例最后更新时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 自动续费标志：0 否，1 是
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 实例到期时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string m_periodEndTime;
+                    bool m_periodEndTimeHasBeenSet;
+
+                    /**
+                     * 实例所属账号
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * TDSQL 版本信息
+                     */
+                    std::string m_tdsqlVersion;
+                    bool m_tdsqlVersionHasBeenSet;
+
+                    /**
+                     * 实例内存大小，单位 GB
+                     */
+                    int64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 实例存储大小，单位 GB
+                     */
+                    int64_t m_storage;
+                    bool m_storageHasBeenSet;
+
+                    /**
+                     * 字符串型的私有网络Id
+                     */
+                    std::string m_uniqueVpcId;
+                    bool m_uniqueVpcIdHasBeenSet;
+
+                    /**
+                     * 字符串型的私有网络子网Id
+                     */
+                    std::string m_uniqueSubnetId;
+                    bool m_uniqueSubnetIdHasBeenSet;
+
+                    /**
+                     * 原始实例ID（过时字段，请勿依赖该值）
+                     */
+                    std::string m_originSerialId;
+                    bool m_originSerialIdHasBeenSet;
+
+                    /**
+                     * 节点数，2为一主一从，3为一主二从
+                     */
+                    uint64_t m_nodeCount;
+                    bool m_nodeCountHasBeenSet;
+
+                    /**
+                     * 是否临时实例，0为否，非0为是
+                     */
+                    uint64_t m_isTmp;
+                    bool m_isTmpHasBeenSet;
+
+                    /**
+                     * 独享集群Id，为空表示为普通实例
+                     */
+                    std::string m_exclusterId;
+                    bool m_exclusterIdHasBeenSet;
+
+                    /**
+                     * 数字实例Id（过时字段，请勿依赖该值）
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 产品类型 Id
+                     */
+                    int64_t m_pid;
+                    bool m_pidHasBeenSet;
+
+                    /**
+                     * 最大 Qps 值
+                     */
+                    int64_t m_qps;
+                    bool m_qpsHasBeenSet;
+
+                    /**
+                     * 付费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymode;
+                    bool m_paymodeHasBeenSet;
+
+                    /**
+                     * 实例处于异步任务时的异步任务流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_locker;
+                    bool m_lockerHasBeenSet;
+
+                    /**
+                     * 实例目前运行状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_statusDesc;
+                    bool m_statusDescHasBeenSet;
+
+                    /**
+                     * 外网状态，0-未开通；1-已开通；2-关闭；3-开通中
+                     */
+                    int64_t m_wanStatus;
+                    bool m_wanStatusHasBeenSet;
+
+                    /**
+                     * 该实例是否支持审计。1-支持；0-不支持
+                     */
+                    uint64_t m_isAuditSupported;
+                    bool m_isAuditSupportedHasBeenSet;
+
+                    /**
+                     * 机器型号
+                     */
+                    std::string m_machine;
+                    bool m_machineHasBeenSet;
+
+                    /**
+                     * 是否支持数据加密。1-支持；0-不支持
+                     */
+                    int64_t m_isEncryptSupported;
+                    bool m_isEncryptSupportedHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MARIADB_V20170312_MODEL_DBINSTANCE_H_

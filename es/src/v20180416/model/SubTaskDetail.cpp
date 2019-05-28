@@ -1,0 +1,147 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/es/v20180416/model/SubTaskDetail.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Es::V20180416::Model;
+using namespace rapidjson;
+using namespace std;
+
+SubTaskDetail::SubTaskDetail() :
+    m_nameHasBeenSet(false),
+    m_resultHasBeenSet(false),
+    m_errMsgHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome SubTaskDetail::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubTaskDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Result") && !value["Result"].IsNull())
+    {
+        if (!value["Result"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `SubTaskDetail.Result` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_result = value["Result"].GetBool();
+        m_resultHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubTaskDetail.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void SubTaskDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_result, allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string SubTaskDetail::GetName() const
+{
+    return m_name;
+}
+
+void SubTaskDetail::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool SubTaskDetail::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+bool SubTaskDetail::GetResult() const
+{
+    return m_result;
+}
+
+void SubTaskDetail::SetResult(const bool& _result)
+{
+    m_result = _result;
+    m_resultHasBeenSet = true;
+}
+
+bool SubTaskDetail::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
+
+string SubTaskDetail::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void SubTaskDetail::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool SubTaskDetail::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
+

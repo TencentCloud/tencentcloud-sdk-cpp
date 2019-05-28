@@ -1,0 +1,497 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/live/v20180801/model/PushDataInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Live::V20180801::Model;
+using namespace rapidjson;
+using namespace std;
+
+PushDataInfo::PushDataInfo() :
+    m_streamNameHasBeenSet(false),
+    m_appNameHasBeenSet(false),
+    m_clientIpHasBeenSet(false),
+    m_serverIpHasBeenSet(false),
+    m_videoFpsHasBeenSet(false),
+    m_videoSpeedHasBeenSet(false),
+    m_audioFpsHasBeenSet(false),
+    m_audioSpeedHasBeenSet(false),
+    m_pushDomainHasBeenSet(false),
+    m_beginPushTimeHasBeenSet(false),
+    m_acodecHasBeenSet(false),
+    m_vcodecHasBeenSet(false),
+    m_resolutionHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome PushDataInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("StreamName") && !value["StreamName"].IsNull())
+    {
+        if (!value["StreamName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_streamName = string(value["StreamName"].GetString());
+        m_streamNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppName") && !value["AppName"].IsNull())
+    {
+        if (!value["AppName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appName = string(value["AppName"].GetString());
+        m_appNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientIp") && !value["ClientIp"].IsNull())
+    {
+        if (!value["ClientIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIp = string(value["ClientIp"].GetString());
+        m_clientIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerIp") && !value["ServerIp"].IsNull())
+    {
+        if (!value["ServerIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.ServerIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverIp = string(value["ServerIp"].GetString());
+        m_serverIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoFps") && !value["VideoFps"].IsNull())
+    {
+        if (!value["VideoFps"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.VideoFps` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoFps = value["VideoFps"].GetUint64();
+        m_videoFpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoSpeed") && !value["VideoSpeed"].IsNull())
+    {
+        if (!value["VideoSpeed"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.VideoSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoSpeed = value["VideoSpeed"].GetUint64();
+        m_videoSpeedHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioFps") && !value["AudioFps"].IsNull())
+    {
+        if (!value["AudioFps"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.AudioFps` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioFps = value["AudioFps"].GetUint64();
+        m_audioFpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioSpeed") && !value["AudioSpeed"].IsNull())
+    {
+        if (!value["AudioSpeed"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.AudioSpeed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioSpeed = value["AudioSpeed"].GetUint64();
+        m_audioSpeedHasBeenSet = true;
+    }
+
+    if (value.HasMember("PushDomain") && !value["PushDomain"].IsNull())
+    {
+        if (!value["PushDomain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.PushDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pushDomain = string(value["PushDomain"].GetString());
+        m_pushDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("BeginPushTime") && !value["BeginPushTime"].IsNull())
+    {
+        if (!value["BeginPushTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.BeginPushTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginPushTime = string(value["BeginPushTime"].GetString());
+        m_beginPushTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Acodec") && !value["Acodec"].IsNull())
+    {
+        if (!value["Acodec"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.Acodec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_acodec = string(value["Acodec"].GetString());
+        m_acodecHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vcodec") && !value["Vcodec"].IsNull())
+    {
+        if (!value["Vcodec"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.Vcodec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vcodec = string(value["Vcodec"].GetString());
+        m_vcodecHasBeenSet = true;
+    }
+
+    if (value.HasMember("Resolution") && !value["Resolution"].IsNull())
+    {
+        if (!value["Resolution"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolution = string(value["Resolution"].GetString());
+        m_resolutionHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_streamNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clientIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serverIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_videoFpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VideoFps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_videoFps, allocator);
+    }
+
+    if (m_videoSpeedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VideoSpeed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_videoSpeed, allocator);
+    }
+
+    if (m_audioFpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AudioFps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioFps, allocator);
+    }
+
+    if (m_audioSpeedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AudioSpeed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioSpeed, allocator);
+    }
+
+    if (m_pushDomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PushDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_pushDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_beginPushTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BeginPushTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_beginPushTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_acodecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Acodec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_acodec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vcodecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vcodec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vcodec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resolutionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Resolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string PushDataInfo::GetStreamName() const
+{
+    return m_streamName;
+}
+
+void PushDataInfo::SetStreamName(const string& _streamName)
+{
+    m_streamName = _streamName;
+    m_streamNameHasBeenSet = true;
+}
+
+bool PushDataInfo::StreamNameHasBeenSet() const
+{
+    return m_streamNameHasBeenSet;
+}
+
+string PushDataInfo::GetAppName() const
+{
+    return m_appName;
+}
+
+void PushDataInfo::SetAppName(const string& _appName)
+{
+    m_appName = _appName;
+    m_appNameHasBeenSet = true;
+}
+
+bool PushDataInfo::AppNameHasBeenSet() const
+{
+    return m_appNameHasBeenSet;
+}
+
+string PushDataInfo::GetClientIp() const
+{
+    return m_clientIp;
+}
+
+void PushDataInfo::SetClientIp(const string& _clientIp)
+{
+    m_clientIp = _clientIp;
+    m_clientIpHasBeenSet = true;
+}
+
+bool PushDataInfo::ClientIpHasBeenSet() const
+{
+    return m_clientIpHasBeenSet;
+}
+
+string PushDataInfo::GetServerIp() const
+{
+    return m_serverIp;
+}
+
+void PushDataInfo::SetServerIp(const string& _serverIp)
+{
+    m_serverIp = _serverIp;
+    m_serverIpHasBeenSet = true;
+}
+
+bool PushDataInfo::ServerIpHasBeenSet() const
+{
+    return m_serverIpHasBeenSet;
+}
+
+uint64_t PushDataInfo::GetVideoFps() const
+{
+    return m_videoFps;
+}
+
+void PushDataInfo::SetVideoFps(const uint64_t& _videoFps)
+{
+    m_videoFps = _videoFps;
+    m_videoFpsHasBeenSet = true;
+}
+
+bool PushDataInfo::VideoFpsHasBeenSet() const
+{
+    return m_videoFpsHasBeenSet;
+}
+
+uint64_t PushDataInfo::GetVideoSpeed() const
+{
+    return m_videoSpeed;
+}
+
+void PushDataInfo::SetVideoSpeed(const uint64_t& _videoSpeed)
+{
+    m_videoSpeed = _videoSpeed;
+    m_videoSpeedHasBeenSet = true;
+}
+
+bool PushDataInfo::VideoSpeedHasBeenSet() const
+{
+    return m_videoSpeedHasBeenSet;
+}
+
+uint64_t PushDataInfo::GetAudioFps() const
+{
+    return m_audioFps;
+}
+
+void PushDataInfo::SetAudioFps(const uint64_t& _audioFps)
+{
+    m_audioFps = _audioFps;
+    m_audioFpsHasBeenSet = true;
+}
+
+bool PushDataInfo::AudioFpsHasBeenSet() const
+{
+    return m_audioFpsHasBeenSet;
+}
+
+uint64_t PushDataInfo::GetAudioSpeed() const
+{
+    return m_audioSpeed;
+}
+
+void PushDataInfo::SetAudioSpeed(const uint64_t& _audioSpeed)
+{
+    m_audioSpeed = _audioSpeed;
+    m_audioSpeedHasBeenSet = true;
+}
+
+bool PushDataInfo::AudioSpeedHasBeenSet() const
+{
+    return m_audioSpeedHasBeenSet;
+}
+
+string PushDataInfo::GetPushDomain() const
+{
+    return m_pushDomain;
+}
+
+void PushDataInfo::SetPushDomain(const string& _pushDomain)
+{
+    m_pushDomain = _pushDomain;
+    m_pushDomainHasBeenSet = true;
+}
+
+bool PushDataInfo::PushDomainHasBeenSet() const
+{
+    return m_pushDomainHasBeenSet;
+}
+
+string PushDataInfo::GetBeginPushTime() const
+{
+    return m_beginPushTime;
+}
+
+void PushDataInfo::SetBeginPushTime(const string& _beginPushTime)
+{
+    m_beginPushTime = _beginPushTime;
+    m_beginPushTimeHasBeenSet = true;
+}
+
+bool PushDataInfo::BeginPushTimeHasBeenSet() const
+{
+    return m_beginPushTimeHasBeenSet;
+}
+
+string PushDataInfo::GetAcodec() const
+{
+    return m_acodec;
+}
+
+void PushDataInfo::SetAcodec(const string& _acodec)
+{
+    m_acodec = _acodec;
+    m_acodecHasBeenSet = true;
+}
+
+bool PushDataInfo::AcodecHasBeenSet() const
+{
+    return m_acodecHasBeenSet;
+}
+
+string PushDataInfo::GetVcodec() const
+{
+    return m_vcodec;
+}
+
+void PushDataInfo::SetVcodec(const string& _vcodec)
+{
+    m_vcodec = _vcodec;
+    m_vcodecHasBeenSet = true;
+}
+
+bool PushDataInfo::VcodecHasBeenSet() const
+{
+    return m_vcodecHasBeenSet;
+}
+
+string PushDataInfo::GetResolution() const
+{
+    return m_resolution;
+}
+
+void PushDataInfo::SetResolution(const string& _resolution)
+{
+    m_resolution = _resolution;
+    m_resolutionHasBeenSet = true;
+}
+
+bool PushDataInfo::ResolutionHasBeenSet() const
+{
+    return m_resolutionHasBeenSet;
+}
+

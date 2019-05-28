@@ -1,0 +1,182 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/vpc/v20170312/model/CustomerGateway.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Vpc::V20170312::Model;
+using namespace rapidjson;
+using namespace std;
+
+CustomerGateway::CustomerGateway() :
+    m_customerGatewayIdHasBeenSet(false),
+    m_customerGatewayNameHasBeenSet(false),
+    m_ipAddressHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome CustomerGateway::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("CustomerGatewayId") && !value["CustomerGatewayId"].IsNull())
+    {
+        if (!value["CustomerGatewayId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CustomerGateway.CustomerGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customerGatewayId = string(value["CustomerGatewayId"].GetString());
+        m_customerGatewayIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomerGatewayName") && !value["CustomerGatewayName"].IsNull())
+    {
+        if (!value["CustomerGatewayName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CustomerGateway.CustomerGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customerGatewayName = string(value["CustomerGatewayName"].GetString());
+        m_customerGatewayNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpAddress") && !value["IpAddress"].IsNull())
+    {
+        if (!value["IpAddress"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CustomerGateway.IpAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipAddress = string(value["IpAddress"].GetString());
+        m_ipAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CustomerGateway.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void CustomerGateway::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_customerGatewayIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomerGatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_customerGatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerGatewayNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomerGatewayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_customerGatewayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_ipAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string CustomerGateway::GetCustomerGatewayId() const
+{
+    return m_customerGatewayId;
+}
+
+void CustomerGateway::SetCustomerGatewayId(const string& _customerGatewayId)
+{
+    m_customerGatewayId = _customerGatewayId;
+    m_customerGatewayIdHasBeenSet = true;
+}
+
+bool CustomerGateway::CustomerGatewayIdHasBeenSet() const
+{
+    return m_customerGatewayIdHasBeenSet;
+}
+
+string CustomerGateway::GetCustomerGatewayName() const
+{
+    return m_customerGatewayName;
+}
+
+void CustomerGateway::SetCustomerGatewayName(const string& _customerGatewayName)
+{
+    m_customerGatewayName = _customerGatewayName;
+    m_customerGatewayNameHasBeenSet = true;
+}
+
+bool CustomerGateway::CustomerGatewayNameHasBeenSet() const
+{
+    return m_customerGatewayNameHasBeenSet;
+}
+
+string CustomerGateway::GetIpAddress() const
+{
+    return m_ipAddress;
+}
+
+void CustomerGateway::SetIpAddress(const string& _ipAddress)
+{
+    m_ipAddress = _ipAddress;
+    m_ipAddressHasBeenSet = true;
+}
+
+bool CustomerGateway::IpAddressHasBeenSet() const
+{
+    return m_ipAddressHasBeenSet;
+}
+
+string CustomerGateway::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void CustomerGateway::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool CustomerGateway::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
+}
+

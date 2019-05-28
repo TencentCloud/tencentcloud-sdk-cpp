@@ -1,0 +1,220 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/live/v20180801/model/UpdateLiveWatermarkRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Live::V20180801::Model;
+using namespace rapidjson;
+using namespace std;
+
+UpdateLiveWatermarkRequest::UpdateLiveWatermarkRequest() :
+    m_watermarkIdHasBeenSet(false),
+    m_pictureUrlHasBeenSet(false),
+    m_xPositionHasBeenSet(false),
+    m_yPositionHasBeenSet(false),
+    m_watermarkNameHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false)
+{
+}
+
+string UpdateLiveWatermarkRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_watermarkIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WatermarkId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_watermarkId, allocator);
+    }
+
+    if (m_pictureUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PictureUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_pictureUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_xPositionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "XPosition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_xPosition, allocator);
+    }
+
+    if (m_yPositionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "YPosition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_yPosition, allocator);
+    }
+
+    if (m_watermarkNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WatermarkName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_watermarkName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_widthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_height, allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+int64_t UpdateLiveWatermarkRequest::GetWatermarkId() const
+{
+    return m_watermarkId;
+}
+
+void UpdateLiveWatermarkRequest::SetWatermarkId(const int64_t& _watermarkId)
+{
+    m_watermarkId = _watermarkId;
+    m_watermarkIdHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::WatermarkIdHasBeenSet() const
+{
+    return m_watermarkIdHasBeenSet;
+}
+
+string UpdateLiveWatermarkRequest::GetPictureUrl() const
+{
+    return m_pictureUrl;
+}
+
+void UpdateLiveWatermarkRequest::SetPictureUrl(const string& _pictureUrl)
+{
+    m_pictureUrl = _pictureUrl;
+    m_pictureUrlHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::PictureUrlHasBeenSet() const
+{
+    return m_pictureUrlHasBeenSet;
+}
+
+int64_t UpdateLiveWatermarkRequest::GetXPosition() const
+{
+    return m_xPosition;
+}
+
+void UpdateLiveWatermarkRequest::SetXPosition(const int64_t& _xPosition)
+{
+    m_xPosition = _xPosition;
+    m_xPositionHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::XPositionHasBeenSet() const
+{
+    return m_xPositionHasBeenSet;
+}
+
+int64_t UpdateLiveWatermarkRequest::GetYPosition() const
+{
+    return m_yPosition;
+}
+
+void UpdateLiveWatermarkRequest::SetYPosition(const int64_t& _yPosition)
+{
+    m_yPosition = _yPosition;
+    m_yPositionHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::YPositionHasBeenSet() const
+{
+    return m_yPositionHasBeenSet;
+}
+
+string UpdateLiveWatermarkRequest::GetWatermarkName() const
+{
+    return m_watermarkName;
+}
+
+void UpdateLiveWatermarkRequest::SetWatermarkName(const string& _watermarkName)
+{
+    m_watermarkName = _watermarkName;
+    m_watermarkNameHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::WatermarkNameHasBeenSet() const
+{
+    return m_watermarkNameHasBeenSet;
+}
+
+int64_t UpdateLiveWatermarkRequest::GetWidth() const
+{
+    return m_width;
+}
+
+void UpdateLiveWatermarkRequest::SetWidth(const int64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+int64_t UpdateLiveWatermarkRequest::GetHeight() const
+{
+    return m_height;
+}
+
+void UpdateLiveWatermarkRequest::SetHeight(const int64_t& _height)
+{
+    m_height = _height;
+    m_heightHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
+}
+
+

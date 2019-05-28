@@ -1,0 +1,77 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/iot/v20180123/model/ServiceAction.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Iot::V20180123::Model;
+using namespace rapidjson;
+using namespace std;
+
+ServiceAction::ServiceAction() :
+    m_urlHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome ServiceAction::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ServiceAction.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void ServiceAction::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_urlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string ServiceAction::GetUrl() const
+{
+    return m_url;
+}
+
+void ServiceAction::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool ServiceAction::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+

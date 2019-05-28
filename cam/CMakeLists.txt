@@ -1,0 +1,204 @@
+#
+# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(cam_public_header
+  include/tencentcloud/cam/v20190116/CamClient.h
+  )
+
+set(cam_public_header_model
+  include/tencentcloud/cam/v20190116/model/UpdateUserRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdateGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/ListPoliciesResponse.h
+  include/tencentcloud/cam/v20190116/model/StrategyInfo.h
+  include/tencentcloud/cam/v20190116/model/CreateSAMLProviderRequest.h
+  include/tencentcloud/cam/v20190116/model/DeleteSAMLProviderRequest.h
+  include/tencentcloud/cam/v20190116/model/AttachPolicyInfo.h
+  include/tencentcloud/cam/v20190116/model/GroupIdOfUidInfo.h
+  include/tencentcloud/cam/v20190116/model/GetSAMLProviderResponse.h
+  include/tencentcloud/cam/v20190116/model/DeleteUserRequest.h
+  include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/GroupInfo.h
+  include/tencentcloud/cam/v20190116/model/ListSAMLProvidersResponse.h
+  include/tencentcloud/cam/v20190116/model/AttachUserPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/GetPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/DeleteUserResponse.h
+  include/tencentcloud/cam/v20190116/model/AddUserToGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/RemoveUserFromGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/AttachGroupPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdateGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/DeleteSAMLProviderResponse.h
+  include/tencentcloud/cam/v20190116/model/DeleteGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/GetUserResponse.h
+  include/tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/CreatePolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/GetSAMLProviderRequest.h
+  include/tencentcloud/cam/v20190116/model/DetachUserPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/GetGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h
+  include/tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesResponse.h
+  include/tencentcloud/cam/v20190116/model/CreateGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/ListEntitiesForPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/ListUsersResponse.h
+  include/tencentcloud/cam/v20190116/model/DeletePolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/AttachGroupPolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/GetPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/DeleteGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/AddUserRequest.h
+  include/tencentcloud/cam/v20190116/model/DeletePolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdateUserResponse.h
+  include/tencentcloud/cam/v20190116/model/AttachEntityOfPolicy.h
+  include/tencentcloud/cam/v20190116/model/ListGroupsResponse.h
+  include/tencentcloud/cam/v20190116/model/ListUsersRequest.h
+  include/tencentcloud/cam/v20190116/model/ListUsersForGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesResponse.h
+  include/tencentcloud/cam/v20190116/model/CreateSAMLProviderResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdatePolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/AddUserResponse.h
+  include/tencentcloud/cam/v20190116/model/GetUserRequest.h
+  include/tencentcloud/cam/v20190116/model/GetGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/ListEntitiesForPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/SubAccountInfo.h
+  include/tencentcloud/cam/v20190116/model/AddUserToGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/SAMLProviderInfo.h
+  include/tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/ListPoliciesRequest.h
+  include/tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h
+  include/tencentcloud/cam/v20190116/model/ListGroupsForUserRequest.h
+  include/tencentcloud/cam/v20190116/model/DetachGroupPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/ListGroupsRequest.h
+  include/tencentcloud/cam/v20190116/model/CreatePolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h
+  include/tencentcloud/cam/v20190116/model/ListGroupsForUserResponse.h
+  include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesRequest.h
+  include/tencentcloud/cam/v20190116/model/RemoveUserFromGroupRequest.h
+  include/tencentcloud/cam/v20190116/model/GroupMemberInfo.h
+  include/tencentcloud/cam/v20190116/model/CreateGroupResponse.h
+  )
+
+set(cam_src
+  src/v20190116/CamClient.cpp
+  src/v20190116/model/UpdateUserRequest.cpp
+  src/v20190116/model/UpdateGroupRequest.cpp
+  src/v20190116/model/ListPoliciesResponse.cpp
+  src/v20190116/model/StrategyInfo.cpp
+  src/v20190116/model/CreateSAMLProviderRequest.cpp
+  src/v20190116/model/DeleteSAMLProviderRequest.cpp
+  src/v20190116/model/AttachPolicyInfo.cpp
+  src/v20190116/model/GroupIdOfUidInfo.cpp
+  src/v20190116/model/GetSAMLProviderResponse.cpp
+  src/v20190116/model/DeleteUserRequest.cpp
+  src/v20190116/model/DetachGroupPolicyRequest.cpp
+  src/v20190116/model/GroupInfo.cpp
+  src/v20190116/model/ListSAMLProvidersResponse.cpp
+  src/v20190116/model/AttachUserPolicyRequest.cpp
+  src/v20190116/model/GetPolicyRequest.cpp
+  src/v20190116/model/DeleteUserResponse.cpp
+  src/v20190116/model/AddUserToGroupRequest.cpp
+  src/v20190116/model/RemoveUserFromGroupResponse.cpp
+  src/v20190116/model/ListUsersForGroupResponse.cpp
+  src/v20190116/model/AttachGroupPolicyResponse.cpp
+  src/v20190116/model/UpdateGroupResponse.cpp
+  src/v20190116/model/DeleteSAMLProviderResponse.cpp
+  src/v20190116/model/DeleteGroupRequest.cpp
+  src/v20190116/model/GetUserResponse.cpp
+  src/v20190116/model/DetachUserPolicyRequest.cpp
+  src/v20190116/model/CreatePolicyResponse.cpp
+  src/v20190116/model/GetSAMLProviderRequest.cpp
+  src/v20190116/model/DetachUserPolicyResponse.cpp
+  src/v20190116/model/GetGroupResponse.cpp
+  src/v20190116/model/ListAttachedGroupPoliciesRequest.cpp
+  src/v20190116/model/ListAttachedGroupPoliciesResponse.cpp
+  src/v20190116/model/CreateGroupRequest.cpp
+  src/v20190116/model/ListEntitiesForPolicyRequest.cpp
+  src/v20190116/model/ListUsersResponse.cpp
+  src/v20190116/model/DeletePolicyRequest.cpp
+  src/v20190116/model/AttachGroupPolicyRequest.cpp
+  src/v20190116/model/GetPolicyResponse.cpp
+  src/v20190116/model/DeleteGroupResponse.cpp
+  src/v20190116/model/AddUserRequest.cpp
+  src/v20190116/model/DeletePolicyResponse.cpp
+  src/v20190116/model/UpdateUserResponse.cpp
+  src/v20190116/model/AttachEntityOfPolicy.cpp
+  src/v20190116/model/ListGroupsResponse.cpp
+  src/v20190116/model/ListUsersRequest.cpp
+  src/v20190116/model/ListUsersForGroupRequest.cpp
+  src/v20190116/model/ListAttachedUserPoliciesResponse.cpp
+  src/v20190116/model/CreateSAMLProviderResponse.cpp
+  src/v20190116/model/UpdatePolicyResponse.cpp
+  src/v20190116/model/AddUserResponse.cpp
+  src/v20190116/model/GetUserRequest.cpp
+  src/v20190116/model/GetGroupRequest.cpp
+  src/v20190116/model/ListEntitiesForPolicyResponse.cpp
+  src/v20190116/model/SubAccountInfo.cpp
+  src/v20190116/model/AddUserToGroupResponse.cpp
+  src/v20190116/model/SAMLProviderInfo.cpp
+  src/v20190116/model/UpdatePolicyRequest.cpp
+  src/v20190116/model/ListPoliciesRequest.cpp
+  src/v20190116/model/AttachUserPolicyResponse.cpp
+  src/v20190116/model/ListSAMLProvidersRequest.cpp
+  src/v20190116/model/ListGroupsForUserRequest.cpp
+  src/v20190116/model/DetachGroupPolicyResponse.cpp
+  src/v20190116/model/ListGroupsRequest.cpp
+  src/v20190116/model/CreatePolicyRequest.cpp
+  src/v20190116/model/UpdateSAMLProviderRequest.cpp
+  src/v20190116/model/UpdateSAMLProviderResponse.cpp
+  src/v20190116/model/ListGroupsForUserResponse.cpp
+  src/v20190116/model/ListAttachedUserPoliciesRequest.cpp
+  src/v20190116/model/RemoveUserFromGroupRequest.cpp
+  src/v20190116/model/GroupMemberInfo.cpp
+  src/v20190116/model/CreateGroupResponse.cpp
+  )
+
+set(cam_include
+    include/tencentcloud/cam
+  )
+
+add_library(cam ${LIB_TYPE}
+  ${cam_public_header}
+  ${cam_public_header_model}
+  ${cam_src})
+
+set_target_properties(cam
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}cam
+  )
+
+target_include_directories(cam
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(cam
+  core)
+
+#install(FILES ${cam_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cam/v20190116)
+#install(FILES ${cam_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/cam/v20190116/model)
+install(DIRECTORY ${cam_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS cam
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )
