@@ -94,14 +94,14 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取备注名
-                     * @return Alias 备注名
+                     * 获取环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * @return Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置备注名
-                     * @param Alias 备注名
+                     * 设置环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
+                     * @param Alias 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
                      */
                     void SetAlias(const std::string& _alias);
 
@@ -232,37 +232,17 @@ namespace TencentCloud
                     bool FunctionsHasBeenSet() const;
 
                     /**
-                     * 获取套餐ID。包含以下取值：
-<li>baisc ：表示基础版</li>
-<li>professional ：表示专业版</li>
-<li>business ： 表示企业版</li>
-<li>flagship：表示旗舰版</li>
-<li>supremacy：表示至尊版</li>
+                     * 获取tcb产品套餐ID，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageId 套餐ID。包含以下取值：
-<li>baisc ：表示基础版</li>
-<li>professional ：表示专业版</li>
-<li>business ： 表示企业版</li>
-<li>flagship：表示旗舰版</li>
-<li>supremacy：表示至尊版</li>
+                     * @return PackageId tcb产品套餐ID，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackageId() const;
 
                     /**
-                     * 设置套餐ID。包含以下取值：
-<li>baisc ：表示基础版</li>
-<li>professional ：表示专业版</li>
-<li>business ： 表示企业版</li>
-<li>flagship：表示旗舰版</li>
-<li>supremacy：表示至尊版</li>
+                     * 设置tcb产品套餐ID，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageId 套餐ID。包含以下取值：
-<li>baisc ：表示基础版</li>
-<li>professional ：表示专业版</li>
-<li>business ： 表示企业版</li>
-<li>flagship：表示旗舰版</li>
-<li>supremacy：表示至尊版</li>
+                     * @param PackageId tcb产品套餐ID，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -274,37 +254,17 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取套餐中文名称。包含以下取值：
-<li>基础版</li>
-<li>专业版</li>
-<li>企业版</li>
-<li>旗舰版</li>
-<li>至尊版</li>
+                     * 获取套餐中文名称，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageName 套餐中文名称。包含以下取值：
-<li>基础版</li>
-<li>专业版</li>
-<li>企业版</li>
-<li>旗舰版</li>
-<li>至尊版</li>
+                     * @return PackageName 套餐中文名称，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackageName() const;
 
                     /**
-                     * 设置套餐中文名称。包含以下取值：
-<li>基础版</li>
-<li>专业版</li>
-<li>企业版</li>
-<li>旗舰版</li>
-<li>至尊版</li>
+                     * 设置套餐中文名称，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageName 套餐中文名称。包含以下取值：
-<li>基础版</li>
-<li>专业版</li>
-<li>企业版</li>
-<li>旗舰版</li>
-<li>至尊版</li>
+                     * @param PackageName 套餐中文名称，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -332,7 +292,7 @@ namespace TencentCloud
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 备注名
+                     * 环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
@@ -377,24 +337,14 @@ namespace TencentCloud
                     bool m_functionsHasBeenSet;
 
                     /**
-                     * 套餐ID。包含以下取值：
-<li>baisc ：表示基础版</li>
-<li>professional ：表示专业版</li>
-<li>business ： 表示企业版</li>
-<li>flagship：表示旗舰版</li>
-<li>supremacy：表示至尊版</li>
+                     * tcb产品套餐ID，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 套餐中文名称。包含以下取值：
-<li>基础版</li>
-<li>专业版</li>
-<li>企业版</li>
-<li>旗舰版</li>
-<li>至尊版</li>
+                     * 套餐中文名称，参考DescribePackages接口的返回值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;

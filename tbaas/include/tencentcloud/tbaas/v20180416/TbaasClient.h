@@ -23,8 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBlockListResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryRequest.h>
@@ -43,9 +49,18 @@ namespace TencentCloud
                 TbaasClient(const Credential &credential, const std::string &region);
                 TbaasClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::GetBlockListResponse> GetBlockListOutcome;
+                typedef std::future<GetBlockListOutcome> GetBlockListOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetBlockListRequest&, GetBlockListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBlockListAsyncHandler;
+                typedef Outcome<Error, Model::GetClusterSummaryResponse> GetClusterSummaryOutcome;
+                typedef std::future<GetClusterSummaryOutcome> GetClusterSummaryOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetClusterSummaryRequest&, GetClusterSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterSummaryAsyncHandler;
                 typedef Outcome<Error, Model::GetInvokeTxResponse> GetInvokeTxOutcome;
                 typedef std::future<GetInvokeTxOutcome> GetInvokeTxOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetInvokeTxRequest&, GetInvokeTxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInvokeTxAsyncHandler;
+                typedef Outcome<Error, Model::GetLatesdTransactionListResponse> GetLatesdTransactionListOutcome;
+                typedef std::future<GetLatesdTransactionListOutcome> GetLatesdTransactionListOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetLatesdTransactionListRequest&, GetLatesdTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatesdTransactionListAsyncHandler;
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
@@ -56,6 +71,24 @@ namespace TencentCloud
 
 
                 /**
+                 *查看当前网络下的所有区块列表，分页展示
+                 * @param req GetBlockListRequest
+                 * @return GetBlockListOutcome
+                 */
+                GetBlockListOutcome GetBlockList(const Model::GetBlockListRequest &request);
+                void GetBlockListAsync(const Model::GetBlockListRequest& request, const GetBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBlockListOutcomeCallable GetBlockListCallable(const Model::GetBlockListRequest& request);
+
+                /**
+                 *获取区块链网络概要
+                 * @param req GetClusterSummaryRequest
+                 * @return GetClusterSummaryOutcome
+                 */
+                GetClusterSummaryOutcome GetClusterSummary(const Model::GetClusterSummaryRequest &request);
+                void GetClusterSummaryAsync(const Model::GetClusterSummaryRequest& request, const GetClusterSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetClusterSummaryOutcomeCallable GetClusterSummaryCallable(const Model::GetClusterSummaryRequest& request);
+
+                /**
                  *Invoke异步调用结果查询
                  * @param req GetInvokeTxRequest
                  * @return GetInvokeTxOutcome
@@ -63,6 +96,15 @@ namespace TencentCloud
                 GetInvokeTxOutcome GetInvokeTx(const Model::GetInvokeTxRequest &request);
                 void GetInvokeTxAsync(const Model::GetInvokeTxRequest& request, const GetInvokeTxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetInvokeTxOutcomeCallable GetInvokeTxCallable(const Model::GetInvokeTxRequest& request);
+
+                /**
+                 *获取最新交易列表
+                 * @param req GetLatesdTransactionListRequest
+                 * @return GetLatesdTransactionListOutcome
+                 */
+                GetLatesdTransactionListOutcome GetLatesdTransactionList(const Model::GetLatesdTransactionListRequest &request);
+                void GetLatesdTransactionListAsync(const Model::GetLatesdTransactionListRequest& request, const GetLatesdTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLatesdTransactionListOutcomeCallable GetLatesdTransactionListCallable(const Model::GetLatesdTransactionListRequest& request);
 
                 /**
                  *新增交易

@@ -29,6 +29,7 @@
 #include <tencentcloud/vod/v20180717/model/ConcatTask2017.h>
 #include <tencentcloud/vod/v20180717/model/ClipTask2017.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
+#include <tencentcloud/vod/v20180717/model/ComposeMediaTask.h>
 
 
 namespace TencentCloud
@@ -54,7 +55,8 @@ namespace TencentCloud
                      * 获取任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
-<li>WechatPublish：微信发布任务。</li>
+<li>WechatPublish：微信发布任务；</li>
+<li>ComposeMedia：制作媒体文件任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -64,7 +66,8 @@ namespace TencentCloud
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
-<li>WechatPublish：微信发布任务。</li>
+<li>WechatPublish：微信发布任务；</li>
+<li>ComposeMedia：制作媒体文件任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -246,13 +249,28 @@ namespace TencentCloud
                      */
                     bool CreateImageSpriteTaskHasBeenSet() const;
 
+                    /**
+                     * 获取制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComposeMediaTask 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComposeMediaTask GetComposeMediaTask() const;
+
+                    /**
+                     * 判断参数 ComposeMediaTask 是否已赋值
+                     * @return ComposeMediaTask 是否已赋值
+                     */
+                    bool ComposeMediaTaskHasBeenSet() const;
+
                 private:
 
                     /**
                      * 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
-<li>WechatPublish：微信发布任务。</li>
+<li>WechatPublish：微信发布任务；</li>
+<li>ComposeMedia：制作媒体文件任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -345,6 +363,13 @@ namespace TencentCloud
                      */
                     CreateImageSpriteTask2017 m_createImageSpriteTask;
                     bool m_createImageSpriteTaskHasBeenSet;
+
+                    /**
+                     * 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComposeMediaTask m_composeMediaTask;
+                    bool m_composeMediaTaskHasBeenSet;
 
                 };
             }

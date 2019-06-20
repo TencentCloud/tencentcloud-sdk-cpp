@@ -32,6 +32,7 @@
 #include <tencentcloud/vod/v20180717/model/MediaImageSpriteInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaSnapshotByTimeOffsetInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaKeyFrameDescInfo.h>
+#include <tencentcloud/vod/v20180717/model/MediaAdaptiveDynamicStreamingInfo.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,28 @@ namespace TencentCloud
                     bool KeyFrameDescInfoHasBeenSet() const;
 
                     /**
+                     * 获取转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdaptiveDynamicStreamingInfo 转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaAdaptiveDynamicStreamingInfo GetAdaptiveDynamicStreamingInfo() const;
+
+                    /**
+                     * 设置转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdaptiveDynamicStreamingInfo 转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdaptiveDynamicStreamingInfo(const MediaAdaptiveDynamicStreamingInfo& _adaptiveDynamicStreamingInfo);
+
+                    /**
+                     * 判断参数 AdaptiveDynamicStreamingInfo 是否已赋值
+                     * @return AdaptiveDynamicStreamingInfo 是否已赋值
+                     */
+                    bool AdaptiveDynamicStreamingInfoHasBeenSet() const;
+
+                    /**
                      * 获取媒体文件唯一标识 ID。
                      * @return FileId 媒体文件唯一标识 ID。
                      */
@@ -305,6 +328,13 @@ namespace TencentCloud
                      */
                     MediaKeyFrameDescInfo m_keyFrameDescInfo;
                     bool m_keyFrameDescInfoHasBeenSet;
+
+                    /**
+                     * 转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaAdaptiveDynamicStreamingInfo m_adaptiveDynamicStreamingInfo;
+                    bool m_adaptiveDynamicStreamingInfoHasBeenSet;
 
                     /**
                      * 媒体文件唯一标识 ID。

@@ -244,24 +244,6 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取可选参数。传入True时，新创建的云盘将设置为随云主机销毁模式，仅对按量计费云硬盘有效。
-                     * @return DeleteWithInstance 可选参数。传入True时，新创建的云盘将设置为随云主机销毁模式，仅对按量计费云硬盘有效。
-                     */
-                    bool GetDeleteWithInstance() const;
-
-                    /**
-                     * 设置可选参数。传入True时，新创建的云盘将设置为随云主机销毁模式，仅对按量计费云硬盘有效。
-                     * @param DeleteWithInstance 可选参数。传入True时，新创建的云盘将设置为随云主机销毁模式，仅对按量计费云硬盘有效。
-                     */
-                    void SetDeleteWithInstance(const bool& _deleteWithInstance);
-
-                    /**
-                     * 判断参数 DeleteWithInstance 是否已赋值
-                     * @return DeleteWithInstance 是否已赋值
-                     */
-                    bool DeleteWithInstanceHasBeenSet() const;
-
-                    /**
                      * 获取可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
                      * @return Shareable 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
                      */
@@ -346,12 +328,6 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
-
-                    /**
-                     * 可选参数。传入True时，新创建的云盘将设置为随云主机销毁模式，仅对按量计费云硬盘有效。
-                     */
-                    bool m_deleteWithInstance;
-                    bool m_deleteWithInstanceHasBeenSet;
 
                     /**
                      * 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。

@@ -54,7 +54,9 @@ InstanceInfo::InstanceInfo() :
     m_ikConfigHasBeenSet(false),
     m_masterNodeInfoHasBeenSet(false),
     m_cosBackupHasBeenSet(false),
-    m_allowCosBackupHasBeenSet(false)
+    m_allowCosBackupHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -421,6 +423,36 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_allowCosBackupHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceInfo.TagList` is not array type"));
+
+        const Value &tmpValue = value["TagList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
+    if (value.HasMember("LicenseType") && !value["LicenseType"].IsNull())
+    {
+        if (!value["LicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.LicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseType = string(value["LicenseType"].GetString());
+        m_licenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -694,6 +726,29 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "AllowCosBackup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowCosBackup, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_licenseType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1225,5 +1280,37 @@ void InstanceInfo::SetAllowCosBackup(const bool& _allowCosBackup)
 bool InstanceInfo::AllowCosBackupHasBeenSet() const
 {
     return m_allowCosBackupHasBeenSet;
+}
+
+vector<TagInfo> InstanceInfo::GetTagList() const
+{
+    return m_tagList;
+}
+
+void InstanceInfo::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool InstanceInfo::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
+}
+
+string InstanceInfo::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void InstanceInfo::SetLicenseType(const string& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 

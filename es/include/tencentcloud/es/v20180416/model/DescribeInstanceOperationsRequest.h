@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return StartTime 起始时间
+                     * 获取起始时间, e.g. "2019-03-07 16:30:39"
+                     * @return StartTime 起始时间, e.g. "2019-03-07 16:30:39"
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间
-                     * @param StartTime 起始时间
+                     * 设置起始时间, e.g. "2019-03-07 16:30:39"
+                     * @param StartTime 起始时间, e.g. "2019-03-07 16:30:39"
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间, e.g. "2019-03-30 20:18:03"
+                     * @return EndTime 结束时间, e.g. "2019-03-30 20:18:03"
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间, e.g. "2019-03-30 20:18:03"
+                     * @param EndTime 结束时间, e.g. "2019-03-30 20:18:03"
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -141,13 +141,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * 起始时间, e.g. "2019-03-07 16:30:39"
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间, e.g. "2019-03-30 20:18:03"
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

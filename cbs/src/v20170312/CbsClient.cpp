@@ -900,6 +900,49 @@ CbsClient::InquiryPriceResizeDiskOutcomeCallable CbsClient::InquiryPriceResizeDi
     return task->get_future();
 }
 
+CbsClient::ModifyAutoSnapshotPolicyAttributeOutcome CbsClient::ModifyAutoSnapshotPolicyAttribute(const ModifyAutoSnapshotPolicyAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoSnapshotPolicyAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoSnapshotPolicyAttributeResponse rsp = ModifyAutoSnapshotPolicyAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoSnapshotPolicyAttributeOutcome(rsp);
+        else
+            return ModifyAutoSnapshotPolicyAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoSnapshotPolicyAttributeOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ModifyAutoSnapshotPolicyAttributeAsync(const ModifyAutoSnapshotPolicyAttributeRequest& request, const ModifyAutoSnapshotPolicyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAutoSnapshotPolicyAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::ModifyAutoSnapshotPolicyAttributeOutcomeCallable CbsClient::ModifyAutoSnapshotPolicyAttributeCallable(const ModifyAutoSnapshotPolicyAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAutoSnapshotPolicyAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAutoSnapshotPolicyAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::ModifyDiskAttributesOutcome CbsClient::ModifyDiskAttributes(const ModifyDiskAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDiskAttributes");

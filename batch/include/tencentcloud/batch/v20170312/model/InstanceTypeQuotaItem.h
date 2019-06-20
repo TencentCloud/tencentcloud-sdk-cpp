@@ -216,14 +216,14 @@ namespace TencentCloud
                     bool TypeNameHasBeenSet() const;
 
                     /**
-                     * 获取本地磁盘规格列表。
-                     * @return LocalDiskTypeList 本地磁盘规格列表。
+                     * 获取本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
+                     * @return LocalDiskTypeList 本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
                      */
                     std::vector<LocalDiskType> GetLocalDiskTypeList() const;
 
                     /**
-                     * 设置本地磁盘规格列表。
-                     * @param LocalDiskTypeList 本地磁盘规格列表。
+                     * 设置本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
+                     * @param LocalDiskTypeList 本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
                      */
                     void SetLocalDiskTypeList(const std::vector<LocalDiskType>& _localDiskTypeList);
 
@@ -327,7 +327,7 @@ namespace TencentCloud
                     bool m_typeNameHasBeenSet;
 
                     /**
-                     * 本地磁盘规格列表。
+                     * 本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
                      */
                     std::vector<LocalDiskType> m_localDiskTypeList;
                     bool m_localDiskTypeListHasBeenSet;

@@ -27,6 +27,8 @@
 #include <tencentcloud/vod/v20180717/model/ApplyUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadRequest.h>
 #include <tencentcloud/vod/v20180717/model/CommitUploadResponse.h>
+#include <tencentcloud/vod/v20180717/model/ComposeMediaRequest.h>
+#include <tencentcloud/vod/v20180717/model/ComposeMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/ConfirmEventsRequest.h>
 #include <tencentcloud/vod/v20180717/model/ConfirmEventsResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAIAnalysisTemplateRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribePersonSamplesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeReviewDetailsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeReviewDetailsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTasksRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesResponse.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h>
+#include <tencentcloud/vod/v20180717/model/ExecuteFunctionResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAIAnalysisTemplateRequest.h>
@@ -121,6 +127,8 @@
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByUrlResponse.h>
 #include <tencentcloud/vod/v20180717/model/PullEventsRequest.h>
 #include <tencentcloud/vod/v20180717/model/PullEventsResponse.h>
+#include <tencentcloud/vod/v20180717/model/PushUrlCacheRequest.h>
+#include <tencentcloud/vod/v20180717/model/PushUrlCacheResponse.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
@@ -147,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CommitUploadResponse> CommitUploadOutcome;
                 typedef std::future<CommitUploadOutcome> CommitUploadOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CommitUploadRequest&, CommitUploadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitUploadAsyncHandler;
+                typedef Outcome<Error, Model::ComposeMediaResponse> ComposeMediaOutcome;
+                typedef std::future<ComposeMediaOutcome> ComposeMediaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ComposeMediaRequest&, ComposeMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ComposeMediaAsyncHandler;
                 typedef Outcome<Error, Model::ConfirmEventsResponse> ConfirmEventsOutcome;
                 typedef std::future<ConfirmEventsOutcome> ConfirmEventsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ConfirmEventsRequest&, ConfirmEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmEventsAsyncHandler;
@@ -228,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProcedureTemplatesResponse> DescribeProcedureTemplatesOutcome;
                 typedef std::future<DescribeProcedureTemplatesOutcome> DescribeProcedureTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeProcedureTemplatesRequest&, DescribeProcedureTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcedureTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeReviewDetailsResponse> DescribeReviewDetailsOutcome;
+                typedef std::future<DescribeReviewDetailsOutcome> DescribeReviewDetailsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeReviewDetailsRequest&, DescribeReviewDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReviewDetailsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -246,6 +260,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EditMediaResponse> EditMediaOutcome;
                 typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
+                typedef Outcome<Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
+                typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
                 typedef Outcome<Error, Model::LiveRealTimeClipResponse> LiveRealTimeClipOutcome;
                 typedef std::future<LiveRealTimeClipOutcome> LiveRealTimeClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::LiveRealTimeClipRequest&, LiveRealTimeClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LiveRealTimeClipAsyncHandler;
@@ -288,6 +305,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PullEventsResponse> PullEventsOutcome;
                 typedef std::future<PullEventsOutcome> PullEventsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::PullEventsRequest&, PullEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PullEventsAsyncHandler;
+                typedef Outcome<Error, Model::PushUrlCacheResponse> PushUrlCacheOutcome;
+                typedef std::future<PushUrlCacheOutcome> PushUrlCacheOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::PushUrlCacheRequest&, PushUrlCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushUrlCacheAsyncHandler;
                 typedef Outcome<Error, Model::ResetProcedureTemplateResponse> ResetProcedureTemplateOutcome;
                 typedef std::future<ResetProcedureTemplateOutcome> ResetProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ResetProcedureTemplateRequest&, ResetProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetProcedureTemplateAsyncHandler;
@@ -318,6 +338,19 @@ namespace TencentCloud
                 CommitUploadOutcome CommitUpload(const Model::CommitUploadRequest &request);
                 void CommitUploadAsync(const Model::CommitUploadRequest& request, const CommitUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CommitUploadOutcomeCallable CommitUploadCallable(const Model::CommitUploadRequest& request);
+
+                /**
+                 *该接口用于制作媒体文件，可以
+
+1. 对一个媒体文件进行剪辑，生成一个新的媒体文件；
+2. 对多个媒体文件进行裁剪拼接，生成一个新的媒体文件；
+3. 对多个媒体文件的媒体流进行裁剪拼接，生成一个新的媒体文件；
+                 * @param req ComposeMediaRequest
+                 * @return ComposeMediaOutcome
+                 */
+                ComposeMediaOutcome ComposeMedia(const Model::ComposeMediaRequest &request);
+                void ComposeMediaAsync(const Model::ComposeMediaRequest& request, const ComposeMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ComposeMediaOutcomeCallable ComposeMediaCallable(const Model::ComposeMediaRequest& request);
 
                 /**
                  ** 开发者调用拉取事件通知，获取到事件后，必须调用该接口来确认消息已经收到；
@@ -406,7 +439,7 @@ namespace TencentCloud
                 CreateWatermarkTemplateOutcomeCallable CreateWatermarkTemplateCallable(const Model::CreateWatermarkTemplateRequest& request);
 
                 /**
-                 *该接口用于批量创建关键词样本，样本用于通过OCR、ASR技术，进行内容审核、内容识别等视频处理。关键词样本不可重复创建，如需变更，可先删除后，重新创建。
+                 *该接口用于批量创建关键词样本，样本用于通过OCR、ASR技术，进行内容审核、内容识别等视频处理。
                  * @param req CreateWordSamplesRequest
                  * @return CreateWordSamplesOutcome
                  */
@@ -554,6 +587,7 @@ namespace TencentCloud
     6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图之后，雪碧图的相关信息。
     7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，各个截图的信息。
     8. 视频打点信息（keyFrameDescInfo）：对视频设置的各个打点信息。
+    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。
 2. 可以指定回包只返回部分信息。
                  * @param req DescribeMediaInfosRequest
                  * @return DescribeMediaInfosOutcome
@@ -579,6 +613,18 @@ namespace TencentCloud
                 DescribeProcedureTemplatesOutcome DescribeProcedureTemplates(const Model::DescribeProcedureTemplatesRequest &request);
                 void DescribeProcedureTemplatesAsync(const Model::DescribeProcedureTemplatesRequest& request, const DescribeProcedureTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProcedureTemplatesOutcomeCallable DescribeProcedureTemplatesCallable(const Model::DescribeProcedureTemplatesRequest& request);
+
+                /**
+                 *该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。
+
+1. 可以查询最近 90 天内的转码时长统计数据。
+2. 查询时间跨度不超过 60 天。
+                 * @param req DescribeReviewDetailsRequest
+                 * @return DescribeReviewDetailsOutcome
+                 */
+                DescribeReviewDetailsOutcome DescribeReviewDetails(const Model::DescribeReviewDetailsRequest &request);
+                void DescribeReviewDetailsAsync(const Model::DescribeReviewDetailsRequest& request, const DescribeReviewDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReviewDetailsOutcomeCallable DescribeReviewDetailsCallable(const Model::DescribeReviewDetailsRequest& request);
 
                 /**
                  *通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。
@@ -645,6 +691,15 @@ namespace TencentCloud
                 EditMediaOutcome EditMedia(const Model::EditMediaRequest &request);
                 void EditMediaAsync(const Model::EditMediaRequest& request, const EditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EditMediaOutcomeCallable EditMediaCallable(const Model::EditMediaRequest& request);
+
+                /**
+                 *本接口仅用于定制开发的特殊场景，除非云点播客服人员主动告知您需要使用本接口，其它情况请勿调用。
+                 * @param req ExecuteFunctionRequest
+                 * @return ExecuteFunctionOutcome
+                 */
+                ExecuteFunctionOutcome ExecuteFunction(const Model::ExecuteFunctionRequest &request);
+                void ExecuteFunctionAsync(const Model::ExecuteFunctionRequest& request, const ExecuteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
 
                 /**
                  *直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。
@@ -816,6 +871,17 @@ namespace TencentCloud
                 PullEventsOutcome PullEvents(const Model::PullEventsRequest &request);
                 void PullEventsAsync(const Model::PullEventsRequest& request, const PullEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PullEventsOutcomeCallable PullEventsCallable(const Model::PullEventsRequest& request);
+
+                /**
+                 *1. 预热指定的 URL 列表。
+2. URL 的域名必须已在云点播中注册。
+3. 单次请求最多指定20个 URL。
+                 * @param req PushUrlCacheRequest
+                 * @return PushUrlCacheOutcome
+                 */
+                PushUrlCacheOutcome PushUrlCache(const Model::PushUrlCacheRequest &request);
+                void PushUrlCacheAsync(const Model::PushUrlCacheRequest& request, const PushUrlCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PushUrlCacheOutcomeCallable PushUrlCacheCallable(const Model::PushUrlCacheRequest& request);
 
                 /**
                  *重新设置已存在的任务流模板的任务内容

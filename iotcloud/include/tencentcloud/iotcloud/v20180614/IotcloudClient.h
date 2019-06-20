@@ -49,6 +49,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/DeleteTopicRuleResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceClientKeyRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceClientKeyResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceShadowRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDeviceShadowResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeDevicesRequest.h>
@@ -77,6 +79,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/PublishToDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/ReplaceTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/ReplaceTopicRuleResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceShadowRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceShadowResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateTopicPolicyRequest.h>
@@ -134,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDeviceClientKeyResponse> DescribeDeviceClientKeyOutcome;
+                typedef std::future<DescribeDeviceClientKeyOutcome> DescribeDeviceClientKeyOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceClientKeyRequest&, DescribeDeviceClientKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceClientKeyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeviceShadowResponse> DescribeDeviceShadowOutcome;
                 typedef std::future<DescribeDeviceShadowOutcome> DescribeDeviceShadowOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeDeviceShadowRequest&, DescribeDeviceShadowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceShadowAsyncHandler;
@@ -176,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReplaceTopicRuleResponse> ReplaceTopicRuleOutcome;
                 typedef std::future<ReplaceTopicRuleOutcome> ReplaceTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::ReplaceTopicRuleRequest&, ReplaceTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceTopicRuleAsyncHandler;
+                typedef Outcome<Error, Model::ResetDeviceStateResponse> ResetDeviceStateOutcome;
+                typedef std::future<ResetDeviceStateOutcome> ResetDeviceStateOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::ResetDeviceStateRequest&, ResetDeviceStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceStateAsyncHandler;
                 typedef Outcome<Error, Model::UpdateDeviceShadowResponse> UpdateDeviceShadowOutcome;
                 typedef std::future<UpdateDeviceShadowOutcome> UpdateDeviceShadowOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateDeviceShadowRequest&, UpdateDeviceShadowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceShadowAsyncHandler;
@@ -303,6 +313,15 @@ namespace TencentCloud
                 DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request);
 
                 /**
+                 *获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次
+                 * @param req DescribeDeviceClientKeyRequest
+                 * @return DescribeDeviceClientKeyOutcome
+                 */
+                DescribeDeviceClientKeyOutcome DescribeDeviceClientKey(const Model::DescribeDeviceClientKeyRequest &request);
+                void DescribeDeviceClientKeyAsync(const Model::DescribeDeviceClientKeyRequest& request, const DescribeDeviceClientKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceClientKeyOutcomeCallable DescribeDeviceClientKeyCallable(const Model::DescribeDeviceClientKeyRequest& request);
+
+                /**
                  *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。
                  * @param req DescribeDeviceShadowRequest
                  * @return DescribeDeviceShadowOutcome
@@ -427,6 +446,15 @@ namespace TencentCloud
                 ReplaceTopicRuleOutcome ReplaceTopicRule(const Model::ReplaceTopicRuleRequest &request);
                 void ReplaceTopicRuleAsync(const Model::ReplaceTopicRuleRequest& request, const ReplaceTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReplaceTopicRuleOutcomeCallable ReplaceTopicRuleCallable(const Model::ReplaceTopicRuleRequest& request);
+
+                /**
+                 *重置设备的连接状态
+                 * @param req ResetDeviceStateRequest
+                 * @return ResetDeviceStateOutcome
+                 */
+                ResetDeviceStateOutcome ResetDeviceState(const Model::ResetDeviceStateRequest &request);
+                void ResetDeviceStateAsync(const Model::ResetDeviceStateRequest& request, const ResetDeviceStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetDeviceStateOutcomeCallable ResetDeviceStateCallable(const Model::ResetDeviceStateRequest& request);
 
                 /**
                  *本接口（UpdateDeviceShadow）用于更新虚拟设备信息。

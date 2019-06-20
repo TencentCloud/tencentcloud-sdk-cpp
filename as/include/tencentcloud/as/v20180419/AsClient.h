@@ -79,6 +79,8 @@
 #include <tencentcloud/as/v20180419/model/DisableAutoScalingGroupResponse.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupRequest.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupResponse.h>
+#include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyRequest.h>
+#include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyAutoScalingGroupRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyAutoScalingGroupResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyDesiredCapacityRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/as/v20180419/model/RemoveInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/SetInstancesProtectionRequest.h>
 #include <tencentcloud/as/v20180419/model/SetInstancesProtectionResponse.h>
+#include <tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationRequest.h>
+#include <tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationResponse.h>
 #include <tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h>
 #include <tencentcloud/as/v20180419/model/UpgradeLifecycleHookResponse.h>
 
@@ -199,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableAutoScalingGroupResponse> EnableAutoScalingGroupOutcome;
                 typedef std::future<EnableAutoScalingGroupOutcome> EnableAutoScalingGroupOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::EnableAutoScalingGroupRequest&, EnableAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoScalingGroupAsyncHandler;
+                typedef Outcome<Error, Model::ExecuteScalingPolicyResponse> ExecuteScalingPolicyOutcome;
+                typedef std::future<ExecuteScalingPolicyOutcome> ExecuteScalingPolicyOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::ExecuteScalingPolicyRequest&, ExecuteScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteScalingPolicyAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAutoScalingGroupResponse> ModifyAutoScalingGroupOutcome;
                 typedef std::future<ModifyAutoScalingGroupOutcome> ModifyAutoScalingGroupOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyAutoScalingGroupRequest&, ModifyAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoScalingGroupAsyncHandler;
@@ -229,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SetInstancesProtectionResponse> SetInstancesProtectionOutcome;
                 typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::SetInstancesProtectionRequest&, SetInstancesProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
+                typedef Outcome<Error, Model::UpgradeLaunchConfigurationResponse> UpgradeLaunchConfigurationOutcome;
+                typedef std::future<UpgradeLaunchConfigurationOutcome> UpgradeLaunchConfigurationOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::UpgradeLaunchConfigurationRequest&, UpgradeLaunchConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeLaunchConfigurationAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeLifecycleHookResponse> UpgradeLifecycleHookOutcome;
                 typedef std::future<UpgradeLifecycleHookOutcome> UpgradeLifecycleHookOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::UpgradeLifecycleHookRequest&, UpgradeLifecycleHookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeLifecycleHookAsyncHandler;
@@ -539,6 +549,18 @@ namespace TencentCloud
                 EnableAutoScalingGroupOutcomeCallable EnableAutoScalingGroupCallable(const Model::EnableAutoScalingGroupRequest& request);
 
                 /**
+                 *本接口（ExecuteScalingPolicy）用于执行伸缩策略。
+
+* 可以根据伸缩策略ID执行伸缩策略。
+* 伸缩策略所属伸缩组处于伸缩活动时，会拒绝执行伸缩策略。
+                 * @param req ExecuteScalingPolicyRequest
+                 * @return ExecuteScalingPolicyOutcome
+                 */
+                ExecuteScalingPolicyOutcome ExecuteScalingPolicy(const Model::ExecuteScalingPolicyRequest &request);
+                void ExecuteScalingPolicyAsync(const Model::ExecuteScalingPolicyRequest& request, const ExecuteScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecuteScalingPolicyOutcomeCallable ExecuteScalingPolicyCallable(const Model::ExecuteScalingPolicyRequest& request);
+
+                /**
                  *本接口（ModifyAutoScalingGroup）用于修改伸缩组。
                  * @param req ModifyAutoScalingGroupRequest
                  * @return ModifyAutoScalingGroupOutcome
@@ -636,6 +658,18 @@ namespace TencentCloud
                 SetInstancesProtectionOutcome SetInstancesProtection(const Model::SetInstancesProtectionRequest &request);
                 void SetInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetInstancesProtectionOutcomeCallable SetInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request);
+
+                /**
+                 *本接口（UpgradeLaunchConfiguration）用于升级启动配置。
+
+* 本接口用于升级启动配置，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。
+* 升级修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。
+                 * @param req UpgradeLaunchConfigurationRequest
+                 * @return UpgradeLaunchConfigurationOutcome
+                 */
+                UpgradeLaunchConfigurationOutcome UpgradeLaunchConfiguration(const Model::UpgradeLaunchConfigurationRequest &request);
+                void UpgradeLaunchConfigurationAsync(const Model::UpgradeLaunchConfigurationRequest& request, const UpgradeLaunchConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeLaunchConfigurationOutcomeCallable UpgradeLaunchConfigurationCallable(const Model::UpgradeLaunchConfigurationRequest& request);
 
                 /**
                  *本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。

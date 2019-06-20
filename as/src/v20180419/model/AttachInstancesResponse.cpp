@@ -24,7 +24,8 @@ using namespace TencentCloud::As::V20180419::Model;
 using namespace rapidjson;
 using namespace std;
 
-AttachInstancesResponse::AttachInstancesResponse()
+AttachInstancesResponse::AttachInstancesResponse() :
+    m_activityIdHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,29 @@ CoreInternalOutcome AttachInstancesResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ActivityId") && !rsp["ActivityId"].IsNull())
+    {
+        if (!rsp["ActivityId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ActivityId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activityId = string(rsp["ActivityId"].GetString());
+        m_activityIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string AttachInstancesResponse::GetActivityId() const
+{
+    return m_activityId;
+}
+
+bool AttachInstancesResponse::ActivityIdHasBeenSet() const
+{
+    return m_activityIdHasBeenSet;
+}
 
 

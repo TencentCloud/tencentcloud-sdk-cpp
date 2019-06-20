@@ -405,6 +405,28 @@ namespace TencentCloud
                      */
                     bool LogLevelHasBeenSet() const;
 
+                    /**
+                     * 获取设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertState 设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCertState() const;
+
+                    /**
+                     * 设置设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CertState 设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCertState(const uint64_t& _certState);
+
+                    /**
+                     * 判断参数 CertState 是否已赋值
+                     * @return CertState 是否已赋值
+                     */
+                    bool CertStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -524,6 +546,13 @@ namespace TencentCloud
                      */
                     uint64_t m_logLevel;
                     bool m_logLevelHasBeenSet;
+
+                    /**
+                     * 设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_certState;
+                    bool m_certStateHasBeenSet;
 
                 };
             }

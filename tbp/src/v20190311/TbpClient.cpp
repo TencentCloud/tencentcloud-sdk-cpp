@@ -40,92 +40,6 @@ TbpClient::TbpClient(const Credential &credential, const string &region, const C
 }
 
 
-TbpClient::PostAudioOutcome TbpClient::PostAudio(const PostAudioRequest &request)
-{
-    auto outcome = MakeRequest(request, "PostAudio");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        PostAudioResponse rsp = PostAudioResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return PostAudioOutcome(rsp);
-        else
-            return PostAudioOutcome(o.GetError());
-    }
-    else
-    {
-        return PostAudioOutcome(outcome.GetError());
-    }
-}
-
-void TbpClient::PostAudioAsync(const PostAudioRequest& request, const PostAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PostAudio(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TbpClient::PostAudioOutcomeCallable TbpClient::PostAudioCallable(const PostAudioRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<PostAudioOutcome()>>(
-        [this, request]()
-        {
-            return this->PostAudio(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TbpClient::PostTextOutcome TbpClient::PostText(const PostTextRequest &request)
-{
-    auto outcome = MakeRequest(request, "PostText");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        PostTextResponse rsp = PostTextResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return PostTextOutcome(rsp);
-        else
-            return PostTextOutcome(o.GetError());
-    }
-    else
-    {
-        return PostTextOutcome(outcome.GetError());
-    }
-}
-
-void TbpClient::PostTextAsync(const PostTextRequest& request, const PostTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PostText(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TbpClient::PostTextOutcomeCallable TbpClient::PostTextCallable(const PostTextRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<PostTextOutcome()>>(
-        [this, request]()
-        {
-            return this->PostText(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TbpClient::ResetOutcome TbpClient::Reset(const ResetRequest &request)
 {
     auto outcome = MakeRequest(request, "Reset");
@@ -162,6 +76,92 @@ TbpClient::ResetOutcomeCallable TbpClient::ResetCallable(const ResetRequest &req
         [this, request]()
         {
             return this->Reset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbpClient::TextProcessOutcome TbpClient::TextProcess(const TextProcessRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextProcess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextProcessResponse rsp = TextProcessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextProcessOutcome(rsp);
+        else
+            return TextProcessOutcome(o.GetError());
+    }
+    else
+    {
+        return TextProcessOutcome(outcome.GetError());
+    }
+}
+
+void TbpClient::TextProcessAsync(const TextProcessRequest& request, const TextProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextProcess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbpClient::TextProcessOutcomeCallable TbpClient::TextProcessCallable(const TextProcessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextProcessOutcome()>>(
+        [this, request]()
+        {
+            return this->TextProcess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbpClient::TextResetOutcome TbpClient::TextReset(const TextResetRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextReset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextResetResponse rsp = TextResetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextResetOutcome(rsp);
+        else
+            return TextResetOutcome(o.GetError());
+    }
+    else
+    {
+        return TextResetOutcome(outcome.GetError());
+    }
+}
+
+void TbpClient::TextResetAsync(const TextResetRequest& request, const TextResetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextReset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbpClient::TextResetOutcomeCallable TbpClient::TextResetCallable(const TextResetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextResetOutcome()>>(
+        [this, request]()
+        {
+            return this->TextReset(request);
         }
     );
 

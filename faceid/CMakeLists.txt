@@ -19,6 +19,7 @@ set(faceid_public_header
   )
 
 set(faceid_public_header_model
+  include/tencentcloud/faceid/v20180301/model/LivenessRequest.h
   include/tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthResponse.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h
@@ -34,6 +35,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h
+  include/tencentcloud/faceid/v20180301/model/LivenessResponse.h
   include/tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionResponse.h
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h
@@ -41,6 +43,7 @@ set(faceid_public_header_model
 
 set(faceid_src
   src/v20180301/FaceidClient.cpp
+  src/v20180301/model/LivenessRequest.cpp
   src/v20180301/model/GetLiveCodeResponse.cpp
   src/v20180301/model/DetectAuthResponse.cpp
   src/v20180301/model/ImageRecognitionResponse.cpp
@@ -56,6 +59,7 @@ set(faceid_src
   src/v20180301/model/BankCardVerificationRequest.cpp
   src/v20180301/model/ImageRecognitionRequest.cpp
   src/v20180301/model/LivenessCompareRequest.cpp
+  src/v20180301/model/LivenessResponse.cpp
   src/v20180301/model/GetActionSequenceResponse.cpp
   src/v20180301/model/LivenessRecognitionResponse.cpp
   src/v20180301/model/LivenessRecognitionRequest.cpp

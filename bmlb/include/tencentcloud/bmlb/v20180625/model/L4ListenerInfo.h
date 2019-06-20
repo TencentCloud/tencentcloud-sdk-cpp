@@ -299,6 +299,132 @@ namespace TencentCloud
                      */
                     bool AddTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）
+                     * @return CustomHealthSwitch 是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）
+                     */
+                    int64_t GetCustomHealthSwitch() const;
+
+                    /**
+                     * 设置是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）
+                     * @param CustomHealthSwitch 是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）
+                     */
+                    void SetCustomHealthSwitch(const int64_t& _customHealthSwitch);
+
+                    /**
+                     * 判断参数 CustomHealthSwitch 是否已赋值
+                     * @return CustomHealthSwitch 是否已赋值
+                     */
+                    bool CustomHealthSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。
+                     * @return InputType 自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。
+                     */
+                    std::string GetInputType() const;
+
+                    /**
+                     * 设置自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。
+                     * @param InputType 自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。
+                     */
+                    void SetInputType(const std::string& _inputType);
+
+                    /**
+                     * 判断参数 InputType 是否已赋值
+                     * @return InputType 是否已赋值
+                     */
+                    bool InputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。
+                     * @return LineSeparatorType 探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。
+                     */
+                    int64_t GetLineSeparatorType() const;
+
+                    /**
+                     * 设置探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。
+                     * @param LineSeparatorType 探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。
+                     */
+                    void SetLineSeparatorType(const int64_t& _lineSeparatorType);
+
+                    /**
+                     * 判断参数 LineSeparatorType 是否已赋值
+                     * @return LineSeparatorType 是否已赋值
+                     */
+                    bool LineSeparatorTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测请求内容。
+                     * @return HealthRequest 自定义探测请求内容。
+                     */
+                    std::string GetHealthRequest() const;
+
+                    /**
+                     * 设置自定义探测请求内容。
+                     * @param HealthRequest 自定义探测请求内容。
+                     */
+                    void SetHealthRequest(const std::string& _healthRequest);
+
+                    /**
+                     * 判断参数 HealthRequest 是否已赋值
+                     * @return HealthRequest 是否已赋值
+                     */
+                    bool HealthRequestHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测返回内容。
+                     * @return HealthResponse 自定义探测返回内容。
+                     */
+                    std::string GetHealthResponse() const;
+
+                    /**
+                     * 设置自定义探测返回内容。
+                     * @param HealthResponse 自定义探测返回内容。
+                     */
+                    void SetHealthResponse(const std::string& _healthResponse);
+
+                    /**
+                     * 判断参数 HealthResponse 是否已赋值
+                     * @return HealthResponse 是否已赋值
+                     */
+                    bool HealthResponseHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启toa：1（开启）、0（关闭）。
+                     * @return ToaFlag 是否开启toa：1（开启）、0（关闭）。
+                     */
+                    int64_t GetToaFlag() const;
+
+                    /**
+                     * 设置是否开启toa：1（开启）、0（关闭）。
+                     * @param ToaFlag 是否开启toa：1（开启）、0（关闭）。
+                     */
+                    void SetToaFlag(const int64_t& _toaFlag);
+
+                    /**
+                     * 判断参数 ToaFlag 是否已赋值
+                     * @return ToaFlag 是否已赋值
+                     */
+                    bool ToaFlagHasBeenSet() const;
+
+                    /**
+                     * 获取转发后端服务器调度类型。
+                     * @return BalanceMode 转发后端服务器调度类型。
+                     */
+                    std::string GetBalanceMode() const;
+
+                    /**
+                     * 设置转发后端服务器调度类型。
+                     * @param BalanceMode 转发后端服务器调度类型。
+                     */
+                    void SetBalanceMode(const std::string& _balanceMode);
+
+                    /**
+                     * 判断参数 BalanceMode 是否已赋值
+                     * @return BalanceMode 是否已赋值
+                     */
+                    bool BalanceModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +510,48 @@ namespace TencentCloud
                      */
                     std::string m_addTimestamp;
                     bool m_addTimestampHasBeenSet;
+
+                    /**
+                     * 是否开启自定义健康检查：1（开启）、0（关闭）。默认值0，表示关闭。（该字段在健康检查开启的情况下才生效）
+                     */
+                    int64_t m_customHealthSwitch;
+                    bool m_customHealthSwitchHasBeenSet;
+
+                    /**
+                     * 自定义健康探测内容类型，可选值：text（文本）、hexadecimal（十六进制）。
+                     */
+                    std::string m_inputType;
+                    bool m_inputTypeHasBeenSet;
+
+                    /**
+                     * 探测内容类型为文本方式时，针对请求文本中换行替换方式。可选值：1（替换为LF）、2（替换为CR）、3（替换为LF+CR）。
+                     */
+                    int64_t m_lineSeparatorType;
+                    bool m_lineSeparatorTypeHasBeenSet;
+
+                    /**
+                     * 自定义探测请求内容。
+                     */
+                    std::string m_healthRequest;
+                    bool m_healthRequestHasBeenSet;
+
+                    /**
+                     * 自定义探测返回内容。
+                     */
+                    std::string m_healthResponse;
+                    bool m_healthResponseHasBeenSet;
+
+                    /**
+                     * 是否开启toa：1（开启）、0（关闭）。
+                     */
+                    int64_t m_toaFlag;
+                    bool m_toaFlagHasBeenSet;
+
+                    /**
+                     * 转发后端服务器调度类型。
+                     */
+                    std::string m_balanceMode;
+                    bool m_balanceModeHasBeenSet;
 
                 };
             }

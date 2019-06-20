@@ -28,6 +28,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/CosBackup.h
+  include/tencentcloud/es/v20180416/model/TagInfo.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
   include/tencentcloud/es/v20180416/model/CreateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/InstanceInfo.h
@@ -36,8 +37,9 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsResponse.h
   include/tencentcloud/es/v20180416/model/RestartInstanceRequest.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesRequest.h
-  include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/EsDictionaryInfo.h
+  include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
+  include/tencentcloud/es/v20180416/model/MultiZoneInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
@@ -58,6 +60,7 @@ set(es_src
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
   src/v20180416/model/CosBackup.cpp
+  src/v20180416/model/TagInfo.cpp
   src/v20180416/model/KeyValue.cpp
   src/v20180416/model/CreateInstanceRequest.cpp
   src/v20180416/model/InstanceInfo.cpp
@@ -66,8 +69,9 @@ set(es_src
   src/v20180416/model/DescribeInstanceLogsResponse.cpp
   src/v20180416/model/RestartInstanceRequest.cpp
   src/v20180416/model/DescribeInstancesRequest.cpp
-  src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/EsDictionaryInfo.cpp
+  src/v20180416/model/UpdateInstanceRequest.cpp
+  src/v20180416/model/MultiZoneInfo.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/MasterNodeInfo.cpp

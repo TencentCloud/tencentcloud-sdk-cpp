@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_watermarkSetHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,26 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const Value &
         m_definitionHasBeenSet = true;
     }
 
+    if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
+    {
+        if (!value["WatermarkSet"].IsArray())
+            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTaskInput.WatermarkSet` is not array type"));
+
+        const Value &tmpValue = value["WatermarkSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WatermarkInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_watermarkSet.push_back(item);
+        }
+        m_watermarkSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +75,21 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(Value &value, Document::All
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_watermarkSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WatermarkSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_watermarkSet.begin(); itr != m_watermarkSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -73,5 +109,21 @@ void AdaptiveDynamicStreamingTaskInput::SetDefinition(const uint64_t& _definitio
 bool AdaptiveDynamicStreamingTaskInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+vector<WatermarkInput> AdaptiveDynamicStreamingTaskInput::GetWatermarkSet() const
+{
+    return m_watermarkSet;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetWatermarkSet(const vector<WatermarkInput>& _watermarkSet)
+{
+    m_watermarkSet = _watermarkSet;
+    m_watermarkSetHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::WatermarkSetHasBeenSet() const
+{
+    return m_watermarkSetHasBeenSet;
 }
 

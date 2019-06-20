@@ -26,7 +26,8 @@ using namespace std;
 
 GetInvokeTxResponse::GetInvokeTxResponse() :
     m_txValidationCodeHasBeenSet(false),
-    m_txValidationMsgHasBeenSet(false)
+    m_txValidationMsgHasBeenSet(false),
+    m_blockIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome GetInvokeTxResponse::Deserialize(const string &payload)
         m_txValidationMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BlockId") && !rsp["BlockId"].IsNull())
+    {
+        if (!rsp["BlockId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BlockId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockId = rsp["BlockId"].GetInt64();
+        m_blockIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,16 @@ string GetInvokeTxResponse::GetTxValidationMsg() const
 bool GetInvokeTxResponse::TxValidationMsgHasBeenSet() const
 {
     return m_txValidationMsgHasBeenSet;
+}
+
+int64_t GetInvokeTxResponse::GetBlockId() const
+{
+    return m_blockId;
+}
+
+bool GetInvokeTxResponse::BlockIdHasBeenSet() const
+{
+    return m_blockIdHasBeenSet;
 }
 
 

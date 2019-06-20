@@ -61,42 +61,6 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径。
-                     * @return AppName 推流路径。
-                     */
-                    std::string GetAppName() const;
-
-                    /**
-                     * 设置推流路径。
-                     * @param AppName 推流路径。
-                     */
-                    void SetAppName(const std::string& _appName);
-
-                    /**
-                     * 判断参数 AppName 是否已赋值
-                     * @return AppName 是否已赋值
-                     */
-                    bool AppNameHasBeenSet() const;
-
-                    /**
-                     * 获取流名称。
-                     * @return StreamName 流名称。
-                     */
-                    std::string GetStreamName() const;
-
-                    /**
-                     * 设置流名称。
-                     * @param StreamName 流名称。
-                     */
-                    void SetStreamName(const std::string& _streamName);
-
-                    /**
-                     * 判断参数 StreamName 是否已赋值
-                     * @return StreamName 是否已赋值
-                     */
-                    bool StreamNameHasBeenSet() const;
-
-                    /**
                      * 获取模板Id。
                      * @return TemplateId 模板Id。
                      */
@@ -114,6 +78,46 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     */
+                    std::string GetAppName() const;
+
+                    /**
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     */
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     */
+                    bool AppNameHasBeenSet() const;
+
+                    /**
+                     * 获取流名称。
+注：如果本参数设置为非空字符串，规则将只对此推流起作用。
+                     * @return StreamName 流名称。
+注：如果本参数设置为非空字符串，规则将只对此推流起作用。
+                     */
+                    std::string GetStreamName() const;
+
+                    /**
+                     * 设置流名称。
+注：如果本参数设置为非空字符串，规则将只对此推流起作用。
+                     * @param StreamName 流名称。
+注：如果本参数设置为非空字符串，规则将只对此推流起作用。
+                     */
+                    void SetStreamName(const std::string& _streamName);
+
+                    /**
+                     * 判断参数 StreamName 是否已赋值
+                     * @return StreamName 是否已赋值
+                     */
+                    bool StreamNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -123,22 +127,23 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 推流路径。
+                     * 模板Id。
+                     */
+                    int64_t m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
                      * 流名称。
+注：如果本参数设置为非空字符串，规则将只对此推流起作用。
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;
-
-                    /**
-                     * 模板Id。
-                     */
-                    int64_t m_templateId;
-                    bool m_templateIdHasBeenSet;
 
                 };
             }

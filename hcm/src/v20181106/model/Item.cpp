@@ -25,7 +25,8 @@ Item::Item() :
     m_itemHasBeenSet(false),
     m_itemStringHasBeenSet(false),
     m_itemCoordHasBeenSet(false),
-    m_answerHasBeenSet(false)
+    m_answerHasBeenSet(false),
+    m_expressionTypeHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,16 @@ CoreInternalOutcome Item::Deserialize(const Value &value)
         m_answerHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpressionType") && !value["ExpressionType"].IsNull())
+    {
+        if (!value["ExpressionType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Item.ExpressionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expressionType = string(value["ExpressionType"].GetString());
+        m_expressionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +130,14 @@ void Item::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "Answer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_answer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expressionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpressionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_expressionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -186,5 +205,21 @@ void Item::SetAnswer(const string& _answer)
 bool Item::AnswerHasBeenSet() const
 {
     return m_answerHasBeenSet;
+}
+
+string Item::GetExpressionType() const
+{
+    return m_expressionType;
+}
+
+void Item::SetExpressionType(const string& _expressionType)
+{
+    m_expressionType = _expressionType;
+    m_expressionTypeHasBeenSet = true;
+}
+
+bool Item::ExpressionTypeHasBeenSet() const
+{
+    return m_expressionTypeHasBeenSet;
 }
 

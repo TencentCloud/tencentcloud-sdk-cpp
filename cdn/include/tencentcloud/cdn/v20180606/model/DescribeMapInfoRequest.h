@@ -44,20 +44,20 @@ namespace TencentCloud
 
                     /**
                      * 获取映射查询类别：
-ips：运营商映射查询
+isp：运营商映射查询
 district：省份映射查询
                      * @return Name 映射查询类别：
-ips：运营商映射查询
+isp：运营商映射查询
 district：省份映射查询
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置映射查询类别：
-ips：运营商映射查询
+isp：运营商映射查询
 district：省份映射查询
                      * @param Name 映射查询类别：
-ips：运营商映射查询
+isp：运营商映射查询
 district：省份映射查询
                      */
                     void SetName(const std::string& _name);
@@ -72,7 +72,7 @@ district：省份映射查询
 
                     /**
                      * 映射查询类别：
-ips：运营商映射查询
+isp：运营商映射查询
 district：省份映射查询
                      */
                     std::string m_name;

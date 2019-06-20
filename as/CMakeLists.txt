@@ -37,6 +37,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/SpotMarketOptions.h
   include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesRequest.h
   include/tencentcloud/as/v20180419/model/ModifyScheduledActionResponse.h
+  include/tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h
   include/tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesResponse.h
   include/tencentcloud/as/v20180419/model/SetInstancesProtectionResponse.h
   include/tencentcloud/as/v20180419/model/CompleteLifecycleActionRequest.h
@@ -44,6 +45,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CreateNotificationConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/DescribeLaunchConfigurationsResponse.h
   include/tencentcloud/as/v20180419/model/DeleteScalingPolicyResponse.h
+  include/tencentcloud/as/v20180419/model/Tag.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/LimitedLoginSettings.h
   include/tencentcloud/as/v20180419/model/ModifyAutoScalingGroupResponse.h
@@ -74,6 +76,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/PaiInstance.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/DeleteScheduledActionResponse.h
+  include/tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingActivitiesResponse.h
   include/tencentcloud/as/v20180419/model/ModifyNotificationConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/DataDisk.h
@@ -123,8 +126,10 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h
   include/tencentcloud/as/v20180419/model/InternetAccessible.h
   include/tencentcloud/as/v20180419/model/EnableAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/InstanceChargePrepaid.h
   include/tencentcloud/as/v20180419/model/DescribePaiInstancesResponse.h
+  include/tencentcloud/as/v20180419/model/ExecuteScalingPolicyRequest.h
   )
 
 set(as_src
@@ -147,6 +152,7 @@ set(as_src
   src/v20180419/model/SpotMarketOptions.cpp
   src/v20180419/model/DescribeScalingPoliciesRequest.cpp
   src/v20180419/model/ModifyScheduledActionResponse.cpp
+  src/v20180419/model/ExecuteScalingPolicyResponse.cpp
   src/v20180419/model/ModifyLaunchConfigurationAttributesResponse.cpp
   src/v20180419/model/SetInstancesProtectionResponse.cpp
   src/v20180419/model/CompleteLifecycleActionRequest.cpp
@@ -154,6 +160,7 @@ set(as_src
   src/v20180419/model/CreateNotificationConfigurationResponse.cpp
   src/v20180419/model/DescribeLaunchConfigurationsResponse.cpp
   src/v20180419/model/DeleteScalingPolicyResponse.cpp
+  src/v20180419/model/Tag.cpp
   src/v20180419/model/DescribeAutoScalingInstancesRequest.cpp
   src/v20180419/model/LimitedLoginSettings.cpp
   src/v20180419/model/ModifyAutoScalingGroupResponse.cpp
@@ -184,6 +191,7 @@ set(as_src
   src/v20180419/model/PaiInstance.cpp
   src/v20180419/model/CreateAutoScalingGroupRequest.cpp
   src/v20180419/model/DeleteScheduledActionResponse.cpp
+  src/v20180419/model/UpgradeLaunchConfigurationRequest.cpp
   src/v20180419/model/DescribeAutoScalingActivitiesResponse.cpp
   src/v20180419/model/ModifyNotificationConfigurationRequest.cpp
   src/v20180419/model/DataDisk.cpp
@@ -233,8 +241,10 @@ set(as_src
   src/v20180419/model/ActivtyRelatedInstance.cpp
   src/v20180419/model/InternetAccessible.cpp
   src/v20180419/model/EnableAutoScalingGroupResponse.cpp
+  src/v20180419/model/UpgradeLaunchConfigurationResponse.cpp
   src/v20180419/model/InstanceChargePrepaid.cpp
   src/v20180419/model/DescribePaiInstancesResponse.cpp
+  src/v20180419/model/ExecuteScalingPolicyRequest.cpp
   )
 
 set(as_include

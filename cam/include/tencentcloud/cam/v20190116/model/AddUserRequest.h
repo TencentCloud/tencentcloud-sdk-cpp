@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取子用户是否可以登录控制台
-                     * @return ConsoleLogin 子用户是否可以登录控制台
+                     * 获取子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+                     * @return ConsoleLogin 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
                      */
                     uint64_t GetConsoleLogin() const;
 
                     /**
-                     * 设置子用户是否可以登录控制台
-                     * @param ConsoleLogin 子用户是否可以登录控制台
+                     * 设置子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+                     * @param ConsoleLogin 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
                      */
                     void SetConsoleLogin(const uint64_t& _consoleLogin);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ConsoleLoginHasBeenSet() const;
 
                     /**
-                     * 获取是否生成子用户密钥
-                     * @return UseApi 是否生成子用户密钥
+                     * 获取是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
+                     * @return UseApi 是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
                      */
                     uint64_t GetUseApi() const;
 
                     /**
-                     * 设置是否生成子用户密钥
-                     * @param UseApi 是否生成子用户密钥
+                     * 设置是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
+                     * @param UseApi 是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
                      */
                     void SetUseApi(const uint64_t& _useApi);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool UseApiHasBeenSet() const;
 
                     /**
-                     * 获取子用户控制台登录密码，只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码
-                     * @return Password 子用户控制台登录密码，只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码
+                     * 获取子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
+                     * @return Password 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置子用户控制台登录密码，只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码
-                     * @param Password 子用户控制台登录密码，只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码
+                     * 设置子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
+                     * @param Password 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
                      */
                     void SetPassword(const std::string& _password);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取子用户是否要在下次登录时重置密码
-                     * @return NeedResetPassword 子用户是否要在下次登录时重置密码
+                     * 获取子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+                     * @return NeedResetPassword 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
                      */
                     uint64_t GetNeedResetPassword() const;
 
                     /**
-                     * 设置子用户是否要在下次登录时重置密码
-                     * @param NeedResetPassword 子用户是否要在下次登录时重置密码
+                     * 设置子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+                     * @param NeedResetPassword 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
                      */
                     void SetNeedResetPassword(const uint64_t& _needResetPassword);
 
@@ -219,25 +219,25 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 子用户是否可以登录控制台
+                     * 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
                      */
                     uint64_t m_consoleLogin;
                     bool m_consoleLoginHasBeenSet;
 
                     /**
-                     * 是否生成子用户密钥
+                     * 是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
                      */
                     uint64_t m_useApi;
                     bool m_useApiHasBeenSet;
 
                     /**
-                     * 子用户控制台登录密码，只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码
+                     * 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 子用户是否要在下次登录时重置密码
+                     * 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
                      */
                     uint64_t m_needResetPassword;
                     bool m_needResetPasswordHasBeenSet;

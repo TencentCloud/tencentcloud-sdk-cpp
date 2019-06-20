@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取交易编号
-                     * @return Txid 交易编号
+                     * 获取交易ID
+                     * @return Txid 交易ID
                      */
                     std::string GetTxid() const;
 
@@ -69,7 +69,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 交易编号
+                     * 交易ID
                      */
                     std::string m_txid;
                     bool m_txidHasBeenSet;

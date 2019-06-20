@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ThresholdHasBeenSet() const;
 
                     /**
-                     * 获取时间周期。单位：秒
-                     * @return Period 时间周期。单位：秒
+                     * 获取时间周期，单位：秒，取值枚举值为60、300。
+                     * @return Period 时间周期，单位：秒，取值枚举值为60、300。
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置时间周期。单位：秒
-                     * @param Period 时间周期。单位：秒
+                     * 设置时间周期，单位：秒，取值枚举值为60、300。
+                     * @param Period 时间周期，单位：秒，取值枚举值为60、300。
                      */
                     void SetPeriod(const uint64_t& _period);
 
@@ -175,7 +175,7 @@ namespace TencentCloud
                     bool m_thresholdHasBeenSet;
 
                     /**
-                     * 时间周期。单位：秒
+                     * 时间周期，单位：秒，取值枚举值为60、300。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;

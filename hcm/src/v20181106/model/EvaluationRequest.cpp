@@ -27,7 +27,9 @@ EvaluationRequest::EvaluationRequest() :
     m_sessionIdHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_hcmAppidHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_supportHorizontalImageHasBeenSet(false),
+    m_rejectNonArithmeticImageHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string EvaluationRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportHorizontalImageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SupportHorizontalImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_supportHorizontalImage, allocator);
+    }
+
+    if (m_rejectNonArithmeticImageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RejectNonArithmeticImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rejectNonArithmeticImage, allocator);
     }
 
 
@@ -140,6 +158,38 @@ void EvaluationRequest::SetUrl(const string& _url)
 bool EvaluationRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+bool EvaluationRequest::GetSupportHorizontalImage() const
+{
+    return m_supportHorizontalImage;
+}
+
+void EvaluationRequest::SetSupportHorizontalImage(const bool& _supportHorizontalImage)
+{
+    m_supportHorizontalImage = _supportHorizontalImage;
+    m_supportHorizontalImageHasBeenSet = true;
+}
+
+bool EvaluationRequest::SupportHorizontalImageHasBeenSet() const
+{
+    return m_supportHorizontalImageHasBeenSet;
+}
+
+bool EvaluationRequest::GetRejectNonArithmeticImage() const
+{
+    return m_rejectNonArithmeticImage;
+}
+
+void EvaluationRequest::SetRejectNonArithmeticImage(const bool& _rejectNonArithmeticImage)
+{
+    m_rejectNonArithmeticImage = _rejectNonArithmeticImage;
+    m_rejectNonArithmeticImageHasBeenSet = true;
+}
+
+bool EvaluationRequest::RejectNonArithmeticImageHasBeenSet() const
+{
+    return m_rejectNonArithmeticImageHasBeenSet;
 }
 
 

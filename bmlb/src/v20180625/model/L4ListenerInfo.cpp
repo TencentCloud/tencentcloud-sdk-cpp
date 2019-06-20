@@ -35,7 +35,14 @@ L4ListenerInfo::L4ListenerInfo() :
     m_healthNumHasBeenSet(false),
     m_unhealthNumHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_addTimestampHasBeenSet(false)
+    m_addTimestampHasBeenSet(false),
+    m_customHealthSwitchHasBeenSet(false),
+    m_inputTypeHasBeenSet(false),
+    m_lineSeparatorTypeHasBeenSet(false),
+    m_healthRequestHasBeenSet(false),
+    m_healthResponseHasBeenSet(false),
+    m_toaFlagHasBeenSet(false),
+    m_balanceModeHasBeenSet(false)
 {
 }
 
@@ -184,6 +191,76 @@ CoreInternalOutcome L4ListenerInfo::Deserialize(const Value &value)
         m_addTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomHealthSwitch") && !value["CustomHealthSwitch"].IsNull())
+    {
+        if (!value["CustomHealthSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `L4ListenerInfo.CustomHealthSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_customHealthSwitch = value["CustomHealthSwitch"].GetInt64();
+        m_customHealthSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputType") && !value["InputType"].IsNull())
+    {
+        if (!value["InputType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `L4ListenerInfo.InputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputType = string(value["InputType"].GetString());
+        m_inputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LineSeparatorType") && !value["LineSeparatorType"].IsNull())
+    {
+        if (!value["LineSeparatorType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `L4ListenerInfo.LineSeparatorType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lineSeparatorType = value["LineSeparatorType"].GetInt64();
+        m_lineSeparatorTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthRequest") && !value["HealthRequest"].IsNull())
+    {
+        if (!value["HealthRequest"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `L4ListenerInfo.HealthRequest` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthRequest = string(value["HealthRequest"].GetString());
+        m_healthRequestHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthResponse") && !value["HealthResponse"].IsNull())
+    {
+        if (!value["HealthResponse"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `L4ListenerInfo.HealthResponse` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthResponse = string(value["HealthResponse"].GetString());
+        m_healthResponseHasBeenSet = true;
+    }
+
+    if (value.HasMember("ToaFlag") && !value["ToaFlag"].IsNull())
+    {
+        if (!value["ToaFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `L4ListenerInfo.ToaFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_toaFlag = value["ToaFlag"].GetInt64();
+        m_toaFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("BalanceMode") && !value["BalanceMode"].IsNull())
+    {
+        if (!value["BalanceMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `L4ListenerInfo.BalanceMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_balanceMode = string(value["BalanceMode"].GetString());
+        m_balanceModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +378,62 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "AddTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_addTimestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customHealthSwitchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomHealthSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_customHealthSwitch, allocator);
+    }
+
+    if (m_inputTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_inputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lineSeparatorTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LineSeparatorType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lineSeparatorType, allocator);
+    }
+
+    if (m_healthRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthRequest";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthResponseHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthResponse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthResponse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toaFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ToaFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_toaFlag, allocator);
+    }
+
+    if (m_balanceModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BalanceMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_balanceMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +661,117 @@ void L4ListenerInfo::SetAddTimestamp(const string& _addTimestamp)
 bool L4ListenerInfo::AddTimestampHasBeenSet() const
 {
     return m_addTimestampHasBeenSet;
+}
+
+int64_t L4ListenerInfo::GetCustomHealthSwitch() const
+{
+    return m_customHealthSwitch;
+}
+
+void L4ListenerInfo::SetCustomHealthSwitch(const int64_t& _customHealthSwitch)
+{
+    m_customHealthSwitch = _customHealthSwitch;
+    m_customHealthSwitchHasBeenSet = true;
+}
+
+bool L4ListenerInfo::CustomHealthSwitchHasBeenSet() const
+{
+    return m_customHealthSwitchHasBeenSet;
+}
+
+string L4ListenerInfo::GetInputType() const
+{
+    return m_inputType;
+}
+
+void L4ListenerInfo::SetInputType(const string& _inputType)
+{
+    m_inputType = _inputType;
+    m_inputTypeHasBeenSet = true;
+}
+
+bool L4ListenerInfo::InputTypeHasBeenSet() const
+{
+    return m_inputTypeHasBeenSet;
+}
+
+int64_t L4ListenerInfo::GetLineSeparatorType() const
+{
+    return m_lineSeparatorType;
+}
+
+void L4ListenerInfo::SetLineSeparatorType(const int64_t& _lineSeparatorType)
+{
+    m_lineSeparatorType = _lineSeparatorType;
+    m_lineSeparatorTypeHasBeenSet = true;
+}
+
+bool L4ListenerInfo::LineSeparatorTypeHasBeenSet() const
+{
+    return m_lineSeparatorTypeHasBeenSet;
+}
+
+string L4ListenerInfo::GetHealthRequest() const
+{
+    return m_healthRequest;
+}
+
+void L4ListenerInfo::SetHealthRequest(const string& _healthRequest)
+{
+    m_healthRequest = _healthRequest;
+    m_healthRequestHasBeenSet = true;
+}
+
+bool L4ListenerInfo::HealthRequestHasBeenSet() const
+{
+    return m_healthRequestHasBeenSet;
+}
+
+string L4ListenerInfo::GetHealthResponse() const
+{
+    return m_healthResponse;
+}
+
+void L4ListenerInfo::SetHealthResponse(const string& _healthResponse)
+{
+    m_healthResponse = _healthResponse;
+    m_healthResponseHasBeenSet = true;
+}
+
+bool L4ListenerInfo::HealthResponseHasBeenSet() const
+{
+    return m_healthResponseHasBeenSet;
+}
+
+int64_t L4ListenerInfo::GetToaFlag() const
+{
+    return m_toaFlag;
+}
+
+void L4ListenerInfo::SetToaFlag(const int64_t& _toaFlag)
+{
+    m_toaFlag = _toaFlag;
+    m_toaFlagHasBeenSet = true;
+}
+
+bool L4ListenerInfo::ToaFlagHasBeenSet() const
+{
+    return m_toaFlagHasBeenSet;
+}
+
+string L4ListenerInfo::GetBalanceMode() const
+{
+    return m_balanceMode;
+}
+
+void L4ListenerInfo::SetBalanceMode(const string& _balanceMode)
+{
+    m_balanceMode = _balanceMode;
+    m_balanceModeHasBeenSet = true;
+}
+
+bool L4ListenerInfo::BalanceModeHasBeenSet() const
+{
+    return m_balanceModeHasBeenSet;
 }
 

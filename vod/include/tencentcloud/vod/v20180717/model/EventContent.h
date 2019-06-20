@@ -35,6 +35,7 @@
 #include <tencentcloud/vod/v20180717/model/ClipTask2017.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
+#include <tencentcloud/vod/v20180717/model/ComposeMediaTask.h>
 
 
 namespace TencentCloud
@@ -82,7 +83,9 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
-<li>WechatPublishComplete：微信发布完成。</li>
+<li>WechatPublishComplete：微信发布完成；</li>
+<li>ComposeMediaComplete：制作媒体文件完成；</li>
+<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -95,7 +98,9 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
-<li>WechatPublishComplete：微信发布完成。</li>
+<li>WechatPublishComplete：微信发布完成；</li>
+<li>ComposeMediaComplete：制作媒体文件完成；</li>
+<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -112,7 +117,9 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
-<li>WechatPublishComplete：微信发布完成。</li>
+<li>WechatPublishComplete：微信发布完成；</li>
+<li>ComposeMediaComplete：制作媒体文件完成；</li>
+<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -125,7 +132,9 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
-<li>WechatPublishComplete：微信发布完成。</li>
+<li>WechatPublishComplete：微信发布完成；</li>
+<li>ComposeMediaComplete：制作媒体文件完成；</li>
+<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -383,6 +392,28 @@ namespace TencentCloud
                      */
                     bool SnapshotByTimeOffsetCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComposeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComposeMediaTask GetComposeMediaCompleteEvent() const;
+
+                    /**
+                     * 设置制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ComposeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetComposeMediaCompleteEvent(const ComposeMediaTask& _composeMediaCompleteEvent);
+
+                    /**
+                     * 判断参数 ComposeMediaCompleteEvent 是否已赋值
+                     * @return ComposeMediaCompleteEvent 是否已赋值
+                     */
+                    bool ComposeMediaCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,7 +429,9 @@ namespace TencentCloud
 <li>FileDeleted：视频删除完成；</li>
 <li>PullComplete：视频转拉完成；</li>
 <li>EditMediaComplete：视频编辑完成；</li>
-<li>WechatPublishComplete：微信发布完成。</li>
+<li>WechatPublishComplete：微信发布完成；</li>
+<li>ComposeMediaComplete：制作媒体文件完成；</li>
+<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -485,6 +518,13 @@ namespace TencentCloud
                      */
                     SnapshotByTimeOffsetTask2017 m_snapshotByTimeOffsetCompleteEvent;
                     bool m_snapshotByTimeOffsetCompleteEventHasBeenSet;
+
+                    /**
+                     * 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComposeMediaTask m_composeMediaCompleteEvent;
+                    bool m_composeMediaCompleteEventHasBeenSet;
 
                 };
             }

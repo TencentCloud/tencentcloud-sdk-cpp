@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool UidHasBeenSet() const;
 
                     /**
-                     * 获取每页数量。
-                     * @return Rp 每页数量。
+                     * 获取每页数量。默认为20。
+                     * @return Rp 每页数量。默认为20。
                      */
                     uint64_t GetRp() const;
 
                     /**
-                     * 设置每页数量。
-                     * @param Rp 每页数量。
+                     * 设置每页数量。默认为20。
+                     * @param Rp 每页数量。默认为20。
                      */
                     void SetRp(const uint64_t& _rp);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RpHasBeenSet() const;
 
                     /**
-                     * 获取页码。
-                     * @return Page 页码。
+                     * 获取页码。默认为1。
+                     * @return Page 页码。默认为1。
                      */
                     uint64_t GetPage() const;
 
                     /**
-                     * 设置页码。
-                     * @param Page 页码。
+                     * 设置页码。默认为1。
+                     * @param Page 页码。默认为1。
                      */
                     void SetPage(const uint64_t& _page);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_uidHasBeenSet;
 
                     /**
-                     * 每页数量。
+                     * 每页数量。默认为20。
                      */
                     uint64_t m_rp;
                     bool m_rpHasBeenSet;
 
                     /**
-                     * 页码。
+                     * 页码。默认为1。
                      */
                     uint64_t m_page;
                     bool m_pageHasBeenSet;

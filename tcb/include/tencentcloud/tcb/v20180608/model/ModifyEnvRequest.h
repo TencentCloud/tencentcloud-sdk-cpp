@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境唯一标识
-                     * @return EnvId 环境唯一标识
+                     * 获取环境ID
+                     * @return EnvId 环境ID
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境唯一标识
-                     * @param EnvId 环境唯一标识
+                     * 设置环境ID
+                     * @param EnvId 环境ID
                      */
                     void SetEnvId(const std::string& _envId);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境唯一标识
+                     * 环境ID
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;

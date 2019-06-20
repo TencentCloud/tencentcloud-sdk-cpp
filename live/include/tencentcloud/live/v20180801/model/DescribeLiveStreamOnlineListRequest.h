@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取应用名称。
-                     * @return AppName 应用名称。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -123,14 +123,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取流名称，精确查询。
-                     * @return StreamName 流名称，精确查询。
+                     * 获取流名称，用于精确查询。
+                     * @return StreamName 流名称，用于精确查询。
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置流名称，精确查询。
-                     * @param StreamName 流名称，精确查询。
+                     * 设置流名称，用于精确查询。
+                     * @param StreamName 流名称，用于精确查询。
                      */
                     void SetStreamName(const std::string& _streamName);
 
@@ -149,7 +149,7 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 应用名称。
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 流名称，精确查询。
+                     * 流名称，用于精确查询。
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;

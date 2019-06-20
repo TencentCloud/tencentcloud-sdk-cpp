@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool PeerGroupHasBeenSet() const;
 
                     /**
-                     * 获取事务ID
-                     * @return TxId 事务ID
+                     * 获取交易ID
+                     * @return TxId 交易ID
                      */
                     std::string GetTxId() const;
 
                     /**
-                     * 设置事务ID
-                     * @param TxId 事务ID
+                     * 设置交易ID
+                     * @param TxId 交易ID
                      */
                     void SetTxId(const std::string& _txId);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_peerGroupHasBeenSet;
 
                     /**
-                     * 事务ID
+                     * 交易ID
                      */
                     std::string m_txId;
                     bool m_txIdHasBeenSet;

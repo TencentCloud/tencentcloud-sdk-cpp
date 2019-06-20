@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径。
-                     * @return AppName 推流路径。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径。
-                     * @param AppName 推流路径。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 推流路径。
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

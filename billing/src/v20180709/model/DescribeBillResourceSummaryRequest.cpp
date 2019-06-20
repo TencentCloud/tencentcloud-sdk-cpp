@@ -27,7 +27,8 @@ DescribeBillResourceSummaryRequest::DescribeBillResourceSummaryRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_periodTypeHasBeenSet(false),
-    m_monthHasBeenSet(false)
+    m_monthHasBeenSet(false),
+    m_needRecordNumHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DescribeBillResourceSummaryRequest::ToJsonString() const
         string key = "Month";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_month.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needRecordNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedRecordNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRecordNum, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DescribeBillResourceSummaryRequest::SetMonth(const string& _month)
 bool DescribeBillResourceSummaryRequest::MonthHasBeenSet() const
 {
     return m_monthHasBeenSet;
+}
+
+int64_t DescribeBillResourceSummaryRequest::GetNeedRecordNum() const
+{
+    return m_needRecordNum;
+}
+
+void DescribeBillResourceSummaryRequest::SetNeedRecordNum(const int64_t& _needRecordNum)
+{
+    m_needRecordNum = _needRecordNum;
+    m_needRecordNumHasBeenSet = true;
+}
+
+bool DescribeBillResourceSummaryRequest::NeedRecordNumHasBeenSet() const
+{
+    return m_needRecordNumHasBeenSet;
 }
 
 

@@ -121,11 +121,18 @@ CoreInternalOutcome LifecycleHook::Deserialize(const Value &value)
 
     if (value.HasMember("NotificationTarget") && !value["NotificationTarget"].IsNull())
     {
-        if (!value["NotificationTarget"].IsString())
+        if (!value["NotificationTarget"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `LifecycleHook.NotificationTarget` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `LifecycleHook.NotificationTarget` is not object type").SetRequestId(requestId));
         }
-        m_notificationTarget = string(value["NotificationTarget"].GetString());
+
+        CoreInternalOutcome outcome = m_notificationTarget.Deserialize(value["NotificationTarget"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_notificationTargetHasBeenSet = true;
     }
 
@@ -205,7 +212,8 @@ void LifecycleHook::ToJsonObject(Value &value, Document::AllocatorType& allocato
         Value iKey(kStringType);
         string key = "NotificationTarget";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_notificationTarget.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_notificationTarget.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -339,12 +347,12 @@ bool LifecycleHook::CreatedTimeHasBeenSet() const
     return m_createdTimeHasBeenSet;
 }
 
-string LifecycleHook::GetNotificationTarget() const
+NotificationTarget LifecycleHook::GetNotificationTarget() const
 {
     return m_notificationTarget;
 }
 
-void LifecycleHook::SetNotificationTarget(const string& _notificationTarget)
+void LifecycleHook::SetNotificationTarget(const NotificationTarget& _notificationTarget)
 {
     m_notificationTarget = _notificationTarget;
     m_notificationTargetHasBeenSet = true;

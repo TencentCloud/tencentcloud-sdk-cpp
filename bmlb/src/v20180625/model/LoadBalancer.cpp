@@ -47,8 +47,7 @@ LoadBalancer::LoadBalancer() :
     m_ipProtocolTypeHasBeenSet(false),
     m_bzPayModeHasBeenSet(false),
     m_bzL4MetricsHasBeenSet(false),
-    m_bzL7MetricsHasBeenSet(false),
-    m_ispIdHasBeenSet(false)
+    m_bzL7MetricsHasBeenSet(false)
 {
 }
 
@@ -326,16 +325,6 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_bzL7MetricsHasBeenSet = true;
     }
 
-    if (value.HasMember("IspId") && !value["IspId"].IsNull())
-    {
-        if (!value["IspId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `LoadBalancer.IspId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ispId = string(value["IspId"].GetString());
-        m_ispIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -564,14 +553,6 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "BzL7Metrics";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_bzL7Metrics.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ispIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "IspId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -991,21 +972,5 @@ void LoadBalancer::SetBzL7Metrics(const string& _bzL7Metrics)
 bool LoadBalancer::BzL7MetricsHasBeenSet() const
 {
     return m_bzL7MetricsHasBeenSet;
-}
-
-string LoadBalancer::GetIspId() const
-{
-    return m_ispId;
-}
-
-void LoadBalancer::SetIspId(const string& _ispId)
-{
-    m_ispId = _ispId;
-    m_ispIdHasBeenSet = true;
-}
-
-bool LoadBalancer::IspIdHasBeenSet() const
-{
-    return m_ispIdHasBeenSet;
 }
 

@@ -95,14 +95,14 @@ UTC 格式，例如：2018-12-29T20:00:00Z。
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取应用名称。
-                     * @return AppName 应用名称。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -313,7 +313,7 @@ UTC 格式，例如：2018-12-29T20:00:00Z。
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 应用名称。
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

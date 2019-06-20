@@ -343,6 +343,24 @@ namespace TencentCloud
                      */
                     bool MaxConcurrentNumHasBeenSet() const;
 
+                    /**
+                     * 获取任务完成后，重启计算节点。适用于指定计算环境执行任务。
+                     * @return RestartComputeNode 任务完成后，重启计算节点。适用于指定计算环境执行任务。
+                     */
+                    bool GetRestartComputeNode() const;
+
+                    /**
+                     * 设置任务完成后，重启计算节点。适用于指定计算环境执行任务。
+                     * @param RestartComputeNode 任务完成后，重启计算节点。适用于指定计算环境执行任务。
+                     */
+                    void SetRestartComputeNode(const bool& _restartComputeNode);
+
+                    /**
+                     * 判断参数 RestartComputeNode 是否已赋值
+                     * @return RestartComputeNode 是否已赋值
+                     */
+                    bool RestartComputeNodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -440,6 +458,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxConcurrentNum;
                     bool m_maxConcurrentNumHasBeenSet;
+
+                    /**
+                     * 任务完成后，重启计算节点。适用于指定计算环境执行任务。
+                     */
+                    bool m_restartComputeNode;
+                    bool m_restartComputeNodeHasBeenSet;
 
                 };
             }

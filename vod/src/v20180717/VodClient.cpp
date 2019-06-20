@@ -126,6 +126,49 @@ VodClient::CommitUploadOutcomeCallable VodClient::CommitUploadCallable(const Com
     return task->get_future();
 }
 
+VodClient::ComposeMediaOutcome VodClient::ComposeMedia(const ComposeMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ComposeMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ComposeMediaResponse rsp = ComposeMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ComposeMediaOutcome(rsp);
+        else
+            return ComposeMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return ComposeMediaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ComposeMediaAsync(const ComposeMediaRequest& request, const ComposeMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ComposeMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ComposeMediaOutcomeCallable VodClient::ComposeMediaCallable(const ComposeMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ComposeMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->ComposeMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ConfirmEventsOutcome VodClient::ConfirmEvents(const ConfirmEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "ConfirmEvents");
@@ -1287,6 +1330,49 @@ VodClient::DescribeProcedureTemplatesOutcomeCallable VodClient::DescribeProcedur
     return task->get_future();
 }
 
+VodClient::DescribeReviewDetailsOutcome VodClient::DescribeReviewDetails(const DescribeReviewDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReviewDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReviewDetailsResponse rsp = DescribeReviewDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReviewDetailsOutcome(rsp);
+        else
+            return DescribeReviewDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReviewDetailsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeReviewDetailsAsync(const DescribeReviewDetailsRequest& request, const DescribeReviewDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReviewDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeReviewDetailsOutcomeCallable VodClient::DescribeReviewDetailsCallable(const DescribeReviewDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReviewDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReviewDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeTaskDetailOutcome VodClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskDetail");
@@ -1538,6 +1624,49 @@ VodClient::EditMediaOutcomeCallable VodClient::EditMediaCallable(const EditMedia
         [this, request]()
         {
             return this->EditMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ExecuteFunctionOutcome VodClient::ExecuteFunction(const ExecuteFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteFunctionResponse rsp = ExecuteFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteFunctionOutcome(rsp);
+        else
+            return ExecuteFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteFunctionOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ExecuteFunctionAsync(const ExecuteFunctionRequest& request, const ExecuteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ExecuteFunctionOutcomeCallable VodClient::ExecuteFunctionCallable(const ExecuteFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteFunction(request);
         }
     );
 
@@ -2140,6 +2269,49 @@ VodClient::PullEventsOutcomeCallable VodClient::PullEventsCallable(const PullEve
         [this, request]()
         {
             return this->PullEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::PushUrlCacheOutcome VodClient::PushUrlCache(const PushUrlCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "PushUrlCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PushUrlCacheResponse rsp = PushUrlCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PushUrlCacheOutcome(rsp);
+        else
+            return PushUrlCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return PushUrlCacheOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::PushUrlCacheAsync(const PushUrlCacheRequest& request, const PushUrlCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PushUrlCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::PushUrlCacheOutcomeCallable VodClient::PushUrlCacheCallable(const PushUrlCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PushUrlCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->PushUrlCache(request);
         }
     );
 

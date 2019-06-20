@@ -19,24 +19,40 @@ set(tbaas_public_header
   )
 
 set(tbaas_public_header_model
-  include/tencentcloud/tbaas/v20180416/model/QueryRequest.h
-  include/tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h
-  include/tencentcloud/tbaas/v20180416/model/InvokeRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h
   include/tencentcloud/tbaas/v20180416/model/PeerSet.h
+  include/tencentcloud/tbaas/v20180416/model/InvokeRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetBlockListResponse.h
+  include/tencentcloud/tbaas/v20180416/model/TransactionItem.h
+  include/tencentcloud/tbaas/v20180416/model/QueryRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h
   include/tencentcloud/tbaas/v20180416/model/InvokeResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryRequest.h
+  include/tencentcloud/tbaas/v20180416/model/Block.h
   )
 
 set(tbaas_src
   src/v20180416/TbaasClient.cpp
-  src/v20180416/model/QueryRequest.cpp
-  src/v20180416/model/GetInvokeTxResponse.cpp
-  src/v20180416/model/InvokeRequest.cpp
+  src/v20180416/model/GetBlockListRequest.cpp
   src/v20180416/model/PeerSet.cpp
+  src/v20180416/model/InvokeRequest.cpp
+  src/v20180416/model/GetInvokeTxResponse.cpp
+  src/v20180416/model/GetBlockListResponse.cpp
+  src/v20180416/model/TransactionItem.cpp
+  src/v20180416/model/QueryRequest.cpp
+  src/v20180416/model/GetClusterSummaryResponse.cpp
+  src/v20180416/model/GetLatesdTransactionListRequest.cpp
   src/v20180416/model/GetInvokeTxRequest.cpp
+  src/v20180416/model/GetLatesdTransactionListResponse.cpp
   src/v20180416/model/InvokeResponse.cpp
   src/v20180416/model/QueryResponse.cpp
+  src/v20180416/model/GetClusterSummaryRequest.cpp
+  src/v20180416/model/Block.cpp
   )
 
 set(tbaas_include

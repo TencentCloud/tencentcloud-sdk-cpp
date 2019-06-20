@@ -65,11 +65,11 @@ CoreInternalOutcome CreateL4ListenersResponse::Deserialize(const string &payload
 
     if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["TaskId"].IsInt64())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_taskId = rsp["TaskId"].GetInt64();
+        m_taskId = string(rsp["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
     }
 
@@ -78,7 +78,7 @@ CoreInternalOutcome CreateL4ListenersResponse::Deserialize(const string &payload
 }
 
 
-int64_t CreateL4ListenersResponse::GetTaskId() const
+string CreateL4ListenersResponse::GetTaskId() const
 {
     return m_taskId;
 }

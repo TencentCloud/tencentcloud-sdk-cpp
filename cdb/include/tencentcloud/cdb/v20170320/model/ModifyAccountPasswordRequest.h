@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库账号的新密码。
-                     * @return NewPassword 数据库账号的新密码。
+                     * 获取数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
+                     * @return NewPassword 数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
                      */
                     std::string GetNewPassword() const;
 
                     /**
-                     * 设置数据库账号的新密码。
-                     * @param NewPassword 数据库账号的新密码。
+                     * 设置数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
+                     * @param NewPassword 数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
                      */
                     void SetNewPassword(const std::string& _newPassword);
 
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库账号的新密码。
+                     * 数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。
                      */
                     std::string m_newPassword;
                     bool m_newPasswordHasBeenSet;

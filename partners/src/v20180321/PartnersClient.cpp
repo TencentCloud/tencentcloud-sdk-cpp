@@ -298,6 +298,92 @@ PartnersClient::DescribeAgentClientsOutcomeCallable PartnersClient::DescribeAgen
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentDealsCacheOutcome PartnersClient::DescribeAgentDealsCache(const DescribeAgentDealsCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentDealsCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentDealsCacheResponse rsp = DescribeAgentDealsCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentDealsCacheOutcome(rsp);
+        else
+            return DescribeAgentDealsCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentDealsCacheOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentDealsCacheAsync(const DescribeAgentDealsCacheRequest& request, const DescribeAgentDealsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentDealsCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentDealsCacheOutcomeCallable PartnersClient::DescribeAgentDealsCacheCallable(const DescribeAgentDealsCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentDealsCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentDealsCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PartnersClient::DescribeAgentPayDealsOutcome PartnersClient::DescribeAgentPayDeals(const DescribeAgentPayDealsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentPayDeals");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentPayDealsResponse rsp = DescribeAgentPayDealsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentPayDealsOutcome(rsp);
+        else
+            return DescribeAgentPayDealsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentPayDealsOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentPayDealsAsync(const DescribeAgentPayDealsRequest& request, const DescribeAgentPayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentPayDeals(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentPayDealsOutcomeCallable PartnersClient::DescribeAgentPayDealsCallable(const DescribeAgentPayDealsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentPayDealsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentPayDeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeClientBalanceOutcome PartnersClient::DescribeClientBalance(const DescribeClientBalanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClientBalance");
@@ -377,6 +463,49 @@ PartnersClient::DescribeRebateInfosOutcomeCallable PartnersClient::DescribeRebat
         [this, request]()
         {
             return this->DescribeRebateInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PartnersClient::DescribeSalesmansOutcome PartnersClient::DescribeSalesmans(const DescribeSalesmansRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSalesmans");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSalesmansResponse rsp = DescribeSalesmansResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSalesmansOutcome(rsp);
+        else
+            return DescribeSalesmansOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSalesmansOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeSalesmansAsync(const DescribeSalesmansRequest& request, const DescribeSalesmansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSalesmans(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeSalesmansOutcomeCallable PartnersClient::DescribeSalesmansCallable(const DescribeSalesmansRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSalesmansOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSalesmans(request);
         }
     );
 

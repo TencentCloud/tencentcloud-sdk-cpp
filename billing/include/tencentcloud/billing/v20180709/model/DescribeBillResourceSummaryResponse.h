@@ -55,6 +55,20 @@ namespace TencentCloud
                      */
                     bool ResourceSummarySetHasBeenSet() const;
 
+                    /**
+                     * 获取资源汇总列表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Total 资源汇总列表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +76,13 @@ namespace TencentCloud
                      */
                     std::vector<BillResourceSummary> m_resourceSummarySet;
                     bool m_resourceSummarySetHasBeenSet;
+
+                    /**
+                     * 资源汇总列表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

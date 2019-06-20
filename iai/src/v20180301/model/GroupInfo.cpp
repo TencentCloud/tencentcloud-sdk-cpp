@@ -25,7 +25,9 @@ GroupInfo::GroupInfo() :
     m_groupNameHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupExDescriptionsHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false),
+    m_creationTimestampHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,26 @@ CoreInternalOutcome GroupInfo::Deserialize(const Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("FaceModelVersion") && !value["FaceModelVersion"].IsNull())
+    {
+        if (!value["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `GroupInfo.FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(value["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreationTimestamp") && !value["CreationTimestamp"].IsNull())
+    {
+        if (!value["CreationTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `GroupInfo.CreationTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creationTimestamp = string(value["CreationTimestamp"].GetString());
+        m_creationTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +141,22 @@ void GroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_faceModelVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creationTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreationTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_creationTimestamp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -186,5 +224,37 @@ void GroupInfo::SetTag(const string& _tag)
 bool GroupInfo::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+string GroupInfo::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+void GroupInfo::SetFaceModelVersion(const string& _faceModelVersion)
+{
+    m_faceModelVersion = _faceModelVersion;
+    m_faceModelVersionHasBeenSet = true;
+}
+
+bool GroupInfo::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
+}
+
+string GroupInfo::GetCreationTimestamp() const
+{
+    return m_creationTimestamp;
+}
+
+void GroupInfo::SetCreationTimestamp(const string& _creationTimestamp)
+{
+    m_creationTimestamp = _creationTimestamp;
+    m_creationTimestampHasBeenSet = true;
+}
+
+bool GroupInfo::CreationTimestampHasBeenSet() const
+{
+    return m_creationTimestampHasBeenSet;
 }
 

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InquiryTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询一个或多个[可用区](/document/api/213/9452#zone)下的配置。
-                     * @return Zones 查询一个或多个[可用区](/document/api/213/9452#zone)下的配置。
+                     * 获取查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
+                     * @return Zones 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置查询一个或多个[可用区](/document/api/213/9452#zone)下的配置。
-                     * @param Zones 查询一个或多个[可用区](/document/api/213/9452#zone)下的配置。
+                     * 设置查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
+                     * @param Zones 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_inquiryTypeHasBeenSet;
 
                     /**
-                     * 查询一个或多个[可用区](/document/api/213/9452#zone)下的配置。
+                     * 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;

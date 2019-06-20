@@ -18,8 +18,8 @@
 #define TENCENTCLOUD_CORE_CONFIG_H_
 
 // version = (major << 16) + (minor << 8) + patch
-#define TENCENTCLOUD_VERSION ((1 << 16) + (1 << 8) + 2)
+#define TENCENTCLOUD_VERSION ((3 << 16) + (0 << 8) + 1)
 
-#define TENCENTCLOUD_VERSION_STR "1.1.2"
+#define TENCENTCLOUD_VERSION_STR "3.0.1"
 
 #endif // !TENCENTCLOUD_CORE_CONFIG_H_

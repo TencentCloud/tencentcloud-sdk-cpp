@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要操作的实例ID
-                     * @return InstanceId 要操作的实例ID
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置要操作的实例ID
-                     * @param InstanceId 要操作的实例ID
+                     * 设置实例ID
+                     * @param InstanceId 实例ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取修改后的实例名称, 1-50 个英文、汉字、数字、连接线-或下划线_
-                     * @return InstanceName 修改后的实例名称, 1-50 个英文、汉字、数字、连接线-或下划线_
+                     * 获取实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * @return InstanceName 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置修改后的实例名称, 1-50 个英文、汉字、数字、连接线-或下划线_
-                     * @param InstanceName 修改后的实例名称, 1-50 个英文、汉字、数字、连接线-或下划线_
+                     * 设置实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * @param InstanceName 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取横向扩缩容后的节点个数
-                     * @return NodeNum 横向扩缩容后的节点个数
+                     * 获取节点个数（2-50个）
+                     * @return NodeNum 节点个数（2-50个）
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置横向扩缩容后的节点个数
-                     * @param NodeNum 横向扩缩容后的节点个数
+                     * 设置节点个数（2-50个）
+                     * @param NodeNum 节点个数（2-50个）
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
 
@@ -99,26 +99,14 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取修改后的配置项, JSON格式字符串。当前仅支持以下配置项：
-action.destructive_requires_name
-indices.fielddata.cache.size
-indices.query.bool.max_clause_count
-                     * @return EsConfig 修改后的配置项, JSON格式字符串。当前仅支持以下配置项：
-action.destructive_requires_name
-indices.fielddata.cache.size
-indices.query.bool.max_clause_count
+                     * 获取配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
+                     * @return EsConfig 配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
                      */
                     std::string GetEsConfig() const;
 
                     /**
-                     * 设置修改后的配置项, JSON格式字符串。当前仅支持以下配置项：
-action.destructive_requires_name
-indices.fielddata.cache.size
-indices.query.bool.max_clause_count
-                     * @param EsConfig 修改后的配置项, JSON格式字符串。当前仅支持以下配置项：
-action.destructive_requires_name
-indices.fielddata.cache.size
-indices.query.bool.max_clause_count
+                     * 设置配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
+                     * @param EsConfig 配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
                      */
                     void SetEsConfig(const std::string& _esConfig);
 
@@ -129,14 +117,14 @@ indices.query.bool.max_clause_count
                     bool EsConfigHasBeenSet() const;
 
                     /**
-                     * 获取重置后的Kibana密码, 8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号
-                     * @return Password 重置后的Kibana密码, 8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号
+                     * 获取默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * @return Password 默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置重置后的Kibana密码, 8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号
-                     * @param Password 重置后的Kibana密码, 8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号
+                     * 设置默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * @param Password 默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
                      */
                     void SetPassword(const std::string& _password);
 
@@ -147,14 +135,14 @@ indices.query.bool.max_clause_count
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取修改后的访问控制列表
-                     * @return EsAcl 修改后的访问控制列表
+                     * 获取访问控制列表
+                     * @return EsAcl 访问控制列表
                      */
                     EsAcl GetEsAcl() const;
 
                     /**
-                     * 设置修改后的访问控制列表
-                     * @param EsAcl 修改后的访问控制列表
+                     * 设置访问控制列表
+                     * @param EsAcl 访问控制列表
                      */
                     void SetEsAcl(const EsAcl& _esAcl);
 
@@ -165,14 +153,14 @@ indices.query.bool.max_clause_count
                     bool EsAclHasBeenSet() const;
 
                     /**
-                     * 获取磁盘大小,单位GB
-                     * @return DiskSize 磁盘大小,单位GB
+                     * 获取磁盘大小（单位GB）
+                     * @return DiskSize 磁盘大小（单位GB）
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小,单位GB
-                     * @param DiskSize 磁盘大小,单位GB
+                     * 设置磁盘大小（单位GB）
+                     * @param DiskSize 磁盘大小（单位GB）
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
 
@@ -183,38 +171,14 @@ indices.query.bool.max_clause_count
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取节点规格: 
-ES.S1.SMALL2: 1 核 2G
-ES.S1.MEDIUM4: 2 核 4G 
-ES.S1.MEDIUM8: 2 核 8G 
-ES.S1.LARGE16: 4 核 16G 
-ES.S1.2XLARGE32: 8 核 32G 
-ES.S1.4XLARGE64: 16 核 64G
-                     * @return NodeType 节点规格: 
-ES.S1.SMALL2: 1 核 2G
-ES.S1.MEDIUM4: 2 核 4G 
-ES.S1.MEDIUM8: 2 核 8G 
-ES.S1.LARGE16: 4 核 16G 
-ES.S1.2XLARGE32: 8 核 32G 
-ES.S1.4XLARGE64: 16 核 64G
+                     * 获取节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点规格: 
-ES.S1.SMALL2: 1 核 2G
-ES.S1.MEDIUM4: 2 核 4G 
-ES.S1.MEDIUM8: 2 核 8G 
-ES.S1.LARGE16: 4 核 16G 
-ES.S1.2XLARGE32: 8 核 32G 
-ES.S1.4XLARGE64: 16 核 64G
-                     * @param NodeType 节点规格: 
-ES.S1.SMALL2: 1 核 2G
-ES.S1.MEDIUM4: 2 核 4G 
-ES.S1.MEDIUM8: 2 核 8G 
-ES.S1.LARGE16: 4 核 16G 
-ES.S1.2XLARGE32: 8 核 32G 
-ES.S1.4XLARGE64: 16 核 64G
+                     * 设置节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     void SetNodeType(const std::string& _nodeType);
 
@@ -225,14 +189,14 @@ ES.S1.4XLARGE64: 16 核 64G
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取专用主节点个数
-                     * @return MasterNodeNum 专用主节点个数
+                     * 获取专用主节点个数（只支持3个或5个）
+                     * @return MasterNodeNum 专用主节点个数（只支持3个或5个）
                      */
                     uint64_t GetMasterNodeNum() const;
 
                     /**
-                     * 设置专用主节点个数
-                     * @param MasterNodeNum 专用主节点个数
+                     * 设置专用主节点个数（只支持3个或5个）
+                     * @param MasterNodeNum 专用主节点个数（只支持3个或5个）
                      */
                     void SetMasterNodeNum(const uint64_t& _masterNodeNum);
 
@@ -243,14 +207,14 @@ ES.S1.4XLARGE64: 16 核 64G
                     bool MasterNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取专用主节点规格，与NodeType支持的规格相同
-                     * @return MasterNodeType 专用主节点规格，与NodeType支持的规格相同
+                     * 获取专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return MasterNodeType 专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     std::string GetMasterNodeType() const;
 
                     /**
-                     * 设置专用主节点规格，与NodeType支持的规格相同
-                     * @param MasterNodeType 专用主节点规格，与NodeType支持的规格相同
+                     * 设置专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param MasterNodeType 专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     void SetMasterNodeType(const std::string& _masterNodeType);
 
@@ -261,14 +225,14 @@ ES.S1.4XLARGE64: 16 核 64G
                     bool MasterNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取专用主节点磁盘大小， 单位GB（系统默认配置为50GB,暂不支持自定义）
-                     * @return MasterNodeDiskSize 专用主节点磁盘大小， 单位GB（系统默认配置为50GB,暂不支持自定义）
+                     * 获取专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
+                     * @return MasterNodeDiskSize 专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
                      */
                     uint64_t GetMasterNodeDiskSize() const;
 
                     /**
-                     * 设置专用主节点磁盘大小， 单位GB（系统默认配置为50GB,暂不支持自定义）
-                     * @param MasterNodeDiskSize 专用主节点磁盘大小， 单位GB（系统默认配置为50GB,暂不支持自定义）
+                     * 设置专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
+                     * @param MasterNodeDiskSize 专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
                      */
                     void SetMasterNodeDiskSize(const uint64_t& _masterNodeDiskSize);
 
@@ -279,14 +243,14 @@ ES.S1.4XLARGE64: 16 核 64G
                     bool MasterNodeDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取更新配置时是否强制重启
-                     * @return ForceRestart 更新配置时是否强制重启
+                     * 获取更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
+                     * @return ForceRestart 更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
                      */
                     bool GetForceRestart() const;
 
                     /**
-                     * 设置更新配置时是否强制重启
-                     * @param ForceRestart 更新配置时是否强制重启
+                     * 设置更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
+                     * @param ForceRestart 更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
                      */
                     void SetForceRestart(const bool& _forceRestart);
 
@@ -317,82 +281,73 @@ ES.S1.4XLARGE64: 16 核 64G
                 private:
 
                     /**
-                     * 要操作的实例ID
+                     * 实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 修改后的实例名称, 1-50 个英文、汉字、数字、连接线-或下划线_
+                     * 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 横向扩缩容后的节点个数
+                     * 节点个数（2-50个）
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 修改后的配置项, JSON格式字符串。当前仅支持以下配置项：
-action.destructive_requires_name
-indices.fielddata.cache.size
-indices.query.bool.max_clause_count
+                     * 配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>
                      */
                     std::string m_esConfig;
                     bool m_esConfigHasBeenSet;
 
                     /**
-                     * 重置后的Kibana密码, 8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号
+                     * 默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 修改后的访问控制列表
+                     * 访问控制列表
                      */
                     EsAcl m_esAcl;
                     bool m_esAclHasBeenSet;
 
                     /**
-                     * 磁盘大小,单位GB
+                     * 磁盘大小（单位GB）
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 节点规格: 
-ES.S1.SMALL2: 1 核 2G
-ES.S1.MEDIUM4: 2 核 4G 
-ES.S1.MEDIUM8: 2 核 8G 
-ES.S1.LARGE16: 4 核 16G 
-ES.S1.2XLARGE32: 8 核 32G 
-ES.S1.4XLARGE64: 16 核 64G
+                     * 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 专用主节点个数
+                     * 专用主节点个数（只支持3个或5个）
                      */
                     uint64_t m_masterNodeNum;
                     bool m_masterNodeNumHasBeenSet;
 
                     /**
-                     * 专用主节点规格，与NodeType支持的规格相同
+                     * 专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     std::string m_masterNodeType;
                     bool m_masterNodeTypeHasBeenSet;
 
                     /**
-                     * 专用主节点磁盘大小， 单位GB（系统默认配置为50GB,暂不支持自定义）
+                     * 专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
                      */
                     uint64_t m_masterNodeDiskSize;
                     bool m_masterNodeDiskSizeHasBeenSet;
 
                     /**
-                     * 更新配置时是否强制重启
+                     * 更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;

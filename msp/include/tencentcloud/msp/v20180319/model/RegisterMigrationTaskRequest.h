@@ -189,14 +189,14 @@ namespace TencentCloud
                     bool MigrateClassHasBeenSet() const;
 
                     /**
-                     * 获取源实例接入类型
-                     * @return SrcAccessType 源实例接入类型
+                     * 获取源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * @return SrcAccessType 源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
                      */
                     std::string GetSrcAccessType() const;
 
                     /**
-                     * 设置源实例接入类型
-                     * @param SrcAccessType 源实例接入类型
+                     * 设置源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * @param SrcAccessType 源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
                      */
                     void SetSrcAccessType(const std::string& _srcAccessType);
 
@@ -207,14 +207,14 @@ namespace TencentCloud
                     bool SrcAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取源实例数据库类型
-                     * @return SrcDatabaseType 源实例数据库类型
+                     * 获取源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
+                     * @return SrcDatabaseType 源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
-                     * 设置源实例数据库类型
-                     * @param SrcDatabaseType 源实例数据库类型
+                     * 设置源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
+                     * @param SrcDatabaseType 源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
 
@@ -225,14 +225,14 @@ namespace TencentCloud
                     bool SrcDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例接入类型
-                     * @return DstAccessType 目标实例接入类型
+                     * 获取目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * @return DstAccessType 目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
                      */
                     std::string GetDstAccessType() const;
 
                     /**
-                     * 设置目标实例接入类型
-                     * @param DstAccessType 目标实例接入类型
+                     * 设置目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * @param DstAccessType 目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
                      */
                     void SetDstAccessType(const std::string& _dstAccessType);
 
@@ -243,14 +243,14 @@ namespace TencentCloud
                     bool DstAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例数据库类型
-                     * @return DstDatabaseType 目标实例数据库类型
+                     * 获取目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
+                     * @return DstDatabaseType 目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
-                     * 设置目标实例数据库类型
-                     * @param DstDatabaseType 目标实例数据库类型
+                     * 设置目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
+                     * @param DstDatabaseType 目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
 
@@ -311,25 +311,25 @@ namespace TencentCloud
                     bool m_migrateClassHasBeenSet;
 
                     /**
-                     * 源实例接入类型
+                     * 源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
                      */
                     std::string m_srcAccessType;
                     bool m_srcAccessTypeHasBeenSet;
 
                     /**
-                     * 源实例数据库类型
+                     * 源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
                      */
                     std::string m_srcDatabaseType;
                     bool m_srcDatabaseTypeHasBeenSet;
 
                     /**
-                     * 目标实例接入类型
+                     * 目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
                      */
                     std::string m_dstAccessType;
                     bool m_dstAccessTypeHasBeenSet;
 
                     /**
-                     * 目标实例数据库类型
+                     * 目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;

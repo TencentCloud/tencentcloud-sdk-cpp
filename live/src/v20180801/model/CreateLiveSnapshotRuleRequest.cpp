@@ -25,9 +25,9 @@ using namespace std;
 
 CreateLiveSnapshotRuleRequest::CreateLiveSnapshotRuleRequest() :
     m_domainNameHasBeenSet(false),
+    m_templateIdHasBeenSet(false),
     m_appNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_streamNameHasBeenSet(false)
 {
 }
 
@@ -46,6 +46,14 @@ string CreateLiveSnapshotRuleRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_templateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_templateId, allocator);
+    }
+
     if (m_appNameHasBeenSet)
     {
         Value iKey(kStringType);
@@ -60,14 +68,6 @@ string CreateLiveSnapshotRuleRequest::ToJsonString() const
         string key = "StreamName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_templateIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "TemplateId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_templateId, allocator);
     }
 
 
@@ -92,6 +92,22 @@ void CreateLiveSnapshotRuleRequest::SetDomainName(const string& _domainName)
 bool CreateLiveSnapshotRuleRequest::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+int64_t CreateLiveSnapshotRuleRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void CreateLiveSnapshotRuleRequest::SetTemplateId(const int64_t& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool CreateLiveSnapshotRuleRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 string CreateLiveSnapshotRuleRequest::GetAppName() const
@@ -124,22 +140,6 @@ void CreateLiveSnapshotRuleRequest::SetStreamName(const string& _streamName)
 bool CreateLiveSnapshotRuleRequest::StreamNameHasBeenSet() const
 {
     return m_streamNameHasBeenSet;
-}
-
-int64_t CreateLiveSnapshotRuleRequest::GetTemplateId() const
-{
-    return m_templateId;
-}
-
-void CreateLiveSnapshotRuleRequest::SetTemplateId(const int64_t& _templateId)
-{
-    m_templateId = _templateId;
-    m_templateIdHasBeenSet = true;
-}
-
-bool CreateLiveSnapshotRuleRequest::TemplateIdHasBeenSet() const
-{
-    return m_templateIdHasBeenSet;
 }
 
 

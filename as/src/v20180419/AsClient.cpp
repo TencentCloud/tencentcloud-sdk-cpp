@@ -1244,6 +1244,49 @@ AsClient::EnableAutoScalingGroupOutcomeCallable AsClient::EnableAutoScalingGroup
     return task->get_future();
 }
 
+AsClient::ExecuteScalingPolicyOutcome AsClient::ExecuteScalingPolicy(const ExecuteScalingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteScalingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteScalingPolicyResponse rsp = ExecuteScalingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteScalingPolicyOutcome(rsp);
+        else
+            return ExecuteScalingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteScalingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ExecuteScalingPolicyAsync(const ExecuteScalingPolicyRequest& request, const ExecuteScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteScalingPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ExecuteScalingPolicyOutcomeCallable AsClient::ExecuteScalingPolicyCallable(const ExecuteScalingPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteScalingPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteScalingPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::ModifyAutoScalingGroupOutcome AsClient::ModifyAutoScalingGroup(const ModifyAutoScalingGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAutoScalingGroup");
@@ -1667,6 +1710,49 @@ AsClient::SetInstancesProtectionOutcomeCallable AsClient::SetInstancesProtection
         [this, request]()
         {
             return this->SetInstancesProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsClient::UpgradeLaunchConfigurationOutcome AsClient::UpgradeLaunchConfiguration(const UpgradeLaunchConfigurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeLaunchConfiguration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeLaunchConfigurationResponse rsp = UpgradeLaunchConfigurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeLaunchConfigurationOutcome(rsp);
+        else
+            return UpgradeLaunchConfigurationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeLaunchConfigurationOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::UpgradeLaunchConfigurationAsync(const UpgradeLaunchConfigurationRequest& request, const UpgradeLaunchConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeLaunchConfiguration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::UpgradeLaunchConfigurationOutcomeCallable AsClient::UpgradeLaunchConfigurationCallable(const UpgradeLaunchConfigurationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeLaunchConfigurationOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeLaunchConfiguration(request);
         }
     );
 

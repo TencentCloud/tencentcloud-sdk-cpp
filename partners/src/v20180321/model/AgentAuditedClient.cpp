@@ -34,7 +34,9 @@ AgentAuditedClient::AgentAuditedClient() :
     m_thisMonthAmtHasBeenSet(false),
     m_hasOverdueBillHasBeenSet(false),
     m_clientTypeHasBeenSet(false),
-    m_projectTypeHasBeenSet(false)
+    m_projectTypeHasBeenSet(false),
+    m_salesUinHasBeenSet(false),
+    m_salesNameHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,26 @@ CoreInternalOutcome AgentAuditedClient::Deserialize(const Value &value)
         m_projectTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SalesUin") && !value["SalesUin"].IsNull())
+    {
+        if (!value["SalesUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentAuditedClient.SalesUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_salesUin = string(value["SalesUin"].GetString());
+        m_salesUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SalesName") && !value["SalesName"].IsNull())
+    {
+        if (!value["SalesName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentAuditedClient.SalesName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_salesName = string(value["SalesName"].GetString());
+        m_salesNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +304,22 @@ void AgentAuditedClient::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ProjectType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_projectType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_salesUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_salesName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -493,5 +531,37 @@ void AgentAuditedClient::SetProjectType(const string& _projectType)
 bool AgentAuditedClient::ProjectTypeHasBeenSet() const
 {
     return m_projectTypeHasBeenSet;
+}
+
+string AgentAuditedClient::GetSalesUin() const
+{
+    return m_salesUin;
+}
+
+void AgentAuditedClient::SetSalesUin(const string& _salesUin)
+{
+    m_salesUin = _salesUin;
+    m_salesUinHasBeenSet = true;
+}
+
+bool AgentAuditedClient::SalesUinHasBeenSet() const
+{
+    return m_salesUinHasBeenSet;
+}
+
+string AgentAuditedClient::GetSalesName() const
+{
+    return m_salesName;
+}
+
+void AgentAuditedClient::SetSalesName(const string& _salesName)
+{
+    m_salesName = _salesName;
+    m_salesNameHasBeenSet = true;
+}
+
+bool AgentAuditedClient::SalesNameHasBeenSet() const
+{
+    return m_salesNameHasBeenSet;
 }
 

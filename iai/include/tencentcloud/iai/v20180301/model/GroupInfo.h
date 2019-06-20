@@ -126,6 +126,54 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取人脸识别服务所用的算法模型版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FaceModelVersion 人脸识别服务所用的算法模型版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFaceModelVersion() const;
+
+                    /**
+                     * 设置人脸识别服务所用的算法模型版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FaceModelVersion 人脸识别服务所用的算法模型版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFaceModelVersion(const std::string& _faceModelVersion);
+
+                    /**
+                     * 判断参数 FaceModelVersion 是否已赋值
+                     * @return FaceModelVersion 是否已赋值
+                     */
+                    bool FaceModelVersionHasBeenSet() const;
+
+                    /**
+                     * 获取Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
+Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreationTimestamp Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
+Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreationTimestamp() const;
+
+                    /**
+                     * 设置Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
+Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreationTimestamp Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
+Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreationTimestamp(const std::string& _creationTimestamp);
+
+                    /**
+                     * 判断参数 CreationTimestamp 是否已赋值
+                     * @return CreationTimestamp 是否已赋值
+                     */
+                    bool CreationTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +201,21 @@ namespace TencentCloud
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 人脸识别服务所用的算法模型版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_faceModelVersion;
+                    bool m_faceModelVersionHasBeenSet;
+
+                    /**
+                     * Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
+Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creationTimestamp;
+                    bool m_creationTimestampHasBeenSet;
 
                 };
             }

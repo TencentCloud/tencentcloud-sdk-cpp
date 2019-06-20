@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppId 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
-                     * @return HcmAppid 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppId 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
+                     * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppid 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
+                     * @return HcmAppid 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppid 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
                      */
                     std::string GetHcmAppid() const;
 
                     /**
-                     * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppId 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
-                     * @param HcmAppid 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppId 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
+                     * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppid 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
+                     * @param HcmAppid 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppid 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
                      */
                     void SetHcmAppid(const std::string& _hcmAppid);
 
@@ -114,6 +114,42 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取横屏拍摄开关，若开启则支持传输横屏拍摄的图片；
+                     * @return SupportHorizontalImage 横屏拍摄开关，若开启则支持传输横屏拍摄的图片；
+                     */
+                    bool GetSupportHorizontalImage() const;
+
+                    /**
+                     * 设置横屏拍摄开关，若开启则支持传输横屏拍摄的图片；
+                     * @param SupportHorizontalImage 横屏拍摄开关，若开启则支持传输横屏拍摄的图片；
+                     */
+                    void SetSupportHorizontalImage(const bool& _supportHorizontalImage);
+
+                    /**
+                     * 判断参数 SupportHorizontalImage 是否已赋值
+                     * @return SupportHorizontalImage 是否已赋值
+                     */
+                    bool SupportHorizontalImageHasBeenSet() const;
+
+                    /**
+                     * 获取拒绝非速算图（如风景图、人物图）开关，若开启，则遇到非速算图会快速返回拒绝的结果，但极端情况下可能会影响评估结果（比如算式截图贴到风景画里可能被判为非速算图直接返回了）。
+                     * @return RejectNonArithmeticImage 拒绝非速算图（如风景图、人物图）开关，若开启，则遇到非速算图会快速返回拒绝的结果，但极端情况下可能会影响评估结果（比如算式截图贴到风景画里可能被判为非速算图直接返回了）。
+                     */
+                    bool GetRejectNonArithmeticImage() const;
+
+                    /**
+                     * 设置拒绝非速算图（如风景图、人物图）开关，若开启，则遇到非速算图会快速返回拒绝的结果，但极端情况下可能会影响评估结果（比如算式截图贴到风景画里可能被判为非速算图直接返回了）。
+                     * @param RejectNonArithmeticImage 拒绝非速算图（如风景图、人物图）开关，若开启，则遇到非速算图会快速返回拒绝的结果，但极端情况下可能会影响评估结果（比如算式截图贴到风景画里可能被判为非速算图直接返回了）。
+                     */
+                    void SetRejectNonArithmeticImage(const bool& _rejectNonArithmeticImage);
+
+                    /**
+                     * 判断参数 RejectNonArithmeticImage 是否已赋值
+                     * @return RejectNonArithmeticImage 是否已赋值
+                     */
+                    bool RejectNonArithmeticImageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,7 +165,7 @@ namespace TencentCloud
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppId 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
+                     * 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppid 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。
                      */
                     std::string m_hcmAppid;
                     bool m_hcmAppidHasBeenSet;
@@ -139,6 +175,18 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 横屏拍摄开关，若开启则支持传输横屏拍摄的图片；
+                     */
+                    bool m_supportHorizontalImage;
+                    bool m_supportHorizontalImageHasBeenSet;
+
+                    /**
+                     * 拒绝非速算图（如风景图、人物图）开关，若开启，则遇到非速算图会快速返回拒绝的结果，但极端情况下可能会影响评估结果（比如算式截图贴到风景画里可能被判为非速算图直接返回了）。
+                     */
+                    bool m_rejectNonArithmeticImage;
+                    bool m_rejectNonArithmeticImageHasBeenSet;
 
                 };
             }

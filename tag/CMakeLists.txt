@@ -1,0 +1,112 @@
+#
+# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(tag_public_header
+  include/tencentcloud/tag/v20180813/TagClient.h
+  )
+
+set(tag_public_header_model
+  include/tencentcloud/tag/v20180813/model/DescribeTagsResponse.h
+  include/tencentcloud/tag/v20180813/model/DeleteTagRequest.h
+  include/tencentcloud/tag/v20180813/model/DeleteResourceTagResponse.h
+  include/tencentcloud/tag/v20180813/model/ModifyResourceTagsResponse.h
+  include/tencentcloud/tag/v20180813/model/DescribeTagKeysResponse.h
+  include/tencentcloud/tag/v20180813/model/DescribeTagValuesRequest.h
+  include/tencentcloud/tag/v20180813/model/ModifyResourceTagsRequest.h
+  include/tencentcloud/tag/v20180813/model/DescribeTagKeysRequest.h
+  include/tencentcloud/tag/v20180813/model/DescribeResourceTagsByResourceIdsRequest.h
+  include/tencentcloud/tag/v20180813/model/Tag.h
+  include/tencentcloud/tag/v20180813/model/TagResource.h
+  include/tencentcloud/tag/v20180813/model/DescribeTagsRequest.h
+  include/tencentcloud/tag/v20180813/model/AddResourceTagRequest.h
+  include/tencentcloud/tag/v20180813/model/CreateTagRequest.h
+  include/tencentcloud/tag/v20180813/model/CreateTagResponse.h
+  include/tencentcloud/tag/v20180813/model/DescribeResourceTagsByResourceIdsResponse.h
+  include/tencentcloud/tag/v20180813/model/DeleteTagResponse.h
+  include/tencentcloud/tag/v20180813/model/AddResourceTagResponse.h
+  include/tencentcloud/tag/v20180813/model/UpdateResourceTagValueRequest.h
+  include/tencentcloud/tag/v20180813/model/DescribeTagValuesResponse.h
+  include/tencentcloud/tag/v20180813/model/DeleteResourceTagRequest.h
+  include/tencentcloud/tag/v20180813/model/UpdateResourceTagValueResponse.h
+  include/tencentcloud/tag/v20180813/model/TagKeyObject.h
+  include/tencentcloud/tag/v20180813/model/TagWithDelete.h
+  )
+
+set(tag_src
+  src/v20180813/TagClient.cpp
+  src/v20180813/model/DescribeTagsResponse.cpp
+  src/v20180813/model/DeleteTagRequest.cpp
+  src/v20180813/model/DeleteResourceTagResponse.cpp
+  src/v20180813/model/ModifyResourceTagsResponse.cpp
+  src/v20180813/model/DescribeTagKeysResponse.cpp
+  src/v20180813/model/DescribeTagValuesRequest.cpp
+  src/v20180813/model/ModifyResourceTagsRequest.cpp
+  src/v20180813/model/DescribeTagKeysRequest.cpp
+  src/v20180813/model/DescribeResourceTagsByResourceIdsRequest.cpp
+  src/v20180813/model/Tag.cpp
+  src/v20180813/model/TagResource.cpp
+  src/v20180813/model/DescribeTagsRequest.cpp
+  src/v20180813/model/AddResourceTagRequest.cpp
+  src/v20180813/model/CreateTagRequest.cpp
+  src/v20180813/model/CreateTagResponse.cpp
+  src/v20180813/model/DescribeResourceTagsByResourceIdsResponse.cpp
+  src/v20180813/model/DeleteTagResponse.cpp
+  src/v20180813/model/AddResourceTagResponse.cpp
+  src/v20180813/model/UpdateResourceTagValueRequest.cpp
+  src/v20180813/model/DescribeTagValuesResponse.cpp
+  src/v20180813/model/DeleteResourceTagRequest.cpp
+  src/v20180813/model/UpdateResourceTagValueResponse.cpp
+  src/v20180813/model/TagKeyObject.cpp
+  src/v20180813/model/TagWithDelete.cpp
+  )
+
+set(tag_include
+    include/tencentcloud/tag
+  )
+
+add_library(tag ${LIB_TYPE}
+  ${tag_public_header}
+  ${tag_public_header_model}
+  ${tag_src})
+
+set_target_properties(tag
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}tag
+  )
+
+target_include_directories(tag
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(tag
+  core)
+
+#install(FILES ${tag_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tag/v20180813)
+#install(FILES ${tag_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tag/v20180813/model)
+install(DIRECTORY ${tag_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS tag
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )

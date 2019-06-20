@@ -37,7 +37,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_snapshotByTimeOffsetTaskHasBeenSet(false),
     m_concatTaskHasBeenSet(false),
     m_clipTaskHasBeenSet(false),
-    m_createImageSpriteTaskHasBeenSet(false)
+    m_createImageSpriteTaskHasBeenSet(false),
+    m_composeMediaTaskHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_createImageSpriteTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ComposeMediaTask") && !rsp["ComposeMediaTask"].IsNull())
+    {
+        if (!rsp["ComposeMediaTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_composeMediaTask.Deserialize(rsp["ComposeMediaTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_composeMediaTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -394,6 +412,16 @@ CreateImageSpriteTask2017 DescribeTaskDetailResponse::GetCreateImageSpriteTask()
 bool DescribeTaskDetailResponse::CreateImageSpriteTaskHasBeenSet() const
 {
     return m_createImageSpriteTaskHasBeenSet;
+}
+
+ComposeMediaTask DescribeTaskDetailResponse::GetComposeMediaTask() const
+{
+    return m_composeMediaTask;
+}
+
+bool DescribeTaskDetailResponse::ComposeMediaTaskHasBeenSet() const
+{
+    return m_composeMediaTaskHasBeenSet;
 }
 
 

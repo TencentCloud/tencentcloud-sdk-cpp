@@ -158,3 +158,28 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
 
 更多例子请参考 example 目录。
+
+# 单元测试
+## 依赖库 gtest
+
+安装例子如下:
+
+```
+git clone https://github.com/google/googletest
+cd googletest
+cmake CMakeLists.txt
+make
+```
+
+将生成的 libgtest.a libgtest_main.a 静态库，以及 gtest 的头文件，拷贝到系统目录下。
+
+## 配置环境变量
+- ENV_SecretId: 密钥 ID
+- ENV_SecretKey: 密钥 Key
+
+## 测试
+执行以下脚本
+
+```
+sh function_test.sh
+```

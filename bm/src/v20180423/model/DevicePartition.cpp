@@ -28,7 +28,8 @@ DevicePartition::DevicePartition() :
     m_sysRootSpaceHasBeenSet(false),
     m_sysSwaporuefiSpaceHasBeenSet(false),
     m_sysUsrlocalSpaceHasBeenSet(false),
-    m_sysDataSpaceHasBeenSet(false)
+    m_sysDataSpaceHasBeenSet(false),
+    m_deviceDiskSizeInfoSetHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,26 @@ CoreInternalOutcome DevicePartition::Deserialize(const Value &value)
         m_sysDataSpaceHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceDiskSizeInfoSet") && !value["DeviceDiskSizeInfoSet"].IsNull())
+    {
+        if (!value["DeviceDiskSizeInfoSet"].IsArray())
+            return CoreInternalOutcome(Error("response `DevicePartition.DeviceDiskSizeInfoSet` is not array type"));
+
+        const Value &tmpValue = value["DeviceDiskSizeInfoSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceDiskSizeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_deviceDiskSizeInfoSet.push_back(item);
+        }
+        m_deviceDiskSizeInfoSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +189,21 @@ void DevicePartition::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "SysDataSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysDataSpace, allocator);
+    }
+
+    if (m_deviceDiskSizeInfoSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceDiskSizeInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deviceDiskSizeInfoSet.begin(); itr != m_deviceDiskSizeInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -283,5 +319,21 @@ void DevicePartition::SetSysDataSpace(const uint64_t& _sysDataSpace)
 bool DevicePartition::SysDataSpaceHasBeenSet() const
 {
     return m_sysDataSpaceHasBeenSet;
+}
+
+vector<DeviceDiskSizeInfo> DevicePartition::GetDeviceDiskSizeInfoSet() const
+{
+    return m_deviceDiskSizeInfoSet;
+}
+
+void DevicePartition::SetDeviceDiskSizeInfoSet(const vector<DeviceDiskSizeInfo>& _deviceDiskSizeInfoSet)
+{
+    m_deviceDiskSizeInfoSet = _deviceDiskSizeInfoSet;
+    m_deviceDiskSizeInfoSetHasBeenSet = true;
+}
+
+bool DevicePartition::DeviceDiskSizeInfoSetHasBeenSet() const
+{
+    return m_deviceDiskSizeInfoSetHasBeenSet;
 }
 

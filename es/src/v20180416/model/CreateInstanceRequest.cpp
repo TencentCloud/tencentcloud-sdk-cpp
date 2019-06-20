@@ -44,7 +44,10 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_masterNodeNumHasBeenSet(false),
     m_masterNodeTypeHasBeenSet(false),
     m_masterNodeDiskSizeHasBeenSet(false),
-    m_clusterNameInConfHasBeenSet(false)
+    m_clusterNameInConfHasBeenSet(false),
+    m_deployModeHasBeenSet(false),
+    m_multiZoneInfoHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -226,6 +229,37 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "ClusterNameInConf";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clusterNameInConf.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deployMode, allocator);
+    }
+
+    if (m_multiZoneInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneInfo.begin(); itr != m_multiZoneInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_licenseType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -570,6 +604,54 @@ void CreateInstanceRequest::SetClusterNameInConf(const string& _clusterNameInCon
 bool CreateInstanceRequest::ClusterNameInConfHasBeenSet() const
 {
     return m_clusterNameInConfHasBeenSet;
+}
+
+uint64_t CreateInstanceRequest::GetDeployMode() const
+{
+    return m_deployMode;
+}
+
+void CreateInstanceRequest::SetDeployMode(const uint64_t& _deployMode)
+{
+    m_deployMode = _deployMode;
+    m_deployModeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DeployModeHasBeenSet() const
+{
+    return m_deployModeHasBeenSet;
+}
+
+vector<MultiZoneInfo> CreateInstanceRequest::GetMultiZoneInfo() const
+{
+    return m_multiZoneInfo;
+}
+
+void CreateInstanceRequest::SetMultiZoneInfo(const vector<MultiZoneInfo>& _multiZoneInfo)
+{
+    m_multiZoneInfo = _multiZoneInfo;
+    m_multiZoneInfoHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::MultiZoneInfoHasBeenSet() const
+{
+    return m_multiZoneInfoHasBeenSet;
+}
+
+string CreateInstanceRequest::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void CreateInstanceRequest::SetLicenseType(const string& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 
 

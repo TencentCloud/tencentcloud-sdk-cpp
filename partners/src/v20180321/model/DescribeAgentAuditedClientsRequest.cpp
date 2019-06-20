@@ -34,7 +34,9 @@ DescribeAgentAuditedClientsRequest::DescribeAgentAuditedClientsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_clientTypeHasBeenSet(false),
-    m_projectTypeHasBeenSet(false)
+    m_projectTypeHasBeenSet(false),
+    m_salesUinHasBeenSet(false),
+    m_salesNameHasBeenSet(false)
 {
 }
 
@@ -136,6 +138,22 @@ string DescribeAgentAuditedClientsRequest::ToJsonString() const
         string key = "ProjectType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_projectType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_salesUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_salesName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -320,6 +338,38 @@ void DescribeAgentAuditedClientsRequest::SetProjectType(const string& _projectTy
 bool DescribeAgentAuditedClientsRequest::ProjectTypeHasBeenSet() const
 {
     return m_projectTypeHasBeenSet;
+}
+
+string DescribeAgentAuditedClientsRequest::GetSalesUin() const
+{
+    return m_salesUin;
+}
+
+void DescribeAgentAuditedClientsRequest::SetSalesUin(const string& _salesUin)
+{
+    m_salesUin = _salesUin;
+    m_salesUinHasBeenSet = true;
+}
+
+bool DescribeAgentAuditedClientsRequest::SalesUinHasBeenSet() const
+{
+    return m_salesUinHasBeenSet;
+}
+
+string DescribeAgentAuditedClientsRequest::GetSalesName() const
+{
+    return m_salesName;
+}
+
+void DescribeAgentAuditedClientsRequest::SetSalesName(const string& _salesName)
+{
+    m_salesName = _salesName;
+    m_salesNameHasBeenSet = true;
+}
+
+bool DescribeAgentAuditedClientsRequest::SalesNameHasBeenSet() const
+{
+    return m_salesNameHasBeenSet;
 }
 
 

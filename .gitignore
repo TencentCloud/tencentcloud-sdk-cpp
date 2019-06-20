@@ -13,4 +13,5 @@
 # for make
 build/
 sdk_build/
+ft_build/
 example/cvm/v20170312/build/

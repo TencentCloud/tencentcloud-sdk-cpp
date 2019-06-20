@@ -131,17 +131,17 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取播放路径，精确匹配，不支持。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。
 若不填，则为查询总体播放数据。
-                     * @return AppName 播放路径，精确匹配，不支持。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。
 若不填，则为查询总体播放数据。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置播放路径，精确匹配，不支持。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。
 若不填，则为查询总体播放数据。
-                     * @param AppName 播放路径，精确匹配，不支持。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。
 若不填，则为查询总体播放数据。
                      */
                     void SetAppName(const std::string& _appName);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 播放路径，精确匹配，不支持。
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为live。精确匹配，不支持。
 若不填，则为查询总体播放数据。
                      */
                     std::string m_appName;

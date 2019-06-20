@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MediaBasicInfo.h>
 
 
 namespace TencentCloud
@@ -68,11 +69,9 @@ namespace TencentCloud
                      * 获取错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
@@ -80,11 +79,9 @@ namespace TencentCloud
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -96,17 +93,13 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -118,17 +111,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转拉上传完成后生成的视频 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 转拉上传完成后生成的视频 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置转拉上传完成后生成的视频 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileId 转拉上传完成后生成的视频 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -139,18 +128,36 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
+                     * 获取转拉完成后生成的媒体文件基础信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaBasicInfo 转拉完成后生成的媒体文件基础信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaBasicInfo GetMediaBasicInfo() const;
+
+                    /**
+                     * 设置转拉完成后生成的媒体文件基础信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MediaBasicInfo 转拉完成后生成的媒体文件基础信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMediaBasicInfo(const MediaBasicInfo& _mediaBasicInfo);
+
+                    /**
+                     * 判断参数 MediaBasicInfo 是否已赋值
+                     * @return MediaBasicInfo 是否已赋值
+                     */
+                    bool MediaBasicInfoHasBeenSet() const;
+
+                    /**
                      * 获取转拉上传完成后生成的播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileUrl 转拉上传完成后生成的播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 设置转拉上传完成后生成的播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileUrl 转拉上传完成后生成的播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
@@ -162,17 +169,13 @@ namespace TencentCloud
 
                     /**
                      * 获取若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcedureTaskId 若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
                      * 设置若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProcedureTaskId 若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
 
@@ -194,35 +197,37 @@ namespace TencentCloud
                      * 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 转拉上传完成后生成的视频 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 转拉上传完成后生成的播放地址。
+                     * 转拉完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaBasicInfo m_mediaBasicInfo;
+                    bool m_mediaBasicInfoHasBeenSet;
+
+                    /**
+                     * 转拉上传完成后生成的播放地址。
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
                      * 若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;

@@ -341,6 +341,49 @@ FaceidClient::ImageRecognitionOutcomeCallable FaceidClient::ImageRecognitionCall
     return task->get_future();
 }
 
+FaceidClient::LivenessOutcome FaceidClient::Liveness(const LivenessRequest &request)
+{
+    auto outcome = MakeRequest(request, "Liveness");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LivenessResponse rsp = LivenessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LivenessOutcome(rsp);
+        else
+            return LivenessOutcome(o.GetError());
+    }
+    else
+    {
+        return LivenessOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::LivenessAsync(const LivenessRequest& request, const LivenessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->Liveness(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::LivenessOutcomeCallable FaceidClient::LivenessCallable(const LivenessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<LivenessOutcome()>>(
+        [this, request]()
+        {
+            return this->Liveness(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::LivenessCompareOutcome FaceidClient::LivenessCompare(const LivenessCompareRequest &request)
 {
     auto outcome = MakeRequest(request, "LivenessCompare");

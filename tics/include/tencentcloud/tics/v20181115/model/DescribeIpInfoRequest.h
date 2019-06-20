@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的域名
-                     * @return Key 要查询的域名
+                     * 获取要查询的IP
+                     * @return Key 要查询的IP
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置要查询的域名
-                     * @param Key 要查询的域名
+                     * 设置要查询的IP
+                     * @param Key 要查询的IP
                      */
                     void SetKey(const std::string& _key);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的域名
+                     * 要查询的IP
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

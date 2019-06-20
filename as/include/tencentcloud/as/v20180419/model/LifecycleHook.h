@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/as/v20180419/model/NotificationTarget.h>
 
 
 namespace TencentCloud
@@ -194,13 +195,13 @@ namespace TencentCloud
                      * 获取通知目标
                      * @return NotificationTarget 通知目标
                      */
-                    std::string GetNotificationTarget() const;
+                    NotificationTarget GetNotificationTarget() const;
 
                     /**
                      * 设置通知目标
                      * @param NotificationTarget 通知目标
                      */
-                    void SetNotificationTarget(const std::string& _notificationTarget);
+                    void SetNotificationTarget(const NotificationTarget& _notificationTarget);
 
                     /**
                      * 判断参数 NotificationTarget 是否已赋值
@@ -261,7 +262,7 @@ namespace TencentCloud
                     /**
                      * 通知目标
                      */
-                    std::string m_notificationTarget;
+                    NotificationTarget m_notificationTarget;
                     bool m_notificationTargetHasBeenSet;
 
                 };

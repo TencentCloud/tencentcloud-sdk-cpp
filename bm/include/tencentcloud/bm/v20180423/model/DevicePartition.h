@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bm/v20180423/model/DeviceDiskSizeInfo.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,24 @@ namespace TencentCloud
                      */
                     bool SysDataSpaceHasBeenSet() const;
 
+                    /**
+                     * 获取硬盘大小详情
+                     * @return DeviceDiskSizeInfoSet 硬盘大小详情
+                     */
+                    std::vector<DeviceDiskSizeInfo> GetDeviceDiskSizeInfoSet() const;
+
+                    /**
+                     * 设置硬盘大小详情
+                     * @param DeviceDiskSizeInfoSet 硬盘大小详情
+                     */
+                    void SetDeviceDiskSizeInfoSet(const std::vector<DeviceDiskSizeInfo>& _deviceDiskSizeInfoSet);
+
+                    /**
+                     * 判断参数 DeviceDiskSizeInfoSet 是否已赋值
+                     * @return DeviceDiskSizeInfoSet 是否已赋值
+                     */
+                    bool DeviceDiskSizeInfoSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +234,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sysDataSpace;
                     bool m_sysDataSpaceHasBeenSet;
+
+                    /**
+                     * 硬盘大小详情
+                     */
+                    std::vector<DeviceDiskSizeInfo> m_deviceDiskSizeInfoSet;
+                    bool m_deviceDiskSizeInfoSetHasBeenSet;
 
                 };
             }

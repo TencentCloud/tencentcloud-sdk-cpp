@@ -37,7 +37,8 @@ Task::Task() :
     m_failedActionHasBeenSet(false),
     m_maxRetryCountHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_maxConcurrentNumHasBeenSet(false)
+    m_maxConcurrentNumHasBeenSet(false),
+    m_restartComputeNodeHasBeenSet(false)
 {
 }
 
@@ -284,6 +285,16 @@ CoreInternalOutcome Task::Deserialize(const Value &value)
         m_maxConcurrentNumHasBeenSet = true;
     }
 
+    if (value.HasMember("RestartComputeNode") && !value["RestartComputeNode"].IsNull())
+    {
+        if (!value["RestartComputeNode"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Task.RestartComputeNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_restartComputeNode = value["RestartComputeNode"].GetBool();
+        m_restartComputeNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -456,6 +467,14 @@ void Task::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "MaxConcurrentNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxConcurrentNum, allocator);
+    }
+
+    if (m_restartComputeNodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RestartComputeNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_restartComputeNode, allocator);
     }
 
 }
@@ -715,5 +734,21 @@ void Task::SetMaxConcurrentNum(const uint64_t& _maxConcurrentNum)
 bool Task::MaxConcurrentNumHasBeenSet() const
 {
     return m_maxConcurrentNumHasBeenSet;
+}
+
+bool Task::GetRestartComputeNode() const
+{
+    return m_restartComputeNode;
+}
+
+void Task::SetRestartComputeNode(const bool& _restartComputeNode)
+{
+    m_restartComputeNode = _restartComputeNode;
+    m_restartComputeNodeHasBeenSet = true;
+}
+
+bool Task::RestartComputeNodeHasBeenSet() const
+{
+    return m_restartComputeNodeHasBeenSet;
 }
 

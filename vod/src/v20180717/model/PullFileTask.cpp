@@ -26,6 +26,7 @@ PullFileTask::PullFileTask() :
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_fileIdHasBeenSet(false),
+    m_mediaBasicInfoHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
     m_procedureTaskIdHasBeenSet(false)
 {
@@ -74,6 +75,23 @@ CoreInternalOutcome PullFileTask::Deserialize(const Value &value)
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MediaBasicInfo") && !value["MediaBasicInfo"].IsNull())
+    {
+        if (!value["MediaBasicInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PullFileTask.MediaBasicInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mediaBasicInfo.Deserialize(value["MediaBasicInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mediaBasicInfoHasBeenSet = true;
     }
 
     if (value.HasMember("FileUrl") && !value["FileUrl"].IsNull())
@@ -133,6 +151,15 @@ void PullFileTask::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaBasicInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MediaBasicInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_mediaBasicInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fileUrlHasBeenSet)
@@ -216,6 +243,22 @@ void PullFileTask::SetFileId(const string& _fileId)
 bool PullFileTask::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+MediaBasicInfo PullFileTask::GetMediaBasicInfo() const
+{
+    return m_mediaBasicInfo;
+}
+
+void PullFileTask::SetMediaBasicInfo(const MediaBasicInfo& _mediaBasicInfo)
+{
+    m_mediaBasicInfo = _mediaBasicInfo;
+    m_mediaBasicInfoHasBeenSet = true;
+}
+
+bool PullFileTask::MediaBasicInfoHasBeenSet() const
+{
+    return m_mediaBasicInfoHasBeenSet;
 }
 
 string PullFileTask::GetFileUrl() const

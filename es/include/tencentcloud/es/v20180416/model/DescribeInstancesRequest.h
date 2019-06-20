@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取一个或多个集群实例ID
-                     * @return InstanceIds 一个或多个集群实例ID
+                     * 获取集群实例ID列表
+                     * @return InstanceIds 集群实例ID列表
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置一个或多个集群实例ID
-                     * @param InstanceIds 一个或多个集群实例ID
+                     * 设置集群实例ID列表
+                     * @param InstanceIds 集群实例ID列表
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取一个或多个集群实例名称
-                     * @return InstanceNames 一个或多个集群实例名称
+                     * 获取集群实例名称列表
+                     * @return InstanceNames 集群实例名称列表
                      */
                     std::vector<std::string> GetInstanceNames() const;
 
                     /**
-                     * 设置一个或多个集群实例名称
-                     * @param InstanceNames 一个或多个集群实例名称
+                     * 设置集群实例名称列表
+                     * @param InstanceNames 集群实例名称列表
                      */
                     void SetInstanceNames(const std::vector<std::string>& _instanceNames);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段：1，实例ID；2，实例名称；3，可用区；4，创建时间，若orderKey未传递则按创建时间降序排序
-                     * @return OrderByKey 排序字段：1，实例ID；2，实例名称；3，可用区；4，创建时间，若orderKey未传递则按创建时间降序排序
+                     * 获取排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
+                     * @return OrderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
                      */
                     uint64_t GetOrderByKey() const;
 
                     /**
-                     * 设置排序字段：1，实例ID；2，实例名称；3，可用区；4，创建时间，若orderKey未传递则按创建时间降序排序
-                     * @param OrderByKey 排序字段：1，实例ID；2，实例名称；3，可用区；4，创建时间，若orderKey未传递则按创建时间降序排序
+                     * 设置排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
+                     * @param OrderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
                      */
                     void SetOrderByKey(const uint64_t& _orderByKey);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool OrderByKeyHasBeenSet() const;
 
                     /**
-                     * 获取排序方式：0，升序；1，降序；若传递了orderByKey未传递orderByType, 则默认升序
-                     * @return OrderByType 排序方式：0，升序；1，降序；若传递了orderByKey未传递orderByType, 则默认升序
+                     * 获取排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
+                     * @return OrderByType 排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
                      */
                     uint64_t GetOrderByType() const;
 
                     /**
-                     * 设置排序方式：0，升序；1，降序；若传递了orderByKey未传递orderByType, 则默认升序
-                     * @param OrderByType 排序方式：0，升序；1，降序；若传递了orderByKey未传递orderByType, 则默认升序
+                     * 设置排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
+                     * @param OrderByType 排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
                      */
                     void SetOrderByType(const uint64_t& _orderByType);
 
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 一个或多个集群实例ID
+                     * 集群实例ID列表
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 一个或多个集群实例名称
+                     * 集群实例名称列表
                      */
                     std::vector<std::string> m_instanceNames;
                     bool m_instanceNamesHasBeenSet;
@@ -201,13 +201,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段：1，实例ID；2，实例名称；3，可用区；4，创建时间，若orderKey未传递则按创建时间降序排序
+                     * 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
                      */
                     uint64_t m_orderByKey;
                     bool m_orderByKeyHasBeenSet;
 
                     /**
-                     * 排序方式：0，升序；1，降序；若传递了orderByKey未传递orderByType, 则默认升序
+                     * 排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
                      */
                     uint64_t m_orderByType;
                     bool m_orderByTypeHasBeenSet;

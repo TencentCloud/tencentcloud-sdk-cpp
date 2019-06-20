@@ -114,6 +114,28 @@ namespace TencentCloud
                      */
                     bool MonthHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要访问列表的总记录数，用于前端分页
+1-表示需要， 0-表示不需要
+                     * @return NeedRecordNum 是否需要访问列表的总记录数，用于前端分页
+1-表示需要， 0-表示不需要
+                     */
+                    int64_t GetNeedRecordNum() const;
+
+                    /**
+                     * 设置是否需要访问列表的总记录数，用于前端分页
+1-表示需要， 0-表示不需要
+                     * @param NeedRecordNum 是否需要访问列表的总记录数，用于前端分页
+1-表示需要， 0-表示不需要
+                     */
+                    void SetNeedRecordNum(const int64_t& _needRecordNum);
+
+                    /**
+                     * 判断参数 NeedRecordNum 是否已赋值
+                     * @return NeedRecordNum 是否已赋值
+                     */
+                    bool NeedRecordNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +161,13 @@ namespace TencentCloud
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
+
+                    /**
+                     * 是否需要访问列表的总记录数，用于前端分页
+1-表示需要， 0-表示不需要
+                     */
+                    int64_t m_needRecordNum;
+                    bool m_needRecordNumHasBeenSet;
 
                 };
             }

@@ -37,6 +37,8 @@
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h>
+#include <tencentcloud/faceid/v20180301/model/LivenessRequest.h>
+#include <tencentcloud/faceid/v20180301/model/LivenessResponse.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h>
@@ -76,6 +78,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ImageRecognitionResponse> ImageRecognitionOutcome;
                 typedef std::future<ImageRecognitionOutcome> ImageRecognitionOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::ImageRecognitionRequest&, ImageRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageRecognitionAsyncHandler;
+                typedef Outcome<Error, Model::LivenessResponse> LivenessOutcome;
+                typedef std::future<LivenessOutcome> LivenessOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::LivenessRequest&, LivenessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LivenessAsyncHandler;
                 typedef Outcome<Error, Model::LivenessCompareResponse> LivenessCompareOutcome;
                 typedef std::future<LivenessCompareOutcome> LivenessCompareOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::LivenessCompareRequest&, LivenessCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LivenessCompareAsyncHandler;
@@ -95,7 +100,7 @@ namespace TencentCloud
                 BankCardVerificationOutcomeCallable BankCardVerificationCallable(const Model::BankCardVerificationRequest& request);
 
                 /**
-                 *每次开始核身前，需先调用本接口获取BizToken，用来串联核身流程，在核身完成后，用于获取验证结果信息。
+                 *每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。
                  * @param req DetectAuthRequest
                  * @return DetectAuthOutcome
                  */
@@ -147,6 +152,15 @@ namespace TencentCloud
                 ImageRecognitionOutcome ImageRecognition(const Model::ImageRecognitionRequest &request);
                 void ImageRecognitionAsync(const Model::ImageRecognitionRequest& request, const ImageRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageRecognitionOutcomeCallable ImageRecognitionCallable(const Model::ImageRecognitionRequest& request);
+
+                /**
+                 *活体检测
+                 * @param req LivenessRequest
+                 * @return LivenessOutcome
+                 */
+                LivenessOutcome Liveness(const Model::LivenessRequest &request);
+                void LivenessAsync(const Model::LivenessRequest& request, const LivenessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LivenessOutcomeCallable LivenessCallable(const Model::LivenessRequest& request);
 
                 /**
                  *传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。

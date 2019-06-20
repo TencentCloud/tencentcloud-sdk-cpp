@@ -35,7 +35,6 @@ CreateDisksRequest::CreateDisksRequest() :
     m_clientTokenHasBeenSet(false),
     m_encryptHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_deleteWithInstanceHasBeenSet(false),
     m_shareableHasBeenSet(false)
 {
 }
@@ -142,14 +141,6 @@ string CreateDisksRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_deleteWithInstanceHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "DeleteWithInstance";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_deleteWithInstance, allocator);
     }
 
     if (m_shareableHasBeenSet)
@@ -342,22 +333,6 @@ void CreateDisksRequest::SetTags(const vector<Tag>& _tags)
 bool CreateDisksRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
-}
-
-bool CreateDisksRequest::GetDeleteWithInstance() const
-{
-    return m_deleteWithInstance;
-}
-
-void CreateDisksRequest::SetDeleteWithInstance(const bool& _deleteWithInstance)
-{
-    m_deleteWithInstance = _deleteWithInstance;
-    m_deleteWithInstanceHasBeenSet = true;
-}
-
-bool CreateDisksRequest::DeleteWithInstanceHasBeenSet() const
-{
-    return m_deleteWithInstanceHasBeenSet;
 }
 
 bool CreateDisksRequest::GetShareable() const

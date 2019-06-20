@@ -80,37 +80,37 @@ namespace TencentCloud
 
                     /**
                      * 获取排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request（白名单功能）
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request
+Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
 District：省份排序，支持的 Filter 为 flux、request
 Isp：运营商排序，支持的 Filter 为 flux、request
 Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
-originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
+originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      * @return Metric 排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request（白名单功能）
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request
+Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
 District：省份排序，支持的 Filter 为 flux、request
 Isp：运营商排序，支持的 Filter 为 flux、request
 Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
-originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
+originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request（白名单功能）
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request
+Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
 District：省份排序，支持的 Filter 为 flux、request
 Isp：运营商排序，支持的 Filter 为 flux、request
 Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
-originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
+originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      * @param Metric 排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request（白名单功能）
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request
+Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
 District：省份排序，支持的 Filter 为 flux、request
 Isp：运营商排序，支持的 Filter 为 flux、request
 Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
-originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
+originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      */
                     void SetMetric(const std::string& _metric);
 
@@ -290,12 +290,12 @@ Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设�
 
                     /**
                      * 排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request（白名单功能）
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request
+Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
 District：省份排序，支持的 Filter 为 flux、request
 Isp：运营商排序，支持的 Filter 为 flux、request
 Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
-originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
+originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;

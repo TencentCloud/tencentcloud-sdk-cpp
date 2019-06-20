@@ -34,7 +34,8 @@ EventContent::EventContent() :
     m_concatCompleteEventHasBeenSet(false),
     m_clipCompleteEventHasBeenSet(false),
     m_createImageSpriteCompleteEventHasBeenSet(false),
-    m_snapshotByTimeOffsetCompleteEventHasBeenSet(false)
+    m_snapshotByTimeOffsetCompleteEventHasBeenSet(false),
+    m_composeMediaCompleteEventHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,23 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
         m_snapshotByTimeOffsetCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("ComposeMediaCompleteEvent") && !value["ComposeMediaCompleteEvent"].IsNull())
+    {
+        if (!value["ComposeMediaCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EventContent.ComposeMediaCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_composeMediaCompleteEvent.Deserialize(value["ComposeMediaCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_composeMediaCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -370,6 +388,15 @@ void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_snapshotByTimeOffsetCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_composeMediaCompleteEventHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ComposeMediaCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_composeMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -581,5 +608,21 @@ void EventContent::SetSnapshotByTimeOffsetCompleteEvent(const SnapshotByTimeOffs
 bool EventContent::SnapshotByTimeOffsetCompleteEventHasBeenSet() const
 {
     return m_snapshotByTimeOffsetCompleteEventHasBeenSet;
+}
+
+ComposeMediaTask EventContent::GetComposeMediaCompleteEvent() const
+{
+    return m_composeMediaCompleteEvent;
+}
+
+void EventContent::SetComposeMediaCompleteEvent(const ComposeMediaTask& _composeMediaCompleteEvent)
+{
+    m_composeMediaCompleteEvent = _composeMediaCompleteEvent;
+    m_composeMediaCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::ComposeMediaCompleteEventHasBeenSet() const
+{
+    return m_composeMediaCompleteEventHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ DataDisk::DataDisk() :
     m_diskSizeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
     m_diskIdHasBeenSet(false),
-    m_deleteWithInstanceHasBeenSet(false)
+    m_deleteWithInstanceHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome DataDisk::Deserialize(const Value &value)
         m_deleteWithInstanceHasBeenSet = true;
     }
 
+    if (value.HasMember("SnapshotId") && !value["SnapshotId"].IsNull())
+    {
+        if (!value["SnapshotId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DataDisk.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotId = string(value["SnapshotId"].GetString());
+        m_snapshotIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void DataDisk::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "DeleteWithInstance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteWithInstance, allocator);
+    }
+
+    if (m_snapshotIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SnapshotId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_snapshotId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void DataDisk::SetDeleteWithInstance(const bool& _deleteWithInstance)
 bool DataDisk::DeleteWithInstanceHasBeenSet() const
 {
     return m_deleteWithInstanceHasBeenSet;
+}
+
+string DataDisk::GetSnapshotId() const
+{
+    return m_snapshotId;
+}
+
+void DataDisk::SetSnapshotId(const string& _snapshotId)
+{
+    m_snapshotId = _snapshotId;
+    m_snapshotIdHasBeenSet = true;
+}
+
+bool DataDisk::SnapshotIdHasBeenSet() const
+{
+    return m_snapshotIdHasBeenSet;
 }
 

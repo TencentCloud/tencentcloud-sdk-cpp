@@ -38,7 +38,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_terminationPoliciesHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
-    m_zonesCheckPolicyHasBeenSet(false)
+    m_zonesCheckPolicyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,21 @@ string CreateAutoScalingGroupRequest::ToJsonString() const
         string key = "ZonesCheckPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_zonesCheckPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -442,6 +458,22 @@ void CreateAutoScalingGroupRequest::SetZonesCheckPolicy(const string& _zonesChec
 bool CreateAutoScalingGroupRequest::ZonesCheckPolicyHasBeenSet() const
 {
     return m_zonesCheckPolicyHasBeenSet;
+}
+
+vector<Tag> CreateAutoScalingGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAutoScalingGroupRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeBillResourceSummaryResponse::DescribeBillResourceSummaryResponse() :
-    m_resourceSummarySetHasBeenSet(false)
+    m_resourceSummarySetHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeBillResourceSummaryResponse::Deserialize(const strin
         m_resourceSummarySetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<BillResourceSummary> DescribeBillResourceSummaryResponse::GetResourceSumm
 bool DescribeBillResourceSummaryResponse::ResourceSummarySetHasBeenSet() const
 {
     return m_resourceSummarySetHasBeenSet;
+}
+
+int64_t DescribeBillResourceSummaryResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeBillResourceSummaryResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

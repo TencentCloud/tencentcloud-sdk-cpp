@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要重启的实例ID
-                     * @return InstanceId 要重启的实例ID
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置要重启的实例ID
-                     * @param InstanceId 要重启的实例ID
+                     * 设置实例ID
+                     * @param InstanceId 实例ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否强制重启
-                     * @return ForceRestart 是否强制重启
+                     * 获取是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
+                     * @return ForceRestart 是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
                      */
                     bool GetForceRestart() const;
 
                     /**
-                     * 设置是否强制重启
-                     * @param ForceRestart 是否强制重启
+                     * 设置是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
+                     * @param ForceRestart 是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
                      */
                     void SetForceRestart(const bool& _forceRestart);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要重启的实例ID
+                     * 实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否强制重启
+                     * 是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;

@@ -123,13 +123,13 @@ namespace TencentCloud
                      * 获取告警触发后，期望实例数的调整值。
                      * @return AdjustmentValue 告警触发后，期望实例数的调整值。
                      */
-                    std::string GetAdjustmentValue() const;
+                    int64_t GetAdjustmentValue() const;
 
                     /**
                      * 设置告警触发后，期望实例数的调整值。
                      * @param AdjustmentValue 告警触发后，期望实例数的调整值。
                      */
-                    void SetAdjustmentValue(const std::string& _adjustmentValue);
+                    void SetAdjustmentValue(const int64_t& _adjustmentValue);
 
                     /**
                      * 判断参数 AdjustmentValue 是否已赋值
@@ -220,7 +220,7 @@ namespace TencentCloud
                     /**
                      * 告警触发后，期望实例数的调整值。
                      */
-                    std::string m_adjustmentValue;
+                    int64_t m_adjustmentValue;
                     bool m_adjustmentValueHasBeenSet;
 
                     /**

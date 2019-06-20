@@ -582,7 +582,7 @@ namespace TencentCloud
                 DescribeBackupConfigOutcomeCallable DescribeBackupConfigCallable(const Model::DescribeBackupConfigRequest& request);
 
                 /**
-                 *本接口(DescribeBackupDatabases)用于查询备份数据库列表。
+                 *本接口(DescribeBackupDatabases)用于查询备份数据库列表 (将废弃)。
                  * @param req DescribeBackupDatabasesRequest
                  * @return DescribeBackupDatabasesOutcome
                  */
@@ -591,7 +591,7 @@ namespace TencentCloud
                 DescribeBackupDatabasesOutcomeCallable DescribeBackupDatabasesCallable(const Model::DescribeBackupDatabasesRequest& request);
 
                 /**
-                 *本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名。
+                 *本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (将废弃)。
                  * @param req DescribeBackupTablesRequest
                  * @return DescribeBackupTablesOutcome
                  */

@@ -96,6 +96,56 @@ namespace TencentCloud
                      */
                     bool BankCardHasBeenSet() const;
 
+                    /**
+                     * 获取证件类型（不填默认0）
+0 身份证
+1 军官证
+2 护照
+3 港澳证
+4 台胞证
+5 警官证
+6 士兵证
+7 其它证件
+                     * @return CertType 证件类型（不填默认0）
+0 身份证
+1 军官证
+2 护照
+3 港澳证
+4 台胞证
+5 警官证
+6 士兵证
+7 其它证件
+                     */
+                    int64_t GetCertType() const;
+
+                    /**
+                     * 设置证件类型（不填默认0）
+0 身份证
+1 军官证
+2 护照
+3 港澳证
+4 台胞证
+5 警官证
+6 士兵证
+7 其它证件
+                     * @param CertType 证件类型（不填默认0）
+0 身份证
+1 军官证
+2 护照
+3 港澳证
+4 台胞证
+5 警官证
+6 士兵证
+7 其它证件
+                     */
+                    void SetCertType(const int64_t& _certType);
+
+                    /**
+                     * 判断参数 CertType 是否已赋值
+                     * @return CertType 是否已赋值
+                     */
+                    bool CertTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +165,20 @@ namespace TencentCloud
                      */
                     std::string m_bankCard;
                     bool m_bankCardHasBeenSet;
+
+                    /**
+                     * 证件类型（不填默认0）
+0 身份证
+1 军官证
+2 护照
+3 港澳证
+4 台胞证
+5 警官证
+6 士兵证
+7 其它证件
+                     */
+                    int64_t m_certType;
+                    bool m_certTypeHasBeenSet;
 
                 };
             }

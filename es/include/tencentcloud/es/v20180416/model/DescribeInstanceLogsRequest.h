@@ -61,14 +61,30 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志类型
-                     * @return LogType 日志类型
+                     * 获取日志类型，默认值为1
+<li>1, 主日志</li>
+<li>2, 搜索慢日志</li>
+<li>3, 索引慢日志</li>
+<li>4, GC日志</li>
+                     * @return LogType 日志类型，默认值为1
+<li>1, 主日志</li>
+<li>2, 搜索慢日志</li>
+<li>3, 索引慢日志</li>
+<li>4, GC日志</li>
                      */
                     uint64_t GetLogType() const;
 
                     /**
-                     * 设置日志类型
-                     * @param LogType 日志类型
+                     * 设置日志类型，默认值为1
+<li>1, 主日志</li>
+<li>2, 搜索慢日志</li>
+<li>3, 索引慢日志</li>
+<li>4, GC日志</li>
+                     * @param LogType 日志类型，默认值为1
+<li>1, 主日志</li>
+<li>2, 搜索慢日志</li>
+<li>3, 索引慢日志</li>
+<li>4, GC日志</li>
                      */
                     void SetLogType(const uint64_t& _logType);
 
@@ -79,14 +95,14 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索词
-                     * @return SearchKey 搜索词
+                     * 获取搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
+                     * @return SearchKey 搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索词
-                     * @param SearchKey 搜索词
+                     * 设置搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
+                     * @param SearchKey 搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -97,14 +113,14 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取日志开始时间
-                     * @return StartTime 日志开始时间
+                     * 获取日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * @return StartTime 日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置日志开始时间
-                     * @param StartTime 日志开始时间
+                     * 设置日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * @param StartTime 日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -115,14 +131,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志结束时间
-                     * @return EndTime 日志结束时间
+                     * 获取日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * @return EndTime 日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置日志结束时间
-                     * @param EndTime 日志结束时间
+                     * 设置日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * @param EndTime 日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -133,14 +149,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分页起始值
-                     * @return Offset 分页起始值
+                     * 获取分页起始值, 默认值为0
+                     * @return Offset 分页起始值, 默认值为0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页起始值
-                     * @param Offset 分页起始值
+                     * 设置分页起始值, 默认值为0
+                     * @param Offset 分页起始值, 默认值为0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -151,14 +167,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取分页大小，默认值为100，最大值100
+                     * @return Limit 分页大小，默认值为100，最大值100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param Limit 分页大小
+                     * 设置分页大小，默认值为100，最大值100
+                     * @param Limit 分页大小，默认值为100，最大值100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -169,14 +185,22 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取时间排序方式
-                     * @return OrderByType 时间排序方式
+                     * 获取时间排序方式，默认值为0
+<li>0, 降序</li>
+<li>1, 升序</li>
+                     * @return OrderByType 时间排序方式，默认值为0
+<li>0, 降序</li>
+<li>1, 升序</li>
                      */
                     uint64_t GetOrderByType() const;
 
                     /**
-                     * 设置时间排序方式
-                     * @param OrderByType 时间排序方式
+                     * 设置时间排序方式，默认值为0
+<li>0, 降序</li>
+<li>1, 升序</li>
+                     * @param OrderByType 时间排序方式，默认值为0
+<li>0, 降序</li>
+<li>1, 升序</li>
                      */
                     void SetOrderByType(const uint64_t& _orderByType);
 
@@ -195,43 +219,49 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日志类型
+                     * 日志类型，默认值为1
+<li>1, 主日志</li>
+<li>2, 搜索慢日志</li>
+<li>3, 索引慢日志</li>
+<li>4, GC日志</li>
                      */
                     uint64_t m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 搜索词
+                     * 搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * 日志开始时间
+                     * 日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 日志结束时间
+                     * 日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 分页起始值
+                     * 分页起始值, 默认值为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * 分页大小，默认值为100，最大值100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 时间排序方式
+                     * 时间排序方式，默认值为0
+<li>0, 降序</li>
+<li>1, 升序</li>
                      */
                     uint64_t m_orderByType;
                     bool m_orderByTypeHasBeenSet;

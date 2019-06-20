@@ -40,7 +40,8 @@ DeviceInfo::DeviceInfo() :
     m_firstOnlineTimeHasBeenSet(false),
     m_lastOfflineTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_certStateHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         m_logLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("CertState") && !value["CertState"].IsNull())
+    {
+        if (!value["CertState"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.CertState` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certState = value["CertState"].GetUint64();
+        m_certStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -413,6 +424,14 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "LogLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logLevel, allocator);
+    }
+
+    if (m_certStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CertState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certState, allocator);
     }
 
 }
@@ -720,5 +739,21 @@ void DeviceInfo::SetLogLevel(const uint64_t& _logLevel)
 bool DeviceInfo::LogLevelHasBeenSet() const
 {
     return m_logLevelHasBeenSet;
+}
+
+uint64_t DeviceInfo::GetCertState() const
+{
+    return m_certState;
+}
+
+void DeviceInfo::SetCertState(const uint64_t& _certState)
+{
+    m_certState = _certState;
+    m_certStateHasBeenSet = true;
+}
+
+bool DeviceInfo::CertStateHasBeenSet() const
+{
+    return m_certStateHasBeenSet;
 }
 

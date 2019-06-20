@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
+                     * @return Status 任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param Status 任务状态
+                     * 设置任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
+                     * @param Status 任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
                      */
                     void SetStatus(const std::string& _status);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取任务ID，例如msp-jitoh33n
+                     * @return TaskId 任务ID，例如msp-jitoh33n
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param TaskId 任务ID
+                     * 设置任务ID，例如msp-jitoh33n
+                     * @param TaskId 任务ID，例如msp-jitoh33n
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态
+                     * 任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * 任务ID，例如msp-jitoh33n
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

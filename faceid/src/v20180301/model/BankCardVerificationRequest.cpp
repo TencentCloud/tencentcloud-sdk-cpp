@@ -26,7 +26,8 @@ using namespace std;
 BankCardVerificationRequest::BankCardVerificationRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_bankCardHasBeenSet(false)
+    m_bankCardHasBeenSet(false),
+    m_certTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string BankCardVerificationRequest::ToJsonString() const
         string key = "BankCard";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_bankCard.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_certType, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void BankCardVerificationRequest::SetBankCard(const string& _bankCard)
 bool BankCardVerificationRequest::BankCardHasBeenSet() const
 {
     return m_bankCardHasBeenSet;
+}
+
+int64_t BankCardVerificationRequest::GetCertType() const
+{
+    return m_certType;
+}
+
+void BankCardVerificationRequest::SetCertType(const int64_t& _certType)
+{
+    m_certType = _certType;
+    m_certTypeHasBeenSet = true;
+}
+
+bool BankCardVerificationRequest::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
 }
 
 

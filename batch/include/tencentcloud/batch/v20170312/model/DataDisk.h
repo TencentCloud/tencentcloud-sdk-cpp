@@ -138,6 +138,28 @@ namespace TencentCloud
                      */
                     bool DeleteWithInstanceHasBeenSet() const;
 
+                    /**
+                     * 获取数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnapshotId 数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SnapshotId 数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +190,13 @@ namespace TencentCloud
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
+
+                    /**
+                     * 数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
 
                 };
             }

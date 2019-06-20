@@ -80,11 +80,11 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const Value &value)
 
     if (value.HasMember("AdjustmentValue") && !value["AdjustmentValue"].IsNull())
     {
-        if (!value["AdjustmentValue"].IsString())
+        if (!value["AdjustmentValue"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `ScalingPolicy.AdjustmentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ScalingPolicy.AdjustmentValue` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_adjustmentValue = string(value["AdjustmentValue"].GetString());
+        m_adjustmentValue = value["AdjustmentValue"].GetInt64();
         m_adjustmentValueHasBeenSet = true;
     }
 
@@ -172,7 +172,7 @@ void ScalingPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocato
         Value iKey(kStringType);
         string key = "AdjustmentValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_adjustmentValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_adjustmentValue, allocator);
     }
 
     if (m_cooldownHasBeenSet)
@@ -272,12 +272,12 @@ bool ScalingPolicy::AdjustmentTypeHasBeenSet() const
     return m_adjustmentTypeHasBeenSet;
 }
 
-string ScalingPolicy::GetAdjustmentValue() const
+int64_t ScalingPolicy::GetAdjustmentValue() const
 {
     return m_adjustmentValue;
 }
 
-void ScalingPolicy::SetAdjustmentValue(const string& _adjustmentValue)
+void ScalingPolicy::SetAdjustmentValue(const int64_t& _adjustmentValue)
 {
     m_adjustmentValue = _adjustmentValue;
     m_adjustmentValueHasBeenSet = true;

@@ -46,7 +46,7 @@ namespace TencentCloud
                      * 获取任务ID。该接口为异步任务，可根据本参数调用[DescribeLoadBalancerTaskResult](/document/product/386/9308)接口来查询任务操作结果
                      * @return TaskId 任务ID。该接口为异步任务，可根据本参数调用[DescribeLoadBalancerTaskResult](/document/product/386/9308)接口来查询任务操作结果
                      */
-                    int64_t GetTaskId() const;
+                    std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
@@ -59,7 +59,7 @@ namespace TencentCloud
                     /**
                      * 任务ID。该接口为异步任务，可根据本参数调用[DescribeLoadBalancerTaskResult](/document/product/386/9308)接口来查询任务操作结果
                      */
-                    int64_t m_taskId;
+                    std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                 };

@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DetachDisksRequest::DetachDisksRequest() :
-    m_diskIdsHasBeenSet(false)
+    m_diskIdsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,14 @@ string DetachDisksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -70,6 +79,22 @@ void DetachDisksRequest::SetDiskIds(const vector<string>& _diskIds)
 bool DetachDisksRequest::DiskIdsHasBeenSet() const
 {
     return m_diskIdsHasBeenSet;
+}
+
+string DetachDisksRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DetachDisksRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DetachDisksRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

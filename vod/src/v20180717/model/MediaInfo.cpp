@@ -30,6 +30,7 @@ MediaInfo::MediaInfo() :
     m_imageSpriteInfoHasBeenSet(false),
     m_snapshotByTimeOffsetInfoHasBeenSet(false),
     m_keyFrameDescInfoHasBeenSet(false),
+    m_adaptiveDynamicStreamingInfoHasBeenSet(false),
     m_fileIdHasBeenSet(false)
 {
 }
@@ -175,6 +176,23 @@ CoreInternalOutcome MediaInfo::Deserialize(const Value &value)
         m_keyFrameDescInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AdaptiveDynamicStreamingInfo") && !value["AdaptiveDynamicStreamingInfo"].IsNull())
+    {
+        if (!value["AdaptiveDynamicStreamingInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaInfo.AdaptiveDynamicStreamingInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_adaptiveDynamicStreamingInfo.Deserialize(value["AdaptiveDynamicStreamingInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_adaptiveDynamicStreamingInfoHasBeenSet = true;
+    }
+
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
     {
         if (!value["FileId"].IsString())
@@ -262,6 +280,15 @@ void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_keyFrameDescInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_adaptiveDynamicStreamingInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdaptiveDynamicStreamingInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_adaptiveDynamicStreamingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fileIdHasBeenSet)
@@ -401,6 +428,22 @@ void MediaInfo::SetKeyFrameDescInfo(const MediaKeyFrameDescInfo& _keyFrameDescIn
 bool MediaInfo::KeyFrameDescInfoHasBeenSet() const
 {
     return m_keyFrameDescInfoHasBeenSet;
+}
+
+MediaAdaptiveDynamicStreamingInfo MediaInfo::GetAdaptiveDynamicStreamingInfo() const
+{
+    return m_adaptiveDynamicStreamingInfo;
+}
+
+void MediaInfo::SetAdaptiveDynamicStreamingInfo(const MediaAdaptiveDynamicStreamingInfo& _adaptiveDynamicStreamingInfo)
+{
+    m_adaptiveDynamicStreamingInfo = _adaptiveDynamicStreamingInfo;
+    m_adaptiveDynamicStreamingInfoHasBeenSet = true;
+}
+
+bool MediaInfo::AdaptiveDynamicStreamingInfoHasBeenSet() const
+{
+    return m_adaptiveDynamicStreamingInfoHasBeenSet;
 }
 
 string MediaInfo::GetFileId() const

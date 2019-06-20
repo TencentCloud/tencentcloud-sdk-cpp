@@ -19,24 +19,24 @@ set(tbp_public_header
   )
 
 set(tbp_public_header_model
-  include/tencentcloud/tbp/v20190311/model/PostAudioResponse.h
+  include/tencentcloud/tbp/v20190311/model/TextProcessResponse.h
   include/tencentcloud/tbp/v20190311/model/SlotInfo.h
+  include/tencentcloud/tbp/v20190311/model/TextResetRequest.h
   include/tencentcloud/tbp/v20190311/model/ResetRequest.h
-  include/tencentcloud/tbp/v20190311/model/PostTextRequest.h
+  include/tencentcloud/tbp/v20190311/model/TextResetResponse.h
   include/tencentcloud/tbp/v20190311/model/ResetResponse.h
-  include/tencentcloud/tbp/v20190311/model/PostTextResponse.h
-  include/tencentcloud/tbp/v20190311/model/PostAudioRequest.h
+  include/tencentcloud/tbp/v20190311/model/TextProcessRequest.h
   )
 
 set(tbp_src
   src/v20190311/TbpClient.cpp
-  src/v20190311/model/PostAudioResponse.cpp
+  src/v20190311/model/TextProcessResponse.cpp
   src/v20190311/model/SlotInfo.cpp
+  src/v20190311/model/TextResetRequest.cpp
   src/v20190311/model/ResetRequest.cpp
-  src/v20190311/model/PostTextRequest.cpp
+  src/v20190311/model/TextResetResponse.cpp
   src/v20190311/model/ResetResponse.cpp
-  src/v20190311/model/PostTextResponse.cpp
-  src/v20190311/model/PostAudioRequest.cpp
+  src/v20190311/model/TextProcessRequest.cpp
   )
 
 set(tbp_include

@@ -23,12 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/tbp/v20190311/model/PostAudioRequest.h>
-#include <tencentcloud/tbp/v20190311/model/PostAudioResponse.h>
-#include <tencentcloud/tbp/v20190311/model/PostTextRequest.h>
-#include <tencentcloud/tbp/v20190311/model/PostTextResponse.h>
 #include <tencentcloud/tbp/v20190311/model/ResetRequest.h>
 #include <tencentcloud/tbp/v20190311/model/ResetResponse.h>
+#include <tencentcloud/tbp/v20190311/model/TextProcessRequest.h>
+#include <tencentcloud/tbp/v20190311/model/TextProcessResponse.h>
+#include <tencentcloud/tbp/v20190311/model/TextResetRequest.h>
+#include <tencentcloud/tbp/v20190311/model/TextResetResponse.h>
 
 
 namespace TencentCloud
@@ -43,35 +43,17 @@ namespace TencentCloud
                 TbpClient(const Credential &credential, const std::string &region);
                 TbpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::PostAudioResponse> PostAudioOutcome;
-                typedef std::future<PostAudioOutcome> PostAudioOutcomeCallable;
-                typedef std::function<void(const TbpClient*, const Model::PostAudioRequest&, PostAudioOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostAudioAsyncHandler;
-                typedef Outcome<Error, Model::PostTextResponse> PostTextOutcome;
-                typedef std::future<PostTextOutcome> PostTextOutcomeCallable;
-                typedef std::function<void(const TbpClient*, const Model::PostTextRequest&, PostTextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostTextAsyncHandler;
                 typedef Outcome<Error, Model::ResetResponse> ResetOutcome;
                 typedef std::future<ResetOutcome> ResetOutcomeCallable;
                 typedef std::function<void(const TbpClient*, const Model::ResetRequest&, ResetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAsyncHandler;
+                typedef Outcome<Error, Model::TextProcessResponse> TextProcessOutcome;
+                typedef std::future<TextProcessOutcome> TextProcessOutcomeCallable;
+                typedef std::function<void(const TbpClient*, const Model::TextProcessRequest&, TextProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextProcessAsyncHandler;
+                typedef Outcome<Error, Model::TextResetResponse> TextResetOutcome;
+                typedef std::future<TextResetOutcome> TextResetOutcomeCallable;
+                typedef std::function<void(const TbpClient*, const Model::TextResetRequest&, TextResetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextResetAsyncHandler;
 
 
-
-                /**
-                 *机器人会话接口，接收音频信息，传递给后台机器人
-                 * @param req PostAudioRequest
-                 * @return PostAudioOutcome
-                 */
-                PostAudioOutcome PostAudio(const Model::PostAudioRequest &request);
-                void PostAudioAsync(const Model::PostAudioRequest& request, const PostAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PostAudioOutcomeCallable PostAudioCallable(const Model::PostAudioRequest& request);
-
-                /**
-                 *机器人会话接口，接收文本信息，传递给后台机器人
-                 * @param req PostTextRequest
-                 * @return PostTextOutcome
-                 */
-                PostTextOutcome PostText(const Model::PostTextRequest &request);
-                void PostTextAsync(const Model::PostTextRequest& request, const PostTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PostTextOutcomeCallable PostTextCallable(const Model::PostTextRequest& request);
 
                 /**
                  *对当前机器人的会话状态进行复位
@@ -81,6 +63,24 @@ namespace TencentCloud
                 ResetOutcome Reset(const Model::ResetRequest &request);
                 void ResetAsync(const Model::ResetRequest& request, const ResetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetOutcomeCallable ResetCallable(const Model::ResetRequest& request);
+
+                /**
+                 *接收调用侧的文本输入，返回应答文本。
+                 * @param req TextProcessRequest
+                 * @return TextProcessOutcome
+                 */
+                TextProcessOutcome TextProcess(const Model::TextProcessRequest &request);
+                void TextProcessAsync(const Model::TextProcessRequest& request, const TextProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextProcessOutcomeCallable TextProcessCallable(const Model::TextProcessRequest& request);
+
+                /**
+                 *会话重置接口
+                 * @param req TextResetRequest
+                 * @return TextResetOutcome
+                 */
+                TextResetOutcome TextReset(const Model::TextResetRequest &request);
+                void TextResetAsync(const Model::TextResetRequest& request, const TextResetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextResetOutcomeCallable TextResetCallable(const Model::TextResetRequest& request);
 
             };
         }

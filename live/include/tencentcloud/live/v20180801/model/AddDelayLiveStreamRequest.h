@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名称。
-                     * @return AppName 应用名称。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为live。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为live。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置应用名称。
-                     * @param AppName 应用名称。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为live。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为live。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取您的加速域名。
-                     * @return DomainName 您的加速域名。
+                     * 获取推流域名。
+                     * @return DomainName 推流域名。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置您的加速域名。
-                     * @param DomainName 您的加速域名。
+                     * 设置推流域名。
+                     * @param DomainName 推流域名。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -139,13 +139,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用名称。
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 您的加速域名。
+                     * 推流域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;

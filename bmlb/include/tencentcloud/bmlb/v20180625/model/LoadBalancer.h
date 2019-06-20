@@ -514,24 +514,6 @@ namespace TencentCloud
                      */
                     bool BzL7MetricsHasBeenSet() const;
 
-                    /**
-                     * 获取Isp类型。5:腾讯CAP;7:内网。
-                     * @return IspId Isp类型。5:腾讯CAP;7:内网。
-                     */
-                    std::string GetIspId() const;
-
-                    /**
-                     * 设置Isp类型。5:腾讯CAP;7:内网。
-                     * @param IspId Isp类型。5:腾讯CAP;7:内网。
-                     */
-                    void SetIspId(const std::string& _ispId);
-
-                    /**
-                     * 判断参数 IspId 是否已赋值
-                     * @return IspId 是否已赋值
-                     */
-                    bool IspIdHasBeenSet() const;
-
                 private:
 
                     /**
@@ -689,12 +671,6 @@ namespace TencentCloud
                      */
                     std::string m_bzL7Metrics;
                     bool m_bzL7MetricsHasBeenSet;
-
-                    /**
-                     * Isp类型。5:腾讯CAP;7:内网。
-                     */
-                    std::string m_ispId;
-                    bool m_ispIdHasBeenSet;
 
                 };
             }
