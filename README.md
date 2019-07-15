@@ -53,6 +53,8 @@ centos
 yum install openssl-devel
 ```
 
+注意，当前使用的是 openssl 1.0.2，已知 openssl 1.1.0 和 1.1.1 有兼容问题。
+
 - libuuid
 
 安装例子如下:
