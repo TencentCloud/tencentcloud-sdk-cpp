@@ -19,22 +19,26 @@ set(gme_public_header
   )
 
 set(gme_public_header_model
+  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceFilter.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterRequest.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterResponse.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
-  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h
+  include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
+  include/tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h
+  include/tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h
   )
 
 set(gme_src
   src/v20180711/GmeClient.cpp
+  src/v20180711/model/DescribeFilterResultListResponse.cpp
   src/v20180711/model/VoiceFilter.cpp
   src/v20180711/model/VoiceFilterRequest.cpp
   src/v20180711/model/VoiceFilterResponse.cpp
-  src/v20180711/model/VoiceFilterInfo.cpp
-  src/v20180711/model/DescribeFilterResultListResponse.cpp
   src/v20180711/model/DescribeFilterResultListRequest.cpp
+  src/v20180711/model/VoiceFilterInfo.cpp
+  src/v20180711/model/DescribeFilterResultResponse.cpp
+  src/v20180711/model/DescribeFilterResultRequest.cpp
   )
 
 set(gme_include

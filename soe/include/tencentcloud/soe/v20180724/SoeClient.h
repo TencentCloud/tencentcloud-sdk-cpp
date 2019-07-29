@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/soe/v20180724/model/InitOralProcessRequest.h>
 #include <tencentcloud/soe/v20180724/model/InitOralProcessResponse.h>
+#include <tencentcloud/soe/v20180724/model/KeywordEvaluateRequest.h>
+#include <tencentcloud/soe/v20180724/model/KeywordEvaluateResponse.h>
 #include <tencentcloud/soe/v20180724/model/TransmitOralProcessRequest.h>
 #include <tencentcloud/soe/v20180724/model/TransmitOralProcessResponse.h>
 #include <tencentcloud/soe/v20180724/model/TransmitOralProcessWithInitRequest.h>
@@ -46,6 +48,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InitOralProcessResponse> InitOralProcessOutcome;
                 typedef std::future<InitOralProcessOutcome> InitOralProcessOutcomeCallable;
                 typedef std::function<void(const SoeClient*, const Model::InitOralProcessRequest&, InitOralProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitOralProcessAsyncHandler;
+                typedef Outcome<Error, Model::KeywordEvaluateResponse> KeywordEvaluateOutcome;
+                typedef std::future<KeywordEvaluateOutcome> KeywordEvaluateOutcomeCallable;
+                typedef std::function<void(const SoeClient*, const Model::KeywordEvaluateRequest&, KeywordEvaluateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KeywordEvaluateAsyncHandler;
                 typedef Outcome<Error, Model::TransmitOralProcessResponse> TransmitOralProcessOutcome;
                 typedef std::future<TransmitOralProcessOutcome> TransmitOralProcessOutcomeCallable;
                 typedef std::function<void(const SoeClient*, const Model::TransmitOralProcessRequest&, TransmitOralProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransmitOralProcessAsyncHandler;
@@ -63,6 +68,15 @@ namespace TencentCloud
                 InitOralProcessOutcome InitOralProcess(const Model::InitOralProcessRequest &request);
                 void InitOralProcessAsync(const Model::InitOralProcessRequest& request, const InitOralProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InitOralProcessOutcomeCallable InitOralProcessCallable(const Model::InitOralProcessRequest& request);
+
+                /**
+                 *指定主题关键词词汇评估，分析语音与关键词的切合程度，可指定多个关键词，支持中文英文同时评测。分片传输时，尽量保证纯异步调用，即不等待上一个分片的传输结果边录边传，这样可以尽可能早的提供音频数据。音频源目前仅支持16k采样率16bit单声道编码方式，如有不一致可能导致评估不准确或失败。
+                 * @param req KeywordEvaluateRequest
+                 * @return KeywordEvaluateOutcome
+                 */
+                KeywordEvaluateOutcome KeywordEvaluate(const Model::KeywordEvaluateRequest &request);
+                void KeywordEvaluateAsync(const Model::KeywordEvaluateRequest& request, const KeywordEvaluateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KeywordEvaluateOutcomeCallable KeywordEvaluateCallable(const Model::KeywordEvaluateRequest& request);
 
                 /**
                  *传输音频数据，必须在完成发音评估初始化接口之后调用，且SessonId要与初始化接口保持一致。分片传输时，尽量保证SeqId顺序传输。音频源目前仅支持16k采样率16bit单声道编码方式，如有不一致可能导致评估不准确或失败。

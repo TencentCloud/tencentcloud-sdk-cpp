@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标实例Id
-                     * @return InstanceId 目标实例Id
+                     * 获取目标实例Id，如cdb-jd92ijd8
+                     * @return InstanceId 目标实例Id，如cdb-jd92ijd8
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置目标实例Id
-                     * @param InstanceId 目标实例Id
+                     * 设置目标实例Id，如cdb-jd92ijd8
+                     * @param InstanceId 目标实例Id，如cdb-jd92ijd8
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标实例vip
-                     * @return Ip 目标实例vip
+                     * 获取目标实例vip。已废弃，无需填写
+                     * @return Ip 目标实例vip。已废弃，无需填写
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置目标实例vip
-                     * @param Ip 目标实例vip
+                     * 设置目标实例vip。已废弃，无需填写
+                     * @param Ip 目标实例vip。已废弃，无需填写
                      */
                     void SetIp(const std::string& _ip);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取目标实例vport
-                     * @return Port 目标实例vport
+                     * 获取目标实例vport。已废弃，无需填写
+                     * @return Port 目标实例vport。已废弃，无需填写
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置目标实例vport
-                     * @param Port 目标实例vport
+                     * 设置目标实例vport。已废弃，无需填写
+                     * @param Port 目标实例vport。已废弃，无需填写
                      */
                     void SetPort(const int64_t& _port);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取目标实例Id
-                     * @return Region 目标实例Id
+                     * 获取目标实例地域，如ap-guangzhou
+                     * @return Region 目标实例地域，如ap-guangzhou
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置目标实例Id
-                     * @param Region 目标实例Id
+                     * 设置目标实例地域，如ap-guangzhou
+                     * @param Region 目标实例地域，如ap-guangzhou
                      */
                     void SetRegion(const std::string& _region);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取只读开关
-                     * @return ReadOnly 只读开关
+                     * 获取目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。
+                     * @return ReadOnly 目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。
                      */
                     int64_t GetReadOnly() const;
 
                     /**
-                     * 设置只读开关
-                     * @param ReadOnly 只读开关
+                     * 设置目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。
+                     * @param ReadOnly 目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。
                      */
                     void SetReadOnly(const int64_t& _readOnly);
 
@@ -139,31 +139,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标实例Id
+                     * 目标实例Id，如cdb-jd92ijd8
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 目标实例vip
+                     * 目标实例vip。已废弃，无需填写
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 目标实例vport
+                     * 目标实例vport。已废弃，无需填写
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 目标实例Id
+                     * 目标实例地域，如ap-guangzhou
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 只读开关
+                     * 目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。
                      */
                     int64_t m_readOnly;
                     bool m_readOnlyHasBeenSet;

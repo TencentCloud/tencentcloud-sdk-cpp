@@ -42,7 +42,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_instanceTypesHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
     m_versionNumberHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+    m_updatedTimeHasBeenSet(false),
+    m_camRoleNameHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,16 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const Value &value)
         m_updatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CamRoleName") && !value["CamRoleName"].IsNull())
+    {
+        if (!value["CamRoleName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LaunchConfiguration.CamRoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_camRoleName = string(value["CamRoleName"].GetString());
+        m_camRoleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -541,6 +552,14 @@ void LaunchConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "UpdatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_camRoleNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CamRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_camRoleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -880,5 +899,21 @@ void LaunchConfiguration::SetUpdatedTime(const string& _updatedTime)
 bool LaunchConfiguration::UpdatedTimeHasBeenSet() const
 {
     return m_updatedTimeHasBeenSet;
+}
+
+string LaunchConfiguration::GetCamRoleName() const
+{
+    return m_camRoleName;
+}
+
+void LaunchConfiguration::SetCamRoleName(const string& _camRoleName)
+{
+    m_camRoleName = _camRoleName;
+    m_camRoleNameHasBeenSet = true;
+}
+
+bool LaunchConfiguration::CamRoleNameHasBeenSet() const
+{
+    return m_camRoleNameHasBeenSet;
 }
 

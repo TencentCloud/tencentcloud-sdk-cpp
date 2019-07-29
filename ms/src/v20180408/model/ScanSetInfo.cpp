@@ -30,7 +30,9 @@ ScanSetInfo::ScanSetInfo() :
     m_taskTimeHasBeenSet(false),
     m_statusCodeHasBeenSet(false),
     m_statusDescHasBeenSet(false),
-    m_statusRefHasBeenSet(false)
+    m_statusRefHasBeenSet(false),
+    m_permissionInfoHasBeenSet(false),
+    m_sensitiveInfoHasBeenSet(false)
 {
 }
 
@@ -157,6 +159,40 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const Value &value)
         m_statusRefHasBeenSet = true;
     }
 
+    if (value.HasMember("PermissionInfo") && !value["PermissionInfo"].IsNull())
+    {
+        if (!value["PermissionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ScanSetInfo.PermissionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_permissionInfo.Deserialize(value["PermissionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_permissionInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("SensitiveInfo") && !value["SensitiveInfo"].IsNull())
+    {
+        if (!value["SensitiveInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ScanSetInfo.SensitiveInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sensitiveInfo.Deserialize(value["SensitiveInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sensitiveInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +274,24 @@ void ScanSetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "StatusRef";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_statusRef.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permissionInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PermissionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_permissionInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sensitiveInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SensitiveInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_sensitiveInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -385,5 +439,37 @@ void ScanSetInfo::SetStatusRef(const string& _statusRef)
 bool ScanSetInfo::StatusRefHasBeenSet() const
 {
     return m_statusRefHasBeenSet;
+}
+
+ScanPermissionList ScanSetInfo::GetPermissionInfo() const
+{
+    return m_permissionInfo;
+}
+
+void ScanSetInfo::SetPermissionInfo(const ScanPermissionList& _permissionInfo)
+{
+    m_permissionInfo = _permissionInfo;
+    m_permissionInfoHasBeenSet = true;
+}
+
+bool ScanSetInfo::PermissionInfoHasBeenSet() const
+{
+    return m_permissionInfoHasBeenSet;
+}
+
+ScanSensitiveList ScanSetInfo::GetSensitiveInfo() const
+{
+    return m_sensitiveInfo;
+}
+
+void ScanSetInfo::SetSensitiveInfo(const ScanSensitiveList& _sensitiveInfo)
+{
+    m_sensitiveInfo = _sensitiveInfo;
+    m_sensitiveInfoHasBeenSet = true;
+}
+
+bool ScanSetInfo::SensitiveInfoHasBeenSet() const
+{
+    return m_sensitiveInfoHasBeenSet;
 }
 

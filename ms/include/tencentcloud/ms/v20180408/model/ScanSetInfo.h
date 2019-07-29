@@ -28,6 +28,8 @@
 #include <tencentcloud/ms/v20180408/model/VirusInfo.h>
 #include <tencentcloud/ms/v20180408/model/VulInfo.h>
 #include <tencentcloud/ms/v20180408/model/AdInfo.h>
+#include <tencentcloud/ms/v20180408/model/ScanPermissionList.h>
+#include <tencentcloud/ms/v20180408/model/ScanSensitiveList.h>
 
 
 namespace TencentCloud
@@ -212,6 +214,42 @@ namespace TencentCloud
                      */
                     bool StatusRefHasBeenSet() const;
 
+                    /**
+                     * 获取系统权限信息
+                     * @return PermissionInfo 系统权限信息
+                     */
+                    ScanPermissionList GetPermissionInfo() const;
+
+                    /**
+                     * 设置系统权限信息
+                     * @param PermissionInfo 系统权限信息
+                     */
+                    void SetPermissionInfo(const ScanPermissionList& _permissionInfo);
+
+                    /**
+                     * 判断参数 PermissionInfo 是否已赋值
+                     * @return PermissionInfo 是否已赋值
+                     */
+                    bool PermissionInfoHasBeenSet() const;
+
+                    /**
+                     * 获取敏感词列表
+                     * @return SensitiveInfo 敏感词列表
+                     */
+                    ScanSensitiveList GetSensitiveInfo() const;
+
+                    /**
+                     * 设置敏感词列表
+                     * @param SensitiveInfo 敏感词列表
+                     */
+                    void SetSensitiveInfo(const ScanSensitiveList& _sensitiveInfo);
+
+                    /**
+                     * 判断参数 SensitiveInfo 是否已赋值
+                     * @return SensitiveInfo 是否已赋值
+                     */
+                    bool SensitiveInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,6 +305,18 @@ namespace TencentCloud
                      */
                     std::string m_statusRef;
                     bool m_statusRefHasBeenSet;
+
+                    /**
+                     * 系统权限信息
+                     */
+                    ScanPermissionList m_permissionInfo;
+                    bool m_permissionInfoHasBeenSet;
+
+                    /**
+                     * 敏感词列表
+                     */
+                    ScanSensitiveList m_sensitiveInfo;
+                    bool m_sensitiveInfoHasBeenSet;
 
                 };
             }

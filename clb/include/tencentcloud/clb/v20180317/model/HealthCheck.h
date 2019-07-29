@@ -35,7 +35,8 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 健康检查信息
+                * 健康检查信息。
+注意，自定义探测相关参数 目前只有少量区域灰度支持。
                 */
                 class HealthCheck : public AbstractModel
                 {
@@ -153,21 +154,21 @@ namespace TencentCloud
                     bool UnHealthNumHasBeenSet() const;
 
                     /**
-                     * 获取健康检查状态码（仅适用于HTTP/HTTPS转发规则）。可选值：1~31，默认 31。
-1 表示探测后返回值 1xx 表示健康，2 表示返回 2xx 表示健康，4 表示返回 3xx 表示健康，8 表示返回 4xx 表示健康，16 表示返回 5xx 表示健康。若希望多种码都表示健康，则将相应的值相加。
+                     * 获取健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。
+1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。注意：TCP监听器的HTTP健康检查方式，只支持指定一种健康检查状态码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpCode 健康检查状态码（仅适用于HTTP/HTTPS转发规则）。可选值：1~31，默认 31。
-1 表示探测后返回值 1xx 表示健康，2 表示返回 2xx 表示健康，4 表示返回 3xx 表示健康，8 表示返回 4xx 表示健康，16 表示返回 5xx 表示健康。若希望多种码都表示健康，则将相应的值相加。
+                     * @return HttpCode 健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。
+1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。注意：TCP监听器的HTTP健康检查方式，只支持指定一种健康检查状态码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHttpCode() const;
 
                     /**
-                     * 设置健康检查状态码（仅适用于HTTP/HTTPS转发规则）。可选值：1~31，默认 31。
-1 表示探测后返回值 1xx 表示健康，2 表示返回 2xx 表示健康，4 表示返回 3xx 表示健康，8 表示返回 4xx 表示健康，16 表示返回 5xx 表示健康。若希望多种码都表示健康，则将相应的值相加。
+                     * 设置健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。
+1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。注意：TCP监听器的HTTP健康检查方式，只支持指定一种健康检查状态码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpCode 健康检查状态码（仅适用于HTTP/HTTPS转发规则）。可选值：1~31，默认 31。
-1 表示探测后返回值 1xx 表示健康，2 表示返回 2xx 表示健康，4 表示返回 3xx 表示健康，8 表示返回 4xx 表示健康，16 表示返回 5xx 表示健康。若希望多种码都表示健康，则将相应的值相加。
+                     * @param HttpCode 健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。
+1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。注意：TCP监听器的HTTP健康检查方式，只支持指定一种健康检查状态码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttpCode(const int64_t& _httpCode);
@@ -179,17 +180,17 @@ namespace TencentCloud
                     bool HttpCodeHasBeenSet() const;
 
                     /**
-                     * 获取健康检查路径（仅适用于HTTP/HTTPS转发规则）。
+                     * 获取健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpCheckPath 健康检查路径（仅适用于HTTP/HTTPS转发规则）。
+                     * @return HttpCheckPath 健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHttpCheckPath() const;
 
                     /**
-                     * 设置健康检查路径（仅适用于HTTP/HTTPS转发规则）。
+                     * 设置健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpCheckPath 健康检查路径（仅适用于HTTP/HTTPS转发规则）。
+                     * @param HttpCheckPath 健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttpCheckPath(const std::string& _httpCheckPath);
@@ -201,17 +202,17 @@ namespace TencentCloud
                     bool HttpCheckPathHasBeenSet() const;
 
                     /**
-                     * 获取健康检查域名（仅适用于HTTP/HTTPS转发规则）。
+                     * 获取健康检查域名（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpCheckDomain 健康检查域名（仅适用于HTTP/HTTPS转发规则）。
+                     * @return HttpCheckDomain 健康检查域名（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHttpCheckDomain() const;
 
                     /**
-                     * 设置健康检查域名（仅适用于HTTP/HTTPS转发规则）。
+                     * 设置健康检查域名（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpCheckDomain 健康检查域名（仅适用于HTTP/HTTPS转发规则）。
+                     * @param HttpCheckDomain 健康检查域名（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttpCheckDomain(const std::string& _httpCheckDomain);
@@ -223,17 +224,17 @@ namespace TencentCloud
                     bool HttpCheckDomainHasBeenSet() const;
 
                     /**
-                     * 获取健康检查方法（仅适用于HTTP/HTTPS转发规则），取值为HEAD或GET。
+                     * 获取健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpCheckMethod 健康检查方法（仅适用于HTTP/HTTPS转发规则），取值为HEAD或GET。
+                     * @return HttpCheckMethod 健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHttpCheckMethod() const;
 
                     /**
-                     * 设置健康检查方法（仅适用于HTTP/HTTPS转发规则），取值为HEAD或GET。
+                     * 设置健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpCheckMethod 健康检查方法（仅适用于HTTP/HTTPS转发规则），取值为HEAD或GET。
+                     * @param HttpCheckMethod 健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttpCheckMethod(const std::string& _httpCheckMethod);
@@ -243,6 +244,138 @@ namespace TencentCloud
                      * @return HttpCheckMethod 是否已赋值
                      */
                     bool HttpCheckMethodHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckPort 自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCheckPort() const;
+
+                    /**
+                     * 设置自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CheckPort 自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCheckPort(const int64_t& _checkPort);
+
+                    /**
+                     * 判断参数 CheckPort 是否已赋值
+                     * @return CheckPort 是否已赋值
+                     */
+                    bool CheckPortHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContextType 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContextType() const;
+
+                    /**
+                     * 设置自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContextType 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContextType(const std::string& _contextType);
+
+                    /**
+                     * 判断参数 ContextType 是否已赋值
+                     * @return ContextType 是否已赋值
+                     */
+                    bool ContextTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SendContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSendContext() const;
+
+                    /**
+                     * 设置自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SendContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSendContext(const std::string& _sendContext);
+
+                    /**
+                     * 判断参数 SendContext 是否已赋值
+                     * @return SendContext 是否已赋值
+                     */
+                    bool SendContextHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecvContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRecvContext() const;
+
+                    /**
+                     * 设置自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RecvContext 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecvContext(const std::string& _recvContext);
+
+                    /**
+                     * 判断参数 RecvContext 是否已赋值
+                     * @return RecvContext 是否已赋值
+                     */
+                    bool RecvContextHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测相关参数。健康检查使用的协议：TCP | HTTP | CUSTOM（仅适用于TCP/UDP监听器，其中UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckType 自定义探测相关参数。健康检查使用的协议：TCP | HTTP | CUSTOM（仅适用于TCP/UDP监听器，其中UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCheckType() const;
+
+                    /**
+                     * 设置自定义探测相关参数。健康检查使用的协议：TCP | HTTP | CUSTOM（仅适用于TCP/UDP监听器，其中UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CheckType 自定义探测相关参数。健康检查使用的协议：TCP | HTTP | CUSTOM（仅适用于TCP/UDP监听器，其中UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCheckType(const std::string& _checkType);
+
+                    /**
+                     * 判断参数 CheckType 是否已赋值
+                     * @return CheckType 是否已赋值
+                     */
+                    bool CheckTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义探测相关参数。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HttpVersion 自定义探测相关参数。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHttpVersion() const;
+
+                    /**
+                     * 设置自定义探测相关参数。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HttpVersion 自定义探测相关参数。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttpVersion(const std::string& _httpVersion);
+
+                    /**
+                     * 判断参数 HttpVersion 是否已赋值
+                     * @return HttpVersion 是否已赋值
+                     */
+                    bool HttpVersionHasBeenSet() const;
 
                 private:
 
@@ -281,33 +414,75 @@ namespace TencentCloud
                     bool m_unHealthNumHasBeenSet;
 
                     /**
-                     * 健康检查状态码（仅适用于HTTP/HTTPS转发规则）。可选值：1~31，默认 31。
-1 表示探测后返回值 1xx 表示健康，2 表示返回 2xx 表示健康，4 表示返回 3xx 表示健康，8 表示返回 4xx 表示健康，16 表示返回 5xx 表示健康。若希望多种码都表示健康，则将相应的值相加。
+                     * 健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。
+1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。注意：TCP监听器的HTTP健康检查方式，只支持指定一种健康检查状态码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_httpCode;
                     bool m_httpCodeHasBeenSet;
 
                     /**
-                     * 健康检查路径（仅适用于HTTP/HTTPS转发规则）。
+                     * 健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpCheckPath;
                     bool m_httpCheckPathHasBeenSet;
 
                     /**
-                     * 健康检查域名（仅适用于HTTP/HTTPS转发规则）。
+                     * 健康检查域名（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpCheckDomain;
                     bool m_httpCheckDomainHasBeenSet;
 
                     /**
-                     * 健康检查方法（仅适用于HTTP/HTTPS转发规则），取值为HEAD或GET。
+                     * 健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpCheckMethod;
                     bool m_httpCheckMethodHasBeenSet;
+
+                    /**
+                     * 自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_checkPort;
+                    bool m_checkPortHasBeenSet;
+
+                    /**
+                     * 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contextType;
+                    bool m_contextTypeHasBeenSet;
+
+                    /**
+                     * 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sendContext;
+                    bool m_sendContextHasBeenSet;
+
+                    /**
+                     * 自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recvContext;
+                    bool m_recvContextHasBeenSet;
+
+                    /**
+                     * 自定义探测相关参数。健康检查使用的协议：TCP | HTTP | CUSTOM（仅适用于TCP/UDP监听器，其中UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_checkType;
+                    bool m_checkTypeHasBeenSet;
+
+                    /**
+                     * 自定义探测相关参数。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_httpVersion;
+                    bool m_httpVersionHasBeenSet;
 
                 };
             }

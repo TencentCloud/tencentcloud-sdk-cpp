@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主库数据保护方式，主实例属性，可能的返回值：0-异步复制方式，1-半同步复制方式，2-强同步复制方式。
-                     * @return ProtectMode 主库数据保护方式，主实例属性，可能的返回值：0-异步复制方式，1-半同步复制方式，2-强同步复制方式。
+                     * 获取主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
+                     * @return ProtectMode 主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
                      */
                     int64_t GetProtectMode() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool ProtectModeHasBeenSet() const;
 
                     /**
-                     * 获取主库部署方式，主实例属性，可能的返回值：0-单可用部署，1-多可用区部署。
-                     * @return DeployMode 主库部署方式，主实例属性，可能的返回值：0-单可用部署，1-多可用区部署。
+                     * 获取主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
+                     * @return DeployMode 主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
                      */
                     int64_t GetDeployMode() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取主库可用区的正式名称，如ap-shanghai-1。
-                     * @return Zone 主库可用区的正式名称，如ap-shanghai-1。
+                     * 获取实例可用区信息，格式如 "ap-shanghai-1"。
+                     * @return Zone 实例可用区信息，格式如 "ap-shanghai-1"。
                      */
                     std::string GetZone() const;
 
@@ -81,8 +81,8 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取从库的配置信息。
-                     * @return SlaveConfig 从库的配置信息。
+                     * 获取备库的配置信息。
+                     * @return SlaveConfig 备库的配置信息。
                      */
                     SlaveConfig GetSlaveConfig() const;
 
@@ -93,8 +93,8 @@ namespace TencentCloud
                     bool SlaveConfigHasBeenSet() const;
 
                     /**
-                     * 获取ECDB第二个从库的配置信息，只有ECDB实例才有这个字段。
-                     * @return BackupConfig ECDB第二个从库的配置信息，只有ECDB实例才有这个字段。
+                     * 获取强同步实例第二备库的配置信息。
+                     * @return BackupConfig 强同步实例第二备库的配置信息。
                      */
                     BackupConfig GetBackupConfig() const;
 
@@ -107,31 +107,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主库数据保护方式，主实例属性，可能的返回值：0-异步复制方式，1-半同步复制方式，2-强同步复制方式。
+                     * 主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
                      */
                     int64_t m_protectMode;
                     bool m_protectModeHasBeenSet;
 
                     /**
-                     * 主库部署方式，主实例属性，可能的返回值：0-单可用部署，1-多可用区部署。
+                     * 主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
                      */
                     int64_t m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * 主库可用区的正式名称，如ap-shanghai-1。
+                     * 实例可用区信息，格式如 "ap-shanghai-1"。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 从库的配置信息。
+                     * 备库的配置信息。
                      */
                     SlaveConfig m_slaveConfig;
                     bool m_slaveConfigHasBeenSet;
 
                     /**
-                     * ECDB第二个从库的配置信息，只有ECDB实例才有这个字段。
+                     * 强同步实例第二备库的配置信息。
                      */
                     BackupConfig m_backupConfig;
                     bool m_backupConfigHasBeenSet;

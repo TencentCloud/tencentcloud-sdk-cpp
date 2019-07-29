@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取阿里云AccessKey
-                     * @return AccessKey 阿里云AccessKey
+                     * 获取阿里云AccessKey。源库是阿里云RDS5.6适用
+                     * @return AccessKey 阿里云AccessKey。源库是阿里云RDS5.6适用
                      */
                     std::string GetAccessKey() const;
 
                     /**
-                     * 设置阿里云AccessKey
-                     * @param AccessKey 阿里云AccessKey
+                     * 设置阿里云AccessKey。源库是阿里云RDS5.6适用
+                     * @param AccessKey 阿里云AccessKey。源库是阿里云RDS5.6适用
                      */
                     void SetAccessKey(const std::string& _accessKey);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取阿里云rds实例id
-                     * @return RdsInstanceId 阿里云rds实例id
+                     * 获取阿里云RDS实例ID。源库是阿里云RDS5.6适用
+                     * @return RdsInstanceId 阿里云RDS实例ID。源库是阿里云RDS5.6适用
                      */
                     std::string GetRdsInstanceId() const;
 
                     /**
-                     * 设置阿里云rds实例id
-                     * @param RdsInstanceId 阿里云rds实例id
+                     * 设置阿里云RDS实例ID。源库是阿里云RDS5.6适用
+                     * @param RdsInstanceId 阿里云RDS实例ID。源库是阿里云RDS5.6适用
                      */
                     void SetRdsInstanceId(const std::string& _rdsInstanceId);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool RdsInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取CVM实例短ID，格式如：ins-olgl89y8，与云主机控制台页面显示的实例ID相同，如果是CVM自建实例或者通过自建VPN接入的公网实例，需要传递此字段
-                     * @return CvmInstanceId CVM实例短ID，格式如：ins-olgl89y8，与云主机控制台页面显示的实例ID相同，如果是CVM自建实例或者通过自建VPN接入的公网实例，需要传递此字段
+                     * 获取CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
+                     * @return CvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
                      */
                     std::string GetCvmInstanceId() const;
 
                     /**
-                     * 设置CVM实例短ID，格式如：ins-olgl89y8，与云主机控制台页面显示的实例ID相同，如果是CVM自建实例或者通过自建VPN接入的公网实例，需要传递此字段
-                     * @param CvmInstanceId CVM实例短ID，格式如：ins-olgl89y8，与云主机控制台页面显示的实例ID相同，如果是CVM自建实例或者通过自建VPN接入的公网实例，需要传递此字段
+                     * 设置CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
+                     * @param CvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
                      */
                     void SetCvmInstanceId(const std::string& _cvmInstanceId);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool CvmInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取专线网关ID
-                     * @return UniqDcgId 专线网关ID
+                     * 获取专线网关ID，格式如：dcg-0rxtqqxb
+                     * @return UniqDcgId 专线网关ID，格式如：dcg-0rxtqqxb
                      */
                     std::string GetUniqDcgId() const;
 
                     /**
-                     * 设置专线网关ID
-                     * @param UniqDcgId 专线网关ID
+                     * 设置专线网关ID，格式如：dcg-0rxtqqxb
+                     * @param UniqDcgId 专线网关ID，格式如：dcg-0rxtqqxb
                      */
                     void SetUniqDcgId(const std::string& _uniqDcgId);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool UniqDcgIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，和原来的数字vpcId对应，需要调vpc的接口去转换
-                     * @return VpcId 私有网络ID，和原来的数字vpcId对应，需要调vpc的接口去转换
+                     * 获取私有网络ID，格式如：vpc-92jblxto
+                     * @return VpcId 私有网络ID，格式如：vpc-92jblxto
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，和原来的数字vpcId对应，需要调vpc的接口去转换
-                     * @param VpcId 私有网络ID，和原来的数字vpcId对应，需要调vpc的接口去转换
+                     * 设置私有网络ID，格式如：vpc-92jblxto
+                     * @param VpcId 私有网络ID，格式如：vpc-92jblxto
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络下的子网ID, 和原来的数字子网ID对应，需要调用vpc的接口去转换
-                     * @return SubnetId 私有网络下的子网ID, 和原来的数字子网ID对应，需要调用vpc的接口去转换
+                     * 获取私有网络下的子网ID，格式如：subnet-3paxmkdz
+                     * @return SubnetId 私有网络下的子网ID，格式如：subnet-3paxmkdz
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络下的子网ID, 和原来的数字子网ID对应，需要调用vpc的接口去转换
-                     * @param SubnetId 私有网络下的子网ID, 和原来的数字子网ID对应，需要调用vpc的接口去转换
+                     * 设置私有网络下的子网ID，格式如：subnet-3paxmkdz
+                     * @param SubnetId 私有网络下的子网ID，格式如：subnet-3paxmkdz
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取系统分配的VPN网关ID
-                     * @return UniqVpnGwId 系统分配的VPN网关ID
+                     * 获取VPN网关ID，格式如：vpngw-9ghexg7q
+                     * @return UniqVpnGwId VPN网关ID，格式如：vpngw-9ghexg7q
                      */
                     std::string GetUniqVpnGwId() const;
 
                     /**
-                     * 设置系统分配的VPN网关ID
-                     * @param UniqVpnGwId 系统分配的VPN网关ID
+                     * 设置VPN网关ID，格式如：vpngw-9ghexg7q
+                     * @param UniqVpnGwId VPN网关ID，格式如：vpngw-9ghexg7q
                      */
                     void SetUniqVpnGwId(const std::string& _uniqVpnGwId);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool UniqVpnGwIdHasBeenSet() const;
 
                     /**
-                     * 获取实例短Id
-                     * @return InstanceId 实例短Id
+                     * 获取数据库实例ID,格式如：cdb-powiqx8q
+                     * @return InstanceId 数据库实例ID,格式如：cdb-powiqx8q
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例短Id
-                     * @param InstanceId 实例短Id
+                     * 设置数据库实例ID,格式如：cdb-powiqx8q
+                     * @param InstanceId 数据库实例ID,格式如：cdb-powiqx8q
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -281,14 +281,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取服务提供商，如:aliyun,others
-                     * @return Supplier 服务提供商，如:aliyun,others
+                     * 获取当实例为RDS实例时，填写为aliyun, 其他情况均填写others
+                     * @return Supplier 当实例为RDS实例时，填写为aliyun, 其他情况均填写others
                      */
                     std::string GetSupplier() const;
 
                     /**
-                     * 设置服务提供商，如:aliyun,others
-                     * @param Supplier 服务提供商，如:aliyun,others
+                     * 设置当实例为RDS实例时，填写为aliyun, 其他情况均填写others
+                     * @param Supplier 当实例为RDS实例时，填写为aliyun, 其他情况均填写others
                      */
                     void SetSupplier(const std::string& _supplier);
 
@@ -301,7 +301,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 阿里云AccessKey
+                     * 阿里云AccessKey。源库是阿里云RDS5.6适用
                      */
                     std::string m_accessKey;
                     bool m_accessKeyHasBeenSet;
@@ -331,43 +331,43 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 阿里云rds实例id
+                     * 阿里云RDS实例ID。源库是阿里云RDS5.6适用
                      */
                     std::string m_rdsInstanceId;
                     bool m_rdsInstanceIdHasBeenSet;
 
                     /**
-                     * CVM实例短ID，格式如：ins-olgl89y8，与云主机控制台页面显示的实例ID相同，如果是CVM自建实例或者通过自建VPN接入的公网实例，需要传递此字段
+                     * CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
                      */
                     std::string m_cvmInstanceId;
                     bool m_cvmInstanceIdHasBeenSet;
 
                     /**
-                     * 专线网关ID
+                     * 专线网关ID，格式如：dcg-0rxtqqxb
                      */
                     std::string m_uniqDcgId;
                     bool m_uniqDcgIdHasBeenSet;
 
                     /**
-                     * 私有网络ID，和原来的数字vpcId对应，需要调vpc的接口去转换
+                     * 私有网络ID，格式如：vpc-92jblxto
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络下的子网ID, 和原来的数字子网ID对应，需要调用vpc的接口去转换
+                     * 私有网络下的子网ID，格式如：subnet-3paxmkdz
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 系统分配的VPN网关ID
+                     * VPN网关ID，格式如：vpngw-9ghexg7q
                      */
                     std::string m_uniqVpnGwId;
                     bool m_uniqVpnGwIdHasBeenSet;
 
                     /**
-                     * 实例短Id
+                     * 数据库实例ID,格式如：cdb-powiqx8q
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -379,7 +379,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 服务提供商，如:aliyun,others
+                     * 当实例为RDS实例时，填写为aliyun, 其他情况均填写others
                      */
                     std::string m_supplier;
                     bool m_supplierHasBeenSet;

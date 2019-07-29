@@ -37,6 +37,10 @@
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h>
+#include <tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h>
 
 
 namespace TencentCloud
@@ -72,6 +76,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
+                typedef Outcome<Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
+                typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
+                typedef Outcome<Error, Model::UpgradeLicenseResponse> UpgradeLicenseOutcome;
+                typedef std::future<UpgradeLicenseOutcome> UpgradeLicenseOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpgradeLicenseRequest&, UpgradeLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeLicenseAsyncHandler;
 
 
 
@@ -147,6 +157,24 @@ namespace TencentCloud
                 UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest &request);
                 void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateInstanceOutcomeCallable UpdateInstanceCallable(const Model::UpdateInstanceRequest& request);
+
+                /**
+                 *升级ES集群版本
+                 * @param req UpgradeInstanceRequest
+                 * @return UpgradeInstanceOutcome
+                 */
+                UpgradeInstanceOutcome UpgradeInstance(const Model::UpgradeInstanceRequest &request);
+                void UpgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeInstanceOutcomeCallable UpgradeInstanceCallable(const Model::UpgradeInstanceRequest& request);
+
+                /**
+                 *升级ES商业特性
+                 * @param req UpgradeLicenseRequest
+                 * @return UpgradeLicenseOutcome
+                 */
+                UpgradeLicenseOutcome UpgradeLicense(const Model::UpgradeLicenseRequest &request);
+                void UpgradeLicenseAsync(const Model::UpgradeLicenseRequest& request, const UpgradeLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeLicenseOutcomeCallable UpgradeLicenseCallable(const Model::UpgradeLicenseRequest& request);
 
             };
         }

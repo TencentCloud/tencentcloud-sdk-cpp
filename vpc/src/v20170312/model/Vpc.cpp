@@ -32,7 +32,8 @@ Vpc::Vpc() :
     m_domainNameHasBeenSet(false),
     m_dhcpOptionsIdHasBeenSet(false),
     m_enableDhcpHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false)
+    m_ipv6CidrBlockHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,26 @@ CoreInternalOutcome Vpc::Deserialize(const Value &value)
         m_ipv6CidrBlockHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `Vpc.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -252,6 +273,21 @@ void Vpc::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "Ipv6CidrBlock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -431,5 +467,21 @@ void Vpc::SetIpv6CidrBlock(const string& _ipv6CidrBlock)
 bool Vpc::Ipv6CidrBlockHasBeenSet() const
 {
     return m_ipv6CidrBlockHasBeenSet;
+}
+
+vector<Tag> Vpc::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void Vpc::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool Vpc::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

@@ -22,40 +22,44 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/DisableKeysRequest.h
   include/tencentcloud/kms/v20190118/model/UpdateAliasRequest.h
   include/tencentcloud/kms/v20190118/model/ReEncryptRequest.h
-  include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionResponse.h
+  include/tencentcloud/kms/v20190118/model/GenerateDataKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GenerateDataKeyResponse.h
   include/tencentcloud/kms/v20190118/model/EnableKeyRotationRequest.h
   include/tencentcloud/kms/v20190118/model/EnableKeyRotationResponse.h
   include/tencentcloud/kms/v20190118/model/CreateKeyRequest.h
   include/tencentcloud/kms/v20190118/model/EnableKeysResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeyResponse.h
-  include/tencentcloud/kms/v20190118/model/CreateKeyResponse.h
+  include/tencentcloud/kms/v20190118/model/DecryptResponse.h
   include/tencentcloud/kms/v20190118/model/ReEncryptResponse.h
-  include/tencentcloud/kms/v20190118/model/EncryptResponse.h
+  include/tencentcloud/kms/v20190118/model/DescribeKeyRequest.h
+  include/tencentcloud/kms/v20190118/model/CancelKeyDeletionRequest.h
   include/tencentcloud/kms/v20190118/model/EnableKeyResponse.h
+  include/tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h
   include/tencentcloud/kms/v20190118/model/GetServiceStatusResponse.h
   include/tencentcloud/kms/v20190118/model/Key.h
   include/tencentcloud/kms/v20190118/model/GetKeyRotationStatusResponse.h
   include/tencentcloud/kms/v20190118/model/EnableKeysRequest.h
+  include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionResponse.h
   include/tencentcloud/kms/v20190118/model/EncryptRequest.h
-  include/tencentcloud/kms/v20190118/model/DecryptResponse.h
+  include/tencentcloud/kms/v20190118/model/CreateKeyResponse.h
   include/tencentcloud/kms/v20190118/model/EnableKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GetKeyRotationStatusRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeKeysResponse.h
   include/tencentcloud/kms/v20190118/model/ListKeyDetailResponse.h
-  include/tencentcloud/kms/v20190118/model/GenerateDataKeyRequest.h
+  include/tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h
   include/tencentcloud/kms/v20190118/model/ListKeysRequest.h
   include/tencentcloud/kms/v20190118/model/ListKeysResponse.h
   include/tencentcloud/kms/v20190118/model/KeyMetadata.h
   include/tencentcloud/kms/v20190118/model/DisableKeysResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeyRotationResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateAliasResponse.h
+  include/tencentcloud/kms/v20190118/model/ScheduleKeyDeletionResponse.h
   include/tencentcloud/kms/v20190118/model/DecryptRequest.h
   include/tencentcloud/kms/v20190118/model/ListKeyDetailRequest.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h
   include/tencentcloud/kms/v20190118/model/DisableKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeKeyResponse.h
-  include/tencentcloud/kms/v20190118/model/DescribeKeyRequest.h
+  include/tencentcloud/kms/v20190118/model/EncryptResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeKeysRequest.h
   include/tencentcloud/kms/v20190118/model/GetServiceStatusRequest.h
   include/tencentcloud/kms/v20190118/model/DisableKeyRotationRequest.h
@@ -66,40 +70,44 @@ set(kms_src
   src/v20190118/model/DisableKeysRequest.cpp
   src/v20190118/model/UpdateAliasRequest.cpp
   src/v20190118/model/ReEncryptRequest.cpp
-  src/v20190118/model/UpdateKeyDescriptionResponse.cpp
+  src/v20190118/model/GenerateDataKeyRequest.cpp
   src/v20190118/model/GenerateDataKeyResponse.cpp
   src/v20190118/model/EnableKeyRotationRequest.cpp
   src/v20190118/model/EnableKeyRotationResponse.cpp
   src/v20190118/model/CreateKeyRequest.cpp
   src/v20190118/model/EnableKeysResponse.cpp
   src/v20190118/model/DisableKeyResponse.cpp
-  src/v20190118/model/CreateKeyResponse.cpp
+  src/v20190118/model/DecryptResponse.cpp
   src/v20190118/model/ReEncryptResponse.cpp
-  src/v20190118/model/EncryptResponse.cpp
+  src/v20190118/model/DescribeKeyRequest.cpp
+  src/v20190118/model/CancelKeyDeletionRequest.cpp
   src/v20190118/model/EnableKeyResponse.cpp
+  src/v20190118/model/ScheduleKeyDeletionRequest.cpp
   src/v20190118/model/GetServiceStatusResponse.cpp
   src/v20190118/model/Key.cpp
   src/v20190118/model/GetKeyRotationStatusResponse.cpp
   src/v20190118/model/EnableKeysRequest.cpp
+  src/v20190118/model/UpdateKeyDescriptionResponse.cpp
   src/v20190118/model/EncryptRequest.cpp
-  src/v20190118/model/DecryptResponse.cpp
+  src/v20190118/model/CreateKeyResponse.cpp
   src/v20190118/model/EnableKeyRequest.cpp
   src/v20190118/model/GetKeyRotationStatusRequest.cpp
   src/v20190118/model/DescribeKeysResponse.cpp
   src/v20190118/model/ListKeyDetailResponse.cpp
-  src/v20190118/model/GenerateDataKeyRequest.cpp
+  src/v20190118/model/CancelKeyDeletionResponse.cpp
   src/v20190118/model/ListKeysRequest.cpp
   src/v20190118/model/ListKeysResponse.cpp
   src/v20190118/model/KeyMetadata.cpp
   src/v20190118/model/DisableKeysResponse.cpp
   src/v20190118/model/DisableKeyRotationResponse.cpp
   src/v20190118/model/UpdateAliasResponse.cpp
+  src/v20190118/model/ScheduleKeyDeletionResponse.cpp
   src/v20190118/model/DecryptRequest.cpp
   src/v20190118/model/ListKeyDetailRequest.cpp
   src/v20190118/model/UpdateKeyDescriptionRequest.cpp
   src/v20190118/model/DisableKeyRequest.cpp
   src/v20190118/model/DescribeKeyResponse.cpp
-  src/v20190118/model/DescribeKeyRequest.cpp
+  src/v20190118/model/EncryptResponse.cpp
   src/v20190118/model/DescribeKeysRequest.cpp
   src/v20190118/model/GetServiceStatusRequest.cpp
   src/v20190118/model/DisableKeyRotationRequest.cpp

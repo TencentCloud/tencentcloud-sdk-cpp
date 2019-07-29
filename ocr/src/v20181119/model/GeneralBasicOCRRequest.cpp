@@ -26,7 +26,8 @@ using namespace std;
 GeneralBasicOCRRequest::GeneralBasicOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_sceneHasBeenSet(false)
+    m_sceneHasBeenSet(false),
+    m_languageTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string GeneralBasicOCRRequest::ToJsonString() const
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_scene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LanguageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_languageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void GeneralBasicOCRRequest::SetScene(const string& _scene)
 bool GeneralBasicOCRRequest::SceneHasBeenSet() const
 {
     return m_sceneHasBeenSet;
+}
+
+string GeneralBasicOCRRequest::GetLanguageType() const
+{
+    return m_languageType;
+}
+
+void GeneralBasicOCRRequest::SetLanguageType(const string& _languageType)
+{
+    m_languageType = _languageType;
+    m_languageTypeHasBeenSet = true;
+}
+
+bool GeneralBasicOCRRequest::LanguageTypeHasBeenSet() const
+{
+    return m_languageTypeHasBeenSet;
 }
 
 

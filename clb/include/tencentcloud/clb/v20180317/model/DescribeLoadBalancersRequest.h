@@ -83,14 +83,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
-                     * 获取1：应用型，0：传统型。
-                     * @return Forward 1：应用型，0：传统型。
+                     * 获取负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
+                     * @return Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
                      */
                     int64_t GetForward() const;
 
                     /**
-                     * 设置1：应用型，0：传统型。
-                     * @param Forward 1：应用型，0：传统型。
+                     * 设置负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
+                     * @param Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
                      */
                     void SetForward(const int64_t& _forward);
 
@@ -101,14 +101,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ForwardHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例名称。
-                     * @return LoadBalancerName 负载均衡实例名称。
+                     * 获取负载均衡实例的名称。
+                     * @return LoadBalancerName 负载均衡实例的名称。
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
-                     * 设置负载均衡实例名称。
-                     * @param LoadBalancerName 负载均衡实例名称。
+                     * 设置负载均衡实例的名称。
+                     * @param LoadBalancerName 负载均衡实例的名称。
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
@@ -119,14 +119,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云为负载均衡实例分配的域名，应用型负载均衡该字段无意义。
-                     * @return Domain 腾讯云为负载均衡实例分配的域名，应用型负载均衡该字段无意义。
+                     * 获取腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * @return Domain 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置腾讯云为负载均衡实例分配的域名，应用型负载均衡该字段无意义。
-                     * @param Domain 腾讯云为负载均衡实例分配的域名，应用型负载均衡该字段无意义。
+                     * 设置腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * @param Domain 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -155,14 +155,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerVipsHasBeenSet() const;
 
                     /**
-                     * 获取后端云服务器的外网 IP。
-                     * @return BackendPublicIps 后端云服务器的外网 IP。
+                     * 获取负载均衡绑定的后端服务的外网 IP。
+                     * @return BackendPublicIps 负载均衡绑定的后端服务的外网 IP。
                      */
                     std::vector<std::string> GetBackendPublicIps() const;
 
                     /**
-                     * 设置后端云服务器的外网 IP。
-                     * @param BackendPublicIps 后端云服务器的外网 IP。
+                     * 设置负载均衡绑定的后端服务的外网 IP。
+                     * @param BackendPublicIps 负载均衡绑定的后端服务的外网 IP。
                      */
                     void SetBackendPublicIps(const std::vector<std::string>& _backendPublicIps);
 
@@ -173,14 +173,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool BackendPublicIpsHasBeenSet() const;
 
                     /**
-                     * 获取后端云服务器的内网 IP。
-                     * @return BackendPrivateIps 后端云服务器的内网 IP。
+                     * 获取负载均衡绑定的后端服务的内网 IP。
+                     * @return BackendPrivateIps 负载均衡绑定的后端服务的内网 IP。
                      */
                     std::vector<std::string> GetBackendPrivateIps() const;
 
                     /**
-                     * 设置后端云服务器的内网 IP。
-                     * @param BackendPrivateIps 后端云服务器的内网 IP。
+                     * 设置负载均衡绑定的后端服务的内网 IP。
+                     * @param BackendPrivateIps 负载均衡绑定的后端服务的内网 IP。
                      */
                     void SetBackendPrivateIps(const std::vector<std::string>& _backendPrivateIps);
 
@@ -209,14 +209,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回负载均衡个数，默认为 20。
-                     * @return Limit 返回负载均衡个数，默认为 20。
+                     * 获取返回负载均衡实例的个数，默认为 20。
+                     * @return Limit 返回负载均衡实例的个数，默认为 20。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回负载均衡个数，默认为 20。
-                     * @param Limit 返回负载均衡个数，默认为 20。
+                     * 设置返回负载均衡实例的个数，默认为 20。
+                     * @param Limit 返回负载均衡实例的个数，默认为 20。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -227,14 +227,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
-                     * @return OrderBy 排序字段，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 获取排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * @return OrderBy 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
-                     * @param OrderBy 排序字段，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 设置排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * @param OrderBy 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -299,14 +299,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取查询的负载均衡是否绑定后端服务器，0：没有绑定云服务器，1：绑定云服务器，-1：查询全部。
-                     * @return WithRs 查询的负载均衡是否绑定后端服务器，0：没有绑定云服务器，1：绑定云服务器，-1：查询全部。
+                     * 获取负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
+                     * @return WithRs 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
                      */
                     int64_t GetWithRs() const;
 
                     /**
-                     * 设置查询的负载均衡是否绑定后端服务器，0：没有绑定云服务器，1：绑定云服务器，-1：查询全部。
-                     * @param WithRs 查询的负载均衡是否绑定后端服务器，0：没有绑定云服务器，1：绑定云服务器，-1：查询全部。
+                     * 设置负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
+                     * @param WithRs 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
                      */
                     void SetWithRs(const int64_t& _withRs);
 
@@ -356,6 +356,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool SecurityGroupHasBeenSet() const;
 
+                    /**
+                     * 获取主可用区ID，如 ："100001" （对应的是广州一区）
+                     * @return MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）
+                     */
+                    std::string GetMasterZone() const;
+
+                    /**
+                     * 设置主可用区ID，如 ："100001" （对应的是广州一区）
+                     * @param MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）
+                     */
+                    void SetMasterZone(const std::string& _masterZone);
+
+                    /**
+                     * 判断参数 MasterZone 是否已赋值
+                     * @return MasterZone 是否已赋值
+                     */
+                    bool MasterZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -372,19 +390,19 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
-                     * 1：应用型，0：传统型。
+                     * 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
                      */
                     int64_t m_forward;
                     bool m_forwardHasBeenSet;
 
                     /**
-                     * 负载均衡实例名称。
+                     * 负载均衡实例的名称。
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
-                     * 腾讯云为负载均衡实例分配的域名，应用型负载均衡该字段无意义。
+                     * 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -396,13 +414,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerVipsHasBeenSet;
 
                     /**
-                     * 后端云服务器的外网 IP。
+                     * 负载均衡绑定的后端服务的外网 IP。
                      */
                     std::vector<std::string> m_backendPublicIps;
                     bool m_backendPublicIpsHasBeenSet;
 
                     /**
-                     * 后端云服务器的内网 IP。
+                     * 负载均衡绑定的后端服务的内网 IP。
                      */
                     std::vector<std::string> m_backendPrivateIps;
                     bool m_backendPrivateIpsHasBeenSet;
@@ -414,13 +432,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回负载均衡个数，默认为 20。
+                     * 返回负载均衡实例的个数，默认为 20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
@@ -444,7 +462,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 查询的负载均衡是否绑定后端服务器，0：没有绑定云服务器，1：绑定云服务器，-1：查询全部。
+                     * 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
                      */
                     int64_t m_withRs;
                     bool m_withRsHasBeenSet;
@@ -461,6 +479,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
+
+                    /**
+                     * 主可用区ID，如 ："100001" （对应的是广州一区）
+                     */
+                    std::string m_masterZone;
+                    bool m_masterZoneHasBeenSet;
 
                 };
             }

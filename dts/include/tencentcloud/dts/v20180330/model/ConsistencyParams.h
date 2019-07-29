@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1-100的整数值，select(*)对比时每张表的抽样行数比例
-                     * @return SelectRowsPerTable 1-100的整数值，select(*)对比时每张表的抽样行数比例
+                     * 获取数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
+                     * @return SelectRowsPerTable 数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
                      */
                     int64_t GetSelectRowsPerTable() const;
 
                     /**
-                     * 设置1-100的整数值，select(*)对比时每张表的抽样行数比例
-                     * @param SelectRowsPerTable 1-100的整数值，select(*)对比时每张表的抽样行数比例
+                     * 设置数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
+                     * @param SelectRowsPerTable 数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
                      */
                     void SetSelectRowsPerTable(const int64_t& _selectRowsPerTable);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SelectRowsPerTableHasBeenSet() const;
 
                     /**
-                     * 获取1-100的整数值，select(*)对比的表的比例
-                     * @return TablesSelectAll 1-100的整数值，select(*)对比的表的比例
+                     * 获取数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * @return TablesSelectAll 数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
                      */
                     int64_t GetTablesSelectAll() const;
 
                     /**
-                     * 设置1-100的整数值，select(*)对比的表的比例
-                     * @param TablesSelectAll 1-100的整数值，select(*)对比的表的比例
+                     * 设置数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * @param TablesSelectAll 数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
                      */
                     void SetTablesSelectAll(const int64_t& _tablesSelectAll);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TablesSelectAllHasBeenSet() const;
 
                     /**
-                     * 获取1-100的整数值，select count(*)对比的表的比例
-                     * @return TablesSelectCount 1-100的整数值，select count(*)对比的表的比例
+                     * 获取数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * @return TablesSelectCount 数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
                      */
                     int64_t GetTablesSelectCount() const;
 
                     /**
-                     * 设置1-100的整数值，select count(*)对比的表的比例
-                     * @param TablesSelectCount 1-100的整数值，select count(*)对比的表的比例
+                     * 设置数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
+                     * @param TablesSelectCount 数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
                      */
                     void SetTablesSelectCount(const int64_t& _tablesSelectCount);
 
@@ -103,19 +103,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1-100的整数值，select(*)对比时每张表的抽样行数比例
+                     * 数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]
                      */
                     int64_t m_selectRowsPerTable;
                     bool m_selectRowsPerTableHasBeenSet;
 
                     /**
-                     * 1-100的整数值，select(*)对比的表的比例
+                     * 数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]
                      */
                     int64_t m_tablesSelectAll;
                     bool m_tablesSelectAllHasBeenSet;
 
                     /**
-                     * 1-100的整数值，select count(*)对比的表的比例
+                     * 数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]
                      */
                     int64_t m_tablesSelectCount;
                     bool m_tablesSelectCountHasBeenSet;

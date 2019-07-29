@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取mysql版本。
-                     * @return EngineVersion mysql版本。
+                     * 获取MySQL 版本号。
+                     * @return EngineVersion MySQL 版本号。
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置mysql版本。
-                     * @param EngineVersion mysql版本。
+                     * 设置MySQL 版本号。
+                     * @param EngineVersion MySQL 版本号。
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取源参数模板ID。
-                     * @return TemplateId 源参数模板ID。
+                     * 获取源参数模板 ID。
+                     * @return TemplateId 源参数模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置源参数模板ID。
-                     * @param TemplateId 源参数模板ID。
+                     * 设置源参数模板 ID。
+                     * @param TemplateId 源参数模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -148,13 +148,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * mysql版本。
+                     * MySQL 版本号。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 源参数模板ID。
+                     * 源参数模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

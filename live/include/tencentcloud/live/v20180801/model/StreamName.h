@@ -64,6 +64,166 @@ namespace TencentCloud
                      */
                     bool StreamNameHasBeenSet() const;
 
+                    /**
+                     * 获取应用名称。
+                     * @return AppName 应用名称。
+                     */
+                    std::string GetAppName() const;
+
+                    /**
+                     * 设置应用名称。
+                     * @param AppName 应用名称。
+                     */
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     */
+                    bool AppNameHasBeenSet() const;
+
+                    /**
+                     * 获取推流域名。
+                     * @return DomainName 推流域名。
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 设置推流域名。
+                     * @param DomainName 推流域名。
+                     */
+                    void SetDomainName(const std::string& _domainName);
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     */
+                    bool DomainNameHasBeenSet() const;
+
+                    /**
+                     * 获取推流开始时间。
+UTC格式时间，
+例如：2019-01-07T12:00:00Z。
+                     * @return StreamStartTime 推流开始时间。
+UTC格式时间，
+例如：2019-01-07T12:00:00Z。
+                     */
+                    std::string GetStreamStartTime() const;
+
+                    /**
+                     * 设置推流开始时间。
+UTC格式时间，
+例如：2019-01-07T12:00:00Z。
+                     * @param StreamStartTime 推流开始时间。
+UTC格式时间，
+例如：2019-01-07T12:00:00Z。
+                     */
+                    void SetStreamStartTime(const std::string& _streamStartTime);
+
+                    /**
+                     * 判断参数 StreamStartTime 是否已赋值
+                     * @return StreamStartTime 是否已赋值
+                     */
+                    bool StreamStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取推流结束时间。
+UTC格式时间，
+例如：2019-01-07T15:00:00Z。
+                     * @return StreamEndTime 推流结束时间。
+UTC格式时间，
+例如：2019-01-07T15:00:00Z。
+                     */
+                    std::string GetStreamEndTime() const;
+
+                    /**
+                     * 设置推流结束时间。
+UTC格式时间，
+例如：2019-01-07T15:00:00Z。
+                     * @param StreamEndTime 推流结束时间。
+UTC格式时间，
+例如：2019-01-07T15:00:00Z。
+                     */
+                    void SetStreamEndTime(const std::string& _streamEndTime);
+
+                    /**
+                     * 判断参数 StreamEndTime 是否已赋值
+                     * @return StreamEndTime 是否已赋值
+                     */
+                    bool StreamEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取停止原因。
+                     * @return StopReason 停止原因。
+                     */
+                    std::string GetStopReason() const;
+
+                    /**
+                     * 设置停止原因。
+                     * @param StopReason 停止原因。
+                     */
+                    void SetStopReason(const std::string& _stopReason);
+
+                    /**
+                     * 判断参数 StopReason 是否已赋值
+                     * @return StopReason 是否已赋值
+                     */
+                    bool StopReasonHasBeenSet() const;
+
+                    /**
+                     * 获取推流持续时长，单位：秒。
+                     * @return Duration 推流持续时长，单位：秒。
+                     */
+                    uint64_t GetDuration() const;
+
+                    /**
+                     * 设置推流持续时长，单位：秒。
+                     * @param Duration 推流持续时长，单位：秒。
+                     */
+                    void SetDuration(const uint64_t& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     */
+                    bool DurationHasBeenSet() const;
+
+                    /**
+                     * 获取主播IP。
+                     * @return ClientIp 主播IP。
+                     */
+                    std::string GetClientIp() const;
+
+                    /**
+                     * 设置主播IP。
+                     * @param ClientIp 主播IP。
+                     */
+                    void SetClientIp(const std::string& _clientIp);
+
+                    /**
+                     * 判断参数 ClientIp 是否已赋值
+                     * @return ClientIp 是否已赋值
+                     */
+                    bool ClientIpHasBeenSet() const;
+
+                    /**
+                     * 获取分辨率。
+                     * @return Resolution 分辨率。
+                     */
+                    std::string GetResolution() const;
+
+                    /**
+                     * 设置分辨率。
+                     * @param Resolution 分辨率。
+                     */
+                    void SetResolution(const std::string& _resolution);
+
+                    /**
+                     * 判断参数 Resolution 是否已赋值
+                     * @return Resolution 是否已赋值
+                     */
+                    bool ResolutionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +231,58 @@ namespace TencentCloud
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;
+
+                    /**
+                     * 应用名称。
+                     */
+                    std::string m_appName;
+                    bool m_appNameHasBeenSet;
+
+                    /**
+                     * 推流域名。
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 推流开始时间。
+UTC格式时间，
+例如：2019-01-07T12:00:00Z。
+                     */
+                    std::string m_streamStartTime;
+                    bool m_streamStartTimeHasBeenSet;
+
+                    /**
+                     * 推流结束时间。
+UTC格式时间，
+例如：2019-01-07T15:00:00Z。
+                     */
+                    std::string m_streamEndTime;
+                    bool m_streamEndTimeHasBeenSet;
+
+                    /**
+                     * 停止原因。
+                     */
+                    std::string m_stopReason;
+                    bool m_stopReasonHasBeenSet;
+
+                    /**
+                     * 推流持续时长，单位：秒。
+                     */
+                    uint64_t m_duration;
+                    bool m_durationHasBeenSet;
+
+                    /**
+                     * 主播IP。
+                     */
+                    std::string m_clientIp;
+                    bool m_clientIpHasBeenSet;
+
+                    /**
+                     * 分辨率。
+                     */
+                    std::string m_resolution;
+                    bool m_resolutionHasBeenSet;
 
                 };
             }

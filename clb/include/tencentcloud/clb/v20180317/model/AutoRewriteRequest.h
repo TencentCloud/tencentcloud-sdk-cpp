@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID
-                     * @return ListenerId 监听器ID
+                     * 获取HTTPS:443监听器的ID
+                     * @return ListenerId HTTPS:443监听器的ID
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID
-                     * @param ListenerId 监听器ID
+                     * 设置HTTPS:443监听器的ID
+                     * @param ListenerId HTTPS:443监听器的ID
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取需要重定向的域名
-                     * @return Domains 需要重定向的域名
+                     * 获取HTTPS:443监听器下需要重定向的域名
+                     * @return Domains HTTPS:443监听器下需要重定向的域名
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置需要重定向的域名
-                     * @param Domains 需要重定向的域名
+                     * 设置HTTPS:443监听器下需要重定向的域名
+                     * @param Domains HTTPS:443监听器下需要重定向的域名
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 监听器ID
+                     * HTTPS:443监听器的ID
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 需要重定向的域名
+                     * HTTPS:443监听器下需要重定向的域名
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;

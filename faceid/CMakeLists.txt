@@ -20,49 +20,57 @@ set(faceid_public_header
 
 set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/LivenessRequest.h
-  include/tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h
+  include/tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h
+  include/tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h
+  include/tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthResponse.h
+  include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h
+  include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h
+  include/tencentcloud/faceid/v20180301/model/LivenessRecognitionResponse.h
+  include/tencentcloud/faceid/v20180301/model/DetectAuthRequest.h
+  include/tencentcloud/faceid/v20180301/model/BankCardVerificationResponse.h
+  include/tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h
+  include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionResponse.h
   include/tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoResponse.h
-  include/tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h
-  include/tencentcloud/faceid/v20180301/model/DetectAuthRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoRequest.h
-  include/tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h
+  include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/IdCardVerificationResponse.h
-  include/tencentcloud/faceid/v20180301/model/BankCardVerificationResponse.h
-  include/tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h
-  include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
-  include/tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessCompareRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessResponse.h
-  include/tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h
-  include/tencentcloud/faceid/v20180301/model/LivenessRecognitionResponse.h
-  include/tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h
   )
 
 set(faceid_src
   src/v20180301/FaceidClient.cpp
   src/v20180301/model/LivenessRequest.cpp
-  src/v20180301/model/GetLiveCodeResponse.cpp
+  src/v20180301/model/LivenessCompareResponse.cpp
+  src/v20180301/model/GetLiveCodeRequest.cpp
+  src/v20180301/model/IdCardVerificationRequest.cpp
+  src/v20180301/model/BankCardVerificationRequest.cpp
   src/v20180301/model/DetectAuthResponse.cpp
+  src/v20180301/model/BankCard4EVerificationResponse.cpp
+  src/v20180301/model/BankCard2EVerificationRequest.cpp
+  src/v20180301/model/LivenessRecognitionRequest.cpp
+  src/v20180301/model/LivenessRecognitionResponse.cpp
+  src/v20180301/model/DetectAuthRequest.cpp
+  src/v20180301/model/BankCardVerificationResponse.cpp
+  src/v20180301/model/ImageRecognitionRequest.cpp
+  src/v20180301/model/BankCard4EVerificationRequest.cpp
+  src/v20180301/model/GetActionSequenceResponse.cpp
   src/v20180301/model/ImageRecognitionResponse.cpp
   src/v20180301/model/GetActionSequenceRequest.cpp
   src/v20180301/model/GetDetectInfoResponse.cpp
-  src/v20180301/model/LivenessCompareResponse.cpp
-  src/v20180301/model/DetectAuthRequest.cpp
+  src/v20180301/model/GetLiveCodeResponse.cpp
   src/v20180301/model/GetDetectInfoRequest.cpp
-  src/v20180301/model/GetLiveCodeRequest.cpp
+  src/v20180301/model/BankCard2EVerificationResponse.cpp
   src/v20180301/model/IdCardVerificationResponse.cpp
-  src/v20180301/model/BankCardVerificationResponse.cpp
-  src/v20180301/model/IdCardVerificationRequest.cpp
-  src/v20180301/model/BankCardVerificationRequest.cpp
-  src/v20180301/model/ImageRecognitionRequest.cpp
   src/v20180301/model/LivenessCompareRequest.cpp
   src/v20180301/model/LivenessResponse.cpp
-  src/v20180301/model/GetActionSequenceResponse.cpp
-  src/v20180301/model/LivenessRecognitionResponse.cpp
-  src/v20180301/model/LivenessRecognitionRequest.cpp
   )
 
 set(faceid_include

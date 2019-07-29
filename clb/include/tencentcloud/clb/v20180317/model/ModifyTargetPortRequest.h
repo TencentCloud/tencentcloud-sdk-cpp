@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改端口的后端机器列表
-                     * @return Targets 要修改端口的后端机器列表
+                     * 获取要修改端口的后端服务列表
+                     * @return Targets 要修改端口的后端服务列表
                      */
                     std::vector<Target> GetTargets() const;
 
                     /**
-                     * 设置要修改端口的后端机器列表
-                     * @param Targets 要修改端口的后端机器列表
+                     * 设置要修改端口的后端服务列表
+                     * @param Targets 要修改端口的后端服务列表
                      */
                     void SetTargets(const std::vector<Target>& _targets);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool TargetsHasBeenSet() const;
 
                     /**
-                     * 获取后端机器绑定到监听器的新端口
-                     * @return NewPort 后端机器绑定到监听器的新端口
+                     * 获取后端服务绑定到监听器或转发规则的新端口
+                     * @return NewPort 后端服务绑定到监听器或转发规则的新端口
                      */
                     int64_t GetNewPort() const;
 
                     /**
-                     * 设置后端机器绑定到监听器的新端口
-                     * @param NewPort 后端机器绑定到监听器的新端口
+                     * 设置后端服务绑定到监听器或转发规则的新端口
+                     * @param NewPort 后端服务绑定到监听器或转发规则的新端口
                      */
                     void SetNewPort(const int64_t& _newPort);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool NewPortHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的ID
-                     * @return LocationId 转发规则的ID
+                     * 获取转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一
+                     * @return LocationId 转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置转发规则的ID
-                     * @param LocationId 转发规则的ID
+                     * 设置转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一
+                     * @param LocationId 转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一
                      */
                     void SetLocationId(const std::string& _locationId);
 
@@ -184,19 +184,19 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 要修改端口的后端机器列表
+                     * 要修改端口的后端服务列表
                      */
                     std::vector<Target> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
-                     * 后端机器绑定到监听器的新端口
+                     * 后端服务绑定到监听器或转发规则的新端口
                      */
                     int64_t m_newPort;
                     bool m_newPortHasBeenSet;
 
                     /**
-                     * 转发规则的ID
+                     * 转发规则的ID，当后端服务绑定到七层转发规则时，必须提供此参数或Domain+Url两者之一
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;

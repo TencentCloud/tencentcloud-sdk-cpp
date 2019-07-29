@@ -26,11 +26,11 @@ using namespace std;
 ModifyTargetWeightRequest::ModifyTargetWeightRequest() :
     m_loadBalancerIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
-    m_weightHasBeenSet(false),
     m_locationIdHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+    m_targetsHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -55,14 +55,6 @@ string ModifyTargetWeightRequest::ToJsonString() const
         string key = "ListenerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_weightHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Weight";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_weight, allocator);
     }
 
     if (m_locationIdHasBeenSet)
@@ -104,6 +96,14 @@ string ModifyTargetWeightRequest::ToJsonString() const
         }
     }
 
+    if (m_weightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_weight, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -142,22 +142,6 @@ void ModifyTargetWeightRequest::SetListenerId(const string& _listenerId)
 bool ModifyTargetWeightRequest::ListenerIdHasBeenSet() const
 {
     return m_listenerIdHasBeenSet;
-}
-
-int64_t ModifyTargetWeightRequest::GetWeight() const
-{
-    return m_weight;
-}
-
-void ModifyTargetWeightRequest::SetWeight(const int64_t& _weight)
-{
-    m_weight = _weight;
-    m_weightHasBeenSet = true;
-}
-
-bool ModifyTargetWeightRequest::WeightHasBeenSet() const
-{
-    return m_weightHasBeenSet;
 }
 
 string ModifyTargetWeightRequest::GetLocationId() const
@@ -222,6 +206,22 @@ void ModifyTargetWeightRequest::SetTargets(const vector<Target>& _targets)
 bool ModifyTargetWeightRequest::TargetsHasBeenSet() const
 {
     return m_targetsHasBeenSet;
+}
+
+int64_t ModifyTargetWeightRequest::GetWeight() const
+{
+    return m_weight;
+}
+
+void ModifyTargetWeightRequest::SetWeight(const int64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool ModifyTargetWeightRequest::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 
 

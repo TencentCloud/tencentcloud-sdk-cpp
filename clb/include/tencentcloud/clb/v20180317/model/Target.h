@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 转发目标，即绑定在负载均衡上的后端机器
+                * 转发目标，即绑定在负载均衡上的后端服务
                 */
                 class Target : public AbstractModel
                 {
@@ -47,39 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 获取后端服务的监听端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
-                     * 获取后端云服务器监听端口
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Port 后端云服务器监听端口
+                     * @return Port 后端服务的监听端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置后端云服务器监听端口
+                     * 设置后端服务的监听端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 后端云服务器监听端口
+                     * @param Port 后端服务的监听端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPort(const int64_t& _port);
@@ -91,17 +69,17 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取转发目标的类型，目前仅可取值为 CVM
+                     * 获取后端服务的类型，可取：CVM（云服务器）、ENI（弹性网卡）；作为入参时，目前本参数暂不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 转发目标的类型，目前仅可取值为 CVM
+                     * @return Type 后端服务的类型，可取：CVM（云服务器）、ENI（弹性网卡）；作为入参时，目前本参数暂不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置转发目标的类型，目前仅可取值为 CVM
+                     * 设置后端服务的类型，可取：CVM（云服务器）、ENI（弹性网卡）；作为入参时，目前本参数暂不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 转发目标的类型，目前仅可取值为 CVM
+                     * @param Type 后端服务的类型，可取：CVM（云服务器）、ENI（弹性网卡）；作为入参时，目前本参数暂不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const std::string& _type);
@@ -113,14 +91,40 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取后端云服务器的转发权重，取值范围：0~100，默认为 10。
-                     * @return Weight 后端云服务器的转发权重，取值范围：0~100，默认为 10。
+                     * 获取绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。
+注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。
+注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。
+注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceId 绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。
+注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * @return Weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置后端云服务器的转发权重，取值范围：0~100，默认为 10。
-                     * @param Weight 后端云服务器的转发权重，取值范围：0~100，默认为 10。
+                     * 设置后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * @param Weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -130,34 +134,64 @@ namespace TencentCloud
                      */
                     bool WeightHasBeenSet() const;
 
+                    /**
+                     * 获取绑定弹性网卡时需要传入此参数，代表弹性网卡的IP，弹性网卡必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。注意：绑定弹性网卡需要先提交工单开白名单使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EniIp 绑定弹性网卡时需要传入此参数，代表弹性网卡的IP，弹性网卡必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。注意：绑定弹性网卡需要先提交工单开白名单使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEniIp() const;
+
+                    /**
+                     * 设置绑定弹性网卡时需要传入此参数，代表弹性网卡的IP，弹性网卡必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。注意：绑定弹性网卡需要先提交工单开白名单使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EniIp 绑定弹性网卡时需要传入此参数，代表弹性网卡的IP，弹性网卡必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。注意：绑定弹性网卡需要先提交工单开白名单使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEniIp(const std::string& _eniIp);
+
+                    /**
+                     * 判断参数 EniIp 是否已赋值
+                     * @return EniIp 是否已赋值
+                     */
+                    bool EniIpHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * 后端云服务器监听端口
+                     * 后端服务的监听端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 转发目标的类型，目前仅可取值为 CVM
+                     * 后端服务的类型，可取：CVM（云服务器）、ENI（弹性网卡）；作为入参时，目前本参数暂不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 后端云服务器的转发权重，取值范围：0~100，默认为 10。
+                     * 绑定CVM时需要传入此参数，代表CVM的唯一 ID，可通过 DescribeInstances 接口返回字段中的 InstanceId 字段获取。
+注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
+
+                    /**
+                     * 绑定弹性网卡时需要传入此参数，代表弹性网卡的IP，弹性网卡必须先绑定至CVM，然后才能绑定到负载均衡实例。注意：参数 InstanceId 和 EniIp 只能传入一个且必须传入一个。注意：绑定弹性网卡需要先提交工单开白名单使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eniIp;
+                    bool m_eniIpHasBeenSet;
 
                 };
             }

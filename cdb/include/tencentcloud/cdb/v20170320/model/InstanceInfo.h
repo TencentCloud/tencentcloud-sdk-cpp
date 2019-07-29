@@ -735,6 +735,28 @@ namespace TencentCloud
                      */
                     bool ZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取物理机型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceClass 物理机型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceClass() const;
+
+                    /**
+                     * 设置物理机型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceClass 物理机型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceClass(const std::string& _deviceClass);
+
+                    /**
+                     * 判断参数 DeviceClass 是否已赋值
+                     * @return DeviceClass 是否已赋值
+                     */
+                    bool DeviceClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -964,6 +986,13 @@ namespace TencentCloud
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 物理机型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceClass;
+                    bool m_deviceClassHasBeenSet;
 
                 };
             }

@@ -29,7 +29,14 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_loadBalancerNameHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_addressIPVersionHasBeenSet(false),
+    m_numberHasBeenSet(false),
+    m_masterZoneIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_anycastZoneHasBeenSet(false),
+    m_internetAccessibleHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -86,6 +93,70 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_addressIPVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddressIPVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_addressIPVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_numberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Number";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_number, allocator);
+    }
+
+    if (m_masterZoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MasterZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_masterZoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_anycastZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AnycastZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_anycastZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetAccessibleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetAccessible";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_internetAccessible.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -190,6 +261,118 @@ void CreateLoadBalancerRequest::SetProjectId(const int64_t& _projectId)
 bool CreateLoadBalancerRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetAddressIPVersion() const
+{
+    return m_addressIPVersion;
+}
+
+void CreateLoadBalancerRequest::SetAddressIPVersion(const string& _addressIPVersion)
+{
+    m_addressIPVersion = _addressIPVersion;
+    m_addressIPVersionHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::AddressIPVersionHasBeenSet() const
+{
+    return m_addressIPVersionHasBeenSet;
+}
+
+uint64_t CreateLoadBalancerRequest::GetNumber() const
+{
+    return m_number;
+}
+
+void CreateLoadBalancerRequest::SetNumber(const uint64_t& _number)
+{
+    m_number = _number;
+    m_numberHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::NumberHasBeenSet() const
+{
+    return m_numberHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetMasterZoneId() const
+{
+    return m_masterZoneId;
+}
+
+void CreateLoadBalancerRequest::SetMasterZoneId(const string& _masterZoneId)
+{
+    m_masterZoneId = _masterZoneId;
+    m_masterZoneIdHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::MasterZoneIdHasBeenSet() const
+{
+    return m_masterZoneIdHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void CreateLoadBalancerRequest::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetAnycastZone() const
+{
+    return m_anycastZone;
+}
+
+void CreateLoadBalancerRequest::SetAnycastZone(const string& _anycastZone)
+{
+    m_anycastZone = _anycastZone;
+    m_anycastZoneHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::AnycastZoneHasBeenSet() const
+{
+    return m_anycastZoneHasBeenSet;
+}
+
+InternetAccessible CreateLoadBalancerRequest::GetInternetAccessible() const
+{
+    return m_internetAccessible;
+}
+
+void CreateLoadBalancerRequest::SetInternetAccessible(const InternetAccessible& _internetAccessible)
+{
+    m_internetAccessible = _internetAccessible;
+    m_internetAccessibleHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::InternetAccessibleHasBeenSet() const
+{
+    return m_internetAccessibleHasBeenSet;
+}
+
+vector<TagInfo> CreateLoadBalancerRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateLoadBalancerRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

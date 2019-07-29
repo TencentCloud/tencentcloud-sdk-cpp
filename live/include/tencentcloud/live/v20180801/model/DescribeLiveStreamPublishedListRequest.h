@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取您的域名。
-                     * @return DomainName 您的域名。
+                     * 获取您的推流域名。
+                     * @return DomainName 您的推流域名。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置您的域名。
-                     * @param DomainName 您的域名。
+                     * 设置您的推流域名。
+                     * @param DomainName 您的推流域名。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -64,9 +64,11 @@ namespace TencentCloud
                      * 获取结束时间。
 UTC 格式，例如：2016-06-30T19:00:00Z。
 不超过当前时间。
+注意：EndTime和StartTime相差不可超过30天。
                      * @return EndTime 结束时间。
 UTC 格式，例如：2016-06-30T19:00:00Z。
 不超过当前时间。
+注意：EndTime和StartTime相差不可超过30天。
                      */
                     std::string GetEndTime() const;
 
@@ -74,9 +76,11 @@ UTC 格式，例如：2016-06-30T19:00:00Z。
                      * 设置结束时间。
 UTC 格式，例如：2016-06-30T19:00:00Z。
 不超过当前时间。
+注意：EndTime和StartTime相差不可超过30天。
                      * @param EndTime 结束时间。
 UTC 格式，例如：2016-06-30T19:00:00Z。
 不超过当前时间。
+注意：EndTime和StartTime相差不可超过30天。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -89,20 +93,20 @@ UTC 格式，例如：2016-06-30T19:00:00Z。
                     /**
                      * 获取起始时间。 
 UTC 格式，例如：2016-06-29T19:00:00Z。
-和当前时间相隔不超过7天。
+最长支持查询60天内数据。
                      * @return StartTime 起始时间。 
 UTC 格式，例如：2016-06-29T19:00:00Z。
-和当前时间相隔不超过7天。
+最长支持查询60天内数据。
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间。 
 UTC 格式，例如：2016-06-29T19:00:00Z。
-和当前时间相隔不超过7天。
+最长支持查询60天内数据。
                      * @param StartTime 起始时间。 
 UTC 格式，例如：2016-06-29T19:00:00Z。
-和当前时间相隔不超过7天。
+最长支持查询60天内数据。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -113,14 +117,14 @@ UTC 格式，例如：2016-06-29T19:00:00Z。
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -182,10 +186,28 @@ UTC 格式，例如：2016-06-29T19:00:00Z。
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取流名称，支持模糊匹配。
+                     * @return StreamName 流名称，支持模糊匹配。
+                     */
+                    std::string GetStreamName() const;
+
+                    /**
+                     * 设置流名称，支持模糊匹配。
+                     * @param StreamName 流名称，支持模糊匹配。
+                     */
+                    void SetStreamName(const std::string& _streamName);
+
+                    /**
+                     * 判断参数 StreamName 是否已赋值
+                     * @return StreamName 是否已赋值
+                     */
+                    bool StreamNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 您的域名。
+                     * 您的推流域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
@@ -194,6 +216,7 @@ UTC 格式，例如：2016-06-29T19:00:00Z。
                      * 结束时间。
 UTC 格式，例如：2016-06-30T19:00:00Z。
 不超过当前时间。
+注意：EndTime和StartTime相差不可超过30天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -201,13 +224,13 @@ UTC 格式，例如：2016-06-30T19:00:00Z。
                     /**
                      * 起始时间。 
 UTC 格式，例如：2016-06-29T19:00:00Z。
-和当前时间相隔不超过7天。
+最长支持查询60天内数据。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
@@ -227,6 +250,12 @@ UTC 格式，例如：2016-06-29T19:00:00Z。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 流名称，支持模糊匹配。
+                     */
+                    std::string m_streamName;
+                    bool m_streamNameHasBeenSet;
 
                 };
             }

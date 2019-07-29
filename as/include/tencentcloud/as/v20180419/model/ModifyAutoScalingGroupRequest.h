@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/as/v20180419/model/ServiceSettings.h>
 
 
 namespace TencentCloud
@@ -267,22 +268,26 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
+                     * 获取重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。
 <br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
 <br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
-                     * @return RetryPolicy 重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
+<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。
+                     * @return RetryPolicy 重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。
 <br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
 <br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
+<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。
                      */
                     std::string GetRetryPolicy() const;
 
                     /**
-                     * 设置重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
+                     * 设置重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。
 <br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
 <br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
-                     * @param RetryPolicy 重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
+<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。
+                     * @param RetryPolicy 重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。
 <br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
 <br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
+<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。
                      */
                     void SetRetryPolicy(const std::string& _retryPolicy);
 
@@ -329,6 +334,24 @@ namespace TencentCloud
                      * @return ZonesCheckPolicy 是否已赋值
                      */
                     bool ZonesCheckPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取服务设置，包括云监控不健康替换等服务设置。
+                     * @return ServiceSettings 服务设置，包括云监控不健康替换等服务设置。
+                     */
+                    ServiceSettings GetServiceSettings() const;
+
+                    /**
+                     * 设置服务设置，包括云监控不健康替换等服务设置。
+                     * @param ServiceSettings 服务设置，包括云监控不健康替换等服务设置。
+                     */
+                    void SetServiceSettings(const ServiceSettings& _serviceSettings);
+
+                    /**
+                     * 判断参数 ServiceSettings 是否已赋值
+                     * @return ServiceSettings 是否已赋值
+                     */
+                    bool ServiceSettingsHasBeenSet() const;
 
                 private:
 
@@ -407,9 +430,10 @@ namespace TencentCloud
                     bool m_zonesHasBeenSet;
 
                     /**
-                     * 重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
+                     * 重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。
 <br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
 <br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
+<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。
                      */
                     std::string m_retryPolicy;
                     bool m_retryPolicyHasBeenSet;
@@ -424,6 +448,12 @@ namespace TencentCloud
                      */
                     std::string m_zonesCheckPolicy;
                     bool m_zonesCheckPolicyHasBeenSet;
+
+                    /**
+                     * 服务设置，包括云监控不健康替换等服务设置。
+                     */
+                    ServiceSettings m_serviceSettings;
+                    bool m_serviceSettingsHasBeenSet;
 
                 };
             }

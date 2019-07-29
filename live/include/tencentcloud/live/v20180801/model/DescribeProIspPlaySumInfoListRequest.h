@@ -91,14 +91,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计的类型，可选值包括”Province”，”Isp”
-                     * @return StatType 统计的类型，可选值包括”Province”，”Isp”
+                     * 获取统计的类型，可选值包括”Province”，”Isp”。
+                     * @return StatType 统计的类型，可选值包括”Province”，”Isp”。
                      */
                     std::string GetStatType() const;
 
                     /**
-                     * 设置统计的类型，可选值包括”Province”，”Isp”
-                     * @param StatType 统计的类型，可选值包括”Province”，”Isp”
+                     * 设置统计的类型，可选值包括”Province”，”Isp”。
+                     * @param StatType 统计的类型，可选值包括”Province”，”Isp”。
                      */
                     void SetStatType(const std::string& _statType);
 
@@ -129,20 +129,20 @@ namespace TencentCloud
                     /**
                      * 获取页号，
 范围是[1,1000]，
-默认值是1
+默认值是1。
                      * @return PageNum 页号，
 范围是[1,1000]，
-默认值是1
+默认值是1。
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 设置页号，
 范围是[1,1000]，
-默认值是1
+默认值是1。
                      * @param PageNum 页号，
 范围是[1,1000]，
-默认值是1
+默认值是1。
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
@@ -154,17 +154,17 @@ namespace TencentCloud
 
                     /**
                      * 获取每页个数，范围是[1,1000]，
-默认值是20
+默认值是20。
                      * @return PageSize 每页个数，范围是[1,1000]，
-默认值是20
+默认值是20。
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页个数，范围是[1,1000]，
-默认值是20
+默认值是20。
                      * @param PageSize 每页个数，范围是[1,1000]，
-默认值是20
+默认值是20。
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
@@ -192,7 +192,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计的类型，可选值包括”Province”，”Isp”
+                     * 统计的类型，可选值包括”Province”，”Isp”。
                      */
                     std::string m_statType;
                     bool m_statTypeHasBeenSet;
@@ -206,14 +206,14 @@ namespace TencentCloud
                     /**
                      * 页号，
 范围是[1,1000]，
-默认值是1
+默认值是1。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
                      * 每页个数，范围是[1,1000]，
-默认值是20
+默认值是20。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

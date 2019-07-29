@@ -29,7 +29,8 @@ Backend::Backend() :
     m_publicIpAddressesHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_registeredTimeHasBeenSet(false)
+    m_registeredTimeHasBeenSet(false),
+    m_eniIdHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome Backend::Deserialize(const Value &value)
         m_registeredTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("EniId") && !value["EniId"].IsNull())
+    {
+        if (!value["EniId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Backend.EniId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eniId = string(value["EniId"].GetString());
+        m_eniIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void Backend::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "RegisteredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_registeredTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eniIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EniId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_eniId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void Backend::SetRegisteredTime(const string& _registeredTime)
 bool Backend::RegisteredTimeHasBeenSet() const
 {
     return m_registeredTimeHasBeenSet;
+}
+
+string Backend::GetEniId() const
+{
+    return m_eniId;
+}
+
+void Backend::SetEniId(const string& _eniId)
+{
+    m_eniId = _eniId;
+    m_eniIdHasBeenSet = true;
+}
+
+bool Backend::EniIdHasBeenSet() const
+{
+    return m_eniIdHasBeenSet;
 }
 

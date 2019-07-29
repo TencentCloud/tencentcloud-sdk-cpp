@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool BankCardHasBeenSet() const;
 
                     /**
-                     * 获取证件类型（不填默认0）
+                     * 获取证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。（不填默认0）
 0 身份证
 1 军官证
 2 护照
@@ -106,7 +106,7 @@ namespace TencentCloud
 5 警官证
 6 士兵证
 7 其它证件
-                     * @return CertType 证件类型（不填默认0）
+                     * @return CertType 证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。（不填默认0）
 0 身份证
 1 军官证
 2 护照
@@ -119,7 +119,7 @@ namespace TencentCloud
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置证件类型（不填默认0）
+                     * 设置证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。（不填默认0）
 0 身份证
 1 军官证
 2 护照
@@ -128,7 +128,7 @@ namespace TencentCloud
 5 警官证
 6 士兵证
 7 其它证件
-                     * @param CertType 证件类型（不填默认0）
+                     * @param CertType 证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。（不填默认0）
 0 身份证
 1 军官证
 2 护照
@@ -167,7 +167,7 @@ namespace TencentCloud
                     bool m_bankCardHasBeenSet;
 
                     /**
-                     * 证件类型（不填默认0）
+                     * 证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。（不填默认0）
 0 身份证
 1 军官证
 2 护照

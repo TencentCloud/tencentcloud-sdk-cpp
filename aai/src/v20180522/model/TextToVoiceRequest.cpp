@@ -32,7 +32,8 @@ TextToVoiceRequest::TextToVoiceRequest() :
     m_projectIdHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
     m_primaryLanguageHasBeenSet(false),
-    m_sampleRateHasBeenSet(false)
+    m_sampleRateHasBeenSet(false),
+    m_codecHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string TextToVoiceRequest::ToJsonString() const
         string key = "SampleRate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sampleRate, allocator);
+    }
+
+    if (m_codecHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Codec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_codec.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +274,22 @@ void TextToVoiceRequest::SetSampleRate(const uint64_t& _sampleRate)
 bool TextToVoiceRequest::SampleRateHasBeenSet() const
 {
     return m_sampleRateHasBeenSet;
+}
+
+string TextToVoiceRequest::GetCodec() const
+{
+    return m_codec;
+}
+
+void TextToVoiceRequest::SetCodec(const string& _codec)
+{
+    m_codec = _codec;
+    m_codecHasBeenSet = true;
+}
+
+bool TextToVoiceRequest::CodecHasBeenSet() const
+{
+    return m_codecHasBeenSet;
 }
 
 

@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool OffsetCoordYHasBeenSet() const;
 
                     /**
-                     * 获取签章突破宽度
-                     * @return ImageWidth 签章突破宽度
+                     * 获取签章图片宽度
+                     * @return ImageWidth 签章图片宽度
                      */
                     std::string GetImageWidth() const;
 
                     /**
-                     * 设置签章突破宽度
-                     * @param ImageWidth 签章突破宽度
+                     * 设置签章图片宽度
+                     * @param ImageWidth 签章图片宽度
                      */
                     void SetImageWidth(const std::string& _imageWidth);
 
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_offsetCoordYHasBeenSet;
 
                     /**
-                     * 签章突破宽度
+                     * 签章图片宽度
                      */
                     std::string m_imageWidth;
                     bool m_imageWidthHasBeenSet;

@@ -43,7 +43,17 @@ LoadBalancer::LoadBalancer() :
     m_targetRegionInfoHasBeenSet(false),
     m_anycastZoneHasBeenSet(false),
     m_addressIPVersionHasBeenSet(false),
-    m_numericalVpcIdHasBeenSet(false)
+    m_numericalVpcIdHasBeenSet(false),
+    m_vipIspHasBeenSet(false),
+    m_masterZoneHasBeenSet(false),
+    m_backupZoneSetHasBeenSet(false),
+    m_isolatedTimeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false),
+    m_networkAttributesHasBeenSet(false),
+    m_prepaidAttributesHasBeenSet(false),
+    m_logSetIdHasBeenSet(false),
+    m_logTopicIdHasBeenSet(false)
 {
 }
 
@@ -295,6 +305,137 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_numericalVpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VipIsp") && !value["VipIsp"].IsNull())
+    {
+        if (!value["VipIsp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.VipIsp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vipIsp = string(value["VipIsp"].GetString());
+        m_vipIspHasBeenSet = true;
+    }
+
+    if (value.HasMember("MasterZone") && !value["MasterZone"].IsNull())
+    {
+        if (!value["MasterZone"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.MasterZone` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_masterZone.Deserialize(value["MasterZone"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_masterZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupZoneSet") && !value["BackupZoneSet"].IsNull())
+    {
+        if (!value["BackupZoneSet"].IsArray())
+            return CoreInternalOutcome(Error("response `LoadBalancer.BackupZoneSet` is not array type"));
+
+        const Value &tmpValue = value["BackupZoneSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ZoneInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_backupZoneSet.push_back(item);
+        }
+        m_backupZoneSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolatedTime") && !value["IsolatedTime"].IsNull())
+    {
+        if (!value["IsolatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.IsolatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolatedTime = string(value["IsolatedTime"].GetString());
+        m_isolatedTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
+    {
+        if (!value["ChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.ChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeType = string(value["ChargeType"].GetString());
+        m_chargeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkAttributes") && !value["NetworkAttributes"].IsNull())
+    {
+        if (!value["NetworkAttributes"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.NetworkAttributes` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_networkAttributes.Deserialize(value["NetworkAttributes"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_networkAttributesHasBeenSet = true;
+    }
+
+    if (value.HasMember("PrepaidAttributes") && !value["PrepaidAttributes"].IsNull())
+    {
+        if (!value["PrepaidAttributes"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.PrepaidAttributes` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_prepaidAttributes.Deserialize(value["PrepaidAttributes"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_prepaidAttributesHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogSetId") && !value["LogSetId"].IsNull())
+    {
+        if (!value["LogSetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.LogSetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSetId = string(value["LogSetId"].GetString());
+        m_logSetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogTopicId") && !value["LogTopicId"].IsNull())
+    {
+        if (!value["LogTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.LogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logTopicId = string(value["LogTopicId"].GetString());
+        m_logTopicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -494,6 +635,96 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "NumericalVpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numericalVpcId, allocator);
+    }
+
+    if (m_vipIspHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VipIsp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vipIsp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MasterZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_masterZone.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_backupZoneSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupZoneSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_backupZoneSet.begin(); itr != m_backupZoneSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isolatedTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsolatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_isolatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkAttributesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetworkAttributes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_networkAttributes.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prepaidAttributesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PrepaidAttributes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_prepaidAttributes.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_logSetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogSetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_logSetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -849,5 +1080,165 @@ void LoadBalancer::SetNumericalVpcId(const uint64_t& _numericalVpcId)
 bool LoadBalancer::NumericalVpcIdHasBeenSet() const
 {
     return m_numericalVpcIdHasBeenSet;
+}
+
+string LoadBalancer::GetVipIsp() const
+{
+    return m_vipIsp;
+}
+
+void LoadBalancer::SetVipIsp(const string& _vipIsp)
+{
+    m_vipIsp = _vipIsp;
+    m_vipIspHasBeenSet = true;
+}
+
+bool LoadBalancer::VipIspHasBeenSet() const
+{
+    return m_vipIspHasBeenSet;
+}
+
+ZoneInfo LoadBalancer::GetMasterZone() const
+{
+    return m_masterZone;
+}
+
+void LoadBalancer::SetMasterZone(const ZoneInfo& _masterZone)
+{
+    m_masterZone = _masterZone;
+    m_masterZoneHasBeenSet = true;
+}
+
+bool LoadBalancer::MasterZoneHasBeenSet() const
+{
+    return m_masterZoneHasBeenSet;
+}
+
+vector<ZoneInfo> LoadBalancer::GetBackupZoneSet() const
+{
+    return m_backupZoneSet;
+}
+
+void LoadBalancer::SetBackupZoneSet(const vector<ZoneInfo>& _backupZoneSet)
+{
+    m_backupZoneSet = _backupZoneSet;
+    m_backupZoneSetHasBeenSet = true;
+}
+
+bool LoadBalancer::BackupZoneSetHasBeenSet() const
+{
+    return m_backupZoneSetHasBeenSet;
+}
+
+string LoadBalancer::GetIsolatedTime() const
+{
+    return m_isolatedTime;
+}
+
+void LoadBalancer::SetIsolatedTime(const string& _isolatedTime)
+{
+    m_isolatedTime = _isolatedTime;
+    m_isolatedTimeHasBeenSet = true;
+}
+
+bool LoadBalancer::IsolatedTimeHasBeenSet() const
+{
+    return m_isolatedTimeHasBeenSet;
+}
+
+string LoadBalancer::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void LoadBalancer::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool LoadBalancer::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string LoadBalancer::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void LoadBalancer::SetChargeType(const string& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool LoadBalancer::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
+}
+
+InternetAccessible LoadBalancer::GetNetworkAttributes() const
+{
+    return m_networkAttributes;
+}
+
+void LoadBalancer::SetNetworkAttributes(const InternetAccessible& _networkAttributes)
+{
+    m_networkAttributes = _networkAttributes;
+    m_networkAttributesHasBeenSet = true;
+}
+
+bool LoadBalancer::NetworkAttributesHasBeenSet() const
+{
+    return m_networkAttributesHasBeenSet;
+}
+
+LBChargePrepaid LoadBalancer::GetPrepaidAttributes() const
+{
+    return m_prepaidAttributes;
+}
+
+void LoadBalancer::SetPrepaidAttributes(const LBChargePrepaid& _prepaidAttributes)
+{
+    m_prepaidAttributes = _prepaidAttributes;
+    m_prepaidAttributesHasBeenSet = true;
+}
+
+bool LoadBalancer::PrepaidAttributesHasBeenSet() const
+{
+    return m_prepaidAttributesHasBeenSet;
+}
+
+string LoadBalancer::GetLogSetId() const
+{
+    return m_logSetId;
+}
+
+void LoadBalancer::SetLogSetId(const string& _logSetId)
+{
+    m_logSetId = _logSetId;
+    m_logSetIdHasBeenSet = true;
+}
+
+bool LoadBalancer::LogSetIdHasBeenSet() const
+{
+    return m_logSetIdHasBeenSet;
+}
+
+string LoadBalancer::GetLogTopicId() const
+{
+    return m_logTopicId;
+}
+
+void LoadBalancer::SetLogTopicId(const string& _logTopicId)
+{
+    m_logTopicId = _logTopicId;
+    m_logTopicIdHasBeenSet = true;
+}
+
+bool LoadBalancer::LogTopicIdHasBeenSet() const
+{
+    return m_logTopicIdHasBeenSet;
 }
 

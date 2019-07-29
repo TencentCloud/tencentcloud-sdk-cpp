@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例的默认字符集，如"latin1", "utf8"等。
-                     * @return Charset 实例的默认字符集，如"latin1", "utf8"等。
+                     * 获取实例的默认字符集，如 "latin1"，"utf8" 等。
+                     * @return Charset 实例的默认字符集，如 "latin1"，"utf8" 等。
                      */
                     std::string GetCharset() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例的默认字符集，如"latin1", "utf8"等。
+                     * 实例的默认字符集，如 "latin1"，"utf8" 等。
                      */
                     std::string m_charset;
                     bool m_charsetHasBeenSet;

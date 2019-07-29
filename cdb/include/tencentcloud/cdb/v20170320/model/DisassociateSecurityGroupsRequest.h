@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组Id。
-                     * @return SecurityGroupId 安全组Id。
+                     * 获取安全组 ID。
+                     * @return SecurityGroupId 安全组 ID。
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置安全组Id。
-                     * @param SecurityGroupId 安全组Id。
+                     * 设置安全组 ID。
+                     * @param SecurityGroupId 安全组 ID。
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID列表，一个或者多个实例Id组成的数组。
-                     * @return InstanceIds 实例ID列表，一个或者多个实例Id组成的数组。
+                     * 获取实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * @return InstanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID列表，一个或者多个实例Id组成的数组。
-                     * @param InstanceIds 实例ID列表，一个或者多个实例Id组成的数组。
+                     * 设置实例 ID 列表，一个或者多个实例 ID 组成的数组。
+                     * @param InstanceIds 实例 ID 列表，一个或者多个实例 ID 组成的数组。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组Id。
+                     * 安全组 ID。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * 实例ID列表，一个或者多个实例Id组成的数组。
+                     * 实例 ID 列表，一个或者多个实例 ID 组成的数组。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

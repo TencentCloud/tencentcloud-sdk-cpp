@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于回档的实例详情信息
-                     * @return Instances 用于回档的实例详情信息
+                     * 获取用于回档的实例详情信息。
+                     * @return Instances 用于回档的实例详情信息。
                      */
                     std::vector<RollbackInstancesInfo> GetInstances() const;
 
                     /**
-                     * 设置用于回档的实例详情信息
-                     * @param Instances 用于回档的实例详情信息
+                     * 设置用于回档的实例详情信息。
+                     * @param Instances 用于回档的实例详情信息。
                      */
                     void SetInstances(const std::vector<RollbackInstancesInfo>& _instances);
 
@@ -64,7 +64,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用于回档的实例详情信息
+                     * 用于回档的实例详情信息。
                      */
                     std::vector<RollbackInstancesInfo> m_instances;
                     bool m_instancesHasBeenSet;

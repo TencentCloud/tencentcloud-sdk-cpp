@@ -60,12 +60,12 @@ string AttachUserPolicyRequest::ToJsonString() const
 }
 
 
-int64_t AttachUserPolicyRequest::GetPolicyId() const
+uint64_t AttachUserPolicyRequest::GetPolicyId() const
 {
     return m_policyId;
 }
 
-void AttachUserPolicyRequest::SetPolicyId(const int64_t& _policyId)
+void AttachUserPolicyRequest::SetPolicyId(const uint64_t& _policyId)
 {
     m_policyId = _policyId;
     m_policyIdHasBeenSet = true;
@@ -76,12 +76,12 @@ bool AttachUserPolicyRequest::PolicyIdHasBeenSet() const
     return m_policyIdHasBeenSet;
 }
 
-int64_t AttachUserPolicyRequest::GetAttachUin() const
+uint64_t AttachUserPolicyRequest::GetAttachUin() const
 {
     return m_attachUin;
 }
 
-void AttachUserPolicyRequest::SetAttachUin(const int64_t& _attachUin)
+void AttachUserPolicyRequest::SetAttachUin(const uint64_t& _attachUin)
 {
     m_attachUin = _attachUin;
     m_attachUinHasBeenSet = true;

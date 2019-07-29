@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 监听器上注册的后端机器的信息
+                * 监听器上绑定的后端服务的信息
                 */
                 class ListenerBackend : public AbstractModel
                 {
@@ -125,17 +125,17 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取监听器上注册的机器列表（仅适用于TCP/UDP/TCP_SSL监听器）
+                     * 获取监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Targets 监听器上注册的机器列表（仅适用于TCP/UDP/TCP_SSL监听器）
+                     * @return Targets 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Backend> GetTargets() const;
 
                     /**
-                     * 设置监听器上注册的机器列表（仅适用于TCP/UDP/TCP_SSL监听器）
+                     * 设置监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Targets 监听器上注册的机器列表（仅适用于TCP/UDP/TCP_SSL监听器）
+                     * @param Targets 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTargets(const std::vector<Backend>& _targets);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * 监听器上注册的机器列表（仅适用于TCP/UDP/TCP_SSL监听器）
+                     * 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Backend> m_targets;

@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器端口
-                     * @return Port 负载均衡监听器端口
+                     * 获取监听器端口
+                     * @return Port 监听器端口
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置负载均衡监听器端口
-                     * @param Port 负载均衡监听器端口
+                     * 设置监听器端口
+                     * @param Port 监听器端口
                      */
                     void SetPort(const int64_t& _port);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 负载均衡监听器端口
+                     * 监听器端口
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

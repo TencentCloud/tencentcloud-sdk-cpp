@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本分类结果
-                     * @return Classes 文本分类结果
+                     * 获取文本分类结果（文本分类映射表请参见附录）
+                     * @return Classes 文本分类结果（文本分类映射表请参见附录）
                      */
                     std::vector<ClassificationResult> GetClasses() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本分类结果
+                     * 文本分类结果（文本分类映射表请参见附录）
                      */
                     std::vector<ClassificationResult> m_classes;
                     bool m_classesHasBeenSet;

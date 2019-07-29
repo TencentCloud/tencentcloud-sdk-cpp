@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
-                     * @return BizId 应用id
+                     * 获取应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * @return BizId 应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
                      */
                     uint64_t GetBizId() const;
 
                     /**
-                     * 设置应用id
-                     * @param BizId 应用id
+                     * 设置应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * @param BizId 应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
                      */
                     void SetBizId(const uint64_t& _bizId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取文件id，表示文件唯一id
-                     * @return FileId 文件id，表示文件唯一id
+                     * 获取文件ID，表示文件唯一ID
+                     * @return FileId 文件ID，表示文件唯一ID
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置文件id，表示文件唯一id
-                     * @param FileId 文件id，表示文件唯一id
+                     * 设置文件ID，表示文件唯一ID
+                     * @param FileId 文件ID，表示文件唯一ID
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文件内容url，FileUrl和FileContent二选一
-                     * @return FileUrl 文件内容url，FileUrl和FileContent二选一
+                     * 获取文件url，urlencode编码，FileUrl和FileContent二选一
+                     * @return FileUrl 文件url，urlencode编码，FileUrl和FileContent二选一
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置文件内容url，FileUrl和FileContent二选一
-                     * @param FileUrl 文件内容url，FileUrl和FileContent二选一
+                     * 设置文件url，urlencode编码，FileUrl和FileContent二选一
+                     * @param FileUrl 文件url，urlencode编码，FileUrl和FileContent二选一
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool FileContentHasBeenSet() const;
 
                     /**
-                     * 获取用户id
-                     * @return OpenId 用户id
+                     * 获取用户ID
+                     * @return OpenId 用户ID
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户id
-                     * @param OpenId 用户id
+                     * 设置用户ID
+                     * @param OpenId 用户ID
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 文件id，表示文件唯一id
+                     * 文件ID，表示文件唯一ID
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文件内容url，FileUrl和FileContent二选一
+                     * 文件url，urlencode编码，FileUrl和FileContent二选一
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_fileContentHasBeenSet;
 
                     /**
-                     * 用户id
+                     * 用户ID
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

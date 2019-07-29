@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeBillDetailResponse::DescribeBillDetailResponse() :
-    m_detailSetHasBeenSet(false)
+    m_detailSetHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeBillDetailResponse::Deserialize(const string &payloa
         m_detailSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<BillDetail> DescribeBillDetailResponse::GetDetailSet() const
 bool DescribeBillDetailResponse::DetailSetHasBeenSet() const
 {
     return m_detailSetHasBeenSet;
+}
+
+uint64_t DescribeBillDetailResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeBillDetailResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

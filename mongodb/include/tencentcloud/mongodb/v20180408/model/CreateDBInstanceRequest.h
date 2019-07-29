@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取版本号，当前仅支持 MONGO_3_WT
-                     * @return MongoVersion 版本号，当前仅支持 MONGO_3_WT
+                     * 获取版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
+                     * @return MongoVersion 版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置版本号，当前仅支持 MONGO_3_WT
-                     * @param MongoVersion 版本号，当前仅支持 MONGO_3_WT
+                     * 设置版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
+                     * @param MongoVersion 版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
 
@@ -297,7 +297,7 @@ namespace TencentCloud
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 版本号，当前仅支持 MONGO_3_WT
+                     * 版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;

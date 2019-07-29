@@ -28,7 +28,9 @@ EditMediaTask::EditMediaTask() :
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
-    m_procedureTaskIdHasBeenSet(false)
+    m_procedureTaskIdHasBeenSet(false),
+    m_sessionContextHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,26 @@ CoreInternalOutcome EditMediaTask::Deserialize(const Value &value)
         m_procedureTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionContext") && !value["SessionContext"].IsNull())
+    {
+        if (!value["SessionContext"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTask.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionContext = string(value["SessionContext"].GetString());
+        m_sessionContextHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTask.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +206,22 @@ void EditMediaTask::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ProcedureTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_procedureTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +337,37 @@ void EditMediaTask::SetProcedureTaskId(const string& _procedureTaskId)
 bool EditMediaTask::ProcedureTaskIdHasBeenSet() const
 {
     return m_procedureTaskIdHasBeenSet;
+}
+
+string EditMediaTask::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void EditMediaTask::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool EditMediaTask::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
+}
+
+string EditMediaTask::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void EditMediaTask::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool EditMediaTask::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 

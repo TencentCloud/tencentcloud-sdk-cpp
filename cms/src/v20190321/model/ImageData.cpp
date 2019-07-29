@@ -24,6 +24,7 @@ using namespace std;
 ImageData::ImageData() :
     m_evilFlagHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
+    m_hotDetectHasBeenSet(false),
     m_illegalDetectHasBeenSet(false),
     m_polityDetectHasBeenSet(false),
     m_pornDetectHasBeenSet(false),
@@ -55,6 +56,23 @@ CoreInternalOutcome ImageData::Deserialize(const Value &value)
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HotDetect") && !value["HotDetect"].IsNull())
+    {
+        if (!value["HotDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageData.HotDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hotDetect.Deserialize(value["HotDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hotDetectHasBeenSet = true;
     }
 
     if (value.HasMember("IllegalDetect") && !value["IllegalDetect"].IsNull())
@@ -165,6 +183,15 @@ void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         value.AddMember(iKey, m_evilType, allocator);
     }
 
+    if (m_hotDetectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HotDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_hotDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_illegalDetectHasBeenSet)
     {
         Value iKey(kStringType);
@@ -243,6 +270,22 @@ void ImageData::SetEvilType(const int64_t& _evilType)
 bool ImageData::EvilTypeHasBeenSet() const
 {
     return m_evilTypeHasBeenSet;
+}
+
+ImageHotDetect ImageData::GetHotDetect() const
+{
+    return m_hotDetect;
+}
+
+void ImageData::SetHotDetect(const ImageHotDetect& _hotDetect)
+{
+    m_hotDetect = _hotDetect;
+    m_hotDetectHasBeenSet = true;
+}
+
+bool ImageData::HotDetectHasBeenSet() const
+{
+    return m_hotDetectHasBeenSet;
 }
 
 ImageIllegalDetect ImageData::GetIllegalDetect() const

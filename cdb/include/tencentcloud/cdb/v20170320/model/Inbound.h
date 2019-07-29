@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略，ACCEPT或者DROP
-                     * @return Action 策略，ACCEPT或者DROP
+                     * 获取策略，ACCEPT 或者 DROP
+                     * @return Action 策略，ACCEPT 或者 DROP
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置策略，ACCEPT或者DROP
-                     * @param Action 策略，ACCEPT或者DROP
+                     * 设置策略，ACCEPT 或者 DROP
+                     * @param Action 策略，ACCEPT 或者 DROP
                      */
                     void SetAction(const std::string& _action);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取来源Ip或Ip段，例如192.168.0.0/16
-                     * @return CidrIp 来源Ip或Ip段，例如192.168.0.0/16
+                     * 获取来源 IP 或 IP 段，例如192.168.0.0/16
+                     * @return CidrIp 来源 IP 或 IP 段，例如192.168.0.0/16
                      */
                     std::string GetCidrIp() const;
 
                     /**
-                     * 设置来源Ip或Ip段，例如192.168.0.0/16
-                     * @param CidrIp 来源Ip或Ip段，例如192.168.0.0/16
+                     * 设置来源 IP 或 IP 段，例如192.168.0.0/16
+                     * @param CidrIp 来源 IP 或 IP 段，例如192.168.0.0/16
                      */
                     void SetCidrIp(const std::string& _cidrIp);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool PortRangeHasBeenSet() const;
 
                     /**
-                     * 获取网络协议，支持udp、tcp等
-                     * @return IpProtocol 网络协议，支持udp、tcp等
+                     * 获取网络协议，支持 UDP、TCP 等
+                     * @return IpProtocol 网络协议，支持 UDP、TCP 等
                      */
                     std::string GetIpProtocol() const;
 
                     /**
-                     * 设置网络协议，支持udp、tcp等
-                     * @param IpProtocol 网络协议，支持udp、tcp等
+                     * 设置网络协议，支持 UDP、TCP 等
+                     * @param IpProtocol 网络协议，支持 UDP、TCP 等
                      */
                     void SetIpProtocol(const std::string& _ipProtocol);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool IpProtocolHasBeenSet() const;
 
                     /**
-                     * 获取规则限定的方向，进站规则为INPUT
-                     * @return Dir 规则限定的方向，进站规则为INPUT
+                     * 获取规则限定的方向，进站规则为 INPUT
+                     * @return Dir 规则限定的方向，进站规则为 INPUT
                      */
                     std::string GetDir() const;
 
                     /**
-                     * 设置规则限定的方向，进站规则为INPUT
-                     * @param Dir 规则限定的方向，进站规则为INPUT
+                     * 设置规则限定的方向，进站规则为 INPUT
+                     * @param Dir 规则限定的方向，进站规则为 INPUT
                      */
                     void SetDir(const std::string& _dir);
 
@@ -139,13 +139,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略，ACCEPT或者DROP
+                     * 策略，ACCEPT 或者 DROP
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 来源Ip或Ip段，例如192.168.0.0/16
+                     * 来源 IP 或 IP 段，例如192.168.0.0/16
                      */
                     std::string m_cidrIp;
                     bool m_cidrIpHasBeenSet;
@@ -157,13 +157,13 @@ namespace TencentCloud
                     bool m_portRangeHasBeenSet;
 
                     /**
-                     * 网络协议，支持udp、tcp等
+                     * 网络协议，支持 UDP、TCP 等
                      */
                     std::string m_ipProtocol;
                     bool m_ipProtocolHasBeenSet;
 
                     /**
-                     * 规则限定的方向，进站规则为INPUT
+                     * 规则限定的方向，进站规则为 INPUT
                      */
                     std::string m_dir;
                     bool m_dirHasBeenSet;

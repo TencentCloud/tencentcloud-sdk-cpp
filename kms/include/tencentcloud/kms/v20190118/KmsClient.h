@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/kms/v20190118/model/CancelKeyDeletionRequest.h>
+#include <tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DecryptRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/kms/v20190118/model/ListKeysResponse.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h>
+#include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionResponse.h>
 #include <tencentcloud/kms/v20190118/model/UpdateAliasRequest.h>
 #include <tencentcloud/kms/v20190118/model/UpdateAliasResponse.h>
 #include <tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h>
@@ -75,6 +79,9 @@ namespace TencentCloud
                 KmsClient(const Credential &credential, const std::string &region);
                 KmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CancelKeyDeletionResponse> CancelKeyDeletionOutcome;
+                typedef std::future<CancelKeyDeletionOutcome> CancelKeyDeletionOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::CancelKeyDeletionRequest&, CancelKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKeyDeletionAsyncHandler;
                 typedef Outcome<Error, Model::CreateKeyResponse> CreateKeyOutcome;
                 typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::CreateKeyRequest&, CreateKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyAsyncHandler;
@@ -126,6 +133,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReEncryptResponse> ReEncryptOutcome;
                 typedef std::future<ReEncryptOutcome> ReEncryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ReEncryptRequest&, ReEncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReEncryptAsyncHandler;
+                typedef Outcome<Error, Model::ScheduleKeyDeletionResponse> ScheduleKeyDeletionOutcome;
+                typedef std::future<ScheduleKeyDeletionOutcome> ScheduleKeyDeletionOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::ScheduleKeyDeletionRequest&, ScheduleKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScheduleKeyDeletionAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAliasResponse> UpdateAliasOutcome;
                 typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::UpdateAliasRequest&, UpdateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
@@ -134,6 +144,15 @@ namespace TencentCloud
                 typedef std::function<void(const KmsClient*, const Model::UpdateKeyDescriptionRequest&, UpdateKeyDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKeyDescriptionAsyncHandler;
 
 
+
+                /**
+                 *取消CMK的计划删除操作
+                 * @param req CancelKeyDeletionRequest
+                 * @return CancelKeyDeletionOutcome
+                 */
+                CancelKeyDeletionOutcome CancelKeyDeletion(const Model::CancelKeyDeletionRequest &request);
+                void CancelKeyDeletionAsync(const Model::CancelKeyDeletionRequest& request, const CancelKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelKeyDeletionOutcomeCallable CancelKeyDeletionCallable(const Model::CancelKeyDeletionRequest& request);
 
                 /**
                  *创建用户管理数据密钥的主密钥CMK（Custom Master Key）。
@@ -287,6 +306,15 @@ namespace TencentCloud
                 ReEncryptOutcome ReEncrypt(const Model::ReEncryptRequest &request);
                 void ReEncryptAsync(const Model::ReEncryptRequest& request, const ReEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReEncryptOutcomeCallable ReEncryptCallable(const Model::ReEncryptRequest& request);
+
+                /**
+                 *CMK计划删除接口，用于指定CMK删除的时间，可选时间区间为[7,30]天
+                 * @param req ScheduleKeyDeletionRequest
+                 * @return ScheduleKeyDeletionOutcome
+                 */
+                ScheduleKeyDeletionOutcome ScheduleKeyDeletion(const Model::ScheduleKeyDeletionRequest &request);
+                void ScheduleKeyDeletionAsync(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScheduleKeyDeletionOutcomeCallable ScheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request);
 
                 /**
                  *用于修改CMK的别名。

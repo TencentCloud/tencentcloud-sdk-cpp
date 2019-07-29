@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值
-                     * @param InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
+                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取异步任务请求ID，执行 CDB 相关操作返回的 AsyncRequestId
-                     * @return AsyncRequestId 异步任务请求ID，执行 CDB 相关操作返回的 AsyncRequestId
+                     * 获取异步任务请求 ID，执行 CDB 相关操作返回的 AsyncRequestId。
+                     * @return AsyncRequestId 异步任务请求 ID，执行 CDB 相关操作返回的 AsyncRequestId。
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
-                     * 设置异步任务请求ID，执行 CDB 相关操作返回的 AsyncRequestId
-                     * @param AsyncRequestId 异步任务请求ID，执行 CDB 相关操作返回的 AsyncRequestId
+                     * 设置异步任务请求 ID，执行 CDB 相关操作返回的 AsyncRequestId。
+                     * @param AsyncRequestId 异步任务请求 ID，执行 CDB 相关操作返回的 AsyncRequestId。
                      */
                     void SetAsyncRequestId(const std::string& _asyncRequestId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AsyncRequestIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例；
-                     * @return TaskTypes 任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例；
+                     * 获取任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例。
+                     * @return TaskTypes 任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例。
                      */
                     std::vector<int64_t> GetTaskTypes() const;
 
                     /**
-                     * 设置任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例；
-                     * @param TaskTypes 任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例；
+                     * 设置任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例。
+                     * @param TaskTypes 任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例。
                      */
                     void SetTaskTypes(const std::vector<int64_t>& _taskTypes);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TaskTypesHasBeenSet() const;
 
                     /**
-                     * 获取任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停；
-                     * @return TaskStatus 任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停；
+                     * 获取任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停。
+                     * @return TaskStatus 任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停。
                      */
                     std::vector<int64_t> GetTaskStatus() const;
 
                     /**
-                     * 设置任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停；
-                     * @param TaskStatus 任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停；
+                     * 设置任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停。
+                     * @param TaskStatus 任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停。
                      */
                     void SetTaskStatus(const std::vector<int64_t>& _taskStatus);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
-                     * @return StartTimeBegin 第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
+                     * 获取第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
+                     * @return StartTimeBegin 第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
                      */
                     std::string GetStartTimeBegin() const;
 
                     /**
-                     * 设置第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
-                     * @param StartTimeBegin 第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
+                     * 设置第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
+                     * @param StartTimeBegin 第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
                      */
                     void SetStartTimeBegin(const std::string& _startTimeBegin);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool StartTimeBeginHasBeenSet() const;
 
                     /**
-                     * 获取最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
-                     * @return StartTimeEnd 最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
+                     * 获取最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
+                     * @return StartTimeEnd 最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
                      */
                     std::string GetStartTimeEnd() const;
 
                     /**
-                     * 设置最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
-                     * @param StartTimeEnd 最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
+                     * 设置最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
+                     * @param StartTimeEnd 最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
                      */
                     void SetStartTimeEnd(const std::string& _startTimeEnd);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool StartTimeEndHasBeenSet() const;
 
                     /**
-                     * 获取记录偏移量，默认值为0
-                     * @return Offset 记录偏移量，默认值为0
+                     * 获取记录偏移量，默认值为0。
+                     * @return Offset 记录偏移量，默认值为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置记录偏移量，默认值为0
-                     * @param Offset 记录偏移量，默认值为0
+                     * 设置记录偏移量，默认值为0。
+                     * @param Offset 记录偏移量，默认值为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量，默认值为20，最大值为100
-                     * @return Limit 单次请求返回的数量，默认值为20，最大值为100
+                     * 获取单次请求返回的数量，默认值为20，最大值为100。
+                     * @return Limit 单次请求返回的数量，默认值为20，最大值为100。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量，默认值为20，最大值为100
-                     * @param Limit 单次请求返回的数量，默认值为20，最大值为100
+                     * 设置单次请求返回的数量，默认值为20，最大值为100。
+                     * @param Limit 单次请求返回的数量，默认值为20，最大值为100。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -189,49 +189,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值
+                     * 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 异步任务请求ID，执行 CDB 相关操作返回的 AsyncRequestId
+                     * 异步任务请求 ID，执行 CDB 相关操作返回的 AsyncRequestId。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
 
                     /**
-                     * 任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例；
+                     * 任务类型，不传值则查询所有任务类型，可能的值：1-数据库回档；2-SQL操作；3-数据导入；5-参数设置；6-初始化；7-重启；8-开启GTID；9-只读实例升级；10-数据库批量回档；11-主实例升级；12-删除库表；13-切换为主实例。
                      */
                     std::vector<int64_t> m_taskTypes;
                     bool m_taskTypesHasBeenSet;
 
                     /**
-                     * 任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停；
+                     * 任务状态，不传值则查询所有任务状态，可能的值：-1-未定义；0-初始化; 1-运行中；2-执行成功；3-执行失败；4-已终止；5-已删除；6-已暂停。
                      */
                     std::vector<int64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
+                     * 第一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
                      */
                     std::string m_startTimeBegin;
                     bool m_startTimeBeginHasBeenSet;
 
                     /**
-                     * 最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01
+                     * 最后一个任务的开始时间，用于范围查询，时间格式如：2017-12-31 10:40:01。
                      */
                     std::string m_startTimeEnd;
                     bool m_startTimeEndHasBeenSet;
 
                     /**
-                     * 记录偏移量，默认值为0
+                     * 记录偏移量，默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量，默认值为20，最大值为100
+                     * 单次请求返回的数量，默认值为20，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

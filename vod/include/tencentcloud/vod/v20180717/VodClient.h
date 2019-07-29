@@ -85,6 +85,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeReviewDetailsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeReviewDetailsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeSubAppIdsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeSubAppIdsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTasksRequest.h>
@@ -113,6 +115,10 @@
 #include <tencentcloud/vod/v20180717/model/ModifyMediaInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifySubAppIdInfoRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifySubAppIdInfoResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifySubAppIdStatusRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifySubAppIdStatusResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyTranscodeTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyTranscodeTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateRequest.h>
@@ -127,6 +133,8 @@
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByUrlResponse.h>
 #include <tencentcloud/vod/v20180717/model/PullEventsRequest.h>
 #include <tencentcloud/vod/v20180717/model/PullEventsResponse.h>
+#include <tencentcloud/vod/v20180717/model/PullUploadRequest.h>
+#include <tencentcloud/vod/v20180717/model/PullUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheRequest.h>
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheResponse.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateRequest.h>
@@ -135,6 +143,8 @@
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
+#include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishRequest.h>
+#include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishResponse.h>
 
 
 namespace TencentCloud
@@ -242,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeReviewDetailsResponse> DescribeReviewDetailsOutcome;
                 typedef std::future<DescribeReviewDetailsOutcome> DescribeReviewDetailsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeReviewDetailsRequest&, DescribeReviewDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReviewDetailsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSubAppIdsResponse> DescribeSubAppIdsOutcome;
+                typedef std::future<DescribeSubAppIdsOutcome> DescribeSubAppIdsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeSubAppIdsRequest&, DescribeSubAppIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAppIdsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -284,6 +297,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyPersonSampleResponse> ModifyPersonSampleOutcome;
                 typedef std::future<ModifyPersonSampleOutcome> ModifyPersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyPersonSampleRequest&, ModifyPersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonSampleAsyncHandler;
+                typedef Outcome<Error, Model::ModifySubAppIdInfoResponse> ModifySubAppIdInfoOutcome;
+                typedef std::future<ModifySubAppIdInfoOutcome> ModifySubAppIdInfoOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifySubAppIdInfoRequest&, ModifySubAppIdInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubAppIdInfoAsyncHandler;
+                typedef Outcome<Error, Model::ModifySubAppIdStatusResponse> ModifySubAppIdStatusOutcome;
+                typedef std::future<ModifySubAppIdStatusOutcome> ModifySubAppIdStatusOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifySubAppIdStatusRequest&, ModifySubAppIdStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubAppIdStatusAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTranscodeTemplateResponse> ModifyTranscodeTemplateOutcome;
                 typedef std::future<ModifyTranscodeTemplateOutcome> ModifyTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyTranscodeTemplateRequest&, ModifyTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTranscodeTemplateAsyncHandler;
@@ -305,6 +324,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PullEventsResponse> PullEventsOutcome;
                 typedef std::future<PullEventsOutcome> PullEventsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::PullEventsRequest&, PullEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PullEventsAsyncHandler;
+                typedef Outcome<Error, Model::PullUploadResponse> PullUploadOutcome;
+                typedef std::future<PullUploadOutcome> PullUploadOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::PullUploadRequest&, PullUploadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PullUploadAsyncHandler;
                 typedef Outcome<Error, Model::PushUrlCacheResponse> PushUrlCacheOutcome;
                 typedef std::future<PushUrlCacheOutcome> PushUrlCacheOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::PushUrlCacheRequest&, PushUrlCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushUrlCacheAsyncHandler;
@@ -317,6 +339,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SimpleHlsClipResponse> SimpleHlsClipOutcome;
                 typedef std::future<SimpleHlsClipOutcome> SimpleHlsClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SimpleHlsClipRequest&, SimpleHlsClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SimpleHlsClipAsyncHandler;
+                typedef Outcome<Error, Model::WeChatMiniProgramPublishResponse> WeChatMiniProgramPublishOutcome;
+                typedef std::future<WeChatMiniProgramPublishOutcome> WeChatMiniProgramPublishOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::WeChatMiniProgramPublishRequest&, WeChatMiniProgramPublishOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WeChatMiniProgramPublishAsyncHandler;
 
 
 
@@ -579,8 +604,8 @@ namespace TencentCloud
 
                 /**
                  *1. 该接口可以获取多个视频的多种信息，包括：
-    1. 基础信息（basicInfo）：包括视频名称、大小、时长、封面图片等。
-    2. 元信息（metaData）：包括视频流信息、音频流信息等。
+    1. 基础信息（basicInfo）：包括视频名称、分类、播放地址、封面图片等。
+    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。
     3. 转码结果信息（transcodeInfo）：包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。
     4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后，动图相关信息。
     5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后，相关截图信息。
@@ -617,14 +642,24 @@ namespace TencentCloud
                 /**
                  *该接口返回查询时间范围内每天使用的视频内容审核时长数据，单位： 秒。
 
-1. 可以查询最近 90 天内的转码时长统计数据。
-2. 查询时间跨度不超过 60 天。
+1. 可以查询最近90天内的视频内容审核时长统计数据。
+2. 查询时间跨度不超过60天。
                  * @param req DescribeReviewDetailsRequest
                  * @return DescribeReviewDetailsOutcome
                  */
                 DescribeReviewDetailsOutcome DescribeReviewDetails(const Model::DescribeReviewDetailsRequest &request);
                 void DescribeReviewDetailsAsync(const Model::DescribeReviewDetailsRequest& request, const DescribeReviewDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReviewDetailsOutcomeCallable DescribeReviewDetailsCallable(const Model::DescribeReviewDetailsRequest& request);
+
+                /**
+                 *该接口用于获取当前账号有权限的子应用列表，包含主应用。若尚未开通子应用功能，接口将返回 
+ FailedOperation。
+                 * @param req DescribeSubAppIdsRequest
+                 * @return DescribeSubAppIdsOutcome
+                 */
+                DescribeSubAppIdsOutcome DescribeSubAppIds(const Model::DescribeSubAppIdsRequest &request);
+                void DescribeSubAppIdsAsync(const Model::DescribeSubAppIdsRequest& request, const DescribeSubAppIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubAppIdsOutcomeCallable DescribeSubAppIdsCallable(const Model::DescribeSubAppIdsRequest& request);
 
                 /**
                  *通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。
@@ -790,6 +825,24 @@ namespace TencentCloud
                 ModifyPersonSampleOutcomeCallable ModifyPersonSampleCallable(const Model::ModifyPersonSampleRequest& request);
 
                 /**
+                 *该接口用于修改子应用信息，但不允许修改主应用信息。
+                 * @param req ModifySubAppIdInfoRequest
+                 * @return ModifySubAppIdInfoOutcome
+                 */
+                ModifySubAppIdInfoOutcome ModifySubAppIdInfo(const Model::ModifySubAppIdInfoRequest &request);
+                void ModifySubAppIdInfoAsync(const Model::ModifySubAppIdInfoRequest& request, const ModifySubAppIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubAppIdInfoOutcomeCallable ModifySubAppIdInfoCallable(const Model::ModifySubAppIdInfoRequest& request);
+
+                /**
+                 *该接口用于启用、停用子应用。被停用的子应用将封停对应域名，并限制控制台访问。
+                 * @param req ModifySubAppIdStatusRequest
+                 * @return ModifySubAppIdStatusOutcome
+                 */
+                ModifySubAppIdStatusOutcome ModifySubAppIdStatus(const Model::ModifySubAppIdStatusRequest &request);
+                void ModifySubAppIdStatusAsync(const Model::ModifySubAppIdStatusRequest& request, const ModifySubAppIdStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubAppIdStatusOutcomeCallable ModifySubAppIdStatusCallable(const Model::ModifySubAppIdStatusRequest& request);
+
+                /**
                  *修改用户自定义转码模板信息。
                  * @param req ModifyTranscodeTemplateRequest
                  * @return ModifyTranscodeTemplateOutcome
@@ -861,7 +914,7 @@ namespace TencentCloud
                 ProcessMediaByUrlOutcomeCallable ProcessMediaByUrlCallable(const Model::ProcessMediaByUrlRequest& request);
 
                 /**
-                 ** 该接口用于从点播服务端获取事件通知，详见[服务端事件通知](https://cloud.tencent.com/document/product/266/7829)；
+                 ** 该接口用于业务服务器以[可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)的方式获取事件通知；
 * 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；
 * 请求最多挂起 5 秒，建议请求方将超时时间设置为 10 秒；
 * 若该接口有事件返回，调用方必须再调用[确认事件通知](https://cloud.tencent.com/document/product/266/33434)接口，确认事件通知已经处理，否则该事件通知后续会再次被拉取到。
@@ -871,6 +924,15 @@ namespace TencentCloud
                 PullEventsOutcome PullEvents(const Model::PullEventsRequest &request);
                 void PullEventsAsync(const Model::PullEventsRequest& request, const PullEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PullEventsOutcomeCallable PullEventsCallable(const Model::PullEventsRequest& request);
+
+                /**
+                 *该接口用于将一个网络上的视频拉取到云点播平台。
+                 * @param req PullUploadRequest
+                 * @return PullUploadOutcome
+                 */
+                PullUploadOutcome PullUpload(const Model::PullUploadRequest &request);
+                void PullUploadAsync(const Model::PullUploadRequest& request, const PullUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PullUploadOutcomeCallable PullUploadCallable(const Model::PullUploadRequest& request);
 
                 /**
                  *1. 预热指定的 URL 列表。
@@ -924,6 +986,15 @@ namespace TencentCloud
                 SimpleHlsClipOutcome SimpleHlsClip(const Model::SimpleHlsClipRequest &request);
                 void SimpleHlsClipAsync(const Model::SimpleHlsClipRequest& request, const SimpleHlsClipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SimpleHlsClipOutcomeCallable SimpleHlsClipCallable(const Model::SimpleHlsClipRequest& request);
+
+                /**
+                 *将点播视频发布到微信小程序，供微信小程序播放器播放。
+                 * @param req WeChatMiniProgramPublishRequest
+                 * @return WeChatMiniProgramPublishOutcome
+                 */
+                WeChatMiniProgramPublishOutcome WeChatMiniProgramPublish(const Model::WeChatMiniProgramPublishRequest &request);
+                void WeChatMiniProgramPublishAsync(const Model::WeChatMiniProgramPublishRequest& request, const WeChatMiniProgramPublishAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                WeChatMiniProgramPublishOutcomeCallable WeChatMiniProgramPublishCallable(const Model::WeChatMiniProgramPublishRequest& request);
 
             };
         }

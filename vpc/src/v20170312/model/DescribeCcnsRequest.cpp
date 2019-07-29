@@ -27,7 +27,9 @@ DescribeCcnsRequest::DescribeCcnsRequest() :
     m_ccnIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,22 @@ string DescribeCcnsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -152,6 +170,38 @@ void DescribeCcnsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeCcnsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeCcnsRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeCcnsRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeCcnsRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeCcnsRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeCcnsRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeCcnsRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
 }
 
 

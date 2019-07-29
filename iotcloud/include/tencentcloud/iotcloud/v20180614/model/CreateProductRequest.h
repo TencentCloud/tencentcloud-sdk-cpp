@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ProductPropertiesHasBeenSet() const;
 
                     /**
-                     * 获取创建LoRa产品需要的Skey
-                     * @return Skey 创建LoRa产品需要的Skey
+                     * 获取创建CLAA产品时，需要Skey
+                     * @return Skey 创建CLAA产品时，需要Skey
                      */
                     std::string GetSkey() const;
 
                     /**
-                     * 设置创建LoRa产品需要的Skey
-                     * @param Skey 创建LoRa产品需要的Skey
+                     * 设置创建CLAA产品时，需要Skey
+                     * @param Skey 创建CLAA产品时，需要Skey
                      */
                     void SetSkey(const std::string& _skey);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_productPropertiesHasBeenSet;
 
                     /**
-                     * 创建LoRa产品需要的Skey
+                     * 创建CLAA产品时，需要Skey
                      */
                     std::string m_skey;
                     bool m_skeyHasBeenSet;

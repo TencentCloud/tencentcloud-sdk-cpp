@@ -169,6 +169,49 @@ CamClient::AttachGroupPolicyOutcomeCallable CamClient::AttachGroupPolicyCallable
     return task->get_future();
 }
 
+CamClient::AttachRolePolicyOutcome CamClient::AttachRolePolicy(const AttachRolePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachRolePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachRolePolicyResponse rsp = AttachRolePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachRolePolicyOutcome(rsp);
+        else
+            return AttachRolePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachRolePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::AttachRolePolicyAsync(const AttachRolePolicyRequest& request, const AttachRolePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachRolePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::AttachRolePolicyOutcomeCallable CamClient::AttachRolePolicyCallable(const AttachRolePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachRolePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachRolePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::AttachUserPolicyOutcome CamClient::AttachUserPolicy(const AttachUserPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "AttachUserPolicy");
@@ -205,6 +248,49 @@ CamClient::AttachUserPolicyOutcomeCallable CamClient::AttachUserPolicyCallable(c
         [this, request]()
         {
             return this->AttachUserPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::ConsumeCustomMFATokenOutcome CamClient::ConsumeCustomMFAToken(const ConsumeCustomMFATokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConsumeCustomMFAToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConsumeCustomMFATokenResponse rsp = ConsumeCustomMFATokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConsumeCustomMFATokenOutcome(rsp);
+        else
+            return ConsumeCustomMFATokenOutcome(o.GetError());
+    }
+    else
+    {
+        return ConsumeCustomMFATokenOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ConsumeCustomMFATokenAsync(const ConsumeCustomMFATokenRequest& request, const ConsumeCustomMFATokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConsumeCustomMFAToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ConsumeCustomMFATokenOutcomeCallable CamClient::ConsumeCustomMFATokenCallable(const ConsumeCustomMFATokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConsumeCustomMFATokenOutcome()>>(
+        [this, request]()
+        {
+            return this->ConsumeCustomMFAToken(request);
         }
     );
 
@@ -291,6 +377,49 @@ CamClient::CreatePolicyOutcomeCallable CamClient::CreatePolicyCallable(const Cre
         [this, request]()
         {
             return this->CreatePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::CreateRoleOutcome CamClient::CreateRole(const CreateRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoleResponse rsp = CreateRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoleOutcome(rsp);
+        else
+            return CreateRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoleOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CreateRoleAsync(const CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CreateRoleOutcomeCallable CamClient::CreateRoleCallable(const CreateRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRole(request);
         }
     );
 
@@ -427,6 +556,49 @@ CamClient::DeletePolicyOutcomeCallable CamClient::DeletePolicyCallable(const Del
     return task->get_future();
 }
 
+CamClient::DeleteRoleOutcome CamClient::DeleteRole(const DeleteRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoleResponse rsp = DeleteRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoleOutcome(rsp);
+        else
+            return DeleteRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoleOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DeleteRoleAsync(const DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DeleteRoleOutcomeCallable CamClient::DeleteRoleCallable(const DeleteRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DeleteSAMLProviderOutcome CamClient::DeleteSAMLProvider(const DeleteSAMLProviderRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSAMLProvider");
@@ -513,6 +685,49 @@ CamClient::DeleteUserOutcomeCallable CamClient::DeleteUserCallable(const DeleteU
     return task->get_future();
 }
 
+CamClient::DescribeRoleListOutcome CamClient::DescribeRoleList(const DescribeRoleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoleListResponse rsp = DescribeRoleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoleListOutcome(rsp);
+        else
+            return DescribeRoleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoleListOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DescribeRoleListAsync(const DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DescribeRoleListOutcomeCallable CamClient::DescribeRoleListCallable(const DescribeRoleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DetachGroupPolicyOutcome CamClient::DetachGroupPolicy(const DetachGroupPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachGroupPolicy");
@@ -556,6 +771,49 @@ CamClient::DetachGroupPolicyOutcomeCallable CamClient::DetachGroupPolicyCallable
     return task->get_future();
 }
 
+CamClient::DetachRolePolicyOutcome CamClient::DetachRolePolicy(const DetachRolePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachRolePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachRolePolicyResponse rsp = DetachRolePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachRolePolicyOutcome(rsp);
+        else
+            return DetachRolePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachRolePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DetachRolePolicyAsync(const DetachRolePolicyRequest& request, const DetachRolePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachRolePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DetachRolePolicyOutcomeCallable CamClient::DetachRolePolicyCallable(const DetachRolePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachRolePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachRolePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DetachUserPolicyOutcome CamClient::DetachUserPolicy(const DetachUserPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachUserPolicy");
@@ -592,6 +850,49 @@ CamClient::DetachUserPolicyOutcomeCallable CamClient::DetachUserPolicyCallable(c
         [this, request]()
         {
             return this->DetachUserPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::GetCustomMFATokenInfoOutcome CamClient::GetCustomMFATokenInfo(const GetCustomMFATokenInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCustomMFATokenInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCustomMFATokenInfoResponse rsp = GetCustomMFATokenInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCustomMFATokenInfoOutcome(rsp);
+        else
+            return GetCustomMFATokenInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCustomMFATokenInfoOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetCustomMFATokenInfoAsync(const GetCustomMFATokenInfoRequest& request, const GetCustomMFATokenInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCustomMFATokenInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetCustomMFATokenInfoOutcomeCallable CamClient::GetCustomMFATokenInfoCallable(const GetCustomMFATokenInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCustomMFATokenInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCustomMFATokenInfo(request);
         }
     );
 
@@ -678,6 +979,49 @@ CamClient::GetPolicyOutcomeCallable CamClient::GetPolicyCallable(const GetPolicy
         [this, request]()
         {
             return this->GetPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::GetRoleOutcome CamClient::GetRole(const GetRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRoleResponse rsp = GetRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRoleOutcome(rsp);
+        else
+            return GetRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRoleOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetRoleAsync(const GetRoleRequest& request, const GetRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetRoleOutcomeCallable CamClient::GetRoleCallable(const GetRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRole(request);
         }
     );
 
@@ -807,6 +1151,49 @@ CamClient::ListAttachedGroupPoliciesOutcomeCallable CamClient::ListAttachedGroup
         [this, request]()
         {
             return this->ListAttachedGroupPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::ListAttachedRolePoliciesOutcome CamClient::ListAttachedRolePolicies(const ListAttachedRolePoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAttachedRolePolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAttachedRolePoliciesResponse rsp = ListAttachedRolePoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAttachedRolePoliciesOutcome(rsp);
+        else
+            return ListAttachedRolePoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAttachedRolePoliciesOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListAttachedRolePoliciesAsync(const ListAttachedRolePoliciesRequest& request, const ListAttachedRolePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAttachedRolePolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListAttachedRolePoliciesOutcomeCallable CamClient::ListAttachedRolePoliciesCallable(const ListAttachedRolePoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAttachedRolePoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAttachedRolePolicies(request);
         }
     );
 
@@ -1201,6 +1588,92 @@ CamClient::RemoveUserFromGroupOutcomeCallable CamClient::RemoveUserFromGroupCall
     return task->get_future();
 }
 
+CamClient::SetFlagOutcome CamClient::SetFlag(const SetFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetFlagResponse rsp = SetFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetFlagOutcome(rsp);
+        else
+            return SetFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return SetFlagOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::SetFlagAsync(const SetFlagRequest& request, const SetFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::SetFlagOutcomeCallable CamClient::SetFlagCallable(const SetFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->SetFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::UpdateAssumeRolePolicyOutcome CamClient::UpdateAssumeRolePolicy(const UpdateAssumeRolePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAssumeRolePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAssumeRolePolicyResponse rsp = UpdateAssumeRolePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAssumeRolePolicyOutcome(rsp);
+        else
+            return UpdateAssumeRolePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAssumeRolePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UpdateAssumeRolePolicyAsync(const UpdateAssumeRolePolicyRequest& request, const UpdateAssumeRolePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAssumeRolePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::UpdateAssumeRolePolicyOutcomeCallable CamClient::UpdateAssumeRolePolicyCallable(const UpdateAssumeRolePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAssumeRolePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAssumeRolePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::UpdateGroupOutcome CamClient::UpdateGroup(const UpdateGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateGroup");
@@ -1280,6 +1753,49 @@ CamClient::UpdatePolicyOutcomeCallable CamClient::UpdatePolicyCallable(const Upd
         [this, request]()
         {
             return this->UpdatePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::UpdateRoleDescriptionOutcome CamClient::UpdateRoleDescription(const UpdateRoleDescriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRoleDescription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRoleDescriptionResponse rsp = UpdateRoleDescriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRoleDescriptionOutcome(rsp);
+        else
+            return UpdateRoleDescriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRoleDescriptionOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UpdateRoleDescriptionAsync(const UpdateRoleDescriptionRequest& request, const UpdateRoleDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateRoleDescription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::UpdateRoleDescriptionOutcomeCallable CamClient::UpdateRoleDescriptionCallable(const UpdateRoleDescriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateRoleDescriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateRoleDescription(request);
         }
     );
 

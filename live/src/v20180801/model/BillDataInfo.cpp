@@ -1,0 +1,147 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/live/v20180801/model/BillDataInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Live::V20180801::Model;
+using namespace rapidjson;
+using namespace std;
+
+BillDataInfo::BillDataInfo() :
+    m_timeHasBeenSet(false),
+    m_bandwidthHasBeenSet(false),
+    m_fluxHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome BillDataInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Time") && !value["Time"].IsNull())
+    {
+        if (!value["Time"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDataInfo.Time` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_time = string(value["Time"].GetString());
+        m_timeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
+    {
+        if (!value["Bandwidth"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `BillDataInfo.Bandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidth = value["Bandwidth"].GetDouble();
+        m_bandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Flux") && !value["Flux"].IsNull())
+    {
+        if (!value["Flux"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `BillDataInfo.Flux` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_flux = value["Flux"].GetDouble();
+        m_fluxHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void BillDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_timeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Time";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_fluxHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Flux";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flux, allocator);
+    }
+
+}
+
+
+string BillDataInfo::GetTime() const
+{
+    return m_time;
+}
+
+void BillDataInfo::SetTime(const string& _time)
+{
+    m_time = _time;
+    m_timeHasBeenSet = true;
+}
+
+bool BillDataInfo::TimeHasBeenSet() const
+{
+    return m_timeHasBeenSet;
+}
+
+double BillDataInfo::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void BillDataInfo::SetBandwidth(const double& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool BillDataInfo::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+double BillDataInfo::GetFlux() const
+{
+    return m_flux;
+}
+
+void BillDataInfo::SetFlux(const double& _flux)
+{
+    m_flux = _flux;
+    m_fluxHasBeenSet = true;
+}
+
+bool BillDataInfo::FluxHasBeenSet() const
+{
+    return m_fluxHasBeenSet;
+}
+

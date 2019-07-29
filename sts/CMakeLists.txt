@@ -19,20 +19,24 @@ set(sts_public_header
   )
 
 set(sts_public_header_model
+  include/tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLResponse.h
+  include/tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLRequest.h
+  include/tencentcloud/sts/v20180813/model/GetFederationTokenResponse.h
+  include/tencentcloud/sts/v20180813/model/AssumeRoleResponse.h
   include/tencentcloud/sts/v20180813/model/GetFederationTokenRequest.h
   include/tencentcloud/sts/v20180813/model/Credentials.h
   include/tencentcloud/sts/v20180813/model/AssumeRoleRequest.h
-  include/tencentcloud/sts/v20180813/model/AssumeRoleResponse.h
-  include/tencentcloud/sts/v20180813/model/GetFederationTokenResponse.h
   )
 
 set(sts_src
   src/v20180813/StsClient.cpp
+  src/v20180813/model/AssumeRoleWithSAMLResponse.cpp
+  src/v20180813/model/AssumeRoleWithSAMLRequest.cpp
+  src/v20180813/model/GetFederationTokenResponse.cpp
+  src/v20180813/model/AssumeRoleResponse.cpp
   src/v20180813/model/GetFederationTokenRequest.cpp
   src/v20180813/model/Credentials.cpp
   src/v20180813/model/AssumeRoleRequest.cpp
-  src/v20180813/model/AssumeRoleResponse.cpp
-  src/v20180813/model/GetFederationTokenResponse.cpp
   )
 
 set(sts_include

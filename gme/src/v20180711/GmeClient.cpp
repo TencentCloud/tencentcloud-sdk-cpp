@@ -40,6 +40,49 @@ GmeClient::GmeClient(const Credential &credential, const string &region, const C
 }
 
 
+GmeClient::DescribeFilterResultOutcome GmeClient::DescribeFilterResult(const DescribeFilterResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFilterResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFilterResultResponse rsp = DescribeFilterResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFilterResultOutcome(rsp);
+        else
+            return DescribeFilterResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFilterResultOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeFilterResultAsync(const DescribeFilterResultRequest& request, const DescribeFilterResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFilterResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeFilterResultOutcomeCallable GmeClient::DescribeFilterResultCallable(const DescribeFilterResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFilterResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFilterResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeFilterResultListOutcome GmeClient::DescribeFilterResultList(const DescribeFilterResultListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFilterResultList");

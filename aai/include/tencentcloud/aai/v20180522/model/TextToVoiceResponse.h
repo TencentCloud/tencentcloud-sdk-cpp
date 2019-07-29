@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取base64编码的wav音频数据
-                     * @return Audio base64编码的wav音频数据
+                     * 获取base64编码的wav/mp3音频数据
+                     * @return Audio base64编码的wav/mp3音频数据
                      */
                     std::string GetAudio() const;
 
@@ -69,7 +69,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * base64编码的wav音频数据
+                     * base64编码的wav/mp3音频数据
                      */
                     std::string m_audio;
                     bool m_audioHasBeenSet;

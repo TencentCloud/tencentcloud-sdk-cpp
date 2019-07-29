@@ -427,6 +427,28 @@ namespace TencentCloud
                      */
                     bool CertStateHasBeenSet() const;
 
+                    /**
+                     * 获取设备可用状态，0禁用，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableState 设备可用状态，0禁用，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnableState() const;
+
+                    /**
+                     * 设置设备可用状态，0禁用，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableState 设备可用状态，0禁用，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableState(const uint64_t& _enableState);
+
+                    /**
+                     * 判断参数 EnableState 是否已赋值
+                     * @return EnableState 是否已赋值
+                     */
+                    bool EnableStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -553,6 +575,13 @@ namespace TencentCloud
                      */
                     uint64_t m_certState;
                     bool m_certStateHasBeenSet;
+
+                    /**
+                     * 设备可用状态，0禁用，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enableState;
+                    bool m_enableStateHasBeenSet;
 
                 };
             }

@@ -40,7 +40,12 @@ DescribeDeviceResponse::DescribeDeviceResponse() :
     m_nbiotDeviceIDHasBeenSet(false),
     m_loraDevEuiHasBeenSet(false),
     m_loraMoteTypeHasBeenSet(false),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_firstOnlineTimeHasBeenSet(false),
+    m_lastOfflineTimeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_certStateHasBeenSet(false),
+    m_enableStateHasBeenSet(false)
 {
 }
 
@@ -248,6 +253,56 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         m_logLevelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FirstOnlineTime") && !rsp["FirstOnlineTime"].IsNull())
+    {
+        if (!rsp["FirstOnlineTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FirstOnlineTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstOnlineTime = rsp["FirstOnlineTime"].GetUint64();
+        m_firstOnlineTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LastOfflineTime") && !rsp["LastOfflineTime"].IsNull())
+    {
+        if (!rsp["LastOfflineTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LastOfflineTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastOfflineTime = rsp["LastOfflineTime"].GetUint64();
+        m_lastOfflineTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
+    {
+        if (!rsp["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = rsp["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertState") && !rsp["CertState"].IsNull())
+    {
+        if (!rsp["CertState"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `CertState` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certState = rsp["CertState"].GetUint64();
+        m_certStateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableState") && !rsp["EnableState"].IsNull())
+    {
+        if (!rsp["EnableState"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `EnableState` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableState = rsp["EnableState"].GetUint64();
+        m_enableStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +466,56 @@ uint64_t DescribeDeviceResponse::GetLogLevel() const
 bool DescribeDeviceResponse::LogLevelHasBeenSet() const
 {
     return m_logLevelHasBeenSet;
+}
+
+uint64_t DescribeDeviceResponse::GetFirstOnlineTime() const
+{
+    return m_firstOnlineTime;
+}
+
+bool DescribeDeviceResponse::FirstOnlineTimeHasBeenSet() const
+{
+    return m_firstOnlineTimeHasBeenSet;
+}
+
+uint64_t DescribeDeviceResponse::GetLastOfflineTime() const
+{
+    return m_lastOfflineTime;
+}
+
+bool DescribeDeviceResponse::LastOfflineTimeHasBeenSet() const
+{
+    return m_lastOfflineTimeHasBeenSet;
+}
+
+uint64_t DescribeDeviceResponse::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+bool DescribeDeviceResponse::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+uint64_t DescribeDeviceResponse::GetCertState() const
+{
+    return m_certState;
+}
+
+bool DescribeDeviceResponse::CertStateHasBeenSet() const
+{
+    return m_certStateHasBeenSet;
+}
+
+uint64_t DescribeDeviceResponse::GetEnableState() const
+{
+    return m_enableState;
+}
+
+bool DescribeDeviceResponse::EnableStateHasBeenSet() const
+{
+    return m_enableStateHasBeenSet;
 }
 
 

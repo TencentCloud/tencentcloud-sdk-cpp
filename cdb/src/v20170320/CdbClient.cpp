@@ -2792,6 +2792,49 @@ CdbClient::ModifyTimeWindowOutcomeCallable CdbClient::ModifyTimeWindowCallable(c
     return task->get_future();
 }
 
+CdbClient::OfflineIsolatedInstancesOutcome CdbClient::OfflineIsolatedInstances(const OfflineIsolatedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "OfflineIsolatedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OfflineIsolatedInstancesResponse rsp = OfflineIsolatedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OfflineIsolatedInstancesOutcome(rsp);
+        else
+            return OfflineIsolatedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return OfflineIsolatedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::OfflineIsolatedInstancesAsync(const OfflineIsolatedInstancesRequest& request, const OfflineIsolatedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OfflineIsolatedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::OfflineIsolatedInstancesOutcomeCallable CdbClient::OfflineIsolatedInstancesCallable(const OfflineIsolatedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OfflineIsolatedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->OfflineIsolatedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::OpenDBInstanceGTIDOutcome CdbClient::OpenDBInstanceGTID(const OpenDBInstanceGTIDRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenDBInstanceGTID");

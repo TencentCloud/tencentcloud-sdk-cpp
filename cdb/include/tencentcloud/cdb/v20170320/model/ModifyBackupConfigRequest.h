@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceId 实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份过期时间，单位为天，最小值为7天，最大值为732天。
-                     * @return ExpireDays 备份过期时间，单位为天，最小值为7天，最大值为732天。
+                     * 获取备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
+                     * @return ExpireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
                      */
                     int64_t GetExpireDays() const;
 
                     /**
-                     * 设置备份过期时间，单位为天，最小值为7天，最大值为732天。
-                     * @param ExpireDays 备份过期时间，单位为天，最小值为7天，最大值为732天。
+                     * 设置备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
+                     * @param ExpireDays 备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
                      */
                     void SetExpireDays(const int64_t& _expireDays);
 
@@ -114,16 +114,34 @@ namespace TencentCloud
                      */
                     bool BackupMethodHasBeenSet() const;
 
+                    /**
+                     * 获取binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     * @return BinlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     */
+                    int64_t GetBinlogExpireDays() const;
+
+                    /**
+                     * 设置binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     * @param BinlogExpireDays binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     */
+                    void SetBinlogExpireDays(const int64_t& _binlogExpireDays);
+
+                    /**
+                     * 判断参数 BinlogExpireDays 是否已赋值
+                     * @return BinlogExpireDays 是否已赋值
+                     */
+                    bool BinlogExpireDaysHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
+                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份过期时间，单位为天，最小值为7天，最大值为732天。
+                     * 备份文件的保留时间，单位为天。最小值为7天，最大值为732天。
                      */
                     int64_t m_expireDays;
                     bool m_expireDaysHasBeenSet;
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_backupMethod;
                     bool m_backupMethodHasBeenSet;
+
+                    /**
+                     * binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。
+                     */
+                    int64_t m_binlogExpireDays;
+                    bool m_binlogExpireDaysHasBeenSet;
 
                 };
             }

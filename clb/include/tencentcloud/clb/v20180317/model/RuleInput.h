@@ -139,14 +139,18 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取规则的请求转发方式
-                     * @return Scheduler 规则的请求转发方式
+                     * 获取规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * @return Scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置规则的请求转发方式
-                     * @param Scheduler 规则的请求转发方式
+                     * 设置规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * @param Scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
                      */
                     void SetScheduler(const std::string& _scheduler);
 
@@ -155,6 +159,24 @@ namespace TencentCloud
                      * @return Scheduler 是否已赋值
                      */
                     bool SchedulerHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     * @return ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     */
+                    std::string GetForwardType() const;
+
+                    /**
+                     * 设置负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     * @param ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     */
+                    void SetForwardType(const std::string& _forwardType);
+
+                    /**
+                     * 判断参数 ForwardType 是否已赋值
+                     * @return ForwardType 是否已赋值
+                     */
+                    bool ForwardTypeHasBeenSet() const;
 
                 private:
 
@@ -189,10 +211,17 @@ namespace TencentCloud
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 规则的请求转发方式
+                     * 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
+
+                    /**
+                     * 负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     */
+                    std::string m_forwardType;
+                    bool m_forwardTypeHasBeenSet;
 
                 };
             }

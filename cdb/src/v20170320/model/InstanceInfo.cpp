@@ -59,7 +59,8 @@ InstanceInfo::InstanceInfo() :
     m_physicalIdHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_qpsHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_deviceClassHasBeenSet(false)
 {
 }
 
@@ -489,6 +490,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_zoneNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceClass") && !value["DeviceClass"].IsNull())
+    {
+        if (!value["DeviceClass"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.DeviceClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceClass = string(value["DeviceClass"].GetString());
+        m_deviceClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -815,6 +826,14 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceClassHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deviceClass.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1426,5 +1445,21 @@ void InstanceInfo::SetZoneName(const string& _zoneName)
 bool InstanceInfo::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+string InstanceInfo::GetDeviceClass() const
+{
+    return m_deviceClass;
+}
+
+void InstanceInfo::SetDeviceClass(const string& _deviceClass)
+{
+    m_deviceClass = _deviceClass;
+    m_deviceClassHasBeenSet = true;
+}
+
+bool InstanceInfo::DeviceClassHasBeenSet() const
+{
+    return m_deviceClassHasBeenSet;
 }
 

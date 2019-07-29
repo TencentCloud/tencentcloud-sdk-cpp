@@ -32,7 +32,8 @@ KeyMetadata::KeyMetadata() :
     m_creatorUinHasBeenSet(false),
     m_keyRotationEnabledHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_nextRotateTimeHasBeenSet(false)
+    m_nextRotateTimeHasBeenSet(false),
+    m_deletionDateHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome KeyMetadata::Deserialize(const Value &value)
         m_nextRotateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionDate") && !value["DeletionDate"].IsNull())
+    {
+        if (!value["DeletionDate"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `KeyMetadata.DeletionDate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionDate = value["DeletionDate"].GetUint64();
+        m_deletionDateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "NextRotateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nextRotateTime, allocator);
+    }
+
+    if (m_deletionDateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeletionDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionDate, allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void KeyMetadata::SetNextRotateTime(const uint64_t& _nextRotateTime)
 bool KeyMetadata::NextRotateTimeHasBeenSet() const
 {
     return m_nextRotateTimeHasBeenSet;
+}
+
+uint64_t KeyMetadata::GetDeletionDate() const
+{
+    return m_deletionDate;
+}
+
+void KeyMetadata::SetDeletionDate(const uint64_t& _deletionDate)
+{
+    m_deletionDate = _deletionDate;
+    m_deletionDateHasBeenSet = true;
+}
+
+bool KeyMetadata::DeletionDateHasBeenSet() const
+{
+    return m_deletionDateHasBeenSet;
 }
 

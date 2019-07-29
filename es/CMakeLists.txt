@@ -25,8 +25,10 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/OperationDetail.h
   include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DictInfo.h
+  include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
+  include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
   include/tencentcloud/es/v20180416/model/CosBackup.h
   include/tencentcloud/es/v20180416/model/TagInfo.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
@@ -45,7 +47,9 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceRequest.h
   include/tencentcloud/es/v20180416/model/SubTaskDetail.h
+  include/tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
+  include/tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h
   include/tencentcloud/es/v20180416/model/Operation.h
   )
 
@@ -57,8 +61,10 @@ set(es_src
   src/v20180416/model/OperationDetail.cpp
   src/v20180416/model/RestartInstanceResponse.cpp
   src/v20180416/model/DictInfo.cpp
+  src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
+  src/v20180416/model/UpgradeLicenseRequest.cpp
   src/v20180416/model/CosBackup.cpp
   src/v20180416/model/TagInfo.cpp
   src/v20180416/model/KeyValue.cpp
@@ -77,7 +83,9 @@ set(es_src
   src/v20180416/model/MasterNodeInfo.cpp
   src/v20180416/model/DeleteInstanceRequest.cpp
   src/v20180416/model/SubTaskDetail.cpp
+  src/v20180416/model/UpgradeInstanceResponse.cpp
   src/v20180416/model/UpdateInstanceResponse.cpp
+  src/v20180416/model/UpgradeInstanceRequest.cpp
   src/v20180416/model/Operation.cpp
   )
 

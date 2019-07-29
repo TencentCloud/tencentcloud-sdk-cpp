@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * HTTP/HTTPS监听器下的转发规则的机器绑定信息
+                * HTTP/HTTPS监听器下的转发规则绑定的后端服务信息
                 */
                 class RuleTargets : public AbstractModel
                 {
@@ -102,17 +102,17 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取后端机器的信息
+                     * 获取后端服务的信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Targets 后端机器的信息
+                     * @return Targets 后端服务的信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Backend> GetTargets() const;
 
                     /**
-                     * 设置后端机器的信息
+                     * 设置后端服务的信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Targets 后端机器的信息
+                     * @param Targets 后端服务的信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTargets(const std::vector<Backend>& _targets);
@@ -144,7 +144,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 后端机器的信息
+                     * 后端服务的信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Backend> m_targets;

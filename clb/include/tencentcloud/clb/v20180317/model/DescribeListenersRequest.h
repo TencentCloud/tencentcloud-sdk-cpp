@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取要查询的应用型负载均衡监听器 ID数组
-                     * @return ListenerIds 要查询的应用型负载均衡监听器 ID数组
+                     * 获取要查询的负载均衡监听器 ID数组
+                     * @return ListenerIds 要查询的负载均衡监听器 ID数组
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置要查询的应用型负载均衡监听器 ID数组
-                     * @param ListenerIds 要查询的应用型负载均衡监听器 ID数组
+                     * 设置要查询的负载均衡监听器 ID数组
+                     * @param ListenerIds 要查询的负载均衡监听器 ID数组
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 要查询的应用型负载均衡监听器 ID数组
+                     * 要查询的负载均衡监听器 ID数组
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数个数
-                     * @return TotalCount 参数个数
+                     * 获取参数个数。
+                     * @return TotalCount 参数个数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取参数详情
-                     * @return Items 参数详情
+                     * 获取参数详情。
+                     * @return Items 参数详情。
                      */
                     std::vector<ParameterDetail> GetItems() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数个数
+                     * 参数个数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 参数详情
+                     * 参数详情。
                      */
                     std::vector<ParameterDetail> m_items;
                     bool m_itemsHasBeenSet;

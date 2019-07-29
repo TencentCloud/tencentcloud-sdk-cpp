@@ -65,11 +65,11 @@ CoreInternalOutcome CreatePolicyResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("PolicyId") && !rsp["PolicyId"].IsNull())
     {
-        if (!rsp["PolicyId"].IsInt64())
+        if (!rsp["PolicyId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PolicyId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PolicyId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_policyId = rsp["PolicyId"].GetInt64();
+        m_policyId = rsp["PolicyId"].GetUint64();
         m_policyIdHasBeenSet = true;
     }
 
@@ -78,7 +78,7 @@ CoreInternalOutcome CreatePolicyResponse::Deserialize(const string &payload)
 }
 
 
-int64_t CreatePolicyResponse::GetPolicyId() const
+uint64_t CreatePolicyResponse::GetPolicyId() const
 {
     return m_policyId;
 }

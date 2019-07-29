@@ -23,12 +23,13 @@ using namespace std;
 
 AiRecognitionResult::AiRecognitionResult() :
     m_typeHasBeenSet(false),
+    m_headTailTaskHasBeenSet(false),
+    m_segmentTaskHasBeenSet(false),
     m_faceTaskHasBeenSet(false),
     m_asrWordsTaskHasBeenSet(false),
     m_asrFullTextTaskHasBeenSet(false),
     m_ocrWordsTaskHasBeenSet(false),
     m_ocrFullTextTaskHasBeenSet(false),
-    m_headTailTaskHasBeenSet(false),
     m_objectTaskHasBeenSet(false)
 {
 }
@@ -46,6 +47,40 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HeadTailTask") && !value["HeadTailTask"].IsNull())
+    {
+        if (!value["HeadTailTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionResult.HeadTailTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_headTailTask.Deserialize(value["HeadTailTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_headTailTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("SegmentTask") && !value["SegmentTask"].IsNull())
+    {
+        if (!value["SegmentTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionResult.SegmentTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_segmentTask.Deserialize(value["SegmentTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_segmentTaskHasBeenSet = true;
     }
 
     if (value.HasMember("FaceTask") && !value["FaceTask"].IsNull())
@@ -133,23 +168,6 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const Value &value)
         m_ocrFullTextTaskHasBeenSet = true;
     }
 
-    if (value.HasMember("HeadTailTask") && !value["HeadTailTask"].IsNull())
-    {
-        if (!value["HeadTailTask"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `AiRecognitionResult.HeadTailTask` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_headTailTask.Deserialize(value["HeadTailTask"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_headTailTaskHasBeenSet = true;
-    }
-
     if (value.HasMember("ObjectTask") && !value["ObjectTask"].IsNull())
     {
         if (!value["ObjectTask"].IsObject())
@@ -180,6 +198,24 @@ void AiRecognitionResult::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headTailTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HeadTailTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_headTailTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_segmentTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SegmentTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_segmentTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_faceTaskHasBeenSet)
@@ -227,15 +263,6 @@ void AiRecognitionResult::ToJsonObject(Value &value, Document::AllocatorType& al
         m_ocrFullTextTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_headTailTaskHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "HeadTailTask";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_headTailTask.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_objectTaskHasBeenSet)
     {
         Value iKey(kStringType);
@@ -262,6 +289,38 @@ void AiRecognitionResult::SetType(const string& _type)
 bool AiRecognitionResult::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+AiRecognitionTaskHeadTailResult AiRecognitionResult::GetHeadTailTask() const
+{
+    return m_headTailTask;
+}
+
+void AiRecognitionResult::SetHeadTailTask(const AiRecognitionTaskHeadTailResult& _headTailTask)
+{
+    m_headTailTask = _headTailTask;
+    m_headTailTaskHasBeenSet = true;
+}
+
+bool AiRecognitionResult::HeadTailTaskHasBeenSet() const
+{
+    return m_headTailTaskHasBeenSet;
+}
+
+AiRecognitionTaskSegmentResult AiRecognitionResult::GetSegmentTask() const
+{
+    return m_segmentTask;
+}
+
+void AiRecognitionResult::SetSegmentTask(const AiRecognitionTaskSegmentResult& _segmentTask)
+{
+    m_segmentTask = _segmentTask;
+    m_segmentTaskHasBeenSet = true;
+}
+
+bool AiRecognitionResult::SegmentTaskHasBeenSet() const
+{
+    return m_segmentTaskHasBeenSet;
 }
 
 AiRecognitionTaskFaceResult AiRecognitionResult::GetFaceTask() const
@@ -342,22 +401,6 @@ void AiRecognitionResult::SetOcrFullTextTask(const AiRecognitionTaskOcrFullTextR
 bool AiRecognitionResult::OcrFullTextTaskHasBeenSet() const
 {
     return m_ocrFullTextTaskHasBeenSet;
-}
-
-AiRecognitionTaskHeadTailResult AiRecognitionResult::GetHeadTailTask() const
-{
-    return m_headTailTask;
-}
-
-void AiRecognitionResult::SetHeadTailTask(const AiRecognitionTaskHeadTailResult& _headTailTask)
-{
-    m_headTailTask = _headTailTask;
-    m_headTailTaskHasBeenSet = true;
-}
-
-bool AiRecognitionResult::HeadTailTaskHasBeenSet() const
-{
-    return m_headTailTaskHasBeenSet;
 }
 
 AiRecognitionTaskObjectResult AiRecognitionResult::GetObjectTask() const

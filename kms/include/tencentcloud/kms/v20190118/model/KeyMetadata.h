@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取CMK的状态， Enabled 或者 Disabled 或者 Deleted
-                     * @return KeyState CMK的状态， Enabled 或者 Disabled 或者 Deleted
+                     * 获取CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
+                     * @return KeyState CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
                      */
                     std::string GetKeyState() const;
 
                     /**
-                     * 设置CMK的状态， Enabled 或者 Disabled 或者 Deleted
-                     * @param KeyState CMK的状态， Enabled 或者 Disabled 或者 Deleted
+                     * 设置CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
+                     * @param KeyState CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
                      */
                     void SetKeyState(const std::string& _keyState);
 
@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool NextRotateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取计划删除的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeletionDate 计划删除的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDeletionDate() const;
+
+                    /**
+                     * 设置计划删除的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeletionDate 计划删除的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeletionDate(const uint64_t& _deletionDate);
+
+                    /**
+                     * 判断参数 DeletionDate 是否已赋值
+                     * @return DeletionDate 是否已赋值
+                     */
+                    bool DeletionDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,7 +293,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * CMK的状态， Enabled 或者 Disabled 或者 Deleted
+                     * CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
                      */
                     std::string m_keyState;
                     bool m_keyStateHasBeenSet;
@@ -311,6 +333,13 @@ namespace TencentCloud
                      */
                     uint64_t m_nextRotateTime;
                     bool m_nextRotateTimeHasBeenSet;
+
+                    /**
+                     * 计划删除的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_deletionDate;
+                    bool m_deletionDateHasBeenSet;
 
                 };
             }

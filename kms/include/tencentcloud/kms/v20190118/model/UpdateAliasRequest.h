@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新的别名，1-64个字符或数字的组合
-                     * @return Alias 新的别名，1-64个字符或数字的组合
+                     * 获取新的别名，1-60个字符或数字的组合
+                     * @return Alias 新的别名，1-60个字符或数字的组合
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置新的别名，1-64个字符或数字的组合
-                     * @param Alias 新的别名，1-64个字符或数字的组合
+                     * 设置新的别名，1-60个字符或数字的组合
+                     * @param Alias 新的别名，1-60个字符或数字的组合
                      */
                     void SetAlias(const std::string& _alias);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新的别名，1-64个字符或数字的组合
+                     * 新的别名，1-60个字符或数字的组合
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;

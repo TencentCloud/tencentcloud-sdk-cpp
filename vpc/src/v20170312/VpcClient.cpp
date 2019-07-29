@@ -3394,6 +3394,49 @@ VpcClient::DescribeIp6TranslatorsOutcomeCallable VpcClient::DescribeIp6Translato
     return task->get_future();
 }
 
+VpcClient::DescribeNatGatewaysOutcome VpcClient::DescribeNatGateways(const DescribeNatGatewaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatGateways");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatGatewaysResponse rsp = DescribeNatGatewaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatGatewaysOutcome(rsp);
+        else
+            return DescribeNatGatewaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatGatewaysOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNatGatewaysAsync(const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatGateways(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNatGatewaysOutcomeCallable VpcClient::DescribeNatGatewaysCallable(const DescribeNatGatewaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatGatewaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatGateways(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeNetworkInterfacesOutcome VpcClient::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNetworkInterfaces");
@@ -3774,6 +3817,49 @@ VpcClient::DescribeSubnetsOutcomeCallable VpcClient::DescribeSubnetsCallable(con
         [this, request]()
         {
             return this->DescribeSubnets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeTaskResultOutcome VpcClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskResultResponse rsp = DescribeTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskResultOutcome(rsp);
+        else
+            return DescribeTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeTaskResultAsync(const DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeTaskResultOutcomeCallable VpcClient::DescribeTaskResultCallable(const DescribeTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskResult(request);
         }
     );
 

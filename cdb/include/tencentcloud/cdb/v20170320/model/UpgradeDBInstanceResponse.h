@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单ID
-                     * @return DealIds 订单ID
+                     * 获取订单 ID。
+                     * @return DealIds 订单 ID。
                      */
                     std::vector<std::string> GetDealIds() const;
 
@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool DealIdsHasBeenSet() const;
 
                     /**
-                     * 获取异步任务的请求ID，可使用此ID查询异步任务的执行结果
-                     * @return AsyncRequestId 异步任务的请求ID，可使用此ID查询异步任务的执行结果
+                     * 获取异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
+                     * @return AsyncRequestId 异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
                      */
                     std::string GetAsyncRequestId() const;
 
@@ -69,13 +69,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单ID
+                     * 订单 ID。
                      */
                     std::vector<std::string> m_dealIds;
                     bool m_dealIdsHasBeenSet;
 
                     /**
-                     * 异步任务的请求ID，可使用此ID查询异步任务的执行结果
+                     * 异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

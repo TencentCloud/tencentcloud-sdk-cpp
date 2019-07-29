@@ -31,7 +31,8 @@ CreateLiveRecordTemplateRequest::CreateLiveRecordTemplateRequest() :
     m_mp4ParamHasBeenSet(false),
     m_aacParamHasBeenSet(false),
     m_isDelayLiveHasBeenSet(false),
-    m_hlsSpecialParamHasBeenSet(false)
+    m_hlsSpecialParamHasBeenSet(false),
+    m_mp3ParamHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,15 @@ string CreateLiveRecordTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_hlsSpecialParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_mp3ParamHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mp3Param";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_mp3Param.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -245,6 +255,22 @@ void CreateLiveRecordTemplateRequest::SetHlsSpecialParam(const HlsSpecialParam& 
 bool CreateLiveRecordTemplateRequest::HlsSpecialParamHasBeenSet() const
 {
     return m_hlsSpecialParamHasBeenSet;
+}
+
+RecordParam CreateLiveRecordTemplateRequest::GetMp3Param() const
+{
+    return m_mp3Param;
+}
+
+void CreateLiveRecordTemplateRequest::SetMp3Param(const RecordParam& _mp3Param)
+{
+    m_mp3Param = _mp3Param;
+    m_mp3ParamHasBeenSet = true;
+}
+
+bool CreateLiveRecordTemplateRequest::Mp3ParamHasBeenSet() const
+{
+    return m_mp3ParamHasBeenSet;
 }
 
 

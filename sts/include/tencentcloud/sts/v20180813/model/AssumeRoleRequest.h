@@ -96,6 +96,40 @@ namespace TencentCloud
                      */
                     bool DurationSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取策略描述
+注意：
+1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照云 API 规范再 urlencode 一次）。
+2、策略语法参照 CAM 策略语法。
+3、策略中不能包含 principal 元素。
+                     * @return Policy 策略描述
+注意：
+1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照云 API 规范再 urlencode 一次）。
+2、策略语法参照 CAM 策略语法。
+3、策略中不能包含 principal 元素。
+                     */
+                    std::string GetPolicy() const;
+
+                    /**
+                     * 设置策略描述
+注意：
+1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照云 API 规范再 urlencode 一次）。
+2、策略语法参照 CAM 策略语法。
+3、策略中不能包含 principal 元素。
+                     * @param Policy 策略描述
+注意：
+1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照云 API 规范再 urlencode 一次）。
+2、策略语法参照 CAM 策略语法。
+3、策略中不能包含 principal 元素。
+                     */
+                    void SetPolicy(const std::string& _policy);
+
+                    /**
+                     * 判断参数 Policy 是否已赋值
+                     * @return Policy 是否已赋值
+                     */
+                    bool PolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +149,16 @@ namespace TencentCloud
                      */
                     uint64_t m_durationSeconds;
                     bool m_durationSecondsHasBeenSet;
+
+                    /**
+                     * 策略描述
+注意：
+1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照云 API 规范再 urlencode 一次）。
+2、策略语法参照 CAM 策略语法。
+3、策略中不能包含 principal 元素。
+                     */
+                    std::string m_policy;
+                    bool m_policyHasBeenSet;
 
                 };
             }

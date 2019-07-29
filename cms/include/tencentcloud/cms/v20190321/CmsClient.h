@@ -25,8 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cms/v20190321/model/AudioModerationRequest.h>
 #include <tencentcloud/cms/v20190321/model/AudioModerationResponse.h>
+#include <tencentcloud/cms/v20190321/model/CreateTextSampleRequest.h>
+#include <tencentcloud/cms/v20190321/model/CreateTextSampleResponse.h>
+#include <tencentcloud/cms/v20190321/model/DeleteTextSampleRequest.h>
+#include <tencentcloud/cms/v20190321/model/DeleteTextSampleResponse.h>
 #include <tencentcloud/cms/v20190321/model/DescribeModerationOverviewRequest.h>
 #include <tencentcloud/cms/v20190321/model/DescribeModerationOverviewResponse.h>
+#include <tencentcloud/cms/v20190321/model/DescribeTextSampleRequest.h>
+#include <tencentcloud/cms/v20190321/model/DescribeTextSampleResponse.h>
 #include <tencentcloud/cms/v20190321/model/ImageModerationRequest.h>
 #include <tencentcloud/cms/v20190321/model/ImageModerationResponse.h>
 #include <tencentcloud/cms/v20190321/model/TextModerationRequest.h>
@@ -50,9 +56,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AudioModerationResponse> AudioModerationOutcome;
                 typedef std::future<AudioModerationOutcome> AudioModerationOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::AudioModerationRequest&, AudioModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AudioModerationAsyncHandler;
+                typedef Outcome<Error, Model::CreateTextSampleResponse> CreateTextSampleOutcome;
+                typedef std::future<CreateTextSampleOutcome> CreateTextSampleOutcomeCallable;
+                typedef std::function<void(const CmsClient*, const Model::CreateTextSampleRequest&, CreateTextSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTextSampleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteTextSampleResponse> DeleteTextSampleOutcome;
+                typedef std::future<DeleteTextSampleOutcome> DeleteTextSampleOutcomeCallable;
+                typedef std::function<void(const CmsClient*, const Model::DeleteTextSampleRequest&, DeleteTextSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTextSampleAsyncHandler;
                 typedef Outcome<Error, Model::DescribeModerationOverviewResponse> DescribeModerationOverviewOutcome;
                 typedef std::future<DescribeModerationOverviewOutcome> DescribeModerationOverviewOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::DescribeModerationOverviewRequest&, DescribeModerationOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModerationOverviewAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTextSampleResponse> DescribeTextSampleOutcome;
+                typedef std::future<DescribeTextSampleOutcome> DescribeTextSampleOutcomeCallable;
+                typedef std::function<void(const CmsClient*, const Model::DescribeTextSampleRequest&, DescribeTextSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTextSampleAsyncHandler;
                 typedef Outcome<Error, Model::ImageModerationResponse> ImageModerationOutcome;
                 typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
@@ -67,14 +82,30 @@ namespace TencentCloud
 
                 /**
                  *音频内容检测（Audio Moderation, AM）服务使用了波形分析、声纹分析等技术，能识别涉黄、涉政、涉恐等违规音频，同时支持用户配置音频黑库，打击自定义的违规内容。
-
-通过API直接上传音频即可进行检测，对于高危部分直接屏蔽，可疑部分人工复审，从而节省审核人力，释放业务风险。
                  * @param req AudioModerationRequest
                  * @return AudioModerationOutcome
                  */
                 AudioModerationOutcome AudioModeration(const Model::AudioModerationRequest &request);
                 void AudioModerationAsync(const Model::AudioModerationRequest& request, const AudioModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AudioModerationOutcomeCallable AudioModerationCallable(const Model::AudioModerationRequest& request);
+
+                /**
+                 *新增文本类型样本库
+                 * @param req CreateTextSampleRequest
+                 * @return CreateTextSampleOutcome
+                 */
+                CreateTextSampleOutcome CreateTextSample(const Model::CreateTextSampleRequest &request);
+                void CreateTextSampleAsync(const Model::CreateTextSampleRequest& request, const CreateTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTextSampleOutcomeCallable CreateTextSampleCallable(const Model::CreateTextSampleRequest& request);
+
+                /**
+                 *删除文字样本库，暂时只支持单个删除
+                 * @param req DeleteTextSampleRequest
+                 * @return DeleteTextSampleOutcome
+                 */
+                DeleteTextSampleOutcome DeleteTextSample(const Model::DeleteTextSampleRequest &request);
+                void DeleteTextSampleAsync(const Model::DeleteTextSampleRequest& request, const DeleteTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTextSampleOutcomeCallable DeleteTextSampleCallable(const Model::DeleteTextSampleRequest& request);
 
                 /**
                  *根据日期，渠道和服务类型查询识别结果概览数据
@@ -86,8 +117,16 @@ namespace TencentCloud
                 DescribeModerationOverviewOutcomeCallable DescribeModerationOverviewCallable(const Model::DescribeModerationOverviewRequest& request);
 
                 /**
+                 *支持批量查询文字样本库
+                 * @param req DescribeTextSampleRequest
+                 * @return DescribeTextSampleOutcome
+                 */
+                DescribeTextSampleOutcome DescribeTextSample(const Model::DescribeTextSampleRequest &request);
+                void DescribeTextSampleAsync(const Model::DescribeTextSampleRequest& request, const DescribeTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTextSampleOutcomeCallable DescribeTextSampleCallable(const Model::DescribeTextSampleRequest& request);
+
+                /**
                  *图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。
-通过API获取检测的标签及置信度，可直接采信高置信度的结果，人工复审低置信度的结果，从而降低人工成本，提高审核效率。
                  * @param req ImageModerationRequest
                  * @return ImageModerationOutcome
                  */
@@ -97,7 +136,6 @@ namespace TencentCloud
 
                 /**
                  *文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。
-通过API接口，能检测内容的危险等级，对于高危部分直接过滤，可疑部分人工复审，从而节省审核人力，释放业务风险。
                  * @param req TextModerationRequest
                  * @return TextModerationOutcome
                  */
@@ -107,7 +145,6 @@ namespace TencentCloud
 
                 /**
                  *视频内容检测（Video Moderation, VM）服务能识别涉黄、涉政、涉恐等违规视频，同时支持用户配置视频黑库，打击自定义的违规内容。
-通过API直接上传视频即可进行检测，对于高危部分直接过滤，可疑部分人工复审，从而节省审核人力，释放业务风险。
                  * @param req VideoModerationRequest
                  * @return VideoModerationOutcome
                  */

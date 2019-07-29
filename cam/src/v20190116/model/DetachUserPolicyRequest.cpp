@@ -76,12 +76,12 @@ bool DetachUserPolicyRequest::PolicyIdHasBeenSet() const
     return m_policyIdHasBeenSet;
 }
 
-int64_t DetachUserPolicyRequest::GetDetachUin() const
+uint64_t DetachUserPolicyRequest::GetDetachUin() const
 {
     return m_detachUin;
 }
 
-void DetachUserPolicyRequest::SetDetachUin(const int64_t& _detachUin)
+void DetachUserPolicyRequest::SetDetachUin(const uint64_t& _detachUin)
 {
     m_detachUin = _detachUin;
     m_detachUinHasBeenSet = true;

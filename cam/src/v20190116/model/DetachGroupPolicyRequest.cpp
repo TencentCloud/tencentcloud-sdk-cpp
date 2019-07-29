@@ -60,12 +60,12 @@ string DetachGroupPolicyRequest::ToJsonString() const
 }
 
 
-int64_t DetachGroupPolicyRequest::GetPolicyId() const
+uint64_t DetachGroupPolicyRequest::GetPolicyId() const
 {
     return m_policyId;
 }
 
-void DetachGroupPolicyRequest::SetPolicyId(const int64_t& _policyId)
+void DetachGroupPolicyRequest::SetPolicyId(const uint64_t& _policyId)
 {
     m_policyId = _policyId;
     m_policyIdHasBeenSet = true;
@@ -76,12 +76,12 @@ bool DetachGroupPolicyRequest::PolicyIdHasBeenSet() const
     return m_policyIdHasBeenSet;
 }
 
-int64_t DetachGroupPolicyRequest::GetDetachGroupId() const
+uint64_t DetachGroupPolicyRequest::GetDetachGroupId() const
 {
     return m_detachGroupId;
 }
 
-void DetachGroupPolicyRequest::SetDetachGroupId(const int64_t& _detachGroupId)
+void DetachGroupPolicyRequest::SetDetachGroupId(const uint64_t& _detachGroupId)
 {
     m_detachGroupId = _detachGroupId;
     m_detachGroupIdHasBeenSet = true;

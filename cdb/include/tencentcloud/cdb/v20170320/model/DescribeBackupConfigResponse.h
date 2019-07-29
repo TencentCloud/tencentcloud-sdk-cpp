@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份开始的最早时间点，单位为时刻。例如，2 - 凌晨2:00
-                     * @return StartTimeMin 备份开始的最早时间点，单位为时刻。例如，2 - 凌晨2:00
+                     * 获取备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。
+                     * @return StartTimeMin 备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。
                      */
                     int64_t GetStartTimeMin() const;
 
@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool StartTimeMinHasBeenSet() const;
 
                     /**
-                     * 获取备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨6:00
-                     * @return StartTimeMax 备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨6:00
+                     * 获取备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。
+                     * @return StartTimeMax 备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。
                      */
                     int64_t GetStartTimeMax() const;
 
@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool StartTimeMaxHasBeenSet() const;
 
                     /**
-                     * 获取备份过期时间，单位为天
-                     * @return BackupExpireDays 备份过期时间，单位为天
+                     * 获取备份过期时间，单位为天。
+                     * @return BackupExpireDays 备份过期时间，单位为天。
                      */
                     int64_t GetBackupExpireDays() const;
 
@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool BackupExpireDaysHasBeenSet() const;
 
                     /**
-                     * 获取备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份
-                     * @return BackupMethod 备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份
+                     * 获取备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份。
+                     * @return BackupMethod 备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份。
                      */
                     std::string GetBackupMethod() const;
 
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取Binlog过期时间，单位为天
-                     * @return BinlogExpireDays Binlog过期时间，单位为天
+                     * 获取Binlog 过期时间，单位为天。
+                     * @return BinlogExpireDays Binlog 过期时间，单位为天。
                      */
                     int64_t GetBinlogExpireDays() const;
 
@@ -105,31 +105,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份开始的最早时间点，单位为时刻。例如，2 - 凌晨2:00
+                     * 备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。
                      */
                     int64_t m_startTimeMin;
                     bool m_startTimeMinHasBeenSet;
 
                     /**
-                     * 备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨6:00
+                     * 备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。
                      */
                     int64_t m_startTimeMax;
                     bool m_startTimeMaxHasBeenSet;
 
                     /**
-                     * 备份过期时间，单位为天
+                     * 备份过期时间，单位为天。
                      */
                     int64_t m_backupExpireDays;
                     bool m_backupExpireDaysHasBeenSet;
 
                     /**
-                     * 备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份
+                     * 备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份。
                      */
                     std::string m_backupMethod;
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * Binlog过期时间，单位为天
+                     * Binlog 过期时间，单位为天。
                      */
                     int64_t m_binlogExpireDays;
                     bool m_binlogExpireDaysHasBeenSet;

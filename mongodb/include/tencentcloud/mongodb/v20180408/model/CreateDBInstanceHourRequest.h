@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SecondaryNumHasBeenSet() const;
 
                     /**
-                     * 获取MongoDB引擎版本，值包括：MONGO_2、MONGO_3_MMAP、MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
-                     * @return EngineVersion MongoDB引擎版本，值包括：MONGO_2、MONGO_3_MMAP、MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * 获取MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * @return EngineVersion MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置MongoDB引擎版本，值包括：MONGO_2、MONGO_3_MMAP、MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
-                     * @param EngineVersion MongoDB引擎版本，值包括：MONGO_2、MONGO_3_MMAP、MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * 设置MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * @param EngineVersion MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
@@ -339,7 +339,7 @@ namespace TencentCloud
                     bool m_secondaryNumHasBeenSet;
 
                     /**
-                     * MongoDB引擎版本，值包括：MONGO_2、MONGO_3_MMAP、MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
+                     * MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;

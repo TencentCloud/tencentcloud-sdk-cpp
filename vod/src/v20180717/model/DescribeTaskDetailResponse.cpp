@@ -33,12 +33,14 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_procedureTaskHasBeenSet(false),
     m_editMediaTaskHasBeenSet(false),
     m_wechatPublishTaskHasBeenSet(false),
+    m_composeMediaTaskHasBeenSet(false),
+    m_pullUploadTaskHasBeenSet(false),
     m_transcodeTaskHasBeenSet(false),
     m_snapshotByTimeOffsetTaskHasBeenSet(false),
     m_concatTaskHasBeenSet(false),
     m_clipTaskHasBeenSet(false),
     m_createImageSpriteTaskHasBeenSet(false),
-    m_composeMediaTaskHasBeenSet(false)
+    m_wechatMiniProgramPublishTaskHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,40 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_wechatPublishTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ComposeMediaTask") && !rsp["ComposeMediaTask"].IsNull())
+    {
+        if (!rsp["ComposeMediaTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_composeMediaTask.Deserialize(rsp["ComposeMediaTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_composeMediaTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PullUploadTask") && !rsp["PullUploadTask"].IsNull())
+    {
+        if (!rsp["PullUploadTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PullUploadTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_pullUploadTask.Deserialize(rsp["PullUploadTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_pullUploadTaskHasBeenSet = true;
+    }
+
     if (rsp.HasMember("TranscodeTask") && !rsp["TranscodeTask"].IsNull())
     {
         if (!rsp["TranscodeTask"].IsObject())
@@ -262,21 +298,21 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_createImageSpriteTaskHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ComposeMediaTask") && !rsp["ComposeMediaTask"].IsNull())
+    if (rsp.HasMember("WechatMiniProgramPublishTask") && !rsp["WechatMiniProgramPublishTask"].IsNull())
     {
-        if (!rsp["ComposeMediaTask"].IsObject())
+        if (!rsp["WechatMiniProgramPublishTask"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `ComposeMediaTask` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `WechatMiniProgramPublishTask` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_composeMediaTask.Deserialize(rsp["ComposeMediaTask"]);
+        CoreInternalOutcome outcome = m_wechatMiniProgramPublishTask.Deserialize(rsp["WechatMiniProgramPublishTask"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_composeMediaTaskHasBeenSet = true;
+        m_wechatMiniProgramPublishTaskHasBeenSet = true;
     }
 
 
@@ -364,6 +400,26 @@ bool DescribeTaskDetailResponse::WechatPublishTaskHasBeenSet() const
     return m_wechatPublishTaskHasBeenSet;
 }
 
+ComposeMediaTask DescribeTaskDetailResponse::GetComposeMediaTask() const
+{
+    return m_composeMediaTask;
+}
+
+bool DescribeTaskDetailResponse::ComposeMediaTaskHasBeenSet() const
+{
+    return m_composeMediaTaskHasBeenSet;
+}
+
+PullUploadTask DescribeTaskDetailResponse::GetPullUploadTask() const
+{
+    return m_pullUploadTask;
+}
+
+bool DescribeTaskDetailResponse::PullUploadTaskHasBeenSet() const
+{
+    return m_pullUploadTaskHasBeenSet;
+}
+
 TranscodeTask2017 DescribeTaskDetailResponse::GetTranscodeTask() const
 {
     return m_transcodeTask;
@@ -414,14 +470,14 @@ bool DescribeTaskDetailResponse::CreateImageSpriteTaskHasBeenSet() const
     return m_createImageSpriteTaskHasBeenSet;
 }
 
-ComposeMediaTask DescribeTaskDetailResponse::GetComposeMediaTask() const
+WechatMiniProgramPublishTask DescribeTaskDetailResponse::GetWechatMiniProgramPublishTask() const
 {
-    return m_composeMediaTask;
+    return m_wechatMiniProgramPublishTask;
 }
 
-bool DescribeTaskDetailResponse::ComposeMediaTaskHasBeenSet() const
+bool DescribeTaskDetailResponse::WechatMiniProgramPublishTaskHasBeenSet() const
 {
-    return m_composeMediaTaskHasBeenSet;
+    return m_wechatMiniProgramPublishTaskHasBeenSet;
 }
 
 

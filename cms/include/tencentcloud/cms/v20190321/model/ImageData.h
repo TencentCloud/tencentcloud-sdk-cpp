@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cms/v20190321/model/ImageHotDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImageIllegalDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePolityDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePornDetect.h>
@@ -114,6 +115,24 @@ namespace TencentCloud
                      * @return EvilType 是否已赋值
                      */
                     bool EvilTypeHasBeenSet() const;
+
+                    /**
+                     * 获取图片性感详情
+                     * @return HotDetect 图片性感详情
+                     */
+                    ImageHotDetect GetHotDetect() const;
+
+                    /**
+                     * 设置图片性感详情
+                     * @param HotDetect 图片性感详情
+                     */
+                    void SetHotDetect(const ImageHotDetect& _hotDetect);
+
+                    /**
+                     * 判断参数 HotDetect 是否已赋值
+                     * @return HotDetect 是否已赋值
+                     */
+                    bool HotDetectHasBeenSet() const;
 
                     /**
                      * 获取图片违法详情
@@ -225,6 +244,12 @@ namespace TencentCloud
                      */
                     int64_t m_evilType;
                     bool m_evilTypeHasBeenSet;
+
+                    /**
+                     * 图片性感详情
+                     */
+                    ImageHotDetect m_hotDetect;
+                    bool m_hotDetectHasBeenSet;
 
                     /**
                      * 图片违法详情

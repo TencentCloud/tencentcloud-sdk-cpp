@@ -99,6 +99,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CompleteLifecycleActionResponse.h
   include/tencentcloud/as/v20180419/model/Filter.h
   include/tencentcloud/as/v20180419/model/DescribeLifecycleHooksRequest.h
+  include/tencentcloud/as/v20180419/model/ServiceSettings.h
   include/tencentcloud/as/v20180419/model/LaunchConfiguration.h
   include/tencentcloud/as/v20180419/model/TargetAttribute.h
   include/tencentcloud/as/v20180419/model/ModifyNotificationConfigurationResponse.h
@@ -214,6 +215,7 @@ set(as_src
   src/v20180419/model/CompleteLifecycleActionResponse.cpp
   src/v20180419/model/Filter.cpp
   src/v20180419/model/DescribeLifecycleHooksRequest.cpp
+  src/v20180419/model/ServiceSettings.cpp
   src/v20180419/model/LaunchConfiguration.cpp
   src/v20180419/model/TargetAttribute.cpp
   src/v20180419/model/ModifyNotificationConfigurationResponse.cpp

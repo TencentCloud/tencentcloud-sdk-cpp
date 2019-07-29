@@ -24,7 +24,12 @@ using namespace std;
 SubTaskDetail::SubTaskDetail() :
     m_nameHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_errMsgHasBeenSet(false)
+    m_errMsgHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_failedIndicesHasBeenSet(false),
+    m_finishTimeHasBeenSet(false),
+    m_levelHasBeenSet(false)
 {
 }
 
@@ -63,6 +68,59 @@ CoreInternalOutcome SubTaskDetail::Deserialize(const Value &value)
         m_errMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubTaskDetail.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SubTaskDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedIndices") && !value["FailedIndices"].IsNull())
+    {
+        if (!value["FailedIndices"].IsArray())
+            return CoreInternalOutcome(Error("response `SubTaskDetail.FailedIndices` is not array type"));
+
+        const Value &tmpValue = value["FailedIndices"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedIndices.push_back((*itr).GetString());
+        }
+        m_failedIndicesHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubTaskDetail.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SubTaskDetail.Level` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = value["Level"].GetInt64();
+        m_levelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +150,51 @@ void SubTaskDetail::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_failedIndicesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FailedIndices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_failedIndices.begin(); itr != m_failedIndices.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_level, allocator);
     }
 
 }
@@ -143,5 +246,85 @@ void SubTaskDetail::SetErrMsg(const string& _errMsg)
 bool SubTaskDetail::ErrMsgHasBeenSet() const
 {
     return m_errMsgHasBeenSet;
+}
+
+string SubTaskDetail::GetType() const
+{
+    return m_type;
+}
+
+void SubTaskDetail::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool SubTaskDetail::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+int64_t SubTaskDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void SubTaskDetail::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool SubTaskDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<string> SubTaskDetail::GetFailedIndices() const
+{
+    return m_failedIndices;
+}
+
+void SubTaskDetail::SetFailedIndices(const vector<string>& _failedIndices)
+{
+    m_failedIndices = _failedIndices;
+    m_failedIndicesHasBeenSet = true;
+}
+
+bool SubTaskDetail::FailedIndicesHasBeenSet() const
+{
+    return m_failedIndicesHasBeenSet;
+}
+
+string SubTaskDetail::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void SubTaskDetail::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool SubTaskDetail::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
+}
+
+int64_t SubTaskDetail::GetLevel() const
+{
+    return m_level;
+}
+
+void SubTaskDetail::SetLevel(const int64_t& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool SubTaskDetail::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
 }
 

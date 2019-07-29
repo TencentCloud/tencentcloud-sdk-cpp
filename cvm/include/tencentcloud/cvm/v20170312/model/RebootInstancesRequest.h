@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ForceRebootHasBeenSet() const;
 
+                    /**
+                     * 获取关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。
+                     * @return StopType 关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。
+                     */
+                    std::string GetStopType() const;
+
+                    /**
+                     * 设置关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。
+                     * @param StopType 关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。
+                     */
+                    void SetStopType(const std::string& _stopType);
+
+                    /**
+                     * 判断参数 StopType 是否已赋值
+                     * @return StopType 是否已赋值
+                     */
+                    bool StopTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     bool m_forceReboot;
                     bool m_forceRebootHasBeenSet;
+
+                    /**
+                     * 关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。
+                     */
+                    std::string m_stopType;
+                    bool m_stopTypeHasBeenSet;
 
                 };
             }

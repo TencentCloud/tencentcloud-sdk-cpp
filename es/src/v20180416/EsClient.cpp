@@ -341,3 +341,89 @@ EsClient::UpdateInstanceOutcomeCallable EsClient::UpdateInstanceCallable(const U
     return task->get_future();
 }
 
+EsClient::UpgradeInstanceOutcome EsClient::UpgradeInstance(const UpgradeInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeInstanceResponse rsp = UpgradeInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeInstanceOutcome(rsp);
+        else
+            return UpgradeInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpgradeInstanceAsync(const UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpgradeInstanceOutcomeCallable EsClient::UpgradeInstanceCallable(const UpgradeInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::UpgradeLicenseOutcome EsClient::UpgradeLicense(const UpgradeLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeLicenseResponse rsp = UpgradeLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeLicenseOutcome(rsp);
+        else
+            return UpgradeLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeLicenseOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpgradeLicenseAsync(const UpgradeLicenseRequest& request, const UpgradeLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpgradeLicenseOutcomeCallable EsClient::UpgradeLicenseCallable(const UpgradeLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

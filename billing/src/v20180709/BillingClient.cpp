@@ -169,6 +169,178 @@ BillingClient::DescribeBillResourceSummaryOutcomeCallable BillingClient::Describ
     return task->get_future();
 }
 
+BillingClient::DescribeBillSummaryByPayModeOutcome BillingClient::DescribeBillSummaryByPayMode(const DescribeBillSummaryByPayModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillSummaryByPayMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillSummaryByPayModeResponse rsp = DescribeBillSummaryByPayModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillSummaryByPayModeOutcome(rsp);
+        else
+            return DescribeBillSummaryByPayModeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillSummaryByPayModeOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeBillSummaryByPayModeAsync(const DescribeBillSummaryByPayModeRequest& request, const DescribeBillSummaryByPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillSummaryByPayMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeBillSummaryByPayModeOutcomeCallable BillingClient::DescribeBillSummaryByPayModeCallable(const DescribeBillSummaryByPayModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByPayModeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillSummaryByPayMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeBillSummaryByProductOutcome BillingClient::DescribeBillSummaryByProduct(const DescribeBillSummaryByProductRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillSummaryByProduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillSummaryByProductResponse rsp = DescribeBillSummaryByProductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillSummaryByProductOutcome(rsp);
+        else
+            return DescribeBillSummaryByProductOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillSummaryByProductOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeBillSummaryByProductAsync(const DescribeBillSummaryByProductRequest& request, const DescribeBillSummaryByProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillSummaryByProduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeBillSummaryByProductOutcomeCallable BillingClient::DescribeBillSummaryByProductCallable(const DescribeBillSummaryByProductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByProductOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillSummaryByProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeBillSummaryByProjectOutcome BillingClient::DescribeBillSummaryByProject(const DescribeBillSummaryByProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillSummaryByProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillSummaryByProjectResponse rsp = DescribeBillSummaryByProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillSummaryByProjectOutcome(rsp);
+        else
+            return DescribeBillSummaryByProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillSummaryByProjectOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeBillSummaryByProjectAsync(const DescribeBillSummaryByProjectRequest& request, const DescribeBillSummaryByProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillSummaryByProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeBillSummaryByProjectOutcomeCallable BillingClient::DescribeBillSummaryByProjectCallable(const DescribeBillSummaryByProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillSummaryByProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BillingClient::DescribeBillSummaryByRegionOutcome BillingClient::DescribeBillSummaryByRegion(const DescribeBillSummaryByRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillSummaryByRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillSummaryByRegionResponse rsp = DescribeBillSummaryByRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillSummaryByRegionOutcome(rsp);
+        else
+            return DescribeBillSummaryByRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillSummaryByRegionOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeBillSummaryByRegionAsync(const DescribeBillSummaryByRegionRequest& request, const DescribeBillSummaryByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillSummaryByRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeBillSummaryByRegionOutcomeCallable BillingClient::DescribeBillSummaryByRegionCallable(const DescribeBillSummaryByRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillSummaryByRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeDealsByCondOutcome BillingClient::DescribeDealsByCond(const DescribeDealsByCondRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDealsByCond");

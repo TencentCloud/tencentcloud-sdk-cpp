@@ -21,44 +21,62 @@ set(cms_public_header
 set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/AudioModerationResponse.h
   include/tencentcloud/cms/v20190321/model/DescribeModerationOverviewRequest.h
-  include/tencentcloud/cms/v20190321/model/AudioModerationRequest.h
-  include/tencentcloud/cms/v20190321/model/ImageData.h
-  include/tencentcloud/cms/v20190321/model/OverviewRecord.h
-  include/tencentcloud/cms/v20190321/model/Similar.h
-  include/tencentcloud/cms/v20190321/model/ImagePornDetect.h
-  include/tencentcloud/cms/v20190321/model/TextData.h
-  include/tencentcloud/cms/v20190321/model/ImageTerrorDetect.h
-  include/tencentcloud/cms/v20190321/model/ImageIllegalDetect.h
-  include/tencentcloud/cms/v20190321/model/ImageModerationRequest.h
-  include/tencentcloud/cms/v20190321/model/VideoModerationRequest.h
-  include/tencentcloud/cms/v20190321/model/DescribeModerationOverviewResponse.h
-  include/tencentcloud/cms/v20190321/model/VideoModerationResponse.h
-  include/tencentcloud/cms/v20190321/model/ImagePolityDetect.h
-  include/tencentcloud/cms/v20190321/model/ImageModerationResponse.h
   include/tencentcloud/cms/v20190321/model/TextModerationResponse.h
+  include/tencentcloud/cms/v20190321/model/TextData.h
+  include/tencentcloud/cms/v20190321/model/VideoModerationResponse.h
+  include/tencentcloud/cms/v20190321/model/ImageModerationResponse.h
+  include/tencentcloud/cms/v20190321/model/ImageModerationRequest.h
+  include/tencentcloud/cms/v20190321/model/ImageData.h
+  include/tencentcloud/cms/v20190321/model/ImagePornDetect.h
+  include/tencentcloud/cms/v20190321/model/DeleteTextSampleResponse.h
+  include/tencentcloud/cms/v20190321/model/CreateTextSampleResponse.h
+  include/tencentcloud/cms/v20190321/model/ImagePolityDetect.h
+  include/tencentcloud/cms/v20190321/model/ImageTerrorDetect.h
+  include/tencentcloud/cms/v20190321/model/DescribeTextSampleResponse.h
+  include/tencentcloud/cms/v20190321/model/TextSample.h
+  include/tencentcloud/cms/v20190321/model/OverviewRecord.h
+  include/tencentcloud/cms/v20190321/model/CreateTextSampleRequest.h
   include/tencentcloud/cms/v20190321/model/TextModerationRequest.h
+  include/tencentcloud/cms/v20190321/model/Filter.h
+  include/tencentcloud/cms/v20190321/model/DescribeModerationOverviewResponse.h
+  include/tencentcloud/cms/v20190321/model/Similar.h
+  include/tencentcloud/cms/v20190321/model/ImageHotDetect.h
+  include/tencentcloud/cms/v20190321/model/DescribeTextSampleRequest.h
+  include/tencentcloud/cms/v20190321/model/AudioModerationRequest.h
+  include/tencentcloud/cms/v20190321/model/ImageIllegalDetect.h
+  include/tencentcloud/cms/v20190321/model/VideoModerationRequest.h
+  include/tencentcloud/cms/v20190321/model/DeleteTextSampleRequest.h
   )
 
 set(cms_src
   src/v20190321/CmsClient.cpp
   src/v20190321/model/AudioModerationResponse.cpp
   src/v20190321/model/DescribeModerationOverviewRequest.cpp
-  src/v20190321/model/AudioModerationRequest.cpp
-  src/v20190321/model/ImageData.cpp
-  src/v20190321/model/OverviewRecord.cpp
-  src/v20190321/model/Similar.cpp
-  src/v20190321/model/ImagePornDetect.cpp
-  src/v20190321/model/TextData.cpp
-  src/v20190321/model/ImageTerrorDetect.cpp
-  src/v20190321/model/ImageIllegalDetect.cpp
-  src/v20190321/model/ImageModerationRequest.cpp
-  src/v20190321/model/VideoModerationRequest.cpp
-  src/v20190321/model/DescribeModerationOverviewResponse.cpp
-  src/v20190321/model/VideoModerationResponse.cpp
-  src/v20190321/model/ImagePolityDetect.cpp
-  src/v20190321/model/ImageModerationResponse.cpp
   src/v20190321/model/TextModerationResponse.cpp
+  src/v20190321/model/TextData.cpp
+  src/v20190321/model/VideoModerationResponse.cpp
+  src/v20190321/model/ImageModerationResponse.cpp
+  src/v20190321/model/ImageModerationRequest.cpp
+  src/v20190321/model/ImageData.cpp
+  src/v20190321/model/ImagePornDetect.cpp
+  src/v20190321/model/DeleteTextSampleResponse.cpp
+  src/v20190321/model/CreateTextSampleResponse.cpp
+  src/v20190321/model/ImagePolityDetect.cpp
+  src/v20190321/model/ImageTerrorDetect.cpp
+  src/v20190321/model/DescribeTextSampleResponse.cpp
+  src/v20190321/model/TextSample.cpp
+  src/v20190321/model/OverviewRecord.cpp
+  src/v20190321/model/CreateTextSampleRequest.cpp
   src/v20190321/model/TextModerationRequest.cpp
+  src/v20190321/model/Filter.cpp
+  src/v20190321/model/DescribeModerationOverviewResponse.cpp
+  src/v20190321/model/Similar.cpp
+  src/v20190321/model/ImageHotDetect.cpp
+  src/v20190321/model/DescribeTextSampleRequest.cpp
+  src/v20190321/model/AudioModerationRequest.cpp
+  src/v20190321/model/ImageIllegalDetect.cpp
+  src/v20190321/model/VideoModerationRequest.cpp
+  src/v20190321/model/DeleteTextSampleRequest.cpp
   )
 
 set(cms_include

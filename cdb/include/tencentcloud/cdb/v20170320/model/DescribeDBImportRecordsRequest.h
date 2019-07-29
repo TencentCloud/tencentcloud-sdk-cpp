@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分页参数 , 偏移量 , 默认值为0。
-                     * @return Offset 分页参数 , 偏移量 , 默认值为0。
+                     * 获取分页参数，偏移量，默认值为0。
+                     * @return Offset 分页参数，偏移量，默认值为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数 , 偏移量 , 默认值为0。
-                     * @param Offset 分页参数 , 偏移量 , 默认值为0。
+                     * 设置分页参数，偏移量，默认值为0。
+                     * @param Offset 分页参数，偏移量，默认值为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页参数 , 单次请求返回的数量 , 默认值为20，最小值为1，最大值为100。
-                     * @return Limit 分页参数 , 单次请求返回的数量 , 默认值为20，最小值为1，最大值为100。
+                     * 获取分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * @return Limit 分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数 , 单次请求返回的数量 , 默认值为20，最小值为1，最大值为100。
-                     * @param Limit 分页参数 , 单次请求返回的数量 , 默认值为20，最小值为1，最大值为100。
+                     * 设置分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * @param Limit 分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 分页参数 , 偏移量 , 默认值为0。
+                     * 分页参数，偏移量，默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页参数 , 单次请求返回的数量 , 默认值为20，最小值为1，最大值为100。
+                     * 分页参数，单次请求返回的数量，默认值为20，最小值为1，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

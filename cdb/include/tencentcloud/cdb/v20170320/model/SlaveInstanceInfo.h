@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取虚拟Ip信息
-                     * @return Vip 虚拟Ip信息
+                     * 获取虚拟 IP 信息
+                     * @return Vip 虚拟 IP 信息
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置虚拟Ip信息
-                     * @param Vip 虚拟Ip信息
+                     * 设置虚拟 IP 信息
+                     * @param Vip 虚拟 IP 信息
                      */
                     void SetVip(const std::string& _vip);
 
@@ -133,7 +133,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 虚拟Ip信息
+                     * 虚拟 IP 信息
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;

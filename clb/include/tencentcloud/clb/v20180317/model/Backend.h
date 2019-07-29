@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 监听器后端绑定机器的详细信息
+                * 监听器绑定的后端服务的详细信息
                 */
                 class Backend : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转发目标的类型，目前仅可取值为 CVM
-                     * @return Type 转发目标的类型，目前仅可取值为 CVM
+                     * 获取后端服务的类型，可取：CVM、ENI（即将支持）
+                     * @return Type 后端服务的类型，可取：CVM、ENI（即将支持）
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置转发目标的类型，目前仅可取值为 CVM
-                     * @param Type 转发目标的类型，目前仅可取值为 CVM
+                     * 设置后端服务的类型，可取：CVM、ENI（即将支持）
+                     * @param Type 后端服务的类型，可取：CVM、ENI（即将支持）
                      */
                     void SetType(const std::string& _type);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-                     * @return InstanceId 云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 获取后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * @return InstanceId 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-                     * @param InstanceId 云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 设置后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * @param InstanceId 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取后端云服务器监听端口
-                     * @return Port 后端云服务器监听端口
+                     * 获取后端服务的监听端口
+                     * @return Port 后端服务的监听端口
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置后端云服务器监听端口
-                     * @param Port 后端云服务器监听端口
+                     * 设置后端服务的监听端口
+                     * @param Port 后端服务的监听端口
                      */
                     void SetPort(const int64_t& _port);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取后端云服务器的转发权重，取值范围：0~100，默认为 10。
-                     * @return Weight 后端云服务器的转发权重，取值范围：0~100，默认为 10。
+                     * 获取后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * @return Weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置后端云服务器的转发权重，取值范围：0~100，默认为 10。
-                     * @param Weight 后端云服务器的转发权重，取值范围：0~100，默认为 10。
+                     * 设置后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * @param Weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -119,17 +119,17 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取云服务器的外网 IP
+                     * 获取后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicIpAddresses 云服务器的外网 IP
+                     * @return PublicIpAddresses 后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
-                     * 设置云服务器的外网 IP
+                     * 设置后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIpAddresses 云服务器的外网 IP
+                     * @param PublicIpAddresses 后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
@@ -141,17 +141,17 @@ namespace TencentCloud
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取云服务器的内网 IP
+                     * 获取后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PrivateIpAddresses 云服务器的内网 IP
+                     * @return PrivateIpAddresses 后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
-                     * 设置云服务器的内网 IP
+                     * 设置后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIpAddresses 云服务器的内网 IP
+                     * @param PrivateIpAddresses 后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
@@ -163,17 +163,17 @@ namespace TencentCloud
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取云服务器实例名称
+                     * 获取后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceName 云服务器实例名称
+                     * @return InstanceName 后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置云服务器实例名称
+                     * 设置后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 云服务器实例名称
+                     * @param InstanceName 后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -185,17 +185,17 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取云服务器被绑定到监听器的时间
+                     * 获取后端服务被绑定的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegisteredTime 云服务器被绑定到监听器的时间
+                     * @return RegisteredTime 后端服务被绑定的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRegisteredTime() const;
 
                     /**
-                     * 设置云服务器被绑定到监听器的时间
+                     * 设置后端服务被绑定的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegisteredTime 云服务器被绑定到监听器的时间
+                     * @param RegisteredTime 后端服务被绑定的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRegisteredTime(const std::string& _registeredTime);
@@ -206,59 +206,88 @@ namespace TencentCloud
                      */
                     bool RegisteredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取弹性网卡唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EniId 弹性网卡唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEniId() const;
+
+                    /**
+                     * 设置弹性网卡唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EniId 弹性网卡唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEniId(const std::string& _eniId);
+
+                    /**
+                     * 判断参数 EniId 是否已赋值
+                     * @return EniId 是否已赋值
+                     */
+                    bool EniIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转发目标的类型，目前仅可取值为 CVM
+                     * 后端服务的类型，可取：CVM、ENI（即将支持）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 云服务器的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 后端云服务器监听端口
+                     * 后端服务的监听端口
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 后端云服务器的转发权重，取值范围：0~100，默认为 10。
+                     * 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 云服务器的外网 IP
+                     * 后端服务的外网 IP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;
 
                     /**
-                     * 云服务器的内网 IP
+                     * 后端服务的内网 IP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privateIpAddresses;
                     bool m_privateIpAddressesHasBeenSet;
 
                     /**
-                     * 云服务器实例名称
+                     * 后端服务的实例名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 云服务器被绑定到监听器的时间
+                     * 后端服务被绑定的时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registeredTime;
                     bool m_registeredTimeHasBeenSet;
+
+                    /**
+                     * 弹性网卡唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eniId;
+                    bool m_eniIdHasBeenSet;
 
                 };
             }

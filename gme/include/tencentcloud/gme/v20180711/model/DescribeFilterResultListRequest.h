@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
-                     * @return BizId 应用id
+                     * 获取应用ID
+                     * @return BizId 应用ID
                      */
                     uint64_t GetBizId() const;
 
                     /**
-                     * 设置应用id
-                     * @param BizId 应用id
+                     * 设置应用ID
+                     * @param BizId 应用ID
                      */
                     void SetBizId(const uint64_t& _bizId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取偏移量, 默认0
-                     * @return Offset 偏移量, 默认0
+                     * 获取偏移量，默认值为0。
+                     * @return Offset 偏移量，默认值为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量, 默认0
-                     * @param Offset 偏移量, 默认0
+                     * 设置偏移量，默认值为0。
+                     * @param Offset 偏移量，默认值为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目	, 默认10, 最大100
-                     * @return Limit 限制数目	, 默认10, 最大100
+                     * 获取返回数量，默认值为10，最大值为100。
+                     * @return Limit 返回数量，默认值为10，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目	, 默认10, 最大100
-                     * @param Limit 限制数目	, 默认10, 最大100
+                     * 设置返回数量，默认值为10，最大值为100。
+                     * @param Limit 返回数量，默认值为10，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 应用ID
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 偏移量, 默认0
+                     * 偏移量，默认值为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目	, 默认10, 最大100
+                     * 返回数量，默认值为10，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

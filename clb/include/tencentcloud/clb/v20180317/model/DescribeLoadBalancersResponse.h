@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取满足过滤条件的负载均衡实例总数。
-                     * @return TotalCount 满足过滤条件的负载均衡实例总数。
+                     * 获取满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。
+                     * @return TotalCount 满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 满足过滤条件的负载均衡实例总数。
+                     * 满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

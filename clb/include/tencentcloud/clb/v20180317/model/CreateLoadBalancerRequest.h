@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/InternetAccessible.h>
+#include <tencentcloud/clb/v20180317/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -65,14 +67,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例。1：应用型，0：传统型，默认为应用型负载均衡实例。
-                     * @return Forward 负载均衡实例。1：应用型，0：传统型，默认为应用型负载均衡实例。
+                     * 获取负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
+                     * @return Forward 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
                      */
                     int64_t GetForward() const;
 
                     /**
-                     * 设置负载均衡实例。1：应用型，0：传统型，默认为应用型负载均衡实例。
-                     * @param Forward 负载均衡实例。1：应用型，0：传统型，默认为应用型负载均衡实例。
+                     * 设置负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
+                     * @param Forward 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
                      */
                     void SetForward(const int64_t& _forward);
 
@@ -83,18 +85,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ForwardHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的名称，只用来创建一个的时候生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
-注意：如果名称与系统中已有负载均衡实例的名称重复的话，则系统将会自动生成此次创建的负载均衡实例的名称。
-                     * @return LoadBalancerName 负载均衡实例的名称，只用来创建一个的时候生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
-注意：如果名称与系统中已有负载均衡实例的名称重复的话，则系统将会自动生成此次创建的负载均衡实例的名称。
+                     * 获取负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
+注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。
+                     * @return LoadBalancerName 负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
+注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
-                     * 设置负载均衡实例的名称，只用来创建一个的时候生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
-注意：如果名称与系统中已有负载均衡实例的名称重复的话，则系统将会自动生成此次创建的负载均衡实例的名称。
-                     * @param LoadBalancerName 负载均衡实例的名称，只用来创建一个的时候生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
-注意：如果名称与系统中已有负载均衡实例的名称重复的话，则系统将会自动生成此次创建的负载均衡实例的名称。
+                     * 设置负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
+注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。
+                     * @param LoadBalancerName 负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
+注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
@@ -105,14 +107,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡后端实例所属网络 ID，可以通过 DescribeVpcEx 接口获取。 不填则默认为基础网络。
-                     * @return VpcId 负载均衡后端实例所属网络 ID，可以通过 DescribeVpcEx 接口获取。 不填则默认为基础网络。
+                     * 获取负载均衡后端目标设备所属的网络 ID，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
+                     * @return VpcId 负载均衡后端目标设备所属的网络 ID，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置负载均衡后端实例所属网络 ID，可以通过 DescribeVpcEx 接口获取。 不填则默认为基础网络。
-                     * @param VpcId 负载均衡后端实例所属网络 ID，可以通过 DescribeVpcEx 接口获取。 不填则默认为基础网络。
+                     * 设置负载均衡后端目标设备所属的网络 ID，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
+                     * @param VpcId 负载均衡后端目标设备所属的网络 ID，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -123,14 +125,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取在私有网络内购买内网负载均衡实例的时候需要指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其他情况不用填写该字段。
-                     * @return SubnetId 在私有网络内购买内网负载均衡实例的时候需要指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其他情况不用填写该字段。
+                     * 获取在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
+                     * @return SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置在私有网络内购买内网负载均衡实例的时候需要指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其他情况不用填写该字段。
-                     * @param SubnetId 在私有网络内购买内网负载均衡实例的时候需要指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其他情况不用填写该字段。
+                     * 设置在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
+                     * @param SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -141,14 +143,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不填则属于默认项目。
-                     * @return ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不填则属于默认项目。
+                     * 获取负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
+                     * @return ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不填则属于默认项目。
-                     * @param ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不填则属于默认项目。
+                     * 设置负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
+                     * @param ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -157,6 +159,136 @@ OPEN：公网属性， INTERNAL：内网属性。
                      * @return ProjectId 是否已赋值
                      */
                     bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     * @return AddressIPVersion 仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     */
+                    std::string GetAddressIPVersion() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     * @param AddressIPVersion 仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     */
+                    void SetAddressIPVersion(const std::string& _addressIPVersion);
+
+                    /**
+                     * 判断参数 AddressIPVersion 是否已赋值
+                     * @return AddressIPVersion 是否已赋值
+                     */
+                    bool AddressIPVersionHasBeenSet() const;
+
+                    /**
+                     * 获取创建负载均衡的个数，默认值 1。
+                     * @return Number 创建负载均衡的个数，默认值 1。
+                     */
+                    uint64_t GetNumber() const;
+
+                    /**
+                     * 设置创建负载均衡的个数，默认值 1。
+                     * @param Number 创建负载均衡的个数，默认值 1。
+                     */
+                    void SetNumber(const uint64_t& _number);
+
+                    /**
+                     * 判断参数 Number 是否已赋值
+                     * @return Number 是否已赋值
+                     */
+                    bool NumberHasBeenSet() const;
+
+                    /**
+                     * 获取仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1
+注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。
+                     * @return MasterZoneId 仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1
+注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。
+                     */
+                    std::string GetMasterZoneId() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1
+注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。
+                     * @param MasterZoneId 仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1
+注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。
+                     */
+                    void SetMasterZoneId(const std::string& _masterZoneId);
+
+                    /**
+                     * 判断参数 MasterZoneId 是否已赋值
+                     * @return MasterZoneId 是否已赋值
+                     */
+                    bool MasterZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     * @return ZoneId 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     * @param ZoneId 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
+                     * @return AnycastZone 仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
+                     */
+                    std::string GetAnycastZone() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
+                     * @param AnycastZone 仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
+                     */
+                    void SetAnycastZone(const std::string& _anycastZone);
+
+                    /**
+                     * 判断参数 AnycastZone 是否已赋值
+                     * @return AnycastZone 是否已赋值
+                     */
+                    bool AnycastZoneHasBeenSet() const;
+
+                    /**
+                     * 获取仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     * @return InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     */
+                    InternetAccessible GetInternetAccessible() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     * @param InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     */
+                    void SetInternetAccessible(const InternetAccessible& _internetAccessible);
+
+                    /**
+                     * 判断参数 InternetAccessible 是否已赋值
+                     * @return InternetAccessible 是否已赋值
+                     */
+                    bool InternetAccessibleHasBeenSet() const;
+
+                    /**
+                     * 获取购买负载均衡同时，给负载均衡打上标签
+                     * @return Tags 购买负载均衡同时，给负载均衡打上标签
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置购买负载均衡同时，给负载均衡打上标签
+                     * @param Tags 购买负载均衡同时，给负载均衡打上标签
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -168,35 +300,78 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
-                     * 负载均衡实例。1：应用型，0：传统型，默认为应用型负载均衡实例。
+                     * 负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1
                      */
                     int64_t m_forward;
                     bool m_forwardHasBeenSet;
 
                     /**
-                     * 负载均衡实例的名称，只用来创建一个的时候生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
-注意：如果名称与系统中已有负载均衡实例的名称重复的话，则系统将会自动生成此次创建的负载均衡实例的名称。
+                     * 负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。
+注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
-                     * 负载均衡后端实例所属网络 ID，可以通过 DescribeVpcEx 接口获取。 不填则默认为基础网络。
+                     * 负载均衡后端目标设备所属的网络 ID，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 在私有网络内购买内网负载均衡实例的时候需要指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其他情况不用填写该字段。
+                     * 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不填则属于默认项目。
+                     * 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     */
+                    std::string m_addressIPVersion;
+                    bool m_addressIPVersionHasBeenSet;
+
+                    /**
+                     * 创建负载均衡的个数，默认值 1。
+                     */
+                    uint64_t m_number;
+                    bool m_numberHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1
+注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。
+                     */
+                    std::string m_masterZoneId;
+                    bool m_masterZoneIdHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
+                     */
+                    std::string m_anycastZone;
+                    bool m_anycastZoneHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     */
+                    InternetAccessible m_internetAccessible;
+                    bool m_internetAccessibleHasBeenSet;
+
+                    /**
+                     * 购买负载均衡同时，给负载均衡打上标签
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -64,13 +64,13 @@ namespace TencentCloud
                      * 获取子账号 uin
                      * @return DetachUin 子账号 uin
                      */
-                    int64_t GetDetachUin() const;
+                    uint64_t GetDetachUin() const;
 
                     /**
                      * 设置子账号 uin
                      * @param DetachUin 子账号 uin
                      */
-                    void SetDetachUin(const int64_t& _detachUin);
+                    void SetDetachUin(const uint64_t& _detachUin);
 
                     /**
                      * 判断参数 DetachUin 是否已赋值
@@ -89,7 +89,7 @@ namespace TencentCloud
                     /**
                      * 子账号 uin
                      */
-                    int64_t m_detachUin;
+                    uint64_t m_detachUin;
                     bool m_detachUinHasBeenSet;
 
                 };

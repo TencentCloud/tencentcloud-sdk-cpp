@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的数据个数
-                     * @return TotalCount 返回的数据个数
+                     * 获取返回的数据个数。
+                     * @return TotalCount 返回的数据个数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取符合查询条件的数据库数组
-                     * @return Items 符合查询条件的数据库数组
+                     * 获取符合查询条件的数据库数组。
+                     * @return Items 符合查询条件的数据库数组。
                      */
                     std::vector<DatabaseName> GetItems() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的数据个数
+                     * 返回的数据个数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 符合查询条件的数据库数组
+                     * 符合查询条件的数据库数组。
                      */
                     std::vector<DatabaseName> m_items;
                     bool m_itemsHasBeenSet;

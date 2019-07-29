@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要增加或修改的标签
-                     * @return ReplaceTags 要增加或修改的标签
+                     * 获取要增加或修改的标签。
+                     * @return ReplaceTags 要增加或修改的标签。
                      */
                     std::vector<TagInfo> GetReplaceTags() const;
 
                     /**
-                     * 设置要增加或修改的标签
-                     * @param ReplaceTags 要增加或修改的标签
+                     * 设置要增加或修改的标签。
+                     * @param ReplaceTags 要增加或修改的标签。
                      */
                     void SetReplaceTags(const std::vector<TagInfo>& _replaceTags);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ReplaceTagsHasBeenSet() const;
 
                     /**
-                     * 获取要删除的标签
-                     * @return DeleteTags 要删除的标签
+                     * 获取要删除的标签。
+                     * @return DeleteTags 要删除的标签。
                      */
                     std::vector<TagInfo> GetDeleteTags() const;
 
                     /**
-                     * 设置要删除的标签
-                     * @param DeleteTags 要删除的标签
+                     * 设置要删除的标签。
+                     * @param DeleteTags 要删除的标签。
                      */
                     void SetDeleteTags(const std::vector<TagInfo>& _deleteTags);
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要增加或修改的标签
+                     * 要增加或修改的标签。
                      */
                     std::vector<TagInfo> m_replaceTags;
                     bool m_replaceTagsHasBeenSet;
 
                     /**
-                     * 要删除的标签
+                     * 要删除的标签。
                      */
                     std::vector<TagInfo> m_deleteTags;
                     bool m_deleteTagsHasBeenSet;

@@ -24,6 +24,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsResponse.h
   include/tencentcloud/clb/v20180317/model/RsWeightRule.h
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetWeightResponse.h
+  include/tencentcloud/clb/v20180317/model/SetSecurityGroupForLoadbalancersRequest.h
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/DeleteRuleRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesRequest.h
@@ -32,12 +33,14 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeRewriteRequest.h
   include/tencentcloud/clb/v20180317/model/ClassicalTarget.h
   include/tencentcloud/clb/v20180317/model/DeregisterTargetsFromClassicalLBRequest.h
+  include/tencentcloud/clb/v20180317/model/SetSecurityGroupForLoadbalancersResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetWeightResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeTaskStatusRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h
   include/tencentcloud/clb/v20180317/model/CreateRuleResponse.h
   include/tencentcloud/clb/v20180317/model/ClassicalTargetInfo.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetsRequest.h
+  include/tencentcloud/clb/v20180317/model/ZoneInfo.h
   include/tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBResponse.h
   include/tencentcloud/clb/v20180317/model/LoadBalancerHealth.h
   include/tencentcloud/clb/v20180317/model/ModifyRuleResponse.h
@@ -64,6 +67,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyTargetWeightRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyDomainRequest.h
   include/tencentcloud/clb/v20180317/model/Backend.h
+  include/tencentcloud/clb/v20180317/model/LBChargePrepaid.h
   include/tencentcloud/clb/v20180317/model/ClassicalListener.h
   include/tencentcloud/clb/v20180317/model/CertificateInput.h
   include/tencentcloud/clb/v20180317/model/CreateListenerResponse.h
@@ -91,6 +95,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/TargetRegionInfo.h
   include/tencentcloud/clb/v20180317/model/DeleteRuleResponse.h
   include/tencentcloud/clb/v20180317/model/DeregisterTargetsRequest.h
+  include/tencentcloud/clb/v20180317/model/CertificateOutput.h
   include/tencentcloud/clb/v20180317/model/ListenerBackend.h
   include/tencentcloud/clb/v20180317/model/TagInfo.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBListenersResponse.h
@@ -102,7 +107,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/RuleInput.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancersResponse.h
   include/tencentcloud/clb/v20180317/model/DeleteListenerResponse.h
-  include/tencentcloud/clb/v20180317/model/CertificateOutput.h
+  include/tencentcloud/clb/v20180317/model/InternetAccessible.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBListenersRequest.h
   include/tencentcloud/clb/v20180317/model/ListenerHealth.h
   include/tencentcloud/clb/v20180317/model/LoadBalancer.h
@@ -115,6 +120,7 @@ set(clb_src
   src/v20180317/model/SetLoadBalancerSecurityGroupsResponse.cpp
   src/v20180317/model/RsWeightRule.cpp
   src/v20180317/model/BatchModifyTargetWeightResponse.cpp
+  src/v20180317/model/SetSecurityGroupForLoadbalancersRequest.cpp
   src/v20180317/model/CreateLoadBalancerRequest.cpp
   src/v20180317/model/DeleteRuleRequest.cpp
   src/v20180317/model/ModifyLoadBalancerAttributesRequest.cpp
@@ -123,12 +129,14 @@ set(clb_src
   src/v20180317/model/DescribeRewriteRequest.cpp
   src/v20180317/model/ClassicalTarget.cpp
   src/v20180317/model/DeregisterTargetsFromClassicalLBRequest.cpp
+  src/v20180317/model/SetSecurityGroupForLoadbalancersResponse.cpp
   src/v20180317/model/ModifyTargetWeightResponse.cpp
   src/v20180317/model/DescribeTaskStatusRequest.cpp
   src/v20180317/model/DescribeRewriteResponse.cpp
   src/v20180317/model/CreateRuleResponse.cpp
   src/v20180317/model/ClassicalTargetInfo.cpp
   src/v20180317/model/DescribeTargetsRequest.cpp
+  src/v20180317/model/ZoneInfo.cpp
   src/v20180317/model/RegisterTargetsWithClassicalLBResponse.cpp
   src/v20180317/model/LoadBalancerHealth.cpp
   src/v20180317/model/ModifyRuleResponse.cpp
@@ -155,6 +163,7 @@ set(clb_src
   src/v20180317/model/ModifyTargetWeightRequest.cpp
   src/v20180317/model/ModifyDomainRequest.cpp
   src/v20180317/model/Backend.cpp
+  src/v20180317/model/LBChargePrepaid.cpp
   src/v20180317/model/ClassicalListener.cpp
   src/v20180317/model/CertificateInput.cpp
   src/v20180317/model/CreateListenerResponse.cpp
@@ -182,6 +191,7 @@ set(clb_src
   src/v20180317/model/TargetRegionInfo.cpp
   src/v20180317/model/DeleteRuleResponse.cpp
   src/v20180317/model/DeregisterTargetsRequest.cpp
+  src/v20180317/model/CertificateOutput.cpp
   src/v20180317/model/ListenerBackend.cpp
   src/v20180317/model/TagInfo.cpp
   src/v20180317/model/DescribeClassicalLBListenersResponse.cpp
@@ -193,7 +203,7 @@ set(clb_src
   src/v20180317/model/RuleInput.cpp
   src/v20180317/model/DescribeLoadBalancersResponse.cpp
   src/v20180317/model/DeleteListenerResponse.cpp
-  src/v20180317/model/CertificateOutput.cpp
+  src/v20180317/model/InternetAccessible.cpp
   src/v20180317/model/DescribeClassicalLBListenersRequest.cpp
   src/v20180317/model/ListenerHealth.cpp
   src/v20180317/model/LoadBalancer.cpp

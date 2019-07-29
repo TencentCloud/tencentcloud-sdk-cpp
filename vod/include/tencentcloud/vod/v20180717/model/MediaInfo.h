@@ -33,6 +33,7 @@
 #include <tencentcloud/vod/v20180717/model/MediaSnapshotByTimeOffsetInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaKeyFrameDescInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaAdaptiveDynamicStreamingInfo.h>
+#include <tencentcloud/vod/v20180717/model/MediaMiniProgramReviewInfo.h>
 
 
 namespace TencentCloud
@@ -56,17 +57,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基础信息。包括视频名称、大小、时长、封面图片等。
+                     * 获取基础信息。包括视频名称、分类、播放地址、封面图片等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BasicInfo 基础信息。包括视频名称、大小、时长、封面图片等。
+                     * @return BasicInfo 基础信息。包括视频名称、分类、播放地址、封面图片等。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaBasicInfo GetBasicInfo() const;
 
                     /**
-                     * 设置基础信息。包括视频名称、大小、时长、封面图片等。
+                     * 设置基础信息。包括视频名称、分类、播放地址、封面图片等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BasicInfo 基础信息。包括视频名称、大小、时长、封面图片等。
+                     * @param BasicInfo 基础信息。包括视频名称、分类、播放地址、封面图片等。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBasicInfo(const MediaBasicInfo& _basicInfo);
@@ -78,17 +79,17 @@ namespace TencentCloud
                     bool BasicInfoHasBeenSet() const;
 
                     /**
-                     * 获取元信息。包括视频流信息、音频流信息等。
+                     * 获取元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaData 元信息。包括视频流信息、音频流信息等。
+                     * @return MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置元信息。包括视频流信息、音频流信息等。
+                     * 设置元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 元信息。包括视频流信息、音频流信息等。
+                     * @param MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -254,6 +255,28 @@ namespace TencentCloud
                     bool AdaptiveDynamicStreamingInfoHasBeenSet() const;
 
                     /**
+                     * 获取小程序审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniProgramReviewInfo 小程序审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMiniProgramReviewInfo GetMiniProgramReviewInfo() const;
+
+                    /**
+                     * 设置小程序审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MiniProgramReviewInfo 小程序审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMiniProgramReviewInfo(const MediaMiniProgramReviewInfo& _miniProgramReviewInfo);
+
+                    /**
+                     * 判断参数 MiniProgramReviewInfo 是否已赋值
+                     * @return MiniProgramReviewInfo 是否已赋值
+                     */
+                    bool MiniProgramReviewInfoHasBeenSet() const;
+
+                    /**
                      * 获取媒体文件唯一标识 ID。
                      * @return FileId 媒体文件唯一标识 ID。
                      */
@@ -274,14 +297,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 基础信息。包括视频名称、大小、时长、封面图片等。
+                     * 基础信息。包括视频名称、分类、播放地址、封面图片等。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaBasicInfo m_basicInfo;
                     bool m_basicInfoHasBeenSet;
 
                     /**
-                     * 元信息。包括视频流信息、音频流信息等。
+                     * 元信息。包括大小、时长、视频流信息、音频流信息等。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
@@ -335,6 +358,13 @@ namespace TencentCloud
                      */
                     MediaAdaptiveDynamicStreamingInfo m_adaptiveDynamicStreamingInfo;
                     bool m_adaptiveDynamicStreamingInfoHasBeenSet;
+
+                    /**
+                     * 小程序审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMiniProgramReviewInfo m_miniProgramReviewInfo;
+                    bool m_miniProgramReviewInfoHasBeenSet;
 
                     /**
                      * 媒体文件唯一标识 ID。

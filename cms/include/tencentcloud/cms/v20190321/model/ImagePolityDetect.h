@@ -147,6 +147,24 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
+                     * 获取命中的政治物品名称
+                     * @return PolityItems 命中的政治物品名称
+                     */
+                    std::vector<std::string> GetPolityItems() const;
+
+                    /**
+                     * 设置命中的政治物品名称
+                     * @param PolityItems 命中的政治物品名称
+                     */
+                    void SetPolityItems(const std::vector<std::string>& _polityItems);
+
+                    /**
+                     * 判断参数 PolityItems 是否已赋值
+                     * @return PolityItems 是否已赋值
+                     */
+                    bool PolityItemsHasBeenSet() const;
+
+                    /**
                      * 获取政治（人脸）分：分值范围 0-100，分数越高可疑程度越高
                      * @return Score 政治（人脸）分：分值范围 0-100，分数越高可疑程度越高
                      */
@@ -196,6 +214,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
+
+                    /**
+                     * 命中的政治物品名称
+                     */
+                    std::vector<std::string> m_polityItems;
+                    bool m_polityItemsHasBeenSet;
 
                     /**
                      * 政治（人脸）分：分值范围 0-100，分数越高可疑程度越高

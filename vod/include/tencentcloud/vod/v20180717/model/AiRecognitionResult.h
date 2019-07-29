@@ -24,12 +24,13 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/AiRecognitionTaskHeadTailResult.h>
+#include <tencentcloud/vod/v20180717/model/AiRecognitionTaskSegmentResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskFaceResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrWordsResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrFullTextResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrFullTextResult.h>
-#include <tencentcloud/vod/v20180717/model/AiRecognitionTaskHeadTailResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskObjectResult.h>
 
 
@@ -98,6 +99,58 @@ namespace TencentCloud
                      * @return Type 是否已赋值
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取视频片头片尾识别结果，当 Type 为
+ HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HeadTailTask 视频片头片尾识别结果，当 Type 为
+ HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskHeadTailResult GetHeadTailTask() const;
+
+                    /**
+                     * 设置视频片头片尾识别结果，当 Type 为
+ HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HeadTailTask 视频片头片尾识别结果，当 Type 为
+ HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHeadTailTask(const AiRecognitionTaskHeadTailResult& _headTailTask);
+
+                    /**
+                     * 判断参数 HeadTailTask 是否已赋值
+                     * @return HeadTailTask 是否已赋值
+                     */
+                    bool HeadTailTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频拆条识别结果，当 Type 为
+ SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SegmentTask 视频拆条识别结果，当 Type 为
+ SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskSegmentResult GetSegmentTask() const;
+
+                    /**
+                     * 设置视频拆条识别结果，当 Type 为
+ SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SegmentTask 视频拆条识别结果，当 Type 为
+ SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSegmentTask(const AiRecognitionTaskSegmentResult& _segmentTask);
+
+                    /**
+                     * 判断参数 SegmentTask 是否已赋值
+                     * @return SegmentTask 是否已赋值
+                     */
+                    bool SegmentTaskHasBeenSet() const;
 
                     /**
                      * 获取人脸识别结果，当 Type 为 
@@ -230,32 +283,6 @@ namespace TencentCloud
                     bool OcrFullTextTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频片头片尾识别结果，当 Type 为
- HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeadTailTask 视频片头片尾识别结果，当 Type 为
- HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    AiRecognitionTaskHeadTailResult GetHeadTailTask() const;
-
-                    /**
-                     * 设置视频片头片尾识别结果，当 Type 为
- HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeadTailTask 视频片头片尾识别结果，当 Type 为
- HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetHeadTailTask(const AiRecognitionTaskHeadTailResult& _headTailTask);
-
-                    /**
-                     * 判断参数 HeadTailTask 是否已赋值
-                     * @return HeadTailTask 是否已赋值
-                     */
-                    bool HeadTailTaskHasBeenSet() const;
-
-                    /**
                      * 获取物体识别结果，当 Type 为
  ObjectRecognition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
@@ -297,6 +324,22 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
+                     * 视频片头片尾识别结果，当 Type 为
+ HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskHeadTailResult m_headTailTask;
+                    bool m_headTailTaskHasBeenSet;
+
+                    /**
+                     * 视频拆条识别结果，当 Type 为
+ SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskSegmentResult m_segmentTask;
+                    bool m_segmentTaskHasBeenSet;
+
+                    /**
                      * 人脸识别结果，当 Type 为 
  FaceRecognition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
@@ -335,14 +378,6 @@ namespace TencentCloud
                      */
                     AiRecognitionTaskOcrFullTextResult m_ocrFullTextTask;
                     bool m_ocrFullTextTaskHasBeenSet;
-
-                    /**
-                     * 视频片头片尾识别结果，当 Type 为
- HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    AiRecognitionTaskHeadTailResult m_headTailTask;
-                    bool m_headTailTaskHasBeenSet;
 
                     /**
                      * 物体识别结果，当 Type 为

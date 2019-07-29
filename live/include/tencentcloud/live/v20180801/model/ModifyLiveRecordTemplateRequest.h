@@ -188,6 +188,24 @@ namespace TencentCloud
                      */
                     bool HlsSpecialParamHasBeenSet() const;
 
+                    /**
+                     * 获取Mp3录制参数，开启Mp3录制时设置。
+                     * @return Mp3Param Mp3录制参数，开启Mp3录制时设置。
+                     */
+                    RecordParam GetMp3Param() const;
+
+                    /**
+                     * 设置Mp3录制参数，开启Mp3录制时设置。
+                     * @param Mp3Param Mp3录制参数，开启Mp3录制时设置。
+                     */
+                    void SetMp3Param(const RecordParam& _mp3Param);
+
+                    /**
+                     * 判断参数 Mp3Param 是否已赋值
+                     * @return Mp3Param 是否已赋值
+                     */
+                    bool Mp3ParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +255,12 @@ namespace TencentCloud
                      */
                     HlsSpecialParam m_hlsSpecialParam;
                     bool m_hlsSpecialParamHasBeenSet;
+
+                    /**
+                     * Mp3录制参数，开启Mp3录制时设置。
+                     */
+                    RecordParam m_mp3Param;
+                    bool m_mp3ParamHasBeenSet;
 
                 };
             }

@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例价格，单位：分（人民币）
-                     * @return Price 实例价格，单位：分（人民币）
+                     * 获取实例价格，单位：分（人民币）。
+                     * @return Price 实例价格，单位：分（人民币）。
                      */
                     int64_t GetPrice() const;
 
@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取实例原价，单位：分（人民币）
-                     * @return OriginalPrice 实例原价，单位：分（人民币）
+                     * 获取实例原价，单位：分（人民币）。
+                     * @return OriginalPrice 实例原价，单位：分（人民币）。
                      */
                     int64_t GetOriginalPrice() const;
 
@@ -69,13 +69,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例价格，单位：分（人民币）
+                     * 实例价格，单位：分（人民币）。
                      */
                     int64_t m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 实例原价，单位：分（人民币）
+                     * 实例原价，单位：分（人民币）。
                      */
                     int64_t m_originalPrice;
                     bool m_originalPriceHasBeenSet;

@@ -105,14 +105,14 @@ namespace TencentCloud
                     bool MigrateOptionHasBeenSet() const;
 
                     /**
-                     * 获取源实例数据库类型:mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @return SrcDatabaseType 源实例数据库类型:mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 获取源实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
+                     * @return SrcDatabaseType 源实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
-                     * 设置源实例数据库类型:mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @param SrcDatabaseType 源实例数据库类型:mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 设置源实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
+                     * @param SrcDatabaseType 源实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
 
@@ -123,14 +123,14 @@ namespace TencentCloud
                     bool SrcDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
-                     * @return SrcAccessType 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * 获取源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)
+                     * @return SrcAccessType 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)
                      */
                     std::string GetSrcAccessType() const;
 
                     /**
-                     * 设置源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
-                     * @param SrcAccessType 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * 设置源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)
+                     * @param SrcAccessType 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)
                      */
                     void SetSrcAccessType(const std::string& _srcAccessType);
 
@@ -159,14 +159,14 @@ namespace TencentCloud
                     bool SrcInfoHasBeenSet() const;
 
                     /**
-                     * 获取目标实例数据库类型,mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @return DstDatabaseType 目标实例数据库类型,mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 获取目标实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
+                     * @return DstDatabaseType 目标实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
-                     * 设置目标实例数据库类型,mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @param DstDatabaseType 目标实例数据库类型,mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 设置目标实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
+                     * @param DstDatabaseType 目标实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
 
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool DstDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
-                     * @return DstAccessType 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * 获取目标实例接入类型，目前支持：cdb(腾讯云数据库实例)
+                     * @return DstAccessType 目标实例接入类型，目前支持：cdb(腾讯云数据库实例)
                      */
                     std::string GetDstAccessType() const;
 
                     /**
-                     * 设置源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
-                     * @param DstAccessType 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * 设置目标实例接入类型，目前支持：cdb(腾讯云数据库实例)
+                     * @param DstAccessType 目标实例接入类型，目前支持：cdb(腾讯云数据库实例)
                      */
                     void SetDstAccessType(const std::string& _dstAccessType);
 
@@ -195,14 +195,14 @@ namespace TencentCloud
                     bool DstAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取目的实例信息
-                     * @return DstInfo 目的实例信息
+                     * 获取目标实例信息
+                     * @return DstInfo 目标实例信息
                      */
                     DstInfo GetDstInfo() const;
 
                     /**
-                     * 设置目的实例信息
-                     * @param DstInfo 目的实例信息
+                     * 设置目标实例信息
+                     * @param DstInfo 目标实例信息
                      */
                     void SetDstInfo(const DstInfo& _dstInfo);
 
@@ -285,14 +285,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态,取值为：1-创建中(Creating),2-创建完成(Created),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,6-准备运行(ReadyRun),7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-中止中（Stoping）,12-完成中（Completing）
-                     * @return Status 任务状态,取值为：1-创建中(Creating),2-创建完成(Created),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,6-准备运行(ReadyRun),7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-中止中（Stoping）,12-完成中（Completing）
+                     * 获取任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stoping）,12-完成中（Completing）
+                     * @return Status 任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stoping）,12-完成中（Completing）
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态,取值为：1-创建中(Creating),2-创建完成(Created),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,6-准备运行(ReadyRun),7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-中止中（Stoping）,12-完成中（Completing）
-                     * @param Status 任务状态,取值为：1-创建中(Creating),2-创建完成(Created),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,6-准备运行(ReadyRun),7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-中止中（Stoping）,12-完成中（Completing）
+                     * 设置任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stoping）,12-完成中（Completing）
+                     * @param Status 任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stoping）,12-完成中（Completing）
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -341,13 +341,13 @@ namespace TencentCloud
                     bool m_migrateOptionHasBeenSet;
 
                     /**
-                     * 源实例数据库类型:mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 源实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
                      */
                     std::string m_srcDatabaseType;
                     bool m_srcDatabaseTypeHasBeenSet;
 
                     /**
-                     * 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)
                      */
                     std::string m_srcAccessType;
                     bool m_srcAccessTypeHasBeenSet;
@@ -359,19 +359,19 @@ namespace TencentCloud
                     bool m_srcInfoHasBeenSet;
 
                     /**
-                     * 目标实例数据库类型,mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 目标实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;
 
                     /**
-                     * 源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
+                     * 目标实例接入类型，目前支持：cdb(腾讯云数据库实例)
                      */
                     std::string m_dstAccessType;
                     bool m_dstAccessTypeHasBeenSet;
 
                     /**
-                     * 目的实例信息
+                     * 目标实例信息
                      */
                     DstInfo m_dstInfo;
                     bool m_dstInfoHasBeenSet;
@@ -401,7 +401,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 任务状态,取值为：1-创建中(Creating),2-创建完成(Created),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,6-准备运行(ReadyRun),7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-中止中（Stoping）,12-完成中（Completing）
+                     * 任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stoping）,12-完成中（Completing）
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

@@ -30,7 +30,8 @@ ModifyRuleRequest::ModifyRuleRequest() :
     m_urlHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_schedulerHasBeenSet(false),
-    m_sessionExpireTimeHasBeenSet(false)
+    m_sessionExpireTimeHasBeenSet(false),
+    m_forwardTypeHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string ModifyRuleRequest::ToJsonString() const
         string key = "SessionExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sessionExpireTime, allocator);
+    }
+
+    if (m_forwardTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForwardType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_forwardType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -216,6 +225,22 @@ void ModifyRuleRequest::SetSessionExpireTime(const int64_t& _sessionExpireTime)
 bool ModifyRuleRequest::SessionExpireTimeHasBeenSet() const
 {
     return m_sessionExpireTimeHasBeenSet;
+}
+
+string ModifyRuleRequest::GetForwardType() const
+{
+    return m_forwardType;
+}
+
+void ModifyRuleRequest::SetForwardType(const string& _forwardType)
+{
+    m_forwardType = _forwardType;
+    m_forwardTypeHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::ForwardTypeHasBeenSet() const
+{
+    return m_forwardTypeHasBeenSet;
 }
 
 

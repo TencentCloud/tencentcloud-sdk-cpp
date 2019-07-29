@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/as/v20180419/model/ForwardLoadBalancer.h>
 #include <tencentcloud/as/v20180419/model/Tag.h>
+#include <tencentcloud/as/v20180419/model/ServiceSettings.h>
 
 
 namespace TencentCloud
@@ -462,6 +463,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取服务设置
+                     * @return ServiceSettings 服务设置
+                     */
+                    ServiceSettings GetServiceSettings() const;
+
+                    /**
+                     * 设置服务设置
+                     * @param ServiceSettings 服务设置
+                     */
+                    void SetServiceSettings(const ServiceSettings& _serviceSettings);
+
+                    /**
+                     * 判断参数 ServiceSettings 是否已赋值
+                     * @return ServiceSettings 是否已赋值
+                     */
+                    bool ServiceSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -601,6 +620,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 服务设置
+                     */
+                    ServiceSettings m_serviceSettings;
+                    bool m_serviceSettingsHasBeenSet;
 
                 };
             }

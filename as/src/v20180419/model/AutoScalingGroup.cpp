@@ -44,7 +44,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_zoneSetHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
     m_inActivityStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_serviceSettingsHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,23 @@ CoreInternalOutcome AutoScalingGroup::Deserialize(const Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceSettings") && !value["ServiceSettings"].IsNull())
+    {
+        if (!value["ServiceSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.ServiceSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serviceSettings.Deserialize(value["ServiceSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serviceSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -538,6 +556,15 @@ void AutoScalingGroup::ToJsonObject(Value &value, Document::AllocatorType& alloc
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_serviceSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_serviceSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -909,5 +936,21 @@ void AutoScalingGroup::SetTags(const vector<Tag>& _tags)
 bool AutoScalingGroup::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+ServiceSettings AutoScalingGroup::GetServiceSettings() const
+{
+    return m_serviceSettings;
+}
+
+void AutoScalingGroup::SetServiceSettings(const ServiceSettings& _serviceSettings)
+{
+    m_serviceSettings = _serviceSettings;
+    m_serviceSettingsHasBeenSet = true;
+}
+
+bool AutoScalingGroup::ServiceSettingsHasBeenSet() const
+{
+    return m_serviceSettingsHasBeenSet;
 }
 

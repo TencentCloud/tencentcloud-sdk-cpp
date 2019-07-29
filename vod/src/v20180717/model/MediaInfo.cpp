@@ -31,6 +31,7 @@ MediaInfo::MediaInfo() :
     m_snapshotByTimeOffsetInfoHasBeenSet(false),
     m_keyFrameDescInfoHasBeenSet(false),
     m_adaptiveDynamicStreamingInfoHasBeenSet(false),
+    m_miniProgramReviewInfoHasBeenSet(false),
     m_fileIdHasBeenSet(false)
 {
 }
@@ -193,6 +194,23 @@ CoreInternalOutcome MediaInfo::Deserialize(const Value &value)
         m_adaptiveDynamicStreamingInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("MiniProgramReviewInfo") && !value["MiniProgramReviewInfo"].IsNull())
+    {
+        if (!value["MiniProgramReviewInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaInfo.MiniProgramReviewInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_miniProgramReviewInfo.Deserialize(value["MiniProgramReviewInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_miniProgramReviewInfoHasBeenSet = true;
+    }
+
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
     {
         if (!value["FileId"].IsString())
@@ -289,6 +307,15 @@ void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_adaptiveDynamicStreamingInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_miniProgramReviewInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MiniProgramReviewInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_miniProgramReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fileIdHasBeenSet)
@@ -444,6 +471,22 @@ void MediaInfo::SetAdaptiveDynamicStreamingInfo(const MediaAdaptiveDynamicStream
 bool MediaInfo::AdaptiveDynamicStreamingInfoHasBeenSet() const
 {
     return m_adaptiveDynamicStreamingInfoHasBeenSet;
+}
+
+MediaMiniProgramReviewInfo MediaInfo::GetMiniProgramReviewInfo() const
+{
+    return m_miniProgramReviewInfo;
+}
+
+void MediaInfo::SetMiniProgramReviewInfo(const MediaMiniProgramReviewInfo& _miniProgramReviewInfo)
+{
+    m_miniProgramReviewInfo = _miniProgramReviewInfo;
+    m_miniProgramReviewInfoHasBeenSet = true;
+}
+
+bool MediaInfo::MiniProgramReviewInfoHasBeenSet() const
+{
+    return m_miniProgramReviewInfoHasBeenSet;
 }
 
 string MediaInfo::GetFileId() const

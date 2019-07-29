@@ -26,6 +26,7 @@ AIRecognitionTemplateItem::AIRecognitionTemplateItem() :
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_headTailConfigureHasBeenSet(false),
+    m_segmentConfigureHasBeenSet(false),
     m_faceConfigureHasBeenSet(false),
     m_ocrFullTextConfigureHasBeenSet(false),
     m_ocrWordsConfigureHasBeenSet(false),
@@ -88,6 +89,23 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const Value &value)
         }
 
         m_headTailConfigureHasBeenSet = true;
+    }
+
+    if (value.HasMember("SegmentConfigure") && !value["SegmentConfigure"].IsNull())
+    {
+        if (!value["SegmentConfigure"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AIRecognitionTemplateItem.SegmentConfigure` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_segmentConfigure.Deserialize(value["SegmentConfigure"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_segmentConfigureHasBeenSet = true;
     }
 
     if (value.HasMember("FaceConfigure") && !value["FaceConfigure"].IsNull())
@@ -262,6 +280,15 @@ void AIRecognitionTemplateItem::ToJsonObject(Value &value, Document::AllocatorTy
         m_headTailConfigure.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_segmentConfigureHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SegmentConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_segmentConfigure.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_faceConfigureHasBeenSet)
     {
         Value iKey(kStringType);
@@ -405,6 +432,22 @@ void AIRecognitionTemplateItem::SetHeadTailConfigure(const HeadTailConfigureInfo
 bool AIRecognitionTemplateItem::HeadTailConfigureHasBeenSet() const
 {
     return m_headTailConfigureHasBeenSet;
+}
+
+SegmentConfigureInfo AIRecognitionTemplateItem::GetSegmentConfigure() const
+{
+    return m_segmentConfigure;
+}
+
+void AIRecognitionTemplateItem::SetSegmentConfigure(const SegmentConfigureInfo& _segmentConfigure)
+{
+    m_segmentConfigure = _segmentConfigure;
+    m_segmentConfigureHasBeenSet = true;
+}
+
+bool AIRecognitionTemplateItem::SegmentConfigureHasBeenSet() const
+{
+    return m_segmentConfigureHasBeenSet;
 }
 
 FaceConfigureInfo AIRecognitionTemplateItem::GetFaceConfigure() const

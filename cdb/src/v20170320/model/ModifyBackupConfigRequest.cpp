@@ -27,7 +27,8 @@ ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
     m_instanceIdHasBeenSet(false),
     m_expireDaysHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_backupMethodHasBeenSet(false)
+    m_backupMethodHasBeenSet(false),
+    m_binlogExpireDaysHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ModifyBackupConfigRequest::ToJsonString() const
         string key = "BackupMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_backupMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogExpireDaysHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BinlogExpireDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_binlogExpireDays, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void ModifyBackupConfigRequest::SetBackupMethod(const string& _backupMethod)
 bool ModifyBackupConfigRequest::BackupMethodHasBeenSet() const
 {
     return m_backupMethodHasBeenSet;
+}
+
+int64_t ModifyBackupConfigRequest::GetBinlogExpireDays() const
+{
+    return m_binlogExpireDays;
+}
+
+void ModifyBackupConfigRequest::SetBinlogExpireDays(const int64_t& _binlogExpireDays)
+{
+    m_binlogExpireDays = _binlogExpireDays;
+    m_binlogExpireDaysHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::BinlogExpireDaysHasBeenSet() const
+{
+    return m_binlogExpireDaysHasBeenSet;
 }
 
 

@@ -122,21 +122,21 @@ namespace TencentCloud
 
                     /**
                      * 获取分辨率自适应，可选值：
-<li>open：开启，此时，Width 代表视频的宽度，Height 表示视频的高度；</li>
-<li>close：关闭，此时，Width 代表视频的长边，Height 表示视频的短边。</li>
+<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>
+<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>
                      * @return ResolutionAdaptive 分辨率自适应，可选值：
-<li>open：开启，此时，Width 代表视频的宽度，Height 表示视频的高度；</li>
-<li>close：关闭，此时，Width 代表视频的长边，Height 表示视频的短边。</li>
+<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>
+<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>
                      */
                     std::string GetResolutionAdaptive() const;
 
                     /**
                      * 设置分辨率自适应，可选值：
-<li>open：开启，此时，Width 代表视频的宽度，Height 表示视频的高度；</li>
-<li>close：关闭，此时，Width 代表视频的长边，Height 表示视频的短边。</li>
+<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>
+<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>
                      * @param ResolutionAdaptive 分辨率自适应，可选值：
-<li>open：开启，此时，Width 代表视频的宽度，Height 表示视频的高度；</li>
-<li>close：关闭，此时，Width 代表视频的长边，Height 表示视频的短边。</li>
+<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>
+<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>
                      */
                     void SetResolutionAdaptive(const std::string& _resolutionAdaptive);
 
@@ -225,8 +225,8 @@ namespace TencentCloud
 
                     /**
                      * 分辨率自适应，可选值：
-<li>open：开启，此时，Width 代表视频的宽度，Height 表示视频的高度；</li>
-<li>close：关闭，此时，Width 代表视频的长边，Height 表示视频的短边。</li>
+<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>
+<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>
                      */
                     std::string m_resolutionAdaptive;
                     bool m_resolutionAdaptiveHasBeenSet;

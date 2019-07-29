@@ -26,7 +26,8 @@ using namespace std;
 AssumeRoleRequest::AssumeRoleRequest() :
     m_roleArnHasBeenSet(false),
     m_roleSessionNameHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string AssumeRoleRequest::ToJsonString() const
         string key = "DurationSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_durationSeconds, allocator);
+    }
+
+    if (m_policyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Policy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_policy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void AssumeRoleRequest::SetDurationSeconds(const uint64_t& _durationSeconds)
 bool AssumeRoleRequest::DurationSecondsHasBeenSet() const
 {
     return m_durationSecondsHasBeenSet;
+}
+
+string AssumeRoleRequest::GetPolicy() const
+{
+    return m_policy;
+}
+
+void AssumeRoleRequest::SetPolicy(const string& _policy)
+{
+    m_policy = _policy;
+    m_policyHasBeenSet = true;
+}
+
+bool AssumeRoleRequest::PolicyHasBeenSet() const
+{
+    return m_policyHasBeenSet;
 }
 
 

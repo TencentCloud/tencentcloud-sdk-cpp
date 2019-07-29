@@ -27,6 +27,7 @@
 #include <tencentcloud/vpc/v20170312/model/PrivateIpAddressSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/NetworkInterfaceAttachment.h>
 #include <tencentcloud/vpc/v20170312/model/Ipv6Address.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -325,6 +326,24 @@ namespace TencentCloud
                      */
                     bool Ipv6AddressSetHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对。
+                     * @return TagSet 标签键值对。
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对。
+                     * @param TagSet 标签键值对。
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -416,6 +435,12 @@ namespace TencentCloud
                      */
                     std::vector<Ipv6Address> m_ipv6AddressSet;
                     bool m_ipv6AddressSetHasBeenSet;
+
+                    /**
+                     * 标签键值对。
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
 
                 };
             }

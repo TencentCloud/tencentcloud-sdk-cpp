@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool SessionExpireHasBeenSet() const;
 
                     /**
-                     * 获取是否开启了检查：1（开启）、0（关闭）
-                     * @return HealthSwitch 是否开启了检查：1（开启）、0（关闭）
+                     * 获取是否开启了健康检查：1（开启）、0（关闭）
+                     * @return HealthSwitch 是否开启了健康检查：1（开启）、0（关闭）
                      */
                     int64_t GetHealthSwitch() const;
 
                     /**
-                     * 设置是否开启了检查：1（开启）、0（关闭）
-                     * @param HealthSwitch 是否开启了检查：1（开启）、0（关闭）
+                     * 设置是否开启了健康检查：1（开启）、0（关闭）
+                     * @param HealthSwitch 是否开启了健康检查：1（开启）、0（关闭）
                      */
                     void SetHealthSwitch(const int64_t& _healthSwitch);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool UnhealthNumHasBeenSet() const;
 
                     /**
-                     * 获取公网固定IP型的 HTTP、HTTPS 协议监听器的轮询方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
-                     * @return HttpHash 公网固定IP型的 HTTP、HTTPS 协议监听器的轮询方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
+                     * 获取传统型公网负载均衡的 HTTP、HTTPS 监听器的请求均衡方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
+                     * @return HttpHash 传统型公网负载均衡的 HTTP、HTTPS 监听器的请求均衡方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
                      */
                     std::string GetHttpHash() const;
 
                     /**
-                     * 设置公网固定IP型的 HTTP、HTTPS 协议监听器的轮询方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
-                     * @param HttpHash 公网固定IP型的 HTTP、HTTPS 协议监听器的轮询方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
+                     * 设置传统型公网负载均衡的 HTTP、HTTPS 监听器的请求均衡方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
+                     * @param HttpHash 传统型公网负载均衡的 HTTP、HTTPS 监听器的请求均衡方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
                      */
                     void SetHttpHash(const std::string& _httpHash);
 
@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool HttpHashHasBeenSet() const;
 
                     /**
-                     * 获取公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
-                     * @return HttpCode 公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
+                     * 获取传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
+                     * @return HttpCode 传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
                      */
                     int64_t GetHttpCode() const;
 
                     /**
-                     * 设置公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
-                     * @param HttpCode 公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
+                     * 设置传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
+                     * @param HttpCode 传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
                      */
                     void SetHttpCode(const int64_t& _httpCode);
 
@@ -281,14 +281,14 @@ namespace TencentCloud
                     bool HttpCodeHasBeenSet() const;
 
                     /**
-                     * 获取公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查路径
-                     * @return HttpCheckPath 公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查路径
+                     * 获取传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径
+                     * @return HttpCheckPath 传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径
                      */
                     std::string GetHttpCheckPath() const;
 
                     /**
-                     * 设置公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查路径
-                     * @param HttpCheckPath 公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查路径
+                     * 设置传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径
+                     * @param HttpCheckPath 传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径
                      */
                     void SetHttpCheckPath(const std::string& _httpCheckPath);
 
@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool HttpCheckPathHasBeenSet() const;
 
                     /**
-                     * 获取公网固定IP型的 HTTPS 协议监听器的认证方式
-                     * @return SSLMode 公网固定IP型的 HTTPS 协议监听器的认证方式
+                     * 获取传统型公网负载均衡的 HTTPS 监听器的认证方式
+                     * @return SSLMode 传统型公网负载均衡的 HTTPS 监听器的认证方式
                      */
                     std::string GetSSLMode() const;
 
                     /**
-                     * 设置公网固定IP型的 HTTPS 协议监听器的认证方式
-                     * @param SSLMode 公网固定IP型的 HTTPS 协议监听器的认证方式
+                     * 设置传统型公网负载均衡的 HTTPS 监听器的认证方式
+                     * @param SSLMode 传统型公网负载均衡的 HTTPS 监听器的认证方式
                      */
                     void SetSSLMode(const std::string& _sSLMode);
 
@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool SSLModeHasBeenSet() const;
 
                     /**
-                     * 获取公网固定IP型的 HTTPS 协议监听器服务端证书 ID
-                     * @return CertId 公网固定IP型的 HTTPS 协议监听器服务端证书 ID
+                     * 获取传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID
+                     * @return CertId 传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置公网固定IP型的 HTTPS 协议监听器服务端证书 ID
-                     * @param CertId 公网固定IP型的 HTTPS 协议监听器服务端证书 ID
+                     * 设置传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID
+                     * @param CertId 传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID
                      */
                     void SetCertId(const std::string& _certId);
 
@@ -335,14 +335,14 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取公网固定IP型的 HTTPS 协议监听器客户端证书 ID
-                     * @return CertCaId 公网固定IP型的 HTTPS 协议监听器客户端证书 ID
+                     * 获取传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID
+                     * @return CertCaId 传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID
                      */
                     std::string GetCertCaId() const;
 
                     /**
-                     * 设置公网固定IP型的 HTTPS 协议监听器客户端证书 ID
-                     * @param CertCaId 公网固定IP型的 HTTPS 协议监听器客户端证书 ID
+                     * 设置传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID
+                     * @param CertCaId 传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID
                      */
                     void SetCertCaId(const std::string& _certCaId);
 
@@ -409,7 +409,7 @@ namespace TencentCloud
                     bool m_sessionExpireHasBeenSet;
 
                     /**
-                     * 是否开启了检查：1（开启）、0（关闭）
+                     * 是否开启了健康检查：1（开启）、0（关闭）
                      */
                     int64_t m_healthSwitch;
                     bool m_healthSwitchHasBeenSet;
@@ -439,37 +439,37 @@ namespace TencentCloud
                     bool m_unhealthNumHasBeenSet;
 
                     /**
-                     * 公网固定IP型的 HTTP、HTTPS 协议监听器的轮询方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
+                     * 传统型公网负载均衡的 HTTP、HTTPS 监听器的请求均衡方法。wrr 表示按权重轮询，ip_hash 表示根据访问的源 IP 进行一致性哈希方式来分发
                      */
                     std::string m_httpHash;
                     bool m_httpHashHasBeenSet;
 
                     /**
-                     * 公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
+                     * 传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查返回码。具体可参考创建监听器中对该字段的解释
                      */
                     int64_t m_httpCode;
                     bool m_httpCodeHasBeenSet;
 
                     /**
-                     * 公网固定IP型的 HTTP、HTTPS 协议监听器的健康检查路径
+                     * 传统型公网负载均衡的 HTTP、HTTPS 监听器的健康检查路径
                      */
                     std::string m_httpCheckPath;
                     bool m_httpCheckPathHasBeenSet;
 
                     /**
-                     * 公网固定IP型的 HTTPS 协议监听器的认证方式
+                     * 传统型公网负载均衡的 HTTPS 监听器的认证方式
                      */
                     std::string m_sSLMode;
                     bool m_sSLModeHasBeenSet;
 
                     /**
-                     * 公网固定IP型的 HTTPS 协议监听器服务端证书 ID
+                     * 传统型公网负载均衡的 HTTPS 监听器的服务端证书 ID
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 公网固定IP型的 HTTPS 协议监听器客户端证书 ID
+                     * 传统型公网负载均衡的 HTTPS 监听器的客户端证书 ID
                      */
                     std::string m_certCaId;
                     bool m_certCaIdHasBeenSet;

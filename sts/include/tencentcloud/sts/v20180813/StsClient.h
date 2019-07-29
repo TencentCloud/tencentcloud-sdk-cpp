@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/sts/v20180813/model/AssumeRoleRequest.h>
 #include <tencentcloud/sts/v20180813/model/AssumeRoleResponse.h>
+#include <tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLRequest.h>
+#include <tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLResponse.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenRequest.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenResponse.h>
 
@@ -44,6 +46,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssumeRoleResponse> AssumeRoleOutcome;
                 typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::AssumeRoleRequest&, AssumeRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleAsyncHandler;
+                typedef Outcome<Error, Model::AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLOutcome;
+                typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
+                typedef std::function<void(const StsClient*, const Model::AssumeRoleWithSAMLRequest&, AssumeRoleWithSAMLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleWithSAMLAsyncHandler;
                 typedef Outcome<Error, Model::GetFederationTokenResponse> GetFederationTokenOutcome;
                 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::GetFederationTokenRequest&, GetFederationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFederationTokenAsyncHandler;
@@ -58,6 +63,15 @@ namespace TencentCloud
                 AssumeRoleOutcome AssumeRole(const Model::AssumeRoleRequest &request);
                 void AssumeRoleAsync(const Model::AssumeRoleRequest& request, const AssumeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssumeRoleOutcomeCallable AssumeRoleCallable(const Model::AssumeRoleRequest& request);
+
+                /**
+                 *本接口（AssumeRoleWithSAML）用于根据 SAML 断言申请角色临时凭证。
+                 * @param req AssumeRoleWithSAMLRequest
+                 * @return AssumeRoleWithSAMLOutcome
+                 */
+                AssumeRoleWithSAMLOutcome AssumeRoleWithSAML(const Model::AssumeRoleWithSAMLRequest &request);
+                void AssumeRoleWithSAMLAsync(const Model::AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssumeRoleWithSAMLOutcomeCallable AssumeRoleWithSAMLCallable(const Model::AssumeRoleWithSAMLRequest& request);
 
                 /**
                  *获取联合身份临时访问凭证

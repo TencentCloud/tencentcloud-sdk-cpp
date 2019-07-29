@@ -40,6 +40,92 @@ FaceidClient::FaceidClient(const Credential &credential, const string &region, c
 }
 
 
+FaceidClient::BankCard2EVerificationOutcome FaceidClient::BankCard2EVerification(const BankCard2EVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "BankCard2EVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BankCard2EVerificationResponse rsp = BankCard2EVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BankCard2EVerificationOutcome(rsp);
+        else
+            return BankCard2EVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return BankCard2EVerificationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::BankCard2EVerificationAsync(const BankCard2EVerificationRequest& request, const BankCard2EVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BankCard2EVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::BankCard2EVerificationOutcomeCallable FaceidClient::BankCard2EVerificationCallable(const BankCard2EVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BankCard2EVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->BankCard2EVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::BankCard4EVerificationOutcome FaceidClient::BankCard4EVerification(const BankCard4EVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "BankCard4EVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BankCard4EVerificationResponse rsp = BankCard4EVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BankCard4EVerificationOutcome(rsp);
+        else
+            return BankCard4EVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return BankCard4EVerificationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::BankCard4EVerificationAsync(const BankCard4EVerificationRequest& request, const BankCard4EVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BankCard4EVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::BankCard4EVerificationOutcomeCallable FaceidClient::BankCard4EVerificationCallable(const BankCard4EVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BankCard4EVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->BankCard4EVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::BankCardVerificationOutcome FaceidClient::BankCardVerification(const BankCardVerificationRequest &request)
 {
     auto outcome = MakeRequest(request, "BankCardVerification");

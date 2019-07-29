@@ -29,7 +29,8 @@ DescribeBillDetailRequest::DescribeBillDetailRequest() :
     m_periodTypeHasBeenSet(false),
     m_monthHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_needRecordNumHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribeBillDetailRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needRecordNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedRecordNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRecordNum, allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DescribeBillDetailRequest::SetEndTime(const string& _endTime)
 bool DescribeBillDetailRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t DescribeBillDetailRequest::GetNeedRecordNum() const
+{
+    return m_needRecordNum;
+}
+
+void DescribeBillDetailRequest::SetNeedRecordNum(const int64_t& _needRecordNum)
+{
+    m_needRecordNum = _needRecordNum;
+    m_needRecordNumHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::NeedRecordNumHasBeenSet() const
+{
+    return m_needRecordNumHasBeenSet;
 }
 
 

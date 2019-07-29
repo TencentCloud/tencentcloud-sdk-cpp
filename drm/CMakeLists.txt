@@ -22,14 +22,23 @@ set(drm_public_header_model
   include/tencentcloud/drm/v20181115/model/CreateLicenseResponse.h
   include/tencentcloud/drm/v20181115/model/PlaybackPolicy.h
   include/tencentcloud/drm/v20181115/model/StartEncryptionRequest.h
+  include/tencentcloud/drm/v20181115/model/AddFairPlayPemResponse.h
+  include/tencentcloud/drm/v20181115/model/ModifyFairPlayPemRequest.h
+  include/tencentcloud/drm/v20181115/model/AddFairPlayPemRequest.h
+  include/tencentcloud/drm/v20181115/model/DeleteFairPlayPemResponse.h
+  include/tencentcloud/drm/v20181115/model/DescribeFairPlayPemRequest.h
   include/tencentcloud/drm/v20181115/model/DescribeKeysResponse.h
   include/tencentcloud/drm/v20181115/model/DrmOutputPara.h
   include/tencentcloud/drm/v20181115/model/CreateLicenseRequest.h
-  include/tencentcloud/drm/v20181115/model/StartEncryptionResponse.h
+  include/tencentcloud/drm/v20181115/model/DescribeFairPlayPemResponse.h
   include/tencentcloud/drm/v20181115/model/Key.h
+  include/tencentcloud/drm/v20181115/model/ModifyFairPlayPemResponse.h
+  include/tencentcloud/drm/v20181115/model/DeleteFairPlayPemRequest.h
   include/tencentcloud/drm/v20181115/model/DescribeKeysRequest.h
   include/tencentcloud/drm/v20181115/model/DrmSourceObject.h
+  include/tencentcloud/drm/v20181115/model/FairPlayPemDigestInfo.h
   include/tencentcloud/drm/v20181115/model/DrmOutputObject.h
+  include/tencentcloud/drm/v20181115/model/StartEncryptionResponse.h
   )
 
 set(drm_src
@@ -37,14 +46,23 @@ set(drm_src
   src/v20181115/model/CreateLicenseResponse.cpp
   src/v20181115/model/PlaybackPolicy.cpp
   src/v20181115/model/StartEncryptionRequest.cpp
+  src/v20181115/model/AddFairPlayPemResponse.cpp
+  src/v20181115/model/ModifyFairPlayPemRequest.cpp
+  src/v20181115/model/AddFairPlayPemRequest.cpp
+  src/v20181115/model/DeleteFairPlayPemResponse.cpp
+  src/v20181115/model/DescribeFairPlayPemRequest.cpp
   src/v20181115/model/DescribeKeysResponse.cpp
   src/v20181115/model/DrmOutputPara.cpp
   src/v20181115/model/CreateLicenseRequest.cpp
-  src/v20181115/model/StartEncryptionResponse.cpp
+  src/v20181115/model/DescribeFairPlayPemResponse.cpp
   src/v20181115/model/Key.cpp
+  src/v20181115/model/ModifyFairPlayPemResponse.cpp
+  src/v20181115/model/DeleteFairPlayPemRequest.cpp
   src/v20181115/model/DescribeKeysRequest.cpp
   src/v20181115/model/DrmSourceObject.cpp
+  src/v20181115/model/FairPlayPemDigestInfo.cpp
   src/v20181115/model/DrmOutputObject.cpp
+  src/v20181115/model/StartEncryptionResponse.cpp
   )
 
 set(drm_include

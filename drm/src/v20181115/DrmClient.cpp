@@ -40,6 +40,49 @@ DrmClient::DrmClient(const Credential &credential, const string &region, const C
 }
 
 
+DrmClient::AddFairPlayPemOutcome DrmClient::AddFairPlayPem(const AddFairPlayPemRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddFairPlayPem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddFairPlayPemResponse rsp = AddFairPlayPemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddFairPlayPemOutcome(rsp);
+        else
+            return AddFairPlayPemOutcome(o.GetError());
+    }
+    else
+    {
+        return AddFairPlayPemOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::AddFairPlayPemAsync(const AddFairPlayPemRequest& request, const AddFairPlayPemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddFairPlayPem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::AddFairPlayPemOutcomeCallable DrmClient::AddFairPlayPemCallable(const AddFairPlayPemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddFairPlayPemOutcome()>>(
+        [this, request]()
+        {
+            return this->AddFairPlayPem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DrmClient::CreateLicenseOutcome DrmClient::CreateLicense(const CreateLicenseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLicense");
@@ -83,6 +126,92 @@ DrmClient::CreateLicenseOutcomeCallable DrmClient::CreateLicenseCallable(const C
     return task->get_future();
 }
 
+DrmClient::DeleteFairPlayPemOutcome DrmClient::DeleteFairPlayPem(const DeleteFairPlayPemRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFairPlayPem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFairPlayPemResponse rsp = DeleteFairPlayPemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFairPlayPemOutcome(rsp);
+        else
+            return DeleteFairPlayPemOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFairPlayPemOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::DeleteFairPlayPemAsync(const DeleteFairPlayPemRequest& request, const DeleteFairPlayPemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFairPlayPem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::DeleteFairPlayPemOutcomeCallable DrmClient::DeleteFairPlayPemCallable(const DeleteFairPlayPemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFairPlayPemOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFairPlayPem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DrmClient::DescribeFairPlayPemOutcome DrmClient::DescribeFairPlayPem(const DescribeFairPlayPemRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFairPlayPem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFairPlayPemResponse rsp = DescribeFairPlayPemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFairPlayPemOutcome(rsp);
+        else
+            return DescribeFairPlayPemOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFairPlayPemOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::DescribeFairPlayPemAsync(const DescribeFairPlayPemRequest& request, const DescribeFairPlayPemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFairPlayPem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::DescribeFairPlayPemOutcomeCallable DrmClient::DescribeFairPlayPemCallable(const DescribeFairPlayPemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFairPlayPemOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFairPlayPem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DrmClient::DescribeKeysOutcome DrmClient::DescribeKeys(const DescribeKeysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKeys");
@@ -119,6 +248,49 @@ DrmClient::DescribeKeysOutcomeCallable DrmClient::DescribeKeysCallable(const Des
         [this, request]()
         {
             return this->DescribeKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DrmClient::ModifyFairPlayPemOutcome DrmClient::ModifyFairPlayPem(const ModifyFairPlayPemRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFairPlayPem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFairPlayPemResponse rsp = ModifyFairPlayPemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFairPlayPemOutcome(rsp);
+        else
+            return ModifyFairPlayPemOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFairPlayPemOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::ModifyFairPlayPemAsync(const ModifyFairPlayPemRequest& request, const ModifyFairPlayPemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFairPlayPem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::ModifyFairPlayPemOutcomeCallable DrmClient::ModifyFairPlayPemCallable(const ModifyFairPlayPemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFairPlayPemOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFairPlayPem(request);
         }
     );
 

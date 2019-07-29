@@ -129,6 +129,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/SlaveInfo.h
   include/tencentcloud/cdb/v20170320/model/TagInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesResponse.h
+  include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/cdb/v20170320/model/TagInfoUnit.h
   include/tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDRequest.h
@@ -155,6 +156,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupTablesRequest.h
   include/tencentcloud/cdb/v20170320/model/InstanceInfo.h
+  include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesResponse.h
   include/tencentcloud/cdb/v20170320/model/DatabasePrivilege.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h
@@ -334,6 +336,7 @@ set(cdb_src
   src/v20170320/model/SlaveInfo.cpp
   src/v20170320/model/TagInfo.cpp
   src/v20170320/model/DescribeSupportedPrivilegesResponse.cpp
+  src/v20170320/model/OfflineIsolatedInstancesRequest.cpp
   src/v20170320/model/ModifyDBInstanceNameRequest.cpp
   src/v20170320/model/TagInfoUnit.cpp
   src/v20170320/model/OpenDBInstanceGTIDRequest.cpp
@@ -360,6 +363,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBInstanceConfigRequest.cpp
   src/v20170320/model/DescribeBackupTablesRequest.cpp
   src/v20170320/model/InstanceInfo.cpp
+  src/v20170320/model/OfflineIsolatedInstancesResponse.cpp
   src/v20170320/model/DatabasePrivilege.cpp
   src/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20170320/model/ModifyDBInstanceNameResponse.cpp

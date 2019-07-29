@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买时长（单位由参数TimeUint决定）
-                     * @return ChargePeriod 包年包月购买时长（单位由参数TimeUint决定）
+                     * 获取包年包月购买时长（单位由参数TimeUnit决定）
+                     * @return ChargePeriod 包年包月购买时长（单位由参数TimeUnit决定）
                      */
                     uint64_t GetChargePeriod() const;
 
                     /**
-                     * 设置包年包月购买时长（单位由参数TimeUint决定）
-                     * @param ChargePeriod 包年包月购买时长（单位由参数TimeUint决定）
+                     * 设置包年包月购买时长（单位由参数TimeUnit决定）
+                     * @param ChargePeriod 包年包月购买时长（单位由参数TimeUnit决定）
                      */
                     void SetChargePeriod(const uint64_t& _chargePeriod);
 
@@ -242,14 +242,14 @@ namespace TencentCloud
                     bool ChargePeriodHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用于默认不自动续费，SVIP用户自动续费
-                     * @return RenewFlag 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用于默认不自动续费，SVIP用户自动续费
+                     * 获取自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
+                     * @return RenewFlag 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用于默认不自动续费，SVIP用户自动续费
-                     * @param RenewFlag 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用于默认不自动续费，SVIP用户自动续费
+                     * 设置自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
+                     * @param RenewFlag 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
@@ -538,13 +538,13 @@ namespace TencentCloud
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 包年包月购买时长（单位由参数TimeUint决定）
+                     * 包年包月购买时长（单位由参数TimeUnit决定）
                      */
                     uint64_t m_chargePeriod;
                     bool m_chargePeriodHasBeenSet;
 
                     /**
-                     * 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用于默认不自动续费，SVIP用户自动续费
+                     * 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;

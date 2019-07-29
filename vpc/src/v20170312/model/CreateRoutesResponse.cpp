@@ -24,7 +24,9 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateRoutesResponse::CreateRoutesResponse()
+CreateRoutesResponse::CreateRoutesResponse() :
+    m_totalCountHasBeenSet(false),
+    m_routeTableSetHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,59 @@ CoreInternalOutcome CreateRoutesResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RouteTableSet") && !rsp["RouteTableSet"].IsNull())
+    {
+        if (!rsp["RouteTableSet"].IsArray())
+            return CoreInternalOutcome(Error("response `RouteTableSet` is not array type"));
+
+        const Value &tmpValue = rsp["RouteTableSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RouteTable item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_routeTableSet.push_back(item);
+        }
+        m_routeTableSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+uint64_t CreateRoutesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool CreateRoutesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<RouteTable> CreateRoutesResponse::GetRouteTableSet() const
+{
+    return m_routeTableSet;
+}
+
+bool CreateRoutesResponse::RouteTableSetHasBeenSet() const
+{
+    return m_routeTableSetHasBeenSet;
+}
 
 

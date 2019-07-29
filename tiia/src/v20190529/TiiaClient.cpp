@@ -83,6 +83,49 @@ TiiaClient::DetectLabelOutcomeCallable TiiaClient::DetectLabelCallable(const Det
     return task->get_future();
 }
 
+TiiaClient::DetectProductOutcome TiiaClient::DetectProduct(const DetectProductRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectProduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectProductResponse rsp = DetectProductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectProductOutcome(rsp);
+        else
+            return DetectProductOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectProductOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectProductAsync(const DetectProductRequest& request, const DetectProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectProduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectProductOutcomeCallable TiiaClient::DetectProductCallable(const DetectProductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectProductOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::ImageModerationOutcome TiiaClient::ImageModeration(const ImageModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageModeration");
@@ -119,6 +162,49 @@ TiiaClient::ImageModerationOutcomeCallable TiiaClient::ImageModerationCallable(c
         [this, request]()
         {
             return this->ImageModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::RecognizeCarOutcome TiiaClient::RecognizeCar(const RecognizeCarRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeCar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeCarResponse rsp = RecognizeCarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeCarOutcome(rsp);
+        else
+            return RecognizeCarOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeCarOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::RecognizeCarAsync(const RecognizeCarRequest& request, const RecognizeCarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeCar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::RecognizeCarOutcomeCallable TiiaClient::RecognizeCarCallable(const RecognizeCarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeCarOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeCar(request);
         }
     );
 

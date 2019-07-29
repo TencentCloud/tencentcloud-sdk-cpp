@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份任务ID。
-                     * @return BackupId 备份任务ID。
+                     * 获取备份任务 ID。
+                     * @return BackupId 备份任务 ID。
                      */
                     uint64_t GetBackupId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份任务ID。
+                     * 备份任务 ID。
                      */
                     uint64_t m_backupId;
                     bool m_backupIdHasBeenSet;

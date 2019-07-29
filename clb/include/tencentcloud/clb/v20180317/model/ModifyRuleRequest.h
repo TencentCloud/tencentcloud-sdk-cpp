@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取应用型负载均衡监听器 ID
-                     * @return ListenerId 应用型负载均衡监听器 ID
+                     * 获取负载均衡监听器 ID
+                     * @return ListenerId 负载均衡监听器 ID
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置应用型负载均衡监听器 ID
-                     * @param ListenerId 应用型负载均衡监听器 ID
+                     * 设置负载均衡监听器 ID
+                     * @param ListenerId 负载均衡监听器 ID
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -134,14 +134,18 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取规则的请求转发方式
-                     * @return Scheduler 规则的请求转发方式
+                     * 获取规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * @return Scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置规则的请求转发方式
-                     * @param Scheduler 规则的请求转发方式
+                     * 设置规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
+                     * @param Scheduler 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
                      */
                     void SetScheduler(const std::string& _scheduler);
 
@@ -169,6 +173,24 @@ namespace TencentCloud
                      */
                     bool SessionExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     * @return ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     */
+                    std::string GetForwardType() const;
+
+                    /**
+                     * 设置负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     * @param ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     */
+                    void SetForwardType(const std::string& _forwardType);
+
+                    /**
+                     * 判断参数 ForwardType 是否已赋值
+                     * @return ForwardType 是否已赋值
+                     */
+                    bool ForwardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,7 +200,7 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 应用型负载均衡监听器 ID
+                     * 负载均衡监听器 ID
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
@@ -202,7 +224,8 @@ namespace TencentCloud
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 规则的请求转发方式
+                     * 规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH
+分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
@@ -212,6 +235,12 @@ namespace TencentCloud
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
+
+                    /**
+                     * 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     */
+                    std::string m_forwardType;
+                    bool m_forwardTypeHasBeenSet;
 
                 };
             }

@@ -83,6 +83,49 @@ SoeClient::InitOralProcessOutcomeCallable SoeClient::InitOralProcessCallable(con
     return task->get_future();
 }
 
+SoeClient::KeywordEvaluateOutcome SoeClient::KeywordEvaluate(const KeywordEvaluateRequest &request)
+{
+    auto outcome = MakeRequest(request, "KeywordEvaluate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KeywordEvaluateResponse rsp = KeywordEvaluateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KeywordEvaluateOutcome(rsp);
+        else
+            return KeywordEvaluateOutcome(o.GetError());
+    }
+    else
+    {
+        return KeywordEvaluateOutcome(outcome.GetError());
+    }
+}
+
+void SoeClient::KeywordEvaluateAsync(const KeywordEvaluateRequest& request, const KeywordEvaluateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->KeywordEvaluate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SoeClient::KeywordEvaluateOutcomeCallable SoeClient::KeywordEvaluateCallable(const KeywordEvaluateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<KeywordEvaluateOutcome()>>(
+        [this, request]()
+        {
+            return this->KeywordEvaluate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SoeClient::TransmitOralProcessOutcome SoeClient::TransmitOralProcess(const TransmitOralProcessRequest &request)
 {
     auto outcome = MakeRequest(request, "TransmitOralProcess");

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 GetServiceStatusResponse::GetServiceStatusResponse() :
-    m_serviceEnabledHasBeenSet(false)
+    m_serviceEnabledHasBeenSet(false),
+    m_invalidTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_serviceEnabledHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InvalidType") && !rsp["InvalidType"].IsNull())
+    {
+        if (!rsp["InvalidType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InvalidType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidType = rsp["InvalidType"].GetInt64();
+        m_invalidTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ bool GetServiceStatusResponse::GetServiceEnabled() const
 bool GetServiceStatusResponse::ServiceEnabledHasBeenSet() const
 {
     return m_serviceEnabledHasBeenSet;
+}
+
+int64_t GetServiceStatusResponse::GetInvalidType() const
+{
+    return m_invalidType;
+}
+
+bool GetServiceStatusResponse::InvalidTypeHasBeenSet() const
+{
+    return m_invalidTypeHasBeenSet;
 }
 
 

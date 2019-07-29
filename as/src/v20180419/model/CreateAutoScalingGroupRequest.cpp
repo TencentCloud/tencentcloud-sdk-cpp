@@ -39,7 +39,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_zonesHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
     m_zonesCheckPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_serviceSettingsHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,15 @@ string CreateAutoScalingGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_serviceSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_serviceSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -474,6 +484,22 @@ void CreateAutoScalingGroupRequest::SetTags(const vector<Tag>& _tags)
 bool CreateAutoScalingGroupRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+ServiceSettings CreateAutoScalingGroupRequest::GetServiceSettings() const
+{
+    return m_serviceSettings;
+}
+
+void CreateAutoScalingGroupRequest::SetServiceSettings(const ServiceSettings& _serviceSettings)
+{
+    m_serviceSettings = _serviceSettings;
+    m_serviceSettingsHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::ServiceSettingsHasBeenSet() const
+{
+    return m_serviceSettingsHasBeenSet;
 }
 
 

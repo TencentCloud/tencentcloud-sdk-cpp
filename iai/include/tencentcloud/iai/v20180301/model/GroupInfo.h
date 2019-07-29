@@ -127,17 +127,17 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别服务所用的算法模型版本
+                     * 获取人脸识别所用的算法模型版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FaceModelVersion 人脸识别服务所用的算法模型版本
+                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
-                     * 设置人脸识别服务所用的算法模型版本
+                     * 设置人脸识别所用的算法模型版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FaceModelVersion 人脸识别服务所用的算法模型版本
+                     * @param FaceModelVersion 人脸识别所用的算法模型版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFaceModelVersion(const std::string& _faceModelVersion);
@@ -203,7 +203,7 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 人脸识别服务所用的算法模型版本
+                     * 人脸识别所用的算法模型版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_faceModelVersion;

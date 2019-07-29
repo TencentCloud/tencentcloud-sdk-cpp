@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool MigrateObjectHasBeenSet() const;
 
                     /**
-                     * 获取数据对比类型，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
-                     * @return ConsistencyType 数据对比类型，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
+                     * 获取抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
+                     * @return ConsistencyType 抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
                      */
                     int64_t GetConsistencyType() const;
 
                     /**
-                     * 设置数据对比类型，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
-                     * @param ConsistencyType 数据对比类型，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
+                     * 设置抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
+                     * @param ConsistencyType 抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
                      */
                     void SetConsistencyType(const int64_t& _consistencyType);
 
@@ -171,6 +171,7 @@ MongoDB可定义如下的参数:
 	'SrcAuthFlag': "1", 
 	'SrcAuthMechanism':"SCRAM-SHA-1"
 }
+MySQL暂不支持额外参数设置。
                      * @return ExternParams 不同数据库用到的额外参数.以JSON格式描述. 
 Redis可定义如下的参数: 
 { 
@@ -186,6 +187,7 @@ MongoDB可定义如下的参数:
 	'SrcAuthFlag': "1", 
 	'SrcAuthMechanism':"SCRAM-SHA-1"
 }
+MySQL暂不支持额外参数设置。
                      */
                     std::string GetExternParams() const;
 
@@ -205,6 +207,7 @@ MongoDB可定义如下的参数:
 	'SrcAuthFlag': "1", 
 	'SrcAuthMechanism':"SCRAM-SHA-1"
 }
+MySQL暂不支持额外参数设置。
                      * @param ExternParams 不同数据库用到的额外参数.以JSON格式描述. 
 Redis可定义如下的参数: 
 { 
@@ -220,6 +223,7 @@ MongoDB可定义如下的参数:
 	'SrcAuthFlag': "1", 
 	'SrcAuthMechanism':"SCRAM-SHA-1"
 }
+MySQL暂不支持额外参数设置。
                      */
                     void SetExternParams(const std::string& _externParams);
 
@@ -230,14 +234,14 @@ MongoDB可定义如下的参数:
                     bool ExternParamsHasBeenSet() const;
 
                     /**
-                     * 获取抽样检验时的抽样参数
-                     * @return ConsistencyParams 抽样检验时的抽样参数
+                     * 获取仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选
+                     * @return ConsistencyParams 仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选
                      */
                     ConsistencyParams GetConsistencyParams() const;
 
                     /**
-                     * 设置抽样检验时的抽样参数
-                     * @param ConsistencyParams 抽样检验时的抽样参数
+                     * 设置仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选
+                     * @param ConsistencyParams 仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选
                      */
                     void SetConsistencyParams(const ConsistencyParams& _consistencyParams);
 
@@ -274,7 +278,7 @@ MongoDB可定义如下的参数:
                     bool m_migrateObjectHasBeenSet;
 
                     /**
-                     * 数据对比类型，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
+                     * 抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测
                      */
                     int64_t m_consistencyType;
                     bool m_consistencyTypeHasBeenSet;
@@ -301,12 +305,13 @@ MongoDB可定义如下的参数:
 	'SrcAuthFlag': "1", 
 	'SrcAuthMechanism':"SCRAM-SHA-1"
 }
+MySQL暂不支持额外参数设置。
                      */
                     std::string m_externParams;
                     bool m_externParamsHasBeenSet;
 
                     /**
-                     * 抽样检验时的抽样参数
+                     * 仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选
                      */
                     ConsistencyParams m_consistencyParams;
                     bool m_consistencyParamsHasBeenSet;

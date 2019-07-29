@@ -41,7 +41,8 @@ DeviceInfo::DeviceInfo() :
     m_lastOfflineTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_logLevelHasBeenSet(false),
-    m_certStateHasBeenSet(false)
+    m_certStateHasBeenSet(false),
+    m_enableStateHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         m_certStateHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableState") && !value["EnableState"].IsNull())
+    {
+        if (!value["EnableState"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.EnableState` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableState = value["EnableState"].GetUint64();
+        m_enableStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -432,6 +443,14 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "CertState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certState, allocator);
+    }
+
+    if (m_enableStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableState, allocator);
     }
 
 }
@@ -755,5 +774,21 @@ void DeviceInfo::SetCertState(const uint64_t& _certState)
 bool DeviceInfo::CertStateHasBeenSet() const
 {
     return m_certStateHasBeenSet;
+}
+
+uint64_t DeviceInfo::GetEnableState() const
+{
+    return m_enableState;
+}
+
+void DeviceInfo::SetEnableState(const uint64_t& _enableState)
+{
+    m_enableState = _enableState;
+    m_enableStateHasBeenSet = true;
+}
+
+bool DeviceInfo::EnableStateHasBeenSet() const
+{
+    return m_enableStateHasBeenSet;
 }
 

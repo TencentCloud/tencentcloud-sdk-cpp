@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceId 实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param InstanceId 实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取云数据库实例User账号的密码。
-                     * @return Password 云数据库实例User账号的密码。
+                     * 获取云数据库实例 User 账号的密码。
+                     * @return Password 云数据库实例 User 账号的密码。
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置云数据库实例User账号的密码。
-                     * @param Password 云数据库实例User账号的密码。
+                     * 设置云数据库实例 User 账号的密码。
+                     * @param Password 云数据库实例 User 账号的密码。
                      */
                     void SetPassword(const std::string& _password);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -153,7 +153,7 @@ namespace TencentCloud
                     bool m_userHasBeenSet;
 
                     /**
-                     * 云数据库实例User账号的密码。
+                     * 云数据库实例 User 账号的密码。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

@@ -29,7 +29,8 @@ DescribeLiveStreamPublishedListRequest::DescribeLiveStreamPublishedListRequest()
     m_startTimeHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_streamNameHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribeLiveStreamPublishedListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_streamNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DescribeLiveStreamPublishedListRequest::SetPageSize(const uint64_t& _pageSi
 bool DescribeLiveStreamPublishedListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeLiveStreamPublishedListRequest::GetStreamName() const
+{
+    return m_streamName;
+}
+
+void DescribeLiveStreamPublishedListRequest::SetStreamName(const string& _streamName)
+{
+    m_streamName = _streamName;
+    m_streamNameHasBeenSet = true;
+}
+
+bool DescribeLiveStreamPublishedListRequest::StreamNameHasBeenSet() const
+{
+    return m_streamNameHasBeenSet;
 }
 
 

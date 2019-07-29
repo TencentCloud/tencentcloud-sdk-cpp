@@ -1373,3 +1373,46 @@ ClbClient::SetLoadBalancerSecurityGroupsOutcomeCallable ClbClient::SetLoadBalanc
     return task->get_future();
 }
 
+ClbClient::SetSecurityGroupForLoadbalancersOutcome ClbClient::SetSecurityGroupForLoadbalancers(const SetSecurityGroupForLoadbalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetSecurityGroupForLoadbalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetSecurityGroupForLoadbalancersResponse rsp = SetSecurityGroupForLoadbalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetSecurityGroupForLoadbalancersOutcome(rsp);
+        else
+            return SetSecurityGroupForLoadbalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return SetSecurityGroupForLoadbalancersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::SetSecurityGroupForLoadbalancersAsync(const SetSecurityGroupForLoadbalancersRequest& request, const SetSecurityGroupForLoadbalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetSecurityGroupForLoadbalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::SetSecurityGroupForLoadbalancersOutcomeCallable ClbClient::SetSecurityGroupForLoadbalancersCallable(const SetSecurityGroupForLoadbalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetSecurityGroupForLoadbalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->SetSecurityGroupForLoadbalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

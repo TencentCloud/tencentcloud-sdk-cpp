@@ -83,6 +83,92 @@ CmsClient::AudioModerationOutcomeCallable CmsClient::AudioModerationCallable(con
     return task->get_future();
 }
 
+CmsClient::CreateTextSampleOutcome CmsClient::CreateTextSample(const CreateTextSampleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTextSample");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTextSampleResponse rsp = CreateTextSampleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTextSampleOutcome(rsp);
+        else
+            return CreateTextSampleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTextSampleOutcome(outcome.GetError());
+    }
+}
+
+void CmsClient::CreateTextSampleAsync(const CreateTextSampleRequest& request, const CreateTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTextSample(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmsClient::CreateTextSampleOutcomeCallable CmsClient::CreateTextSampleCallable(const CreateTextSampleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTextSampleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTextSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CmsClient::DeleteTextSampleOutcome CmsClient::DeleteTextSample(const DeleteTextSampleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTextSample");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTextSampleResponse rsp = DeleteTextSampleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTextSampleOutcome(rsp);
+        else
+            return DeleteTextSampleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTextSampleOutcome(outcome.GetError());
+    }
+}
+
+void CmsClient::DeleteTextSampleAsync(const DeleteTextSampleRequest& request, const DeleteTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTextSample(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmsClient::DeleteTextSampleOutcomeCallable CmsClient::DeleteTextSampleCallable(const DeleteTextSampleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTextSampleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTextSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmsClient::DescribeModerationOverviewOutcome CmsClient::DescribeModerationOverview(const DescribeModerationOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeModerationOverview");
@@ -119,6 +205,49 @@ CmsClient::DescribeModerationOverviewOutcomeCallable CmsClient::DescribeModerati
         [this, request]()
         {
             return this->DescribeModerationOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CmsClient::DescribeTextSampleOutcome CmsClient::DescribeTextSample(const DescribeTextSampleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTextSample");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTextSampleResponse rsp = DescribeTextSampleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTextSampleOutcome(rsp);
+        else
+            return DescribeTextSampleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTextSampleOutcome(outcome.GetError());
+    }
+}
+
+void CmsClient::DescribeTextSampleAsync(const DescribeTextSampleRequest& request, const DescribeTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTextSample(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmsClient::DescribeTextSampleOutcomeCallable CmsClient::DescribeTextSampleCallable(const DescribeTextSampleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTextSampleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTextSample(request);
         }
     );
 

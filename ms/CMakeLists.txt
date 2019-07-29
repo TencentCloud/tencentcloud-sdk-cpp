@@ -26,6 +26,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/CreateResourceInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/PluginInfo.h
+  include/tencentcloud/ms/v20180408/model/ScanSensitiveList.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldResultRequest.h
   include/tencentcloud/ms/v20180408/model/CreateShieldInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/CreateCosSecKeyInstanceRequest.h
@@ -48,11 +49,13 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/ServiceInfo.h
   include/tencentcloud/ms/v20180408/model/SoInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceResponse.h
+  include/tencentcloud/ms/v20180408/model/ScanSensitiveInfo.h
   include/tencentcloud/ms/v20180408/model/ResourceServiceInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeResourceInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/AdInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/ShieldInfo.h
+  include/tencentcloud/ms/v20180408/model/ScanPermissionList.h
   include/tencentcloud/ms/v20180408/model/CreateResourceInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/AppDetailInfo.h
   include/tencentcloud/ms/v20180408/model/DeleteScanInstancesResponse.h
@@ -64,6 +67,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/DescribeScanResultsRequest.h
   include/tencentcloud/ms/v20180408/model/CreateCosSecKeyInstanceResponse.h
   include/tencentcloud/ms/v20180408/model/VirusInfo.h
+  include/tencentcloud/ms/v20180408/model/ScanPermissionInfo.h
   include/tencentcloud/ms/v20180408/model/PlanInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldResultResponse.h
   include/tencentcloud/ms/v20180408/model/CreateBindInstanceResponse.h
@@ -81,6 +85,7 @@ set(ms_src
   src/v20180408/model/CreateResourceInstancesRequest.cpp
   src/v20180408/model/DescribeShieldInstancesResponse.cpp
   src/v20180408/model/PluginInfo.cpp
+  src/v20180408/model/ScanSensitiveList.cpp
   src/v20180408/model/DescribeShieldResultRequest.cpp
   src/v20180408/model/CreateShieldInstanceRequest.cpp
   src/v20180408/model/CreateCosSecKeyInstanceRequest.cpp
@@ -103,11 +108,13 @@ set(ms_src
   src/v20180408/model/ServiceInfo.cpp
   src/v20180408/model/SoInfo.cpp
   src/v20180408/model/DescribeShieldPlanInstanceResponse.cpp
+  src/v20180408/model/ScanSensitiveInfo.cpp
   src/v20180408/model/ResourceServiceInfo.cpp
   src/v20180408/model/DescribeResourceInstancesRequest.cpp
   src/v20180408/model/AdInfo.cpp
   src/v20180408/model/DescribeShieldPlanInstanceRequest.cpp
   src/v20180408/model/ShieldInfo.cpp
+  src/v20180408/model/ScanPermissionList.cpp
   src/v20180408/model/CreateResourceInstancesResponse.cpp
   src/v20180408/model/AppDetailInfo.cpp
   src/v20180408/model/DeleteScanInstancesResponse.cpp
@@ -119,6 +126,7 @@ set(ms_src
   src/v20180408/model/DescribeScanResultsRequest.cpp
   src/v20180408/model/CreateCosSecKeyInstanceResponse.cpp
   src/v20180408/model/VirusInfo.cpp
+  src/v20180408/model/ScanPermissionInfo.cpp
   src/v20180408/model/PlanInfo.cpp
   src/v20180408/model/DescribeShieldResultResponse.cpp
   src/v20180408/model/CreateBindInstanceResponse.cpp

@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取后端云服务器新的转发权重，取值范围：0~100。
-                     * @return Weight 后端云服务器新的转发权重，取值范围：0~100。
+                     * 获取后端服务新的转发权重，取值范围：0~100。
+                     * @return Weight 后端服务新的转发权重，取值范围：0~100。
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置后端云服务器新的转发权重，取值范围：0~100。
-                     * @param Weight 后端云服务器新的转发权重，取值范围：0~100。
+                     * 设置后端服务新的转发权重，取值范围：0~100。
+                     * @param Weight 后端服务新的转发权重，取值范围：0~100。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -188,7 +188,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 后端云服务器新的转发权重，取值范围：0~100。
+                     * 后端服务新的转发权重，取值范围：0~100。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

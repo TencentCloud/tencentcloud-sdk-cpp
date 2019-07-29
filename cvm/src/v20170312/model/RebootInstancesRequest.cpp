@@ -25,7 +25,8 @@ using namespace std;
 
 RebootInstancesRequest::RebootInstancesRequest() :
     m_instanceIdsHasBeenSet(false),
-    m_forceRebootHasBeenSet(false)
+    m_forceRebootHasBeenSet(false),
+    m_stopTypeHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string RebootInstancesRequest::ToJsonString() const
         string key = "ForceReboot";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceReboot, allocator);
+    }
+
+    if (m_stopTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StopType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_stopType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -95,6 +104,22 @@ void RebootInstancesRequest::SetForceReboot(const bool& _forceReboot)
 bool RebootInstancesRequest::ForceRebootHasBeenSet() const
 {
     return m_forceRebootHasBeenSet;
+}
+
+string RebootInstancesRequest::GetStopType() const
+{
+    return m_stopType;
+}
+
+void RebootInstancesRequest::SetStopType(const string& _stopType)
+{
+    m_stopType = _stopType;
+    m_stopTypeHasBeenSet = true;
+}
+
+bool RebootInstancesRequest::StopTypeHasBeenSet() const
+{
+    return m_stopTypeHasBeenSet;
 }
 
 

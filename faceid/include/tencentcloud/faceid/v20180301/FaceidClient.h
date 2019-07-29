@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/faceid/v20180301/model/BankCard2EVerificationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/BankCard2EVerificationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/BankCard4EVerificationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/BankCardVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
@@ -57,6 +61,12 @@ namespace TencentCloud
                 FaceidClient(const Credential &credential, const std::string &region);
                 FaceidClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::BankCard2EVerificationResponse> BankCard2EVerificationOutcome;
+                typedef std::future<BankCard2EVerificationOutcome> BankCard2EVerificationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::BankCard2EVerificationRequest&, BankCard2EVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankCard2EVerificationAsyncHandler;
+                typedef Outcome<Error, Model::BankCard4EVerificationResponse> BankCard4EVerificationOutcome;
+                typedef std::future<BankCard4EVerificationOutcome> BankCard4EVerificationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::BankCard4EVerificationRequest&, BankCard4EVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankCard4EVerificationAsyncHandler;
                 typedef Outcome<Error, Model::BankCardVerificationResponse> BankCardVerificationOutcome;
                 typedef std::future<BankCardVerificationOutcome> BankCardVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::BankCardVerificationRequest&, BankCardVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankCardVerificationAsyncHandler;
@@ -89,6 +99,24 @@ namespace TencentCloud
                 typedef std::function<void(const FaceidClient*, const Model::LivenessRecognitionRequest&, LivenessRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LivenessRecognitionAsyncHandler;
 
 
+
+                /**
+                 *银行卡二要素核验
+                 * @param req BankCard2EVerificationRequest
+                 * @return BankCard2EVerificationOutcome
+                 */
+                BankCard2EVerificationOutcome BankCard2EVerification(const Model::BankCard2EVerificationRequest &request);
+                void BankCard2EVerificationAsync(const Model::BankCard2EVerificationRequest& request, const BankCard2EVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BankCard2EVerificationOutcomeCallable BankCard2EVerificationCallable(const Model::BankCard2EVerificationRequest& request);
+
+                /**
+                 *银行卡四要素核验
+                 * @param req BankCard4EVerificationRequest
+                 * @return BankCard4EVerificationOutcome
+                 */
+                BankCard4EVerificationOutcome BankCard4EVerification(const Model::BankCard4EVerificationRequest &request);
+                void BankCard4EVerificationAsync(const Model::BankCard4EVerificationRequest& request, const BankCard4EVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BankCard4EVerificationOutcomeCallable BankCard4EVerificationCallable(const Model::BankCard4EVerificationRequest& request);
 
                 /**
                  *银行卡核验

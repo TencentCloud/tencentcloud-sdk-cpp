@@ -26,6 +26,7 @@ ImagePolityDetect::ImagePolityDetect() :
     m_hitFlagHasBeenSet(false),
     m_faceNamesHasBeenSet(false),
     m_keywordsHasBeenSet(false),
+    m_polityItemsHasBeenSet(false),
     m_scoreHasBeenSet(false)
 {
 }
@@ -79,6 +80,19 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
             m_keywords.push_back((*itr).GetString());
         }
         m_keywordsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolityItems") && !value["PolityItems"].IsNull())
+    {
+        if (!value["PolityItems"].IsArray())
+            return CoreInternalOutcome(Error("response `ImagePolityDetect.PolityItems` is not array type"));
+
+        const Value &tmpValue = value["PolityItems"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_polityItems.push_back((*itr).GetString());
+        }
+        m_polityItemsHasBeenSet = true;
     }
 
     if (value.HasMember("Score") && !value["Score"].IsNull())
@@ -135,6 +149,19 @@ void ImagePolityDetect::ToJsonObject(Value &value, Document::AllocatorType& allo
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_polityItemsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolityItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_polityItems.begin(); itr != m_polityItems.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -213,6 +240,22 @@ void ImagePolityDetect::SetKeywords(const vector<string>& _keywords)
 bool ImagePolityDetect::KeywordsHasBeenSet() const
 {
     return m_keywordsHasBeenSet;
+}
+
+vector<string> ImagePolityDetect::GetPolityItems() const
+{
+    return m_polityItems;
+}
+
+void ImagePolityDetect::SetPolityItems(const vector<string>& _polityItems)
+{
+    m_polityItems = _polityItems;
+    m_polityItemsHasBeenSet = true;
+}
+
+bool ImagePolityDetect::PolityItemsHasBeenSet() const
+{
+    return m_polityItemsHasBeenSet;
 }
 
 int64_t ImagePolityDetect::GetScore() const

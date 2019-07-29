@@ -39,7 +39,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_instanceMarketOptionsHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_instanceTypesCheckPolicyHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false)
+    m_instanceTagsHasBeenSet(false),
+    m_camRoleNameHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_camRoleNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CamRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_camRoleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -469,6 +478,22 @@ void CreateLaunchConfigurationRequest::SetInstanceTags(const vector<InstanceTag>
 bool CreateLaunchConfigurationRequest::InstanceTagsHasBeenSet() const
 {
     return m_instanceTagsHasBeenSet;
+}
+
+string CreateLaunchConfigurationRequest::GetCamRoleName() const
+{
+    return m_camRoleName;
+}
+
+void CreateLaunchConfigurationRequest::SetCamRoleName(const string& _camRoleName)
+{
+    m_camRoleName = _camRoleName;
+    m_camRoleNameHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::CamRoleNameHasBeenSet() const
+{
+    return m_camRoleNameHasBeenSet;
 }
 
 

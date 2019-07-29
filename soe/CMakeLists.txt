@@ -21,11 +21,15 @@ set(soe_public_header
 set(soe_public_header_model
   include/tencentcloud/soe/v20180724/model/SentenceInfo.h
   include/tencentcloud/soe/v20180724/model/InitOralProcessRequest.h
+  include/tencentcloud/soe/v20180724/model/Keyword.h
+  include/tencentcloud/soe/v20180724/model/KeywordEvaluateRequest.h
   include/tencentcloud/soe/v20180724/model/TransmitOralProcessRequest.h
   include/tencentcloud/soe/v20180724/model/TransmitOralProcessResponse.h
   include/tencentcloud/soe/v20180724/model/InitOralProcessResponse.h
-  include/tencentcloud/soe/v20180724/model/WordRsp.h
+  include/tencentcloud/soe/v20180724/model/KeywordEvaluateResponse.h
   include/tencentcloud/soe/v20180724/model/PhoneInfo.h
+  include/tencentcloud/soe/v20180724/model/WordRsp.h
+  include/tencentcloud/soe/v20180724/model/KeywordScore.h
   include/tencentcloud/soe/v20180724/model/TransmitOralProcessWithInitRequest.h
   include/tencentcloud/soe/v20180724/model/TransmitOralProcessWithInitResponse.h
   )
@@ -34,11 +38,15 @@ set(soe_src
   src/v20180724/SoeClient.cpp
   src/v20180724/model/SentenceInfo.cpp
   src/v20180724/model/InitOralProcessRequest.cpp
+  src/v20180724/model/Keyword.cpp
+  src/v20180724/model/KeywordEvaluateRequest.cpp
   src/v20180724/model/TransmitOralProcessRequest.cpp
   src/v20180724/model/TransmitOralProcessResponse.cpp
   src/v20180724/model/InitOralProcessResponse.cpp
-  src/v20180724/model/WordRsp.cpp
+  src/v20180724/model/KeywordEvaluateResponse.cpp
   src/v20180724/model/PhoneInfo.cpp
+  src/v20180724/model/WordRsp.cpp
+  src/v20180724/model/KeywordScore.cpp
   src/v20180724/model/TransmitOralProcessWithInitRequest.cpp
   src/v20180724/model/TransmitOralProcessWithInitResponse.cpp
   )

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了配额信息
+                * 描述配额信息
                 */
                 class Quota : public AbstractModel
                 {

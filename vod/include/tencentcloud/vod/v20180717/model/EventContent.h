@@ -27,7 +27,7 @@
 #include <tencentcloud/vod/v20180717/model/FileUploadTask.h>
 #include <tencentcloud/vod/v20180717/model/ProcedureTask.h>
 #include <tencentcloud/vod/v20180717/model/FileDeleteTask.h>
-#include <tencentcloud/vod/v20180717/model/PullFileTask.h>
+#include <tencentcloud/vod/v20180717/model/PullUploadTask.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaTask.h>
 #include <tencentcloud/vod/v20180717/model/WechatPublishTask.h>
 #include <tencentcloud/vod/v20180717/model/TranscodeTask2017.h>
@@ -36,6 +36,7 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
 #include <tencentcloud/vod/v20180717/model/ComposeMediaTask.h>
+#include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTask.h>
 
 
 namespace TencentCloud
@@ -222,7 +223,7 @@ namespace TencentCloud
                      * @return PullCompleteEvent 视频转拉完成事件，当事件类型为 PullComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    PullFileTask GetPullCompleteEvent() const;
+                    PullUploadTask GetPullCompleteEvent() const;
 
                     /**
                      * 设置视频转拉完成事件，当事件类型为 PullComplete 时有效。
@@ -230,7 +231,7 @@ namespace TencentCloud
                      * @param PullCompleteEvent 视频转拉完成事件，当事件类型为 PullComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetPullCompleteEvent(const PullFileTask& _pullCompleteEvent);
+                    void SetPullCompleteEvent(const PullUploadTask& _pullCompleteEvent);
 
                     /**
                      * 判断参数 PullCompleteEvent 是否已赋值
@@ -414,6 +415,28 @@ namespace TencentCloud
                      */
                     bool ComposeMediaCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WechatMiniProgramPublishCompleteEvent 微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WechatMiniProgramPublishTask GetWechatMiniProgramPublishCompleteEvent() const;
+
+                    /**
+                     * 设置微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WechatMiniProgramPublishCompleteEvent 微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWechatMiniProgramPublishCompleteEvent(const WechatMiniProgramPublishTask& _wechatMiniProgramPublishCompleteEvent);
+
+                    /**
+                     * 判断参数 WechatMiniProgramPublishCompleteEvent 是否已赋值
+                     * @return WechatMiniProgramPublishCompleteEvent 是否已赋值
+                     */
+                    bool WechatMiniProgramPublishCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,7 +490,7 @@ namespace TencentCloud
                      * 视频转拉完成事件，当事件类型为 PullComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    PullFileTask m_pullCompleteEvent;
+                    PullUploadTask m_pullCompleteEvent;
                     bool m_pullCompleteEventHasBeenSet;
 
                     /**
@@ -525,6 +548,13 @@ namespace TencentCloud
                      */
                     ComposeMediaTask m_composeMediaCompleteEvent;
                     bool m_composeMediaCompleteEventHasBeenSet;
+
+                    /**
+                     * 微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WechatMiniProgramPublishTask m_wechatMiniProgramPublishCompleteEvent;
+                    bool m_wechatMiniProgramPublishCompleteEventHasBeenSet;
 
                 };
             }

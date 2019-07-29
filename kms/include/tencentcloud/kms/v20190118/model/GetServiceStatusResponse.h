@@ -54,6 +54,20 @@ namespace TencentCloud
                      */
                     bool ServiceEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvalidType 服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInvalidType() const;
+
+                    /**
+                     * 判断参数 InvalidType 是否已赋值
+                     * @return InvalidType 是否已赋值
+                     */
+                    bool InvalidTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +75,13 @@ namespace TencentCloud
                      */
                     bool m_serviceEnabled;
                     bool m_serviceEnabledHasBeenSet;
+
+                    /**
+                     * 服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_invalidType;
+                    bool m_invalidTypeHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ik插件词典新
+                * ik插件词典信息
                 */
                 class DictInfo : public AbstractModel
                 {

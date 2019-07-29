@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的记录数
-                     * @return TotalCount 符合条件的记录数
+                     * 获取符合条件的记录数。
+                     * @return TotalCount 符合条件的记录数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取参数修改记录
-                     * @return Items 参数修改记录
+                     * 获取参数修改记录。
+                     * @return Items 参数修改记录。
                      */
                     std::vector<ParamRecord> GetItems() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的记录数
+                     * 符合条件的记录数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 参数修改记录
+                     * 参数修改记录。
                      */
                     std::vector<ParamRecord> m_items;
                     bool m_itemsHasBeenSet;

@@ -24,12 +24,14 @@
 #include <tencentcloud/vod/v20180717/model/ProcedureTask.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaTask.h>
 #include <tencentcloud/vod/v20180717/model/WechatPublishTask.h>
+#include <tencentcloud/vod/v20180717/model/ComposeMediaTask.h>
+#include <tencentcloud/vod/v20180717/model/PullUploadTask.h>
 #include <tencentcloud/vod/v20180717/model/TranscodeTask2017.h>
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
 #include <tencentcloud/vod/v20180717/model/ConcatTask2017.h>
 #include <tencentcloud/vod/v20180717/model/ClipTask2017.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
-#include <tencentcloud/vod/v20180717/model/ComposeMediaTask.h>
+#include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTask.h>
 
 
 namespace TencentCloud
@@ -56,7 +58,10 @@ namespace TencentCloud
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
 <li>WechatPublish：微信发布任务；</li>
-<li>ComposeMedia：制作媒体文件任务。</li>
+<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
+<li>ComposeMedia：制作媒体文件任务；</li>
+<li>PullUpload：拉取上传媒体文件任务。</li>
+
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -67,7 +72,10 @@ namespace TencentCloud
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
 <li>WechatPublish：微信发布任务；</li>
-<li>ComposeMedia：制作媒体文件任务。</li>
+<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
+<li>ComposeMedia：制作媒体文件任务；</li>
+<li>PullUpload：拉取上传媒体文件任务。</li>
+
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -180,6 +188,34 @@ namespace TencentCloud
                     bool WechatPublishTaskHasBeenSet() const;
 
                     /**
+                     * 获取制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComposeMediaTask 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComposeMediaTask GetComposeMediaTask() const;
+
+                    /**
+                     * 判断参数 ComposeMediaTask 是否已赋值
+                     * @return ComposeMediaTask 是否已赋值
+                     */
+                    bool ComposeMediaTaskHasBeenSet() const;
+
+                    /**
+                     * 获取拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PullUploadTask 拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PullUploadTask GetPullUploadTask() const;
+
+                    /**
+                     * 判断参数 PullUploadTask 是否已赋值
+                     * @return PullUploadTask 是否已赋值
+                     */
+                    bool PullUploadTaskHasBeenSet() const;
+
+                    /**
                      * 获取视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTask 视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。
@@ -250,18 +286,18 @@ namespace TencentCloud
                     bool CreateImageSpriteTaskHasBeenSet() const;
 
                     /**
-                     * 获取制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+                     * 获取微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComposeMediaTask 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+                     * @return WechatMiniProgramPublishTask 微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ComposeMediaTask GetComposeMediaTask() const;
+                    WechatMiniProgramPublishTask GetWechatMiniProgramPublishTask() const;
 
                     /**
-                     * 判断参数 ComposeMediaTask 是否已赋值
-                     * @return ComposeMediaTask 是否已赋值
+                     * 判断参数 WechatMiniProgramPublishTask 是否已赋值
+                     * @return WechatMiniProgramPublishTask 是否已赋值
                      */
-                    bool ComposeMediaTaskHasBeenSet() const;
+                    bool WechatMiniProgramPublishTaskHasBeenSet() const;
 
                 private:
 
@@ -270,7 +306,10 @@ namespace TencentCloud
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
 <li>WechatPublish：微信发布任务；</li>
-<li>ComposeMedia：制作媒体文件任务。</li>
+<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
+<li>ComposeMedia：制作媒体文件任务；</li>
+<li>PullUpload：拉取上传媒体文件任务。</li>
+
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -330,6 +369,20 @@ namespace TencentCloud
                     bool m_wechatPublishTaskHasBeenSet;
 
                     /**
+                     * 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComposeMediaTask m_composeMediaTask;
+                    bool m_composeMediaTaskHasBeenSet;
+
+                    /**
+                     * 拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PullUploadTask m_pullUploadTask;
+                    bool m_pullUploadTaskHasBeenSet;
+
+                    /**
                      * 视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -365,11 +418,11 @@ namespace TencentCloud
                     bool m_createImageSpriteTaskHasBeenSet;
 
                     /**
-                     * 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+                     * 微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ComposeMediaTask m_composeMediaTask;
-                    bool m_composeMediaTaskHasBeenSet;
+                    WechatMiniProgramPublishTask m_wechatMiniProgramPublishTask;
+                    bool m_wechatMiniProgramPublishTaskHasBeenSet;
 
                 };
             }

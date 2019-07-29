@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 传统型负载均衡健康状态信息
+                * 传统型负载均衡后端服务的健康状态
                 */
                 class ClassicalHealth : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云服务器内网 IP
-                     * @return IP 云服务器内网 IP
+                     * 获取后端服务的内网 IP
+                     * @return IP 后端服务的内网 IP
                      */
                     std::string GetIP() const;
 
                     /**
-                     * 设置云服务器内网 IP
-                     * @param IP 云服务器内网 IP
+                     * 设置后端服务的内网 IP
+                     * @param IP 后端服务的内网 IP
                      */
                     void SetIP(const std::string& _iP);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取云服务器端口
-                     * @return Port 云服务器端口
+                     * 获取后端服务的端口
+                     * @return Port 后端服务的端口
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置云服务器端口
-                     * @param Port 云服务器端口
+                     * 设置后端服务的端口
+                     * @param Port 后端服务的端口
                      */
                     void SetPort(const int64_t& _port);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听端口
-                     * @return ListenerPort 负载均衡监听端口
+                     * 获取负载均衡的监听端口
+                     * @return ListenerPort 负载均衡的监听端口
                      */
                     int64_t GetListenerPort() const;
 
                     /**
-                     * 设置负载均衡监听端口
-                     * @param ListenerPort 负载均衡监听端口
+                     * 设置负载均衡的监听端口
+                     * @param ListenerPort 负载均衡的监听端口
                      */
                     void SetListenerPort(const int64_t& _listenerPort);
 
@@ -139,19 +139,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云服务器内网 IP
+                     * 后端服务的内网 IP
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
-                     * 云服务器端口
+                     * 后端服务的端口
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 负载均衡监听端口
+                     * 负载均衡的监听端口
                      */
                     int64_t m_listenerPort;
                     bool m_listenerPortHasBeenSet;

@@ -19,48 +19,76 @@ set(billing_public_header
   )
 
 set(billing_public_header_model
-  include/tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h
+  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h
+  include/tencentcloud/billing/v20180709/model/DetailPoint.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeResponse.h
+  include/tencentcloud/billing/v20180709/model/BillResourceSummary.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductResponse.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByRegionResponse.h
   include/tencentcloud/billing/v20180709/model/DetailSet.h
-  include/tencentcloud/billing/v20180709/model/Deal.h
-  include/tencentcloud/billing/v20180709/model/DescribeDealsByCondResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h
-  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h
+  include/tencentcloud/billing/v20180709/model/RegionSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/ProductInfo.h
   include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h
-  include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryResponse.h
-  include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryRequest.h
-  include/tencentcloud/billing/v20180709/model/DetailPoint.h
   include/tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h
-  include/tencentcloud/billing/v20180709/model/PayDealsResponse.h
-  include/tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h
+  include/tencentcloud/billing/v20180709/model/BusinessSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/BillDetailComponent.h
-  include/tencentcloud/billing/v20180709/model/BillResourceSummary.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByRegionRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryResponse.h
+  include/tencentcloud/billing/v20180709/model/ActionSummaryOverviewItem.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProjectRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductRequest.h
+  include/tencentcloud/billing/v20180709/model/PayDealsResponse.h
   include/tencentcloud/billing/v20180709/model/BillDetail.h
+  include/tencentcloud/billing/v20180709/model/ProjectSummaryOverviewItem.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h
+  include/tencentcloud/billing/v20180709/model/Deal.h
+  include/tencentcloud/billing/v20180709/model/DescribeDealsByCondResponse.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProjectResponse.h
   include/tencentcloud/billing/v20180709/model/PayDealsRequest.h
+  include/tencentcloud/billing/v20180709/model/PayModeSummaryOverviewItem.h
+  include/tencentcloud/billing/v20180709/model/BusinessSummaryTotal.h
   )
 
 set(billing_src
   src/v20180709/BillingClient.cpp
-  src/v20180709/model/DescribeBillDetailResponse.cpp
+  src/v20180709/model/DescribeDosageDetailByDateRequest.cpp
+  src/v20180709/model/DetailPoint.cpp
+  src/v20180709/model/DescribeBillSummaryByPayModeResponse.cpp
+  src/v20180709/model/BillResourceSummary.cpp
+  src/v20180709/model/DescribeBillSummaryByProductResponse.cpp
+  src/v20180709/model/DescribeBillSummaryByRegionResponse.cpp
   src/v20180709/model/DetailSet.cpp
-  src/v20180709/model/Deal.cpp
-  src/v20180709/model/DescribeDealsByCondResponse.cpp
   src/v20180709/model/DescribeAccountBalanceRequest.cpp
   src/v20180709/model/DescribeBillDetailRequest.cpp
-  src/v20180709/model/DescribeDosageDetailByDateRequest.cpp
+  src/v20180709/model/RegionSummaryOverviewItem.cpp
   src/v20180709/model/ProductInfo.cpp
   src/v20180709/model/DescribeDosageDetailByDateResponse.cpp
-  src/v20180709/model/DescribeBillResourceSummaryResponse.cpp
-  src/v20180709/model/DescribeBillResourceSummaryRequest.cpp
-  src/v20180709/model/DetailPoint.cpp
   src/v20180709/model/DescribeAccountBalanceResponse.cpp
-  src/v20180709/model/PayDealsResponse.cpp
-  src/v20180709/model/DescribeDealsByCondRequest.cpp
+  src/v20180709/model/BusinessSummaryOverviewItem.cpp
   src/v20180709/model/BillDetailComponent.cpp
-  src/v20180709/model/BillResourceSummary.cpp
+  src/v20180709/model/DescribeBillSummaryByRegionRequest.cpp
+  src/v20180709/model/DescribeBillSummaryByPayModeRequest.cpp
+  src/v20180709/model/DescribeBillResourceSummaryResponse.cpp
+  src/v20180709/model/ActionSummaryOverviewItem.cpp
+  src/v20180709/model/DescribeBillSummaryByProjectRequest.cpp
+  src/v20180709/model/DescribeDealsByCondRequest.cpp
+  src/v20180709/model/DescribeBillResourceSummaryRequest.cpp
+  src/v20180709/model/DescribeBillSummaryByProductRequest.cpp
+  src/v20180709/model/PayDealsResponse.cpp
   src/v20180709/model/BillDetail.cpp
+  src/v20180709/model/ProjectSummaryOverviewItem.cpp
+  src/v20180709/model/DescribeBillDetailResponse.cpp
+  src/v20180709/model/Deal.cpp
+  src/v20180709/model/DescribeDealsByCondResponse.cpp
+  src/v20180709/model/DescribeBillSummaryByProjectResponse.cpp
   src/v20180709/model/PayDealsRequest.cpp
+  src/v20180709/model/PayModeSummaryOverviewItem.cpp
+  src/v20180709/model/BusinessSummaryTotal.cpp
   )
 
 set(billing_include

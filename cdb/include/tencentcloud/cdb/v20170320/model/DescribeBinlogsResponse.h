@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合查询条件的日志文件总数
-                     * @return TotalCount 符合查询条件的日志文件总数
+                     * 获取符合查询条件的日志文件总数。
+                     * @return TotalCount 符合查询条件的日志文件总数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取符合查询条件的二进制日志文件详情
-                     * @return Items 符合查询条件的二进制日志文件详情
+                     * 获取符合查询条件的二进制日志文件详情。
+                     * @return Items 符合查询条件的二进制日志文件详情。
                      */
                     std::vector<BinlogInfo> GetItems() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合查询条件的日志文件总数
+                     * 符合查询条件的日志文件总数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 符合查询条件的二进制日志文件详情
+                     * 符合查询条件的二进制日志文件详情。
                      */
                     std::vector<BinlogInfo> m_items;
                     bool m_itemsHasBeenSet;

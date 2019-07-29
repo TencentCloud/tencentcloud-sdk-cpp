@@ -30,7 +30,13 @@ HealthCheck::HealthCheck() :
     m_httpCodeHasBeenSet(false),
     m_httpCheckPathHasBeenSet(false),
     m_httpCheckDomainHasBeenSet(false),
-    m_httpCheckMethodHasBeenSet(false)
+    m_httpCheckMethodHasBeenSet(false),
+    m_checkPortHasBeenSet(false),
+    m_contextTypeHasBeenSet(false),
+    m_sendContextHasBeenSet(false),
+    m_recvContextHasBeenSet(false),
+    m_checkTypeHasBeenSet(false),
+    m_httpVersionHasBeenSet(false)
 {
 }
 
@@ -129,6 +135,66 @@ CoreInternalOutcome HealthCheck::Deserialize(const Value &value)
         m_httpCheckMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckPort") && !value["CheckPort"].IsNull())
+    {
+        if (!value["CheckPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `HealthCheck.CheckPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkPort = value["CheckPort"].GetInt64();
+        m_checkPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContextType") && !value["ContextType"].IsNull())
+    {
+        if (!value["ContextType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthCheck.ContextType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contextType = string(value["ContextType"].GetString());
+        m_contextTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SendContext") && !value["SendContext"].IsNull())
+    {
+        if (!value["SendContext"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthCheck.SendContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendContext = string(value["SendContext"].GetString());
+        m_sendContextHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecvContext") && !value["RecvContext"].IsNull())
+    {
+        if (!value["RecvContext"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthCheck.RecvContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recvContext = string(value["RecvContext"].GetString());
+        m_recvContextHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckType") && !value["CheckType"].IsNull())
+    {
+        if (!value["CheckType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthCheck.CheckType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkType = string(value["CheckType"].GetString());
+        m_checkTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HttpVersion") && !value["HttpVersion"].IsNull())
+    {
+        if (!value["HttpVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HealthCheck.HttpVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpVersion = string(value["HttpVersion"].GetString());
+        m_httpVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +272,54 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "HttpCheckMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_httpCheckMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CheckPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkPort, allocator);
+    }
+
+    if (m_contextTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ContextType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_contextType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sendContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SendContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sendContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recvContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecvContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_recvContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CheckType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_checkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HttpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_httpVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +467,101 @@ void HealthCheck::SetHttpCheckMethod(const string& _httpCheckMethod)
 bool HealthCheck::HttpCheckMethodHasBeenSet() const
 {
     return m_httpCheckMethodHasBeenSet;
+}
+
+int64_t HealthCheck::GetCheckPort() const
+{
+    return m_checkPort;
+}
+
+void HealthCheck::SetCheckPort(const int64_t& _checkPort)
+{
+    m_checkPort = _checkPort;
+    m_checkPortHasBeenSet = true;
+}
+
+bool HealthCheck::CheckPortHasBeenSet() const
+{
+    return m_checkPortHasBeenSet;
+}
+
+string HealthCheck::GetContextType() const
+{
+    return m_contextType;
+}
+
+void HealthCheck::SetContextType(const string& _contextType)
+{
+    m_contextType = _contextType;
+    m_contextTypeHasBeenSet = true;
+}
+
+bool HealthCheck::ContextTypeHasBeenSet() const
+{
+    return m_contextTypeHasBeenSet;
+}
+
+string HealthCheck::GetSendContext() const
+{
+    return m_sendContext;
+}
+
+void HealthCheck::SetSendContext(const string& _sendContext)
+{
+    m_sendContext = _sendContext;
+    m_sendContextHasBeenSet = true;
+}
+
+bool HealthCheck::SendContextHasBeenSet() const
+{
+    return m_sendContextHasBeenSet;
+}
+
+string HealthCheck::GetRecvContext() const
+{
+    return m_recvContext;
+}
+
+void HealthCheck::SetRecvContext(const string& _recvContext)
+{
+    m_recvContext = _recvContext;
+    m_recvContextHasBeenSet = true;
+}
+
+bool HealthCheck::RecvContextHasBeenSet() const
+{
+    return m_recvContextHasBeenSet;
+}
+
+string HealthCheck::GetCheckType() const
+{
+    return m_checkType;
+}
+
+void HealthCheck::SetCheckType(const string& _checkType)
+{
+    m_checkType = _checkType;
+    m_checkTypeHasBeenSet = true;
+}
+
+bool HealthCheck::CheckTypeHasBeenSet() const
+{
+    return m_checkTypeHasBeenSet;
+}
+
+string HealthCheck::GetHttpVersion() const
+{
+    return m_httpVersion;
+}
+
+void HealthCheck::SetHttpVersion(const string& _httpVersion)
+{
+    m_httpVersion = _httpVersion;
+    m_httpVersionHasBeenSet = true;
+}
+
+bool HealthCheck::HttpVersionHasBeenSet() const
+{
+    return m_httpVersionHasBeenSet;
 }
 

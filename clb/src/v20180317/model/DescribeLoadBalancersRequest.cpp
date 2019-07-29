@@ -40,7 +40,8 @@ DescribeLoadBalancersRequest::DescribeLoadBalancersRequest() :
     m_projectIdHasBeenSet(false),
     m_withRsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_securityGroupHasBeenSet(false)
+    m_securityGroupHasBeenSet(false),
+    m_masterZoneHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string DescribeLoadBalancersRequest::ToJsonString() const
         string key = "SecurityGroup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_securityGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MasterZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_masterZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -485,6 +494,22 @@ void DescribeLoadBalancersRequest::SetSecurityGroup(const string& _securityGroup
 bool DescribeLoadBalancersRequest::SecurityGroupHasBeenSet() const
 {
     return m_securityGroupHasBeenSet;
+}
+
+string DescribeLoadBalancersRequest::GetMasterZone() const
+{
+    return m_masterZone;
+}
+
+void DescribeLoadBalancersRequest::SetMasterZone(const string& _masterZone)
+{
+    m_masterZone = _masterZone;
+    m_masterZoneHasBeenSet = true;
+}
+
+bool DescribeLoadBalancersRequest::MasterZoneHasBeenSet() const
+{
+    return m_masterZoneHasBeenSet;
 }
 
 

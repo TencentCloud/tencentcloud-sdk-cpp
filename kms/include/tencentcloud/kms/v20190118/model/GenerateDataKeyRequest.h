@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。默认为AES_256
-                     * @return KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。默认为AES_256
+                     * 获取指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
+                     * @return KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
                      */
                     std::string GetKeySpec() const;
 
                     /**
-                     * 设置指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。默认为AES_256
-                     * @param KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。默认为AES_256
+                     * 设置指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
+                     * @param KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
                      */
                     void SetKeySpec(const std::string& _keySpec);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。默认为AES_256
+                     * 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
                      */
                     std::string m_keySpec;
                     bool m_keySpecHasBeenSet;

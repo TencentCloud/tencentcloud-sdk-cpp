@@ -22,10 +22,11 @@ using namespace rapidjson;
 using namespace std;
 
 Target::Target() :
-    m_instanceIdHasBeenSet(false),
     m_portHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_weightHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_eniIpHasBeenSet(false)
 {
 }
 
@@ -33,16 +34,6 @@ CoreInternalOutcome Target::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
-    {
-        if (!value["InstanceId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Target.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_instanceId = string(value["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
-    }
 
     if (value.HasMember("Port") && !value["Port"].IsNull())
     {
@@ -64,6 +55,16 @@ CoreInternalOutcome Target::Deserialize(const Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Target.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
     if (value.HasMember("Weight") && !value["Weight"].IsNull())
     {
         if (!value["Weight"].IsInt64())
@@ -74,20 +75,22 @@ CoreInternalOutcome Target::Deserialize(const Value &value)
         m_weightHasBeenSet = true;
     }
 
+    if (value.HasMember("EniIp") && !value["EniIp"].IsNull())
+    {
+        if (!value["EniIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Target.EniIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eniIp = string(value["EniIp"].GetString());
+        m_eniIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Target::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_instanceIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_portHasBeenSet)
     {
@@ -105,6 +108,14 @@ void Target::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_weightHasBeenSet)
     {
         Value iKey(kStringType);
@@ -113,24 +124,16 @@ void Target::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         value.AddMember(iKey, m_weight, allocator);
     }
 
+    if (m_eniIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EniIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_eniIp.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string Target::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void Target::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool Target::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
 
 int64_t Target::GetPort() const
 {
@@ -164,6 +167,22 @@ bool Target::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
+string Target::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void Target::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool Target::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
 int64_t Target::GetWeight() const
 {
     return m_weight;
@@ -178,5 +197,21 @@ void Target::SetWeight(const int64_t& _weight)
 bool Target::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
+}
+
+string Target::GetEniIp() const
+{
+    return m_eniIp;
+}
+
+void Target::SetEniIp(const string& _eniIp)
+{
+    m_eniIp = _eniIp;
+    m_eniIpHasBeenSet = true;
+}
+
+bool Target::EniIpHasBeenSet() const
+{
+    return m_eniIpHasBeenSet;
 }
 

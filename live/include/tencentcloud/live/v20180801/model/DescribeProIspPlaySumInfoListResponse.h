@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool StatTypeHasBeenSet() const;
 
                     /**
-                     * 获取每页的记录数
-                     * @return PageSize 每页的记录数
+                     * 获取每页的记录数。
+                     * @return PageSize 每页的记录数。
                      */
                     uint64_t GetPageSize() const;
 
@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页号
-                     * @return PageNum 页号
+                     * 获取页号。
+                     * @return PageNum 页号。
                      */
                     uint64_t GetPageNum() const;
 
@@ -104,8 +104,8 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取总记录数
-                     * @return TotalNum 总记录数
+                     * 获取总记录数。
+                     * @return TotalNum 总记录数。
                      */
                     uint64_t GetTotalNum() const;
 
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool TotalNumHasBeenSet() const;
 
                     /**
-                     * 获取总页数
-                     * @return TotalPage 总页数
+                     * 获取总页数。
+                     * @return TotalPage 总页数。
                      */
                     uint64_t GetTotalPage() const;
 
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool TotalPageHasBeenSet() const;
 
                     /**
-                     * 获取省份或运营商汇总数据列表
-                     * @return DataInfoList 省份或运营商汇总数据列表
+                     * 获取省份或运营商汇总数据列表。
+                     * @return DataInfoList 省份或运营商汇总数据列表。
                      */
                     std::vector<ProIspPlaySumInfo> GetDataInfoList() const;
 
@@ -140,8 +140,8 @@ namespace TencentCloud
                     bool DataInfoListHasBeenSet() const;
 
                     /**
-                     * 获取平均带宽
-                     * @return AvgFluxPerSecond 平均带宽
+                     * 获取平均带宽。
+                     * @return AvgFluxPerSecond 平均带宽。
                      */
                     double GetAvgFluxPerSecond() const;
 
@@ -172,37 +172,37 @@ namespace TencentCloud
                     bool m_statTypeHasBeenSet;
 
                     /**
-                     * 每页的记录数
+                     * 每页的记录数。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页号
+                     * 页号。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 总记录数
+                     * 总记录数。
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
-                     * 总页数
+                     * 总页数。
                      */
                     uint64_t m_totalPage;
                     bool m_totalPageHasBeenSet;
 
                     /**
-                     * 省份或运营商汇总数据列表
+                     * 省份或运营商汇总数据列表。
                      */
                     std::vector<ProIspPlaySumInfo> m_dataInfoList;
                     bool m_dataInfoListHasBeenSet;
 
                     /**
-                     * 平均带宽
+                     * 平均带宽。
                      */
                     double m_avgFluxPerSecond;
                     bool m_avgFluxPerSecondHasBeenSet;

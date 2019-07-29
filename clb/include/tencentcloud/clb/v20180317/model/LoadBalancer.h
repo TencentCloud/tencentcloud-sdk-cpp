@@ -26,6 +26,9 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/TargetRegionInfo.h>
+#include <tencentcloud/clb/v20180317/model/ZoneInfo.h>
+#include <tencentcloud/clb/v20180317/model/InternetAccessible.h>
+#include <tencentcloud/clb/v20180317/model/LBChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -107,14 +110,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用型负载均衡标识，1：应用型负载均衡，0：传统型的负载均衡。
-                     * @return Forward 应用型负载均衡标识，1：应用型负载均衡，0：传统型的负载均衡。
+                     * 获取负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
+                     * @return Forward 负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
                      */
                     uint64_t GetForward() const;
 
                     /**
-                     * 设置应用型负载均衡标识，1：应用型负载均衡，0：传统型的负载均衡。
-                     * @param Forward 应用型负载均衡标识，1：应用型负载均衡，0：传统型的负载均衡。
+                     * 设置负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
+                     * @param Forward 负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
                      */
                     void SetForward(const uint64_t& _forward);
 
@@ -125,17 +128,17 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ForwardHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的域名，内网类型负载均衡以及应用型负载均衡实例不提供该字段
+                     * 获取负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Domain 负载均衡实例的域名，内网类型负载均衡以及应用型负载均衡实例不提供该字段
+                     * @return Domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置负载均衡实例的域名，内网类型负载均衡以及应用型负载均衡实例不提供该字段
+                     * 设置负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 负载均衡实例的域名，内网类型负载均衡以及应用型负载均衡实例不提供该字段
+                     * @param Domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDomain(const std::string& _domain);
@@ -520,6 +523,226 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool NumericalVpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡IP地址所属的ISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VipIsp 负载均衡IP地址所属的ISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipIsp() const;
+
+                    /**
+                     * 设置负载均衡IP地址所属的ISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VipIsp 负载均衡IP地址所属的ISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipIsp(const std::string& _vipIsp);
+
+                    /**
+                     * 判断参数 VipIsp 是否已赋值
+                     * @return VipIsp 是否已赋值
+                     */
+                    bool VipIspHasBeenSet() const;
+
+                    /**
+                     * 获取主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ZoneInfo GetMasterZone() const;
+
+                    /**
+                     * 设置主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMasterZone(const ZoneInfo& _masterZone);
+
+                    /**
+                     * 判断参数 MasterZone 是否已赋值
+                     * @return MasterZone 是否已赋值
+                     */
+                    bool MasterZoneHasBeenSet() const;
+
+                    /**
+                     * 获取备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupZoneSet 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ZoneInfo> GetBackupZoneSet() const;
+
+                    /**
+                     * 设置备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupZoneSet 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupZoneSet(const std::vector<ZoneInfo>& _backupZoneSet);
+
+                    /**
+                     * 判断参数 BackupZoneSet 是否已赋值
+                     * @return BackupZoneSet 是否已赋值
+                     */
+                    bool BackupZoneSetHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例被隔离的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolatedTime 负载均衡实例被隔离的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsolatedTime() const;
+
+                    /**
+                     * 设置负载均衡实例被隔离的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsolatedTime 负载均衡实例被隔离的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsolatedTime(const std::string& _isolatedTime);
+
+                    /**
+                     * 判断参数 IsolatedTime 是否已赋值
+                     * @return IsolatedTime 是否已赋值
+                     */
+                    bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例的过期时间，仅对预付费负载均衡生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpireTime 负载均衡实例的过期时间，仅对预付费负载均衡生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置负载均衡实例的过期时间，仅对预付费负载均衡生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExpireTime 负载均衡实例的过期时间，仅对预付费负载均衡生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例的计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeType 负载均衡实例的计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置负载均衡实例的计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChargeType 负载均衡实例的计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例的网络属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkAttributes 负载均衡实例的网络属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InternetAccessible GetNetworkAttributes() const;
+
+                    /**
+                     * 设置负载均衡实例的网络属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetworkAttributes 负载均衡实例的网络属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetworkAttributes(const InternetAccessible& _networkAttributes);
+
+                    /**
+                     * 判断参数 NetworkAttributes 是否已赋值
+                     * @return NetworkAttributes 是否已赋值
+                     */
+                    bool NetworkAttributesHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例的预付费相关属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrepaidAttributes 负载均衡实例的预付费相关属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LBChargePrepaid GetPrepaidAttributes() const;
+
+                    /**
+                     * 设置负载均衡实例的预付费相关属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PrepaidAttributes 负载均衡实例的预付费相关属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrepaidAttributes(const LBChargePrepaid& _prepaidAttributes);
+
+                    /**
+                     * 判断参数 PrepaidAttributes 是否已赋值
+                     * @return PrepaidAttributes 是否已赋值
+                     */
+                    bool PrepaidAttributesHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡日志服务(CLS)的日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogSetId 负载均衡日志服务(CLS)的日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogSetId() const;
+
+                    /**
+                     * 设置负载均衡日志服务(CLS)的日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogSetId 负载均衡日志服务(CLS)的日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogSetId(const std::string& _logSetId);
+
+                    /**
+                     * 判断参数 LogSetId 是否已赋值
+                     * @return LogSetId 是否已赋值
+                     */
+                    bool LogSetIdHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡日志服务(CLS)的日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogTopicId 负载均衡日志服务(CLS)的日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogTopicId() const;
+
+                    /**
+                     * 设置负载均衡日志服务(CLS)的日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogTopicId 负载均衡日志服务(CLS)的日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogTopicId(const std::string& _logTopicId);
+
+                    /**
+                     * 判断参数 LogTopicId 是否已赋值
+                     * @return LogTopicId 是否已赋值
+                     */
+                    bool LogTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -542,13 +765,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
-                     * 应用型负载均衡标识，1：应用型负载均衡，0：传统型的负载均衡。
+                     * 负载均衡类型标识，1：负载均衡，0：传统型负载均衡。
                      */
                     uint64_t m_forward;
                     bool m_forwardHasBeenSet;
 
                     /**
-                     * 负载均衡实例的域名，内网类型负载均衡以及应用型负载均衡实例不提供该字段
+                     * 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
@@ -672,6 +895,76 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     uint64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;
+
+                    /**
+                     * 负载均衡IP地址所属的ISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipIsp;
+                    bool m_vipIspHasBeenSet;
+
+                    /**
+                     * 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ZoneInfo m_masterZone;
+                    bool m_masterZoneHasBeenSet;
+
+                    /**
+                     * 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ZoneInfo> m_backupZoneSet;
+                    bool m_backupZoneSetHasBeenSet;
+
+                    /**
+                     * 负载均衡实例被隔离的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isolatedTime;
+                    bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的过期时间，仅对预付费负载均衡生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的网络属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InternetAccessible m_networkAttributes;
+                    bool m_networkAttributesHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的预付费相关属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LBChargePrepaid m_prepaidAttributes;
+                    bool m_prepaidAttributesHasBeenSet;
+
+                    /**
+                     * 负载均衡日志服务(CLS)的日志集ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logSetId;
+                    bool m_logSetIdHasBeenSet;
+
+                    /**
+                     * 负载均衡日志服务(CLS)的日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logTopicId;
+                    bool m_logTopicIdHasBeenSet;
 
                 };
             }

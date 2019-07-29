@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取由负载均衡实例统一 ID 组成的数组。
-                     * @return LoadBalancerIds 由负载均衡实例统一 ID 组成的数组。
+                     * 获取由负载均衡实例唯一 ID 组成的数组。
+                     * @return LoadBalancerIds 由负载均衡实例唯一 ID 组成的数组。
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 由负载均衡实例统一 ID 组成的数组。
+                     * 由负载均衡实例唯一 ID 组成的数组。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

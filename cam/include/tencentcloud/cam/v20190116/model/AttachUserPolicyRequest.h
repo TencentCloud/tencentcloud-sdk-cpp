@@ -46,13 +46,13 @@ namespace TencentCloud
                      * 获取策略 id
                      * @return PolicyId 策略 id
                      */
-                    int64_t GetPolicyId() const;
+                    uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略 id
                      * @param PolicyId 策略 id
                      */
-                    void SetPolicyId(const int64_t& _policyId);
+                    void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
@@ -64,13 +64,13 @@ namespace TencentCloud
                      * 获取子账号 uin
                      * @return AttachUin 子账号 uin
                      */
-                    int64_t GetAttachUin() const;
+                    uint64_t GetAttachUin() const;
 
                     /**
                      * 设置子账号 uin
                      * @param AttachUin 子账号 uin
                      */
-                    void SetAttachUin(const int64_t& _attachUin);
+                    void SetAttachUin(const uint64_t& _attachUin);
 
                     /**
                      * 判断参数 AttachUin 是否已赋值
@@ -83,13 +83,13 @@ namespace TencentCloud
                     /**
                      * 策略 id
                      */
-                    int64_t m_policyId;
+                    uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
                      * 子账号 uin
                      */
-                    int64_t m_attachUin;
+                    uint64_t m_attachUin;
                     bool m_attachUinHasBeenSet;
 
                 };

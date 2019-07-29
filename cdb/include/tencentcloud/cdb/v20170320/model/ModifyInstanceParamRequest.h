@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例短Id列表。
-                     * @return InstanceIds 实例短Id列表。
+                     * 获取实例短 ID 列表。
+                     * @return InstanceIds 实例短 ID 列表。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例短Id列表。
-                     * @param InstanceIds 实例短Id列表。
+                     * 设置实例短 ID 列表。
+                     * @param InstanceIds 实例短 ID 列表。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取要修改的参数列表。每一个元素是name和currentValue的组合。name是参数名，currentValue是要修改成的值。
-                     * @return ParamList 要修改的参数列表。每一个元素是name和currentValue的组合。name是参数名，currentValue是要修改成的值。
+                     * 获取要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
+                     * @return ParamList 要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
                      */
                     std::vector<Parameter> GetParamList() const;
 
                     /**
-                     * 设置要修改的参数列表。每一个元素是name和currentValue的组合。name是参数名，currentValue是要修改成的值。
-                     * @param ParamList 要修改的参数列表。每一个元素是name和currentValue的组合。name是参数名，currentValue是要修改成的值。
+                     * 设置要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
+                     * @param ParamList 要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
                      */
                     void SetParamList(const std::vector<Parameter>& _paramList);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例短Id列表。
+                     * 实例短 ID 列表。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 要修改的参数列表。每一个元素是name和currentValue的组合。name是参数名，currentValue是要修改成的值。
+                     * 要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。
                      */
                     std::vector<Parameter> m_paramList;
                     bool m_paramListHasBeenSet;

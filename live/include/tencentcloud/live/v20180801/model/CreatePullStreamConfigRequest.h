@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源Url。
-                     * @return FromUrl 源Url。
+                     * 获取源Url。目前可支持直播流及点播文件。
+                     * @return FromUrl 源Url。目前可支持直播流及点播文件。
                      */
                     std::string GetFromUrl() const;
 
                     /**
-                     * 设置源Url。
-                     * @param FromUrl 源Url。
+                     * 设置源Url。目前可支持直播流及点播文件。
+                     * @param FromUrl 源Url。目前可支持直播流及点播文件。
                      */
                     void SetFromUrl(const std::string& _fromUrl);
 
@@ -181,7 +181,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源Url。
+                     * 源Url。目前可支持直播流及点播文件。
                      */
                     std::string m_fromUrl;
                     bool m_fromUrlHasBeenSet;

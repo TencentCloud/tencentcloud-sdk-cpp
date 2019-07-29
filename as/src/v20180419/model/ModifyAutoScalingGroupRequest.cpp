@@ -37,7 +37,8 @@ ModifyAutoScalingGroupRequest::ModifyAutoScalingGroupRequest() :
     m_vpcIdHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
-    m_zonesCheckPolicyHasBeenSet(false)
+    m_zonesCheckPolicyHasBeenSet(false),
+    m_serviceSettingsHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,15 @@ string ModifyAutoScalingGroupRequest::ToJsonString() const
         string key = "ZonesCheckPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_zonesCheckPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_serviceSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -405,6 +415,22 @@ void ModifyAutoScalingGroupRequest::SetZonesCheckPolicy(const string& _zonesChec
 bool ModifyAutoScalingGroupRequest::ZonesCheckPolicyHasBeenSet() const
 {
     return m_zonesCheckPolicyHasBeenSet;
+}
+
+ServiceSettings ModifyAutoScalingGroupRequest::GetServiceSettings() const
+{
+    return m_serviceSettings;
+}
+
+void ModifyAutoScalingGroupRequest::SetServiceSettings(const ServiceSettings& _serviceSettings)
+{
+    m_serviceSettings = _serviceSettings;
+    m_serviceSettingsHasBeenSet = true;
+}
+
+bool ModifyAutoScalingGroupRequest::ServiceSettingsHasBeenSet() const
+{
+    return m_serviceSettingsHasBeenSet;
 }
 
 

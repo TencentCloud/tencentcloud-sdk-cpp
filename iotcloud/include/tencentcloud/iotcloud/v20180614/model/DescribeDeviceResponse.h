@@ -237,6 +237,76 @@ namespace TencentCloud
                      */
                     bool LogLevelHasBeenSet() const;
 
+                    /**
+                     * 获取首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirstOnlineTime 首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFirstOnlineTime() const;
+
+                    /**
+                     * 判断参数 FirstOnlineTime 是否已赋值
+                     * @return FirstOnlineTime 是否已赋值
+                     */
+                    bool FirstOnlineTimeHasBeenSet() const;
+
+                    /**
+                     * 获取最近下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastOfflineTime 最近下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetLastOfflineTime() const;
+
+                    /**
+                     * 判断参数 LastOfflineTime 是否已赋值
+                     * @return LastOfflineTime 是否已赋值
+                     */
+                    bool LastOfflineTimeHasBeenSet() const;
+
+                    /**
+                     * 获取设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取设备证书获取状态，0 未获取过设备密钥, 1 已获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertState 设备证书获取状态，0 未获取过设备密钥, 1 已获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCertState() const;
+
+                    /**
+                     * 判断参数 CertState 是否已赋值
+                     * @return CertState 是否已赋值
+                     */
+                    bool CertStateHasBeenSet() const;
+
+                    /**
+                     * 获取设备启用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableState 设备启用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnableState() const;
+
+                    /**
+                     * 判断参数 EnableState 是否已赋值
+                     * @return EnableState 是否已赋值
+                     */
+                    bool EnableStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +405,41 @@ namespace TencentCloud
                      */
                     uint64_t m_logLevel;
                     bool m_logLevelHasBeenSet;
+
+                    /**
+                     * 首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_firstOnlineTime;
+                    bool m_firstOnlineTimeHasBeenSet;
+
+                    /**
+                     * 最近下线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_lastOfflineTime;
+                    bool m_lastOfflineTimeHasBeenSet;
+
+                    /**
+                     * 设备创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 设备证书获取状态，0 未获取过设备密钥, 1 已获取过设备密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_certState;
+                    bool m_certStateHasBeenSet;
+
+                    /**
+                     * 设备启用状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enableState;
+                    bool m_enableStateHasBeenSet;
 
                 };
             }

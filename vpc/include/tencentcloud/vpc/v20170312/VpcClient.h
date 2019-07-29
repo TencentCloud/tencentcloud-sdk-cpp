@@ -179,6 +179,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorQuotaResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkInterfacesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkInterfacesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsRequest.h>
@@ -197,6 +199,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplatesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTaskResultRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcIpv6AddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcIpv6AddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcPrivateIpAddressesRequest.h>
@@ -573,6 +577,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeIp6TranslatorsResponse> DescribeIp6TranslatorsOutcome;
                 typedef std::future<DescribeIp6TranslatorsOutcome> DescribeIp6TranslatorsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeIp6TranslatorsRequest&, DescribeIp6TranslatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIp6TranslatorsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNatGatewaysResponse> DescribeNatGatewaysOutcome;
+                typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaysRequest&, DescribeNatGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaysAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesOutcome;
                 typedef std::future<DescribeNetworkInterfacesOutcome> DescribeNetworkInterfacesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNetworkInterfacesRequest&, DescribeNetworkInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkInterfacesAsyncHandler;
@@ -600,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSubnetsResponse> DescribeSubnetsOutcome;
                 typedef std::future<DescribeSubnetsOutcome> DescribeSubnetsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSubnetsRequest&, DescribeSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
+                typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVpcIpv6AddressesResponse> DescribeVpcIpv6AddressesOutcome;
                 typedef std::future<DescribeVpcIpv6AddressesOutcome> DescribeVpcIpv6AddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcIpv6AddressesRequest&, DescribeVpcIpv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcIpv6AddressesAsyncHandler;
@@ -1588,6 +1598,15 @@ namespace TencentCloud
                 DescribeIp6TranslatorsOutcomeCallable DescribeIp6TranslatorsCallable(const Model::DescribeIp6TranslatorsRequest& request);
 
                 /**
+                 *本接口（DescribeNatGateways）用于查询 NAT 网关。
+                 * @param req DescribeNatGatewaysRequest
+                 * @return DescribeNatGatewaysOutcome
+                 */
+                DescribeNatGatewaysOutcome DescribeNatGateways(const Model::DescribeNatGatewaysRequest &request);
+                void DescribeNatGatewaysAsync(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatGatewaysOutcomeCallable DescribeNatGatewaysCallable(const Model::DescribeNatGatewaysRequest& request);
+
+                /**
                  *本接口（DescribeNetworkInterfaces）用于查询弹性网卡列表。
                  * @param req DescribeNetworkInterfacesRequest
                  * @return DescribeNetworkInterfacesOutcome
@@ -1667,6 +1686,15 @@ namespace TencentCloud
                 DescribeSubnetsOutcome DescribeSubnets(const Model::DescribeSubnetsRequest &request);
                 void DescribeSubnetsAsync(const Model::DescribeSubnetsRequest& request, const DescribeSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubnetsOutcomeCallable DescribeSubnetsCallable(const Model::DescribeSubnetsRequest& request);
+
+                /**
+                 *查询EIP异步任务执行结果
+                 * @param req DescribeTaskResultRequest
+                 * @return DescribeTaskResultOutcome
+                 */
+                DescribeTaskResultOutcome DescribeTaskResult(const Model::DescribeTaskResultRequest &request);
+                void DescribeTaskResultAsync(const Model::DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskResultOutcomeCallable DescribeTaskResultCallable(const Model::DescribeTaskResultRequest& request);
 
                 /**
                  *本接口（DescribeVpcIpv6Addresses）用于查询 `VPC` `IPv6` 信息。

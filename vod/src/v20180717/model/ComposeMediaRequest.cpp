@@ -26,7 +26,8 @@ using namespace std;
 ComposeMediaRequest::ComposeMediaRequest() :
     m_tracksHasBeenSet(false),
     m_outputHasBeenSet(false),
-    m_canvasHasBeenSet(false)
+    m_canvasHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ComposeMediaRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_canvas.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -124,6 +133,22 @@ void ComposeMediaRequest::SetCanvas(const Canvas& _canvas)
 bool ComposeMediaRequest::CanvasHasBeenSet() const
 {
     return m_canvasHasBeenSet;
+}
+
+uint64_t ComposeMediaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ComposeMediaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ComposeMediaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 

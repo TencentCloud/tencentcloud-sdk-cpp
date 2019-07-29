@@ -1330,6 +1330,135 @@ LiveClient::DeletePullStreamConfigOutcomeCallable LiveClient::DeletePullStreamCo
     return task->get_future();
 }
 
+LiveClient::DescribeBillBandwidthAndFluxListOutcome LiveClient::DescribeBillBandwidthAndFluxList(const DescribeBillBandwidthAndFluxListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillBandwidthAndFluxList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillBandwidthAndFluxListResponse rsp = DescribeBillBandwidthAndFluxListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillBandwidthAndFluxListOutcome(rsp);
+        else
+            return DescribeBillBandwidthAndFluxListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillBandwidthAndFluxListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeBillBandwidthAndFluxListAsync(const DescribeBillBandwidthAndFluxListRequest& request, const DescribeBillBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillBandwidthAndFluxList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeBillBandwidthAndFluxListOutcomeCallable LiveClient::DescribeBillBandwidthAndFluxListCallable(const DescribeBillBandwidthAndFluxListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillBandwidthAndFluxListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillBandwidthAndFluxList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeGroupProIspPlayInfoListOutcome LiveClient::DescribeGroupProIspPlayInfoList(const DescribeGroupProIspPlayInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupProIspPlayInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupProIspPlayInfoListResponse rsp = DescribeGroupProIspPlayInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupProIspPlayInfoListOutcome(rsp);
+        else
+            return DescribeGroupProIspPlayInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupProIspPlayInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeGroupProIspPlayInfoListAsync(const DescribeGroupProIspPlayInfoListRequest& request, const DescribeGroupProIspPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupProIspPlayInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeGroupProIspPlayInfoListOutcomeCallable LiveClient::DescribeGroupProIspPlayInfoListCallable(const DescribeGroupProIspPlayInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupProIspPlayInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupProIspPlayInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeHttpStatusInfoListOutcome LiveClient::DescribeHttpStatusInfoList(const DescribeHttpStatusInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHttpStatusInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHttpStatusInfoListResponse rsp = DescribeHttpStatusInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHttpStatusInfoListOutcome(rsp);
+        else
+            return DescribeHttpStatusInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHttpStatusInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeHttpStatusInfoListAsync(const DescribeHttpStatusInfoListRequest& request, const DescribeHttpStatusInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHttpStatusInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeHttpStatusInfoListOutcomeCallable LiveClient::DescribeHttpStatusInfoListCallable(const DescribeHttpStatusInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHttpStatusInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHttpStatusInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveCallbackRulesOutcome LiveClient::DescribeLiveCallbackRules(const DescribeLiveCallbackRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveCallbackRules");
@@ -1545,6 +1674,49 @@ LiveClient::DescribeLiveCertsOutcomeCallable LiveClient::DescribeLiveCertsCallab
     return task->get_future();
 }
 
+LiveClient::DescribeLiveDelayInfoListOutcome LiveClient::DescribeLiveDelayInfoList(const DescribeLiveDelayInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveDelayInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveDelayInfoListResponse rsp = DescribeLiveDelayInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveDelayInfoListOutcome(rsp);
+        else
+            return DescribeLiveDelayInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveDelayInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveDelayInfoListAsync(const DescribeLiveDelayInfoListRequest& request, const DescribeLiveDelayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveDelayInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDelayInfoListOutcomeCallable LiveClient::DescribeLiveDelayInfoListCallable(const DescribeLiveDelayInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveDelayInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveDelayInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainOutcome LiveClient::DescribeLiveDomain(const DescribeLiveDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveDomain");
@@ -1624,6 +1796,49 @@ LiveClient::DescribeLiveDomainCertOutcomeCallable LiveClient::DescribeLiveDomain
         [this, request]()
         {
             return this->DescribeLiveDomainCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeLiveDomainPlayInfoListOutcome LiveClient::DescribeLiveDomainPlayInfoList(const DescribeLiveDomainPlayInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveDomainPlayInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveDomainPlayInfoListResponse rsp = DescribeLiveDomainPlayInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveDomainPlayInfoListOutcome(rsp);
+        else
+            return DescribeLiveDomainPlayInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveDomainPlayInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveDomainPlayInfoListAsync(const DescribeLiveDomainPlayInfoListRequest& request, const DescribeLiveDomainPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveDomainPlayInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainPlayInfoListOutcomeCallable LiveClient::DescribeLiveDomainPlayInfoListCallable(const DescribeLiveDomainPlayInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveDomainPlayInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveDomainPlayInfoList(request);
         }
     );
 
@@ -2663,6 +2878,92 @@ LiveClient::DescribeLogDownloadListOutcomeCallable LiveClient::DescribeLogDownlo
     return task->get_future();
 }
 
+LiveClient::DescribePlayErrorCodeDetailInfoListOutcome LiveClient::DescribePlayErrorCodeDetailInfoList(const DescribePlayErrorCodeDetailInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlayErrorCodeDetailInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlayErrorCodeDetailInfoListResponse rsp = DescribePlayErrorCodeDetailInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlayErrorCodeDetailInfoListOutcome(rsp);
+        else
+            return DescribePlayErrorCodeDetailInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlayErrorCodeDetailInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribePlayErrorCodeDetailInfoListAsync(const DescribePlayErrorCodeDetailInfoListRequest& request, const DescribePlayErrorCodeDetailInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlayErrorCodeDetailInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribePlayErrorCodeDetailInfoListOutcomeCallable LiveClient::DescribePlayErrorCodeDetailInfoListCallable(const DescribePlayErrorCodeDetailInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlayErrorCodeDetailInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlayErrorCodeDetailInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribePlayErrorCodeSumInfoListOutcome LiveClient::DescribePlayErrorCodeSumInfoList(const DescribePlayErrorCodeSumInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlayErrorCodeSumInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlayErrorCodeSumInfoListResponse rsp = DescribePlayErrorCodeSumInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlayErrorCodeSumInfoListOutcome(rsp);
+        else
+            return DescribePlayErrorCodeSumInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlayErrorCodeSumInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribePlayErrorCodeSumInfoListAsync(const DescribePlayErrorCodeSumInfoListRequest& request, const DescribePlayErrorCodeSumInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePlayErrorCodeSumInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribePlayErrorCodeSumInfoListOutcomeCallable LiveClient::DescribePlayErrorCodeSumInfoListCallable(const DescribePlayErrorCodeSumInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePlayErrorCodeSumInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePlayErrorCodeSumInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeProIspPlaySumInfoListOutcome LiveClient::DescribeProIspPlaySumInfoList(const DescribeProIspPlaySumInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProIspPlaySumInfoList");
@@ -2871,6 +3172,135 @@ LiveClient::DescribeStreamPlayInfoListOutcomeCallable LiveClient::DescribeStream
         [this, request]()
         {
             return this->DescribeStreamPlayInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeStreamPushInfoListOutcome LiveClient::DescribeStreamPushInfoList(const DescribeStreamPushInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamPushInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamPushInfoListResponse rsp = DescribeStreamPushInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamPushInfoListOutcome(rsp);
+        else
+            return DescribeStreamPushInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamPushInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeStreamPushInfoListAsync(const DescribeStreamPushInfoListRequest& request, const DescribeStreamPushInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStreamPushInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeStreamPushInfoListOutcomeCallable LiveClient::DescribeStreamPushInfoListCallable(const DescribeStreamPushInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamPushInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStreamPushInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeTopClientIpSumInfoListOutcome LiveClient::DescribeTopClientIpSumInfoList(const DescribeTopClientIpSumInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopClientIpSumInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopClientIpSumInfoListResponse rsp = DescribeTopClientIpSumInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopClientIpSumInfoListOutcome(rsp);
+        else
+            return DescribeTopClientIpSumInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopClientIpSumInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeTopClientIpSumInfoListAsync(const DescribeTopClientIpSumInfoListRequest& request, const DescribeTopClientIpSumInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopClientIpSumInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeTopClientIpSumInfoListOutcomeCallable LiveClient::DescribeTopClientIpSumInfoListCallable(const DescribeTopClientIpSumInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopClientIpSumInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopClientIpSumInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeVisitTopSumInfoListOutcome LiveClient::DescribeVisitTopSumInfoList(const DescribeVisitTopSumInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVisitTopSumInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVisitTopSumInfoListResponse rsp = DescribeVisitTopSumInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVisitTopSumInfoListOutcome(rsp);
+        else
+            return DescribeVisitTopSumInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVisitTopSumInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeVisitTopSumInfoListAsync(const DescribeVisitTopSumInfoListRequest& request, const DescribeVisitTopSumInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVisitTopSumInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeVisitTopSumInfoListOutcomeCallable LiveClient::DescribeVisitTopSumInfoListCallable(const DescribeVisitTopSumInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVisitTopSumInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVisitTopSumInfoList(request);
         }
     );
 
@@ -3602,49 +4032,6 @@ LiveClient::ResumeLiveStreamOutcomeCallable LiveClient::ResumeLiveStreamCallable
         [this, request]()
         {
             return this->ResumeLiveStream(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LiveClient::SetLiveWatermarkStatusOutcome LiveClient::SetLiveWatermarkStatus(const SetLiveWatermarkStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "SetLiveWatermarkStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SetLiveWatermarkStatusResponse rsp = SetLiveWatermarkStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SetLiveWatermarkStatusOutcome(rsp);
-        else
-            return SetLiveWatermarkStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return SetLiveWatermarkStatusOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::SetLiveWatermarkStatusAsync(const SetLiveWatermarkStatusRequest& request, const SetLiveWatermarkStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetLiveWatermarkStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::SetLiveWatermarkStatusOutcomeCallable LiveClient::SetLiveWatermarkStatusCallable(const SetLiveWatermarkStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SetLiveWatermarkStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->SetLiveWatermarkStatus(request);
         }
     );
 

@@ -29,6 +29,14 @@
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByProjectRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByProjectResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByRegionRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByRegionResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h>
@@ -58,6 +66,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBillResourceSummaryResponse> DescribeBillResourceSummaryOutcome;
                 typedef std::future<DescribeBillResourceSummaryOutcome> DescribeBillResourceSummaryOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillResourceSummaryRequest&, DescribeBillResourceSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillResourceSummaryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBillSummaryByPayModeResponse> DescribeBillSummaryByPayModeOutcome;
+                typedef std::future<DescribeBillSummaryByPayModeOutcome> DescribeBillSummaryByPayModeOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryByPayModeRequest&, DescribeBillSummaryByPayModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryByPayModeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBillSummaryByProductResponse> DescribeBillSummaryByProductOutcome;
+                typedef std::future<DescribeBillSummaryByProductOutcome> DescribeBillSummaryByProductOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryByProductRequest&, DescribeBillSummaryByProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryByProductAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBillSummaryByProjectResponse> DescribeBillSummaryByProjectOutcome;
+                typedef std::future<DescribeBillSummaryByProjectOutcome> DescribeBillSummaryByProjectOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryByProjectRequest&, DescribeBillSummaryByProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryByProjectAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBillSummaryByRegionResponse> DescribeBillSummaryByRegionOutcome;
+                typedef std::future<DescribeBillSummaryByRegionOutcome> DescribeBillSummaryByRegionOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryByRegionRequest&, DescribeBillSummaryByRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryByRegionAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDealsByCondResponse> DescribeDealsByCondOutcome;
                 typedef std::future<DescribeDealsByCondOutcome> DescribeDealsByCondOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDealsByCondRequest&, DescribeDealsByCondOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDealsByCondAsyncHandler;
@@ -89,13 +109,49 @@ namespace TencentCloud
                 DescribeBillDetailOutcomeCallable DescribeBillDetailCallable(const Model::DescribeBillDetailRequest& request);
 
                 /**
-                 *查询账单资源汇总数据
+                 *查询账单资源汇总数据 
                  * @param req DescribeBillResourceSummaryRequest
                  * @return DescribeBillResourceSummaryOutcome
                  */
                 DescribeBillResourceSummaryOutcome DescribeBillResourceSummary(const Model::DescribeBillResourceSummaryRequest &request);
                 void DescribeBillResourceSummaryAsync(const Model::DescribeBillResourceSummaryRequest& request, const DescribeBillResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillResourceSummaryOutcomeCallable DescribeBillResourceSummaryCallable(const Model::DescribeBillResourceSummaryRequest& request);
+
+                /**
+                 *获取按付费模式汇总费用分布
+                 * @param req DescribeBillSummaryByPayModeRequest
+                 * @return DescribeBillSummaryByPayModeOutcome
+                 */
+                DescribeBillSummaryByPayModeOutcome DescribeBillSummaryByPayMode(const Model::DescribeBillSummaryByPayModeRequest &request);
+                void DescribeBillSummaryByPayModeAsync(const Model::DescribeBillSummaryByPayModeRequest& request, const DescribeBillSummaryByPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillSummaryByPayModeOutcomeCallable DescribeBillSummaryByPayModeCallable(const Model::DescribeBillSummaryByPayModeRequest& request);
+
+                /**
+                 *获取产品汇总费用分布
+                 * @param req DescribeBillSummaryByProductRequest
+                 * @return DescribeBillSummaryByProductOutcome
+                 */
+                DescribeBillSummaryByProductOutcome DescribeBillSummaryByProduct(const Model::DescribeBillSummaryByProductRequest &request);
+                void DescribeBillSummaryByProductAsync(const Model::DescribeBillSummaryByProductRequest& request, const DescribeBillSummaryByProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillSummaryByProductOutcomeCallable DescribeBillSummaryByProductCallable(const Model::DescribeBillSummaryByProductRequest& request);
+
+                /**
+                 *获取按项目汇总费用分布
+                 * @param req DescribeBillSummaryByProjectRequest
+                 * @return DescribeBillSummaryByProjectOutcome
+                 */
+                DescribeBillSummaryByProjectOutcome DescribeBillSummaryByProject(const Model::DescribeBillSummaryByProjectRequest &request);
+                void DescribeBillSummaryByProjectAsync(const Model::DescribeBillSummaryByProjectRequest& request, const DescribeBillSummaryByProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillSummaryByProjectOutcomeCallable DescribeBillSummaryByProjectCallable(const Model::DescribeBillSummaryByProjectRequest& request);
+
+                /**
+                 *获取按地域汇总费用分布
+                 * @param req DescribeBillSummaryByRegionRequest
+                 * @return DescribeBillSummaryByRegionOutcome
+                 */
+                DescribeBillSummaryByRegionOutcome DescribeBillSummaryByRegion(const Model::DescribeBillSummaryByRegionRequest &request);
+                void DescribeBillSummaryByRegionAsync(const Model::DescribeBillSummaryByRegionRequest& request, const DescribeBillSummaryByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillSummaryByRegionOutcomeCallable DescribeBillSummaryByRegionCallable(const Model::DescribeBillSummaryByRegionRequest& request);
 
                 /**
                  *查询订单

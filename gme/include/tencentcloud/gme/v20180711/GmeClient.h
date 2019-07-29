@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h>
 #include <tencentcloud/gme/v20180711/model/VoiceFilterRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 GmeClient(const Credential &credential, const std::string &region);
                 GmeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeFilterResultResponse> DescribeFilterResultOutcome;
+                typedef std::future<DescribeFilterResultOutcome> DescribeFilterResultOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultRequest&, DescribeFilterResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFilterResultListResponse> DescribeFilterResultListOutcome;
                 typedef std::future<DescribeFilterResultListOutcome> DescribeFilterResultListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultListRequest&, DescribeFilterResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultListAsyncHandler;
@@ -51,7 +56,16 @@ namespace TencentCloud
 
 
                 /**
-                 *根据日期查询识别结果列表，按分页反回
+                 *根据应用ID和文件ID查询识别结果
+                 * @param req DescribeFilterResultRequest
+                 * @return DescribeFilterResultOutcome
+                 */
+                DescribeFilterResultOutcome DescribeFilterResult(const Model::DescribeFilterResultRequest &request);
+                void DescribeFilterResultAsync(const Model::DescribeFilterResultRequest& request, const DescribeFilterResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFilterResultOutcomeCallable DescribeFilterResultCallable(const Model::DescribeFilterResultRequest& request);
+
+                /**
+                 *根据日期查询识别结果列表
                  * @param req DescribeFilterResultListRequest
                  * @return DescribeFilterResultListOutcome
                  */
@@ -60,8 +74,9 @@ namespace TencentCloud
                 DescribeFilterResultListOutcomeCallable DescribeFilterResultListCallable(const Model::DescribeFilterResultListRequest& request);
 
                 /**
-                 *本接口用于识别涉黄、涉政、涉恐等违规音频，成功会回调配置在应用的回调地址。回调示例如下：
-{"BizId":0,"FileId":"test_file_id","FileName":"test_file_name","TimeStamp":"0000-00-00 00:00:00","Data":[{"Type":1,"Word":"xx"}]}
+                 *本接口用于识别涉黄、涉政等违规音频，成功会回调配置在应用的回调地址。回调示例如下：
+{"BizId":0,"FileId":"test_file_id","FileName":"test_file_name","FileUrl":"test_file_url","OpenId":"test_open_id","TimeStamp":"0000-00-00 00:00:00","Data":[{"Type":1,"Word":"xx"}]}
+Type表示过滤类型，1：政治，2：色情，3：谩骂
                  * @param req VoiceFilterRequest
                  * @return VoiceFilterOutcome
                  */

@@ -34,7 +34,8 @@ RuleOutput::RuleOutput() :
     m_httpGzipHasBeenSet(false),
     m_beAutoCreatedHasBeenSet(false),
     m_defaultServerHasBeenSet(false),
-    m_http2HasBeenSet(false)
+    m_http2HasBeenSet(false),
+    m_forwardTypeHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome RuleOutput::Deserialize(const Value &value)
         m_http2HasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardType") && !value["ForwardType"].IsNull())
+    {
+        if (!value["ForwardType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.ForwardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardType = string(value["ForwardType"].GetString());
+        m_forwardTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +317,14 @@ void RuleOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Http2";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_http2, allocator);
+    }
+
+    if (m_forwardTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForwardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_forwardType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -517,5 +536,21 @@ void RuleOutput::SetHttp2(const bool& _http2)
 bool RuleOutput::Http2HasBeenSet() const
 {
     return m_http2HasBeenSet;
+}
+
+string RuleOutput::GetForwardType() const
+{
+    return m_forwardType;
+}
+
+void RuleOutput::SetForwardType(const string& _forwardType)
+{
+    m_forwardType = _forwardType;
+    m_forwardTypeHasBeenSet = true;
+}
+
+bool RuleOutput::ForwardTypeHasBeenSet() const
+{
+    return m_forwardTypeHasBeenSet;
 }
 

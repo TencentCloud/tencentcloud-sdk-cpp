@@ -71,6 +71,7 @@ namespace TencentCloud
 <li>sampleSnapshotInfo（采样截图信息）。</li>
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
                      * @return Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
 <li>basicInfo（视频基础信息）。</li>
 <li>metaData（视频元信息）。</li>
@@ -81,6 +82,7 @@ namespace TencentCloud
 <li>sampleSnapshotInfo（采样截图信息）。</li>
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
                      */
                     std::vector<std::string> GetFilters() const;
 
@@ -95,6 +97,7 @@ namespace TencentCloud
 <li>sampleSnapshotInfo（采样截图信息）。</li>
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
                      * @param Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
 <li>basicInfo（视频基础信息）。</li>
 <li>metaData（视频元信息）。</li>
@@ -105,6 +108,7 @@ namespace TencentCloud
 <li>sampleSnapshotInfo（采样截图信息）。</li>
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
 
@@ -151,6 +155,7 @@ namespace TencentCloud
 <li>sampleSnapshotInfo（采样截图信息）。</li>
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
                      */
                     std::vector<std::string> m_filters;
                     bool m_filtersHasBeenSet;

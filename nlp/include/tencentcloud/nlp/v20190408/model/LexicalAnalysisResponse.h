@@ -45,8 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名实体识别结果
-                     * @return NerTokens 命名实体识别结果
+                     * 获取命名实体识别结果。取值范围：
+<li>PER：表示人名</li>
+<li>LOC：表示地名</li>
+<li>ORG：表示机构团体名</li>
+                     * @return NerTokens 命名实体识别结果。取值范围：
+<li>PER：表示人名</li>
+<li>LOC：表示地名</li>
+<li>ORG：表示机构团体名</li>
                      */
                     std::vector<NerToken> GetNerTokens() const;
 
@@ -57,8 +63,8 @@ namespace TencentCloud
                     bool NerTokensHasBeenSet() const;
 
                     /**
-                     * 获取分词&词性标注结果
-                     * @return PosTokens 分词&词性标注结果
+                     * 获取分词&词性标注结果（词性表请参见附录）
+                     * @return PosTokens 分词&词性标注结果（词性表请参见附录）
                      */
                     std::vector<PosToken> GetPosTokens() const;
 
@@ -71,13 +77,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名实体识别结果
+                     * 命名实体识别结果。取值范围：
+<li>PER：表示人名</li>
+<li>LOC：表示地名</li>
+<li>ORG：表示机构团体名</li>
                      */
                     std::vector<NerToken> m_nerTokens;
                     bool m_nerTokensHasBeenSet;
 
                     /**
-                     * 分词&词性标注结果
+                     * 分词&词性标注结果（词性表请参见附录）
                      */
                     std::vector<PosToken> m_posTokens;
                     bool m_posTokensHasBeenSet;

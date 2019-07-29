@@ -78,12 +78,12 @@ string UpdatePolicyRequest::ToJsonString() const
 }
 
 
-int64_t UpdatePolicyRequest::GetPolicyId() const
+uint64_t UpdatePolicyRequest::GetPolicyId() const
 {
     return m_policyId;
 }
 
-void UpdatePolicyRequest::SetPolicyId(const int64_t& _policyId)
+void UpdatePolicyRequest::SetPolicyId(const uint64_t& _policyId)
 {
     m_policyId = _policyId;
     m_policyIdHasBeenSet = true;

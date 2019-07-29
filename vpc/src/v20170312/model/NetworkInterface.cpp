@@ -35,7 +35,8 @@ NetworkInterface::NetworkInterface() :
     m_attachmentHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_ipv6AddressSetHasBeenSet(false)
+    m_ipv6AddressSetHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,26 @@ CoreInternalOutcome NetworkInterface::Deserialize(const Value &value)
         m_ipv6AddressSetHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `NetworkInterface.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -347,6 +368,21 @@ void NetworkInterface::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
         int i=0;
         for (auto itr = m_ipv6AddressSet.begin(); itr != m_ipv6AddressSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -578,5 +614,21 @@ void NetworkInterface::SetIpv6AddressSet(const vector<Ipv6Address>& _ipv6Address
 bool NetworkInterface::Ipv6AddressSetHasBeenSet() const
 {
     return m_ipv6AddressSetHasBeenSet;
+}
+
+vector<Tag> NetworkInterface::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void NetworkInterface::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool NetworkInterface::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

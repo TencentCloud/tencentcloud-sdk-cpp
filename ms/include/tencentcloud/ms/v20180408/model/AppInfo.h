@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取app的包名，如果是专业版加固和企业版本加固，需要正确的传递此字段
-                     * @return AppPkgName app的包名，如果是专业版加固和企业版本加固，需要正确的传递此字段
+                     * 获取app的包名，需要正确的传递此字段
+                     * @return AppPkgName app的包名，需要正确的传递此字段
                      */
                     std::string GetAppPkgName() const;
 
                     /**
-                     * 设置app的包名，如果是专业版加固和企业版本加固，需要正确的传递此字段
-                     * @param AppPkgName app的包名，如果是专业版加固和企业版本加固，需要正确的传递此字段
+                     * 设置app的包名，需要正确的传递此字段
+                     * @param AppPkgName app的包名，需要正确的传递此字段
                      */
                     void SetAppPkgName(const std::string& _appPkgName);
 
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * app的包名，如果是专业版加固和企业版本加固，需要正确的传递此字段
+                     * app的包名，需要正确的传递此字段
                      */
                     std::string m_appPkgName;
                     bool m_appPkgNameHasBeenSet;

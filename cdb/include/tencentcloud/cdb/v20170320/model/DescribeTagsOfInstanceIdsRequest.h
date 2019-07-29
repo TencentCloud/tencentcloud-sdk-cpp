@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例列表
-                     * @return InstanceIds 实例列表
+                     * 获取实例列表。
+                     * @return InstanceIds 实例列表。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例列表
-                     * @param InstanceIds 实例列表
+                     * 设置实例列表。
+                     * @param InstanceIds 实例列表。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。
+                     * @return Offset 偏移量。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量。
+                     * @param Offset 偏移量。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页返回多少个标签
-                     * @return Limit 每页返回多少个标签
+                     * 获取每页返回多少个标签。
+                     * @return Limit 每页返回多少个标签。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页返回多少个标签
-                     * @param Limit 每页返回多少个标签
+                     * 设置每页返回多少个标签。
+                     * @param Limit 每页返回多少个标签。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例列表
+                     * 实例列表。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页返回多少个标签
+                     * 每页返回多少个标签。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

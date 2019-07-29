@@ -27,7 +27,8 @@ RuleInput::RuleInput() :
     m_sessionExpireTimeHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_certificateHasBeenSet(false),
-    m_schedulerHasBeenSet(false)
+    m_schedulerHasBeenSet(false),
+    m_forwardTypeHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,16 @@ CoreInternalOutcome RuleInput::Deserialize(const Value &value)
         m_schedulerHasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardType") && !value["ForwardType"].IsNull())
+    {
+        if (!value["ForwardType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleInput.ForwardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardType = string(value["ForwardType"].GetString());
+        m_forwardTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void RuleInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Scheduler";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_scheduler.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForwardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_forwardType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void RuleInput::SetScheduler(const string& _scheduler)
 bool RuleInput::SchedulerHasBeenSet() const
 {
     return m_schedulerHasBeenSet;
+}
+
+string RuleInput::GetForwardType() const
+{
+    return m_forwardType;
+}
+
+void RuleInput::SetForwardType(const string& _forwardType)
+{
+    m_forwardType = _forwardType;
+    m_forwardTypeHasBeenSet = true;
+}
+
+bool RuleInput::ForwardTypeHasBeenSet() const
+{
+    return m_forwardTypeHasBeenSet;
 }
 

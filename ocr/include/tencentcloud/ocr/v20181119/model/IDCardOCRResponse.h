@@ -146,7 +146,8 @@ WarnInfos，告警信息（Code - 告警码，Msg - 告警信息内容），识�
 
 Code 告警码列表和释义：
 -9103	身份证翻拍告警，
--9102	身份证复印件告警。
+-9102	身份证复印件告警，
+-9105	身份证框内遮挡告警。
                      * @return AdvancedInfo 扩展信息，根据请求的可选字段返回对应内容，不请求则不返回，具体输入参考示例3。目前支持的扩展字段为：
 IdCard，身份证照片，请求 CropIdCard 时返回；
 Portrait，人像照片，请求 CropPortrait 时返回；
@@ -154,7 +155,8 @@ WarnInfos，告警信息（Code - 告警码，Msg - 告警信息内容），识�
 
 Code 告警码列表和释义：
 -9103	身份证翻拍告警，
--9102	身份证复印件告警。
+-9102	身份证复印件告警，
+-9105	身份证框内遮挡告警。
                      */
                     std::string GetAdvancedInfo() const;
 
@@ -222,7 +224,8 @@ WarnInfos，告警信息（Code - 告警码，Msg - 告警信息内容），识�
 
 Code 告警码列表和释义：
 -9103	身份证翻拍告警，
--9102	身份证复印件告警。
+-9102	身份证复印件告警，
+-9105	身份证框内遮挡告警。
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;

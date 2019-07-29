@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器ID列表， 范围[1-65535]
-                     * @return ListenerIds 负载均衡监听器ID列表， 范围[1-65535]
+                     * 获取负载均衡监听器ID列表
+                     * @return ListenerIds 负载均衡监听器ID列表
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置负载均衡监听器ID列表， 范围[1-65535]
-                     * @param ListenerIds 负载均衡监听器ID列表， 范围[1-65535]
+                     * 设置负载均衡监听器ID列表
+                     * @param ListenerIds 负载均衡监听器ID列表
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听端口
-                     * @return ListenerPort 负载均衡监听端口
+                     * 获取负载均衡监听端口， 范围[1-65535]
+                     * @return ListenerPort 负载均衡监听端口， 范围[1-65535]
                      */
                     int64_t GetListenerPort() const;
 
                     /**
-                     * 设置负载均衡监听端口
-                     * @param ListenerPort 负载均衡监听端口
+                     * 设置负载均衡监听端口， 范围[1-65535]
+                     * @param ListenerPort 负载均衡监听端口， 范围[1-65535]
                      */
                     void SetListenerPort(const int64_t& _listenerPort);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器ID列表， 范围[1-65535]
+                     * 负载均衡监听器ID列表
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;
@@ -153,7 +153,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 负载均衡监听端口
+                     * 负载均衡监听端口， 范围[1-65535]
                      */
                     int64_t m_listenerPort;
                     bool m_listenerPortHasBeenSet;

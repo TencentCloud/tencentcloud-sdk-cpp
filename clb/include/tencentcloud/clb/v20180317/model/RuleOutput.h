@@ -303,6 +303,24 @@ namespace TencentCloud
                      */
                     bool Http2HasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡与后端服务之间的转发协议
+                     * @return ForwardType 负载均衡与后端服务之间的转发协议
+                     */
+                    std::string GetForwardType() const;
+
+                    /**
+                     * 设置负载均衡与后端服务之间的转发协议
+                     * @param ForwardType 负载均衡与后端服务之间的转发协议
+                     */
+                    void SetForwardType(const std::string& _forwardType);
+
+                    /**
+                     * 判断参数 ForwardType 是否已赋值
+                     * @return ForwardType 是否已赋值
+                     */
+                    bool ForwardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -387,6 +405,12 @@ namespace TencentCloud
                      */
                     bool m_http2;
                     bool m_http2HasBeenSet;
+
+                    /**
+                     * 负载均衡与后端服务之间的转发协议
+                     */
+                    std::string m_forwardType;
+                    bool m_forwardTypeHasBeenSet;
 
                 };
             }

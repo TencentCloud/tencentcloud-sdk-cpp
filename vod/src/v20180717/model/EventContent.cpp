@@ -35,7 +35,8 @@ EventContent::EventContent() :
     m_clipCompleteEventHasBeenSet(false),
     m_createImageSpriteCompleteEventHasBeenSet(false),
     m_snapshotByTimeOffsetCompleteEventHasBeenSet(false),
-    m_composeMediaCompleteEventHasBeenSet(false)
+    m_composeMediaCompleteEventHasBeenSet(false),
+    m_wechatMiniProgramPublishCompleteEventHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,23 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
         m_composeMediaCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("WechatMiniProgramPublishCompleteEvent") && !value["WechatMiniProgramPublishCompleteEvent"].IsNull())
+    {
+        if (!value["WechatMiniProgramPublishCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EventContent.WechatMiniProgramPublishCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_wechatMiniProgramPublishCompleteEvent.Deserialize(value["WechatMiniProgramPublishCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_wechatMiniProgramPublishCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -399,6 +417,15 @@ void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator
         m_composeMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_wechatMiniProgramPublishCompleteEventHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WechatMiniProgramPublishCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_wechatMiniProgramPublishCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -482,12 +509,12 @@ bool EventContent::FileDeleteEventHasBeenSet() const
     return m_fileDeleteEventHasBeenSet;
 }
 
-PullFileTask EventContent::GetPullCompleteEvent() const
+PullUploadTask EventContent::GetPullCompleteEvent() const
 {
     return m_pullCompleteEvent;
 }
 
-void EventContent::SetPullCompleteEvent(const PullFileTask& _pullCompleteEvent)
+void EventContent::SetPullCompleteEvent(const PullUploadTask& _pullCompleteEvent)
 {
     m_pullCompleteEvent = _pullCompleteEvent;
     m_pullCompleteEventHasBeenSet = true;
@@ -624,5 +651,21 @@ void EventContent::SetComposeMediaCompleteEvent(const ComposeMediaTask& _compose
 bool EventContent::ComposeMediaCompleteEventHasBeenSet() const
 {
     return m_composeMediaCompleteEventHasBeenSet;
+}
+
+WechatMiniProgramPublishTask EventContent::GetWechatMiniProgramPublishCompleteEvent() const
+{
+    return m_wechatMiniProgramPublishCompleteEvent;
+}
+
+void EventContent::SetWechatMiniProgramPublishCompleteEvent(const WechatMiniProgramPublishTask& _wechatMiniProgramPublishCompleteEvent)
+{
+    m_wechatMiniProgramPublishCompleteEvent = _wechatMiniProgramPublishCompleteEvent;
+    m_wechatMiniProgramPublishCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::WechatMiniProgramPublishCompleteEventHasBeenSet() const
+{
+    return m_wechatMiniProgramPublishCompleteEventHasBeenSet;
 }
 

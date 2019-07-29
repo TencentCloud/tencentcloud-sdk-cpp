@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符
-                     * @return Text 合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符
+                     * 获取合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符。包含空格等字符时需要url encode再传输。
+                     * @return Text 合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符。包含空格等字符时需要url encode再传输。
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符
-                     * @param Text 合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符
+                     * 设置合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符。包含空格等字符时需要url encode再传输。
+                     * @param Text 合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符。包含空格等字符时需要url encode再传输。
                      */
                     void SetText(const std::string& _text);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取音色<li>0-亲和女声默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
-                     * @return VoiceType 音色<li>0-亲和女声默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
+                     * 获取音色<li>0-亲和女声(默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
+                     * @return VoiceType 音色<li>0-亲和女声(默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
                      */
                     int64_t GetVoiceType() const;
 
                     /**
-                     * 设置音色<li>0-亲和女声默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
-                     * @param VoiceType 音色<li>0-亲和女声默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
+                     * 设置音色<li>0-亲和女声(默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
+                     * @param VoiceType 音色<li>0-亲和女声(默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
                      */
                     void SetVoiceType(const int64_t& _voiceType);
 
@@ -208,10 +208,28 @@ namespace TencentCloud
                      */
                     bool SampleRateHasBeenSet() const;
 
+                    /**
+                     * 获取返回音频格式，可取值：wav（默认），mp3
+                     * @return Codec 返回音频格式，可取值：wav（默认），mp3
+                     */
+                    std::string GetCodec() const;
+
+                    /**
+                     * 设置返回音频格式，可取值：wav（默认），mp3
+                     * @param Codec 返回音频格式，可取值：wav（默认），mp3
+                     */
+                    void SetCodec(const std::string& _codec);
+
+                    /**
+                     * 判断参数 Codec 是否已赋值
+                     * @return Codec 是否已赋值
+                     */
+                    bool CodecHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符
+                     * 合成语音的源文本，按UTF-8编码统一计算，中文最大支持350字符，英文最大支持500字符。包含空格等字符时需要url encode再传输。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
@@ -248,7 +266,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 音色<li>0-亲和女声默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
+                     * 音色<li>0-亲和女声(默认)</li><li>1-亲和男声</li><li>2-成熟男声</li><li>3-活力男声</li><li>4-温暖女声</li><li>5-情感女声</li><li>6-情感男声</li>
                      */
                     int64_t m_voiceType;
                     bool m_voiceTypeHasBeenSet;
@@ -264,6 +282,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
+
+                    /**
+                     * 返回音频格式，可取值：wav（默认），mp3
+                     */
+                    std::string m_codec;
+                    bool m_codecHasBeenSet;
 
                 };
             }

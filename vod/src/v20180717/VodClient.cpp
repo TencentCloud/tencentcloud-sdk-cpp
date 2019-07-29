@@ -1373,6 +1373,49 @@ VodClient::DescribeReviewDetailsOutcomeCallable VodClient::DescribeReviewDetails
     return task->get_future();
 }
 
+VodClient::DescribeSubAppIdsOutcome VodClient::DescribeSubAppIds(const DescribeSubAppIdsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubAppIds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubAppIdsResponse rsp = DescribeSubAppIdsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubAppIdsOutcome(rsp);
+        else
+            return DescribeSubAppIdsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubAppIdsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeSubAppIdsAsync(const DescribeSubAppIdsRequest& request, const DescribeSubAppIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubAppIds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeSubAppIdsOutcomeCallable VodClient::DescribeSubAppIdsCallable(const DescribeSubAppIdsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubAppIdsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubAppIds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeTaskDetailOutcome VodClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskDetail");
@@ -1975,6 +2018,92 @@ VodClient::ModifyPersonSampleOutcomeCallable VodClient::ModifyPersonSampleCallab
     return task->get_future();
 }
 
+VodClient::ModifySubAppIdInfoOutcome VodClient::ModifySubAppIdInfo(const ModifySubAppIdInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySubAppIdInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySubAppIdInfoResponse rsp = ModifySubAppIdInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySubAppIdInfoOutcome(rsp);
+        else
+            return ModifySubAppIdInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySubAppIdInfoOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifySubAppIdInfoAsync(const ModifySubAppIdInfoRequest& request, const ModifySubAppIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySubAppIdInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifySubAppIdInfoOutcomeCallable VodClient::ModifySubAppIdInfoCallable(const ModifySubAppIdInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySubAppIdInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySubAppIdInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ModifySubAppIdStatusOutcome VodClient::ModifySubAppIdStatus(const ModifySubAppIdStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySubAppIdStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySubAppIdStatusResponse rsp = ModifySubAppIdStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySubAppIdStatusOutcome(rsp);
+        else
+            return ModifySubAppIdStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySubAppIdStatusOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifySubAppIdStatusAsync(const ModifySubAppIdStatusRequest& request, const ModifySubAppIdStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySubAppIdStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifySubAppIdStatusOutcomeCallable VodClient::ModifySubAppIdStatusCallable(const ModifySubAppIdStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySubAppIdStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySubAppIdStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyTranscodeTemplateOutcome VodClient::ModifyTranscodeTemplate(const ModifyTranscodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTranscodeTemplate");
@@ -2276,6 +2405,49 @@ VodClient::PullEventsOutcomeCallable VodClient::PullEventsCallable(const PullEve
     return task->get_future();
 }
 
+VodClient::PullUploadOutcome VodClient::PullUpload(const PullUploadRequest &request)
+{
+    auto outcome = MakeRequest(request, "PullUpload");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PullUploadResponse rsp = PullUploadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PullUploadOutcome(rsp);
+        else
+            return PullUploadOutcome(o.GetError());
+    }
+    else
+    {
+        return PullUploadOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::PullUploadAsync(const PullUploadRequest& request, const PullUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PullUpload(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::PullUploadOutcomeCallable VodClient::PullUploadCallable(const PullUploadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PullUploadOutcome()>>(
+        [this, request]()
+        {
+            return this->PullUpload(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::PushUrlCacheOutcome VodClient::PushUrlCache(const PushUrlCacheRequest &request)
 {
     auto outcome = MakeRequest(request, "PushUrlCache");
@@ -2441,6 +2613,49 @@ VodClient::SimpleHlsClipOutcomeCallable VodClient::SimpleHlsClipCallable(const S
         [this, request]()
         {
             return this->SimpleHlsClip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::WeChatMiniProgramPublishOutcome VodClient::WeChatMiniProgramPublish(const WeChatMiniProgramPublishRequest &request)
+{
+    auto outcome = MakeRequest(request, "WeChatMiniProgramPublish");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        WeChatMiniProgramPublishResponse rsp = WeChatMiniProgramPublishResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return WeChatMiniProgramPublishOutcome(rsp);
+        else
+            return WeChatMiniProgramPublishOutcome(o.GetError());
+    }
+    else
+    {
+        return WeChatMiniProgramPublishOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::WeChatMiniProgramPublishAsync(const WeChatMiniProgramPublishRequest& request, const WeChatMiniProgramPublishAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->WeChatMiniProgramPublish(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::WeChatMiniProgramPublishOutcomeCallable VodClient::WeChatMiniProgramPublishCallable(const WeChatMiniProgramPublishRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<WeChatMiniProgramPublishOutcome()>>(
+        [this, request]()
+        {
+            return this->WeChatMiniProgramPublish(request);
         }
     );
 

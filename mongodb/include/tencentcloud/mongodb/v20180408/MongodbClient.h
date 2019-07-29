@@ -23,10 +23,24 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mongodb/v20180408/model/AssignProjectRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/AssignProjectResponse.h>
 #include <tencentcloud/mongodb/v20180408/model/CreateDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20180408/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20180408/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/mongodb/v20180408/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeDBInstancesRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeDBInstancesResponse.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeSlowLogRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeSlowLogResponse.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeSpecInfoRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeSpecInfoResponse.h>
+#include <tencentcloud/mongodb/v20180408/model/RenameInstanceRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/RenameInstanceResponse.h>
+#include <tencentcloud/mongodb/v20180408/model/SetAutoRenewRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/SetAutoRenewResponse.h>
+#include <tencentcloud/mongodb/v20180408/model/SetPasswordRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/SetPasswordResponse.h>
 #include <tencentcloud/mongodb/v20180408/model/TerminateDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20180408/model/TerminateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20180408/model/UpgradeDBInstanceRequest.h>
@@ -47,12 +61,33 @@ namespace TencentCloud
                 MongodbClient(const Credential &credential, const std::string &region);
                 MongodbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AssignProjectResponse> AssignProjectOutcome;
+                typedef std::future<AssignProjectOutcome> AssignProjectOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::AssignProjectRequest&, AssignProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignProjectAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBInstanceResponse> CreateDBInstanceOutcome;
                 typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceRequest&, CreateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
+                typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSlowLogResponse> DescribeSlowLogOutcome;
+                typedef std::future<DescribeSlowLogOutcome> DescribeSlowLogOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeSlowLogRequest&, DescribeSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSpecInfoResponse> DescribeSpecInfoOutcome;
+                typedef std::future<DescribeSpecInfoOutcome> DescribeSpecInfoOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeSpecInfoRequest&, DescribeSpecInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecInfoAsyncHandler;
+                typedef Outcome<Error, Model::RenameInstanceResponse> RenameInstanceOutcome;
+                typedef std::future<RenameInstanceOutcome> RenameInstanceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::RenameInstanceRequest&, RenameInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameInstanceAsyncHandler;
+                typedef Outcome<Error, Model::SetAutoRenewResponse> SetAutoRenewOutcome;
+                typedef std::future<SetAutoRenewOutcome> SetAutoRenewOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetAutoRenewRequest&, SetAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoRenewAsyncHandler;
+                typedef Outcome<Error, Model::SetPasswordResponse> SetPasswordOutcome;
+                typedef std::future<SetPasswordOutcome> SetPasswordOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetPasswordRequest&, SetPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetPasswordAsyncHandler;
                 typedef Outcome<Error, Model::TerminateDBInstanceResponse> TerminateDBInstanceOutcome;
                 typedef std::future<TerminateDBInstanceOutcome> TerminateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::TerminateDBInstanceRequest&, TerminateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDBInstanceAsyncHandler;
@@ -64,6 +99,17 @@ namespace TencentCloud
                 typedef std::function<void(const MongodbClient*, const Model::UpgradeDBInstanceHourRequest&, UpgradeDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceHourAsyncHandler;
 
 
+
+                /**
+                 *本接口(AssignProject)用于指定云数据库实例的所属项目。
+
+
+                 * @param req AssignProjectRequest
+                 * @return AssignProjectOutcome
+                 */
+                AssignProjectOutcome AssignProject(const Model::AssignProjectRequest &request);
+                void AssignProjectAsync(const Model::AssignProjectRequest& request, const AssignProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssignProjectOutcomeCallable AssignProjectCallable(const Model::AssignProjectRequest& request);
 
                 /**
                  *本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。
@@ -82,6 +128,62 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcome CreateDBInstanceHour(const Model::CreateDBInstanceHourRequest &request);
                 void CreateDBInstanceHourAsync(const Model::CreateDBInstanceHourRequest& request, const CreateDBInstanceHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
+
+                /**
+                 *本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。
+                 * @param req DescribeDBInstancesRequest
+                 * @return DescribeDBInstancesOutcome
+                 */
+                DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest &request);
+                void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
+
+                /**
+                 *本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。
+                 * @param req DescribeSlowLogRequest
+                 * @return DescribeSlowLogOutcome
+                 */
+                DescribeSlowLogOutcome DescribeSlowLog(const Model::DescribeSlowLogRequest &request);
+                void DescribeSlowLogAsync(const Model::DescribeSlowLogRequest& request, const DescribeSlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowLogOutcomeCallable DescribeSlowLogCallable(const Model::DescribeSlowLogRequest& request);
+
+                /**
+                 *本接口(DescribeSpecInfo)用于查询实例的售卖规格。
+                 * @param req DescribeSpecInfoRequest
+                 * @return DescribeSpecInfoOutcome
+                 */
+                DescribeSpecInfoOutcome DescribeSpecInfo(const Model::DescribeSpecInfoRequest &request);
+                void DescribeSpecInfoAsync(const Model::DescribeSpecInfoRequest& request, const DescribeSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpecInfoOutcomeCallable DescribeSpecInfoCallable(const Model::DescribeSpecInfoRequest& request);
+
+                /**
+                 *本接口(RenameInstance)用于修改云数据库实例的名称。
+                 * @param req RenameInstanceRequest
+                 * @return RenameInstanceOutcome
+                 */
+                RenameInstanceOutcome RenameInstance(const Model::RenameInstanceRequest &request);
+                void RenameInstanceAsync(const Model::RenameInstanceRequest& request, const RenameInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenameInstanceOutcomeCallable RenameInstanceCallable(const Model::RenameInstanceRequest& request);
+
+                /**
+                 *本接口(SetAutoRenew)用于设置包年包月云数据库实例的续费选项。
+                 * @param req SetAutoRenewRequest
+                 * @return SetAutoRenewOutcome
+                 */
+                SetAutoRenewOutcome SetAutoRenew(const Model::SetAutoRenewRequest &request);
+                void SetAutoRenewAsync(const Model::SetAutoRenewRequest& request, const SetAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAutoRenewOutcomeCallable SetAutoRenewCallable(const Model::SetAutoRenewRequest& request);
+
+                /**
+                 *本接口(SetPassword)用于设置云数据库账户的密码。
+
+
+                 * @param req SetPasswordRequest
+                 * @return SetPasswordOutcome
+                 */
+                SetPasswordOutcome SetPassword(const Model::SetPasswordRequest &request);
+                void SetPasswordAsync(const Model::SetPasswordRequest& request, const SetPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetPasswordOutcomeCallable SetPasswordCallable(const Model::SetPasswordRequest& request);
 
                 /**
                  *本接口(TerminateDBInstance)用于销毁按量计费的MongoDB云数据库实例

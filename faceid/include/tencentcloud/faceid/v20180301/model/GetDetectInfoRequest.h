@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BizTokenHasBeenSet() const;
 
                     /**
-                     * 获取用于细分客户使用场景，由腾讯侧在线下对接时分配。
-                     * @return RuleId 用于细分客户使用场景，由腾讯侧在线下对接时分配。
+                     * 获取用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
+                     * @return RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置用于细分客户使用场景，由腾讯侧在线下对接时分配。
-                     * @param RuleId 用于细分客户使用场景，由腾讯侧在线下对接时分配。
+                     * 设置用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
+                     * @param RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
                      */
                     void SetRuleId(const std::string& _ruleId);
 
@@ -109,7 +109,7 @@ namespace TencentCloud
                     bool m_bizTokenHasBeenSet;
 
                     /**
-                     * 用于细分客户使用场景，由腾讯侧在线下对接时分配。
+                     * 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请加慧眼小助手微信（faceid001）进行咨询。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

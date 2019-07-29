@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。
+                     * @return Offset 偏移量。
                      */
                     int64_t GetOffset() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页返回多少个标签
-                     * @return Limit 每页返回多少个标签
+                     * 获取每页返回多少个标签。
+                     * @return Limit 每页返回多少个标签。
                      */
                     int64_t GetLimit() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取实例标签信息
-                     * @return Rows 实例标签信息
+                     * 获取实例标签信息。
+                     * @return Rows 实例标签信息。
                      */
                     std::vector<TagsInfoOfInstance> GetRows() const;
 
@@ -82,19 +82,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量
+                     * 偏移量。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页返回多少个标签
+                     * 每页返回多少个标签。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 实例标签信息
+                     * 实例标签信息。
                      */
                     std::vector<TagsInfoOfInstance> m_rows;
                     bool m_rowsHasBeenSet;

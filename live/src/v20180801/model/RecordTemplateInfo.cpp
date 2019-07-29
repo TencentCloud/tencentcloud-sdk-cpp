@@ -30,7 +30,8 @@ RecordTemplateInfo::RecordTemplateInfo() :
     m_mp4ParamHasBeenSet(false),
     m_aacParamHasBeenSet(false),
     m_isDelayLiveHasBeenSet(false),
-    m_hlsSpecialParamHasBeenSet(false)
+    m_hlsSpecialParamHasBeenSet(false),
+    m_mp3ParamHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,23 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const Value &value)
         m_hlsSpecialParamHasBeenSet = true;
     }
 
+    if (value.HasMember("Mp3Param") && !value["Mp3Param"].IsNull())
+    {
+        if (!value["Mp3Param"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `RecordTemplateInfo.Mp3Param` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mp3Param.Deserialize(value["Mp3Param"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mp3ParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -246,6 +264,15 @@ void RecordTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& all
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_hlsSpecialParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mp3ParamHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mp3Param";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_mp3Param.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -393,5 +420,21 @@ void RecordTemplateInfo::SetHlsSpecialParam(const HlsSpecialParam& _hlsSpecialPa
 bool RecordTemplateInfo::HlsSpecialParamHasBeenSet() const
 {
     return m_hlsSpecialParamHasBeenSet;
+}
+
+RecordParam RecordTemplateInfo::GetMp3Param() const
+{
+    return m_mp3Param;
+}
+
+void RecordTemplateInfo::SetMp3Param(const RecordParam& _mp3Param)
+{
+    m_mp3Param = _mp3Param;
+    m_mp3ParamHasBeenSet = true;
+}
+
+bool RecordTemplateInfo::Mp3ParamHasBeenSet() const
+{
+    return m_mp3ParamHasBeenSet;
 }
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 传统型后端信息
+                * 传统型负载均衡的后端信息
                 */
                 class ClassicalTargetInfo : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取权重 取值为0-100
-                     * @return Weight 权重 取值为0-100
+                     * 获取权重，取值范围 [0, 100]
+                     * @return Weight 权重，取值范围 [0, 100]
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置权重 取值为0-100
-                     * @param Weight 权重 取值为0-100
+                     * 设置权重，取值范围 [0, 100]
+                     * @param Weight 权重，取值范围 [0, 100]
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 权重 取值为0-100
+                     * 权重，取值范围 [0, 100]
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

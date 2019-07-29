@@ -83,6 +83,49 @@ StsClient::AssumeRoleOutcomeCallable StsClient::AssumeRoleCallable(const AssumeR
     return task->get_future();
 }
 
+StsClient::AssumeRoleWithSAMLOutcome StsClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssumeRoleWithSAML");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssumeRoleWithSAMLResponse rsp = AssumeRoleWithSAMLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssumeRoleWithSAMLOutcome(rsp);
+        else
+            return AssumeRoleWithSAMLOutcome(o.GetError());
+    }
+    else
+    {
+        return AssumeRoleWithSAMLOutcome(outcome.GetError());
+    }
+}
+
+void StsClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssumeRoleWithSAML(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+StsClient::AssumeRoleWithSAMLOutcomeCallable StsClient::AssumeRoleWithSAMLCallable(const AssumeRoleWithSAMLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssumeRoleWithSAMLOutcome()>>(
+        [this, request]()
+        {
+            return this->AssumeRoleWithSAML(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 StsClient::GetFederationTokenOutcome StsClient::GetFederationToken(const GetFederationTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFederationToken");

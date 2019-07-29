@@ -40,6 +40,49 @@ KmsClient::KmsClient(const Credential &credential, const string &region, const C
 }
 
 
+KmsClient::CancelKeyDeletionOutcome KmsClient::CancelKeyDeletion(const CancelKeyDeletionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelKeyDeletion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelKeyDeletionResponse rsp = CancelKeyDeletionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelKeyDeletionOutcome(rsp);
+        else
+            return CancelKeyDeletionOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelKeyDeletionOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::CancelKeyDeletionAsync(const CancelKeyDeletionRequest& request, const CancelKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelKeyDeletion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::CancelKeyDeletionOutcomeCallable KmsClient::CancelKeyDeletionCallable(const CancelKeyDeletionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelKeyDeletionOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelKeyDeletion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::CreateKeyOutcome KmsClient::CreateKey(const CreateKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateKey");
@@ -764,6 +807,49 @@ KmsClient::ReEncryptOutcomeCallable KmsClient::ReEncryptCallable(const ReEncrypt
         [this, request]()
         {
             return this->ReEncrypt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::ScheduleKeyDeletionOutcome KmsClient::ScheduleKeyDeletion(const ScheduleKeyDeletionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScheduleKeyDeletion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScheduleKeyDeletionResponse rsp = ScheduleKeyDeletionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScheduleKeyDeletionOutcome(rsp);
+        else
+            return ScheduleKeyDeletionOutcome(o.GetError());
+    }
+    else
+    {
+        return ScheduleKeyDeletionOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ScheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScheduleKeyDeletion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::ScheduleKeyDeletionCallable(const ScheduleKeyDeletionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScheduleKeyDeletionOutcome()>>(
+        [this, request]()
+        {
+            return this->ScheduleKeyDeletion(request);
         }
     );
 
