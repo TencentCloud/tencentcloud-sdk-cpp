@@ -29,7 +29,8 @@ InstanceIntegerParam::InstanceIntegerParam() :
     m_currentValueHasBeenSet(false),
     m_tipsHasBeenSet(false),
     m_minHasBeenSet(false),
-    m_maxHasBeenSet(false)
+    m_maxHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const Value &value)
         m_maxHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceIntegerParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void InstanceIntegerParam::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "Max";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_max.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void InstanceIntegerParam::SetMax(const string& _max)
 bool InstanceIntegerParam::MaxHasBeenSet() const
 {
     return m_maxHasBeenSet;
+}
+
+int64_t InstanceIntegerParam::GetStatus() const
+{
+    return m_status;
+}
+
+void InstanceIntegerParam::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool InstanceIntegerParam::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

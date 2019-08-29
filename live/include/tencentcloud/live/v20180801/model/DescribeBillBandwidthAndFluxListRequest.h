@@ -97,14 +97,26 @@ namespace TencentCloud
                     bool PlayDomainsHasBeenSet() const;
 
                     /**
-                     * 获取国内还是国外，若不填，表示国内+国外。
-                     * @return MainlandOrOversea 国内还是国外，若不填，表示国内+国外。
+                     * 获取可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据。
+默认：查询国内+国外的数据。
+                     * @return MainlandOrOversea 可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据。
+默认：查询国内+国外的数据。
                      */
                     std::string GetMainlandOrOversea() const;
 
                     /**
-                     * 设置国内还是国外，若不填，表示国内+国外。
-                     * @param MainlandOrOversea 国内还是国外，若不填，表示国内+国外。
+                     * 设置可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据。
+默认：查询国内+国外的数据。
+                     * @param MainlandOrOversea 可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据。
+默认：查询国内+国外的数据。
                      */
                     void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
 
@@ -116,25 +128,29 @@ namespace TencentCloud
 
                     /**
                      * 获取数据粒度，支持如下粒度：
-5：5分钟粒度，默认值（跨度不支持超过1天）；
-60：1小时粒度（跨度不支持超过一个月）；
+5：5分钟粒度，（跨度不支持超过1天），
+60：1小时粒度（跨度不支持超过一个月），
 1440：天粒度（跨度不支持超过一个月）。
+默认值：5。
                      * @return Granularity 数据粒度，支持如下粒度：
-5：5分钟粒度，默认值（跨度不支持超过1天）；
-60：1小时粒度（跨度不支持超过一个月）；
+5：5分钟粒度，（跨度不支持超过1天），
+60：1小时粒度（跨度不支持超过一个月），
 1440：天粒度（跨度不支持超过一个月）。
+默认值：5。
                      */
                     uint64_t GetGranularity() const;
 
                     /**
                      * 设置数据粒度，支持如下粒度：
-5：5分钟粒度，默认值（跨度不支持超过1天）；
-60：1小时粒度（跨度不支持超过一个月）；
+5：5分钟粒度，（跨度不支持超过1天），
+60：1小时粒度（跨度不支持超过一个月），
 1440：天粒度（跨度不支持超过一个月）。
+默认值：5。
                      * @param Granularity 数据粒度，支持如下粒度：
-5：5分钟粒度，默认值（跨度不支持超过1天）；
-60：1小时粒度（跨度不支持超过一个月）；
+5：5分钟粒度，（跨度不支持超过1天），
+60：1小时粒度（跨度不支持超过一个月），
 1440：天粒度（跨度不支持超过一个月）。
+默认值：5。
                      */
                     void SetGranularity(const uint64_t& _granularity);
 
@@ -165,16 +181,20 @@ namespace TencentCloud
                     bool m_playDomainsHasBeenSet;
 
                     /**
-                     * 国内还是国外，若不填，表示国内+国外。
+                     * 可选值：
+Mainland：查询国内数据，
+Oversea：则查询国外数据。
+默认：查询国内+国外的数据。
                      */
                     std::string m_mainlandOrOversea;
                     bool m_mainlandOrOverseaHasBeenSet;
 
                     /**
                      * 数据粒度，支持如下粒度：
-5：5分钟粒度，默认值（跨度不支持超过1天）；
-60：1小时粒度（跨度不支持超过一个月）；
+5：5分钟粒度，（跨度不支持超过1天），
+60：1小时粒度（跨度不支持超过一个月），
 1440：天粒度（跨度不支持超过一个月）。
+默认值：5。
                      */
                     uint64_t m_granularity;
                     bool m_granularityHasBeenSet;

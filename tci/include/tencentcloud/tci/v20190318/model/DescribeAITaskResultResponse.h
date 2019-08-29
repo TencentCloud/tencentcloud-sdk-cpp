@@ -82,6 +82,18 @@ namespace TencentCloud
                     bool VideoResultHasBeenSet() const;
 
                     /**
+                     * 获取任务状态
+                     * @return Status 任务状态
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
                      * 获取任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
                      * @return TaskId 任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
                      */
@@ -112,6 +124,12 @@ namespace TencentCloud
                      */
                     StandardVideoResult m_videoResult;
                     bool m_videoResultHasBeenSet;
+
+                    /**
+                     * 任务状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
                      * 任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。

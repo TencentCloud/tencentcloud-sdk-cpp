@@ -226,6 +226,42 @@ namespace TencentCloud
                      */
                     bool LogHasBeenSet() const;
 
+                    /**
+                     * 获取日志等级
+                     * @return Level 日志等级
+                     */
+                    std::string GetLevel() const;
+
+                    /**
+                     * 设置日志等级
+                     * @param Level 日志等级
+                     */
+                    void SetLevel(const std::string& _level);
+
+                    /**
+                     * 判断参数 Level 是否已赋值
+                     * @return Level 是否已赋值
+                     */
+                    bool LevelHasBeenSet() const;
+
+                    /**
+                     * 获取日志来源
+                     * @return Source 日志来源
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置日志来源
+                     * @param Source 日志来源
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +323,18 @@ namespace TencentCloud
                      */
                     std::string m_log;
                     bool m_logHasBeenSet;
+
+                    /**
+                     * 日志等级
+                     */
+                    std::string m_level;
+                    bool m_levelHasBeenSet;
+
+                    /**
+                     * 日志来源
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

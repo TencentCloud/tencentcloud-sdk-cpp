@@ -21,10 +21,12 @@ set(bmvpc_public_header
 set(bmvpc_public_header_model
   include/tencentcloud/bmvpc/v20180625/model/ModifySubnetDHCPRelayResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeNatSubnetsResponse.h
+  include/tencentcloud/bmvpc/v20180625/model/DescribeVpcPeerConnectionsResponse.h
   include/tencentcloud/bmvpc/v20180625/model/UnbindIpsFromNatGatewayResponse.h
   include/tencentcloud/bmvpc/v20180625/model/IKEOptionsSpecification.h
   include/tencentcloud/bmvpc/v20180625/model/ModifyRouteTableRequest.h
   include/tencentcloud/bmvpc/v20180625/model/CreateRoutePoliciesRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/Filter.h
   include/tencentcloud/bmvpc/v20180625/model/CreateVirtualSubnetWithVlanRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteVirtualIpResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeSubnetsRequest.h
@@ -40,8 +42,8 @@ set(bmvpc_public_header_model
   include/tencentcloud/bmvpc/v20180625/model/UnbindSubnetsFromNatGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/SubnetInfo.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteRoutePolicyResponse.h
+  include/tencentcloud/bmvpc/v20180625/model/DescribeVpnGatewaysResponse.h
   include/tencentcloud/bmvpc/v20180625/model/VpcInfo.h
-  include/tencentcloud/bmvpc/v20180625/model/CreateHostedInterfaceRequest.h
   include/tencentcloud/bmvpc/v20180625/model/CreateInterfacesResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeNatSubnetsRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DownloadCustomerGatewayConfigurationResponse.h
@@ -60,15 +62,18 @@ set(bmvpc_public_header_model
   include/tencentcloud/bmvpc/v20180625/model/BindSubnetsToNatGatewayResponse.h
   include/tencentcloud/bmvpc/v20180625/model/VpcSubnetViewInfo.h
   include/tencentcloud/bmvpc/v20180625/model/CreateVpcResponse.h
+  include/tencentcloud/bmvpc/v20180625/model/CreateCustomerGatewayResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeTaskStatusResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteVpnGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/NatSubnetInfo.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeSubnetByHostedDeviceRequest.h
   include/tencentcloud/bmvpc/v20180625/model/CreateVpcPeerConnectionResponse.h
   include/tencentcloud/bmvpc/v20180625/model/ModifySubnetAttributeRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/ResetVpnConnectionRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteNatGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteVpnConnectionResponse.h
   include/tencentcloud/bmvpc/v20180625/model/ModifyCustomerGatewayAttributeResponse.h
+  include/tencentcloud/bmvpc/v20180625/model/VpnConnection.h
   include/tencentcloud/bmvpc/v20180625/model/CreateDockerSubnetWithVlanRequest.h
   include/tencentcloud/bmvpc/v20180625/model/RoutePolicy.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteHostedInterfaceResponse.h
@@ -90,20 +95,24 @@ set(bmvpc_public_header_model
   include/tencentcloud/bmvpc/v20180625/model/ModifyVpnConnectionAttributeResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeSubnetAvailableIpsResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeNatGatewaysRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/VpcPeerConnection.h
   include/tencentcloud/bmvpc/v20180625/model/VpcSubnetCreateInfo.h
+  include/tencentcloud/bmvpc/v20180625/model/DescribeVpnConnectionsRequest.h
   include/tencentcloud/bmvpc/v20180625/model/ModifyVpcPeerConnectionRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteCustomerGatewayResponse.h
   include/tencentcloud/bmvpc/v20180625/model/ModifyVpcAttributeRequest.h
   include/tencentcloud/bmvpc/v20180625/model/CreateRoutePoliciesResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeRouteTablesRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteVirtualIpRequest.h
-  include/tencentcloud/bmvpc/v20180625/model/AsyncRegisterIpsRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/DescribeVpnGatewaysRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/CreateHostedInterfaceRequest.h
   include/tencentcloud/bmvpc/v20180625/model/NatGatewayInfo.h
-  include/tencentcloud/bmvpc/v20180625/model/Filter.h
+  include/tencentcloud/bmvpc/v20180625/model/BindSubnetsToNatGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/ResetVpnConnectionResponse.h
   include/tencentcloud/bmvpc/v20180625/model/RejectVpcPeerConnectionRequest.h
   include/tencentcloud/bmvpc/v20180625/model/VpcViewInfo.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeCustomerGatewaysRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/CreateCustomerGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteHostedInterfacesRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeTaskStatusRequest.h
   include/tencentcloud/bmvpc/v20180625/model/ModifyVpnConnectionAttributeRequest.h
@@ -114,12 +123,13 @@ set(bmvpc_public_header_model
   include/tencentcloud/bmvpc/v20180625/model/DescribeSubnetByDeviceRequest.h
   include/tencentcloud/bmvpc/v20180625/model/AcceptVpcPeerConnectionResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeRoutePoliciesRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/VpnGateway.h
   include/tencentcloud/bmvpc/v20180625/model/ModifyVpnGatewayAttributeRequest.h
   include/tencentcloud/bmvpc/v20180625/model/CreateNatGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/IPSECOptionsSpecification.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteVpnConnectionRequest.h
   include/tencentcloud/bmvpc/v20180625/model/UnbindSubnetsFromNatGatewayResponse.h
-  include/tencentcloud/bmvpc/v20180625/model/ResetVpnConnectionRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/DescribeVpnConnectionsResponse.h
   include/tencentcloud/bmvpc/v20180625/model/DeleteCustomerGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/IpInfo.h
   include/tencentcloud/bmvpc/v20180625/model/UpgradeNatGatewayRequest.h
@@ -132,6 +142,7 @@ set(bmvpc_public_header_model
   include/tencentcloud/bmvpc/v20180625/model/UnbindEipsFromNatGatewayResponse.h
   include/tencentcloud/bmvpc/v20180625/model/ModifySubnetAttributeResponse.h
   include/tencentcloud/bmvpc/v20180625/model/CreateInterfacesRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/DescribeVpcPeerConnectionsRequest.h
   include/tencentcloud/bmvpc/v20180625/model/CreateVpcRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeSubnetByHostedDeviceResponse.h
   include/tencentcloud/bmvpc/v20180625/model/CreateVpcPeerConnectionRequest.h
@@ -142,7 +153,7 @@ set(bmvpc_public_header_model
   include/tencentcloud/bmvpc/v20180625/model/BindIpsToNatGatewayResponse.h
   include/tencentcloud/bmvpc/v20180625/model/VpcQuota.h
   include/tencentcloud/bmvpc/v20180625/model/CreateNatGatewayResponse.h
-  include/tencentcloud/bmvpc/v20180625/model/BindSubnetsToNatGatewayRequest.h
+  include/tencentcloud/bmvpc/v20180625/model/AsyncRegisterIpsRequest.h
   include/tencentcloud/bmvpc/v20180625/model/BindIpsToNatGatewayRequest.h
   include/tencentcloud/bmvpc/v20180625/model/DescribeVpcsResponse.h
   include/tencentcloud/bmvpc/v20180625/model/SubnetCreateInputInfo.h
@@ -157,10 +168,12 @@ set(bmvpc_src
   src/v20180625/BmvpcClient.cpp
   src/v20180625/model/ModifySubnetDHCPRelayResponse.cpp
   src/v20180625/model/DescribeNatSubnetsResponse.cpp
+  src/v20180625/model/DescribeVpcPeerConnectionsResponse.cpp
   src/v20180625/model/UnbindIpsFromNatGatewayResponse.cpp
   src/v20180625/model/IKEOptionsSpecification.cpp
   src/v20180625/model/ModifyRouteTableRequest.cpp
   src/v20180625/model/CreateRoutePoliciesRequest.cpp
+  src/v20180625/model/Filter.cpp
   src/v20180625/model/CreateVirtualSubnetWithVlanRequest.cpp
   src/v20180625/model/DeleteVirtualIpResponse.cpp
   src/v20180625/model/DescribeSubnetsRequest.cpp
@@ -176,8 +189,8 @@ set(bmvpc_src
   src/v20180625/model/UnbindSubnetsFromNatGatewayRequest.cpp
   src/v20180625/model/SubnetInfo.cpp
   src/v20180625/model/DeleteRoutePolicyResponse.cpp
+  src/v20180625/model/DescribeVpnGatewaysResponse.cpp
   src/v20180625/model/VpcInfo.cpp
-  src/v20180625/model/CreateHostedInterfaceRequest.cpp
   src/v20180625/model/CreateInterfacesResponse.cpp
   src/v20180625/model/DescribeNatSubnetsRequest.cpp
   src/v20180625/model/DownloadCustomerGatewayConfigurationResponse.cpp
@@ -196,15 +209,18 @@ set(bmvpc_src
   src/v20180625/model/BindSubnetsToNatGatewayResponse.cpp
   src/v20180625/model/VpcSubnetViewInfo.cpp
   src/v20180625/model/CreateVpcResponse.cpp
+  src/v20180625/model/CreateCustomerGatewayResponse.cpp
   src/v20180625/model/DescribeTaskStatusResponse.cpp
   src/v20180625/model/DeleteVpnGatewayRequest.cpp
   src/v20180625/model/NatSubnetInfo.cpp
   src/v20180625/model/DescribeSubnetByHostedDeviceRequest.cpp
   src/v20180625/model/CreateVpcPeerConnectionResponse.cpp
   src/v20180625/model/ModifySubnetAttributeRequest.cpp
+  src/v20180625/model/ResetVpnConnectionRequest.cpp
   src/v20180625/model/DeleteNatGatewayRequest.cpp
   src/v20180625/model/DeleteVpnConnectionResponse.cpp
   src/v20180625/model/ModifyCustomerGatewayAttributeResponse.cpp
+  src/v20180625/model/VpnConnection.cpp
   src/v20180625/model/CreateDockerSubnetWithVlanRequest.cpp
   src/v20180625/model/RoutePolicy.cpp
   src/v20180625/model/DeleteHostedInterfaceResponse.cpp
@@ -226,20 +242,24 @@ set(bmvpc_src
   src/v20180625/model/ModifyVpnConnectionAttributeResponse.cpp
   src/v20180625/model/DescribeSubnetAvailableIpsResponse.cpp
   src/v20180625/model/DescribeNatGatewaysRequest.cpp
+  src/v20180625/model/VpcPeerConnection.cpp
   src/v20180625/model/VpcSubnetCreateInfo.cpp
+  src/v20180625/model/DescribeVpnConnectionsRequest.cpp
   src/v20180625/model/ModifyVpcPeerConnectionRequest.cpp
   src/v20180625/model/DeleteCustomerGatewayResponse.cpp
   src/v20180625/model/ModifyVpcAttributeRequest.cpp
   src/v20180625/model/CreateRoutePoliciesResponse.cpp
   src/v20180625/model/DescribeRouteTablesRequest.cpp
   src/v20180625/model/DeleteVirtualIpRequest.cpp
-  src/v20180625/model/AsyncRegisterIpsRequest.cpp
+  src/v20180625/model/DescribeVpnGatewaysRequest.cpp
+  src/v20180625/model/CreateHostedInterfaceRequest.cpp
   src/v20180625/model/NatGatewayInfo.cpp
-  src/v20180625/model/Filter.cpp
+  src/v20180625/model/BindSubnetsToNatGatewayRequest.cpp
   src/v20180625/model/ResetVpnConnectionResponse.cpp
   src/v20180625/model/RejectVpcPeerConnectionRequest.cpp
   src/v20180625/model/VpcViewInfo.cpp
   src/v20180625/model/DescribeCustomerGatewaysRequest.cpp
+  src/v20180625/model/CreateCustomerGatewayRequest.cpp
   src/v20180625/model/DeleteHostedInterfacesRequest.cpp
   src/v20180625/model/DescribeTaskStatusRequest.cpp
   src/v20180625/model/ModifyVpnConnectionAttributeRequest.cpp
@@ -250,12 +270,13 @@ set(bmvpc_src
   src/v20180625/model/DescribeSubnetByDeviceRequest.cpp
   src/v20180625/model/AcceptVpcPeerConnectionResponse.cpp
   src/v20180625/model/DescribeRoutePoliciesRequest.cpp
+  src/v20180625/model/VpnGateway.cpp
   src/v20180625/model/ModifyVpnGatewayAttributeRequest.cpp
   src/v20180625/model/CreateNatGatewayRequest.cpp
   src/v20180625/model/IPSECOptionsSpecification.cpp
   src/v20180625/model/DeleteVpnConnectionRequest.cpp
   src/v20180625/model/UnbindSubnetsFromNatGatewayResponse.cpp
-  src/v20180625/model/ResetVpnConnectionRequest.cpp
+  src/v20180625/model/DescribeVpnConnectionsResponse.cpp
   src/v20180625/model/DeleteCustomerGatewayRequest.cpp
   src/v20180625/model/IpInfo.cpp
   src/v20180625/model/UpgradeNatGatewayRequest.cpp
@@ -268,6 +289,7 @@ set(bmvpc_src
   src/v20180625/model/UnbindEipsFromNatGatewayResponse.cpp
   src/v20180625/model/ModifySubnetAttributeResponse.cpp
   src/v20180625/model/CreateInterfacesRequest.cpp
+  src/v20180625/model/DescribeVpcPeerConnectionsRequest.cpp
   src/v20180625/model/CreateVpcRequest.cpp
   src/v20180625/model/DescribeSubnetByHostedDeviceResponse.cpp
   src/v20180625/model/CreateVpcPeerConnectionRequest.cpp
@@ -278,7 +300,7 @@ set(bmvpc_src
   src/v20180625/model/BindIpsToNatGatewayResponse.cpp
   src/v20180625/model/VpcQuota.cpp
   src/v20180625/model/CreateNatGatewayResponse.cpp
-  src/v20180625/model/BindSubnetsToNatGatewayRequest.cpp
+  src/v20180625/model/AsyncRegisterIpsRequest.cpp
   src/v20180625/model/BindIpsToNatGatewayRequest.cpp
   src/v20180625/model/DescribeVpcsResponse.cpp
   src/v20180625/model/SubnetCreateInputInfo.cpp

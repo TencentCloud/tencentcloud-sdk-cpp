@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取当前健康状态，true：健康，false：不健康。
-                     * @return HealthStatus 当前健康状态，true：健康，false：不健康。
+                     * 获取当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。
+                     * @return HealthStatus 当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。
                      */
                     bool GetHealthStatus() const;
 
                     /**
-                     * 设置当前健康状态，true：健康，false：不健康。
-                     * @param HealthStatus 当前健康状态，true：健康，false：不健康。
+                     * 设置当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。
+                     * @param HealthStatus 当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。
                      */
                     void SetHealthStatus(const bool& _healthStatus);
 
@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool TargetIdHasBeenSet() const;
 
+                    /**
+                     * 获取当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     * @return HealthStatusDetial 当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     */
+                    std::string GetHealthStatusDetial() const;
+
+                    /**
+                     * 设置当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     * @param HealthStatusDetial 当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     */
+                    void SetHealthStatusDetial(const std::string& _healthStatusDetial);
+
+                    /**
+                     * 判断参数 HealthStatusDetial 是否已赋值
+                     * @return HealthStatusDetial 是否已赋值
+                     */
+                    bool HealthStatusDetialHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,7 +151,7 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 当前健康状态，true：健康，false：不健康。
+                     * 当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。
                      */
                     bool m_healthStatus;
                     bool m_healthStatusHasBeenSet;
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_targetId;
                     bool m_targetIdHasBeenSet;
+
+                    /**
+                     * 当前健康状态的详细信息。如：Alive、Dead、Unknown。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知。
+                     */
+                    std::string m_healthStatusDetial;
+                    bool m_healthStatusDetialHasBeenSet;
 
                 };
             }

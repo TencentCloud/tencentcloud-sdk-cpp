@@ -33,7 +33,8 @@ Vpc::Vpc() :
     m_dhcpOptionsIdHasBeenSet(false),
     m_enableDhcpHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_assistantCidrSetHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,26 @@ CoreInternalOutcome Vpc::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("AssistantCidrSet") && !value["AssistantCidrSet"].IsNull())
+    {
+        if (!value["AssistantCidrSet"].IsArray())
+            return CoreInternalOutcome(Error("response `Vpc.AssistantCidrSet` is not array type"));
+
+        const Value &tmpValue = value["AssistantCidrSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AssistantCidr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_assistantCidrSet.push_back(item);
+        }
+        m_assistantCidrSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -284,6 +305,21 @@ void Vpc::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
         int i=0;
         for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_assistantCidrSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AssistantCidrSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_assistantCidrSet.begin(); itr != m_assistantCidrSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -483,5 +519,21 @@ void Vpc::SetTagSet(const vector<Tag>& _tagSet)
 bool Vpc::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+vector<AssistantCidr> Vpc::GetAssistantCidrSet() const
+{
+    return m_assistantCidrSet;
+}
+
+void Vpc::SetAssistantCidrSet(const vector<AssistantCidr>& _assistantCidrSet)
+{
+    m_assistantCidrSet = _assistantCidrSet;
+    m_assistantCidrSetHasBeenSet = true;
+}
+
+bool Vpc::AssistantCidrSetHasBeenSet() const
+{
+    return m_assistantCidrSetHasBeenSet;
 }
 

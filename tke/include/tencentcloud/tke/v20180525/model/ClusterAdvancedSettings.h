@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool IPVSHasBeenSet() const;
 
                     /**
-                     * 获取是否启用集群节点扩缩容
-                     * @return AsEnabled 是否启用集群节点扩缩容
+                     * 获取是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)
+                     * @return AsEnabled 是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)
                      */
                     bool GetAsEnabled() const;
 
                     /**
-                     * 设置是否启用集群节点扩缩容
-                     * @param AsEnabled 是否启用集群节点扩缩容
+                     * 设置是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)
+                     * @param AsEnabled 是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)
                      */
                     void SetAsEnabled(const bool& _asEnabled);
 
@@ -81,6 +81,24 @@ namespace TencentCloud
                      * @return AsEnabled 是否已赋值
                      */
                     bool AsEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取集群使用的runtime类型，包括"docker"和"containerd"两种类型，默认为"docker"
+                     * @return ContainerRuntime 集群使用的runtime类型，包括"docker"和"containerd"两种类型，默认为"docker"
+                     */
+                    std::string GetContainerRuntime() const;
+
+                    /**
+                     * 设置集群使用的runtime类型，包括"docker"和"containerd"两种类型，默认为"docker"
+                     * @param ContainerRuntime 集群使用的runtime类型，包括"docker"和"containerd"两种类型，默认为"docker"
+                     */
+                    void SetContainerRuntime(const std::string& _containerRuntime);
+
+                    /**
+                     * 判断参数 ContainerRuntime 是否已赋值
+                     * @return ContainerRuntime 是否已赋值
+                     */
+                    bool ContainerRuntimeHasBeenSet() const;
 
                 private:
 
@@ -91,10 +109,16 @@ namespace TencentCloud
                     bool m_iPVSHasBeenSet;
 
                     /**
-                     * 是否启用集群节点扩缩容
+                     * 是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)
                      */
                     bool m_asEnabled;
                     bool m_asEnabledHasBeenSet;
+
+                    /**
+                     * 集群使用的runtime类型，包括"docker"和"containerd"两种类型，默认为"docker"
+                     */
+                    std::string m_containerRuntime;
+                    bool m_containerRuntimeHasBeenSet;
 
                 };
             }

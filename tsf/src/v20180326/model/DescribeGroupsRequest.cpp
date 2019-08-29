@@ -31,7 +31,8 @@ DescribeGroupsRequest::DescribeGroupsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_groupResourceTypeListHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,19 @@ string DescribeGroupsRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupResourceTypeListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupResourceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupResourceTypeList.begin(); itr != m_groupResourceTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -240,6 +254,22 @@ void DescribeGroupsRequest::SetClusterId(const string& _clusterId)
 bool DescribeGroupsRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+vector<string> DescribeGroupsRequest::GetGroupResourceTypeList() const
+{
+    return m_groupResourceTypeList;
+}
+
+void DescribeGroupsRequest::SetGroupResourceTypeList(const vector<string>& _groupResourceTypeList)
+{
+    m_groupResourceTypeList = _groupResourceTypeList;
+    m_groupResourceTypeListHasBeenSet = true;
+}
+
+bool DescribeGroupsRequest::GroupResourceTypeListHasBeenSet() const
+{
+    return m_groupResourceTypeListHasBeenSet;
 }
 
 

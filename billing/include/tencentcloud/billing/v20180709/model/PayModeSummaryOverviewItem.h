@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool RealTotalCostRatioHasBeenSet() const;
 
                     /**
-                     * 获取按交易类型汇总消费详情
-                     * @return Detail 按交易类型汇总消费详情
+                     * 获取按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情
+                     * @return Detail 按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情
                      */
                     std::vector<ActionSummaryOverviewItem> GetDetail() const;
 
                     /**
-                     * 设置按交易类型汇总消费详情
-                     * @param Detail 按交易类型汇总消费详情
+                     * 设置按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情
+                     * @param Detail 按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情
                      */
                     void SetDetail(const std::vector<ActionSummaryOverviewItem>& _detail);
 
@@ -164,7 +164,7 @@ namespace TencentCloud
                     bool m_realTotalCostRatioHasBeenSet;
 
                     /**
-                     * 按交易类型汇总消费详情
+                     * 按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情
                      */
                     std::vector<ActionSummaryOverviewItem> m_detail;
                     bool m_detailHasBeenSet;

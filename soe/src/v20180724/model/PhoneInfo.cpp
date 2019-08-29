@@ -27,7 +27,9 @@ PhoneInfo::PhoneInfo() :
     m_pronAccuracyHasBeenSet(false),
     m_detectedStressHasBeenSet(false),
     m_phoneHasBeenSet(false),
-    m_stressHasBeenSet(false)
+    m_stressHasBeenSet(false),
+    m_referencePhoneHasBeenSet(false),
+    m_matchTagHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,26 @@ CoreInternalOutcome PhoneInfo::Deserialize(const Value &value)
         m_stressHasBeenSet = true;
     }
 
+    if (value.HasMember("ReferencePhone") && !value["ReferencePhone"].IsNull())
+    {
+        if (!value["ReferencePhone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PhoneInfo.ReferencePhone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_referencePhone = string(value["ReferencePhone"].GetString());
+        m_referencePhoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchTag") && !value["MatchTag"].IsNull())
+    {
+        if (!value["MatchTag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PhoneInfo.MatchTag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchTag = value["MatchTag"].GetInt64();
+        m_matchTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +171,22 @@ void PhoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Stress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stress, allocator);
+    }
+
+    if (m_referencePhoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReferencePhone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_referencePhone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchTagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MatchTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_matchTag, allocator);
     }
 
 }
@@ -248,5 +286,37 @@ void PhoneInfo::SetStress(const bool& _stress)
 bool PhoneInfo::StressHasBeenSet() const
 {
     return m_stressHasBeenSet;
+}
+
+string PhoneInfo::GetReferencePhone() const
+{
+    return m_referencePhone;
+}
+
+void PhoneInfo::SetReferencePhone(const string& _referencePhone)
+{
+    m_referencePhone = _referencePhone;
+    m_referencePhoneHasBeenSet = true;
+}
+
+bool PhoneInfo::ReferencePhoneHasBeenSet() const
+{
+    return m_referencePhoneHasBeenSet;
+}
+
+int64_t PhoneInfo::GetMatchTag() const
+{
+    return m_matchTag;
+}
+
+void PhoneInfo::SetMatchTag(const int64_t& _matchTag)
+{
+    m_matchTag = _matchTag;
+    m_matchTagHasBeenSet = true;
+}
+
+bool PhoneInfo::MatchTagHasBeenSet() const
+{
+    return m_matchTagHasBeenSet;
 }
 

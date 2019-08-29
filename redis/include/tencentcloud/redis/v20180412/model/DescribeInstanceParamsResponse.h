@@ -24,6 +24,7 @@
 #include <tencentcloud/redis/v20180412/model/InstanceEnumParam.h>
 #include <tencentcloud/redis/v20180412/model/InstanceIntegerParam.h>
 #include <tencentcloud/redis/v20180412/model/InstanceTextParam.h>
+#include <tencentcloud/redis/v20180412/model/InstanceMultiParam.h>
 
 
 namespace TencentCloud
@@ -93,6 +94,18 @@ namespace TencentCloud
                      */
                     bool InstanceTextParamHasBeenSet() const;
 
+                    /**
+                     * 获取实例多选项型参数
+                     * @return InstanceMultiParam 实例多选项型参数
+                     */
+                    std::vector<InstanceMultiParam> GetInstanceMultiParam() const;
+
+                    /**
+                     * 判断参数 InstanceMultiParam 是否已赋值
+                     * @return InstanceMultiParam 是否已赋值
+                     */
+                    bool InstanceMultiParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -118,6 +131,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceTextParam> m_instanceTextParam;
                     bool m_instanceTextParamHasBeenSet;
+
+                    /**
+                     * 实例多选项型参数
+                     */
+                    std::vector<InstanceMultiParam> m_instanceMultiParam;
+                    bool m_instanceMultiParamHasBeenSet;
 
                 };
             }

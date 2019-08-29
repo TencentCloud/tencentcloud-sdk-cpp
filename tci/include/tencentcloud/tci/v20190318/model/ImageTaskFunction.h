@@ -208,6 +208,24 @@ namespace TencentCloud
                      */
                     bool EnableTeacherBodyMovementsHasBeenSet() const;
 
+                    /**
+                     * 获取判断老师是否在屏幕中
+                     * @return EnableTeacherOutScreen 判断老师是否在屏幕中
+                     */
+                    bool GetEnableTeacherOutScreen() const;
+
+                    /**
+                     * 设置判断老师是否在屏幕中
+                     * @param EnableTeacherOutScreen 判断老师是否在屏幕中
+                     */
+                    void SetEnableTeacherOutScreen(const bool& _enableTeacherOutScreen);
+
+                    /**
+                     * 判断参数 EnableTeacherOutScreen 是否已赋值
+                     * @return EnableTeacherOutScreen 是否已赋值
+                     */
+                    bool EnableTeacherOutScreenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +281,12 @@ namespace TencentCloud
                      */
                     bool m_enableTeacherBodyMovements;
                     bool m_enableTeacherBodyMovementsHasBeenSet;
+
+                    /**
+                     * 判断老师是否在屏幕中
+                     */
+                    bool m_enableTeacherOutScreen;
+                    bool m_enableTeacherOutScreenHasBeenSet;
 
                 };
             }

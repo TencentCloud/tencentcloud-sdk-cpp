@@ -30,7 +30,8 @@ ImageTaskFunction::ImageTaskFunction() :
     m_enableHandTrackingHasBeenSet(false),
     m_enableLightJudgeHasBeenSet(false),
     m_enableStudentBodyMovementsHasBeenSet(false),
-    m_enableTeacherBodyMovementsHasBeenSet(false)
+    m_enableTeacherBodyMovementsHasBeenSet(false),
+    m_enableTeacherOutScreenHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const Value &value)
         m_enableTeacherBodyMovementsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableTeacherOutScreen") && !value["EnableTeacherOutScreen"].IsNull())
+    {
+        if (!value["EnableTeacherOutScreen"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ImageTaskFunction.EnableTeacherOutScreen` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTeacherOutScreen = value["EnableTeacherOutScreen"].GetBool();
+        m_enableTeacherOutScreenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "EnableTeacherBodyMovements";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableTeacherBodyMovements, allocator);
+    }
+
+    if (m_enableTeacherOutScreenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableTeacherOutScreen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTeacherOutScreen, allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void ImageTaskFunction::SetEnableTeacherBodyMovements(const bool& _enableTeacher
 bool ImageTaskFunction::EnableTeacherBodyMovementsHasBeenSet() const
 {
     return m_enableTeacherBodyMovementsHasBeenSet;
+}
+
+bool ImageTaskFunction::GetEnableTeacherOutScreen() const
+{
+    return m_enableTeacherOutScreen;
+}
+
+void ImageTaskFunction::SetEnableTeacherOutScreen(const bool& _enableTeacherOutScreen)
+{
+    m_enableTeacherOutScreen = _enableTeacherOutScreen;
+    m_enableTeacherOutScreenHasBeenSet = true;
+}
+
+bool ImageTaskFunction::EnableTeacherOutScreenHasBeenSet() const
+{
+    return m_enableTeacherOutScreenHasBeenSet;
 }
 

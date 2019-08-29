@@ -28,7 +28,8 @@ InstanceEnumParam::InstanceEnumParam() :
     m_defaultValueHasBeenSet(false),
     m_currentValueHasBeenSet(false),
     m_tipsHasBeenSet(false),
-    m_enumValueHasBeenSet(false)
+    m_enumValueHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,16 @@ CoreInternalOutcome InstanceEnumParam::Deserialize(const Value &value)
         m_enumValueHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceEnumParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -176,6 +187,14 @@ void InstanceEnumParam::ToJsonObject(Value &value, Document::AllocatorType& allo
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -291,5 +310,21 @@ void InstanceEnumParam::SetEnumValue(const vector<string>& _enumValue)
 bool InstanceEnumParam::EnumValueHasBeenSet() const
 {
     return m_enumValueHasBeenSet;
+}
+
+int64_t InstanceEnumParam::GetStatus() const
+{
+    return m_status;
+}
+
+void InstanceEnumParam::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool InstanceEnumParam::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

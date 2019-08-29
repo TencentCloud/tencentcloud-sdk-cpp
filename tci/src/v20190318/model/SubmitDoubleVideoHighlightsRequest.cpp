@@ -228,12 +228,12 @@ bool SubmitDoubleVideoHighlightsRequest::PersonIdsHasBeenSet() const
     return m_personIdsHasBeenSet;
 }
 
-int64_t SubmitDoubleVideoHighlightsRequest::GetSimThreshold() const
+double SubmitDoubleVideoHighlightsRequest::GetSimThreshold() const
 {
     return m_simThreshold;
 }
 
-void SubmitDoubleVideoHighlightsRequest::SetSimThreshold(const int64_t& _simThreshold)
+void SubmitDoubleVideoHighlightsRequest::SetSimThreshold(const double& _simThreshold)
 {
     m_simThreshold = _simThreshold;
     m_simThresholdHasBeenSet = true;

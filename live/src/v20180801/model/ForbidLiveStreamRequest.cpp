@@ -27,7 +27,8 @@ ForbidLiveStreamRequest::ForbidLiveStreamRequest() :
     m_appNameHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
-    m_resumeTimeHasBeenSet(false)
+    m_resumeTimeHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ForbidLiveStreamRequest::ToJsonString() const
         string key = "ResumeTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_resumeTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void ForbidLiveStreamRequest::SetResumeTime(const string& _resumeTime)
 bool ForbidLiveStreamRequest::ResumeTimeHasBeenSet() const
 {
     return m_resumeTimeHasBeenSet;
+}
+
+string ForbidLiveStreamRequest::GetReason() const
+{
+    return m_reason;
+}
+
+void ForbidLiveStreamRequest::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool ForbidLiveStreamRequest::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 
 

@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取出现次数
+                     * @return Count 出现次数
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置出现次数
+                     * @param Count 出现次数
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
+                    /**
                      * 获取表情
                      * @return Express 表情
                      */
@@ -65,14 +83,14 @@ namespace TencentCloud
                     bool ExpressHasBeenSet() const;
 
                     /**
-                     * 获取表情所占比例
-                     * @return Ratio 表情所占比例
+                     * 获取该表情时长占所有表情时长的比例
+                     * @return Ratio 该表情时长占所有表情时长的比例
                      */
                     double GetRatio() const;
 
                     /**
-                     * 设置表情所占比例
-                     * @param Ratio 表情所占比例
+                     * 设置该表情时长占所有表情时长的比例
+                     * @param Ratio 该表情时长占所有表情时长的比例
                      */
                     void SetRatio(const double& _ratio);
 
@@ -83,24 +101,30 @@ namespace TencentCloud
                     bool RatioHasBeenSet() const;
 
                     /**
-                     * 获取出现次数
-                     * @return Count 出现次数
+                     * 获取该表情时长占视频总时长的比例
+                     * @return RatioUseDuration 该表情时长占视频总时长的比例
                      */
-                    int64_t GetCount() const;
+                    double GetRatioUseDuration() const;
 
                     /**
-                     * 设置出现次数
-                     * @param Count 出现次数
+                     * 设置该表情时长占视频总时长的比例
+                     * @param RatioUseDuration 该表情时长占视频总时长的比例
                      */
-                    void SetCount(const int64_t& _count);
+                    void SetRatioUseDuration(const double& _ratioUseDuration);
 
                     /**
-                     * 判断参数 Count 是否已赋值
-                     * @return Count 是否已赋值
+                     * 判断参数 RatioUseDuration 是否已赋值
+                     * @return RatioUseDuration 是否已赋值
                      */
-                    bool CountHasBeenSet() const;
+                    bool RatioUseDurationHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 出现次数
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                     /**
                      * 表情
@@ -109,16 +133,16 @@ namespace TencentCloud
                     bool m_expressHasBeenSet;
 
                     /**
-                     * 表情所占比例
+                     * 该表情时长占所有表情时长的比例
                      */
                     double m_ratio;
                     bool m_ratioHasBeenSet;
 
                     /**
-                     * 出现次数
+                     * 该表情时长占视频总时长的比例
                      */
-                    int64_t m_count;
-                    bool m_countHasBeenSet;
+                    double m_ratioUseDuration;
+                    bool m_ratioUseDurationHasBeenSet;
 
                 };
             }

@@ -169,6 +169,49 @@ MongodbClient::CreateDBInstanceHourOutcomeCallable MongodbClient::CreateDBInstan
     return task->get_future();
 }
 
+MongodbClient::DescribeClientConnectionsOutcome MongodbClient::DescribeClientConnections(const DescribeClientConnectionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientConnections");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientConnectionsResponse rsp = DescribeClientConnectionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientConnectionsOutcome(rsp);
+        else
+            return DescribeClientConnectionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientConnectionsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeClientConnectionsAsync(const DescribeClientConnectionsRequest& request, const DescribeClientConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientConnections(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeClientConnectionsOutcomeCallable MongodbClient::DescribeClientConnectionsCallable(const DescribeClientConnectionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientConnectionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientConnections(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeDBInstancesOutcome MongodbClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");

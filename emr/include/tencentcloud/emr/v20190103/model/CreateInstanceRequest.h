@@ -304,13 +304,13 @@ namespace TencentCloud
                      * 获取预执行脚本设置
                      * @return PreExecutedFileSettings 预执行脚本设置
                      */
-                    PreExecuteFileSettings GetPreExecutedFileSettings() const;
+                    std::vector<PreExecuteFileSettings> GetPreExecutedFileSettings() const;
 
                     /**
                      * 设置预执行脚本设置
                      * @param PreExecutedFileSettings 预执行脚本设置
                      */
-                    void SetPreExecutedFileSettings(const PreExecuteFileSettings& _preExecutedFileSettings);
+                    void SetPreExecutedFileSettings(const std::vector<PreExecuteFileSettings>& _preExecutedFileSettings);
 
                     /**
                      * 判断参数 PreExecutedFileSettings 是否已赋值
@@ -353,6 +353,24 @@ namespace TencentCloud
                      * @return NeedMasterWan 是否已赋值
                      */
                     bool NeedMasterWanHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要开启外网远程登录，即22号端口，在SgId不为空时，该选项无效
+                     * @return RemoteLoginAtCreate 是否需要开启外网远程登录，即22号端口，在SgId不为空时，该选项无效
+                     */
+                    int64_t GetRemoteLoginAtCreate() const;
+
+                    /**
+                     * 设置是否需要开启外网远程登录，即22号端口，在SgId不为空时，该选项无效
+                     * @param RemoteLoginAtCreate 是否需要开启外网远程登录，即22号端口，在SgId不为空时，该选项无效
+                     */
+                    void SetRemoteLoginAtCreate(const int64_t& _remoteLoginAtCreate);
+
+                    /**
+                     * 判断参数 RemoteLoginAtCreate 是否已赋值
+                     * @return RemoteLoginAtCreate 是否已赋值
+                     */
+                    bool RemoteLoginAtCreateHasBeenSet() const;
 
                 private:
 
@@ -443,7 +461,7 @@ namespace TencentCloud
                     /**
                      * 预执行脚本设置
                      */
-                    PreExecuteFileSettings m_preExecutedFileSettings;
+                    std::vector<PreExecuteFileSettings> m_preExecutedFileSettings;
                     bool m_preExecutedFileSettingsHasBeenSet;
 
                     /**
@@ -457,6 +475,12 @@ namespace TencentCloud
                      */
                     std::string m_needMasterWan;
                     bool m_needMasterWanHasBeenSet;
+
+                    /**
+                     * 是否需要开启外网远程登录，即22号端口，在SgId不为空时，该选项无效
+                     */
+                    int64_t m_remoteLoginAtCreate;
+                    bool m_remoteLoginAtCreateHasBeenSet;
 
                 };
             }

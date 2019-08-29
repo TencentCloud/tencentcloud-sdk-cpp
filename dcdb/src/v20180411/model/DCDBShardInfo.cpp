@@ -39,7 +39,9 @@ DCDBShardInfo::DCDBShardInfo() :
     m_nodeCountHasBeenSet(false),
     m_storageUsageHasBeenSet(false),
     m_memoryUsageHasBeenSet(false),
-    m_shardIdHasBeenSet(false)
+    m_shardIdHasBeenSet(false),
+    m_pidHasBeenSet(false),
+    m_proxyVersionHasBeenSet(false)
 {
 }
 
@@ -228,6 +230,26 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
         m_shardIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Pid") && !value["Pid"].IsNull())
+    {
+        if (!value["Pid"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pid = value["Pid"].GetInt64();
+        m_pidHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyVersion") && !value["ProxyVersion"].IsNull())
+    {
+        if (!value["ProxyVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.ProxyVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyVersion = string(value["ProxyVersion"].GetString());
+        m_proxyVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +399,22 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ShardId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardId, allocator);
+    }
+
+    if (m_pidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Pid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_proxyVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProxyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -668,5 +706,37 @@ void DCDBShardInfo::SetShardId(const int64_t& _shardId)
 bool DCDBShardInfo::ShardIdHasBeenSet() const
 {
     return m_shardIdHasBeenSet;
+}
+
+int64_t DCDBShardInfo::GetPid() const
+{
+    return m_pid;
+}
+
+void DCDBShardInfo::SetPid(const int64_t& _pid)
+{
+    m_pid = _pid;
+    m_pidHasBeenSet = true;
+}
+
+bool DCDBShardInfo::PidHasBeenSet() const
+{
+    return m_pidHasBeenSet;
+}
+
+string DCDBShardInfo::GetProxyVersion() const
+{
+    return m_proxyVersion;
+}
+
+void DCDBShardInfo::SetProxyVersion(const string& _proxyVersion)
+{
+    m_proxyVersion = _proxyVersion;
+    m_proxyVersionHasBeenSet = true;
+}
+
+bool DCDBShardInfo::ProxyVersionHasBeenSet() const
+{
+    return m_proxyVersionHasBeenSet;
 }
 

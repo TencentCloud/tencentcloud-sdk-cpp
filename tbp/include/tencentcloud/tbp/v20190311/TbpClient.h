@@ -65,7 +65,7 @@ namespace TencentCloud
                 ResetOutcomeCallable ResetCallable(const Model::ResetRequest& request);
 
                 /**
-                 *接收调用侧的文本输入，返回应答文本。
+                 *接收调用侧的文本输入，返回应答文本。已废弃，推荐使用最新版TextProcess接口。
                  * @param req TextProcessRequest
                  * @return TextProcessOutcome
                  */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 TextProcessOutcomeCallable TextProcessCallable(const Model::TextProcessRequest& request);
 
                 /**
-                 *会话重置接口
+                 *会话重置接口。已废弃，推荐使用最新版TextReset接口。
                  * @param req TextResetRequest
                  * @return TextResetOutcome
                  */

@@ -133,6 +133,24 @@ namespace TencentCloud
                     bool ZipFileHasBeenSet() const;
 
                     /**
+                     * 获取函数所属命名空间
+                     * @return Namespace 函数所属命名空间
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置函数所属命名空间
+                     * @param Namespace 函数所属命名空间
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
                      * 获取对象存储的地域，注：北京分为ap-beijing和ap-beijing-1
                      * @return CosBucketRegion 对象存储的地域，注：北京分为ap-beijing和ap-beijing-1
                      */
@@ -149,6 +167,42 @@ namespace TencentCloud
                      * @return CosBucketRegion 是否已赋值
                      */
                     bool CosBucketRegionHasBeenSet() const;
+
+                    /**
+                     * 获取函数所属环境
+                     * @return EnvId 函数所属环境
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置函数所属环境
+                     * @param EnvId 函数所属环境
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
+                     * 获取在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     * @return Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     */
+                    std::string GetPublish() const;
+
+                    /**
+                     * 设置在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     * @param Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     */
+                    void SetPublish(const std::string& _publish);
+
+                    /**
+                     * 判断参数 Publish 是否已赋值
+                     * @return Publish 是否已赋值
+                     */
+                    bool PublishHasBeenSet() const;
 
                 private:
 
@@ -183,10 +237,28 @@ namespace TencentCloud
                     bool m_zipFileHasBeenSet;
 
                     /**
+                     * 函数所属命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
                      * 对象存储的地域，注：北京分为ap-beijing和ap-beijing-1
                      */
                     std::string m_cosBucketRegion;
                     bool m_cosBucketRegionHasBeenSet;
+
+                    /**
+                     * 函数所属环境
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
+                     * 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     */
+                    std::string m_publish;
+                    bool m_publishHasBeenSet;
 
                 };
             }

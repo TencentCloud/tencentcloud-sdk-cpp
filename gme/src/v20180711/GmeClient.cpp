@@ -126,6 +126,92 @@ GmeClient::DescribeFilterResultListOutcomeCallable GmeClient::DescribeFilterResu
     return task->get_future();
 }
 
+GmeClient::DescribeScanResultListOutcome GmeClient::DescribeScanResultList(const DescribeScanResultListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanResultList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanResultListResponse rsp = DescribeScanResultListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanResultListOutcome(rsp);
+        else
+            return DescribeScanResultListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanResultListOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeScanResultListAsync(const DescribeScanResultListRequest& request, const DescribeScanResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanResultList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeScanResultListOutcomeCallable GmeClient::DescribeScanResultListCallable(const DescribeScanResultListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanResultListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanResultList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::ScanVoiceOutcome GmeClient::ScanVoice(const ScanVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScanVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScanVoiceResponse rsp = ScanVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScanVoiceOutcome(rsp);
+        else
+            return ScanVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ScanVoiceOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ScanVoiceAsync(const ScanVoiceRequest& request, const ScanVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScanVoice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ScanVoiceOutcomeCallable GmeClient::ScanVoiceCallable(const ScanVoiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScanVoiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ScanVoice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::VoiceFilterOutcome GmeClient::VoiceFilter(const VoiceFilterRequest &request)
 {
     auto outcome = MakeRequest(request, "VoiceFilter");

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cms/v20190321/model/ImageHotDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImageIllegalDetect.h>
+#include <tencentcloud/cms/v20190321/model/OCRDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePolityDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePornDetect.h>
 #include <tencentcloud/cms/v20190321/model/Similar.h>
@@ -77,6 +78,7 @@ namespace TencentCloud
 20002：色情 
 20006：涉毒违法
 20007：谩骂 
+20103：性感
 24001：暴恐
 21000：综合
                      * @return EvilType 恶意类型
@@ -85,6 +87,7 @@ namespace TencentCloud
 20002：色情 
 20006：涉毒违法
 20007：谩骂 
+20103：性感
 24001：暴恐
 21000：综合
                      */
@@ -97,6 +100,7 @@ namespace TencentCloud
 20002：色情 
 20006：涉毒违法
 20007：谩骂 
+20103：性感
 24001：暴恐
 21000：综合
                      * @param EvilType 恶意类型
@@ -105,6 +109,7 @@ namespace TencentCloud
 20002：色情 
 20006：涉毒违法
 20007：谩骂 
+20103：性感
 24001：暴恐
 21000：综合
                      */
@@ -151,6 +156,24 @@ namespace TencentCloud
                      * @return IllegalDetect 是否已赋值
                      */
                     bool IllegalDetectHasBeenSet() const;
+
+                    /**
+                     * 获取图片OCR详情
+                     * @return OCRDetect 图片OCR详情
+                     */
+                    OCRDetect GetOCRDetect() const;
+
+                    /**
+                     * 设置图片OCR详情
+                     * @param OCRDetect 图片OCR详情
+                     */
+                    void SetOCRDetect(const OCRDetect& _oCRDetect);
+
+                    /**
+                     * 判断参数 OCRDetect 是否已赋值
+                     * @return OCRDetect 是否已赋值
+                     */
+                    bool OCRDetectHasBeenSet() const;
 
                     /**
                      * 获取图片涉政详情
@@ -239,6 +262,7 @@ namespace TencentCloud
 20002：色情 
 20006：涉毒违法
 20007：谩骂 
+20103：性感
 24001：暴恐
 21000：综合
                      */
@@ -256,6 +280,12 @@ namespace TencentCloud
                      */
                     ImageIllegalDetect m_illegalDetect;
                     bool m_illegalDetectHasBeenSet;
+
+                    /**
+                     * 图片OCR详情
+                     */
+                    OCRDetect m_oCRDetect;
+                    bool m_oCRDetectHasBeenSet;
 
                     /**
                      * 图片涉政详情

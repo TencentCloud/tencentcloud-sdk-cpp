@@ -79,14 +79,30 @@ namespace TencentCloud
                     bool ToUrlHasBeenSet() const;
 
                     /**
-                     * 获取区域id,1-深圳,2-上海，3-天津,4-香港。
-                     * @return AreaId 区域id,1-深圳,2-上海，3-天津,4-香港。
+                     * 获取区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
+                     * @return AreaId 区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
                      */
                     int64_t GetAreaId() const;
 
                     /**
-                     * 设置区域id,1-深圳,2-上海，3-天津,4-香港。
-                     * @param AreaId 区域id,1-深圳,2-上海，3-天津,4-香港。
+                     * 设置区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
+                     * @param AreaId 区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
                      */
                     void SetAreaId(const int64_t& _areaId);
 
@@ -97,14 +113,34 @@ namespace TencentCloud
                     bool AreaIdHasBeenSet() const;
 
                     /**
-                     * 获取运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。
-                     * @return IspId 运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。
+                     * 获取运营商id：
+1-电信，
+2-移动，
+3-联通，
+4-其他。
+注：AreaId为4的时候,IspId只能为其他。
+                     * @return IspId 运营商id：
+1-电信，
+2-移动，
+3-联通，
+4-其他。
+注：AreaId为4的时候,IspId只能为其他。
                      */
                     int64_t GetIspId() const;
 
                     /**
-                     * 设置运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。
-                     * @param IspId 运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。
+                     * 设置运营商id：
+1-电信，
+2-移动，
+3-联通，
+4-其他。
+注：AreaId为4的时候,IspId只能为其他。
+                     * @param IspId 运营商id：
+1-电信，
+2-移动，
+3-联通，
+4-其他。
+注：AreaId为4的时候,IspId只能为其他。
                      */
                     void SetIspId(const int64_t& _ispId);
 
@@ -193,13 +229,22 @@ namespace TencentCloud
                     bool m_toUrlHasBeenSet;
 
                     /**
-                     * 区域id,1-深圳,2-上海，3-天津,4-香港。
+                     * 区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
                      */
                     int64_t m_areaId;
                     bool m_areaIdHasBeenSet;
 
                     /**
-                     * 运营商id,1-电信,2-移动,3-联通,4-其他,AreaId为4的时候,IspId只能为其他。
+                     * 运营商id：
+1-电信，
+2-移动，
+3-联通，
+4-其他。
+注：AreaId为4的时候,IspId只能为其他。
                      */
                     int64_t m_ispId;
                     bool m_ispIdHasBeenSet;

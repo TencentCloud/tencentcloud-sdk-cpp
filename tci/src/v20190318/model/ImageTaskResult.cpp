@@ -33,6 +33,7 @@ ImageTaskResult::ImageTaskResult() :
     m_lightHasBeenSet(false),
     m_studentBodyMovementHasBeenSet(false),
     m_teacherBodyMovementHasBeenSet(false),
+    m_teacherOutScreenHasBeenSet(false),
     m_timeInfoHasBeenSet(false)
 {
 }
@@ -229,6 +230,23 @@ CoreInternalOutcome ImageTaskResult::Deserialize(const Value &value)
         m_teacherBodyMovementHasBeenSet = true;
     }
 
+    if (value.HasMember("TeacherOutScreen") && !value["TeacherOutScreen"].IsNull())
+    {
+        if (!value["TeacherOutScreen"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageTaskResult.TeacherOutScreen` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_teacherOutScreen.Deserialize(value["TeacherOutScreen"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_teacherOutScreenHasBeenSet = true;
+    }
+
     if (value.HasMember("TimeInfo") && !value["TimeInfo"].IsNull())
     {
         if (!value["TimeInfo"].IsObject())
@@ -350,6 +368,15 @@ void ImageTaskResult::ToJsonObject(Value &value, Document::AllocatorType& alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_teacherBodyMovement.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_teacherOutScreenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TeacherOutScreen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_teacherOutScreen.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_timeInfoHasBeenSet)
@@ -538,6 +565,22 @@ void ImageTaskResult::SetTeacherBodyMovement(const BodyMovementResult& _teacherB
 bool ImageTaskResult::TeacherBodyMovementHasBeenSet() const
 {
     return m_teacherBodyMovementHasBeenSet;
+}
+
+TeacherOutScreenResult ImageTaskResult::GetTeacherOutScreen() const
+{
+    return m_teacherOutScreen;
+}
+
+void ImageTaskResult::SetTeacherOutScreen(const TeacherOutScreenResult& _teacherOutScreen)
+{
+    m_teacherOutScreen = _teacherOutScreen;
+    m_teacherOutScreenHasBeenSet = true;
+}
+
+bool ImageTaskResult::TeacherOutScreenHasBeenSet() const
+{
+    return m_teacherOutScreenHasBeenSet;
 }
 
 TimeInfoResult ImageTaskResult::GetTimeInfo() const

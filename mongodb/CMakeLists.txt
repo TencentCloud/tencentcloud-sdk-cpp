@@ -25,6 +25,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20180408/model/UpgradeDBInstanceHourRequest.h
   include/tencentcloud/mongodb/v20180408/model/CreateDBInstanceHourRequest.h
   include/tencentcloud/mongodb/v20180408/model/AssignProjectRequest.h
+  include/tencentcloud/mongodb/v20180408/model/ClientConnection.h
   include/tencentcloud/mongodb/v20180408/model/DescribeDBInstancesRequest.h
   include/tencentcloud/mongodb/v20180408/model/SetPasswordResponse.h
   include/tencentcloud/mongodb/v20180408/model/SpecificationInfo.h
@@ -37,12 +38,14 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20180408/model/SetPasswordRequest.h
   include/tencentcloud/mongodb/v20180408/model/AssignProjectResponse.h
   include/tencentcloud/mongodb/v20180408/model/DescribeSlowLogRequest.h
+  include/tencentcloud/mongodb/v20180408/model/DescribeClientConnectionsRequest.h
   include/tencentcloud/mongodb/v20180408/model/SetAutoRenewResponse.h
   include/tencentcloud/mongodb/v20180408/model/MongoDBInstance.h
   include/tencentcloud/mongodb/v20180408/model/RenameInstanceRequest.h
   include/tencentcloud/mongodb/v20180408/model/UpgradeDBInstanceResponse.h
   include/tencentcloud/mongodb/v20180408/model/SetAutoRenewRequest.h
   include/tencentcloud/mongodb/v20180408/model/RenameInstanceResponse.h
+  include/tencentcloud/mongodb/v20180408/model/DescribeClientConnectionsResponse.h
   include/tencentcloud/mongodb/v20180408/model/UpgradeDBInstanceHourResponse.h
   include/tencentcloud/mongodb/v20180408/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/mongodb/v20180408/model/CreateDBInstanceHourResponse.h
@@ -59,6 +62,7 @@ set(mongodb_src
   src/v20180408/model/UpgradeDBInstanceHourRequest.cpp
   src/v20180408/model/CreateDBInstanceHourRequest.cpp
   src/v20180408/model/AssignProjectRequest.cpp
+  src/v20180408/model/ClientConnection.cpp
   src/v20180408/model/DescribeDBInstancesRequest.cpp
   src/v20180408/model/SetPasswordResponse.cpp
   src/v20180408/model/SpecificationInfo.cpp
@@ -71,12 +75,14 @@ set(mongodb_src
   src/v20180408/model/SetPasswordRequest.cpp
   src/v20180408/model/AssignProjectResponse.cpp
   src/v20180408/model/DescribeSlowLogRequest.cpp
+  src/v20180408/model/DescribeClientConnectionsRequest.cpp
   src/v20180408/model/SetAutoRenewResponse.cpp
   src/v20180408/model/MongoDBInstance.cpp
   src/v20180408/model/RenameInstanceRequest.cpp
   src/v20180408/model/UpgradeDBInstanceResponse.cpp
   src/v20180408/model/SetAutoRenewRequest.cpp
   src/v20180408/model/RenameInstanceResponse.cpp
+  src/v20180408/model/DescribeClientConnectionsResponse.cpp
   src/v20180408/model/UpgradeDBInstanceHourResponse.cpp
   src/v20180408/model/UpgradeDBInstanceRequest.cpp
   src/v20180408/model/CreateDBInstanceHourResponse.cpp

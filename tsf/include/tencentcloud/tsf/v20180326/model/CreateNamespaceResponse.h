@@ -43,14 +43,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建命名空间是否成功。
-true：创建成功。
-false：创建失败。
-                     * @return Result 创建命名空间是否成功。
-true：创建成功。
-false：创建失败。
+                     * 获取成功时为命名空间ID，失败为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Result 成功时为命名空间ID，失败为null
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    bool GetResult() const;
+                    std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -61,11 +59,10 @@ false：创建失败。
                 private:
 
                     /**
-                     * 创建命名空间是否成功。
-true：创建成功。
-false：创建失败。
+                     * 成功时为命名空间ID，失败为null
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    bool m_result;
+                    std::string m_result;
                     bool m_resultHasBeenSet;
 
                 };

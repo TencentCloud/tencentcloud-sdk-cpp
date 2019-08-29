@@ -360,6 +360,42 @@ baseline/main/high。默认baseline
                      */
                     bool FpsToOrigHasBeenSet() const;
 
+                    /**
+                     * 获取是否是急速高清模板，0：否，1：是。默认0。
+                     * @return AiTransCode 是否是急速高清模板，0：否，1：是。默认0。
+                     */
+                    int64_t GetAiTransCode() const;
+
+                    /**
+                     * 设置是否是急速高清模板，0：否，1：是。默认0。
+                     * @param AiTransCode 是否是急速高清模板，0：否，1：是。默认0。
+                     */
+                    void SetAiTransCode(const int64_t& _aiTransCode);
+
+                    /**
+                     * 判断参数 AiTransCode 是否已赋值
+                     * @return AiTransCode 是否已赋值
+                     */
+                    bool AiTransCodeHasBeenSet() const;
+
+                    /**
+                     * 获取急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * @return AdaptBitratePercent 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     */
+                    double GetAdaptBitratePercent() const;
+
+                    /**
+                     * 设置急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * @param AdaptBitratePercent 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     */
+                    void SetAdaptBitratePercent(const double& _adaptBitratePercent);
+
+                    /**
+                     * 判断参数 AdaptBitratePercent 是否已赋值
+                     * @return AdaptBitratePercent 是否已赋值
+                     */
+                    bool AdaptBitratePercentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +502,18 @@ baseline/main/high。默认baseline
                      */
                     int64_t m_fpsToOrig;
                     bool m_fpsToOrigHasBeenSet;
+
+                    /**
+                     * 是否是急速高清模板，0：否，1：是。默认0。
+                     */
+                    int64_t m_aiTransCode;
+                    bool m_aiTransCodeHasBeenSet;
+
+                    /**
+                     * 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     */
+                    double m_adaptBitratePercent;
+                    bool m_adaptBitratePercentHasBeenSet;
 
                 };
             }

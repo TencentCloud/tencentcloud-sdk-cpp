@@ -27,7 +27,8 @@ ClusterNetworkSettings::ClusterNetworkSettings() :
     m_maxNodePodNumHasBeenSet(false),
     m_maxClusterServiceNumHasBeenSet(false),
     m_ipvsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_cniHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const Value &value)
         m_vpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Cni") && !value["Cni"].IsNull())
+    {
+        if (!value["Cni"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ClusterNetworkSettings.Cni` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cni = value["Cni"].GetBool();
+        m_cniHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cniHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cni";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cni, allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void ClusterNetworkSettings::SetVpcId(const string& _vpcId)
 bool ClusterNetworkSettings::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+bool ClusterNetworkSettings::GetCni() const
+{
+    return m_cni;
+}
+
+void ClusterNetworkSettings::SetCni(const bool& _cni)
+{
+    m_cni = _cni;
+    m_cniHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::CniHasBeenSet() const
+{
+    return m_cniHasBeenSet;
 }
 

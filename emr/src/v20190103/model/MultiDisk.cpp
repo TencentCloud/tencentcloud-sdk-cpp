@@ -23,7 +23,8 @@ using namespace std;
 
 MultiDisk::MultiDisk() :
     m_diskTypeHasBeenSet(false),
-    m_volumeHasBeenSet(false)
+    m_volumeHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome MultiDisk::Deserialize(const Value &value)
         m_volumeHasBeenSet = true;
     }
 
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MultiDisk.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void MultiDisk::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Volume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_volume, allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void MultiDisk::SetVolume(const int64_t& _volume)
 bool MultiDisk::VolumeHasBeenSet() const
 {
     return m_volumeHasBeenSet;
+}
+
+int64_t MultiDisk::GetCount() const
+{
+    return m_count;
+}
+
+void MultiDisk::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool MultiDisk::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 

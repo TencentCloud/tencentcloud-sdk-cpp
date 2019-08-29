@@ -126,6 +126,221 @@ TkeClient::CreateClusterOutcomeCallable TkeClient::CreateClusterCallable(const C
     return task->get_future();
 }
 
+TkeClient::CreateClusterAsGroupOutcome TkeClient::CreateClusterAsGroup(const CreateClusterAsGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterAsGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterAsGroupResponse rsp = CreateClusterAsGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterAsGroupOutcome(rsp);
+        else
+            return CreateClusterAsGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterAsGroupOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterAsGroupAsync(const CreateClusterAsGroupRequest& request, const CreateClusterAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterAsGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterAsGroupOutcomeCallable TkeClient::CreateClusterAsGroupCallable(const CreateClusterAsGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterAsGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterAsGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateClusterInstancesOutcome TkeClient::CreateClusterInstances(const CreateClusterInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterInstancesResponse rsp = CreateClusterInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterInstancesOutcome(rsp);
+        else
+            return CreateClusterInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterInstancesAsync(const CreateClusterInstancesRequest& request, const CreateClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterInstancesOutcomeCallable TkeClient::CreateClusterInstancesCallable(const CreateClusterInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateClusterRouteOutcome TkeClient::CreateClusterRoute(const CreateClusterRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterRouteResponse rsp = CreateClusterRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterRouteOutcome(rsp);
+        else
+            return CreateClusterRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterRouteOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterRouteAsync(const CreateClusterRouteRequest& request, const CreateClusterRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterRouteOutcomeCallable TkeClient::CreateClusterRouteCallable(const CreateClusterRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateClusterRouteTableOutcome TkeClient::CreateClusterRouteTable(const CreateClusterRouteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterRouteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterRouteTableResponse rsp = CreateClusterRouteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterRouteTableOutcome(rsp);
+        else
+            return CreateClusterRouteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterRouteTableOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterRouteTableAsync(const CreateClusterRouteTableRequest& request, const CreateClusterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterRouteTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterRouteTableOutcomeCallable TkeClient::CreateClusterRouteTableCallable(const CreateClusterRouteTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterRouteTableOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteClusterOutcome TkeClient::DeleteCluster(const DeleteClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterResponse rsp = DeleteClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterOutcome(rsp);
+        else
+            return DeleteClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterOutcomeCallable TkeClient::DeleteClusterCallable(const DeleteClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteClusterInstancesOutcome TkeClient::DeleteClusterInstances(const DeleteClusterInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteClusterInstances");
@@ -162,6 +377,92 @@ TkeClient::DeleteClusterInstancesOutcomeCallable TkeClient::DeleteClusterInstanc
         [this, request]()
         {
             return this->DeleteClusterInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteClusterRouteOutcome TkeClient::DeleteClusterRoute(const DeleteClusterRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterRouteResponse rsp = DeleteClusterRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterRouteOutcome(rsp);
+        else
+            return DeleteClusterRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterRouteOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterRouteAsync(const DeleteClusterRouteRequest& request, const DeleteClusterRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterRouteOutcomeCallable TkeClient::DeleteClusterRouteCallable(const DeleteClusterRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteClusterRouteTableOutcome TkeClient::DeleteClusterRouteTable(const DeleteClusterRouteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterRouteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterRouteTableResponse rsp = DeleteClusterRouteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterRouteTableOutcome(rsp);
+        else
+            return DeleteClusterRouteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterRouteTableOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterRouteTableAsync(const DeleteClusterRouteTableRequest& request, const DeleteClusterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterRouteTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterRouteTableOutcomeCallable TkeClient::DeleteClusterRouteTableCallable(const DeleteClusterRouteTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterRouteTableOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterRouteTable(request);
         }
     );
 
@@ -212,6 +513,135 @@ TkeClient::DescribeClusterInstancesOutcomeCallable TkeClient::DescribeClusterIns
     return task->get_future();
 }
 
+TkeClient::DescribeClusterRouteTablesOutcome TkeClient::DescribeClusterRouteTables(const DescribeClusterRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterRouteTablesResponse rsp = DescribeClusterRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterRouteTablesOutcome(rsp);
+        else
+            return DescribeClusterRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterRouteTablesAsync(const DescribeClusterRouteTablesRequest& request, const DescribeClusterRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterRouteTablesOutcomeCallable TkeClient::DescribeClusterRouteTablesCallable(const DescribeClusterRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterRouteTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterRoutesOutcome TkeClient::DescribeClusterRoutes(const DescribeClusterRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterRoutesResponse rsp = DescribeClusterRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterRoutesOutcome(rsp);
+        else
+            return DescribeClusterRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterRoutesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterRoutesAsync(const DescribeClusterRoutesRequest& request, const DescribeClusterRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterRoutesOutcomeCallable TkeClient::DescribeClusterRoutesCallable(const DescribeClusterRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterSecurityOutcome TkeClient::DescribeClusterSecurity(const DescribeClusterSecurityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterSecurity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterSecurityResponse rsp = DescribeClusterSecurityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterSecurityOutcome(rsp);
+        else
+            return DescribeClusterSecurityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterSecurityOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterSecurityAsync(const DescribeClusterSecurityRequest& request, const DescribeClusterSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterSecurity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterSecurityOutcomeCallable TkeClient::DescribeClusterSecurityCallable(const DescribeClusterSecurityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterSecurityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterSecurity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClustersOutcome TkeClient::DescribeClusters(const DescribeClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusters");
@@ -248,6 +678,92 @@ TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(c
         [this, request]()
         {
             return this->DescribeClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeExistedInstancesOutcome TkeClient::DescribeExistedInstances(const DescribeExistedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExistedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExistedInstancesResponse rsp = DescribeExistedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExistedInstancesOutcome(rsp);
+        else
+            return DescribeExistedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExistedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeExistedInstancesAsync(const DescribeExistedInstancesRequest& request, const DescribeExistedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExistedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeExistedInstancesOutcomeCallable TkeClient::DescribeExistedInstancesCallable(const DescribeExistedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExistedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExistedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeRouteTableConflictsOutcome TkeClient::DescribeRouteTableConflicts(const DescribeRouteTableConflictsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRouteTableConflicts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRouteTableConflictsResponse rsp = DescribeRouteTableConflictsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRouteTableConflictsOutcome(rsp);
+        else
+            return DescribeRouteTableConflictsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRouteTableConflictsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeRouteTableConflictsAsync(const DescribeRouteTableConflictsRequest& request, const DescribeRouteTableConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRouteTableConflicts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTableConflictsCallable(const DescribeRouteTableConflictsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRouteTableConflictsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRouteTableConflicts(request);
         }
     );
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iai/v20180301/model/PersonGroupInfo.h>
 
 
 namespace TencentCloud
@@ -120,6 +121,72 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取人员名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PersonName 人员名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPersonName() const;
+
+                    /**
+                     * 设置人员名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PersonName 人员名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPersonName(const std::string& _personName);
+
+                    /**
+                     * 判断参数 PersonName 是否已赋值
+                     * @return PersonName 是否已赋值
+                     */
+                    bool PersonNameHasBeenSet() const;
+
+                    /**
+                     * 获取人员性别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Gender 人员性别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetGender() const;
+
+                    /**
+                     * 设置人员性别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Gender 人员性别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGender(const int64_t& _gender);
+
+                    /**
+                     * 判断参数 Gender 是否已赋值
+                     * @return Gender 是否已赋值
+                     */
+                    bool GenderHasBeenSet() const;
+
+                    /**
+                     * 获取包含此人员的人员库及描述字段内容列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PersonGroupInfos 包含此人员的人员库及描述字段内容列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PersonGroupInfo> GetPersonGroupInfos() const;
+
+                    /**
+                     * 设置包含此人员的人员库及描述字段内容列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PersonGroupInfos 包含此人员的人员库及描述字段内容列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPersonGroupInfos(const std::vector<PersonGroupInfo>& _personGroupInfos);
+
+                    /**
+                     * 判断参数 PersonGroupInfos 是否已赋值
+                     * @return PersonGroupInfos 是否已赋值
+                     */
+                    bool PersonGroupInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +211,27 @@ namespace TencentCloud
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 人员名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_personName;
+                    bool m_personNameHasBeenSet;
+
+                    /**
+                     * 人员性别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_gender;
+                    bool m_genderHasBeenSet;
+
+                    /**
+                     * 包含此人员的人员库及描述字段内容列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PersonGroupInfo> m_personGroupInfos;
+                    bool m_personGroupInfosHasBeenSet;
 
                 };
             }

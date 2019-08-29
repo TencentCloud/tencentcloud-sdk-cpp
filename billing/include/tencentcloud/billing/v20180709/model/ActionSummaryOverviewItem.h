@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取交易类型
-                     * @return ActionType 交易类型
+                     * 获取交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
+                     * @return ActionType 交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置交易类型
-                     * @param ActionType 交易类型
+                     * 设置交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
+                     * @param ActionType 交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
                      */
                     void SetActionType(const std::string& _actionType);
 
@@ -121,7 +121,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 交易类型
+                     * 交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;

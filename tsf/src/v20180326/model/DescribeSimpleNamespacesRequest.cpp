@@ -28,7 +28,8 @@ DescribeSimpleNamespacesRequest::DescribeSimpleNamespacesRequest() :
     m_clusterIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_namespaceResourceTypeListHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,19 @@ string DescribeSimpleNamespacesRequest::ToJsonString() const
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceResourceTypeListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceResourceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_namespaceResourceTypeList.begin(); itr != m_namespaceResourceTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -170,6 +184,22 @@ void DescribeSimpleNamespacesRequest::SetNamespaceId(const string& _namespaceId)
 bool DescribeSimpleNamespacesRequest::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
+}
+
+vector<string> DescribeSimpleNamespacesRequest::GetNamespaceResourceTypeList() const
+{
+    return m_namespaceResourceTypeList;
+}
+
+void DescribeSimpleNamespacesRequest::SetNamespaceResourceTypeList(const vector<string>& _namespaceResourceTypeList)
+{
+    m_namespaceResourceTypeList = _namespaceResourceTypeList;
+    m_namespaceResourceTypeListHasBeenSet = true;
+}
+
+bool DescribeSimpleNamespacesRequest::NamespaceResourceTypeListHasBeenSet() const
+{
+    return m_namespaceResourceTypeListHasBeenSet;
 }
 
 

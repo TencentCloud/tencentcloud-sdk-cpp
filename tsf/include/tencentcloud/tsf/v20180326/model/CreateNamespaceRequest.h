@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool NamespaceDescHasBeenSet() const;
 
+                    /**
+                     * 获取命名空间资源类型(默认值为DEF)
+                     * @return NamespaceResourceType 命名空间资源类型(默认值为DEF)
+                     */
+                    std::string GetNamespaceResourceType() const;
+
+                    /**
+                     * 设置命名空间资源类型(默认值为DEF)
+                     * @param NamespaceResourceType 命名空间资源类型(默认值为DEF)
+                     */
+                    void SetNamespaceResourceType(const std::string& _namespaceResourceType);
+
+                    /**
+                     * 判断参数 NamespaceResourceType 是否已赋值
+                     * @return NamespaceResourceType 是否已赋值
+                     */
+                    bool NamespaceResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_namespaceDesc;
                     bool m_namespaceDescHasBeenSet;
+
+                    /**
+                     * 命名空间资源类型(默认值为DEF)
+                     */
+                    std::string m_namespaceResourceType;
+                    bool m_namespaceResourceTypeHasBeenSet;
 
                 };
             }

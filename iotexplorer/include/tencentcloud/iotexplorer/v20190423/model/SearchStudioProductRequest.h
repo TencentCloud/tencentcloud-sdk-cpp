@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取产品Status
+                     * @return DevStatus 产品Status
+                     */
+                    std::string GetDevStatus() const;
+
+                    /**
+                     * 设置产品Status
+                     * @param DevStatus 产品Status
+                     */
+                    void SetDevStatus(const std::string& _devStatus);
+
+                    /**
+                     * 判断参数 DevStatus 是否已赋值
+                     * @return DevStatus 是否已赋值
+                     */
+                    bool DevStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 产品Status
+                     */
+                    std::string m_devStatus;
+                    bool m_devStatusHasBeenSet;
 
                 };
             }

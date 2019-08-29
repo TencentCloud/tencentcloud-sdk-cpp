@@ -33,6 +33,8 @@
 #include <tencentcloud/tag/v20180813/model/DeleteTagResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeResourceTagsByResourceIdsRequest.h>
 #include <tencentcloud/tag/v20180813/model/DescribeResourceTagsByResourceIdsResponse.h>
+#include <tencentcloud/tag/v20180813/model/DescribeResourcesByTagsRequest.h>
+#include <tencentcloud/tag/v20180813/model/DescribeResourcesByTagsResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeTagKeysRequest.h>
 #include <tencentcloud/tag/v20180813/model/DescribeTagKeysResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeTagValuesRequest.h>
@@ -72,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeResourceTagsByResourceIdsResponse> DescribeResourceTagsByResourceIdsOutcome;
                 typedef std::future<DescribeResourceTagsByResourceIdsOutcome> DescribeResourceTagsByResourceIdsOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::DescribeResourceTagsByResourceIdsRequest&, DescribeResourceTagsByResourceIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceTagsByResourceIdsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourcesByTagsResponse> DescribeResourcesByTagsOutcome;
+                typedef std::future<DescribeResourcesByTagsOutcome> DescribeResourcesByTagsOutcomeCallable;
+                typedef std::function<void(const TagClient*, const Model::DescribeResourcesByTagsRequest&, DescribeResourcesByTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesByTagsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTagKeysResponse> DescribeTagKeysOutcome;
                 typedef std::future<DescribeTagKeysOutcome> DescribeTagKeysOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::DescribeTagKeysRequest&, DescribeTagKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagKeysAsyncHandler;
@@ -134,6 +139,15 @@ namespace TencentCloud
                 DescribeResourceTagsByResourceIdsOutcome DescribeResourceTagsByResourceIds(const Model::DescribeResourceTagsByResourceIdsRequest &request);
                 void DescribeResourceTagsByResourceIdsAsync(const Model::DescribeResourceTagsByResourceIdsRequest& request, const DescribeResourceTagsByResourceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourceTagsByResourceIdsOutcomeCallable DescribeResourceTagsByResourceIdsCallable(const Model::DescribeResourceTagsByResourceIdsRequest& request);
+
+                /**
+                 *通过标签查询资源列表
+                 * @param req DescribeResourcesByTagsRequest
+                 * @return DescribeResourcesByTagsOutcome
+                 */
+                DescribeResourcesByTagsOutcome DescribeResourcesByTags(const Model::DescribeResourcesByTagsRequest &request);
+                void DescribeResourcesByTagsAsync(const Model::DescribeResourcesByTagsRequest& request, const DescribeResourcesByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcesByTagsOutcomeCallable DescribeResourcesByTagsCallable(const Model::DescribeResourcesByTagsRequest& request);
 
                 /**
                  *用于查询已建立的标签列表中的标签键。

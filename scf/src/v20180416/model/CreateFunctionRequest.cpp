@@ -33,8 +33,12 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_environmentHasBeenSet(false),
     m_runtimeHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_roleHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
-    m_clsTopicIdHasBeenSet(false)
+    m_clsTopicIdHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_codeSourceHasBeenSet(false)
 {
 }
 
@@ -120,6 +124,22 @@ string CreateFunctionRequest::ToJsonString() const
         m_vpcConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_clsLogsetIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -134,6 +154,22 @@ string CreateFunctionRequest::ToJsonString() const
         string key = "ClsTopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeSourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CodeSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_codeSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -288,6 +324,38 @@ bool CreateFunctionRequest::VpcConfigHasBeenSet() const
     return m_vpcConfigHasBeenSet;
 }
 
+string CreateFunctionRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void CreateFunctionRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string CreateFunctionRequest::GetRole() const
+{
+    return m_role;
+}
+
+void CreateFunctionRequest::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
+}
+
 string CreateFunctionRequest::GetClsLogsetId() const
 {
     return m_clsLogsetId;
@@ -318,6 +386,38 @@ void CreateFunctionRequest::SetClsTopicId(const string& _clsTopicId)
 bool CreateFunctionRequest::ClsTopicIdHasBeenSet() const
 {
     return m_clsTopicIdHasBeenSet;
+}
+
+string CreateFunctionRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateFunctionRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string CreateFunctionRequest::GetCodeSource() const
+{
+    return m_codeSource;
+}
+
+void CreateFunctionRequest::SetCodeSource(const string& _codeSource)
+{
+    m_codeSource = _codeSource;
+    m_codeSourceHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::CodeSourceHasBeenSet() const
+{
+    return m_codeSourceHasBeenSet;
 }
 
 

@@ -42,7 +42,61 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取失败的节点ID
+                     * @return FailedInstanceIds 失败的节点ID
+                     */
+                    std::vector<std::string> GetFailedInstanceIds() const;
+
+                    /**
+                     * 判断参数 FailedInstanceIds 是否已赋值
+                     * @return FailedInstanceIds 是否已赋值
+                     */
+                    bool FailedInstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取成功的节点ID
+                     * @return SuccInstanceIds 成功的节点ID
+                     */
+                    std::vector<std::string> GetSuccInstanceIds() const;
+
+                    /**
+                     * 判断参数 SuccInstanceIds 是否已赋值
+                     * @return SuccInstanceIds 是否已赋值
+                     */
+                    bool SuccInstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取超时未返回出来节点的ID(可能失败，也可能成功)
+                     * @return TimeoutInstanceIds 超时未返回出来节点的ID(可能失败，也可能成功)
+                     */
+                    std::vector<std::string> GetTimeoutInstanceIds() const;
+
+                    /**
+                     * 判断参数 TimeoutInstanceIds 是否已赋值
+                     * @return TimeoutInstanceIds 是否已赋值
+                     */
+                    bool TimeoutInstanceIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 失败的节点ID
+                     */
+                    std::vector<std::string> m_failedInstanceIds;
+                    bool m_failedInstanceIdsHasBeenSet;
+
+                    /**
+                     * 成功的节点ID
+                     */
+                    std::vector<std::string> m_succInstanceIds;
+                    bool m_succInstanceIdsHasBeenSet;
+
+                    /**
+                     * 超时未返回出来节点的ID(可能失败，也可能成功)
+                     */
+                    std::vector<std::string> m_timeoutInstanceIds;
+                    bool m_timeoutInstanceIdsHasBeenSet;
 
                 };
             }

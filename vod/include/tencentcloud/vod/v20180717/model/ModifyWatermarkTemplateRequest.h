@@ -226,14 +226,14 @@ namespace TencentCloud
                     bool TextTemplateHasBeenSet() const;
 
                     /**
-                     * 获取SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。
-                     * @return SvgTemplate SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。
+                     * 获取SVG 水印模板，该字段仅对 SVG 水印模板有效。
+                     * @return SvgTemplate SVG 水印模板，该字段仅对 SVG 水印模板有效。
                      */
                     SvgWatermarkInputForUpdate GetSvgTemplate() const;
 
                     /**
-                     * 设置SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。
-                     * @param SvgTemplate SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。
+                     * 设置SVG 水印模板，该字段仅对 SVG 水印模板有效。
+                     * @param SvgTemplate SVG 水印模板，该字段仅对 SVG 水印模板有效。
                      */
                     void SetSvgTemplate(const SvgWatermarkInputForUpdate& _svgTemplate);
 
@@ -321,7 +321,7 @@ namespace TencentCloud
                     bool m_textTemplateHasBeenSet;
 
                     /**
-                     * SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。
+                     * SVG 水印模板，该字段仅对 SVG 水印模板有效。
                      */
                     SvgWatermarkInputForUpdate m_svgTemplate;
                     bool m_svgTemplateHasBeenSet;

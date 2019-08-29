@@ -43,14 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称。非空的字符串。
-                     * @return TemplateName 模板名称。非空的字符串。
+                     * 获取模板名称，非空的字符串。
+长度上限：255字节。
+                     * @return TemplateName 模板名称，非空的字符串。
+长度上限：255字节。
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称。非空的字符串。
-                     * @param TemplateName 模板名称。非空的字符串。
+                     * 设置模板名称，非空的字符串。
+长度上限：255字节。
+                     * @param TemplateName 模板名称，非空的字符串。
+长度上限：255字节。
                      */
                     void SetTemplateName(const std::string& _templateName);
 
@@ -116,13 +120,17 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息。
+长度上限：1024字节。
                      * @return Description 描述信息。
+长度上限：1024字节。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
+长度上限：1024字节。
                      * @param Description 描述信息。
+长度上限：1024字节。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -211,7 +219,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称。非空的字符串。
+                     * 模板名称，非空的字符串。
+长度上限：255字节。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
@@ -236,6 +245,7 @@ namespace TencentCloud
 
                     /**
                      * 描述信息。
+长度上限：1024字节。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -79,6 +79,8 @@
 #include <tencentcloud/redis/v20180412/model/ResetPasswordResponse.h>
 #include <tencentcloud/redis/v20180412/model/RestoreInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RestoreInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/SwitchInstanceVipRequest.h>
+#include <tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
 
@@ -179,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RestoreInstanceResponse> RestoreInstanceOutcome;
                 typedef std::future<RestoreInstanceOutcome> RestoreInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RestoreInstanceRequest&, RestoreInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreInstanceAsyncHandler;
+                typedef Outcome<Error, Model::SwitchInstanceVipResponse> SwitchInstanceVipOutcome;
+                typedef std::future<SwitchInstanceVipOutcome> SwitchInstanceVipOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::SwitchInstanceVipRequest&, SwitchInstanceVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceVipAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -222,7 +227,7 @@ namespace TencentCloud
                 DescribeAutoBackupConfigOutcomeCallable DescribeAutoBackupConfigCallable(const Model::DescribeAutoBackupConfigRequest& request);
 
                 /**
-                 *查询备份Rdb下载地址
+                 *查询备份Rdb下载地址(接口灰度中，需要加白名单使用)
                  * @param req DescribeBackupUrlRequest
                  * @return DescribeBackupUrlOutcome
                  */
@@ -436,6 +441,15 @@ namespace TencentCloud
                 RestoreInstanceOutcome RestoreInstance(const Model::RestoreInstanceRequest &request);
                 void RestoreInstanceAsync(const Model::RestoreInstanceRequest& request, const RestoreInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestoreInstanceOutcomeCallable RestoreInstanceCallable(const Model::RestoreInstanceRequest& request);
+
+                /**
+                 *在通过DTS支持跨可用区灾备的场景中，通过该接口交换实例VIP完成实例灾备切换。交换VIP后目标实例可写，源和目标实例VIP互换，同时源与目标实例间DTS同步任务断开
+                 * @param req SwitchInstanceVipRequest
+                 * @return SwitchInstanceVipOutcome
+                 */
+                SwitchInstanceVipOutcome SwitchInstanceVip(const Model::SwitchInstanceVipRequest &request);
+                void SwitchInstanceVipAsync(const Model::SwitchInstanceVipRequest& request, const SwitchInstanceVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchInstanceVipOutcomeCallable SwitchInstanceVipCallable(const Model::SwitchInstanceVipRequest& request);
 
                 /**
                  *升级实例

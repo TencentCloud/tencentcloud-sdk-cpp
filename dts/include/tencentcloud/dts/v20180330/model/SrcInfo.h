@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool UniqVpnGwIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库实例ID,格式如：cdb-powiqx8q
-                     * @return InstanceId 数据库实例ID,格式如：cdb-powiqx8q
+                     * 获取数据库实例ID，格式如：cdb-powiqx8q
+                     * @return InstanceId 数据库实例ID，格式如：cdb-powiqx8q
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置数据库实例ID,格式如：cdb-powiqx8q
-                     * @param InstanceId 数据库实例ID,格式如：cdb-powiqx8q
+                     * 设置数据库实例ID，格式如：cdb-powiqx8q
+                     * @param InstanceId 数据库实例ID，格式如：cdb-powiqx8q
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -297,6 +297,28 @@ namespace TencentCloud
                      * @return Supplier 是否已赋值
                      */
                     bool SupplierHasBeenSet() const;
+
+                    /**
+                     * 获取云联网ID，如：ccn-afp6kltc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CcnId 云联网ID，如：ccn-afp6kltc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCcnId() const;
+
+                    /**
+                     * 设置云联网ID，如：ccn-afp6kltc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CcnId 云联网ID，如：ccn-afp6kltc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCcnId(const std::string& _ccnId);
+
+                    /**
+                     * 判断参数 CcnId 是否已赋值
+                     * @return CcnId 是否已赋值
+                     */
+                    bool CcnIdHasBeenSet() const;
 
                 private:
 
@@ -367,7 +389,7 @@ namespace TencentCloud
                     bool m_uniqVpnGwIdHasBeenSet;
 
                     /**
-                     * 数据库实例ID,格式如：cdb-powiqx8q
+                     * 数据库实例ID，格式如：cdb-powiqx8q
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -383,6 +405,13 @@ namespace TencentCloud
                      */
                     std::string m_supplier;
                     bool m_supplierHasBeenSet;
+
+                    /**
+                     * 云联网ID，如：ccn-afp6kltc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ccnId;
+                    bool m_ccnIdHasBeenSet;
 
                 };
             }

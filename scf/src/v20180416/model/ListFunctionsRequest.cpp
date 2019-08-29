@@ -29,6 +29,7 @@ ListFunctionsRequest::ListFunctionsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_searchKeyHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
@@ -79,6 +80,14 @@ string ListFunctionsRequest::ToJsonString() const
         string key = "SearchKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_searchKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -190,6 +199,22 @@ void ListFunctionsRequest::SetSearchKey(const string& _searchKey)
 bool ListFunctionsRequest::SearchKeyHasBeenSet() const
 {
     return m_searchKeyHasBeenSet;
+}
+
+string ListFunctionsRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void ListFunctionsRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool ListFunctionsRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 
 string ListFunctionsRequest::GetDescription() const

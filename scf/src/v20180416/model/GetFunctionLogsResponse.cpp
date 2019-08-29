@@ -26,7 +26,8 @@ using namespace std;
 
 GetFunctionLogsResponse::GetFunctionLogsResponse() :
     m_totalCountHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_searchContextHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,23 @@ CoreInternalOutcome GetFunctionLogsResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SearchContext") && !rsp["SearchContext"].IsNull())
+    {
+        if (!rsp["SearchContext"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `SearchContext` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_searchContext.Deserialize(rsp["SearchContext"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_searchContextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +135,16 @@ vector<FunctionLog> GetFunctionLogsResponse::GetData() const
 bool GetFunctionLogsResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+LogSearchContext GetFunctionLogsResponse::GetSearchContext() const
+{
+    return m_searchContext;
+}
+
+bool GetFunctionLogsResponse::SearchContextHasBeenSet() const
+{
+    return m_searchContextHasBeenSet;
 }
 
 

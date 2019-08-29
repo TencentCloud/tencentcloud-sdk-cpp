@@ -208,6 +208,42 @@ namespace TencentCloud
                     bool VpcConfigHasBeenSet() const;
 
                     /**
+                     * 获取函数所属命名空间
+                     * @return Namespace 函数所属命名空间
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置函数所属命名空间
+                     * @param Namespace 函数所属命名空间
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取函数绑定的角色
+                     * @return Role 函数绑定的角色
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置函数绑定的角色
+                     * @param Role 函数绑定的角色
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
+                    /**
                      * 获取函数日志投递到的CLS LogsetID
                      * @return ClsLogsetId 函数日志投递到的CLS LogsetID
                      */
@@ -242,6 +278,42 @@ namespace TencentCloud
                      * @return ClsTopicId 是否已赋值
                      */
                     bool ClsTopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP
+                     * @return Type 函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP
+                     * @param Type 函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     * @return CodeSource CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     */
+                    std::string GetCodeSource() const;
+
+                    /**
+                     * 设置CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     * @param CodeSource CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     */
+                    void SetCodeSource(const std::string& _codeSource);
+
+                    /**
+                     * 判断参数 CodeSource 是否已赋值
+                     * @return CodeSource 是否已赋值
+                     */
+                    bool CodeSourceHasBeenSet() const;
 
                 private:
 
@@ -300,6 +372,18 @@ namespace TencentCloud
                     bool m_vpcConfigHasBeenSet;
 
                     /**
+                     * 函数所属命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 函数绑定的角色
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
+
+                    /**
                      * 函数日志投递到的CLS LogsetID
                      */
                     std::string m_clsLogsetId;
@@ -310,6 +394,18 @@ namespace TencentCloud
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
+
+                    /**
+                     * 函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段
+                     */
+                    std::string m_codeSource;
+                    bool m_codeSourceHasBeenSet;
 
                 };
             }

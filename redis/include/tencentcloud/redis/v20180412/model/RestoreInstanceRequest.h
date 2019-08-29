@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例密码，恢复实例时，需要校验实例密码
-                     * @return Password 实例密码，恢复实例时，需要校验实例密码
-                     */
-                    std::string GetPassword() const;
-
-                    /**
-                     * 设置实例密码，恢复实例时，需要校验实例密码
-                     * @param Password 实例密码，恢复实例时，需要校验实例密码
-                     */
-                    void SetPassword(const std::string& _password);
-
-                    /**
-                     * 判断参数 Password 是否已赋值
-                     * @return Password 是否已赋值
-                     */
-                    bool PasswordHasBeenSet() const;
-
-                    /**
                      * 获取备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
                      * @return BackupId 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
                      */
@@ -96,6 +78,24 @@ namespace TencentCloud
                      */
                     bool BackupIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     * @return Password 实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     * @param Password 实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     */
+                    bool PasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,16 +105,16 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例密码，恢复实例时，需要校验实例密码
-                     */
-                    std::string m_password;
-                    bool m_passwordHasBeenSet;
-
-                    /**
                      * 备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;
+
+                    /**
+                     * 实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
 
                 };
             }

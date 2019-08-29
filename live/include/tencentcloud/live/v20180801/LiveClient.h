@@ -602,6 +602,7 @@ namespace TencentCloud
 
 - 注意事项
   1. 调用接口超时设置应大于3秒，小于3秒重试以及频繁调用都有可能产生重复录制任务。
+  2. 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持 H.264，音频编码类型支持 AAC。
                  * @param req CreateLiveRecordRequest
                  * @return CreateLiveRecordOutcome
                  */
@@ -1258,7 +1259,7 @@ namespace TencentCloud
                 EnableLiveDomainOutcomeCallable EnableLiveDomainCallable(const Model::EnableLiveDomainRequest& request);
 
                 /**
-                 *停用使用某个直播域名
+                 *停止使用某个直播域名。
                  * @param req ForbidLiveDomainRequest
                  * @return ForbidLiveDomainOutcome
                  */

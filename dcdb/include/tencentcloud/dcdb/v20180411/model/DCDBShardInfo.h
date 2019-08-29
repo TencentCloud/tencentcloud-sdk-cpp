@@ -370,6 +370,42 @@ namespace TencentCloud
                      */
                     bool ShardIdHasBeenSet() const;
 
+                    /**
+                     * 获取产品ProductID
+                     * @return Pid 产品ProductID
+                     */
+                    int64_t GetPid() const;
+
+                    /**
+                     * 设置产品ProductID
+                     * @param Pid 产品ProductID
+                     */
+                    void SetPid(const int64_t& _pid);
+
+                    /**
+                     * 判断参数 Pid 是否已赋值
+                     * @return Pid 是否已赋值
+                     */
+                    bool PidHasBeenSet() const;
+
+                    /**
+                     * 获取Proxy版本
+                     * @return ProxyVersion Proxy版本
+                     */
+                    std::string GetProxyVersion() const;
+
+                    /**
+                     * 设置Proxy版本
+                     * @param ProxyVersion Proxy版本
+                     */
+                    void SetProxyVersion(const std::string& _proxyVersion);
+
+                    /**
+                     * 判断参数 ProxyVersion 是否已赋值
+                     * @return ProxyVersion 是否已赋值
+                     */
+                    bool ProxyVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +515,18 @@ namespace TencentCloud
                      */
                     int64_t m_shardId;
                     bool m_shardIdHasBeenSet;
+
+                    /**
+                     * 产品ProductID
+                     */
+                    int64_t m_pid;
+                    bool m_pidHasBeenSet;
+
+                    /**
+                     * Proxy版本
+                     */
+                    std::string m_proxyVersion;
+                    bool m_proxyVersionHasBeenSet;
 
                 };
             }

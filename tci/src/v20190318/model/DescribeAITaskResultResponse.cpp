@@ -28,6 +28,7 @@ DescribeAITaskResultResponse::DescribeAITaskResultResponse() :
     m_audioResultHasBeenSet(false),
     m_imageResultHasBeenSet(false),
     m_videoResultHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_taskIdHasBeenSet(false)
 {
 }
@@ -117,6 +118,16 @@ CoreInternalOutcome DescribeAITaskResultResponse::Deserialize(const string &payl
         m_videoResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
     if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
         if (!rsp["TaskId"].IsInt64())
@@ -160,6 +171,16 @@ StandardVideoResult DescribeAITaskResultResponse::GetVideoResult() const
 bool DescribeAITaskResultResponse::VideoResultHasBeenSet() const
 {
     return m_videoResultHasBeenSet;
+}
+
+string DescribeAITaskResultResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeAITaskResultResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 int64_t DescribeAITaskResultResponse::GetTaskId() const

@@ -27,24 +27,38 @@
 #include <tencentcloud/scf/v20180416/model/CopyFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/CreateFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/CreateNamespaceRequest.h>
+#include <tencentcloud/scf/v20180416/model/CreateNamespaceResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateTriggerRequest.h>
 #include <tencentcloud/scf/v20180416/model/CreateTriggerResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/DeleteNamespaceRequest.h>
+#include <tencentcloud/scf/v20180416/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetFunctionAddressRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionLogsRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionLogsResponse.h>
 #include <tencentcloud/scf/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/scf/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListNamespacesRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListNamespacesResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListVersionByFunctionRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListVersionByFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/PublishVersionRequest.h>
+#include <tencentcloud/scf/v20180416/model/PublishVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationResponse.h>
+#include <tencentcloud/scf/v20180416/model/UpdateNamespaceRequest.h>
+#include <tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h>
 
 
 namespace TencentCloud
@@ -65,18 +79,27 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateFunctionResponse> CreateFunctionOutcome;
                 typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::CreateFunctionRequest&, CreateFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionAsyncHandler;
+                typedef Outcome<Error, Model::CreateNamespaceResponse> CreateNamespaceOutcome;
+                typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::CreateNamespaceRequest&, CreateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
                 typedef Outcome<Error, Model::CreateTriggerResponse> CreateTriggerOutcome;
                 typedef std::future<CreateTriggerOutcome> CreateTriggerOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::CreateTriggerRequest&, CreateTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTriggerAsyncHandler;
                 typedef Outcome<Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
+                typedef Outcome<Error, Model::DeleteNamespaceResponse> DeleteNamespaceOutcome;
+                typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::DeleteNamespaceRequest&, DeleteNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTriggerResponse> DeleteTriggerOutcome;
                 typedef std::future<DeleteTriggerOutcome> DeleteTriggerOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteTriggerRequest&, DeleteTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTriggerAsyncHandler;
                 typedef Outcome<Error, Model::GetFunctionResponse> GetFunctionOutcome;
                 typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionRequest&, GetFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAsyncHandler;
+                typedef Outcome<Error, Model::GetFunctionAddressResponse> GetFunctionAddressOutcome;
+                typedef std::future<GetFunctionAddressOutcome> GetFunctionAddressOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetFunctionAddressRequest&, GetFunctionAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAddressAsyncHandler;
                 typedef Outcome<Error, Model::GetFunctionLogsResponse> GetFunctionLogsOutcome;
                 typedef std::future<GetFunctionLogsOutcome> GetFunctionLogsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionLogsRequest&, GetFunctionLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionLogsAsyncHandler;
@@ -86,23 +109,35 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListFunctionsResponse> ListFunctionsOutcome;
                 typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListFunctionsRequest&, ListFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionsAsyncHandler;
+                typedef Outcome<Error, Model::ListNamespacesResponse> ListNamespacesOutcome;
+                typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListNamespacesRequest&, ListNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListNamespacesAsyncHandler;
+                typedef Outcome<Error, Model::ListVersionByFunctionResponse> ListVersionByFunctionOutcome;
+                typedef std::future<ListVersionByFunctionOutcome> ListVersionByFunctionOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListVersionByFunctionRequest&, ListVersionByFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVersionByFunctionAsyncHandler;
+                typedef Outcome<Error, Model::PublishVersionResponse> PublishVersionOutcome;
+                typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::PublishVersionRequest&, PublishVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishVersionAsyncHandler;
                 typedef Outcome<Error, Model::UpdateFunctionCodeResponse> UpdateFunctionCodeOutcome;
                 typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateFunctionCodeRequest&, UpdateFunctionCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionCodeAsyncHandler;
                 typedef Outcome<Error, Model::UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationOutcome;
                 typedef std::future<UpdateFunctionConfigurationOutcome> UpdateFunctionConfigurationOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateFunctionConfigurationRequest&, UpdateFunctionConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionConfigurationAsyncHandler;
+                typedef Outcome<Error, Model::UpdateNamespaceResponse> UpdateNamespaceOutcome;
+                typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::UpdateNamespaceRequest&, UpdateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceAsyncHandler;
 
 
 
                 /**
-                 *复制一个函数，可以选择将复制出的新函数放置在同一个namespace或另一个namespace。
+                 *复制一个函数，您可以选择将复制出的新函数放置在特定的Region和Namespace。
 注：本接口**不会**复制函数的以下对象或属性：
 1. 函数的触发器
 2. 除了$LATEST以外的其它版本
-3. 函数配置的日志投递到的CLS目标
+3. 函数配置的日志投递到的CLS目标。
 
-如有需要，您可以在复制后手动修改新函数。
+如有需要，您可以在复制后手动配置新函数。
                  * @param req CopyFunctionRequest
                  * @return CopyFunctionOutcome
                  */
@@ -118,6 +153,15 @@ namespace TencentCloud
                 CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest &request);
                 void CreateFunctionAsync(const Model::CreateFunctionRequest& request, const CreateFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFunctionOutcomeCallable CreateFunctionCallable(const Model::CreateFunctionRequest& request);
+
+                /**
+                 *该接口根据传入的参数创建命名空间。
+                 * @param req CreateNamespaceRequest
+                 * @return CreateNamespaceOutcome
+                 */
+                CreateNamespaceOutcome CreateNamespace(const Model::CreateNamespaceRequest &request);
+                void CreateNamespaceAsync(const Model::CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNamespaceOutcomeCallable CreateNamespaceCallable(const Model::CreateNamespaceRequest& request);
 
                 /**
                  *该接口根据参数输入设置新的触发方式。
@@ -138,6 +182,15 @@ namespace TencentCloud
                 DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request);
 
                 /**
+                 *该接口根据传入的参数创建命名空间。
+                 * @param req DeleteNamespaceRequest
+                 * @return DeleteNamespaceOutcome
+                 */
+                DeleteNamespaceOutcome DeleteNamespace(const Model::DeleteNamespaceRequest &request);
+                void DeleteNamespaceAsync(const Model::DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNamespaceOutcomeCallable DeleteNamespaceCallable(const Model::DeleteNamespaceRequest& request);
+
+                /**
                  *该接口根据参数传入删除已有的触发方式。
                  * @param req DeleteTriggerRequest
                  * @return DeleteTriggerOutcome
@@ -154,6 +207,15 @@ namespace TencentCloud
                 GetFunctionOutcome GetFunction(const Model::GetFunctionRequest &request);
                 void GetFunctionAsync(const Model::GetFunctionRequest& request, const GetFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFunctionOutcomeCallable GetFunctionCallable(const Model::GetFunctionRequest& request);
+
+                /**
+                 *该接口用于获取函数代码包的下载地址。
+                 * @param req GetFunctionAddressRequest
+                 * @return GetFunctionAddressOutcome
+                 */
+                GetFunctionAddressOutcome GetFunctionAddress(const Model::GetFunctionAddressRequest &request);
+                void GetFunctionAddressAsync(const Model::GetFunctionAddressRequest& request, const GetFunctionAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFunctionAddressOutcomeCallable GetFunctionAddressCallable(const Model::GetFunctionAddressRequest& request);
 
                 /**
                  *该接口根据指定的日志查询条件返回函数运行日志。
@@ -183,6 +245,33 @@ namespace TencentCloud
                 ListFunctionsOutcomeCallable ListFunctionsCallable(const Model::ListFunctionsRequest& request);
 
                 /**
+                 *列出命名空间列表
+                 * @param req ListNamespacesRequest
+                 * @return ListNamespacesOutcome
+                 */
+                ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest &request);
+                void ListNamespacesAsync(const Model::ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListNamespacesOutcomeCallable ListNamespacesCallable(const Model::ListNamespacesRequest& request);
+
+                /**
+                 *该接口根据传入的参数查询函数的版本。
+                 * @param req ListVersionByFunctionRequest
+                 * @return ListVersionByFunctionOutcome
+                 */
+                ListVersionByFunctionOutcome ListVersionByFunction(const Model::ListVersionByFunctionRequest &request);
+                void ListVersionByFunctionAsync(const Model::ListVersionByFunctionRequest& request, const ListVersionByFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListVersionByFunctionOutcomeCallable ListVersionByFunctionCallable(const Model::ListVersionByFunctionRequest& request);
+
+                /**
+                 *该接口用于用户发布新版本函数。
+                 * @param req PublishVersionRequest
+                 * @return PublishVersionOutcome
+                 */
+                PublishVersionOutcome PublishVersion(const Model::PublishVersionRequest &request);
+                void PublishVersionAsync(const Model::PublishVersionRequest& request, const PublishVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishVersionOutcomeCallable PublishVersionCallable(const Model::PublishVersionRequest& request);
+
+                /**
                  *该接口根据传入参数更新函数代码。
                  * @param req UpdateFunctionCodeRequest
                  * @return UpdateFunctionCodeOutcome
@@ -199,6 +288,15 @@ namespace TencentCloud
                 UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest &request);
                 void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateFunctionConfigurationOutcomeCallable UpdateFunctionConfigurationCallable(const Model::UpdateFunctionConfigurationRequest& request);
+
+                /**
+                 *更新命名空间
+                 * @param req UpdateNamespaceRequest
+                 * @return UpdateNamespaceOutcome
+                 */
+                UpdateNamespaceOutcome UpdateNamespace(const Model::UpdateNamespaceRequest &request);
+                void UpdateNamespaceAsync(const Model::UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateNamespaceOutcomeCallable UpdateNamespaceCallable(const Model::UpdateNamespaceRequest& request);
 
             };
         }

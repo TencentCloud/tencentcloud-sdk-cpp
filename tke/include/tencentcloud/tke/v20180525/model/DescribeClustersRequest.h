@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取最大输出条数，默认20
-                     * @return Limit 最大输出条数，默认20
+                     * 获取最大输出条数，默认20，最大为100
+                     * @return Limit 最大输出条数，默认20，最大为100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置最大输出条数，默认20
-                     * @param Limit 最大输出条数，默认20
+                     * 设置最大输出条数，默认20，最大为100
+                     * @param Limit 最大输出条数，默认20，最大为100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 最大输出条数，默认20
+                     * 最大输出条数，默认20，最大为100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

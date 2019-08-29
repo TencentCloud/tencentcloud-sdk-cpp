@@ -686,6 +686,28 @@ namespace TencentCloud
                      */
                     bool ProjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否为免密实例，true-免密实例；false-非免密实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoAuth 是否为免密实例，true-免密实例；false-非免密实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetNoAuth() const;
+
+                    /**
+                     * 设置是否为免密实例，true-免密实例；false-非免密实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NoAuth 是否为免密实例，true-免密实例；false-非免密实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNoAuth(const bool& _noAuth);
+
+                    /**
+                     * 判断参数 NoAuth 是否已赋值
+                     * @return NoAuth 是否已赋值
+                     */
+                    bool NoAuthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -899,6 +921,13 @@ namespace TencentCloud
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
+
+                    /**
+                     * 是否为免密实例，true-免密实例；false-非免密实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_noAuth;
+                    bool m_noAuthHasBeenSet;
 
                 };
             }

@@ -276,6 +276,24 @@ namespace TencentCloud
                      */
                     bool IsFilterExclusterHasBeenSet() const;
 
+                    /**
+                     * 获取独享集群ID
+                     * @return ExclusterIds 独享集群ID
+                     */
+                    std::vector<std::string> GetExclusterIds() const;
+
+                    /**
+                     * 设置独享集群ID
+                     * @param ExclusterIds 独享集群ID
+                     */
+                    void SetExclusterIds(const std::vector<std::string>& _exclusterIds);
+
+                    /**
+                     * 判断参数 ExclusterIds 是否已赋值
+                     * @return ExclusterIds 是否已赋值
+                     */
+                    bool ExclusterIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +373,12 @@ namespace TencentCloud
                      */
                     bool m_isFilterExcluster;
                     bool m_isFilterExclusterHasBeenSet;
+
+                    /**
+                     * 独享集群ID
+                     */
+                    std::vector<std::string> m_exclusterIds;
+                    bool m_exclusterIdsHasBeenSet;
 
                 };
             }

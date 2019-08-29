@@ -40,7 +40,7 @@ string DeleteProjectRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
+        d.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -51,12 +51,12 @@ string DeleteProjectRequest::ToJsonString() const
 }
 
 
-int64_t DeleteProjectRequest::GetProjectId() const
+string DeleteProjectRequest::GetProjectId() const
 {
     return m_projectId;
 }
 
-void DeleteProjectRequest::SetProjectId(const int64_t& _projectId)
+void DeleteProjectRequest::SetProjectId(const string& _projectId)
 {
     m_projectId = _projectId;
     m_projectIdHasBeenSet = true;

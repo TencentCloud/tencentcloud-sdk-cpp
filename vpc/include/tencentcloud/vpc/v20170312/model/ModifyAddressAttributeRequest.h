@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool AddressNameHasBeenSet() const;
 
+                    /**
+                     * 获取设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * @return EipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     */
+                    std::string GetEipDirectConnection() const;
+
+                    /**
+                     * 设置设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     * @param EipDirectConnection 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     */
+                    void SetEipDirectConnection(const std::string& _eipDirectConnection);
+
+                    /**
+                     * 判断参数 EipDirectConnection 是否已赋值
+                     * @return EipDirectConnection 是否已赋值
+                     */
+                    bool EipDirectConnectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_addressName;
                     bool m_addressNameHasBeenSet;
+
+                    /**
+                     * 设定EIP是否直通，"TRUE"表示直通，"FALSE"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。
+                     */
+                    std::string m_eipDirectConnection;
+                    bool m_eipDirectConnectionHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tci/v20190318/model/FaceInfo.h>
 
 
 namespace TencentCloud
@@ -41,6 +42,18 @@ namespace TencentCloud
                     ~CreatePersonResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
+
+                    /**
+                     * 获取人脸操作结果信息
+                     * @return FaceInfoSet 人脸操作结果信息
+                     */
+                    std::vector<FaceInfo> GetFaceInfoSet() const;
+
+                    /**
+                     * 判断参数 FaceInfoSet 是否已赋值
+                     * @return FaceInfoSet 是否已赋值
+                     */
+                    bool FaceInfoSetHasBeenSet() const;
 
                     /**
                      * 获取人员库唯一标识符
@@ -79,6 +92,12 @@ namespace TencentCloud
                     bool PersonNameHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 人脸操作结果信息
+                     */
+                    std::vector<FaceInfo> m_faceInfoSet;
+                    bool m_faceInfoSetHasBeenSet;
 
                     /**
                      * 人员库唯一标识符

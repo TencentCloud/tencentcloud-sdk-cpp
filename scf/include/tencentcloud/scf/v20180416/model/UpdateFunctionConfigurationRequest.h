@@ -153,6 +153,24 @@ namespace TencentCloud
                     bool EnvironmentHasBeenSet() const;
 
                     /**
+                     * 获取函数所属命名空间
+                     * @return Namespace 函数所属命名空间
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置函数所属命名空间
+                     * @param Namespace 函数所属命名空间
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
                      * 获取函数的私有网络配置
                      * @return VpcConfig 函数的私有网络配置
                      */
@@ -169,6 +187,78 @@ namespace TencentCloud
                      * @return VpcConfig 是否已赋值
                      */
                     bool VpcConfigHasBeenSet() const;
+
+                    /**
+                     * 获取函数绑定的角色
+                     * @return Role 函数绑定的角色
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置函数绑定的角色
+                     * @param Role 函数绑定的角色
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
+                    /**
+                     * 获取日志投递到的cls日志集ID
+                     * @return ClsLogsetId 日志投递到的cls日志集ID
+                     */
+                    std::string GetClsLogsetId() const;
+
+                    /**
+                     * 设置日志投递到的cls日志集ID
+                     * @param ClsLogsetId 日志投递到的cls日志集ID
+                     */
+                    void SetClsLogsetId(const std::string& _clsLogsetId);
+
+                    /**
+                     * 判断参数 ClsLogsetId 是否已赋值
+                     * @return ClsLogsetId 是否已赋值
+                     */
+                    bool ClsLogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志投递到的cls Topic ID
+                     * @return ClsTopicId 日志投递到的cls Topic ID
+                     */
+                    std::string GetClsTopicId() const;
+
+                    /**
+                     * 设置日志投递到的cls Topic ID
+                     * @param ClsTopicId 日志投递到的cls Topic ID
+                     */
+                    void SetClsTopicId(const std::string& _clsTopicId);
+
+                    /**
+                     * 判断参数 ClsTopicId 是否已赋值
+                     * @return ClsTopicId 是否已赋值
+                     */
+                    bool ClsTopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     * @return Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     */
+                    std::string GetPublish() const;
+
+                    /**
+                     * 设置在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     * @param Publish 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     */
+                    void SetPublish(const std::string& _publish);
+
+                    /**
+                     * 判断参数 Publish 是否已赋值
+                     * @return Publish 是否已赋值
+                     */
+                    bool PublishHasBeenSet() const;
 
                 private:
 
@@ -209,10 +299,40 @@ namespace TencentCloud
                     bool m_environmentHasBeenSet;
 
                     /**
+                     * 函数所属命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
                      * 函数的私有网络配置
                      */
                     VpcConfig m_vpcConfig;
                     bool m_vpcConfigHasBeenSet;
+
+                    /**
+                     * 函数绑定的角色
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
+
+                    /**
+                     * 日志投递到的cls日志集ID
+                     */
+                    std::string m_clsLogsetId;
+                    bool m_clsLogsetIdHasBeenSet;
+
+                    /**
+                     * 日志投递到的cls Topic ID
+                     */
+                    std::string m_clsTopicId;
+                    bool m_clsTopicIdHasBeenSet;
+
+                    /**
+                     * 在更新时是否同步发布新版本，默认为：FALSE，不发布
+                     */
+                    std::string m_publish;
+                    bool m_publishHasBeenSet;
 
                 };
             }

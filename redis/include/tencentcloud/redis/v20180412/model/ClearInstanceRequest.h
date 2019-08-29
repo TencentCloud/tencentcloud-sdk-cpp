@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取redis的实例密码
-                     * @return Password redis的实例密码
+                     * 获取redis的实例密码（免密实例不需要传密码，非免密实例必传）
+                     * @return Password redis的实例密码（免密实例不需要传密码，非免密实例必传）
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置redis的实例密码
-                     * @param Password redis的实例密码
+                     * 设置redis的实例密码（免密实例不需要传密码，非免密实例必传）
+                     * @param Password redis的实例密码（免密实例不需要传密码，非免密实例必传）
                      */
                     void SetPassword(const std::string& _password);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * redis的实例密码
+                     * redis的实例密码（免密实例不需要传密码，非免密实例必传）
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

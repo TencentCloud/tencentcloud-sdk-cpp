@@ -25,10 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cms/v20190321/model/AudioModerationRequest.h>
 #include <tencentcloud/cms/v20190321/model/AudioModerationResponse.h>
+#include <tencentcloud/cms/v20190321/model/CreateFileSampleRequest.h>
+#include <tencentcloud/cms/v20190321/model/CreateFileSampleResponse.h>
 #include <tencentcloud/cms/v20190321/model/CreateTextSampleRequest.h>
 #include <tencentcloud/cms/v20190321/model/CreateTextSampleResponse.h>
+#include <tencentcloud/cms/v20190321/model/DeleteFileSampleRequest.h>
+#include <tencentcloud/cms/v20190321/model/DeleteFileSampleResponse.h>
 #include <tencentcloud/cms/v20190321/model/DeleteTextSampleRequest.h>
 #include <tencentcloud/cms/v20190321/model/DeleteTextSampleResponse.h>
+#include <tencentcloud/cms/v20190321/model/DescribeFileSampleRequest.h>
+#include <tencentcloud/cms/v20190321/model/DescribeFileSampleResponse.h>
 #include <tencentcloud/cms/v20190321/model/DescribeModerationOverviewRequest.h>
 #include <tencentcloud/cms/v20190321/model/DescribeModerationOverviewResponse.h>
 #include <tencentcloud/cms/v20190321/model/DescribeTextSampleRequest.h>
@@ -56,12 +62,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AudioModerationResponse> AudioModerationOutcome;
                 typedef std::future<AudioModerationOutcome> AudioModerationOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::AudioModerationRequest&, AudioModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AudioModerationAsyncHandler;
+                typedef Outcome<Error, Model::CreateFileSampleResponse> CreateFileSampleOutcome;
+                typedef std::future<CreateFileSampleOutcome> CreateFileSampleOutcomeCallable;
+                typedef std::function<void(const CmsClient*, const Model::CreateFileSampleRequest&, CreateFileSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileSampleAsyncHandler;
                 typedef Outcome<Error, Model::CreateTextSampleResponse> CreateTextSampleOutcome;
                 typedef std::future<CreateTextSampleOutcome> CreateTextSampleOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::CreateTextSampleRequest&, CreateTextSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTextSampleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteFileSampleResponse> DeleteFileSampleOutcome;
+                typedef std::future<DeleteFileSampleOutcome> DeleteFileSampleOutcomeCallable;
+                typedef std::function<void(const CmsClient*, const Model::DeleteFileSampleRequest&, DeleteFileSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFileSampleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTextSampleResponse> DeleteTextSampleOutcome;
                 typedef std::future<DeleteTextSampleOutcome> DeleteTextSampleOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::DeleteTextSampleRequest&, DeleteTextSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTextSampleAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFileSampleResponse> DescribeFileSampleOutcome;
+                typedef std::future<DescribeFileSampleOutcome> DescribeFileSampleOutcomeCallable;
+                typedef std::function<void(const CmsClient*, const Model::DescribeFileSampleRequest&, DescribeFileSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileSampleAsyncHandler;
                 typedef Outcome<Error, Model::DescribeModerationOverviewResponse> DescribeModerationOverviewOutcome;
                 typedef std::future<DescribeModerationOverviewOutcome> DescribeModerationOverviewOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::DescribeModerationOverviewRequest&, DescribeModerationOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModerationOverviewAsyncHandler;
@@ -82,12 +97,43 @@ namespace TencentCloud
 
                 /**
                  *音频内容检测（Audio Moderation, AM）服务使用了波形分析、声纹分析等技术，能识别涉黄、涉政、涉恐等违规音频，同时支持用户配置音频黑库，打击自定义的违规内容。
+
+<br>
+接口返回值说明：调用本接口有两个返回值，一个是同步返回值，一个是识别完成后的异步回调返回值。
+
+音频识别结果存在于异步回调返回值中，异步回调返回值明细：
+
+参数名 | 类型 | 描述
+-|-|-
+SeqID | String | 请求seqId唯一标识
+EvilFlag | Integer | 是否恶意：0正常，1可疑（Homology模块下：0未匹配到，1恶意，2白样本）
+EvilType | Integer | 恶意类型：100正常，20001政治，20002色情，20007谩骂
+Duration | Integer | 音频时长（单位：毫秒）
+PornDetect | | 音频智能鉴黄
+PolityDetect | | 音频涉政识别
+CurseDetect | | 音频谩骂识别
+Homology | | 相似度识别
+HitFlag | Integer | 0正常，1可疑
+Score | Integer | 判断分值
+Keywords | Array of String | 关键词明细
+StartTime | Array of String | 恶意开始时间
+EndTime | Array of String | 恶意结束时间
+SeedUrl | String | 命中的种子URL
                  * @param req AudioModerationRequest
                  * @return AudioModerationOutcome
                  */
                 AudioModerationOutcome AudioModeration(const Model::AudioModerationRequest &request);
                 void AudioModerationAsync(const Model::AudioModerationRequest& request, const AudioModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AudioModerationOutcomeCallable AudioModerationCallable(const Model::AudioModerationRequest& request);
+
+                /**
+                 *通过该接口可以将文件新增到样本库
+                 * @param req CreateFileSampleRequest
+                 * @return CreateFileSampleOutcome
+                 */
+                CreateFileSampleOutcome CreateFileSample(const Model::CreateFileSampleRequest &request);
+                void CreateFileSampleAsync(const Model::CreateFileSampleRequest& request, const CreateFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFileSampleOutcomeCallable CreateFileSampleCallable(const Model::CreateFileSampleRequest& request);
 
                 /**
                  *新增文本类型样本库
@@ -99,6 +145,15 @@ namespace TencentCloud
                 CreateTextSampleOutcomeCallable CreateTextSampleCallable(const Model::CreateTextSampleRequest& request);
 
                 /**
+                 *删除文件样本库，支持批量删除，一次提交不超过20个
+                 * @param req DeleteFileSampleRequest
+                 * @return DeleteFileSampleOutcome
+                 */
+                DeleteFileSampleOutcome DeleteFileSample(const Model::DeleteFileSampleRequest &request);
+                void DeleteFileSampleAsync(const Model::DeleteFileSampleRequest& request, const DeleteFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFileSampleOutcomeCallable DeleteFileSampleCallable(const Model::DeleteFileSampleRequest& request);
+
+                /**
                  *删除文字样本库，暂时只支持单个删除
                  * @param req DeleteTextSampleRequest
                  * @return DeleteTextSampleOutcome
@@ -106,6 +161,15 @@ namespace TencentCloud
                 DeleteTextSampleOutcome DeleteTextSample(const Model::DeleteTextSampleRequest &request);
                 void DeleteTextSampleAsync(const Model::DeleteTextSampleRequest& request, const DeleteTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTextSampleOutcomeCallable DeleteTextSampleCallable(const Model::DeleteTextSampleRequest& request);
+
+                /**
+                 *查询文件样本库，支持批量查询
+                 * @param req DescribeFileSampleRequest
+                 * @return DescribeFileSampleOutcome
+                 */
+                DescribeFileSampleOutcome DescribeFileSample(const Model::DescribeFileSampleRequest &request);
+                void DescribeFileSampleAsync(const Model::DescribeFileSampleRequest& request, const DescribeFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileSampleOutcomeCallable DescribeFileSampleCallable(const Model::DescribeFileSampleRequest& request);
 
                 /**
                  *根据日期，渠道和服务类型查询识别结果概览数据
@@ -145,6 +209,24 @@ namespace TencentCloud
 
                 /**
                  *视频内容检测（Video Moderation, VM）服务能识别涉黄、涉政、涉恐等违规视频，同时支持用户配置视频黑库，打击自定义的违规内容。
+
+<br>
+接口返回值说明：调用本接口有两个返回值，一个是同步返回值，一个是识别完成后的异步回调返回值。
+
+视频识别结果存在于异步回调返回值中，异步回调返回值明细：
+
+参数名 | 类型 | 描述
+-|-|-
+SeqID | String | 请求seqId唯一标识
+EvilFlag | Integer | 是否恶意：0正常，1可疑（Homology模块下：0未匹配到，1恶意，2白样本）
+EvilType | Integer | 恶意类型：100正常，20001政治，20002色情
+Duration | Integer | 视频时长（单位：秒）
+PornDetect |  | 视频智能鉴黄
+PolityDetect | | 视频涉政识别
+Homology | | 相似度识别
+HitFlag | Integer  | 0正常，1可疑
+Score | Integer | 判断分值
+SeedUrl | String | 命中的种子URL
                  * @param req VideoModerationRequest
                  * @return VideoModerationOutcome
                  */

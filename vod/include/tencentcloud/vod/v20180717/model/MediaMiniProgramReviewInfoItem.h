@@ -138,7 +138,7 @@ namespace TencentCloud
                      * @return ReviewSummery 小程序审核元素。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    MediaMiniProgramReviewElem GetReviewSummery() const;
+                    std::vector<MediaMiniProgramReviewElem> GetReviewSummery() const;
 
                     /**
                      * 设置小程序审核元素。
@@ -146,7 +146,7 @@ namespace TencentCloud
                      * @param ReviewSummery 小程序审核元素。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetReviewSummery(const MediaMiniProgramReviewElem& _reviewSummery);
+                    void SetReviewSummery(const std::vector<MediaMiniProgramReviewElem>& _reviewSummery);
 
                     /**
                      * 判断参数 ReviewSummery 是否已赋值
@@ -187,7 +187,7 @@ namespace TencentCloud
                      * 小程序审核元素。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    MediaMiniProgramReviewElem m_reviewSummery;
+                    std::vector<MediaMiniProgramReviewElem> m_reviewSummery;
                     bool m_reviewSummeryHasBeenSet;
 
                 };

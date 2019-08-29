@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
-                     * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
+                     * 获取新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
+                     * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
-                     * 设置新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
-                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
+                     * 设置新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
+                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_privateIpAddressesHasBeenSet;
 
                     /**
-                     * 新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
+                     * 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数，详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
                      */
                     uint64_t m_secondaryPrivateIpAddressCount;
                     bool m_secondaryPrivateIpAddressCountHasBeenSet;

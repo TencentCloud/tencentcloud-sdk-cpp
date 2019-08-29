@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取认证类型，unidirectional：单向认证，mutual：双向认证
-                     * @return SSLMode 认证类型，unidirectional：单向认证，mutual：双向认证
+                     * 获取认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * @return SSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
                      */
                     std::string GetSSLMode() const;
 
                     /**
-                     * 设置认证类型，unidirectional：单向认证，mutual：双向认证
-                     * @param SSLMode 认证类型，unidirectional：单向认证，mutual：双向认证
+                     * 设置认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
+                     * @param SSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
                      */
                     void SetSSLMode(const std::string& _sSLMode);
 
@@ -107,7 +107,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 认证类型，unidirectional：单向认证，mutual：双向认证
+                     * 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证
                      */
                     std::string m_sSLMode;
                     bool m_sSLModeHasBeenSet;

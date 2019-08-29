@@ -42,7 +42,7 @@ string ModifyProjectRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
+        d.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectNameHasBeenSet)
@@ -69,12 +69,12 @@ string ModifyProjectRequest::ToJsonString() const
 }
 
 
-int64_t ModifyProjectRequest::GetProjectId() const
+string ModifyProjectRequest::GetProjectId() const
 {
     return m_projectId;
 }
 
-void ModifyProjectRequest::SetProjectId(const int64_t& _projectId)
+void ModifyProjectRequest::SetProjectId(const string& _projectId)
 {
     m_projectId = _projectId;
     m_projectIdHasBeenSet = true;

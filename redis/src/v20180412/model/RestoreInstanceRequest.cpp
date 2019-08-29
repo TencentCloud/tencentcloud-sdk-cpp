@@ -25,8 +25,8 @@ using namespace std;
 
 RestoreInstanceRequest::RestoreInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+    m_backupIdHasBeenSet(false),
+    m_passwordHasBeenSet(false)
 {
 }
 
@@ -45,20 +45,20 @@ string RestoreInstanceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_passwordHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Password";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_backupIdHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "BackupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_backupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -85,22 +85,6 @@ bool RestoreInstanceRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string RestoreInstanceRequest::GetPassword() const
-{
-    return m_password;
-}
-
-void RestoreInstanceRequest::SetPassword(const string& _password)
-{
-    m_password = _password;
-    m_passwordHasBeenSet = true;
-}
-
-bool RestoreInstanceRequest::PasswordHasBeenSet() const
-{
-    return m_passwordHasBeenSet;
-}
-
 string RestoreInstanceRequest::GetBackupId() const
 {
     return m_backupId;
@@ -115,6 +99,22 @@ void RestoreInstanceRequest::SetBackupId(const string& _backupId)
 bool RestoreInstanceRequest::BackupIdHasBeenSet() const
 {
     return m_backupIdHasBeenSet;
+}
+
+string RestoreInstanceRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void RestoreInstanceRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool RestoreInstanceRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
 }
 
 

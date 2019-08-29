@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool FunctionsHasBeenSet() const;
 
                     /**
-                     * 获取视频文件类型，默认点播，直播天 live_url
-                     * @return FileType 视频文件类型，默认点播，直播天 live_url
+                     * 获取视频文件类型，默认点播，直播填 live_url
+                     * @return FileType 视频文件类型，默认点播，直播填 live_url
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置视频文件类型，默认点播，直播天 live_url
-                     * @param FileType 视频文件类型，默认点播，直播天 live_url
+                     * 设置视频文件类型，默认点播，直播填 live_url
+                     * @param FileType 视频文件类型，默认点播，直播填 live_url
                      */
                     void SetFileType(const std::string& _fileType);
 
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_functionsHasBeenSet;
 
                     /**
-                     * 视频文件类型，默认点播，直播天 live_url
+                     * 视频文件类型，默认点播，直播填 live_url
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;

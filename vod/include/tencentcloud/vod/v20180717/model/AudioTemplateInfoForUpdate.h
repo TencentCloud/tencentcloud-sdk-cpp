@@ -47,26 +47,74 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频流的编码格式，可选值：
-<li>libfdk_aac：更适合 mp4 和 hls；</li>
+                     * 获取音频流的编码格式。
+当外层参数 Container 为 mp3 时，可选值为：
+<li>libmp3lame。</li>
+当外层参数 Container 为 ogg 或 flac 时，可选值为：
+<li>flac。</li>
+当外层参数 Container 为 m4a 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame；</li>
+<li>ac3。</li>
+当外层参数 Container 为 mp4 或 flv 时，可选值为：
+<li>libfdk_aac：更适合 mp4；</li>
 <li>libmp3lame：更适合 flv；</li>
 <li>mp2。</li>
-                     * @return Codec 音频流的编码格式，可选值：
-<li>libfdk_aac：更适合 mp4 和 hls；</li>
+当外层参数 Container 为 hls 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame。</li>
+                     * @return Codec 音频流的编码格式。
+当外层参数 Container 为 mp3 时，可选值为：
+<li>libmp3lame。</li>
+当外层参数 Container 为 ogg 或 flac 时，可选值为：
+<li>flac。</li>
+当外层参数 Container 为 m4a 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame；</li>
+<li>ac3。</li>
+当外层参数 Container 为 mp4 或 flv 时，可选值为：
+<li>libfdk_aac：更适合 mp4；</li>
 <li>libmp3lame：更适合 flv；</li>
 <li>mp2。</li>
+当外层参数 Container 为 hls 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame。</li>
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置音频流的编码格式，可选值：
-<li>libfdk_aac：更适合 mp4 和 hls；</li>
+                     * 设置音频流的编码格式。
+当外层参数 Container 为 mp3 时，可选值为：
+<li>libmp3lame。</li>
+当外层参数 Container 为 ogg 或 flac 时，可选值为：
+<li>flac。</li>
+当外层参数 Container 为 m4a 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame；</li>
+<li>ac3。</li>
+当外层参数 Container 为 mp4 或 flv 时，可选值为：
+<li>libfdk_aac：更适合 mp4；</li>
 <li>libmp3lame：更适合 flv；</li>
 <li>mp2。</li>
-                     * @param Codec 音频流的编码格式，可选值：
-<li>libfdk_aac：更适合 mp4 和 hls；</li>
+当外层参数 Container 为 hls 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame。</li>
+                     * @param Codec 音频流的编码格式。
+当外层参数 Container 为 mp3 时，可选值为：
+<li>libmp3lame。</li>
+当外层参数 Container 为 ogg 或 flac 时，可选值为：
+<li>flac。</li>
+当外层参数 Container 为 m4a 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame；</li>
+<li>ac3。</li>
+当外层参数 Container 为 mp4 或 flv 时，可选值为：
+<li>libfdk_aac：更适合 mp4；</li>
 <li>libmp3lame：更适合 flv；</li>
 <li>mp2。</li>
+当外层参数 Container 为 hls 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame。</li>
                      */
                     void SetCodec(const std::string& _codec);
 
@@ -161,10 +209,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频流的编码格式，可选值：
-<li>libfdk_aac：更适合 mp4 和 hls；</li>
+                     * 音频流的编码格式。
+当外层参数 Container 为 mp3 时，可选值为：
+<li>libmp3lame。</li>
+当外层参数 Container 为 ogg 或 flac 时，可选值为：
+<li>flac。</li>
+当外层参数 Container 为 m4a 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame；</li>
+<li>ac3。</li>
+当外层参数 Container 为 mp4 或 flv 时，可选值为：
+<li>libfdk_aac：更适合 mp4；</li>
 <li>libmp3lame：更适合 flv；</li>
 <li>mp2。</li>
+当外层参数 Container 为 hls 时，可选值为：
+<li>libfdk_aac；</li>
+<li>libmp3lame。</li>
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ModifyInstanceParamsResponse::ModifyInstanceParamsResponse() :
-    m_changedHasBeenSet(false)
+    m_changedHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ModifyInstanceParamsResponse::Deserialize(const string &payl
         m_changedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = rsp["TaskId"].GetInt64();
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ bool ModifyInstanceParamsResponse::GetChanged() const
 bool ModifyInstanceParamsResponse::ChangedHasBeenSet() const
 {
     return m_changedHasBeenSet;
+}
+
+int64_t ModifyInstanceParamsResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool ModifyInstanceParamsResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

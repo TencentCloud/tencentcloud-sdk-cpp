@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/batch/v20170312/model/CreateComputeEnvRequest.h>
 #include <tencentcloud/batch/v20170312/model/CreateComputeEnvResponse.h>
+#include <tencentcloud/batch/v20170312/model/CreateCpmComputeEnvRequest.h>
+#include <tencentcloud/batch/v20170312/model/CreateCpmComputeEnvResponse.h>
 #include <tencentcloud/batch/v20170312/model/CreateTaskTemplateRequest.h>
 #include <tencentcloud/batch/v20170312/model/CreateTaskTemplateResponse.h>
 #include <tencentcloud/batch/v20170312/model/DeleteComputeEnvRequest.h>
@@ -94,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateComputeEnvResponse> CreateComputeEnvOutcome;
                 typedef std::future<CreateComputeEnvOutcome> CreateComputeEnvOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::CreateComputeEnvRequest&, CreateComputeEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateComputeEnvAsyncHandler;
+                typedef Outcome<Error, Model::CreateCpmComputeEnvResponse> CreateCpmComputeEnvOutcome;
+                typedef std::future<CreateCpmComputeEnvOutcome> CreateCpmComputeEnvOutcomeCallable;
+                typedef std::function<void(const BatchClient*, const Model::CreateCpmComputeEnvRequest&, CreateCpmComputeEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCpmComputeEnvAsyncHandler;
                 typedef Outcome<Error, Model::CreateTaskTemplateResponse> CreateTaskTemplateOutcome;
                 typedef std::future<CreateTaskTemplateOutcome> CreateTaskTemplateOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::CreateTaskTemplateRequest&, CreateTaskTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskTemplateAsyncHandler;
@@ -183,6 +188,15 @@ namespace TencentCloud
                 CreateComputeEnvOutcome CreateComputeEnv(const Model::CreateComputeEnvRequest &request);
                 void CreateComputeEnvAsync(const Model::CreateComputeEnvRequest& request, const CreateComputeEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateComputeEnvOutcomeCallable CreateComputeEnvCallable(const Model::CreateComputeEnvRequest& request);
+
+                /**
+                 *创建黑石计算环境
+                 * @param req CreateCpmComputeEnvRequest
+                 * @return CreateCpmComputeEnvOutcome
+                 */
+                CreateCpmComputeEnvOutcome CreateCpmComputeEnv(const Model::CreateCpmComputeEnvRequest &request);
+                void CreateCpmComputeEnvAsync(const Model::CreateCpmComputeEnvRequest& request, const CreateCpmComputeEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCpmComputeEnvOutcomeCallable CreateCpmComputeEnvCallable(const Model::CreateCpmComputeEnvRequest& request);
 
                 /**
                  *用于创建任务模板

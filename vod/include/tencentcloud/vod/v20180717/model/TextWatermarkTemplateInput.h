@@ -91,14 +91,14 @@ namespace TencentCloud
                     bool FontSizeHasBeenSet() const;
 
                     /**
-                     * 获取字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（黑色）。
-                     * @return FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（黑色）。
+                     * 获取字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
+                     * @return FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
                      */
                     std::string GetFontColor() const;
 
                     /**
-                     * 设置字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（黑色）。
-                     * @param FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（黑色）。
+                     * 设置字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
+                     * @param FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
                      */
                     void SetFontColor(const std::string& _fontColor);
 
@@ -155,7 +155,7 @@ namespace TencentCloud
                     bool m_fontSizeHasBeenSet;
 
                     /**
-                     * 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（黑色）。
+                     * 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
                      */
                     std::string m_fontColor;
                     bool m_fontColorHasBeenSet;

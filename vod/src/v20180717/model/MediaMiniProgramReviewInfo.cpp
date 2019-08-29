@@ -22,7 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 MediaMiniProgramReviewInfo::MediaMiniProgramReviewInfo() :
-    m_miniProgramReivewListHasBeenSet(false)
+    m_miniProgramReviewListHasBeenSet(false)
 {
 }
 
@@ -31,12 +31,12 @@ CoreInternalOutcome MediaMiniProgramReviewInfo::Deserialize(const Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("MiniProgramReivewList") && !value["MiniProgramReivewList"].IsNull())
+    if (value.HasMember("MiniProgramReviewList") && !value["MiniProgramReviewList"].IsNull())
     {
-        if (!value["MiniProgramReivewList"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfo.MiniProgramReivewList` is not array type"));
+        if (!value["MiniProgramReviewList"].IsArray())
+            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfo.MiniProgramReviewList` is not array type"));
 
-        const Value &tmpValue = value["MiniProgramReivewList"];
+        const Value &tmpValue = value["MiniProgramReviewList"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaMiniProgramReviewInfoItem item;
@@ -46,9 +46,9 @@ CoreInternalOutcome MediaMiniProgramReviewInfo::Deserialize(const Value &value)
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_miniProgramReivewList.push_back(item);
+            m_miniProgramReviewList.push_back(item);
         }
-        m_miniProgramReivewListHasBeenSet = true;
+        m_miniProgramReviewListHasBeenSet = true;
     }
 
 
@@ -58,15 +58,15 @@ CoreInternalOutcome MediaMiniProgramReviewInfo::Deserialize(const Value &value)
 void MediaMiniProgramReviewInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_miniProgramReivewListHasBeenSet)
+    if (m_miniProgramReviewListHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "MiniProgramReivewList";
+        string key = "MiniProgramReviewList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_miniProgramReivewList.begin(); itr != m_miniProgramReivewList.end(); ++itr, ++i)
+        for (auto itr = m_miniProgramReviewList.begin(); itr != m_miniProgramReviewList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -76,19 +76,19 @@ void MediaMiniProgramReviewInfo::ToJsonObject(Value &value, Document::AllocatorT
 }
 
 
-vector<MediaMiniProgramReviewInfoItem> MediaMiniProgramReviewInfo::GetMiniProgramReivewList() const
+vector<MediaMiniProgramReviewInfoItem> MediaMiniProgramReviewInfo::GetMiniProgramReviewList() const
 {
-    return m_miniProgramReivewList;
+    return m_miniProgramReviewList;
 }
 
-void MediaMiniProgramReviewInfo::SetMiniProgramReivewList(const vector<MediaMiniProgramReviewInfoItem>& _miniProgramReivewList)
+void MediaMiniProgramReviewInfo::SetMiniProgramReviewList(const vector<MediaMiniProgramReviewInfoItem>& _miniProgramReviewList)
 {
-    m_miniProgramReivewList = _miniProgramReivewList;
-    m_miniProgramReivewListHasBeenSet = true;
+    m_miniProgramReviewList = _miniProgramReviewList;
+    m_miniProgramReviewListHasBeenSet = true;
 }
 
-bool MediaMiniProgramReviewInfo::MiniProgramReivewListHasBeenSet() const
+bool MediaMiniProgramReviewInfo::MiniProgramReviewListHasBeenSet() const
 {
-    return m_miniProgramReivewListHasBeenSet;
+    return m_miniProgramReviewListHasBeenSet;
 }
 

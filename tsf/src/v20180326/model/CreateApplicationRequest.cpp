@@ -28,7 +28,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_applicationTypeHasBeenSet(false),
     m_applicationDescHasBeenSet(false),
     m_applicationLogConfigHasBeenSet(false),
-    m_microserviceTypeHasBeenSet(false)
+    m_microserviceTypeHasBeenSet(false),
+    m_applicationResourceTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateApplicationRequest::ToJsonString() const
         string key = "MicroserviceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateApplicationRequest::SetMicroserviceType(const string& _microserviceTy
 bool CreateApplicationRequest::MicroserviceTypeHasBeenSet() const
 {
     return m_microserviceTypeHasBeenSet;
+}
+
+string CreateApplicationRequest::GetApplicationResourceType() const
+{
+    return m_applicationResourceType;
+}
+
+void CreateApplicationRequest::SetApplicationResourceType(const string& _applicationResourceType)
+{
+    m_applicationResourceType = _applicationResourceType;
+    m_applicationResourceTypeHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ApplicationResourceTypeHasBeenSet() const
+{
+    return m_applicationResourceTypeHasBeenSet;
 }
 
 

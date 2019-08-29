@@ -25,6 +25,8 @@
 #include <tencentcloud/scf/v20180416/model/VpcConfig.h>
 #include <tencentcloud/scf/v20180416/model/Environment.h>
 #include <tencentcloud/scf/v20180416/model/Tag.h>
+#include <tencentcloud/scf/v20180416/model/EipOutConfig.h>
+#include <tencentcloud/scf/v20180416/model/AccessInfo.h>
 
 
 namespace TencentCloud
@@ -358,6 +360,42 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取EipConfig配置
+                     * @return EipConfig EipConfig配置
+                     */
+                    EipOutConfig GetEipConfig() const;
+
+                    /**
+                     * 判断参数 EipConfig 是否已赋值
+                     * @return EipConfig 是否已赋值
+                     */
+                    bool EipConfigHasBeenSet() const;
+
+                    /**
+                     * 获取域名信息
+                     * @return AccessInfo 域名信息
+                     */
+                    AccessInfo GetAccessInfo() const;
+
+                    /**
+                     * 判断参数 AccessInfo 是否已赋值
+                     * @return AccessInfo 是否已赋值
+                     */
+                    bool AccessInfoHasBeenSet() const;
+
+                    /**
+                     * 获取函数类型，取值为HTTP或者Event
+                     * @return Type 函数类型，取值为HTTP或者Event
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -515,6 +553,24 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * EipConfig配置
+                     */
+                    EipOutConfig m_eipConfig;
+                    bool m_eipConfigHasBeenSet;
+
+                    /**
+                     * 域名信息
+                     */
+                    AccessInfo m_accessInfo;
+                    bool m_accessInfoHasBeenSet;
+
+                    /**
+                     * 函数类型，取值为HTTP或者Event
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ DescribeSimpleApplicationsRequest::DescribeSimpleApplicationsRequest() :
     m_applicationTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_microserviceTypeHasBeenSet(false)
+    m_microserviceTypeHasBeenSet(false),
+    m_applicationResourceTypeListHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,19 @@ string DescribeSimpleApplicationsRequest::ToJsonString() const
         string key = "MicroserviceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationResourceTypeListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationResourceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_applicationResourceTypeList.begin(); itr != m_applicationResourceTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -170,6 +184,22 @@ void DescribeSimpleApplicationsRequest::SetMicroserviceType(const string& _micro
 bool DescribeSimpleApplicationsRequest::MicroserviceTypeHasBeenSet() const
 {
     return m_microserviceTypeHasBeenSet;
+}
+
+vector<string> DescribeSimpleApplicationsRequest::GetApplicationResourceTypeList() const
+{
+    return m_applicationResourceTypeList;
+}
+
+void DescribeSimpleApplicationsRequest::SetApplicationResourceTypeList(const vector<string>& _applicationResourceTypeList)
+{
+    m_applicationResourceTypeList = _applicationResourceTypeList;
+    m_applicationResourceTypeListHasBeenSet = true;
+}
+
+bool DescribeSimpleApplicationsRequest::ApplicationResourceTypeListHasBeenSet() const
+{
+    return m_applicationResourceTypeListHasBeenSet;
 }
 
 

@@ -24,8 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 ResetPasswordRequest::ResetPasswordRequest() :
+    m_instanceIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_noAuthHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,14 @@ string ResetPasswordRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_passwordHasBeenSet)
     {
         Value iKey(kStringType);
@@ -44,12 +53,12 @@ string ResetPasswordRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceIdHasBeenSet)
+    if (m_noAuthHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "InstanceId";
+        string key = "NoAuth";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_noAuth, allocator);
     }
 
 
@@ -59,6 +68,22 @@ string ResetPasswordRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ResetPasswordRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ResetPasswordRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ResetPasswordRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 string ResetPasswordRequest::GetPassword() const
 {
@@ -76,20 +101,20 @@ bool ResetPasswordRequest::PasswordHasBeenSet() const
     return m_passwordHasBeenSet;
 }
 
-string ResetPasswordRequest::GetInstanceId() const
+bool ResetPasswordRequest::GetNoAuth() const
 {
-    return m_instanceId;
+    return m_noAuth;
 }
 
-void ResetPasswordRequest::SetInstanceId(const string& _instanceId)
+void ResetPasswordRequest::SetNoAuth(const bool& _noAuth)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_noAuth = _noAuth;
+    m_noAuthHasBeenSet = true;
 }
 
-bool ResetPasswordRequest::InstanceIdHasBeenSet() const
+bool ResetPasswordRequest::NoAuthHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_noAuthHasBeenSet;
 }
 
 

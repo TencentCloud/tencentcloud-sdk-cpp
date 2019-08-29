@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 网络计费方式
+                * 网络计费方式，最大出带宽
                 */
                 class InternetAccessible : public AbstractModel
                 {

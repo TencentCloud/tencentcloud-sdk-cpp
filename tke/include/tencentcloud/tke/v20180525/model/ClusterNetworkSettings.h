@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取网络插件是否启用CNI(默认开启)
+                     * @return Cni 网络插件是否启用CNI(默认开启)
+                     */
+                    bool GetCni() const;
+
+                    /**
+                     * 设置网络插件是否启用CNI(默认开启)
+                     * @param Cni 网络插件是否启用CNI(默认开启)
+                     */
+                    void SetCni(const bool& _cni);
+
+                    /**
+                     * 判断参数 Cni 是否已赋值
+                     * @return Cni 是否已赋值
+                     */
+                    bool CniHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 网络插件是否启用CNI(默认开启)
+                     */
+                    bool m_cni;
+                    bool m_cniHasBeenSet;
 
                 };
             }

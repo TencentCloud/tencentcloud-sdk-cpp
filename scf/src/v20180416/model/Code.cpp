@@ -27,7 +27,15 @@ Code::Code() :
     m_zipFileHasBeenSet(false),
     m_cosBucketRegionHasBeenSet(false),
     m_demoIdHasBeenSet(false),
-    m_tempCosObjectNameHasBeenSet(false)
+    m_tempCosObjectNameHasBeenSet(false),
+    m_gitUrlHasBeenSet(false),
+    m_gitUserNameHasBeenSet(false),
+    m_gitPasswordHasBeenSet(false),
+    m_gitPasswordSecretHasBeenSet(false),
+    m_gitBranchHasBeenSet(false),
+    m_gitDirectoryHasBeenSet(false),
+    m_gitCommitIdHasBeenSet(false),
+    m_gitUserNameSecretHasBeenSet(false)
 {
 }
 
@@ -96,6 +104,86 @@ CoreInternalOutcome Code::Deserialize(const Value &value)
         m_tempCosObjectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("GitUrl") && !value["GitUrl"].IsNull())
+    {
+        if (!value["GitUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitUrl = string(value["GitUrl"].GetString());
+        m_gitUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("GitUserName") && !value["GitUserName"].IsNull())
+    {
+        if (!value["GitUserName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitUserName = string(value["GitUserName"].GetString());
+        m_gitUserNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("GitPassword") && !value["GitPassword"].IsNull())
+    {
+        if (!value["GitPassword"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitPassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitPassword = string(value["GitPassword"].GetString());
+        m_gitPasswordHasBeenSet = true;
+    }
+
+    if (value.HasMember("GitPasswordSecret") && !value["GitPasswordSecret"].IsNull())
+    {
+        if (!value["GitPasswordSecret"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitPasswordSecret` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitPasswordSecret = string(value["GitPasswordSecret"].GetString());
+        m_gitPasswordSecretHasBeenSet = true;
+    }
+
+    if (value.HasMember("GitBranch") && !value["GitBranch"].IsNull())
+    {
+        if (!value["GitBranch"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitBranch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitBranch = string(value["GitBranch"].GetString());
+        m_gitBranchHasBeenSet = true;
+    }
+
+    if (value.HasMember("GitDirectory") && !value["GitDirectory"].IsNull())
+    {
+        if (!value["GitDirectory"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitDirectory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitDirectory = string(value["GitDirectory"].GetString());
+        m_gitDirectoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("GitCommitId") && !value["GitCommitId"].IsNull())
+    {
+        if (!value["GitCommitId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitCommitId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitCommitId = string(value["GitCommitId"].GetString());
+        m_gitCommitIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GitUserNameSecret") && !value["GitUserNameSecret"].IsNull())
+    {
+        if (!value["GitUserNameSecret"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Code.GitUserNameSecret` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gitUserNameSecret = string(value["GitUserNameSecret"].GetString());
+        m_gitUserNameSecretHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +237,70 @@ void Code::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "TempCosObjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_tempCosObjectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitUserNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitPasswordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitPasswordSecretHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitPasswordSecret";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitPasswordSecret.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitBranchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitBranch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitBranch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitDirectoryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitDirectory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitCommitIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitCommitId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitCommitId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitUserNameSecretHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GitUserNameSecret";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gitUserNameSecret.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +400,133 @@ void Code::SetTempCosObjectName(const string& _tempCosObjectName)
 bool Code::TempCosObjectNameHasBeenSet() const
 {
     return m_tempCosObjectNameHasBeenSet;
+}
+
+string Code::GetGitUrl() const
+{
+    return m_gitUrl;
+}
+
+void Code::SetGitUrl(const string& _gitUrl)
+{
+    m_gitUrl = _gitUrl;
+    m_gitUrlHasBeenSet = true;
+}
+
+bool Code::GitUrlHasBeenSet() const
+{
+    return m_gitUrlHasBeenSet;
+}
+
+string Code::GetGitUserName() const
+{
+    return m_gitUserName;
+}
+
+void Code::SetGitUserName(const string& _gitUserName)
+{
+    m_gitUserName = _gitUserName;
+    m_gitUserNameHasBeenSet = true;
+}
+
+bool Code::GitUserNameHasBeenSet() const
+{
+    return m_gitUserNameHasBeenSet;
+}
+
+string Code::GetGitPassword() const
+{
+    return m_gitPassword;
+}
+
+void Code::SetGitPassword(const string& _gitPassword)
+{
+    m_gitPassword = _gitPassword;
+    m_gitPasswordHasBeenSet = true;
+}
+
+bool Code::GitPasswordHasBeenSet() const
+{
+    return m_gitPasswordHasBeenSet;
+}
+
+string Code::GetGitPasswordSecret() const
+{
+    return m_gitPasswordSecret;
+}
+
+void Code::SetGitPasswordSecret(const string& _gitPasswordSecret)
+{
+    m_gitPasswordSecret = _gitPasswordSecret;
+    m_gitPasswordSecretHasBeenSet = true;
+}
+
+bool Code::GitPasswordSecretHasBeenSet() const
+{
+    return m_gitPasswordSecretHasBeenSet;
+}
+
+string Code::GetGitBranch() const
+{
+    return m_gitBranch;
+}
+
+void Code::SetGitBranch(const string& _gitBranch)
+{
+    m_gitBranch = _gitBranch;
+    m_gitBranchHasBeenSet = true;
+}
+
+bool Code::GitBranchHasBeenSet() const
+{
+    return m_gitBranchHasBeenSet;
+}
+
+string Code::GetGitDirectory() const
+{
+    return m_gitDirectory;
+}
+
+void Code::SetGitDirectory(const string& _gitDirectory)
+{
+    m_gitDirectory = _gitDirectory;
+    m_gitDirectoryHasBeenSet = true;
+}
+
+bool Code::GitDirectoryHasBeenSet() const
+{
+    return m_gitDirectoryHasBeenSet;
+}
+
+string Code::GetGitCommitId() const
+{
+    return m_gitCommitId;
+}
+
+void Code::SetGitCommitId(const string& _gitCommitId)
+{
+    m_gitCommitId = _gitCommitId;
+    m_gitCommitIdHasBeenSet = true;
+}
+
+bool Code::GitCommitIdHasBeenSet() const
+{
+    return m_gitCommitIdHasBeenSet;
+}
+
+string Code::GetGitUserNameSecret() const
+{
+    return m_gitUserNameSecret;
+}
+
+void Code::SetGitUserNameSecret(const string& _gitUserNameSecret)
+{
+    m_gitUserNameSecret = _gitUserNameSecret;
+    m_gitUserNameSecretHasBeenSet = true;
+}
+
+bool Code::GitUserNameSecretHasBeenSet() const
+{
+    return m_gitUserNameSecretHasBeenSet;
 }
 

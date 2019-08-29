@@ -22,9 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 ExpressRatioStatistic::ExpressRatioStatistic() :
+    m_countHasBeenSet(false),
     m_expressHasBeenSet(false),
     m_ratioHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_ratioUseDurationHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,16 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ExpressRatioStatistic.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
 
     if (value.HasMember("Express") && !value["Express"].IsNull())
     {
@@ -53,14 +64,14 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const Value &value)
         m_ratioHasBeenSet = true;
     }
 
-    if (value.HasMember("Count") && !value["Count"].IsNull())
+    if (value.HasMember("RatioUseDuration") && !value["RatioUseDuration"].IsNull())
     {
-        if (!value["Count"].IsInt64())
+        if (!value["RatioUseDuration"].IsDouble())
         {
-            return CoreInternalOutcome(Error("response `ExpressRatioStatistic.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ExpressRatioStatistic.RatioUseDuration` IsDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_count = value["Count"].GetInt64();
-        m_countHasBeenSet = true;
+        m_ratioUseDuration = value["RatioUseDuration"].GetDouble();
+        m_ratioUseDurationHasBeenSet = true;
     }
 
 
@@ -69,6 +80,14 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const Value &value)
 
 void ExpressRatioStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
+
+    if (m_countHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
+    }
 
     if (m_expressHasBeenSet)
     {
@@ -86,16 +105,32 @@ void ExpressRatioStatistic::ToJsonObject(Value &value, Document::AllocatorType& 
         value.AddMember(iKey, m_ratio, allocator);
     }
 
-    if (m_countHasBeenSet)
+    if (m_ratioUseDurationHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Count";
+        string key = "RatioUseDuration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_count, allocator);
+        value.AddMember(iKey, m_ratioUseDuration, allocator);
     }
 
 }
 
+
+int64_t ExpressRatioStatistic::GetCount() const
+{
+    return m_count;
+}
+
+void ExpressRatioStatistic::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool ExpressRatioStatistic::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
+}
 
 string ExpressRatioStatistic::GetExpress() const
 {
@@ -129,19 +164,19 @@ bool ExpressRatioStatistic::RatioHasBeenSet() const
     return m_ratioHasBeenSet;
 }
 
-int64_t ExpressRatioStatistic::GetCount() const
+double ExpressRatioStatistic::GetRatioUseDuration() const
 {
-    return m_count;
+    return m_ratioUseDuration;
 }
 
-void ExpressRatioStatistic::SetCount(const int64_t& _count)
+void ExpressRatioStatistic::SetRatioUseDuration(const double& _ratioUseDuration)
 {
-    m_count = _count;
-    m_countHasBeenSet = true;
+    m_ratioUseDuration = _ratioUseDuration;
+    m_ratioUseDurationHasBeenSet = true;
 }
 
-bool ExpressRatioStatistic::CountHasBeenSet() const
+bool ExpressRatioStatistic::RatioUseDurationHasBeenSet() const
 {
-    return m_countHasBeenSet;
+    return m_ratioUseDurationHasBeenSet;
 }
 

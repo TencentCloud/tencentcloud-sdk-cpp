@@ -771,6 +771,49 @@ AsClient::DescribeAutoScalingActivitiesOutcomeCallable AsClient::DescribeAutoSca
     return task->get_future();
 }
 
+AsClient::DescribeAutoScalingGroupLastActivitiesOutcome AsClient::DescribeAutoScalingGroupLastActivities(const DescribeAutoScalingGroupLastActivitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScalingGroupLastActivities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScalingGroupLastActivitiesResponse rsp = DescribeAutoScalingGroupLastActivitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScalingGroupLastActivitiesOutcome(rsp);
+        else
+            return DescribeAutoScalingGroupLastActivitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScalingGroupLastActivitiesOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::DescribeAutoScalingGroupLastActivitiesAsync(const DescribeAutoScalingGroupLastActivitiesRequest& request, const DescribeAutoScalingGroupLastActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScalingGroupLastActivities(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::DescribeAutoScalingGroupLastActivitiesOutcomeCallable AsClient::DescribeAutoScalingGroupLastActivitiesCallable(const DescribeAutoScalingGroupLastActivitiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScalingGroupLastActivitiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScalingGroupLastActivities(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::DescribeAutoScalingGroupsOutcome AsClient::DescribeAutoScalingGroups(const DescribeAutoScalingGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoScalingGroups");

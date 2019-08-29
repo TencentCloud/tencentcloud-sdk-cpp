@@ -101,7 +101,7 @@ namespace TencentCloud
 
 
                 /**
-                 *银行卡二要素核验
+                 *输入银行卡号、姓名，校验信息的真实性和一致性。
                  * @param req BankCard2EVerificationRequest
                  * @return BankCard2EVerificationOutcome
                  */
@@ -110,7 +110,7 @@ namespace TencentCloud
                 BankCard2EVerificationOutcomeCallable BankCard2EVerificationCallable(const Model::BankCard2EVerificationRequest& request);
 
                 /**
-                 *银行卡四要素核验
+                 *输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。
                  * @param req BankCard4EVerificationRequest
                  * @return BankCard4EVerificationOutcome
                  */
@@ -119,7 +119,7 @@ namespace TencentCloud
                 BankCard4EVerificationOutcomeCallable BankCard4EVerificationCallable(const Model::BankCard4EVerificationRequest& request);
 
                 /**
-                 *银行卡核验
+                 *银行卡三要素核验，输入银行卡号、姓名、开户证件号，校验信息的真实性和一致性。
                  * @param req BankCardVerificationRequest
                  * @return BankCardVerificationOutcome
                  */

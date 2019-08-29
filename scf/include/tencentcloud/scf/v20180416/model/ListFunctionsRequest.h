@@ -134,6 +134,24 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
+                     * 获取命名空间
+                     * @return Namespace 命名空间
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置命名空间
+                     * @param Namespace 命名空间
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
                      * 获取函数描述，支持模糊搜索
                      * @return Description 函数描述，支持模糊搜索
                      */
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
+
+                    /**
+                     * 命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
 
                     /**
                      * 函数描述，支持模糊搜索

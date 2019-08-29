@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组件名称
-                     * @return ComponentCodeName 组件名称
+                     * 获取组件类型:资源组件类型的名称，如内存、硬盘等
+                     * @return ComponentCodeName 组件类型:资源组件类型的名称，如内存、硬盘等
                      */
                     std::string GetComponentCodeName() const;
 
                     /**
-                     * 设置组件名称
-                     * @param ComponentCodeName 组件名称
+                     * 设置组件类型:资源组件类型的名称，如内存、硬盘等
+                     * @param ComponentCodeName 组件类型:资源组件类型的名称，如内存、硬盘等
                      */
                     void SetComponentCodeName(const std::string& _componentCodeName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ComponentCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取组件类型名称
-                     * @return ItemCodeName 组件类型名称
+                     * 获取组件名称:资源组件的名称，如云数据库MySQL-内存等
+                     * @return ItemCodeName 组件名称:资源组件的名称，如云数据库MySQL-内存等
                      */
                     std::string GetItemCodeName() const;
 
                     /**
-                     * 设置组件类型名称
-                     * @param ItemCodeName 组件类型名称
+                     * 设置组件名称:资源组件的名称，如云数据库MySQL-内存等
+                     * @param ItemCodeName 组件名称:资源组件的名称，如云数据库MySQL-内存等
                      */
                     void SetItemCodeName(const std::string& _itemCodeName);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ItemCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取组件刊例价
-                     * @return SinglePrice 组件刊例价
+                     * 获取组件刊例价:资源组件的原始价格，保持原始粒度
+                     * @return SinglePrice 组件刊例价:资源组件的原始价格，保持原始粒度
                      */
                     std::string GetSinglePrice() const;
 
                     /**
-                     * 设置组件刊例价
-                     * @param SinglePrice 组件刊例价
+                     * 设置组件刊例价:资源组件的原始价格，保持原始粒度
+                     * @param SinglePrice 组件刊例价:资源组件的原始价格，保持原始粒度
                      */
                     void SetSinglePrice(const std::string& _singlePrice);
 
@@ -337,19 +337,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 组件名称
+                     * 组件类型:资源组件类型的名称，如内存、硬盘等
                      */
                     std::string m_componentCodeName;
                     bool m_componentCodeNameHasBeenSet;
 
                     /**
-                     * 组件类型名称
+                     * 组件名称:资源组件的名称，如云数据库MySQL-内存等
                      */
                     std::string m_itemCodeName;
                     bool m_itemCodeNameHasBeenSet;
 
                     /**
-                     * 组件刊例价
+                     * 组件刊例价:资源组件的原始价格，保持原始粒度
                      */
                     std::string m_singlePrice;
                     bool m_singlePriceHasBeenSet;

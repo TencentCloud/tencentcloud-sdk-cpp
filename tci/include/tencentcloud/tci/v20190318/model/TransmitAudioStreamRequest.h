@@ -188,6 +188,24 @@ namespace TencentCloud
                     bool LangHasBeenSet() const;
 
                     /**
+                     * 获取是否临时保存 音频链接
+                     * @return StorageMode 是否临时保存 音频链接
+                     */
+                    int64_t GetStorageMode() const;
+
+                    /**
+                     * 设置是否临时保存 音频链接
+                     * @param StorageMode 是否临时保存 音频链接
+                     */
+                    void SetStorageMode(const int64_t& _storageMode);
+
+                    /**
+                     * 判断参数 StorageMode 是否已赋值
+                     * @return StorageMode 是否已赋值
+                     */
+                    bool StorageModeHasBeenSet() const;
+
+                    /**
                      * 获取识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析
                      * @return VocabLibNameList 识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析
                      */
@@ -254,6 +272,12 @@ namespace TencentCloud
                      */
                     int64_t m_lang;
                     bool m_langHasBeenSet;
+
+                    /**
+                     * 是否临时保存 音频链接
+                     */
+                    int64_t m_storageMode;
+                    bool m_storageModeHasBeenSet;
 
                     /**
                      * 识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析

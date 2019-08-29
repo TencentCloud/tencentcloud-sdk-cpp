@@ -28,7 +28,8 @@ DescribeInstanceParamsResponse::DescribeInstanceParamsResponse() :
     m_totalCountHasBeenSet(false),
     m_instanceEnumParamHasBeenSet(false),
     m_instanceIntegerParamHasBeenSet(false),
-    m_instanceTextParamHasBeenSet(false)
+    m_instanceTextParamHasBeenSet(false),
+    m_instanceMultiParamHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,26 @@ CoreInternalOutcome DescribeInstanceParamsResponse::Deserialize(const string &pa
         m_instanceTextParamHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceMultiParam") && !rsp["InstanceMultiParam"].IsNull())
+    {
+        if (!rsp["InstanceMultiParam"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceMultiParam` is not array type"));
+
+        const Value &tmpValue = rsp["InstanceMultiParam"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceMultiParam item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceMultiParam.push_back(item);
+        }
+        m_instanceMultiParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -179,6 +200,16 @@ vector<InstanceTextParam> DescribeInstanceParamsResponse::GetInstanceTextParam()
 bool DescribeInstanceParamsResponse::InstanceTextParamHasBeenSet() const
 {
     return m_instanceTextParamHasBeenSet;
+}
+
+vector<InstanceMultiParam> DescribeInstanceParamsResponse::GetInstanceMultiParam() const
+{
+    return m_instanceMultiParam;
+}
+
+bool DescribeInstanceParamsResponse::InstanceMultiParamHasBeenSet() const
+{
+    return m_instanceMultiParamHasBeenSet;
 }
 
 

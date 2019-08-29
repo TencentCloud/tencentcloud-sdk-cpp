@@ -255,6 +255,49 @@ BmvpcClient::BindSubnetsToNatGatewayOutcomeCallable BmvpcClient::BindSubnetsToNa
     return task->get_future();
 }
 
+BmvpcClient::CreateCustomerGatewayOutcome BmvpcClient::CreateCustomerGateway(const CreateCustomerGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomerGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomerGatewayResponse rsp = CreateCustomerGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomerGatewayOutcome(rsp);
+        else
+            return CreateCustomerGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomerGatewayOutcome(outcome.GetError());
+    }
+}
+
+void BmvpcClient::CreateCustomerGatewayAsync(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomerGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmvpcClient::CreateCustomerGatewayOutcomeCallable BmvpcClient::CreateCustomerGatewayCallable(const CreateCustomerGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomerGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomerGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmvpcClient::CreateDockerSubnetWithVlanOutcome BmvpcClient::CreateDockerSubnetWithVlan(const CreateDockerSubnetWithVlanRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDockerSubnetWithVlan");
@@ -1631,6 +1674,49 @@ BmvpcClient::DescribeTaskStatusOutcomeCallable BmvpcClient::DescribeTaskStatusCa
     return task->get_future();
 }
 
+BmvpcClient::DescribeVpcPeerConnectionsOutcome BmvpcClient::DescribeVpcPeerConnections(const DescribeVpcPeerConnectionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcPeerConnections");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcPeerConnectionsResponse rsp = DescribeVpcPeerConnectionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcPeerConnectionsOutcome(rsp);
+        else
+            return DescribeVpcPeerConnectionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcPeerConnectionsOutcome(outcome.GetError());
+    }
+}
+
+void BmvpcClient::DescribeVpcPeerConnectionsAsync(const DescribeVpcPeerConnectionsRequest& request, const DescribeVpcPeerConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpcPeerConnections(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmvpcClient::DescribeVpcPeerConnectionsOutcomeCallable BmvpcClient::DescribeVpcPeerConnectionsCallable(const DescribeVpcPeerConnectionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpcPeerConnectionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpcPeerConnections(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmvpcClient::DescribeVpcQuotaOutcome BmvpcClient::DescribeVpcQuota(const DescribeVpcQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcQuota");
@@ -1796,6 +1882,92 @@ BmvpcClient::DescribeVpcsOutcomeCallable BmvpcClient::DescribeVpcsCallable(const
         [this, request]()
         {
             return this->DescribeVpcs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmvpcClient::DescribeVpnConnectionsOutcome BmvpcClient::DescribeVpnConnections(const DescribeVpnConnectionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpnConnections");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpnConnectionsResponse rsp = DescribeVpnConnectionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpnConnectionsOutcome(rsp);
+        else
+            return DescribeVpnConnectionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpnConnectionsOutcome(outcome.GetError());
+    }
+}
+
+void BmvpcClient::DescribeVpnConnectionsAsync(const DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpnConnections(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmvpcClient::DescribeVpnConnectionsOutcomeCallable BmvpcClient::DescribeVpnConnectionsCallable(const DescribeVpnConnectionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpnConnectionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpnConnections(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmvpcClient::DescribeVpnGatewaysOutcome BmvpcClient::DescribeVpnGateways(const DescribeVpnGatewaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpnGateways");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpnGatewaysResponse rsp = DescribeVpnGatewaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpnGatewaysOutcome(rsp);
+        else
+            return DescribeVpnGatewaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpnGatewaysOutcome(outcome.GetError());
+    }
+}
+
+void BmvpcClient::DescribeVpnGatewaysAsync(const DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpnGateways(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmvpcClient::DescribeVpnGatewaysOutcomeCallable BmvpcClient::DescribeVpnGatewaysCallable(const DescribeVpnGatewaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpnGatewaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpnGateways(request);
         }
     );
 

@@ -40,6 +40,92 @@ TiiaClient::TiiaClient(const Credential &credential, const string &region, const
 }
 
 
+TiiaClient::AssessQualityOutcome TiiaClient::AssessQuality(const AssessQualityRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssessQuality");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssessQualityResponse rsp = AssessQualityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssessQualityOutcome(rsp);
+        else
+            return AssessQualityOutcome(o.GetError());
+    }
+    else
+    {
+        return AssessQualityOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::AssessQualityAsync(const AssessQualityRequest& request, const AssessQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssessQuality(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::AssessQualityOutcomeCallable TiiaClient::AssessQualityCallable(const AssessQualityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssessQualityOutcome()>>(
+        [this, request]()
+        {
+            return this->AssessQuality(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::DetectCelebrityOutcome TiiaClient::DetectCelebrity(const DetectCelebrityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectCelebrity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectCelebrityResponse rsp = DetectCelebrityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectCelebrityOutcome(rsp);
+        else
+            return DetectCelebrityOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectCelebrityOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectCelebrityAsync(const DetectCelebrityRequest& request, const DetectCelebrityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectCelebrity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectCelebrityOutcomeCallable TiiaClient::DetectCelebrityCallable(const DetectCelebrityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectCelebrityOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectCelebrity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectLabelOutcome TiiaClient::DetectLabel(const DetectLabelRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectLabel");
@@ -119,6 +205,49 @@ TiiaClient::DetectProductOutcomeCallable TiiaClient::DetectProductCallable(const
         [this, request]()
         {
             return this->DetectProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::EnhanceImageOutcome TiiaClient::EnhanceImage(const EnhanceImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnhanceImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnhanceImageResponse rsp = EnhanceImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnhanceImageOutcome(rsp);
+        else
+            return EnhanceImageOutcome(o.GetError());
+    }
+    else
+    {
+        return EnhanceImageOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::EnhanceImageAsync(const EnhanceImageRequest& request, const EnhanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnhanceImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::EnhanceImageOutcomeCallable TiiaClient::EnhanceImageCallable(const EnhanceImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnhanceImageOutcome()>>(
+        [this, request]()
+        {
+            return this->EnhanceImage(request);
         }
     );
 

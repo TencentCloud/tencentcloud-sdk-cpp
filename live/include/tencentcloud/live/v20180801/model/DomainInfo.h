@@ -198,6 +198,24 @@ namespace TencentCloud
                      */
                     bool IsDelayLiveHasBeenSet() const;
 
+                    /**
+                     * 获取当前客户使用的cname信息
+                     * @return CurrentCName 当前客户使用的cname信息
+                     */
+                    std::string GetCurrentCName() const;
+
+                    /**
+                     * 设置当前客户使用的cname信息
+                     * @param CurrentCName 当前客户使用的cname信息
+                     */
+                    void SetCurrentCName(const std::string& _currentCName);
+
+                    /**
+                     * 判断参数 CurrentCName 是否已赋值
+                     * @return CurrentCName 是否已赋值
+                     */
+                    bool CurrentCNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -249,6 +267,12 @@ namespace TencentCloud
                      */
                     int64_t m_isDelayLive;
                     bool m_isDelayLiveHasBeenSet;
+
+                    /**
+                     * 当前客户使用的cname信息
+                     */
+                    std::string m_currentCName;
+                    bool m_currentCNameHasBeenSet;
 
                 };
             }

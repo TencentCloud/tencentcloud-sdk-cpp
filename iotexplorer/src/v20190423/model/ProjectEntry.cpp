@@ -37,11 +37,11 @@ CoreInternalOutcome ProjectEntry::Deserialize(const Value &value)
 
     if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
     {
-        if (!value["ProjectId"].IsInt64())
+        if (!value["ProjectId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectEntry.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ProjectEntry.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_projectId = value["ProjectId"].GetInt64();
+        m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
     }
 
@@ -97,7 +97,7 @@ void ProjectEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
         Value iKey(kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_projectId, allocator);
+        value.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectNameHasBeenSet)
@@ -135,12 +135,12 @@ void ProjectEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
 }
 
 
-int64_t ProjectEntry::GetProjectId() const
+string ProjectEntry::GetProjectId() const
 {
     return m_projectId;
 }
 
-void ProjectEntry::SetProjectId(const int64_t& _projectId)
+void ProjectEntry::SetProjectId(const string& _projectId)
 {
     m_projectId = _projectId;
     m_projectIdHasBeenSet = true;

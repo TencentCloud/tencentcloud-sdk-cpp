@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转发规则的域名。
-                     * @return Domain 转发规则的域名。
+                     * 获取转发规则的域名。长度限制为：1~80。
+                     * @return Domain 转发规则的域名。长度限制为：1~80。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置转发规则的域名。
-                     * @param Domain 转发规则的域名。
+                     * 设置转发规则的域名。长度限制为：1~80。
+                     * @param Domain 转发规则的域名。长度限制为：1~80。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的路径。
-                     * @return Url 转发规则的路径。
+                     * 获取转发规则的路径。长度限制为：1~200。
+                     * @return Url 转发规则的路径。长度限制为：1~200。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置转发规则的路径。
-                     * @param Url 转发规则的路径。
+                     * 设置转发规则的路径。长度限制为：1~200。
+                     * @param Url 转发规则的路径。长度限制为：1~200。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间
-                     * @return SessionExpireTime 会话保持时间
+                     * 获取会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
+                     * @return SessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间
-                     * @param SessionExpireTime 会话保持时间
+                     * 设置会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
+                     * @param SessionExpireTime 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
 
@@ -178,22 +178,58 @@ namespace TencentCloud
                      */
                     bool ForwardTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * @return DefaultServer 是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     */
+                    bool GetDefaultServer() const;
+
+                    /**
+                     * 设置是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * @param DefaultServer 是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     */
+                    void SetDefaultServer(const bool& _defaultServer);
+
+                    /**
+                     * 判断参数 DefaultServer 是否已赋值
+                     * @return DefaultServer 是否已赋值
+                     */
+                    bool DefaultServerHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     * @return Http2 是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     */
+                    bool GetHttp2() const;
+
+                    /**
+                     * 设置是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     * @param Http2 是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     */
+                    void SetHttp2(const bool& _http2);
+
+                    /**
+                     * 判断参数 Http2 是否已赋值
+                     * @return Http2 是否已赋值
+                     */
+                    bool Http2HasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转发规则的域名。
+                     * 转发规则的域名。长度限制为：1~80。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 转发规则的路径。
+                     * 转发规则的路径。长度限制为：1~200。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 会话保持时间
+                     * 会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
@@ -222,6 +258,18 @@ namespace TencentCloud
                      */
                     std::string m_forwardType;
                     bool m_forwardTypeHasBeenSet;
+
+                    /**
+                     * 是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     */
+                    bool m_defaultServer;
+                    bool m_defaultServerHasBeenSet;
+
+                    /**
+                     * 是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     */
+                    bool m_http2;
+                    bool m_http2HasBeenSet;
 
                 };
             }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频内容分析模板唯一标识过滤条件，数组长度限制：10。
-                     * @return Definitions 视频内容分析模板唯一标识过滤条件，数组长度限制：10。
+                     * 获取视频内容分析模板唯一标识过滤条件，数组长度最大值：100。
+                     * @return Definitions 视频内容分析模板唯一标识过滤条件，数组长度最大值：100。
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置视频内容分析模板唯一标识过滤条件，数组长度限制：10。
-                     * @param Definitions 视频内容分析模板唯一标识过滤条件，数组长度限制：10。
+                     * 设置视频内容分析模板唯一标识过滤条件，数组长度最大值：100。
+                     * @param Definitions 视频内容分析模板唯一标识过滤条件，数组长度最大值：100。
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频内容分析模板唯一标识过滤条件，数组长度限制：10。
+                     * 视频内容分析模板唯一标识过滤条件，数组长度最大值：100。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;

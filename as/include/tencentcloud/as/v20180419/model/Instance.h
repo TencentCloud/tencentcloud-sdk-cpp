@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool VersionNumberHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩组名称
+                     * @return AutoScalingGroupName 伸缩组名称
+                     */
+                    std::string GetAutoScalingGroupName() const;
+
+                    /**
+                     * 设置伸缩组名称
+                     * @param AutoScalingGroupName 伸缩组名称
+                     */
+                    void SetAutoScalingGroupName(const std::string& _autoScalingGroupName);
+
+                    /**
+                     * 判断参数 AutoScalingGroupName 是否已赋值
+                     * @return AutoScalingGroupName 是否已赋值
+                     */
+                    bool AutoScalingGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +353,12 @@ namespace TencentCloud
                      */
                     int64_t m_versionNumber;
                     bool m_versionNumberHasBeenSet;
+
+                    /**
+                     * 伸缩组名称
+                     */
+                    std::string m_autoScalingGroupName;
+                    bool m_autoScalingGroupNameHasBeenSet;
 
                 };
             }

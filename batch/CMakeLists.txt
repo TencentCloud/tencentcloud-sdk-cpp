@@ -25,6 +25,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/SubmitJobRequest.h
   include/tencentcloud/batch/v20170312/model/ComputeEnvData.h
   include/tencentcloud/batch/v20170312/model/Authentication.h
+  include/tencentcloud/batch/v20170312/model/RetryJobsResponse.h
   include/tencentcloud/batch/v20170312/model/TerminateComputeNodeRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeTaskLogsRequest.h
   include/tencentcloud/batch/v20170312/model/AgentRunningMode.h
@@ -41,9 +42,11 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/TaskInstanceLog.h
   include/tencentcloud/batch/v20170312/model/MountDataDisk.h
   include/tencentcloud/batch/v20170312/model/TaskView.h
+  include/tencentcloud/batch/v20170312/model/Externals.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvResponse.h
   include/tencentcloud/batch/v20170312/model/TerminateJobRequest.h
   include/tencentcloud/batch/v20170312/model/Application.h
+  include/tencentcloud/batch/v20170312/model/EnvDataCpm.h
   include/tencentcloud/batch/v20170312/model/OutputMappingConfig.h
   include/tencentcloud/batch/v20170312/model/ComputeNodeMetrics.h
   include/tencentcloud/batch/v20170312/model/TaskMetrics.h
@@ -61,8 +64,11 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvRequest.h
   include/tencentcloud/batch/v20170312/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeTaskTemplatesResponse.h
+  include/tencentcloud/batch/v20170312/model/CreateCpmComputeEnvResponse.h
   include/tencentcloud/batch/v20170312/model/DeleteJobRequest.h
+  include/tencentcloud/batch/v20170312/model/CreateCpmComputeEnvRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeTaskLogsResponse.h
+  include/tencentcloud/batch/v20170312/model/NamedCpmComputeEnv.h
   include/tencentcloud/batch/v20170312/model/DeleteTaskTemplatesRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeJobResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfoRequest.h
@@ -72,13 +78,12 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/DeleteJobResponse.h
   include/tencentcloud/batch/v20170312/model/EventConfig.h
   include/tencentcloud/batch/v20170312/model/SpotMarketOptions.h
-  include/tencentcloud/batch/v20170312/model/Externals.h
+  include/tencentcloud/batch/v20170312/model/CpmVirtualPrivateCloud.h
   include/tencentcloud/batch/v20170312/model/OutputMapping.h
   include/tencentcloud/batch/v20170312/model/EnhancedService.h
   include/tencentcloud/batch/v20170312/model/DescribeJobSubmitInfoResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfosResponse.h
   include/tencentcloud/batch/v20170312/model/RunSecurityServiceEnabled.h
-  include/tencentcloud/batch/v20170312/model/CreateTaskTemplateResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeJobRequest.h
   include/tencentcloud/batch/v20170312/model/RedirectInfo.h
   include/tencentcloud/batch/v20170312/model/DescribeInstanceCategoriesResponse.h
@@ -96,7 +101,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/ComputeNode.h
   include/tencentcloud/batch/v20170312/model/ItemPrice.h
   include/tencentcloud/batch/v20170312/model/InstanceTypeQuotaItem.h
-  include/tencentcloud/batch/v20170312/model/RetryJobsResponse.h
+  include/tencentcloud/batch/v20170312/model/CreateTaskTemplateResponse.h
   include/tencentcloud/batch/v20170312/model/StorageBlock.h
   include/tencentcloud/batch/v20170312/model/DescribeJobsRequest.h
   include/tencentcloud/batch/v20170312/model/TaskTemplateView.h
@@ -136,6 +141,7 @@ set(batch_src
   src/v20170312/model/SubmitJobRequest.cpp
   src/v20170312/model/ComputeEnvData.cpp
   src/v20170312/model/Authentication.cpp
+  src/v20170312/model/RetryJobsResponse.cpp
   src/v20170312/model/TerminateComputeNodeRequest.cpp
   src/v20170312/model/DescribeTaskLogsRequest.cpp
   src/v20170312/model/AgentRunningMode.cpp
@@ -152,9 +158,11 @@ set(batch_src
   src/v20170312/model/TaskInstanceLog.cpp
   src/v20170312/model/MountDataDisk.cpp
   src/v20170312/model/TaskView.cpp
+  src/v20170312/model/Externals.cpp
   src/v20170312/model/DescribeComputeEnvResponse.cpp
   src/v20170312/model/TerminateJobRequest.cpp
   src/v20170312/model/Application.cpp
+  src/v20170312/model/EnvDataCpm.cpp
   src/v20170312/model/OutputMappingConfig.cpp
   src/v20170312/model/ComputeNodeMetrics.cpp
   src/v20170312/model/TaskMetrics.cpp
@@ -172,8 +180,11 @@ set(batch_src
   src/v20170312/model/DescribeComputeEnvRequest.cpp
   src/v20170312/model/InstanceMarketOptionsRequest.cpp
   src/v20170312/model/DescribeTaskTemplatesResponse.cpp
+  src/v20170312/model/CreateCpmComputeEnvResponse.cpp
   src/v20170312/model/DeleteJobRequest.cpp
+  src/v20170312/model/CreateCpmComputeEnvRequest.cpp
   src/v20170312/model/DescribeTaskLogsResponse.cpp
+  src/v20170312/model/NamedCpmComputeEnv.cpp
   src/v20170312/model/DeleteTaskTemplatesRequest.cpp
   src/v20170312/model/DescribeJobResponse.cpp
   src/v20170312/model/DescribeComputeEnvCreateInfoRequest.cpp
@@ -183,13 +194,12 @@ set(batch_src
   src/v20170312/model/DeleteJobResponse.cpp
   src/v20170312/model/EventConfig.cpp
   src/v20170312/model/SpotMarketOptions.cpp
-  src/v20170312/model/Externals.cpp
+  src/v20170312/model/CpmVirtualPrivateCloud.cpp
   src/v20170312/model/OutputMapping.cpp
   src/v20170312/model/EnhancedService.cpp
   src/v20170312/model/DescribeJobSubmitInfoResponse.cpp
   src/v20170312/model/DescribeComputeEnvCreateInfosResponse.cpp
   src/v20170312/model/RunSecurityServiceEnabled.cpp
-  src/v20170312/model/CreateTaskTemplateResponse.cpp
   src/v20170312/model/DescribeJobRequest.cpp
   src/v20170312/model/RedirectInfo.cpp
   src/v20170312/model/DescribeInstanceCategoriesResponse.cpp
@@ -207,7 +217,7 @@ set(batch_src
   src/v20170312/model/ComputeNode.cpp
   src/v20170312/model/ItemPrice.cpp
   src/v20170312/model/InstanceTypeQuotaItem.cpp
-  src/v20170312/model/RetryJobsResponse.cpp
+  src/v20170312/model/CreateTaskTemplateResponse.cpp
   src/v20170312/model/StorageBlock.cpp
   src/v20170312/model/DescribeJobsRequest.cpp
   src/v20170312/model/TaskTemplateView.cpp

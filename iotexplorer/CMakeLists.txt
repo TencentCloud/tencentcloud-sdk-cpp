@@ -22,8 +22,11 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeviceData.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceDataHistoryItem.h
   include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
   include/tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h
@@ -31,6 +34,9 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ProjectEntryEx.h
   include/tencentcloud/iotexplorer/v20190423/model/GetProjectListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/EventHistoryItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h
@@ -38,7 +44,8 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ProjectEntry.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h
-  include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyProjectRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductRequest.h
@@ -51,13 +58,19 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetProjectListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetStudioProductListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeviceInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h
   )
 
 set(iotexplorer_src
@@ -65,8 +78,11 @@ set(iotexplorer_src
   src/v20190423/model/DescribeProjectResponse.cpp
   src/v20190423/model/ControlDeviceDataResponse.cpp
   src/v20190423/model/DescribeDeviceDataHistoryRequest.cpp
+  src/v20190423/model/SearchStudioProductResponse.cpp
+  src/v20190423/model/DeviceData.cpp
   src/v20190423/model/DescribeStudioProductRequest.cpp
   src/v20190423/model/DeleteProjectRequest.cpp
+  src/v20190423/model/ListEventHistoryRequest.cpp
   src/v20190423/model/DeviceDataHistoryItem.cpp
   src/v20190423/model/ProductEntry.cpp
   src/v20190423/model/GetStudioProductListResponse.cpp
@@ -74,6 +90,9 @@ set(iotexplorer_src
   src/v20190423/model/ProjectEntryEx.cpp
   src/v20190423/model/GetProjectListRequest.cpp
   src/v20190423/model/DeleteStudioProductResponse.cpp
+  src/v20190423/model/EventHistoryItem.cpp
+  src/v20190423/model/DeleteDeviceRequest.cpp
+  src/v20190423/model/GetDeviceListResponse.cpp
   src/v20190423/model/ModifyStudioProductResponse.cpp
   src/v20190423/model/ControlDeviceDataRequest.cpp
   src/v20190423/model/SearchStudioProductRequest.cpp
@@ -81,7 +100,8 @@ set(iotexplorer_src
   src/v20190423/model/ProjectEntry.cpp
   src/v20190423/model/ModifyProjectResponse.cpp
   src/v20190423/model/ModifyModelDefinitionRequest.cpp
-  src/v20190423/model/CreateStudioProductResponse.cpp
+  src/v20190423/model/DescribeDeviceRequest.cpp
+  src/v20190423/model/ListEventHistoryResponse.cpp
   src/v20190423/model/DeleteStudioProductRequest.cpp
   src/v20190423/model/ModifyProjectRequest.cpp
   src/v20190423/model/ModifyStudioProductRequest.cpp
@@ -94,13 +114,19 @@ set(iotexplorer_src
   src/v20190423/model/DeleteProjectResponse.cpp
   src/v20190423/model/GetProjectListResponse.cpp
   src/v20190423/model/DescribeDeviceDataResponse.cpp
-  src/v20190423/model/SearchStudioProductResponse.cpp
+  src/v20190423/model/CreateDeviceResponse.cpp
+  src/v20190423/model/CreateDeviceRequest.cpp
   src/v20190423/model/DescribeProjectRequest.cpp
   src/v20190423/model/GetStudioProductListRequest.cpp
   src/v20190423/model/DescribeDeviceDataRequest.cpp
+  src/v20190423/model/DeleteDeviceResponse.cpp
+  src/v20190423/model/DeviceInfo.cpp
   src/v20190423/model/ModifyModelDefinitionResponse.cpp
-  src/v20190423/model/CreateProjectRequest.cpp
+  src/v20190423/model/CreateStudioProductResponse.cpp
+  src/v20190423/model/GetDeviceListRequest.cpp
   src/v20190423/model/DescribeStudioProductResponse.cpp
+  src/v20190423/model/DescribeDeviceResponse.cpp
+  src/v20190423/model/CreateProjectRequest.cpp
   )
 
 set(iotexplorer_include

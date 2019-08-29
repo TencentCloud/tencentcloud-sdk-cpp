@@ -29,7 +29,8 @@ TransmitAudioStreamResponse::TransmitAudioStreamResponse() :
     m_textsHasBeenSet(false),
     m_vocabAnalysisDetailInfoHasBeenSet(false),
     m_vocabAnalysisStatInfoHasBeenSet(false),
-    m_allTextsHasBeenSet(false)
+    m_allTextsHasBeenSet(false),
+    m_audioUrlHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,16 @@ CoreInternalOutcome TransmitAudioStreamResponse::Deserialize(const string &paylo
         m_allTextsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AudioUrl") && !rsp["AudioUrl"].IsNull())
+    {
+        if (!rsp["AudioUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioUrl = string(rsp["AudioUrl"].GetString());
+        m_audioUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -207,6 +218,16 @@ string TransmitAudioStreamResponse::GetAllTexts() const
 bool TransmitAudioStreamResponse::AllTextsHasBeenSet() const
 {
     return m_allTextsHasBeenSet;
+}
+
+string TransmitAudioStreamResponse::GetAudioUrl() const
+{
+    return m_audioUrl;
+}
+
+bool TransmitAudioStreamResponse::AudioUrlHasBeenSet() const
+{
+    return m_audioUrlHasBeenSet;
 }
 
 

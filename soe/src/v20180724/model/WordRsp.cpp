@@ -28,7 +28,8 @@ WordRsp::WordRsp() :
     m_pronFluencyHasBeenSet(false),
     m_wordHasBeenSet(false),
     m_matchTagHasBeenSet(false),
-    m_phoneInfosHasBeenSet(false)
+    m_phoneInfosHasBeenSet(false),
+    m_referenceWordHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome WordRsp::Deserialize(const Value &value)
         m_phoneInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("ReferenceWord") && !value["ReferenceWord"].IsNull())
+    {
+        if (!value["ReferenceWord"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WordRsp.ReferenceWord` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_referenceWord = string(value["ReferenceWord"].GetString());
+        m_referenceWordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,6 +196,14 @@ void WordRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_referenceWordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReferenceWord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_referenceWord.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -300,5 +319,21 @@ void WordRsp::SetPhoneInfos(const vector<PhoneInfo>& _phoneInfos)
 bool WordRsp::PhoneInfosHasBeenSet() const
 {
     return m_phoneInfosHasBeenSet;
+}
+
+string WordRsp::GetReferenceWord() const
+{
+    return m_referenceWord;
+}
+
+void WordRsp::SetReferenceWord(const string& _referenceWord)
+{
+    m_referenceWord = _referenceWord;
+    m_referenceWordHasBeenSet = true;
+}
+
+bool WordRsp::ReferenceWordHasBeenSet() const
+{
+    return m_referenceWordHasBeenSet;
 }
 

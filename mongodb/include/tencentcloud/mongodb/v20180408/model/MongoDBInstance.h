@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 关联实例信息实例信息
+                * 实例信息
                 */
                 class MongoDBInstance : public AbstractModel
                 {

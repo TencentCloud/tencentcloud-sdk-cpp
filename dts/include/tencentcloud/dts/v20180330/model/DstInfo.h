@@ -65,6 +65,24 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取目标实例地域，如ap-guangzhou
+                     * @return Region 目标实例地域，如ap-guangzhou
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置目标实例地域，如ap-guangzhou
+                     * @param Region 目标实例地域，如ap-guangzhou
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
                      * 获取目标实例vip。已废弃，无需填写
                      * @return Ip 目标实例vip。已废弃，无需填写
                      */
@@ -101,24 +119,6 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取目标实例地域，如ap-guangzhou
-                     * @return Region 目标实例地域，如ap-guangzhou
-                     */
-                    std::string GetRegion() const;
-
-                    /**
-                     * 设置目标实例地域，如ap-guangzhou
-                     * @param Region 目标实例地域，如ap-guangzhou
-                     */
-                    void SetRegion(const std::string& _region);
-
-                    /**
-                     * 判断参数 Region 是否已赋值
-                     * @return Region 是否已赋值
-                     */
-                    bool RegionHasBeenSet() const;
-
-                    /**
                      * 获取目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。
                      * @return ReadOnly 目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。
                      */
@@ -145,6 +145,12 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
+                     * 目标实例地域，如ap-guangzhou
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
                      * 目标实例vip。已废弃，无需填写
                      */
                     std::string m_ip;
@@ -155,12 +161,6 @@ namespace TencentCloud
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
-
-                    /**
-                     * 目标实例地域，如ap-guangzhou
-                     */
-                    std::string m_region;
-                    bool m_regionHasBeenSet;
 
                     /**
                      * 目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。

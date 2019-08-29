@@ -25,14 +25,20 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h>
@@ -43,10 +49,14 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetProjectListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetProjectListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyModelDefinitionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectRequest.h>
@@ -74,18 +84,27 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
                 typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
+                typedef Outcome<Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
+                typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
                 typedef Outcome<Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
                 typedef Outcome<Error, Model::CreateStudioProductResponse> CreateStudioProductOutcome;
                 typedef std::future<CreateStudioProductOutcome> CreateStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateStudioProductRequest&, CreateStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStudioProductAsyncHandler;
+                typedef Outcome<Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
+                typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
                 typedef Outcome<Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
                 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
                 typedef Outcome<Error, Model::DeleteStudioProductResponse> DeleteStudioProductOutcome;
                 typedef std::future<DeleteStudioProductOutcome> DeleteStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteStudioProductRequest&, DeleteStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStudioProductAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
+                typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeviceDataResponse> DescribeDeviceDataOutcome;
                 typedef std::future<DescribeDeviceDataOutcome> DescribeDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceDataRequest&, DescribeDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataAsyncHandler;
@@ -101,12 +120,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeStudioProductResponse> DescribeStudioProductOutcome;
                 typedef std::future<DescribeStudioProductOutcome> DescribeStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeStudioProductRequest&, DescribeStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStudioProductAsyncHandler;
+                typedef Outcome<Error, Model::GetDeviceListResponse> GetDeviceListOutcome;
+                typedef std::future<GetDeviceListOutcome> GetDeviceListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceListRequest&, GetDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceListAsyncHandler;
                 typedef Outcome<Error, Model::GetProjectListResponse> GetProjectListOutcome;
                 typedef std::future<GetProjectListOutcome> GetProjectListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetProjectListRequest&, GetProjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectListAsyncHandler;
                 typedef Outcome<Error, Model::GetStudioProductListResponse> GetStudioProductListOutcome;
                 typedef std::future<GetStudioProductListOutcome> GetStudioProductListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetStudioProductListRequest&, GetStudioProductListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStudioProductListAsyncHandler;
+                typedef Outcome<Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
+                typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
                 typedef Outcome<Error, Model::ModifyModelDefinitionResponse> ModifyModelDefinitionOutcome;
                 typedef std::future<ModifyModelDefinitionOutcome> ModifyModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyModelDefinitionRequest&, ModifyModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelDefinitionAsyncHandler;
@@ -135,6 +160,15 @@ namespace TencentCloud
                 ControlDeviceDataOutcomeCallable ControlDeviceDataCallable(const Model::ControlDeviceDataRequest& request);
 
                 /**
+                 *创建设备
+                 * @param req CreateDeviceRequest
+                 * @return CreateDeviceOutcome
+                 */
+                CreateDeviceOutcome CreateDevice(const Model::CreateDeviceRequest &request);
+                void CreateDeviceAsync(const Model::CreateDeviceRequest& request, const CreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request);
+
+                /**
                  *为用户提供新建项目的能力，用于集中管理产品和应用。
                  * @param req CreateProjectRequest
                  * @return CreateProjectOutcome
@@ -153,6 +187,15 @@ namespace TencentCloud
                 CreateStudioProductOutcomeCallable CreateStudioProductCallable(const Model::CreateStudioProductRequest& request);
 
                 /**
+                 *删除设备
+                 * @param req DeleteDeviceRequest
+                 * @return DeleteDeviceOutcome
+                 */
+                DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
+                void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
                  *提供删除某个项目的能力
                  * @param req DeleteProjectRequest
                  * @return DeleteProjectOutcome
@@ -169,6 +212,15 @@ namespace TencentCloud
                 DeleteStudioProductOutcome DeleteStudioProduct(const Model::DeleteStudioProductRequest &request);
                 void DeleteStudioProductAsync(const Model::DeleteStudioProductRequest& request, const DeleteStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteStudioProductOutcomeCallable DeleteStudioProductCallable(const Model::DeleteStudioProductRequest& request);
+
+                /**
+                 *用于查看某个设备的详细信息
+                 * @param req DescribeDeviceRequest
+                 * @return DescribeDeviceOutcome
+                 */
+                DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest &request);
+                void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request);
 
                 /**
                  *根据设备产品ID、设备名称，获取设备上报的属性数据。
@@ -216,6 +268,15 @@ namespace TencentCloud
                 DescribeStudioProductOutcomeCallable DescribeStudioProductCallable(const Model::DescribeStudioProductRequest& request);
 
                 /**
+                 *用于查询某个产品下的设备列表
+                 * @param req GetDeviceListRequest
+                 * @return GetDeviceListOutcome
+                 */
+                GetDeviceListOutcome GetDeviceList(const Model::GetDeviceListRequest &request);
+                void GetDeviceListAsync(const Model::GetDeviceListRequest& request, const GetDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDeviceListOutcomeCallable GetDeviceListCallable(const Model::GetDeviceListRequest& request);
+
+                /**
                  *提供查询用户所创建的项目列表查询功能。
                  * @param req GetProjectListRequest
                  * @return GetProjectListOutcome
@@ -232,6 +293,15 @@ namespace TencentCloud
                 GetStudioProductListOutcome GetStudioProductList(const Model::GetStudioProductListRequest &request);
                 void GetStudioProductListAsync(const Model::GetStudioProductListRequest& request, const GetStudioProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetStudioProductListOutcomeCallable GetStudioProductListCallable(const Model::GetStudioProductListRequest& request);
+
+                /**
+                 *获取设备的历史事件
+                 * @param req ListEventHistoryRequest
+                 * @return ListEventHistoryOutcome
+                 */
+                ListEventHistoryOutcome ListEventHistory(const Model::ListEventHistoryRequest &request);
+                void ListEventHistoryAsync(const Model::ListEventHistoryRequest& request, const ListEventHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListEventHistoryOutcomeCallable ListEventHistoryCallable(const Model::ListEventHistoryRequest& request);
 
                 /**
                  *提供修改产品的数据模板的能力

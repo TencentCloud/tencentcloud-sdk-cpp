@@ -26,6 +26,7 @@ using namespace std;
 GetFunctionRequest::GetFunctionRequest() :
     m_functionNameHasBeenSet(false),
     m_qualifierHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_showCodeHasBeenSet(false)
 {
 }
@@ -51,6 +52,14 @@ string GetFunctionRequest::ToJsonString() const
         string key = "Qualifier";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_qualifier.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_showCodeHasBeenSet)
@@ -99,6 +108,22 @@ void GetFunctionRequest::SetQualifier(const string& _qualifier)
 bool GetFunctionRequest::QualifierHasBeenSet() const
 {
     return m_qualifierHasBeenSet;
+}
+
+string GetFunctionRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void GetFunctionRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool GetFunctionRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 
 string GetFunctionRequest::GetShowCode() const

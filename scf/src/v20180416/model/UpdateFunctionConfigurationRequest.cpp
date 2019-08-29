@@ -30,7 +30,12 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_timeoutHasBeenSet(false),
     m_runtimeHasBeenSet(false),
     m_environmentHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_roleHasBeenSet(false),
+    m_clsLogsetIdHasBeenSet(false),
+    m_clsTopicIdHasBeenSet(false),
+    m_publishHasBeenSet(false)
 {
 }
 
@@ -90,6 +95,14 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         m_environment.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_vpcConfigHasBeenSet)
     {
         Value iKey(kStringType);
@@ -97,6 +110,38 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_vpcConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsLogsetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsLogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clsLogsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Publish";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_publish.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -203,6 +248,22 @@ bool UpdateFunctionConfigurationRequest::EnvironmentHasBeenSet() const
     return m_environmentHasBeenSet;
 }
 
+string UpdateFunctionConfigurationRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void UpdateFunctionConfigurationRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
 VpcConfig UpdateFunctionConfigurationRequest::GetVpcConfig() const
 {
     return m_vpcConfig;
@@ -217,6 +278,70 @@ void UpdateFunctionConfigurationRequest::SetVpcConfig(const VpcConfig& _vpcConfi
 bool UpdateFunctionConfigurationRequest::VpcConfigHasBeenSet() const
 {
     return m_vpcConfigHasBeenSet;
+}
+
+string UpdateFunctionConfigurationRequest::GetRole() const
+{
+    return m_role;
+}
+
+void UpdateFunctionConfigurationRequest::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
+}
+
+string UpdateFunctionConfigurationRequest::GetClsLogsetId() const
+{
+    return m_clsLogsetId;
+}
+
+void UpdateFunctionConfigurationRequest::SetClsLogsetId(const string& _clsLogsetId)
+{
+    m_clsLogsetId = _clsLogsetId;
+    m_clsLogsetIdHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::ClsLogsetIdHasBeenSet() const
+{
+    return m_clsLogsetIdHasBeenSet;
+}
+
+string UpdateFunctionConfigurationRequest::GetClsTopicId() const
+{
+    return m_clsTopicId;
+}
+
+void UpdateFunctionConfigurationRequest::SetClsTopicId(const string& _clsTopicId)
+{
+    m_clsTopicId = _clsTopicId;
+    m_clsTopicIdHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::ClsTopicIdHasBeenSet() const
+{
+    return m_clsTopicIdHasBeenSet;
+}
+
+string UpdateFunctionConfigurationRequest::GetPublish() const
+{
+    return m_publish;
+}
+
+void UpdateFunctionConfigurationRequest::SetPublish(const string& _publish)
+{
+    m_publish = _publish;
+    m_publishHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::PublishHasBeenSet() const
+{
+    return m_publishHasBeenSet;
 }
 
 

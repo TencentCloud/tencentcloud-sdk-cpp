@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * http返回码和统计数据
+                * HTTP返回码和统计数据
                 */
                 class HttpCodeInfo : public AbstractModel
                 {
@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取http协议返回码。
+                     * 获取HTTP协议返回码。
 例："2xx", "3xx", "4xx", "5xx"。
-                     * @return HttpCode http协议返回码。
+                     * @return HttpCode HTTP协议返回码。
 例："2xx", "3xx", "4xx", "5xx"。
                      */
                     std::string GetHttpCode() const;
 
                     /**
-                     * 设置http协议返回码。
+                     * 设置HTTP协议返回码。
 例："2xx", "3xx", "4xx", "5xx"。
-                     * @param HttpCode http协议返回码。
+                     * @param HttpCode HTTP协议返回码。
 例："2xx", "3xx", "4xx", "5xx"。
                      */
                     void SetHttpCode(const std::string& _httpCode);
@@ -90,7 +90,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * http协议返回码。
+                     * HTTP协议返回码。
 例："2xx", "3xx", "4xx", "5xx"。
                      */
                     std::string m_httpCode;

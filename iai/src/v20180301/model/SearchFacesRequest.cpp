@@ -29,7 +29,8 @@ SearchFacesRequest::SearchFacesRequest() :
     m_urlHasBeenSet(false),
     m_maxFaceNumHasBeenSet(false),
     m_minFaceSizeHasBeenSet(false),
-    m_maxPersonNumHasBeenSet(false)
+    m_maxPersonNumHasBeenSet(false),
+    m_needPersonInfoHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,14 @@ string SearchFacesRequest::ToJsonString() const
         string key = "MaxPersonNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxPersonNum, allocator);
+    }
+
+    if (m_needPersonInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedPersonInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPersonInfo, allocator);
     }
 
 
@@ -195,6 +204,22 @@ void SearchFacesRequest::SetMaxPersonNum(const uint64_t& _maxPersonNum)
 bool SearchFacesRequest::MaxPersonNumHasBeenSet() const
 {
     return m_maxPersonNumHasBeenSet;
+}
+
+int64_t SearchFacesRequest::GetNeedPersonInfo() const
+{
+    return m_needPersonInfo;
+}
+
+void SearchFacesRequest::SetNeedPersonInfo(const int64_t& _needPersonInfo)
+{
+    m_needPersonInfo = _needPersonInfo;
+    m_needPersonInfoHasBeenSet = true;
+}
+
+bool SearchFacesRequest::NeedPersonInfoHasBeenSet() const
+{
+    return m_needPersonInfoHasBeenSet;
 }
 
 

@@ -40,7 +40,8 @@ ModifyLiveTranscodeTemplateRequest::ModifyLiveTranscodeTemplateRequest() :
     m_profileHasBeenSet(false),
     m_bitrateToOrigHasBeenSet(false),
     m_heightToOrigHasBeenSet(false),
-    m_fpsToOrigHasBeenSet(false)
+    m_fpsToOrigHasBeenSet(false),
+    m_adaptBitratePercentHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,14 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
         string key = "FpsToOrig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fpsToOrig, allocator);
+    }
+
+    if (m_adaptBitratePercentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdaptBitratePercent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_adaptBitratePercent, allocator);
     }
 
 
@@ -465,6 +474,22 @@ void ModifyLiveTranscodeTemplateRequest::SetFpsToOrig(const int64_t& _fpsToOrig)
 bool ModifyLiveTranscodeTemplateRequest::FpsToOrigHasBeenSet() const
 {
     return m_fpsToOrigHasBeenSet;
+}
+
+double ModifyLiveTranscodeTemplateRequest::GetAdaptBitratePercent() const
+{
+    return m_adaptBitratePercent;
+}
+
+void ModifyLiveTranscodeTemplateRequest::SetAdaptBitratePercent(const double& _adaptBitratePercent)
+{
+    m_adaptBitratePercent = _adaptBitratePercent;
+    m_adaptBitratePercentHasBeenSet = true;
+}
+
+bool ModifyLiveTranscodeTemplateRequest::AdaptBitratePercentHasBeenSet() const
+{
+    return m_adaptBitratePercentHasBeenSet;
 }
 
 

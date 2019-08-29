@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取名片识别内容。
-                     * @return BusinessCardInfos 名片识别内容。
+                     * 获取名片识别结果，具体内容请点击左侧链接。
+                     * @return BusinessCardInfos 名片识别结果，具体内容请点击左侧链接。
                      */
                     std::vector<BusinessCardInfo> GetBusinessCardInfos() const;
 
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 名片识别内容。
+                     * 名片识别结果，具体内容请点击左侧链接。
                      */
                     std::vector<BusinessCardInfo> m_businessCardInfos;
                     bool m_businessCardInfosHasBeenSet;

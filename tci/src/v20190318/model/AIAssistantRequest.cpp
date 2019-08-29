@@ -28,6 +28,7 @@ AIAssistantRequest::AIAssistantRequest() :
     m_fileTypeHasBeenSet(false),
     m_langHasBeenSet(false),
     m_librarySetHasBeenSet(false),
+    m_maxVideoDurationHasBeenSet(false),
     m_templateHasBeenSet(false),
     m_vocabLibNameListHasBeenSet(false),
     m_voiceEncodeTypeHasBeenSet(false),
@@ -77,6 +78,14 @@ string AIAssistantRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_maxVideoDurationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxVideoDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxVideoDuration, allocator);
     }
 
     if (m_templateHasBeenSet)
@@ -186,6 +195,22 @@ void AIAssistantRequest::SetLibrarySet(const vector<string>& _librarySet)
 bool AIAssistantRequest::LibrarySetHasBeenSet() const
 {
     return m_librarySetHasBeenSet;
+}
+
+int64_t AIAssistantRequest::GetMaxVideoDuration() const
+{
+    return m_maxVideoDuration;
+}
+
+void AIAssistantRequest::SetMaxVideoDuration(const int64_t& _maxVideoDuration)
+{
+    m_maxVideoDuration = _maxVideoDuration;
+    m_maxVideoDurationHasBeenSet = true;
+}
+
+bool AIAssistantRequest::MaxVideoDurationHasBeenSet() const
+{
+    return m_maxVideoDurationHasBeenSet;
 }
 
 int64_t AIAssistantRequest::GetTemplate() const

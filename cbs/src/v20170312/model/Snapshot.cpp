@@ -37,7 +37,8 @@ Snapshot::Snapshot() :
     m_copyingToRegionsHasBeenSet(false),
     m_copyFromRemoteHasBeenSet(false),
     m_imagesHasBeenSet(false),
-    m_imageCountHasBeenSet(false)
+    m_imageCountHasBeenSet(false),
+    m_snapshotTypeHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome Snapshot::Deserialize(const Value &value)
         m_imageCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SnapshotType") && !value["SnapshotType"].IsNull())
+    {
+        if (!value["SnapshotType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Snapshot.SnapshotType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotType = string(value["SnapshotType"].GetString());
+        m_snapshotTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +383,14 @@ void Snapshot::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ImageCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageCount, allocator);
+    }
+
+    if (m_snapshotTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SnapshotType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_snapshotType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -631,5 +650,21 @@ void Snapshot::SetImageCount(const uint64_t& _imageCount)
 bool Snapshot::ImageCountHasBeenSet() const
 {
     return m_imageCountHasBeenSet;
+}
+
+string Snapshot::GetSnapshotType() const
+{
+    return m_snapshotType;
+}
+
+void Snapshot::SetSnapshotType(const string& _snapshotType)
+{
+    m_snapshotType = _snapshotType;
+    m_snapshotTypeHasBeenSet = true;
+}
+
+bool Snapshot::SnapshotTypeHasBeenSet() const
+{
+    return m_snapshotTypeHasBeenSet;
 }
 

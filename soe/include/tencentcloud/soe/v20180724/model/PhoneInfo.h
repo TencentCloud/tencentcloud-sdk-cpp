@@ -154,6 +154,42 @@ namespace TencentCloud
                      */
                     bool StressHasBeenSet() const;
 
+                    /**
+                     * 获取参考音素，在单词诊断模式下，代表标准音素
+                     * @return ReferencePhone 参考音素，在单词诊断模式下，代表标准音素
+                     */
+                    std::string GetReferencePhone() const;
+
+                    /**
+                     * 设置参考音素，在单词诊断模式下，代表标准音素
+                     * @param ReferencePhone 参考音素，在单词诊断模式下，代表标准音素
+                     */
+                    void SetReferencePhone(const std::string& _referencePhone);
+
+                    /**
+                     * 判断参数 ReferencePhone 是否已赋值
+                     * @return ReferencePhone 是否已赋值
+                     */
+                    bool ReferencePhoneHasBeenSet() const;
+
+                    /**
+                     * 获取当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。
+                     * @return MatchTag 当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。
+                     */
+                    int64_t GetMatchTag() const;
+
+                    /**
+                     * 设置当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。
+                     * @param MatchTag 当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。
+                     */
+                    void SetMatchTag(const int64_t& _matchTag);
+
+                    /**
+                     * 判断参数 MatchTag 是否已赋值
+                     * @return MatchTag 是否已赋值
+                     */
+                    bool MatchTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +227,18 @@ namespace TencentCloud
                      */
                     bool m_stress;
                     bool m_stressHasBeenSet;
+
+                    /**
+                     * 参考音素，在单词诊断模式下，代表标准音素
+                     */
+                    std::string m_referencePhone;
+                    bool m_referencePhoneHasBeenSet;
+
+                    /**
+                     * 当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。
+                     */
+                    int64_t m_matchTag;
+                    bool m_matchTagHasBeenSet;
 
                 };
             }

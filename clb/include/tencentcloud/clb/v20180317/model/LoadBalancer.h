@@ -29,6 +29,7 @@
 #include <tencentcloud/clb/v20180317/model/ZoneInfo.h>
 #include <tencentcloud/clb/v20180317/model/InternetAccessible.h>
 #include <tencentcloud/clb/v20180317/model/LBChargePrepaid.h>
+#include <tencentcloud/clb/v20180317/model/ExtraInfo.h>
 
 
 namespace TencentCloud
@@ -743,6 +744,50 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool LogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddressIPv6 负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAddressIPv6() const;
+
+                    /**
+                     * 设置负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AddressIPv6 负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAddressIPv6(const std::string& _addressIPv6);
+
+                    /**
+                     * 判断参数 AddressIPv6 是否已赋值
+                     * @return AddressIPv6 是否已赋值
+                     */
+                    bool AddressIPv6HasBeenSet() const;
+
+                    /**
+                     * 获取暂做保留，一般用户无需关注。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraInfo 暂做保留，一般用户无需关注。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtraInfo GetExtraInfo() const;
+
+                    /**
+                     * 设置暂做保留，一般用户无需关注。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtraInfo 暂做保留，一般用户无需关注。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtraInfo(const ExtraInfo& _extraInfo);
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     */
+                    bool ExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -965,6 +1010,20 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_addressIPv6;
+                    bool m_addressIPv6HasBeenSet;
+
+                    /**
+                     * 暂做保留，一般用户无需关注。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtraInfo m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
 
                 };
             }

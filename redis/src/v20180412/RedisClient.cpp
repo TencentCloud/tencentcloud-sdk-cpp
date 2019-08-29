@@ -1244,6 +1244,49 @@ RedisClient::RestoreInstanceOutcomeCallable RedisClient::RestoreInstanceCallable
     return task->get_future();
 }
 
+RedisClient::SwitchInstanceVipOutcome RedisClient::SwitchInstanceVip(const SwitchInstanceVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchInstanceVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchInstanceVipResponse rsp = SwitchInstanceVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchInstanceVipOutcome(rsp);
+        else
+            return SwitchInstanceVipOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchInstanceVipOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::SwitchInstanceVipAsync(const SwitchInstanceVipRequest& request, const SwitchInstanceVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchInstanceVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::SwitchInstanceVipOutcomeCallable RedisClient::SwitchInstanceVipCallable(const SwitchInstanceVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchInstanceVipOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchInstanceVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::UpgradeInstanceOutcome RedisClient::UpgradeInstance(const UpgradeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeInstance");

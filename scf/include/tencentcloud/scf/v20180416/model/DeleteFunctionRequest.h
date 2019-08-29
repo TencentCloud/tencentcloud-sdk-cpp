@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool FunctionNameHasBeenSet() const;
 
+                    /**
+                     * 获取函数所属命名空间
+                     * @return Namespace 函数所属命名空间
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置函数所属命名空间
+                     * @param Namespace 函数所属命名空间
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
+
+                    /**
+                     * 函数所属命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
 
                 };
             }

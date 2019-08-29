@@ -32,6 +32,7 @@ TransmitAudioStreamRequest::TransmitAudioStreamRequest() :
     m_voiceFileTypeHasBeenSet(false),
     m_isEndHasBeenSet(false),
     m_langHasBeenSet(false),
+    m_storageModeHasBeenSet(false),
     m_vocabLibNameListHasBeenSet(false)
 {
 }
@@ -106,6 +107,14 @@ string TransmitAudioStreamRequest::ToJsonString() const
         string key = "Lang";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_lang, allocator);
+    }
+
+    if (m_storageModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StorageMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storageMode, allocator);
     }
 
     if (m_vocabLibNameListHasBeenSet)
@@ -255,6 +264,22 @@ void TransmitAudioStreamRequest::SetLang(const int64_t& _lang)
 bool TransmitAudioStreamRequest::LangHasBeenSet() const
 {
     return m_langHasBeenSet;
+}
+
+int64_t TransmitAudioStreamRequest::GetStorageMode() const
+{
+    return m_storageMode;
+}
+
+void TransmitAudioStreamRequest::SetStorageMode(const int64_t& _storageMode)
+{
+    m_storageMode = _storageMode;
+    m_storageModeHasBeenSet = true;
+}
+
+bool TransmitAudioStreamRequest::StorageModeHasBeenSet() const
+{
+    return m_storageModeHasBeenSet;
 }
 
 vector<string> TransmitAudioStreamRequest::GetVocabLibNameList() const

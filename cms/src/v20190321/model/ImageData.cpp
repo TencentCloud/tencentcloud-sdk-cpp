@@ -26,6 +26,7 @@ ImageData::ImageData() :
     m_evilTypeHasBeenSet(false),
     m_hotDetectHasBeenSet(false),
     m_illegalDetectHasBeenSet(false),
+    m_oCRDetectHasBeenSet(false),
     m_polityDetectHasBeenSet(false),
     m_pornDetectHasBeenSet(false),
     m_similarHasBeenSet(false),
@@ -90,6 +91,23 @@ CoreInternalOutcome ImageData::Deserialize(const Value &value)
         }
 
         m_illegalDetectHasBeenSet = true;
+    }
+
+    if (value.HasMember("OCRDetect") && !value["OCRDetect"].IsNull())
+    {
+        if (!value["OCRDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageData.OCRDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oCRDetect.Deserialize(value["OCRDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oCRDetectHasBeenSet = true;
     }
 
     if (value.HasMember("PolityDetect") && !value["PolityDetect"].IsNull())
@@ -201,6 +219,15 @@ void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         m_illegalDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_oCRDetectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OCRDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_oCRDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_polityDetectHasBeenSet)
     {
         Value iKey(kStringType);
@@ -302,6 +329,22 @@ void ImageData::SetIllegalDetect(const ImageIllegalDetect& _illegalDetect)
 bool ImageData::IllegalDetectHasBeenSet() const
 {
     return m_illegalDetectHasBeenSet;
+}
+
+OCRDetect ImageData::GetOCRDetect() const
+{
+    return m_oCRDetect;
+}
+
+void ImageData::SetOCRDetect(const OCRDetect& _oCRDetect)
+{
+    m_oCRDetect = _oCRDetect;
+    m_oCRDetectHasBeenSet = true;
+}
+
+bool ImageData::OCRDetectHasBeenSet() const
+{
+    return m_oCRDetectHasBeenSet;
 }
 
 ImagePolityDetect ImageData::GetPolityDetect() const

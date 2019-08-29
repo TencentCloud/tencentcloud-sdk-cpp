@@ -25,7 +25,12 @@ SimpleApplication::SimpleApplication() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_applicationTypeHasBeenSet(false),
-    m_microserviceTypeHasBeenSet(false)
+    m_microserviceTypeHasBeenSet(false),
+    m_applicationDescHasBeenSet(false),
+    m_progLangHasBeenSet(false),
+    m_applicationResourceTypeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -74,6 +79,56 @@ CoreInternalOutcome SimpleApplication::Deserialize(const Value &value)
         m_microserviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationDesc") && !value["ApplicationDesc"].IsNull())
+    {
+        if (!value["ApplicationDesc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationDesc = string(value["ApplicationDesc"].GetString());
+        m_applicationDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProgLang") && !value["ProgLang"].IsNull())
+    {
+        if (!value["ProgLang"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleApplication.ProgLang` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_progLang = string(value["ProgLang"].GetString());
+        m_progLangHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationResourceType") && !value["ApplicationResourceType"].IsNull())
+    {
+        if (!value["ApplicationResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationResourceType = string(value["ApplicationResourceType"].GetString());
+        m_applicationResourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleApplication.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleApplication.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +166,46 @@ void SimpleApplication::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "MicroserviceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationDescHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progLangHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProgLang";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_progLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +273,85 @@ void SimpleApplication::SetMicroserviceType(const string& _microserviceType)
 bool SimpleApplication::MicroserviceTypeHasBeenSet() const
 {
     return m_microserviceTypeHasBeenSet;
+}
+
+string SimpleApplication::GetApplicationDesc() const
+{
+    return m_applicationDesc;
+}
+
+void SimpleApplication::SetApplicationDesc(const string& _applicationDesc)
+{
+    m_applicationDesc = _applicationDesc;
+    m_applicationDescHasBeenSet = true;
+}
+
+bool SimpleApplication::ApplicationDescHasBeenSet() const
+{
+    return m_applicationDescHasBeenSet;
+}
+
+string SimpleApplication::GetProgLang() const
+{
+    return m_progLang;
+}
+
+void SimpleApplication::SetProgLang(const string& _progLang)
+{
+    m_progLang = _progLang;
+    m_progLangHasBeenSet = true;
+}
+
+bool SimpleApplication::ProgLangHasBeenSet() const
+{
+    return m_progLangHasBeenSet;
+}
+
+string SimpleApplication::GetApplicationResourceType() const
+{
+    return m_applicationResourceType;
+}
+
+void SimpleApplication::SetApplicationResourceType(const string& _applicationResourceType)
+{
+    m_applicationResourceType = _applicationResourceType;
+    m_applicationResourceTypeHasBeenSet = true;
+}
+
+bool SimpleApplication::ApplicationResourceTypeHasBeenSet() const
+{
+    return m_applicationResourceTypeHasBeenSet;
+}
+
+string SimpleApplication::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void SimpleApplication::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool SimpleApplication::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string SimpleApplication::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void SimpleApplication::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool SimpleApplication::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

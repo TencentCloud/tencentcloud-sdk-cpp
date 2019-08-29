@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ControlDeviceDataResponse::ControlDeviceDataResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ControlDeviceDataResponse::Deserialize(const string &payload
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    {
+        if (!rsp["Result"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string ControlDeviceDataResponse::GetData() const
 bool ControlDeviceDataResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string ControlDeviceDataResponse::GetResult() const
+{
+    return m_result;
+}
+
+bool ControlDeviceDataResponse::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
 }
 
 

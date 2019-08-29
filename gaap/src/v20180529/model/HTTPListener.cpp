@@ -1,0 +1,252 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/gaap/v20180529/model/HTTPListener.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Gaap::V20180529::Model;
+using namespace rapidjson;
+using namespace std;
+
+HTTPListener::HTTPListener() :
+    m_listenerIdHasBeenSet(false),
+    m_listenerNameHasBeenSet(false),
+    m_portHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_listenerStatusHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome HTTPListener::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("ListenerId") && !value["ListenerId"].IsNull())
+    {
+        if (!value["ListenerId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HTTPListener.ListenerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_listenerId = string(value["ListenerId"].GetString());
+        m_listenerIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ListenerName") && !value["ListenerName"].IsNull())
+    {
+        if (!value["ListenerName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HTTPListener.ListenerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_listenerName = string(value["ListenerName"].GetString());
+        m_listenerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `HTTPListener.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetUint64();
+        m_portHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `HTTPListener.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HTTPListener.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("ListenerStatus") && !value["ListenerStatus"].IsNull())
+    {
+        if (!value["ListenerStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `HTTPListener.ListenerStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_listenerStatus = value["ListenerStatus"].GetUint64();
+        m_listenerStatusHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void HTTPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_listenerIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ListenerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_listenerNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ListenerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_listenerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_listenerStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ListenerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_listenerStatus, allocator);
+    }
+
+}
+
+
+string HTTPListener::GetListenerId() const
+{
+    return m_listenerId;
+}
+
+void HTTPListener::SetListenerId(const string& _listenerId)
+{
+    m_listenerId = _listenerId;
+    m_listenerIdHasBeenSet = true;
+}
+
+bool HTTPListener::ListenerIdHasBeenSet() const
+{
+    return m_listenerIdHasBeenSet;
+}
+
+string HTTPListener::GetListenerName() const
+{
+    return m_listenerName;
+}
+
+void HTTPListener::SetListenerName(const string& _listenerName)
+{
+    m_listenerName = _listenerName;
+    m_listenerNameHasBeenSet = true;
+}
+
+bool HTTPListener::ListenerNameHasBeenSet() const
+{
+    return m_listenerNameHasBeenSet;
+}
+
+uint64_t HTTPListener::GetPort() const
+{
+    return m_port;
+}
+
+void HTTPListener::SetPort(const uint64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool HTTPListener::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
+}
+
+uint64_t HTTPListener::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void HTTPListener::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool HTTPListener::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string HTTPListener::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void HTTPListener::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool HTTPListener::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+uint64_t HTTPListener::GetListenerStatus() const
+{
+    return m_listenerStatus;
+}
+
+void HTTPListener::SetListenerStatus(const uint64_t& _listenerStatus)
+{
+    m_listenerStatus = _listenerStatus;
+    m_listenerStatusHasBeenSet = true;
+}
+
+bool HTTPListener::ListenerStatusHasBeenSet() const
+{
+    return m_listenerStatusHasBeenSet;
+}
+

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * http返回码数据信息
+                * HTTP返回码数据信息
                 */
                 class HttpCodeValue : public AbstractModel
                 {

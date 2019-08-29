@@ -27,7 +27,9 @@ EditMediaRequest::EditMediaRequest() :
     m_inputTypeHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
+    m_definitionHasBeenSet(false),
     m_procedureNameHasBeenSet(false),
+    m_outputConfigHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -77,12 +79,29 @@ string EditMediaRequest::ToJsonString() const
         }
     }
 
+    if (m_definitionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_definition, allocator);
+    }
+
     if (m_procedureNameHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "ProcedureName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_procedureName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OutputConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_outputConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -149,6 +168,22 @@ bool EditMediaRequest::StreamInfosHasBeenSet() const
     return m_streamInfosHasBeenSet;
 }
 
+uint64_t EditMediaRequest::GetDefinition() const
+{
+    return m_definition;
+}
+
+void EditMediaRequest::SetDefinition(const uint64_t& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool EditMediaRequest::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
+}
+
 string EditMediaRequest::GetProcedureName() const
 {
     return m_procedureName;
@@ -163,6 +198,22 @@ void EditMediaRequest::SetProcedureName(const string& _procedureName)
 bool EditMediaRequest::ProcedureNameHasBeenSet() const
 {
     return m_procedureNameHasBeenSet;
+}
+
+EditMediaOutputConfig EditMediaRequest::GetOutputConfig() const
+{
+    return m_outputConfig;
+}
+
+void EditMediaRequest::SetOutputConfig(const EditMediaOutputConfig& _outputConfig)
+{
+    m_outputConfig = _outputConfig;
+    m_outputConfigHasBeenSet = true;
+}
+
+bool EditMediaRequest::OutputConfigHasBeenSet() const
+{
+    return m_outputConfigHasBeenSet;
 }
 
 uint64_t EditMediaRequest::GetSubAppId() const

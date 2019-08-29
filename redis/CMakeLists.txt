@@ -21,6 +21,7 @@ set(redis_public_header
 set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceShardsRequest.h
+  include/tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h
   include/tencentcloud/redis/v20180412/model/ResetPasswordRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h
@@ -29,6 +30,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModfiyInstancePasswordRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigResponse.h
   include/tencentcloud/redis/v20180412/model/RestoreInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/SwitchInstanceVipRequest.h
   include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeProductInfoResponse.h
@@ -43,7 +45,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
   include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyRequest.h
   include/tencentcloud/redis/v20180412/model/RenewInstanceResponse.h
-  include/tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/InstanceMultiParam.h
   include/tencentcloud/redis/v20180412/model/ProductConf.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterNode.h
   include/tencentcloud/redis/v20180412/model/RestoreInstanceResponse.h
@@ -64,6 +66,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceTextParam.h
   include/tencentcloud/redis/v20180412/model/InstanceSet.h
+  include/tencentcloud/redis/v20180412/model/ZoneCapacityConf.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceBackupsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskInfoResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsResponse.h
@@ -80,7 +83,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/RenewInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceIntegerParam.h
-  include/tencentcloud/redis/v20180412/model/ZoneCapacityConf.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/ManualBackupInstanceRequest.h
@@ -101,6 +104,7 @@ set(redis_src
   src/v20180412/RedisClient.cpp
   src/v20180412/model/ModifyInstanceResponse.cpp
   src/v20180412/model/DescribeInstanceShardsRequest.cpp
+  src/v20180412/model/SwitchInstanceVipResponse.cpp
   src/v20180412/model/ResetPasswordRequest.cpp
   src/v20180412/model/DescribeAutoBackupConfigResponse.cpp
   src/v20180412/model/ModifyInstanceParamsResponse.cpp
@@ -109,6 +113,7 @@ set(redis_src
   src/v20180412/model/ModfiyInstancePasswordRequest.cpp
   src/v20180412/model/ModifyAutoBackupConfigResponse.cpp
   src/v20180412/model/RestoreInstanceRequest.cpp
+  src/v20180412/model/SwitchInstanceVipRequest.cpp
   src/v20180412/model/EnableReplicaReadonlyResponse.cpp
   src/v20180412/model/CreateInstancesRequest.cpp
   src/v20180412/model/DescribeProductInfoResponse.cpp
@@ -123,7 +128,7 @@ set(redis_src
   src/v20180412/model/TradeDealDetail.cpp
   src/v20180412/model/EnableReplicaReadonlyRequest.cpp
   src/v20180412/model/RenewInstanceResponse.cpp
-  src/v20180412/model/ModifyInstanceRequest.cpp
+  src/v20180412/model/InstanceMultiParam.cpp
   src/v20180412/model/ProductConf.cpp
   src/v20180412/model/InstanceClusterNode.cpp
   src/v20180412/model/RestoreInstanceResponse.cpp
@@ -144,6 +149,7 @@ set(redis_src
   src/v20180412/model/ModifyAutoBackupConfigRequest.cpp
   src/v20180412/model/InstanceTextParam.cpp
   src/v20180412/model/InstanceSet.cpp
+  src/v20180412/model/ZoneCapacityConf.cpp
   src/v20180412/model/DescribeInstanceBackupsRequest.cpp
   src/v20180412/model/DescribeTaskInfoResponse.cpp
   src/v20180412/model/DescribeInstanceParamRecordsResponse.cpp
@@ -160,7 +166,7 @@ set(redis_src
   src/v20180412/model/RenewInstanceRequest.cpp
   src/v20180412/model/DescribeTaskInfoRequest.cpp
   src/v20180412/model/InstanceIntegerParam.cpp
-  src/v20180412/model/ZoneCapacityConf.cpp
+  src/v20180412/model/ModifyInstanceRequest.cpp
   src/v20180412/model/UpgradeInstanceResponse.cpp
   src/v20180412/model/UpgradeInstanceRequest.cpp
   src/v20180412/model/ManualBackupInstanceRequest.cpp

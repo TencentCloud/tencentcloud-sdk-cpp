@@ -24,7 +24,10 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace rapidjson;
 using namespace std;
 
-AddExistedInstancesResponse::AddExistedInstancesResponse()
+AddExistedInstancesResponse::AddExistedInstancesResponse() :
+    m_failedInstanceIdsHasBeenSet(false),
+    m_succInstanceIdsHasBeenSet(false),
+    m_timeoutInstanceIdsHasBeenSet(false)
 {
 }
 
@@ -62,9 +65,78 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("FailedInstanceIds") && !rsp["FailedInstanceIds"].IsNull())
+    {
+        if (!rsp["FailedInstanceIds"].IsArray())
+            return CoreInternalOutcome(Error("response `FailedInstanceIds` is not array type"));
+
+        const Value &tmpValue = rsp["FailedInstanceIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedInstanceIds.push_back((*itr).GetString());
+        }
+        m_failedInstanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuccInstanceIds") && !rsp["SuccInstanceIds"].IsNull())
+    {
+        if (!rsp["SuccInstanceIds"].IsArray())
+            return CoreInternalOutcome(Error("response `SuccInstanceIds` is not array type"));
+
+        const Value &tmpValue = rsp["SuccInstanceIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_succInstanceIds.push_back((*itr).GetString());
+        }
+        m_succInstanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TimeoutInstanceIds") && !rsp["TimeoutInstanceIds"].IsNull())
+    {
+        if (!rsp["TimeoutInstanceIds"].IsArray())
+            return CoreInternalOutcome(Error("response `TimeoutInstanceIds` is not array type"));
+
+        const Value &tmpValue = rsp["TimeoutInstanceIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_timeoutInstanceIds.push_back((*itr).GetString());
+        }
+        m_timeoutInstanceIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<string> AddExistedInstancesResponse::GetFailedInstanceIds() const
+{
+    return m_failedInstanceIds;
+}
+
+bool AddExistedInstancesResponse::FailedInstanceIdsHasBeenSet() const
+{
+    return m_failedInstanceIdsHasBeenSet;
+}
+
+vector<string> AddExistedInstancesResponse::GetSuccInstanceIds() const
+{
+    return m_succInstanceIds;
+}
+
+bool AddExistedInstancesResponse::SuccInstanceIdsHasBeenSet() const
+{
+    return m_succInstanceIdsHasBeenSet;
+}
+
+vector<string> AddExistedInstancesResponse::GetTimeoutInstanceIds() const
+{
+    return m_timeoutInstanceIds;
+}
+
+bool AddExistedInstancesResponse::TimeoutInstanceIdsHasBeenSet() const
+{
+    return m_timeoutInstanceIdsHasBeenSet;
+}
 
 

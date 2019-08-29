@@ -44,7 +44,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -254,6 +255,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -598,6 +607,22 @@ void RunInstancesRequest::SetUserData(const string& _userData)
 bool RunInstancesRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+bool RunInstancesRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void RunInstancesRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool RunInstancesRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

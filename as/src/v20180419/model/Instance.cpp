@@ -33,7 +33,8 @@ Instance::Instance() :
     m_creationTypeHasBeenSet(false),
     m_addTimeHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_versionNumberHasBeenSet(false)
+    m_versionNumberHasBeenSet(false),
+    m_autoScalingGroupNameHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_versionNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoScalingGroupName") && !value["AutoScalingGroupName"].IsNull())
+    {
+        if (!value["AutoScalingGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.AutoScalingGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoScalingGroupName = string(value["AutoScalingGroupName"].GetString());
+        m_autoScalingGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "VersionNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_versionNumber, allocator);
+    }
+
+    if (m_autoScalingGroupNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoScalingGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_autoScalingGroupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void Instance::SetVersionNumber(const int64_t& _versionNumber)
 bool Instance::VersionNumberHasBeenSet() const
 {
     return m_versionNumberHasBeenSet;
+}
+
+string Instance::GetAutoScalingGroupName() const
+{
+    return m_autoScalingGroupName;
+}
+
+void Instance::SetAutoScalingGroupName(const string& _autoScalingGroupName)
+{
+    m_autoScalingGroupName = _autoScalingGroupName;
+    m_autoScalingGroupNameHasBeenSet = true;
+}
+
+bool Instance::AutoScalingGroupNameHasBeenSet() const
+{
+    return m_autoScalingGroupNameHasBeenSet;
 }
 

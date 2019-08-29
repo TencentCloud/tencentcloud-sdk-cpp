@@ -31,7 +31,9 @@ FunctionLog::FunctionLog() :
     m_durationHasBeenSet(false),
     m_billDurationHasBeenSet(false),
     m_memUsageHasBeenSet(false),
-    m_logHasBeenSet(false)
+    m_logHasBeenSet(false),
+    m_levelHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,26 @@ CoreInternalOutcome FunctionLog::Deserialize(const Value &value)
         m_logHasBeenSet = true;
     }
 
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FunctionLog.Level` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = string(value["Level"].GetString());
+        m_levelHasBeenSet = true;
+    }
+
+    if (value.HasMember("Source") && !value["Source"].IsNull())
+    {
+        if (!value["Source"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FunctionLog.Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(value["Source"].GetString());
+        m_sourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +247,22 @@ void FunctionLog::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Log";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_log.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_level.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +426,37 @@ void FunctionLog::SetLog(const string& _log)
 bool FunctionLog::LogHasBeenSet() const
 {
     return m_logHasBeenSet;
+}
+
+string FunctionLog::GetLevel() const
+{
+    return m_level;
+}
+
+void FunctionLog::SetLevel(const string& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool FunctionLog::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
+}
+
+string FunctionLog::GetSource() const
+{
+    return m_source;
+}
+
+void FunctionLog::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool FunctionLog::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 

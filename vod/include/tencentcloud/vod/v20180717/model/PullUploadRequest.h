@@ -137,30 +137,14 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取指定上传园区，目前支持的园区：
-<li>ap-chongqing：重庆园区，</li>
-<li>ap-beijing：北京园区，</li>
-<li>ap-shanghai：上海园区。</li>
-注意：不填此参数默认上传至重庆园区。
-                     * @return StorageRegion 指定上传园区，目前支持的园区：
-<li>ap-chongqing：重庆园区，</li>
-<li>ap-beijing：北京园区，</li>
-<li>ap-shanghai：上海园区。</li>
-注意：不填此参数默认上传至重庆园区。
+                     * 获取指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。
+                     * @return StorageRegion 指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。
                      */
                     std::string GetStorageRegion() const;
 
                     /**
-                     * 设置指定上传园区，目前支持的园区：
-<li>ap-chongqing：重庆园区，</li>
-<li>ap-beijing：北京园区，</li>
-<li>ap-shanghai：上海园区。</li>
-注意：不填此参数默认上传至重庆园区。
-                     * @param StorageRegion 指定上传园区，目前支持的园区：
-<li>ap-chongqing：重庆园区，</li>
-<li>ap-beijing：北京园区，</li>
-<li>ap-shanghai：上海园区。</li>
-注意：不填此参数默认上传至重庆园区。
+                     * 设置指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。
+                     * @param StorageRegion 指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
@@ -276,11 +260,7 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 指定上传园区，目前支持的园区：
-<li>ap-chongqing：重庆园区，</li>
-<li>ap-beijing：北京园区，</li>
-<li>ap-shanghai：上海园区。</li>
-注意：不填此参数默认上传至重庆园区。
+                     * 指定上传园区，仅适用于对上传地域有特殊需求的用户（目前仅支持北京、上海和重庆园区）。
                      */
                     std::string m_storageRegion;
                     bool m_storageRegionHasBeenSet;

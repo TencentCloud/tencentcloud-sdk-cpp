@@ -39,7 +39,9 @@ TemplateInfo::TemplateInfo() :
     m_needAudioHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_aiTransCodeHasBeenSet(false),
+    m_adaptBitratePercentHasBeenSet(false)
 {
 }
 
@@ -228,6 +230,26 @@ CoreInternalOutcome TemplateInfo::Deserialize(const Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("AiTransCode") && !value["AiTransCode"].IsNull())
+    {
+        if (!value["AiTransCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TemplateInfo.AiTransCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aiTransCode = value["AiTransCode"].GetInt64();
+        m_aiTransCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdaptBitratePercent") && !value["AdaptBitratePercent"].IsNull())
+    {
+        if (!value["AdaptBitratePercent"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `TemplateInfo.AdaptBitratePercent` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_adaptBitratePercent = value["AdaptBitratePercent"].GetDouble();
+        m_adaptBitratePercentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +399,22 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aiTransCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiTransCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aiTransCode, allocator);
+    }
+
+    if (m_adaptBitratePercentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdaptBitratePercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_adaptBitratePercent, allocator);
     }
 
 }
@@ -668,5 +706,37 @@ void TemplateInfo::SetDescription(const string& _description)
 bool TemplateInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t TemplateInfo::GetAiTransCode() const
+{
+    return m_aiTransCode;
+}
+
+void TemplateInfo::SetAiTransCode(const int64_t& _aiTransCode)
+{
+    m_aiTransCode = _aiTransCode;
+    m_aiTransCodeHasBeenSet = true;
+}
+
+bool TemplateInfo::AiTransCodeHasBeenSet() const
+{
+    return m_aiTransCodeHasBeenSet;
+}
+
+double TemplateInfo::GetAdaptBitratePercent() const
+{
+    return m_adaptBitratePercent;
+}
+
+void TemplateInfo::SetAdaptBitratePercent(const double& _adaptBitratePercent)
+{
+    m_adaptBitratePercent = _adaptBitratePercent;
+    m_adaptBitratePercentHasBeenSet = true;
+}
+
+bool TemplateInfo::AdaptBitratePercentHasBeenSet() const
+{
+    return m_adaptBitratePercentHasBeenSet;
 }
 

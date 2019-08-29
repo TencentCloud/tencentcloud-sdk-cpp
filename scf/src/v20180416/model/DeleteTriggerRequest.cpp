@@ -27,6 +27,7 @@ DeleteTriggerRequest::DeleteTriggerRequest() :
     m_functionNameHasBeenSet(false),
     m_triggerNameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_triggerDescHasBeenSet(false),
     m_qualifierHasBeenSet(false)
 {
@@ -61,6 +62,14 @@ string DeleteTriggerRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_triggerDescHasBeenSet)
@@ -133,6 +142,22 @@ void DeleteTriggerRequest::SetType(const string& _type)
 bool DeleteTriggerRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DeleteTriggerRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void DeleteTriggerRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool DeleteTriggerRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 
 string DeleteTriggerRequest::GetTriggerDesc() const

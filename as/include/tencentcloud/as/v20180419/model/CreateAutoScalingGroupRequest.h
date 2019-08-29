@@ -226,14 +226,14 @@ namespace TencentCloud
                     bool ForwardLoadBalancersHasBeenSet() const;
 
                     /**
-                     * 获取子网ID列表，VPC场景下必须指定子网
-                     * @return SubnetIds 子网ID列表，VPC场景下必须指定子网
+                     * 获取子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
+                     * @return SubnetIds 子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网ID列表，VPC场景下必须指定子网
-                     * @param SubnetIds 子网ID列表，VPC场景下必须指定子网
+                     * 设置子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
+                     * @param SubnetIds 子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
@@ -270,14 +270,14 @@ namespace TencentCloud
                     bool TerminationPoliciesHasBeenSet() const;
 
                     /**
-                     * 获取可用区列表，基础网络场景下必须指定可用区
-                     * @return Zones 可用区列表，基础网络场景下必须指定可用区
+                     * 获取可用区列表，基础网络场景下必须指定可用区。多个可用区以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
+                     * @return Zones 可用区列表，基础网络场景下必须指定可用区。多个可用区以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置可用区列表，基础网络场景下必须指定可用区
-                     * @param Zones 可用区列表，基础网络场景下必须指定可用区
+                     * 设置可用区列表，基础网络场景下必须指定可用区。多个可用区以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
+                     * @param Zones 可用区列表，基础网络场景下必须指定可用区。多个可用区以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
@@ -454,7 +454,7 @@ namespace TencentCloud
                     bool m_forwardLoadBalancersHasBeenSet;
 
                     /**
-                     * 子网ID列表，VPC场景下必须指定子网
+                     * 子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
@@ -468,7 +468,7 @@ namespace TencentCloud
                     bool m_terminationPoliciesHasBeenSet;
 
                     /**
-                     * 可用区列表，基础网络场景下必须指定可用区
+                     * 可用区列表，基础网络场景下必须指定可用区。多个可用区以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;

@@ -28,7 +28,9 @@ RuleInput::RuleInput() :
     m_healthCheckHasBeenSet(false),
     m_certificateHasBeenSet(false),
     m_schedulerHasBeenSet(false),
-    m_forwardTypeHasBeenSet(false)
+    m_forwardTypeHasBeenSet(false),
+    m_defaultServerHasBeenSet(false),
+    m_http2HasBeenSet(false)
 {
 }
 
@@ -121,6 +123,26 @@ CoreInternalOutcome RuleInput::Deserialize(const Value &value)
         m_forwardTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultServer") && !value["DefaultServer"].IsNull())
+    {
+        if (!value["DefaultServer"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RuleInput.DefaultServer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultServer = value["DefaultServer"].GetBool();
+        m_defaultServerHasBeenSet = true;
+    }
+
+    if (value.HasMember("Http2") && !value["Http2"].IsNull())
+    {
+        if (!value["Http2"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RuleInput.Http2` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_http2 = value["Http2"].GetBool();
+        m_http2HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +206,22 @@ void RuleInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "ForwardType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_forwardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultServerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultServer, allocator);
+    }
+
+    if (m_http2HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Http2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_http2, allocator);
     }
 
 }
@@ -299,5 +337,37 @@ void RuleInput::SetForwardType(const string& _forwardType)
 bool RuleInput::ForwardTypeHasBeenSet() const
 {
     return m_forwardTypeHasBeenSet;
+}
+
+bool RuleInput::GetDefaultServer() const
+{
+    return m_defaultServer;
+}
+
+void RuleInput::SetDefaultServer(const bool& _defaultServer)
+{
+    m_defaultServer = _defaultServer;
+    m_defaultServerHasBeenSet = true;
+}
+
+bool RuleInput::DefaultServerHasBeenSet() const
+{
+    return m_defaultServerHasBeenSet;
+}
+
+bool RuleInput::GetHttp2() const
+{
+    return m_http2;
+}
+
+void RuleInput::SetHttp2(const bool& _http2)
+{
+    m_http2 = _http2;
+    m_http2HasBeenSet = true;
+}
+
+bool RuleInput::Http2HasBeenSet() const
+{
+    return m_http2HasBeenSet;
 }
 

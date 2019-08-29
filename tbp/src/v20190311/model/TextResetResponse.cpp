@@ -30,8 +30,8 @@ TextResetResponse::TextResetResponse() :
     m_intentNameHasBeenSet(false),
     m_slotInfoListHasBeenSet(false),
     m_inputTextHasBeenSet(false),
-    m_responseTextHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false)
+    m_sessionAttributesHasBeenSet(false),
+    m_responseTextHasBeenSet(false)
 {
 }
 
@@ -129,16 +129,6 @@ CoreInternalOutcome TextResetResponse::Deserialize(const string &payload)
         m_inputTextHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ResponseText") && !rsp["ResponseText"].IsNull())
-    {
-        if (!rsp["ResponseText"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `ResponseText` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_responseText = string(rsp["ResponseText"].GetString());
-        m_responseTextHasBeenSet = true;
-    }
-
     if (rsp.HasMember("SessionAttributes") && !rsp["SessionAttributes"].IsNull())
     {
         if (!rsp["SessionAttributes"].IsString())
@@ -147,6 +137,16 @@ CoreInternalOutcome TextResetResponse::Deserialize(const string &payload)
         }
         m_sessionAttributes = string(rsp["SessionAttributes"].GetString());
         m_sessionAttributesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResponseText") && !rsp["ResponseText"].IsNull())
+    {
+        if (!rsp["ResponseText"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResponseText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseText = string(rsp["ResponseText"].GetString());
+        m_responseTextHasBeenSet = true;
     }
 
 
@@ -204,16 +204,6 @@ bool TextResetResponse::InputTextHasBeenSet() const
     return m_inputTextHasBeenSet;
 }
 
-string TextResetResponse::GetResponseText() const
-{
-    return m_responseText;
-}
-
-bool TextResetResponse::ResponseTextHasBeenSet() const
-{
-    return m_responseTextHasBeenSet;
-}
-
 string TextResetResponse::GetSessionAttributes() const
 {
     return m_sessionAttributes;
@@ -222,6 +212,16 @@ string TextResetResponse::GetSessionAttributes() const
 bool TextResetResponse::SessionAttributesHasBeenSet() const
 {
     return m_sessionAttributesHasBeenSet;
+}
+
+string TextResetResponse::GetResponseText() const
+{
+    return m_responseText;
+}
+
+bool TextResetResponse::ResponseTextHasBeenSet() const
+{
+    return m_responseTextHasBeenSet;
 }
 
 

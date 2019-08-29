@@ -28,6 +28,7 @@ CreateTriggerRequest::CreateTriggerRequest() :
     m_triggerNameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_triggerDescHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_qualifierHasBeenSet(false),
     m_enableHasBeenSet(false)
 {
@@ -70,6 +71,14 @@ string CreateTriggerRequest::ToJsonString() const
         string key = "TriggerDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_triggerDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qualifierHasBeenSet)
@@ -158,6 +167,22 @@ void CreateTriggerRequest::SetTriggerDesc(const string& _triggerDesc)
 bool CreateTriggerRequest::TriggerDescHasBeenSet() const
 {
     return m_triggerDescHasBeenSet;
+}
+
+string CreateTriggerRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void CreateTriggerRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool CreateTriggerRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 
 string CreateTriggerRequest::GetQualifier() const

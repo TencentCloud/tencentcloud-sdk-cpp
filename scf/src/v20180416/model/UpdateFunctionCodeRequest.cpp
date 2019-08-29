@@ -29,7 +29,10 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_cosBucketNameHasBeenSet(false),
     m_cosObjectNameHasBeenSet(false),
     m_zipFileHasBeenSet(false),
-    m_cosBucketRegionHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_cosBucketRegionHasBeenSet(false),
+    m_envIdHasBeenSet(false),
+    m_publishHasBeenSet(false)
 {
 }
 
@@ -80,12 +83,36 @@ string UpdateFunctionCodeRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_zipFile.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_cosBucketRegionHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "CosBucketRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_cosBucketRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Publish";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_publish.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +203,22 @@ bool UpdateFunctionCodeRequest::ZipFileHasBeenSet() const
     return m_zipFileHasBeenSet;
 }
 
+string UpdateFunctionCodeRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void UpdateFunctionCodeRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool UpdateFunctionCodeRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
 string UpdateFunctionCodeRequest::GetCosBucketRegion() const
 {
     return m_cosBucketRegion;
@@ -190,6 +233,38 @@ void UpdateFunctionCodeRequest::SetCosBucketRegion(const string& _cosBucketRegio
 bool UpdateFunctionCodeRequest::CosBucketRegionHasBeenSet() const
 {
     return m_cosBucketRegionHasBeenSet;
+}
+
+string UpdateFunctionCodeRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void UpdateFunctionCodeRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool UpdateFunctionCodeRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
+
+string UpdateFunctionCodeRequest::GetPublish() const
+{
+    return m_publish;
+}
+
+void UpdateFunctionCodeRequest::SetPublish(const string& _publish)
+{
+    m_publish = _publish;
+    m_publishHasBeenSet = true;
+}
+
+bool UpdateFunctionCodeRequest::PublishHasBeenSet() const
+{
+    return m_publishHasBeenSet;
 }
 
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * TextVehicleBack
+                * 行驶证副页正面的识别结果
                 */
                 class TextVehicleBack : public AbstractModel
                 {

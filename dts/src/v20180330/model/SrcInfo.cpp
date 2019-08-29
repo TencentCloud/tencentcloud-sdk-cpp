@@ -35,7 +35,8 @@ SrcInfo::SrcInfo() :
     m_uniqVpnGwIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_supplierHasBeenSet(false)
+    m_supplierHasBeenSet(false),
+    m_ccnIdHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome SrcInfo::Deserialize(const Value &value)
         m_supplierHasBeenSet = true;
     }
 
+    if (value.HasMember("CcnId") && !value["CcnId"].IsNull())
+    {
+        if (!value["CcnId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SrcInfo.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnId = string(value["CcnId"].GetString());
+        m_ccnIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void SrcInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "Supplier";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_supplier.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccnIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CcnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_ccnId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +547,21 @@ void SrcInfo::SetSupplier(const string& _supplier)
 bool SrcInfo::SupplierHasBeenSet() const
 {
     return m_supplierHasBeenSet;
+}
+
+string SrcInfo::GetCcnId() const
+{
+    return m_ccnId;
+}
+
+void SrcInfo::SetCcnId(const string& _ccnId)
+{
+    m_ccnId = _ccnId;
+    m_ccnIdHasBeenSet = true;
+}
+
+bool SrcInfo::CcnIdHasBeenSet() const
+{
+    return m_ccnIdHasBeenSet;
 }
 

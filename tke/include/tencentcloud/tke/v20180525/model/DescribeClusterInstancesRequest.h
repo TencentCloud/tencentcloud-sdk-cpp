@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量,默认0
-                     * @return Offset 偏移量,默认0
+                     * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量,默认0
-                     * @param Offset 偏移量,默认0
+                     * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取最大输出条数，默认20
-                     * @return Limit 最大输出条数，默认20
+                     * 获取返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @return Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置最大输出条数，默认20
-                     * @param Limit 最大输出条数，默认20
+                     * 设置返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取需要获取的节点实例Id列表(默认为空，表示拉取集群下所有节点实例)
-                     * @return InstanceIds 需要获取的节点实例Id列表(默认为空，表示拉取集群下所有节点实例)
+                     * 获取需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
+                     * @return InstanceIds 需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置需要获取的节点实例Id列表(默认为空，表示拉取集群下所有节点实例)
-                     * @param InstanceIds 需要获取的节点实例Id列表(默认为空，表示拉取集群下所有节点实例)
+                     * 设置需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
+                     * @param InstanceIds 需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -113,6 +113,24 @@ namespace TencentCloud
                      * @return InstanceIds 是否已赋值
                      */
                     bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     * @return InstanceRole 节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     */
+                    std::string GetInstanceRole() const;
+
+                    /**
+                     * 设置节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     * @param InstanceRole 节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     */
+                    void SetInstanceRole(const std::string& _instanceRole);
+
+                    /**
+                     * 判断参数 InstanceRole 是否已赋值
+                     * @return InstanceRole 是否已赋值
+                     */
+                    bool InstanceRoleHasBeenSet() const;
 
                 private:
 
@@ -123,22 +141,28 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 偏移量,默认0
+                     * 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 最大输出条数，默认20
+                     * 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 需要获取的节点实例Id列表(默认为空，表示拉取集群下所有节点实例)
+                     * 需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     */
+                    std::string m_instanceRole;
+                    bool m_instanceRoleHasBeenSet;
 
                 };
             }

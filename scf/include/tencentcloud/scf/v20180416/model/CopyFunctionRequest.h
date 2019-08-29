@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取函数名
-                     * @return FunctionName 函数名
+                     * 获取要复制的函数的名称
+                     * @return FunctionName 要复制的函数的名称
                      */
                     std::string GetFunctionName() const;
 
                     /**
-                     * 设置函数名
-                     * @param FunctionName 函数名
+                     * 设置要复制的函数的名称
+                     * @param FunctionName 要复制的函数的名称
                      */
                     void SetFunctionName(const std::string& _functionName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NewFunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取命名空间，默认为default
-                     * @return Namespace 命名空间，默认为default
+                     * 获取要复制的函数所在的命名空间，默认为default
+                     * @return Namespace 要复制的函数所在的命名空间，默认为default
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间，默认为default
-                     * @param Namespace 命名空间，默认为default
+                     * 设置要复制的函数所在的命名空间，默认为default
+                     * @param Namespace 要复制的函数所在的命名空间，默认为default
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool TargetNamespaceHasBeenSet() const;
 
                     /**
-                     * 获取函数描述
-                     * @return Description 函数描述
+                     * 获取新函数的描述
+                     * @return Description 新函数的描述
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置函数描述
-                     * @param Description 函数描述
+                     * 设置新函数的描述
+                     * @param Description 新函数的描述
                      */
                     void SetDescription(const std::string& _description);
 
@@ -150,10 +150,66 @@ namespace TencentCloud
                      */
                     bool TargetRegionHasBeenSet() const;
 
+                    /**
+                     * 获取如果目标Namespace下已有同名函数，是否覆盖，默认为否
+（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）
+TRUE：覆盖同名函数
+FALSE：不覆盖同名函数
+                     * @return Override 如果目标Namespace下已有同名函数，是否覆盖，默认为否
+（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）
+TRUE：覆盖同名函数
+FALSE：不覆盖同名函数
+                     */
+                    bool GetOverride() const;
+
+                    /**
+                     * 设置如果目标Namespace下已有同名函数，是否覆盖，默认为否
+（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）
+TRUE：覆盖同名函数
+FALSE：不覆盖同名函数
+                     * @param Override 如果目标Namespace下已有同名函数，是否覆盖，默认为否
+（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）
+TRUE：覆盖同名函数
+FALSE：不覆盖同名函数
+                     */
+                    void SetOverride(const bool& _override);
+
+                    /**
+                     * 判断参数 Override 是否已赋值
+                     * @return Override 是否已赋值
+                     */
+                    bool OverrideHasBeenSet() const;
+
+                    /**
+                     * 获取是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。
+TRUE：复制函数配置
+FALSE：不复制函数配置
+                     * @return CopyConfiguration 是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。
+TRUE：复制函数配置
+FALSE：不复制函数配置
+                     */
+                    bool GetCopyConfiguration() const;
+
+                    /**
+                     * 设置是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。
+TRUE：复制函数配置
+FALSE：不复制函数配置
+                     * @param CopyConfiguration 是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。
+TRUE：复制函数配置
+FALSE：不复制函数配置
+                     */
+                    void SetCopyConfiguration(const bool& _copyConfiguration);
+
+                    /**
+                     * 判断参数 CopyConfiguration 是否已赋值
+                     * @return CopyConfiguration 是否已赋值
+                     */
+                    bool CopyConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 函数名
+                     * 要复制的函数的名称
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
@@ -165,7 +221,7 @@ namespace TencentCloud
                     bool m_newFunctionNameHasBeenSet;
 
                     /**
-                     * 命名空间，默认为default
+                     * 要复制的函数所在的命名空间，默认为default
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
@@ -177,7 +233,7 @@ namespace TencentCloud
                     bool m_targetNamespaceHasBeenSet;
 
                     /**
-                     * 函数描述
+                     * 新函数的描述
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -187,6 +243,23 @@ namespace TencentCloud
                      */
                     std::string m_targetRegion;
                     bool m_targetRegionHasBeenSet;
+
+                    /**
+                     * 如果目标Namespace下已有同名函数，是否覆盖，默认为否
+（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）
+TRUE：覆盖同名函数
+FALSE：不覆盖同名函数
+                     */
+                    bool m_override;
+                    bool m_overrideHasBeenSet;
+
+                    /**
+                     * 是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。
+TRUE：复制函数配置
+FALSE：不复制函数配置
+                     */
+                    bool m_copyConfiguration;
+                    bool m_copyConfigurationHasBeenSet;
 
                 };
             }

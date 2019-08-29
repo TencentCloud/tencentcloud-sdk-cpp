@@ -118,6 +118,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取产品所属分类的模型快照（产品创建时刻的）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoryModel 产品所属分类的模型快照（产品创建时刻的）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCategoryModel() const;
+
+                    /**
+                     * 设置产品所属分类的模型快照（产品创建时刻的）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CategoryModel 产品所属分类的模型快照（产品创建时刻的）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCategoryModel(const std::string& _categoryModel);
+
+                    /**
+                     * 判断参数 CategoryModel 是否已赋值
+                     * @return CategoryModel 是否已赋值
+                     */
+                    bool CategoryModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +165,13 @@ namespace TencentCloud
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 产品所属分类的模型快照（产品创建时刻的）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_categoryModel;
+                    bool m_categoryModelHasBeenSet;
 
                 };
             }

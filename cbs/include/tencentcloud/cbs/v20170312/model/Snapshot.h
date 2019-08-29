@@ -336,6 +336,24 @@ namespace TencentCloud
                      */
                     bool ImageCountHasBeenSet() const;
 
+                    /**
+                     * 获取快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     * @return SnapshotType 快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     */
+                    std::string GetSnapshotType() const;
+
+                    /**
+                     * 设置快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     * @param SnapshotType 快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     */
+                    void SetSnapshotType(const std::string& _snapshotType);
+
+                    /**
+                     * 判断参数 SnapshotType 是否已赋值
+                     * @return SnapshotType 是否已赋值
+                     */
+                    bool SnapshotTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -433,6 +451,12 @@ namespace TencentCloud
                      */
                     uint64_t m_imageCount;
                     bool m_imageCountHasBeenSet;
+
+                    /**
+                     * 快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT
+                     */
+                    std::string m_snapshotType;
+                    bool m_snapshotTypeHasBeenSet;
 
                 };
             }

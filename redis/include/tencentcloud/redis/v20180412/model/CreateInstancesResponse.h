@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool DealIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例ID(该字段灰度中，部分地域不可见)
+                     * @return InstanceIds 实例ID(该字段灰度中，部分地域不可见)
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_dealId;
                     bool m_dealIdHasBeenSet;
+
+                    /**
+                     * 实例ID(该字段灰度中，部分地域不可见)
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                 };
             }

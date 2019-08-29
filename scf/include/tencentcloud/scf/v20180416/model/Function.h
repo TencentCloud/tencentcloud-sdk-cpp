@@ -227,6 +227,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取函数类型，取值为 HTTP 或者 Event
+                     * @return Type 函数类型，取值为 HTTP 或者 Event
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置函数类型，取值为 HTTP 或者 Event
+                     * @param Type 函数类型，取值为 HTTP 或者 Event
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +306,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 函数类型，取值为 HTTP 或者 Event
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

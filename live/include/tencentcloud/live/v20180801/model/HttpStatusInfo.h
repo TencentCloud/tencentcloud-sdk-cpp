@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取播放http状态码。
-                     * @return HttpStatus 播放http状态码。
+                     * 获取播放HTTP状态码。
+                     * @return HttpStatus 播放HTTP状态码。
                      */
                     std::string GetHttpStatus() const;
 
                     /**
-                     * 设置播放http状态码。
-                     * @param HttpStatus 播放http状态码。
+                     * 设置播放HTTP状态码。
+                     * @param HttpStatus 播放HTTP状态码。
                      */
                     void SetHttpStatus(const std::string& _httpStatus);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 播放http状态码。
+                     * 播放HTTP状态码。
                      */
                     std::string m_httpStatus;
                     bool m_httpStatusHasBeenSet;

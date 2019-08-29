@@ -50,7 +50,10 @@ GetFunctionResponse::GetFunctionResponse() :
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
     m_functionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_eipConfigHasBeenSet(false),
+    m_accessInfoHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -382,6 +385,50 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_tagsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EipConfig") && !rsp["EipConfig"].IsNull())
+    {
+        if (!rsp["EipConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EipConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eipConfig.Deserialize(rsp["EipConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eipConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AccessInfo") && !rsp["AccessInfo"].IsNull())
+    {
+        if (!rsp["AccessInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AccessInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_accessInfo.Deserialize(rsp["AccessInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_accessInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Type") && !rsp["Type"].IsNull())
+    {
+        if (!rsp["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(rsp["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -645,6 +692,36 @@ vector<Tag> GetFunctionResponse::GetTags() const
 bool GetFunctionResponse::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+EipOutConfig GetFunctionResponse::GetEipConfig() const
+{
+    return m_eipConfig;
+}
+
+bool GetFunctionResponse::EipConfigHasBeenSet() const
+{
+    return m_eipConfigHasBeenSet;
+}
+
+AccessInfo GetFunctionResponse::GetAccessInfo() const
+{
+    return m_accessInfo;
+}
+
+bool GetFunctionResponse::AccessInfoHasBeenSet() const
+{
+    return m_accessInfoHasBeenSet;
+}
+
+string GetFunctionResponse::GetType() const
+{
+    return m_type;
+}
+
+bool GetFunctionResponse::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

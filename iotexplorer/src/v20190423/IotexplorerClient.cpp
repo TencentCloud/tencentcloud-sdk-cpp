@@ -83,6 +83,49 @@ IotexplorerClient::ControlDeviceDataOutcomeCallable IotexplorerClient::ControlDe
     return task->get_future();
 }
 
+IotexplorerClient::CreateDeviceOutcome IotexplorerClient::CreateDevice(const CreateDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceResponse rsp = CreateDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceOutcome(rsp);
+        else
+            return CreateDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateDeviceAsync(const CreateDeviceRequest& request, const CreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateDeviceOutcomeCallable IotexplorerClient::CreateDeviceCallable(const CreateDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateProjectOutcome IotexplorerClient::CreateProject(const CreateProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProject");
@@ -169,6 +212,49 @@ IotexplorerClient::CreateStudioProductOutcomeCallable IotexplorerClient::CreateS
     return task->get_future();
 }
 
+IotexplorerClient::DeleteDeviceOutcome IotexplorerClient::DeleteDevice(const DeleteDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceResponse rsp = DeleteDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceOutcome(rsp);
+        else
+            return DeleteDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteDeviceOutcomeCallable IotexplorerClient::DeleteDeviceCallable(const DeleteDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DeleteProjectOutcome IotexplorerClient::DeleteProject(const DeleteProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteProject");
@@ -248,6 +334,49 @@ IotexplorerClient::DeleteStudioProductOutcomeCallable IotexplorerClient::DeleteS
         [this, request]()
         {
             return this->DeleteStudioProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeDeviceOutcome IotexplorerClient::DescribeDevice(const DescribeDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceResponse rsp = DescribeDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceOutcome(rsp);
+        else
+            return DescribeDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeDeviceOutcomeCallable IotexplorerClient::DescribeDeviceCallable(const DescribeDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDevice(request);
         }
     );
 
@@ -470,6 +599,49 @@ IotexplorerClient::DescribeStudioProductOutcomeCallable IotexplorerClient::Descr
     return task->get_future();
 }
 
+IotexplorerClient::GetDeviceListOutcome IotexplorerClient::GetDeviceList(const GetDeviceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDeviceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDeviceListResponse rsp = GetDeviceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDeviceListOutcome(rsp);
+        else
+            return GetDeviceListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDeviceListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetDeviceListAsync(const GetDeviceListRequest& request, const GetDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDeviceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetDeviceListOutcomeCallable IotexplorerClient::GetDeviceListCallable(const GetDeviceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDeviceListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDeviceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::GetProjectListOutcome IotexplorerClient::GetProjectList(const GetProjectListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetProjectList");
@@ -549,6 +721,49 @@ IotexplorerClient::GetStudioProductListOutcomeCallable IotexplorerClient::GetStu
         [this, request]()
         {
             return this->GetStudioProductList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ListEventHistoryOutcome IotexplorerClient::ListEventHistory(const ListEventHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListEventHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListEventHistoryResponse rsp = ListEventHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListEventHistoryOutcome(rsp);
+        else
+            return ListEventHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return ListEventHistoryOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ListEventHistoryAsync(const ListEventHistoryRequest& request, const ListEventHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListEventHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ListEventHistoryOutcomeCallable IotexplorerClient::ListEventHistoryCallable(const ListEventHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListEventHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->ListEventHistory(request);
         }
     );
 

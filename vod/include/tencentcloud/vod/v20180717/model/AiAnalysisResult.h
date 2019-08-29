@@ -28,6 +28,7 @@
 #include <tencentcloud/vod/v20180717/model/AiAnalysisTaskCoverResult.h>
 #include <tencentcloud/vod/v20180717/model/AiAnalysisTaskTagResult.h>
 #include <tencentcloud/vod/v20180717/model/AiAnalysisTaskFrameTagResult.h>
+#include <tencentcloud/vod/v20180717/model/AiAnalysisTaskHighlightResult.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,28 @@ namespace TencentCloud
                      */
                     bool FrameTagTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HighlightsTask 视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AiAnalysisTaskHighlightResult> GetHighlightsTask() const;
+
+                    /**
+                     * 设置视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HighlightsTask 视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHighlightsTask(const std::vector<AiAnalysisTaskHighlightResult>& _highlightsTask);
+
+                    /**
+                     * 判断参数 HighlightsTask 是否已赋值
+                     * @return HighlightsTask 是否已赋值
+                     */
+                    bool HighlightsTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +234,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskFrameTagResult m_frameTagTask;
                     bool m_frameTagTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AiAnalysisTaskHighlightResult> m_highlightsTask;
+                    bool m_highlightsTaskHasBeenSet;
 
                 };
             }

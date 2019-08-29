@@ -27,7 +27,8 @@ DescribeClusterInstancesRequest::DescribeClusterInstancesRequest() :
     m_clusterIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_instanceRoleHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string DescribeClusterInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_instanceRoleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceRole";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceRole.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -145,6 +154,22 @@ void DescribeClusterInstancesRequest::SetInstanceIds(const vector<string>& _inst
 bool DescribeClusterInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string DescribeClusterInstancesRequest::GetInstanceRole() const
+{
+    return m_instanceRole;
+}
+
+void DescribeClusterInstancesRequest::SetInstanceRole(const string& _instanceRole)
+{
+    m_instanceRole = _instanceRole;
+    m_instanceRoleHasBeenSet = true;
+}
+
+bool DescribeClusterInstancesRequest::InstanceRoleHasBeenSet() const
+{
+    return m_instanceRoleHasBeenSet;
 }
 
 

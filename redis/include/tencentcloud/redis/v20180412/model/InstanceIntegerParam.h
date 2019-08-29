@@ -190,6 +190,24 @@ namespace TencentCloud
                      */
                     bool MaxHasBeenSet() const;
 
+                    /**
+                     * 获取参数状态, 1: 修改中， 2：修改完成
+                     * @return Status 参数状态, 1: 修改中， 2：修改完成
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置参数状态, 1: 修改中， 2：修改完成
+                     * @param Status 参数状态, 1: 修改中， 2：修改完成
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_max;
                     bool m_maxHasBeenSet;
+
+                    /**
+                     * 参数状态, 1: 修改中， 2：修改完成
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

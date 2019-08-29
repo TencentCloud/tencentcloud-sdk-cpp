@@ -296,17 +296,17 @@ namespace TencentCloud
                     bool InstanceMarketOptionsHasBeenSet() const;
 
                     /**
-                     * 获取实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * 获取实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 `InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
-                     * @return InstanceTypes 实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * @return InstanceTypes 实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 `InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
-                     * 设置实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * 设置实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 `InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
-                     * @param InstanceTypes 实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * @param InstanceTypes 实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 `InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -475,7 +475,7 @@ namespace TencentCloud
                     bool m_instanceMarketOptionsHasBeenSet;
 
                     /**
-                     * 实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
+                     * 实例机型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。
 `InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
                      */
                     std::vector<std::string> m_instanceTypes;

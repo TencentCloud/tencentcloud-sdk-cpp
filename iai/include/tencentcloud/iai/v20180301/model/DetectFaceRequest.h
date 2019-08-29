@@ -83,14 +83,18 @@ namespace TencentCloud
                     bool MinFaceSizeHasBeenSet() const;
 
                     /**
-                     * 获取图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @return Image 图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 获取图片 base64 数据，base64 编码后大小不可超过5M。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * @return Image 图片 base64 数据，base64 编码后大小不可超过5M。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Image 图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 设置图片 base64 数据，base64 编码后大小不可超过5M。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * @param Image 图片 base64 数据，base64 编码后大小不可超过5M。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     void SetImage(const std::string& _image);
 
@@ -101,11 +105,13 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 
+                     * 获取图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @return Url 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 
+                     * @return Url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
@@ -113,11 +119,13 @@ namespace TencentCloud
                     std::string GetUrl() const;
 
                     /**
-                     * 设置图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 
+                     * 设置图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Url 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 
+                     * @param Url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
@@ -163,11 +171,11 @@ namespace TencentCloud
                     /**
                      * 获取是否开启质量检测。0 为关闭，1 为开启。默认为 0。 
 非 1 值均视为不进行质量检测。
-最多返回面积最大的 5 张人脸质量分信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
+最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
                      * @return NeedQualityDetection 是否开启质量检测。0 为关闭，1 为开启。默认为 0。 
 非 1 值均视为不进行质量检测。
-最多返回面积最大的 5 张人脸质量分信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
+最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
                      */
                     uint64_t GetNeedQualityDetection() const;
@@ -175,11 +183,11 @@ namespace TencentCloud
                     /**
                      * 设置是否开启质量检测。0 为关闭，1 为开启。默认为 0。 
 非 1 值均视为不进行质量检测。
-最多返回面积最大的 5 张人脸质量分信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
+最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
                      * @param NeedQualityDetection 是否开启质量检测。0 为关闭，1 为开启。默认为 0。 
 非 1 值均视为不进行质量检测。
-最多返回面积最大的 5 张人脸质量分信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
+最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
                      */
                     void SetNeedQualityDetection(const uint64_t& _needQualityDetection);
@@ -189,6 +197,32 @@ namespace TencentCloud
                      * @return NeedQualityDetection 是否已赋值
                      */
                     bool NeedQualityDetectionHasBeenSet() const;
+
+                    /**
+                     * 获取人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
+默认为"2.0"。 
+不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用最新版本。
+                     * @return FaceModelVersion 人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
+默认为"2.0"。 
+不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用最新版本。
+                     */
+                    std::string GetFaceModelVersion() const;
+
+                    /**
+                     * 设置人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
+默认为"2.0"。 
+不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用最新版本。
+                     * @param FaceModelVersion 人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
+默认为"2.0"。 
+不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用最新版本。
+                     */
+                    void SetFaceModelVersion(const std::string& _faceModelVersion);
+
+                    /**
+                     * 判断参数 FaceModelVersion 是否已赋值
+                     * @return FaceModelVersion 是否已赋值
+                     */
+                    bool FaceModelVersionHasBeenSet() const;
 
                 private:
 
@@ -206,13 +240,15 @@ namespace TencentCloud
                     bool m_minFaceSizeHasBeenSet;
 
                     /**
-                     * 图片 base64 数据。支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 图片 base64 数据，base64 编码后大小不可超过5M。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 
+                     * 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
@@ -232,11 +268,19 @@ namespace TencentCloud
                     /**
                      * 是否开启质量检测。0 为关闭，1 为开启。默认为 0。 
 非 1 值均视为不进行质量检测。
-最多返回面积最大的 5 张人脸质量分信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
+最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  
 建议：人脸入库操作建议开启此功能。
                      */
                     uint64_t m_needQualityDetection;
                     bool m_needQualityDetectionHasBeenSet;
+
+                    /**
+                     * 人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  
+默认为"2.0"。 
+不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用最新版本。
+                     */
+                    std::string m_faceModelVersion;
+                    bool m_faceModelVersionHasBeenSet;
 
                 };
             }

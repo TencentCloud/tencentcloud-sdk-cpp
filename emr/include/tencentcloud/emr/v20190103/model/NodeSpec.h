@@ -224,17 +224,17 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取多云盘参数
+                     * 获取多盘数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MultiDisks 多云盘参数
+                     * @return MultiDisks 多盘数据
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiDisk> GetMultiDisks() const;
 
                     /**
-                     * 设置多云盘参数
+                     * 设置多盘数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MultiDisks 多云盘参数
+                     * @param MultiDisks 多盘数据
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMultiDisks(const std::vector<MultiDisk>& _multiDisks);
@@ -304,7 +304,7 @@ namespace TencentCloud
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 多云盘参数
+                     * 多盘数据
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiDisk> m_multiDisks;

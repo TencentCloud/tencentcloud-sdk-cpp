@@ -87,8 +87,14 @@ string ScaleOutInstanceRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "PreExecutedFileSettings";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_preExecutedFileSettings.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_preExecutedFileSettings.begin(); itr != m_preExecutedFileSettings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_taskCountHasBeenSet)
@@ -195,12 +201,12 @@ bool ScaleOutInstanceRequest::PayModeHasBeenSet() const
     return m_payModeHasBeenSet;
 }
 
-PreExecuteFileSettings ScaleOutInstanceRequest::GetPreExecutedFileSettings() const
+vector<PreExecuteFileSettings> ScaleOutInstanceRequest::GetPreExecutedFileSettings() const
 {
     return m_preExecutedFileSettings;
 }
 
-void ScaleOutInstanceRequest::SetPreExecutedFileSettings(const PreExecuteFileSettings& _preExecutedFileSettings)
+void ScaleOutInstanceRequest::SetPreExecutedFileSettings(const vector<PreExecuteFileSettings>& _preExecutedFileSettings)
 {
     m_preExecutedFileSettings = _preExecutedFileSettings;
     m_preExecutedFileSettingsHasBeenSet = true;

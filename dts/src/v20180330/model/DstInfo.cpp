@@ -23,9 +23,9 @@ using namespace std;
 
 DstInfo::DstInfo() :
     m_instanceIdHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_regionHasBeenSet(false),
     m_readOnlyHasBeenSet(false)
 {
 }
@@ -43,6 +43,16 @@ CoreInternalOutcome DstInfo::Deserialize(const Value &value)
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DstInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
     }
 
     if (value.HasMember("Ip") && !value["Ip"].IsNull())
@@ -63,16 +73,6 @@ CoreInternalOutcome DstInfo::Deserialize(const Value &value)
         }
         m_port = value["Port"].GetInt64();
         m_portHasBeenSet = true;
-    }
-
-    if (value.HasMember("Region") && !value["Region"].IsNull())
-    {
-        if (!value["Region"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `DstInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_region = string(value["Region"].GetString());
-        m_regionHasBeenSet = true;
     }
 
     if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
@@ -100,6 +100,14 @@ void DstInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_ipHasBeenSet)
     {
         Value iKey(kStringType);
@@ -114,14 +122,6 @@ void DstInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
-    }
-
-    if (m_regionHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Region";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyHasBeenSet)
@@ -149,6 +149,22 @@ void DstInfo::SetInstanceId(const string& _instanceId)
 bool DstInfo::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DstInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void DstInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool DstInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 
 string DstInfo::GetIp() const
@@ -181,22 +197,6 @@ void DstInfo::SetPort(const int64_t& _port)
 bool DstInfo::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
-}
-
-string DstInfo::GetRegion() const
-{
-    return m_region;
-}
-
-void DstInfo::SetRegion(const string& _region)
-{
-    m_region = _region;
-    m_regionHasBeenSet = true;
-}
-
-bool DstInfo::RegionHasBeenSet() const
-{
-    return m_regionHasBeenSet;
 }
 
 int64_t DstInfo::GetReadOnly() const

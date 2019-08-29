@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AddressNameHasBeenSet() const;
 
                     /**
-                     * 获取`EIP`状态。
-                     * @return AddressStatus `EIP`状态。
+                     * 获取`EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
+                     * @return AddressStatus `EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
                      */
                     std::string GetAddressStatus() const;
 
                     /**
-                     * 设置`EIP`状态。
-                     * @param AddressStatus `EIP`状态。
+                     * 设置`EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
+                     * @param AddressStatus `EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
                      */
                     void SetAddressStatus(const std::string& _addressStatus);
 
@@ -295,7 +295,7 @@ namespace TencentCloud
                     bool m_addressNameHasBeenSet;
 
                     /**
-                     * `EIP`状态。
+                     * `EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
                      */
                     std::string m_addressStatus;
                     bool m_addressStatusHasBeenSet;

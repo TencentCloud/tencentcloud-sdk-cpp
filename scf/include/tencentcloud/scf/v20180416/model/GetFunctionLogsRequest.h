@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/scf/v20180416/model/LogFilter.h>
+#include <tencentcloud/scf/v20180416/model/LogSearchContext.h>
 
 
 namespace TencentCloud
@@ -152,6 +153,24 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
+                     * 获取函数的命名空间
+                     * @return Namespace 函数的命名空间
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置函数的命名空间
+                     * @param Namespace 函数的命名空间
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
                      * 获取函数的版本
                      * @return Qualifier 函数的版本
                      */
@@ -223,6 +242,24 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     * @return SearchContext 服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     */
+                    LogSearchContext GetSearchContext() const;
+
+                    /**
+                     * 设置服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     * @param SearchContext 服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     */
+                    void SetSearchContext(const LogSearchContext& _searchContext);
+
+                    /**
+                     * 判断参数 SearchContext 是否已赋值
+                     * @return SearchContext 是否已赋值
+                     */
+                    bool SearchContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +299,12 @@ namespace TencentCloud
                     bool m_filterHasBeenSet;
 
                     /**
+                     * 函数的命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
                      * 函数的版本
                      */
                     std::string m_qualifier;
@@ -284,6 +327,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写
+                     */
+                    LogSearchContext m_searchContext;
+                    bool m_searchContextHasBeenSet;
 
                 };
             }

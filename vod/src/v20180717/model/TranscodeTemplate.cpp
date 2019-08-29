@@ -31,6 +31,7 @@ TranscodeTemplate::TranscodeTemplate() :
     m_removeAudioHasBeenSet(false),
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
+    m_tEHDConfigHasBeenSet(false),
     m_containerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
@@ -146,6 +147,23 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const Value &value)
         m_audioTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("TEHDConfig") && !value["TEHDConfig"].IsNull())
+    {
+        if (!value["TEHDConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TranscodeTemplate.TEHDConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tEHDConfig.Deserialize(value["TEHDConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tEHDConfigHasBeenSet = true;
+    }
+
     if (value.HasMember("ContainerType") && !value["ContainerType"].IsNull())
     {
         if (!value["ContainerType"].IsString())
@@ -255,6 +273,15 @@ void TranscodeTemplate::ToJsonObject(Value &value, Document::AllocatorType& allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_audioTemplate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tEHDConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TEHDConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_tEHDConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_containerTypeHasBeenSet)
@@ -426,6 +453,22 @@ void TranscodeTemplate::SetAudioTemplate(const AudioTemplateInfo& _audioTemplate
 bool TranscodeTemplate::AudioTemplateHasBeenSet() const
 {
     return m_audioTemplateHasBeenSet;
+}
+
+TEHDConfig TranscodeTemplate::GetTEHDConfig() const
+{
+    return m_tEHDConfig;
+}
+
+void TranscodeTemplate::SetTEHDConfig(const TEHDConfig& _tEHDConfig)
+{
+    m_tEHDConfig = _tEHDConfig;
+    m_tEHDConfigHasBeenSet = true;
+}
+
+bool TranscodeTemplate::TEHDConfigHasBeenSet() const
+{
+    return m_tEHDConfigHasBeenSet;
 }
 
 string TranscodeTemplate::GetContainerType() const

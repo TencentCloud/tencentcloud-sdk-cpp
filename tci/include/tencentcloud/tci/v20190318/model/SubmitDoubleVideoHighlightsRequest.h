@@ -156,13 +156,13 @@ namespace TencentCloud
                      * 获取人脸检索的相似度阈值，默认值0.89。建议留空。
                      * @return SimThreshold 人脸检索的相似度阈值，默认值0.89。建议留空。
                      */
-                    int64_t GetSimThreshold() const;
+                    double GetSimThreshold() const;
 
                     /**
                      * 设置人脸检索的相似度阈值，默认值0.89。建议留空。
                      * @param SimThreshold 人脸检索的相似度阈值，默认值0.89。建议留空。
                      */
-                    void SetSimThreshold(const int64_t& _simThreshold);
+                    void SetSimThreshold(const double& _simThreshold);
 
                     /**
                      * 判断参数 SimThreshold 是否已赋值
@@ -229,7 +229,7 @@ namespace TencentCloud
                     /**
                      * 人脸检索的相似度阈值，默认值0.89。建议留空。
                      */
-                    int64_t m_simThreshold;
+                    double m_simThreshold;
                     bool m_simThresholdHasBeenSet;
 
                     /**

@@ -53,7 +53,9 @@ LoadBalancer::LoadBalancer() :
     m_networkAttributesHasBeenSet(false),
     m_prepaidAttributesHasBeenSet(false),
     m_logSetIdHasBeenSet(false),
-    m_logTopicIdHasBeenSet(false)
+    m_logTopicIdHasBeenSet(false),
+    m_addressIPv6HasBeenSet(false),
+    m_extraInfoHasBeenSet(false)
 {
 }
 
@@ -436,6 +438,33 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_logTopicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AddressIPv6") && !value["AddressIPv6"].IsNull())
+    {
+        if (!value["AddressIPv6"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.AddressIPv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressIPv6 = string(value["AddressIPv6"].GetString());
+        m_addressIPv6HasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraInfo") && !value["ExtraInfo"].IsNull())
+    {
+        if (!value["ExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.ExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraInfo.Deserialize(value["ExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -725,6 +754,23 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "LogTopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressIPv6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddressIPv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_addressIPv6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1240,5 +1286,37 @@ void LoadBalancer::SetLogTopicId(const string& _logTopicId)
 bool LoadBalancer::LogTopicIdHasBeenSet() const
 {
     return m_logTopicIdHasBeenSet;
+}
+
+string LoadBalancer::GetAddressIPv6() const
+{
+    return m_addressIPv6;
+}
+
+void LoadBalancer::SetAddressIPv6(const string& _addressIPv6)
+{
+    m_addressIPv6 = _addressIPv6;
+    m_addressIPv6HasBeenSet = true;
+}
+
+bool LoadBalancer::AddressIPv6HasBeenSet() const
+{
+    return m_addressIPv6HasBeenSet;
+}
+
+ExtraInfo LoadBalancer::GetExtraInfo() const
+{
+    return m_extraInfo;
+}
+
+void LoadBalancer::SetExtraInfo(const ExtraInfo& _extraInfo)
+{
+    m_extraInfo = _extraInfo;
+    m_extraInfoHasBeenSet = true;
+}
+
+bool LoadBalancer::ExtraInfoHasBeenSet() const
+{
+    return m_extraInfoHasBeenSet;
 }
 

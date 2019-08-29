@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
+#include <tencentcloud/vpc/v20170312/model/AssistantCidr.h>
 
 
 namespace TencentCloud
@@ -263,6 +264,28 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取辅助CIDR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssistantCidrSet 辅助CIDR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AssistantCidr> GetAssistantCidrSet() const;
+
+                    /**
+                     * 设置辅助CIDR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssistantCidrSet 辅助CIDR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssistantCidrSet(const std::vector<AssistantCidr>& _assistantCidrSet);
+
+                    /**
+                     * 判断参数 AssistantCidrSet 是否已赋值
+                     * @return AssistantCidrSet 是否已赋值
+                     */
+                    bool AssistantCidrSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +359,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 辅助CIDR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AssistantCidr> m_assistantCidrSet;
+                    bool m_assistantCidrSetHasBeenSet;
 
                 };
             }

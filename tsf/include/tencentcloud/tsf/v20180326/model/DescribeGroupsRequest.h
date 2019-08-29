@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取部署组资源类型列表
+                     * @return GroupResourceTypeList 部署组资源类型列表
+                     */
+                    std::vector<std::string> GetGroupResourceTypeList() const;
+
+                    /**
+                     * 设置部署组资源类型列表
+                     * @param GroupResourceTypeList 部署组资源类型列表
+                     */
+                    void SetGroupResourceTypeList(const std::vector<std::string>& _groupResourceTypeList);
+
+                    /**
+                     * 判断参数 GroupResourceTypeList 是否已赋值
+                     * @return GroupResourceTypeList 是否已赋值
+                     */
+                    bool GroupResourceTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 部署组资源类型列表
+                     */
+                    std::vector<std::string> m_groupResourceTypeList;
+                    bool m_groupResourceTypeListHasBeenSet;
 
                 };
             }

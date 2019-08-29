@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool MicroserviceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取应有资源类型
+                     * @return ApplicationResourceType 应有资源类型
+                     */
+                    std::string GetApplicationResourceType() const;
+
+                    /**
+                     * 设置应有资源类型
+                     * @param ApplicationResourceType 应有资源类型
+                     */
+                    void SetApplicationResourceType(const std::string& _applicationResourceType);
+
+                    /**
+                     * 判断参数 ApplicationResourceType 是否已赋值
+                     * @return ApplicationResourceType 是否已赋值
+                     */
+                    bool ApplicationResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_microserviceType;
                     bool m_microserviceTypeHasBeenSet;
+
+                    /**
+                     * 应有资源类型
+                     */
+                    std::string m_applicationResourceType;
+                    bool m_applicationResourceTypeHasBeenSet;
 
                 };
             }

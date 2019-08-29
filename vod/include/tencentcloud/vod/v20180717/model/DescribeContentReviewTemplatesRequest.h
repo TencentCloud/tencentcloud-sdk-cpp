@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容审核模板唯一标识过滤条件，数组长度限制：50。
-                     * @return Definitions 内容审核模板唯一标识过滤条件，数组长度限制：50。
+                     * 获取内容审核模板唯一标识过滤条件，数组长度限制：100。
+                     * @return Definitions 内容审核模板唯一标识过滤条件，数组长度限制：100。
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置内容审核模板唯一标识过滤条件，数组长度限制：50。
-                     * @param Definitions 内容审核模板唯一标识过滤条件，数组长度限制：50。
+                     * 设置内容审核模板唯一标识过滤条件，数组长度限制：100。
+                     * @param Definitions 内容审核模板唯一标识过滤条件，数组长度限制：100。
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，默认值：10，最大值：50。
-                     * @return Limit 返回记录条数，默认值：10，最大值：50。
+                     * 获取返回记录条数，默认值：10，最大值：100。
+                     * @return Limit 返回记录条数，默认值：10，最大值：100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，默认值：10，最大值：50。
-                     * @param Limit 返回记录条数，默认值：10，最大值：50。
+                     * 设置返回记录条数，默认值：10，最大值：100。
+                     * @param Limit 返回记录条数，默认值：10，最大值：100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内容审核模板唯一标识过滤条件，数组长度限制：50。
+                     * 内容审核模板唯一标识过滤条件，数组长度限制：100。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回记录条数，默认值：10，最大值：50。
+                     * 返回记录条数，默认值：10，最大值：100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

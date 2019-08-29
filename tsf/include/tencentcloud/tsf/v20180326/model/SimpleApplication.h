@@ -134,6 +134,116 @@ namespace TencentCloud
                      */
                     bool MicroserviceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取ApplicationDesc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationDesc ApplicationDesc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationDesc() const;
+
+                    /**
+                     * 设置ApplicationDesc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationDesc ApplicationDesc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationDesc(const std::string& _applicationDesc);
+
+                    /**
+                     * 判断参数 ApplicationDesc 是否已赋值
+                     * @return ApplicationDesc 是否已赋值
+                     */
+                    bool ApplicationDescHasBeenSet() const;
+
+                    /**
+                     * 获取ProgLang
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProgLang ProgLang
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProgLang() const;
+
+                    /**
+                     * 设置ProgLang
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProgLang ProgLang
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProgLang(const std::string& _progLang);
+
+                    /**
+                     * 判断参数 ProgLang 是否已赋值
+                     * @return ProgLang 是否已赋值
+                     */
+                    bool ProgLangHasBeenSet() const;
+
+                    /**
+                     * 获取ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationResourceType ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationResourceType() const;
+
+                    /**
+                     * 设置ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationResourceType ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationResourceType(const std::string& _applicationResourceType);
+
+                    /**
+                     * 判断参数 ApplicationResourceType 是否已赋值
+                     * @return ApplicationResourceType 是否已赋值
+                     */
+                    bool ApplicationResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CreateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime CreateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置CreateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime CreateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取UpdateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime UpdateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置UpdateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateTime UpdateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +273,41 @@ namespace TencentCloud
                      */
                     std::string m_microserviceType;
                     bool m_microserviceTypeHasBeenSet;
+
+                    /**
+                     * ApplicationDesc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationDesc;
+                    bool m_applicationDescHasBeenSet;
+
+                    /**
+                     * ProgLang
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_progLang;
+                    bool m_progLangHasBeenSet;
+
+                    /**
+                     * ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationResourceType;
+                    bool m_applicationResourceTypeHasBeenSet;
+
+                    /**
+                     * CreateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * UpdateTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 
 
 namespace TencentCloud
@@ -46,24 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取实例的附加信息
-                     * @return InstanceAdvanceSettings 实例的附加信息
-                     */
-                    InstanceAdvancedSettings GetInstanceAdvanceSettings() const;
-
-                    /**
-                     * 设置实例的附加信息
-                     * @param InstanceAdvanceSettings 实例的附加信息
-                     */
-                    void SetInstanceAdvanceSettings(const InstanceAdvancedSettings& _instanceAdvanceSettings);
-
-                    /**
-                     * 判断参数 InstanceAdvanceSettings 是否已赋值
-                     * @return InstanceAdvanceSettings 是否已赋值
-                     */
-                    bool InstanceAdvanceSettingsHasBeenSet() const;
 
                     /**
                      * 获取实例ID
@@ -138,12 +119,6 @@ namespace TencentCloud
                     bool InstanceStateHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 实例的附加信息
-                     */
-                    InstanceAdvancedSettings m_instanceAdvanceSettings;
-                    bool m_instanceAdvanceSettingsHasBeenSet;
 
                     /**
                      * 实例ID

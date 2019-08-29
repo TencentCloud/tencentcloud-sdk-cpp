@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该张截图对应视频文件中的时间偏移，单位：秒。
+                     * 获取该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeOffset 该张截图对应视频文件中的时间偏移，单位：秒。
+                     * @return TimeOffset 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetTimeOffset() const;
 
                     /**
-                     * 设置该张截图对应视频文件中的时间偏移，单位：秒。
+                     * 设置该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeOffset 该张截图对应视频文件中的时间偏移，单位：秒。
+                     * @param TimeOffset 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTimeOffset(const double& _timeOffset);
@@ -115,7 +115,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该张截图对应视频文件中的时间偏移，单位：秒。
+                     * 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_timeOffset;

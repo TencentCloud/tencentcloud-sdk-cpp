@@ -118,6 +118,32 @@ namespace TencentCloud
                      */
                     bool ResumeTimeHasBeenSet() const;
 
+                    /**
+                     * 获取禁推原因。
+注明：请务必填写禁推原因，防止误操作。
+长度限制：2048字节。
+                     * @return Reason 禁推原因。
+注明：请务必填写禁推原因，防止误操作。
+长度限制：2048字节。
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置禁推原因。
+注明：请务必填写禁推原因，防止误操作。
+长度限制：2048字节。
+                     * @param Reason 禁推原因。
+注明：请务必填写禁推原因，防止误操作。
+长度限制：2048字节。
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +170,14 @@ namespace TencentCloud
                      */
                     std::string m_resumeTime;
                     bool m_resumeTimeHasBeenSet;
+
+                    /**
+                     * 禁推原因。
+注明：请务必填写禁推原因，防止误操作。
+长度限制：2048字节。
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

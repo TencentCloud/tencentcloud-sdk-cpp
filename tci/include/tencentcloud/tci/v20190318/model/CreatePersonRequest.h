@@ -79,6 +79,24 @@ namespace TencentCloud
                     bool PersonNameHasBeenSet() const;
 
                     /**
+                     * 获取图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     * @return Images 图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     */
+                    std::vector<std::string> GetImages() const;
+
+                    /**
+                     * 设置图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     * @param Images 图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     */
+                    void SetImages(const std::vector<std::string>& _images);
+
+                    /**
+                     * 判断参数 Images 是否已赋值
+                     * @return Images 是否已赋值
+                     */
+                    bool ImagesHasBeenSet() const;
+
+                    /**
                      * 获取人员工作号码
                      * @return JobNumber 人员工作号码
                      */
@@ -186,6 +204,24 @@ namespace TencentCloud
                      */
                     bool StudentNumberHasBeenSet() const;
 
+                    /**
+                     * 获取图片下载地址，与 Images 参数选择一个输入
+                     * @return Urls 图片下载地址，与 Images 参数选择一个输入
+                     */
+                    std::vector<std::string> GetUrls() const;
+
+                    /**
+                     * 设置图片下载地址，与 Images 参数选择一个输入
+                     * @param Urls 图片下载地址，与 Images 参数选择一个输入
+                     */
+                    void SetUrls(const std::vector<std::string>& _urls);
+
+                    /**
+                     * 判断参数 Urls 是否已赋值
+                     * @return Urls 是否已赋值
+                     */
+                    bool UrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,6 +235,12 @@ namespace TencentCloud
                      */
                     std::string m_personName;
                     bool m_personNameHasBeenSet;
+
+                    /**
+                     * 图片数据 base64 字符串，与 Urls 参数选择一个输入
+                     */
+                    std::vector<std::string> m_images;
+                    bool m_imagesHasBeenSet;
 
                     /**
                      * 人员工作号码
@@ -235,6 +277,12 @@ namespace TencentCloud
                      */
                     std::string m_studentNumber;
                     bool m_studentNumberHasBeenSet;
+
+                    /**
+                     * 图片下载地址，与 Images 参数选择一个输入
+                     */
+                    std::vector<std::string> m_urls;
+                    bool m_urlsHasBeenSet;
 
                 };
             }

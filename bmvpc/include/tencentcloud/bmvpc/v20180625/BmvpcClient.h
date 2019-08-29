@@ -33,6 +33,8 @@
 #include <tencentcloud/bmvpc/v20180625/model/BindIpsToNatGatewayResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/BindSubnetsToNatGatewayRequest.h>
 #include <tencentcloud/bmvpc/v20180625/model/BindSubnetsToNatGatewayResponse.h>
+#include <tencentcloud/bmvpc/v20180625/model/CreateCustomerGatewayRequest.h>
+#include <tencentcloud/bmvpc/v20180625/model/CreateCustomerGatewayResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/CreateDockerSubnetWithVlanRequest.h>
 #include <tencentcloud/bmvpc/v20180625/model/CreateDockerSubnetWithVlanResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/CreateHostedInterfaceRequest.h>
@@ -97,6 +99,8 @@
 #include <tencentcloud/bmvpc/v20180625/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/bmvpc/v20180625/model/DescribeTaskStatusResponse.h>
+#include <tencentcloud/bmvpc/v20180625/model/DescribeVpcPeerConnectionsRequest.h>
+#include <tencentcloud/bmvpc/v20180625/model/DescribeVpcPeerConnectionsResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/DescribeVpcQuotaRequest.h>
 #include <tencentcloud/bmvpc/v20180625/model/DescribeVpcQuotaResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/DescribeVpcResourceRequest.h>
@@ -105,6 +109,10 @@
 #include <tencentcloud/bmvpc/v20180625/model/DescribeVpcViewResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/DescribeVpcsRequest.h>
 #include <tencentcloud/bmvpc/v20180625/model/DescribeVpcsResponse.h>
+#include <tencentcloud/bmvpc/v20180625/model/DescribeVpnConnectionsRequest.h>
+#include <tencentcloud/bmvpc/v20180625/model/DescribeVpnConnectionsResponse.h>
+#include <tencentcloud/bmvpc/v20180625/model/DescribeVpnGatewaysRequest.h>
+#include <tencentcloud/bmvpc/v20180625/model/DescribeVpnGatewaysResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/DownloadCustomerGatewayConfigurationRequest.h>
 #include <tencentcloud/bmvpc/v20180625/model/DownloadCustomerGatewayConfigurationResponse.h>
 #include <tencentcloud/bmvpc/v20180625/model/ModifyCustomerGatewayAttributeRequest.h>
@@ -166,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BindSubnetsToNatGatewayResponse> BindSubnetsToNatGatewayOutcome;
                 typedef std::future<BindSubnetsToNatGatewayOutcome> BindSubnetsToNatGatewayOutcomeCallable;
                 typedef std::function<void(const BmvpcClient*, const Model::BindSubnetsToNatGatewayRequest&, BindSubnetsToNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindSubnetsToNatGatewayAsyncHandler;
+                typedef Outcome<Error, Model::CreateCustomerGatewayResponse> CreateCustomerGatewayOutcome;
+                typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
+                typedef std::function<void(const BmvpcClient*, const Model::CreateCustomerGatewayRequest&, CreateCustomerGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerGatewayAsyncHandler;
                 typedef Outcome<Error, Model::CreateDockerSubnetWithVlanResponse> CreateDockerSubnetWithVlanOutcome;
                 typedef std::future<CreateDockerSubnetWithVlanOutcome> CreateDockerSubnetWithVlanOutcomeCallable;
                 typedef std::function<void(const BmvpcClient*, const Model::CreateDockerSubnetWithVlanRequest&, CreateDockerSubnetWithVlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDockerSubnetWithVlanAsyncHandler;
@@ -262,6 +273,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const BmvpcClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVpcPeerConnectionsResponse> DescribeVpcPeerConnectionsOutcome;
+                typedef std::future<DescribeVpcPeerConnectionsOutcome> DescribeVpcPeerConnectionsOutcomeCallable;
+                typedef std::function<void(const BmvpcClient*, const Model::DescribeVpcPeerConnectionsRequest&, DescribeVpcPeerConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcPeerConnectionsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVpcQuotaResponse> DescribeVpcQuotaOutcome;
                 typedef std::future<DescribeVpcQuotaOutcome> DescribeVpcQuotaOutcomeCallable;
                 typedef std::function<void(const BmvpcClient*, const Model::DescribeVpcQuotaRequest&, DescribeVpcQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcQuotaAsyncHandler;
@@ -274,6 +288,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeVpcsResponse> DescribeVpcsOutcome;
                 typedef std::future<DescribeVpcsOutcome> DescribeVpcsOutcomeCallable;
                 typedef std::function<void(const BmvpcClient*, const Model::DescribeVpcsRequest&, DescribeVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVpnConnectionsResponse> DescribeVpnConnectionsOutcome;
+                typedef std::future<DescribeVpnConnectionsOutcome> DescribeVpnConnectionsOutcomeCallable;
+                typedef std::function<void(const BmvpcClient*, const Model::DescribeVpnConnectionsRequest&, DescribeVpnConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnConnectionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVpnGatewaysResponse> DescribeVpnGatewaysOutcome;
+                typedef std::future<DescribeVpnGatewaysOutcome> DescribeVpnGatewaysOutcomeCallable;
+                typedef std::function<void(const BmvpcClient*, const Model::DescribeVpnGatewaysRequest&, DescribeVpnGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnGatewaysAsyncHandler;
                 typedef Outcome<Error, Model::DownloadCustomerGatewayConfigurationResponse> DownloadCustomerGatewayConfigurationOutcome;
                 typedef std::future<DownloadCustomerGatewayConfigurationOutcome> DownloadCustomerGatewayConfigurationOutcomeCallable;
                 typedef std::function<void(const BmvpcClient*, const Model::DownloadCustomerGatewayConfigurationRequest&, DownloadCustomerGatewayConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCustomerGatewayConfigurationAsyncHandler;
@@ -369,6 +389,15 @@ namespace TencentCloud
                 BindSubnetsToNatGatewayOutcome BindSubnetsToNatGateway(const Model::BindSubnetsToNatGatewayRequest &request);
                 void BindSubnetsToNatGatewayAsync(const Model::BindSubnetsToNatGatewayRequest& request, const BindSubnetsToNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindSubnetsToNatGatewayOutcomeCallable BindSubnetsToNatGatewayCallable(const Model::BindSubnetsToNatGatewayRequest& request);
+
+                /**
+                 *本接口（CreateCustomerGateway）用于创建对端网关。
+                 * @param req CreateCustomerGatewayRequest
+                 * @return CreateCustomerGatewayOutcome
+                 */
+                CreateCustomerGatewayOutcome CreateCustomerGateway(const Model::CreateCustomerGatewayRequest &request);
+                void CreateCustomerGatewayAsync(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomerGatewayOutcomeCallable CreateCustomerGatewayCallable(const Model::CreateCustomerGatewayRequest& request);
 
                 /**
                  *创建黑石Docker子网， 如果不指定VlanId，将会分配2000--2999范围的VlanId; 子网会关闭分布式网关
@@ -669,6 +698,15 @@ namespace TencentCloud
                 DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
+                 *获取对等连接列表
+                 * @param req DescribeVpcPeerConnectionsRequest
+                 * @return DescribeVpcPeerConnectionsOutcome
+                 */
+                DescribeVpcPeerConnectionsOutcome DescribeVpcPeerConnections(const Model::DescribeVpcPeerConnectionsRequest &request);
+                void DescribeVpcPeerConnectionsAsync(const Model::DescribeVpcPeerConnectionsRequest& request, const DescribeVpcPeerConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcPeerConnectionsOutcomeCallable DescribeVpcPeerConnectionsCallable(const Model::DescribeVpcPeerConnectionsRequest& request);
+
+                /**
                  *本接口（DescribeVpcQuota）用于查询用户VPC相关配额限制。
                  * @param req DescribeVpcQuotaRequest
                  * @return DescribeVpcQuotaOutcome
@@ -704,6 +742,24 @@ namespace TencentCloud
                 DescribeVpcsOutcome DescribeVpcs(const Model::DescribeVpcsRequest &request);
                 void DescribeVpcsAsync(const Model::DescribeVpcsRequest& request, const DescribeVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVpcsOutcomeCallable DescribeVpcsCallable(const Model::DescribeVpcsRequest& request);
+
+                /**
+                 * 本接口（DescribeVpnConnections）查询VPN通道列表。
+                 * @param req DescribeVpnConnectionsRequest
+                 * @return DescribeVpnConnectionsOutcome
+                 */
+                DescribeVpnConnectionsOutcome DescribeVpnConnections(const Model::DescribeVpnConnectionsRequest &request);
+                void DescribeVpnConnectionsAsync(const Model::DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpnConnectionsOutcomeCallable DescribeVpnConnectionsCallable(const Model::DescribeVpnConnectionsRequest& request);
+
+                /**
+                 *本接口（DescribeVpnGateways）用于查询VPN网关列表。
+                 * @param req DescribeVpnGatewaysRequest
+                 * @return DescribeVpnGatewaysOutcome
+                 */
+                DescribeVpnGatewaysOutcome DescribeVpnGateways(const Model::DescribeVpnGatewaysRequest &request);
+                void DescribeVpnGatewaysAsync(const Model::DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpnGatewaysOutcomeCallable DescribeVpnGatewaysCallable(const Model::DescribeVpnGatewaysRequest& request);
 
                 /**
                  *本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。

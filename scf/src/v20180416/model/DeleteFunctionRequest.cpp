@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteFunctionRequest::DeleteFunctionRequest() :
-    m_functionNameHasBeenSet(false)
+    m_functionNameHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DeleteFunctionRequest::ToJsonString() const
         string key = "FunctionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_functionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DeleteFunctionRequest::SetFunctionName(const string& _functionName)
 bool DeleteFunctionRequest::FunctionNameHasBeenSet() const
 {
     return m_functionNameHasBeenSet;
+}
+
+string DeleteFunctionRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void DeleteFunctionRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool DeleteFunctionRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 
 

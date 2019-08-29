@@ -1,0 +1,270 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/gaap/v20180529/model/SetAuthenticationRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Gaap::V20180529::Model;
+using namespace rapidjson;
+using namespace std;
+
+SetAuthenticationRequest::SetAuthenticationRequest() :
+    m_listenerIdHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_basicAuthHasBeenSet(false),
+    m_gaapAuthHasBeenSet(false),
+    m_realServerAuthHasBeenSet(false),
+    m_basicAuthConfIdHasBeenSet(false),
+    m_gaapCertificateIdHasBeenSet(false),
+    m_realServerCertificateIdHasBeenSet(false),
+    m_realServerCertificateDomainHasBeenSet(false)
+{
+}
+
+string SetAuthenticationRequest::ToJsonString() const
+{
+    Document d;
+    d.SetObject();
+    Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_listenerIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ListenerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_basicAuthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasicAuth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_basicAuth, allocator);
+    }
+
+    if (m_gaapAuthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GaapAuth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gaapAuth, allocator);
+    }
+
+    if (m_realServerAuthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RealServerAuth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_realServerAuth, allocator);
+    }
+
+    if (m_basicAuthConfIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasicAuthConfId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_basicAuthConfId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gaapCertificateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GaapCertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_gaapCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realServerCertificateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RealServerCertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_realServerCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realServerCertificateDomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RealServerCertificateDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_realServerCertificateDomain.c_str(), allocator).Move(), allocator);
+    }
+
+
+    StringBuffer buffer;
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string SetAuthenticationRequest::GetListenerId() const
+{
+    return m_listenerId;
+}
+
+void SetAuthenticationRequest::SetListenerId(const string& _listenerId)
+{
+    m_listenerId = _listenerId;
+    m_listenerIdHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::ListenerIdHasBeenSet() const
+{
+    return m_listenerIdHasBeenSet;
+}
+
+string SetAuthenticationRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void SetAuthenticationRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+int64_t SetAuthenticationRequest::GetBasicAuth() const
+{
+    return m_basicAuth;
+}
+
+void SetAuthenticationRequest::SetBasicAuth(const int64_t& _basicAuth)
+{
+    m_basicAuth = _basicAuth;
+    m_basicAuthHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::BasicAuthHasBeenSet() const
+{
+    return m_basicAuthHasBeenSet;
+}
+
+int64_t SetAuthenticationRequest::GetGaapAuth() const
+{
+    return m_gaapAuth;
+}
+
+void SetAuthenticationRequest::SetGaapAuth(const int64_t& _gaapAuth)
+{
+    m_gaapAuth = _gaapAuth;
+    m_gaapAuthHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::GaapAuthHasBeenSet() const
+{
+    return m_gaapAuthHasBeenSet;
+}
+
+int64_t SetAuthenticationRequest::GetRealServerAuth() const
+{
+    return m_realServerAuth;
+}
+
+void SetAuthenticationRequest::SetRealServerAuth(const int64_t& _realServerAuth)
+{
+    m_realServerAuth = _realServerAuth;
+    m_realServerAuthHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::RealServerAuthHasBeenSet() const
+{
+    return m_realServerAuthHasBeenSet;
+}
+
+string SetAuthenticationRequest::GetBasicAuthConfId() const
+{
+    return m_basicAuthConfId;
+}
+
+void SetAuthenticationRequest::SetBasicAuthConfId(const string& _basicAuthConfId)
+{
+    m_basicAuthConfId = _basicAuthConfId;
+    m_basicAuthConfIdHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::BasicAuthConfIdHasBeenSet() const
+{
+    return m_basicAuthConfIdHasBeenSet;
+}
+
+string SetAuthenticationRequest::GetGaapCertificateId() const
+{
+    return m_gaapCertificateId;
+}
+
+void SetAuthenticationRequest::SetGaapCertificateId(const string& _gaapCertificateId)
+{
+    m_gaapCertificateId = _gaapCertificateId;
+    m_gaapCertificateIdHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::GaapCertificateIdHasBeenSet() const
+{
+    return m_gaapCertificateIdHasBeenSet;
+}
+
+string SetAuthenticationRequest::GetRealServerCertificateId() const
+{
+    return m_realServerCertificateId;
+}
+
+void SetAuthenticationRequest::SetRealServerCertificateId(const string& _realServerCertificateId)
+{
+    m_realServerCertificateId = _realServerCertificateId;
+    m_realServerCertificateIdHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::RealServerCertificateIdHasBeenSet() const
+{
+    return m_realServerCertificateIdHasBeenSet;
+}
+
+string SetAuthenticationRequest::GetRealServerCertificateDomain() const
+{
+    return m_realServerCertificateDomain;
+}
+
+void SetAuthenticationRequest::SetRealServerCertificateDomain(const string& _realServerCertificateDomain)
+{
+    m_realServerCertificateDomain = _realServerCertificateDomain;
+    m_realServerCertificateDomainHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::RealServerCertificateDomainHasBeenSet() const
+{
+    return m_realServerCertificateDomainHasBeenSet;
+}
+
+

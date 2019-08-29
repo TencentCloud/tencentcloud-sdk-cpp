@@ -19,48 +19,64 @@ set(tiia_public_header
   )
 
 set(tiia_public_header_model
-  include/tencentcloud/tiia/v20190529/model/DetectProductResponse.h
-  include/tencentcloud/tiia/v20190529/model/ImageModerationRequest.h
-  include/tencentcloud/tiia/v20190529/model/Product.h
   include/tencentcloud/tiia/v20190529/model/Candidate.h
   include/tencentcloud/tiia/v20190529/model/TerrorismResult.h
-  include/tencentcloud/tiia/v20190529/model/DetectLabelRequest.h
-  include/tencentcloud/tiia/v20190529/model/RecognizeCarRequest.h
-  include/tencentcloud/tiia/v20190529/model/Coord.h
-  include/tencentcloud/tiia/v20190529/model/DetectLabelResponse.h
-  include/tencentcloud/tiia/v20190529/model/PoliticsResult.h
-  include/tencentcloud/tiia/v20190529/model/PornResult.h
-  include/tencentcloud/tiia/v20190529/model/DisgustResult.h
-  include/tencentcloud/tiia/v20190529/model/CarTagItem.h
-  include/tencentcloud/tiia/v20190529/model/FaceRect.h
-  include/tencentcloud/tiia/v20190529/model/FaceResult.h
-  include/tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h
+  include/tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectProductRequest.h
   include/tencentcloud/tiia/v20190529/model/ImageModerationResponse.h
+  include/tencentcloud/tiia/v20190529/model/ImageModerationRequest.h
+  include/tencentcloud/tiia/v20190529/model/AssessQualityResponse.h
+  include/tencentcloud/tiia/v20190529/model/Product.h
+  include/tencentcloud/tiia/v20190529/model/DetectLabelRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectLabelResponse.h
+  include/tencentcloud/tiia/v20190529/model/EnhanceImageResponse.h
+  include/tencentcloud/tiia/v20190529/model/DisgustResult.h
+  include/tencentcloud/tiia/v20190529/model/AssessQualityRequest.h
+  include/tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h
+  include/tencentcloud/tiia/v20190529/model/RecognizeCarRequest.h
+  include/tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectCelebrityRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectProductResponse.h
+  include/tencentcloud/tiia/v20190529/model/Face.h
+  include/tencentcloud/tiia/v20190529/model/PoliticsResult.h
+  include/tencentcloud/tiia/v20190529/model/PornResult.h
+  include/tencentcloud/tiia/v20190529/model/Coord.h
+  include/tencentcloud/tiia/v20190529/model/FaceResult.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelItem.h
+  include/tencentcloud/tiia/v20190529/model/Labels.h
+  include/tencentcloud/tiia/v20190529/model/CarTagItem.h
+  include/tencentcloud/tiia/v20190529/model/FaceRect.h
   )
 
 set(tiia_src
   src/v20190529/TiiaClient.cpp
-  src/v20190529/model/DetectProductResponse.cpp
-  src/v20190529/model/ImageModerationRequest.cpp
-  src/v20190529/model/Product.cpp
   src/v20190529/model/Candidate.cpp
   src/v20190529/model/TerrorismResult.cpp
-  src/v20190529/model/DetectLabelRequest.cpp
-  src/v20190529/model/RecognizeCarRequest.cpp
-  src/v20190529/model/Coord.cpp
-  src/v20190529/model/DetectLabelResponse.cpp
-  src/v20190529/model/PoliticsResult.cpp
-  src/v20190529/model/PornResult.cpp
-  src/v20190529/model/DisgustResult.cpp
-  src/v20190529/model/CarTagItem.cpp
-  src/v20190529/model/FaceRect.cpp
-  src/v20190529/model/FaceResult.cpp
-  src/v20190529/model/RecognizeCarResponse.cpp
+  src/v20190529/model/DetectCelebrityResponse.cpp
   src/v20190529/model/DetectProductRequest.cpp
   src/v20190529/model/ImageModerationResponse.cpp
+  src/v20190529/model/ImageModerationRequest.cpp
+  src/v20190529/model/AssessQualityResponse.cpp
+  src/v20190529/model/Product.cpp
+  src/v20190529/model/DetectLabelRequest.cpp
+  src/v20190529/model/DetectLabelResponse.cpp
+  src/v20190529/model/EnhanceImageResponse.cpp
+  src/v20190529/model/DisgustResult.cpp
+  src/v20190529/model/AssessQualityRequest.cpp
+  src/v20190529/model/RecognizeCarResponse.cpp
+  src/v20190529/model/RecognizeCarRequest.cpp
+  src/v20190529/model/EnhanceImageRequest.cpp
+  src/v20190529/model/DetectCelebrityRequest.cpp
+  src/v20190529/model/DetectProductResponse.cpp
+  src/v20190529/model/Face.cpp
+  src/v20190529/model/PoliticsResult.cpp
+  src/v20190529/model/PornResult.cpp
+  src/v20190529/model/Coord.cpp
+  src/v20190529/model/FaceResult.cpp
   src/v20190529/model/DetectLabelItem.cpp
+  src/v20190529/model/Labels.cpp
+  src/v20190529/model/CarTagItem.cpp
+  src/v20190529/model/FaceRect.cpp
   )
 
 set(tiia_include

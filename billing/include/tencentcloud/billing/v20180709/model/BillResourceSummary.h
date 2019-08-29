@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品
-                     * @return BusinessCodeName 产品
+                     * 获取产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * @return BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
-                     * 设置产品
-                     * @param BusinessCodeName 产品
+                     * 设置产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * @param BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool BusinessCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取子产品
-                     * @return ProductCodeName 子产品
+                     * 获取子产品：云产品子类，如云服务器CVM-标准型S1
+                     * @return ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1
                      */
                     std::string GetProductCodeName() const;
 
                     /**
-                     * 设置子产品
-                     * @param ProductCodeName 子产品
+                     * 设置子产品：云产品子类，如云服务器CVM-标准型S1
+                     * @param ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ProductCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取计费模式
-                     * @return PayModeName 计费模式
+                     * 获取计费模式：包年包月和按量计费
+                     * @return PayModeName 计费模式：包年包月和按量计费
                      */
                     std::string GetPayModeName() const;
 
                     /**
-                     * 设置计费模式
-                     * @param PayModeName 计费模式
+                     * 设置计费模式：包年包月和按量计费
+                     * @param PayModeName 计费模式：包年包月和按量计费
                      */
                     void SetPayModeName(const std::string& _payModeName);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取交易类型
-                     * @return ActionTypeName 交易类型
+                     * 获取交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
+                     * @return ActionTypeName 交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
                      */
                     std::string GetActionTypeName() const;
 
                     /**
-                     * 设置交易类型
-                     * @param ActionTypeName 交易类型
+                     * 设置交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
+                     * @param ActionTypeName 交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
                      */
                     void SetActionTypeName(const std::string& _actionTypeName);
 
@@ -517,19 +517,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品
+                     * 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;
 
                     /**
-                     * 子产品
+                     * 子产品：云产品子类，如云服务器CVM-标准型S1
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;
 
                     /**
-                     * 计费模式
+                     * 计费模式：包年包月和按量计费
                      */
                     std::string m_payModeName;
                     bool m_payModeNameHasBeenSet;
@@ -565,7 +565,7 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 交易类型
+                     * 交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型
                      */
                     std::string m_actionTypeName;
                     bool m_actionTypeNameHasBeenSet;

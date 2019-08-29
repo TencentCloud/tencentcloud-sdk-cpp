@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取http code，可选值包括400,403,404,500,502,503,504
-                     * @return Code http code，可选值包括400,403,404,500,502,503,504
+                     * 获取HTTP code，可选值包括400,403,404,500,502,503,504
+                     * @return Code HTTP code，可选值包括400,403,404,500,502,503,504
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置http code，可选值包括400,403,404,500,502,503,504
-                     * @param Code http code，可选值包括400,403,404,500,502,503,504
+                     * 设置HTTP code，可选值包括400,403,404,500,502,503,504
+                     * @param Code HTTP code，可选值包括400,403,404,500,502,503,504
                      */
                     void SetCode(const std::string& _code);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * http code，可选值包括400,403,404,500,502,503,504
+                     * HTTP code，可选值包括400,403,404,500,502,503,504
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;

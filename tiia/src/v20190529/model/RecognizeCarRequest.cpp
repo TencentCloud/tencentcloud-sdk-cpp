@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 RecognizeCarRequest::RecognizeCarRequest() :
-    m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_imageBase64HasBeenSet(false)
 {
 }
 
@@ -36,20 +36,20 @@ string RecognizeCarRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_imageBase64HasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ImageBase64";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageBase64.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_imageUrlHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageBase64HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_imageBase64.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,22 +59,6 @@ string RecognizeCarRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string RecognizeCarRequest::GetImageBase64() const
-{
-    return m_imageBase64;
-}
-
-void RecognizeCarRequest::SetImageBase64(const string& _imageBase64)
-{
-    m_imageBase64 = _imageBase64;
-    m_imageBase64HasBeenSet = true;
-}
-
-bool RecognizeCarRequest::ImageBase64HasBeenSet() const
-{
-    return m_imageBase64HasBeenSet;
-}
 
 string RecognizeCarRequest::GetImageUrl() const
 {
@@ -90,6 +74,22 @@ void RecognizeCarRequest::SetImageUrl(const string& _imageUrl)
 bool RecognizeCarRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+string RecognizeCarRequest::GetImageBase64() const
+{
+    return m_imageBase64;
+}
+
+void RecognizeCarRequest::SetImageBase64(const string& _imageBase64)
+{
+    m_imageBase64 = _imageBase64;
+    m_imageBase64HasBeenSet = true;
+}
+
+bool RecognizeCarRequest::ImageBase64HasBeenSet() const
+{
+    return m_imageBase64HasBeenSet;
 }
 
 

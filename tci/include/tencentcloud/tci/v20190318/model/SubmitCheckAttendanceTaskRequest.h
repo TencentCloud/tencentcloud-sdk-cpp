@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LibraryIdsHasBeenSet() const;
 
                     /**
-                     * 获取确定出勤阀值；默认为0.92
-                     * @return AttendanceThreshold 确定出勤阀值；默认为0.92
+                     * 获取确定出勤阈值；默认为0.92
+                     * @return AttendanceThreshold 确定出勤阈值；默认为0.92
                      */
                     double GetAttendanceThreshold() const;
 
                     /**
-                     * 设置确定出勤阀值；默认为0.92
-                     * @param AttendanceThreshold 确定出勤阀值；默认为0.92
+                     * 设置确定出勤阈值；默认为0.92
+                     * @param AttendanceThreshold 确定出勤阈值；默认为0.92
                      */
                     void SetAttendanceThreshold(const double& _attendanceThreshold);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool AttendanceThresholdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启陌生人模式，开启后才会推送陌生人事件，默认不开启
-                     * @return EnableStranger 是否开启陌生人模式，开启后才会推送陌生人事件，默认不开启
+                     * 获取是否开启陌生人模式，陌生人模式是指在任务中发现的非注册人脸库中的人脸也返回相关统计信息，默认不开启
+                     * @return EnableStranger 是否开启陌生人模式，陌生人模式是指在任务中发现的非注册人脸库中的人脸也返回相关统计信息，默认不开启
                      */
                     bool GetEnableStranger() const;
 
                     /**
-                     * 设置是否开启陌生人模式，开启后才会推送陌生人事件，默认不开启
-                     * @param EnableStranger 是否开启陌生人模式，开启后才会推送陌生人事件，默认不开启
+                     * 设置是否开启陌生人模式，陌生人模式是指在任务中发现的非注册人脸库中的人脸也返回相关统计信息，默认不开启
+                     * @param EnableStranger 是否开启陌生人模式，陌生人模式是指在任务中发现的非注册人脸库中的人脸也返回相关统计信息，默认不开启
                      */
                     void SetEnableStranger(const bool& _enableStranger);
 
@@ -233,13 +233,13 @@ namespace TencentCloud
                     bool m_libraryIdsHasBeenSet;
 
                     /**
-                     * 确定出勤阀值；默认为0.92
+                     * 确定出勤阈值；默认为0.92
                      */
                     double m_attendanceThreshold;
                     bool m_attendanceThresholdHasBeenSet;
 
                     /**
-                     * 是否开启陌生人模式，开启后才会推送陌生人事件，默认不开启
+                     * 是否开启陌生人模式，陌生人模式是指在任务中发现的非注册人脸库中的人脸也返回相关统计信息，默认不开启
                      */
                     bool m_enableStranger;
                     bool m_enableStrangerHasBeenSet;

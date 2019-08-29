@@ -79,6 +79,24 @@ namespace TencentCloud
                     bool QualifierHasBeenSet() const;
 
                     /**
+                     * 获取函数所属命名空间
+                     * @return Namespace 函数所属命名空间
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置函数所属命名空间
+                     * @param Namespace 函数所属命名空间
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
                      * 获取是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示
                      * @return ShowCode 是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示
                      */
@@ -109,6 +127,12 @@ namespace TencentCloud
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
+
+                    /**
+                     * 函数所属命名空间
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
 
                     /**
                      * 是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示

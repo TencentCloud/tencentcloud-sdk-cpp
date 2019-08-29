@@ -29,7 +29,8 @@ DetectFaceRequest::DetectFaceRequest() :
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_needFaceAttributesHasBeenSet(false),
-    m_needQualityDetectionHasBeenSet(false)
+    m_needQualityDetectionHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DetectFaceRequest::ToJsonString() const
         string key = "NeedQualityDetection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needQualityDetection, allocator);
+    }
+
+    if (m_faceModelVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DetectFaceRequest::SetNeedQualityDetection(const uint64_t& _needQualityDete
 bool DetectFaceRequest::NeedQualityDetectionHasBeenSet() const
 {
     return m_needQualityDetectionHasBeenSet;
+}
+
+string DetectFaceRequest::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+void DetectFaceRequest::SetFaceModelVersion(const string& _faceModelVersion)
+{
+    m_faceModelVersion = _faceModelVersion;
+    m_faceModelVersionHasBeenSet = true;
+}
+
+bool DetectFaceRequest::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

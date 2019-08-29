@@ -26,7 +26,8 @@ using namespace std;
 CreateNamespaceRequest::CreateNamespaceRequest() :
     m_clusterIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_namespaceDescHasBeenSet(false)
+    m_namespaceDescHasBeenSet(false),
+    m_namespaceResourceTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateNamespaceRequest::ToJsonString() const
         string key = "NamespaceDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_namespaceDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespaceResourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateNamespaceRequest::SetNamespaceDesc(const string& _namespaceDesc)
 bool CreateNamespaceRequest::NamespaceDescHasBeenSet() const
 {
     return m_namespaceDescHasBeenSet;
+}
+
+string CreateNamespaceRequest::GetNamespaceResourceType() const
+{
+    return m_namespaceResourceType;
+}
+
+void CreateNamespaceRequest::SetNamespaceResourceType(const string& _namespaceResourceType)
+{
+    m_namespaceResourceType = _namespaceResourceType;
+    m_namespaceResourceTypeHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::NamespaceResourceTypeHasBeenSet() const
+{
+    return m_namespaceResourceTypeHasBeenSet;
 }
 
 

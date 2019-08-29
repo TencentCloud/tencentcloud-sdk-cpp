@@ -24,7 +24,10 @@ using namespace std;
 Candidate::Candidate() :
     m_personIdHasBeenSet(false),
     m_faceIdHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_personNameHasBeenSet(false),
+    m_genderHasBeenSet(false),
+    m_personGroupInfosHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,46 @@ CoreInternalOutcome Candidate::Deserialize(const Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("PersonName") && !value["PersonName"].IsNull())
+    {
+        if (!value["PersonName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Candidate.PersonName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_personName = string(value["PersonName"].GetString());
+        m_personNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Gender") && !value["Gender"].IsNull())
+    {
+        if (!value["Gender"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Candidate.Gender` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gender = value["Gender"].GetInt64();
+        m_genderHasBeenSet = true;
+    }
+
+    if (value.HasMember("PersonGroupInfos") && !value["PersonGroupInfos"].IsNull())
+    {
+        if (!value["PersonGroupInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `Candidate.PersonGroupInfos` is not array type"));
+
+        const Value &tmpValue = value["PersonGroupInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PersonGroupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_personGroupInfos.push_back(item);
+        }
+        m_personGroupInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +135,37 @@ void Candidate::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_personNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PersonName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_personName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_genderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Gender";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gender, allocator);
+    }
+
+    if (m_personGroupInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PersonGroupInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_personGroupInfos.begin(); itr != m_personGroupInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -143,5 +217,53 @@ void Candidate::SetScore(const double& _score)
 bool Candidate::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+string Candidate::GetPersonName() const
+{
+    return m_personName;
+}
+
+void Candidate::SetPersonName(const string& _personName)
+{
+    m_personName = _personName;
+    m_personNameHasBeenSet = true;
+}
+
+bool Candidate::PersonNameHasBeenSet() const
+{
+    return m_personNameHasBeenSet;
+}
+
+int64_t Candidate::GetGender() const
+{
+    return m_gender;
+}
+
+void Candidate::SetGender(const int64_t& _gender)
+{
+    m_gender = _gender;
+    m_genderHasBeenSet = true;
+}
+
+bool Candidate::GenderHasBeenSet() const
+{
+    return m_genderHasBeenSet;
+}
+
+vector<PersonGroupInfo> Candidate::GetPersonGroupInfos() const
+{
+    return m_personGroupInfos;
+}
+
+void Candidate::SetPersonGroupInfos(const vector<PersonGroupInfo>& _personGroupInfos)
+{
+    m_personGroupInfos = _personGroupInfos;
+    m_personGroupInfosHasBeenSet = true;
+}
+
+bool Candidate::PersonGroupInfosHasBeenSet() const
+{
+    return m_personGroupInfosHasBeenSet;
 }
 

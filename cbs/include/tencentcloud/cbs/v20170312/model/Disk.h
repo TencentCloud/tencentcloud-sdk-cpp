@@ -632,6 +632,50 @@ namespace TencentCloud
                      */
                     bool InstanceIdListHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘挂载目标设备的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachDeviceId 云硬盘挂载目标设备的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAttachDeviceId() const;
+
+                    /**
+                     * 设置云硬盘挂载目标设备的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachDeviceId 云硬盘挂载目标设备的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachDeviceId(const std::string& _attachDeviceId);
+
+                    /**
+                     * 判断参数 AttachDeviceId 是否已赋值
+                     * @return AttachDeviceId 是否已赋值
+                     */
+                    bool AttachDeviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取云硬盘挂载目标设备的类型，目前包括CVM和POD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachDeviceType 云硬盘挂载目标设备的类型，目前包括CVM和POD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAttachDeviceType() const;
+
+                    /**
+                     * 设置云硬盘挂载目标设备的类型，目前包括CVM和POD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachDeviceType 云硬盘挂载目标设备的类型，目前包括CVM和POD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachDeviceType(const std::string& _attachDeviceType);
+
+                    /**
+                     * 判断参数 AttachDeviceType 是否已赋值
+                     * @return AttachDeviceType 是否已赋值
+                     */
+                    bool AttachDeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -824,6 +868,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIdList;
                     bool m_instanceIdListHasBeenSet;
+
+                    /**
+                     * 云硬盘挂载目标设备的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_attachDeviceId;
+                    bool m_attachDeviceIdHasBeenSet;
+
+                    /**
+                     * 云硬盘挂载目标设备的类型，目前包括CVM和POD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_attachDeviceType;
+                    bool m_attachDeviceTypeHasBeenSet;
 
                 };
             }

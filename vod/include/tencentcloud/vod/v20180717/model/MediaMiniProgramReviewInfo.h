@@ -49,29 +49,29 @@ namespace TencentCloud
 
                     /**
                      * 获取审核信息列表。
-                     * @return MiniProgramReivewList 审核信息列表。
+                     * @return MiniProgramReviewList 审核信息列表。
                      */
-                    std::vector<MediaMiniProgramReviewInfoItem> GetMiniProgramReivewList() const;
+                    std::vector<MediaMiniProgramReviewInfoItem> GetMiniProgramReviewList() const;
 
                     /**
                      * 设置审核信息列表。
-                     * @param MiniProgramReivewList 审核信息列表。
+                     * @param MiniProgramReviewList 审核信息列表。
                      */
-                    void SetMiniProgramReivewList(const std::vector<MediaMiniProgramReviewInfoItem>& _miniProgramReivewList);
+                    void SetMiniProgramReviewList(const std::vector<MediaMiniProgramReviewInfoItem>& _miniProgramReviewList);
 
                     /**
-                     * 判断参数 MiniProgramReivewList 是否已赋值
-                     * @return MiniProgramReivewList 是否已赋值
+                     * 判断参数 MiniProgramReviewList 是否已赋值
+                     * @return MiniProgramReviewList 是否已赋值
                      */
-                    bool MiniProgramReivewListHasBeenSet() const;
+                    bool MiniProgramReviewListHasBeenSet() const;
 
                 private:
 
                     /**
                      * 审核信息列表。
                      */
-                    std::vector<MediaMiniProgramReviewInfoItem> m_miniProgramReivewList;
-                    bool m_miniProgramReivewListHasBeenSet;
+                    std::vector<MediaMiniProgramReviewInfoItem> m_miniProgramReviewList;
+                    bool m_miniProgramReviewListHasBeenSet;
 
                 };
             }

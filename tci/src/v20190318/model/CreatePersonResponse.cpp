@@ -25,6 +25,7 @@ using namespace rapidjson;
 using namespace std;
 
 CreatePersonResponse::CreatePersonResponse() :
+    m_faceInfoSetHasBeenSet(false),
     m_libraryIdHasBeenSet(false),
     m_personIdHasBeenSet(false),
     m_personNameHasBeenSet(false)
@@ -65,6 +66,26 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FaceInfoSet") && !rsp["FaceInfoSet"].IsNull())
+    {
+        if (!rsp["FaceInfoSet"].IsArray())
+            return CoreInternalOutcome(Error("response `FaceInfoSet` is not array type"));
+
+        const Value &tmpValue = rsp["FaceInfoSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FaceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_faceInfoSet.push_back(item);
+        }
+        m_faceInfoSetHasBeenSet = true;
+    }
+
     if (rsp.HasMember("LibraryId") && !rsp["LibraryId"].IsNull())
     {
         if (!rsp["LibraryId"].IsString())
@@ -99,6 +120,16 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+
+vector<FaceInfo> CreatePersonResponse::GetFaceInfoSet() const
+{
+    return m_faceInfoSet;
+}
+
+bool CreatePersonResponse::FaceInfoSetHasBeenSet() const
+{
+    return m_faceInfoSetHasBeenSet;
+}
 
 string CreatePersonResponse::GetLibraryId() const
 {

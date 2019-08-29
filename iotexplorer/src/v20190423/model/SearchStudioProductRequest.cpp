@@ -27,7 +27,8 @@ SearchStudioProductRequest::SearchStudioProductRequest() :
     m_projectIdHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_devStatusHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string SearchStudioProductRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_devStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DevStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_devStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void SearchStudioProductRequest::SetOffset(const uint64_t& _offset)
 bool SearchStudioProductRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string SearchStudioProductRequest::GetDevStatus() const
+{
+    return m_devStatus;
+}
+
+void SearchStudioProductRequest::SetDevStatus(const string& _devStatus)
+{
+    m_devStatus = _devStatus;
+    m_devStatusHasBeenSet = true;
+}
+
+bool SearchStudioProductRequest::DevStatusHasBeenSet() const
+{
+    return m_devStatusHasBeenSet;
 }
 
 

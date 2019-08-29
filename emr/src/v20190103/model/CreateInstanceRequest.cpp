@@ -40,7 +40,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_sgIdHasBeenSet(false),
     m_preExecutedFileSettingsHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
-    m_needMasterWanHasBeenSet(false)
+    m_needMasterWanHasBeenSet(false),
+    m_remoteLoginAtCreateHasBeenSet(false)
 {
 }
 
@@ -178,8 +179,14 @@ string CreateInstanceRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "PreExecutedFileSettings";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_preExecutedFileSettings.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_preExecutedFileSettings.begin(); itr != m_preExecutedFileSettings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_autoRenewHasBeenSet)
@@ -196,6 +203,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "NeedMasterWan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_needMasterWan.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteLoginAtCreateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RemoteLoginAtCreate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_remoteLoginAtCreate, allocator);
     }
 
 
@@ -430,12 +445,12 @@ bool CreateInstanceRequest::SgIdHasBeenSet() const
     return m_sgIdHasBeenSet;
 }
 
-PreExecuteFileSettings CreateInstanceRequest::GetPreExecutedFileSettings() const
+vector<PreExecuteFileSettings> CreateInstanceRequest::GetPreExecutedFileSettings() const
 {
     return m_preExecutedFileSettings;
 }
 
-void CreateInstanceRequest::SetPreExecutedFileSettings(const PreExecuteFileSettings& _preExecutedFileSettings)
+void CreateInstanceRequest::SetPreExecutedFileSettings(const vector<PreExecuteFileSettings>& _preExecutedFileSettings)
 {
     m_preExecutedFileSettings = _preExecutedFileSettings;
     m_preExecutedFileSettingsHasBeenSet = true;
@@ -476,6 +491,22 @@ void CreateInstanceRequest::SetNeedMasterWan(const string& _needMasterWan)
 bool CreateInstanceRequest::NeedMasterWanHasBeenSet() const
 {
     return m_needMasterWanHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetRemoteLoginAtCreate() const
+{
+    return m_remoteLoginAtCreate;
+}
+
+void CreateInstanceRequest::SetRemoteLoginAtCreate(const int64_t& _remoteLoginAtCreate)
+{
+    m_remoteLoginAtCreate = _remoteLoginAtCreate;
+    m_remoteLoginAtCreateHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::RemoteLoginAtCreateHasBeenSet() const
+{
+    return m_remoteLoginAtCreateHasBeenSet;
 }
 
 

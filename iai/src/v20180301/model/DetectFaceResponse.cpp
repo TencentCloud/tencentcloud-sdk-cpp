@@ -27,7 +27,8 @@ using namespace std;
 DetectFaceResponse::DetectFaceResponse() :
     m_imageWidthHasBeenSet(false),
     m_imageHeightHasBeenSet(false),
-    m_faceInfosHasBeenSet(false)
+    m_faceInfosHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DetectFaceResponse::Deserialize(const string &payload)
         m_faceInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,16 @@ vector<FaceInfo> DetectFaceResponse::GetFaceInfos() const
 bool DetectFaceResponse::FaceInfosHasBeenSet() const
 {
     return m_faceInfosHasBeenSet;
+}
+
+string DetectFaceResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool DetectFaceResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

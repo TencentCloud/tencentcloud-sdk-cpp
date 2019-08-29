@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前会话状态，取值："START"/"COUTINUE"/"COMPLETE"。
+                     * 获取当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DialogStatus 当前会话状态，取值："START"/"COUTINUE"/"COMPLETE"。
+                     * @return DialogStatus 当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDialogStatus() const;
@@ -114,23 +114,9 @@ namespace TencentCloud
                     bool InputTextHasBeenSet() const;
 
                     /**
-                     * 获取机器人回答。
+                     * 获取透传字段，由用户自定义的WebService服务返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResponseText 机器人回答。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetResponseText() const;
-
-                    /**
-                     * 判断参数 ResponseText 是否已赋值
-                     * @return ResponseText 是否已赋值
-                     */
-                    bool ResponseTextHasBeenSet() const;
-
-                    /**
-                     * 获取透传字段，由endpoint服务返回。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SessionAttributes 透传字段，由endpoint服务返回。
+                     * @return SessionAttributes 透传字段，由用户自定义的WebService服务返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSessionAttributes() const;
@@ -141,10 +127,24 @@ namespace TencentCloud
                      */
                     bool SessionAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取机器人对话的应答文本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResponseText 机器人对话的应答文本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResponseText() const;
+
+                    /**
+                     * 判断参数 ResponseText 是否已赋值
+                     * @return ResponseText 是否已赋值
+                     */
+                    bool ResponseTextHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 当前会话状态，取值："START"/"COUTINUE"/"COMPLETE"。
+                     * 当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dialogStatus;
@@ -179,18 +179,18 @@ namespace TencentCloud
                     bool m_inputTextHasBeenSet;
 
                     /**
-                     * 机器人回答。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_responseText;
-                    bool m_responseTextHasBeenSet;
-
-                    /**
-                     * 透传字段，由endpoint服务返回。
+                     * 透传字段，由用户自定义的WebService服务返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionAttributes;
                     bool m_sessionAttributesHasBeenSet;
+
+                    /**
+                     * 机器人对话的应答文本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_responseText;
+                    bool m_responseTextHasBeenSet;
 
                 };
             }

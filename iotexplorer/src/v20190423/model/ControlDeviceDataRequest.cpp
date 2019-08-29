@@ -26,7 +26,9 @@ using namespace std;
 ControlDeviceDataRequest::ControlDeviceDataRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_methodHasBeenSet(false),
+    m_deviceIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string ControlDeviceDataRequest::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_method.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +133,38 @@ void ControlDeviceDataRequest::SetData(const string& _data)
 bool ControlDeviceDataRequest::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string ControlDeviceDataRequest::GetMethod() const
+{
+    return m_method;
+}
+
+void ControlDeviceDataRequest::SetMethod(const string& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool ControlDeviceDataRequest::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
+}
+
+string ControlDeviceDataRequest::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void ControlDeviceDataRequest::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool ControlDeviceDataRequest::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
 }
 
 

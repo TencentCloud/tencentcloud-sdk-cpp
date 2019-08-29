@@ -137,13 +137,13 @@ namespace TencentCloud
                      * 获取预执行脚本设置
                      * @return PreExecutedFileSettings 预执行脚本设置
                      */
-                    PreExecuteFileSettings GetPreExecutedFileSettings() const;
+                    std::vector<PreExecuteFileSettings> GetPreExecutedFileSettings() const;
 
                     /**
                      * 设置预执行脚本设置
                      * @param PreExecutedFileSettings 预执行脚本设置
                      */
-                    void SetPreExecutedFileSettings(const PreExecuteFileSettings& _preExecutedFileSettings);
+                    void SetPreExecutedFileSettings(const std::vector<PreExecuteFileSettings>& _preExecutedFileSettings);
 
                     /**
                      * 判断参数 PreExecutedFileSettings 是否已赋值
@@ -222,7 +222,7 @@ namespace TencentCloud
                     /**
                      * 预执行脚本设置
                      */
-                    PreExecuteFileSettings m_preExecutedFileSettings;
+                    std::vector<PreExecuteFileSettings> m_preExecutedFileSettings;
                     bool m_preExecutedFileSettingsHasBeenSet;
 
                     /**

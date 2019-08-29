@@ -222,6 +222,28 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取应用资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationResourceType 应用资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationResourceType() const;
+
+                    /**
+                     * 设置应用资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationResourceType 应用资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationResourceType(const std::string& _applicationResourceType);
+
+                    /**
+                     * 判断参数 ApplicationResourceType 是否已赋值
+                     * @return ApplicationResourceType 是否已赋值
+                     */
+                    bool ApplicationResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +301,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 应用资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationResourceType;
+                    bool m_applicationResourceTypeHasBeenSet;
 
                 };
             }

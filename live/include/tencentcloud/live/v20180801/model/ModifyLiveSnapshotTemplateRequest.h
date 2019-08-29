@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取模板名称。
+长度上限：255字节。
                      * @return TemplateName 模板名称。
+长度上限：255字节。
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称。
+长度上限：255字节。
                      * @param TemplateName 模板名称。
+长度上限：255字节。
                      */
                     void SetTemplateName(const std::string& _templateName);
 
@@ -80,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息。
+长度上限：1024字节。
                      * @return Description 描述信息。
+长度上限：1024字节。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
+长度上限：1024字节。
                      * @param Description 描述信息。
+长度上限：1024字节。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -97,14 +105,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取截图时间间隔
-                     * @return SnapshotInterval 截图时间间隔
+                     * 获取截图间隔，单位s，默认10s。
+范围： 5s ~ 600s。
+                     * @return SnapshotInterval 截图间隔，单位s，默认10s。
+范围： 5s ~ 600s。
                      */
                     int64_t GetSnapshotInterval() const;
 
                     /**
-                     * 设置截图时间间隔
-                     * @param SnapshotInterval 截图时间间隔
+                     * 设置截图间隔，单位s，默认10s。
+范围： 5s ~ 600s。
+                     * @param SnapshotInterval 截图间隔，单位s，默认10s。
+范围： 5s ~ 600s。
                      */
                     void SetSnapshotInterval(const int64_t& _snapshotInterval);
 
@@ -115,14 +127,14 @@ namespace TencentCloud
                     bool SnapshotIntervalHasBeenSet() const;
 
                     /**
-                     * 获取截图宽度。
-                     * @return Width 截图宽度。
+                     * 获取截图宽度。默认：0（原始宽）。
+                     * @return Width 截图宽度。默认：0（原始宽）。
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置截图宽度。
-                     * @param Width 截图宽度。
+                     * 设置截图宽度。默认：0（原始宽）。
+                     * @param Width 截图宽度。默认：0（原始宽）。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -133,14 +145,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取截图高度。
-                     * @return Height 截图高度。
+                     * 获取截图高度。默认：0（原始高）。
+                     * @return Height 截图高度。默认：0（原始高）。
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置截图高度。
-                     * @param Height 截图高度。
+                     * 设置截图高度。默认：0（原始高）。
+                     * @param Height 截图高度。默认：0（原始高）。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -232,30 +244,33 @@ namespace TencentCloud
 
                     /**
                      * 模板名称。
+长度上限：255字节。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
                      * 描述信息。
+长度上限：1024字节。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 截图时间间隔
+                     * 截图间隔，单位s，默认10s。
+范围： 5s ~ 600s。
                      */
                     int64_t m_snapshotInterval;
                     bool m_snapshotIntervalHasBeenSet;
 
                     /**
-                     * 截图宽度。
+                     * 截图宽度。默认：0（原始宽）。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 截图高度。
+                     * 截图高度。默认：0（原始高）。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

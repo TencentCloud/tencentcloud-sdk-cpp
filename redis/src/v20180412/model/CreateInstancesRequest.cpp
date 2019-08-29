@@ -29,8 +29,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_memSizeHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_passwordHasBeenSet(false),
     m_billingModeHasBeenSet(false),
+    m_passwordHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
@@ -40,7 +40,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_redisShardNumHasBeenSet(false),
     m_redisReplicasNumHasBeenSet(false),
     m_replicasReadonlyHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_noAuthHasBeenSet(false)
 {
 }
 
@@ -91,20 +92,20 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_period, allocator);
     }
 
-    if (m_passwordHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Password";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_billingModeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "BillingMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_billingMode, allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
@@ -190,6 +191,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noAuthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NoAuth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_noAuth, allocator);
     }
 
 
@@ -280,22 +289,6 @@ bool CreateInstancesRequest::PeriodHasBeenSet() const
     return m_periodHasBeenSet;
 }
 
-string CreateInstancesRequest::GetPassword() const
-{
-    return m_password;
-}
-
-void CreateInstancesRequest::SetPassword(const string& _password)
-{
-    m_password = _password;
-    m_passwordHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::PasswordHasBeenSet() const
-{
-    return m_passwordHasBeenSet;
-}
-
 int64_t CreateInstancesRequest::GetBillingMode() const
 {
     return m_billingMode;
@@ -310,6 +303,22 @@ void CreateInstancesRequest::SetBillingMode(const int64_t& _billingMode)
 bool CreateInstancesRequest::BillingModeHasBeenSet() const
 {
     return m_billingModeHasBeenSet;
+}
+
+string CreateInstancesRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void CreateInstancesRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
 }
 
 string CreateInstancesRequest::GetVpcId() const
@@ -470,6 +479,22 @@ void CreateInstancesRequest::SetInstanceName(const string& _instanceName)
 bool CreateInstancesRequest::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+bool CreateInstancesRequest::GetNoAuth() const
+{
+    return m_noAuth;
+}
+
+void CreateInstancesRequest::SetNoAuth(const bool& _noAuth)
+{
+    m_noAuth = _noAuth;
+    m_noAuthHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::NoAuthHasBeenSet() const
+{
+    return m_noAuthHasBeenSet;
 }
 
 

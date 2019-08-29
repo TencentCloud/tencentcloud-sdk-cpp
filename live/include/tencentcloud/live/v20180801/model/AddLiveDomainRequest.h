@@ -91,10 +91,12 @@ namespace TencentCloud
 1：国内，
 2：全球，
 3：境外。
+默认值：1。
                      * @return PlayType 拉流域名类型：
 1：国内，
 2：全球，
 3：境外。
+默认值：1。
                      */
                     uint64_t GetPlayType() const;
 
@@ -103,10 +105,12 @@ namespace TencentCloud
 1：国内，
 2：全球，
 3：境外。
+默认值：1。
                      * @param PlayType 拉流域名类型：
 1：国内，
 2：全球，
 3：境外。
+默认值：1。
                      */
                     void SetPlayType(const uint64_t& _playType);
 
@@ -117,18 +121,26 @@ namespace TencentCloud
                     bool PlayTypeHasBeenSet() const;
 
                     /**
-                     * 获取默认 0 ：普通直播，
-1：慢直播。
-                     * @return IsDelayLive 默认 0 ：普通直播，
-1：慢直播。
+                     * 获取是否是慢直播：
+0： 普通直播，
+1 ：慢直播 。
+默认值： 0。
+                     * @return IsDelayLive 是否是慢直播：
+0： 普通直播，
+1 ：慢直播 。
+默认值： 0。
                      */
                     int64_t GetIsDelayLive() const;
 
                     /**
-                     * 设置默认 0 ：普通直播，
-1：慢直播。
-                     * @param IsDelayLive 默认 0 ：普通直播，
-1：慢直播。
+                     * 设置是否是慢直播：
+0： 普通直播，
+1 ：慢直播 。
+默认值： 0。
+                     * @param IsDelayLive 是否是慢直播：
+0： 普通直播，
+1 ：慢直播 。
+默认值： 0。
                      */
                     void SetIsDelayLive(const int64_t& _isDelayLive);
 
@@ -159,13 +171,16 @@ namespace TencentCloud
 1：国内，
 2：全球，
 3：境外。
+默认值：1。
                      */
                     uint64_t m_playType;
                     bool m_playTypeHasBeenSet;
 
                     /**
-                     * 默认 0 ：普通直播，
-1：慢直播。
+                     * 是否是慢直播：
+0： 普通直播，
+1 ：慢直播 。
+默认值： 0。
                      */
                     int64_t m_isDelayLive;
                     bool m_isDelayLiveHasBeenSet;

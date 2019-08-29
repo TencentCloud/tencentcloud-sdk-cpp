@@ -51,7 +51,9 @@ Disk::Disk() :
     m_migratingHasBeenSet(false),
     m_migratePercentHasBeenSet(false),
     m_shareableHasBeenSet(false),
-    m_instanceIdListHasBeenSet(false)
+    m_instanceIdListHasBeenSet(false),
+    m_attachDeviceIdHasBeenSet(false),
+    m_attachDeviceTypeHasBeenSet(false)
 {
 }
 
@@ -383,6 +385,26 @@ CoreInternalOutcome Disk::Deserialize(const Value &value)
         m_instanceIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("AttachDeviceId") && !value["AttachDeviceId"].IsNull())
+    {
+        if (!value["AttachDeviceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Disk.AttachDeviceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachDeviceId = string(value["AttachDeviceId"].GetString());
+        m_attachDeviceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttachDeviceType") && !value["AttachDeviceType"].IsNull())
+    {
+        if (!value["AttachDeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Disk.AttachDeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachDeviceType = string(value["AttachDeviceType"].GetString());
+        m_attachDeviceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +668,22 @@ void Disk::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_attachDeviceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachDeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_attachDeviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attachDeviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachDeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_attachDeviceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1129,5 +1167,37 @@ void Disk::SetInstanceIdList(const vector<string>& _instanceIdList)
 bool Disk::InstanceIdListHasBeenSet() const
 {
     return m_instanceIdListHasBeenSet;
+}
+
+string Disk::GetAttachDeviceId() const
+{
+    return m_attachDeviceId;
+}
+
+void Disk::SetAttachDeviceId(const string& _attachDeviceId)
+{
+    m_attachDeviceId = _attachDeviceId;
+    m_attachDeviceIdHasBeenSet = true;
+}
+
+bool Disk::AttachDeviceIdHasBeenSet() const
+{
+    return m_attachDeviceIdHasBeenSet;
+}
+
+string Disk::GetAttachDeviceType() const
+{
+    return m_attachDeviceType;
+}
+
+void Disk::SetAttachDeviceType(const string& _attachDeviceType)
+{
+    m_attachDeviceType = _attachDeviceType;
+    m_attachDeviceTypeHasBeenSet = true;
+}
+
+bool Disk::AttachDeviceTypeHasBeenSet() const
+{
+    return m_attachDeviceTypeHasBeenSet;
 }
 

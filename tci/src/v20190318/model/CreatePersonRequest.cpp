@@ -26,12 +26,14 @@ using namespace std;
 CreatePersonRequest::CreatePersonRequest() :
     m_libraryIdHasBeenSet(false),
     m_personNameHasBeenSet(false),
+    m_imagesHasBeenSet(false),
     m_jobNumberHasBeenSet(false),
     m_mailHasBeenSet(false),
     m_maleHasBeenSet(false),
     m_personIdHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
-    m_studentNumberHasBeenSet(false)
+    m_studentNumberHasBeenSet(false),
+    m_urlsHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,19 @@ string CreatePersonRequest::ToJsonString() const
         string key = "PersonName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_personName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imagesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Images";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_images.begin(); itr != m_images.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_jobNumberHasBeenSet)
@@ -106,6 +121,19 @@ string CreatePersonRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_studentNumber.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_urlsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Urls";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_urls.begin(); itr != m_urls.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -144,6 +172,22 @@ void CreatePersonRequest::SetPersonName(const string& _personName)
 bool CreatePersonRequest::PersonNameHasBeenSet() const
 {
     return m_personNameHasBeenSet;
+}
+
+vector<string> CreatePersonRequest::GetImages() const
+{
+    return m_images;
+}
+
+void CreatePersonRequest::SetImages(const vector<string>& _images)
+{
+    m_images = _images;
+    m_imagesHasBeenSet = true;
+}
+
+bool CreatePersonRequest::ImagesHasBeenSet() const
+{
+    return m_imagesHasBeenSet;
 }
 
 string CreatePersonRequest::GetJobNumber() const
@@ -240,6 +284,22 @@ void CreatePersonRequest::SetStudentNumber(const string& _studentNumber)
 bool CreatePersonRequest::StudentNumberHasBeenSet() const
 {
     return m_studentNumberHasBeenSet;
+}
+
+vector<string> CreatePersonRequest::GetUrls() const
+{
+    return m_urls;
+}
+
+void CreatePersonRequest::SetUrls(const vector<string>& _urls)
+{
+    m_urls = _urls;
+    m_urlsHasBeenSet = true;
+}
+
+bool CreatePersonRequest::UrlsHasBeenSet() const
+{
+    return m_urlsHasBeenSet;
 }
 
 

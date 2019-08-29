@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool BotEnvHasBeenSet() const;
 
                     /**
-                     * 获取透传字段，透传给endpoint服务。
-                     * @return SessionAttributes 透传字段，透传给endpoint服务。
+                     * 获取透传字段，透传给用户自定义的WebService服务。
+                     * @return SessionAttributes 透传字段，透传给用户自定义的WebService服务。
                      */
                     std::string GetSessionAttributes() const;
 
                     /**
-                     * 设置透传字段，透传给endpoint服务。
-                     * @param SessionAttributes 透传字段，透传给endpoint服务。
+                     * 设置透传字段，透传给用户自定义的WebService服务。
+                     * @param SessionAttributes 透传字段，透传给用户自定义的WebService服务。
                      */
                     void SetSessionAttributes(const std::string& _sessionAttributes);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_botEnvHasBeenSet;
 
                     /**
-                     * 透传字段，透传给endpoint服务。
+                     * 透传字段，透传给用户自定义的WebService服务。
                      */
                     std::string m_sessionAttributes;
                     bool m_sessionAttributesHasBeenSet;

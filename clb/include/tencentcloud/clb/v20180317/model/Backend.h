@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-                     * @return InstanceId 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 获取后端服务的唯一 ID，如 ins-abcd1234
+                     * @return InstanceId 后端服务的唯一 ID，如 ins-abcd1234
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
-                     * @param InstanceId 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 设置后端服务的唯一 ID，如 ins-abcd1234
+                     * @param InstanceId 后端服务的唯一 ID，如 ins-abcd1234
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -207,17 +207,17 @@ namespace TencentCloud
                     bool RegisteredTimeHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡唯一ID
+                     * 获取弹性网卡唯一ID，如 eni-1234abcd
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EniId 弹性网卡唯一ID
+                     * @return EniId 弹性网卡唯一ID，如 eni-1234abcd
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEniId() const;
 
                     /**
-                     * 设置弹性网卡唯一ID
+                     * 设置弹性网卡唯一ID，如 eni-1234abcd
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EniId 弹性网卡唯一ID
+                     * @param EniId 弹性网卡唯一ID，如 eni-1234abcd
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEniId(const std::string& _eniId);
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取
+                     * 后端服务的唯一 ID，如 ins-abcd1234
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -283,7 +283,7 @@ namespace TencentCloud
                     bool m_registeredTimeHasBeenSet;
 
                     /**
-                     * 弹性网卡唯一ID
+                     * 弹性网卡唯一ID，如 eni-1234abcd
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eniId;

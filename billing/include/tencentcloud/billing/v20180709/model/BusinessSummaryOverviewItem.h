@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
-                     * 获取产品名称
-                     * @return BusinessCodeName 产品名称
+                     * 获取产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * @return BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
-                     * 设置产品名称
-                     * @param BusinessCodeName 产品名称
+                     * 设置产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * @param BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
 
@@ -132,7 +132,7 @@ namespace TencentCloud
                     bool m_businessCodeHasBeenSet;
 
                     /**
-                     * 产品名称
+                     * 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;

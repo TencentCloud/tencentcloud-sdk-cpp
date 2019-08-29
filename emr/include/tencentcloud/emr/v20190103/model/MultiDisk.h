@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool VolumeHasBeenSet() const;
 
+                    /**
+                     * 获取该类型云盘个数
+                     * @return Count 该类型云盘个数
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置该类型云盘个数
+                     * @param Count 该类型云盘个数
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;
+
+                    /**
+                     * 该类型云盘个数
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

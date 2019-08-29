@@ -27,6 +27,7 @@ CreateAIRecognitionTemplateRequest::CreateAIRecognitionTemplateRequest() :
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_headTailConfigureHasBeenSet(false),
+    m_segmentConfigureHasBeenSet(false),
     m_faceConfigureHasBeenSet(false),
     m_ocrFullTextConfigureHasBeenSet(false),
     m_ocrWordsConfigureHasBeenSet(false),
@@ -68,6 +69,15 @@ string CreateAIRecognitionTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_headTailConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_segmentConfigureHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SegmentConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_segmentConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_faceConfigureHasBeenSet)
@@ -194,6 +204,22 @@ void CreateAIRecognitionTemplateRequest::SetHeadTailConfigure(const HeadTailConf
 bool CreateAIRecognitionTemplateRequest::HeadTailConfigureHasBeenSet() const
 {
     return m_headTailConfigureHasBeenSet;
+}
+
+SegmentConfigureInfo CreateAIRecognitionTemplateRequest::GetSegmentConfigure() const
+{
+    return m_segmentConfigure;
+}
+
+void CreateAIRecognitionTemplateRequest::SetSegmentConfigure(const SegmentConfigureInfo& _segmentConfigure)
+{
+    m_segmentConfigure = _segmentConfigure;
+    m_segmentConfigureHasBeenSet = true;
+}
+
+bool CreateAIRecognitionTemplateRequest::SegmentConfigureHasBeenSet() const
+{
+    return m_segmentConfigureHasBeenSet;
 }
 
 FaceConfigureInfo CreateAIRecognitionTemplateRequest::GetFaceConfigure() const

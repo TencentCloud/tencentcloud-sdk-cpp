@@ -54,6 +54,22 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取JSON字符串， 返回下发控制的结果信息, 
+Sent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Result JSON字符串， 返回下发控制的结果信息, 
+Sent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +77,14 @@ namespace TencentCloud
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * JSON字符串， 返回下发控制的结果信息, 
+Sent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

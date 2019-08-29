@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaFileInfo.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaStreamInfo.h>
+#include <tencentcloud/vod/v20180717/model/EditMediaOutputConfig.h>
 
 
 namespace TencentCloud
@@ -99,6 +100,32 @@ namespace TencentCloud
                     bool StreamInfosHasBeenSet() const;
 
                     /**
+                     * 获取编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
+<li>10：拼接时，以分辨率最高的输入为基准；</li>
+<li>20：拼接时，以码率最高的输入为基准；</li>
+                     * @return Definition 编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
+<li>10：拼接时，以分辨率最高的输入为基准；</li>
+<li>20：拼接时，以码率最高的输入为基准；</li>
+                     */
+                    uint64_t GetDefinition() const;
+
+                    /**
+                     * 设置编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
+<li>10：拼接时，以分辨率最高的输入为基准；</li>
+<li>20：拼接时，以码率最高的输入为基准；</li>
+                     * @param Definition 编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
+<li>10：拼接时，以分辨率最高的输入为基准；</li>
+<li>20：拼接时，以码率最高的输入为基准；</li>
+                     */
+                    void SetDefinition(const uint64_t& _definition);
+
+                    /**
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
+                     */
+                    bool DefinitionHasBeenSet() const;
+
+                    /**
                      * 获取[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
                      * @return ProcedureName [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
                      */
@@ -115,6 +142,24 @@ namespace TencentCloud
                      * @return ProcedureName 是否已赋值
                      */
                     bool ProcedureNameHasBeenSet() const;
+
+                    /**
+                     * 获取编辑后生成的文件配置。
+                     * @return OutputConfig 编辑后生成的文件配置。
+                     */
+                    EditMediaOutputConfig GetOutputConfig() const;
+
+                    /**
+                     * 设置编辑后生成的文件配置。
+                     * @param OutputConfig 编辑后生成的文件配置。
+                     */
+                    void SetOutputConfig(const EditMediaOutputConfig& _outputConfig);
+
+                    /**
+                     * 判断参数 OutputConfig 是否已赋值
+                     * @return OutputConfig 是否已赋值
+                     */
+                    bool OutputConfigHasBeenSet() const;
 
                     /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
@@ -155,10 +200,24 @@ namespace TencentCloud
                     bool m_streamInfosHasBeenSet;
 
                     /**
+                     * 编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
+<li>10：拼接时，以分辨率最高的输入为基准；</li>
+<li>20：拼接时，以码率最高的输入为基准；</li>
+                     */
+                    uint64_t m_definition;
+                    bool m_definitionHasBeenSet;
+
+                    /**
                      * [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
                      */
                     std::string m_procedureName;
                     bool m_procedureNameHasBeenSet;
+
+                    /**
+                     * 编辑后生成的文件配置。
+                     */
+                    EditMediaOutputConfig m_outputConfig;
+                    bool m_outputConfigHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

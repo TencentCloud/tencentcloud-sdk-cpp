@@ -154,6 +154,150 @@ namespace TencentCloud
                      */
                     bool TempCosObjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取Git地址
+                     * @return GitUrl Git地址
+                     */
+                    std::string GetGitUrl() const;
+
+                    /**
+                     * 设置Git地址
+                     * @param GitUrl Git地址
+                     */
+                    void SetGitUrl(const std::string& _gitUrl);
+
+                    /**
+                     * 判断参数 GitUrl 是否已赋值
+                     * @return GitUrl 是否已赋值
+                     */
+                    bool GitUrlHasBeenSet() const;
+
+                    /**
+                     * 获取Git用户名
+                     * @return GitUserName Git用户名
+                     */
+                    std::string GetGitUserName() const;
+
+                    /**
+                     * 设置Git用户名
+                     * @param GitUserName Git用户名
+                     */
+                    void SetGitUserName(const std::string& _gitUserName);
+
+                    /**
+                     * 判断参数 GitUserName 是否已赋值
+                     * @return GitUserName 是否已赋值
+                     */
+                    bool GitUserNameHasBeenSet() const;
+
+                    /**
+                     * 获取Git密码
+                     * @return GitPassword Git密码
+                     */
+                    std::string GetGitPassword() const;
+
+                    /**
+                     * 设置Git密码
+                     * @param GitPassword Git密码
+                     */
+                    void SetGitPassword(const std::string& _gitPassword);
+
+                    /**
+                     * 判断参数 GitPassword 是否已赋值
+                     * @return GitPassword 是否已赋值
+                     */
+                    bool GitPasswordHasBeenSet() const;
+
+                    /**
+                     * 获取加密后的Git密码，一般无需指定
+                     * @return GitPasswordSecret 加密后的Git密码，一般无需指定
+                     */
+                    std::string GetGitPasswordSecret() const;
+
+                    /**
+                     * 设置加密后的Git密码，一般无需指定
+                     * @param GitPasswordSecret 加密后的Git密码，一般无需指定
+                     */
+                    void SetGitPasswordSecret(const std::string& _gitPasswordSecret);
+
+                    /**
+                     * 判断参数 GitPasswordSecret 是否已赋值
+                     * @return GitPasswordSecret 是否已赋值
+                     */
+                    bool GitPasswordSecretHasBeenSet() const;
+
+                    /**
+                     * 获取Git分支
+                     * @return GitBranch Git分支
+                     */
+                    std::string GetGitBranch() const;
+
+                    /**
+                     * 设置Git分支
+                     * @param GitBranch Git分支
+                     */
+                    void SetGitBranch(const std::string& _gitBranch);
+
+                    /**
+                     * 判断参数 GitBranch 是否已赋值
+                     * @return GitBranch 是否已赋值
+                     */
+                    bool GitBranchHasBeenSet() const;
+
+                    /**
+                     * 获取代码在Git仓库中的路径
+                     * @return GitDirectory 代码在Git仓库中的路径
+                     */
+                    std::string GetGitDirectory() const;
+
+                    /**
+                     * 设置代码在Git仓库中的路径
+                     * @param GitDirectory 代码在Git仓库中的路径
+                     */
+                    void SetGitDirectory(const std::string& _gitDirectory);
+
+                    /**
+                     * 判断参数 GitDirectory 是否已赋值
+                     * @return GitDirectory 是否已赋值
+                     */
+                    bool GitDirectoryHasBeenSet() const;
+
+                    /**
+                     * 获取指定要拉取的版本
+                     * @return GitCommitId 指定要拉取的版本
+                     */
+                    std::string GetGitCommitId() const;
+
+                    /**
+                     * 设置指定要拉取的版本
+                     * @param GitCommitId 指定要拉取的版本
+                     */
+                    void SetGitCommitId(const std::string& _gitCommitId);
+
+                    /**
+                     * 判断参数 GitCommitId 是否已赋值
+                     * @return GitCommitId 是否已赋值
+                     */
+                    bool GitCommitIdHasBeenSet() const;
+
+                    /**
+                     * 获取加密后的Git用户名，一般无需指定
+                     * @return GitUserNameSecret 加密后的Git用户名，一般无需指定
+                     */
+                    std::string GetGitUserNameSecret() const;
+
+                    /**
+                     * 设置加密后的Git用户名，一般无需指定
+                     * @param GitUserNameSecret 加密后的Git用户名，一般无需指定
+                     */
+                    void SetGitUserNameSecret(const std::string& _gitUserNameSecret);
+
+                    /**
+                     * 判断参数 GitUserNameSecret 是否已赋值
+                     * @return GitUserNameSecret 是否已赋值
+                     */
+                    bool GitUserNameSecretHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +335,54 @@ namespace TencentCloud
                      */
                     std::string m_tempCosObjectName;
                     bool m_tempCosObjectNameHasBeenSet;
+
+                    /**
+                     * Git地址
+                     */
+                    std::string m_gitUrl;
+                    bool m_gitUrlHasBeenSet;
+
+                    /**
+                     * Git用户名
+                     */
+                    std::string m_gitUserName;
+                    bool m_gitUserNameHasBeenSet;
+
+                    /**
+                     * Git密码
+                     */
+                    std::string m_gitPassword;
+                    bool m_gitPasswordHasBeenSet;
+
+                    /**
+                     * 加密后的Git密码，一般无需指定
+                     */
+                    std::string m_gitPasswordSecret;
+                    bool m_gitPasswordSecretHasBeenSet;
+
+                    /**
+                     * Git分支
+                     */
+                    std::string m_gitBranch;
+                    bool m_gitBranchHasBeenSet;
+
+                    /**
+                     * 代码在Git仓库中的路径
+                     */
+                    std::string m_gitDirectory;
+                    bool m_gitDirectoryHasBeenSet;
+
+                    /**
+                     * 指定要拉取的版本
+                     */
+                    std::string m_gitCommitId;
+                    bool m_gitCommitIdHasBeenSet;
+
+                    /**
+                     * 加密后的Git用户名，一般无需指定
+                     */
+                    std::string m_gitUserNameSecret;
+                    bool m_gitUserNameSecretHasBeenSet;
 
                 };
             }

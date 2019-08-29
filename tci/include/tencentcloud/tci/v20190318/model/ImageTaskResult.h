@@ -34,6 +34,7 @@
 #include <tencentcloud/tci/v20190318/model/HandTrackingResult.h>
 #include <tencentcloud/tci/v20190318/model/LightResult.h>
 #include <tencentcloud/tci/v20190318/model/BodyMovementResult.h>
+#include <tencentcloud/tci/v20190318/model/TeacherOutScreenResult.h>
 #include <tencentcloud/tci/v20190318/model/TimeInfoResult.h>
 
 
@@ -256,6 +257,24 @@ namespace TencentCloud
                     bool TeacherBodyMovementHasBeenSet() const;
 
                     /**
+                     * 获取教师是否在屏幕内判断结果
+                     * @return TeacherOutScreen 教师是否在屏幕内判断结果
+                     */
+                    TeacherOutScreenResult GetTeacherOutScreen() const;
+
+                    /**
+                     * 设置教师是否在屏幕内判断结果
+                     * @param TeacherOutScreen 教师是否在屏幕内判断结果
+                     */
+                    void SetTeacherOutScreen(const TeacherOutScreenResult& _teacherOutScreen);
+
+                    /**
+                     * 判断参数 TeacherOutScreen 是否已赋值
+                     * @return TeacherOutScreen 是否已赋值
+                     */
+                    bool TeacherOutScreenHasBeenSet() const;
+
+                    /**
                      * 获取时间统计结果
                      * @return TimeInfo 时间统计结果
                      */
@@ -340,6 +359,12 @@ namespace TencentCloud
                      */
                     BodyMovementResult m_teacherBodyMovement;
                     bool m_teacherBodyMovementHasBeenSet;
+
+                    /**
+                     * 教师是否在屏幕内判断结果
+                     */
+                    TeacherOutScreenResult m_teacherOutScreen;
+                    bool m_teacherOutScreenHasBeenSet;
 
                     /**
                      * 时间统计结果

@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取包含的人脸图片列表
-                     * @return FaceIds 包含的人脸图片列表
+                     * 获取包含的人脸 ID 列表
+                     * @return FaceIds 包含的人脸 ID 列表
                      */
                     std::vector<std::string> GetFaceIds() const;
 
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 包含的人脸图片列表
+                     * 包含的人脸 ID 列表
                      */
                     std::vector<std::string> m_faceIds;
                     bool m_faceIdsHasBeenSet;

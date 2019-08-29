@@ -83,6 +83,8 @@
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBRequest.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBResponse.h>
+#include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersRequest.h>
+#include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetSecurityGroupForLoadbalancersRequest.h>
@@ -191,6 +193,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RegisterTargetsWithClassicalLBResponse> RegisterTargetsWithClassicalLBOutcome;
                 typedef std::future<RegisterTargetsWithClassicalLBOutcome> RegisterTargetsWithClassicalLBOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::RegisterTargetsWithClassicalLBRequest&, RegisterTargetsWithClassicalLBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterTargetsWithClassicalLBAsyncHandler;
+                typedef Outcome<Error, Model::ReplaceCertForLoadBalancersResponse> ReplaceCertForLoadBalancersOutcome;
+                typedef std::future<ReplaceCertForLoadBalancersOutcome> ReplaceCertForLoadBalancersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ReplaceCertForLoadBalancersRequest&, ReplaceCertForLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceCertForLoadBalancersAsyncHandler;
                 typedef Outcome<Error, Model::SetLoadBalancerSecurityGroupsResponse> SetLoadBalancerSecurityGroupsOutcome;
                 typedef std::future<SetLoadBalancerSecurityGroupsOutcome> SetLoadBalancerSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::SetLoadBalancerSecurityGroupsRequest&, SetLoadBalancerSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerSecurityGroupsAsyncHandler;
@@ -210,7 +215,7 @@ namespace TencentCloud
                 AutoRewriteOutcomeCallable AutoRewriteCallable(const Model::AutoRewriteRequest& request);
 
                 /**
-                 *BatchModifyTargetWeight接口用于批量修改监听器绑定的后端机器的转发权重，当前接口只支持应用型HTTP/HTTPS监听器。
+                 *BatchModifyTargetWeight接口用于批量修改负载均衡监听器绑定的后端机器的转发权重，暂时只支持HTTP/HTTPS监听器。不支持传统型负载均衡。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req BatchModifyTargetWeightRequest
                  * @return BatchModifyTargetWeightOutcome
@@ -374,7 +379,7 @@ namespace TencentCloud
                 DescribeRewriteOutcomeCallable DescribeRewriteCallable(const Model::DescribeRewriteRequest& request);
 
                 /**
-                 *DescribeTargetHealth 接口用来获取应用型负载均衡后端的健康检查结果。
+                 *DescribeTargetHealth 接口用来获取负载均衡后端服务的健康检查结果，不支持传统型负载均衡。
                  * @param req DescribeTargetHealthRequest
                  * @return DescribeTargetHealthOutcome
                  */
@@ -420,7 +425,7 @@ namespace TencentCloud
                 ModifyDomainOutcomeCallable ModifyDomainCallable(const Model::ModifyDomainRequest& request);
 
                 /**
-                 *ModifyListener接口用来修改应用型负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。
+                 *ModifyListener接口用来修改负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。本接口不支持传统型负载均衡。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req ModifyListenerRequest
                  * @return ModifyListenerOutcome
@@ -487,6 +492,18 @@ namespace TencentCloud
                 RegisterTargetsWithClassicalLBOutcome RegisterTargetsWithClassicalLB(const Model::RegisterTargetsWithClassicalLBRequest &request);
                 void RegisterTargetsWithClassicalLBAsync(const Model::RegisterTargetsWithClassicalLBRequest& request, const RegisterTargetsWithClassicalLBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RegisterTargetsWithClassicalLBOutcomeCallable RegisterTargetsWithClassicalLBCallable(const Model::RegisterTargetsWithClassicalLBRequest& request);
+
+                /**
+                 *ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。
+此接口支持替换服务端证书或客户端证书。
+需要使用的新证书，可以通过传入证书ID来指定，如果不指定证书ID，则必须传入证书内容等相关信息，用以新建证书并绑定至负载均衡。
+注：本接口仅可从广州地域调用，其他地域存在域名解析问题，会报错。
+                 * @param req ReplaceCertForLoadBalancersRequest
+                 * @return ReplaceCertForLoadBalancersOutcome
+                 */
+                ReplaceCertForLoadBalancersOutcome ReplaceCertForLoadBalancers(const Model::ReplaceCertForLoadBalancersRequest &request);
+                void ReplaceCertForLoadBalancersAsync(const Model::ReplaceCertForLoadBalancersRequest& request, const ReplaceCertForLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceCertForLoadBalancersOutcomeCallable ReplaceCertForLoadBalancersCallable(const Model::ReplaceCertForLoadBalancersRequest& request);
 
                 /**
                  *SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 DescribeLoadBalancers 接口。本接口是set语义，

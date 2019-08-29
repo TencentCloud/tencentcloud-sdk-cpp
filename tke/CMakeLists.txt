@@ -19,60 +19,118 @@ set(tke_public_header
   )
 
 set(tke_public_header_model
-  include/tencentcloud/tke/v20180525/model/DescribeClustersRequest.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterInstancesResponse.h
-  include/tencentcloud/tke/v20180525/model/LoginSettings.h
-  include/tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h
-  include/tencentcloud/tke/v20180525/model/Instance.h
   include/tencentcloud/tke/v20180525/model/EnhancedService.h
+  include/tencentcloud/tke/v20180525/model/LoginSettings.h
+  include/tencentcloud/tke/v20180525/model/Label.h
+  include/tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterRouteRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterAsGroupRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesRequest.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/ExistedInstancesForNode.h
   include/tencentcloud/tke/v20180525/model/CreateClusterResponse.h
-  include/tencentcloud/tke/v20180525/model/RunSecurityServiceEnabled.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterRouteTableRequest.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterRouteRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterBasicSettings.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterAsGroupResponse.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClustersRequest.h
+  include/tencentcloud/tke/v20180525/model/RouteTableInfo.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterCIDRSettings.h
   include/tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h
+  include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h
   include/tencentcloud/tke/v20180525/model/RunInstancesForNode.h
+  include/tencentcloud/tke/v20180525/model/RunSecurityServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/ExistedInstancesPara.h
-  include/tencentcloud/tke/v20180525/model/Filter.h
-  include/tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h
+  include/tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/ExistedInstance.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterRouteResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h
+  include/tencentcloud/tke/v20180525/model/RouteInfo.h
   include/tencentcloud/tke/v20180525/model/RunMonitorServiceEnabled.h
+  include/tencentcloud/tke/v20180525/model/RouteTableConflict.h
   include/tencentcloud/tke/v20180525/model/ClusterAdvancedSettings.h
+  include/tencentcloud/tke/v20180525/model/Filter.h
+  include/tencentcloud/tke/v20180525/model/Instance.h
   include/tencentcloud/tke/v20180525/model/Cluster.h
   include/tencentcloud/tke/v20180525/model/DescribeClustersResponse.h
-  include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterRouteResponse.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterResponse.h
   )
 
 set(tke_src
   src/v20180525/TkeClient.cpp
-  src/v20180525/model/DescribeClustersRequest.cpp
+  src/v20180525/model/DeleteClusterRequest.cpp
+  src/v20180525/model/DescribeClusterSecurityResponse.cpp
+  src/v20180525/model/DescribeExistedInstancesResponse.cpp
+  src/v20180525/model/DescribeClusterRoutesResponse.cpp
+  src/v20180525/model/DescribeClusterSecurityRequest.cpp
   src/v20180525/model/DeleteClusterInstancesResponse.cpp
-  src/v20180525/model/LoginSettings.cpp
-  src/v20180525/model/AddExistedInstancesRequest.cpp
-  src/v20180525/model/Instance.cpp
   src/v20180525/model/EnhancedService.cpp
+  src/v20180525/model/LoginSettings.cpp
+  src/v20180525/model/Label.cpp
+  src/v20180525/model/AddExistedInstancesRequest.cpp
+  src/v20180525/model/CreateClusterRouteRequest.cpp
+  src/v20180525/model/DescribeClusterInstancesResponse.cpp
+  src/v20180525/model/CreateClusterAsGroupRequest.cpp
+  src/v20180525/model/DescribeClusterRouteTablesRequest.cpp
+  src/v20180525/model/CreateClusterInstancesResponse.cpp
+  src/v20180525/model/CreateClusterRouteTableResponse.cpp
   src/v20180525/model/ExistedInstancesForNode.cpp
   src/v20180525/model/CreateClusterResponse.cpp
-  src/v20180525/model/RunSecurityServiceEnabled.cpp
+  src/v20180525/model/DescribeClusterRoutesRequest.cpp
+  src/v20180525/model/DeleteClusterRouteTableRequest.cpp
+  src/v20180525/model/DeleteClusterRouteRequest.cpp
   src/v20180525/model/ClusterBasicSettings.cpp
   src/v20180525/model/CreateClusterRequest.cpp
   src/v20180525/model/DeleteClusterInstancesRequest.cpp
+  src/v20180525/model/CreateClusterInstancesRequest.cpp
+  src/v20180525/model/CreateClusterAsGroupResponse.cpp
+  src/v20180525/model/CreateClusterRouteTableRequest.cpp
+  src/v20180525/model/DescribeClusterRouteTablesResponse.cpp
+  src/v20180525/model/DescribeClustersRequest.cpp
+  src/v20180525/model/RouteTableInfo.cpp
   src/v20180525/model/DescribeClusterInstancesRequest.cpp
   src/v20180525/model/ClusterCIDRSettings.cpp
   src/v20180525/model/InstanceAdvancedSettings.cpp
+  src/v20180525/model/DescribeRouteTableConflictsRequest.cpp
   src/v20180525/model/RunInstancesForNode.cpp
+  src/v20180525/model/RunSecurityServiceEnabled.cpp
   src/v20180525/model/ExistedInstancesPara.cpp
-  src/v20180525/model/Filter.cpp
-  src/v20180525/model/ClusterNetworkSettings.cpp
+  src/v20180525/model/DescribeExistedInstancesRequest.cpp
+  src/v20180525/model/ExistedInstance.cpp
+  src/v20180525/model/CreateClusterRouteResponse.cpp
+  src/v20180525/model/DescribeRouteTableConflictsResponse.cpp
+  src/v20180525/model/RouteInfo.cpp
   src/v20180525/model/RunMonitorServiceEnabled.cpp
+  src/v20180525/model/RouteTableConflict.cpp
   src/v20180525/model/ClusterAdvancedSettings.cpp
+  src/v20180525/model/Filter.cpp
+  src/v20180525/model/Instance.cpp
   src/v20180525/model/Cluster.cpp
   src/v20180525/model/DescribeClustersResponse.cpp
-  src/v20180525/model/DescribeClusterInstancesResponse.cpp
+  src/v20180525/model/ClusterNetworkSettings.cpp
+  src/v20180525/model/DeleteClusterRouteResponse.cpp
   src/v20180525/model/AddExistedInstancesResponse.cpp
+  src/v20180525/model/DeleteClusterRouteTableResponse.cpp
+  src/v20180525/model/DeleteClusterResponse.cpp
   )
 
 set(tke_include

@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyAddressAttributeRequest::ModifyAddressAttributeRequest() :
     m_addressIdHasBeenSet(false),
-    m_addressNameHasBeenSet(false)
+    m_addressNameHasBeenSet(false),
+    m_eipDirectConnectionHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ModifyAddressAttributeRequest::ToJsonString() const
         string key = "AddressName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_addressName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipDirectConnectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EipDirectConnection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eipDirectConnection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ModifyAddressAttributeRequest::SetAddressName(const string& _addressName)
 bool ModifyAddressAttributeRequest::AddressNameHasBeenSet() const
 {
     return m_addressNameHasBeenSet;
+}
+
+string ModifyAddressAttributeRequest::GetEipDirectConnection() const
+{
+    return m_eipDirectConnection;
+}
+
+void ModifyAddressAttributeRequest::SetEipDirectConnection(const string& _eipDirectConnection)
+{
+    m_eipDirectConnection = _eipDirectConnection;
+    m_eipDirectConnectionHasBeenSet = true;
+}
+
+bool ModifyAddressAttributeRequest::EipDirectConnectionHasBeenSet() const
+{
+    return m_eipDirectConnectionHasBeenSet;
 }
 
 

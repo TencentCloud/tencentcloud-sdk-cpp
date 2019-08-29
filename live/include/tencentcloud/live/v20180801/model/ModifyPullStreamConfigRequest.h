@@ -97,14 +97,34 @@ namespace TencentCloud
                     bool ToUrlHasBeenSet() const;
 
                     /**
-                     * 获取区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。
-                     * @return AreaId 区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。
+                     * 获取区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
+如有改动，需同时传入IspId。
+                     * @return AreaId 区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
+如有改动，需同时传入IspId。
                      */
                     int64_t GetAreaId() const;
 
                     /**
-                     * 设置区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。
-                     * @param AreaId 区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。
+                     * 设置区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
+如有改动，需同时传入IspId。
+                     * @param AreaId 区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
+如有改动，需同时传入IspId。
                      */
                     void SetAreaId(const int64_t& _areaId);
 
@@ -221,7 +241,12 @@ namespace TencentCloud
                     bool m_toUrlHasBeenSet;
 
                     /**
-                     * 区域id,1-深圳,2-上海，3-天津,4-香港。如有改动，需同时传入IspId。
+                     * 区域id：
+1-深圳，
+2-上海，
+3-天津，
+4-中国香港。
+如有改动，需同时传入IspId。
                      */
                     int64_t m_areaId;
                     bool m_areaIdHasBeenSet;

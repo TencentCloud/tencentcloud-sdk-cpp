@@ -22,7 +22,6 @@ using namespace rapidjson;
 using namespace std;
 
 Instance::Instance() :
-    m_instanceAdvanceSettingsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceRoleHasBeenSet(false),
     m_failedReasonHasBeenSet(false),
@@ -34,23 +33,6 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("InstanceAdvanceSettings") && !value["InstanceAdvanceSettings"].IsNull())
-    {
-        if (!value["InstanceAdvanceSettings"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `Instance.InstanceAdvanceSettings` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_instanceAdvanceSettings.Deserialize(value["InstanceAdvanceSettings"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_instanceAdvanceSettingsHasBeenSet = true;
-    }
 
     if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
     {
@@ -99,15 +81,6 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
 void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_instanceAdvanceSettingsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "InstanceAdvanceSettings";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_instanceAdvanceSettings.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_instanceIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -142,22 +115,6 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
 }
 
-
-InstanceAdvancedSettings Instance::GetInstanceAdvanceSettings() const
-{
-    return m_instanceAdvanceSettings;
-}
-
-void Instance::SetInstanceAdvanceSettings(const InstanceAdvancedSettings& _instanceAdvanceSettings)
-{
-    m_instanceAdvanceSettings = _instanceAdvanceSettings;
-    m_instanceAdvanceSettingsHasBeenSet = true;
-}
-
-bool Instance::InstanceAdvanceSettingsHasBeenSet() const
-{
-    return m_instanceAdvanceSettingsHasBeenSet;
-}
 
 string Instance::GetInstanceId() const
 {

@@ -84,18 +84,21 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const Value &val
 
     if (value.HasMember("ReviewSummery") && !value["ReviewSummery"].IsNull())
     {
-        if (!value["ReviewSummery"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.ReviewSummery` is not object type").SetRequestId(requestId));
-        }
+        if (!value["ReviewSummery"].IsArray())
+            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.ReviewSummery` is not array type"));
 
-        CoreInternalOutcome outcome = m_reviewSummery.Deserialize(value["ReviewSummery"]);
-        if (!outcome.IsSuccess())
+        const Value &tmpValue = value["ReviewSummery"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            MediaMiniProgramReviewElem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_reviewSummery.push_back(item);
         }
-
         m_reviewSummeryHasBeenSet = true;
     }
 
@@ -144,8 +147,14 @@ void MediaMiniProgramReviewInfoItem::ToJsonObject(Value &value, Document::Alloca
         Value iKey(kStringType);
         string key = "ReviewSummery";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_reviewSummery.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_reviewSummery.begin(); itr != m_reviewSummery.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -215,12 +224,12 @@ bool MediaMiniProgramReviewInfoItem::ReviewResultHasBeenSet() const
     return m_reviewResultHasBeenSet;
 }
 
-MediaMiniProgramReviewElem MediaMiniProgramReviewInfoItem::GetReviewSummery() const
+vector<MediaMiniProgramReviewElem> MediaMiniProgramReviewInfoItem::GetReviewSummery() const
 {
     return m_reviewSummery;
 }
 
-void MediaMiniProgramReviewInfoItem::SetReviewSummery(const MediaMiniProgramReviewElem& _reviewSummery)
+void MediaMiniProgramReviewInfoItem::SetReviewSummery(const vector<MediaMiniProgramReviewElem>& _reviewSummery)
 {
     m_reviewSummery = _reviewSummery;
     m_reviewSummeryHasBeenSet = true;

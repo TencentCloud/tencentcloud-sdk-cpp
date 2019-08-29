@@ -29,7 +29,8 @@ DomainInfo::DomainInfo() :
     m_bCNameHasBeenSet(false),
     m_targetDomainHasBeenSet(false),
     m_playTypeHasBeenSet(false),
-    m_isDelayLiveHasBeenSet(false)
+    m_isDelayLiveHasBeenSet(false),
+    m_currentCNameHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome DomainInfo::Deserialize(const Value &value)
         m_isDelayLiveHasBeenSet = true;
     }
 
+    if (value.HasMember("CurrentCName") && !value["CurrentCName"].IsNull())
+    {
+        if (!value["CurrentCName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainInfo.CurrentCName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentCName = string(value["CurrentCName"].GetString());
+        m_currentCNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void DomainInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "IsDelayLive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDelayLive, allocator);
+    }
+
+    if (m_currentCNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CurrentCName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_currentCName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void DomainInfo::SetIsDelayLive(const int64_t& _isDelayLive)
 bool DomainInfo::IsDelayLiveHasBeenSet() const
 {
     return m_isDelayLiveHasBeenSet;
+}
+
+string DomainInfo::GetCurrentCName() const
+{
+    return m_currentCName;
+}
+
+void DomainInfo::SetCurrentCName(const string& _currentCName)
+{
+    m_currentCName = _currentCName;
+    m_currentCNameHasBeenSet = true;
+}
+
+bool DomainInfo::CurrentCNameHasBeenSet() const
+{
+    return m_currentCNameHasBeenSet;
 }
 

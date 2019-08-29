@@ -28,7 +28,8 @@ InstanceTextParam::InstanceTextParam() :
     m_defaultValueHasBeenSet(false),
     m_currentValueHasBeenSet(false),
     m_tipsHasBeenSet(false),
-    m_textValueHasBeenSet(false)
+    m_textValueHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,16 @@ CoreInternalOutcome InstanceTextParam::Deserialize(const Value &value)
         m_textValueHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTextParam.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -176,6 +187,14 @@ void InstanceTextParam::ToJsonObject(Value &value, Document::AllocatorType& allo
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -291,5 +310,21 @@ void InstanceTextParam::SetTextValue(const vector<string>& _textValue)
 bool InstanceTextParam::TextValueHasBeenSet() const
 {
     return m_textValueHasBeenSet;
+}
+
+int64_t InstanceTextParam::GetStatus() const
+{
+    return m_status;
+}
+
+void InstanceTextParam::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool InstanceTextParam::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

@@ -126,6 +126,49 @@ ScfClient::CreateFunctionOutcomeCallable ScfClient::CreateFunctionCallable(const
     return task->get_future();
 }
 
+ScfClient::CreateNamespaceOutcome ScfClient::CreateNamespace(const CreateNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNamespaceResponse rsp = CreateNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNamespaceOutcome(rsp);
+        else
+            return CreateNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNamespace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::CreateNamespaceOutcomeCallable ScfClient::CreateNamespaceCallable(const CreateNamespaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNamespaceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::CreateTriggerOutcome ScfClient::CreateTrigger(const CreateTriggerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTrigger");
@@ -212,6 +255,49 @@ ScfClient::DeleteFunctionOutcomeCallable ScfClient::DeleteFunctionCallable(const
     return task->get_future();
 }
 
+ScfClient::DeleteNamespaceOutcome ScfClient::DeleteNamespace(const DeleteNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNamespaceResponse rsp = DeleteNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNamespaceOutcome(rsp);
+        else
+            return DeleteNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNamespace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::DeleteNamespaceOutcomeCallable ScfClient::DeleteNamespaceCallable(const DeleteNamespaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNamespaceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::DeleteTriggerOutcome ScfClient::DeleteTrigger(const DeleteTriggerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTrigger");
@@ -291,6 +377,49 @@ ScfClient::GetFunctionOutcomeCallable ScfClient::GetFunctionCallable(const GetFu
         [this, request]()
         {
             return this->GetFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::GetFunctionAddressOutcome ScfClient::GetFunctionAddress(const GetFunctionAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFunctionAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFunctionAddressResponse rsp = GetFunctionAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFunctionAddressOutcome(rsp);
+        else
+            return GetFunctionAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFunctionAddressOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetFunctionAddressAsync(const GetFunctionAddressRequest& request, const GetFunctionAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFunctionAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetFunctionAddressOutcomeCallable ScfClient::GetFunctionAddressCallable(const GetFunctionAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFunctionAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFunctionAddress(request);
         }
     );
 
@@ -427,6 +556,135 @@ ScfClient::ListFunctionsOutcomeCallable ScfClient::ListFunctionsCallable(const L
     return task->get_future();
 }
 
+ScfClient::ListNamespacesOutcome ScfClient::ListNamespaces(const ListNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListNamespacesResponse rsp = ListNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListNamespacesOutcome(rsp);
+        else
+            return ListNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListNamespacesOutcomeCallable ScfClient::ListNamespacesCallable(const ListNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::ListVersionByFunctionOutcome ScfClient::ListVersionByFunction(const ListVersionByFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListVersionByFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListVersionByFunctionResponse rsp = ListVersionByFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListVersionByFunctionOutcome(rsp);
+        else
+            return ListVersionByFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return ListVersionByFunctionOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListVersionByFunctionAsync(const ListVersionByFunctionRequest& request, const ListVersionByFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListVersionByFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListVersionByFunctionOutcomeCallable ScfClient::ListVersionByFunctionCallable(const ListVersionByFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListVersionByFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->ListVersionByFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::PublishVersionOutcome ScfClient::PublishVersion(const PublishVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishVersionResponse rsp = PublishVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishVersionOutcome(rsp);
+        else
+            return PublishVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishVersionOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::PublishVersionAsync(const PublishVersionRequest& request, const PublishVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::PublishVersionOutcomeCallable ScfClient::PublishVersionCallable(const PublishVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::UpdateFunctionCodeOutcome ScfClient::UpdateFunctionCode(const UpdateFunctionCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateFunctionCode");
@@ -506,6 +764,49 @@ ScfClient::UpdateFunctionConfigurationOutcomeCallable ScfClient::UpdateFunctionC
         [this, request]()
         {
             return this->UpdateFunctionConfiguration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::UpdateNamespaceOutcome ScfClient::UpdateNamespace(const UpdateNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateNamespaceResponse rsp = UpdateNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateNamespaceOutcome(rsp);
+        else
+            return UpdateNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::UpdateNamespaceAsync(const UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateNamespace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::UpdateNamespaceOutcomeCallable ScfClient::UpdateNamespaceCallable(const UpdateNamespaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateNamespaceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateNamespace(request);
         }
     );
 

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品名称
-                     * @return BusinessCodeName 产品名称
+                     * 获取产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * @return BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
-                     * 设置产品名称
-                     * @param BusinessCodeName 产品名称
+                     * 设置产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * @param BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool BusinessCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取子产品名称
-                     * @return ProductCodeName 子产品名称
+                     * 获取子产品名称：云产品子类，如云服务器CVM-标准型S1
+                     * @return ProductCodeName 子产品名称：云产品子类，如云服务器CVM-标准型S1
                      */
                     std::string GetProductCodeName() const;
 
                     /**
-                     * 设置子产品名称
-                     * @param ProductCodeName 子产品名称
+                     * 设置子产品名称：云产品子类，如云服务器CVM-标准型S1
+                     * @param ProductCodeName 子产品名称：云产品子类，如云服务器CVM-标准型S1
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool ProductCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取计费模式
-                     * @return PayModeName 计费模式
+                     * 获取计费模式：包年包月和按量计费
+                     * @return PayModeName 计费模式：包年包月和按量计费
                      */
                     std::string GetPayModeName() const;
 
                     /**
-                     * 设置计费模式
-                     * @param PayModeName 计费模式
+                     * 设置计费模式：包年包月和按量计费
+                     * @param PayModeName 计费模式：包年包月和按量计费
                      */
                     void SetPayModeName(const std::string& _payModeName);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool PayModeNameHasBeenSet() const;
 
                     /**
-                     * 获取项目
-                     * @return ProjectName 项目
+                     * 获取项目:资源所属项目
+                     * @return ProjectName 项目:资源所属项目
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目
-                     * @param ProjectName 项目
+                     * 设置项目:资源所属项目
+                     * @param ProjectName 项目:资源所属项目
                      */
                     void SetProjectName(const std::string& _projectName);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取区域
-                     * @return RegionName 区域
+                     * 获取区域：资源所属地域，如华南地区（广州）
+                     * @return RegionName 区域：资源所属地域，如华南地区（广州）
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置区域
-                     * @param RegionName 区域
+                     * 设置区域：资源所属地域，如华南地区（广州）
+                     * @param RegionName 区域：资源所属地域，如华南地区（广州）
                      */
                     void SetRegionName(const std::string& _regionName);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool RegionNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return ZoneName 可用区
+                     * 获取可用区：资源所属可用区，如广州三区
+                     * @return ZoneName 可用区：资源所属可用区，如广州三区
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置可用区
-                     * @param ZoneName 可用区
+                     * 设置可用区：资源所属可用区，如广州三区
+                     * @param ZoneName 可用区：资源所属可用区，如广州三区
                      */
                     void SetZoneName(const std::string& _zoneName);
 
@@ -374,37 +374,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品名称
+                     * 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;
 
                     /**
-                     * 子产品名称
+                     * 子产品名称：云产品子类，如云服务器CVM-标准型S1
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;
 
                     /**
-                     * 计费模式
+                     * 计费模式：包年包月和按量计费
                      */
                     std::string m_payModeName;
                     bool m_payModeNameHasBeenSet;
 
                     /**
-                     * 项目
+                     * 项目:资源所属项目
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 区域
+                     * 区域：资源所属地域，如华南地区（广州）
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
-                     * 可用区
+                     * 可用区：资源所属可用区，如广州三区
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;

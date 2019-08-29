@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/HeadTailConfigureInfo.h>
+#include <tencentcloud/vod/v20180717/model/SegmentConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/FaceConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/OcrFullTextConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/OcrWordsConfigureInfo.h>
@@ -102,6 +103,24 @@ namespace TencentCloud
                      * @return HeadTailConfigure 是否已赋值
                      */
                     bool HeadTailConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取视频拆条识别控制参数。
+                     * @return SegmentConfigure 视频拆条识别控制参数。
+                     */
+                    SegmentConfigureInfo GetSegmentConfigure() const;
+
+                    /**
+                     * 设置视频拆条识别控制参数。
+                     * @param SegmentConfigure 视频拆条识别控制参数。
+                     */
+                    void SetSegmentConfigure(const SegmentConfigureInfo& _segmentConfigure);
+
+                    /**
+                     * 判断参数 SegmentConfigure 是否已赋值
+                     * @return SegmentConfigure 是否已赋值
+                     */
+                    bool SegmentConfigureHasBeenSet() const;
 
                     /**
                      * 获取人脸识别控制参数。
@@ -266,6 +285,12 @@ namespace TencentCloud
                      */
                     HeadTailConfigureInfo m_headTailConfigure;
                     bool m_headTailConfigureHasBeenSet;
+
+                    /**
+                     * 视频拆条识别控制参数。
+                     */
+                    SegmentConfigureInfo m_segmentConfigure;
+                    bool m_segmentConfigureHasBeenSet;
 
                     /**
                      * 人脸识别控制参数。

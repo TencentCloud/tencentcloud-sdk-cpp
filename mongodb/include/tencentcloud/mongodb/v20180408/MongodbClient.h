@@ -29,6 +29,8 @@
 #include <tencentcloud/mongodb/v20180408/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20180408/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/mongodb/v20180408/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeClientConnectionsRequest.h>
+#include <tencentcloud/mongodb/v20180408/model/DescribeClientConnectionsResponse.h>
 #include <tencentcloud/mongodb/v20180408/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20180408/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/mongodb/v20180408/model/DescribeSlowLogRequest.h>
@@ -70,6 +72,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClientConnectionsResponse> DescribeClientConnectionsOutcome;
+                typedef std::future<DescribeClientConnectionsOutcome> DescribeClientConnectionsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeClientConnectionsRequest&, DescribeClientConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientConnectionsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
@@ -128,6 +133,15 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcome CreateDBInstanceHour(const Model::CreateDBInstanceHourRequest &request);
                 void CreateDBInstanceHourAsync(const Model::CreateDBInstanceHourRequest& request, const CreateDBInstanceHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
+
+                /**
+                 *本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。目前只支持3.2版本的MongoDB实例。
+                 * @param req DescribeClientConnectionsRequest
+                 * @return DescribeClientConnectionsOutcome
+                 */
+                DescribeClientConnectionsOutcome DescribeClientConnections(const Model::DescribeClientConnectionsRequest &request);
+                void DescribeClientConnectionsAsync(const Model::DescribeClientConnectionsRequest& request, const DescribeClientConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientConnectionsOutcomeCallable DescribeClientConnectionsCallable(const Model::DescribeClientConnectionsRequest& request);
 
                 /**
                  *本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。

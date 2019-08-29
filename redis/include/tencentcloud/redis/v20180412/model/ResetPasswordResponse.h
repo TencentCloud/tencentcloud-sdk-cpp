@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取任务ID（修改密码时的任务ID，如果时切换免密码或者非免密码实例，则无需关注此返回值）
+                     * @return TaskId 任务ID（修改密码时的任务ID，如果时切换免密码或者非免密码实例，则无需关注此返回值）
                      */
                     int64_t GetTaskId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID
+                     * 任务ID（修改密码时的任务ID，如果时切换免密码或者非免密码实例，则无需关注此返回值）
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

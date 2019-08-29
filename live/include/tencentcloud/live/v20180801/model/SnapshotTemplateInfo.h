@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取截图时间间隔。5-300
-                     * @return SnapshotInterval 截图时间间隔。5-300
+                     * 获取截图时间间隔。5-300秒。
+                     * @return SnapshotInterval 截图时间间隔。5-300秒。
                      */
                     int64_t GetSnapshotInterval() const;
 
                     /**
-                     * 设置截图时间间隔。5-300
-                     * @param SnapshotInterval 截图时间间隔。5-300
+                     * 设置截图时间间隔。5-300秒。
+                     * @param SnapshotInterval 截图时间间隔。5-300秒。
                      */
                     void SetSnapshotInterval(const int64_t& _snapshotInterval);
 
@@ -241,7 +241,7 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 截图时间间隔。5-300
+                     * 截图时间间隔。5-300秒。
                      */
                     int64_t m_snapshotInterval;
                     bool m_snapshotIntervalHasBeenSet;

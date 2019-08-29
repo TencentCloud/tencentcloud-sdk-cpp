@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/scf/v20180416/model/FunctionLog.h>
+#include <tencentcloud/scf/v20180416/model/LogSearchContext.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,18 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取日志服务分页参数
+                     * @return SearchContext 日志服务分页参数
+                     */
+                    LogSearchContext GetSearchContext() const;
+
+                    /**
+                     * 判断参数 SearchContext 是否已赋值
+                     * @return SearchContext 是否已赋值
+                     */
+                    bool SearchContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +93,12 @@ namespace TencentCloud
                      */
                     std::vector<FunctionLog> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 日志服务分页参数
+                     */
+                    LogSearchContext m_searchContext;
+                    bool m_searchContextHasBeenSet;
 
                 };
             }

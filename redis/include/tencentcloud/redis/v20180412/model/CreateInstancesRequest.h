@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，7 – Redis4.0集群版，
-                     * @return TypeId 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，7 – Redis4.0集群版，
+                     * 获取实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，
+                     * @return TypeId 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，
                      */
                     uint64_t GetTypeId() const;
 
                     /**
-                     * 设置实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，7 – Redis4.0集群版，
-                     * @param TypeId 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，7 – Redis4.0集群版，
+                     * 设置实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，
+                     * @param TypeId 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，
                      */
                     void SetTypeId(const uint64_t& _typeId);
 
@@ -133,24 +133,6 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种
-                     * @return Password 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种
-                     */
-                    std::string GetPassword() const;
-
-                    /**
-                     * 设置实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种
-                     * @param Password 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种
-                     */
-                    void SetPassword(const std::string& _password);
-
-                    /**
-                     * 判断参数 Password 是否已赋值
-                     * @return Password 是否已赋值
-                     */
-                    bool PasswordHasBeenSet() const;
-
-                    /**
                      * 获取付费方式:0-按量计费，1-包年包月。
                      * @return BillingMode 付费方式:0-按量计费，1-包年包月。
                      */
@@ -167,6 +149,24 @@ namespace TencentCloud
                      * @return BillingMode 是否已赋值
                      */
                     bool BillingModeHasBeenSet() const;
+
+                    /**
+                     * 获取实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     * @return Password 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     * @param Password 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     */
+                    bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool VPortHasBeenSet() const;
 
                     /**
-                     * 获取实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @return RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 获取实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
+                     * @return RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @param RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 设置实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
+                     * @param RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
 
@@ -348,6 +348,24 @@ namespace TencentCloud
                      */
                     bool InstanceNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     * @return NoAuth 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     */
+                    bool GetNoAuth() const;
+
+                    /**
+                     * 设置是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     * @param NoAuth 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     */
+                    void SetNoAuth(const bool& _noAuth);
+
+                    /**
+                     * 判断参数 NoAuth 是否已赋值
+                     * @return NoAuth 是否已赋值
+                     */
+                    bool NoAuthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,7 +375,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，7 – Redis4.0集群版，
+                     * 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，
                      */
                     uint64_t m_typeId;
                     bool m_typeIdHasBeenSet;
@@ -381,16 +399,16 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种
-                     */
-                    std::string m_password;
-                    bool m_passwordHasBeenSet;
-
-                    /**
                      * 付费方式:0-按量计费，1-包年包月。
                      */
                     int64_t m_billingMode;
                     bool m_billingModeHasBeenSet;
+
+                    /**
+                     * 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
 
                     /**
                      * 私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk
@@ -429,7 +447,7 @@ namespace TencentCloud
                     bool m_vPortHasBeenSet;
 
                     /**
-                     * 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
@@ -451,6 +469,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     */
+                    bool m_noAuth;
+                    bool m_noAuthHasBeenSet;
 
                 };
             }

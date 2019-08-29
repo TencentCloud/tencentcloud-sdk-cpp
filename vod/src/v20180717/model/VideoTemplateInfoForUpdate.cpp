@@ -27,7 +27,8 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_bitrateHasBeenSet(false),
     m_resolutionAdaptiveHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("FillType") && !value["FillType"].IsNull())
+    {
+        if (!value["FillType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VideoTemplateInfoForUpdate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fillType = string(value["FillType"].GetString());
+        m_fillTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorT
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void VideoTemplateInfoForUpdate::SetHeight(const uint64_t& _height)
 bool VideoTemplateInfoForUpdate::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+string VideoTemplateInfoForUpdate::GetFillType() const
+{
+    return m_fillType;
+}
+
+void VideoTemplateInfoForUpdate::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 

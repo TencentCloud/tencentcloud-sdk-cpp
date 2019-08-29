@@ -115,6 +115,24 @@ namespace TencentCloud
                     bool LibrarySetHasBeenSet() const;
 
                     /**
+                     * 获取直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     * @return MaxVideoDuration 直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     */
+                    int64_t GetMaxVideoDuration() const;
+
+                    /**
+                     * 设置直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     * @param MaxVideoDuration 直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     */
+                    void SetMaxVideoDuration(const int64_t& _maxVideoDuration);
+
+                    /**
+                     * 判断参数 MaxVideoDuration 是否已赋值
+                     * @return MaxVideoDuration 是否已赋值
+                     */
+                    bool MaxVideoDurationHasBeenSet() const;
+
+                    /**
                      * 获取标准化模板选择：0：AI助教基础版本，1：AI评教基础版本，2：AI评教标准版本。AI 助教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、学生动作选项，音频信息分析，微笑识别。AI 评教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、音频信息分析。AI 评教标准版功能包括人脸检索、人脸检测、人脸表情识别、手势识别、音频信息分析、音频关键词分析、视频精彩集锦分析。
                      * @return Template 标准化模板选择：0：AI助教基础版本，1：AI评教基础版本，2：AI评教标准版本。AI 助教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、学生动作选项，音频信息分析，微笑识别。AI 评教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、音频信息分析。AI 评教标准版功能包括人脸检索、人脸检测、人脸表情识别、手势识别、音频信息分析、音频关键词分析、视频精彩集锦分析。
                      */
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_librarySet;
                     bool m_librarySetHasBeenSet;
+
+                    /**
+                     * 直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     */
+                    int64_t m_maxVideoDuration;
+                    bool m_maxVideoDurationHasBeenSet;
 
                     /**
                      * 标准化模板选择：0：AI助教基础版本，1：AI评教基础版本，2：AI评教标准版本。AI 助教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、学生动作选项，音频信息分析，微笑识别。AI 评教基础版本功能包括：人脸检索、人脸检测、人脸表情识别、音频信息分析。AI 评教标准版功能包括人脸检索、人脸检测、人脸表情识别、手势识别、音频信息分析、音频关键词分析、视频精彩集锦分析。

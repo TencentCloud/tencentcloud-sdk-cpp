@@ -83,6 +83,49 @@ CmsClient::AudioModerationOutcomeCallable CmsClient::AudioModerationCallable(con
     return task->get_future();
 }
 
+CmsClient::CreateFileSampleOutcome CmsClient::CreateFileSample(const CreateFileSampleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFileSample");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFileSampleResponse rsp = CreateFileSampleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFileSampleOutcome(rsp);
+        else
+            return CreateFileSampleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFileSampleOutcome(outcome.GetError());
+    }
+}
+
+void CmsClient::CreateFileSampleAsync(const CreateFileSampleRequest& request, const CreateFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFileSample(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmsClient::CreateFileSampleOutcomeCallable CmsClient::CreateFileSampleCallable(const CreateFileSampleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFileSampleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFileSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmsClient::CreateTextSampleOutcome CmsClient::CreateTextSample(const CreateTextSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTextSample");
@@ -126,6 +169,49 @@ CmsClient::CreateTextSampleOutcomeCallable CmsClient::CreateTextSampleCallable(c
     return task->get_future();
 }
 
+CmsClient::DeleteFileSampleOutcome CmsClient::DeleteFileSample(const DeleteFileSampleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFileSample");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFileSampleResponse rsp = DeleteFileSampleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFileSampleOutcome(rsp);
+        else
+            return DeleteFileSampleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFileSampleOutcome(outcome.GetError());
+    }
+}
+
+void CmsClient::DeleteFileSampleAsync(const DeleteFileSampleRequest& request, const DeleteFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFileSample(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmsClient::DeleteFileSampleOutcomeCallable CmsClient::DeleteFileSampleCallable(const DeleteFileSampleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFileSampleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFileSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmsClient::DeleteTextSampleOutcome CmsClient::DeleteTextSample(const DeleteTextSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTextSample");
@@ -162,6 +248,49 @@ CmsClient::DeleteTextSampleOutcomeCallable CmsClient::DeleteTextSampleCallable(c
         [this, request]()
         {
             return this->DeleteTextSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CmsClient::DescribeFileSampleOutcome CmsClient::DescribeFileSample(const DescribeFileSampleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileSample");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileSampleResponse rsp = DescribeFileSampleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileSampleOutcome(rsp);
+        else
+            return DescribeFileSampleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileSampleOutcome(outcome.GetError());
+    }
+}
+
+void CmsClient::DescribeFileSampleAsync(const DescribeFileSampleRequest& request, const DescribeFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileSample(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmsClient::DescribeFileSampleOutcomeCallable CmsClient::DescribeFileSampleCallable(const DescribeFileSampleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileSampleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileSample(request);
         }
     );
 

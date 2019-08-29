@@ -106,6 +106,18 @@ namespace TencentCloud
                      */
                     bool AllTextsHasBeenSet() const;
 
+                    /**
+                     * 获取临时保存的音频链接
+                     * @return AudioUrl 临时保存的音频链接
+                     */
+                    std::string GetAudioUrl() const;
+
+                    /**
+                     * 判断参数 AudioUrl 是否已赋值
+                     * @return AudioUrl 是否已赋值
+                     */
+                    bool AudioUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -137,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_allTexts;
                     bool m_allTextsHasBeenSet;
+
+                    /**
+                     * 临时保存的音频链接
+                     */
+                    std::string m_audioUrl;
+                    bool m_audioUrlHasBeenSet;
 
                 };
             }

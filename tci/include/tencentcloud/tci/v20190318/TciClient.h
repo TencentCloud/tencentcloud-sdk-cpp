@@ -27,8 +27,6 @@
 #include <tencentcloud/tci/v20190318/model/AIAssistantResponse.h>
 #include <tencentcloud/tci/v20190318/model/CancelTaskRequest.h>
 #include <tencentcloud/tci/v20190318/model/CancelTaskResponse.h>
-#include <tencentcloud/tci/v20190318/model/CheckAttendanceRequest.h>
-#include <tencentcloud/tci/v20190318/model/CheckAttendanceResponse.h>
 #include <tencentcloud/tci/v20190318/model/CheckFacePhotoRequest.h>
 #include <tencentcloud/tci/v20190318/model/CheckFacePhotoResponse.h>
 #include <tencentcloud/tci/v20190318/model/CreateFaceRequest.h>
@@ -87,10 +85,20 @@
 #include <tencentcloud/tci/v20190318/model/SubmitConversationTaskResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitDoubleVideoHighlightsRequest.h>
 #include <tencentcloud/tci/v20190318/model/SubmitDoubleVideoHighlightsResponse.h>
+#include <tencentcloud/tci/v20190318/model/SubmitFullBodyClassTaskRequest.h>
+#include <tencentcloud/tci/v20190318/model/SubmitFullBodyClassTaskResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitHighlightsRequest.h>
 #include <tencentcloud/tci/v20190318/model/SubmitHighlightsResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitImageTaskRequest.h>
 #include <tencentcloud/tci/v20190318/model/SubmitImageTaskResponse.h>
+#include <tencentcloud/tci/v20190318/model/SubmitOneByOneClassTaskRequest.h>
+#include <tencentcloud/tci/v20190318/model/SubmitOneByOneClassTaskResponse.h>
+#include <tencentcloud/tci/v20190318/model/SubmitOpenClassTaskRequest.h>
+#include <tencentcloud/tci/v20190318/model/SubmitOpenClassTaskResponse.h>
+#include <tencentcloud/tci/v20190318/model/SubmitPartialBodyClassTaskRequest.h>
+#include <tencentcloud/tci/v20190318/model/SubmitPartialBodyClassTaskResponse.h>
+#include <tencentcloud/tci/v20190318/model/SubmitTraditionalClassTaskRequest.h>
+#include <tencentcloud/tci/v20190318/model/SubmitTraditionalClassTaskResponse.h>
 #include <tencentcloud/tci/v20190318/model/TransmitAudioStreamRequest.h>
 #include <tencentcloud/tci/v20190318/model/TransmitAudioStreamResponse.h>
 
@@ -113,9 +121,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
-                typedef Outcome<Error, Model::CheckAttendanceResponse> CheckAttendanceOutcome;
-                typedef std::future<CheckAttendanceOutcome> CheckAttendanceOutcomeCallable;
-                typedef std::function<void(const TciClient*, const Model::CheckAttendanceRequest&, CheckAttendanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAttendanceAsyncHandler;
                 typedef Outcome<Error, Model::CheckFacePhotoResponse> CheckFacePhotoOutcome;
                 typedef std::future<CheckFacePhotoOutcome> CheckFacePhotoOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::CheckFacePhotoRequest&, CheckFacePhotoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFacePhotoAsyncHandler;
@@ -203,12 +208,27 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SubmitDoubleVideoHighlightsResponse> SubmitDoubleVideoHighlightsOutcome;
                 typedef std::future<SubmitDoubleVideoHighlightsOutcome> SubmitDoubleVideoHighlightsOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::SubmitDoubleVideoHighlightsRequest&, SubmitDoubleVideoHighlightsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDoubleVideoHighlightsAsyncHandler;
+                typedef Outcome<Error, Model::SubmitFullBodyClassTaskResponse> SubmitFullBodyClassTaskOutcome;
+                typedef std::future<SubmitFullBodyClassTaskOutcome> SubmitFullBodyClassTaskOutcomeCallable;
+                typedef std::function<void(const TciClient*, const Model::SubmitFullBodyClassTaskRequest&, SubmitFullBodyClassTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitFullBodyClassTaskAsyncHandler;
                 typedef Outcome<Error, Model::SubmitHighlightsResponse> SubmitHighlightsOutcome;
                 typedef std::future<SubmitHighlightsOutcome> SubmitHighlightsOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::SubmitHighlightsRequest&, SubmitHighlightsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHighlightsAsyncHandler;
                 typedef Outcome<Error, Model::SubmitImageTaskResponse> SubmitImageTaskOutcome;
                 typedef std::future<SubmitImageTaskOutcome> SubmitImageTaskOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::SubmitImageTaskRequest&, SubmitImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitImageTaskAsyncHandler;
+                typedef Outcome<Error, Model::SubmitOneByOneClassTaskResponse> SubmitOneByOneClassTaskOutcome;
+                typedef std::future<SubmitOneByOneClassTaskOutcome> SubmitOneByOneClassTaskOutcomeCallable;
+                typedef std::function<void(const TciClient*, const Model::SubmitOneByOneClassTaskRequest&, SubmitOneByOneClassTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitOneByOneClassTaskAsyncHandler;
+                typedef Outcome<Error, Model::SubmitOpenClassTaskResponse> SubmitOpenClassTaskOutcome;
+                typedef std::future<SubmitOpenClassTaskOutcome> SubmitOpenClassTaskOutcomeCallable;
+                typedef std::function<void(const TciClient*, const Model::SubmitOpenClassTaskRequest&, SubmitOpenClassTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitOpenClassTaskAsyncHandler;
+                typedef Outcome<Error, Model::SubmitPartialBodyClassTaskResponse> SubmitPartialBodyClassTaskOutcome;
+                typedef std::future<SubmitPartialBodyClassTaskOutcome> SubmitPartialBodyClassTaskOutcomeCallable;
+                typedef std::function<void(const TciClient*, const Model::SubmitPartialBodyClassTaskRequest&, SubmitPartialBodyClassTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitPartialBodyClassTaskAsyncHandler;
+                typedef Outcome<Error, Model::SubmitTraditionalClassTaskResponse> SubmitTraditionalClassTaskOutcome;
+                typedef std::future<SubmitTraditionalClassTaskOutcome> SubmitTraditionalClassTaskOutcomeCallable;
+                typedef std::function<void(const TciClient*, const Model::SubmitTraditionalClassTaskRequest&, SubmitTraditionalClassTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTraditionalClassTaskAsyncHandler;
                 typedef Outcome<Error, Model::TransmitAudioStreamResponse> TransmitAudioStreamOutcome;
                 typedef std::future<TransmitAudioStreamOutcome> TransmitAudioStreamOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::TransmitAudioStreamRequest&, TransmitAudioStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransmitAudioStreamAsyncHandler;
@@ -225,22 +245,13 @@ namespace TencentCloud
                 AIAssistantOutcomeCallable AIAssistantCallable(const Model::AIAssistantRequest& request);
 
                 /**
-                 *用于取消已经提交的任务
+                 *用于取消已经提交的任务，目前只支持图像任务。
                  * @param req CancelTaskRequest
                  * @return CancelTaskOutcome
                  */
                 CancelTaskOutcome CancelTask(const Model::CancelTaskRequest &request);
                 void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request);
-
-                /**
-                 *人员考勤
-                 * @param req CheckAttendanceRequest
-                 * @return CheckAttendanceOutcome
-                 */
-                CheckAttendanceOutcome CheckAttendance(const Model::CheckAttendanceRequest &request);
-                void CheckAttendanceAsync(const Model::CheckAttendanceRequest& request, const CheckAttendanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CheckAttendanceOutcomeCallable CheckAttendanceCallable(const Model::CheckAttendanceRequest& request);
 
                 /**
                  *检查人脸图片是否合法
@@ -477,7 +488,20 @@ namespace TencentCloud
                 SubmitAudioTaskOutcomeCallable SubmitAudioTaskCallable(const Model::SubmitAudioTaskRequest& request);
 
                 /**
-                 *提交人员考勤任务
+                 *提交人员考勤任务，支持包括点播和直播资源；支持通过DescribeAttendanceResult查询结果，也支持通过NoticeUrl设置考勤回调结果，回调结果结构如下：
+##### 回调事件结构
+ | 参数名称 | 类型 | 描述 | 
+ | ----  | ---  | ------  |
+ | jobid | Integer | 任务ID | 
+ | person_info | array of PersonInfo | 识别到的人员列表 | 
+#####子结构PersonInfo
+ | 参数名称 | 类型 | 描述 | 
+ | ----  | ---  | ------  |
+ | traceid | String | 可用于区分同一路视频流下的不同陌生人 | 
+ | personid | String | 识别到的人员ID，如果是陌生人则返回空串 | 
+ | libid | String | 识别到的人员所在的库ID，如果是陌生人则返回空串 | 
+ | timestamp | uint64 | 识别到人脸的绝对时间戳，单位ms | 
+ | image_url | string | 识别到人脸的事件抓图的下载地址，不长期保存，需要请及时下载 | 
                  * @param req SubmitCheckAttendanceTaskRequest
                  * @return SubmitCheckAttendanceTaskOutcome
                  */
@@ -495,13 +519,29 @@ namespace TencentCloud
                 SubmitConversationTaskOutcomeCallable SubmitConversationTaskCallable(const Model::SubmitConversationTaskRequest& request);
 
                 /**
-                 *发起双路视频生成精彩集锦接口。该接口可以通过客户传入的学生音视频及老师视频两路Url，自动生成一堂课程的精彩集锦。需要通过SubmitDoubleVideoHighlights接口获取生成结果。
+                 *发起双路视频生成精彩集锦接口。该接口可以通过客户传入的学生音视频及老师视频两路Url，自动生成一堂课程的精彩集锦。需要通过DescribeHighlightResult
+接口获取生成结果。
                  * @param req SubmitDoubleVideoHighlightsRequest
                  * @return SubmitDoubleVideoHighlightsOutcome
                  */
                 SubmitDoubleVideoHighlightsOutcome SubmitDoubleVideoHighlights(const Model::SubmitDoubleVideoHighlightsRequest &request);
                 void SubmitDoubleVideoHighlightsAsync(const Model::SubmitDoubleVideoHighlightsRequest& request, const SubmitDoubleVideoHighlightsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitDoubleVideoHighlightsOutcomeCallable SubmitDoubleVideoHighlightsCallable(const Model::SubmitDoubleVideoHighlightsRequest& request);
+
+                /**
+                 ***传统课堂授课任务**：在此场景中，老师为站立授课，有白板或投影供老师展示课程内容，摄像头可以拍摄到老师的半身或者全身。拍摄视频为一路全局画面，且背景不动，要求画面稳定清晰。通过此接口可分析老师授课的行为及语音，以支持AI评教。  
+  
+**提供的功能接口有：**老师人脸识别、老师表情识别、老师肢体动作识别、语音识别。  可分析的指标维度包括：身份识别、正脸、侧脸、人脸坐标、人脸尺寸、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、正面讲解、写板书、指黑板、语音转文字、发音时长、非发音时长、音量、语速、指定关键词的使用等
+  
+**对场景的要求为：**真实场景老师1人出现在画面中，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。
+    
+**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。
+                 * @param req SubmitFullBodyClassTaskRequest
+                 * @return SubmitFullBodyClassTaskOutcome
+                 */
+                SubmitFullBodyClassTaskOutcome SubmitFullBodyClassTask(const Model::SubmitFullBodyClassTaskRequest &request);
+                void SubmitFullBodyClassTaskAsync(const Model::SubmitFullBodyClassTaskRequest& request, const SubmitFullBodyClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitFullBodyClassTaskOutcomeCallable SubmitFullBodyClassTaskCallable(const Model::SubmitFullBodyClassTaskRequest& request);
 
                 /**
                  *发起视频生成精彩集锦接口。该接口可以通过客户传入的课程音频数据及相关策略（如微笑抽取，专注抽取等），自动生成一堂课程的精彩集锦。需要通过QueryHighlightResult接口获取生成结果。
@@ -520,6 +560,70 @@ namespace TencentCloud
                 SubmitImageTaskOutcome SubmitImageTask(const Model::SubmitImageTaskRequest &request);
                 void SubmitImageTaskAsync(const Model::SubmitImageTaskRequest& request, const SubmitImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitImageTaskOutcomeCallable SubmitImageTaskCallable(const Model::SubmitImageTaskRequest& request);
+
+                /**
+                 ***提交在线1对1课堂任务**  
+对于在线1对1课堂，老师通过视频向学生授课，并且学生人数为1人。通过上传学生端的图像信息，可以获取学生的听课情况分析。 具体指一路全局画面且背景不动，有1位学生的头像或上半身的画面，要求画面稳定清晰。
+  
+**提供的功能接口有：**学生人脸识别、学生表情识别、语音识别。可分析的指标维度包括：学生身份识别、正脸、侧脸、抬头、低头、人脸坐标、人脸尺寸、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、语音转文字、发音时长、非发音时长、音量、语速等。
+  
+**对场景的要求为：**真实常规1v1授课场景，学生2人以下，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。
+    
+**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。
+                 * @param req SubmitOneByOneClassTaskRequest
+                 * @return SubmitOneByOneClassTaskOutcome
+                 */
+                SubmitOneByOneClassTaskOutcome SubmitOneByOneClassTask(const Model::SubmitOneByOneClassTaskRequest &request);
+                void SubmitOneByOneClassTaskAsync(const Model::SubmitOneByOneClassTaskRequest& request, const SubmitOneByOneClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitOneByOneClassTaskOutcomeCallable SubmitOneByOneClassTaskCallable(const Model::SubmitOneByOneClassTaskRequest& request);
+
+                /**
+                 ***提交线下小班（无课桌）课任务**  
+线下小班课是指有学生无课桌的课堂，满座15人以下，全局画面且背景不动，能清晰看到。  
+  
+**提供的功能接口有：**学生人脸识别、学生表情识别、学生肢体动作识别。  可分析的指标维度包括：身份识别、正脸、侧脸、抬头、低头、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、站立、举手、坐着等。
+  
+**对场景的要求为：**真实常规教室，满座15人以下，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上但是图像整体质量不能超过1080p。
+    
+**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。
+                 * @param req SubmitOpenClassTaskRequest
+                 * @return SubmitOpenClassTaskOutcome
+                 */
+                SubmitOpenClassTaskOutcome SubmitOpenClassTask(const Model::SubmitOpenClassTaskRequest &request);
+                void SubmitOpenClassTaskAsync(const Model::SubmitOpenClassTaskRequest& request, const SubmitOpenClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitOpenClassTaskOutcomeCallable SubmitOpenClassTaskCallable(const Model::SubmitOpenClassTaskRequest& request);
+
+                /**
+                 ***在线小班课任务**：此场景是在线授课场景，老师一般为坐着授课，摄像头可以拍摄到老师的头部及上半身。拍摄视频为一路全局画面，且背景不动，要求画面稳定清晰。通过此接口可分析老师授课的行为及语音，以支持AI评教。    
+  
+**提供的功能接口有：**老师人脸识别、老师表情识别、老师手势识别、光线识别、语音识别。 可分析的指标维度包括：身份识别、正脸、侧脸、人脸坐标、人脸尺寸、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、点赞手势、听你说手势、听我说手势、拿教具行为、语音转文字、发音时长、非发音时长、音量、语速、指定关键词的使用等 
+  
+**对场景的要求为：**在线常规授课场景，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。
+    
+**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。
+                 * @param req SubmitPartialBodyClassTaskRequest
+                 * @return SubmitPartialBodyClassTaskOutcome
+                 */
+                SubmitPartialBodyClassTaskOutcome SubmitPartialBodyClassTask(const Model::SubmitPartialBodyClassTaskRequest &request);
+                void SubmitPartialBodyClassTaskAsync(const Model::SubmitPartialBodyClassTaskRequest& request, const SubmitPartialBodyClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitPartialBodyClassTaskOutcomeCallable SubmitPartialBodyClassTaskCallable(const Model::SubmitPartialBodyClassTaskRequest& request);
+
+                /**
+                 ***提交线下传统面授大班课（含课桌）任务。**  
+传统教室课堂是指有学生课堂有课桌的课堂，满座20-50人，全局画面且背景不动。  
+  
+**提供的功能接口有：**学生人脸识别、学生表情识别、学生肢体动作识别。可分析的指标维度包括：学生身份识别、正脸、侧脸、抬头、低头、高兴、中性、高兴、中性、惊讶、厌恶、恐惧、愤怒、蔑视、悲伤、举手、站立、坐着、趴桌子、玩手机等  
+  
+**对场景的要求为：**传统的学生上课教室，满座20-50人，全局画面且背景不动；人脸上下角度在20度以内，左右角度在15度以内，歪头角度在15度以内；光照均匀，无遮挡，人脸清晰可见；像素最好在 100X100 像素以上，但是图像整体质量不能超过1080p。
+    
+**结果查询方式：**图像任务直接返回结果，点播及直播任务通过DescribeAITaskResult查询结果。
+  
+                 * @param req SubmitTraditionalClassTaskRequest
+                 * @return SubmitTraditionalClassTaskOutcome
+                 */
+                SubmitTraditionalClassTaskOutcome SubmitTraditionalClassTask(const Model::SubmitTraditionalClassTaskRequest &request);
+                void SubmitTraditionalClassTaskAsync(const Model::SubmitTraditionalClassTaskRequest& request, const SubmitTraditionalClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitTraditionalClassTaskOutcomeCallable SubmitTraditionalClassTaskCallable(const Model::SubmitTraditionalClassTaskRequest& request);
 
                 /**
                  *分析音频信息

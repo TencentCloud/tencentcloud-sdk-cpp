@@ -30,10 +30,12 @@ GetFunctionLogsRequest::GetFunctionLogsRequest() :
     m_orderHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_filterHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_qualifierHasBeenSet(false),
     m_functionRequestIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_searchContextHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,14 @@ string GetFunctionLogsRequest::ToJsonString() const
         m_filter.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_namespaceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_qualifierHasBeenSet)
     {
         Value iKey(kStringType);
@@ -123,6 +133,15 @@ string GetFunctionLogsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_searchContext.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -229,6 +248,22 @@ bool GetFunctionLogsRequest::FilterHasBeenSet() const
     return m_filterHasBeenSet;
 }
 
+string GetFunctionLogsRequest::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void GetFunctionLogsRequest::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool GetFunctionLogsRequest::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
 string GetFunctionLogsRequest::GetQualifier() const
 {
     return m_qualifier;
@@ -291,6 +326,22 @@ void GetFunctionLogsRequest::SetEndTime(const string& _endTime)
 bool GetFunctionLogsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+LogSearchContext GetFunctionLogsRequest::GetSearchContext() const
+{
+    return m_searchContext;
+}
+
+void GetFunctionLogsRequest::SetSearchContext(const LogSearchContext& _searchContext)
+{
+    m_searchContext = _searchContext;
+    m_searchContextHasBeenSet = true;
+}
+
+bool GetFunctionLogsRequest::SearchContextHasBeenSet() const
+{
+    return m_searchContextHasBeenSet;
 }
 
 

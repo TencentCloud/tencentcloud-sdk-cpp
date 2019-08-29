@@ -29,7 +29,9 @@ CopyFunctionRequest::CopyFunctionRequest() :
     m_namespaceHasBeenSet(false),
     m_targetNamespaceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_targetRegionHasBeenSet(false)
+    m_targetRegionHasBeenSet(false),
+    m_overrideHasBeenSet(false),
+    m_copyConfigurationHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string CopyFunctionRequest::ToJsonString() const
         string key = "TargetRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_targetRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_overrideHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Override";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_override, allocator);
+    }
+
+    if (m_copyConfigurationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CopyConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_copyConfiguration, allocator);
     }
 
 
@@ -190,6 +208,38 @@ void CopyFunctionRequest::SetTargetRegion(const string& _targetRegion)
 bool CopyFunctionRequest::TargetRegionHasBeenSet() const
 {
     return m_targetRegionHasBeenSet;
+}
+
+bool CopyFunctionRequest::GetOverride() const
+{
+    return m_override;
+}
+
+void CopyFunctionRequest::SetOverride(const bool& _override)
+{
+    m_override = _override;
+    m_overrideHasBeenSet = true;
+}
+
+bool CopyFunctionRequest::OverrideHasBeenSet() const
+{
+    return m_overrideHasBeenSet;
+}
+
+bool CopyFunctionRequest::GetCopyConfiguration() const
+{
+    return m_copyConfiguration;
+}
+
+void CopyFunctionRequest::SetCopyConfiguration(const bool& _copyConfiguration)
+{
+    m_copyConfiguration = _copyConfiguration;
+    m_copyConfigurationHasBeenSet = true;
+}
+
+bool CopyFunctionRequest::CopyConfigurationHasBeenSet() const
+{
+    return m_copyConfigurationHasBeenSet;
 }
 
 

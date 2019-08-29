@@ -31,7 +31,8 @@ Function::Function() :
     m_statusHasBeenSet(false),
     m_statusDescHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome Function::Deserialize(const Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Function.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -242,6 +253,14 @@ void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -405,5 +424,21 @@ void Function::SetTags(const vector<Tag>& _tags)
 bool Function::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string Function::GetType() const
+{
+    return m_type;
+}
+
+void Function::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool Function::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

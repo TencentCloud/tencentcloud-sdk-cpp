@@ -43,44 +43,42 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，支持PNG、JPG、JPEG、BMP格式，暂不支持GIF格式。
-                     * @return ImageBase64 图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，支持PNG、JPG、JPEG、BMP格式，暂不支持GIF格式。
-                     */
-                    std::string GetImageBase64() const;
-
-                    /**
-                     * 设置图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，支持PNG、JPG、JPEG、BMP格式，暂不支持GIF格式。
-                     * @param ImageBase64 图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，支持PNG、JPG、JPEG、BMP格式，暂不支持GIF格式。
-                     */
-                    void SetImageBase64(const std::string& _imageBase64);
-
-                    /**
-                     * 判断参数 ImageBase64 是否已赋值
-                     * @return ImageBase64 是否已赋值
-                     */
-                    bool ImageBase64HasBeenSet() const;
-
-                    /**
-                     * 获取图片的 ImageUrl、ImageBase64必须提供一个，如果都提供，只使用ImageUrl。
-
-图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
-                     * @return ImageUrl 图片的 ImageUrl、ImageBase64必须提供一个，如果都提供，只使用ImageUrl。
-
-图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
+                     * 获取图片URL地址。 
+图片限制： 
+• 图片格式：PNG、JPG、JPEG。 
+• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 
+建议：
+• 图片像素：大于50*50像素，否则影响识别效果； 
+• 长宽比：长边：短边<5； 
+接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
+                     * @return ImageUrl 图片URL地址。 
+图片限制： 
+• 图片格式：PNG、JPG、JPEG。 
+• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 
+建议：
+• 图片像素：大于50*50像素，否则影响识别效果； 
+• 长宽比：长边：短边<5； 
+接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片的 ImageUrl、ImageBase64必须提供一个，如果都提供，只使用ImageUrl。
-
-图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
-                     * @param ImageUrl 图片的 ImageUrl、ImageBase64必须提供一个，如果都提供，只使用ImageUrl。
-
-图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
+                     * 设置图片URL地址。 
+图片限制： 
+• 图片格式：PNG、JPG、JPEG。 
+• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 
+建议：
+• 图片像素：大于50*50像素，否则影响识别效果； 
+• 长宽比：长边：短边<5； 
+接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
+                     * @param ImageUrl 图片URL地址。 
+图片限制： 
+• 图片格式：PNG、JPG、JPEG。 
+• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 
+建议：
+• 图片像素：大于50*50像素，否则影响识别效果； 
+• 长宽比：长边：短边<5； 
+接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
@@ -90,22 +88,54 @@ BASE64编码后的图片数据大小不超过3M，支持PNG、JPG、JPEG、BMP�
                      */
                     bool ImageUrlHasBeenSet() const;
 
-                private:
-
                     /**
-                     * 图片的BASE64值；
-BASE64编码后的图片数据大小不超过3M，支持PNG、JPG、JPEG、BMP格式，暂不支持GIF格式。
-                     */
-                    std::string m_imageBase64;
-                    bool m_imageBase64HasBeenSet;
+                     * 获取图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
 
-                    /**
-                     * 图片的 ImageUrl、ImageBase64必须提供一个，如果都提供，只使用ImageUrl。
+图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
+                     * @return ImageBase64 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
 
 图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
                      */
+                    std::string GetImageBase64() const;
+
+                    /**
+                     * 设置图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+
+图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
+                     * @param ImageBase64 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+
+图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
+                     */
+                    void SetImageBase64(const std::string& _imageBase64);
+
+                    /**
+                     * 判断参数 ImageBase64 是否已赋值
+                     * @return ImageBase64 是否已赋值
+                     */
+                    bool ImageBase64HasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 图片URL地址。 
+图片限制： 
+• 图片格式：PNG、JPG、JPEG。 
+• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 
+建议：
+• 图片像素：大于50*50像素，否则影响识别效果； 
+• 长宽比：长边：短边<5； 
+接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
+                     */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+
+图片URL地址。支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。
+                     */
+                    std::string m_imageBase64;
+                    bool m_imageBase64HasBeenSet;
 
                 };
             }

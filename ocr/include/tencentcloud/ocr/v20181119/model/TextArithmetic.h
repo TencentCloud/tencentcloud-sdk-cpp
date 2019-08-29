@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool DetectedTextHasBeenSet() const;
 
                     /**
-                     * 获取结果
-                     * @return Result 结果
+                     * 获取算式运算结果
+                     * @return Result 算式运算结果
                      */
                     bool GetResult() const;
 
                     /**
-                     * 设置结果
-                     * @param Result 结果
+                     * 设置算式运算结果
+                     * @param Result 算式运算结果
                      */
                     void SetResult(const bool& _result);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取置信度 0 ~100
-                     * @return Confidence 置信度 0 ~100
+                     * 获取保留字段，暂不支持
+                     * @return Confidence 保留字段，暂不支持
                      */
                     int64_t GetConfidence() const;
 
                     /**
-                     * 设置置信度 0 ~100
-                     * @param Confidence 置信度 0 ~100
+                     * 设置保留字段，暂不支持
+                     * @param Confidence 保留字段，暂不支持
                      */
                     void SetConfidence(const int64_t& _confidence);
 
@@ -102,17 +102,17 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取文本行坐标，以四个顶点坐标表示
+                     * 获取文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Polygon 文本行坐标，以四个顶点坐标表示
+                     * @return Polygon 文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
-                     * 设置文本行坐标，以四个顶点坐标表示
+                     * 设置文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Polygon 文本行坐标，以四个顶点坐标表示
+                     * @param Polygon 文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPolygon(const std::vector<Coord>& _polygon);
@@ -124,14 +124,14 @@ namespace TencentCloud
                     bool PolygonHasBeenSet() const;
 
                     /**
-                     * 获取此字段为扩展字段。
-                     * @return AdvancedInfo 此字段为扩展字段。
+                     * 获取保留字段，暂不支持
+                     * @return AdvancedInfo 保留字段，暂不支持
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
-                     * 设置此字段为扩展字段。
-                     * @param AdvancedInfo 此字段为扩展字段。
+                     * 设置保留字段，暂不支持
+                     * @param AdvancedInfo 保留字段，暂不支持
                      */
                     void SetAdvancedInfo(const std::string& _advancedInfo);
 
@@ -150,26 +150,26 @@ namespace TencentCloud
                     bool m_detectedTextHasBeenSet;
 
                     /**
-                     * 结果
+                     * 算式运算结果
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 置信度 0 ~100
+                     * 保留字段，暂不支持
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 文本行坐标，以四个顶点坐标表示
+                     * 文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_polygon;
                     bool m_polygonHasBeenSet;
 
                     /**
-                     * 此字段为扩展字段。
+                     * 保留字段，暂不支持
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;

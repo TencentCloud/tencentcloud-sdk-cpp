@@ -360,6 +360,24 @@ baseline/main/high。
                      */
                     bool FpsToOrigHasBeenSet() const;
 
+                    /**
+                     * 获取急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * @return AdaptBitratePercent 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     */
+                    double GetAdaptBitratePercent() const;
+
+                    /**
+                     * 设置急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * @param AdaptBitratePercent 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     */
+                    void SetAdaptBitratePercent(const double& _adaptBitratePercent);
+
+                    /**
+                     * 判断参数 AdaptBitratePercent 是否已赋值
+                     * @return AdaptBitratePercent 是否已赋值
+                     */
+                    bool AdaptBitratePercentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +484,12 @@ baseline/main/high。
                      */
                     int64_t m_fpsToOrig;
                     bool m_fpsToOrigHasBeenSet;
+
+                    /**
+                     * 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     */
+                    double m_adaptBitratePercent;
+                    bool m_adaptBitratePercentHasBeenSet;
 
                 };
             }

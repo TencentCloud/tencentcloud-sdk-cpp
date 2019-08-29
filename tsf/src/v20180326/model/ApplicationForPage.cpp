@@ -29,7 +29,8 @@ ApplicationForPage::ApplicationForPage() :
     m_microserviceTypeHasBeenSet(false),
     m_progLangHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_applicationResourceTypeHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome ApplicationForPage::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationResourceType") && !value["ApplicationResourceType"].IsNull())
+    {
+        if (!value["ApplicationResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ApplicationForPage.ApplicationResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationResourceType = string(value["ApplicationResourceType"].GetString());
+        m_applicationResourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void ApplicationForPage::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void ApplicationForPage::SetUpdateTime(const string& _updateTime)
 bool ApplicationForPage::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string ApplicationForPage::GetApplicationResourceType() const
+{
+    return m_applicationResourceType;
+}
+
+void ApplicationForPage::SetApplicationResourceType(const string& _applicationResourceType)
+{
+    m_applicationResourceType = _applicationResourceType;
+    m_applicationResourceTypeHasBeenSet = true;
+}
+
+bool ApplicationForPage::ApplicationResourceTypeHasBeenSet() const
+{
+    return m_applicationResourceTypeHasBeenSet;
 }
 

@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
-                     * @return RunInstancesForNode CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
+                     * 获取CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
+                     * @return RunInstancesForNode CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
                      */
                     std::vector<RunInstancesForNode> GetRunInstancesForNode() const;
 
                     /**
-                     * 设置CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
-                     * @param RunInstancesForNode CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
+                     * 设置CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
+                     * @param RunInstancesForNode CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
                      */
                     void SetRunInstancesForNode(const std::vector<RunInstancesForNode>& _runInstancesForNode);
 
@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
-                     * 获取已存在实例的配置信息
-                     * @return ExistedInstancesForNode 已存在实例的配置信息
+                     * 获取已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
+                     * @return ExistedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
                      */
                     std::vector<ExistedInstancesForNode> GetExistedInstancesForNode() const;
 
                     /**
-                     * 设置已存在实例的配置信息
-                     * @param ExistedInstancesForNode 已存在实例的配置信息
+                     * 设置已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
+                     * @param ExistedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
                      */
                     void SetExistedInstancesForNode(const std::vector<ExistedInstancesForNode>& _existedInstancesForNode);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。
+                     * CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
                      */
                     std::vector<RunInstancesForNode> m_runInstancesForNode;
                     bool m_runInstancesForNodeHasBeenSet;
@@ -213,7 +213,7 @@ namespace TencentCloud
                     bool m_instanceAdvancedSettingsHasBeenSet;
 
                     /**
-                     * 已存在实例的配置信息
+                     * 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。
                      */
                     std::vector<ExistedInstancesForNode> m_existedInstancesForNode;
                     bool m_existedInstancesForNodeHasBeenSet;

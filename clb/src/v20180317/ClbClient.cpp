@@ -1330,6 +1330,49 @@ ClbClient::RegisterTargetsWithClassicalLBOutcomeCallable ClbClient::RegisterTarg
     return task->get_future();
 }
 
+ClbClient::ReplaceCertForLoadBalancersOutcome ClbClient::ReplaceCertForLoadBalancers(const ReplaceCertForLoadBalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceCertForLoadBalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceCertForLoadBalancersResponse rsp = ReplaceCertForLoadBalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceCertForLoadBalancersOutcome(rsp);
+        else
+            return ReplaceCertForLoadBalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceCertForLoadBalancersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ReplaceCertForLoadBalancersAsync(const ReplaceCertForLoadBalancersRequest& request, const ReplaceCertForLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceCertForLoadBalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ReplaceCertForLoadBalancersOutcomeCallable ClbClient::ReplaceCertForLoadBalancersCallable(const ReplaceCertForLoadBalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceCertForLoadBalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceCertForLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::SetLoadBalancerSecurityGroupsOutcome ClbClient::SetLoadBalancerSecurityGroups(const SetLoadBalancerSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "SetLoadBalancerSecurityGroups");

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前单词语音起始时间点，单位为ms
-                     * @return MemBeginTime 当前单词语音起始时间点，单位为ms
+                     * 获取当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。
+                     * @return MemBeginTime 当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。
                      */
                     int64_t GetMemBeginTime() const;
 
                     /**
-                     * 设置当前单词语音起始时间点，单位为ms
-                     * @param MemBeginTime 当前单词语音起始时间点，单位为ms
+                     * 设置当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。
+                     * @param MemBeginTime 当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。
                      */
                     void SetMemBeginTime(const int64_t& _memBeginTime);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool MemBeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取当前单词语音终止时间点，单位为ms
-                     * @return MemEndTime 当前单词语音终止时间点，单位为ms
+                     * 获取当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。
+                     * @return MemEndTime 当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。
                      */
                     int64_t GetMemEndTime() const;
 
                     /**
-                     * 设置当前单词语音终止时间点，单位为ms
-                     * @param MemEndTime 当前单词语音终止时间点，单位为ms
+                     * 设置当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。
+                     * @param MemEndTime 当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。
                      */
                     void SetMemEndTime(const int64_t& _memEndTime);
 
@@ -173,16 +173,34 @@ namespace TencentCloud
                      */
                     bool PhoneInfosHasBeenSet() const;
 
+                    /**
+                     * 获取参考词，目前为保留字段。
+                     * @return ReferenceWord 参考词，目前为保留字段。
+                     */
+                    std::string GetReferenceWord() const;
+
+                    /**
+                     * 设置参考词，目前为保留字段。
+                     * @param ReferenceWord 参考词，目前为保留字段。
+                     */
+                    void SetReferenceWord(const std::string& _referenceWord);
+
+                    /**
+                     * 判断参数 ReferenceWord 是否已赋值
+                     * @return ReferenceWord 是否已赋值
+                     */
+                    bool ReferenceWordHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 当前单词语音起始时间点，单位为ms
+                     * 当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。
                      */
                     int64_t m_memBeginTime;
                     bool m_memBeginTimeHasBeenSet;
 
                     /**
-                     * 当前单词语音终止时间点，单位为ms
+                     * 当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。
                      */
                     int64_t m_memEndTime;
                     bool m_memEndTimeHasBeenSet;
@@ -216,6 +234,12 @@ namespace TencentCloud
                      */
                     std::vector<PhoneInfo> m_phoneInfos;
                     bool m_phoneInfosHasBeenSet;
+
+                    /**
+                     * 参考词，目前为保留字段。
+                     */
+                    std::string m_referenceWord;
+                    bool m_referenceWordHasBeenSet;
 
                 };
             }

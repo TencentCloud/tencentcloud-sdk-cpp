@@ -26,7 +26,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_classificationTaskHasBeenSet(false),
     m_coverTaskHasBeenSet(false),
     m_tagTaskHasBeenSet(false),
-    m_frameTagTaskHasBeenSet(false)
+    m_frameTagTaskHasBeenSet(false),
+    m_highlightsTaskHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,26 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const Value &value)
         m_frameTagTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("HighlightsTask") && !value["HighlightsTask"].IsNull())
+    {
+        if (!value["HighlightsTask"].IsArray())
+            return CoreInternalOutcome(Error("response `AiAnalysisResult.HighlightsTask` is not array type"));
+
+        const Value &tmpValue = value["HighlightsTask"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiAnalysisTaskHighlightResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_highlightsTask.push_back(item);
+        }
+        m_highlightsTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +183,21 @@ void AiAnalysisResult::ToJsonObject(Value &value, Document::AllocatorType& alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_frameTagTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_highlightsTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HighlightsTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_highlightsTask.begin(); itr != m_highlightsTask.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -245,5 +281,21 @@ void AiAnalysisResult::SetFrameTagTask(const AiAnalysisTaskFrameTagResult& _fram
 bool AiAnalysisResult::FrameTagTaskHasBeenSet() const
 {
     return m_frameTagTaskHasBeenSet;
+}
+
+vector<AiAnalysisTaskHighlightResult> AiAnalysisResult::GetHighlightsTask() const
+{
+    return m_highlightsTask;
+}
+
+void AiAnalysisResult::SetHighlightsTask(const vector<AiAnalysisTaskHighlightResult>& _highlightsTask)
+{
+    m_highlightsTask = _highlightsTask;
+    m_highlightsTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::HighlightsTaskHasBeenSet() const
+{
+    return m_highlightsTaskHasBeenSet;
 }
 

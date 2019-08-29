@@ -40,7 +40,9 @@ CreateLiveTranscodeTemplateRequest::CreateLiveTranscodeTemplateRequest() :
     m_profileHasBeenSet(false),
     m_bitrateToOrigHasBeenSet(false),
     m_heightToOrigHasBeenSet(false),
-    m_fpsToOrigHasBeenSet(false)
+    m_fpsToOrigHasBeenSet(false),
+    m_aiTransCodeHasBeenSet(false),
+    m_adaptBitratePercentHasBeenSet(false)
 {
 }
 
@@ -185,6 +187,22 @@ string CreateLiveTranscodeTemplateRequest::ToJsonString() const
         string key = "FpsToOrig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fpsToOrig, allocator);
+    }
+
+    if (m_aiTransCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiTransCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aiTransCode, allocator);
+    }
+
+    if (m_adaptBitratePercentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdaptBitratePercent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_adaptBitratePercent, allocator);
     }
 
 
@@ -465,6 +483,38 @@ void CreateLiveTranscodeTemplateRequest::SetFpsToOrig(const int64_t& _fpsToOrig)
 bool CreateLiveTranscodeTemplateRequest::FpsToOrigHasBeenSet() const
 {
     return m_fpsToOrigHasBeenSet;
+}
+
+int64_t CreateLiveTranscodeTemplateRequest::GetAiTransCode() const
+{
+    return m_aiTransCode;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetAiTransCode(const int64_t& _aiTransCode)
+{
+    m_aiTransCode = _aiTransCode;
+    m_aiTransCodeHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::AiTransCodeHasBeenSet() const
+{
+    return m_aiTransCodeHasBeenSet;
+}
+
+double CreateLiveTranscodeTemplateRequest::GetAdaptBitratePercent() const
+{
+    return m_adaptBitratePercent;
+}
+
+void CreateLiveTranscodeTemplateRequest::SetAdaptBitratePercent(const double& _adaptBitratePercent)
+{
+    m_adaptBitratePercent = _adaptBitratePercent;
+    m_adaptBitratePercentHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeTemplateRequest::AdaptBitratePercentHasBeenSet() const
+{
+    return m_adaptBitratePercentHasBeenSet;
 }
 
 

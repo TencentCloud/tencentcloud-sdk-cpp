@@ -29,6 +29,7 @@ set(tci_public_header_model
   include/tencentcloud/tci/v20190318/model/CreatePersonRequest.h
   include/tencentcloud/tci/v20190318/model/LightStatistic.h
   include/tencentcloud/tci/v20190318/model/DescribePersonsRequest.h
+  include/tencentcloud/tci/v20190318/model/SubmitOneByOneClassTaskRequest.h
   include/tencentcloud/tci/v20190318/model/CreateVocabResponse.h
   include/tencentcloud/tci/v20190318/model/SubmitConversationTaskResponse.h
   include/tencentcloud/tci/v20190318/model/DescribeVocabLibRequest.h
@@ -42,17 +43,19 @@ set(tci_public_header_model
   include/tencentcloud/tci/v20190318/model/ModifyLibraryRequest.h
   include/tencentcloud/tci/v20190318/model/FaceInfo.h
   include/tencentcloud/tci/v20190318/model/DeleteLibraryResponse.h
+  include/tencentcloud/tci/v20190318/model/SubmitFullBodyClassTaskRequest.h
   include/tencentcloud/tci/v20190318/model/LightResult.h
   include/tencentcloud/tci/v20190318/model/DescribeAttendanceResultRequest.h
+  include/tencentcloud/tci/v20190318/model/SubmitOpenClassTaskResponse.h
   include/tencentcloud/tci/v20190318/model/WholeTextItem.h
   include/tencentcloud/tci/v20190318/model/DescribeConversationTaskResponse.h
   include/tencentcloud/tci/v20190318/model/CreatePersonResponse.h
   include/tencentcloud/tci/v20190318/model/DescribeImageTaskRequest.h
   include/tencentcloud/tci/v20190318/model/HighlightsInfomation.h
   include/tencentcloud/tci/v20190318/model/TimeType.h
+  include/tencentcloud/tci/v20190318/model/SubmitTraditionalClassTaskRequest.h
   include/tencentcloud/tci/v20190318/model/DeleteFaceResponse.h
   include/tencentcloud/tci/v20190318/model/SubmitDoubleVideoHighlightsRequest.h
-  include/tencentcloud/tci/v20190318/model/CheckAttendanceResponse.h
   include/tencentcloud/tci/v20190318/model/ExpressRatioStatistic.h
   include/tencentcloud/tci/v20190318/model/TransmitAudioStreamResponse.h
   include/tencentcloud/tci/v20190318/model/DeletePersonRequest.h
@@ -66,6 +69,7 @@ set(tci_public_header_model
   include/tencentcloud/tci/v20190318/model/SubmitCheckAttendanceTaskResponse.h
   include/tencentcloud/tci/v20190318/model/DeleteVocabResponse.h
   include/tencentcloud/tci/v20190318/model/CheckFacePhotoRequest.h
+  include/tencentcloud/tci/v20190318/model/TeacherOutScreenResult.h
   include/tencentcloud/tci/v20190318/model/Word.h
   include/tencentcloud/tci/v20190318/model/DeleteVocabRequest.h
   include/tencentcloud/tci/v20190318/model/ActionInfo.h
@@ -82,11 +86,14 @@ set(tci_public_header_model
   include/tencentcloud/tci/v20190318/model/StandardVideoResult.h
   include/tencentcloud/tci/v20190318/model/ModifyLibraryResponse.h
   include/tencentcloud/tci/v20190318/model/TimeInfoResult.h
+  include/tencentcloud/tci/v20190318/model/SubmitPartialBodyClassTaskResponse.h
   include/tencentcloud/tci/v20190318/model/ASRStat.h
   include/tencentcloud/tci/v20190318/model/TextItem.h
   include/tencentcloud/tci/v20190318/model/CancelTaskRequest.h
   include/tencentcloud/tci/v20190318/model/DoubleVideoFunction.h
+  include/tencentcloud/tci/v20190318/model/SubmitPartialBodyClassTaskRequest.h
   include/tencentcloud/tci/v20190318/model/DescribeHighlightResultResponse.h
+  include/tencentcloud/tci/v20190318/model/SubmitOneByOneClassTaskResponse.h
   include/tencentcloud/tci/v20190318/model/LightStandard.h
   include/tencentcloud/tci/v20190318/model/SubmitHighlightsRequest.h
   include/tencentcloud/tci/v20190318/model/ModifyPersonResponse.h
@@ -121,21 +128,23 @@ set(tci_public_header_model
   include/tencentcloud/tci/v20190318/model/FaceExpressStatistic.h
   include/tencentcloud/tci/v20190318/model/ActionDurationStatistic.h
   include/tencentcloud/tci/v20190318/model/DescribeLibrariesRequest.h
+  include/tencentcloud/tci/v20190318/model/SubmitFullBodyClassTaskResponse.h
   include/tencentcloud/tci/v20190318/model/ModifyPersonRequest.h
   include/tencentcloud/tci/v20190318/model/DescribeImageTaskResponse.h
   include/tencentcloud/tci/v20190318/model/StandardAudioResult.h
   include/tencentcloud/tci/v20190318/model/HandTrackingResult.h
+  include/tencentcloud/tci/v20190318/model/SubmitOpenClassTaskRequest.h
   include/tencentcloud/tci/v20190318/model/SubmitAudioTaskRequest.h
   include/tencentcloud/tci/v20190318/model/CreateVocabRequest.h
   include/tencentcloud/tci/v20190318/model/TransmitAudioStreamRequest.h
   include/tencentcloud/tci/v20190318/model/FaceAttrResult.h
+  include/tencentcloud/tci/v20190318/model/SubmitTraditionalClassTaskResponse.h
   include/tencentcloud/tci/v20190318/model/AIAssistantResponse.h
   include/tencentcloud/tci/v20190318/model/SubmitImageTaskResponse.h
   include/tencentcloud/tci/v20190318/model/CreateVocabLibRequest.h
   include/tencentcloud/tci/v20190318/model/CreateLibraryResponse.h
   include/tencentcloud/tci/v20190318/model/FaceIdentifyResult.h
   include/tencentcloud/tci/v20190318/model/SubmitAudioTaskResponse.h
-  include/tencentcloud/tci/v20190318/model/CheckAttendanceRequest.h
   include/tencentcloud/tci/v20190318/model/DescribeConversationTaskRequest.h
   include/tencentcloud/tci/v20190318/model/VocabDetailInfomation.h
   include/tencentcloud/tci/v20190318/model/CreateLibraryRequest.h
@@ -155,6 +164,7 @@ set(tci_src
   src/v20190318/model/CreatePersonRequest.cpp
   src/v20190318/model/LightStatistic.cpp
   src/v20190318/model/DescribePersonsRequest.cpp
+  src/v20190318/model/SubmitOneByOneClassTaskRequest.cpp
   src/v20190318/model/CreateVocabResponse.cpp
   src/v20190318/model/SubmitConversationTaskResponse.cpp
   src/v20190318/model/DescribeVocabLibRequest.cpp
@@ -168,17 +178,19 @@ set(tci_src
   src/v20190318/model/ModifyLibraryRequest.cpp
   src/v20190318/model/FaceInfo.cpp
   src/v20190318/model/DeleteLibraryResponse.cpp
+  src/v20190318/model/SubmitFullBodyClassTaskRequest.cpp
   src/v20190318/model/LightResult.cpp
   src/v20190318/model/DescribeAttendanceResultRequest.cpp
+  src/v20190318/model/SubmitOpenClassTaskResponse.cpp
   src/v20190318/model/WholeTextItem.cpp
   src/v20190318/model/DescribeConversationTaskResponse.cpp
   src/v20190318/model/CreatePersonResponse.cpp
   src/v20190318/model/DescribeImageTaskRequest.cpp
   src/v20190318/model/HighlightsInfomation.cpp
   src/v20190318/model/TimeType.cpp
+  src/v20190318/model/SubmitTraditionalClassTaskRequest.cpp
   src/v20190318/model/DeleteFaceResponse.cpp
   src/v20190318/model/SubmitDoubleVideoHighlightsRequest.cpp
-  src/v20190318/model/CheckAttendanceResponse.cpp
   src/v20190318/model/ExpressRatioStatistic.cpp
   src/v20190318/model/TransmitAudioStreamResponse.cpp
   src/v20190318/model/DeletePersonRequest.cpp
@@ -192,6 +204,7 @@ set(tci_src
   src/v20190318/model/SubmitCheckAttendanceTaskResponse.cpp
   src/v20190318/model/DeleteVocabResponse.cpp
   src/v20190318/model/CheckFacePhotoRequest.cpp
+  src/v20190318/model/TeacherOutScreenResult.cpp
   src/v20190318/model/Word.cpp
   src/v20190318/model/DeleteVocabRequest.cpp
   src/v20190318/model/ActionInfo.cpp
@@ -208,11 +221,14 @@ set(tci_src
   src/v20190318/model/StandardVideoResult.cpp
   src/v20190318/model/ModifyLibraryResponse.cpp
   src/v20190318/model/TimeInfoResult.cpp
+  src/v20190318/model/SubmitPartialBodyClassTaskResponse.cpp
   src/v20190318/model/ASRStat.cpp
   src/v20190318/model/TextItem.cpp
   src/v20190318/model/CancelTaskRequest.cpp
   src/v20190318/model/DoubleVideoFunction.cpp
+  src/v20190318/model/SubmitPartialBodyClassTaskRequest.cpp
   src/v20190318/model/DescribeHighlightResultResponse.cpp
+  src/v20190318/model/SubmitOneByOneClassTaskResponse.cpp
   src/v20190318/model/LightStandard.cpp
   src/v20190318/model/SubmitHighlightsRequest.cpp
   src/v20190318/model/ModifyPersonResponse.cpp
@@ -247,21 +263,23 @@ set(tci_src
   src/v20190318/model/FaceExpressStatistic.cpp
   src/v20190318/model/ActionDurationStatistic.cpp
   src/v20190318/model/DescribeLibrariesRequest.cpp
+  src/v20190318/model/SubmitFullBodyClassTaskResponse.cpp
   src/v20190318/model/ModifyPersonRequest.cpp
   src/v20190318/model/DescribeImageTaskResponse.cpp
   src/v20190318/model/StandardAudioResult.cpp
   src/v20190318/model/HandTrackingResult.cpp
+  src/v20190318/model/SubmitOpenClassTaskRequest.cpp
   src/v20190318/model/SubmitAudioTaskRequest.cpp
   src/v20190318/model/CreateVocabRequest.cpp
   src/v20190318/model/TransmitAudioStreamRequest.cpp
   src/v20190318/model/FaceAttrResult.cpp
+  src/v20190318/model/SubmitTraditionalClassTaskResponse.cpp
   src/v20190318/model/AIAssistantResponse.cpp
   src/v20190318/model/SubmitImageTaskResponse.cpp
   src/v20190318/model/CreateVocabLibRequest.cpp
   src/v20190318/model/CreateLibraryResponse.cpp
   src/v20190318/model/FaceIdentifyResult.cpp
   src/v20190318/model/SubmitAudioTaskResponse.cpp
-  src/v20190318/model/CheckAttendanceRequest.cpp
   src/v20190318/model/DescribeConversationTaskRequest.cpp
   src/v20190318/model/VocabDetailInfomation.cpp
   src/v20190318/model/CreateLibraryRequest.cpp

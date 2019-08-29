@@ -26,7 +26,14 @@ PreExecuteFileSettings::PreExecuteFileSettings() :
     m_argsHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_runOrderHasBeenSet(false),
+    m_whenRunHasBeenSet(false),
+    m_cosFileNameHasBeenSet(false),
+    m_cosFileURIHasBeenSet(false),
+    m_cosSecretIdHasBeenSet(false),
+    m_cosSecretKeyHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -88,6 +95,76 @@ CoreInternalOutcome PreExecuteFileSettings::Deserialize(const Value &value)
         m_domainHasBeenSet = true;
     }
 
+    if (value.HasMember("RunOrder") && !value["RunOrder"].IsNull())
+    {
+        if (!value["RunOrder"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.RunOrder` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runOrder = value["RunOrder"].GetInt64();
+        m_runOrderHasBeenSet = true;
+    }
+
+    if (value.HasMember("WhenRun") && !value["WhenRun"].IsNull())
+    {
+        if (!value["WhenRun"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.WhenRun` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_whenRun = string(value["WhenRun"].GetString());
+        m_whenRunHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosFileName") && !value["CosFileName"].IsNull())
+    {
+        if (!value["CosFileName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosFileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosFileName = string(value["CosFileName"].GetString());
+        m_cosFileNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosFileURI") && !value["CosFileURI"].IsNull())
+    {
+        if (!value["CosFileURI"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosFileURI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosFileURI = string(value["CosFileURI"].GetString());
+        m_cosFileURIHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosSecretId") && !value["CosSecretId"].IsNull())
+    {
+        if (!value["CosSecretId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosSecretId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosSecretId = string(value["CosSecretId"].GetString());
+        m_cosSecretIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosSecretKey") && !value["CosSecretKey"].IsNull())
+    {
+        if (!value["CosSecretKey"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.CosSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosSecretKey = string(value["CosSecretKey"].GetString());
+        m_cosSecretKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PreExecuteFileSettings.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +215,62 @@ void PreExecuteFileSettings::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runOrderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RunOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runOrder, allocator);
+    }
+
+    if (m_whenRunHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WhenRun";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_whenRun.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosFileNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosFileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cosFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosFileURIHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosFileURI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cosFileURI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosSecretIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosSecretId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cosSecretId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosSecretKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosSecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cosSecretKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -221,5 +354,117 @@ void PreExecuteFileSettings::SetDomain(const string& _domain)
 bool PreExecuteFileSettings::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+int64_t PreExecuteFileSettings::GetRunOrder() const
+{
+    return m_runOrder;
+}
+
+void PreExecuteFileSettings::SetRunOrder(const int64_t& _runOrder)
+{
+    m_runOrder = _runOrder;
+    m_runOrderHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::RunOrderHasBeenSet() const
+{
+    return m_runOrderHasBeenSet;
+}
+
+string PreExecuteFileSettings::GetWhenRun() const
+{
+    return m_whenRun;
+}
+
+void PreExecuteFileSettings::SetWhenRun(const string& _whenRun)
+{
+    m_whenRun = _whenRun;
+    m_whenRunHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::WhenRunHasBeenSet() const
+{
+    return m_whenRunHasBeenSet;
+}
+
+string PreExecuteFileSettings::GetCosFileName() const
+{
+    return m_cosFileName;
+}
+
+void PreExecuteFileSettings::SetCosFileName(const string& _cosFileName)
+{
+    m_cosFileName = _cosFileName;
+    m_cosFileNameHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::CosFileNameHasBeenSet() const
+{
+    return m_cosFileNameHasBeenSet;
+}
+
+string PreExecuteFileSettings::GetCosFileURI() const
+{
+    return m_cosFileURI;
+}
+
+void PreExecuteFileSettings::SetCosFileURI(const string& _cosFileURI)
+{
+    m_cosFileURI = _cosFileURI;
+    m_cosFileURIHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::CosFileURIHasBeenSet() const
+{
+    return m_cosFileURIHasBeenSet;
+}
+
+string PreExecuteFileSettings::GetCosSecretId() const
+{
+    return m_cosSecretId;
+}
+
+void PreExecuteFileSettings::SetCosSecretId(const string& _cosSecretId)
+{
+    m_cosSecretId = _cosSecretId;
+    m_cosSecretIdHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::CosSecretIdHasBeenSet() const
+{
+    return m_cosSecretIdHasBeenSet;
+}
+
+string PreExecuteFileSettings::GetCosSecretKey() const
+{
+    return m_cosSecretKey;
+}
+
+void PreExecuteFileSettings::SetCosSecretKey(const string& _cosSecretKey)
+{
+    m_cosSecretKey = _cosSecretKey;
+    m_cosSecretKeyHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::CosSecretKeyHasBeenSet() const
+{
+    return m_cosSecretKeyHasBeenSet;
+}
+
+string PreExecuteFileSettings::GetAppId() const
+{
+    return m_appId;
+}
+
+void PreExecuteFileSettings::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool PreExecuteFileSettings::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

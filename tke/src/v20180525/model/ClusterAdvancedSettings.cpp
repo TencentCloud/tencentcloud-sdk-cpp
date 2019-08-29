@@ -23,7 +23,8 @@ using namespace std;
 
 ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_iPVSHasBeenSet(false),
-    m_asEnabledHasBeenSet(false)
+    m_asEnabledHasBeenSet(false),
+    m_containerRuntimeHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_asEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerRuntime") && !value["ContainerRuntime"].IsNull())
+    {
+        if (!value["ContainerRuntime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.ContainerRuntime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerRuntime = string(value["ContainerRuntime"].GetString());
+        m_containerRuntimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "AsEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asEnabled, allocator);
+    }
+
+    if (m_containerRuntimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ContainerRuntime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_containerRuntime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void ClusterAdvancedSettings::SetAsEnabled(const bool& _asEnabled)
 bool ClusterAdvancedSettings::AsEnabledHasBeenSet() const
 {
     return m_asEnabledHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetContainerRuntime() const
+{
+    return m_containerRuntime;
+}
+
+void ClusterAdvancedSettings::SetContainerRuntime(const string& _containerRuntime)
+{
+    m_containerRuntime = _containerRuntime;
+    m_containerRuntimeHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::ContainerRuntimeHasBeenSet() const
+{
+    return m_containerRuntimeHasBeenSet;
 }
 

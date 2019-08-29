@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取检测到的文本信息，具体内容请点击左侧链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextDetections 检测到的文本信息，具体内容请点击左侧链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TextWaybill GetTextDetections() const;
 
@@ -61,7 +59,6 @@ namespace TencentCloud
 
                     /**
                      * 检测到的文本信息，具体内容请点击左侧链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TextWaybill m_textDetections;
                     bool m_textDetectionsHasBeenSet;

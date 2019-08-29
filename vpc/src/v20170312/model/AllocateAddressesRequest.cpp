@@ -24,7 +24,13 @@ using namespace rapidjson;
 using namespace std;
 
 AllocateAddressesRequest::AllocateAddressesRequest() :
-    m_addressCountHasBeenSet(false)
+    m_addressCountHasBeenSet(false),
+    m_internetServiceProviderHasBeenSet(false),
+    m_internetChargeTypeHasBeenSet(false),
+    m_internetMaxBandwidthOutHasBeenSet(false),
+    m_addressTypeHasBeenSet(false),
+    m_anycastZoneHasBeenSet(false),
+    m_applicableForCLBHasBeenSet(false)
 {
 }
 
@@ -41,6 +47,54 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "AddressCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_addressCount, allocator);
+    }
+
+    if (m_internetServiceProviderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetServiceProvider";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_internetServiceProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetMaxBandwidthOutHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetMaxBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
+    }
+
+    if (m_addressTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_addressType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_anycastZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AnycastZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_anycastZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicableForCLBHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicableForCLB";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_applicableForCLB, allocator);
     }
 
 
@@ -65,6 +119,102 @@ void AllocateAddressesRequest::SetAddressCount(const int64_t& _addressCount)
 bool AllocateAddressesRequest::AddressCountHasBeenSet() const
 {
     return m_addressCountHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetInternetServiceProvider() const
+{
+    return m_internetServiceProvider;
+}
+
+void AllocateAddressesRequest::SetInternetServiceProvider(const string& _internetServiceProvider)
+{
+    m_internetServiceProvider = _internetServiceProvider;
+    m_internetServiceProviderHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::InternetServiceProviderHasBeenSet() const
+{
+    return m_internetServiceProviderHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetInternetChargeType() const
+{
+    return m_internetChargeType;
+}
+
+void AllocateAddressesRequest::SetInternetChargeType(const string& _internetChargeType)
+{
+    m_internetChargeType = _internetChargeType;
+    m_internetChargeTypeHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::InternetChargeTypeHasBeenSet() const
+{
+    return m_internetChargeTypeHasBeenSet;
+}
+
+int64_t AllocateAddressesRequest::GetInternetMaxBandwidthOut() const
+{
+    return m_internetMaxBandwidthOut;
+}
+
+void AllocateAddressesRequest::SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut)
+{
+    m_internetMaxBandwidthOut = _internetMaxBandwidthOut;
+    m_internetMaxBandwidthOutHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::InternetMaxBandwidthOutHasBeenSet() const
+{
+    return m_internetMaxBandwidthOutHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetAddressType() const
+{
+    return m_addressType;
+}
+
+void AllocateAddressesRequest::SetAddressType(const string& _addressType)
+{
+    m_addressType = _addressType;
+    m_addressTypeHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetAnycastZone() const
+{
+    return m_anycastZone;
+}
+
+void AllocateAddressesRequest::SetAnycastZone(const string& _anycastZone)
+{
+    m_anycastZone = _anycastZone;
+    m_anycastZoneHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::AnycastZoneHasBeenSet() const
+{
+    return m_anycastZoneHasBeenSet;
+}
+
+bool AllocateAddressesRequest::GetApplicableForCLB() const
+{
+    return m_applicableForCLB;
+}
+
+void AllocateAddressesRequest::SetApplicableForCLB(const bool& _applicableForCLB)
+{
+    m_applicableForCLB = _applicableForCLB;
+    m_applicableForCLBHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::ApplicableForCLBHasBeenSet() const
+{
+    return m_applicableForCLBHasBeenSet;
 }
 
 

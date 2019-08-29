@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool TargetAttributesHasBeenSet() const;
 
                     /**
-                     * 获取转发规则ID
-                     * @return LocationId 转发规则ID
+                     * 获取转发规则ID，注意：针对七层监听器此参数必填
+                     * @return LocationId 转发规则ID，注意：针对七层监听器此参数必填
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置转发规则ID
-                     * @param LocationId 转发规则ID
+                     * 设置转发规则ID，注意：针对七层监听器此参数必填
+                     * @param LocationId 转发规则ID，注意：针对七层监听器此参数必填
                      */
                     void SetLocationId(const std::string& _locationId);
 
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_targetAttributesHasBeenSet;
 
                     /**
-                     * 转发规则ID
+                     * 转发规则ID，注意：针对七层监听器此参数必填
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;

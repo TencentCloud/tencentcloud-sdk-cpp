@@ -1,0 +1,112 @@
+#
+# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(tiems_public_header
+  include/tencentcloud/tiems/v20190416/TiemsClient.h
+  )
+
+set(tiems_public_header_model
+  include/tencentcloud/tiems/v20190416/model/DeleteServiceConfigResponse.h
+  include/tencentcloud/tiems/v20190416/model/DescribeServiceConfigsResponse.h
+  include/tencentcloud/tiems/v20190416/model/DeleteServiceResponse.h
+  include/tencentcloud/tiems/v20190416/model/UpdateServiceResponse.h
+  include/tencentcloud/tiems/v20190416/model/DescribeServicesResponse.h
+  include/tencentcloud/tiems/v20190416/model/Conditions.h
+  include/tencentcloud/tiems/v20190416/model/DescribeServiceConfigsRequest.h
+  include/tencentcloud/tiems/v20190416/model/Option.h
+  include/tencentcloud/tiems/v20190416/model/Service.h
+  include/tencentcloud/tiems/v20190416/model/DescribeRuntimesResponse.h
+  include/tencentcloud/tiems/v20190416/model/CreateServiceResponse.h
+  include/tencentcloud/tiems/v20190416/model/CreateServiceRequest.h
+  include/tencentcloud/tiems/v20190416/model/UpdateServiceRequest.h
+  include/tencentcloud/tiems/v20190416/model/Filter.h
+  include/tencentcloud/tiems/v20190416/model/CreateServiceConfigResponse.h
+  include/tencentcloud/tiems/v20190416/model/DeleteServiceRequest.h
+  include/tencentcloud/tiems/v20190416/model/Runtime.h
+  include/tencentcloud/tiems/v20190416/model/Scaler.h
+  include/tencentcloud/tiems/v20190416/model/ServiceConfig.h
+  include/tencentcloud/tiems/v20190416/model/DescribeRuntimesRequest.h
+  include/tencentcloud/tiems/v20190416/model/CreateServiceConfigRequest.h
+  include/tencentcloud/tiems/v20190416/model/DeleteServiceConfigRequest.h
+  include/tencentcloud/tiems/v20190416/model/ServiceStatus.h
+  include/tencentcloud/tiems/v20190416/model/DescribeServicesRequest.h
+  )
+
+set(tiems_src
+  src/v20190416/TiemsClient.cpp
+  src/v20190416/model/DeleteServiceConfigResponse.cpp
+  src/v20190416/model/DescribeServiceConfigsResponse.cpp
+  src/v20190416/model/DeleteServiceResponse.cpp
+  src/v20190416/model/UpdateServiceResponse.cpp
+  src/v20190416/model/DescribeServicesResponse.cpp
+  src/v20190416/model/Conditions.cpp
+  src/v20190416/model/DescribeServiceConfigsRequest.cpp
+  src/v20190416/model/Option.cpp
+  src/v20190416/model/Service.cpp
+  src/v20190416/model/DescribeRuntimesResponse.cpp
+  src/v20190416/model/CreateServiceResponse.cpp
+  src/v20190416/model/CreateServiceRequest.cpp
+  src/v20190416/model/UpdateServiceRequest.cpp
+  src/v20190416/model/Filter.cpp
+  src/v20190416/model/CreateServiceConfigResponse.cpp
+  src/v20190416/model/DeleteServiceRequest.cpp
+  src/v20190416/model/Runtime.cpp
+  src/v20190416/model/Scaler.cpp
+  src/v20190416/model/ServiceConfig.cpp
+  src/v20190416/model/DescribeRuntimesRequest.cpp
+  src/v20190416/model/CreateServiceConfigRequest.cpp
+  src/v20190416/model/DeleteServiceConfigRequest.cpp
+  src/v20190416/model/ServiceStatus.cpp
+  src/v20190416/model/DescribeServicesRequest.cpp
+  )
+
+set(tiems_include
+    include/tencentcloud/tiems
+  )
+
+add_library(tiems ${LIB_TYPE}
+  ${tiems_public_header}
+  ${tiems_public_header_model}
+  ${tiems_src})
+
+set_target_properties(tiems
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}tiems
+  )
+
+target_include_directories(tiems
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(tiems
+  core)
+
+#install(FILES ${tiems_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tiems/v20190416)
+#install(FILES ${tiems_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tiems/v20190416/model)
+install(DIRECTORY ${tiems_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS tiems
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )

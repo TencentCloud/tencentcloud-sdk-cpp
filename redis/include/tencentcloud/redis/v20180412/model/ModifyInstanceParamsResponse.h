@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool ChangedHasBeenSet() const;
 
+                    /**
+                     * 获取任务ID
+                     * @return TaskId 任务ID
+                     */
+                    int64_t GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     bool m_changed;
                     bool m_changedHasBeenSet;
+
+                    /**
+                     * 任务ID
+                     */
+                    int64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

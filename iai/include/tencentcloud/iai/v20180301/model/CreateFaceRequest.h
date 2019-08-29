@@ -61,20 +61,24 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取图片 base64 数据。人员人脸总数量不可超过5张。
+                     * 获取图片 base64 数据，base64 编码后大小不可超过5M。
+人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @return Images 图片 base64 数据。人员人脸总数量不可超过5张。
+                     * @return Images 图片 base64 数据，base64 编码后大小不可超过5M。
+人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::vector<std::string> GetImages() const;
 
                     /**
-                     * 设置图片 base64 数据。人员人脸总数量不可超过5张。
+                     * 设置图片 base64 数据，base64 编码后大小不可超过5M。
+人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Images 图片 base64 数据。人员人脸总数量不可超过5张。
+                     * @param Images 图片 base64 数据，base64 编码后大小不可超过5M。
+人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
@@ -87,34 +91,38 @@ namespace TencentCloud
                     bool ImagesHasBeenSet() const;
 
                     /**
-                     * 获取图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
+                     * 获取图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @return Urls 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
+                     * @return Urls 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
-                     * 设置图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
+                     * 设置图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Urls 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
+                     * @param Urls 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
@@ -133,7 +141,8 @@ namespace TencentCloud
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 图片 base64 数据。人员人脸总数量不可超过5张。
+                     * 图片 base64 数据，base64 编码后大小不可超过5M。
+人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
@@ -141,12 +150,13 @@ namespace TencentCloud
                     bool m_imagesHasBeenSet;
 
                     /**
-                     * 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
+                     * 图片的 Url 。对应图片 base64 编码后大小不可超过5M。
+Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
-非腾讯云存储的Url速度和稳定性可能受一定影响。 
+非腾讯云存储的Url速度和稳定性可能受一定影响。
+支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
 人员人脸总数量不可超过5张。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
-支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      */
                     std::vector<std::string> m_urls;
                     bool m_urlsHasBeenSet;

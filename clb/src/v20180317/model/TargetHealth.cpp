@@ -25,7 +25,8 @@ TargetHealth::TargetHealth() :
     m_iPHasBeenSet(false),
     m_portHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
-    m_targetIdHasBeenSet(false)
+    m_targetIdHasBeenSet(false),
+    m_healthStatusDetialHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome TargetHealth::Deserialize(const Value &value)
         m_targetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthStatusDetial") && !value["HealthStatusDetial"].IsNull())
+    {
+        if (!value["HealthStatusDetial"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TargetHealth.HealthStatusDetial` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthStatusDetial = string(value["HealthStatusDetial"].GetString());
+        m_healthStatusDetialHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void TargetHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "TargetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_targetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthStatusDetialHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HealthStatusDetial";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_healthStatusDetial.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void TargetHealth::SetTargetId(const string& _targetId)
 bool TargetHealth::TargetIdHasBeenSet() const
 {
     return m_targetIdHasBeenSet;
+}
+
+string TargetHealth::GetHealthStatusDetial() const
+{
+    return m_healthStatusDetial;
+}
+
+void TargetHealth::SetHealthStatusDetial(const string& _healthStatusDetial)
+{
+    m_healthStatusDetial = _healthStatusDetial;
+    m_healthStatusDetialHasBeenSet = true;
+}
+
+bool TargetHealth::HealthStatusDetialHasBeenSet() const
+{
+    return m_healthStatusDetialHasBeenSet;
 }
 

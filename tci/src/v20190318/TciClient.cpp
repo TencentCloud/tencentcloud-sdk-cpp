@@ -126,49 +126,6 @@ TciClient::CancelTaskOutcomeCallable TciClient::CancelTaskCallable(const CancelT
     return task->get_future();
 }
 
-TciClient::CheckAttendanceOutcome TciClient::CheckAttendance(const CheckAttendanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "CheckAttendance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CheckAttendanceResponse rsp = CheckAttendanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CheckAttendanceOutcome(rsp);
-        else
-            return CheckAttendanceOutcome(o.GetError());
-    }
-    else
-    {
-        return CheckAttendanceOutcome(outcome.GetError());
-    }
-}
-
-void TciClient::CheckAttendanceAsync(const CheckAttendanceRequest& request, const CheckAttendanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckAttendance(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TciClient::CheckAttendanceOutcomeCallable TciClient::CheckAttendanceCallable(const CheckAttendanceRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CheckAttendanceOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckAttendance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TciClient::CheckFacePhotoOutcome TciClient::CheckFacePhoto(const CheckFacePhotoRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckFacePhoto");
@@ -1416,6 +1373,49 @@ TciClient::SubmitDoubleVideoHighlightsOutcomeCallable TciClient::SubmitDoubleVid
     return task->get_future();
 }
 
+TciClient::SubmitFullBodyClassTaskOutcome TciClient::SubmitFullBodyClassTask(const SubmitFullBodyClassTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitFullBodyClassTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitFullBodyClassTaskResponse rsp = SubmitFullBodyClassTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitFullBodyClassTaskOutcome(rsp);
+        else
+            return SubmitFullBodyClassTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitFullBodyClassTaskOutcome(outcome.GetError());
+    }
+}
+
+void TciClient::SubmitFullBodyClassTaskAsync(const SubmitFullBodyClassTaskRequest& request, const SubmitFullBodyClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitFullBodyClassTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TciClient::SubmitFullBodyClassTaskOutcomeCallable TciClient::SubmitFullBodyClassTaskCallable(const SubmitFullBodyClassTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitFullBodyClassTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitFullBodyClassTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TciClient::SubmitHighlightsOutcome TciClient::SubmitHighlights(const SubmitHighlightsRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitHighlights");
@@ -1495,6 +1495,178 @@ TciClient::SubmitImageTaskOutcomeCallable TciClient::SubmitImageTaskCallable(con
         [this, request]()
         {
             return this->SubmitImageTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TciClient::SubmitOneByOneClassTaskOutcome TciClient::SubmitOneByOneClassTask(const SubmitOneByOneClassTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitOneByOneClassTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitOneByOneClassTaskResponse rsp = SubmitOneByOneClassTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitOneByOneClassTaskOutcome(rsp);
+        else
+            return SubmitOneByOneClassTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitOneByOneClassTaskOutcome(outcome.GetError());
+    }
+}
+
+void TciClient::SubmitOneByOneClassTaskAsync(const SubmitOneByOneClassTaskRequest& request, const SubmitOneByOneClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitOneByOneClassTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TciClient::SubmitOneByOneClassTaskOutcomeCallable TciClient::SubmitOneByOneClassTaskCallable(const SubmitOneByOneClassTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitOneByOneClassTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitOneByOneClassTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TciClient::SubmitOpenClassTaskOutcome TciClient::SubmitOpenClassTask(const SubmitOpenClassTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitOpenClassTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitOpenClassTaskResponse rsp = SubmitOpenClassTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitOpenClassTaskOutcome(rsp);
+        else
+            return SubmitOpenClassTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitOpenClassTaskOutcome(outcome.GetError());
+    }
+}
+
+void TciClient::SubmitOpenClassTaskAsync(const SubmitOpenClassTaskRequest& request, const SubmitOpenClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitOpenClassTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TciClient::SubmitOpenClassTaskOutcomeCallable TciClient::SubmitOpenClassTaskCallable(const SubmitOpenClassTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitOpenClassTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitOpenClassTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TciClient::SubmitPartialBodyClassTaskOutcome TciClient::SubmitPartialBodyClassTask(const SubmitPartialBodyClassTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitPartialBodyClassTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitPartialBodyClassTaskResponse rsp = SubmitPartialBodyClassTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitPartialBodyClassTaskOutcome(rsp);
+        else
+            return SubmitPartialBodyClassTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitPartialBodyClassTaskOutcome(outcome.GetError());
+    }
+}
+
+void TciClient::SubmitPartialBodyClassTaskAsync(const SubmitPartialBodyClassTaskRequest& request, const SubmitPartialBodyClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitPartialBodyClassTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TciClient::SubmitPartialBodyClassTaskOutcomeCallable TciClient::SubmitPartialBodyClassTaskCallable(const SubmitPartialBodyClassTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitPartialBodyClassTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitPartialBodyClassTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TciClient::SubmitTraditionalClassTaskOutcome TciClient::SubmitTraditionalClassTask(const SubmitTraditionalClassTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTraditionalClassTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTraditionalClassTaskResponse rsp = SubmitTraditionalClassTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTraditionalClassTaskOutcome(rsp);
+        else
+            return SubmitTraditionalClassTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTraditionalClassTaskOutcome(outcome.GetError());
+    }
+}
+
+void TciClient::SubmitTraditionalClassTaskAsync(const SubmitTraditionalClassTaskRequest& request, const SubmitTraditionalClassTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitTraditionalClassTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TciClient::SubmitTraditionalClassTaskOutcomeCallable TciClient::SubmitTraditionalClassTaskCallable(const SubmitTraditionalClassTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitTraditionalClassTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitTraditionalClassTask(request);
         }
     );
 

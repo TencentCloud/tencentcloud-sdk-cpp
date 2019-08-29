@@ -36,7 +36,8 @@ DescribeDCDBInstancesRequest::DescribeDCDBInstancesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_exclusterTypeHasBeenSet(false),
-    m_isFilterExclusterHasBeenSet(false)
+    m_isFilterExclusterHasBeenSet(false),
+    m_exclusterIdsHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,19 @@ string DescribeDCDBInstancesRequest::ToJsonString() const
         string key = "IsFilterExcluster";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isFilterExcluster, allocator);
+    }
+
+    if (m_exclusterIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExclusterIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_exclusterIds.begin(); itr != m_exclusterIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -375,6 +389,22 @@ void DescribeDCDBInstancesRequest::SetIsFilterExcluster(const bool& _isFilterExc
 bool DescribeDCDBInstancesRequest::IsFilterExclusterHasBeenSet() const
 {
     return m_isFilterExclusterHasBeenSet;
+}
+
+vector<string> DescribeDCDBInstancesRequest::GetExclusterIds() const
+{
+    return m_exclusterIds;
+}
+
+void DescribeDCDBInstancesRequest::SetExclusterIds(const vector<string>& _exclusterIds)
+{
+    m_exclusterIds = _exclusterIds;
+    m_exclusterIdsHasBeenSet = true;
+}
+
+bool DescribeDCDBInstancesRequest::ExclusterIdsHasBeenSet() const
+{
+    return m_exclusterIdsHasBeenSet;
 }
 
 

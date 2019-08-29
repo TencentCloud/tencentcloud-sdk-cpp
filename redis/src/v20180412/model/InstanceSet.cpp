@@ -56,7 +56,8 @@ InstanceSet::InstanceSet() :
     m_closeTimeHasBeenSet(false),
     m_slaveReadWeightHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_noAuthHasBeenSet(false)
 {
 }
 
@@ -438,6 +439,16 @@ CoreInternalOutcome InstanceSet::Deserialize(const Value &value)
         m_projectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("NoAuth") && !value["NoAuth"].IsNull())
+    {
+        if (!value["NoAuth"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.NoAuth` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_noAuth = value["NoAuth"].GetBool();
+        m_noAuthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -742,6 +753,14 @@ void InstanceSet::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noAuthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NoAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_noAuth, allocator);
     }
 
 }
@@ -1305,5 +1324,21 @@ void InstanceSet::SetProjectName(const string& _projectName)
 bool InstanceSet::ProjectNameHasBeenSet() const
 {
     return m_projectNameHasBeenSet;
+}
+
+bool InstanceSet::GetNoAuth() const
+{
+    return m_noAuth;
+}
+
+void InstanceSet::SetNoAuth(const bool& _noAuth)
+{
+    m_noAuth = _noAuth;
+    m_noAuthHasBeenSet = true;
+}
+
+bool InstanceSet::NoAuthHasBeenSet() const
+{
+    return m_noAuthHasBeenSet;
 }
 
