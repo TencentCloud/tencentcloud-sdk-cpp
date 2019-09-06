@@ -24,9 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 ModifyPersonRequest::ModifyPersonRequest() :
+    m_libraryIdHasBeenSet(false),
     m_personIdHasBeenSet(false),
     m_jobNumberHasBeenSet(false),
-    m_libraryIdHasBeenSet(false),
     m_mailHasBeenSet(false),
     m_maleHasBeenSet(false),
     m_personNameHasBeenSet(false),
@@ -42,6 +42,14 @@ string ModifyPersonRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_libraryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LibraryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_libraryId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_personIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -56,14 +64,6 @@ string ModifyPersonRequest::ToJsonString() const
         string key = "JobNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_jobNumber.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_libraryIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LibraryId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_libraryId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mailHasBeenSet)
@@ -114,6 +114,22 @@ string ModifyPersonRequest::ToJsonString() const
 }
 
 
+string ModifyPersonRequest::GetLibraryId() const
+{
+    return m_libraryId;
+}
+
+void ModifyPersonRequest::SetLibraryId(const string& _libraryId)
+{
+    m_libraryId = _libraryId;
+    m_libraryIdHasBeenSet = true;
+}
+
+bool ModifyPersonRequest::LibraryIdHasBeenSet() const
+{
+    return m_libraryIdHasBeenSet;
+}
+
 string ModifyPersonRequest::GetPersonId() const
 {
     return m_personId;
@@ -144,22 +160,6 @@ void ModifyPersonRequest::SetJobNumber(const string& _jobNumber)
 bool ModifyPersonRequest::JobNumberHasBeenSet() const
 {
     return m_jobNumberHasBeenSet;
-}
-
-string ModifyPersonRequest::GetLibraryId() const
-{
-    return m_libraryId;
-}
-
-void ModifyPersonRequest::SetLibraryId(const string& _libraryId)
-{
-    m_libraryId = _libraryId;
-    m_libraryIdHasBeenSet = true;
-}
-
-bool ModifyPersonRequest::LibraryIdHasBeenSet() const
-{
-    return m_libraryIdHasBeenSet;
 }
 
 string ModifyPersonRequest::GetMail() const

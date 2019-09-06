@@ -23,7 +23,9 @@ using namespace std;
 
 Task::Task() :
     m_dataIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_roomIdHasBeenSet(false),
+    m_openIdHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,26 @@ CoreInternalOutcome Task::Deserialize(const Value &value)
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("RoomId") && !value["RoomId"].IsNull())
+    {
+        if (!value["RoomId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Task.RoomId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roomId = string(value["RoomId"].GetString());
+        m_roomIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
+    {
+        if (!value["OpenId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Task.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_openId = string(value["OpenId"].GetString());
+        m_openIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +95,22 @@ void Task::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoomId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_roomId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +146,37 @@ void Task::SetUrl(const string& _url)
 bool Task::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string Task::GetRoomId() const
+{
+    return m_roomId;
+}
+
+void Task::SetRoomId(const string& _roomId)
+{
+    m_roomId = _roomId;
+    m_roomIdHasBeenSet = true;
+}
+
+bool Task::RoomIdHasBeenSet() const
+{
+    return m_roomIdHasBeenSet;
+}
+
+string Task::GetOpenId() const
+{
+    return m_openId;
+}
+
+void Task::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool Task::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
 }
 

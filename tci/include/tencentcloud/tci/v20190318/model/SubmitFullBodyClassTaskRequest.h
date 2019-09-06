@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入分析对象内容
-                     * @return FileContent 输入分析对象内容
+                     * 获取输入分析对象内容，输入数据格式参考FileType参数释义
+                     * @return FileContent 输入分析对象内容，输入数据格式参考FileType参数释义
                      */
                     std::string GetFileContent() const;
 
                     /**
-                     * 设置输入分析对象内容
-                     * @param FileContent 输入分析对象内容
+                     * 设置输入分析对象内容，输入数据格式参考FileType参数释义
+                     * @param FileContent 输入分析对象内容，输入数据格式参考FileType参数释义
                      */
                     void SetFileContent(const std::string& _fileContent);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LibrarySetHasBeenSet() const;
 
                     /**
-                     * 获取直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
-                     * @return MaxVideoDuration 直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     * 获取视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
+                     * @return MaxVideoDuration 视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
                      */
                     int64_t GetMaxVideoDuration() const;
 
                     /**
-                     * 设置直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
-                     * @param MaxVideoDuration 直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     * 设置视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
+                     * @param MaxVideoDuration 视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
                      */
                     void SetMaxVideoDuration(const int64_t& _maxVideoDuration);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入分析对象内容
+                     * 输入分析对象内容，输入数据格式参考FileType参数释义
                      */
                     std::string m_fileContent;
                     bool m_fileContentHasBeenSet;
@@ -213,7 +213,7 @@ namespace TencentCloud
                     bool m_librarySetHasBeenSet;
 
                     /**
-                     * 直播流评估时间，在FileType为live_url时生效，默认值为10分钟。
+                     * 视频评估时间，单位毫秒，点播场景默认值为2小时（无法探测长度时）或完整视频，直播场景默认值为10分钟或直播提前结束
                      */
                     int64_t m_maxVideoDuration;
                     bool m_maxVideoDurationHasBeenSet;

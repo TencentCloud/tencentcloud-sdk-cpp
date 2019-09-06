@@ -33,6 +33,7 @@
 #include <tencentcloud/tci/v20190318/model/GestureResult.h>
 #include <tencentcloud/tci/v20190318/model/HandTrackingResult.h>
 #include <tencentcloud/tci/v20190318/model/LightResult.h>
+#include <tencentcloud/tci/v20190318/model/StudentBodyMovementResult.h>
 #include <tencentcloud/tci/v20190318/model/BodyMovementResult.h>
 #include <tencentcloud/tci/v20190318/model/TeacherOutScreenResult.h>
 #include <tencentcloud/tci/v20190318/model/TimeInfoResult.h>
@@ -224,13 +225,13 @@ namespace TencentCloud
                      * 获取学生肢体动作识别结果
                      * @return StudentBodyMovement 学生肢体动作识别结果
                      */
-                    BodyMovementResult GetStudentBodyMovement() const;
+                    StudentBodyMovementResult GetStudentBodyMovement() const;
 
                     /**
                      * 设置学生肢体动作识别结果
                      * @param StudentBodyMovement 学生肢体动作识别结果
                      */
-                    void SetStudentBodyMovement(const BodyMovementResult& _studentBodyMovement);
+                    void SetStudentBodyMovement(const StudentBodyMovementResult& _studentBodyMovement);
 
                     /**
                      * 判断参数 StudentBodyMovement 是否已赋值
@@ -351,7 +352,7 @@ namespace TencentCloud
                     /**
                      * 学生肢体动作识别结果
                      */
-                    BodyMovementResult m_studentBodyMovement;
+                    StudentBodyMovementResult m_studentBodyMovement;
                     bool m_studentBodyMovementHasBeenSet;
 
                     /**

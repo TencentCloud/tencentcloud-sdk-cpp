@@ -535,12 +535,12 @@ bool ImageTaskResult::LightHasBeenSet() const
     return m_lightHasBeenSet;
 }
 
-BodyMovementResult ImageTaskResult::GetStudentBodyMovement() const
+StudentBodyMovementResult ImageTaskResult::GetStudentBodyMovement() const
 {
     return m_studentBodyMovement;
 }
 
-void ImageTaskResult::SetStudentBodyMovement(const BodyMovementResult& _studentBodyMovement)
+void ImageTaskResult::SetStudentBodyMovement(const StudentBodyMovementResult& _studentBodyMovement)
 {
     m_studentBodyMovement = _studentBodyMovement;
     m_studentBodyMovementHasBeenSet = true;

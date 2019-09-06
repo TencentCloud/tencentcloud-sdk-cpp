@@ -105,6 +105,7 @@ set(tci_public_header_model
   include/tencentcloud/tci/v20190318/model/DescribeImageTaskStatisticResponse.h
   include/tencentcloud/tci/v20190318/model/SubmitCheckAttendanceTaskRequest.h
   include/tencentcloud/tci/v20190318/model/CancelTaskResponse.h
+  include/tencentcloud/tci/v20190318/model/StudentBodyMovementResult.h
   include/tencentcloud/tci/v20190318/model/LightDistributionStatistic.h
   include/tencentcloud/tci/v20190318/model/ImageTaskFunction.h
   include/tencentcloud/tci/v20190318/model/FrameInfo.h
@@ -240,6 +241,7 @@ set(tci_src
   src/v20190318/model/DescribeImageTaskStatisticResponse.cpp
   src/v20190318/model/SubmitCheckAttendanceTaskRequest.cpp
   src/v20190318/model/CancelTaskResponse.cpp
+  src/v20190318/model/StudentBodyMovementResult.cpp
   src/v20190318/model/LightDistributionStatistic.cpp
   src/v20190318/model/ImageTaskFunction.cpp
   src/v20190318/model/FrameInfo.cpp

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeCdnDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeCdnIpRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeCdnIpResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeIpVisitResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeMapInfoRequest.h>
@@ -33,6 +35,10 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeOriginDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribePayTypeRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribePayTypeResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribePurgeTasksRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribePurgeTasksResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribePushTasksRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DisableCachesRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DisableCachesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/EnableCachesRequest.h>
@@ -41,6 +47,12 @@
 #include <tencentcloud/cdn/v20180606/model/GetDisableRecordsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ListTopDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/PurgePathCacheRequest.h>
+#include <tencentcloud/cdn/v20180606/model/PurgePathCacheResponse.h>
+#include <tencentcloud/cdn/v20180606/model/PurgeUrlsCacheRequest.h>
+#include <tencentcloud/cdn/v20180606/model/PurgeUrlsCacheResponse.h>
+#include <tencentcloud/cdn/v20180606/model/PushUrlsCacheRequest.h>
+#include <tencentcloud/cdn/v20180606/model/PushUrlsCacheResponse.h>
 
 
 namespace TencentCloud
@@ -58,6 +70,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCdnDataResponse> DescribeCdnDataOutcome;
                 typedef std::future<DescribeCdnDataOutcome> DescribeCdnDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeCdnDataRequest&, DescribeCdnDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnDataAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCdnIpResponse> DescribeCdnIpOutcome;
+                typedef std::future<DescribeCdnIpOutcome> DescribeCdnIpOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeCdnIpRequest&, DescribeCdnIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnIpAsyncHandler;
                 typedef Outcome<Error, Model::DescribeIpVisitResponse> DescribeIpVisitOutcome;
                 typedef std::future<DescribeIpVisitOutcome> DescribeIpVisitOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeIpVisitRequest&, DescribeIpVisitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpVisitAsyncHandler;
@@ -70,6 +85,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePayTypeResponse> DescribePayTypeOutcome;
                 typedef std::future<DescribePayTypeOutcome> DescribePayTypeOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribePayTypeRequest&, DescribePayTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePayTypeAsyncHandler;
+                typedef Outcome<Error, Model::DescribePurgeTasksResponse> DescribePurgeTasksOutcome;
+                typedef std::future<DescribePurgeTasksOutcome> DescribePurgeTasksOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribePurgeTasksRequest&, DescribePurgeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeTasksAsyncHandler;
+                typedef Outcome<Error, Model::DescribePushTasksResponse> DescribePushTasksOutcome;
+                typedef std::future<DescribePushTasksOutcome> DescribePushTasksOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribePushTasksRequest&, DescribePushTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePushTasksAsyncHandler;
                 typedef Outcome<Error, Model::DisableCachesResponse> DisableCachesOutcome;
                 typedef std::future<DisableCachesOutcome> DisableCachesOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DisableCachesRequest&, DisableCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCachesAsyncHandler;
@@ -82,6 +103,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListTopDataResponse> ListTopDataOutcome;
                 typedef std::future<ListTopDataOutcome> ListTopDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ListTopDataRequest&, ListTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopDataAsyncHandler;
+                typedef Outcome<Error, Model::PurgePathCacheResponse> PurgePathCacheOutcome;
+                typedef std::future<PurgePathCacheOutcome> PurgePathCacheOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::PurgePathCacheRequest&, PurgePathCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurgePathCacheAsyncHandler;
+                typedef Outcome<Error, Model::PurgeUrlsCacheResponse> PurgeUrlsCacheOutcome;
+                typedef std::future<PurgeUrlsCacheOutcome> PurgeUrlsCacheOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::PurgeUrlsCacheRequest&, PurgeUrlsCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurgeUrlsCacheAsyncHandler;
+                typedef Outcome<Error, Model::PushUrlsCacheResponse> PushUrlsCacheOutcome;
+                typedef std::future<PushUrlsCacheOutcome> PushUrlsCacheOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::PushUrlsCacheRequest&, PushUrlsCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushUrlsCacheAsyncHandler;
 
 
 
@@ -102,6 +132,15 @@ namespace TencentCloud
                 DescribeCdnDataOutcome DescribeCdnData(const Model::DescribeCdnDataRequest &request);
                 void DescribeCdnDataAsync(const Model::DescribeCdnDataRequest& request, const DescribeCdnDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCdnDataOutcomeCallable DescribeCdnDataCallable(const Model::DescribeCdnDataRequest& request);
+
+                /**
+                 *DescribeCdnIp 用于查询 CDN IP 归属。
+                 * @param req DescribeCdnIpRequest
+                 * @return DescribeCdnIpOutcome
+                 */
+                DescribeCdnIpOutcome DescribeCdnIp(const Model::DescribeCdnIpRequest &request);
+                void DescribeCdnIpAsync(const Model::DescribeCdnIpRequest& request, const DescribeCdnIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCdnIpOutcomeCallable DescribeCdnIpCallable(const Model::DescribeCdnIpRequest& request);
 
                 /**
                  *DescribeIpVisit 用于查询 5 分钟活跃用户数，及日活跃用户数明细
@@ -153,6 +192,24 @@ namespace TencentCloud
                 DescribePayTypeOutcomeCallable DescribePayTypeCallable(const Model::DescribePayTypeRequest& request);
 
                 /**
+                 *DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。
+                 * @param req DescribePurgeTasksRequest
+                 * @return DescribePurgeTasksOutcome
+                 */
+                DescribePurgeTasksOutcome DescribePurgeTasks(const Model::DescribePurgeTasksRequest &request);
+                void DescribePurgeTasksAsync(const Model::DescribePurgeTasksRequest& request, const DescribePurgeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePurgeTasksOutcomeCallable DescribePurgeTasksCallable(const Model::DescribePurgeTasksRequest& request);
+
+                /**
+                 *DescribePushTasks 用于查询预热任务提交历史记录及执行进度。（接口尚在批量公测中，暂未全量开放使用）
+                 * @param req DescribePushTasksRequest
+                 * @return DescribePushTasksOutcome
+                 */
+                DescribePushTasksOutcome DescribePushTasks(const Model::DescribePushTasksRequest &request);
+                void DescribePushTasksAsync(const Model::DescribePushTasksRequest& request, const DescribePushTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePushTasksOutcomeCallable DescribePushTasksCallable(const Model::DescribePushTasksRequest& request);
+
+                /**
                  *DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，全网访问会直接返回 403。（接口尚在内测中，暂未全量开放使用）
                  * @param req DisableCachesRequest
                  * @return DisableCachesOutcome
@@ -193,6 +250,33 @@ namespace TencentCloud
                 ListTopDataOutcome ListTopData(const Model::ListTopDataRequest &request);
                 void ListTopDataAsync(const Model::ListTopDataRequest& request, const ListTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTopDataOutcomeCallable ListTopDataCallable(const Model::ListTopDataRequest& request);
+
+                /**
+                 *PurgeUrlsCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。
+                 * @param req PurgePathCacheRequest
+                 * @return PurgePathCacheOutcome
+                 */
+                PurgePathCacheOutcome PurgePathCache(const Model::PurgePathCacheRequest &request);
+                void PurgePathCacheAsync(const Model::PurgePathCacheRequest& request, const PurgePathCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PurgePathCacheOutcomeCallable PurgePathCacheCallable(const Model::PurgePathCacheRequest& request);
+
+                /**
+                 *PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。
+                 * @param req PurgeUrlsCacheRequest
+                 * @return PurgeUrlsCacheOutcome
+                 */
+                PurgeUrlsCacheOutcome PurgeUrlsCache(const Model::PurgeUrlsCacheRequest &request);
+                void PurgeUrlsCacheAsync(const Model::PurgeUrlsCacheRequest& request, const PurgeUrlsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PurgeUrlsCacheOutcomeCallable PurgeUrlsCacheCallable(const Model::PurgeUrlsCacheRequest& request);
+
+                /**
+                 *PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，默认情况下每次调用可提交 20 条 URL，每日一共可提交 1000 条。
+                 * @param req PushUrlsCacheRequest
+                 * @return PushUrlsCacheOutcome
+                 */
+                PushUrlsCacheOutcome PushUrlsCache(const Model::PushUrlsCacheRequest &request);
+                void PushUrlsCacheAsync(const Model::PushUrlsCacheRequest& request, const PushUrlsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PushUrlsCacheOutcomeCallable PushUrlsCacheCallable(const Model::PushUrlsCacheRequest& request);
 
             };
         }

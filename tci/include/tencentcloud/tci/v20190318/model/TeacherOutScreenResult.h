@@ -47,14 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动作识别结果
-                     * @return Class 动作识别结果
+                     * 获取动作识别结果，InScreen：在屏幕内
+OutScreen：不在屏幕内
+                     * @return Class 动作识别结果，InScreen：在屏幕内
+OutScreen：不在屏幕内
                      */
                     std::string GetClass() const;
 
                     /**
-                     * 设置动作识别结果
-                     * @param Class 动作识别结果
+                     * 设置动作识别结果，InScreen：在屏幕内
+OutScreen：不在屏幕内
+                     * @param Class 动作识别结果，InScreen：在屏幕内
+OutScreen：不在屏幕内
                      */
                     void SetClass(const std::string& _class);
 
@@ -139,7 +143,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 动作识别结果
+                     * 动作识别结果，InScreen：在屏幕内
+OutScreen：不在屏幕内
                      */
                     std::string m_class;
                     bool m_classHasBeenSet;

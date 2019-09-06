@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool EipHasBeenSet() const;
 
                     /**
-                     * 获取运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：香港
-                     * @return IspId 运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：香港
+                     * 获取运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：中国香港
+                     * @return IspId 运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：中国香港
                      */
                     int64_t GetIspId() const;
 
                     /**
-                     * 设置运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：香港
-                     * @param IspId 运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：香港
+                     * 设置运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：中国香港
+                     * @param IspId 运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：中国香港
                      */
                     void SetIspId(const int64_t& _ispId);
 
@@ -571,7 +571,7 @@ namespace TencentCloud
                     bool m_eipHasBeenSet;
 
                     /**
-                     * 运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：香港
+                     * 运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：中国香港
                      */
                     int64_t m_ispId;
                     bool m_ispIdHasBeenSet;

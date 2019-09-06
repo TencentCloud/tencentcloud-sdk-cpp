@@ -25,7 +25,9 @@ ScanPiece::ScanPiece() :
     m_dumpUrlHasBeenSet(false),
     m_hitFlagHasBeenSet(false),
     m_mainTypeHasBeenSet(false),
-    m_scanDetailHasBeenSet(false)
+    m_scanDetailHasBeenSet(false),
+    m_roomIdHasBeenSet(false),
+    m_openIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome ScanPiece::Deserialize(const Value &value)
         m_scanDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("RoomId") && !value["RoomId"].IsNull())
+    {
+        if (!value["RoomId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ScanPiece.RoomId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roomId = string(value["RoomId"].GetString());
+        m_roomIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
+    {
+        if (!value["OpenId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ScanPiece.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_openId = string(value["OpenId"].GetString());
+        m_openIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +150,22 @@ void ScanPiece::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_roomIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoomId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_roomId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -195,5 +233,37 @@ void ScanPiece::SetScanDetail(const vector<ScanDetail>& _scanDetail)
 bool ScanPiece::ScanDetailHasBeenSet() const
 {
     return m_scanDetailHasBeenSet;
+}
+
+string ScanPiece::GetRoomId() const
+{
+    return m_roomId;
+}
+
+void ScanPiece::SetRoomId(const string& _roomId)
+{
+    m_roomId = _roomId;
+    m_roomIdHasBeenSet = true;
+}
+
+bool ScanPiece::RoomIdHasBeenSet() const
+{
+    return m_roomIdHasBeenSet;
+}
+
+string ScanPiece::GetOpenId() const
+{
+    return m_openId;
+}
+
+void ScanPiece::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool ScanPiece::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
 }
 

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取躯体动作识别结果
-                     * @return BodyPosture 躯体动作识别结果
+                     * 获取躯体动作识别结果，包含坐着（sit）、站立（stand）和趴睡（sleep）
+                     * @return BodyPosture 躯体动作识别结果，包含坐着（sit）、站立（stand）和趴睡（sleep）
                      */
                     ActionType GetBodyPosture() const;
 
                     /**
-                     * 设置躯体动作识别结果
-                     * @param BodyPosture 躯体动作识别结果
+                     * 设置躯体动作识别结果，包含坐着（sit）、站立（stand）和趴睡（sleep）
+                     * @param BodyPosture 躯体动作识别结果，包含坐着（sit）、站立（stand）和趴睡（sleep）
                      */
                     void SetBodyPosture(const ActionType& _bodyPosture);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool BodyPostureHasBeenSet() const;
 
                     /**
-                     * 获取举手识别结果
-                     * @return Handup 举手识别结果
+                     * 获取举手识别结果，包含举手（hand）和未检测到举手（nothand）
+                     * @return Handup 举手识别结果，包含举手（hand）和未检测到举手（nothand）
                      */
                     ActionType GetHandup() const;
 
                     /**
-                     * 设置举手识别结果
-                     * @param Handup 举手识别结果
+                     * 设置举手识别结果，包含举手（hand）和未检测到举手（nothand）
+                     * @param Handup 举手识别结果，包含举手（hand）和未检测到举手（nothand）
                      */
                     void SetHandup(const ActionType& _handup);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool HandupHasBeenSet() const;
 
                     /**
-                     * 获取是否低头识别结果
-                     * @return LookHead 是否低头识别结果
+                     * 获取是否低头识别结果，包含抬头（lookingahead）和未检测到抬头（notlookingahead）
+                     * @return LookHead 是否低头识别结果，包含抬头（lookingahead）和未检测到抬头（notlookingahead）
                      */
                     ActionType GetLookHead() const;
 
                     /**
-                     * 设置是否低头识别结果
-                     * @param LookHead 是否低头识别结果
+                     * 设置是否低头识别结果，包含抬头（lookingahead）和未检测到抬头（notlookingahead）
+                     * @param LookHead 是否低头识别结果，包含抬头（lookingahead）和未检测到抬头（notlookingahead）
                      */
                     void SetLookHead(const ActionType& _lookHead);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool LookHeadHasBeenSet() const;
 
                     /**
-                     * 获取是否写字识别结果
-                     * @return Writing 是否写字识别结果
+                     * 获取是否写字识别结果，包含写字（write）和未检测到写字（notlookingahead）
+                     * @return Writing 是否写字识别结果，包含写字（write）和未检测到写字（notlookingahead）
                      */
                     ActionType GetWriting() const;
 
                     /**
-                     * 设置是否写字识别结果
-                     * @param Writing 是否写字识别结果
+                     * 设置是否写字识别结果，包含写字（write）和未检测到写字（notlookingahead）
+                     * @param Writing 是否写字识别结果，包含写字（write）和未检测到写字（notlookingahead）
                      */
                     void SetWriting(const ActionType& _writing);
 
@@ -194,25 +194,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 躯体动作识别结果
+                     * 躯体动作识别结果，包含坐着（sit）、站立（stand）和趴睡（sleep）
                      */
                     ActionType m_bodyPosture;
                     bool m_bodyPostureHasBeenSet;
 
                     /**
-                     * 举手识别结果
+                     * 举手识别结果，包含举手（hand）和未检测到举手（nothand）
                      */
                     ActionType m_handup;
                     bool m_handupHasBeenSet;
 
                     /**
-                     * 是否低头识别结果
+                     * 是否低头识别结果，包含抬头（lookingahead）和未检测到抬头（notlookingahead）
                      */
                     ActionType m_lookHead;
                     bool m_lookHeadHasBeenSet;
 
                     /**
-                     * 是否写字识别结果
+                     * 是否写字识别结果，包含写字（write）和未检测到写字（notlookingahead）
                      */
                     ActionType m_writing;
                     bool m_writingHasBeenSet;

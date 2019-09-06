@@ -127,6 +127,50 @@ namespace TencentCloud
                      */
                     bool ScanDetailHasBeenSet() const;
 
+                    /**
+                     * 获取gme实时语音房间id，透传任务传入时的RoomId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoomId gme实时语音房间id，透传任务传入时的RoomId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRoomId() const;
+
+                    /**
+                     * 设置gme实时语音房间id，透传任务传入时的RoomId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RoomId gme实时语音房间id，透传任务传入时的RoomId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRoomId(const std::string& _roomId);
+
+                    /**
+                     * 判断参数 RoomId 是否已赋值
+                     * @return RoomId 是否已赋值
+                     */
+                    bool RoomIdHasBeenSet() const;
+
+                    /**
+                     * 获取gme实时语音用户id，透传任务传入时的OpenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpenId gme实时语音用户id，透传任务传入时的OpenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOpenId() const;
+
+                    /**
+                     * 设置gme实时语音用户id，透传任务传入时的OpenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OpenId gme实时语音用户id，透传任务传入时的OpenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOpenId(const std::string& _openId);
+
+                    /**
+                     * 判断参数 OpenId 是否已赋值
+                     * @return OpenId 是否已赋值
+                     */
+                    bool OpenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +198,20 @@ namespace TencentCloud
                      */
                     std::vector<ScanDetail> m_scanDetail;
                     bool m_scanDetailHasBeenSet;
+
+                    /**
+                     * gme实时语音房间id，透传任务传入时的RoomId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roomId;
+                    bool m_roomIdHasBeenSet;
+
+                    /**
+                     * gme实时语音用户id，透传任务传入时的OpenId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_openId;
+                    bool m_openIdHasBeenSet;
 
                 };
             }

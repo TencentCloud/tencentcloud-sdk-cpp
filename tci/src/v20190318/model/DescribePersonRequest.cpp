@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribePersonRequest::DescribePersonRequest() :
-    m_personIdHasBeenSet(false),
-    m_libraryIdHasBeenSet(false)
+    m_libraryIdHasBeenSet(false),
+    m_personIdHasBeenSet(false)
 {
 }
 
@@ -36,20 +36,20 @@ string DescribePersonRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_personIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PersonId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_libraryIdHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "LibraryId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_libraryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_personIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PersonId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,22 +59,6 @@ string DescribePersonRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribePersonRequest::GetPersonId() const
-{
-    return m_personId;
-}
-
-void DescribePersonRequest::SetPersonId(const string& _personId)
-{
-    m_personId = _personId;
-    m_personIdHasBeenSet = true;
-}
-
-bool DescribePersonRequest::PersonIdHasBeenSet() const
-{
-    return m_personIdHasBeenSet;
-}
 
 string DescribePersonRequest::GetLibraryId() const
 {
@@ -90,6 +74,22 @@ void DescribePersonRequest::SetLibraryId(const string& _libraryId)
 bool DescribePersonRequest::LibraryIdHasBeenSet() const
 {
     return m_libraryIdHasBeenSet;
+}
+
+string DescribePersonRequest::GetPersonId() const
+{
+    return m_personId;
+}
+
+void DescribePersonRequest::SetPersonId(const string& _personId)
+{
+    m_personId = _personId;
+    m_personIdHasBeenSet = true;
+}
+
+bool DescribePersonRequest::PersonIdHasBeenSet() const
+{
+    return m_personIdHasBeenSet;
 }
 
 

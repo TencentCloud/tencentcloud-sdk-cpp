@@ -25,11 +25,11 @@ using namespace std;
 
 SubmitConversationTaskRequest::SubmitConversationTaskRequest() :
     m_langHasBeenSet(false),
+    m_studentUrlHasBeenSet(false),
+    m_teacherUrlHasBeenSet(false),
     m_voiceEncodeTypeHasBeenSet(false),
     m_voiceFileTypeHasBeenSet(false),
     m_functionsHasBeenSet(false),
-    m_studentUrlHasBeenSet(false),
-    m_teacherUrlHasBeenSet(false),
     m_vocabLibNameListHasBeenSet(false)
 {
 }
@@ -47,6 +47,22 @@ string SubmitConversationTaskRequest::ToJsonString() const
         string key = "Lang";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_lang, allocator);
+    }
+
+    if (m_studentUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StudentUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_studentUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_teacherUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TeacherUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_teacherUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_voiceEncodeTypeHasBeenSet)
@@ -72,22 +88,6 @@ string SubmitConversationTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_functions.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_studentUrlHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "StudentUrl";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_studentUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_teacherUrlHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "TeacherUrl";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_teacherUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vocabLibNameListHasBeenSet)
@@ -125,6 +125,38 @@ void SubmitConversationTaskRequest::SetLang(const int64_t& _lang)
 bool SubmitConversationTaskRequest::LangHasBeenSet() const
 {
     return m_langHasBeenSet;
+}
+
+string SubmitConversationTaskRequest::GetStudentUrl() const
+{
+    return m_studentUrl;
+}
+
+void SubmitConversationTaskRequest::SetStudentUrl(const string& _studentUrl)
+{
+    m_studentUrl = _studentUrl;
+    m_studentUrlHasBeenSet = true;
+}
+
+bool SubmitConversationTaskRequest::StudentUrlHasBeenSet() const
+{
+    return m_studentUrlHasBeenSet;
+}
+
+string SubmitConversationTaskRequest::GetTeacherUrl() const
+{
+    return m_teacherUrl;
+}
+
+void SubmitConversationTaskRequest::SetTeacherUrl(const string& _teacherUrl)
+{
+    m_teacherUrl = _teacherUrl;
+    m_teacherUrlHasBeenSet = true;
+}
+
+bool SubmitConversationTaskRequest::TeacherUrlHasBeenSet() const
+{
+    return m_teacherUrlHasBeenSet;
 }
 
 int64_t SubmitConversationTaskRequest::GetVoiceEncodeType() const
@@ -173,38 +205,6 @@ void SubmitConversationTaskRequest::SetFunctions(const Function& _functions)
 bool SubmitConversationTaskRequest::FunctionsHasBeenSet() const
 {
     return m_functionsHasBeenSet;
-}
-
-string SubmitConversationTaskRequest::GetStudentUrl() const
-{
-    return m_studentUrl;
-}
-
-void SubmitConversationTaskRequest::SetStudentUrl(const string& _studentUrl)
-{
-    m_studentUrl = _studentUrl;
-    m_studentUrlHasBeenSet = true;
-}
-
-bool SubmitConversationTaskRequest::StudentUrlHasBeenSet() const
-{
-    return m_studentUrlHasBeenSet;
-}
-
-string SubmitConversationTaskRequest::GetTeacherUrl() const
-{
-    return m_teacherUrl;
-}
-
-void SubmitConversationTaskRequest::SetTeacherUrl(const string& _teacherUrl)
-{
-    m_teacherUrl = _teacherUrl;
-    m_teacherUrlHasBeenSet = true;
-}
-
-bool SubmitConversationTaskRequest::TeacherUrlHasBeenSet() const
-{
-    return m_teacherUrlHasBeenSet;
 }
 
 vector<string> SubmitConversationTaskRequest::GetVocabLibNameList() const

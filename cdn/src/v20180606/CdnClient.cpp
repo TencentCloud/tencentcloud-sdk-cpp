@@ -83,6 +83,49 @@ CdnClient::DescribeCdnDataOutcomeCallable CdnClient::DescribeCdnDataCallable(con
     return task->get_future();
 }
 
+CdnClient::DescribeCdnIpOutcome CdnClient::DescribeCdnIp(const DescribeCdnIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdnIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdnIpResponse rsp = DescribeCdnIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdnIpOutcome(rsp);
+        else
+            return DescribeCdnIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdnIpOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeCdnIpAsync(const DescribeCdnIpRequest& request, const DescribeCdnIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdnIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnIpOutcomeCallable CdnClient::DescribeCdnIpCallable(const DescribeCdnIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdnIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdnIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeIpVisitOutcome CdnClient::DescribeIpVisit(const DescribeIpVisitRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIpVisit");
@@ -255,6 +298,92 @@ CdnClient::DescribePayTypeOutcomeCallable CdnClient::DescribePayTypeCallable(con
     return task->get_future();
 }
 
+CdnClient::DescribePurgeTasksOutcome CdnClient::DescribePurgeTasks(const DescribePurgeTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePurgeTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePurgeTasksResponse rsp = DescribePurgeTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePurgeTasksOutcome(rsp);
+        else
+            return DescribePurgeTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePurgeTasksOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribePurgeTasksAsync(const DescribePurgeTasksRequest& request, const DescribePurgeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePurgeTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribePurgeTasksOutcomeCallable CdnClient::DescribePurgeTasksCallable(const DescribePurgeTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePurgeTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePurgeTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribePushTasksOutcome CdnClient::DescribePushTasks(const DescribePushTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePushTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePushTasksResponse rsp = DescribePushTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePushTasksOutcome(rsp);
+        else
+            return DescribePushTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePushTasksOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribePushTasksAsync(const DescribePushTasksRequest& request, const DescribePushTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePushTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribePushTasksOutcomeCallable CdnClient::DescribePushTasksCallable(const DescribePushTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePushTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePushTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DisableCachesOutcome CdnClient::DisableCaches(const DisableCachesRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableCaches");
@@ -420,6 +549,135 @@ CdnClient::ListTopDataOutcomeCallable CdnClient::ListTopDataCallable(const ListT
         [this, request]()
         {
             return this->ListTopData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::PurgePathCacheOutcome CdnClient::PurgePathCache(const PurgePathCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "PurgePathCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PurgePathCacheResponse rsp = PurgePathCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PurgePathCacheOutcome(rsp);
+        else
+            return PurgePathCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return PurgePathCacheOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::PurgePathCacheAsync(const PurgePathCacheRequest& request, const PurgePathCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PurgePathCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::PurgePathCacheOutcomeCallable CdnClient::PurgePathCacheCallable(const PurgePathCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PurgePathCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->PurgePathCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::PurgeUrlsCacheOutcome CdnClient::PurgeUrlsCache(const PurgeUrlsCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "PurgeUrlsCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PurgeUrlsCacheResponse rsp = PurgeUrlsCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PurgeUrlsCacheOutcome(rsp);
+        else
+            return PurgeUrlsCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return PurgeUrlsCacheOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::PurgeUrlsCacheAsync(const PurgeUrlsCacheRequest& request, const PurgeUrlsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PurgeUrlsCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::PurgeUrlsCacheOutcomeCallable CdnClient::PurgeUrlsCacheCallable(const PurgeUrlsCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PurgeUrlsCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->PurgeUrlsCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::PushUrlsCacheOutcome CdnClient::PushUrlsCache(const PushUrlsCacheRequest &request)
+{
+    auto outcome = MakeRequest(request, "PushUrlsCache");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PushUrlsCacheResponse rsp = PushUrlsCacheResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PushUrlsCacheOutcome(rsp);
+        else
+            return PushUrlsCacheOutcome(o.GetError());
+    }
+    else
+    {
+        return PushUrlsCacheOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::PushUrlsCacheAsync(const PushUrlsCacheRequest& request, const PushUrlsCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PushUrlsCache(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::PushUrlsCacheOutcomeCallable CdnClient::PushUrlsCacheCallable(const PushUrlsCacheRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PushUrlsCacheOutcome()>>(
+        [this, request]()
+        {
+            return this->PushUrlsCache(request);
         }
     );
 

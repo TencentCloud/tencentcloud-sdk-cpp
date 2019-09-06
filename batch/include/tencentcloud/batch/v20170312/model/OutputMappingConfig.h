@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool WorkerNumHasBeenSet() const;
 
                     /**
-                     * 获取worker分块大小
-                     * @return WorkerPartSize worker分块大小
+                     * 获取worker分块大小，单位MB
+                     * @return WorkerPartSize worker分块大小，单位MB
                      */
                     int64_t GetWorkerPartSize() const;
 
                     /**
-                     * 设置worker分块大小
-                     * @param WorkerPartSize worker分块大小
+                     * 设置worker分块大小，单位MB
+                     * @param WorkerPartSize worker分块大小，单位MB
                      */
                     void SetWorkerPartSize(const int64_t& _workerPartSize);
 
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_workerNumHasBeenSet;
 
                     /**
-                     * worker分块大小
+                     * worker分块大小，单位MB
                      */
                     int64_t m_workerPartSize;
                     bool m_workerPartSizeHasBeenSet;

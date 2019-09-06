@@ -62,6 +62,42 @@ namespace TencentCloud
                     bool LangHasBeenSet() const;
 
                     /**
+                     * 获取学生音频流
+                     * @return StudentUrl 学生音频流
+                     */
+                    std::string GetStudentUrl() const;
+
+                    /**
+                     * 设置学生音频流
+                     * @param StudentUrl 学生音频流
+                     */
+                    void SetStudentUrl(const std::string& _studentUrl);
+
+                    /**
+                     * 判断参数 StudentUrl 是否已赋值
+                     * @return StudentUrl 是否已赋值
+                     */
+                    bool StudentUrlHasBeenSet() const;
+
+                    /**
+                     * 获取教师音频流
+                     * @return TeacherUrl 教师音频流
+                     */
+                    std::string GetTeacherUrl() const;
+
+                    /**
+                     * 设置教师音频流
+                     * @param TeacherUrl 教师音频流
+                     */
+                    void SetTeacherUrl(const std::string& _teacherUrl);
+
+                    /**
+                     * 判断参数 TeacherUrl 是否已赋值
+                     * @return TeacherUrl 是否已赋值
+                     */
+                    bool TeacherUrlHasBeenSet() const;
+
+                    /**
                      * 获取语音编码类型 1:pcm
                      * @return VoiceEncodeType 语音编码类型 1:pcm
                      */
@@ -116,42 +152,6 @@ namespace TencentCloud
                     bool FunctionsHasBeenSet() const;
 
                     /**
-                     * 获取学生音频流
-                     * @return StudentUrl 学生音频流
-                     */
-                    std::string GetStudentUrl() const;
-
-                    /**
-                     * 设置学生音频流
-                     * @param StudentUrl 学生音频流
-                     */
-                    void SetStudentUrl(const std::string& _studentUrl);
-
-                    /**
-                     * 判断参数 StudentUrl 是否已赋值
-                     * @return StudentUrl 是否已赋值
-                     */
-                    bool StudentUrlHasBeenSet() const;
-
-                    /**
-                     * 获取教师音频流
-                     * @return TeacherUrl 教师音频流
-                     */
-                    std::string GetTeacherUrl() const;
-
-                    /**
-                     * 设置教师音频流
-                     * @param TeacherUrl 教师音频流
-                     */
-                    void SetTeacherUrl(const std::string& _teacherUrl);
-
-                    /**
-                     * 判断参数 TeacherUrl 是否已赋值
-                     * @return TeacherUrl 是否已赋值
-                     */
-                    bool TeacherUrlHasBeenSet() const;
-
-                    /**
                      * 获取识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析
                      * @return VocabLibNameList 识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析
                      */
@@ -178,6 +178,18 @@ namespace TencentCloud
                     bool m_langHasBeenSet;
 
                     /**
+                     * 学生音频流
+                     */
+                    std::string m_studentUrl;
+                    bool m_studentUrlHasBeenSet;
+
+                    /**
+                     * 教师音频流
+                     */
+                    std::string m_teacherUrl;
+                    bool m_teacherUrlHasBeenSet;
+
+                    /**
                      * 语音编码类型 1:pcm
                      */
                     int64_t m_voiceEncodeType;
@@ -194,18 +206,6 @@ namespace TencentCloud
                      */
                     Function m_functions;
                     bool m_functionsHasBeenSet;
-
-                    /**
-                     * 学生音频流
-                     */
-                    std::string m_studentUrl;
-                    bool m_studentUrlHasBeenSet;
-
-                    /**
-                     * 教师音频流
-                     */
-                    std::string m_teacherUrl;
-                    bool m_teacherUrlHasBeenSet;
 
                     /**
                      * 识别词库名列表，评估过程使用这些词汇库中的词汇进行词汇使用行为分析

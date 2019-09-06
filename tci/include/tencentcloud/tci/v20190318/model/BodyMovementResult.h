@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * BodyMovementResult
+                * 老师肢体动作识别结果
                 */
                 class BodyMovementResult : public AbstractModel
                 {
@@ -101,14 +101,30 @@ namespace TencentCloud
                     bool LeftHasBeenSet() const;
 
                     /**
-                     * 获取动作识别结果
-                     * @return Movements 动作识别结果
+                     * 获取老师动作识别结果，包含
+1、teach_on_positive_attitude 正面讲解
+2、point_to_the_blackboard 指黑板
+3、writing_blackboard 写板书
+4、other 其他
+                     * @return Movements 老师动作识别结果，包含
+1、teach_on_positive_attitude 正面讲解
+2、point_to_the_blackboard 指黑板
+3、writing_blackboard 写板书
+4、other 其他
                      */
                     std::string GetMovements() const;
 
                     /**
-                     * 设置动作识别结果
-                     * @param Movements 动作识别结果
+                     * 设置老师动作识别结果，包含
+1、teach_on_positive_attitude 正面讲解
+2、point_to_the_blackboard 指黑板
+3、writing_blackboard 写板书
+4、other 其他
+                     * @param Movements 老师动作识别结果，包含
+1、teach_on_positive_attitude 正面讲解
+2、point_to_the_blackboard 指黑板
+3、writing_blackboard 写板书
+4、other 其他
                      */
                     void SetMovements(const std::string& _movements);
 
@@ -175,7 +191,11 @@ namespace TencentCloud
                     bool m_leftHasBeenSet;
 
                     /**
-                     * 动作识别结果
+                     * 老师动作识别结果，包含
+1、teach_on_positive_attitude 正面讲解
+2、point_to_the_blackboard 指黑板
+3、writing_blackboard 写板书
+4、other 其他
                      */
                     std::string m_movements;
                     bool m_movementsHasBeenSet;

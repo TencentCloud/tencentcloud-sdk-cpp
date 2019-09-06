@@ -134,7 +134,7 @@ namespace TencentCloud
 <p>ad :广告</p>
 <p>terrorism:暴恐</p>
 <p>contraband :违禁</p>
-<p>customized:自定义，比如自定义词库。暂未开放</p>
+<p>customized:自定义词库</p>
 </td>
 </tr>
 </tbody>
@@ -205,6 +205,8 @@ namespace TencentCloud
 			"DumpUrl": "",
 			"HitFlag": true,
 			"MainType": "abuse",
+			"RoomId": "123",
+			"OpenId": "xxx",
 			"ScanDetail": [{
 				"EndTime": 1110,
 				"KeyWord": "xxx",

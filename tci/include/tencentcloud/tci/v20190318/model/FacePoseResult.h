@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取Pitch
-                     * @return Pitch Pitch
+                     * 获取围绕Z轴旋转角度，俯仰角
+                     * @return Pitch 围绕Z轴旋转角度，俯仰角
                      */
                     double GetPitch() const;
 
                     /**
-                     * 设置Pitch
-                     * @param Pitch Pitch
+                     * 设置围绕Z轴旋转角度，俯仰角
+                     * @param Pitch 围绕Z轴旋转角度，俯仰角
                      */
                     void SetPitch(const double& _pitch);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PitchHasBeenSet() const;
 
                     /**
-                     * 获取Roll
-                     * @return Roll Roll
+                     * 获取围绕X轴旋转角度，翻滚角
+                     * @return Roll 围绕X轴旋转角度，翻滚角
                      */
                     double GetRoll() const;
 
                     /**
-                     * 设置Roll
-                     * @param Roll Roll
+                     * 设置围绕X轴旋转角度，翻滚角
+                     * @param Roll 围绕X轴旋转角度，翻滚角
                      */
                     void SetRoll(const double& _roll);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool RollHasBeenSet() const;
 
                     /**
-                     * 获取角度信息选填
-                     * @return Yaw 角度信息选填
+                     * 获取围绕Y轴旋转角度，偏航角
+                     * @return Yaw 围绕Y轴旋转角度，偏航角
                      */
                     double GetYaw() const;
 
                     /**
-                     * 设置角度信息选填
-                     * @param Yaw 角度信息选填
+                     * 设置围绕Y轴旋转角度，偏航角
+                     * @param Yaw 围绕Y轴旋转角度，偏航角
                      */
                     void SetYaw(const double& _yaw);
 
@@ -127,19 +127,19 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * Pitch
+                     * 围绕Z轴旋转角度，俯仰角
                      */
                     double m_pitch;
                     bool m_pitchHasBeenSet;
 
                     /**
-                     * Roll
+                     * 围绕X轴旋转角度，翻滚角
                      */
                     double m_roll;
                     bool m_rollHasBeenSet;
 
                     /**
-                     * 角度信息选填
+                     * 围绕Y轴旋转角度，偏航角
                      */
                     double m_yaw;
                     bool m_yawHasBeenSet;

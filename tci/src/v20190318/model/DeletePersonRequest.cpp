@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DeletePersonRequest::DeletePersonRequest() :
-    m_personIdHasBeenSet(false),
-    m_libraryIdHasBeenSet(false)
+    m_libraryIdHasBeenSet(false),
+    m_personIdHasBeenSet(false)
 {
 }
 
@@ -36,20 +36,20 @@ string DeletePersonRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_personIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PersonId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_libraryIdHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "LibraryId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_libraryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_personIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PersonId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,22 +59,6 @@ string DeletePersonRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DeletePersonRequest::GetPersonId() const
-{
-    return m_personId;
-}
-
-void DeletePersonRequest::SetPersonId(const string& _personId)
-{
-    m_personId = _personId;
-    m_personIdHasBeenSet = true;
-}
-
-bool DeletePersonRequest::PersonIdHasBeenSet() const
-{
-    return m_personIdHasBeenSet;
-}
 
 string DeletePersonRequest::GetLibraryId() const
 {
@@ -90,6 +74,22 @@ void DeletePersonRequest::SetLibraryId(const string& _libraryId)
 bool DeletePersonRequest::LibraryIdHasBeenSet() const
 {
     return m_libraryIdHasBeenSet;
+}
+
+string DeletePersonRequest::GetPersonId() const
+{
+    return m_personId;
+}
+
+void DeletePersonRequest::SetPersonId(const string& _personId)
+{
+    m_personId = _personId;
+    m_personIdHasBeenSet = true;
+}
+
+bool DeletePersonRequest::PersonIdHasBeenSet() const
+{
+    return m_personIdHasBeenSet;
 }
 
 

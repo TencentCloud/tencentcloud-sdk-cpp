@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员唯一标识符
-                     * @return PersonId 人员唯一标识符
-                     */
-                    std::string GetPersonId() const;
-
-                    /**
-                     * 设置人员唯一标识符
-                     * @param PersonId 人员唯一标识符
-                     */
-                    void SetPersonId(const std::string& _personId);
-
-                    /**
-                     * 判断参数 PersonId 是否已赋值
-                     * @return PersonId 是否已赋值
-                     */
-                    bool PersonIdHasBeenSet() const;
-
-                    /**
                      * 获取人员库唯一标识符
                      * @return LibraryId 人员库唯一标识符
                      */
@@ -78,19 +60,37 @@ namespace TencentCloud
                      */
                     bool LibraryIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取人员唯一标识符
+                     * @return PersonId 人员唯一标识符
+                     */
+                    std::string GetPersonId() const;
 
                     /**
-                     * 人员唯一标识符
+                     * 设置人员唯一标识符
+                     * @param PersonId 人员唯一标识符
                      */
-                    std::string m_personId;
-                    bool m_personIdHasBeenSet;
+                    void SetPersonId(const std::string& _personId);
+
+                    /**
+                     * 判断参数 PersonId 是否已赋值
+                     * @return PersonId 是否已赋值
+                     */
+                    bool PersonIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 人员库唯一标识符
                      */
                     std::string m_libraryId;
                     bool m_libraryIdHasBeenSet;
+
+                    /**
+                     * 人员唯一标识符
+                     */
+                    std::string m_personId;
+                    bool m_personIdHasBeenSet;
 
                 };
             }

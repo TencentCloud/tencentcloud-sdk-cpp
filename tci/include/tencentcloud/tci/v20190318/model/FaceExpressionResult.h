@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取表情识别结果
-                     * @return Expression 表情识别结果
+                     * 获取表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
+                     * @return Expression 表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
                      */
                     std::string GetExpression() const;
 
                     /**
-                     * 设置表情识别结果
-                     * @param Expression 表情识别结果
+                     * 设置表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
+                     * @param Expression 表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
                      */
                     void SetExpression(const std::string& _expression);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 表情识别结果
+                     * 表情识别结果，包括"neutral":中性,"happiness":开心，"angry":"生气"，"disgust":厌恶，"fear":"恐惧"，"sadness":"悲伤"，"surprise":"惊讶"，"contempt":"蔑视"
                      */
                     std::string m_expression;
                     bool m_expressionHasBeenSet;

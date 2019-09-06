@@ -183,7 +183,7 @@ string DescribeEipsRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "AclId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_aclId, allocator);
+        d.AddMember(iKey, Value(m_aclId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bindAclHasBeenSet)
@@ -410,12 +410,12 @@ bool DescribeEipsRequest::ExclusiveTagHasBeenSet() const
     return m_exclusiveTagHasBeenSet;
 }
 
-int64_t DescribeEipsRequest::GetAclId() const
+string DescribeEipsRequest::GetAclId() const
 {
     return m_aclId;
 }
 
-void DescribeEipsRequest::SetAclId(const int64_t& _aclId)
+void DescribeEipsRequest::SetAclId(const string& _aclId)
 {
     m_aclId = _aclId;
     m_aclIdHasBeenSet = true;

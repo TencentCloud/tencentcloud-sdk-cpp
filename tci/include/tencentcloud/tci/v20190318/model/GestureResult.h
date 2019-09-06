@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别结果
-                     * @return Class 识别结果
+                     * 获取识别结果，包含"USPEAK":听你说，"LISTEN":听我说，"GOOD":GOOD，"TOOLS":拿教具，"OTHERS":其他
+                     * @return Class 识别结果，包含"USPEAK":听你说，"LISTEN":听我说，"GOOD":GOOD，"TOOLS":拿教具，"OTHERS":其他
                      */
                     std::string GetClass() const;
 
                     /**
-                     * 设置识别结果
-                     * @param Class 识别结果
+                     * 设置识别结果，包含"USPEAK":听你说，"LISTEN":听我说，"GOOD":GOOD，"TOOLS":拿教具，"OTHERS":其他
+                     * @param Class 识别结果，包含"USPEAK":听你说，"LISTEN":听我说，"GOOD":GOOD，"TOOLS":拿教具，"OTHERS":其他
                      */
                     void SetClass(const std::string& _class);
 
@@ -157,7 +157,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别结果
+                     * 识别结果，包含"USPEAK":听你说，"LISTEN":听我说，"GOOD":GOOD，"TOOLS":拿教具，"OTHERS":其他
                      */
                     std::string m_class;
                     bool m_classHasBeenSet;

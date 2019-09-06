@@ -43,6 +43,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取人员库唯一标识符
+                     * @return LibraryId 人员库唯一标识符
+                     */
+                    std::string GetLibraryId() const;
+
+                    /**
+                     * 设置人员库唯一标识符
+                     * @param LibraryId 人员库唯一标识符
+                     */
+                    void SetLibraryId(const std::string& _libraryId);
+
+                    /**
+                     * 判断参数 LibraryId 是否已赋值
+                     * @return LibraryId 是否已赋值
+                     */
+                    bool LibraryIdHasBeenSet() const;
+
+                    /**
                      * 获取人员唯一标识符
                      * @return PersonId 人员唯一标识符
                      */
@@ -77,24 +95,6 @@ namespace TencentCloud
                      * @return JobNumber 是否已赋值
                      */
                     bool JobNumberHasBeenSet() const;
-
-                    /**
-                     * 获取人员库唯一标识符
-                     * @return LibraryId 人员库唯一标识符
-                     */
-                    std::string GetLibraryId() const;
-
-                    /**
-                     * 设置人员库唯一标识符
-                     * @param LibraryId 人员库唯一标识符
-                     */
-                    void SetLibraryId(const std::string& _libraryId);
-
-                    /**
-                     * 判断参数 LibraryId 是否已赋值
-                     * @return LibraryId 是否已赋值
-                     */
-                    bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取人员邮箱
@@ -189,6 +189,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 人员库唯一标识符
+                     */
+                    std::string m_libraryId;
+                    bool m_libraryIdHasBeenSet;
+
+                    /**
                      * 人员唯一标识符
                      */
                     std::string m_personId;
@@ -199,12 +205,6 @@ namespace TencentCloud
                      */
                     std::string m_jobNumber;
                     bool m_jobNumberHasBeenSet;
-
-                    /**
-                     * 人员库唯一标识符
-                     */
-                    std::string m_libraryId;
-                    bool m_libraryIdHasBeenSet;
 
                     /**
                      * 人员邮箱

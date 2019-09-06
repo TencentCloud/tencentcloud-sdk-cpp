@@ -280,13 +280,13 @@ namespace TencentCloud
                      * 获取EIP ACL实例ID
                      * @return AclId EIP ACL实例ID
                      */
-                    int64_t GetAclId() const;
+                    std::string GetAclId() const;
 
                     /**
                      * 设置EIP ACL实例ID
                      * @param AclId EIP ACL实例ID
                      */
-                    void SetAclId(const int64_t& _aclId);
+                    void SetAclId(const std::string& _aclId);
 
                     /**
                      * 判断参数 AclId 是否已赋值
@@ -395,7 +395,7 @@ namespace TencentCloud
                     /**
                      * EIP ACL实例ID
                      */
-                    int64_t m_aclId;
+                    std::string m_aclId;
                     bool m_aclIdHasBeenSet;
 
                     /**
