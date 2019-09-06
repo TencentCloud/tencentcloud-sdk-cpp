@@ -97,14 +97,18 @@ namespace TencentCloud
                     bool ImageDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取软关机失败时是否执行强制关机以制作镜像
-                     * @return ForcePoweroff 软关机失败时是否执行强制关机以制作镜像
+                     * 获取是否执行强制关机以制作镜像。
+取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     * @return ForcePoweroff 是否执行强制关机以制作镜像。
+取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      */
                     std::string GetForcePoweroff() const;
 
                     /**
-                     * 设置软关机失败时是否执行强制关机以制作镜像
-                     * @param ForcePoweroff 软关机失败时是否执行强制关机以制作镜像
+                     * 设置是否执行强制关机以制作镜像。
+取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     * @param ForcePoweroff 是否执行强制关机以制作镜像。
+取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      */
                     void SetForcePoweroff(const std::string& _forcePoweroff);
 
@@ -133,24 +137,6 @@ namespace TencentCloud
                     bool SysprepHasBeenSet() const;
 
                     /**
-                     * 获取实例处于运行中时，是否允许关机执行制作镜像任务。
-                     * @return Reboot 实例处于运行中时，是否允许关机执行制作镜像任务。
-                     */
-                    std::string GetReboot() const;
-
-                    /**
-                     * 设置实例处于运行中时，是否允许关机执行制作镜像任务。
-                     * @param Reboot 实例处于运行中时，是否允许关机执行制作镜像任务。
-                     */
-                    void SetReboot(const std::string& _reboot);
-
-                    /**
-                     * 判断参数 Reboot 是否已赋值
-                     * @return Reboot 是否已赋值
-                     */
-                    bool RebootHasBeenSet() const;
-
-                    /**
                      * 获取实例需要制作镜像的数据盘Id
                      * @return DataDiskIds 实例需要制作镜像的数据盘Id
                      */
@@ -169,14 +155,14 @@ namespace TencentCloud
                     bool DataDiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取需要制作镜像的快照Id,必须包含一个系统盘快照
-                     * @return SnapshotIds 需要制作镜像的快照Id,必须包含一个系统盘快照
+                     * 获取需要制作镜像的快照ID,必须包含一个系统盘快照
+                     * @return SnapshotIds 需要制作镜像的快照ID,必须包含一个系统盘快照
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
-                     * 设置需要制作镜像的快照Id,必须包含一个系统盘快照
-                     * @param SnapshotIds 需要制作镜像的快照Id,必须包含一个系统盘快照
+                     * 设置需要制作镜像的快照ID,必须包含一个系统盘快照
+                     * @param SnapshotIds 需要制作镜像的快照ID,必须包含一个系统盘快照
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
 
@@ -225,7 +211,8 @@ namespace TencentCloud
                     bool m_imageDescriptionHasBeenSet;
 
                     /**
-                     * 软关机失败时是否执行强制关机以制作镜像
+                     * 是否执行强制关机以制作镜像。
+取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      */
                     std::string m_forcePoweroff;
                     bool m_forcePoweroffHasBeenSet;
@@ -237,19 +224,13 @@ namespace TencentCloud
                     bool m_sysprepHasBeenSet;
 
                     /**
-                     * 实例处于运行中时，是否允许关机执行制作镜像任务。
-                     */
-                    std::string m_reboot;
-                    bool m_rebootHasBeenSet;
-
-                    /**
                      * 实例需要制作镜像的数据盘Id
                      */
                     std::vector<std::string> m_dataDiskIds;
                     bool m_dataDiskIdsHasBeenSet;
 
                     /**
-                     * 需要制作镜像的快照Id,必须包含一个系统盘快照
+                     * 需要制作镜像的快照ID,必须包含一个系统盘快照
                      */
                     std::vector<std::string> m_snapshotIds;
                     bool m_snapshotIdsHasBeenSet;

@@ -28,7 +28,8 @@ DescribeLiveDomainsRequest::DescribeLiveDomainsRequest() :
     m_domainTypeHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_isDelayLiveHasBeenSet(false)
+    m_isDelayLiveHasBeenSet(false),
+    m_domainPrefixHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeLiveDomainsRequest::ToJsonString() const
         string key = "IsDelayLive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDelayLive, allocator);
+    }
+
+    if (m_domainPrefixHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DomainPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_domainPrefix.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeLiveDomainsRequest::SetIsDelayLive(const uint64_t& _isDelayLive)
 bool DescribeLiveDomainsRequest::IsDelayLiveHasBeenSet() const
 {
     return m_isDelayLiveHasBeenSet;
+}
+
+string DescribeLiveDomainsRequest::GetDomainPrefix() const
+{
+    return m_domainPrefix;
+}
+
+void DescribeLiveDomainsRequest::SetDomainPrefix(const string& _domainPrefix)
+{
+    m_domainPrefix = _domainPrefix;
+    m_domainPrefixHasBeenSet = true;
+}
+
+bool DescribeLiveDomainsRequest::DomainPrefixHasBeenSet() const
+{
+    return m_domainPrefixHasBeenSet;
 }
 
 

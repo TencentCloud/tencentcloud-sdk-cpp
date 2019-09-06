@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ECCResponse::ECCResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome ECCResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -93,6 +104,16 @@ CorrectData ECCResponse::GetData() const
 bool ECCResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string ECCResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool ECCResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

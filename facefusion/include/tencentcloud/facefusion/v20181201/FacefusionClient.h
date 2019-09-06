@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/facefusion/v20181201/model/FaceFusionRequest.h>
 #include <tencentcloud/facefusion/v20181201/model/FaceFusionResponse.h>
+#include <tencentcloud/facefusion/v20181201/model/FuseFaceRequest.h>
+#include <tencentcloud/facefusion/v20181201/model/FuseFaceResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +44,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::FaceFusionResponse> FaceFusionOutcome;
                 typedef std::future<FaceFusionOutcome> FaceFusionOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FaceFusionRequest&, FaceFusionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceFusionAsyncHandler;
+                typedef Outcome<Error, Model::FuseFaceResponse> FuseFaceOutcome;
+                typedef std::future<FuseFaceOutcome> FuseFaceOutcomeCallable;
+                typedef std::function<void(const FacefusionClient*, const Model::FuseFaceRequest&, FuseFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FuseFaceAsyncHandler;
 
 
 
@@ -55,6 +60,15 @@ namespace TencentCloud
                 FaceFusionOutcome FaceFusion(const Model::FaceFusionRequest &request);
                 void FaceFusionAsync(const Model::FaceFusionRequest& request, const FaceFusionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FaceFusionOutcomeCallable FaceFusionCallable(const Model::FaceFusionRequest& request);
+
+                /**
+                 *选脸融合
+                 * @param req FuseFaceRequest
+                 * @return FuseFaceOutcome
+                 */
+                FuseFaceOutcome FuseFace(const Model::FuseFaceRequest &request);
+                void FuseFaceAsync(const Model::FuseFaceRequest& request, const FuseFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FuseFaceOutcomeCallable FuseFaceCallable(const Model::FuseFaceRequest& request);
 
             };
         }

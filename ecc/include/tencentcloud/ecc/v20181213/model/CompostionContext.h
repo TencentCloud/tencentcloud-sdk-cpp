@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecc/v20181213/model/CorrectData.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * ocr返回的作文文本信息
+                * 图像识别批改接口返回的作文文本信息或批改信息
                 */
                 class CompostionContext : public AbstractModel
                 {
@@ -64,6 +65,72 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取批改结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CorrectData 批改结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CorrectData GetCorrectData() const;
+
+                    /**
+                     * 设置批改结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CorrectData 批改结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCorrectData(const CorrectData& _correctData);
+
+                    /**
+                     * 判断参数 CorrectData 是否已赋值
+                     * @return CorrectData 是否已赋值
+                     */
+                    bool CorrectDataHasBeenSet() const;
+
+                    /**
+                     * 获取任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskId 任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取图像识别唯一标识，一次识别一个 SessionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId 图像识别唯一标识，一次识别一个 SessionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置图像识别唯一标识，一次识别一个 SessionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionId 图像识别唯一标识，一次识别一个 SessionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +138,27 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 批改结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CorrectData m_correctData;
+                    bool m_correctDataHasBeenSet;
+
+                    /**
+                     * 任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 图像识别唯一标识，一次识别一个 SessionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

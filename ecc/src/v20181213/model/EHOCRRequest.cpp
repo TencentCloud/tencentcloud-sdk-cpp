@@ -25,7 +25,16 @@ using namespace std;
 
 EHOCRRequest::EHOCRRequest() :
     m_imageHasBeenSet(false),
-    m_inputTypeHasBeenSet(false)
+    m_inputTypeHasBeenSet(false),
+    m_eccAppidHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_serverTypeHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_gradeHasBeenSet(false),
+    m_requirementHasBeenSet(false),
+    m_modelTitleHasBeenSet(false),
+    m_modelContentHasBeenSet(false),
+    m_isAsyncHasBeenSet(false)
 {
 }
 
@@ -50,6 +59,78 @@ string EHOCRRequest::ToJsonString() const
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_inputType, allocator);
+    }
+
+    if (m_eccAppidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EccAppid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eccAppid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_serverType, allocator);
+    }
+
+    if (m_titleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gradeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Grade";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_grade.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requirementHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Requirement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_requirement.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelTitleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModelTitle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_modelTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelContentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModelContent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_modelContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAsyncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsAsync";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAsync, allocator);
     }
 
 
@@ -90,6 +171,150 @@ void EHOCRRequest::SetInputType(const int64_t& _inputType)
 bool EHOCRRequest::InputTypeHasBeenSet() const
 {
     return m_inputTypeHasBeenSet;
+}
+
+string EHOCRRequest::GetEccAppid() const
+{
+    return m_eccAppid;
+}
+
+void EHOCRRequest::SetEccAppid(const string& _eccAppid)
+{
+    m_eccAppid = _eccAppid;
+    m_eccAppidHasBeenSet = true;
+}
+
+bool EHOCRRequest::EccAppidHasBeenSet() const
+{
+    return m_eccAppidHasBeenSet;
+}
+
+string EHOCRRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void EHOCRRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool EHOCRRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+int64_t EHOCRRequest::GetServerType() const
+{
+    return m_serverType;
+}
+
+void EHOCRRequest::SetServerType(const int64_t& _serverType)
+{
+    m_serverType = _serverType;
+    m_serverTypeHasBeenSet = true;
+}
+
+bool EHOCRRequest::ServerTypeHasBeenSet() const
+{
+    return m_serverTypeHasBeenSet;
+}
+
+string EHOCRRequest::GetTitle() const
+{
+    return m_title;
+}
+
+void EHOCRRequest::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool EHOCRRequest::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+string EHOCRRequest::GetGrade() const
+{
+    return m_grade;
+}
+
+void EHOCRRequest::SetGrade(const string& _grade)
+{
+    m_grade = _grade;
+    m_gradeHasBeenSet = true;
+}
+
+bool EHOCRRequest::GradeHasBeenSet() const
+{
+    return m_gradeHasBeenSet;
+}
+
+string EHOCRRequest::GetRequirement() const
+{
+    return m_requirement;
+}
+
+void EHOCRRequest::SetRequirement(const string& _requirement)
+{
+    m_requirement = _requirement;
+    m_requirementHasBeenSet = true;
+}
+
+bool EHOCRRequest::RequirementHasBeenSet() const
+{
+    return m_requirementHasBeenSet;
+}
+
+string EHOCRRequest::GetModelTitle() const
+{
+    return m_modelTitle;
+}
+
+void EHOCRRequest::SetModelTitle(const string& _modelTitle)
+{
+    m_modelTitle = _modelTitle;
+    m_modelTitleHasBeenSet = true;
+}
+
+bool EHOCRRequest::ModelTitleHasBeenSet() const
+{
+    return m_modelTitleHasBeenSet;
+}
+
+string EHOCRRequest::GetModelContent() const
+{
+    return m_modelContent;
+}
+
+void EHOCRRequest::SetModelContent(const string& _modelContent)
+{
+    m_modelContent = _modelContent;
+    m_modelContentHasBeenSet = true;
+}
+
+bool EHOCRRequest::ModelContentHasBeenSet() const
+{
+    return m_modelContentHasBeenSet;
+}
+
+int64_t EHOCRRequest::GetIsAsync() const
+{
+    return m_isAsync;
+}
+
+void EHOCRRequest::SetIsAsync(const int64_t& _isAsync)
+{
+    m_isAsync = _isAsync;
+    m_isAsyncHasBeenSet = true;
+}
+
+bool EHOCRRequest::IsAsyncHasBeenSet() const
+{
+    return m_isAsyncHasBeenSet;
 }
 
 

@@ -55,11 +55,11 @@ CoreInternalOutcome MediaMiniProgramReviewElem::Deserialize(const Value &value)
 
     if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
     {
-        if (!value["Confidence"].IsString())
+        if (!value["Confidence"].IsDouble())
         {
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewElem.Confidence` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewElem.Confidence` IsDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_confidence = string(value["Confidence"].GetString());
+        m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
     }
 
@@ -91,7 +91,7 @@ void MediaMiniProgramReviewElem::ToJsonObject(Value &value, Document::AllocatorT
         Value iKey(kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_confidence.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_confidence, allocator);
     }
 
 }
@@ -129,12 +129,12 @@ bool MediaMiniProgramReviewElem::SuggestionHasBeenSet() const
     return m_suggestionHasBeenSet;
 }
 
-string MediaMiniProgramReviewElem::GetConfidence() const
+double MediaMiniProgramReviewElem::GetConfidence() const
 {
     return m_confidence;
 }
 
-void MediaMiniProgramReviewElem::SetConfidence(const string& _confidence)
+void MediaMiniProgramReviewElem::SetConfidence(const double& _confidence)
 {
     m_confidence = _confidence;
     m_confidenceHasBeenSet = true;

@@ -29,7 +29,6 @@ CreateImageRequest::CreateImageRequest() :
     m_imageDescriptionHasBeenSet(false),
     m_forcePoweroffHasBeenSet(false),
     m_sysprepHasBeenSet(false),
-    m_rebootHasBeenSet(false),
     m_dataDiskIdsHasBeenSet(false),
     m_snapshotIdsHasBeenSet(false),
     m_dryRunHasBeenSet(false)
@@ -81,14 +80,6 @@ string CreateImageRequest::ToJsonString() const
         string key = "Sysprep";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_sysprep.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_rebootHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Reboot";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_reboot.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataDiskIdsHasBeenSet)
@@ -211,22 +202,6 @@ void CreateImageRequest::SetSysprep(const string& _sysprep)
 bool CreateImageRequest::SysprepHasBeenSet() const
 {
     return m_sysprepHasBeenSet;
-}
-
-string CreateImageRequest::GetReboot() const
-{
-    return m_reboot;
-}
-
-void CreateImageRequest::SetReboot(const string& _reboot)
-{
-    m_reboot = _reboot;
-    m_rebootHasBeenSet = true;
-}
-
-bool CreateImageRequest::RebootHasBeenSet() const
-{
-    return m_rebootHasBeenSet;
 }
 
 vector<string> CreateImageRequest::GetDataDiskIds() const

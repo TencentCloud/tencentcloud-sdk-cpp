@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/iotcloud/v20180614/model/BindDevicesRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/BindDevicesResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CancelTaskRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/CancelTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateDeviceRequest.h>
@@ -81,6 +83,10 @@
 #include <tencentcloud/iotcloud/v20180614/model/ReplaceTopicRuleResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/UnbindDevicesRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/UnbindDevicesResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceAvailableStateRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceAvailableStateResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceShadowRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateDeviceShadowResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/UpdateTopicPolicyRequest.h>
@@ -99,6 +105,9 @@ namespace TencentCloud
                 IotcloudClient(const Credential &credential, const std::string &region);
                 IotcloudClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::BindDevicesResponse> BindDevicesOutcome;
+                typedef std::future<BindDevicesOutcome> BindDevicesOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::BindDevicesRequest&, BindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDevicesAsyncHandler;
                 typedef Outcome<Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -186,6 +195,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResetDeviceStateResponse> ResetDeviceStateOutcome;
                 typedef std::future<ResetDeviceStateOutcome> ResetDeviceStateOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::ResetDeviceStateRequest&, ResetDeviceStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceStateAsyncHandler;
+                typedef Outcome<Error, Model::UnbindDevicesResponse> UnbindDevicesOutcome;
+                typedef std::future<UnbindDevicesOutcome> UnbindDevicesOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UnbindDevicesRequest&, UnbindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDevicesAsyncHandler;
+                typedef Outcome<Error, Model::UpdateDeviceAvailableStateResponse> UpdateDeviceAvailableStateOutcome;
+                typedef std::future<UpdateDeviceAvailableStateOutcome> UpdateDeviceAvailableStateOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UpdateDeviceAvailableStateRequest&, UpdateDeviceAvailableStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceAvailableStateAsyncHandler;
                 typedef Outcome<Error, Model::UpdateDeviceShadowResponse> UpdateDeviceShadowOutcome;
                 typedef std::future<UpdateDeviceShadowOutcome> UpdateDeviceShadowOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateDeviceShadowRequest&, UpdateDeviceShadowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceShadowAsyncHandler;
@@ -194,6 +209,15 @@ namespace TencentCloud
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateTopicPolicyRequest&, UpdateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTopicPolicyAsyncHandler;
 
 
+
+                /**
+                 *本接口（BindDevices）用于网关设备批量绑定子设备
+                 * @param req BindDevicesRequest
+                 * @return BindDevicesOutcome
+                 */
+                BindDevicesOutcome BindDevices(const Model::BindDevicesRequest &request);
+                void BindDevicesAsync(const Model::BindDevicesRequest& request, const BindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindDevicesOutcomeCallable BindDevicesCallable(const Model::BindDevicesRequest& request);
 
                 /**
                  *本接口（CancelTask）用于取消一个未被调度的任务。
@@ -455,6 +479,24 @@ namespace TencentCloud
                 ResetDeviceStateOutcome ResetDeviceState(const Model::ResetDeviceStateRequest &request);
                 void ResetDeviceStateAsync(const Model::ResetDeviceStateRequest& request, const ResetDeviceStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetDeviceStateOutcomeCallable ResetDeviceStateCallable(const Model::ResetDeviceStateRequest& request);
+
+                /**
+                 *本接口（UnbindDevices）用于网关设备批量解绑子设备
+                 * @param req UnbindDevicesRequest
+                 * @return UnbindDevicesOutcome
+                 */
+                UnbindDevicesOutcome UnbindDevices(const Model::UnbindDevicesRequest &request);
+                void UnbindDevicesAsync(const Model::UnbindDevicesRequest& request, const UnbindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindDevicesOutcomeCallable UnbindDevicesCallable(const Model::UnbindDevicesRequest& request);
+
+                /**
+                 *启用或者禁用设备
+                 * @param req UpdateDeviceAvailableStateRequest
+                 * @return UpdateDeviceAvailableStateOutcome
+                 */
+                UpdateDeviceAvailableStateOutcome UpdateDeviceAvailableState(const Model::UpdateDeviceAvailableStateRequest &request);
+                void UpdateDeviceAvailableStateAsync(const Model::UpdateDeviceAvailableStateRequest& request, const UpdateDeviceAvailableStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDeviceAvailableStateOutcomeCallable UpdateDeviceAvailableStateCallable(const Model::UpdateDeviceAvailableStateRequest& request);
 
                 /**
                  *本接口（UpdateDeviceShadow）用于更新虚拟设备信息。

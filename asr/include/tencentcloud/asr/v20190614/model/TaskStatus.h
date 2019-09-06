@@ -1,0 +1,177 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_ASR_V20190614_MODEL_TASKSTATUS_H_
+#define TENCENTCLOUD_ASR_V20190614_MODEL_TASKSTATUS_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Asr
+    {
+        namespace V20190614
+        {
+            namespace Model
+            {
+                /**
+                * 获取录音识别结果结果的返回参数
+                */
+                class TaskStatus : public AbstractModel
+                {
+                public:
+                    TaskStatus();
+                    ~TaskStatus() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取任务标识。
+                     * @return TaskId 任务标识。
+                     */
+                    uint64_t GetTaskId() const;
+
+                    /**
+                     * 设置任务标识。
+                     * @param TaskId 任务标识。
+                     */
+                    void SetTaskId(const uint64_t& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
+                     * @return Status 任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
+                     * @param Status 任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
+                     * @return StatusStr 任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
+                     */
+                    std::string GetStatusStr() const;
+
+                    /**
+                     * 设置任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
+                     * @param StatusStr 任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
+                     */
+                    void SetStatusStr(const std::string& _statusStr);
+
+                    /**
+                     * 判断参数 StatusStr 是否已赋值
+                     * @return StatusStr 是否已赋值
+                     */
+                    bool StatusStrHasBeenSet() const;
+
+                    /**
+                     * 获取识别结果。
+                     * @return Result 识别结果。
+                     */
+                    std::string GetResult() const;
+
+                    /**
+                     * 设置识别结果。
+                     * @param Result 识别结果。
+                     */
+                    void SetResult(const std::string& _result);
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     */
+                    bool ResultHasBeenSet() const;
+
+                    /**
+                     * 获取失败原因说明。
+                     * @return ErrorMsg 失败原因说明。
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 设置失败原因说明。
+                     * @param ErrorMsg 失败原因说明。
+                     */
+                    void SetErrorMsg(const std::string& _errorMsg);
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 任务标识。
+                     */
+                    uint64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。
+                     */
+                    std::string m_statusStr;
+                    bool m_statusStrHasBeenSet;
+
+                    /**
+                     * 识别结果。
+                     */
+                    std::string m_result;
+                    bool m_resultHasBeenSet;
+
+                    /**
+                     * 失败原因说明。
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_ASR_V20190614_MODEL_TASKSTATUS_H_

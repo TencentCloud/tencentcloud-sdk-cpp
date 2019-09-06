@@ -24,7 +24,8 @@ using namespace std;
 BillDataInfo::BillDataInfo() :
     m_timeHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_fluxHasBeenSet(false)
+    m_fluxHasBeenSet(false),
+    m_peakTimeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome BillDataInfo::Deserialize(const Value &value)
         m_fluxHasBeenSet = true;
     }
 
+    if (value.HasMember("PeakTime") && !value["PeakTime"].IsNull())
+    {
+        if (!value["PeakTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDataInfo.PeakTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_peakTime = string(value["PeakTime"].GetString());
+        m_peakTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void BillDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Flux";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flux, allocator);
+    }
+
+    if (m_peakTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PeakTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_peakTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void BillDataInfo::SetFlux(const double& _flux)
 bool BillDataInfo::FluxHasBeenSet() const
 {
     return m_fluxHasBeenSet;
+}
+
+string BillDataInfo::GetPeakTime() const
+{
+    return m_peakTime;
+}
+
+void BillDataInfo::SetPeakTime(const string& _peakTime)
+{
+    m_peakTime = _peakTime;
+    m_peakTimeHasBeenSet = true;
+}
+
+bool BillDataInfo::PeakTimeHasBeenSet() const
+{
+    return m_peakTimeHasBeenSet;
 }
 

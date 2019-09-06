@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目 名字
-                     * @return Name 项目 名字
+                     * 获取维度名字
+                     * @return Name 维度名字
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置项目 名字
-                     * @param Name 项目 名字
+                     * 设置维度名字
+                     * @param Name 维度名字
                      */
                     void SetName(const std::string& _name);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取该项得分
-                     * @return Score 该项得分
+                     * 获取维度得分
+                     * @return Score 维度得分
                      */
                     double GetScore() const;
 
                     /**
-                     * 设置该项得分
-                     * @param Score 该项得分
+                     * 设置维度得分
+                     * @param Score 维度得分
                      */
                     void SetScore(const double& _score);
 
@@ -82,19 +82,43 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取维度分数占比
+                     * @return Percentage 维度分数占比
+                     */
+                    double GetPercentage() const;
+
+                    /**
+                     * 设置维度分数占比
+                     * @param Percentage 维度分数占比
+                     */
+                    void SetPercentage(const double& _percentage);
+
+                    /**
+                     * 判断参数 Percentage 是否已赋值
+                     * @return Percentage 是否已赋值
+                     */
+                    bool PercentageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目 名字
+                     * 维度名字
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 该项得分
+                     * 维度得分
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 维度分数占比
+                     */
+                    double m_percentage;
+                    bool m_percentageHasBeenSet;
 
                 };
             }

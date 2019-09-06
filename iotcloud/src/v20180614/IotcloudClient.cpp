@@ -40,6 +40,49 @@ IotcloudClient::IotcloudClient(const Credential &credential, const string &regio
 }
 
 
+IotcloudClient::BindDevicesOutcome IotcloudClient::BindDevices(const BindDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindDevicesResponse rsp = BindDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindDevicesOutcome(rsp);
+        else
+            return BindDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return BindDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::BindDevicesAsync(const BindDevicesRequest& request, const BindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::BindDevicesOutcomeCallable IotcloudClient::BindDevicesCallable(const BindDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->BindDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::CancelTaskOutcome IotcloudClient::CancelTask(const CancelTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelTask");
@@ -1280,6 +1323,92 @@ IotcloudClient::ResetDeviceStateOutcomeCallable IotcloudClient::ResetDeviceState
         [this, request]()
         {
             return this->ResetDeviceState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::UnbindDevicesOutcome IotcloudClient::UnbindDevices(const UnbindDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindDevicesResponse rsp = UnbindDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindDevicesOutcome(rsp);
+        else
+            return UnbindDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::UnbindDevicesAsync(const UnbindDevicesRequest& request, const UnbindDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::UnbindDevicesOutcomeCallable IotcloudClient::UnbindDevicesCallable(const UnbindDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::UpdateDeviceAvailableStateOutcome IotcloudClient::UpdateDeviceAvailableState(const UpdateDeviceAvailableStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDeviceAvailableState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDeviceAvailableStateResponse rsp = UpdateDeviceAvailableStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDeviceAvailableStateOutcome(rsp);
+        else
+            return UpdateDeviceAvailableStateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDeviceAvailableStateOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::UpdateDeviceAvailableStateAsync(const UpdateDeviceAvailableStateRequest& request, const UpdateDeviceAvailableStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDeviceAvailableState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::UpdateDeviceAvailableStateOutcomeCallable IotcloudClient::UpdateDeviceAvailableStateCallable(const UpdateDeviceAvailableStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDeviceAvailableStateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDeviceAvailableState(request);
         }
     );
 

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CMQ 的模型，有 Queue 和 Topic 两种。
-                     * @return CmqModel CMQ 的模型，有 Queue 和 Topic 两种。
+                     * 获取CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
+                     * @return CmqModel CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
                      */
                     std::string GetCmqModel() const;
 
                     /**
-                     * 设置CMQ 的模型，有 Queue 和 Topic 两种。
-                     * @param CmqModel CMQ 的模型，有 Queue 和 Topic 两种。
+                     * 设置CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
+                     * @param CmqModel CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
                      */
                     void SetCmqModel(const std::string& _cmqModel);
 
@@ -139,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CMQ 的模型，有 Queue 和 Topic 两种。
+                     * CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
                      */
                     std::string m_cmqModel;
                     bool m_cmqModelHasBeenSet;

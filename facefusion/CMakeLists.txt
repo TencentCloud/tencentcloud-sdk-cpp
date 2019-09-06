@@ -19,18 +19,26 @@ set(facefusion_public_header
   )
 
 set(facefusion_public_header_model
-  include/tencentcloud/facefusion/v20181201/model/FaceFusionRequest.h
   include/tencentcloud/facefusion/v20181201/model/FaceFusionResponse.h
-  include/tencentcloud/facefusion/v20181201/model/FuseFaceReviewResult.h
+  include/tencentcloud/facefusion/v20181201/model/FaceFusionRequest.h
   include/tencentcloud/facefusion/v20181201/model/FuseFaceReviewDetail.h
+  include/tencentcloud/facefusion/v20181201/model/MergeInfo.h
+  include/tencentcloud/facefusion/v20181201/model/FuseFaceReviewResult.h
+  include/tencentcloud/facefusion/v20181201/model/FuseFaceResponse.h
+  include/tencentcloud/facefusion/v20181201/model/FuseFaceRequest.h
+  include/tencentcloud/facefusion/v20181201/model/FaceRect.h
   )
 
 set(facefusion_src
   src/v20181201/FacefusionClient.cpp
-  src/v20181201/model/FaceFusionRequest.cpp
   src/v20181201/model/FaceFusionResponse.cpp
-  src/v20181201/model/FuseFaceReviewResult.cpp
+  src/v20181201/model/FaceFusionRequest.cpp
   src/v20181201/model/FuseFaceReviewDetail.cpp
+  src/v20181201/model/MergeInfo.cpp
+  src/v20181201/model/FuseFaceReviewResult.cpp
+  src/v20181201/model/FuseFaceResponse.cpp
+  src/v20181201/model/FuseFaceRequest.cpp
+  src/v20181201/model/FaceRect.cpp
   )
 
 set(facefusion_include

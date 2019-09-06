@@ -22,7 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 CompostionContext::CompostionContext() :
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_correctDataHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +44,43 @@ CoreInternalOutcome CompostionContext::Deserialize(const Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("CorrectData") && !value["CorrectData"].IsNull())
+    {
+        if (!value["CorrectData"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CompostionContext.CorrectData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_correctData.Deserialize(value["CorrectData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_correctDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CompostionContext.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(value["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CompostionContext.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +94,31 @@ void CompostionContext::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_correctDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CorrectData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_correctData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -73,5 +138,53 @@ void CompostionContext::SetContent(const string& _content)
 bool CompostionContext::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+CorrectData CompostionContext::GetCorrectData() const
+{
+    return m_correctData;
+}
+
+void CompostionContext::SetCorrectData(const CorrectData& _correctData)
+{
+    m_correctData = _correctData;
+    m_correctDataHasBeenSet = true;
+}
+
+bool CompostionContext::CorrectDataHasBeenSet() const
+{
+    return m_correctDataHasBeenSet;
+}
+
+string CompostionContext::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void CompostionContext::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool CompostionContext::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+string CompostionContext::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void CompostionContext::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool CompostionContext::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 

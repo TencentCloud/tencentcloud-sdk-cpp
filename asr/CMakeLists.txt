@@ -19,14 +19,26 @@ set(asr_public_header
   )
 
 set(asr_public_header_model
-  include/tencentcloud/asr/v20190614/model/SentenceRecognitionRequest.h
+  include/tencentcloud/asr/v20190614/model/CreateRecTaskResponse.h
+  include/tencentcloud/asr/v20190614/model/Task.h
+  include/tencentcloud/asr/v20190614/model/DescribeTaskStatusRequest.h
   include/tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h
+  include/tencentcloud/asr/v20190614/model/TaskStatus.h
+  include/tencentcloud/asr/v20190614/model/CreateRecTaskRequest.h
+  include/tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h
+  include/tencentcloud/asr/v20190614/model/SentenceRecognitionRequest.h
   )
 
 set(asr_src
   src/v20190614/AsrClient.cpp
-  src/v20190614/model/SentenceRecognitionRequest.cpp
+  src/v20190614/model/CreateRecTaskResponse.cpp
+  src/v20190614/model/Task.cpp
+  src/v20190614/model/DescribeTaskStatusRequest.cpp
   src/v20190614/model/SentenceRecognitionResponse.cpp
+  src/v20190614/model/TaskStatus.cpp
+  src/v20190614/model/CreateRecTaskRequest.cpp
+  src/v20190614/model/DescribeTaskStatusResponse.cpp
+  src/v20190614/model/SentenceRecognitionRequest.cpp
   )
 
 set(asr_include

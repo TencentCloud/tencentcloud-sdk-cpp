@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/VideoTemplateInfo.h>
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfo.h>
+#include <tencentcloud/mps/v20190612/model/TEHDConfig.h>
 
 
 namespace TencentCloud
@@ -251,6 +252,28 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
+                     * 获取极速高清转码参数，需联系商务架构师开通后才能使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TEHDConfig GetTEHDConfig() const;
+
+                    /**
+                     * 设置极速高清转码参数，需联系商务架构师开通后才能使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTEHDConfig(const TEHDConfig& _tEHDConfig);
+
+                    /**
+                     * 判断参数 TEHDConfig 是否已赋值
+                     * @return TEHDConfig 是否已赋值
+                     */
+                    bool TEHDConfigHasBeenSet() const;
+
+                    /**
                      * 获取封装格式过滤条件，可选值：
 <li>Video：视频格式，可以同时包含视频流和音频流的封装格式；</li>
 <li>PureAudio：纯音频格式，只能包含音频流的封装格式板。</li>
@@ -377,6 +400,13 @@ namespace TencentCloud
                      */
                     AudioTemplateInfo m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
+
+                    /**
+                     * 极速高清转码参数，需联系商务架构师开通后才能使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TEHDConfig m_tEHDConfig;
+                    bool m_tEHDConfigHasBeenSet;
 
                     /**
                      * 封装格式过滤条件，可选值：

@@ -126,13 +126,13 @@ namespace TencentCloud
                      * 获取审核结果置信度。取值 0~100。
                      * @return Confidence 审核结果置信度。取值 0~100。
                      */
-                    std::string GetConfidence() const;
+                    double GetConfidence() const;
 
                     /**
                      * 设置审核结果置信度。取值 0~100。
                      * @param Confidence 审核结果置信度。取值 0~100。
                      */
-                    void SetConfidence(const std::string& _confidence);
+                    void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
@@ -167,7 +167,7 @@ namespace TencentCloud
                     /**
                      * 审核结果置信度。取值 0~100。
                      */
-                    std::string m_confidence;
+                    double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                 };

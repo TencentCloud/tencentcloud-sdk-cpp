@@ -113,6 +113,32 @@ namespace TencentCloud
                     bool ContainerTypeHasBeenSet() const;
 
                     /**
+                     * 获取极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+                     * @return TEHDType 极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+                     */
+                    std::string GetTEHDType() const;
+
+                    /**
+                     * 设置极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+                     * @param TEHDType 极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+                     */
+                    void SetTEHDType(const std::string& _tEHDType);
+
+                    /**
+                     * 判断参数 TEHDType 是否已赋值
+                     * @return TEHDType 是否已赋值
+                     */
+                    bool TEHDTypeHasBeenSet() const;
+
+                    /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
                      */
@@ -171,6 +197,14 @@ namespace TencentCloud
                      */
                     std::string m_containerType;
                     bool m_containerTypeHasBeenSet;
+
+                    /**
+                     * 极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+                     */
+                    std::string m_tEHDType;
+                    bool m_tEHDTypeHasBeenSet;
 
                     /**
                      * 分页偏移量，默认值：0。

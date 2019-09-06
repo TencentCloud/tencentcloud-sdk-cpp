@@ -40,6 +40,49 @@ EccClient::EccClient(const Credential &credential, const string &region, const C
 }
 
 
+EccClient::DescribeTaskOutcome EccClient::DescribeTask(const DescribeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskResponse rsp = DescribeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskOutcome(rsp);
+        else
+            return DescribeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskOutcome(outcome.GetError());
+    }
+}
+
+void EccClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EccClient::DescribeTaskOutcomeCallable EccClient::DescribeTaskCallable(const DescribeTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EccClient::ECCOutcome EccClient::ECC(const ECCRequest &request)
 {
     auto outcome = MakeRequest(request, "ECC");

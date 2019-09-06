@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool FluxHasBeenSet() const;
 
+                    /**
+                     * 获取峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * @return PeakTime 峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     */
+                    std::string GetPeakTime() const;
+
+                    /**
+                     * 设置峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * @param PeakTime 峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     */
+                    void SetPeakTime(const std::string& _peakTime);
+
+                    /**
+                     * 判断参数 PeakTime 是否已赋值
+                     * @return PeakTime 是否已赋值
+                     */
+                    bool PeakTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     double m_flux;
                     bool m_fluxHasBeenSet;
+
+                    /**
+                     * 峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     */
+                    std::string m_peakTime;
+                    bool m_peakTimeHasBeenSet;
 
                 };
             }

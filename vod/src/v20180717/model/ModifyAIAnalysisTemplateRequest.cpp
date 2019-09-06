@@ -31,6 +31,7 @@ ModifyAIAnalysisTemplateRequest::ModifyAIAnalysisTemplateRequest() :
     m_tagConfigureHasBeenSet(false),
     m_coverConfigureHasBeenSet(false),
     m_frameTagConfigureHasBeenSet(false),
+    m_highlightConfigureHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -100,6 +101,15 @@ string ModifyAIAnalysisTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_frameTagConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_highlightConfigureHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HighlightConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_highlightConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -228,6 +238,22 @@ void ModifyAIAnalysisTemplateRequest::SetFrameTagConfigure(const FrameTagConfigu
 bool ModifyAIAnalysisTemplateRequest::FrameTagConfigureHasBeenSet() const
 {
     return m_frameTagConfigureHasBeenSet;
+}
+
+HighlightsConfigureInfoForUpdate ModifyAIAnalysisTemplateRequest::GetHighlightConfigure() const
+{
+    return m_highlightConfigure;
+}
+
+void ModifyAIAnalysisTemplateRequest::SetHighlightConfigure(const HighlightsConfigureInfoForUpdate& _highlightConfigure)
+{
+    m_highlightConfigure = _highlightConfigure;
+    m_highlightConfigureHasBeenSet = true;
+}
+
+bool ModifyAIAnalysisTemplateRequest::HighlightConfigureHasBeenSet() const
+{
+    return m_highlightConfigureHasBeenSet;
 }
 
 uint64_t ModifyAIAnalysisTemplateRequest::GetSubAppId() const

@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool IsDelayLiveHasBeenSet() const;
 
+                    /**
+                     * 获取域名前缀
+                     * @return DomainPrefix 域名前缀
+                     */
+                    std::string GetDomainPrefix() const;
+
+                    /**
+                     * 设置域名前缀
+                     * @param DomainPrefix 域名前缀
+                     */
+                    void SetDomainPrefix(const std::string& _domainPrefix);
+
+                    /**
+                     * 判断参数 DomainPrefix 是否已赋值
+                     * @return DomainPrefix 是否已赋值
+                     */
+                    bool DomainPrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isDelayLive;
                     bool m_isDelayLiveHasBeenSet;
+
+                    /**
+                     * 域名前缀
+                     */
+                    std::string m_domainPrefix;
+                    bool m_domainPrefixHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/HighlightSegmentItem.h>
 
 
 namespace TencentCloud
@@ -47,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能精彩片段地址。
-                     * @return HighlightUrl 智能精彩片段地址。
+                     * 获取智能精彩集锦地址。
+                     * @return HighlightUrl 智能精彩集锦地址。
                      */
                     std::string GetHighlightUrl() const;
 
                     /**
-                     * 设置智能精彩片段地址。
-                     * @param HighlightUrl 智能精彩片段地址。
+                     * 设置智能精彩集锦地址。
+                     * @param HighlightUrl 智能精彩集锦地址。
                      */
                     void SetHighlightUrl(const std::string& _highlightUrl);
 
@@ -65,14 +66,14 @@ namespace TencentCloud
                     bool HighlightUrlHasBeenSet() const;
 
                     /**
-                     * 获取智能精彩片段封面地址。
-                     * @return CovImgUrl 智能精彩片段封面地址。
+                     * 获取智能精彩集锦封面地址。
+                     * @return CovImgUrl 智能精彩集锦封面地址。
                      */
                     std::string GetCovImgUrl() const;
 
                     /**
-                     * 设置智能精彩片段封面地址。
-                     * @param CovImgUrl 智能精彩片段封面地址。
+                     * 设置智能精彩集锦封面地址。
+                     * @param CovImgUrl 智能精彩集锦封面地址。
                      */
                     void SetCovImgUrl(const std::string& _covImgUrl);
 
@@ -83,14 +84,14 @@ namespace TencentCloud
                     bool CovImgUrlHasBeenSet() const;
 
                     /**
-                     * 获取智能精彩片段的可信度，取值范围是 0 到 100。
-                     * @return Confidence 智能精彩片段的可信度，取值范围是 0 到 100。
+                     * 获取智能精彩集锦的可信度，取值范围是 0 到 100。
+                     * @return Confidence 智能精彩集锦的可信度，取值范围是 0 到 100。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置智能精彩片段的可信度，取值范围是 0 到 100。
-                     * @param Confidence 智能精彩片段的可信度，取值范围是 0 到 100。
+                     * 设置智能精彩集锦的可信度，取值范围是 0 到 100。
+                     * @param Confidence 智能精彩集锦的可信度，取值范围是 0 到 100。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -101,14 +102,14 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取智能精彩片段持续时间。
-                     * @return Duration 智能精彩片段持续时间。
+                     * 获取智能精彩集锦持续时间。
+                     * @return Duration 智能精彩集锦持续时间。
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置智能精彩片段持续时间。
-                     * @param Duration 智能精彩片段持续时间。
+                     * 设置智能精彩集锦持续时间。
+                     * @param Duration 智能精彩集锦持续时间。
                      */
                     void SetDuration(const double& _duration);
 
@@ -118,31 +119,55 @@ namespace TencentCloud
                      */
                     bool DurationHasBeenSet() const;
 
+                    /**
+                     * 获取智能精彩集锦子片段列表，精彩集锦片段由这些子片段拼接生成。
+                     * @return SegmentSet 智能精彩集锦子片段列表，精彩集锦片段由这些子片段拼接生成。
+                     */
+                    std::vector<HighlightSegmentItem> GetSegmentSet() const;
+
+                    /**
+                     * 设置智能精彩集锦子片段列表，精彩集锦片段由这些子片段拼接生成。
+                     * @param SegmentSet 智能精彩集锦子片段列表，精彩集锦片段由这些子片段拼接生成。
+                     */
+                    void SetSegmentSet(const std::vector<HighlightSegmentItem>& _segmentSet);
+
+                    /**
+                     * 判断参数 SegmentSet 是否已赋值
+                     * @return SegmentSet 是否已赋值
+                     */
+                    bool SegmentSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 智能精彩片段地址。
+                     * 智能精彩集锦地址。
                      */
                     std::string m_highlightUrl;
                     bool m_highlightUrlHasBeenSet;
 
                     /**
-                     * 智能精彩片段封面地址。
+                     * 智能精彩集锦封面地址。
                      */
                     std::string m_covImgUrl;
                     bool m_covImgUrlHasBeenSet;
 
                     /**
-                     * 智能精彩片段的可信度，取值范围是 0 到 100。
+                     * 智能精彩集锦的可信度，取值范围是 0 到 100。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 智能精彩片段持续时间。
+                     * 智能精彩集锦持续时间。
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 智能精彩集锦子片段列表，精彩集锦片段由这些子片段拼接生成。
+                     */
+                    std::vector<HighlightSegmentItem> m_segmentSet;
+                    bool m_segmentSetHasBeenSet;
 
                 };
             }

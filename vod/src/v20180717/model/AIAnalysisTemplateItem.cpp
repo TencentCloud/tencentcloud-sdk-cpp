@@ -29,6 +29,7 @@ AIAnalysisTemplateItem::AIAnalysisTemplateItem() :
     m_tagConfigureHasBeenSet(false),
     m_coverConfigureHasBeenSet(false),
     m_frameTagConfigureHasBeenSet(false),
+    m_highlightConfigureHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -137,6 +138,23 @@ CoreInternalOutcome AIAnalysisTemplateItem::Deserialize(const Value &value)
         m_frameTagConfigureHasBeenSet = true;
     }
 
+    if (value.HasMember("HighlightConfigure") && !value["HighlightConfigure"].IsNull())
+    {
+        if (!value["HighlightConfigure"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AIAnalysisTemplateItem.HighlightConfigure` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_highlightConfigure.Deserialize(value["HighlightConfigure"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_highlightConfigureHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -222,6 +240,15 @@ void AIAnalysisTemplateItem::ToJsonObject(Value &value, Document::AllocatorType&
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_frameTagConfigure.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_highlightConfigureHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HighlightConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_highlightConfigure.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -353,6 +380,22 @@ void AIAnalysisTemplateItem::SetFrameTagConfigure(const FrameTagConfigureInfo& _
 bool AIAnalysisTemplateItem::FrameTagConfigureHasBeenSet() const
 {
     return m_frameTagConfigureHasBeenSet;
+}
+
+HighlightsConfigureInfo AIAnalysisTemplateItem::GetHighlightConfigure() const
+{
+    return m_highlightConfigure;
+}
+
+void AIAnalysisTemplateItem::SetHighlightConfigure(const HighlightsConfigureInfo& _highlightConfigure)
+{
+    m_highlightConfigure = _highlightConfigure;
+    m_highlightConfigureHasBeenSet = true;
+}
+
+bool AIAnalysisTemplateItem::HighlightConfigureHasBeenSet() const
+{
+    return m_highlightConfigureHasBeenSet;
 }
 
 string AIAnalysisTemplateItem::GetCreateTime() const

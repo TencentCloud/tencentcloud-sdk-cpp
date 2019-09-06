@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SubServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取引擎类型。8k：电话 8k 通用模型；16k：16k 通用模型。只支持单声道音频识别。
-                     * @return EngSerViceType 引擎类型。8k：电话 8k 通用模型；16k：16k 通用模型。只支持单声道音频识别。
+                     * 获取引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
+                     * @return EngSerViceType 引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
                      */
                     std::string GetEngSerViceType() const;
 
                     /**
-                     * 设置引擎类型。8k：电话 8k 通用模型；16k：16k 通用模型。只支持单声道音频识别。
-                     * @param EngSerViceType 引擎类型。8k：电话 8k 通用模型；16k：16k 通用模型。只支持单声道音频识别。
+                     * 设置引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
+                     * @param EngSerViceType 引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
                      */
                     void SetEngSerViceType(const std::string& _engSerViceType);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取识别音频的音频格式（支持mp3,wav）。
-                     * @return VoiceFormat 识别音频的音频格式（支持mp3,wav）。
+                     * 获取识别音频的音频格式。mp3、wav。
+                     * @return VoiceFormat 识别音频的音频格式。mp3、wav。
                      */
                     std::string GetVoiceFormat() const;
 
                     /**
-                     * 设置识别音频的音频格式（支持mp3,wav）。
-                     * @param VoiceFormat 识别音频的音频格式（支持mp3,wav）。
+                     * 设置识别音频的音频格式。mp3、wav。
+                     * @param VoiceFormat 识别音频的音频格式。mp3、wav。
                      */
                     void SetVoiceFormat(const std::string& _voiceFormat);
 
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_subServiceTypeHasBeenSet;
 
                     /**
-                     * 引擎类型。8k：电话 8k 通用模型；16k：16k 通用模型。只支持单声道音频识别。
+                     * 引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
                      */
                     std::string m_engSerViceType;
                     bool m_engSerViceTypeHasBeenSet;
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 识别音频的音频格式（支持mp3,wav）。
+                     * 识别音频的音频格式。mp3、wav。
                      */
                     std::string m_voiceFormat;
                     bool m_voiceFormatHasBeenSet;

@@ -31,6 +31,7 @@ CreateTranscodeTemplateRequest::CreateTranscodeTemplateRequest() :
     m_removeAudioHasBeenSet(false),
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
+    m_tEHDConfigHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -98,6 +99,15 @@ string CreateTranscodeTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_audioTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tEHDConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TEHDConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_tEHDConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -226,6 +236,22 @@ void CreateTranscodeTemplateRequest::SetAudioTemplate(const AudioTemplateInfo& _
 bool CreateTranscodeTemplateRequest::AudioTemplateHasBeenSet() const
 {
     return m_audioTemplateHasBeenSet;
+}
+
+TEHDConfig CreateTranscodeTemplateRequest::GetTEHDConfig() const
+{
+    return m_tEHDConfig;
+}
+
+void CreateTranscodeTemplateRequest::SetTEHDConfig(const TEHDConfig& _tEHDConfig)
+{
+    m_tEHDConfig = _tEHDConfig;
+    m_tEHDConfigHasBeenSet = true;
+}
+
+bool CreateTranscodeTemplateRequest::TEHDConfigHasBeenSet() const
+{
+    return m_tEHDConfigHasBeenSet;
 }
 
 uint64_t CreateTranscodeTemplateRequest::GetSubAppId() const

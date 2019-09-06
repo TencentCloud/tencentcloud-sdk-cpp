@@ -28,6 +28,7 @@
 #include <tencentcloud/vod/v20180717/model/TagConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/CoverConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/FrameTagConfigureInfo.h>
+#include <tencentcloud/vod/v20180717/model/HighlightsConfigureInfo.h>
 
 
 namespace TencentCloud
@@ -193,6 +194,24 @@ namespace TencentCloud
                     bool FrameTagConfigureHasBeenSet() const;
 
                     /**
+                     * 获取智能精彩集锦任务控制参数。
+                     * @return HighlightConfigure 智能精彩集锦任务控制参数。
+                     */
+                    HighlightsConfigureInfo GetHighlightConfigure() const;
+
+                    /**
+                     * 设置智能精彩集锦任务控制参数。
+                     * @param HighlightConfigure 智能精彩集锦任务控制参数。
+                     */
+                    void SetHighlightConfigure(const HighlightsConfigureInfo& _highlightConfigure);
+
+                    /**
+                     * 判断参数 HighlightConfigure 是否已赋值
+                     * @return HighlightConfigure 是否已赋值
+                     */
+                    bool HighlightConfigureHasBeenSet() const;
+
+                    /**
                      * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
@@ -275,6 +294,12 @@ namespace TencentCloud
                      */
                     FrameTagConfigureInfo m_frameTagConfigure;
                     bool m_frameTagConfigureHasBeenSet;
+
+                    /**
+                     * 智能精彩集锦任务控制参数。
+                     */
+                    HighlightsConfigureInfo m_highlightConfigure;
+                    bool m_highlightConfigureHasBeenSet;
 
                     /**
                      * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。

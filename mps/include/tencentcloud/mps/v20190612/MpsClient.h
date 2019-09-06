@@ -87,6 +87,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyWatermarkTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyWatermarkTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/ProcessLiveMediaRequest.h>
+#include <tencentcloud/mps/v20190612/model/ProcessLiveMediaResponse.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaResponse.h>
 #include <tencentcloud/mps/v20190612/model/ResetWorkflowRequest.h>
@@ -201,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyWatermarkTemplateResponse> ModifyWatermarkTemplateOutcome;
                 typedef std::future<ModifyWatermarkTemplateOutcome> ModifyWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyWatermarkTemplateRequest&, ModifyWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWatermarkTemplateAsyncHandler;
+                typedef Outcome<Error, Model::ProcessLiveMediaResponse> ProcessLiveMediaOutcome;
+                typedef std::future<ProcessLiveMediaOutcome> ProcessLiveMediaOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ProcessLiveMediaRequest&, ProcessLiveMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessLiveMediaAsyncHandler;
                 typedef Outcome<Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
@@ -507,6 +512,20 @@ namespace TencentCloud
                 ModifyWatermarkTemplateOutcome ModifyWatermarkTemplate(const Model::ModifyWatermarkTemplateRequest &request);
                 void ModifyWatermarkTemplateAsync(const Model::ModifyWatermarkTemplateRequest& request, const ModifyWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWatermarkTemplateOutcomeCallable ModifyWatermarkTemplateCallable(const Model::ModifyWatermarkTemplateRequest& request);
+
+                /**
+                 *对直播流媒体发起处理任务，功能包括：
+
+1. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。
+2. 智能内容分析（精彩集锦）。
+
+直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。
+                 * @param req ProcessLiveMediaRequest
+                 * @return ProcessLiveMediaOutcome
+                 */
+                ProcessLiveMediaOutcome ProcessLiveMedia(const Model::ProcessLiveMediaRequest &request);
+                void ProcessLiveMediaAsync(const Model::ProcessLiveMediaRequest& request, const ProcessLiveMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProcessLiveMediaOutcomeCallable ProcessLiveMediaCallable(const Model::ProcessLiveMediaRequest& request);
 
                 /**
                  *对 COS 中的媒体文件发起处理任务，功能包括：

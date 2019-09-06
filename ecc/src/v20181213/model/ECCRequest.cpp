@@ -27,9 +27,12 @@ ECCRequest::ECCRequest() :
     m_contentHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_gradeHasBeenSet(false),
-    m_outlineHasBeenSet(false),
-    m_modelSubjectHasBeenSet(false),
-    m_modelContentHasBeenSet(false)
+    m_requirementHasBeenSet(false),
+    m_modelTitleHasBeenSet(false),
+    m_modelContentHasBeenSet(false),
+    m_eccAppidHasBeenSet(false),
+    m_isAsyncHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -64,20 +67,20 @@ string ECCRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_grade.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_outlineHasBeenSet)
+    if (m_requirementHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Outline";
+        string key = "Requirement";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_outline.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_requirement.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_modelSubjectHasBeenSet)
+    if (m_modelTitleHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ModelSubject";
+        string key = "ModelTitle";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_modelSubject.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_modelTitle.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelContentHasBeenSet)
@@ -86,6 +89,30 @@ string ECCRequest::ToJsonString() const
         string key = "ModelContent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_modelContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eccAppidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EccAppid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eccAppid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAsyncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsAsync";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAsync, allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,36 +171,36 @@ bool ECCRequest::GradeHasBeenSet() const
     return m_gradeHasBeenSet;
 }
 
-string ECCRequest::GetOutline() const
+string ECCRequest::GetRequirement() const
 {
-    return m_outline;
+    return m_requirement;
 }
 
-void ECCRequest::SetOutline(const string& _outline)
+void ECCRequest::SetRequirement(const string& _requirement)
 {
-    m_outline = _outline;
-    m_outlineHasBeenSet = true;
+    m_requirement = _requirement;
+    m_requirementHasBeenSet = true;
 }
 
-bool ECCRequest::OutlineHasBeenSet() const
+bool ECCRequest::RequirementHasBeenSet() const
 {
-    return m_outlineHasBeenSet;
+    return m_requirementHasBeenSet;
 }
 
-string ECCRequest::GetModelSubject() const
+string ECCRequest::GetModelTitle() const
 {
-    return m_modelSubject;
+    return m_modelTitle;
 }
 
-void ECCRequest::SetModelSubject(const string& _modelSubject)
+void ECCRequest::SetModelTitle(const string& _modelTitle)
 {
-    m_modelSubject = _modelSubject;
-    m_modelSubjectHasBeenSet = true;
+    m_modelTitle = _modelTitle;
+    m_modelTitleHasBeenSet = true;
 }
 
-bool ECCRequest::ModelSubjectHasBeenSet() const
+bool ECCRequest::ModelTitleHasBeenSet() const
 {
-    return m_modelSubjectHasBeenSet;
+    return m_modelTitleHasBeenSet;
 }
 
 string ECCRequest::GetModelContent() const
@@ -190,6 +217,54 @@ void ECCRequest::SetModelContent(const string& _modelContent)
 bool ECCRequest::ModelContentHasBeenSet() const
 {
     return m_modelContentHasBeenSet;
+}
+
+string ECCRequest::GetEccAppid() const
+{
+    return m_eccAppid;
+}
+
+void ECCRequest::SetEccAppid(const string& _eccAppid)
+{
+    m_eccAppid = _eccAppid;
+    m_eccAppidHasBeenSet = true;
+}
+
+bool ECCRequest::EccAppidHasBeenSet() const
+{
+    return m_eccAppidHasBeenSet;
+}
+
+int64_t ECCRequest::GetIsAsync() const
+{
+    return m_isAsync;
+}
+
+void ECCRequest::SetIsAsync(const int64_t& _isAsync)
+{
+    m_isAsync = _isAsync;
+    m_isAsyncHasBeenSet = true;
+}
+
+bool ECCRequest::IsAsyncHasBeenSet() const
+{
+    return m_isAsyncHasBeenSet;
+}
+
+string ECCRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void ECCRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool ECCRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 

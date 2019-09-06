@@ -27,7 +27,7 @@ AiAnalysisResult::AiAnalysisResult() :
     m_coverTaskHasBeenSet(false),
     m_tagTaskHasBeenSet(false),
     m_frameTagTaskHasBeenSet(false),
-    m_highlightsTaskHasBeenSet(false)
+    m_highlightTaskHasBeenSet(false)
 {
 }
 
@@ -114,24 +114,21 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const Value &value)
         m_frameTagTaskHasBeenSet = true;
     }
 
-    if (value.HasMember("HighlightsTask") && !value["HighlightsTask"].IsNull())
+    if (value.HasMember("HighlightTask") && !value["HighlightTask"].IsNull())
     {
-        if (!value["HighlightsTask"].IsArray())
-            return CoreInternalOutcome(Error("response `AiAnalysisResult.HighlightsTask` is not array type"));
-
-        const Value &tmpValue = value["HighlightsTask"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["HighlightTask"].IsObject())
         {
-            AiAnalysisTaskHighlightResult item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_highlightsTask.push_back(item);
+            return CoreInternalOutcome(Error("response `AiAnalysisResult.HighlightTask` is not object type").SetRequestId(requestId));
         }
-        m_highlightsTaskHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_highlightTask.Deserialize(value["HighlightTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_highlightTaskHasBeenSet = true;
     }
 
 
@@ -185,19 +182,13 @@ void AiAnalysisResult::ToJsonObject(Value &value, Document::AllocatorType& alloc
         m_frameTagTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_highlightsTaskHasBeenSet)
+    if (m_highlightTaskHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "HighlightsTask";
+        string key = "HighlightTask";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_highlightsTask.begin(); itr != m_highlightsTask.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_highlightTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -283,19 +274,19 @@ bool AiAnalysisResult::FrameTagTaskHasBeenSet() const
     return m_frameTagTaskHasBeenSet;
 }
 
-vector<AiAnalysisTaskHighlightResult> AiAnalysisResult::GetHighlightsTask() const
+AiAnalysisTaskHighlightResult AiAnalysisResult::GetHighlightTask() const
 {
-    return m_highlightsTask;
+    return m_highlightTask;
 }
 
-void AiAnalysisResult::SetHighlightsTask(const vector<AiAnalysisTaskHighlightResult>& _highlightsTask)
+void AiAnalysisResult::SetHighlightTask(const AiAnalysisTaskHighlightResult& _highlightTask)
 {
-    m_highlightsTask = _highlightsTask;
-    m_highlightsTaskHasBeenSet = true;
+    m_highlightTask = _highlightTask;
+    m_highlightTaskHasBeenSet = true;
 }
 
-bool AiAnalysisResult::HighlightsTaskHasBeenSet() const
+bool AiAnalysisResult::HighlightTaskHasBeenSet() const
 {
-    return m_highlightsTaskHasBeenSet;
+    return m_highlightTaskHasBeenSet;
 }
 

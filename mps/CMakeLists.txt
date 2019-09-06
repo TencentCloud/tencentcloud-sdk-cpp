@@ -91,6 +91,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaTranscodeItem.h
   include/tencentcloud/mps/v20190612/model/TextWatermarkTemplateInputForUpdate.h
   include/tencentcloud/mps/v20190612/model/ProcessMediaRequest.h
+  include/tencentcloud/mps/v20190612/model/ProcessLiveMediaResponse.h
   include/tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesRequest.h
@@ -114,6 +115,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ImageWatermarkTemplate.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkInput.h
   include/tencentcloud/mps/v20190612/model/CosFileUploadTrigger.h
+  include/tencentcloud/mps/v20190612/model/TEHDConfigForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/MediaSnapshotByTimePicInfoItem.h
   include/tencentcloud/mps/v20190612/model/WatermarkTemplate.h
@@ -122,13 +124,14 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeTaskDetailRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteImageSpriteTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/CreateWorkflowResponse.h
+  include/tencentcloud/mps/v20190612/model/TEHDConfig.h
   include/tencentcloud/mps/v20190612/model/AnimatedGraphicsTemplate.h
   include/tencentcloud/mps/v20190612/model/ModifyAnimatedGraphicsTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskResult.h
+  include/tencentcloud/mps/v20190612/model/ProcessLiveMediaRequest.h
   include/tencentcloud/mps/v20190612/model/WatermarkInput.h
   include/tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h
-  include/tencentcloud/mps/v20190612/model/CosOutputStorage.h
   include/tencentcloud/mps/v20190612/model/ModifyImageSpriteTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/CreateWatermarkTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateResponse.h
@@ -137,7 +140,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h
   include/tencentcloud/mps/v20190612/model/VideoTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h
-  include/tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingTaskInput.h
+  include/tencentcloud/mps/v20190612/model/CosOutputStorage.h
   include/tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyWatermarkTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/TaskNotifyConfig.h
@@ -217,6 +220,7 @@ set(mps_src
   src/v20190612/model/MediaTranscodeItem.cpp
   src/v20190612/model/TextWatermarkTemplateInputForUpdate.cpp
   src/v20190612/model/ProcessMediaRequest.cpp
+  src/v20190612/model/ProcessLiveMediaResponse.cpp
   src/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.cpp
   src/v20190612/model/CreateSampleSnapshotTemplateRequest.cpp
   src/v20190612/model/DescribeSampleSnapshotTemplatesRequest.cpp
@@ -240,6 +244,7 @@ set(mps_src
   src/v20190612/model/ImageWatermarkTemplate.cpp
   src/v20190612/model/ImageWatermarkInput.cpp
   src/v20190612/model/CosFileUploadTrigger.cpp
+  src/v20190612/model/TEHDConfigForUpdate.cpp
   src/v20190612/model/CreateAnimatedGraphicsTemplateResponse.cpp
   src/v20190612/model/MediaSnapshotByTimePicInfoItem.cpp
   src/v20190612/model/WatermarkTemplate.cpp
@@ -248,13 +253,14 @@ set(mps_src
   src/v20190612/model/DescribeTaskDetailRequest.cpp
   src/v20190612/model/DeleteImageSpriteTemplateResponse.cpp
   src/v20190612/model/CreateWorkflowResponse.cpp
+  src/v20190612/model/TEHDConfig.cpp
   src/v20190612/model/AnimatedGraphicsTemplate.cpp
   src/v20190612/model/ModifyAnimatedGraphicsTemplateRequest.cpp
   src/v20190612/model/MediaProcessTaskResult.cpp
+  src/v20190612/model/ProcessLiveMediaRequest.cpp
   src/v20190612/model/WatermarkInput.cpp
   src/v20190612/model/EnableWorkflowResponse.cpp
   src/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.cpp
-  src/v20190612/model/CosOutputStorage.cpp
   src/v20190612/model/ModifyImageSpriteTemplateResponse.cpp
   src/v20190612/model/CreateWatermarkTemplateRequest.cpp
   src/v20190612/model/DeleteWatermarkTemplateResponse.cpp
@@ -263,7 +269,7 @@ set(mps_src
   src/v20190612/model/MediaProcessTaskInput.cpp
   src/v20190612/model/VideoTemplateInfoForUpdate.cpp
   src/v20190612/model/CreateImageSpriteTemplateResponse.cpp
-  src/v20190612/model/AdaptiveDynamicStreamingTaskInput.cpp
+  src/v20190612/model/CosOutputStorage.cpp
   src/v20190612/model/DescribeImageSpriteTemplatesResponse.cpp
   src/v20190612/model/ModifyWatermarkTemplateResponse.cpp
   src/v20190612/model/TaskNotifyConfig.cpp

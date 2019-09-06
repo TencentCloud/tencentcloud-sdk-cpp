@@ -26,7 +26,7 @@ MediaMiniProgramReviewInfoItem::MediaMiniProgramReviewInfoItem() :
     m_metaDataHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_reviewResultHasBeenSet(false),
-    m_reviewSummeryHasBeenSet(false)
+    m_reviewSummaryHasBeenSet(false)
 {
 }
 
@@ -82,12 +82,12 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const Value &val
         m_reviewResultHasBeenSet = true;
     }
 
-    if (value.HasMember("ReviewSummery") && !value["ReviewSummery"].IsNull())
+    if (value.HasMember("ReviewSummary") && !value["ReviewSummary"].IsNull())
     {
-        if (!value["ReviewSummery"].IsArray())
-            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.ReviewSummery` is not array type"));
+        if (!value["ReviewSummary"].IsArray())
+            return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.ReviewSummary` is not array type"));
 
-        const Value &tmpValue = value["ReviewSummery"];
+        const Value &tmpValue = value["ReviewSummary"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaMiniProgramReviewElem item;
@@ -97,9 +97,9 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const Value &val
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_reviewSummery.push_back(item);
+            m_reviewSummary.push_back(item);
         }
-        m_reviewSummeryHasBeenSet = true;
+        m_reviewSummaryHasBeenSet = true;
     }
 
 
@@ -142,15 +142,15 @@ void MediaMiniProgramReviewInfoItem::ToJsonObject(Value &value, Document::Alloca
         value.AddMember(iKey, Value(m_reviewResult.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_reviewSummeryHasBeenSet)
+    if (m_reviewSummaryHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ReviewSummery";
+        string key = "ReviewSummary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_reviewSummery.begin(); itr != m_reviewSummery.end(); ++itr, ++i)
+        for (auto itr = m_reviewSummary.begin(); itr != m_reviewSummary.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -224,19 +224,19 @@ bool MediaMiniProgramReviewInfoItem::ReviewResultHasBeenSet() const
     return m_reviewResultHasBeenSet;
 }
 
-vector<MediaMiniProgramReviewElem> MediaMiniProgramReviewInfoItem::GetReviewSummery() const
+vector<MediaMiniProgramReviewElem> MediaMiniProgramReviewInfoItem::GetReviewSummary() const
 {
-    return m_reviewSummery;
+    return m_reviewSummary;
 }
 
-void MediaMiniProgramReviewInfoItem::SetReviewSummery(const vector<MediaMiniProgramReviewElem>& _reviewSummery)
+void MediaMiniProgramReviewInfoItem::SetReviewSummary(const vector<MediaMiniProgramReviewElem>& _reviewSummary)
 {
-    m_reviewSummery = _reviewSummery;
-    m_reviewSummeryHasBeenSet = true;
+    m_reviewSummary = _reviewSummary;
+    m_reviewSummaryHasBeenSet = true;
 }
 
-bool MediaMiniProgramReviewInfoItem::ReviewSummeryHasBeenSet() const
+bool MediaMiniProgramReviewInfoItem::ReviewSummaryHasBeenSet() const
 {
-    return m_reviewSummeryHasBeenSet;
+    return m_reviewSummaryHasBeenSet;
 }
 

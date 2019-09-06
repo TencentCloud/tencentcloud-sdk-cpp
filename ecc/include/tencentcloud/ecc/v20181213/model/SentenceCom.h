@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 句子点评
+                * 批改结果按句点评的详细信息
                 */
                 class SentenceCom : public AbstractModel
                 {
@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取点评内容
-                     * @return Suggestions 点评内容
+                     * 获取句子错误纠正信息
+                     * @return Suggestions 句子错误纠正信息
                      */
                     std::vector<SentenceSuggest> GetSuggestions() const;
 
                     /**
-                     * 设置点评内容
-                     * @param Suggestions 点评内容
+                     * 设置句子错误纠正信息
+                     * @param Suggestions 句子错误纠正信息
                      */
                     void SetSuggestions(const std::vector<SentenceSuggest>& _suggestions);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool SuggestionsHasBeenSet() const;
 
                     /**
-                     * 获取点评的句子信息
-                     * @return Sentence 点评的句子信息
+                     * 获取句子信息
+                     * @return Sentence 句子信息
                      */
                     SentenceItem GetSentence() const;
 
                     /**
-                     * 设置点评的句子信息
-                     * @param Sentence 点评的句子信息
+                     * 设置句子信息
+                     * @param Sentence 句子信息
                      */
                     void SetSentence(const SentenceItem& _sentence);
 
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 点评内容
+                     * 句子错误纠正信息
                      */
                     std::vector<SentenceSuggest> m_suggestions;
                     bool m_suggestionsHasBeenSet;
 
                     /**
-                     * 点评的句子信息
+                     * 句子信息
                      */
                     SentenceItem m_sentence;
                     bool m_sentenceHasBeenSet;

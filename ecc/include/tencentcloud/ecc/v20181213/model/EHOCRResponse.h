@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别后的作文内容
-                     * @return Data 识别后的作文内容
+                     * 获取接口返回数据
+                     * @return Data 接口返回数据
                      */
                     CompostionContext GetData() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别后的作文内容
+                     * 接口返回数据
                      */
                     CompostionContext m_data;
                     bool m_dataHasBeenSet;

@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取整体的批改结果
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 整体的批改结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CorrectData GetData() const;
 
@@ -55,13 +57,35 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
                      * 整体的批改结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CorrectData m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 任务 id，用于查询接口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

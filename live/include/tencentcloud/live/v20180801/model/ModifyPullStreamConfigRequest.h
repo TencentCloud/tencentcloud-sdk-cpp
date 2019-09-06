@@ -156,9 +156,11 @@ namespace TencentCloud
                      * 获取开始时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @return StartTime 开始时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     std::string GetStartTime() const;
 
@@ -166,9 +168,11 @@ namespace TencentCloud
                      * 设置开始时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @param StartTime 开始时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -186,6 +190,7 @@ namespace TencentCloud
 
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @return EndTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
@@ -193,6 +198,7 @@ namespace TencentCloud
 
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     std::string GetEndTime() const;
 
@@ -204,6 +210,7 @@ namespace TencentCloud
 
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @param EndTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
@@ -211,6 +218,7 @@ namespace TencentCloud
 
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -261,6 +269,7 @@ namespace TencentCloud
                      * 开始时间。
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -273,6 +282,7 @@ namespace TencentCloud
 
 使用UTC格式时间，
 例如：2019-01-08T10:00:00Z。
+格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

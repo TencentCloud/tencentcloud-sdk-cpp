@@ -25,6 +25,7 @@
 #include <tencentcloud/vod/v20180717/model/TagConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/CoverConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/FrameTagConfigureInfo.h>
+#include <tencentcloud/vod/v20180717/model/HighlightsConfigureInfo.h>
 
 
 namespace TencentCloud
@@ -155,6 +156,24 @@ namespace TencentCloud
                     bool FrameTagConfigureHasBeenSet() const;
 
                     /**
+                     * 获取智能精彩集锦任务控制参数。
+                     * @return HighlightConfigure 智能精彩集锦任务控制参数。
+                     */
+                    HighlightsConfigureInfo GetHighlightConfigure() const;
+
+                    /**
+                     * 设置智能精彩集锦任务控制参数。
+                     * @param HighlightConfigure 智能精彩集锦任务控制参数。
+                     */
+                    void SetHighlightConfigure(const HighlightsConfigureInfo& _highlightConfigure);
+
+                    /**
+                     * 判断参数 HighlightConfigure 是否已赋值
+                     * @return HighlightConfigure 是否已赋值
+                     */
+                    bool HighlightConfigureHasBeenSet() const;
+
+                    /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -209,6 +228,12 @@ namespace TencentCloud
                      */
                     FrameTagConfigureInfo m_frameTagConfigure;
                     bool m_frameTagConfigureHasBeenSet;
+
+                    /**
+                     * 智能精彩集锦任务控制参数。
+                     */
+                    HighlightsConfigureInfo m_highlightConfigure;
+                    bool m_highlightConfigureHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

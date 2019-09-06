@@ -27,6 +27,7 @@ DescribeTranscodeTemplatesRequest::DescribeTranscodeTemplatesRequest() :
     m_definitionsHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_containerTypeHasBeenSet(false),
+    m_tEHDTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
@@ -67,6 +68,14 @@ string DescribeTranscodeTemplatesRequest::ToJsonString() const
         string key = "ContainerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_containerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tEHDTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TEHDType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_tEHDType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -147,6 +156,22 @@ void DescribeTranscodeTemplatesRequest::SetContainerType(const string& _containe
 bool DescribeTranscodeTemplatesRequest::ContainerTypeHasBeenSet() const
 {
     return m_containerTypeHasBeenSet;
+}
+
+string DescribeTranscodeTemplatesRequest::GetTEHDType() const
+{
+    return m_tEHDType;
+}
+
+void DescribeTranscodeTemplatesRequest::SetTEHDType(const string& _tEHDType)
+{
+    m_tEHDType = _tEHDType;
+    m_tEHDTypeHasBeenSet = true;
+}
+
+bool DescribeTranscodeTemplatesRequest::TEHDTypeHasBeenSet() const
+{
+    return m_tEHDTypeHasBeenSet;
 }
 
 uint64_t DescribeTranscodeTemplatesRequest::GetOffset() const

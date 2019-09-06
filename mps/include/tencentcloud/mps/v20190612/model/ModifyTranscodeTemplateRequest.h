@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/VideoTemplateInfoForUpdate.h>
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfoForUpdate.h>
+#include <tencentcloud/mps/v20190612/model/TEHDConfigForUpdate.h>
 
 
 namespace TencentCloud
@@ -204,6 +205,24 @@ namespace TencentCloud
                      */
                     bool AudioTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * @return TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     */
+                    TEHDConfigForUpdate GetTEHDConfig() const;
+
+                    /**
+                     * 设置极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * @param TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     */
+                    void SetTEHDConfig(const TEHDConfigForUpdate& _tEHDConfig);
+
+                    /**
+                     * 判断参数 TEHDConfig 是否已赋值
+                     * @return TEHDConfig 是否已赋值
+                     */
+                    bool TEHDConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -257,6 +276,12 @@ namespace TencentCloud
                      */
                     AudioTemplateInfoForUpdate m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
+
+                    /**
+                     * 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     */
+                    TEHDConfigForUpdate m_tEHDConfig;
+                    bool m_tEHDConfigHasBeenSet;
 
                 };
             }

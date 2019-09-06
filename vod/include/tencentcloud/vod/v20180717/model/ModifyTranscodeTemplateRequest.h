@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/VideoTemplateInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/AudioTemplateInfoForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/TEHDConfigForUpdate.h>
 
 
 namespace TencentCloud
@@ -205,6 +206,24 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
+                     * 获取极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * @return TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     */
+                    TEHDConfigForUpdate GetTEHDConfig() const;
+
+                    /**
+                     * 设置极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * @param TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     */
+                    void SetTEHDConfig(const TEHDConfigForUpdate& _tEHDConfig);
+
+                    /**
+                     * 判断参数 TEHDConfig 是否已赋值
+                     * @return TEHDConfig 是否已赋值
+                     */
+                    bool TEHDConfigHasBeenSet() const;
+
+                    /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -275,6 +294,12 @@ namespace TencentCloud
                      */
                     AudioTemplateInfoForUpdate m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
+
+                    /**
+                     * 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     */
+                    TEHDConfigForUpdate m_tEHDConfig;
+                    bool m_tEHDConfigHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

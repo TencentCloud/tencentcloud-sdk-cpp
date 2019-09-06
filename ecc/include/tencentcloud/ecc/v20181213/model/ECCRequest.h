@@ -98,39 +98,39 @@ namespace TencentCloud
 
                     /**
                      * 获取作文提纲，可选参数，作文的写作要求。
-                     * @return Outline 作文提纲，可选参数，作文的写作要求。
+                     * @return Requirement 作文提纲，可选参数，作文的写作要求。
                      */
-                    std::string GetOutline() const;
+                    std::string GetRequirement() const;
 
                     /**
                      * 设置作文提纲，可选参数，作文的写作要求。
-                     * @param Outline 作文提纲，可选参数，作文的写作要求。
+                     * @param Requirement 作文提纲，可选参数，作文的写作要求。
                      */
-                    void SetOutline(const std::string& _outline);
+                    void SetRequirement(const std::string& _requirement);
 
                     /**
-                     * 判断参数 Outline 是否已赋值
-                     * @return Outline 是否已赋值
+                     * 判断参数 Requirement 是否已赋值
+                     * @return Requirement 是否已赋值
                      */
-                    bool OutlineHasBeenSet() const;
+                    bool RequirementHasBeenSet() const;
 
                     /**
                      * 获取范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。
-                     * @return ModelSubject 范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。
+                     * @return ModelTitle 范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。
                      */
-                    std::string GetModelSubject() const;
+                    std::string GetModelTitle() const;
 
                     /**
                      * 设置范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。
-                     * @param ModelSubject 范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。
+                     * @param ModelTitle 范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。
                      */
-                    void SetModelSubject(const std::string& _modelSubject);
+                    void SetModelTitle(const std::string& _modelTitle);
 
                     /**
-                     * 判断参数 ModelSubject 是否已赋值
-                     * @return ModelSubject 是否已赋值
+                     * 判断参数 ModelTitle 是否已赋值
+                     * @return ModelTitle 是否已赋值
                      */
-                    bool ModelSubjectHasBeenSet() const;
+                    bool ModelTitleHasBeenSet() const;
 
                     /**
                      * 获取范文内容，可选参数，同上，范文的正文部分。
@@ -149,6 +149,60 @@ namespace TencentCloud
                      * @return ModelContent 是否已赋值
                      */
                     bool ModelContentHasBeenSet() const;
+
+                    /**
+                     * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。
+                     * @return EccAppid 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。
+                     */
+                    std::string GetEccAppid() const;
+
+                    /**
+                     * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。
+                     * @param EccAppid 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。
+                     */
+                    void SetEccAppid(const std::string& _eccAppid);
+
+                    /**
+                     * 判断参数 EccAppid 是否已赋值
+                     * @return EccAppid 是否已赋值
+                     */
+                    bool EccAppidHasBeenSet() const;
+
+                    /**
+                     * 获取异步模式标识，0：同步模式，1：异步模式，默认为同步模式
+                     * @return IsAsync 异步模式标识，0：同步模式，1：异步模式，默认为同步模式
+                     */
+                    int64_t GetIsAsync() const;
+
+                    /**
+                     * 设置异步模式标识，0：同步模式，1：异步模式，默认为同步模式
+                     * @param IsAsync 异步模式标识，0：同步模式，1：异步模式，默认为同步模式
+                     */
+                    void SetIsAsync(const int64_t& _isAsync);
+
+                    /**
+                     * 判断参数 IsAsync 是否已赋值
+                     * @return IsAsync 是否已赋值
+                     */
+                    bool IsAsyncHasBeenSet() const;
+
+                    /**
+                     * 获取图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用
+                     * @return SessionId 图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用
+                     * @param SessionId 图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
 
                 private:
 
@@ -173,20 +227,38 @@ namespace TencentCloud
                     /**
                      * 作文提纲，可选参数，作文的写作要求。
                      */
-                    std::string m_outline;
-                    bool m_outlineHasBeenSet;
+                    std::string m_requirement;
+                    bool m_requirementHasBeenSet;
 
                     /**
                      * 范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。
                      */
-                    std::string m_modelSubject;
-                    bool m_modelSubjectHasBeenSet;
+                    std::string m_modelTitle;
+                    bool m_modelTitleHasBeenSet;
 
                     /**
                      * 范文内容，可选参数，同上，范文的正文部分。
                      */
                     std::string m_modelContent;
                     bool m_modelContentHasBeenSet;
+
+                    /**
+                     * 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。
+                     */
+                    std::string m_eccAppid;
+                    bool m_eccAppidHasBeenSet;
+
+                    /**
+                     * 异步模式标识，0：同步模式，1：异步模式，默认为同步模式
+                     */
+                    int64_t m_isAsync;
+                    bool m_isAsyncHasBeenSet;
+
+                    /**
+                     * 图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

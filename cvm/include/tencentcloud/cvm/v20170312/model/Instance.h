@@ -493,6 +493,24 @@ namespace TencentCloud
                      */
                     bool StopChargingModeHasBeenSet() const;
 
+                    /**
+                     * 获取实例全局唯一ID
+                     * @return Uuid 实例全局唯一ID
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置实例全局唯一ID
+                     * @param Uuid 实例全局唯一ID
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -640,6 +658,12 @@ namespace TencentCloud
                      */
                     std::string m_stopChargingMode;
                     bool m_stopChargingModeHasBeenSet;
+
+                    /**
+                     * 实例全局唯一ID
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
 
                 };
             }

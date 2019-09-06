@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecc/v20181213/model/ErrorCoordinate.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,42 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取维度单词位置，在句子的第几个到第几个单词之间
+                     * @return ErrorPosition 维度单词位置，在句子的第几个到第几个单词之间
+                     */
+                    std::vector<int64_t> GetErrorPosition() const;
+
+                    /**
+                     * 设置维度单词位置，在句子的第几个到第几个单词之间
+                     * @param ErrorPosition 维度单词位置，在句子的第几个到第几个单词之间
+                     */
+                    void SetErrorPosition(const std::vector<int64_t>& _errorPosition);
+
+                    /**
+                     * 判断参数 ErrorPosition 是否已赋值
+                     * @return ErrorPosition 是否已赋值
+                     */
+                    bool ErrorPositionHasBeenSet() const;
+
+                    /**
+                     * 获取维度单词坐标，错误单词在图片中的坐标，只有传图片时正常返回，传文字时返回[ ]
+                     * @return ErrorCoordinates 维度单词坐标，错误单词在图片中的坐标，只有传图片时正常返回，传文字时返回[ ]
+                     */
+                    std::vector<ErrorCoordinate> GetErrorCoordinates() const;
+
+                    /**
+                     * 设置维度单词坐标，错误单词在图片中的坐标，只有传图片时正常返回，传文字时返回[ ]
+                     * @param ErrorCoordinates 维度单词坐标，错误单词在图片中的坐标，只有传图片时正常返回，传文字时返回[ ]
+                     */
+                    void SetErrorCoordinates(const std::vector<ErrorCoordinate>& _errorCoordinates);
+
+                    /**
+                     * 判断参数 ErrorCoordinates 是否已赋值
+                     * @return ErrorCoordinates 是否已赋值
+                     */
+                    bool ErrorCoordinatesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +204,18 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 维度单词位置，在句子的第几个到第几个单词之间
+                     */
+                    std::vector<int64_t> m_errorPosition;
+                    bool m_errorPositionHasBeenSet;
+
+                    /**
+                     * 维度单词坐标，错误单词在图片中的坐标，只有传图片时正常返回，传文字时返回[ ]
+                     */
+                    std::vector<ErrorCoordinate> m_errorCoordinates;
+                    bool m_errorCoordinatesHasBeenSet;
 
                 };
             }

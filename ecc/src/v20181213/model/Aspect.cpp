@@ -23,7 +23,8 @@ using namespace std;
 
 Aspect::Aspect() :
     m_nameHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_percentageHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome Aspect::Deserialize(const Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("Percentage") && !value["Percentage"].IsNull())
+    {
+        if (!value["Percentage"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Aspect.Percentage` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_percentage = value["Percentage"].GetDouble();
+        m_percentageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void Aspect::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_percentageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Percentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_percentage, allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void Aspect::SetScore(const double& _score)
 bool Aspect::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+double Aspect::GetPercentage() const
+{
+    return m_percentage;
+}
+
+void Aspect::SetPercentage(const double& _percentage)
+{
+    m_percentage = _percentage;
+    m_percentageHasBeenSet = true;
+}
+
+bool Aspect::PercentageHasBeenSet() const
+{
+    return m_percentageHasBeenSet;
 }
 

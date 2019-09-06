@@ -45,7 +45,8 @@ Instance::Instance() :
     m_loginSettingsHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_stopChargingModeHasBeenSet(false)
+    m_stopChargingModeHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -358,6 +359,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_stopChargingModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
+    {
+        if (!value["Uuid"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = string(value["Uuid"].GetString());
+        m_uuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -589,6 +600,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "StopChargingMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_stopChargingMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -976,5 +995,21 @@ void Instance::SetStopChargingMode(const string& _stopChargingMode)
 bool Instance::StopChargingModeHasBeenSet() const
 {
     return m_stopChargingModeHasBeenSet;
+}
+
+string Instance::GetUuid() const
+{
+    return m_uuid;
+}
+
+void Instance::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool Instance::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 

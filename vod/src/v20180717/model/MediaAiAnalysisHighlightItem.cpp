@@ -25,7 +25,8 @@ MediaAiAnalysisHighlightItem::MediaAiAnalysisHighlightItem() :
     m_highlightUrlHasBeenSet(false),
     m_covImgUrlHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_segmentSetHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,26 @@ CoreInternalOutcome MediaAiAnalysisHighlightItem::Deserialize(const Value &value
         m_durationHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentSet") && !value["SegmentSet"].IsNull())
+    {
+        if (!value["SegmentSet"].IsArray())
+            return CoreInternalOutcome(Error("response `MediaAiAnalysisHighlightItem.SegmentSet` is not array type"));
+
+        const Value &tmpValue = value["SegmentSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HighlightSegmentItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_segmentSet.push_back(item);
+        }
+        m_segmentSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +132,21 @@ void MediaAiAnalysisHighlightItem::ToJsonObject(Value &value, Document::Allocato
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_segmentSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SegmentSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_segmentSet.begin(); itr != m_segmentSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -178,5 +214,21 @@ void MediaAiAnalysisHighlightItem::SetDuration(const double& _duration)
 bool MediaAiAnalysisHighlightItem::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+vector<HighlightSegmentItem> MediaAiAnalysisHighlightItem::GetSegmentSet() const
+{
+    return m_segmentSet;
+}
+
+void MediaAiAnalysisHighlightItem::SetSegmentSet(const vector<HighlightSegmentItem>& _segmentSet)
+{
+    m_segmentSet = _segmentSet;
+    m_segmentSetHasBeenSet = true;
+}
+
+bool MediaAiAnalysisHighlightItem::SegmentSetHasBeenSet() const
+{
+    return m_segmentSetHasBeenSet;
 }
 

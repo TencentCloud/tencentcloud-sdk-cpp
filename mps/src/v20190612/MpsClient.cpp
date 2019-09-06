@@ -1416,6 +1416,49 @@ MpsClient::ModifyWatermarkTemplateOutcomeCallable MpsClient::ModifyWatermarkTemp
     return task->get_future();
 }
 
+MpsClient::ProcessLiveMediaOutcome MpsClient::ProcessLiveMedia(const ProcessLiveMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProcessLiveMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProcessLiveMediaResponse rsp = ProcessLiveMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProcessLiveMediaOutcome(rsp);
+        else
+            return ProcessLiveMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return ProcessLiveMediaOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ProcessLiveMediaAsync(const ProcessLiveMediaRequest& request, const ProcessLiveMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ProcessLiveMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ProcessLiveMediaOutcomeCallable MpsClient::ProcessLiveMediaCallable(const ProcessLiveMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ProcessLiveMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->ProcessLiveMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::ProcessMediaOutcome MpsClient::ProcessMedia(const ProcessMediaRequest &request)
 {
     auto outcome = MakeRequest(request, "ProcessMedia");

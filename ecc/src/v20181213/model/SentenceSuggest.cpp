@@ -26,7 +26,9 @@ SentenceSuggest::SentenceSuggest() :
     m_errorTypeHasBeenSet(false),
     m_originHasBeenSet(false),
     m_replaceHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_errorPositionHasBeenSet(false),
+    m_errorCoordinatesHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,39 @@ CoreInternalOutcome SentenceSuggest::Deserialize(const Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorPosition") && !value["ErrorPosition"].IsNull())
+    {
+        if (!value["ErrorPosition"].IsArray())
+            return CoreInternalOutcome(Error("response `SentenceSuggest.ErrorPosition` is not array type"));
+
+        const Value &tmpValue = value["ErrorPosition"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_errorPosition.push_back((*itr).GetInt64());
+        }
+        m_errorPositionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorCoordinates") && !value["ErrorCoordinates"].IsNull())
+    {
+        if (!value["ErrorCoordinates"].IsArray())
+            return CoreInternalOutcome(Error("response `SentenceSuggest.ErrorCoordinates` is not array type"));
+
+        const Value &tmpValue = value["ErrorCoordinates"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ErrorCoordinate item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_errorCoordinates.push_back(item);
+        }
+        m_errorCoordinatesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +165,34 @@ void SentenceSuggest::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorPositionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrorPosition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_errorPosition.begin(); itr != m_errorPosition.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_errorCoordinatesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrorCoordinates";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_errorCoordinates.begin(); itr != m_errorCoordinates.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -213,5 +276,37 @@ void SentenceSuggest::SetMessage(const string& _message)
 bool SentenceSuggest::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+vector<int64_t> SentenceSuggest::GetErrorPosition() const
+{
+    return m_errorPosition;
+}
+
+void SentenceSuggest::SetErrorPosition(const vector<int64_t>& _errorPosition)
+{
+    m_errorPosition = _errorPosition;
+    m_errorPositionHasBeenSet = true;
+}
+
+bool SentenceSuggest::ErrorPositionHasBeenSet() const
+{
+    return m_errorPositionHasBeenSet;
+}
+
+vector<ErrorCoordinate> SentenceSuggest::GetErrorCoordinates() const
+{
+    return m_errorCoordinates;
+}
+
+void SentenceSuggest::SetErrorCoordinates(const vector<ErrorCoordinate>& _errorCoordinates)
+{
+    m_errorCoordinates = _errorCoordinates;
+    m_errorCoordinatesHasBeenSet = true;
+}
+
+bool SentenceSuggest::ErrorCoordinatesHasBeenSet() const
+{
+    return m_errorCoordinatesHasBeenSet;
 }
 

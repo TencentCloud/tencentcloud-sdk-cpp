@@ -25,7 +25,9 @@ ScoreCategory::ScoreCategory() :
     m_wordsHasBeenSet(false),
     m_sentencesHasBeenSet(false),
     m_structureHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_scoreHasBeenSet(false),
+    m_percentageHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,26 @@ CoreInternalOutcome ScoreCategory::Deserialize(const Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("Score") && !value["Score"].IsNull())
+    {
+        if (!value["Score"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ScoreCategory.Score` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_score = value["Score"].GetDouble();
+        m_scoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("Percentage") && !value["Percentage"].IsNull())
+    {
+        if (!value["Percentage"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ScoreCategory.Percentage` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_percentage = value["Percentage"].GetDouble();
+        m_percentageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +165,22 @@ void ScoreCategory::ToJsonObject(Value &value, Document::AllocatorType& allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_content.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_scoreHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Score";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_percentageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Percentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_percentage, allocator);
     }
 
 }
@@ -210,5 +248,37 @@ void ScoreCategory::SetContent(const Aspect& _content)
 bool ScoreCategory::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+double ScoreCategory::GetScore() const
+{
+    return m_score;
+}
+
+void ScoreCategory::SetScore(const double& _score)
+{
+    m_score = _score;
+    m_scoreHasBeenSet = true;
+}
+
+bool ScoreCategory::ScoreHasBeenSet() const
+{
+    return m_scoreHasBeenSet;
+}
+
+double ScoreCategory::GetPercentage() const
+{
+    return m_percentage;
+}
+
+void ScoreCategory::SetPercentage(const double& _percentage)
+{
+    m_percentage = _percentage;
+    m_percentageHasBeenSet = true;
+}
+
+bool ScoreCategory::PercentageHasBeenSet() const
+{
+    return m_percentageHasBeenSet;
 }
 

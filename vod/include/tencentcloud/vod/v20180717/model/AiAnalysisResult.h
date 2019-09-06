@@ -57,11 +57,13 @@ namespace TencentCloud
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
+<li>Highlight：智能精彩集锦</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
+<li>Highlight：智能精彩集锦</li>
                      */
                     std::string GetType() const;
 
@@ -71,11 +73,13 @@ namespace TencentCloud
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
+<li>Highlight：智能精彩集锦</li>
                      * @param Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
+<li>Highlight：智能精彩集锦</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -174,26 +178,26 @@ namespace TencentCloud
                     bool FrameTagTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+                     * 获取视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HighlightsTask 视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+                     * @return HighlightTask 视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<AiAnalysisTaskHighlightResult> GetHighlightsTask() const;
+                    AiAnalysisTaskHighlightResult GetHighlightTask() const;
 
                     /**
-                     * 设置视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+                     * 设置视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HighlightsTask 视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+                     * @param HighlightTask 视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetHighlightsTask(const std::vector<AiAnalysisTaskHighlightResult>& _highlightsTask);
+                    void SetHighlightTask(const AiAnalysisTaskHighlightResult& _highlightTask);
 
                     /**
-                     * 判断参数 HighlightsTask 是否已赋值
-                     * @return HighlightsTask 是否已赋值
+                     * 判断参数 HighlightTask 是否已赋值
+                     * @return HighlightTask 是否已赋值
                      */
-                    bool HighlightsTaskHasBeenSet() const;
+                    bool HighlightTaskHasBeenSet() const;
 
                 private:
 
@@ -203,6 +207,7 @@ namespace TencentCloud
 <li>Cover：智能封面</li>
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
+<li>Highlight：智能精彩集锦</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -236,11 +241,11 @@ namespace TencentCloud
                     bool m_frameTagTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析智能按集锦任务的查询结果，当任务类型为 Highlight 时有效。
+                     * 视频内容分析智能精彩集锦任务的查询结果，当任务类型为 Highlight 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<AiAnalysisTaskHighlightResult> m_highlightsTask;
-                    bool m_highlightsTaskHasBeenSet;
+                    AiAnalysisTaskHighlightResult m_highlightTask;
+                    bool m_highlightTaskHasBeenSet;
 
                 };
             }

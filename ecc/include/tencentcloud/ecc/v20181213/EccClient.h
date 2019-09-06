@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ecc/v20181213/model/DescribeTaskRequest.h>
+#include <tencentcloud/ecc/v20181213/model/DescribeTaskResponse.h>
 #include <tencentcloud/ecc/v20181213/model/ECCRequest.h>
 #include <tencentcloud/ecc/v20181213/model/ECCResponse.h>
 #include <tencentcloud/ecc/v20181213/model/EHOCRRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 EccClient(const Credential &credential, const std::string &region);
                 EccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeTaskResponse> DescribeTaskOutcome;
+                typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
+                typedef std::function<void(const EccClient*, const Model::DescribeTaskRequest&, DescribeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAsyncHandler;
                 typedef Outcome<Error, Model::ECCResponse> ECCOutcome;
                 typedef std::future<ECCOutcome> ECCOutcomeCallable;
                 typedef std::function<void(const EccClient*, const Model::ECCRequest&, ECCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ECCAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const EccClient*, const Model::EHOCRRequest&, EHOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EHOCRAsyncHandler;
 
 
+
+                /**
+                 *异步任务结果查询接口
+                 * @param req DescribeTaskRequest
+                 * @return DescribeTaskOutcome
+                 */
+                DescribeTaskOutcome DescribeTask(const Model::DescribeTaskRequest &request);
+                void DescribeTaskAsync(const Model::DescribeTaskRequest& request, const DescribeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskOutcomeCallable DescribeTaskCallable(const Model::DescribeTaskRequest& request);
 
                 /**
                  *接口请求域名： ecc.tencentcloudapi.com 
@@ -62,7 +76,7 @@ namespace TencentCloud
 
                 /**
                  *https://ecc.tencentcloudapi.com/?Action=EHOCR
-作文识别
+图像识别批改接口
                  * @param req EHOCRRequest
                  * @return EHOCROutcome
                  */

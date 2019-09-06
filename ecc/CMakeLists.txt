@@ -19,31 +19,37 @@ set(ecc_public_header
   )
 
 set(ecc_public_header_model
+  include/tencentcloud/ecc/v20181213/model/DescribeTaskRequest.h
   include/tencentcloud/ecc/v20181213/model/SentenceItem.h
-  include/tencentcloud/ecc/v20181213/model/CorrectData.h
+  include/tencentcloud/ecc/v20181213/model/ECCResponse.h
   include/tencentcloud/ecc/v20181213/model/EHOCRResponse.h
+  include/tencentcloud/ecc/v20181213/model/ErrorCoordinate.h
   include/tencentcloud/ecc/v20181213/model/ECCRequest.h
   include/tencentcloud/ecc/v20181213/model/SentenceCom.h
   include/tencentcloud/ecc/v20181213/model/SentenceSuggest.h
-  include/tencentcloud/ecc/v20181213/model/ECCResponse.h
+  include/tencentcloud/ecc/v20181213/model/CorrectData.h
   include/tencentcloud/ecc/v20181213/model/ScoreCategory.h
   include/tencentcloud/ecc/v20181213/model/Aspect.h
   include/tencentcloud/ecc/v20181213/model/CompostionContext.h
+  include/tencentcloud/ecc/v20181213/model/DescribeTaskResponse.h
   include/tencentcloud/ecc/v20181213/model/EHOCRRequest.h
   )
 
 set(ecc_src
   src/v20181213/EccClient.cpp
+  src/v20181213/model/DescribeTaskRequest.cpp
   src/v20181213/model/SentenceItem.cpp
-  src/v20181213/model/CorrectData.cpp
+  src/v20181213/model/ECCResponse.cpp
   src/v20181213/model/EHOCRResponse.cpp
+  src/v20181213/model/ErrorCoordinate.cpp
   src/v20181213/model/ECCRequest.cpp
   src/v20181213/model/SentenceCom.cpp
   src/v20181213/model/SentenceSuggest.cpp
-  src/v20181213/model/ECCResponse.cpp
+  src/v20181213/model/CorrectData.cpp
   src/v20181213/model/ScoreCategory.cpp
   src/v20181213/model/Aspect.cpp
   src/v20181213/model/CompostionContext.cpp
+  src/v20181213/model/DescribeTaskResponse.cpp
   src/v20181213/model/EHOCRRequest.cpp
   )
 
