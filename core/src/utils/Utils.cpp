@@ -86,13 +86,25 @@ string Utils::HmacSha256(const string &key, const string &input)
 {
     unsigned char hash[32];
 
+    HMAC_CTX *h;
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
     HMAC_CTX hmac;
     HMAC_CTX_init(&hmac);
-    HMAC_Init_ex(&hmac, &key[0], key.length(), EVP_sha256(), NULL);
-    HMAC_Update(&hmac, ( unsigned char* )&input[0], input.length());
+    h = &hmac;
+#else
+    h = HMAC_CTX_new();
+#endif
+
+    HMAC_Init_ex(h, &key[0], key.length(), EVP_sha256(), NULL);
+    HMAC_Update(h, ( unsigned char* )&input[0], input.length());
     unsigned int len = 32;
-    HMAC_Final(&hmac, hash, &len);
-    HMAC_CTX_cleanup(&hmac);
+    HMAC_Final(h, hash, &len);
+
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    HMAC_CTX_cleanup(h);
+#else
+    HMAC_CTX_free(h);
+#endif
 
     std::stringstream ss;
     ss << std::setfill('0');
