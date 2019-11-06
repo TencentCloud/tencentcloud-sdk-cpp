@@ -91,11 +91,11 @@ CoreInternalOutcome GroupInfo::Deserialize(const Value &value)
 
     if (value.HasMember("CreationTimestamp") && !value["CreationTimestamp"].IsNull())
     {
-        if (!value["CreationTimestamp"].IsString())
+        if (!value["CreationTimestamp"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `GroupInfo.CreationTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `GroupInfo.CreationTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_creationTimestamp = string(value["CreationTimestamp"].GetString());
+        m_creationTimestamp = value["CreationTimestamp"].GetUint64();
         m_creationTimestampHasBeenSet = true;
     }
 
@@ -156,7 +156,7 @@ void GroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         Value iKey(kStringType);
         string key = "CreationTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_creationTimestamp, allocator);
     }
 
 }
@@ -242,12 +242,12 @@ bool GroupInfo::FaceModelVersionHasBeenSet() const
     return m_faceModelVersionHasBeenSet;
 }
 
-string GroupInfo::GetCreationTimestamp() const
+uint64_t GroupInfo::GetCreationTimestamp() const
 {
     return m_creationTimestamp;
 }
 
-void GroupInfo::SetCreationTimestamp(const string& _creationTimestamp)
+void GroupInfo::SetCreationTimestamp(const uint64_t& _creationTimestamp)
 {
     m_creationTimestamp = _creationTimestamp;
     m_creationTimestampHasBeenSet = true;

@@ -26,7 +26,8 @@ using namespace std;
 DeleteClusterInstancesRequest::DeleteClusterInstancesRequest() :
     m_clusterIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_instanceDeleteModeHasBeenSet(false)
+    m_instanceDeleteModeHasBeenSet(false),
+    m_forceDeleteHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string DeleteClusterInstancesRequest::ToJsonString() const
         string key = "InstanceDeleteMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceDeleteMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceDeleteHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForceDelete";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceDelete, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void DeleteClusterInstancesRequest::SetInstanceDeleteMode(const string& _instanc
 bool DeleteClusterInstancesRequest::InstanceDeleteModeHasBeenSet() const
 {
     return m_instanceDeleteModeHasBeenSet;
+}
+
+bool DeleteClusterInstancesRequest::GetForceDelete() const
+{
+    return m_forceDelete;
+}
+
+void DeleteClusterInstancesRequest::SetForceDelete(const bool& _forceDelete)
+{
+    m_forceDelete = _forceDelete;
+    m_forceDeleteHasBeenSet = true;
+}
+
+bool DeleteClusterInstancesRequest::ForceDeleteHasBeenSet() const
+{
+    return m_forceDeleteHasBeenSet;
 }
 
 

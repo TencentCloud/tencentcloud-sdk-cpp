@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取您的加速域名。
-                     * @return DomainName 您的加速域名。
+                     * 获取您的推流域名。
+                     * @return DomainName 您的推流域名。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置您的加速域名。
-                     * @param DomainName 您的加速域名。
+                     * 设置您的推流域名。
+                     * @param DomainName 您的推流域名。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -99,11 +99,11 @@ namespace TencentCloud
                     /**
                      * 获取恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：
-1. 默认禁播90天，且最长支持禁播90天。
+1. 默认禁播7天，且最长支持禁播90天。
 2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @return ResumeTime 恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：
-1. 默认禁播90天，且最长支持禁播90天。
+1. 默认禁播7天，且最长支持禁播90天。
 2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     std::string GetResumeTime() const;
@@ -111,11 +111,11 @@ namespace TencentCloud
                     /**
                      * 设置恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：
-1. 默认禁播90天，且最长支持禁播90天。
+1. 默认禁播7天，且最长支持禁播90天。
 2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @param ResumeTime 恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：
-1. 默认禁播90天，且最长支持禁播90天。
+1. 默认禁播7天，且最长支持禁播90天。
 2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     void SetResumeTime(const std::string& _resumeTime);
@@ -161,7 +161,7 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 您的加速域名。
+                     * 您的推流域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
@@ -175,7 +175,7 @@ namespace TencentCloud
                     /**
                      * 恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。
 注意：
-1. 默认禁播90天，且最长支持禁播90天。
+1. 默认禁播7天，且最长支持禁播90天。
 2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
                     std::string m_resumeTime;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tci/v20190318/model/AllMuteSlice.h>
 #include <tencentcloud/tci/v20190318/model/ASRStat.h>
 #include <tencentcloud/tci/v20190318/model/WholeTextItem.h>
 #include <tencentcloud/tci/v20190318/model/VocabDetailInfomation.h>
@@ -45,6 +46,18 @@ namespace TencentCloud
                     ~DescribeAudioTaskResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
+
+                    /**
+                     * 获取如果请求中开启了静音检测开关，则会返回所有的静音片段（静音时长超过阈值的片段）。
+                     * @return AllMuteSlice 如果请求中开启了静音检测开关，则会返回所有的静音片段（静音时长超过阈值的片段）。
+                     */
+                    AllMuteSlice GetAllMuteSlice() const;
+
+                    /**
+                     * 判断参数 AllMuteSlice 是否已赋值
+                     * @return AllMuteSlice 是否已赋值
+                     */
+                    bool AllMuteSliceHasBeenSet() const;
 
                     /**
                      * 获取返回的当前音频的统计信息。当进度为100时返回。
@@ -143,6 +156,12 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 如果请求中开启了静音检测开关，则会返回所有的静音片段（静音时长超过阈值的片段）。
+                     */
+                    AllMuteSlice m_allMuteSlice;
+                    bool m_allMuteSliceHasBeenSet;
 
                     /**
                      * 返回的当前音频的统计信息。当进度为100时返回。

@@ -1,0 +1,377 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_EMRPRODUCTCONFIGOUTTER_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_EMRPRODUCTCONFIGOUTTER_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/OutterResource.h>
+
+
+namespace TencentCloud
+{
+    namespace Emr
+    {
+        namespace V20190103
+        {
+            namespace Model
+            {
+                /**
+                * EMR产品配置
+                */
+                class EmrProductConfigOutter : public AbstractModel
+                {
+                public:
+                    EmrProductConfigOutter();
+                    ~EmrProductConfigOutter() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取软件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SoftInfo 软件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSoftInfo() const;
+
+                    /**
+                     * 设置软件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SoftInfo 软件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSoftInfo(const std::vector<std::string>& _softInfo);
+
+                    /**
+                     * 判断参数 SoftInfo 是否已赋值
+                     * @return SoftInfo 是否已赋值
+                     */
+                    bool SoftInfoHasBeenSet() const;
+
+                    /**
+                     * 获取Master节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterNodeSize Master节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMasterNodeSize() const;
+
+                    /**
+                     * 设置Master节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MasterNodeSize Master节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMasterNodeSize(const int64_t& _masterNodeSize);
+
+                    /**
+                     * 判断参数 MasterNodeSize 是否已赋值
+                     * @return MasterNodeSize 是否已赋值
+                     */
+                    bool MasterNodeSizeHasBeenSet() const;
+
+                    /**
+                     * 获取Core节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CoreNodeSize Core节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCoreNodeSize() const;
+
+                    /**
+                     * 设置Core节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CoreNodeSize Core节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCoreNodeSize(const int64_t& _coreNodeSize);
+
+                    /**
+                     * 判断参数 CoreNodeSize 是否已赋值
+                     * @return CoreNodeSize 是否已赋值
+                     */
+                    bool CoreNodeSizeHasBeenSet() const;
+
+                    /**
+                     * 获取Task节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskNodeSize Task节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTaskNodeSize() const;
+
+                    /**
+                     * 设置Task节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskNodeSize Task节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskNodeSize(const int64_t& _taskNodeSize);
+
+                    /**
+                     * 判断参数 TaskNodeSize 是否已赋值
+                     * @return TaskNodeSize 是否已赋值
+                     */
+                    bool TaskNodeSizeHasBeenSet() const;
+
+                    /**
+                     * 获取Common节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComNodeSize Common节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetComNodeSize() const;
+
+                    /**
+                     * 设置Common节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ComNodeSize Common节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetComNodeSize(const int64_t& _comNodeSize);
+
+                    /**
+                     * 判断参数 ComNodeSize 是否已赋值
+                     * @return ComNodeSize 是否已赋值
+                     */
+                    bool ComNodeSizeHasBeenSet() const;
+
+                    /**
+                     * 获取Master节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterResource Master节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource GetMasterResource() const;
+
+                    /**
+                     * 设置Master节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MasterResource Master节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMasterResource(const OutterResource& _masterResource);
+
+                    /**
+                     * 判断参数 MasterResource 是否已赋值
+                     * @return MasterResource 是否已赋值
+                     */
+                    bool MasterResourceHasBeenSet() const;
+
+                    /**
+                     * 获取Core节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CoreResource Core节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource GetCoreResource() const;
+
+                    /**
+                     * 设置Core节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CoreResource Core节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCoreResource(const OutterResource& _coreResource);
+
+                    /**
+                     * 判断参数 CoreResource 是否已赋值
+                     * @return CoreResource 是否已赋值
+                     */
+                    bool CoreResourceHasBeenSet() const;
+
+                    /**
+                     * 获取Task节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskResource Task节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource GetTaskResource() const;
+
+                    /**
+                     * 设置Task节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskResource Task节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskResource(const OutterResource& _taskResource);
+
+                    /**
+                     * 判断参数 TaskResource 是否已赋值
+                     * @return TaskResource 是否已赋值
+                     */
+                    bool TaskResourceHasBeenSet() const;
+
+                    /**
+                     * 获取Common节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComResource Common节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource GetComResource() const;
+
+                    /**
+                     * 设置Common节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ComResource Common节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetComResource(const OutterResource& _comResource);
+
+                    /**
+                     * 判断参数 ComResource 是否已赋值
+                     * @return ComResource 是否已赋值
+                     */
+                    bool ComResourceHasBeenSet() const;
+
+                    /**
+                     * 获取是否使用COS
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OnCos 是否使用COS
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetOnCos() const;
+
+                    /**
+                     * 设置是否使用COS
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OnCos 是否使用COS
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOnCos(const bool& _onCos);
+
+                    /**
+                     * 判断参数 OnCos 是否已赋值
+                     * @return OnCos 是否已赋值
+                     */
+                    bool OnCosHasBeenSet() const;
+
+                    /**
+                     * 获取收费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeType 收费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetChargeType() const;
+
+                    /**
+                     * 设置收费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChargeType 收费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChargeType(const int64_t& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 软件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_softInfo;
+                    bool m_softInfoHasBeenSet;
+
+                    /**
+                     * Master节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_masterNodeSize;
+                    bool m_masterNodeSizeHasBeenSet;
+
+                    /**
+                     * Core节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_coreNodeSize;
+                    bool m_coreNodeSizeHasBeenSet;
+
+                    /**
+                     * Task节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskNodeSize;
+                    bool m_taskNodeSizeHasBeenSet;
+
+                    /**
+                     * Common节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_comNodeSize;
+                    bool m_comNodeSizeHasBeenSet;
+
+                    /**
+                     * Master节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource m_masterResource;
+                    bool m_masterResourceHasBeenSet;
+
+                    /**
+                     * Core节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource m_coreResource;
+                    bool m_coreResourceHasBeenSet;
+
+                    /**
+                     * Task节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource m_taskResource;
+                    bool m_taskResourceHasBeenSet;
+
+                    /**
+                     * Common节点资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutterResource m_comResource;
+                    bool m_comResourceHasBeenSet;
+
+                    /**
+                     * 是否使用COS
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_onCos;
+                    bool m_onCosHasBeenSet;
+
+                    /**
+                     * 收费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_EMRPRODUCTCONFIGOUTTER_H_

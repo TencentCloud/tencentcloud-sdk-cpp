@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeUserInfoResponse::DescribeUserInfoResponse() :
     m_statusHasBeenSet(false),
-    m_paymentTypeHasBeenSet(false)
+    m_paymentTypeHasBeenSet(false),
+    m_oldMpsUserHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
         m_paymentTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OldMpsUser") && !rsp["OldMpsUser"].IsNull())
+    {
+        if (!rsp["OldMpsUser"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `OldMpsUser` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldMpsUser = rsp["OldMpsUser"].GetInt64();
+        m_oldMpsUserHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,16 @@ string DescribeUserInfoResponse::GetPaymentType() const
 bool DescribeUserInfoResponse::PaymentTypeHasBeenSet() const
 {
     return m_paymentTypeHasBeenSet;
+}
+
+int64_t DescribeUserInfoResponse::GetOldMpsUser() const
+{
+    return m_oldMpsUser;
+}
+
+bool DescribeUserInfoResponse::OldMpsUserHasBeenSet() const
+{
+    return m_oldMpsUserHasBeenSet;
 }
 
 

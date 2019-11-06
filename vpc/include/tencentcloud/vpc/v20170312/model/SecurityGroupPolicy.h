@@ -139,6 +139,24 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
+                     * 获取网段或IPv6(互斥)。
+                     * @return Ipv6CidrBlock 网段或IPv6(互斥)。
+                     */
+                    std::string GetIpv6CidrBlock() const;
+
+                    /**
+                     * 设置网段或IPv6(互斥)。
+                     * @param Ipv6CidrBlock 网段或IPv6(互斥)。
+                     */
+                    void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlock 是否已赋值
+                     * @return Ipv6CidrBlock 是否已赋值
+                     */
+                    bool Ipv6CidrBlockHasBeenSet() const;
+
+                    /**
                      * 获取安全组实例ID，例如：sg-ohuuioma。
                      * @return SecurityGroupId 安全组实例ID，例如：sg-ohuuioma。
                      */
@@ -210,6 +228,24 @@ namespace TencentCloud
                      */
                     bool PolicyDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取安全组最近修改时间。
+                     * @return ModifyTime 安全组最近修改时间。
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置安全组最近修改时间。
+                     * @param ModifyTime 安全组最近修改时间。
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,6 +279,12 @@ namespace TencentCloud
                     bool m_cidrBlockHasBeenSet;
 
                     /**
+                     * 网段或IPv6(互斥)。
+                     */
+                    std::string m_ipv6CidrBlock;
+                    bool m_ipv6CidrBlockHasBeenSet;
+
+                    /**
                      * 安全组实例ID，例如：sg-ohuuioma。
                      */
                     std::string m_securityGroupId;
@@ -265,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_policyDescription;
                     bool m_policyDescriptionHasBeenSet;
+
+                    /**
+                     * 安全组最近修改时间。
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
 
                 };
             }

@@ -53,6 +53,8 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOperationLogsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOperationLogsResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DetachDisksRequest.h>
@@ -67,10 +69,14 @@
 #include <tencentcloud/cbs/v20170312/model/ModifyAutoSnapshotPolicyAttributeResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskAttributesRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskAttributesResponse.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeRequest.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifySnapshotAttributeRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifySnapshotAttributeResponse.h>
+#include <tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionRequest.h>
+#include <tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionResponse.h>
 #include <tencentcloud/cbs/v20170312/model/RenewDiskRequest.h>
 #include <tencentcloud/cbs/v20170312/model/RenewDiskResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ResizeDiskRequest.h>
@@ -138,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSnapshotOperationLogsResponse> DescribeSnapshotOperationLogsOutcome;
                 typedef std::future<DescribeSnapshotOperationLogsOutcome> DescribeSnapshotOperationLogsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotOperationLogsRequest&, DescribeSnapshotOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotOperationLogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSnapshotSharePermissionResponse> DescribeSnapshotSharePermissionOutcome;
+                typedef std::future<DescribeSnapshotSharePermissionOutcome> DescribeSnapshotSharePermissionOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotSharePermissionRequest&, DescribeSnapshotSharePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotSharePermissionAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSnapshotsResponse> DescribeSnapshotsOutcome;
                 typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotsRequest&, DescribeSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsAsyncHandler;
@@ -159,12 +168,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDiskAttributesResponse> ModifyDiskAttributesOutcome;
                 typedef std::future<ModifyDiskAttributesOutcome> ModifyDiskAttributesOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifyDiskAttributesRequest&, ModifyDiskAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskAttributesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDisksChargeTypeResponse> ModifyDisksChargeTypeOutcome;
+                typedef std::future<ModifyDisksChargeTypeOutcome> ModifyDisksChargeTypeOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::ModifyDisksChargeTypeRequest&, ModifyDisksChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksChargeTypeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDisksRenewFlagResponse> ModifyDisksRenewFlagOutcome;
                 typedef std::future<ModifyDisksRenewFlagOutcome> ModifyDisksRenewFlagOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifyDisksRenewFlagRequest&, ModifyDisksRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksRenewFlagAsyncHandler;
                 typedef Outcome<Error, Model::ModifySnapshotAttributeResponse> ModifySnapshotAttributeOutcome;
                 typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifySnapshotAttributeRequest&, ModifySnapshotAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifySnapshotsSharePermissionResponse> ModifySnapshotsSharePermissionOutcome;
+                typedef std::future<ModifySnapshotsSharePermissionOutcome> ModifySnapshotsSharePermissionOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::ModifySnapshotsSharePermissionRequest&, ModifySnapshotsSharePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotsSharePermissionAsyncHandler;
                 typedef Outcome<Error, Model::RenewDiskResponse> RenewDiskOutcome;
                 typedef std::future<RenewDiskOutcome> RenewDiskOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::RenewDiskRequest&, RenewDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDiskAsyncHandler;
@@ -356,6 +371,15 @@ namespace TencentCloud
                 DescribeSnapshotOperationLogsOutcomeCallable DescribeSnapshotOperationLogsCallable(const Model::DescribeSnapshotOperationLogsRequest& request);
 
                 /**
+                 *本接口（DescribeSnapshotSharePermission）用于查询快照的分享信息。
+                 * @param req DescribeSnapshotSharePermissionRequest
+                 * @return DescribeSnapshotSharePermissionOutcome
+                 */
+                DescribeSnapshotSharePermissionOutcome DescribeSnapshotSharePermission(const Model::DescribeSnapshotSharePermissionRequest &request);
+                void DescribeSnapshotSharePermissionAsync(const Model::DescribeSnapshotSharePermissionRequest& request, const DescribeSnapshotSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotSharePermissionOutcomeCallable DescribeSnapshotSharePermissionCallable(const Model::DescribeSnapshotSharePermissionRequest& request);
+
+                /**
                  *本接口（DescribeSnapshots）用于查询快照的详细信息。
 
 * 根据快照ID、创建快照的云硬盘ID、创建快照的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
@@ -438,6 +462,22 @@ namespace TencentCloud
                 ModifyDiskAttributesOutcomeCallable ModifyDiskAttributesCallable(const Model::ModifyDiskAttributesRequest& request);
 
                 /**
+                 *接口请求域名： cbs.tencentcloudapi.com 。
+
+本接口 (ModifyDisksChargeType) 用于切换云盘的计费模式。
+
+只支持从 POSTPAID_BY_HOUR 计费模式切换为PREPAID计费模式。
+非弹性云盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云盘一起转换。
+默认接口请求频率限制：10次/秒。
+
+                 * @param req ModifyDisksChargeTypeRequest
+                 * @return ModifyDisksChargeTypeOutcome
+                 */
+                ModifyDisksChargeTypeOutcome ModifyDisksChargeType(const Model::ModifyDisksChargeTypeRequest &request);
+                void ModifyDisksChargeTypeAsync(const Model::ModifyDisksChargeTypeRequest& request, const ModifyDisksChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDisksChargeTypeOutcomeCallable ModifyDisksChargeTypeCallable(const Model::ModifyDisksChargeTypeRequest& request);
+
+                /**
                  *本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识，支持批量修改。
                  * @param req ModifyDisksRenewFlagRequest
                  * @return ModifyDisksRenewFlagOutcome
@@ -457,6 +497,21 @@ namespace TencentCloud
                 ModifySnapshotAttributeOutcome ModifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest &request);
                 void ModifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySnapshotAttributeOutcomeCallable ModifySnapshotAttributeCallable(const Model::ModifySnapshotAttributeRequest& request);
+
+                /**
+                 *本接口（ModifySnapshotsSharePermission）用于修改快照分享信息。
+
+分享快照后，被分享账户可以通过该快照创建云硬盘。
+* 每个快照最多可分享给50个账户。
+* 分享快照无法更改名称，描述，仅可用于创建云硬盘。
+* 只支持分享到对方账户相同地域。
+* 仅支持分享数据盘快照。
+                 * @param req ModifySnapshotsSharePermissionRequest
+                 * @return ModifySnapshotsSharePermissionOutcome
+                 */
+                ModifySnapshotsSharePermissionOutcome ModifySnapshotsSharePermission(const Model::ModifySnapshotsSharePermissionRequest &request);
+                void ModifySnapshotsSharePermissionAsync(const Model::ModifySnapshotsSharePermissionRequest& request, const ModifySnapshotsSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySnapshotsSharePermissionOutcomeCallable ModifySnapshotsSharePermissionCallable(const Model::ModifySnapshotsSharePermissionRequest& request);
 
                 /**
                  *本接口（RenewDisk）用于续费云硬盘。

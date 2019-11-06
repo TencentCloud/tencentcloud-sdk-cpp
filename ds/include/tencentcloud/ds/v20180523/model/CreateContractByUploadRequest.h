@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool RemarksHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取合同长时间未签署的过期时间
+                     * @return ExpireTime 合同长时间未签署的过期时间
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param ExpireTime 过期时间
+                     * 设置合同长时间未签署的过期时间
+                     * @param ExpireTime 合同长时间未签署的过期时间
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_remarksHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 合同长时间未签署的过期时间
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

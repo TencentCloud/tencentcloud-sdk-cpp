@@ -16,6 +16,7 @@
 
 set(mongodb_public_header
   include/tencentcloud/mongodb/v20180408/MongodbClient.h
+  include/tencentcloud/mongodb/v20190725/MongodbClient.h
   )
 
 set(mongodb_public_header_model
@@ -52,10 +53,44 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20180408/model/TerminateDBInstanceResponse.h
   include/tencentcloud/mongodb/v20180408/model/MongodbShardInfo.h
   include/tencentcloud/mongodb/v20180408/model/SpecItem.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeSpecInfoRequest.h
+  include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceRequest.h
+  include/tencentcloud/mongodb/v20190725/model/IsolateDBInstanceRequest.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeBackupAccessResponse.h
+  include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h
+  include/tencentcloud/mongodb/v20190725/model/AssignProjectRequest.h
+  include/tencentcloud/mongodb/v20190725/model/ClientConnection.h
+  include/tencentcloud/mongodb/v20190725/model/BackupInfo.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeDBInstancesRequest.h
+  include/tencentcloud/mongodb/v20190725/model/SpecificationInfo.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecRequest.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h
+  include/tencentcloud/mongodb/v20190725/model/TagInfo.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeDBInstancesResponse.h
+  include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceRequest.h
+  include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h
+  include/tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsRequest.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h
+  include/tencentcloud/mongodb/v20190725/model/ShardInfo.h
+  include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceResponse.h
+  include/tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeBackupAccessRequest.h
+  include/tencentcloud/mongodb/v20190725/model/RenameInstanceRequest.h
+  include/tencentcloud/mongodb/v20190725/model/RenameInstanceResponse.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h
+  include/tencentcloud/mongodb/v20190725/model/DBInstanceInfo.h
+  include/tencentcloud/mongodb/v20190725/model/BackupFile.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h
+  include/tencentcloud/mongodb/v20190725/model/InstanceDetail.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h
+  include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h
+  include/tencentcloud/mongodb/v20190725/model/SpecItem.h
   )
 
 set(mongodb_src
   src/v20180408/MongodbClient.cpp
+  src/v20190725/MongodbClient.cpp
   src/v20180408/model/DescribeSpecInfoRequest.cpp
   src/v20180408/model/TerminateDBInstanceRequest.cpp
   src/v20180408/model/CreateDBInstanceRequest.cpp
@@ -89,6 +124,39 @@ set(mongodb_src
   src/v20180408/model/TerminateDBInstanceResponse.cpp
   src/v20180408/model/MongodbShardInfo.cpp
   src/v20180408/model/SpecItem.cpp
+  src/v20190725/model/DescribeSpecInfoRequest.cpp
+  src/v20190725/model/CreateDBInstanceRequest.cpp
+  src/v20190725/model/IsolateDBInstanceRequest.cpp
+  src/v20190725/model/DescribeBackupAccessResponse.cpp
+  src/v20190725/model/CreateDBInstanceHourRequest.cpp
+  src/v20190725/model/AssignProjectRequest.cpp
+  src/v20190725/model/ClientConnection.cpp
+  src/v20190725/model/BackupInfo.cpp
+  src/v20190725/model/DescribeDBInstancesRequest.cpp
+  src/v20190725/model/SpecificationInfo.cpp
+  src/v20190725/model/ModifyDBInstanceSpecRequest.cpp
+  src/v20190725/model/DescribeSpecInfoResponse.cpp
+  src/v20190725/model/TagInfo.cpp
+  src/v20190725/model/DescribeDBInstancesResponse.cpp
+  src/v20190725/model/OfflineIsolatedDBInstanceRequest.cpp
+  src/v20190725/model/CreateDBInstanceResponse.cpp
+  src/v20190725/model/AssignProjectResponse.cpp
+  src/v20190725/model/DescribeDBBackupsRequest.cpp
+  src/v20190725/model/DescribeClientConnectionsRequest.cpp
+  src/v20190725/model/ShardInfo.cpp
+  src/v20190725/model/OfflineIsolatedDBInstanceResponse.cpp
+  src/v20190725/model/IsolateDBInstanceResponse.cpp
+  src/v20190725/model/DescribeBackupAccessRequest.cpp
+  src/v20190725/model/RenameInstanceRequest.cpp
+  src/v20190725/model/RenameInstanceResponse.cpp
+  src/v20190725/model/DescribeClientConnectionsResponse.cpp
+  src/v20190725/model/DBInstanceInfo.cpp
+  src/v20190725/model/BackupFile.cpp
+  src/v20190725/model/DescribeDBBackupsResponse.cpp
+  src/v20190725/model/InstanceDetail.cpp
+  src/v20190725/model/ModifyDBInstanceSpecResponse.cpp
+  src/v20190725/model/CreateDBInstanceHourResponse.cpp
+  src/v20190725/model/SpecItem.cpp
   )
 
 set(mongodb_include
@@ -117,9 +185,9 @@ target_link_libraries(mongodb
   core)
 
 #install(FILES ${mongodb_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mongodb/v20180408)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mongodb/v20190725)
 #install(FILES ${mongodb_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mongodb/v20180408/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/mongodb/v20190725/model)
 install(DIRECTORY ${mongodb_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

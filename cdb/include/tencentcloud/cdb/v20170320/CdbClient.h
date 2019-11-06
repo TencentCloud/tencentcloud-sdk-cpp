@@ -39,12 +39,16 @@
 #include <tencentcloud/cdb/v20170320/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateDeployGroupRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateDeployGroupResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateParamTemplateRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateParamTemplateResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAccountsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAccountsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteBackupRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteBackupResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteDeployGroupsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteDeployGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteParamTemplateRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteParamTemplateResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteTimeWindowRequest.h>
@@ -89,6 +93,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDefaultParamsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDefaultParamsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDeployGroupListRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDeployGroupListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDeviceMonitorInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDeviceMonitorInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h>
@@ -147,6 +153,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceTagRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceTagResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h>
@@ -211,6 +219,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Error, Model::CreateDeployGroupResponse> CreateDeployGroupOutcome;
+                typedef std::future<CreateDeployGroupOutcome> CreateDeployGroupOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateDeployGroupRequest&, CreateDeployGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeployGroupAsyncHandler;
                 typedef Outcome<Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
                 typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
@@ -220,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteBackupResponse> DeleteBackupOutcome;
                 typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteBackupRequest&, DeleteBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupAsyncHandler;
+                typedef Outcome<Error, Model::DeleteDeployGroupsResponse> DeleteDeployGroupsOutcome;
+                typedef std::future<DeleteDeployGroupsOutcome> DeleteDeployGroupsOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DeleteDeployGroupsRequest&, DeleteDeployGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeployGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
                 typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
@@ -286,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDefaultParamsResponse> DescribeDefaultParamsOutcome;
                 typedef std::future<DescribeDefaultParamsOutcome> DescribeDefaultParamsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDefaultParamsRequest&, DescribeDefaultParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultParamsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDeployGroupListResponse> DescribeDeployGroupListOutcome;
+                typedef std::future<DescribeDeployGroupListOutcome> DescribeDeployGroupListOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeDeployGroupListRequest&, DescribeDeployGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployGroupListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeviceMonitorInfoResponse> DescribeDeviceMonitorInfoOutcome;
                 typedef std::future<DescribeDeviceMonitorInfoOutcome> DescribeDeviceMonitorInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDeviceMonitorInfoRequest&, DescribeDeviceMonitorInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceMonitorInfoAsyncHandler;
@@ -373,6 +390,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyInstanceTagResponse> ModifyInstanceTagOutcome;
                 typedef std::future<ModifyInstanceTagOutcome> ModifyInstanceTagOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyInstanceTagRequest&, ModifyInstanceTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTagAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNameOrDescByDpIdResponse> ModifyNameOrDescByDpIdOutcome;
+                typedef std::future<ModifyNameOrDescByDpIdOutcome> ModifyNameOrDescByDpIdOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyNameOrDescByDpIdRequest&, ModifyNameOrDescByDpIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNameOrDescByDpIdAsyncHandler;
                 typedef Outcome<Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
@@ -506,6 +526,15 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
 
                 /**
+                 *创建放置实例的置放群组
+                 * @param req CreateDeployGroupRequest
+                 * @return CreateDeployGroupOutcome
+                 */
+                CreateDeployGroupOutcome CreateDeployGroup(const Model::CreateDeployGroupRequest &request);
+                void CreateDeployGroupAsync(const Model::CreateDeployGroupRequest& request, const CreateDeployGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeployGroupOutcomeCallable CreateDeployGroupCallable(const Model::CreateDeployGroupRequest& request);
+
+                /**
                  *该接口（CreateParamTemplate）用于创建参数模板。
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
@@ -531,6 +560,15 @@ namespace TencentCloud
                 DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest &request);
                 void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request);
+
+                /**
+                 *根据置放群组ID删除置放群组（置放群组中有资源存在时不能删除该置放群组）
+                 * @param req DeleteDeployGroupsRequest
+                 * @return DeleteDeployGroupsOutcome
+                 */
+                DeleteDeployGroupsOutcome DeleteDeployGroups(const Model::DeleteDeployGroupsRequest &request);
+                void DeleteDeployGroupsAsync(const Model::DeleteDeployGroupsRequest& request, const DeleteDeployGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeployGroupsOutcomeCallable DeleteDeployGroupsCallable(const Model::DeleteDeployGroupsRequest& request);
 
                 /**
                  *该接口（DeleteParamTemplate）用于删除参数模板。
@@ -587,7 +625,9 @@ namespace TencentCloud
                 DescribeBackupConfigOutcomeCallable DescribeBackupConfigCallable(const Model::DescribeBackupConfigRequest& request);
 
                 /**
-                 *本接口(DescribeBackupDatabases)用于查询备份数据库列表 (将废弃)。
+                 *本接口(DescribeBackupDatabases)用于查询备份文件包含的库 (已废弃)。
+旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。
+新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。
                  * @param req DescribeBackupDatabasesRequest
                  * @return DescribeBackupDatabasesOutcome
                  */
@@ -596,7 +636,9 @@ namespace TencentCloud
                 DescribeBackupDatabasesOutcomeCallable DescribeBackupDatabasesCallable(const Model::DescribeBackupDatabasesRequest& request);
 
                 /**
-                 *本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (将废弃)。
+                 *本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (已废弃)。
+旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。
+新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。
                  * @param req DescribeBackupTablesRequest
                  * @return DescribeBackupTablesOutcome
                  */
@@ -731,6 +773,15 @@ namespace TencentCloud
                 DescribeDefaultParamsOutcome DescribeDefaultParams(const Model::DescribeDefaultParamsRequest &request);
                 void DescribeDefaultParamsAsync(const Model::DescribeDefaultParamsRequest& request, const DescribeDefaultParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDefaultParamsOutcomeCallable DescribeDefaultParamsCallable(const Model::DescribeDefaultParamsRequest& request);
+
+                /**
+                 *根据置放群组 ID 或置放群组名称查询置放群组列表
+                 * @param req DescribeDeployGroupListRequest
+                 * @return DescribeDeployGroupListOutcome
+                 */
+                DescribeDeployGroupListOutcome DescribeDeployGroupList(const Model::DescribeDeployGroupListRequest &request);
+                void DescribeDeployGroupListAsync(const Model::DescribeDeployGroupListRequest& request, const DescribeDeployGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeployGroupListOutcomeCallable DescribeDeployGroupListCallable(const Model::DescribeDeployGroupListRequest& request);
 
                 /**
                  *本接口（DescribeDeviceMonitorInfo）用于查询云数据库物理机当天的监控信息，暂只支持内存488G、硬盘6T的实例查询。
@@ -994,6 +1045,15 @@ namespace TencentCloud
                 ModifyInstanceTagOutcomeCallable ModifyInstanceTagCallable(const Model::ModifyInstanceTagRequest& request);
 
                 /**
+                 *修改置放群组的名称或者描述
+                 * @param req ModifyNameOrDescByDpIdRequest
+                 * @return ModifyNameOrDescByDpIdOutcome
+                 */
+                ModifyNameOrDescByDpIdOutcome ModifyNameOrDescByDpId(const Model::ModifyNameOrDescByDpIdRequest &request);
+                void ModifyNameOrDescByDpIdAsync(const Model::ModifyNameOrDescByDpIdRequest& request, const ModifyNameOrDescByDpIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNameOrDescByDpIdOutcomeCallable ModifyNameOrDescByDpIdCallable(const Model::ModifyNameOrDescByDpIdRequest& request);
+
+                /**
                  *该接口（ModifyParamTemplate）用于修改参数模板。
                  * @param req ModifyParamTemplateRequest
                  * @return ModifyParamTemplateOutcome
@@ -1094,7 +1154,7 @@ namespace TencentCloud
                 SwitchForUpgradeOutcomeCallable SwitchForUpgradeCallable(const Model::SwitchForUpgradeRequest& request);
 
                 /**
-                 *本接口(UpgradeDBInstance)用于升级云数据库实例，实例类型支持主实例、灾备实例和只读实例。
+                 *本接口(UpgradeDBInstance)用于升级或降级云数据库实例的配置，实例类型支持主实例、灾备实例和只读实例。
                  * @param req UpgradeDBInstanceRequest
                  * @return UpgradeDBInstanceOutcome
                  */

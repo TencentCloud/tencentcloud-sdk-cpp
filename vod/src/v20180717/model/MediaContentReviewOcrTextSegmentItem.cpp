@@ -27,7 +27,9 @@ MediaContentReviewOcrTextSegmentItem::MediaContentReviewOcrTextSegmentItem() :
     m_confidenceHasBeenSet(false),
     m_suggestionHasBeenSet(false),
     m_keywordSetHasBeenSet(false),
-    m_areaCoordSetHasBeenSet(false)
+    m_areaCoordSetHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_picUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,26 @@ CoreInternalOutcome MediaContentReviewOcrTextSegmentItem::Deserialize(const Valu
         m_areaCoordSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaContentReviewOcrTextSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
+    if (value.HasMember("PicUrlExpireTime") && !value["PicUrlExpireTime"].IsNull())
+    {
+        if (!value["PicUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaContentReviewOcrTextSegmentItem.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
+        m_picUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +187,22 @@ void MediaContentReviewOcrTextSegmentItem::ToJsonObject(Value &value, Document::
         {
             value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_picUrlExpireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PicUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_picUrlExpireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +302,37 @@ void MediaContentReviewOcrTextSegmentItem::SetAreaCoordSet(const vector<int64_t>
 bool MediaContentReviewOcrTextSegmentItem::AreaCoordSetHasBeenSet() const
 {
     return m_areaCoordSetHasBeenSet;
+}
+
+string MediaContentReviewOcrTextSegmentItem::GetUrl() const
+{
+    return m_url;
+}
+
+void MediaContentReviewOcrTextSegmentItem::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool MediaContentReviewOcrTextSegmentItem::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+
+string MediaContentReviewOcrTextSegmentItem::GetPicUrlExpireTime() const
+{
+    return m_picUrlExpireTime;
+}
+
+void MediaContentReviewOcrTextSegmentItem::SetPicUrlExpireTime(const string& _picUrlExpireTime)
+{
+    m_picUrlExpireTime = _picUrlExpireTime;
+    m_picUrlExpireTimeHasBeenSet = true;
+}
+
+bool MediaContentReviewOcrTextSegmentItem::PicUrlExpireTimeHasBeenSet() const
+{
+    return m_picUrlExpireTimeHasBeenSet;
 }
 

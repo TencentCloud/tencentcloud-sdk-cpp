@@ -67,13 +67,17 @@ namespace TencentCloud
 
                     /**
                      * 获取第二备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Second 第二备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveInstanceInfo GetSecond() const;
 
                     /**
                      * 设置第二备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Second 第二备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSecond(const SlaveInstanceInfo& _second);
 
@@ -93,6 +97,7 @@ namespace TencentCloud
 
                     /**
                      * 第二备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveInstanceInfo m_second;
                     bool m_secondHasBeenSet;

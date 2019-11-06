@@ -26,7 +26,8 @@ using namespace std;
 
 SearchFacesResponse::SearchFacesResponse() :
     m_resultsHasBeenSet(false),
-    m_faceNumHasBeenSet(false)
+    m_faceNumHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome SearchFacesResponse::Deserialize(const string &payload)
         m_faceNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ uint64_t SearchFacesResponse::GetFaceNum() const
 bool SearchFacesResponse::FaceNumHasBeenSet() const
 {
     return m_faceNumHasBeenSet;
+}
+
+string SearchFacesResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool SearchFacesResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

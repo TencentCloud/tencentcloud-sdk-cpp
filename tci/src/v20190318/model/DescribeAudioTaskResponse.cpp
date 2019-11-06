@@ -25,6 +25,7 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeAudioTaskResponse::DescribeAudioTaskResponse() :
+    m_allMuteSliceHasBeenSet(false),
     m_asrStatHasBeenSet(false),
     m_textsHasBeenSet(false),
     m_vocabAnalysisDetailInfoHasBeenSet(false),
@@ -69,6 +70,23 @@ CoreInternalOutcome DescribeAudioTaskResponse::Deserialize(const string &payload
         return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("AllMuteSlice") && !rsp["AllMuteSlice"].IsNull())
+    {
+        if (!rsp["AllMuteSlice"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AllMuteSlice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_allMuteSlice.Deserialize(rsp["AllMuteSlice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_allMuteSliceHasBeenSet = true;
+    }
 
     if (rsp.HasMember("AsrStat") && !rsp["AsrStat"].IsNull())
     {
@@ -191,6 +209,16 @@ CoreInternalOutcome DescribeAudioTaskResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
+
+AllMuteSlice DescribeAudioTaskResponse::GetAllMuteSlice() const
+{
+    return m_allMuteSlice;
+}
+
+bool DescribeAudioTaskResponse::AllMuteSliceHasBeenSet() const
+{
+    return m_allMuteSliceHasBeenSet;
+}
 
 ASRStat DescribeAudioTaskResponse::GetAsrStat() const
 {

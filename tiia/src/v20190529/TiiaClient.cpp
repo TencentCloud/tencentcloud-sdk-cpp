@@ -83,6 +83,49 @@ TiiaClient::AssessQualityOutcomeCallable TiiaClient::AssessQualityCallable(const
     return task->get_future();
 }
 
+TiiaClient::CropImageOutcome TiiaClient::CropImage(const CropImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CropImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CropImageResponse rsp = CropImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CropImageOutcome(rsp);
+        else
+            return CropImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CropImageOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::CropImageAsync(const CropImageRequest& request, const CropImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CropImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::CropImageOutcomeCallable TiiaClient::CropImageCallable(const CropImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CropImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CropImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectCelebrityOutcome TiiaClient::DetectCelebrity(const DetectCelebrityRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectCelebrity");
@@ -126,6 +169,49 @@ TiiaClient::DetectCelebrityOutcomeCallable TiiaClient::DetectCelebrityCallable(c
     return task->get_future();
 }
 
+TiiaClient::DetectDisgustOutcome TiiaClient::DetectDisgust(const DetectDisgustRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectDisgust");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectDisgustResponse rsp = DetectDisgustResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectDisgustOutcome(rsp);
+        else
+            return DetectDisgustOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectDisgustOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectDisgustAsync(const DetectDisgustRequest& request, const DetectDisgustAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectDisgust(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectDisgustOutcomeCallable TiiaClient::DetectDisgustCallable(const DetectDisgustRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectDisgustOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectDisgust(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectLabelOutcome TiiaClient::DetectLabel(const DetectLabelRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectLabel");
@@ -162,6 +248,49 @@ TiiaClient::DetectLabelOutcomeCallable TiiaClient::DetectLabelCallable(const Det
         [this, request]()
         {
             return this->DetectLabel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::DetectMisbehaviorOutcome TiiaClient::DetectMisbehavior(const DetectMisbehaviorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectMisbehavior");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectMisbehaviorResponse rsp = DetectMisbehaviorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectMisbehaviorOutcome(rsp);
+        else
+            return DetectMisbehaviorOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectMisbehaviorOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectMisbehaviorAsync(const DetectMisbehaviorRequest& request, const DetectMisbehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectMisbehavior(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectMisbehaviorOutcomeCallable TiiaClient::DetectMisbehaviorCallable(const DetectMisbehaviorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectMisbehaviorOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectMisbehavior(request);
         }
     );
 

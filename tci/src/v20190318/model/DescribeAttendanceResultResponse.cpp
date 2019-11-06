@@ -25,6 +25,7 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeAttendanceResultResponse::DescribeAttendanceResultResponse() :
+    m_absenceSetInLibsHasBeenSet(false),
     m_attendanceSetHasBeenSet(false),
     m_suspectedSetHasBeenSet(false),
     m_absenceSetHasBeenSet(false),
@@ -65,6 +66,26 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
         return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("AbsenceSetInLibs") && !rsp["AbsenceSetInLibs"].IsNull())
+    {
+        if (!rsp["AbsenceSetInLibs"].IsArray())
+            return CoreInternalOutcome(Error("response `AbsenceSetInLibs` is not array type"));
+
+        const Value &tmpValue = rsp["AbsenceSetInLibs"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AbsenceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_absenceSetInLibs.push_back(item);
+        }
+        m_absenceSetInLibsHasBeenSet = true;
+    }
 
     if (rsp.HasMember("AttendanceSet") && !rsp["AttendanceSet"].IsNull())
     {
@@ -133,6 +154,16 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
+
+vector<AbsenceInfo> DescribeAttendanceResultResponse::GetAbsenceSetInLibs() const
+{
+    return m_absenceSetInLibs;
+}
+
+bool DescribeAttendanceResultResponse::AbsenceSetInLibsHasBeenSet() const
+{
+    return m_absenceSetInLibsHasBeenSet;
+}
 
 vector<AttendanceInfo> DescribeAttendanceResultResponse::GetAttendanceSet() const
 {

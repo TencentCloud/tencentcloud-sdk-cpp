@@ -31,7 +31,9 @@ Listener::Listener() :
     m_sessionExpireTimeHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_listenerNameHasBeenSet(false)
+    m_listenerNameHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_endPortHasBeenSet(false)
 {
 }
 
@@ -164,6 +166,26 @@ CoreInternalOutcome Listener::Deserialize(const Value &value)
         m_listenerNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Listener.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndPort") && !value["EndPort"].IsNull())
+    {
+        if (!value["EndPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Listener.EndPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endPort = value["EndPort"].GetInt64();
+        m_endPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +280,22 @@ void Listener::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ListenerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_listenerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endPort, allocator);
     }
 
 }
@@ -421,5 +459,37 @@ void Listener::SetListenerName(const string& _listenerName)
 bool Listener::ListenerNameHasBeenSet() const
 {
     return m_listenerNameHasBeenSet;
+}
+
+string Listener::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Listener::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Listener::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+int64_t Listener::GetEndPort() const
+{
+    return m_endPort;
+}
+
+void Listener::SetEndPort(const int64_t& _endPort)
+{
+    m_endPort = _endPort;
+    m_endPortHasBeenSet = true;
+}
+
+bool Listener::EndPortHasBeenSet() const
+{
+    return m_endPortHasBeenSet;
 }
 

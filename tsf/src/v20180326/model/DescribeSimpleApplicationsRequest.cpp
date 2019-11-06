@@ -29,7 +29,8 @@ DescribeSimpleApplicationsRequest::DescribeSimpleApplicationsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_microserviceTypeHasBeenSet(false),
-    m_applicationResourceTypeListHasBeenSet(false)
+    m_applicationResourceTypeListHasBeenSet(false),
+    m_searchWordHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string DescribeSimpleApplicationsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_searchWordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_searchWord.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -200,6 +209,22 @@ void DescribeSimpleApplicationsRequest::SetApplicationResourceTypeList(const vec
 bool DescribeSimpleApplicationsRequest::ApplicationResourceTypeListHasBeenSet() const
 {
     return m_applicationResourceTypeListHasBeenSet;
+}
+
+string DescribeSimpleApplicationsRequest::GetSearchWord() const
+{
+    return m_searchWord;
+}
+
+void DescribeSimpleApplicationsRequest::SetSearchWord(const string& _searchWord)
+{
+    m_searchWord = _searchWord;
+    m_searchWordHasBeenSet = true;
+}
+
+bool DescribeSimpleApplicationsRequest::SearchWordHasBeenSet() const
+{
+    return m_searchWordHasBeenSet;
 }
 
 

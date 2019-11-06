@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取脚本在COS上路径
-                     * @return Path 脚本在COS上路径
+                     * 获取脚本在COS上路径，已废弃
+                     * @return Path 脚本在COS上路径，已废弃
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置脚本在COS上路径
-                     * @param Path 脚本在COS上路径
+                     * 设置脚本在COS上路径，已废弃
+                     * @param Path 脚本在COS上路径，已废弃
                      */
                     void SetPath(const std::string& _path);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ArgsHasBeenSet() const;
 
                     /**
-                     * 获取COS的Bucket名称
-                     * @return Bucket COS的Bucket名称
+                     * 获取COS的Bucket名称，已废弃
+                     * @return Bucket COS的Bucket名称，已废弃
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置COS的Bucket名称
-                     * @param Bucket COS的Bucket名称
+                     * 设置COS的Bucket名称，已废弃
+                     * @param Bucket COS的Bucket名称，已废弃
                      */
                     void SetBucket(const std::string& _bucket);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取COS的Region名称
-                     * @return Region COS的Region名称
+                     * 获取COS的Region名称，已废弃
+                     * @return Region COS的Region名称，已废弃
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置COS的Region名称
-                     * @param Region COS的Region名称
+                     * 设置COS的Region名称，已废弃
+                     * @param Region COS的Region名称，已废弃
                      */
                     void SetRegion(const std::string& _region);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取COS的Domain数据
-                     * @return Domain COS的Domain数据
+                     * 获取COS的Domain数据，已废弃
+                     * @return Domain COS的Domain数据，已废弃
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置COS的Domain数据
-                     * @param Domain COS的Domain数据
+                     * 设置COS的Domain数据，已废弃
+                     * @param Domain COS的Domain数据，已废弃
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool WhenRunHasBeenSet() const;
 
                     /**
-                     * 获取脚本文件名
-                     * @return CosFileName 脚本文件名
+                     * 获取脚本文件名，已废弃
+                     * @return CosFileName 脚本文件名，已废弃
                      */
                     std::string GetCosFileName() const;
 
                     /**
-                     * 设置脚本文件名
-                     * @param CosFileName 脚本文件名
+                     * 设置脚本文件名，已废弃
+                     * @param CosFileName 脚本文件名，已废弃
                      */
                     void SetCosFileName(const std::string& _cosFileName);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool CosSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取cos的appid
-                     * @return AppId cos的appid
+                     * 获取cos的appid，已废弃
+                     * @return AppId cos的appid，已废弃
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置cos的appid
-                     * @param AppId cos的appid
+                     * 设置cos的appid，已废弃
+                     * @param AppId cos的appid，已废弃
                      */
                     void SetAppId(const std::string& _appId);
 
@@ -265,7 +265,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 脚本在COS上路径
+                     * 脚本在COS上路径，已废弃
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
@@ -277,19 +277,19 @@ namespace TencentCloud
                     bool m_argsHasBeenSet;
 
                     /**
-                     * COS的Bucket名称
+                     * COS的Bucket名称，已废弃
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * COS的Region名称
+                     * COS的Region名称，已废弃
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * COS的Domain数据
+                     * COS的Domain数据，已废弃
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -307,7 +307,7 @@ namespace TencentCloud
                     bool m_whenRunHasBeenSet;
 
                     /**
-                     * 脚本文件名
+                     * 脚本文件名，已废弃
                      */
                     std::string m_cosFileName;
                     bool m_cosFileNameHasBeenSet;
@@ -331,7 +331,7 @@ namespace TencentCloud
                     bool m_cosSecretKeyHasBeenSet;
 
                     /**
-                     * cos的appid
+                     * cos的appid，已废弃
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;

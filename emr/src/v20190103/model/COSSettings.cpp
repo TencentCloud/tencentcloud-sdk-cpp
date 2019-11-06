@@ -22,9 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 COSSettings::COSSettings() :
-    m_logOnCosPathHasBeenSet(false),
     m_cosSecretIdHasBeenSet(false),
-    m_cosSecretKeyHasBeenSet(false)
+    m_cosSecretKeyHasBeenSet(false),
+    m_logOnCosPathHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ CoreInternalOutcome COSSettings::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("LogOnCosPath") && !value["LogOnCosPath"].IsNull())
-    {
-        if (!value["LogOnCosPath"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `COSSettings.LogOnCosPath` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_logOnCosPath = string(value["LogOnCosPath"].GetString());
-        m_logOnCosPathHasBeenSet = true;
-    }
 
     if (value.HasMember("CosSecretId") && !value["CosSecretId"].IsNull())
     {
@@ -63,20 +53,22 @@ CoreInternalOutcome COSSettings::Deserialize(const Value &value)
         m_cosSecretKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("LogOnCosPath") && !value["LogOnCosPath"].IsNull())
+    {
+        if (!value["LogOnCosPath"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `COSSettings.LogOnCosPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logOnCosPath = string(value["LogOnCosPath"].GetString());
+        m_logOnCosPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void COSSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_logOnCosPathHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LogOnCosPath";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logOnCosPath.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_cosSecretIdHasBeenSet)
     {
@@ -94,24 +86,16 @@ void COSSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         value.AddMember(iKey, Value(m_cosSecretKey.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_logOnCosPathHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogOnCosPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_logOnCosPath.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string COSSettings::GetLogOnCosPath() const
-{
-    return m_logOnCosPath;
-}
-
-void COSSettings::SetLogOnCosPath(const string& _logOnCosPath)
-{
-    m_logOnCosPath = _logOnCosPath;
-    m_logOnCosPathHasBeenSet = true;
-}
-
-bool COSSettings::LogOnCosPathHasBeenSet() const
-{
-    return m_logOnCosPathHasBeenSet;
-}
 
 string COSSettings::GetCosSecretId() const
 {
@@ -143,5 +127,21 @@ void COSSettings::SetCosSecretKey(const string& _cosSecretKey)
 bool COSSettings::CosSecretKeyHasBeenSet() const
 {
     return m_cosSecretKeyHasBeenSet;
+}
+
+string COSSettings::GetLogOnCosPath() const
+{
+    return m_logOnCosPath;
+}
+
+void COSSettings::SetLogOnCosPath(const string& _logOnCosPath)
+{
+    m_logOnCosPath = _logOnCosPath;
+    m_logOnCosPathHasBeenSet = true;
+}
+
+bool COSSettings::LogOnCosPathHasBeenSet() const
+{
+    return m_logOnCosPathHasBeenSet;
 }
 

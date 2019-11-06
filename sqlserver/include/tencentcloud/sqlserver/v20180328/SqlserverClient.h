@@ -99,6 +99,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/RollbackInstanceResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/RunMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/RunMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceResponse.h>
 
@@ -229,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RunMigrationResponse> RunMigrationOutcome;
                 typedef std::future<RunMigrationOutcome> RunMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::RunMigrationRequest&, RunMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunMigrationAsyncHandler;
+                typedef Outcome<Error, Model::TerminateDBInstanceResponse> TerminateDBInstanceOutcome;
+                typedef std::future<TerminateDBInstanceOutcome> TerminateDBInstanceOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::TerminateDBInstanceRequest&, TerminateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
@@ -576,6 +581,15 @@ namespace TencentCloud
                 RunMigrationOutcome RunMigration(const Model::RunMigrationRequest &request);
                 void RunMigrationAsync(const Model::RunMigrationRequest& request, const RunMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunMigrationOutcomeCallable RunMigrationCallable(const Model::RunMigrationRequest& request);
+
+                /**
+                 *本接口(TerminateDBInstance)用于主动销毁按量计费实例。
+                 * @param req TerminateDBInstanceRequest
+                 * @return TerminateDBInstanceOutcome
+                 */
+                TerminateDBInstanceOutcome TerminateDBInstance(const Model::TerminateDBInstanceRequest &request);
+                void TerminateDBInstanceAsync(const Model::TerminateDBInstanceRequest& request, const TerminateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateDBInstanceOutcomeCallable TerminateDBInstanceCallable(const Model::TerminateDBInstanceRequest& request);
 
                 /**
                  *本接口（UpgradeDBInstance）用于升级实例

@@ -97,6 +97,32 @@ namespace TencentCloud
                      */
                     bool ForwardLoadBalancersHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
+<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
+<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+                     * @return LoadBalancersCheckPolicy 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
+<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
+<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+                     */
+                    std::string GetLoadBalancersCheckPolicy() const;
+
+                    /**
+                     * 设置负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
+<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
+<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+                     * @param LoadBalancersCheckPolicy 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
+<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
+<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+                     */
+                    void SetLoadBalancersCheckPolicy(const std::string& _loadBalancersCheckPolicy);
+
+                    /**
+                     * 判断参数 LoadBalancersCheckPolicy 是否已赋值
+                     * @return LoadBalancersCheckPolicy 是否已赋值
+                     */
+                    bool LoadBalancersCheckPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +142,14 @@ namespace TencentCloud
                      */
                     std::vector<ForwardLoadBalancer> m_forwardLoadBalancers;
                     bool m_forwardLoadBalancersHasBeenSet;
+
+                    /**
+                     * 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
+<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
+<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+                     */
+                    std::string m_loadBalancersCheckPolicy;
+                    bool m_loadBalancersCheckPolicyHasBeenSet;
 
                 };
             }

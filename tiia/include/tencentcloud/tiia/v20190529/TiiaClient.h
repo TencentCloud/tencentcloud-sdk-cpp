@@ -25,10 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tiia/v20190529/model/AssessQualityRequest.h>
 #include <tencentcloud/tiia/v20190529/model/AssessQualityResponse.h>
+#include <tencentcloud/tiia/v20190529/model/CropImageRequest.h>
+#include <tencentcloud/tiia/v20190529/model/CropImageResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectCelebrityRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectDisgustResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductResponse.h>
 #include <tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h>
@@ -54,12 +60,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssessQualityResponse> AssessQualityOutcome;
                 typedef std::future<AssessQualityOutcome> AssessQualityOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::AssessQualityRequest&, AssessQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssessQualityAsyncHandler;
+                typedef Outcome<Error, Model::CropImageResponse> CropImageOutcome;
+                typedef std::future<CropImageOutcome> CropImageOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::CropImageRequest&, CropImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CropImageAsyncHandler;
                 typedef Outcome<Error, Model::DetectCelebrityResponse> DetectCelebrityOutcome;
                 typedef std::future<DetectCelebrityOutcome> DetectCelebrityOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectCelebrityRequest&, DetectCelebrityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectCelebrityAsyncHandler;
+                typedef Outcome<Error, Model::DetectDisgustResponse> DetectDisgustOutcome;
+                typedef std::future<DetectDisgustOutcome> DetectDisgustOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectDisgustRequest&, DetectDisgustOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectDisgustAsyncHandler;
                 typedef Outcome<Error, Model::DetectLabelResponse> DetectLabelOutcome;
                 typedef std::future<DetectLabelOutcome> DetectLabelOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelRequest&, DetectLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelAsyncHandler;
+                typedef Outcome<Error, Model::DetectMisbehaviorResponse> DetectMisbehaviorOutcome;
+                typedef std::future<DetectMisbehaviorOutcome> DetectMisbehaviorOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectMisbehaviorRequest&, DetectMisbehaviorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectMisbehaviorAsyncHandler;
                 typedef Outcome<Error, Model::DetectProductResponse> DetectProductOutcome;
                 typedef std::future<DetectProductOutcome> DetectProductOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectProductRequest&, DetectProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectProductAsyncHandler;
@@ -85,6 +100,17 @@ namespace TencentCloud
                 AssessQualityOutcomeCallable AssessQualityCallable(const Model::AssessQualityRequest& request);
 
                 /**
+                 *根据输入的裁剪比例，智能判断一张图片的最佳裁剪区域，确保原图的主体区域不受影响。
+
+可以自动裁剪图片，适应不同平台、设备的展示要求，避免简单拉伸带来的变形。
+                 * @param req CropImageRequest
+                 * @return CropImageOutcome
+                 */
+                CropImageOutcome CropImage(const Model::CropImageRequest &request);
+                void CropImageAsync(const Model::CropImageRequest& request, const CropImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CropImageOutcomeCallable CropImageCallable(const Model::CropImageRequest& request);
+
+                /**
                  *传入一张图片，可以识别图片中包含的人物是否为公众人物，如果是，输出人物的姓名、基本信息、脸部坐标。
 
 支持识别一张图片中存在的多个人脸，针对每个人脸，会给出与之最相似的公众人物。
@@ -96,6 +122,17 @@ namespace TencentCloud
                 DetectCelebrityOutcomeCallable DetectCelebrityCallable(const Model::DetectCelebrityRequest& request);
 
                 /**
+                 *输入一张图片，返回AI针对一张图片是否是恶心的一系列判断值。
+
+通过恶心图片识别, 可以判断一张图片是否令人恶心, 同时给出它属于的潜在类别, 让您能够过滤掉使人不愉快的图片.
+                 * @param req DetectDisgustRequest
+                 * @return DetectDisgustOutcome
+                 */
+                DetectDisgustOutcome DetectDisgust(const Model::DetectDisgustRequest &request);
+                void DetectDisgustAsync(const Model::DetectDisgustRequest& request, const DetectDisgustAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectDisgustOutcomeCallable DetectDisgustCallable(const Model::DetectDisgustRequest& request);
+
+                /**
                  *传入一张图片，识别出图片中存在的物体，并返回物体的名称（分类）、置信度，一张图片会给出多个可能的标签。
                  * @param req DetectLabelRequest
                  * @return DetectLabelOutcome
@@ -103,6 +140,15 @@ namespace TencentCloud
                 DetectLabelOutcome DetectLabel(const Model::DetectLabelRequest &request);
                 void DetectLabelAsync(const Model::DetectLabelRequest& request, const DetectLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectLabelOutcomeCallable DetectLabelCallable(const Model::DetectLabelRequest& request);
+
+                /**
+                 *可以识别输入的图片中是否包含不良行为，例如打架斗殴、赌博、抽烟等，可以应用于广告图、直播截图、短视频截图等审核，减少不良行为对平台内容质量的影响，维护健康向上的互联网环境。
+                 * @param req DetectMisbehaviorRequest
+                 * @return DetectMisbehaviorOutcome
+                 */
+                DetectMisbehaviorOutcome DetectMisbehavior(const Model::DetectMisbehaviorRequest &request);
+                void DetectMisbehaviorAsync(const Model::DetectMisbehaviorRequest& request, const DetectMisbehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectMisbehaviorOutcomeCallable DetectMisbehaviorCallable(const Model::DetectMisbehaviorRequest& request);
 
                 /**
                  *本接口支持识别图片中包含的商品，能够输出商品的品类名称、类别，还可以输出商品在图片中的位置。支持一张图片多个商品的识别。
@@ -127,7 +173,7 @@ namespace TencentCloud
                 EnhanceImageOutcomeCallable EnhanceImageCallable(const Model::EnhanceImageRequest& request);
 
                 /**
-                 *本接口提供多种维度的图像审核能力，支持色情和性感内容识别，政治人物和涉政敏感场景识别，以及暴恐人物、场景、旗帜标识等违禁内容的识别。
+                 *本接口提供多种维度的图像审核能力，支持色情和性感内容识别，政治人物和涉政敏感场景识别，暴恐人物、场景、旗帜标识等违禁内容的识别，以及图片中文字内容的识别。
                  * @param req ImageModerationRequest
                  * @return ImageModerationOutcome
                  */

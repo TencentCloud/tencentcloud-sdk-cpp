@@ -20,10 +20,13 @@ set(billing_public_header
 
 set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h
   include/tencentcloud/billing/v20180709/model/DetailPoint.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeResponse.h
   include/tencentcloud/billing/v20180709/model/BillResourceSummary.h
+  include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductResponse.h
+  include/tencentcloud/billing/v20180709/model/BillTagInfo.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByRegionResponse.h
   include/tencentcloud/billing/v20180709/model/DetailSet.h
   include/tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h
@@ -44,6 +47,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductRequest.h
   include/tencentcloud/billing/v20180709/model/PayDealsResponse.h
   include/tencentcloud/billing/v20180709/model/BillDetail.h
+  include/tencentcloud/billing/v20180709/model/TagSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/ProjectSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h
   include/tencentcloud/billing/v20180709/model/Deal.h
@@ -57,10 +61,13 @@ set(billing_public_header_model
 set(billing_src
   src/v20180709/BillingClient.cpp
   src/v20180709/model/DescribeDosageDetailByDateRequest.cpp
+  src/v20180709/model/DescribeBillSummaryByTagResponse.cpp
   src/v20180709/model/DetailPoint.cpp
   src/v20180709/model/DescribeBillSummaryByPayModeResponse.cpp
   src/v20180709/model/BillResourceSummary.cpp
+  src/v20180709/model/DescribeBillSummaryByTagRequest.cpp
   src/v20180709/model/DescribeBillSummaryByProductResponse.cpp
+  src/v20180709/model/BillTagInfo.cpp
   src/v20180709/model/DescribeBillSummaryByRegionResponse.cpp
   src/v20180709/model/DetailSet.cpp
   src/v20180709/model/DescribeAccountBalanceRequest.cpp
@@ -81,6 +88,7 @@ set(billing_src
   src/v20180709/model/DescribeBillSummaryByProductRequest.cpp
   src/v20180709/model/PayDealsResponse.cpp
   src/v20180709/model/BillDetail.cpp
+  src/v20180709/model/TagSummaryOverviewItem.cpp
   src/v20180709/model/ProjectSummaryOverviewItem.cpp
   src/v20180709/model/DescribeBillDetailResponse.cpp
   src/v20180709/model/Deal.cpp

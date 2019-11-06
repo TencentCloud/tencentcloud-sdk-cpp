@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取销毁节点ID
+                     * @return ResourceIds 销毁节点ID
+                     */
+                    std::vector<std::string> GetResourceIds() const;
+
+                    /**
+                     * 设置销毁节点ID
+                     * @param ResourceIds 销毁节点ID
+                     */
+                    void SetResourceIds(const std::vector<std::string>& _resourceIds);
+
+                    /**
+                     * 判断参数 ResourceIds 是否已赋值
+                     * @return ResourceIds 是否已赋值
+                     */
+                    bool ResourceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 销毁节点ID
+                     */
+                    std::vector<std::string> m_resourceIds;
+                    bool m_resourceIdsHasBeenSet;
 
                 };
             }

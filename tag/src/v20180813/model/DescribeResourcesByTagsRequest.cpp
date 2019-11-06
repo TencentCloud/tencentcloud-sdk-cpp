@@ -121,12 +121,12 @@ string DescribeResourcesByTagsRequest::ToJsonString() const
 }
 
 
-vector<TagFilters> DescribeResourcesByTagsRequest::GetTagFilters() const
+vector<TagFilter> DescribeResourcesByTagsRequest::GetTagFilters() const
 {
     return m_tagFilters;
 }
 
-void DescribeResourcesByTagsRequest::SetTagFilters(const vector<TagFilters>& _tagFilters)
+void DescribeResourcesByTagsRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
 {
     m_tagFilters = _tagFilters;
     m_tagFiltersHasBeenSet = true;

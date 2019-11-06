@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeAccountsResponse::DescribeAccountsResponse() :
     m_instanceIdHasBeenSet(false),
-    m_accountsHasBeenSet(false)
+    m_accountsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeAccountsResponse::Deserialize(const string &payload)
         m_accountsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ vector<AccountDetail> DescribeAccountsResponse::GetAccounts() const
 bool DescribeAccountsResponse::AccountsHasBeenSet() const
 {
     return m_accountsHasBeenSet;
+}
+
+int64_t DescribeAccountsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeAccountsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

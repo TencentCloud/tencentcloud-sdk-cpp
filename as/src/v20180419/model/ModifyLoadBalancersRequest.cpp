@@ -26,7 +26,8 @@ using namespace std;
 ModifyLoadBalancersRequest::ModifyLoadBalancersRequest() :
     m_autoScalingGroupIdHasBeenSet(false),
     m_loadBalancerIdsHasBeenSet(false),
-    m_forwardLoadBalancersHasBeenSet(false)
+    m_forwardLoadBalancersHasBeenSet(false),
+    m_loadBalancersCheckPolicyHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,14 @@ string ModifyLoadBalancersRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_loadBalancersCheckPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoadBalancersCheckPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_loadBalancersCheckPolicy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -127,6 +136,22 @@ void ModifyLoadBalancersRequest::SetForwardLoadBalancers(const vector<ForwardLoa
 bool ModifyLoadBalancersRequest::ForwardLoadBalancersHasBeenSet() const
 {
     return m_forwardLoadBalancersHasBeenSet;
+}
+
+string ModifyLoadBalancersRequest::GetLoadBalancersCheckPolicy() const
+{
+    return m_loadBalancersCheckPolicy;
+}
+
+void ModifyLoadBalancersRequest::SetLoadBalancersCheckPolicy(const string& _loadBalancersCheckPolicy)
+{
+    m_loadBalancersCheckPolicy = _loadBalancersCheckPolicy;
+    m_loadBalancersCheckPolicyHasBeenSet = true;
+}
+
+bool ModifyLoadBalancersRequest::LoadBalancersCheckPolicyHasBeenSet() const
+{
+    return m_loadBalancersCheckPolicyHasBeenSet;
 }
 
 

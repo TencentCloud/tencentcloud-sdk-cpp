@@ -23,7 +23,8 @@ using namespace std;
 
 SvgWatermarkInputForUpdate::SvgWatermarkInputForUpdate() :
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_cycleConfigHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,23 @@ CoreInternalOutcome SvgWatermarkInputForUpdate::Deserialize(const Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("CycleConfig") && !value["CycleConfig"].IsNull())
+    {
+        if (!value["CycleConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `SvgWatermarkInputForUpdate.CycleConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cycleConfig.Deserialize(value["CycleConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cycleConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void SvgWatermarkInputForUpdate::ToJsonObject(Value &value, Document::AllocatorT
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_height.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cycleConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CycleConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_cycleConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +135,21 @@ void SvgWatermarkInputForUpdate::SetHeight(const string& _height)
 bool SvgWatermarkInputForUpdate::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+WatermarkCycleConfigForUpdate SvgWatermarkInputForUpdate::GetCycleConfig() const
+{
+    return m_cycleConfig;
+}
+
+void SvgWatermarkInputForUpdate::SetCycleConfig(const WatermarkCycleConfigForUpdate& _cycleConfig)
+{
+    m_cycleConfig = _cycleConfig;
+    m_cycleConfigHasBeenSet = true;
+}
+
+bool SvgWatermarkInputForUpdate::CycleConfigHasBeenSet() const
+{
+    return m_cycleConfigHasBeenSet;
 }
 

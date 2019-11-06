@@ -22,6 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 AiRecognitionTaskSegmentSegmentItem::AiRecognitionTaskSegmentSegmentItem() :
+    m_fileIdHasBeenSet(false),
     m_segmentUrlHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
@@ -35,6 +36,16 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const Value
 {
     string requestId = "";
 
+
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentSegmentItem.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
 
     if (value.HasMember("SegmentUrl") && !value["SegmentUrl"].IsNull())
     {
@@ -103,6 +114,14 @@ CoreInternalOutcome AiRecognitionTaskSegmentSegmentItem::Deserialize(const Value
 void AiRecognitionTaskSegmentSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_fileIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_segmentUrlHasBeenSet)
     {
         Value iKey(kStringType);
@@ -153,6 +172,22 @@ void AiRecognitionTaskSegmentSegmentItem::ToJsonObject(Value &value, Document::A
 
 }
 
+
+string AiRecognitionTaskSegmentSegmentItem::GetFileId() const
+{
+    return m_fileId;
+}
+
+void AiRecognitionTaskSegmentSegmentItem::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool AiRecognitionTaskSegmentSegmentItem::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
+}
 
 string AiRecognitionTaskSegmentSegmentItem::GetSegmentUrl() const
 {

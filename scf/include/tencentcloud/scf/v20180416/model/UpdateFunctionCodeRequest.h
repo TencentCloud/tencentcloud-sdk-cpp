@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/scf/v20180416/model/Code.h>
 
 
 namespace TencentCloud
@@ -204,6 +205,42 @@ namespace TencentCloud
                      */
                     bool PublishHasBeenSet() const;
 
+                    /**
+                     * 获取函数代码
+                     * @return Code 函数代码
+                     */
+                    Code GetCode() const;
+
+                    /**
+                     * 设置函数代码
+                     * @param Code 函数代码
+                     */
+                    void SetCode(const Code& _code);
+
+                    /**
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
+                     */
+                    bool CodeHasBeenSet() const;
+
+                    /**
+                     * 获取代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     * @return CodeSource 代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     */
+                    std::string GetCodeSource() const;
+
+                    /**
+                     * 设置代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     * @param CodeSource 代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     */
+                    void SetCodeSource(const std::string& _codeSource);
+
+                    /**
+                     * 判断参数 CodeSource 是否已赋值
+                     * @return CodeSource 是否已赋值
+                     */
+                    bool CodeSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +296,18 @@ namespace TencentCloud
                      */
                     std::string m_publish;
                     bool m_publishHasBeenSet;
+
+                    /**
+                     * 函数代码
+                     */
+                    Code m_code;
+                    bool m_codeHasBeenSet;
+
+                    /**
+                     * 代码来源方式，支持以下'ZipFile', 'Cos', 'Inline', 'TempCos', 'Git' 之一，使用Git来源必须指定此字段
+                     */
+                    std::string m_codeSource;
+                    bool m_codeSourceHasBeenSet;
 
                 };
             }

@@ -107,13 +107,17 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip信息。单独开通只读实例访问的只读实例才有该字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoVipInfo 只读vip信息。单独开通只读实例访问的只读实例才有该字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RoVipInfo GetRoVipInfo() const;
 
                     /**
                      * 设置只读vip信息。单独开通只读实例访问的只读实例才有该字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param RoVipInfo 只读vip信息。单独开通只读实例访问的只读实例才有该字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRoVipInfo(const RoVipInfo& _roVipInfo);
 
@@ -179,13 +183,17 @@ namespace TencentCloud
 
                     /**
                      * 获取备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveInfo 备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveInfo GetSlaveInfo() const;
 
                     /**
                      * 设置备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param SlaveInfo 备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSlaveInfo(const SlaveInfo& _slaveInfo);
 
@@ -269,13 +277,17 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoGroups 只读组详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RoGroup> GetRoGroups() const;
 
                     /**
                      * 设置只读组详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param RoGroups 只读组详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRoGroups(const std::vector<RoGroup>& _roGroups);
 
@@ -413,13 +425,17 @@ namespace TencentCloud
 
                     /**
                      * 获取主实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterInfo 主实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MasterInfo GetMasterInfo() const;
 
                     /**
                      * 设置主实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param MasterInfo 主实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMasterInfo(const MasterInfo& _masterInfo);
 
@@ -485,13 +501,17 @@ namespace TencentCloud
 
                     /**
                      * 获取灾备实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrInfo 灾备实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DrInfo> GetDrInfo() const;
 
                     /**
                      * 设置灾备实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param DrInfo 灾备实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDrInfo(const std::vector<DrInfo>& _drInfo);
 
@@ -779,6 +799,7 @@ namespace TencentCloud
 
                     /**
                      * 只读vip信息。单独开通只读实例访问的只读实例才有该字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RoVipInfo m_roVipInfo;
                     bool m_roVipInfoHasBeenSet;
@@ -803,6 +824,7 @@ namespace TencentCloud
 
                     /**
                      * 备机信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveInfo m_slaveInfo;
                     bool m_slaveInfoHasBeenSet;
@@ -833,6 +855,7 @@ namespace TencentCloud
 
                     /**
                      * 只读组详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RoGroup> m_roGroups;
                     bool m_roGroupsHasBeenSet;
@@ -881,6 +904,7 @@ namespace TencentCloud
 
                     /**
                      * 主实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MasterInfo m_masterInfo;
                     bool m_masterInfoHasBeenSet;
@@ -905,6 +929,7 @@ namespace TencentCloud
 
                     /**
                      * 灾备实例详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DrInfo> m_drInfo;
                     bool m_drInfoHasBeenSet;

@@ -30,7 +30,8 @@ RuleInput::RuleInput() :
     m_schedulerHasBeenSet(false),
     m_forwardTypeHasBeenSet(false),
     m_defaultServerHasBeenSet(false),
-    m_http2HasBeenSet(false)
+    m_http2HasBeenSet(false),
+    m_targetTypeHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,16 @@ CoreInternalOutcome RuleInput::Deserialize(const Value &value)
         m_http2HasBeenSet = true;
     }
 
+    if (value.HasMember("TargetType") && !value["TargetType"].IsNull())
+    {
+        if (!value["TargetType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleInput.TargetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetType = string(value["TargetType"].GetString());
+        m_targetTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void RuleInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Http2";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_http2, allocator);
+    }
+
+    if (m_targetTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_targetType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void RuleInput::SetHttp2(const bool& _http2)
 bool RuleInput::Http2HasBeenSet() const
 {
     return m_http2HasBeenSet;
+}
+
+string RuleInput::GetTargetType() const
+{
+    return m_targetType;
+}
+
+void RuleInput::SetTargetType(const string& _targetType)
+{
+    m_targetType = _targetType;
+    m_targetTypeHasBeenSet = true;
+}
+
+bool RuleInput::TargetTypeHasBeenSet() const
+{
+    return m_targetTypeHasBeenSet;
 }
 

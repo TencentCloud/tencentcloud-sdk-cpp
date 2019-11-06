@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Token
-                     * @return ClientToken Token
-                     */
-                    std::string GetClientToken() const;
-
-                    /**
-                     * 设置Token
-                     * @param ClientToken Token
-                     */
-                    void SetClientToken(const std::string& _clientToken);
-
-                    /**
-                     * 判断参数 ClientToken 是否已赋值
-                     * @return ClientToken 是否已赋值
-                     */
-                    bool ClientTokenHasBeenSet() const;
-
-                    /**
                      * 获取时间单位
                      * @return TimeUnit 时间单位
                      */
@@ -134,6 +116,24 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
+                     * 获取Token
+                     * @return ClientToken Token
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置Token
+                     * @param ClientToken Token
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
+                    /**
                      * 获取预执行脚本设置
                      * @return PreExecutedFileSettings 预执行脚本设置
                      */
@@ -187,13 +187,25 @@ namespace TencentCloud
                      */
                     bool CoreCountHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取扩容时不需要安装的进程
+                     * @return UnNecessaryNodeList 扩容时不需要安装的进程
+                     */
+                    std::vector<uint64_t> GetUnNecessaryNodeList() const;
 
                     /**
-                     * Token
+                     * 设置扩容时不需要安装的进程
+                     * @param UnNecessaryNodeList 扩容时不需要安装的进程
                      */
-                    std::string m_clientToken;
-                    bool m_clientTokenHasBeenSet;
+                    void SetUnNecessaryNodeList(const std::vector<uint64_t>& _unNecessaryNodeList);
+
+                    /**
+                     * 判断参数 UnNecessaryNodeList 是否已赋值
+                     * @return UnNecessaryNodeList 是否已赋值
+                     */
+                    bool UnNecessaryNodeListHasBeenSet() const;
+
+                private:
 
                     /**
                      * 时间单位
@@ -220,6 +232,12 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
+                     * Token
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
+
+                    /**
                      * 预执行脚本设置
                      */
                     std::vector<PreExecuteFileSettings> m_preExecutedFileSettings;
@@ -236,6 +254,12 @@ namespace TencentCloud
                      */
                     uint64_t m_coreCount;
                     bool m_coreCountHasBeenSet;
+
+                    /**
+                     * 扩容时不需要安装的进程
+                     */
+                    std::vector<uint64_t> m_unNecessaryNodeList;
+                    bool m_unNecessaryNodeListHasBeenSet;
 
                 };
             }

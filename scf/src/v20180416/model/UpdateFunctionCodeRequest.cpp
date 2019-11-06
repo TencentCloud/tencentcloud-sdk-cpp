@@ -32,7 +32,9 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_namespaceHasBeenSet(false),
     m_cosBucketRegionHasBeenSet(false),
     m_envIdHasBeenSet(false),
-    m_publishHasBeenSet(false)
+    m_publishHasBeenSet(false),
+    m_codeHasBeenSet(false),
+    m_codeSourceHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,23 @@ string UpdateFunctionCodeRequest::ToJsonString() const
         string key = "Publish";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_publish.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Code";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_code.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_codeSourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CodeSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_codeSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +284,38 @@ void UpdateFunctionCodeRequest::SetPublish(const string& _publish)
 bool UpdateFunctionCodeRequest::PublishHasBeenSet() const
 {
     return m_publishHasBeenSet;
+}
+
+Code UpdateFunctionCodeRequest::GetCode() const
+{
+    return m_code;
+}
+
+void UpdateFunctionCodeRequest::SetCode(const Code& _code)
+{
+    m_code = _code;
+    m_codeHasBeenSet = true;
+}
+
+bool UpdateFunctionCodeRequest::CodeHasBeenSet() const
+{
+    return m_codeHasBeenSet;
+}
+
+string UpdateFunctionCodeRequest::GetCodeSource() const
+{
+    return m_codeSource;
+}
+
+void UpdateFunctionCodeRequest::SetCodeSource(const string& _codeSource)
+{
+    m_codeSource = _codeSource;
+    m_codeSourceHasBeenSet = true;
+}
+
+bool UpdateFunctionCodeRequest::CodeSourceHasBeenSet() const
+{
+    return m_codeSourceHasBeenSet;
 }
 
 

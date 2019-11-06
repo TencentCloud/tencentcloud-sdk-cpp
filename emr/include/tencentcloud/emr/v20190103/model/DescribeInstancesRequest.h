@@ -43,6 +43,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     * @return DisplayStrategy 集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     */
+                    std::string GetDisplayStrategy() const;
+
+                    /**
+                     * 设置集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     * @param DisplayStrategy 集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     */
+                    void SetDisplayStrategy(const std::string& _displayStrategy);
+
+                    /**
+                     * 判断参数 DisplayStrategy 是否已赋值
+                     * @return DisplayStrategy 是否已赋值
+                     */
+                    bool DisplayStrategyHasBeenSet() const;
+
+                    /**
                      * 获取查询列表,  如果不填写，返回该AppId下所有实例列表
                      * @return InstanceIds 查询列表,  如果不填写，返回该AppId下所有实例列表
                      */
@@ -96,7 +114,67 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取项目列表，默认值-1
+                     * @return ProjectId 项目列表，默认值-1
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置项目列表，默认值-1
+                     * @param ProjectId 项目列表，默认值-1
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     * @return OrderField 排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     * @param OrderField 排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方法，0降序，1升序
+                     * @return Asc 排序方法，0降序，1升序
+                     */
+                    int64_t GetAsc() const;
+
+                    /**
+                     * 设置排序方法，0降序，1升序
+                     * @param Asc 排序方法，0降序，1升序
+                     */
+                    void SetAsc(const int64_t& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     */
+                    bool AscHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     */
+                    std::string m_displayStrategy;
+                    bool m_displayStrategyHasBeenSet;
 
                     /**
                      * 查询列表,  如果不填写，返回该AppId下所有实例列表
@@ -115,6 +193,24 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 项目列表，默认值-1
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 排序方法，0降序，1升序
+                     */
+                    int64_t m_asc;
+                    bool m_ascHasBeenSet;
 
                 };
             }

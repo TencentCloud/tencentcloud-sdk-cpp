@@ -27,23 +27,18 @@ using namespace std;
 GetClusterSummaryResponse::GetClusterSummaryResponse() :
     m_totalChannelCountHasBeenSet(false),
     m_myChannelCountHasBeenSet(false),
-    m_otherChannelCountHasBeenSet(false),
     m_joinChannelCountHasBeenSet(false),
-    m_noneChannelCountHasBeenSet(false),
     m_totalPeerCountHasBeenSet(false),
     m_myPeerCountHasBeenSet(false),
-    m_otherPeerCountHasBeenSet(false),
+    m_orderCountHasBeenSet(false),
     m_totalGroupCountHasBeenSet(false),
     m_myGroupCountHasBeenSet(false),
-    m_otherGroupCountHasBeenSet(false),
     m_totalChaincodeCountHasBeenSet(false),
     m_recentChaincodeCountHasBeenSet(false),
     m_myChaincodeCountHasBeenSet(false),
-    m_otherChaincodeCountHasBeenSet(false),
     m_totalCertCountHasBeenSet(false),
     m_tlsCertCountHasBeenSet(false),
     m_peerCertCountHasBeenSet(false),
-    m_orderCertCountHasBeenSet(false),
     m_clientCertCountHasBeenSet(false)
 {
 }
@@ -102,16 +97,6 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
         m_myChannelCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("OtherChannelCount") && !rsp["OtherChannelCount"].IsNull())
-    {
-        if (!rsp["OtherChannelCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `OtherChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_otherChannelCount = rsp["OtherChannelCount"].GetUint64();
-        m_otherChannelCountHasBeenSet = true;
-    }
-
     if (rsp.HasMember("JoinChannelCount") && !rsp["JoinChannelCount"].IsNull())
     {
         if (!rsp["JoinChannelCount"].IsUint64())
@@ -120,16 +105,6 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
         }
         m_joinChannelCount = rsp["JoinChannelCount"].GetUint64();
         m_joinChannelCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("NoneChannelCount") && !rsp["NoneChannelCount"].IsNull())
-    {
-        if (!rsp["NoneChannelCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `NoneChannelCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_noneChannelCount = rsp["NoneChannelCount"].GetUint64();
-        m_noneChannelCountHasBeenSet = true;
     }
 
     if (rsp.HasMember("TotalPeerCount") && !rsp["TotalPeerCount"].IsNull())
@@ -152,14 +127,14 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
         m_myPeerCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("OtherPeerCount") && !rsp["OtherPeerCount"].IsNull())
+    if (rsp.HasMember("OrderCount") && !rsp["OrderCount"].IsNull())
     {
-        if (!rsp["OtherPeerCount"].IsUint64())
+        if (!rsp["OrderCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `OtherPeerCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OrderCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_otherPeerCount = rsp["OtherPeerCount"].GetUint64();
-        m_otherPeerCountHasBeenSet = true;
+        m_orderCount = rsp["OrderCount"].GetUint64();
+        m_orderCountHasBeenSet = true;
     }
 
     if (rsp.HasMember("TotalGroupCount") && !rsp["TotalGroupCount"].IsNull())
@@ -180,16 +155,6 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
         }
         m_myGroupCount = rsp["MyGroupCount"].GetUint64();
         m_myGroupCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("OtherGroupCount") && !rsp["OtherGroupCount"].IsNull())
-    {
-        if (!rsp["OtherGroupCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `OtherGroupCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_otherGroupCount = rsp["OtherGroupCount"].GetUint64();
-        m_otherGroupCountHasBeenSet = true;
     }
 
     if (rsp.HasMember("TotalChaincodeCount") && !rsp["TotalChaincodeCount"].IsNull())
@@ -222,16 +187,6 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
         m_myChaincodeCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("OtherChaincodeCount") && !rsp["OtherChaincodeCount"].IsNull())
-    {
-        if (!rsp["OtherChaincodeCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `OtherChaincodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_otherChaincodeCount = rsp["OtherChaincodeCount"].GetUint64();
-        m_otherChaincodeCountHasBeenSet = true;
-    }
-
     if (rsp.HasMember("TotalCertCount") && !rsp["TotalCertCount"].IsNull())
     {
         if (!rsp["TotalCertCount"].IsUint64())
@@ -260,16 +215,6 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
         }
         m_peerCertCount = rsp["PeerCertCount"].GetUint64();
         m_peerCertCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("OrderCertCount") && !rsp["OrderCertCount"].IsNull())
-    {
-        if (!rsp["OrderCertCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `OrderCertCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_orderCertCount = rsp["OrderCertCount"].GetUint64();
-        m_orderCertCountHasBeenSet = true;
     }
 
     if (rsp.HasMember("ClientCertCount") && !rsp["ClientCertCount"].IsNull())
@@ -307,16 +252,6 @@ bool GetClusterSummaryResponse::MyChannelCountHasBeenSet() const
     return m_myChannelCountHasBeenSet;
 }
 
-uint64_t GetClusterSummaryResponse::GetOtherChannelCount() const
-{
-    return m_otherChannelCount;
-}
-
-bool GetClusterSummaryResponse::OtherChannelCountHasBeenSet() const
-{
-    return m_otherChannelCountHasBeenSet;
-}
-
 uint64_t GetClusterSummaryResponse::GetJoinChannelCount() const
 {
     return m_joinChannelCount;
@@ -325,16 +260,6 @@ uint64_t GetClusterSummaryResponse::GetJoinChannelCount() const
 bool GetClusterSummaryResponse::JoinChannelCountHasBeenSet() const
 {
     return m_joinChannelCountHasBeenSet;
-}
-
-uint64_t GetClusterSummaryResponse::GetNoneChannelCount() const
-{
-    return m_noneChannelCount;
-}
-
-bool GetClusterSummaryResponse::NoneChannelCountHasBeenSet() const
-{
-    return m_noneChannelCountHasBeenSet;
 }
 
 uint64_t GetClusterSummaryResponse::GetTotalPeerCount() const
@@ -357,14 +282,14 @@ bool GetClusterSummaryResponse::MyPeerCountHasBeenSet() const
     return m_myPeerCountHasBeenSet;
 }
 
-uint64_t GetClusterSummaryResponse::GetOtherPeerCount() const
+uint64_t GetClusterSummaryResponse::GetOrderCount() const
 {
-    return m_otherPeerCount;
+    return m_orderCount;
 }
 
-bool GetClusterSummaryResponse::OtherPeerCountHasBeenSet() const
+bool GetClusterSummaryResponse::OrderCountHasBeenSet() const
 {
-    return m_otherPeerCountHasBeenSet;
+    return m_orderCountHasBeenSet;
 }
 
 uint64_t GetClusterSummaryResponse::GetTotalGroupCount() const
@@ -385,16 +310,6 @@ uint64_t GetClusterSummaryResponse::GetMyGroupCount() const
 bool GetClusterSummaryResponse::MyGroupCountHasBeenSet() const
 {
     return m_myGroupCountHasBeenSet;
-}
-
-uint64_t GetClusterSummaryResponse::GetOtherGroupCount() const
-{
-    return m_otherGroupCount;
-}
-
-bool GetClusterSummaryResponse::OtherGroupCountHasBeenSet() const
-{
-    return m_otherGroupCountHasBeenSet;
 }
 
 uint64_t GetClusterSummaryResponse::GetTotalChaincodeCount() const
@@ -427,16 +342,6 @@ bool GetClusterSummaryResponse::MyChaincodeCountHasBeenSet() const
     return m_myChaincodeCountHasBeenSet;
 }
 
-uint64_t GetClusterSummaryResponse::GetOtherChaincodeCount() const
-{
-    return m_otherChaincodeCount;
-}
-
-bool GetClusterSummaryResponse::OtherChaincodeCountHasBeenSet() const
-{
-    return m_otherChaincodeCountHasBeenSet;
-}
-
 uint64_t GetClusterSummaryResponse::GetTotalCertCount() const
 {
     return m_totalCertCount;
@@ -465,16 +370,6 @@ uint64_t GetClusterSummaryResponse::GetPeerCertCount() const
 bool GetClusterSummaryResponse::PeerCertCountHasBeenSet() const
 {
     return m_peerCertCountHasBeenSet;
-}
-
-uint64_t GetClusterSummaryResponse::GetOrderCertCount() const
-{
-    return m_orderCertCount;
-}
-
-bool GetClusterSummaryResponse::OrderCertCountHasBeenSet() const
-{
-    return m_orderCertCountHasBeenSet;
 }
 
 uint64_t GetClusterSummaryResponse::GetClientCertCount() const

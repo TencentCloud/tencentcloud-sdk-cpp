@@ -729,7 +729,7 @@ namespace TencentCloud
                 DeleteLiveDomainOutcomeCallable DeleteLiveDomainCallable(const Model::DeleteLiveDomainRequest& request);
 
                 /**
-                 *用于删除录制任务。
+                 *注：DeleteLiveRecord 接口仅用于删除录制任务记录，不具备停止录制的功能，也不能删除正在进行中的录制。如果需要停止录制任务，请使用终止录制[StopLiveRecord](/document/product/267/30146) 接口。
                  * @param req DeleteLiveRecordRequest
                  * @return DeleteLiveRecordOutcome
                  */
@@ -919,7 +919,7 @@ namespace TencentCloud
                 DescribeLiveDomainCertOutcomeCallable DescribeLiveDomainCertCallable(const Model::DescribeLiveDomainCertRequest& request);
 
                 /**
-                 *查询实时的域名维度下行播放数据。
+                 *查询实时的域名维度下行播放数据，由于数据处理有耗时，接口默认查询4分钟前的准实时数据。
                  * @param req DescribeLiveDomainPlayInfoListRequest
                  * @return DescribeLiveDomainPlayInfoListOutcome
                  */
@@ -1075,8 +1075,7 @@ namespace TencentCloud
                 DescribeLiveStreamStateOutcomeCallable DescribeLiveStreamStateCallable(const Model::DescribeLiveStreamStateRequest& request);
 
                 /**
-                 *支持查询某天的转码详细信息。
-注意：当前只支持查询近30天内某天的详细数据。
+                 *支持查询某天或某段时间的转码详细信息。
                  * @param req DescribeLiveTranscodeDetailInfoRequest
                  * @return DescribeLiveTranscodeDetailInfoOutcome
                  */

@@ -24,6 +24,7 @@ using namespace std;
 Function::Function() :
     m_enableAllTextHasBeenSet(false),
     m_enableKeywordHasBeenSet(false),
+    m_enableMuteDetectHasBeenSet(false),
     m_enableVadInfoHasBeenSet(false),
     m_enableVolumeHasBeenSet(false)
 {
@@ -52,6 +53,16 @@ CoreInternalOutcome Function::Deserialize(const Value &value)
         }
         m_enableKeyword = value["EnableKeyword"].GetBool();
         m_enableKeywordHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableMuteDetect") && !value["EnableMuteDetect"].IsNull())
+    {
+        if (!value["EnableMuteDetect"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Function.EnableMuteDetect` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableMuteDetect = value["EnableMuteDetect"].GetBool();
+        m_enableMuteDetectHasBeenSet = true;
     }
 
     if (value.HasMember("EnableVadInfo") && !value["EnableVadInfo"].IsNull())
@@ -95,6 +106,14 @@ void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "EnableKeyword";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableKeyword, allocator);
+    }
+
+    if (m_enableMuteDetectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableMuteDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableMuteDetect, allocator);
     }
 
     if (m_enableVadInfoHasBeenSet)
@@ -146,6 +165,22 @@ void Function::SetEnableKeyword(const bool& _enableKeyword)
 bool Function::EnableKeywordHasBeenSet() const
 {
     return m_enableKeywordHasBeenSet;
+}
+
+bool Function::GetEnableMuteDetect() const
+{
+    return m_enableMuteDetect;
+}
+
+void Function::SetEnableMuteDetect(const bool& _enableMuteDetect)
+{
+    m_enableMuteDetect = _enableMuteDetect;
+    m_enableMuteDetectHasBeenSet = true;
+}
+
+bool Function::EnableMuteDetectHasBeenSet() const
+{
+    return m_enableMuteDetectHasBeenSet;
 }
 
 bool Function::GetEnableVadInfo() const

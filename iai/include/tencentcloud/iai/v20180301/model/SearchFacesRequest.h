@@ -204,6 +204,70 @@ MaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要�
                      */
                     bool NeedPersonInfoHasBeenSet() const;
 
+                    /**
+                     * 获取图片质量控制，若图片中包含多张人脸，会对要求处理的人脸进行质量控制判断。  
+0: 不进行控制， 
+1:较低的质量要求， 
+2: 一般的质量要求， 
+3: 较高的质量要求。 
+4: 很高的质量要求。 
+默认 0。 
+若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
+                     * @return QualityControl 图片质量控制，若图片中包含多张人脸，会对要求处理的人脸进行质量控制判断。  
+0: 不进行控制， 
+1:较低的质量要求， 
+2: 一般的质量要求， 
+3: 较高的质量要求。 
+4: 很高的质量要求。 
+默认 0。 
+若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
+                     */
+                    uint64_t GetQualityControl() const;
+
+                    /**
+                     * 设置图片质量控制，若图片中包含多张人脸，会对要求处理的人脸进行质量控制判断。  
+0: 不进行控制， 
+1:较低的质量要求， 
+2: 一般的质量要求， 
+3: 较高的质量要求。 
+4: 很高的质量要求。 
+默认 0。 
+若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
+                     * @param QualityControl 图片质量控制，若图片中包含多张人脸，会对要求处理的人脸进行质量控制判断。  
+0: 不进行控制， 
+1:较低的质量要求， 
+2: 一般的质量要求， 
+3: 较高的质量要求。 
+4: 很高的质量要求。 
+默认 0。 
+若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
+                     */
+                    void SetQualityControl(const uint64_t& _qualityControl);
+
+                    /**
+                     * 判断参数 QualityControl 是否已赋值
+                     * @return QualityControl 是否已赋值
+                     */
+                    bool QualityControlHasBeenSet() const;
+
+                    /**
+                     * 获取出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。
+                     * @return FaceMatchThreshold 出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。
+                     */
+                    double GetFaceMatchThreshold() const;
+
+                    /**
+                     * 设置出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。
+                     * @param FaceMatchThreshold 出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。
+                     */
+                    void SetFaceMatchThreshold(const double& _faceMatchThreshold);
+
+                    /**
+                     * 判断参数 FaceMatchThreshold 是否已赋值
+                     * @return FaceMatchThreshold 是否已赋值
+                     */
+                    bool FaceMatchThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +320,25 @@ MaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要�
                      */
                     int64_t m_needPersonInfo;
                     bool m_needPersonInfoHasBeenSet;
+
+                    /**
+                     * 图片质量控制，若图片中包含多张人脸，会对要求处理的人脸进行质量控制判断。  
+0: 不进行控制， 
+1:较低的质量要求， 
+2: 一般的质量要求， 
+3: 较高的质量要求。 
+4: 很高的质量要求。 
+默认 0。 
+若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
+                     */
+                    uint64_t m_qualityControl;
+                    bool m_qualityControlHasBeenSet;
+
+                    /**
+                     * 出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。
+                     */
+                    double m_faceMatchThreshold;
+                    bool m_faceMatchThresholdHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/billing/v20180709/model/BillTagInfo.h>
 
 
 namespace TencentCloud
@@ -65,14 +66,14 @@ namespace TencentCloud
                     bool BusinessCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取子产品：云产品子类，如云服务器CVM-标准型S1
-                     * @return ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1
+                     * 获取子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
+                     * @return ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
                      */
                     std::string GetProductCodeName() const;
 
                     /**
-                     * 设置子产品：云产品子类，如云服务器CVM-标准型S1
-                     * @param ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1
+                     * 设置子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
+                     * @param ProductCodeName 子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
 
@@ -514,6 +515,82 @@ namespace TencentCloud
                      */
                     bool ExtendField5HasBeenSet() const;
 
+                    /**
+                     * 获取Tag 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags Tag 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BillTagInfo> GetTags() const;
+
+                    /**
+                     * 设置Tag 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags Tag 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<BillTagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取付款方uin
+                     * @return PayerUin 付款方uin
+                     */
+                    std::string GetPayerUin() const;
+
+                    /**
+                     * 设置付款方uin
+                     * @param PayerUin 付款方uin
+                     */
+                    void SetPayerUin(const std::string& _payerUin);
+
+                    /**
+                     * 判断参数 PayerUin 是否已赋值
+                     * @return PayerUin 是否已赋值
+                     */
+                    bool PayerUinHasBeenSet() const;
+
+                    /**
+                     * 获取资源所有者uin,无值则返回"-"
+                     * @return OwnerUin 资源所有者uin,无值则返回"-"
+                     */
+                    std::string GetOwnerUin() const;
+
+                    /**
+                     * 设置资源所有者uin,无值则返回"-"
+                     * @param OwnerUin 资源所有者uin,无值则返回"-"
+                     */
+                    void SetOwnerUin(const std::string& _ownerUin);
+
+                    /**
+                     * 判断参数 OwnerUin 是否已赋值
+                     * @return OwnerUin 是否已赋值
+                     */
+                    bool OwnerUinHasBeenSet() const;
+
+                    /**
+                     * 获取操作者uin,无值则返回"-"
+                     * @return OperateUin 操作者uin,无值则返回"-"
+                     */
+                    std::string GetOperateUin() const;
+
+                    /**
+                     * 设置操作者uin,无值则返回"-"
+                     * @param OperateUin 操作者uin,无值则返回"-"
+                     */
+                    void SetOperateUin(const std::string& _operateUin);
+
+                    /**
+                     * 判断参数 OperateUin 是否已赋值
+                     * @return OperateUin 是否已赋值
+                     */
+                    bool OperateUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,7 +600,7 @@ namespace TencentCloud
                     bool m_businessCodeNameHasBeenSet;
 
                     /**
-                     * 子产品：云产品子类，如云服务器CVM-标准型S1
+                     * 子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回"-"
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;
@@ -671,6 +748,31 @@ namespace TencentCloud
                      */
                     std::string m_extendField5;
                     bool m_extendField5HasBeenSet;
+
+                    /**
+                     * Tag 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BillTagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 付款方uin
+                     */
+                    std::string m_payerUin;
+                    bool m_payerUinHasBeenSet;
+
+                    /**
+                     * 资源所有者uin,无值则返回"-"
+                     */
+                    std::string m_ownerUin;
+                    bool m_ownerUinHasBeenSet;
+
+                    /**
+                     * 操作者uin,无值则返回"-"
+                     */
+                    std::string m_operateUin;
+                    bool m_operateUinHasBeenSet;
 
                 };
             }

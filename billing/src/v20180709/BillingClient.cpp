@@ -341,6 +341,49 @@ BillingClient::DescribeBillSummaryByRegionOutcomeCallable BillingClient::Describ
     return task->get_future();
 }
 
+BillingClient::DescribeBillSummaryByTagOutcome BillingClient::DescribeBillSummaryByTag(const DescribeBillSummaryByTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillSummaryByTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillSummaryByTagResponse rsp = DescribeBillSummaryByTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillSummaryByTagOutcome(rsp);
+        else
+            return DescribeBillSummaryByTagOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillSummaryByTagOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeBillSummaryByTagAsync(const DescribeBillSummaryByTagRequest& request, const DescribeBillSummaryByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillSummaryByTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeBillSummaryByTagOutcomeCallable BillingClient::DescribeBillSummaryByTagCallable(const DescribeBillSummaryByTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryByTagOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillSummaryByTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeDealsByCondOutcome BillingClient::DescribeDealsByCond(const DescribeDealsByCondRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDealsByCond");

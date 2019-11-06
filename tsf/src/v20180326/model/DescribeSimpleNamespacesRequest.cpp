@@ -29,7 +29,9 @@ DescribeSimpleNamespacesRequest::DescribeSimpleNamespacesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_namespaceResourceTypeListHasBeenSet(false)
+    m_namespaceResourceTypeListHasBeenSet(false),
+    m_searchWordHasBeenSet(false),
+    m_namespaceTypeListHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,27 @@ string DescribeSimpleNamespacesRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_namespaceResourceTypeList.begin(); itr != m_namespaceResourceTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_searchWordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceTypeListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_namespaceTypeList.begin(); itr != m_namespaceTypeList.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -200,6 +223,38 @@ void DescribeSimpleNamespacesRequest::SetNamespaceResourceTypeList(const vector<
 bool DescribeSimpleNamespacesRequest::NamespaceResourceTypeListHasBeenSet() const
 {
     return m_namespaceResourceTypeListHasBeenSet;
+}
+
+string DescribeSimpleNamespacesRequest::GetSearchWord() const
+{
+    return m_searchWord;
+}
+
+void DescribeSimpleNamespacesRequest::SetSearchWord(const string& _searchWord)
+{
+    m_searchWord = _searchWord;
+    m_searchWordHasBeenSet = true;
+}
+
+bool DescribeSimpleNamespacesRequest::SearchWordHasBeenSet() const
+{
+    return m_searchWordHasBeenSet;
+}
+
+vector<string> DescribeSimpleNamespacesRequest::GetNamespaceTypeList() const
+{
+    return m_namespaceTypeList;
+}
+
+void DescribeSimpleNamespacesRequest::SetNamespaceTypeList(const vector<string>& _namespaceTypeList)
+{
+    m_namespaceTypeList = _namespaceTypeList;
+    m_namespaceTypeListHasBeenSet = true;
+}
+
+bool DescribeSimpleNamespacesRequest::NamespaceTypeListHasBeenSet() const
+{
+    return m_namespaceTypeListHasBeenSet;
 }
 
 

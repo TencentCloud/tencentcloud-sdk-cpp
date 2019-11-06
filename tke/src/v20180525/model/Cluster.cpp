@@ -30,7 +30,9 @@ Cluster::Cluster() :
     m_clusterTypeHasBeenSet(false),
     m_clusterNetworkSettingsHasBeenSet(false),
     m_clusterNodeNumHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false),
+    m_clusterStatusHasBeenSet(false)
 {
 }
 
@@ -136,6 +138,36 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
+    {
+        if (!value["TagSpecification"].IsArray())
+            return CoreInternalOutcome(Error("response `Cluster.TagSpecification` is not array type"));
+
+        const Value &tmpValue = value["TagSpecification"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagSpecification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSpecification.push_back(item);
+        }
+        m_tagSpecificationHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterStatus") && !value["ClusterStatus"].IsNull())
+    {
+        if (!value["ClusterStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterStatus = string(value["ClusterStatus"].GetString());
+        m_clusterStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -214,6 +246,29 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_clusterStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -361,5 +416,37 @@ void Cluster::SetProjectId(const uint64_t& _projectId)
 bool Cluster::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<TagSpecification> Cluster::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void Cluster::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool Cluster::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
+}
+
+string Cluster::GetClusterStatus() const
+{
+    return m_clusterStatus;
+}
+
+void Cluster::SetClusterStatus(const string& _clusterStatus)
+{
+    m_clusterStatus = _clusterStatus;
+    m_clusterStatusHasBeenSet = true;
+}
+
+bool Cluster::ClusterStatusHasBeenSet() const
+{
+    return m_clusterStatusHasBeenSet;
 }
 

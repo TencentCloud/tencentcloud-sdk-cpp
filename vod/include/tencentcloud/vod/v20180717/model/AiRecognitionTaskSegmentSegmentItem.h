@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取文件 ID。仅当处理的是点播文件并且拆条生成的子片段为点播文件时有效。
+                     * @return FileId 文件 ID。仅当处理的是点播文件并且拆条生成的子片段为点播文件时有效。
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置文件 ID。仅当处理的是点播文件并且拆条生成的子片段为点播文件时有效。
+                     * @param FileId 文件 ID。仅当处理的是点播文件并且拆条生成的子片段为点播文件时有效。
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
                      * 获取视频拆条片段 Url。
                      * @return SegmentUrl 视频拆条片段 Url。
                      */
@@ -155,6 +173,12 @@ namespace TencentCloud
                     bool SpecialInfoHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 文件 ID。仅当处理的是点播文件并且拆条生成的子片段为点播文件时有效。
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                     /**
                      * 视频拆条片段 Url。

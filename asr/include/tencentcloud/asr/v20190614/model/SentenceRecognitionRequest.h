@@ -79,14 +79,30 @@ namespace TencentCloud
                     bool SubServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
-                     * @return EngSerViceType 引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
+                     * 获取引擎类型。
+8k：电话 8k 中文普通话通用；
+16k：16k 中文普通话通用；
+16k_en：16k 英语；
+16k_ca：16k 粤语。
+                     * @return EngSerViceType 引擎类型。
+8k：电话 8k 中文普通话通用；
+16k：16k 中文普通话通用；
+16k_en：16k 英语；
+16k_ca：16k 粤语。
                      */
                     std::string GetEngSerViceType() const;
 
                     /**
-                     * 设置引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
-                     * @param EngSerViceType 引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
+                     * 设置引擎类型。
+8k：电话 8k 中文普通话通用；
+16k：16k 中文普通话通用；
+16k_en：16k 英语；
+16k_ca：16k 粤语。
+                     * @param EngSerViceType 引擎类型。
+8k：电话 8k 中文普通话通用；
+16k：16k 中文普通话通用；
+16k_en：16k 英语；
+16k_ca：16k 粤语。
                      */
                     void SetEngSerViceType(const std::string& _engSerViceType);
 
@@ -219,7 +235,11 @@ namespace TencentCloud
                     bool m_subServiceTypeHasBeenSet;
 
                     /**
-                     * 引擎类型。8k：电话 8k 中文普通话通用；16k：16k 中文普通话通用；16k_en：16k 英语；16k_ca：16k 粤语。
+                     * 引擎类型。
+8k：电话 8k 中文普通话通用；
+16k：16k 中文普通话通用；
+16k_en：16k 英语；
+16k_ca：16k 粤语。
                      */
                     std::string m_engSerViceType;
                     bool m_engSerViceTypeHasBeenSet;

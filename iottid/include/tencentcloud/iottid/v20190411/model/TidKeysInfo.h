@@ -118,6 +118,42 @@ namespace TencentCloud
                      */
                     bool PskHasBeenSet() const;
 
+                    /**
+                     * 获取软加固白盒密钥下载地址
+                     * @return DownloadUrl 软加固白盒密钥下载地址
+                     */
+                    std::string GetDownloadUrl() const;
+
+                    /**
+                     * 设置软加固白盒密钥下载地址
+                     * @param DownloadUrl 软加固白盒密钥下载地址
+                     */
+                    void SetDownloadUrl(const std::string& _downloadUrl);
+
+                    /**
+                     * 判断参数 DownloadUrl 是否已赋值
+                     * @return DownloadUrl 是否已赋值
+                     */
+                    bool DownloadUrlHasBeenSet() const;
+
+                    /**
+                     * 获取软加固设备标识码
+                     * @return DeviceCode 软加固设备标识码
+                     */
+                    std::string GetDeviceCode() const;
+
+                    /**
+                     * 设置软加固设备标识码
+                     * @param DeviceCode 软加固设备标识码
+                     */
+                    void SetDeviceCode(const std::string& _deviceCode);
+
+                    /**
+                     * 判断参数 DeviceCode 是否已赋值
+                     * @return DeviceCode 是否已赋值
+                     */
+                    bool DeviceCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +179,18 @@ namespace TencentCloud
                      */
                     std::string m_psk;
                     bool m_pskHasBeenSet;
+
+                    /**
+                     * 软加固白盒密钥下载地址
+                     */
+                    std::string m_downloadUrl;
+                    bool m_downloadUrlHasBeenSet;
+
+                    /**
+                     * 软加固设备标识码
+                     */
+                    std::string m_deviceCode;
+                    bool m_deviceCodeHasBeenSet;
 
                 };
             }

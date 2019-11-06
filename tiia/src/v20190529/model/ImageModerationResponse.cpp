@@ -30,7 +30,8 @@ ImageModerationResponse::ImageModerationResponse() :
     m_terrorismResultHasBeenSet(false),
     m_politicsResultHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_disgustResultHasBeenSet(false)
+    m_disgustResultHasBeenSet(false),
+    m_textResultHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,23 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
         m_disgustResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TextResult") && !rsp["TextResult"].IsNull())
+    {
+        if (!rsp["TextResult"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_textResult.Deserialize(rsp["TextResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_textResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +237,16 @@ DisgustResult ImageModerationResponse::GetDisgustResult() const
 bool ImageModerationResponse::DisgustResultHasBeenSet() const
 {
     return m_disgustResultHasBeenSet;
+}
+
+TextResult ImageModerationResponse::GetTextResult() const
+{
+    return m_textResult;
+}
+
+bool ImageModerationResponse::TextResultHasBeenSet() const
+{
+    return m_textResultHasBeenSet;
 }
 
 

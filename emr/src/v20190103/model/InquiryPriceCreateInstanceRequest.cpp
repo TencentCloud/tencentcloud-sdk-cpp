@@ -163,12 +163,12 @@ bool InquiryPriceCreateInstanceRequest::TimeSpanHasBeenSet() const
     return m_timeSpanHasBeenSet;
 }
 
-ResourceSpec InquiryPriceCreateInstanceRequest::GetResourceSpec() const
+NewResourceSpec InquiryPriceCreateInstanceRequest::GetResourceSpec() const
 {
     return m_resourceSpec;
 }
 
-void InquiryPriceCreateInstanceRequest::SetResourceSpec(const ResourceSpec& _resourceSpec)
+void InquiryPriceCreateInstanceRequest::SetResourceSpec(const NewResourceSpec& _resourceSpec)
 {
     m_resourceSpec = _resourceSpec;
     m_resourceSpecHasBeenSet = true;

@@ -169,6 +169,49 @@ PartnersClient::AuditApplyClientOutcomeCallable PartnersClient::AuditApplyClient
     return task->get_future();
 }
 
+PartnersClient::CreatePayRelationForClientOutcome PartnersClient::CreatePayRelationForClient(const CreatePayRelationForClientRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePayRelationForClient");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePayRelationForClientResponse rsp = CreatePayRelationForClientResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePayRelationForClientOutcome(rsp);
+        else
+            return CreatePayRelationForClientOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePayRelationForClientOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::CreatePayRelationForClientAsync(const CreatePayRelationForClientRequest& request, const CreatePayRelationForClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePayRelationForClient(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::CreatePayRelationForClientOutcomeCallable PartnersClient::CreatePayRelationForClientCallable(const CreatePayRelationForClientRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePayRelationForClientOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePayRelationForClient(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeAgentAuditedClientsOutcome PartnersClient::DescribeAgentAuditedClients(const DescribeAgentAuditedClientsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentAuditedClients");
@@ -549,6 +592,49 @@ PartnersClient::ModifyClientRemarkOutcomeCallable PartnersClient::ModifyClientRe
         [this, request]()
         {
             return this->ModifyClientRemark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PartnersClient::RemovePayRelationForClientOutcome PartnersClient::RemovePayRelationForClient(const RemovePayRelationForClientRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemovePayRelationForClient");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemovePayRelationForClientResponse rsp = RemovePayRelationForClientResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemovePayRelationForClientOutcome(rsp);
+        else
+            return RemovePayRelationForClientOutcome(o.GetError());
+    }
+    else
+    {
+        return RemovePayRelationForClientOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::RemovePayRelationForClientAsync(const RemovePayRelationForClientRequest& request, const RemovePayRelationForClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemovePayRelationForClient(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::RemovePayRelationForClientOutcomeCallable PartnersClient::RemovePayRelationForClientCallable(const RemovePayRelationForClientRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemovePayRelationForClientOutcome()>>(
+        [this, request]()
+        {
+            return this->RemovePayRelationForClient(request);
         }
     );
 

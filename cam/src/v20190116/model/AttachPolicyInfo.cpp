@@ -26,7 +26,11 @@ AttachPolicyInfo::AttachPolicyInfo() :
     m_policyNameHasBeenSet(false),
     m_addTimeHasBeenSet(false),
     m_createModeHasBeenSet(false),
-    m_policyTypeHasBeenSet(false)
+    m_policyTypeHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_operateOwnerUinHasBeenSet(false),
+    m_operateUinHasBeenSet(false),
+    m_operateUinTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +89,46 @@ CoreInternalOutcome AttachPolicyInfo::Deserialize(const Value &value)
         m_policyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateOwnerUin") && !value["OperateOwnerUin"].IsNull())
+    {
+        if (!value["OperateOwnerUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.OperateOwnerUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateOwnerUin = value["OperateOwnerUin"].GetUint64();
+        m_operateOwnerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateUin") && !value["OperateUin"].IsNull())
+    {
+        if (!value["OperateUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.OperateUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateUin = value["OperateUin"].GetUint64();
+        m_operateUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateUinType") && !value["OperateUinType"].IsNull())
+    {
+        if (!value["OperateUinType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.OperateUinType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateUinType = value["OperateUinType"].GetUint64();
+        m_operateUinTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +174,38 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "PolicyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_policyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateOwnerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OperateOwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_operateOwnerUin, allocator);
+    }
+
+    if (m_operateUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OperateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_operateUin, allocator);
+    }
+
+    if (m_operateUinTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OperateUinType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_operateUinType, allocator);
     }
 
 }
@@ -213,5 +289,69 @@ void AttachPolicyInfo::SetPolicyType(const string& _policyType)
 bool AttachPolicyInfo::PolicyTypeHasBeenSet() const
 {
     return m_policyTypeHasBeenSet;
+}
+
+string AttachPolicyInfo::GetRemark() const
+{
+    return m_remark;
+}
+
+void AttachPolicyInfo::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool AttachPolicyInfo::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+uint64_t AttachPolicyInfo::GetOperateOwnerUin() const
+{
+    return m_operateOwnerUin;
+}
+
+void AttachPolicyInfo::SetOperateOwnerUin(const uint64_t& _operateOwnerUin)
+{
+    m_operateOwnerUin = _operateOwnerUin;
+    m_operateOwnerUinHasBeenSet = true;
+}
+
+bool AttachPolicyInfo::OperateOwnerUinHasBeenSet() const
+{
+    return m_operateOwnerUinHasBeenSet;
+}
+
+uint64_t AttachPolicyInfo::GetOperateUin() const
+{
+    return m_operateUin;
+}
+
+void AttachPolicyInfo::SetOperateUin(const uint64_t& _operateUin)
+{
+    m_operateUin = _operateUin;
+    m_operateUinHasBeenSet = true;
+}
+
+bool AttachPolicyInfo::OperateUinHasBeenSet() const
+{
+    return m_operateUinHasBeenSet;
+}
+
+uint64_t AttachPolicyInfo::GetOperateUinType() const
+{
+    return m_operateUinType;
+}
+
+void AttachPolicyInfo::SetOperateUinType(const uint64_t& _operateUinType)
+{
+    m_operateUinType = _operateUinType;
+    m_operateUinTypeHasBeenSet = true;
+}
+
+bool AttachPolicyInfo::OperateUinTypeHasBeenSet() const
+{
+    return m_operateUinTypeHasBeenSet;
 }
 

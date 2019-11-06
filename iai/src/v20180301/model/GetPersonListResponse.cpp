@@ -27,7 +27,8 @@ using namespace std;
 GetPersonListResponse::GetPersonListResponse() :
     m_personInfosHasBeenSet(false),
     m_personNumHasBeenSet(false),
-    m_faceNumHasBeenSet(false)
+    m_faceNumHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome GetPersonListResponse::Deserialize(const string &payload)
         m_faceNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,16 @@ uint64_t GetPersonListResponse::GetFaceNum() const
 bool GetPersonListResponse::FaceNumHasBeenSet() const
 {
     return m_faceNumHasBeenSet;
+}
+
+string GetPersonListResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool GetPersonListResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

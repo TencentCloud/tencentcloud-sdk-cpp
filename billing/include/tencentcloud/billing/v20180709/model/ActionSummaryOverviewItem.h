@@ -118,6 +118,78 @@ namespace TencentCloud
                      */
                     bool RealTotalCostRatioHasBeenSet() const;
 
+                    /**
+                     * 获取现金金额
+                     * @return CashPayAmount 现金金额
+                     */
+                    std::string GetCashPayAmount() const;
+
+                    /**
+                     * 设置现金金额
+                     * @param CashPayAmount 现金金额
+                     */
+                    void SetCashPayAmount(const std::string& _cashPayAmount);
+
+                    /**
+                     * 判断参数 CashPayAmount 是否已赋值
+                     * @return CashPayAmount 是否已赋值
+                     */
+                    bool CashPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取赠送金金额
+                     * @return IncentivePayAmount 赠送金金额
+                     */
+                    std::string GetIncentivePayAmount() const;
+
+                    /**
+                     * 设置赠送金金额
+                     * @param IncentivePayAmount 赠送金金额
+                     */
+                    void SetIncentivePayAmount(const std::string& _incentivePayAmount);
+
+                    /**
+                     * 判断参数 IncentivePayAmount 是否已赋值
+                     * @return IncentivePayAmount 是否已赋值
+                     */
+                    bool IncentivePayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取代金券金额
+                     * @return VoucherPayAmount 代金券金额
+                     */
+                    std::string GetVoucherPayAmount() const;
+
+                    /**
+                     * 设置代金券金额
+                     * @param VoucherPayAmount 代金券金额
+                     */
+                    void SetVoucherPayAmount(const std::string& _voucherPayAmount);
+
+                    /**
+                     * 判断参数 VoucherPayAmount 是否已赋值
+                     * @return VoucherPayAmount 是否已赋值
+                     */
+                    bool VoucherPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取账单月份，格式2019-08
+                     * @return BillMonth 账单月份，格式2019-08
+                     */
+                    std::string GetBillMonth() const;
+
+                    /**
+                     * 设置账单月份，格式2019-08
+                     * @param BillMonth 账单月份，格式2019-08
+                     */
+                    void SetBillMonth(const std::string& _billMonth);
+
+                    /**
+                     * 判断参数 BillMonth 是否已赋值
+                     * @return BillMonth 是否已赋值
+                     */
+                    bool BillMonthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +215,30 @@ namespace TencentCloud
                      */
                     std::string m_realTotalCostRatio;
                     bool m_realTotalCostRatioHasBeenSet;
+
+                    /**
+                     * 现金金额
+                     */
+                    std::string m_cashPayAmount;
+                    bool m_cashPayAmountHasBeenSet;
+
+                    /**
+                     * 赠送金金额
+                     */
+                    std::string m_incentivePayAmount;
+                    bool m_incentivePayAmountHasBeenSet;
+
+                    /**
+                     * 代金券金额
+                     */
+                    std::string m_voucherPayAmount;
+                    bool m_voucherPayAmountHasBeenSet;
+
+                    /**
+                     * 账单月份，格式2019-08
+                     */
+                    std::string m_billMonth;
+                    bool m_billMonthHasBeenSet;
 
                 };
             }

@@ -81,6 +81,8 @@
 #include <tencentcloud/tci/v20190318/model/SubmitAudioTaskResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitCheckAttendanceTaskRequest.h>
 #include <tencentcloud/tci/v20190318/model/SubmitCheckAttendanceTaskResponse.h>
+#include <tencentcloud/tci/v20190318/model/SubmitCheckAttendanceTaskPlusRequest.h>
+#include <tencentcloud/tci/v20190318/model/SubmitCheckAttendanceTaskPlusResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitConversationTaskRequest.h>
 #include <tencentcloud/tci/v20190318/model/SubmitConversationTaskResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitDoubleVideoHighlightsRequest.h>
@@ -91,6 +93,8 @@
 #include <tencentcloud/tci/v20190318/model/SubmitHighlightsResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitImageTaskRequest.h>
 #include <tencentcloud/tci/v20190318/model/SubmitImageTaskResponse.h>
+#include <tencentcloud/tci/v20190318/model/SubmitImageTaskPlusRequest.h>
+#include <tencentcloud/tci/v20190318/model/SubmitImageTaskPlusResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitOneByOneClassTaskRequest.h>
 #include <tencentcloud/tci/v20190318/model/SubmitOneByOneClassTaskResponse.h>
 #include <tencentcloud/tci/v20190318/model/SubmitOpenClassTaskRequest.h>
@@ -202,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SubmitCheckAttendanceTaskResponse> SubmitCheckAttendanceTaskOutcome;
                 typedef std::future<SubmitCheckAttendanceTaskOutcome> SubmitCheckAttendanceTaskOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::SubmitCheckAttendanceTaskRequest&, SubmitCheckAttendanceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitCheckAttendanceTaskAsyncHandler;
+                typedef Outcome<Error, Model::SubmitCheckAttendanceTaskPlusResponse> SubmitCheckAttendanceTaskPlusOutcome;
+                typedef std::future<SubmitCheckAttendanceTaskPlusOutcome> SubmitCheckAttendanceTaskPlusOutcomeCallable;
+                typedef std::function<void(const TciClient*, const Model::SubmitCheckAttendanceTaskPlusRequest&, SubmitCheckAttendanceTaskPlusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitCheckAttendanceTaskPlusAsyncHandler;
                 typedef Outcome<Error, Model::SubmitConversationTaskResponse> SubmitConversationTaskOutcome;
                 typedef std::future<SubmitConversationTaskOutcome> SubmitConversationTaskOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::SubmitConversationTaskRequest&, SubmitConversationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitConversationTaskAsyncHandler;
@@ -217,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SubmitImageTaskResponse> SubmitImageTaskOutcome;
                 typedef std::future<SubmitImageTaskOutcome> SubmitImageTaskOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::SubmitImageTaskRequest&, SubmitImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitImageTaskAsyncHandler;
+                typedef Outcome<Error, Model::SubmitImageTaskPlusResponse> SubmitImageTaskPlusOutcome;
+                typedef std::future<SubmitImageTaskPlusOutcome> SubmitImageTaskPlusOutcomeCallable;
+                typedef std::function<void(const TciClient*, const Model::SubmitImageTaskPlusRequest&, SubmitImageTaskPlusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitImageTaskPlusAsyncHandler;
                 typedef Outcome<Error, Model::SubmitOneByOneClassTaskResponse> SubmitOneByOneClassTaskOutcome;
                 typedef std::future<SubmitOneByOneClassTaskOutcome> SubmitOneByOneClassTaskOutcomeCallable;
                 typedef std::function<void(const TciClient*, const Model::SubmitOneByOneClassTaskRequest&, SubmitOneByOneClassTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitOneByOneClassTaskAsyncHandler;
@@ -510,6 +520,15 @@ namespace TencentCloud
                 SubmitCheckAttendanceTaskOutcomeCallable SubmitCheckAttendanceTaskCallable(const Model::SubmitCheckAttendanceTaskRequest& request);
 
                 /**
+                 *支持多路视频流，提交高级人员考勤任务
+                 * @param req SubmitCheckAttendanceTaskPlusRequest
+                 * @return SubmitCheckAttendanceTaskPlusOutcome
+                 */
+                SubmitCheckAttendanceTaskPlusOutcome SubmitCheckAttendanceTaskPlus(const Model::SubmitCheckAttendanceTaskPlusRequest &request);
+                void SubmitCheckAttendanceTaskPlusAsync(const Model::SubmitCheckAttendanceTaskPlusRequest& request, const SubmitCheckAttendanceTaskPlusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitCheckAttendanceTaskPlusOutcomeCallable SubmitCheckAttendanceTaskPlusCallable(const Model::SubmitCheckAttendanceTaskPlusRequest& request);
+
+                /**
                  *对话任务分析接口
                  * @param req SubmitConversationTaskRequest
                  * @return SubmitConversationTaskOutcome
@@ -560,6 +579,15 @@ namespace TencentCloud
                 SubmitImageTaskOutcome SubmitImageTask(const Model::SubmitImageTaskRequest &request);
                 void SubmitImageTaskAsync(const Model::SubmitImageTaskRequest& request, const SubmitImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitImageTaskOutcomeCallable SubmitImageTaskCallable(const Model::SubmitImageTaskRequest& request);
+
+                /**
+                 *高级图像分析任务，开放了图像任务里的所有开关，可以根据场景深度定制图像分析任务。支持的图像类别有，图片链接、图片二进制数据、点播链接和直播链接。
+                 * @param req SubmitImageTaskPlusRequest
+                 * @return SubmitImageTaskPlusOutcome
+                 */
+                SubmitImageTaskPlusOutcome SubmitImageTaskPlus(const Model::SubmitImageTaskPlusRequest &request);
+                void SubmitImageTaskPlusAsync(const Model::SubmitImageTaskPlusRequest& request, const SubmitImageTaskPlusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitImageTaskPlusOutcomeCallable SubmitImageTaskPlusCallable(const Model::SubmitImageTaskPlusRequest& request);
 
                 /**
                  ***提交在线1对1课堂任务**  

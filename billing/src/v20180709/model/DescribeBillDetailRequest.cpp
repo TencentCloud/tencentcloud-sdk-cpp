@@ -30,7 +30,10 @@ DescribeBillDetailRequest::DescribeBillDetailRequest() :
     m_monthHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_needRecordNumHasBeenSet(false)
+    m_needRecordNumHasBeenSet(false),
+    m_productCodeHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,30 @@ string DescribeBillDetailRequest::ToJsonString() const
         string key = "NeedRecordNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needRecordNum, allocator);
+    }
+
+    if (m_productCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_productCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +242,54 @@ void DescribeBillDetailRequest::SetNeedRecordNum(const int64_t& _needRecordNum)
 bool DescribeBillDetailRequest::NeedRecordNumHasBeenSet() const
 {
     return m_needRecordNumHasBeenSet;
+}
+
+string DescribeBillDetailRequest::GetProductCode() const
+{
+    return m_productCode;
+}
+
+void DescribeBillDetailRequest::SetProductCode(const string& _productCode)
+{
+    m_productCode = _productCode;
+    m_productCodeHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::ProductCodeHasBeenSet() const
+{
+    return m_productCodeHasBeenSet;
+}
+
+string DescribeBillDetailRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void DescribeBillDetailRequest::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+string DescribeBillDetailRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void DescribeBillDetailRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
     m_mountTargetHasBeenSet(false),
     m_dockerGraphPathHasBeenSet(false),
     m_userScriptHasBeenSet(false),
-    m_unschedulableHasBeenSet(false)
+    m_unschedulableHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,26 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
         m_unschedulableHasBeenSet = true;
     }
 
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.Labels` is not array type"));
+
+        const Value &tmpValue = value["Labels"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Label item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labels.push_back(item);
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +132,21 @@ void InstanceAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorTyp
         string key = "Unschedulable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unschedulable, allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -178,5 +214,21 @@ void InstanceAdvancedSettings::SetUnschedulable(const int64_t& _unschedulable)
 bool InstanceAdvancedSettings::UnschedulableHasBeenSet() const
 {
     return m_unschedulableHasBeenSet;
+}
+
+vector<Label> InstanceAdvancedSettings::GetLabels() const
+{
+    return m_labels;
+}
+
+void InstanceAdvancedSettings::SetLabels(const vector<Label>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 

@@ -47,7 +47,11 @@ BillResourceSummary::BillResourceSummary() :
     m_incentivePayAmountHasBeenSet(false),
     m_extendField3HasBeenSet(false),
     m_extendField4HasBeenSet(false),
-    m_extendField5HasBeenSet(false)
+    m_extendField5HasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_payerUinHasBeenSet(false),
+    m_ownerUinHasBeenSet(false),
+    m_operateUinHasBeenSet(false)
 {
 }
 
@@ -316,6 +320,56 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const Value &value)
         m_extendField5HasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `BillResourceSummary.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BillTagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayerUin") && !value["PayerUin"].IsNull())
+    {
+        if (!value["PayerUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillResourceSummary.PayerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payerUin = string(value["PayerUin"].GetString());
+        m_payerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUin") && !value["OwnerUin"].IsNull())
+    {
+        if (!value["OwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillResourceSummary.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerUin = string(value["OwnerUin"].GetString());
+        m_ownerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateUin") && !value["OperateUin"].IsNull())
+    {
+        if (!value["OperateUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillResourceSummary.OperateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateUin = string(value["OperateUin"].GetString());
+        m_operateUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -529,6 +583,45 @@ void BillResourceSummary::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "ExtendField5";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_extendField5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_payerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OperateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_operateUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -948,5 +1041,69 @@ void BillResourceSummary::SetExtendField5(const string& _extendField5)
 bool BillResourceSummary::ExtendField5HasBeenSet() const
 {
     return m_extendField5HasBeenSet;
+}
+
+vector<BillTagInfo> BillResourceSummary::GetTags() const
+{
+    return m_tags;
+}
+
+void BillResourceSummary::SetTags(const vector<BillTagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool BillResourceSummary::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string BillResourceSummary::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void BillResourceSummary::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool BillResourceSummary::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
+}
+
+string BillResourceSummary::GetOwnerUin() const
+{
+    return m_ownerUin;
+}
+
+void BillResourceSummary::SetOwnerUin(const string& _ownerUin)
+{
+    m_ownerUin = _ownerUin;
+    m_ownerUinHasBeenSet = true;
+}
+
+bool BillResourceSummary::OwnerUinHasBeenSet() const
+{
+    return m_ownerUinHasBeenSet;
+}
+
+string BillResourceSummary::GetOperateUin() const
+{
+    return m_operateUin;
+}
+
+void BillResourceSummary::SetOperateUin(const string& _operateUin)
+{
+    m_operateUin = _operateUin;
+    m_operateUinHasBeenSet = true;
+}
+
+bool BillResourceSummary::OperateUinHasBeenSet() const
+{
+    return m_operateUinHasBeenSet;
 }
 

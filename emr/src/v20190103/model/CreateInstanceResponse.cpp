@@ -24,8 +24,7 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateInstanceResponse::CreateInstanceResponse() :
-    m_resultHasBeenSet(false)
+CreateInstanceResponse::CreateInstanceResponse()
 {
 }
 
@@ -63,36 +62,9 @@ CoreInternalOutcome CreateInstanceResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
-    {
-        if (!rsp["Result"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_resultHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-CreateInstanceResult CreateInstanceResponse::GetResult() const
-{
-    return m_result;
-}
-
-bool CreateInstanceResponse::ResultHasBeenSet() const
-{
-    return m_resultHasBeenSet;
-}
 
 

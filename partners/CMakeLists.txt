@@ -23,12 +23,15 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeSalesmansRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsRequest.h
+  include/tencentcloud/partners/v20180321/model/RemovePayRelationForClientRequest.h
   include/tencentcloud/partners/v20180321/model/AgentPayDealsRequest.h
   include/tencentcloud/partners/v20180321/model/RebateInfoElem.h
   include/tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h
   include/tencentcloud/partners/v20180321/model/AgentTransferMoneyRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeClientBalanceRequest.h
+  include/tencentcloud/partners/v20180321/model/RemovePayRelationForClientResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h
+  include/tencentcloud/partners/v20180321/model/CreatePayRelationForClientResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentBillsResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentPayDealsRequest.h
@@ -41,6 +44,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentPayDealsResponse.h
   include/tencentcloud/partners/v20180321/model/DealGoodsPriceElem.h
   include/tencentcloud/partners/v20180321/model/ModifyClientRemarkRequest.h
+  include/tencentcloud/partners/v20180321/model/CreatePayRelationForClientRequest.h
   include/tencentcloud/partners/v20180321/model/AgentTransferMoneyResponse.h
   include/tencentcloud/partners/v20180321/model/AgentBillElem.h
   include/tencentcloud/partners/v20180321/model/AuditApplyClientResponse.h
@@ -58,12 +62,15 @@ set(partners_src
   src/v20180321/model/DescribeAgentDealsCacheRequest.cpp
   src/v20180321/model/DescribeSalesmansRequest.cpp
   src/v20180321/model/DescribeAgentAuditedClientsRequest.cpp
+  src/v20180321/model/RemovePayRelationForClientRequest.cpp
   src/v20180321/model/AgentPayDealsRequest.cpp
   src/v20180321/model/RebateInfoElem.cpp
   src/v20180321/model/DescribeClientBalanceResponse.cpp
   src/v20180321/model/AgentTransferMoneyRequest.cpp
   src/v20180321/model/DescribeClientBalanceRequest.cpp
+  src/v20180321/model/RemovePayRelationForClientResponse.cpp
   src/v20180321/model/DescribeRebateInfosRequest.cpp
+  src/v20180321/model/CreatePayRelationForClientResponse.cpp
   src/v20180321/model/DescribeAgentAuditedClientsResponse.cpp
   src/v20180321/model/DescribeAgentBillsResponse.cpp
   src/v20180321/model/DescribeAgentPayDealsRequest.cpp
@@ -76,6 +83,7 @@ set(partners_src
   src/v20180321/model/DescribeAgentPayDealsResponse.cpp
   src/v20180321/model/DealGoodsPriceElem.cpp
   src/v20180321/model/ModifyClientRemarkRequest.cpp
+  src/v20180321/model/CreatePayRelationForClientRequest.cpp
   src/v20180321/model/AgentTransferMoneyResponse.cpp
   src/v20180321/model/AgentBillElem.cpp
   src/v20180321/model/AuditApplyClientResponse.cpp

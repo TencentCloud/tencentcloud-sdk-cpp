@@ -126,6 +126,49 @@ RedisClient::ClearInstanceOutcomeCallable RedisClient::ClearInstanceCallable(con
     return task->get_future();
 }
 
+RedisClient::CreateInstanceAccountOutcome RedisClient::CreateInstanceAccount(const CreateInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceAccountResponse rsp = CreateInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceAccountOutcome(rsp);
+        else
+            return CreateInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::CreateInstanceAccountAsync(const CreateInstanceAccountRequest& request, const CreateInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstanceAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::CreateInstanceAccountOutcomeCallable RedisClient::CreateInstanceAccountCallable(const CreateInstanceAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstanceAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstanceAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::CreateInstancesOutcome RedisClient::CreateInstances(const CreateInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstances");
@@ -162,6 +205,49 @@ RedisClient::CreateInstancesOutcomeCallable RedisClient::CreateInstancesCallable
         [this, request]()
         {
             return this->CreateInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DeleteInstanceAccountOutcome RedisClient::DeleteInstanceAccount(const DeleteInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceAccountResponse rsp = DeleteInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceAccountOutcome(rsp);
+        else
+            return DeleteInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DeleteInstanceAccountAsync(const DeleteInstanceAccountRequest& request, const DeleteInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstanceAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DeleteInstanceAccountOutcomeCallable RedisClient::DeleteInstanceAccountCallable(const DeleteInstanceAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstanceAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstanceAccount(request);
         }
     );
 
@@ -255,6 +341,49 @@ RedisClient::DescribeBackupUrlOutcomeCallable RedisClient::DescribeBackupUrlCall
     return task->get_future();
 }
 
+RedisClient::DescribeInstanceAccountOutcome RedisClient::DescribeInstanceAccount(const DescribeInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceAccountResponse rsp = DescribeInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceAccountOutcome(rsp);
+        else
+            return DescribeInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceAccountAsync(const DescribeInstanceAccountRequest& request, const DescribeInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceAccountOutcomeCallable RedisClient::DescribeInstanceAccountCallable(const DescribeInstanceAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeInstanceBackupsOutcome RedisClient::DescribeInstanceBackups(const DescribeInstanceBackupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceBackups");
@@ -334,6 +463,350 @@ RedisClient::DescribeInstanceDealDetailOutcomeCallable RedisClient::DescribeInst
         [this, request]()
         {
             return this->DescribeInstanceDealDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorBigKeyOutcome RedisClient::DescribeInstanceMonitorBigKey(const DescribeInstanceMonitorBigKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorBigKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorBigKeyResponse rsp = DescribeInstanceMonitorBigKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorBigKeyOutcome(rsp);
+        else
+            return DescribeInstanceMonitorBigKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorBigKeyOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorBigKeyAsync(const DescribeInstanceMonitorBigKeyRequest& request, const DescribeInstanceMonitorBigKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorBigKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorBigKeyOutcomeCallable RedisClient::DescribeInstanceMonitorBigKeyCallable(const DescribeInstanceMonitorBigKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorBigKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorBigKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorBigKeySizeDistOutcome RedisClient::DescribeInstanceMonitorBigKeySizeDist(const DescribeInstanceMonitorBigKeySizeDistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorBigKeySizeDist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorBigKeySizeDistResponse rsp = DescribeInstanceMonitorBigKeySizeDistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorBigKeySizeDistOutcome(rsp);
+        else
+            return DescribeInstanceMonitorBigKeySizeDistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorBigKeySizeDistOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorBigKeySizeDistAsync(const DescribeInstanceMonitorBigKeySizeDistRequest& request, const DescribeInstanceMonitorBigKeySizeDistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorBigKeySizeDist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorBigKeySizeDistOutcomeCallable RedisClient::DescribeInstanceMonitorBigKeySizeDistCallable(const DescribeInstanceMonitorBigKeySizeDistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorBigKeySizeDistOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorBigKeySizeDist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorBigKeyTypeDistOutcome RedisClient::DescribeInstanceMonitorBigKeyTypeDist(const DescribeInstanceMonitorBigKeyTypeDistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorBigKeyTypeDist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorBigKeyTypeDistResponse rsp = DescribeInstanceMonitorBigKeyTypeDistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorBigKeyTypeDistOutcome(rsp);
+        else
+            return DescribeInstanceMonitorBigKeyTypeDistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorBigKeyTypeDistOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorBigKeyTypeDistAsync(const DescribeInstanceMonitorBigKeyTypeDistRequest& request, const DescribeInstanceMonitorBigKeyTypeDistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorBigKeyTypeDist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorBigKeyTypeDistOutcomeCallable RedisClient::DescribeInstanceMonitorBigKeyTypeDistCallable(const DescribeInstanceMonitorBigKeyTypeDistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorBigKeyTypeDistOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorBigKeyTypeDist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorHotKeyOutcome RedisClient::DescribeInstanceMonitorHotKey(const DescribeInstanceMonitorHotKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorHotKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorHotKeyResponse rsp = DescribeInstanceMonitorHotKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorHotKeyOutcome(rsp);
+        else
+            return DescribeInstanceMonitorHotKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorHotKeyOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorHotKeyAsync(const DescribeInstanceMonitorHotKeyRequest& request, const DescribeInstanceMonitorHotKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorHotKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorHotKeyOutcomeCallable RedisClient::DescribeInstanceMonitorHotKeyCallable(const DescribeInstanceMonitorHotKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorHotKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorHotKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorSIPOutcome RedisClient::DescribeInstanceMonitorSIP(const DescribeInstanceMonitorSIPRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorSIP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorSIPResponse rsp = DescribeInstanceMonitorSIPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorSIPOutcome(rsp);
+        else
+            return DescribeInstanceMonitorSIPOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorSIPOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorSIPAsync(const DescribeInstanceMonitorSIPRequest& request, const DescribeInstanceMonitorSIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorSIP(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorSIPOutcomeCallable RedisClient::DescribeInstanceMonitorSIPCallable(const DescribeInstanceMonitorSIPRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorSIPOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorSIP(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorTookDistOutcome RedisClient::DescribeInstanceMonitorTookDist(const DescribeInstanceMonitorTookDistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorTookDist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorTookDistResponse rsp = DescribeInstanceMonitorTookDistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorTookDistOutcome(rsp);
+        else
+            return DescribeInstanceMonitorTookDistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorTookDistOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorTookDistAsync(const DescribeInstanceMonitorTookDistRequest& request, const DescribeInstanceMonitorTookDistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorTookDist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorTookDistOutcomeCallable RedisClient::DescribeInstanceMonitorTookDistCallable(const DescribeInstanceMonitorTookDistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorTookDistOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorTookDist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorTopNCmdOutcome RedisClient::DescribeInstanceMonitorTopNCmd(const DescribeInstanceMonitorTopNCmdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorTopNCmd");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorTopNCmdResponse rsp = DescribeInstanceMonitorTopNCmdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorTopNCmdOutcome(rsp);
+        else
+            return DescribeInstanceMonitorTopNCmdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorTopNCmdOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorTopNCmdAsync(const DescribeInstanceMonitorTopNCmdRequest& request, const DescribeInstanceMonitorTopNCmdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorTopNCmd(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorTopNCmdOutcomeCallable RedisClient::DescribeInstanceMonitorTopNCmdCallable(const DescribeInstanceMonitorTopNCmdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorTopNCmdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorTopNCmd(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeInstanceMonitorTopNCmdTookOutcome RedisClient::DescribeInstanceMonitorTopNCmdTook(const DescribeInstanceMonitorTopNCmdTookRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceMonitorTopNCmdTook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceMonitorTopNCmdTookResponse rsp = DescribeInstanceMonitorTopNCmdTookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceMonitorTopNCmdTookOutcome(rsp);
+        else
+            return DescribeInstanceMonitorTopNCmdTookOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceMonitorTopNCmdTookOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceMonitorTopNCmdTookAsync(const DescribeInstanceMonitorTopNCmdTookRequest& request, const DescribeInstanceMonitorTopNCmdTookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceMonitorTopNCmdTook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceMonitorTopNCmdTookOutcomeCallable RedisClient::DescribeInstanceMonitorTopNCmdTookCallable(const DescribeInstanceMonitorTopNCmdTookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceMonitorTopNCmdTookOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceMonitorTopNCmdTook(request);
         }
     );
 
@@ -635,6 +1108,49 @@ RedisClient::DescribeProjectSecurityGroupOutcomeCallable RedisClient::DescribePr
         [this, request]()
         {
             return this->DescribeProjectSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::DescribeSlowLogOutcome RedisClient::DescribeSlowLog(const DescribeSlowLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogResponse rsp = DescribeSlowLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogOutcome(rsp);
+        else
+            return DescribeSlowLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeSlowLogAsync(const DescribeSlowLogRequest& request, const DescribeSlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeSlowLogOutcomeCallable RedisClient::DescribeSlowLogCallable(const DescribeSlowLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLog(request);
         }
     );
 
@@ -1022,6 +1538,49 @@ RedisClient::ModifyInstanceOutcomeCallable RedisClient::ModifyInstanceCallable(c
         [this, request]()
         {
             return this->ModifyInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::ModifyInstanceAccountOutcome RedisClient::ModifyInstanceAccount(const ModifyInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceAccountResponse rsp = ModifyInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceAccountOutcome(rsp);
+        else
+            return ModifyInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstanceAccountAsync(const ModifyInstanceAccountRequest& request, const ModifyInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyInstanceAccountOutcomeCallable RedisClient::ModifyInstanceAccountCallable(const ModifyInstanceAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceAccount(request);
         }
     );
 

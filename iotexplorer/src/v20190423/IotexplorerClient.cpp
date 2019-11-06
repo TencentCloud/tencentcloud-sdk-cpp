@@ -40,6 +40,92 @@ IotexplorerClient::IotexplorerClient(const Credential &credential, const string 
 }
 
 
+IotexplorerClient::CallDeviceActionAsyncOutcome IotexplorerClient::CallDeviceActionAsync(const CallDeviceActionAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallDeviceActionAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallDeviceActionAsyncResponse rsp = CallDeviceActionAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallDeviceActionAsyncOutcome(rsp);
+        else
+            return CallDeviceActionAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CallDeviceActionAsyncOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CallDeviceActionAsyncAsync(const CallDeviceActionAsyncRequest& request, const CallDeviceActionAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CallDeviceActionAsync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CallDeviceActionAsyncOutcomeCallable IotexplorerClient::CallDeviceActionAsyncCallable(const CallDeviceActionAsyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CallDeviceActionAsyncOutcome()>>(
+        [this, request]()
+        {
+            return this->CallDeviceActionAsync(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::CallDeviceActionSyncOutcome IotexplorerClient::CallDeviceActionSync(const CallDeviceActionSyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallDeviceActionSync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallDeviceActionSyncResponse rsp = CallDeviceActionSyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallDeviceActionSyncOutcome(rsp);
+        else
+            return CallDeviceActionSyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CallDeviceActionSyncOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CallDeviceActionSyncAsync(const CallDeviceActionSyncRequest& request, const CallDeviceActionSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CallDeviceActionSync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CallDeviceActionSyncOutcomeCallable IotexplorerClient::CallDeviceActionSyncCallable(const CallDeviceActionSyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CallDeviceActionSyncOutcome()>>(
+        [this, request]()
+        {
+            return this->CallDeviceActionSync(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::ControlDeviceDataOutcome IotexplorerClient::ControlDeviceData(const ControlDeviceDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ControlDeviceData");

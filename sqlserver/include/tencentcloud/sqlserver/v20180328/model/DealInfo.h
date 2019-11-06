@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool OwnerUinHasBeenSet() const;
 
+                    /**
+                     * 获取实例付费类型
+                     * @return InstanceChargeType 实例付费类型
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置实例付费类型
+                     * @param InstanceChargeType 实例付费类型
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
+
+                    /**
+                     * 实例付费类型
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
 
                 };
             }

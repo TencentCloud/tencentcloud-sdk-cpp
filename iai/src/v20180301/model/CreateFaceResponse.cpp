@@ -27,7 +27,10 @@ using namespace std;
 CreateFaceResponse::CreateFaceResponse() :
     m_sucFaceNumHasBeenSet(false),
     m_sucFaceIdsHasBeenSet(false),
-    m_retCodeHasBeenSet(false)
+    m_retCodeHasBeenSet(false),
+    m_sucIndexesHasBeenSet(false),
+    m_sucFaceRectsHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -101,6 +104,49 @@ CoreInternalOutcome CreateFaceResponse::Deserialize(const string &payload)
         m_retCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SucIndexes") && !rsp["SucIndexes"].IsNull())
+    {
+        if (!rsp["SucIndexes"].IsArray())
+            return CoreInternalOutcome(Error("response `SucIndexes` is not array type"));
+
+        const Value &tmpValue = rsp["SucIndexes"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sucIndexes.push_back((*itr).GetUint64());
+        }
+        m_sucIndexesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SucFaceRects") && !rsp["SucFaceRects"].IsNull())
+    {
+        if (!rsp["SucFaceRects"].IsArray())
+            return CoreInternalOutcome(Error("response `SucFaceRects` is not array type"));
+
+        const Value &tmpValue = rsp["SucFaceRects"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FaceRect item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sucFaceRects.push_back(item);
+        }
+        m_sucFaceRectsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +180,36 @@ vector<int64_t> CreateFaceResponse::GetRetCode() const
 bool CreateFaceResponse::RetCodeHasBeenSet() const
 {
     return m_retCodeHasBeenSet;
+}
+
+vector<uint64_t> CreateFaceResponse::GetSucIndexes() const
+{
+    return m_sucIndexes;
+}
+
+bool CreateFaceResponse::SucIndexesHasBeenSet() const
+{
+    return m_sucIndexesHasBeenSet;
+}
+
+vector<FaceRect> CreateFaceResponse::GetSucFaceRects() const
+{
+    return m_sucFaceRects;
+}
+
+bool CreateFaceResponse::SucFaceRectsHasBeenSet() const
+{
+    return m_sucFaceRectsHasBeenSet;
+}
+
+string CreateFaceResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool CreateFaceResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

@@ -1287,6 +1287,49 @@ TciClient::SubmitCheckAttendanceTaskOutcomeCallable TciClient::SubmitCheckAttend
     return task->get_future();
 }
 
+TciClient::SubmitCheckAttendanceTaskPlusOutcome TciClient::SubmitCheckAttendanceTaskPlus(const SubmitCheckAttendanceTaskPlusRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitCheckAttendanceTaskPlus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitCheckAttendanceTaskPlusResponse rsp = SubmitCheckAttendanceTaskPlusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitCheckAttendanceTaskPlusOutcome(rsp);
+        else
+            return SubmitCheckAttendanceTaskPlusOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitCheckAttendanceTaskPlusOutcome(outcome.GetError());
+    }
+}
+
+void TciClient::SubmitCheckAttendanceTaskPlusAsync(const SubmitCheckAttendanceTaskPlusRequest& request, const SubmitCheckAttendanceTaskPlusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitCheckAttendanceTaskPlus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TciClient::SubmitCheckAttendanceTaskPlusOutcomeCallable TciClient::SubmitCheckAttendanceTaskPlusCallable(const SubmitCheckAttendanceTaskPlusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitCheckAttendanceTaskPlusOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitCheckAttendanceTaskPlus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TciClient::SubmitConversationTaskOutcome TciClient::SubmitConversationTask(const SubmitConversationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitConversationTask");
@@ -1495,6 +1538,49 @@ TciClient::SubmitImageTaskOutcomeCallable TciClient::SubmitImageTaskCallable(con
         [this, request]()
         {
             return this->SubmitImageTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TciClient::SubmitImageTaskPlusOutcome TciClient::SubmitImageTaskPlus(const SubmitImageTaskPlusRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitImageTaskPlus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitImageTaskPlusResponse rsp = SubmitImageTaskPlusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitImageTaskPlusOutcome(rsp);
+        else
+            return SubmitImageTaskPlusOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitImageTaskPlusOutcome(outcome.GetError());
+    }
+}
+
+void TciClient::SubmitImageTaskPlusAsync(const SubmitImageTaskPlusRequest& request, const SubmitImageTaskPlusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitImageTaskPlus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TciClient::SubmitImageTaskPlusOutcomeCallable TciClient::SubmitImageTaskPlusCallable(const SubmitImageTaskPlusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitImageTaskPlusOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitImageTaskPlus(request);
         }
     );
 

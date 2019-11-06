@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取对id和name进行关键词过滤
+                     * @return SearchWord 对id和name进行关键词过滤
+                     */
+                    std::string GetSearchWord() const;
+
+                    /**
+                     * 设置对id和name进行关键词过滤
+                     * @param SearchWord 对id和name进行关键词过滤
+                     */
+                    void SetSearchWord(const std::string& _searchWord);
+
+                    /**
+                     * 判断参数 SearchWord 是否已赋值
+                     * @return SearchWord 是否已赋值
+                     */
+                    bool SearchWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 对id和name进行关键词过滤
+                     */
+                    std::string m_searchWord;
+                    bool m_searchWordHasBeenSet;
 
                 };
             }

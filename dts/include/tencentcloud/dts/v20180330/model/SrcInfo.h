@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取阿里云RDS实例ID。源库是阿里云RDS5.6适用
-                     * @return RdsInstanceId 阿里云RDS实例ID。源库是阿里云RDS5.6适用
+                     * 获取阿里云RDS实例ID。源库是阿里云RDS5.6/5.6适用
+                     * @return RdsInstanceId 阿里云RDS实例ID。源库是阿里云RDS5.6/5.6适用
                      */
                     std::string GetRdsInstanceId() const;
 
                     /**
-                     * 设置阿里云RDS实例ID。源库是阿里云RDS5.6适用
-                     * @param RdsInstanceId 阿里云RDS实例ID。源库是阿里云RDS5.6适用
+                     * 设置阿里云RDS实例ID。源库是阿里云RDS5.6/5.6适用
+                     * @param RdsInstanceId 阿里云RDS实例ID。源库是阿里云RDS5.6/5.6适用
                      */
                     void SetRdsInstanceId(const std::string& _rdsInstanceId);
 
@@ -320,6 +320,24 @@ namespace TencentCloud
                      */
                     bool CcnIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6
+                     * @return EngineVersion 数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6
+                     */
+                    std::string GetEngineVersion() const;
+
+                    /**
+                     * 设置数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6
+                     * @param EngineVersion 数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6
+                     */
+                    void SetEngineVersion(const std::string& _engineVersion);
+
+                    /**
+                     * 判断参数 EngineVersion 是否已赋值
+                     * @return EngineVersion 是否已赋值
+                     */
+                    bool EngineVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -353,7 +371,7 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 阿里云RDS实例ID。源库是阿里云RDS5.6适用
+                     * 阿里云RDS实例ID。源库是阿里云RDS5.6/5.6适用
                      */
                     std::string m_rdsInstanceId;
                     bool m_rdsInstanceIdHasBeenSet;
@@ -412,6 +430,12 @@ namespace TencentCloud
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
+
+                    /**
+                     * 数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6
+                     */
+                    std::string m_engineVersion;
+                    bool m_engineVersionHasBeenSet;
 
                 };
             }

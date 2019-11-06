@@ -150,6 +150,18 @@ namespace TencentCloud
                      */
                     bool SeatCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取身份证号
+                     * @return ID 身份证号
+                     */
+                    std::string GetID() const;
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     */
+                    bool IDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +217,12 @@ namespace TencentCloud
                      */
                     std::string m_seatCategory;
                     bool m_seatCategoryHasBeenSet;
+
+                    /**
+                     * 身份证号
+                     */
+                    std::string m_iD;
+                    bool m_iDHasBeenSet;
 
                 };
             }

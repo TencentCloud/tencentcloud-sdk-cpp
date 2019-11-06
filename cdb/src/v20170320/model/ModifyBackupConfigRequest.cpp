@@ -28,7 +28,8 @@ ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
     m_expireDaysHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
-    m_binlogExpireDaysHasBeenSet(false)
+    m_binlogExpireDaysHasBeenSet(false),
+    m_backupTimeWindowHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,15 @@ string ModifyBackupConfigRequest::ToJsonString() const
         string key = "BinlogExpireDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_binlogExpireDays, allocator);
+    }
+
+    if (m_backupTimeWindowHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupTimeWindow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_backupTimeWindow.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -165,6 +175,22 @@ void ModifyBackupConfigRequest::SetBinlogExpireDays(const int64_t& _binlogExpire
 bool ModifyBackupConfigRequest::BinlogExpireDaysHasBeenSet() const
 {
     return m_binlogExpireDaysHasBeenSet;
+}
+
+CommonTimeWindow ModifyBackupConfigRequest::GetBackupTimeWindow() const
+{
+    return m_backupTimeWindow;
+}
+
+void ModifyBackupConfigRequest::SetBackupTimeWindow(const CommonTimeWindow& _backupTimeWindow)
+{
+    m_backupTimeWindow = _backupTimeWindow;
+    m_backupTimeWindowHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::BackupTimeWindowHasBeenSet() const
+{
+    return m_backupTimeWindowHasBeenSet;
 }
 
 

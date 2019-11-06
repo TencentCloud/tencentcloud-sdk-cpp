@@ -25,10 +25,12 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthResponse.h
+  include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionResponse.h
+  include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h
@@ -53,10 +55,12 @@ set(faceid_src
   src/v20180301/model/IdCardVerificationRequest.cpp
   src/v20180301/model/BankCardVerificationRequest.cpp
   src/v20180301/model/DetectAuthResponse.cpp
+  src/v20180301/model/IdCardOCRVerificationRequest.cpp
   src/v20180301/model/BankCard4EVerificationResponse.cpp
   src/v20180301/model/BankCard2EVerificationRequest.cpp
   src/v20180301/model/LivenessRecognitionRequest.cpp
   src/v20180301/model/LivenessRecognitionResponse.cpp
+  src/v20180301/model/IdCardOCRVerificationResponse.cpp
   src/v20180301/model/DetectAuthRequest.cpp
   src/v20180301/model/BankCardVerificationResponse.cpp
   src/v20180301/model/ImageRecognitionRequest.cpp

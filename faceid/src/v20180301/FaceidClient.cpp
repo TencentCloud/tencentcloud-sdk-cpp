@@ -341,6 +341,49 @@ FaceidClient::GetLiveCodeOutcomeCallable FaceidClient::GetLiveCodeCallable(const
     return task->get_future();
 }
 
+FaceidClient::IdCardOCRVerificationOutcome FaceidClient::IdCardOCRVerification(const IdCardOCRVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "IdCardOCRVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IdCardOCRVerificationResponse rsp = IdCardOCRVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IdCardOCRVerificationOutcome(rsp);
+        else
+            return IdCardOCRVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return IdCardOCRVerificationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::IdCardOCRVerificationAsync(const IdCardOCRVerificationRequest& request, const IdCardOCRVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IdCardOCRVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::IdCardOCRVerificationOutcomeCallable FaceidClient::IdCardOCRVerificationCallable(const IdCardOCRVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IdCardOCRVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->IdCardOCRVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::IdCardVerificationOutcome FaceidClient::IdCardVerification(const IdCardVerificationRequest &request)
 {
     auto outcome = MakeRequest(request, "IdCardVerification");

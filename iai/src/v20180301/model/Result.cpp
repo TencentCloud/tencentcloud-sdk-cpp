@@ -23,7 +23,8 @@ using namespace std;
 
 Result::Result() :
     m_candidatesHasBeenSet(false),
-    m_faceRectHasBeenSet(false)
+    m_faceRectHasBeenSet(false),
+    m_retCodeHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome Result::Deserialize(const Value &value)
         m_faceRectHasBeenSet = true;
     }
 
+    if (value.HasMember("RetCode") && !value["RetCode"].IsNull())
+    {
+        if (!value["RetCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Result.RetCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retCode = value["RetCode"].GetInt64();
+        m_retCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +109,14 @@ void Result::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_faceRect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_retCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RetCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retCode, allocator);
     }
 
 }
@@ -133,5 +152,21 @@ void Result::SetFaceRect(const FaceRect& _faceRect)
 bool Result::FaceRectHasBeenSet() const
 {
     return m_faceRectHasBeenSet;
+}
+
+int64_t Result::GetRetCode() const
+{
+    return m_retCode;
+}
+
+void Result::SetRetCode(const int64_t& _retCode)
+{
+    m_retCode = _retCode;
+    m_retCodeHasBeenSet = true;
+}
+
+bool Result::RetCodeHasBeenSet() const
+{
+    return m_retCodeHasBeenSet;
 }
 

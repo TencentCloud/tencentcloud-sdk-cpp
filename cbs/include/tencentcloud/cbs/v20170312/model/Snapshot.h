@@ -354,6 +354,24 @@ namespace TencentCloud
                      */
                     bool SnapshotTypeHasBeenSet() const;
 
+                    /**
+                     * 获取快照当前被共享数
+                     * @return ShareReference 快照当前被共享数
+                     */
+                    uint64_t GetShareReference() const;
+
+                    /**
+                     * 设置快照当前被共享数
+                     * @param ShareReference 快照当前被共享数
+                     */
+                    void SetShareReference(const uint64_t& _shareReference);
+
+                    /**
+                     * 判断参数 ShareReference 是否已赋值
+                     * @return ShareReference 是否已赋值
+                     */
+                    bool ShareReferenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -457,6 +475,12 @@ namespace TencentCloud
                      */
                     std::string m_snapshotType;
                     bool m_snapshotTypeHasBeenSet;
+
+                    /**
+                     * 快照当前被共享数
+                     */
+                    uint64_t m_shareReference;
+                    bool m_shareReferenceHasBeenSet;
 
                 };
             }

@@ -29,8 +29,12 @@
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h>
+#include <tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h>
+#include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h>
@@ -60,9 +64,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InquiryPriceCreateInstanceResponse> InquiryPriceCreateInstanceOutcome;
                 typedef std::future<InquiryPriceCreateInstanceOutcome> InquiryPriceCreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquiryPriceCreateInstanceRequest&, InquiryPriceCreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateInstanceAsyncHandler;
+                typedef Outcome<Error, Model::InquiryPriceRenewInstanceResponse> InquiryPriceRenewInstanceOutcome;
+                typedef std::future<InquiryPriceRenewInstanceOutcome> InquiryPriceRenewInstanceOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::InquiryPriceRenewInstanceRequest&, InquiryPriceRenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewInstanceAsyncHandler;
                 typedef Outcome<Error, Model::InquiryPriceScaleOutInstanceResponse> InquiryPriceScaleOutInstanceOutcome;
                 typedef std::future<InquiryPriceScaleOutInstanceOutcome> InquiryPriceScaleOutInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquiryPriceScaleOutInstanceRequest&, InquiryPriceScaleOutInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceScaleOutInstanceAsyncHandler;
+                typedef Outcome<Error, Model::InquiryPriceUpdateInstanceResponse> InquiryPriceUpdateInstanceOutcome;
+                typedef std::future<InquiryPriceUpdateInstanceOutcome> InquiryPriceUpdateInstanceOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::InquiryPriceUpdateInstanceRequest&, InquiryPriceUpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpdateInstanceAsyncHandler;
                 typedef Outcome<Error, Model::ScaleOutInstanceResponse> ScaleOutInstanceOutcome;
                 typedef std::future<ScaleOutInstanceOutcome> ScaleOutInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ScaleOutInstanceRequest&, ScaleOutInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutInstanceAsyncHandler;
@@ -103,6 +113,15 @@ namespace TencentCloud
                 InquiryPriceCreateInstanceOutcomeCallable InquiryPriceCreateInstanceCallable(const Model::InquiryPriceCreateInstanceRequest& request);
 
                 /**
+                 *续费询价。
+                 * @param req InquiryPriceRenewInstanceRequest
+                 * @return InquiryPriceRenewInstanceOutcome
+                 */
+                InquiryPriceRenewInstanceOutcome InquiryPriceRenewInstance(const Model::InquiryPriceRenewInstanceRequest &request);
+                void InquiryPriceRenewInstanceAsync(const Model::InquiryPriceRenewInstanceRequest& request, const InquiryPriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceRenewInstanceOutcomeCallable InquiryPriceRenewInstanceCallable(const Model::InquiryPriceRenewInstanceRequest& request);
+
+                /**
                  *扩容询价. 当扩容时候，请通过该接口查询价格。
                  * @param req InquiryPriceScaleOutInstanceRequest
                  * @return InquiryPriceScaleOutInstanceOutcome
@@ -110,6 +129,15 @@ namespace TencentCloud
                 InquiryPriceScaleOutInstanceOutcome InquiryPriceScaleOutInstance(const Model::InquiryPriceScaleOutInstanceRequest &request);
                 void InquiryPriceScaleOutInstanceAsync(const Model::InquiryPriceScaleOutInstanceRequest& request, const InquiryPriceScaleOutInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceScaleOutInstanceOutcomeCallable InquiryPriceScaleOutInstanceCallable(const Model::InquiryPriceScaleOutInstanceRequest& request);
+
+                /**
+                 *变配询价
+                 * @param req InquiryPriceUpdateInstanceRequest
+                 * @return InquiryPriceUpdateInstanceOutcome
+                 */
+                InquiryPriceUpdateInstanceOutcome InquiryPriceUpdateInstance(const Model::InquiryPriceUpdateInstanceRequest &request);
+                void InquiryPriceUpdateInstanceAsync(const Model::InquiryPriceUpdateInstanceRequest& request, const InquiryPriceUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceUpdateInstanceOutcomeCallable InquiryPriceUpdateInstanceCallable(const Model::InquiryPriceUpdateInstanceRequest& request);
 
                 /**
                  *实例扩容

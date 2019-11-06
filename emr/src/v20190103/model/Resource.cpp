@@ -1,0 +1,339 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/emr/v20190103/model/Resource.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Emr::V20190103::Model;
+using namespace rapidjson;
+using namespace std;
+
+Resource::Resource() :
+    m_specHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_diskTypeHasBeenSet(false),
+    m_memSizeHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_diskSizeHasBeenSet(false),
+    m_rootSizeHasBeenSet(false),
+    m_multiDisksHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome Resource::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Spec") && !value["Spec"].IsNull())
+    {
+        if (!value["Spec"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Resource.Spec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_spec = string(value["Spec"].GetString());
+        m_specHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageType") && !value["StorageType"].IsNull())
+    {
+        if (!value["StorageType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Resource.StorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageType = value["StorageType"].GetInt64();
+        m_storageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskType") && !value["DiskType"].IsNull())
+    {
+        if (!value["DiskType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Resource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskType = string(value["DiskType"].GetString());
+        m_diskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemSize") && !value["MemSize"].IsNull())
+    {
+        if (!value["MemSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Resource.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memSize = value["MemSize"].GetInt64();
+        m_memSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Resource.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetInt64();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskSize") && !value["DiskSize"].IsNull())
+    {
+        if (!value["DiskSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Resource.DiskSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskSize = value["DiskSize"].GetInt64();
+        m_diskSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RootSize") && !value["RootSize"].IsNull())
+    {
+        if (!value["RootSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Resource.RootSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rootSize = value["RootSize"].GetInt64();
+        m_rootSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MultiDisks") && !value["MultiDisks"].IsNull())
+    {
+        if (!value["MultiDisks"].IsArray())
+            return CoreInternalOutcome(Error("response `Resource.MultiDisks` is not array type"));
+
+        const Value &tmpValue = value["MultiDisks"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MultiDisk item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiDisks.push_back(item);
+        }
+        m_multiDisksHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void Resource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_specHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Spec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_spec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageType, allocator);
+    }
+
+    if (m_diskTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MemSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memSize, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_diskSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_rootSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RootSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rootSize, allocator);
+    }
+
+    if (m_multiDisksHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiDisks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiDisks.begin(); itr != m_multiDisks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+}
+
+
+string Resource::GetSpec() const
+{
+    return m_spec;
+}
+
+void Resource::SetSpec(const string& _spec)
+{
+    m_spec = _spec;
+    m_specHasBeenSet = true;
+}
+
+bool Resource::SpecHasBeenSet() const
+{
+    return m_specHasBeenSet;
+}
+
+int64_t Resource::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void Resource::SetStorageType(const int64_t& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool Resource::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
+}
+
+string Resource::GetDiskType() const
+{
+    return m_diskType;
+}
+
+void Resource::SetDiskType(const string& _diskType)
+{
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
+}
+
+bool Resource::DiskTypeHasBeenSet() const
+{
+    return m_diskTypeHasBeenSet;
+}
+
+int64_t Resource::GetMemSize() const
+{
+    return m_memSize;
+}
+
+void Resource::SetMemSize(const int64_t& _memSize)
+{
+    m_memSize = _memSize;
+    m_memSizeHasBeenSet = true;
+}
+
+bool Resource::MemSizeHasBeenSet() const
+{
+    return m_memSizeHasBeenSet;
+}
+
+int64_t Resource::GetCpu() const
+{
+    return m_cpu;
+}
+
+void Resource::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool Resource::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+int64_t Resource::GetDiskSize() const
+{
+    return m_diskSize;
+}
+
+void Resource::SetDiskSize(const int64_t& _diskSize)
+{
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
+}
+
+bool Resource::DiskSizeHasBeenSet() const
+{
+    return m_diskSizeHasBeenSet;
+}
+
+int64_t Resource::GetRootSize() const
+{
+    return m_rootSize;
+}
+
+void Resource::SetRootSize(const int64_t& _rootSize)
+{
+    m_rootSize = _rootSize;
+    m_rootSizeHasBeenSet = true;
+}
+
+bool Resource::RootSizeHasBeenSet() const
+{
+    return m_rootSizeHasBeenSet;
+}
+
+vector<MultiDisk> Resource::GetMultiDisks() const
+{
+    return m_multiDisks;
+}
+
+void Resource::SetMultiDisks(const vector<MultiDisk>& _multiDisks)
+{
+    m_multiDisks = _multiDisks;
+    m_multiDisksHasBeenSet = true;
+}
+
+bool Resource::MultiDisksHasBeenSet() const
+{
+    return m_multiDisksHasBeenSet;
+}
+

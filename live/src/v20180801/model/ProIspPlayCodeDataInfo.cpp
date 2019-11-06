@@ -24,6 +24,8 @@ using namespace std;
 ProIspPlayCodeDataInfo::ProIspPlayCodeDataInfo() :
     m_provinceNameHasBeenSet(false),
     m_ispNameHasBeenSet(false),
+    m_code2xxHasBeenSet(false),
+    m_code3xxHasBeenSet(false),
     m_code4xxHasBeenSet(false),
     m_code5xxHasBeenSet(false)
 {
@@ -52,6 +54,26 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const Value &value)
         }
         m_ispName = string(value["IspName"].GetString());
         m_ispNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Code2xx") && !value["Code2xx"].IsNull())
+    {
+        if (!value["Code2xx"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.Code2xx` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_code2xx = value["Code2xx"].GetUint64();
+        m_code2xxHasBeenSet = true;
+    }
+
+    if (value.HasMember("Code3xx") && !value["Code3xx"].IsNull())
+    {
+        if (!value["Code3xx"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.Code3xx` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_code3xx = value["Code3xx"].GetUint64();
+        m_code3xxHasBeenSet = true;
     }
 
     if (value.HasMember("Code4xx") && !value["Code4xx"].IsNull())
@@ -95,6 +117,22 @@ void ProIspPlayCodeDataInfo::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_code2xxHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Code2xx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_code2xx, allocator);
+    }
+
+    if (m_code3xxHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Code3xx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_code3xx, allocator);
     }
 
     if (m_code4xxHasBeenSet)
@@ -146,6 +184,38 @@ void ProIspPlayCodeDataInfo::SetIspName(const string& _ispName)
 bool ProIspPlayCodeDataInfo::IspNameHasBeenSet() const
 {
     return m_ispNameHasBeenSet;
+}
+
+uint64_t ProIspPlayCodeDataInfo::GetCode2xx() const
+{
+    return m_code2xx;
+}
+
+void ProIspPlayCodeDataInfo::SetCode2xx(const uint64_t& _code2xx)
+{
+    m_code2xx = _code2xx;
+    m_code2xxHasBeenSet = true;
+}
+
+bool ProIspPlayCodeDataInfo::Code2xxHasBeenSet() const
+{
+    return m_code2xxHasBeenSet;
+}
+
+uint64_t ProIspPlayCodeDataInfo::GetCode3xx() const
+{
+    return m_code3xx;
+}
+
+void ProIspPlayCodeDataInfo::SetCode3xx(const uint64_t& _code3xx)
+{
+    m_code3xx = _code3xx;
+    m_code3xxHasBeenSet = true;
+}
+
+bool ProIspPlayCodeDataInfo::Code3xxHasBeenSet() const
+{
+    return m_code3xxHasBeenSet;
 }
 
 uint64_t ProIspPlayCodeDataInfo::GetCode4xx() const

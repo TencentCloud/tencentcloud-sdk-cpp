@@ -212,6 +212,49 @@ IottidClient::DeliverTidsOutcomeCallable IottidClient::DeliverTidsCallable(const
     return task->get_future();
 }
 
+IottidClient::DescribeAvailableLibCountOutcome IottidClient::DescribeAvailableLibCount(const DescribeAvailableLibCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAvailableLibCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAvailableLibCountResponse rsp = DescribeAvailableLibCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAvailableLibCountOutcome(rsp);
+        else
+            return DescribeAvailableLibCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAvailableLibCountOutcome(outcome.GetError());
+    }
+}
+
+void IottidClient::DescribeAvailableLibCountAsync(const DescribeAvailableLibCountRequest& request, const DescribeAvailableLibCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAvailableLibCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IottidClient::DescribeAvailableLibCountOutcomeCallable IottidClient::DescribeAvailableLibCountCallable(const DescribeAvailableLibCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAvailableLibCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAvailableLibCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IottidClient::DescribePermissionOutcome IottidClient::DescribePermission(const DescribePermissionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePermission");
@@ -291,6 +334,49 @@ IottidClient::DownloadTidsOutcomeCallable IottidClient::DownloadTidsCallable(con
         [this, request]()
         {
             return this->DownloadTids(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IottidClient::UploadDeviceUniqueCodeOutcome IottidClient::UploadDeviceUniqueCode(const UploadDeviceUniqueCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadDeviceUniqueCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadDeviceUniqueCodeResponse rsp = UploadDeviceUniqueCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadDeviceUniqueCodeOutcome(rsp);
+        else
+            return UploadDeviceUniqueCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadDeviceUniqueCodeOutcome(outcome.GetError());
+    }
+}
+
+void IottidClient::UploadDeviceUniqueCodeAsync(const UploadDeviceUniqueCodeRequest& request, const UploadDeviceUniqueCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadDeviceUniqueCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IottidClient::UploadDeviceUniqueCodeOutcomeCallable IottidClient::UploadDeviceUniqueCodeCallable(const UploadDeviceUniqueCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadDeviceUniqueCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadDeviceUniqueCode(request);
         }
     );
 

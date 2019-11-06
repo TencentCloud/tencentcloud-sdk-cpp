@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
@@ -81,6 +85,12 @@ namespace TencentCloud
                 IotexplorerClient(const Credential &credential, const std::string &region);
                 IotexplorerClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CallDeviceActionAsyncResponse> CallDeviceActionAsyncOutcome;
+                typedef std::future<CallDeviceActionAsyncOutcome> CallDeviceActionAsyncOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CallDeviceActionAsyncRequest&, CallDeviceActionAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionAsyncAsyncHandler;
+                typedef Outcome<Error, Model::CallDeviceActionSyncResponse> CallDeviceActionSyncOutcome;
+                typedef std::future<CallDeviceActionSyncOutcome> CallDeviceActionSyncOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CallDeviceActionSyncRequest&, CallDeviceActionSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionSyncAsyncHandler;
                 typedef Outcome<Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
                 typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
@@ -149,6 +159,24 @@ namespace TencentCloud
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchStudioProductRequest&, SearchStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchStudioProductAsyncHandler;
 
 
+
+                /**
+                 *提供给用户异步调用设备动作的能力
+                 * @param req CallDeviceActionAsyncRequest
+                 * @return CallDeviceActionAsyncOutcome
+                 */
+                CallDeviceActionAsyncOutcome CallDeviceActionAsync(const Model::CallDeviceActionAsyncRequest &request);
+                void CallDeviceActionAsyncAsync(const Model::CallDeviceActionAsyncRequest& request, const CallDeviceActionAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallDeviceActionAsyncOutcomeCallable CallDeviceActionAsyncCallable(const Model::CallDeviceActionAsyncRequest& request);
+
+                /**
+                 *为用户提供同步调用设备动作的能力。
+                 * @param req CallDeviceActionSyncRequest
+                 * @return CallDeviceActionSyncOutcome
+                 */
+                CallDeviceActionSyncOutcome CallDeviceActionSync(const Model::CallDeviceActionSyncRequest &request);
+                void CallDeviceActionSyncAsync(const Model::CallDeviceActionSyncRequest& request, const CallDeviceActionSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallDeviceActionSyncOutcomeCallable CallDeviceActionSyncCallable(const Model::CallDeviceActionSyncRequest& request);
 
                 /**
                  *根据设备产品ID、设备名称，设置控制设备的属性数据。

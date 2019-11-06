@@ -35,13 +35,15 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
     m_cOSSettingsHasBeenSet(false),
     m_sgIdHasBeenSet(false),
     m_preExecutedFileSettingsHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_needMasterWanHasBeenSet(false),
-    m_remoteLoginAtCreateHasBeenSet(false)
+    m_remoteLoginAtCreateHasBeenSet(false),
+    m_checkSecurityHasBeenSet(false),
+    m_extendFsFieldHasBeenSet(false)
 {
 }
 
@@ -149,14 +151,6 @@ string CreateInstanceRequest::ToJsonString() const
         m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_clientTokenHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ClientToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_cOSSettingsHasBeenSet)
     {
         Value iKey(kStringType);
@@ -197,6 +191,14 @@ string CreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_autoRenew, allocator);
     }
 
+    if (m_clientTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_needMasterWanHasBeenSet)
     {
         Value iKey(kStringType);
@@ -211,6 +213,22 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "RemoteLoginAtCreate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_remoteLoginAtCreate, allocator);
+    }
+
+    if (m_checkSecurityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CheckSecurity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkSecurity, allocator);
+    }
+
+    if (m_extendFsFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtendFsField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extendFsField.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,12 +287,12 @@ bool CreateInstanceRequest::SoftwareHasBeenSet() const
     return m_softwareHasBeenSet;
 }
 
-ResourceSpec CreateInstanceRequest::GetResourceSpec() const
+NewResourceSpec CreateInstanceRequest::GetResourceSpec() const
 {
     return m_resourceSpec;
 }
 
-void CreateInstanceRequest::SetResourceSpec(const ResourceSpec& _resourceSpec)
+void CreateInstanceRequest::SetResourceSpec(const NewResourceSpec& _resourceSpec)
 {
     m_resourceSpec = _resourceSpec;
     m_resourceSpecHasBeenSet = true;
@@ -397,22 +415,6 @@ bool CreateInstanceRequest::LoginSettingsHasBeenSet() const
     return m_loginSettingsHasBeenSet;
 }
 
-string CreateInstanceRequest::GetClientToken() const
-{
-    return m_clientToken;
-}
-
-void CreateInstanceRequest::SetClientToken(const string& _clientToken)
-{
-    m_clientToken = _clientToken;
-    m_clientTokenHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::ClientTokenHasBeenSet() const
-{
-    return m_clientTokenHasBeenSet;
-}
-
 COSSettings CreateInstanceRequest::GetCOSSettings() const
 {
     return m_cOSSettings;
@@ -477,6 +479,22 @@ bool CreateInstanceRequest::AutoRenewHasBeenSet() const
     return m_autoRenewHasBeenSet;
 }
 
+string CreateInstanceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateInstanceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
+}
+
 string CreateInstanceRequest::GetNeedMasterWan() const
 {
     return m_needMasterWan;
@@ -507,6 +525,38 @@ void CreateInstanceRequest::SetRemoteLoginAtCreate(const int64_t& _remoteLoginAt
 bool CreateInstanceRequest::RemoteLoginAtCreateHasBeenSet() const
 {
     return m_remoteLoginAtCreateHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetCheckSecurity() const
+{
+    return m_checkSecurity;
+}
+
+void CreateInstanceRequest::SetCheckSecurity(const int64_t& _checkSecurity)
+{
+    m_checkSecurity = _checkSecurity;
+    m_checkSecurityHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::CheckSecurityHasBeenSet() const
+{
+    return m_checkSecurityHasBeenSet;
+}
+
+string CreateInstanceRequest::GetExtendFsField() const
+{
+    return m_extendFsField;
+}
+
+void CreateInstanceRequest::SetExtendFsField(const string& _extendFsField)
+{
+    m_extendFsField = _extendFsField;
+    m_extendFsFieldHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ExtendFsFieldHasBeenSet() const
+{
+    return m_extendFsFieldHasBeenSet;
 }
 
 

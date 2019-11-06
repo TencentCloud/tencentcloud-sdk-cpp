@@ -788,6 +788,50 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool ExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否可绑定高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDDos 是否可绑定高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsDDos() const;
+
+                    /**
+                     * 设置是否可绑定高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsDDos 是否可绑定高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsDDos(const bool& _isDDos);
+
+                    /**
+                     * 判断参数 IsDDos 是否已赋值
+                     * @return IsDDos 是否已赋值
+                     */
+                    bool IsDDosHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡维度的个性化配置ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigId 负载均衡维度的个性化配置ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConfigId() const;
+
+                    /**
+                     * 设置负载均衡维度的个性化配置ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigId 负载均衡维度的个性化配置ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigId(const std::string& _configId);
+
+                    /**
+                     * 判断参数 ConfigId 是否已赋值
+                     * @return ConfigId 是否已赋值
+                     */
+                    bool ConfigIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1024,6 +1068,20 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     ExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;
+
+                    /**
+                     * 是否可绑定高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDDos;
+                    bool m_isDDosHasBeenSet;
+
+                    /**
+                     * 负载均衡维度的个性化配置ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_configId;
+                    bool m_configIdHasBeenSet;
 
                 };
             }

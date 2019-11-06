@@ -75,6 +75,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteMigrationRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DBPrivilegeModifyInfo.h
+  include/tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateDBRequest.h
   include/tencentcloud/sqlserver/v20180328/model/InquiryPriceUpgradeDBInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceNameRequest.h
@@ -116,6 +117,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ResetAccountPasswordRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeSlowlogsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeAccountsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/RollbackInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceResponse.h
@@ -183,6 +185,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeFlowStatusResponse.cpp
   src/v20180328/model/DeleteMigrationRequest.cpp
   src/v20180328/model/DBPrivilegeModifyInfo.cpp
+  src/v20180328/model/TerminateDBInstanceRequest.cpp
   src/v20180328/model/CreateDBRequest.cpp
   src/v20180328/model/InquiryPriceUpgradeDBInstanceRequest.cpp
   src/v20180328/model/ModifyDBInstanceNameRequest.cpp
@@ -224,6 +227,7 @@ set(sqlserver_src
   src/v20180328/model/ResetAccountPasswordRequest.cpp
   src/v20180328/model/DescribeSlowlogsRequest.cpp
   src/v20180328/model/ModifyDBInstanceProjectRequest.cpp
+  src/v20180328/model/TerminateDBInstanceResponse.cpp
   src/v20180328/model/DescribeAccountsResponse.cpp
   src/v20180328/model/RollbackInstanceRequest.cpp
   src/v20180328/model/UpgradeDBInstanceResponse.cpp

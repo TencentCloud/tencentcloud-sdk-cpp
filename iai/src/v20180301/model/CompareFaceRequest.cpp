@@ -27,7 +27,9 @@ CompareFaceRequest::CompareFaceRequest() :
     m_imageAHasBeenSet(false),
     m_imageBHasBeenSet(false),
     m_urlAHasBeenSet(false),
-    m_urlBHasBeenSet(false)
+    m_urlBHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false),
+    m_qualityControlHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string CompareFaceRequest::ToJsonString() const
         string key = "UrlB";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_urlB.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_faceModelVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualityControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QualityControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualityControl, allocator);
     }
 
 
@@ -140,6 +158,38 @@ void CompareFaceRequest::SetUrlB(const string& _urlB)
 bool CompareFaceRequest::UrlBHasBeenSet() const
 {
     return m_urlBHasBeenSet;
+}
+
+string CompareFaceRequest::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+void CompareFaceRequest::SetFaceModelVersion(const string& _faceModelVersion)
+{
+    m_faceModelVersion = _faceModelVersion;
+    m_faceModelVersionHasBeenSet = true;
+}
+
+bool CompareFaceRequest::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
+}
+
+uint64_t CompareFaceRequest::GetQualityControl() const
+{
+    return m_qualityControl;
+}
+
+void CompareFaceRequest::SetQualityControl(const uint64_t& _qualityControl)
+{
+    m_qualityControl = _qualityControl;
+    m_qualityControlHasBeenSet = true;
+}
+
+bool CompareFaceRequest::QualityControlHasBeenSet() const
+{
+    return m_qualityControlHasBeenSet;
 }
 
 

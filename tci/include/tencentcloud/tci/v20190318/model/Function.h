@@ -83,6 +83,24 @@ namespace TencentCloud
                     bool EnableKeywordHasBeenSet() const;
 
                     /**
+                     * 获取静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     * @return EnableMuteDetect 静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     */
+                    bool GetEnableMuteDetect() const;
+
+                    /**
+                     * 设置静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     * @param EnableMuteDetect 静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     */
+                    void SetEnableMuteDetect(const bool& _enableMuteDetect);
+
+                    /**
+                     * 判断参数 EnableMuteDetect 是否已赋值
+                     * @return EnableMuteDetect 是否已赋值
+                     */
+                    bool EnableMuteDetectHasBeenSet() const;
+
+                    /**
                      * 获取输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）
                      * @return EnableVadInfo 输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）
                      */
@@ -131,6 +149,12 @@ namespace TencentCloud
                      */
                     bool m_enableKeyword;
                     bool m_enableKeywordHasBeenSet;
+
+                    /**
+                     * 静音检测标识，当设置为 true 时，需要设置静音时间阈值字段mute_threshold，统计结果中会返回静音片段。
+                     */
+                    bool m_enableMuteDetect;
+                    bool m_enableMuteDetectHasBeenSet;
 
                     /**
                      * 输出音频统计信息标识，当设置为 true 时，任务查询结果会输出音频的统计信息（AsrStat）

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/Label.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,24 @@ namespace TencentCloud
                      */
                     bool UnschedulableHasBeenSet() const;
 
+                    /**
+                     * 获取节点Label数组
+                     * @return Labels 节点Label数组
+                     */
+                    std::vector<Label> GetLabels() const;
+
+                    /**
+                     * 设置节点Label数组
+                     * @param Labels 节点Label数组
+                     */
+                    void SetLabels(const std::vector<Label>& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +162,12 @@ namespace TencentCloud
                      */
                     int64_t m_unschedulable;
                     bool m_unschedulableHasBeenSet;
+
+                    /**
+                     * 节点Label数组
+                     */
+                    std::vector<Label> m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }

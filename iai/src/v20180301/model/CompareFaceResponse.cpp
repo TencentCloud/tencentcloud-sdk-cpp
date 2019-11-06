@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 CompareFaceResponse::CompareFaceResponse() :
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CompareFaceResponse::Deserialize(const string &payload)
         m_scoreHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ double CompareFaceResponse::GetScore() const
 bool CompareFaceResponse::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+string CompareFaceResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool CompareFaceResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

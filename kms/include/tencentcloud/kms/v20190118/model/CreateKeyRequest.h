@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool KeyUsageHasBeenSet() const;
 
                     /**
-                     * 获取指定key类型，1为当前地域默认类型，默认为1，且当前只支持该类型
-                     * @return Type 指定key类型，1为当前地域默认类型，默认为1，且当前只支持该类型
+                     * 获取指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口
+                     * @return Type 指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置指定key类型，1为当前地域默认类型，默认为1，且当前只支持该类型
-                     * @param Type 指定key类型，1为当前地域默认类型，默认为1，且当前只支持该类型
+                     * 设置指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口
+                     * @param Type 指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口
                      */
                     void SetType(const uint64_t& _type);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_keyUsageHasBeenSet;
 
                     /**
-                     * 指定key类型，1为当前地域默认类型，默认为1，且当前只支持该类型
+                     * 指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

@@ -27,7 +27,9 @@ GetDisableRecordsRequest::GetDisableRecordsRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string GetDisableRecordsRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -140,6 +158,38 @@ void GetDisableRecordsRequest::SetStatus(const string& _status)
 bool GetDisableRecordsRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t GetDisableRecordsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void GetDisableRecordsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool GetDisableRecordsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t GetDisableRecordsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void GetDisableRecordsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool GetDisableRecordsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

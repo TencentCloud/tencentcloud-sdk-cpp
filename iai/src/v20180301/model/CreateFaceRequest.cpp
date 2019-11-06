@@ -26,7 +26,9 @@ using namespace std;
 CreateFaceRequest::CreateFaceRequest() :
     m_personIdHasBeenSet(false),
     m_imagesHasBeenSet(false),
-    m_urlsHasBeenSet(false)
+    m_urlsHasBeenSet(false),
+    m_faceMatchThresholdHasBeenSet(false),
+    m_qualityControlHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,22 @@ string CreateFaceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_faceMatchThresholdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceMatchThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_faceMatchThreshold, allocator);
+    }
+
+    if (m_qualityControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QualityControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualityControl, allocator);
     }
 
 
@@ -125,6 +143,38 @@ void CreateFaceRequest::SetUrls(const vector<string>& _urls)
 bool CreateFaceRequest::UrlsHasBeenSet() const
 {
     return m_urlsHasBeenSet;
+}
+
+double CreateFaceRequest::GetFaceMatchThreshold() const
+{
+    return m_faceMatchThreshold;
+}
+
+void CreateFaceRequest::SetFaceMatchThreshold(const double& _faceMatchThreshold)
+{
+    m_faceMatchThreshold = _faceMatchThreshold;
+    m_faceMatchThresholdHasBeenSet = true;
+}
+
+bool CreateFaceRequest::FaceMatchThresholdHasBeenSet() const
+{
+    return m_faceMatchThresholdHasBeenSet;
+}
+
+uint64_t CreateFaceRequest::GetQualityControl() const
+{
+    return m_qualityControl;
+}
+
+void CreateFaceRequest::SetQualityControl(const uint64_t& _qualityControl)
+{
+    m_qualityControl = _qualityControl;
+    m_qualityControlHasBeenSet = true;
+}
+
+bool CreateFaceRequest::QualityControlHasBeenSet() const
+{
+    return m_qualityControlHasBeenSet;
 }
 
 

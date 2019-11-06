@@ -34,11 +34,11 @@ CoreInternalOutcome Placement::Deserialize(const Value &value)
 
     if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
     {
-        if (!value["ProjectId"].IsUint64())
+        if (!value["ProjectId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Placement.ProjectId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Placement.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_projectId = value["ProjectId"].GetUint64();
+        m_projectId = value["ProjectId"].GetInt64();
         m_projectIdHasBeenSet = true;
     }
 
@@ -78,12 +78,12 @@ void Placement::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 }
 
 
-uint64_t Placement::GetProjectId() const
+int64_t Placement::GetProjectId() const
 {
     return m_projectId;
 }
 
-void Placement::SetProjectId(const uint64_t& _projectId)
+void Placement::SetProjectId(const int64_t& _projectId)
 {
     m_projectId = _projectId;
     m_projectIdHasBeenSet = true;

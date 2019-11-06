@@ -30,6 +30,7 @@ SubmitAudioTaskRequest::SubmitAudioTaskRequest() :
     m_voiceFileTypeHasBeenSet(false),
     m_functionsHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
+    m_muteThresholdHasBeenSet(false),
     m_vocabLibNameListHasBeenSet(false)
 {
 }
@@ -88,6 +89,14 @@ string SubmitAudioTaskRequest::ToJsonString() const
         string key = "FileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_muteThresholdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MuteThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_muteThreshold, allocator);
     }
 
     if (m_vocabLibNameListHasBeenSet)
@@ -205,6 +214,22 @@ void SubmitAudioTaskRequest::SetFileType(const string& _fileType)
 bool SubmitAudioTaskRequest::FileTypeHasBeenSet() const
 {
     return m_fileTypeHasBeenSet;
+}
+
+int64_t SubmitAudioTaskRequest::GetMuteThreshold() const
+{
+    return m_muteThreshold;
+}
+
+void SubmitAudioTaskRequest::SetMuteThreshold(const int64_t& _muteThreshold)
+{
+    m_muteThreshold = _muteThreshold;
+    m_muteThresholdHasBeenSet = true;
+}
+
+bool SubmitAudioTaskRequest::MuteThresholdHasBeenSet() const
+{
+    return m_muteThresholdHasBeenSet;
 }
 
 vector<string> SubmitAudioTaskRequest::GetVocabLibNameList() const

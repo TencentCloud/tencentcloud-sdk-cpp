@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribePayTypeRequest::DescribePayTypeRequest()
+DescribePayTypeRequest::DescribePayTypeRequest() :
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,14 @@ string DescribePayTypeRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +50,21 @@ string DescribePayTypeRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePayTypeRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribePayTypeRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribePayTypeRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
+}
 
 

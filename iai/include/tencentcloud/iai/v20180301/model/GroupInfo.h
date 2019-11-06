@@ -156,7 +156,7 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
 Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetCreationTimestamp() const;
+                    uint64_t GetCreationTimestamp() const;
 
                     /**
                      * 设置Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
@@ -166,7 +166,7 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
 Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetCreationTimestamp(const std::string& _creationTimestamp);
+                    void SetCreationTimestamp(const uint64_t& _creationTimestamp);
 
                     /**
                      * 判断参数 CreationTimestamp 是否已赋值
@@ -214,7 +214,7 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
 Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_creationTimestamp;
+                    uint64_t m_creationTimestamp;
                     bool m_creationTimestampHasBeenSet;
 
                 };

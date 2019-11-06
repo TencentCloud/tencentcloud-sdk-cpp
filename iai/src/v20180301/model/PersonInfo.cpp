@@ -26,7 +26,8 @@ PersonInfo::PersonInfo() :
     m_personIdHasBeenSet(false),
     m_genderHasBeenSet(false),
     m_personExDescriptionsHasBeenSet(false),
-    m_faceIdsHasBeenSet(false)
+    m_faceIdsHasBeenSet(false),
+    m_creationTimestampHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome PersonInfo::Deserialize(const Value &value)
         m_faceIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("CreationTimestamp") && !value["CreationTimestamp"].IsNull())
+    {
+        if (!value["CreationTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PersonInfo.CreationTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_creationTimestamp = value["CreationTimestamp"].GetUint64();
+        m_creationTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_creationTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreationTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_creationTimestamp, allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void PersonInfo::SetFaceIds(const vector<string>& _faceIds)
 bool PersonInfo::FaceIdsHasBeenSet() const
 {
     return m_faceIdsHasBeenSet;
+}
+
+uint64_t PersonInfo::GetCreationTimestamp() const
+{
+    return m_creationTimestamp;
+}
+
+void PersonInfo::SetCreationTimestamp(const uint64_t& _creationTimestamp)
+{
+    m_creationTimestamp = _creationTimestamp;
+    m_creationTimestampHasBeenSet = true;
+}
+
+bool PersonInfo::CreationTimestampHasBeenSet() const
+{
+    return m_creationTimestampHasBeenSet;
 }
 

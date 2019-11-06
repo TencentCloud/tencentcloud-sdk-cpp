@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑片段涉政分数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 嫌疑片段涉政分数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置嫌疑片段涉政分数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Confidence 嫌疑片段涉政分数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -117,12 +105,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 嫌疑片段鉴政结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
@@ -131,12 +117,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Suggestion 嫌疑片段鉴政结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -148,17 +132,13 @@ namespace TencentCloud
 
                     /**
                      * 获取涉政人物、违规图标名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 涉政人物、违规图标名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置涉政人物、违规图标名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 涉政人物、违规图标名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -170,17 +150,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑片段鉴政结果标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 嫌疑片段鉴政结果标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置嫌疑片段鉴政结果标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Label 嫌疑片段鉴政结果标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -193,20 +169,16 @@ namespace TencentCloud
                     /**
                      * 获取嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Url 嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -218,17 +190,13 @@ namespace TencentCloud
 
                     /**
                      * 获取涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AreaCoordSet 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AreaCoordSet 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
@@ -239,18 +207,14 @@ namespace TencentCloud
                     bool AreaCoordSetHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PicUrlExpireTimeStamp 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取该字段已废弃，请使用 PicUrlExpireTime。
+                     * @return PicUrlExpireTimeStamp 该字段已废弃，请使用 PicUrlExpireTime。
                      */
                     int64_t GetPicUrlExpireTimeStamp() const;
 
                     /**
-                     * 设置嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PicUrlExpireTimeStamp 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置该字段已废弃，请使用 PicUrlExpireTime。
+                     * @param PicUrlExpireTimeStamp 该字段已废弃，请使用 PicUrlExpireTime。
                      */
                     void SetPicUrlExpireTimeStamp(const int64_t& _picUrlExpireTimeStamp);
 
@@ -260,25 +224,40 @@ namespace TencentCloud
                      */
                     bool PicUrlExpireTimeStampHasBeenSet() const;
 
+                    /**
+                     * 获取嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * @return PicUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     */
+                    std::string GetPicUrlExpireTime() const;
+
+                    /**
+                     * 设置嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * @param PicUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     */
+                    void SetPicUrlExpireTime(const std::string& _picUrlExpireTime);
+
+                    /**
+                     * 判断参数 PicUrlExpireTime 是否已赋值
+                     * @return PicUrlExpireTime 是否已赋值
+                     */
+                    bool PicUrlExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
                      * 嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
                      * 嫌疑片段涉政分数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
@@ -288,21 +267,18 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 涉政人物、违规图标名字。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 嫌疑片段鉴政结果标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
@@ -310,24 +286,27 @@ namespace TencentCloud
                     /**
                      * 嫌疑图片 URL （图片不会永久存储，到达
  PicUrlExpireTime 时间点后图片将被删除）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;
 
                     /**
-                     * 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 该字段已废弃，请使用 PicUrlExpireTime。
                      */
                     int64_t m_picUrlExpireTimeStamp;
                     bool m_picUrlExpireTimeStampHasBeenSet;
+
+                    /**
+                     * 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     */
+                    std::string m_picUrlExpireTime;
+                    bool m_picUrlExpireTimeHasBeenSet;
 
                 };
             }

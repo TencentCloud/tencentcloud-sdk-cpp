@@ -54,6 +54,30 @@ namespace TencentCloud
                      */
                     bool PassHasBeenSet() const;
 
+                    /**
+                     * 获取已验证次数
+                     * @return VerifiedTimes 已验证次数
+                     */
+                    uint64_t GetVerifiedTimes() const;
+
+                    /**
+                     * 判断参数 VerifiedTimes 是否已赋值
+                     * @return VerifiedTimes 是否已赋值
+                     */
+                    bool VerifiedTimesHasBeenSet() const;
+
+                    /**
+                     * 获取剩余验证次数
+                     * @return LeftTimes 剩余验证次数
+                     */
+                    uint64_t GetLeftTimes() const;
+
+                    /**
+                     * 判断参数 LeftTimes 是否已赋值
+                     * @return LeftTimes 是否已赋值
+                     */
+                    bool LeftTimesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +85,18 @@ namespace TencentCloud
                      */
                     bool m_pass;
                     bool m_passHasBeenSet;
+
+                    /**
+                     * 已验证次数
+                     */
+                    uint64_t m_verifiedTimes;
+                    bool m_verifiedTimesHasBeenSet;
+
+                    /**
+                     * 剩余验证次数
+                     */
+                    uint64_t m_leftTimes;
+                    bool m_leftTimesHasBeenSet;
 
                 };
             }

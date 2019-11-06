@@ -943,6 +943,135 @@ IaiClient::SearchFacesOutcomeCallable IaiClient::SearchFacesCallable(const Searc
     return task->get_future();
 }
 
+IaiClient::SearchFacesReturnsByGroupOutcome IaiClient::SearchFacesReturnsByGroup(const SearchFacesReturnsByGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchFacesReturnsByGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchFacesReturnsByGroupResponse rsp = SearchFacesReturnsByGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchFacesReturnsByGroupOutcome(rsp);
+        else
+            return SearchFacesReturnsByGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchFacesReturnsByGroupOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::SearchFacesReturnsByGroupAsync(const SearchFacesReturnsByGroupRequest& request, const SearchFacesReturnsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchFacesReturnsByGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::SearchFacesReturnsByGroupOutcomeCallable IaiClient::SearchFacesReturnsByGroupCallable(const SearchFacesReturnsByGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchFacesReturnsByGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchFacesReturnsByGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::SearchPersonsOutcome IaiClient::SearchPersons(const SearchPersonsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchPersons");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchPersonsResponse rsp = SearchPersonsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchPersonsOutcome(rsp);
+        else
+            return SearchPersonsOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchPersonsOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::SearchPersonsAsync(const SearchPersonsRequest& request, const SearchPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchPersons(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::SearchPersonsOutcomeCallable IaiClient::SearchPersonsCallable(const SearchPersonsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchPersonsOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchPersons(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::SearchPersonsReturnsByGroupOutcome IaiClient::SearchPersonsReturnsByGroup(const SearchPersonsReturnsByGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchPersonsReturnsByGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchPersonsReturnsByGroupResponse rsp = SearchPersonsReturnsByGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchPersonsReturnsByGroupOutcome(rsp);
+        else
+            return SearchPersonsReturnsByGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchPersonsReturnsByGroupOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::SearchPersonsReturnsByGroupAsync(const SearchPersonsReturnsByGroupRequest& request, const SearchPersonsReturnsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchPersonsReturnsByGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::SearchPersonsReturnsByGroupOutcomeCallable IaiClient::SearchPersonsReturnsByGroupCallable(const SearchPersonsReturnsByGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchPersonsReturnsByGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchPersonsReturnsByGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IaiClient::VerifyFaceOutcome IaiClient::VerifyFace(const VerifyFaceRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyFace");
@@ -979,6 +1108,49 @@ IaiClient::VerifyFaceOutcomeCallable IaiClient::VerifyFaceCallable(const VerifyF
         [this, request]()
         {
             return this->VerifyFace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::VerifyPersonOutcome IaiClient::VerifyPerson(const VerifyPersonRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyPerson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyPersonResponse rsp = VerifyPersonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyPersonOutcome(rsp);
+        else
+            return VerifyPersonOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyPersonOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::VerifyPersonAsync(const VerifyPersonRequest& request, const VerifyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyPerson(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::VerifyPersonOutcomeCallable IaiClient::VerifyPersonCallable(const VerifyPersonRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyPersonOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyPerson(request);
         }
     );
 

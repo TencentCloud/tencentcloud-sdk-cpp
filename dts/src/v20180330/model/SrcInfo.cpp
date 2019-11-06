@@ -36,7 +36,8 @@ SrcInfo::SrcInfo() :
     m_instanceIdHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_supplierHasBeenSet(false),
-    m_ccnIdHasBeenSet(false)
+    m_ccnIdHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,16 @@ CoreInternalOutcome SrcInfo::Deserialize(const Value &value)
         m_ccnIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineVersion") && !value["EngineVersion"].IsNull())
+    {
+        if (!value["EngineVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SrcInfo.EngineVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineVersion = string(value["EngineVersion"].GetString());
+        m_engineVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +331,14 @@ void SrcInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "CcnId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_ccnId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EngineVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_engineVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -563,5 +582,21 @@ void SrcInfo::SetCcnId(const string& _ccnId)
 bool SrcInfo::CcnIdHasBeenSet() const
 {
     return m_ccnIdHasBeenSet;
+}
+
+string SrcInfo::GetEngineVersion() const
+{
+    return m_engineVersion;
+}
+
+void SrcInfo::SetEngineVersion(const string& _engineVersion)
+{
+    m_engineVersion = _engineVersion;
+    m_engineVersionHasBeenSet = true;
+}
+
+bool SrcInfo::EngineVersionHasBeenSet() const
+{
+    return m_engineVersionHasBeenSet;
 }
 

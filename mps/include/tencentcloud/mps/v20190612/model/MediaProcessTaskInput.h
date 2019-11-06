@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/SnapshotByTimeOffsetTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/SampleSnapshotTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/ImageSpriteTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingTaskInput.h>
 
 
 namespace TencentCloud
@@ -141,6 +142,24 @@ namespace TencentCloud
                      */
                     bool ImageSpriteTaskSetHasBeenSet() const;
 
+                    /**
+                     * 获取对视频转自适应码流任务列表。
+                     * @return AdaptiveDynamicStreamingTaskSet 对视频转自适应码流任务列表。
+                     */
+                    std::vector<AdaptiveDynamicStreamingTaskInput> GetAdaptiveDynamicStreamingTaskSet() const;
+
+                    /**
+                     * 设置对视频转自适应码流任务列表。
+                     * @param AdaptiveDynamicStreamingTaskSet 对视频转自适应码流任务列表。
+                     */
+                    void SetAdaptiveDynamicStreamingTaskSet(const std::vector<AdaptiveDynamicStreamingTaskInput>& _adaptiveDynamicStreamingTaskSet);
+
+                    /**
+                     * 判断参数 AdaptiveDynamicStreamingTaskSet 是否已赋值
+                     * @return AdaptiveDynamicStreamingTaskSet 是否已赋值
+                     */
+                    bool AdaptiveDynamicStreamingTaskSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,6 +191,12 @@ namespace TencentCloud
                      */
                     std::vector<ImageSpriteTaskInput> m_imageSpriteTaskSet;
                     bool m_imageSpriteTaskSetHasBeenSet;
+
+                    /**
+                     * 对视频转自适应码流任务列表。
+                     */
+                    std::vector<AdaptiveDynamicStreamingTaskInput> m_adaptiveDynamicStreamingTaskSet;
+                    bool m_adaptiveDynamicStreamingTaskSetHasBeenSet;
 
                 };
             }

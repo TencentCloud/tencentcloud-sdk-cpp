@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool InstanceDeleteModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     * @return ForceDelete 是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     */
+                    bool GetForceDelete() const;
+
+                    /**
+                     * 设置是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     * @param ForceDelete 是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     */
+                    void SetForceDelete(const bool& _forceDelete);
+
+                    /**
+                     * 判断参数 ForceDelete 是否已赋值
+                     * @return ForceDelete 是否已赋值
+                     */
+                    bool ForceDeleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceDeleteMode;
                     bool m_instanceDeleteModeHasBeenSet;
+
+                    /**
+                     * 是否强制删除(当节点在初始化时，可以指定参数为TRUE)
+                     */
+                    bool m_forceDelete;
+                    bool m_forceDeleteHasBeenSet;
 
                 };
             }

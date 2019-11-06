@@ -431,14 +431,14 @@ namespace TencentCloud
                     bool VersionNumberHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdatedTime 更新时间
+                     * 获取更新时间。
+                     * @return UpdatedTime 更新时间。
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param UpdatedTime 更新时间
+                     * 设置更新时间。
+                     * @param UpdatedTime 更新时间。
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
@@ -465,6 +465,24 @@ namespace TencentCloud
                      * @return CamRoleName 是否已赋值
                      */
                     bool CamRoleNameHasBeenSet() const;
+
+                    /**
+                     * 获取上次操作时，InstanceTypesCheckPolicy 取值。
+                     * @return LastOperationInstanceTypesCheckPolicy 上次操作时，InstanceTypesCheckPolicy 取值。
+                     */
+                    std::string GetLastOperationInstanceTypesCheckPolicy() const;
+
+                    /**
+                     * 设置上次操作时，InstanceTypesCheckPolicy 取值。
+                     * @param LastOperationInstanceTypesCheckPolicy 上次操作时，InstanceTypesCheckPolicy 取值。
+                     */
+                    void SetLastOperationInstanceTypesCheckPolicy(const std::string& _lastOperationInstanceTypesCheckPolicy);
+
+                    /**
+                     * 判断参数 LastOperationInstanceTypesCheckPolicy 是否已赋值
+                     * @return LastOperationInstanceTypesCheckPolicy 是否已赋值
+                     */
+                    bool LastOperationInstanceTypesCheckPolicyHasBeenSet() const;
 
                 private:
 
@@ -593,7 +611,7 @@ namespace TencentCloud
                     bool m_versionNumberHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
@@ -603,6 +621,12 @@ namespace TencentCloud
                      */
                     std::string m_camRoleName;
                     bool m_camRoleNameHasBeenSet;
+
+                    /**
+                     * 上次操作时，InstanceTypesCheckPolicy 取值。
+                     */
+                    std::string m_lastOperationInstanceTypesCheckPolicy;
+                    bool m_lastOperationInstanceTypesCheckPolicyHasBeenSet;
 
                 };
             }

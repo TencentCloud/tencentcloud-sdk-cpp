@@ -25,7 +25,11 @@ BusinessSummaryOverviewItem::BusinessSummaryOverviewItem() :
     m_businessCodeHasBeenSet(false),
     m_businessCodeNameHasBeenSet(false),
     m_realTotalCostHasBeenSet(false),
-    m_realTotalCostRatioHasBeenSet(false)
+    m_realTotalCostRatioHasBeenSet(false),
+    m_cashPayAmountHasBeenSet(false),
+    m_incentivePayAmountHasBeenSet(false),
+    m_voucherPayAmountHasBeenSet(false),
+    m_billMonthHasBeenSet(false)
 {
 }
 
@@ -74,6 +78,46 @@ CoreInternalOutcome BusinessSummaryOverviewItem::Deserialize(const Value &value)
         m_realTotalCostRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
+    {
+        if (!value["CashPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BusinessSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cashPayAmount = string(value["CashPayAmount"].GetString());
+        m_cashPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncentivePayAmount") && !value["IncentivePayAmount"].IsNull())
+    {
+        if (!value["IncentivePayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BusinessSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
+        m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoucherPayAmount") && !value["VoucherPayAmount"].IsNull())
+    {
+        if (!value["VoucherPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BusinessSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
+        m_voucherPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillMonth") && !value["BillMonth"].IsNull())
+    {
+        if (!value["BillMonth"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BusinessSummaryOverviewItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billMonth = string(value["BillMonth"].GetString());
+        m_billMonthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +155,38 @@ void BusinessSummaryOverviewItem::ToJsonObject(Value &value, Document::Allocator
         string key = "RealTotalCostRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_realTotalCostRatio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cashPayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CashPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cashPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_incentivePayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IncentivePayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherPayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VoucherPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billMonthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BillMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_billMonth.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +254,69 @@ void BusinessSummaryOverviewItem::SetRealTotalCostRatio(const string& _realTotal
 bool BusinessSummaryOverviewItem::RealTotalCostRatioHasBeenSet() const
 {
     return m_realTotalCostRatioHasBeenSet;
+}
+
+string BusinessSummaryOverviewItem::GetCashPayAmount() const
+{
+    return m_cashPayAmount;
+}
+
+void BusinessSummaryOverviewItem::SetCashPayAmount(const string& _cashPayAmount)
+{
+    m_cashPayAmount = _cashPayAmount;
+    m_cashPayAmountHasBeenSet = true;
+}
+
+bool BusinessSummaryOverviewItem::CashPayAmountHasBeenSet() const
+{
+    return m_cashPayAmountHasBeenSet;
+}
+
+string BusinessSummaryOverviewItem::GetIncentivePayAmount() const
+{
+    return m_incentivePayAmount;
+}
+
+void BusinessSummaryOverviewItem::SetIncentivePayAmount(const string& _incentivePayAmount)
+{
+    m_incentivePayAmount = _incentivePayAmount;
+    m_incentivePayAmountHasBeenSet = true;
+}
+
+bool BusinessSummaryOverviewItem::IncentivePayAmountHasBeenSet() const
+{
+    return m_incentivePayAmountHasBeenSet;
+}
+
+string BusinessSummaryOverviewItem::GetVoucherPayAmount() const
+{
+    return m_voucherPayAmount;
+}
+
+void BusinessSummaryOverviewItem::SetVoucherPayAmount(const string& _voucherPayAmount)
+{
+    m_voucherPayAmount = _voucherPayAmount;
+    m_voucherPayAmountHasBeenSet = true;
+}
+
+bool BusinessSummaryOverviewItem::VoucherPayAmountHasBeenSet() const
+{
+    return m_voucherPayAmountHasBeenSet;
+}
+
+string BusinessSummaryOverviewItem::GetBillMonth() const
+{
+    return m_billMonth;
+}
+
+void BusinessSummaryOverviewItem::SetBillMonth(const string& _billMonth)
+{
+    m_billMonth = _billMonth;
+    m_billMonthHasBeenSet = true;
+}
+
+bool BusinessSummaryOverviewItem::BillMonthHasBeenSet() const
+{
+    return m_billMonthHasBeenSet;
 }
 

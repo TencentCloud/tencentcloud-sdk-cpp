@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool UrlRecordListHasBeenSet() const;
 
+                    /**
+                     * 获取任务总数，用于分页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 任务总数，用于分页
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,13 @@ namespace TencentCloud
                      */
                     std::vector<UrlRecord> m_urlRecordList;
                     bool m_urlRecordListHasBeenSet;
+
+                    /**
+                     * 任务总数，用于分页
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

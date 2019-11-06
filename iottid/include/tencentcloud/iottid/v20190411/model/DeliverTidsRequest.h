@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取数量，1~10
-                     * @return Quantity 数量，1~10
+                     * 获取数量，1~100
+                     * @return Quantity 数量，1~100
                      */
                     uint64_t GetQuantity() const;
 
                     /**
-                     * 设置数量，1~10
-                     * @param Quantity 数量，1~10
+                     * 设置数量，1~100
+                     * @param Quantity 数量，1~100
                      */
                     void SetQuantity(const uint64_t& _quantity);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 数量，1~10
+                     * 数量，1~100
                      */
                     uint64_t m_quantity;
                     bool m_quantityHasBeenSet;

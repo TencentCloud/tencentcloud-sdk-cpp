@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/InquiryPriceResult.h>
 
 
 namespace TencentCloud
@@ -44,24 +43,90 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取询价结果
-                     * @return Result 询价结果
+                     * 获取刊例价
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginalCost 刊例价
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    InquiryPriceResult GetResult() const;
+                    double GetOriginalCost() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 OriginalCost 是否已赋值
+                     * @return OriginalCost 是否已赋值
                      */
-                    bool ResultHasBeenSet() const;
+                    bool OriginalCostHasBeenSet() const;
+
+                    /**
+                     * 获取折扣价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountCost 折扣价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountCost() const;
+
+                    /**
+                     * 判断参数 DiscountCost 是否已赋值
+                     * @return DiscountCost 是否已赋值
+                     */
+                    bool DiscountCostHasBeenSet() const;
+
+                    /**
+                     * 获取时间单位，"s","m"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeUnit 时间单位，"s","m"
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTimeUnit() const;
+
+                    /**
+                     * 判断参数 TimeUnit 是否已赋值
+                     * @return TimeUnit 是否已赋值
+                     */
+                    bool TimeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取时间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeSpan 时间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTimeSpan() const;
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     */
+                    bool TimeSpanHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 询价结果
+                     * 刊例价
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    InquiryPriceResult m_result;
-                    bool m_resultHasBeenSet;
+                    double m_originalCost;
+                    bool m_originalCostHasBeenSet;
+
+                    /**
+                     * 折扣价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountCost;
+                    bool m_discountCostHasBeenSet;
+
+                    /**
+                     * 时间单位，"s","m"
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_timeUnit;
+                    bool m_timeUnitHasBeenSet;
+
+                    /**
+                     * 时间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
 
                 };
             }

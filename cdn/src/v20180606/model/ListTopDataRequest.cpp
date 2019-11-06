@@ -31,7 +31,9 @@ ListTopDataRequest::ListTopDataRequest() :
     m_domainsHasBeenSet(false),
     m_projectHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_areaHasBeenSet(false),
+    m_areaTypeHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,22 @@ string ListTopDataRequest::ToJsonString() const
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AreaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_areaType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -245,6 +263,38 @@ void ListTopDataRequest::SetCode(const string& _code)
 bool ListTopDataRequest::CodeHasBeenSet() const
 {
     return m_codeHasBeenSet;
+}
+
+string ListTopDataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void ListTopDataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool ListTopDataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
+}
+
+string ListTopDataRequest::GetAreaType() const
+{
+    return m_areaType;
+}
+
+void ListTopDataRequest::SetAreaType(const string& _areaType)
+{
+    m_areaType = _areaType;
+    m_areaTypeHasBeenSet = true;
+}
+
+bool ListTopDataRequest::AreaTypeHasBeenSet() const
+{
+    return m_areaTypeHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ DescribeOriginDataRequest::DescribeOriginDataRequest() :
     m_domainsHasBeenSet(false),
     m_projectHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,14 @@ string DescribeOriginDataRequest::ToJsonString() const
         string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_detail, allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -220,6 +229,22 @@ void DescribeOriginDataRequest::SetDetail(const bool& _detail)
 bool DescribeOriginDataRequest::DetailHasBeenSet() const
 {
     return m_detailHasBeenSet;
+}
+
+string DescribeOriginDataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeOriginDataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeOriginDataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

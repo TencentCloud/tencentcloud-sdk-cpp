@@ -55,7 +55,9 @@ LoadBalancer::LoadBalancer() :
     m_logSetIdHasBeenSet(false),
     m_logTopicIdHasBeenSet(false),
     m_addressIPv6HasBeenSet(false),
-    m_extraInfoHasBeenSet(false)
+    m_extraInfoHasBeenSet(false),
+    m_isDDosHasBeenSet(false),
+    m_configIdHasBeenSet(false)
 {
 }
 
@@ -465,6 +467,26 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_extraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDDos") && !value["IsDDos"].IsNull())
+    {
+        if (!value["IsDDos"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.IsDDos` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDDos = value["IsDDos"].GetBool();
+        m_isDDosHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigId") && !value["ConfigId"].IsNull())
+    {
+        if (!value["ConfigId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.ConfigId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configId = string(value["ConfigId"].GetString());
+        m_configIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -771,6 +793,22 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isDDosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsDDos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDDos, allocator);
+    }
+
+    if (m_configIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_configId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1318,5 +1356,37 @@ void LoadBalancer::SetExtraInfo(const ExtraInfo& _extraInfo)
 bool LoadBalancer::ExtraInfoHasBeenSet() const
 {
     return m_extraInfoHasBeenSet;
+}
+
+bool LoadBalancer::GetIsDDos() const
+{
+    return m_isDDos;
+}
+
+void LoadBalancer::SetIsDDos(const bool& _isDDos)
+{
+    m_isDDos = _isDDos;
+    m_isDDosHasBeenSet = true;
+}
+
+bool LoadBalancer::IsDDosHasBeenSet() const
+{
+    return m_isDDosHasBeenSet;
+}
+
+string LoadBalancer::GetConfigId() const
+{
+    return m_configId;
+}
+
+void LoadBalancer::SetConfigId(const string& _configId)
+{
+    m_configId = _configId;
+    m_configIdHasBeenSet = true;
+}
+
+bool LoadBalancer::ConfigIdHasBeenSet() const
+{
+    return m_configIdHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ MediaContentReviewSegmentItem::MediaContentReviewSegmentItem() :
     m_labelHasBeenSet(false),
     m_suggestionHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_picUrlExpireTimeStampHasBeenSet(false)
+    m_picUrlExpireTimeStampHasBeenSet(false),
+    m_picUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome MediaContentReviewSegmentItem::Deserialize(const Value &valu
         m_picUrlExpireTimeStampHasBeenSet = true;
     }
 
+    if (value.HasMember("PicUrlExpireTime") && !value["PicUrlExpireTime"].IsNull())
+    {
+        if (!value["PicUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaContentReviewSegmentItem.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
+        m_picUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void MediaContentReviewSegmentItem::ToJsonObject(Value &value, Document::Allocat
         string key = "PicUrlExpireTimeStamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_picUrlExpireTimeStamp, allocator);
+    }
+
+    if (m_picUrlExpireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PicUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_picUrlExpireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void MediaContentReviewSegmentItem::SetPicUrlExpireTimeStamp(const int64_t& _pic
 bool MediaContentReviewSegmentItem::PicUrlExpireTimeStampHasBeenSet() const
 {
     return m_picUrlExpireTimeStampHasBeenSet;
+}
+
+string MediaContentReviewSegmentItem::GetPicUrlExpireTime() const
+{
+    return m_picUrlExpireTime;
+}
+
+void MediaContentReviewSegmentItem::SetPicUrlExpireTime(const string& _picUrlExpireTime)
+{
+    m_picUrlExpireTime = _picUrlExpireTime;
+    m_picUrlExpireTimeHasBeenSet = true;
+}
+
+bool MediaContentReviewSegmentItem::PicUrlExpireTimeHasBeenSet() const
+{
+    return m_picUrlExpireTimeHasBeenSet;
 }
 

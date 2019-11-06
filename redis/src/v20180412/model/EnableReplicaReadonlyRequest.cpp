@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 EnableReplicaReadonlyRequest::EnableReplicaReadonlyRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_readonlyPolicyHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,19 @@ string EnableReplicaReadonlyRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_readonlyPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReadonlyPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_readonlyPolicy.begin(); itr != m_readonlyPolicy.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -65,6 +79,22 @@ void EnableReplicaReadonlyRequest::SetInstanceId(const string& _instanceId)
 bool EnableReplicaReadonlyRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<string> EnableReplicaReadonlyRequest::GetReadonlyPolicy() const
+{
+    return m_readonlyPolicy;
+}
+
+void EnableReplicaReadonlyRequest::SetReadonlyPolicy(const vector<string>& _readonlyPolicy)
+{
+    m_readonlyPolicy = _readonlyPolicy;
+    m_readonlyPolicyHasBeenSet = true;
+}
+
+bool EnableReplicaReadonlyRequest::ReadonlyPolicyHasBeenSet() const
+{
+    return m_readonlyPolicyHasBeenSet;
 }
 
 

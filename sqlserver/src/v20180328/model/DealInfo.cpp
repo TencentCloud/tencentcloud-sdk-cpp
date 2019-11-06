@@ -26,7 +26,8 @@ DealInfo::DealInfo() :
     m_countHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_instanceIdSetHasBeenSet(false),
-    m_ownerUinHasBeenSet(false)
+    m_ownerUinHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,16 @@ CoreInternalOutcome DealInfo::Deserialize(const Value &value)
         m_ownerUinHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceChargeType") && !value["InstanceChargeType"].IsNull())
+    {
+        if (!value["InstanceChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DealInfo.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceChargeType = string(value["InstanceChargeType"].GetString());
+        m_instanceChargeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,14 @@ void DealInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "OwnerUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -221,5 +240,21 @@ void DealInfo::SetOwnerUin(const string& _ownerUin)
 bool DealInfo::OwnerUinHasBeenSet() const
 {
     return m_ownerUinHasBeenSet;
+}
+
+string DealInfo::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void DealInfo::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool DealInfo::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
 }
 

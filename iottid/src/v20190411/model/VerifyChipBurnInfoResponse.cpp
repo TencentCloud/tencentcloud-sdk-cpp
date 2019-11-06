@@ -25,7 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 VerifyChipBurnInfoResponse::VerifyChipBurnInfoResponse() :
-    m_passHasBeenSet(false)
+    m_passHasBeenSet(false),
+    m_verifiedTimesHasBeenSet(false),
+    m_leftTimesHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome VerifyChipBurnInfoResponse::Deserialize(const string &payloa
         m_passHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VerifiedTimes") && !rsp["VerifiedTimes"].IsNull())
+    {
+        if (!rsp["VerifiedTimes"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VerifiedTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifiedTimes = rsp["VerifiedTimes"].GetUint64();
+        m_verifiedTimesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LeftTimes") && !rsp["LeftTimes"].IsNull())
+    {
+        if (!rsp["LeftTimes"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LeftTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_leftTimes = rsp["LeftTimes"].GetUint64();
+        m_leftTimesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +108,26 @@ bool VerifyChipBurnInfoResponse::GetPass() const
 bool VerifyChipBurnInfoResponse::PassHasBeenSet() const
 {
     return m_passHasBeenSet;
+}
+
+uint64_t VerifyChipBurnInfoResponse::GetVerifiedTimes() const
+{
+    return m_verifiedTimes;
+}
+
+bool VerifyChipBurnInfoResponse::VerifiedTimesHasBeenSet() const
+{
+    return m_verifiedTimesHasBeenSet;
+}
+
+uint64_t VerifyChipBurnInfoResponse::GetLeftTimes() const
+{
+    return m_leftTimes;
+}
+
+bool VerifyChipBurnInfoResponse::LeftTimesHasBeenSet() const
+{
+    return m_leftTimesHasBeenSet;
 }
 
 

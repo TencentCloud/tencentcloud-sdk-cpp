@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取预热区域，mainland，overseas或global。
+                     * @return Area 预热区域，mainland，overseas或global。
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置预热区域，mainland，overseas或global。
+                     * @param Area 预热区域，mainland，overseas或global。
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 预热区域，mainland，overseas或global。
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

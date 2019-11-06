@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/TargetRegionInfo.h>
+#include <tencentcloud/clb/v20180317/model/InternetAccessible.h>
 
 
 namespace TencentCloud
@@ -97,6 +98,24 @@ namespace TencentCloud
                      */
                     bool TargetRegionInfoHasBeenSet() const;
 
+                    /**
+                     * 获取网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     * @return InternetChargeInfo 网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     */
+                    InternetAccessible GetInternetChargeInfo() const;
+
+                    /**
+                     * 设置网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     * @param InternetChargeInfo 网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     */
+                    void SetInternetChargeInfo(const InternetAccessible& _internetChargeInfo);
+
+                    /**
+                     * 判断参数 InternetChargeInfo 是否已赋值
+                     * @return InternetChargeInfo 是否已赋值
+                     */
+                    bool InternetChargeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +135,12 @@ namespace TencentCloud
                      */
                     TargetRegionInfo m_targetRegionInfo;
                     bool m_targetRegionInfoHasBeenSet;
+
+                    /**
+                     * 网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     */
+                    InternetAccessible m_internetChargeInfo;
+                    bool m_internetChargeInfoHasBeenSet;
 
                 };
             }

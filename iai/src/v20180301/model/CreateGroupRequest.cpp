@@ -27,7 +27,8 @@ CreateGroupRequest::CreateGroupRequest() :
     m_groupNameHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupExDescriptionsHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string CreateGroupRequest::ToJsonString() const
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_faceModelVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -145,6 +154,22 @@ void CreateGroupRequest::SetTag(const string& _tag)
 bool CreateGroupRequest::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+string CreateGroupRequest::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+void CreateGroupRequest::SetFaceModelVersion(const string& _faceModelVersion)
+{
+    m_faceModelVersion = _faceModelVersion;
+    m_faceModelVersionHasBeenSet = true;
+}
+
+bool CreateGroupRequest::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

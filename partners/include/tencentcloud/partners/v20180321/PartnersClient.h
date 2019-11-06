@@ -29,6 +29,8 @@
 #include <tencentcloud/partners/v20180321/model/AgentTransferMoneyResponse.h>
 #include <tencentcloud/partners/v20180321/model/AuditApplyClientRequest.h>
 #include <tencentcloud/partners/v20180321/model/AuditApplyClientResponse.h>
+#include <tencentcloud/partners/v20180321/model/CreatePayRelationForClientRequest.h>
+#include <tencentcloud/partners/v20180321/model/CreatePayRelationForClientResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentBillsRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeSalesmansResponse.h>
 #include <tencentcloud/partners/v20180321/model/ModifyClientRemarkRequest.h>
 #include <tencentcloud/partners/v20180321/model/ModifyClientRemarkResponse.h>
+#include <tencentcloud/partners/v20180321/model/RemovePayRelationForClientRequest.h>
+#include <tencentcloud/partners/v20180321/model/RemovePayRelationForClientResponse.h>
 
 
 namespace TencentCloud
@@ -70,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AuditApplyClientResponse> AuditApplyClientOutcome;
                 typedef std::future<AuditApplyClientOutcome> AuditApplyClientOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::AuditApplyClientRequest&, AuditApplyClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuditApplyClientAsyncHandler;
+                typedef Outcome<Error, Model::CreatePayRelationForClientResponse> CreatePayRelationForClientOutcome;
+                typedef std::future<CreatePayRelationForClientOutcome> CreatePayRelationForClientOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::CreatePayRelationForClientRequest&, CreatePayRelationForClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayRelationForClientAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAgentAuditedClientsResponse> DescribeAgentAuditedClientsOutcome;
                 typedef std::future<DescribeAgentAuditedClientsOutcome> DescribeAgentAuditedClientsOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentAuditedClientsRequest&, DescribeAgentAuditedClientsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentAuditedClientsAsyncHandler;
@@ -97,6 +104,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyClientRemarkResponse> ModifyClientRemarkOutcome;
                 typedef std::future<ModifyClientRemarkOutcome> ModifyClientRemarkOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::ModifyClientRemarkRequest&, ModifyClientRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClientRemarkAsyncHandler;
+                typedef Outcome<Error, Model::RemovePayRelationForClientResponse> RemovePayRelationForClientOutcome;
+                typedef std::future<RemovePayRelationForClientOutcome> RemovePayRelationForClientOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::RemovePayRelationForClientRequest&, RemovePayRelationForClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemovePayRelationForClientAsyncHandler;
 
 
 
@@ -126,6 +136,15 @@ namespace TencentCloud
                 AuditApplyClientOutcome AuditApplyClient(const Model::AuditApplyClientRequest &request);
                 void AuditApplyClientAsync(const Model::AuditApplyClientRequest& request, const AuditApplyClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AuditApplyClientOutcomeCallable AuditApplyClientCallable(const Model::AuditApplyClientRequest& request);
+
+                /**
+                 *合作伙伴为客户创建强代付关系
+                 * @param req CreatePayRelationForClientRequest
+                 * @return CreatePayRelationForClientOutcome
+                 */
+                CreatePayRelationForClientOutcome CreatePayRelationForClient(const Model::CreatePayRelationForClientRequest &request);
+                void CreatePayRelationForClientAsync(const Model::CreatePayRelationForClientRequest& request, const CreatePayRelationForClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePayRelationForClientOutcomeCallable CreatePayRelationForClientCallable(const Model::CreatePayRelationForClientRequest& request);
 
                 /**
                  *查询已审核客户列表
@@ -207,6 +226,15 @@ namespace TencentCloud
                 ModifyClientRemarkOutcome ModifyClientRemark(const Model::ModifyClientRemarkRequest &request);
                 void ModifyClientRemarkAsync(const Model::ModifyClientRemarkRequest& request, const ModifyClientRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClientRemarkOutcomeCallable ModifyClientRemarkCallable(const Model::ModifyClientRemarkRequest& request);
+
+                /**
+                 *合作伙伴为客户消除强代付关系
+                 * @param req RemovePayRelationForClientRequest
+                 * @return RemovePayRelationForClientOutcome
+                 */
+                RemovePayRelationForClientOutcome RemovePayRelationForClient(const Model::RemovePayRelationForClientRequest &request);
+                void RemovePayRelationForClientAsync(const Model::RemovePayRelationForClientRequest& request, const RemovePayRelationForClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemovePayRelationForClientOutcomeCallable RemovePayRelationForClientCallable(const Model::RemovePayRelationForClientRequest& request);
 
             };
         }

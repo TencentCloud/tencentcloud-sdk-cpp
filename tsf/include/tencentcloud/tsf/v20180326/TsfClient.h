@@ -29,6 +29,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreateApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateClusterRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateClusterResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateContainGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateContainGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGroupRequest.h>
@@ -37,8 +39,12 @@
 #include <tencentcloud/tsf/v20180326/model/CreateMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateNamespaceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateNamespaceResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreatePublicConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreatePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteApplicationRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteApplicationResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteContainerGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteGroupRequest.h>
@@ -51,6 +57,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeletePkgsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeletePkgsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeletePublicConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeletePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployGroupRequest.h>
@@ -63,6 +71,16 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeClusterInstancesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigReleaseLogsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigReleaseLogsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigReleasesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigReleasesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigSummaryRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigSummaryResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeConfigsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupsRequest.h>
@@ -83,6 +101,18 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigReleasesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigReleasesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigSummaryRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigSummaryResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePublicConfigsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeReleasedConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeReleasedConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleClustersRequest.h>
@@ -103,8 +133,18 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ReleaseConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ReleaseConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ReleasePublicConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ReleasePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RemoveInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/RemoveInstancesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/RevocationConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/RevocationConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/RevocationPublicConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/RevocationPublicConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/RollbackConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/RollbackConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ShrinkGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ShrinkGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ShrinkInstancesRequest.h>
@@ -140,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Error, Model::CreateConfigResponse> CreateConfigOutcome;
+                typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateConfigRequest&, CreateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigAsyncHandler;
                 typedef Outcome<Error, Model::CreateContainGroupResponse> CreateContainGroupOutcome;
                 typedef std::future<CreateContainGroupOutcome> CreateContainGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateContainGroupRequest&, CreateContainGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContainGroupAsyncHandler;
@@ -152,9 +195,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNamespaceResponse> CreateNamespaceOutcome;
                 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateNamespaceRequest&, CreateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
+                typedef Outcome<Error, Model::CreatePublicConfigResponse> CreatePublicConfigOutcome;
+                typedef std::future<CreatePublicConfigOutcome> CreatePublicConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreatePublicConfigRequest&, CreatePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePublicConfigAsyncHandler;
                 typedef Outcome<Error, Model::DeleteApplicationResponse> DeleteApplicationOutcome;
                 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteApplicationRequest&, DeleteApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
+                typedef Outcome<Error, Model::DeleteConfigResponse> DeleteConfigOutcome;
+                typedef std::future<DeleteConfigOutcome> DeleteConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeleteConfigRequest&, DeleteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigAsyncHandler;
                 typedef Outcome<Error, Model::DeleteContainerGroupResponse> DeleteContainerGroupOutcome;
                 typedef std::future<DeleteContainerGroupOutcome> DeleteContainerGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteContainerGroupRequest&, DeleteContainerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContainerGroupAsyncHandler;
@@ -173,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeletePkgsResponse> DeletePkgsOutcome;
                 typedef std::future<DeletePkgsOutcome> DeletePkgsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeletePkgsRequest&, DeletePkgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePkgsAsyncHandler;
+                typedef Outcome<Error, Model::DeletePublicConfigResponse> DeletePublicConfigOutcome;
+                typedef std::future<DeletePublicConfigOutcome> DeletePublicConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeletePublicConfigRequest&, DeletePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePublicConfigAsyncHandler;
                 typedef Outcome<Error, Model::DeployContainerGroupResponse> DeployContainerGroupOutcome;
                 typedef std::future<DeployContainerGroupOutcome> DeployContainerGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeployContainerGroupRequest&, DeployContainerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployContainerGroupAsyncHandler;
@@ -191,6 +243,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigResponse> DescribeConfigOutcome;
+                typedef std::future<DescribeConfigOutcome> DescribeConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeConfigRequest&, DescribeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigReleaseLogsResponse> DescribeConfigReleaseLogsOutcome;
+                typedef std::future<DescribeConfigReleaseLogsOutcome> DescribeConfigReleaseLogsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeConfigReleaseLogsRequest&, DescribeConfigReleaseLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigReleaseLogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigReleasesResponse> DescribeConfigReleasesOutcome;
+                typedef std::future<DescribeConfigReleasesOutcome> DescribeConfigReleasesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeConfigReleasesRequest&, DescribeConfigReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigReleasesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigSummaryResponse> DescribeConfigSummaryOutcome;
+                typedef std::future<DescribeConfigSummaryOutcome> DescribeConfigSummaryOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeConfigSummaryRequest&, DescribeConfigSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigSummaryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigsResponse> DescribeConfigsOutcome;
+                typedef std::future<DescribeConfigsOutcome> DescribeConfigsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeConfigsRequest&, DescribeConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeContainerGroupDetailResponse> DescribeContainerGroupDetailOutcome;
                 typedef std::future<DescribeContainerGroupDetailOutcome> DescribeContainerGroupDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeContainerGroupDetailRequest&, DescribeContainerGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerGroupDetailAsyncHandler;
@@ -221,6 +288,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePkgsResponse> DescribePkgsOutcome;
                 typedef std::future<DescribePkgsOutcome> DescribePkgsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePkgsRequest&, DescribePkgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePkgsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePublicConfigResponse> DescribePublicConfigOutcome;
+                typedef std::future<DescribePublicConfigOutcome> DescribePublicConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePublicConfigRequest&, DescribePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribePublicConfigReleaseLogsResponse> DescribePublicConfigReleaseLogsOutcome;
+                typedef std::future<DescribePublicConfigReleaseLogsOutcome> DescribePublicConfigReleaseLogsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePublicConfigReleaseLogsRequest&, DescribePublicConfigReleaseLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicConfigReleaseLogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePublicConfigReleasesResponse> DescribePublicConfigReleasesOutcome;
+                typedef std::future<DescribePublicConfigReleasesOutcome> DescribePublicConfigReleasesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePublicConfigReleasesRequest&, DescribePublicConfigReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicConfigReleasesAsyncHandler;
+                typedef Outcome<Error, Model::DescribePublicConfigSummaryResponse> DescribePublicConfigSummaryOutcome;
+                typedef std::future<DescribePublicConfigSummaryOutcome> DescribePublicConfigSummaryOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePublicConfigSummaryRequest&, DescribePublicConfigSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicConfigSummaryAsyncHandler;
+                typedef Outcome<Error, Model::DescribePublicConfigsResponse> DescribePublicConfigsOutcome;
+                typedef std::future<DescribePublicConfigsOutcome> DescribePublicConfigsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePublicConfigsRequest&, DescribePublicConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicConfigsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeReleasedConfigResponse> DescribeReleasedConfigOutcome;
+                typedef std::future<DescribeReleasedConfigOutcome> DescribeReleasedConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeReleasedConfigRequest&, DescribeReleasedConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReleasedConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSimpleApplicationsResponse> DescribeSimpleApplicationsOutcome;
                 typedef std::future<DescribeSimpleApplicationsOutcome> DescribeSimpleApplicationsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeSimpleApplicationsRequest&, DescribeSimpleApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSimpleApplicationsAsyncHandler;
@@ -251,9 +336,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyUploadInfoResponse> ModifyUploadInfoOutcome;
                 typedef std::future<ModifyUploadInfoOutcome> ModifyUploadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyUploadInfoRequest&, ModifyUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUploadInfoAsyncHandler;
+                typedef Outcome<Error, Model::ReleaseConfigResponse> ReleaseConfigOutcome;
+                typedef std::future<ReleaseConfigOutcome> ReleaseConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ReleaseConfigRequest&, ReleaseConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseConfigAsyncHandler;
+                typedef Outcome<Error, Model::ReleasePublicConfigResponse> ReleasePublicConfigOutcome;
+                typedef std::future<ReleasePublicConfigOutcome> ReleasePublicConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ReleasePublicConfigRequest&, ReleasePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleasePublicConfigAsyncHandler;
                 typedef Outcome<Error, Model::RemoveInstancesResponse> RemoveInstancesOutcome;
                 typedef std::future<RemoveInstancesOutcome> RemoveInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::RemoveInstancesRequest&, RemoveInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstancesAsyncHandler;
+                typedef Outcome<Error, Model::RevocationConfigResponse> RevocationConfigOutcome;
+                typedef std::future<RevocationConfigOutcome> RevocationConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::RevocationConfigRequest&, RevocationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevocationConfigAsyncHandler;
+                typedef Outcome<Error, Model::RevocationPublicConfigResponse> RevocationPublicConfigOutcome;
+                typedef std::future<RevocationPublicConfigOutcome> RevocationPublicConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::RevocationPublicConfigRequest&, RevocationPublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevocationPublicConfigAsyncHandler;
+                typedef Outcome<Error, Model::RollbackConfigResponse> RollbackConfigOutcome;
+                typedef std::future<RollbackConfigOutcome> RollbackConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::RollbackConfigRequest&, RollbackConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackConfigAsyncHandler;
                 typedef Outcome<Error, Model::ShrinkGroupResponse> ShrinkGroupOutcome;
                 typedef std::future<ShrinkGroupOutcome> ShrinkGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ShrinkGroupRequest&, ShrinkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShrinkGroupAsyncHandler;
@@ -303,6 +403,15 @@ namespace TencentCloud
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
+                 *创建配置项
+                 * @param req CreateConfigRequest
+                 * @return CreateConfigOutcome
+                 */
+                CreateConfigOutcome CreateConfig(const Model::CreateConfigRequest &request);
+                void CreateConfigAsync(const Model::CreateConfigRequest& request, const CreateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigOutcomeCallable CreateConfigCallable(const Model::CreateConfigRequest& request);
+
+                /**
                  *创建容器部署组
                  * @param req CreateContainGroupRequest
                  * @return CreateContainGroupOutcome
@@ -339,6 +448,15 @@ namespace TencentCloud
                 CreateNamespaceOutcomeCallable CreateNamespaceCallable(const Model::CreateNamespaceRequest& request);
 
                 /**
+                 *创建公共配置项
+                 * @param req CreatePublicConfigRequest
+                 * @return CreatePublicConfigOutcome
+                 */
+                CreatePublicConfigOutcome CreatePublicConfig(const Model::CreatePublicConfigRequest &request);
+                void CreatePublicConfigAsync(const Model::CreatePublicConfigRequest& request, const CreatePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePublicConfigOutcomeCallable CreatePublicConfigCallable(const Model::CreatePublicConfigRequest& request);
+
+                /**
                  *删除应用
                  * @param req DeleteApplicationRequest
                  * @return DeleteApplicationOutcome
@@ -346,6 +464,15 @@ namespace TencentCloud
                 DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest &request);
                 void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request);
+
+                /**
+                 *删除配置项
+                 * @param req DeleteConfigRequest
+                 * @return DeleteConfigOutcome
+                 */
+                DeleteConfigOutcome DeleteConfig(const Model::DeleteConfigRequest &request);
+                void DeleteConfigAsync(const Model::DeleteConfigRequest& request, const DeleteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigOutcomeCallable DeleteConfigCallable(const Model::DeleteConfigRequest& request);
 
                 /**
                  *删除容器部署组
@@ -403,6 +530,15 @@ namespace TencentCloud
                 DeletePkgsOutcomeCallable DeletePkgsCallable(const Model::DeletePkgsRequest& request);
 
                 /**
+                 *删除公共配置项
+                 * @param req DeletePublicConfigRequest
+                 * @return DeletePublicConfigOutcome
+                 */
+                DeletePublicConfigOutcome DeletePublicConfig(const Model::DeletePublicConfigRequest &request);
+                void DeletePublicConfigAsync(const Model::DeletePublicConfigRequest& request, const DeletePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePublicConfigOutcomeCallable DeletePublicConfigCallable(const Model::DeletePublicConfigRequest& request);
+
+                /**
                  *部署容器应用
                  * @param req DeployContainerGroupRequest
                  * @return DeployContainerGroupOutcome
@@ -455,6 +591,51 @@ namespace TencentCloud
                 DescribeClusterInstancesOutcome DescribeClusterInstances(const Model::DescribeClusterInstancesRequest &request);
                 void DescribeClusterInstancesAsync(const Model::DescribeClusterInstancesRequest& request, const DescribeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInstancesOutcomeCallable DescribeClusterInstancesCallable(const Model::DescribeClusterInstancesRequest& request);
+
+                /**
+                 *查询配置
+                 * @param req DescribeConfigRequest
+                 * @return DescribeConfigOutcome
+                 */
+                DescribeConfigOutcome DescribeConfig(const Model::DescribeConfigRequest &request);
+                void DescribeConfigAsync(const Model::DescribeConfigRequest& request, const DescribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigOutcomeCallable DescribeConfigCallable(const Model::DescribeConfigRequest& request);
+
+                /**
+                 *查询配置发布历史
+                 * @param req DescribeConfigReleaseLogsRequest
+                 * @return DescribeConfigReleaseLogsOutcome
+                 */
+                DescribeConfigReleaseLogsOutcome DescribeConfigReleaseLogs(const Model::DescribeConfigReleaseLogsRequest &request);
+                void DescribeConfigReleaseLogsAsync(const Model::DescribeConfigReleaseLogsRequest& request, const DescribeConfigReleaseLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigReleaseLogsOutcomeCallable DescribeConfigReleaseLogsCallable(const Model::DescribeConfigReleaseLogsRequest& request);
+
+                /**
+                 *查询配置发布信息
+                 * @param req DescribeConfigReleasesRequest
+                 * @return DescribeConfigReleasesOutcome
+                 */
+                DescribeConfigReleasesOutcome DescribeConfigReleases(const Model::DescribeConfigReleasesRequest &request);
+                void DescribeConfigReleasesAsync(const Model::DescribeConfigReleasesRequest& request, const DescribeConfigReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigReleasesOutcomeCallable DescribeConfigReleasesCallable(const Model::DescribeConfigReleasesRequest& request);
+
+                /**
+                 *查询配置汇总列表
+                 * @param req DescribeConfigSummaryRequest
+                 * @return DescribeConfigSummaryOutcome
+                 */
+                DescribeConfigSummaryOutcome DescribeConfigSummary(const Model::DescribeConfigSummaryRequest &request);
+                void DescribeConfigSummaryAsync(const Model::DescribeConfigSummaryRequest& request, const DescribeConfigSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigSummaryOutcomeCallable DescribeConfigSummaryCallable(const Model::DescribeConfigSummaryRequest& request);
+
+                /**
+                 *查询配置项列表
+                 * @param req DescribeConfigsRequest
+                 * @return DescribeConfigsOutcome
+                 */
+                DescribeConfigsOutcome DescribeConfigs(const Model::DescribeConfigsRequest &request);
+                void DescribeConfigsAsync(const Model::DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigsOutcomeCallable DescribeConfigsCallable(const Model::DescribeConfigsRequest& request);
 
                 /**
                  * 容器部署组详情
@@ -546,6 +727,60 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribePkgsOutcome DescribePkgs(const Model::DescribePkgsRequest &request);
                 void DescribePkgsAsync(const Model::DescribePkgsRequest& request, const DescribePkgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePkgsOutcomeCallable DescribePkgsCallable(const Model::DescribePkgsRequest& request);
+
+                /**
+                 *查询公共配置（单条）
+                 * @param req DescribePublicConfigRequest
+                 * @return DescribePublicConfigOutcome
+                 */
+                DescribePublicConfigOutcome DescribePublicConfig(const Model::DescribePublicConfigRequest &request);
+                void DescribePublicConfigAsync(const Model::DescribePublicConfigRequest& request, const DescribePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicConfigOutcomeCallable DescribePublicConfigCallable(const Model::DescribePublicConfigRequest& request);
+
+                /**
+                 *查询公共配置发布历史
+                 * @param req DescribePublicConfigReleaseLogsRequest
+                 * @return DescribePublicConfigReleaseLogsOutcome
+                 */
+                DescribePublicConfigReleaseLogsOutcome DescribePublicConfigReleaseLogs(const Model::DescribePublicConfigReleaseLogsRequest &request);
+                void DescribePublicConfigReleaseLogsAsync(const Model::DescribePublicConfigReleaseLogsRequest& request, const DescribePublicConfigReleaseLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicConfigReleaseLogsOutcomeCallable DescribePublicConfigReleaseLogsCallable(const Model::DescribePublicConfigReleaseLogsRequest& request);
+
+                /**
+                 *查询公共配置发布信息
+                 * @param req DescribePublicConfigReleasesRequest
+                 * @return DescribePublicConfigReleasesOutcome
+                 */
+                DescribePublicConfigReleasesOutcome DescribePublicConfigReleases(const Model::DescribePublicConfigReleasesRequest &request);
+                void DescribePublicConfigReleasesAsync(const Model::DescribePublicConfigReleasesRequest& request, const DescribePublicConfigReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicConfigReleasesOutcomeCallable DescribePublicConfigReleasesCallable(const Model::DescribePublicConfigReleasesRequest& request);
+
+                /**
+                 *查询公共配置汇总列表
+                 * @param req DescribePublicConfigSummaryRequest
+                 * @return DescribePublicConfigSummaryOutcome
+                 */
+                DescribePublicConfigSummaryOutcome DescribePublicConfigSummary(const Model::DescribePublicConfigSummaryRequest &request);
+                void DescribePublicConfigSummaryAsync(const Model::DescribePublicConfigSummaryRequest& request, const DescribePublicConfigSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicConfigSummaryOutcomeCallable DescribePublicConfigSummaryCallable(const Model::DescribePublicConfigSummaryRequest& request);
+
+                /**
+                 *查询公共配置项列表
+                 * @param req DescribePublicConfigsRequest
+                 * @return DescribePublicConfigsOutcome
+                 */
+                DescribePublicConfigsOutcome DescribePublicConfigs(const Model::DescribePublicConfigsRequest &request);
+                void DescribePublicConfigsAsync(const Model::DescribePublicConfigsRequest& request, const DescribePublicConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicConfigsOutcomeCallable DescribePublicConfigsCallable(const Model::DescribePublicConfigsRequest& request);
+
+                /**
+                 *查询group发布的配置
+                 * @param req DescribeReleasedConfigRequest
+                 * @return DescribeReleasedConfigOutcome
+                 */
+                DescribeReleasedConfigOutcome DescribeReleasedConfig(const Model::DescribeReleasedConfigRequest &request);
+                void DescribeReleasedConfigAsync(const Model::DescribeReleasedConfigRequest& request, const DescribeReleasedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReleasedConfigOutcomeCallable DescribeReleasedConfigCallable(const Model::DescribeReleasedConfigRequest& request);
 
                 /**
                  *查询简单应用列表
@@ -640,6 +875,24 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyUploadInfoOutcomeCallable ModifyUploadInfoCallable(const Model::ModifyUploadInfoRequest& request);
 
                 /**
+                 *发布配置
+                 * @param req ReleaseConfigRequest
+                 * @return ReleaseConfigOutcome
+                 */
+                ReleaseConfigOutcome ReleaseConfig(const Model::ReleaseConfigRequest &request);
+                void ReleaseConfigAsync(const Model::ReleaseConfigRequest& request, const ReleaseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseConfigOutcomeCallable ReleaseConfigCallable(const Model::ReleaseConfigRequest& request);
+
+                /**
+                 *发布公共配置
+                 * @param req ReleasePublicConfigRequest
+                 * @return ReleasePublicConfigOutcome
+                 */
+                ReleasePublicConfigOutcome ReleasePublicConfig(const Model::ReleasePublicConfigRequest &request);
+                void ReleasePublicConfigAsync(const Model::ReleasePublicConfigRequest& request, const ReleasePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleasePublicConfigOutcomeCallable ReleasePublicConfigCallable(const Model::ReleasePublicConfigRequest& request);
+
+                /**
                  *从 TSF 集群中批量移除云主机节点
                  * @param req RemoveInstancesRequest
                  * @return RemoveInstancesOutcome
@@ -647,6 +900,33 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 RemoveInstancesOutcome RemoveInstances(const Model::RemoveInstancesRequest &request);
                 void RemoveInstancesAsync(const Model::RemoveInstancesRequest& request, const RemoveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveInstancesOutcomeCallable RemoveInstancesCallable(const Model::RemoveInstancesRequest& request);
+
+                /**
+                 *撤回已发布的配置
+                 * @param req RevocationConfigRequest
+                 * @return RevocationConfigOutcome
+                 */
+                RevocationConfigOutcome RevocationConfig(const Model::RevocationConfigRequest &request);
+                void RevocationConfigAsync(const Model::RevocationConfigRequest& request, const RevocationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevocationConfigOutcomeCallable RevocationConfigCallable(const Model::RevocationConfigRequest& request);
+
+                /**
+                 *撤回已发布的公共配置
+                 * @param req RevocationPublicConfigRequest
+                 * @return RevocationPublicConfigOutcome
+                 */
+                RevocationPublicConfigOutcome RevocationPublicConfig(const Model::RevocationPublicConfigRequest &request);
+                void RevocationPublicConfigAsync(const Model::RevocationPublicConfigRequest& request, const RevocationPublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevocationPublicConfigOutcomeCallable RevocationPublicConfigCallable(const Model::RevocationPublicConfigRequest& request);
+
+                /**
+                 *回滚配置
+                 * @param req RollbackConfigRequest
+                 * @return RollbackConfigOutcome
+                 */
+                RollbackConfigOutcome RollbackConfig(const Model::RollbackConfigRequest &request);
+                void RollbackConfigAsync(const Model::RollbackConfigRequest& request, const RollbackConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackConfigOutcomeCallable RollbackConfigCallable(const Model::RollbackConfigRequest& request);
 
                 /**
                  *下线部署组所有机器实例

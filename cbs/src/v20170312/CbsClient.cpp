@@ -685,6 +685,49 @@ CbsClient::DescribeSnapshotOperationLogsOutcomeCallable CbsClient::DescribeSnaps
     return task->get_future();
 }
 
+CbsClient::DescribeSnapshotSharePermissionOutcome CbsClient::DescribeSnapshotSharePermission(const DescribeSnapshotSharePermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotSharePermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotSharePermissionResponse rsp = DescribeSnapshotSharePermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotSharePermissionOutcome(rsp);
+        else
+            return DescribeSnapshotSharePermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotSharePermissionOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeSnapshotSharePermissionAsync(const DescribeSnapshotSharePermissionRequest& request, const DescribeSnapshotSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotSharePermission(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::DescribeSnapshotSharePermissionOutcomeCallable CbsClient::DescribeSnapshotSharePermissionCallable(const DescribeSnapshotSharePermissionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotSharePermissionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotSharePermission(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::DescribeSnapshotsOutcome CbsClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSnapshots");
@@ -986,6 +1029,49 @@ CbsClient::ModifyDiskAttributesOutcomeCallable CbsClient::ModifyDiskAttributesCa
     return task->get_future();
 }
 
+CbsClient::ModifyDisksChargeTypeOutcome CbsClient::ModifyDisksChargeType(const ModifyDisksChargeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDisksChargeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDisksChargeTypeResponse rsp = ModifyDisksChargeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDisksChargeTypeOutcome(rsp);
+        else
+            return ModifyDisksChargeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDisksChargeTypeOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ModifyDisksChargeTypeAsync(const ModifyDisksChargeTypeRequest& request, const ModifyDisksChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDisksChargeType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::ModifyDisksChargeTypeOutcomeCallable CbsClient::ModifyDisksChargeTypeCallable(const ModifyDisksChargeTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDisksChargeTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDisksChargeType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::ModifyDisksRenewFlagOutcome CbsClient::ModifyDisksRenewFlag(const ModifyDisksRenewFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDisksRenewFlag");
@@ -1065,6 +1151,49 @@ CbsClient::ModifySnapshotAttributeOutcomeCallable CbsClient::ModifySnapshotAttri
         [this, request]()
         {
             return this->ModifySnapshotAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::ModifySnapshotsSharePermissionOutcome CbsClient::ModifySnapshotsSharePermission(const ModifySnapshotsSharePermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySnapshotsSharePermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySnapshotsSharePermissionResponse rsp = ModifySnapshotsSharePermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySnapshotsSharePermissionOutcome(rsp);
+        else
+            return ModifySnapshotsSharePermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySnapshotsSharePermissionOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ModifySnapshotsSharePermissionAsync(const ModifySnapshotsSharePermissionRequest& request, const ModifySnapshotsSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySnapshotsSharePermission(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::ModifySnapshotsSharePermissionOutcomeCallable CbsClient::ModifySnapshotsSharePermissionCallable(const ModifySnapshotsSharePermissionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySnapshotsSharePermissionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySnapshotsSharePermission(request);
         }
     );
 

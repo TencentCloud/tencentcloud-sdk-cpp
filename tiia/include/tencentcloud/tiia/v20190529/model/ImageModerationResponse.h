@@ -25,6 +25,7 @@
 #include <tencentcloud/tiia/v20190529/model/TerrorismResult.h>
 #include <tencentcloud/tiia/v20190529/model/PoliticsResult.h>
 #include <tencentcloud/tiia/v20190529/model/DisgustResult.h>
+#include <tencentcloud/tiia/v20190529/model/TextResult.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,20 @@ BLOCK：违规
                      */
                     bool DisgustResultHasBeenSet() const;
 
+                    /**
+                     * 获取文字识别结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TextResult 文字识别结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextResult GetTextResult() const;
+
+                    /**
+                     * 判断参数 TextResult 是否已赋值
+                     * @return TextResult 是否已赋值
+                     */
+                    bool TextResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +191,13 @@ BLOCK：违规
                      */
                     DisgustResult m_disgustResult;
                     bool m_disgustResultHasBeenSet;
+
+                    /**
+                     * 文字识别结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextResult m_textResult;
+                    bool m_textResultHasBeenSet;
 
                 };
             }

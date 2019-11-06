@@ -23,10 +23,12 @@ using namespace std;
 
 ProcedureTemplate::ProcedureTemplate() :
     m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
+    m_miniProgramPublishTaskHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -45,6 +47,16 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProcedureTemplate.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("MediaProcessTask") && !value["MediaProcessTask"].IsNull())
@@ -115,6 +127,23 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const Value &value)
         m_aiRecognitionTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("MiniProgramPublishTask") && !value["MiniProgramPublishTask"].IsNull())
+    {
+        if (!value["MiniProgramPublishTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ProcedureTemplate.MiniProgramPublishTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_miniProgramPublishTask.Deserialize(value["MiniProgramPublishTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_miniProgramPublishTaskHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -148,6 +177,14 @@ void ProcedureTemplate::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mediaProcessTaskHasBeenSet)
@@ -186,6 +223,15 @@ void ProcedureTemplate::ToJsonObject(Value &value, Document::AllocatorType& allo
         m_aiRecognitionTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_miniProgramPublishTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MiniProgramPublishTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_miniProgramPublishTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -219,6 +265,22 @@ void ProcedureTemplate::SetName(const string& _name)
 bool ProcedureTemplate::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string ProcedureTemplate::GetType() const
+{
+    return m_type;
+}
+
+void ProcedureTemplate::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ProcedureTemplate::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 MediaProcessTaskInput ProcedureTemplate::GetMediaProcessTask() const
@@ -283,6 +345,22 @@ void ProcedureTemplate::SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRe
 bool ProcedureTemplate::AiRecognitionTaskHasBeenSet() const
 {
     return m_aiRecognitionTaskHasBeenSet;
+}
+
+WechatMiniProgramPublishTaskInput ProcedureTemplate::GetMiniProgramPublishTask() const
+{
+    return m_miniProgramPublishTask;
+}
+
+void ProcedureTemplate::SetMiniProgramPublishTask(const WechatMiniProgramPublishTaskInput& _miniProgramPublishTask)
+{
+    m_miniProgramPublishTask = _miniProgramPublishTask;
+    m_miniProgramPublishTaskHasBeenSet = true;
+}
+
+bool ProcedureTemplate::MiniProgramPublishTaskHasBeenSet() const
+{
+    return m_miniProgramPublishTaskHasBeenSet;
 }
 
 string ProcedureTemplate::GetCreateTime() const

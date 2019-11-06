@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件 ID。
-                     * @return FileId 媒体文件 ID。
+                     * 获取媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
+                     * @return FileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件 ID。
-                     * @param FileId 媒体文件 ID。
+                     * 设置媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
+                     * @param FileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -229,7 +229,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体文件 ID。
+                     * 媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;

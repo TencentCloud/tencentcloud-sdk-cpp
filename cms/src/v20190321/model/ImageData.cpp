@@ -24,6 +24,7 @@ using namespace std;
 ImageData::ImageData() :
     m_evilFlagHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
+    m_codeDetectHasBeenSet(false),
     m_hotDetectHasBeenSet(false),
     m_illegalDetectHasBeenSet(false),
     m_oCRDetectHasBeenSet(false),
@@ -57,6 +58,23 @@ CoreInternalOutcome ImageData::Deserialize(const Value &value)
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CodeDetect") && !value["CodeDetect"].IsNull())
+    {
+        if (!value["CodeDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageData.CodeDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_codeDetect.Deserialize(value["CodeDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_codeDetectHasBeenSet = true;
     }
 
     if (value.HasMember("HotDetect") && !value["HotDetect"].IsNull())
@@ -201,6 +219,15 @@ void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         value.AddMember(iKey, m_evilType, allocator);
     }
 
+    if (m_codeDetectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CodeDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_codeDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_hotDetectHasBeenSet)
     {
         Value iKey(kStringType);
@@ -297,6 +324,22 @@ void ImageData::SetEvilType(const int64_t& _evilType)
 bool ImageData::EvilTypeHasBeenSet() const
 {
     return m_evilTypeHasBeenSet;
+}
+
+CodeDetect ImageData::GetCodeDetect() const
+{
+    return m_codeDetect;
+}
+
+void ImageData::SetCodeDetect(const CodeDetect& _codeDetect)
+{
+    m_codeDetect = _codeDetect;
+    m_codeDetectHasBeenSet = true;
+}
+
+bool ImageData::CodeDetectHasBeenSet() const
+{
+    return m_codeDetectHasBeenSet;
 }
 
 ImageHotDetect ImageData::GetHotDetect() const

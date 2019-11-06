@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间，如：2018-12-12 10:24:00。
+                     * @return StartTime 开始时间，如：2018-12-12 10:24:00。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间，如：2018-12-12 10:24:00。
+                     * @param StartTime 开始时间，如：2018-12-12 10:24:00。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间，如：2018-12-14 10:24:00。
+                     * @return EndTime 结束时间，如：2018-12-14 10:24:00。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间，如：2018-12-14 10:24:00。
+                     * @param EndTime 结束时间，如：2018-12-14 10:24:00。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -122,16 +122,52 @@ enable：当前为可用状态，已解禁，可正常访问
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取分页查询偏移量，默认为 0 （第一页）。
+                     * @return Offset 分页查询偏移量，默认为 0 （第一页）。
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页查询偏移量，默认为 0 （第一页）。
+                     * @param Offset 分页查询偏移量，默认为 0 （第一页）。
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取分页查询限制数目，默认为20。
+                     * @return Limit 分页查询限制数目，默认为20。
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置分页查询限制数目，默认为20。
+                     * @param Limit 分页查询限制数目，默认为20。
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间，如：2018-12-12 10:24:00。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间，如：2018-12-14 10:24:00。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -149,6 +185,18 @@ enable：当前为可用状态，已解禁，可正常访问
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 分页查询偏移量，默认为 0 （第一页）。
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 分页查询限制数目，默认为20。
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

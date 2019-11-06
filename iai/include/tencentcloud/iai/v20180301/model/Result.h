@@ -84,6 +84,28 @@ namespace TencentCloud
                      */
                     bool FaceRectHasBeenSet() const;
 
+                    /**
+                     * 获取检测出的人脸图片状态返回码。0 表示正常。 
+-1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * @return RetCode 检测出的人脸图片状态返回码。0 表示正常。 
+-1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     */
+                    int64_t GetRetCode() const;
+
+                    /**
+                     * 设置检测出的人脸图片状态返回码。0 表示正常。 
+-1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * @param RetCode 检测出的人脸图片状态返回码。0 表示正常。 
+-1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     */
+                    void SetRetCode(const int64_t& _retCode);
+
+                    /**
+                     * 判断参数 RetCode 是否已赋值
+                     * @return RetCode 是否已赋值
+                     */
+                    bool RetCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +119,13 @@ namespace TencentCloud
                      */
                     FaceRect m_faceRect;
                     bool m_faceRectHasBeenSet;
+
+                    /**
+                     * 检测出的人脸图片状态返回码。0 表示正常。 
+-1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     */
+                    int64_t m_retCode;
+                    bool m_retCodeHasBeenSet;
 
                 };
             }

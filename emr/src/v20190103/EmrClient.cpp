@@ -169,6 +169,49 @@ EmrClient::InquiryPriceCreateInstanceOutcomeCallable EmrClient::InquiryPriceCrea
     return task->get_future();
 }
 
+EmrClient::InquiryPriceRenewInstanceOutcome EmrClient::InquiryPriceRenewInstance(const InquiryPriceRenewInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceRenewInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceRenewInstanceResponse rsp = InquiryPriceRenewInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceRenewInstanceOutcome(rsp);
+        else
+            return InquiryPriceRenewInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceRenewInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::InquiryPriceRenewInstanceAsync(const InquiryPriceRenewInstanceRequest& request, const InquiryPriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceRenewInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::InquiryPriceRenewInstanceOutcomeCallable EmrClient::InquiryPriceRenewInstanceCallable(const InquiryPriceRenewInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceRenewInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::InquiryPriceScaleOutInstanceOutcome EmrClient::InquiryPriceScaleOutInstance(const InquiryPriceScaleOutInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceScaleOutInstance");
@@ -205,6 +248,49 @@ EmrClient::InquiryPriceScaleOutInstanceOutcomeCallable EmrClient::InquiryPriceSc
         [this, request]()
         {
             return this->InquiryPriceScaleOutInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::InquiryPriceUpdateInstanceOutcome EmrClient::InquiryPriceUpdateInstance(const InquiryPriceUpdateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceUpdateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceUpdateInstanceResponse rsp = InquiryPriceUpdateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceUpdateInstanceOutcome(rsp);
+        else
+            return InquiryPriceUpdateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceUpdateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::InquiryPriceUpdateInstanceAsync(const InquiryPriceUpdateInstanceRequest& request, const InquiryPriceUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceUpdateInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::InquiryPriceUpdateInstanceOutcomeCallable EmrClient::InquiryPriceUpdateInstanceCallable(const InquiryPriceUpdateInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceUpdateInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceUpdateInstance(request);
         }
     );
 

@@ -35,7 +35,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_roleHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
-    m_publishHasBeenSet(false)
+    m_publishHasBeenSet(false),
+    m_l5EnableHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,14 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         string key = "Publish";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_publish.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_l5EnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "L5Enable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_l5Enable.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -342,6 +351,22 @@ void UpdateFunctionConfigurationRequest::SetPublish(const string& _publish)
 bool UpdateFunctionConfigurationRequest::PublishHasBeenSet() const
 {
     return m_publishHasBeenSet;
+}
+
+string UpdateFunctionConfigurationRequest::GetL5Enable() const
+{
+    return m_l5Enable;
+}
+
+void UpdateFunctionConfigurationRequest::SetL5Enable(const string& _l5Enable)
+{
+    m_l5Enable = _l5Enable;
+    m_l5EnableHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::L5EnableHasBeenSet() const
+{
+    return m_l5EnableHasBeenSet;
 }
 
 

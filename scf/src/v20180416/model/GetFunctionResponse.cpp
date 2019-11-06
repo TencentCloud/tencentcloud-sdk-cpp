@@ -53,7 +53,8 @@ GetFunctionResponse::GetFunctionResponse() :
     m_tagsHasBeenSet(false),
     m_eipConfigHasBeenSet(false),
     m_accessInfoHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_l5EnableHasBeenSet(false)
 {
 }
 
@@ -429,6 +430,16 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_typeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("L5Enable") && !rsp["L5Enable"].IsNull())
+    {
+        if (!rsp["L5Enable"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `L5Enable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_l5Enable = string(rsp["L5Enable"].GetString());
+        m_l5EnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -722,6 +733,16 @@ string GetFunctionResponse::GetType() const
 bool GetFunctionResponse::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string GetFunctionResponse::GetL5Enable() const
+{
+    return m_l5Enable;
+}
+
+bool GetFunctionResponse::L5EnableHasBeenSet() const
+{
+    return m_l5EnableHasBeenSet;
 }
 
 

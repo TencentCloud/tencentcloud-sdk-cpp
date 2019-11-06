@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 TerminateInstanceRequest::TerminateInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_resourceIdsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,19 @@ string TerminateInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -65,6 +79,22 @@ void TerminateInstanceRequest::SetInstanceId(const string& _instanceId)
 bool TerminateInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<string> TerminateInstanceRequest::GetResourceIds() const
+{
+    return m_resourceIds;
+}
+
+void TerminateInstanceRequest::SetResourceIds(const vector<string>& _resourceIds)
+{
+    m_resourceIds = _resourceIds;
+    m_resourceIdsHasBeenSet = true;
+}
+
+bool TerminateInstanceRequest::ResourceIdsHasBeenSet() const
+{
+    return m_resourceIdsHasBeenSet;
 }
 
 

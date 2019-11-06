@@ -27,7 +27,9 @@ using namespace std;
 DescribePayTypeResponse::DescribePayTypeResponse() :
     m_payTypeHasBeenSet(false),
     m_billingCycleHasBeenSet(false),
-    m_statTypeHasBeenSet(false)
+    m_statTypeHasBeenSet(false),
+    m_regionTypeHasBeenSet(false),
+    m_currentPayTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome DescribePayTypeResponse::Deserialize(const string &payload)
         m_statTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RegionType") && !rsp["RegionType"].IsNull())
+    {
+        if (!rsp["RegionType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RegionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionType = string(rsp["RegionType"].GetString());
+        m_regionTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CurrentPayType") && !rsp["CurrentPayType"].IsNull())
+    {
+        if (!rsp["CurrentPayType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CurrentPayType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentPayType = string(rsp["CurrentPayType"].GetString());
+        m_currentPayTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +150,26 @@ string DescribePayTypeResponse::GetStatType() const
 bool DescribePayTypeResponse::StatTypeHasBeenSet() const
 {
     return m_statTypeHasBeenSet;
+}
+
+string DescribePayTypeResponse::GetRegionType() const
+{
+    return m_regionType;
+}
+
+bool DescribePayTypeResponse::RegionTypeHasBeenSet() const
+{
+    return m_regionTypeHasBeenSet;
+}
+
+string DescribePayTypeResponse::GetCurrentPayType() const
+{
+    return m_currentPayType;
+}
+
+bool DescribePayTypeResponse::CurrentPayTypeHasBeenSet() const
+{
+    return m_currentPayTypeHasBeenSet;
 }
 
 

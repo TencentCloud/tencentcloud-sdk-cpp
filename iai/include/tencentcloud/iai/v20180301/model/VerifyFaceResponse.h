@@ -44,7 +44,15 @@ namespace TencentCloud
 
                     /**
                      * 获取给定的人脸图片与 PersonId 对应人脸的相似度。若 PersonId 下有多张人脸（Face），返回相似度最大的分数。
+
+不同算法版本返回的相似度分数不同。
+若需要验证两张图片中人脸是否为同一人，3.0版本误识率千分之一对应分数为40分，误识率万分之一对应分数为50分，误识率十万分之一对应分数为60分。 一般超过50分则可认定为同一人。
+2.0版本误识率千分之一对应分数为70分，误识率万分之一对应分数为80分，误识率十万分之一对应分数为90分。 一般超过80分则可认定为同一人。
                      * @return Score 给定的人脸图片与 PersonId 对应人脸的相似度。若 PersonId 下有多张人脸（Face），返回相似度最大的分数。
+
+不同算法版本返回的相似度分数不同。
+若需要验证两张图片中人脸是否为同一人，3.0版本误识率千分之一对应分数为40分，误识率万分之一对应分数为50分，误识率十万分之一对应分数为60分。 一般超过50分则可认定为同一人。
+2.0版本误识率千分之一对应分数为70分，误识率万分之一对应分数为80分，误识率十万分之一对应分数为90分。 一般超过80分则可认定为同一人。
                      */
                     double GetScore() const;
 
@@ -66,10 +74,26 @@ namespace TencentCloud
                      */
                     bool IsMatchHasBeenSet() const;
 
+                    /**
+                     * 获取人脸识别所用的算法模型版本。
+                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     */
+                    std::string GetFaceModelVersion() const;
+
+                    /**
+                     * 判断参数 FaceModelVersion 是否已赋值
+                     * @return FaceModelVersion 是否已赋值
+                     */
+                    bool FaceModelVersionHasBeenSet() const;
+
                 private:
 
                     /**
                      * 给定的人脸图片与 PersonId 对应人脸的相似度。若 PersonId 下有多张人脸（Face），返回相似度最大的分数。
+
+不同算法版本返回的相似度分数不同。
+若需要验证两张图片中人脸是否为同一人，3.0版本误识率千分之一对应分数为40分，误识率万分之一对应分数为50分，误识率十万分之一对应分数为60分。 一般超过50分则可认定为同一人。
+2.0版本误识率千分之一对应分数为70分，误识率万分之一对应分数为80分，误识率十万分之一对应分数为90分。 一般超过80分则可认定为同一人。
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
@@ -79,6 +103,12 @@ namespace TencentCloud
                      */
                     bool m_isMatch;
                     bool m_isMatchHasBeenSet;
+
+                    /**
+                     * 人脸识别所用的算法模型版本。
+                     */
+                    std::string m_faceModelVersion;
+                    bool m_faceModelVersionHasBeenSet;
 
                 };
             }

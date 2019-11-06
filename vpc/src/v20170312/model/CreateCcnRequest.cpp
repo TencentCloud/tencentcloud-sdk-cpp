@@ -26,7 +26,9 @@ using namespace std;
 CreateCcnRequest::CreateCcnRequest() :
     m_ccnNameHasBeenSet(false),
     m_ccnDescriptionHasBeenSet(false),
-    m_qosLevelHasBeenSet(false)
+    m_qosLevelHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false),
+    m_bandwidthLimitTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string CreateCcnRequest::ToJsonString() const
         string key = "QosLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_qosLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthLimitTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BandwidthLimitType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_bandwidthLimitType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +133,38 @@ void CreateCcnRequest::SetQosLevel(const string& _qosLevel)
 bool CreateCcnRequest::QosLevelHasBeenSet() const
 {
     return m_qosLevelHasBeenSet;
+}
+
+string CreateCcnRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void CreateCcnRequest::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool CreateCcnRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
+}
+
+string CreateCcnRequest::GetBandwidthLimitType() const
+{
+    return m_bandwidthLimitType;
+}
+
+void CreateCcnRequest::SetBandwidthLimitType(const string& _bandwidthLimitType)
+{
+    m_bandwidthLimitType = _bandwidthLimitType;
+    m_bandwidthLimitTypeHasBeenSet = true;
+}
+
+bool CreateCcnRequest::BandwidthLimitTypeHasBeenSet() const
+{
+    return m_bandwidthLimitTypeHasBeenSet;
 }
 
 

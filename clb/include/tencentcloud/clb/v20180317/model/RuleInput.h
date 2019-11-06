@@ -214,6 +214,24 @@ namespace TencentCloud
                      */
                     bool Http2HasBeenSet() const;
 
+                    /**
+                     * 获取后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     * @return TargetType 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     */
+                    std::string GetTargetType() const;
+
+                    /**
+                     * 设置后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     * @param TargetType 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     */
+                    void SetTargetType(const std::string& _targetType);
+
+                    /**
+                     * 判断参数 TargetType 是否已赋值
+                     * @return TargetType 是否已赋值
+                     */
+                    bool TargetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +288,12 @@ namespace TencentCloud
                      */
                     bool m_http2;
                     bool m_http2HasBeenSet;
+
+                    /**
+                     * 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组
+                     */
+                    std::string m_targetType;
+                    bool m_targetTypeHasBeenSet;
 
                 };
             }

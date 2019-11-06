@@ -33,7 +33,9 @@ KeyMetadata::KeyMetadata() :
     m_keyRotationEnabledHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_nextRotateTimeHasBeenSet(false),
-    m_deletionDateHasBeenSet(false)
+    m_deletionDateHasBeenSet(false),
+    m_originHasBeenSet(false),
+    m_validToHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,26 @@ CoreInternalOutcome KeyMetadata::Deserialize(const Value &value)
         m_deletionDateHasBeenSet = true;
     }
 
+    if (value.HasMember("Origin") && !value["Origin"].IsNull())
+    {
+        if (!value["Origin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `KeyMetadata.Origin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_origin = string(value["Origin"].GetString());
+        m_originHasBeenSet = true;
+    }
+
+    if (value.HasMember("ValidTo") && !value["ValidTo"].IsNull())
+    {
+        if (!value["ValidTo"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `KeyMetadata.ValidTo` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validTo = value["ValidTo"].GetUint64();
+        m_validToHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +285,22 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "DeletionDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionDate, allocator);
+    }
+
+    if (m_originHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Origin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_origin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validToHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ValidTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validTo, allocator);
     }
 
 }
@@ -458,5 +496,37 @@ void KeyMetadata::SetDeletionDate(const uint64_t& _deletionDate)
 bool KeyMetadata::DeletionDateHasBeenSet() const
 {
     return m_deletionDateHasBeenSet;
+}
+
+string KeyMetadata::GetOrigin() const
+{
+    return m_origin;
+}
+
+void KeyMetadata::SetOrigin(const string& _origin)
+{
+    m_origin = _origin;
+    m_originHasBeenSet = true;
+}
+
+bool KeyMetadata::OriginHasBeenSet() const
+{
+    return m_originHasBeenSet;
+}
+
+uint64_t KeyMetadata::GetValidTo() const
+{
+    return m_validTo;
+}
+
+void KeyMetadata::SetValidTo(const uint64_t& _validTo)
+{
+    m_validTo = _validTo;
+    m_validToHasBeenSet = true;
+}
+
+bool KeyMetadata::ValidToHasBeenSet() const
+{
+    return m_validToHasBeenSet;
 }
 

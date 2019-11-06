@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tag/v20180813/model/ResourcesTag.h>
+#include <tencentcloud/tag/v20180813/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -85,7 +85,7 @@ namespace TencentCloud
                      * 获取资源标签
                      * @return Rows 资源标签
                      */
-                    std::vector<ResourcesTag> GetRows() const;
+                    std::vector<ResourceTag> GetRows() const;
 
                     /**
                      * 判断参数 Rows 是否已赋值
@@ -117,7 +117,7 @@ namespace TencentCloud
                     /**
                      * 资源标签
                      */
-                    std::vector<ResourcesTag> m_rows;
+                    std::vector<ResourceTag> m_rows;
                     bool m_rowsHasBeenSet;
 
                 };

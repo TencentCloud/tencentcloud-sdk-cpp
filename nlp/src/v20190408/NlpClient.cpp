@@ -470,6 +470,49 @@ NlpClient::SimilarWordsOutcomeCallable NlpClient::SimilarWordsCallable(const Sim
     return task->get_future();
 }
 
+NlpClient::TextApprovalOutcome NlpClient::TextApproval(const TextApprovalRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextApproval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextApprovalResponse rsp = TextApprovalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextApprovalOutcome(rsp);
+        else
+            return TextApprovalOutcome(o.GetError());
+    }
+    else
+    {
+        return TextApprovalOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::TextApprovalAsync(const TextApprovalRequest& request, const TextApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextApproval(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::TextApprovalOutcomeCallable NlpClient::TextApprovalCallable(const TextApprovalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextApprovalOutcome()>>(
+        [this, request]()
+        {
+            return this->TextApproval(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::TextClassificationOutcome NlpClient::TextClassification(const TextClassificationRequest &request)
 {
     auto outcome = MakeRequest(request, "TextClassification");

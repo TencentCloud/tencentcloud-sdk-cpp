@@ -511,6 +511,84 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取实例的最新操作。例：StopInstances、ResetInstance。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestOperation 实例的最新操作。例：StopInstances、ResetInstance。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLatestOperation() const;
+
+                    /**
+                     * 设置实例的最新操作。例：StopInstances、ResetInstance。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LatestOperation 实例的最新操作。例：StopInstances、ResetInstance。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLatestOperation(const std::string& _latestOperation);
+
+                    /**
+                     * 判断参数 LatestOperation 是否已赋值
+                     * @return LatestOperation 是否已赋值
+                     */
+                    bool LatestOperationHasBeenSet() const;
+
+                    /**
+                     * 获取实例的最新操作状态。取值范围：<br>
+<li>SUCCESS：表示操作成功<br>
+<li>OPERATING：表示操作执行中<br>
+<li>FAILED：表示操作失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestOperationState 实例的最新操作状态。取值范围：<br>
+<li>SUCCESS：表示操作成功<br>
+<li>OPERATING：表示操作执行中<br>
+<li>FAILED：表示操作失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLatestOperationState() const;
+
+                    /**
+                     * 设置实例的最新操作状态。取值范围：<br>
+<li>SUCCESS：表示操作成功<br>
+<li>OPERATING：表示操作执行中<br>
+<li>FAILED：表示操作失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LatestOperationState 实例的最新操作状态。取值范围：<br>
+<li>SUCCESS：表示操作成功<br>
+<li>OPERATING：表示操作执行中<br>
+<li>FAILED：表示操作失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLatestOperationState(const std::string& _latestOperationState);
+
+                    /**
+                     * 判断参数 LatestOperationState 是否已赋值
+                     * @return LatestOperationState 是否已赋值
+                     */
+                    bool LatestOperationStateHasBeenSet() const;
+
+                    /**
+                     * 获取实例最新操作的唯一请求 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestOperationRequestId 实例最新操作的唯一请求 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLatestOperationRequestId() const;
+
+                    /**
+                     * 设置实例最新操作的唯一请求 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LatestOperationRequestId 实例最新操作的唯一请求 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLatestOperationRequestId(const std::string& _latestOperationRequestId);
+
+                    /**
+                     * 判断参数 LatestOperationRequestId 是否已赋值
+                     * @return LatestOperationRequestId 是否已赋值
+                     */
+                    bool LatestOperationRequestIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -664,6 +742,30 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 实例的最新操作。例：StopInstances、ResetInstance。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestOperation;
+                    bool m_latestOperationHasBeenSet;
+
+                    /**
+                     * 实例的最新操作状态。取值范围：<br>
+<li>SUCCESS：表示操作成功<br>
+<li>OPERATING：表示操作执行中<br>
+<li>FAILED：表示操作失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestOperationState;
+                    bool m_latestOperationStateHasBeenSet;
+
+                    /**
+                     * 实例最新操作的唯一请求 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestOperationRequestId;
+                    bool m_latestOperationRequestIdHasBeenSet;
 
                 };
             }

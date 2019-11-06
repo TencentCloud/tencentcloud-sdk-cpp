@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
-                     * @return KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
+                     * 获取指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。KeySpec 和 NumberOfBytes 必须指定一个
+                     * @return KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。KeySpec 和 NumberOfBytes 必须指定一个
                      */
                     std::string GetKeySpec() const;
 
                     /**
-                     * 设置指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
-                     * @param KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
+                     * 设置指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。KeySpec 和 NumberOfBytes 必须指定一个
+                     * @param KeySpec 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。KeySpec 和 NumberOfBytes 必须指定一个
                      */
                     void SetKeySpec(const std::string& _keySpec);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool KeySpecHasBeenSet() const;
 
                     /**
-                     * 获取生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024
-                     * @return NumberOfBytes 生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024
+                     * 获取生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024。KeySpec 和 NumberOfBytes 必须指定一个
+                     * @return NumberOfBytes 生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024。KeySpec 和 NumberOfBytes 必须指定一个
                      */
                     uint64_t GetNumberOfBytes() const;
 
                     /**
-                     * 设置生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024
-                     * @param NumberOfBytes 生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024
+                     * 设置生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024。KeySpec 和 NumberOfBytes 必须指定一个
+                     * @param NumberOfBytes 生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024。KeySpec 和 NumberOfBytes 必须指定一个
                      */
                     void SetNumberOfBytes(const uint64_t& _numberOfBytes);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。
+                     * 指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。KeySpec 和 NumberOfBytes 必须指定一个
                      */
                     std::string m_keySpec;
                     bool m_keySpecHasBeenSet;
 
                     /**
-                     * 生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024
+                     * 生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024。KeySpec 和 NumberOfBytes 必须指定一个
                      */
                     uint64_t m_numberOfBytes;
                     bool m_numberOfBytesHasBeenSet;

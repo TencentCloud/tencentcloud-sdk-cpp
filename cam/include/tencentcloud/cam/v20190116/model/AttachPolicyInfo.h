@@ -152,6 +152,94 @@ namespace TencentCloud
                      */
                     bool PolicyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取策略备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Remark 策略备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置策略备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Remark 策略备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取策略关联操作者主张号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperateOwnerUin 策略关联操作者主张号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetOperateOwnerUin() const;
+
+                    /**
+                     * 设置策略关联操作者主张号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperateOwnerUin 策略关联操作者主张号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperateOwnerUin(const uint64_t& _operateOwnerUin);
+
+                    /**
+                     * 判断参数 OperateOwnerUin 是否已赋值
+                     * @return OperateOwnerUin 是否已赋值
+                     */
+                    bool OperateOwnerUinHasBeenSet() const;
+
+                    /**
+                     * 获取策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetOperateUin() const;
+
+                    /**
+                     * 设置策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperateUin(const uint64_t& _operateUin);
+
+                    /**
+                     * 判断参数 OperateUin 是否已赋值
+                     * @return OperateUin 是否已赋值
+                     */
+                    bool OperateUinHasBeenSet() const;
+
+                    /**
+                     * 获取UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperateUinType UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetOperateUinType() const;
+
+                    /**
+                     * 设置UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperateUinType UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperateUinType(const uint64_t& _operateUinType);
+
+                    /**
+                     * 判断参数 OperateUinType 是否已赋值
+                     * @return OperateUinType 是否已赋值
+                     */
+                    bool OperateUinTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +275,34 @@ namespace TencentCloud
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
+
+                    /**
+                     * 策略备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 策略关联操作者主张号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_operateOwnerUin;
+                    bool m_operateOwnerUinHasBeenSet;
+
+                    /**
+                     * 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_operateUin;
+                    bool m_operateUinHasBeenSet;
+
+                    /**
+                     * UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_operateUinType;
+                    bool m_operateUinTypeHasBeenSet;
 
                 };
             }

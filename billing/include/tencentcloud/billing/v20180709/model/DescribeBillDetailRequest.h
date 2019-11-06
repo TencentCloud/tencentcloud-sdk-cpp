@@ -172,6 +172,60 @@ namespace TencentCloud
                      */
                     bool NeedRecordNumHasBeenSet() const;
 
+                    /**
+                     * 获取查询指定产品信息
+                     * @return ProductCode 查询指定产品信息
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置查询指定产品信息
+                     * @param ProductCode 查询指定产品信息
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取付费模式 prePay/postPay
+                     * @return PayMode 付费模式 prePay/postPay
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置付费模式 prePay/postPay
+                     * @param PayMode 付费模式 prePay/postPay
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取查询指定资源信息
+                     * @return ResourceId 查询指定资源信息
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置查询指定资源信息
+                     * @param ResourceId 查询指定资源信息
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +270,24 @@ namespace TencentCloud
                      */
                     int64_t m_needRecordNum;
                     bool m_needRecordNumHasBeenSet;
+
+                    /**
+                     * 查询指定产品信息
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 付费模式 prePay/postPay
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 查询指定资源信息
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

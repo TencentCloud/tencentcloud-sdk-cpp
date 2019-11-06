@@ -31,14 +31,15 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/ImageData.h
   include/tencentcloud/cms/v20190321/model/ImagePornDetect.h
   include/tencentcloud/cms/v20190321/model/DeleteTextSampleResponse.h
+  include/tencentcloud/cms/v20190321/model/TextSample.h
   include/tencentcloud/cms/v20190321/model/CreateTextSampleResponse.h
   include/tencentcloud/cms/v20190321/model/OverviewRecord.h
   include/tencentcloud/cms/v20190321/model/FileSampleInfo.h
   include/tencentcloud/cms/v20190321/model/DescribeFileSampleRequest.h
-  include/tencentcloud/cms/v20190321/model/ImagePolityDetect.h
+  include/tencentcloud/cms/v20190321/model/CodeDetect.h
   include/tencentcloud/cms/v20190321/model/ImageTerrorDetect.h
   include/tencentcloud/cms/v20190321/model/DescribeTextSampleResponse.h
-  include/tencentcloud/cms/v20190321/model/TextSample.h
+  include/tencentcloud/cms/v20190321/model/CodePosition.h
   include/tencentcloud/cms/v20190321/model/DeleteFileSampleResponse.h
   include/tencentcloud/cms/v20190321/model/FileSample.h
   include/tencentcloud/cms/v20190321/model/DescribeFileSampleResponse.h
@@ -51,6 +52,8 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/ImageHotDetect.h
   include/tencentcloud/cms/v20190321/model/DescribeTextSampleRequest.h
   include/tencentcloud/cms/v20190321/model/AudioModerationRequest.h
+  include/tencentcloud/cms/v20190321/model/CodeDetail.h
+  include/tencentcloud/cms/v20190321/model/ImagePolityDetect.h
   include/tencentcloud/cms/v20190321/model/ImageIllegalDetect.h
   include/tencentcloud/cms/v20190321/model/CreateFileSampleResponse.h
   include/tencentcloud/cms/v20190321/model/VideoModerationRequest.h
@@ -71,14 +74,15 @@ set(cms_src
   src/v20190321/model/ImageData.cpp
   src/v20190321/model/ImagePornDetect.cpp
   src/v20190321/model/DeleteTextSampleResponse.cpp
+  src/v20190321/model/TextSample.cpp
   src/v20190321/model/CreateTextSampleResponse.cpp
   src/v20190321/model/OverviewRecord.cpp
   src/v20190321/model/FileSampleInfo.cpp
   src/v20190321/model/DescribeFileSampleRequest.cpp
-  src/v20190321/model/ImagePolityDetect.cpp
+  src/v20190321/model/CodeDetect.cpp
   src/v20190321/model/ImageTerrorDetect.cpp
   src/v20190321/model/DescribeTextSampleResponse.cpp
-  src/v20190321/model/TextSample.cpp
+  src/v20190321/model/CodePosition.cpp
   src/v20190321/model/DeleteFileSampleResponse.cpp
   src/v20190321/model/FileSample.cpp
   src/v20190321/model/DescribeFileSampleResponse.cpp
@@ -91,6 +95,8 @@ set(cms_src
   src/v20190321/model/ImageHotDetect.cpp
   src/v20190321/model/DescribeTextSampleRequest.cpp
   src/v20190321/model/AudioModerationRequest.cpp
+  src/v20190321/model/CodeDetail.cpp
+  src/v20190321/model/ImagePolityDetect.cpp
   src/v20190321/model/ImageIllegalDetect.cpp
   src/v20190321/model/CreateFileSampleResponse.cpp
   src/v20190321/model/VideoModerationRequest.cpp

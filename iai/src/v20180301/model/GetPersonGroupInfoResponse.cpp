@@ -26,7 +26,8 @@ using namespace std;
 
 GetPersonGroupInfoResponse::GetPersonGroupInfoResponse() :
     m_personGroupInfosHasBeenSet(false),
-    m_groupNumHasBeenSet(false)
+    m_groupNumHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome GetPersonGroupInfoResponse::Deserialize(const string &payloa
         m_groupNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ uint64_t GetPersonGroupInfoResponse::GetGroupNum() const
 bool GetPersonGroupInfoResponse::GroupNumHasBeenSet() const
 {
     return m_groupNumHasBeenSet;
+}
+
+string GetPersonGroupInfoResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool GetPersonGroupInfoResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

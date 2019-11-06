@@ -67,18 +67,6 @@ namespace TencentCloud
                     bool MyChannelCountHasBeenSet() const;
 
                     /**
-                     * 获取其组织创建的通道数量
-                     * @return OtherChannelCount 其组织创建的通道数量
-                     */
-                    uint64_t GetOtherChannelCount() const;
-
-                    /**
-                     * 判断参数 OtherChannelCount 是否已赋值
-                     * @return OtherChannelCount 是否已赋值
-                     */
-                    bool OtherChannelCountHasBeenSet() const;
-
-                    /**
                      * 获取当前组织加入的通道数量
                      * @return JoinChannelCount 当前组织加入的通道数量
                      */
@@ -89,18 +77,6 @@ namespace TencentCloud
                      * @return JoinChannelCount 是否已赋值
                      */
                     bool JoinChannelCountHasBeenSet() const;
-
-                    /**
-                     * 获取与当前组织无关的通道数量
-                     * @return NoneChannelCount 与当前组织无关的通道数量
-                     */
-                    uint64_t GetNoneChannelCount() const;
-
-                    /**
-                     * 判断参数 NoneChannelCount 是否已赋值
-                     * @return NoneChannelCount 是否已赋值
-                     */
-                    bool NoneChannelCountHasBeenSet() const;
 
                     /**
                      * 获取网络节点总数量
@@ -128,15 +104,15 @@ namespace TencentCloud
 
                     /**
                      * 获取其他组织创建的节点数量
-                     * @return OtherPeerCount 其他组织创建的节点数量
+                     * @return OrderCount 其他组织创建的节点数量
                      */
-                    uint64_t GetOtherPeerCount() const;
+                    uint64_t GetOrderCount() const;
 
                     /**
-                     * 判断参数 OtherPeerCount 是否已赋值
-                     * @return OtherPeerCount 是否已赋值
+                     * 判断参数 OrderCount 是否已赋值
+                     * @return OrderCount 是否已赋值
                      */
-                    bool OtherPeerCountHasBeenSet() const;
+                    bool OrderCountHasBeenSet() const;
 
                     /**
                      * 获取网络组织总数量
@@ -161,18 +137,6 @@ namespace TencentCloud
                      * @return MyGroupCount 是否已赋值
                      */
                     bool MyGroupCountHasBeenSet() const;
-
-                    /**
-                     * 获取其他组织创建的组织数量
-                     * @return OtherGroupCount 其他组织创建的组织数量
-                     */
-                    uint64_t GetOtherGroupCount() const;
-
-                    /**
-                     * 判断参数 OtherGroupCount 是否已赋值
-                     * @return OtherGroupCount 是否已赋值
-                     */
-                    bool OtherGroupCountHasBeenSet() const;
 
                     /**
                      * 获取网络智能合约总数量
@@ -211,18 +175,6 @@ namespace TencentCloud
                     bool MyChaincodeCountHasBeenSet() const;
 
                     /**
-                     * 获取其组织发起的智能合约数量
-                     * @return OtherChaincodeCount 其组织发起的智能合约数量
-                     */
-                    uint64_t GetOtherChaincodeCount() const;
-
-                    /**
-                     * 判断参数 OtherChaincodeCount 是否已赋值
-                     * @return OtherChaincodeCount 是否已赋值
-                     */
-                    bool OtherChaincodeCountHasBeenSet() const;
-
-                    /**
                      * 获取当前组织的证书总数量
                      * @return TotalCertCount 当前组织的证书总数量
                      */
@@ -259,18 +211,6 @@ namespace TencentCloud
                     bool PeerCertCountHasBeenSet() const;
 
                     /**
-                     * 获取网络排序节点证书数量
-                     * @return OrderCertCount 网络排序节点证书数量
-                     */
-                    uint64_t GetOrderCertCount() const;
-
-                    /**
-                     * 判断参数 OrderCertCount 是否已赋值
-                     * @return OrderCertCount 是否已赋值
-                     */
-                    bool OrderCertCountHasBeenSet() const;
-
-                    /**
                      * 获取当前组织业务证书数量
                      * @return ClientCertCount 当前组织业务证书数量
                      */
@@ -297,22 +237,10 @@ namespace TencentCloud
                     bool m_myChannelCountHasBeenSet;
 
                     /**
-                     * 其组织创建的通道数量
-                     */
-                    uint64_t m_otherChannelCount;
-                    bool m_otherChannelCountHasBeenSet;
-
-                    /**
                      * 当前组织加入的通道数量
                      */
                     uint64_t m_joinChannelCount;
                     bool m_joinChannelCountHasBeenSet;
-
-                    /**
-                     * 与当前组织无关的通道数量
-                     */
-                    uint64_t m_noneChannelCount;
-                    bool m_noneChannelCountHasBeenSet;
 
                     /**
                      * 网络节点总数量
@@ -329,8 +257,8 @@ namespace TencentCloud
                     /**
                      * 其他组织创建的节点数量
                      */
-                    uint64_t m_otherPeerCount;
-                    bool m_otherPeerCountHasBeenSet;
+                    uint64_t m_orderCount;
+                    bool m_orderCountHasBeenSet;
 
                     /**
                      * 网络组织总数量
@@ -343,12 +271,6 @@ namespace TencentCloud
                      */
                     uint64_t m_myGroupCount;
                     bool m_myGroupCountHasBeenSet;
-
-                    /**
-                     * 其他组织创建的组织数量
-                     */
-                    uint64_t m_otherGroupCount;
-                    bool m_otherGroupCountHasBeenSet;
 
                     /**
                      * 网络智能合约总数量
@@ -369,12 +291,6 @@ namespace TencentCloud
                     bool m_myChaincodeCountHasBeenSet;
 
                     /**
-                     * 其组织发起的智能合约数量
-                     */
-                    uint64_t m_otherChaincodeCount;
-                    bool m_otherChaincodeCountHasBeenSet;
-
-                    /**
                      * 当前组织的证书总数量
                      */
                     uint64_t m_totalCertCount;
@@ -391,12 +307,6 @@ namespace TencentCloud
                      */
                     uint64_t m_peerCertCount;
                     bool m_peerCertCountHasBeenSet;
-
-                    /**
-                     * 网络排序节点证书数量
-                     */
-                    uint64_t m_orderCertCount;
-                    bool m_orderCertCountHasBeenSet;
 
                     /**
                      * 当前组织业务证书数量

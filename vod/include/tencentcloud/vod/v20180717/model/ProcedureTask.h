@@ -96,25 +96,17 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * 获取已弃用，请使用各个具体任务的 ErrCode。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrCode 错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * @return ErrCode 已弃用，请使用各个具体任务的 ErrCode。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * 设置已弃用，请使用各个具体任务的 ErrCode。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrCode 错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * @param ErrCode 已弃用，请使用各个具体任务的 ErrCode。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -126,17 +118,17 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息。
+                     * 获取已弃用，请使用各个具体任务的 Message。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 错误信息。
+                     * @return Message 已弃用，请使用各个具体任务的 Message。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置错误信息。
+                     * 设置已弃用，请使用各个具体任务的 Message。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 错误信息。
+                     * @param Message 已弃用，请使用各个具体任务的 Message。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
@@ -456,16 +448,14 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 错误码
-<li>0：成功；</li>
-<li>其他值：失败。</li>
+                     * 已弃用，请使用各个具体任务的 ErrCode。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 错误信息。
+                     * 已弃用，请使用各个具体任务的 Message。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;

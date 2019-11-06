@@ -209,6 +209,28 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取被复制的通道ID。只有处于运行中状态的通道可以被复制。
+当设置该参数时，表示复制该通道。
+                     * @return ClonedProxyId 被复制的通道ID。只有处于运行中状态的通道可以被复制。
+当设置该参数时，表示复制该通道。
+                     */
+                    std::string GetClonedProxyId() const;
+
+                    /**
+                     * 设置被复制的通道ID。只有处于运行中状态的通道可以被复制。
+当设置该参数时，表示复制该通道。
+                     * @param ClonedProxyId 被复制的通道ID。只有处于运行中状态的通道可以被复制。
+当设置该参数时，表示复制该通道。
+                     */
+                    void SetClonedProxyId(const std::string& _clonedProxyId);
+
+                    /**
+                     * 判断参数 ClonedProxyId 是否已赋值
+                     * @return ClonedProxyId 是否已赋值
+                     */
+                    bool ClonedProxyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +287,13 @@ namespace TencentCloud
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 被复制的通道ID。只有处于运行中状态的通道可以被复制。
+当设置该参数时，表示复制该通道。
+                     */
+                    std::string m_clonedProxyId;
+                    bool m_clonedProxyIdHasBeenSet;
 
                 };
             }

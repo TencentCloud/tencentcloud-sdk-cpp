@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
-                     * @return KeyState CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
+                     * 获取CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
+                     * @return KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
                      */
                     std::string GetKeyState() const;
 
                     /**
-                     * 设置CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
-                     * @param KeyState CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
+                     * 设置CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
+                     * @param KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
                      */
                     void SetKeyState(const std::string& _keyState);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool KeyUsageHasBeenSet() const;
 
                     /**
-                     * 获取CMK类型，当前为 1 普通类型
-                     * @return Type CMK类型，当前为 1 普通类型
+                     * 获取CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * @return Type CMK类型，2 表示符合FIPS标准，4表示符合国密标准
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置CMK类型，当前为 1 普通类型
-                     * @param Type CMK类型，当前为 1 普通类型
+                     * 设置CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * @param Type CMK类型，2 表示符合FIPS标准，4表示符合国密标准
                      */
                     void SetType(const int64_t& _type);
 
@@ -266,6 +266,50 @@ namespace TencentCloud
                      */
                     bool DeletionDateHasBeenSet() const;
 
+                    /**
+                     * 获取CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrigin() const;
+
+                    /**
+                     * 设置CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrigin(const std::string& _origin);
+
+                    /**
+                     * 判断参数 Origin 是否已赋值
+                     * @return Origin 是否已赋值
+                     */
+                    bool OriginHasBeenSet() const;
+
+                    /**
+                     * 获取在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetValidTo() const;
+
+                    /**
+                     * 设置在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ValidTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetValidTo(const uint64_t& _validTo);
+
+                    /**
+                     * 判断参数 ValidTo 是否已赋值
+                     * @return ValidTo 是否已赋值
+                     */
+                    bool ValidToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,7 +337,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * CMK的状态， Enabled 或者 Disabled 或者PendingDelete状态
+                     * CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport
                      */
                     std::string m_keyState;
                     bool m_keyStateHasBeenSet;
@@ -305,7 +349,7 @@ namespace TencentCloud
                     bool m_keyUsageHasBeenSet;
 
                     /**
-                     * CMK类型，当前为 1 普通类型
+                     * CMK类型，2 表示符合FIPS标准，4表示符合国密标准
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -340,6 +384,20 @@ namespace TencentCloud
                      */
                     uint64_t m_deletionDate;
                     bool m_deletionDateHasBeenSet;
+
+                    /**
+                     * CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_origin;
+                    bool m_originHasBeenSet;
+
+                    /**
+                     * 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_validTo;
+                    bool m_validToHasBeenSet;
 
                 };
             }

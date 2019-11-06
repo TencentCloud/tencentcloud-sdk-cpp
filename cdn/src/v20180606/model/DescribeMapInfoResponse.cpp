@@ -25,7 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeMapInfoResponse::DescribeMapInfoResponse() :
-    m_mapInfoListHasBeenSet(false)
+    m_mapInfoListHasBeenSet(false),
+    m_serverRegionRelationHasBeenSet(false),
+    m_clientRegionRelationHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,46 @@ CoreInternalOutcome DescribeMapInfoResponse::Deserialize(const string &payload)
         m_mapInfoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ServerRegionRelation") && !rsp["ServerRegionRelation"].IsNull())
+    {
+        if (!rsp["ServerRegionRelation"].IsArray())
+            return CoreInternalOutcome(Error("response `ServerRegionRelation` is not array type"));
+
+        const Value &tmpValue = rsp["ServerRegionRelation"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionMapRelation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serverRegionRelation.push_back(item);
+        }
+        m_serverRegionRelationHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClientRegionRelation") && !rsp["ClientRegionRelation"].IsNull())
+    {
+        if (!rsp["ClientRegionRelation"].IsArray())
+            return CoreInternalOutcome(Error("response `ClientRegionRelation` is not array type"));
+
+        const Value &tmpValue = rsp["ClientRegionRelation"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionMapRelation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clientRegionRelation.push_back(item);
+        }
+        m_clientRegionRelationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +138,26 @@ vector<MapInfo> DescribeMapInfoResponse::GetMapInfoList() const
 bool DescribeMapInfoResponse::MapInfoListHasBeenSet() const
 {
     return m_mapInfoListHasBeenSet;
+}
+
+vector<RegionMapRelation> DescribeMapInfoResponse::GetServerRegionRelation() const
+{
+    return m_serverRegionRelation;
+}
+
+bool DescribeMapInfoResponse::ServerRegionRelationHasBeenSet() const
+{
+    return m_serverRegionRelationHasBeenSet;
+}
+
+vector<RegionMapRelation> DescribeMapInfoResponse::GetClientRegionRelation() const
+{
+    return m_clientRegionRelation;
+}
+
+bool DescribeMapInfoResponse::ClientRegionRelationHasBeenSet() const
+{
+    return m_clientRegionRelationHasBeenSet;
 }
 
 

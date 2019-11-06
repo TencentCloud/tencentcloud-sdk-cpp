@@ -64,11 +64,9 @@ namespace TencentCloud
                      * 获取用户付费类型，取值：
 <li>DailyPayment：日结付费 ；</li>
 <li>MonthlyPayment：月结付费。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaymentType 用户付费类型，取值：
 <li>DailyPayment：日结付费 ；</li>
 <li>MonthlyPayment：月结付费。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPaymentType() const;
 
@@ -77,6 +75,22 @@ namespace TencentCloud
                      * @return PaymentType 是否已赋值
                      */
                     bool PaymentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否是旧版视频处理用户，取值：
+<li>0：否 ；</li>
+<li>1：是。</li>
+                     * @return OldMpsUser 是否是旧版视频处理用户，取值：
+<li>0：否 ；</li>
+<li>1：是。</li>
+                     */
+                    int64_t GetOldMpsUser() const;
+
+                    /**
+                     * 判断参数 OldMpsUser 是否已赋值
+                     * @return OldMpsUser 是否已赋值
+                     */
+                    bool OldMpsUserHasBeenSet() const;
 
                 private:
 
@@ -93,10 +107,17 @@ namespace TencentCloud
                      * 用户付费类型，取值：
 <li>DailyPayment：日结付费 ；</li>
 <li>MonthlyPayment：月结付费。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paymentType;
                     bool m_paymentTypeHasBeenSet;
+
+                    /**
+                     * 是否是旧版视频处理用户，取值：
+<li>0：否 ；</li>
+<li>1：是。</li>
+                     */
+                    int64_t m_oldMpsUser;
+                    bool m_oldMpsUserHasBeenSet;
 
                 };
             }

@@ -63,6 +63,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/GetDisableRecordsResponse.h
   include/tencentcloud/cdn/v20180606/model/CdnIpHistory.h
   include/tencentcloud/cdn/v20180606/model/SummarizedData.h
+  include/tencentcloud/cdn/v20180606/model/RegionMapRelation.h
   )
 
 set(cdn_src
@@ -111,6 +112,7 @@ set(cdn_src
   src/v20180606/model/GetDisableRecordsResponse.cpp
   src/v20180606/model/CdnIpHistory.cpp
   src/v20180606/model/SummarizedData.cpp
+  src/v20180606/model/RegionMapRelation.cpp
   )
 
 set(cdn_include

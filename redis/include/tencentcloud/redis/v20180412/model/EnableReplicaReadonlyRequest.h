@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取账号路由策略：填写master或者replication，表示路由主节点，从节点；不填路由策略默认为写主节点，读从节点
+                     * @return ReadonlyPolicy 账号路由策略：填写master或者replication，表示路由主节点，从节点；不填路由策略默认为写主节点，读从节点
+                     */
+                    std::vector<std::string> GetReadonlyPolicy() const;
+
+                    /**
+                     * 设置账号路由策略：填写master或者replication，表示路由主节点，从节点；不填路由策略默认为写主节点，读从节点
+                     * @param ReadonlyPolicy 账号路由策略：填写master或者replication，表示路由主节点，从节点；不填路由策略默认为写主节点，读从节点
+                     */
+                    void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
+
+                    /**
+                     * 判断参数 ReadonlyPolicy 是否已赋值
+                     * @return ReadonlyPolicy 是否已赋值
+                     */
+                    bool ReadonlyPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 账号路由策略：填写master或者replication，表示路由主节点，从节点；不填路由策略默认为写主节点，读从节点
+                     */
+                    std::vector<std::string> m_readonlyPolicy;
+                    bool m_readonlyPolicyHasBeenSet;
 
                 };
             }

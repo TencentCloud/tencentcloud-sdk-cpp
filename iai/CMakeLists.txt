@@ -20,10 +20,12 @@ set(iai_public_header
 
 set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/GetPersonGroupInfoResponse.h
+  include/tencentcloud/iai/v20180301/model/SearchFacesReturnsByGroupResponse.h
   include/tencentcloud/iai/v20180301/model/Candidate.h
   include/tencentcloud/iai/v20180301/model/ModifyGroupResponse.h
   include/tencentcloud/iai/v20180301/model/DeletePersonRequest.h
   include/tencentcloud/iai/v20180301/model/DetectLiveFaceResponse.h
+  include/tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupResponse.h
   include/tencentcloud/iai/v20180301/model/DeleteFaceRequest.h
   include/tencentcloud/iai/v20180301/model/ModifyPersonBaseInfoResponse.h
   include/tencentcloud/iai/v20180301/model/GetGroupListResponse.h
@@ -37,18 +39,24 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/DeleteGroupRequest.h
   include/tencentcloud/iai/v20180301/model/CreateFaceResponse.h
   include/tencentcloud/iai/v20180301/model/ModifyPersonBaseInfoRequest.h
+  include/tencentcloud/iai/v20180301/model/GroupCandidate.h
+  include/tencentcloud/iai/v20180301/model/SearchPersonsResponse.h
   include/tencentcloud/iai/v20180301/model/CompareFaceResponse.h
   include/tencentcloud/iai/v20180301/model/PersonExDescriptionInfo.h
   include/tencentcloud/iai/v20180301/model/DetectLiveFaceRequest.h
   include/tencentcloud/iai/v20180301/model/VerifyFaceResponse.h
   include/tencentcloud/iai/v20180301/model/GetPersonBaseInfoResponse.h
+  include/tencentcloud/iai/v20180301/model/ResultsReturnsByGroup.h
   include/tencentcloud/iai/v20180301/model/CreateFaceRequest.h
+  include/tencentcloud/iai/v20180301/model/SearchFacesReturnsByGroupRequest.h
   include/tencentcloud/iai/v20180301/model/CreateGroupRequest.h
   include/tencentcloud/iai/v20180301/model/ModifyPersonGroupInfoRequest.h
   include/tencentcloud/iai/v20180301/model/GetPersonGroupInfoRequest.h
   include/tencentcloud/iai/v20180301/model/Result.h
+  include/tencentcloud/iai/v20180301/model/VerifyPersonRequest.h
   include/tencentcloud/iai/v20180301/model/FaceInfo.h
   include/tencentcloud/iai/v20180301/model/DeleteGroupResponse.h
+  include/tencentcloud/iai/v20180301/model/SearchPersonsRequest.h
   include/tencentcloud/iai/v20180301/model/FaceQualityInfo.h
   include/tencentcloud/iai/v20180301/model/CompareFaceRequest.h
   include/tencentcloud/iai/v20180301/model/PersonInfo.h
@@ -56,7 +64,9 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/DetectFaceResponse.h
   include/tencentcloud/iai/v20180301/model/CopyPersonRequest.h
   include/tencentcloud/iai/v20180301/model/GetPersonListNumRequest.h
+  include/tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupRequest.h
   include/tencentcloud/iai/v20180301/model/DeletePersonFromGroupResponse.h
+  include/tencentcloud/iai/v20180301/model/VerifyPersonResponse.h
   include/tencentcloud/iai/v20180301/model/AnalyzeFaceResponse.h
   include/tencentcloud/iai/v20180301/model/GetGroupListRequest.h
   include/tencentcloud/iai/v20180301/model/FaceHairAttributesInfo.h
@@ -83,10 +93,12 @@ set(iai_public_header_model
 set(iai_src
   src/v20180301/IaiClient.cpp
   src/v20180301/model/GetPersonGroupInfoResponse.cpp
+  src/v20180301/model/SearchFacesReturnsByGroupResponse.cpp
   src/v20180301/model/Candidate.cpp
   src/v20180301/model/ModifyGroupResponse.cpp
   src/v20180301/model/DeletePersonRequest.cpp
   src/v20180301/model/DetectLiveFaceResponse.cpp
+  src/v20180301/model/SearchPersonsReturnsByGroupResponse.cpp
   src/v20180301/model/DeleteFaceRequest.cpp
   src/v20180301/model/ModifyPersonBaseInfoResponse.cpp
   src/v20180301/model/GetGroupListResponse.cpp
@@ -100,18 +112,24 @@ set(iai_src
   src/v20180301/model/DeleteGroupRequest.cpp
   src/v20180301/model/CreateFaceResponse.cpp
   src/v20180301/model/ModifyPersonBaseInfoRequest.cpp
+  src/v20180301/model/GroupCandidate.cpp
+  src/v20180301/model/SearchPersonsResponse.cpp
   src/v20180301/model/CompareFaceResponse.cpp
   src/v20180301/model/PersonExDescriptionInfo.cpp
   src/v20180301/model/DetectLiveFaceRequest.cpp
   src/v20180301/model/VerifyFaceResponse.cpp
   src/v20180301/model/GetPersonBaseInfoResponse.cpp
+  src/v20180301/model/ResultsReturnsByGroup.cpp
   src/v20180301/model/CreateFaceRequest.cpp
+  src/v20180301/model/SearchFacesReturnsByGroupRequest.cpp
   src/v20180301/model/CreateGroupRequest.cpp
   src/v20180301/model/ModifyPersonGroupInfoRequest.cpp
   src/v20180301/model/GetPersonGroupInfoRequest.cpp
   src/v20180301/model/Result.cpp
+  src/v20180301/model/VerifyPersonRequest.cpp
   src/v20180301/model/FaceInfo.cpp
   src/v20180301/model/DeleteGroupResponse.cpp
+  src/v20180301/model/SearchPersonsRequest.cpp
   src/v20180301/model/FaceQualityInfo.cpp
   src/v20180301/model/CompareFaceRequest.cpp
   src/v20180301/model/PersonInfo.cpp
@@ -119,7 +137,9 @@ set(iai_src
   src/v20180301/model/DetectFaceResponse.cpp
   src/v20180301/model/CopyPersonRequest.cpp
   src/v20180301/model/GetPersonListNumRequest.cpp
+  src/v20180301/model/SearchPersonsReturnsByGroupRequest.cpp
   src/v20180301/model/DeletePersonFromGroupResponse.cpp
+  src/v20180301/model/VerifyPersonResponse.cpp
   src/v20180301/model/AnalyzeFaceResponse.cpp
   src/v20180301/model/GetGroupListRequest.cpp
   src/v20180301/model/FaceHairAttributesInfo.cpp

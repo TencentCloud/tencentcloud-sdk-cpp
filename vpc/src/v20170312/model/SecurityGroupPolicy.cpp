@@ -27,10 +27,12 @@ SecurityGroupPolicy::SecurityGroupPolicy() :
     m_portHasBeenSet(false),
     m_serviceTemplateHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_securityGroupIdHasBeenSet(false),
     m_addressTemplateHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_policyDescriptionHasBeenSet(false)
+    m_policyDescriptionHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,16 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const Value &value)
         m_cidrBlockHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6CidrBlock") && !value["Ipv6CidrBlock"].IsNull())
+    {
+        if (!value["Ipv6CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6CidrBlock = string(value["Ipv6CidrBlock"].GetString());
+        m_ipv6CidrBlockHasBeenSet = true;
+    }
+
     if (value.HasMember("SecurityGroupId") && !value["SecurityGroupId"].IsNull())
     {
         if (!value["SecurityGroupId"].IsString())
@@ -141,6 +153,16 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const Value &value)
         }
         m_policyDescription = string(value["PolicyDescription"].GetString());
         m_policyDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
     }
 
 
@@ -191,6 +213,14 @@ void SecurityGroupPolicy::ToJsonObject(Value &value, Document::AllocatorType& al
         value.AddMember(iKey, Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_ipv6CidrBlockHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_securityGroupIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -222,6 +252,14 @@ void SecurityGroupPolicy::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "PolicyDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_policyDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -307,6 +345,22 @@ bool SecurityGroupPolicy::CidrBlockHasBeenSet() const
     return m_cidrBlockHasBeenSet;
 }
 
+string SecurityGroupPolicy::GetIpv6CidrBlock() const
+{
+    return m_ipv6CidrBlock;
+}
+
+void SecurityGroupPolicy::SetIpv6CidrBlock(const string& _ipv6CidrBlock)
+{
+    m_ipv6CidrBlock = _ipv6CidrBlock;
+    m_ipv6CidrBlockHasBeenSet = true;
+}
+
+bool SecurityGroupPolicy::Ipv6CidrBlockHasBeenSet() const
+{
+    return m_ipv6CidrBlockHasBeenSet;
+}
+
 string SecurityGroupPolicy::GetSecurityGroupId() const
 {
     return m_securityGroupId;
@@ -369,5 +423,21 @@ void SecurityGroupPolicy::SetPolicyDescription(const string& _policyDescription)
 bool SecurityGroupPolicy::PolicyDescriptionHasBeenSet() const
 {
     return m_policyDescriptionHasBeenSet;
+}
+
+string SecurityGroupPolicy::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void SecurityGroupPolicy::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool SecurityGroupPolicy::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 

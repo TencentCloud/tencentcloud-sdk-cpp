@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h>
+#include <tencentcloud/tke/v20180525/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -209,6 +210,46 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSpecification 标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagSpecification> GetTagSpecification() const;
+
+                    /**
+                     * 设置标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagSpecification 标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
+                    /**
+                     * 获取集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     * @return ClusterStatus 集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     */
+                    std::string GetClusterStatus() const;
+
+                    /**
+                     * 设置集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     * @param ClusterStatus 集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     */
+                    void SetClusterStatus(const std::string& _clusterStatus);
+
+                    /**
+                     * 判断参数 ClusterStatus 是否已赋值
+                     * @return ClusterStatus 是否已赋值
+                     */
+                    bool ClusterStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +305,19 @@ namespace TencentCloud
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 标签描述列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagSpecification> m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
+
+                    /**
+                     * 集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )
+                     */
+                    std::string m_clusterStatus;
+                    bool m_clusterStatusHasBeenSet;
 
                 };
             }

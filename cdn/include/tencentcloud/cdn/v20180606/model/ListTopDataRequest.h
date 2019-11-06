@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询起始日期，如：2018-09-09 00:00:00
-                     * @return StartTime 查询起始日期，如：2018-09-09 00:00:00
+                     * 获取查询起始日期，如：2018-09-09 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。
+                     * @return StartTime 查询起始日期，如：2018-09-09 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始日期，如：2018-09-09 00:00:00
-                     * @param StartTime 查询起始日期，如：2018-09-09 00:00:00
+                     * 设置查询起始日期，如：2018-09-09 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。
+                     * @param StartTime 查询起始日期，如：2018-09-09 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束日期，如：2018-09-10 00:00:00
-                     * @return EndTime 查询结束日期，如：2018-09-10 00:00:00
+                     * 获取查询结束日期，如：2018-09-10 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。例如，要查询2018-09-10的数据，输入StartTime=2018-09-10 00:00:00，EndTime=2018-09-10 00:00:00即可。
+                     * @return EndTime 查询结束日期，如：2018-09-10 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。例如，要查询2018-09-10的数据，输入StartTime=2018-09-10 00:00:00，EndTime=2018-09-10 00:00:00即可。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束日期，如：2018-09-10 00:00:00
-                     * @param EndTime 查询结束日期，如：2018-09-10 00:00:00
+                     * 设置查询结束日期，如：2018-09-10 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。例如，要查询2018-09-10的数据，输入StartTime=2018-09-10 00:00:00，EndTime=2018-09-10 00:00:00即可。
+                     * @param EndTime 查询结束日期，如：2018-09-10 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。例如，要查询2018-09-10的数据，输入StartTime=2018-09-10 00:00:00，EndTime=2018-09-10 00:00:00即可。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -80,36 +80,36 @@ namespace TencentCloud
 
                     /**
                      * 获取排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
-District：省份排序，支持的 Filter 为 flux、request
-Isp：运营商排序，支持的 Filter 为 flux、request
-Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
+url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
+district：省份、国家/地区排序，支持的 Filter 为 flux、request
+isp：运营商排序，支持的 Filter 为 flux、request
+host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
 originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      * @return Metric 排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
-District：省份排序，支持的 Filter 为 flux、request
-Isp：运营商排序，支持的 Filter 为 flux、request
-Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
+url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
+district：省份、国家/地区排序，支持的 Filter 为 flux、request
+isp：运营商排序，支持的 Filter 为 flux、request
+host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
 originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
-District：省份排序，支持的 Filter 为 flux、request
-Isp：运营商排序，支持的 Filter 为 flux、request
-Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
+url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
+district：省份、国家/地区排序，支持的 Filter 为 flux、request
+isp：运营商排序，支持的 Filter 为 flux、request
+host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
 originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      * @param Metric 排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
-District：省份排序，支持的 Filter 为 flux、request
-Isp：运营商排序，支持的 Filter 为 flux、request
-Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
+url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
+district：省份、国家/地区排序，支持的 Filter 为 flux、request
+isp：运营商排序，支持的 Filter 为 flux、request
+host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
 originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      */
                     void SetMetric(const std::string& _metric);
@@ -235,17 +235,17 @@ OriginStatusCode：指定回源状态码统计，在 Code 参数中填充指定�
                     bool ProjectHasBeenSet() const;
 
                     /**
-                     * 获取多域名查询时，默认（false)返回所有域名汇总排序结果
+                     * 获取多域名查询时，默认（false)返回所有域名汇总排序结果
 Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设置为 true，返回每一个 Domain 的排序数据
-                     * @return Detail 多域名查询时，默认（false)返回所有域名汇总排序结果
+                     * @return Detail 多域名查询时，默认（false)返回所有域名汇总排序结果
 Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设置为 true，返回每一个 Domain 的排序数据
                      */
                     bool GetDetail() const;
 
                     /**
-                     * 设置多域名查询时，默认（false)返回所有域名汇总排序结果
+                     * 设置多域名查询时，默认（false)返回所有域名汇总排序结果
 Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设置为 true，返回每一个 Domain 的排序数据
-                     * @param Detail 多域名查询时，默认（false)返回所有域名汇总排序结果
+                     * @param Detail 多域名查询时，默认（false)返回所有域名汇总排序结果
 Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设置为 true，返回每一个 Domain 的排序数据
                      */
                     void SetDetail(const bool& _detail);
@@ -274,27 +274,79 @@ Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设�
                      */
                     bool CodeHasBeenSet() const;
 
+                    /**
+                     * 获取指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据，支持的 Metric 为 url、district、host、originHost，当 Metric 为 originHost 时仅支持 flux、request、bandwidth Filter
+                     * @return Area 指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据，支持的 Metric 为 url、district、host、originHost，当 Metric 为 originHost 时仅支持 flux、request、bandwidth Filter
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据，支持的 Metric 为 url、district、host、originHost，当 Metric 为 originHost 时仅支持 flux、request、bandwidth Filter
+                     * @param Area 指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据，支持的 Metric 为 url、district、host、originHost，当 Metric 为 originHost 时仅支持 flux、request、bandwidth Filter
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
+                    /**
+                     * 获取查询中国境外CDN数据，且仅当 Metric 为 District 或 Host 时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas，且 Metric 是 District 或 Host 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据，当 Metric 为 host 时仅支持 flux、request、bandwidth Filter
+                     * @return AreaType 查询中国境外CDN数据，且仅当 Metric 为 District 或 Host 时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas，且 Metric 是 District 或 Host 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据，当 Metric 为 host 时仅支持 flux、request、bandwidth Filter
+                     */
+                    std::string GetAreaType() const;
+
+                    /**
+                     * 设置查询中国境外CDN数据，且仅当 Metric 为 District 或 Host 时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas，且 Metric 是 District 或 Host 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据，当 Metric 为 host 时仅支持 flux、request、bandwidth Filter
+                     * @param AreaType 查询中国境外CDN数据，且仅当 Metric 为 District 或 Host 时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas，且 Metric 是 District 或 Host 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据，当 Metric 为 host 时仅支持 flux、request、bandwidth Filter
+                     */
+                    void SetAreaType(const std::string& _areaType);
+
+                    /**
+                     * 判断参数 AreaType 是否已赋值
+                     * @return AreaType 是否已赋值
+                     */
+                    bool AreaTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 查询起始日期，如：2018-09-09 00:00:00
+                     * 查询起始日期，如：2018-09-09 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束日期，如：2018-09-10 00:00:00
+                     * 查询结束日期，如：2018-09-10 00:00:00。目前只支持按天粒度的数据查询，只取入参中的天数信息。例如，要查询2018-09-10的数据，输入StartTime=2018-09-10 00:00:00，EndTime=2018-09-10 00:00:00即可。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 排序对象，支持以下几种形式：
-Url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
-Path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
-District：省份排序，支持的 Filter 为 flux、request
-Isp：运营商排序，支持的 Filter 为 flux、request
-Host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
+url：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request
+path：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）
+district：省份、国家/地区排序，支持的 Filter 为 flux、request
+isp：运营商排序，支持的 Filter 为 flux、request
+host：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计
 originHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计
                      */
                     std::string m_metric;
@@ -334,7 +386,7 @@ OriginStatusCode：指定回源状态码统计，在 Code 参数中填充指定�
                     bool m_projectHasBeenSet;
 
                     /**
-                     * 多域名查询时，默认（false)返回所有域名汇总排序结果
+                     * 多域名查询时，默认（false)返回所有域名汇总排序结果
 Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设置为 true，返回每一个 Domain 的排序数据
                      */
                     bool m_detail;
@@ -345,6 +397,22 @@ Metric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设�
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
+
+                    /**
+                     * 指定服务地域查询，不填充表示查询中国境内 CDN 数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据，支持的 Metric 为 url、district、host、originHost，当 Metric 为 originHost 时仅支持 flux、request、bandwidth Filter
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
+
+                    /**
+                     * 查询中国境外CDN数据，且仅当 Metric 为 District 或 Host 时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas，且 Metric 是 District 或 Host 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据，当 Metric 为 host 时仅支持 flux、request、bandwidth Filter
+                     */
+                    std::string m_areaType;
+                    bool m_areaTypeHasBeenSet;
 
                 };
             }

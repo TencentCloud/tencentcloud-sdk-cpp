@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cms/v20190321/model/CodeDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImageHotDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImageIllegalDetect.h>
 #include <tencentcloud/cms/v20190321/model/OCRDetect.h>
@@ -120,6 +121,24 @@ namespace TencentCloud
                      * @return EvilType 是否已赋值
                      */
                     bool EvilTypeHasBeenSet() const;
+
+                    /**
+                     * 获取图片二维码详情
+                     * @return CodeDetect 图片二维码详情
+                     */
+                    CodeDetect GetCodeDetect() const;
+
+                    /**
+                     * 设置图片二维码详情
+                     * @param CodeDetect 图片二维码详情
+                     */
+                    void SetCodeDetect(const CodeDetect& _codeDetect);
+
+                    /**
+                     * 判断参数 CodeDetect 是否已赋值
+                     * @return CodeDetect 是否已赋值
+                     */
+                    bool CodeDetectHasBeenSet() const;
 
                     /**
                      * 获取图片性感详情
@@ -268,6 +287,12 @@ namespace TencentCloud
                      */
                     int64_t m_evilType;
                     bool m_evilTypeHasBeenSet;
+
+                    /**
+                     * 图片二维码详情
+                     */
+                    CodeDetect m_codeDetect;
+                    bool m_codeDetectHasBeenSet;
 
                     /**
                      * 图片性感详情

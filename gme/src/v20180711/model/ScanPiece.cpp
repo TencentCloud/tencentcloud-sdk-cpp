@@ -27,7 +27,8 @@ ScanPiece::ScanPiece() :
     m_mainTypeHasBeenSet(false),
     m_scanDetailHasBeenSet(false),
     m_roomIdHasBeenSet(false),
-    m_openIdHasBeenSet(false)
+    m_openIdHasBeenSet(false),
+    m_infoHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ScanPiece::Deserialize(const Value &value)
         m_openIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Info") && !value["Info"].IsNull())
+    {
+        if (!value["Info"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ScanPiece.Info` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_info = string(value["Info"].GetString());
+        m_infoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -166,6 +177,14 @@ void ScanPiece::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_infoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Info";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_info.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -265,5 +284,21 @@ void ScanPiece::SetOpenId(const string& _openId)
 bool ScanPiece::OpenIdHasBeenSet() const
 {
     return m_openIdHasBeenSet;
+}
+
+string ScanPiece::GetInfo() const
+{
+    return m_info;
+}
+
+void ScanPiece::SetInfo(const string& _info)
+{
+    m_info = _info;
+    m_infoHasBeenSet = true;
+}
+
+bool ScanPiece::InfoHasBeenSet() const
+{
+    return m_infoHasBeenSet;
 }
 

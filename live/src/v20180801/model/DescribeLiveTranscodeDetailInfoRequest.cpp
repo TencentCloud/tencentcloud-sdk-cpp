@@ -24,11 +24,13 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeLiveTranscodeDetailInfoRequest::DescribeLiveTranscodeDetailInfoRequest() :
-    m_dayTimeHasBeenSet(false),
     m_pushDomainHasBeenSet(false),
     m_streamNameHasBeenSet(false),
+    m_dayTimeHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_startDayTimeHasBeenSet(false),
+    m_endDayTimeHasBeenSet(false)
 {
 }
 
@@ -38,14 +40,6 @@ string DescribeLiveTranscodeDetailInfoRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_dayTimeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "DayTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_dayTime.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_pushDomainHasBeenSet)
     {
@@ -61,6 +55,14 @@ string DescribeLiveTranscodeDetailInfoRequest::ToJsonString() const
         string key = "StreamName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dayTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dayTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pageNumHasBeenSet)
@@ -79,6 +81,22 @@ string DescribeLiveTranscodeDetailInfoRequest::ToJsonString() const
         d.AddMember(iKey, m_pageSize, allocator);
     }
 
+    if (m_startDayTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartDayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_startDayTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endDayTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndDayTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_endDayTime.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -86,22 +104,6 @@ string DescribeLiveTranscodeDetailInfoRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeLiveTranscodeDetailInfoRequest::GetDayTime() const
-{
-    return m_dayTime;
-}
-
-void DescribeLiveTranscodeDetailInfoRequest::SetDayTime(const string& _dayTime)
-{
-    m_dayTime = _dayTime;
-    m_dayTimeHasBeenSet = true;
-}
-
-bool DescribeLiveTranscodeDetailInfoRequest::DayTimeHasBeenSet() const
-{
-    return m_dayTimeHasBeenSet;
-}
 
 string DescribeLiveTranscodeDetailInfoRequest::GetPushDomain() const
 {
@@ -135,6 +137,22 @@ bool DescribeLiveTranscodeDetailInfoRequest::StreamNameHasBeenSet() const
     return m_streamNameHasBeenSet;
 }
 
+string DescribeLiveTranscodeDetailInfoRequest::GetDayTime() const
+{
+    return m_dayTime;
+}
+
+void DescribeLiveTranscodeDetailInfoRequest::SetDayTime(const string& _dayTime)
+{
+    m_dayTime = _dayTime;
+    m_dayTimeHasBeenSet = true;
+}
+
+bool DescribeLiveTranscodeDetailInfoRequest::DayTimeHasBeenSet() const
+{
+    return m_dayTimeHasBeenSet;
+}
+
 uint64_t DescribeLiveTranscodeDetailInfoRequest::GetPageNum() const
 {
     return m_pageNum;
@@ -165,6 +183,38 @@ void DescribeLiveTranscodeDetailInfoRequest::SetPageSize(const uint64_t& _pageSi
 bool DescribeLiveTranscodeDetailInfoRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeLiveTranscodeDetailInfoRequest::GetStartDayTime() const
+{
+    return m_startDayTime;
+}
+
+void DescribeLiveTranscodeDetailInfoRequest::SetStartDayTime(const string& _startDayTime)
+{
+    m_startDayTime = _startDayTime;
+    m_startDayTimeHasBeenSet = true;
+}
+
+bool DescribeLiveTranscodeDetailInfoRequest::StartDayTimeHasBeenSet() const
+{
+    return m_startDayTimeHasBeenSet;
+}
+
+string DescribeLiveTranscodeDetailInfoRequest::GetEndDayTime() const
+{
+    return m_endDayTime;
+}
+
+void DescribeLiveTranscodeDetailInfoRequest::SetEndDayTime(const string& _endDayTime)
+{
+    m_endDayTime = _endDayTime;
+    m_endDayTimeHasBeenSet = true;
+}
+
+bool DescribeLiveTranscodeDetailInfoRequest::EndDayTimeHasBeenSet() const
+{
+    return m_endDayTimeHasBeenSet;
 }
 
 

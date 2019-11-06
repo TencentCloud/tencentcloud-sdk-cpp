@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/clb/v20180317/model/AutoRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/AutoRewriteResponse.h>
+#include <tencentcloud/clb/v20180317/model/BatchDeregisterTargetsRequest.h>
+#include <tencentcloud/clb/v20180317/model/BatchDeregisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/BatchModifyTargetWeightRequest.h>
 #include <tencentcloud/clb/v20180317/model/BatchModifyTargetWeightResponse.h>
+#include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsRequest.h>
+#include <tencentcloud/clb/v20180317/model/BatchRegisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/clb/v20180317/model/ManualRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyDomainAttributesRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyDomainAttributesResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesRequest.h>
@@ -106,9 +112,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AutoRewriteResponse> AutoRewriteOutcome;
                 typedef std::future<AutoRewriteOutcome> AutoRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::AutoRewriteRequest&, AutoRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AutoRewriteAsyncHandler;
+                typedef Outcome<Error, Model::BatchDeregisterTargetsResponse> BatchDeregisterTargetsOutcome;
+                typedef std::future<BatchDeregisterTargetsOutcome> BatchDeregisterTargetsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::BatchDeregisterTargetsRequest&, BatchDeregisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeregisterTargetsAsyncHandler;
                 typedef Outcome<Error, Model::BatchModifyTargetWeightResponse> BatchModifyTargetWeightOutcome;
                 typedef std::future<BatchModifyTargetWeightOutcome> BatchModifyTargetWeightOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::BatchModifyTargetWeightRequest&, BatchModifyTargetWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyTargetWeightAsyncHandler;
+                typedef Outcome<Error, Model::BatchRegisterTargetsResponse> BatchRegisterTargetsOutcome;
+                typedef std::future<BatchRegisterTargetsOutcome> BatchRegisterTargetsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::BatchRegisterTargetsRequest&, BatchRegisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterTargetsAsyncHandler;
                 typedef Outcome<Error, Model::CreateListenerResponse> CreateListenerOutcome;
                 typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateListenerRequest&, CreateListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateListenerAsyncHandler;
@@ -172,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDomainResponse> ModifyDomainOutcome;
                 typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyDomainRequest&, ModifyDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDomainAttributesResponse> ModifyDomainAttributesOutcome;
+                typedef std::future<ModifyDomainAttributesOutcome> ModifyDomainAttributesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyDomainAttributesRequest&, ModifyDomainAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAttributesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyListenerResponse> ModifyListenerOutcome;
                 typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyListenerRequest&, ModifyListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyListenerAsyncHandler;
@@ -207,6 +222,7 @@ namespace TencentCloud
 
                 /**
                  *用户需要先创建出一个HTTPS:443监听器，并在其下创建转发规则。通过调用本接口，系统会自动创建出一个HTTP:80监听器（如果之前不存在），并在其下创建转发规则，与HTTPS:443监听器下的Domains（在入参中指定）对应。创建成功后可以通过HTTP:80地址自动跳转为HTTPS:443地址进行访问。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req AutoRewriteRequest
                  * @return AutoRewriteOutcome
                  */
@@ -215,7 +231,16 @@ namespace TencentCloud
                 AutoRewriteOutcomeCallable AutoRewriteCallable(const Model::AutoRewriteRequest& request);
 
                 /**
-                 *BatchModifyTargetWeight接口用于批量修改负载均衡监听器绑定的后端机器的转发权重，暂时只支持HTTP/HTTPS监听器。不支持传统型负载均衡。
+                 *批量解绑四七层后端服务。
+                 * @param req BatchDeregisterTargetsRequest
+                 * @return BatchDeregisterTargetsOutcome
+                 */
+                BatchDeregisterTargetsOutcome BatchDeregisterTargets(const Model::BatchDeregisterTargetsRequest &request);
+                void BatchDeregisterTargetsAsync(const Model::BatchDeregisterTargetsRequest& request, const BatchDeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDeregisterTargetsOutcomeCallable BatchDeregisterTargetsCallable(const Model::BatchDeregisterTargetsRequest& request);
+
+                /**
+                 *BatchModifyTargetWeight接口用于批量修改负载均衡监听器绑定的后端机器的转发权重，支持负载均衡的4层和7层监听器；不支持传统型负载均衡。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req BatchModifyTargetWeightRequest
                  * @return BatchModifyTargetWeightOutcome
@@ -223,6 +248,15 @@ namespace TencentCloud
                 BatchModifyTargetWeightOutcome BatchModifyTargetWeight(const Model::BatchModifyTargetWeightRequest &request);
                 void BatchModifyTargetWeightAsync(const Model::BatchModifyTargetWeightRequest& request, const BatchModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchModifyTargetWeightOutcomeCallable BatchModifyTargetWeightCallable(const Model::BatchModifyTargetWeightRequest& request);
+
+                /**
+                 *批量绑定虚拟主机或弹性网卡，支持跨域绑定，只支持四层（TCP、UDP）协议绑定。
+                 * @param req BatchRegisterTargetsRequest
+                 * @return BatchRegisterTargetsOutcome
+                 */
+                BatchRegisterTargetsOutcome BatchRegisterTargets(const Model::BatchRegisterTargetsRequest &request);
+                void BatchRegisterTargetsAsync(const Model::BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchRegisterTargetsOutcomeCallable BatchRegisterTargetsCallable(const Model::BatchRegisterTargetsRequest& request);
 
                 /**
                  *在一个负载均衡实例下创建监听器。
@@ -235,7 +269,7 @@ namespace TencentCloud
                 CreateListenerOutcomeCallable CreateListenerCallable(const Model::CreateListenerRequest& request);
 
                 /**
-                 *CreateLoadBalancer 接口用来创建负载均衡实例。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。
+                 *CreateLoadBalancer 接口用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。
 注意：(1)指定可用区申请负载均衡、跨zone容灾【如需使用，请提交工单（ https://console.cloud.tencent.com/workorder/category ）申请】；(2)目前只有北京、上海、广州支持IPv6；
 本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。
                  * @param req CreateLoadBalancerRequest
@@ -277,6 +311,7 @@ namespace TencentCloud
 
                 /**
                  *DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req DeleteRewriteRequest
                  * @return DeleteRewriteOutcome
                  */
@@ -407,6 +442,7 @@ namespace TencentCloud
 
                 /**
                  *用户手动配置原访问地址和重定向地址，系统自动将原访问地址的请求重定向至对应路径的目的地址。同一域名下可以配置多条路径作为重定向策略，实现http/https之间请求的自动跳转。设置重定向时，需满足如下约束条件：若A已经重定向至B，则A不能再重定向至C（除非先删除老的重定向关系，再建立新的重定向关系），B不能重定向至任何其它地址。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req ManualRewriteRequest
                  * @return ManualRewriteOutcome
                  */
@@ -423,6 +459,16 @@ namespace TencentCloud
                 ModifyDomainOutcome ModifyDomain(const Model::ModifyDomainRequest &request);
                 void ModifyDomainAsync(const Model::ModifyDomainRequest& request, const ModifyDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainOutcomeCallable ModifyDomainCallable(const Model::ModifyDomainRequest& request);
+
+                /**
+                 *ModifyDomainAttributes接口用于修改负载均衡7层监听器转发规则的域名级别属性，如修改域名、修改DefaultServer、开启/关闭Http2、修改证书。
+本接口为异步接口，本接口返回成功后，需以返回的RequestId为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+                 * @param req ModifyDomainAttributesRequest
+                 * @return ModifyDomainAttributesOutcome
+                 */
+                ModifyDomainAttributesOutcome ModifyDomainAttributes(const Model::ModifyDomainAttributesRequest &request);
+                void ModifyDomainAttributesAsync(const Model::ModifyDomainAttributesRequest& request, const ModifyDomainAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainAttributesOutcomeCallable ModifyDomainAttributesCallable(const Model::ModifyDomainAttributesRequest& request);
 
                 /**
                  *ModifyListener接口用来修改负载均衡监听器的属性，包括监听器名称、健康检查参数、证书信息、转发策略等。本接口不支持传统型负载均衡。

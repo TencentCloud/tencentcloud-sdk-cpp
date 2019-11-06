@@ -26,7 +26,8 @@ using namespace std;
 
 VerifyFaceResponse::VerifyFaceResponse() :
     m_scoreHasBeenSet(false),
-    m_isMatchHasBeenSet(false)
+    m_isMatchHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome VerifyFaceResponse::Deserialize(const string &payload)
         m_isMatchHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,16 @@ bool VerifyFaceResponse::GetIsMatch() const
 bool VerifyFaceResponse::IsMatchHasBeenSet() const
 {
     return m_isMatchHasBeenSet;
+}
+
+string VerifyFaceResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool VerifyFaceResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

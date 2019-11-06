@@ -260,6 +260,24 @@ namespace TencentCloud
                      */
                     bool PublishHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启L5访问能力，TRUE 为开启，FALSE为关闭
+                     * @return L5Enable 是否开启L5访问能力，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string GetL5Enable() const;
+
+                    /**
+                     * 设置是否开启L5访问能力，TRUE 为开启，FALSE为关闭
+                     * @param L5Enable 是否开启L5访问能力，TRUE 为开启，FALSE为关闭
+                     */
+                    void SetL5Enable(const std::string& _l5Enable);
+
+                    /**
+                     * 判断参数 L5Enable 是否已赋值
+                     * @return L5Enable 是否已赋值
+                     */
+                    bool L5EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +351,12 @@ namespace TencentCloud
                      */
                     std::string m_publish;
                     bool m_publishHasBeenSet;
+
+                    /**
+                     * 是否开启L5访问能力，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string m_l5Enable;
+                    bool m_l5EnableHasBeenSet;
 
                 };
             }

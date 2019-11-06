@@ -69,14 +69,14 @@ BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支�
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取最大出带宽，单位Mbps，范围支持0到65535，仅对公网属性的LB生效，默认值 10
-                     * @return InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到65535，仅对公网属性的LB生效，默认值 10
+                     * 获取最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+                     * @return InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置最大出带宽，单位Mbps，范围支持0到65535，仅对公网属性的LB生效，默认值 10
-                     * @param InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到65535，仅对公网属性的LB生效，默认值 10
+                     * 设置最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+                     * @param InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
@@ -96,7 +96,7 @@ BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支�
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
-                     * 最大出带宽，单位Mbps，范围支持0到65535，仅对公网属性的LB生效，默认值 10
+                     * 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;

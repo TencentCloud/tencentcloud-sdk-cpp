@@ -174,6 +174,24 @@ namespace TencentCloud
                      */
                     bool SchedulerHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     * @return SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     */
+                    int64_t GetSniSwitch() const;
+
+                    /**
+                     * 设置是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     * @param SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     */
+                    void SetSniSwitch(const int64_t& _sniSwitch);
+
+                    /**
+                     * 判断参数 SniSwitch 是否已赋值
+                     * @return SniSwitch 是否已赋值
+                     */
+                    bool SniSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -218,6 +236,12 @@ namespace TencentCloud
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
+
+                    /**
+                     * 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI
+                     */
+                    int64_t m_sniSwitch;
+                    bool m_sniSwitchHasBeenSet;
 
                 };
             }

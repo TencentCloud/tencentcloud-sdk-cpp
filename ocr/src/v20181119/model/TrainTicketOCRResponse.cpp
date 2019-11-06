@@ -33,7 +33,8 @@ TrainTicketOCRResponse::TrainTicketOCRResponse() :
     m_seatHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_priceHasBeenSet(false),
-    m_seatCategoryHasBeenSet(false)
+    m_seatCategoryHasBeenSet(false),
+    m_iDHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
         m_seatCategoryHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ID") && !rsp["ID"].IsNull())
+    {
+        if (!rsp["ID"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iD = string(rsp["ID"].GetString());
+        m_iDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -254,6 +265,16 @@ string TrainTicketOCRResponse::GetSeatCategory() const
 bool TrainTicketOCRResponse::SeatCategoryHasBeenSet() const
 {
     return m_seatCategoryHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetID() const
+{
+    return m_iD;
+}
+
+bool TrainTicketOCRResponse::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
 }
 
 

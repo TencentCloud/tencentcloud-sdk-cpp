@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/ResourceSpec.h>
+#include <tencentcloud/emr/v20190103/model/NewResourceSpec.h>
 #include <tencentcloud/emr/v20190103/model/Placement.h>
 #include <tencentcloud/emr/v20190103/model/VPCSettings.h>
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                      * 获取询价资源描述
                      * @return ResourceSpec 询价资源描述
                      */
-                    ResourceSpec GetResourceSpec() const;
+                    NewResourceSpec GetResourceSpec() const;
 
                     /**
                      * 设置询价资源描述
                      * @param ResourceSpec 询价资源描述
                      */
-                    void SetResourceSpec(const ResourceSpec& _resourceSpec);
+                    void SetResourceSpec(const NewResourceSpec& _resourceSpec);
 
                     /**
                      * 判断参数 ResourceSpec 是否已赋值
@@ -224,7 +224,7 @@ namespace TencentCloud
                     /**
                      * 询价资源描述
                      */
-                    ResourceSpec m_resourceSpec;
+                    NewResourceSpec m_resourceSpec;
                     bool m_resourceSpecHasBeenSet;
 
                     /**

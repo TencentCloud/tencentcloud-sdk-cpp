@@ -1,0 +1,357 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/mongodb/v20190725/model/BackupInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Mongodb::V20190725::Model;
+using namespace rapidjson;
+using namespace std;
+
+BackupInfo::BackupInfo() :
+    m_instanceIdHasBeenSet(false),
+    m_backupTypeHasBeenSet(false),
+    m_backupNameHasBeenSet(false),
+    m_backupDescHasBeenSet(false),
+    m_backupSizeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_backupMethodHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome BackupInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupType") && !value["BackupType"].IsNull())
+    {
+        if (!value["BackupType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.BackupType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupType = value["BackupType"].GetUint64();
+        m_backupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupName") && !value["BackupName"].IsNull())
+    {
+        if (!value["BackupName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.BackupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupName = string(value["BackupName"].GetString());
+        m_backupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupDesc") && !value["BackupDesc"].IsNull())
+    {
+        if (!value["BackupDesc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.BackupDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupDesc = string(value["BackupDesc"].GetString());
+        m_backupDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupSize") && !value["BackupSize"].IsNull())
+    {
+        if (!value["BackupSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.BackupSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSize = value["BackupSize"].GetUint64();
+        m_backupSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupMethod") && !value["BackupMethod"].IsNull())
+    {
+        if (!value["BackupMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.BackupMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupMethod = value["BackupMethod"].GetUint64();
+        m_backupMethodHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void BackupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupType, allocator);
+    }
+
+    if (m_backupNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupDescHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_backupDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupSize, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupMethod, allocator);
+    }
+
+}
+
+
+string BackupInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void BackupInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool BackupInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+uint64_t BackupInfo::GetBackupType() const
+{
+    return m_backupType;
+}
+
+void BackupInfo::SetBackupType(const uint64_t& _backupType)
+{
+    m_backupType = _backupType;
+    m_backupTypeHasBeenSet = true;
+}
+
+bool BackupInfo::BackupTypeHasBeenSet() const
+{
+    return m_backupTypeHasBeenSet;
+}
+
+string BackupInfo::GetBackupName() const
+{
+    return m_backupName;
+}
+
+void BackupInfo::SetBackupName(const string& _backupName)
+{
+    m_backupName = _backupName;
+    m_backupNameHasBeenSet = true;
+}
+
+bool BackupInfo::BackupNameHasBeenSet() const
+{
+    return m_backupNameHasBeenSet;
+}
+
+string BackupInfo::GetBackupDesc() const
+{
+    return m_backupDesc;
+}
+
+void BackupInfo::SetBackupDesc(const string& _backupDesc)
+{
+    m_backupDesc = _backupDesc;
+    m_backupDescHasBeenSet = true;
+}
+
+bool BackupInfo::BackupDescHasBeenSet() const
+{
+    return m_backupDescHasBeenSet;
+}
+
+uint64_t BackupInfo::GetBackupSize() const
+{
+    return m_backupSize;
+}
+
+void BackupInfo::SetBackupSize(const uint64_t& _backupSize)
+{
+    m_backupSize = _backupSize;
+    m_backupSizeHasBeenSet = true;
+}
+
+bool BackupInfo::BackupSizeHasBeenSet() const
+{
+    return m_backupSizeHasBeenSet;
+}
+
+string BackupInfo::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void BackupInfo::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool BackupInfo::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string BackupInfo::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void BackupInfo::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool BackupInfo::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+uint64_t BackupInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void BackupInfo::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool BackupInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+uint64_t BackupInfo::GetBackupMethod() const
+{
+    return m_backupMethod;
+}
+
+void BackupInfo::SetBackupMethod(const uint64_t& _backupMethod)
+{
+    m_backupMethod = _backupMethod;
+    m_backupMethodHasBeenSet = true;
+}
+
+bool BackupInfo::BackupMethodHasBeenSet() const
+{
+    return m_backupMethodHasBeenSet;
+}
+

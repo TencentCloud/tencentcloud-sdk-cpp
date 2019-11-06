@@ -172,6 +172,28 @@ namespace TencentCloud
                      */
                     bool ExternalAddrHasBeenSet() const;
 
+                    /**
+                     * 获取状态（1成功 2失败）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 状态（1成功 2失败）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置状态（1成功 2失败）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 状态（1成功 2失败）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +237,13 @@ namespace TencentCloud
                      */
                     std::string m_externalAddr;
                     bool m_externalAddrHasBeenSet;
+
+                    /**
+                     * 状态（1成功 2失败）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

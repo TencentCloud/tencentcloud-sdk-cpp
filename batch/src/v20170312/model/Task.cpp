@@ -38,7 +38,8 @@ Task::Task() :
     m_maxRetryCountHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_maxConcurrentNumHasBeenSet(false),
-    m_restartComputeNodeHasBeenSet(false)
+    m_restartComputeNodeHasBeenSet(false),
+    m_resourceMaxRetryCountHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,16 @@ CoreInternalOutcome Task::Deserialize(const Value &value)
         m_restartComputeNodeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceMaxRetryCount") && !value["ResourceMaxRetryCount"].IsNull())
+    {
+        if (!value["ResourceMaxRetryCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Task.ResourceMaxRetryCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceMaxRetryCount = value["ResourceMaxRetryCount"].GetUint64();
+        m_resourceMaxRetryCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -475,6 +486,14 @@ void Task::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "RestartComputeNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_restartComputeNode, allocator);
+    }
+
+    if (m_resourceMaxRetryCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceMaxRetryCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceMaxRetryCount, allocator);
     }
 
 }
@@ -750,5 +769,21 @@ void Task::SetRestartComputeNode(const bool& _restartComputeNode)
 bool Task::RestartComputeNodeHasBeenSet() const
 {
     return m_restartComputeNodeHasBeenSet;
+}
+
+uint64_t Task::GetResourceMaxRetryCount() const
+{
+    return m_resourceMaxRetryCount;
+}
+
+void Task::SetResourceMaxRetryCount(const uint64_t& _resourceMaxRetryCount)
+{
+    m_resourceMaxRetryCount = _resourceMaxRetryCount;
+    m_resourceMaxRetryCountHasBeenSet = true;
+}
+
+bool Task::ResourceMaxRetryCountHasBeenSet() const
+{
+    return m_resourceMaxRetryCountHasBeenSet;
 }
 

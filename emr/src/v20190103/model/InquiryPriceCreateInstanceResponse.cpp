@@ -25,7 +25,10 @@ using namespace rapidjson;
 using namespace std;
 
 InquiryPriceCreateInstanceResponse::InquiryPriceCreateInstanceResponse() :
-    m_resultHasBeenSet(false)
+    m_originalCostHasBeenSet(false),
+    m_discountCostHasBeenSet(false),
+    m_timeUnitHasBeenSet(false),
+    m_timeSpanHasBeenSet(false)
 {
 }
 
@@ -63,21 +66,44 @@ CoreInternalOutcome InquiryPriceCreateInstanceResponse::Deserialize(const string
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("OriginalCost") && !rsp["OriginalCost"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["OriginalCost"].IsDouble())
         {
-            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OriginalCost` IsDouble=false incorrectly").SetRequestId(requestId));
         }
+        m_originalCost = rsp["OriginalCost"].GetDouble();
+        m_originalCostHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("DiscountCost") && !rsp["DiscountCost"].IsNull())
+    {
+        if (!rsp["DiscountCost"].IsDouble())
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            return CoreInternalOutcome(Error("response `DiscountCost` IsDouble=false incorrectly").SetRequestId(requestId));
         }
+        m_discountCost = rsp["DiscountCost"].GetDouble();
+        m_discountCostHasBeenSet = true;
+    }
 
-        m_resultHasBeenSet = true;
+    if (rsp.HasMember("TimeUnit") && !rsp["TimeUnit"].IsNull())
+    {
+        if (!rsp["TimeUnit"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeUnit = string(rsp["TimeUnit"].GetString());
+        m_timeUnitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TimeSpan") && !rsp["TimeSpan"].IsNull())
+    {
+        if (!rsp["TimeSpan"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TimeSpan` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeSpan = rsp["TimeSpan"].GetInt64();
+        m_timeSpanHasBeenSet = true;
     }
 
 
@@ -85,14 +111,44 @@ CoreInternalOutcome InquiryPriceCreateInstanceResponse::Deserialize(const string
 }
 
 
-InquiryPriceResult InquiryPriceCreateInstanceResponse::GetResult() const
+double InquiryPriceCreateInstanceResponse::GetOriginalCost() const
 {
-    return m_result;
+    return m_originalCost;
 }
 
-bool InquiryPriceCreateInstanceResponse::ResultHasBeenSet() const
+bool InquiryPriceCreateInstanceResponse::OriginalCostHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_originalCostHasBeenSet;
+}
+
+double InquiryPriceCreateInstanceResponse::GetDiscountCost() const
+{
+    return m_discountCost;
+}
+
+bool InquiryPriceCreateInstanceResponse::DiscountCostHasBeenSet() const
+{
+    return m_discountCostHasBeenSet;
+}
+
+string InquiryPriceCreateInstanceResponse::GetTimeUnit() const
+{
+    return m_timeUnit;
+}
+
+bool InquiryPriceCreateInstanceResponse::TimeUnitHasBeenSet() const
+{
+    return m_timeUnitHasBeenSet;
+}
+
+int64_t InquiryPriceCreateInstanceResponse::GetTimeSpan() const
+{
+    return m_timeSpan;
+}
+
+bool InquiryPriceCreateInstanceResponse::TimeSpanHasBeenSet() const
+{
+    return m_timeSpanHasBeenSet;
 }
 
 

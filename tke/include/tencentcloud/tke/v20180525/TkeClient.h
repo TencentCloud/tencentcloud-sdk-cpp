@@ -37,6 +37,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteRequest.h>
@@ -92,6 +94,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
+                typedef Outcome<Error, Model::DeleteClusterAsGroupsResponse> DeleteClusterAsGroupsOutcome;
+                typedef std::future<DeleteClusterAsGroupsOutcome> DeleteClusterAsGroupsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteClusterAsGroupsRequest&, DeleteClusterAsGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteClusterInstancesResponse> DeleteClusterInstancesOutcome;
                 typedef std::future<DeleteClusterInstancesOutcome> DeleteClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterInstancesRequest&, DeleteClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterInstancesAsyncHandler;
@@ -187,6 +192,15 @@ namespace TencentCloud
                 DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest &request);
                 void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request);
+
+                /**
+                 *删除集群伸缩组
+                 * @param req DeleteClusterAsGroupsRequest
+                 * @return DeleteClusterAsGroupsOutcome
+                 */
+                DeleteClusterAsGroupsOutcome DeleteClusterAsGroups(const Model::DeleteClusterAsGroupsRequest &request);
+                void DeleteClusterAsGroupsAsync(const Model::DeleteClusterAsGroupsRequest& request, const DeleteClusterAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterAsGroupsOutcomeCallable DeleteClusterAsGroupsCallable(const Model::DeleteClusterAsGroupsRequest& request);
 
                 /**
                  *删除集群中的实例

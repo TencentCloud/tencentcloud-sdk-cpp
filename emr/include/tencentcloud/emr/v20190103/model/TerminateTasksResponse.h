@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/TerminateResult.h>
 
 
 namespace TencentCloud
@@ -43,25 +42,7 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
-                    /**
-                     * 获取退单结果
-                     * @return Result 退单结果
-                     */
-                    TerminateResult GetResult() const;
-
-                    /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
-                     */
-                    bool ResultHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 退单结果
-                     */
-                    TerminateResult m_result;
-                    bool m_resultHasBeenSet;
 
                 };
             }

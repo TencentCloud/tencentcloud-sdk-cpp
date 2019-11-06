@@ -46,7 +46,10 @@ Instance::Instance() :
     m_instanceStateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_stopChargingModeHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_latestOperationHasBeenSet(false),
+    m_latestOperationStateHasBeenSet(false),
+    m_latestOperationRequestIdHasBeenSet(false)
 {
 }
 
@@ -369,6 +372,36 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("LatestOperation") && !value["LatestOperation"].IsNull())
+    {
+        if (!value["LatestOperation"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.LatestOperation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperation = string(value["LatestOperation"].GetString());
+        m_latestOperationHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationState") && !value["LatestOperationState"].IsNull())
+    {
+        if (!value["LatestOperationState"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.LatestOperationState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationState = string(value["LatestOperationState"].GetString());
+        m_latestOperationStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationRequestId") && !value["LatestOperationRequestId"].IsNull())
+    {
+        if (!value["LatestOperationRequestId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.LatestOperationRequestId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationRequestId = string(value["LatestOperationRequestId"].GetString());
+        m_latestOperationRequestIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -608,6 +641,30 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LatestOperation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_latestOperation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LatestOperationState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_latestOperationState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationRequestIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LatestOperationRequestId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_latestOperationRequestId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1011,5 +1068,53 @@ void Instance::SetUuid(const string& _uuid)
 bool Instance::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string Instance::GetLatestOperation() const
+{
+    return m_latestOperation;
+}
+
+void Instance::SetLatestOperation(const string& _latestOperation)
+{
+    m_latestOperation = _latestOperation;
+    m_latestOperationHasBeenSet = true;
+}
+
+bool Instance::LatestOperationHasBeenSet() const
+{
+    return m_latestOperationHasBeenSet;
+}
+
+string Instance::GetLatestOperationState() const
+{
+    return m_latestOperationState;
+}
+
+void Instance::SetLatestOperationState(const string& _latestOperationState)
+{
+    m_latestOperationState = _latestOperationState;
+    m_latestOperationStateHasBeenSet = true;
+}
+
+bool Instance::LatestOperationStateHasBeenSet() const
+{
+    return m_latestOperationStateHasBeenSet;
+}
+
+string Instance::GetLatestOperationRequestId() const
+{
+    return m_latestOperationRequestId;
+}
+
+void Instance::SetLatestOperationRequestId(const string& _latestOperationRequestId)
+{
+    m_latestOperationRequestId = _latestOperationRequestId;
+    m_latestOperationRequestIdHasBeenSet = true;
+}
+
+bool Instance::LatestOperationRequestIdHasBeenSet() const
+{
+    return m_latestOperationRequestIdHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ SlowlogInfo::SlowlogInfo() :
     m_sizeHasBeenSet(false),
     m_countHasBeenSet(false),
     m_internalAddrHasBeenSet(false),
-    m_externalAddrHasBeenSet(false)
+    m_externalAddrHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome SlowlogInfo::Deserialize(const Value &value)
         m_externalAddrHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SlowlogInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void SlowlogInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ExternalAddr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_externalAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void SlowlogInfo::SetExternalAddr(const string& _externalAddr)
 bool SlowlogInfo::ExternalAddrHasBeenSet() const
 {
     return m_externalAddrHasBeenSet;
+}
+
+int64_t SlowlogInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void SlowlogInfo::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool SlowlogInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

@@ -21,6 +21,7 @@ set(clb_public_header
 set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DeleteRewriteRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetPortRequest.h
+  include/tencentcloud/clb/v20180317/model/BatchDeregisterTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsResponse.h
   include/tencentcloud/clb/v20180317/model/ExtraInfo.h
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetWeightResponse.h
@@ -66,6 +67,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyTargetPortResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdRequest.h
   include/tencentcloud/clb/v20180317/model/ManualRewriteResponse.h
+  include/tencentcloud/clb/v20180317/model/ModifyDomainAttributesResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetWeightRequest.h
   include/tencentcloud/clb/v20180317/model/ModifyDomainRequest.h
   include/tencentcloud/clb/v20180317/model/Backend.h
@@ -78,6 +80,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/CreateRuleRequest.h
   include/tencentcloud/clb/v20180317/model/RuleTargets.h
+  include/tencentcloud/clb/v20180317/model/BatchDeregisterTargetsRequest.h
   include/tencentcloud/clb/v20180317/model/ManualRewriteRequest.h
   include/tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetHealthResponse.h
@@ -94,11 +97,15 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetWeightRequest.h
   include/tencentcloud/clb/v20180317/model/DeleteRewriteResponse.h
+  include/tencentcloud/clb/v20180317/model/BatchTarget.h
   include/tencentcloud/clb/v20180317/model/TargetRegionInfo.h
+  include/tencentcloud/clb/v20180317/model/BatchRegisterTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyListenerResponse.h
   include/tencentcloud/clb/v20180317/model/DeleteRuleResponse.h
+  include/tencentcloud/clb/v20180317/model/ModifyDomainAttributesRequest.h
   include/tencentcloud/clb/v20180317/model/DeregisterTargetsRequest.h
   include/tencentcloud/clb/v20180317/model/CertificateOutput.h
+  include/tencentcloud/clb/v20180317/model/BatchRegisterTargetsRequest.h
   include/tencentcloud/clb/v20180317/model/ListenerBackend.h
   include/tencentcloud/clb/v20180317/model/TagInfo.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBListenersResponse.h
@@ -120,6 +127,7 @@ set(clb_src
   src/v20180317/ClbClient.cpp
   src/v20180317/model/DeleteRewriteRequest.cpp
   src/v20180317/model/ModifyTargetPortRequest.cpp
+  src/v20180317/model/BatchDeregisterTargetsResponse.cpp
   src/v20180317/model/SetLoadBalancerSecurityGroupsResponse.cpp
   src/v20180317/model/ExtraInfo.cpp
   src/v20180317/model/BatchModifyTargetWeightResponse.cpp
@@ -165,6 +173,7 @@ set(clb_src
   src/v20180317/model/ModifyTargetPortResponse.cpp
   src/v20180317/model/DescribeClassicalLBByInstanceIdRequest.cpp
   src/v20180317/model/ManualRewriteResponse.cpp
+  src/v20180317/model/ModifyDomainAttributesResponse.cpp
   src/v20180317/model/ModifyTargetWeightRequest.cpp
   src/v20180317/model/ModifyDomainRequest.cpp
   src/v20180317/model/Backend.cpp
@@ -177,6 +186,7 @@ set(clb_src
   src/v20180317/model/DeleteLoadBalancerRequest.cpp
   src/v20180317/model/CreateRuleRequest.cpp
   src/v20180317/model/RuleTargets.cpp
+  src/v20180317/model/BatchDeregisterTargetsRequest.cpp
   src/v20180317/model/ManualRewriteRequest.cpp
   src/v20180317/model/ReplaceCertForLoadBalancersRequest.cpp
   src/v20180317/model/DescribeTargetHealthResponse.cpp
@@ -193,11 +203,15 @@ set(clb_src
   src/v20180317/model/DescribeTargetsResponse.cpp
   src/v20180317/model/BatchModifyTargetWeightRequest.cpp
   src/v20180317/model/DeleteRewriteResponse.cpp
+  src/v20180317/model/BatchTarget.cpp
   src/v20180317/model/TargetRegionInfo.cpp
+  src/v20180317/model/BatchRegisterTargetsResponse.cpp
   src/v20180317/model/ModifyListenerResponse.cpp
   src/v20180317/model/DeleteRuleResponse.cpp
+  src/v20180317/model/ModifyDomainAttributesRequest.cpp
   src/v20180317/model/DeregisterTargetsRequest.cpp
   src/v20180317/model/CertificateOutput.cpp
+  src/v20180317/model/BatchRegisterTargetsRequest.cpp
   src/v20180317/model/ListenerBackend.cpp
   src/v20180317/model/TagInfo.cpp
   src/v20180317/model/DescribeClassicalLBListenersResponse.cpp

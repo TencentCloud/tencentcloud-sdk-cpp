@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加密后的密文
-                     * @return CiphertextBlob 加密后的密文
+                     * 获取加密后经过base64编码的密文
+                     * @return CiphertextBlob 加密后经过base64编码的密文
                      */
                     std::string GetCiphertextBlob() const;
 
@@ -69,7 +69,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加密后的密文
+                     * 加密后经过base64编码的密文
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;

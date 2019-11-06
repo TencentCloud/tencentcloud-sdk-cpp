@@ -30,7 +30,9 @@ SearchFacesRequest::SearchFacesRequest() :
     m_maxFaceNumHasBeenSet(false),
     m_minFaceSizeHasBeenSet(false),
     m_maxPersonNumHasBeenSet(false),
-    m_needPersonInfoHasBeenSet(false)
+    m_needPersonInfoHasBeenSet(false),
+    m_qualityControlHasBeenSet(false),
+    m_faceMatchThresholdHasBeenSet(false)
 {
 }
 
@@ -100,6 +102,22 @@ string SearchFacesRequest::ToJsonString() const
         string key = "NeedPersonInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needPersonInfo, allocator);
+    }
+
+    if (m_qualityControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QualityControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualityControl, allocator);
+    }
+
+    if (m_faceMatchThresholdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceMatchThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_faceMatchThreshold, allocator);
     }
 
 
@@ -220,6 +238,38 @@ void SearchFacesRequest::SetNeedPersonInfo(const int64_t& _needPersonInfo)
 bool SearchFacesRequest::NeedPersonInfoHasBeenSet() const
 {
     return m_needPersonInfoHasBeenSet;
+}
+
+uint64_t SearchFacesRequest::GetQualityControl() const
+{
+    return m_qualityControl;
+}
+
+void SearchFacesRequest::SetQualityControl(const uint64_t& _qualityControl)
+{
+    m_qualityControl = _qualityControl;
+    m_qualityControlHasBeenSet = true;
+}
+
+bool SearchFacesRequest::QualityControlHasBeenSet() const
+{
+    return m_qualityControlHasBeenSet;
+}
+
+double SearchFacesRequest::GetFaceMatchThreshold() const
+{
+    return m_faceMatchThreshold;
+}
+
+void SearchFacesRequest::SetFaceMatchThreshold(const double& _faceMatchThreshold)
+{
+    m_faceMatchThreshold = _faceMatchThreshold;
+    m_faceMatchThresholdHasBeenSet = true;
+}
+
+bool SearchFacesRequest::FaceMatchThresholdHasBeenSet() const
+{
+    return m_faceMatchThresholdHasBeenSet;
 }
 
 

@@ -35,7 +35,8 @@ RuleOutput::RuleOutput() :
     m_beAutoCreatedHasBeenSet(false),
     m_defaultServerHasBeenSet(false),
     m_http2HasBeenSet(false),
-    m_forwardTypeHasBeenSet(false)
+    m_forwardTypeHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome RuleOutput::Deserialize(const Value &value)
         m_forwardTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -325,6 +336,14 @@ void RuleOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "ForwardType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_forwardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -552,5 +571,21 @@ void RuleOutput::SetForwardType(const string& _forwardType)
 bool RuleOutput::ForwardTypeHasBeenSet() const
 {
     return m_forwardTypeHasBeenSet;
+}
+
+string RuleOutput::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void RuleOutput::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool RuleOutput::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

@@ -40,6 +40,135 @@ TbaasClient::TbaasClient(const Credential &credential, const string &region, con
 }
 
 
+TbaasClient::ApplyUserCertOutcome TbaasClient::ApplyUserCert(const ApplyUserCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyUserCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyUserCertResponse rsp = ApplyUserCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyUserCertOutcome(rsp);
+        else
+            return ApplyUserCertOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyUserCertOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::ApplyUserCertAsync(const ApplyUserCertRequest& request, const ApplyUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyUserCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::ApplyUserCertOutcomeCallable TbaasClient::ApplyUserCertCallable(const ApplyUserCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyUserCertOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyUserCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::BlockByNumberHandlerOutcome TbaasClient::BlockByNumberHandler(const BlockByNumberHandlerRequest &request)
+{
+    auto outcome = MakeRequest(request, "BlockByNumberHandler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BlockByNumberHandlerResponse rsp = BlockByNumberHandlerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BlockByNumberHandlerOutcome(rsp);
+        else
+            return BlockByNumberHandlerOutcome(o.GetError());
+    }
+    else
+    {
+        return BlockByNumberHandlerOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::BlockByNumberHandlerAsync(const BlockByNumberHandlerRequest& request, const BlockByNumberHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BlockByNumberHandler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::BlockByNumberHandlerOutcomeCallable TbaasClient::BlockByNumberHandlerCallable(const BlockByNumberHandlerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BlockByNumberHandlerOutcome()>>(
+        [this, request]()
+        {
+            return this->BlockByNumberHandler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::DownloadUserCertOutcome TbaasClient::DownloadUserCert(const DownloadUserCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadUserCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadUserCertResponse rsp = DownloadUserCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadUserCertOutcome(rsp);
+        else
+            return DownloadUserCertOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadUserCertOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::DownloadUserCertAsync(const DownloadUserCertRequest& request, const DownloadUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadUserCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::DownloadUserCertOutcomeCallable TbaasClient::DownloadUserCertCallable(const DownloadUserCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadUserCertOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadUserCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::GetBlockListOutcome TbaasClient::GetBlockList(const GetBlockListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetBlockList");
@@ -76,6 +205,49 @@ TbaasClient::GetBlockListOutcomeCallable TbaasClient::GetBlockListCallable(const
         [this, request]()
         {
             return this->GetBlockList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetBlockListHandlerOutcome TbaasClient::GetBlockListHandler(const GetBlockListHandlerRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBlockListHandler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBlockListHandlerResponse rsp = GetBlockListHandlerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBlockListHandlerOutcome(rsp);
+        else
+            return GetBlockListHandlerOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBlockListHandlerOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetBlockListHandlerAsync(const GetBlockListHandlerRequest& request, const GetBlockListHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBlockListHandler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetBlockListHandlerOutcomeCallable TbaasClient::GetBlockListHandlerCallable(const GetBlockListHandlerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBlockListHandlerOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBlockListHandler(request);
         }
     );
 
@@ -212,6 +384,92 @@ TbaasClient::GetLatesdTransactionListOutcomeCallable TbaasClient::GetLatesdTrans
     return task->get_future();
 }
 
+TbaasClient::GetTransByHashHandlerOutcome TbaasClient::GetTransByHashHandler(const GetTransByHashHandlerRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTransByHashHandler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTransByHashHandlerResponse rsp = GetTransByHashHandlerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTransByHashHandlerOutcome(rsp);
+        else
+            return GetTransByHashHandlerOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTransByHashHandlerOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetTransByHashHandlerAsync(const GetTransByHashHandlerRequest& request, const GetTransByHashHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTransByHashHandler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetTransByHashHandlerOutcomeCallable TbaasClient::GetTransByHashHandlerCallable(const GetTransByHashHandlerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTransByHashHandlerOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTransByHashHandler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetTransListHandlerOutcome TbaasClient::GetTransListHandler(const GetTransListHandlerRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTransListHandler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTransListHandlerResponse rsp = GetTransListHandlerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTransListHandlerOutcome(rsp);
+        else
+            return GetTransListHandlerOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTransListHandlerOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetTransListHandlerAsync(const GetTransListHandlerRequest& request, const GetTransListHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTransListHandler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetTransListHandlerOutcomeCallable TbaasClient::GetTransListHandlerCallable(const GetTransListHandlerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTransListHandlerOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTransListHandler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::InvokeOutcome TbaasClient::Invoke(const InvokeRequest &request)
 {
     auto outcome = MakeRequest(request, "Invoke");
@@ -291,6 +549,92 @@ TbaasClient::QueryOutcomeCallable TbaasClient::QueryCallable(const QueryRequest 
         [this, request]()
         {
             return this->Query(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::SendTransactionHandlerOutcome TbaasClient::SendTransactionHandler(const SendTransactionHandlerRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendTransactionHandler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendTransactionHandlerResponse rsp = SendTransactionHandlerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendTransactionHandlerOutcome(rsp);
+        else
+            return SendTransactionHandlerOutcome(o.GetError());
+    }
+    else
+    {
+        return SendTransactionHandlerOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::SendTransactionHandlerAsync(const SendTransactionHandlerRequest& request, const SendTransactionHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendTransactionHandler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::SendTransactionHandlerOutcomeCallable TbaasClient::SendTransactionHandlerCallable(const SendTransactionHandlerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendTransactionHandlerOutcome()>>(
+        [this, request]()
+        {
+            return this->SendTransactionHandler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::SrvInvokeOutcome TbaasClient::SrvInvoke(const SrvInvokeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SrvInvoke");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SrvInvokeResponse rsp = SrvInvokeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SrvInvokeOutcome(rsp);
+        else
+            return SrvInvokeOutcome(o.GetError());
+    }
+    else
+    {
+        return SrvInvokeOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::SrvInvokeAsync(const SrvInvokeRequest& request, const SrvInvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SrvInvoke(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::SrvInvokeOutcomeCallable TbaasClient::SrvInvokeCallable(const SrvInvokeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SrvInvokeOutcome()>>(
+        [this, request]()
+        {
+            return this->SrvInvoke(request);
         }
     );
 

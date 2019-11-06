@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool ApplicationResourceTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取通过id和name进行关键词过滤
+                     * @return SearchWord 通过id和name进行关键词过滤
+                     */
+                    std::string GetSearchWord() const;
+
+                    /**
+                     * 设置通过id和name进行关键词过滤
+                     * @param SearchWord 通过id和name进行关键词过滤
+                     */
+                    void SetSearchWord(const std::string& _searchWord);
+
+                    /**
+                     * 判断参数 SearchWord 是否已赋值
+                     * @return SearchWord 是否已赋值
+                     */
+                    bool SearchWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_applicationResourceTypeList;
                     bool m_applicationResourceTypeListHasBeenSet;
+
+                    /**
+                     * 通过id和name进行关键词过滤
+                     */
+                    std::string m_searchWord;
+                    bool m_searchWordHasBeenSet;
 
                 };
             }

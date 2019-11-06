@@ -43,6 +43,8 @@
 #include <tencentcloud/nlp/v20190408/model/SentimentAnalysisResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SimilarWordsRequest.h>
 #include <tencentcloud/nlp/v20190408/model/SimilarWordsResponse.h>
+#include <tencentcloud/nlp/v20190408/model/TextApprovalRequest.h>
+#include <tencentcloud/nlp/v20190408/model/TextApprovalResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextClassificationRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextClassificationResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionRequest.h>
@@ -95,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SimilarWordsResponse> SimilarWordsOutcome;
                 typedef std::future<SimilarWordsOutcome> SimilarWordsOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::SimilarWordsRequest&, SimilarWordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SimilarWordsAsyncHandler;
+                typedef Outcome<Error, Model::TextApprovalResponse> TextApprovalOutcome;
+                typedef std::future<TextApprovalOutcome> TextApprovalOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::TextApprovalRequest&, TextApprovalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextApprovalAsyncHandler;
                 typedef Outcome<Error, Model::TextClassificationResponse> TextClassificationOutcome;
                 typedef std::future<TextClassificationOutcome> TextClassificationOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextClassificationRequest&, TextClassificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextClassificationAsyncHandler;
@@ -120,7 +125,9 @@ namespace TencentCloud
                 AutoSummarizationOutcomeCallable AutoSummarizationCallable(const Model::AutoSummarizationRequest& request);
 
                 /**
-                 *文本审核接口能够识别文本信息中的色情、政治等有害内容，帮助用户及时、精准地防范违规风险，可用于内容审核、敏感信息过滤、舆情监控等场景。
+                 *（该接口即将下线，请使用升级接口：文本审核）
+
+文本审核接口能够识别文本信息中的色情、政治等有害内容，帮助用户及时、精准地防范违规风险，可用于内容审核、敏感信息过滤、舆情监控等场景。
 
 该功能基于10万级大规模敏感词库，结合多种文本对抗方法、政策权威指令等，并运用了深度学习技术，高效识别高危有害内容。同时我们会根据大规模语料和实时反误杀系统，不断更新迭代，确保效果持续提升。
 
@@ -227,6 +234,25 @@ namespace TencentCloud
                 SimilarWordsOutcome SimilarWords(const Model::SimilarWordsRequest &request);
                 void SimilarWordsAsync(const Model::SimilarWordsRequest& request, const SimilarWordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SimilarWordsOutcomeCallable SimilarWordsCallable(const Model::SimilarWordsRequest& request);
+
+                /**
+                 *文本审核接口能够识别文本信息中的色情、政治等有害内容，帮助用户及时、精准地防范违规风险，可用于内容审核、敏感信息过滤、舆情监控等场景。
+
+该功能基于10万级大规模敏感词库，结合多种文本对抗方法、政策权威指令等，并运用了深度学习技术，高效识别高危有害内容。同时我们会根据大规模语料和实时反误杀系统，不断更新迭代，确保效果持续提升。
+
+文本审核接口目前提供以下三个功能：
+
+1、文本恶意级别：将文本分为3个级别，包括正常、恶意、可疑送审；
+
+2、文本恶意类型：把文本分为9个类别，包括正常、政治、色情、辱骂/低俗、暴恐/毒品、广告/灌水、迷信/邪教、其他违法、综合；
+
+3、恶意关键词：文本中所有涉嫌恶意的关键词。
+                 * @param req TextApprovalRequest
+                 * @return TextApprovalOutcome
+                 */
+                TextApprovalOutcome TextApproval(const Model::TextApprovalRequest &request);
+                void TextApprovalAsync(const Model::TextApprovalRequest& request, const TextApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextApprovalOutcomeCallable TextApprovalCallable(const Model::TextApprovalRequest& request);
 
                 /**
                  *文本分类接口能够对用户输入的文本进行自动分类，将其映射到具体的类目上，用户只需要提供待分类的文本，而无需关注具体实现。

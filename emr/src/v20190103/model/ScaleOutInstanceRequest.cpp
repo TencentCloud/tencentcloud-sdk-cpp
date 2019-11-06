@@ -24,14 +24,15 @@ using namespace rapidjson;
 using namespace std;
 
 ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
-    m_clientTokenHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_payModeHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_preExecutedFileSettingsHasBeenSet(false),
     m_taskCountHasBeenSet(false),
-    m_coreCountHasBeenSet(false)
+    m_coreCountHasBeenSet(false),
+    m_unNecessaryNodeListHasBeenSet(false)
 {
 }
 
@@ -41,14 +42,6 @@ string ScaleOutInstanceRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_clientTokenHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ClientToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_timeUnitHasBeenSet)
     {
@@ -82,6 +75,14 @@ string ScaleOutInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_payMode, allocator);
     }
 
+    if (m_clientTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_preExecutedFileSettingsHasBeenSet)
     {
         Value iKey(kStringType);
@@ -113,6 +114,19 @@ string ScaleOutInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_coreCount, allocator);
     }
 
+    if (m_unNecessaryNodeListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnNecessaryNodeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_unNecessaryNodeList.begin(); itr != m_unNecessaryNodeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+        }
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -120,22 +134,6 @@ string ScaleOutInstanceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ScaleOutInstanceRequest::GetClientToken() const
-{
-    return m_clientToken;
-}
-
-void ScaleOutInstanceRequest::SetClientToken(const string& _clientToken)
-{
-    m_clientToken = _clientToken;
-    m_clientTokenHasBeenSet = true;
-}
-
-bool ScaleOutInstanceRequest::ClientTokenHasBeenSet() const
-{
-    return m_clientTokenHasBeenSet;
-}
 
 string ScaleOutInstanceRequest::GetTimeUnit() const
 {
@@ -201,6 +199,22 @@ bool ScaleOutInstanceRequest::PayModeHasBeenSet() const
     return m_payModeHasBeenSet;
 }
 
+string ScaleOutInstanceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void ScaleOutInstanceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
+}
+
 vector<PreExecuteFileSettings> ScaleOutInstanceRequest::GetPreExecutedFileSettings() const
 {
     return m_preExecutedFileSettings;
@@ -247,6 +261,22 @@ void ScaleOutInstanceRequest::SetCoreCount(const uint64_t& _coreCount)
 bool ScaleOutInstanceRequest::CoreCountHasBeenSet() const
 {
     return m_coreCountHasBeenSet;
+}
+
+vector<uint64_t> ScaleOutInstanceRequest::GetUnNecessaryNodeList() const
+{
+    return m_unNecessaryNodeList;
+}
+
+void ScaleOutInstanceRequest::SetUnNecessaryNodeList(const vector<uint64_t>& _unNecessaryNodeList)
+{
+    m_unNecessaryNodeList = _unNecessaryNodeList;
+    m_unNecessaryNodeListHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::UnNecessaryNodeListHasBeenSet() const
+{
+    return m_unNecessaryNodeListHasBeenSet;
 }
 
 

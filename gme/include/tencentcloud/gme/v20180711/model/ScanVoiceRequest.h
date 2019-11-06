@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID，登录控制台创建应用得到的AppID。
-                     * @return BizId 应用ID，登录控制台创建应用得到的AppID。
+                     * 获取应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * @return BizId 应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
                      */
                     uint64_t GetBizId() const;
 
                     /**
-                     * 设置应用ID，登录控制台创建应用得到的AppID。
-                     * @param BizId 应用ID，登录控制台创建应用得到的AppID。
+                     * 设置应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * @param BizId 应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
                      */
                     void SetBizId(const uint64_t& _bizId);
 
@@ -144,7 +144,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID，登录控制台创建应用得到的AppID。
+                     * 应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;

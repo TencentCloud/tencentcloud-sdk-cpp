@@ -50,13 +50,13 @@ namespace TencentCloud
                      * 获取实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。不填为默认项目。
                      * @return ProjectId 实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。不填为默认项目。
                      */
-                    uint64_t GetProjectId() const;
+                    int64_t GetProjectId() const;
 
                     /**
                      * 设置实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。不填为默认项目。
                      * @param ProjectId 实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。不填为默认项目。
                      */
-                    void SetProjectId(const uint64_t& _projectId);
+                    void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属的可用区ID。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
-                     * @return Zone 实例所属的可用区ID。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
+                     * 获取实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
+                     * @return Zone 实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例所属的可用区ID。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
-                     * @param Zone 实例所属的可用区ID。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
+                     * 设置实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
+                     * @param Zone 实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
                      */
                     void SetZone(const std::string& _zone);
 
@@ -87,11 +87,11 @@ namespace TencentCloud
                     /**
                      * 实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。不填为默认项目。
                      */
-                    uint64_t m_projectId;
+                    int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例所属的可用区ID。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
+                     * 实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

@@ -25,7 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 ScaleOutInstanceResponse::ScaleOutInstanceResponse() :
-    m_resultHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_dealNamesHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -63,21 +65,37 @@ CoreInternalOutcome ScaleOutInstanceResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("DealNames") && !rsp["DealNames"].IsNull())
+    {
+        if (!rsp["DealNames"].IsArray())
+            return CoreInternalOutcome(Error("response `DealNames` is not array type"));
+
+        const Value &tmpValue = rsp["DealNames"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            m_dealNames.push_back((*itr).GetString());
         }
+        m_dealNamesHasBeenSet = true;
+    }
 
-        m_resultHasBeenSet = true;
+    if (rsp.HasMember("ClientToken") && !rsp["ClientToken"].IsNull())
+    {
+        if (!rsp["ClientToken"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClientToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientToken = string(rsp["ClientToken"].GetString());
+        m_clientTokenHasBeenSet = true;
     }
 
 
@@ -85,14 +103,34 @@ CoreInternalOutcome ScaleOutInstanceResponse::Deserialize(const string &payload)
 }
 
 
-ScaleOutInstanceResult ScaleOutInstanceResponse::GetResult() const
+string ScaleOutInstanceResponse::GetInstanceId() const
 {
-    return m_result;
+    return m_instanceId;
 }
 
-bool ScaleOutInstanceResponse::ResultHasBeenSet() const
+bool ScaleOutInstanceResponse::InstanceIdHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_instanceIdHasBeenSet;
+}
+
+vector<string> ScaleOutInstanceResponse::GetDealNames() const
+{
+    return m_dealNames;
+}
+
+bool ScaleOutInstanceResponse::DealNamesHasBeenSet() const
+{
+    return m_dealNamesHasBeenSet;
+}
+
+string ScaleOutInstanceResponse::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+bool ScaleOutInstanceResponse::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

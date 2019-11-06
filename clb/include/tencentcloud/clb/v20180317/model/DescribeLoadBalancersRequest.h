@@ -83,14 +83,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
-                     * @return Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
+                     * 获取负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
+                     * @return Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
                      */
                     int64_t GetForward() const;
 
                     /**
-                     * 设置负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
-                     * @param Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
+                     * 设置负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
+                     * @param Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
                      */
                     void SetForward(const int64_t& _forward);
 
@@ -317,18 +317,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool WithRsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例所属私有网络，如 vpc-bhqkbhdx，
-基础网络不支持通过VpcId查询。
-                     * @return VpcId 负载均衡实例所属私有网络，如 vpc-bhqkbhdx，
-基础网络不支持通过VpcId查询。
+                     * 获取负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
+基础网络可传入'0'。
+                     * @return VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
+基础网络可传入'0'。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置负载均衡实例所属私有网络，如 vpc-bhqkbhdx，
-基础网络不支持通过VpcId查询。
-                     * @param VpcId 负载均衡实例所属私有网络，如 vpc-bhqkbhdx，
-基础网络不支持通过VpcId查询。
+                     * 设置负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
+基础网络可传入'0'。
+                     * @param VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
+基础网络可传入'0'。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -390,7 +390,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
-                     * 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例
+                     * 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
                      */
                     int64_t m_forward;
                     bool m_forwardHasBeenSet;
@@ -468,8 +468,8 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_withRsHasBeenSet;
 
                     /**
-                     * 负载均衡实例所属私有网络，如 vpc-bhqkbhdx，
-基础网络不支持通过VpcId查询。
+                     * 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
+基础网络可传入'0'。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

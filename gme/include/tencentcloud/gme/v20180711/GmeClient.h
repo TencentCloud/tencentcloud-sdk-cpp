@@ -23,12 +23,18 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/gme/v20180711/model/CreateAppRequest.h>
+#include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h>
+#include <tencentcloud/gme/v20180711/model/ModifyAppStatusRequest.h>
+#include <tencentcloud/gme/v20180711/model/ModifyAppStatusResponse.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceRequest.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceResponse.h>
 #include <tencentcloud/gme/v20180711/model/VoiceFilterRequest.h>
@@ -47,6 +53,12 @@ namespace TencentCloud
                 GmeClient(const Credential &credential, const std::string &region);
                 GmeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateAppResponse> CreateAppOutcome;
+                typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAppStatisticsResponse> DescribeAppStatisticsOutcome;
+                typedef std::future<DescribeAppStatisticsOutcome> DescribeAppStatisticsOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeAppStatisticsRequest&, DescribeAppStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppStatisticsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFilterResultResponse> DescribeFilterResultOutcome;
                 typedef std::future<DescribeFilterResultOutcome> DescribeFilterResultOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultRequest&, DescribeFilterResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultAsyncHandler;
@@ -56,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeScanResultListResponse> DescribeScanResultListOutcome;
                 typedef std::future<DescribeScanResultListOutcome> DescribeScanResultListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeScanResultListRequest&, DescribeScanResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanResultListAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAppStatusResponse> ModifyAppStatusOutcome;
+                typedef std::future<ModifyAppStatusOutcome> ModifyAppStatusOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::ModifyAppStatusRequest&, ModifyAppStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppStatusAsyncHandler;
                 typedef Outcome<Error, Model::ScanVoiceResponse> ScanVoiceOutcome;
                 typedef std::future<ScanVoiceOutcome> ScanVoiceOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ScanVoiceRequest&, ScanVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVoiceAsyncHandler;
@@ -64,6 +79,24 @@ namespace TencentCloud
                 typedef std::function<void(const GmeClient*, const Model::VoiceFilterRequest&, VoiceFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoiceFilterAsyncHandler;
 
 
+
+                /**
+                 *本接口(CreateApp)用于创建一个GME应用
+                 * @param req CreateAppRequest
+                 * @return CreateAppOutcome
+                 */
+                CreateAppOutcome CreateApp(const Model::CreateAppRequest &request);
+                void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
+
+                /**
+                 *本接口(DescribeAppStatistics)用户获取某个GME应用的用量数据。包括实时语音，离线语音，语音过滤等。最长查询周期为最近30天。
+                 * @param req DescribeAppStatisticsRequest
+                 * @return DescribeAppStatisticsOutcome
+                 */
+                DescribeAppStatisticsOutcome DescribeAppStatistics(const Model::DescribeAppStatisticsRequest &request);
+                void DescribeAppStatisticsAsync(const Model::DescribeAppStatisticsRequest& request, const DescribeAppStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppStatisticsOutcomeCallable DescribeAppStatisticsCallable(const Model::DescribeAppStatisticsRequest& request);
 
                 /**
                  *根据应用ID和文件ID查询识别结果
@@ -94,8 +127,22 @@ namespace TencentCloud
                 DescribeScanResultListOutcomeCallable DescribeScanResultListCallable(const Model::DescribeScanResultListRequest& request);
 
                 /**
-                 *本接口(ScanVoice)用于提交语音检测任务，检测任务列表最多支持100个。
+                 *本接口(ModifyAppStatus)用于修改应用总开关状态。
+                 * @param req ModifyAppStatusRequest
+                 * @return ModifyAppStatusOutcome
+                 */
+                ModifyAppStatusOutcome ModifyAppStatus(const Model::ModifyAppStatusRequest &request);
+                void ModifyAppStatusAsync(const Model::ModifyAppStatusRequest& request, const ModifyAppStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAppStatusOutcomeCallable ModifyAppStatusCallable(const Model::ModifyAppStatusRequest& request);
+
+                /**
+                 *本接口(ScanVoice)用于提交语音检测任务，检测任务列表最多支持100个。使用前请您登录[控制台 - 服务配置](https://console.cloud.tencent.com/gamegme/conf)开启语音分析服务。
 </br></br>
+
+<h4><b>功能试用说明：</b></h4>
+<li>打开前往<a href="https://console.cloud.tencent.com/gamegme/tryout">控制台 - 产品试用</a>免费试用语音分析服务。</li>
+</br>
+
 <h4><b>接口功能说明：</b></h4>
 <li>支持对语音流或语音文件进行检测，判断其中是否包含违规内容。</li>
 <li>支持设置回调地址 Callback 获取检测结果，同时支持通过接口(查询语音检测结果)主动轮询获取检测结果。</li>
@@ -111,6 +158,7 @@ namespace TencentCloud
 <li>语音流格式支持的类型：.m3u8、.flv</li>
 <li>语音流支持的传输协议：RTMP、HTTP、HTTPS</li>
 <li>语音流时长限制：4小时</li>
+<li>支持音视频流分离并对音频流进行分析</li>
 </br>
 <h4 id="Label_Value"><b>Scenes 与 Label 参数说明：</b></h4>
 <p>提交语音检测任务时，需要指定 Scenes 场景参数，<font color="red">目前要求您设置 Scenes 参数值为：["default"]</font>；而在检测结果中，则包含请求时指定的场景，以及对应类型的检测结果。</p>
@@ -134,7 +182,7 @@ namespace TencentCloud
 <p>ad :广告</p>
 <p>terrorism:暴恐</p>
 <p>contraband :违禁</p>
-<p>customized:自定义词库</p>
+<p>customized:自定义词库。目前白名单开放，如有需要请<a href="https://cloud.tencent.com/apply/p/8809fjcik56">联系我们</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -167,82 +215,61 @@ namespace TencentCloud
 	<ul>
 		<li>使用 HMAC-SH1 算法, 最终结果做 BASE64 编码;</li>
 		<li>签名原文串为 POST+body 的整个json内容(长度以 Content-Length 为准);</li>
-		<li>签名key为应用的 secrectkey，可以通过控制台查看。</li>
+		<li>签名key为应用的 SecretKey，可以通过控制台查看。</li>
 	</ul>
 </ul>
 
-<ul>
-	<li>回调请求 Body 的字段说明如下：</li>
-</ul>
-<table>
-<thread>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必需</th>
-<th>描述</th>
-</tr>
-</thread>
-<tbody>
-<tr>
-<td>Data</td>
-<td>Array of <a href="https://cloud.tencent.com/document/api/607/35375#DescribeScanResult">DescribeScanResult</a></td>
-<td>是</td>
-<td>语音检测任务的结果</td>
-</tr>
-</tbody>
-</table>
-<li>回调示例如下<font color="red">（详细字段说明见上述表格中 Data 字段说明）</font>：</li>
+<li>回调示例如下<font color="red">（详细字段说明见结构：
+<a href="https://cloud.tencent.com/document/api/607/35375#DescribeScanResult" target="_blank">DescribeScanResult</a>）</font>：</li>
 <pre><code>{
-	"Data": [{
-		"Code": 0,
-		"DataId": "1400000000_test_data_id",
-		"ScanFinishTime": 1566720906,
+	"Code": 0,
+	"DataId": "1400000000_test_data_id",
+	"ScanFinishTime": 1566720906,
+	"HitFlag": true,
+	"Live": false,
+	"Msg": "",
+	"ScanPiece": [{
+		"DumpUrl": "",
 		"HitFlag": true,
-		"Live": false,
-		"Msg": "",
-		"ScanPiece": [{
-			"DumpUrl": "",
-			"HitFlag": true,
-			"MainType": "abuse",
-			"RoomId": "123",
-			"OpenId": "xxx",
-			"ScanDetail": [{
-				"EndTime": 1110,
-				"KeyWord": "xxx",
-				"Label": "abuse",
-				"Rate": "90.00",
-				"StartTime": 1110
-			}, {
-				"EndTime": 1380,
-				"KeyWord": "xxx",
-				"Label": "abuse",
-				"Rate": "90.00",
-				"StartTime": 930
-			}, {
-				"EndTime": 1560,
-				"KeyWord": "xxx",
-				"Label": "abuse",
-				"Rate": "90.00",
-				"StartTime": 930
-			}, {
-				"EndTime": 2820,
-				"KeyWord": "xxx",
-				"Label": "abuse",
-				"Rate": "90.00",
-				"StartTime": 2490
-			}]
-		}],
-		"ScanStartTime": 1566720905,
-		"Scenes": [
-			"default"
-		],
-		"Status": "Success",
-		"TaskId": "xxx",
-		"Url": "https://xxx/xxx.m4a"
+		"MainType": "abuse",
+		"RoomId": "123",
+		"OpenId": "xxx",
+		"Info":"",
+		"ScanDetail": [{
+			"EndTime": 1110,
+			"KeyWord": "xxx",
+			"Label": "abuse",
+			"Rate": "90.00",
+			"StartTime": 1110
+		}, {
+			"EndTime": 1380,
+			"KeyWord": "xxx",
+			"Label": "abuse",
+			"Rate": "90.00",
+			"StartTime": 930
+		}, {
+			"EndTime": 1560,
+			"KeyWord": "xxx",
+			"Label": "abuse",
+			"Rate": "90.00",
+			"StartTime": 930
+		}, {
+			"EndTime": 2820,
+			"KeyWord": "xxx",
+			"Label": "abuse",
+			"Rate": "90.00",
+			"StartTime": 2490
+		}]
 	}],
-	"RequestId": "xxx"
-}</code></pre>
+	"ScanStartTime": 1566720905,
+	"Scenes": [
+		"default"
+	],
+	"Status": "Success",
+	"TaskId": "xxx",
+	"Url": "https://xxx/xxx.m4a"
+}
+</code></pre>
                  * @param req ScanVoiceRequest
                  * @return ScanVoiceOutcome
                  */

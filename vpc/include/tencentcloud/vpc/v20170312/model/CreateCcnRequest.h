@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool QosLevelHasBeenSet() const;
 
+                    /**
+                     * 获取计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。
+                     * @return InstanceChargeType 计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。
+                     * @param InstanceChargeType 计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT
+                     * @return BandwidthLimitType 限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT
+                     */
+                    std::string GetBandwidthLimitType() const;
+
+                    /**
+                     * 设置限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT
+                     * @param BandwidthLimitType 限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT
+                     */
+                    void SetBandwidthLimitType(const std::string& _bandwidthLimitType);
+
+                    /**
+                     * 判断参数 BandwidthLimitType 是否已赋值
+                     * @return BandwidthLimitType 是否已赋值
+                     */
+                    bool BandwidthLimitTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
+
+                    /**
+                     * 计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT
+                     */
+                    std::string m_bandwidthLimitType;
+                    bool m_bandwidthLimitTypeHasBeenSet;
 
                 };
             }

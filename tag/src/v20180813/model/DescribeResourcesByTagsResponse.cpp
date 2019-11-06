@@ -104,7 +104,7 @@ CoreInternalOutcome DescribeResourcesByTagsResponse::Deserialize(const string &p
         const Value &tmpValue = rsp["Rows"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ResourcesTag item;
+            ResourceTag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -151,7 +151,7 @@ bool DescribeResourcesByTagsResponse::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-vector<ResourcesTag> DescribeResourcesByTagsResponse::GetRows() const
+vector<ResourceTag> DescribeResourcesByTagsResponse::GetRows() const
 {
     return m_rows;
 }

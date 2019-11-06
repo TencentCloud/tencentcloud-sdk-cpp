@@ -26,7 +26,10 @@ PayModeSummaryOverviewItem::PayModeSummaryOverviewItem() :
     m_payModeNameHasBeenSet(false),
     m_realTotalCostHasBeenSet(false),
     m_realTotalCostRatioHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_cashPayAmountHasBeenSet(false),
+    m_incentivePayAmountHasBeenSet(false),
+    m_voucherPayAmountHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome PayModeSummaryOverviewItem::Deserialize(const Value &value)
         m_detailHasBeenSet = true;
     }
 
+    if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
+    {
+        if (!value["CashPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PayModeSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cashPayAmount = string(value["CashPayAmount"].GetString());
+        m_cashPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncentivePayAmount") && !value["IncentivePayAmount"].IsNull())
+    {
+        if (!value["IncentivePayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PayModeSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
+        m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoucherPayAmount") && !value["VoucherPayAmount"].IsNull())
+    {
+        if (!value["VoucherPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PayModeSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
+        m_voucherPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,6 +180,30 @@ void PayModeSummaryOverviewItem::ToJsonObject(Value &value, Document::AllocatorT
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cashPayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CashPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cashPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_incentivePayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IncentivePayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherPayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VoucherPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -230,5 +287,53 @@ void PayModeSummaryOverviewItem::SetDetail(const vector<ActionSummaryOverviewIte
 bool PayModeSummaryOverviewItem::DetailHasBeenSet() const
 {
     return m_detailHasBeenSet;
+}
+
+string PayModeSummaryOverviewItem::GetCashPayAmount() const
+{
+    return m_cashPayAmount;
+}
+
+void PayModeSummaryOverviewItem::SetCashPayAmount(const string& _cashPayAmount)
+{
+    m_cashPayAmount = _cashPayAmount;
+    m_cashPayAmountHasBeenSet = true;
+}
+
+bool PayModeSummaryOverviewItem::CashPayAmountHasBeenSet() const
+{
+    return m_cashPayAmountHasBeenSet;
+}
+
+string PayModeSummaryOverviewItem::GetIncentivePayAmount() const
+{
+    return m_incentivePayAmount;
+}
+
+void PayModeSummaryOverviewItem::SetIncentivePayAmount(const string& _incentivePayAmount)
+{
+    m_incentivePayAmount = _incentivePayAmount;
+    m_incentivePayAmountHasBeenSet = true;
+}
+
+bool PayModeSummaryOverviewItem::IncentivePayAmountHasBeenSet() const
+{
+    return m_incentivePayAmountHasBeenSet;
+}
+
+string PayModeSummaryOverviewItem::GetVoucherPayAmount() const
+{
+    return m_voucherPayAmount;
+}
+
+void PayModeSummaryOverviewItem::SetVoucherPayAmount(const string& _voucherPayAmount)
+{
+    m_voucherPayAmount = _voucherPayAmount;
+    m_voucherPayAmountHasBeenSet = true;
+}
+
+bool PayModeSummaryOverviewItem::VoucherPayAmountHasBeenSet() const
+{
+    return m_voucherPayAmountHasBeenSet;
 }
 

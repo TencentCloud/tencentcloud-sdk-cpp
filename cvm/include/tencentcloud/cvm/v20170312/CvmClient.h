@@ -75,6 +75,10 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeKeyPairsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeRegionsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeRegionsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZonesRequest.h>
@@ -121,6 +125,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesVpcAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingRequest.h>
+#include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RenewHostsRequest.h>
@@ -239,6 +245,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeReservedInstancesResponse> DescribeReservedInstancesOutcome;
+                typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeReservedInstancesRequest&, DescribeReservedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsOutcome;
+                typedef std::future<DescribeReservedInstancesOfferingsOutcome> DescribeReservedInstancesOfferingsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeReservedInstancesOfferingsRequest&, DescribeReservedInstancesOfferingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstancesOfferingsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeZoneInstanceConfigInfosResponse> DescribeZoneInstanceConfigInfosOutcome;
                 typedef std::future<DescribeZoneInstanceConfigInfosOutcome> DescribeZoneInstanceConfigInfosOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeZoneInstanceConfigInfosRequest&, DescribeZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneInstanceConfigInfosAsyncHandler;
@@ -308,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyKeyPairAttributeResponse> ModifyKeyPairAttributeOutcome;
                 typedef std::future<ModifyKeyPairAttributeOutcome> ModifyKeyPairAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyKeyPairAttributeRequest&, ModifyKeyPairAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKeyPairAttributeAsyncHandler;
+                typedef Outcome<Error, Model::PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingOutcome;
+                typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::PurchaseReservedInstancesOfferingRequest&, PurchaseReservedInstancesOfferingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseReservedInstancesOfferingAsyncHandler;
                 typedef Outcome<Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
@@ -636,6 +651,24 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
+                 *本接口(DescribeReservedInstances)可提供列出用户已购买的预留实例
+                 * @param req DescribeReservedInstancesRequest
+                 * @return DescribeReservedInstancesOutcome
+                 */
+                DescribeReservedInstancesOutcome DescribeReservedInstances(const Model::DescribeReservedInstancesRequest &request);
+                void DescribeReservedInstancesAsync(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReservedInstancesOutcomeCallable DescribeReservedInstancesCallable(const Model::DescribeReservedInstancesRequest& request);
+
+                /**
+                 *本接口(DescribeReservedInstancesOfferings)供用户列出可购买的预留实例配置
+                 * @param req DescribeReservedInstancesOfferingsRequest
+                 * @return DescribeReservedInstancesOfferingsOutcome
+                 */
+                DescribeReservedInstancesOfferingsOutcome DescribeReservedInstancesOfferings(const Model::DescribeReservedInstancesOfferingsRequest &request);
+                void DescribeReservedInstancesOfferingsAsync(const Model::DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReservedInstancesOfferingsOutcomeCallable DescribeReservedInstancesOfferingsCallable(const Model::DescribeReservedInstancesOfferingsRequest& request);
+
+                /**
                  *本接口(DescribeZoneInstanceConfigInfos) 获取可用区的机型信息。
                  * @param req DescribeZoneInstanceConfigInfosRequest
                  * @return DescribeZoneInstanceConfigInfosOutcome
@@ -902,6 +935,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyKeyPairAttributeOutcome ModifyKeyPairAttribute(const Model::ModifyKeyPairAttributeRequest &request);
                 void ModifyKeyPairAttributeAsync(const Model::ModifyKeyPairAttributeRequest& request, const ModifyKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyKeyPairAttributeOutcomeCallable ModifyKeyPairAttributeCallable(const Model::ModifyKeyPairAttributeRequest& request);
+
+                /**
+                 *本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例
+                 * @param req PurchaseReservedInstancesOfferingRequest
+                 * @return PurchaseReservedInstancesOfferingOutcome
+                 */
+                PurchaseReservedInstancesOfferingOutcome PurchaseReservedInstancesOffering(const Model::PurchaseReservedInstancesOfferingRequest &request);
+                void PurchaseReservedInstancesOfferingAsync(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PurchaseReservedInstancesOfferingOutcomeCallable PurchaseReservedInstancesOfferingCallable(const Model::PurchaseReservedInstancesOfferingRequest& request);
 
                 /**
                  *本接口 (RebootInstances) 用于重启实例。

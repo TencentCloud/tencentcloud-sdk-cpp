@@ -31,10 +31,14 @@
 #include <tencentcloud/iottid/v20190411/model/DeliverTidNotifyResponse.h>
 #include <tencentcloud/iottid/v20190411/model/DeliverTidsRequest.h>
 #include <tencentcloud/iottid/v20190411/model/DeliverTidsResponse.h>
+#include <tencentcloud/iottid/v20190411/model/DescribeAvailableLibCountRequest.h>
+#include <tencentcloud/iottid/v20190411/model/DescribeAvailableLibCountResponse.h>
 #include <tencentcloud/iottid/v20190411/model/DescribePermissionRequest.h>
 #include <tencentcloud/iottid/v20190411/model/DescribePermissionResponse.h>
 #include <tencentcloud/iottid/v20190411/model/DownloadTidsRequest.h>
 #include <tencentcloud/iottid/v20190411/model/DownloadTidsResponse.h>
+#include <tencentcloud/iottid/v20190411/model/UploadDeviceUniqueCodeRequest.h>
+#include <tencentcloud/iottid/v20190411/model/UploadDeviceUniqueCodeResponse.h>
 #include <tencentcloud/iottid/v20190411/model/VerifyChipBurnInfoRequest.h>
 #include <tencentcloud/iottid/v20190411/model/VerifyChipBurnInfoResponse.h>
 
@@ -63,12 +67,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeliverTidsResponse> DeliverTidsOutcome;
                 typedef std::future<DeliverTidsOutcome> DeliverTidsOutcomeCallable;
                 typedef std::function<void(const IottidClient*, const Model::DeliverTidsRequest&, DeliverTidsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeliverTidsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAvailableLibCountResponse> DescribeAvailableLibCountOutcome;
+                typedef std::future<DescribeAvailableLibCountOutcome> DescribeAvailableLibCountOutcomeCallable;
+                typedef std::function<void(const IottidClient*, const Model::DescribeAvailableLibCountRequest&, DescribeAvailableLibCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableLibCountAsyncHandler;
                 typedef Outcome<Error, Model::DescribePermissionResponse> DescribePermissionOutcome;
                 typedef std::future<DescribePermissionOutcome> DescribePermissionOutcomeCallable;
                 typedef std::function<void(const IottidClient*, const Model::DescribePermissionRequest&, DescribePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePermissionAsyncHandler;
                 typedef Outcome<Error, Model::DownloadTidsResponse> DownloadTidsOutcome;
                 typedef std::future<DownloadTidsOutcome> DownloadTidsOutcomeCallable;
                 typedef std::function<void(const IottidClient*, const Model::DownloadTidsRequest&, DownloadTidsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadTidsAsyncHandler;
+                typedef Outcome<Error, Model::UploadDeviceUniqueCodeResponse> UploadDeviceUniqueCodeOutcome;
+                typedef std::future<UploadDeviceUniqueCodeOutcome> UploadDeviceUniqueCodeOutcomeCallable;
+                typedef std::function<void(const IottidClient*, const Model::UploadDeviceUniqueCodeRequest&, UploadDeviceUniqueCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadDeviceUniqueCodeAsyncHandler;
                 typedef Outcome<Error, Model::VerifyChipBurnInfoResponse> VerifyChipBurnInfoOutcome;
                 typedef std::future<VerifyChipBurnInfoOutcome> VerifyChipBurnInfoOutcomeCallable;
                 typedef std::function<void(const IottidClient*, const Model::VerifyChipBurnInfoRequest&, VerifyChipBurnInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyChipBurnInfoAsyncHandler;
@@ -76,7 +86,7 @@ namespace TencentCloud
 
 
                 /**
-                 *单向认证测试TID
+                 *单向认证测试TID 
                  * @param req AuthTestTidRequest
                  * @return AuthTestTidOutcome
                  */
@@ -85,7 +95,7 @@ namespace TencentCloud
                 AuthTestTidOutcomeCallable AuthTestTidCallable(const Model::AuthTestTidRequest& request);
 
                 /**
-                 *安全芯片TID烧录回执
+                 *安全芯片TID烧录回执 
                  * @param req BurnTidNotifyRequest
                  * @return BurnTidNotifyOutcome
                  */
@@ -94,7 +104,7 @@ namespace TencentCloud
                 BurnTidNotifyOutcomeCallable BurnTidNotifyCallable(const Model::BurnTidNotifyRequest& request);
 
                 /**
-                 *安全芯片为载体的TID空发回执，绑定TID与订单号。
+                 *安全芯片为载体的TID空发回执，绑定TID与订单号。 
                  * @param req DeliverTidNotifyRequest
                  * @return DeliverTidNotifyOutcome
                  */
@@ -103,7 +113,7 @@ namespace TencentCloud
                 DeliverTidNotifyOutcomeCallable DeliverTidNotifyCallable(const Model::DeliverTidNotifyRequest& request);
 
                 /**
-                 *设备服务商请求空发产品订单的TID信息
+                 *设备服务商请求空发产品订单的TID信息 
                  * @param req DeliverTidsRequest
                  * @return DeliverTidsOutcome
                  */
@@ -112,7 +122,16 @@ namespace TencentCloud
                 DeliverTidsOutcomeCallable DeliverTidsCallable(const Model::DeliverTidsRequest& request);
 
                 /**
-                 *查询企业用户TID平台控制台权限
+                 *查询指定订单的可空发的白盒密钥数量
+                 * @param req DescribeAvailableLibCountRequest
+                 * @return DescribeAvailableLibCountOutcome
+                 */
+                DescribeAvailableLibCountOutcome DescribeAvailableLibCount(const Model::DescribeAvailableLibCountRequest &request);
+                void DescribeAvailableLibCountAsync(const Model::DescribeAvailableLibCountRequest& request, const DescribeAvailableLibCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvailableLibCountOutcomeCallable DescribeAvailableLibCountCallable(const Model::DescribeAvailableLibCountRequest& request);
+
+                /**
+                 *查询企业用户TID平台控制台权限 
                  * @param req DescribePermissionRequest
                  * @return DescribePermissionOutcome
                  */
@@ -121,7 +140,7 @@ namespace TencentCloud
                 DescribePermissionOutcomeCallable DescribePermissionCallable(const Model::DescribePermissionRequest& request);
 
                 /**
-                 *下载芯片订单的TID
+                 *下载芯片订单的TID 
                  * @param req DownloadTidsRequest
                  * @return DownloadTidsOutcome
                  */
@@ -130,7 +149,16 @@ namespace TencentCloud
                 DownloadTidsOutcomeCallable DownloadTidsCallable(const Model::DownloadTidsRequest& request);
 
                 /**
-                 *下载控制台验证芯片烧录信息，保证TID与中心信息一致
+                 *上传硬件唯一标识码，是软加固设备身份参数。本接口如遇到错误数据，则所有当次上传数据失效。
+                 * @param req UploadDeviceUniqueCodeRequest
+                 * @return UploadDeviceUniqueCodeOutcome
+                 */
+                UploadDeviceUniqueCodeOutcome UploadDeviceUniqueCode(const Model::UploadDeviceUniqueCodeRequest &request);
+                void UploadDeviceUniqueCodeAsync(const Model::UploadDeviceUniqueCodeRequest& request, const UploadDeviceUniqueCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadDeviceUniqueCodeOutcomeCallable UploadDeviceUniqueCodeCallable(const Model::UploadDeviceUniqueCodeRequest& request);
+
+                /**
+                 *下载控制台验证芯片烧录信息，保证TID与中心信息一致 
                  * @param req VerifyChipBurnInfoRequest
                  * @return VerifyChipBurnInfoOutcome
                  */

@@ -47,7 +47,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_securityGroupHasBeenSet(false),
     m_roGroupHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_deployGroupIdHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,14 @@ string CreateDBInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deployGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -660,6 +669,22 @@ void CreateDBInstanceRequest::SetResourceTags(const vector<TagInfo>& _resourceTa
 bool CreateDBInstanceRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetDeployGroupId() const
+{
+    return m_deployGroupId;
+}
+
+void CreateDBInstanceRequest::SetDeployGroupId(const string& _deployGroupId)
+{
+    m_deployGroupId = _deployGroupId;
+    m_deployGroupIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::DeployGroupIdHasBeenSet() const
+{
+    return m_deployGroupIdHasBeenSet;
 }
 
 

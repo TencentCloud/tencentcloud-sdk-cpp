@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool SessionAttributesHasBeenSet() const;
 
                     /**
-                     * 获取平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount}。
-                     * @return PlatformType 平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount}。
+                     * 获取平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。
+                     * @return PlatformType 平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。
                      */
                     std::string GetPlatformType() const;
 
                     /**
-                     * 设置平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount}。
-                     * @param PlatformType 平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount}。
+                     * 设置平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。
+                     * @param PlatformType 平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。
                      */
                     void SetPlatformType(const std::string& _platformType);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_sessionAttributesHasBeenSet;
 
                     /**
-                     * 平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount}。
+                     * 平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。
                      */
                     std::string m_platformType;
                     bool m_platformTypeHasBeenSet;

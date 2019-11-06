@@ -24,9 +24,13 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeInstancesRequest::DescribeInstancesRequest() :
+    m_displayStrategyHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_ascHasBeenSet(false)
 {
 }
 
@@ -36,6 +40,14 @@ string DescribeInstancesRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_displayStrategyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DisplayStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_displayStrategy.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_instanceIdsHasBeenSet)
     {
@@ -66,6 +78,30 @@ string DescribeInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ascHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Asc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asc, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -73,6 +109,22 @@ string DescribeInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeInstancesRequest::GetDisplayStrategy() const
+{
+    return m_displayStrategy;
+}
+
+void DescribeInstancesRequest::SetDisplayStrategy(const string& _displayStrategy)
+{
+    m_displayStrategy = _displayStrategy;
+    m_displayStrategyHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::DisplayStrategyHasBeenSet() const
+{
+    return m_displayStrategyHasBeenSet;
+}
 
 vector<string> DescribeInstancesRequest::GetInstanceIds() const
 {
@@ -120,6 +172,54 @@ void DescribeInstancesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeInstancesRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeInstancesRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeInstancesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+int64_t DescribeInstancesRequest::GetAsc() const
+{
+    return m_asc;
+}
+
+void DescribeInstancesRequest::SetAsc(const int64_t& _asc)
+{
+    m_asc = _asc;
+    m_ascHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::AscHasBeenSet() const
+{
+    return m_ascHasBeenSet;
 }
 
 

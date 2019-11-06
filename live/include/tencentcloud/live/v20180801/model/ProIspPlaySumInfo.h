@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取省份/运营商。
-                     * @return Name 省份/运营商。
+                     * 获取省份/运营商/国家或地区。
+                     * @return Name 省份/运营商/国家或地区。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置省份/运营商。
-                     * @param Name 省份/运营商。
+                     * 设置省份/运营商/国家或地区。
+                     * @param Name 省份/运营商/国家或地区。
                      */
                     void SetName(const std::string& _name);
 
@@ -121,7 +121,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 省份/运营商。
+                     * 省份/运营商/国家或地区。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

@@ -33,7 +33,8 @@ AgentBillElem::AgentBillElem() :
     m_amtHasBeenSet(false),
     m_payerModeHasBeenSet(false),
     m_clientTypeHasBeenSet(false),
-    m_projectTypeHasBeenSet(false)
+    m_projectTypeHasBeenSet(false),
+    m_activityIdHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome AgentBillElem::Deserialize(const Value &value)
         m_projectTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ActivityId") && !value["ActivityId"].IsNull())
+    {
+        if (!value["ActivityId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentBillElem.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activityId = string(value["ActivityId"].GetString());
+        m_activityIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void AgentBillElem::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ProjectType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_projectType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activityIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActivityId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_activityId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void AgentBillElem::SetProjectType(const string& _projectType)
 bool AgentBillElem::ProjectTypeHasBeenSet() const
 {
     return m_projectTypeHasBeenSet;
+}
+
+string AgentBillElem::GetActivityId() const
+{
+    return m_activityId;
+}
+
+void AgentBillElem::SetActivityId(const string& _activityId)
+{
+    m_activityId = _activityId;
+    m_activityIdHasBeenSet = true;
+}
+
+bool AgentBillElem::ActivityIdHasBeenSet() const
+{
+    return m_activityIdHasBeenSet;
 }
 

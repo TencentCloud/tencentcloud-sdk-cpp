@@ -83,6 +83,49 @@ ClbClient::AutoRewriteOutcomeCallable ClbClient::AutoRewriteCallable(const AutoR
     return task->get_future();
 }
 
+ClbClient::BatchDeregisterTargetsOutcome ClbClient::BatchDeregisterTargets(const BatchDeregisterTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeregisterTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeregisterTargetsResponse rsp = BatchDeregisterTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeregisterTargetsOutcome(rsp);
+        else
+            return BatchDeregisterTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeregisterTargetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::BatchDeregisterTargetsAsync(const BatchDeregisterTargetsRequest& request, const BatchDeregisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeregisterTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::BatchDeregisterTargetsOutcomeCallable ClbClient::BatchDeregisterTargetsCallable(const BatchDeregisterTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeregisterTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeregisterTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::BatchModifyTargetWeightOutcome ClbClient::BatchModifyTargetWeight(const BatchModifyTargetWeightRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchModifyTargetWeight");
@@ -119,6 +162,49 @@ ClbClient::BatchModifyTargetWeightOutcomeCallable ClbClient::BatchModifyTargetWe
         [this, request]()
         {
             return this->BatchModifyTargetWeight(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::BatchRegisterTargetsOutcome ClbClient::BatchRegisterTargets(const BatchRegisterTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchRegisterTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchRegisterTargetsResponse rsp = BatchRegisterTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchRegisterTargetsOutcome(rsp);
+        else
+            return BatchRegisterTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchRegisterTargetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::BatchRegisterTargetsAsync(const BatchRegisterTargetsRequest& request, const BatchRegisterTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchRegisterTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::BatchRegisterTargetsOutcomeCallable ClbClient::BatchRegisterTargetsCallable(const BatchRegisterTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchRegisterTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchRegisterTargets(request);
         }
     );
 
@@ -1022,6 +1108,49 @@ ClbClient::ModifyDomainOutcomeCallable ClbClient::ModifyDomainCallable(const Mod
         [this, request]()
         {
             return this->ModifyDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::ModifyDomainAttributesOutcome ClbClient::ModifyDomainAttributes(const ModifyDomainAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainAttributesResponse rsp = ModifyDomainAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainAttributesOutcome(rsp);
+        else
+            return ModifyDomainAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainAttributesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyDomainAttributesAsync(const ModifyDomainAttributesRequest& request, const ModifyDomainAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyDomainAttributesOutcomeCallable ClbClient::ModifyDomainAttributesCallable(const ModifyDomainAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainAttributes(request);
         }
     );
 

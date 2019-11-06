@@ -89,10 +89,16 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAIAnalysisTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAIRecognitionTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAIRecognitionTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAudioTrackTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAudioTrackTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesRequest.h>
@@ -117,6 +123,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeTasksResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVideoTrackTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeVideoTrackTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesRequest.h>
@@ -290,12 +298,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAIRecognitionTemplatesResponse> DescribeAIRecognitionTemplatesOutcome;
                 typedef std::future<DescribeAIRecognitionTemplatesOutcome> DescribeAIRecognitionTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAIRecognitionTemplatesRequest&, DescribeAIRecognitionTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIRecognitionTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAdaptiveDynamicStreamingTemplatesResponse> DescribeAdaptiveDynamicStreamingTemplatesOutcome;
+                typedef std::future<DescribeAdaptiveDynamicStreamingTemplatesOutcome> DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest&, DescribeAdaptiveDynamicStreamingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAllClassResponse> DescribeAllClassOutcome;
                 typedef std::future<DescribeAllClassOutcome> DescribeAllClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAllClassRequest&, DescribeAllClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllClassAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAnimatedGraphicsTemplatesResponse> DescribeAnimatedGraphicsTemplatesOutcome;
                 typedef std::future<DescribeAnimatedGraphicsTemplatesOutcome> DescribeAnimatedGraphicsTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAnimatedGraphicsTemplatesRequest&, DescribeAnimatedGraphicsTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnimatedGraphicsTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAudioTrackTemplatesResponse> DescribeAudioTrackTemplatesOutcome;
+                typedef std::future<DescribeAudioTrackTemplatesOutcome> DescribeAudioTrackTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAudioTrackTemplatesRequest&, DescribeAudioTrackTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAudioTrackTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCDNUsageDataResponse> DescribeCDNUsageDataOutcome;
+                typedef std::future<DescribeCDNUsageDataOutcome> DescribeCDNUsageDataOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCDNUsageDataRequest&, DescribeCDNUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDNUsageDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
@@ -332,6 +349,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTranscodeTemplatesResponse> DescribeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeTranscodeTemplatesOutcome> DescribeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeTranscodeTemplatesRequest&, DescribeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVideoTrackTemplatesResponse> DescribeVideoTrackTemplatesOutcome;
+                typedef std::future<DescribeVideoTrackTemplatesOutcome> DescribeVideoTrackTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeVideoTrackTemplatesRequest&, DescribeVideoTrackTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoTrackTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeWatermarkTemplatesResponse> DescribeWatermarkTemplatesOutcome;
                 typedef std::future<DescribeWatermarkTemplatesOutcome> DescribeWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeWatermarkTemplatesRequest&, DescribeWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWatermarkTemplatesAsyncHandler;
@@ -737,6 +757,15 @@ namespace TencentCloud
                 DescribeAIRecognitionTemplatesOutcomeCallable DescribeAIRecognitionTemplatesCallable(const Model::DescribeAIRecognitionTemplatesRequest& request);
 
                 /**
+                 *查询转自适应码流模板，支持根据条件，分页查询。
+                 * @param req DescribeAdaptiveDynamicStreamingTemplatesRequest
+                 * @return DescribeAdaptiveDynamicStreamingTemplatesOutcome
+                 */
+                DescribeAdaptiveDynamicStreamingTemplatesOutcome DescribeAdaptiveDynamicStreamingTemplates(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest &request);
+                void DescribeAdaptiveDynamicStreamingTemplatesAsync(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request, const DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable DescribeAdaptiveDynamicStreamingTemplatesCallable(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request);
+
+                /**
                  ** 获得用户的所有分类信息。
                  * @param req DescribeAllClassRequest
                  * @return DescribeAllClassOutcome
@@ -753,6 +782,28 @@ namespace TencentCloud
                 DescribeAnimatedGraphicsTemplatesOutcome DescribeAnimatedGraphicsTemplates(const Model::DescribeAnimatedGraphicsTemplatesRequest &request);
                 void DescribeAnimatedGraphicsTemplatesAsync(const Model::DescribeAnimatedGraphicsTemplatesRequest& request, const DescribeAnimatedGraphicsTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAnimatedGraphicsTemplatesOutcomeCallable DescribeAnimatedGraphicsTemplatesCallable(const Model::DescribeAnimatedGraphicsTemplatesRequest& request);
+
+                /**
+                 *获取转自适应码流音频轨模板列表，支持根据条件，分页查询。
+                 * @param req DescribeAudioTrackTemplatesRequest
+                 * @return DescribeAudioTrackTemplatesOutcome
+                 */
+                DescribeAudioTrackTemplatesOutcome DescribeAudioTrackTemplates(const Model::DescribeAudioTrackTemplatesRequest &request);
+                void DescribeAudioTrackTemplatesAsync(const Model::DescribeAudioTrackTemplatesRequest& request, const DescribeAudioTrackTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAudioTrackTemplatesOutcomeCallable DescribeAudioTrackTemplatesCallable(const Model::DescribeAudioTrackTemplatesRequest& request);
+
+                /**
+                 *该接口用于查询点播 CDN 的流量、带宽等统计数据。
+   1. 可以查询最近365天内的 CDN 用量数据。
+   2.  查询时间跨度不超过90天。
+   3.  流量为每天的总流量，带宽为每天的峰值带宽。
+
+                 * @param req DescribeCDNUsageDataRequest
+                 * @return DescribeCDNUsageDataOutcome
+                 */
+                DescribeCDNUsageDataOutcome DescribeCDNUsageData(const Model::DescribeCDNUsageDataRequest &request);
+                void DescribeCDNUsageDataAsync(const Model::DescribeCDNUsageDataRequest& request, const DescribeCDNUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCDNUsageDataOutcomeCallable DescribeCDNUsageDataCallable(const Model::DescribeCDNUsageDataRequest& request);
 
                 /**
                  *根据视频内容审核模板唯一标识，获取视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。
@@ -773,15 +824,15 @@ namespace TencentCloud
                 DescribeImageSpriteTemplatesOutcomeCallable DescribeImageSpriteTemplatesCallable(const Model::DescribeImageSpriteTemplatesRequest& request);
 
                 /**
-                 *1. 该接口可以获取多个视频的多种信息，包括：
-    1. 基础信息（basicInfo）：包括视频名称、分类、播放地址、封面图片等。
+                 *1. 该接口可以获取多个媒体文件的多种信息，包括：
+    1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。
     2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。
-    3. 转码结果信息（transcodeInfo）：包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。
-    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后，动图相关信息。
-    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后，相关截图信息。
-    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图之后，雪碧图的相关信息。
-    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，各个截图的信息。
-    8. 视频打点信息（keyFrameDescInfo）：对视频设置的各个打点信息。
+    3. 转码结果信息（transcodeInfo）：包括该媒体转码生成的各种规格的媒体地址、视频流参数、音频流参数等。
+    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后的动图信息。
+    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后的截图信息。
+    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图后的雪碧图信息。
+    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，的截图信息。
+    8. 视频打点信息（keyFrameDescInfo）：对视频设置的打点信息。
     9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。
 2. 可以指定回包只返回部分信息。
                  * @param req DescribeMediaInfosRequest
@@ -877,6 +928,15 @@ namespace TencentCloud
                 DescribeTranscodeTemplatesOutcome DescribeTranscodeTemplates(const Model::DescribeTranscodeTemplatesRequest &request);
                 void DescribeTranscodeTemplatesAsync(const Model::DescribeTranscodeTemplatesRequest& request, const DescribeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTranscodeTemplatesOutcomeCallable DescribeTranscodeTemplatesCallable(const Model::DescribeTranscodeTemplatesRequest& request);
+
+                /**
+                 *获取转自适应码流视频轨模板列表，支持根据条件，分页查询。
+                 * @param req DescribeVideoTrackTemplatesRequest
+                 * @return DescribeVideoTrackTemplatesOutcome
+                 */
+                DescribeVideoTrackTemplatesOutcome DescribeVideoTrackTemplates(const Model::DescribeVideoTrackTemplatesRequest &request);
+                void DescribeVideoTrackTemplatesAsync(const Model::DescribeVideoTrackTemplatesRequest& request, const DescribeVideoTrackTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoTrackTemplatesOutcomeCallable DescribeVideoTrackTemplatesCallable(const Model::DescribeVideoTrackTemplatesRequest& request);
 
                 /**
                  *查询用户自定义水印模板，支持根据条件，分页查询。
@@ -1138,10 +1198,10 @@ namespace TencentCloud
                 ProcessMediaByUrlOutcomeCallable ProcessMediaByUrlCallable(const Model::ProcessMediaByUrlRequest& request);
 
                 /**
-                 ** 该接口用于业务服务器以[可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)的方式获取事件通知；
+                 ** 该接口用于业务服务器以 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 的方式获取事件通知；
 * 接口为长轮询模式，即：如果服务端存在未消费事件，则立即返回给请求方；如果服务端没有未消费事件，则后台会将请求挂起，直到有新的事件产生为止；
-* 请求最多挂起 5 秒，建议请求方将超时时间设置为 10 秒；
-* 若该接口有事件返回，调用方必须再调用[确认事件通知](https://cloud.tencent.com/document/product/266/33434)接口，确认事件通知已经处理，否则该事件通知后续会再次被拉取到。
+* 请求最多挂起5秒，建议请求方将超时时间设置为10秒；
+* 若该接口有事件返回，调用方必须在<font color="red">30秒</font>内调用 [确认事件通知](https://cloud.tencent.com/document/product/266/33434) 接口，确认事件通知已经处理，否则该事件通知在<font color="red">30秒</font>后会再次被拉取到。
                  * @param req PullEventsRequest
                  * @return PullEventsOutcome
                  */

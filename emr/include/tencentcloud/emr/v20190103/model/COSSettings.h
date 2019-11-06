@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志存储在COS上的路径
-                     * @return LogOnCosPath 日志存储在COS上的路径
-                     */
-                    std::string GetLogOnCosPath() const;
-
-                    /**
-                     * 设置日志存储在COS上的路径
-                     * @param LogOnCosPath 日志存储在COS上的路径
-                     */
-                    void SetLogOnCosPath(const std::string& _logOnCosPath);
-
-                    /**
-                     * 判断参数 LogOnCosPath 是否已赋值
-                     * @return LogOnCosPath 是否已赋值
-                     */
-                    bool LogOnCosPathHasBeenSet() const;
-
-                    /**
                      * 获取COS SecretId
                      * @return CosSecretId COS SecretId
                      */
@@ -100,13 +82,25 @@ namespace TencentCloud
                      */
                     bool CosSecretKeyHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取日志存储在COS上的路径
+                     * @return LogOnCosPath 日志存储在COS上的路径
+                     */
+                    std::string GetLogOnCosPath() const;
 
                     /**
-                     * 日志存储在COS上的路径
+                     * 设置日志存储在COS上的路径
+                     * @param LogOnCosPath 日志存储在COS上的路径
                      */
-                    std::string m_logOnCosPath;
-                    bool m_logOnCosPathHasBeenSet;
+                    void SetLogOnCosPath(const std::string& _logOnCosPath);
+
+                    /**
+                     * 判断参数 LogOnCosPath 是否已赋值
+                     * @return LogOnCosPath 是否已赋值
+                     */
+                    bool LogOnCosPathHasBeenSet() const;
+
+                private:
 
                     /**
                      * COS SecretId
@@ -119,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_cosSecretKey;
                     bool m_cosSecretKeyHasBeenSet;
+
+                    /**
+                     * 日志存储在COS上的路径
+                     */
+                    std::string m_logOnCosPath;
+                    bool m_logOnCosPathHasBeenSet;
 
                 };
             }

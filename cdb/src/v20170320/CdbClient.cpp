@@ -384,6 +384,49 @@ CdbClient::CreateDBInstanceHourOutcomeCallable CdbClient::CreateDBInstanceHourCa
     return task->get_future();
 }
 
+CdbClient::CreateDeployGroupOutcome CdbClient::CreateDeployGroup(const CreateDeployGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeployGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeployGroupResponse rsp = CreateDeployGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeployGroupOutcome(rsp);
+        else
+            return CreateDeployGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeployGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CreateDeployGroupAsync(const CreateDeployGroupRequest& request, const CreateDeployGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeployGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CreateDeployGroupOutcomeCallable CdbClient::CreateDeployGroupCallable(const CreateDeployGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeployGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeployGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::CreateParamTemplateOutcome CdbClient::CreateParamTemplate(const CreateParamTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateParamTemplate");
@@ -506,6 +549,49 @@ CdbClient::DeleteBackupOutcomeCallable CdbClient::DeleteBackupCallable(const Del
         [this, request]()
         {
             return this->DeleteBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DeleteDeployGroupsOutcome CdbClient::DeleteDeployGroups(const DeleteDeployGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeployGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeployGroupsResponse rsp = DeleteDeployGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeployGroupsOutcome(rsp);
+        else
+            return DeleteDeployGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeployGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DeleteDeployGroupsAsync(const DeleteDeployGroupsRequest& request, const DeleteDeployGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDeployGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DeleteDeployGroupsOutcomeCallable CdbClient::DeleteDeployGroupsCallable(const DeleteDeployGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeployGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDeployGroups(request);
         }
     );
 
@@ -1452,6 +1538,49 @@ CdbClient::DescribeDefaultParamsOutcomeCallable CdbClient::DescribeDefaultParams
         [this, request]()
         {
             return this->DescribeDefaultParams(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeDeployGroupListOutcome CdbClient::DescribeDeployGroupList(const DescribeDeployGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeployGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeployGroupListResponse rsp = DescribeDeployGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeployGroupListOutcome(rsp);
+        else
+            return DescribeDeployGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeployGroupListOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeDeployGroupListAsync(const DescribeDeployGroupListRequest& request, const DescribeDeployGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeployGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeDeployGroupListOutcomeCallable CdbClient::DescribeDeployGroupListCallable(const DescribeDeployGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeployGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeployGroupList(request);
         }
     );
 
@@ -2699,6 +2828,49 @@ CdbClient::ModifyInstanceTagOutcomeCallable CdbClient::ModifyInstanceTagCallable
         [this, request]()
         {
             return this->ModifyInstanceTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyNameOrDescByDpIdOutcome CdbClient::ModifyNameOrDescByDpId(const ModifyNameOrDescByDpIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNameOrDescByDpId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNameOrDescByDpIdResponse rsp = ModifyNameOrDescByDpIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNameOrDescByDpIdOutcome(rsp);
+        else
+            return ModifyNameOrDescByDpIdOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNameOrDescByDpIdOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyNameOrDescByDpIdAsync(const ModifyNameOrDescByDpIdRequest& request, const ModifyNameOrDescByDpIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNameOrDescByDpId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyNameOrDescByDpIdOutcomeCallable CdbClient::ModifyNameOrDescByDpIdCallable(const ModifyNameOrDescByDpIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNameOrDescByDpIdOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNameOrDescByDpId(request);
         }
     );
 

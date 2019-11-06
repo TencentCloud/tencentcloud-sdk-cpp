@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeInstancesResponse::DescribeInstancesResponse() :
-    m_resultHasBeenSet(false)
+    m_totalCntHasBeenSet(false),
+    m_clusterListHasBeenSet(false)
 {
 }
 
@@ -63,21 +64,34 @@ CoreInternalOutcome DescribeInstancesResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("TotalCnt") && !rsp["TotalCnt"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["TotalCnt"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalCnt` IsInt64=false incorrectly").SetRequestId(requestId));
         }
+        m_totalCnt = rsp["TotalCnt"].GetInt64();
+        m_totalCntHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("ClusterList") && !rsp["ClusterList"].IsNull())
+    {
+        if (!rsp["ClusterList"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterList` is not array type"));
+
+        const Value &tmpValue = rsp["ClusterList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            ClusterInstancesInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterList.push_back(item);
         }
-
-        m_resultHasBeenSet = true;
+        m_clusterListHasBeenSet = true;
     }
 
 
@@ -85,14 +99,24 @@ CoreInternalOutcome DescribeInstancesResponse::Deserialize(const string &payload
 }
 
 
-ClusterInfoResult DescribeInstancesResponse::GetResult() const
+int64_t DescribeInstancesResponse::GetTotalCnt() const
 {
-    return m_result;
+    return m_totalCnt;
 }
 
-bool DescribeInstancesResponse::ResultHasBeenSet() const
+bool DescribeInstancesResponse::TotalCntHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_totalCntHasBeenSet;
+}
+
+vector<ClusterInstancesInfo> DescribeInstancesResponse::GetClusterList() const
+{
+    return m_clusterList;
+}
+
+bool DescribeInstancesResponse::ClusterListHasBeenSet() const
+{
+    return m_clusterListHasBeenSet;
 }
 
 

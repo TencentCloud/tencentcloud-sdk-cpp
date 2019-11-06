@@ -38,7 +38,8 @@ Snapshot::Snapshot() :
     m_copyFromRemoteHasBeenSet(false),
     m_imagesHasBeenSet(false),
     m_imageCountHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false)
+    m_snapshotTypeHasBeenSet(false),
+    m_shareReferenceHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome Snapshot::Deserialize(const Value &value)
         m_snapshotTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareReference") && !value["ShareReference"].IsNull())
+    {
+        if (!value["ShareReference"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Snapshot.ShareReference` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shareReference = value["ShareReference"].GetUint64();
+        m_shareReferenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +402,14 @@ void Snapshot::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "SnapshotType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_snapshotType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shareReferenceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShareReference";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shareReference, allocator);
     }
 
 }
@@ -666,5 +685,21 @@ void Snapshot::SetSnapshotType(const string& _snapshotType)
 bool Snapshot::SnapshotTypeHasBeenSet() const
 {
     return m_snapshotTypeHasBeenSet;
+}
+
+uint64_t Snapshot::GetShareReference() const
+{
+    return m_shareReference;
+}
+
+void Snapshot::SetShareReference(const uint64_t& _shareReference)
+{
+    m_shareReference = _shareReference;
+    m_shareReferenceHasBeenSet = true;
+}
+
+bool Snapshot::ShareReferenceHasBeenSet() const
+{
+    return m_shareReferenceHasBeenSet;
 }
 

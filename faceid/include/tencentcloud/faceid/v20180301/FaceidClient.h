@@ -37,6 +37,8 @@
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h>
+#include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h>
@@ -82,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetLiveCodeResponse> GetLiveCodeOutcome;
                 typedef std::future<GetLiveCodeOutcome> GetLiveCodeOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetLiveCodeRequest&, GetLiveCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLiveCodeAsyncHandler;
+                typedef Outcome<Error, Model::IdCardOCRVerificationResponse> IdCardOCRVerificationOutcome;
+                typedef std::future<IdCardOCRVerificationOutcome> IdCardOCRVerificationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::IdCardOCRVerificationRequest&, IdCardOCRVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IdCardOCRVerificationAsyncHandler;
                 typedef Outcome<Error, Model::IdCardVerificationResponse> IdCardVerificationOutcome;
                 typedef std::future<IdCardVerificationOutcome> IdCardVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::IdCardVerificationRequest&, IdCardVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IdCardVerificationAsyncHandler;
@@ -162,6 +167,15 @@ namespace TencentCloud
                 GetLiveCodeOutcome GetLiveCode(const Model::GetLiveCodeRequest &request);
                 void GetLiveCodeAsync(const Model::GetLiveCodeRequest& request, const GetLiveCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetLiveCodeOutcomeCallable GetLiveCodeCallable(const Model::GetLiveCodeRequest& request);
+
+                /**
+                 *本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。
+                 * @param req IdCardOCRVerificationRequest
+                 * @return IdCardOCRVerificationOutcome
+                 */
+                IdCardOCRVerificationOutcome IdCardOCRVerification(const Model::IdCardOCRVerificationRequest &request);
+                void IdCardOCRVerificationAsync(const Model::IdCardOCRVerificationRequest& request, const IdCardOCRVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IdCardOCRVerificationOutcomeCallable IdCardOCRVerificationCallable(const Model::IdCardOCRVerificationRequest& request);
 
                 /**
                  *传入姓名和身份证号，校验两者的真实性和一致性。

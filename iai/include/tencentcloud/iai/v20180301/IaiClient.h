@@ -65,8 +65,16 @@
 #include <tencentcloud/iai/v20180301/model/ModifyPersonGroupInfoResponse.h>
 #include <tencentcloud/iai/v20180301/model/SearchFacesRequest.h>
 #include <tencentcloud/iai/v20180301/model/SearchFacesResponse.h>
+#include <tencentcloud/iai/v20180301/model/SearchFacesReturnsByGroupRequest.h>
+#include <tencentcloud/iai/v20180301/model/SearchFacesReturnsByGroupResponse.h>
+#include <tencentcloud/iai/v20180301/model/SearchPersonsRequest.h>
+#include <tencentcloud/iai/v20180301/model/SearchPersonsResponse.h>
+#include <tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupRequest.h>
+#include <tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupResponse.h>
 #include <tencentcloud/iai/v20180301/model/VerifyFaceRequest.h>
 #include <tencentcloud/iai/v20180301/model/VerifyFaceResponse.h>
+#include <tencentcloud/iai/v20180301/model/VerifyPersonRequest.h>
+#include <tencentcloud/iai/v20180301/model/VerifyPersonResponse.h>
 
 
 namespace TencentCloud
@@ -144,9 +152,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SearchFacesResponse> SearchFacesOutcome;
                 typedef std::future<SearchFacesOutcome> SearchFacesOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::SearchFacesRequest&, SearchFacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchFacesAsyncHandler;
+                typedef Outcome<Error, Model::SearchFacesReturnsByGroupResponse> SearchFacesReturnsByGroupOutcome;
+                typedef std::future<SearchFacesReturnsByGroupOutcome> SearchFacesReturnsByGroupOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::SearchFacesReturnsByGroupRequest&, SearchFacesReturnsByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchFacesReturnsByGroupAsyncHandler;
+                typedef Outcome<Error, Model::SearchPersonsResponse> SearchPersonsOutcome;
+                typedef std::future<SearchPersonsOutcome> SearchPersonsOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::SearchPersonsRequest&, SearchPersonsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPersonsAsyncHandler;
+                typedef Outcome<Error, Model::SearchPersonsReturnsByGroupResponse> SearchPersonsReturnsByGroupOutcome;
+                typedef std::future<SearchPersonsReturnsByGroupOutcome> SearchPersonsReturnsByGroupOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::SearchPersonsReturnsByGroupRequest&, SearchPersonsReturnsByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPersonsReturnsByGroupAsyncHandler;
                 typedef Outcome<Error, Model::VerifyFaceResponse> VerifyFaceOutcome;
                 typedef std::future<VerifyFaceOutcome> VerifyFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::VerifyFaceRequest&, VerifyFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyFaceAsyncHandler;
+                typedef Outcome<Error, Model::VerifyPersonResponse> VerifyPersonOutcome;
+                typedef std::future<VerifyPersonOutcome> VerifyPersonOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::VerifyPersonRequest&, VerifyPersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPersonAsyncHandler;
 
 
 
@@ -167,8 +187,6 @@ namespace TencentCloud
 
 若您需要判断 “此人是否是某人”，即验证某张图片中的人是否是已知身份的某人，如常见的人脸登录场景，建议使用[人脸验证](https://cloud.tencent.com/document/product/867/32806)接口。
 
-若您需要判断图片中人脸的具体身份信息，如是否是身份证上对应的人，建议使用[人脸核身·云智慧眼](https://cloud.tencent.com/product/facein)产品。
-
 >     
 - 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
                  * @param req CompareFaceRequest
@@ -180,6 +198,8 @@ namespace TencentCloud
 
                 /**
                  *将已存在于某人员库的人员复制到其他人员库，该人员的描述信息不会被复制。单个人员最多只能同时存在100个人员库中。
+>     
+- 注：若该人员创建时算法模型版本为2.0，复制到非2.0算法模型版本的Group中时，复制操作将会失败。
                  * @param req CopyPersonRequest
                  * @return CopyPersonOutcome
                  */
@@ -230,9 +250,10 @@ namespace TencentCloud
                 DeleteFaceOutcomeCallable DeleteFaceCallable(const Model::DeleteFaceRequest& request);
 
                 /**
-                 *删除该人员库及包含的所有的人员。同时，人员对应的所有人脸信息将被删除。若某人员同时存在多个人员库中，该人员不会被删除，但属于该人员库中的自定义描述字段信息会被删除。
+                 *删除该人员库及包含的所有的人员。同时，人员对应的所有人脸信息将被删除。若某人员同时存在多个人员库中，该人员不会被删除，但属于该人员库中的自定义描述字段信息会被删除，属于其他人员库的自定义描述字段信息不受影响。
 
-注：删除人员库的操作为异步执行，删除单张人脸时间约为10ms，即一小时内可以删除36万张。删除期间，无法向该人员库添加人员。
+>     
+- 删除人员库的操作为异步执行，删除单张人脸时间约为10ms，即一小时内可以删除36万张。删除期间，无法向该人员库添加人员。
                  * @param req DeleteGroupRequest
                  * @return DeleteGroupOutcome
                  */
@@ -386,6 +407,44 @@ namespace TencentCloud
                 SearchFacesOutcomeCallable SearchFacesCallable(const Model::SearchFacesRequest& request);
 
                 /**
+                 *用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopN 人员，按照人员库的维度以人员相似度从大到小顺序排列。
+此接口需与[人员库管理相关接口](https://cloud.tencent.com/document/product/867/32794)结合使用。
+                 * @param req SearchFacesReturnsByGroupRequest
+                 * @return SearchFacesReturnsByGroupOutcome
+                 */
+                SearchFacesReturnsByGroupOutcome SearchFacesReturnsByGroup(const Model::SearchFacesReturnsByGroupRequest &request);
+                void SearchFacesReturnsByGroupAsync(const Model::SearchFacesReturnsByGroupRequest& request, const SearchFacesReturnsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchFacesReturnsByGroupOutcomeCallable SearchFacesReturnsByGroupCallable(const Model::SearchFacesReturnsByGroupRequest& request);
+
+                /**
+                 *用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopN 人员，按照相似度从大到小排列。
+
+本接口会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个 Person 下有4张 Face ，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使人员搜索（确定待识别的人脸图片是某人）更加准确。
+
+人员搜索接口和人脸搜索接口的区别是：人脸搜索会比对该 Person 下所有 Face ，而人员搜索比对的是该 Person 的 Person 特征。
+>     
+- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
+                 * @param req SearchPersonsRequest
+                 * @return SearchPersonsOutcome
+                 */
+                SearchPersonsOutcome SearchPersons(const Model::SearchPersonsRequest &request);
+                void SearchPersonsAsync(const Model::SearchPersonsRequest& request, const SearchPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchPersonsOutcomeCallable SearchPersonsCallable(const Model::SearchPersonsRequest& request);
+
+                /**
+                 *用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopN 人员，按照人员库的维度以人员相似度从大到小顺序排列。
+
+本接口会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使人员搜索（确定待识别的人脸图片是某人员）更加准确。
+
+人员搜索和人脸搜索的区别是：人脸搜索比对该 Person 下所有 Face ，而人员搜索比对的是该 Person 的 Person 特征。
+                 * @param req SearchPersonsReturnsByGroupRequest
+                 * @return SearchPersonsReturnsByGroupOutcome
+                 */
+                SearchPersonsReturnsByGroupOutcome SearchPersonsReturnsByGroup(const Model::SearchPersonsReturnsByGroupRequest &request);
+                void SearchPersonsReturnsByGroupAsync(const Model::SearchPersonsReturnsByGroupRequest& request, const SearchPersonsReturnsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchPersonsReturnsByGroupOutcomeCallable SearchPersonsReturnsByGroupCallable(const Model::SearchPersonsReturnsByGroupRequest& request);
+
+                /**
                  *给定一张人脸图片和一个 PersonId，判断图片中的人和 PersonId 对应的人是否为同一人。PersonId 请参考[人员库管理相关接口](https://cloud.tencent.com/document/product/867/32794)。 和[人脸比对](https://cloud.tencent.com/document/product/867/32802)接口不同的是，[人脸验证](https://cloud.tencent.com/document/product/867/32806)用于判断 “此人是否是此人”，“此人”的信息已存于人员库中，“此人”可能存在多张人脸图片；而[人脸比对](https://cloud.tencent.com/document/product/867/32802)用于判断两张人脸的相似度。
 
 >     
@@ -396,6 +455,22 @@ namespace TencentCloud
                 VerifyFaceOutcome VerifyFace(const Model::VerifyFaceRequest &request);
                 void VerifyFaceAsync(const Model::VerifyFaceRequest& request, const VerifyFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyFaceOutcomeCallable VerifyFaceCallable(const Model::VerifyFaceRequest& request);
+
+                /**
+                 *给定一张人脸图片和一个 PersonId，判断图片中的人和 PersonId 对应的人是否为同一人。PersonId 请参考[人员库管理相关接口](https://cloud.tencent.com/document/product/867/32794)。
+本接口会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使人员验证（确定待识别的人脸图片是某人员）更加准确。
+
+ 和人脸比对相关接口不同的是，人脸验证相关接口用于判断 “此人是否是此人”，“此人”的信息已存于人员库中，“此人”可能存在多张人脸图片；而人脸比对相关接口用于判断两张人脸的相似度。
+
+
+>     
+- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
+                 * @param req VerifyPersonRequest
+                 * @return VerifyPersonOutcome
+                 */
+                VerifyPersonOutcome VerifyPerson(const Model::VerifyPersonRequest &request);
+                void VerifyPersonAsync(const Model::VerifyPersonRequest& request, const VerifyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyPersonOutcomeCallable VerifyPersonCallable(const Model::VerifyPersonRequest& request);
 
             };
         }

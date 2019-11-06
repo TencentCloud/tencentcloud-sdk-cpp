@@ -28,6 +28,7 @@
 #include <tencentcloud/vod/v20180717/model/AiContentReviewTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTaskInput.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,32 @@ namespace TencentCloud
                      * @return Name 是否已赋值
                      */
                     bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取任务流模板类型，取值范围：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     * @return Type 任务流模板类型，取值范围：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置任务流模板类型，取值范围：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     * @param Type 任务流模板类型，取值范围：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
 
                     /**
                      * 获取视频处理类型任务参数。
@@ -157,6 +184,28 @@ namespace TencentCloud
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
+                     * 获取微信小程序发布任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniProgramPublishTask 微信小程序发布任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WechatMiniProgramPublishTaskInput GetMiniProgramPublishTask() const;
+
+                    /**
+                     * 设置微信小程序发布任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MiniProgramPublishTask 微信小程序发布任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMiniProgramPublishTask(const WechatMiniProgramPublishTaskInput& _miniProgramPublishTask);
+
+                    /**
+                     * 判断参数 MiniProgramPublishTask 是否已赋值
+                     * @return MiniProgramPublishTask 是否已赋值
+                     */
+                    bool MiniProgramPublishTaskHasBeenSet() const;
+
+                    /**
                      * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
@@ -201,6 +250,14 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
+                     * 任务流模板类型，取值范围：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
                      * 视频处理类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -227,6 +284,13 @@ namespace TencentCloud
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;
                     bool m_aiRecognitionTaskHasBeenSet;
+
+                    /**
+                     * 微信小程序发布任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WechatMiniProgramPublishTaskInput m_miniProgramPublishTask;
+                    bool m_miniProgramPublishTaskHasBeenSet;
 
                     /**
                      * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。

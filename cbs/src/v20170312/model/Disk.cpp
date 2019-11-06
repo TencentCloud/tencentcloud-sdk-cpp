@@ -52,8 +52,8 @@ Disk::Disk() :
     m_migratePercentHasBeenSet(false),
     m_shareableHasBeenSet(false),
     m_instanceIdListHasBeenSet(false),
-    m_attachDeviceIdHasBeenSet(false),
-    m_attachDeviceTypeHasBeenSet(false)
+    m_snapshotCountHasBeenSet(false),
+    m_snapshotSizeHasBeenSet(false)
 {
 }
 
@@ -385,24 +385,24 @@ CoreInternalOutcome Disk::Deserialize(const Value &value)
         m_instanceIdListHasBeenSet = true;
     }
 
-    if (value.HasMember("AttachDeviceId") && !value["AttachDeviceId"].IsNull())
+    if (value.HasMember("SnapshotCount") && !value["SnapshotCount"].IsNull())
     {
-        if (!value["AttachDeviceId"].IsString())
+        if (!value["SnapshotCount"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Disk.AttachDeviceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Disk.SnapshotCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_attachDeviceId = string(value["AttachDeviceId"].GetString());
-        m_attachDeviceIdHasBeenSet = true;
+        m_snapshotCount = value["SnapshotCount"].GetInt64();
+        m_snapshotCountHasBeenSet = true;
     }
 
-    if (value.HasMember("AttachDeviceType") && !value["AttachDeviceType"].IsNull())
+    if (value.HasMember("SnapshotSize") && !value["SnapshotSize"].IsNull())
     {
-        if (!value["AttachDeviceType"].IsString())
+        if (!value["SnapshotSize"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Disk.AttachDeviceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Disk.SnapshotSize` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_attachDeviceType = string(value["AttachDeviceType"].GetString());
-        m_attachDeviceTypeHasBeenSet = true;
+        m_snapshotSize = value["SnapshotSize"].GetUint64();
+        m_snapshotSizeHasBeenSet = true;
     }
 
 
@@ -670,20 +670,20 @@ void Disk::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         }
     }
 
-    if (m_attachDeviceIdHasBeenSet)
+    if (m_snapshotCountHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "AttachDeviceId";
+        string key = "SnapshotCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_attachDeviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_snapshotCount, allocator);
     }
 
-    if (m_attachDeviceTypeHasBeenSet)
+    if (m_snapshotSizeHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "AttachDeviceType";
+        string key = "SnapshotSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_attachDeviceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_snapshotSize, allocator);
     }
 
 }
@@ -1169,35 +1169,35 @@ bool Disk::InstanceIdListHasBeenSet() const
     return m_instanceIdListHasBeenSet;
 }
 
-string Disk::GetAttachDeviceId() const
+int64_t Disk::GetSnapshotCount() const
 {
-    return m_attachDeviceId;
+    return m_snapshotCount;
 }
 
-void Disk::SetAttachDeviceId(const string& _attachDeviceId)
+void Disk::SetSnapshotCount(const int64_t& _snapshotCount)
 {
-    m_attachDeviceId = _attachDeviceId;
-    m_attachDeviceIdHasBeenSet = true;
+    m_snapshotCount = _snapshotCount;
+    m_snapshotCountHasBeenSet = true;
 }
 
-bool Disk::AttachDeviceIdHasBeenSet() const
+bool Disk::SnapshotCountHasBeenSet() const
 {
-    return m_attachDeviceIdHasBeenSet;
+    return m_snapshotCountHasBeenSet;
 }
 
-string Disk::GetAttachDeviceType() const
+uint64_t Disk::GetSnapshotSize() const
 {
-    return m_attachDeviceType;
+    return m_snapshotSize;
 }
 
-void Disk::SetAttachDeviceType(const string& _attachDeviceType)
+void Disk::SetSnapshotSize(const uint64_t& _snapshotSize)
 {
-    m_attachDeviceType = _attachDeviceType;
-    m_attachDeviceTypeHasBeenSet = true;
+    m_snapshotSize = _snapshotSize;
+    m_snapshotSizeHasBeenSet = true;
 }
 
-bool Disk::AttachDeviceTypeHasBeenSet() const
+bool Disk::SnapshotSizeHasBeenSet() const
 {
-    return m_attachDeviceTypeHasBeenSet;
+    return m_snapshotSizeHasBeenSet;
 }
 

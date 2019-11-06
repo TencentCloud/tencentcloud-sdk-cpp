@@ -280,6 +280,24 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     bool EnableBGPHasBeenSet() const;
 
+                    /**
+                     * 获取开启和关闭BGP的community属性。
+                     * @return EnableBGPCommunity 开启和关闭BGP的community属性。
+                     */
+                    bool GetEnableBGPCommunity() const;
+
+                    /**
+                     * 设置开启和关闭BGP的community属性。
+                     * @param EnableBGPCommunity 开启和关闭BGP的community属性。
+                     */
+                    void SetEnableBGPCommunity(const bool& _enableBGPCommunity);
+
+                    /**
+                     * 判断参数 EnableBGPCommunity 是否已赋值
+                     * @return EnableBGPCommunity 是否已赋值
+                     */
+                    bool EnableBGPCommunityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +374,12 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     bool m_enableBGP;
                     bool m_enableBGPHasBeenSet;
+
+                    /**
+                     * 开启和关闭BGP的community属性。
+                     */
+                    bool m_enableBGPCommunity;
+                    bool m_enableBGPCommunityHasBeenSet;
 
                 };
             }

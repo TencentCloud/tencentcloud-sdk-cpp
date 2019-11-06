@@ -83,6 +83,42 @@ namespace TencentCloud
                     bool IspNameHasBeenSet() const;
 
                     /**
+                     * 获取错误码为2开头的次数。
+                     * @return Code2xx 错误码为2开头的次数。
+                     */
+                    uint64_t GetCode2xx() const;
+
+                    /**
+                     * 设置错误码为2开头的次数。
+                     * @param Code2xx 错误码为2开头的次数。
+                     */
+                    void SetCode2xx(const uint64_t& _code2xx);
+
+                    /**
+                     * 判断参数 Code2xx 是否已赋值
+                     * @return Code2xx 是否已赋值
+                     */
+                    bool Code2xxHasBeenSet() const;
+
+                    /**
+                     * 获取错误码为3开头的次数。
+                     * @return Code3xx 错误码为3开头的次数。
+                     */
+                    uint64_t GetCode3xx() const;
+
+                    /**
+                     * 设置错误码为3开头的次数。
+                     * @param Code3xx 错误码为3开头的次数。
+                     */
+                    void SetCode3xx(const uint64_t& _code3xx);
+
+                    /**
+                     * 判断参数 Code3xx 是否已赋值
+                     * @return Code3xx 是否已赋值
+                     */
+                    bool Code3xxHasBeenSet() const;
+
+                    /**
                      * 获取错误码为4开头的次数。
                      * @return Code4xx 错误码为4开头的次数。
                      */
@@ -131,6 +167,18 @@ namespace TencentCloud
                      */
                     std::string m_ispName;
                     bool m_ispNameHasBeenSet;
+
+                    /**
+                     * 错误码为2开头的次数。
+                     */
+                    uint64_t m_code2xx;
+                    bool m_code2xxHasBeenSet;
+
+                    /**
+                     * 错误码为3开头的次数。
+                     */
+                    uint64_t m_code3xx;
+                    bool m_code3xxHasBeenSet;
 
                     /**
                      * 错误码为4开头的次数。

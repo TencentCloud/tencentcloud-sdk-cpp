@@ -45,7 +45,13 @@ DBInstance::DBInstance() :
     m_modelHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_backupTimeHasBeenSet(false)
+    m_backupTimeHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_uidHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_pidHasBeenSet(false)
 {
 }
 
@@ -294,6 +300,66 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_backupTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetInt64();
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uid") && !value["Uid"].IsNull())
+    {
+        if (!value["Uid"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Uid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uid = string(value["Uid"].GetString());
+        m_uidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetInt64();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Pid") && !value["Pid"].IsNull())
+    {
+        if (!value["Pid"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pid = value["Pid"].GetInt64();
+        m_pidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -491,6 +557,54 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "BackupTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_backupTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_uidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Pid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pid, allocator);
     }
 
 }
@@ -878,5 +992,101 @@ void DBInstance::SetBackupTime(const string& _backupTime)
 bool DBInstance::BackupTimeHasBeenSet() const
 {
     return m_backupTimeHasBeenSet;
+}
+
+int64_t DBInstance::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void DBInstance::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool DBInstance::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+string DBInstance::GetUid() const
+{
+    return m_uid;
+}
+
+void DBInstance::SetUid(const string& _uid)
+{
+    m_uid = _uid;
+    m_uidHasBeenSet = true;
+}
+
+bool DBInstance::UidHasBeenSet() const
+{
+    return m_uidHasBeenSet;
+}
+
+int64_t DBInstance::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DBInstance::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DBInstance::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+string DBInstance::GetVersion() const
+{
+    return m_version;
+}
+
+void DBInstance::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool DBInstance::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string DBInstance::GetType() const
+{
+    return m_type;
+}
+
+void DBInstance::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DBInstance::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+int64_t DBInstance::GetPid() const
+{
+    return m_pid;
+}
+
+void DBInstance::SetPid(const int64_t& _pid)
+{
+    m_pid = _pid;
+    m_pidHasBeenSet = true;
+}
+
+bool DBInstance::PidHasBeenSet() const
+{
+    return m_pidHasBeenSet;
 }
 

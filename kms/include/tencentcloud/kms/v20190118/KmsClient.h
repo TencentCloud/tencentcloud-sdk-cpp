@@ -29,6 +29,8 @@
 #include <tencentcloud/kms/v20190118/model/CreateKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DecryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/DecryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/DeleteImportedKeyMaterialRequest.h>
+#include <tencentcloud/kms/v20190118/model/DeleteImportedKeyMaterialResponse.h>
 #include <tencentcloud/kms/v20190118/model/DescribeKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/DescribeKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DescribeKeysRequest.h>
@@ -49,10 +51,16 @@
 #include <tencentcloud/kms/v20190118/model/EncryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/GenerateDataKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/GenerateDataKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/GenerateRandomRequest.h>
+#include <tencentcloud/kms/v20190118/model/GenerateRandomResponse.h>
 #include <tencentcloud/kms/v20190118/model/GetKeyRotationStatusRequest.h>
 #include <tencentcloud/kms/v20190118/model/GetKeyRotationStatusResponse.h>
+#include <tencentcloud/kms/v20190118/model/GetParametersForImportRequest.h>
+#include <tencentcloud/kms/v20190118/model/GetParametersForImportResponse.h>
 #include <tencentcloud/kms/v20190118/model/GetServiceStatusRequest.h>
 #include <tencentcloud/kms/v20190118/model/GetServiceStatusResponse.h>
+#include <tencentcloud/kms/v20190118/model/ImportKeyMaterialRequest.h>
+#include <tencentcloud/kms/v20190118/model/ImportKeyMaterialResponse.h>
 #include <tencentcloud/kms/v20190118/model/ListKeyDetailRequest.h>
 #include <tencentcloud/kms/v20190118/model/ListKeyDetailResponse.h>
 #include <tencentcloud/kms/v20190118/model/ListKeysRequest.h>
@@ -88,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DecryptResponse> DecryptOutcome;
                 typedef std::future<DecryptOutcome> DecryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DecryptRequest&, DecryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DecryptAsyncHandler;
+                typedef Outcome<Error, Model::DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialOutcome;
+                typedef std::future<DeleteImportedKeyMaterialOutcome> DeleteImportedKeyMaterialOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DeleteImportedKeyMaterialRequest&, DeleteImportedKeyMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImportedKeyMaterialAsyncHandler;
                 typedef Outcome<Error, Model::DescribeKeyResponse> DescribeKeyOutcome;
                 typedef std::future<DescribeKeyOutcome> DescribeKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DescribeKeyRequest&, DescribeKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyAsyncHandler;
@@ -118,12 +129,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GenerateDataKeyResponse> GenerateDataKeyOutcome;
                 typedef std::future<GenerateDataKeyOutcome> GenerateDataKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GenerateDataKeyRequest&, GenerateDataKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDataKeyAsyncHandler;
+                typedef Outcome<Error, Model::GenerateRandomResponse> GenerateRandomOutcome;
+                typedef std::future<GenerateRandomOutcome> GenerateRandomOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::GenerateRandomRequest&, GenerateRandomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateRandomAsyncHandler;
                 typedef Outcome<Error, Model::GetKeyRotationStatusResponse> GetKeyRotationStatusOutcome;
                 typedef std::future<GetKeyRotationStatusOutcome> GetKeyRotationStatusOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GetKeyRotationStatusRequest&, GetKeyRotationStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetKeyRotationStatusAsyncHandler;
+                typedef Outcome<Error, Model::GetParametersForImportResponse> GetParametersForImportOutcome;
+                typedef std::future<GetParametersForImportOutcome> GetParametersForImportOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::GetParametersForImportRequest&, GetParametersForImportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetParametersForImportAsyncHandler;
                 typedef Outcome<Error, Model::GetServiceStatusResponse> GetServiceStatusOutcome;
                 typedef std::future<GetServiceStatusOutcome> GetServiceStatusOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GetServiceStatusRequest&, GetServiceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceStatusAsyncHandler;
+                typedef Outcome<Error, Model::ImportKeyMaterialResponse> ImportKeyMaterialOutcome;
+                typedef std::future<ImportKeyMaterialOutcome> ImportKeyMaterialOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::ImportKeyMaterialRequest&, ImportKeyMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyMaterialAsyncHandler;
                 typedef Outcome<Error, Model::ListKeyDetailResponse> ListKeyDetailOutcome;
                 typedef std::future<ListKeyDetailOutcome> ListKeyDetailOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ListKeyDetailRequest&, ListKeyDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListKeyDetailAsyncHandler;
@@ -171,6 +191,15 @@ namespace TencentCloud
                 DecryptOutcome Decrypt(const Model::DecryptRequest &request);
                 void DecryptAsync(const Model::DecryptRequest& request, const DecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DecryptOutcomeCallable DecryptCallable(const Model::DecryptRequest& request);
+
+                /**
+                 *用于删除导入的密钥材料，仅对EXTERNAL类型的CMK有效，该接口将CMK设置为PendingImport 状态，并不会删除CMK，在重新进行密钥导入后可继续使用。彻底删除CMK请使用 ScheduleKeyDeletion 接口。
+                 * @param req DeleteImportedKeyMaterialRequest
+                 * @return DeleteImportedKeyMaterialOutcome
+                 */
+                DeleteImportedKeyMaterialOutcome DeleteImportedKeyMaterial(const Model::DeleteImportedKeyMaterialRequest &request);
+                void DeleteImportedKeyMaterialAsync(const Model::DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImportedKeyMaterialOutcomeCallable DeleteImportedKeyMaterialCallable(const Model::DeleteImportedKeyMaterialRequest& request);
 
                 /**
                  *用于获取指定KeyId的主密钥属性详情信息。
@@ -263,6 +292,15 @@ namespace TencentCloud
                 GenerateDataKeyOutcomeCallable GenerateDataKeyCallable(const Model::GenerateDataKeyRequest& request);
 
                 /**
+                 *随机数生成接口。
+                 * @param req GenerateRandomRequest
+                 * @return GenerateRandomOutcome
+                 */
+                GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest &request);
+                void GenerateRandomAsync(const Model::GenerateRandomRequest& request, const GenerateRandomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateRandomOutcomeCallable GenerateRandomCallable(const Model::GenerateRandomRequest& request);
+
+                /**
                  *查询指定的CMK是否开启了密钥轮换功能。
                  * @param req GetKeyRotationStatusRequest
                  * @return GetKeyRotationStatusOutcome
@@ -270,6 +308,15 @@ namespace TencentCloud
                 GetKeyRotationStatusOutcome GetKeyRotationStatus(const Model::GetKeyRotationStatusRequest &request);
                 void GetKeyRotationStatusAsync(const Model::GetKeyRotationStatusRequest& request, const GetKeyRotationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetKeyRotationStatusOutcomeCallable GetKeyRotationStatusCallable(const Model::GetKeyRotationStatusRequest& request);
+
+                /**
+                 *获取导入主密钥（CMK）材料的参数，返回的Token作为执行ImportKeyMaterial的参数之一，返回的PublicKey用于对自主导入密钥材料进行加密。返回的Token和PublicKey 24小时后失效，失效后如需重新导入，需要再次调用该接口获取新的Token和PublicKey。
+                 * @param req GetParametersForImportRequest
+                 * @return GetParametersForImportOutcome
+                 */
+                GetParametersForImportOutcome GetParametersForImport(const Model::GetParametersForImportRequest &request);
+                void GetParametersForImportAsync(const Model::GetParametersForImportRequest& request, const GetParametersForImportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetParametersForImportOutcomeCallable GetParametersForImportCallable(const Model::GetParametersForImportRequest& request);
 
                 /**
                  *用于查询该用户是否已开通KMS服务
@@ -281,6 +328,16 @@ namespace TencentCloud
                 GetServiceStatusOutcomeCallable GetServiceStatusCallable(const Model::GetServiceStatusRequest& request);
 
                 /**
+                 *用于导入密钥材料。只有类型为EXTERNAL 的CMK 才可以导入，导入的密钥材料使用 GetParametersForImport 获取的密钥进行加密。可以为指定的 CMK 重新导入密钥材料，并重新指定过期时间，但必须导入相同的密钥材料。CMK 密钥材料导入后不可以更换密钥材料。导入的密钥材料过期或者被删除后，指定的CMK将无法使用，需要再次导入相同的密钥材料才能正常使用。CMK是独立的，同样的密钥材料可导入不同的 CMK 中，但使用其中一个 CMK 加密的数据无法使用另一个 CMK解密。
+只有Enabled 和 PendingImport状态的CMK可以导入密钥材料。
+                 * @param req ImportKeyMaterialRequest
+                 * @return ImportKeyMaterialOutcome
+                 */
+                ImportKeyMaterialOutcome ImportKeyMaterial(const Model::ImportKeyMaterialRequest &request);
+                void ImportKeyMaterialAsync(const Model::ImportKeyMaterialRequest& request, const ImportKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportKeyMaterialOutcomeCallable ImportKeyMaterialCallable(const Model::ImportKeyMaterialRequest& request);
+
+                /**
                  *根据指定Offset和Limit获取主密钥列表详情。
                  * @param req ListKeyDetailRequest
                  * @return ListKeyDetailOutcome
@@ -290,7 +347,7 @@ namespace TencentCloud
                 ListKeyDetailOutcomeCallable ListKeyDetailCallable(const Model::ListKeyDetailRequest& request);
 
                 /**
-                 *列出账号下面的密钥列表（KeyId信息）。
+                 *列出账号下面状态为Enabled， Disabled 和 PendingImport 的CMK KeyId 列表
                  * @param req ListKeysRequest
                  * @return ListKeysOutcome
                  */
@@ -317,7 +374,7 @@ namespace TencentCloud
                 ScheduleKeyDeletionOutcomeCallable ScheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request);
 
                 /**
-                 *用于修改CMK的别名。
+                 *用于修改CMK的别名。对于处于PendingDelete状态的CMK禁止修改。
                  * @param req UpdateAliasRequest
                  * @return UpdateAliasOutcome
                  */
@@ -326,7 +383,7 @@ namespace TencentCloud
                 UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request);
 
                 /**
-                 *该接口用于对指定的cmk修改描述信息。
+                 *该接口用于对指定的cmk修改描述信息。对于处于PendingDelete状态的CMK禁止修改。
                  * @param req UpdateKeyDescriptionRequest
                  * @return UpdateKeyDescriptionOutcome
                  */

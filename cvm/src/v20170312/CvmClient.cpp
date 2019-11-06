@@ -1158,6 +1158,92 @@ CvmClient::DescribeRegionsOutcomeCallable CvmClient::DescribeRegionsCallable(con
     return task->get_future();
 }
 
+CvmClient::DescribeReservedInstancesOutcome CvmClient::DescribeReservedInstances(const DescribeReservedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReservedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReservedInstancesResponse rsp = DescribeReservedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReservedInstancesOutcome(rsp);
+        else
+            return DescribeReservedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReservedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReservedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeReservedInstancesOutcomeCallable CvmClient::DescribeReservedInstancesCallable(const DescribeReservedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReservedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReservedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::DescribeReservedInstancesOfferingsOutcome CvmClient::DescribeReservedInstancesOfferings(const DescribeReservedInstancesOfferingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReservedInstancesOfferings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReservedInstancesOfferingsResponse rsp = DescribeReservedInstancesOfferingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReservedInstancesOfferingsOutcome(rsp);
+        else
+            return DescribeReservedInstancesOfferingsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReservedInstancesOfferingsOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeReservedInstancesOfferingsAsync(const DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReservedInstancesOfferings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeReservedInstancesOfferingsOutcomeCallable CvmClient::DescribeReservedInstancesOfferingsCallable(const DescribeReservedInstancesOfferingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReservedInstancesOfferingsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReservedInstancesOfferings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeZoneInstanceConfigInfosOutcome CvmClient::DescribeZoneInstanceConfigInfos(const DescribeZoneInstanceConfigInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneInstanceConfigInfos");
@@ -2140,6 +2226,49 @@ CvmClient::ModifyKeyPairAttributeOutcomeCallable CvmClient::ModifyKeyPairAttribu
         [this, request]()
         {
             return this->ModifyKeyPairAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::PurchaseReservedInstancesOfferingOutcome CvmClient::PurchaseReservedInstancesOffering(const PurchaseReservedInstancesOfferingRequest &request)
+{
+    auto outcome = MakeRequest(request, "PurchaseReservedInstancesOffering");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PurchaseReservedInstancesOfferingResponse rsp = PurchaseReservedInstancesOfferingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PurchaseReservedInstancesOfferingOutcome(rsp);
+        else
+            return PurchaseReservedInstancesOfferingOutcome(o.GetError());
+    }
+    else
+    {
+        return PurchaseReservedInstancesOfferingOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::PurchaseReservedInstancesOfferingAsync(const PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PurchaseReservedInstancesOffering(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::PurchaseReservedInstancesOfferingOutcomeCallable CvmClient::PurchaseReservedInstancesOfferingCallable(const PurchaseReservedInstancesOfferingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PurchaseReservedInstancesOfferingOutcome()>>(
+        [this, request]()
+        {
+            return this->PurchaseReservedInstancesOffering(request);
         }
     );
 

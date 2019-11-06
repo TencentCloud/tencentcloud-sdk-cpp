@@ -22,7 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/VPCSettings.h>
-#include <tencentcloud/emr/v20190103/model/ResourceSpec.h>
+#include <tencentcloud/emr/v20190103/model/NewResourceSpec.h>
 #include <tencentcloud/emr/v20190103/model/Placement.h>
 #include <tencentcloud/emr/v20190103/model/LoginSettings.h>
 #include <tencentcloud/emr/v20190103/model/COSSettings.h>
@@ -106,13 +106,13 @@ namespace TencentCloud
                      * 获取资源描述
                      * @return ResourceSpec 资源描述
                      */
-                    ResourceSpec GetResourceSpec() const;
+                    NewResourceSpec GetResourceSpec() const;
 
                     /**
                      * 设置资源描述
                      * @param ResourceSpec 资源描述
                      */
-                    void SetResourceSpec(const ResourceSpec& _resourceSpec);
+                    void SetResourceSpec(const NewResourceSpec& _resourceSpec);
 
                     /**
                      * 判断参数 ResourceSpec 是否已赋值
@@ -247,24 +247,6 @@ namespace TencentCloud
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token
-                     * @return ClientToken 客户端Token
-                     */
-                    std::string GetClientToken() const;
-
-                    /**
-                     * 设置客户端Token
-                     * @param ClientToken 客户端Token
-                     */
-                    void SetClientToken(const std::string& _clientToken);
-
-                    /**
-                     * 判断参数 ClientToken 是否已赋值
-                     * @return ClientToken 是否已赋值
-                     */
-                    bool ClientTokenHasBeenSet() const;
-
-                    /**
                      * 获取COS设置参数
                      * @return COSSettings COS设置参数
                      */
@@ -337,6 +319,24 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
+                     * 获取客户端Token
+                     * @return ClientToken 客户端Token
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置客户端Token
+                     * @param ClientToken 客户端Token
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
+                    /**
                      * 获取是否需要外网Ip。支持填NEED_MASTER_WAN，不支持使用NOT_NEED_MASTER_WAN，默认使用NEED_MASTER_WAN
                      * @return NeedMasterWan 是否需要外网Ip。支持填NEED_MASTER_WAN，不支持使用NOT_NEED_MASTER_WAN，默认使用NEED_MASTER_WAN
                      */
@@ -372,6 +372,42 @@ namespace TencentCloud
                      */
                     bool RemoteLoginAtCreateHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启安全集群，0表示不开启，非0表示开启
+                     * @return CheckSecurity 是否开启安全集群，0表示不开启，非0表示开启
+                     */
+                    int64_t GetCheckSecurity() const;
+
+                    /**
+                     * 设置是否开启安全集群，0表示不开启，非0表示开启
+                     * @param CheckSecurity 是否开启安全集群，0表示不开启，非0表示开启
+                     */
+                    void SetCheckSecurity(const int64_t& _checkSecurity);
+
+                    /**
+                     * 判断参数 CheckSecurity 是否已赋值
+                     * @return CheckSecurity 是否已赋值
+                     */
+                    bool CheckSecurityHasBeenSet() const;
+
+                    /**
+                     * 获取访问外部文件系统
+                     * @return ExtendFsField 访问外部文件系统
+                     */
+                    std::string GetExtendFsField() const;
+
+                    /**
+                     * 设置访问外部文件系统
+                     * @param ExtendFsField 访问外部文件系统
+                     */
+                    void SetExtendFsField(const std::string& _extendFsField);
+
+                    /**
+                     * 判断参数 ExtendFsField 是否已赋值
+                     * @return ExtendFsField 是否已赋值
+                     */
+                    bool ExtendFsFieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,7 +431,7 @@ namespace TencentCloud
                     /**
                      * 资源描述
                      */
-                    ResourceSpec m_resourceSpec;
+                    NewResourceSpec m_resourceSpec;
                     bool m_resourceSpecHasBeenSet;
 
                     /**
@@ -441,12 +477,6 @@ namespace TencentCloud
                     bool m_loginSettingsHasBeenSet;
 
                     /**
-                     * 客户端Token
-                     */
-                    std::string m_clientToken;
-                    bool m_clientTokenHasBeenSet;
-
-                    /**
                      * COS设置参数
                      */
                     COSSettings m_cOSSettings;
@@ -471,6 +501,12 @@ namespace TencentCloud
                     bool m_autoRenewHasBeenSet;
 
                     /**
+                     * 客户端Token
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
+
+                    /**
                      * 是否需要外网Ip。支持填NEED_MASTER_WAN，不支持使用NOT_NEED_MASTER_WAN，默认使用NEED_MASTER_WAN
                      */
                     std::string m_needMasterWan;
@@ -481,6 +517,18 @@ namespace TencentCloud
                      */
                     int64_t m_remoteLoginAtCreate;
                     bool m_remoteLoginAtCreateHasBeenSet;
+
+                    /**
+                     * 是否开启安全集群，0表示不开启，非0表示开启
+                     */
+                    int64_t m_checkSecurity;
+                    bool m_checkSecurityHasBeenSet;
+
+                    /**
+                     * 访问外部文件系统
+                     */
+                    std::string m_extendFsField;
+                    bool m_extendFsFieldHasBeenSet;
 
                 };
             }

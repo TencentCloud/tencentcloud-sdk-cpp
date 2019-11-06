@@ -633,48 +633,40 @@ namespace TencentCloud
                     bool InstanceIdListHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘挂载目标设备的ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttachDeviceId 云硬盘挂载目标设备的ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云盘拥有的快照总数。
+                     * @return SnapshotCount 云盘拥有的快照总数。
                      */
-                    std::string GetAttachDeviceId() const;
+                    int64_t GetSnapshotCount() const;
 
                     /**
-                     * 设置云硬盘挂载目标设备的ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachDeviceId 云硬盘挂载目标设备的ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云盘拥有的快照总数。
+                     * @param SnapshotCount 云盘拥有的快照总数。
                      */
-                    void SetAttachDeviceId(const std::string& _attachDeviceId);
+                    void SetSnapshotCount(const int64_t& _snapshotCount);
 
                     /**
-                     * 判断参数 AttachDeviceId 是否已赋值
-                     * @return AttachDeviceId 是否已赋值
+                     * 判断参数 SnapshotCount 是否已赋值
+                     * @return SnapshotCount 是否已赋值
                      */
-                    bool AttachDeviceIdHasBeenSet() const;
+                    bool SnapshotCountHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘挂载目标设备的类型，目前包括CVM和POD
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttachDeviceType 云硬盘挂载目标设备的类型，目前包括CVM和POD
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取云盘拥有的快照总容量，单位为MB。
+                     * @return SnapshotSize 云盘拥有的快照总容量，单位为MB。
                      */
-                    std::string GetAttachDeviceType() const;
+                    uint64_t GetSnapshotSize() const;
 
                     /**
-                     * 设置云硬盘挂载目标设备的类型，目前包括CVM和POD
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachDeviceType 云硬盘挂载目标设备的类型，目前包括CVM和POD
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置云盘拥有的快照总容量，单位为MB。
+                     * @param SnapshotSize 云盘拥有的快照总容量，单位为MB。
                      */
-                    void SetAttachDeviceType(const std::string& _attachDeviceType);
+                    void SetSnapshotSize(const uint64_t& _snapshotSize);
 
                     /**
-                     * 判断参数 AttachDeviceType 是否已赋值
-                     * @return AttachDeviceType 是否已赋值
+                     * 判断参数 SnapshotSize 是否已赋值
+                     * @return SnapshotSize 是否已赋值
                      */
-                    bool AttachDeviceTypeHasBeenSet() const;
+                    bool SnapshotSizeHasBeenSet() const;
 
                 private:
 
@@ -870,18 +862,16 @@ namespace TencentCloud
                     bool m_instanceIdListHasBeenSet;
 
                     /**
-                     * 云硬盘挂载目标设备的ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云盘拥有的快照总数。
                      */
-                    std::string m_attachDeviceId;
-                    bool m_attachDeviceIdHasBeenSet;
+                    int64_t m_snapshotCount;
+                    bool m_snapshotCountHasBeenSet;
 
                     /**
-                     * 云硬盘挂载目标设备的类型，目前包括CVM和POD
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 云盘拥有的快照总容量，单位为MB。
                      */
-                    std::string m_attachDeviceType;
-                    bool m_attachDeviceTypeHasBeenSet;
+                    uint64_t m_snapshotSize;
+                    bool m_snapshotSizeHasBeenSet;
 
                 };
             }

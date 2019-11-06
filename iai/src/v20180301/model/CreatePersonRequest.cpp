@@ -30,7 +30,9 @@ CreatePersonRequest::CreatePersonRequest() :
     m_genderHasBeenSet(false),
     m_personExDescriptionInfosHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_uniquePersonControlHasBeenSet(false),
+    m_qualityControlHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,22 @@ string CreatePersonRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniquePersonControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UniquePersonControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_uniquePersonControl, allocator);
+    }
+
+    if (m_qualityControlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QualityControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualityControl, allocator);
     }
 
 
@@ -222,6 +240,38 @@ void CreatePersonRequest::SetUrl(const string& _url)
 bool CreatePersonRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+uint64_t CreatePersonRequest::GetUniquePersonControl() const
+{
+    return m_uniquePersonControl;
+}
+
+void CreatePersonRequest::SetUniquePersonControl(const uint64_t& _uniquePersonControl)
+{
+    m_uniquePersonControl = _uniquePersonControl;
+    m_uniquePersonControlHasBeenSet = true;
+}
+
+bool CreatePersonRequest::UniquePersonControlHasBeenSet() const
+{
+    return m_uniquePersonControlHasBeenSet;
+}
+
+uint64_t CreatePersonRequest::GetQualityControl() const
+{
+    return m_qualityControl;
+}
+
+void CreatePersonRequest::SetQualityControl(const uint64_t& _qualityControl)
+{
+    m_qualityControl = _qualityControl;
+    m_qualityControlHasBeenSet = true;
+}
+
+bool CreatePersonRequest::QualityControlHasBeenSet() const
+{
+    return m_qualityControlHasBeenSet;
 }
 
 

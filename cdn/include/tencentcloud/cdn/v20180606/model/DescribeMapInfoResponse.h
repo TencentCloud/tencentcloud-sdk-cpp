@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/MapInfo.h>
+#include <tencentcloud/cdn/v20180606/model/RegionMapRelation.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,34 @@ namespace TencentCloud
                      */
                     bool MapInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取服务端区域id和子区域id的映射关系。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServerRegionRelation 服务端区域id和子区域id的映射关系。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RegionMapRelation> GetServerRegionRelation() const;
+
+                    /**
+                     * 判断参数 ServerRegionRelation 是否已赋值
+                     * @return ServerRegionRelation 是否已赋值
+                     */
+                    bool ServerRegionRelationHasBeenSet() const;
+
+                    /**
+                     * 获取客户端区域id和子区域id的映射关系。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientRegionRelation 客户端区域id和子区域id的映射关系。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RegionMapRelation> GetClientRegionRelation() const;
+
+                    /**
+                     * 判断参数 ClientRegionRelation 是否已赋值
+                     * @return ClientRegionRelation 是否已赋值
+                     */
+                    bool ClientRegionRelationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +91,20 @@ namespace TencentCloud
                      */
                     std::vector<MapInfo> m_mapInfoList;
                     bool m_mapInfoListHasBeenSet;
+
+                    /**
+                     * 服务端区域id和子区域id的映射关系。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RegionMapRelation> m_serverRegionRelation;
+                    bool m_serverRegionRelationHasBeenSet;
+
+                    /**
+                     * 客户端区域id和子区域id的映射关系。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RegionMapRelation> m_clientRegionRelation;
+                    bool m_clientRegionRelationHasBeenSet;
 
                 };
             }

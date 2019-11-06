@@ -25,7 +25,10 @@ using namespace rapidjson;
 using namespace std;
 
 CreatePersonResponse::CreatePersonResponse() :
-    m_faceIdHasBeenSet(false)
+    m_faceIdHasBeenSet(false),
+    m_faceRectHasBeenSet(false),
+    m_similarPersonIdHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,43 @@ CoreInternalOutcome CreatePersonResponse::Deserialize(const string &payload)
         m_faceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceRect") && !rsp["FaceRect"].IsNull())
+    {
+        if (!rsp["FaceRect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `FaceRect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_faceRect.Deserialize(rsp["FaceRect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_faceRectHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SimilarPersonId") && !rsp["SimilarPersonId"].IsNull())
+    {
+        if (!rsp["SimilarPersonId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimilarPersonId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_similarPersonId = string(rsp["SimilarPersonId"].GetString());
+        m_similarPersonIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +126,36 @@ string CreatePersonResponse::GetFaceId() const
 bool CreatePersonResponse::FaceIdHasBeenSet() const
 {
     return m_faceIdHasBeenSet;
+}
+
+FaceRect CreatePersonResponse::GetFaceRect() const
+{
+    return m_faceRect;
+}
+
+bool CreatePersonResponse::FaceRectHasBeenSet() const
+{
+    return m_faceRectHasBeenSet;
+}
+
+string CreatePersonResponse::GetSimilarPersonId() const
+{
+    return m_similarPersonId;
+}
+
+bool CreatePersonResponse::SimilarPersonIdHasBeenSet() const
+{
+    return m_similarPersonIdHasBeenSet;
+}
+
+string CreatePersonResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool CreatePersonResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

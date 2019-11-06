@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 KeywordsExtractionRequest::KeywordsExtractionRequest() :
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_numHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string KeywordsExtractionRequest::ToJsonString() const
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_numHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Num";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_num, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void KeywordsExtractionRequest::SetText(const string& _text)
 bool KeywordsExtractionRequest::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+uint64_t KeywordsExtractionRequest::GetNum() const
+{
+    return m_num;
+}
+
+void KeywordsExtractionRequest::SetNum(const uint64_t& _num)
+{
+    m_num = _num;
+    m_numHasBeenSet = true;
+}
+
+bool KeywordsExtractionRequest::NumHasBeenSet() const
+{
+    return m_numHasBeenSet;
 }
 
 

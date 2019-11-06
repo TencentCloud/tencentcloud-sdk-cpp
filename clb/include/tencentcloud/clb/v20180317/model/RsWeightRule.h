@@ -66,24 +66,6 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的ID
-                     * @return LocationId 转发规则的ID
-                     */
-                    std::string GetLocationId() const;
-
-                    /**
-                     * 设置转发规则的ID
-                     * @param LocationId 转发规则的ID
-                     */
-                    void SetLocationId(const std::string& _locationId);
-
-                    /**
-                     * 判断参数 LocationId 是否已赋值
-                     * @return LocationId 是否已赋值
-                     */
-                    bool LocationIdHasBeenSet() const;
-
-                    /**
                      * 获取要修改权重的后端机器列表
                      * @return Targets 要修改权重的后端机器列表
                      */
@@ -100,6 +82,24 @@ namespace TencentCloud
                      * @return Targets 是否已赋值
                      */
                     bool TargetsHasBeenSet() const;
+
+                    /**
+                     * 获取转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     * @return LocationId 转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     */
+                    std::string GetLocationId() const;
+
+                    /**
+                     * 设置转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     * @param LocationId 转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     */
+                    void SetLocationId(const std::string& _locationId);
+
+                    /**
+                     * 判断参数 LocationId 是否已赋值
+                     * @return LocationId 是否已赋值
+                     */
+                    bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取目标规则的域名，提供LocationId参数时本参数不生效
@@ -164,16 +164,16 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 转发规则的ID
-                     */
-                    std::string m_locationId;
-                    bool m_locationIdHasBeenSet;
-
-                    /**
                      * 要修改权重的后端机器列表
                      */
                     std::vector<Target> m_targets;
                     bool m_targetsHasBeenSet;
+
+                    /**
+                     * 转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     */
+                    std::string m_locationId;
+                    bool m_locationIdHasBeenSet;
 
                     /**
                      * 目标规则的域名，提供LocationId参数时本参数不生效

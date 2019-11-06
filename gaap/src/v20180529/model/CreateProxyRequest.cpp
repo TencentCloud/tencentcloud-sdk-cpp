@@ -32,7 +32,8 @@ CreateProxyRequest::CreateProxyRequest() :
     m_realServerRegionHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_clonedProxyIdHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,14 @@ string CreateProxyRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clonedProxyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClonedProxyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clonedProxyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -272,6 +281,22 @@ void CreateProxyRequest::SetTagSet(const vector<TagPair>& _tagSet)
 bool CreateProxyRequest::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+string CreateProxyRequest::GetClonedProxyId() const
+{
+    return m_clonedProxyId;
+}
+
+void CreateProxyRequest::SetClonedProxyId(const string& _clonedProxyId)
+{
+    m_clonedProxyId = _clonedProxyId;
+    m_clonedProxyIdHasBeenSet = true;
+}
+
+bool CreateProxyRequest::ClonedProxyIdHasBeenSet() const
+{
+    return m_clonedProxyIdHasBeenSet;
 }
 
 

@@ -1674,6 +1674,49 @@ SqlserverClient::RunMigrationOutcomeCallable SqlserverClient::RunMigrationCallab
     return task->get_future();
 }
 
+SqlserverClient::TerminateDBInstanceOutcome SqlserverClient::TerminateDBInstance(const TerminateDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateDBInstanceResponse rsp = TerminateDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateDBInstanceOutcome(rsp);
+        else
+            return TerminateDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::TerminateDBInstanceAsync(const TerminateDBInstanceRequest& request, const TerminateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::TerminateDBInstanceOutcomeCallable SqlserverClient::TerminateDBInstanceCallable(const TerminateDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::UpgradeDBInstanceOutcome SqlserverClient::UpgradeDBInstance(const UpgradeDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeDBInstance");

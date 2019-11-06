@@ -132,6 +132,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/WatermarkInput.h
   include/tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h
+  include/tencentcloud/mps/v20190612/model/CosOutputStorage.h
   include/tencentcloud/mps/v20190612/model/ModifyImageSpriteTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/CreateWatermarkTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateResponse.h
@@ -140,7 +141,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h
   include/tencentcloud/mps/v20190612/model/VideoTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h
-  include/tencentcloud/mps/v20190612/model/CosOutputStorage.h
+  include/tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingTaskInput.h
   include/tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyWatermarkTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/TaskNotifyConfig.h
@@ -261,6 +262,7 @@ set(mps_src
   src/v20190612/model/WatermarkInput.cpp
   src/v20190612/model/EnableWorkflowResponse.cpp
   src/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.cpp
+  src/v20190612/model/CosOutputStorage.cpp
   src/v20190612/model/ModifyImageSpriteTemplateResponse.cpp
   src/v20190612/model/CreateWatermarkTemplateRequest.cpp
   src/v20190612/model/DeleteWatermarkTemplateResponse.cpp
@@ -269,7 +271,7 @@ set(mps_src
   src/v20190612/model/MediaProcessTaskInput.cpp
   src/v20190612/model/VideoTemplateInfoForUpdate.cpp
   src/v20190612/model/CreateImageSpriteTemplateResponse.cpp
-  src/v20190612/model/CosOutputStorage.cpp
+  src/v20190612/model/AdaptiveDynamicStreamingTaskInput.cpp
   src/v20190612/model/DescribeImageSpriteTemplatesResponse.cpp
   src/v20190612/model/ModifyWatermarkTemplateResponse.cpp
   src/v20190612/model/TaskNotifyConfig.cpp

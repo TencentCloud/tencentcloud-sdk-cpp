@@ -169,6 +169,49 @@ KmsClient::DecryptOutcomeCallable KmsClient::DecryptCallable(const DecryptReques
     return task->get_future();
 }
 
+KmsClient::DeleteImportedKeyMaterialOutcome KmsClient::DeleteImportedKeyMaterial(const DeleteImportedKeyMaterialRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImportedKeyMaterial");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImportedKeyMaterialResponse rsp = DeleteImportedKeyMaterialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImportedKeyMaterialOutcome(rsp);
+        else
+            return DeleteImportedKeyMaterialOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImportedKeyMaterialOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DeleteImportedKeyMaterialAsync(const DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteImportedKeyMaterial(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DeleteImportedKeyMaterialOutcomeCallable KmsClient::DeleteImportedKeyMaterialCallable(const DeleteImportedKeyMaterialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteImportedKeyMaterialOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteImportedKeyMaterial(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::DescribeKeyOutcome KmsClient::DescribeKey(const DescribeKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKey");
@@ -599,6 +642,49 @@ KmsClient::GenerateDataKeyOutcomeCallable KmsClient::GenerateDataKeyCallable(con
     return task->get_future();
 }
 
+KmsClient::GenerateRandomOutcome KmsClient::GenerateRandom(const GenerateRandomRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateRandom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateRandomResponse rsp = GenerateRandomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateRandomOutcome(rsp);
+        else
+            return GenerateRandomOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateRandomOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::GenerateRandomAsync(const GenerateRandomRequest& request, const GenerateRandomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateRandom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::GenerateRandomOutcomeCallable KmsClient::GenerateRandomCallable(const GenerateRandomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateRandomOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateRandom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::GetKeyRotationStatusOutcome KmsClient::GetKeyRotationStatus(const GetKeyRotationStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetKeyRotationStatus");
@@ -642,6 +728,49 @@ KmsClient::GetKeyRotationStatusOutcomeCallable KmsClient::GetKeyRotationStatusCa
     return task->get_future();
 }
 
+KmsClient::GetParametersForImportOutcome KmsClient::GetParametersForImport(const GetParametersForImportRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetParametersForImport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetParametersForImportResponse rsp = GetParametersForImportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetParametersForImportOutcome(rsp);
+        else
+            return GetParametersForImportOutcome(o.GetError());
+    }
+    else
+    {
+        return GetParametersForImportOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::GetParametersForImportAsync(const GetParametersForImportRequest& request, const GetParametersForImportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetParametersForImport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::GetParametersForImportOutcomeCallable KmsClient::GetParametersForImportCallable(const GetParametersForImportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetParametersForImportOutcome()>>(
+        [this, request]()
+        {
+            return this->GetParametersForImport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::GetServiceStatusOutcome KmsClient::GetServiceStatus(const GetServiceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetServiceStatus");
@@ -678,6 +807,49 @@ KmsClient::GetServiceStatusOutcomeCallable KmsClient::GetServiceStatusCallable(c
         [this, request]()
         {
             return this->GetServiceStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::ImportKeyMaterialOutcome KmsClient::ImportKeyMaterial(const ImportKeyMaterialRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportKeyMaterial");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportKeyMaterialResponse rsp = ImportKeyMaterialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportKeyMaterialOutcome(rsp);
+        else
+            return ImportKeyMaterialOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportKeyMaterialOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ImportKeyMaterialAsync(const ImportKeyMaterialRequest& request, const ImportKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportKeyMaterial(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ImportKeyMaterialOutcomeCallable KmsClient::ImportKeyMaterialCallable(const ImportKeyMaterialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportKeyMaterialOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportKeyMaterial(request);
         }
     );
 

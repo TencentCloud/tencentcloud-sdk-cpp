@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/InquiryPriceResult.h>
+#include <tencentcloud/emr/v20190103/model/PriceResource.h>
 
 
 namespace TencentCloud
@@ -44,24 +44,90 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩容价格
-                     * @return Result 扩容价格
+                     * 获取刊例价
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginalCost 刊例价
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    InquiryPriceResult GetResult() const;
+                    std::string GetOriginalCost() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 OriginalCost 是否已赋值
+                     * @return OriginalCost 是否已赋值
                      */
-                    bool ResultHasBeenSet() const;
+                    bool OriginalCostHasBeenSet() const;
+
+                    /**
+                     * 获取折扣价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountCost 折扣价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDiscountCost() const;
+
+                    /**
+                     * 判断参数 DiscountCost 是否已赋值
+                     * @return DiscountCost 是否已赋值
+                     */
+                    bool DiscountCostHasBeenSet() const;
+
+                    /**
+                     * 获取单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Unit 单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUnit() const;
+
+                    /**
+                     * 判断参数 Unit 是否已赋值
+                     * @return Unit 是否已赋值
+                     */
+                    bool UnitHasBeenSet() const;
+
+                    /**
+                     * 获取询价配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PriceSpec 询价配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PriceResource GetPriceSpec() const;
+
+                    /**
+                     * 判断参数 PriceSpec 是否已赋值
+                     * @return PriceSpec 是否已赋值
+                     */
+                    bool PriceSpecHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 扩容价格
+                     * 刊例价
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    InquiryPriceResult m_result;
-                    bool m_resultHasBeenSet;
+                    std::string m_originalCost;
+                    bool m_originalCostHasBeenSet;
+
+                    /**
+                     * 折扣价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_discountCost;
+                    bool m_discountCostHasBeenSet;
+
+                    /**
+                     * 单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_unit;
+                    bool m_unitHasBeenSet;
+
+                    /**
+                     * 询价配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PriceResource m_priceSpec;
+                    bool m_priceSpecHasBeenSet;
 
                 };
             }

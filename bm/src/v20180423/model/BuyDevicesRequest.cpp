@@ -60,7 +60,8 @@ BuyDevicesRequest::BuyDevicesRequest() :
     m_dataDiskTypeIdHasBeenSet(false),
     m_dataDiskCountHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_fileSystemHasBeenSet(false)
+    m_fileSystemHasBeenSet(false),
+    m_buySessionHasBeenSet(false)
 {
 }
 
@@ -382,6 +383,14 @@ string BuyDevicesRequest::ToJsonString() const
         string key = "FileSystem";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_fileSystem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buySessionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BuySession";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_buySession.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -982,6 +991,22 @@ void BuyDevicesRequest::SetFileSystem(const string& _fileSystem)
 bool BuyDevicesRequest::FileSystemHasBeenSet() const
 {
     return m_fileSystemHasBeenSet;
+}
+
+string BuyDevicesRequest::GetBuySession() const
+{
+    return m_buySession;
+}
+
+void BuyDevicesRequest::SetBuySession(const string& _buySession)
+{
+    m_buySession = _buySession;
+    m_buySessionHasBeenSet = true;
+}
+
+bool BuyDevicesRequest::BuySessionHasBeenSet() const
+{
+    return m_buySessionHasBeenSet;
 }
 
 

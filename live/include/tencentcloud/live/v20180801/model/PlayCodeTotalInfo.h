@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 各状态码的总次数，暂时支持400,403,404,500,502,503,504
+                * 各状态码的总次数，支持大多数的http协议返回码
                 */
                 class PlayCodeTotalInfo : public AbstractModel
                 {

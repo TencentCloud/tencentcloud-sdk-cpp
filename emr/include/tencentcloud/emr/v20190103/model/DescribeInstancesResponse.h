@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/ClusterInfoResult.h>
+#include <tencentcloud/emr/v20190103/model/ClusterInstancesInfo.h>
 
 
 namespace TencentCloud
@@ -45,23 +45,44 @@ namespace TencentCloud
 
                     /**
                      * 获取实例数量
-                     * @return Result 实例数量
+                     * @return TotalCnt 实例数量
                      */
-                    ClusterInfoResult GetResult() const;
+                    int64_t GetTotalCnt() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 TotalCnt 是否已赋值
+                     * @return TotalCnt 是否已赋值
                      */
-                    bool ResultHasBeenSet() const;
+                    bool TotalCntHasBeenSet() const;
+
+                    /**
+                     * 获取集群实例信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterList 集群实例信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterInstancesInfo> GetClusterList() const;
+
+                    /**
+                     * 判断参数 ClusterList 是否已赋值
+                     * @return ClusterList 是否已赋值
+                     */
+                    bool ClusterListHasBeenSet() const;
 
                 private:
 
                     /**
                      * 实例数量
                      */
-                    ClusterInfoResult m_result;
-                    bool m_resultHasBeenSet;
+                    int64_t m_totalCnt;
+                    bool m_totalCntHasBeenSet;
+
+                    /**
+                     * 集群实例信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterInstancesInfo> m_clusterList;
+                    bool m_clusterListHasBeenSet;
 
                 };
             }

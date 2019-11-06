@@ -32,7 +32,8 @@ DirectConnectGateway::DirectConnectGateway() :
     m_directConnectGatewayIpHasBeenSet(false),
     m_ccnIdHasBeenSet(false),
     m_ccnRouteTypeHasBeenSet(false),
-    m_enableBGPHasBeenSet(false)
+    m_enableBGPHasBeenSet(false),
+    m_enableBGPCommunityHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const Value &value)
         m_enableBGPHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableBGPCommunity") && !value["EnableBGPCommunity"].IsNull())
+    {
+        if (!value["EnableBGPCommunity"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectGateway.EnableBGPCommunity` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBGPCommunity = value["EnableBGPCommunity"].GetBool();
+        m_enableBGPCommunityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "EnableBGP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBGP, allocator);
+    }
+
+    if (m_enableBGPCommunityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableBGPCommunity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableBGPCommunity, allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void DirectConnectGateway::SetEnableBGP(const bool& _enableBGP)
 bool DirectConnectGateway::EnableBGPHasBeenSet() const
 {
     return m_enableBGPHasBeenSet;
+}
+
+bool DirectConnectGateway::GetEnableBGPCommunity() const
+{
+    return m_enableBGPCommunity;
+}
+
+void DirectConnectGateway::SetEnableBGPCommunity(const bool& _enableBGPCommunity)
+{
+    m_enableBGPCommunity = _enableBGPCommunity;
+    m_enableBGPCommunityHasBeenSet = true;
+}
+
+bool DirectConnectGateway::EnableBGPCommunityHasBeenSet() const
+{
+    return m_enableBGPCommunityHasBeenSet;
 }
 

@@ -30,7 +30,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_sessionExpireTimeHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_certificateHasBeenSet(false),
-    m_schedulerHasBeenSet(false)
+    m_schedulerHasBeenSet(false),
+    m_sniSwitchHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "Scheduler";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_scheduler.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sniSwitchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SniSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sniSwitch, allocator);
     }
 
 
@@ -217,6 +226,22 @@ void ModifyListenerRequest::SetScheduler(const string& _scheduler)
 bool ModifyListenerRequest::SchedulerHasBeenSet() const
 {
     return m_schedulerHasBeenSet;
+}
+
+int64_t ModifyListenerRequest::GetSniSwitch() const
+{
+    return m_sniSwitch;
+}
+
+void ModifyListenerRequest::SetSniSwitch(const int64_t& _sniSwitch)
+{
+    m_sniSwitch = _sniSwitch;
+    m_sniSwitchHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::SniSwitchHasBeenSet() const
+{
+    return m_sniSwitchHasBeenSet;
 }
 
 

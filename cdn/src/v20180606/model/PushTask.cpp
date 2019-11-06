@@ -26,7 +26,8 @@ PushTask::PushTask() :
     m_urlHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_percentHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome PushTask::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushTask.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void PushTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void PushTask::SetCreateTime(const string& _createTime)
 bool PushTask::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string PushTask::GetArea() const
+{
+    return m_area;
+}
+
+void PushTask::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool PushTask::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool PlaintextHasBeenSet() const;
 
                     /**
-                     * 获取DataKey加密后的密文，用户需要自行保存密文
-                     * @return CiphertextBlob DataKey加密后的密文，用户需要自行保存密文
+                     * 获取DataKey加密后经过base64编码的密文，用户需要自行保存密文
+                     * @return CiphertextBlob DataKey加密后经过base64编码的密文，用户需要自行保存密文
                      */
                     std::string GetCiphertextBlob() const;
 
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_plaintextHasBeenSet;
 
                     /**
-                     * DataKey加密后的密文，用户需要自行保存密文
+                     * DataKey加密后经过base64编码的密文，用户需要自行保存密文
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;

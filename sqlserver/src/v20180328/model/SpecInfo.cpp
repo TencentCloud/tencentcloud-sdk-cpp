@@ -33,7 +33,9 @@ SpecInfo::SpecInfo() :
     m_maxStorageHasBeenSet(false),
     m_qPSHasBeenSet(false),
     m_suitInfoHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_postPidHasBeenSet(false),
+    m_payModeStatusHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,29 @@ CoreInternalOutcome SpecInfo::Deserialize(const Value &value)
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("PostPid") && !value["PostPid"].IsNull())
+    {
+        if (!value["PostPid"].IsArray())
+            return CoreInternalOutcome(Error("response `SpecInfo.PostPid` is not array type"));
+
+        const Value &tmpValue = value["PostPid"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_postPid.push_back((*itr).GetInt64());
+        }
+        m_postPidHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayModeStatus") && !value["PayModeStatus"].IsNull())
+    {
+        if (!value["PayModeStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SpecInfo.PayModeStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payModeStatus = string(value["PayModeStatus"].GetString());
+        m_payModeStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +288,27 @@ void SpecInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_postPidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PostPid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_postPid.begin(); itr != m_postPid.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_payModeStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayModeStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_payModeStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +504,37 @@ void SpecInfo::SetPid(const int64_t& _pid)
 bool SpecInfo::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+vector<int64_t> SpecInfo::GetPostPid() const
+{
+    return m_postPid;
+}
+
+void SpecInfo::SetPostPid(const vector<int64_t>& _postPid)
+{
+    m_postPid = _postPid;
+    m_postPidHasBeenSet = true;
+}
+
+bool SpecInfo::PostPidHasBeenSet() const
+{
+    return m_postPidHasBeenSet;
+}
+
+string SpecInfo::GetPayModeStatus() const
+{
+    return m_payModeStatus;
+}
+
+void SpecInfo::SetPayModeStatus(const string& _payModeStatus)
+{
+    m_payModeStatus = _payModeStatus;
+    m_payModeStatusHasBeenSet = true;
+}
+
+bool SpecInfo::PayModeStatusHasBeenSet() const
+{
+    return m_payModeStatusHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 GetDisableRecordsResponse::GetDisableRecordsResponse() :
-    m_urlRecordListHasBeenSet(false)
+    m_urlRecordListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome GetDisableRecordsResponse::Deserialize(const string &payload
         m_urlRecordListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<UrlRecord> GetDisableRecordsResponse::GetUrlRecordList() const
 bool GetDisableRecordsResponse::UrlRecordListHasBeenSet() const
 {
     return m_urlRecordListHasBeenSet;
+}
+
+int64_t GetDisableRecordsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool GetDisableRecordsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

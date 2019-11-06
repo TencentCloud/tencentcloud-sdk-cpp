@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取个人用户证件类型。0代表身份证
-                     * @return IdentType 个人用户证件类型。0代表身份证
+                     * 获取个人用户证件类型，0代表身份证，详情请见常见问题
+                     * @return IdentType 个人用户证件类型，0代表身份证，详情请见常见问题
                      */
                     int64_t GetIdentType() const;
 
                     /**
-                     * 设置个人用户证件类型。0代表身份证
-                     * @param IdentType 个人用户证件类型。0代表身份证
+                     * 设置个人用户证件类型，0代表身份证，详情请见常见问题
+                     * @param IdentType 个人用户证件类型，0代表身份证，详情请见常见问题
                      */
                     void SetIdentType(const int64_t& _identType);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 个人用户证件类型。0代表身份证
+                     * 个人用户证件类型，0代表身份证，详情请见常见问题
                      */
                     int64_t m_identType;
                     bool m_identTypeHasBeenSet;

@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3表示查询PendingDelete CMK(处于计划删除状态的Key)
-                     * @return KeyState 根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3表示查询PendingDelete CMK(处于计划删除状态的Key)
+                     * 获取根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK
+                     * @return KeyState 根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK
                      */
                     uint64_t GetKeyState() const;
 
                     /**
-                     * 设置根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3表示查询PendingDelete CMK(处于计划删除状态的Key)
-                     * @param KeyState 根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3表示查询PendingDelete CMK(处于计划删除状态的Key)
+                     * 设置根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK
+                     * @param KeyState 根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK
                      */
                     void SetKeyState(const uint64_t& _keyState);
 
@@ -149,6 +149,24 @@ namespace TencentCloud
                      * @return SearchKeyAlias 是否已赋值
                      */
                     bool SearchKeyAliasHasBeenSet() const;
+
+                    /**
+                     * 获取根据CMK类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的CMK， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     * @return Origin 根据CMK类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的CMK， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     */
+                    std::string GetOrigin() const;
+
+                    /**
+                     * 设置根据CMK类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的CMK， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     * @param Origin 根据CMK类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的CMK， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     */
+                    void SetOrigin(const std::string& _origin);
+
+                    /**
+                     * 判断参数 Origin 是否已赋值
+                     * @return Origin 是否已赋值
+                     */
+                    bool OriginHasBeenSet() const;
 
                 private:
 
@@ -177,7 +195,7 @@ namespace TencentCloud
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3表示查询PendingDelete CMK(处于计划删除状态的Key)
+                     * 根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK
                      */
                     uint64_t m_keyState;
                     bool m_keyStateHasBeenSet;
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_searchKeyAlias;
                     bool m_searchKeyAliasHasBeenSet;
+
+                    /**
+                     * 根据CMK类型筛选， "TENCENT_KMS" 表示筛选密钥材料由KMS创建的CMK， "EXTERNAL" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，"ALL" 或者不设置表示两种类型都查询，大小写敏感。
+                     */
+                    std::string m_origin;
+                    bool m_originHasBeenSet;
 
                 };
             }

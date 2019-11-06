@@ -27,7 +27,8 @@ TextTranslateRequest::TextTranslateRequest() :
     m_sourceTextHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_untranslatedTextHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string TextTranslateRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_untranslatedTextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UntranslatedText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_untranslatedText.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void TextTranslateRequest::SetProjectId(const int64_t& _projectId)
 bool TextTranslateRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string TextTranslateRequest::GetUntranslatedText() const
+{
+    return m_untranslatedText;
+}
+
+void TextTranslateRequest::SetUntranslatedText(const string& _untranslatedText)
+{
+    m_untranslatedText = _untranslatedText;
+    m_untranslatedTextHasBeenSet = true;
+}
+
+bool TextTranslateRequest::UntranslatedTextHasBeenSet() const
+{
+    return m_untranslatedTextHasBeenSet;
 }
 
 

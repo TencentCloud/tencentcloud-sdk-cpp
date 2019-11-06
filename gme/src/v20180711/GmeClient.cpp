@@ -40,6 +40,92 @@ GmeClient::GmeClient(const Credential &credential, const string &region, const C
 }
 
 
+GmeClient::CreateAppOutcome GmeClient::CreateApp(const CreateAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAppResponse rsp = CreateAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAppOutcome(rsp);
+        else
+            return CreateAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAppOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::CreateAppOutcomeCallable GmeClient::CreateAppCallable(const CreateAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAppOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DescribeAppStatisticsOutcome GmeClient::DescribeAppStatistics(const DescribeAppStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppStatisticsResponse rsp = DescribeAppStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppStatisticsOutcome(rsp);
+        else
+            return DescribeAppStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeAppStatisticsAsync(const DescribeAppStatisticsRequest& request, const DescribeAppStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAppStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeAppStatisticsOutcomeCallable GmeClient::DescribeAppStatisticsCallable(const DescribeAppStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAppStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeFilterResultOutcome GmeClient::DescribeFilterResult(const DescribeFilterResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFilterResult");
@@ -162,6 +248,49 @@ GmeClient::DescribeScanResultListOutcomeCallable GmeClient::DescribeScanResultLi
         [this, request]()
         {
             return this->DescribeScanResultList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::ModifyAppStatusOutcome GmeClient::ModifyAppStatus(const ModifyAppStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAppStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAppStatusResponse rsp = ModifyAppStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAppStatusOutcome(rsp);
+        else
+            return ModifyAppStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAppStatusOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ModifyAppStatusAsync(const ModifyAppStatusRequest& request, const ModifyAppStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAppStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ModifyAppStatusOutcomeCallable GmeClient::ModifyAppStatusCallable(const ModifyAppStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAppStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAppStatus(request);
         }
     );
 

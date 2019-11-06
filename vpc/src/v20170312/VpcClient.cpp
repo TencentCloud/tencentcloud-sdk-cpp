@@ -599,6 +599,49 @@ VpcClient::AttachNetworkInterfaceOutcomeCallable VpcClient::AttachNetworkInterfa
     return task->get_future();
 }
 
+VpcClient::CheckNetDetectStateOutcome VpcClient::CheckNetDetectState(const CheckNetDetectStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckNetDetectState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckNetDetectStateResponse rsp = CheckNetDetectStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckNetDetectStateOutcome(rsp);
+        else
+            return CheckNetDetectStateOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckNetDetectStateOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CheckNetDetectStateAsync(const CheckNetDetectStateRequest& request, const CheckNetDetectStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckNetDetectState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CheckNetDetectStateOutcomeCallable VpcClient::CheckNetDetectStateCallable(const CheckNetDetectStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckNetDetectStateOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckNetDetectState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateAddressTemplateOutcome VpcClient::CreateAddressTemplate(const CreateAddressTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAddressTemplate");
@@ -1151,6 +1194,49 @@ VpcClient::CreateNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable Vp
         [this, request]()
         {
             return this->CreateNatGatewayDestinationIpPortTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateNetDetectOutcome VpcClient::CreateNetDetect(const CreateNetDetectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetDetect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetDetectResponse rsp = CreateNetDetectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetDetectOutcome(rsp);
+        else
+            return CreateNetDetectOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetDetectOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateNetDetectAsync(const CreateNetDetectRequest& request, const CreateNetDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetDetect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateNetDetectOutcomeCallable VpcClient::CreateNetDetectCallable(const CreateNetDetectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetDetectOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetDetect(request);
         }
     );
 
@@ -2183,6 +2269,49 @@ VpcClient::DeleteNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable Vp
         [this, request]()
         {
             return this->DeleteNatGatewayDestinationIpPortTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteNetDetectOutcome VpcClient::DeleteNetDetect(const DeleteNetDetectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNetDetect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNetDetectResponse rsp = DeleteNetDetectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNetDetectOutcome(rsp);
+        else
+            return DeleteNetDetectOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNetDetectOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteNetDetectAsync(const DeleteNetDetectRequest& request, const DeleteNetDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNetDetect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteNetDetectOutcomeCallable VpcClient::DeleteNetDetectCallable(const DeleteNetDetectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNetDetectOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNetDetect(request);
         }
     );
 
@@ -3688,6 +3817,135 @@ VpcClient::DescribeNatGatewaysOutcomeCallable VpcClient::DescribeNatGatewaysCall
         [this, request]()
         {
             return this->DescribeNatGateways(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeNetDetectStatesOutcome VpcClient::DescribeNetDetectStates(const DescribeNetDetectStatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetDetectStates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetDetectStatesResponse rsp = DescribeNetDetectStatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetDetectStatesOutcome(rsp);
+        else
+            return DescribeNetDetectStatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetDetectStatesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNetDetectStatesAsync(const DescribeNetDetectStatesRequest& request, const DescribeNetDetectStatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetDetectStates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNetDetectStatesOutcomeCallable VpcClient::DescribeNetDetectStatesCallable(const DescribeNetDetectStatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetDetectStatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetDetectStates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeNetDetectsOutcome VpcClient::DescribeNetDetects(const DescribeNetDetectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetDetects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetDetectsResponse rsp = DescribeNetDetectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetDetectsOutcome(rsp);
+        else
+            return DescribeNetDetectsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetDetectsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNetDetectsAsync(const DescribeNetDetectsRequest& request, const DescribeNetDetectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetDetects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNetDetectsOutcomeCallable VpcClient::DescribeNetDetectsCallable(const DescribeNetDetectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetDetectsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetDetects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeNetworkInterfaceLimitOutcome VpcClient::DescribeNetworkInterfaceLimit(const DescribeNetworkInterfaceLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkInterfaceLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkInterfaceLimitResponse rsp = DescribeNetworkInterfaceLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkInterfaceLimitOutcome(rsp);
+        else
+            return DescribeNetworkInterfaceLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkInterfaceLimitOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNetworkInterfaceLimitAsync(const DescribeNetworkInterfaceLimitRequest& request, const DescribeNetworkInterfaceLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkInterfaceLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNetworkInterfaceLimitOutcomeCallable VpcClient::DescribeNetworkInterfaceLimitCallable(const DescribeNetworkInterfaceLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkInterfaceLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkInterfaceLimit(request);
         }
     );
 
@@ -5709,6 +5967,49 @@ VpcClient::ModifyNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable Vp
         [this, request]()
         {
             return this->ModifyNatGatewayDestinationIpPortTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyNetDetectOutcome VpcClient::ModifyNetDetect(const ModifyNetDetectRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNetDetect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNetDetectResponse rsp = ModifyNetDetectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNetDetectOutcome(rsp);
+        else
+            return ModifyNetDetectOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNetDetectOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyNetDetectAsync(const ModifyNetDetectRequest& request, const ModifyNetDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNetDetect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyNetDetectOutcomeCallable VpcClient::ModifyNetDetectCallable(const ModifyNetDetectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNetDetectOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNetDetect(request);
         }
     );
 

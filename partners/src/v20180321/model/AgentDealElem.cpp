@@ -44,7 +44,8 @@ AgentDealElem::AgentDealElem() :
     m_clientTypeHasBeenSet(false),
     m_projectTypeHasBeenSet(false),
     m_salesUinHasBeenSet(false),
-    m_payerModeHasBeenSet(false)
+    m_payerModeHasBeenSet(false),
+    m_activityIdHasBeenSet(false)
 {
 }
 
@@ -290,6 +291,16 @@ CoreInternalOutcome AgentDealElem::Deserialize(const Value &value)
         m_payerModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ActivityId") && !value["ActivityId"].IsNull())
+    {
+        if (!value["ActivityId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentDealElem.ActivityId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activityId = string(value["ActivityId"].GetString());
+        m_activityIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -480,6 +491,14 @@ void AgentDealElem::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "PayerMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_payerMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activityIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActivityId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_activityId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -851,5 +870,21 @@ void AgentDealElem::SetPayerMode(const string& _payerMode)
 bool AgentDealElem::PayerModeHasBeenSet() const
 {
     return m_payerModeHasBeenSet;
+}
+
+string AgentDealElem::GetActivityId() const
+{
+    return m_activityId;
+}
+
+void AgentDealElem::SetActivityId(const string& _activityId)
+{
+    m_activityId = _activityId;
+    m_activityIdHasBeenSet = true;
+}
+
+bool AgentDealElem::ActivityIdHasBeenSet() const
+{
+    return m_activityIdHasBeenSet;
 }
 

@@ -140,18 +140,18 @@ Type为DNA时：
 75到90，Suggestion建议为REVIEW
 90到100，Suggestion建议为BLOCK
 Type为FACE时：
-0到55，Suggestion建议为PASS
-55到60，Suggestion建议为REVIEW
-60到100，Suggestion建议为BLOCK
+0到70，Suggestion建议为PASS
+70到80，Suggestion建议为REVIEW
+80到100，Suggestion建议为BLOCK
                      * @return Confidence 图像涉政的分数，0-100之间，分数越高涉政几率越大。
 Type为DNA时：
 0到75，Suggestion建议为PASS
 75到90，Suggestion建议为REVIEW
 90到100，Suggestion建议为BLOCK
 Type为FACE时：
-0到55，Suggestion建议为PASS
-55到60，Suggestion建议为REVIEW
-60到100，Suggestion建议为BLOCK
+0到70，Suggestion建议为PASS
+70到80，Suggestion建议为REVIEW
+80到100，Suggestion建议为BLOCK
                      */
                     int64_t GetConfidence() const;
 
@@ -162,18 +162,18 @@ Type为DNA时：
 75到90，Suggestion建议为REVIEW
 90到100，Suggestion建议为BLOCK
 Type为FACE时：
-0到55，Suggestion建议为PASS
-55到60，Suggestion建议为REVIEW
-60到100，Suggestion建议为BLOCK
+0到70，Suggestion建议为PASS
+70到80，Suggestion建议为REVIEW
+80到100，Suggestion建议为BLOCK
                      * @param Confidence 图像涉政的分数，0-100之间，分数越高涉政几率越大。
 Type为DNA时：
 0到75，Suggestion建议为PASS
 75到90，Suggestion建议为REVIEW
 90到100，Suggestion建议为BLOCK
 Type为FACE时：
-0到55，Suggestion建议为PASS
-55到60，Suggestion建议为REVIEW
-60到100，Suggestion建议为BLOCK
+0到70，Suggestion建议为PASS
+70到80，Suggestion建议为REVIEW
+80到100，Suggestion建议为BLOCK
                      */
                     void SetConfidence(const int64_t& _confidence);
 
@@ -272,9 +272,9 @@ Type为DNA时：
 75到90，Suggestion建议为REVIEW
 90到100，Suggestion建议为BLOCK
 Type为FACE时：
-0到55，Suggestion建议为PASS
-55到60，Suggestion建议为REVIEW
-60到100，Suggestion建议为BLOCK
+0到70，Suggestion建议为PASS
+70到80，Suggestion建议为REVIEW
+80到100，Suggestion建议为BLOCK
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;

@@ -36,7 +36,8 @@ AgentAuditedClient::AgentAuditedClient() :
     m_clientTypeHasBeenSet(false),
     m_projectTypeHasBeenSet(false),
     m_salesUinHasBeenSet(false),
-    m_salesNameHasBeenSet(false)
+    m_salesNameHasBeenSet(false),
+    m_mailHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,16 @@ CoreInternalOutcome AgentAuditedClient::Deserialize(const Value &value)
         m_salesNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Mail") && !value["Mail"].IsNull())
+    {
+        if (!value["Mail"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentAuditedClient.Mail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mail = string(value["Mail"].GetString());
+        m_mailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +331,14 @@ void AgentAuditedClient::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "SalesName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_salesName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_mail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -563,5 +582,21 @@ void AgentAuditedClient::SetSalesName(const string& _salesName)
 bool AgentAuditedClient::SalesNameHasBeenSet() const
 {
     return m_salesNameHasBeenSet;
+}
+
+string AgentAuditedClient::GetMail() const
+{
+    return m_mail;
+}
+
+void AgentAuditedClient::SetMail(const string& _mail)
+{
+    m_mail = _mail;
+    m_mailHasBeenSet = true;
+}
+
+bool AgentAuditedClient::MailHasBeenSet() const
+{
+    return m_mailHasBeenSet;
 }
 

@@ -42,7 +42,41 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
+mainland：指定查询中国境内 CDN 计费方式
+overseas：指定查询中国境外 CDN 计费方式
+                     * @return Area 指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
+mainland：指定查询中国境内 CDN 计费方式
+overseas：指定查询中国境外 CDN 计费方式
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
+mainland：指定查询中国境内 CDN 计费方式
+overseas：指定查询中国境外 CDN 计费方式
+                     * @param Area 指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
+mainland：指定查询中国境内 CDN 计费方式
+overseas：指定查询中国境外 CDN 计费方式
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
+mainland：指定查询中国境内 CDN 计费方式
+overseas：指定查询中国境外 CDN 计费方式
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

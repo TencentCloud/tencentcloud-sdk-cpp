@@ -27,7 +27,10 @@ ClusterBasicSettings::ClusterBasicSettings() :
     m_clusterNameHasBeenSet(false),
     m_clusterDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false),
+    m_osCustomizeTypeHasBeenSet(false),
+    m_needWorkSecurityGroupHasBeenSet(false)
 {
 }
 
@@ -96,6 +99,46 @@ CoreInternalOutcome ClusterBasicSettings::Deserialize(const Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
+    {
+        if (!value["TagSpecification"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterBasicSettings.TagSpecification` is not array type"));
+
+        const Value &tmpValue = value["TagSpecification"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagSpecification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSpecification.push_back(item);
+        }
+        m_tagSpecificationHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsCustomizeType") && !value["OsCustomizeType"].IsNull())
+    {
+        if (!value["OsCustomizeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterBasicSettings.OsCustomizeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osCustomizeType = string(value["OsCustomizeType"].GetString());
+        m_osCustomizeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NeedWorkSecurityGroup") && !value["NeedWorkSecurityGroup"].IsNull())
+    {
+        if (!value["NeedWorkSecurityGroup"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ClusterBasicSettings.NeedWorkSecurityGroup` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needWorkSecurityGroup = value["NeedWorkSecurityGroup"].GetBool();
+        m_needWorkSecurityGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +192,37 @@ void ClusterBasicSettings::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_osCustomizeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsCustomizeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needWorkSecurityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedWorkSecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needWorkSecurityGroup, allocator);
     }
 
 }
@@ -248,5 +322,53 @@ void ClusterBasicSettings::SetProjectId(const int64_t& _projectId)
 bool ClusterBasicSettings::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<TagSpecification> ClusterBasicSettings::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void ClusterBasicSettings::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool ClusterBasicSettings::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
+}
+
+string ClusterBasicSettings::GetOsCustomizeType() const
+{
+    return m_osCustomizeType;
+}
+
+void ClusterBasicSettings::SetOsCustomizeType(const string& _osCustomizeType)
+{
+    m_osCustomizeType = _osCustomizeType;
+    m_osCustomizeTypeHasBeenSet = true;
+}
+
+bool ClusterBasicSettings::OsCustomizeTypeHasBeenSet() const
+{
+    return m_osCustomizeTypeHasBeenSet;
+}
+
+bool ClusterBasicSettings::GetNeedWorkSecurityGroup() const
+{
+    return m_needWorkSecurityGroup;
+}
+
+void ClusterBasicSettings::SetNeedWorkSecurityGroup(const bool& _needWorkSecurityGroup)
+{
+    m_needWorkSecurityGroup = _needWorkSecurityGroup;
+    m_needWorkSecurityGroupHasBeenSet = true;
+}
+
+bool ClusterBasicSettings::NeedWorkSecurityGroupHasBeenSet() const
+{
+    return m_needWorkSecurityGroupHasBeenSet;
 }
 

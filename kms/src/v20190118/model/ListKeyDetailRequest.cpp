@@ -29,7 +29,8 @@ ListKeyDetailRequest::ListKeyDetailRequest() :
     m_roleHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
     m_keyStateHasBeenSet(false),
-    m_searchKeyAliasHasBeenSet(false)
+    m_searchKeyAliasHasBeenSet(false),
+    m_originHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string ListKeyDetailRequest::ToJsonString() const
         string key = "SearchKeyAlias";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_searchKeyAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Origin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_origin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void ListKeyDetailRequest::SetSearchKeyAlias(const string& _searchKeyAlias)
 bool ListKeyDetailRequest::SearchKeyAliasHasBeenSet() const
 {
     return m_searchKeyAliasHasBeenSet;
+}
+
+string ListKeyDetailRequest::GetOrigin() const
+{
+    return m_origin;
+}
+
+void ListKeyDetailRequest::SetOrigin(const string& _origin)
+{
+    m_origin = _origin;
+    m_originHasBeenSet = true;
+}
+
+bool ListKeyDetailRequest::OriginHasBeenSet() const
+{
+    return m_originHasBeenSet;
 }
 
 

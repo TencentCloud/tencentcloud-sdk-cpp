@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool SignLocationsHasBeenSet() const;
 
                     /**
-                     * 获取印章ID
-                     * @return SealResId 印章ID
+                     * 获取签章ID
+                     * @return SealResId 签章ID
                      */
                     std::string GetSealResId() const;
 
                     /**
-                     * 设置印章ID
-                     * @param SealResId 印章ID
+                     * 设置签章ID
+                     * @param SealResId 签章ID
                      */
                     void SetSealResId(const std::string& _sealResId);
 
@@ -268,7 +268,7 @@ namespace TencentCloud
                     bool m_signLocationsHasBeenSet;
 
                     /**
-                     * 印章ID
+                     * 签章ID
                      */
                     std::string m_sealResId;
                     bool m_sealResIdHasBeenSet;

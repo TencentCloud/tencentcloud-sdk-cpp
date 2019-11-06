@@ -43,7 +43,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_instanceTagsHasBeenSet(false),
     m_versionNumberHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_camRoleNameHasBeenSet(false)
+    m_camRoleNameHasBeenSet(false),
+    m_lastOperationInstanceTypesCheckPolicyHasBeenSet(false)
 {
 }
 
@@ -343,6 +344,16 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const Value &value)
         m_camRoleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LastOperationInstanceTypesCheckPolicy") && !value["LastOperationInstanceTypesCheckPolicy"].IsNull())
+    {
+        if (!value["LastOperationInstanceTypesCheckPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LaunchConfiguration.LastOperationInstanceTypesCheckPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastOperationInstanceTypesCheckPolicy = string(value["LastOperationInstanceTypesCheckPolicy"].GetString());
+        m_lastOperationInstanceTypesCheckPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -560,6 +571,14 @@ void LaunchConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "CamRoleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_camRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastOperationInstanceTypesCheckPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LastOperationInstanceTypesCheckPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_lastOperationInstanceTypesCheckPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -915,5 +934,21 @@ void LaunchConfiguration::SetCamRoleName(const string& _camRoleName)
 bool LaunchConfiguration::CamRoleNameHasBeenSet() const
 {
     return m_camRoleNameHasBeenSet;
+}
+
+string LaunchConfiguration::GetLastOperationInstanceTypesCheckPolicy() const
+{
+    return m_lastOperationInstanceTypesCheckPolicy;
+}
+
+void LaunchConfiguration::SetLastOperationInstanceTypesCheckPolicy(const string& _lastOperationInstanceTypesCheckPolicy)
+{
+    m_lastOperationInstanceTypesCheckPolicy = _lastOperationInstanceTypesCheckPolicy;
+    m_lastOperationInstanceTypesCheckPolicyHasBeenSet = true;
+}
+
+bool LaunchConfiguration::LastOperationInstanceTypesCheckPolicyHasBeenSet() const
+{
+    return m_lastOperationInstanceTypesCheckPolicyHasBeenSet;
 }
 

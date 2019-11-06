@@ -1,0 +1,287 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cdb/v20170320/model/CommonTimeWindow.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace rapidjson;
+using namespace std;
+
+CommonTimeWindow::CommonTimeWindow() :
+    m_mondayHasBeenSet(false),
+    m_tuesdayHasBeenSet(false),
+    m_wednesdayHasBeenSet(false),
+    m_thursdayHasBeenSet(false),
+    m_fridayHasBeenSet(false),
+    m_saturdayHasBeenSet(false),
+    m_sundayHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome CommonTimeWindow::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Monday") && !value["Monday"].IsNull())
+    {
+        if (!value["Monday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommonTimeWindow.Monday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monday = string(value["Monday"].GetString());
+        m_mondayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tuesday") && !value["Tuesday"].IsNull())
+    {
+        if (!value["Tuesday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommonTimeWindow.Tuesday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tuesday = string(value["Tuesday"].GetString());
+        m_tuesdayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Wednesday") && !value["Wednesday"].IsNull())
+    {
+        if (!value["Wednesday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommonTimeWindow.Wednesday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wednesday = string(value["Wednesday"].GetString());
+        m_wednesdayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Thursday") && !value["Thursday"].IsNull())
+    {
+        if (!value["Thursday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommonTimeWindow.Thursday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thursday = string(value["Thursday"].GetString());
+        m_thursdayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Friday") && !value["Friday"].IsNull())
+    {
+        if (!value["Friday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommonTimeWindow.Friday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_friday = string(value["Friday"].GetString());
+        m_fridayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Saturday") && !value["Saturday"].IsNull())
+    {
+        if (!value["Saturday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommonTimeWindow.Saturday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_saturday = string(value["Saturday"].GetString());
+        m_saturdayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Sunday") && !value["Sunday"].IsNull())
+    {
+        if (!value["Sunday"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommonTimeWindow.Sunday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sunday = string(value["Sunday"].GetString());
+        m_sundayHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void CommonTimeWindow::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_mondayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Monday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_monday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tuesdayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tuesday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_tuesday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wednesdayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Wednesday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_wednesday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_thursdayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Thursday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_thursday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fridayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Friday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_friday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saturdayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Saturday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_saturday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sundayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Sunday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sunday.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string CommonTimeWindow::GetMonday() const
+{
+    return m_monday;
+}
+
+void CommonTimeWindow::SetMonday(const string& _monday)
+{
+    m_monday = _monday;
+    m_mondayHasBeenSet = true;
+}
+
+bool CommonTimeWindow::MondayHasBeenSet() const
+{
+    return m_mondayHasBeenSet;
+}
+
+string CommonTimeWindow::GetTuesday() const
+{
+    return m_tuesday;
+}
+
+void CommonTimeWindow::SetTuesday(const string& _tuesday)
+{
+    m_tuesday = _tuesday;
+    m_tuesdayHasBeenSet = true;
+}
+
+bool CommonTimeWindow::TuesdayHasBeenSet() const
+{
+    return m_tuesdayHasBeenSet;
+}
+
+string CommonTimeWindow::GetWednesday() const
+{
+    return m_wednesday;
+}
+
+void CommonTimeWindow::SetWednesday(const string& _wednesday)
+{
+    m_wednesday = _wednesday;
+    m_wednesdayHasBeenSet = true;
+}
+
+bool CommonTimeWindow::WednesdayHasBeenSet() const
+{
+    return m_wednesdayHasBeenSet;
+}
+
+string CommonTimeWindow::GetThursday() const
+{
+    return m_thursday;
+}
+
+void CommonTimeWindow::SetThursday(const string& _thursday)
+{
+    m_thursday = _thursday;
+    m_thursdayHasBeenSet = true;
+}
+
+bool CommonTimeWindow::ThursdayHasBeenSet() const
+{
+    return m_thursdayHasBeenSet;
+}
+
+string CommonTimeWindow::GetFriday() const
+{
+    return m_friday;
+}
+
+void CommonTimeWindow::SetFriday(const string& _friday)
+{
+    m_friday = _friday;
+    m_fridayHasBeenSet = true;
+}
+
+bool CommonTimeWindow::FridayHasBeenSet() const
+{
+    return m_fridayHasBeenSet;
+}
+
+string CommonTimeWindow::GetSaturday() const
+{
+    return m_saturday;
+}
+
+void CommonTimeWindow::SetSaturday(const string& _saturday)
+{
+    m_saturday = _saturday;
+    m_saturdayHasBeenSet = true;
+}
+
+bool CommonTimeWindow::SaturdayHasBeenSet() const
+{
+    return m_saturdayHasBeenSet;
+}
+
+string CommonTimeWindow::GetSunday() const
+{
+    return m_sunday;
+}
+
+void CommonTimeWindow::SetSunday(const string& _sunday)
+{
+    m_sunday = _sunday;
+    m_sundayHasBeenSet = true;
+}
+
+bool CommonTimeWindow::SundayHasBeenSet() const
+{
+    return m_sundayHasBeenSet;
+}
+

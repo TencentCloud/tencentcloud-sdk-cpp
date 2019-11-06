@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tci/v20190318/model/AbsenceInfo.h>
 #include <tencentcloud/tci/v20190318/model/AttendanceInfo.h>
 #include <tencentcloud/tci/v20190318/model/SuspectedInfo.h>
 
@@ -43,6 +44,18 @@ namespace TencentCloud
                     ~DescribeAttendanceResultResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
+
+                    /**
+                     * 获取缺失人员的ID列表(只针对请求中的libids字段)
+                     * @return AbsenceSetInLibs 缺失人员的ID列表(只针对请求中的libids字段)
+                     */
+                    std::vector<AbsenceInfo> GetAbsenceSetInLibs() const;
+
+                    /**
+                     * 判断参数 AbsenceSetInLibs 是否已赋值
+                     * @return AbsenceSetInLibs 是否已赋值
+                     */
+                    bool AbsenceSetInLibsHasBeenSet() const;
 
                     /**
                      * 获取确定出勤人员列表
@@ -69,8 +82,8 @@ namespace TencentCloud
                     bool SuspectedSetHasBeenSet() const;
 
                     /**
-                     * 获取缺失人员的ID列表
-                     * @return AbsenceSet 缺失人员的ID列表
+                     * 获取缺失人员的ID列表(只针对请求中的personids字段)
+                     * @return AbsenceSet 缺失人员的ID列表(只针对请求中的personids字段)
                      */
                     std::vector<std::string> GetAbsenceSet() const;
 
@@ -95,6 +108,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 缺失人员的ID列表(只针对请求中的libids字段)
+                     */
+                    std::vector<AbsenceInfo> m_absenceSetInLibs;
+                    bool m_absenceSetInLibsHasBeenSet;
+
+                    /**
                      * 确定出勤人员列表
                      */
                     std::vector<AttendanceInfo> m_attendanceSet;
@@ -107,7 +126,7 @@ namespace TencentCloud
                     bool m_suspectedSetHasBeenSet;
 
                     /**
-                     * 缺失人员的ID列表
+                     * 缺失人员的ID列表(只针对请求中的personids字段)
                      */
                     std::vector<std::string> m_absenceSet;
                     bool m_absenceSetHasBeenSet;

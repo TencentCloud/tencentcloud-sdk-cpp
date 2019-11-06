@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool SuitInfoHasBeenSet() const;
 
                     /**
-                     * 获取此规格对应的Pid
-                     * @return Pid 此规格对应的Pid
+                     * 获取此规格对应的包年包月Pid
+                     * @return Pid 此规格对应的包年包月Pid
                      */
                     int64_t GetPid() const;
 
                     /**
-                     * 设置此规格对应的Pid
-                     * @param Pid 此规格对应的Pid
+                     * 设置此规格对应的包年包月Pid
+                     * @param Pid 此规格对应的包年包月Pid
                      */
                     void SetPid(const int64_t& _pid);
 
@@ -261,6 +261,46 @@ namespace TencentCloud
                      * @return Pid 是否已赋值
                      */
                     bool PidHasBeenSet() const;
+
+                    /**
+                     * 获取此规格对应的按量计费Pid列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PostPid 此规格对应的按量计费Pid列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetPostPid() const;
+
+                    /**
+                     * 设置此规格对应的按量计费Pid列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PostPid 此规格对应的按量计费Pid列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPostPid(const std::vector<int64_t>& _postPid);
+
+                    /**
+                     * 判断参数 PostPid 是否已赋值
+                     * @return PostPid 是否已赋值
+                     */
+                    bool PostPidHasBeenSet() const;
+
+                    /**
+                     * 获取此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     * @return PayModeStatus 此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     */
+                    std::string GetPayModeStatus() const;
+
+                    /**
+                     * 设置此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     * @param PayModeStatus 此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     */
+                    void SetPayModeStatus(const std::string& _payModeStatus);
+
+                    /**
+                     * 判断参数 PayModeStatus 是否已赋值
+                     * @return PayModeStatus 是否已赋值
+                     */
+                    bool PayModeStatusHasBeenSet() const;
 
                 private:
 
@@ -331,10 +371,23 @@ namespace TencentCloud
                     bool m_suitInfoHasBeenSet;
 
                     /**
-                     * 此规格对应的Pid
+                     * 此规格对应的包年包月Pid
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;
+
+                    /**
+                     * 此规格对应的按量计费Pid列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_postPid;
+                    bool m_postPidHasBeenSet;
+
+                    /**
+                     * 此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有
+                     */
+                    std::string m_payModeStatus;
+                    bool m_payModeStatusHasBeenSet;
 
                 };
             }

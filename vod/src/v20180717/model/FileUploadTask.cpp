@@ -24,7 +24,8 @@ using namespace std;
 FileUploadTask::FileUploadTask() :
     m_fileIdHasBeenSet(false),
     m_mediaBasicInfoHasBeenSet(false),
-    m_procedureTaskIdHasBeenSet(false)
+    m_procedureTaskIdHasBeenSet(false),
+    m_metaDataHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,23 @@ CoreInternalOutcome FileUploadTask::Deserialize(const Value &value)
         m_procedureTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaData") && !value["MetaData"].IsNull())
+    {
+        if (!value["MetaData"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `FileUploadTask.MetaData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metaDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +118,15 @@ void FileUploadTask::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "ProcedureTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_procedureTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_metaData.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -151,5 +178,21 @@ void FileUploadTask::SetProcedureTaskId(const string& _procedureTaskId)
 bool FileUploadTask::ProcedureTaskIdHasBeenSet() const
 {
     return m_procedureTaskIdHasBeenSet;
+}
+
+MediaMetaData FileUploadTask::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void FileUploadTask::SetMetaData(const MediaMetaData& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool FileUploadTask::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
 }
 

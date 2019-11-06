@@ -341,6 +341,49 @@ TkeClient::DeleteClusterOutcomeCallable TkeClient::DeleteClusterCallable(const D
     return task->get_future();
 }
 
+TkeClient::DeleteClusterAsGroupsOutcome TkeClient::DeleteClusterAsGroups(const DeleteClusterAsGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterAsGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterAsGroupsResponse rsp = DeleteClusterAsGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterAsGroupsOutcome(rsp);
+        else
+            return DeleteClusterAsGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterAsGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterAsGroupsAsync(const DeleteClusterAsGroupsRequest& request, const DeleteClusterAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterAsGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterAsGroupsOutcomeCallable TkeClient::DeleteClusterAsGroupsCallable(const DeleteClusterAsGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterAsGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterAsGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteClusterInstancesOutcome TkeClient::DeleteClusterInstances(const DeleteClusterInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteClusterInstances");

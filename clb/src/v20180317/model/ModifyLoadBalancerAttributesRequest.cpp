@@ -26,7 +26,8 @@ using namespace std;
 ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_loadBalancerIdHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
-    m_targetRegionInfoHasBeenSet(false)
+    m_targetRegionInfoHasBeenSet(false),
+    m_internetChargeInfoHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,15 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_targetRegionInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_internetChargeInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetChargeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_internetChargeInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -116,6 +126,22 @@ void ModifyLoadBalancerAttributesRequest::SetTargetRegionInfo(const TargetRegion
 bool ModifyLoadBalancerAttributesRequest::TargetRegionInfoHasBeenSet() const
 {
     return m_targetRegionInfoHasBeenSet;
+}
+
+InternetAccessible ModifyLoadBalancerAttributesRequest::GetInternetChargeInfo() const
+{
+    return m_internetChargeInfo;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetInternetChargeInfo(const InternetAccessible& _internetChargeInfo)
+{
+    m_internetChargeInfo = _internetChargeInfo;
+    m_internetChargeInfoHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::InternetChargeInfoHasBeenSet() const
+{
+    return m_internetChargeInfoHasBeenSet;
 }
 
 

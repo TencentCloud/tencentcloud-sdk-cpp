@@ -478,6 +478,114 @@ namespace TencentCloud
                      */
                     bool BackupTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例付费模式， 0-按量计费，1-包年包月
+                     * @return PayMode 实例付费模式， 0-按量计费，1-包年包月
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置实例付费模式， 0-按量计费，1-包年包月
+                     * @param PayMode 实例付费模式， 0-按量计费，1-包年包月
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取实例唯一UID
+                     * @return Uid 实例唯一UID
+                     */
+                    std::string GetUid() const;
+
+                    /**
+                     * 设置实例唯一UID
+                     * @param Uid 实例唯一UID
+                     */
+                    void SetUid(const std::string& _uid);
+
+                    /**
+                     * 判断参数 Uid 是否已赋值
+                     * @return Uid 是否已赋值
+                     */
+                    bool UidHasBeenSet() const;
+
+                    /**
+                     * 获取实例cpu核心数
+                     * @return Cpu 实例cpu核心数
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置实例cpu核心数
+                     * @param Cpu 实例cpu核心数
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取实例版本代号
+                     * @return Version 实例版本代号
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置实例版本代号
+                     * @param Version 实例版本代号
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取物理机代号
+                     * @return Type 物理机代号
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置物理机代号
+                     * @param Type 物理机代号
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取计费ID
+                     * @return Pid 计费ID
+                     */
+                    int64_t GetPid() const;
+
+                    /**
+                     * 设置计费ID
+                     * @param Pid 计费ID
+                     */
+                    void SetPid(const int64_t& _pid);
+
+                    /**
+                     * 判断参数 Pid 是否已赋值
+                     * @return Pid 是否已赋值
+                     */
+                    bool PidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,6 +731,42 @@ namespace TencentCloud
                      */
                     std::string m_backupTime;
                     bool m_backupTimeHasBeenSet;
+
+                    /**
+                     * 实例付费模式， 0-按量计费，1-包年包月
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 实例唯一UID
+                     */
+                    std::string m_uid;
+                    bool m_uidHasBeenSet;
+
+                    /**
+                     * 实例cpu核心数
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * 实例版本代号
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 物理机代号
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 计费ID
+                     */
+                    int64_t m_pid;
+                    bool m_pidHasBeenSet;
 
                 };
             }

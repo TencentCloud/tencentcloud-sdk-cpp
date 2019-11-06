@@ -439,14 +439,14 @@ namespace TencentCloud
                     bool InitFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否包含灾备实例，可取值：0 - 不包含，1 - 包含。
-                     * @return WithDr 是否包含灾备实例，可取值：0 - 不包含，1 - 包含。
+                     * 获取是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
+                     * @return WithDr 是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
                      */
                     int64_t GetWithDr() const;
 
                     /**
-                     * 设置是否包含灾备实例，可取值：0 - 不包含，1 - 包含。
-                     * @param WithDr 是否包含灾备实例，可取值：0 - 不包含，1 - 包含。
+                     * 设置是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
+                     * @param WithDr 是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
                      */
                     void SetWithDr(const int64_t& _withDr);
 
@@ -457,14 +457,14 @@ namespace TencentCloud
                     bool WithDrHasBeenSet() const;
 
                     /**
-                     * 获取是否包含只读实例，可取值：0 - 不包含，1 - 包含。
-                     * @return WithRo 是否包含只读实例，可取值：0 - 不包含，1 - 包含。
+                     * 获取是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * @return WithRo 是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
                      */
                     int64_t GetWithRo() const;
 
                     /**
-                     * 设置是否包含只读实例，可取值：0 - 不包含，1 - 包含。
-                     * @param WithRo 是否包含只读实例，可取值：0 - 不包含，1 - 包含。
+                     * 设置是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * @param WithRo 是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
                      */
                     void SetWithRo(const int64_t& _withRo);
 
@@ -475,14 +475,14 @@ namespace TencentCloud
                     bool WithRoHasBeenSet() const;
 
                     /**
-                     * 获取是否包含主实例，可取值：0 - 不包含，1 - 包含。
-                     * @return WithMaster 是否包含主实例，可取值：0 - 不包含，1 - 包含。
+                     * 获取是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * @return WithMaster 是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
                      */
                     int64_t GetWithMaster() const;
 
                     /**
-                     * 设置是否包含主实例，可取值：0 - 不包含，1 - 包含。
-                     * @param WithMaster 是否包含主实例，可取值：0 - 不包含，1 - 包含。
+                     * 设置是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * @param WithMaster 是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
                      */
                     void SetWithMaster(const int64_t& _withMaster);
 
@@ -627,19 +627,19 @@ namespace TencentCloud
                     bool m_initFlagHasBeenSet;
 
                     /**
-                     * 是否包含灾备实例，可取值：0 - 不包含，1 - 包含。
+                     * 是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
                      */
                     int64_t m_withDr;
                     bool m_withDrHasBeenSet;
 
                     /**
-                     * 是否包含只读实例，可取值：0 - 不包含，1 - 包含。
+                     * 是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
                      */
                     int64_t m_withRo;
                     bool m_withRoHasBeenSet;
 
                     /**
-                     * 是否包含主实例，可取值：0 - 不包含，1 - 包含。
+                     * 是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
                      */
                     int64_t m_withMaster;
                     bool m_withMasterHasBeenSet;

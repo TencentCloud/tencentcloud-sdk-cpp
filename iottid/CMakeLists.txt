@@ -23,17 +23,21 @@ set(iottid_public_header_model
   include/tencentcloud/iottid/v20190411/model/VerifyChipBurnInfoResponse.h
   include/tencentcloud/iottid/v20190411/model/DeliverTidsResponse.h
   include/tencentcloud/iottid/v20190411/model/BurnTidNotifyResponse.h
-  include/tencentcloud/iottid/v20190411/model/DownloadTidsResponse.h
+  include/tencentcloud/iottid/v20190411/model/DescribeAvailableLibCountResponse.h
+  include/tencentcloud/iottid/v20190411/model/UploadDeviceUniqueCodeResponse.h
   include/tencentcloud/iottid/v20190411/model/AuthTestTidResponse.h
   include/tencentcloud/iottid/v20190411/model/DeliverTidNotifyResponse.h
   include/tencentcloud/iottid/v20190411/model/AuthTestTidRequest.h
   include/tencentcloud/iottid/v20190411/model/BurnTidNotifyRequest.h
   include/tencentcloud/iottid/v20190411/model/VerifyChipBurnInfoRequest.h
+  include/tencentcloud/iottid/v20190411/model/UploadDeviceUniqueCodeRequest.h
+  include/tencentcloud/iottid/v20190411/model/DescribeAvailableLibCountRequest.h
   include/tencentcloud/iottid/v20190411/model/DeliverTidsRequest.h
   include/tencentcloud/iottid/v20190411/model/DeliverTidNotifyRequest.h
   include/tencentcloud/iottid/v20190411/model/TidKeysInfo.h
   include/tencentcloud/iottid/v20190411/model/DescribePermissionResponse.h
   include/tencentcloud/iottid/v20190411/model/DownloadTidsRequest.h
+  include/tencentcloud/iottid/v20190411/model/DownloadTidsResponse.h
   )
 
 set(iottid_src
@@ -42,17 +46,21 @@ set(iottid_src
   src/v20190411/model/VerifyChipBurnInfoResponse.cpp
   src/v20190411/model/DeliverTidsResponse.cpp
   src/v20190411/model/BurnTidNotifyResponse.cpp
-  src/v20190411/model/DownloadTidsResponse.cpp
+  src/v20190411/model/DescribeAvailableLibCountResponse.cpp
+  src/v20190411/model/UploadDeviceUniqueCodeResponse.cpp
   src/v20190411/model/AuthTestTidResponse.cpp
   src/v20190411/model/DeliverTidNotifyResponse.cpp
   src/v20190411/model/AuthTestTidRequest.cpp
   src/v20190411/model/BurnTidNotifyRequest.cpp
   src/v20190411/model/VerifyChipBurnInfoRequest.cpp
+  src/v20190411/model/UploadDeviceUniqueCodeRequest.cpp
+  src/v20190411/model/DescribeAvailableLibCountRequest.cpp
   src/v20190411/model/DeliverTidsRequest.cpp
   src/v20190411/model/DeliverTidNotifyRequest.cpp
   src/v20190411/model/TidKeysInfo.cpp
   src/v20190411/model/DescribePermissionResponse.cpp
   src/v20190411/model/DownloadTidsRequest.cpp
+  src/v20190411/model/DownloadTidsResponse.cpp
   )
 
 set(iottid_include

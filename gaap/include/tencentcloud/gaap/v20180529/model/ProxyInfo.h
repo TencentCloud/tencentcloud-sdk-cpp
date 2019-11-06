@@ -207,6 +207,7 @@ CLOSED，已关闭；
 ADJUSTING，配置变更中；
 ISOLATING，隔离中（欠费触发）；
 ISOLATED，已隔离（欠费触发）；
+CLONING，复制中；
 UNKNOWN，未知状态。
                      * @return Status 通道状态。其中：
 RUNNING，运行中；
@@ -218,6 +219,7 @@ CLOSED，已关闭；
 ADJUSTING，配置变更中；
 ISOLATING，隔离中（欠费触发）；
 ISOLATED，已隔离（欠费触发）；
+CLONING，复制中；
 UNKNOWN，未知状态。
                      */
                     std::string GetStatus() const;
@@ -233,6 +235,7 @@ CLOSED，已关闭；
 ADJUSTING，配置变更中；
 ISOLATING，隔离中（欠费触发）；
 ISOLATED，已隔离（欠费触发）；
+CLONING，复制中；
 UNKNOWN，未知状态。
                      * @param Status 通道状态。其中：
 RUNNING，运行中；
@@ -244,6 +247,7 @@ CLOSED，已关闭；
 ADJUSTING，配置变更中；
 ISOLATING，隔离中（欠费触发）；
 ISOLATED，已隔离（欠费触发）；
+CLONING，复制中；
 UNKNOWN，未知状态。
                      */
                     void SetStatus(const std::string& _status);
@@ -556,6 +560,7 @@ CLOSED，已关闭；
 ADJUSTING，配置变更中；
 ISOLATING，隔离中（欠费触发）；
 ISOLATED，已隔离（欠费触发）；
+CLONING，复制中；
 UNKNOWN，未知状态。
                      */
                     std::string m_status;

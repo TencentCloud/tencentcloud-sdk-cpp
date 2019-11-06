@@ -23,8 +23,8 @@ using namespace std;
 
 RsWeightRule::RsWeightRule() :
     m_listenerIdHasBeenSet(false),
-    m_locationIdHasBeenSet(false),
     m_targetsHasBeenSet(false),
+    m_locationIdHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_weightHasBeenSet(false)
@@ -46,16 +46,6 @@ CoreInternalOutcome RsWeightRule::Deserialize(const Value &value)
         m_listenerIdHasBeenSet = true;
     }
 
-    if (value.HasMember("LocationId") && !value["LocationId"].IsNull())
-    {
-        if (!value["LocationId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `RsWeightRule.LocationId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_locationId = string(value["LocationId"].GetString());
-        m_locationIdHasBeenSet = true;
-    }
-
     if (value.HasMember("Targets") && !value["Targets"].IsNull())
     {
         if (!value["Targets"].IsArray())
@@ -74,6 +64,16 @@ CoreInternalOutcome RsWeightRule::Deserialize(const Value &value)
             m_targets.push_back(item);
         }
         m_targetsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LocationId") && !value["LocationId"].IsNull())
+    {
+        if (!value["LocationId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RsWeightRule.LocationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_locationId = string(value["LocationId"].GetString());
+        m_locationIdHasBeenSet = true;
     }
 
     if (value.HasMember("Domain") && !value["Domain"].IsNull())
@@ -121,14 +121,6 @@ void RsWeightRule::ToJsonObject(Value &value, Document::AllocatorType& allocator
         value.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_locationIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LocationId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_locationId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_targetsHasBeenSet)
     {
         Value iKey(kStringType);
@@ -142,6 +134,14 @@ void RsWeightRule::ToJsonObject(Value &value, Document::AllocatorType& allocator
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_locationIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_locationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainHasBeenSet)
@@ -187,22 +187,6 @@ bool RsWeightRule::ListenerIdHasBeenSet() const
     return m_listenerIdHasBeenSet;
 }
 
-string RsWeightRule::GetLocationId() const
-{
-    return m_locationId;
-}
-
-void RsWeightRule::SetLocationId(const string& _locationId)
-{
-    m_locationId = _locationId;
-    m_locationIdHasBeenSet = true;
-}
-
-bool RsWeightRule::LocationIdHasBeenSet() const
-{
-    return m_locationIdHasBeenSet;
-}
-
 vector<Target> RsWeightRule::GetTargets() const
 {
     return m_targets;
@@ -217,6 +201,22 @@ void RsWeightRule::SetTargets(const vector<Target>& _targets)
 bool RsWeightRule::TargetsHasBeenSet() const
 {
     return m_targetsHasBeenSet;
+}
+
+string RsWeightRule::GetLocationId() const
+{
+    return m_locationId;
+}
+
+void RsWeightRule::SetLocationId(const string& _locationId)
+{
+    m_locationId = _locationId;
+    m_locationIdHasBeenSet = true;
+}
+
+bool RsWeightRule::LocationIdHasBeenSet() const
+{
+    return m_locationIdHasBeenSet;
 }
 
 string RsWeightRule::GetDomain() const

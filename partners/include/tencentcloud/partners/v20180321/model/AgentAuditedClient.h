@@ -324,6 +324,28 @@ namespace TencentCloud
                      */
                     bool SalesNameHasBeenSet() const;
 
+                    /**
+                     * 获取代客邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Mail 代客邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMail() const;
+
+                    /**
+                     * 设置代客邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Mail 代客邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMail(const std::string& _mail);
+
+                    /**
+                     * 判断参数 Mail 是否已赋值
+                     * @return Mail 是否已赋值
+                     */
+                    bool MailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -417,6 +439,13 @@ namespace TencentCloud
                      */
                     std::string m_salesName;
                     bool m_salesNameHasBeenSet;
+
+                    /**
+                     * 代客邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mail;
+                    bool m_mailHasBeenSet;
 
                 };
             }

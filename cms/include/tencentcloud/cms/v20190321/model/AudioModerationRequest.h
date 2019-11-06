@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调url
-                     * @return CallbackUrl 回调url
+                     * 获取回调URL，音频识别结果将以POST请求方式发送到此地址
+                     * @return CallbackUrl 回调URL，音频识别结果将以POST请求方式发送到此地址
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调url
-                     * @param CallbackUrl 回调url
+                     * 设置回调URL，音频识别结果将以POST请求方式发送到此地址
+                     * @param CallbackUrl 回调URL，音频识别结果将以POST请求方式发送到此地址
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调url
+                     * 回调URL，音频识别结果将以POST请求方式发送到此地址
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

@@ -35,7 +35,9 @@ DescribeCdnDataRequest::DescribeCdnDataRequest() :
     m_districtHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false)
+    m_ipProtocolHasBeenSet(false),
+    m_areaHasBeenSet(false),
+    m_areaTypeHasBeenSet(false)
 {
 }
 
@@ -145,6 +147,22 @@ string DescribeCdnDataRequest::ToJsonString() const
         string key = "IpProtocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_ipProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AreaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_areaType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -345,6 +363,38 @@ void DescribeCdnDataRequest::SetIpProtocol(const string& _ipProtocol)
 bool DescribeCdnDataRequest::IpProtocolHasBeenSet() const
 {
     return m_ipProtocolHasBeenSet;
+}
+
+string DescribeCdnDataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeCdnDataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeCdnDataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
+}
+
+string DescribeCdnDataRequest::GetAreaType() const
+{
+    return m_areaType;
+}
+
+void DescribeCdnDataRequest::SetAreaType(const string& _areaType)
+{
+    m_areaType = _areaType;
+    m_areaTypeHasBeenSet = true;
+}
+
+bool DescribeCdnDataRequest::AreaTypeHasBeenSet() const
+{
+    return m_areaTypeHasBeenSet;
 }
 
 

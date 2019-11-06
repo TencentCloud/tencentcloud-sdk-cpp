@@ -27,7 +27,8 @@ DescribeSimpleClustersRequest::DescribeSimpleClustersRequest() :
     m_clusterIdListHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_searchWordHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string DescribeSimpleClustersRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_searchWordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_searchWord.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -145,6 +154,22 @@ void DescribeSimpleClustersRequest::SetLimit(const int64_t& _limit)
 bool DescribeSimpleClustersRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSimpleClustersRequest::GetSearchWord() const
+{
+    return m_searchWord;
+}
+
+void DescribeSimpleClustersRequest::SetSearchWord(const string& _searchWord)
+{
+    m_searchWord = _searchWord;
+    m_searchWordHasBeenSet = true;
+}
+
+bool DescribeSimpleClustersRequest::SearchWordHasBeenSet() const
+{
+    return m_searchWordHasBeenSet;
 }
 
 

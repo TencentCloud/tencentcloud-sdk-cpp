@@ -19,17 +19,16 @@ set(emr_public_header
   )
 
 set(emr_public_header_model
-  include/tencentcloud/emr/v20190103/model/CreateInstanceResult.h
+  include/tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h
   include/tencentcloud/emr/v20190103/model/LoginSettings.h
   include/tencentcloud/emr/v20190103/model/VPCSettings.h
-  include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
+  include/tencentcloud/emr/v20190103/model/PriceResource.h
   include/tencentcloud/emr/v20190103/model/ScaleOutInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
-  include/tencentcloud/emr/v20190103/model/ClusterInstanceInfo.h
-  include/tencentcloud/emr/v20190103/model/ClusterInfoResult.h
-  include/tencentcloud/emr/v20190103/model/ResourceSpec.h
+  include/tencentcloud/emr/v20190103/model/Resource.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceResponse.h
-  include/tencentcloud/emr/v20190103/model/ScaleOutInstanceResult.h
+  include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/TerminateTasksRequest.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceRequest.h
@@ -37,32 +36,34 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Placement.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h
+  include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/COSSettings.h
-  include/tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/ClusterInstancesInfo.h
+  include/tencentcloud/emr/v20190103/model/MultiDisk.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h
-  include/tencentcloud/emr/v20190103/model/TerminateTasksRequest.h
-  include/tencentcloud/emr/v20190103/model/EMRProductConfigSettings.h
-  include/tencentcloud/emr/v20190103/model/NodeSpec.h
+  include/tencentcloud/emr/v20190103/model/OutterResource.h
+  include/tencentcloud/emr/v20190103/model/UpdateInstanceSettings.h
+  include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceResponse.h
-  include/tencentcloud/emr/v20190103/model/InquiryPriceResult.h
-  include/tencentcloud/emr/v20190103/model/TerminateResult.h
-  include/tencentcloud/emr/v20190103/model/MultiDisk.h
+  include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/NewResourceSpec.h
+  include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h
   )
 
 set(emr_src
   src/v20190103/EmrClient.cpp
-  src/v20190103/model/CreateInstanceResult.cpp
+  src/v20190103/model/EmrProductConfigOutter.cpp
   src/v20190103/model/LoginSettings.cpp
   src/v20190103/model/VPCSettings.cpp
-  src/v20190103/model/TerminateTasksResponse.cpp
+  src/v20190103/model/PriceResource.cpp
   src/v20190103/model/ScaleOutInstanceResponse.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
-  src/v20190103/model/ClusterInstanceInfo.cpp
-  src/v20190103/model/ClusterInfoResult.cpp
-  src/v20190103/model/ResourceSpec.cpp
+  src/v20190103/model/Resource.cpp
   src/v20190103/model/CreateInstanceResponse.cpp
-  src/v20190103/model/ScaleOutInstanceResult.cpp
+  src/v20190103/model/InquiryPriceRenewInstanceResponse.cpp
+  src/v20190103/model/TerminateTasksRequest.cpp
   src/v20190103/model/InquiryPriceCreateInstanceResponse.cpp
   src/v20190103/model/PreExecuteFileSettings.cpp
   src/v20190103/model/CreateInstanceRequest.cpp
@@ -70,17 +71,20 @@ set(emr_src
   src/v20190103/model/InquiryPriceScaleOutInstanceRequest.cpp
   src/v20190103/model/Placement.cpp
   src/v20190103/model/DescribeInstancesRequest.cpp
+  src/v20190103/model/InquiryPriceUpdateInstanceRequest.cpp
   src/v20190103/model/COSSettings.cpp
-  src/v20190103/model/ScaleOutInstanceRequest.cpp
+  src/v20190103/model/ClusterInstancesInfo.cpp
+  src/v20190103/model/MultiDisk.cpp
   src/v20190103/model/InquiryPriceScaleOutInstanceResponse.cpp
-  src/v20190103/model/TerminateTasksRequest.cpp
-  src/v20190103/model/EMRProductConfigSettings.cpp
-  src/v20190103/model/NodeSpec.cpp
+  src/v20190103/model/OutterResource.cpp
+  src/v20190103/model/UpdateInstanceSettings.cpp
+  src/v20190103/model/TerminateTasksResponse.cpp
   src/v20190103/model/TerminateInstanceRequest.cpp
   src/v20190103/model/TerminateInstanceResponse.cpp
-  src/v20190103/model/InquiryPriceResult.cpp
-  src/v20190103/model/TerminateResult.cpp
-  src/v20190103/model/MultiDisk.cpp
+  src/v20190103/model/InquiryPriceUpdateInstanceResponse.cpp
+  src/v20190103/model/NewResourceSpec.cpp
+  src/v20190103/model/InquiryPriceRenewInstanceRequest.cpp
+  src/v20190103/model/ScaleOutInstanceRequest.cpp
   )
 
 set(emr_include

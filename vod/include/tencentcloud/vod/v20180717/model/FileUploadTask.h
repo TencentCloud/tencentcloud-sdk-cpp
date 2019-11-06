@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/MediaBasicInfo.h>
+#include <tencentcloud/vod/v20180717/model/MediaMetaData.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,28 @@ namespace TencentCloud
                      */
                     bool ProcedureTaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取元信息。包括大小、时长、视频流信息、音频流信息等。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetaData GetMetaData() const;
+
+                    /**
+                     * 设置元信息。包括大小、时长、视频流信息、音频流信息等。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetaData(const MediaMetaData& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     */
+                    bool MetaDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +148,13 @@ namespace TencentCloud
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;
+
+                    /**
+                     * 元信息。包括大小、时长、视频流信息、音频流信息等。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetaData m_metaData;
+                    bool m_metaDataHasBeenSet;
 
                 };
             }

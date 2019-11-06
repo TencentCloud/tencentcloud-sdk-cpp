@@ -150,6 +150,42 @@ namespace TencentCloud
                      */
                     bool NamespaceResourceTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取通过id和name进行过滤
+                     * @return SearchWord 通过id和name进行过滤
+                     */
+                    std::string GetSearchWord() const;
+
+                    /**
+                     * 设置通过id和name进行过滤
+                     * @param SearchWord 通过id和name进行过滤
+                     */
+                    void SetSearchWord(const std::string& _searchWord);
+
+                    /**
+                     * 判断参数 SearchWord 是否已赋值
+                     * @return SearchWord 是否已赋值
+                     */
+                    bool SearchWordHasBeenSet() const;
+
+                    /**
+                     * 获取查询的命名空间类型列表
+                     * @return NamespaceTypeList 查询的命名空间类型列表
+                     */
+                    std::vector<std::string> GetNamespaceTypeList() const;
+
+                    /**
+                     * 设置查询的命名空间类型列表
+                     * @param NamespaceTypeList 查询的命名空间类型列表
+                     */
+                    void SetNamespaceTypeList(const std::vector<std::string>& _namespaceTypeList);
+
+                    /**
+                     * 判断参数 NamespaceTypeList 是否已赋值
+                     * @return NamespaceTypeList 是否已赋值
+                     */
+                    bool NamespaceTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_namespaceResourceTypeList;
                     bool m_namespaceResourceTypeListHasBeenSet;
+
+                    /**
+                     * 通过id和name进行过滤
+                     */
+                    std::string m_searchWord;
+                    bool m_searchWordHasBeenSet;
+
+                    /**
+                     * 查询的命名空间类型列表
+                     */
+                    std::vector<std::string> m_namespaceTypeList;
+                    bool m_namespaceTypeListHasBeenSet;
 
                 };
             }

@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool FaceNumHasBeenSet() const;
 
+                    /**
+                     * 获取人脸识别所用的算法模型版本。
+                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     */
+                    std::string GetFaceModelVersion() const;
+
+                    /**
+                     * 判断参数 FaceModelVersion 是否已赋值
+                     * @return FaceModelVersion 是否已赋值
+                     */
+                    bool FaceModelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     uint64_t m_faceNum;
                     bool m_faceNumHasBeenSet;
+
+                    /**
+                     * 人脸识别所用的算法模型版本。
+                     */
+                    std::string m_faceModelVersion;
+                    bool m_faceModelVersionHasBeenSet;
 
                 };
             }

@@ -25,7 +25,9 @@ TidKeysInfo::TidKeysInfo() :
     m_tidHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
-    m_pskHasBeenSet(false)
+    m_pskHasBeenSet(false),
+    m_downloadUrlHasBeenSet(false),
+    m_deviceCodeHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,26 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const Value &value)
         m_pskHasBeenSet = true;
     }
 
+    if (value.HasMember("DownloadUrl") && !value["DownloadUrl"].IsNull())
+    {
+        if (!value["DownloadUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TidKeysInfo.DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_downloadUrl = string(value["DownloadUrl"].GetString());
+        m_downloadUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceCode") && !value["DeviceCode"].IsNull())
+    {
+        if (!value["DeviceCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TidKeysInfo.DeviceCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceCode = string(value["DeviceCode"].GetString());
+        m_deviceCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +133,22 @@ void TidKeysInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Psk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_psk.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_downloadUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DownloadUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deviceCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +216,37 @@ void TidKeysInfo::SetPsk(const string& _psk)
 bool TidKeysInfo::PskHasBeenSet() const
 {
     return m_pskHasBeenSet;
+}
+
+string TidKeysInfo::GetDownloadUrl() const
+{
+    return m_downloadUrl;
+}
+
+void TidKeysInfo::SetDownloadUrl(const string& _downloadUrl)
+{
+    m_downloadUrl = _downloadUrl;
+    m_downloadUrlHasBeenSet = true;
+}
+
+bool TidKeysInfo::DownloadUrlHasBeenSet() const
+{
+    return m_downloadUrlHasBeenSet;
+}
+
+string TidKeysInfo::GetDeviceCode() const
+{
+    return m_deviceCode;
+}
+
+void TidKeysInfo::SetDeviceCode(const string& _deviceCode)
+{
+    m_deviceCode = _deviceCode;
+    m_deviceCodeHasBeenSet = true;
+}
+
+bool TidKeysInfo::DeviceCodeHasBeenSet() const
+{
+    return m_deviceCodeHasBeenSet;
 }
 

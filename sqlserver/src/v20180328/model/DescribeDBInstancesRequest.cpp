@@ -28,7 +28,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_statusHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_instanceIdSetHasBeenSet(false)
+    m_instanceIdSetHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string DescribeDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payMode, allocator);
     }
 
 
@@ -170,6 +179,22 @@ void DescribeDBInstancesRequest::SetInstanceIdSet(const vector<string>& _instanc
 bool DescribeDBInstancesRequest::InstanceIdSetHasBeenSet() const
 {
     return m_instanceIdSetHasBeenSet;
+}
+
+int64_t DescribeDBInstancesRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void DescribeDBInstancesRequest::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 
 

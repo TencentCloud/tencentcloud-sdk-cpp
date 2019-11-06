@@ -22,7 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 BusinessSummaryTotal::BusinessSummaryTotal() :
-    m_realTotalCostHasBeenSet(false)
+    m_realTotalCostHasBeenSet(false),
+    m_voucherPayAmountHasBeenSet(false),
+    m_incentivePayAmountHasBeenSet(false),
+    m_cashPayAmountHasBeenSet(false)
 {
 }
 
@@ -41,6 +44,36 @@ CoreInternalOutcome BusinessSummaryTotal::Deserialize(const Value &value)
         m_realTotalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("VoucherPayAmount") && !value["VoucherPayAmount"].IsNull())
+    {
+        if (!value["VoucherPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BusinessSummaryTotal.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
+        m_voucherPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncentivePayAmount") && !value["IncentivePayAmount"].IsNull())
+    {
+        if (!value["IncentivePayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BusinessSummaryTotal.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
+        m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
+    {
+        if (!value["CashPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BusinessSummaryTotal.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cashPayAmount = string(value["CashPayAmount"].GetString());
+        m_cashPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +87,30 @@ void BusinessSummaryTotal::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherPayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VoucherPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_incentivePayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IncentivePayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cashPayAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CashPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cashPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -73,5 +130,53 @@ void BusinessSummaryTotal::SetRealTotalCost(const string& _realTotalCost)
 bool BusinessSummaryTotal::RealTotalCostHasBeenSet() const
 {
     return m_realTotalCostHasBeenSet;
+}
+
+string BusinessSummaryTotal::GetVoucherPayAmount() const
+{
+    return m_voucherPayAmount;
+}
+
+void BusinessSummaryTotal::SetVoucherPayAmount(const string& _voucherPayAmount)
+{
+    m_voucherPayAmount = _voucherPayAmount;
+    m_voucherPayAmountHasBeenSet = true;
+}
+
+bool BusinessSummaryTotal::VoucherPayAmountHasBeenSet() const
+{
+    return m_voucherPayAmountHasBeenSet;
+}
+
+string BusinessSummaryTotal::GetIncentivePayAmount() const
+{
+    return m_incentivePayAmount;
+}
+
+void BusinessSummaryTotal::SetIncentivePayAmount(const string& _incentivePayAmount)
+{
+    m_incentivePayAmount = _incentivePayAmount;
+    m_incentivePayAmountHasBeenSet = true;
+}
+
+bool BusinessSummaryTotal::IncentivePayAmountHasBeenSet() const
+{
+    return m_incentivePayAmountHasBeenSet;
+}
+
+string BusinessSummaryTotal::GetCashPayAmount() const
+{
+    return m_cashPayAmount;
+}
+
+void BusinessSummaryTotal::SetCashPayAmount(const string& _cashPayAmount)
+{
+    m_cashPayAmount = _cashPayAmount;
+    m_cashPayAmountHasBeenSet = true;
+}
+
+bool BusinessSummaryTotal::CashPayAmountHasBeenSet() const
+{
+    return m_cashPayAmountHasBeenSet;
 }
 

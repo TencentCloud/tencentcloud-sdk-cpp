@@ -198,12 +198,12 @@ statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 �
 
                     /**
                      * 获取时间粒度，支持以下几种模式：
-min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据
+min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据（指定查询服务地域为中国境外时不支持 1 分钟粒度）
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
                      * @return Interval 时间粒度，支持以下几种模式：
-min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据
+min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据（指定查询服务地域为中国境外时不支持 1 分钟粒度）
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
@@ -212,12 +212,12 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
 
                     /**
                      * 设置时间粒度，支持以下几种模式：
-min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据
+min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据（指定查询服务地域为中国境外时不支持 1 分钟粒度）
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
                      * @param Interval 时间粒度，支持以下几种模式：
-min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据
+min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据（指定查询服务地域为中国境外时不支持 1 分钟粒度）
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
@@ -253,18 +253,22 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取指定运营商查询，不填充表示查询所有运营商
+                     * 获取查询中国境内CDN数据时，指定运营商查询，不填充表示查询所有运营商
 运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84)
-                     * @return Isp 指定运营商查询，不填充表示查询所有运营商
+指定运营商查询时，不可同时指定省份、IP协议查询
+                     * @return Isp 查询中国境内CDN数据时，指定运营商查询，不填充表示查询所有运营商
 运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84)
+指定运营商查询时，不可同时指定省份、IP协议查询
                      */
                     int64_t GetIsp() const;
 
                     /**
-                     * 设置指定运营商查询，不填充表示查询所有运营商
+                     * 设置查询中国境内CDN数据时，指定运营商查询，不填充表示查询所有运营商
 运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84)
-                     * @param Isp 指定运营商查询，不填充表示查询所有运营商
+指定运营商查询时，不可同时指定省份、IP协议查询
+                     * @param Isp 查询中国境内CDN数据时，指定运营商查询，不填充表示查询所有运营商
 运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84)
+指定运营商查询时，不可同时指定省份、IP协议查询
                      */
                     void SetIsp(const int64_t& _isp);
 
@@ -275,18 +279,26 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
                     bool IspHasBeenSet() const;
 
                     /**
-                     * 获取指定省份查询，不填充表示查询所有省份
-省份编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
-                     * @return District 指定省份查询，不填充表示查询所有省份
-省份编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+                     * 获取查询中国境内CDN数据时，指定省份查询，不填充表示查询所有省份
+查询中国境外CDN数据时，指定国家/地区查询，不填充表示查询所有国家/地区
+省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+指定（中国境内）省份查询时，不可同时指定运营商、IP协议查询
+                     * @return District 查询中国境内CDN数据时，指定省份查询，不填充表示查询所有省份
+查询中国境外CDN数据时，指定国家/地区查询，不填充表示查询所有国家/地区
+省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+指定（中国境内）省份查询时，不可同时指定运营商、IP协议查询
                      */
                     int64_t GetDistrict() const;
 
                     /**
-                     * 设置指定省份查询，不填充表示查询所有省份
-省份编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
-                     * @param District 指定省份查询，不填充表示查询所有省份
-省份编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+                     * 设置查询中国境内CDN数据时，指定省份查询，不填充表示查询所有省份
+查询中国境外CDN数据时，指定国家/地区查询，不填充表示查询所有国家/地区
+省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+指定（中国境内）省份查询时，不可同时指定运营商、IP协议查询
+                     * @param District 查询中国境内CDN数据时，指定省份查询，不填充表示查询所有省份
+查询中国境外CDN数据时，指定国家/地区查询，不填充表示查询所有国家/地区
+省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+指定（中国境内）省份查询时，不可同时指定运营商、IP协议查询
                      */
                     void SetDistrict(const int64_t& _district);
 
@@ -347,24 +359,28 @@ https：指定查询 HTTPS 对应指标
                     /**
                      * 获取指定IP协议查询，不填充表示查询所有协议
 all：所有协议
-ipv4：指定查询 ipv4对应指标
+ipv4：指定查询 ipv4 对应指标
 ipv6：指定查询 ipv6 对应指标
+指定IP协议查询时，不可同时指定省份、运营商查询
                      * @return IpProtocol 指定IP协议查询，不填充表示查询所有协议
 all：所有协议
-ipv4：指定查询 ipv4对应指标
+ipv4：指定查询 ipv4 对应指标
 ipv6：指定查询 ipv6 对应指标
+指定IP协议查询时，不可同时指定省份、运营商查询
                      */
                     std::string GetIpProtocol() const;
 
                     /**
                      * 设置指定IP协议查询，不填充表示查询所有协议
 all：所有协议
-ipv4：指定查询 ipv4对应指标
+ipv4：指定查询 ipv4 对应指标
 ipv6：指定查询 ipv6 对应指标
+指定IP协议查询时，不可同时指定省份、运营商查询
                      * @param IpProtocol 指定IP协议查询，不填充表示查询所有协议
 all：所有协议
-ipv4：指定查询 ipv4对应指标
+ipv4：指定查询 ipv4 对应指标
 ipv6：指定查询 ipv6 对应指标
+指定IP协议查询时，不可同时指定省份、运营商查询
                      */
                     void SetIpProtocol(const std::string& _ipProtocol);
 
@@ -373,6 +389,58 @@ ipv6：指定查询 ipv6 对应指标
                      * @return IpProtocol 是否已赋值
                      */
                     bool IpProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取指定服务地域查询，不填充表示查询中国境内CDN数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
+                     * @return Area 指定服务地域查询，不填充表示查询中国境内CDN数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置指定服务地域查询，不填充表示查询中国境内CDN数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
+                     * @param Area 指定服务地域查询，不填充表示查询中国境内CDN数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
+                    /**
+                     * 获取查询中国境外CDN数据时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据
+                     * @return AreaType 查询中国境外CDN数据时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据
+                     */
+                    std::string GetAreaType() const;
+
+                    /**
+                     * 设置查询中国境外CDN数据时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据
+                     * @param AreaType 查询中国境外CDN数据时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据
+                     */
+                    void SetAreaType(const std::string& _areaType);
+
+                    /**
+                     * 判断参数 AreaType 是否已赋值
+                     * @return AreaType 是否已赋值
+                     */
+                    bool AreaTypeHasBeenSet() const;
 
                 private:
 
@@ -424,7 +492,7 @@ statusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 �
 
                     /**
                      * 时间粒度，支持以下几种模式：
-min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据
+min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据（指定查询服务地域为中国境外时不支持 1 分钟粒度）
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
@@ -440,15 +508,18 @@ day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数�
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 指定运营商查询，不填充表示查询所有运营商
+                     * 查询中国境内CDN数据时，指定运营商查询，不填充表示查询所有运营商
 运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84)
+指定运营商查询时，不可同时指定省份、IP协议查询
                      */
                     int64_t m_isp;
                     bool m_ispHasBeenSet;
 
                     /**
-                     * 指定省份查询，不填充表示查询所有省份
-省份编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+                     * 查询中国境内CDN数据时，指定省份查询，不填充表示查询所有省份
+查询中国境外CDN数据时，指定国家/地区查询，不填充表示查询所有国家/地区
+省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+指定（中国境内）省份查询时，不可同时指定运营商、IP协议查询
                      */
                     int64_t m_district;
                     bool m_districtHasBeenSet;
@@ -471,11 +542,28 @@ https：指定查询 HTTPS 对应指标
                     /**
                      * 指定IP协议查询，不填充表示查询所有协议
 all：所有协议
-ipv4：指定查询 ipv4对应指标
+ipv4：指定查询 ipv4 对应指标
 ipv6：指定查询 ipv6 对应指标
+指定IP协议查询时，不可同时指定省份、运营商查询
                      */
                     std::string m_ipProtocol;
                     bool m_ipProtocolHasBeenSet;
+
+                    /**
+                     * 指定服务地域查询，不填充表示查询中国境内CDN数据
+mainland：指定查询中国境内 CDN 数据
+overseas：指定查询中国境外 CDN 数据
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
+
+                    /**
+                     * 查询中国境外CDN数据时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas 时可用）
+server：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据
+client：指定查询客户端地区（用户请求终端所在地区）数据
+                     */
+                    std::string m_areaType;
+                    bool m_areaTypeHasBeenSet;
 
                 };
             }

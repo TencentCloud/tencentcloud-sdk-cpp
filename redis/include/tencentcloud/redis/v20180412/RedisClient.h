@@ -27,16 +27,38 @@
 #include <tencentcloud/redis/v20180412/model/CleanUpInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/CreateInstanceAccountRequest.h>
+#include <tencentcloud/redis/v20180412/model/CreateInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstancesRequest.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstancesResponse.h>
+#include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountRequest.h>
+#include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceBackupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceBackupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceDealDetailRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceDealDetailResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorHotKeyRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorHotKeyResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorSIPRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorSIPResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceParamsRequest.h>
@@ -51,6 +73,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeProductInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceRequest.h>
@@ -69,6 +93,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h>
@@ -103,21 +129,54 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ClearInstanceResponse> ClearInstanceOutcome;
                 typedef std::future<ClearInstanceOutcome> ClearInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ClearInstanceRequest&, ClearInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearInstanceAsyncHandler;
+                typedef Outcome<Error, Model::CreateInstanceAccountResponse> CreateInstanceAccountOutcome;
+                typedef std::future<CreateInstanceAccountOutcome> CreateInstanceAccountOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CreateInstanceAccountRequest&, CreateInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAccountAsyncHandler;
                 typedef Outcome<Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
                 typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteInstanceAccountResponse> DeleteInstanceAccountOutcome;
+                typedef std::future<DeleteInstanceAccountOutcome> DeleteInstanceAccountOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DeleteInstanceAccountRequest&, DeleteInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAccountAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAutoBackupConfigResponse> DescribeAutoBackupConfigOutcome;
                 typedef std::future<DescribeAutoBackupConfigOutcome> DescribeAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeAutoBackupConfigRequest&, DescribeAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackupConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBackupUrlResponse> DescribeBackupUrlOutcome;
                 typedef std::future<DescribeBackupUrlOutcome> DescribeBackupUrlOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupUrlRequest&, DescribeBackupUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupUrlAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceAccountResponse> DescribeInstanceAccountOutcome;
+                typedef std::future<DescribeInstanceAccountOutcome> DescribeInstanceAccountOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceAccountRequest&, DescribeInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAccountAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceBackupsResponse> DescribeInstanceBackupsOutcome;
                 typedef std::future<DescribeInstanceBackupsOutcome> DescribeInstanceBackupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceBackupsRequest&, DescribeInstanceBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceBackupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceDealDetailResponse> DescribeInstanceDealDetailOutcome;
                 typedef std::future<DescribeInstanceDealDetailOutcome> DescribeInstanceDealDetailOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceDealDetailRequest&, DescribeInstanceDealDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDealDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorBigKeyResponse> DescribeInstanceMonitorBigKeyOutcome;
+                typedef std::future<DescribeInstanceMonitorBigKeyOutcome> DescribeInstanceMonitorBigKeyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorBigKeyRequest&, DescribeInstanceMonitorBigKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorBigKeyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorBigKeySizeDistResponse> DescribeInstanceMonitorBigKeySizeDistOutcome;
+                typedef std::future<DescribeInstanceMonitorBigKeySizeDistOutcome> DescribeInstanceMonitorBigKeySizeDistOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorBigKeySizeDistRequest&, DescribeInstanceMonitorBigKeySizeDistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorBigKeySizeDistAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorBigKeyTypeDistResponse> DescribeInstanceMonitorBigKeyTypeDistOutcome;
+                typedef std::future<DescribeInstanceMonitorBigKeyTypeDistOutcome> DescribeInstanceMonitorBigKeyTypeDistOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorBigKeyTypeDistRequest&, DescribeInstanceMonitorBigKeyTypeDistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorBigKeyTypeDistAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorHotKeyResponse> DescribeInstanceMonitorHotKeyOutcome;
+                typedef std::future<DescribeInstanceMonitorHotKeyOutcome> DescribeInstanceMonitorHotKeyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorHotKeyRequest&, DescribeInstanceMonitorHotKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorHotKeyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorSIPResponse> DescribeInstanceMonitorSIPOutcome;
+                typedef std::future<DescribeInstanceMonitorSIPOutcome> DescribeInstanceMonitorSIPOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorSIPRequest&, DescribeInstanceMonitorSIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorSIPAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorTookDistResponse> DescribeInstanceMonitorTookDistOutcome;
+                typedef std::future<DescribeInstanceMonitorTookDistOutcome> DescribeInstanceMonitorTookDistOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorTookDistRequest&, DescribeInstanceMonitorTookDistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorTookDistAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorTopNCmdResponse> DescribeInstanceMonitorTopNCmdOutcome;
+                typedef std::future<DescribeInstanceMonitorTopNCmdOutcome> DescribeInstanceMonitorTopNCmdOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorTopNCmdRequest&, DescribeInstanceMonitorTopNCmdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorTopNCmdAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceMonitorTopNCmdTookResponse> DescribeInstanceMonitorTopNCmdTookOutcome;
+                typedef std::future<DescribeInstanceMonitorTopNCmdTookOutcome> DescribeInstanceMonitorTopNCmdTookOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorTopNCmdTookRequest&, DescribeInstanceMonitorTopNCmdTookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorTopNCmdTookAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceParamRecordsResponse> DescribeInstanceParamRecordsOutcome;
                 typedef std::future<DescribeInstanceParamRecordsOutcome> DescribeInstanceParamRecordsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceParamRecordsRequest&, DescribeInstanceParamRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamRecordsAsyncHandler;
@@ -139,6 +198,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProjectSecurityGroupResponse> DescribeProjectSecurityGroupOutcome;
                 typedef std::future<DescribeProjectSecurityGroupOutcome> DescribeProjectSecurityGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeProjectSecurityGroupRequest&, DescribeProjectSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSlowLogResponse> DescribeSlowLogOutcome;
+                typedef std::future<DescribeSlowLogOutcome> DescribeSlowLogOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeSlowLogRequest&, DescribeSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskInfoResponse> DescribeTaskInfoOutcome;
                 typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeTaskInfoRequest&, DescribeTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
@@ -166,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Error, Model::ModifyInstanceAccountResponse> ModifyInstanceAccountOutcome;
+                typedef std::future<ModifyInstanceAccountOutcome> ModifyInstanceAccountOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstanceAccountRequest&, ModifyInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAccountAsyncHandler;
                 typedef Outcome<Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
@@ -209,6 +274,15 @@ namespace TencentCloud
                 ClearInstanceOutcomeCallable ClearInstanceCallable(const Model::ClearInstanceRequest& request);
 
                 /**
+                 *创建实例子账号
+                 * @param req CreateInstanceAccountRequest
+                 * @return CreateInstanceAccountOutcome
+                 */
+                CreateInstanceAccountOutcome CreateInstanceAccount(const Model::CreateInstanceAccountRequest &request);
+                void CreateInstanceAccountAsync(const Model::CreateInstanceAccountRequest& request, const CreateInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceAccountOutcomeCallable CreateInstanceAccountCallable(const Model::CreateInstanceAccountRequest& request);
+
+                /**
                  *创建redis实例
                  * @param req CreateInstancesRequest
                  * @return CreateInstancesOutcome
@@ -216,6 +290,15 @@ namespace TencentCloud
                 CreateInstancesOutcome CreateInstances(const Model::CreateInstancesRequest &request);
                 void CreateInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
+
+                /**
+                 *删除实例子账号
+                 * @param req DeleteInstanceAccountRequest
+                 * @return DeleteInstanceAccountOutcome
+                 */
+                DeleteInstanceAccountOutcome DeleteInstanceAccount(const Model::DeleteInstanceAccountRequest &request);
+                void DeleteInstanceAccountAsync(const Model::DeleteInstanceAccountRequest& request, const DeleteInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceAccountOutcomeCallable DeleteInstanceAccountCallable(const Model::DeleteInstanceAccountRequest& request);
 
                 /**
                  *获取备份配置
@@ -236,6 +319,15 @@ namespace TencentCloud
                 DescribeBackupUrlOutcomeCallable DescribeBackupUrlCallable(const Model::DescribeBackupUrlRequest& request);
 
                 /**
+                 *查看实例子账号信息
+                 * @param req DescribeInstanceAccountRequest
+                 * @return DescribeInstanceAccountOutcome
+                 */
+                DescribeInstanceAccountOutcome DescribeInstanceAccount(const Model::DescribeInstanceAccountRequest &request);
+                void DescribeInstanceAccountAsync(const Model::DescribeInstanceAccountRequest& request, const DescribeInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceAccountOutcomeCallable DescribeInstanceAccountCallable(const Model::DescribeInstanceAccountRequest& request);
+
+                /**
                  *查询 CRS 实例备份列表
                  * @param req DescribeInstanceBackupsRequest
                  * @return DescribeInstanceBackupsOutcome
@@ -252,6 +344,78 @@ namespace TencentCloud
                 DescribeInstanceDealDetailOutcome DescribeInstanceDealDetail(const Model::DescribeInstanceDealDetailRequest &request);
                 void DescribeInstanceDealDetailAsync(const Model::DescribeInstanceDealDetailRequest& request, const DescribeInstanceDealDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceDealDetailOutcomeCallable DescribeInstanceDealDetailCallable(const Model::DescribeInstanceDealDetailRequest& request);
+
+                /**
+                 *查询实例大Key
+                 * @param req DescribeInstanceMonitorBigKeyRequest
+                 * @return DescribeInstanceMonitorBigKeyOutcome
+                 */
+                DescribeInstanceMonitorBigKeyOutcome DescribeInstanceMonitorBigKey(const Model::DescribeInstanceMonitorBigKeyRequest &request);
+                void DescribeInstanceMonitorBigKeyAsync(const Model::DescribeInstanceMonitorBigKeyRequest& request, const DescribeInstanceMonitorBigKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorBigKeyOutcomeCallable DescribeInstanceMonitorBigKeyCallable(const Model::DescribeInstanceMonitorBigKeyRequest& request);
+
+                /**
+                 *查询实例大Key大小分布
+                 * @param req DescribeInstanceMonitorBigKeySizeDistRequest
+                 * @return DescribeInstanceMonitorBigKeySizeDistOutcome
+                 */
+                DescribeInstanceMonitorBigKeySizeDistOutcome DescribeInstanceMonitorBigKeySizeDist(const Model::DescribeInstanceMonitorBigKeySizeDistRequest &request);
+                void DescribeInstanceMonitorBigKeySizeDistAsync(const Model::DescribeInstanceMonitorBigKeySizeDistRequest& request, const DescribeInstanceMonitorBigKeySizeDistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorBigKeySizeDistOutcomeCallable DescribeInstanceMonitorBigKeySizeDistCallable(const Model::DescribeInstanceMonitorBigKeySizeDistRequest& request);
+
+                /**
+                 *查询实例大Key类型分布
+                 * @param req DescribeInstanceMonitorBigKeyTypeDistRequest
+                 * @return DescribeInstanceMonitorBigKeyTypeDistOutcome
+                 */
+                DescribeInstanceMonitorBigKeyTypeDistOutcome DescribeInstanceMonitorBigKeyTypeDist(const Model::DescribeInstanceMonitorBigKeyTypeDistRequest &request);
+                void DescribeInstanceMonitorBigKeyTypeDistAsync(const Model::DescribeInstanceMonitorBigKeyTypeDistRequest& request, const DescribeInstanceMonitorBigKeyTypeDistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorBigKeyTypeDistOutcomeCallable DescribeInstanceMonitorBigKeyTypeDistCallable(const Model::DescribeInstanceMonitorBigKeyTypeDistRequest& request);
+
+                /**
+                 *查询实例热Key
+                 * @param req DescribeInstanceMonitorHotKeyRequest
+                 * @return DescribeInstanceMonitorHotKeyOutcome
+                 */
+                DescribeInstanceMonitorHotKeyOutcome DescribeInstanceMonitorHotKey(const Model::DescribeInstanceMonitorHotKeyRequest &request);
+                void DescribeInstanceMonitorHotKeyAsync(const Model::DescribeInstanceMonitorHotKeyRequest& request, const DescribeInstanceMonitorHotKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorHotKeyOutcomeCallable DescribeInstanceMonitorHotKeyCallable(const Model::DescribeInstanceMonitorHotKeyRequest& request);
+
+                /**
+                 *查询实例访问来源信息
+                 * @param req DescribeInstanceMonitorSIPRequest
+                 * @return DescribeInstanceMonitorSIPOutcome
+                 */
+                DescribeInstanceMonitorSIPOutcome DescribeInstanceMonitorSIP(const Model::DescribeInstanceMonitorSIPRequest &request);
+                void DescribeInstanceMonitorSIPAsync(const Model::DescribeInstanceMonitorSIPRequest& request, const DescribeInstanceMonitorSIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorSIPOutcomeCallable DescribeInstanceMonitorSIPCallable(const Model::DescribeInstanceMonitorSIPRequest& request);
+
+                /**
+                 *查询实例大Key大小分布
+                 * @param req DescribeInstanceMonitorTookDistRequest
+                 * @return DescribeInstanceMonitorTookDistOutcome
+                 */
+                DescribeInstanceMonitorTookDistOutcome DescribeInstanceMonitorTookDist(const Model::DescribeInstanceMonitorTookDistRequest &request);
+                void DescribeInstanceMonitorTookDistAsync(const Model::DescribeInstanceMonitorTookDistRequest& request, const DescribeInstanceMonitorTookDistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorTookDistOutcomeCallable DescribeInstanceMonitorTookDistCallable(const Model::DescribeInstanceMonitorTookDistRequest& request);
+
+                /**
+                 *查询实例访问命令
+                 * @param req DescribeInstanceMonitorTopNCmdRequest
+                 * @return DescribeInstanceMonitorTopNCmdOutcome
+                 */
+                DescribeInstanceMonitorTopNCmdOutcome DescribeInstanceMonitorTopNCmd(const Model::DescribeInstanceMonitorTopNCmdRequest &request);
+                void DescribeInstanceMonitorTopNCmdAsync(const Model::DescribeInstanceMonitorTopNCmdRequest& request, const DescribeInstanceMonitorTopNCmdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorTopNCmdOutcomeCallable DescribeInstanceMonitorTopNCmdCallable(const Model::DescribeInstanceMonitorTopNCmdRequest& request);
+
+                /**
+                 *查询实例CPU耗时
+                 * @param req DescribeInstanceMonitorTopNCmdTookRequest
+                 * @return DescribeInstanceMonitorTopNCmdTookOutcome
+                 */
+                DescribeInstanceMonitorTopNCmdTookOutcome DescribeInstanceMonitorTopNCmdTook(const Model::DescribeInstanceMonitorTopNCmdTookRequest &request);
+                void DescribeInstanceMonitorTopNCmdTookAsync(const Model::DescribeInstanceMonitorTopNCmdTookRequest& request, const DescribeInstanceMonitorTopNCmdTookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceMonitorTopNCmdTookOutcomeCallable DescribeInstanceMonitorTopNCmdTookCallable(const Model::DescribeInstanceMonitorTopNCmdTookRequest& request);
 
                 /**
                  *查询参数修改历史列表
@@ -315,6 +479,15 @@ namespace TencentCloud
                 DescribeProjectSecurityGroupOutcome DescribeProjectSecurityGroup(const Model::DescribeProjectSecurityGroupRequest &request);
                 void DescribeProjectSecurityGroupAsync(const Model::DescribeProjectSecurityGroupRequest& request, const DescribeProjectSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectSecurityGroupOutcomeCallable DescribeProjectSecurityGroupCallable(const Model::DescribeProjectSecurityGroupRequest& request);
+
+                /**
+                 *查询实例慢查询记录
+                 * @param req DescribeSlowLogRequest
+                 * @return DescribeSlowLogOutcome
+                 */
+                DescribeSlowLogOutcome DescribeSlowLog(const Model::DescribeSlowLogRequest &request);
+                void DescribeSlowLogAsync(const Model::DescribeSlowLogRequest& request, const DescribeSlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowLogOutcomeCallable DescribeSlowLogCallable(const Model::DescribeSlowLogRequest& request);
 
                 /**
                  *用于查询任务结果
@@ -396,6 +569,15 @@ namespace TencentCloud
                 ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
                 void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
+
+                /**
+                 *修改实例子账号
+                 * @param req ModifyInstanceAccountRequest
+                 * @return ModifyInstanceAccountOutcome
+                 */
+                ModifyInstanceAccountOutcome ModifyInstanceAccount(const Model::ModifyInstanceAccountRequest &request);
+                void ModifyInstanceAccountAsync(const Model::ModifyInstanceAccountRequest& request, const ModifyInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceAccountOutcomeCallable ModifyInstanceAccountCallable(const Model::ModifyInstanceAccountRequest& request);
 
                 /**
                  *修改实例参数

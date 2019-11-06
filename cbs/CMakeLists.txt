@@ -22,21 +22,27 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/DetachDisksRequest.h
   include/tencentcloud/cbs/v20170312/model/DescribeDiskOperationLogsResponse.h
   include/tencentcloud/cbs/v20170312/model/ResizeDiskRequest.h
+  include/tencentcloud/cbs/v20170312/model/RenewDiskRequest.h
   include/tencentcloud/cbs/v20170312/model/TerminateDisksResponse.h
+  include/tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionResponse.h
+  include/tencentcloud/cbs/v20170312/model/SharePermission.h
   include/tencentcloud/cbs/v20170312/model/ModifyDiskAttributesResponse.h
   include/tencentcloud/cbs/v20170312/model/TerminateDisksRequest.h
+  include/tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeResponse.h
   include/tencentcloud/cbs/v20170312/model/DescribeDisksRequest.h
   include/tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumRequest.h
   include/tencentcloud/cbs/v20170312/model/AutoSnapshotPolicy.h
   include/tencentcloud/cbs/v20170312/model/Policy.h
-  include/tencentcloud/cbs/v20170312/model/Placement.h
+  include/tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionResponse.h
   include/tencentcloud/cbs/v20170312/model/DescribeSnapshotOperationLogsRequest.h
   include/tencentcloud/cbs/v20170312/model/ModifySnapshotAttributeRequest.h
   include/tencentcloud/cbs/v20170312/model/InquiryPriceRenewDisksRequest.h
+  include/tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionRequest.h
   include/tencentcloud/cbs/v20170312/model/RenewDiskResponse.h
   include/tencentcloud/cbs/v20170312/model/InquiryPriceRenewDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagRequest.h
   include/tencentcloud/cbs/v20170312/model/ModifyAutoSnapshotPolicyAttributeResponse.h
+  include/tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeRequest.h
   include/tencentcloud/cbs/v20170312/model/Price.h
   include/tencentcloud/cbs/v20170312/model/UnbindAutoSnapshotPolicyResponse.h
   include/tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksResponse.h
@@ -66,7 +72,7 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/CreateDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/AttachDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/CreateAutoSnapshotPolicyResponse.h
-  include/tencentcloud/cbs/v20170312/model/RenewDiskRequest.h
+  include/tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionRequest.h
   include/tencentcloud/cbs/v20170312/model/DiskOperationLog.h
   include/tencentcloud/cbs/v20170312/model/UnbindAutoSnapshotPolicyRequest.h
   include/tencentcloud/cbs/v20170312/model/DescribeDiskOperationLogsRequest.h
@@ -83,8 +89,9 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/AttachDetail.h
   include/tencentcloud/cbs/v20170312/model/InquiryPriceResizeDiskResponse.h
   include/tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumResponse.h
-  include/tencentcloud/cbs/v20170312/model/DescribeSnapshotsRequest.h
   include/tencentcloud/cbs/v20170312/model/ResizeDiskResponse.h
+  include/tencentcloud/cbs/v20170312/model/DescribeSnapshotsRequest.h
+  include/tencentcloud/cbs/v20170312/model/Placement.h
   include/tencentcloud/cbs/v20170312/model/CreateAutoSnapshotPolicyRequest.h
   include/tencentcloud/cbs/v20170312/model/Disk.h
   include/tencentcloud/cbs/v20170312/model/ModifyAutoSnapshotPolicyAttributeRequest.h
@@ -97,21 +104,27 @@ set(cbs_src
   src/v20170312/model/DetachDisksRequest.cpp
   src/v20170312/model/DescribeDiskOperationLogsResponse.cpp
   src/v20170312/model/ResizeDiskRequest.cpp
+  src/v20170312/model/RenewDiskRequest.cpp
   src/v20170312/model/TerminateDisksResponse.cpp
+  src/v20170312/model/DescribeSnapshotSharePermissionResponse.cpp
+  src/v20170312/model/SharePermission.cpp
   src/v20170312/model/ModifyDiskAttributesResponse.cpp
   src/v20170312/model/TerminateDisksRequest.cpp
+  src/v20170312/model/ModifyDisksChargeTypeResponse.cpp
   src/v20170312/model/DescribeDisksRequest.cpp
   src/v20170312/model/DescribeInstancesDiskNumRequest.cpp
   src/v20170312/model/AutoSnapshotPolicy.cpp
   src/v20170312/model/Policy.cpp
-  src/v20170312/model/Placement.cpp
+  src/v20170312/model/ModifySnapshotsSharePermissionResponse.cpp
   src/v20170312/model/DescribeSnapshotOperationLogsRequest.cpp
   src/v20170312/model/ModifySnapshotAttributeRequest.cpp
   src/v20170312/model/InquiryPriceRenewDisksRequest.cpp
+  src/v20170312/model/DescribeSnapshotSharePermissionRequest.cpp
   src/v20170312/model/RenewDiskResponse.cpp
   src/v20170312/model/InquiryPriceRenewDisksResponse.cpp
   src/v20170312/model/ModifyDisksRenewFlagRequest.cpp
   src/v20170312/model/ModifyAutoSnapshotPolicyAttributeResponse.cpp
+  src/v20170312/model/ModifyDisksChargeTypeRequest.cpp
   src/v20170312/model/Price.cpp
   src/v20170312/model/UnbindAutoSnapshotPolicyResponse.cpp
   src/v20170312/model/InquiryPriceCreateDisksResponse.cpp
@@ -141,7 +154,7 @@ set(cbs_src
   src/v20170312/model/CreateDisksResponse.cpp
   src/v20170312/model/AttachDisksResponse.cpp
   src/v20170312/model/CreateAutoSnapshotPolicyResponse.cpp
-  src/v20170312/model/RenewDiskRequest.cpp
+  src/v20170312/model/ModifySnapshotsSharePermissionRequest.cpp
   src/v20170312/model/DiskOperationLog.cpp
   src/v20170312/model/UnbindAutoSnapshotPolicyRequest.cpp
   src/v20170312/model/DescribeDiskOperationLogsRequest.cpp
@@ -158,8 +171,9 @@ set(cbs_src
   src/v20170312/model/AttachDetail.cpp
   src/v20170312/model/InquiryPriceResizeDiskResponse.cpp
   src/v20170312/model/DescribeInstancesDiskNumResponse.cpp
-  src/v20170312/model/DescribeSnapshotsRequest.cpp
   src/v20170312/model/ResizeDiskResponse.cpp
+  src/v20170312/model/DescribeSnapshotsRequest.cpp
+  src/v20170312/model/Placement.cpp
   src/v20170312/model/CreateAutoSnapshotPolicyRequest.cpp
   src/v20170312/model/Disk.cpp
   src/v20170312/model/ModifyAutoSnapshotPolicyAttributeRequest.cpp

@@ -127,14 +127,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为 0
-                     * @return Offset 偏移量，默认为 0
+                     * 获取页数，默认为 0
+                     * @return Offset 页数，默认为 0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为 0
-                     * @param Offset 偏移量，默认为 0
+                     * 设置页数，默认为 0
+                     * @param Offset 页数，默认为 0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -145,14 +145,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为50
-                     * @return Limit 返回数量，默认为50
+                     * 获取页大小，默认为50
+                     * @return Limit 页大小，默认为50
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为50
-                     * @param Limit 返回数量，默认为50
+                     * 设置页大小，默认为50
+                     * @param Limit 页大小，默认为50
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -179,6 +179,24 @@ namespace TencentCloud
                      * @return InstanceIdSet 是否已赋值
                      */
                     bool InstanceIdSetHasBeenSet() const;
+
+                    /**
+                     * 获取付费类型检索 1-包年包月，0-按量计费
+                     * @return PayMode 付费类型检索 1-包年包月，0-按量计费
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置付费类型检索 1-包年包月，0-按量计费
+                     * @param PayMode 付费类型检索 1-包年包月，0-按量计费
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
 
                 private:
 
@@ -207,13 +225,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 偏移量，默认为 0
+                     * 页数，默认为 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为50
+                     * 页大小，默认为50
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -223,6 +241,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIdSet;
                     bool m_instanceIdSetHasBeenSet;
+
+                    /**
+                     * 付费类型检索 1-包年包月，0-按量计费
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

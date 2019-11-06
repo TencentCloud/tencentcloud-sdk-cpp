@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取计费类型，当前只支持预付费，即包年包月，取值为PREPAID。默认值为PREPAID
-                     * @return InstanceChargeType 计费类型，当前只支持预付费，即包年包月，取值为PREPAID。默认值为PREPAID
+                     * 获取计费类型，取值支持 PREPAID，POSTPAID。
+                     * @return InstanceChargeType 计费类型，取值支持 PREPAID，POSTPAID。
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置计费类型，当前只支持预付费，即包年包月，取值为PREPAID。默认值为PREPAID
-                     * @param InstanceChargeType 计费类型，当前只支持预付费，即包年包月，取值为PREPAID。默认值为PREPAID
+                     * 设置计费类型，取值支持 PREPAID，POSTPAID。
+                     * @param InstanceChargeType 计费类型，取值支持 PREPAID，POSTPAID。
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取sqlserver版本，目前只支持：2008R2（SQL Server 2008 R2），2012SP3（SQL Server 2012），2016SP1（SQL Server 2016 SP1）两种版本。默认为2008R2版本
-                     * @return DBVersion sqlserver版本，目前只支持：2008R2（SQL Server 2008 R2），2012SP3（SQL Server 2012），2016SP1（SQL Server 2016 SP1）两种版本。默认为2008R2版本
+                     * 获取sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本
+                     * @return DBVersion sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置sqlserver版本，目前只支持：2008R2（SQL Server 2008 R2），2012SP3（SQL Server 2012），2016SP1（SQL Server 2016 SP1）两种版本。默认为2008R2版本
-                     * @param DBVersion sqlserver版本，目前只支持：2008R2（SQL Server 2008 R2），2012SP3（SQL Server 2012），2016SP1（SQL Server 2016 SP1）两种版本。默认为2008R2版本
+                     * 设置sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本
+                     * @param DBVersion sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 计费类型，当前只支持预付费，即包年包月，取值为PREPAID。默认值为PREPAID
+                     * 计费类型，取值支持 PREPAID，POSTPAID。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * sqlserver版本，目前只支持：2008R2（SQL Server 2008 R2），2012SP3（SQL Server 2012），2016SP1（SQL Server 2016 SP1）两种版本。默认为2008R2版本
+                     * sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;

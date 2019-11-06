@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/ScaleOutInstanceResult.h>
 
 
 namespace TencentCloud
@@ -44,24 +43,66 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩容结果
-                     * @return Result 扩容结果
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
                      */
-                    ScaleOutInstanceResult GetResult() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      */
-                    bool ResultHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealNames 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDealNames() const;
+
+                    /**
+                     * 判断参数 DealNames 是否已赋值
+                     * @return DealNames 是否已赋值
+                     */
+                    bool DealNamesHasBeenSet() const;
+
+                    /**
+                     * 获取token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientToken token
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     */
+                    bool ClientTokenHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 扩容结果
+                     * 实例ID
                      */
-                    ScaleOutInstanceResult m_result;
-                    bool m_resultHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_dealNames;
+                    bool m_dealNamesHasBeenSet;
+
+                    /**
+                     * token
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                 };
             }

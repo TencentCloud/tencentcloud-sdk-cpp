@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/CreateInstanceResult.h>
 
 
 namespace TencentCloud
@@ -43,25 +42,7 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
-                    /**
-                     * 获取创建实例结果信息
-                     * @return Result 创建实例结果信息
-                     */
-                    CreateInstanceResult GetResult() const;
-
-                    /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
-                     */
-                    bool ResultHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 创建实例结果信息
-                     */
-                    CreateInstanceResult m_result;
-                    bool m_resultHasBeenSet;
 
                 };
             }

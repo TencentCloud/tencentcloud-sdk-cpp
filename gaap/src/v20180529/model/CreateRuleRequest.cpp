@@ -31,7 +31,8 @@ CreateRuleRequest::CreateRuleRequest() :
     m_schedulerHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_checkParamsHasBeenSet(false),
-    m_forwardProtocolHasBeenSet(false)
+    m_forwardProtocolHasBeenSet(false),
+    m_forwardHostHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string CreateRuleRequest::ToJsonString() const
         string key = "ForwardProtocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_forwardProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardHostHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForwardHost";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_forwardHost.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +250,22 @@ void CreateRuleRequest::SetForwardProtocol(const string& _forwardProtocol)
 bool CreateRuleRequest::ForwardProtocolHasBeenSet() const
 {
     return m_forwardProtocolHasBeenSet;
+}
+
+string CreateRuleRequest::GetForwardHost() const
+{
+    return m_forwardHost;
+}
+
+void CreateRuleRequest::SetForwardHost(const string& _forwardHost)
+{
+    m_forwardHost = _forwardHost;
+    m_forwardHostHasBeenSet = true;
+}
+
+bool CreateRuleRequest::ForwardHostHasBeenSet() const
+{
+    return m_forwardHostHasBeenSet;
 }
 
 

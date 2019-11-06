@@ -24,7 +24,8 @@ using namespace TencentCloud::Iai::V20180301::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateGroupResponse::CreateGroupResponse()
+CreateGroupResponse::CreateGroupResponse() :
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,29 @@ CoreInternalOutcome CreateGroupResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string CreateGroupResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool CreateGroupResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
+}
 
 

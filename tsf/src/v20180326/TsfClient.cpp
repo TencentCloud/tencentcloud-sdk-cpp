@@ -169,6 +169,49 @@ TsfClient::CreateClusterOutcomeCallable TsfClient::CreateClusterCallable(const C
     return task->get_future();
 }
 
+TsfClient::CreateConfigOutcome TsfClient::CreateConfig(const CreateConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigResponse rsp = CreateConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigOutcome(rsp);
+        else
+            return CreateConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateConfigAsync(const CreateConfigRequest& request, const CreateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateConfigOutcomeCallable TsfClient::CreateConfigCallable(const CreateConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateContainGroupOutcome TsfClient::CreateContainGroup(const CreateContainGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContainGroup");
@@ -341,6 +384,49 @@ TsfClient::CreateNamespaceOutcomeCallable TsfClient::CreateNamespaceCallable(con
     return task->get_future();
 }
 
+TsfClient::CreatePublicConfigOutcome TsfClient::CreatePublicConfig(const CreatePublicConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePublicConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePublicConfigResponse rsp = CreatePublicConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePublicConfigOutcome(rsp);
+        else
+            return CreatePublicConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePublicConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreatePublicConfigAsync(const CreatePublicConfigRequest& request, const CreatePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePublicConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreatePublicConfigOutcomeCallable TsfClient::CreatePublicConfigCallable(const CreatePublicConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePublicConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeleteApplicationOutcome TsfClient::DeleteApplication(const DeleteApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApplication");
@@ -377,6 +463,49 @@ TsfClient::DeleteApplicationOutcomeCallable TsfClient::DeleteApplicationCallable
         [this, request]()
         {
             return this->DeleteApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeleteConfigOutcome TsfClient::DeleteConfig(const DeleteConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigResponse rsp = DeleteConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigOutcome(rsp);
+        else
+            return DeleteConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteConfigAsync(const DeleteConfigRequest& request, const DeleteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteConfigOutcomeCallable TsfClient::DeleteConfigCallable(const DeleteConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfig(request);
         }
     );
 
@@ -642,6 +771,49 @@ TsfClient::DeletePkgsOutcomeCallable TsfClient::DeletePkgsCallable(const DeleteP
     return task->get_future();
 }
 
+TsfClient::DeletePublicConfigOutcome TsfClient::DeletePublicConfig(const DeletePublicConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePublicConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePublicConfigResponse rsp = DeletePublicConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePublicConfigOutcome(rsp);
+        else
+            return DeletePublicConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePublicConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeletePublicConfigAsync(const DeletePublicConfigRequest& request, const DeletePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePublicConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeletePublicConfigOutcomeCallable TsfClient::DeletePublicConfigCallable(const DeletePublicConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePublicConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeployContainerGroupOutcome TsfClient::DeployContainerGroup(const DeployContainerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeployContainerGroup");
@@ -893,6 +1065,221 @@ TsfClient::DescribeClusterInstancesOutcomeCallable TsfClient::DescribeClusterIns
         [this, request]()
         {
             return this->DescribeClusterInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeConfigOutcome TsfClient::DescribeConfig(const DescribeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigResponse rsp = DescribeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigOutcome(rsp);
+        else
+            return DescribeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeConfigAsync(const DescribeConfigRequest& request, const DescribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeConfigOutcomeCallable TsfClient::DescribeConfigCallable(const DescribeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeConfigReleaseLogsOutcome TsfClient::DescribeConfigReleaseLogs(const DescribeConfigReleaseLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigReleaseLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigReleaseLogsResponse rsp = DescribeConfigReleaseLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigReleaseLogsOutcome(rsp);
+        else
+            return DescribeConfigReleaseLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigReleaseLogsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeConfigReleaseLogsAsync(const DescribeConfigReleaseLogsRequest& request, const DescribeConfigReleaseLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigReleaseLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeConfigReleaseLogsOutcomeCallable TsfClient::DescribeConfigReleaseLogsCallable(const DescribeConfigReleaseLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigReleaseLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigReleaseLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeConfigReleasesOutcome TsfClient::DescribeConfigReleases(const DescribeConfigReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigReleasesResponse rsp = DescribeConfigReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigReleasesOutcome(rsp);
+        else
+            return DescribeConfigReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeConfigReleasesAsync(const DescribeConfigReleasesRequest& request, const DescribeConfigReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeConfigReleasesOutcomeCallable TsfClient::DescribeConfigReleasesCallable(const DescribeConfigReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigReleases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeConfigSummaryOutcome TsfClient::DescribeConfigSummary(const DescribeConfigSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigSummaryResponse rsp = DescribeConfigSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigSummaryOutcome(rsp);
+        else
+            return DescribeConfigSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeConfigSummaryAsync(const DescribeConfigSummaryRequest& request, const DescribeConfigSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeConfigSummaryOutcomeCallable TsfClient::DescribeConfigSummaryCallable(const DescribeConfigSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeConfigsOutcome TsfClient::DescribeConfigs(const DescribeConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigsResponse rsp = DescribeConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigsOutcome(rsp);
+        else
+            return DescribeConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeConfigsAsync(const DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeConfigsOutcomeCallable TsfClient::DescribeConfigsCallable(const DescribeConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigs(request);
         }
     );
 
@@ -1330,6 +1717,264 @@ TsfClient::DescribePkgsOutcomeCallable TsfClient::DescribePkgsCallable(const Des
     return task->get_future();
 }
 
+TsfClient::DescribePublicConfigOutcome TsfClient::DescribePublicConfig(const DescribePublicConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicConfigResponse rsp = DescribePublicConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicConfigOutcome(rsp);
+        else
+            return DescribePublicConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePublicConfigAsync(const DescribePublicConfigRequest& request, const DescribePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePublicConfigOutcomeCallable TsfClient::DescribePublicConfigCallable(const DescribePublicConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribePublicConfigReleaseLogsOutcome TsfClient::DescribePublicConfigReleaseLogs(const DescribePublicConfigReleaseLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicConfigReleaseLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicConfigReleaseLogsResponse rsp = DescribePublicConfigReleaseLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicConfigReleaseLogsOutcome(rsp);
+        else
+            return DescribePublicConfigReleaseLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicConfigReleaseLogsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePublicConfigReleaseLogsAsync(const DescribePublicConfigReleaseLogsRequest& request, const DescribePublicConfigReleaseLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicConfigReleaseLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePublicConfigReleaseLogsOutcomeCallable TsfClient::DescribePublicConfigReleaseLogsCallable(const DescribePublicConfigReleaseLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicConfigReleaseLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicConfigReleaseLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribePublicConfigReleasesOutcome TsfClient::DescribePublicConfigReleases(const DescribePublicConfigReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicConfigReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicConfigReleasesResponse rsp = DescribePublicConfigReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicConfigReleasesOutcome(rsp);
+        else
+            return DescribePublicConfigReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicConfigReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePublicConfigReleasesAsync(const DescribePublicConfigReleasesRequest& request, const DescribePublicConfigReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicConfigReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePublicConfigReleasesOutcomeCallable TsfClient::DescribePublicConfigReleasesCallable(const DescribePublicConfigReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicConfigReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicConfigReleases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribePublicConfigSummaryOutcome TsfClient::DescribePublicConfigSummary(const DescribePublicConfigSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicConfigSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicConfigSummaryResponse rsp = DescribePublicConfigSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicConfigSummaryOutcome(rsp);
+        else
+            return DescribePublicConfigSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicConfigSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePublicConfigSummaryAsync(const DescribePublicConfigSummaryRequest& request, const DescribePublicConfigSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicConfigSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePublicConfigSummaryOutcomeCallable TsfClient::DescribePublicConfigSummaryCallable(const DescribePublicConfigSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicConfigSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicConfigSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribePublicConfigsOutcome TsfClient::DescribePublicConfigs(const DescribePublicConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicConfigsResponse rsp = DescribePublicConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicConfigsOutcome(rsp);
+        else
+            return DescribePublicConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePublicConfigsAsync(const DescribePublicConfigsRequest& request, const DescribePublicConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePublicConfigsOutcomeCallable TsfClient::DescribePublicConfigsCallable(const DescribePublicConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeReleasedConfigOutcome TsfClient::DescribeReleasedConfig(const DescribeReleasedConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReleasedConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReleasedConfigResponse rsp = DescribeReleasedConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReleasedConfigOutcome(rsp);
+        else
+            return DescribeReleasedConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReleasedConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeReleasedConfigAsync(const DescribeReleasedConfigRequest& request, const DescribeReleasedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReleasedConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeReleasedConfigOutcomeCallable TsfClient::DescribeReleasedConfigCallable(const DescribeReleasedConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReleasedConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReleasedConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeSimpleApplicationsOutcome TsfClient::DescribeSimpleApplications(const DescribeSimpleApplicationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSimpleApplications");
@@ -1760,6 +2405,92 @@ TsfClient::ModifyUploadInfoOutcomeCallable TsfClient::ModifyUploadInfoCallable(c
     return task->get_future();
 }
 
+TsfClient::ReleaseConfigOutcome TsfClient::ReleaseConfig(const ReleaseConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseConfigResponse rsp = ReleaseConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseConfigOutcome(rsp);
+        else
+            return ReleaseConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ReleaseConfigAsync(const ReleaseConfigRequest& request, const ReleaseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ReleaseConfigOutcomeCallable TsfClient::ReleaseConfigCallable(const ReleaseConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ReleasePublicConfigOutcome TsfClient::ReleasePublicConfig(const ReleasePublicConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleasePublicConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleasePublicConfigResponse rsp = ReleasePublicConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleasePublicConfigOutcome(rsp);
+        else
+            return ReleasePublicConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleasePublicConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ReleasePublicConfigAsync(const ReleasePublicConfigRequest& request, const ReleasePublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleasePublicConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ReleasePublicConfigOutcomeCallable TsfClient::ReleasePublicConfigCallable(const ReleasePublicConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleasePublicConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleasePublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::RemoveInstancesOutcome TsfClient::RemoveInstances(const RemoveInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveInstances");
@@ -1796,6 +2527,135 @@ TsfClient::RemoveInstancesOutcomeCallable TsfClient::RemoveInstancesCallable(con
         [this, request]()
         {
             return this->RemoveInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RevocationConfigOutcome TsfClient::RevocationConfig(const RevocationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevocationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevocationConfigResponse rsp = RevocationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevocationConfigOutcome(rsp);
+        else
+            return RevocationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return RevocationConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RevocationConfigAsync(const RevocationConfigRequest& request, const RevocationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevocationConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RevocationConfigOutcomeCallable TsfClient::RevocationConfigCallable(const RevocationConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevocationConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->RevocationConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RevocationPublicConfigOutcome TsfClient::RevocationPublicConfig(const RevocationPublicConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevocationPublicConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevocationPublicConfigResponse rsp = RevocationPublicConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevocationPublicConfigOutcome(rsp);
+        else
+            return RevocationPublicConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return RevocationPublicConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RevocationPublicConfigAsync(const RevocationPublicConfigRequest& request, const RevocationPublicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevocationPublicConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RevocationPublicConfigOutcomeCallable TsfClient::RevocationPublicConfigCallable(const RevocationPublicConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevocationPublicConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->RevocationPublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RollbackConfigOutcome TsfClient::RollbackConfig(const RollbackConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackConfigResponse rsp = RollbackConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackConfigOutcome(rsp);
+        else
+            return RollbackConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RollbackConfigAsync(const RollbackConfigRequest& request, const RollbackConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RollbackConfigOutcomeCallable TsfClient::RollbackConfigCallable(const RollbackConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackConfig(request);
         }
     );
 

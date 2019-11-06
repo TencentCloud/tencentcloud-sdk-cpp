@@ -396,6 +396,18 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用L5
+                     * @return L5Enable 是否启用L5
+                     */
+                    std::string GetL5Enable() const;
+
+                    /**
+                     * 判断参数 L5Enable 是否已赋值
+                     * @return L5Enable 是否已赋值
+                     */
+                    bool L5EnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -571,6 +583,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 是否启用L5
+                     */
+                    std::string m_l5Enable;
+                    bool m_l5EnableHasBeenSet;
 
                 };
             }

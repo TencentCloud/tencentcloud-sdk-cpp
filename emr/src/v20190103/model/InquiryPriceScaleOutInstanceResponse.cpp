@@ -25,7 +25,10 @@ using namespace rapidjson;
 using namespace std;
 
 InquiryPriceScaleOutInstanceResponse::InquiryPriceScaleOutInstanceResponse() :
-    m_resultHasBeenSet(false)
+    m_originalCostHasBeenSet(false),
+    m_discountCostHasBeenSet(false),
+    m_unitHasBeenSet(false),
+    m_priceSpecHasBeenSet(false)
 {
 }
 
@@ -63,21 +66,51 @@ CoreInternalOutcome InquiryPriceScaleOutInstanceResponse::Deserialize(const stri
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("OriginalCost") && !rsp["OriginalCost"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["OriginalCost"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OriginalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalCost = string(rsp["OriginalCost"].GetString());
+        m_originalCostHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DiscountCost") && !rsp["DiscountCost"].IsNull())
+    {
+        if (!rsp["DiscountCost"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DiscountCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountCost = string(rsp["DiscountCost"].GetString());
+        m_discountCostHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Unit") && !rsp["Unit"].IsNull())
+    {
+        if (!rsp["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(rsp["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PriceSpec") && !rsp["PriceSpec"].IsNull())
+    {
+        if (!rsp["PriceSpec"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PriceSpec` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        CoreInternalOutcome outcome = m_priceSpec.Deserialize(rsp["PriceSpec"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_resultHasBeenSet = true;
+        m_priceSpecHasBeenSet = true;
     }
 
 
@@ -85,14 +118,44 @@ CoreInternalOutcome InquiryPriceScaleOutInstanceResponse::Deserialize(const stri
 }
 
 
-InquiryPriceResult InquiryPriceScaleOutInstanceResponse::GetResult() const
+string InquiryPriceScaleOutInstanceResponse::GetOriginalCost() const
 {
-    return m_result;
+    return m_originalCost;
 }
 
-bool InquiryPriceScaleOutInstanceResponse::ResultHasBeenSet() const
+bool InquiryPriceScaleOutInstanceResponse::OriginalCostHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_originalCostHasBeenSet;
+}
+
+string InquiryPriceScaleOutInstanceResponse::GetDiscountCost() const
+{
+    return m_discountCost;
+}
+
+bool InquiryPriceScaleOutInstanceResponse::DiscountCostHasBeenSet() const
+{
+    return m_discountCostHasBeenSet;
+}
+
+string InquiryPriceScaleOutInstanceResponse::GetUnit() const
+{
+    return m_unit;
+}
+
+bool InquiryPriceScaleOutInstanceResponse::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
+}
+
+PriceResource InquiryPriceScaleOutInstanceResponse::GetPriceSpec() const
+{
+    return m_priceSpec;
+}
+
+bool InquiryPriceScaleOutInstanceResponse::PriceSpecHasBeenSet() const
+{
+    return m_priceSpecHasBeenSet;
 }
 
 

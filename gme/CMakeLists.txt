@@ -19,44 +19,72 @@ set(gme_public_header
   )
 
 set(gme_public_header_model
-  include/tencentcloud/gme/v20180711/model/ScanVoiceRequest.h
-  include/tencentcloud/gme/v20180711/model/ScanDetail.h
-  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilter.h
-  include/tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h
-  include/tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h
-  include/tencentcloud/gme/v20180711/model/ScanVoiceResult.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilterRequest.h
-  include/tencentcloud/gme/v20180711/model/ScanPiece.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceResponse.h
-  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
+  include/tencentcloud/gme/v20180711/model/AppStatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/ModifyAppStatusRequest.h
+  include/tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h
+  include/tencentcloud/gme/v20180711/model/VoiceFilterRequest.h
+  include/tencentcloud/gme/v20180711/model/VoiceMessageStatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h
+  include/tencentcloud/gme/v20180711/model/RealTimeSpeechStatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/VoiceFilterResponse.h
+  include/tencentcloud/gme/v20180711/model/Tag.h
+  include/tencentcloud/gme/v20180711/model/VoiceMessageConf.h
+  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h
+  include/tencentcloud/gme/v20180711/model/DescribeAppStatisticsResponse.h
   include/tencentcloud/gme/v20180711/model/Task.h
+  include/tencentcloud/gme/v20180711/model/VoiceFilterStatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResult.h
+  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h
+  include/tencentcloud/gme/v20180711/model/VoiceFilter.h
+  include/tencentcloud/gme/v20180711/model/ScanDetail.h
+  include/tencentcloud/gme/v20180711/model/CreateAppRequest.h
+  include/tencentcloud/gme/v20180711/model/RealtimeSpeechConf.h
+  include/tencentcloud/gme/v20180711/model/ScanVoiceResult.h
+  include/tencentcloud/gme/v20180711/model/CreateAppResponse.h
+  include/tencentcloud/gme/v20180711/model/DescribeAppStatisticsRequest.h
+  include/tencentcloud/gme/v20180711/model/ScanPiece.h
+  include/tencentcloud/gme/v20180711/model/ModifyAppStatusResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilterResponse.h
+  include/tencentcloud/gme/v20180711/model/VoiceFilterConf.h
+  include/tencentcloud/gme/v20180711/model/ScanVoiceRequest.h
   )
 
 set(gme_src
   src/v20180711/GmeClient.cpp
-  src/v20180711/model/ScanVoiceRequest.cpp
-  src/v20180711/model/ScanDetail.cpp
-  src/v20180711/model/DescribeFilterResultListResponse.cpp
-  src/v20180711/model/VoiceFilter.cpp
-  src/v20180711/model/DescribeScanResultListRequest.cpp
-  src/v20180711/model/DescribeScanResultListResponse.cpp
-  src/v20180711/model/ScanVoiceResult.cpp
-  src/v20180711/model/VoiceFilterRequest.cpp
-  src/v20180711/model/ScanPiece.cpp
   src/v20180711/model/ScanVoiceResponse.cpp
-  src/v20180711/model/DescribeFilterResultListRequest.cpp
-  src/v20180711/model/VoiceFilterInfo.cpp
+  src/v20180711/model/AppStatisticsItem.cpp
+  src/v20180711/model/ModifyAppStatusRequest.cpp
+  src/v20180711/model/DescribeScanResultListResponse.cpp
+  src/v20180711/model/VoiceFilterRequest.cpp
+  src/v20180711/model/VoiceMessageStatisticsItem.cpp
+  src/v20180711/model/DescribeScanResultListRequest.cpp
+  src/v20180711/model/RealTimeSpeechStatisticsItem.cpp
+  src/v20180711/model/VoiceFilterResponse.cpp
+  src/v20180711/model/Tag.cpp
+  src/v20180711/model/VoiceMessageConf.cpp
+  src/v20180711/model/DescribeFilterResultListResponse.cpp
+  src/v20180711/model/DescribeAppStatisticsResponse.cpp
   src/v20180711/model/Task.cpp
+  src/v20180711/model/VoiceFilterStatisticsItem.cpp
+  src/v20180711/model/VoiceFilterInfo.cpp
   src/v20180711/model/DescribeFilterResultResponse.cpp
   src/v20180711/model/DescribeScanResult.cpp
+  src/v20180711/model/DescribeFilterResultListRequest.cpp
+  src/v20180711/model/VoiceFilter.cpp
+  src/v20180711/model/ScanDetail.cpp
+  src/v20180711/model/CreateAppRequest.cpp
+  src/v20180711/model/RealtimeSpeechConf.cpp
+  src/v20180711/model/ScanVoiceResult.cpp
+  src/v20180711/model/CreateAppResponse.cpp
+  src/v20180711/model/DescribeAppStatisticsRequest.cpp
+  src/v20180711/model/ScanPiece.cpp
+  src/v20180711/model/ModifyAppStatusResponse.cpp
   src/v20180711/model/DescribeFilterResultRequest.cpp
-  src/v20180711/model/VoiceFilterResponse.cpp
+  src/v20180711/model/VoiceFilterConf.cpp
+  src/v20180711/model/ScanVoiceRequest.cpp
   )
 
 set(gme_include

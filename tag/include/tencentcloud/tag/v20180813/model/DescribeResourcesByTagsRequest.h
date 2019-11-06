@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tag/v20180813/model/TagFilters.h>
+#include <tencentcloud/tag/v20180813/model/TagFilter.h>
 
 
 namespace TencentCloud
@@ -47,13 +47,13 @@ namespace TencentCloud
                      * 获取标签过滤数组
                      * @return TagFilters 标签过滤数组
                      */
-                    std::vector<TagFilters> GetTagFilters() const;
+                    std::vector<TagFilter> GetTagFilters() const;
 
                     /**
                      * 设置标签过滤数组
                      * @param TagFilters 标签过滤数组
                      */
-                    void SetTagFilters(const std::vector<TagFilters>& _tagFilters);
+                    void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
                     /**
                      * 判断参数 TagFilters 是否已赋值
@@ -192,7 +192,7 @@ namespace TencentCloud
                     /**
                      * 标签过滤数组
                      */
-                    std::vector<TagFilters> m_tagFilters;
+                    std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
 
                     /**

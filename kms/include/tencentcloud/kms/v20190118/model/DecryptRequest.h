@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取被加密的密文数据
-                     * @return CiphertextBlob 被加密的密文数据
+                     * 获取待解密的密文数据
+                     * @return CiphertextBlob 待解密的密文数据
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
-                     * 设置被加密的密文数据
-                     * @param CiphertextBlob 被加密的密文数据
+                     * 设置待解密的密文数据
+                     * @param CiphertextBlob 待解密的密文数据
                      */
                     void SetCiphertextBlob(const std::string& _ciphertextBlob);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 被加密的密文数据
+                     * 待解密的密文数据
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;

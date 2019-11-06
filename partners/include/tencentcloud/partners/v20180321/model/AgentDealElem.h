@@ -537,6 +537,28 @@ namespace TencentCloud
                      */
                     bool PayerModeHasBeenSet() const;
 
+                    /**
+                     * 获取活动ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActivityId 活动ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetActivityId() const;
+
+                    /**
+                     * 设置活动ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ActivityId 活动ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetActivityId(const std::string& _activityId);
+
+                    /**
+                     * 判断参数 ActivityId 是否已赋值
+                     * @return ActivityId 是否已赋值
+                     */
+                    bool ActivityIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -695,6 +717,13 @@ namespace TencentCloud
                      */
                     std::string m_payerMode;
                     bool m_payerModeHasBeenSet;
+
+                    /**
+                     * 活动ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_activityId;
+                    bool m_activityIdHasBeenSet;
 
                 };
             }

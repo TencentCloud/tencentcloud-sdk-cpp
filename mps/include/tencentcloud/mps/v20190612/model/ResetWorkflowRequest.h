@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
-                     * 获取任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @return TaskPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 获取工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @return TaskPriority 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      */
                     int64_t GetTaskPriority() const;
 
                     /**
-                     * 设置任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @param TaskPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 设置工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @param TaskPriority 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      */
                     void SetTaskPriority(const int64_t& _taskPriority);
 
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_mediaProcessTaskHasBeenSet;
 
                     /**
-                     * 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      */
                     int64_t m_taskPriority;
                     bool m_taskPriorityHasBeenSet;
