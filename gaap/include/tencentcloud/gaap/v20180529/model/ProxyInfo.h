@@ -498,6 +498,28 @@ UNKNOWN，未知状态。
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持安全组配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportSecurity 是否支持安全组配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSupportSecurity() const;
+
+                    /**
+                     * 设置是否支持安全组配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SupportSecurity 是否支持安全组配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSupportSecurity(const int64_t& _supportSecurity);
+
+                    /**
+                     * 判断参数 SupportSecurity 是否已赋值
+                     * @return SupportSecurity 是否已赋值
+                     */
+                    bool SupportSecurityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,6 +665,13 @@ UNKNOWN，未知状态。
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 是否支持安全组配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_supportSecurity;
+                    bool m_supportSecurityHasBeenSet;
 
                 };
             }

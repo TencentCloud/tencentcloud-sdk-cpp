@@ -28,7 +28,10 @@ DescribePlayErrorCodeSumInfoListRequest::DescribePlayErrorCodeSumInfoListRequest
     m_endTimeHasBeenSet(false),
     m_playDomainsHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_mainlandOrOverseaHasBeenSet(false),
+    m_groupTypeHasBeenSet(false),
+    m_outLanguageHasBeenSet(false)
 {
 }
 
@@ -82,6 +85,30 @@ string DescribePlayErrorCodeSumInfoListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_mainlandOrOverseaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MainlandOrOversea";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outLanguageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OutLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_outLanguage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +197,54 @@ void DescribePlayErrorCodeSumInfoListRequest::SetPageSize(const uint64_t& _pageS
 bool DescribePlayErrorCodeSumInfoListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribePlayErrorCodeSumInfoListRequest::GetMainlandOrOversea() const
+{
+    return m_mainlandOrOversea;
+}
+
+void DescribePlayErrorCodeSumInfoListRequest::SetMainlandOrOversea(const string& _mainlandOrOversea)
+{
+    m_mainlandOrOversea = _mainlandOrOversea;
+    m_mainlandOrOverseaHasBeenSet = true;
+}
+
+bool DescribePlayErrorCodeSumInfoListRequest::MainlandOrOverseaHasBeenSet() const
+{
+    return m_mainlandOrOverseaHasBeenSet;
+}
+
+string DescribePlayErrorCodeSumInfoListRequest::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void DescribePlayErrorCodeSumInfoListRequest::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool DescribePlayErrorCodeSumInfoListRequest::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
+}
+
+string DescribePlayErrorCodeSumInfoListRequest::GetOutLanguage() const
+{
+    return m_outLanguage;
+}
+
+void DescribePlayErrorCodeSumInfoListRequest::SetOutLanguage(const string& _outLanguage)
+{
+    m_outLanguage = _outLanguage;
+    m_outLanguageHasBeenSet = true;
+}
+
+bool DescribePlayErrorCodeSumInfoListRequest::OutLanguageHasBeenSet() const
+{
+    return m_outLanguageHasBeenSet;
 }
 
 

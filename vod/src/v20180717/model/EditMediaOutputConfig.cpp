@@ -22,7 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 EditMediaOutputConfig::EditMediaOutputConfig() :
+    m_mediaNameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_classIdHasBeenSet(false),
     m_expireTimeHasBeenSet(false)
 {
 }
@@ -32,6 +34,16 @@ CoreInternalOutcome EditMediaOutputConfig::Deserialize(const Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("MediaName") && !value["MediaName"].IsNull())
+    {
+        if (!value["MediaName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaOutputConfig.MediaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaName = string(value["MediaName"].GetString());
+        m_mediaNameHasBeenSet = true;
+    }
+
     if (value.HasMember("Type") && !value["Type"].IsNull())
     {
         if (!value["Type"].IsString())
@@ -40,6 +52,16 @@ CoreInternalOutcome EditMediaOutputConfig::Deserialize(const Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClassId") && !value["ClassId"].IsNull())
+    {
+        if (!value["ClassId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaOutputConfig.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_classId = value["ClassId"].GetInt64();
+        m_classIdHasBeenSet = true;
     }
 
     if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
@@ -59,12 +81,28 @@ CoreInternalOutcome EditMediaOutputConfig::Deserialize(const Value &value)
 void EditMediaOutputConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_mediaNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MediaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_mediaName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_typeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClassId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_classId, allocator);
     }
 
     if (m_expireTimeHasBeenSet)
@@ -77,6 +115,22 @@ void EditMediaOutputConfig::ToJsonObject(Value &value, Document::AllocatorType& 
 
 }
 
+
+string EditMediaOutputConfig::GetMediaName() const
+{
+    return m_mediaName;
+}
+
+void EditMediaOutputConfig::SetMediaName(const string& _mediaName)
+{
+    m_mediaName = _mediaName;
+    m_mediaNameHasBeenSet = true;
+}
+
+bool EditMediaOutputConfig::MediaNameHasBeenSet() const
+{
+    return m_mediaNameHasBeenSet;
+}
 
 string EditMediaOutputConfig::GetType() const
 {
@@ -92,6 +146,22 @@ void EditMediaOutputConfig::SetType(const string& _type)
 bool EditMediaOutputConfig::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+int64_t EditMediaOutputConfig::GetClassId() const
+{
+    return m_classId;
+}
+
+void EditMediaOutputConfig::SetClassId(const int64_t& _classId)
+{
+    m_classId = _classId;
+    m_classIdHasBeenSet = true;
+}
+
+bool EditMediaOutputConfig::ClassIdHasBeenSet() const
+{
+    return m_classIdHasBeenSet;
 }
 
 string EditMediaOutputConfig::GetExpireTime() const

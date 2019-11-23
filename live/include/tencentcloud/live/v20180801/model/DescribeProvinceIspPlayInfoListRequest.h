@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool PlayDomainsHasBeenSet() const;
 
                     /**
-                     * 获取非必传参数，要查询的省份（地区）英文名称列表，如 Beijing
-                     * @return ProvinceNames 非必传参数，要查询的省份（地区）英文名称列表，如 Beijing
+                     * 获取要查询的省份（地区）英文名称列表，如 Beijing。
+                     * @return ProvinceNames 要查询的省份（地区）英文名称列表，如 Beijing。
                      */
                     std::vector<std::string> GetProvinceNames() const;
 
                     /**
-                     * 设置非必传参数，要查询的省份（地区）英文名称列表，如 Beijing
-                     * @param ProvinceNames 非必传参数，要查询的省份（地区）英文名称列表，如 Beijing
+                     * 设置要查询的省份（地区）英文名称列表，如 Beijing。
+                     * @param ProvinceNames 要查询的省份（地区）英文名称列表，如 Beijing。
                      */
                     void SetProvinceNames(const std::vector<std::string>& _provinceNames);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool ProvinceNamesHasBeenSet() const;
 
                     /**
-                     * 获取非必传参数，要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据
-                     * @return IspNames 非必传参数，要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据
+                     * 获取要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据。
+                     * @return IspNames 要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据。
                      */
                     std::vector<std::string> GetIspNames() const;
 
                     /**
-                     * 设置非必传参数，要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据
-                     * @param IspNames 非必传参数，要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据
+                     * 设置要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据。
+                     * @param IspNames 要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据。
                      */
                     void SetIspNames(const std::vector<std::string>& _ispNames);
 
@@ -203,6 +203,24 @@ namespace TencentCloud
                      * @return IspNames 是否已赋值
                      */
                     bool IspNamesHasBeenSet() const;
+
+                    /**
+                     * 获取地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * @return MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    std::string GetMainlandOrOversea() const;
+
+                    /**
+                     * 设置地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * @param MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
+
+                    /**
+                     * 判断参数 MainlandOrOversea 是否已赋值
+                     * @return MainlandOrOversea 是否已赋值
+                     */
+                    bool MainlandOrOverseaHasBeenSet() const;
 
                 private:
 
@@ -246,16 +264,22 @@ namespace TencentCloud
                     bool m_playDomainsHasBeenSet;
 
                     /**
-                     * 非必传参数，要查询的省份（地区）英文名称列表，如 Beijing
+                     * 要查询的省份（地区）英文名称列表，如 Beijing。
                      */
                     std::vector<std::string> m_provinceNames;
                     bool m_provinceNamesHasBeenSet;
 
                     /**
-                     * 非必传参数，要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据
+                     * 要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据。
                      */
                     std::vector<std::string> m_ispNames;
                     bool m_ispNamesHasBeenSet;
+
+                    /**
+                     * 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    std::string m_mainlandOrOversea;
+                    bool m_mainlandOrOverseaHasBeenSet;
 
                 };
             }

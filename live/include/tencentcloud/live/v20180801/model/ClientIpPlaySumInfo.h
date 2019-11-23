@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool TotalFailedRequestHasBeenSet() const;
 
+                    /**
+                     * 获取客户端所在国家。
+                     * @return CountryArea 客户端所在国家。
+                     */
+                    std::string GetCountryArea() const;
+
+                    /**
+                     * 设置客户端所在国家。
+                     * @param CountryArea 客户端所在国家。
+                     */
+                    void SetCountryArea(const std::string& _countryArea);
+
+                    /**
+                     * 判断参数 CountryArea 是否已赋值
+                     * @return CountryArea 是否已赋值
+                     */
+                    bool CountryAreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalFailedRequest;
                     bool m_totalFailedRequestHasBeenSet;
+
+                    /**
+                     * 客户端所在国家。
+                     */
+                    std::string m_countryArea;
+                    bool m_countryAreaHasBeenSet;
 
                 };
             }

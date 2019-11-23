@@ -65,13 +65,13 @@ namespace TencentCloud
                      * 获取服务配置Id
                      * @return ServiceConfigId 服务配置Id
                      */
-                    int64_t GetServiceConfigId() const;
+                    std::string GetServiceConfigId() const;
 
                     /**
                      * 设置服务配置Id
                      * @param ServiceConfigId 服务配置Id
                      */
-                    void SetServiceConfigId(const int64_t& _serviceConfigId);
+                    void SetServiceConfigId(const std::string& _serviceConfigId);
 
                     /**
                      * 判断参数 ServiceConfigId 是否已赋值
@@ -116,14 +116,50 @@ namespace TencentCloud
                     bool ScaleModeHasBeenSet() const;
 
                     /**
-                     * 获取集群，不填则使用默认集群。
-                     * @return Cluster 集群，不填则使用默认集群。
+                     * 获取处理器配置, 单位为1/1000核；范围[100, 256000]
+                     * @return Cpu 处理器配置, 单位为1/1000核；范围[100, 256000]
+                     */
+                    uint64_t GetCpu() const;
+
+                    /**
+                     * 设置处理器配置, 单位为1/1000核；范围[100, 256000]
+                     * @param Cpu 处理器配置, 单位为1/1000核；范围[100, 256000]
+                     */
+                    void SetCpu(const uint64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取内存配置, 单位为1M；范围[100, 256000]
+                     * @return Memory 内存配置, 单位为1M；范围[100, 256000]
+                     */
+                    uint64_t GetMemory() const;
+
+                    /**
+                     * 设置内存配置, 单位为1M；范围[100, 256000]
+                     * @param Memory 内存配置, 单位为1M；范围[100, 256000]
+                     */
+                    void SetMemory(const uint64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取集群，不填则使用默认集群
+                     * @return Cluster 集群，不填则使用默认集群
                      */
                     std::string GetCluster() const;
 
                     /**
-                     * 设置集群，不填则使用默认集群。
-                     * @param Cluster 集群，不填则使用默认集群。
+                     * 设置集群，不填则使用默认集群
+                     * @param Cluster 集群，不填则使用默认集群
                      */
                     void SetCluster(const std::string& _cluster);
 
@@ -132,6 +168,114 @@ namespace TencentCloud
                      * @return Cluster 是否已赋值
                      */
                     bool ClusterHasBeenSet() const;
+
+                    /**
+                     * 获取部署要使用的资源组Id，默认为共享资源组
+                     * @return ResourceGroupId 部署要使用的资源组Id，默认为共享资源组
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置部署要使用的资源组Id，默认为共享资源组
+                     * @param ResourceGroupId 部署要使用的资源组Id，默认为共享资源组
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式
+                     * @return Authentication 默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式
+                     */
+                    std::string GetAuthentication() const;
+
+                    /**
+                     * 设置默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式
+                     * @param Authentication 默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式
+                     */
+                    void SetAuthentication(const std::string& _authentication);
+
+                    /**
+                     * 判断参数 Authentication 是否已赋值
+                     * @return Authentication 是否已赋值
+                     */
+                    bool AuthenticationHasBeenSet() const;
+
+                    /**
+                     * 获取GPU算力配置，单位为1/1000 卡，范围 [0, 256000]
+                     * @return Gpu GPU算力配置，单位为1/1000 卡，范围 [0, 256000]
+                     */
+                    uint64_t GetGpu() const;
+
+                    /**
+                     * 设置GPU算力配置，单位为1/1000 卡，范围 [0, 256000]
+                     * @param Gpu GPU算力配置，单位为1/1000 卡，范围 [0, 256000]
+                     */
+                    void SetGpu(const uint64_t& _gpu);
+
+                    /**
+                     * 判断参数 Gpu 是否已赋值
+                     * @return Gpu 是否已赋值
+                     */
+                    bool GpuHasBeenSet() const;
+
+                    /**
+                     * 获取显存配置, 单位为1M，范围 [0, 256000]
+                     * @return GpuMemory 显存配置, 单位为1M，范围 [0, 256000]
+                     */
+                    uint64_t GetGpuMemory() const;
+
+                    /**
+                     * 设置显存配置, 单位为1M，范围 [0, 256000]
+                     * @param GpuMemory 显存配置, 单位为1M，范围 [0, 256000]
+                     */
+                    void SetGpuMemory(const uint64_t& _gpuMemory);
+
+                    /**
+                     * 判断参数 GpuMemory 是否已赋值
+                     * @return GpuMemory 是否已赋值
+                     */
+                    bool GpuMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+                     * @return Description 备注
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置备注
+                     * @param Description 备注
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取GPU类型
+                     * @return GpuType GPU类型
+                     */
+                    std::string GetGpuType() const;
+
+                    /**
+                     * 设置GPU类型
+                     * @param GpuType GPU类型
+                     */
+                    void SetGpuType(const std::string& _gpuType);
+
+                    /**
+                     * 判断参数 GpuType 是否已赋值
+                     * @return GpuType 是否已赋值
+                     */
+                    bool GpuTypeHasBeenSet() const;
 
                 private:
 
@@ -144,7 +288,7 @@ namespace TencentCloud
                     /**
                      * 服务配置Id
                      */
-                    int64_t m_serviceConfigId;
+                    std::string m_serviceConfigId;
                     bool m_serviceConfigIdHasBeenSet;
 
                     /**
@@ -160,10 +304,58 @@ namespace TencentCloud
                     bool m_scaleModeHasBeenSet;
 
                     /**
-                     * 集群，不填则使用默认集群。
+                     * 处理器配置, 单位为1/1000核；范围[100, 256000]
+                     */
+                    uint64_t m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * 内存配置, 单位为1M；范围[100, 256000]
+                     */
+                    uint64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 集群，不填则使用默认集群
                      */
                     std::string m_cluster;
                     bool m_clusterHasBeenSet;
+
+                    /**
+                     * 部署要使用的资源组Id，默认为共享资源组
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * 默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式
+                     */
+                    std::string m_authentication;
+                    bool m_authenticationHasBeenSet;
+
+                    /**
+                     * GPU算力配置，单位为1/1000 卡，范围 [0, 256000]
+                     */
+                    uint64_t m_gpu;
+                    bool m_gpuHasBeenSet;
+
+                    /**
+                     * 显存配置, 单位为1M，范围 [0, 256000]
+                     */
+                    uint64_t m_gpuMemory;
+                    bool m_gpuMemoryHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * GPU类型
+                     */
+                    std::string m_gpuType;
+                    bool m_gpuTypeHasBeenSet;
 
                 };
             }

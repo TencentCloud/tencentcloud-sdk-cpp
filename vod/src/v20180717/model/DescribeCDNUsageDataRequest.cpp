@@ -27,6 +27,8 @@ DescribeCDNUsageDataRequest::DescribeCDNUsageDataRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_dataTypeHasBeenSet(false),
+    m_dataIntervalHasBeenSet(false),
+    m_domainNamesHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -60,6 +62,27 @@ string DescribeCDNUsageDataRequest::ToJsonString() const
         string key = "DataType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_dataType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataIntervalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataInterval, allocator);
+    }
+
+    if (m_domainNamesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DomainNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_domainNames.begin(); itr != m_domainNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_subAppIdHasBeenSet)
@@ -124,6 +147,38 @@ void DescribeCDNUsageDataRequest::SetDataType(const string& _dataType)
 bool DescribeCDNUsageDataRequest::DataTypeHasBeenSet() const
 {
     return m_dataTypeHasBeenSet;
+}
+
+uint64_t DescribeCDNUsageDataRequest::GetDataInterval() const
+{
+    return m_dataInterval;
+}
+
+void DescribeCDNUsageDataRequest::SetDataInterval(const uint64_t& _dataInterval)
+{
+    m_dataInterval = _dataInterval;
+    m_dataIntervalHasBeenSet = true;
+}
+
+bool DescribeCDNUsageDataRequest::DataIntervalHasBeenSet() const
+{
+    return m_dataIntervalHasBeenSet;
+}
+
+vector<string> DescribeCDNUsageDataRequest::GetDomainNames() const
+{
+    return m_domainNames;
+}
+
+void DescribeCDNUsageDataRequest::SetDomainNames(const vector<string>& _domainNames)
+{
+    m_domainNames = _domainNames;
+    m_domainNamesHasBeenSet = true;
+}
+
+bool DescribeCDNUsageDataRequest::DomainNamesHasBeenSet() const
+{
+    return m_domainNamesHasBeenSet;
 }
 
 uint64_t DescribeCDNUsageDataRequest::GetSubAppId() const

@@ -24,7 +24,10 @@ using namespace std;
 ComposeMediaTaskOutput::ComposeMediaTaskOutput() :
     m_fileTypeHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_fileUrlHasBeenSet(false)
+    m_fileUrlHasBeenSet(false),
+    m_mediaNameHasBeenSet(false),
+    m_classIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,36 @@ CoreInternalOutcome ComposeMediaTaskOutput::Deserialize(const Value &value)
         m_fileUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaName") && !value["MediaName"].IsNull())
+    {
+        if (!value["MediaName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTaskOutput.MediaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaName = string(value["MediaName"].GetString());
+        m_mediaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClassId") && !value["ClassId"].IsNull())
+    {
+        if (!value["ClassId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTaskOutput.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_classId = value["ClassId"].GetInt64();
+        m_classIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaTaskOutput.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +125,30 @@ void ComposeMediaTaskOutput::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "FileUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MediaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_mediaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClassId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +200,53 @@ void ComposeMediaTaskOutput::SetFileUrl(const string& _fileUrl)
 bool ComposeMediaTaskOutput::FileUrlHasBeenSet() const
 {
     return m_fileUrlHasBeenSet;
+}
+
+string ComposeMediaTaskOutput::GetMediaName() const
+{
+    return m_mediaName;
+}
+
+void ComposeMediaTaskOutput::SetMediaName(const string& _mediaName)
+{
+    m_mediaName = _mediaName;
+    m_mediaNameHasBeenSet = true;
+}
+
+bool ComposeMediaTaskOutput::MediaNameHasBeenSet() const
+{
+    return m_mediaNameHasBeenSet;
+}
+
+int64_t ComposeMediaTaskOutput::GetClassId() const
+{
+    return m_classId;
+}
+
+void ComposeMediaTaskOutput::SetClassId(const int64_t& _classId)
+{
+    m_classId = _classId;
+    m_classIdHasBeenSet = true;
+}
+
+bool ComposeMediaTaskOutput::ClassIdHasBeenSet() const
+{
+    return m_classIdHasBeenSet;
+}
+
+string ComposeMediaTaskOutput::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void ComposeMediaTaskOutput::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool ComposeMediaTaskOutput::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 

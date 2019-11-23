@@ -40,6 +40,92 @@ TiemsClient::TiemsClient(const Credential &credential, const string &region, con
 }
 
 
+TiemsClient::CreateJobOutcome TiemsClient::CreateJob(const CreateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateJobResponse rsp = CreateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateJobOutcome(rsp);
+        else
+            return CreateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateJobOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::CreateJobOutcomeCallable TiemsClient::CreateJobCallable(const CreateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::CreateRuntimeOutcome TiemsClient::CreateRuntime(const CreateRuntimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRuntime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRuntimeResponse rsp = CreateRuntimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRuntimeOutcome(rsp);
+        else
+            return CreateRuntimeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRuntimeOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::CreateRuntimeAsync(const CreateRuntimeRequest& request, const CreateRuntimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRuntime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::CreateRuntimeOutcomeCallable TiemsClient::CreateRuntimeCallable(const CreateRuntimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRuntimeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRuntime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiemsClient::CreateServiceOutcome TiemsClient::CreateService(const CreateServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateService");
@@ -126,6 +212,92 @@ TiemsClient::CreateServiceConfigOutcomeCallable TiemsClient::CreateServiceConfig
     return task->get_future();
 }
 
+TiemsClient::DeleteJobOutcome TiemsClient::DeleteJob(const DeleteJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteJobResponse rsp = DeleteJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteJobOutcome(rsp);
+        else
+            return DeleteJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteJobOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DeleteJobOutcomeCallable TiemsClient::DeleteJobCallable(const DeleteJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::DeleteRuntimeOutcome TiemsClient::DeleteRuntime(const DeleteRuntimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRuntime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRuntimeResponse rsp = DeleteRuntimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRuntimeOutcome(rsp);
+        else
+            return DeleteRuntimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRuntimeOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DeleteRuntimeAsync(const DeleteRuntimeRequest& request, const DeleteRuntimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRuntime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DeleteRuntimeOutcomeCallable TiemsClient::DeleteRuntimeCallable(const DeleteRuntimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRuntimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRuntime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiemsClient::DeleteServiceOutcome TiemsClient::DeleteService(const DeleteServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteService");
@@ -205,6 +377,49 @@ TiemsClient::DeleteServiceConfigOutcomeCallable TiemsClient::DeleteServiceConfig
         [this, request]()
         {
             return this->DeleteServiceConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::DescribeInstancesOutcome TiemsClient::DescribeInstances(const DescribeInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesResponse rsp = DescribeInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesOutcome(rsp);
+        else
+            return DescribeInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DescribeInstancesOutcomeCallable TiemsClient::DescribeInstancesCallable(const DescribeInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstances(request);
         }
     );
 
@@ -334,6 +549,92 @@ TiemsClient::DescribeServicesOutcomeCallable TiemsClient::DescribeServicesCallab
         [this, request]()
         {
             return this->DescribeServices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::ExposeServiceOutcome TiemsClient::ExposeService(const ExposeServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExposeService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExposeServiceResponse rsp = ExposeServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExposeServiceOutcome(rsp);
+        else
+            return ExposeServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ExposeServiceOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::ExposeServiceAsync(const ExposeServiceRequest& request, const ExposeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExposeService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::ExposeServiceOutcomeCallable TiemsClient::ExposeServiceCallable(const ExposeServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExposeServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ExposeService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::UpdateJobOutcome TiemsClient::UpdateJob(const UpdateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateJobResponse rsp = UpdateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateJobOutcome(rsp);
+        else
+            return UpdateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateJobOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::UpdateJobOutcomeCallable TiemsClient::UpdateJobCallable(const UpdateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateJob(request);
         }
     );
 

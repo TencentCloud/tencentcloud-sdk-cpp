@@ -23,7 +23,9 @@ using namespace std;
 
 DetectLabelItem::DetectLabelItem() :
     m_nameHasBeenSet(false),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_firstCategoryHasBeenSet(false),
+    m_secondCategoryHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,26 @@ CoreInternalOutcome DetectLabelItem::Deserialize(const Value &value)
         m_confidenceHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstCategory") && !value["FirstCategory"].IsNull())
+    {
+        if (!value["FirstCategory"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DetectLabelItem.FirstCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstCategory = string(value["FirstCategory"].GetString());
+        m_firstCategoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecondCategory") && !value["SecondCategory"].IsNull())
+    {
+        if (!value["SecondCategory"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DetectLabelItem.SecondCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secondCategory = string(value["SecondCategory"].GetString());
+        m_secondCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +95,22 @@ void DetectLabelItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
+    }
+
+    if (m_firstCategoryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FirstCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_firstCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secondCategoryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecondCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_secondCategory.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +146,37 @@ void DetectLabelItem::SetConfidence(const int64_t& _confidence)
 bool DetectLabelItem::ConfidenceHasBeenSet() const
 {
     return m_confidenceHasBeenSet;
+}
+
+string DetectLabelItem::GetFirstCategory() const
+{
+    return m_firstCategory;
+}
+
+void DetectLabelItem::SetFirstCategory(const string& _firstCategory)
+{
+    m_firstCategory = _firstCategory;
+    m_firstCategoryHasBeenSet = true;
+}
+
+bool DetectLabelItem::FirstCategoryHasBeenSet() const
+{
+    return m_firstCategoryHasBeenSet;
+}
+
+string DetectLabelItem::GetSecondCategory() const
+{
+    return m_secondCategory;
+}
+
+void DetectLabelItem::SetSecondCategory(const string& _secondCategory)
+{
+    m_secondCategory = _secondCategory;
+    m_secondCategoryHasBeenSet = true;
+}
+
+bool DetectLabelItem::SecondCategoryHasBeenSet() const
+{
+    return m_secondCategoryHasBeenSet;
 }
 

@@ -76,18 +76,21 @@ CoreInternalOutcome DescribeBillSummaryByTagResponse::Deserialize(const string &
 
     if (rsp.HasMember("SummaryOverview") && !rsp["SummaryOverview"].IsNull())
     {
-        if (!rsp["SummaryOverview"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `SummaryOverview` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["SummaryOverview"].IsArray())
+            return CoreInternalOutcome(Error("response `SummaryOverview` is not array type"));
 
-        CoreInternalOutcome outcome = m_summaryOverview.Deserialize(rsp["SummaryOverview"]);
-        if (!outcome.IsSuccess())
+        const Value &tmpValue = rsp["SummaryOverview"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            TagSummaryOverviewItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_summaryOverview.push_back(item);
         }
-
         m_summaryOverviewHasBeenSet = true;
     }
 
@@ -106,7 +109,7 @@ bool DescribeBillSummaryByTagResponse::ReadyHasBeenSet() const
     return m_readyHasBeenSet;
 }
 
-TagSummaryOverviewItem DescribeBillSummaryByTagResponse::GetSummaryOverview() const
+vector<TagSummaryOverviewItem> DescribeBillSummaryByTagResponse::GetSummaryOverview() const
 {
     return m_summaryOverview;
 }

@@ -28,7 +28,8 @@ DescribePlayErrorCodeDetailInfoListRequest::DescribePlayErrorCodeDetailInfoListR
     m_endTimeHasBeenSet(false),
     m_granularityHasBeenSet(false),
     m_statTypeHasBeenSet(false),
-    m_playDomainsHasBeenSet(false)
+    m_playDomainsHasBeenSet(false),
+    m_mainlandOrOverseaHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string DescribePlayErrorCodeDetailInfoListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_mainlandOrOverseaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MainlandOrOversea";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void DescribePlayErrorCodeDetailInfoListRequest::SetPlayDomains(const vector<str
 bool DescribePlayErrorCodeDetailInfoListRequest::PlayDomainsHasBeenSet() const
 {
     return m_playDomainsHasBeenSet;
+}
+
+string DescribePlayErrorCodeDetailInfoListRequest::GetMainlandOrOversea() const
+{
+    return m_mainlandOrOversea;
+}
+
+void DescribePlayErrorCodeDetailInfoListRequest::SetMainlandOrOversea(const string& _mainlandOrOversea)
+{
+    m_mainlandOrOversea = _mainlandOrOversea;
+    m_mainlandOrOverseaHasBeenSet = true;
+}
+
+bool DescribePlayErrorCodeDetailInfoListRequest::MainlandOrOverseaHasBeenSet() const
+{
+    return m_mainlandOrOverseaHasBeenSet;
 }
 
 

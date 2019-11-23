@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取流名称。
-                     * @return StreamName 流名称。
+                     * 获取流名称。如果只绑定域名或路径，则此处填空。
+                     * @return StreamName 流名称。如果只绑定域名或路径，则此处填空。
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置流名称。
-                     * @param StreamName 流名称。
+                     * 设置流名称。如果只绑定域名或路径，则此处填空。
+                     * @param StreamName 流名称。如果只绑定域名或路径，则此处填空。
                      */
                     void SetStreamName(const std::string& _streamName);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 流名称。
+                     * 流名称。如果只绑定域名或路径，则此处填空。
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;

@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool OrderFieldHasBeenSet() const;
 
+                    /**
+                     * 获取是否按照配置名分页
+                     * @return PageByName 是否按照配置名分页
+                     */
+                    bool GetPageByName() const;
+
+                    /**
+                     * 设置是否按照配置名分页
+                     * @param PageByName 是否按照配置名分页
+                     */
+                    void SetPageByName(const bool& _pageByName);
+
+                    /**
+                     * 判断参数 PageByName 是否已赋值
+                     * @return PageByName 是否已赋值
+                     */
+                    bool PageByNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 是否按照配置名分页
+                     */
+                    bool m_pageByName;
+                    bool m_pageByNameHasBeenSet;
 
                 };
             }

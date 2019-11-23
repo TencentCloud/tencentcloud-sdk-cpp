@@ -28,9 +28,11 @@ SnapshotByTimeOffsetTemplate::SnapshotByTimeOffsetTemplate() :
     m_commentHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,16 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const Value &value
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("ResolutionAdaptive") && !value["ResolutionAdaptive"].IsNull())
+    {
+        if (!value["ResolutionAdaptive"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolutionAdaptive = string(value["ResolutionAdaptive"].GetString());
+        m_resolutionAdaptiveHasBeenSet = true;
+    }
+
     if (value.HasMember("Format") && !value["Format"].IsNull())
     {
         if (!value["Format"].IsString())
@@ -127,6 +139,16 @@ CoreInternalOutcome SnapshotByTimeOffsetTemplate::Deserialize(const Value &value
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FillType") && !value["FillType"].IsNull())
+    {
+        if (!value["FillType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fillType = string(value["FillType"].GetString());
+        m_fillTypeHasBeenSet = true;
     }
 
 
@@ -184,6 +206,14 @@ void SnapshotByTimeOffsetTemplate::ToJsonObject(Value &value, Document::Allocato
         value.AddMember(iKey, m_height, allocator);
     }
 
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_formatHasBeenSet)
     {
         Value iKey(kStringType);
@@ -206,6 +236,14 @@ void SnapshotByTimeOffsetTemplate::ToJsonObject(Value &value, Document::Allocato
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -307,6 +345,22 @@ bool SnapshotByTimeOffsetTemplate::HeightHasBeenSet() const
     return m_heightHasBeenSet;
 }
 
+string SnapshotByTimeOffsetTemplate::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void SnapshotByTimeOffsetTemplate::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool SnapshotByTimeOffsetTemplate::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
+}
+
 string SnapshotByTimeOffsetTemplate::GetFormat() const
 {
     return m_format;
@@ -353,5 +407,21 @@ void SnapshotByTimeOffsetTemplate::SetUpdateTime(const string& _updateTime)
 bool SnapshotByTimeOffsetTemplate::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string SnapshotByTimeOffsetTemplate::GetFillType() const
+{
+    return m_fillType;
+}
+
+void SnapshotByTimeOffsetTemplate::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool SnapshotByTimeOffsetTemplate::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 

@@ -83,6 +83,49 @@ CdnClient::DescribeCdnDataOutcomeCallable CdnClient::DescribeCdnDataCallable(con
     return task->get_future();
 }
 
+CdnClient::DescribeCdnDomainLogsOutcome CdnClient::DescribeCdnDomainLogs(const DescribeCdnDomainLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdnDomainLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdnDomainLogsResponse rsp = DescribeCdnDomainLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdnDomainLogsOutcome(rsp);
+        else
+            return DescribeCdnDomainLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdnDomainLogsOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeCdnDomainLogsAsync(const DescribeCdnDomainLogsRequest& request, const DescribeCdnDomainLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdnDomainLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnDomainLogsOutcomeCallable CdnClient::DescribeCdnDomainLogsCallable(const DescribeCdnDomainLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdnDomainLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdnDomainLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeCdnIpOutcome CdnClient::DescribeCdnIp(const DescribeCdnIpRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCdnIp");
@@ -377,6 +420,49 @@ CdnClient::DescribePushTasksOutcomeCallable CdnClient::DescribePushTasksCallable
         [this, request]()
         {
             return this->DescribePushTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeTrafficPackagesOutcome CdnClient::DescribeTrafficPackages(const DescribeTrafficPackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrafficPackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrafficPackagesResponse rsp = DescribeTrafficPackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrafficPackagesOutcome(rsp);
+        else
+            return DescribeTrafficPackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrafficPackagesOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeTrafficPackagesAsync(const DescribeTrafficPackagesRequest& request, const DescribeTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrafficPackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeTrafficPackagesOutcomeCallable CdnClient::DescribeTrafficPackagesCallable(const DescribeTrafficPackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrafficPackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrafficPackages(request);
         }
     );
 

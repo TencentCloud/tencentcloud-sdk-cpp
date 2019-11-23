@@ -29,7 +29,8 @@ DescribeConfigResponse::DescribeConfigResponse() :
     m_idHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_appidHasBeenSet(false)
+    m_appidHasBeenSet(false),
+    m_contentLevelHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
         m_appidHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ContentLevel") && !rsp["ContentLevel"].IsNull())
+    {
+        if (!rsp["ContentLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ContentLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentLevel = rsp["ContentLevel"].GetUint64();
+        m_contentLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +181,16 @@ uint64_t DescribeConfigResponse::GetAppid() const
 bool DescribeConfigResponse::AppidHasBeenSet() const
 {
     return m_appidHasBeenSet;
+}
+
+uint64_t DescribeConfigResponse::GetContentLevel() const
+{
+    return m_contentLevel;
+}
+
+bool DescribeConfigResponse::ContentLevelHasBeenSet() const
+{
+    return m_contentLevelHasBeenSet;
 }
 
 

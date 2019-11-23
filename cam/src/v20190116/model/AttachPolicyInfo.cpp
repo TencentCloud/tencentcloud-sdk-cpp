@@ -101,21 +101,21 @@ CoreInternalOutcome AttachPolicyInfo::Deserialize(const Value &value)
 
     if (value.HasMember("OperateOwnerUin") && !value["OperateOwnerUin"].IsNull())
     {
-        if (!value["OperateOwnerUin"].IsUint64())
+        if (!value["OperateOwnerUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachPolicyInfo.OperateOwnerUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.OperateOwnerUin` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_operateOwnerUin = value["OperateOwnerUin"].GetUint64();
+        m_operateOwnerUin = string(value["OperateOwnerUin"].GetString());
         m_operateOwnerUinHasBeenSet = true;
     }
 
     if (value.HasMember("OperateUin") && !value["OperateUin"].IsNull())
     {
-        if (!value["OperateUin"].IsUint64())
+        if (!value["OperateUin"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AttachPolicyInfo.OperateUin` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.OperateUin` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_operateUin = value["OperateUin"].GetUint64();
+        m_operateUin = string(value["OperateUin"].GetString());
         m_operateUinHasBeenSet = true;
     }
 
@@ -189,7 +189,7 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         Value iKey(kStringType);
         string key = "OperateOwnerUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_operateOwnerUin, allocator);
+        value.AddMember(iKey, Value(m_operateOwnerUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operateUinHasBeenSet)
@@ -197,7 +197,7 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         Value iKey(kStringType);
         string key = "OperateUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_operateUin, allocator);
+        value.AddMember(iKey, Value(m_operateUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operateUinTypeHasBeenSet)
@@ -307,12 +307,12 @@ bool AttachPolicyInfo::RemarkHasBeenSet() const
     return m_remarkHasBeenSet;
 }
 
-uint64_t AttachPolicyInfo::GetOperateOwnerUin() const
+string AttachPolicyInfo::GetOperateOwnerUin() const
 {
     return m_operateOwnerUin;
 }
 
-void AttachPolicyInfo::SetOperateOwnerUin(const uint64_t& _operateOwnerUin)
+void AttachPolicyInfo::SetOperateOwnerUin(const string& _operateOwnerUin)
 {
     m_operateOwnerUin = _operateOwnerUin;
     m_operateOwnerUinHasBeenSet = true;
@@ -323,12 +323,12 @@ bool AttachPolicyInfo::OperateOwnerUinHasBeenSet() const
     return m_operateOwnerUinHasBeenSet;
 }
 
-uint64_t AttachPolicyInfo::GetOperateUin() const
+string AttachPolicyInfo::GetOperateUin() const
 {
     return m_operateUin;
 }
 
-void AttachPolicyInfo::SetOperateUin(const uint64_t& _operateUin)
+void AttachPolicyInfo::SetOperateUin(const string& _operateUin)
 {
     m_operateUin = _operateUin;
     m_operateUinHasBeenSet = true;

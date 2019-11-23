@@ -172,6 +172,24 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取VPC网络类型
+                     * @return VpcType VPC网络类型
+                     */
+                    uint64_t GetVpcType() const;
+
+                    /**
+                     * 设置VPC网络类型
+                     * @param VpcType VPC网络类型
+                     */
+                    void SetVpcType(const uint64_t& _vpcType);
+
+                    /**
+                     * 判断参数 VpcType 是否已赋值
+                     * @return VpcType 是否已赋值
+                     */
+                    bool VpcTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +233,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * VPC网络类型
+                     */
+                    uint64_t m_vpcType;
+                    bool m_vpcTypeHasBeenSet;
 
                 };
             }

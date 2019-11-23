@@ -93,8 +93,8 @@ namespace TencentCloud
                     bool TotalCode5xxHasBeenSet() const;
 
                     /**
-                     * 获取各状态码的总次数，暂时支持400,403,404,500,502,503,504。
-                     * @return TotalCodeList 各状态码的总次数，暂时支持400,403,404,500,502,503,504。
+                     * 获取各状态码的总次数。
+                     * @return TotalCodeList 各状态码的总次数。
                      */
                     std::vector<PlayCodeTotalInfo> GetTotalCodeList() const;
 
@@ -152,6 +152,30 @@ namespace TencentCloud
                      */
                     bool TotalNumHasBeenSet() const;
 
+                    /**
+                     * 获取状态码为2开头的总次数。
+                     * @return TotalCode2xx 状态码为2开头的总次数。
+                     */
+                    uint64_t GetTotalCode2xx() const;
+
+                    /**
+                     * 判断参数 TotalCode2xx 是否已赋值
+                     * @return TotalCode2xx 是否已赋值
+                     */
+                    bool TotalCode2xxHasBeenSet() const;
+
+                    /**
+                     * 获取状态码为3开头的总次数。
+                     * @return TotalCode3xx 状态码为3开头的总次数。
+                     */
+                    uint64_t GetTotalCode3xx() const;
+
+                    /**
+                     * 判断参数 TotalCode3xx 是否已赋值
+                     * @return TotalCode3xx 是否已赋值
+                     */
+                    bool TotalCode3xxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,7 +203,7 @@ namespace TencentCloud
                     bool m_totalCode5xxHasBeenSet;
 
                     /**
-                     * 各状态码的总次数，暂时支持400,403,404,500,502,503,504。
+                     * 各状态码的总次数。
                      */
                     std::vector<PlayCodeTotalInfo> m_totalCodeList;
                     bool m_totalCodeListHasBeenSet;
@@ -207,6 +231,18 @@ namespace TencentCloud
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
+
+                    /**
+                     * 状态码为2开头的总次数。
+                     */
+                    uint64_t m_totalCode2xx;
+                    bool m_totalCode2xxHasBeenSet;
+
+                    /**
+                     * 状态码为3开头的总次数。
+                     */
+                    uint64_t m_totalCode3xx;
+                    bool m_totalCode3xxHasBeenSet;
 
                 };
             }

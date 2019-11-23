@@ -40,6 +40,49 @@ BmClient::BmClient(const Credential &credential, const string &region, const Cli
 }
 
 
+BmClient::AttachCamRoleOutcome BmClient::AttachCamRole(const AttachCamRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachCamRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachCamRoleResponse rsp = AttachCamRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachCamRoleOutcome(rsp);
+        else
+            return AttachCamRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachCamRoleOutcome(outcome.GetError());
+    }
+}
+
+void BmClient::AttachCamRoleAsync(const AttachCamRoleRequest& request, const AttachCamRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachCamRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmClient::AttachCamRoleOutcomeCallable BmClient::AttachCamRoleCallable(const AttachCamRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachCamRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachCamRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmClient::BindPsaTagOutcome BmClient::BindPsaTag(const BindPsaTagRequest &request)
 {
     auto outcome = MakeRequest(request, "BindPsaTag");
@@ -1409,6 +1452,49 @@ BmClient::DescribeUserCmdsOutcomeCallable BmClient::DescribeUserCmdsCallable(con
         [this, request]()
         {
             return this->DescribeUserCmds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmClient::DetachCamRoleOutcome BmClient::DetachCamRole(const DetachCamRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachCamRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachCamRoleResponse rsp = DetachCamRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachCamRoleOutcome(rsp);
+        else
+            return DetachCamRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachCamRoleOutcome(outcome.GetError());
+    }
+}
+
+void BmClient::DetachCamRoleAsync(const DetachCamRoleRequest& request, const DetachCamRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachCamRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmClient::DetachCamRoleOutcomeCallable BmClient::DetachCamRoleCallable(const DetachCamRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachCamRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachCamRole(request);
         }
     );
 

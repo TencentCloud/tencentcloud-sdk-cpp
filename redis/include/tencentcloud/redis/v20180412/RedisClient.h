@@ -41,6 +41,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceBackupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceBackupsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceDealDetailRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceDealDetailResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyRequest.h>
@@ -77,6 +79,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeTaskListRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeTaskListResponse.h>
 #include <tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceRequest.h>
@@ -105,6 +109,8 @@
 #include <tencentcloud/redis/v20180412/model/ResetPasswordResponse.h>
 #include <tencentcloud/redis/v20180412/model/RestoreInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RestoreInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/StartupInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/StartupInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/SwitchInstanceVipRequest.h>
 #include <tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h>
@@ -150,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstanceBackupsResponse> DescribeInstanceBackupsOutcome;
                 typedef std::future<DescribeInstanceBackupsOutcome> DescribeInstanceBackupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceBackupsRequest&, DescribeInstanceBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceBackupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceDTSInfoResponse> DescribeInstanceDTSInfoOutcome;
+                typedef std::future<DescribeInstanceDTSInfoOutcome> DescribeInstanceDTSInfoOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceDTSInfoRequest&, DescribeInstanceDTSInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDTSInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceDealDetailResponse> DescribeInstanceDealDetailOutcome;
                 typedef std::future<DescribeInstanceDealDetailOutcome> DescribeInstanceDealDetailOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceDealDetailRequest&, DescribeInstanceDealDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDealDetailAsyncHandler;
@@ -204,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskInfoResponse> DescribeTaskInfoOutcome;
                 typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeTaskInfoRequest&, DescribeTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTaskListResponse> DescribeTaskListOutcome;
+                typedef std::future<DescribeTaskListOutcome> DescribeTaskListOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeTaskListRequest&, DescribeTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskListAsyncHandler;
                 typedef Outcome<Error, Model::DestroyPostpaidInstanceResponse> DestroyPostpaidInstanceOutcome;
                 typedef std::future<DestroyPostpaidInstanceOutcome> DestroyPostpaidInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DestroyPostpaidInstanceRequest&, DestroyPostpaidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPostpaidInstanceAsyncHandler;
@@ -246,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RestoreInstanceResponse> RestoreInstanceOutcome;
                 typedef std::future<RestoreInstanceOutcome> RestoreInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RestoreInstanceRequest&, RestoreInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreInstanceAsyncHandler;
+                typedef Outcome<Error, Model::StartupInstanceResponse> StartupInstanceOutcome;
+                typedef std::future<StartupInstanceOutcome> StartupInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::StartupInstanceRequest&, StartupInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartupInstanceAsyncHandler;
                 typedef Outcome<Error, Model::SwitchInstanceVipResponse> SwitchInstanceVipOutcome;
                 typedef std::future<SwitchInstanceVipOutcome> SwitchInstanceVipOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::SwitchInstanceVipRequest&, SwitchInstanceVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceVipAsyncHandler;
@@ -335,6 +350,15 @@ namespace TencentCloud
                 DescribeInstanceBackupsOutcome DescribeInstanceBackups(const Model::DescribeInstanceBackupsRequest &request);
                 void DescribeInstanceBackupsAsync(const Model::DescribeInstanceBackupsRequest& request, const DescribeInstanceBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceBackupsOutcomeCallable DescribeInstanceBackupsCallable(const Model::DescribeInstanceBackupsRequest& request);
+
+                /**
+                 *查询实例DTS信息
+                 * @param req DescribeInstanceDTSInfoRequest
+                 * @return DescribeInstanceDTSInfoOutcome
+                 */
+                DescribeInstanceDTSInfoOutcome DescribeInstanceDTSInfo(const Model::DescribeInstanceDTSInfoRequest &request);
+                void DescribeInstanceDTSInfoAsync(const Model::DescribeInstanceDTSInfoRequest& request, const DescribeInstanceDTSInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceDTSInfoOutcomeCallable DescribeInstanceDTSInfoCallable(const Model::DescribeInstanceDTSInfoRequest& request);
 
                 /**
                  *查询订单信息
@@ -499,6 +523,15 @@ namespace TencentCloud
                 DescribeTaskInfoOutcomeCallable DescribeTaskInfoCallable(const Model::DescribeTaskInfoRequest& request);
 
                 /**
+                 *查询任务列表信息
+                 * @param req DescribeTaskListRequest
+                 * @return DescribeTaskListOutcome
+                 */
+                DescribeTaskListOutcome DescribeTaskList(const Model::DescribeTaskListRequest &request);
+                void DescribeTaskListAsync(const Model::DescribeTaskListRequest& request, const DescribeTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskListOutcomeCallable DescribeTaskListCallable(const Model::DescribeTaskListRequest& request);
+
+                /**
                  *按量计费实例销毁
                  * @param req DestroyPostpaidInstanceRequest
                  * @return DestroyPostpaidInstanceOutcome
@@ -623,6 +656,15 @@ namespace TencentCloud
                 RestoreInstanceOutcome RestoreInstance(const Model::RestoreInstanceRequest &request);
                 void RestoreInstanceAsync(const Model::RestoreInstanceRequest& request, const RestoreInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestoreInstanceOutcomeCallable RestoreInstanceCallable(const Model::RestoreInstanceRequest& request);
+
+                /**
+                 *实例解隔离
+                 * @param req StartupInstanceRequest
+                 * @return StartupInstanceOutcome
+                 */
+                StartupInstanceOutcome StartupInstance(const Model::StartupInstanceRequest &request);
+                void StartupInstanceAsync(const Model::StartupInstanceRequest& request, const StartupInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartupInstanceOutcomeCallable StartupInstanceCallable(const Model::StartupInstanceRequest& request);
 
                 /**
                  *在通过DTS支持跨可用区灾备的场景中，通过该接口交换实例VIP完成实例灾备切换。交换VIP后目标实例可写，源和目标实例VIP互换，同时源与目标实例间DTS同步任务断开

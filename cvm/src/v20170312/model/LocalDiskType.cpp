@@ -25,7 +25,8 @@ LocalDiskType::LocalDiskType() :
     m_typeHasBeenSet(false),
     m_partitionTypeHasBeenSet(false),
     m_minSizeHasBeenSet(false),
-    m_maxSizeHasBeenSet(false)
+    m_maxSizeHasBeenSet(false),
+    m_requiredHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome LocalDiskType::Deserialize(const Value &value)
         m_maxSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("Required") && !value["Required"].IsNull())
+    {
+        if (!value["Required"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LocalDiskType.Required` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_required = string(value["Required"].GetString());
+        m_requiredHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void LocalDiskType::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSize, allocator);
+    }
+
+    if (m_requiredHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Required";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_required.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void LocalDiskType::SetMaxSize(const int64_t& _maxSize)
 bool LocalDiskType::MaxSizeHasBeenSet() const
 {
     return m_maxSizeHasBeenSet;
+}
+
+string LocalDiskType::GetRequired() const
+{
+    return m_required;
+}
+
+void LocalDiskType::SetRequired(const string& _required)
+{
+    m_required = _required;
+    m_requiredHasBeenSet = true;
+}
+
+bool LocalDiskType::RequiredHasBeenSet() const
+{
+    return m_requiredHasBeenSet;
 }
 

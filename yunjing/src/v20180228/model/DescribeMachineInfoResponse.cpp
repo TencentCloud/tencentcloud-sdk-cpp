@@ -38,7 +38,9 @@ DescribeMachineInfoResponse::DescribeMachineInfoResponse() :
     m_proVersionOpenDateHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_machineRegionHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_freeMalwaresLeftHasBeenSet(false),
+    m_freeVulsLeftHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,26 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
         m_payModeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FreeMalwaresLeft") && !rsp["FreeMalwaresLeft"].IsNull())
+    {
+        if (!rsp["FreeMalwaresLeft"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FreeMalwaresLeft` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freeMalwaresLeft = rsp["FreeMalwaresLeft"].GetUint64();
+        m_freeMalwaresLeftHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FreeVulsLeft") && !rsp["FreeVulsLeft"].IsNull())
+    {
+        if (!rsp["FreeVulsLeft"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FreeVulsLeft` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freeVulsLeft = rsp["FreeVulsLeft"].GetUint64();
+        m_freeVulsLeftHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -359,6 +381,26 @@ string DescribeMachineInfoResponse::GetPayMode() const
 bool DescribeMachineInfoResponse::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+uint64_t DescribeMachineInfoResponse::GetFreeMalwaresLeft() const
+{
+    return m_freeMalwaresLeft;
+}
+
+bool DescribeMachineInfoResponse::FreeMalwaresLeftHasBeenSet() const
+{
+    return m_freeMalwaresLeftHasBeenSet;
+}
+
+uint64_t DescribeMachineInfoResponse::GetFreeVulsLeft() const
+{
+    return m_freeVulsLeft;
+}
+
+bool DescribeMachineInfoResponse::FreeVulsLeftHasBeenSet() const
+{
+    return m_freeVulsLeftHasBeenSet;
 }
 
 

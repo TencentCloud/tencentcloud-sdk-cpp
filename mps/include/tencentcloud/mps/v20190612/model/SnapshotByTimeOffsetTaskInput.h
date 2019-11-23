@@ -68,14 +68,14 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取截图时间点列表，单位为<font color=red>毫秒</font>。
-                     * @return TimeOffsetSet 截图时间点列表，单位为<font color=red>毫秒</font>。
+                     * 获取截图时间点列表，单位为<font color=red>秒</font>。
+                     * @return TimeOffsetSet 截图时间点列表，单位为<font color=red>秒</font>。
                      */
                     std::vector<double> GetTimeOffsetSet() const;
 
                     /**
-                     * 设置截图时间点列表，单位为<font color=red>毫秒</font>。
-                     * @param TimeOffsetSet 截图时间点列表，单位为<font color=red>毫秒</font>。
+                     * 设置截图时间点列表，单位为<font color=red>秒</font>。
+                     * @param TimeOffsetSet 截图时间点列表，单位为<font color=red>秒</font>。
                      */
                     void SetTimeOffsetSet(const std::vector<double>& _timeOffsetSet);
 
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 截图时间点列表，单位为<font color=red>毫秒</font>。
+                     * 截图时间点列表，单位为<font color=red>秒</font>。
                      */
                     std::vector<double> m_timeOffsetSet;
                     bool m_timeOffsetSetHasBeenSet;

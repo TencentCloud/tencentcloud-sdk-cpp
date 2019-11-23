@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/TaskDetail.h>
 
 
 namespace TencentCloud
@@ -58,7 +59,7 @@ namespace TencentCloud
                      * 获取返回的实例任务信息。
                      * @return Items 返回的实例任务信息。
                      */
-                    std::vector<std::string> GetItems() const;
+                    std::vector<TaskDetail> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
@@ -77,7 +78,7 @@ namespace TencentCloud
                     /**
                      * 返回的实例任务信息。
                      */
-                    std::vector<std::string> m_items;
+                    std::vector<TaskDetail> m_items;
                     bool m_itemsHasBeenSet;
 
                 };

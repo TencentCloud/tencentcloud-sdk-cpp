@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，默认为当前时间。 EndTime不能小于EtartTime
-                     * @return EndTime 结束时间，默认为当前时间。 EndTime不能小于EtartTime
+                     * 获取结束时间，默认为当前时间。 EndTime不能小于StartTime
+                     * @return EndTime 结束时间，默认为当前时间。 EndTime不能小于StartTime
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，默认为当前时间。 EndTime不能小于EtartTime
-                     * @param EndTime 结束时间，默认为当前时间。 EndTime不能小于EtartTime
+                     * 设置结束时间，默认为当前时间。 EndTime不能小于StartTime
+                     * @param EndTime 结束时间，默认为当前时间。 EndTime不能小于StartTime
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，默认为当前时间。 EndTime不能小于EtartTime
+                     * 结束时间，默认为当前时间。 EndTime不能小于StartTime
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

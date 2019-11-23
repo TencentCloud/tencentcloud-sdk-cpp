@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool ContainerRuntimeHasBeenSet() const;
 
+                    /**
+                     * 获取集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     * @return NodeNameType 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     */
+                    std::string GetNodeNameType() const;
+
+                    /**
+                     * 设置集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     * @param NodeNameType 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     */
+                    void SetNodeNameType(const std::string& _nodeNameType);
+
+                    /**
+                     * 判断参数 NodeNameType 是否已赋值
+                     * @return NodeNameType 是否已赋值
+                     */
+                    bool NodeNameTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_containerRuntime;
                     bool m_containerRuntimeHasBeenSet;
+
+                    /**
+                     * 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     */
+                    std::string m_nodeNameType;
+                    bool m_nodeNameTypeHasBeenSet;
 
                 };
             }

@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取国家或地区。
+                     * @return CountryAreaName 国家或地区。
+                     */
+                    std::string GetCountryAreaName() const;
+
+                    /**
+                     * 设置国家或地区。
+                     * @param CountryAreaName 国家或地区。
+                     */
+                    void SetCountryAreaName(const std::string& _countryAreaName);
+
+                    /**
+                     * 判断参数 CountryAreaName 是否已赋值
+                     * @return CountryAreaName 是否已赋值
+                     */
+                    bool CountryAreaNameHasBeenSet() const;
+
+                    /**
                      * 获取省份。
                      * @return ProvinceName 省份。
                      */
@@ -155,6 +173,12 @@ namespace TencentCloud
                     bool Code5xxHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 国家或地区。
+                     */
+                    std::string m_countryAreaName;
+                    bool m_countryAreaNameHasBeenSet;
 
                     /**
                      * 省份。

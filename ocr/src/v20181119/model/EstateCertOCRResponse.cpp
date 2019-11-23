@@ -35,7 +35,8 @@ EstateCertOCRResponse::EstateCertOCRResponse() :
     m_areaHasBeenSet(false),
     m_termHasBeenSet(false),
     m_otherHasBeenSet(false),
-    m_angleHasBeenSet(false)
+    m_angleHasBeenSet(false),
+    m_numberHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome EstateCertOCRResponse::Deserialize(const string &payload)
         m_angleHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Number") && !rsp["Number"].IsNull())
+    {
+        if (!rsp["Number"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Number` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_number = string(rsp["Number"].GetString());
+        m_numberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +307,16 @@ double EstateCertOCRResponse::GetAngle() const
 bool EstateCertOCRResponse::AngleHasBeenSet() const
 {
     return m_angleHasBeenSet;
+}
+
+string EstateCertOCRResponse::GetNumber() const
+{
+    return m_number;
+}
+
+bool EstateCertOCRResponse::NumberHasBeenSet() const
+{
+    return m_numberHasBeenSet;
 }
 
 

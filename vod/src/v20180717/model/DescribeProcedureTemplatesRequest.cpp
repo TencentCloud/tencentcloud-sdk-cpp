@@ -25,6 +25,7 @@ using namespace std;
 
 DescribeProcedureTemplatesRequest::DescribeProcedureTemplatesRequest() :
     m_namesHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
@@ -49,6 +50,14 @@ string DescribeProcedureTemplatesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -97,6 +106,22 @@ void DescribeProcedureTemplatesRequest::SetNames(const vector<string>& _names)
 bool DescribeProcedureTemplatesRequest::NamesHasBeenSet() const
 {
     return m_namesHasBeenSet;
+}
+
+string DescribeProcedureTemplatesRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeProcedureTemplatesRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeProcedureTemplatesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 uint64_t DescribeProcedureTemplatesRequest::GetOffset() const

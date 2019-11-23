@@ -37,7 +37,8 @@ DomainRuleSet::DomainRuleSet() :
     m_gaapCertificateIdHasBeenSet(false),
     m_gaapAuthHasBeenSet(false),
     m_gaapCertificateAliasHasBeenSet(false),
-    m_realServerCertificateDomainHasBeenSet(false)
+    m_realServerCertificateDomainHasBeenSet(false),
+    m_polyClientCertificateAliasInfoHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,26 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
         m_realServerCertificateDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("PolyClientCertificateAliasInfo") && !value["PolyClientCertificateAliasInfo"].IsNull())
+    {
+        if (!value["PolyClientCertificateAliasInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `DomainRuleSet.PolyClientCertificateAliasInfo` is not array type"));
+
+        const Value &tmpValue = value["PolyClientCertificateAliasInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CertificateAliasInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_polyClientCertificateAliasInfo.push_back(item);
+        }
+        m_polyClientCertificateAliasInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -356,6 +377,21 @@ void DomainRuleSet::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "RealServerCertificateDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_realServerCertificateDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polyClientCertificateAliasInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolyClientCertificateAliasInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_polyClientCertificateAliasInfo.begin(); itr != m_polyClientCertificateAliasInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -615,5 +651,21 @@ void DomainRuleSet::SetRealServerCertificateDomain(const string& _realServerCert
 bool DomainRuleSet::RealServerCertificateDomainHasBeenSet() const
 {
     return m_realServerCertificateDomainHasBeenSet;
+}
+
+vector<CertificateAliasInfo> DomainRuleSet::GetPolyClientCertificateAliasInfo() const
+{
+    return m_polyClientCertificateAliasInfo;
+}
+
+void DomainRuleSet::SetPolyClientCertificateAliasInfo(const vector<CertificateAliasInfo>& _polyClientCertificateAliasInfo)
+{
+    m_polyClientCertificateAliasInfo = _polyClientCertificateAliasInfo;
+    m_polyClientCertificateAliasInfoHasBeenSet = true;
+}
+
+bool DomainRuleSet::PolyClientCertificateAliasInfoHasBeenSet() const
+{
+    return m_polyClientCertificateAliasInfoHasBeenSet;
 }
 

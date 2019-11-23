@@ -98,13 +98,17 @@ namespace TencentCloud
 
                     /**
                      * 获取音频编码：aac，默认原始音频格式。
+注意：当前该参数未生效，待后续支持！
                      * @return Acodec 音频编码：aac，默认原始音频格式。
+注意：当前该参数未生效，待后续支持！
                      */
                     std::string GetAcodec() const;
 
                     /**
                      * 设置音频编码：aac，默认原始音频格式。
+注意：当前该参数未生效，待后续支持！
                      * @param Acodec 音频编码：aac，默认原始音频格式。
+注意：当前该参数未生效，待后续支持！
                      */
                     void SetAcodec(const std::string& _acodec);
 
@@ -410,6 +414,7 @@ baseline/main/high。默认baseline
 
                     /**
                      * 音频编码：aac，默认原始音频格式。
+注意：当前该参数未生效，待后续支持！
                      */
                     std::string m_acodec;
                     bool m_acodecHasBeenSet;

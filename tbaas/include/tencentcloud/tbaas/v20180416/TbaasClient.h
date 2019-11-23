@@ -43,6 +43,8 @@
 #include <tencentcloud/tbaas/v20180416/model/GetTransByHashHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransListHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransListHandlerResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/QueryRequest.h>
@@ -95,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetTransListHandlerResponse> GetTransListHandlerOutcome;
                 typedef std::future<GetTransListHandlerOutcome> GetTransListHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetTransListHandlerRequest&, GetTransListHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTransListHandlerAsyncHandler;
+                typedef Outcome<Error, Model::GetTransactionDetailForUserResponse> GetTransactionDetailForUserOutcome;
+                typedef std::future<GetTransactionDetailForUserOutcome> GetTransactionDetailForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetTransactionDetailForUserRequest&, GetTransactionDetailForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTransactionDetailForUserAsyncHandler;
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
@@ -199,6 +204,15 @@ namespace TencentCloud
                 GetTransListHandlerOutcome GetTransListHandler(const Model::GetTransListHandlerRequest &request);
                 void GetTransListHandlerAsync(const Model::GetTransListHandlerRequest& request, const GetTransListHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTransListHandlerOutcomeCallable GetTransListHandlerCallable(const Model::GetTransListHandlerRequest& request);
+
+                /**
+                 *获取交易详情
+                 * @param req GetTransactionDetailForUserRequest
+                 * @return GetTransactionDetailForUserOutcome
+                 */
+                GetTransactionDetailForUserOutcome GetTransactionDetailForUser(const Model::GetTransactionDetailForUserRequest &request);
+                void GetTransactionDetailForUserAsync(const Model::GetTransactionDetailForUserRequest& request, const GetTransactionDetailForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTransactionDetailForUserOutcomeCallable GetTransactionDetailForUserCallable(const Model::GetTransactionDetailForUserRequest& request);
 
                 /**
                  *新增交易

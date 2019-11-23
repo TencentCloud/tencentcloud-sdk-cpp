@@ -36,7 +36,8 @@ DescribeWeeklyReportInfoResponse::DescribeWeeklyReportInfoResponse() :
     m_malwareNumHasBeenSet(false),
     m_nonlocalLoginNumHasBeenSet(false),
     m_bruteAttackSuccessNumHasBeenSet(false),
-    m_vulNumHasBeenSet(false)
+    m_vulNumHasBeenSet(false),
+    m_downloadUrlHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
         m_vulNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
+    {
+        if (!rsp["DownloadUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
+        m_downloadUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,16 @@ uint64_t DescribeWeeklyReportInfoResponse::GetVulNum() const
 bool DescribeWeeklyReportInfoResponse::VulNumHasBeenSet() const
 {
     return m_vulNumHasBeenSet;
+}
+
+string DescribeWeeklyReportInfoResponse::GetDownloadUrl() const
+{
+    return m_downloadUrl;
+}
+
+bool DescribeWeeklyReportInfoResponse::DownloadUrlHasBeenSet() const
+{
+    return m_downloadUrlHasBeenSet;
 }
 
 

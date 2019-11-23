@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool PlatformTypeHasBeenSet() const;
 
+                    /**
+                     * 获取当PlatformType为微信公众号或企业微信时，传递对应微信公众号或企业微信的唯一标识
+                     * @return PlatformId 当PlatformType为微信公众号或企业微信时，传递对应微信公众号或企业微信的唯一标识
+                     */
+                    std::string GetPlatformId() const;
+
+                    /**
+                     * 设置当PlatformType为微信公众号或企业微信时，传递对应微信公众号或企业微信的唯一标识
+                     * @param PlatformId 当PlatformType为微信公众号或企业微信时，传递对应微信公众号或企业微信的唯一标识
+                     */
+                    void SetPlatformId(const std::string& _platformId);
+
+                    /**
+                     * 判断参数 PlatformId 是否已赋值
+                     * @return PlatformId 是否已赋值
+                     */
+                    bool PlatformIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_platformType;
                     bool m_platformTypeHasBeenSet;
+
+                    /**
+                     * 当PlatformType为微信公众号或企业微信时，传递对应微信公众号或企业微信的唯一标识
+                     */
+                    std::string m_platformId;
+                    bool m_platformIdHasBeenSet;
 
                 };
             }

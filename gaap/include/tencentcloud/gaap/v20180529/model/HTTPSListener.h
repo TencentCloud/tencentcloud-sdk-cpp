@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gaap/v20180529/model/CertificateAliasInfo.h>
 
 
 namespace TencentCloud
@@ -306,6 +307,28 @@ namespace TencentCloud
                      */
                     bool ClientCertificateAliasHasBeenSet() const;
 
+                    /**
+                     * 获取多客户端CA证书别名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolyClientCertificateAliasInfo 多客户端CA证书别名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CertificateAliasInfo> GetPolyClientCertificateAliasInfo() const;
+
+                    /**
+                     * 设置多客户端CA证书别名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PolyClientCertificateAliasInfo 多客户端CA证书别名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPolyClientCertificateAliasInfo(const std::vector<CertificateAliasInfo>& _polyClientCertificateAliasInfo);
+
+                    /**
+                     * 判断参数 PolyClientCertificateAliasInfo 是否已赋值
+                     * @return PolyClientCertificateAliasInfo 是否已赋值
+                     */
+                    bool PolyClientCertificateAliasInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -390,6 +413,13 @@ namespace TencentCloud
                      */
                     std::string m_clientCertificateAlias;
                     bool m_clientCertificateAliasHasBeenSet;
+
+                    /**
+                     * 多客户端CA证书别名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CertificateAliasInfo> m_polyClientCertificateAliasInfo;
+                    bool m_polyClientCertificateAliasInfoHasBeenSet;
 
                 };
             }

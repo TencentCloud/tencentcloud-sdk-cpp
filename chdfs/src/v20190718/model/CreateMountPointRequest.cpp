@@ -28,7 +28,8 @@ CreateMountPointRequest::CreateMountPointRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_accessGroupIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_mountPointStatusHasBeenSet(false)
+    m_mountPointStatusHasBeenSet(false),
+    m_vpcTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateMountPointRequest::ToJsonString() const
         string key = "MountPointStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_mountPointStatus, allocator);
+    }
+
+    if (m_vpcTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vpcType, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateMountPointRequest::SetMountPointStatus(const uint64_t& _mountPointSta
 bool CreateMountPointRequest::MountPointStatusHasBeenSet() const
 {
     return m_mountPointStatusHasBeenSet;
+}
+
+uint64_t CreateMountPointRequest::GetVpcType() const
+{
+    return m_vpcType;
+}
+
+void CreateMountPointRequest::SetVpcType(const uint64_t& _vpcType)
+{
+    m_vpcType = _vpcType;
+    m_vpcTypeHasBeenSet = true;
+}
+
+bool CreateMountPointRequest::VpcTypeHasBeenSet() const
+{
+    return m_vpcTypeHasBeenSet;
 }
 
 

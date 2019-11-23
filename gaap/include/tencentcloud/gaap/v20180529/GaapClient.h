@@ -39,6 +39,8 @@
 #include <tencentcloud/gaap/v20180529/model/CreateCertificateResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateDomainRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateDomainResponse.h>
+#include <tencentcloud/gaap/v20180529/model/CreateDomainErrorPageInfoRequest.h>
+#include <tencentcloud/gaap/v20180529/model/CreateDomainErrorPageInfoResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateHTTPListenerRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateHTTPListenerResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateHTTPSListenerRequest.h>
@@ -63,6 +65,8 @@
 #include <tencentcloud/gaap/v20180529/model/DeleteCertificateResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteDomainRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteDomainResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DeleteDomainErrorPageInfoRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DeleteDomainErrorPageInfoResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteListenersRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteListenersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteProxyGroupRequest.h>
@@ -85,6 +89,8 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeCountryAreaMappingResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDestRegionsRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDestRegionsResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupAndStatisticsProxyRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupAndStatisticsProxyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupDomainConfigRequest.h>
@@ -213,6 +219,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDomainResponse> CreateDomainOutcome;
                 typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateDomainRequest&, CreateDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAsyncHandler;
+                typedef Outcome<Error, Model::CreateDomainErrorPageInfoResponse> CreateDomainErrorPageInfoOutcome;
+                typedef std::future<CreateDomainErrorPageInfoOutcome> CreateDomainErrorPageInfoOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::CreateDomainErrorPageInfoRequest&, CreateDomainErrorPageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainErrorPageInfoAsyncHandler;
                 typedef Outcome<Error, Model::CreateHTTPListenerResponse> CreateHTTPListenerOutcome;
                 typedef std::future<CreateHTTPListenerOutcome> CreateHTTPListenerOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateHTTPListenerRequest&, CreateHTTPListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHTTPListenerAsyncHandler;
@@ -249,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteDomainResponse> DeleteDomainOutcome;
                 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DeleteDomainRequest&, DeleteDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
+                typedef Outcome<Error, Model::DeleteDomainErrorPageInfoResponse> DeleteDomainErrorPageInfoOutcome;
+                typedef std::future<DeleteDomainErrorPageInfoOutcome> DeleteDomainErrorPageInfoOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DeleteDomainErrorPageInfoRequest&, DeleteDomainErrorPageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainErrorPageInfoAsyncHandler;
                 typedef Outcome<Error, Model::DeleteListenersResponse> DeleteListenersOutcome;
                 typedef std::future<DeleteListenersOutcome> DeleteListenersOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DeleteListenersRequest&, DeleteListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenersAsyncHandler;
@@ -282,6 +294,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDestRegionsResponse> DescribeDestRegionsOutcome;
                 typedef std::future<DescribeDestRegionsOutcome> DescribeDestRegionsOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeDestRegionsRequest&, DescribeDestRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDestRegionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDomainErrorPageInfoResponse> DescribeDomainErrorPageInfoOutcome;
+                typedef std::future<DescribeDomainErrorPageInfoOutcome> DescribeDomainErrorPageInfoOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeDomainErrorPageInfoRequest&, DescribeDomainErrorPageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainErrorPageInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGroupAndStatisticsProxyResponse> DescribeGroupAndStatisticsProxyOutcome;
                 typedef std::future<DescribeGroupAndStatisticsProxyOutcome> DescribeGroupAndStatisticsProxyOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeGroupAndStatisticsProxyRequest&, DescribeGroupAndStatisticsProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAndStatisticsProxyAsyncHandler;
@@ -495,6 +510,15 @@ namespace TencentCloud
                 CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request);
 
                 /**
+                 *定制域名指定错误码的错误响应
+                 * @param req CreateDomainErrorPageInfoRequest
+                 * @return CreateDomainErrorPageInfoOutcome
+                 */
+                CreateDomainErrorPageInfoOutcome CreateDomainErrorPageInfo(const Model::CreateDomainErrorPageInfoRequest &request);
+                void CreateDomainErrorPageInfoAsync(const Model::CreateDomainErrorPageInfoRequest& request, const CreateDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDomainErrorPageInfoOutcomeCallable CreateDomainErrorPageInfoCallable(const Model::CreateDomainErrorPageInfoRequest& request);
+
+                /**
                  *该接口（CreateHTTPListener）用于在通道实例下创建HTTP协议类型的监听器。
                  * @param req CreateHTTPListenerRequest
                  * @return CreateHTTPListenerOutcome
@@ -603,6 +627,15 @@ namespace TencentCloud
                 DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request);
 
                 /**
+                 *删除域名的定制错误
+                 * @param req DeleteDomainErrorPageInfoRequest
+                 * @return DeleteDomainErrorPageInfoOutcome
+                 */
+                DeleteDomainErrorPageInfoOutcome DeleteDomainErrorPageInfo(const Model::DeleteDomainErrorPageInfoRequest &request);
+                void DeleteDomainErrorPageInfoAsync(const Model::DeleteDomainErrorPageInfoRequest& request, const DeleteDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDomainErrorPageInfoOutcomeCallable DeleteDomainErrorPageInfoCallable(const Model::DeleteDomainErrorPageInfoRequest& request);
+
+                /**
                  *该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。
                  * @param req DeleteListenersRequest
                  * @return DeleteListenersOutcome
@@ -700,6 +733,15 @@ namespace TencentCloud
                 DescribeDestRegionsOutcome DescribeDestRegions(const Model::DescribeDestRegionsRequest &request);
                 void DescribeDestRegionsAsync(const Model::DescribeDestRegionsRequest& request, const DescribeDestRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDestRegionsOutcomeCallable DescribeDestRegionsCallable(const Model::DescribeDestRegionsRequest& request);
+
+                /**
+                 *查询目前订制域名的错误响应
+                 * @param req DescribeDomainErrorPageInfoRequest
+                 * @return DescribeDomainErrorPageInfoOutcome
+                 */
+                DescribeDomainErrorPageInfoOutcome DescribeDomainErrorPageInfo(const Model::DescribeDomainErrorPageInfoRequest &request);
+                void DescribeDomainErrorPageInfoAsync(const Model::DescribeDomainErrorPageInfoRequest& request, const DescribeDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainErrorPageInfoOutcomeCallable DescribeDomainErrorPageInfoCallable(const Model::DescribeDomainErrorPageInfoRequest& request);
 
                 /**
                  *该接口为内部接口，用于查询可以获取统计数据的通道组和通道信息

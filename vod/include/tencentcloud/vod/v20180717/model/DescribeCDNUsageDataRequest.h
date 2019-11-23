@@ -80,21 +80,21 @@ namespace TencentCloud
 
                     /**
                      * 获取CDN 统计数据类型，有效值：
-<li>Flux：流量，单位为byte。</li>
-<li>Bandwidth：带宽，单位为bps。</li>
+<li>Flux：流量，单位为 byte。</li>
+<li>Bandwidth：带宽，单位为 bps。</li>
                      * @return DataType CDN 统计数据类型，有效值：
-<li>Flux：流量，单位为byte。</li>
-<li>Bandwidth：带宽，单位为bps。</li>
+<li>Flux：流量，单位为 byte。</li>
+<li>Bandwidth：带宽，单位为 bps。</li>
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置CDN 统计数据类型，有效值：
-<li>Flux：流量，单位为byte。</li>
-<li>Bandwidth：带宽，单位为bps。</li>
+<li>Flux：流量，单位为 byte。</li>
+<li>Bandwidth：带宽，单位为 bps。</li>
                      * @param DataType CDN 统计数据类型，有效值：
-<li>Flux：流量，单位为byte。</li>
-<li>Bandwidth：带宽，单位为bps。</li>
+<li>Flux：流量，单位为 byte。</li>
+<li>Bandwidth：带宽，单位为 bps。</li>
                      */
                     void SetDataType(const std::string& _dataType);
 
@@ -105,18 +105,74 @@ namespace TencentCloud
                     bool DataTypeHasBeenSet() const;
 
                     /**
+                     * 获取用量数据的时间粒度，单位：分钟，取值有：
+<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>
+<li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
+<li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
+默认值为1440，返回天粒度的数据。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+                     * @return DataInterval 用量数据的时间粒度，单位：分钟，取值有：
+<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>
+<li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
+<li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
+默认值为1440，返回天粒度的数据。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+                     */
+                    uint64_t GetDataInterval() const;
+
+                    /**
+                     * 设置用量数据的时间粒度，单位：分钟，取值有：
+<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>
+<li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
+<li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
+默认值为1440，返回天粒度的数据。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+                     * @param DataInterval 用量数据的时间粒度，单位：分钟，取值有：
+<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>
+<li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
+<li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
+默认值为1440，返回天粒度的数据。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+                     */
+                    void SetDataInterval(const uint64_t& _dataInterval);
+
+                    /**
+                     * 判断参数 DataInterval 是否已赋值
+                     * @return DataInterval 是否已赋值
+                     */
+                    bool DataIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     * @return DomainNames 域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     */
+                    std::vector<std::string> GetDomainNames() const;
+
+                    /**
+                     * 设置域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     * @param DomainNames 域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     */
+                    void SetDomainNames(const std::vector<std::string>& _domainNames);
+
+                    /**
+                     * 判断参数 DomainNames 是否已赋值
+                     * @return DomainNames 是否已赋值
+                     */
+                    bool DomainNamesHasBeenSet() const;
+
+                    /**
                      * 获取点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。
                      * @return SubAppId 点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。
                      * @param SubAppId 点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
@@ -142,15 +198,32 @@ namespace TencentCloud
 
                     /**
                      * CDN 统计数据类型，有效值：
-<li>Flux：流量，单位为byte。</li>
-<li>Bandwidth：带宽，单位为bps。</li>
+<li>Flux：流量，单位为 byte。</li>
+<li>Bandwidth：带宽，单位为 bps。</li>
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;
 
                     /**
-                     * 点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * 用量数据的时间粒度，单位：分钟，取值有：
+<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>
+<li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>
+<li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>
+默认值为1440，返回天粒度的数据。
 当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。
+                     */
+                    uint64_t m_dataInterval;
+                    bool m_dataIntervalHasBeenSet;
+
+                    /**
+                     * 域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。
+                     */
+                    std::vector<std::string> m_domainNames;
+                    bool m_domainNamesHasBeenSet;
+
+                    /**
+                     * 点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

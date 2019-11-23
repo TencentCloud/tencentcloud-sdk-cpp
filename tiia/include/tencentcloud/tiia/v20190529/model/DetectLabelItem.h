@@ -82,6 +82,42 @@ namespace TencentCloud
                      */
                     bool ConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取标签的一级分类
+                     * @return FirstCategory 标签的一级分类
+                     */
+                    std::string GetFirstCategory() const;
+
+                    /**
+                     * 设置标签的一级分类
+                     * @param FirstCategory 标签的一级分类
+                     */
+                    void SetFirstCategory(const std::string& _firstCategory);
+
+                    /**
+                     * 判断参数 FirstCategory 是否已赋值
+                     * @return FirstCategory 是否已赋值
+                     */
+                    bool FirstCategoryHasBeenSet() const;
+
+                    /**
+                     * 获取标签的二级分类
+                     * @return SecondCategory 标签的二级分类
+                     */
+                    std::string GetSecondCategory() const;
+
+                    /**
+                     * 设置标签的二级分类
+                     * @param SecondCategory 标签的二级分类
+                     */
+                    void SetSecondCategory(const std::string& _secondCategory);
+
+                    /**
+                     * 判断参数 SecondCategory 是否已赋值
+                     * @return SecondCategory 是否已赋值
+                     */
+                    bool SecondCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +131,18 @@ namespace TencentCloud
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * 标签的一级分类
+                     */
+                    std::string m_firstCategory;
+                    bool m_firstCategoryHasBeenSet;
+
+                    /**
+                     * 标签的二级分类
+                     */
+                    std::string m_secondCategory;
+                    bool m_secondCategoryHasBeenSet;
 
                 };
             }

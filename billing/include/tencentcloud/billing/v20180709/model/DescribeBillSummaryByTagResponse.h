@@ -61,7 +61,7 @@ namespace TencentCloud
                      * @return SummaryOverview 各标签值花费分布详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    TagSummaryOverviewItem GetSummaryOverview() const;
+                    std::vector<TagSummaryOverviewItem> GetSummaryOverview() const;
 
                     /**
                      * 判断参数 SummaryOverview 是否已赋值
@@ -81,7 +81,7 @@ namespace TencentCloud
                      * 各标签值花费分布详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    TagSummaryOverviewItem m_summaryOverview;
+                    std::vector<TagSummaryOverviewItem> m_summaryOverview;
                     bool m_summaryOverviewHasBeenSet;
 
                 };

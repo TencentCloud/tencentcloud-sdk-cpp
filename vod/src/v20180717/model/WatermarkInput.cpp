@@ -24,7 +24,9 @@ using namespace std;
 WatermarkInput::WatermarkInput() :
     m_definitionHasBeenSet(false),
     m_textContentHasBeenSet(false),
-    m_svgContentHasBeenSet(false)
+    m_svgContentHasBeenSet(false),
+    m_startTimeOffsetHasBeenSet(false),
+    m_endTimeOffsetHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,26 @@ CoreInternalOutcome WatermarkInput::Deserialize(const Value &value)
         m_svgContentHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTimeOffset") && !value["StartTimeOffset"].IsNull())
+    {
+        if (!value["StartTimeOffset"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `WatermarkInput.StartTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTimeOffset = value["StartTimeOffset"].GetDouble();
+        m_startTimeOffsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTimeOffset") && !value["EndTimeOffset"].IsNull())
+    {
+        if (!value["EndTimeOffset"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `WatermarkInput.EndTimeOffset` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTimeOffset = value["EndTimeOffset"].GetDouble();
+        m_endTimeOffsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +114,22 @@ void WatermarkInput::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "SvgContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_svgContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeOffsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTimeOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTimeOffset, allocator);
+    }
+
+    if (m_endTimeOffsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTimeOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endTimeOffset, allocator);
     }
 
 }
@@ -143,5 +181,37 @@ void WatermarkInput::SetSvgContent(const string& _svgContent)
 bool WatermarkInput::SvgContentHasBeenSet() const
 {
     return m_svgContentHasBeenSet;
+}
+
+double WatermarkInput::GetStartTimeOffset() const
+{
+    return m_startTimeOffset;
+}
+
+void WatermarkInput::SetStartTimeOffset(const double& _startTimeOffset)
+{
+    m_startTimeOffset = _startTimeOffset;
+    m_startTimeOffsetHasBeenSet = true;
+}
+
+bool WatermarkInput::StartTimeOffsetHasBeenSet() const
+{
+    return m_startTimeOffsetHasBeenSet;
+}
+
+double WatermarkInput::GetEndTimeOffset() const
+{
+    return m_endTimeOffset;
+}
+
+void WatermarkInput::SetEndTimeOffset(const double& _endTimeOffset)
+{
+    m_endTimeOffset = _endTimeOffset;
+    m_endTimeOffsetHasBeenSet = true;
+}
+
+bool WatermarkInput::EndTimeOffsetHasBeenSet() const
+{
+    return m_endTimeOffsetHasBeenSet;
 }
 

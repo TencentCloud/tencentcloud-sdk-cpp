@@ -30,6 +30,8 @@ EditMediaRequest::EditMediaRequest() :
     m_definitionHasBeenSet(false),
     m_procedureNameHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
+    m_sessionContextHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -102,6 +104,22 @@ string EditMediaRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_outputConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -214,6 +232,38 @@ void EditMediaRequest::SetOutputConfig(const EditMediaOutputConfig& _outputConfi
 bool EditMediaRequest::OutputConfigHasBeenSet() const
 {
     return m_outputConfigHasBeenSet;
+}
+
+string EditMediaRequest::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void EditMediaRequest::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool EditMediaRequest::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
+}
+
+string EditMediaRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void EditMediaRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool EditMediaRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 uint64_t EditMediaRequest::GetSubAppId() const

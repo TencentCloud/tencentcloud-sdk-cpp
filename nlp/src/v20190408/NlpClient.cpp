@@ -83,6 +83,49 @@ NlpClient::AutoSummarizationOutcomeCallable NlpClient::AutoSummarizationCallable
     return task->get_future();
 }
 
+NlpClient::ChatBotOutcome NlpClient::ChatBot(const ChatBotRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatBot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatBotResponse rsp = ChatBotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatBotOutcome(rsp);
+        else
+            return ChatBotOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatBotOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::ChatBotAsync(const ChatBotRequest& request, const ChatBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChatBot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::ChatBotOutcomeCallable NlpClient::ChatBotCallable(const ChatBotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChatBotOutcome()>>(
+        [this, request]()
+        {
+            return this->ChatBot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::ContentApprovalOutcome NlpClient::ContentApproval(const ContentApprovalRequest &request)
 {
     auto outcome = MakeRequest(request, "ContentApproval");
@@ -162,6 +205,135 @@ NlpClient::DependencyParsingOutcomeCallable NlpClient::DependencyParsingCallable
         [this, request]()
         {
             return this->DependencyParsing(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::DescribeEntityOutcome NlpClient::DescribeEntity(const DescribeEntityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEntity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEntityResponse rsp = DescribeEntityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEntityOutcome(rsp);
+        else
+            return DescribeEntityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEntityOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DescribeEntityAsync(const DescribeEntityRequest& request, const DescribeEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEntity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DescribeEntityOutcomeCallable NlpClient::DescribeEntityCallable(const DescribeEntityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEntityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEntity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::DescribeRelationOutcome NlpClient::DescribeRelation(const DescribeRelationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRelation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRelationResponse rsp = DescribeRelationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRelationOutcome(rsp);
+        else
+            return DescribeRelationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRelationOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DescribeRelationAsync(const DescribeRelationRequest& request, const DescribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRelation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DescribeRelationOutcomeCallable NlpClient::DescribeRelationCallable(const DescribeRelationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRelationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRelation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::DescribeTripleOutcome NlpClient::DescribeTriple(const DescribeTripleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTriple");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTripleResponse rsp = DescribeTripleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTripleOutcome(rsp);
+        else
+            return DescribeTripleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTripleOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DescribeTripleAsync(const DescribeTripleRequest& request, const DescribeTripleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTriple(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DescribeTripleOutcomeCallable NlpClient::DescribeTripleCallable(const DescribeTripleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTripleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTriple(request);
         }
     );
 

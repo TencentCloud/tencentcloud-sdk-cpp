@@ -127,26 +127,26 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端CA证书ID，，仅适用于version3.0的通道。其中：
-不带该字段时，表示使用原证书；
+                     * 获取客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和PolyClientCertificateIds时，表示使用原证书；
 携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
-其他情况，使用该ClientCertificateId指定的证书。
-                     * @return ClientCertificateId 客户端CA证书ID，，仅适用于version3.0的通道。其中：
-不带该字段时，表示使用原证书；
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
+                     * @return ClientCertificateId 客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和PolyClientCertificateIds时，表示使用原证书；
 携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
-其他情况，使用该ClientCertificateId指定的证书。
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
                      */
                     std::string GetClientCertificateId() const;
 
                     /**
-                     * 设置客户端CA证书ID，，仅适用于version3.0的通道。其中：
-不带该字段时，表示使用原证书；
+                     * 设置客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和PolyClientCertificateIds时，表示使用原证书；
 携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
-其他情况，使用该ClientCertificateId指定的证书。
-                     * @param ClientCertificateId 客户端CA证书ID，，仅适用于version3.0的通道。其中：
-不带该字段时，表示使用原证书；
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
+                     * @param ClientCertificateId 客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和PolyClientCertificateIds时，表示使用原证书；
 携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
-其他情况，使用该ClientCertificateId指定的证书。
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
                      */
                     void SetClientCertificateId(const std::string& _clientCertificateId);
 
@@ -155,6 +155,36 @@ namespace TencentCloud
                      * @return ClientCertificateId 是否已赋值
                      */
                     bool ClientCertificateIdHasBeenSet() const;
+
+                    /**
+                     * 获取客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和ClientCertificateId时，表示使用原证书；
+携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
+                     * @return PolyClientCertificateIds 客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和ClientCertificateId时，表示使用原证书；
+携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
+                     */
+                    std::vector<std::string> GetPolyClientCertificateIds() const;
+
+                    /**
+                     * 设置客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和ClientCertificateId时，表示使用原证书；
+携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
+                     * @param PolyClientCertificateIds 客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和ClientCertificateId时，表示使用原证书；
+携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
+                     */
+                    void SetPolyClientCertificateIds(const std::vector<std::string>& _polyClientCertificateIds);
+
+                    /**
+                     * 判断参数 PolyClientCertificateIds 是否已赋值
+                     * @return PolyClientCertificateIds 是否已赋值
+                     */
+                    bool PolyClientCertificateIdsHasBeenSet() const;
 
                 private:
 
@@ -186,13 +216,22 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 客户端CA证书ID，，仅适用于version3.0的通道。其中：
-不带该字段时，表示使用原证书；
+                     * 客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和PolyClientCertificateIds时，表示使用原证书；
 携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
-其他情况，使用该ClientCertificateId指定的证书。
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
                      */
                     std::string m_clientCertificateId;
                     bool m_clientCertificateIdHasBeenSet;
+
+                    /**
+                     * 客户端CA证书ID，仅适用于version3.0的通道。其中：
+不带该字段和ClientCertificateId时，表示使用原证书；
+携带该字段时并且ClientCertificateId=default，表示使用监听器证书；
+其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。
+                     */
+                    std::vector<std::string> m_polyClientCertificateIds;
+                    bool m_polyClientCertificateIdsHasBeenSet;
 
                 };
             }

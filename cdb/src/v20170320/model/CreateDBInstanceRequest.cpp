@@ -48,7 +48,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_roGroupHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_deployGroupIdHasBeenSet(false)
+    m_deployGroupIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "DeployGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -685,6 +694,22 @@ void CreateDBInstanceRequest::SetDeployGroupId(const string& _deployGroupId)
 bool CreateDBInstanceRequest::DeployGroupIdHasBeenSet() const
 {
     return m_deployGroupIdHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateDBInstanceRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

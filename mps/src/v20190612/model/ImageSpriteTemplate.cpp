@@ -32,7 +32,8 @@ ImageSpriteTemplate::ImageSpriteTemplate() :
     m_rowCountHasBeenSet(false),
     m_columnCountHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FillType") && !value["FillType"].IsNull())
+    {
+        if (!value["FillType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fillType = string(value["FillType"].GetString());
+        m_fillTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void ImageSpriteTemplate::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void ImageSpriteTemplate::SetUpdateTime(const string& _updateTime)
 bool ImageSpriteTemplate::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string ImageSpriteTemplate::GetFillType() const
+{
+    return m_fillType;
+}
+
+void ImageSpriteTemplate::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool ImageSpriteTemplate::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 

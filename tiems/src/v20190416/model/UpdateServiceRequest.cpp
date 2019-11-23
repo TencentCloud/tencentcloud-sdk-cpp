@@ -28,7 +28,9 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_scalerHasBeenSet(false),
     m_serviceConfigIdHasBeenSet(false),
     m_scaleModeHasBeenSet(false),
-    m_serviceActionHasBeenSet(false)
+    m_serviceActionHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_gpuTypeHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,7 @@ string UpdateServiceRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_serviceId, allocator);
+        d.AddMember(iKey, Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scalerHasBeenSet)
@@ -61,7 +63,7 @@ string UpdateServiceRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ServiceConfigId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_serviceConfigId, allocator);
+        d.AddMember(iKey, Value(m_serviceConfigId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scaleModeHasBeenSet)
@@ -80,6 +82,22 @@ string UpdateServiceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_serviceAction.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gpuTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GpuType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_gpuType.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -88,12 +106,12 @@ string UpdateServiceRequest::ToJsonString() const
 }
 
 
-int64_t UpdateServiceRequest::GetServiceId() const
+string UpdateServiceRequest::GetServiceId() const
 {
     return m_serviceId;
 }
 
-void UpdateServiceRequest::SetServiceId(const int64_t& _serviceId)
+void UpdateServiceRequest::SetServiceId(const string& _serviceId)
 {
     m_serviceId = _serviceId;
     m_serviceIdHasBeenSet = true;
@@ -120,12 +138,12 @@ bool UpdateServiceRequest::ScalerHasBeenSet() const
     return m_scalerHasBeenSet;
 }
 
-int64_t UpdateServiceRequest::GetServiceConfigId() const
+string UpdateServiceRequest::GetServiceConfigId() const
 {
     return m_serviceConfigId;
 }
 
-void UpdateServiceRequest::SetServiceConfigId(const int64_t& _serviceConfigId)
+void UpdateServiceRequest::SetServiceConfigId(const string& _serviceConfigId)
 {
     m_serviceConfigId = _serviceConfigId;
     m_serviceConfigIdHasBeenSet = true;
@@ -166,6 +184,38 @@ void UpdateServiceRequest::SetServiceAction(const string& _serviceAction)
 bool UpdateServiceRequest::ServiceActionHasBeenSet() const
 {
     return m_serviceActionHasBeenSet;
+}
+
+string UpdateServiceRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void UpdateServiceRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool UpdateServiceRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string UpdateServiceRequest::GetGpuType() const
+{
+    return m_gpuType;
+}
+
+void UpdateServiceRequest::SetGpuType(const string& _gpuType)
+{
+    m_gpuType = _gpuType;
+    m_gpuTypeHasBeenSet = true;
+}
+
+bool UpdateServiceRequest::GpuTypeHasBeenSet() const
+{
+    return m_gpuTypeHasBeenSet;
 }
 
 

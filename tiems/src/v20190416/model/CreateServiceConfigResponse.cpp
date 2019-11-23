@@ -85,7 +85,7 @@ CoreInternalOutcome CreateServiceConfigResponse::Deserialize(const string &paylo
 }
 
 
-ServiceConfig CreateServiceConfigResponse::GetServiceConfig() const
+Config CreateServiceConfigResponse::GetServiceConfig() const
 {
     return m_serviceConfig;
 }

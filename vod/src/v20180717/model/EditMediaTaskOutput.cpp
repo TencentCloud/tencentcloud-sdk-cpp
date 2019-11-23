@@ -23,8 +23,11 @@ using namespace std;
 
 EditMediaTaskOutput::EditMediaTaskOutput() :
     m_fileTypeHasBeenSet(false),
+    m_fileUrlHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_fileUrlHasBeenSet(false)
+    m_mediaNameHasBeenSet(false),
+    m_classIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -43,6 +46,16 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const Value &value)
         m_fileTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FileUrl") && !value["FileUrl"].IsNull())
+    {
+        if (!value["FileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileUrl = string(value["FileUrl"].GetString());
+        m_fileUrlHasBeenSet = true;
+    }
+
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
     {
         if (!value["FileId"].IsString())
@@ -53,14 +66,34 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const Value &value)
         m_fileIdHasBeenSet = true;
     }
 
-    if (value.HasMember("FileUrl") && !value["FileUrl"].IsNull())
+    if (value.HasMember("MediaName") && !value["MediaName"].IsNull())
     {
-        if (!value["FileUrl"].IsString())
+        if (!value["MediaName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.MediaName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_fileUrl = string(value["FileUrl"].GetString());
-        m_fileUrlHasBeenSet = true;
+        m_mediaName = string(value["MediaName"].GetString());
+        m_mediaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClassId") && !value["ClassId"].IsNull())
+    {
+        if (!value["ClassId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_classId = value["ClassId"].GetInt64();
+        m_classIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTaskOutput.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
     }
 
 
@@ -78,6 +111,14 @@ void EditMediaTaskOutput::ToJsonObject(Value &value, Document::AllocatorType& al
         value.AddMember(iKey, Value(m_fileType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fileUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -86,12 +127,28 @@ void EditMediaTaskOutput::ToJsonObject(Value &value, Document::AllocatorType& al
         value.AddMember(iKey, Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_fileUrlHasBeenSet)
+    if (m_mediaNameHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "FileUrl";
+        string key = "MediaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, Value(m_mediaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClassId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -113,6 +170,22 @@ bool EditMediaTaskOutput::FileTypeHasBeenSet() const
     return m_fileTypeHasBeenSet;
 }
 
+string EditMediaTaskOutput::GetFileUrl() const
+{
+    return m_fileUrl;
+}
+
+void EditMediaTaskOutput::SetFileUrl(const string& _fileUrl)
+{
+    m_fileUrl = _fileUrl;
+    m_fileUrlHasBeenSet = true;
+}
+
+bool EditMediaTaskOutput::FileUrlHasBeenSet() const
+{
+    return m_fileUrlHasBeenSet;
+}
+
 string EditMediaTaskOutput::GetFileId() const
 {
     return m_fileId;
@@ -129,19 +202,51 @@ bool EditMediaTaskOutput::FileIdHasBeenSet() const
     return m_fileIdHasBeenSet;
 }
 
-string EditMediaTaskOutput::GetFileUrl() const
+string EditMediaTaskOutput::GetMediaName() const
 {
-    return m_fileUrl;
+    return m_mediaName;
 }
 
-void EditMediaTaskOutput::SetFileUrl(const string& _fileUrl)
+void EditMediaTaskOutput::SetMediaName(const string& _mediaName)
 {
-    m_fileUrl = _fileUrl;
-    m_fileUrlHasBeenSet = true;
+    m_mediaName = _mediaName;
+    m_mediaNameHasBeenSet = true;
 }
 
-bool EditMediaTaskOutput::FileUrlHasBeenSet() const
+bool EditMediaTaskOutput::MediaNameHasBeenSet() const
 {
-    return m_fileUrlHasBeenSet;
+    return m_mediaNameHasBeenSet;
+}
+
+int64_t EditMediaTaskOutput::GetClassId() const
+{
+    return m_classId;
+}
+
+void EditMediaTaskOutput::SetClassId(const int64_t& _classId)
+{
+    m_classId = _classId;
+    m_classIdHasBeenSet = true;
+}
+
+bool EditMediaTaskOutput::ClassIdHasBeenSet() const
+{
+    return m_classIdHasBeenSet;
+}
+
+string EditMediaTaskOutput::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void EditMediaTaskOutput::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool EditMediaTaskOutput::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 

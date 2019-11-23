@@ -33,7 +33,9 @@ DescribePlayErrorCodeSumInfoListResponse::DescribePlayErrorCodeSumInfoListRespon
     m_pageNumHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_totalPageHasBeenSet(false),
-    m_totalNumHasBeenSet(false)
+    m_totalNumHasBeenSet(false),
+    m_totalCode2xxHasBeenSet(false),
+    m_totalCode3xxHasBeenSet(false)
 {
 }
 
@@ -181,6 +183,26 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
         m_totalNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCode2xx") && !rsp["TotalCode2xx"].IsNull())
+    {
+        if (!rsp["TotalCode2xx"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCode2xx` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCode2xx = rsp["TotalCode2xx"].GetUint64();
+        m_totalCode2xxHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCode3xx") && !rsp["TotalCode3xx"].IsNull())
+    {
+        if (!rsp["TotalCode3xx"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCode3xx` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCode3xx = rsp["TotalCode3xx"].GetUint64();
+        m_totalCode3xxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +296,26 @@ uint64_t DescribePlayErrorCodeSumInfoListResponse::GetTotalNum() const
 bool DescribePlayErrorCodeSumInfoListResponse::TotalNumHasBeenSet() const
 {
     return m_totalNumHasBeenSet;
+}
+
+uint64_t DescribePlayErrorCodeSumInfoListResponse::GetTotalCode2xx() const
+{
+    return m_totalCode2xx;
+}
+
+bool DescribePlayErrorCodeSumInfoListResponse::TotalCode2xxHasBeenSet() const
+{
+    return m_totalCode2xxHasBeenSet;
+}
+
+uint64_t DescribePlayErrorCodeSumInfoListResponse::GetTotalCode3xx() const
+{
+    return m_totalCode3xx;
+}
+
+bool DescribePlayErrorCodeSumInfoListResponse::TotalCode3xxHasBeenSet() const
+{
+    return m_totalCode3xxHasBeenSet;
 }
 
 

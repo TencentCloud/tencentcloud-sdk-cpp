@@ -31,6 +31,7 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_beginProcessTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
     m_workflowTaskHasBeenSet(false),
+    m_liveStreamProcessTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -137,6 +138,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         }
 
         m_workflowTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LiveStreamProcessTask") && !rsp["LiveStreamProcessTask"].IsNull())
+    {
+        if (!rsp["LiveStreamProcessTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LiveStreamProcessTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_liveStreamProcessTask.Deserialize(rsp["LiveStreamProcessTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_liveStreamProcessTaskHasBeenSet = true;
     }
 
     if (rsp.HasMember("TaskNotifyConfig") && !rsp["TaskNotifyConfig"].IsNull())
@@ -249,6 +267,16 @@ WorkflowTask DescribeTaskDetailResponse::GetWorkflowTask() const
 bool DescribeTaskDetailResponse::WorkflowTaskHasBeenSet() const
 {
     return m_workflowTaskHasBeenSet;
+}
+
+LiveStreamProcessTask DescribeTaskDetailResponse::GetLiveStreamProcessTask() const
+{
+    return m_liveStreamProcessTask;
+}
+
+bool DescribeTaskDetailResponse::LiveStreamProcessTaskHasBeenSet() const
+{
+    return m_liveStreamProcessTaskHasBeenSet;
 }
 
 TaskNotifyConfig DescribeTaskDetailResponse::GetTaskNotifyConfig() const

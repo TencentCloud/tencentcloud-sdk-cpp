@@ -27,7 +27,8 @@ CreateDomainRequest::CreateDomainRequest() :
     m_listenerIdHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false)
+    m_clientCertificateIdHasBeenSet(false),
+    m_polyClientCertificateIdsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,19 @@ string CreateDomainRequest::ToJsonString() const
         string key = "ClientCertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clientCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polyClientCertificateIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolyClientCertificateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_polyClientCertificateIds.begin(); itr != m_polyClientCertificateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -140,6 +154,22 @@ void CreateDomainRequest::SetClientCertificateId(const string& _clientCertificat
 bool CreateDomainRequest::ClientCertificateIdHasBeenSet() const
 {
     return m_clientCertificateIdHasBeenSet;
+}
+
+vector<string> CreateDomainRequest::GetPolyClientCertificateIds() const
+{
+    return m_polyClientCertificateIds;
+}
+
+void CreateDomainRequest::SetPolyClientCertificateIds(const vector<string>& _polyClientCertificateIds)
+{
+    m_polyClientCertificateIds = _polyClientCertificateIds;
+    m_polyClientCertificateIdsHasBeenSet = true;
+}
+
+bool CreateDomainRequest::PolyClientCertificateIdsHasBeenSet() const
+{
+    return m_polyClientCertificateIdsHasBeenSet;
 }
 
 

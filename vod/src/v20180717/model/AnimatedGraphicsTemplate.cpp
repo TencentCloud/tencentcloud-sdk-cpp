@@ -28,6 +28,7 @@ AnimatedGraphicsTemplate::AnimatedGraphicsTemplate() :
     m_commentHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_fpsHasBeenSet(false),
     m_qualityHasBeenSet(false),
@@ -99,6 +100,16 @@ CoreInternalOutcome AnimatedGraphicsTemplate::Deserialize(const Value &value)
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResolutionAdaptive") && !value["ResolutionAdaptive"].IsNull())
+    {
+        if (!value["ResolutionAdaptive"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AnimatedGraphicsTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolutionAdaptive = string(value["ResolutionAdaptive"].GetString());
+        m_resolutionAdaptiveHasBeenSet = true;
     }
 
     if (value.HasMember("Format") && !value["Format"].IsNull())
@@ -204,6 +215,14 @@ void AnimatedGraphicsTemplate::ToJsonObject(Value &value, Document::AllocatorTyp
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
     }
 
     if (m_formatHasBeenSet)
@@ -343,6 +362,22 @@ void AnimatedGraphicsTemplate::SetHeight(const uint64_t& _height)
 bool AnimatedGraphicsTemplate::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+string AnimatedGraphicsTemplate::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void AnimatedGraphicsTemplate::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool AnimatedGraphicsTemplate::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
 }
 
 string AnimatedGraphicsTemplate::GetFormat() const

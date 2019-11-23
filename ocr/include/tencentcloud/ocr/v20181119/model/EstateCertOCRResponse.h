@@ -174,6 +174,18 @@ namespace TencentCloud
                      */
                     bool AngleHasBeenSet() const;
 
+                    /**
+                     * 获取不动产权号
+                     * @return Number 不动产权号
+                     */
+                    std::string GetNumber() const;
+
+                    /**
+                     * 判断参数 Number 是否已赋值
+                     * @return Number 是否已赋值
+                     */
+                    bool NumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +253,12 @@ namespace TencentCloud
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
+
+                    /**
+                     * 不动产权号
+                     */
+                    std::string m_number;
+                    bool m_numberHasBeenSet;
 
                 };
             }

@@ -28,11 +28,13 @@ SampleSnapshotTemplate::SampleSnapshotTemplate() :
     m_commentHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_sampleTypeHasBeenSet(false),
     m_sampleIntervalHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,16 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("ResolutionAdaptive") && !value["ResolutionAdaptive"].IsNull())
+    {
+        if (!value["ResolutionAdaptive"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.ResolutionAdaptive` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolutionAdaptive = string(value["ResolutionAdaptive"].GetString());
+        m_resolutionAdaptiveHasBeenSet = true;
+    }
+
     if (value.HasMember("Format") && !value["Format"].IsNull())
     {
         if (!value["Format"].IsString())
@@ -149,6 +161,16 @@ CoreInternalOutcome SampleSnapshotTemplate::Deserialize(const Value &value)
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FillType") && !value["FillType"].IsNull())
+    {
+        if (!value["FillType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SampleSnapshotTemplate.FillType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fillType = string(value["FillType"].GetString());
+        m_fillTypeHasBeenSet = true;
     }
 
 
@@ -206,6 +228,14 @@ void SampleSnapshotTemplate::ToJsonObject(Value &value, Document::AllocatorType&
         value.AddMember(iKey, m_height, allocator);
     }
 
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_formatHasBeenSet)
     {
         Value iKey(kStringType);
@@ -244,6 +274,14 @@ void SampleSnapshotTemplate::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -345,6 +383,22 @@ bool SampleSnapshotTemplate::HeightHasBeenSet() const
     return m_heightHasBeenSet;
 }
 
+string SampleSnapshotTemplate::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void SampleSnapshotTemplate::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool SampleSnapshotTemplate::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
+}
+
 string SampleSnapshotTemplate::GetFormat() const
 {
     return m_format;
@@ -423,5 +477,21 @@ void SampleSnapshotTemplate::SetUpdateTime(const string& _updateTime)
 bool SampleSnapshotTemplate::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string SampleSnapshotTemplate::GetFillType() const
+{
+    return m_fillType;
+}
+
+void SampleSnapshotTemplate::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool SampleSnapshotTemplate::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 

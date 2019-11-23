@@ -123,14 +123,14 @@ namespace TencentCloud
                     bool EnvDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取计算环境管理类型
-                     * @return EnvType 计算环境管理类型
+                     * 获取计算环境管理类型， 取值MANAGED。
+                     * @return EnvType 计算环境管理类型， 取值MANAGED。
                      */
                     std::string GetEnvType() const;
 
                     /**
-                     * 设置计算环境管理类型
-                     * @param EnvType 计算环境管理类型
+                     * 设置计算环境管理类型， 取值MANAGED。
+                     * @param EnvType 计算环境管理类型， 取值MANAGED。
                      */
                     void SetEnvType(const std::string& _envType);
 
@@ -239,7 +239,7 @@ namespace TencentCloud
                     bool m_envDescriptionHasBeenSet;
 
                     /**
-                     * 计算环境管理类型
+                     * 计算环境管理类型， 取值MANAGED。
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;

@@ -43,16 +43,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务配置Id (deprecated)
-                     * @return ServiceConfigId 服务配置Id (deprecated)
+                     * 获取服务配置Id
+                     * @return ServiceConfigId 服务配置Id
                      */
-                    int64_t GetServiceConfigId() const;
+                    std::string GetServiceConfigId() const;
 
                     /**
-                     * 设置服务配置Id (deprecated)
-                     * @param ServiceConfigId 服务配置Id (deprecated)
+                     * 设置服务配置Id
+                     * @param ServiceConfigId 服务配置Id
                      */
-                    void SetServiceConfigId(const int64_t& _serviceConfigId);
+                    void SetServiceConfigId(const std::string& _serviceConfigId);
 
                     /**
                      * 判断参数 ServiceConfigId 是否已赋值
@@ -81,9 +81,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务配置Id (deprecated)
+                     * 服务配置Id
                      */
-                    int64_t m_serviceConfigId;
+                    std::string m_serviceConfigId;
                     bool m_serviceConfigIdHasBeenSet;
 
                     /**

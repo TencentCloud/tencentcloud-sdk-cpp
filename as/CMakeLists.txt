@@ -48,7 +48,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/Tag.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/LimitedLoginSettings.h
-  include/tencentcloud/as/v20180419/model/ModifyAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/ModifyLoadBalancersRequest.h
   include/tencentcloud/as/v20180419/model/RemoveInstancesResponse.h
   include/tencentcloud/as/v20180419/model/ModifyScalingPolicyResponse.h
   include/tencentcloud/as/v20180419/model/SetInstancesProtectionRequest.h
@@ -62,13 +62,14 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/ScalingPolicy.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupLastActivitiesRequest.h
+  include/tencentcloud/as/v20180419/model/HostNameSettings.h
   include/tencentcloud/as/v20180419/model/ModifyLoadBalancersResponse.h
   include/tencentcloud/as/v20180419/model/DescribePaiInstancesRequest.h
   include/tencentcloud/as/v20180419/model/CreateNotificationConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/DescribeScheduledActionsResponse.h
   include/tencentcloud/as/v20180419/model/ModifyNotificationConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/DeleteLifecycleHookRequest.h
-  include/tencentcloud/as/v20180419/model/ModifyLoadBalancersRequest.h
+  include/tencentcloud/as/v20180419/model/ModifyAutoScalingGroupResponse.h
   include/tencentcloud/as/v20180419/model/DeleteLaunchConfigurationRequest.h
   include/tencentcloud/as/v20180419/model/ModifyScalingPolicyRequest.h
   include/tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h
@@ -166,7 +167,7 @@ set(as_src
   src/v20180419/model/Tag.cpp
   src/v20180419/model/DescribeAutoScalingInstancesRequest.cpp
   src/v20180419/model/LimitedLoginSettings.cpp
-  src/v20180419/model/ModifyAutoScalingGroupResponse.cpp
+  src/v20180419/model/ModifyLoadBalancersRequest.cpp
   src/v20180419/model/RemoveInstancesResponse.cpp
   src/v20180419/model/ModifyScalingPolicyResponse.cpp
   src/v20180419/model/SetInstancesProtectionRequest.cpp
@@ -180,13 +181,14 @@ set(as_src
   src/v20180419/model/UpgradeLifecycleHookRequest.cpp
   src/v20180419/model/ScalingPolicy.cpp
   src/v20180419/model/DescribeAutoScalingGroupLastActivitiesRequest.cpp
+  src/v20180419/model/HostNameSettings.cpp
   src/v20180419/model/ModifyLoadBalancersResponse.cpp
   src/v20180419/model/DescribePaiInstancesRequest.cpp
   src/v20180419/model/CreateNotificationConfigurationRequest.cpp
   src/v20180419/model/DescribeScheduledActionsResponse.cpp
   src/v20180419/model/ModifyNotificationConfigurationRequest.cpp
   src/v20180419/model/DeleteLifecycleHookRequest.cpp
-  src/v20180419/model/ModifyLoadBalancersRequest.cpp
+  src/v20180419/model/ModifyAutoScalingGroupResponse.cpp
   src/v20180419/model/DeleteLaunchConfigurationRequest.cpp
   src/v20180419/model/ModifyScalingPolicyRequest.cpp
   src/v20180419/model/InstanceMarketOptionsRequest.cpp

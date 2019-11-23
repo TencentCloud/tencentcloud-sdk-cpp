@@ -192,6 +192,18 @@ namespace TencentCloud
                      */
                     bool VulNumHasBeenSet() const;
 
+                    /**
+                     * 获取导出文件下载地址。
+                     * @return DownloadUrl 导出文件下载地址。
+                     */
+                    std::string GetDownloadUrl() const;
+
+                    /**
+                     * 判断参数 DownloadUrl 是否已赋值
+                     * @return DownloadUrl 是否已赋值
+                     */
+                    bool DownloadUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,6 +280,12 @@ namespace TencentCloud
                      */
                     uint64_t m_vulNum;
                     bool m_vulNumHasBeenSet;
+
+                    /**
+                     * 导出文件下载地址。
+                     */
+                    std::string m_downloadUrl;
+                    bool m_downloadUrlHasBeenSet;
 
                 };
             }

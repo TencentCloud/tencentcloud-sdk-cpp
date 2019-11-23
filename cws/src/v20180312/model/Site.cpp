@@ -22,16 +22,6 @@ using namespace rapidjson;
 using namespace std;
 
 Site::Site() :
-    m_progressHasBeenSet(false),
-    m_appidHasBeenSet(false),
-    m_uinHasBeenSet(false),
-    m_needLoginHasBeenSet(false),
-    m_loginCookieHasBeenSet(false),
-    m_loginCookieValidHasBeenSet(false),
-    m_loginCheckUrlHasBeenSet(false),
-    m_loginCheckKwHasBeenSet(false),
-    m_scanDisallowHasBeenSet(false),
-    m_userAgentHasBeenSet(false),
     m_idHasBeenSet(false),
     m_monitorIdHasBeenSet(false),
     m_urlHasBeenSet(false),
@@ -53,7 +43,19 @@ Site::Site() :
     m_updatedAtHasBeenSet(false),
     m_lastScanRateLimitHasBeenSet(false),
     m_lastScanVulsNumHasBeenSet(false),
-    m_lastScanNoticeNumHasBeenSet(false)
+    m_lastScanNoticeNumHasBeenSet(false),
+    m_progressHasBeenSet(false),
+    m_appidHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_needLoginHasBeenSet(false),
+    m_loginCookieHasBeenSet(false),
+    m_loginCookieValidHasBeenSet(false),
+    m_loginCheckUrlHasBeenSet(false),
+    m_loginCheckKwHasBeenSet(false),
+    m_scanDisallowHasBeenSet(false),
+    m_userAgentHasBeenSet(false),
+    m_contentStatusHasBeenSet(false),
+    m_lastScanContentNumHasBeenSet(false)
 {
 }
 
@@ -61,106 +63,6 @@ CoreInternalOutcome Site::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Progress") && !value["Progress"].IsNull())
-    {
-        if (!value["Progress"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `Site.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_progress = value["Progress"].GetUint64();
-        m_progressHasBeenSet = true;
-    }
-
-    if (value.HasMember("Appid") && !value["Appid"].IsNull())
-    {
-        if (!value["Appid"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `Site.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appid = value["Appid"].GetUint64();
-        m_appidHasBeenSet = true;
-    }
-
-    if (value.HasMember("Uin") && !value["Uin"].IsNull())
-    {
-        if (!value["Uin"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Site.Uin` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_uin = string(value["Uin"].GetString());
-        m_uinHasBeenSet = true;
-    }
-
-    if (value.HasMember("NeedLogin") && !value["NeedLogin"].IsNull())
-    {
-        if (!value["NeedLogin"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `Site.NeedLogin` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_needLogin = value["NeedLogin"].GetInt64();
-        m_needLoginHasBeenSet = true;
-    }
-
-    if (value.HasMember("LoginCookie") && !value["LoginCookie"].IsNull())
-    {
-        if (!value["LoginCookie"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Site.LoginCookie` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_loginCookie = string(value["LoginCookie"].GetString());
-        m_loginCookieHasBeenSet = true;
-    }
-
-    if (value.HasMember("LoginCookieValid") && !value["LoginCookieValid"].IsNull())
-    {
-        if (!value["LoginCookieValid"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `Site.LoginCookieValid` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_loginCookieValid = value["LoginCookieValid"].GetUint64();
-        m_loginCookieValidHasBeenSet = true;
-    }
-
-    if (value.HasMember("LoginCheckUrl") && !value["LoginCheckUrl"].IsNull())
-    {
-        if (!value["LoginCheckUrl"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Site.LoginCheckUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_loginCheckUrl = string(value["LoginCheckUrl"].GetString());
-        m_loginCheckUrlHasBeenSet = true;
-    }
-
-    if (value.HasMember("LoginCheckKw") && !value["LoginCheckKw"].IsNull())
-    {
-        if (!value["LoginCheckKw"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Site.LoginCheckKw` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_loginCheckKw = string(value["LoginCheckKw"].GetString());
-        m_loginCheckKwHasBeenSet = true;
-    }
-
-    if (value.HasMember("ScanDisallow") && !value["ScanDisallow"].IsNull())
-    {
-        if (!value["ScanDisallow"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Site.ScanDisallow` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_scanDisallow = string(value["ScanDisallow"].GetString());
-        m_scanDisallowHasBeenSet = true;
-    }
-
-    if (value.HasMember("UserAgent") && !value["UserAgent"].IsNull())
-    {
-        if (!value["UserAgent"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Site.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_userAgent = string(value["UserAgent"].GetString());
-        m_userAgentHasBeenSet = true;
-    }
 
     if (value.HasMember("Id") && !value["Id"].IsNull())
     {
@@ -382,92 +284,132 @@ CoreInternalOutcome Site::Deserialize(const Value &value)
         m_lastScanNoticeNumHasBeenSet = true;
     }
 
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Site.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetUint64();
+        m_progressHasBeenSet = true;
+    }
+
+    if (value.HasMember("Appid") && !value["Appid"].IsNull())
+    {
+        if (!value["Appid"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Site.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appid = value["Appid"].GetUint64();
+        m_appidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Site.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("NeedLogin") && !value["NeedLogin"].IsNull())
+    {
+        if (!value["NeedLogin"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Site.NeedLogin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_needLogin = value["NeedLogin"].GetInt64();
+        m_needLoginHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoginCookie") && !value["LoginCookie"].IsNull())
+    {
+        if (!value["LoginCookie"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Site.LoginCookie` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loginCookie = string(value["LoginCookie"].GetString());
+        m_loginCookieHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoginCookieValid") && !value["LoginCookieValid"].IsNull())
+    {
+        if (!value["LoginCookieValid"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Site.LoginCookieValid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_loginCookieValid = value["LoginCookieValid"].GetUint64();
+        m_loginCookieValidHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoginCheckUrl") && !value["LoginCheckUrl"].IsNull())
+    {
+        if (!value["LoginCheckUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Site.LoginCheckUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loginCheckUrl = string(value["LoginCheckUrl"].GetString());
+        m_loginCheckUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoginCheckKw") && !value["LoginCheckKw"].IsNull())
+    {
+        if (!value["LoginCheckKw"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Site.LoginCheckKw` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loginCheckKw = string(value["LoginCheckKw"].GetString());
+        m_loginCheckKwHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScanDisallow") && !value["ScanDisallow"].IsNull())
+    {
+        if (!value["ScanDisallow"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Site.ScanDisallow` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanDisallow = string(value["ScanDisallow"].GetString());
+        m_scanDisallowHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserAgent") && !value["UserAgent"].IsNull())
+    {
+        if (!value["UserAgent"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Site.UserAgent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAgent = string(value["UserAgent"].GetString());
+        m_userAgentHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContentStatus") && !value["ContentStatus"].IsNull())
+    {
+        if (!value["ContentStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Site.ContentStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentStatus = value["ContentStatus"].GetUint64();
+        m_contentStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastScanContentNum") && !value["LastScanContentNum"].IsNull())
+    {
+        if (!value["LastScanContentNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Site.LastScanContentNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastScanContentNum = value["LastScanContentNum"].GetUint64();
+        m_lastScanContentNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_progressHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Progress";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_progress, allocator);
-    }
-
-    if (m_appidHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Appid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appid, allocator);
-    }
-
-    if (m_uinHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Uin";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_needLoginHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "NeedLogin";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_needLogin, allocator);
-    }
-
-    if (m_loginCookieHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LoginCookie";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loginCookie.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_loginCookieValidHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LoginCookieValid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_loginCookieValid, allocator);
-    }
-
-    if (m_loginCheckUrlHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LoginCheckUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loginCheckUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_loginCheckKwHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LoginCheckKw";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loginCheckKw.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_scanDisallowHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ScanDisallow";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scanDisallow.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_userAgentHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "UserAgent";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userAgent.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_idHasBeenSet)
     {
@@ -645,168 +587,104 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         value.AddMember(iKey, m_lastScanNoticeNum, allocator);
     }
 
+    if (m_progressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_appidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Appid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appid, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needLoginHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedLogin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needLogin, allocator);
+    }
+
+    if (m_loginCookieHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoginCookie";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_loginCookie.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loginCookieValidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoginCookieValid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loginCookieValid, allocator);
+    }
+
+    if (m_loginCheckUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoginCheckUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_loginCheckUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loginCheckKwHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoginCheckKw";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_loginCheckKw.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanDisallowHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ScanDisallow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_scanDisallow.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userAgentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserAgent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_userAgent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ContentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_contentStatus, allocator);
+    }
+
+    if (m_lastScanContentNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LastScanContentNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastScanContentNum, allocator);
+    }
+
 }
 
-
-uint64_t Site::GetProgress() const
-{
-    return m_progress;
-}
-
-void Site::SetProgress(const uint64_t& _progress)
-{
-    m_progress = _progress;
-    m_progressHasBeenSet = true;
-}
-
-bool Site::ProgressHasBeenSet() const
-{
-    return m_progressHasBeenSet;
-}
-
-uint64_t Site::GetAppid() const
-{
-    return m_appid;
-}
-
-void Site::SetAppid(const uint64_t& _appid)
-{
-    m_appid = _appid;
-    m_appidHasBeenSet = true;
-}
-
-bool Site::AppidHasBeenSet() const
-{
-    return m_appidHasBeenSet;
-}
-
-string Site::GetUin() const
-{
-    return m_uin;
-}
-
-void Site::SetUin(const string& _uin)
-{
-    m_uin = _uin;
-    m_uinHasBeenSet = true;
-}
-
-bool Site::UinHasBeenSet() const
-{
-    return m_uinHasBeenSet;
-}
-
-int64_t Site::GetNeedLogin() const
-{
-    return m_needLogin;
-}
-
-void Site::SetNeedLogin(const int64_t& _needLogin)
-{
-    m_needLogin = _needLogin;
-    m_needLoginHasBeenSet = true;
-}
-
-bool Site::NeedLoginHasBeenSet() const
-{
-    return m_needLoginHasBeenSet;
-}
-
-string Site::GetLoginCookie() const
-{
-    return m_loginCookie;
-}
-
-void Site::SetLoginCookie(const string& _loginCookie)
-{
-    m_loginCookie = _loginCookie;
-    m_loginCookieHasBeenSet = true;
-}
-
-bool Site::LoginCookieHasBeenSet() const
-{
-    return m_loginCookieHasBeenSet;
-}
-
-uint64_t Site::GetLoginCookieValid() const
-{
-    return m_loginCookieValid;
-}
-
-void Site::SetLoginCookieValid(const uint64_t& _loginCookieValid)
-{
-    m_loginCookieValid = _loginCookieValid;
-    m_loginCookieValidHasBeenSet = true;
-}
-
-bool Site::LoginCookieValidHasBeenSet() const
-{
-    return m_loginCookieValidHasBeenSet;
-}
-
-string Site::GetLoginCheckUrl() const
-{
-    return m_loginCheckUrl;
-}
-
-void Site::SetLoginCheckUrl(const string& _loginCheckUrl)
-{
-    m_loginCheckUrl = _loginCheckUrl;
-    m_loginCheckUrlHasBeenSet = true;
-}
-
-bool Site::LoginCheckUrlHasBeenSet() const
-{
-    return m_loginCheckUrlHasBeenSet;
-}
-
-string Site::GetLoginCheckKw() const
-{
-    return m_loginCheckKw;
-}
-
-void Site::SetLoginCheckKw(const string& _loginCheckKw)
-{
-    m_loginCheckKw = _loginCheckKw;
-    m_loginCheckKwHasBeenSet = true;
-}
-
-bool Site::LoginCheckKwHasBeenSet() const
-{
-    return m_loginCheckKwHasBeenSet;
-}
-
-string Site::GetScanDisallow() const
-{
-    return m_scanDisallow;
-}
-
-void Site::SetScanDisallow(const string& _scanDisallow)
-{
-    m_scanDisallow = _scanDisallow;
-    m_scanDisallowHasBeenSet = true;
-}
-
-bool Site::ScanDisallowHasBeenSet() const
-{
-    return m_scanDisallowHasBeenSet;
-}
-
-string Site::GetUserAgent() const
-{
-    return m_userAgent;
-}
-
-void Site::SetUserAgent(const string& _userAgent)
-{
-    m_userAgent = _userAgent;
-    m_userAgentHasBeenSet = true;
-}
-
-bool Site::UserAgentHasBeenSet() const
-{
-    return m_userAgentHasBeenSet;
-}
 
 uint64_t Site::GetId() const
 {
@@ -1158,5 +1036,197 @@ void Site::SetLastScanNoticeNum(const uint64_t& _lastScanNoticeNum)
 bool Site::LastScanNoticeNumHasBeenSet() const
 {
     return m_lastScanNoticeNumHasBeenSet;
+}
+
+uint64_t Site::GetProgress() const
+{
+    return m_progress;
+}
+
+void Site::SetProgress(const uint64_t& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool Site::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
+}
+
+uint64_t Site::GetAppid() const
+{
+    return m_appid;
+}
+
+void Site::SetAppid(const uint64_t& _appid)
+{
+    m_appid = _appid;
+    m_appidHasBeenSet = true;
+}
+
+bool Site::AppidHasBeenSet() const
+{
+    return m_appidHasBeenSet;
+}
+
+string Site::GetUin() const
+{
+    return m_uin;
+}
+
+void Site::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool Site::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+int64_t Site::GetNeedLogin() const
+{
+    return m_needLogin;
+}
+
+void Site::SetNeedLogin(const int64_t& _needLogin)
+{
+    m_needLogin = _needLogin;
+    m_needLoginHasBeenSet = true;
+}
+
+bool Site::NeedLoginHasBeenSet() const
+{
+    return m_needLoginHasBeenSet;
+}
+
+string Site::GetLoginCookie() const
+{
+    return m_loginCookie;
+}
+
+void Site::SetLoginCookie(const string& _loginCookie)
+{
+    m_loginCookie = _loginCookie;
+    m_loginCookieHasBeenSet = true;
+}
+
+bool Site::LoginCookieHasBeenSet() const
+{
+    return m_loginCookieHasBeenSet;
+}
+
+uint64_t Site::GetLoginCookieValid() const
+{
+    return m_loginCookieValid;
+}
+
+void Site::SetLoginCookieValid(const uint64_t& _loginCookieValid)
+{
+    m_loginCookieValid = _loginCookieValid;
+    m_loginCookieValidHasBeenSet = true;
+}
+
+bool Site::LoginCookieValidHasBeenSet() const
+{
+    return m_loginCookieValidHasBeenSet;
+}
+
+string Site::GetLoginCheckUrl() const
+{
+    return m_loginCheckUrl;
+}
+
+void Site::SetLoginCheckUrl(const string& _loginCheckUrl)
+{
+    m_loginCheckUrl = _loginCheckUrl;
+    m_loginCheckUrlHasBeenSet = true;
+}
+
+bool Site::LoginCheckUrlHasBeenSet() const
+{
+    return m_loginCheckUrlHasBeenSet;
+}
+
+string Site::GetLoginCheckKw() const
+{
+    return m_loginCheckKw;
+}
+
+void Site::SetLoginCheckKw(const string& _loginCheckKw)
+{
+    m_loginCheckKw = _loginCheckKw;
+    m_loginCheckKwHasBeenSet = true;
+}
+
+bool Site::LoginCheckKwHasBeenSet() const
+{
+    return m_loginCheckKwHasBeenSet;
+}
+
+string Site::GetScanDisallow() const
+{
+    return m_scanDisallow;
+}
+
+void Site::SetScanDisallow(const string& _scanDisallow)
+{
+    m_scanDisallow = _scanDisallow;
+    m_scanDisallowHasBeenSet = true;
+}
+
+bool Site::ScanDisallowHasBeenSet() const
+{
+    return m_scanDisallowHasBeenSet;
+}
+
+string Site::GetUserAgent() const
+{
+    return m_userAgent;
+}
+
+void Site::SetUserAgent(const string& _userAgent)
+{
+    m_userAgent = _userAgent;
+    m_userAgentHasBeenSet = true;
+}
+
+bool Site::UserAgentHasBeenSet() const
+{
+    return m_userAgentHasBeenSet;
+}
+
+uint64_t Site::GetContentStatus() const
+{
+    return m_contentStatus;
+}
+
+void Site::SetContentStatus(const uint64_t& _contentStatus)
+{
+    m_contentStatus = _contentStatus;
+    m_contentStatusHasBeenSet = true;
+}
+
+bool Site::ContentStatusHasBeenSet() const
+{
+    return m_contentStatusHasBeenSet;
+}
+
+uint64_t Site::GetLastScanContentNum() const
+{
+    return m_lastScanContentNum;
+}
+
+void Site::SetLastScanContentNum(const uint64_t& _lastScanContentNum)
+{
+    m_lastScanContentNum = _lastScanContentNum;
+    m_lastScanContentNumHasBeenSet = true;
+}
+
+bool Site::LastScanContentNumHasBeenSet() const
+{
+    return m_lastScanContentNumHasBeenSet;
 }
 

@@ -47,60 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否已经添加误报，0-否，1-是。
-                     * @return IsReported 是否已经添加误报，0-否，1-是。
-                     */
-                    uint64_t GetIsReported() const;
-
-                    /**
-                     * 设置是否已经添加误报，0-否，1-是。
-                     * @param IsReported 是否已经添加误报，0-否，1-是。
-                     */
-                    void SetIsReported(const uint64_t& _isReported);
-
-                    /**
-                     * 判断参数 IsReported 是否已赋值
-                     * @return IsReported 是否已赋值
-                     */
-                    bool IsReportedHasBeenSet() const;
-
-                    /**
-                     * 获取云用户appid。
-                     * @return Appid 云用户appid。
-                     */
-                    uint64_t GetAppid() const;
-
-                    /**
-                     * 设置云用户appid。
-                     * @param Appid 云用户appid。
-                     */
-                    void SetAppid(const uint64_t& _appid);
-
-                    /**
-                     * 判断参数 Appid 是否已赋值
-                     * @return Appid 是否已赋值
-                     */
-                    bool AppidHasBeenSet() const;
-
-                    /**
-                     * 获取云用户标识。
-                     * @return Uin 云用户标识。
-                     */
-                    std::string GetUin() const;
-
-                    /**
-                     * 设置云用户标识。
-                     * @param Uin 云用户标识。
-                     */
-                    void SetUin(const std::string& _uin);
-
-                    /**
-                     * 判断参数 Uin 是否已赋值
-                     * @return Uin 是否已赋值
-                     */
-                    bool UinHasBeenSet() const;
-
-                    /**
                      * 获取漏洞ID。
                      * @return Id 漏洞ID。
                      */
@@ -370,25 +316,61 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取是否已经添加误报，0-否，1-是。
+                     * @return IsReported 是否已经添加误报，0-否，1-是。
+                     */
+                    uint64_t GetIsReported() const;
+
+                    /**
+                     * 设置是否已经添加误报，0-否，1-是。
+                     * @param IsReported 是否已经添加误报，0-否，1-是。
+                     */
+                    void SetIsReported(const uint64_t& _isReported);
+
+                    /**
+                     * 判断参数 IsReported 是否已赋值
+                     * @return IsReported 是否已赋值
+                     */
+                    bool IsReportedHasBeenSet() const;
+
+                    /**
+                     * 获取云用户appid。
+                     * @return Appid 云用户appid。
+                     */
+                    uint64_t GetAppid() const;
+
+                    /**
+                     * 设置云用户appid。
+                     * @param Appid 云用户appid。
+                     */
+                    void SetAppid(const uint64_t& _appid);
+
+                    /**
+                     * 判断参数 Appid 是否已赋值
+                     * @return Appid 是否已赋值
+                     */
+                    bool AppidHasBeenSet() const;
+
+                    /**
+                     * 获取云用户标识。
+                     * @return Uin 云用户标识。
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置云用户标识。
+                     * @param Uin 云用户标识。
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 是否已经添加误报，0-否，1-是。
-                     */
-                    uint64_t m_isReported;
-                    bool m_isReportedHasBeenSet;
-
-                    /**
-                     * 云用户appid。
-                     */
-                    uint64_t m_appid;
-                    bool m_appidHasBeenSet;
-
-                    /**
-                     * 云用户标识。
-                     */
-                    std::string m_uin;
-                    bool m_uinHasBeenSet;
 
                     /**
                      * 漏洞ID。
@@ -479,6 +461,24 @@ namespace TencentCloud
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * 是否已经添加误报，0-否，1-是。
+                     */
+                    uint64_t m_isReported;
+                    bool m_isReportedHasBeenSet;
+
+                    /**
+                     * 云用户appid。
+                     */
+                    uint64_t m_appid;
+                    bool m_appidHasBeenSet;
+
+                    /**
+                     * 云用户标识。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
 
                 };
             }

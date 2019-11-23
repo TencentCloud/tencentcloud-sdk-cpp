@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取联合身份用户昵称
-                     * @return Name 联合身份用户昵称
+                     * 获取调用方英文名称，由字母组成。
+                     * @return Name 调用方英文名称，由字母组成。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置联合身份用户昵称
-                     * @param Name 联合身份用户昵称
+                     * 设置调用方英文名称，由字母组成。
+                     * @param Name 调用方英文名称，由字母组成。
                      */
                     void SetName(const std::string& _name);
 
@@ -95,14 +95,14 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒
-                     * @return DurationSeconds 指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒
+                     * 获取指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒。
+                     * @return DurationSeconds 指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒。
                      */
                     uint64_t GetDurationSeconds() const;
 
                     /**
-                     * 设置指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒
-                     * @param DurationSeconds 指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒
+                     * 设置指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒。
+                     * @param DurationSeconds 指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒。
                      */
                     void SetDurationSeconds(const uint64_t& _durationSeconds);
 
@@ -115,7 +115,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 联合身份用户昵称
+                     * 调用方英文名称，由字母组成。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -131,7 +131,7 @@ namespace TencentCloud
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒
+                     * 指定临时证书的有效期，单位：秒，默认1800秒，最长可设定有效期为7200秒。
                      */
                     uint64_t m_durationSeconds;
                     bool m_durationSecondsHasBeenSet;

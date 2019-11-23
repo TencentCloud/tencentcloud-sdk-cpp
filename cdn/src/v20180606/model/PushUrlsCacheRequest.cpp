@@ -25,7 +25,8 @@ using namespace std;
 
 PushUrlsCacheRequest::PushUrlsCacheRequest() :
     m_urlsHasBeenSet(false),
-    m_userAgentHasBeenSet(false)
+    m_userAgentHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string PushUrlsCacheRequest::ToJsonString() const
         string key = "UserAgent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_userAgent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -95,6 +104,22 @@ void PushUrlsCacheRequest::SetUserAgent(const string& _userAgent)
 bool PushUrlsCacheRequest::UserAgentHasBeenSet() const
 {
     return m_userAgentHasBeenSet;
+}
+
+string PushUrlsCacheRequest::GetArea() const
+{
+    return m_area;
+}
+
+void PushUrlsCacheRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool PushUrlsCacheRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

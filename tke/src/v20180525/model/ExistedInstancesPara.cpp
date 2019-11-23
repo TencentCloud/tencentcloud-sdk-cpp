@@ -26,7 +26,8 @@ ExistedInstancesPara::ExistedInstancesPara() :
     m_instanceAdvancedSettingsHasBeenSet(false),
     m_enhancedServiceHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_hostNameHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,16 @@ CoreInternalOutcome ExistedInstancesPara::Deserialize(const Value &value)
         m_securityGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("HostName") && !value["HostName"].IsNull())
+    {
+        if (!value["HostName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExistedInstancesPara.HostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostName = string(value["HostName"].GetString());
+        m_hostNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +181,14 @@ void ExistedInstancesPara::ToJsonObject(Value &value, Document::AllocatorType& a
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hostName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -253,5 +272,21 @@ void ExistedInstancesPara::SetSecurityGroupIds(const vector<string>& _securityGr
 bool ExistedInstancesPara::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+string ExistedInstancesPara::GetHostName() const
+{
+    return m_hostName;
+}
+
+void ExistedInstancesPara::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool ExistedInstancesPara::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
 }
 

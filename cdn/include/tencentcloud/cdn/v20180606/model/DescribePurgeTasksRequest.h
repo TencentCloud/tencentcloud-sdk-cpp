@@ -43,14 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。
-                     * @return PurgeType 查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。
+                     * 获取指定刷新类型查询
+url：url 刷新记录
+path：目录刷新记录
+                     * @return PurgeType 指定刷新类型查询
+url：url 刷新记录
+path：目录刷新记录
                      */
                     std::string GetPurgeType() const;
 
                     /**
-                     * 设置查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。
-                     * @param PurgeType 查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。
+                     * 设置指定刷新类型查询
+url：url 刷新记录
+path：目录刷新记录
+                     * @param PurgeType 指定刷新类型查询
+url：url 刷新记录
+path：目录刷新记录
                      */
                     void SetPurgeType(const std::string& _purgeType);
 
@@ -61,14 +69,14 @@ namespace TencentCloud
                     bool PurgeTypeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如2018-08-08 00:00:00。
-                     * @return StartTime 开始时间，如2018-08-08 00:00:00。
+                     * 获取根据时间区间查询时，填充开始时间，如 2018-08-08 00:00:00
+                     * @return StartTime 根据时间区间查询时，填充开始时间，如 2018-08-08 00:00:00
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如2018-08-08 00:00:00。
-                     * @param StartTime 开始时间，如2018-08-08 00:00:00。
+                     * 设置根据时间区间查询时，填充开始时间，如 2018-08-08 00:00:00
+                     * @param StartTime 根据时间区间查询时，填充开始时间，如 2018-08-08 00:00:00
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -79,14 +87,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，如2018-08-08 23:59:59。
-                     * @return EndTime 结束时间，如2018-08-08 23:59:59。
+                     * 获取根据时间区间查询时，填充结束时间，如 2018-08-08 23:59:59
+                     * @return EndTime 根据时间区间查询时，填充结束时间，如 2018-08-08 23:59:59
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，如2018-08-08 23:59:59。
-                     * @param EndTime 结束时间，如2018-08-08 23:59:59。
+                     * 设置根据时间区间查询时，填充结束时间，如 2018-08-08 23:59:59
+                     * @param EndTime 根据时间区间查询时，填充结束时间，如 2018-08-08 23:59:59
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -97,14 +105,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。
-                     * @return TaskId 提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。
+                     * 获取根据任务 ID 查询时，填充任务 ID
+查询时任务 ID 与起始时间必须填充一项
+                     * @return TaskId 根据任务 ID 查询时，填充任务 ID
+查询时任务 ID 与起始时间必须填充一项
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。
-                     * @param TaskId 提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。
+                     * 设置根据任务 ID 查询时，填充任务 ID
+查询时任务 ID 与起始时间必须填充一项
+                     * @param TaskId 根据任务 ID 查询时，填充任务 ID
+查询时任务 ID 与起始时间必须填充一项
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -115,14 +127,14 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取分页查询偏移量，默认为 0 （第一页）。
-                     * @return Offset 分页查询偏移量，默认为 0 （第一页）。
+                     * 获取分页查询偏移量，默认为 0 （第一页）
+                     * @return Offset 分页查询偏移量，默认为 0 （第一页）
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询偏移量，默认为 0 （第一页）。
-                     * @param Offset 分页查询偏移量，默认为 0 （第一页）。
+                     * 设置分页查询偏移量，默认为 0 （第一页）
+                     * @param Offset 分页查询偏移量，默认为 0 （第一页）
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -133,14 +145,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询限制数目，默认为20。
-                     * @return Limit 分页查询限制数目，默认为20。
+                     * 获取分页查询限制数目，默认为 20
+                     * @return Limit 分页查询限制数目，默认为 20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询限制数目，默认为20。
-                     * @param Limit 分页查询限制数目，默认为20。
+                     * 设置分页查询限制数目，默认为 20
+                     * @param Limit 分页查询限制数目，默认为 20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -151,14 +163,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询关键字，请输入域名或 http(s):// 开头完整 URL。
-                     * @return Keyword 查询关键字，请输入域名或 http(s):// 开头完整 URL。
+                     * 获取支持域名过滤，或 http(s):// 开头完整 URL 过滤
+                     * @return Keyword 支持域名过滤，或 http(s):// 开头完整 URL 过滤
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置查询关键字，请输入域名或 http(s):// 开头完整 URL。
-                     * @param Keyword 查询关键字，请输入域名或 http(s):// 开头完整 URL。
+                     * 设置支持域名过滤，或 http(s):// 开头完整 URL 过滤
+                     * @param Keyword 支持域名过滤，或 http(s):// 开头完整 URL 过滤
                      */
                     void SetKeyword(const std::string& _keyword);
 
@@ -169,14 +181,26 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。
-                     * @return Status 查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 获取指定任务状态查询
+fail：刷新失败
+done：刷新成功
+process：刷新中
+                     * @return Status 指定任务状态查询
+fail：刷新失败
+done：刷新成功
+process：刷新中
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。
-                     * @param Status 查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 设置指定任务状态查询
+fail：刷新失败
+done：刷新成功
+process：刷新中
+                     * @param Status 指定任务状态查询
+fail：刷新失败
+done：刷新成功
+process：刷新中
                      */
                     void SetStatus(const std::string& _status);
 
@@ -186,55 +210,100 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取指定刷新地域查询
+mainland：境内
+overseas：境外
+global：全球
+                     * @return Area 指定刷新地域查询
+mainland：境内
+overseas：境外
+global：全球
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置指定刷新地域查询
+mainland：境内
+overseas：境外
+global：全球
+                     * @param Area 指定刷新地域查询
+mainland：境内
+overseas：境外
+global：全球
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。
+                     * 指定刷新类型查询
+url：url 刷新记录
+path：目录刷新记录
                      */
                     std::string m_purgeType;
                     bool m_purgeTypeHasBeenSet;
 
                     /**
-                     * 开始时间，如2018-08-08 00:00:00。
+                     * 根据时间区间查询时，填充开始时间，如 2018-08-08 00:00:00
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，如2018-08-08 23:59:59。
+                     * 根据时间区间查询时，填充结束时间，如 2018-08-08 23:59:59
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。
+                     * 根据任务 ID 查询时，填充任务 ID
+查询时任务 ID 与起始时间必须填充一项
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 分页查询偏移量，默认为 0 （第一页）。
+                     * 分页查询偏移量，默认为 0 （第一页）
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询限制数目，默认为20。
+                     * 分页查询限制数目，默认为 20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询关键字，请输入域名或 http(s):// 开头完整 URL。
+                     * 支持域名过滤，或 http(s):// 开头完整 URL 过滤
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 指定任务状态查询
+fail：刷新失败
+done：刷新成功
+process：刷新中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 指定刷新地域查询
+mainland：境内
+overseas：境外
+global：全球
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

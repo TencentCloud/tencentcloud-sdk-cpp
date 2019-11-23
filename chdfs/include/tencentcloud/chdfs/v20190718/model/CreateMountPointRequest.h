@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool MountPointStatusHasBeenSet() const;
 
+                    /**
+                     * 获取VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     * @return VpcType VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     */
+                    uint64_t GetVpcType() const;
+
+                    /**
+                     * 设置VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     * @param VpcType VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     */
+                    void SetVpcType(const uint64_t& _vpcType);
+
+                    /**
+                     * 判断参数 VpcType 是否已赋值
+                     * @return VpcType 是否已赋值
+                     */
+                    bool VpcTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     uint64_t m_mountPointStatus;
                     bool m_mountPointStatusHasBeenSet;
+
+                    /**
+                     * VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）
+                     */
+                    uint64_t m_vpcType;
+                    bool m_vpcTypeHasBeenSet;
 
                 };
             }

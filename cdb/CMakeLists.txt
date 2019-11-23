@@ -21,6 +21,7 @@ set(cdb_public_header
 set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/SellType.h
   include/tencentcloud/cdb/v20170320/model/CreateDBInstanceRequest.h
+  include/tencentcloud/cdb/v20170320/model/TaskDetail.h
   include/tencentcloud/cdb/v20170320/model/DeviceDiskInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountPrivilegesResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateDBImportJobRequest.h
@@ -238,6 +239,7 @@ set(cdb_src
   src/v20170320/CdbClient.cpp
   src/v20170320/model/SellType.cpp
   src/v20170320/model/CreateDBInstanceRequest.cpp
+  src/v20170320/model/TaskDetail.cpp
   src/v20170320/model/DeviceDiskInfo.cpp
   src/v20170320/model/DescribeAccountPrivilegesResponse.cpp
   src/v20170320/model/CreateDBImportJobRequest.cpp

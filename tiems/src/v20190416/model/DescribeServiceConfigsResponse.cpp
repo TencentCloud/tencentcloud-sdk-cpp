@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeServiceConfigsResponse::Deserialize(const string &pa
         const Value &tmpValue = rsp["ServiceConfigs"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ServiceConfig item;
+            Config item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeServiceConfigsResponse::Deserialize(const string &pa
 }
 
 
-vector<ServiceConfig> DescribeServiceConfigsResponse::GetServiceConfigs() const
+vector<Config> DescribeServiceConfigsResponse::GetServiceConfigs() const
 {
     return m_serviceConfigs;
 }

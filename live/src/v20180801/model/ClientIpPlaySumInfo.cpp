@@ -26,7 +26,8 @@ ClientIpPlaySumInfo::ClientIpPlaySumInfo() :
     m_provinceHasBeenSet(false),
     m_totalFluxHasBeenSet(false),
     m_totalRequestHasBeenSet(false),
-    m_totalFailedRequestHasBeenSet(false)
+    m_totalFailedRequestHasBeenSet(false),
+    m_countryAreaHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const Value &value)
         m_totalFailedRequestHasBeenSet = true;
     }
 
+    if (value.HasMember("CountryArea") && !value["CountryArea"].IsNull())
+    {
+        if (!value["CountryArea"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClientIpPlaySumInfo.CountryArea` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_countryArea = string(value["CountryArea"].GetString());
+        m_countryAreaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void ClientIpPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "TotalFailedRequest";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalFailedRequest, allocator);
+    }
+
+    if (m_countryAreaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CountryArea";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_countryArea.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void ClientIpPlaySumInfo::SetTotalFailedRequest(const uint64_t& _totalFailedRequ
 bool ClientIpPlaySumInfo::TotalFailedRequestHasBeenSet() const
 {
     return m_totalFailedRequestHasBeenSet;
+}
+
+string ClientIpPlaySumInfo::GetCountryArea() const
+{
+    return m_countryArea;
+}
+
+void ClientIpPlaySumInfo::SetCountryArea(const string& _countryArea)
+{
+    m_countryArea = _countryArea;
+    m_countryAreaHasBeenSet = true;
+}
+
+bool ClientIpPlaySumInfo::CountryAreaHasBeenSet() const
+{
+    return m_countryAreaHasBeenSet;
 }
 

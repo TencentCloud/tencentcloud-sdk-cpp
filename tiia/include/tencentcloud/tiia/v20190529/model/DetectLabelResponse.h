@@ -44,8 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签结果数组。
-                     * @return Labels 标签结果数组。
+                     * 获取Web网络版标签结果数组。如未选择WEB场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels Web网络版标签结果数组。如未选择WEB场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetectLabelItem> GetLabels() const;
 
@@ -55,13 +57,56 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CameraLabels Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetectLabelItem> GetCameraLabels() const;
+
+                    /**
+                     * 判断参数 CameraLabels 是否已赋值
+                     * @return CameraLabels 是否已赋值
+                     */
+                    bool CameraLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取Album相册版标签结果数组。如未选择ALBUM场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlbumLabels Album相册版标签结果数组。如未选择ALBUM场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetectLabelItem> GetAlbumLabels() const;
+
+                    /**
+                     * 判断参数 AlbumLabels 是否已赋值
+                     * @return AlbumLabels 是否已赋值
+                     */
+                    bool AlbumLabelsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 标签结果数组。
+                     * Web网络版标签结果数组。如未选择WEB场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetectLabelItem> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetectLabelItem> m_cameraLabels;
+                    bool m_cameraLabelsHasBeenSet;
+
+                    /**
+                     * Album相册版标签结果数组。如未选择ALBUM场景，则为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetectLabelItem> m_albumLabels;
+                    bool m_albumLabelsHasBeenSet;
 
                 };
             }

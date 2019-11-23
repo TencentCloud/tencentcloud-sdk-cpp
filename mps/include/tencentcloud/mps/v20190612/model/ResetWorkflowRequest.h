@@ -24,6 +24,8 @@
 #include <tencentcloud/mps/v20190612/model/WorkflowTrigger.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AiClassificationTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
 
@@ -155,6 +157,42 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
+                     * 获取视频内容审核类型任务参数。
+                     * @return AiContentReviewTask 视频内容审核类型任务参数。
+                     */
+                    AiClassificationTaskInput GetAiContentReviewTask() const;
+
+                    /**
+                     * 设置视频内容审核类型任务参数。
+                     * @param AiContentReviewTask 视频内容审核类型任务参数。
+                     */
+                    void SetAiContentReviewTask(const AiClassificationTaskInput& _aiContentReviewTask);
+
+                    /**
+                     * 判断参数 AiContentReviewTask 是否已赋值
+                     * @return AiContentReviewTask 是否已赋值
+                     */
+                    bool AiContentReviewTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频内容识别类型任务参数。
+                     * @return AiRecognitionTask 视频内容识别类型任务参数。
+                     */
+                    AiRecognitionTaskInput GetAiRecognitionTask() const;
+
+                    /**
+                     * 设置视频内容识别类型任务参数。
+                     * @param AiRecognitionTask 视频内容识别类型任务参数。
+                     */
+                    void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
+
+                    /**
+                     * 判断参数 AiRecognitionTask 是否已赋值
+                     * @return AiRecognitionTask 是否已赋值
+                     */
+                    bool AiRecognitionTaskHasBeenSet() const;
+
+                    /**
                      * 获取工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      * @return TaskPriority 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      */
@@ -227,6 +265,18 @@ namespace TencentCloud
                      */
                     MediaProcessTaskInput m_mediaProcessTask;
                     bool m_mediaProcessTaskHasBeenSet;
+
+                    /**
+                     * 视频内容审核类型任务参数。
+                     */
+                    AiClassificationTaskInput m_aiContentReviewTask;
+                    bool m_aiContentReviewTaskHasBeenSet;
+
+                    /**
+                     * 视频内容识别类型任务参数。
+                     */
+                    AiRecognitionTaskInput m_aiRecognitionTask;
+                    bool m_aiRecognitionTaskHasBeenSet;
 
                     /**
                      * 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。

@@ -82,7 +82,14 @@ CoreInternalOutcome DescribeTasksResponse::Deserialize(const string &payload)
         const Value &tmpValue = rsp["Items"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            m_items.push_back((*itr).GetString());
+            TaskDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
         }
         m_itemsHasBeenSet = true;
     }
@@ -102,7 +109,7 @@ bool DescribeTasksResponse::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-vector<string> DescribeTasksResponse::GetItems() const
+vector<TaskDetail> DescribeTasksResponse::GetItems() const
 {
     return m_items;
 }

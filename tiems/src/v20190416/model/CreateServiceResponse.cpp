@@ -85,7 +85,7 @@ CoreInternalOutcome CreateServiceResponse::Deserialize(const string &payload)
 }
 
 
-Service CreateServiceResponse::GetService() const
+ModelService CreateServiceResponse::GetService() const
 {
     return m_service;
 }

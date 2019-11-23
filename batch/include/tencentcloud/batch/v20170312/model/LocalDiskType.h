@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool MaxSizeHasBeenSet() const;
 
+                    /**
+                     * 获取购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     * @return Required 购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     */
+                    std::string GetRequired() const;
+
+                    /**
+                     * 设置购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     * @param Required 购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     */
+                    void SetRequired(const std::string& _required);
+
+                    /**
+                     * 判断参数 Required 是否已赋值
+                     * @return Required 是否已赋值
+                     */
+                    bool RequiredHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
+
+                    /**
+                     * 购买时本地盘是否为必选。取值范围：<br><li>REQUIRED：表示必选<br><li>OPTIONAL：表示可选。
+                     */
+                    std::string m_required;
+                    bool m_requiredHasBeenSet;
 
                 };
             }

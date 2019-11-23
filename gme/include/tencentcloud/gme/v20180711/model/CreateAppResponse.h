@@ -118,8 +118,8 @@ namespace TencentCloud
                     bool RealtimeSpeechConfHasBeenSet() const;
 
                     /**
-                     * 获取语音消息服务配置数据
-                     * @return VoiceMessageConf 语音消息服务配置数据
+                     * 获取语音消息及转文本服务配置数据
+                     * @return VoiceMessageConf 语音消息及转文本服务配置数据
                      */
                     VoiceMessageConf GetVoiceMessageConf() const;
 
@@ -130,8 +130,8 @@ namespace TencentCloud
                     bool VoiceMessageConfHasBeenSet() const;
 
                     /**
-                     * 获取语音过滤服务配置数据
-                     * @return VoiceFilterConf 语音过滤服务配置数据
+                     * 获取语音分析服务配置数据
+                     * @return VoiceFilterConf 语音分析服务配置数据
                      */
                     VoiceFilterConf GetVoiceFilterConf() const;
 
@@ -180,13 +180,13 @@ namespace TencentCloud
                     bool m_realtimeSpeechConfHasBeenSet;
 
                     /**
-                     * 语音消息服务配置数据
+                     * 语音消息及转文本服务配置数据
                      */
                     VoiceMessageConf m_voiceMessageConf;
                     bool m_voiceMessageConfHasBeenSet;
 
                     /**
-                     * 语音过滤服务配置数据
+                     * 语音分析服务配置数据
                      */
                     VoiceFilterConf m_voiceFilterConf;
                     bool m_voiceFilterConfHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 刷新任务日志详情
+                * 刷新任务详情
                 */
                 class PurgeTask : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取刷新任务ID。
-                     * @return TaskId 刷新任务ID。
+                     * 获取刷新任务 ID
+                     * @return TaskId 刷新任务 ID
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置刷新任务ID。
-                     * @param TaskId 刷新任务ID。
+                     * 设置刷新任务 ID
+                     * @param TaskId 刷新任务 ID
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取刷新Url。
-                     * @return Url 刷新Url。
+                     * 获取刷新 URL
+                     * @return Url 刷新 URL
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置刷新Url。
-                     * @param Url 刷新Url。
+                     * 设置刷新 URL
+                     * @param Url 刷新 URL
                      */
                     void SetUrl(const std::string& _url);
 
@@ -83,14 +83,26 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
-                     * @return Status 刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 获取刷新任务状态
+fail：刷新失败
+done：刷新成功
+process：刷新中
+                     * @return Status 刷新任务状态
+fail：刷新失败
+done：刷新成功
+process：刷新中
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
-                     * @param Status 刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 设置刷新任务状态
+fail：刷新失败
+done：刷新成功
+process：刷新中
+                     * @param Status 刷新任务状态
+fail：刷新失败
+done：刷新成功
+process：刷新中
                      */
                     void SetStatus(const std::string& _status);
 
@@ -101,14 +113,22 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取刷新类型，url表示url刷新，path表示目录刷新。
-                     * @return PurgeType 刷新类型，url表示url刷新，path表示目录刷新。
+                     * 获取刷新类型
+url：URL 刷新
+path：目录刷新
+                     * @return PurgeType 刷新类型
+url：URL 刷新
+path：目录刷新
                      */
                     std::string GetPurgeType() const;
 
                     /**
-                     * 设置刷新类型，url表示url刷新，path表示目录刷新。
-                     * @param PurgeType 刷新类型，url表示url刷新，path表示目录刷新。
+                     * 设置刷新类型
+url：URL 刷新
+path：目录刷新
+                     * @param PurgeType 刷新类型
+url：URL 刷新
+path：目录刷新
                      */
                     void SetPurgeType(const std::string& _purgeType);
 
@@ -119,14 +139,22 @@ namespace TencentCloud
                     bool PurgeTypeHasBeenSet() const;
 
                     /**
-                     * 获取刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
-                     * @return FlushType 刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
+                     * 获取刷新方式
+flush：刷新更新资源（仅目录刷新时有此类型）
+delete：刷新全部资源
+                     * @return FlushType 刷新方式
+flush：刷新更新资源（仅目录刷新时有此类型）
+delete：刷新全部资源
                      */
                     std::string GetFlushType() const;
 
                     /**
-                     * 设置刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
-                     * @param FlushType 刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
+                     * 设置刷新方式
+flush：刷新更新资源（仅目录刷新时有此类型）
+delete：刷新全部资源
+                     * @param FlushType 刷新方式
+flush：刷新更新资源（仅目录刷新时有此类型）
+delete：刷新全部资源
                      */
                     void SetFlushType(const std::string& _flushType);
 
@@ -157,31 +185,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刷新任务ID。
+                     * 刷新任务 ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 刷新Url。
+                     * 刷新 URL
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 刷新任务状态，fail表示失败，done表示成功，process表示刷新中。
+                     * 刷新任务状态
+fail：刷新失败
+done：刷新成功
+process：刷新中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 刷新类型，url表示url刷新，path表示目录刷新。
+                     * 刷新类型
+url：URL 刷新
+path：目录刷新
                      */
                     std::string m_purgeType;
                     bool m_purgeTypeHasBeenSet;
 
                     /**
-                     * 刷新资源方式，flush代表刷新更新资源，delete代表刷新全部资源。
+                     * 刷新方式
+flush：刷新更新资源（仅目录刷新时有此类型）
+delete：刷新全部资源
                      */
                     std::string m_flushType;
                     bool m_flushTypeHasBeenSet;

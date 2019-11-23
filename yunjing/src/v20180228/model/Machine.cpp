@@ -31,7 +31,9 @@ Machine::Machine() :
     m_machineIpHasBeenSet(false),
     m_isProVersionHasBeenSet(false),
     m_machineWanIpHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_malwareNumHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -92,11 +94,11 @@ CoreInternalOutcome Machine::Deserialize(const Value &value)
 
     if (value.HasMember("VulNum") && !value["VulNum"].IsNull())
     {
-        if (!value["VulNum"].IsUint64())
+        if (!value["VulNum"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Machine.VulNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Machine.VulNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_vulNum = value["VulNum"].GetUint64();
+        m_vulNum = value["VulNum"].GetInt64();
         m_vulNumHasBeenSet = true;
     }
 
@@ -138,6 +140,36 @@ CoreInternalOutcome Machine::Deserialize(const Value &value)
         }
         m_payMode = string(value["PayMode"].GetString());
         m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MalwareNum") && !value["MalwareNum"].IsNull())
+    {
+        if (!value["MalwareNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Machine.MalwareNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_malwareNum = value["MalwareNum"].GetInt64();
+        m_malwareNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Error("response `Machine.Tag` is not array type"));
+
+        const Value &tmpValue = value["Tag"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MachineTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
     }
 
 
@@ -227,6 +259,29 @@ void Machine::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_malwareNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MalwareNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_malwareNum, allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -310,12 +365,12 @@ bool Machine::QuuidHasBeenSet() const
     return m_quuidHasBeenSet;
 }
 
-uint64_t Machine::GetVulNum() const
+int64_t Machine::GetVulNum() const
 {
     return m_vulNum;
 }
 
-void Machine::SetVulNum(const uint64_t& _vulNum)
+void Machine::SetVulNum(const int64_t& _vulNum)
 {
     m_vulNum = _vulNum;
     m_vulNumHasBeenSet = true;
@@ -388,5 +443,37 @@ void Machine::SetPayMode(const string& _payMode)
 bool Machine::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t Machine::GetMalwareNum() const
+{
+    return m_malwareNum;
+}
+
+void Machine::SetMalwareNum(const int64_t& _malwareNum)
+{
+    m_malwareNum = _malwareNum;
+    m_malwareNumHasBeenSet = true;
+}
+
+bool Machine::MalwareNumHasBeenSet() const
+{
+    return m_malwareNumHasBeenSet;
+}
+
+vector<MachineTag> Machine::GetTag() const
+{
+    return m_tag;
+}
+
+void Machine::SetTag(const vector<MachineTag>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool Machine::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

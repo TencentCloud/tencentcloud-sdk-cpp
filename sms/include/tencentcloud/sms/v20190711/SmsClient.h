@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/sms/v20190711/model/CallbackStatusStatisticsRequest.h>
+#include <tencentcloud/sms/v20190711/model/CallbackStatusStatisticsResponse.h>
 #include <tencentcloud/sms/v20190711/model/PullSmsReplyStatusRequest.h>
 #include <tencentcloud/sms/v20190711/model/PullSmsReplyStatusResponse.h>
 #include <tencentcloud/sms/v20190711/model/PullSmsReplyStatusByPhoneNumberRequest.h>
@@ -33,6 +35,10 @@
 #include <tencentcloud/sms/v20190711/model/PullSmsSendStatusByPhoneNumberResponse.h>
 #include <tencentcloud/sms/v20190711/model/SendSmsRequest.h>
 #include <tencentcloud/sms/v20190711/model/SendSmsResponse.h>
+#include <tencentcloud/sms/v20190711/model/SendStatusStatisticsRequest.h>
+#include <tencentcloud/sms/v20190711/model/SendStatusStatisticsResponse.h>
+#include <tencentcloud/sms/v20190711/model/SmsPackagesStatisticsRequest.h>
+#include <tencentcloud/sms/v20190711/model/SmsPackagesStatisticsResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +53,9 @@ namespace TencentCloud
                 SmsClient(const Credential &credential, const std::string &region);
                 SmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CallbackStatusStatisticsResponse> CallbackStatusStatisticsOutcome;
+                typedef std::future<CallbackStatusStatisticsOutcome> CallbackStatusStatisticsOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::CallbackStatusStatisticsRequest&, CallbackStatusStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallbackStatusStatisticsAsyncHandler;
                 typedef Outcome<Error, Model::PullSmsReplyStatusResponse> PullSmsReplyStatusOutcome;
                 typedef std::future<PullSmsReplyStatusOutcome> PullSmsReplyStatusOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::PullSmsReplyStatusRequest&, PullSmsReplyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PullSmsReplyStatusAsyncHandler;
@@ -62,8 +71,23 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SendSmsResponse> SendSmsOutcome;
                 typedef std::future<SendSmsOutcome> SendSmsOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::SendSmsRequest&, SendSmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendSmsAsyncHandler;
+                typedef Outcome<Error, Model::SendStatusStatisticsResponse> SendStatusStatisticsOutcome;
+                typedef std::future<SendStatusStatisticsOutcome> SendStatusStatisticsOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::SendStatusStatisticsRequest&, SendStatusStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendStatusStatisticsAsyncHandler;
+                typedef Outcome<Error, Model::SmsPackagesStatisticsResponse> SmsPackagesStatisticsOutcome;
+                typedef std::future<SmsPackagesStatisticsOutcome> SmsPackagesStatisticsOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::SmsPackagesStatisticsRequest&, SmsPackagesStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SmsPackagesStatisticsAsyncHandler;
 
 
+
+                /**
+                 *统计用户回执的数据
+                 * @param req CallbackStatusStatisticsRequest
+                 * @return CallbackStatusStatisticsOutcome
+                 */
+                CallbackStatusStatisticsOutcome CallbackStatusStatistics(const Model::CallbackStatusStatisticsRequest &request);
+                void CallbackStatusStatisticsAsync(const Model::CallbackStatusStatisticsRequest& request, const CallbackStatusStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallbackStatusStatisticsOutcomeCallable CallbackStatusStatisticsCallable(const Model::CallbackStatusStatisticsRequest& request);
 
                 /**
                  *拉取短信回复状态
@@ -111,6 +135,24 @@ namespace TencentCloud
                 SendSmsOutcome SendSms(const Model::SendSmsRequest &request);
                 void SendSmsAsync(const Model::SendSmsRequest& request, const SendSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendSmsOutcomeCallable SendSmsCallable(const Model::SendSmsRequest& request);
+
+                /**
+                 *统计用户发送短信的数据
+                 * @param req SendStatusStatisticsRequest
+                 * @return SendStatusStatisticsOutcome
+                 */
+                SendStatusStatisticsOutcome SendStatusStatistics(const Model::SendStatusStatisticsRequest &request);
+                void SendStatusStatisticsAsync(const Model::SendStatusStatisticsRequest& request, const SendStatusStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendStatusStatisticsOutcomeCallable SendStatusStatisticsCallable(const Model::SendStatusStatisticsRequest& request);
+
+                /**
+                 *用户套餐包信息统计
+                 * @param req SmsPackagesStatisticsRequest
+                 * @return SmsPackagesStatisticsOutcome
+                 */
+                SmsPackagesStatisticsOutcome SmsPackagesStatistics(const Model::SmsPackagesStatisticsRequest &request);
+                void SmsPackagesStatisticsAsync(const Model::SmsPackagesStatisticsRequest& request, const SmsPackagesStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SmsPackagesStatisticsOutcomeCallable SmsPackagesStatisticsCallable(const Model::SmsPackagesStatisticsRequest& request);
 
             };
         }

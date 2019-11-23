@@ -202,6 +202,28 @@ namespace TencentCloud
                      */
                     bool ServiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAttached 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsAttached() const;
+
+                    /**
+                     * 设置当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsAttached 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsAttached(const uint64_t& _isAttached);
+
+                    /**
+                     * 判断参数 IsAttached 是否已赋值
+                     * @return IsAttached 是否已赋值
+                     */
+                    bool IsAttachedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,6 +276,13 @@ namespace TencentCloud
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isAttached;
+                    bool m_isAttachedHasBeenSet;
 
                 };
             }

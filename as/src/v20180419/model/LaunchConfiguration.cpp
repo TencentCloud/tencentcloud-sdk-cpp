@@ -44,7 +44,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_versionNumberHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
-    m_lastOperationInstanceTypesCheckPolicyHasBeenSet(false)
+    m_lastOperationInstanceTypesCheckPolicyHasBeenSet(false),
+    m_hostNameSettingsHasBeenSet(false)
 {
 }
 
@@ -354,6 +355,23 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const Value &value)
         m_lastOperationInstanceTypesCheckPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("HostNameSettings") && !value["HostNameSettings"].IsNull())
+    {
+        if (!value["HostNameSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LaunchConfiguration.HostNameSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hostNameSettings.Deserialize(value["HostNameSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hostNameSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -579,6 +597,15 @@ void LaunchConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "LastOperationInstanceTypesCheckPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_lastOperationInstanceTypesCheckPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_hostNameSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -950,5 +977,21 @@ void LaunchConfiguration::SetLastOperationInstanceTypesCheckPolicy(const string&
 bool LaunchConfiguration::LastOperationInstanceTypesCheckPolicyHasBeenSet() const
 {
     return m_lastOperationInstanceTypesCheckPolicyHasBeenSet;
+}
+
+HostNameSettings LaunchConfiguration::GetHostNameSettings() const
+{
+    return m_hostNameSettings;
+}
+
+void LaunchConfiguration::SetHostNameSettings(const HostNameSettings& _hostNameSettings)
+{
+    m_hostNameSettings = _hostNameSettings;
+    m_hostNameSettingsHasBeenSet = true;
+}
+
+bool LaunchConfiguration::HostNameSettingsHasBeenSet() const
+{
+    return m_hostNameSettingsHasBeenSet;
 }
 

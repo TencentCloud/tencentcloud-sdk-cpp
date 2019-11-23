@@ -61,6 +61,32 @@ namespace TencentCloud
                     bool NamesHasBeenSet() const;
 
                     /**
+                     * 获取任务流模板类型过滤条件，可选值：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     * @return Type 任务流模板类型过滤条件，可选值：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置任务流模板类型过滤条件，可选值：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     * @param Type 任务流模板类型过滤条件，可选值：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
                      */
@@ -121,6 +147,14 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
+
+                    /**
+                     * 任务流模板类型过滤条件，可选值：
+<li>Preset：系统预置任务流模板；</li>
+<li>Custom：用户自定义任务流模板。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                     /**
                      * 分页偏移量，默认值：0。

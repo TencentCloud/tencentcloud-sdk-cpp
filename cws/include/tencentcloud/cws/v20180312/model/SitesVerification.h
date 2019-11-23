@@ -47,78 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID。
-                     * @return Id ID。
-                     */
-                    uint64_t GetId() const;
-
-                    /**
-                     * 设置ID。
-                     * @param Id ID。
-                     */
-                    void SetId(const uint64_t& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     */
-                    bool IdHasBeenSet() const;
-
-                    /**
-                     * 获取云用户appid
-                     * @return Appid 云用户appid
-                     */
-                    uint64_t GetAppid() const;
-
-                    /**
-                     * 设置云用户appid
-                     * @param Appid 云用户appid
-                     */
-                    void SetAppid(const uint64_t& _appid);
-
-                    /**
-                     * 判断参数 Appid 是否已赋值
-                     * @return Appid 是否已赋值
-                     */
-                    bool AppidHasBeenSet() const;
-
-                    /**
-                     * 获取用于验证站点的url，即访问该url获取验证数据。
-                     * @return VerifyUrl 用于验证站点的url，即访问该url获取验证数据。
-                     */
-                    std::string GetVerifyUrl() const;
-
-                    /**
-                     * 设置用于验证站点的url，即访问该url获取验证数据。
-                     * @param VerifyUrl 用于验证站点的url，即访问该url获取验证数据。
-                     */
-                    void SetVerifyUrl(const std::string& _verifyUrl);
-
-                    /**
-                     * 判断参数 VerifyUrl 是否已赋值
-                     * @return VerifyUrl 是否已赋值
-                     */
-                    bool VerifyUrlHasBeenSet() const;
-
-                    /**
-                     * 获取获取验证验证文件的url。
-                     * @return VerifyFileUrl 获取验证验证文件的url。
-                     */
-                    std::string GetVerifyFileUrl() const;
-
-                    /**
-                     * 设置获取验证验证文件的url。
-                     * @param VerifyFileUrl 获取验证验证文件的url。
-                     */
-                    void SetVerifyFileUrl(const std::string& _verifyFileUrl);
-
-                    /**
-                     * 判断参数 VerifyFileUrl 是否已赋值
-                     * @return VerifyFileUrl 是否已赋值
-                     */
-                    bool VerifyFileUrlHasBeenSet() const;
-
-                    /**
                      * 获取根域名。
                      * @return Domain 根域名。
                      */
@@ -244,31 +172,79 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取ID。
+                     * @return Id ID。
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置ID。
+                     * @param Id ID。
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取云用户appid
+                     * @return Appid 云用户appid
+                     */
+                    uint64_t GetAppid() const;
+
+                    /**
+                     * 设置云用户appid
+                     * @param Appid 云用户appid
+                     */
+                    void SetAppid(const uint64_t& _appid);
+
+                    /**
+                     * 判断参数 Appid 是否已赋值
+                     * @return Appid 是否已赋值
+                     */
+                    bool AppidHasBeenSet() const;
+
+                    /**
+                     * 获取用于验证站点的url，即访问该url获取验证数据。
+                     * @return VerifyUrl 用于验证站点的url，即访问该url获取验证数据。
+                     */
+                    std::string GetVerifyUrl() const;
+
+                    /**
+                     * 设置用于验证站点的url，即访问该url获取验证数据。
+                     * @param VerifyUrl 用于验证站点的url，即访问该url获取验证数据。
+                     */
+                    void SetVerifyUrl(const std::string& _verifyUrl);
+
+                    /**
+                     * 判断参数 VerifyUrl 是否已赋值
+                     * @return VerifyUrl 是否已赋值
+                     */
+                    bool VerifyUrlHasBeenSet() const;
+
+                    /**
+                     * 获取获取验证验证文件的url。
+                     * @return VerifyFileUrl 获取验证验证文件的url。
+                     */
+                    std::string GetVerifyFileUrl() const;
+
+                    /**
+                     * 设置获取验证验证文件的url。
+                     * @param VerifyFileUrl 获取验证验证文件的url。
+                     */
+                    void SetVerifyFileUrl(const std::string& _verifyFileUrl);
+
+                    /**
+                     * 判断参数 VerifyFileUrl 是否已赋值
+                     * @return VerifyFileUrl 是否已赋值
+                     */
+                    bool VerifyFileUrlHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * ID。
-                     */
-                    uint64_t m_id;
-                    bool m_idHasBeenSet;
-
-                    /**
-                     * 云用户appid
-                     */
-                    uint64_t m_appid;
-                    bool m_appidHasBeenSet;
-
-                    /**
-                     * 用于验证站点的url，即访问该url获取验证数据。
-                     */
-                    std::string m_verifyUrl;
-                    bool m_verifyUrlHasBeenSet;
-
-                    /**
-                     * 获取验证验证文件的url。
-                     */
-                    std::string m_verifyFileUrl;
-                    bool m_verifyFileUrlHasBeenSet;
 
                     /**
                      * 根域名。
@@ -311,6 +287,30 @@ namespace TencentCloud
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * ID。
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 云用户appid
+                     */
+                    uint64_t m_appid;
+                    bool m_appidHasBeenSet;
+
+                    /**
+                     * 用于验证站点的url，即访问该url获取验证数据。
+                     */
+                    std::string m_verifyUrl;
+                    bool m_verifyUrlHasBeenSet;
+
+                    /**
+                     * 获取验证验证文件的url。
+                     */
+                    std::string m_verifyFileUrl;
+                    bool m_verifyFileUrlHasBeenSet;
 
                 };
             }

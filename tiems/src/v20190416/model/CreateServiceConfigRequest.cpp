@@ -27,10 +27,7 @@ CreateServiceConfigRequest::CreateServiceConfigRequest() :
     m_nameHasBeenSet(false),
     m_runtimeHasBeenSet(false),
     m_modelUriHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_tflopUnitsHasBeenSet(false),
-    m_gpuMemoryHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -65,36 +62,12 @@ string CreateServiceConfigRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_modelUri.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_cpuHasBeenSet)
+    if (m_descriptionHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Cpu";
+        string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_cpu, allocator);
-    }
-
-    if (m_memoryHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Memory";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_memory, allocator);
-    }
-
-    if (m_tflopUnitsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "TflopUnits";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_tflopUnits, allocator);
-    }
-
-    if (m_gpuMemoryHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "GpuMemory";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_gpuMemory, allocator);
+        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -153,68 +126,20 @@ bool CreateServiceConfigRequest::ModelUriHasBeenSet() const
     return m_modelUriHasBeenSet;
 }
 
-uint64_t CreateServiceConfigRequest::GetCpu() const
+string CreateServiceConfigRequest::GetDescription() const
 {
-    return m_cpu;
+    return m_description;
 }
 
-void CreateServiceConfigRequest::SetCpu(const uint64_t& _cpu)
+void CreateServiceConfigRequest::SetDescription(const string& _description)
 {
-    m_cpu = _cpu;
-    m_cpuHasBeenSet = true;
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
 }
 
-bool CreateServiceConfigRequest::CpuHasBeenSet() const
+bool CreateServiceConfigRequest::DescriptionHasBeenSet() const
 {
-    return m_cpuHasBeenSet;
-}
-
-uint64_t CreateServiceConfigRequest::GetMemory() const
-{
-    return m_memory;
-}
-
-void CreateServiceConfigRequest::SetMemory(const uint64_t& _memory)
-{
-    m_memory = _memory;
-    m_memoryHasBeenSet = true;
-}
-
-bool CreateServiceConfigRequest::MemoryHasBeenSet() const
-{
-    return m_memoryHasBeenSet;
-}
-
-uint64_t CreateServiceConfigRequest::GetTflopUnits() const
-{
-    return m_tflopUnits;
-}
-
-void CreateServiceConfigRequest::SetTflopUnits(const uint64_t& _tflopUnits)
-{
-    m_tflopUnits = _tflopUnits;
-    m_tflopUnitsHasBeenSet = true;
-}
-
-bool CreateServiceConfigRequest::TflopUnitsHasBeenSet() const
-{
-    return m_tflopUnitsHasBeenSet;
-}
-
-uint64_t CreateServiceConfigRequest::GetGpuMemory() const
-{
-    return m_gpuMemory;
-}
-
-void CreateServiceConfigRequest::SetGpuMemory(const uint64_t& _gpuMemory)
-{
-    m_gpuMemory = _gpuMemory;
-    m_gpuMemoryHasBeenSet = true;
-}
-
-bool CreateServiceConfigRequest::GpuMemoryHasBeenSet() const
-{
-    return m_gpuMemoryHasBeenSet;
+    return m_descriptionHasBeenSet;
 }
 
 

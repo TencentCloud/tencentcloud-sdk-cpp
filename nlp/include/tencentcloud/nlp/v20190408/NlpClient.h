@@ -25,10 +25,18 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/nlp/v20190408/model/AutoSummarizationRequest.h>
 #include <tencentcloud/nlp/v20190408/model/AutoSummarizationResponse.h>
+#include <tencentcloud/nlp/v20190408/model/ChatBotRequest.h>
+#include <tencentcloud/nlp/v20190408/model/ChatBotResponse.h>
 #include <tencentcloud/nlp/v20190408/model/ContentApprovalRequest.h>
 #include <tencentcloud/nlp/v20190408/model/ContentApprovalResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DependencyParsingRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DependencyParsingResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeEntityRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeEntityResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeRelationRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeRelationResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeTripleRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeTripleResponse.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionRequest.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionResponse.h>
 #include <tencentcloud/nlp/v20190408/model/LexicalAnalysisRequest.h>
@@ -70,12 +78,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AutoSummarizationResponse> AutoSummarizationOutcome;
                 typedef std::future<AutoSummarizationOutcome> AutoSummarizationOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::AutoSummarizationRequest&, AutoSummarizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AutoSummarizationAsyncHandler;
+                typedef Outcome<Error, Model::ChatBotResponse> ChatBotOutcome;
+                typedef std::future<ChatBotOutcome> ChatBotOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::ChatBotRequest&, ChatBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatBotAsyncHandler;
                 typedef Outcome<Error, Model::ContentApprovalResponse> ContentApprovalOutcome;
                 typedef std::future<ContentApprovalOutcome> ContentApprovalOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::ContentApprovalRequest&, ContentApprovalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ContentApprovalAsyncHandler;
                 typedef Outcome<Error, Model::DependencyParsingResponse> DependencyParsingOutcome;
                 typedef std::future<DependencyParsingOutcome> DependencyParsingOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DependencyParsingRequest&, DependencyParsingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DependencyParsingAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEntityResponse> DescribeEntityOutcome;
+                typedef std::future<DescribeEntityOutcome> DescribeEntityOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DescribeEntityRequest&, DescribeEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEntityAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRelationResponse> DescribeRelationOutcome;
+                typedef std::future<DescribeRelationOutcome> DescribeRelationOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DescribeRelationRequest&, DescribeRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelationAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTripleResponse> DescribeTripleOutcome;
+                typedef std::future<DescribeTripleOutcome> DescribeTripleOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DescribeTripleRequest&, DescribeTripleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTripleAsyncHandler;
                 typedef Outcome<Error, Model::KeywordsExtractionResponse> KeywordsExtractionOutcome;
                 typedef std::future<KeywordsExtractionOutcome> KeywordsExtractionOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::KeywordsExtractionRequest&, KeywordsExtractionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KeywordsExtractionAsyncHandler;
@@ -125,6 +145,17 @@ namespace TencentCloud
                 AutoSummarizationOutcomeCallable AutoSummarizationCallable(const Model::AutoSummarizationRequest& request);
 
                 /**
+                 *闲聊服务基于腾讯领先的NLP引擎能力、数据运算能力和千亿级互联网语料数据的支持，同时集成了广泛的知识问答能力，可实现上百种自定义属性配置，以及儿童语言风格及说话方式，从而让聊天变得更睿智、简单和有趣。
+
+
+                 * @param req ChatBotRequest
+                 * @return ChatBotOutcome
+                 */
+                ChatBotOutcome ChatBot(const Model::ChatBotRequest &request);
+                void ChatBotAsync(const Model::ChatBotRequest& request, const ChatBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChatBotOutcomeCallable ChatBotCallable(const Model::ChatBotRequest& request);
+
+                /**
                  *（该接口即将下线，请使用升级接口：文本审核）
 
 文本审核接口能够识别文本信息中的色情、政治等有害内容，帮助用户及时、精准地防范违规风险，可用于内容审核、敏感信息过滤、舆情监控等场景。
@@ -155,6 +186,33 @@ namespace TencentCloud
                 DependencyParsingOutcomeCallable DependencyParsingCallable(const Model::DependencyParsingRequest& request);
 
                 /**
+                 *输入实体名称，返回实体相关的信息如实体别名、实体英文名、实体详细信息、相关实体等。
+                 * @param req DescribeEntityRequest
+                 * @return DescribeEntityOutcome
+                 */
+                DescribeEntityOutcome DescribeEntity(const Model::DescribeEntityRequest &request);
+                void DescribeEntityAsync(const Model::DescribeEntityRequest& request, const DescribeEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEntityOutcomeCallable DescribeEntityCallable(const Model::DescribeEntityRequest& request);
+
+                /**
+                 *输入两个实体，返回两个实体间的关系，例如马化腾与腾讯公司不仅是相关实体，二者还存在隶属关系（马化腾属于腾讯公司）。
+                 * @param req DescribeRelationRequest
+                 * @return DescribeRelationOutcome
+                 */
+                DescribeRelationOutcome DescribeRelation(const Model::DescribeRelationRequest &request);
+                void DescribeRelationAsync(const Model::DescribeRelationRequest& request, const DescribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelationOutcomeCallable DescribeRelationCallable(const Model::DescribeRelationRequest& request);
+
+                /**
+                 *三元组查询，主要分为两类，SP查询和PO查询。SP查询表示已知主语和谓语查询宾语，PO查询表示已知宾语和谓语查询主语。每一个SP或PO查询都是一个可独立执行的查询，TQL支持SP查询的嵌套查询，即主语可以是一个嵌套的子查询。其他复杂的三元组查询方法，请参考官网API文档示例。
+                 * @param req DescribeTripleRequest
+                 * @return DescribeTripleOutcome
+                 */
+                DescribeTripleOutcome DescribeTriple(const Model::DescribeTripleRequest &request);
+                void DescribeTripleAsync(const Model::DescribeTripleRequest& request, const DescribeTripleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTripleOutcomeCallable DescribeTripleCallable(const Model::DescribeTripleRequest& request);
+
+                /**
                  *基于关键词提取平台，通过对文本内容进行深度分析，提取出文本内容中的关键信息，为用户实现诸如新闻内容关键词自动提取、评论关键词提取等提供基础服务。
                  * @param req KeywordsExtractionRequest
                  * @return KeywordsExtractionOutcome
@@ -170,7 +228,7 @@ namespace TencentCloud
 
 2、词性标注：为每一个词附上对应的词性，例如名词、代词、形容词、动词等；
 
-3、命名实体识别：快速识别文本中的实体，例如人名、地名、机构名、时间日期等。
+3、命名实体识别：快速识别文本中的实体，例如人名、地名、机构名等。
 
 所有的功能均基于千亿级大规模互联网语料进行持续迭代更新，以保证效果不断提升，用户无需担心新词发现、歧义消除、调用性能等问题。目前词法分析已经在泛互联网、金融、政务等不同垂直领域提供业务支持，并取得良好的效果。
                  * @param req LexicalAnalysisRequest
@@ -244,7 +302,7 @@ namespace TencentCloud
 
 1、文本恶意级别：将文本分为3个级别，包括正常、恶意、可疑送审；
 
-2、文本恶意类型：把文本分为9个类别，包括正常、政治、色情、辱骂/低俗、暴恐/毒品、广告/灌水、迷信/邪教、其他违法、综合；
+2、文本恶意类型：把文本分为10个类别，包括正常、政治、色情、辱骂/低俗、暴恐/毒品、广告/灌水、迷信/邪教、其他违法、综合、联系方式/链接；
 
 3、恶意关键词：文本中所有涉嫌恶意的关键词。
                  * @param req TextApprovalRequest

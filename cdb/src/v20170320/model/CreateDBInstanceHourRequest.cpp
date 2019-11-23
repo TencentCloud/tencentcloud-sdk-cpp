@@ -47,7 +47,8 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_autoRenewFlagHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_deployGroupIdHasBeenSet(false)
+    m_deployGroupIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "DeployGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -660,6 +669,22 @@ void CreateDBInstanceHourRequest::SetDeployGroupId(const string& _deployGroupId)
 bool CreateDBInstanceHourRequest::DeployGroupIdHasBeenSet() const
 {
     return m_deployGroupIdHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateDBInstanceHourRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

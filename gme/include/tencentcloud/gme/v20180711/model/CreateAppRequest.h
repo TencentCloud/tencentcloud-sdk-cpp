@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取需要支持的引擎列表，取值android, ios, uinty, cocos, unreal, windows。默认全选。
-                     * @return EngineList 需要支持的引擎列表，取值android, ios, uinty, cocos, unreal, windows。默认全选。
+                     * 获取需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
+                     * @return EngineList 需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
                      */
                     std::vector<std::string> GetEngineList() const;
 
                     /**
-                     * 设置需要支持的引擎列表，取值android, ios, uinty, cocos, unreal, windows。默认全选。
-                     * @param EngineList 需要支持的引擎列表，取值android, ios, uinty, cocos, unreal, windows。默认全选。
+                     * 设置需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
+                     * @param EngineList 需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
                      */
                     void SetEngineList(const std::vector<std::string>& _engineList);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool EngineListHasBeenSet() const;
 
                     /**
-                     * 获取服务区域列表, 默认为空数组. 取值: mainland(美), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选
-                     * @return RegionList 服务区域列表, 默认为空数组. 取值: mainland(美), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选
+                     * 获取服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
+                     * @return RegionList 服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
-                     * 设置服务区域列表, 默认为空数组. 取值: mainland(美), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选
-                     * @param RegionList 服务区域列表, 默认为空数组. 取值: mainland(美), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选
+                     * 设置服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
+                     * @param RegionList 服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
                      */
                     void SetRegionList(const std::vector<std::string>& _regionList);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool RealtimeSpeechConfHasBeenSet() const;
 
                     /**
-                     * 获取离线语音服务配置数据
-                     * @return VoiceMessageConf 离线语音服务配置数据
+                     * 获取语音消息及转文本服务配置数据
+                     * @return VoiceMessageConf 语音消息及转文本服务配置数据
                      */
                     VoiceMessageConf GetVoiceMessageConf() const;
 
                     /**
-                     * 设置离线语音服务配置数据
-                     * @param VoiceMessageConf 离线语音服务配置数据
+                     * 设置语音消息及转文本服务配置数据
+                     * @param VoiceMessageConf 语音消息及转文本服务配置数据
                      */
                     void SetVoiceMessageConf(const VoiceMessageConf& _voiceMessageConf);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool VoiceMessageConfHasBeenSet() const;
 
                     /**
-                     * 获取语音过滤服务配置数据
-                     * @return VoiceFilterConf 语音过滤服务配置数据
+                     * 获取语音分析服务配置数据
+                     * @return VoiceFilterConf 语音分析服务配置数据
                      */
                     VoiceFilterConf GetVoiceFilterConf() const;
 
                     /**
-                     * 设置语音过滤服务配置数据
-                     * @param VoiceFilterConf 语音过滤服务配置数据
+                     * 设置语音分析服务配置数据
+                     * @param VoiceFilterConf 语音分析服务配置数据
                      */
                     void SetVoiceFilterConf(const VoiceFilterConf& _voiceFilterConf);
 
@@ -205,13 +205,13 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 需要支持的引擎列表，取值android, ios, uinty, cocos, unreal, windows。默认全选。
+                     * 需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
                      */
                     std::vector<std::string> m_engineList;
                     bool m_engineListHasBeenSet;
 
                     /**
-                     * 服务区域列表, 默认为空数组. 取值: mainland(美), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选
+                     * 服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
                      */
                     std::vector<std::string> m_regionList;
                     bool m_regionListHasBeenSet;
@@ -223,13 +223,13 @@ namespace TencentCloud
                     bool m_realtimeSpeechConfHasBeenSet;
 
                     /**
-                     * 离线语音服务配置数据
+                     * 语音消息及转文本服务配置数据
                      */
                     VoiceMessageConf m_voiceMessageConf;
                     bool m_voiceMessageConfHasBeenSet;
 
                     /**
-                     * 语音过滤服务配置数据
+                     * 语音分析服务配置数据
                      */
                     VoiceFilterConf m_voiceFilterConf;
                     bool m_voiceFilterConfHasBeenSet;

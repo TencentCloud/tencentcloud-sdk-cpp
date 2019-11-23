@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页号，
-范围是[1,1000]，
-默认值是1。
-                     * @return PageNum 页号，
-范围是[1,1000]，
-默认值是1。
+                     * 获取页号，范围是[1,1000]，默认值是1。
+                     * @return PageNum 页号，范围是[1,1000]，默认值是1。
                      */
                     uint64_t GetPageNum() const;
 
@@ -60,10 +56,8 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页个数，范围是[1,1000]，
-默认值是20。
-                     * @return PageSize 每页个数，范围是[1,1000]，
-默认值是20。
+                     * 获取每页个数，范围是[1,1000]，默认值是20。
+                     * @return PageSize 每页个数，范围是[1,1000]，默认值是20。
                      */
                     uint64_t GetPageSize() const;
 
@@ -124,16 +118,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 页号，
-范围是[1,1000]，
-默认值是1。
+                     * 页号，范围是[1,1000]，默认值是1。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页个数，范围是[1,1000]，
-默认值是20。
+                     * 每页个数，范围是[1,1000]，默认值是20。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

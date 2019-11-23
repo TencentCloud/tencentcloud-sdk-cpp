@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/bm/v20180423/model/AttachCamRoleRequest.h>
+#include <tencentcloud/bm/v20180423/model/AttachCamRoleResponse.h>
 #include <tencentcloud/bm/v20180423/model/BindPsaTagRequest.h>
 #include <tencentcloud/bm/v20180423/model/BindPsaTagResponse.h>
 #include <tencentcloud/bm/v20180423/model/BuyDevicesRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/bm/v20180423/model/DescribeUserCmdTasksResponse.h>
 #include <tencentcloud/bm/v20180423/model/DescribeUserCmdsRequest.h>
 #include <tencentcloud/bm/v20180423/model/DescribeUserCmdsResponse.h>
+#include <tencentcloud/bm/v20180423/model/DetachCamRoleRequest.h>
+#include <tencentcloud/bm/v20180423/model/DetachCamRoleResponse.h>
 #include <tencentcloud/bm/v20180423/model/ModifyCustomImageAttributeRequest.h>
 #include <tencentcloud/bm/v20180423/model/ModifyCustomImageAttributeResponse.h>
 #include <tencentcloud/bm/v20180423/model/ModifyDeviceAliasesRequest.h>
@@ -137,6 +141,9 @@ namespace TencentCloud
                 BmClient(const Credential &credential, const std::string &region);
                 BmClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AttachCamRoleResponse> AttachCamRoleOutcome;
+                typedef std::future<AttachCamRoleOutcome> AttachCamRoleOutcomeCallable;
+                typedef std::function<void(const BmClient*, const Model::AttachCamRoleRequest&, AttachCamRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachCamRoleAsyncHandler;
                 typedef Outcome<Error, Model::BindPsaTagResponse> BindPsaTagOutcome;
                 typedef std::future<BindPsaTagOutcome> BindPsaTagOutcomeCallable;
                 typedef std::function<void(const BmClient*, const Model::BindPsaTagRequest&, BindPsaTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindPsaTagAsyncHandler;
@@ -233,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUserCmdsResponse> DescribeUserCmdsOutcome;
                 typedef std::future<DescribeUserCmdsOutcome> DescribeUserCmdsOutcomeCallable;
                 typedef std::function<void(const BmClient*, const Model::DescribeUserCmdsRequest&, DescribeUserCmdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCmdsAsyncHandler;
+                typedef Outcome<Error, Model::DetachCamRoleResponse> DetachCamRoleOutcome;
+                typedef std::future<DetachCamRoleOutcome> DetachCamRoleOutcomeCallable;
+                typedef std::function<void(const BmClient*, const Model::DetachCamRoleRequest&, DetachCamRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachCamRoleAsyncHandler;
                 typedef Outcome<Error, Model::ModifyCustomImageAttributeResponse> ModifyCustomImageAttributeOutcome;
                 typedef std::future<ModifyCustomImageAttributeOutcome> ModifyCustomImageAttributeOutcomeCallable;
                 typedef std::function<void(const BmClient*, const Model::ModifyCustomImageAttributeRequest&, ModifyCustomImageAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomImageAttributeAsyncHandler;
@@ -289,6 +299,15 @@ namespace TencentCloud
                 typedef std::function<void(const BmClient*, const Model::UnbindPsaTagRequest&, UnbindPsaTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindPsaTagAsyncHandler;
 
 
+
+                /**
+                 *服务器绑定CAM角色，该角色授权访问黑石物理服务器服务，为黑石物理服务器提供了访问资源的权限，如请求服务器的临时证书
+                 * @param req AttachCamRoleRequest
+                 * @return AttachCamRoleOutcome
+                 */
+                AttachCamRoleOutcome AttachCamRole(const Model::AttachCamRoleRequest &request);
+                void AttachCamRoleAsync(const Model::AttachCamRoleRequest& request, const AttachCamRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachCamRoleOutcomeCallable AttachCamRoleCallable(const Model::AttachCamRoleRequest& request);
 
                 /**
                  *为预授权规则绑定标签
@@ -587,6 +606,15 @@ TaskStatus（任务状态ID）与状态中文名的对应关系如下：<br>
                 DescribeUserCmdsOutcome DescribeUserCmds(const Model::DescribeUserCmdsRequest &request);
                 void DescribeUserCmdsAsync(const Model::DescribeUserCmdsRequest& request, const DescribeUserCmdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserCmdsOutcomeCallable DescribeUserCmdsCallable(const Model::DescribeUserCmdsRequest& request);
+
+                /**
+                 *服务器绑定CAM角色
+                 * @param req DetachCamRoleRequest
+                 * @return DetachCamRoleOutcome
+                 */
+                DetachCamRoleOutcome DetachCamRole(const Model::DetachCamRoleRequest &request);
+                void DetachCamRoleAsync(const Model::DetachCamRoleRequest& request, const DetachCamRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachCamRoleOutcomeCallable DetachCamRoleCallable(const Model::DetachCamRoleRequest& request);
 
                 /**
                  *用于修改自定义镜像名或描述

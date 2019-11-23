@@ -32,6 +32,7 @@
 #include <tencentcloud/as/v20180419/model/EnhancedService.h>
 #include <tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h>
 #include <tencentcloud/as/v20180419/model/InstanceTag.h>
+#include <tencentcloud/as/v20180419/model/HostNameSettings.h>
 
 
 namespace TencentCloud
@@ -484,6 +485,24 @@ namespace TencentCloud
                      */
                     bool LastOperationInstanceTypesCheckPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取云服务器主机名（HostName）的相关设置。
+                     * @return HostNameSettings 云服务器主机名（HostName）的相关设置。
+                     */
+                    HostNameSettings GetHostNameSettings() const;
+
+                    /**
+                     * 设置云服务器主机名（HostName）的相关设置。
+                     * @param HostNameSettings 云服务器主机名（HostName）的相关设置。
+                     */
+                    void SetHostNameSettings(const HostNameSettings& _hostNameSettings);
+
+                    /**
+                     * 判断参数 HostNameSettings 是否已赋值
+                     * @return HostNameSettings 是否已赋值
+                     */
+                    bool HostNameSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,6 +646,12 @@ namespace TencentCloud
                      */
                     std::string m_lastOperationInstanceTypesCheckPolicy;
                     bool m_lastOperationInstanceTypesCheckPolicyHasBeenSet;
+
+                    /**
+                     * 云服务器主机名（HostName）的相关设置。
+                     */
+                    HostNameSettings m_hostNameSettings;
+                    bool m_hostNameSettingsHasBeenSet;
 
                 };
             }

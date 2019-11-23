@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/yunjing/v20180228/model/MachineTag.h>
 
 
 namespace TencentCloud
@@ -145,16 +146,16 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取漏洞数，非专业版将返回：0。
-                     * @return VulNum 漏洞数，非专业版将返回：0。
+                     * 获取漏洞数。
+                     * @return VulNum 漏洞数。
                      */
-                    uint64_t GetVulNum() const;
+                    int64_t GetVulNum() const;
 
                     /**
-                     * 设置漏洞数，非专业版将返回：0。
-                     * @param VulNum 漏洞数，非专业版将返回：0。
+                     * 设置漏洞数。
+                     * @param VulNum 漏洞数。
                      */
-                    void SetVulNum(const uint64_t& _vulNum);
+                    void SetVulNum(const int64_t& _vulNum);
 
                     /**
                      * 判断参数 VulNum 是否已赋值
@@ -250,6 +251,42 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取木马数。
+                     * @return MalwareNum 木马数。
+                     */
+                    int64_t GetMalwareNum() const;
+
+                    /**
+                     * 设置木马数。
+                     * @param MalwareNum 木马数。
+                     */
+                    void SetMalwareNum(const int64_t& _malwareNum);
+
+                    /**
+                     * 判断参数 MalwareNum 是否已赋值
+                     * @return MalwareNum 是否已赋值
+                     */
+                    bool MalwareNumHasBeenSet() const;
+
+                    /**
+                     * 获取标签信息
+                     * @return Tag 标签信息
+                     */
+                    std::vector<MachineTag> GetTag() const;
+
+                    /**
+                     * 设置标签信息
+                     * @param Tag 标签信息
+                     */
+                    void SetTag(const std::vector<MachineTag>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,9 +322,9 @@ namespace TencentCloud
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 漏洞数，非专业版将返回：0。
+                     * 漏洞数。
                      */
-                    uint64_t m_vulNum;
+                    int64_t m_vulNum;
                     bool m_vulNumHasBeenSet;
 
                     /**
@@ -317,6 +354,18 @@ namespace TencentCloud
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 木马数。
+                     */
+                    int64_t m_malwareNum;
+                    bool m_malwareNumHasBeenSet;
+
+                    /**
+                     * 标签信息
+                     */
+                    std::vector<MachineTag> m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

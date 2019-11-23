@@ -29,7 +29,8 @@ StrategyInfo::StrategyInfo() :
     m_descriptionHasBeenSet(false),
     m_createModeHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
+    m_serviceTypeHasBeenSet(false),
+    m_isAttachedHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome StrategyInfo::Deserialize(const Value &value)
         m_serviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAttached") && !value["IsAttached"].IsNull())
+    {
+        if (!value["IsAttached"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `StrategyInfo.IsAttached` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAttached = value["IsAttached"].GetUint64();
+        m_isAttachedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAttachedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsAttached";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAttached, allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void StrategyInfo::SetServiceType(const string& _serviceType)
 bool StrategyInfo::ServiceTypeHasBeenSet() const
 {
     return m_serviceTypeHasBeenSet;
+}
+
+uint64_t StrategyInfo::GetIsAttached() const
+{
+    return m_isAttached;
+}
+
+void StrategyInfo::SetIsAttached(const uint64_t& _isAttached)
+{
+    m_isAttached = _isAttached;
+    m_isAttachedHasBeenSet = true;
+}
+
+bool StrategyInfo::IsAttachedHasBeenSet() const
+{
+    return m_isAttachedHasBeenSet;
 }
 

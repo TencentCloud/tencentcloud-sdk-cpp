@@ -47,16 +47,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道扩展码，默认没有开通（需要填空）
-                     * @return ExtendCode 通道扩展码，默认没有开通（需要填空）
+                     * 获取短信码号扩展号，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)
+                     * @return ExtendCode 短信码号扩展号，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)
                      */
-                    std::string GetExtendCode() const;
+                    uint64_t GetExtendCode() const;
 
                     /**
-                     * 设置通道扩展码，默认没有开通（需要填空）
-                     * @param ExtendCode 通道扩展码，默认没有开通（需要填空）
+                     * 设置短信码号扩展号，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)
+                     * @param ExtendCode 短信码号扩展号，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)
                      */
-                    void SetExtendCode(const std::string& _extendCode);
+                    void SetExtendCode(const uint64_t& _extendCode);
 
                     /**
                      * 判断参数 ExtendCode 是否已赋值
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool NationCodeHasBeenSet() const;
 
                     /**
-                     * 获取手机号码（ e.164 标准）
-                     * @return PhoneNumber 手机号码（ e.164 标准）
+                     * 获取手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
+                     * @return PhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号码（ e.164 标准）
-                     * @param PhoneNumber 手机号码（ e.164 标准）
+                     * 设置手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
+                     * @param PhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
@@ -137,16 +137,16 @@ namespace TencentCloud
                     bool ReplyContentHasBeenSet() const;
 
                     /**
-                     * 获取回复时间，UNIX 时间戳（单位：秒）
-                     * @return ReplyTime 回复时间，UNIX 时间戳（单位：秒）
+                     * 获取回复时间(例如：2019-10-08 17:18:37)
+                     * @return ReplyTime 回复时间(例如：2019-10-08 17:18:37)
                      */
-                    uint64_t GetReplyTime() const;
+                    std::string GetReplyTime() const;
 
                     /**
-                     * 设置回复时间，UNIX 时间戳（单位：秒）
-                     * @param ReplyTime 回复时间，UNIX 时间戳（单位：秒）
+                     * 设置回复时间(例如：2019-10-08 17:18:37)
+                     * @param ReplyTime 回复时间(例如：2019-10-08 17:18:37)
                      */
-                    void SetReplyTime(const uint64_t& _replyTime);
+                    void SetReplyTime(const std::string& _replyTime);
 
                     /**
                      * 判断参数 ReplyTime 是否已赋值
@@ -157,9 +157,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道扩展码，默认没有开通（需要填空）
+                     * 短信码号扩展号，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773)
                      */
-                    std::string m_extendCode;
+                    uint64_t m_extendCode;
                     bool m_extendCodeHasBeenSet;
 
                     /**
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_nationCodeHasBeenSet;
 
                     /**
-                     * 手机号码（ e.164 标准）
+                     * 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
@@ -187,9 +187,9 @@ namespace TencentCloud
                     bool m_replyContentHasBeenSet;
 
                     /**
-                     * 回复时间，UNIX 时间戳（单位：秒）
+                     * 回复时间(例如：2019-10-08 17:18:37)
                      */
-                    uint64_t m_replyTime;
+                    std::string m_replyTime;
                     bool m_replyTimeHasBeenSet;
 
                 };

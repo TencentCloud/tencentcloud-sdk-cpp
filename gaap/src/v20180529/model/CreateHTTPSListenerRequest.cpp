@@ -30,7 +30,8 @@ CreateHTTPSListenerRequest::CreateHTTPSListenerRequest() :
     m_forwardProtocolHasBeenSet(false),
     m_proxyIdHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false)
+    m_clientCertificateIdHasBeenSet(false),
+    m_polyClientCertificateIdsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,19 @@ string CreateHTTPSListenerRequest::ToJsonString() const
         string key = "ClientCertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clientCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polyClientCertificateIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolyClientCertificateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_polyClientCertificateIds.begin(); itr != m_polyClientCertificateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -215,6 +229,22 @@ void CreateHTTPSListenerRequest::SetClientCertificateId(const string& _clientCer
 bool CreateHTTPSListenerRequest::ClientCertificateIdHasBeenSet() const
 {
     return m_clientCertificateIdHasBeenSet;
+}
+
+vector<string> CreateHTTPSListenerRequest::GetPolyClientCertificateIds() const
+{
+    return m_polyClientCertificateIds;
+}
+
+void CreateHTTPSListenerRequest::SetPolyClientCertificateIds(const vector<string>& _polyClientCertificateIds)
+{
+    m_polyClientCertificateIds = _polyClientCertificateIds;
+    m_polyClientCertificateIdsHasBeenSet = true;
+}
+
+bool CreateHTTPSListenerRequest::PolyClientCertificateIdsHasBeenSet() const
+{
+    return m_polyClientCertificateIdsHasBeenSet;
 }
 
 

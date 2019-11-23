@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool TotalPageHasBeenSet() const;
 
                     /**
-                     * 获取省份或运营商汇总数据列表。
-                     * @return DataInfoList 省份或运营商汇总数据列表。
+                     * 获取省份，运营商，国家或地区汇总数据列表。
+                     * @return DataInfoList 省份，运营商，国家或地区汇总数据列表。
                      */
                     std::vector<ProIspPlaySumInfo> GetDataInfoList() const;
 
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_totalPageHasBeenSet;
 
                     /**
-                     * 省份或运营商汇总数据列表。
+                     * 省份，运营商，国家或地区汇总数据列表。
                      */
                     std::vector<ProIspPlaySumInfo> m_dataInfoList;
                     bool m_dataInfoListHasBeenSet;

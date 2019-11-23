@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateSitesResponse::CreateSitesResponse() :
-    m_numberHasBeenSet(false)
+    m_numberHasBeenSet(false),
+    m_sitesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome CreateSitesResponse::Deserialize(const string &payload)
         m_numberHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Sites") && !rsp["Sites"].IsNull())
+    {
+        if (!rsp["Sites"].IsArray())
+            return CoreInternalOutcome(Error("response `Sites` is not array type"));
+
+        const Value &tmpValue = rsp["Sites"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MiniSite item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sites.push_back(item);
+        }
+        m_sitesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +107,16 @@ uint64_t CreateSitesResponse::GetNumber() const
 bool CreateSitesResponse::NumberHasBeenSet() const
 {
     return m_numberHasBeenSet;
+}
+
+vector<MiniSite> CreateSitesResponse::GetSites() const
+{
+    return m_sites;
+}
+
+bool CreateSitesResponse::SitesHasBeenSet() const
+{
+    return m_sitesHasBeenSet;
 }
 
 

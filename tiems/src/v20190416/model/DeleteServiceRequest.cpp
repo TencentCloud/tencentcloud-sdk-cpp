@@ -40,7 +40,7 @@ string DeleteServiceRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_serviceId, allocator);
+        d.AddMember(iKey, Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -51,12 +51,12 @@ string DeleteServiceRequest::ToJsonString() const
 }
 
 
-uint64_t DeleteServiceRequest::GetServiceId() const
+string DeleteServiceRequest::GetServiceId() const
 {
     return m_serviceId;
 }
 
-void DeleteServiceRequest::SetServiceId(const uint64_t& _serviceId)
+void DeleteServiceRequest::SetServiceId(const string& _serviceId)
 {
     m_serviceId = _serviceId;
     m_serviceIdHasBeenSet = true;

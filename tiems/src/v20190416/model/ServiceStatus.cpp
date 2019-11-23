@@ -26,7 +26,8 @@ ServiceStatus::ServiceStatus() :
     m_currentReplicasHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_conditionsHasBeenSet(false),
-    m_replicasHasBeenSet(false)
+    m_replicasHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome ServiceStatus::Deserialize(const Value &value)
         m_replicasHasBeenSet = true;
     }
 
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ServiceStatus.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -155,6 +166,14 @@ void ServiceStatus::ToJsonObject(Value &value, Document::AllocatorType& allocato
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -238,5 +257,21 @@ void ServiceStatus::SetReplicas(const vector<string>& _replicas)
 bool ServiceStatus::ReplicasHasBeenSet() const
 {
     return m_replicasHasBeenSet;
+}
+
+string ServiceStatus::GetMessage() const
+{
+    return m_message;
+}
+
+void ServiceStatus::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool ServiceStatus::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

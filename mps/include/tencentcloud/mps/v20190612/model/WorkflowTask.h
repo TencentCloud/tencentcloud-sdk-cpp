@@ -27,6 +27,8 @@
 #include <tencentcloud/mps/v20190612/model/MediaInputInfo.h>
 #include <tencentcloud/mps/v20190612/model/MediaMetaData.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/AiContentReviewResult.h>
+#include <tencentcloud/mps/v20190612/model/AiRecognitionResult.h>
 
 
 namespace TencentCloud
@@ -191,6 +193,42 @@ namespace TencentCloud
                      */
                     bool MediaProcessResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容审核任务的执行状态与结果。
+                     * @return AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     */
+                    std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
+
+                    /**
+                     * 设置视频内容审核任务的执行状态与结果。
+                     * @param AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     */
+                    void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
+
+                    /**
+                     * 判断参数 AiContentReviewResultSet 是否已赋值
+                     * @return AiContentReviewResultSet 是否已赋值
+                     */
+                    bool AiContentReviewResultSetHasBeenSet() const;
+
+                    /**
+                     * 获取视频内容识别任务的执行状态与结果。
+                     * @return AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     */
+                    std::vector<AiRecognitionResult> GetAiRecognitionResultSet() const;
+
+                    /**
+                     * 设置视频内容识别任务的执行状态与结果。
+                     * @param AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     */
+                    void SetAiRecognitionResultSet(const std::vector<AiRecognitionResult>& _aiRecognitionResultSet);
+
+                    /**
+                     * 判断参数 AiRecognitionResultSet 是否已赋值
+                     * @return AiRecognitionResultSet 是否已赋值
+                     */
+                    bool AiRecognitionResultSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +276,18 @@ namespace TencentCloud
                      */
                     std::vector<MediaProcessTaskResult> m_mediaProcessResultSet;
                     bool m_mediaProcessResultSetHasBeenSet;
+
+                    /**
+                     * 视频内容审核任务的执行状态与结果。
+                     */
+                    std::vector<AiContentReviewResult> m_aiContentReviewResultSet;
+                    bool m_aiContentReviewResultSetHasBeenSet;
+
+                    /**
+                     * 视频内容识别任务的执行状态与结果。
+                     */
+                    std::vector<AiRecognitionResult> m_aiRecognitionResultSet;
+                    bool m_aiRecognitionResultSetHasBeenSet;
 
                 };
             }

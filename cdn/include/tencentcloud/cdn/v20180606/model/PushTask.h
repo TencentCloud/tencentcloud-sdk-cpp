@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 预热任务日志详情。
+                * 预热任务详情
                 */
                 class PushTask : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预热任务Id，前十位为时间戳。
-                     * @return TaskId 预热任务Id，前十位为时间戳。
+                     * 获取预热任务 ID
+                     * @return TaskId 预热任务 ID
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置预热任务Id，前十位为时间戳。
-                     * @param TaskId 预热任务Id，前十位为时间戳。
+                     * 设置预热任务 ID
+                     * @param TaskId 预热任务 ID
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取预热Url。
-                     * @return Url 预热Url。
+                     * 获取预热 URL
+                     * @return Url 预热 URL
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置预热Url。
-                     * @param Url 预热Url。
+                     * 设置预热 URL
+                     * @param Url 预热 URL
                      */
                     void SetUrl(const std::string& _url);
 
@@ -83,14 +83,26 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取预热任务状态，fail表示失败，done表示成功，process表示预热中。
-                     * @return Status 预热任务状态，fail表示失败，done表示成功，process表示预热中。
+                     * 获取预热任务状态
+fail：预热失败
+done：预热成功
+process：预热中
+                     * @return Status 预热任务状态
+fail：预热失败
+done：预热成功
+process：预热中
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置预热任务状态，fail表示失败，done表示成功，process表示预热中。
-                     * @param Status 预热任务状态，fail表示失败，done表示成功，process表示预热中。
+                     * 设置预热任务状态
+fail：预热失败
+done：预热成功
+process：预热中
+                     * @param Status 预热任务状态
+fail：预热失败
+done：预热成功
+process：预热中
                      */
                     void SetStatus(const std::string& _status);
 
@@ -101,14 +113,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取预热百分比。
-                     * @return Percent 预热百分比。
+                     * 获取预热进度百分比
+                     * @return Percent 预热进度百分比
                      */
                     int64_t GetPercent() const;
 
                     /**
-                     * 设置预热百分比。
-                     * @param Percent 预热百分比。
+                     * 设置预热进度百分比
+                     * @param Percent 预热进度百分比
                      */
                     void SetPercent(const int64_t& _percent);
 
@@ -119,14 +131,14 @@ namespace TencentCloud
                     bool PercentHasBeenSet() const;
 
                     /**
-                     * 获取预热任务提交时间。
-                     * @return CreateTime 预热任务提交时间。
+                     * 获取预热任务提交时间
+                     * @return CreateTime 预热任务提交时间
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置预热任务提交时间。
-                     * @param CreateTime 预热任务提交时间。
+                     * 设置预热任务提交时间
+                     * @param CreateTime 预热任务提交时间
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -137,14 +149,26 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取预热区域，mainland，overseas或global。
-                     * @return Area 预热区域，mainland，overseas或global。
+                     * 获取预热区域
+mainland：境内
+overseas：境外
+global：全球
+                     * @return Area 预热区域
+mainland：境内
+overseas：境外
+global：全球
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置预热区域，mainland，overseas或global。
-                     * @param Area 预热区域，mainland，overseas或global。
+                     * 设置预热区域
+mainland：境内
+overseas：境外
+global：全球
+                     * @param Area 预热区域
+mainland：境内
+overseas：境外
+global：全球
                      */
                     void SetArea(const std::string& _area);
 
@@ -157,37 +181,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预热任务Id，前十位为时间戳。
+                     * 预热任务 ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 预热Url。
+                     * 预热 URL
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 预热任务状态，fail表示失败，done表示成功，process表示预热中。
+                     * 预热任务状态
+fail：预热失败
+done：预热成功
+process：预热中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 预热百分比。
+                     * 预热进度百分比
                      */
                     int64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
-                     * 预热任务提交时间。
+                     * 预热任务提交时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 预热区域，mainland，overseas或global。
+                     * 预热区域
+mainland：境内
+overseas：境外
+global：全球
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

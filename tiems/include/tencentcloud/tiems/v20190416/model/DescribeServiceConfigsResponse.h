@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tiems/v20190416/model/ServiceConfig.h>
+#include <tencentcloud/tiems/v20190416/model/Config.h>
 
 
 namespace TencentCloud
@@ -47,7 +47,7 @@ namespace TencentCloud
                      * 获取服务配置
                      * @return ServiceConfigs 服务配置
                      */
-                    std::vector<ServiceConfig> GetServiceConfigs() const;
+                    std::vector<Config> GetServiceConfigs() const;
 
                     /**
                      * 判断参数 ServiceConfigs 是否已赋值
@@ -72,7 +72,7 @@ namespace TencentCloud
                     /**
                      * 服务配置
                      */
-                    std::vector<ServiceConfig> m_serviceConfigs;
+                    std::vector<Config> m_serviceConfigs;
                     bool m_serviceConfigsHasBeenSet;
 
                     /**

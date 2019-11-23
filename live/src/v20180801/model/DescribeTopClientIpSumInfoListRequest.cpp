@@ -29,7 +29,9 @@ DescribeTopClientIpSumInfoListRequest::DescribeTopClientIpSumInfoListRequest() :
     m_playDomainsHasBeenSet(false),
     m_pageNumHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_orderParamHasBeenSet(false)
+    m_orderParamHasBeenSet(false),
+    m_mainlandOrOverseaHasBeenSet(false),
+    m_outLanguageHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,22 @@ string DescribeTopClientIpSumInfoListRequest::ToJsonString() const
         string key = "OrderParam";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_orderParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mainlandOrOverseaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MainlandOrOversea";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outLanguageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OutLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_outLanguage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +213,38 @@ void DescribeTopClientIpSumInfoListRequest::SetOrderParam(const string& _orderPa
 bool DescribeTopClientIpSumInfoListRequest::OrderParamHasBeenSet() const
 {
     return m_orderParamHasBeenSet;
+}
+
+string DescribeTopClientIpSumInfoListRequest::GetMainlandOrOversea() const
+{
+    return m_mainlandOrOversea;
+}
+
+void DescribeTopClientIpSumInfoListRequest::SetMainlandOrOversea(const string& _mainlandOrOversea)
+{
+    m_mainlandOrOversea = _mainlandOrOversea;
+    m_mainlandOrOverseaHasBeenSet = true;
+}
+
+bool DescribeTopClientIpSumInfoListRequest::MainlandOrOverseaHasBeenSet() const
+{
+    return m_mainlandOrOverseaHasBeenSet;
+}
+
+string DescribeTopClientIpSumInfoListRequest::GetOutLanguage() const
+{
+    return m_outLanguage;
+}
+
+void DescribeTopClientIpSumInfoListRequest::SetOutLanguage(const string& _outLanguage)
+{
+    m_outLanguage = _outLanguage;
+    m_outLanguageHasBeenSet = true;
+}
+
+bool DescribeTopClientIpSumInfoListRequest::OutLanguageHasBeenSet() const
+{
+    return m_outLanguageHasBeenSet;
 }
 
 

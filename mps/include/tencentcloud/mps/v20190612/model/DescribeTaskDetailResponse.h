@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamProcessTask.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
 
@@ -45,8 +46,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务类型，目前仅有取值 WorkflowTask。
-                     * @return TaskType 任务类型，目前仅有取值 WorkflowTask。
+                     * 获取任务类型，目前取值有：
+<li>WorkflowTask：视频工作流处理任务。</li>
+<li>LiveStreamProcessTask：直播流处理任务。</li>
+                     * @return TaskType 任务类型，目前取值有：
+<li>WorkflowTask：视频工作流处理任务。</li>
+<li>LiveStreamProcessTask：直播流处理任务。</li>
                      */
                     std::string GetTaskType() const;
 
@@ -125,6 +130,20 @@ namespace TencentCloud
                     bool WorkflowTaskHasBeenSet() const;
 
                     /**
+                     * 获取直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LiveStreamProcessTask 直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LiveStreamProcessTask GetLiveStreamProcessTask() const;
+
+                    /**
+                     * 判断参数 LiveStreamProcessTask 是否已赋值
+                     * @return LiveStreamProcessTask 是否已赋值
+                     */
+                    bool LiveStreamProcessTaskHasBeenSet() const;
+
+                    /**
                      * 获取任务的事件通知信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskNotifyConfig 任务的事件通知信息。
@@ -177,7 +196,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务类型，目前仅有取值 WorkflowTask。
+                     * 任务类型，目前取值有：
+<li>WorkflowTask：视频工作流处理任务。</li>
+<li>LiveStreamProcessTask：直播流处理任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -215,6 +236,13 @@ namespace TencentCloud
                      */
                     WorkflowTask m_workflowTask;
                     bool m_workflowTaskHasBeenSet;
+
+                    /**
+                     * 直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LiveStreamProcessTask m_liveStreamProcessTask;
+                    bool m_liveStreamProcessTaskHasBeenSet;
 
                     /**
                      * 任务的事件通知信息。

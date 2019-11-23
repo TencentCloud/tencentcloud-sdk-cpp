@@ -20,35 +20,53 @@ set(sms_public_header
 
 set(sms_public_header_model
   include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusRequest.h
-  include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusByPhoneNumberRequest.h
-  include/tencentcloud/sms/v20190711/model/PullSmsSendStatus.h
+  include/tencentcloud/sms/v20190711/model/SmsPackagesStatisticsRequest.h
+  include/tencentcloud/sms/v20190711/model/PullSmsSendStatusByPhoneNumberRequest.h
+  include/tencentcloud/sms/v20190711/model/CallbackStatusStatisticsResponse.h
   include/tencentcloud/sms/v20190711/model/PullSmsSendStatusRequest.h
+  include/tencentcloud/sms/v20190711/model/SmsPackagesStatistics.h
   include/tencentcloud/sms/v20190711/model/PullSmsSendStatusByPhoneNumberResponse.h
   include/tencentcloud/sms/v20190711/model/PullSmsReplyStatus.h
   include/tencentcloud/sms/v20190711/model/SendSmsResponse.h
-  include/tencentcloud/sms/v20190711/model/PullSmsSendStatusByPhoneNumberRequest.h
+  include/tencentcloud/sms/v20190711/model/SendStatusStatisticsResponse.h
   include/tencentcloud/sms/v20190711/model/SendSmsRequest.h
-  include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusResponse.h
-  include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusByPhoneNumberResponse.h
   include/tencentcloud/sms/v20190711/model/SendStatus.h
+  include/tencentcloud/sms/v20190711/model/PullSmsSendStatus.h
+  include/tencentcloud/sms/v20190711/model/CallbackStatusStatistics.h
+  include/tencentcloud/sms/v20190711/model/SendStatusStatisticsRequest.h
+  include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusByPhoneNumberResponse.h
+  include/tencentcloud/sms/v20190711/model/CallbackStatusStatisticsRequest.h
+  include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusByPhoneNumberRequest.h
+  include/tencentcloud/sms/v20190711/model/SendStatusStatistics.h
   include/tencentcloud/sms/v20190711/model/PullSmsSendStatusResponse.h
+  include/tencentcloud/sms/v20190711/model/SmsPackagesStatisticsResponse.h
+  include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusResponse.h
   )
 
 set(sms_src
   src/v20190711/SmsClient.cpp
   src/v20190711/model/PullSmsReplyStatusRequest.cpp
-  src/v20190711/model/PullSmsReplyStatusByPhoneNumberRequest.cpp
-  src/v20190711/model/PullSmsSendStatus.cpp
+  src/v20190711/model/SmsPackagesStatisticsRequest.cpp
+  src/v20190711/model/PullSmsSendStatusByPhoneNumberRequest.cpp
+  src/v20190711/model/CallbackStatusStatisticsResponse.cpp
   src/v20190711/model/PullSmsSendStatusRequest.cpp
+  src/v20190711/model/SmsPackagesStatistics.cpp
   src/v20190711/model/PullSmsSendStatusByPhoneNumberResponse.cpp
   src/v20190711/model/PullSmsReplyStatus.cpp
   src/v20190711/model/SendSmsResponse.cpp
-  src/v20190711/model/PullSmsSendStatusByPhoneNumberRequest.cpp
+  src/v20190711/model/SendStatusStatisticsResponse.cpp
   src/v20190711/model/SendSmsRequest.cpp
-  src/v20190711/model/PullSmsReplyStatusResponse.cpp
-  src/v20190711/model/PullSmsReplyStatusByPhoneNumberResponse.cpp
   src/v20190711/model/SendStatus.cpp
+  src/v20190711/model/PullSmsSendStatus.cpp
+  src/v20190711/model/CallbackStatusStatistics.cpp
+  src/v20190711/model/SendStatusStatisticsRequest.cpp
+  src/v20190711/model/PullSmsReplyStatusByPhoneNumberResponse.cpp
+  src/v20190711/model/CallbackStatusStatisticsRequest.cpp
+  src/v20190711/model/PullSmsReplyStatusByPhoneNumberRequest.cpp
+  src/v20190711/model/SendStatusStatistics.cpp
   src/v20190711/model/PullSmsSendStatusResponse.cpp
+  src/v20190711/model/SmsPackagesStatisticsResponse.cpp
+  src/v20190711/model/PullSmsReplyStatusResponse.cpp
   )
 
 set(sms_include

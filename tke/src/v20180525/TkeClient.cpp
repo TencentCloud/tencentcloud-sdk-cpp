@@ -169,6 +169,92 @@ TkeClient::CreateClusterAsGroupOutcomeCallable TkeClient::CreateClusterAsGroupCa
     return task->get_future();
 }
 
+TkeClient::CreateClusterEndpointOutcome TkeClient::CreateClusterEndpoint(const CreateClusterEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterEndpointResponse rsp = CreateClusterEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterEndpointOutcome(rsp);
+        else
+            return CreateClusterEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterEndpointAsync(const CreateClusterEndpointRequest& request, const CreateClusterEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterEndpointOutcomeCallable TkeClient::CreateClusterEndpointCallable(const CreateClusterEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateClusterEndpointVipOutcome TkeClient::CreateClusterEndpointVip(const CreateClusterEndpointVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterEndpointVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterEndpointVipResponse rsp = CreateClusterEndpointVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterEndpointVipOutcome(rsp);
+        else
+            return CreateClusterEndpointVipOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterEndpointVipOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterEndpointVipAsync(const CreateClusterEndpointVipRequest& request, const CreateClusterEndpointVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterEndpointVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterEndpointVipOutcomeCallable TkeClient::CreateClusterEndpointVipCallable(const CreateClusterEndpointVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterEndpointVipOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterEndpointVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateClusterInstancesOutcome TkeClient::CreateClusterInstances(const CreateClusterInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusterInstances");
@@ -384,6 +470,92 @@ TkeClient::DeleteClusterAsGroupsOutcomeCallable TkeClient::DeleteClusterAsGroups
     return task->get_future();
 }
 
+TkeClient::DeleteClusterEndpointOutcome TkeClient::DeleteClusterEndpoint(const DeleteClusterEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterEndpointResponse rsp = DeleteClusterEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterEndpointOutcome(rsp);
+        else
+            return DeleteClusterEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterEndpointAsync(const DeleteClusterEndpointRequest& request, const DeleteClusterEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterEndpointOutcomeCallable TkeClient::DeleteClusterEndpointCallable(const DeleteClusterEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteClusterEndpointVipOutcome TkeClient::DeleteClusterEndpointVip(const DeleteClusterEndpointVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterEndpointVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterEndpointVipResponse rsp = DeleteClusterEndpointVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterEndpointVipOutcome(rsp);
+        else
+            return DeleteClusterEndpointVipOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterEndpointVipOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterEndpointVipAsync(const DeleteClusterEndpointVipRequest& request, const DeleteClusterEndpointVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterEndpointVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterEndpointVipOutcomeCallable TkeClient::DeleteClusterEndpointVipCallable(const DeleteClusterEndpointVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterEndpointVipOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterEndpointVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteClusterInstancesOutcome TkeClient::DeleteClusterInstances(const DeleteClusterInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteClusterInstances");
@@ -506,6 +678,92 @@ TkeClient::DeleteClusterRouteTableOutcomeCallable TkeClient::DeleteClusterRouteT
         [this, request]()
         {
             return this->DeleteClusterRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterEndpointStatusOutcome TkeClient::DescribeClusterEndpointStatus(const DescribeClusterEndpointStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterEndpointStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterEndpointStatusResponse rsp = DescribeClusterEndpointStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterEndpointStatusOutcome(rsp);
+        else
+            return DescribeClusterEndpointStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterEndpointStatusOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterEndpointStatusAsync(const DescribeClusterEndpointStatusRequest& request, const DescribeClusterEndpointStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterEndpointStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterEndpointStatusOutcomeCallable TkeClient::DescribeClusterEndpointStatusCallable(const DescribeClusterEndpointStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterEndpointStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterEndpointStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterEndpointVipStatusOutcome TkeClient::DescribeClusterEndpointVipStatus(const DescribeClusterEndpointVipStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterEndpointVipStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterEndpointVipStatusResponse rsp = DescribeClusterEndpointVipStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterEndpointVipStatusOutcome(rsp);
+        else
+            return DescribeClusterEndpointVipStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterEndpointVipStatusOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterEndpointVipStatusAsync(const DescribeClusterEndpointVipStatusRequest& request, const DescribeClusterEndpointVipStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterEndpointVipStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterEndpointVipStatusOutcomeCallable TkeClient::DescribeClusterEndpointVipStatusCallable(const DescribeClusterEndpointVipStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterEndpointVipStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterEndpointVipStatus(request);
         }
     );
 
@@ -807,6 +1065,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
         [this, request]()
         {
             return this->DescribeRouteTableConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterEndpointSPOutcome TkeClient::ModifyClusterEndpointSP(const ModifyClusterEndpointSPRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterEndpointSP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterEndpointSPResponse rsp = ModifyClusterEndpointSPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterEndpointSPOutcome(rsp);
+        else
+            return ModifyClusterEndpointSPOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterEndpointSPOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterEndpointSPAsync(const ModifyClusterEndpointSPRequest& request, const ModifyClusterEndpointSPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterEndpointSP(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterEndpointSPOutcomeCallable TkeClient::ModifyClusterEndpointSPCallable(const ModifyClusterEndpointSPRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterEndpointSPOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterEndpointSP(request);
         }
     );
 

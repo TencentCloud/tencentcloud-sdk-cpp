@@ -193,6 +193,50 @@ namespace TencentCloud
                      */
                     bool InfoHasBeenSet() const;
 
+                    /**
+                     * 获取流检测时分片在流中的偏移时间，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Offset 流检测时分片在流中的偏移时间，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置流检测时分片在流中的偏移时间，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Offset 流检测时分片在流中的偏移时间，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取流检测时分片时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Duration 流检测时分片时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDuration() const;
+
+                    /**
+                     * 设置流检测时分片时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Duration 流检测时分片时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDuration(const uint64_t& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     */
+                    bool DurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +285,20 @@ namespace TencentCloud
                      */
                     std::string m_info;
                     bool m_infoHasBeenSet;
+
+                    /**
+                     * 流检测时分片在流中的偏移时间，单位毫秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 流检测时分片时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_duration;
+                    bool m_durationHasBeenSet;
 
                 };
             }

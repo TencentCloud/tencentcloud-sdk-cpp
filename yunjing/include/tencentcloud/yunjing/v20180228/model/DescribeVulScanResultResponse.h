@@ -78,6 +78,30 @@ namespace TencentCloud
                      */
                     bool ImpactedHostNumHasBeenSet() const;
 
+                    /**
+                     * 获取主机总数。
+                     * @return HostNum 主机总数。
+                     */
+                    uint64_t GetHostNum() const;
+
+                    /**
+                     * 判断参数 HostNum 是否已赋值
+                     * @return HostNum 是否已赋值
+                     */
+                    bool HostNumHasBeenSet() const;
+
+                    /**
+                     * 获取基础版机器数。
+                     * @return BasicVersionNum 基础版机器数。
+                     */
+                    uint64_t GetBasicVersionNum() const;
+
+                    /**
+                     * 判断参数 BasicVersionNum 是否已赋值
+                     * @return BasicVersionNum 是否已赋值
+                     */
+                    bool BasicVersionNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +121,18 @@ namespace TencentCloud
                      */
                     uint64_t m_impactedHostNum;
                     bool m_impactedHostNumHasBeenSet;
+
+                    /**
+                     * 主机总数。
+                     */
+                    uint64_t m_hostNum;
+                    bool m_hostNumHasBeenSet;
+
+                    /**
+                     * 基础版机器数。
+                     */
+                    uint64_t m_basicVersionNum;
+                    bool m_basicVersionNumHasBeenSet;
 
                 };
             }

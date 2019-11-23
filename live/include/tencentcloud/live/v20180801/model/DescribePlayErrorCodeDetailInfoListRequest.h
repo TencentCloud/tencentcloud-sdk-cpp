@@ -148,6 +148,24 @@ namespace TencentCloud
                      */
                     bool PlayDomainsHasBeenSet() const;
 
+                    /**
+                     * 获取地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * @return MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    std::string GetMainlandOrOversea() const;
+
+                    /**
+                     * 设置地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * @param MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
+
+                    /**
+                     * 判断参数 MainlandOrOversea 是否已赋值
+                     * @return MainlandOrOversea 是否已赋值
+                     */
+                    bool MainlandOrOverseaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +201,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_playDomains;
                     bool m_playDomainsHasBeenSet;
+
+                    /**
+                     * 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    std::string m_mainlandOrOversea;
+                    bool m_mainlandOrOverseaHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 
 DetectLiveFaceRequest::DetectLiveFaceRequest() :
     m_imageHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DetectLiveFaceRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_faceModelVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DetectLiveFaceRequest::SetUrl(const string& _url)
 bool DetectLiveFaceRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string DetectLiveFaceRequest::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+void DetectLiveFaceRequest::SetFaceModelVersion(const string& _faceModelVersion)
+{
+    m_faceModelVersion = _faceModelVersion;
+    m_faceModelVersionHasBeenSet = true;
+}
+
+bool DetectLiveFaceRequest::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
 }
 
 

@@ -38,11 +38,11 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const Value &value)
 
     if (value.HasMember("ExtendCode") && !value["ExtendCode"].IsNull())
     {
-        if (!value["ExtendCode"].IsString())
+        if (!value["ExtendCode"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ExtendCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ExtendCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_extendCode = string(value["ExtendCode"].GetString());
+        m_extendCode = value["ExtendCode"].GetUint64();
         m_extendCodeHasBeenSet = true;
     }
 
@@ -88,11 +88,11 @@ CoreInternalOutcome PullSmsReplyStatus::Deserialize(const Value &value)
 
     if (value.HasMember("ReplyTime") && !value["ReplyTime"].IsNull())
     {
-        if (!value["ReplyTime"].IsUint64())
+        if (!value["ReplyTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ReplyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PullSmsReplyStatus.ReplyTime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_replyTime = value["ReplyTime"].GetUint64();
+        m_replyTime = string(value["ReplyTime"].GetString());
         m_replyTimeHasBeenSet = true;
     }
 
@@ -108,7 +108,7 @@ void PullSmsReplyStatus::ToJsonObject(Value &value, Document::AllocatorType& all
         Value iKey(kStringType);
         string key = "ExtendCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_extendCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_extendCode, allocator);
     }
 
     if (m_nationCodeHasBeenSet)
@@ -148,18 +148,18 @@ void PullSmsReplyStatus::ToJsonObject(Value &value, Document::AllocatorType& all
         Value iKey(kStringType);
         string key = "ReplyTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_replyTime, allocator);
+        value.AddMember(iKey, Value(m_replyTime.c_str(), allocator).Move(), allocator);
     }
 
 }
 
 
-string PullSmsReplyStatus::GetExtendCode() const
+uint64_t PullSmsReplyStatus::GetExtendCode() const
 {
     return m_extendCode;
 }
 
-void PullSmsReplyStatus::SetExtendCode(const string& _extendCode)
+void PullSmsReplyStatus::SetExtendCode(const uint64_t& _extendCode)
 {
     m_extendCode = _extendCode;
     m_extendCodeHasBeenSet = true;
@@ -234,12 +234,12 @@ bool PullSmsReplyStatus::ReplyContentHasBeenSet() const
     return m_replyContentHasBeenSet;
 }
 
-uint64_t PullSmsReplyStatus::GetReplyTime() const
+string PullSmsReplyStatus::GetReplyTime() const
 {
     return m_replyTime;
 }
 
-void PullSmsReplyStatus::SetReplyTime(const uint64_t& _replyTime)
+void PullSmsReplyStatus::SetReplyTime(const string& _replyTime)
 {
     m_replyTime = _replyTime;
     m_replyTimeHasBeenSet = true;

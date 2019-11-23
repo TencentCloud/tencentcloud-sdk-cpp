@@ -116,6 +116,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ItemCoord.h
   include/tencentcloud/ocr/v20181119/model/OrgCodeCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h
@@ -250,6 +251,7 @@ set(ocr_src
   src/v20181119/model/FormulaOCRRequest.cpp
   src/v20181119/model/PassportOCRRequest.cpp
   src/v20181119/model/DutyPaidProofOCRRequest.cpp
+  src/v20181119/model/ItemCoord.cpp
   src/v20181119/model/OrgCodeCertOCRResponse.cpp
   src/v20181119/model/MixedInvoiceOCRRequest.cpp
   src/v20181119/model/CarInvoiceOCRResponse.cpp

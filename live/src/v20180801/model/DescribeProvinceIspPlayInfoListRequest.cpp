@@ -30,7 +30,8 @@ DescribeProvinceIspPlayInfoListRequest::DescribeProvinceIspPlayInfoListRequest()
     m_statTypeHasBeenSet(false),
     m_playDomainsHasBeenSet(false),
     m_provinceNamesHasBeenSet(false),
-    m_ispNamesHasBeenSet(false)
+    m_ispNamesHasBeenSet(false),
+    m_mainlandOrOverseaHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeProvinceIspPlayInfoListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_mainlandOrOverseaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MainlandOrOversea";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -230,6 +239,22 @@ void DescribeProvinceIspPlayInfoListRequest::SetIspNames(const vector<string>& _
 bool DescribeProvinceIspPlayInfoListRequest::IspNamesHasBeenSet() const
 {
     return m_ispNamesHasBeenSet;
+}
+
+string DescribeProvinceIspPlayInfoListRequest::GetMainlandOrOversea() const
+{
+    return m_mainlandOrOversea;
+}
+
+void DescribeProvinceIspPlayInfoListRequest::SetMainlandOrOversea(const string& _mainlandOrOversea)
+{
+    m_mainlandOrOversea = _mainlandOrOversea;
+    m_mainlandOrOverseaHasBeenSet = true;
+}
+
+bool DescribeProvinceIspPlayInfoListRequest::MainlandOrOverseaHasBeenSet() const
+{
+    return m_mainlandOrOverseaHasBeenSet;
 }
 
 

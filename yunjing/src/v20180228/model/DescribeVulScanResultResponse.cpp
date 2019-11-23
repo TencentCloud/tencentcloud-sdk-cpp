@@ -27,7 +27,9 @@ using namespace std;
 DescribeVulScanResultResponse::DescribeVulScanResultResponse() :
     m_vulNumHasBeenSet(false),
     m_proVersionNumHasBeenSet(false),
-    m_impactedHostNumHasBeenSet(false)
+    m_impactedHostNumHasBeenSet(false),
+    m_hostNumHasBeenSet(false),
+    m_basicVersionNumHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome DescribeVulScanResultResponse::Deserialize(const string &pay
         m_impactedHostNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HostNum") && !rsp["HostNum"].IsNull())
+    {
+        if (!rsp["HostNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `HostNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostNum = rsp["HostNum"].GetUint64();
+        m_hostNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BasicVersionNum") && !rsp["BasicVersionNum"].IsNull())
+    {
+        if (!rsp["BasicVersionNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BasicVersionNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basicVersionNum = rsp["BasicVersionNum"].GetUint64();
+        m_basicVersionNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +150,26 @@ uint64_t DescribeVulScanResultResponse::GetImpactedHostNum() const
 bool DescribeVulScanResultResponse::ImpactedHostNumHasBeenSet() const
 {
     return m_impactedHostNumHasBeenSet;
+}
+
+uint64_t DescribeVulScanResultResponse::GetHostNum() const
+{
+    return m_hostNum;
+}
+
+bool DescribeVulScanResultResponse::HostNumHasBeenSet() const
+{
+    return m_hostNumHasBeenSet;
+}
+
+uint64_t DescribeVulScanResultResponse::GetBasicVersionNum() const
+{
+    return m_basicVersionNum;
+}
+
+bool DescribeVulScanResultResponse::BasicVersionNumHasBeenSet() const
+{
+    return m_basicVersionNumHasBeenSet;
 }
 
 

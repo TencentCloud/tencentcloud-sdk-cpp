@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取刷新历史记录
+                     * 获取详细刷新记录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PurgeLogs 刷新历史记录
+                     * @return PurgeLogs 详细刷新记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PurgeTask> GetPurgeLogs() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刷新历史记录
+                     * 详细刷新记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PurgeTask> m_purgeLogs;

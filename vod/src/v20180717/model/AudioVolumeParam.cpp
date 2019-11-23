@@ -22,8 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 AudioVolumeParam::AudioVolumeParam() :
-    m_gainHasBeenSet(false),
-    m_muteHasBeenSet(false)
+    m_muteHasBeenSet(false),
+    m_gainHasBeenSet(false)
 {
 }
 
@@ -31,16 +31,6 @@ CoreInternalOutcome AudioVolumeParam::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Gain") && !value["Gain"].IsNull())
-    {
-        if (!value["Gain"].IsDouble())
-        {
-            return CoreInternalOutcome(Error("response `AudioVolumeParam.Gain` IsDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_gain = value["Gain"].GetDouble();
-        m_gainHasBeenSet = true;
-    }
 
     if (value.HasMember("Mute") && !value["Mute"].IsNull())
     {
@@ -52,20 +42,22 @@ CoreInternalOutcome AudioVolumeParam::Deserialize(const Value &value)
         m_muteHasBeenSet = true;
     }
 
+    if (value.HasMember("Gain") && !value["Gain"].IsNull())
+    {
+        if (!value["Gain"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `AudioVolumeParam.Gain` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_gain = value["Gain"].GetDouble();
+        m_gainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void AudioVolumeParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_gainHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Gain";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_gain, allocator);
-    }
 
     if (m_muteHasBeenSet)
     {
@@ -75,24 +67,16 @@ void AudioVolumeParam::ToJsonObject(Value &value, Document::AllocatorType& alloc
         value.AddMember(iKey, m_mute, allocator);
     }
 
+    if (m_gainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Gain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gain, allocator);
+    }
+
 }
 
-
-double AudioVolumeParam::GetGain() const
-{
-    return m_gain;
-}
-
-void AudioVolumeParam::SetGain(const double& _gain)
-{
-    m_gain = _gain;
-    m_gainHasBeenSet = true;
-}
-
-bool AudioVolumeParam::GainHasBeenSet() const
-{
-    return m_gainHasBeenSet;
-}
 
 int64_t AudioVolumeParam::GetMute() const
 {
@@ -108,5 +92,21 @@ void AudioVolumeParam::SetMute(const int64_t& _mute)
 bool AudioVolumeParam::MuteHasBeenSet() const
 {
     return m_muteHasBeenSet;
+}
+
+double AudioVolumeParam::GetGain() const
+{
+    return m_gain;
+}
+
+void AudioVolumeParam::SetGain(const double& _gain)
+{
+    m_gain = _gain;
+    m_gainHasBeenSet = true;
+}
+
+bool AudioVolumeParam::GainHasBeenSet() const
+{
+    return m_gainHasBeenSet;
 }
 

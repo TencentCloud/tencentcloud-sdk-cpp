@@ -50,6 +50,7 @@ set(cws_public_header_model
   include/tencentcloud/cws/v20180312/model/VulsTimeline.h
   include/tencentcloud/cws/v20180312/model/CreateVulsMisinformationResponse.h
   include/tencentcloud/cws/v20180312/model/VerifySitesRequest.h
+  include/tencentcloud/cws/v20180312/model/MiniSite.h
   include/tencentcloud/cws/v20180312/model/ModifyMonitorAttributeRequest.h
   include/tencentcloud/cws/v20180312/model/DescribeVulsNumberTimelineResponse.h
   include/tencentcloud/cws/v20180312/model/CreateVulsReportResponse.h
@@ -100,6 +101,7 @@ set(cws_src
   src/v20180312/model/VulsTimeline.cpp
   src/v20180312/model/CreateVulsMisinformationResponse.cpp
   src/v20180312/model/VerifySitesRequest.cpp
+  src/v20180312/model/MiniSite.cpp
   src/v20180312/model/ModifyMonitorAttributeRequest.cpp
   src/v20180312/model/DescribeVulsNumberTimelineResponse.cpp
   src/v20180312/model/CreateVulsReportResponse.cpp

@@ -22,9 +22,6 @@ using namespace rapidjson;
 using namespace std;
 
 Vul::Vul() :
-    m_isReportedHasBeenSet(false),
-    m_appidHasBeenSet(false),
-    m_uinHasBeenSet(false),
     m_idHasBeenSet(false),
     m_siteIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
@@ -39,7 +36,10 @@ Vul::Vul() :
     m_fromHasBeenSet(false),
     m_parameterHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_isReportedHasBeenSet(false),
+    m_appidHasBeenSet(false),
+    m_uinHasBeenSet(false)
 {
 }
 
@@ -47,36 +47,6 @@ CoreInternalOutcome Vul::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("IsReported") && !value["IsReported"].IsNull())
-    {
-        if (!value["IsReported"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `Vul.IsReported` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_isReported = value["IsReported"].GetUint64();
-        m_isReportedHasBeenSet = true;
-    }
-
-    if (value.HasMember("Appid") && !value["Appid"].IsNull())
-    {
-        if (!value["Appid"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `Vul.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appid = value["Appid"].GetUint64();
-        m_appidHasBeenSet = true;
-    }
-
-    if (value.HasMember("Uin") && !value["Uin"].IsNull())
-    {
-        if (!value["Uin"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Vul.Uin` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_uin = string(value["Uin"].GetString());
-        m_uinHasBeenSet = true;
-    }
 
     if (value.HasMember("Id") && !value["Id"].IsNull())
     {
@@ -228,36 +198,42 @@ CoreInternalOutcome Vul::Deserialize(const Value &value)
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("IsReported") && !value["IsReported"].IsNull())
+    {
+        if (!value["IsReported"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Vul.IsReported` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isReported = value["IsReported"].GetUint64();
+        m_isReportedHasBeenSet = true;
+    }
+
+    if (value.HasMember("Appid") && !value["Appid"].IsNull())
+    {
+        if (!value["Appid"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Vul.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appid = value["Appid"].GetUint64();
+        m_appidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Vul.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Vul::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_isReportedHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "IsReported";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isReported, allocator);
-    }
-
-    if (m_appidHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Appid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appid, allocator);
-    }
-
-    if (m_uinHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Uin";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_idHasBeenSet)
     {
@@ -379,56 +355,32 @@ void Vul::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isReportedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsReported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isReported, allocator);
+    }
+
+    if (m_appidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Appid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appid, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-uint64_t Vul::GetIsReported() const
-{
-    return m_isReported;
-}
-
-void Vul::SetIsReported(const uint64_t& _isReported)
-{
-    m_isReported = _isReported;
-    m_isReportedHasBeenSet = true;
-}
-
-bool Vul::IsReportedHasBeenSet() const
-{
-    return m_isReportedHasBeenSet;
-}
-
-uint64_t Vul::GetAppid() const
-{
-    return m_appid;
-}
-
-void Vul::SetAppid(const uint64_t& _appid)
-{
-    m_appid = _appid;
-    m_appidHasBeenSet = true;
-}
-
-bool Vul::AppidHasBeenSet() const
-{
-    return m_appidHasBeenSet;
-}
-
-string Vul::GetUin() const
-{
-    return m_uin;
-}
-
-void Vul::SetUin(const string& _uin)
-{
-    m_uin = _uin;
-    m_uinHasBeenSet = true;
-}
-
-bool Vul::UinHasBeenSet() const
-{
-    return m_uinHasBeenSet;
-}
 
 uint64_t Vul::GetId() const
 {
@@ -668,5 +620,53 @@ void Vul::SetUpdatedAt(const string& _updatedAt)
 bool Vul::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+uint64_t Vul::GetIsReported() const
+{
+    return m_isReported;
+}
+
+void Vul::SetIsReported(const uint64_t& _isReported)
+{
+    m_isReported = _isReported;
+    m_isReportedHasBeenSet = true;
+}
+
+bool Vul::IsReportedHasBeenSet() const
+{
+    return m_isReportedHasBeenSet;
+}
+
+uint64_t Vul::GetAppid() const
+{
+    return m_appid;
+}
+
+void Vul::SetAppid(const uint64_t& _appid)
+{
+    m_appid = _appid;
+    m_appidHasBeenSet = true;
+}
+
+bool Vul::AppidHasBeenSet() const
+{
+    return m_appidHasBeenSet;
+}
+
+string Vul::GetUin() const
+{
+    return m_uin;
+}
+
+void Vul::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool Vul::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
 }
 

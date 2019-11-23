@@ -29,7 +29,8 @@ ImpactedHost::ImpactedHost() :
     m_vulStatusHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_vulIdHasBeenSet(false)
+    m_vulIdHasBeenSet(false),
+    m_isProVersionHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome ImpactedHost::Deserialize(const Value &value)
         m_vulIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsProVersion") && !value["IsProVersion"].IsNull())
+    {
+        if (!value["IsProVersion"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ImpactedHost.IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isProVersion = value["IsProVersion"].GetBool();
+        m_isProVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void ImpactedHost::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "VulId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulId, allocator);
+    }
+
+    if (m_isProVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsProVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isProVersion, allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void ImpactedHost::SetVulId(const uint64_t& _vulId)
 bool ImpactedHost::VulIdHasBeenSet() const
 {
     return m_vulIdHasBeenSet;
+}
+
+bool ImpactedHost::GetIsProVersion() const
+{
+    return m_isProVersion;
+}
+
+void ImpactedHost::SetIsProVersion(const bool& _isProVersion)
+{
+    m_isProVersion = _isProVersion;
+    m_isProVersionHasBeenSet = true;
+}
+
+bool ImpactedHost::IsProVersionHasBeenSet() const
+{
+    return m_isProVersionHasBeenSet;
 }
 

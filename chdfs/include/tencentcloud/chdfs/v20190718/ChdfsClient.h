@@ -131,7 +131,7 @@ namespace TencentCloud
 
 
                 /**
-                 *创建权限组
+                 *创建权限组。
                  * @param req CreateAccessGroupRequest
                  * @return CreateAccessGroupOutcome
                  */
@@ -140,7 +140,7 @@ namespace TencentCloud
                 CreateAccessGroupOutcomeCallable CreateAccessGroupCallable(const Model::CreateAccessGroupRequest& request);
 
                 /**
-                 *批量创建权限规则
+                 *批量创建权限规则，权限规则ID和创建时间无需填写。
                  * @param req CreateAccessRulesRequest
                  * @return CreateAccessRulesOutcome
                  */
@@ -149,7 +149,7 @@ namespace TencentCloud
                 CreateAccessRulesOutcomeCallable CreateAccessRulesCallable(const Model::CreateAccessRulesRequest& request);
 
                 /**
-                 *创建文件系统（异步创建）
+                 *创建文件系统（异步）。
                  * @param req CreateFileSystemRequest
                  * @return CreateFileSystemOutcome
                  */
@@ -158,7 +158,7 @@ namespace TencentCloud
                 CreateFileSystemOutcomeCallable CreateFileSystemCallable(const Model::CreateFileSystemRequest& request);
 
                 /**
-                 *创建挂载点
+                 *创建文件系统挂载点，仅限于创建成功的文件系统。
                  * @param req CreateMountPointRequest
                  * @return CreateMountPointOutcome
                  */
@@ -167,7 +167,7 @@ namespace TencentCloud
                 CreateMountPointOutcomeCallable CreateMountPointCallable(const Model::CreateMountPointRequest& request);
 
                 /**
-                 *删除权限组
+                 *删除权限组。
                  * @param req DeleteAccessGroupRequest
                  * @return DeleteAccessGroupOutcome
                  */
@@ -176,7 +176,7 @@ namespace TencentCloud
                 DeleteAccessGroupOutcomeCallable DeleteAccessGroupCallable(const Model::DeleteAccessGroupRequest& request);
 
                 /**
-                 *批量删除权限规则
+                 *批量删除权限规则。
                  * @param req DeleteAccessRulesRequest
                  * @return DeleteAccessRulesOutcome
                  */
@@ -185,7 +185,7 @@ namespace TencentCloud
                 DeleteAccessRulesOutcomeCallable DeleteAccessRulesCallable(const Model::DeleteAccessRulesRequest& request);
 
                 /**
-                 *删除文件系统
+                 *删除文件系统，不允许删除非空文件系统。
                  * @param req DeleteFileSystemRequest
                  * @return DeleteFileSystemOutcome
                  */
@@ -194,7 +194,7 @@ namespace TencentCloud
                 DeleteFileSystemOutcomeCallable DeleteFileSystemCallable(const Model::DeleteFileSystemRequest& request);
 
                 /**
-                 *删除挂载点
+                 *删除挂载点。
                  * @param req DeleteMountPointRequest
                  * @return DeleteMountPointOutcome
                  */
@@ -203,7 +203,7 @@ namespace TencentCloud
                 DeleteMountPointOutcomeCallable DeleteMountPointCallable(const Model::DeleteMountPointRequest& request);
 
                 /**
-                 *查看权限组列表
+                 *查看权限组列表。
                  * @param req DescribeAccessGroupsRequest
                  * @return DescribeAccessGroupsOutcome
                  */
@@ -212,7 +212,7 @@ namespace TencentCloud
                 DescribeAccessGroupsOutcomeCallable DescribeAccessGroupsCallable(const Model::DescribeAccessGroupsRequest& request);
 
                 /**
-                 *查看权限规则列表
+                 *通过权限组ID查看权限规则列表。
                  * @param req DescribeAccessRulesRequest
                  * @return DescribeAccessRulesOutcome
                  */
@@ -221,7 +221,7 @@ namespace TencentCloud
                 DescribeAccessRulesOutcomeCallable DescribeAccessRulesCallable(const Model::DescribeAccessRulesRequest& request);
 
                 /**
-                 *查看文件系统详细信息
+                 *查看文件系统详细信息。
                  * @param req DescribeFileSystemRequest
                  * @return DescribeFileSystemOutcome
                  */
@@ -230,7 +230,7 @@ namespace TencentCloud
                 DescribeFileSystemOutcomeCallable DescribeFileSystemCallable(const Model::DescribeFileSystemRequest& request);
 
                 /**
-                 *查看文件系统列表
+                 *查看文件系统列表。
                  * @param req DescribeFileSystemsRequest
                  * @return DescribeFileSystemsOutcome
                  */
@@ -239,7 +239,7 @@ namespace TencentCloud
                 DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const Model::DescribeFileSystemsRequest& request);
 
                 /**
-                 *查看挂载点详细信息
+                 *查看挂载点详细信息。
                  * @param req DescribeMountPointRequest
                  * @return DescribeMountPointOutcome
                  */
@@ -248,7 +248,7 @@ namespace TencentCloud
                 DescribeMountPointOutcomeCallable DescribeMountPointCallable(const Model::DescribeMountPointRequest& request);
 
                 /**
-                 *查看挂载点列表
+                 *通过文件系统ID或者权限组ID查看挂载点列表。
                  * @param req DescribeMountPointsRequest
                  * @return DescribeMountPointsOutcome
                  */
@@ -257,7 +257,7 @@ namespace TencentCloud
                 DescribeMountPointsOutcomeCallable DescribeMountPointsCallable(const Model::DescribeMountPointsRequest& request);
 
                 /**
-                 *修改权限组属性
+                 *修改权限组属性。
                  * @param req ModifyAccessGroupRequest
                  * @return ModifyAccessGroupOutcome
                  */
@@ -266,7 +266,7 @@ namespace TencentCloud
                 ModifyAccessGroupOutcomeCallable ModifyAccessGroupCallable(const Model::ModifyAccessGroupRequest& request);
 
                 /**
-                 *批量修改权限规则属性
+                 *批量修改权限规则属性，需要指定权限规则ID。
                  * @param req ModifyAccessRulesRequest
                  * @return ModifyAccessRulesOutcome
                  */
@@ -275,7 +275,7 @@ namespace TencentCloud
                 ModifyAccessRulesOutcomeCallable ModifyAccessRulesCallable(const Model::ModifyAccessRulesRequest& request);
 
                 /**
-                 *修改文件系统属性
+                 *修改文件系统属性，仅限于创建成功的文件系统。
                  * @param req ModifyFileSystemRequest
                  * @return ModifyFileSystemOutcome
                  */
@@ -284,7 +284,7 @@ namespace TencentCloud
                 ModifyFileSystemOutcomeCallable ModifyFileSystemCallable(const Model::ModifyFileSystemRequest& request);
 
                 /**
-                 *修改挂载点属性
+                 *修改挂载点属性。
                  * @param req ModifyMountPointRequest
                  * @return ModifyMountPointOutcome
                  */

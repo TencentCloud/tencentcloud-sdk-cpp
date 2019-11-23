@@ -24,7 +24,7 @@ using namespace std;
 TaskSimpleInfo::TaskSimpleInfo() :
     m_taskIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_creatTimeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_beginProcessTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false)
 {
@@ -55,14 +55,14 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const Value &value)
         m_taskTypeHasBeenSet = true;
     }
 
-    if (value.HasMember("CreatTime") && !value["CreatTime"].IsNull())
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
-        if (!value["CreatTime"].IsString())
+        if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TaskSimpleInfo.CreatTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TaskSimpleInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_creatTime = string(value["CreatTime"].GetString());
-        m_creatTimeHasBeenSet = true;
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
     }
 
     if (value.HasMember("BeginProcessTime") && !value["BeginProcessTime"].IsNull())
@@ -108,12 +108,12 @@ void TaskSimpleInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         value.AddMember(iKey, Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_creatTimeHasBeenSet)
+    if (m_createTimeHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "CreatTime";
+        string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creatTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_beginProcessTimeHasBeenSet)
@@ -167,20 +167,20 @@ bool TaskSimpleInfo::TaskTypeHasBeenSet() const
     return m_taskTypeHasBeenSet;
 }
 
-string TaskSimpleInfo::GetCreatTime() const
+string TaskSimpleInfo::GetCreateTime() const
 {
-    return m_creatTime;
+    return m_createTime;
 }
 
-void TaskSimpleInfo::SetCreatTime(const string& _creatTime)
+void TaskSimpleInfo::SetCreateTime(const string& _createTime)
 {
-    m_creatTime = _creatTime;
-    m_creatTimeHasBeenSet = true;
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
 }
 
-bool TaskSimpleInfo::CreatTimeHasBeenSet() const
+bool TaskSimpleInfo::CreateTimeHasBeenSet() const
 {
-    return m_creatTimeHasBeenSet;
+    return m_createTimeHasBeenSet;
 }
 
 string TaskSimpleInfo::GetBeginProcessTime() const

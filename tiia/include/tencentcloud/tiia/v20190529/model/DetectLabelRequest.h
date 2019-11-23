@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool ImageBase64HasBeenSet() const;
 
+                    /**
+                     * 获取本次调用支持的识别场景，可选值如下：
+WEB，针对网络图片优化;
+CAMERA，针对手机摄像头拍摄图片优化;
+ALBUM，针对手机相册、网盘产品优化;
+如果不传此参数，则默认为WEB。
+
+支持多场景（Scenes）一起检测。例如，使用 Scenes=["WEB", "CAMERA"]，即对一张图片使用两个模型同时检测，输出两套识别结果。
+                     * @return Scenes 本次调用支持的识别场景，可选值如下：
+WEB，针对网络图片优化;
+CAMERA，针对手机摄像头拍摄图片优化;
+ALBUM，针对手机相册、网盘产品优化;
+如果不传此参数，则默认为WEB。
+
+支持多场景（Scenes）一起检测。例如，使用 Scenes=["WEB", "CAMERA"]，即对一张图片使用两个模型同时检测，输出两套识别结果。
+                     */
+                    std::vector<std::string> GetScenes() const;
+
+                    /**
+                     * 设置本次调用支持的识别场景，可选值如下：
+WEB，针对网络图片优化;
+CAMERA，针对手机摄像头拍摄图片优化;
+ALBUM，针对手机相册、网盘产品优化;
+如果不传此参数，则默认为WEB。
+
+支持多场景（Scenes）一起检测。例如，使用 Scenes=["WEB", "CAMERA"]，即对一张图片使用两个模型同时检测，输出两套识别结果。
+                     * @param Scenes 本次调用支持的识别场景，可选值如下：
+WEB，针对网络图片优化;
+CAMERA，针对手机摄像头拍摄图片优化;
+ALBUM，针对手机相册、网盘产品优化;
+如果不传此参数，则默认为WEB。
+
+支持多场景（Scenes）一起检测。例如，使用 Scenes=["WEB", "CAMERA"]，即对一张图片使用两个模型同时检测，输出两套识别结果。
+                     */
+                    void SetScenes(const std::vector<std::string>& _scenes);
+
+                    /**
+                     * 判断参数 Scenes 是否已赋值
+                     * @return Scenes 是否已赋值
+                     */
+                    bool ScenesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +168,18 @@ namespace TencentCloud
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
+
+                    /**
+                     * 本次调用支持的识别场景，可选值如下：
+WEB，针对网络图片优化;
+CAMERA，针对手机摄像头拍摄图片优化;
+ALBUM，针对手机相册、网盘产品优化;
+如果不传此参数，则默认为WEB。
+
+支持多场景（Scenes）一起检测。例如，使用 Scenes=["WEB", "CAMERA"]，即对一张图片使用两个模型同时检测，输出两套识别结果。
+                     */
+                    std::vector<std::string> m_scenes;
+                    bool m_scenesHasBeenSet;
 
                 };
             }

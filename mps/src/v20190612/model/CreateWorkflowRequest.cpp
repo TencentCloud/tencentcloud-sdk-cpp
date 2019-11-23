@@ -29,6 +29,8 @@ CreateWorkflowRequest::CreateWorkflowRequest() :
     m_outputStorageHasBeenSet(false),
     m_outputDirHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
+    m_aiContentReviewTaskHasBeenSet(false),
+    m_aiRecognitionTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_taskPriorityHasBeenSet(false)
 {
@@ -82,6 +84,24 @@ string CreateWorkflowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_mediaProcessTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiContentReviewTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiContentReviewTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiContentReviewTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiRecognitionTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiRecognitionTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiRecognitionTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_taskNotifyConfigHasBeenSet)
@@ -187,6 +207,38 @@ void CreateWorkflowRequest::SetMediaProcessTask(const MediaProcessTaskInput& _me
 bool CreateWorkflowRequest::MediaProcessTaskHasBeenSet() const
 {
     return m_mediaProcessTaskHasBeenSet;
+}
+
+AiContentReviewTaskInput CreateWorkflowRequest::GetAiContentReviewTask() const
+{
+    return m_aiContentReviewTask;
+}
+
+void CreateWorkflowRequest::SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask)
+{
+    m_aiContentReviewTask = _aiContentReviewTask;
+    m_aiContentReviewTaskHasBeenSet = true;
+}
+
+bool CreateWorkflowRequest::AiContentReviewTaskHasBeenSet() const
+{
+    return m_aiContentReviewTaskHasBeenSet;
+}
+
+AiRecognitionTaskInput CreateWorkflowRequest::GetAiRecognitionTask() const
+{
+    return m_aiRecognitionTask;
+}
+
+void CreateWorkflowRequest::SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask)
+{
+    m_aiRecognitionTask = _aiRecognitionTask;
+    m_aiRecognitionTaskHasBeenSet = true;
+}
+
+bool CreateWorkflowRequest::AiRecognitionTaskHasBeenSet() const
+{
+    return m_aiRecognitionTaskHasBeenSet;
 }
 
 TaskNotifyConfig CreateWorkflowRequest::GetTaskNotifyConfig() const

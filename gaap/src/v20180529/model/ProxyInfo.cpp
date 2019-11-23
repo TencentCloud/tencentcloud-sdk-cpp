@@ -42,7 +42,8 @@ ProxyInfo::ProxyInfo() :
     m_accessRegionInfoHasBeenSet(false),
     m_realServerRegionInfoHasBeenSet(false),
     m_forwardIPHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_supportSecurityHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportSecurity") && !value["SupportSecurity"].IsNull())
+    {
+        if (!value["SupportSecurity"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProxyInfo.SupportSecurity` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportSecurity = value["SupportSecurity"].GetInt64();
+        m_supportSecurityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -475,6 +486,14 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_supportSecurityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SupportSecurity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportSecurity, allocator);
     }
 
 }
@@ -814,5 +833,21 @@ void ProxyInfo::SetTagSet(const vector<TagPair>& _tagSet)
 bool ProxyInfo::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+int64_t ProxyInfo::GetSupportSecurity() const
+{
+    return m_supportSecurity;
+}
+
+void ProxyInfo::SetSupportSecurity(const int64_t& _supportSecurity)
+{
+    m_supportSecurity = _supportSecurity;
+    m_supportSecurityHasBeenSet = true;
+}
+
+bool ProxyInfo::SupportSecurityHasBeenSet() const
+{
+    return m_supportSecurityHasBeenSet;
 }
 

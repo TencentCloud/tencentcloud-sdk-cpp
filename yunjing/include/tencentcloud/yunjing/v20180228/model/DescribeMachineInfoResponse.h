@@ -226,6 +226,30 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取免费木马剩余检测数量。
+                     * @return FreeMalwaresLeft 免费木马剩余检测数量。
+                     */
+                    uint64_t GetFreeMalwaresLeft() const;
+
+                    /**
+                     * 判断参数 FreeMalwaresLeft 是否已赋值
+                     * @return FreeMalwaresLeft 是否已赋值
+                     */
+                    bool FreeMalwaresLeftHasBeenSet() const;
+
+                    /**
+                     * 获取免费漏洞剩余检测数量。
+                     * @return FreeVulsLeft 免费漏洞剩余检测数量。
+                     */
+                    uint64_t GetFreeVulsLeft() const;
+
+                    /**
+                     * 判断参数 FreeVulsLeft 是否已赋值
+                     * @return FreeVulsLeft 是否已赋值
+                     */
+                    bool FreeVulsLeftHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +343,18 @@ namespace TencentCloud
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 免费木马剩余检测数量。
+                     */
+                    uint64_t m_freeMalwaresLeft;
+                    bool m_freeMalwaresLeftHasBeenSet;
+
+                    /**
+                     * 免费漏洞剩余检测数量。
+                     */
+                    uint64_t m_freeVulsLeft;
+                    bool m_freeVulsLeftHasBeenSet;
 
                 };
             }

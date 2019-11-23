@@ -384,6 +384,49 @@ GaapClient::CreateDomainOutcomeCallable GaapClient::CreateDomainCallable(const C
     return task->get_future();
 }
 
+GaapClient::CreateDomainErrorPageInfoOutcome GaapClient::CreateDomainErrorPageInfo(const CreateDomainErrorPageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDomainErrorPageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDomainErrorPageInfoResponse rsp = CreateDomainErrorPageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDomainErrorPageInfoOutcome(rsp);
+        else
+            return CreateDomainErrorPageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDomainErrorPageInfoOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::CreateDomainErrorPageInfoAsync(const CreateDomainErrorPageInfoRequest& request, const CreateDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDomainErrorPageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::CreateDomainErrorPageInfoOutcomeCallable GaapClient::CreateDomainErrorPageInfoCallable(const CreateDomainErrorPageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDomainErrorPageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDomainErrorPageInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::CreateHTTPListenerOutcome GaapClient::CreateHTTPListener(const CreateHTTPListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHTTPListener");
@@ -900,6 +943,49 @@ GaapClient::DeleteDomainOutcomeCallable GaapClient::DeleteDomainCallable(const D
     return task->get_future();
 }
 
+GaapClient::DeleteDomainErrorPageInfoOutcome GaapClient::DeleteDomainErrorPageInfo(const DeleteDomainErrorPageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDomainErrorPageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDomainErrorPageInfoResponse rsp = DeleteDomainErrorPageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDomainErrorPageInfoOutcome(rsp);
+        else
+            return DeleteDomainErrorPageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDomainErrorPageInfoOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DeleteDomainErrorPageInfoAsync(const DeleteDomainErrorPageInfoRequest& request, const DeleteDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDomainErrorPageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DeleteDomainErrorPageInfoOutcomeCallable GaapClient::DeleteDomainErrorPageInfoCallable(const DeleteDomainErrorPageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDomainErrorPageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDomainErrorPageInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::DeleteListenersOutcome GaapClient::DeleteListeners(const DeleteListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteListeners");
@@ -1366,6 +1452,49 @@ GaapClient::DescribeDestRegionsOutcomeCallable GaapClient::DescribeDestRegionsCa
         [this, request]()
         {
             return this->DescribeDestRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DescribeDomainErrorPageInfoOutcome GaapClient::DescribeDomainErrorPageInfo(const DescribeDomainErrorPageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainErrorPageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainErrorPageInfoResponse rsp = DescribeDomainErrorPageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainErrorPageInfoOutcome(rsp);
+        else
+            return DescribeDomainErrorPageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainErrorPageInfoOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeDomainErrorPageInfoAsync(const DescribeDomainErrorPageInfoRequest& request, const DescribeDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainErrorPageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeDomainErrorPageInfoOutcomeCallable GaapClient::DescribeDomainErrorPageInfoCallable(const DescribeDomainErrorPageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainErrorPageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainErrorPageInfo(request);
         }
     );
 

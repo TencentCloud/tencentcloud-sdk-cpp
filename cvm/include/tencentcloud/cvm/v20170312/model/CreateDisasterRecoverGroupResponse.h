@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取置放群组内可容纳的云主机数量。
-                     * @return CvmQuotaTotal 置放群组内可容纳的云主机数量。
+                     * 获取置放群组内可容纳的云服务器数量。
+                     * @return CvmQuotaTotal 置放群组内可容纳的云服务器数量。
                      */
                     int64_t GetCvmQuotaTotal() const;
 
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool CvmQuotaTotalHasBeenSet() const;
 
                     /**
-                     * 获取置放群组内已有的云主机数量。
-                     * @return CurrentNum 置放群组内已有的云主机数量。
+                     * 获取置放群组内已有的云服务器数量。
+                     * @return CurrentNum 置放群组内已有的云服务器数量。
                      */
                     int64_t GetCurrentNum() const;
 
@@ -135,13 +135,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 置放群组内可容纳的云主机数量。
+                     * 置放群组内可容纳的云服务器数量。
                      */
                     int64_t m_cvmQuotaTotal;
                     bool m_cvmQuotaTotalHasBeenSet;
 
                     /**
-                     * 置放群组内已有的云主机数量。
+                     * 置放群组内已有的云服务器数量。
                      */
                     int64_t m_currentNum;
                     bool m_currentNumHasBeenSet;

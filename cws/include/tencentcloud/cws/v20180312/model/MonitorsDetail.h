@@ -49,42 +49,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控任务包含的站点列表的平均扫描进度。
-                     * @return Progress 监控任务包含的站点列表的平均扫描进度。
-                     */
-                    uint64_t GetProgress() const;
-
-                    /**
-                     * 设置监控任务包含的站点列表的平均扫描进度。
-                     * @param Progress 监控任务包含的站点列表的平均扫描进度。
-                     */
-                    void SetProgress(const uint64_t& _progress);
-
-                    /**
-                     * 判断参数 Progress 是否已赋值
-                     * @return Progress 是否已赋值
-                     */
-                    bool ProgressHasBeenSet() const;
-
-                    /**
-                     * 获取扫描页面总数。
-                     * @return PageCount 扫描页面总数。
-                     */
-                    uint64_t GetPageCount() const;
-
-                    /**
-                     * 设置扫描页面总数。
-                     * @param PageCount 扫描页面总数。
-                     */
-                    void SetPageCount(const uint64_t& _pageCount);
-
-                    /**
-                     * 判断参数 PageCount 是否已赋值
-                     * @return PageCount 是否已赋值
-                     */
-                    bool PageCountHasBeenSet() const;
-
-                    /**
                      * 获取监控任务基础信息。
                      * @return Basic 监控任务基础信息。
                      */
@@ -246,19 +210,61 @@ namespace TencentCloud
                      */
                     bool VulsNoticeNumberHasBeenSet() const;
 
+                    /**
+                     * 获取监控任务包含的站点列表的平均扫描进度。
+                     * @return Progress 监控任务包含的站点列表的平均扫描进度。
+                     */
+                    uint64_t GetProgress() const;
+
+                    /**
+                     * 设置监控任务包含的站点列表的平均扫描进度。
+                     * @param Progress 监控任务包含的站点列表的平均扫描进度。
+                     */
+                    void SetProgress(const uint64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
+                     * 获取扫描页面总数。
+                     * @return PageCount 扫描页面总数。
+                     */
+                    uint64_t GetPageCount() const;
+
+                    /**
+                     * 设置扫描页面总数。
+                     * @param PageCount 扫描页面总数。
+                     */
+                    void SetPageCount(const uint64_t& _pageCount);
+
+                    /**
+                     * 判断参数 PageCount 是否已赋值
+                     * @return PageCount 是否已赋值
+                     */
+                    bool PageCountHasBeenSet() const;
+
+                    /**
+                     * 获取内容检测数量。
+                     * @return ContentNumber 内容检测数量。
+                     */
+                    uint64_t GetContentNumber() const;
+
+                    /**
+                     * 设置内容检测数量。
+                     * @param ContentNumber 内容检测数量。
+                     */
+                    void SetContentNumber(const uint64_t& _contentNumber);
+
+                    /**
+                     * 判断参数 ContentNumber 是否已赋值
+                     * @return ContentNumber 是否已赋值
+                     */
+                    bool ContentNumberHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 监控任务包含的站点列表的平均扫描进度。
-                     */
-                    uint64_t m_progress;
-                    bool m_progressHasBeenSet;
-
-                    /**
-                     * 扫描页面总数。
-                     */
-                    uint64_t m_pageCount;
-                    bool m_pageCountHasBeenSet;
 
                     /**
                      * 监控任务基础信息。
@@ -313,6 +319,24 @@ namespace TencentCloud
                      */
                     uint64_t m_vulsNoticeNumber;
                     bool m_vulsNoticeNumberHasBeenSet;
+
+                    /**
+                     * 监控任务包含的站点列表的平均扫描进度。
+                     */
+                    uint64_t m_progress;
+                    bool m_progressHasBeenSet;
+
+                    /**
+                     * 扫描页面总数。
+                     */
+                    uint64_t m_pageCount;
+                    bool m_pageCountHasBeenSet;
+
+                    /**
+                     * 内容检测数量。
+                     */
+                    uint64_t m_contentNumber;
+                    bool m_contentNumberHasBeenSet;
 
                 };
             }

@@ -145,6 +145,28 @@ namespace TencentCloud
                      */
                     bool ReplicasHasBeenSet() const;
 
+                    /**
+                     * 获取运行状态对额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Message 运行状态对额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置运行状态对额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Message 运行状态对额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +200,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_replicas;
                     bool m_replicasHasBeenSet;
+
+                    /**
+                     * 运行状态对额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

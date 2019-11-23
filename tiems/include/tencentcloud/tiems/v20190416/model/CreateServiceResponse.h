@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tiems/v20190416/model/Service.h>
+#include <tencentcloud/tiems/v20190416/model/ModelService.h>
 
 
 namespace TencentCloud
@@ -47,7 +47,7 @@ namespace TencentCloud
                      * 获取服务
                      * @return Service 服务
                      */
-                    Service GetService() const;
+                    ModelService GetService() const;
 
                     /**
                      * 判断参数 Service 是否已赋值
@@ -60,7 +60,7 @@ namespace TencentCloud
                     /**
                      * 服务
                      */
-                    Service m_service;
+                    ModelService m_service;
                     bool m_serviceHasBeenSet;
 
                 };

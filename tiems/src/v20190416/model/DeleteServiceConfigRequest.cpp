@@ -41,7 +41,7 @@ string DeleteServiceConfigRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ServiceConfigId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_serviceConfigId, allocator);
+        d.AddMember(iKey, Value(m_serviceConfigId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceConfigNameHasBeenSet)
@@ -60,12 +60,12 @@ string DeleteServiceConfigRequest::ToJsonString() const
 }
 
 
-int64_t DeleteServiceConfigRequest::GetServiceConfigId() const
+string DeleteServiceConfigRequest::GetServiceConfigId() const
 {
     return m_serviceConfigId;
 }
 
-void DeleteServiceConfigRequest::SetServiceConfigId(const int64_t& _serviceConfigId)
+void DeleteServiceConfigRequest::SetServiceConfigId(const string& _serviceConfigId)
 {
     m_serviceConfigId = _serviceConfigId;
     m_serviceConfigIdHasBeenSet = true;

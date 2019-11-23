@@ -47,13 +47,13 @@ namespace TencentCloud
                      * 获取服务Id
                      * @return ServiceId 服务Id
                      */
-                    int64_t GetServiceId() const;
+                    std::string GetServiceId() const;
 
                     /**
                      * 设置服务Id
                      * @param ServiceId 服务Id
                      */
-                    void SetServiceId(const int64_t& _serviceId);
+                    void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
@@ -83,13 +83,13 @@ namespace TencentCloud
                      * 获取服务配置Id
                      * @return ServiceConfigId 服务配置Id
                      */
-                    int64_t GetServiceConfigId() const;
+                    std::string GetServiceConfigId() const;
 
                     /**
                      * 设置服务配置Id
                      * @param ServiceConfigId 服务配置Id
                      */
-                    void SetServiceConfigId(const int64_t& _serviceConfigId);
+                    void SetServiceConfigId(const std::string& _serviceConfigId);
 
                     /**
                      * 判断参数 ServiceConfigId 是否已赋值
@@ -133,12 +133,48 @@ namespace TencentCloud
                      */
                     bool ServiceActionHasBeenSet() const;
 
+                    /**
+                     * 获取备注
+                     * @return Description 备注
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置备注
+                     * @param Description 备注
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取GPU卡类型
+                     * @return GpuType GPU卡类型
+                     */
+                    std::string GetGpuType() const;
+
+                    /**
+                     * 设置GPU卡类型
+                     * @param GpuType GPU卡类型
+                     */
+                    void SetGpuType(const std::string& _gpuType);
+
+                    /**
+                     * 判断参数 GpuType 是否已赋值
+                     * @return GpuType 是否已赋值
+                     */
+                    bool GpuTypeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 服务Id
                      */
-                    int64_t m_serviceId;
+                    std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
 
                     /**
@@ -150,7 +186,7 @@ namespace TencentCloud
                     /**
                      * 服务配置Id
                      */
-                    int64_t m_serviceConfigId;
+                    std::string m_serviceConfigId;
                     bool m_serviceConfigIdHasBeenSet;
 
                     /**
@@ -164,6 +200,18 @@ namespace TencentCloud
                      */
                     std::string m_serviceAction;
                     bool m_serviceActionHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * GPU卡类型
+                     */
+                    std::string m_gpuType;
+                    bool m_gpuTypeHasBeenSet;
 
                 };
             }

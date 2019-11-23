@@ -97,76 +97,22 @@ namespace TencentCloud
                     bool ModelUriHasBeenSet() const;
 
                     /**
-                     * 获取处理器配置, 单位为1/1000核；范围[100, 256000]
-                     * @return Cpu 处理器配置, 单位为1/1000核；范围[100, 256000]
+                     * 获取配置描述
+                     * @return Description 配置描述
                      */
-                    uint64_t GetCpu() const;
+                    std::string GetDescription() const;
 
                     /**
-                     * 设置处理器配置, 单位为1/1000核；范围[100, 256000]
-                     * @param Cpu 处理器配置, 单位为1/1000核；范围[100, 256000]
+                     * 设置配置描述
+                     * @param Description 配置描述
                      */
-                    void SetCpu(const uint64_t& _cpu);
+                    void SetDescription(const std::string& _description);
 
                     /**
-                     * 判断参数 Cpu 是否已赋值
-                     * @return Cpu 是否已赋值
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
                      */
-                    bool CpuHasBeenSet() const;
-
-                    /**
-                     * 获取内存配置, 单位为1M；范围[100, 256000]
-                     * @return Memory 内存配置, 单位为1M；范围[100, 256000]
-                     */
-                    uint64_t GetMemory() const;
-
-                    /**
-                     * 设置内存配置, 单位为1M；范围[100, 256000]
-                     * @param Memory 内存配置, 单位为1M；范围[100, 256000]
-                     */
-                    void SetMemory(const uint64_t& _memory);
-
-                    /**
-                     * 判断参数 Memory 是否已赋值
-                     * @return Memory 是否已赋值
-                     */
-                    bool MemoryHasBeenSet() const;
-
-                    /**
-                     * 获取GPU算力配置，单位为1/100 tflops，范围 [0, 256000]
-                     * @return TflopUnits GPU算力配置，单位为1/100 tflops，范围 [0, 256000]
-                     */
-                    uint64_t GetTflopUnits() const;
-
-                    /**
-                     * 设置GPU算力配置，单位为1/100 tflops，范围 [0, 256000]
-                     * @param TflopUnits GPU算力配置，单位为1/100 tflops，范围 [0, 256000]
-                     */
-                    void SetTflopUnits(const uint64_t& _tflopUnits);
-
-                    /**
-                     * 判断参数 TflopUnits 是否已赋值
-                     * @return TflopUnits 是否已赋值
-                     */
-                    bool TflopUnitsHasBeenSet() const;
-
-                    /**
-                     * 获取显存配置, 单位为1M，范围 [0, 256000]
-                     * @return GpuMemory 显存配置, 单位为1M，范围 [0, 256000]
-                     */
-                    uint64_t GetGpuMemory() const;
-
-                    /**
-                     * 设置显存配置, 单位为1M，范围 [0, 256000]
-                     * @param GpuMemory 显存配置, 单位为1M，范围 [0, 256000]
-                     */
-                    void SetGpuMemory(const uint64_t& _gpuMemory);
-
-                    /**
-                     * 判断参数 GpuMemory 是否已赋值
-                     * @return GpuMemory 是否已赋值
-                     */
-                    bool GpuMemoryHasBeenSet() const;
+                    bool DescriptionHasBeenSet() const;
 
                 private:
 
@@ -189,28 +135,10 @@ namespace TencentCloud
                     bool m_modelUriHasBeenSet;
 
                     /**
-                     * 处理器配置, 单位为1/1000核；范围[100, 256000]
+                     * 配置描述
                      */
-                    uint64_t m_cpu;
-                    bool m_cpuHasBeenSet;
-
-                    /**
-                     * 内存配置, 单位为1M；范围[100, 256000]
-                     */
-                    uint64_t m_memory;
-                    bool m_memoryHasBeenSet;
-
-                    /**
-                     * GPU算力配置，单位为1/100 tflops，范围 [0, 256000]
-                     */
-                    uint64_t m_tflopUnits;
-                    bool m_tflopUnitsHasBeenSet;
-
-                    /**
-                     * 显存配置, 单位为1M，范围 [0, 256000]
-                     */
-                    uint64_t m_gpuMemory;
-                    bool m_gpuMemoryHasBeenSet;
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

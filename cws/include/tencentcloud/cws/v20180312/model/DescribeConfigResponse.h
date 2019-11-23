@@ -102,6 +102,18 @@ namespace TencentCloud
                      */
                     bool AppidHasBeenSet() const;
 
+                    /**
+                     * 获取内容检测通知等级-1:通知,0-不通知
+                     * @return ContentLevel 内容检测通知等级-1:通知,0-不通知
+                     */
+                    uint64_t GetContentLevel() const;
+
+                    /**
+                     * 判断参数 ContentLevel 是否已赋值
+                     * @return ContentLevel 是否已赋值
+                     */
+                    bool ContentLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_appid;
                     bool m_appidHasBeenSet;
+
+                    /**
+                     * 内容检测通知等级-1:通知,0-不通知
+                     */
+                    uint64_t m_contentLevel;
+                    bool m_contentLevelHasBeenSet;
 
                 };
             }

@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取刷新任务Id，前十位为提交任务时的UTC时间。
-                     * @return TaskId 刷新任务Id，前十位为提交任务时的UTC时间。
+                     * 获取刷新任务 ID，同一批次提交的 URL 共用一个任务 ID
+                     * @return TaskId 刷新任务 ID，同一批次提交的 URL 共用一个任务 ID
                      */
                     std::string GetTaskId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刷新任务Id，前十位为提交任务时的UTC时间。
+                     * 刷新任务 ID，同一批次提交的 URL 共用一个任务 ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

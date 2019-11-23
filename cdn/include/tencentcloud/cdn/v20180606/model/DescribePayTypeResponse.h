@@ -46,11 +46,11 @@ namespace TencentCloud
                      * 获取计费类型：
 flux：流量计费
 bandwidth：带宽计费
-如果修改过计费方式，表示下次生效的计费类型，否则表示当前计费类型。
+日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。
                      * @return PayType 计费类型：
 flux：流量计费
 bandwidth：带宽计费
-如果修改过计费方式，表示下次生效的计费类型，否则表示当前计费类型。
+日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。
                      */
                     std::string GetPayType() const;
 
@@ -99,12 +99,12 @@ max：峰值带宽计费，日结模式
                     bool StatTypeHasBeenSet() const;
 
                     /**
-                     * 获取地区计费方式，仅在查询中国境外 CDN 计费方式时可用
-all：表示全地区统一计费
-multiple：表示分地区计费。
-                     * @return RegionType 地区计费方式，仅在查询中国境外 CDN 计费方式时可用
-all：表示全地区统一计费
-multiple：表示分地区计费。
+                     * 获取境外计费类型：
+all：全地区统一计费
+multiple：分地区计费
+                     * @return RegionType 境外计费类型：
+all：全地区统一计费
+multiple：分地区计费
                      */
                     std::string GetRegionType() const;
 
@@ -115,10 +115,10 @@ multiple：表示分地区计费。
                     bool RegionTypeHasBeenSet() const;
 
                     /**
-                     * 获取当前计费类型：
+                     * 获取当前生效计费类型：
 flux：流量计费
 bandwidth：带宽计费
-                     * @return CurrentPayType 当前计费类型：
+                     * @return CurrentPayType 当前生效计费类型：
 flux：流量计费
 bandwidth：带宽计费
                      */
@@ -136,7 +136,7 @@ bandwidth：带宽计费
                      * 计费类型：
 flux：流量计费
 bandwidth：带宽计费
-如果修改过计费方式，表示下次生效的计费类型，否则表示当前计费类型。
+日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;
@@ -161,15 +161,15 @@ max：峰值带宽计费，日结模式
                     bool m_statTypeHasBeenSet;
 
                     /**
-                     * 地区计费方式，仅在查询中国境外 CDN 计费方式时可用
-all：表示全地区统一计费
-multiple：表示分地区计费。
+                     * 境外计费类型：
+all：全地区统一计费
+multiple：分地区计费
                      */
                     std::string m_regionType;
                     bool m_regionTypeHasBeenSet;
 
                     /**
-                     * 当前计费类型：
+                     * 当前生效计费类型：
 flux：流量计费
 bandwidth：带宽计费
                      */

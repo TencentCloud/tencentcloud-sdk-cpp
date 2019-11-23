@@ -28,7 +28,8 @@ DescribeServiceConfigsRequest::DescribeServiceConfigsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_orderFieldHasBeenSet(false)
+    m_orderFieldHasBeenSet(false),
+    m_pageByNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,14 @@ string DescribeServiceConfigsRequest::ToJsonString() const
         string key = "OrderField";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageByNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageByName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageByName, allocator);
     }
 
 
@@ -172,6 +181,22 @@ void DescribeServiceConfigsRequest::SetOrderField(const string& _orderField)
 bool DescribeServiceConfigsRequest::OrderFieldHasBeenSet() const
 {
     return m_orderFieldHasBeenSet;
+}
+
+bool DescribeServiceConfigsRequest::GetPageByName() const
+{
+    return m_pageByName;
+}
+
+void DescribeServiceConfigsRequest::SetPageByName(const bool& _pageByName)
+{
+    m_pageByName = _pageByName;
+    m_pageByNameHasBeenSet = true;
+}
+
+bool DescribeServiceConfigsRequest::PageByNameHasBeenSet() const
+{
+    return m_pageByNameHasBeenSet;
 }
 
 

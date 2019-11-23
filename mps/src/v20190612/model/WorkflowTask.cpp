@@ -28,7 +28,9 @@ WorkflowTask::WorkflowTask() :
     m_messageHasBeenSet(false),
     m_inputInfoHasBeenSet(false),
     m_metaDataHasBeenSet(false),
-    m_mediaProcessResultSetHasBeenSet(false)
+    m_mediaProcessResultSetHasBeenSet(false),
+    m_aiContentReviewResultSetHasBeenSet(false),
+    m_aiRecognitionResultSetHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,46 @@ CoreInternalOutcome WorkflowTask::Deserialize(const Value &value)
         m_mediaProcessResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("AiContentReviewResultSet") && !value["AiContentReviewResultSet"].IsNull())
+    {
+        if (!value["AiContentReviewResultSet"].IsArray())
+            return CoreInternalOutcome(Error("response `WorkflowTask.AiContentReviewResultSet` is not array type"));
+
+        const Value &tmpValue = value["AiContentReviewResultSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiContentReviewResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aiContentReviewResultSet.push_back(item);
+        }
+        m_aiContentReviewResultSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("AiRecognitionResultSet") && !value["AiRecognitionResultSet"].IsNull())
+    {
+        if (!value["AiRecognitionResultSet"].IsArray())
+            return CoreInternalOutcome(Error("response `WorkflowTask.AiRecognitionResultSet` is not array type"));
+
+        const Value &tmpValue = value["AiRecognitionResultSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiRecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aiRecognitionResultSet.push_back(item);
+        }
+        m_aiRecognitionResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +239,36 @@ void WorkflowTask::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
         int i=0;
         for (auto itr = m_mediaProcessResultSet.begin(); itr != m_mediaProcessResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_aiContentReviewResultSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiContentReviewResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aiContentReviewResultSet.begin(); itr != m_aiContentReviewResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_aiRecognitionResultSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiRecognitionResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aiRecognitionResultSet.begin(); itr != m_aiRecognitionResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -316,5 +388,37 @@ void WorkflowTask::SetMediaProcessResultSet(const vector<MediaProcessTaskResult>
 bool WorkflowTask::MediaProcessResultSetHasBeenSet() const
 {
     return m_mediaProcessResultSetHasBeenSet;
+}
+
+vector<AiContentReviewResult> WorkflowTask::GetAiContentReviewResultSet() const
+{
+    return m_aiContentReviewResultSet;
+}
+
+void WorkflowTask::SetAiContentReviewResultSet(const vector<AiContentReviewResult>& _aiContentReviewResultSet)
+{
+    m_aiContentReviewResultSet = _aiContentReviewResultSet;
+    m_aiContentReviewResultSetHasBeenSet = true;
+}
+
+bool WorkflowTask::AiContentReviewResultSetHasBeenSet() const
+{
+    return m_aiContentReviewResultSetHasBeenSet;
+}
+
+vector<AiRecognitionResult> WorkflowTask::GetAiRecognitionResultSet() const
+{
+    return m_aiRecognitionResultSet;
+}
+
+void WorkflowTask::SetAiRecognitionResultSet(const vector<AiRecognitionResult>& _aiRecognitionResultSet)
+{
+    m_aiRecognitionResultSet = _aiRecognitionResultSet;
+    m_aiRecognitionResultSetHasBeenSet = true;
+}
+
+bool WorkflowTask::AiRecognitionResultSetHasBeenSet() const
+{
+    return m_aiRecognitionResultSetHasBeenSet;
 }
 

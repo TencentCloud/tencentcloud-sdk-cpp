@@ -40,6 +40,92 @@ YunjingClient::YunjingClient(const Credential &credential, const string &region,
 }
 
 
+YunjingClient::AddLoginWhiteListOutcome YunjingClient::AddLoginWhiteList(const AddLoginWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddLoginWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddLoginWhiteListResponse rsp = AddLoginWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddLoginWhiteListOutcome(rsp);
+        else
+            return AddLoginWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return AddLoginWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::AddLoginWhiteListAsync(const AddLoginWhiteListRequest& request, const AddLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddLoginWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::AddLoginWhiteListOutcomeCallable YunjingClient::AddLoginWhiteListCallable(const AddLoginWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddLoginWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->AddLoginWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::AddMachineTagOutcome YunjingClient::AddMachineTag(const AddMachineTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddMachineTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddMachineTagResponse rsp = AddMachineTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddMachineTagOutcome(rsp);
+        else
+            return AddMachineTagOutcome(o.GetError());
+    }
+    else
+    {
+        return AddMachineTagOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::AddMachineTagAsync(const AddMachineTagRequest& request, const AddMachineTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddMachineTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::AddMachineTagOutcomeCallable YunjingClient::AddMachineTagCallable(const AddMachineTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddMachineTagOutcome()>>(
+        [this, request]()
+        {
+            return this->AddMachineTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::CloseProVersionOutcome YunjingClient::CloseProVersion(const CloseProVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseProVersion");
@@ -76,6 +162,49 @@ YunjingClient::CloseProVersionOutcomeCallable YunjingClient::CloseProVersionCall
         [this, request]()
         {
             return this->CloseProVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::CreateOpenPortTaskOutcome YunjingClient::CreateOpenPortTask(const CreateOpenPortTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOpenPortTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOpenPortTaskResponse rsp = CreateOpenPortTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOpenPortTaskOutcome(rsp);
+        else
+            return CreateOpenPortTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOpenPortTaskOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::CreateOpenPortTaskAsync(const CreateOpenPortTaskRequest& request, const CreateOpenPortTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOpenPortTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::CreateOpenPortTaskOutcomeCallable YunjingClient::CreateOpenPortTaskCallable(const CreateOpenPortTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOpenPortTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOpenPortTask(request);
         }
     );
 
@@ -169,6 +298,135 @@ YunjingClient::CreateUsualLoginPlacesOutcomeCallable YunjingClient::CreateUsualL
     return task->get_future();
 }
 
+YunjingClient::DeleteAttackLogsOutcome YunjingClient::DeleteAttackLogs(const DeleteAttackLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAttackLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAttackLogsResponse rsp = DeleteAttackLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAttackLogsOutcome(rsp);
+        else
+            return DeleteAttackLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAttackLogsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteAttackLogsAsync(const DeleteAttackLogsRequest& request, const DeleteAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAttackLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteAttackLogsOutcomeCallable YunjingClient::DeleteAttackLogsCallable(const DeleteAttackLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAttackLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAttackLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeleteBashEventsOutcome YunjingClient::DeleteBashEvents(const DeleteBashEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBashEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBashEventsResponse rsp = DeleteBashEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBashEventsOutcome(rsp);
+        else
+            return DeleteBashEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBashEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteBashEventsAsync(const DeleteBashEventsRequest& request, const DeleteBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBashEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteBashEventsOutcomeCallable YunjingClient::DeleteBashEventsCallable(const DeleteBashEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBashEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBashEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeleteBashRulesOutcome YunjingClient::DeleteBashRules(const DeleteBashRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBashRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBashRulesResponse rsp = DeleteBashRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBashRulesOutcome(rsp);
+        else
+            return DeleteBashRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBashRulesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteBashRulesAsync(const DeleteBashRulesRequest& request, const DeleteBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBashRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteBashRulesOutcomeCallable YunjingClient::DeleteBashRulesCallable(const DeleteBashRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBashRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBashRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::DeleteBruteAttacksOutcome YunjingClient::DeleteBruteAttacks(const DeleteBruteAttacksRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBruteAttacks");
@@ -212,6 +470,49 @@ YunjingClient::DeleteBruteAttacksOutcomeCallable YunjingClient::DeleteBruteAttac
     return task->get_future();
 }
 
+YunjingClient::DeleteLoginWhiteListOutcome YunjingClient::DeleteLoginWhiteList(const DeleteLoginWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLoginWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLoginWhiteListResponse rsp = DeleteLoginWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLoginWhiteListOutcome(rsp);
+        else
+            return DeleteLoginWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLoginWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteLoginWhiteListAsync(const DeleteLoginWhiteListRequest& request, const DeleteLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLoginWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteLoginWhiteListOutcomeCallable YunjingClient::DeleteLoginWhiteListCallable(const DeleteLoginWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLoginWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLoginWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::DeleteMachineOutcome YunjingClient::DeleteMachine(const DeleteMachineRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteMachine");
@@ -248,6 +549,49 @@ YunjingClient::DeleteMachineOutcomeCallable YunjingClient::DeleteMachineCallable
         [this, request]()
         {
             return this->DeleteMachine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeleteMachineTagOutcome YunjingClient::DeleteMachineTag(const DeleteMachineTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMachineTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMachineTagResponse rsp = DeleteMachineTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMachineTagOutcome(rsp);
+        else
+            return DeleteMachineTagOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMachineTagOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteMachineTagAsync(const DeleteMachineTagRequest& request, const DeleteMachineTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMachineTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteMachineTagOutcomeCallable YunjingClient::DeleteMachineTagCallable(const DeleteMachineTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMachineTagOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMachineTag(request);
         }
     );
 
@@ -377,6 +721,221 @@ YunjingClient::DeleteNonlocalLoginPlacesOutcomeCallable YunjingClient::DeleteNon
         [this, request]()
         {
             return this->DeleteNonlocalLoginPlaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeletePrivilegeEventsOutcome YunjingClient::DeletePrivilegeEvents(const DeletePrivilegeEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivilegeEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivilegeEventsResponse rsp = DeletePrivilegeEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivilegeEventsOutcome(rsp);
+        else
+            return DeletePrivilegeEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivilegeEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeletePrivilegeEventsAsync(const DeletePrivilegeEventsRequest& request, const DeletePrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrivilegeEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeletePrivilegeEventsOutcomeCallable YunjingClient::DeletePrivilegeEventsCallable(const DeletePrivilegeEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrivilegeEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrivilegeEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeletePrivilegeRulesOutcome YunjingClient::DeletePrivilegeRules(const DeletePrivilegeRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivilegeRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivilegeRulesResponse rsp = DeletePrivilegeRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivilegeRulesOutcome(rsp);
+        else
+            return DeletePrivilegeRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivilegeRulesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeletePrivilegeRulesAsync(const DeletePrivilegeRulesRequest& request, const DeletePrivilegeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrivilegeRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeletePrivilegeRulesOutcomeCallable YunjingClient::DeletePrivilegeRulesCallable(const DeletePrivilegeRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrivilegeRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrivilegeRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeleteReverseShellEventsOutcome YunjingClient::DeleteReverseShellEvents(const DeleteReverseShellEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReverseShellEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReverseShellEventsResponse rsp = DeleteReverseShellEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReverseShellEventsOutcome(rsp);
+        else
+            return DeleteReverseShellEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReverseShellEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteReverseShellEventsAsync(const DeleteReverseShellEventsRequest& request, const DeleteReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReverseShellEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteReverseShellEventsOutcomeCallable YunjingClient::DeleteReverseShellEventsCallable(const DeleteReverseShellEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReverseShellEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReverseShellEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeleteReverseShellRulesOutcome YunjingClient::DeleteReverseShellRules(const DeleteReverseShellRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReverseShellRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReverseShellRulesResponse rsp = DeleteReverseShellRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReverseShellRulesOutcome(rsp);
+        else
+            return DeleteReverseShellRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReverseShellRulesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteReverseShellRulesAsync(const DeleteReverseShellRulesRequest& request, const DeleteReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReverseShellRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteReverseShellRulesOutcomeCallable YunjingClient::DeleteReverseShellRulesCallable(const DeleteReverseShellRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReverseShellRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReverseShellRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DeleteTagsOutcome YunjingClient::DeleteTags(const DeleteTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTagsResponse rsp = DeleteTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTagsOutcome(rsp);
+        else
+            return DeleteTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTagsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DeleteTagsOutcomeCallable YunjingClient::DeleteTagsCallable(const DeleteTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTags(request);
         }
     );
 
@@ -592,6 +1151,178 @@ YunjingClient::DescribeAlarmAttributeOutcomeCallable YunjingClient::DescribeAlar
         [this, request]()
         {
             return this->DescribeAlarmAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribeAttackLogInfoOutcome YunjingClient::DescribeAttackLogInfo(const DescribeAttackLogInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAttackLogInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAttackLogInfoResponse rsp = DescribeAttackLogInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAttackLogInfoOutcome(rsp);
+        else
+            return DescribeAttackLogInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAttackLogInfoOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeAttackLogInfoAsync(const DescribeAttackLogInfoRequest& request, const DescribeAttackLogInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAttackLogInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeAttackLogInfoOutcomeCallable YunjingClient::DescribeAttackLogInfoCallable(const DescribeAttackLogInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAttackLogInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAttackLogInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribeAttackLogsOutcome YunjingClient::DescribeAttackLogs(const DescribeAttackLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAttackLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAttackLogsResponse rsp = DescribeAttackLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAttackLogsOutcome(rsp);
+        else
+            return DescribeAttackLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAttackLogsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeAttackLogsAsync(const DescribeAttackLogsRequest& request, const DescribeAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAttackLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeAttackLogsOutcomeCallable YunjingClient::DescribeAttackLogsCallable(const DescribeAttackLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAttackLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAttackLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribeBashEventsOutcome YunjingClient::DescribeBashEvents(const DescribeBashEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBashEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBashEventsResponse rsp = DescribeBashEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBashEventsOutcome(rsp);
+        else
+            return DescribeBashEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBashEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeBashEventsAsync(const DescribeBashEventsRequest& request, const DescribeBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBashEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeBashEventsOutcomeCallable YunjingClient::DescribeBashEventsCallable(const DescribeBashEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBashEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBashEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribeBashRulesOutcome YunjingClient::DescribeBashRules(const DescribeBashRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBashRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBashRulesResponse rsp = DescribeBashRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBashRulesOutcome(rsp);
+        else
+            return DescribeBashRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBashRulesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeBashRulesAsync(const DescribeBashRulesRequest& request, const DescribeBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBashRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeBashRulesOutcomeCallable YunjingClient::DescribeBashRulesCallable(const DescribeBashRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBashRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBashRules(request);
         }
     );
 
@@ -857,6 +1588,49 @@ YunjingClient::DescribeImpactedHostsOutcomeCallable YunjingClient::DescribeImpac
     return task->get_future();
 }
 
+YunjingClient::DescribeLoginWhiteListOutcome YunjingClient::DescribeLoginWhiteList(const DescribeLoginWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoginWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoginWhiteListResponse rsp = DescribeLoginWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoginWhiteListOutcome(rsp);
+        else
+            return DescribeLoginWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoginWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeLoginWhiteListAsync(const DescribeLoginWhiteListRequest& request, const DescribeLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoginWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeLoginWhiteListOutcomeCallable YunjingClient::DescribeLoginWhiteListCallable(const DescribeLoginWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoginWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoginWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::DescribeMachineInfoOutcome YunjingClient::DescribeMachineInfo(const DescribeMachineInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMachineInfo");
@@ -1115,6 +1889,49 @@ YunjingClient::DescribeOpenPortStatisticsOutcomeCallable YunjingClient::Describe
     return task->get_future();
 }
 
+YunjingClient::DescribeOpenPortTaskStatusOutcome YunjingClient::DescribeOpenPortTaskStatus(const DescribeOpenPortTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOpenPortTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOpenPortTaskStatusResponse rsp = DescribeOpenPortTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOpenPortTaskStatusOutcome(rsp);
+        else
+            return DescribeOpenPortTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOpenPortTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeOpenPortTaskStatusAsync(const DescribeOpenPortTaskStatusRequest& request, const DescribeOpenPortTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOpenPortTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeOpenPortTaskStatusOutcomeCallable YunjingClient::DescribeOpenPortTaskStatusCallable(const DescribeOpenPortTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOpenPortTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOpenPortTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::DescribeOpenPortsOutcome YunjingClient::DescribeOpenPorts(const DescribeOpenPortsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOpenPorts");
@@ -1194,6 +2011,92 @@ YunjingClient::DescribeOverviewStatisticsOutcomeCallable YunjingClient::Describe
         [this, request]()
         {
             return this->DescribeOverviewStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribePrivilegeEventsOutcome YunjingClient::DescribePrivilegeEvents(const DescribePrivilegeEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivilegeEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivilegeEventsResponse rsp = DescribePrivilegeEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivilegeEventsOutcome(rsp);
+        else
+            return DescribePrivilegeEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivilegeEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribePrivilegeEventsAsync(const DescribePrivilegeEventsRequest& request, const DescribePrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivilegeEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribePrivilegeEventsOutcomeCallable YunjingClient::DescribePrivilegeEventsCallable(const DescribePrivilegeEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivilegeEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivilegeEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribePrivilegeRulesOutcome YunjingClient::DescribePrivilegeRules(const DescribePrivilegeRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivilegeRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivilegeRulesResponse rsp = DescribePrivilegeRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivilegeRulesOutcome(rsp);
+        else
+            return DescribePrivilegeRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivilegeRulesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribePrivilegeRulesAsync(const DescribePrivilegeRulesRequest& request, const DescribePrivilegeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivilegeRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribePrivilegeRulesOutcomeCallable YunjingClient::DescribePrivilegeRulesCallable(const DescribePrivilegeRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivilegeRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivilegeRules(request);
         }
     );
 
@@ -1373,6 +2276,92 @@ YunjingClient::DescribeProcessesOutcomeCallable YunjingClient::DescribeProcesses
     return task->get_future();
 }
 
+YunjingClient::DescribeReverseShellEventsOutcome YunjingClient::DescribeReverseShellEvents(const DescribeReverseShellEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReverseShellEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReverseShellEventsResponse rsp = DescribeReverseShellEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReverseShellEventsOutcome(rsp);
+        else
+            return DescribeReverseShellEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReverseShellEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeReverseShellEventsAsync(const DescribeReverseShellEventsRequest& request, const DescribeReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReverseShellEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeReverseShellEventsOutcomeCallable YunjingClient::DescribeReverseShellEventsCallable(const DescribeReverseShellEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReverseShellEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReverseShellEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribeReverseShellRulesOutcome YunjingClient::DescribeReverseShellRules(const DescribeReverseShellRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReverseShellRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReverseShellRulesResponse rsp = DescribeReverseShellRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReverseShellRulesOutcome(rsp);
+        else
+            return DescribeReverseShellRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReverseShellRulesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeReverseShellRulesAsync(const DescribeReverseShellRulesRequest& request, const DescribeReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReverseShellRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeReverseShellRulesOutcomeCallable YunjingClient::DescribeReverseShellRulesCallable(const DescribeReverseShellRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReverseShellRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReverseShellRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::DescribeSecurityDynamicsOutcome YunjingClient::DescribeSecurityDynamics(const DescribeSecurityDynamicsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityDynamics");
@@ -1452,6 +2441,92 @@ YunjingClient::DescribeSecurityTrendsOutcomeCallable YunjingClient::DescribeSecu
         [this, request]()
         {
             return this->DescribeSecurityTrends(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribeTagMachinesOutcome YunjingClient::DescribeTagMachines(const DescribeTagMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTagMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTagMachinesResponse rsp = DescribeTagMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTagMachinesOutcome(rsp);
+        else
+            return DescribeTagMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTagMachinesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeTagMachinesAsync(const DescribeTagMachinesRequest& request, const DescribeTagMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTagMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeTagMachinesOutcomeCallable YunjingClient::DescribeTagMachinesCallable(const DescribeTagMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTagMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTagMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::DescribeTagsOutcome YunjingClient::DescribeTags(const DescribeTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTagsResponse rsp = DescribeTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTagsOutcome(rsp);
+        else
+            return DescribeTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTagsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::DescribeTagsOutcomeCallable YunjingClient::DescribeTagsCallable(const DescribeTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTags(request);
         }
     );
 
@@ -1889,6 +2964,307 @@ YunjingClient::DescribeWeeklyReportsOutcomeCallable YunjingClient::DescribeWeekl
     return task->get_future();
 }
 
+YunjingClient::EditBashRuleOutcome YunjingClient::EditBashRule(const EditBashRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditBashRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditBashRuleResponse rsp = EditBashRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditBashRuleOutcome(rsp);
+        else
+            return EditBashRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return EditBashRuleOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::EditBashRuleAsync(const EditBashRuleRequest& request, const EditBashRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditBashRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::EditBashRuleOutcomeCallable YunjingClient::EditBashRuleCallable(const EditBashRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditBashRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->EditBashRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::EditPrivilegeRuleOutcome YunjingClient::EditPrivilegeRule(const EditPrivilegeRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditPrivilegeRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditPrivilegeRuleResponse rsp = EditPrivilegeRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditPrivilegeRuleOutcome(rsp);
+        else
+            return EditPrivilegeRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return EditPrivilegeRuleOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::EditPrivilegeRuleAsync(const EditPrivilegeRuleRequest& request, const EditPrivilegeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditPrivilegeRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::EditPrivilegeRuleOutcomeCallable YunjingClient::EditPrivilegeRuleCallable(const EditPrivilegeRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditPrivilegeRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->EditPrivilegeRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::EditReverseShellRuleOutcome YunjingClient::EditReverseShellRule(const EditReverseShellRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditReverseShellRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditReverseShellRuleResponse rsp = EditReverseShellRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditReverseShellRuleOutcome(rsp);
+        else
+            return EditReverseShellRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return EditReverseShellRuleOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::EditReverseShellRuleAsync(const EditReverseShellRuleRequest& request, const EditReverseShellRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditReverseShellRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::EditReverseShellRuleOutcomeCallable YunjingClient::EditReverseShellRuleCallable(const EditReverseShellRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditReverseShellRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->EditReverseShellRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::EditTagsOutcome YunjingClient::EditTags(const EditTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditTagsResponse rsp = EditTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditTagsOutcome(rsp);
+        else
+            return EditTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return EditTagsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::EditTagsAsync(const EditTagsRequest& request, const EditTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::EditTagsOutcomeCallable YunjingClient::EditTagsCallable(const EditTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->EditTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ExportAttackLogsOutcome YunjingClient::ExportAttackLogs(const ExportAttackLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportAttackLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportAttackLogsResponse rsp = ExportAttackLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportAttackLogsOutcome(rsp);
+        else
+            return ExportAttackLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportAttackLogsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ExportAttackLogsAsync(const ExportAttackLogsRequest& request, const ExportAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportAttackLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ExportAttackLogsOutcomeCallable YunjingClient::ExportAttackLogsCallable(const ExportAttackLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportAttackLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportAttackLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ExportBashEventsOutcome YunjingClient::ExportBashEvents(const ExportBashEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBashEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBashEventsResponse rsp = ExportBashEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBashEventsOutcome(rsp);
+        else
+            return ExportBashEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBashEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ExportBashEventsAsync(const ExportBashEventsRequest& request, const ExportBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBashEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ExportBashEventsOutcomeCallable YunjingClient::ExportBashEventsCallable(const ExportBashEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBashEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBashEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ExportBruteAttacksOutcome YunjingClient::ExportBruteAttacks(const ExportBruteAttacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBruteAttacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBruteAttacksResponse rsp = ExportBruteAttacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBruteAttacksOutcome(rsp);
+        else
+            return ExportBruteAttacksOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBruteAttacksOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ExportBruteAttacksAsync(const ExportBruteAttacksRequest& request, const ExportBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBruteAttacks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ExportBruteAttacksOutcomeCallable YunjingClient::ExportBruteAttacksCallable(const ExportBruteAttacksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBruteAttacksOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBruteAttacks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::ExportMaliciousRequestsOutcome YunjingClient::ExportMaliciousRequests(const ExportMaliciousRequestsRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportMaliciousRequests");
@@ -1925,6 +3301,178 @@ YunjingClient::ExportMaliciousRequestsOutcomeCallable YunjingClient::ExportMalic
         [this, request]()
         {
             return this->ExportMaliciousRequests(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ExportMalwaresOutcome YunjingClient::ExportMalwares(const ExportMalwaresRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportMalwares");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportMalwaresResponse rsp = ExportMalwaresResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportMalwaresOutcome(rsp);
+        else
+            return ExportMalwaresOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportMalwaresOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ExportMalwaresAsync(const ExportMalwaresRequest& request, const ExportMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportMalwares(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ExportMalwaresOutcomeCallable YunjingClient::ExportMalwaresCallable(const ExportMalwaresRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportMalwaresOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportMalwares(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ExportNonlocalLoginPlacesOutcome YunjingClient::ExportNonlocalLoginPlaces(const ExportNonlocalLoginPlacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportNonlocalLoginPlaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportNonlocalLoginPlacesResponse rsp = ExportNonlocalLoginPlacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportNonlocalLoginPlacesOutcome(rsp);
+        else
+            return ExportNonlocalLoginPlacesOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportNonlocalLoginPlacesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ExportNonlocalLoginPlacesAsync(const ExportNonlocalLoginPlacesRequest& request, const ExportNonlocalLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportNonlocalLoginPlaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ExportNonlocalLoginPlacesOutcomeCallable YunjingClient::ExportNonlocalLoginPlacesCallable(const ExportNonlocalLoginPlacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportNonlocalLoginPlacesOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportNonlocalLoginPlaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ExportPrivilegeEventsOutcome YunjingClient::ExportPrivilegeEvents(const ExportPrivilegeEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportPrivilegeEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportPrivilegeEventsResponse rsp = ExportPrivilegeEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportPrivilegeEventsOutcome(rsp);
+        else
+            return ExportPrivilegeEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportPrivilegeEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ExportPrivilegeEventsAsync(const ExportPrivilegeEventsRequest& request, const ExportPrivilegeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportPrivilegeEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ExportPrivilegeEventsOutcomeCallable YunjingClient::ExportPrivilegeEventsCallable(const ExportPrivilegeEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportPrivilegeEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportPrivilegeEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ExportReverseShellEventsOutcome YunjingClient::ExportReverseShellEvents(const ExportReverseShellEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportReverseShellEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportReverseShellEventsResponse rsp = ExportReverseShellEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportReverseShellEventsOutcome(rsp);
+        else
+            return ExportReverseShellEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportReverseShellEventsOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ExportReverseShellEventsAsync(const ExportReverseShellEventsRequest& request, const ExportReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportReverseShellEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ExportReverseShellEventsOutcomeCallable YunjingClient::ExportReverseShellEventsCallable(const ExportReverseShellEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportReverseShellEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportReverseShellEvents(request);
         }
     );
 
@@ -2140,6 +3688,49 @@ YunjingClient::ModifyAutoOpenProVersionConfigOutcomeCallable YunjingClient::Modi
         [this, request]()
         {
             return this->ModifyAutoOpenProVersionConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::ModifyLoginWhiteListOutcome YunjingClient::ModifyLoginWhiteList(const ModifyLoginWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLoginWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLoginWhiteListResponse rsp = ModifyLoginWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLoginWhiteListOutcome(rsp);
+        else
+            return ModifyLoginWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLoginWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::ModifyLoginWhiteListAsync(const ModifyLoginWhiteListRequest& request, const ModifyLoginWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLoginWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::ModifyLoginWhiteListOutcomeCallable YunjingClient::ModifyLoginWhiteListCallable(const ModifyLoginWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLoginWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLoginWhiteList(request);
         }
     );
 
@@ -2398,6 +3989,92 @@ YunjingClient::SeparateMalwaresOutcomeCallable YunjingClient::SeparateMalwaresCa
         [this, request]()
         {
             return this->SeparateMalwares(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::SetBashEventsStatusOutcome YunjingClient::SetBashEventsStatus(const SetBashEventsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetBashEventsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetBashEventsStatusResponse rsp = SetBashEventsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetBashEventsStatusOutcome(rsp);
+        else
+            return SetBashEventsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return SetBashEventsStatusOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::SetBashEventsStatusAsync(const SetBashEventsStatusRequest& request, const SetBashEventsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetBashEventsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::SetBashEventsStatusOutcomeCallable YunjingClient::SetBashEventsStatusCallable(const SetBashEventsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetBashEventsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->SetBashEventsStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YunjingClient::SwitchBashRulesOutcome YunjingClient::SwitchBashRules(const SwitchBashRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchBashRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchBashRulesResponse rsp = SwitchBashRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchBashRulesOutcome(rsp);
+        else
+            return SwitchBashRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchBashRulesOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::SwitchBashRulesAsync(const SwitchBashRulesRequest& request, const SwitchBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchBashRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::SwitchBashRulesOutcomeCallable YunjingClient::SwitchBashRulesCallable(const SwitchBashRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchBashRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchBashRules(request);
         }
     );
 

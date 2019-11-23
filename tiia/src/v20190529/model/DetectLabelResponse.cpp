@@ -25,7 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 DetectLabelResponse::DetectLabelResponse() :
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_cameraLabelsHasBeenSet(false),
+    m_albumLabelsHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,46 @@ CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
         m_labelsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CameraLabels") && !rsp["CameraLabels"].IsNull())
+    {
+        if (!rsp["CameraLabels"].IsArray())
+            return CoreInternalOutcome(Error("response `CameraLabels` is not array type"));
+
+        const Value &tmpValue = rsp["CameraLabels"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetectLabelItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cameraLabels.push_back(item);
+        }
+        m_cameraLabelsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AlbumLabels") && !rsp["AlbumLabels"].IsNull())
+    {
+        if (!rsp["AlbumLabels"].IsArray())
+            return CoreInternalOutcome(Error("response `AlbumLabels` is not array type"));
+
+        const Value &tmpValue = rsp["AlbumLabels"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetectLabelItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_albumLabels.push_back(item);
+        }
+        m_albumLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +138,26 @@ vector<DetectLabelItem> DetectLabelResponse::GetLabels() const
 bool DetectLabelResponse::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+vector<DetectLabelItem> DetectLabelResponse::GetCameraLabels() const
+{
+    return m_cameraLabels;
+}
+
+bool DetectLabelResponse::CameraLabelsHasBeenSet() const
+{
+    return m_cameraLabelsHasBeenSet;
+}
+
+vector<DetectLabelItem> DetectLabelResponse::GetAlbumLabels() const
+{
+    return m_albumLabels;
+}
+
+bool DetectLabelResponse::AlbumLabelsHasBeenSet() const
+{
+    return m_albumLabelsHasBeenSet;
 }
 
 

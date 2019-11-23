@@ -26,7 +26,9 @@ TextArithmetic::TextArithmetic() :
     m_resultHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_polygonHasBeenSet(false),
-    m_advancedInfoHasBeenSet(false)
+    m_advancedInfoHasBeenSet(false),
+    m_itemCoordHasBeenSet(false),
+    m_expressionTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,33 @@ CoreInternalOutcome TextArithmetic::Deserialize(const Value &value)
         m_advancedInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemCoord") && !value["ItemCoord"].IsNull())
+    {
+        if (!value["ItemCoord"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextArithmetic.ItemCoord` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_itemCoord.Deserialize(value["ItemCoord"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_itemCoordHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpressionType") && !value["ExpressionType"].IsNull())
+    {
+        if (!value["ExpressionType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TextArithmetic.ExpressionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expressionType = string(value["ExpressionType"].GetString());
+        m_expressionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,6 +176,23 @@ void TextArithmetic::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemCoordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ItemCoord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_itemCoord.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_expressionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpressionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_expressionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -230,5 +276,37 @@ void TextArithmetic::SetAdvancedInfo(const string& _advancedInfo)
 bool TextArithmetic::AdvancedInfoHasBeenSet() const
 {
     return m_advancedInfoHasBeenSet;
+}
+
+ItemCoord TextArithmetic::GetItemCoord() const
+{
+    return m_itemCoord;
+}
+
+void TextArithmetic::SetItemCoord(const ItemCoord& _itemCoord)
+{
+    m_itemCoord = _itemCoord;
+    m_itemCoordHasBeenSet = true;
+}
+
+bool TextArithmetic::ItemCoordHasBeenSet() const
+{
+    return m_itemCoordHasBeenSet;
+}
+
+string TextArithmetic::GetExpressionType() const
+{
+    return m_expressionType;
+}
+
+void TextArithmetic::SetExpressionType(const string& _expressionType)
+{
+    m_expressionType = _expressionType;
+    m_expressionTypeHasBeenSet = true;
+}
+
+bool TextArithmetic::ExpressionTypeHasBeenSet() const
+{
+    return m_expressionTypeHasBeenSet;
 }
 

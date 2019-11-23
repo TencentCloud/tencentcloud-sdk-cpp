@@ -28,7 +28,8 @@ MountPoint::MountPoint() :
     m_accessGroupIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_vpcTypeHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome MountPoint::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcType") && !value["VpcType"].IsNull())
+    {
+        if (!value["VpcType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `MountPoint.VpcType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcType = value["VpcType"].GetUint64();
+        m_vpcTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void MountPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vpcType, allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void MountPoint::SetCreateTime(const string& _createTime)
 bool MountPoint::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t MountPoint::GetVpcType() const
+{
+    return m_vpcType;
+}
+
+void MountPoint::SetVpcType(const uint64_t& _vpcType)
+{
+    m_vpcType = _vpcType;
+    m_vpcTypeHasBeenSet = true;
+}
+
+bool MountPoint::VpcTypeHasBeenSet() const
+{
+    return m_vpcTypeHasBeenSet;
 }
 

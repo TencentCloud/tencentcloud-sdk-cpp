@@ -22,8 +22,6 @@ using namespace rapidjson;
 using namespace std;
 
 MonitorsDetail::MonitorsDetail() :
-    m_progressHasBeenSet(false),
-    m_pageCountHasBeenSet(false),
     m_basicHasBeenSet(false),
     m_sitesHasBeenSet(false),
     m_siteNumberHasBeenSet(false),
@@ -32,7 +30,10 @@ MonitorsDetail::MonitorsDetail() :
     m_vulsHighNumberHasBeenSet(false),
     m_vulsMiddleNumberHasBeenSet(false),
     m_vulsLowNumberHasBeenSet(false),
-    m_vulsNoticeNumberHasBeenSet(false)
+    m_vulsNoticeNumberHasBeenSet(false),
+    m_progressHasBeenSet(false),
+    m_pageCountHasBeenSet(false),
+    m_contentNumberHasBeenSet(false)
 {
 }
 
@@ -40,26 +41,6 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Progress") && !value["Progress"].IsNull())
-    {
-        if (!value["Progress"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_progress = value["Progress"].GetUint64();
-        m_progressHasBeenSet = true;
-    }
-
-    if (value.HasMember("PageCount") && !value["PageCount"].IsNull())
-    {
-        if (!value["PageCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `MonitorsDetail.PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_pageCount = value["PageCount"].GetUint64();
-        m_pageCountHasBeenSet = true;
-    }
 
     if (value.HasMember("Basic") && !value["Basic"].IsNull())
     {
@@ -178,28 +159,42 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const Value &value)
         m_vulsNoticeNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `MonitorsDetail.Progress` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetUint64();
+        m_progressHasBeenSet = true;
+    }
+
+    if (value.HasMember("PageCount") && !value["PageCount"].IsNull())
+    {
+        if (!value["PageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `MonitorsDetail.PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageCount = value["PageCount"].GetUint64();
+        m_pageCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContentNumber") && !value["ContentNumber"].IsNull())
+    {
+        if (!value["ContentNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `MonitorsDetail.ContentNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentNumber = value["ContentNumber"].GetUint64();
+        m_contentNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_progressHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Progress";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_progress, allocator);
-    }
-
-    if (m_pageCountHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PageCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_pageCount, allocator);
-    }
 
     if (m_basicHasBeenSet)
     {
@@ -288,40 +283,32 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
         value.AddMember(iKey, m_vulsNoticeNumber, allocator);
     }
 
+    if (m_progressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_pageCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageCount, allocator);
+    }
+
+    if (m_contentNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ContentNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_contentNumber, allocator);
+    }
+
 }
 
-
-uint64_t MonitorsDetail::GetProgress() const
-{
-    return m_progress;
-}
-
-void MonitorsDetail::SetProgress(const uint64_t& _progress)
-{
-    m_progress = _progress;
-    m_progressHasBeenSet = true;
-}
-
-bool MonitorsDetail::ProgressHasBeenSet() const
-{
-    return m_progressHasBeenSet;
-}
-
-uint64_t MonitorsDetail::GetPageCount() const
-{
-    return m_pageCount;
-}
-
-void MonitorsDetail::SetPageCount(const uint64_t& _pageCount)
-{
-    m_pageCount = _pageCount;
-    m_pageCountHasBeenSet = true;
-}
-
-bool MonitorsDetail::PageCountHasBeenSet() const
-{
-    return m_pageCountHasBeenSet;
-}
 
 Monitor MonitorsDetail::GetBasic() const
 {
@@ -465,5 +452,53 @@ void MonitorsDetail::SetVulsNoticeNumber(const uint64_t& _vulsNoticeNumber)
 bool MonitorsDetail::VulsNoticeNumberHasBeenSet() const
 {
     return m_vulsNoticeNumberHasBeenSet;
+}
+
+uint64_t MonitorsDetail::GetProgress() const
+{
+    return m_progress;
+}
+
+void MonitorsDetail::SetProgress(const uint64_t& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool MonitorsDetail::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
+}
+
+uint64_t MonitorsDetail::GetPageCount() const
+{
+    return m_pageCount;
+}
+
+void MonitorsDetail::SetPageCount(const uint64_t& _pageCount)
+{
+    m_pageCount = _pageCount;
+    m_pageCountHasBeenSet = true;
+}
+
+bool MonitorsDetail::PageCountHasBeenSet() const
+{
+    return m_pageCountHasBeenSet;
+}
+
+uint64_t MonitorsDetail::GetContentNumber() const
+{
+    return m_contentNumber;
+}
+
+void MonitorsDetail::SetContentNumber(const uint64_t& _contentNumber)
+{
+    m_contentNumber = _contentNumber;
+    m_contentNumberHasBeenSet = true;
+}
+
+bool MonitorsDetail::ContentNumberHasBeenSet() const
+{
+    return m_contentNumberHasBeenSet;
 }
 

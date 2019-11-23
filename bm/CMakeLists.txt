@@ -54,6 +54,7 @@ set(bm_public_header_model
   include/tencentcloud/bm/v20180423/model/CreateCustomImageResponse.h
   include/tencentcloud/bm/v20180423/model/HostedDeviceOutBandInfo.h
   include/tencentcloud/bm/v20180423/model/ReturnDevicesRequest.h
+  include/tencentcloud/bm/v20180423/model/ModifyDeviceAliasesResponse.h
   include/tencentcloud/bm/v20180423/model/PsaRegulation.h
   include/tencentcloud/bm/v20180423/model/DescribeDevicePartitionResponse.h
   include/tencentcloud/bm/v20180423/model/DescribeHostedDeviceOutBandInfoRequest.h
@@ -71,6 +72,7 @@ set(bm_public_header_model
   include/tencentcloud/bm/v20180423/model/TaskType.h
   include/tencentcloud/bm/v20180423/model/DeleteUserCmdsRequest.h
   include/tencentcloud/bm/v20180423/model/DeviceDiskSizeInfo.h
+  include/tencentcloud/bm/v20180423/model/AttachCamRoleRequest.h
   include/tencentcloud/bm/v20180423/model/DescribeDeviceClassResponse.h
   include/tencentcloud/bm/v20180423/model/DescribeDeviceHardwareInfoResponse.h
   include/tencentcloud/bm/v20180423/model/ModifyUserCmdRequest.h
@@ -116,12 +118,13 @@ set(bm_public_header_model
   include/tencentcloud/bm/v20180423/model/DescribeDeviceClassRequest.h
   include/tencentcloud/bm/v20180423/model/ModifyCustomImageAttributeRequest.h
   include/tencentcloud/bm/v20180423/model/DeletePsaRegulationResponse.h
+  include/tencentcloud/bm/v20180423/model/DeviceClassPartitionInfo.h
   include/tencentcloud/bm/v20180423/model/DescribeTaskOperationLogRequest.h
   include/tencentcloud/bm/v20180423/model/DescribeDeviceOperationLogRequest.h
   include/tencentcloud/bm/v20180423/model/DescribeOperationResultRequest.h
-  include/tencentcloud/bm/v20180423/model/DeviceClassPartitionInfo.h
+  include/tencentcloud/bm/v20180423/model/AttachCamRoleResponse.h
   include/tencentcloud/bm/v20180423/model/RecoverDevicesResponse.h
-  include/tencentcloud/bm/v20180423/model/ModifyDeviceAliasesResponse.h
+  include/tencentcloud/bm/v20180423/model/DetachCamRoleResponse.h
   include/tencentcloud/bm/v20180423/model/ShutdownDevicesRequest.h
   include/tencentcloud/bm/v20180423/model/UnbindPsaTagRequest.h
   include/tencentcloud/bm/v20180423/model/ModifyCustomImageAttributeResponse.h
@@ -148,6 +151,7 @@ set(bm_public_header_model
   include/tencentcloud/bm/v20180423/model/DeviceInfo.h
   include/tencentcloud/bm/v20180423/model/ResetDevicePasswordResponse.h
   include/tencentcloud/bm/v20180423/model/DescribeUserCmdTasksRequest.h
+  include/tencentcloud/bm/v20180423/model/DetachCamRoleRequest.h
   include/tencentcloud/bm/v20180423/model/DescribeDeviceClassPartitionResponse.h
   )
 
@@ -188,6 +192,7 @@ set(bm_src
   src/v20180423/model/CreateCustomImageResponse.cpp
   src/v20180423/model/HostedDeviceOutBandInfo.cpp
   src/v20180423/model/ReturnDevicesRequest.cpp
+  src/v20180423/model/ModifyDeviceAliasesResponse.cpp
   src/v20180423/model/PsaRegulation.cpp
   src/v20180423/model/DescribeDevicePartitionResponse.cpp
   src/v20180423/model/DescribeHostedDeviceOutBandInfoRequest.cpp
@@ -205,6 +210,7 @@ set(bm_src
   src/v20180423/model/TaskType.cpp
   src/v20180423/model/DeleteUserCmdsRequest.cpp
   src/v20180423/model/DeviceDiskSizeInfo.cpp
+  src/v20180423/model/AttachCamRoleRequest.cpp
   src/v20180423/model/DescribeDeviceClassResponse.cpp
   src/v20180423/model/DescribeDeviceHardwareInfoResponse.cpp
   src/v20180423/model/ModifyUserCmdRequest.cpp
@@ -250,12 +256,13 @@ set(bm_src
   src/v20180423/model/DescribeDeviceClassRequest.cpp
   src/v20180423/model/ModifyCustomImageAttributeRequest.cpp
   src/v20180423/model/DeletePsaRegulationResponse.cpp
+  src/v20180423/model/DeviceClassPartitionInfo.cpp
   src/v20180423/model/DescribeTaskOperationLogRequest.cpp
   src/v20180423/model/DescribeDeviceOperationLogRequest.cpp
   src/v20180423/model/DescribeOperationResultRequest.cpp
-  src/v20180423/model/DeviceClassPartitionInfo.cpp
+  src/v20180423/model/AttachCamRoleResponse.cpp
   src/v20180423/model/RecoverDevicesResponse.cpp
-  src/v20180423/model/ModifyDeviceAliasesResponse.cpp
+  src/v20180423/model/DetachCamRoleResponse.cpp
   src/v20180423/model/ShutdownDevicesRequest.cpp
   src/v20180423/model/UnbindPsaTagRequest.cpp
   src/v20180423/model/ModifyCustomImageAttributeResponse.cpp
@@ -282,6 +289,7 @@ set(bm_src
   src/v20180423/model/DeviceInfo.cpp
   src/v20180423/model/ResetDevicePasswordResponse.cpp
   src/v20180423/model/DescribeUserCmdTasksRequest.cpp
+  src/v20180423/model/DetachCamRoleRequest.cpp
   src/v20180423/model/DescribeDeviceClassPartitionResponse.cpp
   )
 

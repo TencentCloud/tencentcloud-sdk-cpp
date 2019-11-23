@@ -103,20 +103,20 @@ namespace TencentCloud
                     /**
                      * 获取新的客户端证书ID。其中：
 当ClientCertificateId=default时，表示使用监听器的证书。
-仅当采用双向认证方式时，需要设置该参数。
+仅当采用双向认证方式时，需要设置该参数或者PolyClientCertificateIds。
                      * @return ClientCertificateId 新的客户端证书ID。其中：
 当ClientCertificateId=default时，表示使用监听器的证书。
-仅当采用双向认证方式时，需要设置该参数。
+仅当采用双向认证方式时，需要设置该参数或者PolyClientCertificateIds。
                      */
                     std::string GetClientCertificateId() const;
 
                     /**
                      * 设置新的客户端证书ID。其中：
 当ClientCertificateId=default时，表示使用监听器的证书。
-仅当采用双向认证方式时，需要设置该参数。
+仅当采用双向认证方式时，需要设置该参数或者PolyClientCertificateIds。
                      * @param ClientCertificateId 新的客户端证书ID。其中：
 当ClientCertificateId=default时，表示使用监听器的证书。
-仅当采用双向认证方式时，需要设置该参数。
+仅当采用双向认证方式时，需要设置该参数或者PolyClientCertificateIds。
                      */
                     void SetClientCertificateId(const std::string& _clientCertificateId);
 
@@ -125,6 +125,28 @@ namespace TencentCloud
                      * @return ClientCertificateId 是否已赋值
                      */
                     bool ClientCertificateIdHasBeenSet() const;
+
+                    /**
+                     * 获取新的多客户端证书ID列表。其中：
+仅当采用双向认证方式时，需要设置该参数或ClientCertificateId参数。
+                     * @return PolyClientCertificateIds 新的多客户端证书ID列表。其中：
+仅当采用双向认证方式时，需要设置该参数或ClientCertificateId参数。
+                     */
+                    std::vector<std::string> GetPolyClientCertificateIds() const;
+
+                    /**
+                     * 设置新的多客户端证书ID列表。其中：
+仅当采用双向认证方式时，需要设置该参数或ClientCertificateId参数。
+                     * @param PolyClientCertificateIds 新的多客户端证书ID列表。其中：
+仅当采用双向认证方式时，需要设置该参数或ClientCertificateId参数。
+                     */
+                    void SetPolyClientCertificateIds(const std::vector<std::string>& _polyClientCertificateIds);
+
+                    /**
+                     * 判断参数 PolyClientCertificateIds 是否已赋值
+                     * @return PolyClientCertificateIds 是否已赋值
+                     */
+                    bool PolyClientCertificateIdsHasBeenSet() const;
 
                 private:
 
@@ -150,10 +172,17 @@ namespace TencentCloud
                     /**
                      * 新的客户端证书ID。其中：
 当ClientCertificateId=default时，表示使用监听器的证书。
-仅当采用双向认证方式时，需要设置该参数。
+仅当采用双向认证方式时，需要设置该参数或者PolyClientCertificateIds。
                      */
                     std::string m_clientCertificateId;
                     bool m_clientCertificateIdHasBeenSet;
+
+                    /**
+                     * 新的多客户端证书ID列表。其中：
+仅当采用双向认证方式时，需要设置该参数或ClientCertificateId参数。
+                     */
+                    std::vector<std::string> m_polyClientCertificateIds;
+                    bool m_polyClientCertificateIdsHasBeenSet;
 
                 };
             }

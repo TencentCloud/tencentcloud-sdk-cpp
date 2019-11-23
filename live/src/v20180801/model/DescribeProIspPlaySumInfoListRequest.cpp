@@ -29,7 +29,9 @@ DescribeProIspPlaySumInfoListRequest::DescribeProIspPlaySumInfoListRequest() :
     m_statTypeHasBeenSet(false),
     m_playDomainsHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_mainlandOrOverseaHasBeenSet(false),
+    m_outLanguageHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,22 @@ string DescribeProIspPlaySumInfoListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_mainlandOrOverseaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MainlandOrOversea";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outLanguageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OutLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_outLanguage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +213,38 @@ void DescribeProIspPlaySumInfoListRequest::SetPageSize(const uint64_t& _pageSize
 bool DescribeProIspPlaySumInfoListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeProIspPlaySumInfoListRequest::GetMainlandOrOversea() const
+{
+    return m_mainlandOrOversea;
+}
+
+void DescribeProIspPlaySumInfoListRequest::SetMainlandOrOversea(const string& _mainlandOrOversea)
+{
+    m_mainlandOrOversea = _mainlandOrOversea;
+    m_mainlandOrOverseaHasBeenSet = true;
+}
+
+bool DescribeProIspPlaySumInfoListRequest::MainlandOrOverseaHasBeenSet() const
+{
+    return m_mainlandOrOverseaHasBeenSet;
+}
+
+string DescribeProIspPlaySumInfoListRequest::GetOutLanguage() const
+{
+    return m_outLanguage;
+}
+
+void DescribeProIspPlaySumInfoListRequest::SetOutLanguage(const string& _outLanguage)
+{
+    m_outLanguage = _outLanguage;
+    m_outLanguageHasBeenSet = true;
+}
+
+bool DescribeProIspPlaySumInfoListRequest::OutLanguageHasBeenSet() const
+{
+    return m_outLanguageHasBeenSet;
 }
 
 

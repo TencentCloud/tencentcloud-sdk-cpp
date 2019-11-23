@@ -109,22 +109,14 @@ namespace TencentCloud
                     bool PlayDomainsHasBeenSet() const;
 
                     /**
-                     * 获取页数，
-范围[1,1000]，
-默认值：1。
-                     * @return PageNum 页数，
-范围[1,1000]，
-默认值：1。
+                     * 获取页数，范围[1,1000]，默认值是1。
+                     * @return PageNum 页数，范围[1,1000]，默认值是1。
                      */
                     uint64_t GetPageNum() const;
 
                     /**
-                     * 设置页数，
-范围[1,1000]，
-默认值：1。
-                     * @param PageNum 页数，
-范围[1,1000]，
-默认值：1。
+                     * 设置页数，范围[1,1000]，默认值是1。
+                     * @param PageNum 页数，范围[1,1000]，默认值是1。
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
@@ -135,22 +127,14 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页个数，
-范围：[1,1000]，
-默认值： 20。
-                     * @return PageSize 每页个数，
-范围：[1,1000]，
-默认值： 20。
+                     * 获取每页个数，范围：[1,1000]，默认值是20。
+                     * @return PageSize 每页个数，范围：[1,1000]，默认值是20。
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页个数，
-范围：[1,1000]，
-默认值： 20。
-                     * @param PageSize 每页个数，
-范围：[1,1000]，
-默认值： 20。
+                     * 设置每页个数，范围：[1,1000]，默认值是20。
+                     * @param PageSize 每页个数，范围：[1,1000]，默认值是20。
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
@@ -159,6 +143,60 @@ namespace TencentCloud
                      * @return PageSize 是否已赋值
                      */
                     bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * @return MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    std::string GetMainlandOrOversea() const;
+
+                    /**
+                     * 设置地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     * @param MainlandOrOversea 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
+
+                    /**
+                     * 判断参数 MainlandOrOversea 是否已赋值
+                     * @return MainlandOrOversea 是否已赋值
+                     */
+                    bool MainlandOrOverseaHasBeenSet() const;
+
+                    /**
+                     * 获取分组参数，可选值：CountryProIsp（默认值），Country（国家），默认是按照国家+省份+运营商来进行分组；目前国外的省份和运营商暂时无法识别。
+                     * @return GroupType 分组参数，可选值：CountryProIsp（默认值），Country（国家），默认是按照国家+省份+运营商来进行分组；目前国外的省份和运营商暂时无法识别。
+                     */
+                    std::string GetGroupType() const;
+
+                    /**
+                     * 设置分组参数，可选值：CountryProIsp（默认值），Country（国家），默认是按照国家+省份+运营商来进行分组；目前国外的省份和运营商暂时无法识别。
+                     * @param GroupType 分组参数，可选值：CountryProIsp（默认值），Country（国家），默认是按照国家+省份+运营商来进行分组；目前国外的省份和运营商暂时无法识别。
+                     */
+                    void SetGroupType(const std::string& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取输出字段使用的语言，可选值：Chinese（默认值），English，目前国家，省份和运营商支持多语言。
+                     * @return OutLanguage 输出字段使用的语言，可选值：Chinese（默认值），English，目前国家，省份和运营商支持多语言。
+                     */
+                    std::string GetOutLanguage() const;
+
+                    /**
+                     * 设置输出字段使用的语言，可选值：Chinese（默认值），English，目前国家，省份和运营商支持多语言。
+                     * @param OutLanguage 输出字段使用的语言，可选值：Chinese（默认值），English，目前国家，省份和运营商支持多语言。
+                     */
+                    void SetOutLanguage(const std::string& _outLanguage);
+
+                    /**
+                     * 判断参数 OutLanguage 是否已赋值
+                     * @return OutLanguage 是否已赋值
+                     */
+                    bool OutLanguageHasBeenSet() const;
 
                 private:
 
@@ -184,20 +222,34 @@ namespace TencentCloud
                     bool m_playDomainsHasBeenSet;
 
                     /**
-                     * 页数，
-范围[1,1000]，
-默认值：1。
+                     * 页数，范围[1,1000]，默认值是1。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页个数，
-范围：[1,1000]，
-默认值： 20。
+                     * 每页个数，范围：[1,1000]，默认值是20。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。
+                     */
+                    std::string m_mainlandOrOversea;
+                    bool m_mainlandOrOverseaHasBeenSet;
+
+                    /**
+                     * 分组参数，可选值：CountryProIsp（默认值），Country（国家），默认是按照国家+省份+运营商来进行分组；目前国外的省份和运营商暂时无法识别。
+                     */
+                    std::string m_groupType;
+                    bool m_groupTypeHasBeenSet;
+
+                    /**
+                     * 输出字段使用的语言，可选值：Chinese（默认值），English，目前国家，省份和运营商支持多语言。
+                     */
+                    std::string m_outLanguage;
+                    bool m_outLanguageHasBeenSet;
 
                 };
             }

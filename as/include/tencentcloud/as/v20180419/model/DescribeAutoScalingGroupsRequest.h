@@ -65,6 +65,7 @@ namespace TencentCloud
                      * 获取过滤条件。
 <li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
 <li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>
+<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>
 <li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>
 <li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
@@ -73,6 +74,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
 <li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>
+<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>
 <li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>
 <li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
@@ -85,6 +87,7 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
 <li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>
+<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>
 <li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>
 <li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
@@ -93,6 +96,7 @@ namespace TencentCloud
                      * @param Filters 过滤条件。
 <li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
 <li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>
+<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>
 <li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>
 <li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>
@@ -155,6 +159,7 @@ namespace TencentCloud
                      * 过滤条件。
 <li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
 <li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>
+<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>
 <li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>
 <li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>
 <li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>

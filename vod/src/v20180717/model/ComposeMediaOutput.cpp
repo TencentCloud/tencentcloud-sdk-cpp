@@ -24,6 +24,8 @@ using namespace std;
 ComposeMediaOutput::ComposeMediaOutput() :
     m_fileNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_classIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_videoStreamHasBeenSet(false),
     m_audioStreamHasBeenSet(false),
@@ -55,6 +57,26 @@ CoreInternalOutcome ComposeMediaOutput::Deserialize(const Value &value)
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClassId") && !value["ClassId"].IsNull())
+    {
+        if (!value["ClassId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaOutput.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_classId = value["ClassId"].GetInt64();
+        m_classIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComposeMediaOutput.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
     }
 
     if (value.HasMember("Container") && !value["Container"].IsNull())
@@ -144,6 +166,22 @@ void ComposeMediaOutput::ToJsonObject(Value &value, Document::AllocatorType& all
         value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_classIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClassId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_containerHasBeenSet)
     {
         Value iKey(kStringType);
@@ -219,6 +257,38 @@ void ComposeMediaOutput::SetDescription(const string& _description)
 bool ComposeMediaOutput::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t ComposeMediaOutput::GetClassId() const
+{
+    return m_classId;
+}
+
+void ComposeMediaOutput::SetClassId(const int64_t& _classId)
+{
+    m_classId = _classId;
+    m_classIdHasBeenSet = true;
+}
+
+bool ComposeMediaOutput::ClassIdHasBeenSet() const
+{
+    return m_classIdHasBeenSet;
+}
+
+string ComposeMediaOutput::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void ComposeMediaOutput::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool ComposeMediaOutput::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 
 string ComposeMediaOutput::GetContainer() const

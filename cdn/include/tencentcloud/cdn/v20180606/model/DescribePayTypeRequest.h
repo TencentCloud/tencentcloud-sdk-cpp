@@ -43,22 +43,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
-mainland：指定查询中国境内 CDN 计费方式
-overseas：指定查询中国境外 CDN 计费方式
-                     * @return Area 指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
-mainland：指定查询中国境内 CDN 计费方式
-overseas：指定查询中国境外 CDN 计费方式
+                     * 获取指定服务地域查询
+mainland：境内计费方式查询
+overseas：境外计费方式查询
+未填充时默认为 mainland
+                     * @return Area 指定服务地域查询
+mainland：境内计费方式查询
+overseas：境外计费方式查询
+未填充时默认为 mainland
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
-mainland：指定查询中国境内 CDN 计费方式
-overseas：指定查询中国境外 CDN 计费方式
-                     * @param Area 指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
-mainland：指定查询中国境内 CDN 计费方式
-overseas：指定查询中国境外 CDN 计费方式
+                     * 设置指定服务地域查询
+mainland：境内计费方式查询
+overseas：境外计费方式查询
+未填充时默认为 mainland
+                     * @param Area 指定服务地域查询
+mainland：境内计费方式查询
+overseas：境外计费方式查询
+未填充时默认为 mainland
                      */
                     void SetArea(const std::string& _area);
 
@@ -71,9 +75,10 @@ overseas：指定查询中国境外 CDN 计费方式
                 private:
 
                     /**
-                     * 指定服务地域查询，不填充表示查询中国境内 CDN 计费方式
-mainland：指定查询中国境内 CDN 计费方式
-overseas：指定查询中国境外 CDN 计费方式
+                     * 指定服务地域查询
+mainland：境内计费方式查询
+overseas：境外计费方式查询
+未填充时默认为 mainland
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

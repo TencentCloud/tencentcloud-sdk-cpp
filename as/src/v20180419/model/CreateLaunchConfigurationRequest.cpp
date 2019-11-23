@@ -40,7 +40,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_instanceTypesHasBeenSet(false),
     m_instanceTypesCheckPolicyHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
-    m_camRoleNameHasBeenSet(false)
+    m_camRoleNameHasBeenSet(false),
+    m_hostNameSettingsHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,15 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         string key = "CamRoleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_camRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_hostNameSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -494,6 +504,22 @@ void CreateLaunchConfigurationRequest::SetCamRoleName(const string& _camRoleName
 bool CreateLaunchConfigurationRequest::CamRoleNameHasBeenSet() const
 {
     return m_camRoleNameHasBeenSet;
+}
+
+HostNameSettings CreateLaunchConfigurationRequest::GetHostNameSettings() const
+{
+    return m_hostNameSettings;
+}
+
+void CreateLaunchConfigurationRequest::SetHostNameSettings(const HostNameSettings& _hostNameSettings)
+{
+    m_hostNameSettings = _hostNameSettings;
+    m_hostNameSettingsHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::HostNameSettingsHasBeenSet() const
+{
+    return m_hostNameSettingsHasBeenSet;
 }
 
 

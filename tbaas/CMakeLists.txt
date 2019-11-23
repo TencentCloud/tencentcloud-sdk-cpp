@@ -23,11 +23,12 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/SendTransactionHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetTransListHandlerResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h
   include/tencentcloud/tbaas/v20180416/model/InvokeResponse.h
   include/tencentcloud/tbaas/v20180416/model/DownloadUserCertResponse.h
-  include/tencentcloud/tbaas/v20180416/model/InvokeRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListResponse.h
   include/tencentcloud/tbaas/v20180416/model/SrvInvokeRequest.h
   include/tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerResponse.h
@@ -43,6 +44,7 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/Block.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h
   include/tencentcloud/tbaas/v20180416/model/BcosTransInfo.h
+  include/tencentcloud/tbaas/v20180416/model/InvokeRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetBlockListHandlerResponse.h
   include/tencentcloud/tbaas/v20180416/model/SendTransactionHandlerRequest.h
@@ -50,8 +52,9 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/TransactionItem.h
   include/tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerRequest.h
   include/tencentcloud/tbaas/v20180416/model/BcosBlockObj.h
-  include/tencentcloud/tbaas/v20180416/model/QueryResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetTransByHashHandlerRequest.h
+  include/tencentcloud/tbaas/v20180416/model/QueryResponse.h
+  include/tencentcloud/tbaas/v20180416/model/EndorserGroup.h
   )
 
 set(tbaas_src
@@ -60,11 +63,12 @@ set(tbaas_src
   src/v20180416/model/SendTransactionHandlerResponse.cpp
   src/v20180416/model/ApplyUserCertRequest.cpp
   src/v20180416/model/GetTransListHandlerResponse.cpp
+  src/v20180416/model/GetTransactionDetailForUserResponse.cpp
   src/v20180416/model/ApplyUserCertResponse.cpp
   src/v20180416/model/GetLatesdTransactionListRequest.cpp
   src/v20180416/model/InvokeResponse.cpp
   src/v20180416/model/DownloadUserCertResponse.cpp
-  src/v20180416/model/InvokeRequest.cpp
+  src/v20180416/model/GetTransactionDetailForUserRequest.cpp
   src/v20180416/model/GetBlockListResponse.cpp
   src/v20180416/model/SrvInvokeRequest.cpp
   src/v20180416/model/BlockByNumberHandlerResponse.cpp
@@ -80,6 +84,7 @@ set(tbaas_src
   src/v20180416/model/Block.cpp
   src/v20180416/model/GetBlockListRequest.cpp
   src/v20180416/model/BcosTransInfo.cpp
+  src/v20180416/model/InvokeRequest.cpp
   src/v20180416/model/GetInvokeTxResponse.cpp
   src/v20180416/model/GetBlockListHandlerResponse.cpp
   src/v20180416/model/SendTransactionHandlerRequest.cpp
@@ -87,8 +92,9 @@ set(tbaas_src
   src/v20180416/model/TransactionItem.cpp
   src/v20180416/model/BlockByNumberHandlerRequest.cpp
   src/v20180416/model/BcosBlockObj.cpp
-  src/v20180416/model/QueryResponse.cpp
   src/v20180416/model/GetTransByHashHandlerRequest.cpp
+  src/v20180416/model/QueryResponse.cpp
+  src/v20180416/model/EndorserGroup.cpp
   )
 
 set(tbaas_include

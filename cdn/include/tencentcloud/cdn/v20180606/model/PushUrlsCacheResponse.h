@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取此批次提交任务对应的 Id，值唯一
-                     * @return TaskId 此批次提交任务对应的 Id，值唯一
+                     * 获取此批提交的任务 ID
+                     * @return TaskId 此批提交的任务 ID
                      */
                     std::string GetTaskId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 此批次提交任务对应的 Id，值唯一
+                     * 此批提交的任务 ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

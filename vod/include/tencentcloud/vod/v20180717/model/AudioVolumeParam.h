@@ -47,40 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频增益，取值范围0~10。仅在Mute=0时生效。
-<li>大于1表示增加音量。</li>
-<li>小于1表示降低音量。</li>
-<li>1：表示不改变。</li>
-默认是1。
-                     * @return Gain 音频增益，取值范围0~10。仅在Mute=0时生效。
-<li>大于1表示增加音量。</li>
-<li>小于1表示降低音量。</li>
-<li>1：表示不改变。</li>
-默认是1。
-                     */
-                    double GetGain() const;
-
-                    /**
-                     * 设置音频增益，取值范围0~10。仅在Mute=0时生效。
-<li>大于1表示增加音量。</li>
-<li>小于1表示降低音量。</li>
-<li>1：表示不改变。</li>
-默认是1。
-                     * @param Gain 音频增益，取值范围0~10。仅在Mute=0时生效。
-<li>大于1表示增加音量。</li>
-<li>小于1表示降低音量。</li>
-<li>1：表示不改变。</li>
-默认是1。
-                     */
-                    void SetGain(const double& _gain);
-
-                    /**
-                     * 判断参数 Gain 是否已赋值
-                     * @return Gain 是否已赋值
-                     */
-                    bool GainHasBeenSet() const;
-
-                    /**
                      * 获取是否静音，取值范围0或1。
 <li>0表示不静音。</li>
 <li>1表示静音。</li>
@@ -110,17 +76,41 @@ namespace TencentCloud
                      */
                     bool MuteHasBeenSet() const;
 
-                private:
-
                     /**
-                     * 音频增益，取值范围0~10。仅在Mute=0时生效。
+                     * 获取音频增益，取值范围0~10。
 <li>大于1表示增加音量。</li>
 <li>小于1表示降低音量。</li>
-<li>1：表示不改变。</li>
-默认是1。
+<li>0和1：表示不改变。</li>
+默认是0。
+                     * @return Gain 音频增益，取值范围0~10。
+<li>大于1表示增加音量。</li>
+<li>小于1表示降低音量。</li>
+<li>0和1：表示不改变。</li>
+默认是0。
                      */
-                    double m_gain;
-                    bool m_gainHasBeenSet;
+                    double GetGain() const;
+
+                    /**
+                     * 设置音频增益，取值范围0~10。
+<li>大于1表示增加音量。</li>
+<li>小于1表示降低音量。</li>
+<li>0和1：表示不改变。</li>
+默认是0。
+                     * @param Gain 音频增益，取值范围0~10。
+<li>大于1表示增加音量。</li>
+<li>小于1表示降低音量。</li>
+<li>0和1：表示不改变。</li>
+默认是0。
+                     */
+                    void SetGain(const double& _gain);
+
+                    /**
+                     * 判断参数 Gain 是否已赋值
+                     * @return Gain 是否已赋值
+                     */
+                    bool GainHasBeenSet() const;
+
+                private:
 
                     /**
                      * 是否静音，取值范围0或1。
@@ -130,6 +120,16 @@ namespace TencentCloud
                      */
                     int64_t m_mute;
                     bool m_muteHasBeenSet;
+
+                    /**
+                     * 音频增益，取值范围0~10。
+<li>大于1表示增加音量。</li>
+<li>小于1表示降低音量。</li>
+<li>0和1：表示不改变。</li>
+默认是0。
+                     */
+                    double m_gain;
+                    bool m_gainHasBeenSet;
 
                 };
             }

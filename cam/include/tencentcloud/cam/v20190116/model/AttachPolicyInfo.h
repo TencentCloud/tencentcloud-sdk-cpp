@@ -180,7 +180,7 @@ namespace TencentCloud
                      * @return OperateOwnerUin 策略关联操作者主张号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t GetOperateOwnerUin() const;
+                    std::string GetOperateOwnerUin() const;
 
                     /**
                      * 设置策略关联操作者主张号
@@ -188,7 +188,7 @@ namespace TencentCloud
                      * @param OperateOwnerUin 策略关联操作者主张号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetOperateOwnerUin(const uint64_t& _operateOwnerUin);
+                    void SetOperateOwnerUin(const std::string& _operateOwnerUin);
 
                     /**
                      * 判断参数 OperateOwnerUin 是否已赋值
@@ -202,7 +202,7 @@ namespace TencentCloud
                      * @return OperateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t GetOperateUin() const;
+                    std::string GetOperateUin() const;
 
                     /**
                      * 设置策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
@@ -210,7 +210,7 @@ namespace TencentCloud
                      * @param OperateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetOperateUin(const uint64_t& _operateUin);
+                    void SetOperateUin(const std::string& _operateUin);
 
                     /**
                      * 判断参数 OperateUin 是否已赋值
@@ -287,14 +287,14 @@ namespace TencentCloud
                      * 策略关联操作者主张号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_operateOwnerUin;
+                    std::string m_operateOwnerUin;
                     bool m_operateOwnerUinHasBeenSet;
 
                     /**
                      * 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_operateUin;
+                    std::string m_operateUin;
                     bool m_operateUinHasBeenSet;
 
                     /**

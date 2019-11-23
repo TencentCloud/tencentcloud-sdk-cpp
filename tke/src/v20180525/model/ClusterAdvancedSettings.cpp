@@ -24,7 +24,8 @@ using namespace std;
 ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_iPVSHasBeenSet(false),
     m_asEnabledHasBeenSet(false),
-    m_containerRuntimeHasBeenSet(false)
+    m_containerRuntimeHasBeenSet(false),
+    m_nodeNameTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_containerRuntimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeNameType") && !value["NodeNameType"].IsNull())
+    {
+        if (!value["NodeNameType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.NodeNameType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeNameType = string(value["NodeNameType"].GetString());
+        m_nodeNameTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "ContainerRuntime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_containerRuntime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeNameType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nodeNameType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void ClusterAdvancedSettings::SetContainerRuntime(const string& _containerRuntim
 bool ClusterAdvancedSettings::ContainerRuntimeHasBeenSet() const
 {
     return m_containerRuntimeHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetNodeNameType() const
+{
+    return m_nodeNameType;
+}
+
+void ClusterAdvancedSettings::SetNodeNameType(const string& _nodeNameType)
+{
+    m_nodeNameType = _nodeNameType;
+    m_nodeNameTypeHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::NodeNameTypeHasBeenSet() const
+{
+    return m_nodeNameTypeHasBeenSet;
 }
 

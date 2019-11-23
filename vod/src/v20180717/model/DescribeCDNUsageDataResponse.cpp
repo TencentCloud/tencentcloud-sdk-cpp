@@ -25,6 +25,7 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeCDNUsageDataResponse::DescribeCDNUsageDataResponse() :
+    m_dataIntervalHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
 }
@@ -63,6 +64,16 @@ CoreInternalOutcome DescribeCDNUsageDataResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("DataInterval") && !rsp["DataInterval"].IsNull())
+    {
+        if (!rsp["DataInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DataInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataInterval = rsp["DataInterval"].GetInt64();
+        m_dataIntervalHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
@@ -87,6 +98,16 @@ CoreInternalOutcome DescribeCDNUsageDataResponse::Deserialize(const string &payl
     return CoreInternalOutcome(true);
 }
 
+
+int64_t DescribeCDNUsageDataResponse::GetDataInterval() const
+{
+    return m_dataInterval;
+}
+
+bool DescribeCDNUsageDataResponse::DataIntervalHasBeenSet() const
+{
+    return m_dataIntervalHasBeenSet;
+}
 
 vector<StatDataItem> DescribeCDNUsageDataResponse::GetData() const
 {

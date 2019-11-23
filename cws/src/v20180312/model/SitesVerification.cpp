@@ -22,17 +22,17 @@ using namespace rapidjson;
 using namespace std;
 
 SitesVerification::SitesVerification() :
-    m_idHasBeenSet(false),
-    m_appidHasBeenSet(false),
-    m_verifyUrlHasBeenSet(false),
-    m_verifyFileUrlHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_txtNameHasBeenSet(false),
     m_txtTextHasBeenSet(false),
     m_validToHasBeenSet(false),
     m_verifyStatusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_appidHasBeenSet(false),
+    m_verifyUrlHasBeenSet(false),
+    m_verifyFileUrlHasBeenSet(false)
 {
 }
 
@@ -40,46 +40,6 @@ CoreInternalOutcome SitesVerification::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Id") && !value["Id"].IsNull())
-    {
-        if (!value["Id"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `SitesVerification.Id` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = value["Id"].GetUint64();
-        m_idHasBeenSet = true;
-    }
-
-    if (value.HasMember("Appid") && !value["Appid"].IsNull())
-    {
-        if (!value["Appid"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `SitesVerification.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appid = value["Appid"].GetUint64();
-        m_appidHasBeenSet = true;
-    }
-
-    if (value.HasMember("VerifyUrl") && !value["VerifyUrl"].IsNull())
-    {
-        if (!value["VerifyUrl"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `SitesVerification.VerifyUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_verifyUrl = string(value["VerifyUrl"].GetString());
-        m_verifyUrlHasBeenSet = true;
-    }
-
-    if (value.HasMember("VerifyFileUrl") && !value["VerifyFileUrl"].IsNull())
-    {
-        if (!value["VerifyFileUrl"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `SitesVerification.VerifyFileUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_verifyFileUrl = string(value["VerifyFileUrl"].GetString());
-        m_verifyFileUrlHasBeenSet = true;
-    }
 
     if (value.HasMember("Domain") && !value["Domain"].IsNull())
     {
@@ -151,44 +111,52 @@ CoreInternalOutcome SitesVerification::Deserialize(const Value &value)
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SitesVerification.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetUint64();
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Appid") && !value["Appid"].IsNull())
+    {
+        if (!value["Appid"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SitesVerification.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appid = value["Appid"].GetUint64();
+        m_appidHasBeenSet = true;
+    }
+
+    if (value.HasMember("VerifyUrl") && !value["VerifyUrl"].IsNull())
+    {
+        if (!value["VerifyUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SitesVerification.VerifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyUrl = string(value["VerifyUrl"].GetString());
+        m_verifyUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("VerifyFileUrl") && !value["VerifyFileUrl"].IsNull())
+    {
+        if (!value["VerifyFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SitesVerification.VerifyFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyFileUrl = string(value["VerifyFileUrl"].GetString());
+        m_verifyFileUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void SitesVerification::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_idHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_id, allocator);
-    }
-
-    if (m_appidHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Appid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appid, allocator);
-    }
-
-    if (m_verifyUrlHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "VerifyUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_verifyUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_verifyFileUrlHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "VerifyFileUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_verifyFileUrl.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_domainHasBeenSet)
     {
@@ -246,72 +214,40 @@ void SitesVerification::ToJsonObject(Value &value, Document::AllocatorType& allo
         value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_idHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_appidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Appid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appid, allocator);
+    }
+
+    if (m_verifyUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VerifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_verifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyFileUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VerifyFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_verifyFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-uint64_t SitesVerification::GetId() const
-{
-    return m_id;
-}
-
-void SitesVerification::SetId(const uint64_t& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool SitesVerification::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
-}
-
-uint64_t SitesVerification::GetAppid() const
-{
-    return m_appid;
-}
-
-void SitesVerification::SetAppid(const uint64_t& _appid)
-{
-    m_appid = _appid;
-    m_appidHasBeenSet = true;
-}
-
-bool SitesVerification::AppidHasBeenSet() const
-{
-    return m_appidHasBeenSet;
-}
-
-string SitesVerification::GetVerifyUrl() const
-{
-    return m_verifyUrl;
-}
-
-void SitesVerification::SetVerifyUrl(const string& _verifyUrl)
-{
-    m_verifyUrl = _verifyUrl;
-    m_verifyUrlHasBeenSet = true;
-}
-
-bool SitesVerification::VerifyUrlHasBeenSet() const
-{
-    return m_verifyUrlHasBeenSet;
-}
-
-string SitesVerification::GetVerifyFileUrl() const
-{
-    return m_verifyFileUrl;
-}
-
-void SitesVerification::SetVerifyFileUrl(const string& _verifyFileUrl)
-{
-    m_verifyFileUrl = _verifyFileUrl;
-    m_verifyFileUrlHasBeenSet = true;
-}
-
-bool SitesVerification::VerifyFileUrlHasBeenSet() const
-{
-    return m_verifyFileUrlHasBeenSet;
-}
 
 string SitesVerification::GetDomain() const
 {
@@ -423,5 +359,69 @@ void SitesVerification::SetUpdatedAt(const string& _updatedAt)
 bool SitesVerification::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+uint64_t SitesVerification::GetId() const
+{
+    return m_id;
+}
+
+void SitesVerification::SetId(const uint64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool SitesVerification::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+uint64_t SitesVerification::GetAppid() const
+{
+    return m_appid;
+}
+
+void SitesVerification::SetAppid(const uint64_t& _appid)
+{
+    m_appid = _appid;
+    m_appidHasBeenSet = true;
+}
+
+bool SitesVerification::AppidHasBeenSet() const
+{
+    return m_appidHasBeenSet;
+}
+
+string SitesVerification::GetVerifyUrl() const
+{
+    return m_verifyUrl;
+}
+
+void SitesVerification::SetVerifyUrl(const string& _verifyUrl)
+{
+    m_verifyUrl = _verifyUrl;
+    m_verifyUrlHasBeenSet = true;
+}
+
+bool SitesVerification::VerifyUrlHasBeenSet() const
+{
+    return m_verifyUrlHasBeenSet;
+}
+
+string SitesVerification::GetVerifyFileUrl() const
+{
+    return m_verifyFileUrl;
+}
+
+void SitesVerification::SetVerifyFileUrl(const string& _verifyFileUrl)
+{
+    m_verifyFileUrl = _verifyFileUrl;
+    m_verifyFileUrlHasBeenSet = true;
+}
+
+bool SitesVerification::VerifyFileUrlHasBeenSet() const
+{
+    return m_verifyFileUrlHasBeenSet;
 }
 

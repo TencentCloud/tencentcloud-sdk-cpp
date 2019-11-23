@@ -104,7 +104,8 @@ namespace TencentCloud
 5、广告/灌水；
 6、迷信/邪教；
 7、其他违法（如跨站追杀/恶意竞争等）；
-8、综合
+8、综合；
+9、联系方式/链接
                      * @return EvilType 文本恶意类型：
 0、正常；
 1、政治；
@@ -114,7 +115,8 @@ namespace TencentCloud
 5、广告/灌水；
 6、迷信/邪教；
 7、其他违法（如跨站追杀/恶意竞争等）；
-8、综合
+8、综合；
+9、联系方式/链接
                      */
                     uint64_t GetEvilType() const;
 
@@ -128,7 +130,8 @@ namespace TencentCloud
 5、广告/灌水；
 6、迷信/邪教；
 7、其他违法（如跨站追杀/恶意竞争等）；
-8、综合
+8、综合；
+9、联系方式/链接
                      * @param EvilType 文本恶意类型：
 0、正常；
 1、政治；
@@ -138,7 +141,8 @@ namespace TencentCloud
 5、广告/灌水；
 6、迷信/邪教；
 7、其他违法（如跨站追杀/恶意竞争等）；
-8、综合
+8、综合；
+9、联系方式/链接
                      */
                     void SetEvilType(const uint64_t& _evilType);
 
@@ -175,7 +179,8 @@ namespace TencentCloud
 5、广告/灌水；
 6、迷信/邪教；
 7、其他违法（如跨站追杀/恶意竞争等）；
-8、综合
+8、综合；
+9、联系方式/链接
                      */
                     uint64_t m_evilType;
                     bool m_evilTypeHasBeenSet;

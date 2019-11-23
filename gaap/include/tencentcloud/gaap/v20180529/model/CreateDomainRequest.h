@@ -98,17 +98,17 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端CA证书，用于客户端与GAAP的HTTPS的交互。
-仅当采用双向认证的方式时，需要设置该字段。
+仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
                      * @return ClientCertificateId 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
-仅当采用双向认证的方式时，需要设置该字段。
+仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
                      */
                     std::string GetClientCertificateId() const;
 
                     /**
                      * 设置客户端CA证书，用于客户端与GAAP的HTTPS的交互。
-仅当采用双向认证的方式时，需要设置该字段。
+仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
                      * @param ClientCertificateId 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
-仅当采用双向认证的方式时，需要设置该字段。
+仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
                      */
                     void SetClientCertificateId(const std::string& _clientCertificateId);
 
@@ -117,6 +117,28 @@ namespace TencentCloud
                      * @return ClientCertificateId 是否已赋值
                      */
                     bool ClientCertificateIdHasBeenSet() const;
+
+                    /**
+                     * 获取客户端CA证书，用于客户端与GAAP的HTTPS的交互。
+仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
+                     * @return PolyClientCertificateIds 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
+仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
+                     */
+                    std::vector<std::string> GetPolyClientCertificateIds() const;
+
+                    /**
+                     * 设置客户端CA证书，用于客户端与GAAP的HTTPS的交互。
+仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
+                     * @param PolyClientCertificateIds 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
+仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
+                     */
+                    void SetPolyClientCertificateIds(const std::vector<std::string>& _polyClientCertificateIds);
+
+                    /**
+                     * 判断参数 PolyClientCertificateIds 是否已赋值
+                     * @return PolyClientCertificateIds 是否已赋值
+                     */
+                    bool PolyClientCertificateIdsHasBeenSet() const;
 
                 private:
 
@@ -140,10 +162,17 @@ namespace TencentCloud
 
                     /**
                      * 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
-仅当采用双向认证的方式时，需要设置该字段。
+仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。
                      */
                     std::string m_clientCertificateId;
                     bool m_clientCertificateIdHasBeenSet;
+
+                    /**
+                     * 客户端CA证书，用于客户端与GAAP的HTTPS的交互。
+仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。
+                     */
+                    std::vector<std::string> m_polyClientCertificateIds;
+                    bool m_polyClientCertificateIdsHasBeenSet;
 
                 };
             }

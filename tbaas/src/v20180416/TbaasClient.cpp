@@ -470,6 +470,49 @@ TbaasClient::GetTransListHandlerOutcomeCallable TbaasClient::GetTransListHandler
     return task->get_future();
 }
 
+TbaasClient::GetTransactionDetailForUserOutcome TbaasClient::GetTransactionDetailForUser(const GetTransactionDetailForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTransactionDetailForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTransactionDetailForUserResponse rsp = GetTransactionDetailForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTransactionDetailForUserOutcome(rsp);
+        else
+            return GetTransactionDetailForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTransactionDetailForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetTransactionDetailForUserAsync(const GetTransactionDetailForUserRequest& request, const GetTransactionDetailForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTransactionDetailForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetTransactionDetailForUserOutcomeCallable TbaasClient::GetTransactionDetailForUserCallable(const GetTransactionDetailForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTransactionDetailForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTransactionDetailForUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::InvokeOutcome TbaasClient::Invoke(const InvokeRequest &request)
 {
     auto outcome = MakeRequest(request, "Invoke");

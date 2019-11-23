@@ -163,14 +163,14 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取客户端CA证书ID，仅当双向认证时设置该参数。
-                     * @return ClientCertificateId 客户端CA证书ID，仅当双向认证时设置该参数。
+                     * 获取客户端CA单证书ID，仅当双向认证时设置该参数或PolyClientCertificateIds参数
+                     * @return ClientCertificateId 客户端CA单证书ID，仅当双向认证时设置该参数或PolyClientCertificateIds参数
                      */
                     std::string GetClientCertificateId() const;
 
                     /**
-                     * 设置客户端CA证书ID，仅当双向认证时设置该参数。
-                     * @param ClientCertificateId 客户端CA证书ID，仅当双向认证时设置该参数。
+                     * 设置客户端CA单证书ID，仅当双向认证时设置该参数或PolyClientCertificateIds参数
+                     * @param ClientCertificateId 客户端CA单证书ID，仅当双向认证时设置该参数或PolyClientCertificateIds参数
                      */
                     void SetClientCertificateId(const std::string& _clientCertificateId);
 
@@ -179,6 +179,24 @@ namespace TencentCloud
                      * @return ClientCertificateId 是否已赋值
                      */
                     bool ClientCertificateIdHasBeenSet() const;
+
+                    /**
+                     * 获取新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数
+                     * @return PolyClientCertificateIds 新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数
+                     */
+                    std::vector<std::string> GetPolyClientCertificateIds() const;
+
+                    /**
+                     * 设置新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数
+                     * @param PolyClientCertificateIds 新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数
+                     */
+                    void SetPolyClientCertificateIds(const std::vector<std::string>& _polyClientCertificateIds);
+
+                    /**
+                     * 判断参数 PolyClientCertificateIds 是否已赋值
+                     * @return PolyClientCertificateIds 是否已赋值
+                     */
+                    bool PolyClientCertificateIdsHasBeenSet() const;
 
                 private:
 
@@ -222,10 +240,16 @@ namespace TencentCloud
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * 客户端CA证书ID，仅当双向认证时设置该参数。
+                     * 客户端CA单证书ID，仅当双向认证时设置该参数或PolyClientCertificateIds参数
                      */
                     std::string m_clientCertificateId;
                     bool m_clientCertificateIdHasBeenSet;
+
+                    /**
+                     * 新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数
+                     */
+                    std::vector<std::string> m_polyClientCertificateIds;
+                    bool m_polyClientCertificateIdsHasBeenSet;
 
                 };
             }

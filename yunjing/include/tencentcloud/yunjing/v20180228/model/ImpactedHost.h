@@ -202,6 +202,24 @@ namespace TencentCloud
                      */
                     bool VulIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否为专业版。
+                     * @return IsProVersion 是否为专业版。
+                     */
+                    bool GetIsProVersion() const;
+
+                    /**
+                     * 设置是否为专业版。
+                     * @param IsProVersion 是否为专业版。
+                     */
+                    void SetIsProVersion(const bool& _isProVersion);
+
+                    /**
+                     * 判断参数 IsProVersion 是否已赋值
+                     * @return IsProVersion 是否已赋值
+                     */
+                    bool IsProVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,6 +272,12 @@ namespace TencentCloud
                      */
                     uint64_t m_vulId;
                     bool m_vulIdHasBeenSet;
+
+                    /**
+                     * 是否为专业版。
+                     */
+                    bool m_isProVersion;
+                    bool m_isProVersionHasBeenSet;
 
                 };
             }

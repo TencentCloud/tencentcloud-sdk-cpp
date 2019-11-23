@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
-                     * @return Text 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
+                     * 获取搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     * @return Text 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
-                     * @param Text 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
+                     * 设置搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
+                     * @param Text 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
                      */
                     void SetText(const std::string& _text);
 
@@ -63,20 +63,20 @@ namespace TencentCloud
 
                     /**
                      * 获取标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8 个字符。</li>
+<li>单个标签长度限制：8个字符。</li>
 <li>数组长度限制：10。</li>
                      * @return Tags 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8 个字符。</li>
+<li>单个标签长度限制：8个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8 个字符。</li>
+<li>单个标签长度限制：8个字符。</li>
 <li>数组长度限制：10。</li>
                      * @param Tags 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8 个字符。</li>
+<li>单个标签长度限制：8个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -108,20 +108,20 @@ namespace TencentCloud
                     /**
                      * 获取创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      * @return StartTime 创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      * @param StartTime 创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -134,20 +134,20 @@ namespace TencentCloud
                     /**
                      * 获取创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      * @return EndTime 创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      * @param EndTime 创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -176,14 +176,14 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
-                     * @return StreamId 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 获取推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * @return StreamId 推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
                      */
                     std::string GetStreamId() const;
 
                     /**
-                     * 设置推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
-                     * @param StreamId 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 设置推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * @param StreamId 推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
                      */
                     void SetStreamId(const std::string& _streamId);
 
@@ -238,22 +238,18 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-<li>默认值：0。</li>
-<li>取值范围：Offset + Limit 不超过 5000。</li>
-                     * @return Offset 偏移量。
-<li>默认值：0。</li>
-<li>取值范围：Offset + Limit 不超过 5000。</li>
+                     * 获取分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-<li>默认值：0。</li>
-<li>取值范围：Offset + Limit 不超过 5000。</li>
-                     * @param Offset 偏移量。
-<li>默认值：0。</li>
-<li>取值范围：Offset + Limit 不超过 5000。</li>
+                     * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * @param Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -264,14 +260,18 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，默认值：10。
-                     * @return Limit 返回记录条数，默认值：10。
+                     * 获取分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * @return Limit 分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，默认值：10。
-                     * @param Limit 返回记录条数，默认值：10。
+                     * 设置分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * @param Limit 分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -302,14 +302,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
+                     * 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：8 个字符。</li>
+<li>单个标签长度限制：8个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> m_tags;
@@ -324,7 +324,7 @@ namespace TencentCloud
                     /**
                      * 创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -332,7 +332,7 @@ namespace TencentCloud
                     /**
                      * 创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -344,7 +344,7 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 偏移量。
-<li>默认值：0。</li>
-<li>取值范围：Offset + Limit 不超过 5000。</li>
+                     * 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回记录条数，默认值：10。
+                     * 分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。</li>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -120,21 +120,21 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return CreatTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * @return CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
-                    std::string GetCreatTime() const;
+                    std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param CreatTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * @param CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
-                    void SetCreatTime(const std::string& _creatTime);
+                    void SetCreateTime(const std::string& _createTime);
 
                     /**
-                     * 判断参数 CreatTime 是否已赋值
-                     * @return CreatTime 是否已赋值
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
                      */
-                    bool CreatTimeHasBeenSet() const;
+                    bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未开始，该字段为空。
@@ -206,8 +206,8 @@ namespace TencentCloud
                     /**
                      * 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      */
-                    std::string m_creatTime;
-                    bool m_creatTimeHasBeenSet;
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未开始，该字段为空。

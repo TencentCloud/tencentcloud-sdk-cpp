@@ -25,7 +25,8 @@ using namespace std;
 
 DetectLabelRequest::DetectLabelRequest() :
     m_imageUrlHasBeenSet(false),
-    m_imageBase64HasBeenSet(false)
+    m_imageBase64HasBeenSet(false),
+    m_scenesHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,19 @@ string DetectLabelRequest::ToJsonString() const
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scenesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scenes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_scenes.begin(); itr != m_scenes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -90,6 +104,22 @@ void DetectLabelRequest::SetImageBase64(const string& _imageBase64)
 bool DetectLabelRequest::ImageBase64HasBeenSet() const
 {
     return m_imageBase64HasBeenSet;
+}
+
+vector<string> DetectLabelRequest::GetScenes() const
+{
+    return m_scenes;
+}
+
+void DetectLabelRequest::SetScenes(const vector<string>& _scenes)
+{
+    m_scenes = _scenes;
+    m_scenesHasBeenSet = true;
+}
+
+bool DetectLabelRequest::ScenesHasBeenSet() const
+{
+    return m_scenesHasBeenSet;
 }
 
 

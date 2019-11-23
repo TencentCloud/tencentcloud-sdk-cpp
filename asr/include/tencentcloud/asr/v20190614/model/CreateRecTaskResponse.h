@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录音文件识别的请求返回结果。
-                     * @return Data 录音文件识别的请求返回结果。
+                     * 获取录音文件识别的请求返回结果，包含结果查询需要的TaskId
+                     * @return Data 录音文件识别的请求返回结果，包含结果查询需要的TaskId
                      */
                     Task GetData() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 录音文件识别的请求返回结果。
+                     * 录音文件识别的请求返回结果，包含结果查询需要的TaskId
                      */
                     Task m_data;
                     bool m_dataHasBeenSet;

@@ -40,6 +40,49 @@ SmsClient::SmsClient(const Credential &credential, const string &region, const C
 }
 
 
+SmsClient::CallbackStatusStatisticsOutcome SmsClient::CallbackStatusStatistics(const CallbackStatusStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallbackStatusStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallbackStatusStatisticsResponse rsp = CallbackStatusStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallbackStatusStatisticsOutcome(rsp);
+        else
+            return CallbackStatusStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return CallbackStatusStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::CallbackStatusStatisticsAsync(const CallbackStatusStatisticsRequest& request, const CallbackStatusStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CallbackStatusStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::CallbackStatusStatisticsOutcomeCallable SmsClient::CallbackStatusStatisticsCallable(const CallbackStatusStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CallbackStatusStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->CallbackStatusStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SmsClient::PullSmsReplyStatusOutcome SmsClient::PullSmsReplyStatus(const PullSmsReplyStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "PullSmsReplyStatus");
@@ -248,6 +291,92 @@ SmsClient::SendSmsOutcomeCallable SmsClient::SendSmsCallable(const SendSmsReques
         [this, request]()
         {
             return this->SendSms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::SendStatusStatisticsOutcome SmsClient::SendStatusStatistics(const SendStatusStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendStatusStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendStatusStatisticsResponse rsp = SendStatusStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendStatusStatisticsOutcome(rsp);
+        else
+            return SendStatusStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return SendStatusStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::SendStatusStatisticsAsync(const SendStatusStatisticsRequest& request, const SendStatusStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendStatusStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::SendStatusStatisticsOutcomeCallable SmsClient::SendStatusStatisticsCallable(const SendStatusStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendStatusStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->SendStatusStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::SmsPackagesStatisticsOutcome SmsClient::SmsPackagesStatistics(const SmsPackagesStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SmsPackagesStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SmsPackagesStatisticsResponse rsp = SmsPackagesStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SmsPackagesStatisticsOutcome(rsp);
+        else
+            return SmsPackagesStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return SmsPackagesStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::SmsPackagesStatisticsAsync(const SmsPackagesStatisticsRequest& request, const SmsPackagesStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SmsPackagesStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::SmsPackagesStatisticsOutcomeCallable SmsClient::SmsPackagesStatisticsCallable(const SmsPackagesStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SmsPackagesStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->SmsPackagesStatistics(request);
         }
     );
 

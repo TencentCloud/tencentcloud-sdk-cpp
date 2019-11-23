@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ListenerNameHasBeenSet() const;
 
                     /**
-                     * 获取监听器后端转发源站协议类型
-                     * @return ForwardProtocol 监听器后端转发源站协议类型
+                     * 获取监听器后端转发与源站之间的协议类型
+                     * @return ForwardProtocol 监听器后端转发与源站之间的协议类型
                      */
                     std::string GetForwardProtocol() const;
 
                     /**
-                     * 设置监听器后端转发源站协议类型
-                     * @param ForwardProtocol 监听器后端转发源站协议类型
+                     * 设置监听器后端转发与源站之间的协议类型
+                     * @param ForwardProtocol 监听器后端转发与源站之间的协议类型
                      */
                     void SetForwardProtocol(const std::string& _forwardProtocol);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取修改后的监听器客户端证书ID
-                     * @return ClientCertificateId 修改后的监听器客户端证书ID
+                     * 获取修改后的监听器客户端证书ID，不支持多客户端证书，多客户端证书新采用PolyClientCertificateIds字段
+                     * @return ClientCertificateId 修改后的监听器客户端证书ID，不支持多客户端证书，多客户端证书新采用PolyClientCertificateIds字段
                      */
                     std::string GetClientCertificateId() const;
 
                     /**
-                     * 设置修改后的监听器客户端证书ID
-                     * @param ClientCertificateId 修改后的监听器客户端证书ID
+                     * 设置修改后的监听器客户端证书ID，不支持多客户端证书，多客户端证书新采用PolyClientCertificateIds字段
+                     * @param ClientCertificateId 修改后的监听器客户端证书ID，不支持多客户端证书，多客户端证书新采用PolyClientCertificateIds字段
                      */
                     void SetClientCertificateId(const std::string& _clientCertificateId);
 
@@ -149,6 +149,24 @@ namespace TencentCloud
                      * @return ClientCertificateId 是否已赋值
                      */
                     bool ClientCertificateIdHasBeenSet() const;
+
+                    /**
+                     * 获取新字段,修改后的监听器客户端证书ID
+                     * @return PolyClientCertificateIds 新字段,修改后的监听器客户端证书ID
+                     */
+                    std::vector<std::string> GetPolyClientCertificateIds() const;
+
+                    /**
+                     * 设置新字段,修改后的监听器客户端证书ID
+                     * @param PolyClientCertificateIds 新字段,修改后的监听器客户端证书ID
+                     */
+                    void SetPolyClientCertificateIds(const std::vector<std::string>& _polyClientCertificateIds);
+
+                    /**
+                     * 判断参数 PolyClientCertificateIds 是否已赋值
+                     * @return PolyClientCertificateIds 是否已赋值
+                     */
+                    bool PolyClientCertificateIdsHasBeenSet() const;
 
                 private:
 
@@ -171,7 +189,7 @@ namespace TencentCloud
                     bool m_listenerNameHasBeenSet;
 
                     /**
-                     * 监听器后端转发源站协议类型
+                     * 监听器后端转发与源站之间的协议类型
                      */
                     std::string m_forwardProtocol;
                     bool m_forwardProtocolHasBeenSet;
@@ -183,10 +201,16 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 修改后的监听器客户端证书ID
+                     * 修改后的监听器客户端证书ID，不支持多客户端证书，多客户端证书新采用PolyClientCertificateIds字段
                      */
                     std::string m_clientCertificateId;
                     bool m_clientCertificateIdHasBeenSet;
+
+                    /**
+                     * 新字段,修改后的监听器客户端证书ID
+                     */
+                    std::vector<std::string> m_polyClientCertificateIds;
+                    bool m_polyClientCertificateIdsHasBeenSet;
 
                 };
             }

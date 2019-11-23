@@ -28,6 +28,8 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_outputStorageHasBeenSet(false),
     m_outputDirHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
+    m_aiContentReviewTaskHasBeenSet(false),
+    m_aiRecognitionTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -75,6 +77,24 @@ string ProcessMediaRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_mediaProcessTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiContentReviewTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiContentReviewTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiContentReviewTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiRecognitionTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiRecognitionTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiRecognitionTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_taskNotifyConfigHasBeenSet)
@@ -180,6 +200,38 @@ void ProcessMediaRequest::SetMediaProcessTask(const MediaProcessTaskInput& _medi
 bool ProcessMediaRequest::MediaProcessTaskHasBeenSet() const
 {
     return m_mediaProcessTaskHasBeenSet;
+}
+
+AiContentReviewTaskInput ProcessMediaRequest::GetAiContentReviewTask() const
+{
+    return m_aiContentReviewTask;
+}
+
+void ProcessMediaRequest::SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask)
+{
+    m_aiContentReviewTask = _aiContentReviewTask;
+    m_aiContentReviewTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::AiContentReviewTaskHasBeenSet() const
+{
+    return m_aiContentReviewTaskHasBeenSet;
+}
+
+AiRecognitionTaskInput ProcessMediaRequest::GetAiRecognitionTask() const
+{
+    return m_aiRecognitionTask;
+}
+
+void ProcessMediaRequest::SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask)
+{
+    m_aiRecognitionTask = _aiRecognitionTask;
+    m_aiRecognitionTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::AiRecognitionTaskHasBeenSet() const
+{
+    return m_aiRecognitionTaskHasBeenSet;
 }
 
 TaskNotifyConfig ProcessMediaRequest::GetTaskNotifyConfig() const

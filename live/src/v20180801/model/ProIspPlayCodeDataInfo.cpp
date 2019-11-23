@@ -22,6 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 ProIspPlayCodeDataInfo::ProIspPlayCodeDataInfo() :
+    m_countryAreaNameHasBeenSet(false),
     m_provinceNameHasBeenSet(false),
     m_ispNameHasBeenSet(false),
     m_code2xxHasBeenSet(false),
@@ -35,6 +36,16 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("CountryAreaName") && !value["CountryAreaName"].IsNull())
+    {
+        if (!value["CountryAreaName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProIspPlayCodeDataInfo.CountryAreaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_countryAreaName = string(value["CountryAreaName"].GetString());
+        m_countryAreaNameHasBeenSet = true;
+    }
 
     if (value.HasMember("ProvinceName") && !value["ProvinceName"].IsNull())
     {
@@ -103,6 +114,14 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const Value &value)
 void ProIspPlayCodeDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_countryAreaNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CountryAreaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_countryAreaName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_provinceNameHasBeenSet)
     {
         Value iKey(kStringType);
@@ -153,6 +172,22 @@ void ProIspPlayCodeDataInfo::ToJsonObject(Value &value, Document::AllocatorType&
 
 }
 
+
+string ProIspPlayCodeDataInfo::GetCountryAreaName() const
+{
+    return m_countryAreaName;
+}
+
+void ProIspPlayCodeDataInfo::SetCountryAreaName(const string& _countryAreaName)
+{
+    m_countryAreaName = _countryAreaName;
+    m_countryAreaNameHasBeenSet = true;
+}
+
+bool ProIspPlayCodeDataInfo::CountryAreaNameHasBeenSet() const
+{
+    return m_countryAreaNameHasBeenSet;
+}
 
 string ProIspPlayCodeDataInfo::GetProvinceName() const
 {

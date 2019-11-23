@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cws/v20180312/model/MiniSite.h>
 
 
 namespace TencentCloud
@@ -54,6 +55,18 @@ namespace TencentCloud
                      */
                     bool NumberHasBeenSet() const;
 
+                    /**
+                     * 获取站点数组
+                     * @return Sites 站点数组
+                     */
+                    std::vector<MiniSite> GetSites() const;
+
+                    /**
+                     * 判断参数 Sites 是否已赋值
+                     * @return Sites 是否已赋值
+                     */
+                    bool SitesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +74,12 @@ namespace TencentCloud
                      */
                     uint64_t m_number;
                     bool m_numberHasBeenSet;
+
+                    /**
+                     * 站点数组
+                     */
+                    std::vector<MiniSite> m_sites;
+                    bool m_sitesHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ DescribePurgeTasksRequest::DescribePurgeTasksRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_keywordHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string DescribePurgeTasksRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void DescribePurgeTasksRequest::SetStatus(const string& _status)
 bool DescribePurgeTasksRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribePurgeTasksRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribePurgeTasksRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribePurgeTasksRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

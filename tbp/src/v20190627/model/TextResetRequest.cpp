@@ -27,7 +27,8 @@ TextResetRequest::TextResetRequest() :
     m_botIdHasBeenSet(false),
     m_botEnvHasBeenSet(false),
     m_terminalIdHasBeenSet(false),
-    m_platformTypeHasBeenSet(false)
+    m_platformTypeHasBeenSet(false),
+    m_platformIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string TextResetRequest::ToJsonString() const
         string key = "PlatformType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_platformType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_platformIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PlatformId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_platformId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void TextResetRequest::SetPlatformType(const string& _platformType)
 bool TextResetRequest::PlatformTypeHasBeenSet() const
 {
     return m_platformTypeHasBeenSet;
+}
+
+string TextResetRequest::GetPlatformId() const
+{
+    return m_platformId;
+}
+
+void TextResetRequest::SetPlatformId(const string& _platformId)
+{
+    m_platformId = _platformId;
+    m_platformIdHasBeenSet = true;
+}
+
+bool TextResetRequest::PlatformIdHasBeenSet() const
+{
+    return m_platformIdHasBeenSet;
 }
 
 

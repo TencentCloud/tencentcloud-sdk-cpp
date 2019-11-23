@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务类型，ss或者dam
-                     * @return Service 服务类型，ss或者dam
+                     * 获取服务类型，iss或者dam
+                     * @return Service 服务类型，iss或者dam
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置服务类型，ss或者dam
-                     * @param Service 服务类型，ss或者dam
+                     * 设置服务类型，iss或者dam
+                     * @param Service 服务类型，iss或者dam
                      */
                     void SetService(const std::string& _service);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务类型，ss或者dam
+                     * 服务类型，iss或者dam
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;

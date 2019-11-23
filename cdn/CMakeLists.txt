@@ -20,6 +20,8 @@ set(cdn_public_header
 
 set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/PurgePathCacheRequest.h
+  include/tencentcloud/cdn/v20180606/model/DescribeCdnDomainLogsResponse.h
+  include/tencentcloud/cdn/v20180606/model/DescribeCdnDomainLogsRequest.h
   include/tencentcloud/cdn/v20180606/model/CdnData.h
   include/tencentcloud/cdn/v20180606/model/PurgeUrlsCacheRequest.h
   include/tencentcloud/cdn/v20180606/model/ResourceData.h
@@ -30,6 +32,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpRequest.h
   include/tencentcloud/cdn/v20180606/model/PushUrlsCacheRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribePushTasksRequest.h
+  include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitResponse.h
   include/tencentcloud/cdn/v20180606/model/PurgePathCacheResponse.h
   include/tencentcloud/cdn/v20180606/model/PurgeTask.h
@@ -37,15 +40,18 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/CacheOptResult.h
   include/tencentcloud/cdn/v20180606/model/ListTopDataResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeMapInfoResponse.h
+  include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeMapInfoRequest.h
   include/tencentcloud/cdn/v20180606/model/EnableCachesResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribePayTypeRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h
+  include/tencentcloud/cdn/v20180606/model/DomainLog.h
   include/tencentcloud/cdn/v20180606/model/DescribePayTypeResponse.h
   include/tencentcloud/cdn/v20180606/model/GetDisableRecordsRequest.h
   include/tencentcloud/cdn/v20180606/model/PurgeUrlsCacheResponse.h
   include/tencentcloud/cdn/v20180606/model/ListTopDataRequest.h
   include/tencentcloud/cdn/v20180606/model/DisableCachesResponse.h
+  include/tencentcloud/cdn/v20180606/model/TrafficPackage.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeTasksResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribePushTasksResponse.h
   include/tencentcloud/cdn/v20180606/model/ResourceOriginData.h
@@ -69,6 +75,8 @@ set(cdn_public_header_model
 set(cdn_src
   src/v20180606/CdnClient.cpp
   src/v20180606/model/PurgePathCacheRequest.cpp
+  src/v20180606/model/DescribeCdnDomainLogsResponse.cpp
+  src/v20180606/model/DescribeCdnDomainLogsRequest.cpp
   src/v20180606/model/CdnData.cpp
   src/v20180606/model/PurgeUrlsCacheRequest.cpp
   src/v20180606/model/ResourceData.cpp
@@ -79,6 +87,7 @@ set(cdn_src
   src/v20180606/model/DescribeCdnIpRequest.cpp
   src/v20180606/model/PushUrlsCacheRequest.cpp
   src/v20180606/model/DescribePushTasksRequest.cpp
+  src/v20180606/model/DescribeTrafficPackagesRequest.cpp
   src/v20180606/model/DescribeIpVisitResponse.cpp
   src/v20180606/model/PurgePathCacheResponse.cpp
   src/v20180606/model/PurgeTask.cpp
@@ -86,15 +95,18 @@ set(cdn_src
   src/v20180606/model/CacheOptResult.cpp
   src/v20180606/model/ListTopDataResponse.cpp
   src/v20180606/model/DescribeMapInfoResponse.cpp
+  src/v20180606/model/DescribeTrafficPackagesResponse.cpp
   src/v20180606/model/DescribeMapInfoRequest.cpp
   src/v20180606/model/EnableCachesResponse.cpp
   src/v20180606/model/DescribePayTypeRequest.cpp
   src/v20180606/model/DescribeIpVisitRequest.cpp
+  src/v20180606/model/DomainLog.cpp
   src/v20180606/model/DescribePayTypeResponse.cpp
   src/v20180606/model/GetDisableRecordsRequest.cpp
   src/v20180606/model/PurgeUrlsCacheResponse.cpp
   src/v20180606/model/ListTopDataRequest.cpp
   src/v20180606/model/DisableCachesResponse.cpp
+  src/v20180606/model/TrafficPackage.cpp
   src/v20180606/model/DescribePurgeTasksResponse.cpp
   src/v20180606/model/DescribePushTasksResponse.cpp
   src/v20180606/model/ResourceOriginData.cpp

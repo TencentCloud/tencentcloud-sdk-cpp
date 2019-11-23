@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Coord.h>
+#include <tencentcloud/ocr/v20181119/model/ItemCoord.h>
 
 
 namespace TencentCloud
@@ -102,17 +103,17 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
+                     * 获取原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Polygon 文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
+                     * @return Polygon 原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
-                     * 设置文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
+                     * 设置原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Polygon 文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
+                     * @param Polygon 原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPolygon(const std::vector<Coord>& _polygon);
@@ -141,6 +142,86 @@ namespace TencentCloud
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @return ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord GetItemCoord() const;
+
+                    /**
+                     * 设置文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @param ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    void SetItemCoord(const ItemCoord& _itemCoord);
+
+                    /**
+                     * 判断参数 ItemCoord 是否已赋值
+                     * @return ItemCoord 是否已赋值
+                     */
+                    bool ItemCoordHasBeenSet() const;
+
+                    /**
+                     * 获取算式题型编号：
+‘1’: 加减乘除四则
+‘2’: 加减乘除已知结果求运算因子
+‘3’: 判断大小
+‘4’: 约等于估算
+‘5’: 带余数除法
+‘6’: 分数四则运算
+‘7’: 单位换算
+‘8’: 竖式加减法
+‘9’: 竖式乘除法
+‘10’: 脱式计算
+‘11’: 解方程
+                     * @return ExpressionType 算式题型编号：
+‘1’: 加减乘除四则
+‘2’: 加减乘除已知结果求运算因子
+‘3’: 判断大小
+‘4’: 约等于估算
+‘5’: 带余数除法
+‘6’: 分数四则运算
+‘7’: 单位换算
+‘8’: 竖式加减法
+‘9’: 竖式乘除法
+‘10’: 脱式计算
+‘11’: 解方程
+                     */
+                    std::string GetExpressionType() const;
+
+                    /**
+                     * 设置算式题型编号：
+‘1’: 加减乘除四则
+‘2’: 加减乘除已知结果求运算因子
+‘3’: 判断大小
+‘4’: 约等于估算
+‘5’: 带余数除法
+‘6’: 分数四则运算
+‘7’: 单位换算
+‘8’: 竖式加减法
+‘9’: 竖式乘除法
+‘10’: 脱式计算
+‘11’: 解方程
+                     * @param ExpressionType 算式题型编号：
+‘1’: 加减乘除四则
+‘2’: 加减乘除已知结果求运算因子
+‘3’: 判断大小
+‘4’: 约等于估算
+‘5’: 带余数除法
+‘6’: 分数四则运算
+‘7’: 单位换算
+‘8’: 竖式加减法
+‘9’: 竖式乘除法
+‘10’: 脱式计算
+‘11’: 解方程
+                     */
+                    void SetExpressionType(const std::string& _expressionType);
+
+                    /**
+                     * 判断参数 ExpressionType 是否已赋值
+                     * @return ExpressionType 是否已赋值
+                     */
+                    bool ExpressionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -162,7 +243,7 @@ namespace TencentCloud
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
+                     * 原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_polygon;
@@ -173,6 +254,29 @@ namespace TencentCloud
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord m_itemCoord;
+                    bool m_itemCoordHasBeenSet;
+
+                    /**
+                     * 算式题型编号：
+‘1’: 加减乘除四则
+‘2’: 加减乘除已知结果求运算因子
+‘3’: 判断大小
+‘4’: 约等于估算
+‘5’: 带余数除法
+‘6’: 分数四则运算
+‘7’: 单位换算
+‘8’: 竖式加减法
+‘9’: 竖式乘除法
+‘10’: 脱式计算
+‘11’: 解方程
+                     */
+                    std::string m_expressionType;
+                    bool m_expressionTypeHasBeenSet;
 
                 };
             }

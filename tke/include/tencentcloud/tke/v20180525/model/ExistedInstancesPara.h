@@ -122,14 +122,14 @@ namespace TencentCloud
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
-                     * 获取实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
-                     * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
+                     * 获取实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
-                     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
+                     * 设置实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
@@ -138,6 +138,24 @@ namespace TencentCloud
                      * @return SecurityGroupIds 是否已赋值
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取重装系统时，可以指定修改实例的HostName。
+                     * @return HostName 重装系统时，可以指定修改实例的HostName。
+                     */
+                    std::string GetHostName() const;
+
+                    /**
+                     * 设置重装系统时，可以指定修改实例的HostName。
+                     * @param HostName 重装系统时，可以指定修改实例的HostName。
+                     */
+                    void SetHostName(const std::string& _hostName);
+
+                    /**
+                     * 判断参数 HostName 是否已赋值
+                     * @return HostName 是否已赋值
+                     */
+                    bool HostNameHasBeenSet() const;
 
                 private:
 
@@ -166,10 +184,16 @@ namespace TencentCloud
                     bool m_loginSettingsHasBeenSet;
 
                     /**
-                     * 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）
+                     * 实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 重装系统时，可以指定修改实例的HostName。
+                     */
+                    std::string m_hostName;
+                    bool m_hostNameHasBeenSet;
 
                 };
             }

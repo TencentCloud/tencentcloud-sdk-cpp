@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云用户appid。
-                     * @return Appid 云用户appid。
-                     */
-                    uint64_t GetAppid() const;
-
-                    /**
-                     * 设置云用户appid。
-                     * @param Appid 云用户appid。
-                     */
-                    void SetAppid(const uint64_t& _appid);
-
-                    /**
-                     * 判断参数 Appid 是否已赋值
-                     * @return Appid 是否已赋值
-                     */
-                    bool AppidHasBeenSet() const;
-
-                    /**
                      * 获取监控任务ID。
                      * @return Id 监控任务ID。
                      */
@@ -298,13 +280,43 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取云用户appid。
+                     * @return Appid 云用户appid。
+                     */
+                    uint64_t GetAppid() const;
 
                     /**
-                     * 云用户appid。
+                     * 设置云用户appid。
+                     * @param Appid 云用户appid。
                      */
-                    uint64_t m_appid;
-                    bool m_appidHasBeenSet;
+                    void SetAppid(const uint64_t& _appid);
+
+                    /**
+                     * 判断参数 Appid 是否已赋值
+                     * @return Appid 是否已赋值
+                     */
+                    bool AppidHasBeenSet() const;
+
+                    /**
+                     * 获取扫描状态：0-待检测；1-检测完成
+                     * @return ContentScanStatus 扫描状态：0-待检测；1-检测完成
+                     */
+                    uint64_t GetContentScanStatus() const;
+
+                    /**
+                     * 设置扫描状态：0-待检测；1-检测完成
+                     * @param ContentScanStatus 扫描状态：0-待检测；1-检测完成
+                     */
+                    void SetContentScanStatus(const uint64_t& _contentScanStatus);
+
+                    /**
+                     * 判断参数 ContentScanStatus 是否已赋值
+                     * @return ContentScanStatus 是否已赋值
+                     */
+                    bool ContentScanStatusHasBeenSet() const;
+
+                private:
 
                     /**
                      * 监控任务ID。
@@ -383,6 +395,18 @@ namespace TencentCloud
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * 云用户appid。
+                     */
+                    uint64_t m_appid;
+                    bool m_appidHasBeenSet;
+
+                    /**
+                     * 扫描状态：0-待检测；1-检测完成
+                     */
+                    uint64_t m_contentScanStatus;
+                    bool m_contentScanStatusHasBeenSet;
 
                 };
             }

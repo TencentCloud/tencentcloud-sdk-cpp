@@ -33,7 +33,8 @@ HTTPSListener::HTTPSListener() :
     m_certificateAliasHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_clientCertificateAliasHasBeenSet(false)
+    m_clientCertificateAliasHasBeenSet(false),
+    m_polyClientCertificateAliasInfoHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,26 @@ CoreInternalOutcome HTTPSListener::Deserialize(const Value &value)
         m_clientCertificateAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("PolyClientCertificateAliasInfo") && !value["PolyClientCertificateAliasInfo"].IsNull())
+    {
+        if (!value["PolyClientCertificateAliasInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `HTTPSListener.PolyClientCertificateAliasInfo` is not array type"));
+
+        const Value &tmpValue = value["PolyClientCertificateAliasInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CertificateAliasInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_polyClientCertificateAliasInfo.push_back(item);
+        }
+        m_polyClientCertificateAliasInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +284,21 @@ void HTTPSListener::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ClientCertificateAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_clientCertificateAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polyClientCertificateAliasInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolyClientCertificateAliasInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_polyClientCertificateAliasInfo.begin(); itr != m_polyClientCertificateAliasInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -458,5 +494,21 @@ void HTTPSListener::SetClientCertificateAlias(const string& _clientCertificateAl
 bool HTTPSListener::ClientCertificateAliasHasBeenSet() const
 {
     return m_clientCertificateAliasHasBeenSet;
+}
+
+vector<CertificateAliasInfo> HTTPSListener::GetPolyClientCertificateAliasInfo() const
+{
+    return m_polyClientCertificateAliasInfo;
+}
+
+void HTTPSListener::SetPolyClientCertificateAliasInfo(const vector<CertificateAliasInfo>& _polyClientCertificateAliasInfo)
+{
+    m_polyClientCertificateAliasInfo = _polyClientCertificateAliasInfo;
+    m_polyClientCertificateAliasInfoHasBeenSet = true;
+}
+
+bool HTTPSListener::PolyClientCertificateAliasInfoHasBeenSet() const
+{
+    return m_polyClientCertificateAliasInfoHasBeenSet;
 }
 

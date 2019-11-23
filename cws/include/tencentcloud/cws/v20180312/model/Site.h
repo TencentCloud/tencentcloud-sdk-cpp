@@ -47,186 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扫描进度，百分比整数
-                     * @return Progress 扫描进度，百分比整数
-                     */
-                    uint64_t GetProgress() const;
-
-                    /**
-                     * 设置扫描进度，百分比整数
-                     * @param Progress 扫描进度，百分比整数
-                     */
-                    void SetProgress(const uint64_t& _progress);
-
-                    /**
-                     * 判断参数 Progress 是否已赋值
-                     * @return Progress 是否已赋值
-                     */
-                    bool ProgressHasBeenSet() const;
-
-                    /**
-                     * 获取云用户appid。
-                     * @return Appid 云用户appid。
-                     */
-                    uint64_t GetAppid() const;
-
-                    /**
-                     * 设置云用户appid。
-                     * @param Appid 云用户appid。
-                     */
-                    void SetAppid(const uint64_t& _appid);
-
-                    /**
-                     * 判断参数 Appid 是否已赋值
-                     * @return Appid 是否已赋值
-                     */
-                    bool AppidHasBeenSet() const;
-
-                    /**
-                     * 获取云用户标识。
-                     * @return Uin 云用户标识。
-                     */
-                    std::string GetUin() const;
-
-                    /**
-                     * 设置云用户标识。
-                     * @param Uin 云用户标识。
-                     */
-                    void SetUin(const std::string& _uin);
-
-                    /**
-                     * 判断参数 Uin 是否已赋值
-                     * @return Uin 是否已赋值
-                     */
-                    bool UinHasBeenSet() const;
-
-                    /**
-                     * 获取网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
-                     * @return NeedLogin 网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
-                     */
-                    int64_t GetNeedLogin() const;
-
-                    /**
-                     * 设置网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
-                     * @param NeedLogin 网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
-                     */
-                    void SetNeedLogin(const int64_t& _needLogin);
-
-                    /**
-                     * 判断参数 NeedLogin 是否已赋值
-                     * @return NeedLogin 是否已赋值
-                     */
-                    bool NeedLoginHasBeenSet() const;
-
-                    /**
-                     * 获取登录后的cookie。
-                     * @return LoginCookie 登录后的cookie。
-                     */
-                    std::string GetLoginCookie() const;
-
-                    /**
-                     * 设置登录后的cookie。
-                     * @param LoginCookie 登录后的cookie。
-                     */
-                    void SetLoginCookie(const std::string& _loginCookie);
-
-                    /**
-                     * 判断参数 LoginCookie 是否已赋值
-                     * @return LoginCookie 是否已赋值
-                     */
-                    bool LoginCookieHasBeenSet() const;
-
-                    /**
-                     * 获取登录后的cookie是否有效：0-无效；1-有效。
-                     * @return LoginCookieValid 登录后的cookie是否有效：0-无效；1-有效。
-                     */
-                    uint64_t GetLoginCookieValid() const;
-
-                    /**
-                     * 设置登录后的cookie是否有效：0-无效；1-有效。
-                     * @param LoginCookieValid 登录后的cookie是否有效：0-无效；1-有效。
-                     */
-                    void SetLoginCookieValid(const uint64_t& _loginCookieValid);
-
-                    /**
-                     * 判断参数 LoginCookieValid 是否已赋值
-                     * @return LoginCookieValid 是否已赋值
-                     */
-                    bool LoginCookieValidHasBeenSet() const;
-
-                    /**
-                     * 获取用于测试cookie是否有效的URL。
-                     * @return LoginCheckUrl 用于测试cookie是否有效的URL。
-                     */
-                    std::string GetLoginCheckUrl() const;
-
-                    /**
-                     * 设置用于测试cookie是否有效的URL。
-                     * @param LoginCheckUrl 用于测试cookie是否有效的URL。
-                     */
-                    void SetLoginCheckUrl(const std::string& _loginCheckUrl);
-
-                    /**
-                     * 判断参数 LoginCheckUrl 是否已赋值
-                     * @return LoginCheckUrl 是否已赋值
-                     */
-                    bool LoginCheckUrlHasBeenSet() const;
-
-                    /**
-                     * 获取用于测试cookie是否有效的关键字。
-                     * @return LoginCheckKw 用于测试cookie是否有效的关键字。
-                     */
-                    std::string GetLoginCheckKw() const;
-
-                    /**
-                     * 设置用于测试cookie是否有效的关键字。
-                     * @param LoginCheckKw 用于测试cookie是否有效的关键字。
-                     */
-                    void SetLoginCheckKw(const std::string& _loginCheckKw);
-
-                    /**
-                     * 判断参数 LoginCheckKw 是否已赋值
-                     * @return LoginCheckKw 是否已赋值
-                     */
-                    bool LoginCheckKwHasBeenSet() const;
-
-                    /**
-                     * 获取禁止扫描器扫描的目录关键字。
-                     * @return ScanDisallow 禁止扫描器扫描的目录关键字。
-                     */
-                    std::string GetScanDisallow() const;
-
-                    /**
-                     * 设置禁止扫描器扫描的目录关键字。
-                     * @param ScanDisallow 禁止扫描器扫描的目录关键字。
-                     */
-                    void SetScanDisallow(const std::string& _scanDisallow);
-
-                    /**
-                     * 判断参数 ScanDisallow 是否已赋值
-                     * @return ScanDisallow 是否已赋值
-                     */
-                    bool ScanDisallowHasBeenSet() const;
-
-                    /**
-                     * 获取访问网站的客户端标识。
-                     * @return UserAgent 访问网站的客户端标识。
-                     */
-                    std::string GetUserAgent() const;
-
-                    /**
-                     * 设置访问网站的客户端标识。
-                     * @param UserAgent 访问网站的客户端标识。
-                     */
-                    void SetUserAgent(const std::string& _userAgent);
-
-                    /**
-                     * 判断参数 UserAgent 是否已赋值
-                     * @return UserAgent 是否已赋值
-                     */
-                    bool UserAgentHasBeenSet() const;
-
-                    /**
                      * 获取站点ID。
                      * @return Id 站点ID。
                      */
@@ -622,67 +442,223 @@ namespace TencentCloud
                      */
                     bool LastScanNoticeNumHasBeenSet() const;
 
+                    /**
+                     * 获取扫描进度，百分比整数
+                     * @return Progress 扫描进度，百分比整数
+                     */
+                    uint64_t GetProgress() const;
+
+                    /**
+                     * 设置扫描进度，百分比整数
+                     * @param Progress 扫描进度，百分比整数
+                     */
+                    void SetProgress(const uint64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
+                     * 获取云用户appid。
+                     * @return Appid 云用户appid。
+                     */
+                    uint64_t GetAppid() const;
+
+                    /**
+                     * 设置云用户appid。
+                     * @param Appid 云用户appid。
+                     */
+                    void SetAppid(const uint64_t& _appid);
+
+                    /**
+                     * 判断参数 Appid 是否已赋值
+                     * @return Appid 是否已赋值
+                     */
+                    bool AppidHasBeenSet() const;
+
+                    /**
+                     * 获取云用户标识。
+                     * @return Uin 云用户标识。
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置云用户标识。
+                     * @param Uin 云用户标识。
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
+                     * @return NeedLogin 网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
+                     */
+                    int64_t GetNeedLogin() const;
+
+                    /**
+                     * 设置网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
+                     * @param NeedLogin 网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
+                     */
+                    void SetNeedLogin(const int64_t& _needLogin);
+
+                    /**
+                     * 判断参数 NeedLogin 是否已赋值
+                     * @return NeedLogin 是否已赋值
+                     */
+                    bool NeedLoginHasBeenSet() const;
+
+                    /**
+                     * 获取登录后的cookie。
+                     * @return LoginCookie 登录后的cookie。
+                     */
+                    std::string GetLoginCookie() const;
+
+                    /**
+                     * 设置登录后的cookie。
+                     * @param LoginCookie 登录后的cookie。
+                     */
+                    void SetLoginCookie(const std::string& _loginCookie);
+
+                    /**
+                     * 判断参数 LoginCookie 是否已赋值
+                     * @return LoginCookie 是否已赋值
+                     */
+                    bool LoginCookieHasBeenSet() const;
+
+                    /**
+                     * 获取登录后的cookie是否有效：0-无效；1-有效。
+                     * @return LoginCookieValid 登录后的cookie是否有效：0-无效；1-有效。
+                     */
+                    uint64_t GetLoginCookieValid() const;
+
+                    /**
+                     * 设置登录后的cookie是否有效：0-无效；1-有效。
+                     * @param LoginCookieValid 登录后的cookie是否有效：0-无效；1-有效。
+                     */
+                    void SetLoginCookieValid(const uint64_t& _loginCookieValid);
+
+                    /**
+                     * 判断参数 LoginCookieValid 是否已赋值
+                     * @return LoginCookieValid 是否已赋值
+                     */
+                    bool LoginCookieValidHasBeenSet() const;
+
+                    /**
+                     * 获取用于测试cookie是否有效的URL。
+                     * @return LoginCheckUrl 用于测试cookie是否有效的URL。
+                     */
+                    std::string GetLoginCheckUrl() const;
+
+                    /**
+                     * 设置用于测试cookie是否有效的URL。
+                     * @param LoginCheckUrl 用于测试cookie是否有效的URL。
+                     */
+                    void SetLoginCheckUrl(const std::string& _loginCheckUrl);
+
+                    /**
+                     * 判断参数 LoginCheckUrl 是否已赋值
+                     * @return LoginCheckUrl 是否已赋值
+                     */
+                    bool LoginCheckUrlHasBeenSet() const;
+
+                    /**
+                     * 获取用于测试cookie是否有效的关键字。
+                     * @return LoginCheckKw 用于测试cookie是否有效的关键字。
+                     */
+                    std::string GetLoginCheckKw() const;
+
+                    /**
+                     * 设置用于测试cookie是否有效的关键字。
+                     * @param LoginCheckKw 用于测试cookie是否有效的关键字。
+                     */
+                    void SetLoginCheckKw(const std::string& _loginCheckKw);
+
+                    /**
+                     * 判断参数 LoginCheckKw 是否已赋值
+                     * @return LoginCheckKw 是否已赋值
+                     */
+                    bool LoginCheckKwHasBeenSet() const;
+
+                    /**
+                     * 获取禁止扫描器扫描的目录关键字。
+                     * @return ScanDisallow 禁止扫描器扫描的目录关键字。
+                     */
+                    std::string GetScanDisallow() const;
+
+                    /**
+                     * 设置禁止扫描器扫描的目录关键字。
+                     * @param ScanDisallow 禁止扫描器扫描的目录关键字。
+                     */
+                    void SetScanDisallow(const std::string& _scanDisallow);
+
+                    /**
+                     * 判断参数 ScanDisallow 是否已赋值
+                     * @return ScanDisallow 是否已赋值
+                     */
+                    bool ScanDisallowHasBeenSet() const;
+
+                    /**
+                     * 获取访问网站的客户端标识。
+                     * @return UserAgent 访问网站的客户端标识。
+                     */
+                    std::string GetUserAgent() const;
+
+                    /**
+                     * 设置访问网站的客户端标识。
+                     * @param UserAgent 访问网站的客户端标识。
+                     */
+                    void SetUserAgent(const std::string& _userAgent);
+
+                    /**
+                     * 判断参数 UserAgent 是否已赋值
+                     * @return UserAgent 是否已赋值
+                     */
+                    bool UserAgentHasBeenSet() const;
+
+                    /**
+                     * 获取内容检测状态：0-未检测；1-已检测；
+                     * @return ContentStatus 内容检测状态：0-未检测；1-已检测；
+                     */
+                    uint64_t GetContentStatus() const;
+
+                    /**
+                     * 设置内容检测状态：0-未检测；1-已检测；
+                     * @param ContentStatus 内容检测状态：0-未检测；1-已检测；
+                     */
+                    void SetContentStatus(const uint64_t& _contentStatus);
+
+                    /**
+                     * 判断参数 ContentStatus 是否已赋值
+                     * @return ContentStatus 是否已赋值
+                     */
+                    bool ContentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取最近一次扫描内容检测数量
+                     * @return LastScanContentNum 最近一次扫描内容检测数量
+                     */
+                    uint64_t GetLastScanContentNum() const;
+
+                    /**
+                     * 设置最近一次扫描内容检测数量
+                     * @param LastScanContentNum 最近一次扫描内容检测数量
+                     */
+                    void SetLastScanContentNum(const uint64_t& _lastScanContentNum);
+
+                    /**
+                     * 判断参数 LastScanContentNum 是否已赋值
+                     * @return LastScanContentNum 是否已赋值
+                     */
+                    bool LastScanContentNumHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 扫描进度，百分比整数
-                     */
-                    uint64_t m_progress;
-                    bool m_progressHasBeenSet;
-
-                    /**
-                     * 云用户appid。
-                     */
-                    uint64_t m_appid;
-                    bool m_appidHasBeenSet;
-
-                    /**
-                     * 云用户标识。
-                     */
-                    std::string m_uin;
-                    bool m_uinHasBeenSet;
-
-                    /**
-                     * 网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
-                     */
-                    int64_t m_needLogin;
-                    bool m_needLoginHasBeenSet;
-
-                    /**
-                     * 登录后的cookie。
-                     */
-                    std::string m_loginCookie;
-                    bool m_loginCookieHasBeenSet;
-
-                    /**
-                     * 登录后的cookie是否有效：0-无效；1-有效。
-                     */
-                    uint64_t m_loginCookieValid;
-                    bool m_loginCookieValidHasBeenSet;
-
-                    /**
-                     * 用于测试cookie是否有效的URL。
-                     */
-                    std::string m_loginCheckUrl;
-                    bool m_loginCheckUrlHasBeenSet;
-
-                    /**
-                     * 用于测试cookie是否有效的关键字。
-                     */
-                    std::string m_loginCheckKw;
-                    bool m_loginCheckKwHasBeenSet;
-
-                    /**
-                     * 禁止扫描器扫描的目录关键字。
-                     */
-                    std::string m_scanDisallow;
-                    bool m_scanDisallowHasBeenSet;
-
-                    /**
-                     * 访问网站的客户端标识。
-                     */
-                    std::string m_userAgent;
-                    bool m_userAgentHasBeenSet;
 
                     /**
                      * 站点ID。
@@ -815,6 +791,78 @@ namespace TencentCloud
                      */
                     uint64_t m_lastScanNoticeNum;
                     bool m_lastScanNoticeNumHasBeenSet;
+
+                    /**
+                     * 扫描进度，百分比整数
+                     */
+                    uint64_t m_progress;
+                    bool m_progressHasBeenSet;
+
+                    /**
+                     * 云用户appid。
+                     */
+                    uint64_t m_appid;
+                    bool m_appidHasBeenSet;
+
+                    /**
+                     * 云用户标识。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * 网站是否需要登录扫描：0-未知；-1-不需要；1-需要。
+                     */
+                    int64_t m_needLogin;
+                    bool m_needLoginHasBeenSet;
+
+                    /**
+                     * 登录后的cookie。
+                     */
+                    std::string m_loginCookie;
+                    bool m_loginCookieHasBeenSet;
+
+                    /**
+                     * 登录后的cookie是否有效：0-无效；1-有效。
+                     */
+                    uint64_t m_loginCookieValid;
+                    bool m_loginCookieValidHasBeenSet;
+
+                    /**
+                     * 用于测试cookie是否有效的URL。
+                     */
+                    std::string m_loginCheckUrl;
+                    bool m_loginCheckUrlHasBeenSet;
+
+                    /**
+                     * 用于测试cookie是否有效的关键字。
+                     */
+                    std::string m_loginCheckKw;
+                    bool m_loginCheckKwHasBeenSet;
+
+                    /**
+                     * 禁止扫描器扫描的目录关键字。
+                     */
+                    std::string m_scanDisallow;
+                    bool m_scanDisallowHasBeenSet;
+
+                    /**
+                     * 访问网站的客户端标识。
+                     */
+                    std::string m_userAgent;
+                    bool m_userAgentHasBeenSet;
+
+                    /**
+                     * 内容检测状态：0-未检测；1-已检测；
+                     */
+                    uint64_t m_contentStatus;
+                    bool m_contentStatusHasBeenSet;
+
+                    /**
+                     * 最近一次扫描内容检测数量
+                     */
+                    uint64_t m_lastScanContentNum;
+                    bool m_lastScanContentNumHasBeenSet;
 
                 };
             }

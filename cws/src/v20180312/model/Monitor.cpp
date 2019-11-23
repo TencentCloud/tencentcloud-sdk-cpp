@@ -22,7 +22,6 @@ using namespace rapidjson;
 using namespace std;
 
 Monitor::Monitor() :
-    m_appidHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_monitorStatusHasBeenSet(false),
@@ -35,7 +34,9 @@ Monitor::Monitor() :
     m_lastScanFinishTimeHasBeenSet(false),
     m_currentScanStartTimeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_appidHasBeenSet(false),
+    m_contentScanStatusHasBeenSet(false)
 {
 }
 
@@ -43,16 +44,6 @@ CoreInternalOutcome Monitor::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Appid") && !value["Appid"].IsNull())
-    {
-        if (!value["Appid"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `Monitor.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appid = value["Appid"].GetUint64();
-        m_appidHasBeenSet = true;
-    }
 
     if (value.HasMember("Id") && !value["Id"].IsNull())
     {
@@ -184,20 +175,32 @@ CoreInternalOutcome Monitor::Deserialize(const Value &value)
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("Appid") && !value["Appid"].IsNull())
+    {
+        if (!value["Appid"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Monitor.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appid = value["Appid"].GetUint64();
+        m_appidHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContentScanStatus") && !value["ContentScanStatus"].IsNull())
+    {
+        if (!value["ContentScanStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Monitor.ContentScanStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentScanStatus = value["ContentScanStatus"].GetUint64();
+        m_contentScanStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Monitor::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_appidHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Appid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appid, allocator);
-    }
 
     if (m_idHasBeenSet)
     {
@@ -303,24 +306,24 @@ void Monitor::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_appidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Appid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appid, allocator);
+    }
+
+    if (m_contentScanStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ContentScanStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_contentScanStatus, allocator);
+    }
+
 }
 
-
-uint64_t Monitor::GetAppid() const
-{
-    return m_appid;
-}
-
-void Monitor::SetAppid(const uint64_t& _appid)
-{
-    m_appid = _appid;
-    m_appidHasBeenSet = true;
-}
-
-bool Monitor::AppidHasBeenSet() const
-{
-    return m_appidHasBeenSet;
-}
 
 uint64_t Monitor::GetId() const
 {
@@ -528,5 +531,37 @@ void Monitor::SetUpdatedAt(const string& _updatedAt)
 bool Monitor::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+uint64_t Monitor::GetAppid() const
+{
+    return m_appid;
+}
+
+void Monitor::SetAppid(const uint64_t& _appid)
+{
+    m_appid = _appid;
+    m_appidHasBeenSet = true;
+}
+
+bool Monitor::AppidHasBeenSet() const
+{
+    return m_appidHasBeenSet;
+}
+
+uint64_t Monitor::GetContentScanStatus() const
+{
+    return m_contentScanStatus;
+}
+
+void Monitor::SetContentScanStatus(const uint64_t& _contentScanStatus)
+{
+    m_contentScanStatus = _contentScanStatus;
+    m_contentScanStatusHasBeenSet = true;
+}
+
+bool Monitor::ContentScanStatusHasBeenSet() const
+{
+    return m_contentScanStatusHasBeenSet;
 }
 

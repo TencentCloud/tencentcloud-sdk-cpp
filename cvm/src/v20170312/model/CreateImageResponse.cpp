@@ -24,7 +24,8 @@ using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateImageResponse::CreateImageResponse()
+CreateImageResponse::CreateImageResponse() :
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,29 @@ CoreInternalOutcome CreateImageResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ImageId") && !rsp["ImageId"].IsNull())
+    {
+        if (!rsp["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(rsp["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string CreateImageResponse::GetImageId() const
+{
+    return m_imageId;
+}
+
+bool CreateImageResponse::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
+}
 
 

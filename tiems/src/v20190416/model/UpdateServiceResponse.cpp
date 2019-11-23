@@ -85,7 +85,7 @@ CoreInternalOutcome UpdateServiceResponse::Deserialize(const string &payload)
 }
 
 
-Service UpdateServiceResponse::GetService() const
+ModelService UpdateServiceResponse::GetService() const
 {
     return m_service;
 }

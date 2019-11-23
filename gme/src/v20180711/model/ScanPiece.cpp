@@ -28,7 +28,9 @@ ScanPiece::ScanPiece() :
     m_scanDetailHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_openIdHasBeenSet(false),
-    m_infoHasBeenSet(false)
+    m_infoHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_durationHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome ScanPiece::Deserialize(const Value &value)
         m_infoHasBeenSet = true;
     }
 
+    if (value.HasMember("Offset") && !value["Offset"].IsNull())
+    {
+        if (!value["Offset"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ScanPiece.Offset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = value["Offset"].GetUint64();
+        m_offsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ScanPiece.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetUint64();
+        m_durationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,6 +207,22 @@ void ScanPiece::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Info";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_info.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
     }
 
 }
@@ -300,5 +338,37 @@ void ScanPiece::SetInfo(const string& _info)
 bool ScanPiece::InfoHasBeenSet() const
 {
     return m_infoHasBeenSet;
+}
+
+uint64_t ScanPiece::GetOffset() const
+{
+    return m_offset;
+}
+
+void ScanPiece::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ScanPiece::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t ScanPiece::GetDuration() const
+{
+    return m_duration;
+}
+
+void ScanPiece::SetDuration(const uint64_t& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool ScanPiece::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
 }
 

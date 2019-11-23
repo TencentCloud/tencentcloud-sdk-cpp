@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
-                     * @return LifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
+                     * 获取生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字节。
+                     * @return LifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字节。
                      */
                     std::string GetLifecycleHookName() const;
 
                     /**
-                     * 设置生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
-                     * @param LifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
+                     * 设置生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字节。
+                     * @param LifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字节。
                      */
                     void SetLifecycleHookName(const std::string& _lifecycleHookName);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool LifecycleHookNameHasBeenSet() const;
 
                     /**
-                     * 获取进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-                     * @return LifecycleTransition 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+                     * 获取进行生命周期挂钩的场景，取值范围包括 INSTANCE_LAUNCHING 和 INSTANCE_TERMINATING
+                     * @return LifecycleTransition 进行生命周期挂钩的场景，取值范围包括 INSTANCE_LAUNCHING 和 INSTANCE_TERMINATING
                      */
                     std::string GetLifecycleTransition() const;
 
                     /**
-                     * 设置进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-                     * @param LifecycleTransition 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+                     * 设置进行生命周期挂钩的场景，取值范围包括 INSTANCE_LAUNCHING 和 INSTANCE_TERMINATING
+                     * @param LifecycleTransition 进行生命周期挂钩的场景，取值范围包括 INSTANCE_LAUNCHING 和 INSTANCE_TERMINATING
                      */
                     void SetLifecycleTransition(const std::string& _lifecycleTransition);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool LifecycleTransitionHasBeenSet() const;
 
                     /**
-                     * 获取定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
-                     * @return DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+                     * 获取定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是 CONTINUE 或 ABANDON，默认值为 CONTINUE
+                     * @return DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是 CONTINUE 或 ABANDON，默认值为 CONTINUE
                      */
                     std::string GetDefaultResult() const;
 
                     /**
-                     * 设置定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
-                     * @param DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+                     * 设置定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是 CONTINUE 或 ABANDON，默认值为 CONTINUE
+                     * @param DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是 CONTINUE 或 ABANDON，默认值为 CONTINUE
                      */
                     void SetDefaultResult(const std::string& _defaultResult);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool HeartbeatTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
-                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
+                     * 获取弹性伸缩向通知目标发送的附加信息，默认值为空字符串“”。最大长度不能超过1024个字节。
+                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为空字符串“”。最大长度不能超过1024个字节。
                      */
                     std::string GetNotificationMetadata() const;
 
                     /**
-                     * 设置弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
-                     * @param NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
+                     * 设置弹性伸缩向通知目标发送的附加信息，默认值为空字符串“”。最大长度不能超过1024个字节。
+                     * @param NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为空字符串“”。最大长度不能超过1024个字节。
                      */
                     void SetNotificationMetadata(const std::string& _notificationMetadata);
 
@@ -178,19 +178,19 @@ namespace TencentCloud
                     bool m_autoScalingGroupIdHasBeenSet;
 
                     /**
-                     * 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
+                     * 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字节。
                      */
                     std::string m_lifecycleHookName;
                     bool m_lifecycleHookNameHasBeenSet;
 
                     /**
-                     * 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+                     * 进行生命周期挂钩的场景，取值范围包括 INSTANCE_LAUNCHING 和 INSTANCE_TERMINATING
                      */
                     std::string m_lifecycleTransition;
                     bool m_lifecycleTransitionHasBeenSet;
 
                     /**
-                     * 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+                     * 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是 CONTINUE 或 ABANDON，默认值为 CONTINUE
                      */
                     std::string m_defaultResult;
                     bool m_defaultResultHasBeenSet;
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_heartbeatTimeoutHasBeenSet;
 
                     /**
-                     * 弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
+                     * 弹性伸缩向通知目标发送的附加信息，默认值为空字符串“”。最大长度不能超过1024个字节。
                      */
                     std::string m_notificationMetadata;
                     bool m_notificationMetadataHasBeenSet;

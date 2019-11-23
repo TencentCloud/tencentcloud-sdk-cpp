@@ -72,7 +72,7 @@ CoreInternalOutcome DescribeServicesResponse::Deserialize(const string &payload)
         const Value &tmpValue = rsp["Services"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Service item;
+            ModelService item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -99,7 +99,7 @@ CoreInternalOutcome DescribeServicesResponse::Deserialize(const string &payload)
 }
 
 
-vector<Service> DescribeServicesResponse::GetServices() const
+vector<ModelService> DescribeServicesResponse::GetServices() const
 {
     return m_services;
 }

@@ -25,7 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 DetectLiveFaceResponse::DetectLiveFaceResponse() :
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_faceModelVersionHasBeenSet(false),
+    m_isLivenessHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome DetectLiveFaceResponse::Deserialize(const string &payload)
         m_scoreHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FaceModelVersion") && !rsp["FaceModelVersion"].IsNull())
+    {
+        if (!rsp["FaceModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FaceModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_faceModelVersion = string(rsp["FaceModelVersion"].GetString());
+        m_faceModelVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsLiveness") && !rsp["IsLiveness"].IsNull())
+    {
+        if (!rsp["IsLiveness"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `IsLiveness` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLiveness = rsp["IsLiveness"].GetBool();
+        m_isLivenessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +108,26 @@ double DetectLiveFaceResponse::GetScore() const
 bool DetectLiveFaceResponse::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+string DetectLiveFaceResponse::GetFaceModelVersion() const
+{
+    return m_faceModelVersion;
+}
+
+bool DetectLiveFaceResponse::FaceModelVersionHasBeenSet() const
+{
+    return m_faceModelVersionHasBeenSet;
+}
+
+bool DetectLiveFaceResponse::GetIsLiveness() const
+{
+    return m_isLiveness;
+}
+
+bool DetectLiveFaceResponse::IsLivenessHasBeenSet() const
+{
+    return m_isLivenessHasBeenSet;
 }
 
 

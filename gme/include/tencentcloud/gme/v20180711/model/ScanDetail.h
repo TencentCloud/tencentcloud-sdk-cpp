@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取违规场景，参照Label定义
-                     * @return Label 违规场景，参照Label定义
+                     * 获取违规场景，参照<a href="https://cloud.tencent.com/document/product/607/37622#Label_Value">Label</a>定义
+                     * @return Label 违规场景，参照<a href="https://cloud.tencent.com/document/product/607/37622#Label_Value">Label</a>定义
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置违规场景，参照Label定义
-                     * @param Label 违规场景，参照Label定义
+                     * 设置违规场景，参照<a href="https://cloud.tencent.com/document/product/607/37622#Label_Value">Label</a>定义
+                     * @param Label 违规场景，参照<a href="https://cloud.tencent.com/document/product/607/37622#Label_Value">Label</a>定义
                      */
                     void SetLabel(const std::string& _label);
 
@@ -139,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 违规场景，参照Label定义
+                     * 违规场景，参照<a href="https://cloud.tencent.com/document/product/607/37622#Label_Value">Label</a>定义
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
