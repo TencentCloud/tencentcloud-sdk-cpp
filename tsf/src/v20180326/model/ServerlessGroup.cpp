@@ -34,7 +34,12 @@ ServerlessGroup::ServerlessGroup() :
     m_namespaceNameHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_pkgVersionHasBeenSet(false)
+    m_pkgVersionHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_instanceRequestHasBeenSet(false),
+    m_startupParametersHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_instanceCountHasBeenSet(false)
 {
 }
 
@@ -173,6 +178,56 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const Value &value)
         m_pkgVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Memory") && !value["Memory"].IsNull())
+    {
+        if (!value["Memory"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ServerlessGroup.Memory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memory = string(value["Memory"].GetString());
+        m_memoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceRequest") && !value["InstanceRequest"].IsNull())
+    {
+        if (!value["InstanceRequest"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ServerlessGroup.InstanceRequest` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceRequest = value["InstanceRequest"].GetUint64();
+        m_instanceRequestHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartupParameters") && !value["StartupParameters"].IsNull())
+    {
+        if (!value["StartupParameters"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ServerlessGroup.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startupParameters = string(value["StartupParameters"].GetString());
+        m_startupParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ServerlessGroup.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceCount") && !value["InstanceCount"].IsNull())
+    {
+        if (!value["InstanceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ServerlessGroup.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceCount = value["InstanceCount"].GetUint64();
+        m_instanceCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +337,46 @@ void ServerlessGroup::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "PkgVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_pkgVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memoryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Memory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_memory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceRequest";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceRequest, allocator);
+    }
+
+    if (m_startupParametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartupParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startupParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceCount, allocator);
     }
 
 }
@@ -493,5 +588,85 @@ void ServerlessGroup::SetPkgVersion(const string& _pkgVersion)
 bool ServerlessGroup::PkgVersionHasBeenSet() const
 {
     return m_pkgVersionHasBeenSet;
+}
+
+string ServerlessGroup::GetMemory() const
+{
+    return m_memory;
+}
+
+void ServerlessGroup::SetMemory(const string& _memory)
+{
+    m_memory = _memory;
+    m_memoryHasBeenSet = true;
+}
+
+bool ServerlessGroup::MemoryHasBeenSet() const
+{
+    return m_memoryHasBeenSet;
+}
+
+uint64_t ServerlessGroup::GetInstanceRequest() const
+{
+    return m_instanceRequest;
+}
+
+void ServerlessGroup::SetInstanceRequest(const uint64_t& _instanceRequest)
+{
+    m_instanceRequest = _instanceRequest;
+    m_instanceRequestHasBeenSet = true;
+}
+
+bool ServerlessGroup::InstanceRequestHasBeenSet() const
+{
+    return m_instanceRequestHasBeenSet;
+}
+
+string ServerlessGroup::GetStartupParameters() const
+{
+    return m_startupParameters;
+}
+
+void ServerlessGroup::SetStartupParameters(const string& _startupParameters)
+{
+    m_startupParameters = _startupParameters;
+    m_startupParametersHasBeenSet = true;
+}
+
+bool ServerlessGroup::StartupParametersHasBeenSet() const
+{
+    return m_startupParametersHasBeenSet;
+}
+
+string ServerlessGroup::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void ServerlessGroup::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool ServerlessGroup::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
+}
+
+uint64_t ServerlessGroup::GetInstanceCount() const
+{
+    return m_instanceCount;
+}
+
+void ServerlessGroup::SetInstanceCount(const uint64_t& _instanceCount)
+{
+    m_instanceCount = _instanceCount;
+    m_instanceCountHasBeenSet = true;
+}
+
+bool ServerlessGroup::InstanceCountHasBeenSet() const
+{
+    return m_instanceCountHasBeenSet;
 }
 

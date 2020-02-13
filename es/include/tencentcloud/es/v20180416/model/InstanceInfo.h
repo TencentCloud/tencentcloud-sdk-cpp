@@ -29,6 +29,8 @@
 #include <tencentcloud/es/v20180416/model/MasterNodeInfo.h>
 #include <tencentcloud/es/v20180416/model/CosBackup.h>
 #include <tencentcloud/es/v20180416/model/TagInfo.h>
+#include <tencentcloud/es/v20180416/model/NodeInfo.h>
+#include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 
 
 namespace TencentCloud
@@ -484,14 +486,14 @@ namespace TencentCloud
                     bool EsConfigHasBeenSet() const;
 
                     /**
-                     * 获取ES访问控制配置
-                     * @return EsAcl ES访问控制配置
+                     * 获取Kibana访问控制配置
+                     * @return EsAcl Kibana访问控制配置
                      */
                     EsAcl GetEsAcl() const;
 
                     /**
-                     * 设置ES访问控制配置
-                     * @param EsAcl ES访问控制配置
+                     * 设置Kibana访问控制配置
+                     * @param EsAcl Kibana访问控制配置
                      */
                     void SetEsAcl(const EsAcl& _esAcl);
 
@@ -681,6 +683,376 @@ namespace TencentCloud
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableHotWarmMode 是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableHotWarmMode() const;
+
+                    /**
+                     * 设置是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableHotWarmMode 是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableHotWarmMode(const bool& _enableHotWarmMode);
+
+                    /**
+                     * 判断参数 EnableHotWarmMode 是否已赋值
+                     * @return EnableHotWarmMode 是否已赋值
+                     */
+                    bool EnableHotWarmModeHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWarmNodeType() const;
+
+                    /**
+                     * 设置冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmNodeType(const std::string& _warmNodeType);
+
+                    /**
+                     * 判断参数 WarmNodeType 是否已赋值
+                     * @return WarmNodeType 是否已赋值
+                     */
+                    bool WarmNodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmNodeNum 冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWarmNodeNum() const;
+
+                    /**
+                     * 设置冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmNodeNum 冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmNodeNum(const uint64_t& _warmNodeNum);
+
+                    /**
+                     * 判断参数 WarmNodeNum 是否已赋值
+                     * @return WarmNodeNum 是否已赋值
+                     */
+                    bool WarmNodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmCpuNum 冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWarmCpuNum() const;
+
+                    /**
+                     * 设置冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmCpuNum 冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmCpuNum(const uint64_t& _warmCpuNum);
+
+                    /**
+                     * 判断参数 WarmCpuNum 是否已赋值
+                     * @return WarmCpuNum 是否已赋值
+                     */
+                    bool WarmCpuNumHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点内存内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmMemSize 冷节点内存内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWarmMemSize() const;
+
+                    /**
+                     * 设置冷节点内存内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmMemSize 冷节点内存内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmMemSize(const uint64_t& _warmMemSize);
+
+                    /**
+                     * 判断参数 WarmMemSize 是否已赋值
+                     * @return WarmMemSize 是否已赋值
+                     */
+                    bool WarmMemSizeHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmDiskType 冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWarmDiskType() const;
+
+                    /**
+                     * 设置冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmDiskType 冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmDiskType(const std::string& _warmDiskType);
+
+                    /**
+                     * 判断参数 WarmDiskType 是否已赋值
+                     * @return WarmDiskType 是否已赋值
+                     */
+                    bool WarmDiskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmDiskSize 冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWarmDiskSize() const;
+
+                    /**
+                     * 设置冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmDiskSize 冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmDiskSize(const uint64_t& _warmDiskSize);
+
+                    /**
+                     * 判断参数 WarmDiskSize 是否已赋值
+                     * @return WarmDiskSize 是否已赋值
+                     */
+                    bool WarmDiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取集群节点信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeInfoList 集群节点信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NodeInfo> GetNodeInfoList() const;
+
+                    /**
+                     * 设置集群节点信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeInfoList 集群节点信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeInfoList(const std::vector<NodeInfo>& _nodeInfoList);
+
+                    /**
+                     * 判断参数 NodeInfoList 是否已赋值
+                     * @return NodeInfoList 是否已赋值
+                     */
+                    bool NodeInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取Es公网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsPublicUrl Es公网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEsPublicUrl() const;
+
+                    /**
+                     * 设置Es公网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EsPublicUrl Es公网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEsPublicUrl(const std::string& _esPublicUrl);
+
+                    /**
+                     * 判断参数 EsPublicUrl 是否已赋值
+                     * @return EsPublicUrl 是否已赋值
+                     */
+                    bool EsPublicUrlHasBeenSet() const;
+
+                    /**
+                     * 获取多可用区网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MultiZoneInfo 多可用区网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ZoneDetail> GetMultiZoneInfo() const;
+
+                    /**
+                     * 设置多可用区网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MultiZoneInfo 多可用区网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMultiZoneInfo(const std::vector<ZoneDetail>& _multiZoneInfo);
+
+                    /**
+                     * 判断参数 MultiZoneInfo 是否已赋值
+                     * @return MultiZoneInfo 是否已赋值
+                     */
+                    bool MultiZoneInfoHasBeenSet() const;
+
+                    /**
+                     * 获取部署模式<li>0：单可用区</li><li>1：多可用区</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployMode 部署模式<li>0：单可用区</li><li>1：多可用区</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDeployMode() const;
+
+                    /**
+                     * 设置部署模式<li>0：单可用区</li><li>1：多可用区</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployMode 部署模式<li>0：单可用区</li><li>1：多可用区</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployMode(const uint64_t& _deployMode);
+
+                    /**
+                     * 判断参数 DeployMode 是否已赋值
+                     * @return DeployMode 是否已赋值
+                     */
+                    bool DeployModeHasBeenSet() const;
+
+                    /**
+                     * 获取ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicAccess() const;
+
+                    /**
+                     * 设置ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicAccess(const std::string& _publicAccess);
+
+                    /**
+                     * 判断参数 PublicAccess 是否已赋值
+                     * @return PublicAccess 是否已赋值
+                     */
+                    bool PublicAccessHasBeenSet() const;
+
+                    /**
+                     * 获取ES公网访问控制配置
+                     * @return EsPublicAcl ES公网访问控制配置
+                     */
+                    EsAcl GetEsPublicAcl() const;
+
+                    /**
+                     * 设置ES公网访问控制配置
+                     * @param EsPublicAcl ES公网访问控制配置
+                     */
+                    void SetEsPublicAcl(const EsAcl& _esPublicAcl);
+
+                    /**
+                     * 判断参数 EsPublicAcl 是否已赋值
+                     * @return EsPublicAcl 是否已赋值
+                     */
+                    bool EsPublicAclHasBeenSet() const;
+
+                    /**
+                     * 获取Kibana内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaPrivateUrl Kibana内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKibanaPrivateUrl() const;
+
+                    /**
+                     * 设置Kibana内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KibanaPrivateUrl Kibana内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKibanaPrivateUrl(const std::string& _kibanaPrivateUrl);
+
+                    /**
+                     * 判断参数 KibanaPrivateUrl 是否已赋值
+                     * @return KibanaPrivateUrl 是否已赋值
+                     */
+                    bool KibanaPrivateUrlHasBeenSet() const;
+
+                    /**
+                     * 获取Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKibanaPublicAccess() const;
+
+                    /**
+                     * 设置Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKibanaPublicAccess(const std::string& _kibanaPublicAccess);
+
+                    /**
+                     * 判断参数 KibanaPublicAccess 是否已赋值
+                     * @return KibanaPublicAccess 是否已赋值
+                     */
+                    bool KibanaPublicAccessHasBeenSet() const;
+
+                    /**
+                     * 获取Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKibanaPrivateAccess() const;
+
+                    /**
+                     * 设置Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKibanaPrivateAccess(const std::string& _kibanaPrivateAccess);
+
+                    /**
+                     * 判断参数 KibanaPrivateAccess 是否已赋值
+                     * @return KibanaPrivateAccess 是否已赋值
+                     */
+                    bool KibanaPrivateAccessHasBeenSet() const;
+
+                    /**
+                     * 获取6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSecurityType() const;
+
+                    /**
+                     * 设置6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityType(const uint64_t& _securityType);
+
+                    /**
+                     * 判断参数 SecurityType 是否已赋值
+                     * @return SecurityType 是否已赋值
+                     */
+                    bool SecurityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -828,7 +1200,7 @@ namespace TencentCloud
                     bool m_esConfigHasBeenSet;
 
                     /**
-                     * ES访问控制配置
+                     * Kibana访问控制配置
                      */
                     EsAcl m_esAcl;
                     bool m_esAclHasBeenSet;
@@ -892,6 +1264,124 @@ namespace TencentCloud
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * 是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableHotWarmMode;
+                    bool m_enableHotWarmModeHasBeenSet;
+
+                    /**
+                     * 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_warmNodeType;
+                    bool m_warmNodeTypeHasBeenSet;
+
+                    /**
+                     * 冷节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_warmNodeNum;
+                    bool m_warmNodeNumHasBeenSet;
+
+                    /**
+                     * 冷节点CPU核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_warmCpuNum;
+                    bool m_warmCpuNumHasBeenSet;
+
+                    /**
+                     * 冷节点内存内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_warmMemSize;
+                    bool m_warmMemSizeHasBeenSet;
+
+                    /**
+                     * 冷节点磁盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_warmDiskType;
+                    bool m_warmDiskTypeHasBeenSet;
+
+                    /**
+                     * 冷节点磁盘大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_warmDiskSize;
+                    bool m_warmDiskSizeHasBeenSet;
+
+                    /**
+                     * 集群节点信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NodeInfo> m_nodeInfoList;
+                    bool m_nodeInfoListHasBeenSet;
+
+                    /**
+                     * Es公网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esPublicUrl;
+                    bool m_esPublicUrlHasBeenSet;
+
+                    /**
+                     * 多可用区网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ZoneDetail> m_multiZoneInfo;
+                    bool m_multiZoneInfoHasBeenSet;
+
+                    /**
+                     * 部署模式<li>0：单可用区</li><li>1：多可用区</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_deployMode;
+                    bool m_deployModeHasBeenSet;
+
+                    /**
+                     * ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicAccess;
+                    bool m_publicAccessHasBeenSet;
+
+                    /**
+                     * ES公网访问控制配置
+                     */
+                    EsAcl m_esPublicAcl;
+                    bool m_esPublicAclHasBeenSet;
+
+                    /**
+                     * Kibana内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kibanaPrivateUrl;
+                    bool m_kibanaPrivateUrlHasBeenSet;
+
+                    /**
+                     * Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kibanaPublicAccess;
+                    bool m_kibanaPublicAccessHasBeenSet;
+
+                    /**
+                     * Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kibanaPrivateAccess;
+                    bool m_kibanaPrivateAccessHasBeenSet;
+
+                    /**
+                     * 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_securityType;
+                    bool m_securityTypeHasBeenSet;
 
                 };
             }

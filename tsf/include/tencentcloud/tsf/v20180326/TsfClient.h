@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tsf/v20180326/model/AddClusterInstancesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/AddClusterInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/AddInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/AddInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateApplicationRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeployContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeployGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeployServerlessGroupRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeployServerlessGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeRequest.h>
@@ -179,6 +183,9 @@ namespace TencentCloud
                 TsfClient(const Credential &credential, const std::string &region);
                 TsfClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AddClusterInstancesResponse> AddClusterInstancesOutcome;
+                typedef std::future<AddClusterInstancesOutcome> AddClusterInstancesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::AddClusterInstancesRequest&, AddClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddClusterInstancesAsyncHandler;
                 typedef Outcome<Error, Model::AddInstancesResponse> AddInstancesOutcome;
                 typedef std::future<AddInstancesOutcome> AddInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::AddInstancesRequest&, AddInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddInstancesAsyncHandler;
@@ -245,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeployGroupResponse> DeployGroupOutcome;
                 typedef std::future<DeployGroupOutcome> DeployGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeployGroupRequest&, DeployGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployGroupAsyncHandler;
+                typedef Outcome<Error, Model::DeployServerlessGroupResponse> DeployServerlessGroupOutcome;
+                typedef std::future<DeployServerlessGroupOutcome> DeployServerlessGroupOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeployServerlessGroupRequest&, DeployServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployServerlessGroupAsyncHandler;
                 typedef Outcome<Error, Model::DescribeApplicationResponse> DescribeApplicationOutcome;
                 typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeApplicationRequest&, DescribeApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationAsyncHandler;
@@ -394,6 +404,15 @@ namespace TencentCloud
                 typedef std::function<void(const TsfClient*, const Model::StopGroupRequest&, StopGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGroupAsyncHandler;
 
 
+
+                /**
+                 *添加云主机节点至TSF集群
+                 * @param req AddClusterInstancesRequest
+                 * @return AddClusterInstancesOutcome
+                 */
+                AddClusterInstancesOutcome AddClusterInstances(const Model::AddClusterInstancesRequest &request);
+                void AddClusterInstancesAsync(const Model::AddClusterInstancesRequest& request, const AddClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddClusterInstancesOutcomeCallable AddClusterInstancesCallable(const Model::AddClusterInstancesRequest& request);
 
                 /**
                  *添加云主机节点至TSF集群
@@ -593,6 +612,15 @@ namespace TencentCloud
                 DeployGroupOutcome DeployGroup(const Model::DeployGroupRequest &request);
                 void DeployGroupAsync(const Model::DeployGroupRequest& request, const DeployGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeployGroupOutcomeCallable DeployGroupCallable(const Model::DeployGroupRequest& request);
+
+                /**
+                 *部署Serverless应用
+                 * @param req DeployServerlessGroupRequest
+                 * @return DeployServerlessGroupOutcome
+                 */
+                DeployServerlessGroupOutcome DeployServerlessGroup(const Model::DeployServerlessGroupRequest &request);
+                void DeployServerlessGroupAsync(const Model::DeployServerlessGroupRequest& request, const DeployServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployServerlessGroupOutcomeCallable DeployServerlessGroupCallable(const Model::DeployServerlessGroupRequest& request);
 
                 /**
                  *获取应用详情

@@ -143,14 +143,14 @@ namespace TencentCloud
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
-                     * 获取文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
-                     * @return ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * 获取文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @return ItemCoord 文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
                      */
                     ItemCoord GetItemCoord() const;
 
                     /**
-                     * 设置文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
-                     * @param ItemCoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * 设置文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @param ItemCoord 文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
                      */
                     void SetItemCoord(const ItemCoord& _itemCoord);
 
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_advancedInfoHasBeenSet;
 
                     /**
-                     * 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * 文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
                      */
                     ItemCoord m_itemCoord;
                     bool m_itemCoordHasBeenSet;

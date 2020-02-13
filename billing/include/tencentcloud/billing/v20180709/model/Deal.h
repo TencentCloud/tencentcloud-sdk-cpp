@@ -335,6 +335,46 @@ namespace TencentCloud
                      */
                     bool TotalCostHasBeenSet() const;
 
+                    /**
+                     * 获取产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCode 产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductCode 产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取子产品编码
+                     * @return SubProductCode 子产品编码
+                     */
+                    std::string GetSubProductCode() const;
+
+                    /**
+                     * 设置子产品编码
+                     * @param SubProductCode 子产品编码
+                     */
+                    void SetSubProductCode(const std::string& _subProductCode);
+
+                    /**
+                     * 判断参数 SubProductCode 是否已赋值
+                     * @return SubProductCode 是否已赋值
+                     */
+                    bool SubProductCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +472,19 @@ namespace TencentCloud
                      */
                     double m_totalCost;
                     bool m_totalCostHasBeenSet;
+
+                    /**
+                     * 产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 子产品编码
+                     */
+                    std::string m_subProductCode;
+                    bool m_subProductCodeHasBeenSet;
 
                 };
             }

@@ -23,10 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/trtc/v20190722/model/DissolveRoomRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DissolveRoomResponse.h>
-#include <tencentcloud/trtc/v20190722/model/KickOutUserRequest.h>
-#include <tencentcloud/trtc/v20190722/model/KickOutUserResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DismissRoomRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
+#include <tencentcloud/trtc/v20190722/model/RemoveUserRequest.h>
+#include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
 
 
 namespace TencentCloud
@@ -41,32 +41,32 @@ namespace TencentCloud
                 TrtcClient(const Credential &credential, const std::string &region);
                 TrtcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DissolveRoomResponse> DissolveRoomOutcome;
-                typedef std::future<DissolveRoomOutcome> DissolveRoomOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DissolveRoomRequest&, DissolveRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DissolveRoomAsyncHandler;
-                typedef Outcome<Error, Model::KickOutUserResponse> KickOutUserOutcome;
-                typedef std::future<KickOutUserOutcome> KickOutUserOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::KickOutUserRequest&, KickOutUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KickOutUserAsyncHandler;
+                typedef Outcome<Error, Model::DismissRoomResponse> DismissRoomOutcome;
+                typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
+                typedef Outcome<Error, Model::RemoveUserResponse> RemoveUserOutcome;
+                typedef std::future<RemoveUserOutcome> RemoveUserOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::RemoveUserRequest&, RemoveUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserAsyncHandler;
 
 
 
                 /**
-                 *接口说明：把房间所有用户从房间踢出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
-                 * @param req DissolveRoomRequest
-                 * @return DissolveRoomOutcome
+                 *接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
+                 * @param req DismissRoomRequest
+                 * @return DismissRoomOutcome
                  */
-                DissolveRoomOutcome DissolveRoom(const Model::DissolveRoomRequest &request);
-                void DissolveRoomAsync(const Model::DissolveRoomRequest& request, const DissolveRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DissolveRoomOutcomeCallable DissolveRoomCallable(const Model::DissolveRoomRequest& request);
+                DismissRoomOutcome DismissRoom(const Model::DismissRoomRequest &request);
+                void DismissRoomAsync(const Model::DismissRoomRequest& request, const DismissRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DismissRoomOutcomeCallable DismissRoomCallable(const Model::DismissRoomRequest& request);
 
                 /**
-                 *接口说明：将用户从房间踢出。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
-                 * @param req KickOutUserRequest
-                 * @return KickOutUserOutcome
+                 *接口说明：将用户从房间移出，适用于主播/房主/管理员踢人等场景。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
+                 * @param req RemoveUserRequest
+                 * @return RemoveUserOutcome
                  */
-                KickOutUserOutcome KickOutUser(const Model::KickOutUserRequest &request);
-                void KickOutUserAsync(const Model::KickOutUserRequest& request, const KickOutUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                KickOutUserOutcomeCallable KickOutUserCallable(const Model::KickOutUserRequest& request);
+                RemoveUserOutcome RemoveUser(const Model::RemoveUserRequest &request);
+                void RemoveUserAsync(const Model::RemoveUserRequest& request, const RemoveUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveUserOutcomeCallable RemoveUserCallable(const Model::RemoveUserRequest& request);
 
             };
         }

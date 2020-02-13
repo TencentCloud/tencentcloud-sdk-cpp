@@ -138,21 +138,21 @@ namespace TencentCloud
 
                     /**
                      * 获取证书类型。
-0：腾讯云托管证书
-1：用户添加证书。
+0：用户添加证书，
+1：腾讯云托管证书。
                      * @return CertType 证书类型。
-0：腾讯云托管证书
-1：用户添加证书。
+0：用户添加证书，
+1：腾讯云托管证书。
                      */
                     int64_t GetCertType() const;
 
                     /**
                      * 设置证书类型。
-0：腾讯云托管证书
-1：用户添加证书。
+0：用户添加证书，
+1：腾讯云托管证书。
                      * @param CertType 证书类型。
-0：腾讯云托管证书
-1：用户添加证书。
+0：用户添加证书，
+1：腾讯云托管证书。
                      */
                     void SetCertType(const int64_t& _certType);
 
@@ -250,8 +250,8 @@ namespace TencentCloud
 
                     /**
                      * 证书类型。
-0：腾讯云托管证书
-1：用户添加证书。
+0：用户添加证书，
+1：腾讯云托管证书。
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;

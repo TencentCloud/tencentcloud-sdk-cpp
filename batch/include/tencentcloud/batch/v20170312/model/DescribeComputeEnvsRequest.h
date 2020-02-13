@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算环境ID
-                     * @return EnvIds 计算环境ID
+                     * 获取计算环境ID列表，与Filters参数不能同时指定。
+                     * @return EnvIds 计算环境ID列表，与Filters参数不能同时指定。
                      */
                     std::vector<std::string> GetEnvIds() const;
 
                     /**
-                     * 设置计算环境ID
-                     * @param EnvIds 计算环境ID
+                     * 设置计算环境ID列表，与Filters参数不能同时指定。
+                     * @param EnvIds 计算环境ID列表，与Filters参数不能同时指定。
                      */
                     void SetEnvIds(const std::vector<std::string>& _envIds);
 
@@ -66,10 +66,14 @@ namespace TencentCloud
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
+<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
+与EnvIds参数不能同时指定。
                      * @return Filters 过滤条件
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
+<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
+与EnvIds参数不能同时指定。
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -78,10 +82,14 @@ namespace TencentCloud
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
+<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
+与EnvIds参数不能同时指定。
                      * @param Filters 过滤条件
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
+<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
+与EnvIds参数不能同时指定。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -130,7 +138,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算环境ID
+                     * 计算环境ID列表，与Filters参数不能同时指定。
                      */
                     std::vector<std::string> m_envIds;
                     bool m_envIdsHasBeenSet;
@@ -140,6 +148,8 @@ namespace TencentCloud
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
 <li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>
 <li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>
+<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>
+与EnvIds参数不能同时指定。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

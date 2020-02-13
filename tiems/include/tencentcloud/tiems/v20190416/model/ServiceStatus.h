@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiems/v20190416/model/Conditions.h>
+#include <tencentcloud/tiems/v20190416/model/ReplicaInfo.h>
 
 
 namespace TencentCloud
@@ -167,6 +168,28 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取副本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplicaInfos 副本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ReplicaInfo> GetReplicaInfos() const;
+
+                    /**
+                     * 设置副本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReplicaInfos 副本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReplicaInfos(const std::vector<ReplicaInfo>& _replicaInfos);
+
+                    /**
+                     * 判断参数 ReplicaInfos 是否已赋值
+                     * @return ReplicaInfos 是否已赋值
+                     */
+                    bool ReplicaInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +230,13 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 副本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ReplicaInfo> m_replicaInfos;
+                    bool m_replicaInfosHasBeenSet;
 
                 };
             }

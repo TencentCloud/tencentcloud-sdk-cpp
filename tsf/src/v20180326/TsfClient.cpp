@@ -40,6 +40,49 @@ TsfClient::TsfClient(const Credential &credential, const string &region, const C
 }
 
 
+TsfClient::AddClusterInstancesOutcome TsfClient::AddClusterInstances(const AddClusterInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddClusterInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddClusterInstancesResponse rsp = AddClusterInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddClusterInstancesOutcome(rsp);
+        else
+            return AddClusterInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return AddClusterInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::AddClusterInstancesAsync(const AddClusterInstancesRequest& request, const AddClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddClusterInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::AddClusterInstancesOutcomeCallable TsfClient::AddClusterInstancesCallable(const AddClusterInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddClusterInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->AddClusterInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::AddInstancesOutcome TsfClient::AddInstances(const AddInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddInstances");
@@ -979,6 +1022,49 @@ TsfClient::DeployGroupOutcomeCallable TsfClient::DeployGroupCallable(const Deplo
         [this, request]()
         {
             return this->DeployGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeployServerlessGroupOutcome TsfClient::DeployServerlessGroup(const DeployServerlessGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployServerlessGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployServerlessGroupResponse rsp = DeployServerlessGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployServerlessGroupOutcome(rsp);
+        else
+            return DeployServerlessGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployServerlessGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeployServerlessGroupAsync(const DeployServerlessGroupRequest& request, const DeployServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployServerlessGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeployServerlessGroupOutcomeCallable TsfClient::DeployServerlessGroupCallable(const DeployServerlessGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployServerlessGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployServerlessGroup(request);
         }
     );
 

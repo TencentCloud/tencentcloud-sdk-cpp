@@ -29,7 +29,8 @@ DomainErrorPageInfo::DomainErrorPageInfo() :
     m_newErrorNoHasBeenSet(false),
     m_clearHeadersHasBeenSet(false),
     m_setHeadersHasBeenSet(false),
-    m_bodyHasBeenSet(false)
+    m_bodyHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const Value &value)
         m_bodyHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DomainErrorPageInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +231,14 @@ void DomainErrorPageInfo::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "Body";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_body.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -351,5 +370,21 @@ void DomainErrorPageInfo::SetBody(const string& _body)
 bool DomainErrorPageInfo::BodyHasBeenSet() const
 {
     return m_bodyHasBeenSet;
+}
+
+int64_t DomainErrorPageInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void DomainErrorPageInfo::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DomainErrorPageInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

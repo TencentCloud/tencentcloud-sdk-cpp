@@ -43,18 +43,32 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最大上限
-注：目前固定设置为0
-                     * @return Limit 最大上限
-注：目前固定设置为0
+                     * 获取短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * @return SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     */
+                    std::string GetSmsSdkAppid() const;
+
+                    /**
+                     * 设置短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * @param SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     */
+                    void SetSmsSdkAppid(const std::string& _smsSdkAppid);
+
+                    /**
+                     * 判断参数 SmsSdkAppid 是否已赋值
+                     * @return SmsSdkAppid 是否已赋值
+                     */
+                    bool SmsSdkAppidHasBeenSet() const;
+
+                    /**
+                     * 获取最大上限(需要拉取的套餐包个数)。
+                     * @return Limit 最大上限(需要拉取的套餐包个数)。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置最大上限
-注：目前固定设置为0
-                     * @param Limit 最大上限
-注：目前固定设置为0
+                     * 设置最大上限(需要拉取的套餐包个数)。
+                     * @param Limit 最大上限(需要拉取的套餐包个数)。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -65,18 +79,18 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-注：目前固定设置为0
-                     * @return Offset 偏移量
-注：目前固定设置为0
+                     * 获取偏移量。
+注：目前固定设置为0。
+                     * @return Offset 偏移量。
+注：目前固定设置为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-注：目前固定设置为0
-                     * @param Offset 偏移量
-注：目前固定设置为0
+                     * 设置偏移量。
+注：目前固定设置为0。
+                     * @param Offset 偏移量。
+注：目前固定设置为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -86,69 +100,26 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
-                    /**
-                     * 获取需要拉取的套餐包个数
-                     * @return NumberOfPullPackages 需要拉取的套餐包个数
-                     */
-                    uint64_t GetNumberOfPullPackages() const;
-
-                    /**
-                     * 设置需要拉取的套餐包个数
-                     * @param NumberOfPullPackages 需要拉取的套餐包个数
-                     */
-                    void SetNumberOfPullPackages(const uint64_t& _numberOfPullPackages);
-
-                    /**
-                     * 判断参数 NumberOfPullPackages 是否已赋值
-                     * @return NumberOfPullPackages 是否已赋值
-                     */
-                    bool NumberOfPullPackagesHasBeenSet() const;
-
-                    /**
-                     * 获取短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @return SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     */
-                    std::string GetSmsSdkAppid() const;
-
-                    /**
-                     * 设置短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @param SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     */
-                    void SetSmsSdkAppid(const std::string& _smsSdkAppid);
-
-                    /**
-                     * 判断参数 SmsSdkAppid 是否已赋值
-                     * @return SmsSdkAppid 是否已赋值
-                     */
-                    bool SmsSdkAppidHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 最大上限
-注：目前固定设置为0
+                     * 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     */
+                    std::string m_smsSdkAppid;
+                    bool m_smsSdkAppidHasBeenSet;
+
+                    /**
+                     * 最大上限(需要拉取的套餐包个数)。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
-注：目前固定设置为0
+                     * 偏移量。
+注：目前固定设置为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
-
-                    /**
-                     * 需要拉取的套餐包个数
-                     */
-                    uint64_t m_numberOfPullPackages;
-                    bool m_numberOfPullPackagesHasBeenSet;
-
-                    /**
-                     * 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     */
-                    std::string m_smsSdkAppid;
-                    bool m_smsSdkAppidHasBeenSet;
 
                 };
             }

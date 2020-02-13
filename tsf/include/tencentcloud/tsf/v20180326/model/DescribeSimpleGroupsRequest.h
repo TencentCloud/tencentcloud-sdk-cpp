@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool SearchWordHasBeenSet() const;
 
+                    /**
+                     * 获取部署组类型，精确过滤字段，M：service mesh, P：原生应用， M：网关应用
+                     * @return AppMicroServiceType 部署组类型，精确过滤字段，M：service mesh, P：原生应用， M：网关应用
+                     */
+                    std::string GetAppMicroServiceType() const;
+
+                    /**
+                     * 设置部署组类型，精确过滤字段，M：service mesh, P：原生应用， M：网关应用
+                     * @param AppMicroServiceType 部署组类型，精确过滤字段，M：service mesh, P：原生应用， M：网关应用
+                     */
+                    void SetAppMicroServiceType(const std::string& _appMicroServiceType);
+
+                    /**
+                     * 判断参数 AppMicroServiceType 是否已赋值
+                     * @return AppMicroServiceType 是否已赋值
+                     */
+                    bool AppMicroServiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
+
+                    /**
+                     * 部署组类型，精确过滤字段，M：service mesh, P：原生应用， M：网关应用
+                     */
+                    std::string m_appMicroServiceType;
+                    bool m_appMicroServiceTypeHasBeenSet;
 
                 };
             }

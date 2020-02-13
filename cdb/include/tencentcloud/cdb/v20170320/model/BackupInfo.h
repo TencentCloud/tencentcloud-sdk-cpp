@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool InternetUrlHasBeenSet() const;
 
                     /**
-                     * 获取日志具体类型，可能的值有：logic - 逻辑冷备，physical - 物理冷备
-                     * @return Type 日志具体类型，可能的值有：logic - 逻辑冷备，physical - 物理冷备
+                     * 获取日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
+                     * @return Type 日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置日志具体类型，可能的值有：logic - 逻辑冷备，physical - 物理冷备
-                     * @param Type 日志具体类型，可能的值有：logic - 逻辑冷备，physical - 物理冷备
+                     * 设置日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
+                     * @param Type 日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
                      */
                     void SetType(const std::string& _type);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份任务状态
-                     * @return Status 备份任务状态
+                     * 获取备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * @return Status 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置备份任务状态
-                     * @param Status 备份任务状态
+                     * 设置备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * @param Status 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值
-                     * @return Creator 备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值
+                     * 获取（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
+                     * @return Creator （该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值
-                     * @param Creator 备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值
+                     * 设置（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
+                     * @param Creator （该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
                      */
                     void SetCreator(const std::string& _creator);
 
@@ -225,6 +225,60 @@ namespace TencentCloud
                      * @return Creator 是否已赋值
                      */
                     bool CreatorHasBeenSet() const;
+
+                    /**
+                     * 获取备份任务的开始时间
+                     * @return StartTime 备份任务的开始时间
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置备份任务的开始时间
+                     * @param StartTime 备份任务的开始时间
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     * @return Method 备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     */
+                    std::string GetMethod() const;
+
+                    /**
+                     * 设置备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     * @param Method 备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     */
+                    void SetMethod(const std::string& _method);
+
+                    /**
+                     * 判断参数 Method 是否已赋值
+                     * @return Method 是否已赋值
+                     */
+                    bool MethodHasBeenSet() const;
+
+                    /**
+                     * 获取备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     * @return Way 备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     */
+                    std::string GetWay() const;
+
+                    /**
+                     * 设置备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     * @param Way 备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     */
+                    void SetWay(const std::string& _way);
+
+                    /**
+                     * 判断参数 Way 是否已赋值
+                     * @return Way 是否已赋值
+                     */
+                    bool WayHasBeenSet() const;
 
                 private:
 
@@ -259,7 +313,7 @@ namespace TencentCloud
                     bool m_internetUrlHasBeenSet;
 
                     /**
-                     * 日志具体类型，可能的值有：logic - 逻辑冷备，physical - 物理冷备
+                     * 日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -271,7 +325,7 @@ namespace TencentCloud
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 备份任务状态
+                     * 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -283,10 +337,28 @@ namespace TencentCloud
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值
+                     * （该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
+
+                    /**
+                     * 备份任务的开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     */
+                    std::string m_method;
+                    bool m_methodHasBeenSet;
+
+                    /**
+                     * 备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     */
+                    std::string m_way;
+                    bool m_wayHasBeenSet;
 
                 };
             }

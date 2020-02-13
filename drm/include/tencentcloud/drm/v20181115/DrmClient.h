@@ -25,10 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/drm/v20181115/model/AddFairPlayPemRequest.h>
 #include <tencentcloud/drm/v20181115/model/AddFairPlayPemResponse.h>
+#include <tencentcloud/drm/v20181115/model/CreateEncryptKeysRequest.h>
+#include <tencentcloud/drm/v20181115/model/CreateEncryptKeysResponse.h>
 #include <tencentcloud/drm/v20181115/model/CreateLicenseRequest.h>
 #include <tencentcloud/drm/v20181115/model/CreateLicenseResponse.h>
 #include <tencentcloud/drm/v20181115/model/DeleteFairPlayPemRequest.h>
 #include <tencentcloud/drm/v20181115/model/DeleteFairPlayPemResponse.h>
+#include <tencentcloud/drm/v20181115/model/DescribeAllKeysRequest.h>
+#include <tencentcloud/drm/v20181115/model/DescribeAllKeysResponse.h>
 #include <tencentcloud/drm/v20181115/model/DescribeFairPlayPemRequest.h>
 #include <tencentcloud/drm/v20181115/model/DescribeFairPlayPemResponse.h>
 #include <tencentcloud/drm/v20181115/model/DescribeKeysRequest.h>
@@ -54,12 +58,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AddFairPlayPemResponse> AddFairPlayPemOutcome;
                 typedef std::future<AddFairPlayPemOutcome> AddFairPlayPemOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::AddFairPlayPemRequest&, AddFairPlayPemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddFairPlayPemAsyncHandler;
+                typedef Outcome<Error, Model::CreateEncryptKeysResponse> CreateEncryptKeysOutcome;
+                typedef std::future<CreateEncryptKeysOutcome> CreateEncryptKeysOutcomeCallable;
+                typedef std::function<void(const DrmClient*, const Model::CreateEncryptKeysRequest&, CreateEncryptKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEncryptKeysAsyncHandler;
                 typedef Outcome<Error, Model::CreateLicenseResponse> CreateLicenseOutcome;
                 typedef std::future<CreateLicenseOutcome> CreateLicenseOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::CreateLicenseRequest&, CreateLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLicenseAsyncHandler;
                 typedef Outcome<Error, Model::DeleteFairPlayPemResponse> DeleteFairPlayPemOutcome;
                 typedef std::future<DeleteFairPlayPemOutcome> DeleteFairPlayPemOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::DeleteFairPlayPemRequest&, DeleteFairPlayPemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFairPlayPemAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAllKeysResponse> DescribeAllKeysOutcome;
+                typedef std::future<DescribeAllKeysOutcome> DescribeAllKeysOutcomeCallable;
+                typedef std::function<void(const DrmClient*, const Model::DescribeAllKeysRequest&, DescribeAllKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllKeysAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFairPlayPemResponse> DescribeFairPlayPemOutcome;
                 typedef std::future<DescribeFairPlayPemOutcome> DescribeFairPlayPemOutcomeCallable;
                 typedef std::function<void(const DrmClient*, const Model::DescribeFairPlayPemRequest&, DescribeFairPlayPemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFairPlayPemAsyncHandler;
@@ -86,6 +96,15 @@ namespace TencentCloud
                 AddFairPlayPemOutcomeCallable AddFairPlayPemCallable(const Model::AddFairPlayPemRequest& request);
 
                 /**
+                 *该接口用来设置加密的秘钥。注意，同一个content id，只能设置一次！
+                 * @param req CreateEncryptKeysRequest
+                 * @return CreateEncryptKeysOutcome
+                 */
+                CreateEncryptKeysOutcome CreateEncryptKeys(const Model::CreateEncryptKeysRequest &request);
+                void CreateEncryptKeysAsync(const Model::CreateEncryptKeysRequest& request, const CreateEncryptKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEncryptKeysOutcomeCallable CreateEncryptKeysCallable(const Model::CreateEncryptKeysRequest& request);
+
+                /**
                  *本接口用来生成DRM方案对应的播放许可证，开发者需提供DRM方案类型、内容类型参数，后台将生成许可证后返回许可证数据
 开发者需要转发终端设备发出的许可证请求信息。
                  * @param req CreateLicenseRequest
@@ -105,6 +124,16 @@ namespace TencentCloud
                 DeleteFairPlayPemOutcome DeleteFairPlayPem(const Model::DeleteFairPlayPemRequest &request);
                 void DeleteFairPlayPemAsync(const Model::DeleteFairPlayPemRequest& request, const DeleteFairPlayPemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFairPlayPemOutcomeCallable DeleteFairPlayPemCallable(const Model::DeleteFairPlayPemRequest& request);
+
+                /**
+                 *本接口用来查询指定DRM类型、ContentType的所有加密秘钥
+
+                 * @param req DescribeAllKeysRequest
+                 * @return DescribeAllKeysOutcome
+                 */
+                DescribeAllKeysOutcome DescribeAllKeys(const Model::DescribeAllKeysRequest &request);
+                void DescribeAllKeysAsync(const Model::DescribeAllKeysRequest& request, const DescribeAllKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllKeysOutcomeCallable DescribeAllKeysCallable(const Model::DescribeAllKeysRequest& request);
 
                 /**
                  *该接口用来查询设置的FairPlay私钥校验信息。可用该接口校验设置的私钥与本身的私钥是否一致。

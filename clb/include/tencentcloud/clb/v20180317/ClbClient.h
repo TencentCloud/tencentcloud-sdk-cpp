@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/clb/v20180317/model/AssociateTargetGroupsRequest.h>
+#include <tencentcloud/clb/v20180317/model/AssociateTargetGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/AutoRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/AutoRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/BatchDeregisterTargetsRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateRuleResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateTargetGroupRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateTargetGroupResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h>
@@ -45,10 +49,18 @@
 #include <tencentcloud/clb/v20180317/model/DeleteRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRuleResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteTargetGroupsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteTargetGroupsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeregisterTargetGroupInstancesRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeregisterTargetGroupInstancesResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsFromClassicalLBRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsFromClassicalLBResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBlockIPListRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBlockIPListResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBlockIPTaskRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeBlockIPTaskResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBHealthStatusRequest.h>
@@ -59,18 +71,30 @@
 #include <tencentcloud/clb/v20180317/model/DescribeClassicalLBTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupListRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupListResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetHealthRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetHealthResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTaskStatusResponse.h>
+#include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DisassociateTargetGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/ManualRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/ManualRewriteResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyBlockIPListRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyBlockIPListResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyDomainAttributesRequest.h>
@@ -81,10 +105,18 @@
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyTargetGroupAttributeResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyTargetGroupInstancesPortRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyTargetGroupInstancesPortResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyTargetGroupInstancesWeightRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyTargetGroupInstancesWeightResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetPortRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetPortResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetWeightRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetWeightResponse.h>
+#include <tencentcloud/clb/v20180317/model/RegisterTargetGroupInstancesRequest.h>
+#include <tencentcloud/clb/v20180317/model/RegisterTargetGroupInstancesResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsRequest.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBRequest.h>
@@ -109,6 +141,9 @@ namespace TencentCloud
                 ClbClient(const Credential &credential, const std::string &region);
                 ClbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AssociateTargetGroupsResponse> AssociateTargetGroupsOutcome;
+                typedef std::future<AssociateTargetGroupsOutcome> AssociateTargetGroupsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::AssociateTargetGroupsRequest&, AssociateTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateTargetGroupsAsyncHandler;
                 typedef Outcome<Error, Model::AutoRewriteResponse> AutoRewriteOutcome;
                 typedef std::future<AutoRewriteOutcome> AutoRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::AutoRewriteRequest&, AutoRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AutoRewriteAsyncHandler;
@@ -130,6 +165,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
+                typedef Outcome<Error, Model::CreateTargetGroupResponse> CreateTargetGroupOutcome;
+                typedef std::future<CreateTargetGroupOutcome> CreateTargetGroupOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateTargetGroupRequest&, CreateTargetGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTargetGroupAsyncHandler;
                 typedef Outcome<Error, Model::DeleteListenerResponse> DeleteListenerOutcome;
                 typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteListenerRequest&, DeleteListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenerAsyncHandler;
@@ -142,12 +180,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteRuleResponse> DeleteRuleOutcome;
                 typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteRuleRequest&, DeleteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleAsyncHandler;
+                typedef Outcome<Error, Model::DeleteTargetGroupsResponse> DeleteTargetGroupsOutcome;
+                typedef std::future<DeleteTargetGroupsOutcome> DeleteTargetGroupsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteTargetGroupsRequest&, DeleteTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTargetGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DeregisterTargetGroupInstancesResponse> DeregisterTargetGroupInstancesOutcome;
+                typedef std::future<DeregisterTargetGroupInstancesOutcome> DeregisterTargetGroupInstancesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeregisterTargetGroupInstancesRequest&, DeregisterTargetGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterTargetGroupInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DeregisterTargetsResponse> DeregisterTargetsOutcome;
                 typedef std::future<DeregisterTargetsOutcome> DeregisterTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeregisterTargetsRequest&, DeregisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterTargetsAsyncHandler;
                 typedef Outcome<Error, Model::DeregisterTargetsFromClassicalLBResponse> DeregisterTargetsFromClassicalLBOutcome;
                 typedef std::future<DeregisterTargetsFromClassicalLBOutcome> DeregisterTargetsFromClassicalLBOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeregisterTargetsFromClassicalLBRequest&, DeregisterTargetsFromClassicalLBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterTargetsFromClassicalLBAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBlockIPListResponse> DescribeBlockIPListOutcome;
+                typedef std::future<DescribeBlockIPListOutcome> DescribeBlockIPListOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeBlockIPListRequest&, DescribeBlockIPListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockIPListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBlockIPTaskResponse> DescribeBlockIPTaskOutcome;
+                typedef std::future<DescribeBlockIPTaskOutcome> DescribeBlockIPTaskOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeBlockIPTaskRequest&, DescribeBlockIPTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockIPTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClassicalLBByInstanceIdResponse> DescribeClassicalLBByInstanceIdOutcome;
                 typedef std::future<DescribeClassicalLBByInstanceIdOutcome> DescribeClassicalLBByInstanceIdOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeClassicalLBByInstanceIdRequest&, DescribeClassicalLBByInstanceIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicalLBByInstanceIdAsyncHandler;
@@ -163,12 +213,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
                 typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLoadBalancerListByCertIdResponse> DescribeLoadBalancerListByCertIdOutcome;
+                typedef std::future<DescribeLoadBalancerListByCertIdOutcome> DescribeLoadBalancerListByCertIdOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeLoadBalancerListByCertIdRequest&, DescribeLoadBalancerListByCertIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListByCertIdAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLoadBalancersResponse> DescribeLoadBalancersOutcome;
                 typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLoadBalancersRequest&, DescribeLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancersAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRewriteResponse> DescribeRewriteOutcome;
                 typedef std::future<DescribeRewriteOutcome> DescribeRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeRewriteRequest&, DescribeRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRewriteAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTargetGroupInstancesResponse> DescribeTargetGroupInstancesOutcome;
+                typedef std::future<DescribeTargetGroupInstancesOutcome> DescribeTargetGroupInstancesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeTargetGroupInstancesRequest&, DescribeTargetGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetGroupInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTargetGroupListResponse> DescribeTargetGroupListOutcome;
+                typedef std::future<DescribeTargetGroupListOutcome> DescribeTargetGroupListOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeTargetGroupListRequest&, DescribeTargetGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetGroupListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTargetGroupsResponse> DescribeTargetGroupsOutcome;
+                typedef std::future<DescribeTargetGroupsOutcome> DescribeTargetGroupsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeTargetGroupsRequest&, DescribeTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTargetHealthResponse> DescribeTargetHealthOutcome;
                 typedef std::future<DescribeTargetHealthOutcome> DescribeTargetHealthOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeTargetHealthRequest&, DescribeTargetHealthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetHealthAsyncHandler;
@@ -178,9 +240,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateTargetGroupsResponse> DisassociateTargetGroupsOutcome;
+                typedef std::future<DisassociateTargetGroupsOutcome> DisassociateTargetGroupsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DisassociateTargetGroupsRequest&, DisassociateTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateTargetGroupsAsyncHandler;
                 typedef Outcome<Error, Model::ManualRewriteResponse> ManualRewriteOutcome;
                 typedef std::future<ManualRewriteOutcome> ManualRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ManualRewriteRequest&, ManualRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManualRewriteAsyncHandler;
+                typedef Outcome<Error, Model::ModifyBlockIPListResponse> ModifyBlockIPListOutcome;
+                typedef std::future<ModifyBlockIPListOutcome> ModifyBlockIPListOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyBlockIPListRequest&, ModifyBlockIPListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIPListAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDomainResponse> ModifyDomainOutcome;
                 typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyDomainRequest&, ModifyDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
@@ -196,12 +264,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
                 typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTargetGroupAttributeResponse> ModifyTargetGroupAttributeOutcome;
+                typedef std::future<ModifyTargetGroupAttributeOutcome> ModifyTargetGroupAttributeOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyTargetGroupAttributeRequest&, ModifyTargetGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetGroupAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTargetGroupInstancesPortResponse> ModifyTargetGroupInstancesPortOutcome;
+                typedef std::future<ModifyTargetGroupInstancesPortOutcome> ModifyTargetGroupInstancesPortOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyTargetGroupInstancesPortRequest&, ModifyTargetGroupInstancesPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetGroupInstancesPortAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTargetGroupInstancesWeightResponse> ModifyTargetGroupInstancesWeightOutcome;
+                typedef std::future<ModifyTargetGroupInstancesWeightOutcome> ModifyTargetGroupInstancesWeightOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyTargetGroupInstancesWeightRequest&, ModifyTargetGroupInstancesWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetGroupInstancesWeightAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTargetPortResponse> ModifyTargetPortOutcome;
                 typedef std::future<ModifyTargetPortOutcome> ModifyTargetPortOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyTargetPortRequest&, ModifyTargetPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetPortAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTargetWeightResponse> ModifyTargetWeightOutcome;
                 typedef std::future<ModifyTargetWeightOutcome> ModifyTargetWeightOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyTargetWeightRequest&, ModifyTargetWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetWeightAsyncHandler;
+                typedef Outcome<Error, Model::RegisterTargetGroupInstancesResponse> RegisterTargetGroupInstancesOutcome;
+                typedef std::future<RegisterTargetGroupInstancesOutcome> RegisterTargetGroupInstancesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::RegisterTargetGroupInstancesRequest&, RegisterTargetGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterTargetGroupInstancesAsyncHandler;
                 typedef Outcome<Error, Model::RegisterTargetsResponse> RegisterTargetsOutcome;
                 typedef std::future<RegisterTargetsOutcome> RegisterTargetsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::RegisterTargetsRequest&, RegisterTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterTargetsAsyncHandler;
@@ -219,6 +299,16 @@ namespace TencentCloud
                 typedef std::function<void(const ClbClient*, const Model::SetSecurityGroupForLoadbalancersRequest&, SetSecurityGroupForLoadbalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetSecurityGroupForLoadbalancersAsyncHandler;
 
 
+
+                /**
+                 *监听器或转发规则绑定目标组。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+                 * @param req AssociateTargetGroupsRequest
+                 * @return AssociateTargetGroupsOutcome
+                 */
+                AssociateTargetGroupsOutcome AssociateTargetGroups(const Model::AssociateTargetGroupsRequest &request);
+                void AssociateTargetGroupsAsync(const Model::AssociateTargetGroupsRequest& request, const AssociateTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateTargetGroupsOutcomeCallable AssociateTargetGroupsCallable(const Model::AssociateTargetGroupsRequest& request);
 
                 /**
                  *用户需要先创建出一个HTTPS:443监听器，并在其下创建转发规则。通过调用本接口，系统会自动创建出一个HTTP:80监听器（如果之前不存在），并在其下创建转发规则，与HTTPS:443监听器下的Domains（在入参中指定）对应。创建成功后可以通过HTTP:80地址自动跳转为HTTPS:443地址进行访问。
@@ -240,8 +330,8 @@ namespace TencentCloud
                 BatchDeregisterTargetsOutcomeCallable BatchDeregisterTargetsCallable(const Model::BatchDeregisterTargetsRequest& request);
 
                 /**
-                 *BatchModifyTargetWeight接口用于批量修改负载均衡监听器绑定的后端机器的转发权重，支持负载均衡的4层和7层监听器；不支持传统型负载均衡。
-本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
+                 *本接口(BatchModifyTargetWeight)用于批量修改负载均衡监听器绑定的后端机器的转发权重，支持负载均衡的4层和7层监听器；不支持传统型负载均衡。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req BatchModifyTargetWeightRequest
                  * @return BatchModifyTargetWeightOutcome
                  */
@@ -250,7 +340,7 @@ namespace TencentCloud
                 BatchModifyTargetWeightOutcomeCallable BatchModifyTargetWeightCallable(const Model::BatchModifyTargetWeightRequest& request);
 
                 /**
-                 *批量绑定虚拟主机或弹性网卡，支持跨域绑定，只支持四层（TCP、UDP）协议绑定。
+                 *批量绑定虚拟主机或弹性网卡，支持跨域绑定，支持四层、七层（TCP、UDP、HTTP、HTTPS）协议绑定。
                  * @param req BatchRegisterTargetsRequest
                  * @return BatchRegisterTargetsOutcome
                  */
@@ -269,8 +359,8 @@ namespace TencentCloud
                 CreateListenerOutcomeCallable CreateListenerCallable(const Model::CreateListenerRequest& request);
 
                 /**
-                 *CreateLoadBalancer 接口用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。
-注意：(1)指定可用区申请负载均衡、跨zone容灾【如需使用，请提交工单（ https://console.cloud.tencent.com/workorder/category ）申请】；(2)目前只有北京、上海、广州支持IPv6；
+                 *本接口(CreateLoadBalancer)用来创建负载均衡实例（本接口只支持购买按量计费的负载均衡，包年包月的负载均衡请通过控制台购买）。为了使用负载均衡服务，您必须购买一个或多个负载均衡实例。成功调用该接口后，会返回负载均衡实例的唯一 ID。负载均衡实例的类型分为：公网、内网。详情可参考产品说明中的产品类型。
+注意：(1)指定可用区申请负载均衡、跨zone容灾(仅香港支持)【如果您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)】；(2)目前只有北京、上海、广州支持IPv6；(3)一个账号在每个地域的默认购买配额为：公网100个，内网100个。
 本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。
                  * @param req CreateLoadBalancerRequest
                  * @return CreateLoadBalancerOutcome
@@ -288,6 +378,15 @@ namespace TencentCloud
                 CreateRuleOutcome CreateRule(const Model::CreateRuleRequest &request);
                 void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
+
+                /**
+                 *创建目标组。（目标组功能正在灰度中，需要开通白名单支持）
+                 * @param req CreateTargetGroupRequest
+                 * @return CreateTargetGroupOutcome
+                 */
+                CreateTargetGroupOutcome CreateTargetGroup(const Model::CreateTargetGroupRequest &request);
+                void CreateTargetGroupAsync(const Model::CreateTargetGroupRequest& request, const CreateTargetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTargetGroupOutcomeCallable CreateTargetGroupCallable(const Model::CreateTargetGroupRequest& request);
 
                 /**
                  *本接口用来删除负载均衡实例下的监听器（四层和七层）。
@@ -330,6 +429,25 @@ namespace TencentCloud
                 DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request);
 
                 /**
+                 *删除目标组
+                 * @param req DeleteTargetGroupsRequest
+                 * @return DeleteTargetGroupsOutcome
+                 */
+                DeleteTargetGroupsOutcome DeleteTargetGroups(const Model::DeleteTargetGroupsRequest &request);
+                void DeleteTargetGroupsAsync(const Model::DeleteTargetGroupsRequest& request, const DeleteTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTargetGroupsOutcomeCallable DeleteTargetGroupsCallable(const Model::DeleteTargetGroupsRequest& request);
+
+                /**
+                 *将服务器从目标组中解绑。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+                 * @param req DeregisterTargetGroupInstancesRequest
+                 * @return DeregisterTargetGroupInstancesOutcome
+                 */
+                DeregisterTargetGroupInstancesOutcome DeregisterTargetGroupInstances(const Model::DeregisterTargetGroupInstancesRequest &request);
+                void DeregisterTargetGroupInstancesAsync(const Model::DeregisterTargetGroupInstancesRequest& request, const DeregisterTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeregisterTargetGroupInstancesOutcomeCallable DeregisterTargetGroupInstancesCallable(const Model::DeregisterTargetGroupInstancesRequest& request);
+
+                /**
                  *DeregisterTargets 接口用来将一台或多台后端服务从负载均衡的监听器或转发规则上解绑，对于四层监听器，只需指定监听器ID即可，对于七层监听器，还需通过LocationId或Domain+Url指定转发规则。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req DeregisterTargetsRequest
@@ -348,6 +466,24 @@ namespace TencentCloud
                 DeregisterTargetsFromClassicalLBOutcome DeregisterTargetsFromClassicalLB(const Model::DeregisterTargetsFromClassicalLBRequest &request);
                 void DeregisterTargetsFromClassicalLBAsync(const Model::DeregisterTargetsFromClassicalLBRequest& request, const DeregisterTargetsFromClassicalLBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeregisterTargetsFromClassicalLBOutcomeCallable DeregisterTargetsFromClassicalLBCallable(const Model::DeregisterTargetsFromClassicalLBRequest& request);
+
+                /**
+                 *查询一个负载均衡所封禁的IP列表（黑名单）。（接口灰度中，如需使用请提工单）
+                 * @param req DescribeBlockIPListRequest
+                 * @return DescribeBlockIPListOutcome
+                 */
+                DescribeBlockIPListOutcome DescribeBlockIPList(const Model::DescribeBlockIPListRequest &request);
+                void DescribeBlockIPListAsync(const Model::DescribeBlockIPListRequest& request, const DescribeBlockIPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockIPListOutcomeCallable DescribeBlockIPListCallable(const Model::DescribeBlockIPListRequest& request);
+
+                /**
+                 *根据 ModifyBlockIPList 接口返回的异步任务的ID，查询封禁IP（黑名单）异步任务的执行状态。（接口灰度中，如需使用请提工单）
+                 * @param req DescribeBlockIPTaskRequest
+                 * @return DescribeBlockIPTaskOutcome
+                 */
+                DescribeBlockIPTaskOutcome DescribeBlockIPTask(const Model::DescribeBlockIPTaskRequest &request);
+                void DescribeBlockIPTaskAsync(const Model::DescribeBlockIPTaskRequest& request, const DescribeBlockIPTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockIPTaskOutcomeCallable DescribeBlockIPTaskCallable(const Model::DescribeBlockIPTaskRequest& request);
 
                 /**
                  *DescribeClassicalLBByInstanceId用于通过后端实例ID获取传统型负载均衡ID列表
@@ -386,7 +522,7 @@ namespace TencentCloud
                 DescribeClassicalLBTargetsOutcomeCallable DescribeClassicalLBTargetsCallable(const Model::DescribeClassicalLBTargetsRequest& request);
 
                 /**
-                 *DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，默认返该负载均衡器下的默认数据长度（20 个）的监听器。
+                 *DescribeListeners 接口可根据负载均衡器 ID，监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。
                  * @param req DescribeListenersRequest
                  * @return DescribeListenersOutcome
                  */
@@ -395,7 +531,16 @@ namespace TencentCloud
                 DescribeListenersOutcomeCallable DescribeListenersCallable(const Model::DescribeListenersRequest& request);
 
                 /**
-                 *查询负载均衡实例列表
+                 *根据证书ID查询其在一个地域中所关联到负载均衡实例列表
+                 * @param req DescribeLoadBalancerListByCertIdRequest
+                 * @return DescribeLoadBalancerListByCertIdOutcome
+                 */
+                DescribeLoadBalancerListByCertIdOutcome DescribeLoadBalancerListByCertId(const Model::DescribeLoadBalancerListByCertIdRequest &request);
+                void DescribeLoadBalancerListByCertIdAsync(const Model::DescribeLoadBalancerListByCertIdRequest& request, const DescribeLoadBalancerListByCertIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoadBalancerListByCertIdOutcomeCallable DescribeLoadBalancerListByCertIdCallable(const Model::DescribeLoadBalancerListByCertIdRequest& request);
+
+                /**
+                 *查询一个地域的负载均衡实例列表
 
                  * @param req DescribeLoadBalancersRequest
                  * @return DescribeLoadBalancersOutcome
@@ -412,6 +557,33 @@ namespace TencentCloud
                 DescribeRewriteOutcome DescribeRewrite(const Model::DescribeRewriteRequest &request);
                 void DescribeRewriteAsync(const Model::DescribeRewriteRequest& request, const DescribeRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRewriteOutcomeCallable DescribeRewriteCallable(const Model::DescribeRewriteRequest& request);
+
+                /**
+                 *获取目标组绑定的服务器信息
+                 * @param req DescribeTargetGroupInstancesRequest
+                 * @return DescribeTargetGroupInstancesOutcome
+                 */
+                DescribeTargetGroupInstancesOutcome DescribeTargetGroupInstances(const Model::DescribeTargetGroupInstancesRequest &request);
+                void DescribeTargetGroupInstancesAsync(const Model::DescribeTargetGroupInstancesRequest& request, const DescribeTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTargetGroupInstancesOutcomeCallable DescribeTargetGroupInstancesCallable(const Model::DescribeTargetGroupInstancesRequest& request);
+
+                /**
+                 *获取目标组列表
+                 * @param req DescribeTargetGroupListRequest
+                 * @return DescribeTargetGroupListOutcome
+                 */
+                DescribeTargetGroupListOutcome DescribeTargetGroupList(const Model::DescribeTargetGroupListRequest &request);
+                void DescribeTargetGroupListAsync(const Model::DescribeTargetGroupListRequest& request, const DescribeTargetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTargetGroupListOutcomeCallable DescribeTargetGroupListCallable(const Model::DescribeTargetGroupListRequest& request);
+
+                /**
+                 *查询目标组信息
+                 * @param req DescribeTargetGroupsRequest
+                 * @return DescribeTargetGroupsOutcome
+                 */
+                DescribeTargetGroupsOutcome DescribeTargetGroups(const Model::DescribeTargetGroupsRequest &request);
+                void DescribeTargetGroupsAsync(const Model::DescribeTargetGroupsRequest& request, const DescribeTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTargetGroupsOutcomeCallable DescribeTargetGroupsCallable(const Model::DescribeTargetGroupsRequest& request);
 
                 /**
                  *DescribeTargetHealth 接口用来获取负载均衡后端服务的健康检查结果，不支持传统型负载均衡。
@@ -441,6 +613,16 @@ namespace TencentCloud
                 DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
+                 *解除规则的目标组关联关系。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+                 * @param req DisassociateTargetGroupsRequest
+                 * @return DisassociateTargetGroupsOutcome
+                 */
+                DisassociateTargetGroupsOutcome DisassociateTargetGroups(const Model::DisassociateTargetGroupsRequest &request);
+                void DisassociateTargetGroupsAsync(const Model::DisassociateTargetGroupsRequest& request, const DisassociateTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateTargetGroupsOutcomeCallable DisassociateTargetGroupsCallable(const Model::DisassociateTargetGroupsRequest& request);
+
+                /**
                  *用户手动配置原访问地址和重定向地址，系统自动将原访问地址的请求重定向至对应路径的目的地址。同一域名下可以配置多条路径作为重定向策略，实现http/https之间请求的自动跳转。设置重定向时，需满足如下约束条件：若A已经重定向至B，则A不能再重定向至C（除非先删除老的重定向关系，再建立新的重定向关系），B不能重定向至任何其它地址。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req ManualRewriteRequest
@@ -449,6 +631,16 @@ namespace TencentCloud
                 ManualRewriteOutcome ManualRewrite(const Model::ManualRewriteRequest &request);
                 void ManualRewriteAsync(const Model::ManualRewriteRequest& request, const ManualRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ManualRewriteOutcomeCallable ManualRewriteCallable(const Model::ManualRewriteRequest& request);
+
+                /**
+                 *修改负载均衡的IP（client IP）封禁黑名单列表，一个转发规则最多支持封禁 2000000 个IP，及黑名单容量为 2000000。
+（接口灰度中，如需使用请提工单）
+                 * @param req ModifyBlockIPListRequest
+                 * @return ModifyBlockIPListOutcome
+                 */
+                ModifyBlockIPListOutcome ModifyBlockIPList(const Model::ModifyBlockIPListRequest &request);
+                void ModifyBlockIPListAsync(const Model::ModifyBlockIPListRequest& request, const ModifyBlockIPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlockIPListOutcomeCallable ModifyBlockIPListCallable(const Model::ModifyBlockIPListRequest& request);
 
                 /**
                  *ModifyDomain接口用来修改负载均衡七层监听器下的域名。
@@ -500,6 +692,35 @@ namespace TencentCloud
                 ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
 
                 /**
+                 *修改目标组的名称或者默认端口属性
+                 * @param req ModifyTargetGroupAttributeRequest
+                 * @return ModifyTargetGroupAttributeOutcome
+                 */
+                ModifyTargetGroupAttributeOutcome ModifyTargetGroupAttribute(const Model::ModifyTargetGroupAttributeRequest &request);
+                void ModifyTargetGroupAttributeAsync(const Model::ModifyTargetGroupAttributeRequest& request, const ModifyTargetGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTargetGroupAttributeOutcomeCallable ModifyTargetGroupAttributeCallable(const Model::ModifyTargetGroupAttributeRequest& request);
+
+                /**
+                 *批量修改目标组服务器端口。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+                 * @param req ModifyTargetGroupInstancesPortRequest
+                 * @return ModifyTargetGroupInstancesPortOutcome
+                 */
+                ModifyTargetGroupInstancesPortOutcome ModifyTargetGroupInstancesPort(const Model::ModifyTargetGroupInstancesPortRequest &request);
+                void ModifyTargetGroupInstancesPortAsync(const Model::ModifyTargetGroupInstancesPortRequest& request, const ModifyTargetGroupInstancesPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTargetGroupInstancesPortOutcomeCallable ModifyTargetGroupInstancesPortCallable(const Model::ModifyTargetGroupInstancesPortRequest& request);
+
+                /**
+                 *批量修改目标组的服务器权重。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+                 * @param req ModifyTargetGroupInstancesWeightRequest
+                 * @return ModifyTargetGroupInstancesWeightOutcome
+                 */
+                ModifyTargetGroupInstancesWeightOutcome ModifyTargetGroupInstancesWeight(const Model::ModifyTargetGroupInstancesWeightRequest &request);
+                void ModifyTargetGroupInstancesWeightAsync(const Model::ModifyTargetGroupInstancesWeightRequest& request, const ModifyTargetGroupInstancesWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTargetGroupInstancesWeightOutcomeCallable ModifyTargetGroupInstancesWeightCallable(const Model::ModifyTargetGroupInstancesWeightRequest& request);
+
+                /**
                  *ModifyTargetPort接口用于修改监听器绑定的后端服务的端口。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req ModifyTargetPortRequest
@@ -518,6 +739,16 @@ namespace TencentCloud
                 ModifyTargetWeightOutcome ModifyTargetWeight(const Model::ModifyTargetWeightRequest &request);
                 void ModifyTargetWeightAsync(const Model::ModifyTargetWeightRequest& request, const ModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTargetWeightOutcomeCallable ModifyTargetWeightCallable(const Model::ModifyTargetWeightRequest& request);
+
+                /**
+                 *注册服务器到目标组。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+                 * @param req RegisterTargetGroupInstancesRequest
+                 * @return RegisterTargetGroupInstancesOutcome
+                 */
+                RegisterTargetGroupInstancesOutcome RegisterTargetGroupInstances(const Model::RegisterTargetGroupInstancesRequest &request);
+                void RegisterTargetGroupInstancesAsync(const Model::RegisterTargetGroupInstancesRequest& request, const RegisterTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterTargetGroupInstancesOutcomeCallable RegisterTargetGroupInstancesCallable(const Model::RegisterTargetGroupInstancesRequest& request);
 
                 /**
                  *RegisterTargets 接口用来将一台或多台后端服务绑定到负载均衡的监听器（或7层转发规则），在此之前您需要先行创建相关的4层监听器或7层转发规则。对于四层监听器（TCP、UDP），只需指定监听器ID即可，对于七层监听器（HTTP、HTTPS），还需通过LocationId或者Domain+Url指定转发规则。
@@ -543,7 +774,7 @@ namespace TencentCloud
                  *ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。
 此接口支持替换服务端证书或客户端证书。
 需要使用的新证书，可以通过传入证书ID来指定，如果不指定证书ID，则必须传入证书内容等相关信息，用以新建证书并绑定至负载均衡。
-注：本接口仅可从广州地域调用，其他地域存在域名解析问题，会报错。
+注：本接口仅可从广州地域调用。
                  * @param req ReplaceCertForLoadBalancersRequest
                  * @return ReplaceCertForLoadBalancersOutcome
                  */

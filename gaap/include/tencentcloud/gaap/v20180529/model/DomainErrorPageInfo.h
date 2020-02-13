@@ -186,17 +186,17 @@ namespace TencentCloud
                     bool SetHeadersHasBeenSet() const;
 
                     /**
-                     * 获取设置的响应体(不包括 http头)
+                     * 获取设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Body 设置的响应体(不包括 http头)
+                     * @return Body 设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBody() const;
 
                     /**
-                     * 设置设置的响应体(不包括 http头)
+                     * 设置设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Body 设置的响应体(不包括 http头)
+                     * @param Body 设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBody(const std::string& _body);
@@ -206,6 +206,28 @@ namespace TencentCloud
                      * @return Body 是否已赋值
                      */
                     bool BodyHasBeenSet() const;
+
+                    /**
+                     * 获取规则状态,0为成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 规则状态,0为成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置规则状态,0为成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 规则状态,0为成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
 
                 private:
 
@@ -255,11 +277,18 @@ namespace TencentCloud
                     bool m_setHeadersHasBeenSet;
 
                     /**
-                     * 设置的响应体(不包括 http头)
+                     * 设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;
+
+                    /**
+                     * 规则状态,0为成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

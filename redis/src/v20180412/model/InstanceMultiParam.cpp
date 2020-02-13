@@ -100,11 +100,14 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const Value &value)
 
     if (value.HasMember("EnumValue") && !value["EnumValue"].IsNull())
     {
-        if (!value["EnumValue"].IsString())
+        if (!value["EnumValue"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceMultiParam.EnumValue` is not array type"));
+
+        const Value &tmpValue = value["EnumValue"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Error("response `InstanceMultiParam.EnumValue` IsString=false incorrectly").SetRequestId(requestId));
+            m_enumValue.push_back((*itr).GetString());
         }
-        m_enumValue = string(value["EnumValue"].GetString());
         m_enumValueHasBeenSet = true;
     }
 
@@ -178,7 +181,12 @@ void InstanceMultiParam::ToJsonObject(Value &value, Document::AllocatorType& all
         Value iKey(kStringType);
         string key = "EnumValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_enumValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_enumValue.begin(); itr != m_enumValue.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_statusHasBeenSet)
@@ -288,12 +296,12 @@ bool InstanceMultiParam::TipsHasBeenSet() const
     return m_tipsHasBeenSet;
 }
 
-string InstanceMultiParam::GetEnumValue() const
+vector<string> InstanceMultiParam::GetEnumValue() const
 {
     return m_enumValue;
 }
 
-void InstanceMultiParam::SetEnumValue(const string& _enumValue)
+void InstanceMultiParam::SetEnumValue(const vector<string>& _enumValue)
 {
     m_enumValue = _enumValue;
     m_enumValueHasBeenSet = true;

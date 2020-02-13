@@ -32,7 +32,8 @@ Cluster::Cluster() :
     m_clusterNodeNumHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_propertyHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
         m_clusterStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Property") && !value["Property"].IsNull())
+    {
+        if (!value["Property"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.Property` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_property = string(value["Property"].GetString());
+        m_propertyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -269,6 +280,14 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_propertyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Property";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_property.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -448,5 +467,21 @@ void Cluster::SetClusterStatus(const string& _clusterStatus)
 bool Cluster::ClusterStatusHasBeenSet() const
 {
     return m_clusterStatusHasBeenSet;
+}
+
+string Cluster::GetProperty() const
+{
+    return m_property;
+}
+
+void Cluster::SetProperty(const string& _property)
+{
+    m_property = _property;
+    m_propertyHasBeenSet = true;
+}
+
+bool Cluster::PropertyHasBeenSet() const
+{
+    return m_propertyHasBeenSet;
 }
 

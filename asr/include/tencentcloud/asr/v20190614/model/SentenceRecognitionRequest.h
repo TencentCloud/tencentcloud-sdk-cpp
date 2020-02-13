@@ -79,28 +79,28 @@ namespace TencentCloud
                     bool SubServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取引擎类型。
-8k：电话 8k 中文普通话通用；
-16k：16k 中文普通话通用；
+                     * 获取引擎模型类型。
+8k_zh：电话 8k 中文普通话通用；
+16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
 16k_ca：16k 粤语。
-                     * @return EngSerViceType 引擎类型。
-8k：电话 8k 中文普通话通用；
-16k：16k 中文普通话通用；
+                     * @return EngSerViceType 引擎模型类型。
+8k_zh：电话 8k 中文普通话通用；
+16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
 16k_ca：16k 粤语。
                      */
                     std::string GetEngSerViceType() const;
 
                     /**
-                     * 设置引擎类型。
-8k：电话 8k 中文普通话通用；
-16k：16k 中文普通话通用；
+                     * 设置引擎模型类型。
+8k_zh：电话 8k 中文普通话通用；
+16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
 16k_ca：16k 粤语。
-                     * @param EngSerViceType 引擎类型。
-8k：电话 8k 中文普通话通用；
-16k：16k 中文普通话通用；
+                     * @param EngSerViceType 引擎模型类型。
+8k_zh：电话 8k 中文普通话通用；
+16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
 16k_ca：16k 粤语。
                      */
@@ -220,6 +220,24 @@ namespace TencentCloud
                      */
                     bool DataLenHasBeenSet() const;
 
+                    /**
+                     * 获取热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * @return HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     */
+                    std::string GetHotwordId() const;
+
+                    /**
+                     * 设置热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * @param HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     */
+                    void SetHotwordId(const std::string& _hotwordId);
+
+                    /**
+                     * 判断参数 HotwordId 是否已赋值
+                     * @return HotwordId 是否已赋值
+                     */
+                    bool HotwordIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,9 +253,9 @@ namespace TencentCloud
                     bool m_subServiceTypeHasBeenSet;
 
                     /**
-                     * 引擎类型。
-8k：电话 8k 中文普通话通用；
-16k：16k 中文普通话通用；
+                     * 引擎模型类型。
+8k_zh：电话 8k 中文普通话通用；
+16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
 16k_ca：16k 粤语。
                      */
@@ -279,6 +297,12 @@ namespace TencentCloud
                      */
                     int64_t m_dataLen;
                     bool m_dataLenHasBeenSet;
+
+                    /**
+                     * 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     */
+                    std::string m_hotwordId;
+                    bool m_hotwordIdHasBeenSet;
 
                 };
             }

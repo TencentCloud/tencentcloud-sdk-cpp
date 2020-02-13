@@ -24,10 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 SmsPackagesStatisticsRequest::SmsPackagesStatisticsRequest() :
+    m_smsSdkAppidHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_numberOfPullPackagesHasBeenSet(false),
-    m_smsSdkAppidHasBeenSet(false)
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -37,6 +36,14 @@ string SmsPackagesStatisticsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_smsSdkAppidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SmsSdkAppid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_smsSdkAppid.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_limitHasBeenSet)
     {
@@ -54,22 +61,6 @@ string SmsPackagesStatisticsRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
-    if (m_numberOfPullPackagesHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "NumberOfPullPackages";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_numberOfPullPackages, allocator);
-    }
-
-    if (m_smsSdkAppidHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SmsSdkAppid";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_smsSdkAppid.c_str(), allocator).Move(), allocator);
-    }
-
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -77,6 +68,22 @@ string SmsPackagesStatisticsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SmsPackagesStatisticsRequest::GetSmsSdkAppid() const
+{
+    return m_smsSdkAppid;
+}
+
+void SmsPackagesStatisticsRequest::SetSmsSdkAppid(const string& _smsSdkAppid)
+{
+    m_smsSdkAppid = _smsSdkAppid;
+    m_smsSdkAppidHasBeenSet = true;
+}
+
+bool SmsPackagesStatisticsRequest::SmsSdkAppidHasBeenSet() const
+{
+    return m_smsSdkAppidHasBeenSet;
+}
 
 uint64_t SmsPackagesStatisticsRequest::GetLimit() const
 {
@@ -108,38 +115,6 @@ void SmsPackagesStatisticsRequest::SetOffset(const uint64_t& _offset)
 bool SmsPackagesStatisticsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
-}
-
-uint64_t SmsPackagesStatisticsRequest::GetNumberOfPullPackages() const
-{
-    return m_numberOfPullPackages;
-}
-
-void SmsPackagesStatisticsRequest::SetNumberOfPullPackages(const uint64_t& _numberOfPullPackages)
-{
-    m_numberOfPullPackages = _numberOfPullPackages;
-    m_numberOfPullPackagesHasBeenSet = true;
-}
-
-bool SmsPackagesStatisticsRequest::NumberOfPullPackagesHasBeenSet() const
-{
-    return m_numberOfPullPackagesHasBeenSet;
-}
-
-string SmsPackagesStatisticsRequest::GetSmsSdkAppid() const
-{
-    return m_smsSdkAppid;
-}
-
-void SmsPackagesStatisticsRequest::SetSmsSdkAppid(const string& _smsSdkAppid)
-{
-    m_smsSdkAppid = _smsSdkAppid;
-    m_smsSdkAppidHasBeenSet = true;
-}
-
-bool SmsPackagesStatisticsRequest::SmsSdkAppidHasBeenSet() const
-{
-    return m_smsSdkAppidHasBeenSet;
 }
 
 

@@ -43,7 +43,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_autoRenewHasBeenSet(false),
     m_billingModeHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_searchKeysHasBeenSet(false)
+    m_searchKeysHasBeenSet(false),
+    m_typeListHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,19 @@ string DescribeInstancesRequest::ToJsonString() const
         for (auto itr = m_searchKeys.begin(); itr != m_searchKeys.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_typeListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_typeList.begin(); itr != m_typeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -585,6 +599,22 @@ void DescribeInstancesRequest::SetSearchKeys(const vector<string>& _searchKeys)
 bool DescribeInstancesRequest::SearchKeysHasBeenSet() const
 {
     return m_searchKeysHasBeenSet;
+}
+
+vector<int64_t> DescribeInstancesRequest::GetTypeList() const
+{
+    return m_typeList;
+}
+
+void DescribeInstancesRequest::SetTypeList(const vector<int64_t>& _typeList)
+{
+    m_typeList = _typeList;
+    m_typeListHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::TypeListHasBeenSet() const
+{
+    return m_typeListHasBeenSet;
 }
 
 

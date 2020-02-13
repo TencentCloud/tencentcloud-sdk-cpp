@@ -29,6 +29,7 @@ WorkflowInfo::WorkflowInfo() :
     m_outputStorageHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
+    m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_taskPriorityHasBeenSet(false),
@@ -139,6 +140,23 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const Value &value)
         }
 
         m_aiContentReviewTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("AiAnalysisTask") && !value["AiAnalysisTask"].IsNull())
+    {
+        if (!value["AiAnalysisTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `WorkflowInfo.AiAnalysisTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiAnalysisTask.Deserialize(value["AiAnalysisTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiAnalysisTaskHasBeenSet = true;
     }
 
     if (value.HasMember("AiRecognitionTask") && !value["AiRecognitionTask"].IsNull())
@@ -280,6 +298,15 @@ void WorkflowInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_aiContentReviewTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiAnalysisTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiAnalysisTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiAnalysisTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_aiRecognitionTaskHasBeenSet)
@@ -445,6 +472,22 @@ void WorkflowInfo::SetAiContentReviewTask(const AiContentReviewTaskInput& _aiCon
 bool WorkflowInfo::AiContentReviewTaskHasBeenSet() const
 {
     return m_aiContentReviewTaskHasBeenSet;
+}
+
+AiAnalysisTaskInput WorkflowInfo::GetAiAnalysisTask() const
+{
+    return m_aiAnalysisTask;
+}
+
+void WorkflowInfo::SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask)
+{
+    m_aiAnalysisTask = _aiAnalysisTask;
+    m_aiAnalysisTaskHasBeenSet = true;
+}
+
+bool WorkflowInfo::AiAnalysisTaskHasBeenSet() const
+{
+    return m_aiAnalysisTaskHasBeenSet;
 }
 
 AiRecognitionTaskInput WorkflowInfo::GetAiRecognitionTask() const

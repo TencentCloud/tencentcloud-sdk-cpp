@@ -126,49 +126,6 @@ NlpClient::ChatBotOutcomeCallable NlpClient::ChatBotCallable(const ChatBotReques
     return task->get_future();
 }
 
-NlpClient::ContentApprovalOutcome NlpClient::ContentApproval(const ContentApprovalRequest &request)
-{
-    auto outcome = MakeRequest(request, "ContentApproval");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ContentApprovalResponse rsp = ContentApprovalResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ContentApprovalOutcome(rsp);
-        else
-            return ContentApprovalOutcome(o.GetError());
-    }
-    else
-    {
-        return ContentApprovalOutcome(outcome.GetError());
-    }
-}
-
-void NlpClient::ContentApprovalAsync(const ContentApprovalRequest& request, const ContentApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ContentApproval(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-NlpClient::ContentApprovalOutcomeCallable NlpClient::ContentApprovalCallable(const ContentApprovalRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ContentApprovalOutcome()>>(
-        [this, request]()
-        {
-            return this->ContentApproval(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 NlpClient::DependencyParsingOutcome NlpClient::DependencyParsing(const DependencyParsingRequest &request)
 {
     auto outcome = MakeRequest(request, "DependencyParsing");
@@ -427,49 +384,6 @@ NlpClient::LexicalAnalysisOutcomeCallable NlpClient::LexicalAnalysisCallable(con
     return task->get_future();
 }
 
-NlpClient::SensitiveWordsRecognitionOutcome NlpClient::SensitiveWordsRecognition(const SensitiveWordsRecognitionRequest &request)
-{
-    auto outcome = MakeRequest(request, "SensitiveWordsRecognition");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SensitiveWordsRecognitionResponse rsp = SensitiveWordsRecognitionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SensitiveWordsRecognitionOutcome(rsp);
-        else
-            return SensitiveWordsRecognitionOutcome(o.GetError());
-    }
-    else
-    {
-        return SensitiveWordsRecognitionOutcome(outcome.GetError());
-    }
-}
-
-void NlpClient::SensitiveWordsRecognitionAsync(const SensitiveWordsRecognitionRequest& request, const SensitiveWordsRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SensitiveWordsRecognition(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-NlpClient::SensitiveWordsRecognitionOutcomeCallable NlpClient::SensitiveWordsRecognitionCallable(const SensitiveWordsRecognitionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SensitiveWordsRecognitionOutcome()>>(
-        [this, request]()
-        {
-            return this->SensitiveWordsRecognition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 NlpClient::SentenceEmbeddingOutcome NlpClient::SentenceEmbedding(const SentenceEmbeddingRequest &request)
 {
     auto outcome = MakeRequest(request, "SentenceEmbedding");
@@ -635,49 +549,6 @@ NlpClient::SimilarWordsOutcomeCallable NlpClient::SimilarWordsCallable(const Sim
         [this, request]()
         {
             return this->SimilarWords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-NlpClient::TextApprovalOutcome NlpClient::TextApproval(const TextApprovalRequest &request)
-{
-    auto outcome = MakeRequest(request, "TextApproval");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        TextApprovalResponse rsp = TextApprovalResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return TextApprovalOutcome(rsp);
-        else
-            return TextApprovalOutcome(o.GetError());
-    }
-    else
-    {
-        return TextApprovalOutcome(outcome.GetError());
-    }
-}
-
-void NlpClient::TextApprovalAsync(const TextApprovalRequest& request, const TextApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->TextApproval(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-NlpClient::TextApprovalOutcomeCallable NlpClient::TextApprovalCallable(const TextApprovalRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<TextApprovalOutcome()>>(
-        [this, request]()
-        {
-            return this->TextApproval(request);
         }
     );
 

@@ -27,7 +27,8 @@ SecurityPolicyRuleOut::SecurityPolicyRuleOut() :
     m_aliasNameHasBeenSet(false),
     m_destPortRangeHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome SecurityPolicyRuleOut::Deserialize(const Value &value)
         m_protocolHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyId") && !value["PolicyId"].IsNull())
+    {
+        if (!value["PolicyId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityPolicyRuleOut.PolicyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyId = string(value["PolicyId"].GetString());
+        m_policyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void SecurityPolicyRuleOut::ToJsonObject(Value &value, Document::AllocatorType& 
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void SecurityPolicyRuleOut::SetProtocol(const string& _protocol)
 bool SecurityPolicyRuleOut::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string SecurityPolicyRuleOut::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void SecurityPolicyRuleOut::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool SecurityPolicyRuleOut::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 

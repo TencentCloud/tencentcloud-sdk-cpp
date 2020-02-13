@@ -62,17 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间点，格式为yyyy-mm-dd HH:MM:SS
-时间跨度在（0,4小时]，支持最近1天数据查询。
+时间跨度在[0,4小时]，支持最近1天数据查询。
                      * @return EndTime 结束时间点，格式为yyyy-mm-dd HH:MM:SS
-时间跨度在（0,4小时]，支持最近1天数据查询。
+时间跨度在[0,4小时]，支持最近1天数据查询。
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间点，格式为yyyy-mm-dd HH:MM:SS
-时间跨度在（0,4小时]，支持最近1天数据查询。
+时间跨度在[0,4小时]，支持最近1天数据查询。
                      * @param EndTime 结束时间点，格式为yyyy-mm-dd HH:MM:SS
-时间跨度在（0,4小时]，支持最近1天数据查询。
+时间跨度在[0,4小时]，支持最近1天数据查询。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -200,7 +200,7 @@ namespace TencentCloud
 
                     /**
                      * 结束时间点，格式为yyyy-mm-dd HH:MM:SS
-时间跨度在（0,4小时]，支持最近1天数据查询。
+时间跨度在[0,4小时]，支持最近1天数据查询。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

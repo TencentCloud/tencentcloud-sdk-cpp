@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 FuseFaceResponse::FuseFaceResponse() :
-    m_fusedImageHasBeenSet(false)
+    m_fusedImageHasBeenSet(false),
+    m_reviewResultSetHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome FuseFaceResponse::Deserialize(const string &payload)
         m_fusedImageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReviewResultSet") && !rsp["ReviewResultSet"].IsNull())
+    {
+        if (!rsp["ReviewResultSet"].IsArray())
+            return CoreInternalOutcome(Error("response `ReviewResultSet` is not array type"));
+
+        const Value &tmpValue = rsp["ReviewResultSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FuseFaceReviewResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_reviewResultSet.push_back(item);
+        }
+        m_reviewResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +107,16 @@ string FuseFaceResponse::GetFusedImage() const
 bool FuseFaceResponse::FusedImageHasBeenSet() const
 {
     return m_fusedImageHasBeenSet;
+}
+
+vector<FuseFaceReviewResult> FuseFaceResponse::GetReviewResultSet() const
+{
+    return m_reviewResultSet;
+}
+
+bool FuseFaceResponse::ReviewResultSetHasBeenSet() const
+{
+    return m_reviewResultSetHasBeenSet;
 }
 
 

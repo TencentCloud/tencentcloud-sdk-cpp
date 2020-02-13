@@ -28,6 +28,7 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_resolutionAdaptiveHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_gopHasBeenSet(false),
     m_fillTypeHasBeenSet(false)
 {
 }
@@ -97,6 +98,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("Gop") && !value["Gop"].IsNull())
+    {
+        if (!value["Gop"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VideoTemplateInfoForUpdate.Gop` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gop = value["Gop"].GetUint64();
+        m_gopHasBeenSet = true;
+    }
+
     if (value.HasMember("FillType") && !value["FillType"].IsNull())
     {
         if (!value["FillType"].IsString())
@@ -160,6 +171,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorT
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_gopHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Gop";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gop, allocator);
     }
 
     if (m_fillTypeHasBeenSet)
@@ -267,6 +286,22 @@ void VideoTemplateInfoForUpdate::SetHeight(const uint64_t& _height)
 bool VideoTemplateInfoForUpdate::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+uint64_t VideoTemplateInfoForUpdate::GetGop() const
+{
+    return m_gop;
+}
+
+void VideoTemplateInfoForUpdate::SetGop(const uint64_t& _gop)
+{
+    m_gop = _gop;
+    m_gopHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::GopHasBeenSet() const
+{
+    return m_gopHasBeenSet;
 }
 
 string VideoTemplateInfoForUpdate::GetFillType() const

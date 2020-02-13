@@ -28,6 +28,7 @@ ContentReviewTemplateItem::ContentReviewTemplateItem() :
     m_pornConfigureHasBeenSet(false),
     m_terrorismConfigureHasBeenSet(false),
     m_politicalConfigureHasBeenSet(false),
+    m_prohibitedConfigureHasBeenSet(false),
     m_userDefineConfigureHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
@@ -118,6 +119,23 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const Value &value)
         }
 
         m_politicalConfigureHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProhibitedConfigure") && !value["ProhibitedConfigure"].IsNull())
+    {
+        if (!value["ProhibitedConfigure"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ContentReviewTemplateItem.ProhibitedConfigure` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_prohibitedConfigure.Deserialize(value["ProhibitedConfigure"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_prohibitedConfigureHasBeenSet = true;
     }
 
     if (value.HasMember("UserDefineConfigure") && !value["UserDefineConfigure"].IsNull())
@@ -213,6 +231,15 @@ void ContentReviewTemplateItem::ToJsonObject(Value &value, Document::AllocatorTy
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_politicalConfigure.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prohibitedConfigureHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProhibitedConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_prohibitedConfigure.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_userDefineConfigureHasBeenSet)
@@ -337,6 +364,22 @@ void ContentReviewTemplateItem::SetPoliticalConfigure(const PoliticalConfigureIn
 bool ContentReviewTemplateItem::PoliticalConfigureHasBeenSet() const
 {
     return m_politicalConfigureHasBeenSet;
+}
+
+ProhibitedConfigureInfo ContentReviewTemplateItem::GetProhibitedConfigure() const
+{
+    return m_prohibitedConfigure;
+}
+
+void ContentReviewTemplateItem::SetProhibitedConfigure(const ProhibitedConfigureInfo& _prohibitedConfigure)
+{
+    m_prohibitedConfigure = _prohibitedConfigure;
+    m_prohibitedConfigureHasBeenSet = true;
+}
+
+bool ContentReviewTemplateItem::ProhibitedConfigureHasBeenSet() const
+{
+    return m_prohibitedConfigureHasBeenSet;
 }
 
 UserDefineConfigureInfo ContentReviewTemplateItem::GetUserDefineConfigure() const

@@ -164,13 +164,17 @@ namespace TencentCloud
 
                     /**
                      * 获取图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+**注意：图片需要base64编码，并且要去掉编码头部。**
                      * @return ImageBase64 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+**注意：图片需要base64编码，并且要去掉编码头部。**
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+**注意：图片需要base64编码，并且要去掉编码头部。**
                      * @param ImageBase64 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+**注意：图片需要base64编码，并且要去掉编码头部。**
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
@@ -220,6 +224,7 @@ namespace TencentCloud
 
                     /**
                      * 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+**注意：图片需要base64编码，并且要去掉编码头部。**
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;

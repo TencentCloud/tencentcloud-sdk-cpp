@@ -145,17 +145,17 @@ namespace TencentCloud
                     bool CertificateKeyHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 获取创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @return CreateTime 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 设置创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @param CreateTime 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -167,17 +167,17 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书生效起始时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 获取证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BeginTime 证书生效起始时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @return BeginTime 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetBeginTime() const;
 
                     /**
-                     * 设置证书生效起始时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 设置证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginTime 证书生效起始时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @param BeginTime 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBeginTime(const uint64_t& _beginTime);
@@ -189,17 +189,17 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 获取证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 证书过期时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @return EndTime 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置证书过期时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 设置证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 证书过期时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * @param EndTime 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -289,21 +289,21 @@ namespace TencentCloud
                     bool m_certificateKeyHasBeenSet;
 
                     /**
-                     * 创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 证书生效起始时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 证书过期时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
+                     * 证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_endTime;

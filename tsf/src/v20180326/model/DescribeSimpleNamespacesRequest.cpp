@@ -31,7 +31,9 @@ DescribeSimpleNamespacesRequest::DescribeSimpleNamespacesRequest() :
     m_namespaceIdHasBeenSet(false),
     m_namespaceResourceTypeListHasBeenSet(false),
     m_searchWordHasBeenSet(false),
-    m_namespaceTypeListHasBeenSet(false)
+    m_namespaceTypeListHasBeenSet(false),
+    m_namespaceNameHasBeenSet(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,22 @@ string DescribeSimpleNamespacesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_namespaceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_isDefault.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -255,6 +273,38 @@ void DescribeSimpleNamespacesRequest::SetNamespaceTypeList(const vector<string>&
 bool DescribeSimpleNamespacesRequest::NamespaceTypeListHasBeenSet() const
 {
     return m_namespaceTypeListHasBeenSet;
+}
+
+string DescribeSimpleNamespacesRequest::GetNamespaceName() const
+{
+    return m_namespaceName;
+}
+
+void DescribeSimpleNamespacesRequest::SetNamespaceName(const string& _namespaceName)
+{
+    m_namespaceName = _namespaceName;
+    m_namespaceNameHasBeenSet = true;
+}
+
+bool DescribeSimpleNamespacesRequest::NamespaceNameHasBeenSet() const
+{
+    return m_namespaceNameHasBeenSet;
+}
+
+string DescribeSimpleNamespacesRequest::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void DescribeSimpleNamespacesRequest::SetIsDefault(const string& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool DescribeSimpleNamespacesRequest::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
 }
 
 

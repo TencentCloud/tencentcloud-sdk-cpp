@@ -226,6 +226,24 @@ namespace TencentCloud
                      */
                     bool PublicIpAddressesHasBeenSet() const;
 
+                    /**
+                     * 获取计算环境资源类型，当前为CVM和CPM（黑石）
+                     * @return ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置计算环境资源类型，当前为CVM和CPM（黑石）
+                     * @param ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +305,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;
+
+                    /**
+                     * 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                 };
             }

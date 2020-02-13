@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加密track类型。
-                     * @return Track 加密track类型。
+                     * 获取加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
+                     * @return Track 加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
                      */
                     std::string GetTrack() const;
 
                     /**
-                     * 设置加密track类型。
-                     * @param Track 加密track类型。
+                     * 设置加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
+                     * @param Track 加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
                      */
                     void SetTrack(const std::string& _track);
 
@@ -118,10 +118,32 @@ namespace TencentCloud
                      */
                     bool IvHasBeenSet() const;
 
+                    /**
+                     * 获取该key生成时的时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InsertTimestamp 该key生成时的时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInsertTimestamp() const;
+
+                    /**
+                     * 设置该key生成时的时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InsertTimestamp 该key生成时的时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInsertTimestamp(const uint64_t& _insertTimestamp);
+
+                    /**
+                     * 判断参数 InsertTimestamp 是否已赋值
+                     * @return InsertTimestamp 是否已赋值
+                     */
+                    bool InsertTimestampHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 加密track类型。
+                     * 加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
                      */
                     std::string m_track;
                     bool m_trackHasBeenSet;
@@ -143,6 +165,13 @@ namespace TencentCloud
                      */
                     std::string m_iv;
                     bool m_ivHasBeenSet;
+
+                    /**
+                     * 该key生成时的时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_insertTimestamp;
+                    bool m_insertTimestampHasBeenSet;
 
                 };
             }

@@ -87,17 +87,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
                      * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
 
@@ -185,7 +181,6 @@ namespace TencentCloud
 
                     /**
                      * 水印列表，支持多张图片或文字水印，最大可支持 10 张。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;

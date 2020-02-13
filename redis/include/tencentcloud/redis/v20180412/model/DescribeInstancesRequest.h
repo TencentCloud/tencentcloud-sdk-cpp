@@ -402,6 +402,24 @@ namespace TencentCloud
                      */
                     bool SearchKeysHasBeenSet() const;
 
+                    /**
+                     * 获取内部参数，用户可忽略
+                     * @return TypeList 内部参数，用户可忽略
+                     */
+                    std::vector<int64_t> GetTypeList() const;
+
+                    /**
+                     * 设置内部参数，用户可忽略
+                     * @param TypeList 内部参数，用户可忽略
+                     */
+                    void SetTypeList(const std::vector<int64_t>& _typeList);
+
+                    /**
+                     * 判断参数 TypeList 是否已赋值
+                     * @return TypeList 是否已赋值
+                     */
+                    bool TypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,6 +541,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_searchKeys;
                     bool m_searchKeysHasBeenSet;
+
+                    /**
+                     * 内部参数，用户可忽略
+                     */
+                    std::vector<int64_t> m_typeList;
+                    bool m_typeListHasBeenSet;
 
                 };
             }

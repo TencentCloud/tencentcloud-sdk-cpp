@@ -25,7 +25,8 @@ using namespace std;
 
 GeneralHandwritingOCRRequest::GeneralHandwritingOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_sceneHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string GeneralHandwritingOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_scene.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void GeneralHandwritingOCRRequest::SetImageUrl(const string& _imageUrl)
 bool GeneralHandwritingOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+string GeneralHandwritingOCRRequest::GetScene() const
+{
+    return m_scene;
+}
+
+void GeneralHandwritingOCRRequest::SetScene(const string& _scene)
+{
+    m_scene = _scene;
+    m_sceneHasBeenSet = true;
+}
+
+bool GeneralHandwritingOCRRequest::SceneHasBeenSet() const
+{
+    return m_sceneHasBeenSet;
 }
 
 

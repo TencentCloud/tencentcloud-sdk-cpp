@@ -25,8 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDeployGroupListResponse::DescribeDeployGroupListResponse() :
-    m_itemsHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -64,6 +64,16 @@ CoreInternalOutcome DescribeDeployGroupListResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
     {
         if (!rsp["Items"].IsArray())
@@ -84,30 +94,10 @@ CoreInternalOutcome DescribeDeployGroupListResponse::Deserialize(const string &p
         m_itemsHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
-    {
-        if (!rsp["Total"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_total = rsp["Total"].GetInt64();
-        m_totalHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<DeployGroupInfo> DescribeDeployGroupListResponse::GetItems() const
-{
-    return m_items;
-}
-
-bool DescribeDeployGroupListResponse::ItemsHasBeenSet() const
-{
-    return m_itemsHasBeenSet;
-}
 
 int64_t DescribeDeployGroupListResponse::GetTotal() const
 {
@@ -117,6 +107,16 @@ int64_t DescribeDeployGroupListResponse::GetTotal() const
 bool DescribeDeployGroupListResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+vector<DeployGroupInfo> DescribeDeployGroupListResponse::GetItems() const
+{
+    return m_items;
+}
+
+bool DescribeDeployGroupListResponse::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 
 

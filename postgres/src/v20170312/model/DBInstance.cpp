@@ -44,7 +44,8 @@ DBInstance::DBInstance() :
     m_isolatedTimeHasBeenSet(false),
     m_payTypeHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
-    m_dBInstanceNetInfoHasBeenSet(false)
+    m_dBInstanceNetInfoHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_dBInstanceNetInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -489,6 +500,14 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -860,5 +879,21 @@ void DBInstance::SetDBInstanceNetInfo(const vector<DBInstanceNetInfo>& _dBInstan
 bool DBInstance::DBInstanceNetInfoHasBeenSet() const
 {
     return m_dBInstanceNetInfoHasBeenSet;
+}
+
+string DBInstance::GetType() const
+{
+    return m_type;
+}
+
+void DBInstance::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DBInstance::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

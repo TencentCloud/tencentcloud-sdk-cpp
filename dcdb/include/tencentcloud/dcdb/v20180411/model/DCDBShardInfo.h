@@ -406,6 +406,72 @@ namespace TencentCloud
                      */
                     bool ProxyVersionHasBeenSet() const;
 
+                    /**
+                     * 获取付费模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Paymode 付费模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymode() const;
+
+                    /**
+                     * 设置付费模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Paymode 付费模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymode(const std::string& _paymode);
+
+                    /**
+                     * 判断参数 Paymode 是否已赋值
+                     * @return Paymode 是否已赋值
+                     */
+                    bool PaymodeHasBeenSet() const;
+
+                    /**
+                     * 获取分片的主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShardMasterZone 分片的主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetShardMasterZone() const;
+
+                    /**
+                     * 设置分片的主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ShardMasterZone 分片的主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetShardMasterZone(const std::string& _shardMasterZone);
+
+                    /**
+                     * 判断参数 ShardMasterZone 是否已赋值
+                     * @return ShardMasterZone 是否已赋值
+                     */
+                    bool ShardMasterZoneHasBeenSet() const;
+
+                    /**
+                     * 获取分片的从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShardSlaveZones 分片的从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetShardSlaveZones() const;
+
+                    /**
+                     * 设置分片的从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ShardSlaveZones 分片的从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetShardSlaveZones(const std::vector<std::string>& _shardSlaveZones);
+
+                    /**
+                     * 判断参数 ShardSlaveZones 是否已赋值
+                     * @return ShardSlaveZones 是否已赋值
+                     */
+                    bool ShardSlaveZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +593,27 @@ namespace TencentCloud
                      */
                     std::string m_proxyVersion;
                     bool m_proxyVersionHasBeenSet;
+
+                    /**
+                     * 付费模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymode;
+                    bool m_paymodeHasBeenSet;
+
+                    /**
+                     * 分片的主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_shardMasterZone;
+                    bool m_shardMasterZoneHasBeenSet;
+
+                    /**
+                     * 分片的从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_shardSlaveZones;
+                    bool m_shardSlaveZonesHasBeenSet;
 
                 };
             }

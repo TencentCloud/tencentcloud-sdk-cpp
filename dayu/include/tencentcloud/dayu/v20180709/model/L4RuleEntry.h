@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool LbTypeHasBeenSet() const;
 
                     /**
-                     * 获取会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
-                     * @return KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     * 获取会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]；
+                     * @return KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]；
                      */
                     uint64_t GetKeepEnable() const;
 
                     /**
-                     * 设置会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
-                     * @param KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     * 设置会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]；
+                     * @param KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]；
                      */
                     void SetKeepEnable(const uint64_t& _keepEnable);
 
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_lbTypeHasBeenSet;
 
                     /**
-                     * 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     * 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]；
                      */
                     uint64_t m_keepEnable;
                     bool m_keepEnableHasBeenSet;

@@ -26,10 +26,11 @@ using namespace std;
 CreateApplicationRequest::CreateApplicationRequest() :
     m_applicationNameHasBeenSet(false),
     m_applicationTypeHasBeenSet(false),
+    m_microserviceTypeHasBeenSet(false),
     m_applicationDescHasBeenSet(false),
     m_applicationLogConfigHasBeenSet(false),
-    m_microserviceTypeHasBeenSet(false),
-    m_applicationResourceTypeHasBeenSet(false)
+    m_applicationResourceTypeHasBeenSet(false),
+    m_applicationRuntimeTypeHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string CreateApplicationRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_applicationType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_microserviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MicroserviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_applicationDescHasBeenSet)
     {
         Value iKey(kStringType);
@@ -72,20 +81,20 @@ string CreateApplicationRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_applicationLogConfig.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_microserviceTypeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "MicroserviceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_applicationResourceTypeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "ApplicationResourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationRuntimeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationRuntimeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -128,6 +137,22 @@ bool CreateApplicationRequest::ApplicationTypeHasBeenSet() const
     return m_applicationTypeHasBeenSet;
 }
 
+string CreateApplicationRequest::GetMicroserviceType() const
+{
+    return m_microserviceType;
+}
+
+void CreateApplicationRequest::SetMicroserviceType(const string& _microserviceType)
+{
+    m_microserviceType = _microserviceType;
+    m_microserviceTypeHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::MicroserviceTypeHasBeenSet() const
+{
+    return m_microserviceTypeHasBeenSet;
+}
+
 string CreateApplicationRequest::GetApplicationDesc() const
 {
     return m_applicationDesc;
@@ -160,22 +185,6 @@ bool CreateApplicationRequest::ApplicationLogConfigHasBeenSet() const
     return m_applicationLogConfigHasBeenSet;
 }
 
-string CreateApplicationRequest::GetMicroserviceType() const
-{
-    return m_microserviceType;
-}
-
-void CreateApplicationRequest::SetMicroserviceType(const string& _microserviceType)
-{
-    m_microserviceType = _microserviceType;
-    m_microserviceTypeHasBeenSet = true;
-}
-
-bool CreateApplicationRequest::MicroserviceTypeHasBeenSet() const
-{
-    return m_microserviceTypeHasBeenSet;
-}
-
 string CreateApplicationRequest::GetApplicationResourceType() const
 {
     return m_applicationResourceType;
@@ -190,6 +199,22 @@ void CreateApplicationRequest::SetApplicationResourceType(const string& _applica
 bool CreateApplicationRequest::ApplicationResourceTypeHasBeenSet() const
 {
     return m_applicationResourceTypeHasBeenSet;
+}
+
+string CreateApplicationRequest::GetApplicationRuntimeType() const
+{
+    return m_applicationRuntimeType;
+}
+
+void CreateApplicationRequest::SetApplicationRuntimeType(const string& _applicationRuntimeType)
+{
+    m_applicationRuntimeType = _applicationRuntimeType;
+    m_applicationRuntimeTypeHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::ApplicationRuntimeTypeHasBeenSet() const
+{
+    return m_applicationRuntimeTypeHasBeenSet;
 }
 
 

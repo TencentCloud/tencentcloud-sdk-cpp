@@ -1459,6 +1459,49 @@ OcrClient::PermitOCROutcomeCallable OcrClient::PermitOCRCallable(const PermitOCR
     return task->get_future();
 }
 
+OcrClient::PropOwnerCertOCROutcome OcrClient::PropOwnerCertOCR(const PropOwnerCertOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "PropOwnerCertOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PropOwnerCertOCRResponse rsp = PropOwnerCertOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PropOwnerCertOCROutcome(rsp);
+        else
+            return PropOwnerCertOCROutcome(o.GetError());
+    }
+    else
+    {
+        return PropOwnerCertOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::PropOwnerCertOCRAsync(const PropOwnerCertOCRRequest& request, const PropOwnerCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PropOwnerCertOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::PropOwnerCertOCROutcomeCallable OcrClient::PropOwnerCertOCRCallable(const PropOwnerCertOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PropOwnerCertOCROutcome()>>(
+        [this, request]()
+        {
+            return this->PropOwnerCertOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::QrcodeOCROutcome OcrClient::QrcodeOCR(const QrcodeOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "QrcodeOCR");
@@ -1538,6 +1581,49 @@ OcrClient::QuotaInvoiceOCROutcomeCallable OcrClient::QuotaInvoiceOCRCallable(con
         [this, request]()
         {
             return this->QuotaInvoiceOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::ResidenceBookletOCROutcome OcrClient::ResidenceBookletOCR(const ResidenceBookletOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResidenceBookletOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResidenceBookletOCRResponse rsp = ResidenceBookletOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResidenceBookletOCROutcome(rsp);
+        else
+            return ResidenceBookletOCROutcome(o.GetError());
+    }
+    else
+    {
+        return ResidenceBookletOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ResidenceBookletOCRAsync(const ResidenceBookletOCRRequest& request, const ResidenceBookletOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResidenceBookletOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ResidenceBookletOCROutcomeCallable OcrClient::ResidenceBookletOCRCallable(const ResidenceBookletOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResidenceBookletOCROutcome()>>(
+        [this, request]()
+        {
+            return this->ResidenceBookletOCR(request);
         }
     );
 

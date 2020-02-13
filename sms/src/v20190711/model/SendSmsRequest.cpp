@@ -97,7 +97,7 @@ string SendSmsRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "ExtendCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_extendCode, allocator);
+        d.AddMember(iKey, Value(m_extendCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionContextHasBeenSet)
@@ -204,12 +204,12 @@ bool SendSmsRequest::TemplateParamSetHasBeenSet() const
     return m_templateParamSetHasBeenSet;
 }
 
-uint64_t SendSmsRequest::GetExtendCode() const
+string SendSmsRequest::GetExtendCode() const
 {
     return m_extendCode;
 }
 
-void SendSmsRequest::SetExtendCode(const uint64_t& _extendCode)
+void SendSmsRequest::SetExtendCode(const string& _extendCode)
 {
     m_extendCode = _extendCode;
     m_extendCodeHasBeenSet = true;

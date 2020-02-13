@@ -24,9 +24,10 @@ using namespace rapidjson;
 using namespace std;
 
 CreateAnimatedGraphicsTemplateRequest::CreateAnimatedGraphicsTemplateRequest() :
+    m_fpsHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_fpsHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_qualityHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -41,6 +42,14 @@ string CreateAnimatedGraphicsTemplateRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_fpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Fps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fps, allocator);
+    }
 
     if (m_widthHasBeenSet)
     {
@@ -58,12 +67,12 @@ string CreateAnimatedGraphicsTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_height, allocator);
     }
 
-    if (m_fpsHasBeenSet)
+    if (m_resolutionAdaptiveHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Fps";
+        string key = "ResolutionAdaptive";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_fps, allocator);
+        d.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
     }
 
     if (m_formatHasBeenSet)
@@ -114,6 +123,22 @@ string CreateAnimatedGraphicsTemplateRequest::ToJsonString() const
 }
 
 
+uint64_t CreateAnimatedGraphicsTemplateRequest::GetFps() const
+{
+    return m_fps;
+}
+
+void CreateAnimatedGraphicsTemplateRequest::SetFps(const uint64_t& _fps)
+{
+    m_fps = _fps;
+    m_fpsHasBeenSet = true;
+}
+
+bool CreateAnimatedGraphicsTemplateRequest::FpsHasBeenSet() const
+{
+    return m_fpsHasBeenSet;
+}
+
 uint64_t CreateAnimatedGraphicsTemplateRequest::GetWidth() const
 {
     return m_width;
@@ -146,20 +171,20 @@ bool CreateAnimatedGraphicsTemplateRequest::HeightHasBeenSet() const
     return m_heightHasBeenSet;
 }
 
-uint64_t CreateAnimatedGraphicsTemplateRequest::GetFps() const
+string CreateAnimatedGraphicsTemplateRequest::GetResolutionAdaptive() const
 {
-    return m_fps;
+    return m_resolutionAdaptive;
 }
 
-void CreateAnimatedGraphicsTemplateRequest::SetFps(const uint64_t& _fps)
+void CreateAnimatedGraphicsTemplateRequest::SetResolutionAdaptive(const string& _resolutionAdaptive)
 {
-    m_fps = _fps;
-    m_fpsHasBeenSet = true;
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
 }
 
-bool CreateAnimatedGraphicsTemplateRequest::FpsHasBeenSet() const
+bool CreateAnimatedGraphicsTemplateRequest::ResolutionAdaptiveHasBeenSet() const
 {
-    return m_fpsHasBeenSet;
+    return m_resolutionAdaptiveHasBeenSet;
 }
 
 string CreateAnimatedGraphicsTemplateRequest::GetFormat() const

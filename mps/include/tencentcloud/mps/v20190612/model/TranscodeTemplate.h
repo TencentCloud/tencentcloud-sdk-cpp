@@ -87,17 +87,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -109,17 +105,13 @@ namespace TencentCloud
 
                     /**
                      * 获取模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Comment 模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -209,17 +201,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoTemplate 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoTemplateInfo GetVideoTemplate() const;
 
                     /**
                      * 设置视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param VideoTemplate 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVideoTemplate(const VideoTemplateInfo& _videoTemplate);
 
@@ -231,17 +219,13 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioTemplate 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioTemplateInfo GetAudioTemplate() const;
 
                     /**
                      * 设置音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AudioTemplate 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAudioTemplate(const AudioTemplateInfo& _audioTemplate);
 
@@ -252,17 +236,17 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
-                     * 获取极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * 获取极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * @return TEHDConfig 极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TEHDConfig GetTEHDConfig() const;
 
                     /**
-                     * 设置极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * 设置极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * @param TEHDConfig 极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTEHDConfig(const TEHDConfig& _tEHDConfig);
@@ -300,14 +284,14 @@ namespace TencentCloud
                     bool ContainerTypeHasBeenSet() const;
 
                     /**
-                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -318,14 +302,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -351,14 +335,12 @@ namespace TencentCloud
 
                     /**
                      * 转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
@@ -389,20 +371,18 @@ namespace TencentCloud
 
                     /**
                      * 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoTemplateInfo m_videoTemplate;
                     bool m_videoTemplateHasBeenSet;
 
                     /**
                      * 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioTemplateInfo m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
 
                     /**
-                     * 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * 极速高清转码参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TEHDConfig m_tEHDConfig;
@@ -417,13 +397,13 @@ namespace TencentCloud
                     bool m_containerTypeHasBeenSet;
 
                     /**
-                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

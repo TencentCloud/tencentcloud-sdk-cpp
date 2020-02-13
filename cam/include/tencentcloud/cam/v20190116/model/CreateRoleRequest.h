@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取是否允许登录
-                     * @return ConsoleLogin 是否允许登录
+                     * 获取是否允许登录 1 为允许 0 为不允许
+                     * @return ConsoleLogin 是否允许登录 1 为允许 0 为不允许
                      */
                     uint64_t GetConsoleLogin() const;
 
                     /**
-                     * 设置是否允许登录
-                     * @param ConsoleLogin 是否允许登录
+                     * 设置是否允许登录 1 为允许 0 为不允许
+                     * @param ConsoleLogin 是否允许登录 1 为允许 0 为不允许
                      */
                     void SetConsoleLogin(const uint64_t& _consoleLogin);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 是否允许登录
+                     * 是否允许登录 1 为允许 0 为不允许
                      */
                     uint64_t m_consoleLogin;
                     bool m_consoleLoginHasBeenSet;

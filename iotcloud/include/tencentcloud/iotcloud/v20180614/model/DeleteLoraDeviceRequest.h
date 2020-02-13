@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备所属产品id
-                     * @return ProductId 设备所属产品id
+                     * 获取设备所属产品ID
+                     * @return ProductId 设备所属产品ID
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置设备所属产品id
-                     * @param ProductId 设备所属产品id
+                     * 设置设备所属产品ID
+                     * @param ProductId 设备所属产品ID
                      */
                     void SetProductId(const std::string& _productId);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备所属产品id
+                     * 设备所属产品ID
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;

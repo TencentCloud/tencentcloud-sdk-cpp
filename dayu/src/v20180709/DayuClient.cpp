@@ -40,6 +40,92 @@ DayuClient::DayuClient(const Credential &credential, const string &region, const
 }
 
 
+DayuClient::CreateBasicDDoSAlarmThresholdOutcome DayuClient::CreateBasicDDoSAlarmThreshold(const CreateBasicDDoSAlarmThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBasicDDoSAlarmThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBasicDDoSAlarmThresholdResponse rsp = CreateBasicDDoSAlarmThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBasicDDoSAlarmThresholdOutcome(rsp);
+        else
+            return CreateBasicDDoSAlarmThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBasicDDoSAlarmThresholdOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateBasicDDoSAlarmThresholdAsync(const CreateBasicDDoSAlarmThresholdRequest& request, const CreateBasicDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBasicDDoSAlarmThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateBasicDDoSAlarmThresholdOutcomeCallable DayuClient::CreateBasicDDoSAlarmThresholdCallable(const CreateBasicDDoSAlarmThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBasicDDoSAlarmThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBasicDDoSAlarmThreshold(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::CreateCCFrequencyRulesOutcome DayuClient::CreateCCFrequencyRules(const CreateCCFrequencyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCCFrequencyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCCFrequencyRulesResponse rsp = CreateCCFrequencyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCCFrequencyRulesOutcome(rsp);
+        else
+            return CreateCCFrequencyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCCFrequencyRulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateCCFrequencyRulesAsync(const CreateCCFrequencyRulesRequest& request, const CreateCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCCFrequencyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateCCFrequencyRulesOutcomeCallable DayuClient::CreateCCFrequencyRulesCallable(const CreateCCFrequencyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCCFrequencyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCCFrequencyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::CreateCCSelfDefinePolicyOutcome DayuClient::CreateCCSelfDefinePolicy(const CreateCCSelfDefinePolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCCSelfDefinePolicy");
@@ -298,49 +384,6 @@ DayuClient::CreateL4RulesOutcomeCallable DayuClient::CreateL4RulesCallable(const
     return task->get_future();
 }
 
-DayuClient::CreateL7CCRuleOutcome DayuClient::CreateL7CCRule(const CreateL7CCRuleRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateL7CCRule");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateL7CCRuleResponse rsp = CreateL7CCRuleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateL7CCRuleOutcome(rsp);
-        else
-            return CreateL7CCRuleOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateL7CCRuleOutcome(outcome.GetError());
-    }
-}
-
-void DayuClient::CreateL7CCRuleAsync(const CreateL7CCRuleRequest& request, const CreateL7CCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateL7CCRule(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DayuClient::CreateL7CCRuleOutcomeCallable DayuClient::CreateL7CCRuleCallable(const CreateL7CCRuleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateL7CCRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateL7CCRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 DayuClient::CreateL7HealthConfigOutcome DayuClient::CreateL7HealthConfig(const CreateL7HealthConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateL7HealthConfig");
@@ -549,6 +592,49 @@ DayuClient::CreateUnblockIpOutcomeCallable DayuClient::CreateUnblockIpCallable(c
         [this, request]()
         {
             return this->CreateUnblockIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DeleteCCFrequencyRulesOutcome DayuClient::DeleteCCFrequencyRules(const DeleteCCFrequencyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCCFrequencyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCCFrequencyRulesResponse rsp = DeleteCCFrequencyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCCFrequencyRulesOutcome(rsp);
+        else
+            return DeleteCCFrequencyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCCFrequencyRulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DeleteCCFrequencyRulesAsync(const DeleteCCFrequencyRulesRequest& request, const DeleteCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCCFrequencyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DeleteCCFrequencyRulesOutcomeCallable DayuClient::DeleteCCFrequencyRulesCallable(const DeleteCCFrequencyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCCFrequencyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCCFrequencyRules(request);
         }
     );
 
@@ -857,6 +943,135 @@ DayuClient::DescribeBaradDataOutcomeCallable DayuClient::DescribeBaradDataCallab
     return task->get_future();
 }
 
+DayuClient::DescribeBasicCCThresholdOutcome DayuClient::DescribeBasicCCThreshold(const DescribeBasicCCThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBasicCCThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBasicCCThresholdResponse rsp = DescribeBasicCCThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBasicCCThresholdOutcome(rsp);
+        else
+            return DescribeBasicCCThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBasicCCThresholdOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeBasicCCThresholdAsync(const DescribeBasicCCThresholdRequest& request, const DescribeBasicCCThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBasicCCThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeBasicCCThresholdOutcomeCallable DayuClient::DescribeBasicCCThresholdCallable(const DescribeBasicCCThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBasicCCThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBasicCCThreshold(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeBasicDeviceThresholdOutcome DayuClient::DescribeBasicDeviceThreshold(const DescribeBasicDeviceThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBasicDeviceThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBasicDeviceThresholdResponse rsp = DescribeBasicDeviceThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBasicDeviceThresholdOutcome(rsp);
+        else
+            return DescribeBasicDeviceThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBasicDeviceThresholdOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeBasicDeviceThresholdAsync(const DescribeBasicDeviceThresholdRequest& request, const DescribeBasicDeviceThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBasicDeviceThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeBasicDeviceThresholdOutcomeCallable DayuClient::DescribeBasicDeviceThresholdCallable(const DescribeBasicDeviceThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBasicDeviceThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBasicDeviceThreshold(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeCCAlarmThresholdOutcome DayuClient::DescribeCCAlarmThreshold(const DescribeCCAlarmThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCAlarmThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCAlarmThresholdResponse rsp = DescribeCCAlarmThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCAlarmThresholdOutcome(rsp);
+        else
+            return DescribeCCAlarmThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCAlarmThresholdOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeCCAlarmThresholdAsync(const DescribeCCAlarmThresholdRequest& request, const DescribeCCAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCAlarmThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeCCAlarmThresholdOutcomeCallable DayuClient::DescribeCCAlarmThresholdCallable(const DescribeCCAlarmThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCAlarmThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCAlarmThreshold(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::DescribeCCEvListOutcome DayuClient::DescribeCCEvList(const DescribeCCEvListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCCEvList");
@@ -900,6 +1115,49 @@ DayuClient::DescribeCCEvListOutcomeCallable DayuClient::DescribeCCEvListCallable
     return task->get_future();
 }
 
+DayuClient::DescribeCCFrequencyRulesOutcome DayuClient::DescribeCCFrequencyRules(const DescribeCCFrequencyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCFrequencyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCFrequencyRulesResponse rsp = DescribeCCFrequencyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCFrequencyRulesOutcome(rsp);
+        else
+            return DescribeCCFrequencyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCFrequencyRulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeCCFrequencyRulesAsync(const DescribeCCFrequencyRulesRequest& request, const DescribeCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCFrequencyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeCCFrequencyRulesOutcomeCallable DayuClient::DescribeCCFrequencyRulesCallable(const DescribeCCFrequencyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCFrequencyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCFrequencyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::DescribeCCIpAllowDenyOutcome DayuClient::DescribeCCIpAllowDeny(const DescribeCCIpAllowDenyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCCIpAllowDeny");
@@ -936,6 +1194,49 @@ DayuClient::DescribeCCIpAllowDenyOutcomeCallable DayuClient::DescribeCCIpAllowDe
         [this, request]()
         {
             return this->DescribeCCIpAllowDeny(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeCCSelfDefinePolicyOutcome DayuClient::DescribeCCSelfDefinePolicy(const DescribeCCSelfDefinePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCSelfDefinePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCSelfDefinePolicyResponse rsp = DescribeCCSelfDefinePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCSelfDefinePolicyOutcome(rsp);
+        else
+            return DescribeCCSelfDefinePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCSelfDefinePolicyOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeCCSelfDefinePolicyAsync(const DescribeCCSelfDefinePolicyRequest& request, const DescribeCCSelfDefinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCSelfDefinePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeCCSelfDefinePolicyOutcomeCallable DayuClient::DescribeCCSelfDefinePolicyCallable(const DescribeCCSelfDefinePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCSelfDefinePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCSelfDefinePolicy(request);
         }
     );
 
@@ -1022,6 +1323,135 @@ DayuClient::DescribeCCUrlAllowOutcomeCallable DayuClient::DescribeCCUrlAllowCall
         [this, request]()
         {
             return this->DescribeCCUrlAllow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeDDoSAlarmThresholdOutcome DayuClient::DescribeDDoSAlarmThreshold(const DescribeDDoSAlarmThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSAlarmThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSAlarmThresholdResponse rsp = DescribeDDoSAlarmThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSAlarmThresholdOutcome(rsp);
+        else
+            return DescribeDDoSAlarmThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSAlarmThresholdOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeDDoSAlarmThresholdAsync(const DescribeDDoSAlarmThresholdRequest& request, const DescribeDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSAlarmThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeDDoSAlarmThresholdOutcomeCallable DayuClient::DescribeDDoSAlarmThresholdCallable(const DescribeDDoSAlarmThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSAlarmThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSAlarmThreshold(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeDDoSAttackIPRegionMapOutcome DayuClient::DescribeDDoSAttackIPRegionMap(const DescribeDDoSAttackIPRegionMapRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSAttackIPRegionMap");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSAttackIPRegionMapResponse rsp = DescribeDDoSAttackIPRegionMapResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSAttackIPRegionMapOutcome(rsp);
+        else
+            return DescribeDDoSAttackIPRegionMapOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSAttackIPRegionMapOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeDDoSAttackIPRegionMapAsync(const DescribeDDoSAttackIPRegionMapRequest& request, const DescribeDDoSAttackIPRegionMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSAttackIPRegionMap(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeDDoSAttackIPRegionMapOutcomeCallable DayuClient::DescribeDDoSAttackIPRegionMapCallable(const DescribeDDoSAttackIPRegionMapRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSAttackIPRegionMapOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSAttackIPRegionMap(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeDDoSAttackSourceOutcome DayuClient::DescribeDDoSAttackSource(const DescribeDDoSAttackSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSAttackSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSAttackSourceResponse rsp = DescribeDDoSAttackSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSAttackSourceOutcome(rsp);
+        else
+            return DescribeDDoSAttackSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSAttackSourceOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeDDoSAttackSourceAsync(const DescribeDDoSAttackSourceRequest& request, const DescribeDDoSAttackSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSAttackSource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeDDoSAttackSourceOutcomeCallable DayuClient::DescribeDDoSAttackSourceCallable(const DescribeDDoSAttackSourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSAttackSourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSAttackSource(request);
         }
     );
 
@@ -1588,6 +2018,49 @@ DayuClient::DescribeDDoSUsedStatisOutcomeCallable DayuClient::DescribeDDoSUsedSt
     return task->get_future();
 }
 
+DayuClient::DescribeIPProductInfoOutcome DayuClient::DescribeIPProductInfo(const DescribeIPProductInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIPProductInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIPProductInfoResponse rsp = DescribeIPProductInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIPProductInfoOutcome(rsp);
+        else
+            return DescribeIPProductInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIPProductInfoOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeIPProductInfoAsync(const DescribeIPProductInfoRequest& request, const DescribeIPProductInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIPProductInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeIPProductInfoOutcomeCallable DayuClient::DescribeIPProductInfoCallable(const DescribeIPProductInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIPProductInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIPProductInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::DescribeInsurePacksOutcome DayuClient::DescribeInsurePacks(const DescribeInsurePacksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInsurePacks");
@@ -1667,6 +2140,49 @@ DayuClient::DescribeIpBlockListOutcomeCallable DayuClient::DescribeIpBlockListCa
         [this, request]()
         {
             return this->DescribeIpBlockList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeIpUnBlockListOutcome DayuClient::DescribeIpUnBlockList(const DescribeIpUnBlockListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIpUnBlockList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIpUnBlockListResponse rsp = DescribeIpUnBlockListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIpUnBlockListOutcome(rsp);
+        else
+            return DescribeIpUnBlockListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIpUnBlockListOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeIpUnBlockListAsync(const DescribeIpUnBlockListRequest& request, const DescribeIpUnBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIpUnBlockList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeIpUnBlockListOutcomeCallable DayuClient::DescribeIpUnBlockListCallable(const DescribeIpUnBlockListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIpUnBlockListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIpUnBlockList(request);
         }
     );
 
@@ -2362,6 +2878,135 @@ DayuClient::DescribleRegionCountOutcomeCallable DayuClient::DescribleRegionCount
     return task->get_future();
 }
 
+DayuClient::ModifyCCAlarmThresholdOutcome DayuClient::ModifyCCAlarmThreshold(const ModifyCCAlarmThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCCAlarmThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCCAlarmThresholdResponse rsp = ModifyCCAlarmThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCCAlarmThresholdOutcome(rsp);
+        else
+            return ModifyCCAlarmThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCCAlarmThresholdOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::ModifyCCAlarmThresholdAsync(const ModifyCCAlarmThresholdRequest& request, const ModifyCCAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCCAlarmThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::ModifyCCAlarmThresholdOutcomeCallable DayuClient::ModifyCCAlarmThresholdCallable(const ModifyCCAlarmThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCCAlarmThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCCAlarmThreshold(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::ModifyCCFrequencyRulesOutcome DayuClient::ModifyCCFrequencyRules(const ModifyCCFrequencyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCCFrequencyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCCFrequencyRulesResponse rsp = ModifyCCFrequencyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCCFrequencyRulesOutcome(rsp);
+        else
+            return ModifyCCFrequencyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCCFrequencyRulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::ModifyCCFrequencyRulesAsync(const ModifyCCFrequencyRulesRequest& request, const ModifyCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCCFrequencyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::ModifyCCFrequencyRulesOutcomeCallable DayuClient::ModifyCCFrequencyRulesCallable(const ModifyCCFrequencyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCCFrequencyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCCFrequencyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::ModifyCCFrequencyRulesStatusOutcome DayuClient::ModifyCCFrequencyRulesStatus(const ModifyCCFrequencyRulesStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCCFrequencyRulesStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCCFrequencyRulesStatusResponse rsp = ModifyCCFrequencyRulesStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCCFrequencyRulesStatusOutcome(rsp);
+        else
+            return ModifyCCFrequencyRulesStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCCFrequencyRulesStatusOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::ModifyCCFrequencyRulesStatusAsync(const ModifyCCFrequencyRulesStatusRequest& request, const ModifyCCFrequencyRulesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCCFrequencyRulesStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::ModifyCCFrequencyRulesStatusOutcomeCallable DayuClient::ModifyCCFrequencyRulesStatusCallable(const ModifyCCFrequencyRulesStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCCFrequencyRulesStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCCFrequencyRulesStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::ModifyCCHostProtectionOutcome DayuClient::ModifyCCHostProtection(const ModifyCCHostProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCCHostProtection");
@@ -2699,6 +3344,49 @@ DayuClient::ModifyDDoSAIStatusOutcomeCallable DayuClient::ModifyDDoSAIStatusCall
         [this, request]()
         {
             return this->ModifyDDoSAIStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::ModifyDDoSAlarmThresholdOutcome DayuClient::ModifyDDoSAlarmThreshold(const ModifyDDoSAlarmThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDDoSAlarmThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDDoSAlarmThresholdResponse rsp = ModifyDDoSAlarmThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDDoSAlarmThresholdOutcome(rsp);
+        else
+            return ModifyDDoSAlarmThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDDoSAlarmThresholdOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::ModifyDDoSAlarmThresholdAsync(const ModifyDDoSAlarmThresholdRequest& request, const ModifyDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDDoSAlarmThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::ModifyDDoSAlarmThresholdOutcomeCallable DayuClient::ModifyDDoSAlarmThresholdCallable(const ModifyDDoSAlarmThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDDoSAlarmThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDDoSAlarmThreshold(request);
         }
     );
 
@@ -3301,6 +3989,49 @@ DayuClient::ModifyResBindDDoSPolicyOutcomeCallable DayuClient::ModifyResBindDDoS
         [this, request]()
         {
             return this->ModifyResBindDDoSPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::ModifyResourceRenewFlagOutcome DayuClient::ModifyResourceRenewFlag(const ModifyResourceRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceRenewFlagResponse rsp = ModifyResourceRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceRenewFlagOutcome(rsp);
+        else
+            return ModifyResourceRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::ModifyResourceRenewFlagAsync(const ModifyResourceRenewFlagRequest& request, const ModifyResourceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyResourceRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::ModifyResourceRenewFlagOutcomeCallable DayuClient::ModifyResourceRenewFlagCallable(const ModifyResourceRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyResourceRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyResourceRenewFlag(request);
         }
     );
 

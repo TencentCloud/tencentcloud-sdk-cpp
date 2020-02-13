@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发送流水号
-                     * @return SerialNo 发送流水号
+                     * 获取发送流水号。
+                     * @return SerialNo 发送流水号。
                      */
                     std::string GetSerialNo() const;
 
                     /**
-                     * 设置发送流水号
-                     * @param SerialNo 发送流水号
+                     * 设置发送流水号。
+                     * @param SerialNo 发送流水号。
                      */
                     void SetSerialNo(const std::string& _serialNo);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SerialNoHasBeenSet() const;
 
                     /**
-                     * 获取手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
-                     * @return PhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
+                     * 获取手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * @return PhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
-                     * @param PhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
+                     * 设置手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * @param PhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取计费条数，计费规则请查询[计费策略](https://cloud.tencent.com/document/product/382/36135)
-                     * @return Fee 计费条数，计费规则请查询[计费策略](https://cloud.tencent.com/document/product/382/36135)
+                     * 获取计费条数，计费规则请查询 [计费策略](https://cloud.tencent.com/document/product/382/36135)。
+                     * @return Fee 计费条数，计费规则请查询 [计费策略](https://cloud.tencent.com/document/product/382/36135)。
                      */
                     uint64_t GetFee() const;
 
                     /**
-                     * 设置计费条数，计费规则请查询[计费策略](https://cloud.tencent.com/document/product/382/36135)
-                     * @param Fee 计费条数，计费规则请查询[计费策略](https://cloud.tencent.com/document/product/382/36135)
+                     * 设置计费条数，计费规则请查询 [计费策略](https://cloud.tencent.com/document/product/382/36135)。
+                     * @param Fee 计费条数，计费规则请查询 [计费策略](https://cloud.tencent.com/document/product/382/36135)。
                      */
                     void SetFee(const uint64_t& _fee);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool FeeHasBeenSet() const;
 
                     /**
-                     * 获取用户Session内容
-                     * @return SessionContext 用户Session内容
+                     * 获取用户Session内容。
+                     * @return SessionContext 用户Session内容。
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置用户Session内容
-                     * @param SessionContext 用户Session内容
+                     * 设置用户Session内容。
+                     * @param SessionContext 用户Session内容。
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取短信请求错误码，具体含义请参考错误码
-                     * @return Code 短信请求错误码，具体含义请参考错误码
+                     * 获取短信请求错误码，具体含义请参考错误码。
+                     * @return Code 短信请求错误码，具体含义请参考错误码。
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置短信请求错误码，具体含义请参考错误码
-                     * @param Code 短信请求错误码，具体含义请参考错误码
+                     * 设置短信请求错误码，具体含义请参考错误码。
+                     * @param Code 短信请求错误码，具体含义请参考错误码。
                      */
                     void SetCode(const std::string& _code);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取短信请求错误码描述
-                     * @return Message 短信请求错误码描述
+                     * 获取短信请求错误码描述。
+                     * @return Message 短信请求错误码描述。
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置短信请求错误码描述
-                     * @param Message 短信请求错误码描述
+                     * 设置短信请求错误码描述。
+                     * @param Message 短信请求错误码描述。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -157,37 +157,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发送流水号
+                     * 发送流水号。
                      */
                     std::string m_serialNo;
                     bool m_serialNoHasBeenSet;
 
                     /**
-                     * 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号
+                     * 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
 
                     /**
-                     * 计费条数，计费规则请查询[计费策略](https://cloud.tencent.com/document/product/382/36135)
+                     * 计费条数，计费规则请查询 [计费策略](https://cloud.tencent.com/document/product/382/36135)。
                      */
                     uint64_t m_fee;
                     bool m_feeHasBeenSet;
 
                     /**
-                     * 用户Session内容
+                     * 用户Session内容。
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 短信请求错误码，具体含义请参考错误码
+                     * 短信请求错误码，具体含义请参考错误码。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 短信请求错误码描述
+                     * 短信请求错误码描述。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

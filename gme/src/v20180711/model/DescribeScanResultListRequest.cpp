@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeScanResultListRequest::DescribeScanResultListRequest() :
     m_bizIdHasBeenSet(false),
-    m_taskIdListHasBeenSet(false)
+    m_taskIdListHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string DescribeScanResultListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -95,6 +104,22 @@ void DescribeScanResultListRequest::SetTaskIdList(const vector<string>& _taskIdL
 bool DescribeScanResultListRequest::TaskIdListHasBeenSet() const
 {
     return m_taskIdListHasBeenSet;
+}
+
+uint64_t DescribeScanResultListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeScanResultListRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeScanResultListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

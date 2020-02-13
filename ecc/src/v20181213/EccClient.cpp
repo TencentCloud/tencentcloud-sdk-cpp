@@ -40,6 +40,49 @@ EccClient::EccClient(const Credential &credential, const string &region, const C
 }
 
 
+EccClient::CorrectMultiImageOutcome EccClient::CorrectMultiImage(const CorrectMultiImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CorrectMultiImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CorrectMultiImageResponse rsp = CorrectMultiImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CorrectMultiImageOutcome(rsp);
+        else
+            return CorrectMultiImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CorrectMultiImageOutcome(outcome.GetError());
+    }
+}
+
+void EccClient::CorrectMultiImageAsync(const CorrectMultiImageRequest& request, const CorrectMultiImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CorrectMultiImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EccClient::CorrectMultiImageOutcomeCallable EccClient::CorrectMultiImageCallable(const CorrectMultiImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CorrectMultiImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CorrectMultiImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EccClient::DescribeTaskOutcome EccClient::DescribeTask(const DescribeTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTask");

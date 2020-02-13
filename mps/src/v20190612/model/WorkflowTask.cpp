@@ -30,6 +30,7 @@ WorkflowTask::WorkflowTask() :
     m_metaDataHasBeenSet(false),
     m_mediaProcessResultSetHasBeenSet(false),
     m_aiContentReviewResultSetHasBeenSet(false),
+    m_aiAnalysisResultSetHasBeenSet(false),
     m_aiRecognitionResultSetHasBeenSet(false)
 {
 }
@@ -153,6 +154,26 @@ CoreInternalOutcome WorkflowTask::Deserialize(const Value &value)
         m_aiContentReviewResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("AiAnalysisResultSet") && !value["AiAnalysisResultSet"].IsNull())
+    {
+        if (!value["AiAnalysisResultSet"].IsArray())
+            return CoreInternalOutcome(Error("response `WorkflowTask.AiAnalysisResultSet` is not array type"));
+
+        const Value &tmpValue = value["AiAnalysisResultSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiAnalysisResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aiAnalysisResultSet.push_back(item);
+        }
+        m_aiAnalysisResultSetHasBeenSet = true;
+    }
+
     if (value.HasMember("AiRecognitionResultSet") && !value["AiRecognitionResultSet"].IsNull())
     {
         if (!value["AiRecognitionResultSet"].IsArray())
@@ -254,6 +275,21 @@ void WorkflowTask::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
         int i=0;
         for (auto itr = m_aiContentReviewResultSet.begin(); itr != m_aiContentReviewResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_aiAnalysisResultSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiAnalysisResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aiAnalysisResultSet.begin(); itr != m_aiAnalysisResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -404,6 +440,22 @@ void WorkflowTask::SetAiContentReviewResultSet(const vector<AiContentReviewResul
 bool WorkflowTask::AiContentReviewResultSetHasBeenSet() const
 {
     return m_aiContentReviewResultSetHasBeenSet;
+}
+
+vector<AiAnalysisResult> WorkflowTask::GetAiAnalysisResultSet() const
+{
+    return m_aiAnalysisResultSet;
+}
+
+void WorkflowTask::SetAiAnalysisResultSet(const vector<AiAnalysisResult>& _aiAnalysisResultSet)
+{
+    m_aiAnalysisResultSet = _aiAnalysisResultSet;
+    m_aiAnalysisResultSetHasBeenSet = true;
+}
+
+bool WorkflowTask::AiAnalysisResultSetHasBeenSet() const
+{
+    return m_aiAnalysisResultSetHasBeenSet;
 }
 
 vector<AiRecognitionResult> WorkflowTask::GetAiRecognitionResultSet() const

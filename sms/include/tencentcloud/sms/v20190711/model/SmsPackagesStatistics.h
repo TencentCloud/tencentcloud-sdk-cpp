@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐包创建时间
-                     * @return PackageCreateTime 套餐包创建时间
+                     * 获取套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @return PackageCreateTime 套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     std::string GetPackageCreateTime() const;
 
                     /**
-                     * 设置套餐包创建时间
-                     * @param PackageCreateTime 套餐包创建时间
+                     * 设置套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @param PackageCreateTime 套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     void SetPackageCreateTime(const std::string& _packageCreateTime);
 
@@ -65,14 +65,32 @@ namespace TencentCloud
                     bool PackageCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐包生效时间
-                     * @return PackageEffectiveTime 套餐包生效时间
+                     * 获取套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * @return PackageCreateUnixTime 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     */
+                    uint64_t GetPackageCreateUnixTime() const;
+
+                    /**
+                     * 设置套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * @param PackageCreateUnixTime 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     */
+                    void SetPackageCreateUnixTime(const uint64_t& _packageCreateUnixTime);
+
+                    /**
+                     * 判断参数 PackageCreateUnixTime 是否已赋值
+                     * @return PackageCreateUnixTime 是否已赋值
+                     */
+                    bool PackageCreateUnixTimeHasBeenSet() const;
+
+                    /**
+                     * 获取套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @return PackageEffectiveTime 套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     std::string GetPackageEffectiveTime() const;
 
                     /**
-                     * 设置套餐包生效时间
-                     * @param PackageEffectiveTime 套餐包生效时间
+                     * 设置套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @param PackageEffectiveTime 套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     void SetPackageEffectiveTime(const std::string& _packageEffectiveTime);
 
@@ -83,14 +101,32 @@ namespace TencentCloud
                     bool PackageEffectiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐包过期时间
-                     * @return PackageExpiredTime 套餐包过期时间
+                     * 获取套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * @return PackageEffectiveUnixTime 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     */
+                    uint64_t GetPackageEffectiveUnixTime() const;
+
+                    /**
+                     * 设置套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * @param PackageEffectiveUnixTime 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     */
+                    void SetPackageEffectiveUnixTime(const uint64_t& _packageEffectiveUnixTime);
+
+                    /**
+                     * 判断参数 PackageEffectiveUnixTime 是否已赋值
+                     * @return PackageEffectiveUnixTime 是否已赋值
+                     */
+                    bool PackageEffectiveUnixTimeHasBeenSet() const;
+
+                    /**
+                     * 获取套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @return PackageExpiredTime 套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     std::string GetPackageExpiredTime() const;
 
                     /**
-                     * 设置套餐包过期时间
-                     * @param PackageExpiredTime 套餐包过期时间
+                     * 设置套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
+                     * @param PackageExpiredTime 套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     void SetPackageExpiredTime(const std::string& _packageExpiredTime);
 
@@ -101,14 +137,32 @@ namespace TencentCloud
                     bool PackageExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐包条数
-                     * @return AmountOfPackage 套餐包条数
+                     * 获取套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * @return PackageExpiredUnixTime 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     */
+                    uint64_t GetPackageExpiredUnixTime() const;
+
+                    /**
+                     * 设置套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * @param PackageExpiredUnixTime 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     */
+                    void SetPackageExpiredUnixTime(const uint64_t& _packageExpiredUnixTime);
+
+                    /**
+                     * 判断参数 PackageExpiredUnixTime 是否已赋值
+                     * @return PackageExpiredUnixTime 是否已赋值
+                     */
+                    bool PackageExpiredUnixTimeHasBeenSet() const;
+
+                    /**
+                     * 获取套餐包条数。
+                     * @return AmountOfPackage 套餐包条数。
                      */
                     uint64_t GetAmountOfPackage() const;
 
                     /**
-                     * 设置套餐包条数
-                     * @param AmountOfPackage 套餐包条数
+                     * 设置套餐包条数。
+                     * @param AmountOfPackage 套餐包条数。
                      */
                     void SetAmountOfPackage(const uint64_t& _amountOfPackage);
 
@@ -119,14 +173,14 @@ namespace TencentCloud
                     bool AmountOfPackageHasBeenSet() const;
 
                     /**
-                     * 获取0表示赠送套餐包，1表示购买套餐包
-                     * @return TypeOfPackage 0表示赠送套餐包，1表示购买套餐包
+                     * 获取0表示赠送套餐包，1表示购买套餐包。
+                     * @return TypeOfPackage 0表示赠送套餐包，1表示购买套餐包。
                      */
                     uint64_t GetTypeOfPackage() const;
 
                     /**
-                     * 设置0表示赠送套餐包，1表示购买套餐包
-                     * @param TypeOfPackage 0表示赠送套餐包，1表示购买套餐包
+                     * 设置0表示赠送套餐包，1表示购买套餐包。
+                     * @param TypeOfPackage 0表示赠送套餐包，1表示购买套餐包。
                      */
                     void SetTypeOfPackage(const uint64_t& _typeOfPackage);
 
@@ -137,14 +191,14 @@ namespace TencentCloud
                     bool TypeOfPackageHasBeenSet() const;
 
                     /**
-                     * 获取套餐包 ID
-                     * @return PackageId 套餐包 ID
+                     * 获取套餐包 ID。
+                     * @return PackageId 套餐包 ID。
                      */
                     uint64_t GetPackageId() const;
 
                     /**
-                     * 设置套餐包 ID
-                     * @param PackageId 套餐包 ID
+                     * 设置套餐包 ID。
+                     * @param PackageId 套餐包 ID。
                      */
                     void SetPackageId(const uint64_t& _packageId);
 
@@ -155,14 +209,14 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取当前使用量
-                     * @return CurrentUsage 当前使用量
+                     * 获取当前使用量。
+                     * @return CurrentUsage 当前使用量。
                      */
                     uint64_t GetCurrentUsage() const;
 
                     /**
-                     * 设置当前使用量
-                     * @param CurrentUsage 当前使用量
+                     * 设置当前使用量。
+                     * @param CurrentUsage 当前使用量。
                      */
                     void SetCurrentUsage(const uint64_t& _currentUsage);
 
@@ -175,43 +229,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 套餐包创建时间
+                     * 套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     std::string m_packageCreateTime;
                     bool m_packageCreateTimeHasBeenSet;
 
                     /**
-                     * 套餐包生效时间
+                     * 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     */
+                    uint64_t m_packageCreateUnixTime;
+                    bool m_packageCreateUnixTimeHasBeenSet;
+
+                    /**
+                     * 套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     std::string m_packageEffectiveTime;
                     bool m_packageEffectiveTimeHasBeenSet;
 
                     /**
-                     * 套餐包过期时间
+                     * 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     */
+                    uint64_t m_packageEffectiveUnixTime;
+                    bool m_packageEffectiveUnixTimeHasBeenSet;
+
+                    /**
+                     * 套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。
                      */
                     std::string m_packageExpiredTime;
                     bool m_packageExpiredTimeHasBeenSet;
 
                     /**
-                     * 套餐包条数
+                     * 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     */
+                    uint64_t m_packageExpiredUnixTime;
+                    bool m_packageExpiredUnixTimeHasBeenSet;
+
+                    /**
+                     * 套餐包条数。
                      */
                     uint64_t m_amountOfPackage;
                     bool m_amountOfPackageHasBeenSet;
 
                     /**
-                     * 0表示赠送套餐包，1表示购买套餐包
+                     * 0表示赠送套餐包，1表示购买套餐包。
                      */
                     uint64_t m_typeOfPackage;
                     bool m_typeOfPackageHasBeenSet;
 
                     /**
-                     * 套餐包 ID
+                     * 套餐包 ID。
                      */
                     uint64_t m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 当前使用量
+                     * 当前使用量。
                      */
                     uint64_t m_currentUsage;
                     bool m_currentUsageHasBeenSet;

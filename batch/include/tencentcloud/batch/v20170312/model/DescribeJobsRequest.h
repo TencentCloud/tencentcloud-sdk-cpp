@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
-                     * @return JobIds 作业ID
+                     * 获取作业ID列表，与Filters参数不能同时指定。
+                     * @return JobIds 作业ID列表，与Filters参数不能同时指定。
                      */
                     std::vector<std::string> GetJobIds() const;
 
                     /**
-                     * 设置作业ID
-                     * @param JobIds 作业ID
+                     * 设置作业ID列表，与Filters参数不能同时指定。
+                     * @param JobIds 作业ID列表，与Filters参数不能同时指定。
                      */
                     void SetJobIds(const std::vector<std::string>& _jobIds);
 
@@ -67,11 +67,13 @@ namespace TencentCloud
 <li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>
 <li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+与JobIds参数不能同时指定。
                      * @return Filters 过滤条件
 <li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>
 <li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>
 <li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+与JobIds参数不能同时指定。
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -81,11 +83,13 @@ namespace TencentCloud
 <li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>
 <li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+与JobIds参数不能同时指定。
                      * @param Filters 过滤条件
 <li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>
 <li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>
 <li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+与JobIds参数不能同时指定。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -134,7 +138,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业ID
+                     * 作业ID列表，与Filters参数不能同时指定。
                      */
                     std::vector<std::string> m_jobIds;
                     bool m_jobIdsHasBeenSet;
@@ -145,6 +149,7 @@ namespace TencentCloud
 <li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>
 <li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>
 <li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+与JobIds参数不能同时指定。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

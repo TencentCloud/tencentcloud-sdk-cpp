@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool TimeOutHasBeenSet() const;
 
                     /**
-                     * 获取检测间隔时间，单位秒
-                     * @return Interval 检测间隔时间，单位秒
+                     * 获取检测间隔时间，单位秒，必须要大于响应超时时间
+                     * @return Interval 检测间隔时间，单位秒，必须要大于响应超时时间
                      */
                     uint64_t GetInterval() const;
 
                     /**
-                     * 设置检测间隔时间，单位秒
-                     * @param Interval 检测间隔时间，单位秒
+                     * 设置检测间隔时间，单位秒，必须要大于响应超时时间
+                     * @param Interval 检测间隔时间，单位秒，必须要大于响应超时时间
                      */
                     void SetInterval(const uint64_t& _interval);
 
@@ -175,7 +175,7 @@ namespace TencentCloud
                     bool m_timeOutHasBeenSet;
 
                     /**
-                     * 检测间隔时间，单位秒
+                     * 检测间隔时间，单位秒，必须要大于响应超时时间
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移
-                     * @return Offset 分页偏移
+                     * 获取偏移量，Offset从0开始
+                     * @return Offset 偏移量，Offset从0开始
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移
-                     * @param Offset 分页偏移
+                     * 设置偏移量，Offset从0开始
+                     * @param Offset 偏移量，Offset从0开始
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页的大小，数值范围 10-100
-                     * @return Limit 分页的大小，数值范围 10-100
+                     * 获取分页的大小，数值范围 10-250
+                     * @return Limit 分页的大小，数值范围 10-250
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页的大小，数值范围 10-100
-                     * @param Limit 分页的大小，数值范围 10-100
+                     * 设置分页的大小，数值范围 10-250
+                     * @param Limit 分页的大小，数值范围 10-250
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 分页偏移
+                     * 偏移量，Offset从0开始
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页的大小，数值范围 10-100
+                     * 分页的大小，数值范围 10-250
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

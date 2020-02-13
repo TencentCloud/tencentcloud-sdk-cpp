@@ -47,6 +47,8 @@
 #include <tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfosResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeComputeEnvsRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeComputeEnvsResponse.h>
+#include <tencentcloud/batch/v20170312/model/DescribeCpmOsInfoRequest.h>
+#include <tencentcloud/batch/v20170312/model/DescribeCpmOsInfoResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeCvmZoneInstanceConfigInfosRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeCvmZoneInstanceConfigInfosResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeInstanceCategoriesRequest.h>
@@ -129,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeComputeEnvsResponse> DescribeComputeEnvsOutcome;
                 typedef std::future<DescribeComputeEnvsOutcome> DescribeComputeEnvsOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeComputeEnvsRequest&, DescribeComputeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComputeEnvsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCpmOsInfoResponse> DescribeCpmOsInfoOutcome;
+                typedef std::future<DescribeCpmOsInfoOutcome> DescribeCpmOsInfoOutcomeCallable;
+                typedef std::function<void(const BatchClient*, const Model::DescribeCpmOsInfoRequest&, DescribeCpmOsInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCpmOsInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCvmZoneInstanceConfigInfosResponse> DescribeCvmZoneInstanceConfigInfosOutcome;
                 typedef std::future<DescribeCvmZoneInstanceConfigInfosOutcome> DescribeCvmZoneInstanceConfigInfosOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeCvmZoneInstanceConfigInfosRequest&, DescribeCvmZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCvmZoneInstanceConfigInfosAsyncHandler;
@@ -289,6 +294,15 @@ namespace TencentCloud
                 DescribeComputeEnvsOutcome DescribeComputeEnvs(const Model::DescribeComputeEnvsRequest &request);
                 void DescribeComputeEnvsAsync(const Model::DescribeComputeEnvsRequest& request, const DescribeComputeEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeComputeEnvsOutcomeCallable DescribeComputeEnvsCallable(const Model::DescribeComputeEnvsRequest& request);
+
+                /**
+                 *创建黑石计算环境时，查询批量计算环境支持的黑石操作系统信息
+                 * @param req DescribeCpmOsInfoRequest
+                 * @return DescribeCpmOsInfoOutcome
+                 */
+                DescribeCpmOsInfoOutcome DescribeCpmOsInfo(const Model::DescribeCpmOsInfoRequest &request);
+                void DescribeCpmOsInfoAsync(const Model::DescribeCpmOsInfoRequest& request, const DescribeCpmOsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCpmOsInfoOutcomeCallable DescribeCpmOsInfoCallable(const Model::DescribeCpmOsInfoRequest& request);
 
                 /**
                  *获取批量计算可用区机型配置信息

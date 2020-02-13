@@ -23,7 +23,8 @@ using namespace std;
 
 RunInstancesForNode::RunInstancesForNode() :
     m_nodeRoleHasBeenSet(false),
-    m_runInstancesParaHasBeenSet(false)
+    m_runInstancesParaHasBeenSet(false),
+    m_instanceAdvancedSettingsOverridesHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,26 @@ CoreInternalOutcome RunInstancesForNode::Deserialize(const Value &value)
         m_runInstancesParaHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceAdvancedSettingsOverrides") && !value["InstanceAdvancedSettingsOverrides"].IsNull())
+    {
+        if (!value["InstanceAdvancedSettingsOverrides"].IsArray())
+            return CoreInternalOutcome(Error("response `RunInstancesForNode.InstanceAdvancedSettingsOverrides` is not array type"));
+
+        const Value &tmpValue = value["InstanceAdvancedSettingsOverrides"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceAdvancedSettings item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceAdvancedSettingsOverrides.push_back(item);
+        }
+        m_instanceAdvancedSettingsOverridesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +101,21 @@ void RunInstancesForNode::ToJsonObject(Value &value, Document::AllocatorType& al
         for (auto itr = m_runInstancesPara.begin(); itr != m_runInstancesPara.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceAdvancedSettingsOverridesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceAdvancedSettingsOverrides";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceAdvancedSettingsOverrides.begin(); itr != m_instanceAdvancedSettingsOverrides.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -116,5 +152,21 @@ void RunInstancesForNode::SetRunInstancesPara(const vector<string>& _runInstance
 bool RunInstancesForNode::RunInstancesParaHasBeenSet() const
 {
     return m_runInstancesParaHasBeenSet;
+}
+
+vector<InstanceAdvancedSettings> RunInstancesForNode::GetInstanceAdvancedSettingsOverrides() const
+{
+    return m_instanceAdvancedSettingsOverrides;
+}
+
+void RunInstancesForNode::SetInstanceAdvancedSettingsOverrides(const vector<InstanceAdvancedSettings>& _instanceAdvancedSettingsOverrides)
+{
+    m_instanceAdvancedSettingsOverrides = _instanceAdvancedSettingsOverrides;
+    m_instanceAdvancedSettingsOverridesHasBeenSet = true;
+}
+
+bool RunInstancesForNode::InstanceAdvancedSettingsOverridesHasBeenSet() const
+{
+    return m_instanceAdvancedSettingsOverridesHasBeenSet;
 }
 

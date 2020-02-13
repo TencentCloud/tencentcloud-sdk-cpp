@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取登录用户名，由字幕、数字、下划线和连字符组成，长度为1~32位。
-                     * @return UserName 登录用户名，由字幕、数字、下划线和连字符组成，长度为1~32位。
+                     * 获取登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
+                     * @return UserName 登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置登录用户名，由字幕、数字、下划线和连字符组成，长度为1~32位。
-                     * @param UserName 登录用户名，由字幕、数字、下划线和连字符组成，长度为1~32位。
+                     * 设置登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
+                     * @param UserName 登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 登录用户名，由字幕、数字、下划线和连字符组成，长度为1~32位。
+                     * 登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

@@ -186,6 +186,42 @@ namespace TencentCloud
                      */
                     bool NamespaceTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取通过命名空间名精确过滤
+                     * @return NamespaceName 通过命名空间名精确过滤
+                     */
+                    std::string GetNamespaceName() const;
+
+                    /**
+                     * 设置通过命名空间名精确过滤
+                     * @param NamespaceName 通过命名空间名精确过滤
+                     */
+                    void SetNamespaceName(const std::string& _namespaceName);
+
+                    /**
+                     * 判断参数 NamespaceName 是否已赋值
+                     * @return NamespaceName 是否已赋值
+                     */
+                    bool NamespaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间
+                     * @return IsDefault 通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间
+                     */
+                    std::string GetIsDefault() const;
+
+                    /**
+                     * 设置通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间
+                     * @param IsDefault 通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间
+                     */
+                    void SetIsDefault(const std::string& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +271,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_namespaceTypeList;
                     bool m_namespaceTypeListHasBeenSet;
+
+                    /**
+                     * 通过命名空间名精确过滤
+                     */
+                    std::string m_namespaceName;
+                    bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * 通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间
+                     */
+                    std::string m_isDefault;
+                    bool m_isDefaultHasBeenSet;
 
                 };
             }

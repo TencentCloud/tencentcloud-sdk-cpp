@@ -80,13 +80,17 @@ namespace TencentCloud
 
                     /**
                      * 获取DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
+当设置值为0时，表示采用默认值；
                      * @return Threshold DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
+当设置值为0时，表示采用默认值；
                      */
                     uint64_t GetThreshold() const;
 
                     /**
                      * 设置DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
+当设置值为0时，表示采用默认值；
                      * @param Threshold DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
+当设置值为0时，表示采用默认值；
                      */
                     void SetThreshold(const uint64_t& _threshold);
 
@@ -112,6 +116,7 @@ namespace TencentCloud
 
                     /**
                      * DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];
+当设置值为0时，表示采用默认值；
                      */
                     uint64_t m_threshold;
                     bool m_thresholdHasBeenSet;

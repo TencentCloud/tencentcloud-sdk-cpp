@@ -91,6 +91,8 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeDestRegionsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoByIdsRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoByIdsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupAndStatisticsProxyRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupAndStatisticsProxyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupDomainConfigRequest.h>
@@ -133,8 +135,12 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeRuleRealServersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeRulesRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeRulesResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeRulesByRuleIdsRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeRulesByRuleIdsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeSecurityPolicyDetailRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeSecurityPolicyDetailResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeSecurityRulesRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeSecurityRulesResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeTCPListenersRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeTCPListenersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeUDPListenersRequest.h>
@@ -297,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDomainErrorPageInfoResponse> DescribeDomainErrorPageInfoOutcome;
                 typedef std::future<DescribeDomainErrorPageInfoOutcome> DescribeDomainErrorPageInfoOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeDomainErrorPageInfoRequest&, DescribeDomainErrorPageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainErrorPageInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDomainErrorPageInfoByIdsResponse> DescribeDomainErrorPageInfoByIdsOutcome;
+                typedef std::future<DescribeDomainErrorPageInfoByIdsOutcome> DescribeDomainErrorPageInfoByIdsOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeDomainErrorPageInfoByIdsRequest&, DescribeDomainErrorPageInfoByIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainErrorPageInfoByIdsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGroupAndStatisticsProxyResponse> DescribeGroupAndStatisticsProxyOutcome;
                 typedef std::future<DescribeGroupAndStatisticsProxyOutcome> DescribeGroupAndStatisticsProxyOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeGroupAndStatisticsProxyRequest&, DescribeGroupAndStatisticsProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAndStatisticsProxyAsyncHandler;
@@ -360,9 +369,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRulesResponse> DescribeRulesOutcome;
                 typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeRulesRequest&, DescribeRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRulesByRuleIdsResponse> DescribeRulesByRuleIdsOutcome;
+                typedef std::future<DescribeRulesByRuleIdsOutcome> DescribeRulesByRuleIdsOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeRulesByRuleIdsRequest&, DescribeRulesByRuleIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesByRuleIdsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSecurityPolicyDetailResponse> DescribeSecurityPolicyDetailOutcome;
                 typedef std::future<DescribeSecurityPolicyDetailOutcome> DescribeSecurityPolicyDetailOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeSecurityPolicyDetailRequest&, DescribeSecurityPolicyDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPolicyDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSecurityRulesResponse> DescribeSecurityRulesOutcome;
+                typedef std::future<DescribeSecurityRulesOutcome> DescribeSecurityRulesOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeSecurityRulesRequest&, DescribeSecurityRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTCPListenersResponse> DescribeTCPListenersOutcome;
                 typedef std::future<DescribeTCPListenersOutcome> DescribeTCPListenersOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeTCPListenersRequest&, DescribeTCPListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTCPListenersAsyncHandler;
@@ -735,13 +750,22 @@ namespace TencentCloud
                 DescribeDestRegionsOutcomeCallable DescribeDestRegionsCallable(const Model::DescribeDestRegionsRequest& request);
 
                 /**
-                 *查询目前订制域名的错误响应
+                 *查询目前定制域名的错误响应
                  * @param req DescribeDomainErrorPageInfoRequest
                  * @return DescribeDomainErrorPageInfoOutcome
                  */
                 DescribeDomainErrorPageInfoOutcome DescribeDomainErrorPageInfo(const Model::DescribeDomainErrorPageInfoRequest &request);
                 void DescribeDomainErrorPageInfoAsync(const Model::DescribeDomainErrorPageInfoRequest& request, const DescribeDomainErrorPageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainErrorPageInfoOutcomeCallable DescribeDomainErrorPageInfoCallable(const Model::DescribeDomainErrorPageInfoRequest& request);
+
+                /**
+                 *根据定制错误ID查询错误响应
+                 * @param req DescribeDomainErrorPageInfoByIdsRequest
+                 * @return DescribeDomainErrorPageInfoByIdsOutcome
+                 */
+                DescribeDomainErrorPageInfoByIdsOutcome DescribeDomainErrorPageInfoByIds(const Model::DescribeDomainErrorPageInfoByIdsRequest &request);
+                void DescribeDomainErrorPageInfoByIdsAsync(const Model::DescribeDomainErrorPageInfoByIdsRequest& request, const DescribeDomainErrorPageInfoByIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainErrorPageInfoByIdsOutcomeCallable DescribeDomainErrorPageInfoByIdsCallable(const Model::DescribeDomainErrorPageInfoByIdsRequest& request);
 
                 /**
                  *该接口为内部接口，用于查询可以获取统计数据的通道组和通道信息
@@ -933,6 +957,15 @@ namespace TencentCloud
                 DescribeRulesOutcomeCallable DescribeRulesCallable(const Model::DescribeRulesRequest& request);
 
                 /**
+                 *本接口（DescribeRulesByRuleIds）用于根据规则ID拉取规则信息列表。支持一个或者多个规则信息的拉取。一次最多支持10个规则信息的拉取。
+                 * @param req DescribeRulesByRuleIdsRequest
+                 * @return DescribeRulesByRuleIdsOutcome
+                 */
+                DescribeRulesByRuleIdsOutcome DescribeRulesByRuleIds(const Model::DescribeRulesByRuleIdsRequest &request);
+                void DescribeRulesByRuleIdsAsync(const Model::DescribeRulesByRuleIdsRequest& request, const DescribeRulesByRuleIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRulesByRuleIdsOutcomeCallable DescribeRulesByRuleIdsCallable(const Model::DescribeRulesByRuleIdsRequest& request);
+
+                /**
                  *获取安全策略详情
                  * @param req DescribeSecurityPolicyDetailRequest
                  * @return DescribeSecurityPolicyDetailOutcome
@@ -940,6 +973,15 @@ namespace TencentCloud
                 DescribeSecurityPolicyDetailOutcome DescribeSecurityPolicyDetail(const Model::DescribeSecurityPolicyDetailRequest &request);
                 void DescribeSecurityPolicyDetailAsync(const Model::DescribeSecurityPolicyDetailRequest& request, const DescribeSecurityPolicyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityPolicyDetailOutcomeCallable DescribeSecurityPolicyDetailCallable(const Model::DescribeSecurityPolicyDetailRequest& request);
+
+                /**
+                 *本接口（DescribeSecurityRules）用于根据安全规则ID查询安全规则详情列表。支持一个或多个安全规则的查询。一次最多支持20个安全规则的查询。
+                 * @param req DescribeSecurityRulesRequest
+                 * @return DescribeSecurityRulesOutcome
+                 */
+                DescribeSecurityRulesOutcome DescribeSecurityRules(const Model::DescribeSecurityRulesRequest &request);
+                void DescribeSecurityRulesAsync(const Model::DescribeSecurityRulesRequest& request, const DescribeSecurityRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityRulesOutcomeCallable DescribeSecurityRulesCallable(const Model::DescribeSecurityRulesRequest& request);
 
                 /**
                  *该接口（DescribeTCPListeners）用于查询单通道或者通道组下的TCP监听器信息。

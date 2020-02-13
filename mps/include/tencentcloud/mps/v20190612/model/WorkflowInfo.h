@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiContentReviewTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
@@ -199,6 +200,28 @@ namespace TencentCloud
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
+                     * 获取视频内容分析类型任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiAnalysisTask 视频内容分析类型任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskInput GetAiAnalysisTask() const;
+
+                    /**
+                     * 设置视频内容分析类型任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AiAnalysisTask 视频内容分析类型任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
+
+                    /**
+                     * 判断参数 AiAnalysisTask 是否已赋值
+                     * @return AiAnalysisTask 是否已赋值
+                     */
+                    bool AiAnalysisTaskHasBeenSet() const;
+
+                    /**
                      * 获取视频内容识别类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiRecognitionTask 视频内容识别类型任务参数。
@@ -279,14 +302,14 @@ namespace TencentCloud
                     bool OutputDirHasBeenSet() const;
 
                     /**
-                     * 获取工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return CreateTime 工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return CreateTime 工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param CreateTime 工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param CreateTime 工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -297,14 +320,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return UpdateTime 工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return UpdateTime 工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param UpdateTime 工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param UpdateTime 工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -364,6 +387,13 @@ namespace TencentCloud
                     bool m_aiContentReviewTaskHasBeenSet;
 
                     /**
+                     * 视频内容分析类型任务参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskInput m_aiAnalysisTask;
+                    bool m_aiAnalysisTaskHasBeenSet;
+
+                    /**
                      * 视频内容识别类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -390,13 +420,13 @@ namespace TencentCloud
                     bool m_outputDirHasBeenSet;
 
                     /**
-                     * 工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

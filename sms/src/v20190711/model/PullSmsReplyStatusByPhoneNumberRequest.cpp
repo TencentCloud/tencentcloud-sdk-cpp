@@ -44,7 +44,7 @@ string PullSmsReplyStatusByPhoneNumberRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "SendDateTime";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sendDateTime.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_sendDateTime, allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -87,12 +87,12 @@ string PullSmsReplyStatusByPhoneNumberRequest::ToJsonString() const
 }
 
 
-string PullSmsReplyStatusByPhoneNumberRequest::GetSendDateTime() const
+uint64_t PullSmsReplyStatusByPhoneNumberRequest::GetSendDateTime() const
 {
     return m_sendDateTime;
 }
 
-void PullSmsReplyStatusByPhoneNumberRequest::SetSendDateTime(const string& _sendDateTime)
+void PullSmsReplyStatusByPhoneNumberRequest::SetSendDateTime(const uint64_t& _sendDateTime)
 {
     m_sendDateTime = _sendDateTime;
     m_sendDateTimeHasBeenSet = true;

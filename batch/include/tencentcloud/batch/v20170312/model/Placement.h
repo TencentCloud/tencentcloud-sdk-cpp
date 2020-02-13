@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属的专用宿主机ID列表。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
-                     * @return HostIds 实例所属的专用宿主机ID列表。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * 获取实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * @return HostIds 实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
                      */
                     std::vector<std::string> GetHostIds() const;
 
                     /**
-                     * 设置实例所属的专用宿主机ID列表。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
-                     * @param HostIds 实例所属的专用宿主机ID列表。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * 设置实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * @param HostIds 实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
                      */
                     void SetHostIds(const std::vector<std::string>& _hostIds);
 
@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool HostIpsHasBeenSet() const;
 
+                    /**
+                     * 获取实例所属的专用宿主机ID，仅用于出参。
+                     * @return HostId 实例所属的专用宿主机ID，仅用于出参。
+                     */
+                    std::string GetHostId() const;
+
+                    /**
+                     * 设置实例所属的专用宿主机ID，仅用于出参。
+                     * @param HostId 实例所属的专用宿主机ID，仅用于出参。
+                     */
+                    void SetHostId(const std::string& _hostId);
+
+                    /**
+                     * 判断参数 HostId 是否已赋值
+                     * @return HostId 是否已赋值
+                     */
+                    bool HostIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,7 +151,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例所属的专用宿主机ID列表。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
+                     * 实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。
                      */
                     std::vector<std::string> m_hostIds;
                     bool m_hostIdsHasBeenSet;
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_hostIps;
                     bool m_hostIpsHasBeenSet;
+
+                    /**
+                     * 实例所属的专用宿主机ID，仅用于出参。
+                     */
+                    std::string m_hostId;
+                    bool m_hostIdHasBeenSet;
 
                 };
             }

@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
-                     * @return Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
+                     * 获取证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+                     * @return Certificate 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
-                     * @param Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
+                     * 设置证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+                     * @param Certificate 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
                      */
                     void SetCertificate(const CertificateInput& _certificate);
 
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器
+                     * 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;

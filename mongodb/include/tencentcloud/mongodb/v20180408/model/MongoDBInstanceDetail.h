@@ -736,14 +736,14 @@ namespace TencentCloud
                     bool InstanceStatusDescHasBeenSet() const;
 
                     /**
-                     * 获取实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
-                     * @return RealInstanceId 实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * 获取实例对应的物理实例ID，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * @return RealInstanceId 实例对应的物理实例ID，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
                      */
                     std::string GetRealInstanceId() const;
 
                     /**
-                     * 设置实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
-                     * @param RealInstanceId 实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * 设置实例对应的物理实例ID，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * @param RealInstanceId 实例对应的物理实例ID，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
                      */
                     void SetRealInstanceId(const std::string& _realInstanceId);
 
@@ -983,7 +983,7 @@ namespace TencentCloud
                     bool m_instanceStatusDescHasBeenSet;
 
                     /**
-                     * 实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
+                     * 实例对应的物理实例ID，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取
                      */
                     std::string m_realInstanceId;
                     bool m_realInstanceIdHasBeenSet;

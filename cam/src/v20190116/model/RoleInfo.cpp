@@ -28,7 +28,8 @@ RoleInfo::RoleInfo() :
     m_descriptionHasBeenSet(false),
     m_addTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_consoleLoginHasBeenSet(false)
+    m_consoleLoginHasBeenSet(false),
+    m_roleTypeHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome RoleInfo::Deserialize(const Value &value)
         m_consoleLoginHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleType") && !value["RoleType"].IsNull())
+    {
+        if (!value["RoleType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RoleInfo.RoleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleType = string(value["RoleType"].GetString());
+        m_roleTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void RoleInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ConsoleLogin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consoleLogin, allocator);
+    }
+
+    if (m_roleTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_roleType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void RoleInfo::SetConsoleLogin(const uint64_t& _consoleLogin)
 bool RoleInfo::ConsoleLoginHasBeenSet() const
 {
     return m_consoleLoginHasBeenSet;
+}
+
+string RoleInfo::GetRoleType() const
+{
+    return m_roleType;
+}
+
+void RoleInfo::SetRoleType(const string& _roleType)
+{
+    m_roleType = _roleType;
+    m_roleTypeHasBeenSet = true;
+}
+
+bool RoleInfo::RoleTypeHasBeenSet() const
+{
+    return m_roleTypeHasBeenSet;
 }
 

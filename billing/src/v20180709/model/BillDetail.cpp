@@ -40,7 +40,10 @@ BillDetail::BillDetail() :
     m_payerUinHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
     m_operateUinHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_businessCodeHasBeenSet(false),
+    m_productCodeHasBeenSet(false),
+    m_actionTypeHasBeenSet(false)
 {
 }
 
@@ -259,6 +262,36 @@ CoreInternalOutcome BillDetail::Deserialize(const Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessCode") && !value["BusinessCode"].IsNull())
+    {
+        if (!value["BusinessCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDetail.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessCode = string(value["BusinessCode"].GetString());
+        m_businessCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductCode") && !value["ProductCode"].IsNull())
+    {
+        if (!value["ProductCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDetail.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCode = string(value["ProductCode"].GetString());
+        m_productCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActionType") && !value["ActionType"].IsNull())
+    {
+        if (!value["ActionType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDetail.ActionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionType = string(value["ActionType"].GetString());
+        m_actionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -430,6 +463,30 @@ void BillDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_businessCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BusinessCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_businessCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_productCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +794,53 @@ void BillDetail::SetTags(const vector<BillTagInfo>& _tags)
 bool BillDetail::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string BillDetail::GetBusinessCode() const
+{
+    return m_businessCode;
+}
+
+void BillDetail::SetBusinessCode(const string& _businessCode)
+{
+    m_businessCode = _businessCode;
+    m_businessCodeHasBeenSet = true;
+}
+
+bool BillDetail::BusinessCodeHasBeenSet() const
+{
+    return m_businessCodeHasBeenSet;
+}
+
+string BillDetail::GetProductCode() const
+{
+    return m_productCode;
+}
+
+void BillDetail::SetProductCode(const string& _productCode)
+{
+    m_productCode = _productCode;
+    m_productCodeHasBeenSet = true;
+}
+
+bool BillDetail::ProductCodeHasBeenSet() const
+{
+    return m_productCodeHasBeenSet;
+}
+
+string BillDetail::GetActionType() const
+{
+    return m_actionType;
+}
+
+void BillDetail::SetActionType(const string& _actionType)
+{
+    m_actionType = _actionType;
+    m_actionTypeHasBeenSet = true;
+}
+
+bool BillDetail::ActionTypeHasBeenSet() const
+{
+    return m_actionTypeHasBeenSet;
 }
 

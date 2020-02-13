@@ -37,7 +37,9 @@ Deal::Deal() :
     m_currencyHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_priceHasBeenSet(false),
-    m_totalCostHasBeenSet(false)
+    m_totalCostHasBeenSet(false),
+    m_productCodeHasBeenSet(false),
+    m_subProductCodeHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,26 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
         m_totalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductCode") && !value["ProductCode"].IsNull())
+    {
+        if (!value["ProductCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Deal.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCode = string(value["ProductCode"].GetString());
+        m_productCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubProductCode") && !value["SubProductCode"].IsNull())
+    {
+        if (!value["SubProductCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Deal.SubProductCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subProductCode = string(value["SubProductCode"].GetString());
+        m_subProductCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -356,6 +378,22 @@ void Deal::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCost, allocator);
+    }
+
+    if (m_productCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_productCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subProductCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subProductCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -615,5 +653,37 @@ void Deal::SetTotalCost(const double& _totalCost)
 bool Deal::TotalCostHasBeenSet() const
 {
     return m_totalCostHasBeenSet;
+}
+
+string Deal::GetProductCode() const
+{
+    return m_productCode;
+}
+
+void Deal::SetProductCode(const string& _productCode)
+{
+    m_productCode = _productCode;
+    m_productCodeHasBeenSet = true;
+}
+
+bool Deal::ProductCodeHasBeenSet() const
+{
+    return m_productCodeHasBeenSet;
+}
+
+string Deal::GetSubProductCode() const
+{
+    return m_subProductCode;
+}
+
+void Deal::SetSubProductCode(const string& _subProductCode)
+{
+    m_subProductCode = _subProductCode;
+    m_subProductCodeHasBeenSet = true;
+}
+
+bool Deal::SubProductCodeHasBeenSet() const
+{
+    return m_subProductCodeHasBeenSet;
 }
 

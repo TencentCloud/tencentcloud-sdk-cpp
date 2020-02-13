@@ -220,7 +220,7 @@ namespace TencentCloud
                 BindDevicesOutcomeCallable BindDevicesCallable(const Model::BindDevicesRequest& request);
 
                 /**
-                 *本接口（CancelTask）用于取消一个未被调度的任务。
+                 *本接口（CancelTask）用于取消一个未被调度的任务。 
                  * @param req CancelTaskRequest
                  * @return CancelTaskOutcome
                  */
@@ -229,7 +229,7 @@ namespace TencentCloud
                 CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request);
 
                 /**
-                 *本接口（CreateDevice）用于新建一个物联网通信设备。
+                 *本接口（CreateDevice）用于新建一个物联网通信设备。 
                  * @param req CreateDeviceRequest
                  * @return CreateDeviceOutcome
                  */
@@ -256,7 +256,7 @@ namespace TencentCloud
                 CreateMultiDeviceOutcomeCallable CreateMultiDeviceCallable(const Model::CreateMultiDeviceRequest& request);
 
                 /**
-                 *本接口（CreateProduct）用于创建一个新的物联网通信产品
+                 *本接口（CreateProduct）用于创建一个新的物联网通信产品 
                  * @param req CreateProductRequest
                  * @return CreateProductOutcome
                  */
@@ -265,7 +265,7 @@ namespace TencentCloud
                 CreateProductOutcomeCallable CreateProductCallable(const Model::CreateProductRequest& request);
 
                 /**
-                 *本接口（CreateTask）用于创建一个批量任务。目前此接口可以创建批量更新影子以及批量下发消息的任务
+                 *本接口（CreateTask）用于创建一个批量任务。目前此接口可以创建批量更新影子以及批量下发消息的任务 
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
                  */
@@ -274,7 +274,7 @@ namespace TencentCloud
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
-                 *本接口（CreateTopicPolicy）用于创建一个Topic
+                 *本接口（CreateTopicPolicy）用于创建一个Topic 
                  * @param req CreateTopicPolicyRequest
                  * @return CreateTopicPolicyOutcome
                  */
@@ -292,7 +292,7 @@ namespace TencentCloud
                 CreateTopicRuleOutcomeCallable CreateTopicRuleCallable(const Model::CreateTopicRuleRequest& request);
 
                 /**
-                 *本接口（DeleteDevice）用于删除物联网通信设备。
+                 *本接口（DeleteDevice）用于删除物联网通信设备。 
                  * @param req DeleteDeviceRequest
                  * @return DeleteDeviceOutcome
                  */
@@ -310,7 +310,7 @@ namespace TencentCloud
                 DeleteLoraDeviceOutcomeCallable DeleteLoraDeviceCallable(const Model::DeleteLoraDeviceRequest& request);
 
                 /**
-                 *本接口（DeleteProduct）用于删除一个物联网通信产品。
+                 *本接口（DeleteProduct）用于删除一个物联网通信产品
                  * @param req DeleteProductRequest
                  * @return DeleteProductOutcome
                  */
@@ -328,7 +328,7 @@ namespace TencentCloud
                 DeleteTopicRuleOutcomeCallable DeleteTopicRuleCallable(const Model::DeleteTopicRuleRequest& request);
 
                 /**
-                 *本接口（DescribeDevice）用于查看设备信息
+                 *本接口（DescribeDevice）用于查看设备信息 
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
                  */
@@ -346,7 +346,7 @@ namespace TencentCloud
                 DescribeDeviceClientKeyOutcomeCallable DescribeDeviceClientKeyCallable(const Model::DescribeDeviceClientKeyRequest& request);
 
                 /**
-                 *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。
+                 *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 
                  * @param req DescribeDeviceShadowRequest
                  * @return DescribeDeviceShadowOutcome
                  */
@@ -355,7 +355,7 @@ namespace TencentCloud
                 DescribeDeviceShadowOutcomeCallable DescribeDeviceShadowCallable(const Model::DescribeDeviceShadowRequest& request);
 
                 /**
-                 *本接口（DescribeDevices）用于查询物联网通信设备的设备列表。
+                 *本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 
                  * @param req DescribeDevicesRequest
                  * @return DescribeDevicesOutcome
                  */
@@ -391,7 +391,7 @@ namespace TencentCloud
                 DescribeMultiDevicesOutcomeCallable DescribeMultiDevicesCallable(const Model::DescribeMultiDevicesRequest& request);
 
                 /**
-                 *本接口（DescribeProducts）用于列出产品列表。
+                 *本接口（DescribeProducts）用于列出产品列表。 
                  * @param req DescribeProductsRequest
                  * @return DescribeProductsOutcome
                  */
@@ -400,7 +400,7 @@ namespace TencentCloud
                 DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request);
 
                 /**
-                 *本接口（DescribeTask）用于查询一个已创建任务的详情，任务保留一个月
+                 *本接口（DescribeTask）用于查询一个已创建任务的详情，任务保留一个月 
                  * @param req DescribeTaskRequest
                  * @return DescribeTaskOutcome
                  */
@@ -409,7 +409,7 @@ namespace TencentCloud
                 DescribeTaskOutcomeCallable DescribeTaskCallable(const Model::DescribeTaskRequest& request);
 
                 /**
-                 *本接口（DescribeTasks）用于查询已创建的任务列表，任务保留一个月
+                 *本接口（DescribeTasks）用于查询已创建的任务列表，任务保留一个月 
                  * @param req DescribeTasksRequest
                  * @return DescribeTasksOutcome
                  */
@@ -445,7 +445,7 @@ namespace TencentCloud
                 PublishAsDeviceOutcomeCallable PublishAsDeviceCallable(const Model::PublishAsDeviceRequest& request);
 
                 /**
-                 *本接口（PublishMessage）用于向某个主题发消息。
+                 *本接口（PublishMessage）用于向某个主题发消息。 
                  * @param req PublishMessageRequest
                  * @return PublishMessageOutcome
                  */
@@ -472,7 +472,7 @@ namespace TencentCloud
                 ReplaceTopicRuleOutcomeCallable ReplaceTopicRuleCallable(const Model::ReplaceTopicRuleRequest& request);
 
                 /**
-                 *重置设备的连接状态
+                 *重置设备的连接状态 
                  * @param req ResetDeviceStateRequest
                  * @return ResetDeviceStateOutcome
                  */

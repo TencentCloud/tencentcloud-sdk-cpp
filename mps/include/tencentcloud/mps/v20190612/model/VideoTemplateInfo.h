@@ -50,11 +50,13 @@ namespace TencentCloud
                      * 获取视频流的编码格式，可选值：
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
+<li>av1：AOMedia Video 1 编码</li>
+目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      * @return Codec 视频流的编码格式，可选值：
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
+<li>av1：AOMedia Video 1 编码</li>
+目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      */
                     std::string GetCodec() const;
 
@@ -62,11 +64,13 @@ namespace TencentCloud
                      * 设置视频流的编码格式，可选值：
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
+<li>av1：AOMedia Video 1 编码</li>
+目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      * @param Codec 视频流的编码格式，可选值：
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
+<li>av1：AOMedia Video 1 编码</li>
+目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      */
                     void SetCodec(const std::string& _codec);
 
@@ -227,6 +231,28 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
+                     * 获取关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     * @return Gop 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     */
+                    uint64_t GetGop() const;
+
+                    /**
+                     * 设置关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     * @param Gop 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     */
+                    void SetGop(const uint64_t& _gop);
+
+                    /**
+                     * 判断参数 Gop 是否已赋值
+                     * @return Gop 是否已赋值
+                     */
+                    bool GopHasBeenSet() const;
+
+                    /**
                      * 获取填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
 <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
@@ -262,7 +288,8 @@ namespace TencentCloud
                      * 视频流的编码格式，可选值：
 <li>libx264：H.264 编码</li>
 <li>libx265：H.265 编码</li>
-目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
+<li>av1：AOMedia Video 1 编码</li>
+目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
@@ -311,6 +338,13 @@ namespace TencentCloud
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。
+当填 0 或不填时，系统将自动设置 gop 长度。
+                     */
+                    uint64_t m_gop;
+                    bool m_gopHasBeenSet;
 
                     /**
                      * 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：

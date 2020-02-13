@@ -73,12 +73,12 @@ namespace TencentCloud
 "Key":"url"时，"Value":值表示URL;
 "Key":"domain"时， "Value":值表示域名;
 "Key":"type"时，"Value":值表示黑白名单类型(white为白名单，block为黑名单);
-"Key":"protocol"时，"Value":值表示CC的防护类型(http防护或https域名防护);
+"Key":"protocol"时，"Value":值表示CC的防护类型(HTTP防护或HTTPS域名防护);
                      * @return RecordList 返回黑/白名单的记录，
 "Key":"url"时，"Value":值表示URL;
 "Key":"domain"时， "Value":值表示域名;
 "Key":"type"时，"Value":值表示黑白名单类型(white为白名单，block为黑名单);
-"Key":"protocol"时，"Value":值表示CC的防护类型(http防护或https域名防护);
+"Key":"protocol"时，"Value":值表示CC的防护类型(HTTP防护或HTTPS域名防护);
                      */
                     std::vector<KeyValueRecord> GetRecordList() const;
 
@@ -107,7 +107,7 @@ namespace TencentCloud
 "Key":"url"时，"Value":值表示URL;
 "Key":"domain"时， "Value":值表示域名;
 "Key":"type"时，"Value":值表示黑白名单类型(white为白名单，block为黑名单);
-"Key":"protocol"时，"Value":值表示CC的防护类型(http防护或https域名防护);
+"Key":"protocol"时，"Value":值表示CC的防护类型(HTTP防护或HTTPS域名防护);
                      */
                     std::vector<KeyValueRecord> m_recordList;
                     bool m_recordListHasBeenSet;

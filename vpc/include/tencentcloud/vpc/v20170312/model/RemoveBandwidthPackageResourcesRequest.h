@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源Id，形如'eip-xxxx', 'lb-xxxx'
-                     * @return ResourceIds 资源Id，形如'eip-xxxx', 'lb-xxxx'
+                     * 获取资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
+                     * @return ResourceIds 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置资源Id，形如'eip-xxxx', 'lb-xxxx'
-                     * @param ResourceIds 资源Id，形如'eip-xxxx', 'lb-xxxx'
+                     * 设置资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
+                     * @param ResourceIds 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源Id，形如'eip-xxxx', 'lb-xxxx'
+                     * 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;

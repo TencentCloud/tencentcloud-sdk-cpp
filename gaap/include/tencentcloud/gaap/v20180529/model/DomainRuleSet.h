@@ -417,17 +417,17 @@ namespace TencentCloud
                     bool RealServerCertificateDomainHasBeenSet() const;
 
                     /**
-                     * 获取多客户端证书时，返回多个证书的id和列表
+                     * 获取多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolyClientCertificateAliasInfo 多客户端证书时，返回多个证书的id和列表
+                     * @return PolyClientCertificateAliasInfo 多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CertificateAliasInfo> GetPolyClientCertificateAliasInfo() const;
 
                     /**
-                     * 设置多客户端证书时，返回多个证书的id和列表
+                     * 设置多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolyClientCertificateAliasInfo 多客户端证书时，返回多个证书的id和列表
+                     * @param PolyClientCertificateAliasInfo 多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPolyClientCertificateAliasInfo(const std::vector<CertificateAliasInfo>& _polyClientCertificateAliasInfo);
@@ -437,6 +437,28 @@ namespace TencentCloud
                      * @return PolyClientCertificateAliasInfo 是否已赋值
                      */
                     bool PolyClientCertificateAliasInfoHasBeenSet() const;
+
+                    /**
+                     * 获取多源站证书时，返回多个证书的id和别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolyRealServerCertificateAliasInfo 多源站证书时，返回多个证书的id和别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CertificateAliasInfo> GetPolyRealServerCertificateAliasInfo() const;
+
+                    /**
+                     * 设置多源站证书时，返回多个证书的id和别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PolyRealServerCertificateAliasInfo 多源站证书时，返回多个证书的id和别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPolyRealServerCertificateAliasInfo(const std::vector<CertificateAliasInfo>& _polyRealServerCertificateAliasInfo);
+
+                    /**
+                     * 判断参数 PolyRealServerCertificateAliasInfo 是否已赋值
+                     * @return PolyRealServerCertificateAliasInfo 是否已赋值
+                     */
+                    bool PolyRealServerCertificateAliasInfoHasBeenSet() const;
 
                 private:
 
@@ -557,11 +579,18 @@ namespace TencentCloud
                     bool m_realServerCertificateDomainHasBeenSet;
 
                     /**
-                     * 多客户端证书时，返回多个证书的id和列表
+                     * 多客户端证书时，返回多个证书的id和别名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CertificateAliasInfo> m_polyClientCertificateAliasInfo;
                     bool m_polyClientCertificateAliasInfoHasBeenSet;
+
+                    /**
+                     * 多源站证书时，返回多个证书的id和别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CertificateAliasInfo> m_polyRealServerCertificateAliasInfo;
+                    bool m_polyRealServerCertificateAliasInfoHasBeenSet;
 
                 };
             }

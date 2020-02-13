@@ -30,7 +30,8 @@ DescribeDCDBPriceRequest::DescribeDCDBPriceRequest() :
     m_shardNodeCountHasBeenSet(false),
     m_shardMemoryHasBeenSet(false),
     m_shardStorageHasBeenSet(false),
-    m_shardCountHasBeenSet(false)
+    m_shardCountHasBeenSet(false),
+    m_paymodeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string DescribeDCDBPriceRequest::ToJsonString() const
         string key = "ShardCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardCount, allocator);
+    }
+
+    if (m_paymodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Paymode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_paymode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void DescribeDCDBPriceRequest::SetShardCount(const int64_t& _shardCount)
 bool DescribeDCDBPriceRequest::ShardCountHasBeenSet() const
 {
     return m_shardCountHasBeenSet;
+}
+
+string DescribeDCDBPriceRequest::GetPaymode() const
+{
+    return m_paymode;
+}
+
+void DescribeDCDBPriceRequest::SetPaymode(const string& _paymode)
+{
+    m_paymode = _paymode;
+    m_paymodeHasBeenSet = true;
+}
+
+bool DescribeDCDBPriceRequest::PaymodeHasBeenSet() const
+{
+    return m_paymodeHasBeenSet;
 }
 
 

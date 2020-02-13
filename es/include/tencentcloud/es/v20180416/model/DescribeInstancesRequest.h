@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/es/v20180416/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -168,6 +169,42 @@ namespace TencentCloud
                      */
                     bool OrderByTypeHasBeenSet() const;
 
+                    /**
+                     * 获取节点标签信息列表
+                     * @return TagList 节点标签信息列表
+                     */
+                    std::vector<TagInfo> GetTagList() const;
+
+                    /**
+                     * 设置节点标签信息列表
+                     * @param TagList 节点标签信息列表
+                     */
+                    void SetTagList(const std::vector<TagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络vip列表
+                     * @return IpList 私有网络vip列表
+                     */
+                    std::vector<std::string> GetIpList() const;
+
+                    /**
+                     * 设置私有网络vip列表
+                     * @param IpList 私有网络vip列表
+                     */
+                    void SetIpList(const std::vector<std::string>& _ipList);
+
+                    /**
+                     * 判断参数 IpList 是否已赋值
+                     * @return IpList 是否已赋值
+                     */
+                    bool IpListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +248,18 @@ namespace TencentCloud
                      */
                     uint64_t m_orderByType;
                     bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * 节点标签信息列表
+                     */
+                    std::vector<TagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
+
+                    /**
+                     * 私有网络vip列表
+                     */
+                    std::vector<std::string> m_ipList;
+                    bool m_ipListHasBeenSet;
 
                 };
             }

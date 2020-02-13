@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 TerrorismConfigureInfo::TerrorismConfigureInfo() :
-    m_imgReviewInfoHasBeenSet(false)
+    m_imgReviewInfoHasBeenSet(false),
+    m_ocrReviewInfoHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,23 @@ CoreInternalOutcome TerrorismConfigureInfo::Deserialize(const Value &value)
         m_imgReviewInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("OcrReviewInfo") && !value["OcrReviewInfo"].IsNull())
+    {
+        if (!value["OcrReviewInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TerrorismConfigureInfo.OcrReviewInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ocrReviewInfo.Deserialize(value["OcrReviewInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ocrReviewInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -62,6 +80,15 @@ void TerrorismConfigureInfo::ToJsonObject(Value &value, Document::AllocatorType&
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_imgReviewInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ocrReviewInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OcrReviewInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_ocrReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -81,5 +108,21 @@ void TerrorismConfigureInfo::SetImgReviewInfo(const TerrorismImgReviewTemplateIn
 bool TerrorismConfigureInfo::ImgReviewInfoHasBeenSet() const
 {
     return m_imgReviewInfoHasBeenSet;
+}
+
+TerrorismOcrReviewTemplateInfo TerrorismConfigureInfo::GetOcrReviewInfo() const
+{
+    return m_ocrReviewInfo;
+}
+
+void TerrorismConfigureInfo::SetOcrReviewInfo(const TerrorismOcrReviewTemplateInfo& _ocrReviewInfo)
+{
+    m_ocrReviewInfo = _ocrReviewInfo;
+    m_ocrReviewInfoHasBeenSet = true;
+}
+
+bool TerrorismConfigureInfo::OcrReviewInfoHasBeenSet() const
+{
+    return m_ocrReviewInfoHasBeenSet;
 }
 

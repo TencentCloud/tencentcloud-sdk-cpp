@@ -31,7 +31,10 @@ BackupInfo::BackupInfo() :
     m_backupIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
-    m_creatorHasBeenSet(false)
+    m_creatorHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_methodHasBeenSet(false),
+    m_wayHasBeenSet(false)
 {
 }
 
@@ -140,6 +143,36 @@ CoreInternalOutcome BackupInfo::Deserialize(const Value &value)
         m_creatorHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Method") && !value["Method"].IsNull())
+    {
+        if (!value["Method"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.Method` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_method = string(value["Method"].GetString());
+        m_methodHasBeenSet = true;
+    }
+
+    if (value.HasMember("Way") && !value["Way"].IsNull())
+    {
+        if (!value["Way"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BackupInfo.Way` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_way = string(value["Way"].GetString());
+        m_wayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +258,30 @@ void BackupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Creator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_method.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Way";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_way.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +445,53 @@ void BackupInfo::SetCreator(const string& _creator)
 bool BackupInfo::CreatorHasBeenSet() const
 {
     return m_creatorHasBeenSet;
+}
+
+string BackupInfo::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void BackupInfo::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool BackupInfo::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string BackupInfo::GetMethod() const
+{
+    return m_method;
+}
+
+void BackupInfo::SetMethod(const string& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool BackupInfo::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
+}
+
+string BackupInfo::GetWay() const
+{
+    return m_way;
+}
+
+void BackupInfo::SetWay(const string& _way)
+{
+    m_way = _way;
+    m_wayHasBeenSet = true;
+}
+
+bool BackupInfo::WayHasBeenSet() const
+{
+    return m_wayHasBeenSet;
 }
 

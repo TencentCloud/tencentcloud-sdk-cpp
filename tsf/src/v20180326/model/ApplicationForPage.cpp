@@ -30,7 +30,8 @@ ApplicationForPage::ApplicationForPage() :
     m_progLangHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_applicationResourceTypeHasBeenSet(false)
+    m_applicationResourceTypeHasBeenSet(false),
+    m_applicationRuntimeTypeHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome ApplicationForPage::Deserialize(const Value &value)
         m_applicationResourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationRuntimeType") && !value["ApplicationRuntimeType"].IsNull())
+    {
+        if (!value["ApplicationRuntimeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ApplicationForPage.ApplicationRuntimeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationRuntimeType = string(value["ApplicationRuntimeType"].GetString());
+        m_applicationRuntimeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void ApplicationForPage::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ApplicationResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationRuntimeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationRuntimeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void ApplicationForPage::SetApplicationResourceType(const string& _applicationRe
 bool ApplicationForPage::ApplicationResourceTypeHasBeenSet() const
 {
     return m_applicationResourceTypeHasBeenSet;
+}
+
+string ApplicationForPage::GetApplicationRuntimeType() const
+{
+    return m_applicationRuntimeType;
+}
+
+void ApplicationForPage::SetApplicationRuntimeType(const string& _applicationRuntimeType)
+{
+    m_applicationRuntimeType = _applicationRuntimeType;
+    m_applicationRuntimeTypeHasBeenSet = true;
+}
+
+bool ApplicationForPage::ApplicationRuntimeTypeHasBeenSet() const
+{
+    return m_applicationRuntimeTypeHasBeenSet;
 }
 

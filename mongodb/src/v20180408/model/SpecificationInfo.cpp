@@ -24,7 +24,7 @@ using namespace std;
 SpecificationInfo::SpecificationInfo() :
     m_regionHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_specItemHasBeenSet(false)
+    m_specItemsHasBeenSet(false)
 {
 }
 
@@ -53,12 +53,12 @@ CoreInternalOutcome SpecificationInfo::Deserialize(const Value &value)
         m_zoneHasBeenSet = true;
     }
 
-    if (value.HasMember("SpecItem") && !value["SpecItem"].IsNull())
+    if (value.HasMember("SpecItems") && !value["SpecItems"].IsNull())
     {
-        if (!value["SpecItem"].IsArray())
-            return CoreInternalOutcome(Error("response `SpecificationInfo.SpecItem` is not array type"));
+        if (!value["SpecItems"].IsArray())
+            return CoreInternalOutcome(Error("response `SpecificationInfo.SpecItems` is not array type"));
 
-        const Value &tmpValue = value["SpecItem"];
+        const Value &tmpValue = value["SpecItems"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SpecItem item;
@@ -68,9 +68,9 @@ CoreInternalOutcome SpecificationInfo::Deserialize(const Value &value)
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_specItem.push_back(item);
+            m_specItems.push_back(item);
         }
-        m_specItemHasBeenSet = true;
+        m_specItemsHasBeenSet = true;
     }
 
 
@@ -96,15 +96,15 @@ void SpecificationInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
         value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_specItemHasBeenSet)
+    if (m_specItemsHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "SpecItem";
+        string key = "SpecItems";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_specItem.begin(); itr != m_specItem.end(); ++itr, ++i)
+        for (auto itr = m_specItems.begin(); itr != m_specItems.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -146,19 +146,19 @@ bool SpecificationInfo::ZoneHasBeenSet() const
     return m_zoneHasBeenSet;
 }
 
-vector<SpecItem> SpecificationInfo::GetSpecItem() const
+vector<SpecItem> SpecificationInfo::GetSpecItems() const
 {
-    return m_specItem;
+    return m_specItems;
 }
 
-void SpecificationInfo::SetSpecItem(const vector<SpecItem>& _specItem)
+void SpecificationInfo::SetSpecItems(const vector<SpecItem>& _specItems)
 {
-    m_specItem = _specItem;
-    m_specItemHasBeenSet = true;
+    m_specItems = _specItems;
+    m_specItemsHasBeenSet = true;
 }
 
-bool SpecificationInfo::SpecItemHasBeenSet() const
+bool SpecificationInfo::SpecItemsHasBeenSet() const
 {
-    return m_specItemHasBeenSet;
+    return m_specItemsHasBeenSet;
 }
 

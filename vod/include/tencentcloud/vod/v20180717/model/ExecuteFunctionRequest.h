@@ -79,6 +79,60 @@ namespace TencentCloud
                     bool FunctionArgHasBeenSet() const;
 
                     /**
+                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    std::string GetSessionContext() const;
+
+                    /**
+                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    void SetSessionContext(const std::string& _sessionContext);
+
+                    /**
+                     * 判断参数 SessionContext 是否已赋值
+                     * @return SessionContext 是否已赋值
+                     */
+                    bool SessionContextHasBeenSet() const;
+
+                    /**
+                     * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @param SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取保留字段，特殊用途时使用。
+                     * @return ExtInfo 保留字段，特殊用途时使用。
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置保留字段，特殊用途时使用。
+                     * @param ExtInfo 保留字段，特殊用途时使用。
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
+                    /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -109,6 +163,24 @@ namespace TencentCloud
                      */
                     std::string m_functionArg;
                     bool m_functionArgHasBeenSet;
+
+                    /**
+                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    std::string m_sessionContext;
+                    bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 保留字段，特殊用途时使用。
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

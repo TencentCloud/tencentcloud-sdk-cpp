@@ -25,7 +25,8 @@ OffsiteFlag::OffsiteFlag() :
     m_verifyFlagHasBeenSet(false),
     m_notifyPhoneHasBeenSet(false),
     m_notifyEmailHasBeenSet(false),
-    m_notifyWechatHasBeenSet(false)
+    m_notifyWechatHasBeenSet(false),
+    m_tipsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome OffsiteFlag::Deserialize(const Value &value)
         m_notifyWechatHasBeenSet = true;
     }
 
+    if (value.HasMember("Tips") && !value["Tips"].IsNull())
+    {
+        if (!value["Tips"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `OffsiteFlag.Tips` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tips = value["Tips"].GetUint64();
+        m_tipsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void OffsiteFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "NotifyWechat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notifyWechat, allocator);
+    }
+
+    if (m_tipsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tips, allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void OffsiteFlag::SetNotifyWechat(const uint64_t& _notifyWechat)
 bool OffsiteFlag::NotifyWechatHasBeenSet() const
 {
     return m_notifyWechatHasBeenSet;
+}
+
+uint64_t OffsiteFlag::GetTips() const
+{
+    return m_tips;
+}
+
+void OffsiteFlag::SetTips(const uint64_t& _tips)
+{
+    m_tips = _tips;
+    m_tipsHasBeenSet = true;
+}
+
+bool OffsiteFlag::TipsHasBeenSet() const
+{
+    return m_tipsHasBeenSet;
 }
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户组 id
-                     * @return TargetGroupId 用户组 id
+                     * 获取用户组ID
+                     * @return TargetGroupId 用户组ID
                      */
                     uint64_t GetTargetGroupId() const;
 
                     /**
-                     * 设置用户组 id
-                     * @param TargetGroupId 用户组 id
+                     * 设置用户组ID
+                     * @param TargetGroupId 用户组ID
                      */
                     void SetTargetGroupId(const uint64_t& _targetGroupId);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户组 id
+                     * 用户组ID
                      */
                     uint64_t m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;

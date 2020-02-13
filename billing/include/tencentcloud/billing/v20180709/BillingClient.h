@@ -39,6 +39,16 @@
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByRegionResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostDetailRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostDetailResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByProductRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByProductResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByProjectRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByProjectResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByResourceRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByResourceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h>
@@ -83,6 +93,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBillSummaryByTagResponse> DescribeBillSummaryByTagOutcome;
                 typedef std::future<DescribeBillSummaryByTagOutcome> DescribeBillSummaryByTagOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryByTagRequest&, DescribeBillSummaryByTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryByTagAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCostDetailResponse> DescribeCostDetailOutcome;
+                typedef std::future<DescribeCostDetailOutcome> DescribeCostDetailOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeCostDetailRequest&, DescribeCostDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCostSummaryByProductResponse> DescribeCostSummaryByProductOutcome;
+                typedef std::future<DescribeCostSummaryByProductOutcome> DescribeCostSummaryByProductOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeCostSummaryByProductRequest&, DescribeCostSummaryByProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostSummaryByProductAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCostSummaryByProjectResponse> DescribeCostSummaryByProjectOutcome;
+                typedef std::future<DescribeCostSummaryByProjectOutcome> DescribeCostSummaryByProjectOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeCostSummaryByProjectRequest&, DescribeCostSummaryByProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostSummaryByProjectAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCostSummaryByRegionResponse> DescribeCostSummaryByRegionOutcome;
+                typedef std::future<DescribeCostSummaryByRegionOutcome> DescribeCostSummaryByRegionOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeCostSummaryByRegionRequest&, DescribeCostSummaryByRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostSummaryByRegionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCostSummaryByResourceResponse> DescribeCostSummaryByResourceOutcome;
+                typedef std::future<DescribeCostSummaryByResourceOutcome> DescribeCostSummaryByResourceOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeCostSummaryByResourceRequest&, DescribeCostSummaryByResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostSummaryByResourceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDealsByCondResponse> DescribeDealsByCondOutcome;
                 typedef std::future<DescribeDealsByCondOutcome> DescribeDealsByCondOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDealsByCondRequest&, DescribeDealsByCondOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDealsByCondAsyncHandler;
@@ -166,6 +191,51 @@ namespace TencentCloud
                 DescribeBillSummaryByTagOutcome DescribeBillSummaryByTag(const Model::DescribeBillSummaryByTagRequest &request);
                 void DescribeBillSummaryByTagAsync(const Model::DescribeBillSummaryByTagRequest& request, const DescribeBillSummaryByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillSummaryByTagOutcomeCallable DescribeBillSummaryByTagCallable(const Model::DescribeBillSummaryByTagRequest& request);
+
+                /**
+                 *查询消耗明细
+                 * @param req DescribeCostDetailRequest
+                 * @return DescribeCostDetailOutcome
+                 */
+                DescribeCostDetailOutcome DescribeCostDetail(const Model::DescribeCostDetailRequest &request);
+                void DescribeCostDetailAsync(const Model::DescribeCostDetailRequest& request, const DescribeCostDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCostDetailOutcomeCallable DescribeCostDetailCallable(const Model::DescribeCostDetailRequest& request);
+
+                /**
+                 *获取按产品汇总消耗详情
+                 * @param req DescribeCostSummaryByProductRequest
+                 * @return DescribeCostSummaryByProductOutcome
+                 */
+                DescribeCostSummaryByProductOutcome DescribeCostSummaryByProduct(const Model::DescribeCostSummaryByProductRequest &request);
+                void DescribeCostSummaryByProductAsync(const Model::DescribeCostSummaryByProductRequest& request, const DescribeCostSummaryByProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCostSummaryByProductOutcomeCallable DescribeCostSummaryByProductCallable(const Model::DescribeCostSummaryByProductRequest& request);
+
+                /**
+                 *获取按项目汇总消耗详情
+                 * @param req DescribeCostSummaryByProjectRequest
+                 * @return DescribeCostSummaryByProjectOutcome
+                 */
+                DescribeCostSummaryByProjectOutcome DescribeCostSummaryByProject(const Model::DescribeCostSummaryByProjectRequest &request);
+                void DescribeCostSummaryByProjectAsync(const Model::DescribeCostSummaryByProjectRequest& request, const DescribeCostSummaryByProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCostSummaryByProjectOutcomeCallable DescribeCostSummaryByProjectCallable(const Model::DescribeCostSummaryByProjectRequest& request);
+
+                /**
+                 *获取按地域汇总消耗详情
+                 * @param req DescribeCostSummaryByRegionRequest
+                 * @return DescribeCostSummaryByRegionOutcome
+                 */
+                DescribeCostSummaryByRegionOutcome DescribeCostSummaryByRegion(const Model::DescribeCostSummaryByRegionRequest &request);
+                void DescribeCostSummaryByRegionAsync(const Model::DescribeCostSummaryByRegionRequest& request, const DescribeCostSummaryByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCostSummaryByRegionOutcomeCallable DescribeCostSummaryByRegionCallable(const Model::DescribeCostSummaryByRegionRequest& request);
+
+                /**
+                 *获取按资源汇总消耗详情
+                 * @param req DescribeCostSummaryByResourceRequest
+                 * @return DescribeCostSummaryByResourceOutcome
+                 */
+                DescribeCostSummaryByResourceOutcome DescribeCostSummaryByResource(const Model::DescribeCostSummaryByResourceRequest &request);
+                void DescribeCostSummaryByResourceAsync(const Model::DescribeCostSummaryByResourceRequest& request, const DescribeCostSummaryByResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCostSummaryByResourceOutcomeCallable DescribeCostSummaryByResourceCallable(const Model::DescribeCostSummaryByResourceRequest& request);
 
                 /**
                  *查询订单

@@ -29,6 +29,8 @@
 #include <tencentcloud/sts/v20180813/model/AssumeRoleWithSAMLResponse.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenRequest.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenResponse.h>
+#include <tencentcloud/sts/v20180813/model/QueryApiKeyRequest.h>
+#include <tencentcloud/sts/v20180813/model/QueryApiKeyResponse.h>
 
 
 namespace TencentCloud
@@ -52,6 +54,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetFederationTokenResponse> GetFederationTokenOutcome;
                 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::GetFederationTokenRequest&, GetFederationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFederationTokenAsyncHandler;
+                typedef Outcome<Error, Model::QueryApiKeyResponse> QueryApiKeyOutcome;
+                typedef std::future<QueryApiKeyOutcome> QueryApiKeyOutcomeCallable;
+                typedef std::function<void(const StsClient*, const Model::QueryApiKeyRequest&, QueryApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryApiKeyAsyncHandler;
 
 
 
@@ -81,6 +86,15 @@ namespace TencentCloud
                 GetFederationTokenOutcome GetFederationToken(const Model::GetFederationTokenRequest &request);
                 void GetFederationTokenAsync(const Model::GetFederationTokenRequest& request, const GetFederationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFederationTokenOutcomeCallable GetFederationTokenCallable(const Model::GetFederationTokenRequest& request);
+
+                /**
+                 *拉取API密钥列表
+                 * @param req QueryApiKeyRequest
+                 * @return QueryApiKeyOutcome
+                 */
+                QueryApiKeyOutcome QueryApiKey(const Model::QueryApiKeyRequest &request);
+                void QueryApiKeyAsync(const Model::QueryApiKeyRequest& request, const QueryApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryApiKeyOutcomeCallable QueryApiKeyCallable(const Model::QueryApiKeyRequest& request);
 
             };
         }

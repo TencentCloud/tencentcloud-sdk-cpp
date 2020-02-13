@@ -141,14 +141,14 @@ https://域名/cgi
                     bool UrlListHasBeenSet() const;
 
                     /**
-                     * 获取可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
-                     * @return Protocol 可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
+                     * 获取可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
+                     * @return Protocol 可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
-                     * @param Protocol 可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
+                     * 设置可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
+                     * @param Protocol 可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -159,14 +159,14 @@ https://域名/cgi
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取可选字段，表示https协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
-                     * @return Domain 可选字段，表示https协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
+                     * 获取可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
+                     * @return Domain 可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置可选字段，表示https协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
-                     * @param Domain 可选字段，表示https协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
+                     * 设置可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
+                     * @param Domain 可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -177,17 +177,17 @@ https://域名/cgi
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
+                     * 获取可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
 当Method为delete时，可以不用填写此字段；
-                     * @return RuleId 可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
+                     * @return RuleId 可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
 当Method为delete时，可以不用填写此字段；
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
+                     * 设置可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
 当Method为delete时，可以不用填写此字段；
-                     * @param RuleId 可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
+                     * @param RuleId 可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
 当Method为delete时，可以不用填写此字段；
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -233,19 +233,19 @@ https://域名/cgi
                     bool m_urlListHasBeenSet;
 
                     /**
-                     * 可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
+                     * 可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 可选字段，表示https协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
+                     * 可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
+                     * 可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；
 当Method为delete时，可以不用填写此字段；
                      */
                     std::string m_ruleId;

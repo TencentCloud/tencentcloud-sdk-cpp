@@ -23,6 +23,7 @@ using namespace std;
 
 PullSmsSendStatus::PullSmsSendStatus() :
     m_userReceiveTimeHasBeenSet(false),
+    m_userReceiveUnixTimeHasBeenSet(false),
     m_nationCodeHasBeenSet(false),
     m_purePhoneNumberHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
@@ -45,6 +46,16 @@ CoreInternalOutcome PullSmsSendStatus::Deserialize(const Value &value)
         }
         m_userReceiveTime = string(value["UserReceiveTime"].GetString());
         m_userReceiveTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserReceiveUnixTime") && !value["UserReceiveUnixTime"].IsNull())
+    {
+        if (!value["UserReceiveUnixTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PullSmsSendStatus.UserReceiveUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userReceiveUnixTime = value["UserReceiveUnixTime"].GetUint64();
+        m_userReceiveUnixTimeHasBeenSet = true;
     }
 
     if (value.HasMember("NationCode") && !value["NationCode"].IsNull())
@@ -122,6 +133,14 @@ void PullSmsSendStatus::ToJsonObject(Value &value, Document::AllocatorType& allo
         value.AddMember(iKey, Value(m_userReceiveTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_userReceiveUnixTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserReceiveUnixTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userReceiveUnixTime, allocator);
+    }
+
     if (m_nationCodeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -187,6 +206,22 @@ void PullSmsSendStatus::SetUserReceiveTime(const string& _userReceiveTime)
 bool PullSmsSendStatus::UserReceiveTimeHasBeenSet() const
 {
     return m_userReceiveTimeHasBeenSet;
+}
+
+uint64_t PullSmsSendStatus::GetUserReceiveUnixTime() const
+{
+    return m_userReceiveUnixTime;
+}
+
+void PullSmsSendStatus::SetUserReceiveUnixTime(const uint64_t& _userReceiveUnixTime)
+{
+    m_userReceiveUnixTime = _userReceiveUnixTime;
+    m_userReceiveUnixTimeHasBeenSet = true;
+}
+
+bool PullSmsSendStatus::UserReceiveUnixTimeHasBeenSet() const
+{
+    return m_userReceiveUnixTimeHasBeenSet;
 }
 
 string PullSmsSendStatus::GetNationCode() const

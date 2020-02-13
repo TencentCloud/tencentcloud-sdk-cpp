@@ -25,14 +25,22 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tiems/v20190416/model/CreateJobRequest.h>
 #include <tencentcloud/tiems/v20190416/model/CreateJobResponse.h>
+#include <tencentcloud/tiems/v20190416/model/CreateRsgAsGroupRequest.h>
+#include <tencentcloud/tiems/v20190416/model/CreateRsgAsGroupResponse.h>
 #include <tencentcloud/tiems/v20190416/model/CreateRuntimeRequest.h>
 #include <tencentcloud/tiems/v20190416/model/CreateRuntimeResponse.h>
 #include <tencentcloud/tiems/v20190416/model/CreateServiceRequest.h>
 #include <tencentcloud/tiems/v20190416/model/CreateServiceResponse.h>
 #include <tencentcloud/tiems/v20190416/model/CreateServiceConfigRequest.h>
 #include <tencentcloud/tiems/v20190416/model/CreateServiceConfigResponse.h>
+#include <tencentcloud/tiems/v20190416/model/DeleteInstanceRequest.h>
+#include <tencentcloud/tiems/v20190416/model/DeleteInstanceResponse.h>
 #include <tencentcloud/tiems/v20190416/model/DeleteJobRequest.h>
 #include <tencentcloud/tiems/v20190416/model/DeleteJobResponse.h>
+#include <tencentcloud/tiems/v20190416/model/DeleteResourceGroupRequest.h>
+#include <tencentcloud/tiems/v20190416/model/DeleteResourceGroupResponse.h>
+#include <tencentcloud/tiems/v20190416/model/DeleteRsgAsGroupRequest.h>
+#include <tencentcloud/tiems/v20190416/model/DeleteRsgAsGroupResponse.h>
 #include <tencentcloud/tiems/v20190416/model/DeleteRuntimeRequest.h>
 #include <tencentcloud/tiems/v20190416/model/DeleteRuntimeResponse.h>
 #include <tencentcloud/tiems/v20190416/model/DeleteServiceRequest.h>
@@ -41,16 +49,28 @@
 #include <tencentcloud/tiems/v20190416/model/DeleteServiceConfigResponse.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeInstancesRequest.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeInstancesResponse.h>
+#include <tencentcloud/tiems/v20190416/model/DescribeResourceGroupsRequest.h>
+#include <tencentcloud/tiems/v20190416/model/DescribeResourceGroupsResponse.h>
+#include <tencentcloud/tiems/v20190416/model/DescribeRsgAsGroupActivitiesRequest.h>
+#include <tencentcloud/tiems/v20190416/model/DescribeRsgAsGroupActivitiesResponse.h>
+#include <tencentcloud/tiems/v20190416/model/DescribeRsgAsGroupsRequest.h>
+#include <tencentcloud/tiems/v20190416/model/DescribeRsgAsGroupsResponse.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeRuntimesRequest.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeRuntimesResponse.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeServiceConfigsRequest.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeServiceConfigsResponse.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeServicesRequest.h>
 #include <tencentcloud/tiems/v20190416/model/DescribeServicesResponse.h>
+#include <tencentcloud/tiems/v20190416/model/DisableRsgAsGroupRequest.h>
+#include <tencentcloud/tiems/v20190416/model/DisableRsgAsGroupResponse.h>
+#include <tencentcloud/tiems/v20190416/model/EnableRsgAsGroupRequest.h>
+#include <tencentcloud/tiems/v20190416/model/EnableRsgAsGroupResponse.h>
 #include <tencentcloud/tiems/v20190416/model/ExposeServiceRequest.h>
 #include <tencentcloud/tiems/v20190416/model/ExposeServiceResponse.h>
 #include <tencentcloud/tiems/v20190416/model/UpdateJobRequest.h>
 #include <tencentcloud/tiems/v20190416/model/UpdateJobResponse.h>
+#include <tencentcloud/tiems/v20190416/model/UpdateRsgAsGroupRequest.h>
+#include <tencentcloud/tiems/v20190416/model/UpdateRsgAsGroupResponse.h>
 #include <tencentcloud/tiems/v20190416/model/UpdateServiceRequest.h>
 #include <tencentcloud/tiems/v20190416/model/UpdateServiceResponse.h>
 
@@ -70,6 +90,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateJobResponse> CreateJobOutcome;
                 typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::CreateJobRequest&, CreateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
+                typedef Outcome<Error, Model::CreateRsgAsGroupResponse> CreateRsgAsGroupOutcome;
+                typedef std::future<CreateRsgAsGroupOutcome> CreateRsgAsGroupOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::CreateRsgAsGroupRequest&, CreateRsgAsGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRsgAsGroupAsyncHandler;
                 typedef Outcome<Error, Model::CreateRuntimeResponse> CreateRuntimeOutcome;
                 typedef std::future<CreateRuntimeOutcome> CreateRuntimeOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::CreateRuntimeRequest&, CreateRuntimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuntimeAsyncHandler;
@@ -79,9 +102,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateServiceConfigResponse> CreateServiceConfigOutcome;
                 typedef std::future<CreateServiceConfigOutcome> CreateServiceConfigOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::CreateServiceConfigRequest&, CreateServiceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceConfigAsyncHandler;
+                typedef Outcome<Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
+                typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
                 typedef Outcome<Error, Model::DeleteJobResponse> DeleteJobOutcome;
                 typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::DeleteJobRequest&, DeleteJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobAsyncHandler;
+                typedef Outcome<Error, Model::DeleteResourceGroupResponse> DeleteResourceGroupOutcome;
+                typedef std::future<DeleteResourceGroupOutcome> DeleteResourceGroupOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::DeleteResourceGroupRequest&, DeleteResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceGroupAsyncHandler;
+                typedef Outcome<Error, Model::DeleteRsgAsGroupResponse> DeleteRsgAsGroupOutcome;
+                typedef std::future<DeleteRsgAsGroupOutcome> DeleteRsgAsGroupOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::DeleteRsgAsGroupRequest&, DeleteRsgAsGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRsgAsGroupAsyncHandler;
                 typedef Outcome<Error, Model::DeleteRuntimeResponse> DeleteRuntimeOutcome;
                 typedef std::future<DeleteRuntimeOutcome> DeleteRuntimeOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::DeleteRuntimeRequest&, DeleteRuntimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuntimeAsyncHandler;
@@ -94,6 +126,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResourceGroupsResponse> DescribeResourceGroupsOutcome;
+                typedef std::future<DescribeResourceGroupsOutcome> DescribeResourceGroupsOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::DescribeResourceGroupsRequest&, DescribeResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRsgAsGroupActivitiesResponse> DescribeRsgAsGroupActivitiesOutcome;
+                typedef std::future<DescribeRsgAsGroupActivitiesOutcome> DescribeRsgAsGroupActivitiesOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::DescribeRsgAsGroupActivitiesRequest&, DescribeRsgAsGroupActivitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRsgAsGroupActivitiesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRsgAsGroupsResponse> DescribeRsgAsGroupsOutcome;
+                typedef std::future<DescribeRsgAsGroupsOutcome> DescribeRsgAsGroupsOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::DescribeRsgAsGroupsRequest&, DescribeRsgAsGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRsgAsGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRuntimesResponse> DescribeRuntimesOutcome;
                 typedef std::future<DescribeRuntimesOutcome> DescribeRuntimesOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::DescribeRuntimesRequest&, DescribeRuntimesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuntimesAsyncHandler;
@@ -103,12 +144,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeServicesResponse> DescribeServicesOutcome;
                 typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::DescribeServicesRequest&, DescribeServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServicesAsyncHandler;
+                typedef Outcome<Error, Model::DisableRsgAsGroupResponse> DisableRsgAsGroupOutcome;
+                typedef std::future<DisableRsgAsGroupOutcome> DisableRsgAsGroupOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::DisableRsgAsGroupRequest&, DisableRsgAsGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableRsgAsGroupAsyncHandler;
+                typedef Outcome<Error, Model::EnableRsgAsGroupResponse> EnableRsgAsGroupOutcome;
+                typedef std::future<EnableRsgAsGroupOutcome> EnableRsgAsGroupOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::EnableRsgAsGroupRequest&, EnableRsgAsGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRsgAsGroupAsyncHandler;
                 typedef Outcome<Error, Model::ExposeServiceResponse> ExposeServiceOutcome;
                 typedef std::future<ExposeServiceOutcome> ExposeServiceOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::ExposeServiceRequest&, ExposeServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExposeServiceAsyncHandler;
                 typedef Outcome<Error, Model::UpdateJobResponse> UpdateJobOutcome;
                 typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::UpdateJobRequest&, UpdateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJobAsyncHandler;
+                typedef Outcome<Error, Model::UpdateRsgAsGroupResponse> UpdateRsgAsGroupOutcome;
+                typedef std::future<UpdateRsgAsGroupOutcome> UpdateRsgAsGroupOutcomeCallable;
+                typedef std::function<void(const TiemsClient*, const Model::UpdateRsgAsGroupRequest&, UpdateRsgAsGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRsgAsGroupAsyncHandler;
                 typedef Outcome<Error, Model::UpdateServiceResponse> UpdateServiceOutcome;
                 typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
                 typedef std::function<void(const TiemsClient*, const Model::UpdateServiceRequest&, UpdateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceAsyncHandler;
@@ -123,6 +173,15 @@ namespace TencentCloud
                 CreateJobOutcome CreateJob(const Model::CreateJobRequest &request);
                 void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request);
+
+                /**
+                 *创建资源组的伸缩组。当前一个资源组仅允许创建一个伸缩组。
+                 * @param req CreateRsgAsGroupRequest
+                 * @return CreateRsgAsGroupOutcome
+                 */
+                CreateRsgAsGroupOutcome CreateRsgAsGroup(const Model::CreateRsgAsGroupRequest &request);
+                void CreateRsgAsGroupAsync(const Model::CreateRsgAsGroupRequest& request, const CreateRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRsgAsGroupOutcomeCallable CreateRsgAsGroupCallable(const Model::CreateRsgAsGroupRequest& request);
 
                 /**
                  *创建运行环境
@@ -152,6 +211,15 @@ namespace TencentCloud
                 CreateServiceConfigOutcomeCallable CreateServiceConfigCallable(const Model::CreateServiceConfigRequest& request);
 
                 /**
+                 *删除资源组中的节点。目前仅支持删除已经到期的预付费节点，和按量付费节点。
+                 * @param req DeleteInstanceRequest
+                 * @return DeleteInstanceOutcome
+                 */
+                DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
+                void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
                  *删除任务
                  * @param req DeleteJobRequest
                  * @return DeleteJobOutcome
@@ -159,6 +227,24 @@ namespace TencentCloud
                 DeleteJobOutcome DeleteJob(const Model::DeleteJobRequest &request);
                 void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteJobOutcomeCallable DeleteJobCallable(const Model::DeleteJobRequest& request);
+
+                /**
+                 *删除资源组
+                 * @param req DeleteResourceGroupRequest
+                 * @return DeleteResourceGroupOutcome
+                 */
+                DeleteResourceGroupOutcome DeleteResourceGroup(const Model::DeleteResourceGroupRequest &request);
+                void DeleteResourceGroupAsync(const Model::DeleteResourceGroupRequest& request, const DeleteResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourceGroupOutcomeCallable DeleteResourceGroupCallable(const Model::DeleteResourceGroupRequest& request);
+
+                /**
+                 *伸缩
+                 * @param req DeleteRsgAsGroupRequest
+                 * @return DeleteRsgAsGroupOutcome
+                 */
+                DeleteRsgAsGroupOutcome DeleteRsgAsGroup(const Model::DeleteRsgAsGroupRequest &request);
+                void DeleteRsgAsGroupAsync(const Model::DeleteRsgAsGroupRequest& request, const DeleteRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRsgAsGroupOutcomeCallable DeleteRsgAsGroupCallable(const Model::DeleteRsgAsGroupRequest& request);
 
                 /**
                  *删除运行环境
@@ -197,6 +283,33 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *获取资源组列表
+                 * @param req DescribeResourceGroupsRequest
+                 * @return DescribeResourceGroupsOutcome
+                 */
+                DescribeResourceGroupsOutcome DescribeResourceGroups(const Model::DescribeResourceGroupsRequest &request);
+                void DescribeResourceGroupsAsync(const Model::DescribeResourceGroupsRequest& request, const DescribeResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGroupsOutcomeCallable DescribeResourceGroupsCallable(const Model::DescribeResourceGroupsRequest& request);
+
+                /**
+                 *查询伸缩组活动
+                 * @param req DescribeRsgAsGroupActivitiesRequest
+                 * @return DescribeRsgAsGroupActivitiesOutcome
+                 */
+                DescribeRsgAsGroupActivitiesOutcome DescribeRsgAsGroupActivities(const Model::DescribeRsgAsGroupActivitiesRequest &request);
+                void DescribeRsgAsGroupActivitiesAsync(const Model::DescribeRsgAsGroupActivitiesRequest& request, const DescribeRsgAsGroupActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRsgAsGroupActivitiesOutcomeCallable DescribeRsgAsGroupActivitiesCallable(const Model::DescribeRsgAsGroupActivitiesRequest& request);
+
+                /**
+                 *查询资源组的伸缩组信息
+                 * @param req DescribeRsgAsGroupsRequest
+                 * @return DescribeRsgAsGroupsOutcome
+                 */
+                DescribeRsgAsGroupsOutcome DescribeRsgAsGroups(const Model::DescribeRsgAsGroupsRequest &request);
+                void DescribeRsgAsGroupsAsync(const Model::DescribeRsgAsGroupsRequest& request, const DescribeRsgAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRsgAsGroupsOutcomeCallable DescribeRsgAsGroupsCallable(const Model::DescribeRsgAsGroupsRequest& request);
+
+                /**
                  *描述服务运行环境
                  * @param req DescribeRuntimesRequest
                  * @return DescribeRuntimesOutcome
@@ -224,6 +337,24 @@ namespace TencentCloud
                 DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request);
 
                 /**
+                 *停用资源组的伸缩组
+                 * @param req DisableRsgAsGroupRequest
+                 * @return DisableRsgAsGroupOutcome
+                 */
+                DisableRsgAsGroupOutcome DisableRsgAsGroup(const Model::DisableRsgAsGroupRequest &request);
+                void DisableRsgAsGroupAsync(const Model::DisableRsgAsGroupRequest& request, const DisableRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableRsgAsGroupOutcomeCallable DisableRsgAsGroupCallable(const Model::DisableRsgAsGroupRequest& request);
+
+                /**
+                 *启用资源组的伸缩组
+                 * @param req EnableRsgAsGroupRequest
+                 * @return EnableRsgAsGroupOutcome
+                 */
+                EnableRsgAsGroupOutcome EnableRsgAsGroup(const Model::EnableRsgAsGroupRequest &request);
+                void EnableRsgAsGroupAsync(const Model::EnableRsgAsGroupRequest& request, const EnableRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableRsgAsGroupOutcomeCallable EnableRsgAsGroupCallable(const Model::EnableRsgAsGroupRequest& request);
+
+                /**
                  *暴露服务
                  * @param req ExposeServiceRequest
                  * @return ExposeServiceOutcome
@@ -240,6 +371,15 @@ namespace TencentCloud
                 UpdateJobOutcome UpdateJob(const Model::UpdateJobRequest &request);
                 void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateJobOutcomeCallable UpdateJobCallable(const Model::UpdateJobRequest& request);
+
+                /**
+                 *更新资源组的伸缩组
+                 * @param req UpdateRsgAsGroupRequest
+                 * @return UpdateRsgAsGroupOutcome
+                 */
+                UpdateRsgAsGroupOutcome UpdateRsgAsGroup(const Model::UpdateRsgAsGroupRequest &request);
+                void UpdateRsgAsGroupAsync(const Model::UpdateRsgAsGroupRequest& request, const UpdateRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRsgAsGroupOutcomeCallable UpdateRsgAsGroupCallable(const Model::UpdateRsgAsGroupRequest& request);
 
                 /**
                  *更新服务

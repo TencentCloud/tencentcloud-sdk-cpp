@@ -28,8 +28,10 @@ ModifySnapshotByTimeOffsetTemplateRequest::ModifySnapshotByTimeOffsetTemplateReq
     m_nameHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,14 @@ string ModifySnapshotByTimeOffsetTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_height, allocator);
     }
 
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_formatHasBeenSet)
     {
         Value iKey(kStringType);
@@ -86,6 +96,14 @@ string ModifySnapshotByTimeOffsetTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -160,6 +178,22 @@ bool ModifySnapshotByTimeOffsetTemplateRequest::HeightHasBeenSet() const
     return m_heightHasBeenSet;
 }
 
+string ModifySnapshotByTimeOffsetTemplateRequest::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void ModifySnapshotByTimeOffsetTemplateRequest::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool ModifySnapshotByTimeOffsetTemplateRequest::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
+}
+
 string ModifySnapshotByTimeOffsetTemplateRequest::GetFormat() const
 {
     return m_format;
@@ -190,6 +224,22 @@ void ModifySnapshotByTimeOffsetTemplateRequest::SetComment(const string& _commen
 bool ModifySnapshotByTimeOffsetTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string ModifySnapshotByTimeOffsetTemplateRequest::GetFillType() const
+{
+    return m_fillType;
+}
+
+void ModifySnapshotByTimeOffsetTemplateRequest::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool ModifySnapshotByTimeOffsetTemplateRequest::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 
 

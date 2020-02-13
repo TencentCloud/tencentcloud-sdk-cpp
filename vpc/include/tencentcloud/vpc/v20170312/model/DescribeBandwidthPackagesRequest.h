@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包Id，支持批量
-                     * @return BandwidthPackageIds 带宽包Id，支持批量
+                     * 获取带宽包唯一ID列表
+                     * @return BandwidthPackageIds 带宽包唯一ID列表
                      */
                     std::vector<std::string> GetBandwidthPackageIds() const;
 
                     /**
-                     * 设置带宽包Id，支持批量
-                     * @param BandwidthPackageIds 带宽包Id，支持批量
+                     * 设置带宽包唯一ID列表
+                     * @param BandwidthPackageIds 带宽包唯一ID列表
                      */
                     void SetBandwidthPackageIds(const std::vector<std::string>& _bandwidthPackageIds);
 
@@ -146,7 +146,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包Id，支持批量
+                     * 带宽包唯一ID列表
                      */
                     std::vector<std::string> m_bandwidthPackageIds;
                     bool m_bandwidthPackageIdsHasBeenSet;

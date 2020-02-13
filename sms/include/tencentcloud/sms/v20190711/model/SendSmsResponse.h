@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取短信发送状态
-                     * @return SendStatusSet 短信发送状态
+                     * 获取短信发送状态。
+                     * @return SendStatusSet 短信发送状态。
                      */
                     std::vector<SendStatus> GetSendStatusSet() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 短信发送状态
+                     * 短信发送状态。
                      */
                     std::vector<SendStatus> m_sendStatusSet;
                     bool m_sendStatusSetHasBeenSet;

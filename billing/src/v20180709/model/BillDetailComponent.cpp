@@ -37,7 +37,10 @@ BillDetailComponent::BillDetailComponent() :
     m_realCostHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
-    m_incentivePayAmountHasBeenSet(false)
+    m_incentivePayAmountHasBeenSet(false),
+    m_itemCodeHasBeenSet(false),
+    m_componentCodeHasBeenSet(false),
+    m_contractPriceHasBeenSet(false)
 {
 }
 
@@ -206,6 +209,36 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const Value &value)
         m_incentivePayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemCode") && !value["ItemCode"].IsNull())
+    {
+        if (!value["ItemCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDetailComponent.ItemCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_itemCode = string(value["ItemCode"].GetString());
+        m_itemCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComponentCode") && !value["ComponentCode"].IsNull())
+    {
+        if (!value["ComponentCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDetailComponent.ComponentCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentCode = string(value["ComponentCode"].GetString());
+        m_componentCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContractPrice") && !value["ContractPrice"].IsNull())
+    {
+        if (!value["ContractPrice"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDetailComponent.ContractPrice` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contractPrice = string(value["ContractPrice"].GetString());
+        m_contractPriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -339,6 +372,30 @@ void BillDetailComponent::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "IncentivePayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ItemCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_itemCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_componentCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ComponentCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_componentCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contractPriceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ContractPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_contractPrice.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -598,5 +655,53 @@ void BillDetailComponent::SetIncentivePayAmount(const string& _incentivePayAmoun
 bool BillDetailComponent::IncentivePayAmountHasBeenSet() const
 {
     return m_incentivePayAmountHasBeenSet;
+}
+
+string BillDetailComponent::GetItemCode() const
+{
+    return m_itemCode;
+}
+
+void BillDetailComponent::SetItemCode(const string& _itemCode)
+{
+    m_itemCode = _itemCode;
+    m_itemCodeHasBeenSet = true;
+}
+
+bool BillDetailComponent::ItemCodeHasBeenSet() const
+{
+    return m_itemCodeHasBeenSet;
+}
+
+string BillDetailComponent::GetComponentCode() const
+{
+    return m_componentCode;
+}
+
+void BillDetailComponent::SetComponentCode(const string& _componentCode)
+{
+    m_componentCode = _componentCode;
+    m_componentCodeHasBeenSet = true;
+}
+
+bool BillDetailComponent::ComponentCodeHasBeenSet() const
+{
+    return m_componentCodeHasBeenSet;
+}
+
+string BillDetailComponent::GetContractPrice() const
+{
+    return m_contractPrice;
+}
+
+void BillDetailComponent::SetContractPrice(const string& _contractPrice)
+{
+    m_contractPrice = _contractPrice;
+    m_contractPriceHasBeenSet = true;
+}
+
+bool BillDetailComponent::ContractPriceHasBeenSet() const
+{
+    return m_contractPriceHasBeenSet;
 }
 

@@ -40,42 +40,42 @@ TrtcClient::TrtcClient(const Credential &credential, const string &region, const
 }
 
 
-TrtcClient::DissolveRoomOutcome TrtcClient::DissolveRoom(const DissolveRoomRequest &request)
+TrtcClient::DismissRoomOutcome TrtcClient::DismissRoom(const DismissRoomRequest &request)
 {
-    auto outcome = MakeRequest(request, "DissolveRoom");
+    auto outcome = MakeRequest(request, "DismissRoom");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DissolveRoomResponse rsp = DissolveRoomResponse();
+        DismissRoomResponse rsp = DismissRoomResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DissolveRoomOutcome(rsp);
+            return DismissRoomOutcome(rsp);
         else
-            return DissolveRoomOutcome(o.GetError());
+            return DismissRoomOutcome(o.GetError());
     }
     else
     {
-        return DissolveRoomOutcome(outcome.GetError());
+        return DismissRoomOutcome(outcome.GetError());
     }
 }
 
-void TrtcClient::DissolveRoomAsync(const DissolveRoomRequest& request, const DissolveRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TrtcClient::DismissRoomAsync(const DismissRoomRequest& request, const DismissRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DissolveRoom(request), context);
+        handler(this, request, this->DismissRoom(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TrtcClient::DissolveRoomOutcomeCallable TrtcClient::DissolveRoomCallable(const DissolveRoomRequest &request)
+TrtcClient::DismissRoomOutcomeCallable TrtcClient::DismissRoomCallable(const DismissRoomRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DissolveRoomOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DismissRoomOutcome()>>(
         [this, request]()
         {
-            return this->DissolveRoom(request);
+            return this->DismissRoom(request);
         }
     );
 
@@ -83,42 +83,42 @@ TrtcClient::DissolveRoomOutcomeCallable TrtcClient::DissolveRoomCallable(const D
     return task->get_future();
 }
 
-TrtcClient::KickOutUserOutcome TrtcClient::KickOutUser(const KickOutUserRequest &request)
+TrtcClient::RemoveUserOutcome TrtcClient::RemoveUser(const RemoveUserRequest &request)
 {
-    auto outcome = MakeRequest(request, "KickOutUser");
+    auto outcome = MakeRequest(request, "RemoveUser");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        KickOutUserResponse rsp = KickOutUserResponse();
+        RemoveUserResponse rsp = RemoveUserResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return KickOutUserOutcome(rsp);
+            return RemoveUserOutcome(rsp);
         else
-            return KickOutUserOutcome(o.GetError());
+            return RemoveUserOutcome(o.GetError());
     }
     else
     {
-        return KickOutUserOutcome(outcome.GetError());
+        return RemoveUserOutcome(outcome.GetError());
     }
 }
 
-void TrtcClient::KickOutUserAsync(const KickOutUserRequest& request, const KickOutUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TrtcClient::RemoveUserAsync(const RemoveUserRequest& request, const RemoveUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->KickOutUser(request), context);
+        handler(this, request, this->RemoveUser(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TrtcClient::KickOutUserOutcomeCallable TrtcClient::KickOutUserCallable(const KickOutUserRequest &request)
+TrtcClient::RemoveUserOutcomeCallable TrtcClient::RemoveUserCallable(const RemoveUserRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<KickOutUserOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<RemoveUserOutcome()>>(
         [this, request]()
         {
-            return this->KickOutUser(request);
+            return this->RemoveUser(request);
         }
     );
 

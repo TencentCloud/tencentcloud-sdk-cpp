@@ -31,6 +31,8 @@ LiveRealTimeClipRequest::LiveRealTimeClipRequest() :
     m_expireTimeHasBeenSet(false),
     m_procedureHasBeenSet(false),
     m_metaDataRequiredHasBeenSet(false),
+    m_hostHasBeenSet(false),
+    m_extInfoHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -96,6 +98,22 @@ string LiveRealTimeClipRequest::ToJsonString() const
         string key = "MetaDataRequired";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_metaDataRequired, allocator);
+    }
+
+    if (m_hostHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Host";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_host.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -224,6 +242,38 @@ void LiveRealTimeClipRequest::SetMetaDataRequired(const uint64_t& _metaDataRequi
 bool LiveRealTimeClipRequest::MetaDataRequiredHasBeenSet() const
 {
     return m_metaDataRequiredHasBeenSet;
+}
+
+string LiveRealTimeClipRequest::GetHost() const
+{
+    return m_host;
+}
+
+void LiveRealTimeClipRequest::SetHost(const string& _host)
+{
+    m_host = _host;
+    m_hostHasBeenSet = true;
+}
+
+bool LiveRealTimeClipRequest::HostHasBeenSet() const
+{
+    return m_hostHasBeenSet;
+}
+
+string LiveRealTimeClipRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void LiveRealTimeClipRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool LiveRealTimeClipRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 uint64_t LiveRealTimeClipRequest::GetSubAppId() const

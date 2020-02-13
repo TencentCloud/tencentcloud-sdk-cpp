@@ -23,6 +23,7 @@ using namespace std;
 
 WatermarkInput::WatermarkInput() :
     m_definitionHasBeenSet(false),
+    m_rawParameterHasBeenSet(false),
     m_textContentHasBeenSet(false),
     m_svgContentHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
@@ -43,6 +44,23 @@ CoreInternalOutcome WatermarkInput::Deserialize(const Value &value)
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RawParameter") && !value["RawParameter"].IsNull())
+    {
+        if (!value["RawParameter"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `WatermarkInput.RawParameter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rawParameter.Deserialize(value["RawParameter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rawParameterHasBeenSet = true;
     }
 
     if (value.HasMember("TextContent") && !value["TextContent"].IsNull())
@@ -100,6 +118,15 @@ void WatermarkInput::ToJsonObject(Value &value, Document::AllocatorType& allocat
         value.AddMember(iKey, m_definition, allocator);
     }
 
+    if (m_rawParameterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RawParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_rawParameter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_textContentHasBeenSet)
     {
         Value iKey(kStringType);
@@ -149,6 +176,22 @@ void WatermarkInput::SetDefinition(const uint64_t& _definition)
 bool WatermarkInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+RawWatermarkParameter WatermarkInput::GetRawParameter() const
+{
+    return m_rawParameter;
+}
+
+void WatermarkInput::SetRawParameter(const RawWatermarkParameter& _rawParameter)
+{
+    m_rawParameter = _rawParameter;
+    m_rawParameterHasBeenSet = true;
+}
+
+bool WatermarkInput::RawParameterHasBeenSet() const
+{
+    return m_rawParameterHasBeenSet;
 }
 
 string WatermarkInput::GetTextContent() const

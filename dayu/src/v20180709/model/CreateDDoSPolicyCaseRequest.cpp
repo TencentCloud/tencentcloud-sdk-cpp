@@ -45,7 +45,9 @@ CreateDDoSPolicyCaseRequest::CreateDDoSPolicyCaseRequest() :
     m_maxTcpPackageLenHasBeenSet(false),
     m_minUdpPackageLenHasBeenSet(false),
     m_maxUdpPackageLenHasBeenSet(false),
-    m_hasVPNHasBeenSet(false)
+    m_hasVPNHasBeenSet(false),
+    m_tcpPortListHasBeenSet(false),
+    m_udpPortListHasBeenSet(false)
 {
 }
 
@@ -245,6 +247,22 @@ string CreateDDoSPolicyCaseRequest::ToJsonString() const
         string key = "HasVPN";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_hasVPN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcpPortListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TcpPortList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_tcpPortList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_udpPortListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UdpPortList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_udpPortList.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -605,6 +623,38 @@ void CreateDDoSPolicyCaseRequest::SetHasVPN(const string& _hasVPN)
 bool CreateDDoSPolicyCaseRequest::HasVPNHasBeenSet() const
 {
     return m_hasVPNHasBeenSet;
+}
+
+string CreateDDoSPolicyCaseRequest::GetTcpPortList() const
+{
+    return m_tcpPortList;
+}
+
+void CreateDDoSPolicyCaseRequest::SetTcpPortList(const string& _tcpPortList)
+{
+    m_tcpPortList = _tcpPortList;
+    m_tcpPortListHasBeenSet = true;
+}
+
+bool CreateDDoSPolicyCaseRequest::TcpPortListHasBeenSet() const
+{
+    return m_tcpPortListHasBeenSet;
+}
+
+string CreateDDoSPolicyCaseRequest::GetUdpPortList() const
+{
+    return m_udpPortList;
+}
+
+void CreateDDoSPolicyCaseRequest::SetUdpPortList(const string& _udpPortList)
+{
+    m_udpPortList = _udpPortList;
+    m_udpPortListHasBeenSet = true;
+}
+
+bool CreateDDoSPolicyCaseRequest::UdpPortListHasBeenSet() const
+{
+    return m_udpPortListHasBeenSet;
 }
 
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源Id，形如'eip-xxxx', 'lb-xxxx'
-                     * @return ResourceIds 资源Id，形如'eip-xxxx', 'lb-xxxx'
+                     * 获取资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
+                     * @return ResourceIds 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置资源Id，形如'eip-xxxx', 'lb-xxxx'
-                     * @param ResourceIds 资源Id，形如'eip-xxxx', 'lb-xxxx'
+                     * 设置资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
+                     * @param ResourceIds 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽包类型，包括'BGP', 'SINGLEISP', 'ANYCAST'
-                     * @return NetworkType 带宽包类型，包括'BGP', 'SINGLEISP', 'ANYCAST'
+                     * 获取带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * @return NetworkType 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置带宽包类型，包括'BGP', 'SINGLEISP', 'ANYCAST'
-                     * @param NetworkType 带宽包类型，包括'BGP', 'SINGLEISP', 'ANYCAST'
+                     * 设置带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * @param NetworkType 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
                      */
                     void SetNetworkType(const std::string& _networkType);
 
@@ -114,10 +114,28 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     * @return Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     * @param Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源Id，形如'eip-xxxx', 'lb-xxxx'
+                     * 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
@@ -129,7 +147,7 @@ namespace TencentCloud
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 带宽包类型，包括'BGP', 'SINGLEISP', 'ANYCAST'
+                     * 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

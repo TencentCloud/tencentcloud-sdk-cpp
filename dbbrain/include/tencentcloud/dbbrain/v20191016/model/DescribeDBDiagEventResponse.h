@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool ProblemHasBeenSet() const;
 
                     /**
-                     * 获取严重程度。
-                     * @return Severity 严重程度。
+                     * 获取严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
+                     * @return Severity 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
                      */
                     int64_t GetSeverity() const;
 
@@ -215,7 +215,7 @@ namespace TencentCloud
                     bool m_problemHasBeenSet;
 
                     /**
-                     * 严重程度。
+                     * 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
                      */
                     int64_t m_severity;
                     bool m_severityHasBeenSet;

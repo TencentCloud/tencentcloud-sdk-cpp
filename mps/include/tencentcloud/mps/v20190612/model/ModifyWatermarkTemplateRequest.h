@@ -105,13 +105,11 @@ namespace TencentCloud
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
-目前，当 Type 为 image，该字段仅支持 TopLeft。
                      * @return CoordinateOrigin 原点位置，可选值：
 <li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
-目前，当 Type 为 image，该字段仅支持 TopLeft。
                      */
                     std::string GetCoordinateOrigin() const;
 
@@ -121,13 +119,11 @@ namespace TencentCloud
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
-目前，当 Type 为 image，该字段仅支持 TopLeft。
                      * @param CoordinateOrigin 原点位置，可选值：
 <li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
-目前，当 Type 为 image，该字段仅支持 TopLeft。
                      */
                     void SetCoordinateOrigin(const std::string& _coordinateOrigin);
 
@@ -269,7 +265,6 @@ namespace TencentCloud
 <li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>
 <li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>
 <li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>
-目前，当 Type 为 image，该字段仅支持 TopLeft。
                      */
                     std::string m_coordinateOrigin;
                     bool m_coordinateOriginHasBeenSet;

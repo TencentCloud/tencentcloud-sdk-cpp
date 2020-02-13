@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取下发状态响应集合
-                     * @return PullSmsSendStatusSet 下发状态响应集合
+                     * 获取下发状态响应集合。
+                     * @return PullSmsSendStatusSet 下发状态响应集合。
                      */
                     std::vector<PullSmsSendStatus> GetPullSmsSendStatusSet() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 下发状态响应集合
+                     * 下发状态响应集合。
                      */
                     std::vector<PullSmsSendStatus> m_pullSmsSendStatusSet;
                     bool m_pullSmsSendStatusSetHasBeenSet;

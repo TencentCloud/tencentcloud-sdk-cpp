@@ -29,7 +29,13 @@ DeviceInfo::DeviceInfo() :
     m_loginTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_deviceCertHasBeenSet(false)
+    m_deviceCertHasBeenSet(false),
+    m_logLevelHasBeenSet(false),
+    m_devAddrHasBeenSet(false),
+    m_appKeyHasBeenSet(false),
+    m_devEUIHasBeenSet(false),
+    m_appSKeyHasBeenSet(false),
+    m_nwkSKeyHasBeenSet(false)
 {
 }
 
@@ -118,6 +124,66 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         m_deviceCertHasBeenSet = true;
     }
 
+    if (value.HasMember("LogLevel") && !value["LogLevel"].IsNull())
+    {
+        if (!value["LogLevel"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.LogLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logLevel = value["LogLevel"].GetInt64();
+        m_logLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("DevAddr") && !value["DevAddr"].IsNull())
+    {
+        if (!value["DevAddr"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.DevAddr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_devAddr = string(value["DevAddr"].GetString());
+        m_devAddrHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppKey") && !value["AppKey"].IsNull())
+    {
+        if (!value["AppKey"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.AppKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appKey = string(value["AppKey"].GetString());
+        m_appKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("DevEUI") && !value["DevEUI"].IsNull())
+    {
+        if (!value["DevEUI"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.DevEUI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_devEUI = string(value["DevEUI"].GetString());
+        m_devEUIHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppSKey") && !value["AppSKey"].IsNull())
+    {
+        if (!value["AppSKey"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.AppSKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appSKey = string(value["AppSKey"].GetString());
+        m_appSKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("NwkSKey") && !value["NwkSKey"].IsNull())
+    {
+        if (!value["NwkSKey"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.NwkSKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nwkSKey = string(value["NwkSKey"].GetString());
+        m_nwkSKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +253,54 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "DeviceCert";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_deviceCert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logLevelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logLevel, allocator);
+    }
+
+    if (m_devAddrHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DevAddr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_devAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_appKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_devEUIHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DevEUI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_devEUI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appSKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppSKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_appSKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nwkSKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NwkSKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nwkSKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +432,101 @@ void DeviceInfo::SetDeviceCert(const string& _deviceCert)
 bool DeviceInfo::DeviceCertHasBeenSet() const
 {
     return m_deviceCertHasBeenSet;
+}
+
+int64_t DeviceInfo::GetLogLevel() const
+{
+    return m_logLevel;
+}
+
+void DeviceInfo::SetLogLevel(const int64_t& _logLevel)
+{
+    m_logLevel = _logLevel;
+    m_logLevelHasBeenSet = true;
+}
+
+bool DeviceInfo::LogLevelHasBeenSet() const
+{
+    return m_logLevelHasBeenSet;
+}
+
+string DeviceInfo::GetDevAddr() const
+{
+    return m_devAddr;
+}
+
+void DeviceInfo::SetDevAddr(const string& _devAddr)
+{
+    m_devAddr = _devAddr;
+    m_devAddrHasBeenSet = true;
+}
+
+bool DeviceInfo::DevAddrHasBeenSet() const
+{
+    return m_devAddrHasBeenSet;
+}
+
+string DeviceInfo::GetAppKey() const
+{
+    return m_appKey;
+}
+
+void DeviceInfo::SetAppKey(const string& _appKey)
+{
+    m_appKey = _appKey;
+    m_appKeyHasBeenSet = true;
+}
+
+bool DeviceInfo::AppKeyHasBeenSet() const
+{
+    return m_appKeyHasBeenSet;
+}
+
+string DeviceInfo::GetDevEUI() const
+{
+    return m_devEUI;
+}
+
+void DeviceInfo::SetDevEUI(const string& _devEUI)
+{
+    m_devEUI = _devEUI;
+    m_devEUIHasBeenSet = true;
+}
+
+bool DeviceInfo::DevEUIHasBeenSet() const
+{
+    return m_devEUIHasBeenSet;
+}
+
+string DeviceInfo::GetAppSKey() const
+{
+    return m_appSKey;
+}
+
+void DeviceInfo::SetAppSKey(const string& _appSKey)
+{
+    m_appSKey = _appSKey;
+    m_appSKeyHasBeenSet = true;
+}
+
+bool DeviceInfo::AppSKeyHasBeenSet() const
+{
+    return m_appSKeyHasBeenSet;
+}
+
+string DeviceInfo::GetNwkSKey() const
+{
+    return m_nwkSKey;
+}
+
+void DeviceInfo::SetNwkSKey(const string& _nwkSKey)
+{
+    m_nwkSKey = _nwkSKey;
+    m_nwkSKeyHasBeenSet = true;
+}
+
+bool DeviceInfo::NwkSKeyHasBeenSet() const
+{
+    return m_nwkSKeyHasBeenSet;
 }
 

@@ -85,21 +85,21 @@ namespace TencentCloud
 
                     /**
                      * 获取售卖规格信息
-                     * @return SpecItem 售卖规格信息
+                     * @return SpecItems 售卖规格信息
                      */
-                    std::vector<SpecItem> GetSpecItem() const;
+                    std::vector<SpecItem> GetSpecItems() const;
 
                     /**
                      * 设置售卖规格信息
-                     * @param SpecItem 售卖规格信息
+                     * @param SpecItems 售卖规格信息
                      */
-                    void SetSpecItem(const std::vector<SpecItem>& _specItem);
+                    void SetSpecItems(const std::vector<SpecItem>& _specItems);
 
                     /**
-                     * 判断参数 SpecItem 是否已赋值
-                     * @return SpecItem 是否已赋值
+                     * 判断参数 SpecItems 是否已赋值
+                     * @return SpecItems 是否已赋值
                      */
-                    bool SpecItemHasBeenSet() const;
+                    bool SpecItemsHasBeenSet() const;
 
                 private:
 
@@ -118,8 +118,8 @@ namespace TencentCloud
                     /**
                      * 售卖规格信息
                      */
-                    std::vector<SpecItem> m_specItem;
-                    bool m_specItemHasBeenSet;
+                    std::vector<SpecItem> m_specItems;
+                    bool m_specItemsHasBeenSet;
 
                 };
             }

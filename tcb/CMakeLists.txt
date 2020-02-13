@@ -19,34 +19,58 @@ set(tcb_public_header
   )
 
 set(tcb_public_header_model
-  include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
-  include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
-  include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
-  include/tencentcloud/tcb/v20180608/model/EnvInfo.h
+  include/tencentcloud/tcb/v20180608/model/IsolateMysqlInstanceRequest.h
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
-  include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
+  include/tencentcloud/tcb/v20180608/model/CreateMysqlInstanceRequest.h
+  include/tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h
+  include/tencentcloud/tcb/v20180608/model/CreateMysqlInstanceResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
-  include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h
+  include/tencentcloud/tcb/v20180608/model/StaticStorageInfo.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
+  include/tencentcloud/tcb/v20180608/model/LogServiceInfo.h
+  include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
+  include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h
+  include/tencentcloud/tcb/v20180608/model/OfflineMysqlInstanceRequest.h
+  include/tencentcloud/tcb/v20180608/model/OfflineMysqlInstanceResponse.h
+  include/tencentcloud/tcb/v20180608/model/UpgradeMysqlInstanceResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
+  include/tencentcloud/tcb/v20180608/model/EnvInfo.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
+  include/tencentcloud/tcb/v20180608/model/IsolateMysqlInstanceResponse.h
+  include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
+  include/tencentcloud/tcb/v20180608/model/UpgradeMysqlInstanceRequest.h
   )
 
 set(tcb_src
   src/v20180608/TcbClient.cpp
-  src/v20180608/model/DescribeDatabaseACLResponse.cpp
   src/v20180608/model/StorageInfo.cpp
-  src/v20180608/model/DatabasesInfo.cpp
-  src/v20180608/model/ModifyEnvRequest.cpp
-  src/v20180608/model/EnvInfo.cpp
+  src/v20180608/model/IsolateMysqlInstanceRequest.cpp
   src/v20180608/model/FunctionInfo.cpp
-  src/v20180608/model/DescribeEnvsRequest.cpp
+  src/v20180608/model/CreateMysqlInstanceRequest.cpp
+  src/v20180608/model/CommonServiceAPIResponse.cpp
+  src/v20180608/model/CreateMysqlInstanceResponse.cpp
   src/v20180608/model/ModifyDatabaseACLRequest.cpp
-  src/v20180608/model/DescribeDatabaseACLRequest.cpp
-  src/v20180608/model/DescribeEnvsResponse.cpp
-  src/v20180608/model/ModifyEnvResponse.cpp
+  src/v20180608/model/DescribeEnvsRequest.cpp
   src/v20180608/model/ModifyDatabaseACLResponse.cpp
+  src/v20180608/model/StaticStorageInfo.cpp
+  src/v20180608/model/ModifyEnvResponse.cpp
+  src/v20180608/model/LogServiceInfo.cpp
+  src/v20180608/model/DatabasesInfo.cpp
+  src/v20180608/model/DescribeDatabaseACLRequest.cpp
+  src/v20180608/model/OfflineMysqlInstanceRequest.cpp
+  src/v20180608/model/OfflineMysqlInstanceResponse.cpp
+  src/v20180608/model/UpgradeMysqlInstanceResponse.cpp
+  src/v20180608/model/DescribeDatabaseACLResponse.cpp
+  src/v20180608/model/EnvInfo.cpp
+  src/v20180608/model/ModifyEnvRequest.cpp
+  src/v20180608/model/IsolateMysqlInstanceResponse.cpp
+  src/v20180608/model/CommonServiceAPIRequest.cpp
+  src/v20180608/model/DescribeEnvsResponse.cpp
+  src/v20180608/model/UpgradeMysqlInstanceRequest.cpp
   )
 
 set(tcb_include

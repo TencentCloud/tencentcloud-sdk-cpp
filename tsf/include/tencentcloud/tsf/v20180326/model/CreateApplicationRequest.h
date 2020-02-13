@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取应用类型
-                     * @return ApplicationType 应用类型
+                     * 获取应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
+                     * @return ApplicationType 应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置应用类型
-                     * @param ApplicationType 应用类型
+                     * 设置应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
+                     * @param ApplicationType 应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
                      */
                     void SetApplicationType(const std::string& _applicationType);
 
@@ -77,6 +77,24 @@ namespace TencentCloud
                      * @return ApplicationType 是否已赋值
                      */
                     bool ApplicationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     * @return MicroserviceType 应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     */
+                    std::string GetMicroserviceType() const;
+
+                    /**
+                     * 设置应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     * @param MicroserviceType 应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     */
+                    void SetMicroserviceType(const std::string& _microserviceType);
+
+                    /**
+                     * 判断参数 MicroserviceType 是否已赋值
+                     * @return MicroserviceType 是否已赋值
+                     */
+                    bool MicroserviceTypeHasBeenSet() const;
 
                     /**
                      * 获取应用描述
@@ -115,32 +133,14 @@ namespace TencentCloud
                     bool ApplicationLogConfigHasBeenSet() const;
 
                     /**
-                     * 获取应用微服务类型
-                     * @return MicroserviceType 应用微服务类型
-                     */
-                    std::string GetMicroserviceType() const;
-
-                    /**
-                     * 设置应用微服务类型
-                     * @param MicroserviceType 应用微服务类型
-                     */
-                    void SetMicroserviceType(const std::string& _microserviceType);
-
-                    /**
-                     * 判断参数 MicroserviceType 是否已赋值
-                     * @return MicroserviceType 是否已赋值
-                     */
-                    bool MicroserviceTypeHasBeenSet() const;
-
-                    /**
-                     * 获取应有资源类型
-                     * @return ApplicationResourceType 应有资源类型
+                     * 获取应用资源类型，废弃参数
+                     * @return ApplicationResourceType 应用资源类型，废弃参数
                      */
                     std::string GetApplicationResourceType() const;
 
                     /**
-                     * 设置应有资源类型
-                     * @param ApplicationResourceType 应有资源类型
+                     * 设置应用资源类型，废弃参数
+                     * @param ApplicationResourceType 应用资源类型，废弃参数
                      */
                     void SetApplicationResourceType(const std::string& _applicationResourceType);
 
@@ -149,6 +149,24 @@ namespace TencentCloud
                      * @return ApplicationResourceType 是否已赋值
                      */
                     bool ApplicationResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用runtime类型
+                     * @return ApplicationRuntimeType 应用runtime类型
+                     */
+                    std::string GetApplicationRuntimeType() const;
+
+                    /**
+                     * 设置应用runtime类型
+                     * @param ApplicationRuntimeType 应用runtime类型
+                     */
+                    void SetApplicationRuntimeType(const std::string& _applicationRuntimeType);
+
+                    /**
+                     * 判断参数 ApplicationRuntimeType 是否已赋值
+                     * @return ApplicationRuntimeType 是否已赋值
+                     */
+                    bool ApplicationRuntimeTypeHasBeenSet() const;
 
                 private:
 
@@ -159,10 +177,16 @@ namespace TencentCloud
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * 应用类型
+                     * 应用类型，V：虚拟机应用；C：容器应用；S：serverless应用
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
+
+                    /**
+                     * 应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用
+                     */
+                    std::string m_microserviceType;
+                    bool m_microserviceTypeHasBeenSet;
 
                     /**
                      * 应用描述
@@ -177,16 +201,16 @@ namespace TencentCloud
                     bool m_applicationLogConfigHasBeenSet;
 
                     /**
-                     * 应用微服务类型
-                     */
-                    std::string m_microserviceType;
-                    bool m_microserviceTypeHasBeenSet;
-
-                    /**
-                     * 应有资源类型
+                     * 应用资源类型，废弃参数
                      */
                     std::string m_applicationResourceType;
                     bool m_applicationResourceTypeHasBeenSet;
+
+                    /**
+                     * 应用runtime类型
+                     */
+                    std::string m_applicationRuntimeType;
+                    bool m_applicationRuntimeTypeHasBeenSet;
 
                 };
             }

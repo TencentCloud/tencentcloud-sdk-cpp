@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ProvinceNamesHasBeenSet() const;
 
                     /**
-                     * 获取运营商列表，默认不填，则返回个运营商的数据。
-                     * @return IspNames 运营商列表，默认不填，则返回个运营商的数据。
+                     * 获取运营商列表，默认不填，则返回整个运营商的数据。
+                     * @return IspNames 运营商列表，默认不填，则返回整个运营商的数据。
                      */
                     std::vector<std::string> GetIspNames() const;
 
                     /**
-                     * 设置运营商列表，默认不填，则返回个运营商的数据。
-                     * @param IspNames 运营商列表，默认不填，则返回个运营商的数据。
+                     * 设置运营商列表，默认不填，则返回整个运营商的数据。
+                     * @param IspNames 运营商列表，默认不填，则返回整个运营商的数据。
                      */
                     void SetIspNames(const std::vector<std::string>& _ispNames);
 
@@ -182,7 +182,7 @@ namespace TencentCloud
                     bool m_provinceNamesHasBeenSet;
 
                     /**
-                     * 运营商列表，默认不填，则返回个运营商的数据。
+                     * 运营商列表，默认不填，则返回整个运营商的数据。
                      */
                     std::vector<std::string> m_ispNames;
                     bool m_ispNamesHasBeenSet;

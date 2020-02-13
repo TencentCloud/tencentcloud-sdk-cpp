@@ -83,6 +83,49 @@ TiemsClient::CreateJobOutcomeCallable TiemsClient::CreateJobCallable(const Creat
     return task->get_future();
 }
 
+TiemsClient::CreateRsgAsGroupOutcome TiemsClient::CreateRsgAsGroup(const CreateRsgAsGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRsgAsGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRsgAsGroupResponse rsp = CreateRsgAsGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRsgAsGroupOutcome(rsp);
+        else
+            return CreateRsgAsGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRsgAsGroupOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::CreateRsgAsGroupAsync(const CreateRsgAsGroupRequest& request, const CreateRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRsgAsGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::CreateRsgAsGroupOutcomeCallable TiemsClient::CreateRsgAsGroupCallable(const CreateRsgAsGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRsgAsGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRsgAsGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiemsClient::CreateRuntimeOutcome TiemsClient::CreateRuntime(const CreateRuntimeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRuntime");
@@ -212,6 +255,49 @@ TiemsClient::CreateServiceConfigOutcomeCallable TiemsClient::CreateServiceConfig
     return task->get_future();
 }
 
+TiemsClient::DeleteInstanceOutcome TiemsClient::DeleteInstance(const DeleteInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceResponse rsp = DeleteInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceOutcome(rsp);
+        else
+            return DeleteInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DeleteInstanceOutcomeCallable TiemsClient::DeleteInstanceCallable(const DeleteInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiemsClient::DeleteJobOutcome TiemsClient::DeleteJob(const DeleteJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteJob");
@@ -248,6 +334,92 @@ TiemsClient::DeleteJobOutcomeCallable TiemsClient::DeleteJobCallable(const Delet
         [this, request]()
         {
             return this->DeleteJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::DeleteResourceGroupOutcome TiemsClient::DeleteResourceGroup(const DeleteResourceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteResourceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteResourceGroupResponse rsp = DeleteResourceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteResourceGroupOutcome(rsp);
+        else
+            return DeleteResourceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteResourceGroupOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DeleteResourceGroupAsync(const DeleteResourceGroupRequest& request, const DeleteResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteResourceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DeleteResourceGroupOutcomeCallable TiemsClient::DeleteResourceGroupCallable(const DeleteResourceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteResourceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteResourceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::DeleteRsgAsGroupOutcome TiemsClient::DeleteRsgAsGroup(const DeleteRsgAsGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRsgAsGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRsgAsGroupResponse rsp = DeleteRsgAsGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRsgAsGroupOutcome(rsp);
+        else
+            return DeleteRsgAsGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRsgAsGroupOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DeleteRsgAsGroupAsync(const DeleteRsgAsGroupRequest& request, const DeleteRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRsgAsGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DeleteRsgAsGroupOutcomeCallable TiemsClient::DeleteRsgAsGroupCallable(const DeleteRsgAsGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRsgAsGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRsgAsGroup(request);
         }
     );
 
@@ -427,6 +599,135 @@ TiemsClient::DescribeInstancesOutcomeCallable TiemsClient::DescribeInstancesCall
     return task->get_future();
 }
 
+TiemsClient::DescribeResourceGroupsOutcome TiemsClient::DescribeResourceGroups(const DescribeResourceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGroupsResponse rsp = DescribeResourceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGroupsOutcome(rsp);
+        else
+            return DescribeResourceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DescribeResourceGroupsAsync(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DescribeResourceGroupsOutcomeCallable TiemsClient::DescribeResourceGroupsCallable(const DescribeResourceGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::DescribeRsgAsGroupActivitiesOutcome TiemsClient::DescribeRsgAsGroupActivities(const DescribeRsgAsGroupActivitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRsgAsGroupActivities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRsgAsGroupActivitiesResponse rsp = DescribeRsgAsGroupActivitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRsgAsGroupActivitiesOutcome(rsp);
+        else
+            return DescribeRsgAsGroupActivitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRsgAsGroupActivitiesOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DescribeRsgAsGroupActivitiesAsync(const DescribeRsgAsGroupActivitiesRequest& request, const DescribeRsgAsGroupActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRsgAsGroupActivities(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DescribeRsgAsGroupActivitiesOutcomeCallable TiemsClient::DescribeRsgAsGroupActivitiesCallable(const DescribeRsgAsGroupActivitiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRsgAsGroupActivitiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRsgAsGroupActivities(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::DescribeRsgAsGroupsOutcome TiemsClient::DescribeRsgAsGroups(const DescribeRsgAsGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRsgAsGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRsgAsGroupsResponse rsp = DescribeRsgAsGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRsgAsGroupsOutcome(rsp);
+        else
+            return DescribeRsgAsGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRsgAsGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DescribeRsgAsGroupsAsync(const DescribeRsgAsGroupsRequest& request, const DescribeRsgAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRsgAsGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DescribeRsgAsGroupsOutcomeCallable TiemsClient::DescribeRsgAsGroupsCallable(const DescribeRsgAsGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRsgAsGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRsgAsGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiemsClient::DescribeRuntimesOutcome TiemsClient::DescribeRuntimes(const DescribeRuntimesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRuntimes");
@@ -556,6 +857,92 @@ TiemsClient::DescribeServicesOutcomeCallable TiemsClient::DescribeServicesCallab
     return task->get_future();
 }
 
+TiemsClient::DisableRsgAsGroupOutcome TiemsClient::DisableRsgAsGroup(const DisableRsgAsGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableRsgAsGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableRsgAsGroupResponse rsp = DisableRsgAsGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableRsgAsGroupOutcome(rsp);
+        else
+            return DisableRsgAsGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableRsgAsGroupOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::DisableRsgAsGroupAsync(const DisableRsgAsGroupRequest& request, const DisableRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableRsgAsGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::DisableRsgAsGroupOutcomeCallable TiemsClient::DisableRsgAsGroupCallable(const DisableRsgAsGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableRsgAsGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableRsgAsGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::EnableRsgAsGroupOutcome TiemsClient::EnableRsgAsGroup(const EnableRsgAsGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableRsgAsGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableRsgAsGroupResponse rsp = EnableRsgAsGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableRsgAsGroupOutcome(rsp);
+        else
+            return EnableRsgAsGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableRsgAsGroupOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::EnableRsgAsGroupAsync(const EnableRsgAsGroupRequest& request, const EnableRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableRsgAsGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::EnableRsgAsGroupOutcomeCallable TiemsClient::EnableRsgAsGroupCallable(const EnableRsgAsGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableRsgAsGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableRsgAsGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiemsClient::ExposeServiceOutcome TiemsClient::ExposeService(const ExposeServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "ExposeService");
@@ -635,6 +1022,49 @@ TiemsClient::UpdateJobOutcomeCallable TiemsClient::UpdateJobCallable(const Updat
         [this, request]()
         {
             return this->UpdateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiemsClient::UpdateRsgAsGroupOutcome TiemsClient::UpdateRsgAsGroup(const UpdateRsgAsGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRsgAsGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRsgAsGroupResponse rsp = UpdateRsgAsGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRsgAsGroupOutcome(rsp);
+        else
+            return UpdateRsgAsGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRsgAsGroupOutcome(outcome.GetError());
+    }
+}
+
+void TiemsClient::UpdateRsgAsGroupAsync(const UpdateRsgAsGroupRequest& request, const UpdateRsgAsGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateRsgAsGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiemsClient::UpdateRsgAsGroupOutcomeCallable TiemsClient::UpdateRsgAsGroupCallable(const UpdateRsgAsGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateRsgAsGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateRsgAsGroup(request);
         }
     );
 

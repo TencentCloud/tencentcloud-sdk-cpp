@@ -24,7 +24,8 @@ using namespace std;
 LogInfo::LogInfo() :
     m_logNameHasBeenSet(false),
     m_logUrlHasBeenSet(false),
-    m_logTimeHasBeenSet(false)
+    m_logTimeHasBeenSet(false),
+    m_fileSizeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome LogInfo::Deserialize(const Value &value)
         m_logTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `LogInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = value["FileSize"].GetInt64();
+        m_fileSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void LogInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "LogTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_logTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSize, allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void LogInfo::SetLogTime(const string& _logTime)
 bool LogInfo::LogTimeHasBeenSet() const
 {
     return m_logTimeHasBeenSet;
+}
+
+int64_t LogInfo::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void LogInfo::SetFileSize(const int64_t& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool LogInfo::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
 }
 

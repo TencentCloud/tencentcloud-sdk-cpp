@@ -23,8 +23,20 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/sms/v20190711/model/AddSmsSignRequest.h>
+#include <tencentcloud/sms/v20190711/model/AddSmsSignResponse.h>
+#include <tencentcloud/sms/v20190711/model/AddSmsTemplateRequest.h>
+#include <tencentcloud/sms/v20190711/model/AddSmsTemplateResponse.h>
 #include <tencentcloud/sms/v20190711/model/CallbackStatusStatisticsRequest.h>
 #include <tencentcloud/sms/v20190711/model/CallbackStatusStatisticsResponse.h>
+#include <tencentcloud/sms/v20190711/model/DeleteSmsSignRequest.h>
+#include <tencentcloud/sms/v20190711/model/DeleteSmsSignResponse.h>
+#include <tencentcloud/sms/v20190711/model/DeleteSmsTemplateRequest.h>
+#include <tencentcloud/sms/v20190711/model/DeleteSmsTemplateResponse.h>
+#include <tencentcloud/sms/v20190711/model/ModifySmsSignRequest.h>
+#include <tencentcloud/sms/v20190711/model/ModifySmsSignResponse.h>
+#include <tencentcloud/sms/v20190711/model/ModifySmsTemplateRequest.h>
+#include <tencentcloud/sms/v20190711/model/ModifySmsTemplateResponse.h>
 #include <tencentcloud/sms/v20190711/model/PullSmsReplyStatusRequest.h>
 #include <tencentcloud/sms/v20190711/model/PullSmsReplyStatusResponse.h>
 #include <tencentcloud/sms/v20190711/model/PullSmsReplyStatusByPhoneNumberRequest.h>
@@ -53,9 +65,27 @@ namespace TencentCloud
                 SmsClient(const Credential &credential, const std::string &region);
                 SmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AddSmsSignResponse> AddSmsSignOutcome;
+                typedef std::future<AddSmsSignOutcome> AddSmsSignOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::AddSmsSignRequest&, AddSmsSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSmsSignAsyncHandler;
+                typedef Outcome<Error, Model::AddSmsTemplateResponse> AddSmsTemplateOutcome;
+                typedef std::future<AddSmsTemplateOutcome> AddSmsTemplateOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::AddSmsTemplateRequest&, AddSmsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSmsTemplateAsyncHandler;
                 typedef Outcome<Error, Model::CallbackStatusStatisticsResponse> CallbackStatusStatisticsOutcome;
                 typedef std::future<CallbackStatusStatisticsOutcome> CallbackStatusStatisticsOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::CallbackStatusStatisticsRequest&, CallbackStatusStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallbackStatusStatisticsAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSmsSignResponse> DeleteSmsSignOutcome;
+                typedef std::future<DeleteSmsSignOutcome> DeleteSmsSignOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::DeleteSmsSignRequest&, DeleteSmsSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSmsSignAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSmsTemplateResponse> DeleteSmsTemplateOutcome;
+                typedef std::future<DeleteSmsTemplateOutcome> DeleteSmsTemplateOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::DeleteSmsTemplateRequest&, DeleteSmsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSmsTemplateAsyncHandler;
+                typedef Outcome<Error, Model::ModifySmsSignResponse> ModifySmsSignOutcome;
+                typedef std::future<ModifySmsSignOutcome> ModifySmsSignOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::ModifySmsSignRequest&, ModifySmsSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySmsSignAsyncHandler;
+                typedef Outcome<Error, Model::ModifySmsTemplateResponse> ModifySmsTemplateOutcome;
+                typedef std::future<ModifySmsTemplateOutcome> ModifySmsTemplateOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::ModifySmsTemplateRequest&, ModifySmsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySmsTemplateAsyncHandler;
                 typedef Outcome<Error, Model::PullSmsReplyStatusResponse> PullSmsReplyStatusOutcome;
                 typedef std::future<PullSmsReplyStatusOutcome> PullSmsReplyStatusOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::PullSmsReplyStatusRequest&, PullSmsReplyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PullSmsReplyStatusAsyncHandler;
@@ -81,7 +111,25 @@ namespace TencentCloud
 
 
                 /**
-                 *统计用户回执的数据
+                 *添加短信签名
+                 * @param req AddSmsSignRequest
+                 * @return AddSmsSignOutcome
+                 */
+                AddSmsSignOutcome AddSmsSign(const Model::AddSmsSignRequest &request);
+                void AddSmsSignAsync(const Model::AddSmsSignRequest& request, const AddSmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddSmsSignOutcomeCallable AddSmsSignCallable(const Model::AddSmsSignRequest& request);
+
+                /**
+                 *添加短信模板
+                 * @param req AddSmsTemplateRequest
+                 * @return AddSmsTemplateOutcome
+                 */
+                AddSmsTemplateOutcome AddSmsTemplate(const Model::AddSmsTemplateRequest &request);
+                void AddSmsTemplateAsync(const Model::AddSmsTemplateRequest& request, const AddSmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddSmsTemplateOutcomeCallable AddSmsTemplateCallable(const Model::AddSmsTemplateRequest& request);
+
+                /**
+                 *统计用户回执的数据。
                  * @param req CallbackStatusStatisticsRequest
                  * @return CallbackStatusStatisticsOutcome
                  */
@@ -90,7 +138,43 @@ namespace TencentCloud
                 CallbackStatusStatisticsOutcomeCallable CallbackStatusStatisticsCallable(const Model::CallbackStatusStatisticsRequest& request);
 
                 /**
-                 *拉取短信回复状态
+                 *删除短信签名
+                 * @param req DeleteSmsSignRequest
+                 * @return DeleteSmsSignOutcome
+                 */
+                DeleteSmsSignOutcome DeleteSmsSign(const Model::DeleteSmsSignRequest &request);
+                void DeleteSmsSignAsync(const Model::DeleteSmsSignRequest& request, const DeleteSmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSmsSignOutcomeCallable DeleteSmsSignCallable(const Model::DeleteSmsSignRequest& request);
+
+                /**
+                 *删除短信模板
+                 * @param req DeleteSmsTemplateRequest
+                 * @return DeleteSmsTemplateOutcome
+                 */
+                DeleteSmsTemplateOutcome DeleteSmsTemplate(const Model::DeleteSmsTemplateRequest &request);
+                void DeleteSmsTemplateAsync(const Model::DeleteSmsTemplateRequest& request, const DeleteSmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSmsTemplateOutcomeCallable DeleteSmsTemplateCallable(const Model::DeleteSmsTemplateRequest& request);
+
+                /**
+                 *修改短信签名
+                 * @param req ModifySmsSignRequest
+                 * @return ModifySmsSignOutcome
+                 */
+                ModifySmsSignOutcome ModifySmsSign(const Model::ModifySmsSignRequest &request);
+                void ModifySmsSignAsync(const Model::ModifySmsSignRequest& request, const ModifySmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySmsSignOutcomeCallable ModifySmsSignCallable(const Model::ModifySmsSignRequest& request);
+
+                /**
+                 *修改短信模板
+                 * @param req ModifySmsTemplateRequest
+                 * @return ModifySmsTemplateOutcome
+                 */
+                ModifySmsTemplateOutcome ModifySmsTemplate(const Model::ModifySmsTemplateRequest &request);
+                void ModifySmsTemplateAsync(const Model::ModifySmsTemplateRequest& request, const ModifySmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySmsTemplateOutcomeCallable ModifySmsTemplateCallable(const Model::ModifySmsTemplateRequest& request);
+
+                /**
+                 *拉取短信回复状态。
                  * @param req PullSmsReplyStatusRequest
                  * @return PullSmsReplyStatusOutcome
                  */
@@ -99,7 +183,7 @@ namespace TencentCloud
                 PullSmsReplyStatusOutcomeCallable PullSmsReplyStatusCallable(const Model::PullSmsReplyStatusRequest& request);
 
                 /**
-                 *拉取单个号码短信回复状态
+                 *拉取单个号码短信回复状态。
                  * @param req PullSmsReplyStatusByPhoneNumberRequest
                  * @return PullSmsReplyStatusByPhoneNumberOutcome
                  */
@@ -108,7 +192,7 @@ namespace TencentCloud
                 PullSmsReplyStatusByPhoneNumberOutcomeCallable PullSmsReplyStatusByPhoneNumberCallable(const Model::PullSmsReplyStatusByPhoneNumberRequest& request);
 
                 /**
-                 *拉取短信下发状态
+                 *拉取短信下发状态。
                  * @param req PullSmsSendStatusRequest
                  * @return PullSmsSendStatusOutcome
                  */
@@ -117,7 +201,7 @@ namespace TencentCloud
                 PullSmsSendStatusOutcomeCallable PullSmsSendStatusCallable(const Model::PullSmsSendStatusRequest& request);
 
                 /**
-                 *拉取单个号码短信下发状态
+                 *拉取单个号码短信下发状态。
                  * @param req PullSmsSendStatusByPhoneNumberRequest
                  * @return PullSmsSendStatusByPhoneNumberOutcome
                  */
@@ -137,7 +221,7 @@ namespace TencentCloud
                 SendSmsOutcomeCallable SendSmsCallable(const Model::SendSmsRequest& request);
 
                 /**
-                 *统计用户发送短信的数据
+                 *统计用户发送短信的数据。
                  * @param req SendStatusStatisticsRequest
                  * @return SendStatusStatisticsOutcome
                  */
@@ -146,7 +230,7 @@ namespace TencentCloud
                 SendStatusStatisticsOutcomeCallable SendStatusStatisticsCallable(const Model::SendStatusStatisticsRequest& request);
 
                 /**
-                 *用户套餐包信息统计
+                 *用户套餐包信息统计。
                  * @param req SmsPackagesStatisticsRequest
                  * @return SmsPackagesStatisticsOutcome
                  */

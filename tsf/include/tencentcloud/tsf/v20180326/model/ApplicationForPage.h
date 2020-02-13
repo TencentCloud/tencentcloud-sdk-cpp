@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool ApplicationResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取应用runtime类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationRuntimeType 应用runtime类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationRuntimeType() const;
+
+                    /**
+                     * 设置应用runtime类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationRuntimeType 应用runtime类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationRuntimeType(const std::string& _applicationRuntimeType);
+
+                    /**
+                     * 判断参数 ApplicationRuntimeType 是否已赋值
+                     * @return ApplicationRuntimeType 是否已赋值
+                     */
+                    bool ApplicationRuntimeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     std::string m_applicationResourceType;
                     bool m_applicationResourceTypeHasBeenSet;
+
+                    /**
+                     * 应用runtime类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationRuntimeType;
+                    bool m_applicationRuntimeTypeHasBeenSet;
 
                 };
             }

@@ -169,6 +169,60 @@ namespace TencentCloud
                      */
                     bool GpuTypeHasBeenSet() const;
 
+                    /**
+                     * 获取处理器配置，单位为 1/1000 核
+                     * @return Cpu 处理器配置，单位为 1/1000 核
+                     */
+                    uint64_t GetCpu() const;
+
+                    /**
+                     * 设置处理器配置，单位为 1/1000 核
+                     * @param Cpu 处理器配置，单位为 1/1000 核
+                     */
+                    void SetCpu(const uint64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取内存配置，单位为1M
+                     * @return Memory 内存配置，单位为1M
+                     */
+                    uint64_t GetMemory() const;
+
+                    /**
+                     * 设置内存配置，单位为1M
+                     * @param Memory 内存配置，单位为1M
+                     */
+                    void SetMemory(const uint64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取显卡配置，单位为 1/1000 卡
+                     * @return Gpu 显卡配置，单位为 1/1000 卡
+                     */
+                    uint64_t GetGpu() const;
+
+                    /**
+                     * 设置显卡配置，单位为 1/1000 卡
+                     * @param Gpu 显卡配置，单位为 1/1000 卡
+                     */
+                    void SetGpu(const uint64_t& _gpu);
+
+                    /**
+                     * 判断参数 Gpu 是否已赋值
+                     * @return Gpu 是否已赋值
+                     */
+                    bool GpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +266,24 @@ namespace TencentCloud
                      */
                     std::string m_gpuType;
                     bool m_gpuTypeHasBeenSet;
+
+                    /**
+                     * 处理器配置，单位为 1/1000 核
+                     */
+                    uint64_t m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * 内存配置，单位为1M
+                     */
+                    uint64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 显卡配置，单位为 1/1000 卡
+                     */
+                    uint64_t m_gpu;
+                    bool m_gpuHasBeenSet;
 
                 };
             }

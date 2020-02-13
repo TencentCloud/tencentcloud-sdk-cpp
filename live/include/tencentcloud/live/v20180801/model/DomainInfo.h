@@ -216,6 +216,42 @@ namespace TencentCloud
                      */
                     bool CurrentCNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否租用域名
+                     * @return RentTag 是否租用域名
+                     */
+                    int64_t GetRentTag() const;
+
+                    /**
+                     * 设置是否租用域名
+                     * @param RentTag 是否租用域名
+                     */
+                    void SetRentTag(const int64_t& _rentTag);
+
+                    /**
+                     * 判断参数 RentTag 是否已赋值
+                     * @return RentTag 是否已赋值
+                     */
+                    bool RentTagHasBeenSet() const;
+
+                    /**
+                     * 获取租用域名过期时间
+                     * @return RentExpireTime 租用域名过期时间
+                     */
+                    std::string GetRentExpireTime() const;
+
+                    /**
+                     * 设置租用域名过期时间
+                     * @param RentExpireTime 租用域名过期时间
+                     */
+                    void SetRentExpireTime(const std::string& _rentExpireTime);
+
+                    /**
+                     * 判断参数 RentExpireTime 是否已赋值
+                     * @return RentExpireTime 是否已赋值
+                     */
+                    bool RentExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +309,18 @@ namespace TencentCloud
                      */
                     std::string m_currentCName;
                     bool m_currentCNameHasBeenSet;
+
+                    /**
+                     * 是否租用域名
+                     */
+                    int64_t m_rentTag;
+                    bool m_rentTagHasBeenSet;
+
+                    /**
+                     * 租用域名过期时间
+                     */
+                    std::string m_rentExpireTime;
+                    bool m_rentExpireTimeHasBeenSet;
 
                 };
             }

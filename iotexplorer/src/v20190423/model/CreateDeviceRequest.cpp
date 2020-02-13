@@ -25,7 +25,12 @@ using namespace std;
 
 CreateDeviceRequest::CreateDeviceRequest() :
     m_productIdHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_devAddrHasBeenSet(false),
+    m_appKeyHasBeenSet(false),
+    m_devEUIHasBeenSet(false),
+    m_appSKeyHasBeenSet(false),
+    m_nwkSKeyHasBeenSet(false)
 {
 }
 
@@ -50,6 +55,46 @@ string CreateDeviceRequest::ToJsonString() const
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_devAddrHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DevAddr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_devAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_appKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_devEUIHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DevEUI";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_devEUI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appSKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppSKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_appSKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nwkSKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NwkSKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_nwkSKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +135,86 @@ void CreateDeviceRequest::SetDeviceName(const string& _deviceName)
 bool CreateDeviceRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+string CreateDeviceRequest::GetDevAddr() const
+{
+    return m_devAddr;
+}
+
+void CreateDeviceRequest::SetDevAddr(const string& _devAddr)
+{
+    m_devAddr = _devAddr;
+    m_devAddrHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::DevAddrHasBeenSet() const
+{
+    return m_devAddrHasBeenSet;
+}
+
+string CreateDeviceRequest::GetAppKey() const
+{
+    return m_appKey;
+}
+
+void CreateDeviceRequest::SetAppKey(const string& _appKey)
+{
+    m_appKey = _appKey;
+    m_appKeyHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::AppKeyHasBeenSet() const
+{
+    return m_appKeyHasBeenSet;
+}
+
+string CreateDeviceRequest::GetDevEUI() const
+{
+    return m_devEUI;
+}
+
+void CreateDeviceRequest::SetDevEUI(const string& _devEUI)
+{
+    m_devEUI = _devEUI;
+    m_devEUIHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::DevEUIHasBeenSet() const
+{
+    return m_devEUIHasBeenSet;
+}
+
+string CreateDeviceRequest::GetAppSKey() const
+{
+    return m_appSKey;
+}
+
+void CreateDeviceRequest::SetAppSKey(const string& _appSKey)
+{
+    m_appSKey = _appSKey;
+    m_appSKeyHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::AppSKeyHasBeenSet() const
+{
+    return m_appSKeyHasBeenSet;
+}
+
+string CreateDeviceRequest::GetNwkSKey() const
+{
+    return m_nwkSKey;
+}
+
+void CreateDeviceRequest::SetNwkSKey(const string& _nwkSKey)
+{
+    m_nwkSKey = _nwkSKey;
+    m_nwkSKeyHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::NwkSKeyHasBeenSet() const
+{
+    return m_nwkSKeyHasBeenSet;
 }
 
 

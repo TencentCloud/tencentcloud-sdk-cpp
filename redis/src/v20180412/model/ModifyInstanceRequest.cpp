@@ -25,9 +25,12 @@ using namespace std;
 
 ModifyInstanceRequest::ModifyInstanceRequest() :
     m_operationHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
+    m_instanceNamesHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_autoRenewsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
     m_autoRenewHasBeenSet(false)
 {
 }
@@ -47,6 +50,53 @@ string ModifyInstanceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_instanceIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceNamesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceNames.begin(); itr != m_instanceNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_autoRenewsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenews";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_autoRenews.begin(); itr != m_autoRenews.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
     if (m_instanceIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -61,14 +111,6 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_projectIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
     }
 
     if (m_autoRenewHasBeenSet)
@@ -103,6 +145,70 @@ bool ModifyInstanceRequest::OperationHasBeenSet() const
     return m_operationHasBeenSet;
 }
 
+vector<string> ModifyInstanceRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void ModifyInstanceRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+vector<string> ModifyInstanceRequest::GetInstanceNames() const
+{
+    return m_instanceNames;
+}
+
+void ModifyInstanceRequest::SetInstanceNames(const vector<string>& _instanceNames)
+{
+    m_instanceNames = _instanceNames;
+    m_instanceNamesHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::InstanceNamesHasBeenSet() const
+{
+    return m_instanceNamesHasBeenSet;
+}
+
+int64_t ModifyInstanceRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ModifyInstanceRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+vector<int64_t> ModifyInstanceRequest::GetAutoRenews() const
+{
+    return m_autoRenews;
+}
+
+void ModifyInstanceRequest::SetAutoRenews(const vector<int64_t>& _autoRenews)
+{
+    m_autoRenews = _autoRenews;
+    m_autoRenewsHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::AutoRenewsHasBeenSet() const
+{
+    return m_autoRenewsHasBeenSet;
+}
+
 string ModifyInstanceRequest::GetInstanceId() const
 {
     return m_instanceId;
@@ -133,22 +239,6 @@ void ModifyInstanceRequest::SetInstanceName(const string& _instanceName)
 bool ModifyInstanceRequest::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
-}
-
-int64_t ModifyInstanceRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void ModifyInstanceRequest::SetProjectId(const int64_t& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool ModifyInstanceRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
 }
 
 int64_t ModifyInstanceRequest::GetAutoRenew() const

@@ -258,14 +258,14 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取数据复制方式
-                     * @return ProtectMode 数据复制方式
+                     * 获取数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制
+                     * @return ProtectMode 数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制
                      */
                     int64_t GetProtectMode() const;
 
                     /**
-                     * 设置数据复制方式
-                     * @param ProtectMode 数据复制方式
+                     * 设置数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制
+                     * @param ProtectMode 数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制
                      */
                     void SetProtectMode(const int64_t& _protectMode);
 
@@ -388,14 +388,14 @@ namespace TencentCloud
                     bool DeadlineTimeHasBeenSet() const;
 
                     /**
-                     * 获取可用区部署方式
-                     * @return DeployMode 可用区部署方式
+                     * 获取可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区
+                     * @return DeployMode 可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区
                      */
                     int64_t GetDeployMode() const;
 
                     /**
-                     * 设置可用区部署方式
-                     * @param DeployMode 可用区部署方式
+                     * 设置可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区
+                     * @param DeployMode 可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区
                      */
                     void SetDeployMode(const int64_t& _deployMode);
 
@@ -777,6 +777,28 @@ namespace TencentCloud
                      */
                     bool DeviceClassHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployGroupId 置放群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeployGroupId() const;
+
+                    /**
+                     * 设置置放群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployGroupId 置放群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployGroupId(const std::string& _deployGroupId);
+
+                    /**
+                     * 判断参数 DeployGroupId 是否已赋值
+                     * @return DeployGroupId 是否已赋值
+                     */
+                    bool DeployGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -848,7 +870,7 @@ namespace TencentCloud
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 数据复制方式
+                     * 数据复制方式。0 - 异步复制；1 - 半同步复制；2 - 强同步复制
                      */
                     int64_t m_protectMode;
                     bool m_protectModeHasBeenSet;
@@ -891,7 +913,7 @@ namespace TencentCloud
                     bool m_deadlineTimeHasBeenSet;
 
                     /**
-                     * 可用区部署方式
+                     * 可用区部署方式。可能的值为：0 - 单可用区；1 - 多可用区
                      */
                     int64_t m_deployMode;
                     bool m_deployModeHasBeenSet;
@@ -1018,6 +1040,13 @@ namespace TencentCloud
                      */
                     std::string m_deviceClass;
                     bool m_deviceClassHasBeenSet;
+
+                    /**
+                     * 置放群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployGroupId;
+                    bool m_deployGroupIdHasBeenSet;
 
                 };
             }

@@ -31,7 +31,12 @@ TaxiInvoiceOCRResponse::TaxiInvoiceOCRResponse() :
     m_fareHasBeenSet(false),
     m_getOnTimeHasBeenSet(false),
     m_getOffTimeHasBeenSet(false),
-    m_distanceHasBeenSet(false)
+    m_distanceHasBeenSet(false),
+    m_locationHasBeenSet(false),
+    m_plateNumberHasBeenSet(false),
+    m_invoiceTypeHasBeenSet(false),
+    m_provinceHasBeenSet(false),
+    m_cityHasBeenSet(false)
 {
 }
 
@@ -139,6 +144,56 @@ CoreInternalOutcome TaxiInvoiceOCRResponse::Deserialize(const string &payload)
         m_distanceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Location") && !rsp["Location"].IsNull())
+    {
+        if (!rsp["Location"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(rsp["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PlateNumber") && !rsp["PlateNumber"].IsNull())
+    {
+        if (!rsp["PlateNumber"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlateNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_plateNumber = string(rsp["PlateNumber"].GetString());
+        m_plateNumberHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InvoiceType") && !rsp["InvoiceType"].IsNull())
+    {
+        if (!rsp["InvoiceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceType = string(rsp["InvoiceType"].GetString());
+        m_invoiceTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Province") && !rsp["Province"].IsNull())
+    {
+        if (!rsp["Province"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_province = string(rsp["Province"].GetString());
+        m_provinceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("City") && !rsp["City"].IsNull())
+    {
+        if (!rsp["City"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_city = string(rsp["City"].GetString());
+        m_cityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -212,6 +267,56 @@ string TaxiInvoiceOCRResponse::GetDistance() const
 bool TaxiInvoiceOCRResponse::DistanceHasBeenSet() const
 {
     return m_distanceHasBeenSet;
+}
+
+string TaxiInvoiceOCRResponse::GetLocation() const
+{
+    return m_location;
+}
+
+bool TaxiInvoiceOCRResponse::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
+}
+
+string TaxiInvoiceOCRResponse::GetPlateNumber() const
+{
+    return m_plateNumber;
+}
+
+bool TaxiInvoiceOCRResponse::PlateNumberHasBeenSet() const
+{
+    return m_plateNumberHasBeenSet;
+}
+
+string TaxiInvoiceOCRResponse::GetInvoiceType() const
+{
+    return m_invoiceType;
+}
+
+bool TaxiInvoiceOCRResponse::InvoiceTypeHasBeenSet() const
+{
+    return m_invoiceTypeHasBeenSet;
+}
+
+string TaxiInvoiceOCRResponse::GetProvince() const
+{
+    return m_province;
+}
+
+bool TaxiInvoiceOCRResponse::ProvinceHasBeenSet() const
+{
+    return m_provinceHasBeenSet;
+}
+
+string TaxiInvoiceOCRResponse::GetCity() const
+{
+    return m_city;
+}
+
+bool TaxiInvoiceOCRResponse::CityHasBeenSet() const
+{
+    return m_cityHasBeenSet;
 }
 
 

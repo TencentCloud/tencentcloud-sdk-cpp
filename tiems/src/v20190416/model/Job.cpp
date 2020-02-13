@@ -43,7 +43,9 @@ Job::Job() :
     m_resourceGroupNameHasBeenSet(false),
     m_gpuTypeHasBeenSet(false),
     m_configNameHasBeenSet(false),
-    m_configVersionHasBeenSet(false)
+    m_configVersionHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_quantizationInputHasBeenSet(false)
 {
 }
 
@@ -286,6 +288,33 @@ CoreInternalOutcome Job::Deserialize(const Value &value)
         m_configVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("JobType") && !value["JobType"].IsNull())
+    {
+        if (!value["JobType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Job.JobType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobType = string(value["JobType"].GetString());
+        m_jobTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuantizationInput") && !value["QuantizationInput"].IsNull())
+    {
+        if (!value["QuantizationInput"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Job.QuantizationInput` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quantizationInput.Deserialize(value["QuantizationInput"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quantizationInputHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +498,23 @@ void Job::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "ConfigVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_configVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quantizationInputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QuantizationInput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_quantizationInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -824,5 +870,37 @@ void Job::SetConfigVersion(const string& _configVersion)
 bool Job::ConfigVersionHasBeenSet() const
 {
     return m_configVersionHasBeenSet;
+}
+
+string Job::GetJobType() const
+{
+    return m_jobType;
+}
+
+void Job::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool Job::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+QuantizationInput Job::GetQuantizationInput() const
+{
+    return m_quantizationInput;
+}
+
+void Job::SetQuantizationInput(const QuantizationInput& _quantizationInput)
+{
+    m_quantizationInput = _quantizationInput;
+    m_quantizationInputHasBeenSet = true;
+}
+
+bool Job::QuantizationInputHasBeenSet() const
+{
+    return m_quantizationInputHasBeenSet;
 }
 

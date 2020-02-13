@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频码率。范围：100-8000。
+注意：码率必须是100的倍数。
                      * @return VideoBitrate 视频码率。范围：100-8000。
+注意：码率必须是100的倍数。
                      */
                     int64_t GetVideoBitrate() const;
 
                     /**
                      * 设置视频码率。范围：100-8000。
+注意：码率必须是100的倍数。
                      * @param VideoBitrate 视频码率。范围：100-8000。
+注意：码率必须是100的倍数。
                      */
                     void SetVideoBitrate(const int64_t& _videoBitrate);
 
@@ -357,14 +361,14 @@ baseline/main/high。默认baseline
                     bool FpsToOrigHasBeenSet() const;
 
                     /**
-                     * 获取是否是急速高清模板，0：否，1：是。默认0。
-                     * @return AiTransCode 是否是急速高清模板，0：否，1：是。默认0。
+                     * 获取是否是极速高清模板，0：否，1：是。默认0。
+                     * @return AiTransCode 是否是极速高清模板，0：否，1：是。默认0。
                      */
                     int64_t GetAiTransCode() const;
 
                     /**
-                     * 设置是否是急速高清模板，0：否，1：是。默认0。
-                     * @param AiTransCode 是否是急速高清模板，0：否，1：是。默认0。
+                     * 设置是否是极速高清模板，0：否，1：是。默认0。
+                     * @param AiTransCode 是否是极速高清模板，0：否，1：是。默认0。
                      */
                     void SetAiTransCode(const int64_t& _aiTransCode);
 
@@ -375,14 +379,14 @@ baseline/main/high。默认baseline
                     bool AiTransCodeHasBeenSet() const;
 
                     /**
-                     * 获取急速高清相比VideoBitrate少多少码率，0.1到0.5
-                     * @return AdaptBitratePercent 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * 获取极速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * @return AdaptBitratePercent 极速高清相比VideoBitrate少多少码率，0.1到0.5
                      */
                     double GetAdaptBitratePercent() const;
 
                     /**
-                     * 设置急速高清相比VideoBitrate少多少码率，0.1到0.5
-                     * @param AdaptBitratePercent 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * 设置极速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * @param AdaptBitratePercent 极速高清相比VideoBitrate少多少码率，0.1到0.5
                      */
                     void SetAdaptBitratePercent(const double& _adaptBitratePercent);
 
@@ -402,6 +406,7 @@ baseline/main/high。默认baseline
 
                     /**
                      * 视频码率。范围：100-8000。
+注意：码率必须是100的倍数。
                      */
                     int64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;
@@ -499,13 +504,13 @@ baseline/main/high。默认baseline
                     bool m_fpsToOrigHasBeenSet;
 
                     /**
-                     * 是否是急速高清模板，0：否，1：是。默认0。
+                     * 是否是极速高清模板，0：否，1：是。默认0。
                      */
                     int64_t m_aiTransCode;
                     bool m_aiTransCodeHasBeenSet;
 
                     /**
-                     * 急速高清相比VideoBitrate少多少码率，0.1到0.5
+                     * 极速高清相比VideoBitrate少多少码率，0.1到0.5
                      */
                     double m_adaptBitratePercent;
                     bool m_adaptBitratePercentHasBeenSet;

@@ -21,10 +21,13 @@ set(mariadb_public_header
 set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/CreateDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeAccountPrivilegesResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDatabasesRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBParametersRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeAccountsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesRequest.h
+  include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsResponse.h
@@ -55,6 +58,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/RenewDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSqlLogsRequest.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeBackupTimeRequest.h
@@ -70,13 +74,14 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyBackupTimeRequest.h
+  include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h
   include/tencentcloud/mariadb/v20170312/model/DBInstance.h
   include/tencentcloud/mariadb/v20170312/model/DescribePriceResponse.h
   include/tencentcloud/mariadb/v20170312/model/InitDBInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyBackupTimeResponse.h
-  include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsRequest.h
+  include/tencentcloud/mariadb/v20170312/model/Database.h
   include/tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesResponse.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h
@@ -86,6 +91,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeBackupTimeResponse.h
   include/tencentcloud/mariadb/v20170312/model/SlowLogData.h
   include/tencentcloud/mariadb/v20170312/model/RenewDBInstanceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDatabasesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeOrdersRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloseDBExtranetAccessRequest.h
@@ -101,6 +107,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ConstraintRange.h
   include/tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/LogFileInfo.h
+  include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DBAccount.h
   include/tencentcloud/mariadb/v20170312/model/DescribeAccountPrivilegesRequest.h
@@ -121,10 +128,13 @@ set(mariadb_src
   src/v20170312/MariadbClient.cpp
   src/v20170312/model/CreateDBInstanceRequest.cpp
   src/v20170312/model/DescribeAccountPrivilegesResponse.cpp
+  src/v20170312/model/DescribeDatabasesRequest.cpp
   src/v20170312/model/CreateAccountResponse.cpp
   src/v20170312/model/DescribeDBParametersRequest.cpp
   src/v20170312/model/DescribeAccountsRequest.cpp
   src/v20170312/model/DescribeRenewalPriceResponse.cpp
+  src/v20170312/model/CreateTmpInstancesRequest.cpp
+  src/v20170312/model/RestartDBInstancesResponse.cpp
   src/v20170312/model/DescribeUpgradePriceRequest.cpp
   src/v20170312/model/DescribeDBResourceUsageDetailsResponse.cpp
   src/v20170312/model/DescribeDBInstanceSpecsResponse.cpp
@@ -155,6 +165,7 @@ set(mariadb_src
   src/v20170312/model/RenewDBInstanceRequest.cpp
   src/v20170312/model/DescribeSqlLogsRequest.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
+  src/v20170312/model/DescribeDBInstanceSpecsRequest.cpp
   src/v20170312/model/DescribePriceRequest.cpp
   src/v20170312/model/CreateDBInstanceResponse.cpp
   src/v20170312/model/DescribeBackupTimeRequest.cpp
@@ -170,13 +181,14 @@ set(mariadb_src
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/ModifyBackupTimeRequest.cpp
+  src/v20170312/model/CreateTmpInstancesResponse.cpp
   src/v20170312/model/UpgradeDBInstanceRequest.cpp
   src/v20170312/model/DescribeUpgradePriceResponse.cpp
   src/v20170312/model/DBInstance.cpp
   src/v20170312/model/DescribePriceResponse.cpp
   src/v20170312/model/InitDBInstancesRequest.cpp
   src/v20170312/model/ModifyBackupTimeResponse.cpp
-  src/v20170312/model/DescribeDBInstanceSpecsRequest.cpp
+  src/v20170312/model/Database.cpp
   src/v20170312/model/GrantAccountPrivilegesResponse.cpp
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
   src/v20170312/model/ModifyDBInstanceNameResponse.cpp
@@ -186,6 +198,7 @@ set(mariadb_src
   src/v20170312/model/DescribeBackupTimeResponse.cpp
   src/v20170312/model/SlowLogData.cpp
   src/v20170312/model/RenewDBInstanceResponse.cpp
+  src/v20170312/model/DescribeDatabasesResponse.cpp
   src/v20170312/model/DescribeOrdersRequest.cpp
   src/v20170312/model/DescribeDBLogFilesResponse.cpp
   src/v20170312/model/CloseDBExtranetAccessRequest.cpp
@@ -201,6 +214,7 @@ set(mariadb_src
   src/v20170312/model/ConstraintRange.cpp
   src/v20170312/model/DescribeRenewalPriceRequest.cpp
   src/v20170312/model/LogFileInfo.cpp
+  src/v20170312/model/RestartDBInstancesRequest.cpp
   src/v20170312/model/DescribeDBResourceUsageDetailsRequest.cpp
   src/v20170312/model/DBAccount.cpp
   src/v20170312/model/DescribeAccountPrivilegesRequest.cpp

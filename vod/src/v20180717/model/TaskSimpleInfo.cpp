@@ -26,7 +26,9 @@ TaskSimpleInfo::TaskSimpleInfo() :
     m_taskTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_beginProcessTimeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_sessionContextHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,26 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const Value &value)
         m_finishTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskSimpleInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionContext") && !value["SessionContext"].IsNull())
+    {
+        if (!value["SessionContext"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskSimpleInfo.SessionContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionContext = string(value["SessionContext"].GetString());
+        m_sessionContextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +152,22 @@ void TaskSimpleInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +251,37 @@ void TaskSimpleInfo::SetFinishTime(const string& _finishTime)
 bool TaskSimpleInfo::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+string TaskSimpleInfo::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void TaskSimpleInfo::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool TaskSimpleInfo::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+string TaskSimpleInfo::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void TaskSimpleInfo::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool TaskSimpleInfo::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
 }
 

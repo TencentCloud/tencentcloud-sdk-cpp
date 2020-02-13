@@ -34,7 +34,8 @@ PushDataInfo::PushDataInfo() :
     m_beginPushTimeHasBeenSet(false),
     m_acodecHasBeenSet(false),
     m_vcodecHasBeenSet(false),
-    m_resolutionHasBeenSet(false)
+    m_resolutionHasBeenSet(false),
+    m_asampleRateHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome PushDataInfo::Deserialize(const Value &value)
         m_resolutionHasBeenSet = true;
     }
 
+    if (value.HasMember("AsampleRate") && !value["AsampleRate"].IsNull())
+    {
+        if (!value["AsampleRate"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushDataInfo.AsampleRate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_asampleRate = value["AsampleRate"].GetUint64();
+        m_asampleRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +293,14 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asampleRateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AsampleRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_asampleRate, allocator);
     }
 
 }
@@ -493,5 +512,21 @@ void PushDataInfo::SetResolution(const string& _resolution)
 bool PushDataInfo::ResolutionHasBeenSet() const
 {
     return m_resolutionHasBeenSet;
+}
+
+uint64_t PushDataInfo::GetAsampleRate() const
+{
+    return m_asampleRate;
+}
+
+void PushDataInfo::SetAsampleRate(const uint64_t& _asampleRate)
+{
+    m_asampleRate = _asampleRate;
+    m_asampleRateHasBeenSet = true;
+}
+
+bool PushDataInfo::AsampleRateHasBeenSet() const
+{
+    return m_asampleRateHasBeenSet;
 }
 

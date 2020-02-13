@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对应的类别名称 porn, politics, terror
-                     * @return Category 对应的类别名称 porn, politics, terror
+                     * 获取保留字段
+                     * @return Category 保留字段
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置对应的类别名称 porn, politics, terror
-                     * @param Category 对应的类别名称 porn, politics, terror
+                     * 设置保留字段
+                     * @param Category 保留字段
                      */
                     void SetCategory(const std::string& _category);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool CategoryHasBeenSet() const;
 
                     /**
-                     * 获取对应子类别状态码
-                     * @return Code 对应子类别状态码
+                     * 获取状态码， 0为处理成功，其他值为处理失败
+                     * @return Code 状态码， 0为处理成功，其他值为处理失败
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置对应子类别状态码
-                     * @param Code 对应子类别状态码
+                     * 设置状态码， 0为处理成功，其他值为处理失败
+                     * @param Code 状态码， 0为处理成功，其他值为处理失败
                      */
                     void SetCode(const std::string& _code);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取对应子类别状态码信息描述
-                     * @return CodeDescription 对应子类别状态码信息描述
+                     * 获取对应状态码信息描述
+                     * @return CodeDescription 对应状态码信息描述
                      */
                     std::string GetCodeDescription() const;
 
                     /**
-                     * 设置对应子类别状态码信息描述
-                     * @param CodeDescription 对应子类别状态码信息描述
+                     * 设置对应状态码信息描述
+                     * @param CodeDescription 对应状态码信息描述
                      */
                     void SetCodeDescription(const std::string& _codeDescription);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool CodeDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取对应识别种类的置信度
-                     * @return Confidence 对应识别种类的置信度
+                     * 获取保留字段
+                     * @return Confidence 保留字段
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置对应识别种类的置信度
-                     * @param Confidence 对应识别种类的置信度
+                     * 设置保留字段
+                     * @param Confidence 保留字段
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取此字段为保留字段，目前统一返回pass。
-                     * @return Suggestion 此字段为保留字段，目前统一返回pass。
+                     * 获取保留字段
+                     * @return Suggestion 保留字段
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置此字段为保留字段，目前统一返回pass。
-                     * @param Suggestion 此字段为保留字段，目前统一返回pass。
+                     * 设置保留字段
+                     * @param Suggestion 保留字段
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -158,31 +158,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对应的类别名称 porn, politics, terror
+                     * 保留字段
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
 
                     /**
-                     * 对应子类别状态码
+                     * 状态码， 0为处理成功，其他值为处理失败
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 对应子类别状态码信息描述
+                     * 对应状态码信息描述
                      */
                     std::string m_codeDescription;
                     bool m_codeDescriptionHasBeenSet;
 
                     /**
-                     * 对应识别种类的置信度
+                     * 保留字段
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 此字段为保留字段，目前统一返回pass。
+                     * 保留字段
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;

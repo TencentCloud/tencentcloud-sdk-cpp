@@ -20,12 +20,50 @@ set(captcha_public_header
 
 set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaResultResponse.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataResponse.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaOperDataInterceptUnit.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaOperDataTryTimesDistributeUnit.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaOperDataLoadTimeUnit.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaAppIdInfoRequest.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaAppIdInfoResponse.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaOperDataTryTimesUnit.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaUserAllAppId.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataResponse.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataRequest.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdResponse.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataSumRequest.h
+  include/tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoRequest.h
+  include/tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoResponse.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdRequest.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaQueryData.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataSumResponse.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataRequest.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaOperDataRes.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaResultRequest.h
   )
 
 set(captcha_src
   src/v20190722/CaptchaClient.cpp
   src/v20190722/model/DescribeCaptchaResultResponse.cpp
+  src/v20190722/model/DescribeCaptchaOperDataResponse.cpp
+  src/v20190722/model/CaptchaOperDataInterceptUnit.cpp
+  src/v20190722/model/CaptchaOperDataTryTimesDistributeUnit.cpp
+  src/v20190722/model/CaptchaOperDataLoadTimeUnit.cpp
+  src/v20190722/model/DescribeCaptchaAppIdInfoRequest.cpp
+  src/v20190722/model/DescribeCaptchaAppIdInfoResponse.cpp
+  src/v20190722/model/CaptchaOperDataTryTimesUnit.cpp
+  src/v20190722/model/CaptchaUserAllAppId.cpp
+  src/v20190722/model/DescribeCaptchaDataResponse.cpp
+  src/v20190722/model/DescribeCaptchaDataRequest.cpp
+  src/v20190722/model/DescribeCaptchaUserAllAppIdResponse.cpp
+  src/v20190722/model/DescribeCaptchaDataSumRequest.cpp
+  src/v20190722/model/UpdateCaptchaAppIdInfoRequest.cpp
+  src/v20190722/model/UpdateCaptchaAppIdInfoResponse.cpp
+  src/v20190722/model/DescribeCaptchaUserAllAppIdRequest.cpp
+  src/v20190722/model/CaptchaQueryData.cpp
+  src/v20190722/model/DescribeCaptchaDataSumResponse.cpp
+  src/v20190722/model/DescribeCaptchaOperDataRequest.cpp
+  src/v20190722/model/CaptchaOperDataRes.cpp
   src/v20190722/model/DescribeCaptchaResultRequest.cpp
   )
 

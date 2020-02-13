@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
                      */
                     std::string GetInstanceId() const;
 
@@ -93,7 +93,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

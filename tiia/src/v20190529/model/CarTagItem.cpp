@@ -27,7 +27,8 @@ CarTagItem::CarTagItem() :
     m_typeHasBeenSet(false),
     m_colorHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_yearHasBeenSet(false)
+    m_yearHasBeenSet(false),
+    m_carLocationHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,26 @@ CoreInternalOutcome CarTagItem::Deserialize(const Value &value)
         m_yearHasBeenSet = true;
     }
 
+    if (value.HasMember("CarLocation") && !value["CarLocation"].IsNull())
+    {
+        if (!value["CarLocation"].IsArray())
+            return CoreInternalOutcome(Error("response `CarTagItem.CarLocation` is not array type"));
+
+        const Value &tmpValue = value["CarLocation"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Coord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_carLocation.push_back(item);
+        }
+        m_carLocationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +170,21 @@ void CarTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Year";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_year, allocator);
+    }
+
+    if (m_carLocationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CarLocation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_carLocation.begin(); itr != m_carLocation.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -248,5 +284,21 @@ void CarTagItem::SetYear(const int64_t& _year)
 bool CarTagItem::YearHasBeenSet() const
 {
     return m_yearHasBeenSet;
+}
+
+vector<Coord> CarTagItem::GetCarLocation() const
+{
+    return m_carLocation;
+}
+
+void CarTagItem::SetCarLocation(const vector<Coord>& _carLocation)
+{
+    m_carLocation = _carLocation;
+    m_carLocationHasBeenSet = true;
+}
+
+bool CarTagItem::CarLocationHasBeenSet() const
+{
+    return m_carLocationHasBeenSet;
 }
 

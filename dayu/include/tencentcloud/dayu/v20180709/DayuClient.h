@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dayu/v20180709/model/CreateBasicDDoSAlarmThresholdRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateBasicDDoSAlarmThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/CreateCCFrequencyRulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateCCFrequencyRulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateCCSelfDefinePolicyRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateCCSelfDefinePolicyResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateDDoSPolicyRequest.h>
@@ -35,8 +39,6 @@
 #include <tencentcloud/dayu/v20180709/model/CreateL4HealthConfigResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL4RulesRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL4RulesResponse.h>
-#include <tencentcloud/dayu/v20180709/model/CreateL7CCRuleRequest.h>
-#include <tencentcloud/dayu/v20180709/model/CreateL7CCRuleResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7HealthConfigRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7HealthConfigResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7RuleCertRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/dayu/v20180709/model/CreateL7RulesUploadResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DeleteCCFrequencyRulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DeleteCCFrequencyRulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteCCSelfDefinePolicyRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteCCSelfDefinePolicyResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteDDoSPolicyRequest.h>
@@ -61,14 +65,30 @@
 #include <tencentcloud/dayu/v20180709/model/DescribeActionLogResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBaradDataRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBaradDataResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBasicDeviceThresholdRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBasicDeviceThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeCCAlarmThresholdRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeCCAlarmThresholdResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCEvListRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCEvListResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeCCFrequencyRulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeCCFrequencyRulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCIpAllowDenyRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCIpAllowDenyResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeCCSelfDefinePolicyRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeCCSelfDefinePolicyResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCTrendRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCTrendResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCUrlAllowRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeCCUrlAllowResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeDDoSAlarmThresholdRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeDDoSAlarmThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeDDoSAttackIPRegionMapRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeDDoSAttackIPRegionMapResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeDDoSAttackSourceRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeDDoSAttackSourceResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeDDoSCountRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeDDoSCountResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeDDoSDefendStatusRequest.h>
@@ -95,10 +115,14 @@
 #include <tencentcloud/dayu/v20180709/model/DescribeDDoSTrendResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeDDoSUsedStatisRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeDDoSUsedStatisResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeIPProductInfoRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeIPProductInfoResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeInsurePacksRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeInsurePacksResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeIpBlockListRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeIpBlockListResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeIpUnBlockListRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeIpUnBlockListResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeL4HealthConfigRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeL4HealthConfigResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeL4RulesErrHealthRequest.h>
@@ -131,6 +155,12 @@
 #include <tencentcloud/dayu/v20180709/model/DescribleL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribleRegionCountRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribleRegionCountResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyCCAlarmThresholdRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyCCAlarmThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyCCFrequencyRulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyCCFrequencyRulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyCCFrequencyRulesStatusRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyCCFrequencyRulesStatusResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyCCHostProtectionRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyCCHostProtectionResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyCCIpAllowDenyRequest.h>
@@ -147,6 +177,8 @@
 #include <tencentcloud/dayu/v20180709/model/ModifyCCUrlAllowResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyDDoSAIStatusRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyDDoSAIStatusResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyDDoSAlarmThresholdRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyDDoSAlarmThresholdResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyDDoSDefendStatusRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyDDoSDefendStatusResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyDDoSLevelRequest.h>
@@ -175,6 +207,8 @@
 #include <tencentcloud/dayu/v20180709/model/ModifyL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResBindDDoSPolicyRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResBindDDoSPolicyResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyResourceRenewFlagRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyResourceRenewFlagResponse.h>
 
 
 namespace TencentCloud
@@ -189,6 +223,12 @@ namespace TencentCloud
                 DayuClient(const Credential &credential, const std::string &region);
                 DayuClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateBasicDDoSAlarmThresholdResponse> CreateBasicDDoSAlarmThresholdOutcome;
+                typedef std::future<CreateBasicDDoSAlarmThresholdOutcome> CreateBasicDDoSAlarmThresholdOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateBasicDDoSAlarmThresholdRequest&, CreateBasicDDoSAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBasicDDoSAlarmThresholdAsyncHandler;
+                typedef Outcome<Error, Model::CreateCCFrequencyRulesResponse> CreateCCFrequencyRulesOutcome;
+                typedef std::future<CreateCCFrequencyRulesOutcome> CreateCCFrequencyRulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateCCFrequencyRulesRequest&, CreateCCFrequencyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCCFrequencyRulesAsyncHandler;
                 typedef Outcome<Error, Model::CreateCCSelfDefinePolicyResponse> CreateCCSelfDefinePolicyOutcome;
                 typedef std::future<CreateCCSelfDefinePolicyOutcome> CreateCCSelfDefinePolicyOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateCCSelfDefinePolicyRequest&, CreateCCSelfDefinePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCCSelfDefinePolicyAsyncHandler;
@@ -207,9 +247,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateL4RulesResponse> CreateL4RulesOutcome;
                 typedef std::future<CreateL4RulesOutcome> CreateL4RulesOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateL4RulesRequest&, CreateL4RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL4RulesAsyncHandler;
-                typedef Outcome<Error, Model::CreateL7CCRuleResponse> CreateL7CCRuleOutcome;
-                typedef std::future<CreateL7CCRuleOutcome> CreateL7CCRuleOutcomeCallable;
-                typedef std::function<void(const DayuClient*, const Model::CreateL7CCRuleRequest&, CreateL7CCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7CCRuleAsyncHandler;
                 typedef Outcome<Error, Model::CreateL7HealthConfigResponse> CreateL7HealthConfigOutcome;
                 typedef std::future<CreateL7HealthConfigOutcome> CreateL7HealthConfigOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateL7HealthConfigRequest&, CreateL7HealthConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7HealthConfigAsyncHandler;
@@ -225,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateUnblockIpResponse> CreateUnblockIpOutcome;
                 typedef std::future<CreateUnblockIpOutcome> CreateUnblockIpOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateUnblockIpRequest&, CreateUnblockIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnblockIpAsyncHandler;
+                typedef Outcome<Error, Model::DeleteCCFrequencyRulesResponse> DeleteCCFrequencyRulesOutcome;
+                typedef std::future<DeleteCCFrequencyRulesOutcome> DeleteCCFrequencyRulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DeleteCCFrequencyRulesRequest&, DeleteCCFrequencyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCFrequencyRulesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteCCSelfDefinePolicyResponse> DeleteCCSelfDefinePolicyOutcome;
                 typedef std::future<DeleteCCSelfDefinePolicyOutcome> DeleteCCSelfDefinePolicyOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DeleteCCSelfDefinePolicyRequest&, DeleteCCSelfDefinePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCSelfDefinePolicyAsyncHandler;
@@ -246,18 +286,42 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBaradDataResponse> DescribeBaradDataOutcome;
                 typedef std::future<DescribeBaradDataOutcome> DescribeBaradDataOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeBaradDataRequest&, DescribeBaradDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaradDataAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBasicCCThresholdResponse> DescribeBasicCCThresholdOutcome;
+                typedef std::future<DescribeBasicCCThresholdOutcome> DescribeBasicCCThresholdOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeBasicCCThresholdRequest&, DescribeBasicCCThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicCCThresholdAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBasicDeviceThresholdResponse> DescribeBasicDeviceThresholdOutcome;
+                typedef std::future<DescribeBasicDeviceThresholdOutcome> DescribeBasicDeviceThresholdOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeBasicDeviceThresholdRequest&, DescribeBasicDeviceThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicDeviceThresholdAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCCAlarmThresholdResponse> DescribeCCAlarmThresholdOutcome;
+                typedef std::future<DescribeCCAlarmThresholdOutcome> DescribeCCAlarmThresholdOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeCCAlarmThresholdRequest&, DescribeCCAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCAlarmThresholdAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCCEvListResponse> DescribeCCEvListOutcome;
                 typedef std::future<DescribeCCEvListOutcome> DescribeCCEvListOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeCCEvListRequest&, DescribeCCEvListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCEvListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCCFrequencyRulesResponse> DescribeCCFrequencyRulesOutcome;
+                typedef std::future<DescribeCCFrequencyRulesOutcome> DescribeCCFrequencyRulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeCCFrequencyRulesRequest&, DescribeCCFrequencyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCFrequencyRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCCIpAllowDenyResponse> DescribeCCIpAllowDenyOutcome;
                 typedef std::future<DescribeCCIpAllowDenyOutcome> DescribeCCIpAllowDenyOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeCCIpAllowDenyRequest&, DescribeCCIpAllowDenyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCIpAllowDenyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCCSelfDefinePolicyResponse> DescribeCCSelfDefinePolicyOutcome;
+                typedef std::future<DescribeCCSelfDefinePolicyOutcome> DescribeCCSelfDefinePolicyOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeCCSelfDefinePolicyRequest&, DescribeCCSelfDefinePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCSelfDefinePolicyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCCTrendResponse> DescribeCCTrendOutcome;
                 typedef std::future<DescribeCCTrendOutcome> DescribeCCTrendOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeCCTrendRequest&, DescribeCCTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCTrendAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCCUrlAllowResponse> DescribeCCUrlAllowOutcome;
                 typedef std::future<DescribeCCUrlAllowOutcome> DescribeCCUrlAllowOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeCCUrlAllowRequest&, DescribeCCUrlAllowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCUrlAllowAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDDoSAlarmThresholdResponse> DescribeDDoSAlarmThresholdOutcome;
+                typedef std::future<DescribeDDoSAlarmThresholdOutcome> DescribeDDoSAlarmThresholdOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeDDoSAlarmThresholdRequest&, DescribeDDoSAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSAlarmThresholdAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDDoSAttackIPRegionMapResponse> DescribeDDoSAttackIPRegionMapOutcome;
+                typedef std::future<DescribeDDoSAttackIPRegionMapOutcome> DescribeDDoSAttackIPRegionMapOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeDDoSAttackIPRegionMapRequest&, DescribeDDoSAttackIPRegionMapOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSAttackIPRegionMapAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDDoSAttackSourceResponse> DescribeDDoSAttackSourceOutcome;
+                typedef std::future<DescribeDDoSAttackSourceOutcome> DescribeDDoSAttackSourceOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeDDoSAttackSourceRequest&, DescribeDDoSAttackSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSAttackSourceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDDoSCountResponse> DescribeDDoSCountOutcome;
                 typedef std::future<DescribeDDoSCountOutcome> DescribeDDoSCountOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeDDoSCountRequest&, DescribeDDoSCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSCountAsyncHandler;
@@ -297,12 +361,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDDoSUsedStatisResponse> DescribeDDoSUsedStatisOutcome;
                 typedef std::future<DescribeDDoSUsedStatisOutcome> DescribeDDoSUsedStatisOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeDDoSUsedStatisRequest&, DescribeDDoSUsedStatisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSUsedStatisAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIPProductInfoResponse> DescribeIPProductInfoOutcome;
+                typedef std::future<DescribeIPProductInfoOutcome> DescribeIPProductInfoOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeIPProductInfoRequest&, DescribeIPProductInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPProductInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInsurePacksResponse> DescribeInsurePacksOutcome;
                 typedef std::future<DescribeInsurePacksOutcome> DescribeInsurePacksOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeInsurePacksRequest&, DescribeInsurePacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsurePacksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeIpBlockListResponse> DescribeIpBlockListOutcome;
                 typedef std::future<DescribeIpBlockListOutcome> DescribeIpBlockListOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeIpBlockListRequest&, DescribeIpBlockListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpBlockListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIpUnBlockListResponse> DescribeIpUnBlockListOutcome;
+                typedef std::future<DescribeIpUnBlockListOutcome> DescribeIpUnBlockListOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeIpUnBlockListRequest&, DescribeIpUnBlockListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpUnBlockListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeL4HealthConfigResponse> DescribeL4HealthConfigOutcome;
                 typedef std::future<DescribeL4HealthConfigOutcome> DescribeL4HealthConfigOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeL4HealthConfigRequest&, DescribeL4HealthConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL4HealthConfigAsyncHandler;
@@ -351,6 +421,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribleRegionCountResponse> DescribleRegionCountOutcome;
                 typedef std::future<DescribleRegionCountOutcome> DescribleRegionCountOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribleRegionCountRequest&, DescribleRegionCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribleRegionCountAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCCAlarmThresholdResponse> ModifyCCAlarmThresholdOutcome;
+                typedef std::future<ModifyCCAlarmThresholdOutcome> ModifyCCAlarmThresholdOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyCCAlarmThresholdRequest&, ModifyCCAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCCAlarmThresholdAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCCFrequencyRulesResponse> ModifyCCFrequencyRulesOutcome;
+                typedef std::future<ModifyCCFrequencyRulesOutcome> ModifyCCFrequencyRulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyCCFrequencyRulesRequest&, ModifyCCFrequencyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCCFrequencyRulesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCCFrequencyRulesStatusResponse> ModifyCCFrequencyRulesStatusOutcome;
+                typedef std::future<ModifyCCFrequencyRulesStatusOutcome> ModifyCCFrequencyRulesStatusOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyCCFrequencyRulesStatusRequest&, ModifyCCFrequencyRulesStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCCFrequencyRulesStatusAsyncHandler;
                 typedef Outcome<Error, Model::ModifyCCHostProtectionResponse> ModifyCCHostProtectionOutcome;
                 typedef std::future<ModifyCCHostProtectionOutcome> ModifyCCHostProtectionOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyCCHostProtectionRequest&, ModifyCCHostProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCCHostProtectionAsyncHandler;
@@ -375,6 +454,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDDoSAIStatusResponse> ModifyDDoSAIStatusOutcome;
                 typedef std::future<ModifyDDoSAIStatusOutcome> ModifyDDoSAIStatusOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyDDoSAIStatusRequest&, ModifyDDoSAIStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDDoSAIStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDDoSAlarmThresholdResponse> ModifyDDoSAlarmThresholdOutcome;
+                typedef std::future<ModifyDDoSAlarmThresholdOutcome> ModifyDDoSAlarmThresholdOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyDDoSAlarmThresholdRequest&, ModifyDDoSAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDDoSAlarmThresholdAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDDoSDefendStatusResponse> ModifyDDoSDefendStatusOutcome;
                 typedef std::future<ModifyDDoSDefendStatusOutcome> ModifyDDoSDefendStatusOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyDDoSDefendStatusRequest&, ModifyDDoSDefendStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDDoSDefendStatusAsyncHandler;
@@ -417,8 +499,29 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyResBindDDoSPolicyResponse> ModifyResBindDDoSPolicyOutcome;
                 typedef std::future<ModifyResBindDDoSPolicyOutcome> ModifyResBindDDoSPolicyOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyResBindDDoSPolicyRequest&, ModifyResBindDDoSPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResBindDDoSPolicyAsyncHandler;
+                typedef Outcome<Error, Model::ModifyResourceRenewFlagResponse> ModifyResourceRenewFlagOutcome;
+                typedef std::future<ModifyResourceRenewFlagOutcome> ModifyResourceRenewFlagOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyResourceRenewFlagRequest&, ModifyResourceRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceRenewFlagAsyncHandler;
 
 
+
+                /**
+                 *设置基础防护的DDoS告警阈值，只支持基础防护产品
+                 * @param req CreateBasicDDoSAlarmThresholdRequest
+                 * @return CreateBasicDDoSAlarmThresholdOutcome
+                 */
+                CreateBasicDDoSAlarmThresholdOutcome CreateBasicDDoSAlarmThreshold(const Model::CreateBasicDDoSAlarmThresholdRequest &request);
+                void CreateBasicDDoSAlarmThresholdAsync(const Model::CreateBasicDDoSAlarmThresholdRequest& request, const CreateBasicDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBasicDDoSAlarmThresholdOutcomeCallable CreateBasicDDoSAlarmThresholdCallable(const Model::CreateBasicDDoSAlarmThresholdRequest& request);
+
+                /**
+                 *添加CC防护的访问频率控制规则
+                 * @param req CreateCCFrequencyRulesRequest
+                 * @return CreateCCFrequencyRulesOutcome
+                 */
+                CreateCCFrequencyRulesOutcome CreateCCFrequencyRules(const Model::CreateCCFrequencyRulesRequest &request);
+                void CreateCCFrequencyRulesAsync(const Model::CreateCCFrequencyRulesRequest& request, const CreateCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCCFrequencyRulesOutcomeCallable CreateCCFrequencyRulesCallable(const Model::CreateCCFrequencyRulesRequest& request);
 
                 /**
                  *创建CC自定义策略
@@ -448,7 +551,7 @@ namespace TencentCloud
                 CreateDDoSPolicyCaseOutcomeCallable CreateDDoSPolicyCaseCallable(const Model::CreateDDoSPolicyCaseRequest& request);
 
                 /**
-                 *资源实例重命名，支持独享包、共享包、高防IP、高防IP专业版、棋牌盾；
+                 *资源实例重命名，支持独享包、共享包、高防IP、高防IP专业版；
                  * @param req CreateInstanceNameRequest
                  * @return CreateInstanceNameOutcome
                  */
@@ -473,15 +576,6 @@ namespace TencentCloud
                 CreateL4RulesOutcome CreateL4Rules(const Model::CreateL4RulesRequest &request);
                 void CreateL4RulesAsync(const Model::CreateL4RulesRequest& request, const CreateL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateL4RulesOutcomeCallable CreateL4RulesCallable(const Model::CreateL4RulesRequest& request);
-
-                /**
-                 *支持读取，添加，删除7层CC自定义规则
-                 * @param req CreateL7CCRuleRequest
-                 * @return CreateL7CCRuleOutcome
-                 */
-                CreateL7CCRuleOutcome CreateL7CCRule(const Model::CreateL7CCRuleRequest &request);
-                void CreateL7CCRuleAsync(const Model::CreateL7CCRuleRequest& request, const CreateL7CCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateL7CCRuleOutcomeCallable CreateL7CCRuleCallable(const Model::CreateL7CCRuleRequest& request);
 
                 /**
                  *上传七层健康检查配置
@@ -527,6 +621,15 @@ namespace TencentCloud
                 CreateUnblockIpOutcome CreateUnblockIp(const Model::CreateUnblockIpRequest &request);
                 void CreateUnblockIpAsync(const Model::CreateUnblockIpRequest& request, const CreateUnblockIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUnblockIpOutcomeCallable CreateUnblockIpCallable(const Model::CreateUnblockIpRequest& request);
+
+                /**
+                 *删除CC防护的访问频率控制规则
+                 * @param req DeleteCCFrequencyRulesRequest
+                 * @return DeleteCCFrequencyRulesOutcome
+                 */
+                DeleteCCFrequencyRulesOutcome DeleteCCFrequencyRules(const Model::DeleteCCFrequencyRulesRequest &request);
+                void DeleteCCFrequencyRulesAsync(const Model::DeleteCCFrequencyRulesRequest& request, const DeleteCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCCFrequencyRulesOutcomeCallable DeleteCCFrequencyRulesCallable(const Model::DeleteCCFrequencyRulesRequest& request);
 
                 /**
                  *删除CC自定义策略
@@ -583,13 +686,40 @@ namespace TencentCloud
                 DescribeActionLogOutcomeCallable DescribeActionLogCallable(const Model::DescribeActionLogRequest& request);
 
                 /**
-                 *为大禹子产品提供从巴拉多获取指标统计数据的接口
+                 *为大禹子产品提供业务转发指标数据的接口
                  * @param req DescribeBaradDataRequest
                  * @return DescribeBaradDataOutcome
                  */
                 DescribeBaradDataOutcome DescribeBaradData(const Model::DescribeBaradDataRequest &request);
                 void DescribeBaradDataAsync(const Model::DescribeBaradDataRequest& request, const DescribeBaradDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBaradDataOutcomeCallable DescribeBaradDataCallable(const Model::DescribeBaradDataRequest& request);
+
+                /**
+                 *获取基础防护CC防护阈值
+                 * @param req DescribeBasicCCThresholdRequest
+                 * @return DescribeBasicCCThresholdOutcome
+                 */
+                DescribeBasicCCThresholdOutcome DescribeBasicCCThreshold(const Model::DescribeBasicCCThresholdRequest &request);
+                void DescribeBasicCCThresholdAsync(const Model::DescribeBasicCCThresholdRequest& request, const DescribeBasicCCThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBasicCCThresholdOutcomeCallable DescribeBasicCCThresholdCallable(const Model::DescribeBasicCCThresholdRequest& request);
+
+                /**
+                 *获取基础防护黑洞阈值
+                 * @param req DescribeBasicDeviceThresholdRequest
+                 * @return DescribeBasicDeviceThresholdOutcome
+                 */
+                DescribeBasicDeviceThresholdOutcome DescribeBasicDeviceThreshold(const Model::DescribeBasicDeviceThresholdRequest &request);
+                void DescribeBasicDeviceThresholdAsync(const Model::DescribeBasicDeviceThresholdRequest& request, const DescribeBasicDeviceThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBasicDeviceThresholdOutcomeCallable DescribeBasicDeviceThresholdCallable(const Model::DescribeBasicDeviceThresholdRequest& request);
+
+                /**
+                 *获取高防包、高防IP、高防IP专业版、棋牌盾产品设置CC攻击的告警通知阈值
+                 * @param req DescribeCCAlarmThresholdRequest
+                 * @return DescribeCCAlarmThresholdOutcome
+                 */
+                DescribeCCAlarmThresholdOutcome DescribeCCAlarmThreshold(const Model::DescribeCCAlarmThresholdRequest &request);
+                void DescribeCCAlarmThresholdAsync(const Model::DescribeCCAlarmThresholdRequest& request, const DescribeCCAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCAlarmThresholdOutcomeCallable DescribeCCAlarmThresholdCallable(const Model::DescribeCCAlarmThresholdRequest& request);
 
                 /**
                  *获取CC攻击事件列表
@@ -601,6 +731,15 @@ namespace TencentCloud
                 DescribeCCEvListOutcomeCallable DescribeCCEvListCallable(const Model::DescribeCCEvListRequest& request);
 
                 /**
+                 *获取CC防护的访问频率控制规则
+                 * @param req DescribeCCFrequencyRulesRequest
+                 * @return DescribeCCFrequencyRulesOutcome
+                 */
+                DescribeCCFrequencyRulesOutcome DescribeCCFrequencyRules(const Model::DescribeCCFrequencyRulesRequest &request);
+                void DescribeCCFrequencyRulesAsync(const Model::DescribeCCFrequencyRulesRequest& request, const DescribeCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCFrequencyRulesOutcomeCallable DescribeCCFrequencyRulesCallable(const Model::DescribeCCFrequencyRulesRequest& request);
+
+                /**
                  *获取CC的IP黑白名单
                  * @param req DescribeCCIpAllowDenyRequest
                  * @return DescribeCCIpAllowDenyOutcome
@@ -608,6 +747,15 @@ namespace TencentCloud
                 DescribeCCIpAllowDenyOutcome DescribeCCIpAllowDeny(const Model::DescribeCCIpAllowDenyRequest &request);
                 void DescribeCCIpAllowDenyAsync(const Model::DescribeCCIpAllowDenyRequest& request, const DescribeCCIpAllowDenyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCCIpAllowDenyOutcomeCallable DescribeCCIpAllowDenyCallable(const Model::DescribeCCIpAllowDenyRequest& request);
+
+                /**
+                 *获取CC自定义策略
+                 * @param req DescribeCCSelfDefinePolicyRequest
+                 * @return DescribeCCSelfDefinePolicyOutcome
+                 */
+                DescribeCCSelfDefinePolicyOutcome DescribeCCSelfDefinePolicy(const Model::DescribeCCSelfDefinePolicyRequest &request);
+                void DescribeCCSelfDefinePolicyAsync(const Model::DescribeCCSelfDefinePolicyRequest& request, const DescribeCCSelfDefinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCSelfDefinePolicyOutcomeCallable DescribeCCSelfDefinePolicyCallable(const Model::DescribeCCSelfDefinePolicyRequest& request);
 
                 /**
                  *获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)
@@ -628,6 +776,33 @@ namespace TencentCloud
                 DescribeCCUrlAllowOutcomeCallable DescribeCCUrlAllowCallable(const Model::DescribeCCUrlAllowRequest& request);
 
                 /**
+                 *获取高防包、高防IP、高防IP专业版、棋牌盾产品设置DDoS攻击的告警通知阈值
+                 * @param req DescribeDDoSAlarmThresholdRequest
+                 * @return DescribeDDoSAlarmThresholdOutcome
+                 */
+                DescribeDDoSAlarmThresholdOutcome DescribeDDoSAlarmThreshold(const Model::DescribeDDoSAlarmThresholdRequest &request);
+                void DescribeDDoSAlarmThresholdAsync(const Model::DescribeDDoSAlarmThresholdRequest& request, const DescribeDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSAlarmThresholdOutcomeCallable DescribeDDoSAlarmThresholdCallable(const Model::DescribeDDoSAlarmThresholdRequest& request);
+
+                /**
+                 *获取DDoS攻击源IP地域分布图，支持全球攻击分布和国内省份攻击分布；
+                 * @param req DescribeDDoSAttackIPRegionMapRequest
+                 * @return DescribeDDoSAttackIPRegionMapOutcome
+                 */
+                DescribeDDoSAttackIPRegionMapOutcome DescribeDDoSAttackIPRegionMap(const Model::DescribeDDoSAttackIPRegionMapRequest &request);
+                void DescribeDDoSAttackIPRegionMapAsync(const Model::DescribeDDoSAttackIPRegionMapRequest& request, const DescribeDDoSAttackIPRegionMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSAttackIPRegionMapOutcomeCallable DescribeDDoSAttackIPRegionMapCallable(const Model::DescribeDDoSAttackIPRegionMapRequest& request);
+
+                /**
+                 *获取DDoS攻击源列表
+                 * @param req DescribeDDoSAttackSourceRequest
+                 * @return DescribeDDoSAttackSourceOutcome
+                 */
+                DescribeDDoSAttackSourceOutcome DescribeDDoSAttackSource(const Model::DescribeDDoSAttackSourceRequest &request);
+                void DescribeDDoSAttackSourceAsync(const Model::DescribeDDoSAttackSourceRequest& request, const DescribeDDoSAttackSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSAttackSourceOutcomeCallable DescribeDDoSAttackSourceCallable(const Model::DescribeDDoSAttackSourceRequest& request);
+
+                /**
                  *获取DDoS攻击占比分析
                  * @param req DescribeDDoSCountRequest
                  * @return DescribeDDoSCountOutcome
@@ -637,7 +812,7 @@ namespace TencentCloud
                 DescribeDDoSCountOutcomeCallable DescribeDDoSCountCallable(const Model::DescribeDDoSCountRequest& request);
 
                 /**
-                 *获取DDoS防护状态，支持产品：基础防护，独享包，共享包，高防IP，高防IP专业版；
+                 *获取DDoS防护状态（临时关闭状态），支持产品：基础防护，独享包，共享包，高防IP，高防IP专业版；调用此接口是获取当前是否有设置临时关闭DDoS防护状态，如果有设置会返回临时关闭的时长等参数。
                  * @param req DescribeDDoSDefendStatusRequest
                  * @return DescribeDDoSDefendStatusOutcome
                  */
@@ -745,6 +920,15 @@ namespace TencentCloud
                 DescribeDDoSUsedStatisOutcomeCallable DescribeDDoSUsedStatisCallable(const Model::DescribeDDoSUsedStatisRequest& request);
 
                 /**
+                 *获取独享包或共享包IP对应的云资产信息，只支持独享包和共享包的IP
+                 * @param req DescribeIPProductInfoRequest
+                 * @return DescribeIPProductInfoOutcome
+                 */
+                DescribeIPProductInfoOutcome DescribeIPProductInfo(const Model::DescribeIPProductInfoRequest &request);
+                void DescribeIPProductInfoAsync(const Model::DescribeIPProductInfoRequest& request, const DescribeIPProductInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIPProductInfoOutcomeCallable DescribeIPProductInfoCallable(const Model::DescribeIPProductInfoRequest& request);
+
+                /**
                  *获取保险包套餐列表
                  * @param req DescribeInsurePacksRequest
                  * @return DescribeInsurePacksOutcome
@@ -761,6 +945,15 @@ namespace TencentCloud
                 DescribeIpBlockListOutcome DescribeIpBlockList(const Model::DescribeIpBlockListRequest &request);
                 void DescribeIpBlockListAsync(const Model::DescribeIpBlockListRequest& request, const DescribeIpBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpBlockListOutcomeCallable DescribeIpBlockListCallable(const Model::DescribeIpBlockListRequest& request);
+
+                /**
+                 *获取IP解封记录
+                 * @param req DescribeIpUnBlockListRequest
+                 * @return DescribeIpUnBlockListOutcome
+                 */
+                DescribeIpUnBlockListOutcome DescribeIpUnBlockList(const Model::DescribeIpUnBlockListRequest &request);
+                void DescribeIpUnBlockListAsync(const Model::DescribeIpUnBlockListRequest& request, const DescribeIpUnBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIpUnBlockListOutcomeCallable DescribeIpUnBlockListCallable(const Model::DescribeIpUnBlockListRequest& request);
 
                 /**
                  *导出四层健康检查配置
@@ -790,7 +983,7 @@ namespace TencentCloud
                 DescribeL7HealthConfigOutcomeCallable DescribeL7HealthConfigCallable(const Model::DescribeL7HealthConfigRequest& request);
 
                 /**
-                 *获取产品总览统计，支持高防包、高防IP、高防IP专业版、棋牌盾
+                 *获取产品总览统计，支持高防包、高防IP、高防IP专业版；
                  * @param req DescribePackIndexRequest
                  * @return DescribePackIndexOutcome
                  */
@@ -853,7 +1046,7 @@ namespace TencentCloud
                 DescribeSecIndexOutcomeCallable DescribeSecIndexCallable(const Model::DescribeSecIndexRequest& request);
 
                 /**
-                 *获取回源IP段，支持的产品：高防IP，高防IP专业版，棋牌盾；
+                 *获取回源IP段，支持的产品：高防IP，高防IP专业版；
                  * @param req DescribeSourceIpSegmentRequest
                  * @return DescribeSourceIpSegmentOutcome
                  */
@@ -905,6 +1098,33 @@ namespace TencentCloud
                 DescribleRegionCountOutcome DescribleRegionCount(const Model::DescribleRegionCountRequest &request);
                 void DescribleRegionCountAsync(const Model::DescribleRegionCountRequest& request, const DescribleRegionCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribleRegionCountOutcomeCallable DescribleRegionCountCallable(const Model::DescribleRegionCountRequest& request);
+
+                /**
+                 *为高防包、高防IP、高防IP专业版、棋牌盾产品设置CC攻击的告警通知阈值
+                 * @param req ModifyCCAlarmThresholdRequest
+                 * @return ModifyCCAlarmThresholdOutcome
+                 */
+                ModifyCCAlarmThresholdOutcome ModifyCCAlarmThreshold(const Model::ModifyCCAlarmThresholdRequest &request);
+                void ModifyCCAlarmThresholdAsync(const Model::ModifyCCAlarmThresholdRequest& request, const ModifyCCAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCCAlarmThresholdOutcomeCallable ModifyCCAlarmThresholdCallable(const Model::ModifyCCAlarmThresholdRequest& request);
+
+                /**
+                 *修改CC防护的访问频率控制规则
+                 * @param req ModifyCCFrequencyRulesRequest
+                 * @return ModifyCCFrequencyRulesOutcome
+                 */
+                ModifyCCFrequencyRulesOutcome ModifyCCFrequencyRules(const Model::ModifyCCFrequencyRulesRequest &request);
+                void ModifyCCFrequencyRulesAsync(const Model::ModifyCCFrequencyRulesRequest& request, const ModifyCCFrequencyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCCFrequencyRulesOutcomeCallable ModifyCCFrequencyRulesCallable(const Model::ModifyCCFrequencyRulesRequest& request);
+
+                /**
+                 *开启或关闭CC防护的访问频率控制规则
+                 * @param req ModifyCCFrequencyRulesStatusRequest
+                 * @return ModifyCCFrequencyRulesStatusOutcome
+                 */
+                ModifyCCFrequencyRulesStatusOutcome ModifyCCFrequencyRulesStatus(const Model::ModifyCCFrequencyRulesStatusRequest &request);
+                void ModifyCCFrequencyRulesStatusAsync(const Model::ModifyCCFrequencyRulesStatusRequest& request, const ModifyCCFrequencyRulesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCCFrequencyRulesStatusOutcomeCallable ModifyCCFrequencyRulesStatusCallable(const Model::ModifyCCFrequencyRulesStatusRequest& request);
 
                 /**
                  *开启或关闭CC域名防护
@@ -979,7 +1199,16 @@ namespace TencentCloud
                 ModifyDDoSAIStatusOutcomeCallable ModifyDDoSAIStatusCallable(const Model::ModifyDDoSAIStatusRequest& request);
 
                 /**
-                 *开启或关闭DDoS防护状态
+                 *为高防包、高防IP、高防IP专业版、棋牌盾等产品设置DDoS攻击的告警通知阈值
+                 * @param req ModifyDDoSAlarmThresholdRequest
+                 * @return ModifyDDoSAlarmThresholdOutcome
+                 */
+                ModifyDDoSAlarmThresholdOutcome ModifyDDoSAlarmThreshold(const Model::ModifyDDoSAlarmThresholdRequest &request);
+                void ModifyDDoSAlarmThresholdAsync(const Model::ModifyDDoSAlarmThresholdRequest& request, const ModifyDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDDoSAlarmThresholdOutcomeCallable ModifyDDoSAlarmThresholdCallable(const Model::ModifyDDoSAlarmThresholdRequest& request);
+
+                /**
+                 *开启或关闭DDoS防护状态，调用此接口允许临时关闭DDoS防护一段时间，等时间到了会自动开启DDoS防护；
                  * @param req ModifyDDoSDefendStatusRequest
                  * @return ModifyDDoSDefendStatusOutcome
                  */
@@ -1103,6 +1332,15 @@ namespace TencentCloud
                 ModifyResBindDDoSPolicyOutcome ModifyResBindDDoSPolicy(const Model::ModifyResBindDDoSPolicyRequest &request);
                 void ModifyResBindDDoSPolicyAsync(const Model::ModifyResBindDDoSPolicyRequest& request, const ModifyResBindDDoSPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyResBindDDoSPolicyOutcomeCallable ModifyResBindDDoSPolicyCallable(const Model::ModifyResBindDDoSPolicyRequest& request);
+
+                /**
+                 *修改资源自动续费标记
+                 * @param req ModifyResourceRenewFlagRequest
+                 * @return ModifyResourceRenewFlagOutcome
+                 */
+                ModifyResourceRenewFlagOutcome ModifyResourceRenewFlag(const Model::ModifyResourceRenewFlagRequest &request);
+                void ModifyResourceRenewFlagAsync(const Model::ModifyResourceRenewFlagRequest& request, const ModifyResourceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceRenewFlagOutcomeCallable ModifyResourceRenewFlagCallable(const Model::ModifyResourceRenewFlagRequest& request);
 
             };
         }

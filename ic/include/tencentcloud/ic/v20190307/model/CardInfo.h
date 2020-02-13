@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取卡片id
-                     * @return Iccid 卡片id
+                     * 获取卡片ID
+                     * @return Iccid 卡片ID
                      */
                     std::string GetIccid() const;
 
                     /**
-                     * 设置卡片id
-                     * @param Iccid 卡片id
+                     * 设置卡片ID
+                     * @param Iccid 卡片ID
                      */
                     void SetIccid(const std::string& _iccid);
 
@@ -131,14 +131,14 @@ namespace TencentCloud
                     bool ImeiHasBeenSet() const;
 
                     /**
-                     * 获取应用id
-                     * @return Sdkappid 应用id
+                     * 获取应用ID
+                     * @return Sdkappid 应用ID
                      */
                     std::string GetSdkappid() const;
 
                     /**
-                     * 设置应用id
-                     * @param Sdkappid 应用id
+                     * 设置应用ID
+                     * @param Sdkappid 应用ID
                      */
                     void SetSdkappid(const std::string& _sdkappid);
 
@@ -269,17 +269,17 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取流量池id
+                     * 获取流量池ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PoolId 流量池id
+                     * @return PoolId 流量池ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPoolId() const;
 
                     /**
-                     * 设置流量池id
+                     * 设置流量池ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PoolId 流量池id
+                     * @param PoolId 流量池ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPoolId(const std::string& _poolId);
@@ -459,17 +459,17 @@ namespace TencentCloud
                     bool IsActivatedHasBeenSet() const;
 
                     /**
-                     * 获取订单id
+                     * 获取订单ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrderId 订单id
+                     * @return OrderId 订单ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单id
+                     * 设置订单ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderId 订单id
+                     * @param OrderId 订单ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -585,7 +585,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 卡片id
+                     * 卡片ID
                      */
                     std::string m_iccid;
                     bool m_iccidHasBeenSet;
@@ -612,7 +612,7 @@ namespace TencentCloud
                     bool m_imeiHasBeenSet;
 
                     /**
-                     * 应用id
+                     * 应用ID
                      */
                     std::string m_sdkappid;
                     bool m_sdkappidHasBeenSet;
@@ -657,7 +657,7 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 流量池id
+                     * 流量池ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_poolId;
@@ -718,7 +718,7 @@ namespace TencentCloud
                     bool m_isActivatedHasBeenSet;
 
                     /**
-                     * 订单id
+                     * 订单ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderId;

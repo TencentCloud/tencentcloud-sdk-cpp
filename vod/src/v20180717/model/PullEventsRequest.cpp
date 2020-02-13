@@ -24,6 +24,7 @@ using namespace rapidjson;
 using namespace std;
 
 PullEventsRequest::PullEventsRequest() :
+    m_extInfoHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -34,6 +35,14 @@ string PullEventsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_extInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_subAppIdHasBeenSet)
     {
@@ -50,6 +59,22 @@ string PullEventsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string PullEventsRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void PullEventsRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool PullEventsRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
+}
 
 uint64_t PullEventsRequest::GetSubAppId() const
 {

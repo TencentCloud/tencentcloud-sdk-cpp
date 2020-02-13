@@ -33,7 +33,9 @@ Listener::Listener() :
     m_rulesHasBeenSet(false),
     m_listenerNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_endPortHasBeenSet(false)
+    m_endPortHasBeenSet(false),
+    m_targetTypeHasBeenSet(false),
+    m_targetGroupHasBeenSet(false)
 {
 }
 
@@ -186,6 +188,33 @@ CoreInternalOutcome Listener::Deserialize(const Value &value)
         m_endPortHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetType") && !value["TargetType"].IsNull())
+    {
+        if (!value["TargetType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Listener.TargetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetType = string(value["TargetType"].GetString());
+        m_targetTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetGroup") && !value["TargetGroup"].IsNull())
+    {
+        if (!value["TargetGroup"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Listener.TargetGroup` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_targetGroup.Deserialize(value["TargetGroup"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_targetGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +325,23 @@ void Listener::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "EndPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endPort, allocator);
+    }
+
+    if (m_targetTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_targetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_targetGroup.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -491,5 +537,37 @@ void Listener::SetEndPort(const int64_t& _endPort)
 bool Listener::EndPortHasBeenSet() const
 {
     return m_endPortHasBeenSet;
+}
+
+string Listener::GetTargetType() const
+{
+    return m_targetType;
+}
+
+void Listener::SetTargetType(const string& _targetType)
+{
+    m_targetType = _targetType;
+    m_targetTypeHasBeenSet = true;
+}
+
+bool Listener::TargetTypeHasBeenSet() const
+{
+    return m_targetTypeHasBeenSet;
+}
+
+BasicTargetGroupInfo Listener::GetTargetGroup() const
+{
+    return m_targetGroup;
+}
+
+void Listener::SetTargetGroup(const BasicTargetGroupInfo& _targetGroup)
+{
+    m_targetGroup = _targetGroup;
+    m_targetGroupHasBeenSet = true;
+}
+
+bool Listener::TargetGroupHasBeenSet() const
+{
+    return m_targetGroupHasBeenSet;
 }
 

@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool RdsInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
-                     * @return CvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
+                     * 获取CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
+                     * @return CvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
                      */
                     std::string GetCvmInstanceId() const;
 
                     /**
-                     * 设置CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
-                     * @param CvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
+                     * 设置CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
+                     * @param CvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
                      */
                     void SetCvmInstanceId(const std::string& _cvmInstanceId);
 
@@ -377,7 +377,7 @@ namespace TencentCloud
                     bool m_rdsInstanceIdHasBeenSet;
 
                     /**
-                     * CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
+                     * CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
                      */
                     std::string m_cvmInstanceId;
                     bool m_cvmInstanceIdHasBeenSet;

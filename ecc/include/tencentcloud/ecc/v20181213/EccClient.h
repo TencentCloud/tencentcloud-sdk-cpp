@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ecc/v20181213/model/CorrectMultiImageRequest.h>
+#include <tencentcloud/ecc/v20181213/model/CorrectMultiImageResponse.h>
 #include <tencentcloud/ecc/v20181213/model/DescribeTaskRequest.h>
 #include <tencentcloud/ecc/v20181213/model/DescribeTaskResponse.h>
 #include <tencentcloud/ecc/v20181213/model/ECCRequest.h>
@@ -43,6 +45,9 @@ namespace TencentCloud
                 EccClient(const Credential &credential, const std::string &region);
                 EccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CorrectMultiImageResponse> CorrectMultiImageOutcome;
+                typedef std::future<CorrectMultiImageOutcome> CorrectMultiImageOutcomeCallable;
+                typedef std::function<void(const EccClient*, const Model::CorrectMultiImageRequest&, CorrectMultiImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CorrectMultiImageAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTaskResponse> DescribeTaskOutcome;
                 typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
                 typedef std::function<void(const EccClient*, const Model::DescribeTaskRequest&, DescribeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAsyncHandler;
@@ -54,6 +59,16 @@ namespace TencentCloud
                 typedef std::function<void(const EccClient*, const Model::EHOCRRequest&, EHOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EHOCRAsyncHandler;
 
 
+
+                /**
+                 *https://ecc.tencentcloudapi.com/?Action=CorrectMultiImage
+多图像识别批改接口
+                 * @param req CorrectMultiImageRequest
+                 * @return CorrectMultiImageOutcome
+                 */
+                CorrectMultiImageOutcome CorrectMultiImage(const Model::CorrectMultiImageRequest &request);
+                void CorrectMultiImageAsync(const Model::CorrectMultiImageRequest& request, const CorrectMultiImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CorrectMultiImageOutcomeCallable CorrectMultiImageCallable(const Model::CorrectMultiImageRequest& request);
 
                 /**
                  *异步任务结果查询接口

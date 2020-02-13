@@ -26,6 +26,9 @@ using namespace std;
 ExecuteFunctionRequest::ExecuteFunctionRequest() :
     m_functionNameHasBeenSet(false),
     m_functionArgHasBeenSet(false),
+    m_sessionContextHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_extInfoHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -51,6 +54,30 @@ string ExecuteFunctionRequest::ToJsonString() const
         string key = "FunctionArg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_functionArg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -99,6 +126,54 @@ void ExecuteFunctionRequest::SetFunctionArg(const string& _functionArg)
 bool ExecuteFunctionRequest::FunctionArgHasBeenSet() const
 {
     return m_functionArgHasBeenSet;
+}
+
+string ExecuteFunctionRequest::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void ExecuteFunctionRequest::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool ExecuteFunctionRequest::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
+}
+
+string ExecuteFunctionRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void ExecuteFunctionRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool ExecuteFunctionRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+string ExecuteFunctionRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void ExecuteFunctionRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool ExecuteFunctionRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 uint64_t ExecuteFunctionRequest::GetSubAppId() const

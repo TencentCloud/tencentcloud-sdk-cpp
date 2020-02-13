@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool TargetRegionInfoHasBeenSet() const;
 
                     /**
-                     * 获取网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
-                     * @return InternetChargeInfo 网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     * 获取网络计费相关参数
+                     * @return InternetChargeInfo 网络计费相关参数
                      */
                     InternetAccessible GetInternetChargeInfo() const;
 
                     /**
-                     * 设置网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
-                     * @param InternetChargeInfo 网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     * 设置网络计费相关参数
+                     * @param InternetChargeInfo 网络计费相关参数
                      */
                     void SetInternetChargeInfo(const InternetAccessible& _internetChargeInfo);
 
@@ -115,6 +115,24 @@ namespace TencentCloud
                      * @return InternetChargeInfo 是否已赋值
                      */
                     bool InternetChargeInfoHasBeenSet() const;
+
+                    /**
+                     * 获取Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     * @return LoadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     */
+                    bool GetLoadBalancerPassToTarget() const;
+
+                    /**
+                     * 设置Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     * @param LoadBalancerPassToTarget Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     */
+                    void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
+
+                    /**
+                     * 判断参数 LoadBalancerPassToTarget 是否已赋值
+                     * @return LoadBalancerPassToTarget 是否已赋值
+                     */
+                    bool LoadBalancerPassToTargetHasBeenSet() const;
 
                 private:
 
@@ -137,10 +155,16 @@ namespace TencentCloud
                     bool m_targetRegionInfoHasBeenSet;
 
                     /**
-                     * 网络计费相关参数，注意，目前只支持修改最大出带宽，不支持修改网络计费方式。
+                     * 网络计费相关参数
                      */
                     InternetAccessible m_internetChargeInfo;
                     bool m_internetChargeInfoHasBeenSet;
+
+                    /**
+                     * Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。
+                     */
+                    bool m_loadBalancerPassToTarget;
+                    bool m_loadBalancerPassToTargetHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/facefusion/v20181201/model/FuseFaceReviewResult.h>
 
 
 namespace TencentCloud
@@ -54,6 +55,20 @@ namespace TencentCloud
                      */
                     bool FusedImageHasBeenSet() const;
 
+                    /**
+                     * 获取鉴政结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReviewResultSet 鉴政结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FuseFaceReviewResult> GetReviewResultSet() const;
+
+                    /**
+                     * 判断参数 ReviewResultSet 是否已赋值
+                     * @return ReviewResultSet 是否已赋值
+                     */
+                    bool ReviewResultSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +76,13 @@ namespace TencentCloud
                      */
                     std::string m_fusedImage;
                     bool m_fusedImageHasBeenSet;
+
+                    /**
+                     * 鉴政结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FuseFaceReviewResult> m_reviewResultSet;
+                    bool m_reviewResultSetHasBeenSet;
 
                 };
             }

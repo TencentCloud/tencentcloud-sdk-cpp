@@ -30,7 +30,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterBasicSettingsHasBeenSet(false),
     m_clusterAdvancedSettingsHasBeenSet(false),
     m_instanceAdvancedSettingsHasBeenSet(false),
-    m_existedInstancesForNodeHasBeenSet(false)
+    m_existedInstancesForNodeHasBeenSet(false),
+    m_instanceDataDiskMountSettingsHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,21 @@ string CreateClusterRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_existedInstancesForNode.begin(); itr != m_existedInstancesForNode.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceDataDiskMountSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceDataDiskMountSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceDataDiskMountSettings.begin(); itr != m_instanceDataDiskMountSettings.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -233,6 +249,22 @@ void CreateClusterRequest::SetExistedInstancesForNode(const vector<ExistedInstan
 bool CreateClusterRequest::ExistedInstancesForNodeHasBeenSet() const
 {
     return m_existedInstancesForNodeHasBeenSet;
+}
+
+vector<InstanceDataDiskMountSetting> CreateClusterRequest::GetInstanceDataDiskMountSettings() const
+{
+    return m_instanceDataDiskMountSettings;
+}
+
+void CreateClusterRequest::SetInstanceDataDiskMountSettings(const vector<InstanceDataDiskMountSetting>& _instanceDataDiskMountSettings)
+{
+    m_instanceDataDiskMountSettings = _instanceDataDiskMountSettings;
+    m_instanceDataDiskMountSettingsHasBeenSet = true;
+}
+
+bool CreateClusterRequest::InstanceDataDiskMountSettingsHasBeenSet() const
+{
+    return m_instanceDataDiskMountSettingsHasBeenSet;
 }
 
 

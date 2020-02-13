@@ -24,12 +24,14 @@ using namespace rapidjson;
 using namespace std;
 
 CreateSnapshotByTimeOffsetTemplateRequest::CreateSnapshotByTimeOffsetTemplateRequest() :
+    m_nameHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_nameHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,14 @@ string CreateSnapshotByTimeOffsetTemplateRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_widthHasBeenSet)
     {
@@ -56,12 +66,12 @@ string CreateSnapshotByTimeOffsetTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_height, allocator);
     }
 
-    if (m_nameHasBeenSet)
+    if (m_resolutionAdaptiveHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Name";
+        string key = "ResolutionAdaptive";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
     }
 
     if (m_formatHasBeenSet)
@@ -88,6 +98,14 @@ string CreateSnapshotByTimeOffsetTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_subAppId, allocator);
     }
 
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -95,6 +113,22 @@ string CreateSnapshotByTimeOffsetTemplateRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateSnapshotByTimeOffsetTemplateRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateSnapshotByTimeOffsetTemplateRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateSnapshotByTimeOffsetTemplateRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
 
 uint64_t CreateSnapshotByTimeOffsetTemplateRequest::GetWidth() const
 {
@@ -128,20 +162,20 @@ bool CreateSnapshotByTimeOffsetTemplateRequest::HeightHasBeenSet() const
     return m_heightHasBeenSet;
 }
 
-string CreateSnapshotByTimeOffsetTemplateRequest::GetName() const
+string CreateSnapshotByTimeOffsetTemplateRequest::GetResolutionAdaptive() const
 {
-    return m_name;
+    return m_resolutionAdaptive;
 }
 
-void CreateSnapshotByTimeOffsetTemplateRequest::SetName(const string& _name)
+void CreateSnapshotByTimeOffsetTemplateRequest::SetResolutionAdaptive(const string& _resolutionAdaptive)
 {
-    m_name = _name;
-    m_nameHasBeenSet = true;
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
 }
 
-bool CreateSnapshotByTimeOffsetTemplateRequest::NameHasBeenSet() const
+bool CreateSnapshotByTimeOffsetTemplateRequest::ResolutionAdaptiveHasBeenSet() const
 {
-    return m_nameHasBeenSet;
+    return m_resolutionAdaptiveHasBeenSet;
 }
 
 string CreateSnapshotByTimeOffsetTemplateRequest::GetFormat() const
@@ -190,6 +224,22 @@ void CreateSnapshotByTimeOffsetTemplateRequest::SetSubAppId(const uint64_t& _sub
 bool CreateSnapshotByTimeOffsetTemplateRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string CreateSnapshotByTimeOffsetTemplateRequest::GetFillType() const
+{
+    return m_fillType;
+}
+
+void CreateSnapshotByTimeOffsetTemplateRequest::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool CreateSnapshotByTimeOffsetTemplateRequest::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 
 

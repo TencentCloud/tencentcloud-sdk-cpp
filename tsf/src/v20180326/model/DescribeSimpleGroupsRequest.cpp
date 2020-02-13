@@ -31,7 +31,8 @@ DescribeSimpleGroupsRequest::DescribeSimpleGroupsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_searchWordHasBeenSet(false)
+    m_searchWordHasBeenSet(false),
+    m_appMicroServiceTypeHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string DescribeSimpleGroupsRequest::ToJsonString() const
         string key = "SearchWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appMicroServiceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppMicroServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_appMicroServiceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -245,6 +254,22 @@ void DescribeSimpleGroupsRequest::SetSearchWord(const string& _searchWord)
 bool DescribeSimpleGroupsRequest::SearchWordHasBeenSet() const
 {
     return m_searchWordHasBeenSet;
+}
+
+string DescribeSimpleGroupsRequest::GetAppMicroServiceType() const
+{
+    return m_appMicroServiceType;
+}
+
+void DescribeSimpleGroupsRequest::SetAppMicroServiceType(const string& _appMicroServiceType)
+{
+    m_appMicroServiceType = _appMicroServiceType;
+    m_appMicroServiceTypeHasBeenSet = true;
+}
+
+bool DescribeSimpleGroupsRequest::AppMicroServiceTypeHasBeenSet() const
+{
+    return m_appMicroServiceTypeHasBeenSet;
 }
 
 

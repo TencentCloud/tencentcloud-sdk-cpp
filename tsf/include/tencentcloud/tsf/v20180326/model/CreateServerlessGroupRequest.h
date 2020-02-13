@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tsf/v20180326/model/VpcConfig.h>
 
 
 namespace TencentCloud
@@ -80,40 +79,40 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取程序包Id
-                     * @return PkgId 程序包Id
+                     * 获取分组所属名字空间ID
+                     * @return NamespaceId 分组所属名字空间ID
                      */
-                    std::string GetPkgId() const;
+                    std::string GetNamespaceId() const;
 
                     /**
-                     * 设置程序包Id
-                     * @param PkgId 程序包Id
+                     * 设置分组所属名字空间ID
+                     * @param NamespaceId 分组所属名字空间ID
                      */
-                    void SetPkgId(const std::string& _pkgId);
+                    void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
-                     * 判断参数 PkgId 是否已赋值
-                     * @return PkgId 是否已赋值
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
                      */
-                    bool PkgIdHasBeenSet() const;
+                    bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取VpcConfig对象
-                     * @return VpcConfig VpcConfig对象
+                     * 获取分组所属集群ID
+                     * @return ClusterId 分组所属集群ID
                      */
-                    VpcConfig GetVpcConfig() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置VpcConfig对象
-                     * @param VpcConfig VpcConfig对象
+                     * 设置分组所属集群ID
+                     * @param ClusterId 分组所属集群ID
                      */
-                    void SetVpcConfig(const VpcConfig& _vpcConfig);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 VpcConfig 是否已赋值
-                     * @return VpcConfig 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool VpcConfigHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                 private:
 
@@ -130,16 +129,16 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 程序包Id
+                     * 分组所属名字空间ID
                      */
-                    std::string m_pkgId;
-                    bool m_pkgIdHasBeenSet;
+                    std::string m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * VpcConfig对象
+                     * 分组所属集群ID
                      */
-                    VpcConfig m_vpcConfig;
-                    bool m_vpcConfigHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

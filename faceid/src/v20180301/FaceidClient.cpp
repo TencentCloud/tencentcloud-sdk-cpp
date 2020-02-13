@@ -599,3 +599,175 @@ FaceidClient::LivenessRecognitionOutcomeCallable FaceidClient::LivenessRecogniti
     return task->get_future();
 }
 
+FaceidClient::MinorsVerificationOutcome FaceidClient::MinorsVerification(const MinorsVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "MinorsVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MinorsVerificationResponse rsp = MinorsVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MinorsVerificationOutcome(rsp);
+        else
+            return MinorsVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return MinorsVerificationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::MinorsVerificationAsync(const MinorsVerificationRequest& request, const MinorsVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MinorsVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::MinorsVerificationOutcomeCallable FaceidClient::MinorsVerificationCallable(const MinorsVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MinorsVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->MinorsVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::MobileNetworkTimeVerificationOutcome FaceidClient::MobileNetworkTimeVerification(const MobileNetworkTimeVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "MobileNetworkTimeVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MobileNetworkTimeVerificationResponse rsp = MobileNetworkTimeVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MobileNetworkTimeVerificationOutcome(rsp);
+        else
+            return MobileNetworkTimeVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return MobileNetworkTimeVerificationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::MobileNetworkTimeVerificationAsync(const MobileNetworkTimeVerificationRequest& request, const MobileNetworkTimeVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MobileNetworkTimeVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::MobileNetworkTimeVerificationOutcomeCallable FaceidClient::MobileNetworkTimeVerificationCallable(const MobileNetworkTimeVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MobileNetworkTimeVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->MobileNetworkTimeVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::MobileStatusOutcome FaceidClient::MobileStatus(const MobileStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "MobileStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MobileStatusResponse rsp = MobileStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MobileStatusOutcome(rsp);
+        else
+            return MobileStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return MobileStatusOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::MobileStatusAsync(const MobileStatusRequest& request, const MobileStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MobileStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::MobileStatusOutcomeCallable FaceidClient::MobileStatusCallable(const MobileStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MobileStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->MobileStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::PhoneVerificationOutcome FaceidClient::PhoneVerification(const PhoneVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "PhoneVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PhoneVerificationResponse rsp = PhoneVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PhoneVerificationOutcome(rsp);
+        else
+            return PhoneVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return PhoneVerificationOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::PhoneVerificationAsync(const PhoneVerificationRequest& request, const PhoneVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PhoneVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::PhoneVerificationOutcomeCallable FaceidClient::PhoneVerificationCallable(const PhoneVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PhoneVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->PhoneVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

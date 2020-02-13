@@ -87,9 +87,11 @@ namespace TencentCloud
                      * 获取主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
+<li>MACHINE_STOPPED: 已关机</li>
                      * @return MachineStatus 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
+<li>MACHINE_STOPPED: 已关机</li>
                      */
                     std::string GetMachineStatus() const;
 
@@ -97,9 +99,11 @@ namespace TencentCloud
                      * 设置主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
+<li>MACHINE_STOPPED: 已关机</li>
                      * @param MachineStatus 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
+<li>MACHINE_STOPPED: 已关机</li>
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
 
@@ -305,6 +309,7 @@ namespace TencentCloud
                      * 主机状态。
 <li>OFFLINE: 离线  </li>
 <li>ONLINE: 在线</li>
+<li>MACHINE_STOPPED: 已关机</li>
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;

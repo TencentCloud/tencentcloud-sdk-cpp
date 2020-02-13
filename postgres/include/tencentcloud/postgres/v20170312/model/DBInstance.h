@@ -461,6 +461,24 @@ namespace TencentCloud
                      */
                     bool DBInstanceNetInfoHasBeenSet() const;
 
+                    /**
+                     * 获取机器类型
+                     * @return Type 机器类型
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置机器类型
+                     * @param Type 机器类型
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -600,6 +618,12 @@ namespace TencentCloud
                      */
                     std::vector<DBInstanceNetInfo> m_dBInstanceNetInfo;
                     bool m_dBInstanceNetInfoHasBeenSet;
+
+                    /**
+                     * 机器类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

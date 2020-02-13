@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。
-                     * @return ProxyId 通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。
+                     * 获取过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
+                     * @return ProxyId 过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。
-                     * @param ProxyId 通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。
+                     * 设置过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
+                     * @param ProxyId 过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
                      */
                     void SetProxyId(const std::string& _proxyId);
 
@@ -61,14 +61,22 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，根据监听器ID精确查询
-                     * @return ListenerId 过滤条件，根据监听器ID精确查询
+                     * 获取过滤条件，根据监听器ID精确查询。
+当设置了ProxyId时，会检查该监听器是否归属于该通道。
+当设置了GroupId时，会检查该监听器是否归属于该通道组。
+                     * @return ListenerId 过滤条件，根据监听器ID精确查询。
+当设置了ProxyId时，会检查该监听器是否归属于该通道。
+当设置了GroupId时，会检查该监听器是否归属于该通道组。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置过滤条件，根据监听器ID精确查询
-                     * @param ListenerId 过滤条件，根据监听器ID精确查询
+                     * 设置过滤条件，根据监听器ID精确查询。
+当设置了ProxyId时，会检查该监听器是否归属于该通道。
+当设置了GroupId时，会检查该监听器是否归属于该通道组。
+                     * @param ListenerId 过滤条件，根据监听器ID精确查询。
+当设置了ProxyId时，会检查该监听器是否归属于该通道。
+当设置了GroupId时，会检查该监听器是否归属于该通道组。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -151,14 +159,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。
-                     * @return GroupId 通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。
+                     * 获取过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
+                     * @return GroupId 过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。
-                     * @param GroupId 通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。
+                     * 设置过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
+                     * @param GroupId 过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -189,13 +197,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。
+                     * 过滤条件，根据通道ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 过滤条件，根据监听器ID精确查询
+                     * 过滤条件，根据监听器ID精确查询。
+当设置了ProxyId时，会检查该监听器是否归属于该通道。
+当设置了GroupId时，会检查该监听器是否归属于该通道组。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
@@ -225,7 +235,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。
+                     * 过滤条件，根据通道组ID进行拉取，ProxyId/GroupId/ListenerId必须设置一个，但ProxyId和GroupId不能同时设置。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

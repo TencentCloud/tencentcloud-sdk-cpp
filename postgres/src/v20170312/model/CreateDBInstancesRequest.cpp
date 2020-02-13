@@ -35,7 +35,8 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 
@@ -345,6 +354,22 @@ void CreateDBInstancesRequest::SetSubnetId(const string& _subnetId)
 bool CreateDBInstancesRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+int64_t CreateDBInstancesRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void CreateDBInstancesRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

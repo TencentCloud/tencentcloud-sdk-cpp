@@ -40,6 +40,135 @@ CdnClient::CdnClient(const Credential &credential, const string &region, const C
 }
 
 
+CdnClient::AddCdnDomainOutcome CdnClient::AddCdnDomain(const AddCdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCdnDomainResponse rsp = AddCdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCdnDomainOutcome(rsp);
+        else
+            return AddCdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::AddCdnDomainAsync(const AddCdnDomainRequest& request, const AddCdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::AddCdnDomainOutcomeCallable CdnClient::AddCdnDomainCallable(const AddCdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DeleteCdnDomainOutcome CdnClient::DeleteCdnDomain(const DeleteCdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCdnDomainResponse rsp = DeleteCdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCdnDomainOutcome(rsp);
+        else
+            return DeleteCdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DeleteCdnDomainAsync(const DeleteCdnDomainRequest& request, const DeleteCdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DeleteCdnDomainOutcomeCallable CdnClient::DeleteCdnDomainCallable(const DeleteCdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeBillingDataOutcome CdnClient::DescribeBillingData(const DescribeBillingDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingDataResponse rsp = DescribeBillingDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingDataOutcome(rsp);
+        else
+            return DescribeBillingDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingDataOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeBillingDataAsync(const DescribeBillingDataRequest& request, const DescribeBillingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillingData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeBillingDataOutcomeCallable CdnClient::DescribeBillingDataCallable(const DescribeBillingDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillingDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillingData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeCdnDataOutcome CdnClient::DescribeCdnData(const DescribeCdnDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCdnData");
@@ -162,6 +291,92 @@ CdnClient::DescribeCdnIpOutcomeCallable CdnClient::DescribeCdnIpCallable(const D
         [this, request]()
         {
             return this->DescribeCdnIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeDomainsOutcome CdnClient::DescribeDomains(const DescribeDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainsResponse rsp = DescribeDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainsOutcome(rsp);
+        else
+            return DescribeDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainsOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeDomainsOutcomeCallable CdnClient::DescribeDomainsCallable(const DescribeDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::DescribeDomainsConfigOutcome CdnClient::DescribeDomainsConfig(const DescribeDomainsConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainsConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainsConfigResponse rsp = DescribeDomainsConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainsConfigOutcome(rsp);
+        else
+            return DescribeDomainsConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainsConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeDomainsConfigAsync(const DescribeDomainsConfigRequest& request, const DescribeDomainsConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainsConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeDomainsConfigOutcomeCallable CdnClient::DescribeDomainsConfigCallable(const DescribeDomainsConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainsConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainsConfig(request);
         }
     );
 
@@ -470,6 +685,49 @@ CdnClient::DescribeTrafficPackagesOutcomeCallable CdnClient::DescribeTrafficPack
     return task->get_future();
 }
 
+CdnClient::DescribeUrlViolationsOutcome CdnClient::DescribeUrlViolations(const DescribeUrlViolationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUrlViolations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUrlViolationsResponse rsp = DescribeUrlViolationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUrlViolationsOutcome(rsp);
+        else
+            return DescribeUrlViolationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUrlViolationsOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeUrlViolationsAsync(const DescribeUrlViolationsRequest& request, const DescribeUrlViolationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUrlViolations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeUrlViolationsOutcomeCallable CdnClient::DescribeUrlViolationsCallable(const DescribeUrlViolationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUrlViolationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUrlViolations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DisableCachesOutcome CdnClient::DisableCaches(const DisableCachesRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableCaches");
@@ -764,6 +1022,178 @@ CdnClient::PushUrlsCacheOutcomeCallable CdnClient::PushUrlsCacheCallable(const P
         [this, request]()
         {
             return this->PushUrlsCache(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::StartCdnDomainOutcome CdnClient::StartCdnDomain(const StartCdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartCdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartCdnDomainResponse rsp = StartCdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartCdnDomainOutcome(rsp);
+        else
+            return StartCdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return StartCdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::StartCdnDomainAsync(const StartCdnDomainRequest& request, const StartCdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartCdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::StartCdnDomainOutcomeCallable CdnClient::StartCdnDomainCallable(const StartCdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartCdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->StartCdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::StopCdnDomainOutcome CdnClient::StopCdnDomain(const StopCdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopCdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopCdnDomainResponse rsp = StopCdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopCdnDomainOutcome(rsp);
+        else
+            return StopCdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return StopCdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::StopCdnDomainAsync(const StopCdnDomainRequest& request, const StopCdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopCdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::StopCdnDomainOutcomeCallable CdnClient::StopCdnDomainCallable(const StopCdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopCdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->StopCdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::UpdateDomainConfigOutcome CdnClient::UpdateDomainConfig(const UpdateDomainConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDomainConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDomainConfigResponse rsp = UpdateDomainConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDomainConfigOutcome(rsp);
+        else
+            return UpdateDomainConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDomainConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::UpdateDomainConfigAsync(const UpdateDomainConfigRequest& request, const UpdateDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDomainConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::UpdateDomainConfigOutcomeCallable CdnClient::UpdateDomainConfigCallable(const UpdateDomainConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDomainConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDomainConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::UpdatePayTypeOutcome CdnClient::UpdatePayType(const UpdatePayTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePayType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePayTypeResponse rsp = UpdatePayTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePayTypeOutcome(rsp);
+        else
+            return UpdatePayTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePayTypeOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::UpdatePayTypeAsync(const UpdatePayTypeRequest& request, const UpdatePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePayType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::UpdatePayTypeOutcomeCallable CdnClient::UpdatePayTypeCallable(const UpdatePayTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePayTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePayType(request);
         }
     );
 

@@ -72,6 +72,40 @@ namespace TencentCloud
                      */
                     bool BackInfoHasBeenSet() const;
 
+                    /**
+                     * 获取告警码	告警码消息	                                                告警码说明
+-9102	WARN_DRIVER_LICENSE_COPY_CARD	        复印件告警
+-9103	WARN_DRIVER_LICENSE_SCREENED_CARD	翻拍件告警
+-9106	WARN_DRIVER_LICENSE_PS_CARD	                ps告警
+注：告警码可以同时存在多个
+                     * @return RecognizeWarnCode 告警码	告警码消息	                                                告警码说明
+-9102	WARN_DRIVER_LICENSE_COPY_CARD	        复印件告警
+-9103	WARN_DRIVER_LICENSE_SCREENED_CARD	翻拍件告警
+-9106	WARN_DRIVER_LICENSE_PS_CARD	                ps告警
+注：告警码可以同时存在多个
+                     */
+                    std::vector<int64_t> GetRecognizeWarnCode() const;
+
+                    /**
+                     * 判断参数 RecognizeWarnCode 是否已赋值
+                     * @return RecognizeWarnCode 是否已赋值
+                     */
+                    bool RecognizeWarnCodeHasBeenSet() const;
+
+                    /**
+                     * 获取告警码说明
+注：告警信息可以同时存在多个
+                     * @return RecognizeWarnMsg 告警码说明
+注：告警信息可以同时存在多个
+                     */
+                    std::vector<std::string> GetRecognizeWarnMsg() const;
+
+                    /**
+                     * 判断参数 RecognizeWarnMsg 是否已赋值
+                     * @return RecognizeWarnMsg 是否已赋值
+                     */
+                    bool RecognizeWarnMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -87,6 +121,23 @@ namespace TencentCloud
                      */
                     TextVehicleBack m_backInfo;
                     bool m_backInfoHasBeenSet;
+
+                    /**
+                     * 告警码	告警码消息	                                                告警码说明
+-9102	WARN_DRIVER_LICENSE_COPY_CARD	        复印件告警
+-9103	WARN_DRIVER_LICENSE_SCREENED_CARD	翻拍件告警
+-9106	WARN_DRIVER_LICENSE_PS_CARD	                ps告警
+注：告警码可以同时存在多个
+                     */
+                    std::vector<int64_t> m_recognizeWarnCode;
+                    bool m_recognizeWarnCodeHasBeenSet;
+
+                    /**
+                     * 告警码说明
+注：告警信息可以同时存在多个
+                     */
+                    std::vector<std::string> m_recognizeWarnMsg;
+                    bool m_recognizeWarnMsgHasBeenSet;
 
                 };
             }

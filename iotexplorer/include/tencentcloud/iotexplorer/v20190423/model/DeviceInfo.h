@@ -214,6 +214,138 @@ namespace TencentCloud
                      */
                     bool DeviceCertHasBeenSet() const;
 
+                    /**
+                     * 获取日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogLevel 日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLogLevel() const;
+
+                    /**
+                     * 设置日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogLevel 日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogLevel(const int64_t& _logLevel);
+
+                    /**
+                     * 判断参数 LogLevel 是否已赋值
+                     * @return LogLevel 是否已赋值
+                     */
+                    bool LogLevelHasBeenSet() const;
+
+                    /**
+                     * 获取LoRaWAN 设备地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DevAddr LoRaWAN 设备地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDevAddr() const;
+
+                    /**
+                     * 设置LoRaWAN 设备地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DevAddr LoRaWAN 设备地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDevAddr(const std::string& _devAddr);
+
+                    /**
+                     * 判断参数 DevAddr 是否已赋值
+                     * @return DevAddr 是否已赋值
+                     */
+                    bool DevAddrHasBeenSet() const;
+
+                    /**
+                     * 获取LoRaWAN 应用密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppKey LoRaWAN 应用密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAppKey() const;
+
+                    /**
+                     * 设置LoRaWAN 应用密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppKey LoRaWAN 应用密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppKey(const std::string& _appKey);
+
+                    /**
+                     * 判断参数 AppKey 是否已赋值
+                     * @return AppKey 是否已赋值
+                     */
+                    bool AppKeyHasBeenSet() const;
+
+                    /**
+                     * 获取LoRaWAN 设备唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DevEUI LoRaWAN 设备唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDevEUI() const;
+
+                    /**
+                     * 设置LoRaWAN 设备唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DevEUI LoRaWAN 设备唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDevEUI(const std::string& _devEUI);
+
+                    /**
+                     * 判断参数 DevEUI 是否已赋值
+                     * @return DevEUI 是否已赋值
+                     */
+                    bool DevEUIHasBeenSet() const;
+
+                    /**
+                     * 获取LoRaWAN 应用会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppSKey LoRaWAN 应用会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAppSKey() const;
+
+                    /**
+                     * 设置LoRaWAN 应用会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppSKey LoRaWAN 应用会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppSKey(const std::string& _appSKey);
+
+                    /**
+                     * 判断参数 AppSKey 是否已赋值
+                     * @return AppSKey 是否已赋值
+                     */
+                    bool AppSKeyHasBeenSet() const;
+
+                    /**
+                     * 获取LoRaWAN 网络会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NwkSKey LoRaWAN 网络会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNwkSKey() const;
+
+                    /**
+                     * 设置LoRaWAN 网络会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NwkSKey LoRaWAN 网络会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNwkSKey(const std::string& _nwkSKey);
+
+                    /**
+                     * 判断参数 NwkSKey 是否已赋值
+                     * @return NwkSKey 是否已赋值
+                     */
+                    bool NwkSKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +401,48 @@ namespace TencentCloud
                      */
                     std::string m_deviceCert;
                     bool m_deviceCertHasBeenSet;
+
+                    /**
+                     * 日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_logLevel;
+                    bool m_logLevelHasBeenSet;
+
+                    /**
+                     * LoRaWAN 设备地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_devAddr;
+                    bool m_devAddrHasBeenSet;
+
+                    /**
+                     * LoRaWAN 应用密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appKey;
+                    bool m_appKeyHasBeenSet;
+
+                    /**
+                     * LoRaWAN 设备唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_devEUI;
+                    bool m_devEUIHasBeenSet;
+
+                    /**
+                     * LoRaWAN 应用会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appSKey;
+                    bool m_appSKeyHasBeenSet;
+
+                    /**
+                     * LoRaWAN 网络会话密钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nwkSKey;
+                    bool m_nwkSKeyHasBeenSet;
 
                 };
             }

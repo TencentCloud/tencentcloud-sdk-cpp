@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取置放群组ID
-                     * @return DeployGroupId 置放群组ID
+                     * 获取置放群组ID。
+                     * @return DeployGroupId 置放群组ID。
                      */
                     std::string GetDeployGroupId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 置放群组ID
+                     * 置放群组ID。
                      */
                     std::string m_deployGroupId;
                     bool m_deployGroupIdHasBeenSet;

@@ -45,7 +45,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_retryPolicyHasBeenSet(false),
     m_inActivityStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_serviceSettingsHasBeenSet(false)
+    m_serviceSettingsHasBeenSet(false),
+    m_ipv6AddressCountHasBeenSet(false),
+    m_multiZoneSubnetPolicyHasBeenSet(false)
 {
 }
 
@@ -333,6 +335,26 @@ CoreInternalOutcome AutoScalingGroup::Deserialize(const Value &value)
         m_serviceSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6AddressCount") && !value["Ipv6AddressCount"].IsNull())
+    {
+        if (!value["Ipv6AddressCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.Ipv6AddressCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6AddressCount = value["Ipv6AddressCount"].GetInt64();
+        m_ipv6AddressCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MultiZoneSubnetPolicy") && !value["MultiZoneSubnetPolicy"].IsNull())
+    {
+        if (!value["MultiZoneSubnetPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.MultiZoneSubnetPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_multiZoneSubnetPolicy = string(value["MultiZoneSubnetPolicy"].GetString());
+        m_multiZoneSubnetPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -565,6 +587,22 @@ void AutoScalingGroup::ToJsonObject(Value &value, Document::AllocatorType& alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_serviceSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ipv6AddressCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6AddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6AddressCount, allocator);
+    }
+
+    if (m_multiZoneSubnetPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZoneSubnetPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_multiZoneSubnetPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -952,5 +990,37 @@ void AutoScalingGroup::SetServiceSettings(const ServiceSettings& _serviceSetting
 bool AutoScalingGroup::ServiceSettingsHasBeenSet() const
 {
     return m_serviceSettingsHasBeenSet;
+}
+
+int64_t AutoScalingGroup::GetIpv6AddressCount() const
+{
+    return m_ipv6AddressCount;
+}
+
+void AutoScalingGroup::SetIpv6AddressCount(const int64_t& _ipv6AddressCount)
+{
+    m_ipv6AddressCount = _ipv6AddressCount;
+    m_ipv6AddressCountHasBeenSet = true;
+}
+
+bool AutoScalingGroup::Ipv6AddressCountHasBeenSet() const
+{
+    return m_ipv6AddressCountHasBeenSet;
+}
+
+string AutoScalingGroup::GetMultiZoneSubnetPolicy() const
+{
+    return m_multiZoneSubnetPolicy;
+}
+
+void AutoScalingGroup::SetMultiZoneSubnetPolicy(const string& _multiZoneSubnetPolicy)
+{
+    m_multiZoneSubnetPolicy = _multiZoneSubnetPolicy;
+    m_multiZoneSubnetPolicyHasBeenSet = true;
+}
+
+bool AutoScalingGroup::MultiZoneSubnetPolicyHasBeenSet() const
+{
+    return m_multiZoneSubnetPolicyHasBeenSet;
 }
 

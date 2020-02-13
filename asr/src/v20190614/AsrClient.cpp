@@ -40,6 +40,49 @@ AsrClient::AsrClient(const Credential &credential, const string &region, const C
 }
 
 
+AsrClient::CreateAsrVocabOutcome AsrClient::CreateAsrVocab(const CreateAsrVocabRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAsrVocab");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAsrVocabResponse rsp = CreateAsrVocabResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAsrVocabOutcome(rsp);
+        else
+            return CreateAsrVocabOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAsrVocabOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::CreateAsrVocabAsync(const CreateAsrVocabRequest& request, const CreateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAsrVocab(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::CreateAsrVocabOutcomeCallable AsrClient::CreateAsrVocabCallable(const CreateAsrVocabRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAsrVocabOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAsrVocab(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::CreateRecTaskOutcome AsrClient::CreateRecTask(const CreateRecTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRecTask");
@@ -76,6 +119,49 @@ AsrClient::CreateRecTaskOutcomeCallable AsrClient::CreateRecTaskCallable(const C
         [this, request]()
         {
             return this->CreateRecTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::DeleteAsrVocabOutcome AsrClient::DeleteAsrVocab(const DeleteAsrVocabRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAsrVocab");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAsrVocabResponse rsp = DeleteAsrVocabResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAsrVocabOutcome(rsp);
+        else
+            return DeleteAsrVocabOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAsrVocabOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::DeleteAsrVocabAsync(const DeleteAsrVocabRequest& request, const DeleteAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAsrVocab(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::DeleteAsrVocabOutcomeCallable AsrClient::DeleteAsrVocabCallable(const DeleteAsrVocabRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAsrVocabOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAsrVocab(request);
         }
     );
 
@@ -126,6 +212,49 @@ AsrClient::DescribeTaskStatusOutcomeCallable AsrClient::DescribeTaskStatusCallab
     return task->get_future();
 }
 
+AsrClient::GetAsrVocabOutcome AsrClient::GetAsrVocab(const GetAsrVocabRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAsrVocab");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAsrVocabResponse rsp = GetAsrVocabResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAsrVocabOutcome(rsp);
+        else
+            return GetAsrVocabOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAsrVocabOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::GetAsrVocabAsync(const GetAsrVocabRequest& request, const GetAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAsrVocab(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::GetAsrVocabOutcomeCallable AsrClient::GetAsrVocabCallable(const GetAsrVocabRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAsrVocabOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAsrVocab(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::SentenceRecognitionOutcome AsrClient::SentenceRecognition(const SentenceRecognitionRequest &request)
 {
     auto outcome = MakeRequest(request, "SentenceRecognition");
@@ -162,6 +291,49 @@ AsrClient::SentenceRecognitionOutcomeCallable AsrClient::SentenceRecognitionCall
         [this, request]()
         {
             return this->SentenceRecognition(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::UpdateAsrVocabOutcome AsrClient::UpdateAsrVocab(const UpdateAsrVocabRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAsrVocab");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAsrVocabResponse rsp = UpdateAsrVocabResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAsrVocabOutcome(rsp);
+        else
+            return UpdateAsrVocabOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAsrVocabOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::UpdateAsrVocabAsync(const UpdateAsrVocabRequest& request, const UpdateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAsrVocab(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::UpdateAsrVocabOutcomeCallable AsrClient::UpdateAsrVocabCallable(const UpdateAsrVocabRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAsrVocabOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAsrVocab(request);
         }
     );
 

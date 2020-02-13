@@ -29,6 +29,8 @@
 #include <tencentcloud/as/v20180419/model/CompleteLifecycleActionResponse.h>
 #include <tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h>
 #include <tencentcloud/as/v20180419/model/CreateAutoScalingGroupResponse.h>
+#include <tencentcloud/as/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.h>
+#include <tencentcloud/as/v20180419/model/CreateAutoScalingGroupFromInstanceResponse.h>
 #include <tencentcloud/as/v20180419/model/CreateLaunchConfigurationRequest.h>
 #include <tencentcloud/as/v20180419/model/CreateLaunchConfigurationResponse.h>
 #include <tencentcloud/as/v20180419/model/CreateLifecycleHookRequest.h>
@@ -103,6 +105,10 @@
 #include <tencentcloud/as/v20180419/model/RemoveInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/SetInstancesProtectionRequest.h>
 #include <tencentcloud/as/v20180419/model/SetInstancesProtectionResponse.h>
+#include <tencentcloud/as/v20180419/model/StartAutoScalingInstancesRequest.h>
+#include <tencentcloud/as/v20180419/model/StartAutoScalingInstancesResponse.h>
+#include <tencentcloud/as/v20180419/model/StopAutoScalingInstancesRequest.h>
+#include <tencentcloud/as/v20180419/model/StopAutoScalingInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationRequest.h>
 #include <tencentcloud/as/v20180419/model/UpgradeLaunchConfigurationResponse.h>
 #include <tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h>
@@ -130,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAutoScalingGroupResponse> CreateAutoScalingGroupOutcome;
                 typedef std::future<CreateAutoScalingGroupOutcome> CreateAutoScalingGroupOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::CreateAutoScalingGroupRequest&, CreateAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoScalingGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateAutoScalingGroupFromInstanceResponse> CreateAutoScalingGroupFromInstanceOutcome;
+                typedef std::future<CreateAutoScalingGroupFromInstanceOutcome> CreateAutoScalingGroupFromInstanceOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::CreateAutoScalingGroupFromInstanceRequest&, CreateAutoScalingGroupFromInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoScalingGroupFromInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CreateLaunchConfigurationResponse> CreateLaunchConfigurationOutcome;
                 typedef std::future<CreateLaunchConfigurationOutcome> CreateLaunchConfigurationOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::CreateLaunchConfigurationRequest&, CreateLaunchConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLaunchConfigurationAsyncHandler;
@@ -241,6 +250,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SetInstancesProtectionResponse> SetInstancesProtectionOutcome;
                 typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::SetInstancesProtectionRequest&, SetInstancesProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
+                typedef Outcome<Error, Model::StartAutoScalingInstancesResponse> StartAutoScalingInstancesOutcome;
+                typedef std::future<StartAutoScalingInstancesOutcome> StartAutoScalingInstancesOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::StartAutoScalingInstancesRequest&, StartAutoScalingInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAutoScalingInstancesAsyncHandler;
+                typedef Outcome<Error, Model::StopAutoScalingInstancesResponse> StopAutoScalingInstancesOutcome;
+                typedef std::future<StopAutoScalingInstancesOutcome> StopAutoScalingInstancesOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::StopAutoScalingInstancesRequest&, StopAutoScalingInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoScalingInstancesAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeLaunchConfigurationResponse> UpgradeLaunchConfigurationOutcome;
                 typedef std::future<UpgradeLaunchConfigurationOutcome> UpgradeLaunchConfigurationOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::UpgradeLaunchConfigurationRequest&, UpgradeLaunchConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeLaunchConfigurationAsyncHandler;
@@ -280,6 +295,17 @@ namespace TencentCloud
                 CreateAutoScalingGroupOutcome CreateAutoScalingGroup(const Model::CreateAutoScalingGroupRequest &request);
                 void CreateAutoScalingGroupAsync(const Model::CreateAutoScalingGroupRequest& request, const CreateAutoScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAutoScalingGroupOutcomeCallable CreateAutoScalingGroupCallable(const Model::CreateAutoScalingGroupRequest& request);
+
+                /**
+                 *本接口（CreateAutoScalingGroupFromInstance）用于根据实例创建启动配置及伸缩组。
+
+说明：根据按包年包月计费的实例所创建的伸缩组，其扩容的实例为按量计费实例。
+                 * @param req CreateAutoScalingGroupFromInstanceRequest
+                 * @return CreateAutoScalingGroupFromInstanceOutcome
+                 */
+                CreateAutoScalingGroupFromInstanceOutcome CreateAutoScalingGroupFromInstance(const Model::CreateAutoScalingGroupFromInstanceRequest &request);
+                void CreateAutoScalingGroupFromInstanceAsync(const Model::CreateAutoScalingGroupFromInstanceRequest& request, const CreateAutoScalingGroupFromInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAutoScalingGroupFromInstanceOutcomeCallable CreateAutoScalingGroupFromInstanceCallable(const Model::CreateAutoScalingGroupFromInstanceRequest& request);
 
                 /**
                  *本接口（CreateLaunchConfiguration）用于创建新的启动配置。
@@ -672,6 +698,30 @@ namespace TencentCloud
                 SetInstancesProtectionOutcome SetInstancesProtection(const Model::SetInstancesProtectionRequest &request);
                 void SetInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetInstancesProtectionOutcomeCallable SetInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request);
+
+                /**
+                 *本接口（StartAutoScalingInstances）用于开启伸缩组内 CVM 实例。
+* 开机成功，实例转为`IN_SERVICE`状态后，会增加期望实例数，期望实例数不可超过设置的最大值
+* 本接口支持批量操作，每次请求开机实例的上限为100
+                 * @param req StartAutoScalingInstancesRequest
+                 * @return StartAutoScalingInstancesOutcome
+                 */
+                StartAutoScalingInstancesOutcome StartAutoScalingInstances(const Model::StartAutoScalingInstancesRequest &request);
+                void StartAutoScalingInstancesAsync(const Model::StartAutoScalingInstancesRequest& request, const StartAutoScalingInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartAutoScalingInstancesOutcomeCallable StartAutoScalingInstancesCallable(const Model::StartAutoScalingInstancesRequest& request);
+
+                /**
+                 *本接口（StopAutoScalingInstances）用于关闭伸缩组内 CVM 实例。
+* 关机方式采用`SOFT_FIRST`方式，表示在正常关闭失败后进行强制关闭
+* 关闭`IN_SERVICE`状态的实例，会减少期望实例数，期望实例数不可低于设置的最小值
+* 使用`STOP_CHARGING`选项关机，待关机的实例需要满足[关机不收费条件](https://cloud.tencent.com/document/product/213/19918)
+* 本接口支持批量操作，每次请求关机实例的上限为100
+                 * @param req StopAutoScalingInstancesRequest
+                 * @return StopAutoScalingInstancesOutcome
+                 */
+                StopAutoScalingInstancesOutcome StopAutoScalingInstances(const Model::StopAutoScalingInstancesRequest &request);
+                void StopAutoScalingInstancesAsync(const Model::StopAutoScalingInstancesRequest& request, const StopAutoScalingInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopAutoScalingInstancesOutcomeCallable StopAutoScalingInstancesCallable(const Model::StopAutoScalingInstancesRequest& request);
 
                 /**
                  *本接口（UpgradeLaunchConfiguration）用于升级启动配置。

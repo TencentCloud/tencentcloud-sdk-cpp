@@ -51,17 +51,13 @@ namespace TencentCloud
 
                     /**
                      * 获取画面鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImgReviewInfo 画面鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalImgReviewTemplateInfo GetImgReviewInfo() const;
 
                     /**
                      * 设置画面鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImgReviewInfo 画面鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImgReviewInfo(const PoliticalImgReviewTemplateInfo& _imgReviewInfo);
 
@@ -73,17 +69,13 @@ namespace TencentCloud
 
                     /**
                      * 获取语音鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrReviewInfo 语音鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalAsrReviewTemplateInfo GetAsrReviewInfo() const;
 
                     /**
                      * 设置语音鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AsrReviewInfo 语音鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAsrReviewInfo(const PoliticalAsrReviewTemplateInfo& _asrReviewInfo);
 
@@ -95,17 +87,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文本鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrReviewInfo 文本鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalOcrReviewTemplateInfo GetOcrReviewInfo() const;
 
                     /**
                      * 设置文本鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OcrReviewInfo 文本鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrReviewInfo(const PoliticalOcrReviewTemplateInfo& _ocrReviewInfo);
 
@@ -119,21 +107,18 @@ namespace TencentCloud
 
                     /**
                      * 画面鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalImgReviewTemplateInfo m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
                      * 语音鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalAsrReviewTemplateInfo m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
                      * 文本鉴政控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PoliticalOcrReviewTemplateInfo m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

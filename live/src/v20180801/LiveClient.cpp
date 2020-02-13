@@ -1932,6 +1932,49 @@ LiveClient::DescribeLiveForbidStreamListOutcomeCallable LiveClient::DescribeLive
     return task->get_future();
 }
 
+LiveClient::DescribeLivePackageInfoOutcome LiveClient::DescribeLivePackageInfo(const DescribeLivePackageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLivePackageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLivePackageInfoResponse rsp = DescribeLivePackageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLivePackageInfoOutcome(rsp);
+        else
+            return DescribeLivePackageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLivePackageInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLivePackageInfoAsync(const DescribeLivePackageInfoRequest& request, const DescribeLivePackageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLivePackageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePackageInfoOutcomeCallable LiveClient::DescribeLivePackageInfoCallable(const DescribeLivePackageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLivePackageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLivePackageInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLivePlayAuthKeyOutcome LiveClient::DescribeLivePlayAuthKey(const DescribeLivePlayAuthKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLivePlayAuthKey");
@@ -2312,49 +2355,6 @@ LiveClient::DescribeLiveStreamEventListOutcomeCallable LiveClient::DescribeLiveS
         [this, request]()
         {
             return this->DescribeLiveStreamEventList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LiveClient::DescribeLiveStreamOnlineInfoOutcome LiveClient::DescribeLiveStreamOnlineInfo(const DescribeLiveStreamOnlineInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeLiveStreamOnlineInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeLiveStreamOnlineInfoResponse rsp = DescribeLiveStreamOnlineInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeLiveStreamOnlineInfoOutcome(rsp);
-        else
-            return DescribeLiveStreamOnlineInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeLiveStreamOnlineInfoOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::DescribeLiveStreamOnlineInfoAsync(const DescribeLiveStreamOnlineInfoRequest& request, const DescribeLiveStreamOnlineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLiveStreamOnlineInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::DescribeLiveStreamOnlineInfoOutcomeCallable LiveClient::DescribeLiveStreamOnlineInfoCallable(const DescribeLiveStreamOnlineInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeLiveStreamOnlineInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLiveStreamOnlineInfo(request);
         }
     );
 

@@ -106,6 +106,28 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取场景字段，默认不用填写。
+可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
+                     * @return Scene 场景字段，默认不用填写。
+可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
+                     */
+                    std::string GetScene() const;
+
+                    /**
+                     * 设置场景字段，默认不用填写。
+可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
+                     * @param Scene 场景字段，默认不用填写。
+可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
+                     */
+                    void SetScene(const std::string& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     */
+                    bool SceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +148,13 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 场景字段，默认不用填写。
+可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。
+                     */
+                    std::string m_scene;
+                    bool m_sceneHasBeenSet;
 
                 };
             }

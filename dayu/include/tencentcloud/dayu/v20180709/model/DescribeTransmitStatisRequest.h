@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾）
-                     * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾）
+                     * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；bgp表示独享包；bgp-multip表示共享包）
+                     * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；bgp表示独享包；bgp-multip表示共享包）
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾）
+                     * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；bgp表示独享包；bgp-multip表示共享包）
+                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；bgp表示独享包；bgp-multip表示共享包）
                      */
                     void SetBusiness(const std::string& _business);
 
@@ -159,14 +159,14 @@ pkg表示包速率；
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取资源的IP；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
-                     * @return IpList 资源的IP；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
+                     * 获取资源的IP（当Business为bgp-multip时必填，且仅支持一个IP）；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
+                     * @return IpList 资源的IP（当Business为bgp-multip时必填，且仅支持一个IP）；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
-                     * 设置资源的IP；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
-                     * @param IpList 资源的IP；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
+                     * 设置资源的IP（当Business为bgp-multip时必填，且仅支持一个IP）；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
+                     * @param IpList 资源的IP（当Business为bgp-multip时必填，且仅支持一个IP）；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
@@ -179,7 +179,7 @@ pkg表示包速率；
                 private:
 
                     /**
-                     * 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾）
+                     * 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；bgp表示独享包；bgp-multip表示共享包）
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
@@ -217,7 +217,7 @@ pkg表示包速率；
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 资源的IP；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
+                     * 资源的IP（当Business为bgp-multip时必填，且仅支持一个IP）；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;

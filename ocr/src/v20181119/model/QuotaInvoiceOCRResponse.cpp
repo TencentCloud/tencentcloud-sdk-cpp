@@ -27,7 +27,12 @@ using namespace std;
 QuotaInvoiceOCRResponse::QuotaInvoiceOCRResponse() :
     m_invoiceNumHasBeenSet(false),
     m_invoiceCodeHasBeenSet(false),
-    m_rateHasBeenSet(false)
+    m_rateHasBeenSet(false),
+    m_rateNumHasBeenSet(false),
+    m_invoiceTypeHasBeenSet(false),
+    m_provinceHasBeenSet(false),
+    m_cityHasBeenSet(false),
+    m_hasStampHasBeenSet(false)
 {
 }
 
@@ -95,6 +100,56 @@ CoreInternalOutcome QuotaInvoiceOCRResponse::Deserialize(const string &payload)
         m_rateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RateNum") && !rsp["RateNum"].IsNull())
+    {
+        if (!rsp["RateNum"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RateNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rateNum = string(rsp["RateNum"].GetString());
+        m_rateNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InvoiceType") && !rsp["InvoiceType"].IsNull())
+    {
+        if (!rsp["InvoiceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceType = string(rsp["InvoiceType"].GetString());
+        m_invoiceTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Province") && !rsp["Province"].IsNull())
+    {
+        if (!rsp["Province"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Province` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_province = string(rsp["Province"].GetString());
+        m_provinceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("City") && !rsp["City"].IsNull())
+    {
+        if (!rsp["City"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `City` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_city = string(rsp["City"].GetString());
+        m_cityHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HasStamp") && !rsp["HasStamp"].IsNull())
+    {
+        if (!rsp["HasStamp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HasStamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasStamp = string(rsp["HasStamp"].GetString());
+        m_hasStampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +183,56 @@ string QuotaInvoiceOCRResponse::GetRate() const
 bool QuotaInvoiceOCRResponse::RateHasBeenSet() const
 {
     return m_rateHasBeenSet;
+}
+
+string QuotaInvoiceOCRResponse::GetRateNum() const
+{
+    return m_rateNum;
+}
+
+bool QuotaInvoiceOCRResponse::RateNumHasBeenSet() const
+{
+    return m_rateNumHasBeenSet;
+}
+
+string QuotaInvoiceOCRResponse::GetInvoiceType() const
+{
+    return m_invoiceType;
+}
+
+bool QuotaInvoiceOCRResponse::InvoiceTypeHasBeenSet() const
+{
+    return m_invoiceTypeHasBeenSet;
+}
+
+string QuotaInvoiceOCRResponse::GetProvince() const
+{
+    return m_province;
+}
+
+bool QuotaInvoiceOCRResponse::ProvinceHasBeenSet() const
+{
+    return m_provinceHasBeenSet;
+}
+
+string QuotaInvoiceOCRResponse::GetCity() const
+{
+    return m_city;
+}
+
+bool QuotaInvoiceOCRResponse::CityHasBeenSet() const
+{
+    return m_cityHasBeenSet;
+}
+
+string QuotaInvoiceOCRResponse::GetHasStamp() const
+{
+    return m_hasStamp;
+}
+
+bool QuotaInvoiceOCRResponse::HasStampHasBeenSet() const
+{
+    return m_hasStampHasBeenSet;
 }
 
 

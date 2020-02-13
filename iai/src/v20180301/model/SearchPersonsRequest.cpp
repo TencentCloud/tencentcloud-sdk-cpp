@@ -31,7 +31,8 @@ SearchPersonsRequest::SearchPersonsRequest() :
     m_minFaceSizeHasBeenSet(false),
     m_maxPersonNumHasBeenSet(false),
     m_qualityControlHasBeenSet(false),
-    m_faceMatchThresholdHasBeenSet(false)
+    m_faceMatchThresholdHasBeenSet(false),
+    m_needPersonInfoHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string SearchPersonsRequest::ToJsonString() const
         string key = "FaceMatchThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_faceMatchThreshold, allocator);
+    }
+
+    if (m_needPersonInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedPersonInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPersonInfo, allocator);
     }
 
 
@@ -245,6 +254,22 @@ void SearchPersonsRequest::SetFaceMatchThreshold(const double& _faceMatchThresho
 bool SearchPersonsRequest::FaceMatchThresholdHasBeenSet() const
 {
     return m_faceMatchThresholdHasBeenSet;
+}
+
+int64_t SearchPersonsRequest::GetNeedPersonInfo() const
+{
+    return m_needPersonInfo;
+}
+
+void SearchPersonsRequest::SetNeedPersonInfo(const int64_t& _needPersonInfo)
+{
+    m_needPersonInfo = _needPersonInfo;
+    m_needPersonInfoHasBeenSet = true;
+}
+
+bool SearchPersonsRequest::NeedPersonInfoHasBeenSet() const
+{
+    return m_needPersonInfoHasBeenSet;
 }
 
 

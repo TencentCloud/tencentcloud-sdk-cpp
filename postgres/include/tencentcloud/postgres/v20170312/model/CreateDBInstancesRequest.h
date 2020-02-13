@@ -258,6 +258,24 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取续费标记：0-正常续费（默认）；1-自动续费；
+                     * @return AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费；
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置续费标记：0-正常续费（默认）；1-自动续费；
+                     * @param AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费；
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +349,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 续费标记：0-正常续费（默认）；1-自动续费；
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
 
                 };
             }

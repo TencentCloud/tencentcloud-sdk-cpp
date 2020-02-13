@@ -30,7 +30,9 @@ DomainInfo::DomainInfo() :
     m_targetDomainHasBeenSet(false),
     m_playTypeHasBeenSet(false),
     m_isDelayLiveHasBeenSet(false),
-    m_currentCNameHasBeenSet(false)
+    m_currentCNameHasBeenSet(false),
+    m_rentTagHasBeenSet(false),
+    m_rentExpireTimeHasBeenSet(false)
 {
 }
 
@@ -129,6 +131,26 @@ CoreInternalOutcome DomainInfo::Deserialize(const Value &value)
         m_currentCNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RentTag") && !value["RentTag"].IsNull())
+    {
+        if (!value["RentTag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DomainInfo.RentTag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rentTag = value["RentTag"].GetInt64();
+        m_rentTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("RentExpireTime") && !value["RentExpireTime"].IsNull())
+    {
+        if (!value["RentExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DomainInfo.RentExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rentExpireTime = string(value["RentExpireTime"].GetString());
+        m_rentExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +228,22 @@ void DomainInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "CurrentCName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_currentCName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rentTagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RentTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rentTag, allocator);
+    }
+
+    if (m_rentExpireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RentExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_rentExpireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +391,37 @@ void DomainInfo::SetCurrentCName(const string& _currentCName)
 bool DomainInfo::CurrentCNameHasBeenSet() const
 {
     return m_currentCNameHasBeenSet;
+}
+
+int64_t DomainInfo::GetRentTag() const
+{
+    return m_rentTag;
+}
+
+void DomainInfo::SetRentTag(const int64_t& _rentTag)
+{
+    m_rentTag = _rentTag;
+    m_rentTagHasBeenSet = true;
+}
+
+bool DomainInfo::RentTagHasBeenSet() const
+{
+    return m_rentTagHasBeenSet;
+}
+
+string DomainInfo::GetRentExpireTime() const
+{
+    return m_rentExpireTime;
+}
+
+void DomainInfo::SetRentExpireTime(const string& _rentExpireTime)
+{
+    m_rentExpireTime = _rentExpireTime;
+    m_rentExpireTimeHasBeenSet = true;
+}
+
+bool DomainInfo::RentExpireTimeHasBeenSet() const
+{
+    return m_rentExpireTimeHasBeenSet;
 }
 

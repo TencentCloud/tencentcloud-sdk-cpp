@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool TaskIdListHasBeenSet() const;
 
+                    /**
+                     * 获取任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     * @return Limit 任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     * @param Limit 任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_taskIdList;
                     bool m_taskIdListHasBeenSet;
+
+                    /**
+                     * 任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

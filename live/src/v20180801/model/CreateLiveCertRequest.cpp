@@ -25,10 +25,11 @@ using namespace std;
 
 CreateLiveCertRequest::CreateLiveCertRequest() :
     m_certTypeHasBeenSet(false),
+    m_certNameHasBeenSet(false),
     m_httpsCrtHasBeenSet(false),
     m_httpsKeyHasBeenSet(false),
-    m_certNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_cloudCertIdHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,14 @@ string CreateLiveCertRequest::ToJsonString() const
         d.AddMember(iKey, m_certType, allocator);
     }
 
+    if (m_certNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CertName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_certName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_httpsCrtHasBeenSet)
     {
         Value iKey(kStringType);
@@ -63,20 +72,20 @@ string CreateLiveCertRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_httpsKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_certNameHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CertName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_certName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_descriptionHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudCertIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CloudCertId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cloudCertId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -101,6 +110,22 @@ void CreateLiveCertRequest::SetCertType(const uint64_t& _certType)
 bool CreateLiveCertRequest::CertTypeHasBeenSet() const
 {
     return m_certTypeHasBeenSet;
+}
+
+string CreateLiveCertRequest::GetCertName() const
+{
+    return m_certName;
+}
+
+void CreateLiveCertRequest::SetCertName(const string& _certName)
+{
+    m_certName = _certName;
+    m_certNameHasBeenSet = true;
+}
+
+bool CreateLiveCertRequest::CertNameHasBeenSet() const
+{
+    return m_certNameHasBeenSet;
 }
 
 string CreateLiveCertRequest::GetHttpsCrt() const
@@ -135,22 +160,6 @@ bool CreateLiveCertRequest::HttpsKeyHasBeenSet() const
     return m_httpsKeyHasBeenSet;
 }
 
-string CreateLiveCertRequest::GetCertName() const
-{
-    return m_certName;
-}
-
-void CreateLiveCertRequest::SetCertName(const string& _certName)
-{
-    m_certName = _certName;
-    m_certNameHasBeenSet = true;
-}
-
-bool CreateLiveCertRequest::CertNameHasBeenSet() const
-{
-    return m_certNameHasBeenSet;
-}
-
 string CreateLiveCertRequest::GetDescription() const
 {
     return m_description;
@@ -165,6 +174,22 @@ void CreateLiveCertRequest::SetDescription(const string& _description)
 bool CreateLiveCertRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateLiveCertRequest::GetCloudCertId() const
+{
+    return m_cloudCertId;
+}
+
+void CreateLiveCertRequest::SetCloudCertId(const string& _cloudCertId)
+{
+    m_cloudCertId = _cloudCertId;
+    m_cloudCertIdHasBeenSet = true;
+}
+
+bool CreateLiveCertRequest::CloudCertIdHasBeenSet() const
+{
+    return m_cloudCertIdHasBeenSet;
 }
 
 

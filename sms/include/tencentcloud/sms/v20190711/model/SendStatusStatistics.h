@@ -47,78 +47,78 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条
-                     * @return BillingStatistics 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条
+                     * 获取短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
+                     * @return FeeCount 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
                      */
-                    uint64_t GetBillingStatistics() const;
+                    uint64_t GetFeeCount() const;
 
                     /**
-                     * 设置短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条
-                     * @param BillingStatistics 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条
+                     * 设置短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
+                     * @param FeeCount 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
                      */
-                    void SetBillingStatistics(const uint64_t& _billingStatistics);
+                    void SetFeeCount(const uint64_t& _feeCount);
 
                     /**
-                     * 判断参数 BillingStatistics 是否已赋值
-                     * @return BillingStatistics 是否已赋值
+                     * 判断参数 FeeCount 是否已赋值
+                     * @return FeeCount 是否已赋值
                      */
-                    bool BillingStatisticsHasBeenSet() const;
+                    bool FeeCountHasBeenSet() const;
 
                     /**
-                     * 获取短信提交量统计
-                     * @return RequestStatistics 短信提交量统计
+                     * 获取短信提交量统计。
+                     * @return RequestCount 短信提交量统计。
                      */
-                    uint64_t GetRequestStatistics() const;
+                    uint64_t GetRequestCount() const;
 
                     /**
-                     * 设置短信提交量统计
-                     * @param RequestStatistics 短信提交量统计
+                     * 设置短信提交量统计。
+                     * @param RequestCount 短信提交量统计。
                      */
-                    void SetRequestStatistics(const uint64_t& _requestStatistics);
+                    void SetRequestCount(const uint64_t& _requestCount);
 
                     /**
-                     * 判断参数 RequestStatistics 是否已赋值
-                     * @return RequestStatistics 是否已赋值
+                     * 判断参数 RequestCount 是否已赋值
+                     * @return RequestCount 是否已赋值
                      */
-                    bool RequestStatisticsHasBeenSet() const;
+                    bool RequestCountHasBeenSet() const;
 
                     /**
-                     * 获取短信提交成功量统计
-                     * @return RequestSuccessStatistics 短信提交成功量统计
+                     * 获取短信提交成功量统计。
+                     * @return RequestSuccessCount 短信提交成功量统计。
                      */
-                    uint64_t GetRequestSuccessStatistics() const;
+                    uint64_t GetRequestSuccessCount() const;
 
                     /**
-                     * 设置短信提交成功量统计
-                     * @param RequestSuccessStatistics 短信提交成功量统计
+                     * 设置短信提交成功量统计。
+                     * @param RequestSuccessCount 短信提交成功量统计。
                      */
-                    void SetRequestSuccessStatistics(const uint64_t& _requestSuccessStatistics);
+                    void SetRequestSuccessCount(const uint64_t& _requestSuccessCount);
 
                     /**
-                     * 判断参数 RequestSuccessStatistics 是否已赋值
-                     * @return RequestSuccessStatistics 是否已赋值
+                     * 判断参数 RequestSuccessCount 是否已赋值
+                     * @return RequestSuccessCount 是否已赋值
                      */
-                    bool RequestSuccessStatisticsHasBeenSet() const;
+                    bool RequestSuccessCountHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条
+                     * 短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。
                      */
-                    uint64_t m_billingStatistics;
-                    bool m_billingStatisticsHasBeenSet;
+                    uint64_t m_feeCount;
+                    bool m_feeCountHasBeenSet;
 
                     /**
-                     * 短信提交量统计
+                     * 短信提交量统计。
                      */
-                    uint64_t m_requestStatistics;
-                    bool m_requestStatisticsHasBeenSet;
+                    uint64_t m_requestCount;
+                    bool m_requestCountHasBeenSet;
 
                     /**
-                     * 短信提交成功量统计
+                     * 短信提交成功量统计。
                      */
-                    uint64_t m_requestSuccessStatistics;
-                    bool m_requestSuccessStatisticsHasBeenSet;
+                    uint64_t m_requestSuccessCount;
+                    bool m_requestSuccessCountHasBeenSet;
 
                 };
             }

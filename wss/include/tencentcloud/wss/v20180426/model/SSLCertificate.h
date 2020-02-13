@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取证书列表（SSLCertificate）返回参数键为CertificateSet的内容
+                * 获取证书列表（SSLCertificate）返回参数键为 CertificateSet 的内容。
                 */
                 class SSLCertificate : public AbstractModel
                 {
@@ -422,17 +422,17 @@ namespace TencentCloud
                     bool ProjectInfoHasBeenSet() const;
 
                     /**
-                     * 获取证书Id
+                     * 获取证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 证书Id
+                     * @return Id 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置证书Id
+                     * 设置证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 证书Id
+                     * @param Id 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetId(const std::string& _id);
@@ -741,7 +741,7 @@ namespace TencentCloud
                     bool m_projectInfoHasBeenSet;
 
                     /**
-                     * 证书Id
+                     * 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;

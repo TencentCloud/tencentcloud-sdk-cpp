@@ -40,6 +40,92 @@ TcbClient::TcbClient(const Credential &credential, const string &region, const C
 }
 
 
+TcbClient::CommonServiceAPIOutcome TcbClient::CommonServiceAPI(const CommonServiceAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "CommonServiceAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CommonServiceAPIResponse rsp = CommonServiceAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CommonServiceAPIOutcome(rsp);
+        else
+            return CommonServiceAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return CommonServiceAPIOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CommonServiceAPIAsync(const CommonServiceAPIRequest& request, const CommonServiceAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CommonServiceAPI(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CommonServiceAPIOutcomeCallable TcbClient::CommonServiceAPICallable(const CommonServiceAPIRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CommonServiceAPIOutcome()>>(
+        [this, request]()
+        {
+            return this->CommonServiceAPI(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::CreateMysqlInstanceOutcome TcbClient::CreateMysqlInstance(const CreateMysqlInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMysqlInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMysqlInstanceResponse rsp = CreateMysqlInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMysqlInstanceOutcome(rsp);
+        else
+            return CreateMysqlInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMysqlInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateMysqlInstanceAsync(const CreateMysqlInstanceRequest& request, const CreateMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMysqlInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateMysqlInstanceOutcomeCallable TcbClient::CreateMysqlInstanceCallable(const CreateMysqlInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMysqlInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMysqlInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeDatabaseACLOutcome TcbClient::DescribeDatabaseACL(const DescribeDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabaseACL");
@@ -126,6 +212,49 @@ TcbClient::DescribeEnvsOutcomeCallable TcbClient::DescribeEnvsCallable(const Des
     return task->get_future();
 }
 
+TcbClient::IsolateMysqlInstanceOutcome TcbClient::IsolateMysqlInstance(const IsolateMysqlInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateMysqlInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateMysqlInstanceResponse rsp = IsolateMysqlInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateMysqlInstanceOutcome(rsp);
+        else
+            return IsolateMysqlInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateMysqlInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::IsolateMysqlInstanceAsync(const IsolateMysqlInstanceRequest& request, const IsolateMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateMysqlInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::IsolateMysqlInstanceOutcomeCallable TcbClient::IsolateMysqlInstanceCallable(const IsolateMysqlInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateMysqlInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateMysqlInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::ModifyDatabaseACLOutcome TcbClient::ModifyDatabaseACL(const ModifyDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDatabaseACL");
@@ -205,6 +334,92 @@ TcbClient::ModifyEnvOutcomeCallable TcbClient::ModifyEnvCallable(const ModifyEnv
         [this, request]()
         {
             return this->ModifyEnv(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::OfflineMysqlInstanceOutcome TcbClient::OfflineMysqlInstance(const OfflineMysqlInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OfflineMysqlInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OfflineMysqlInstanceResponse rsp = OfflineMysqlInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OfflineMysqlInstanceOutcome(rsp);
+        else
+            return OfflineMysqlInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return OfflineMysqlInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::OfflineMysqlInstanceAsync(const OfflineMysqlInstanceRequest& request, const OfflineMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OfflineMysqlInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::OfflineMysqlInstanceOutcomeCallable TcbClient::OfflineMysqlInstanceCallable(const OfflineMysqlInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OfflineMysqlInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->OfflineMysqlInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::UpgradeMysqlInstanceOutcome TcbClient::UpgradeMysqlInstance(const UpgradeMysqlInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeMysqlInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeMysqlInstanceResponse rsp = UpgradeMysqlInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeMysqlInstanceOutcome(rsp);
+        else
+            return UpgradeMysqlInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeMysqlInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UpgradeMysqlInstanceAsync(const UpgradeMysqlInstanceRequest& request, const UpgradeMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeMysqlInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::UpgradeMysqlInstanceOutcomeCallable TcbClient::UpgradeMysqlInstanceCallable(const UpgradeMysqlInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeMysqlInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeMysqlInstance(request);
         }
     );
 

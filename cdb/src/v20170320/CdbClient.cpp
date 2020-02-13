@@ -126,6 +126,49 @@ CdbClient::AssociateSecurityGroupsOutcomeCallable CdbClient::AssociateSecurityGr
     return task->get_future();
 }
 
+CdbClient::BalanceRoGroupLoadOutcome CdbClient::BalanceRoGroupLoad(const BalanceRoGroupLoadRequest &request)
+{
+    auto outcome = MakeRequest(request, "BalanceRoGroupLoad");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BalanceRoGroupLoadResponse rsp = BalanceRoGroupLoadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BalanceRoGroupLoadOutcome(rsp);
+        else
+            return BalanceRoGroupLoadOutcome(o.GetError());
+    }
+    else
+    {
+        return BalanceRoGroupLoadOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::BalanceRoGroupLoadAsync(const BalanceRoGroupLoadRequest& request, const BalanceRoGroupLoadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BalanceRoGroupLoad(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::BalanceRoGroupLoadOutcomeCallable CdbClient::BalanceRoGroupLoadCallable(const BalanceRoGroupLoadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BalanceRoGroupLoadOutcome()>>(
+        [this, request]()
+        {
+            return this->BalanceRoGroupLoad(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::CloseWanServiceOutcome CdbClient::CloseWanService(const CloseWanServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseWanService");
@@ -900,6 +943,92 @@ CdbClient::DescribeBackupDatabasesOutcomeCallable CdbClient::DescribeBackupDatab
     return task->get_future();
 }
 
+CdbClient::DescribeBackupOverviewOutcome CdbClient::DescribeBackupOverview(const DescribeBackupOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupOverviewResponse rsp = DescribeBackupOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupOverviewOutcome(rsp);
+        else
+            return DescribeBackupOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeBackupOverviewAsync(const DescribeBackupOverviewRequest& request, const DescribeBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeBackupOverviewOutcomeCallable CdbClient::DescribeBackupOverviewCallable(const DescribeBackupOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeBackupSummariesOutcome CdbClient::DescribeBackupSummaries(const DescribeBackupSummariesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupSummaries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupSummariesResponse rsp = DescribeBackupSummariesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupSummariesOutcome(rsp);
+        else
+            return DescribeBackupSummariesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupSummariesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeBackupSummariesAsync(const DescribeBackupSummariesRequest& request, const DescribeBackupSummariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupSummaries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeBackupSummariesOutcomeCallable CdbClient::DescribeBackupSummariesCallable(const DescribeBackupSummariesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupSummariesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupSummaries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeBackupTablesOutcome CdbClient::DescribeBackupTables(const DescribeBackupTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupTables");
@@ -979,6 +1108,49 @@ CdbClient::DescribeBackupsOutcomeCallable CdbClient::DescribeBackupsCallable(con
         [this, request]()
         {
             return this->DescribeBackups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeBinlogBackupOverviewOutcome CdbClient::DescribeBinlogBackupOverview(const DescribeBinlogBackupOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBinlogBackupOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBinlogBackupOverviewResponse rsp = DescribeBinlogBackupOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBinlogBackupOverviewOutcome(rsp);
+        else
+            return DescribeBinlogBackupOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBinlogBackupOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeBinlogBackupOverviewAsync(const DescribeBinlogBackupOverviewRequest& request, const DescribeBinlogBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBinlogBackupOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeBinlogBackupOverviewOutcomeCallable CdbClient::DescribeBinlogBackupOverviewCallable(const DescribeBinlogBackupOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBinlogBackupOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBinlogBackupOverview(request);
         }
     );
 
@@ -1459,6 +1631,49 @@ CdbClient::DescribeDBZoneConfigOutcomeCallable CdbClient::DescribeDBZoneConfigCa
     return task->get_future();
 }
 
+CdbClient::DescribeDataBackupOverviewOutcome CdbClient::DescribeDataBackupOverview(const DescribeDataBackupOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataBackupOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataBackupOverviewResponse rsp = DescribeDataBackupOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataBackupOverviewOutcome(rsp);
+        else
+            return DescribeDataBackupOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataBackupOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeDataBackupOverviewAsync(const DescribeDataBackupOverviewRequest& request, const DescribeDataBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataBackupOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeDataBackupOverviewOutcomeCallable CdbClient::DescribeDataBackupOverviewCallable(const DescribeDataBackupOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataBackupOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataBackupOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeDatabasesOutcome CdbClient::DescribeDatabases(const DescribeDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabases");
@@ -1839,6 +2054,49 @@ CdbClient::DescribeProjectSecurityGroupsOutcomeCallable CdbClient::DescribeProje
         [this, request]()
         {
             return this->DescribeProjectSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeRoGroupsOutcome CdbClient::DescribeRoGroups(const DescribeRoGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoGroupsResponse rsp = DescribeRoGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoGroupsOutcome(rsp);
+        else
+            return DescribeRoGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeRoGroupsAsync(const DescribeRoGroupsRequest& request, const DescribeRoGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeRoGroupsOutcomeCallable CdbClient::DescribeRoGroupsCallable(const DescribeRoGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoGroups(request);
         }
     );
 
@@ -2921,6 +3179,49 @@ CdbClient::ModifyParamTemplateOutcomeCallable CdbClient::ModifyParamTemplateCall
     return task->get_future();
 }
 
+CdbClient::ModifyRoGroupInfoOutcome CdbClient::ModifyRoGroupInfo(const ModifyRoGroupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoGroupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoGroupInfoResponse rsp = ModifyRoGroupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoGroupInfoOutcome(rsp);
+        else
+            return ModifyRoGroupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoGroupInfoOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyRoGroupInfoAsync(const ModifyRoGroupInfoRequest& request, const ModifyRoGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoGroupInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyRoGroupInfoOutcomeCallable CdbClient::ModifyRoGroupInfoCallable(const ModifyRoGroupInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoGroupInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoGroupInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyTimeWindowOutcome CdbClient::ModifyTimeWindow(const ModifyTimeWindowRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTimeWindow");
@@ -3086,6 +3387,49 @@ CdbClient::OpenWanServiceOutcomeCallable CdbClient::OpenWanServiceCallable(const
         [this, request]()
         {
             return this->OpenWanService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ReleaseIsolatedDBInstancesOutcome CdbClient::ReleaseIsolatedDBInstances(const ReleaseIsolatedDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseIsolatedDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseIsolatedDBInstancesResponse rsp = ReleaseIsolatedDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseIsolatedDBInstancesOutcome(rsp);
+        else
+            return ReleaseIsolatedDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseIsolatedDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ReleaseIsolatedDBInstancesAsync(const ReleaseIsolatedDBInstancesRequest& request, const ReleaseIsolatedDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseIsolatedDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ReleaseIsolatedDBInstancesOutcomeCallable CdbClient::ReleaseIsolatedDBInstancesCallable(const ReleaseIsolatedDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseIsolatedDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseIsolatedDBInstances(request);
         }
     );
 

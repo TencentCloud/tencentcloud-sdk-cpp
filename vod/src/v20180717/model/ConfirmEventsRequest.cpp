@@ -25,6 +25,7 @@ using namespace std;
 
 ConfirmEventsRequest::ConfirmEventsRequest() :
     m_eventHandlesHasBeenSet(false),
+    m_extInfoHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -47,6 +48,14 @@ string ConfirmEventsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -79,6 +88,22 @@ void ConfirmEventsRequest::SetEventHandles(const vector<string>& _eventHandles)
 bool ConfirmEventsRequest::EventHandlesHasBeenSet() const
 {
     return m_eventHandlesHasBeenSet;
+}
+
+string ConfirmEventsRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void ConfirmEventsRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool ConfirmEventsRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 uint64_t ConfirmEventsRequest::GetSubAppId() const

@@ -27,7 +27,8 @@ HostResource::HostResource() :
     m_memTotalHasBeenSet(false),
     m_memAvailableHasBeenSet(false),
     m_diskTotalHasBeenSet(false),
-    m_diskAvailableHasBeenSet(false)
+    m_diskAvailableHasBeenSet(false),
+    m_diskTypeHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome HostResource::Deserialize(const Value &value)
         m_diskAvailableHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskType") && !value["DiskType"].IsNull())
+    {
+        if (!value["DiskType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HostResource.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskType = string(value["DiskType"].GetString());
+        m_diskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "DiskAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskAvailable, allocator);
+    }
+
+    if (m_diskTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void HostResource::SetDiskAvailable(const uint64_t& _diskAvailable)
 bool HostResource::DiskAvailableHasBeenSet() const
 {
     return m_diskAvailableHasBeenSet;
+}
+
+string HostResource::GetDiskType() const
+{
+    return m_diskType;
+}
+
+void HostResource::SetDiskType(const string& _diskType)
+{
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
+}
+
+bool HostResource::DiskTypeHasBeenSet() const
+{
+    return m_diskTypeHasBeenSet;
 }
 

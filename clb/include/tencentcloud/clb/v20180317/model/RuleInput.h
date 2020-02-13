@@ -161,14 +161,14 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡与后端服务之间的转发协议，目前支持 HTTP
-                     * @return ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     * 获取负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
+                     * @return ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
                      */
                     std::string GetForwardType() const;
 
                     /**
-                     * 设置负载均衡与后端服务之间的转发协议，目前支持 HTTP
-                     * @param ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     * 设置负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
+                     * @param ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
                      */
                     void SetForwardType(const std::string& _forwardType);
 
@@ -197,14 +197,14 @@ namespace TencentCloud
                     bool DefaultServerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Http2，注意，只用HTTPS域名才能开启Http2。
-                     * @return Http2 是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     * 获取是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * @return Http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
                      */
                     bool GetHttp2() const;
 
                     /**
-                     * 设置是否开启Http2，注意，只用HTTPS域名才能开启Http2。
-                     * @param Http2 是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     * 设置是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * @param Http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
                      */
                     void SetHttp2(const bool& _http2);
 
@@ -231,6 +231,42 @@ namespace TencentCloud
                      * @return TargetType 是否已赋值
                      */
                     bool TargetTypeHasBeenSet() const;
+
+                    /**
+                     * 获取TRPC被调服务器路由，ForwardType为TRPC时必填
+                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填
+                     */
+                    std::string GetTrpcCallee() const;
+
+                    /**
+                     * 设置TRPC被调服务器路由，ForwardType为TRPC时必填
+                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填
+                     */
+                    void SetTrpcCallee(const std::string& _trpcCallee);
+
+                    /**
+                     * 判断参数 TrpcCallee 是否已赋值
+                     * @return TrpcCallee 是否已赋值
+                     */
+                    bool TrpcCalleeHasBeenSet() const;
+
+                    /**
+                     * 获取TRPC调用服务接口，ForwardType为TRPC时必填
+                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填
+                     */
+                    std::string GetTrpcFunc() const;
+
+                    /**
+                     * 设置TRPC调用服务接口，ForwardType为TRPC时必填
+                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填
+                     */
+                    void SetTrpcFunc(const std::string& _trpcFunc);
+
+                    /**
+                     * 判断参数 TrpcFunc 是否已赋值
+                     * @return TrpcFunc 是否已赋值
+                     */
+                    bool TrpcFuncHasBeenSet() const;
 
                 private:
 
@@ -272,7 +308,7 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 负载均衡与后端服务之间的转发协议，目前支持 HTTP
+                     * 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
                      */
                     std::string m_forwardType;
                     bool m_forwardTypeHasBeenSet;
@@ -284,7 +320,7 @@ namespace TencentCloud
                     bool m_defaultServerHasBeenSet;
 
                     /**
-                     * 是否开启Http2，注意，只用HTTPS域名才能开启Http2。
+                     * 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
                      */
                     bool m_http2;
                     bool m_http2HasBeenSet;
@@ -294,6 +330,18 @@ namespace TencentCloud
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
+
+                    /**
+                     * TRPC被调服务器路由，ForwardType为TRPC时必填
+                     */
+                    std::string m_trpcCallee;
+                    bool m_trpcCalleeHasBeenSet;
+
+                    /**
+                     * TRPC调用服务接口，ForwardType为TRPC时必填
+                     */
+                    std::string m_trpcFunc;
+                    bool m_trpcFuncHasBeenSet;
 
                 };
             }

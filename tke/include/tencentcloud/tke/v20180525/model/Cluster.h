@@ -250,6 +250,28 @@ namespace TencentCloud
                      */
                     bool ClusterStatusHasBeenSet() const;
 
+                    /**
+                     * 获取集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Property 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProperty() const;
+
+                    /**
+                     * 设置集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Property 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProperty(const std::string& _property);
+
+                    /**
+                     * 判断参数 Property 是否已赋值
+                     * @return Property 是否已赋值
+                     */
+                    bool PropertyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +340,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_property;
+                    bool m_propertyHasBeenSet;
 
                 };
             }

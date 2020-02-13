@@ -27,7 +27,6 @@ SendTransactionHandlerRequest::SendTransactionHandlerRequest() :
     m_moduleHasBeenSet(false),
     m_operationHasBeenSet(false),
     m_groupPkHasBeenSet(false),
-    m_keyUserHasBeenSet(false),
     m_contractIdHasBeenSet(false),
     m_funcNameHasBeenSet(false),
     m_funcParamHasBeenSet(false)
@@ -63,14 +62,6 @@ string SendTransactionHandlerRequest::ToJsonString() const
         string key = "GroupPk";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_groupPk.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_keyUserHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "KeyUser";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_keyUser.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contractIdHasBeenSet)
@@ -156,22 +147,6 @@ void SendTransactionHandlerRequest::SetGroupPk(const string& _groupPk)
 bool SendTransactionHandlerRequest::GroupPkHasBeenSet() const
 {
     return m_groupPkHasBeenSet;
-}
-
-string SendTransactionHandlerRequest::GetKeyUser() const
-{
-    return m_keyUser;
-}
-
-void SendTransactionHandlerRequest::SetKeyUser(const string& _keyUser)
-{
-    m_keyUser = _keyUser;
-    m_keyUserHasBeenSet = true;
-}
-
-bool SendTransactionHandlerRequest::KeyUserHasBeenSet() const
-{
-    return m_keyUserHasBeenSet;
 }
 
 int64_t SendTransactionHandlerRequest::GetContractId() const

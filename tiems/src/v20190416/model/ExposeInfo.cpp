@@ -25,7 +25,10 @@ ExposeInfo::ExposeInfo() :
     m_exposeTypeHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_gateWayServiceIdHasBeenSet(false),
+    m_gateWayAPIIdHasBeenSet(false),
+    m_gateWayDomainHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,36 @@ CoreInternalOutcome ExposeInfo::Deserialize(const Value &value)
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("GateWayServiceId") && !value["GateWayServiceId"].IsNull())
+    {
+        if (!value["GateWayServiceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExposeInfo.GateWayServiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gateWayServiceId = string(value["GateWayServiceId"].GetString());
+        m_gateWayServiceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GateWayAPIId") && !value["GateWayAPIId"].IsNull())
+    {
+        if (!value["GateWayAPIId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExposeInfo.GateWayAPIId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gateWayAPIId = string(value["GateWayAPIId"].GetString());
+        m_gateWayAPIIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GateWayDomain") && !value["GateWayDomain"].IsNull())
+    {
+        if (!value["GateWayDomain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExposeInfo.GateWayDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gateWayDomain = string(value["GateWayDomain"].GetString());
+        m_gateWayDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +144,30 @@ void ExposeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gateWayServiceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GateWayServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gateWayServiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gateWayAPIIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GateWayAPIId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gateWayAPIId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gateWayDomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GateWayDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gateWayDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +235,53 @@ void ExposeInfo::SetSubnetId(const string& _subnetId)
 bool ExposeInfo::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string ExposeInfo::GetGateWayServiceId() const
+{
+    return m_gateWayServiceId;
+}
+
+void ExposeInfo::SetGateWayServiceId(const string& _gateWayServiceId)
+{
+    m_gateWayServiceId = _gateWayServiceId;
+    m_gateWayServiceIdHasBeenSet = true;
+}
+
+bool ExposeInfo::GateWayServiceIdHasBeenSet() const
+{
+    return m_gateWayServiceIdHasBeenSet;
+}
+
+string ExposeInfo::GetGateWayAPIId() const
+{
+    return m_gateWayAPIId;
+}
+
+void ExposeInfo::SetGateWayAPIId(const string& _gateWayAPIId)
+{
+    m_gateWayAPIId = _gateWayAPIId;
+    m_gateWayAPIIdHasBeenSet = true;
+}
+
+bool ExposeInfo::GateWayAPIIdHasBeenSet() const
+{
+    return m_gateWayAPIIdHasBeenSet;
+}
+
+string ExposeInfo::GetGateWayDomain() const
+{
+    return m_gateWayDomain;
+}
+
+void ExposeInfo::SetGateWayDomain(const string& _gateWayDomain)
+{
+    m_gateWayDomain = _gateWayDomain;
+    m_gateWayDomainHasBeenSet = true;
+}
+
+bool ExposeInfo::GateWayDomainHasBeenSet() const
+{
+    return m_gateWayDomainHasBeenSet;
 }
 

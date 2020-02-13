@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组的亲和性策略，目前仅支持取值为1，策略1表示同台物理机上限制实例的个数。
+                     * @return Affinity 置放群组的亲和性策略，目前仅支持取值为1，策略1表示同台物理机上限制实例的个数。
+                     */
+                    std::vector<int64_t> GetAffinity() const;
+
+                    /**
+                     * 设置置放群组的亲和性策略，目前仅支持取值为1，策略1表示同台物理机上限制实例的个数。
+                     * @param Affinity 置放群组的亲和性策略，目前仅支持取值为1，策略1表示同台物理机上限制实例的个数。
+                     */
+                    void SetAffinity(const std::vector<int64_t>& _affinity);
+
+                    /**
+                     * 判断参数 Affinity 是否已赋值
+                     * @return Affinity 是否已赋值
+                     */
+                    bool AffinityHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组亲和性策略1中同台物理机上实例的限制个数。
+                     * @return LimitNum 置放群组亲和性策略1中同台物理机上实例的限制个数。
+                     */
+                    int64_t GetLimitNum() const;
+
+                    /**
+                     * 设置置放群组亲和性策略1中同台物理机上实例的限制个数。
+                     * @param LimitNum 置放群组亲和性策略1中同台物理机上实例的限制个数。
+                     */
+                    void SetLimitNum(const int64_t& _limitNum);
+
+                    /**
+                     * 判断参数 LimitNum 是否已赋值
+                     * @return LimitNum 是否已赋值
+                     */
+                    bool LimitNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 置放群组的亲和性策略，目前仅支持取值为1，策略1表示同台物理机上限制实例的个数。
+                     */
+                    std::vector<int64_t> m_affinity;
+                    bool m_affinityHasBeenSet;
+
+                    /**
+                     * 置放群组亲和性策略1中同台物理机上实例的限制个数。
+                     */
+                    int64_t m_limitNum;
+                    bool m_limitNumHasBeenSet;
 
                 };
             }

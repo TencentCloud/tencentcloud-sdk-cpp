@@ -126,6 +126,49 @@ TbaasClient::BlockByNumberHandlerOutcomeCallable TbaasClient::BlockByNumberHandl
     return task->get_future();
 }
 
+TbaasClient::DeployDynamicContractHandlerOutcome TbaasClient::DeployDynamicContractHandler(const DeployDynamicContractHandlerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployDynamicContractHandler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployDynamicContractHandlerResponse rsp = DeployDynamicContractHandlerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployDynamicContractHandlerOutcome(rsp);
+        else
+            return DeployDynamicContractHandlerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployDynamicContractHandlerOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::DeployDynamicContractHandlerAsync(const DeployDynamicContractHandlerRequest& request, const DeployDynamicContractHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployDynamicContractHandler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::DeployDynamicContractHandlerOutcomeCallable TbaasClient::DeployDynamicContractHandlerCallable(const DeployDynamicContractHandlerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployDynamicContractHandlerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployDynamicContractHandler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::DownloadUserCertOutcome TbaasClient::DownloadUserCert(const DownloadUserCertRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadUserCert");
@@ -248,6 +291,49 @@ TbaasClient::GetBlockListHandlerOutcomeCallable TbaasClient::GetBlockListHandler
         [this, request]()
         {
             return this->GetBlockListHandler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::GetBlockTransactionListForUserOutcome TbaasClient::GetBlockTransactionListForUser(const GetBlockTransactionListForUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetBlockTransactionListForUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetBlockTransactionListForUserResponse rsp = GetBlockTransactionListForUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetBlockTransactionListForUserOutcome(rsp);
+        else
+            return GetBlockTransactionListForUserOutcome(o.GetError());
+    }
+    else
+    {
+        return GetBlockTransactionListForUserOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetBlockTransactionListForUserAsync(const GetBlockTransactionListForUserRequest& request, const GetBlockTransactionListForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetBlockTransactionListForUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetBlockTransactionListForUserOutcomeCallable TbaasClient::GetBlockTransactionListForUserCallable(const GetBlockTransactionListForUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetBlockTransactionListForUserOutcome()>>(
+        [this, request]()
+        {
+            return this->GetBlockTransactionListForUser(request);
         }
     );
 
@@ -678,6 +764,49 @@ TbaasClient::SrvInvokeOutcomeCallable TbaasClient::SrvInvokeCallable(const SrvIn
         [this, request]()
         {
             return this->SrvInvoke(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::TransByDynamicContractHandlerOutcome TbaasClient::TransByDynamicContractHandler(const TransByDynamicContractHandlerRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransByDynamicContractHandler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransByDynamicContractHandlerResponse rsp = TransByDynamicContractHandlerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransByDynamicContractHandlerOutcome(rsp);
+        else
+            return TransByDynamicContractHandlerOutcome(o.GetError());
+    }
+    else
+    {
+        return TransByDynamicContractHandlerOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::TransByDynamicContractHandlerAsync(const TransByDynamicContractHandlerRequest& request, const TransByDynamicContractHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransByDynamicContractHandler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::TransByDynamicContractHandlerOutcomeCallable TbaasClient::TransByDynamicContractHandlerCallable(const TransByDynamicContractHandlerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransByDynamicContractHandlerOutcome()>>(
+        [this, request]()
+        {
+            return this->TransByDynamicContractHandler(request);
         }
     );
 

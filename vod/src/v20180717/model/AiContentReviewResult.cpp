@@ -29,7 +29,10 @@ AiContentReviewResult::AiContentReviewResult() :
     m_pornAsrTaskHasBeenSet(false),
     m_pornOcrTaskHasBeenSet(false),
     m_politicalAsrTaskHasBeenSet(false),
-    m_politicalOcrTaskHasBeenSet(false)
+    m_politicalOcrTaskHasBeenSet(false),
+    m_terrorismOcrTaskHasBeenSet(false),
+    m_prohibitedAsrTaskHasBeenSet(false),
+    m_prohibitedOcrTaskHasBeenSet(false)
 {
 }
 
@@ -167,6 +170,57 @@ CoreInternalOutcome AiContentReviewResult::Deserialize(const Value &value)
         m_politicalOcrTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("TerrorismOcrTask") && !value["TerrorismOcrTask"].IsNull())
+    {
+        if (!value["TerrorismOcrTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AiContentReviewResult.TerrorismOcrTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_terrorismOcrTask.Deserialize(value["TerrorismOcrTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_terrorismOcrTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProhibitedAsrTask") && !value["ProhibitedAsrTask"].IsNull())
+    {
+        if (!value["ProhibitedAsrTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AiContentReviewResult.ProhibitedAsrTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_prohibitedAsrTask.Deserialize(value["ProhibitedAsrTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_prohibitedAsrTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProhibitedOcrTask") && !value["ProhibitedOcrTask"].IsNull())
+    {
+        if (!value["ProhibitedOcrTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AiContentReviewResult.ProhibitedOcrTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_prohibitedOcrTask.Deserialize(value["ProhibitedOcrTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_prohibitedOcrTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +297,33 @@ void AiContentReviewResult::ToJsonObject(Value &value, Document::AllocatorType& 
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_politicalOcrTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_terrorismOcrTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TerrorismOcrTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_terrorismOcrTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prohibitedAsrTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProhibitedAsrTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_prohibitedAsrTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prohibitedOcrTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProhibitedOcrTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_prohibitedOcrTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -374,5 +455,53 @@ void AiContentReviewResult::SetPoliticalOcrTask(const AiReviewTaskPoliticalOcrRe
 bool AiContentReviewResult::PoliticalOcrTaskHasBeenSet() const
 {
     return m_politicalOcrTaskHasBeenSet;
+}
+
+AiReviewTaskTerrorismOcrResult AiContentReviewResult::GetTerrorismOcrTask() const
+{
+    return m_terrorismOcrTask;
+}
+
+void AiContentReviewResult::SetTerrorismOcrTask(const AiReviewTaskTerrorismOcrResult& _terrorismOcrTask)
+{
+    m_terrorismOcrTask = _terrorismOcrTask;
+    m_terrorismOcrTaskHasBeenSet = true;
+}
+
+bool AiContentReviewResult::TerrorismOcrTaskHasBeenSet() const
+{
+    return m_terrorismOcrTaskHasBeenSet;
+}
+
+AiReviewTaskProhibitedAsrResult AiContentReviewResult::GetProhibitedAsrTask() const
+{
+    return m_prohibitedAsrTask;
+}
+
+void AiContentReviewResult::SetProhibitedAsrTask(const AiReviewTaskProhibitedAsrResult& _prohibitedAsrTask)
+{
+    m_prohibitedAsrTask = _prohibitedAsrTask;
+    m_prohibitedAsrTaskHasBeenSet = true;
+}
+
+bool AiContentReviewResult::ProhibitedAsrTaskHasBeenSet() const
+{
+    return m_prohibitedAsrTaskHasBeenSet;
+}
+
+AiReviewTaskProhibitedOcrResult AiContentReviewResult::GetProhibitedOcrTask() const
+{
+    return m_prohibitedOcrTask;
+}
+
+void AiContentReviewResult::SetProhibitedOcrTask(const AiReviewTaskProhibitedOcrResult& _prohibitedOcrTask)
+{
+    m_prohibitedOcrTask = _prohibitedOcrTask;
+    m_prohibitedOcrTaskHasBeenSet = true;
+}
+
+bool AiContentReviewResult::ProhibitedOcrTaskHasBeenSet() const
+{
+    return m_prohibitedOcrTaskHasBeenSet;
 }
 

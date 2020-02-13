@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool ExclusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取按独享集群Id过滤实例，独享集群Id形如dbdc-4ih6uct9
-                     * @return ExclusterIds 按独享集群Id过滤实例，独享集群Id形如dbdc-4ih6uct9
+                     * 获取按独享集群ID过滤实例，独享集群ID形如dbdc-4ih6uct9
+                     * @return ExclusterIds 按独享集群ID过滤实例，独享集群ID形如dbdc-4ih6uct9
                      */
                     std::vector<std::string> GetExclusterIds() const;
 
                     /**
-                     * 设置按独享集群Id过滤实例，独享集群Id形如dbdc-4ih6uct9
-                     * @param ExclusterIds 按独享集群Id过滤实例，独享集群Id形如dbdc-4ih6uct9
+                     * 设置按独享集群ID过滤实例，独享集群ID形如dbdc-4ih6uct9
+                     * @param ExclusterIds 按独享集群ID过滤实例，独享集群ID形如dbdc-4ih6uct9
                      */
                     void SetExclusterIds(const std::vector<std::string>& _exclusterIds);
 
@@ -399,7 +399,7 @@ namespace TencentCloud
                     bool m_exclusterTypeHasBeenSet;
 
                     /**
-                     * 按独享集群Id过滤实例，独享集群Id形如dbdc-4ih6uct9
+                     * 按独享集群ID过滤实例，独享集群ID形如dbdc-4ih6uct9
                      */
                     std::vector<std::string> m_exclusterIds;
                     bool m_exclusterIdsHasBeenSet;

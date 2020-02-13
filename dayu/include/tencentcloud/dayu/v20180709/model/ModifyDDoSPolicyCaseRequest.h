@@ -438,6 +438,42 @@ namespace TencentCloud
                      */
                     bool HasVPNHasBeenSet() const;
 
+                    /**
+                     * 获取TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     * @return TcpPortList TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     */
+                    std::string GetTcpPortList() const;
+
+                    /**
+                     * 设置TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     * @param TcpPortList TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     */
+                    void SetTcpPortList(const std::string& _tcpPortList);
+
+                    /**
+                     * 判断参数 TcpPortList 是否已赋值
+                     * @return TcpPortList 是否已赋值
+                     */
+                    bool TcpPortListHasBeenSet() const;
+
+                    /**
+                     * 获取UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     * @return UdpPortList UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     */
+                    std::string GetUdpPortList() const;
+
+                    /**
+                     * 设置UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     * @param UdpPortList UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     */
+                    void SetUdpPortList(const std::string& _udpPortList);
+
+                    /**
+                     * 判断参数 UdpPortList 是否已赋值
+                     * @return UdpPortList 是否已赋值
+                     */
+                    bool UdpPortListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -571,6 +607,18 @@ namespace TencentCloud
                      */
                     std::string m_hasVPN;
                     bool m_hasVPNHasBeenSet;
+
+                    /**
+                     * TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     */
+                    std::string m_tcpPortList;
+                    bool m_tcpPortListHasBeenSet;
+
+                    /**
+                     * UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000
+                     */
+                    std::string m_udpPortList;
+                    bool m_udpPortListHasBeenSet;
 
                 };
             }

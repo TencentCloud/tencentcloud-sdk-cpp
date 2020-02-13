@@ -22,9 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 SendStatusStatistics::SendStatusStatistics() :
-    m_billingStatisticsHasBeenSet(false),
-    m_requestStatisticsHasBeenSet(false),
-    m_requestSuccessStatisticsHasBeenSet(false)
+    m_feeCountHasBeenSet(false),
+    m_requestCountHasBeenSet(false),
+    m_requestSuccessCountHasBeenSet(false)
 {
 }
 
@@ -33,34 +33,34 @@ CoreInternalOutcome SendStatusStatistics::Deserialize(const Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("BillingStatistics") && !value["BillingStatistics"].IsNull())
+    if (value.HasMember("FeeCount") && !value["FeeCount"].IsNull())
     {
-        if (!value["BillingStatistics"].IsUint64())
+        if (!value["FeeCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendStatusStatistics.BillingStatistics` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SendStatusStatistics.FeeCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_billingStatistics = value["BillingStatistics"].GetUint64();
-        m_billingStatisticsHasBeenSet = true;
+        m_feeCount = value["FeeCount"].GetUint64();
+        m_feeCountHasBeenSet = true;
     }
 
-    if (value.HasMember("RequestStatistics") && !value["RequestStatistics"].IsNull())
+    if (value.HasMember("RequestCount") && !value["RequestCount"].IsNull())
     {
-        if (!value["RequestStatistics"].IsUint64())
+        if (!value["RequestCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendStatusStatistics.RequestStatistics` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SendStatusStatistics.RequestCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_requestStatistics = value["RequestStatistics"].GetUint64();
-        m_requestStatisticsHasBeenSet = true;
+        m_requestCount = value["RequestCount"].GetUint64();
+        m_requestCountHasBeenSet = true;
     }
 
-    if (value.HasMember("RequestSuccessStatistics") && !value["RequestSuccessStatistics"].IsNull())
+    if (value.HasMember("RequestSuccessCount") && !value["RequestSuccessCount"].IsNull())
     {
-        if (!value["RequestSuccessStatistics"].IsUint64())
+        if (!value["RequestSuccessCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SendStatusStatistics.RequestSuccessStatistics` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SendStatusStatistics.RequestSuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_requestSuccessStatistics = value["RequestSuccessStatistics"].GetUint64();
-        m_requestSuccessStatisticsHasBeenSet = true;
+        m_requestSuccessCount = value["RequestSuccessCount"].GetUint64();
+        m_requestSuccessCountHasBeenSet = true;
     }
 
 
@@ -70,78 +70,78 @@ CoreInternalOutcome SendStatusStatistics::Deserialize(const Value &value)
 void SendStatusStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_billingStatisticsHasBeenSet)
+    if (m_feeCountHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "BillingStatistics";
+        string key = "FeeCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_billingStatistics, allocator);
+        value.AddMember(iKey, m_feeCount, allocator);
     }
 
-    if (m_requestStatisticsHasBeenSet)
+    if (m_requestCountHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "RequestStatistics";
+        string key = "RequestCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_requestStatistics, allocator);
+        value.AddMember(iKey, m_requestCount, allocator);
     }
 
-    if (m_requestSuccessStatisticsHasBeenSet)
+    if (m_requestSuccessCountHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "RequestSuccessStatistics";
+        string key = "RequestSuccessCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_requestSuccessStatistics, allocator);
+        value.AddMember(iKey, m_requestSuccessCount, allocator);
     }
 
 }
 
 
-uint64_t SendStatusStatistics::GetBillingStatistics() const
+uint64_t SendStatusStatistics::GetFeeCount() const
 {
-    return m_billingStatistics;
+    return m_feeCount;
 }
 
-void SendStatusStatistics::SetBillingStatistics(const uint64_t& _billingStatistics)
+void SendStatusStatistics::SetFeeCount(const uint64_t& _feeCount)
 {
-    m_billingStatistics = _billingStatistics;
-    m_billingStatisticsHasBeenSet = true;
+    m_feeCount = _feeCount;
+    m_feeCountHasBeenSet = true;
 }
 
-bool SendStatusStatistics::BillingStatisticsHasBeenSet() const
+bool SendStatusStatistics::FeeCountHasBeenSet() const
 {
-    return m_billingStatisticsHasBeenSet;
+    return m_feeCountHasBeenSet;
 }
 
-uint64_t SendStatusStatistics::GetRequestStatistics() const
+uint64_t SendStatusStatistics::GetRequestCount() const
 {
-    return m_requestStatistics;
+    return m_requestCount;
 }
 
-void SendStatusStatistics::SetRequestStatistics(const uint64_t& _requestStatistics)
+void SendStatusStatistics::SetRequestCount(const uint64_t& _requestCount)
 {
-    m_requestStatistics = _requestStatistics;
-    m_requestStatisticsHasBeenSet = true;
+    m_requestCount = _requestCount;
+    m_requestCountHasBeenSet = true;
 }
 
-bool SendStatusStatistics::RequestStatisticsHasBeenSet() const
+bool SendStatusStatistics::RequestCountHasBeenSet() const
 {
-    return m_requestStatisticsHasBeenSet;
+    return m_requestCountHasBeenSet;
 }
 
-uint64_t SendStatusStatistics::GetRequestSuccessStatistics() const
+uint64_t SendStatusStatistics::GetRequestSuccessCount() const
 {
-    return m_requestSuccessStatistics;
+    return m_requestSuccessCount;
 }
 
-void SendStatusStatistics::SetRequestSuccessStatistics(const uint64_t& _requestSuccessStatistics)
+void SendStatusStatistics::SetRequestSuccessCount(const uint64_t& _requestSuccessCount)
 {
-    m_requestSuccessStatistics = _requestSuccessStatistics;
-    m_requestSuccessStatisticsHasBeenSet = true;
+    m_requestSuccessCount = _requestSuccessCount;
+    m_requestSuccessCountHasBeenSet = true;
 }
 
-bool SendStatusStatistics::RequestSuccessStatisticsHasBeenSet() const
+bool SendStatusStatistics::RequestSuccessCountHasBeenSet() const
 {
-    return m_requestSuccessStatisticsHasBeenSet;
+    return m_requestSuccessCountHasBeenSet;
 }
 

@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool OpenStatusHasBeenSet() const;
 
                     /**
-                     * 获取秘钥生成时间
-                     * @return CreateTime 秘钥生成时间
+                     * 获取密钥生成时间
+                     * @return CreateTime 密钥生成时间
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置秘钥生成时间
-                     * @param CreateTime 秘钥生成时间
+                     * 设置密钥生成时间
+                     * @param CreateTime 密钥生成时间
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_openStatusHasBeenSet;
 
                     /**
-                     * 秘钥生成时间
+                     * 密钥生成时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

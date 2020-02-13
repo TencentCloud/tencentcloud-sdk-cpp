@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/TerrorismImgReviewTemplateInfoForUpdate.h>
+#include <tencentcloud/mps/v20190612/model/TerrorismOcrReviewTemplateInfoForUpdate.h>
 
 
 namespace TencentCloud
@@ -65,6 +66,24 @@ namespace TencentCloud
                      */
                     bool ImgReviewInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文本鉴恐任务控制参数。
+                     * @return OcrReviewInfo 文本鉴恐任务控制参数。
+                     */
+                    TerrorismOcrReviewTemplateInfoForUpdate GetOcrReviewInfo() const;
+
+                    /**
+                     * 设置文本鉴恐任务控制参数。
+                     * @param OcrReviewInfo 文本鉴恐任务控制参数。
+                     */
+                    void SetOcrReviewInfo(const TerrorismOcrReviewTemplateInfoForUpdate& _ocrReviewInfo);
+
+                    /**
+                     * 判断参数 OcrReviewInfo 是否已赋值
+                     * @return OcrReviewInfo 是否已赋值
+                     */
+                    bool OcrReviewInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -72,6 +91,12 @@ namespace TencentCloud
                      */
                     TerrorismImgReviewTemplateInfoForUpdate m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
+
+                    /**
+                     * 文本鉴恐任务控制参数。
+                     */
+                    TerrorismOcrReviewTemplateInfoForUpdate m_ocrReviewInfo;
+                    bool m_ocrReviewInfoHasBeenSet;
 
                 };
             }

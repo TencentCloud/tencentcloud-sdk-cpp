@@ -107,17 +107,13 @@ namespace TencentCloud
 
                     /**
                      * 获取人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceConfigure 人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FaceConfigureInfo GetFaceConfigure() const;
 
                     /**
                      * 设置人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FaceConfigure 人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFaceConfigure(const FaceConfigureInfo& _faceConfigure);
 
@@ -129,17 +125,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrFullTextConfigure 文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OcrFullTextConfigureInfo GetOcrFullTextConfigure() const;
 
                     /**
                      * 设置文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OcrFullTextConfigure 文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrFullTextConfigure(const OcrFullTextConfigureInfo& _ocrFullTextConfigure);
 
@@ -151,17 +143,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrWordsConfigure 文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OcrWordsConfigureInfo GetOcrWordsConfigure() const;
 
                     /**
                      * 设置文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OcrWordsConfigure 文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrWordsConfigure(const OcrWordsConfigureInfo& _ocrWordsConfigure);
 
@@ -173,17 +161,13 @@ namespace TencentCloud
 
                     /**
                      * 获取语音全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrFullTextConfigure 语音全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsrFullTextConfigureInfo GetAsrFullTextConfigure() const;
 
                     /**
                      * 设置语音全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AsrFullTextConfigure 语音全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAsrFullTextConfigure(const AsrFullTextConfigureInfo& _asrFullTextConfigure);
 
@@ -195,17 +179,13 @@ namespace TencentCloud
 
                     /**
                      * 获取语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrWordsConfigure 语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsrWordsConfigureInfo GetAsrWordsConfigure() const;
 
                     /**
                      * 设置语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AsrWordsConfigure 语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAsrWordsConfigure(const AsrWordsConfigureInfo& _asrWordsConfigure);
 
@@ -216,14 +196,14 @@ namespace TencentCloud
                     bool AsrWordsConfigureHasBeenSet() const;
 
                     /**
-                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -234,14 +214,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -273,47 +253,42 @@ namespace TencentCloud
 
                     /**
                      * 人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FaceConfigureInfo m_faceConfigure;
                     bool m_faceConfigureHasBeenSet;
 
                     /**
                      * 文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OcrFullTextConfigureInfo m_ocrFullTextConfigure;
                     bool m_ocrFullTextConfigureHasBeenSet;
 
                     /**
                      * 文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OcrWordsConfigureInfo m_ocrWordsConfigure;
                     bool m_ocrWordsConfigureHasBeenSet;
 
                     /**
                      * 语音全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsrFullTextConfigureInfo m_asrFullTextConfigure;
                     bool m_asrFullTextConfigureHasBeenSet;
 
                     /**
                      * 语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsrWordsConfigureInfo m_asrWordsConfigure;
                     bool m_asrWordsConfigureHasBeenSet;
 
                     /**
-                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

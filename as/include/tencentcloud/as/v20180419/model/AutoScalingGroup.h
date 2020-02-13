@@ -481,6 +481,50 @@ namespace TencentCloud
                      */
                     bool ServiceSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取实例具有IPv6地址数量的配置
+                     * @return Ipv6AddressCount 实例具有IPv6地址数量的配置
+                     */
+                    int64_t GetIpv6AddressCount() const;
+
+                    /**
+                     * 设置实例具有IPv6地址数量的配置
+                     * @param Ipv6AddressCount 实例具有IPv6地址数量的配置
+                     */
+                    void SetIpv6AddressCount(const int64_t& _ipv6AddressCount);
+
+                    /**
+                     * 判断参数 Ipv6AddressCount 是否已赋值
+                     * @return Ipv6AddressCount 是否已赋值
+                     */
+                    bool Ipv6AddressCountHasBeenSet() const;
+
+                    /**
+                     * 获取多可用区/子网策略。
+<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。
+<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。
+                     * @return MultiZoneSubnetPolicy 多可用区/子网策略。
+<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。
+<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。
+                     */
+                    std::string GetMultiZoneSubnetPolicy() const;
+
+                    /**
+                     * 设置多可用区/子网策略。
+<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。
+<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。
+                     * @param MultiZoneSubnetPolicy 多可用区/子网策略。
+<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。
+<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。
+                     */
+                    void SetMultiZoneSubnetPolicy(const std::string& _multiZoneSubnetPolicy);
+
+                    /**
+                     * 判断参数 MultiZoneSubnetPolicy 是否已赋值
+                     * @return MultiZoneSubnetPolicy 是否已赋值
+                     */
+                    bool MultiZoneSubnetPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -626,6 +670,20 @@ namespace TencentCloud
                      */
                     ServiceSettings m_serviceSettings;
                     bool m_serviceSettingsHasBeenSet;
+
+                    /**
+                     * 实例具有IPv6地址数量的配置
+                     */
+                    int64_t m_ipv6AddressCount;
+                    bool m_ipv6AddressCountHasBeenSet;
+
+                    /**
+                     * 多可用区/子网策略。
+<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。
+<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。
+                     */
+                    std::string m_multiZoneSubnetPolicy;
+                    bool m_multiZoneSubnetPolicyHasBeenSet;
 
                 };
             }

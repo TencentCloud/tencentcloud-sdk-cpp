@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取严重程度。
-                     * @return Severity 严重程度。
+                     * 获取严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
+                     * @return Severity 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
                      */
                     int64_t GetSeverity() const;
 
                     /**
-                     * 设置严重程度。
-                     * @param Severity 严重程度。
+                     * 设置严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
+                     * @param Severity 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
                      */
                     void SetSeverity(const int64_t& _severity);
 
@@ -265,7 +265,7 @@ namespace TencentCloud
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 严重程度。
+                     * 严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。
                      */
                     int64_t m_severity;
                     bool m_severityHasBeenSet;

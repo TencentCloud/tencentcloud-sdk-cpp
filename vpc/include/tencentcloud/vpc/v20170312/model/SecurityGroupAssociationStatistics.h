@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取云主机实例数。
-                     * @return CVM 云主机实例数。
+                     * 获取云服务器实例数。
+                     * @return CVM 云服务器实例数。
                      */
                     uint64_t GetCVM() const;
 
                     /**
-                     * 设置云主机实例数。
-                     * @param CVM 云主机实例数。
+                     * 设置云服务器实例数。
+                     * @param CVM 云服务器实例数。
                      */
                     void SetCVM(const uint64_t& _cVM);
 
@@ -182,7 +182,7 @@ namespace TencentCloud
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * 云主机实例数。
+                     * 云服务器实例数。
                      */
                     uint64_t m_cVM;
                     bool m_cVMHasBeenSet;

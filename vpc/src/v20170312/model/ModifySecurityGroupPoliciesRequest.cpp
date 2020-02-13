@@ -25,7 +25,8 @@ using namespace std;
 
 ModifySecurityGroupPoliciesRequest::ModifySecurityGroupPoliciesRequest() :
     m_securityGroupIdHasBeenSet(false),
-    m_securityGroupPolicySetHasBeenSet(false)
+    m_securityGroupPolicySetHasBeenSet(false),
+    m_sortPolicysHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,14 @@ string ModifySecurityGroupPoliciesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_securityGroupPolicySet.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sortPolicysHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SortPolicys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sortPolicys, allocator);
     }
 
 
@@ -91,6 +100,22 @@ void ModifySecurityGroupPoliciesRequest::SetSecurityGroupPolicySet(const Securit
 bool ModifySecurityGroupPoliciesRequest::SecurityGroupPolicySetHasBeenSet() const
 {
     return m_securityGroupPolicySetHasBeenSet;
+}
+
+bool ModifySecurityGroupPoliciesRequest::GetSortPolicys() const
+{
+    return m_sortPolicys;
+}
+
+void ModifySecurityGroupPoliciesRequest::SetSortPolicys(const bool& _sortPolicys)
+{
+    m_sortPolicys = _sortPolicys;
+    m_sortPolicysHasBeenSet = true;
+}
+
+bool ModifySecurityGroupPoliciesRequest::SortPolicysHasBeenSet() const
+{
+    return m_sortPolicysHasBeenSet;
 }
 
 

@@ -29,6 +29,7 @@ ParseLiveStreamProcessNotificationResponse::ParseLiveStreamProcessNotificationRe
     m_taskIdHasBeenSet(false),
     m_processEofInfoHasBeenSet(false),
     m_aiReviewResultInfoHasBeenSet(false),
+    m_aiRecognitionResultInfoHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -122,6 +123,23 @@ CoreInternalOutcome ParseLiveStreamProcessNotificationResponse::Deserialize(cons
         m_aiReviewResultInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AiRecognitionResultInfo") && !rsp["AiRecognitionResultInfo"].IsNull())
+    {
+        if (!rsp["AiRecognitionResultInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionResultInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiRecognitionResultInfo.Deserialize(rsp["AiRecognitionResultInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiRecognitionResultInfoHasBeenSet = true;
+    }
+
     if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
     {
         if (!rsp["SessionId"].IsString())
@@ -185,6 +203,16 @@ LiveStreamAiReviewResultInfo ParseLiveStreamProcessNotificationResponse::GetAiRe
 bool ParseLiveStreamProcessNotificationResponse::AiReviewResultInfoHasBeenSet() const
 {
     return m_aiReviewResultInfoHasBeenSet;
+}
+
+LiveStreamAiRecognitionResultInfo ParseLiveStreamProcessNotificationResponse::GetAiRecognitionResultInfo() const
+{
+    return m_aiRecognitionResultInfo;
+}
+
+bool ParseLiveStreamProcessNotificationResponse::AiRecognitionResultInfoHasBeenSet() const
+{
+    return m_aiRecognitionResultInfoHasBeenSet;
 }
 
 string ParseLiveStreamProcessNotificationResponse::GetSessionId() const

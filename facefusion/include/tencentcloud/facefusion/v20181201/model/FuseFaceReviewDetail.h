@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取鉴政使用字段, 为职业属性,其他审核结果对应上一级category
-                     * @return Field 鉴政使用字段, 为职业属性,其他审核结果对应上一级category
+                     * 获取保留字段
+                     * @return Field 保留字段
                      */
                     std::string GetField() const;
 
                     /**
-                     * 设置鉴政使用字段, 为职业属性,其他审核结果对应上一级category
-                     * @param Field 鉴政使用字段, 为职业属性,其他审核结果对应上一级category
+                     * 设置保留字段
+                     * @param Field 保留字段
                      */
                     void SetField(const std::string& _field);
 
@@ -83,14 +83,26 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取对应识别label的置信度
-                     * @return Confidence 对应识别label的置信度
+                     * 获取对应识别label的置信度，分数越高意味涉政可能性越大。 
+0到70，Suggestion建议为PASS； 
+70到80，Suggestion建议为REVIEW； 
+80到100，Suggestion建议为BLOCK。
+                     * @return Confidence 对应识别label的置信度，分数越高意味涉政可能性越大。 
+0到70，Suggestion建议为PASS； 
+70到80，Suggestion建议为REVIEW； 
+80到100，Suggestion建议为BLOCK。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置对应识别label的置信度
-                     * @param Confidence 对应识别label的置信度
+                     * 设置对应识别label的置信度，分数越高意味涉政可能性越大。 
+0到70，Suggestion建议为PASS； 
+70到80，Suggestion建议为REVIEW； 
+80到100，Suggestion建议为BLOCK。
+                     * @param Confidence 对应识别label的置信度，分数越高意味涉政可能性越大。 
+0到70，Suggestion建议为PASS； 
+70到80，Suggestion建议为REVIEW； 
+80到100，Suggestion建议为BLOCK。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -101,14 +113,26 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取此字段为保留字段，目前统一返回pass。
-                     * @return Suggestion 此字段为保留字段，目前统一返回pass。
+                     * 获取识别场景的审核结论：  
+PASS：正常 
+REVIEW：疑似  
+BLOCK：违规
+                     * @return Suggestion 识别场景的审核结论：  
+PASS：正常 
+REVIEW：疑似  
+BLOCK：违规
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置此字段为保留字段，目前统一返回pass。
-                     * @param Suggestion 此字段为保留字段，目前统一返回pass。
+                     * 设置识别场景的审核结论：  
+PASS：正常 
+REVIEW：疑似  
+BLOCK：违规
+                     * @param Suggestion 识别场景的审核结论：  
+PASS：正常 
+REVIEW：疑似  
+BLOCK：违规
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -121,7 +145,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 鉴政使用字段, 为职业属性,其他审核结果对应上一级category
+                     * 保留字段
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
@@ -133,13 +157,19 @@ namespace TencentCloud
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 对应识别label的置信度
+                     * 对应识别label的置信度，分数越高意味涉政可能性越大。 
+0到70，Suggestion建议为PASS； 
+70到80，Suggestion建议为REVIEW； 
+80到100，Suggestion建议为BLOCK。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 此字段为保留字段，目前统一返回pass。
+                     * 识别场景的审核结论：  
+PASS：正常 
+REVIEW：疑似  
+BLOCK：违规
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;

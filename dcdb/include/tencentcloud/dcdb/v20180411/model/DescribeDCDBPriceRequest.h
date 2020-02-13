@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取欲购买实例的数量，目前只支持购买1个实例
-                     * @return Count 欲购买实例的数量，目前只支持购买1个实例
+                     * 获取欲购买实例的数量，目前支持购买1-10个实例
+                     * @return Count 欲购买实例的数量，目前支持购买1-10个实例
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置欲购买实例的数量，目前只支持购买1个实例
-                     * @param Count 欲购买实例的数量，目前只支持购买1个实例
+                     * 设置欲购买实例的数量，目前支持购买1-10个实例
+                     * @param Count 欲购买实例的数量，目前支持购买1-10个实例
                      */
                     void SetCount(const int64_t& _count);
 
@@ -180,6 +180,24 @@ namespace TencentCloud
                      */
                     bool ShardCountHasBeenSet() const;
 
+                    /**
+                     * 获取付费类型。postpaid：按量付费   prepaid：预付费
+                     * @return Paymode 付费类型。postpaid：按量付费   prepaid：预付费
+                     */
+                    std::string GetPaymode() const;
+
+                    /**
+                     * 设置付费类型。postpaid：按量付费   prepaid：预付费
+                     * @param Paymode 付费类型。postpaid：按量付费   prepaid：预付费
+                     */
+                    void SetPaymode(const std::string& _paymode);
+
+                    /**
+                     * 判断参数 Paymode 是否已赋值
+                     * @return Paymode 是否已赋值
+                     */
+                    bool PaymodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,7 +207,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 欲购买实例的数量，目前只支持购买1个实例
+                     * 欲购买实例的数量，目前支持购买1-10个实例
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
@@ -226,6 +244,12 @@ namespace TencentCloud
                      */
                     int64_t m_shardCount;
                     bool m_shardCountHasBeenSet;
+
+                    /**
+                     * 付费类型。postpaid：按量付费   prepaid：预付费
+                     */
+                    std::string m_paymode;
+                    bool m_paymodeHasBeenSet;
 
                 };
             }

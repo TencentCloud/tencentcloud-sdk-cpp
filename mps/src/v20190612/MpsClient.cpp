@@ -40,6 +40,49 @@ MpsClient::MpsClient(const Credential &credential, const string &region, const C
 }
 
 
+MpsClient::CreateAIAnalysisTemplateOutcome MpsClient::CreateAIAnalysisTemplate(const CreateAIAnalysisTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIAnalysisTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIAnalysisTemplateResponse rsp = CreateAIAnalysisTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIAnalysisTemplateOutcome(rsp);
+        else
+            return CreateAIAnalysisTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIAnalysisTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAIAnalysisTemplateAsync(const CreateAIAnalysisTemplateRequest& request, const CreateAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAIAnalysisTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateAIAnalysisTemplateOutcomeCallable MpsClient::CreateAIAnalysisTemplateCallable(const CreateAIAnalysisTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAIAnalysisTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAIAnalysisTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateAIRecognitionTemplateOutcome MpsClient::CreateAIRecognitionTemplate(const CreateAIRecognitionTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAIRecognitionTemplate");
@@ -506,6 +549,49 @@ MpsClient::CreateWorkflowOutcomeCallable MpsClient::CreateWorkflowCallable(const
         [this, request]()
         {
             return this->CreateWorkflow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteAIAnalysisTemplateOutcome MpsClient::DeleteAIAnalysisTemplate(const DeleteAIAnalysisTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAIAnalysisTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAIAnalysisTemplateResponse rsp = DeleteAIAnalysisTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAIAnalysisTemplateOutcome(rsp);
+        else
+            return DeleteAIAnalysisTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAIAnalysisTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteAIAnalysisTemplateAsync(const DeleteAIAnalysisTemplateRequest& request, const DeleteAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAIAnalysisTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteAIAnalysisTemplateOutcomeCallable MpsClient::DeleteAIAnalysisTemplateCallable(const DeleteAIAnalysisTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAIAnalysisTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAIAnalysisTemplate(request);
         }
     );
 
@@ -986,6 +1072,49 @@ MpsClient::DeleteWorkflowOutcomeCallable MpsClient::DeleteWorkflowCallable(const
     return task->get_future();
 }
 
+MpsClient::DescribeAIAnalysisTemplatesOutcome MpsClient::DescribeAIAnalysisTemplates(const DescribeAIAnalysisTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIAnalysisTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIAnalysisTemplatesResponse rsp = DescribeAIAnalysisTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIAnalysisTemplatesOutcome(rsp);
+        else
+            return DescribeAIAnalysisTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIAnalysisTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAIAnalysisTemplatesAsync(const DescribeAIAnalysisTemplatesRequest& request, const DescribeAIAnalysisTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIAnalysisTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeAIAnalysisTemplatesOutcomeCallable MpsClient::DescribeAIAnalysisTemplatesCallable(const DescribeAIAnalysisTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIAnalysisTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIAnalysisTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeAIRecognitionTemplatesOutcome MpsClient::DescribeAIRecognitionTemplates(const DescribeAIRecognitionTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAIRecognitionTemplates");
@@ -1151,6 +1280,49 @@ MpsClient::DescribeImageSpriteTemplatesOutcomeCallable MpsClient::DescribeImageS
         [this, request]()
         {
             return this->DescribeImageSpriteTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeMediaMetaDataOutcome MpsClient::DescribeMediaMetaData(const DescribeMediaMetaDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMediaMetaData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMediaMetaDataResponse rsp = DescribeMediaMetaDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMediaMetaDataOutcome(rsp);
+        else
+            return DescribeMediaMetaDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMediaMetaDataOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeMediaMetaDataAsync(const DescribeMediaMetaDataRequest& request, const DescribeMediaMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMediaMetaData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeMediaMetaDataOutcomeCallable MpsClient::DescribeMediaMetaDataCallable(const DescribeMediaMetaDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMediaMetaDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMediaMetaData(request);
         }
     );
 
@@ -1624,6 +1796,92 @@ MpsClient::EnableWorkflowOutcomeCallable MpsClient::EnableWorkflowCallable(const
         [this, request]()
         {
             return this->EnableWorkflow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ManageTaskOutcome MpsClient::ManageTask(const ManageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManageTaskResponse rsp = ManageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManageTaskOutcome(rsp);
+        else
+            return ManageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ManageTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ManageTaskAsync(const ManageTaskRequest& request, const ManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManageTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ManageTaskOutcomeCallable MpsClient::ManageTaskCallable(const ManageTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManageTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ManageTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyAIAnalysisTemplateOutcome MpsClient::ModifyAIAnalysisTemplate(const ModifyAIAnalysisTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAIAnalysisTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAIAnalysisTemplateResponse rsp = ModifyAIAnalysisTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAIAnalysisTemplateOutcome(rsp);
+        else
+            return ModifyAIAnalysisTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAIAnalysisTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyAIAnalysisTemplateAsync(const ModifyAIAnalysisTemplateRequest& request, const ModifyAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAIAnalysisTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyAIAnalysisTemplateOutcomeCallable MpsClient::ModifyAIAnalysisTemplateCallable(const ModifyAIAnalysisTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAIAnalysisTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAIAnalysisTemplate(request);
         }
     );
 

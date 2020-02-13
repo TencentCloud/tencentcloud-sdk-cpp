@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例短Id
-                     * @return InstanceId 实例短Id
+                     * 获取实例短ID
+                     * @return InstanceId 实例短ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例短Id
-                     * @param InstanceId 实例短Id
+                     * 设置实例短ID
+                     * @param InstanceId 实例短ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例短Id
+                     * 实例短ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

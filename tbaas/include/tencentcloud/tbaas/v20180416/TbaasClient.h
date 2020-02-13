@@ -27,12 +27,16 @@
 #include <tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/BlockByNumberHandlerResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/DeployDynamicContractHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/DownloadUserCertResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListHandlerRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetBlockListHandlerResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetBlockTransactionListForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxRequest.h>
@@ -53,6 +57,8 @@
 #include <tencentcloud/tbaas/v20180416/model/SendTransactionHandlerResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/SrvInvokeRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/SrvInvokeResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/TransByDynamicContractHandlerRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/TransByDynamicContractHandlerResponse.h>
 
 
 namespace TencentCloud
@@ -73,6 +79,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BlockByNumberHandlerResponse> BlockByNumberHandlerOutcome;
                 typedef std::future<BlockByNumberHandlerOutcome> BlockByNumberHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::BlockByNumberHandlerRequest&, BlockByNumberHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BlockByNumberHandlerAsyncHandler;
+                typedef Outcome<Error, Model::DeployDynamicContractHandlerResponse> DeployDynamicContractHandlerOutcome;
+                typedef std::future<DeployDynamicContractHandlerOutcome> DeployDynamicContractHandlerOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::DeployDynamicContractHandlerRequest&, DeployDynamicContractHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployDynamicContractHandlerAsyncHandler;
                 typedef Outcome<Error, Model::DownloadUserCertResponse> DownloadUserCertOutcome;
                 typedef std::future<DownloadUserCertOutcome> DownloadUserCertOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::DownloadUserCertRequest&, DownloadUserCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadUserCertAsyncHandler;
@@ -82,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetBlockListHandlerResponse> GetBlockListHandlerOutcome;
                 typedef std::future<GetBlockListHandlerOutcome> GetBlockListHandlerOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetBlockListHandlerRequest&, GetBlockListHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBlockListHandlerAsyncHandler;
+                typedef Outcome<Error, Model::GetBlockTransactionListForUserResponse> GetBlockTransactionListForUserOutcome;
+                typedef std::future<GetBlockTransactionListForUserOutcome> GetBlockTransactionListForUserOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetBlockTransactionListForUserRequest&, GetBlockTransactionListForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBlockTransactionListForUserAsyncHandler;
                 typedef Outcome<Error, Model::GetClusterSummaryResponse> GetClusterSummaryOutcome;
                 typedef std::future<GetClusterSummaryOutcome> GetClusterSummaryOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetClusterSummaryRequest&, GetClusterSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterSummaryAsyncHandler;
@@ -112,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SrvInvokeResponse> SrvInvokeOutcome;
                 typedef std::future<SrvInvokeOutcome> SrvInvokeOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::SrvInvokeRequest&, SrvInvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SrvInvokeAsyncHandler;
+                typedef Outcome<Error, Model::TransByDynamicContractHandlerResponse> TransByDynamicContractHandlerOutcome;
+                typedef std::future<TransByDynamicContractHandlerOutcome> TransByDynamicContractHandlerOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::TransByDynamicContractHandlerRequest&, TransByDynamicContractHandlerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransByDynamicContractHandlerAsyncHandler;
 
 
 
@@ -134,6 +149,15 @@ namespace TencentCloud
                 BlockByNumberHandlerOutcomeCallable BlockByNumberHandlerCallable(const Model::BlockByNumberHandlerRequest& request);
 
                 /**
+                 *动态部署合约
+                 * @param req DeployDynamicContractHandlerRequest
+                 * @return DeployDynamicContractHandlerOutcome
+                 */
+                DeployDynamicContractHandlerOutcome DeployDynamicContractHandler(const Model::DeployDynamicContractHandlerRequest &request);
+                void DeployDynamicContractHandlerAsync(const Model::DeployDynamicContractHandlerRequest& request, const DeployDynamicContractHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployDynamicContractHandlerOutcomeCallable DeployDynamicContractHandlerCallable(const Model::DeployDynamicContractHandlerRequest& request);
+
+                /**
                  *下载用户证书
                  * @param req DownloadUserCertRequest
                  * @return DownloadUserCertOutcome
@@ -152,13 +176,22 @@ namespace TencentCloud
                 GetBlockListOutcomeCallable GetBlockListCallable(const Model::GetBlockListRequest& request);
 
                 /**
-                 *bcos分页查询当前群组下的区块列表
+                 *Bcos分页查询当前群组下的区块列表
                  * @param req GetBlockListHandlerRequest
                  * @return GetBlockListHandlerOutcome
                  */
                 GetBlockListHandlerOutcome GetBlockListHandler(const Model::GetBlockListHandlerRequest &request);
                 void GetBlockListHandlerAsync(const Model::GetBlockListHandlerRequest& request, const GetBlockListHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetBlockListHandlerOutcomeCallable GetBlockListHandlerCallable(const Model::GetBlockListHandlerRequest& request);
+
+                /**
+                 *获取区块内的交易列表
+                 * @param req GetBlockTransactionListForUserRequest
+                 * @return GetBlockTransactionListForUserOutcome
+                 */
+                GetBlockTransactionListForUserOutcome GetBlockTransactionListForUser(const Model::GetBlockTransactionListForUserRequest &request);
+                void GetBlockTransactionListForUserAsync(const Model::GetBlockTransactionListForUserRequest& request, const GetBlockTransactionListForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBlockTransactionListForUserOutcomeCallable GetBlockTransactionListForUserCallable(const Model::GetBlockTransactionListForUserRequest& request);
 
                 /**
                  *获取区块链网络概要
@@ -249,6 +282,15 @@ namespace TencentCloud
                 SrvInvokeOutcome SrvInvoke(const Model::SrvInvokeRequest &request);
                 void SrvInvokeAsync(const Model::SrvInvokeRequest& request, const SrvInvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SrvInvokeOutcomeCallable SrvInvokeCallable(const Model::SrvInvokeRequest& request);
+
+                /**
+                 *根据动态部署的合约发送交易
+                 * @param req TransByDynamicContractHandlerRequest
+                 * @return TransByDynamicContractHandlerOutcome
+                 */
+                TransByDynamicContractHandlerOutcome TransByDynamicContractHandler(const Model::TransByDynamicContractHandlerRequest &request);
+                void TransByDynamicContractHandlerAsync(const Model::TransByDynamicContractHandlerRequest& request, const TransByDynamicContractHandlerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransByDynamicContractHandlerOutcomeCallable TransByDynamicContractHandlerCallable(const Model::TransByDynamicContractHandlerRequest& request);
 
             };
         }

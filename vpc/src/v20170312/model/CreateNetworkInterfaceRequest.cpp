@@ -30,7 +30,8 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_networkInterfaceDescriptionHasBeenSet(false),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,21 @@ string CreateNetworkInterfaceRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_privateIpAddresses.begin(); itr != m_privateIpAddresses.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -227,6 +243,22 @@ void CreateNetworkInterfaceRequest::SetPrivateIpAddresses(const vector<PrivateIp
 bool CreateNetworkInterfaceRequest::PrivateIpAddressesHasBeenSet() const
 {
     return m_privateIpAddressesHasBeenSet;
+}
+
+vector<Tag> CreateNetworkInterfaceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateNetworkInterfaceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateNetworkInterfaceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

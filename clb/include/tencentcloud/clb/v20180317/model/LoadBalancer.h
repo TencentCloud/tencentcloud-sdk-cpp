@@ -30,6 +30,8 @@
 #include <tencentcloud/clb/v20180317/model/InternetAccessible.h>
 #include <tencentcloud/clb/v20180317/model/LBChargePrepaid.h>
 #include <tencentcloud/clb/v20180317/model/ExtraInfo.h>
+#include <tencentcloud/clb/v20180317/model/ExclusiveCluster.h>
+#include <tencentcloud/clb/v20180317/model/SnatIp.h>
 
 
 namespace TencentCloud
@@ -832,6 +834,116 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool ConfigIdHasBeenSet() const;
 
+                    /**
+                     * 获取后端服务是否放通来自LB的流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerPassToTarget 后端服务是否放通来自LB的流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLoadBalancerPassToTarget() const;
+
+                    /**
+                     * 设置后端服务是否放通来自LB的流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LoadBalancerPassToTarget 后端服务是否放通来自LB的流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
+
+                    /**
+                     * 判断参数 LoadBalancerPassToTarget 是否已赋值
+                     * @return LoadBalancerPassToTarget 是否已赋值
+                     */
+                    bool LoadBalancerPassToTargetHasBeenSet() const;
+
+                    /**
+                     * 获取内网独占集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExclusiveCluster 内网独占集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExclusiveCluster GetExclusiveCluster() const;
+
+                    /**
+                     * 设置内网独占集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExclusiveCluster 内网独占集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster);
+
+                    /**
+                     * 判断参数 ExclusiveCluster 是否已赋值
+                     * @return ExclusiveCluster 是否已赋值
+                     */
+                    bool ExclusiveClusterHasBeenSet() const;
+
+                    /**
+                     * 获取IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPv6Mode IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIPv6Mode() const;
+
+                    /**
+                     * 设置IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IPv6Mode IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIPv6Mode(const std::string& _iPv6Mode);
+
+                    /**
+                     * 判断参数 IPv6Mode 是否已赋值
+                     * @return IPv6Mode 是否已赋值
+                     */
+                    bool IPv6ModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启SnatPro
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnatPro 是否开启SnatPro
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSnatPro() const;
+
+                    /**
+                     * 设置是否开启SnatPro
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SnatPro 是否开启SnatPro
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSnatPro(const bool& _snatPro);
+
+                    /**
+                     * 判断参数 SnatPro 是否已赋值
+                     * @return SnatPro 是否已赋值
+                     */
+                    bool SnatProHasBeenSet() const;
+
+                    /**
+                     * 获取开启SnatPro负载均衡后，SnatIp列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnatIps 开启SnatPro负载均衡后，SnatIp列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SnatIp> GetSnatIps() const;
+
+                    /**
+                     * 设置开启SnatPro负载均衡后，SnatIp列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SnatIps 开启SnatPro负载均衡后，SnatIp列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSnatIps(const std::vector<SnatIp>& _snatIps);
+
+                    /**
+                     * 判断参数 SnatIps 是否已赋值
+                     * @return SnatIps 是否已赋值
+                     */
+                    bool SnatIpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1082,6 +1194,41 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
+
+                    /**
+                     * 后端服务是否放通来自LB的流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_loadBalancerPassToTarget;
+                    bool m_loadBalancerPassToTargetHasBeenSet;
+
+                    /**
+                     * 内网独占集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExclusiveCluster m_exclusiveCluster;
+                    bool m_exclusiveClusterHasBeenSet;
+
+                    /**
+                     * IP地址版本为ipv6时此字段有意义， IPv6Nat64 | IPv6FullChain
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iPv6Mode;
+                    bool m_iPv6ModeHasBeenSet;
+
+                    /**
+                     * 是否开启SnatPro
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_snatPro;
+                    bool m_snatProHasBeenSet;
+
+                    /**
+                     * 开启SnatPro负载均衡后，SnatIp列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SnatIp> m_snatIps;
+                    bool m_snatIpsHasBeenSet;
 
                 };
             }

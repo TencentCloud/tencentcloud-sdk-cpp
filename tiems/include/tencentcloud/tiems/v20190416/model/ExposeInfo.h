@@ -126,6 +126,72 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取GATEWAY 服务id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GateWayServiceId GATEWAY 服务id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGateWayServiceId() const;
+
+                    /**
+                     * 设置GATEWAY 服务id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GateWayServiceId GATEWAY 服务id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGateWayServiceId(const std::string& _gateWayServiceId);
+
+                    /**
+                     * 判断参数 GateWayServiceId 是否已赋值
+                     * @return GateWayServiceId 是否已赋值
+                     */
+                    bool GateWayServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取GATEWAY api id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GateWayAPIId GATEWAY api id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGateWayAPIId() const;
+
+                    /**
+                     * 设置GATEWAY api id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GateWayAPIId GATEWAY api id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGateWayAPIId(const std::string& _gateWayAPIId);
+
+                    /**
+                     * 判断参数 GateWayAPIId 是否已赋值
+                     * @return GateWayAPIId 是否已赋值
+                     */
+                    bool GateWayAPIIdHasBeenSet() const;
+
+                    /**
+                     * 获取GATEWAY domain，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GateWayDomain GATEWAY domain，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGateWayDomain() const;
+
+                    /**
+                     * 设置GATEWAY domain，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GateWayDomain GATEWAY domain，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGateWayDomain(const std::string& _gateWayDomain);
+
+                    /**
+                     * 判断参数 GateWayDomain 是否已赋值
+                     * @return GateWayDomain 是否已赋值
+                     */
+                    bool GateWayDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +219,27 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * GATEWAY 服务id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gateWayServiceId;
+                    bool m_gateWayServiceIdHasBeenSet;
+
+                    /**
+                     * GATEWAY api id，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gateWayAPIId;
+                    bool m_gateWayAPIIdHasBeenSet;
+
+                    /**
+                     * GATEWAY domain，ExposeType = GATEWAY 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gateWayDomain;
+                    bool m_gateWayDomainHasBeenSet;
 
                 };
             }

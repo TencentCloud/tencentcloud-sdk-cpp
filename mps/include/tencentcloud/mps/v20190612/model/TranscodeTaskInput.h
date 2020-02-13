@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/RawTranscodeParameter.h>
 #include <tencentcloud/mps/v20190612/model/WatermarkInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/NumberFormat.h>
@@ -66,6 +67,32 @@ namespace TencentCloud
                      * @return Definition 是否已赋值
                      */
                     bool DefinitionHasBeenSet() const;
+
+                    /**
+                     * 获取视频转码自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RawParameter 视频转码自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RawTranscodeParameter GetRawParameter() const;
+
+                    /**
+                     * 设置视频转码自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RawParameter 视频转码自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRawParameter(const RawTranscodeParameter& _rawParameter);
+
+                    /**
+                     * 判断参数 RawParameter 是否已赋值
+                     * @return RawParameter 是否已赋值
+                     */
+                    bool RawParameterHasBeenSet() const;
 
                     /**
                      * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
@@ -176,6 +203,14 @@ namespace TencentCloud
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * 视频转码自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RawTranscodeParameter m_rawParameter;
+                    bool m_rawParameterHasBeenSet;
 
                     /**
                      * 水印列表，支持多张图片或文字水印，最大可支持 10 张。

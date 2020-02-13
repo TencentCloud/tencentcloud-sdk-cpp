@@ -46,20 +46,20 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
-<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>
+<li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
                      * @return Filters 过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
-<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>
+<li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
                      */
                     std::vector<FilterObject> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
-<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>
+<li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
                      * @param Filters 过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
-<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>
+<li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
                      */
                     void SetFilters(const std::vector<FilterObject>& _filters);
 
@@ -110,7 +110,7 @@ namespace TencentCloud
                     /**
                      * 过滤条件。
 <li>vpc-id - String - （过滤条件）VPC实例ID。</li>
-<li>vm-ip - String - （过滤条件）基础网络云主机IP。</li>
+<li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>
                      */
                     std::vector<FilterObject> m_filters;
                     bool m_filtersHasBeenSet;

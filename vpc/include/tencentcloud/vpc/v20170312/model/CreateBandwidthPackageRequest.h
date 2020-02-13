@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,42 @@ namespace TencentCloud
                      */
                     bool InternetMaxBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取需要关联的标签列表。
+                     * @return Tags 需要关联的标签列表。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置需要关联的标签列表。
+                     * @param Tags 需要关联的标签列表。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     * @return Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     * @param Protocol 带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +200,18 @@ namespace TencentCloud
                      */
                     int64_t m_internetMaxBandwidth;
                     bool m_internetMaxBandwidthHasBeenSet;
+
+                    /**
+                     * 需要关联的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool DomainNameHasBeenSet() const;
 
+                    /**
+                     * 获取PAI管理页面URL
+                     * @return PaiMateUrl PAI管理页面URL
+                     */
+                    std::string GetPaiMateUrl() const;
+
+                    /**
+                     * 设置PAI管理页面URL
+                     * @param PaiMateUrl PAI管理页面URL
+                     */
+                    void SetPaiMateUrl(const std::string& _paiMateUrl);
+
+                    /**
+                     * 判断参数 PaiMateUrl 是否已赋值
+                     * @return PaiMateUrl 是否已赋值
+                     */
+                    bool PaiMateUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
+
+                    /**
+                     * PAI管理页面URL
+                     */
+                    std::string m_paiMateUrl;
+                    bool m_paiMateUrlHasBeenSet;
 
                 };
             }

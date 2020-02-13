@@ -36,7 +36,12 @@ RuleOutput::RuleOutput() :
     m_defaultServerHasBeenSet(false),
     m_http2HasBeenSet(false),
     m_forwardTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_targetTypeHasBeenSet(false),
+    m_targetGroupHasBeenSet(false),
+    m_wafDomainIdHasBeenSet(false),
+    m_trpcCalleeHasBeenSet(false),
+    m_trpcFuncHasBeenSet(false)
 {
 }
 
@@ -216,6 +221,63 @@ CoreInternalOutcome RuleOutput::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetType") && !value["TargetType"].IsNull())
+    {
+        if (!value["TargetType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.TargetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetType = string(value["TargetType"].GetString());
+        m_targetTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetGroup") && !value["TargetGroup"].IsNull())
+    {
+        if (!value["TargetGroup"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.TargetGroup` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_targetGroup.Deserialize(value["TargetGroup"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_targetGroupHasBeenSet = true;
+    }
+
+    if (value.HasMember("WafDomainId") && !value["WafDomainId"].IsNull())
+    {
+        if (!value["WafDomainId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.WafDomainId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wafDomainId = string(value["WafDomainId"].GetString());
+        m_wafDomainIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrpcCallee") && !value["TrpcCallee"].IsNull())
+    {
+        if (!value["TrpcCallee"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.TrpcCallee` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trpcCallee = string(value["TrpcCallee"].GetString());
+        m_trpcCalleeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrpcFunc") && !value["TrpcFunc"].IsNull())
+    {
+        if (!value["TrpcFunc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.TrpcFunc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trpcFunc = string(value["TrpcFunc"].GetString());
+        m_trpcFuncHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,6 +406,47 @@ void RuleOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_targetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_targetGroup.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_wafDomainIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WafDomainId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_wafDomainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trpcCalleeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TrpcCallee";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_trpcCallee.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trpcFuncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TrpcFunc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_trpcFunc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -587,5 +690,85 @@ void RuleOutput::SetCreateTime(const string& _createTime)
 bool RuleOutput::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string RuleOutput::GetTargetType() const
+{
+    return m_targetType;
+}
+
+void RuleOutput::SetTargetType(const string& _targetType)
+{
+    m_targetType = _targetType;
+    m_targetTypeHasBeenSet = true;
+}
+
+bool RuleOutput::TargetTypeHasBeenSet() const
+{
+    return m_targetTypeHasBeenSet;
+}
+
+BasicTargetGroupInfo RuleOutput::GetTargetGroup() const
+{
+    return m_targetGroup;
+}
+
+void RuleOutput::SetTargetGroup(const BasicTargetGroupInfo& _targetGroup)
+{
+    m_targetGroup = _targetGroup;
+    m_targetGroupHasBeenSet = true;
+}
+
+bool RuleOutput::TargetGroupHasBeenSet() const
+{
+    return m_targetGroupHasBeenSet;
+}
+
+string RuleOutput::GetWafDomainId() const
+{
+    return m_wafDomainId;
+}
+
+void RuleOutput::SetWafDomainId(const string& _wafDomainId)
+{
+    m_wafDomainId = _wafDomainId;
+    m_wafDomainIdHasBeenSet = true;
+}
+
+bool RuleOutput::WafDomainIdHasBeenSet() const
+{
+    return m_wafDomainIdHasBeenSet;
+}
+
+string RuleOutput::GetTrpcCallee() const
+{
+    return m_trpcCallee;
+}
+
+void RuleOutput::SetTrpcCallee(const string& _trpcCallee)
+{
+    m_trpcCallee = _trpcCallee;
+    m_trpcCalleeHasBeenSet = true;
+}
+
+bool RuleOutput::TrpcCalleeHasBeenSet() const
+{
+    return m_trpcCalleeHasBeenSet;
+}
+
+string RuleOutput::GetTrpcFunc() const
+{
+    return m_trpcFunc;
+}
+
+void RuleOutput::SetTrpcFunc(const string& _trpcFunc)
+{
+    m_trpcFunc = _trpcFunc;
+    m_trpcFuncHasBeenSet = true;
+}
+
+bool RuleOutput::TrpcFuncHasBeenSet() const
+{
+    return m_trpcFuncHasBeenSet;
 }
 

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组
-                     * @return RoGroupMode 只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组
+                     * 获取只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。
+                     * @return RoGroupMode 只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。
                      */
                     std::string GetRoGroupMode() const;
 
                     /**
-                     * 设置只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组
-                     * @param RoGroupMode 只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组
+                     * 设置只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。
+                     * @param RoGroupMode 只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。
                      */
                     void SetRoGroupMode(const std::string& _roGroupMode);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool RoGroupModeHasBeenSet() const;
 
                     /**
-                     * 获取只读组ID
-                     * @return RoGroupId 只读组ID
+                     * 获取只读组 ID。
+                     * @return RoGroupId 只读组 ID。
                      */
                     std::string GetRoGroupId() const;
 
                     /**
-                     * 设置只读组ID
-                     * @param RoGroupId 只读组ID
+                     * 设置只读组 ID。
+                     * @param RoGroupId 只读组 ID。
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool RoGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取只读组名称
-                     * @return RoGroupName 只读组名称
+                     * 获取只读组名称。
+                     * @return RoGroupName 只读组名称。
                      */
                     std::string GetRoGroupName() const;
 
                     /**
-                     * 设置只读组名称
-                     * @param RoGroupName 只读组名称
+                     * 设置只读组名称。
+                     * @param RoGroupName 只读组名称。
                      */
                     void SetRoGroupName(const std::string& _roGroupName);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool RoGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用
-                     * @return RoOfflineDelay 是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用
+                     * 获取是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。
+                     * @return RoOfflineDelay 是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。
                      */
                     int64_t GetRoOfflineDelay() const;
 
                     /**
-                     * 设置是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用
-                     * @param RoOfflineDelay 是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用
+                     * 设置是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。
+                     * @param RoOfflineDelay 是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。
                      */
                     void SetRoOfflineDelay(const int64_t& _roOfflineDelay);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool RoOfflineDelayHasBeenSet() const;
 
                     /**
-                     * 获取延迟阈值
-                     * @return RoMaxDelayTime 延迟阈值
+                     * 获取延迟阈值。
+                     * @return RoMaxDelayTime 延迟阈值。
                      */
                     int64_t GetRoMaxDelayTime() const;
 
                     /**
-                     * 设置延迟阈值
-                     * @param RoMaxDelayTime 延迟阈值
+                     * 设置延迟阈值。
+                     * @param RoMaxDelayTime 延迟阈值。
                      */
                     void SetRoMaxDelayTime(const int64_t& _roMaxDelayTime);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool RoMaxDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除
-                     * @return MinRoInGroup 最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除
+                     * 获取最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。
+                     * @return MinRoInGroup 最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。
                      */
                     int64_t GetMinRoInGroup() const;
 
                     /**
-                     * 设置最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除
-                     * @param MinRoInGroup 最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除
+                     * 设置最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。
+                     * @param MinRoInGroup 最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。
                      */
                     void SetMinRoInGroup(const int64_t& _minRoInGroup);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool MinRoInGroupHasBeenSet() const;
 
                     /**
-                     * 获取读写权重分配模式，可选值：system-系统自动分配；custom-自定义
-                     * @return WeightMode 读写权重分配模式，可选值：system-系统自动分配；custom-自定义
+                     * 获取读写权重分配模式，可选值：system-系统自动分配；custom-自定义。
+                     * @return WeightMode 读写权重分配模式，可选值：system-系统自动分配；custom-自定义。
                      */
                     std::string GetWeightMode() const;
 
                     /**
-                     * 设置读写权重分配模式，可选值：system-系统自动分配；custom-自定义
-                     * @param WeightMode 读写权重分配模式，可选值：system-系统自动分配；custom-自定义
+                     * 设置读写权重分配模式，可选值：system-系统自动分配；custom-自定义。
+                     * @param WeightMode 读写权重分配模式，可选值：system-系统自动分配；custom-自定义。
                      */
                     void SetWeightMode(const std::string& _weightMode);
 
@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取权重值
-                     * @return Weight 权重值
+                     * 获取权重值。
+                     * @return Weight 权重值。
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置权重值
-                     * @param Weight 权重值
+                     * 设置权重值。
+                     * @param Weight 权重值。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取只读组中的只读实例详情
-                     * @return RoInstances 只读组中的只读实例详情
+                     * 获取只读组中的只读实例详情。
+                     * @return RoInstances 只读组中的只读实例详情。
                      */
                     std::vector<RoInstanceInfo> GetRoInstances() const;
 
                     /**
-                     * 设置只读组中的只读实例详情
-                     * @param RoInstances 只读组中的只读实例详情
+                     * 设置只读组中的只读实例详情。
+                     * @param RoInstances 只读组中的只读实例详情。
                      */
                     void SetRoInstances(const std::vector<RoInstanceInfo>& _roInstances);
 
@@ -210,14 +210,14 @@ namespace TencentCloud
                     bool RoInstancesHasBeenSet() const;
 
                     /**
-                     * 获取只读组的内网IP
-                     * @return Vip 只读组的内网IP
+                     * 获取只读组的内网 IP。
+                     * @return Vip 只读组的内网 IP。
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置只读组的内网IP
-                     * @param Vip 只读组的内网IP
+                     * 设置只读组的内网 IP。
+                     * @param Vip 只读组的内网 IP。
                      */
                     void SetVip(const std::string& _vip);
 
@@ -228,14 +228,14 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取只读组的内网端口号
-                     * @return Vport 只读组的内网端口号
+                     * 获取只读组的内网端口号。
+                     * @return Vport 只读组的内网端口号。
                      */
                     int64_t GetVport() const;
 
                     /**
-                     * 设置只读组的内网端口号
-                     * @param Vport 只读组的内网端口号
+                     * 设置只读组的内网端口号。
+                     * @param Vport 只读组的内网端口号。
                      */
                     void SetVport(const int64_t& _vport);
 
@@ -245,73 +245,189 @@ namespace TencentCloud
                      */
                     bool VportHasBeenSet() const;
 
+                    /**
+                     * 获取私有网络 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqVpcId 私有网络 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置私有网络 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UniqVpcId 私有网络 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqSubnetId 子网 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUniqSubnetId() const;
+
+                    /**
+                     * 设置子网 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UniqSubnetId 子网 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+
+                    /**
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
+                     */
+                    bool UniqSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取只读组所在的地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoGroupRegion 只读组所在的地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRoGroupRegion() const;
+
+                    /**
+                     * 设置只读组所在的地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RoGroupRegion 只读组所在的地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRoGroupRegion(const std::string& _roGroupRegion);
+
+                    /**
+                     * 判断参数 RoGroupRegion 是否已赋值
+                     * @return RoGroupRegion 是否已赋值
+                     */
+                    bool RoGroupRegionHasBeenSet() const;
+
+                    /**
+                     * 获取只读组所在的可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoGroupZone 只读组所在的可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRoGroupZone() const;
+
+                    /**
+                     * 设置只读组所在的可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RoGroupZone 只读组所在的可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRoGroupZone(const std::string& _roGroupZone);
+
+                    /**
+                     * 判断参数 RoGroupZone 是否已赋值
+                     * @return RoGroupZone 是否已赋值
+                     */
+                    bool RoGroupZoneHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组
+                     * 只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。
                      */
                     std::string m_roGroupMode;
                     bool m_roGroupModeHasBeenSet;
 
                     /**
-                     * 只读组ID
+                     * 只读组 ID。
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;
 
                     /**
-                     * 只读组名称
+                     * 只读组名称。
                      */
                     std::string m_roGroupName;
                     bool m_roGroupNameHasBeenSet;
 
                     /**
-                     * 是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用
+                     * 是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。
                      */
                     int64_t m_roOfflineDelay;
                     bool m_roOfflineDelayHasBeenSet;
 
                     /**
-                     * 延迟阈值
+                     * 延迟阈值。
                      */
                     int64_t m_roMaxDelayTime;
                     bool m_roMaxDelayTimeHasBeenSet;
 
                     /**
-                     * 最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除
+                     * 最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。
                      */
                     int64_t m_minRoInGroup;
                     bool m_minRoInGroupHasBeenSet;
 
                     /**
-                     * 读写权重分配模式，可选值：system-系统自动分配；custom-自定义
+                     * 读写权重分配模式，可选值：system-系统自动分配；custom-自定义。
                      */
                     std::string m_weightMode;
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * 权重值
+                     * 权重值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 只读组中的只读实例详情
+                     * 只读组中的只读实例详情。
                      */
                     std::vector<RoInstanceInfo> m_roInstances;
                     bool m_roInstancesHasBeenSet;
 
                     /**
-                     * 只读组的内网IP
+                     * 只读组的内网 IP。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 只读组的内网端口号
+                     * 只读组的内网端口号。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
+
+                    /**
+                     * 私有网络 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * 子网 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 只读组所在的地域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roGroupRegion;
+                    bool m_roGroupRegionHasBeenSet;
+
+                    /**
+                     * 只读组所在的可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roGroupZone;
+                    bool m_roGroupZoneHasBeenSet;
 
                 };
             }

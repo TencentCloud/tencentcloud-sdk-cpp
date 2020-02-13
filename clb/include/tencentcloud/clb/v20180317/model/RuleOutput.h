@@ -27,6 +27,7 @@
 #include <tencentcloud/clb/v20180317/model/HealthCheck.h>
 #include <tencentcloud/clb/v20180317/model/CertificateOutput.h>
 #include <tencentcloud/clb/v20180317/model/RewriteTarget.h>
+#include <tencentcloud/clb/v20180317/model/BasicTargetGroupInfo.h>
 
 
 namespace TencentCloud
@@ -339,6 +340,112 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取后端服务器类型
+                     * @return TargetType 后端服务器类型
+                     */
+                    std::string GetTargetType() const;
+
+                    /**
+                     * 设置后端服务器类型
+                     * @param TargetType 后端服务器类型
+                     */
+                    void SetTargetType(const std::string& _targetType);
+
+                    /**
+                     * 判断参数 TargetType 是否已赋值
+                     * @return TargetType 是否已赋值
+                     */
+                    bool TargetTypeHasBeenSet() const;
+
+                    /**
+                     * 获取绑定的目标组基本信息；当规则绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetGroup 绑定的目标组基本信息；当规则绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BasicTargetGroupInfo GetTargetGroup() const;
+
+                    /**
+                     * 设置绑定的目标组基本信息；当规则绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetGroup 绑定的目标组基本信息；当规则绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetGroup(const BasicTargetGroupInfo& _targetGroup);
+
+                    /**
+                     * 判断参数 TargetGroup 是否已赋值
+                     * @return TargetGroup 是否已赋值
+                     */
+                    bool TargetGroupHasBeenSet() const;
+
+                    /**
+                     * 获取WAF实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WafDomainId WAF实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWafDomainId() const;
+
+                    /**
+                     * 设置WAF实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WafDomainId WAF实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWafDomainId(const std::string& _wafDomainId);
+
+                    /**
+                     * 判断参数 WafDomainId 是否已赋值
+                     * @return WafDomainId 是否已赋值
+                     */
+                    bool WafDomainIdHasBeenSet() const;
+
+                    /**
+                     * 获取TRPC被调服务器路由，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTrpcCallee() const;
+
+                    /**
+                     * 设置TRPC被调服务器路由，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrpcCallee(const std::string& _trpcCallee);
+
+                    /**
+                     * 判断参数 TrpcCallee 是否已赋值
+                     * @return TrpcCallee 是否已赋值
+                     */
+                    bool TrpcCalleeHasBeenSet() const;
+
+                    /**
+                     * 获取TRPC调用服务接口，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTrpcFunc() const;
+
+                    /**
+                     * 设置TRPC调用服务接口，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrpcFunc(const std::string& _trpcFunc);
+
+                    /**
+                     * 判断参数 TrpcFunc 是否已赋值
+                     * @return TrpcFunc 是否已赋值
+                     */
+                    bool TrpcFuncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,6 +542,40 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 后端服务器类型
+                     */
+                    std::string m_targetType;
+                    bool m_targetTypeHasBeenSet;
+
+                    /**
+                     * 绑定的目标组基本信息；当规则绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BasicTargetGroupInfo m_targetGroup;
+                    bool m_targetGroupHasBeenSet;
+
+                    /**
+                     * WAF实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wafDomainId;
+                    bool m_wafDomainIdHasBeenSet;
+
+                    /**
+                     * TRPC被调服务器路由，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trpcCallee;
+                    bool m_trpcCalleeHasBeenSet;
+
+                    /**
+                     * TRPC调用服务接口，ForwardType为TRPC时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trpcFunc;
+                    bool m_trpcFuncHasBeenSet;
 
                 };
             }

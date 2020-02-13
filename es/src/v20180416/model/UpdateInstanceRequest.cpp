@@ -36,7 +36,12 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_masterNodeTypeHasBeenSet(false),
     m_masterNodeDiskSizeHasBeenSet(false),
     m_forceRestartHasBeenSet(false),
-    m_cosBackupHasBeenSet(false)
+    m_cosBackupHasBeenSet(false),
+    m_nodeInfoListHasBeenSet(false),
+    m_publicAccessHasBeenSet(false),
+    m_esPublicAclHasBeenSet(false),
+    m_kibanaPublicAccessHasBeenSet(false),
+    m_kibanaPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -151,6 +156,54 @@ string UpdateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_cosBackup.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_nodeInfoListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeInfoList.begin(); itr != m_nodeInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_publicAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_publicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esPublicAclHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EsPublicAcl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_esPublicAcl.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_kibanaPublicAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_kibanaPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kibanaPrivateAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_kibanaPrivateAccess.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -367,6 +420,86 @@ void UpdateInstanceRequest::SetCosBackup(const CosBackup& _cosBackup)
 bool UpdateInstanceRequest::CosBackupHasBeenSet() const
 {
     return m_cosBackupHasBeenSet;
+}
+
+vector<NodeInfo> UpdateInstanceRequest::GetNodeInfoList() const
+{
+    return m_nodeInfoList;
+}
+
+void UpdateInstanceRequest::SetNodeInfoList(const vector<NodeInfo>& _nodeInfoList)
+{
+    m_nodeInfoList = _nodeInfoList;
+    m_nodeInfoListHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::NodeInfoListHasBeenSet() const
+{
+    return m_nodeInfoListHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetPublicAccess() const
+{
+    return m_publicAccess;
+}
+
+void UpdateInstanceRequest::SetPublicAccess(const string& _publicAccess)
+{
+    m_publicAccess = _publicAccess;
+    m_publicAccessHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::PublicAccessHasBeenSet() const
+{
+    return m_publicAccessHasBeenSet;
+}
+
+EsPublicAcl UpdateInstanceRequest::GetEsPublicAcl() const
+{
+    return m_esPublicAcl;
+}
+
+void UpdateInstanceRequest::SetEsPublicAcl(const EsPublicAcl& _esPublicAcl)
+{
+    m_esPublicAcl = _esPublicAcl;
+    m_esPublicAclHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::EsPublicAclHasBeenSet() const
+{
+    return m_esPublicAclHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetKibanaPublicAccess() const
+{
+    return m_kibanaPublicAccess;
+}
+
+void UpdateInstanceRequest::SetKibanaPublicAccess(const string& _kibanaPublicAccess)
+{
+    m_kibanaPublicAccess = _kibanaPublicAccess;
+    m_kibanaPublicAccessHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::KibanaPublicAccessHasBeenSet() const
+{
+    return m_kibanaPublicAccessHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetKibanaPrivateAccess() const
+{
+    return m_kibanaPrivateAccess;
+}
+
+void UpdateInstanceRequest::SetKibanaPrivateAccess(const string& _kibanaPrivateAccess)
+{
+    m_kibanaPrivateAccess = _kibanaPrivateAccess;
+    m_kibanaPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::KibanaPrivateAccessHasBeenSet() const
+{
+    return m_kibanaPrivateAccessHasBeenSet;
 }
 
 

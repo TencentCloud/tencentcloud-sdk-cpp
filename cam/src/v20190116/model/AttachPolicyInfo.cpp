@@ -30,7 +30,8 @@ AttachPolicyInfo::AttachPolicyInfo() :
     m_remarkHasBeenSet(false),
     m_operateOwnerUinHasBeenSet(false),
     m_operateUinHasBeenSet(false),
-    m_operateUinTypeHasBeenSet(false)
+    m_operateUinTypeHasBeenSet(false),
+    m_deactivedHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome AttachPolicyInfo::Deserialize(const Value &value)
         m_operateUinTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Deactived") && !value["Deactived"].IsNull())
+    {
+        if (!value["Deactived"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.Deactived` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deactived = value["Deactived"].GetUint64();
+        m_deactivedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "OperateUinType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operateUinType, allocator);
+    }
+
+    if (m_deactivedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Deactived";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deactived, allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void AttachPolicyInfo::SetOperateUinType(const uint64_t& _operateUinType)
 bool AttachPolicyInfo::OperateUinTypeHasBeenSet() const
 {
     return m_operateUinTypeHasBeenSet;
+}
+
+uint64_t AttachPolicyInfo::GetDeactived() const
+{
+    return m_deactived;
+}
+
+void AttachPolicyInfo::SetDeactived(const uint64_t& _deactived)
+{
+    m_deactived = _deactived;
+    m_deactivedHasBeenSet = true;
+}
+
+bool AttachPolicyInfo::DeactivedHasBeenSet() const
+{
+    return m_deactivedHasBeenSet;
 }
 

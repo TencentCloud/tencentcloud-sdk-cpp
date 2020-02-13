@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务模板ID
-                     * @return TaskTemplateIds 任务模板ID
+                     * 获取任务模板ID列表，与Filters参数不能同时指定。
+                     * @return TaskTemplateIds 任务模板ID列表，与Filters参数不能同时指定。
                      */
                     std::vector<std::string> GetTaskTemplateIds() const;
 
                     /**
-                     * 设置任务模板ID
-                     * @param TaskTemplateIds 任务模板ID
+                     * 设置任务模板ID列表，与Filters参数不能同时指定。
+                     * @param TaskTemplateIds 任务模板ID列表，与Filters参数不能同时指定。
                      */
                     void SetTaskTemplateIds(const std::vector<std::string>& _taskTemplateIds);
 
@@ -64,16 +64,20 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件
 <li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>
+与TaskTemplateIds参数不能同时指定。
                      * @return Filters 过滤条件
 <li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>
+与TaskTemplateIds参数不能同时指定。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
 <li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>
+与TaskTemplateIds参数不能同时指定。
                      * @param Filters 过滤条件
 <li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>
+与TaskTemplateIds参数不能同时指定。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -122,7 +126,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务模板ID
+                     * 任务模板ID列表，与Filters参数不能同时指定。
                      */
                     std::vector<std::string> m_taskTemplateIds;
                     bool m_taskTemplateIdsHasBeenSet;
@@ -130,6 +134,7 @@ namespace TencentCloud
                     /**
                      * 过滤条件
 <li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>
+与TaskTemplateIds参数不能同时指定。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

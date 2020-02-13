@@ -334,6 +334,72 @@ namespace TencentCloud
                      */
                     bool IncentivePayAmountHasBeenSet() const;
 
+                    /**
+                     * 获取组件类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ItemCode 组件类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetItemCode() const;
+
+                    /**
+                     * 设置组件类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ItemCode 组件类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetItemCode(const std::string& _itemCode);
+
+                    /**
+                     * 判断参数 ItemCode 是否已赋值
+                     * @return ItemCode 是否已赋值
+                     */
+                    bool ItemCodeHasBeenSet() const;
+
+                    /**
+                     * 获取组件名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComponentCode 组件名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetComponentCode() const;
+
+                    /**
+                     * 设置组件名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ComponentCode 组件名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetComponentCode(const std::string& _componentCode);
+
+                    /**
+                     * 判断参数 ComponentCode 是否已赋值
+                     * @return ComponentCode 是否已赋值
+                     */
+                    bool ComponentCodeHasBeenSet() const;
+
+                    /**
+                     * 获取合同价
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContractPrice 合同价
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContractPrice() const;
+
+                    /**
+                     * 设置合同价
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContractPrice 合同价
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContractPrice(const std::string& _contractPrice);
+
+                    /**
+                     * 判断参数 ContractPrice 是否已赋值
+                     * @return ContractPrice 是否已赋值
+                     */
+                    bool ContractPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +497,27 @@ namespace TencentCloud
                      */
                     std::string m_incentivePayAmount;
                     bool m_incentivePayAmountHasBeenSet;
+
+                    /**
+                     * 组件类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_itemCode;
+                    bool m_itemCodeHasBeenSet;
+
+                    /**
+                     * 组件名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_componentCode;
+                    bool m_componentCodeHasBeenSet;
+
+                    /**
+                     * 合同价
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contractPrice;
+                    bool m_contractPriceHasBeenSet;
 
                 };
             }

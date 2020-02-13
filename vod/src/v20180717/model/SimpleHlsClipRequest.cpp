@@ -26,7 +26,8 @@ using namespace std;
 SimpleHlsClipRequest::SimpleHlsClipRequest() :
     m_urlHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_endTimeOffsetHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string SimpleHlsClipRequest::ToJsonString() const
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void SimpleHlsClipRequest::SetEndTimeOffset(const double& _endTimeOffset)
 bool SimpleHlsClipRequest::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+uint64_t SimpleHlsClipRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void SimpleHlsClipRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 

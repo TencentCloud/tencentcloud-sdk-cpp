@@ -44,13 +44,21 @@ namespace TencentCloud
 
                     /**
                      * 获取证书类型。0-用户添加证书；1-腾讯云托管证书。
+注意：当证书类型为0时，HttpsCrt和HttpsKey必选；
+当证书类型为1时，优先使用CloudCertId对应证书，若CloudCertId为空则使用HttpsCrt和HttpsKey。
                      * @return CertType 证书类型。0-用户添加证书；1-腾讯云托管证书。
+注意：当证书类型为0时，HttpsCrt和HttpsKey必选；
+当证书类型为1时，优先使用CloudCertId对应证书，若CloudCertId为空则使用HttpsCrt和HttpsKey。
                      */
                     uint64_t GetCertType() const;
 
                     /**
                      * 设置证书类型。0-用户添加证书；1-腾讯云托管证书。
+注意：当证书类型为0时，HttpsCrt和HttpsKey必选；
+当证书类型为1时，优先使用CloudCertId对应证书，若CloudCertId为空则使用HttpsCrt和HttpsKey。
                      * @param CertType 证书类型。0-用户添加证书；1-腾讯云托管证书。
+注意：当证书类型为0时，HttpsCrt和HttpsKey必选；
+当证书类型为1时，优先使用CloudCertId对应证书，若CloudCertId为空则使用HttpsCrt和HttpsKey。
                      */
                     void SetCertType(const uint64_t& _certType);
 
@@ -59,6 +67,24 @@ namespace TencentCloud
                      * @return CertType 是否已赋值
                      */
                     bool CertTypeHasBeenSet() const;
+
+                    /**
+                     * 获取证书名称。
+                     * @return CertName 证书名称。
+                     */
+                    std::string GetCertName() const;
+
+                    /**
+                     * 设置证书名称。
+                     * @param CertName 证书名称。
+                     */
+                    void SetCertName(const std::string& _certName);
+
+                    /**
+                     * 判断参数 CertName 是否已赋值
+                     * @return CertName 是否已赋值
+                     */
+                    bool CertNameHasBeenSet() const;
 
                     /**
                      * 获取证书内容，即公钥。
@@ -97,24 +123,6 @@ namespace TencentCloud
                     bool HttpsKeyHasBeenSet() const;
 
                     /**
-                     * 获取证书名称。
-                     * @return CertName 证书名称。
-                     */
-                    std::string GetCertName() const;
-
-                    /**
-                     * 设置证书名称。
-                     * @param CertName 证书名称。
-                     */
-                    void SetCertName(const std::string& _certName);
-
-                    /**
-                     * 判断参数 CertName 是否已赋值
-                     * @return CertName 是否已赋值
-                     */
-                    bool CertNameHasBeenSet() const;
-
-                    /**
                      * 获取描述。
                      * @return Description 描述。
                      */
@@ -132,13 +140,39 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取腾讯云证书托管ID。
+                     * @return CloudCertId 腾讯云证书托管ID。
+                     */
+                    std::string GetCloudCertId() const;
+
+                    /**
+                     * 设置腾讯云证书托管ID。
+                     * @param CloudCertId 腾讯云证书托管ID。
+                     */
+                    void SetCloudCertId(const std::string& _cloudCertId);
+
+                    /**
+                     * 判断参数 CloudCertId 是否已赋值
+                     * @return CloudCertId 是否已赋值
+                     */
+                    bool CloudCertIdHasBeenSet() const;
+
                 private:
 
                     /**
                      * 证书类型。0-用户添加证书；1-腾讯云托管证书。
+注意：当证书类型为0时，HttpsCrt和HttpsKey必选；
+当证书类型为1时，优先使用CloudCertId对应证书，若CloudCertId为空则使用HttpsCrt和HttpsKey。
                      */
                     uint64_t m_certType;
                     bool m_certTypeHasBeenSet;
+
+                    /**
+                     * 证书名称。
+                     */
+                    std::string m_certName;
+                    bool m_certNameHasBeenSet;
 
                     /**
                      * 证书内容，即公钥。
@@ -153,16 +187,16 @@ namespace TencentCloud
                     bool m_httpsKeyHasBeenSet;
 
                     /**
-                     * 证书名称。
-                     */
-                    std::string m_certName;
-                    bool m_certNameHasBeenSet;
-
-                    /**
                      * 描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 腾讯云证书托管ID。
+                     */
+                    std::string m_cloudCertId;
+                    bool m_cloudCertIdHasBeenSet;
 
                 };
             }

@@ -1,0 +1,256 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_LIVESTREAMAIRECOGNITIONRESULTITEM_H_
+#define TENCENTCLOUD_MPS_V20190612_MODEL_LIVESTREAMAIRECOGNITIONRESULTITEM_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamFaceRecognitionResult.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamAsrWordsRecognitionResult.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamOcrWordsRecognitionResult.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamAsrFullTextRecognitionResult.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamOcrFullTextRecognitionResult.h>
+
+
+namespace TencentCloud
+{
+    namespace Mps
+    {
+        namespace V20190612
+        {
+            namespace Model
+            {
+                /**
+                * 直播流 AI 识别结果
+                */
+                class LiveStreamAiRecognitionResultItem : public AbstractModel
+                {
+                public:
+                    LiveStreamAiRecognitionResultItem();
+                    ~LiveStreamAiRecognitionResultItem() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取结果的类型，取值范围：
+<li>FaceRecognition：人脸识别，</li>
+<li>AsrWordsRecognition：语音关键词识别，</li>
+<li>OcrWordsRecognition：文本关键词识别，</li>
+<li>AsrFullTextRecognition：语音全文识别，</li>
+<li>OcrFullTextRecognition：文本全文识别。</li>
+                     * @return Type 结果的类型，取值范围：
+<li>FaceRecognition：人脸识别，</li>
+<li>AsrWordsRecognition：语音关键词识别，</li>
+<li>OcrWordsRecognition：文本关键词识别，</li>
+<li>AsrFullTextRecognition：语音全文识别，</li>
+<li>OcrFullTextRecognition：文本全文识别。</li>
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置结果的类型，取值范围：
+<li>FaceRecognition：人脸识别，</li>
+<li>AsrWordsRecognition：语音关键词识别，</li>
+<li>OcrWordsRecognition：文本关键词识别，</li>
+<li>AsrFullTextRecognition：语音全文识别，</li>
+<li>OcrFullTextRecognition：文本全文识别。</li>
+                     * @param Type 结果的类型，取值范围：
+<li>FaceRecognition：人脸识别，</li>
+<li>AsrWordsRecognition：语音关键词识别，</li>
+<li>OcrWordsRecognition：文本关键词识别，</li>
+<li>AsrFullTextRecognition：语音全文识别，</li>
+<li>OcrFullTextRecognition：文本全文识别。</li>
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取人脸识别结果，当 Type 为
+FaceRecognition 时有效。
+                     * @return FaceRecognitionResultSet 人脸识别结果，当 Type 为
+FaceRecognition 时有效。
+                     */
+                    std::vector<LiveStreamFaceRecognitionResult> GetFaceRecognitionResultSet() const;
+
+                    /**
+                     * 设置人脸识别结果，当 Type 为
+FaceRecognition 时有效。
+                     * @param FaceRecognitionResultSet 人脸识别结果，当 Type 为
+FaceRecognition 时有效。
+                     */
+                    void SetFaceRecognitionResultSet(const std::vector<LiveStreamFaceRecognitionResult>& _faceRecognitionResultSet);
+
+                    /**
+                     * 判断参数 FaceRecognitionResultSet 是否已赋值
+                     * @return FaceRecognitionResultSet 是否已赋值
+                     */
+                    bool FaceRecognitionResultSetHasBeenSet() const;
+
+                    /**
+                     * 获取语音关键词识别结果，当 Type 为
+AsrWordsRecognition 时有效。
+                     * @return AsrWordsRecognitionResultSet 语音关键词识别结果，当 Type 为
+AsrWordsRecognition 时有效。
+                     */
+                    std::vector<LiveStreamAsrWordsRecognitionResult> GetAsrWordsRecognitionResultSet() const;
+
+                    /**
+                     * 设置语音关键词识别结果，当 Type 为
+AsrWordsRecognition 时有效。
+                     * @param AsrWordsRecognitionResultSet 语音关键词识别结果，当 Type 为
+AsrWordsRecognition 时有效。
+                     */
+                    void SetAsrWordsRecognitionResultSet(const std::vector<LiveStreamAsrWordsRecognitionResult>& _asrWordsRecognitionResultSet);
+
+                    /**
+                     * 判断参数 AsrWordsRecognitionResultSet 是否已赋值
+                     * @return AsrWordsRecognitionResultSet 是否已赋值
+                     */
+                    bool AsrWordsRecognitionResultSetHasBeenSet() const;
+
+                    /**
+                     * 获取文本关键词识别结果，当 Type 为
+OcrWordsRecognition 时有效。
+                     * @return OcrWordsRecognitionResultSet 文本关键词识别结果，当 Type 为
+OcrWordsRecognition 时有效。
+                     */
+                    std::vector<LiveStreamOcrWordsRecognitionResult> GetOcrWordsRecognitionResultSet() const;
+
+                    /**
+                     * 设置文本关键词识别结果，当 Type 为
+OcrWordsRecognition 时有效。
+                     * @param OcrWordsRecognitionResultSet 文本关键词识别结果，当 Type 为
+OcrWordsRecognition 时有效。
+                     */
+                    void SetOcrWordsRecognitionResultSet(const std::vector<LiveStreamOcrWordsRecognitionResult>& _ocrWordsRecognitionResultSet);
+
+                    /**
+                     * 判断参数 OcrWordsRecognitionResultSet 是否已赋值
+                     * @return OcrWordsRecognitionResultSet 是否已赋值
+                     */
+                    bool OcrWordsRecognitionResultSetHasBeenSet() const;
+
+                    /**
+                     * 获取语音全文识别结果，当 Type 为
+AsrFullTextRecognition 时有效。
+                     * @return AsrFullTextRecognitionResultSet 语音全文识别结果，当 Type 为
+AsrFullTextRecognition 时有效。
+                     */
+                    std::vector<LiveStreamAsrFullTextRecognitionResult> GetAsrFullTextRecognitionResultSet() const;
+
+                    /**
+                     * 设置语音全文识别结果，当 Type 为
+AsrFullTextRecognition 时有效。
+                     * @param AsrFullTextRecognitionResultSet 语音全文识别结果，当 Type 为
+AsrFullTextRecognition 时有效。
+                     */
+                    void SetAsrFullTextRecognitionResultSet(const std::vector<LiveStreamAsrFullTextRecognitionResult>& _asrFullTextRecognitionResultSet);
+
+                    /**
+                     * 判断参数 AsrFullTextRecognitionResultSet 是否已赋值
+                     * @return AsrFullTextRecognitionResultSet 是否已赋值
+                     */
+                    bool AsrFullTextRecognitionResultSetHasBeenSet() const;
+
+                    /**
+                     * 获取文本全文识别结果，当 Type 为
+OcrFullTextRecognition 时有效。
+                     * @return OcrFullTextRecognitionResultSet 文本全文识别结果，当 Type 为
+OcrFullTextRecognition 时有效。
+                     */
+                    std::vector<LiveStreamOcrFullTextRecognitionResult> GetOcrFullTextRecognitionResultSet() const;
+
+                    /**
+                     * 设置文本全文识别结果，当 Type 为
+OcrFullTextRecognition 时有效。
+                     * @param OcrFullTextRecognitionResultSet 文本全文识别结果，当 Type 为
+OcrFullTextRecognition 时有效。
+                     */
+                    void SetOcrFullTextRecognitionResultSet(const std::vector<LiveStreamOcrFullTextRecognitionResult>& _ocrFullTextRecognitionResultSet);
+
+                    /**
+                     * 判断参数 OcrFullTextRecognitionResultSet 是否已赋值
+                     * @return OcrFullTextRecognitionResultSet 是否已赋值
+                     */
+                    bool OcrFullTextRecognitionResultSetHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 结果的类型，取值范围：
+<li>FaceRecognition：人脸识别，</li>
+<li>AsrWordsRecognition：语音关键词识别，</li>
+<li>OcrWordsRecognition：文本关键词识别，</li>
+<li>AsrFullTextRecognition：语音全文识别，</li>
+<li>OcrFullTextRecognition：文本全文识别。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 人脸识别结果，当 Type 为
+FaceRecognition 时有效。
+                     */
+                    std::vector<LiveStreamFaceRecognitionResult> m_faceRecognitionResultSet;
+                    bool m_faceRecognitionResultSetHasBeenSet;
+
+                    /**
+                     * 语音关键词识别结果，当 Type 为
+AsrWordsRecognition 时有效。
+                     */
+                    std::vector<LiveStreamAsrWordsRecognitionResult> m_asrWordsRecognitionResultSet;
+                    bool m_asrWordsRecognitionResultSetHasBeenSet;
+
+                    /**
+                     * 文本关键词识别结果，当 Type 为
+OcrWordsRecognition 时有效。
+                     */
+                    std::vector<LiveStreamOcrWordsRecognitionResult> m_ocrWordsRecognitionResultSet;
+                    bool m_ocrWordsRecognitionResultSetHasBeenSet;
+
+                    /**
+                     * 语音全文识别结果，当 Type 为
+AsrFullTextRecognition 时有效。
+                     */
+                    std::vector<LiveStreamAsrFullTextRecognitionResult> m_asrFullTextRecognitionResultSet;
+                    bool m_asrFullTextRecognitionResultSetHasBeenSet;
+
+                    /**
+                     * 文本全文识别结果，当 Type 为
+OcrFullTextRecognition 时有效。
+                     */
+                    std::vector<LiveStreamOcrFullTextRecognitionResult> m_ocrFullTextRecognitionResultSet;
+                    bool m_ocrFullTextRecognitionResultSetHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_LIVESTREAMAIRECOGNITIONRESULTITEM_H_

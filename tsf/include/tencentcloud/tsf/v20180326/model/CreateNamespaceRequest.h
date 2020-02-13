@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 设置集群ID
-                     * @param ClusterId 集群ID
-                     */
-                    void SetClusterId(const std::string& _clusterId);
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     */
-                    bool ClusterIdHasBeenSet() const;
-
-                    /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
                      */
@@ -77,6 +59,24 @@ namespace TencentCloud
                      * @return NamespaceName 是否已赋值
                      */
                     bool NamespaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param ClusterId 集群ID
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间描述
@@ -114,19 +114,55 @@ namespace TencentCloud
                      */
                     bool NamespaceResourceTypeHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * @return NamespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     */
+                    std::string GetNamespaceType() const;
 
                     /**
-                     * 集群ID
+                     * 设置是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * @param NamespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
                      */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
+                    void SetNamespaceType(const std::string& _namespaceType);
+
+                    /**
+                     * 判断参数 NamespaceType 是否已赋值
+                     * @return NamespaceType 是否已赋值
+                     */
+                    bool NamespaceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间ID
+                     * @return NamespaceId 命名空间ID
+                     */
+                    std::string GetNamespaceId() const;
+
+                    /**
+                     * 设置命名空间ID
+                     * @param NamespaceId 命名空间ID
+                     */
+                    void SetNamespaceId(const std::string& _namespaceId);
+
+                    /**
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
+                     */
+                    bool NamespaceIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 命名空间名称
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 命名空间描述
@@ -139,6 +175,18 @@ namespace TencentCloud
                      */
                     std::string m_namespaceResourceType;
                     bool m_namespaceResourceTypeHasBeenSet;
+
+                    /**
+                     * 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     */
+                    std::string m_namespaceType;
+                    bool m_namespaceTypeHasBeenSet;
+
+                    /**
+                     * 命名空间ID
+                     */
+                    std::string m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
 
                 };
             }

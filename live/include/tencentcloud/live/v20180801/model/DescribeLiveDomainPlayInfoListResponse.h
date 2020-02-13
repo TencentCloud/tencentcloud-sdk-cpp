@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool TotalFluxHasBeenSet() const;
 
                     /**
-                     * 获取TotalRequest。
-                     * @return TotalRequest TotalRequest。
+                     * 获取总请求数。
+                     * @return TotalRequest 总请求数。
                      */
                     uint64_t GetTotalRequest() const;
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_totalFluxHasBeenSet;
 
                     /**
-                     * TotalRequest。
+                     * 总请求数。
                      */
                     uint64_t m_totalRequest;
                     bool m_totalRequestHasBeenSet;

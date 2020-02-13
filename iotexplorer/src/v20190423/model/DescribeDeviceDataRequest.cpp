@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDeviceDataRequest::DescribeDeviceDataRequest() :
     m_productIdHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_deviceIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeDeviceDataRequest::ToJsonString() const
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeDeviceDataRequest::SetDeviceName(const string& _deviceName)
 bool DescribeDeviceDataRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+string DescribeDeviceDataRequest::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void DescribeDeviceDataRequest::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool DescribeDeviceDataRequest::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
 }
 
 

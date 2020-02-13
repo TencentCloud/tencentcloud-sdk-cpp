@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EIP唯一标识id，形如'eip-xxxx'
-                     * @return AddressIds EIP唯一标识id，形如'eip-xxxx'
+                     * 获取EIP唯一标识ID，形如'eip-xxxx'
+                     * @return AddressIds EIP唯一标识ID，形如'eip-xxxx'
                      */
                     std::vector<std::string> GetAddressIds() const;
 
                     /**
-                     * 设置EIP唯一标识id，形如'eip-xxxx'
-                     * @param AddressIds EIP唯一标识id，形如'eip-xxxx'
+                     * 设置EIP唯一标识ID，形如'eip-xxxx'
+                     * @param AddressIds EIP唯一标识ID，形如'eip-xxxx'
                      */
                     void SetAddressIds(const std::vector<std::string>& _addressIds);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EIP唯一标识id，形如'eip-xxxx'
+                     * EIP唯一标识ID，形如'eip-xxxx'
                      */
                     std::vector<std::string> m_addressIds;
                     bool m_addressIdsHasBeenSet;

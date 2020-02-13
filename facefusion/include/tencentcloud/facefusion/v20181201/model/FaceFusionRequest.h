@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（url 或 base64) ，二选一。当前仅支持 url 方式，base64 方式后期开放。
-                     * @return RspImgType 返回图像方式（url 或 base64) ，二选一。当前仅支持 url 方式，base64 方式后期开放。
+                     * 获取返回图像方式（url 或 base64) ，二选一。url有效期为30天。
+                     * @return RspImgType 返回图像方式（url 或 base64) ，二选一。url有效期为30天。
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（url 或 base64) ，二选一。当前仅支持 url 方式，base64 方式后期开放。
-                     * @param RspImgType 返回图像方式（url 或 base64) ，二选一。当前仅支持 url 方式，base64 方式后期开放。
+                     * 设置返回图像方式（url 或 base64) ，二选一。url有效期为30天。
+                     * @param RspImgType 返回图像方式（url 或 base64) ，二选一。url有效期为30天。
                      */
                     void SetRspImgType(const std::string& _rspImgType);
 
@@ -134,17 +134,17 @@ namespace TencentCloud
 
                     /**
                      * 获取0表示不需要鉴政，1表示需要鉴政。默认值为0。
-鉴政接口同时会对名人明星进行识别，您可以根据实际需要过滤。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
                      * @return CelebrityIdentify 0表示不需要鉴政，1表示需要鉴政。默认值为0。
-鉴政接口同时会对名人明星进行识别，您可以根据实际需要过滤。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
                      */
                     int64_t GetCelebrityIdentify() const;
 
                     /**
                      * 设置0表示不需要鉴政，1表示需要鉴政。默认值为0。
-鉴政接口同时会对名人明星进行识别，您可以根据实际需要过滤。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
                      * @param CelebrityIdentify 0表示不需要鉴政，1表示需要鉴政。默认值为0。
-鉴政接口同时会对名人明星进行识别，您可以根据实际需要过滤。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
                      */
                     void SetCelebrityIdentify(const int64_t& _celebrityIdentify);
 
@@ -175,7 +175,7 @@ namespace TencentCloud
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 返回图像方式（url 或 base64) ，二选一。当前仅支持 url 方式，base64 方式后期开放。
+                     * 返回图像方式（url 或 base64) ，二选一。url有效期为30天。
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;
@@ -188,7 +188,7 @@ namespace TencentCloud
 
                     /**
                      * 0表示不需要鉴政，1表示需要鉴政。默认值为0。
-鉴政接口同时会对名人明星进行识别，您可以根据实际需要过滤。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
                      */
                     int64_t m_celebrityIdentify;
                     bool m_celebrityIdentifyHasBeenSet;

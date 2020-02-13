@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 色情识别结果。
+                * 图像文本内容审核结果。
                 */
                 class TextResult : public AbstractModel
                 {
@@ -204,6 +204,8 @@ DRUGS：涉毒
 CURSE：谩骂
 TERRORISM：暴恐
 OTHERS：其他
+
+本服务利用微信团队提供的算法，可以准确识别图片中是否包含二维码。当图片中存在二维码时，分类为ADS，关键词输出为“二维码”。
                      * @return Type 图片中是否包含敏感文本内容。
 包含：
 NOTEXT：无文本
@@ -215,6 +217,8 @@ DRUGS：涉毒
 CURSE：谩骂
 TERRORISM：暴恐
 OTHERS：其他
+
+本服务利用微信团队提供的算法，可以准确识别图片中是否包含二维码。当图片中存在二维码时，分类为ADS，关键词输出为“二维码”。
                      */
                     std::string GetType() const;
 
@@ -230,6 +234,8 @@ DRUGS：涉毒
 CURSE：谩骂
 TERRORISM：暴恐
 OTHERS：其他
+
+本服务利用微信团队提供的算法，可以准确识别图片中是否包含二维码。当图片中存在二维码时，分类为ADS，关键词输出为“二维码”。
                      * @param Type 图片中是否包含敏感文本内容。
 包含：
 NOTEXT：无文本
@@ -241,6 +247,8 @@ DRUGS：涉毒
 CURSE：谩骂
 TERRORISM：暴恐
 OTHERS：其他
+
+本服务利用微信团队提供的算法，可以准确识别图片中是否包含二维码。当图片中存在二维码时，分类为ADS，关键词输出为“二维码”。
                      */
                     void SetType(const std::string& _type);
 
@@ -326,6 +334,8 @@ DRUGS：涉毒
 CURSE：谩骂
 TERRORISM：暴恐
 OTHERS：其他
+
+本服务利用微信团队提供的算法，可以准确识别图片中是否包含二维码。当图片中存在二维码时，分类为ADS，关键词输出为“二维码”。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

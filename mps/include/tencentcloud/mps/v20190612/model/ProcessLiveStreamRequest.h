@@ -24,6 +24,7 @@
 #include <tencentcloud/mps/v20190612/model/LiveStreamTaskNotifyConfig.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/AiContentReviewTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 
 
 namespace TencentCloud
@@ -136,22 +137,22 @@ namespace TencentCloud
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取视频内容识别类型任务参数。
+                     * @return AiRecognitionTask 视频内容识别类型任务参数。
                      */
-                    std::string GetSessionContext() const;
+                    AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置视频内容识别类型任务参数。
+                     * @param AiRecognitionTask 视频内容识别类型任务参数。
                      */
-                    void SetSessionContext(const std::string& _sessionContext);
+                    void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
                     /**
-                     * 判断参数 SessionContext 是否已赋值
-                     * @return SessionContext 是否已赋值
+                     * 判断参数 AiRecognitionTask 是否已赋值
+                     * @return AiRecognitionTask 是否已赋值
                      */
-                    bool SessionContextHasBeenSet() const;
+                    bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
@@ -170,6 +171,24 @@ namespace TencentCloud
                      * @return SessionId 是否已赋值
                      */
                     bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    std::string GetSessionContext() const;
+
+                    /**
+                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    void SetSessionContext(const std::string& _sessionContext);
+
+                    /**
+                     * 判断参数 SessionContext 是否已赋值
+                     * @return SessionContext 是否已赋值
+                     */
+                    bool SessionContextHasBeenSet() const;
 
                 private:
 
@@ -204,16 +223,22 @@ namespace TencentCloud
                     bool m_aiContentReviewTaskHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 视频内容识别类型任务参数。
                      */
-                    std::string m_sessionContext;
-                    bool m_sessionContextHasBeenSet;
+                    AiRecognitionTaskInput m_aiRecognitionTask;
+                    bool m_aiRecognitionTaskHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     */
+                    std::string m_sessionContext;
+                    bool m_sessionContextHasBeenSet;
 
                 };
             }

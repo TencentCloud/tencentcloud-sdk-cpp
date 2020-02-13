@@ -288,6 +288,24 @@ namespace TencentCloud
                      */
                     bool ResolutionHasBeenSet() const;
 
+                    /**
+                     * 获取采样率。
+                     * @return AsampleRate 采样率。
+                     */
+                    uint64_t GetAsampleRate() const;
+
+                    /**
+                     * 设置采样率。
+                     * @param AsampleRate 采样率。
+                     */
+                    void SetAsampleRate(const uint64_t& _asampleRate);
+
+                    /**
+                     * 判断参数 AsampleRate 是否已赋值
+                     * @return AsampleRate 是否已赋值
+                     */
+                    bool AsampleRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -369,6 +387,12 @@ namespace TencentCloud
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
+
+                    /**
+                     * 采样率。
+                     */
+                    uint64_t m_asampleRate;
+                    bool m_asampleRateHasBeenSet;
 
                 };
             }

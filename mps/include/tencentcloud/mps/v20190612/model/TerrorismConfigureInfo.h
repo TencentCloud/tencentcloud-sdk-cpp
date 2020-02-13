@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/TerrorismImgReviewTemplateInfo.h>
+#include <tencentcloud/mps/v20190612/model/TerrorismOcrReviewTemplateInfo.h>
 
 
 namespace TencentCloud
@@ -49,17 +50,13 @@ namespace TencentCloud
 
                     /**
                      * 获取画面鉴恐任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImgReviewInfo 画面鉴恐任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TerrorismImgReviewTemplateInfo GetImgReviewInfo() const;
 
                     /**
                      * 设置画面鉴恐任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImgReviewInfo 画面鉴恐任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImgReviewInfo(const TerrorismImgReviewTemplateInfo& _imgReviewInfo);
 
@@ -69,14 +66,37 @@ namespace TencentCloud
                      */
                     bool ImgReviewInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文本鉴恐任务控制参数。
+                     * @return OcrReviewInfo 文本鉴恐任务控制参数。
+                     */
+                    TerrorismOcrReviewTemplateInfo GetOcrReviewInfo() const;
+
+                    /**
+                     * 设置文本鉴恐任务控制参数。
+                     * @param OcrReviewInfo 文本鉴恐任务控制参数。
+                     */
+                    void SetOcrReviewInfo(const TerrorismOcrReviewTemplateInfo& _ocrReviewInfo);
+
+                    /**
+                     * 判断参数 OcrReviewInfo 是否已赋值
+                     * @return OcrReviewInfo 是否已赋值
+                     */
+                    bool OcrReviewInfoHasBeenSet() const;
+
                 private:
 
                     /**
                      * 画面鉴恐任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TerrorismImgReviewTemplateInfo m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
+
+                    /**
+                     * 文本鉴恐任务控制参数。
+                     */
+                    TerrorismOcrReviewTemplateInfo m_ocrReviewInfo;
+                    bool m_ocrReviewInfoHasBeenSet;
 
                 };
             }

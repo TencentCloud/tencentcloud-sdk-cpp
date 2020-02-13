@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拉取最大条数，最多100条
-                     * @return Limit 拉取最大条数，最多100条
+                     * 获取拉取最大条数，最多100条。
+                     * @return Limit 拉取最大条数，最多100条。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置拉取最大条数，最多100条
-                     * @param Limit 拉取最大条数，最多100条
+                     * 设置拉取最大条数，最多100条。
+                     * @param Limit 拉取最大条数，最多100条。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @return SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 获取短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * @return SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
                      */
                     std::string GetSmsSdkAppid() const;
 
                     /**
-                     * 设置短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @param SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 设置短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * @param SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
                      */
                     void SetSmsSdkAppid(const std::string& _smsSdkAppid);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拉取最大条数，最多100条
+                     * 拉取最大条数，最多100条。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
                      */
                     std::string m_smsSdkAppid;
                     bool m_smsSdkAppidHasBeenSet;

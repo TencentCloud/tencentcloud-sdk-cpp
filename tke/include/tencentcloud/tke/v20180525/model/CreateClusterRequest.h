@@ -27,6 +27,7 @@
 #include <tencentcloud/tke/v20180525/model/ClusterAdvancedSettings.h>
 #include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 #include <tencentcloud/tke/v20180525/model/ExistedInstancesForNode.h>
+#include <tencentcloud/tke/v20180525/model/InstanceDataDiskMountSetting.h>
 
 
 namespace TencentCloud
@@ -174,6 +175,24 @@ namespace TencentCloud
                      */
                     bool ExistedInstancesForNodeHasBeenSet() const;
 
+                    /**
+                     * 获取CVM类型和其对应的数据盘挂载配置信息
+                     * @return InstanceDataDiskMountSettings CVM类型和其对应的数据盘挂载配置信息
+                     */
+                    std::vector<InstanceDataDiskMountSetting> GetInstanceDataDiskMountSettings() const;
+
+                    /**
+                     * 设置CVM类型和其对应的数据盘挂载配置信息
+                     * @param InstanceDataDiskMountSettings CVM类型和其对应的数据盘挂载配置信息
+                     */
+                    void SetInstanceDataDiskMountSettings(const std::vector<InstanceDataDiskMountSetting>& _instanceDataDiskMountSettings);
+
+                    /**
+                     * 判断参数 InstanceDataDiskMountSettings 是否已赋值
+                     * @return InstanceDataDiskMountSettings 是否已赋值
+                     */
+                    bool InstanceDataDiskMountSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +236,12 @@ namespace TencentCloud
                      */
                     std::vector<ExistedInstancesForNode> m_existedInstancesForNode;
                     bool m_existedInstancesForNodeHasBeenSet;
+
+                    /**
+                     * CVM类型和其对应的数据盘挂载配置信息
+                     */
+                    std::vector<InstanceDataDiskMountSetting> m_instanceDataDiskMountSettings;
+                    bool m_instanceDataDiskMountSettingsHasBeenSet;
 
                 };
             }

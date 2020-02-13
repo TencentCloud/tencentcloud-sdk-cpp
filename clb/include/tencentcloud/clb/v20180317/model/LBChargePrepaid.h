@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取周期，表示多少个月（保留字段）
+                     * 获取购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Period 周期，表示多少个月（保留字段）
+                     * @return Period 购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置周期，表示多少个月（保留字段）
+                     * 设置购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Period 周期，表示多少个月（保留字段）
+                     * @param Period 购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPeriod(const int64_t& _period);
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 周期，表示多少个月（保留字段）
+                     * 购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;

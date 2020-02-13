@@ -32,7 +32,8 @@ SetAuthenticationRequest::SetAuthenticationRequest() :
     m_basicAuthConfIdHasBeenSet(false),
     m_gaapCertificateIdHasBeenSet(false),
     m_realServerCertificateIdHasBeenSet(false),
-    m_realServerCertificateDomainHasBeenSet(false)
+    m_realServerCertificateDomainHasBeenSet(false),
+    m_polyRealServerCertificateIdsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,19 @@ string SetAuthenticationRequest::ToJsonString() const
         string key = "RealServerCertificateDomain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_realServerCertificateDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_polyRealServerCertificateIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolyRealServerCertificateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_polyRealServerCertificateIds.begin(); itr != m_polyRealServerCertificateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -265,6 +279,22 @@ void SetAuthenticationRequest::SetRealServerCertificateDomain(const string& _rea
 bool SetAuthenticationRequest::RealServerCertificateDomainHasBeenSet() const
 {
     return m_realServerCertificateDomainHasBeenSet;
+}
+
+vector<string> SetAuthenticationRequest::GetPolyRealServerCertificateIds() const
+{
+    return m_polyRealServerCertificateIds;
+}
+
+void SetAuthenticationRequest::SetPolyRealServerCertificateIds(const vector<string>& _polyRealServerCertificateIds)
+{
+    m_polyRealServerCertificateIds = _polyRealServerCertificateIds;
+    m_polyRealServerCertificateIdsHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::PolyRealServerCertificateIdsHasBeenSet() const
+{
+    return m_polyRealServerCertificateIdsHasBeenSet;
 }
 
 

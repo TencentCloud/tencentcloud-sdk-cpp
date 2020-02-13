@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool GroupDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取项目id，默认0。可在qcloud控制台项目管理页面查询到。
-                     * @return ProjectId 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * 获取项目ID，默认0。可在qcloud控制台项目管理页面查询到。
+                     * @return ProjectId 项目ID，默认0。可在qcloud控制台项目管理页面查询到。
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id，默认0。可在qcloud控制台项目管理页面查询到。
-                     * @param ProjectId 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * 设置项目ID，默认0。可在qcloud控制台项目管理页面查询到。
+                     * @param ProjectId 项目ID，默认0。可在qcloud控制台项目管理页面查询到。
                      */
                     void SetProjectId(const std::string& _projectId);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_groupDescriptionHasBeenSet;
 
                     /**
-                     * 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * 项目ID，默认0。可在qcloud控制台项目管理页面查询到。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

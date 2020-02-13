@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/CommonTimeWindow.h>
 
 
 namespace TencentCloud
@@ -43,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。
-                     * @return StartTimeMin 备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。
+                     * 获取自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
+                     * @return StartTimeMin 自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
                      */
                     int64_t GetStartTimeMin() const;
 
@@ -55,8 +56,8 @@ namespace TencentCloud
                     bool StartTimeMinHasBeenSet() const;
 
                     /**
-                     * 获取备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。
-                     * @return StartTimeMax 备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。
+                     * 获取自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
+                     * @return StartTimeMax 自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
                      */
                     int64_t GetStartTimeMax() const;
 
@@ -67,8 +68,8 @@ namespace TencentCloud
                     bool StartTimeMaxHasBeenSet() const;
 
                     /**
-                     * 获取备份过期时间，单位为天。
-                     * @return BackupExpireDays 备份过期时间，单位为天。
+                     * 获取备份文件保留时间，单位为天。
+                     * @return BackupExpireDays 备份文件保留时间，单位为天。
                      */
                     int64_t GetBackupExpireDays() const;
 
@@ -91,8 +92,8 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取Binlog 过期时间，单位为天。
-                     * @return BinlogExpireDays Binlog 过期时间，单位为天。
+                     * 获取Binlog 文件保留时间，单位为天。
+                     * @return BinlogExpireDays Binlog 文件保留时间，单位为天。
                      */
                     int64_t GetBinlogExpireDays() const;
 
@@ -102,22 +103,34 @@ namespace TencentCloud
                      */
                     bool BinlogExpireDaysHasBeenSet() const;
 
+                    /**
+                     * 获取实例自动备份的时间窗。
+                     * @return BackupTimeWindow 实例自动备份的时间窗。
+                     */
+                    CommonTimeWindow GetBackupTimeWindow() const;
+
+                    /**
+                     * 判断参数 BackupTimeWindow 是否已赋值
+                     * @return BackupTimeWindow 是否已赋值
+                     */
+                    bool BackupTimeWindowHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。
+                     * 自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
                      */
                     int64_t m_startTimeMin;
                     bool m_startTimeMinHasBeenSet;
 
                     /**
-                     * 备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。
+                     * 自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）
                      */
                     int64_t m_startTimeMax;
                     bool m_startTimeMaxHasBeenSet;
 
                     /**
-                     * 备份过期时间，单位为天。
+                     * 备份文件保留时间，单位为天。
                      */
                     int64_t m_backupExpireDays;
                     bool m_backupExpireDaysHasBeenSet;
@@ -129,10 +142,16 @@ namespace TencentCloud
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * Binlog 过期时间，单位为天。
+                     * Binlog 文件保留时间，单位为天。
                      */
                     int64_t m_binlogExpireDays;
                     bool m_binlogExpireDaysHasBeenSet;
+
+                    /**
+                     * 实例自动备份的时间窗。
+                     */
+                    CommonTimeWindow m_backupTimeWindow;
+                    bool m_backupTimeWindowHasBeenSet;
 
                 };
             }

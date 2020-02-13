@@ -83,6 +83,49 @@ IaiClient::AnalyzeFaceOutcomeCallable IaiClient::AnalyzeFaceCallable(const Analy
     return task->get_future();
 }
 
+IaiClient::CheckSimilarPersonOutcome IaiClient::CheckSimilarPerson(const CheckSimilarPersonRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckSimilarPerson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckSimilarPersonResponse rsp = CheckSimilarPersonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckSimilarPersonOutcome(rsp);
+        else
+            return CheckSimilarPersonOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckSimilarPersonOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::CheckSimilarPersonAsync(const CheckSimilarPersonRequest& request, const CheckSimilarPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckSimilarPerson(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::CheckSimilarPersonOutcomeCallable IaiClient::CheckSimilarPersonCallable(const CheckSimilarPersonRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckSimilarPersonOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckSimilarPerson(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IaiClient::CompareFaceOutcome IaiClient::CompareFace(const CompareFaceRequest &request)
 {
     auto outcome = MakeRequest(request, "CompareFace");
@@ -556,6 +599,135 @@ IaiClient::DetectLiveFaceOutcomeCallable IaiClient::DetectLiveFaceCallable(const
     return task->get_future();
 }
 
+IaiClient::EstimateCheckSimilarPersonCostTimeOutcome IaiClient::EstimateCheckSimilarPersonCostTime(const EstimateCheckSimilarPersonCostTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "EstimateCheckSimilarPersonCostTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EstimateCheckSimilarPersonCostTimeResponse rsp = EstimateCheckSimilarPersonCostTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EstimateCheckSimilarPersonCostTimeOutcome(rsp);
+        else
+            return EstimateCheckSimilarPersonCostTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return EstimateCheckSimilarPersonCostTimeOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::EstimateCheckSimilarPersonCostTimeAsync(const EstimateCheckSimilarPersonCostTimeRequest& request, const EstimateCheckSimilarPersonCostTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EstimateCheckSimilarPersonCostTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::EstimateCheckSimilarPersonCostTimeOutcomeCallable IaiClient::EstimateCheckSimilarPersonCostTimeCallable(const EstimateCheckSimilarPersonCostTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EstimateCheckSimilarPersonCostTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->EstimateCheckSimilarPersonCostTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::GetCheckSimilarPersonJobIdListOutcome IaiClient::GetCheckSimilarPersonJobIdList(const GetCheckSimilarPersonJobIdListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCheckSimilarPersonJobIdList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCheckSimilarPersonJobIdListResponse rsp = GetCheckSimilarPersonJobIdListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCheckSimilarPersonJobIdListOutcome(rsp);
+        else
+            return GetCheckSimilarPersonJobIdListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCheckSimilarPersonJobIdListOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::GetCheckSimilarPersonJobIdListAsync(const GetCheckSimilarPersonJobIdListRequest& request, const GetCheckSimilarPersonJobIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCheckSimilarPersonJobIdList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::GetCheckSimilarPersonJobIdListOutcomeCallable IaiClient::GetCheckSimilarPersonJobIdListCallable(const GetCheckSimilarPersonJobIdListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCheckSimilarPersonJobIdListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCheckSimilarPersonJobIdList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::GetGroupInfoOutcome IaiClient::GetGroupInfo(const GetGroupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetGroupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetGroupInfoResponse rsp = GetGroupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetGroupInfoOutcome(rsp);
+        else
+            return GetGroupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetGroupInfoOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::GetGroupInfoAsync(const GetGroupInfoRequest& request, const GetGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetGroupInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::GetGroupInfoOutcomeCallable IaiClient::GetGroupInfoCallable(const GetGroupInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetGroupInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetGroupInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IaiClient::GetGroupListOutcome IaiClient::GetGroupList(const GetGroupListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetGroupList");
@@ -764,6 +936,49 @@ IaiClient::GetPersonListNumOutcomeCallable IaiClient::GetPersonListNumCallable(c
         [this, request]()
         {
             return this->GetPersonListNum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IaiClient::GetSimilarPersonResultOutcome IaiClient::GetSimilarPersonResult(const GetSimilarPersonResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSimilarPersonResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSimilarPersonResultResponse rsp = GetSimilarPersonResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSimilarPersonResultOutcome(rsp);
+        else
+            return GetSimilarPersonResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSimilarPersonResultOutcome(outcome.GetError());
+    }
+}
+
+void IaiClient::GetSimilarPersonResultAsync(const GetSimilarPersonResultRequest& request, const GetSimilarPersonResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetSimilarPersonResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IaiClient::GetSimilarPersonResultOutcomeCallable IaiClient::GetSimilarPersonResultCallable(const GetSimilarPersonResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetSimilarPersonResultOutcome()>>(
+        [this, request]()
+        {
+            return this->GetSimilarPersonResult(request);
         }
     );
 

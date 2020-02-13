@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id，由后台自动生成。
-                     * @return BizId 应用id，由后台自动生成。
+                     * 获取应用ID，由后台自动生成。
+                     * @return BizId 应用ID，由后台自动生成。
                      */
                     uint64_t GetBizId() const;
 
@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取项目id，透传输入的ProjectId
-                     * @return ProjectId 项目id，透传输入的ProjectId
+                     * 获取项目ID，透传输入的ProjectId
+                     * @return ProjectId 项目ID，透传输入的ProjectId
                      */
                     uint64_t GetProjectId() const;
 
@@ -144,7 +144,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id，由后台自动生成。
+                     * 应用ID，由后台自动生成。
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 项目id，透传输入的ProjectId
+                     * 项目ID，透传输入的ProjectId
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

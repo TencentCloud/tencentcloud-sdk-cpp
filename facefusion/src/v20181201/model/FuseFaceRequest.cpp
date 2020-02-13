@@ -29,7 +29,8 @@ FuseFaceRequest::FuseFaceRequest() :
     m_rspImgTypeHasBeenSet(false),
     m_mergeInfosHasBeenSet(false),
     m_fuseProfileDegreeHasBeenSet(false),
-    m_fuseFaceDegreeHasBeenSet(false)
+    m_fuseFaceDegreeHasBeenSet(false),
+    m_celebrityIdentifyHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string FuseFaceRequest::ToJsonString() const
         string key = "FuseFaceDegree";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fuseFaceDegree, allocator);
+    }
+
+    if (m_celebrityIdentifyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CelebrityIdentify";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_celebrityIdentify, allocator);
     }
 
 
@@ -197,6 +206,22 @@ void FuseFaceRequest::SetFuseFaceDegree(const int64_t& _fuseFaceDegree)
 bool FuseFaceRequest::FuseFaceDegreeHasBeenSet() const
 {
     return m_fuseFaceDegreeHasBeenSet;
+}
+
+int64_t FuseFaceRequest::GetCelebrityIdentify() const
+{
+    return m_celebrityIdentify;
+}
+
+void FuseFaceRequest::SetCelebrityIdentify(const int64_t& _celebrityIdentify)
+{
+    m_celebrityIdentify = _celebrityIdentify;
+    m_celebrityIdentifyHasBeenSet = true;
+}
+
+bool FuseFaceRequest::CelebrityIdentifyHasBeenSet() const
+{
+    return m_celebrityIdentifyHasBeenSet;
 }
 
 

@@ -57,7 +57,12 @@ LoadBalancer::LoadBalancer() :
     m_addressIPv6HasBeenSet(false),
     m_extraInfoHasBeenSet(false),
     m_isDDosHasBeenSet(false),
-    m_configIdHasBeenSet(false)
+    m_configIdHasBeenSet(false),
+    m_loadBalancerPassToTargetHasBeenSet(false),
+    m_exclusiveClusterHasBeenSet(false),
+    m_iPv6ModeHasBeenSet(false),
+    m_snatProHasBeenSet(false),
+    m_snatIpsHasBeenSet(false)
 {
 }
 
@@ -487,6 +492,73 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_configIdHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBalancerPassToTarget") && !value["LoadBalancerPassToTarget"].IsNull())
+    {
+        if (!value["LoadBalancerPassToTarget"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.LoadBalancerPassToTarget` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerPassToTarget = value["LoadBalancerPassToTarget"].GetBool();
+        m_loadBalancerPassToTargetHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExclusiveCluster") && !value["ExclusiveCluster"].IsNull())
+    {
+        if (!value["ExclusiveCluster"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.ExclusiveCluster` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exclusiveCluster.Deserialize(value["ExclusiveCluster"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exclusiveClusterHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPv6Mode") && !value["IPv6Mode"].IsNull())
+    {
+        if (!value["IPv6Mode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.IPv6Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPv6Mode = string(value["IPv6Mode"].GetString());
+        m_iPv6ModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnatPro") && !value["SnatPro"].IsNull())
+    {
+        if (!value["SnatPro"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.SnatPro` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_snatPro = value["SnatPro"].GetBool();
+        m_snatProHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnatIps") && !value["SnatIps"].IsNull())
+    {
+        if (!value["SnatIps"].IsArray())
+            return CoreInternalOutcome(Error("response `LoadBalancer.SnatIps` is not array type"));
+
+        const Value &tmpValue = value["SnatIps"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SnatIp item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_snatIps.push_back(item);
+        }
+        m_snatIpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -809,6 +881,54 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "ConfigId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_configId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerPassToTargetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoadBalancerPassToTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
+    }
+
+    if (m_exclusiveClusterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExclusiveCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_exclusiveCluster.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_iPv6ModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IPv6Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_iPv6Mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snatProHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SnatPro";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_snatPro, allocator);
+    }
+
+    if (m_snatIpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SnatIps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_snatIps.begin(); itr != m_snatIps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1388,5 +1508,85 @@ void LoadBalancer::SetConfigId(const string& _configId)
 bool LoadBalancer::ConfigIdHasBeenSet() const
 {
     return m_configIdHasBeenSet;
+}
+
+bool LoadBalancer::GetLoadBalancerPassToTarget() const
+{
+    return m_loadBalancerPassToTarget;
+}
+
+void LoadBalancer::SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget)
+{
+    m_loadBalancerPassToTarget = _loadBalancerPassToTarget;
+    m_loadBalancerPassToTargetHasBeenSet = true;
+}
+
+bool LoadBalancer::LoadBalancerPassToTargetHasBeenSet() const
+{
+    return m_loadBalancerPassToTargetHasBeenSet;
+}
+
+ExclusiveCluster LoadBalancer::GetExclusiveCluster() const
+{
+    return m_exclusiveCluster;
+}
+
+void LoadBalancer::SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster)
+{
+    m_exclusiveCluster = _exclusiveCluster;
+    m_exclusiveClusterHasBeenSet = true;
+}
+
+bool LoadBalancer::ExclusiveClusterHasBeenSet() const
+{
+    return m_exclusiveClusterHasBeenSet;
+}
+
+string LoadBalancer::GetIPv6Mode() const
+{
+    return m_iPv6Mode;
+}
+
+void LoadBalancer::SetIPv6Mode(const string& _iPv6Mode)
+{
+    m_iPv6Mode = _iPv6Mode;
+    m_iPv6ModeHasBeenSet = true;
+}
+
+bool LoadBalancer::IPv6ModeHasBeenSet() const
+{
+    return m_iPv6ModeHasBeenSet;
+}
+
+bool LoadBalancer::GetSnatPro() const
+{
+    return m_snatPro;
+}
+
+void LoadBalancer::SetSnatPro(const bool& _snatPro)
+{
+    m_snatPro = _snatPro;
+    m_snatProHasBeenSet = true;
+}
+
+bool LoadBalancer::SnatProHasBeenSet() const
+{
+    return m_snatProHasBeenSet;
+}
+
+vector<SnatIp> LoadBalancer::GetSnatIps() const
+{
+    return m_snatIps;
+}
+
+void LoadBalancer::SetSnatIps(const vector<SnatIp>& _snatIps)
+{
+    m_snatIps = _snatIps;
+    m_snatIpsHasBeenSet = true;
+}
+
+bool LoadBalancer::SnatIpsHasBeenSet() const
+{
+    return m_snatIpsHasBeenSet;
 }
 

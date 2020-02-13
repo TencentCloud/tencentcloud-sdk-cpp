@@ -162,6 +162,28 @@ namespace TencentCloud
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取安全策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyId 安全策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPolicyId() const;
+
+                    /**
+                     * 设置安全策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PolicyId 安全策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPolicyId(const std::string& _policyId);
+
+                    /**
+                     * 判断参数 PolicyId 是否已赋值
+                     * @return PolicyId 是否已赋值
+                     */
+                    bool PolicyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -201,6 +223,13 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 安全策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_policyId;
+                    bool m_policyIdHasBeenSet;
 
                 };
             }

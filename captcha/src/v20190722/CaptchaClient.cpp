@@ -40,6 +40,178 @@ CaptchaClient::CaptchaClient(const Credential &credential, const string &region,
 }
 
 
+CaptchaClient::DescribeCaptchaAppIdInfoOutcome CaptchaClient::DescribeCaptchaAppIdInfo(const DescribeCaptchaAppIdInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaAppIdInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaAppIdInfoResponse rsp = DescribeCaptchaAppIdInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaAppIdInfoOutcome(rsp);
+        else
+            return DescribeCaptchaAppIdInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaAppIdInfoOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaAppIdInfoAsync(const DescribeCaptchaAppIdInfoRequest& request, const DescribeCaptchaAppIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaAppIdInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaAppIdInfoOutcomeCallable CaptchaClient::DescribeCaptchaAppIdInfoCallable(const DescribeCaptchaAppIdInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaAppIdInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaAppIdInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CaptchaClient::DescribeCaptchaDataOutcome CaptchaClient::DescribeCaptchaData(const DescribeCaptchaDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaDataResponse rsp = DescribeCaptchaDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaDataOutcome(rsp);
+        else
+            return DescribeCaptchaDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaDataOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaDataAsync(const DescribeCaptchaDataRequest& request, const DescribeCaptchaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaDataOutcomeCallable CaptchaClient::DescribeCaptchaDataCallable(const DescribeCaptchaDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CaptchaClient::DescribeCaptchaDataSumOutcome CaptchaClient::DescribeCaptchaDataSum(const DescribeCaptchaDataSumRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaDataSum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaDataSumResponse rsp = DescribeCaptchaDataSumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaDataSumOutcome(rsp);
+        else
+            return DescribeCaptchaDataSumOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaDataSumOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaDataSumAsync(const DescribeCaptchaDataSumRequest& request, const DescribeCaptchaDataSumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaDataSum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaDataSumOutcomeCallable CaptchaClient::DescribeCaptchaDataSumCallable(const DescribeCaptchaDataSumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaDataSumOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaDataSum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CaptchaClient::DescribeCaptchaOperDataOutcome CaptchaClient::DescribeCaptchaOperData(const DescribeCaptchaOperDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaOperData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaOperDataResponse rsp = DescribeCaptchaOperDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaOperDataOutcome(rsp);
+        else
+            return DescribeCaptchaOperDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaOperDataOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaOperDataAsync(const DescribeCaptchaOperDataRequest& request, const DescribeCaptchaOperDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaOperData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaOperDataOutcomeCallable CaptchaClient::DescribeCaptchaOperDataCallable(const DescribeCaptchaOperDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaOperDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaOperData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CaptchaClient::DescribeCaptchaResultOutcome CaptchaClient::DescribeCaptchaResult(const DescribeCaptchaResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCaptchaResult");
@@ -76,6 +248,92 @@ CaptchaClient::DescribeCaptchaResultOutcomeCallable CaptchaClient::DescribeCaptc
         [this, request]()
         {
             return this->DescribeCaptchaResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CaptchaClient::DescribeCaptchaUserAllAppIdOutcome CaptchaClient::DescribeCaptchaUserAllAppId(const DescribeCaptchaUserAllAppIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaptchaUserAllAppId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaptchaUserAllAppIdResponse rsp = DescribeCaptchaUserAllAppIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaptchaUserAllAppIdOutcome(rsp);
+        else
+            return DescribeCaptchaUserAllAppIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaptchaUserAllAppIdOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::DescribeCaptchaUserAllAppIdAsync(const DescribeCaptchaUserAllAppIdRequest& request, const DescribeCaptchaUserAllAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaptchaUserAllAppId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::DescribeCaptchaUserAllAppIdOutcomeCallable CaptchaClient::DescribeCaptchaUserAllAppIdCallable(const DescribeCaptchaUserAllAppIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaptchaUserAllAppIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaptchaUserAllAppId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CaptchaClient::UpdateCaptchaAppIdInfoOutcome CaptchaClient::UpdateCaptchaAppIdInfo(const UpdateCaptchaAppIdInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCaptchaAppIdInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCaptchaAppIdInfoResponse rsp = UpdateCaptchaAppIdInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCaptchaAppIdInfoOutcome(rsp);
+        else
+            return UpdateCaptchaAppIdInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCaptchaAppIdInfoOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::UpdateCaptchaAppIdInfoAsync(const UpdateCaptchaAppIdInfoRequest& request, const UpdateCaptchaAppIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCaptchaAppIdInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::UpdateCaptchaAppIdInfoOutcomeCallable CaptchaClient::UpdateCaptchaAppIdInfoCallable(const UpdateCaptchaAppIdInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCaptchaAppIdInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCaptchaAppIdInfo(request);
         }
     );
 

@@ -28,7 +28,9 @@ ComputeEnvView::ComputeEnvView() :
     m_createTimeHasBeenSet(false),
     m_computeNodeMetricsHasBeenSet(false),
     m_envTypeHasBeenSet(false),
-    m_desiredComputeNodeCountHasBeenSet(false)
+    m_desiredComputeNodeCountHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_nextActionHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,26 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const Value &value)
         m_desiredComputeNodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComputeEnvView.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(value["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NextAction") && !value["NextAction"].IsNull())
+    {
+        if (!value["NextAction"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComputeEnvView.NextAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextAction = string(value["NextAction"].GetString());
+        m_nextActionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +206,22 @@ void ComputeEnvView::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "DesiredComputeNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredComputeNodeCount, allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nextActionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NextAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nextAction.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +337,37 @@ void ComputeEnvView::SetDesiredComputeNodeCount(const uint64_t& _desiredComputeN
 bool ComputeEnvView::DesiredComputeNodeCountHasBeenSet() const
 {
     return m_desiredComputeNodeCountHasBeenSet;
+}
+
+string ComputeEnvView::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void ComputeEnvView::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool ComputeEnvView::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+string ComputeEnvView::GetNextAction() const
+{
+    return m_nextAction;
+}
+
+void ComputeEnvView::SetNextAction(const string& _nextAction)
+{
+    m_nextAction = _nextAction;
+    m_nextActionHasBeenSet = true;
+}
+
+bool ComputeEnvView::NextActionHasBeenSet() const
+{
+    return m_nextActionHasBeenSet;
 }
 

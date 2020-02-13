@@ -25,18 +25,18 @@ using namespace std;
 
 CreateInstanceRequest::CreateInstanceRequest() :
     m_zoneHasBeenSet(false),
-    m_nodeNumHasBeenSet(false),
     m_esVersionHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_diskSizeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
+    m_nodeNumHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_chargePeriodHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
+    m_diskSizeHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
@@ -47,7 +47,10 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_clusterNameInConfHasBeenSet(false),
     m_deployModeHasBeenSet(false),
     m_multiZoneInfoHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_nodeInfoListHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_basicSecurityTypeHasBeenSet(false)
 {
 }
 
@@ -66,36 +69,12 @@ string CreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_nodeNumHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "NodeNum";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_nodeNum, allocator);
-    }
-
     if (m_esVersionHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "EsVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_esVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nodeTypeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "NodeType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_nodeType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_diskSizeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "DiskSize";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_diskSize, allocator);
     }
 
     if (m_vpcIdHasBeenSet)
@@ -130,6 +109,14 @@ string CreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nodeNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeNum, allocator);
+    }
+
     if (m_chargeTypeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -154,12 +141,28 @@ string CreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_renewFlag.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nodeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_diskTypeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskSize, allocator);
     }
 
     if (m_timeUnitHasBeenSet)
@@ -262,6 +265,44 @@ string CreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_licenseType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nodeInfoListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeInfoList.begin(); itr != m_nodeInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_basicSecurityTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasicSecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_basicSecurityType, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -286,22 +327,6 @@ bool CreateInstanceRequest::ZoneHasBeenSet() const
     return m_zoneHasBeenSet;
 }
 
-uint64_t CreateInstanceRequest::GetNodeNum() const
-{
-    return m_nodeNum;
-}
-
-void CreateInstanceRequest::SetNodeNum(const uint64_t& _nodeNum)
-{
-    m_nodeNum = _nodeNum;
-    m_nodeNumHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::NodeNumHasBeenSet() const
-{
-    return m_nodeNumHasBeenSet;
-}
-
 string CreateInstanceRequest::GetEsVersion() const
 {
     return m_esVersion;
@@ -316,38 +341,6 @@ void CreateInstanceRequest::SetEsVersion(const string& _esVersion)
 bool CreateInstanceRequest::EsVersionHasBeenSet() const
 {
     return m_esVersionHasBeenSet;
-}
-
-string CreateInstanceRequest::GetNodeType() const
-{
-    return m_nodeType;
-}
-
-void CreateInstanceRequest::SetNodeType(const string& _nodeType)
-{
-    m_nodeType = _nodeType;
-    m_nodeTypeHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::NodeTypeHasBeenSet() const
-{
-    return m_nodeTypeHasBeenSet;
-}
-
-uint64_t CreateInstanceRequest::GetDiskSize() const
-{
-    return m_diskSize;
-}
-
-void CreateInstanceRequest::SetDiskSize(const uint64_t& _diskSize)
-{
-    m_diskSize = _diskSize;
-    m_diskSizeHasBeenSet = true;
-}
-
-bool CreateInstanceRequest::DiskSizeHasBeenSet() const
-{
-    return m_diskSizeHasBeenSet;
 }
 
 string CreateInstanceRequest::GetVpcId() const
@@ -414,6 +407,22 @@ bool CreateInstanceRequest::InstanceNameHasBeenSet() const
     return m_instanceNameHasBeenSet;
 }
 
+uint64_t CreateInstanceRequest::GetNodeNum() const
+{
+    return m_nodeNum;
+}
+
+void CreateInstanceRequest::SetNodeNum(const uint64_t& _nodeNum)
+{
+    m_nodeNum = _nodeNum;
+    m_nodeNumHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::NodeNumHasBeenSet() const
+{
+    return m_nodeNumHasBeenSet;
+}
+
 string CreateInstanceRequest::GetChargeType() const
 {
     return m_chargeType;
@@ -462,6 +471,22 @@ bool CreateInstanceRequest::RenewFlagHasBeenSet() const
     return m_renewFlagHasBeenSet;
 }
 
+string CreateInstanceRequest::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void CreateInstanceRequest::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
 string CreateInstanceRequest::GetDiskType() const
 {
     return m_diskType;
@@ -476,6 +501,22 @@ void CreateInstanceRequest::SetDiskType(const string& _diskType)
 bool CreateInstanceRequest::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+uint64_t CreateInstanceRequest::GetDiskSize() const
+{
+    return m_diskSize;
+}
+
+void CreateInstanceRequest::SetDiskSize(const uint64_t& _diskSize)
+{
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DiskSizeHasBeenSet() const
+{
+    return m_diskSizeHasBeenSet;
 }
 
 string CreateInstanceRequest::GetTimeUnit() const
@@ -622,12 +663,12 @@ bool CreateInstanceRequest::DeployModeHasBeenSet() const
     return m_deployModeHasBeenSet;
 }
 
-vector<MultiZoneInfo> CreateInstanceRequest::GetMultiZoneInfo() const
+vector<ZoneDetail> CreateInstanceRequest::GetMultiZoneInfo() const
 {
     return m_multiZoneInfo;
 }
 
-void CreateInstanceRequest::SetMultiZoneInfo(const vector<MultiZoneInfo>& _multiZoneInfo)
+void CreateInstanceRequest::SetMultiZoneInfo(const vector<ZoneDetail>& _multiZoneInfo)
 {
     m_multiZoneInfo = _multiZoneInfo;
     m_multiZoneInfoHasBeenSet = true;
@@ -652,6 +693,54 @@ void CreateInstanceRequest::SetLicenseType(const string& _licenseType)
 bool CreateInstanceRequest::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+vector<NodeInfo> CreateInstanceRequest::GetNodeInfoList() const
+{
+    return m_nodeInfoList;
+}
+
+void CreateInstanceRequest::SetNodeInfoList(const vector<NodeInfo>& _nodeInfoList)
+{
+    m_nodeInfoList = _nodeInfoList;
+    m_nodeInfoListHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::NodeInfoListHasBeenSet() const
+{
+    return m_nodeInfoListHasBeenSet;
+}
+
+vector<TagInfo> CreateInstanceRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void CreateInstanceRequest::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
+}
+
+uint64_t CreateInstanceRequest::GetBasicSecurityType() const
+{
+    return m_basicSecurityType;
+}
+
+void CreateInstanceRequest::SetBasicSecurityType(const uint64_t& _basicSecurityType)
+{
+    m_basicSecurityType = _basicSecurityType;
+    m_basicSecurityTypeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::BasicSecurityTypeHasBeenSet() const
+{
+    return m_basicSecurityTypeHasBeenSet;
 }
 
 

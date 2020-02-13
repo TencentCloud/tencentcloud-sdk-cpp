@@ -41,7 +41,9 @@ UpgradeLaunchConfigurationRequest::UpgradeLaunchConfigurationRequest() :
     m_userDataHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
-    m_hostNameSettingsHasBeenSet(false)
+    m_hostNameSettingsHasBeenSet(false),
+    m_instanceNameSettingsHasBeenSet(false),
+    m_instanceChargePrepaidHasBeenSet(false)
 {
 }
 
@@ -224,6 +226,30 @@ string UpgradeLaunchConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_hostNameSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceNameSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceNameSettings.begin(); itr != m_instanceNameSettings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceChargePrepaidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -520,6 +546,38 @@ void UpgradeLaunchConfigurationRequest::SetHostNameSettings(const HostNameSettin
 bool UpgradeLaunchConfigurationRequest::HostNameSettingsHasBeenSet() const
 {
     return m_hostNameSettingsHasBeenSet;
+}
+
+vector<InstanceNameSettings> UpgradeLaunchConfigurationRequest::GetInstanceNameSettings() const
+{
+    return m_instanceNameSettings;
+}
+
+void UpgradeLaunchConfigurationRequest::SetInstanceNameSettings(const vector<InstanceNameSettings>& _instanceNameSettings)
+{
+    m_instanceNameSettings = _instanceNameSettings;
+    m_instanceNameSettingsHasBeenSet = true;
+}
+
+bool UpgradeLaunchConfigurationRequest::InstanceNameSettingsHasBeenSet() const
+{
+    return m_instanceNameSettingsHasBeenSet;
+}
+
+InstanceChargePrepaid UpgradeLaunchConfigurationRequest::GetInstanceChargePrepaid() const
+{
+    return m_instanceChargePrepaid;
+}
+
+void UpgradeLaunchConfigurationRequest::SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid)
+{
+    m_instanceChargePrepaid = _instanceChargePrepaid;
+    m_instanceChargePrepaidHasBeenSet = true;
+}
+
+bool UpgradeLaunchConfigurationRequest::InstanceChargePrepaidHasBeenSet() const
+{
+    return m_instanceChargePrepaidHasBeenSet;
 }
 
 

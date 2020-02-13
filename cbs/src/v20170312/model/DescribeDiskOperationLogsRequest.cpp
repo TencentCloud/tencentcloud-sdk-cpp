@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDiskOperationLogsRequest::DescribeDiskOperationLogsRequest() :
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_beginTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,22 @@ string DescribeDiskOperationLogsRequest::ToJsonString() const
         }
     }
 
+    if (m_beginTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_beginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -72,6 +90,38 @@ void DescribeDiskOperationLogsRequest::SetFilters(const vector<Filter>& _filters
 bool DescribeDiskOperationLogsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeDiskOperationLogsRequest::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+void DescribeDiskOperationLogsRequest::SetBeginTime(const string& _beginTime)
+{
+    m_beginTime = _beginTime;
+    m_beginTimeHasBeenSet = true;
+}
+
+bool DescribeDiskOperationLogsRequest::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
+}
+
+string DescribeDiskOperationLogsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeDiskOperationLogsRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeDiskOperationLogsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

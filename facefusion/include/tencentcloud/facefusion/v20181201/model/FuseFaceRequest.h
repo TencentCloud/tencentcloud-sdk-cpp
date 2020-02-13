@@ -159,6 +159,28 @@ namespace TencentCloud
                      */
                     bool FuseFaceDegreeHasBeenSet() const;
 
+                    /**
+                     * 获取0表示不需要鉴政，1表示需要鉴政。默认值为0。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
+                     * @return CelebrityIdentify 0表示不需要鉴政，1表示需要鉴政。默认值为0。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
+                     */
+                    int64_t GetCelebrityIdentify() const;
+
+                    /**
+                     * 设置0表示不需要鉴政，1表示需要鉴政。默认值为0。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
+                     * @param CelebrityIdentify 0表示不需要鉴政，1表示需要鉴政。默认值为0。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
+                     */
+                    void SetCelebrityIdentify(const int64_t& _celebrityIdentify);
+
+                    /**
+                     * 判断参数 CelebrityIdentify 是否已赋值
+                     * @return CelebrityIdentify 是否已赋值
+                     */
+                    bool CelebrityIdentifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +220,13 @@ namespace TencentCloud
                      */
                     int64_t m_fuseFaceDegree;
                     bool m_fuseFaceDegreeHasBeenSet;
+
+                    /**
+                     * 0表示不需要鉴政，1表示需要鉴政。默认值为0。
+请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。
+                     */
+                    int64_t m_celebrityIdentify;
+                    bool m_celebrityIdentifyHasBeenSet;
 
                 };
             }

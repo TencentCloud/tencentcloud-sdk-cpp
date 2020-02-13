@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * @return BasicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     */
+                    uint64_t GetBasicSecurityType() const;
+
+                    /**
+                     * 设置6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * @param BasicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     */
+                    void SetBasicSecurityType(const uint64_t& _basicSecurityType);
+
+                    /**
+                     * 判断参数 BasicSecurityType 是否已赋值
+                     * @return BasicSecurityType 是否已赋值
+                     */
+                    bool BasicSecurityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     */
+                    uint64_t m_basicSecurityType;
+                    bool m_basicSecurityTypeHasBeenSet;
 
                 };
             }

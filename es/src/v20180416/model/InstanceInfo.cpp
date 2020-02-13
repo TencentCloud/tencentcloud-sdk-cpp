@@ -56,7 +56,24 @@ InstanceInfo::InstanceInfo() :
     m_cosBackupHasBeenSet(false),
     m_allowCosBackupHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_enableHotWarmModeHasBeenSet(false),
+    m_warmNodeTypeHasBeenSet(false),
+    m_warmNodeNumHasBeenSet(false),
+    m_warmCpuNumHasBeenSet(false),
+    m_warmMemSizeHasBeenSet(false),
+    m_warmDiskTypeHasBeenSet(false),
+    m_warmDiskSizeHasBeenSet(false),
+    m_nodeInfoListHasBeenSet(false),
+    m_esPublicUrlHasBeenSet(false),
+    m_multiZoneInfoHasBeenSet(false),
+    m_deployModeHasBeenSet(false),
+    m_publicAccessHasBeenSet(false),
+    m_esPublicAclHasBeenSet(false),
+    m_kibanaPrivateUrlHasBeenSet(false),
+    m_kibanaPublicAccessHasBeenSet(false),
+    m_kibanaPrivateAccessHasBeenSet(false),
+    m_securityTypeHasBeenSet(false)
 {
 }
 
@@ -453,6 +470,203 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_licenseTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableHotWarmMode") && !value["EnableHotWarmMode"].IsNull())
+    {
+        if (!value["EnableHotWarmMode"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.EnableHotWarmMode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHotWarmMode = value["EnableHotWarmMode"].GetBool();
+        m_enableHotWarmModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarmNodeType") && !value["WarmNodeType"].IsNull())
+    {
+        if (!value["WarmNodeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.WarmNodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_warmNodeType = string(value["WarmNodeType"].GetString());
+        m_warmNodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarmNodeNum") && !value["WarmNodeNum"].IsNull())
+    {
+        if (!value["WarmNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.WarmNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_warmNodeNum = value["WarmNodeNum"].GetUint64();
+        m_warmNodeNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarmCpuNum") && !value["WarmCpuNum"].IsNull())
+    {
+        if (!value["WarmCpuNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.WarmCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_warmCpuNum = value["WarmCpuNum"].GetUint64();
+        m_warmCpuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarmMemSize") && !value["WarmMemSize"].IsNull())
+    {
+        if (!value["WarmMemSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.WarmMemSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_warmMemSize = value["WarmMemSize"].GetUint64();
+        m_warmMemSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarmDiskType") && !value["WarmDiskType"].IsNull())
+    {
+        if (!value["WarmDiskType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.WarmDiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_warmDiskType = string(value["WarmDiskType"].GetString());
+        m_warmDiskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarmDiskSize") && !value["WarmDiskSize"].IsNull())
+    {
+        if (!value["WarmDiskSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.WarmDiskSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_warmDiskSize = value["WarmDiskSize"].GetUint64();
+        m_warmDiskSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeInfoList") && !value["NodeInfoList"].IsNull())
+    {
+        if (!value["NodeInfoList"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceInfo.NodeInfoList` is not array type"));
+
+        const Value &tmpValue = value["NodeInfoList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NodeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nodeInfoList.push_back(item);
+        }
+        m_nodeInfoListHasBeenSet = true;
+    }
+
+    if (value.HasMember("EsPublicUrl") && !value["EsPublicUrl"].IsNull())
+    {
+        if (!value["EsPublicUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.EsPublicUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esPublicUrl = string(value["EsPublicUrl"].GetString());
+        m_esPublicUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("MultiZoneInfo") && !value["MultiZoneInfo"].IsNull())
+    {
+        if (!value["MultiZoneInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceInfo.MultiZoneInfo` is not array type"));
+
+        const Value &tmpValue = value["MultiZoneInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ZoneDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiZoneInfo.push_back(item);
+        }
+        m_multiZoneInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployMode") && !value["DeployMode"].IsNull())
+    {
+        if (!value["DeployMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.DeployMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployMode = value["DeployMode"].GetUint64();
+        m_deployModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicAccess") && !value["PublicAccess"].IsNull())
+    {
+        if (!value["PublicAccess"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.PublicAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicAccess = string(value["PublicAccess"].GetString());
+        m_publicAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("EsPublicAcl") && !value["EsPublicAcl"].IsNull())
+    {
+        if (!value["EsPublicAcl"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.EsPublicAcl` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_esPublicAcl.Deserialize(value["EsPublicAcl"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_esPublicAclHasBeenSet = true;
+    }
+
+    if (value.HasMember("KibanaPrivateUrl") && !value["KibanaPrivateUrl"].IsNull())
+    {
+        if (!value["KibanaPrivateUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.KibanaPrivateUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kibanaPrivateUrl = string(value["KibanaPrivateUrl"].GetString());
+        m_kibanaPrivateUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("KibanaPublicAccess") && !value["KibanaPublicAccess"].IsNull())
+    {
+        if (!value["KibanaPublicAccess"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.KibanaPublicAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kibanaPublicAccess = string(value["KibanaPublicAccess"].GetString());
+        m_kibanaPublicAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("KibanaPrivateAccess") && !value["KibanaPrivateAccess"].IsNull())
+    {
+        if (!value["KibanaPrivateAccess"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.KibanaPrivateAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kibanaPrivateAccess = string(value["KibanaPrivateAccess"].GetString());
+        m_kibanaPrivateAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityType") && !value["SecurityType"].IsNull())
+    {
+        if (!value["SecurityType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.SecurityType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityType = value["SecurityType"].GetUint64();
+        m_securityTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -749,6 +963,157 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_licenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableHotWarmModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableHotWarmMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHotWarmMode, allocator);
+    }
+
+    if (m_warmNodeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WarmNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_warmNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warmNodeNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WarmNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_warmNodeNum, allocator);
+    }
+
+    if (m_warmCpuNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WarmCpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_warmCpuNum, allocator);
+    }
+
+    if (m_warmMemSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WarmMemSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_warmMemSize, allocator);
+    }
+
+    if (m_warmDiskTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WarmDiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_warmDiskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warmDiskSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WarmDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_warmDiskSize, allocator);
+    }
+
+    if (m_nodeInfoListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodeInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeInfoList.begin(); itr != m_nodeInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_esPublicUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EsPublicUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_esPublicUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiZoneInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneInfo.begin(); itr != m_multiZoneInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deployModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployMode, allocator);
+    }
+
+    if (m_publicAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_publicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esPublicAclHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EsPublicAcl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_esPublicAcl.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_kibanaPrivateUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaPrivateUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_kibanaPrivateUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kibanaPublicAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_kibanaPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kibanaPrivateAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_kibanaPrivateAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_securityType, allocator);
     }
 
 }
@@ -1312,5 +1677,277 @@ void InstanceInfo::SetLicenseType(const string& _licenseType)
 bool InstanceInfo::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+bool InstanceInfo::GetEnableHotWarmMode() const
+{
+    return m_enableHotWarmMode;
+}
+
+void InstanceInfo::SetEnableHotWarmMode(const bool& _enableHotWarmMode)
+{
+    m_enableHotWarmMode = _enableHotWarmMode;
+    m_enableHotWarmModeHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableHotWarmModeHasBeenSet() const
+{
+    return m_enableHotWarmModeHasBeenSet;
+}
+
+string InstanceInfo::GetWarmNodeType() const
+{
+    return m_warmNodeType;
+}
+
+void InstanceInfo::SetWarmNodeType(const string& _warmNodeType)
+{
+    m_warmNodeType = _warmNodeType;
+    m_warmNodeTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::WarmNodeTypeHasBeenSet() const
+{
+    return m_warmNodeTypeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetWarmNodeNum() const
+{
+    return m_warmNodeNum;
+}
+
+void InstanceInfo::SetWarmNodeNum(const uint64_t& _warmNodeNum)
+{
+    m_warmNodeNum = _warmNodeNum;
+    m_warmNodeNumHasBeenSet = true;
+}
+
+bool InstanceInfo::WarmNodeNumHasBeenSet() const
+{
+    return m_warmNodeNumHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetWarmCpuNum() const
+{
+    return m_warmCpuNum;
+}
+
+void InstanceInfo::SetWarmCpuNum(const uint64_t& _warmCpuNum)
+{
+    m_warmCpuNum = _warmCpuNum;
+    m_warmCpuNumHasBeenSet = true;
+}
+
+bool InstanceInfo::WarmCpuNumHasBeenSet() const
+{
+    return m_warmCpuNumHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetWarmMemSize() const
+{
+    return m_warmMemSize;
+}
+
+void InstanceInfo::SetWarmMemSize(const uint64_t& _warmMemSize)
+{
+    m_warmMemSize = _warmMemSize;
+    m_warmMemSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::WarmMemSizeHasBeenSet() const
+{
+    return m_warmMemSizeHasBeenSet;
+}
+
+string InstanceInfo::GetWarmDiskType() const
+{
+    return m_warmDiskType;
+}
+
+void InstanceInfo::SetWarmDiskType(const string& _warmDiskType)
+{
+    m_warmDiskType = _warmDiskType;
+    m_warmDiskTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::WarmDiskTypeHasBeenSet() const
+{
+    return m_warmDiskTypeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetWarmDiskSize() const
+{
+    return m_warmDiskSize;
+}
+
+void InstanceInfo::SetWarmDiskSize(const uint64_t& _warmDiskSize)
+{
+    m_warmDiskSize = _warmDiskSize;
+    m_warmDiskSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::WarmDiskSizeHasBeenSet() const
+{
+    return m_warmDiskSizeHasBeenSet;
+}
+
+vector<NodeInfo> InstanceInfo::GetNodeInfoList() const
+{
+    return m_nodeInfoList;
+}
+
+void InstanceInfo::SetNodeInfoList(const vector<NodeInfo>& _nodeInfoList)
+{
+    m_nodeInfoList = _nodeInfoList;
+    m_nodeInfoListHasBeenSet = true;
+}
+
+bool InstanceInfo::NodeInfoListHasBeenSet() const
+{
+    return m_nodeInfoListHasBeenSet;
+}
+
+string InstanceInfo::GetEsPublicUrl() const
+{
+    return m_esPublicUrl;
+}
+
+void InstanceInfo::SetEsPublicUrl(const string& _esPublicUrl)
+{
+    m_esPublicUrl = _esPublicUrl;
+    m_esPublicUrlHasBeenSet = true;
+}
+
+bool InstanceInfo::EsPublicUrlHasBeenSet() const
+{
+    return m_esPublicUrlHasBeenSet;
+}
+
+vector<ZoneDetail> InstanceInfo::GetMultiZoneInfo() const
+{
+    return m_multiZoneInfo;
+}
+
+void InstanceInfo::SetMultiZoneInfo(const vector<ZoneDetail>& _multiZoneInfo)
+{
+    m_multiZoneInfo = _multiZoneInfo;
+    m_multiZoneInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::MultiZoneInfoHasBeenSet() const
+{
+    return m_multiZoneInfoHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetDeployMode() const
+{
+    return m_deployMode;
+}
+
+void InstanceInfo::SetDeployMode(const uint64_t& _deployMode)
+{
+    m_deployMode = _deployMode;
+    m_deployModeHasBeenSet = true;
+}
+
+bool InstanceInfo::DeployModeHasBeenSet() const
+{
+    return m_deployModeHasBeenSet;
+}
+
+string InstanceInfo::GetPublicAccess() const
+{
+    return m_publicAccess;
+}
+
+void InstanceInfo::SetPublicAccess(const string& _publicAccess)
+{
+    m_publicAccess = _publicAccess;
+    m_publicAccessHasBeenSet = true;
+}
+
+bool InstanceInfo::PublicAccessHasBeenSet() const
+{
+    return m_publicAccessHasBeenSet;
+}
+
+EsAcl InstanceInfo::GetEsPublicAcl() const
+{
+    return m_esPublicAcl;
+}
+
+void InstanceInfo::SetEsPublicAcl(const EsAcl& _esPublicAcl)
+{
+    m_esPublicAcl = _esPublicAcl;
+    m_esPublicAclHasBeenSet = true;
+}
+
+bool InstanceInfo::EsPublicAclHasBeenSet() const
+{
+    return m_esPublicAclHasBeenSet;
+}
+
+string InstanceInfo::GetKibanaPrivateUrl() const
+{
+    return m_kibanaPrivateUrl;
+}
+
+void InstanceInfo::SetKibanaPrivateUrl(const string& _kibanaPrivateUrl)
+{
+    m_kibanaPrivateUrl = _kibanaPrivateUrl;
+    m_kibanaPrivateUrlHasBeenSet = true;
+}
+
+bool InstanceInfo::KibanaPrivateUrlHasBeenSet() const
+{
+    return m_kibanaPrivateUrlHasBeenSet;
+}
+
+string InstanceInfo::GetKibanaPublicAccess() const
+{
+    return m_kibanaPublicAccess;
+}
+
+void InstanceInfo::SetKibanaPublicAccess(const string& _kibanaPublicAccess)
+{
+    m_kibanaPublicAccess = _kibanaPublicAccess;
+    m_kibanaPublicAccessHasBeenSet = true;
+}
+
+bool InstanceInfo::KibanaPublicAccessHasBeenSet() const
+{
+    return m_kibanaPublicAccessHasBeenSet;
+}
+
+string InstanceInfo::GetKibanaPrivateAccess() const
+{
+    return m_kibanaPrivateAccess;
+}
+
+void InstanceInfo::SetKibanaPrivateAccess(const string& _kibanaPrivateAccess)
+{
+    m_kibanaPrivateAccess = _kibanaPrivateAccess;
+    m_kibanaPrivateAccessHasBeenSet = true;
+}
+
+bool InstanceInfo::KibanaPrivateAccessHasBeenSet() const
+{
+    return m_kibanaPrivateAccessHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetSecurityType() const
+{
+    return m_securityType;
+}
+
+void InstanceInfo::SetSecurityType(const uint64_t& _securityType)
+{
+    m_securityType = _securityType;
+    m_securityTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::SecurityTypeHasBeenSet() const
+{
+    return m_securityTypeHasBeenSet;
 }
 

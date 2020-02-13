@@ -30,7 +30,9 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderByKeyHasBeenSet(false),
-    m_orderByTypeHasBeenSet(false)
+    m_orderByTypeHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_ipListHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,34 @@ string DescribeInstancesRequest::ToJsonString() const
         string key = "OrderByType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_orderByType, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ipListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IpList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -225,6 +255,38 @@ void DescribeInstancesRequest::SetOrderByType(const uint64_t& _orderByType)
 bool DescribeInstancesRequest::OrderByTypeHasBeenSet() const
 {
     return m_orderByTypeHasBeenSet;
+}
+
+vector<TagInfo> DescribeInstancesRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void DescribeInstancesRequest::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetIpList() const
+{
+    return m_ipList;
+}
+
+void DescribeInstancesRequest::SetIpList(const vector<string>& _ipList)
+{
+    m_ipList = _ipList;
+    m_ipListHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::IpListHasBeenSet() const
+{
+    return m_ipListHasBeenSet;
 }
 
 

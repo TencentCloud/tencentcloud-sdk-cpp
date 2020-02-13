@@ -32,7 +32,10 @@ EnvInfo::EnvInfo() :
     m_storagesHasBeenSet(false),
     m_functionsHasBeenSet(false),
     m_packageIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false)
+    m_packageNameHasBeenSet(false),
+    m_logServicesHasBeenSet(false),
+    m_staticStoragesHasBeenSet(false),
+    m_isAutoDegradeHasBeenSet(false)
 {
 }
 
@@ -181,6 +184,56 @@ CoreInternalOutcome EnvInfo::Deserialize(const Value &value)
         m_packageNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LogServices") && !value["LogServices"].IsNull())
+    {
+        if (!value["LogServices"].IsArray())
+            return CoreInternalOutcome(Error("response `EnvInfo.LogServices` is not array type"));
+
+        const Value &tmpValue = value["LogServices"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LogServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_logServices.push_back(item);
+        }
+        m_logServicesHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaticStorages") && !value["StaticStorages"].IsNull())
+    {
+        if (!value["StaticStorages"].IsArray())
+            return CoreInternalOutcome(Error("response `EnvInfo.StaticStorages` is not array type"));
+
+        const Value &tmpValue = value["StaticStorages"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StaticStorageInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_staticStorages.push_back(item);
+        }
+        m_staticStoragesHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsAutoDegrade") && !value["IsAutoDegrade"].IsNull())
+    {
+        if (!value["IsAutoDegrade"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `EnvInfo.IsAutoDegrade` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAutoDegrade = value["IsAutoDegrade"].GetBool();
+        m_isAutoDegradeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -295,6 +348,44 @@ void EnvInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "PackageName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_packageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logServicesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogServices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_logServices.begin(); itr != m_logServices.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_staticStoragesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StaticStorages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_staticStorages.begin(); itr != m_staticStorages.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isAutoDegradeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsAutoDegrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAutoDegrade, allocator);
     }
 
 }
@@ -474,5 +565,53 @@ void EnvInfo::SetPackageName(const string& _packageName)
 bool EnvInfo::PackageNameHasBeenSet() const
 {
     return m_packageNameHasBeenSet;
+}
+
+vector<LogServiceInfo> EnvInfo::GetLogServices() const
+{
+    return m_logServices;
+}
+
+void EnvInfo::SetLogServices(const vector<LogServiceInfo>& _logServices)
+{
+    m_logServices = _logServices;
+    m_logServicesHasBeenSet = true;
+}
+
+bool EnvInfo::LogServicesHasBeenSet() const
+{
+    return m_logServicesHasBeenSet;
+}
+
+vector<StaticStorageInfo> EnvInfo::GetStaticStorages() const
+{
+    return m_staticStorages;
+}
+
+void EnvInfo::SetStaticStorages(const vector<StaticStorageInfo>& _staticStorages)
+{
+    m_staticStorages = _staticStorages;
+    m_staticStoragesHasBeenSet = true;
+}
+
+bool EnvInfo::StaticStoragesHasBeenSet() const
+{
+    return m_staticStoragesHasBeenSet;
+}
+
+bool EnvInfo::GetIsAutoDegrade() const
+{
+    return m_isAutoDegrade;
+}
+
+void EnvInfo::SetIsAutoDegrade(const bool& _isAutoDegrade)
+{
+    m_isAutoDegrade = _isAutoDegrade;
+    m_isAutoDegradeHasBeenSet = true;
+}
+
+bool EnvInfo::IsAutoDegradeHasBeenSet() const
+{
+    return m_isAutoDegradeHasBeenSet;
 }
 

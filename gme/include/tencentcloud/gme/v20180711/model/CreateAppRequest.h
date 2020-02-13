@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云项目id，默认为0，表示默认项目
-                     * @return ProjectId 腾讯云项目id，默认为0，表示默认项目
+                     * 获取腾讯云项目ID，默认为0，表示默认项目
+                     * @return ProjectId 腾讯云项目ID，默认为0，表示默认项目
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置腾讯云项目id，默认为0，表示默认项目
-                     * @param ProjectId 腾讯云项目id，默认为0，表示默认项目
+                     * 设置腾讯云项目ID，默认为0，表示默认项目
+                     * @param ProjectId 腾讯云项目ID，默认为0，表示默认项目
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
-                     * @return EngineList 需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
+                     * 获取需要支持的引擎列表，默认全选。
+                     * @return EngineList 需要支持的引擎列表，默认全选。
                      */
                     std::vector<std::string> GetEngineList() const;
 
                     /**
-                     * 设置需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
-                     * @param EngineList 需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
+                     * 设置需要支持的引擎列表，默认全选。
+                     * @param EngineList 需要支持的引擎列表，默认全选。
                      */
                     void SetEngineList(const std::vector<std::string>& _engineList);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool EngineListHasBeenSet() const;
 
                     /**
-                     * 获取服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
-                     * @return RegionList 服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
+                     * 获取服务区域列表，默认全选。
+                     * @return RegionList 服务区域列表，默认全选。
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
-                     * 设置服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
-                     * @param RegionList 服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
+                     * 设置服务区域列表，默认全选。
+                     * @param RegionList 服务区域列表，默认全选。
                      */
                     void SetRegionList(const std::vector<std::string>& _regionList);
 
@@ -199,19 +199,19 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 腾讯云项目id，默认为0，表示默认项目
+                     * 腾讯云项目ID，默认为0，表示默认项目
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 需要支持的引擎列表，取值android, ios, unity, cocos, unreal, windows。默认全选。
+                     * 需要支持的引擎列表，默认全选。
                      */
                     std::vector<std::string> m_engineList;
                     bool m_engineListHasBeenSet;
 
                     /**
-                     * 服务区域列表，取值: mainland(大陆地区), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选。
+                     * 服务区域列表，默认全选。
                      */
                     std::vector<std::string> m_regionList;
                     bool m_regionListHasBeenSet;

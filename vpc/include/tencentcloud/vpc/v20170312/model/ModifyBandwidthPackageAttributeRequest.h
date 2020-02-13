@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool BandwidthPackageNameHasBeenSet() const;
 
+                    /**
+                     * 获取带宽包计费模式
+                     * @return ChargeType 带宽包计费模式
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置带宽包计费模式
+                     * @param ChargeType 带宽包计费模式
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_bandwidthPackageName;
                     bool m_bandwidthPackageNameHasBeenSet;
+
+                    /**
+                     * 带宽包计费模式
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
 
                 };
             }

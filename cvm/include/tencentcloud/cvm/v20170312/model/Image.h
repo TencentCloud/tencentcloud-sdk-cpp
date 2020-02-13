@@ -192,14 +192,42 @@ namespace TencentCloud
                     bool ArchitectureHasBeenSet() const;
 
                     /**
-                     * 获取镜像状态
-                     * @return ImageState 镜像状态
+                     * 获取镜像状态:
+CREATING-创建中
+NORMAL-正常
+CREATEFAILED-创建失败
+USING-使用中
+SYNCING-同步中
+IMPORTING-导入中
+IMPORTFAILED-导入失败
+                     * @return ImageState 镜像状态:
+CREATING-创建中
+NORMAL-正常
+CREATEFAILED-创建失败
+USING-使用中
+SYNCING-同步中
+IMPORTING-导入中
+IMPORTFAILED-导入失败
                      */
                     std::string GetImageState() const;
 
                     /**
-                     * 设置镜像状态
-                     * @param ImageState 镜像状态
+                     * 设置镜像状态:
+CREATING-创建中
+NORMAL-正常
+CREATEFAILED-创建失败
+USING-使用中
+SYNCING-同步中
+IMPORTING-导入中
+IMPORTFAILED-导入失败
+                     * @param ImageState 镜像状态:
+CREATING-创建中
+NORMAL-正常
+CREATEFAILED-创建失败
+USING-使用中
+SYNCING-同步中
+IMPORTING-导入中
+IMPORTFAILED-导入失败
                      */
                     void SetImageState(const std::string& _imageState);
 
@@ -380,7 +408,14 @@ namespace TencentCloud
                     bool m_architectureHasBeenSet;
 
                     /**
-                     * 镜像状态
+                     * 镜像状态:
+CREATING-创建中
+NORMAL-正常
+CREATEFAILED-创建失败
+USING-使用中
+SYNCING-同步中
+IMPORTING-导入中
+IMPORTFAILED-导入失败
                      */
                     std::string m_imageState;
                     bool m_imageStateHasBeenSet;

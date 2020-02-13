@@ -34,8 +34,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_numberHasBeenSet(false),
     m_masterZoneIdHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_anycastZoneHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
+    m_vipIspHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -127,14 +127,6 @@ string CreateLoadBalancerRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_anycastZoneHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "AnycastZone";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_anycastZone.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_internetAccessibleHasBeenSet)
     {
         Value iKey(kStringType);
@@ -142,6 +134,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_internetAccessible.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_vipIspHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VipIsp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vipIsp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -327,22 +327,6 @@ bool CreateLoadBalancerRequest::ZoneIdHasBeenSet() const
     return m_zoneIdHasBeenSet;
 }
 
-string CreateLoadBalancerRequest::GetAnycastZone() const
-{
-    return m_anycastZone;
-}
-
-void CreateLoadBalancerRequest::SetAnycastZone(const string& _anycastZone)
-{
-    m_anycastZone = _anycastZone;
-    m_anycastZoneHasBeenSet = true;
-}
-
-bool CreateLoadBalancerRequest::AnycastZoneHasBeenSet() const
-{
-    return m_anycastZoneHasBeenSet;
-}
-
 InternetAccessible CreateLoadBalancerRequest::GetInternetAccessible() const
 {
     return m_internetAccessible;
@@ -357,6 +341,22 @@ void CreateLoadBalancerRequest::SetInternetAccessible(const InternetAccessible& 
 bool CreateLoadBalancerRequest::InternetAccessibleHasBeenSet() const
 {
     return m_internetAccessibleHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetVipIsp() const
+{
+    return m_vipIsp;
+}
+
+void CreateLoadBalancerRequest::SetVipIsp(const string& _vipIsp)
+{
+    m_vipIsp = _vipIsp;
+    m_vipIspHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::VipIspHasBeenSet() const
+{
+    return m_vipIspHasBeenSet;
 }
 
 vector<TagInfo> CreateLoadBalancerRequest::GetTags() const

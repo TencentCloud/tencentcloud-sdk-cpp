@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取APPID
-                     * @return AppId APPID
+                     * 获取AppID
+                     * @return AppId AppID
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置APPID
-                     * @param AppId APPID
+                     * 设置AppID
+                     * @param AppId AppID
                      */
                     void SetAppId(const int64_t& _appId);
 
@@ -462,14 +462,14 @@ namespace TencentCloud
                     bool IsTmpHasBeenSet() const;
 
                     /**
-                     * 获取独享集群Id，为空表示非独享集群实例
-                     * @return ExclusterId 独享集群Id，为空表示非独享集群实例
+                     * 获取独享集群ID，为空表示非独享集群实例
+                     * @return ExclusterId 独享集群ID，为空表示非独享集群实例
                      */
                     std::string GetExclusterId() const;
 
                     /**
-                     * 设置独享集群Id，为空表示非独享集群实例
-                     * @param ExclusterId 独享集群Id，为空表示非独享集群实例
+                     * 设置独享集群ID，为空表示非独享集群实例
+                     * @param ExclusterId 独享集群ID，为空表示非独享集群实例
                      */
                     void SetExclusterId(const std::string& _exclusterId);
 
@@ -480,14 +480,14 @@ namespace TencentCloud
                     bool ExclusterIdHasBeenSet() const;
 
                     /**
-                     * 获取字符串型的私有网络Id
-                     * @return UniqueVpcId 字符串型的私有网络Id
+                     * 获取字符串型的私有网络ID
+                     * @return UniqueVpcId 字符串型的私有网络ID
                      */
                     std::string GetUniqueVpcId() const;
 
                     /**
-                     * 设置字符串型的私有网络Id
-                     * @param UniqueVpcId 字符串型的私有网络Id
+                     * 设置字符串型的私有网络ID
+                     * @param UniqueVpcId 字符串型的私有网络ID
                      */
                     void SetUniqueVpcId(const std::string& _uniqueVpcId);
 
@@ -498,14 +498,14 @@ namespace TencentCloud
                     bool UniqueVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取字符串型的私有网络子网Id
-                     * @return UniqueSubnetId 字符串型的私有网络子网Id
+                     * 获取字符串型的私有网络子网ID
+                     * @return UniqueSubnetId 字符串型的私有网络子网ID
                      */
                     std::string GetUniqueSubnetId() const;
 
                     /**
-                     * 设置字符串型的私有网络子网Id
-                     * @param UniqueSubnetId 字符串型的私有网络子网Id
+                     * 设置字符串型的私有网络子网ID
+                     * @param UniqueSubnetId 字符串型的私有网络子网ID
                      */
                     void SetUniqueSubnetId(const std::string& _uniqueSubnetId);
 
@@ -516,14 +516,14 @@ namespace TencentCloud
                     bool UniqueSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取数字实例Id（过时字段，请勿依赖该值）
-                     * @return Id 数字实例Id（过时字段，请勿依赖该值）
+                     * 获取数字实例ID（过时字段，请勿依赖该值）
+                     * @return Id 数字实例ID（过时字段，请勿依赖该值）
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置数字实例Id（过时字段，请勿依赖该值）
-                     * @param Id 数字实例Id（过时字段，请勿依赖该值）
+                     * 设置数字实例ID（过时字段，请勿依赖该值）
+                     * @param Id 数字实例ID（过时字段，请勿依赖该值）
                      */
                     void SetId(const uint64_t& _id);
 
@@ -588,14 +588,14 @@ namespace TencentCloud
                     bool WanPortHasBeenSet() const;
 
                     /**
-                     * 获取产品类型 Id（过时字段，请勿依赖该值）
-                     * @return Pid 产品类型 Id（过时字段，请勿依赖该值）
+                     * 获取产品类型 ID（过时字段，请勿依赖该值）
+                     * @return Pid 产品类型 ID（过时字段，请勿依赖该值）
                      */
                     int64_t GetPid() const;
 
                     /**
-                     * 设置产品类型 Id（过时字段，请勿依赖该值）
-                     * @param Pid 产品类型 Id（过时字段，请勿依赖该值）
+                     * 设置产品类型 ID（过时字段，请勿依赖该值）
+                     * @param Pid 产品类型 ID（过时字段，请勿依赖该值）
                      */
                     void SetPid(const int64_t& _pid);
 
@@ -750,7 +750,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * APPID
+                     * AppID
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
@@ -876,25 +876,25 @@ namespace TencentCloud
                     bool m_isTmpHasBeenSet;
 
                     /**
-                     * 独享集群Id，为空表示非独享集群实例
+                     * 独享集群ID，为空表示非独享集群实例
                      */
                     std::string m_exclusterId;
                     bool m_exclusterIdHasBeenSet;
 
                     /**
-                     * 字符串型的私有网络Id
+                     * 字符串型的私有网络ID
                      */
                     std::string m_uniqueVpcId;
                     bool m_uniqueVpcIdHasBeenSet;
 
                     /**
-                     * 字符串型的私有网络子网Id
+                     * 字符串型的私有网络子网ID
                      */
                     std::string m_uniqueSubnetId;
                     bool m_uniqueSubnetIdHasBeenSet;
 
                     /**
-                     * 数字实例Id（过时字段，请勿依赖该值）
+                     * 数字实例ID（过时字段，请勿依赖该值）
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
@@ -918,7 +918,7 @@ namespace TencentCloud
                     bool m_wanPortHasBeenSet;
 
                     /**
-                     * 产品类型 Id（过时字段，请勿依赖该值）
+                     * 产品类型 ID（过时字段，请勿依赖该值）
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;

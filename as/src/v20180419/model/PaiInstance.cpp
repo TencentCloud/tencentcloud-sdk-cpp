@@ -23,7 +23,8 @@ using namespace std;
 
 PaiInstance::PaiInstance() :
     m_instanceIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_paiMateUrlHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome PaiInstance::Deserialize(const Value &value)
         m_domainNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PaiMateUrl") && !value["PaiMateUrl"].IsNull())
+    {
+        if (!value["PaiMateUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PaiInstance.PaiMateUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paiMateUrl = string(value["PaiMateUrl"].GetString());
+        m_paiMateUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void PaiInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paiMateUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PaiMateUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_paiMateUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void PaiInstance::SetDomainName(const string& _domainName)
 bool PaiInstance::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+string PaiInstance::GetPaiMateUrl() const
+{
+    return m_paiMateUrl;
+}
+
+void PaiInstance::SetPaiMateUrl(const string& _paiMateUrl)
+{
+    m_paiMateUrl = _paiMateUrl;
+    m_paiMateUrlHasBeenSet = true;
+}
+
+bool PaiInstance::PaiMateUrlHasBeenSet() const
+{
+    return m_paiMateUrlHasBeenSet;
 }
 

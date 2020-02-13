@@ -43,16 +43,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拉取起始时间，UNIX 时间戳（时间：秒）
-                     * @return SendDateTime 拉取起始时间，UNIX 时间戳（时间：秒）
+                     * 获取拉取起始时间，UNIX 时间戳（时间：秒）。
+                     * @return SendDateTime 拉取起始时间，UNIX 时间戳（时间：秒）。
                      */
-                    std::string GetSendDateTime() const;
+                    uint64_t GetSendDateTime() const;
 
                     /**
-                     * 设置拉取起始时间，UNIX 时间戳（时间：秒）
-                     * @param SendDateTime 拉取起始时间，UNIX 时间戳（时间：秒）
+                     * 设置拉取起始时间，UNIX 时间戳（时间：秒）。
+                     * @param SendDateTime 拉取起始时间，UNIX 时间戳（时间：秒）。
                      */
-                    void SetSendDateTime(const std::string& _sendDateTime);
+                    void SetSendDateTime(const uint64_t& _sendDateTime);
 
                     /**
                      * 判断参数 SendDateTime 是否已赋值
@@ -61,18 +61,18 @@ namespace TencentCloud
                     bool SendDateTimeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-注：目前固定设置为0
-                     * @return Offset 偏移量
-注：目前固定设置为0
+                     * 获取偏移量。
+注：目前固定设置为0。
+                     * @return Offset 偏移量。
+注：目前固定设置为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-注：目前固定设置为0
-                     * @param Offset 偏移量
-注：目前固定设置为0
+                     * 设置偏移量。
+注：目前固定设置为0。
+                     * @param Offset 偏移量。
+注：目前固定设置为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取拉取最大条数，最多 100
-                     * @return Limit 拉取最大条数，最多 100
+                     * 获取拉取最大条数，最多 100。
+                     * @return Limit 拉取最大条数，最多 100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置拉取最大条数，最多 100
-                     * @param Limit 拉取最大条数，最多 100
+                     * 设置拉取最大条数，最多 100。
+                     * @param Limit 拉取最大条数，最多 100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @return SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 获取短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * @return SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
                      */
                     std::string GetSmsSdkAppid() const;
 
                     /**
-                     * 设置短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @param SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 设置短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * @param SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
                      */
                     void SetSmsSdkAppid(const std::string& _smsSdkAppid);
 
@@ -139,20 +139,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拉取起始时间，UNIX 时间戳（时间：秒）
+                     * 拉取起始时间，UNIX 时间戳（时间：秒）。
                      */
-                    std::string m_sendDateTime;
+                    uint64_t m_sendDateTime;
                     bool m_sendDateTimeHasBeenSet;
 
                     /**
-                     * 偏移量
-注：目前固定设置为0
+                     * 偏移量。
+注：目前固定设置为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 拉取最大条数，最多 100
+                     * 拉取最大条数，最多 100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -164,7 +164,7 @@ namespace TencentCloud
                     bool m_phoneNumberHasBeenSet;
 
                     /**
-                     * 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
                      */
                     std::string m_smsSdkAppid;
                     bool m_smsSdkAppidHasBeenSet;

@@ -125,14 +125,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
-                     * @return SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
+                     * 获取在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
+                     * @return SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
-                     * @param SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
+                     * 设置在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
+                     * @param SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -161,14 +161,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
-                     * @return AddressIPVersion 仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     * 获取仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
+                     * @return AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
                      */
                     std::string GetAddressIPVersion() const;
 
                     /**
-                     * 设置仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
-                     * @param AddressIPVersion 仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     * 设置仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
+                     * @param AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
                      */
                     void SetAddressIPVersion(const std::string& _addressIPVersion);
 
@@ -237,32 +237,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
-                     * @return AnycastZone 仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
-                     */
-                    std::string GetAnycastZone() const;
-
-                    /**
-                     * 设置仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
-                     * @param AnycastZone 仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
-                     */
-                    void SetAnycastZone(const std::string& _anycastZone);
-
-                    /**
-                     * 判断参数 AnycastZone 是否已赋值
-                     * @return AnycastZone 是否已赋值
-                     */
-                    bool AnycastZoneHasBeenSet() const;
-
-                    /**
-                     * 获取仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
-                     * @return InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     * 获取仅适用于公网负载均衡。负载均衡的网络计费模式。
+                     * @return InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费模式。
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
-                     * @param InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     * 设置仅适用于公网负载均衡。负载均衡的网络计费模式。
+                     * @param InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费模式。
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
 
@@ -271,6 +253,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                      * @return InternetAccessible 是否已赋值
                      */
                     bool InternetAccessibleHasBeenSet() const;
+
+                    /**
+                     * 获取仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。
+                     * @return VipIsp 仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。
+                     */
+                    std::string GetVipIsp() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。
+                     * @param VipIsp 仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。
+                     */
+                    void SetVipIsp(const std::string& _vipIsp);
+
+                    /**
+                     * 判断参数 VipIsp 是否已赋值
+                     * @return VipIsp 是否已赋值
+                     */
+                    bool VipIspHasBeenSet() const;
 
                     /**
                      * 获取购买负载均衡同时，给负载均衡打上标签
@@ -319,7 +319,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。其它情况不支持该参数。
+                     * 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -331,7 +331,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 仅适用于公网负载均衡。IP版本，IPV4 | IPV6，默认值 IPV4。
+                     * 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
                      */
                     std::string m_addressIPVersion;
                     bool m_addressIPVersionHasBeenSet;
@@ -356,16 +356,16 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 仅适用于公网负载均衡。Anycast的发布域，可取 ZONE_A 或 ZONE_B。仅带宽非上移用户支持此参数。
-                     */
-                    std::string m_anycastZone;
-                    bool m_anycastZoneHasBeenSet;
-
-                    /**
-                     * 仅适用于公网负载均衡。负载均衡的网络计费方式，此参数仅对带宽上移用户生效。
+                     * 仅适用于公网负载均衡。负载均衡的网络计费模式。
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。
+                     */
+                    std::string m_vipIsp;
+                    bool m_vipIspHasBeenSet;
 
                     /**
                      * 购买负载均衡同时，给负载均衡打上标签

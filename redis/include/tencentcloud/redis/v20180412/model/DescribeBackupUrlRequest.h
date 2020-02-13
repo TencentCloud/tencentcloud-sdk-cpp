@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * 设置实例ID
+                     * @param InstanceId 实例ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份Id，通过DescribeInstanceBackups接口可查
-                     * @return BackupId 备份Id，通过DescribeInstanceBackups接口可查
+                     * 获取备份ID，通过DescribeInstanceBackups接口可查
+                     * @return BackupId 备份ID，通过DescribeInstanceBackups接口可查
                      */
                     std::string GetBackupId() const;
 
                     /**
-                     * 设置备份Id，通过DescribeInstanceBackups接口可查
-                     * @param BackupId 备份Id，通过DescribeInstanceBackups接口可查
+                     * 设置备份ID，通过DescribeInstanceBackups接口可查
+                     * @param BackupId 备份ID，通过DescribeInstanceBackups接口可查
                      */
                     void SetBackupId(const std::string& _backupId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份Id，通过DescribeInstanceBackups接口可查
+                     * 备份ID，通过DescribeInstanceBackups接口可查
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;

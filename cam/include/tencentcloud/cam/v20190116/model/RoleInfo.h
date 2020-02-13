@@ -172,6 +172,28 @@ namespace TencentCloud
                      */
                     bool ConsoleLoginHasBeenSet() const;
 
+                    /**
+                     * 获取角色类型，取user或system
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoleType 角色类型，取user或system
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRoleType() const;
+
+                    /**
+                     * 设置角色类型，取user或system
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RoleType 角色类型，取user或system
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRoleType(const std::string& _roleType);
+
+                    /**
+                     * 判断参数 RoleType 是否已赋值
+                     * @return RoleType 是否已赋值
+                     */
+                    bool RoleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +237,13 @@ namespace TencentCloud
                      */
                     uint64_t m_consoleLogin;
                     bool m_consoleLoginHasBeenSet;
+
+                    /**
+                     * 角色类型，取user或system
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roleType;
+                    bool m_roleTypeHasBeenSet;
 
                 };
             }

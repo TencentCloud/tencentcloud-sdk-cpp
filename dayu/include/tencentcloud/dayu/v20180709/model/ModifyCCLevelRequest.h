@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
-                     * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      */
                     void SetBusiness(const std::string& _business);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写RuleId字段；
-                     * @return Protocol 可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写RuleId字段；
+                     * 获取可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；
+                     * @return Protocol 可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写RuleId字段；
-                     * @param Protocol 可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写RuleId字段；
+                     * 设置可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；
+                     * @param Protocol 可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -115,18 +115,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
-当Protocol=https时必须填写；
-                     * @return RuleId 可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
-当Protocol=https时必须填写；
+                     * 获取表示7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
+                     * @return RuleId 表示7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
-当Protocol=https时必须填写；
-                     * @param RuleId 可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
-当Protocol=https时必须填写；
+                     * 设置表示7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
+                     * @param RuleId 表示7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
                      */
                     void SetRuleId(const std::string& _ruleId);
 
@@ -139,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
@@ -157,14 +153,13 @@ namespace TencentCloud
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 可选字段，代表CC防护类型，取值[http（http协议的CC防护），https（https协议的CC防护）]；当不填时，默认为http协议的CC防护；当填写https时还需要填写RuleId字段；
+                     * 可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 可选字段，表示https协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
-当Protocol=https时必须填写；
+                     * 表示7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

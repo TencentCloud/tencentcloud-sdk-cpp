@@ -116,6 +116,24 @@ namespace TencentCloud
                     bool ScaleModeHasBeenSet() const;
 
                     /**
+                     * 获取部署要使用的资源组Id，默认为共享资源组
+                     * @return ResourceGroupId 部署要使用的资源组Id，默认为共享资源组
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置部署要使用的资源组Id，默认为共享资源组
+                     * @param ResourceGroupId 部署要使用的资源组Id，默认为共享资源组
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
                      * 获取处理器配置, 单位为1/1000核；范围[100, 256000]
                      * @return Cpu 处理器配置, 单位为1/1000核；范围[100, 256000]
                      */
@@ -168,24 +186,6 @@ namespace TencentCloud
                      * @return Cluster 是否已赋值
                      */
                     bool ClusterHasBeenSet() const;
-
-                    /**
-                     * 获取部署要使用的资源组Id，默认为共享资源组
-                     * @return ResourceGroupId 部署要使用的资源组Id，默认为共享资源组
-                     */
-                    std::string GetResourceGroupId() const;
-
-                    /**
-                     * 设置部署要使用的资源组Id，默认为共享资源组
-                     * @param ResourceGroupId 部署要使用的资源组Id，默认为共享资源组
-                     */
-                    void SetResourceGroupId(const std::string& _resourceGroupId);
-
-                    /**
-                     * 判断参数 ResourceGroupId 是否已赋值
-                     * @return ResourceGroupId 是否已赋值
-                     */
-                    bool ResourceGroupIdHasBeenSet() const;
 
                     /**
                      * 获取默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式
@@ -304,6 +304,12 @@ namespace TencentCloud
                     bool m_scaleModeHasBeenSet;
 
                     /**
+                     * 部署要使用的资源组Id，默认为共享资源组
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
+
+                    /**
                      * 处理器配置, 单位为1/1000核；范围[100, 256000]
                      */
                     uint64_t m_cpu;
@@ -320,12 +326,6 @@ namespace TencentCloud
                      */
                     std::string m_cluster;
                     bool m_clusterHasBeenSet;
-
-                    /**
-                     * 部署要使用的资源组Id，默认为共享资源组
-                     */
-                    std::string m_resourceGroupId;
-                    bool m_resourceGroupIdHasBeenSet;
 
                     /**
                      * 默认为空，表示不需要鉴权，TOKEN 表示选择 Token 鉴权方式

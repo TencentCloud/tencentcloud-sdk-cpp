@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分片Id列表。
-                     * @return ShardInstanceIds 分片Id列表。
+                     * 获取分片ID列表。
+                     * @return ShardInstanceIds 分片ID列表。
                      */
                     std::vector<std::string> GetShardInstanceIds() const;
 
                     /**
-                     * 设置分片Id列表。
-                     * @param ShardInstanceIds 分片Id列表。
+                     * 设置分片ID列表。
+                     * @param ShardInstanceIds 分片ID列表。
                      */
                     void SetShardInstanceIds(const std::vector<std::string>& _shardInstanceIds);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分片Id列表。
+                     * 分片ID列表。
                      */
                     std::vector<std::string> m_shardInstanceIds;
                     bool m_shardInstanceIdsHasBeenSet;

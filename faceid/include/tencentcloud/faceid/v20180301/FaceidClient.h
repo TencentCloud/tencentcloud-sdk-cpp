@@ -49,6 +49,14 @@
 #include <tencentcloud/faceid/v20180301/model/LivenessCompareResponse.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h>
 #include <tencentcloud/faceid/v20180301/model/LivenessRecognitionResponse.h>
+#include <tencentcloud/faceid/v20180301/model/MinorsVerificationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/MinorsVerificationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/MobileStatusRequest.h>
+#include <tencentcloud/faceid/v20180301/model/MobileStatusResponse.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationRequest.h>
+#include <tencentcloud/faceid/v20180301/model/PhoneVerificationResponse.h>
 
 
 namespace TencentCloud
@@ -102,11 +110,23 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::LivenessRecognitionResponse> LivenessRecognitionOutcome;
                 typedef std::future<LivenessRecognitionOutcome> LivenessRecognitionOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::LivenessRecognitionRequest&, LivenessRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LivenessRecognitionAsyncHandler;
+                typedef Outcome<Error, Model::MinorsVerificationResponse> MinorsVerificationOutcome;
+                typedef std::future<MinorsVerificationOutcome> MinorsVerificationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::MinorsVerificationRequest&, MinorsVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MinorsVerificationAsyncHandler;
+                typedef Outcome<Error, Model::MobileNetworkTimeVerificationResponse> MobileNetworkTimeVerificationOutcome;
+                typedef std::future<MobileNetworkTimeVerificationOutcome> MobileNetworkTimeVerificationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::MobileNetworkTimeVerificationRequest&, MobileNetworkTimeVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MobileNetworkTimeVerificationAsyncHandler;
+                typedef Outcome<Error, Model::MobileStatusResponse> MobileStatusOutcome;
+                typedef std::future<MobileStatusOutcome> MobileStatusOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::MobileStatusRequest&, MobileStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MobileStatusAsyncHandler;
+                typedef Outcome<Error, Model::PhoneVerificationResponse> PhoneVerificationOutcome;
+                typedef std::future<PhoneVerificationOutcome> PhoneVerificationOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::PhoneVerificationRequest&, PhoneVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PhoneVerificationAsyncHandler;
 
 
 
                 /**
-                 *输入银行卡号、姓名，校验信息的真实性和一致性。
+                 *本接口用于校验姓名和银行卡号的真实性和一致性。
                  * @param req BankCard2EVerificationRequest
                  * @return BankCard2EVerificationOutcome
                  */
@@ -115,7 +135,7 @@ namespace TencentCloud
                 BankCard2EVerificationOutcomeCallable BankCard2EVerificationCallable(const Model::BankCard2EVerificationRequest& request);
 
                 /**
-                 *输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。
+                 *本接口用于输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。
                  * @param req BankCard4EVerificationRequest
                  * @return BankCard4EVerificationOutcome
                  */
@@ -124,7 +144,7 @@ namespace TencentCloud
                 BankCard4EVerificationOutcomeCallable BankCard4EVerificationCallable(const Model::BankCard4EVerificationRequest& request);
 
                 /**
-                 *银行卡三要素核验，输入银行卡号、姓名、开户证件号，校验信息的真实性和一致性。
+                 *本接口用于银行卡号、姓名、开户证件号信息的真实性和一致性。
                  * @param req BankCardVerificationRequest
                  * @return BankCardVerificationOutcome
                  */
@@ -221,6 +241,42 @@ namespace TencentCloud
                 LivenessRecognitionOutcome LivenessRecognition(const Model::LivenessRecognitionRequest &request);
                 void LivenessRecognitionAsync(const Model::LivenessRecognitionRequest& request, const LivenessRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LivenessRecognitionOutcomeCallable LivenessRecognitionCallable(const Model::LivenessRecognitionRequest& request);
+
+                /**
+                 *传入手机号或者姓名和身份证号，判断该信息是否已实名认证且年满18周岁。
+                 * @param req MinorsVerificationRequest
+                 * @return MinorsVerificationOutcome
+                 */
+                MinorsVerificationOutcome MinorsVerification(const Model::MinorsVerificationRequest &request);
+                void MinorsVerificationAsync(const Model::MinorsVerificationRequest& request, const MinorsVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MinorsVerificationOutcomeCallable MinorsVerificationCallable(const Model::MinorsVerificationRequest& request);
+
+                /**
+                 *本接口用于查询手机号在网时长，输入手机号进行查询。
+                 * @param req MobileNetworkTimeVerificationRequest
+                 * @return MobileNetworkTimeVerificationOutcome
+                 */
+                MobileNetworkTimeVerificationOutcome MobileNetworkTimeVerification(const Model::MobileNetworkTimeVerificationRequest &request);
+                void MobileNetworkTimeVerificationAsync(const Model::MobileNetworkTimeVerificationRequest& request, const MobileNetworkTimeVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MobileNetworkTimeVerificationOutcomeCallable MobileNetworkTimeVerificationCallable(const Model::MobileNetworkTimeVerificationRequest& request);
+
+                /**
+                 *本接口用于验证手机号的状态，您可以输入手机号进行查询。
+                 * @param req MobileStatusRequest
+                 * @return MobileStatusOutcome
+                 */
+                MobileStatusOutcome MobileStatus(const Model::MobileStatusRequest &request);
+                void MobileStatusAsync(const Model::MobileStatusRequest& request, const MobileStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MobileStatusOutcomeCallable MobileStatusCallable(const Model::MobileStatusRequest& request);
+
+                /**
+                 *本接口用于校验手机号、姓名和身份证号的真实性和一致性。
+                 * @param req PhoneVerificationRequest
+                 * @return PhoneVerificationOutcome
+                 */
+                PhoneVerificationOutcome PhoneVerification(const Model::PhoneVerificationRequest &request);
+                void PhoneVerificationAsync(const Model::PhoneVerificationRequest& request, const PhoneVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PhoneVerificationOutcomeCallable PhoneVerificationCallable(const Model::PhoneVerificationRequest& request);
 
             };
         }

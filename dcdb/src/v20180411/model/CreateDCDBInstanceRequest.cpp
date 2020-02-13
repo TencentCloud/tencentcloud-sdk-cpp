@@ -36,7 +36,9 @@ CreateDCDBInstanceRequest::CreateDCDBInstanceRequest() :
     m_subnetIdHasBeenSet(false),
     m_dbVersionIdHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_securityGroupIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false)
 {
 }
 
@@ -159,6 +161,22 @@ string CreateDCDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_securityGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -375,6 +393,38 @@ void CreateDCDBInstanceRequest::SetVoucherIds(const vector<string>& _voucherIds)
 bool CreateDCDBInstanceRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+string CreateDCDBInstanceRequest::GetSecurityGroupId() const
+{
+    return m_securityGroupId;
+}
+
+void CreateDCDBInstanceRequest::SetSecurityGroupId(const string& _securityGroupId)
+{
+    m_securityGroupId = _securityGroupId;
+    m_securityGroupIdHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::SecurityGroupIdHasBeenSet() const
+{
+    return m_securityGroupIdHasBeenSet;
+}
+
+string CreateDCDBInstanceRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreateDCDBInstanceRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 

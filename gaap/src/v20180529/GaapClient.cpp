@@ -1502,6 +1502,49 @@ GaapClient::DescribeDomainErrorPageInfoOutcomeCallable GaapClient::DescribeDomai
     return task->get_future();
 }
 
+GaapClient::DescribeDomainErrorPageInfoByIdsOutcome GaapClient::DescribeDomainErrorPageInfoByIds(const DescribeDomainErrorPageInfoByIdsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainErrorPageInfoByIds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainErrorPageInfoByIdsResponse rsp = DescribeDomainErrorPageInfoByIdsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainErrorPageInfoByIdsOutcome(rsp);
+        else
+            return DescribeDomainErrorPageInfoByIdsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainErrorPageInfoByIdsOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeDomainErrorPageInfoByIdsAsync(const DescribeDomainErrorPageInfoByIdsRequest& request, const DescribeDomainErrorPageInfoByIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainErrorPageInfoByIds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeDomainErrorPageInfoByIdsOutcomeCallable GaapClient::DescribeDomainErrorPageInfoByIdsCallable(const DescribeDomainErrorPageInfoByIdsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainErrorPageInfoByIdsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainErrorPageInfoByIds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::DescribeGroupAndStatisticsProxyOutcome GaapClient::DescribeGroupAndStatisticsProxy(const DescribeGroupAndStatisticsProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroupAndStatisticsProxy");
@@ -2405,6 +2448,49 @@ GaapClient::DescribeRulesOutcomeCallable GaapClient::DescribeRulesCallable(const
     return task->get_future();
 }
 
+GaapClient::DescribeRulesByRuleIdsOutcome GaapClient::DescribeRulesByRuleIds(const DescribeRulesByRuleIdsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRulesByRuleIds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRulesByRuleIdsResponse rsp = DescribeRulesByRuleIdsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRulesByRuleIdsOutcome(rsp);
+        else
+            return DescribeRulesByRuleIdsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRulesByRuleIdsOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeRulesByRuleIdsAsync(const DescribeRulesByRuleIdsRequest& request, const DescribeRulesByRuleIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRulesByRuleIds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeRulesByRuleIdsOutcomeCallable GaapClient::DescribeRulesByRuleIdsCallable(const DescribeRulesByRuleIdsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRulesByRuleIdsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRulesByRuleIds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::DescribeSecurityPolicyDetailOutcome GaapClient::DescribeSecurityPolicyDetail(const DescribeSecurityPolicyDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityPolicyDetail");
@@ -2441,6 +2527,49 @@ GaapClient::DescribeSecurityPolicyDetailOutcomeCallable GaapClient::DescribeSecu
         [this, request]()
         {
             return this->DescribeSecurityPolicyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DescribeSecurityRulesOutcome GaapClient::DescribeSecurityRules(const DescribeSecurityRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityRulesResponse rsp = DescribeSecurityRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityRulesOutcome(rsp);
+        else
+            return DescribeSecurityRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityRulesOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeSecurityRulesAsync(const DescribeSecurityRulesRequest& request, const DescribeSecurityRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeSecurityRulesOutcomeCallable GaapClient::DescribeSecurityRulesCallable(const DescribeSecurityRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityRules(request);
         }
     );
 

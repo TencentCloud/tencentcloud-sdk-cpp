@@ -174,6 +174,42 @@ namespace TencentCloud
                      */
                     bool DesiredComputeNodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取计算环境资源类型，当前为CVM和CPM（黑石）
+                     * @return ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置计算环境资源类型，当前为CVM和CPM（黑石）
+                     * @param ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取下一步动作
+                     * @return NextAction 下一步动作
+                     */
+                    std::string GetNextAction() const;
+
+                    /**
+                     * 设置下一步动作
+                     * @param NextAction 下一步动作
+                     */
+                    void SetNextAction(const std::string& _nextAction);
+
+                    /**
+                     * 判断参数 NextAction 是否已赋值
+                     * @return NextAction 是否已赋值
+                     */
+                    bool NextActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +253,18 @@ namespace TencentCloud
                      */
                     uint64_t m_desiredComputeNodeCount;
                     bool m_desiredComputeNodeCountHasBeenSet;
+
+                    /**
+                     * 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 下一步动作
+                     */
+                    std::string m_nextAction;
+                    bool m_nextActionHasBeenSet;
 
                 };
             }

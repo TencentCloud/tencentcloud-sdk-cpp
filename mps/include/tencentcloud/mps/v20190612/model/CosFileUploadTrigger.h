@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取工作流绑定的输入路径目录，如`/movie/201907/`，不填代表根目录`/`。
-                     * @return Dir 工作流绑定的输入路径目录，如`/movie/201907/`，不填代表根目录`/`。
+                     * 获取工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
+                     * @return Dir 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
                      */
                     std::string GetDir() const;
 
                     /**
-                     * 设置工作流绑定的输入路径目录，如`/movie/201907/`，不填代表根目录`/`。
-                     * @param Dir 工作流绑定的输入路径目录，如`/movie/201907/`，不填代表根目录`/`。
+                     * 设置工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
+                     * @param Dir 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
                      */
                     void SetDir(const std::string& _dir);
 
@@ -133,7 +133,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 工作流绑定的输入路径目录，如`/movie/201907/`，不填代表根目录`/`。
+                     * 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。
                      */
                     std::string m_dir;
                     bool m_dirHasBeenSet;

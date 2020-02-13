@@ -89,10 +89,14 @@
 #include <tencentcloud/ocr/v20181119/model/PassportOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/PermitOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/PermitOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/PropOwnerCertOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
@@ -230,12 +234,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PermitOCRResponse> PermitOCROutcome;
                 typedef std::future<PermitOCROutcome> PermitOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::PermitOCRRequest&, PermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> PermitOCRAsyncHandler;
+                typedef Outcome<Error, Model::PropOwnerCertOCRResponse> PropOwnerCertOCROutcome;
+                typedef std::future<PropOwnerCertOCROutcome> PropOwnerCertOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::PropOwnerCertOCRRequest&, PropOwnerCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> PropOwnerCertOCRAsyncHandler;
                 typedef Outcome<Error, Model::QrcodeOCRResponse> QrcodeOCROutcome;
                 typedef std::future<QrcodeOCROutcome> QrcodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QrcodeOCRRequest&, QrcodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QrcodeOCRAsyncHandler;
                 typedef Outcome<Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
+                typedef Outcome<Error, Model::ResidenceBookletOCRResponse> ResidenceBookletOCROutcome;
+                typedef std::future<ResidenceBookletOCROutcome> ResidenceBookletOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ResidenceBookletOCRRequest&, ResidenceBookletOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResidenceBookletOCRAsyncHandler;
                 typedef Outcome<Error, Model::ShipInvoiceOCRResponse> ShipInvoiceOCROutcome;
                 typedef std::future<ShipInvoiceOCROutcome> ShipInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ShipInvoiceOCRRequest&, ShipInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShipInvoiceOCRAsyncHandler;
@@ -423,7 +433,7 @@ namespace TencentCloud
                 FormulaOCROutcomeCallable FormulaOCRCallable(const Model::FormulaOCRRequest& request);
 
                 /**
-                 *本接口支持图像整体文字的检测和识别，返回文字框位置与文字内容。相比通用印刷体识别接口，准确率和召回率更高。
+                 *本接口支持图像整体文字的检测和识别，返回文字框位置与文字内容。相比通用印刷体识别接口，高精度版在英文、数字、小字、模糊字、倾斜文本行等困难场景下，准确率和召回率更高。
                  * @param req GeneralAccurateOCRRequest
                  * @return GeneralAccurateOCROutcome
                  */
@@ -524,7 +534,7 @@ namespace TencentCloud
                 MLIDCardOCROutcomeCallable MLIDCardOCRCallable(const Model::MLIDCardOCRRequest& request);
 
                 /**
-                 *本接口支持马来西亚身护照识别，识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍；具备护照人像照片的裁剪功能和翻拍、复印件告警功能。
+                 *本接口支持马来西亚护照识别，识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍；具备护照人像照片的裁剪功能和翻拍、复印件告警功能。
 本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)
                  * @param req MLIDPassportOCRRequest
                  * @return MLIDPassportOCROutcome
@@ -543,7 +553,7 @@ namespace TencentCloud
                 MixedInvoiceDetectOutcomeCallable MixedInvoiceDetectCallable(const Model::MixedInvoiceDetectRequest& request);
 
                 /**
-                 *本接口支持多张、多类型票据的混合识别，系统自动实现分割、分类和识别。目前已支持增值税发票、增值税发票（卷票）、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共11种票据。
+                 *本接口支持多张、多类型票据的混合识别，系统自动实现分割、分类和识别，同时支持自选需要识别的票据类型。目前已支持增值税发票、增值税发票（卷票）、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共11种票据。
                  * @param req MixedInvoiceOCRRequest
                  * @return MixedInvoiceOCROutcome
                  */
@@ -579,8 +589,17 @@ namespace TencentCloud
                 PermitOCROutcomeCallable PermitOCRCallable(const Model::PermitOCRRequest& request);
 
                 /**
+                 *本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。
+                 * @param req PropOwnerCertOCRRequest
+                 * @return PropOwnerCertOCROutcome
+                 */
+                PropOwnerCertOCROutcome PropOwnerCertOCR(const Model::PropOwnerCertOCRRequest &request);
+                void PropOwnerCertOCRAsync(const Model::PropOwnerCertOCRRequest& request, const PropOwnerCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PropOwnerCertOCROutcomeCallable PropOwnerCertOCRCallable(const Model::PropOwnerCertOCRRequest& request);
+
+                /**
                  *本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。
-本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)
+本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect) 
                  * @param req QrcodeOCRRequest
                  * @return QrcodeOCROutcome
                  */
@@ -589,13 +608,22 @@ namespace TencentCloud
                 QrcodeOCROutcomeCallable QrcodeOCRCallable(const Model::QrcodeOCRRequest& request);
 
                 /**
-                 *本接口支持定额发票的发票号码、发票代码及金额等关键字段的识别。
+                 *本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。
                  * @param req QuotaInvoiceOCRRequest
                  * @return QuotaInvoiceOCROutcome
                  */
                 QuotaInvoiceOCROutcome QuotaInvoiceOCR(const Model::QuotaInvoiceOCRRequest &request);
                 void QuotaInvoiceOCRAsync(const Model::QuotaInvoiceOCRRequest& request, const QuotaInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuotaInvoiceOCROutcomeCallable QuotaInvoiceOCRCallable(const Model::QuotaInvoiceOCRRequest& request);
+
+                /**
+                 *本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。
+                 * @param req ResidenceBookletOCRRequest
+                 * @return ResidenceBookletOCROutcome
+                 */
+                ResidenceBookletOCROutcome ResidenceBookletOCR(const Model::ResidenceBookletOCRRequest &request);
+                void ResidenceBookletOCRAsync(const Model::ResidenceBookletOCRRequest& request, const ResidenceBookletOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResidenceBookletOCROutcomeCallable ResidenceBookletOCRCallable(const Model::ResidenceBookletOCRRequest& request);
 
                 /**
                  *本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价等字段。
@@ -616,7 +644,7 @@ namespace TencentCloud
                 TableOCROutcomeCallable TableOCRCallable(const Model::TableOCRRequest& request);
 
                 /**
-                 *本接口支持出租车发票关键字段的识别，包括发票号码、发票代码、金额、日期等字段。
+                 *本接口支持出租车发票关键字段的识别，包括发票号码、发票代码、金额、日期、上下车时间、里程、车牌号、发票类型及所属地区等字段。
                  * @param req TaxiInvoiceOCRRequest
                  * @return TaxiInvoiceOCROutcome
                  */
@@ -643,7 +671,7 @@ namespace TencentCloud
                 TollInvoiceOCROutcomeCallable TollInvoiceOCRCallable(const Model::TollInvoiceOCRRequest& request);
 
                 /**
-                 *本接口支持火车票全字段的识别，包括编号、票价、姓名、座位号、出发时间、出发站、到达站、车次、席别等。
+                 *本接口支持火车票全字段的识别，包括编号、票价、姓名、座位号、出发时间、出发站、到达站、车次、席别、发票类型及序列号等。
 
                  * @param req TrainTicketOCRRequest
                  * @return TrainTicketOCROutcome

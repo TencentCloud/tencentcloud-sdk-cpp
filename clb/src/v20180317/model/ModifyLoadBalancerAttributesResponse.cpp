@@ -24,7 +24,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace rapidjson;
 using namespace std;
 
-ModifyLoadBalancerAttributesResponse::ModifyLoadBalancerAttributesResponse()
+ModifyLoadBalancerAttributesResponse::ModifyLoadBalancerAttributesResponse() :
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,29 @@ CoreInternalOutcome ModifyLoadBalancerAttributesResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
+    {
+        if (!rsp["DealName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string ModifyLoadBalancerAttributesResponse::GetDealName() const
+{
+    return m_dealName;
+}
+
+bool ModifyLoadBalancerAttributesResponse::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
+}
 
 

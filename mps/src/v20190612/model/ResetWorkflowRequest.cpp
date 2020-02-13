@@ -31,6 +31,7 @@ ResetWorkflowRequest::ResetWorkflowRequest() :
     m_outputDirHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
+    m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_taskPriorityHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false)
@@ -102,6 +103,15 @@ string ResetWorkflowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_aiContentReviewTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiAnalysisTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiAnalysisTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiAnalysisTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_aiRecognitionTaskHasBeenSet)
@@ -234,12 +244,12 @@ bool ResetWorkflowRequest::MediaProcessTaskHasBeenSet() const
     return m_mediaProcessTaskHasBeenSet;
 }
 
-AiClassificationTaskInput ResetWorkflowRequest::GetAiContentReviewTask() const
+AiContentReviewTaskInput ResetWorkflowRequest::GetAiContentReviewTask() const
 {
     return m_aiContentReviewTask;
 }
 
-void ResetWorkflowRequest::SetAiContentReviewTask(const AiClassificationTaskInput& _aiContentReviewTask)
+void ResetWorkflowRequest::SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask)
 {
     m_aiContentReviewTask = _aiContentReviewTask;
     m_aiContentReviewTaskHasBeenSet = true;
@@ -248,6 +258,22 @@ void ResetWorkflowRequest::SetAiContentReviewTask(const AiClassificationTaskInpu
 bool ResetWorkflowRequest::AiContentReviewTaskHasBeenSet() const
 {
     return m_aiContentReviewTaskHasBeenSet;
+}
+
+AiAnalysisTaskInput ResetWorkflowRequest::GetAiAnalysisTask() const
+{
+    return m_aiAnalysisTask;
+}
+
+void ResetWorkflowRequest::SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask)
+{
+    m_aiAnalysisTask = _aiAnalysisTask;
+    m_aiAnalysisTaskHasBeenSet = true;
+}
+
+bool ResetWorkflowRequest::AiAnalysisTaskHasBeenSet() const
+{
+    return m_aiAnalysisTaskHasBeenSet;
 }
 
 AiRecognitionTaskInput ResetWorkflowRequest::GetAiRecognitionTask() const

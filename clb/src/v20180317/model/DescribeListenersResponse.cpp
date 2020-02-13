@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeListenersResponse::DescribeListenersResponse() :
-    m_listenersHasBeenSet(false)
+    m_listenersHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeListenersResponse::Deserialize(const string &payload
         m_listenersHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<Listener> DescribeListenersResponse::GetListeners() const
 bool DescribeListenersResponse::ListenersHasBeenSet() const
 {
     return m_listenersHasBeenSet;
+}
+
+uint64_t DescribeListenersResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeListenersResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

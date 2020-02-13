@@ -209,14 +209,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回负载均衡实例的个数，默认为 20。
-                     * @return Limit 返回负载均衡实例的个数，默认为 20。
+                     * 获取返回负载均衡实例的数量，默认为20，最大值为100。
+                     * @return Limit 返回负载均衡实例的数量，默认为20，最大值为100。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回负载均衡实例的个数，默认为 20。
-                     * @param Limit 返回负载均衡实例的个数，默认为 20。
+                     * 设置返回负载均衡实例的数量，默认为20，最大值为100。
+                     * @param Limit 返回负载均衡实例的数量，默认为20，最大值为100。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -432,7 +432,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回负载均衡实例的个数，默认为 20。
+                     * 返回负载均衡实例的数量，默认为20，最大值为100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -27,7 +27,9 @@ UpgradeLicenseRequest::UpgradeLicenseRequest() :
     m_instanceIdHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_basicSecurityTypeHasBeenSet(false),
+    m_forceRestartHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,22 @@ string UpgradeLicenseRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_basicSecurityTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasicSecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_basicSecurityType, allocator);
+    }
+
+    if (m_forceRestartHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForceRestart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceRestart, allocator);
     }
 
 
@@ -145,6 +163,38 @@ void UpgradeLicenseRequest::SetVoucherIds(const vector<string>& _voucherIds)
 bool UpgradeLicenseRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+uint64_t UpgradeLicenseRequest::GetBasicSecurityType() const
+{
+    return m_basicSecurityType;
+}
+
+void UpgradeLicenseRequest::SetBasicSecurityType(const uint64_t& _basicSecurityType)
+{
+    m_basicSecurityType = _basicSecurityType;
+    m_basicSecurityTypeHasBeenSet = true;
+}
+
+bool UpgradeLicenseRequest::BasicSecurityTypeHasBeenSet() const
+{
+    return m_basicSecurityTypeHasBeenSet;
+}
+
+bool UpgradeLicenseRequest::GetForceRestart() const
+{
+    return m_forceRestart;
+}
+
+void UpgradeLicenseRequest::SetForceRestart(const bool& _forceRestart)
+{
+    m_forceRestart = _forceRestart;
+    m_forceRestartHasBeenSet = true;
+}
+
+bool UpgradeLicenseRequest::ForceRestartHasBeenSet() const
+{
+    return m_forceRestartHasBeenSet;
 }
 
 

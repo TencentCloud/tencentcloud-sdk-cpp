@@ -27,7 +27,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_esVersionHasBeenSet(false),
     m_checkOnlyHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_basicSecurityTypeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_licenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_basicSecurityTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasicSecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_basicSecurityType, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void UpgradeInstanceRequest::SetLicenseType(const string& _licenseType)
 bool UpgradeInstanceRequest::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+uint64_t UpgradeInstanceRequest::GetBasicSecurityType() const
+{
+    return m_basicSecurityType;
+}
+
+void UpgradeInstanceRequest::SetBasicSecurityType(const uint64_t& _basicSecurityType)
+{
+    m_basicSecurityType = _basicSecurityType;
+    m_basicSecurityTypeHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::BasicSecurityTypeHasBeenSet() const
+{
+    return m_basicSecurityTypeHasBeenSet;
 }
 
 

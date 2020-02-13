@@ -162,6 +162,30 @@ namespace TencentCloud
                      */
                     bool IDHasBeenSet() const;
 
+                    /**
+                     * 获取发票消费类型
+                     * @return InvoiceType 发票消费类型
+                     */
+                    std::string GetInvoiceType() const;
+
+                    /**
+                     * 判断参数 InvoiceType 是否已赋值
+                     * @return InvoiceType 是否已赋值
+                     */
+                    bool InvoiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取序列号
+                     * @return SerialNumber 序列号
+                     */
+                    std::string GetSerialNumber() const;
+
+                    /**
+                     * 判断参数 SerialNumber 是否已赋值
+                     * @return SerialNumber 是否已赋值
+                     */
+                    bool SerialNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +247,18 @@ namespace TencentCloud
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
+
+                    /**
+                     * 发票消费类型
+                     */
+                    std::string m_invoiceType;
+                    bool m_invoiceTypeHasBeenSet;
+
+                    /**
+                     * 序列号
+                     */
+                    std::string m_serialNumber;
+                    bool m_serialNumberHasBeenSet;
 
                 };
             }

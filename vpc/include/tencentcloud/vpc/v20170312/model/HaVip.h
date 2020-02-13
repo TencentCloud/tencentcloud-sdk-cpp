@@ -234,6 +234,24 @@ namespace TencentCloud
                      */
                     bool CreatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取使用havip的业务标识。
+                     * @return Business 使用havip的业务标识。
+                     */
+                    std::string GetBusiness() const;
+
+                    /**
+                     * 设置使用havip的业务标识。
+                     * @param Business 使用havip的业务标识。
+                     */
+                    void SetBusiness(const std::string& _business);
+
+                    /**
+                     * 判断参数 Business 是否已赋值
+                     * @return Business 是否已赋值
+                     */
+                    bool BusinessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +315,12 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 使用havip的业务标识。
+                     */
+                    std::string m_business;
+                    bool m_businessHasBeenSet;
 
                 };
             }

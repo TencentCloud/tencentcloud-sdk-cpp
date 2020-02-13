@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool EniQuantityHasBeenSet() const;
 
                     /**
-                     * 获取每个弹性网卡可以分配的ip配额
-                     * @return EniPrivateIpAddressQuantity 每个弹性网卡可以分配的ip配额
+                     * 获取每个弹性网卡可以分配的IP配额
+                     * @return EniPrivateIpAddressQuantity 每个弹性网卡可以分配的IP配额
                      */
                     int64_t GetEniPrivateIpAddressQuantity() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_eniQuantityHasBeenSet;
 
                     /**
-                     * 每个弹性网卡可以分配的ip配额
+                     * 每个弹性网卡可以分配的IP配额
                      */
                     int64_t m_eniPrivateIpAddressQuantity;
                     bool m_eniPrivateIpAddressQuantityHasBeenSet;

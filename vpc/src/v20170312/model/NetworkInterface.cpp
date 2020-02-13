@@ -36,7 +36,8 @@ NetworkInterface::NetworkInterface() :
     m_zoneHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_ipv6AddressSetHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_eniTypeHasBeenSet(false)
 {
 }
 
@@ -235,6 +236,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("EniType") && !value["EniType"].IsNull())
+    {
+        if (!value["EniType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NetworkInterface.EniType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_eniType = value["EniType"].GetUint64();
+        m_eniTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -387,6 +398,14 @@ void NetworkInterface::ToJsonObject(Value &value, Document::AllocatorType& alloc
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eniTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EniType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eniType, allocator);
     }
 
 }
@@ -630,5 +649,21 @@ void NetworkInterface::SetTagSet(const vector<Tag>& _tagSet)
 bool NetworkInterface::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+uint64_t NetworkInterface::GetEniType() const
+{
+    return m_eniType;
+}
+
+void NetworkInterface::SetEniType(const uint64_t& _eniType)
+{
+    m_eniType = _eniType;
+    m_eniTypeHasBeenSet = true;
+}
+
+bool NetworkInterface::EniTypeHasBeenSet() const
+{
+    return m_eniTypeHasBeenSet;
 }
 

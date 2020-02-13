@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
-                     * @return Sdkappid 应用id
+                     * 获取应用ID
+                     * @return Sdkappid 应用ID
                      */
                     std::string GetSdkappid() const;
 
                     /**
-                     * 设置应用id
-                     * @param Sdkappid 应用id
+                     * 设置应用ID
+                     * @param Sdkappid 应用ID
                      */
                     void SetSdkappid(const std::string& _sdkappid);
 
@@ -197,7 +197,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 应用ID
                      */
                     std::string m_sdkappid;
                     bool m_sdkappidHasBeenSet;

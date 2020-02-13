@@ -53,6 +53,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/CreateServerlessGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteApplicationResponse.h
   include/tencentcloud/tsf/v20180326/model/StartGroupRequest.h
+  include/tencentcloud/tsf/v20180326/model/DeployServerlessGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeConfigsResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeApplicationsResponse.h
@@ -94,6 +95,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeRequest.h
   include/tencentcloud/tsf/v20180326/model/RollbackConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeConfigsRequest.h
+  include/tencentcloud/tsf/v20180326/model/AddClusterInstancesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageNamespace.h
@@ -114,6 +116,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsResponse.h
   include/tencentcloud/tsf/v20180326/model/VmGroupSimple.h
   include/tencentcloud/tsf/v20180326/model/Instance.h
+  include/tencentcloud/tsf/v20180326/model/DeployServerlessGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/Config.h
   include/tencentcloud/tsf/v20180326/model/CreateClusterResponse.h
   include/tencentcloud/tsf/v20180326/model/DeletePublicConfigResponse.h
@@ -139,9 +142,9 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ProtocolPort.h
   include/tencentcloud/tsf/v20180326/model/DescribeServerlessGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/TsfPageVmGroup.h
+  include/tencentcloud/tsf/v20180326/model/AddInstanceResult.h
   include/tencentcloud/tsf/v20180326/model/DescribePkgsResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesResponse.h
-  include/tencentcloud/tsf/v20180326/model/VpcConfig.h
   include/tencentcloud/tsf/v20180326/model/ApplicationAttribute.h
   include/tencentcloud/tsf/v20180326/model/DeleteImageTag.h
   include/tencentcloud/tsf/v20180326/model/DeletePkgsResponse.h
@@ -165,6 +168,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ShrinkGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/TsfPageSimpleApplication.h
   include/tencentcloud/tsf/v20180326/model/CreateConfigResponse.h
+  include/tencentcloud/tsf/v20180326/model/AddClusterInstancesResponse.h
   include/tencentcloud/tsf/v20180326/model/RevocationPublicConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeConfigReleaseLogsRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupsResponse.h
@@ -242,6 +246,7 @@ set(tsf_src
   src/v20180326/model/CreateServerlessGroupResponse.cpp
   src/v20180326/model/DeleteApplicationResponse.cpp
   src/v20180326/model/StartGroupRequest.cpp
+  src/v20180326/model/DeployServerlessGroupResponse.cpp
   src/v20180326/model/DescribeConfigsResponse.cpp
   src/v20180326/model/DescribeApplicationAttributeResponse.cpp
   src/v20180326/model/DescribeApplicationsResponse.cpp
@@ -283,6 +288,7 @@ set(tsf_src
   src/v20180326/model/DescribeApplicationAttributeRequest.cpp
   src/v20180326/model/RollbackConfigRequest.cpp
   src/v20180326/model/DescribeConfigsRequest.cpp
+  src/v20180326/model/AddClusterInstancesRequest.cpp
   src/v20180326/model/DescribePublicConfigResponse.cpp
   src/v20180326/model/DeleteConfigResponse.cpp
   src/v20180326/model/TsfPageNamespace.cpp
@@ -303,6 +309,7 @@ set(tsf_src
   src/v20180326/model/DescribePublicConfigReleaseLogsResponse.cpp
   src/v20180326/model/VmGroupSimple.cpp
   src/v20180326/model/Instance.cpp
+  src/v20180326/model/DeployServerlessGroupRequest.cpp
   src/v20180326/model/Config.cpp
   src/v20180326/model/CreateClusterResponse.cpp
   src/v20180326/model/DeletePublicConfigResponse.cpp
@@ -328,9 +335,9 @@ set(tsf_src
   src/v20180326/model/ProtocolPort.cpp
   src/v20180326/model/DescribeServerlessGroupRequest.cpp
   src/v20180326/model/TsfPageVmGroup.cpp
+  src/v20180326/model/AddInstanceResult.cpp
   src/v20180326/model/DescribePkgsResponse.cpp
   src/v20180326/model/DescribeSimpleNamespacesResponse.cpp
-  src/v20180326/model/VpcConfig.cpp
   src/v20180326/model/ApplicationAttribute.cpp
   src/v20180326/model/DeleteImageTag.cpp
   src/v20180326/model/DeletePkgsResponse.cpp
@@ -354,6 +361,7 @@ set(tsf_src
   src/v20180326/model/ShrinkGroupRequest.cpp
   src/v20180326/model/TsfPageSimpleApplication.cpp
   src/v20180326/model/CreateConfigResponse.cpp
+  src/v20180326/model/AddClusterInstancesResponse.cpp
   src/v20180326/model/RevocationPublicConfigResponse.cpp
   src/v20180326/model/DescribeConfigReleaseLogsRequest.cpp
   src/v20180326/model/DescribeContainerGroupsResponse.cpp

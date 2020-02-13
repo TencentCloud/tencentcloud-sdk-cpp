@@ -3781,6 +3781,49 @@ YunjingClient::ModifyProVersionRenewFlagOutcomeCallable YunjingClient::ModifyPro
     return task->get_future();
 }
 
+YunjingClient::OpenProVersionOutcome YunjingClient::OpenProVersion(const OpenProVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenProVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenProVersionResponse rsp = OpenProVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenProVersionOutcome(rsp);
+        else
+            return OpenProVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenProVersionOutcome(outcome.GetError());
+    }
+}
+
+void YunjingClient::OpenProVersionAsync(const OpenProVersionRequest& request, const OpenProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenProVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YunjingClient::OpenProVersionOutcomeCallable YunjingClient::OpenProVersionCallable(const OpenProVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenProVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenProVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YunjingClient::OpenProVersionPrepaidOutcome YunjingClient::OpenProVersionPrepaid(const OpenProVersionPrepaidRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenProVersionPrepaid");

@@ -19,18 +19,18 @@ set(trtc_public_header
   )
 
 set(trtc_public_header_model
-  include/tencentcloud/trtc/v20190722/model/DissolveRoomRequest.h
-  include/tencentcloud/trtc/v20190722/model/DissolveRoomResponse.h
-  include/tencentcloud/trtc/v20190722/model/KickOutUserRequest.h
-  include/tencentcloud/trtc/v20190722/model/KickOutUserResponse.h
+  include/tencentcloud/trtc/v20190722/model/RemoveUserResponse.h
+  include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
+  include/tencentcloud/trtc/v20190722/model/RemoveUserRequest.h
+  include/tencentcloud/trtc/v20190722/model/DismissRoomResponse.h
   )
 
 set(trtc_src
   src/v20190722/TrtcClient.cpp
-  src/v20190722/model/DissolveRoomRequest.cpp
-  src/v20190722/model/DissolveRoomResponse.cpp
-  src/v20190722/model/KickOutUserRequest.cpp
-  src/v20190722/model/KickOutUserResponse.cpp
+  src/v20190722/model/RemoveUserResponse.cpp
+  src/v20190722/model/DismissRoomRequest.cpp
+  src/v20190722/model/RemoveUserRequest.cpp
+  src/v20190722/model/DismissRoomResponse.cpp
   )
 
 set(trtc_include

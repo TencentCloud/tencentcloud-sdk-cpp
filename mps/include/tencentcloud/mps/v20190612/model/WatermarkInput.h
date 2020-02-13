@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/RawWatermarkParameter.h>
 
 
 namespace TencentCloud
@@ -63,6 +64,28 @@ namespace TencentCloud
                      * @return Definition 是否已赋值
                      */
                     bool DefinitionHasBeenSet() const;
+
+                    /**
+                     * 获取水印自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+                     * @return RawParameter 水印自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+                     */
+                    RawWatermarkParameter GetRawParameter() const;
+
+                    /**
+                     * 设置水印自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+                     * @param RawParameter 水印自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+                     */
+                    void SetRawParameter(const RawWatermarkParameter& _rawParameter);
+
+                    /**
+                     * 判断参数 RawParameter 是否已赋值
+                     * @return RawParameter 是否已赋值
+                     */
+                    bool RawParameterHasBeenSet() const;
 
                     /**
                      * 获取文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
@@ -167,6 +190,13 @@ namespace TencentCloud
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * 水印自定义参数，当 Definition 填 0 时有效。
+该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。
+                     */
+                    RawWatermarkParameter m_rawParameter;
+                    bool m_rawParameterHasBeenSet;
 
                     /**
                      * 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。

@@ -27,6 +27,7 @@
 #include <tencentcloud/vod/v20180717/model/PornConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/TerrorismConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/PoliticalConfigureInfo.h>
+#include <tencentcloud/vod/v20180717/model/ProhibitedConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/UserDefineConfigureInfo.h>
 
 
@@ -171,6 +172,40 @@ namespace TencentCloud
                     bool PoliticalConfigureHasBeenSet() const;
 
                     /**
+                     * 获取违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProhibitedConfigure 违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProhibitedConfigureInfo GetProhibitedConfigure() const;
+
+                    /**
+                     * 设置违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProhibitedConfigure 违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProhibitedConfigure(const ProhibitedConfigureInfo& _prohibitedConfigure);
+
+                    /**
+                     * 判断参数 ProhibitedConfigure 是否已赋值
+                     * @return ProhibitedConfigure 是否已赋值
+                     */
+                    bool ProhibitedConfigureHasBeenSet() const;
+
+                    /**
                      * 获取用户自定义内容审核控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDefineConfigure 用户自定义内容审核控制参数。
@@ -237,14 +272,14 @@ namespace TencentCloud
                     bool ScreenshotIntervalHasBeenSet() const;
 
                     /**
-                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -255,14 +290,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -314,6 +349,16 @@ namespace TencentCloud
                     bool m_politicalConfigureHasBeenSet;
 
                     /**
+                     * 违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProhibitedConfigureInfo m_prohibitedConfigure;
+                    bool m_prohibitedConfigureHasBeenSet;
+
+                    /**
                      * 用户自定义内容审核控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -335,13 +380,13 @@ namespace TencentCloud
                     bool m_screenshotIntervalHasBeenSet;
 
                     /**
-                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

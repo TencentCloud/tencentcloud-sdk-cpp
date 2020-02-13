@@ -30,7 +30,10 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_scaleModeHasBeenSet(false),
     m_serviceActionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_gpuTypeHasBeenSet(false)
+    m_gpuTypeHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_gpuHasBeenSet(false)
 {
 }
 
@@ -96,6 +99,30 @@ string UpdateServiceRequest::ToJsonString() const
         string key = "GpuType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_gpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_memoryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Memory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_gpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Gpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gpu, allocator);
     }
 
 
@@ -216,6 +243,54 @@ void UpdateServiceRequest::SetGpuType(const string& _gpuType)
 bool UpdateServiceRequest::GpuTypeHasBeenSet() const
 {
     return m_gpuTypeHasBeenSet;
+}
+
+uint64_t UpdateServiceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void UpdateServiceRequest::SetCpu(const uint64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool UpdateServiceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+uint64_t UpdateServiceRequest::GetMemory() const
+{
+    return m_memory;
+}
+
+void UpdateServiceRequest::SetMemory(const uint64_t& _memory)
+{
+    m_memory = _memory;
+    m_memoryHasBeenSet = true;
+}
+
+bool UpdateServiceRequest::MemoryHasBeenSet() const
+{
+    return m_memoryHasBeenSet;
+}
+
+uint64_t UpdateServiceRequest::GetGpu() const
+{
+    return m_gpu;
+}
+
+void UpdateServiceRequest::SetGpu(const uint64_t& _gpu)
+{
+    m_gpu = _gpu;
+    m_gpuHasBeenSet = true;
+}
+
+bool UpdateServiceRequest::GpuHasBeenSet() const
+{
+    return m_gpuHasBeenSet;
 }
 
 

@@ -141,6 +141,30 @@ namespace TencentCloud
                      */
                     bool EnvTypeHasBeenSet() const;
 
+                    /**
+                     * 获取计算环境资源类型，当前为CVM和CPM（黑石）
+                     * @return ResourceType 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取下一步动作
+                     * @return NextAction 下一步动作
+                     */
+                    std::string GetNextAction() const;
+
+                    /**
+                     * 判断参数 NextAction 是否已赋值
+                     * @return NextAction 是否已赋值
+                     */
+                    bool NextActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -190,6 +214,18 @@ namespace TencentCloud
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;
+
+                    /**
+                     * 计算环境资源类型，当前为CVM和CPM（黑石）
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 下一步动作
+                     */
+                    std::string m_nextAction;
+                    bool m_nextActionHasBeenSet;
 
                 };
             }

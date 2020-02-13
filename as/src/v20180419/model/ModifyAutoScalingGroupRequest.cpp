@@ -38,7 +38,9 @@ ModifyAutoScalingGroupRequest::ModifyAutoScalingGroupRequest() :
     m_zonesHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
     m_zonesCheckPolicyHasBeenSet(false),
-    m_serviceSettingsHasBeenSet(false)
+    m_serviceSettingsHasBeenSet(false),
+    m_ipv6AddressCountHasBeenSet(false),
+    m_multiZoneSubnetPolicyHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,22 @@ string ModifyAutoScalingGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_serviceSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ipv6AddressCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6AddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipv6AddressCount, allocator);
+    }
+
+    if (m_multiZoneSubnetPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MultiZoneSubnetPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_multiZoneSubnetPolicy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -431,6 +449,38 @@ void ModifyAutoScalingGroupRequest::SetServiceSettings(const ServiceSettings& _s
 bool ModifyAutoScalingGroupRequest::ServiceSettingsHasBeenSet() const
 {
     return m_serviceSettingsHasBeenSet;
+}
+
+int64_t ModifyAutoScalingGroupRequest::GetIpv6AddressCount() const
+{
+    return m_ipv6AddressCount;
+}
+
+void ModifyAutoScalingGroupRequest::SetIpv6AddressCount(const int64_t& _ipv6AddressCount)
+{
+    m_ipv6AddressCount = _ipv6AddressCount;
+    m_ipv6AddressCountHasBeenSet = true;
+}
+
+bool ModifyAutoScalingGroupRequest::Ipv6AddressCountHasBeenSet() const
+{
+    return m_ipv6AddressCountHasBeenSet;
+}
+
+string ModifyAutoScalingGroupRequest::GetMultiZoneSubnetPolicy() const
+{
+    return m_multiZoneSubnetPolicy;
+}
+
+void ModifyAutoScalingGroupRequest::SetMultiZoneSubnetPolicy(const string& _multiZoneSubnetPolicy)
+{
+    m_multiZoneSubnetPolicy = _multiZoneSubnetPolicy;
+    m_multiZoneSubnetPolicyHasBeenSet = true;
+}
+
+bool ModifyAutoScalingGroupRequest::MultiZoneSubnetPolicyHasBeenSet() const
+{
+    return m_multiZoneSubnetPolicyHasBeenSet;
 }
 
 

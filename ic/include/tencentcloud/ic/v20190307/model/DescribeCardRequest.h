@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
-                     * @return Sdkappid 应用id
+                     * 获取应用ID
+                     * @return Sdkappid 应用ID
                      */
                     int64_t GetSdkappid() const;
 
                     /**
-                     * 设置应用id
-                     * @param Sdkappid 应用id
+                     * 设置应用ID
+                     * @param Sdkappid 应用ID
                      */
                     void SetSdkappid(const int64_t& _sdkappid);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkappidHasBeenSet() const;
 
                     /**
-                     * 获取卡片id
-                     * @return Iccid 卡片id
+                     * 获取卡片ID
+                     * @return Iccid 卡片ID
                      */
                     std::string GetIccid() const;
 
                     /**
-                     * 设置卡片id
-                     * @param Iccid 卡片id
+                     * 设置卡片ID
+                     * @param Iccid 卡片ID
                      */
                     void SetIccid(const std::string& _iccid);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 应用ID
                      */
                     int64_t m_sdkappid;
                     bool m_sdkappidHasBeenSet;
 
                     /**
-                     * 卡片id
+                     * 卡片ID
                      */
                     std::string m_iccid;
                     bool m_iccidHasBeenSet;

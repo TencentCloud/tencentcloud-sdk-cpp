@@ -27,7 +27,8 @@ AddBandwidthPackageResourcesRequest::AddBandwidthPackageResourcesRequest() :
     m_resourceIdsHasBeenSet(false),
     m_bandwidthPackageIdHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string AddBandwidthPackageResourcesRequest::ToJsonString() const
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -145,6 +154,22 @@ void AddBandwidthPackageResourcesRequest::SetResourceType(const string& _resourc
 bool AddBandwidthPackageResourcesRequest::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+string AddBandwidthPackageResourcesRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void AddBandwidthPackageResourcesRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool AddBandwidthPackageResourcesRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 

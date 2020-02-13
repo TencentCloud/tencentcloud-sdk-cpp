@@ -29,6 +29,8 @@
 #include <tencentcloud/as/v20180419/model/SystemDisk.h>
 #include <tencentcloud/as/v20180419/model/InstanceTag.h>
 #include <tencentcloud/as/v20180419/model/HostNameSettings.h>
+#include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
+#include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -402,6 +404,42 @@ namespace TencentCloud
                      */
                     bool HostNameSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取云服务器实例名（InstanceName）的相关设置。
+                     * @return InstanceNameSettings 云服务器实例名（InstanceName）的相关设置。
+                     */
+                    std::vector<InstanceNameSettings> GetInstanceNameSettings() const;
+
+                    /**
+                     * 设置云服务器实例名（InstanceName）的相关设置。
+                     * @param InstanceNameSettings 云服务器实例名（InstanceName）的相关设置。
+                     */
+                    void SetInstanceNameSettings(const std::vector<InstanceNameSettings>& _instanceNameSettings);
+
+                    /**
+                     * 判断参数 InstanceNameSettings 是否已赋值
+                     * @return InstanceNameSettings 是否已赋值
+                     */
+                    bool InstanceNameSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     */
+                    InstanceChargePrepaid GetInstanceChargePrepaid() const;
+
+                    /**
+                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     */
+                    void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
+
+                    /**
+                     * 判断参数 InstanceChargePrepaid 是否已赋值
+                     * @return InstanceChargePrepaid 是否已赋值
+                     */
+                    bool InstanceChargePrepaidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -518,6 +556,18 @@ namespace TencentCloud
                      */
                     HostNameSettings m_hostNameSettings;
                     bool m_hostNameSettingsHasBeenSet;
+
+                    /**
+                     * 云服务器实例名（InstanceName）的相关设置。
+                     */
+                    std::vector<InstanceNameSettings> m_instanceNameSettings;
+                    bool m_instanceNameSettingsHasBeenSet;
+
+                    /**
+                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     */
+                    InstanceChargePrepaid m_instanceChargePrepaid;
+                    bool m_instanceChargePrepaidHasBeenSet;
 
                 };
             }

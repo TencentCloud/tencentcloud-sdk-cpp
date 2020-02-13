@@ -29,8 +29,9 @@ ProcessLiveStreamRequest::ProcessLiveStreamRequest() :
     m_outputStorageHasBeenSet(false),
     m_outputDirHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
-    m_sessionContextHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_aiRecognitionTaskHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_sessionContextHasBeenSet(false)
 {
 }
 
@@ -84,12 +85,13 @@ string ProcessLiveStreamRequest::ToJsonString() const
         m_aiContentReviewTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_sessionContextHasBeenSet)
+    if (m_aiRecognitionTaskHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "SessionContext";
+        string key = "AiRecognitionTask";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiRecognitionTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -98,6 +100,14 @@ string ProcessLiveStreamRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -188,20 +198,20 @@ bool ProcessLiveStreamRequest::AiContentReviewTaskHasBeenSet() const
     return m_aiContentReviewTaskHasBeenSet;
 }
 
-string ProcessLiveStreamRequest::GetSessionContext() const
+AiRecognitionTaskInput ProcessLiveStreamRequest::GetAiRecognitionTask() const
 {
-    return m_sessionContext;
+    return m_aiRecognitionTask;
 }
 
-void ProcessLiveStreamRequest::SetSessionContext(const string& _sessionContext)
+void ProcessLiveStreamRequest::SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask)
 {
-    m_sessionContext = _sessionContext;
-    m_sessionContextHasBeenSet = true;
+    m_aiRecognitionTask = _aiRecognitionTask;
+    m_aiRecognitionTaskHasBeenSet = true;
 }
 
-bool ProcessLiveStreamRequest::SessionContextHasBeenSet() const
+bool ProcessLiveStreamRequest::AiRecognitionTaskHasBeenSet() const
 {
-    return m_sessionContextHasBeenSet;
+    return m_aiRecognitionTaskHasBeenSet;
 }
 
 string ProcessLiveStreamRequest::GetSessionId() const
@@ -218,6 +228,22 @@ void ProcessLiveStreamRequest::SetSessionId(const string& _sessionId)
 bool ProcessLiveStreamRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string ProcessLiveStreamRequest::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void ProcessLiveStreamRequest::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool ProcessLiveStreamRequest::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
 }
 
 

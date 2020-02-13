@@ -101,14 +101,76 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取置放群组描述。
-                     * @return Description 置放群组描述。
+                     * 获取置放群组实例配额，表示一个置放群组中可容纳的最大实例数目。
+                     * @return Quota 置放群组实例配额，表示一个置放群组中可容纳的最大实例数目。
+                     */
+                    int64_t GetQuota() const;
+
+                    /**
+                     * 设置置放群组实例配额，表示一个置放群组中可容纳的最大实例数目。
+                     * @param Quota 置放群组实例配额，表示一个置放群组中可容纳的最大实例数目。
+                     */
+                    void SetQuota(const int64_t& _quota);
+
+                    /**
+                     * 判断参数 Quota 是否已赋值
+                     * @return Quota 是否已赋值
+                     */
+                    bool QuotaHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Affinity 置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAffinity() const;
+
+                    /**
+                     * 设置置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Affinity 置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAffinity(const std::string& _affinity);
+
+                    /**
+                     * 判断参数 Affinity 是否已赋值
+                     * @return Affinity 是否已赋值
+                     */
+                    bool AffinityHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LimitNum 置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLimitNum() const;
+
+                    /**
+                     * 设置置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LimitNum 置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLimitNum(const int64_t& _limitNum);
+
+                    /**
+                     * 判断参数 LimitNum 是否已赋值
+                     * @return LimitNum 是否已赋值
+                     */
+                    bool LimitNumHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组详细信息。
+                     * @return Description 置放群组详细信息。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置置放群组描述。
-                     * @param Description 置放群组描述。
+                     * 设置置放群组详细信息。
+                     * @param Description 置放群组详细信息。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -119,22 +181,26 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取置放群组实例配额。
-                     * @return Quota 置放群组实例配额。
+                     * 获取置放群组物理机型属性。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DevClass 置放群组物理机型属性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetQuota() const;
+                    std::string GetDevClass() const;
 
                     /**
-                     * 设置置放群组实例配额。
-                     * @param Quota 置放群组实例配额。
+                     * 设置置放群组物理机型属性。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DevClass 置放群组物理机型属性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetQuota(const int64_t& _quota);
+                    void SetDevClass(const std::string& _devClass);
 
                     /**
-                     * 判断参数 Quota 是否已赋值
-                     * @return Quota 是否已赋值
+                     * 判断参数 DevClass 是否已赋值
+                     * @return DevClass 是否已赋值
                      */
-                    bool QuotaHasBeenSet() const;
+                    bool DevClassHasBeenSet() const;
 
                 private:
 
@@ -157,16 +223,37 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 置放群组描述。
+                     * 置放群组实例配额，表示一个置放群组中可容纳的最大实例数目。
+                     */
+                    int64_t m_quota;
+                    bool m_quotaHasBeenSet;
+
+                    /**
+                     * 置放群组亲和性策略，目前仅支持策略1，即在物理机纬度打散实例的分布。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_affinity;
+                    bool m_affinityHasBeenSet;
+
+                    /**
+                     * 置放群组亲和性策略1中，同台物理机上同个置放群组实例的限制个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_limitNum;
+                    bool m_limitNumHasBeenSet;
+
+                    /**
+                     * 置放群组详细信息。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 置放群组实例配额。
+                     * 置放群组物理机型属性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_quota;
-                    bool m_quotaHasBeenSet;
+                    std::string m_devClass;
+                    bool m_devClassHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ ScanPiece::ScanPiece() :
     m_openIdHasBeenSet(false),
     m_infoHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_pieceStartTimeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome ScanPiece::Deserialize(const Value &value)
         m_durationHasBeenSet = true;
     }
 
+    if (value.HasMember("PieceStartTime") && !value["PieceStartTime"].IsNull())
+    {
+        if (!value["PieceStartTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ScanPiece.PieceStartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pieceStartTime = value["PieceStartTime"].GetUint64();
+        m_pieceStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +234,14 @@ void ScanPiece::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_pieceStartTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PieceStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pieceStartTime, allocator);
     }
 
 }
@@ -370,5 +389,21 @@ void ScanPiece::SetDuration(const uint64_t& _duration)
 bool ScanPiece::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+uint64_t ScanPiece::GetPieceStartTime() const
+{
+    return m_pieceStartTime;
+}
+
+void ScanPiece::SetPieceStartTime(const uint64_t& _pieceStartTime)
+{
+    m_pieceStartTime = _pieceStartTime;
+    m_pieceStartTimeHasBeenSet = true;
+}
+
+bool ScanPiece::PieceStartTimeHasBeenSet() const
+{
+    return m_pieceStartTimeHasBeenSet;
 }
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/ExistedInstancesPara.h>
+#include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 
 
 namespace TencentCloud
@@ -83,6 +84,24 @@ namespace TencentCloud
                      */
                     bool ExistedInstancesParaHasBeenSet() const;
 
+                    /**
+                     * 获取节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）
+                     * @return InstanceAdvancedSettingsOverride 节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）
+                     */
+                    InstanceAdvancedSettings GetInstanceAdvancedSettingsOverride() const;
+
+                    /**
+                     * 设置节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）
+                     * @param InstanceAdvancedSettingsOverride 节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）
+                     */
+                    void SetInstanceAdvancedSettingsOverride(const InstanceAdvancedSettings& _instanceAdvancedSettingsOverride);
+
+                    /**
+                     * 判断参数 InstanceAdvancedSettingsOverride 是否已赋值
+                     * @return InstanceAdvancedSettingsOverride 是否已赋值
+                     */
+                    bool InstanceAdvancedSettingsOverrideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +115,12 @@ namespace TencentCloud
                      */
                     ExistedInstancesPara m_existedInstancesPara;
                     bool m_existedInstancesParaHasBeenSet;
+
+                    /**
+                     * 节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）
+                     */
+                    InstanceAdvancedSettings m_instanceAdvancedSettingsOverride;
+                    bool m_instanceAdvancedSettingsOverrideHasBeenSet;
 
                 };
             }

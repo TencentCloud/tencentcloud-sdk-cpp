@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -137,17 +137,17 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未开始，该字段为空。
+                     * 获取任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未开始，该字段为空。
+                     * @return BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
-                     * 设置任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未开始，该字段为空。
+                     * 设置任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未开始，该字段为空。
+                     * @param BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
@@ -159,17 +159,17 @@ namespace TencentCloud
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未完成，该字段为空。
+                     * 获取任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未完成，该字段为空。
+                     * @return FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未完成，该字段为空。
+                     * 设置任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未完成，该字段为空。
+                     * @param FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -179,6 +179,42 @@ namespace TencentCloud
                      * @return FinishTime 是否已赋值
                      */
                     bool FinishTimeHasBeenSet() const;
+
+                    /**
+                     * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求。
+                     * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求。
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置用于去重的识别码，如果七天内曾有过相同的识别码的请求。
+                     * @param SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求。
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源上下文，用于透传用户请求信息。
+                     * @return SessionContext 来源上下文，用于透传用户请求信息。
+                     */
+                    std::string GetSessionContext() const;
+
+                    /**
+                     * 设置来源上下文，用于透传用户请求信息。
+                     * @param SessionContext 来源上下文，用于透传用户请求信息。
+                     */
+                    void SetSessionContext(const std::string& _sessionContext);
+
+                    /**
+                     * 判断参数 SessionContext 是否已赋值
+                     * @return SessionContext 是否已赋值
+                     */
+                    bool SessionContextHasBeenSet() const;
 
                 private:
 
@@ -204,24 +240,36 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未开始，该字段为空。
+                     * 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
-                     * 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。若任务尚未完成，该字段为空。
+                     * 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * 用于去重的识别码，如果七天内曾有过相同的识别码的请求。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 来源上下文，用于透传用户请求信息。
+                     */
+                    std::string m_sessionContext;
+                    bool m_sessionContextHasBeenSet;
 
                 };
             }

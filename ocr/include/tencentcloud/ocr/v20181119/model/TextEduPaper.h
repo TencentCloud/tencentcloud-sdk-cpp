@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/ItemCoord.h>
 
 
 namespace TencentCloud
@@ -47,14 +48,32 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别出的文本行内容
-                     * @return DetectedText 识别出的文本行内容
+                     * 获取识别出的字段名称（关键字）
+                     * @return Item 识别出的字段名称（关键字）
+                     */
+                    std::string GetItem() const;
+
+                    /**
+                     * 设置识别出的字段名称（关键字）
+                     * @param Item 识别出的字段名称（关键字）
+                     */
+                    void SetItem(const std::string& _item);
+
+                    /**
+                     * 判断参数 Item 是否已赋值
+                     * @return Item 是否已赋值
+                     */
+                    bool ItemHasBeenSet() const;
+
+                    /**
+                     * 获取识别出的字段名称对应的值，也就是字段Item对应的字符串结果
+                     * @return DetectedText 识别出的字段名称对应的值，也就是字段Item对应的字符串结果
                      */
                     std::string GetDetectedText() const;
 
                     /**
-                     * 设置识别出的文本行内容
-                     * @param DetectedText 识别出的文本行内容
+                     * 设置识别出的字段名称对应的值，也就是字段Item对应的字符串结果
+                     * @param DetectedText 识别出的字段名称对应的值，也就是字段Item对应的字符串结果
                      */
                     void SetDetectedText(const std::string& _detectedText);
 
@@ -64,13 +83,43 @@ namespace TencentCloud
                      */
                     bool DetectedTextHasBeenSet() const;
 
+                    /**
+                     * 获取文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @return Itemcoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord GetItemcoord() const;
+
+                    /**
+                     * 设置文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @param Itemcoord 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    void SetItemcoord(const ItemCoord& _itemcoord);
+
+                    /**
+                     * 判断参数 Itemcoord 是否已赋值
+                     * @return Itemcoord 是否已赋值
+                     */
+                    bool ItemcoordHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 识别出的文本行内容
+                     * 识别出的字段名称（关键字）
+                     */
+                    std::string m_item;
+                    bool m_itemHasBeenSet;
+
+                    /**
+                     * 识别出的字段名称对应的值，也就是字段Item对应的字符串结果
                      */
                     std::string m_detectedText;
                     bool m_detectedTextHasBeenSet;
+
+                    /**
+                     * 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord m_itemcoord;
+                    bool m_itemcoordHasBeenSet;
 
                 };
             }

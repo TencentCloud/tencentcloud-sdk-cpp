@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool ImageHeightHasBeenSet() const;
 
                     /**
-                     * 获取人脸信息列表。
-                     * @return FaceInfos 人脸信息列表。
+                     * 获取人脸信息列表。包含人脸坐标信息、属性信息（若需要）、质量分信息（若需要）。
+                     * @return FaceInfos 人脸信息列表。包含人脸坐标信息、属性信息（若需要）、质量分信息（若需要）。
                      */
                     std::vector<FaceInfo> GetFaceInfos() const;
 
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_imageHeightHasBeenSet;
 
                     /**
-                     * 人脸信息列表。
+                     * 人脸信息列表。包含人脸坐标信息、属性信息（若需要）、质量分信息（若需要）。
                      */
                     std::vector<FaceInfo> m_faceInfos;
                     bool m_faceInfosHasBeenSet;

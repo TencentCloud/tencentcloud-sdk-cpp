@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h>
+#include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/CleanUpInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/CleanUpInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceBackupsRequest.h>
@@ -75,6 +79,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeProductInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupsRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h>
@@ -87,14 +93,24 @@
 #include <tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DisableReplicaReadonlyRequest.h>
 #include <tencentcloud/redis/v20180412/model/DisableReplicaReadonlyResponse.h>
+#include <tencentcloud/redis/v20180412/model/DisassociateSecurityGroupsRequest.h>
+#include <tencentcloud/redis/v20180412/model/DisassociateSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/EnableReplicaReadonlyRequest.h>
 #include <tencentcloud/redis/v20180412/model/EnableReplicaReadonlyResponse.h>
+#include <tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/InquiryPriceUpgradeInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/InquiryPriceUpgradeInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ManualBackupInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/ManualBackupInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModfiyInstancePasswordRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModfiyInstancePasswordResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountRequest.h>
@@ -129,6 +145,9 @@ namespace TencentCloud
                 RedisClient(const Credential &credential, const std::string &region);
                 RedisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
+                typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::CleanUpInstanceResponse> CleanUpInstanceOutcome;
                 typedef std::future<CleanUpInstanceOutcome> CleanUpInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CleanUpInstanceRequest&, CleanUpInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CleanUpInstanceAsyncHandler;
@@ -150,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBackupUrlResponse> DescribeBackupUrlOutcome;
                 typedef std::future<DescribeBackupUrlOutcome> DescribeBackupUrlOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupUrlRequest&, DescribeBackupUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupUrlAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
+                typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceAccountResponse> DescribeInstanceAccountOutcome;
                 typedef std::future<DescribeInstanceAccountOutcome> DescribeInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceAccountRequest&, DescribeInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAccountAsyncHandler;
@@ -207,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProjectSecurityGroupResponse> DescribeProjectSecurityGroupOutcome;
                 typedef std::future<DescribeProjectSecurityGroupOutcome> DescribeProjectSecurityGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeProjectSecurityGroupRequest&, DescribeProjectSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
+                typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSlowLogResponse> DescribeSlowLogOutcome;
                 typedef std::future<DescribeSlowLogOutcome> DescribeSlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSlowLogRequest&, DescribeSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogAsyncHandler;
@@ -225,9 +250,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisableReplicaReadonlyResponse> DisableReplicaReadonlyOutcome;
                 typedef std::future<DisableReplicaReadonlyOutcome> DisableReplicaReadonlyOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DisableReplicaReadonlyRequest&, DisableReplicaReadonlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableReplicaReadonlyAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
+                typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::EnableReplicaReadonlyResponse> EnableReplicaReadonlyOutcome;
                 typedef std::future<EnableReplicaReadonlyOutcome> EnableReplicaReadonlyOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::EnableReplicaReadonlyRequest&, EnableReplicaReadonlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableReplicaReadonlyAsyncHandler;
+                typedef Outcome<Error, Model::InquiryPriceCreateInstanceResponse> InquiryPriceCreateInstanceOutcome;
+                typedef std::future<InquiryPriceCreateInstanceOutcome> InquiryPriceCreateInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::InquiryPriceCreateInstanceRequest&, InquiryPriceCreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateInstanceAsyncHandler;
+                typedef Outcome<Error, Model::InquiryPriceRenewInstanceResponse> InquiryPriceRenewInstanceOutcome;
+                typedef std::future<InquiryPriceRenewInstanceOutcome> InquiryPriceRenewInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::InquiryPriceRenewInstanceRequest&, InquiryPriceRenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewInstanceAsyncHandler;
+                typedef Outcome<Error, Model::InquiryPriceUpgradeInstanceResponse> InquiryPriceUpgradeInstanceOutcome;
+                typedef std::future<InquiryPriceUpgradeInstanceOutcome> InquiryPriceUpgradeInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::InquiryPriceUpgradeInstanceRequest&, InquiryPriceUpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpgradeInstanceAsyncHandler;
                 typedef Outcome<Error, Model::ManualBackupInstanceResponse> ManualBackupInstanceOutcome;
                 typedef std::future<ManualBackupInstanceOutcome> ManualBackupInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ManualBackupInstanceRequest&, ManualBackupInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManualBackupInstanceAsyncHandler;
@@ -237,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAutoBackupConfigResponse> ModifyAutoBackupConfigOutcome;
                 typedef std::future<ModifyAutoBackupConfigOutcome> ModifyAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyAutoBackupConfigRequest&, ModifyAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoBackupConfigAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
+                typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
@@ -269,6 +309,15 @@ namespace TencentCloud
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
 
 
+
+                /**
+                 *本接口 (AssociateSecurityGroups) 用于绑定安全组到指定实例。
+                 * @param req AssociateSecurityGroupsRequest
+                 * @return AssociateSecurityGroupsOutcome
+                 */
+                AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
+                void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
                  *回收站实例立即下线
@@ -332,6 +381,15 @@ namespace TencentCloud
                 DescribeBackupUrlOutcome DescribeBackupUrl(const Model::DescribeBackupUrlRequest &request);
                 void DescribeBackupUrlAsync(const Model::DescribeBackupUrlRequest& request, const DescribeBackupUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupUrlOutcomeCallable DescribeBackupUrlCallable(const Model::DescribeBackupUrlRequest& request);
+
+                /**
+                 *本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。
+                 * @param req DescribeDBSecurityGroupsRequest
+                 * @return DescribeDBSecurityGroupsOutcome
+                 */
+                DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
+                void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
 
                 /**
                  *查看实例子账号信息
@@ -505,6 +563,15 @@ namespace TencentCloud
                 DescribeProjectSecurityGroupOutcomeCallable DescribeProjectSecurityGroupCallable(const Model::DescribeProjectSecurityGroupRequest& request);
 
                 /**
+                 *本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。
+                 * @param req DescribeProjectSecurityGroupsRequest
+                 * @return DescribeProjectSecurityGroupsOutcome
+                 */
+                DescribeProjectSecurityGroupsOutcome DescribeProjectSecurityGroups(const Model::DescribeProjectSecurityGroupsRequest &request);
+                void DescribeProjectSecurityGroupsAsync(const Model::DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectSecurityGroupsOutcomeCallable DescribeProjectSecurityGroupsCallable(const Model::DescribeProjectSecurityGroupsRequest& request);
+
+                /**
                  *查询实例慢查询记录
                  * @param req DescribeSlowLogRequest
                  * @return DescribeSlowLogOutcome
@@ -559,6 +626,15 @@ namespace TencentCloud
                 DisableReplicaReadonlyOutcomeCallable DisableReplicaReadonlyCallable(const Model::DisableReplicaReadonlyRequest& request);
 
                 /**
+                 *本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。
+                 * @param req DisassociateSecurityGroupsRequest
+                 * @return DisassociateSecurityGroupsOutcome
+                 */
+                DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
+                void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
+
+                /**
                  *启用读写分离
                  * @param req EnableReplicaReadonlyRequest
                  * @return EnableReplicaReadonlyOutcome
@@ -566,6 +642,33 @@ namespace TencentCloud
                 EnableReplicaReadonlyOutcome EnableReplicaReadonly(const Model::EnableReplicaReadonlyRequest &request);
                 void EnableReplicaReadonlyAsync(const Model::EnableReplicaReadonlyRequest& request, const EnableReplicaReadonlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableReplicaReadonlyOutcomeCallable EnableReplicaReadonlyCallable(const Model::EnableReplicaReadonlyRequest& request);
+
+                /**
+                 *查询新购实例价格
+                 * @param req InquiryPriceCreateInstanceRequest
+                 * @return InquiryPriceCreateInstanceOutcome
+                 */
+                InquiryPriceCreateInstanceOutcome InquiryPriceCreateInstance(const Model::InquiryPriceCreateInstanceRequest &request);
+                void InquiryPriceCreateInstanceAsync(const Model::InquiryPriceCreateInstanceRequest& request, const InquiryPriceCreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceCreateInstanceOutcomeCallable InquiryPriceCreateInstanceCallable(const Model::InquiryPriceCreateInstanceRequest& request);
+
+                /**
+                 *查询实例续费价格（包年包月）
+                 * @param req InquiryPriceRenewInstanceRequest
+                 * @return InquiryPriceRenewInstanceOutcome
+                 */
+                InquiryPriceRenewInstanceOutcome InquiryPriceRenewInstance(const Model::InquiryPriceRenewInstanceRequest &request);
+                void InquiryPriceRenewInstanceAsync(const Model::InquiryPriceRenewInstanceRequest& request, const InquiryPriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceRenewInstanceOutcomeCallable InquiryPriceRenewInstanceCallable(const Model::InquiryPriceRenewInstanceRequest& request);
+
+                /**
+                 *查询实例扩容价格
+                 * @param req InquiryPriceUpgradeInstanceRequest
+                 * @return InquiryPriceUpgradeInstanceOutcome
+                 */
+                InquiryPriceUpgradeInstanceOutcome InquiryPriceUpgradeInstance(const Model::InquiryPriceUpgradeInstanceRequest &request);
+                void InquiryPriceUpgradeInstanceAsync(const Model::InquiryPriceUpgradeInstanceRequest& request, const InquiryPriceUpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceUpgradeInstanceOutcomeCallable InquiryPriceUpgradeInstanceCallable(const Model::InquiryPriceUpgradeInstanceRequest& request);
 
                 /**
                  *手动备份Redis实例
@@ -595,7 +698,16 @@ namespace TencentCloud
                 ModifyAutoBackupConfigOutcomeCallable ModifyAutoBackupConfigCallable(const Model::ModifyAutoBackupConfigRequest& request);
 
                 /**
-                 *修改实例相关信息（目前支持：实例重命名）
+                 *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组
+                 * @param req ModifyDBInstanceSecurityGroupsRequest
+                 * @return ModifyDBInstanceSecurityGroupsOutcome
+                 */
+                ModifyDBInstanceSecurityGroupsOutcome ModifyDBInstanceSecurityGroups(const Model::ModifyDBInstanceSecurityGroupsRequest &request);
+                void ModifyDBInstanceSecurityGroupsAsync(const Model::ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceSecurityGroupsOutcomeCallable ModifyDBInstanceSecurityGroupsCallable(const Model::ModifyDBInstanceSecurityGroupsRequest& request);
+
+                /**
+                 *修改实例相关信息
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
                  */

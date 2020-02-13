@@ -26,7 +26,8 @@ DataDisk::DataDisk() :
     m_diskTypeHasBeenSet(false),
     m_diskIdHasBeenSet(false),
     m_deleteWithInstanceHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_encryptHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome DataDisk::Deserialize(const Value &value)
         m_snapshotIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Encrypt") && !value["Encrypt"].IsNull())
+    {
+        if (!value["Encrypt"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DataDisk.Encrypt` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encrypt = value["Encrypt"].GetBool();
+        m_encryptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void DataDisk::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "SnapshotId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_snapshotId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Encrypt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encrypt, allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void DataDisk::SetSnapshotId(const string& _snapshotId)
 bool DataDisk::SnapshotIdHasBeenSet() const
 {
     return m_snapshotIdHasBeenSet;
+}
+
+bool DataDisk::GetEncrypt() const
+{
+    return m_encrypt;
+}
+
+void DataDisk::SetEncrypt(const bool& _encrypt)
+{
+    m_encrypt = _encrypt;
+    m_encryptHasBeenSet = true;
+}
+
+bool DataDisk::EncryptHasBeenSet() const
+{
+    return m_encryptHasBeenSet;
 }
 

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取协议，取值范围[tcp,udp,icmp,all]
-                     * @return Protocol 协议，取值范围[tcp,udp,icmp,all]
+                     * 获取协议，取值范围[tcp,udp,all]
+                     * @return Protocol 协议，取值范围[tcp,udp,all]
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，取值范围[tcp,udp,icmp,all]
-                     * @param Protocol 协议，取值范围[tcp,udp,icmp,all]
+                     * 设置协议，取值范围[tcp,udp,all]
+                     * @param Protocol 协议，取值范围[tcp,udp,all]
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -191,7 +191,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 协议，取值范围[tcp,udp,icmp,all]
+                     * 协议，取值范围[tcp,udp,all]
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

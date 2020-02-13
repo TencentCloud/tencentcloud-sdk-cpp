@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取设备ID，该字段有值将代替 ProductId/DeviceName
+                     * @return DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName
+                     */
+                    std::string GetDeviceId() const;
+
+                    /**
+                     * 设置设备ID，该字段有值将代替 ProductId/DeviceName
+                     * @param DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName
+                     */
+                    void SetDeviceId(const std::string& _deviceId);
+
+                    /**
+                     * 判断参数 DeviceId 是否已赋值
+                     * @return DeviceId 是否已赋值
+                     */
+                    bool DeviceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 设备ID，该字段有值将代替 ProductId/DeviceName
+                     */
+                    std::string m_deviceId;
+                    bool m_deviceIdHasBeenSet;
 
                 };
             }

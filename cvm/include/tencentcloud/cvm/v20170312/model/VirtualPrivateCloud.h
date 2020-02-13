@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
+                    /**
+                     * 获取为弹性网卡指定随机生成的 IPv6 地址数量。
+                     * @return Ipv6AddressCount 为弹性网卡指定随机生成的 IPv6 地址数量。
+                     */
+                    uint64_t GetIpv6AddressCount() const;
+
+                    /**
+                     * 设置为弹性网卡指定随机生成的 IPv6 地址数量。
+                     * @param Ipv6AddressCount 为弹性网卡指定随机生成的 IPv6 地址数量。
+                     */
+                    void SetIpv6AddressCount(const uint64_t& _ipv6AddressCount);
+
+                    /**
+                     * 判断参数 Ipv6AddressCount 是否已赋值
+                     * @return Ipv6AddressCount 是否已赋值
+                     */
+                    bool Ipv6AddressCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_privateIpAddresses;
                     bool m_privateIpAddressesHasBeenSet;
+
+                    /**
+                     * 为弹性网卡指定随机生成的 IPv6 地址数量。
+                     */
+                    uint64_t m_ipv6AddressCount;
+                    bool m_ipv6AddressCountHasBeenSet;
 
                 };
             }

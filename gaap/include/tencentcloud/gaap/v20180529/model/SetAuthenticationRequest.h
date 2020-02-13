@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool GaapCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取源站CA证书ID，从证书管理页获取。
-                     * @return RealServerCertificateId 源站CA证书ID，从证书管理页获取。
+                     * 获取源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
+                     * @return RealServerCertificateId 源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
                      */
                     std::string GetRealServerCertificateId() const;
 
                     /**
-                     * 设置源站CA证书ID，从证书管理页获取。
-                     * @param RealServerCertificateId 源站CA证书ID，从证书管理页获取。
+                     * 设置源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
+                     * @param RealServerCertificateId 源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
                      */
                     void SetRealServerCertificateId(const std::string& _realServerCertificateId);
 
@@ -239,6 +239,24 @@ namespace TencentCloud
                      * @return RealServerCertificateDomain 是否已赋值
                      */
                     bool RealServerCertificateDomainHasBeenSet() const;
+
+                    /**
+                     * 获取多源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
+                     * @return PolyRealServerCertificateIds 多源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
+                     */
+                    std::vector<std::string> GetPolyRealServerCertificateIds() const;
+
+                    /**
+                     * 设置多源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
+                     * @param PolyRealServerCertificateIds 多源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
+                     */
+                    void SetPolyRealServerCertificateIds(const std::vector<std::string>& _polyRealServerCertificateIds);
+
+                    /**
+                     * 判断参数 PolyRealServerCertificateIds 是否已赋值
+                     * @return PolyRealServerCertificateIds 是否已赋值
+                     */
+                    bool PolyRealServerCertificateIdsHasBeenSet() const;
 
                 private:
 
@@ -294,7 +312,7 @@ namespace TencentCloud
                     bool m_gaapCertificateIdHasBeenSet;
 
                     /**
-                     * 源站CA证书ID，从证书管理页获取。
+                     * 源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
                      */
                     std::string m_realServerCertificateId;
                     bool m_realServerCertificateIdHasBeenSet;
@@ -304,6 +322,12 @@ namespace TencentCloud
                      */
                     std::string m_realServerCertificateDomain;
                     bool m_realServerCertificateDomainHasBeenSet;
+
+                    /**
+                     * 多源站CA证书ID，从证书管理页获取。源站认证时，填写该参数或RealServerCertificateId参数
+                     */
+                    std::vector<std::string> m_polyRealServerCertificateIds;
+                    bool m_polyRealServerCertificateIdsHasBeenSet;
 
                 };
             }

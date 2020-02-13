@@ -685,6 +685,92 @@ TkeClient::DeleteClusterRouteTableOutcomeCallable TkeClient::DeleteClusterRouteT
     return task->get_future();
 }
 
+TkeClient::DescribeClusterAsGroupOptionOutcome TkeClient::DescribeClusterAsGroupOption(const DescribeClusterAsGroupOptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterAsGroupOption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterAsGroupOptionResponse rsp = DescribeClusterAsGroupOptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterAsGroupOptionOutcome(rsp);
+        else
+            return DescribeClusterAsGroupOptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterAsGroupOptionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterAsGroupOptionAsync(const DescribeClusterAsGroupOptionRequest& request, const DescribeClusterAsGroupOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterAsGroupOption(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterAsGroupOptionOutcomeCallable TkeClient::DescribeClusterAsGroupOptionCallable(const DescribeClusterAsGroupOptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterAsGroupOptionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterAsGroupOption(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterAsGroupsOutcome TkeClient::DescribeClusterAsGroups(const DescribeClusterAsGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterAsGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterAsGroupsResponse rsp = DescribeClusterAsGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterAsGroupsOutcome(rsp);
+        else
+            return DescribeClusterAsGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterAsGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterAsGroupsAsync(const DescribeClusterAsGroupsRequest& request, const DescribeClusterAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterAsGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterAsGroupsOutcomeCallable TkeClient::DescribeClusterAsGroupsCallable(const DescribeClusterAsGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterAsGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterAsGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterEndpointStatusOutcome TkeClient::DescribeClusterEndpointStatus(const DescribeClusterEndpointStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterEndpointStatus");
@@ -1065,6 +1151,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
         [this, request]()
         {
             return this->DescribeRouteTableConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterAsGroupAttributeOutcome TkeClient::ModifyClusterAsGroupAttribute(const ModifyClusterAsGroupAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterAsGroupAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterAsGroupAttributeResponse rsp = ModifyClusterAsGroupAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterAsGroupAttributeOutcome(rsp);
+        else
+            return ModifyClusterAsGroupAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterAsGroupAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterAsGroupAttributeAsync(const ModifyClusterAsGroupAttributeRequest& request, const ModifyClusterAsGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterAsGroupAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterAsGroupAttributeOutcomeCallable TkeClient::ModifyClusterAsGroupAttributeCallable(const ModifyClusterAsGroupAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterAsGroupAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterAsGroupAttribute(request);
         }
     );
 

@@ -24,10 +24,12 @@ using namespace rapidjson;
 using namespace std;
 
 CreateNamespaceRequest::CreateNamespaceRequest() :
-    m_clusterIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_namespaceDescHasBeenSet(false),
-    m_namespaceResourceTypeHasBeenSet(false)
+    m_namespaceResourceTypeHasBeenSet(false),
+    m_namespaceTypeHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -38,20 +40,20 @@ string CreateNamespaceRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_clusterIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_namespaceNameHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceDescHasBeenSet)
@@ -70,6 +72,22 @@ string CreateNamespaceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_namespaceResourceType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_namespaceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespaceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -77,22 +95,6 @@ string CreateNamespaceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateNamespaceRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void CreateNamespaceRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool CreateNamespaceRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
-}
 
 string CreateNamespaceRequest::GetNamespaceName() const
 {
@@ -108,6 +110,22 @@ void CreateNamespaceRequest::SetNamespaceName(const string& _namespaceName)
 bool CreateNamespaceRequest::NamespaceNameHasBeenSet() const
 {
     return m_namespaceNameHasBeenSet;
+}
+
+string CreateNamespaceRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void CreateNamespaceRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 string CreateNamespaceRequest::GetNamespaceDesc() const
@@ -140,6 +158,38 @@ void CreateNamespaceRequest::SetNamespaceResourceType(const string& _namespaceRe
 bool CreateNamespaceRequest::NamespaceResourceTypeHasBeenSet() const
 {
     return m_namespaceResourceTypeHasBeenSet;
+}
+
+string CreateNamespaceRequest::GetNamespaceType() const
+{
+    return m_namespaceType;
+}
+
+void CreateNamespaceRequest::SetNamespaceType(const string& _namespaceType)
+{
+    m_namespaceType = _namespaceType;
+    m_namespaceTypeHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::NamespaceTypeHasBeenSet() const
+{
+    return m_namespaceTypeHasBeenSet;
+}
+
+string CreateNamespaceRequest::GetNamespaceId() const
+{
+    return m_namespaceId;
+}
+
+void CreateNamespaceRequest::SetNamespaceId(const string& _namespaceId)
+{
+    m_namespaceId = _namespaceId;
+    m_namespaceIdHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::NamespaceIdHasBeenSet() const
+{
+    return m_namespaceIdHasBeenSet;
 }
 
 

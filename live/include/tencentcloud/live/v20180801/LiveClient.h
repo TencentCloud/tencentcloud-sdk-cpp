@@ -111,6 +111,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLivePackageInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLivePackageInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePlayAuthKeyRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePlayAuthKeyResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePushAuthKeyRequest.h>
@@ -129,8 +131,6 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveSnapshotTemplatesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamEventListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamEventListResponse.h>
-#include <tencentcloud/live/v20180801/model/DescribeLiveStreamOnlineInfoRequest.h>
-#include <tencentcloud/live/v20180801/model/DescribeLiveStreamOnlineInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamOnlineListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamOnlineListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveStreamPublishedListRequest.h>
@@ -361,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLiveForbidStreamListResponse> DescribeLiveForbidStreamListOutcome;
                 typedef std::future<DescribeLiveForbidStreamListOutcome> DescribeLiveForbidStreamListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveForbidStreamListRequest&, DescribeLiveForbidStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveForbidStreamListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLivePackageInfoResponse> DescribeLivePackageInfoOutcome;
+                typedef std::future<DescribeLivePackageInfoOutcome> DescribeLivePackageInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLivePackageInfoRequest&, DescribeLivePackageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePackageInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLivePlayAuthKeyResponse> DescribeLivePlayAuthKeyOutcome;
                 typedef std::future<DescribeLivePlayAuthKeyOutcome> DescribeLivePlayAuthKeyOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePlayAuthKeyRequest&, DescribeLivePlayAuthKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePlayAuthKeyAsyncHandler;
@@ -388,9 +391,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLiveStreamEventListResponse> DescribeLiveStreamEventListOutcome;
                 typedef std::future<DescribeLiveStreamEventListOutcome> DescribeLiveStreamEventListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamEventListRequest&, DescribeLiveStreamEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamEventListAsyncHandler;
-                typedef Outcome<Error, Model::DescribeLiveStreamOnlineInfoResponse> DescribeLiveStreamOnlineInfoOutcome;
-                typedef std::future<DescribeLiveStreamOnlineInfoOutcome> DescribeLiveStreamOnlineInfoOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamOnlineInfoRequest&, DescribeLiveStreamOnlineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamOnlineInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLiveStreamOnlineListResponse> DescribeLiveStreamOnlineListOutcome;
                 typedef std::future<DescribeLiveStreamOnlineListOutcome> DescribeLiveStreamOnlineListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveStreamOnlineListRequest&, DescribeLiveStreamOnlineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamOnlineListAsyncHandler;
@@ -551,7 +551,8 @@ namespace TencentCloud
                 AddLiveWatermarkOutcomeCallable AddLiveWatermarkCallable(const Model::AddLiveWatermarkRequest& request);
 
                 /**
-                 *域名绑定证书
+                 *域名绑定证书。
+注意：需先调用添加证书接口进行证书添加。获取到证书Id后再调用该接口进行绑定。
                  * @param req BindLiveDomainCertRequest
                  * @return BindLiveDomainCertOutcome
                  */
@@ -946,6 +947,15 @@ namespace TencentCloud
                 DescribeLiveForbidStreamListOutcomeCallable DescribeLiveForbidStreamListCallable(const Model::DescribeLiveForbidStreamListRequest& request);
 
                 /**
+                 *查询用户套餐包总量、使用量、剩余量、包状态、购买时间和过期时间等。
+                 * @param req DescribeLivePackageInfoRequest
+                 * @return DescribeLivePackageInfoOutcome
+                 */
+                DescribeLivePackageInfoOutcome DescribeLivePackageInfo(const Model::DescribeLivePackageInfoRequest &request);
+                void DescribeLivePackageInfoAsync(const Model::DescribeLivePackageInfoRequest& request, const DescribeLivePackageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLivePackageInfoOutcomeCallable DescribeLivePackageInfoCallable(const Model::DescribeLivePackageInfoRequest& request);
+
+                /**
                  *查询播放鉴权key。
                  * @param req DescribeLivePlayAuthKeyRequest
                  * @return DescribeLivePlayAuthKeyOutcome
@@ -1027,15 +1037,6 @@ namespace TencentCloud
                 DescribeLiveStreamEventListOutcome DescribeLiveStreamEventList(const Model::DescribeLiveStreamEventListRequest &request);
                 void DescribeLiveStreamEventListAsync(const Model::DescribeLiveStreamEventListRequest& request, const DescribeLiveStreamEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveStreamEventListOutcomeCallable DescribeLiveStreamEventListCallable(const Model::DescribeLiveStreamEventListRequest& request);
-
-                /**
-                 *查询在线推流信息列表
-                 * @param req DescribeLiveStreamOnlineInfoRequest
-                 * @return DescribeLiveStreamOnlineInfoOutcome
-                 */
-                DescribeLiveStreamOnlineInfoOutcome DescribeLiveStreamOnlineInfo(const Model::DescribeLiveStreamOnlineInfoRequest &request);
-                void DescribeLiveStreamOnlineInfoAsync(const Model::DescribeLiveStreamOnlineInfoRequest& request, const DescribeLiveStreamOnlineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLiveStreamOnlineInfoOutcomeCallable DescribeLiveStreamOnlineInfoCallable(const Model::DescribeLiveStreamOnlineInfoRequest& request);
 
                 /**
                  *返回正在直播中的流列表
@@ -1185,7 +1186,7 @@ namespace TencentCloud
                 DescribeProvinceIspPlayInfoListOutcomeCallable DescribeProvinceIspPlayInfoListCallable(const Model::DescribeProvinceIspPlayInfoListRequest& request);
 
                 /**
-                 *查询拉流配置
+                 *查询直播拉流配置。
                  * @param req DescribePullStreamConfigsRequest
                  * @return DescribePullStreamConfigsOutcome
                  */
@@ -1276,7 +1277,7 @@ namespace TencentCloud
                 ForbidLiveStreamOutcomeCallable ForbidLiveStreamCallable(const Model::ForbidLiveStreamRequest& request);
 
                 /**
-                 *修改回调模板
+                 *修改回调模板。
                  * @param req ModifyLiveCallbackTemplateRequest
                  * @return ModifyLiveCallbackTemplateOutcome
                  */
@@ -1357,7 +1358,7 @@ namespace TencentCloud
                 ModifyLiveTranscodeTemplateOutcomeCallable ModifyLiveTranscodeTemplateCallable(const Model::ModifyLiveTranscodeTemplateRequest& request);
 
                 /**
-                 *更新拉流配置
+                 *更新拉流配置。
                  * @param req ModifyPullStreamConfigRequest
                  * @return ModifyPullStreamConfigOutcome
                  */
@@ -1366,7 +1367,7 @@ namespace TencentCloud
                 ModifyPullStreamConfigOutcomeCallable ModifyPullStreamConfigCallable(const Model::ModifyPullStreamConfigRequest& request);
 
                 /**
-                 *修改直播拉流配置状态
+                 *修改直播拉流配置的状态。
                  * @param req ModifyPullStreamStatusRequest
                  * @return ModifyPullStreamStatusOutcome
                  */
@@ -1384,7 +1385,7 @@ namespace TencentCloud
                 ResumeDelayLiveStreamOutcomeCallable ResumeDelayLiveStreamCallable(const Model::ResumeDelayLiveStreamRequest& request);
 
                 /**
-                 *恢复某条流的推送。
+                 *恢复某条流的推流。
                  * @param req ResumeLiveStreamRequest
                  * @return ResumeLiveStreamOutcome
                  */

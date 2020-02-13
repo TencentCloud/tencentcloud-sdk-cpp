@@ -2405,6 +2405,49 @@ VodClient::ExecuteFunctionOutcomeCallable VodClient::ExecuteFunctionCallable(con
     return task->get_future();
 }
 
+VodClient::ForbidMediaDistributionOutcome VodClient::ForbidMediaDistribution(const ForbidMediaDistributionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ForbidMediaDistribution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ForbidMediaDistributionResponse rsp = ForbidMediaDistributionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ForbidMediaDistributionOutcome(rsp);
+        else
+            return ForbidMediaDistributionOutcome(o.GetError());
+    }
+    else
+    {
+        return ForbidMediaDistributionOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ForbidMediaDistributionAsync(const ForbidMediaDistributionRequest& request, const ForbidMediaDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ForbidMediaDistribution(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ForbidMediaDistributionOutcomeCallable VodClient::ForbidMediaDistributionCallable(const ForbidMediaDistributionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ForbidMediaDistributionOutcome()>>(
+        [this, request]()
+        {
+            return this->ForbidMediaDistribution(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::LiveRealTimeClipOutcome VodClient::LiveRealTimeClip(const LiveRealTimeClipRequest &request)
 {
     auto outcome = MakeRequest(request, "LiveRealTimeClip");

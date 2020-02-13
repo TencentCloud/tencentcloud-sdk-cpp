@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品名称
-                     * @return ProductName 产品名称
+                     * 获取产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
+                     * @return ProductName 产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置产品名称
-                     * @param ProductName 产品名称
+                     * 设置产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
+                     * @param ProductName 产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
                      */
                     void SetProductName(const std::string& _productName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取产品分组模板ID
-                     * @return CategoryId 产品分组模板ID
+                     * 获取产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)
+                     * @return CategoryId 产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)
                      */
                     int64_t GetCategoryId() const;
 
                     /**
-                     * 设置产品分组模板ID
-                     * @param CategoryId 产品分组模板ID
+                     * 设置产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)
+                     * @param CategoryId 产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)
                      */
                     void SetCategoryId(const int64_t& _categoryId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CategoryIdHasBeenSet() const;
 
                     /**
-                     * 获取产品类型
-                     * @return ProductType 产品类型
+                     * 获取产品类型 填写 ( 0 普通产品 )
+                     * @return ProductType 产品类型 填写 ( 0 普通产品 )
                      */
                     int64_t GetProductType() const;
 
                     /**
-                     * 设置产品类型
-                     * @param ProductType 产品类型
+                     * 设置产品类型 填写 ( 0 普通产品 )
+                     * @param ProductType 产品类型 填写 ( 0 普通产品 )
                      */
                     void SetProductType(const int64_t& _productType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取加密类型
-                     * @return EncryptionType 加密类型
+                     * 获取加密类型 加密类型，1表示证书认证，2表示签名认证。
+                     * @return EncryptionType 加密类型 加密类型，1表示证书认证，2表示签名认证。
                      */
                     std::string GetEncryptionType() const;
 
                     /**
-                     * 设置加密类型
-                     * @param EncryptionType 加密类型
+                     * 设置加密类型 加密类型，1表示证书认证，2表示签名认证。
+                     * @param EncryptionType 加密类型 加密类型，1表示证书认证，2表示签名认证。
                      */
                     void SetEncryptionType(const std::string& _encryptionType);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool EncryptionTypeHasBeenSet() const;
 
                     /**
-                     * 获取连接类型
-                     * @return NetType 连接类型
+                     * 获取连接类型 可以填写 wifi cellular else
+                     * @return NetType 连接类型 可以填写 wifi cellular else
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置连接类型
-                     * @param NetType 连接类型
+                     * 设置连接类型 可以填写 wifi cellular else
+                     * @param NetType 连接类型 可以填写 wifi cellular else
                      */
                     void SetNetType(const std::string& _netType);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据协议
-                     * @return DataProtocol 数据协议
+                     * 获取数据协议 (1 使用物模型)
+                     * @return DataProtocol 数据协议 (1 使用物模型)
                      */
                     int64_t GetDataProtocol() const;
 
                     /**
-                     * 设置数据协议
-                     * @param DataProtocol 数据协议
+                     * 设置数据协议 (1 使用物模型)
+                     * @param DataProtocol 数据协议 (1 使用物模型)
                      */
                     void SetDataProtocol(const int64_t& _dataProtocol);
 
@@ -189,37 +189,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品名称
+                     * 产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 产品分组模板ID
+                     * 产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)
                      */
                     int64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
-                     * 产品类型
+                     * 产品类型 填写 ( 0 普通产品 )
                      */
                     int64_t m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 加密类型
+                     * 加密类型 加密类型，1表示证书认证，2表示签名认证。
                      */
                     std::string m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;
 
                     /**
-                     * 连接类型
+                     * 连接类型 可以填写 wifi cellular else
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 数据协议
+                     * 数据协议 (1 使用物模型)
                      */
                     int64_t m_dataProtocol;
                     bool m_dataProtocolHasBeenSet;

@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ShadowVersionHasBeenSet() const;
 
+                    /**
+                     * 获取下发delta消息的topic前缀，可选类型: "$shadow","$template"。不填写默认"$shadow"。
+                     * @return Prefix 下发delta消息的topic前缀，可选类型: "$shadow","$template"。不填写默认"$shadow"。
+                     */
+                    std::string GetPrefix() const;
+
+                    /**
+                     * 设置下发delta消息的topic前缀，可选类型: "$shadow","$template"。不填写默认"$shadow"。
+                     * @param Prefix 下发delta消息的topic前缀，可选类型: "$shadow","$template"。不填写默认"$shadow"。
+                     */
+                    void SetPrefix(const std::string& _prefix);
+
+                    /**
+                     * 判断参数 Prefix 是否已赋值
+                     * @return Prefix 是否已赋值
+                     */
+                    bool PrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_shadowVersion;
                     bool m_shadowVersionHasBeenSet;
+
+                    /**
+                     * 下发delta消息的topic前缀，可选类型: "$shadow","$template"。不填写默认"$shadow"。
+                     */
+                    std::string m_prefix;
+                    bool m_prefixHasBeenSet;
 
                 };
             }

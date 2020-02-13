@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/ClusterExtraArgs.h>
 
 
 namespace TencentCloud
@@ -101,14 +102,14 @@ namespace TencentCloud
                     bool ContainerRuntimeHasBeenSet() const;
 
                     /**
-                     * 获取集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
-                     * @return NodeNameType 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     * 获取集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）
+                     * @return NodeNameType 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）
                      */
                     std::string GetNodeNameType() const;
 
                     /**
-                     * 设置集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
-                     * @param NodeNameType 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     * 设置集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）
+                     * @param NodeNameType 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）
                      */
                     void SetNodeNameType(const std::string& _nodeNameType);
 
@@ -117,6 +118,24 @@ namespace TencentCloud
                      * @return NodeNameType 是否已赋值
                      */
                     bool NodeNameTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群自定义参数
+                     * @return ExtraArgs 集群自定义参数
+                     */
+                    ClusterExtraArgs GetExtraArgs() const;
+
+                    /**
+                     * 设置集群自定义参数
+                     * @param ExtraArgs 集群自定义参数
+                     */
+                    void SetExtraArgs(const ClusterExtraArgs& _extraArgs);
+
+                    /**
+                     * 判断参数 ExtraArgs 是否已赋值
+                     * @return ExtraArgs 是否已赋值
+                     */
+                    bool ExtraArgsHasBeenSet() const;
 
                 private:
 
@@ -139,10 +158,16 @@ namespace TencentCloud
                     bool m_containerRuntimeHasBeenSet;
 
                     /**
-                     * 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip）
+                     * 集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）
                      */
                     std::string m_nodeNameType;
                     bool m_nodeNameTypeHasBeenSet;
+
+                    /**
+                     * 集群自定义参数
+                     */
+                    ClusterExtraArgs m_extraArgs;
+                    bool m_extraArgsHasBeenSet;
 
                 };
             }

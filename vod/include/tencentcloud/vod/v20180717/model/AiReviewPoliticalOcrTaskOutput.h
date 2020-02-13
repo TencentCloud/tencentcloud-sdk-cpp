@@ -97,17 +97,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Ocr 文字有涉政、敏感嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentSet Ocr 文字有涉政、敏感嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置Ocr 文字有涉政、敏感嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SegmentSet Ocr 文字有涉政、敏感嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewOcrTextSegmentItem>& _segmentSet);
 
@@ -136,7 +132,6 @@ namespace TencentCloud
 
                     /**
                      * Ocr 文字有涉政、敏感嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

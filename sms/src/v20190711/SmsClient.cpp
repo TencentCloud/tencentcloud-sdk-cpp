@@ -40,6 +40,92 @@ SmsClient::SmsClient(const Credential &credential, const string &region, const C
 }
 
 
+SmsClient::AddSmsSignOutcome SmsClient::AddSmsSign(const AddSmsSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddSmsSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddSmsSignResponse rsp = AddSmsSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddSmsSignOutcome(rsp);
+        else
+            return AddSmsSignOutcome(o.GetError());
+    }
+    else
+    {
+        return AddSmsSignOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::AddSmsSignAsync(const AddSmsSignRequest& request, const AddSmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddSmsSign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::AddSmsSignOutcomeCallable SmsClient::AddSmsSignCallable(const AddSmsSignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddSmsSignOutcome()>>(
+        [this, request]()
+        {
+            return this->AddSmsSign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::AddSmsTemplateOutcome SmsClient::AddSmsTemplate(const AddSmsTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddSmsTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddSmsTemplateResponse rsp = AddSmsTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddSmsTemplateOutcome(rsp);
+        else
+            return AddSmsTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return AddSmsTemplateOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::AddSmsTemplateAsync(const AddSmsTemplateRequest& request, const AddSmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddSmsTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::AddSmsTemplateOutcomeCallable SmsClient::AddSmsTemplateCallable(const AddSmsTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddSmsTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->AddSmsTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SmsClient::CallbackStatusStatisticsOutcome SmsClient::CallbackStatusStatistics(const CallbackStatusStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "CallbackStatusStatistics");
@@ -76,6 +162,178 @@ SmsClient::CallbackStatusStatisticsOutcomeCallable SmsClient::CallbackStatusStat
         [this, request]()
         {
             return this->CallbackStatusStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::DeleteSmsSignOutcome SmsClient::DeleteSmsSign(const DeleteSmsSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSmsSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSmsSignResponse rsp = DeleteSmsSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSmsSignOutcome(rsp);
+        else
+            return DeleteSmsSignOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSmsSignOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::DeleteSmsSignAsync(const DeleteSmsSignRequest& request, const DeleteSmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSmsSign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::DeleteSmsSignOutcomeCallable SmsClient::DeleteSmsSignCallable(const DeleteSmsSignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSmsSignOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSmsSign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::DeleteSmsTemplateOutcome SmsClient::DeleteSmsTemplate(const DeleteSmsTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSmsTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSmsTemplateResponse rsp = DeleteSmsTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSmsTemplateOutcome(rsp);
+        else
+            return DeleteSmsTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSmsTemplateOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::DeleteSmsTemplateAsync(const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSmsTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::DeleteSmsTemplateOutcomeCallable SmsClient::DeleteSmsTemplateCallable(const DeleteSmsTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSmsTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSmsTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::ModifySmsSignOutcome SmsClient::ModifySmsSign(const ModifySmsSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySmsSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySmsSignResponse rsp = ModifySmsSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySmsSignOutcome(rsp);
+        else
+            return ModifySmsSignOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySmsSignOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::ModifySmsSignAsync(const ModifySmsSignRequest& request, const ModifySmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySmsSign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::ModifySmsSignOutcomeCallable SmsClient::ModifySmsSignCallable(const ModifySmsSignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySmsSignOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySmsSign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::ModifySmsTemplateOutcome SmsClient::ModifySmsTemplate(const ModifySmsTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySmsTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySmsTemplateResponse rsp = ModifySmsTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySmsTemplateOutcome(rsp);
+        else
+            return ModifySmsTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySmsTemplateOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::ModifySmsTemplateAsync(const ModifySmsTemplateRequest& request, const ModifySmsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySmsTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::ModifySmsTemplateOutcomeCallable SmsClient::ModifySmsTemplateCallable(const ModifySmsTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySmsTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySmsTemplate(request);
         }
     );
 

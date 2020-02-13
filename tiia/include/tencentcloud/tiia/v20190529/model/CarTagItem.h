@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tiia/v20190529/model/Coord.h>
 
 
 namespace TencentCloud
@@ -154,6 +155,24 @@ namespace TencentCloud
                      */
                     bool YearHasBeenSet() const;
 
+                    /**
+                     * 获取车辆在图片中的坐标信息
+                     * @return CarLocation 车辆在图片中的坐标信息
+                     */
+                    std::vector<Coord> GetCarLocation() const;
+
+                    /**
+                     * 设置车辆在图片中的坐标信息
+                     * @param CarLocation 车辆在图片中的坐标信息
+                     */
+                    void SetCarLocation(const std::vector<Coord>& _carLocation);
+
+                    /**
+                     * 判断参数 CarLocation 是否已赋值
+                     * @return CarLocation 是否已赋值
+                     */
+                    bool CarLocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +210,12 @@ namespace TencentCloud
                      */
                     int64_t m_year;
                     bool m_yearHasBeenSet;
+
+                    /**
+                     * 车辆在图片中的坐标信息
+                     */
+                    std::vector<Coord> m_carLocation;
+                    bool m_carLocationHasBeenSet;
 
                 };
             }

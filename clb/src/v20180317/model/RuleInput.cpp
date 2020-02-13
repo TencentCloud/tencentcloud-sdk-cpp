@@ -31,7 +31,9 @@ RuleInput::RuleInput() :
     m_forwardTypeHasBeenSet(false),
     m_defaultServerHasBeenSet(false),
     m_http2HasBeenSet(false),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_trpcCalleeHasBeenSet(false),
+    m_trpcFuncHasBeenSet(false)
 {
 }
 
@@ -154,6 +156,26 @@ CoreInternalOutcome RuleInput::Deserialize(const Value &value)
         m_targetTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TrpcCallee") && !value["TrpcCallee"].IsNull())
+    {
+        if (!value["TrpcCallee"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleInput.TrpcCallee` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trpcCallee = string(value["TrpcCallee"].GetString());
+        m_trpcCalleeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrpcFunc") && !value["TrpcFunc"].IsNull())
+    {
+        if (!value["TrpcFunc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleInput.TrpcFunc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trpcFunc = string(value["TrpcFunc"].GetString());
+        m_trpcFuncHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +263,22 @@ void RuleInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "TargetType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_targetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trpcCalleeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TrpcCallee";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_trpcCallee.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trpcFuncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TrpcFunc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_trpcFunc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +442,37 @@ void RuleInput::SetTargetType(const string& _targetType)
 bool RuleInput::TargetTypeHasBeenSet() const
 {
     return m_targetTypeHasBeenSet;
+}
+
+string RuleInput::GetTrpcCallee() const
+{
+    return m_trpcCallee;
+}
+
+void RuleInput::SetTrpcCallee(const string& _trpcCallee)
+{
+    m_trpcCallee = _trpcCallee;
+    m_trpcCalleeHasBeenSet = true;
+}
+
+bool RuleInput::TrpcCalleeHasBeenSet() const
+{
+    return m_trpcCalleeHasBeenSet;
+}
+
+string RuleInput::GetTrpcFunc() const
+{
+    return m_trpcFunc;
+}
+
+void RuleInput::SetTrpcFunc(const string& _trpcFunc)
+{
+    m_trpcFunc = _trpcFunc;
+    m_trpcFuncHasBeenSet = true;
+}
+
+bool RuleInput::TrpcFuncHasBeenSet() const
+{
+    return m_trpcFuncHasBeenSet;
 }
 

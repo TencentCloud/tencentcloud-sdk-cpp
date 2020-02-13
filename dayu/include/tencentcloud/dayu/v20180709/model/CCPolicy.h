@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取匹配模式
-                     * @return Smode 匹配模式
+                     * 获取匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
+                     * @return Smode 匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
                      */
                     std::string GetSmode() const;
 
                     /**
-                     * 设置匹配模式
-                     * @param Smode 匹配模式
+                     * 设置匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
+                     * @param Smode 匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
                      */
                     void SetSmode(const std::string& _smode);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool FrequencyHasBeenSet() const;
 
                     /**
-                     * 获取执行策略模式，拦截或者验证码
-                     * @return ExeMode 执行策略模式，拦截或者验证码
+                     * 获取执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
+                     * @return ExeMode 执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
                      */
                     std::string GetExeMode() const;
 
                     /**
-                     * 设置执行策略模式，拦截或者验证码
-                     * @param ExeMode 执行策略模式，拦截或者验证码
+                     * 设置执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
+                     * @param ExeMode 执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
                      */
                     void SetExeMode(const std::string& _exeMode);
 
@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool RuleListHasBeenSet() const;
 
                     /**
-                     * 获取Ip列表
-                     * @return IpList Ip列表
+                     * 获取IP列表
+                     * @return IpList IP列表
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
-                     * 设置Ip列表
-                     * @param IpList Ip列表
+                     * 设置IP列表
+                     * @param IpList IP列表
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
@@ -228,14 +228,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取可选字段，表示https的CC防护域名对应的转发规则ID;
-                     * @return RuleId 可选字段，表示https的CC防护域名对应的转发规则ID;
+                     * 获取可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
+                     * @return RuleId 可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置可选字段，表示https的CC防护域名对应的转发规则ID;
-                     * @param RuleId 可选字段，表示https的CC防护域名对应的转发规则ID;
+                     * 设置可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
+                     * @param RuleId 可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
                      */
                     void SetRuleId(const std::string& _ruleId);
 
@@ -246,14 +246,14 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取https的CC防护域名
-                     * @return Domain https的CC防护域名
+                     * 获取HTTPS的CC防护域名
+                     * @return Domain HTTPS的CC防护域名
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置https的CC防护域名
-                     * @param Domain https的CC防护域名
+                     * 设置HTTPS的CC防护域名
+                     * @param Domain HTTPS的CC防护域名
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -272,7 +272,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 匹配模式
+                     * 匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]
                      */
                     std::string m_smode;
                     bool m_smodeHasBeenSet;
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_frequencyHasBeenSet;
 
                     /**
-                     * 执行策略模式，拦截或者验证码
+                     * 执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]
                      */
                     std::string m_exeMode;
                     bool m_exeModeHasBeenSet;
@@ -314,7 +314,7 @@ namespace TencentCloud
                     bool m_ruleListHasBeenSet;
 
                     /**
-                     * Ip列表
+                     * IP列表
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;
@@ -326,13 +326,13 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 可选字段，表示https的CC防护域名对应的转发规则ID;
+                     * 可选字段，表示HTTPS的CC防护域名对应的转发规则ID;
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * https的CC防护域名
+                     * HTTPS的CC防护域名
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

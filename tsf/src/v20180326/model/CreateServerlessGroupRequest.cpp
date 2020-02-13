@@ -26,8 +26,8 @@ using namespace std;
 CreateServerlessGroupRequest::CreateServerlessGroupRequest() :
     m_applicationIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_pkgIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -54,21 +54,20 @@ string CreateServerlessGroupRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_pkgIdHasBeenSet)
+    if (m_namespaceIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "PkgId";
+        string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pkgId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vpcConfigHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "VpcConfig";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_vpcConfig.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -111,36 +110,36 @@ bool CreateServerlessGroupRequest::GroupNameHasBeenSet() const
     return m_groupNameHasBeenSet;
 }
 
-string CreateServerlessGroupRequest::GetPkgId() const
+string CreateServerlessGroupRequest::GetNamespaceId() const
 {
-    return m_pkgId;
+    return m_namespaceId;
 }
 
-void CreateServerlessGroupRequest::SetPkgId(const string& _pkgId)
+void CreateServerlessGroupRequest::SetNamespaceId(const string& _namespaceId)
 {
-    m_pkgId = _pkgId;
-    m_pkgIdHasBeenSet = true;
+    m_namespaceId = _namespaceId;
+    m_namespaceIdHasBeenSet = true;
 }
 
-bool CreateServerlessGroupRequest::PkgIdHasBeenSet() const
+bool CreateServerlessGroupRequest::NamespaceIdHasBeenSet() const
 {
-    return m_pkgIdHasBeenSet;
+    return m_namespaceIdHasBeenSet;
 }
 
-VpcConfig CreateServerlessGroupRequest::GetVpcConfig() const
+string CreateServerlessGroupRequest::GetClusterId() const
 {
-    return m_vpcConfig;
+    return m_clusterId;
 }
 
-void CreateServerlessGroupRequest::SetVpcConfig(const VpcConfig& _vpcConfig)
+void CreateServerlessGroupRequest::SetClusterId(const string& _clusterId)
 {
-    m_vpcConfig = _vpcConfig;
-    m_vpcConfigHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool CreateServerlessGroupRequest::VpcConfigHasBeenSet() const
+bool CreateServerlessGroupRequest::ClusterIdHasBeenSet() const
 {
-    return m_vpcConfigHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
 

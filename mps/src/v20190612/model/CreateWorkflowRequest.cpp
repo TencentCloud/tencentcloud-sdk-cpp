@@ -30,6 +30,7 @@ CreateWorkflowRequest::CreateWorkflowRequest() :
     m_outputDirHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
+    m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_taskPriorityHasBeenSet(false)
@@ -93,6 +94,15 @@ string CreateWorkflowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_aiContentReviewTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiAnalysisTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiAnalysisTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiAnalysisTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_aiRecognitionTaskHasBeenSet)
@@ -223,6 +233,22 @@ void CreateWorkflowRequest::SetAiContentReviewTask(const AiContentReviewTaskInpu
 bool CreateWorkflowRequest::AiContentReviewTaskHasBeenSet() const
 {
     return m_aiContentReviewTaskHasBeenSet;
+}
+
+AiAnalysisTaskInput CreateWorkflowRequest::GetAiAnalysisTask() const
+{
+    return m_aiAnalysisTask;
+}
+
+void CreateWorkflowRequest::SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask)
+{
+    m_aiAnalysisTask = _aiAnalysisTask;
+    m_aiAnalysisTaskHasBeenSet = true;
+}
+
+bool CreateWorkflowRequest::AiAnalysisTaskHasBeenSet() const
+{
+    return m_aiAnalysisTaskHasBeenSet;
 }
 
 AiRecognitionTaskInput CreateWorkflowRequest::GetAiRecognitionTask() const

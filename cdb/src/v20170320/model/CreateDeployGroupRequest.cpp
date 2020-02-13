@@ -25,7 +25,9 @@ using namespace std;
 
 CreateDeployGroupRequest::CreateDeployGroupRequest() :
     m_deployGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_affinityHasBeenSet(false),
+    m_limitNumHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,27 @@ string CreateDeployGroupRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_affinityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Affinity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_affinity.begin(); itr != m_affinity.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_limitNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LimitNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limitNum, allocator);
     }
 
 
@@ -90,6 +113,38 @@ void CreateDeployGroupRequest::SetDescription(const string& _description)
 bool CreateDeployGroupRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<int64_t> CreateDeployGroupRequest::GetAffinity() const
+{
+    return m_affinity;
+}
+
+void CreateDeployGroupRequest::SetAffinity(const vector<int64_t>& _affinity)
+{
+    m_affinity = _affinity;
+    m_affinityHasBeenSet = true;
+}
+
+bool CreateDeployGroupRequest::AffinityHasBeenSet() const
+{
+    return m_affinityHasBeenSet;
+}
+
+int64_t CreateDeployGroupRequest::GetLimitNum() const
+{
+    return m_limitNum;
+}
+
+void CreateDeployGroupRequest::SetLimitNum(const int64_t& _limitNum)
+{
+    m_limitNum = _limitNum;
+    m_limitNumHasBeenSet = true;
+}
+
+bool CreateDeployGroupRequest::LimitNumHasBeenSet() const
+{
+    return m_limitNumHasBeenSet;
 }
 
 

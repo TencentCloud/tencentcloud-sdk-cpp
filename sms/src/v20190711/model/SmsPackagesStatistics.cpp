@@ -23,8 +23,11 @@ using namespace std;
 
 SmsPackagesStatistics::SmsPackagesStatistics() :
     m_packageCreateTimeHasBeenSet(false),
+    m_packageCreateUnixTimeHasBeenSet(false),
     m_packageEffectiveTimeHasBeenSet(false),
+    m_packageEffectiveUnixTimeHasBeenSet(false),
     m_packageExpiredTimeHasBeenSet(false),
+    m_packageExpiredUnixTimeHasBeenSet(false),
     m_amountOfPackageHasBeenSet(false),
     m_typeOfPackageHasBeenSet(false),
     m_packageIdHasBeenSet(false),
@@ -47,6 +50,16 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const Value &value)
         m_packageCreateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PackageCreateUnixTime") && !value["PackageCreateUnixTime"].IsNull())
+    {
+        if (!value["PackageCreateUnixTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageCreateUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageCreateUnixTime = value["PackageCreateUnixTime"].GetUint64();
+        m_packageCreateUnixTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("PackageEffectiveTime") && !value["PackageEffectiveTime"].IsNull())
     {
         if (!value["PackageEffectiveTime"].IsString())
@@ -57,6 +70,16 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const Value &value)
         m_packageEffectiveTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PackageEffectiveUnixTime") && !value["PackageEffectiveUnixTime"].IsNull())
+    {
+        if (!value["PackageEffectiveUnixTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageEffectiveUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageEffectiveUnixTime = value["PackageEffectiveUnixTime"].GetUint64();
+        m_packageEffectiveUnixTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("PackageExpiredTime") && !value["PackageExpiredTime"].IsNull())
     {
         if (!value["PackageExpiredTime"].IsString())
@@ -65,6 +88,16 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const Value &value)
         }
         m_packageExpiredTime = string(value["PackageExpiredTime"].GetString());
         m_packageExpiredTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PackageExpiredUnixTime") && !value["PackageExpiredUnixTime"].IsNull())
+    {
+        if (!value["PackageExpiredUnixTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SmsPackagesStatistics.PackageExpiredUnixTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageExpiredUnixTime = value["PackageExpiredUnixTime"].GetUint64();
+        m_packageExpiredUnixTimeHasBeenSet = true;
     }
 
     if (value.HasMember("AmountOfPackage") && !value["AmountOfPackage"].IsNull())
@@ -122,6 +155,14 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
         value.AddMember(iKey, Value(m_packageCreateTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_packageCreateUnixTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PackageCreateUnixTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_packageCreateUnixTime, allocator);
+    }
+
     if (m_packageEffectiveTimeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -130,12 +171,28 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
         value.AddMember(iKey, Value(m_packageEffectiveTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_packageEffectiveUnixTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PackageEffectiveUnixTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_packageEffectiveUnixTime, allocator);
+    }
+
     if (m_packageExpiredTimeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "PackageExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_packageExpiredTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageExpiredUnixTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PackageExpiredUnixTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_packageExpiredUnixTime, allocator);
     }
 
     if (m_amountOfPackageHasBeenSet)
@@ -189,6 +246,22 @@ bool SmsPackagesStatistics::PackageCreateTimeHasBeenSet() const
     return m_packageCreateTimeHasBeenSet;
 }
 
+uint64_t SmsPackagesStatistics::GetPackageCreateUnixTime() const
+{
+    return m_packageCreateUnixTime;
+}
+
+void SmsPackagesStatistics::SetPackageCreateUnixTime(const uint64_t& _packageCreateUnixTime)
+{
+    m_packageCreateUnixTime = _packageCreateUnixTime;
+    m_packageCreateUnixTimeHasBeenSet = true;
+}
+
+bool SmsPackagesStatistics::PackageCreateUnixTimeHasBeenSet() const
+{
+    return m_packageCreateUnixTimeHasBeenSet;
+}
+
 string SmsPackagesStatistics::GetPackageEffectiveTime() const
 {
     return m_packageEffectiveTime;
@@ -205,6 +278,22 @@ bool SmsPackagesStatistics::PackageEffectiveTimeHasBeenSet() const
     return m_packageEffectiveTimeHasBeenSet;
 }
 
+uint64_t SmsPackagesStatistics::GetPackageEffectiveUnixTime() const
+{
+    return m_packageEffectiveUnixTime;
+}
+
+void SmsPackagesStatistics::SetPackageEffectiveUnixTime(const uint64_t& _packageEffectiveUnixTime)
+{
+    m_packageEffectiveUnixTime = _packageEffectiveUnixTime;
+    m_packageEffectiveUnixTimeHasBeenSet = true;
+}
+
+bool SmsPackagesStatistics::PackageEffectiveUnixTimeHasBeenSet() const
+{
+    return m_packageEffectiveUnixTimeHasBeenSet;
+}
+
 string SmsPackagesStatistics::GetPackageExpiredTime() const
 {
     return m_packageExpiredTime;
@@ -219,6 +308,22 @@ void SmsPackagesStatistics::SetPackageExpiredTime(const string& _packageExpiredT
 bool SmsPackagesStatistics::PackageExpiredTimeHasBeenSet() const
 {
     return m_packageExpiredTimeHasBeenSet;
+}
+
+uint64_t SmsPackagesStatistics::GetPackageExpiredUnixTime() const
+{
+    return m_packageExpiredUnixTime;
+}
+
+void SmsPackagesStatistics::SetPackageExpiredUnixTime(const uint64_t& _packageExpiredUnixTime)
+{
+    m_packageExpiredUnixTime = _packageExpiredUnixTime;
+    m_packageExpiredUnixTimeHasBeenSet = true;
+}
+
+bool SmsPackagesStatistics::PackageExpiredUnixTimeHasBeenSet() const
+{
+    return m_packageExpiredUnixTimeHasBeenSet;
 }
 
 uint64_t SmsPackagesStatistics::GetAmountOfPackage() const

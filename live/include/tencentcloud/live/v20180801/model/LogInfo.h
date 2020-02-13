@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool LogTimeHasBeenSet() const;
 
+                    /**
+                     * 获取文件大小
+                     * @return FileSize 文件大小
+                     */
+                    int64_t GetFileSize() const;
+
+                    /**
+                     * 设置文件大小
+                     * @param FileSize 文件大小
+                     */
+                    void SetFileSize(const int64_t& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     */
+                    bool FileSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_logTime;
                     bool m_logTimeHasBeenSet;
+
+                    /**
+                     * 文件大小
+                     */
+                    int64_t m_fileSize;
+                    bool m_fileSizeHasBeenSet;
 
                 };
             }

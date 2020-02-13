@@ -31,7 +31,8 @@ HaVip::HaVip() :
     m_instanceIdHasBeenSet(false),
     m_addressIpHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_businessHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome HaVip::Deserialize(const Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Business") && !value["Business"].IsNull())
+    {
+        if (!value["Business"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HaVip.Business` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_business = string(value["Business"].GetString());
+        m_businessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void HaVip::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Business";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void HaVip::SetCreatedTime(const string& _createdTime)
 bool HaVip::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+string HaVip::GetBusiness() const
+{
+    return m_business;
+}
+
+void HaVip::SetBusiness(const string& _business)
+{
+    m_business = _business;
+    m_businessHasBeenSet = true;
+}
+
+bool HaVip::BusinessHasBeenSet() const
+{
+    return m_businessHasBeenSet;
 }
 

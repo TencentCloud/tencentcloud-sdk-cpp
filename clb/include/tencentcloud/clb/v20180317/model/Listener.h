@@ -27,6 +27,7 @@
 #include <tencentcloud/clb/v20180317/model/CertificateOutput.h>
 #include <tencentcloud/clb/v20180317/model/HealthCheck.h>
 #include <tencentcloud/clb/v20180317/model/RuleOutput.h>
+#include <tencentcloud/clb/v20180317/model/BasicTargetGroupInfo.h>
 
 
 namespace TencentCloud
@@ -301,6 +302,50 @@ namespace TencentCloud
                      */
                     bool EndPortHasBeenSet() const;
 
+                    /**
+                     * 获取后端服务器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetType 后端服务器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTargetType() const;
+
+                    /**
+                     * 设置后端服务器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetType 后端服务器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetType(const std::string& _targetType);
+
+                    /**
+                     * 判断参数 TargetType 是否已赋值
+                     * @return TargetType 是否已赋值
+                     */
+                    bool TargetTypeHasBeenSet() const;
+
+                    /**
+                     * 获取绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetGroup 绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BasicTargetGroupInfo GetTargetGroup() const;
+
+                    /**
+                     * 设置绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetGroup 绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetGroup(const BasicTargetGroupInfo& _targetGroup);
+
+                    /**
+                     * 判断参数 TargetGroup 是否已赋值
+                     * @return TargetGroup 是否已赋值
+                     */
+                    bool TargetGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +428,20 @@ namespace TencentCloud
                      */
                     int64_t m_endPort;
                     bool m_endPortHasBeenSet;
+
+                    /**
+                     * 后端服务器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetType;
+                    bool m_targetTypeHasBeenSet;
+
+                    /**
+                     * 绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BasicTargetGroupInfo m_targetGroup;
+                    bool m_targetGroupHasBeenSet;
 
                 };
             }

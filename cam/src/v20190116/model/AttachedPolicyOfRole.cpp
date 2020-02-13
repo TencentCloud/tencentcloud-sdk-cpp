@@ -26,7 +26,8 @@ AttachedPolicyOfRole::AttachedPolicyOfRole() :
     m_policyNameHasBeenSet(false),
     m_addTimeHasBeenSet(false),
     m_policyTypeHasBeenSet(false),
-    m_createModeHasBeenSet(false)
+    m_createModeHasBeenSet(false),
+    m_deactivedHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const Value &value)
         m_createModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Deactived") && !value["Deactived"].IsNull())
+    {
+        if (!value["Deactived"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.Deactived` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deactived = value["Deactived"].GetUint64();
+        m_deactivedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void AttachedPolicyOfRole::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "CreateMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createMode, allocator);
+    }
+
+    if (m_deactivedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Deactived";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deactived, allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void AttachedPolicyOfRole::SetCreateMode(const uint64_t& _createMode)
 bool AttachedPolicyOfRole::CreateModeHasBeenSet() const
 {
     return m_createModeHasBeenSet;
+}
+
+uint64_t AttachedPolicyOfRole::GetDeactived() const
+{
+    return m_deactived;
+}
+
+void AttachedPolicyOfRole::SetDeactived(const uint64_t& _deactived)
+{
+    m_deactived = _deactived;
+    m_deactivedHasBeenSet = true;
+}
+
+bool AttachedPolicyOfRole::DeactivedHasBeenSet() const
+{
+    return m_deactivedHasBeenSet;
 }
 

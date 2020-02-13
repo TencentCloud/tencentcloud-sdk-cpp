@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回执数据统计响应包体
-                     * @return CallbackStatusStatistics 回执数据统计响应包体
+                     * 获取回执数据统计响应包体。
+                     * @return CallbackStatusStatistics 回执数据统计响应包体。
                      */
                     CallbackStatusStatistics GetCallbackStatusStatistics() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回执数据统计响应包体
+                     * 回执数据统计响应包体。
                      */
                     CallbackStatusStatistics m_callbackStatusStatistics;
                     bool m_callbackStatusStatisticsHasBeenSet;

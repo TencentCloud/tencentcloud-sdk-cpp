@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiems/v20190416/model/PredictInput.h>
 #include <tencentcloud/tiems/v20190416/model/JobStatus.h>
+#include <tencentcloud/tiems/v20190416/model/QuantizationInput.h>
 
 
 namespace TencentCloud
@@ -68,13 +69,17 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cluster 集群名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置集群名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Cluster 集群名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCluster(const std::string& _cluster);
 
@@ -122,13 +127,17 @@ namespace TencentCloud
 
                     /**
                      * 获取Worker 使用的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime Worker 使用的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置Worker 使用的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Runtime Worker 使用的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuntime(const std::string& _runtime);
 
@@ -162,13 +171,17 @@ namespace TencentCloud
 
                     /**
                      * 获取配置 Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigId 配置 Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetConfigId() const;
 
                     /**
                      * 设置配置 Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ConfigId 配置 Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfigId(const std::string& _configId);
 
@@ -180,13 +193,17 @@ namespace TencentCloud
 
                     /**
                      * 获取预测输入
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PredictInput 预测输入
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PredictInput GetPredictInput() const;
 
                     /**
                      * 设置预测输入
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param PredictInput 预测输入
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPredictInput(const PredictInput& _predictInput);
 
@@ -496,6 +513,50 @@ namespace TencentCloud
                      */
                     bool ConfigVersionHasBeenSet() const;
 
+                    /**
+                     * 获取Job类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobType Job类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置Job类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JobType Job类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取量化输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuantizationInput 量化输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QuantizationInput GetQuantizationInput() const;
+
+                    /**
+                     * 设置量化输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QuantizationInput 量化输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQuantizationInput(const QuantizationInput& _quantizationInput);
+
+                    /**
+                     * 判断参数 QuantizationInput 是否已赋值
+                     * @return QuantizationInput 是否已赋值
+                     */
+                    bool QuantizationInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +567,7 @@ namespace TencentCloud
 
                     /**
                      * 集群名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cluster;
                     bool m_clusterHasBeenSet;
@@ -524,6 +586,7 @@ namespace TencentCloud
 
                     /**
                      * Worker 使用的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;
@@ -537,12 +600,14 @@ namespace TencentCloud
 
                     /**
                      * 配置 Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
                      * 预测输入
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PredictInput m_predictInput;
                     bool m_predictInputHasBeenSet;
@@ -642,6 +707,20 @@ namespace TencentCloud
                      */
                     std::string m_configVersion;
                     bool m_configVersionHasBeenSet;
+
+                    /**
+                     * Job类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 量化输入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QuantizationInput m_quantizationInput;
+                    bool m_quantizationInputHasBeenSet;
 
                 };
             }

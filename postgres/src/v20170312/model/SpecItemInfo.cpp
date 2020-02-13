@@ -30,7 +30,8 @@ SpecItemInfo::SpecItemInfo() :
     m_maxStorageHasBeenSet(false),
     m_minStorageHasBeenSet(false),
     m_qpsHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const Value &value)
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SpecItemInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void SpecItemInfo::SetPid(const uint64_t& _pid)
 bool SpecItemInfo::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+string SpecItemInfo::GetType() const
+{
+    return m_type;
+}
+
+void SpecItemInfo::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool SpecItemInfo::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

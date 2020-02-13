@@ -1,0 +1,269 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_RESIDENCEBOOKLETOCRRESPONSE_H_
+#define TENCENTCLOUD_OCR_V20181119_MODEL_RESIDENCEBOOKLETOCRRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Ocr
+    {
+        namespace V20181119
+        {
+            namespace Model
+            {
+                /**
+                * ResidenceBookletOCR返回参数结构体
+                */
+                class ResidenceBookletOCRResponse : public AbstractModel
+                {
+                public:
+                    ResidenceBookletOCRResponse();
+                    ~ResidenceBookletOCRResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+
+
+                    /**
+                     * 获取户号
+                     * @return HouseholdNumber 户号
+                     */
+                    std::string GetHouseholdNumber() const;
+
+                    /**
+                     * 判断参数 HouseholdNumber 是否已赋值
+                     * @return HouseholdNumber 是否已赋值
+                     */
+                    bool HouseholdNumberHasBeenSet() const;
+
+                    /**
+                     * 获取姓名
+                     * @return Name 姓名
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取性别
+                     * @return Sex 性别
+                     */
+                    std::string GetSex() const;
+
+                    /**
+                     * 判断参数 Sex 是否已赋值
+                     * @return Sex 是否已赋值
+                     */
+                    bool SexHasBeenSet() const;
+
+                    /**
+                     * 获取出生地
+                     * @return BirthPlace 出生地
+                     */
+                    std::string GetBirthPlace() const;
+
+                    /**
+                     * 判断参数 BirthPlace 是否已赋值
+                     * @return BirthPlace 是否已赋值
+                     */
+                    bool BirthPlaceHasBeenSet() const;
+
+                    /**
+                     * 获取民族
+                     * @return Nation 民族
+                     */
+                    std::string GetNation() const;
+
+                    /**
+                     * 判断参数 Nation 是否已赋值
+                     * @return Nation 是否已赋值
+                     */
+                    bool NationHasBeenSet() const;
+
+                    /**
+                     * 获取籍贯
+                     * @return NativePlace 籍贯
+                     */
+                    std::string GetNativePlace() const;
+
+                    /**
+                     * 判断参数 NativePlace 是否已赋值
+                     * @return NativePlace 是否已赋值
+                     */
+                    bool NativePlaceHasBeenSet() const;
+
+                    /**
+                     * 获取出生日期
+                     * @return BirthDate 出生日期
+                     */
+                    std::string GetBirthDate() const;
+
+                    /**
+                     * 判断参数 BirthDate 是否已赋值
+                     * @return BirthDate 是否已赋值
+                     */
+                    bool BirthDateHasBeenSet() const;
+
+                    /**
+                     * 获取公民身份证件编号
+                     * @return IdCardNumber 公民身份证件编号
+                     */
+                    std::string GetIdCardNumber() const;
+
+                    /**
+                     * 判断参数 IdCardNumber 是否已赋值
+                     * @return IdCardNumber 是否已赋值
+                     */
+                    bool IdCardNumberHasBeenSet() const;
+
+                    /**
+                     * 获取文化程度
+                     * @return EducationDegree 文化程度
+                     */
+                    std::string GetEducationDegree() const;
+
+                    /**
+                     * 判断参数 EducationDegree 是否已赋值
+                     * @return EducationDegree 是否已赋值
+                     */
+                    bool EducationDegreeHasBeenSet() const;
+
+                    /**
+                     * 获取服务处所
+                     * @return ServicePlace 服务处所
+                     */
+                    std::string GetServicePlace() const;
+
+                    /**
+                     * 判断参数 ServicePlace 是否已赋值
+                     * @return ServicePlace 是否已赋值
+                     */
+                    bool ServicePlaceHasBeenSet() const;
+
+                    /**
+                     * 获取户别
+                     * @return Household 户别
+                     */
+                    std::string GetHousehold() const;
+
+                    /**
+                     * 判断参数 Household 是否已赋值
+                     * @return Household 是否已赋值
+                     */
+                    bool HouseholdHasBeenSet() const;
+
+                    /**
+                     * 获取住址
+                     * @return Address 住址
+                     */
+                    std::string GetAddress() const;
+
+                    /**
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
+                     */
+                    bool AddressHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 户号
+                     */
+                    std::string m_householdNumber;
+                    bool m_householdNumberHasBeenSet;
+
+                    /**
+                     * 姓名
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 性别
+                     */
+                    std::string m_sex;
+                    bool m_sexHasBeenSet;
+
+                    /**
+                     * 出生地
+                     */
+                    std::string m_birthPlace;
+                    bool m_birthPlaceHasBeenSet;
+
+                    /**
+                     * 民族
+                     */
+                    std::string m_nation;
+                    bool m_nationHasBeenSet;
+
+                    /**
+                     * 籍贯
+                     */
+                    std::string m_nativePlace;
+                    bool m_nativePlaceHasBeenSet;
+
+                    /**
+                     * 出生日期
+                     */
+                    std::string m_birthDate;
+                    bool m_birthDateHasBeenSet;
+
+                    /**
+                     * 公民身份证件编号
+                     */
+                    std::string m_idCardNumber;
+                    bool m_idCardNumberHasBeenSet;
+
+                    /**
+                     * 文化程度
+                     */
+                    std::string m_educationDegree;
+                    bool m_educationDegreeHasBeenSet;
+
+                    /**
+                     * 服务处所
+                     */
+                    std::string m_servicePlace;
+                    bool m_servicePlaceHasBeenSet;
+
+                    /**
+                     * 户别
+                     */
+                    std::string m_household;
+                    bool m_householdHasBeenSet;
+
+                    /**
+                     * 住址
+                     */
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_RESIDENCEBOOKLETOCRRESPONSE_H_

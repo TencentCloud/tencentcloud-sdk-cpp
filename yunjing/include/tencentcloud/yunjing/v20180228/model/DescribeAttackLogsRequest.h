@@ -83,9 +83,11 @@ namespace TencentCloud
                      * 获取过滤条件。
 <li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
+<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月["2019-11-17", "2019-12-17"]</li>
                      * @return Filters 过滤条件。
 <li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
+<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月["2019-11-17", "2019-12-17"]</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -93,9 +95,11 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
+<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月["2019-11-17", "2019-12-17"]</li>
                      * @param Filters 过滤条件。
 <li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
+<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月["2019-11-17", "2019-12-17"]</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -123,6 +127,7 @@ namespace TencentCloud
                      * 过滤条件。
 <li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>
 <li>MachineIp - String - 是否必填：否 - 主机内网IP</li>
+<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月["2019-11-17", "2019-12-17"]</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

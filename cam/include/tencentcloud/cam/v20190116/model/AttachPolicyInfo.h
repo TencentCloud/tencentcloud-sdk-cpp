@@ -240,6 +240,28 @@ namespace TencentCloud
                      */
                     bool OperateUinTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否已下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Deactived 是否已下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDeactived() const;
+
+                    /**
+                     * 设置是否已下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Deactived 是否已下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeactived(const uint64_t& _deactived);
+
+                    /**
+                     * 判断参数 Deactived 是否已赋值
+                     * @return Deactived 是否已赋值
+                     */
+                    bool DeactivedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +325,13 @@ namespace TencentCloud
                      */
                     uint64_t m_operateUinType;
                     bool m_operateUinTypeHasBeenSet;
+
+                    /**
+                     * 是否已下线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_deactived;
+                    bool m_deactivedHasBeenSet;
 
                 };
             }

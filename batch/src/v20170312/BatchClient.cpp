@@ -556,6 +556,49 @@ BatchClient::DescribeComputeEnvsOutcomeCallable BatchClient::DescribeComputeEnvs
     return task->get_future();
 }
 
+BatchClient::DescribeCpmOsInfoOutcome BatchClient::DescribeCpmOsInfo(const DescribeCpmOsInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCpmOsInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCpmOsInfoResponse rsp = DescribeCpmOsInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCpmOsInfoOutcome(rsp);
+        else
+            return DescribeCpmOsInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCpmOsInfoOutcome(outcome.GetError());
+    }
+}
+
+void BatchClient::DescribeCpmOsInfoAsync(const DescribeCpmOsInfoRequest& request, const DescribeCpmOsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCpmOsInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BatchClient::DescribeCpmOsInfoOutcomeCallable BatchClient::DescribeCpmOsInfoCallable(const DescribeCpmOsInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCpmOsInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCpmOsInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BatchClient::DescribeCvmZoneInstanceConfigInfosOutcome BatchClient::DescribeCvmZoneInstanceConfigInfos(const DescribeCvmZoneInstanceConfigInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCvmZoneInstanceConfigInfos");

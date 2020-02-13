@@ -534,29 +534,17 @@ namespace TencentCloud
                     bool LatestOperationHasBeenSet() const;
 
                     /**
-                     * 获取实例的最新操作状态。取值范围：<br>
-<li>SUCCESS：表示操作成功<br>
-<li>OPERATING：表示操作执行中<br>
-<li>FAILED：表示操作失败
+                     * 获取实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestOperationState 实例的最新操作状态。取值范围：<br>
-<li>SUCCESS：表示操作成功<br>
-<li>OPERATING：表示操作执行中<br>
-<li>FAILED：表示操作失败
+                     * @return LatestOperationState 实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
-                     * 设置实例的最新操作状态。取值范围：<br>
-<li>SUCCESS：表示操作成功<br>
-<li>OPERATING：表示操作执行中<br>
-<li>FAILED：表示操作失败
+                     * 设置实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LatestOperationState 实例的最新操作状态。取值范围：<br>
-<li>SUCCESS：表示操作成功<br>
-<li>OPERATING：表示操作执行中<br>
-<li>FAILED：表示操作失败
+                     * @param LatestOperationState 实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
@@ -751,10 +739,7 @@ namespace TencentCloud
                     bool m_latestOperationHasBeenSet;
 
                     /**
-                     * 实例的最新操作状态。取值范围：<br>
-<li>SUCCESS：表示操作成功<br>
-<li>OPERATING：表示操作执行中<br>
-<li>FAILED：表示操作失败
+                     * 实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationState;

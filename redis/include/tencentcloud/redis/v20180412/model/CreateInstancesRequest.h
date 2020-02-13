@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所属的可用区id
-                     * @return ZoneId 实例所属的可用区id
+                     * 获取实例所属的可用区ID
+                     * @return ZoneId 实例所属的可用区ID
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置实例所属的可用区id
-                     * @param ZoneId 实例所属的可用区id
+                     * 设置实例所属的可用区ID
+                     * @param ZoneId 实例所属的可用区ID
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
@@ -259,14 +259,14 @@ namespace TencentCloud
                     bool SecurityGroupIdListHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义的端口 不填则默认为6379
-                     * @return VPort 用户自定义的端口 不填则默认为6379
+                     * 获取用户自定义的端口 不填则默认为6379，范围[1024,65535]
+                     * @return VPort 用户自定义的端口 不填则默认为6379，范围[1024,65535]
                      */
                     uint64_t GetVPort() const;
 
                     /**
-                     * 设置用户自定义的端口 不填则默认为6379
-                     * @param VPort 用户自定义的端口 不填则默认为6379
+                     * 设置用户自定义的端口 不填则默认为6379，范围[1024,65535]
+                     * @param VPort 用户自定义的端口 不填则默认为6379，范围[1024,65535]
                      */
                     void SetVPort(const uint64_t& _vPort);
 
@@ -369,7 +369,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例所属的可用区id
+                     * 实例所属的可用区ID
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -441,7 +441,7 @@ namespace TencentCloud
                     bool m_securityGroupIdListHasBeenSet;
 
                     /**
-                     * 用户自定义的端口 不填则默认为6379
+                     * 用户自定义的端口 不填则默认为6379，范围[1024,65535]
                      */
                     uint64_t m_vPort;
                     bool m_vPortHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了了实例的计费模式
+                * 描述了实例的计费模式
                 */
                 class InstanceChargePrepaid : public AbstractModel
                 {

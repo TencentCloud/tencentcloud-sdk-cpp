@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取分页偏移量。
+                     * @return Offset 分页偏移量。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * 设置分页偏移量。
+                     * @param Offset 分页偏移量。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页返回多少个标签。
-                     * @return Limit 每页返回多少个标签。
+                     * 获取分页大小。
+                     * @return Limit 分页大小。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页返回多少个标签。
-                     * @param Limit 每页返回多少个标签。
+                     * 设置分页大小。
+                     * @param Limit 分页大小。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 偏移量。
+                     * 分页偏移量。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页返回多少个标签。
+                     * 分页大小。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

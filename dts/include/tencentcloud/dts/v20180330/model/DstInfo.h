@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标实例Id，如cdb-jd92ijd8
-                     * @return InstanceId 目标实例Id，如cdb-jd92ijd8
+                     * 获取目标实例ID，如cdb-jd92ijd8
+                     * @return InstanceId 目标实例ID，如cdb-jd92ijd8
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置目标实例Id，如cdb-jd92ijd8
-                     * @param InstanceId 目标实例Id，如cdb-jd92ijd8
+                     * 设置目标实例ID，如cdb-jd92ijd8
+                     * @param InstanceId 目标实例ID，如cdb-jd92ijd8
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -139,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标实例Id，如cdb-jd92ijd8
+                     * 目标实例ID，如cdb-jd92ijd8
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -30,6 +30,7 @@ ProcessMediaByProcedureRequest::ProcessMediaByProcedureRequest() :
     m_tasksNotifyModeHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_extInfoHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -87,6 +88,14 @@ string ProcessMediaByProcedureRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -199,6 +208,22 @@ void ProcessMediaByProcedureRequest::SetSessionId(const string& _sessionId)
 bool ProcessMediaByProcedureRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string ProcessMediaByProcedureRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void ProcessMediaByProcedureRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool ProcessMediaByProcedureRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 uint64_t ProcessMediaByProcedureRequest::GetSubAppId() const

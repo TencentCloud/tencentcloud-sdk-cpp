@@ -25,7 +25,8 @@ Placement::Placement() :
     m_zoneHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_hostIdsHasBeenSet(false),
-    m_hostIpsHasBeenSet(false)
+    m_hostIpsHasBeenSet(false),
+    m_hostIdHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome Placement::Deserialize(const Value &value)
         m_hostIpsHasBeenSet = true;
     }
 
+    if (value.HasMember("HostId") && !value["HostId"].IsNull())
+    {
+        if (!value["HostId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Placement.HostId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostId = string(value["HostId"].GetString());
+        m_hostIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void Placement::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_hostIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hostId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void Placement::SetHostIps(const vector<string>& _hostIps)
 bool Placement::HostIpsHasBeenSet() const
 {
     return m_hostIpsHasBeenSet;
+}
+
+string Placement::GetHostId() const
+{
+    return m_hostId;
+}
+
+void Placement::SetHostId(const string& _hostId)
+{
+    m_hostId = _hostId;
+    m_hostIdHasBeenSet = true;
+}
+
+bool Placement::HostIdHasBeenSet() const
+{
+    return m_hostIdHasBeenSet;
 }
 

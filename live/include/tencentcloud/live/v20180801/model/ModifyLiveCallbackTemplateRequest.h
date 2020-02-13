@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool PornCensorshipNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取回调key，回调URL公用，鉴权回调说明详见回调格式文档
-                     * @return CallbackKey 回调key，回调URL公用，鉴权回调说明详见回调格式文档
+                     * 获取回调key，回调URL公用，鉴权回调说明详见回调格式文档。
+                     * @return CallbackKey 回调key，回调URL公用，鉴权回调说明详见回调格式文档。
                      */
                     std::string GetCallbackKey() const;
 
                     /**
-                     * 设置回调key，回调URL公用，鉴权回调说明详见回调格式文档
-                     * @param CallbackKey 回调key，回调URL公用，鉴权回调说明详见回调格式文档
+                     * 设置回调key，回调URL公用，鉴权回调说明详见回调格式文档。
+                     * @param CallbackKey 回调key，回调URL公用，鉴权回调说明详见回调格式文档。
                      */
                     void SetCallbackKey(const std::string& _callbackKey);
 
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_pornCensorshipNotifyUrlHasBeenSet;
 
                     /**
-                     * 回调key，回调URL公用，鉴权回调说明详见回调格式文档
+                     * 回调key，回调URL公用，鉴权回调说明详见回调格式文档。
                      */
                     std::string m_callbackKey;
                     bool m_callbackKeyHasBeenSet;

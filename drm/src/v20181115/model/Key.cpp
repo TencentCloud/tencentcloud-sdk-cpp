@@ -25,7 +25,8 @@ Key::Key() :
     m_trackHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_ivHasBeenSet(false)
+    m_ivHasBeenSet(false),
+    m_insertTimestampHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome Key::Deserialize(const Value &value)
         m_ivHasBeenSet = true;
     }
 
+    if (value.HasMember("InsertTimestamp") && !value["InsertTimestamp"].IsNull())
+    {
+        if (!value["InsertTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Key.InsertTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_insertTimestamp = value["InsertTimestamp"].GetUint64();
+        m_insertTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void Key::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "Iv";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_iv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_insertTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InsertTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_insertTimestamp, allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void Key::SetIv(const string& _iv)
 bool Key::IvHasBeenSet() const
 {
     return m_ivHasBeenSet;
+}
+
+uint64_t Key::GetInsertTimestamp() const
+{
+    return m_insertTimestamp;
+}
+
+void Key::SetInsertTimestamp(const uint64_t& _insertTimestamp)
+{
+    m_insertTimestamp = _insertTimestamp;
+    m_insertTimestampHasBeenSet = true;
+}
+
+bool Key::InsertTimestampHasBeenSet() const
+{
+    return m_insertTimestampHasBeenSet;
 }
 

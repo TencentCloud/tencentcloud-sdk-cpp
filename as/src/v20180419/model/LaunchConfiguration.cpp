@@ -45,7 +45,9 @@ LaunchConfiguration::LaunchConfiguration() :
     m_updatedTimeHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
     m_lastOperationInstanceTypesCheckPolicyHasBeenSet(false),
-    m_hostNameSettingsHasBeenSet(false)
+    m_hostNameSettingsHasBeenSet(false),
+    m_instanceNameSettingsHasBeenSet(false),
+    m_instanceChargePrepaidHasBeenSet(false)
 {
 }
 
@@ -372,6 +374,43 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const Value &value)
         m_hostNameSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNameSettings") && !value["InstanceNameSettings"].IsNull())
+    {
+        if (!value["InstanceNameSettings"].IsArray())
+            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceNameSettings` is not array type"));
+
+        const Value &tmpValue = value["InstanceNameSettings"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceNameSettings item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceNameSettings.push_back(item);
+        }
+        m_instanceNameSettingsHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceChargePrepaid") && !value["InstanceChargePrepaid"].IsNull())
+    {
+        if (!value["InstanceChargePrepaid"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceChargePrepaid` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceChargePrepaid.Deserialize(value["InstanceChargePrepaid"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceChargePrepaidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -606,6 +645,30 @@ void LaunchConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_hostNameSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceNameSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceNameSettings.begin(); itr != m_instanceNameSettings.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceChargePrepaidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceChargePrepaid.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -993,5 +1056,37 @@ void LaunchConfiguration::SetHostNameSettings(const HostNameSettings& _hostNameS
 bool LaunchConfiguration::HostNameSettingsHasBeenSet() const
 {
     return m_hostNameSettingsHasBeenSet;
+}
+
+vector<InstanceNameSettings> LaunchConfiguration::GetInstanceNameSettings() const
+{
+    return m_instanceNameSettings;
+}
+
+void LaunchConfiguration::SetInstanceNameSettings(const vector<InstanceNameSettings>& _instanceNameSettings)
+{
+    m_instanceNameSettings = _instanceNameSettings;
+    m_instanceNameSettingsHasBeenSet = true;
+}
+
+bool LaunchConfiguration::InstanceNameSettingsHasBeenSet() const
+{
+    return m_instanceNameSettingsHasBeenSet;
+}
+
+InstanceChargePrepaid LaunchConfiguration::GetInstanceChargePrepaid() const
+{
+    return m_instanceChargePrepaid;
+}
+
+void LaunchConfiguration::SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid)
+{
+    m_instanceChargePrepaid = _instanceChargePrepaid;
+    m_instanceChargePrepaidHasBeenSet = true;
+}
+
+bool LaunchConfiguration::InstanceChargePrepaidHasBeenSet() const
+{
+    return m_instanceChargePrepaidHasBeenSet;
 }
 

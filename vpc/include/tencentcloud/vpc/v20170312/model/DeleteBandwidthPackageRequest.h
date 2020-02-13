@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待删除带宽包bwpId
-                     * @return BandwidthPackageId 待删除带宽包bwpId
+                     * 获取待删除带宽包唯一ID
+                     * @return BandwidthPackageId 待删除带宽包唯一ID
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
-                     * 设置待删除带宽包bwpId
-                     * @param BandwidthPackageId 待删除带宽包bwpId
+                     * 设置待删除带宽包唯一ID
+                     * @param BandwidthPackageId 待删除带宽包唯一ID
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待删除带宽包bwpId
+                     * 待删除带宽包唯一ID
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;

@@ -32,7 +32,11 @@ RoGroup::RoGroup() :
     m_weightHasBeenSet(false),
     m_roInstancesHasBeenSet(false),
     m_vipHasBeenSet(false),
-    m_vportHasBeenSet(false)
+    m_vportHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false),
+    m_uniqSubnetIdHasBeenSet(false),
+    m_roGroupRegionHasBeenSet(false),
+    m_roGroupZoneHasBeenSet(false)
 {
 }
 
@@ -161,6 +165,46 @@ CoreInternalOutcome RoGroup::Deserialize(const Value &value)
         m_vportHasBeenSet = true;
     }
 
+    if (value.HasMember("UniqVpcId") && !value["UniqVpcId"].IsNull())
+    {
+        if (!value["UniqVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RoGroup.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqVpcId = string(value["UniqVpcId"].GetString());
+        m_uniqVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UniqSubnetId") && !value["UniqSubnetId"].IsNull())
+    {
+        if (!value["UniqSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RoGroup.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqSubnetId = string(value["UniqSubnetId"].GetString());
+        m_uniqSubnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoGroupRegion") && !value["RoGroupRegion"].IsNull())
+    {
+        if (!value["RoGroupRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RoGroup.RoGroupRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roGroupRegion = string(value["RoGroupRegion"].GetString());
+        m_roGroupRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoGroupZone") && !value["RoGroupZone"].IsNull())
+    {
+        if (!value["RoGroupZone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RoGroup.RoGroupZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roGroupZone = string(value["RoGroupZone"].GetString());
+        m_roGroupZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +305,38 @@ void RoGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "Vport";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vport, allocator);
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqSubnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UniqSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roGroupRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoGroupRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_roGroupRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roGroupZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoGroupZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_roGroupZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -440,5 +516,69 @@ void RoGroup::SetVport(const int64_t& _vport)
 bool RoGroup::VportHasBeenSet() const
 {
     return m_vportHasBeenSet;
+}
+
+string RoGroup::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void RoGroup::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool RoGroup::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
+}
+
+string RoGroup::GetUniqSubnetId() const
+{
+    return m_uniqSubnetId;
+}
+
+void RoGroup::SetUniqSubnetId(const string& _uniqSubnetId)
+{
+    m_uniqSubnetId = _uniqSubnetId;
+    m_uniqSubnetIdHasBeenSet = true;
+}
+
+bool RoGroup::UniqSubnetIdHasBeenSet() const
+{
+    return m_uniqSubnetIdHasBeenSet;
+}
+
+string RoGroup::GetRoGroupRegion() const
+{
+    return m_roGroupRegion;
+}
+
+void RoGroup::SetRoGroupRegion(const string& _roGroupRegion)
+{
+    m_roGroupRegion = _roGroupRegion;
+    m_roGroupRegionHasBeenSet = true;
+}
+
+bool RoGroup::RoGroupRegionHasBeenSet() const
+{
+    return m_roGroupRegionHasBeenSet;
+}
+
+string RoGroup::GetRoGroupZone() const
+{
+    return m_roGroupZone;
+}
+
+void RoGroup::SetRoGroupZone(const string& _roGroupZone)
+{
+    m_roGroupZone = _roGroupZone;
+    m_roGroupZoneHasBeenSet = true;
+}
+
+bool RoGroup::RoGroupZoneHasBeenSet() const
+{
+    return m_roGroupZoneHasBeenSet;
 }
 

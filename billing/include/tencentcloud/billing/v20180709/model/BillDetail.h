@@ -394,6 +394,72 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessCode 商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBusinessCode() const;
+
+                    /**
+                     * 设置商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BusinessCode 商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusinessCode(const std::string& _businessCode);
+
+                    /**
+                     * 判断参数 BusinessCode 是否已赋值
+                     * @return BusinessCode 是否已赋值
+                     */
+                    bool BusinessCodeHasBeenSet() const;
+
+                    /**
+                     * 获取子商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCode 子商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置子商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductCode 子商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取交易类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActionType 交易类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetActionType() const;
+
+                    /**
+                     * 设置交易类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ActionType 交易类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetActionType(const std::string& _actionType);
+
+                    /**
+                     * 判断参数 ActionType 是否已赋值
+                     * @return ActionType 是否已赋值
+                     */
+                    bool ActionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,6 +576,27 @@ namespace TencentCloud
                      */
                     std::vector<BillTagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_businessCode;
+                    bool m_businessCodeHasBeenSet;
+
+                    /**
+                     * 子商品名称代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 交易类型代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_actionType;
+                    bool m_actionTypeHasBeenSet;
 
                 };
             }

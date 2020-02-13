@@ -102,14 +102,22 @@ namespace TencentCloud
                     bool PolygonHasBeenSet() const;
 
                     /**
-                     * 获取此字段为扩展字段
-                     * @return AdvancedInfo 此字段为扩展字段
+                     * 获取此字段为扩展字段。
+能返回文本行的段落信息，例如：{\"Parag\":{\"ParagNo\":2}}，
+其中ParagNo为段落行，从1开始。
+                     * @return AdvancedInfo 此字段为扩展字段。
+能返回文本行的段落信息，例如：{\"Parag\":{\"ParagNo\":2}}，
+其中ParagNo为段落行，从1开始。
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
-                     * 设置此字段为扩展字段
-                     * @param AdvancedInfo 此字段为扩展字段
+                     * 设置此字段为扩展字段。
+能返回文本行的段落信息，例如：{\"Parag\":{\"ParagNo\":2}}，
+其中ParagNo为段落行，从1开始。
+                     * @param AdvancedInfo 此字段为扩展字段。
+能返回文本行的段落信息，例如：{\"Parag\":{\"ParagNo\":2}}，
+其中ParagNo为段落行，从1开始。
                      */
                     void SetAdvancedInfo(const std::string& _advancedInfo);
 
@@ -140,7 +148,9 @@ namespace TencentCloud
                     bool m_polygonHasBeenSet;
 
                     /**
-                     * 此字段为扩展字段
+                     * 此字段为扩展字段。
+能返回文本行的段落信息，例如：{\"Parag\":{\"ParagNo\":2}}，
+其中ParagNo为段落行，从1开始。
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;

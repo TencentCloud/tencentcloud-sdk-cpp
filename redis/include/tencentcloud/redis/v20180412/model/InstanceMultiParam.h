@@ -158,13 +158,13 @@ namespace TencentCloud
                      * 获取参数说明
                      * @return EnumValue 参数说明
                      */
-                    std::string GetEnumValue() const;
+                    std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置参数说明
                      * @param EnumValue 参数说明
                      */
-                    void SetEnumValue(const std::string& _enumValue);
+                    void SetEnumValue(const std::vector<std::string>& _enumValue);
 
                     /**
                      * 判断参数 EnumValue 是否已赋值
@@ -231,7 +231,7 @@ namespace TencentCloud
                     /**
                      * 参数说明
                      */
-                    std::string m_enumValue;
+                    std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
 
                     /**

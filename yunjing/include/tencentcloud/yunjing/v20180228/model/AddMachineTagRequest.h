@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云主机ID
-                     * @return Quuid 云主机ID
+                     * 获取云服务器ID
+                     * @return Quuid 云服务器ID
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置云主机ID
-                     * @param Quuid 云主机ID
+                     * 设置云服务器ID
+                     * @param Quuid 云服务器ID
                      */
                     void SetQuuid(const std::string& _quuid);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TagIdHasBeenSet() const;
 
                     /**
-                     * 获取主机地区
-                     * @return MRegion 主机地区
+                     * 获取云服务器地区
+                     * @return MRegion 云服务器地区
                      */
                     std::string GetMRegion() const;
 
                     /**
-                     * 设置主机地区
-                     * @param MRegion 主机地区
+                     * 设置云服务器地区
+                     * @param MRegion 云服务器地区
                      */
                     void SetMRegion(const std::string& _mRegion);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool MRegionHasBeenSet() const;
 
                     /**
-                     * 获取主机地区类型(CVM|BM)
-                     * @return MArea 主机地区类型(CVM|BM)
+                     * 获取云服务器类型(CVM|BM)
+                     * @return MArea 云服务器类型(CVM|BM)
                      */
                     std::string GetMArea() const;
 
                     /**
-                     * 设置主机地区类型(CVM|BM)
-                     * @param MArea 主机地区类型(CVM|BM)
+                     * 设置云服务器类型(CVM|BM)
+                     * @param MArea 云服务器类型(CVM|BM)
                      */
                     void SetMArea(const std::string& _mArea);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云主机ID
+                     * 云服务器ID
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
@@ -129,13 +129,13 @@ namespace TencentCloud
                     bool m_tagIdHasBeenSet;
 
                     /**
-                     * 主机地区
+                     * 云服务器地区
                      */
                     std::string m_mRegion;
                     bool m_mRegionHasBeenSet;
 
                     /**
-                     * 主机地区类型(CVM|BM)
+                     * 云服务器类型(CVM|BM)
                      */
                     std::string m_mArea;
                     bool m_mAreaHasBeenSet;

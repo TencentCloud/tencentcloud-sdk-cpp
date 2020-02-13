@@ -344,6 +344,24 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * @return EniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     */
+                    uint64_t GetEniType() const;
+
+                    /**
+                     * 设置网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * @param EniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     */
+                    void SetEniType(const uint64_t& _eniType);
+
+                    /**
+                     * 判断参数 EniType 是否已赋值
+                     * @return EniType 是否已赋值
+                     */
+                    bool EniTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -441,6 +459,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     */
+                    uint64_t m_eniType;
+                    bool m_eniTypeHasBeenSet;
 
                 };
             }

@@ -139,20 +139,20 @@ namespace TencentCloud
                     /**
                      * 获取组件类型。
 <li>SYSTEM：系统组件</li>
-<li>WEB：WEB组件</li>
+<li>WEB：Web组件</li>
                      * @return ComponentType 组件类型。
 <li>SYSTEM：系统组件</li>
-<li>WEB：WEB组件</li>
+<li>WEB：Web组件</li>
                      */
                     std::string GetComponentType() const;
 
                     /**
                      * 设置组件类型。
 <li>SYSTEM：系统组件</li>
-<li>WEB：WEB组件</li>
+<li>WEB：Web组件</li>
                      * @param ComponentType 组件类型。
 <li>SYSTEM：系统组件</li>
-<li>WEB：WEB组件</li>
+<li>WEB：Web组件</li>
                      */
                     void SetComponentType(const std::string& _componentType);
 
@@ -233,7 +233,7 @@ namespace TencentCloud
                     /**
                      * 组件类型。
 <li>SYSTEM：系统组件</li>
-<li>WEB：WEB组件</li>
+<li>WEB：Web组件</li>
                      */
                     std::string m_componentType;
                     bool m_componentTypeHasBeenSet;

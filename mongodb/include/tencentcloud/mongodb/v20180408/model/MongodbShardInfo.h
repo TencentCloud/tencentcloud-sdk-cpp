@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool SecondaryNumHasBeenSet() const;
 
                     /**
-                     * 获取分片物理id
-                     * @return RealReplicaSetId 分片物理id
+                     * 获取分片物理ID
+                     * @return RealReplicaSetId 分片物理ID
                      */
                     std::string GetRealReplicaSetId() const;
 
                     /**
-                     * 设置分片物理id
-                     * @param RealReplicaSetId 分片物理id
+                     * 设置分片物理ID
+                     * @param RealReplicaSetId 分片物理ID
                      */
                     void SetRealReplicaSetId(const std::string& _realReplicaSetId);
 
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_secondaryNumHasBeenSet;
 
                     /**
-                     * 分片物理id
+                     * 分片物理ID
                      */
                     std::string m_realReplicaSetId;
                     bool m_realReplicaSetIdHasBeenSet;

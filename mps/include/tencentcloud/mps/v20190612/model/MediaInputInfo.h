@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理输入对象信息。
+                * 视频处理的输入对象信息。
                 */
                 class MediaInputInfo : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频处理对象的类型，现在仅支持 COS。
-                     * @return Type 视频处理对象的类型，现在仅支持 COS。
+                     * 获取输入来源对象的类型，现在仅支持 COS。
+                     * @return Type 输入来源对象的类型，现在仅支持 COS。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置视频处理对象的类型，现在仅支持 COS。
-                     * @param Type 视频处理对象的类型，现在仅支持 COS。
+                     * 设置输入来源对象的类型，现在仅支持 COS。
+                     * @param Type 输入来源对象的类型，现在仅支持 COS。
                      */
                     void SetType(const std::string& _type);
 
@@ -86,7 +86,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频处理对象的类型，现在仅支持 COS。
+                     * 输入来源对象的类型，现在仅支持 COS。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

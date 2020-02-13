@@ -21,7 +21,6 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iotcloud/v20180614/model/Filter.h>
 
 
 namespace TencentCloud
@@ -44,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页偏移，Offset从0开始
-                     * @return Offset 分页偏移，Offset从0开始
+                     * 获取偏移量，Offset从0开始
+                     * @return Offset 偏移量，Offset从0开始
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移，Offset从0开始
-                     * @param Offset 分页偏移，Offset从0开始
+                     * 设置偏移量，Offset从0开始
+                     * @param Offset 偏移量，Offset从0开始
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -79,28 +78,10 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
-                    /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
-                     */
-                    std::vector<Filter> GetFilters() const;
-
-                    /**
-                     * 设置过滤条件
-                     * @param Filters 过滤条件
-                     */
-                    void SetFilters(const std::vector<Filter>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     */
-                    bool FiltersHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 分页偏移，Offset从0开始
+                     * 偏移量，Offset从0开始
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -110,12 +91,6 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 过滤条件
-                     */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
 
                 };
             }

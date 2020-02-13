@@ -26,7 +26,9 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
     m_dockerGraphPathHasBeenSet(false),
     m_userScriptHasBeenSet(false),
     m_unschedulableHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_dataDisksHasBeenSet(false),
+    m_extraArgsHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,43 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
+    {
+        if (!value["DataDisks"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.DataDisks` is not array type"));
+
+        const Value &tmpValue = value["DataDisks"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataDisk item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataDisks.push_back(item);
+        }
+        m_dataDisksHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraArgs") && !value["ExtraArgs"].IsNull())
+    {
+        if (!value["ExtraArgs"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.ExtraArgs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraArgs.Deserialize(value["ExtraArgs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraArgsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,6 +186,30 @@ void InstanceAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorTyp
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dataDisksHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_extraArgsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -230,5 +293,37 @@ void InstanceAdvancedSettings::SetLabels(const vector<Label>& _labels)
 bool InstanceAdvancedSettings::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+vector<DataDisk> InstanceAdvancedSettings::GetDataDisks() const
+{
+    return m_dataDisks;
+}
+
+void InstanceAdvancedSettings::SetDataDisks(const vector<DataDisk>& _dataDisks)
+{
+    m_dataDisks = _dataDisks;
+    m_dataDisksHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::DataDisksHasBeenSet() const
+{
+    return m_dataDisksHasBeenSet;
+}
+
+InstanceExtraArgs InstanceAdvancedSettings::GetExtraArgs() const
+{
+    return m_extraArgs;
+}
+
+void InstanceAdvancedSettings::SetExtraArgs(const InstanceExtraArgs& _extraArgs)
+{
+    m_extraArgs = _extraArgs;
+    m_extraArgsHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::ExtraArgsHasBeenSet() const
+{
+    return m_extraArgsHasBeenSet;
 }
 

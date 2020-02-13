@@ -32,7 +32,9 @@ DescribeComputeEnvResponse::DescribeComputeEnvResponse() :
     m_computeNodeSetHasBeenSet(false),
     m_computeNodeMetricsHasBeenSet(false),
     m_desiredComputeNodeCountHasBeenSet(false),
-    m_envTypeHasBeenSet(false)
+    m_envTypeHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_nextActionHasBeenSet(false)
 {
 }
 
@@ -174,6 +176,26 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
         m_envTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceType") && !rsp["ResourceType"].IsNull())
+    {
+        if (!rsp["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(rsp["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NextAction") && !rsp["NextAction"].IsNull())
+    {
+        if (!rsp["NextAction"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NextAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextAction = string(rsp["NextAction"].GetString());
+        m_nextActionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +279,26 @@ string DescribeComputeEnvResponse::GetEnvType() const
 bool DescribeComputeEnvResponse::EnvTypeHasBeenSet() const
 {
     return m_envTypeHasBeenSet;
+}
+
+string DescribeComputeEnvResponse::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+bool DescribeComputeEnvResponse::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+string DescribeComputeEnvResponse::GetNextAction() const
+{
+    return m_nextAction;
+}
+
+bool DescribeComputeEnvResponse::NextActionHasBeenSet() const
+{
+    return m_nextActionHasBeenSet;
 }
 
 

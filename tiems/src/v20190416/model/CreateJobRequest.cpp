@@ -25,17 +25,18 @@ using namespace std;
 
 CreateJobRequest::CreateJobRequest() :
     m_nameHasBeenSet(false),
-    m_workerCountHasBeenSet(false),
-    m_configIdHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_clusterHasBeenSet(false),
     m_predictInputHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_resourceGroupIdHasBeenSet(false),
+    m_workerCountHasBeenSet(false),
+    m_configIdHasBeenSet(false),
     m_gpuHasBeenSet(false),
     m_gpuMemoryHasBeenSet(false),
-    m_gpuTypeHasBeenSet(false)
+    m_gpuTypeHasBeenSet(false),
+    m_quantizationInputHasBeenSet(false)
 {
 }
 
@@ -54,20 +55,12 @@ string CreateJobRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_workerCountHasBeenSet)
+    if (m_resourceGroupIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "WorkerCount";
+        string key = "ResourceGroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_workerCount, allocator);
-    }
-
-    if (m_configIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ConfigId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_configId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuHasBeenSet)
@@ -111,12 +104,20 @@ string CreateJobRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_resourceGroupIdHasBeenSet)
+    if (m_workerCountHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ResourceGroupId";
+        string key = "WorkerCount";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_workerCount, allocator);
+    }
+
+    if (m_configIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_configId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gpuHasBeenSet)
@@ -143,6 +144,15 @@ string CreateJobRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_gpuType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_quantizationInputHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QuantizationInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_quantizationInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -167,36 +177,20 @@ bool CreateJobRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-uint64_t CreateJobRequest::GetWorkerCount() const
+string CreateJobRequest::GetResourceGroupId() const
 {
-    return m_workerCount;
+    return m_resourceGroupId;
 }
 
-void CreateJobRequest::SetWorkerCount(const uint64_t& _workerCount)
+void CreateJobRequest::SetResourceGroupId(const string& _resourceGroupId)
 {
-    m_workerCount = _workerCount;
-    m_workerCountHasBeenSet = true;
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
 }
 
-bool CreateJobRequest::WorkerCountHasBeenSet() const
+bool CreateJobRequest::ResourceGroupIdHasBeenSet() const
 {
-    return m_workerCountHasBeenSet;
-}
-
-string CreateJobRequest::GetConfigId() const
-{
-    return m_configId;
-}
-
-void CreateJobRequest::SetConfigId(const string& _configId)
-{
-    m_configId = _configId;
-    m_configIdHasBeenSet = true;
-}
-
-bool CreateJobRequest::ConfigIdHasBeenSet() const
-{
-    return m_configIdHasBeenSet;
+    return m_resourceGroupIdHasBeenSet;
 }
 
 uint64_t CreateJobRequest::GetCpu() const
@@ -279,20 +273,36 @@ bool CreateJobRequest::DescriptionHasBeenSet() const
     return m_descriptionHasBeenSet;
 }
 
-string CreateJobRequest::GetResourceGroupId() const
+uint64_t CreateJobRequest::GetWorkerCount() const
 {
-    return m_resourceGroupId;
+    return m_workerCount;
 }
 
-void CreateJobRequest::SetResourceGroupId(const string& _resourceGroupId)
+void CreateJobRequest::SetWorkerCount(const uint64_t& _workerCount)
 {
-    m_resourceGroupId = _resourceGroupId;
-    m_resourceGroupIdHasBeenSet = true;
+    m_workerCount = _workerCount;
+    m_workerCountHasBeenSet = true;
 }
 
-bool CreateJobRequest::ResourceGroupIdHasBeenSet() const
+bool CreateJobRequest::WorkerCountHasBeenSet() const
 {
-    return m_resourceGroupIdHasBeenSet;
+    return m_workerCountHasBeenSet;
+}
+
+string CreateJobRequest::GetConfigId() const
+{
+    return m_configId;
+}
+
+void CreateJobRequest::SetConfigId(const string& _configId)
+{
+    m_configId = _configId;
+    m_configIdHasBeenSet = true;
+}
+
+bool CreateJobRequest::ConfigIdHasBeenSet() const
+{
+    return m_configIdHasBeenSet;
 }
 
 uint64_t CreateJobRequest::GetGpu() const
@@ -341,6 +351,22 @@ void CreateJobRequest::SetGpuType(const string& _gpuType)
 bool CreateJobRequest::GpuTypeHasBeenSet() const
 {
     return m_gpuTypeHasBeenSet;
+}
+
+QuantizationInput CreateJobRequest::GetQuantizationInput() const
+{
+    return m_quantizationInput;
+}
+
+void CreateJobRequest::SetQuantizationInput(const QuantizationInput& _quantizationInput)
+{
+    m_quantizationInput = _quantizationInput;
+    m_quantizationInputHasBeenSet = true;
+}
+
+bool CreateJobRequest::QuantizationInputHasBeenSet() const
+{
+    return m_quantizationInputHasBeenSet;
 }
 
 

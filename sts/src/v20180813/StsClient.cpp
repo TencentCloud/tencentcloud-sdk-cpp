@@ -169,3 +169,46 @@ StsClient::GetFederationTokenOutcomeCallable StsClient::GetFederationTokenCallab
     return task->get_future();
 }
 
+StsClient::QueryApiKeyOutcome StsClient::QueryApiKey(const QueryApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryApiKeyResponse rsp = QueryApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryApiKeyOutcome(rsp);
+        else
+            return QueryApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void StsClient::QueryApiKeyAsync(const QueryApiKeyRequest& request, const QueryApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryApiKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+StsClient::QueryApiKeyOutcomeCallable StsClient::QueryApiKeyCallable(const QueryApiKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryApiKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryApiKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

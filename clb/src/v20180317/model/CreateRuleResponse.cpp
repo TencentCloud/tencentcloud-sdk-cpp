@@ -24,7 +24,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateRuleResponse::CreateRuleResponse()
+CreateRuleResponse::CreateRuleResponse() :
+    m_locationIdsHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,32 @@ CoreInternalOutcome CreateRuleResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("LocationIds") && !rsp["LocationIds"].IsNull())
+    {
+        if (!rsp["LocationIds"].IsArray())
+            return CoreInternalOutcome(Error("response `LocationIds` is not array type"));
+
+        const Value &tmpValue = rsp["LocationIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_locationIds.push_back((*itr).GetString());
+        }
+        m_locationIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<string> CreateRuleResponse::GetLocationIds() const
+{
+    return m_locationIds;
+}
+
+bool CreateRuleResponse::LocationIdsHasBeenSet() const
+{
+    return m_locationIdsHasBeenSet;
+}
 
 

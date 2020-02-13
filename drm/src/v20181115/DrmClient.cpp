@@ -83,6 +83,49 @@ DrmClient::AddFairPlayPemOutcomeCallable DrmClient::AddFairPlayPemCallable(const
     return task->get_future();
 }
 
+DrmClient::CreateEncryptKeysOutcome DrmClient::CreateEncryptKeys(const CreateEncryptKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEncryptKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEncryptKeysResponse rsp = CreateEncryptKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEncryptKeysOutcome(rsp);
+        else
+            return CreateEncryptKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEncryptKeysOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::CreateEncryptKeysAsync(const CreateEncryptKeysRequest& request, const CreateEncryptKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEncryptKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::CreateEncryptKeysOutcomeCallable DrmClient::CreateEncryptKeysCallable(const CreateEncryptKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEncryptKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEncryptKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DrmClient::CreateLicenseOutcome DrmClient::CreateLicense(const CreateLicenseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLicense");
@@ -162,6 +205,49 @@ DrmClient::DeleteFairPlayPemOutcomeCallable DrmClient::DeleteFairPlayPemCallable
         [this, request]()
         {
             return this->DeleteFairPlayPem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DrmClient::DescribeAllKeysOutcome DrmClient::DescribeAllKeys(const DescribeAllKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllKeysResponse rsp = DescribeAllKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllKeysOutcome(rsp);
+        else
+            return DescribeAllKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllKeysOutcome(outcome.GetError());
+    }
+}
+
+void DrmClient::DescribeAllKeysAsync(const DescribeAllKeysRequest& request, const DescribeAllKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DrmClient::DescribeAllKeysOutcomeCallable DrmClient::DescribeAllKeysCallable(const DescribeAllKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllKeys(request);
         }
     );
 

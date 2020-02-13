@@ -254,6 +254,24 @@ MaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要�
                      */
                     bool FaceMatchThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0
+                     * @return NeedPersonInfo 是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0
+                     */
+                    int64_t GetNeedPersonInfo() const;
+
+                    /**
+                     * 设置是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0
+                     * @param NeedPersonInfo 是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0
+                     */
+                    void SetNeedPersonInfo(const int64_t& _needPersonInfo);
+
+                    /**
+                     * 判断参数 NeedPersonInfo 是否已赋值
+                     * @return NeedPersonInfo 是否已赋值
+                     */
+                    bool NeedPersonInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -320,6 +338,12 @@ MaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要�
                      */
                     double m_faceMatchThreshold;
                     bool m_faceMatchThresholdHasBeenSet;
+
+                    /**
+                     * 是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0
+                     */
+                    int64_t m_needPersonInfo;
+                    bool m_needPersonInfoHasBeenSet;
 
                 };
             }

@@ -36,7 +36,9 @@ VpnGateway::VpnGateway() :
     m_isAddressBlockedHasBeenSet(false),
     m_newPurchasePlanHasBeenSet(false),
     m_restrictStateHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_vpnGatewayQuotaSetHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -195,6 +197,36 @@ CoreInternalOutcome VpnGateway::Deserialize(const Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("VpnGatewayQuotaSet") && !value["VpnGatewayQuotaSet"].IsNull())
+    {
+        if (!value["VpnGatewayQuotaSet"].IsArray())
+            return CoreInternalOutcome(Error("response `VpnGateway.VpnGatewayQuotaSet` is not array type"));
+
+        const Value &tmpValue = value["VpnGatewayQuotaSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpnGatewayQuota item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpnGatewayQuotaSet.push_back(item);
+        }
+        m_vpnGatewayQuotaSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpnGateway.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +352,29 @@ void VpnGateway::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpnGatewayQuotaSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpnGatewayQuotaSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpnGatewayQuotaSet.begin(); itr != m_vpnGatewayQuotaSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -563,5 +618,37 @@ void VpnGateway::SetZone(const string& _zone)
 bool VpnGateway::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+vector<VpnGatewayQuota> VpnGateway::GetVpnGatewayQuotaSet() const
+{
+    return m_vpnGatewayQuotaSet;
+}
+
+void VpnGateway::SetVpnGatewayQuotaSet(const vector<VpnGatewayQuota>& _vpnGatewayQuotaSet)
+{
+    m_vpnGatewayQuotaSet = _vpnGatewayQuotaSet;
+    m_vpnGatewayQuotaSetHasBeenSet = true;
+}
+
+bool VpnGateway::VpnGatewayQuotaSetHasBeenSet() const
+{
+    return m_vpnGatewayQuotaSetHasBeenSet;
+}
+
+string VpnGateway::GetVersion() const
+{
+    return m_version;
+}
+
+void VpnGateway::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool VpnGateway::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 

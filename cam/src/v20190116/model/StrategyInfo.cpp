@@ -30,7 +30,8 @@ StrategyInfo::StrategyInfo() :
     m_createModeHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
-    m_isAttachedHasBeenSet(false)
+    m_isAttachedHasBeenSet(false),
+    m_deactivedHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome StrategyInfo::Deserialize(const Value &value)
         m_isAttachedHasBeenSet = true;
     }
 
+    if (value.HasMember("Deactived") && !value["Deactived"].IsNull())
+    {
+        if (!value["Deactived"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `StrategyInfo.Deactived` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deactived = value["Deactived"].GetUint64();
+        m_deactivedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "IsAttached";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAttached, allocator);
+    }
+
+    if (m_deactivedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Deactived";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deactived, allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void StrategyInfo::SetIsAttached(const uint64_t& _isAttached)
 bool StrategyInfo::IsAttachedHasBeenSet() const
 {
     return m_isAttachedHasBeenSet;
+}
+
+uint64_t StrategyInfo::GetDeactived() const
+{
+    return m_deactived;
+}
+
+void StrategyInfo::SetDeactived(const uint64_t& _deactived)
+{
+    m_deactived = _deactived;
+    m_deactivedHasBeenSet = true;
+}
+
+bool StrategyInfo::DeactivedHasBeenSet() const
+{
+    return m_deactivedHasBeenSet;
 }
 

@@ -28,10 +28,12 @@ ModifySampleSnapshotTemplateRequest::ModifySampleSnapshotTemplateRequest() :
     m_nameHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_sampleTypeHasBeenSet(false),
     m_sampleIntervalHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,14 @@ string ModifySampleSnapshotTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_height, allocator);
     }
 
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_sampleTypeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -104,6 +114,14 @@ string ModifySampleSnapshotTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -178,6 +196,22 @@ bool ModifySampleSnapshotTemplateRequest::HeightHasBeenSet() const
     return m_heightHasBeenSet;
 }
 
+string ModifySampleSnapshotTemplateRequest::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void ModifySampleSnapshotTemplateRequest::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool ModifySampleSnapshotTemplateRequest::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
+}
+
 string ModifySampleSnapshotTemplateRequest::GetSampleType() const
 {
     return m_sampleType;
@@ -240,6 +274,22 @@ void ModifySampleSnapshotTemplateRequest::SetComment(const string& _comment)
 bool ModifySampleSnapshotTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string ModifySampleSnapshotTemplateRequest::GetFillType() const
+{
+    return m_fillType;
+}
+
+void ModifySampleSnapshotTemplateRequest::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool ModifySampleSnapshotTemplateRequest::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 
 

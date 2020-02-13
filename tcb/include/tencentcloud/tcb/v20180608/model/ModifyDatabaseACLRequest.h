@@ -79,12 +79,12 @@ namespace TencentCloud
                     bool CollectionNameHasBeenSet() const;
 
                     /**
-                     * 获取权限标签。取值范围：
+                     * 获取权限标签。包含以下取值：
 <li> READONLY：所有用户可读，仅创建者和管理员可写</li>
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
 <li> ADMINONLY：仅管理员可读写</li>
-                     * @return AclTag 权限标签。取值范围：
+                     * @return AclTag 权限标签。包含以下取值：
 <li> READONLY：所有用户可读，仅创建者和管理员可写</li>
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
@@ -93,12 +93,12 @@ namespace TencentCloud
                     std::string GetAclTag() const;
 
                     /**
-                     * 设置权限标签。取值范围：
+                     * 设置权限标签。包含以下取值：
 <li> READONLY：所有用户可读，仅创建者和管理员可写</li>
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
 <li> ADMINONLY：仅管理员可读写</li>
-                     * @param AclTag 权限标签。取值范围：
+                     * @param AclTag 权限标签。包含以下取值：
 <li> READONLY：所有用户可读，仅创建者和管理员可写</li>
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_collectionNameHasBeenSet;
 
                     /**
-                     * 权限标签。取值范围：
+                     * 权限标签。包含以下取值：
 <li> READONLY：所有用户可读，仅创建者和管理员可写</li>
 <li> PRIVATE：仅创建者及管理员可读写</li>
 <li> ADMINWRITE：所有用户可读，仅管理员可写</li>

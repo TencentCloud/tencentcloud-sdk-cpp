@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 ServiceSettings::ServiceSettings() :
-    m_replaceMonitorUnhealthyHasBeenSet(false)
+    m_replaceMonitorUnhealthyHasBeenSet(false),
+    m_scalingModeHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ CoreInternalOutcome ServiceSettings::Deserialize(const Value &value)
         m_replaceMonitorUnhealthyHasBeenSet = true;
     }
 
+    if (value.HasMember("ScalingMode") && !value["ScalingMode"].IsNull())
+    {
+        if (!value["ScalingMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ServiceSettings.ScalingMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scalingMode = string(value["ScalingMode"].GetString());
+        m_scalingModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +65,14 @@ void ServiceSettings::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "ReplaceMonitorUnhealthy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replaceMonitorUnhealthy, allocator);
+    }
+
+    if (m_scalingModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ScalingMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_scalingMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -73,5 +92,21 @@ void ServiceSettings::SetReplaceMonitorUnhealthy(const bool& _replaceMonitorUnhe
 bool ServiceSettings::ReplaceMonitorUnhealthyHasBeenSet() const
 {
     return m_replaceMonitorUnhealthyHasBeenSet;
+}
+
+string ServiceSettings::GetScalingMode() const
+{
+    return m_scalingMode;
+}
+
+void ServiceSettings::SetScalingMode(const string& _scalingMode)
+{
+    m_scalingMode = _scalingMode;
+    m_scalingModeHasBeenSet = true;
+}
+
+bool ServiceSettings::ScalingModeHasBeenSet() const
+{
+    return m_scalingModeHasBeenSet;
 }
 

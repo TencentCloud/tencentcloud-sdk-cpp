@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotcloud/v20180614/model/DeviceTag.h>
+#include <tencentcloud/iotcloud/v20180614/model/DeviceLabel.h>
 
 
 namespace TencentCloud
@@ -449,6 +450,28 @@ namespace TencentCloud
                      */
                     bool EnableStateHasBeenSet() const;
 
+                    /**
+                     * 获取设备标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels 设备标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeviceLabel> GetLabels() const;
+
+                    /**
+                     * 设置设备标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Labels 设备标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLabels(const std::vector<DeviceLabel>& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -582,6 +605,13 @@ namespace TencentCloud
                      */
                     uint64_t m_enableState;
                     bool m_enableStateHasBeenSet;
+
+                    /**
+                     * 设备标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeviceLabel> m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }

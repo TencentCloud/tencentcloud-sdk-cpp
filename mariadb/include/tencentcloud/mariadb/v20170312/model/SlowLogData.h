@@ -352,6 +352,28 @@ namespace TencentCloud
                      */
                     bool UserHasBeenSet() const;
 
+                    /**
+                     * 获取样例Sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExampleSql 样例Sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExampleSql() const;
+
+                    /**
+                     * 设置样例Sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExampleSql 样例Sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExampleSql(const std::string& _exampleSql);
+
+                    /**
+                     * 判断参数 ExampleSql 是否已赋值
+                     * @return ExampleSql 是否已赋值
+                     */
+                    bool ExampleSqlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +477,13 @@ namespace TencentCloud
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
+
+                    /**
+                     * 样例Sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_exampleSql;
+                    bool m_exampleSqlHasBeenSet;
 
                 };
             }

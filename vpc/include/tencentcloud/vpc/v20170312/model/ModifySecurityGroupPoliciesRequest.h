@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool SecurityGroupPolicySetHasBeenSet() const;
 
+                    /**
+                     * 获取排序安全组标识。值为True时，支持安全组排序；SortPolicys不存在或SortPolicys为False时，为修改安全组规则。
+                     * @return SortPolicys 排序安全组标识。值为True时，支持安全组排序；SortPolicys不存在或SortPolicys为False时，为修改安全组规则。
+                     */
+                    bool GetSortPolicys() const;
+
+                    /**
+                     * 设置排序安全组标识。值为True时，支持安全组排序；SortPolicys不存在或SortPolicys为False时，为修改安全组规则。
+                     * @param SortPolicys 排序安全组标识。值为True时，支持安全组排序；SortPolicys不存在或SortPolicys为False时，为修改安全组规则。
+                     */
+                    void SetSortPolicys(const bool& _sortPolicys);
+
+                    /**
+                     * 判断参数 SortPolicys 是否已赋值
+                     * @return SortPolicys 是否已赋值
+                     */
+                    bool SortPolicysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     SecurityGroupPolicySet m_securityGroupPolicySet;
                     bool m_securityGroupPolicySetHasBeenSet;
+
+                    /**
+                     * 排序安全组标识。值为True时，支持安全组排序；SortPolicys不存在或SortPolicys为False时，为修改安全组规则。
+                     */
+                    bool m_sortPolicys;
+                    bool m_sortPolicysHasBeenSet;
 
                 };
             }

@@ -39,7 +39,8 @@ Instance::Instance() :
     m_regionHasBeenSet(false),
     m_cpuRequestedHasBeenSet(false),
     m_memoryRequestedHasBeenSet(false),
-    m_gpuRequestedHasBeenSet(false)
+    m_gpuRequestedHasBeenSet(false),
+    m_rsgAsGroupIdHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_gpuRequestedHasBeenSet = true;
     }
 
+    if (value.HasMember("RsgAsGroupId") && !value["RsgAsGroupId"].IsNull())
+    {
+        if (!value["RsgAsGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.RsgAsGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rsgAsGroupId = string(value["RsgAsGroupId"].GetString());
+        m_rsgAsGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +388,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "GpuRequested";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gpuRequested, allocator);
+    }
+
+    if (m_rsgAsGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RsgAsGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_rsgAsGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -668,5 +687,21 @@ void Instance::SetGpuRequested(const uint64_t& _gpuRequested)
 bool Instance::GpuRequestedHasBeenSet() const
 {
     return m_gpuRequestedHasBeenSet;
+}
+
+string Instance::GetRsgAsGroupId() const
+{
+    return m_rsgAsGroupId;
+}
+
+void Instance::SetRsgAsGroupId(const string& _rsgAsGroupId)
+{
+    m_rsgAsGroupId = _rsgAsGroupId;
+    m_rsgAsGroupIdHasBeenSet = true;
+}
+
+bool Instance::RsgAsGroupIdHasBeenSet() const
+{
+    return m_rsgAsGroupIdHasBeenSet;
 }
 

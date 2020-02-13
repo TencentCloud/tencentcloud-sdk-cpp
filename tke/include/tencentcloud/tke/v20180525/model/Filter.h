@@ -35,7 +35,18 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 过滤器
+                * >描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等
+> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。
+> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。
+>
+> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：
+```
+Filters.0.Name=zone
+&Filters.0.Values.0=ap-guangzhou-1
+&Filters.1.Name=instance-charge-type
+&Filters.1.Values.0=PREPAID
+&Filters.1.Values.1=POSTPAID_BY_HOUR
+```
                 */
                 class Filter : public AbstractModel
                 {
@@ -47,14 +58,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @return Name 属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 获取需要过滤的字段。
+                     * @return Name 需要过滤的字段。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @param Name 属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 设置需要过滤的字段。
+                     * @param Name 需要过滤的字段。
                      */
                     void SetName(const std::string& _name);
 
@@ -65,14 +76,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
-                     * @return Values 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 获取字段的过滤值。
+                     * @return Values 字段的过滤值。
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
-                     * @param Values 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 设置字段的过滤值。
+                     * @param Values 字段的过滤值。
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
@@ -85,13 +96,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 需要过滤的字段。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 字段的过滤值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

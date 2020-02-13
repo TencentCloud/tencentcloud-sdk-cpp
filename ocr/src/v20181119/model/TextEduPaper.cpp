@@ -22,7 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 TextEduPaper::TextEduPaper() :
-    m_detectedTextHasBeenSet(false)
+    m_itemHasBeenSet(false),
+    m_detectedTextHasBeenSet(false),
+    m_itemcoordHasBeenSet(false)
 {
 }
 
@@ -30,6 +32,16 @@ CoreInternalOutcome TextEduPaper::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Item") && !value["Item"].IsNull())
+    {
+        if (!value["Item"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TextEduPaper.Item` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_item = string(value["Item"].GetString());
+        m_itemHasBeenSet = true;
+    }
 
     if (value.HasMember("DetectedText") && !value["DetectedText"].IsNull())
     {
@@ -41,12 +53,37 @@ CoreInternalOutcome TextEduPaper::Deserialize(const Value &value)
         m_detectedTextHasBeenSet = true;
     }
 
+    if (value.HasMember("Itemcoord") && !value["Itemcoord"].IsNull())
+    {
+        if (!value["Itemcoord"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextEduPaper.Itemcoord` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_itemcoord.Deserialize(value["Itemcoord"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_itemcoordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void TextEduPaper::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
+
+    if (m_itemHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Item";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_item.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_detectedTextHasBeenSet)
     {
@@ -56,8 +93,33 @@ void TextEduPaper::ToJsonObject(Value &value, Document::AllocatorType& allocator
         value.AddMember(iKey, Value(m_detectedText.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_itemcoordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Itemcoord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_itemcoord.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
+
+string TextEduPaper::GetItem() const
+{
+    return m_item;
+}
+
+void TextEduPaper::SetItem(const string& _item)
+{
+    m_item = _item;
+    m_itemHasBeenSet = true;
+}
+
+bool TextEduPaper::ItemHasBeenSet() const
+{
+    return m_itemHasBeenSet;
+}
 
 string TextEduPaper::GetDetectedText() const
 {
@@ -73,5 +135,21 @@ void TextEduPaper::SetDetectedText(const string& _detectedText)
 bool TextEduPaper::DetectedTextHasBeenSet() const
 {
     return m_detectedTextHasBeenSet;
+}
+
+ItemCoord TextEduPaper::GetItemcoord() const
+{
+    return m_itemcoord;
+}
+
+void TextEduPaper::SetItemcoord(const ItemCoord& _itemcoord)
+{
+    m_itemcoord = _itemcoord;
+    m_itemcoordHasBeenSet = true;
+}
+
+bool TextEduPaper::ItemcoordHasBeenSet() const
+{
+    return m_itemcoordHasBeenSet;
 }
 

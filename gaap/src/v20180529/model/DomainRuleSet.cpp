@@ -38,7 +38,8 @@ DomainRuleSet::DomainRuleSet() :
     m_gaapAuthHasBeenSet(false),
     m_gaapCertificateAliasHasBeenSet(false),
     m_realServerCertificateDomainHasBeenSet(false),
-    m_polyClientCertificateAliasInfoHasBeenSet(false)
+    m_polyClientCertificateAliasInfoHasBeenSet(false),
+    m_polyRealServerCertificateAliasInfoHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,26 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
         m_polyClientCertificateAliasInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PolyRealServerCertificateAliasInfo") && !value["PolyRealServerCertificateAliasInfo"].IsNull())
+    {
+        if (!value["PolyRealServerCertificateAliasInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `DomainRuleSet.PolyRealServerCertificateAliasInfo` is not array type"));
+
+        const Value &tmpValue = value["PolyRealServerCertificateAliasInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CertificateAliasInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_polyRealServerCertificateAliasInfo.push_back(item);
+        }
+        m_polyRealServerCertificateAliasInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -388,6 +409,21 @@ void DomainRuleSet::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
         int i=0;
         for (auto itr = m_polyClientCertificateAliasInfo.begin(); itr != m_polyClientCertificateAliasInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_polyRealServerCertificateAliasInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolyRealServerCertificateAliasInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_polyRealServerCertificateAliasInfo.begin(); itr != m_polyRealServerCertificateAliasInfo.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -667,5 +703,21 @@ void DomainRuleSet::SetPolyClientCertificateAliasInfo(const vector<CertificateAl
 bool DomainRuleSet::PolyClientCertificateAliasInfoHasBeenSet() const
 {
     return m_polyClientCertificateAliasInfoHasBeenSet;
+}
+
+vector<CertificateAliasInfo> DomainRuleSet::GetPolyRealServerCertificateAliasInfo() const
+{
+    return m_polyRealServerCertificateAliasInfo;
+}
+
+void DomainRuleSet::SetPolyRealServerCertificateAliasInfo(const vector<CertificateAliasInfo>& _polyRealServerCertificateAliasInfo)
+{
+    m_polyRealServerCertificateAliasInfo = _polyRealServerCertificateAliasInfo;
+    m_polyRealServerCertificateAliasInfoHasBeenSet = true;
+}
+
+bool DomainRuleSet::PolyRealServerCertificateAliasInfoHasBeenSet() const
+{
+    return m_polyRealServerCertificateAliasInfoHasBeenSet;
 }
 

@@ -19,6 +19,7 @@ set(ecc_public_header
   )
 
 set(ecc_public_header_model
+  include/tencentcloud/ecc/v20181213/model/CorrectMultiImageResponse.h
   include/tencentcloud/ecc/v20181213/model/DescribeTaskRequest.h
   include/tencentcloud/ecc/v20181213/model/SentenceItem.h
   include/tencentcloud/ecc/v20181213/model/ECCResponse.h
@@ -33,10 +34,12 @@ set(ecc_public_header_model
   include/tencentcloud/ecc/v20181213/model/CompostionContext.h
   include/tencentcloud/ecc/v20181213/model/DescribeTaskResponse.h
   include/tencentcloud/ecc/v20181213/model/EHOCRRequest.h
+  include/tencentcloud/ecc/v20181213/model/CorrectMultiImageRequest.h
   )
 
 set(ecc_src
   src/v20181213/EccClient.cpp
+  src/v20181213/model/CorrectMultiImageResponse.cpp
   src/v20181213/model/DescribeTaskRequest.cpp
   src/v20181213/model/SentenceItem.cpp
   src/v20181213/model/ECCResponse.cpp
@@ -51,6 +54,7 @@ set(ecc_src
   src/v20181213/model/CompostionContext.cpp
   src/v20181213/model/DescribeTaskResponse.cpp
   src/v20181213/model/EHOCRRequest.cpp
+  src/v20181213/model/CorrectMultiImageRequest.cpp
   )
 
 set(ecc_include

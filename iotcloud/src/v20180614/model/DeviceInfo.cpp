@@ -42,7 +42,8 @@ DeviceInfo::DeviceInfo() :
     m_createTimeHasBeenSet(false),
     m_logLevelHasBeenSet(false),
     m_certStateHasBeenSet(false),
-    m_enableStateHasBeenSet(false)
+    m_enableStateHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,26 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         m_enableStateHasBeenSet = true;
     }
 
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsArray())
+            return CoreInternalOutcome(Error("response `DeviceInfo.Labels` is not array type"));
+
+        const Value &tmpValue = value["Labels"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labels.push_back(item);
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -451,6 +472,21 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "EnableState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableState, allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -790,5 +826,21 @@ void DeviceInfo::SetEnableState(const uint64_t& _enableState)
 bool DeviceInfo::EnableStateHasBeenSet() const
 {
     return m_enableStateHasBeenSet;
+}
+
+vector<DeviceLabel> DeviceInfo::GetLabels() const
+{
+    return m_labels;
+}
+
+void DeviceInfo::SetLabels(const vector<DeviceLabel>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool DeviceInfo::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 

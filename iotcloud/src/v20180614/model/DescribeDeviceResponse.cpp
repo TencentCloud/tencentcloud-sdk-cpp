@@ -45,7 +45,8 @@ DescribeDeviceResponse::DescribeDeviceResponse() :
     m_lastOfflineTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_certStateHasBeenSet(false),
-    m_enableStateHasBeenSet(false)
+    m_enableStateHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -303,6 +304,26 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         m_enableStateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Labels") && !rsp["Labels"].IsNull())
+    {
+        if (!rsp["Labels"].IsArray())
+            return CoreInternalOutcome(Error("response `Labels` is not array type"));
+
+        const Value &tmpValue = rsp["Labels"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labels.push_back(item);
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -516,6 +537,16 @@ uint64_t DescribeDeviceResponse::GetEnableState() const
 bool DescribeDeviceResponse::EnableStateHasBeenSet() const
 {
     return m_enableStateHasBeenSet;
+}
+
+vector<DeviceLabel> DescribeDeviceResponse::GetLabels() const
+{
+    return m_labels;
+}
+
+bool DescribeDeviceResponse::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 
 

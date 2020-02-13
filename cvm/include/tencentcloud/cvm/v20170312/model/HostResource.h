@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool DiskAvailableHasBeenSet() const;
 
+                    /**
+                     * 获取cdh实例磁盘类型
+                     * @return DiskType cdh实例磁盘类型
+                     */
+                    std::string GetDiskType() const;
+
+                    /**
+                     * 设置cdh实例磁盘类型
+                     * @param DiskType cdh实例磁盘类型
+                     */
+                    void SetDiskType(const std::string& _diskType);
+
+                    /**
+                     * 判断参数 DiskType 是否已赋值
+                     * @return DiskType 是否已赋值
+                     */
+                    bool DiskTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     uint64_t m_diskAvailable;
                     bool m_diskAvailableHasBeenSet;
+
+                    /**
+                     * cdh实例磁盘类型
+                     */
+                    std::string m_diskType;
+                    bool m_diskTypeHasBeenSet;
 
                 };
             }

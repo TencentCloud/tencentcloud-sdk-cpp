@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取卡片id
+                     * 获取卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Iccid 卡片id
+                     * @return Iccid 卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIccid() const;
 
                     /**
-                     * 设置卡片id
+                     * 设置卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Iccid 卡片id
+                     * @param Iccid 卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIccid(const std::string& _iccid);
@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool IccidHasBeenSet() const;
 
                     /**
-                     * 获取信息流水id
-                     * @return Sid 信息流水id
+                     * 获取信息流水ID
+                     * @return Sid 信息流水ID
                      */
                     std::string GetSid() const;
 
                     /**
-                     * 设置信息流水id
-                     * @param Sid 信息流水id
+                     * 设置信息流水ID
+                     * @param Sid 信息流水ID
                      */
                     void SetSid(const std::string& _sid);
 
@@ -89,14 +89,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 卡片id
+                     * 卡片ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iccid;
                     bool m_iccidHasBeenSet;
 
                     /**
-                     * 信息流水id
+                     * 信息流水ID
                      */
                     std::string m_sid;
                     bool m_sidHasBeenSet;

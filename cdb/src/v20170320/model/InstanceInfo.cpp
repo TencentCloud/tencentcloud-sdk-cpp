@@ -60,7 +60,8 @@ InstanceInfo::InstanceInfo() :
     m_cpuHasBeenSet(false),
     m_qpsHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
-    m_deviceClassHasBeenSet(false)
+    m_deviceClassHasBeenSet(false),
+    m_deployGroupIdHasBeenSet(false)
 {
 }
 
@@ -500,6 +501,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_deviceClassHasBeenSet = true;
     }
 
+    if (value.HasMember("DeployGroupId") && !value["DeployGroupId"].IsNull())
+    {
+        if (!value["DeployGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.DeployGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployGroupId = string(value["DeployGroupId"].GetString());
+        m_deployGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -834,6 +845,14 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "DeviceClass";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_deviceClass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1461,5 +1480,21 @@ void InstanceInfo::SetDeviceClass(const string& _deviceClass)
 bool InstanceInfo::DeviceClassHasBeenSet() const
 {
     return m_deviceClassHasBeenSet;
+}
+
+string InstanceInfo::GetDeployGroupId() const
+{
+    return m_deployGroupId;
+}
+
+void InstanceInfo::SetDeployGroupId(const string& _deployGroupId)
+{
+    m_deployGroupId = _deployGroupId;
+    m_deployGroupIdHasBeenSet = true;
+}
+
+bool InstanceInfo::DeployGroupIdHasBeenSet() const
+{
+    return m_deployGroupIdHasBeenSet;
 }
 

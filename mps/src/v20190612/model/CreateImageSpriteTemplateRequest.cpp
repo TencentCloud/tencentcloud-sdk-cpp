@@ -24,13 +24,15 @@ using namespace rapidjson;
 using namespace std;
 
 CreateImageSpriteTemplateRequest::CreateImageSpriteTemplateRequest() :
-    m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false),
     m_sampleTypeHasBeenSet(false),
     m_sampleIntervalHasBeenSet(false),
     m_rowCountHasBeenSet(false),
     m_columnCountHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -40,22 +42,6 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_widthHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Width";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_width, allocator);
-    }
-
-    if (m_heightHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Height";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_height, allocator);
-    }
 
     if (m_sampleTypeHasBeenSet)
     {
@@ -97,6 +83,38 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_widthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -104,38 +122,6 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t CreateImageSpriteTemplateRequest::GetWidth() const
-{
-    return m_width;
-}
-
-void CreateImageSpriteTemplateRequest::SetWidth(const uint64_t& _width)
-{
-    m_width = _width;
-    m_widthHasBeenSet = true;
-}
-
-bool CreateImageSpriteTemplateRequest::WidthHasBeenSet() const
-{
-    return m_widthHasBeenSet;
-}
-
-uint64_t CreateImageSpriteTemplateRequest::GetHeight() const
-{
-    return m_height;
-}
-
-void CreateImageSpriteTemplateRequest::SetHeight(const uint64_t& _height)
-{
-    m_height = _height;
-    m_heightHasBeenSet = true;
-}
-
-bool CreateImageSpriteTemplateRequest::HeightHasBeenSet() const
-{
-    return m_heightHasBeenSet;
-}
 
 string CreateImageSpriteTemplateRequest::GetSampleType() const
 {
@@ -215,6 +201,70 @@ void CreateImageSpriteTemplateRequest::SetName(const string& _name)
 bool CreateImageSpriteTemplateRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t CreateImageSpriteTemplateRequest::GetWidth() const
+{
+    return m_width;
+}
+
+void CreateImageSpriteTemplateRequest::SetWidth(const uint64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+uint64_t CreateImageSpriteTemplateRequest::GetHeight() const
+{
+    return m_height;
+}
+
+void CreateImageSpriteTemplateRequest::SetHeight(const uint64_t& _height)
+{
+    m_height = _height;
+    m_heightHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
+}
+
+string CreateImageSpriteTemplateRequest::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void CreateImageSpriteTemplateRequest::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
+}
+
+string CreateImageSpriteTemplateRequest::GetFillType() const
+{
+    return m_fillType;
+}
+
+void CreateImageSpriteTemplateRequest::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 
 

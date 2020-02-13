@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiems/v20190416/model/PredictInput.h>
+#include <tencentcloud/tiems/v20190416/model/QuantizationInput.h>
 
 
 namespace TencentCloud
@@ -62,40 +63,22 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取同时处理任务的 Worker 个数
-                     * @return WorkerCount 同时处理任务的 Worker 个数
+                     * 获取使用的资源组 Id，默认使用共享资源组
+                     * @return ResourceGroupId 使用的资源组 Id，默认使用共享资源组
                      */
-                    uint64_t GetWorkerCount() const;
+                    std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置同时处理任务的 Worker 个数
-                     * @param WorkerCount 同时处理任务的 Worker 个数
+                     * 设置使用的资源组 Id，默认使用共享资源组
+                     * @param ResourceGroupId 使用的资源组 Id，默认使用共享资源组
                      */
-                    void SetWorkerCount(const uint64_t& _workerCount);
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
 
                     /**
-                     * 判断参数 WorkerCount 是否已赋值
-                     * @return WorkerCount 是否已赋值
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
                      */
-                    bool WorkerCountHasBeenSet() const;
-
-                    /**
-                     * 获取使用的配置 Id
-                     * @return ConfigId 使用的配置 Id
-                     */
-                    std::string GetConfigId() const;
-
-                    /**
-                     * 设置使用的配置 Id
-                     * @param ConfigId 使用的配置 Id
-                     */
-                    void SetConfigId(const std::string& _configId);
-
-                    /**
-                     * 判断参数 ConfigId 是否已赋值
-                     * @return ConfigId 是否已赋值
-                     */
-                    bool ConfigIdHasBeenSet() const;
+                    bool ResourceGroupIdHasBeenSet() const;
 
                     /**
                      * 获取处理器配置, 单位为1/1000核；范围[100, 256000]
@@ -188,22 +171,40 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取使用的资源组 Id，默认使用共享资源组
-                     * @return ResourceGroupId 使用的资源组 Id，默认使用共享资源组
+                     * 获取同时处理任务的 Worker 个数
+                     * @return WorkerCount 同时处理任务的 Worker 个数
                      */
-                    std::string GetResourceGroupId() const;
+                    uint64_t GetWorkerCount() const;
 
                     /**
-                     * 设置使用的资源组 Id，默认使用共享资源组
-                     * @param ResourceGroupId 使用的资源组 Id，默认使用共享资源组
+                     * 设置同时处理任务的 Worker 个数
+                     * @param WorkerCount 同时处理任务的 Worker 个数
                      */
-                    void SetResourceGroupId(const std::string& _resourceGroupId);
+                    void SetWorkerCount(const uint64_t& _workerCount);
 
                     /**
-                     * 判断参数 ResourceGroupId 是否已赋值
-                     * @return ResourceGroupId 是否已赋值
+                     * 判断参数 WorkerCount 是否已赋值
+                     * @return WorkerCount 是否已赋值
                      */
-                    bool ResourceGroupIdHasBeenSet() const;
+                    bool WorkerCountHasBeenSet() const;
+
+                    /**
+                     * 获取使用的配置 Id
+                     * @return ConfigId 使用的配置 Id
+                     */
+                    std::string GetConfigId() const;
+
+                    /**
+                     * 设置使用的配置 Id
+                     * @param ConfigId 使用的配置 Id
+                     */
+                    void SetConfigId(const std::string& _configId);
+
+                    /**
+                     * 判断参数 ConfigId 是否已赋值
+                     * @return ConfigId 是否已赋值
+                     */
+                    bool ConfigIdHasBeenSet() const;
 
                     /**
                      * 获取GPU算力配置，单位为1/1000 卡，范围 [0, 256000]
@@ -259,6 +260,24 @@ namespace TencentCloud
                      */
                     bool GpuTypeHasBeenSet() const;
 
+                    /**
+                     * 获取量化输入
+                     * @return QuantizationInput 量化输入
+                     */
+                    QuantizationInput GetQuantizationInput() const;
+
+                    /**
+                     * 设置量化输入
+                     * @param QuantizationInput 量化输入
+                     */
+                    void SetQuantizationInput(const QuantizationInput& _quantizationInput);
+
+                    /**
+                     * 判断参数 QuantizationInput 是否已赋值
+                     * @return QuantizationInput 是否已赋值
+                     */
+                    bool QuantizationInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,16 +287,10 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 同时处理任务的 Worker 个数
+                     * 使用的资源组 Id，默认使用共享资源组
                      */
-                    uint64_t m_workerCount;
-                    bool m_workerCountHasBeenSet;
-
-                    /**
-                     * 使用的配置 Id
-                     */
-                    std::string m_configId;
-                    bool m_configIdHasBeenSet;
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
 
                     /**
                      * 处理器配置, 单位为1/1000核；范围[100, 256000]
@@ -310,10 +323,16 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 使用的资源组 Id，默认使用共享资源组
+                     * 同时处理任务的 Worker 个数
                      */
-                    std::string m_resourceGroupId;
-                    bool m_resourceGroupIdHasBeenSet;
+                    uint64_t m_workerCount;
+                    bool m_workerCountHasBeenSet;
+
+                    /**
+                     * 使用的配置 Id
+                     */
+                    std::string m_configId;
+                    bool m_configIdHasBeenSet;
 
                     /**
                      * GPU算力配置，单位为1/1000 卡，范围 [0, 256000]
@@ -332,6 +351,12 @@ namespace TencentCloud
                      */
                     std::string m_gpuType;
                     bool m_gpuTypeHasBeenSet;
+
+                    /**
+                     * 量化输入
+                     */
+                    QuantizationInput m_quantizationInput;
+                    bool m_quantizationInputHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
+#include <tencentcloud/vod/v20180717/model/MosaicInput.h>
 
 
 namespace TencentCloud
@@ -87,6 +88,24 @@ namespace TencentCloud
                      */
                     bool WatermarkSetHasBeenSet() const;
 
+                    /**
+                     * 获取马赛克列表，最大可支持 10 张。
+                     * @return MosaicSet 马赛克列表，最大可支持 10 张。
+                     */
+                    std::vector<MosaicInput> GetMosaicSet() const;
+
+                    /**
+                     * 设置马赛克列表，最大可支持 10 张。
+                     * @param MosaicSet 马赛克列表，最大可支持 10 张。
+                     */
+                    void SetMosaicSet(const std::vector<MosaicInput>& _mosaicSet);
+
+                    /**
+                     * 判断参数 MosaicSet 是否已赋值
+                     * @return MosaicSet 是否已赋值
+                     */
+                    bool MosaicSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +120,12 @@ namespace TencentCloud
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
+
+                    /**
+                     * 马赛克列表，最大可支持 10 张。
+                     */
+                    std::vector<MosaicInput> m_mosaicSet;
+                    bool m_mosaicSetHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ SearchPersonsReturnsByGroupRequest::SearchPersonsReturnsByGroupRequest() :
     m_minFaceSizeHasBeenSet(false),
     m_maxPersonNumPerGroupHasBeenSet(false),
     m_qualityControlHasBeenSet(false),
-    m_faceMatchThresholdHasBeenSet(false)
+    m_faceMatchThresholdHasBeenSet(false),
+    m_needPersonInfoHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string SearchPersonsReturnsByGroupRequest::ToJsonString() const
         string key = "FaceMatchThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_faceMatchThreshold, allocator);
+    }
+
+    if (m_needPersonInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedPersonInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPersonInfo, allocator);
     }
 
 
@@ -245,6 +254,22 @@ void SearchPersonsReturnsByGroupRequest::SetFaceMatchThreshold(const double& _fa
 bool SearchPersonsReturnsByGroupRequest::FaceMatchThresholdHasBeenSet() const
 {
     return m_faceMatchThresholdHasBeenSet;
+}
+
+int64_t SearchPersonsReturnsByGroupRequest::GetNeedPersonInfo() const
+{
+    return m_needPersonInfo;
+}
+
+void SearchPersonsReturnsByGroupRequest::SetNeedPersonInfo(const int64_t& _needPersonInfo)
+{
+    m_needPersonInfo = _needPersonInfo;
+    m_needPersonInfoHasBeenSet = true;
+}
+
+bool SearchPersonsReturnsByGroupRequest::NeedPersonInfoHasBeenSet() const
+{
+    return m_needPersonInfoHasBeenSet;
 }
 
 

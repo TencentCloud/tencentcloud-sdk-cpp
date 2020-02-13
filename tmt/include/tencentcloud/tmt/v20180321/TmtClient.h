@@ -31,6 +31,8 @@
 #include <tencentcloud/tmt/v20180321/model/SpeechTranslateResponse.h>
 #include <tencentcloud/tmt/v20180321/model/TextTranslateRequest.h>
 #include <tencentcloud/tmt/v20180321/model/TextTranslateResponse.h>
+#include <tencentcloud/tmt/v20180321/model/TextTranslateBatchRequest.h>
+#include <tencentcloud/tmt/v20180321/model/TextTranslateBatchResponse.h>
 
 
 namespace TencentCloud
@@ -57,6 +59,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::TextTranslateResponse> TextTranslateOutcome;
                 typedef std::future<TextTranslateOutcome> TextTranslateOutcomeCallable;
                 typedef std::function<void(const TmtClient*, const Model::TextTranslateRequest&, TextTranslateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslateAsyncHandler;
+                typedef Outcome<Error, Model::TextTranslateBatchResponse> TextTranslateBatchOutcome;
+                typedef std::future<TextTranslateBatchOutcome> TextTranslateBatchOutcomeCallable;
+                typedef std::function<void(const TmtClient*, const Model::TextTranslateBatchRequest&, TextTranslateBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslateBatchAsyncHandler;
 
 
 
@@ -81,9 +86,10 @@ namespace TencentCloud
                 LanguageDetectOutcomeCallable LanguageDetectCallable(const Model::LanguageDetectRequest& request);
 
                 /**
-                 *本接口提供音频内文字识别 + 翻译功能，目前开放中到英的语音翻译服务。
-待识别和翻译的音频文件可以是 pcm、mp3、amr和speex 格式，音频内语音清晰，采用流式传输和翻译的方式。<br />
-提示：对于一般开发者，我们建议优先使用SDK接入简化开发。SDK使用介绍请直接查看 5. 开发者资源 部分。
+                 *本接口提供音频内文字识别 + 翻译功能，目前开放中英互译的语音翻译服务。
+待识别和翻译的音频文件可以是 pcm、mp3、amr和speex 格式，采样率要求16kHz、位深16bit、单声道，音频内语音清晰。<br/>
+如果采用流式传输的方式，要求每个分片时长200ms~500ms；如果采用非流式的传输方式，要求音频时长不超过8s。注意最后一个分片的IsEnd参数设置为1。<br />
+提示：对于一般开发者，我们建议优先使用SDK接入简化开发。SDK使用介绍请直接查看 5. 开发者资源部分。
 
                  * @param req SpeechTranslateRequest
                  * @return SpeechTranslateOutcome
@@ -102,6 +108,15 @@ namespace TencentCloud
                 TextTranslateOutcome TextTranslate(const Model::TextTranslateRequest &request);
                 void TextTranslateAsync(const Model::TextTranslateRequest& request, const TextTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextTranslateOutcomeCallable TextTranslateCallable(const Model::TextTranslateRequest& request);
+
+                /**
+                 *文本翻译的批量接口
+                 * @param req TextTranslateBatchRequest
+                 * @return TextTranslateBatchOutcome
+                 */
+                TextTranslateBatchOutcome TextTranslateBatch(const Model::TextTranslateBatchRequest &request);
+                void TextTranslateBatchAsync(const Model::TextTranslateBatchRequest& request, const TextTranslateBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextTranslateBatchOutcomeCallable TextTranslateBatchCallable(const Model::TextTranslateBatchRequest& request);
 
             };
         }

@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Ocr 文字涉黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence Ocr 文字涉黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置Ocr 文字涉黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Confidence Ocr 文字涉黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -74,12 +70,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion Ocr 文字涉黄结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
@@ -88,12 +82,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Suggestion Ocr 文字涉黄结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -105,17 +97,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Ocr 文字有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentSet Ocr 文字有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置Ocr 文字有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SegmentSet Ocr 文字有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewOcrTextSegmentItem>& _segmentSet);
 
@@ -129,7 +117,6 @@ namespace TencentCloud
 
                     /**
                      * Ocr 文字涉黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
@@ -139,14 +126,12 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * Ocr 文字有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

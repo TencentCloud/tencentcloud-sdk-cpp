@@ -28,10 +28,10 @@ CreateServiceRequest::CreateServiceRequest() :
     m_serviceConfigIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_scaleModeHasBeenSet(false),
+    m_resourceGroupIdHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_clusterHasBeenSet(false),
-    m_resourceGroupIdHasBeenSet(false),
     m_authenticationHasBeenSet(false),
     m_gpuHasBeenSet(false),
     m_gpuMemoryHasBeenSet(false),
@@ -80,6 +80,14 @@ string CreateServiceRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_scaleMode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_resourceGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_cpuHasBeenSet)
     {
         Value iKey(kStringType);
@@ -102,14 +110,6 @@ string CreateServiceRequest::ToJsonString() const
         string key = "Cluster";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_cluster.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceGroupIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ResourceGroupId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authenticationHasBeenSet)
@@ -224,6 +224,22 @@ bool CreateServiceRequest::ScaleModeHasBeenSet() const
     return m_scaleModeHasBeenSet;
 }
 
+string CreateServiceRequest::GetResourceGroupId() const
+{
+    return m_resourceGroupId;
+}
+
+void CreateServiceRequest::SetResourceGroupId(const string& _resourceGroupId)
+{
+    m_resourceGroupId = _resourceGroupId;
+    m_resourceGroupIdHasBeenSet = true;
+}
+
+bool CreateServiceRequest::ResourceGroupIdHasBeenSet() const
+{
+    return m_resourceGroupIdHasBeenSet;
+}
+
 uint64_t CreateServiceRequest::GetCpu() const
 {
     return m_cpu;
@@ -270,22 +286,6 @@ void CreateServiceRequest::SetCluster(const string& _cluster)
 bool CreateServiceRequest::ClusterHasBeenSet() const
 {
     return m_clusterHasBeenSet;
-}
-
-string CreateServiceRequest::GetResourceGroupId() const
-{
-    return m_resourceGroupId;
-}
-
-void CreateServiceRequest::SetResourceGroupId(const string& _resourceGroupId)
-{
-    m_resourceGroupId = _resourceGroupId;
-    m_resourceGroupIdHasBeenSet = true;
-}
-
-bool CreateServiceRequest::ResourceGroupIdHasBeenSet() const
-{
-    return m_resourceGroupIdHasBeenSet;
 }
 
 string CreateServiceRequest::GetAuthentication() const

@@ -48,7 +48,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_initFlagHasBeenSet(false),
     m_withDrHasBeenSet(false),
     m_withRoHasBeenSet(false),
-    m_withMasterHasBeenSet(false)
+    m_withMasterHasBeenSet(false),
+    m_deployGroupIdsHasBeenSet(false)
 {
 }
 
@@ -317,6 +318,19 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "WithMaster";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_withMaster, allocator);
+    }
+
+    if (m_deployGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_deployGroupIds.begin(); itr != m_deployGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -725,6 +739,22 @@ void DescribeDBInstancesRequest::SetWithMaster(const int64_t& _withMaster)
 bool DescribeDBInstancesRequest::WithMasterHasBeenSet() const
 {
     return m_withMasterHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetDeployGroupIds() const
+{
+    return m_deployGroupIds;
+}
+
+void DescribeDBInstancesRequest::SetDeployGroupIds(const vector<string>& _deployGroupIds)
+{
+    m_deployGroupIds = _deployGroupIds;
+    m_deployGroupIdsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::DeployGroupIdsHasBeenSet() const
+{
+    return m_deployGroupIdsHasBeenSet;
 }
 
 

@@ -84,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取全局权限。其中，GlobalPrivileges 中权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "PROCESS", "DROP","REFERENCES","INDEX","ALTER","SHOW DATABASES","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      * @return GlobalPrivileges 全局权限。其中，GlobalPrivileges 中权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "PROCESS", "DROP","REFERENCES","INDEX","ALTER","SHOW DATABASES","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<std::string> GetGlobalPrivileges() const;
 
                     /**
                      * 设置全局权限。其中，GlobalPrivileges 中权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "PROCESS", "DROP","REFERENCES","INDEX","ALTER","SHOW DATABASES","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      * @param GlobalPrivileges 全局权限。其中，GlobalPrivileges 中权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "PROCESS", "DROP","REFERENCES","INDEX","ALTER","SHOW DATABASES","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     void SetGlobalPrivileges(const std::vector<std::string>& _globalPrivileges);
 
@@ -102,13 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      * @return DatabasePrivileges 数据库的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<DatabasePrivilege> GetDatabasePrivileges() const;
 
                     /**
                      * 设置数据库的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      * @param DatabasePrivileges 数据库的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     void SetDatabasePrivileges(const std::vector<DatabasePrivilege>& _databasePrivileges);
 
@@ -120,13 +128,17 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+注意，不传该参数表示清除该权限。
                      * @return TablePrivileges 数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<TablePrivilege> GetTablePrivileges() const;
 
                     /**
                      * 设置数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+注意，不传该参数表示清除该权限。
                      * @param TablePrivileges 数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     void SetTablePrivileges(const std::vector<TablePrivilege>& _tablePrivileges);
 
@@ -138,13 +150,17 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库表中列的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","REFERENCES"。
+注意，不传该参数表示清除该权限。
                      * @return ColumnPrivileges 数据库表中列的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","REFERENCES"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<ColumnPrivilege> GetColumnPrivileges() const;
 
                     /**
                      * 设置数据库表中列的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","REFERENCES"。
+注意，不传该参数表示清除该权限。
                      * @param ColumnPrivileges 数据库表中列的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","REFERENCES"。
+注意，不传该参数表示清除该权限。
                      */
                     void SetColumnPrivileges(const std::vector<ColumnPrivilege>& _columnPrivileges);
 
@@ -170,24 +186,28 @@ namespace TencentCloud
 
                     /**
                      * 全局权限。其中，GlobalPrivileges 中权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "PROCESS", "DROP","REFERENCES","INDEX","ALTER","SHOW DATABASES","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<std::string> m_globalPrivileges;
                     bool m_globalPrivilegesHasBeenSet;
 
                     /**
                      * 数据库的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE TEMPORARY TABLES","LOCK TABLES","EXECUTE","CREATE VIEW","SHOW VIEW","CREATE ROUTINE","ALTER ROUTINE","EVENT","TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<DatabasePrivilege> m_databasePrivileges;
                     bool m_databasePrivilegesHasBeenSet;
 
                     /**
                      * 数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE",	"DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<TablePrivilege> m_tablePrivileges;
                     bool m_tablePrivilegesHasBeenSet;
 
                     /**
                      * 数据库表中列的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","REFERENCES"。
+注意，不传该参数表示清除该权限。
                      */
                     std::vector<ColumnPrivilege> m_columnPrivileges;
                     bool m_columnPrivilegesHasBeenSet;

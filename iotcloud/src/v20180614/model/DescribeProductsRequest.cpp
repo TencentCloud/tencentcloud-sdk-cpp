@@ -25,8 +25,7 @@ using namespace std;
 
 DescribeProductsRequest::DescribeProductsRequest() :
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -51,21 +50,6 @@ string DescribeProductsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_filtersHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Filters";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
 
@@ -106,22 +90,6 @@ void DescribeProductsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeProductsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-vector<Filter> DescribeProductsRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeProductsRequest::SetFilters(const vector<Filter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeProductsRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
 }
 
 

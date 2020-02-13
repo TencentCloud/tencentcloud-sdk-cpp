@@ -71,8 +71,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取认证结果信息。
-                     * @return Description 认证结果信息。
+                     * 获取业务结果描述。
+                     * @return Description 业务结果描述。
                      */
                     std::string GetDescription() const;
 
@@ -179,7 +179,7 @@ namespace TencentCloud
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 认证结果信息。
+                     * 业务结果描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

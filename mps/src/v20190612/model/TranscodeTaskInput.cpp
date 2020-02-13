@@ -23,6 +23,7 @@ using namespace std;
 
 TranscodeTaskInput::TranscodeTaskInput() :
     m_definitionHasBeenSet(false),
+    m_rawParameterHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
@@ -44,6 +45,23 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RawParameter") && !value["RawParameter"].IsNull())
+    {
+        if (!value["RawParameter"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TranscodeTaskInput.RawParameter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rawParameter.Deserialize(value["RawParameter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rawParameterHasBeenSet = true;
     }
 
     if (value.HasMember("WatermarkSet") && !value["WatermarkSet"].IsNull())
@@ -135,6 +153,15 @@ void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& all
         value.AddMember(iKey, m_definition, allocator);
     }
 
+    if (m_rawParameterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RawParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_rawParameter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_watermarkSetHasBeenSet)
     {
         Value iKey(kStringType);
@@ -201,6 +228,22 @@ void TranscodeTaskInput::SetDefinition(const uint64_t& _definition)
 bool TranscodeTaskInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+RawTranscodeParameter TranscodeTaskInput::GetRawParameter() const
+{
+    return m_rawParameter;
+}
+
+void TranscodeTaskInput::SetRawParameter(const RawTranscodeParameter& _rawParameter)
+{
+    m_rawParameter = _rawParameter;
+    m_rawParameterHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::RawParameterHasBeenSet() const
+{
+    return m_rawParameterHasBeenSet;
 }
 
 vector<WatermarkInput> TranscodeTaskInput::GetWatermarkSet() const

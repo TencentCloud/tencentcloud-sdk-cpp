@@ -41,7 +41,10 @@ DCDBShardInfo::DCDBShardInfo() :
     m_memoryUsageHasBeenSet(false),
     m_shardIdHasBeenSet(false),
     m_pidHasBeenSet(false),
-    m_proxyVersionHasBeenSet(false)
+    m_proxyVersionHasBeenSet(false),
+    m_paymodeHasBeenSet(false),
+    m_shardMasterZoneHasBeenSet(false),
+    m_shardSlaveZonesHasBeenSet(false)
 {
 }
 
@@ -250,6 +253,39 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
         m_proxyVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Paymode") && !value["Paymode"].IsNull())
+    {
+        if (!value["Paymode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.Paymode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paymode = string(value["Paymode"].GetString());
+        m_paymodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShardMasterZone") && !value["ShardMasterZone"].IsNull())
+    {
+        if (!value["ShardMasterZone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.ShardMasterZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shardMasterZone = string(value["ShardMasterZone"].GetString());
+        m_shardMasterZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShardSlaveZones") && !value["ShardSlaveZones"].IsNull())
+    {
+        if (!value["ShardSlaveZones"].IsArray())
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.ShardSlaveZones` is not array type"));
+
+        const Value &tmpValue = value["ShardSlaveZones"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_shardSlaveZones.push_back((*itr).GetString());
+        }
+        m_shardSlaveZonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +451,35 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ProxyVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paymodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Paymode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_paymode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shardMasterZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShardMasterZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_shardMasterZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shardSlaveZonesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShardSlaveZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_shardSlaveZones.begin(); itr != m_shardSlaveZones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -738,5 +803,53 @@ void DCDBShardInfo::SetProxyVersion(const string& _proxyVersion)
 bool DCDBShardInfo::ProxyVersionHasBeenSet() const
 {
     return m_proxyVersionHasBeenSet;
+}
+
+string DCDBShardInfo::GetPaymode() const
+{
+    return m_paymode;
+}
+
+void DCDBShardInfo::SetPaymode(const string& _paymode)
+{
+    m_paymode = _paymode;
+    m_paymodeHasBeenSet = true;
+}
+
+bool DCDBShardInfo::PaymodeHasBeenSet() const
+{
+    return m_paymodeHasBeenSet;
+}
+
+string DCDBShardInfo::GetShardMasterZone() const
+{
+    return m_shardMasterZone;
+}
+
+void DCDBShardInfo::SetShardMasterZone(const string& _shardMasterZone)
+{
+    m_shardMasterZone = _shardMasterZone;
+    m_shardMasterZoneHasBeenSet = true;
+}
+
+bool DCDBShardInfo::ShardMasterZoneHasBeenSet() const
+{
+    return m_shardMasterZoneHasBeenSet;
+}
+
+vector<string> DCDBShardInfo::GetShardSlaveZones() const
+{
+    return m_shardSlaveZones;
+}
+
+void DCDBShardInfo::SetShardSlaveZones(const vector<string>& _shardSlaveZones)
+{
+    m_shardSlaveZones = _shardSlaveZones;
+    m_shardSlaveZonesHasBeenSet = true;
+}
+
+bool DCDBShardInfo::ShardSlaveZonesHasBeenSet() const
+{
+    return m_shardSlaveZonesHasBeenSet;
 }
 

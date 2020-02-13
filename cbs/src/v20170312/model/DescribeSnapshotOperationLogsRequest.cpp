@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeSnapshotOperationLogsRequest::DescribeSnapshotOperationLogsRequest() :
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_beginTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,22 @@ string DescribeSnapshotOperationLogsRequest::ToJsonString() const
         }
     }
 
+    if (m_beginTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_beginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -72,6 +90,38 @@ void DescribeSnapshotOperationLogsRequest::SetFilters(const vector<Filter>& _fil
 bool DescribeSnapshotOperationLogsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeSnapshotOperationLogsRequest::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+void DescribeSnapshotOperationLogsRequest::SetBeginTime(const string& _beginTime)
+{
+    m_beginTime = _beginTime;
+    m_beginTimeHasBeenSet = true;
+}
+
+bool DescribeSnapshotOperationLogsRequest::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
+}
+
+string DescribeSnapshotOperationLogsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeSnapshotOperationLogsRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeSnapshotOperationLogsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

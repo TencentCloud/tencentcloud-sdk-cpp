@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
-                     * @return Sdkappid 应用id
+                     * 获取应用ID
+                     * @return Sdkappid 应用ID
                      */
                     std::string GetSdkappid() const;
 
                     /**
-                     * 设置应用id
-                     * @param Sdkappid 应用id
+                     * 设置应用ID
+                     * @param Sdkappid 应用ID
                      */
                     void SetSdkappid(const std::string& _sdkappid);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool IccidsHasBeenSet() const;
 
                     /**
-                     * 获取短信内容
-                     * @return Content 短信内容
+                     * 获取短信内容 长度限制 70
+                     * @return Content 短信内容 长度限制 70
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置短信内容
-                     * @param Content 短信内容
+                     * 设置短信内容 长度限制 70
+                     * @param Content 短信内容 长度限制 70
                      */
                     void SetContent(const std::string& _content);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 应用ID
                      */
                     std::string m_sdkappid;
                     bool m_sdkappidHasBeenSet;
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_iccidsHasBeenSet;
 
                     /**
-                     * 短信内容
+                     * 短信内容 长度限制 70
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

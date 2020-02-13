@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取VpcId。
-                     * @return VpcId VpcId。
+                     * 获取VPC ID。
+                     * @return VpcId VPC ID。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VpcId。
-                     * @param VpcId VpcId。
+                     * 设置VPC ID。
+                     * @param VpcId VPC ID。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_zonesHasBeenSet;
 
                     /**
-                     * VpcId。
+                     * VPC ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

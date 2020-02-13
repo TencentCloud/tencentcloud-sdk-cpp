@@ -21,7 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/es/v20180416/model/MultiZoneInfo.h>
+#include <tencentcloud/es/v20180416/model/ZoneDetail.h>
+#include <tencentcloud/es/v20180416/model/NodeInfo.h>
+#include <tencentcloud/es/v20180416/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -62,24 +64,6 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取节点数量（2-50个）
-                     * @return NodeNum 节点数量（2-50个）
-                     */
-                    uint64_t GetNodeNum() const;
-
-                    /**
-                     * 设置节点数量（2-50个）
-                     * @param NodeNum 节点数量（2-50个）
-                     */
-                    void SetNodeNum(const uint64_t& _nodeNum);
-
-                    /**
-                     * 判断参数 NodeNum 是否已赋值
-                     * @return NodeNum 是否已赋值
-                     */
-                    bool NodeNumHasBeenSet() const;
-
-                    /**
                      * 获取实例版本（支持"5.6.4"、"6.4.3"）
                      * @return EsVersion 实例版本（支持"5.6.4"、"6.4.3"）
                      */
@@ -96,42 +80,6 @@ namespace TencentCloud
                      * @return EsVersion 是否已赋值
                      */
                     bool EsVersionHasBeenSet() const;
-
-                    /**
-                     * 获取节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     */
-                    std::string GetNodeType() const;
-
-                    /**
-                     * 设置节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     */
-                    void SetNodeType(const std::string& _nodeType);
-
-                    /**
-                     * 判断参数 NodeType 是否已赋值
-                     * @return NodeType 是否已赋值
-                     */
-                    bool NodeTypeHasBeenSet() const;
-
-                    /**
-                     * 获取节点磁盘容量（单位GB）
-                     * @return DiskSize 节点磁盘容量（单位GB）
-                     */
-                    uint64_t GetDiskSize() const;
-
-                    /**
-                     * 设置节点磁盘容量（单位GB）
-                     * @param DiskSize 节点磁盘容量（单位GB）
-                     */
-                    void SetDiskSize(const uint64_t& _diskSize);
-
-                    /**
-                     * 判断参数 DiskSize 是否已赋值
-                     * @return DiskSize 是否已赋值
-                     */
-                    bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
@@ -206,6 +154,28 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
+                     * 获取已废弃请使用NodeInfoList
+节点数量（2-50个）
+                     * @return NodeNum 已废弃请使用NodeInfoList
+节点数量（2-50个）
+                     */
+                    uint64_t GetNodeNum() const;
+
+                    /**
+                     * 设置已废弃请使用NodeInfoList
+节点数量（2-50个）
+                     * @param NodeNum 已废弃请使用NodeInfoList
+节点数量（2-50个）
+                     */
+                    void SetNodeNum(const uint64_t& _nodeNum);
+
+                    /**
+                     * 判断参数 NodeNum 是否已赋值
+                     * @return NodeNum 是否已赋值
+                     */
+                    bool NodeNumHasBeenSet() const;
+
+                    /**
                      * 获取计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
                      * @return ChargeType 计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
                      */
@@ -260,14 +230,40 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
-                     * @return DiskType 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * 获取已废弃请使用NodeInfoList
+节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return NodeType 已废弃请使用NodeInfoList
+节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置已废弃请使用NodeInfoList
+节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param NodeType 已废弃请使用NodeInfoList
+节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取已废弃请使用NodeInfoList
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * @return DiskType 已废弃请使用NodeInfoList
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
-                     * @param DiskType 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * 设置已废弃请使用NodeInfoList
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * @param DiskType 已废弃请使用NodeInfoList
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
                      */
                     void SetDiskType(const std::string& _diskType);
 
@@ -276,6 +272,28 @@ namespace TencentCloud
                      * @return DiskType 是否已赋值
                      */
                     bool DiskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取已废弃请使用NodeInfoList
+节点磁盘容量（单位GB）
+                     * @return DiskSize 已废弃请使用NodeInfoList
+节点磁盘容量（单位GB）
+                     */
+                    uint64_t GetDiskSize() const;
+
+                    /**
+                     * 设置已废弃请使用NodeInfoList
+节点磁盘容量（单位GB）
+                     * @param DiskSize 已废弃请使用NodeInfoList
+节点磁盘容量（单位GB）
+                     */
+                    void SetDiskSize(const uint64_t& _diskSize);
+
+                    /**
+                     * 判断参数 DiskSize 是否已赋值
+                     * @return DiskSize 是否已赋值
+                     */
+                    bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）
@@ -332,14 +350,18 @@ namespace TencentCloud
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
-                     * @return EnableDedicatedMaster 是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * 获取已废弃请使用NodeInfoList
+是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * @return EnableDedicatedMaster 已废弃请使用NodeInfoList
+是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
                      */
                     bool GetEnableDedicatedMaster() const;
 
                     /**
-                     * 设置是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
-                     * @param EnableDedicatedMaster 是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * 设置已废弃请使用NodeInfoList
+是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * @param EnableDedicatedMaster 已废弃请使用NodeInfoList
+是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
                      */
                     void SetEnableDedicatedMaster(const bool& _enableDedicatedMaster);
 
@@ -350,14 +372,18 @@ namespace TencentCloud
                     bool EnableDedicatedMasterHasBeenSet() const;
 
                     /**
-                     * 获取专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
-                     * @return MasterNodeNum 专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * 获取已废弃请使用NodeInfoList
+专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * @return MasterNodeNum 已废弃请使用NodeInfoList
+专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
                      */
                     uint64_t GetMasterNodeNum() const;
 
                     /**
-                     * 设置专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
-                     * @param MasterNodeNum 专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * 设置已废弃请使用NodeInfoList
+专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * @param MasterNodeNum 已废弃请使用NodeInfoList
+专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
                      */
                     void SetMasterNodeNum(const uint64_t& _masterNodeNum);
 
@@ -368,14 +394,18 @@ namespace TencentCloud
                     bool MasterNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return MasterNodeType 专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取已废弃请使用NodeInfoList
+专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return MasterNodeType 已废弃请使用NodeInfoList
+专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     std::string GetMasterNodeType() const;
 
                     /**
-                     * 设置专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param MasterNodeType 专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置已废弃请使用NodeInfoList
+专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param MasterNodeType 已废弃请使用NodeInfoList
+专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     void SetMasterNodeType(const std::string& _masterNodeType);
 
@@ -386,14 +416,18 @@ namespace TencentCloud
                     bool MasterNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
-                     * @return MasterNodeDiskSize 专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * 获取已废弃请使用NodeInfoList
+专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * @return MasterNodeDiskSize 已废弃请使用NodeInfoList
+专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
                      */
                     uint64_t GetMasterNodeDiskSize() const;
 
                     /**
-                     * 设置专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
-                     * @param MasterNodeDiskSize 专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * 设置已废弃请使用NodeInfoList
+专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * @param MasterNodeDiskSize 已废弃请使用NodeInfoList
+专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
                      */
                     void SetMasterNodeDiskSize(const uint64_t& _masterNodeDiskSize);
 
@@ -443,13 +477,13 @@ namespace TencentCloud
                      * 获取多可用区部署时可用区的详细信息(DeployMode为1时必传)
                      * @return MultiZoneInfo 多可用区部署时可用区的详细信息(DeployMode为1时必传)
                      */
-                    std::vector<MultiZoneInfo> GetMultiZoneInfo() const;
+                    std::vector<ZoneDetail> GetMultiZoneInfo() const;
 
                     /**
                      * 设置多可用区部署时可用区的详细信息(DeployMode为1时必传)
                      * @param MultiZoneInfo 多可用区部署时可用区的详细信息(DeployMode为1时必传)
                      */
-                    void SetMultiZoneInfo(const std::vector<MultiZoneInfo>& _multiZoneInfo);
+                    void SetMultiZoneInfo(const std::vector<ZoneDetail>& _multiZoneInfo);
 
                     /**
                      * 判断参数 MultiZoneInfo 是否已赋值
@@ -475,6 +509,60 @@ namespace TencentCloud
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     * @return NodeInfoList 节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     */
+                    std::vector<NodeInfo> GetNodeInfoList() const;
+
+                    /**
+                     * 设置节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     * @param NodeInfoList 节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     */
+                    void SetNodeInfoList(const std::vector<NodeInfo>& _nodeInfoList);
+
+                    /**
+                     * 判断参数 NodeInfoList 是否已赋值
+                     * @return NodeInfoList 是否已赋值
+                     */
+                    bool NodeInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取节点标签信息列表
+                     * @return TagList 节点标签信息列表
+                     */
+                    std::vector<TagInfo> GetTagList() const;
+
+                    /**
+                     * 设置节点标签信息列表
+                     * @param TagList 节点标签信息列表
+                     */
+                    void SetTagList(const std::vector<TagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * @return BasicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     */
+                    uint64_t GetBasicSecurityType() const;
+
+                    /**
+                     * 设置6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * @param BasicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     */
+                    void SetBasicSecurityType(const uint64_t& _basicSecurityType);
+
+                    /**
+                     * 判断参数 BasicSecurityType 是否已赋值
+                     * @return BasicSecurityType 是否已赋值
+                     */
+                    bool BasicSecurityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,28 +572,10 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 节点数量（2-50个）
-                     */
-                    uint64_t m_nodeNum;
-                    bool m_nodeNumHasBeenSet;
-
-                    /**
                      * 实例版本（支持"5.6.4"、"6.4.3"）
                      */
                     std::string m_esVersion;
                     bool m_esVersionHasBeenSet;
-
-                    /**
-                     * 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     */
-                    std::string m_nodeType;
-                    bool m_nodeTypeHasBeenSet;
-
-                    /**
-                     * 节点磁盘容量（单位GB）
-                     */
-                    uint64_t m_diskSize;
-                    bool m_diskSizeHasBeenSet;
 
                     /**
                      * 私有网络ID
@@ -532,6 +602,13 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
+                     * 已废弃请使用NodeInfoList
+节点数量（2-50个）
+                     */
+                    uint64_t m_nodeNum;
+                    bool m_nodeNumHasBeenSet;
+
+                    /**
                      * 计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
                      */
                     std::string m_chargeType;
@@ -550,10 +627,25 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * 已废弃请使用NodeInfoList
+节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 已废弃请使用NodeInfoList
+节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 已废弃请使用NodeInfoList
+节点磁盘容量（单位GB）
+                     */
+                    uint64_t m_diskSize;
+                    bool m_diskSizeHasBeenSet;
 
                     /**
                      * 计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）
@@ -574,25 +666,29 @@ namespace TencentCloud
                     bool m_voucherIdsHasBeenSet;
 
                     /**
-                     * 是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * 已废弃请使用NodeInfoList
+是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
                      */
                     bool m_enableDedicatedMaster;
                     bool m_enableDedicatedMasterHasBeenSet;
 
                     /**
-                     * 专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * 已废弃请使用NodeInfoList
+专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
                      */
                     uint64_t m_masterNodeNum;
                     bool m_masterNodeNumHasBeenSet;
 
                     /**
-                     * 专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 已废弃请使用NodeInfoList
+专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      */
                     std::string m_masterNodeType;
                     bool m_masterNodeTypeHasBeenSet;
 
                     /**
-                     * 专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * 已废弃请使用NodeInfoList
+专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
                      */
                     uint64_t m_masterNodeDiskSize;
                     bool m_masterNodeDiskSizeHasBeenSet;
@@ -612,7 +708,7 @@ namespace TencentCloud
                     /**
                      * 多可用区部署时可用区的详细信息(DeployMode为1时必传)
                      */
-                    std::vector<MultiZoneInfo> m_multiZoneInfo;
+                    std::vector<ZoneDetail> m_multiZoneInfo;
                     bool m_multiZoneInfoHasBeenSet;
 
                     /**
@@ -620,6 +716,24 @@ namespace TencentCloud
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * 节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     */
+                    std::vector<NodeInfo> m_nodeInfoList;
+                    bool m_nodeInfoListHasBeenSet;
+
+                    /**
+                     * 节点标签信息列表
+                     */
+                    std::vector<TagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
+
+                    /**
+                     * 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     */
+                    uint64_t m_basicSecurityType;
+                    bool m_basicSecurityTypeHasBeenSet;
 
                 };
             }

@@ -43,58 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最大上限
-注：目前固定设置为0
-                     * @return Limit 最大上限
-注：目前固定设置为0
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置最大上限
-注：目前固定设置为0
-                     * @param Limit 最大上限
-注：目前固定设置为0
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取偏移量
-注：目前固定设置为0
-                     * @return Offset 偏移量
-注：目前固定设置为0
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移量
-注：目前固定设置为0
-                     * @param Offset 偏移量
-注：目前固定设置为0
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时
-                     * @return StartDateTime 开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时
+                     * 获取开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
+                     * @return StartDateTime 开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
                      */
                     uint64_t GetStartDateTime() const;
 
                     /**
-                     * 设置开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时
-                     * @param StartDateTime 开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时
+                     * 设置开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
+                     * @param StartDateTime 开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
                      */
                     void SetStartDateTime(const uint64_t& _startDateTime);
 
@@ -105,18 +61,18 @@ namespace TencentCloud
                     bool StartDateTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于StartDateTime
-                     * @return EndDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于StartDateTime
+                     * 获取结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。
+注：EndDataTime 必须大于 StartDateTime。
+                     * @return EndDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。
+注：EndDataTime 必须大于 StartDateTime。
                      */
                     uint64_t GetEndDataTime() const;
 
                     /**
-                     * 设置结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于StartDateTime
-                     * @param EndDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于StartDateTime
+                     * 设置结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。
+注：EndDataTime 必须大于 StartDateTime。
+                     * @param EndDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。
+注：EndDataTime 必须大于 StartDateTime。
                      */
                     void SetEndDataTime(const uint64_t& _endDataTime);
 
@@ -127,14 +83,14 @@ namespace TencentCloud
                     bool EndDataTimeHasBeenSet() const;
 
                     /**
-                     * 获取短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @return SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 获取短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * @return SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
                      */
                     std::string GetSmsSdkAppid() const;
 
                     /**
-                     * 设置短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
-                     * @param SmsSdkAppid 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 设置短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * @param SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
                      */
                     void SetSmsSdkAppid(const std::string& _smsSdkAppid);
 
@@ -144,40 +100,84 @@ namespace TencentCloud
                      */
                     bool SmsSdkAppidHasBeenSet() const;
 
+                    /**
+                     * 获取最大上限。
+注：目前固定设置为0。
+                     * @return Limit 最大上限。
+注：目前固定设置为0。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置最大上限。
+注：目前固定设置为0。
+                     * @param Limit 最大上限。
+注：目前固定设置为0。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量。
+注：目前固定设置为0。
+                     * @return Offset 偏移量。
+注：目前固定设置为0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量。
+注：目前固定设置为0。
+                     * @param Offset 偏移量。
+注：目前固定设置为0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 最大上限
-注：目前固定设置为0
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 偏移量
-注：目前固定设置为0
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
-                     * 开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时
+                     * 开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
                      */
                     uint64_t m_startDateTime;
                     bool m_startDateTimeHasBeenSet;
 
                     /**
-                     * 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于StartDateTime
+                     * 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时。
+注：EndDataTime 必须大于 StartDateTime。
                      */
                     uint64_t m_endDataTime;
                     bool m_endDataTimeHasBeenSet;
 
                     /**
-                     * 短信SdkAppid在[短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid,示例如1400006666。
+                     * 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/sms/smslist) 添加应用后生成的实际SdkAppid，示例如1400006666。
                      */
                     std::string m_smsSdkAppid;
                     bool m_smsSdkAppidHasBeenSet;
+
+                    /**
+                     * 最大上限。
+注：目前固定设置为0。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 偏移量。
+注：目前固定设置为0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyBandwidthPackageAttributeRequest::ModifyBandwidthPackageAttributeRequest() :
     m_bandwidthPackageIdHasBeenSet(false),
-    m_bandwidthPackageNameHasBeenSet(false)
+    m_bandwidthPackageNameHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ModifyBandwidthPackageAttributeRequest::ToJsonString() const
         string key = "BandwidthPackageName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_bandwidthPackageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_chargeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ModifyBandwidthPackageAttributeRequest::SetBandwidthPackageName(const strin
 bool ModifyBandwidthPackageAttributeRequest::BandwidthPackageNameHasBeenSet() const
 {
     return m_bandwidthPackageNameHasBeenSet;
+}
+
+string ModifyBandwidthPackageAttributeRequest::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void ModifyBandwidthPackageAttributeRequest::SetChargeType(const string& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool ModifyBandwidthPackageAttributeRequest::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
 }
 
 

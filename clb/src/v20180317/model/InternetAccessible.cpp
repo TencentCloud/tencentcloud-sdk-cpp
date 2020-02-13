@@ -23,7 +23,8 @@ using namespace std;
 
 InternetAccessible::InternetAccessible() :
     m_internetChargeTypeHasBeenSet(false),
-    m_internetMaxBandwidthOutHasBeenSet(false)
+    m_internetMaxBandwidthOutHasBeenSet(false),
+    m_bandwidthpkgSubTypeHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome InternetAccessible::Deserialize(const Value &value)
         m_internetMaxBandwidthOutHasBeenSet = true;
     }
 
+    if (value.HasMember("BandwidthpkgSubType") && !value["BandwidthpkgSubType"].IsNull())
+    {
+        if (!value["BandwidthpkgSubType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InternetAccessible.BandwidthpkgSubType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidthpkgSubType = string(value["BandwidthpkgSubType"].GetString());
+        m_bandwidthpkgSubTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void InternetAccessible::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
+    }
+
+    if (m_bandwidthpkgSubTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BandwidthpkgSubType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_bandwidthpkgSubType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void InternetAccessible::SetInternetMaxBandwidthOut(const int64_t& _internetMaxB
 bool InternetAccessible::InternetMaxBandwidthOutHasBeenSet() const
 {
     return m_internetMaxBandwidthOutHasBeenSet;
+}
+
+string InternetAccessible::GetBandwidthpkgSubType() const
+{
+    return m_bandwidthpkgSubType;
+}
+
+void InternetAccessible::SetBandwidthpkgSubType(const string& _bandwidthpkgSubType)
+{
+    m_bandwidthpkgSubType = _bandwidthpkgSubType;
+    m_bandwidthpkgSubTypeHasBeenSet = true;
+}
+
+bool InternetAccessible::BandwidthpkgSubTypeHasBeenSet() const
+{
+    return m_bandwidthpkgSubTypeHasBeenSet;
 }
 

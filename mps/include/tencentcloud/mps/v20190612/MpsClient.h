@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mps/v20190612/model/CreateAIAnalysisTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateAIAnalysisTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateWordSamplesResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateWorkflowResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteAIAnalysisTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteAIAnalysisTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteAIRecognitionTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteAIRecognitionTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteAnimatedGraphicsTemplateRequest.h>
@@ -67,6 +71,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteWordSamplesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWorkflowResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAIAnalysisTemplatesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAIAnalysisTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAIRecognitionTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAIRecognitionTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAnimatedGraphicsTemplatesRequest.h>
@@ -75,6 +81,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesRequest.h>
@@ -97,6 +105,10 @@
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowResponse.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h>
+#include <tencentcloud/mps/v20190612/model/ManageTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/ManageTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyAIAnalysisTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyAIAnalysisTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyAIRecognitionTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyAIRecognitionTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyAnimatedGraphicsTemplateRequest.h>
@@ -141,6 +153,9 @@ namespace TencentCloud
                 MpsClient(const Credential &credential, const std::string &region);
                 MpsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateAIAnalysisTemplateResponse> CreateAIAnalysisTemplateOutcome;
+                typedef std::future<CreateAIAnalysisTemplateOutcome> CreateAIAnalysisTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateAIAnalysisTemplateRequest&, CreateAIAnalysisTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIAnalysisTemplateAsyncHandler;
                 typedef Outcome<Error, Model::CreateAIRecognitionTemplateResponse> CreateAIRecognitionTemplateOutcome;
                 typedef std::future<CreateAIRecognitionTemplateOutcome> CreateAIRecognitionTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAIRecognitionTemplateRequest&, CreateAIRecognitionTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIRecognitionTemplateAsyncHandler;
@@ -174,6 +189,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateWorkflowResponse> CreateWorkflowOutcome;
                 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateWorkflowRequest&, CreateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAIAnalysisTemplateResponse> DeleteAIAnalysisTemplateOutcome;
+                typedef std::future<DeleteAIAnalysisTemplateOutcome> DeleteAIAnalysisTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteAIAnalysisTemplateRequest&, DeleteAIAnalysisTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIAnalysisTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAIRecognitionTemplateResponse> DeleteAIRecognitionTemplateOutcome;
                 typedef std::future<DeleteAIRecognitionTemplateOutcome> DeleteAIRecognitionTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteAIRecognitionTemplateRequest&, DeleteAIRecognitionTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIRecognitionTemplateAsyncHandler;
@@ -207,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteWorkflowResponse> DeleteWorkflowOutcome;
                 typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteWorkflowRequest&, DeleteWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAIAnalysisTemplatesResponse> DescribeAIAnalysisTemplatesOutcome;
+                typedef std::future<DescribeAIAnalysisTemplatesOutcome> DescribeAIAnalysisTemplatesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeAIAnalysisTemplatesRequest&, DescribeAIAnalysisTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAnalysisTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAIRecognitionTemplatesResponse> DescribeAIRecognitionTemplatesOutcome;
                 typedef std::future<DescribeAIRecognitionTemplatesOutcome> DescribeAIRecognitionTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAIRecognitionTemplatesRequest&, DescribeAIRecognitionTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIRecognitionTemplatesAsyncHandler;
@@ -219,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeImageSpriteTemplatesResponse> DescribeImageSpriteTemplatesOutcome;
                 typedef std::future<DescribeImageSpriteTemplatesOutcome> DescribeImageSpriteTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeImageSpriteTemplatesRequest&, DescribeImageSpriteTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSpriteTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMediaMetaDataResponse> DescribeMediaMetaDataOutcome;
+                typedef std::future<DescribeMediaMetaDataOutcome> DescribeMediaMetaDataOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeMediaMetaDataRequest&, DescribeMediaMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaMetaDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribePersonSamplesResponse> DescribePersonSamplesOutcome;
                 typedef std::future<DescribePersonSamplesOutcome> DescribePersonSamplesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribePersonSamplesRequest&, DescribePersonSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonSamplesAsyncHandler;
@@ -252,6 +276,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableWorkflowResponse> EnableWorkflowOutcome;
                 typedef std::future<EnableWorkflowOutcome> EnableWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EnableWorkflowRequest&, EnableWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWorkflowAsyncHandler;
+                typedef Outcome<Error, Model::ManageTaskResponse> ManageTaskOutcome;
+                typedef std::future<ManageTaskOutcome> ManageTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ManageTaskRequest&, ManageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageTaskAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAIAnalysisTemplateResponse> ModifyAIAnalysisTemplateOutcome;
+                typedef std::future<ModifyAIAnalysisTemplateOutcome> ModifyAIAnalysisTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyAIAnalysisTemplateRequest&, ModifyAIAnalysisTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAIAnalysisTemplateAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAIRecognitionTemplateResponse> ModifyAIRecognitionTemplateOutcome;
                 typedef std::future<ModifyAIRecognitionTemplateOutcome> ModifyAIRecognitionTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyAIRecognitionTemplateRequest&, ModifyAIRecognitionTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAIRecognitionTemplateAsyncHandler;
@@ -299,6 +329,15 @@ namespace TencentCloud
                 typedef std::function<void(const MpsClient*, const Model::ResetWorkflowRequest&, ResetWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetWorkflowAsyncHandler;
 
 
+
+                /**
+                 *创建用户自定义内容分析模板，数量上限：50。
+                 * @param req CreateAIAnalysisTemplateRequest
+                 * @return CreateAIAnalysisTemplateOutcome
+                 */
+                CreateAIAnalysisTemplateOutcome CreateAIAnalysisTemplate(const Model::CreateAIAnalysisTemplateRequest &request);
+                void CreateAIAnalysisTemplateAsync(const Model::CreateAIAnalysisTemplateRequest& request, const CreateAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAIAnalysisTemplateOutcomeCallable CreateAIAnalysisTemplateCallable(const Model::CreateAIAnalysisTemplateRequest& request);
 
                 /**
                  *创建用户自定义内容识别模板，数量上限：50。
@@ -399,7 +438,8 @@ namespace TencentCloud
 5. 对视频截图雪碧图；
 6. 对视频转自适应码流；
 7. 智能内容审核（鉴黄、鉴恐、鉴政）；
-8. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。
+8. 智能内容分析（标签、分类、封面、按帧标签）；
+9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。
 
 注意：创建工作流成功后是禁用状态，需要手动启用。
                  * @param req CreateWorkflowRequest
@@ -408,6 +448,17 @@ namespace TencentCloud
                 CreateWorkflowOutcome CreateWorkflow(const Model::CreateWorkflowRequest &request);
                 void CreateWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request);
+
+                /**
+                 *删除用户自定义内容分析模板。
+
+注意：模板 ID 为 10000 以下的为系统预置模板，不允许删除。
+                 * @param req DeleteAIAnalysisTemplateRequest
+                 * @return DeleteAIAnalysisTemplateOutcome
+                 */
+                DeleteAIAnalysisTemplateOutcome DeleteAIAnalysisTemplate(const Model::DeleteAIAnalysisTemplateRequest &request);
+                void DeleteAIAnalysisTemplateAsync(const Model::DeleteAIAnalysisTemplateRequest& request, const DeleteAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAIAnalysisTemplateOutcomeCallable DeleteAIAnalysisTemplateCallable(const Model::DeleteAIAnalysisTemplateRequest& request);
 
                 /**
                  *删除用户自定义内容识别模板。
@@ -509,6 +560,15 @@ namespace TencentCloud
                 DeleteWorkflowOutcomeCallable DeleteWorkflowCallable(const Model::DeleteWorkflowRequest& request);
 
                 /**
+                 *根据内容分析模板唯一标识，获取内容分析模板详情列表。返回结果包含符合条件的所有用户自定义内容分析模板及系统预置视频内容分析模板
+                 * @param req DescribeAIAnalysisTemplatesRequest
+                 * @return DescribeAIAnalysisTemplatesOutcome
+                 */
+                DescribeAIAnalysisTemplatesOutcome DescribeAIAnalysisTemplates(const Model::DescribeAIAnalysisTemplatesRequest &request);
+                void DescribeAIAnalysisTemplatesAsync(const Model::DescribeAIAnalysisTemplatesRequest& request, const DescribeAIAnalysisTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAnalysisTemplatesOutcomeCallable DescribeAIAnalysisTemplatesCallable(const Model::DescribeAIAnalysisTemplatesRequest& request);
+
+                /**
                  *根据内容识别模板唯一标识，获取内容识别模板详情列表。返回结果包含符合条件的所有用户自定义内容识别模板及系统预置视频内容识别模板
                  * @param req DescribeAIRecognitionTemplatesRequest
                  * @return DescribeAIRecognitionTemplatesOutcome
@@ -543,6 +603,15 @@ namespace TencentCloud
                 DescribeImageSpriteTemplatesOutcome DescribeImageSpriteTemplates(const Model::DescribeImageSpriteTemplatesRequest &request);
                 void DescribeImageSpriteTemplatesAsync(const Model::DescribeImageSpriteTemplatesRequest& request, const DescribeImageSpriteTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageSpriteTemplatesOutcomeCallable DescribeImageSpriteTemplatesCallable(const Model::DescribeImageSpriteTemplatesRequest& request);
+
+                /**
+                 *获取媒体的元信息，包括视频画面宽、高、编码格式、时长、帧率等。
+                 * @param req DescribeMediaMetaDataRequest
+                 * @return DescribeMediaMetaDataOutcome
+                 */
+                DescribeMediaMetaDataOutcome DescribeMediaMetaData(const Model::DescribeMediaMetaDataRequest &request);
+                void DescribeMediaMetaDataAsync(const Model::DescribeMediaMetaDataRequest& request, const DescribeMediaMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMediaMetaDataOutcomeCallable DescribeMediaMetaDataCallable(const Model::DescribeMediaMetaDataRequest& request);
 
                 /**
                  *该接口用于查询人物样本信息，支持根据人物 ID、名称、标签，分页查询。
@@ -644,6 +713,27 @@ namespace TencentCloud
                 EnableWorkflowOutcome EnableWorkflow(const Model::EnableWorkflowRequest &request);
                 void EnableWorkflowAsync(const Model::EnableWorkflowRequest& request, const EnableWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableWorkflowOutcomeCallable EnableWorkflowCallable(const Model::EnableWorkflowRequest& request);
+
+                /**
+                 *对已发起的任务进行管理。
+> 注意：目前仅支持终止执行中的直播流处理任务。
+                 * @param req ManageTaskRequest
+                 * @return ManageTaskOutcome
+                 */
+                ManageTaskOutcome ManageTask(const Model::ManageTaskRequest &request);
+                void ManageTaskAsync(const Model::ManageTaskRequest& request, const ManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManageTaskOutcomeCallable ManageTaskCallable(const Model::ManageTaskRequest& request);
+
+                /**
+                 *修改用户自定义内容分析模板。
+
+注意：模板 ID 10000 以下的为系统预置模板，不允许修改。
+                 * @param req ModifyAIAnalysisTemplateRequest
+                 * @return ModifyAIAnalysisTemplateOutcome
+                 */
+                ModifyAIAnalysisTemplateOutcome ModifyAIAnalysisTemplate(const Model::ModifyAIAnalysisTemplateRequest &request);
+                void ModifyAIAnalysisTemplateAsync(const Model::ModifyAIAnalysisTemplateRequest& request, const ModifyAIAnalysisTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAIAnalysisTemplateOutcomeCallable ModifyAIAnalysisTemplateCallable(const Model::ModifyAIAnalysisTemplateRequest& request);
 
                 /**
                  *修改用户自定义内容识别模板。
@@ -777,7 +867,8 @@ namespace TencentCloud
 5. 对视频截图雪碧图；
 6. 对视频转自适应码流；
 7. 智能内容审核（鉴黄、鉴恐、鉴政）；
-8. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。
+8. 智能内容分析（标签、分类、封面、按帧标签）；
+9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。
                  * @param req ProcessMediaRequest
                  * @return ProcessMediaOutcome
                  */

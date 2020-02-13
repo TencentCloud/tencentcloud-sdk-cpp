@@ -27,6 +27,8 @@
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowResponse.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadRequest.h>
+#include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateAccountsRequest.h>
@@ -63,10 +65,16 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupOverviewRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupOverviewResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupSummariesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupTablesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupTablesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h>
@@ -89,6 +97,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeDBSwitchRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDefaultParamsRequest.h>
@@ -107,6 +117,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeParamTemplatesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogsRequest.h>
@@ -157,6 +169,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyTimeWindowResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h>
@@ -165,6 +179,8 @@
 #include <tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesRequest.h>
@@ -201,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::BalanceRoGroupLoadResponse> BalanceRoGroupLoadOutcome;
+                typedef std::future<BalanceRoGroupLoadOutcome> BalanceRoGroupLoadOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::BalanceRoGroupLoadRequest&, BalanceRoGroupLoadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BalanceRoGroupLoadAsyncHandler;
                 typedef Outcome<Error, Model::CloseWanServiceResponse> CloseWanServiceOutcome;
                 typedef std::future<CloseWanServiceOutcome> CloseWanServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseWanServiceRequest&, CloseWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWanServiceAsyncHandler;
@@ -255,12 +274,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBackupDatabasesResponse> DescribeBackupDatabasesOutcome;
                 typedef std::future<DescribeBackupDatabasesOutcome> DescribeBackupDatabasesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupDatabasesRequest&, DescribeBackupDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDatabasesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBackupOverviewResponse> DescribeBackupOverviewOutcome;
+                typedef std::future<DescribeBackupOverviewOutcome> DescribeBackupOverviewOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeBackupOverviewRequest&, DescribeBackupOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupOverviewAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBackupSummariesResponse> DescribeBackupSummariesOutcome;
+                typedef std::future<DescribeBackupSummariesOutcome> DescribeBackupSummariesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeBackupSummariesRequest&, DescribeBackupSummariesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupSummariesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBackupTablesResponse> DescribeBackupTablesOutcome;
                 typedef std::future<DescribeBackupTablesOutcome> DescribeBackupTablesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupTablesRequest&, DescribeBackupTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupTablesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBackupsResponse> DescribeBackupsOutcome;
                 typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupsRequest&, DescribeBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBinlogBackupOverviewResponse> DescribeBinlogBackupOverviewOutcome;
+                typedef std::future<DescribeBinlogBackupOverviewOutcome> DescribeBinlogBackupOverviewOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeBinlogBackupOverviewRequest&, DescribeBinlogBackupOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogBackupOverviewAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBinlogsResponse> DescribeBinlogsOutcome;
                 typedef std::future<DescribeBinlogsOutcome> DescribeBinlogsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBinlogsRequest&, DescribeBinlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogsAsyncHandler;
@@ -294,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBZoneConfigResponse> DescribeDBZoneConfigOutcome;
                 typedef std::future<DescribeDBZoneConfigOutcome> DescribeDBZoneConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBZoneConfigRequest&, DescribeDBZoneConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBZoneConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDataBackupOverviewResponse> DescribeDataBackupOverviewOutcome;
+                typedef std::future<DescribeDataBackupOverviewOutcome> DescribeDataBackupOverviewOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeDataBackupOverviewRequest&, DescribeDataBackupOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBackupOverviewAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -321,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
                 typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRoGroupsResponse> DescribeRoGroupsOutcome;
+                typedef std::future<DescribeRoGroupsOutcome> DescribeRoGroupsOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeRoGroupsRequest&, DescribeRoGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRollbackRangeTimeResponse> DescribeRollbackRangeTimeOutcome;
                 typedef std::future<DescribeRollbackRangeTimeOutcome> DescribeRollbackRangeTimeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRollbackRangeTimeRequest&, DescribeRollbackRangeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackRangeTimeAsyncHandler;
@@ -396,6 +430,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
+                typedef Outcome<Error, Model::ModifyRoGroupInfoResponse> ModifyRoGroupInfoOutcome;
+                typedef std::future<ModifyRoGroupInfoOutcome> ModifyRoGroupInfoOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyRoGroupInfoRequest&, ModifyRoGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoGroupInfoAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTimeWindowResponse> ModifyTimeWindowOutcome;
                 typedef std::future<ModifyTimeWindowOutcome> ModifyTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyTimeWindowRequest&, ModifyTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTimeWindowAsyncHandler;
@@ -408,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::OpenWanServiceResponse> OpenWanServiceOutcome;
                 typedef std::future<OpenWanServiceOutcome> OpenWanServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::OpenWanServiceRequest&, OpenWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenWanServiceAsyncHandler;
+                typedef Outcome<Error, Model::ReleaseIsolatedDBInstancesResponse> ReleaseIsolatedDBInstancesOutcome;
+                typedef std::future<ReleaseIsolatedDBInstancesOutcome> ReleaseIsolatedDBInstancesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ReleaseIsolatedDBInstancesRequest&, ReleaseIsolatedDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIsolatedDBInstancesAsyncHandler;
                 typedef Outcome<Error, Model::RenewDBInstanceResponse> RenewDBInstanceOutcome;
                 typedef std::future<RenewDBInstanceOutcome> RenewDBInstanceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::RenewDBInstanceRequest&, RenewDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDBInstanceAsyncHandler;
@@ -452,6 +492,15 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
                 void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
+                 *本接口(BalanceRoGroupLoad)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。
+                 * @param req BalanceRoGroupLoadRequest
+                 * @return BalanceRoGroupLoadOutcome
+                 */
+                BalanceRoGroupLoadOutcome BalanceRoGroupLoad(const Model::BalanceRoGroupLoadRequest &request);
+                void BalanceRoGroupLoadAsync(const Model::BalanceRoGroupLoadRequest& request, const BalanceRoGroupLoadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BalanceRoGroupLoadOutcomeCallable BalanceRoGroupLoadCallable(const Model::BalanceRoGroupLoadRequest& request);
 
                 /**
                  *本接口(CloseWanService)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问。
@@ -526,7 +575,7 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
 
                 /**
-                 *创建放置实例的置放群组
+                 *本接口(CreateDeployGroup)用于创建放置实例的置放群组
                  * @param req CreateDeployGroupRequest
                  * @return CreateDeployGroupOutcome
                  */
@@ -636,6 +685,24 @@ namespace TencentCloud
                 DescribeBackupDatabasesOutcomeCallable DescribeBackupDatabasesCallable(const Model::DescribeBackupDatabasesRequest& request);
 
                 /**
+                 *本接口(DescribeBackupOverview)用于查询用户的备份概览。返回用户当前备份总个数、备份总的占用容量、赠送的免费容量、计费容量（容量单位为字节）。
+                 * @param req DescribeBackupOverviewRequest
+                 * @return DescribeBackupOverviewOutcome
+                 */
+                DescribeBackupOverviewOutcome DescribeBackupOverview(const Model::DescribeBackupOverviewRequest &request);
+                void DescribeBackupOverviewAsync(const Model::DescribeBackupOverviewRequest& request, const DescribeBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupOverviewOutcomeCallable DescribeBackupOverviewCallable(const Model::DescribeBackupOverviewRequest& request);
+
+                /**
+                 *本接口(DescribeBackupSummaries)用于查询备份的统计情况，返回以实例为维度的备份占用容量，以及每个实例的数据备份和日志备份的个数和容量（容量单位为字节）。
+                 * @param req DescribeBackupSummariesRequest
+                 * @return DescribeBackupSummariesOutcome
+                 */
+                DescribeBackupSummariesOutcome DescribeBackupSummaries(const Model::DescribeBackupSummariesRequest &request);
+                void DescribeBackupSummariesAsync(const Model::DescribeBackupSummariesRequest& request, const DescribeBackupSummariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupSummariesOutcomeCallable DescribeBackupSummariesCallable(const Model::DescribeBackupSummariesRequest& request);
+
+                /**
                  *本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (已废弃)。
 旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。
 新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。
@@ -654,6 +721,15 @@ namespace TencentCloud
                 DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest &request);
                 void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupsOutcomeCallable DescribeBackupsCallable(const Model::DescribeBackupsRequest& request);
+
+                /**
+                 *本接口(DescribeBinlogBackupOverview)用于查询用户在当前地域总的日志备份概览。
+                 * @param req DescribeBinlogBackupOverviewRequest
+                 * @return DescribeBinlogBackupOverviewOutcome
+                 */
+                DescribeBinlogBackupOverviewOutcome DescribeBinlogBackupOverview(const Model::DescribeBinlogBackupOverviewRequest &request);
+                void DescribeBinlogBackupOverviewAsync(const Model::DescribeBinlogBackupOverviewRequest& request, const DescribeBinlogBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBinlogBackupOverviewOutcomeCallable DescribeBinlogBackupOverviewCallable(const Model::DescribeBinlogBackupOverviewRequest& request);
 
                 /**
                  *本接口(DescribeBinlogs)用于查询云数据库实例的二进制数据。
@@ -757,6 +833,15 @@ namespace TencentCloud
                 DescribeDBZoneConfigOutcomeCallable DescribeDBZoneConfigCallable(const Model::DescribeDBZoneConfigRequest& request);
 
                 /**
+                 *本接口(DescribeDataBackupOverview)用于查询用户在当前地域总的数据备份概览。
+                 * @param req DescribeDataBackupOverviewRequest
+                 * @return DescribeDataBackupOverviewOutcome
+                 */
+                DescribeDataBackupOverviewOutcome DescribeDataBackupOverview(const Model::DescribeDataBackupOverviewRequest &request);
+                void DescribeDataBackupOverviewAsync(const Model::DescribeDataBackupOverviewRequest& request, const DescribeDataBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataBackupOverviewOutcomeCallable DescribeDataBackupOverviewCallable(const Model::DescribeDataBackupOverviewRequest& request);
+
+                /**
                  *本接口(DescribeDatabases)用于查询云数据库实例的数据库信息。
                  * @param req DescribeDatabasesRequest
                  * @return DescribeDatabasesOutcome
@@ -775,7 +860,7 @@ namespace TencentCloud
                 DescribeDefaultParamsOutcomeCallable DescribeDefaultParamsCallable(const Model::DescribeDefaultParamsRequest& request);
 
                 /**
-                 *根据置放群组 ID 或置放群组名称查询置放群组列表
+                 *本接口(DescribeDeployGroupList)用于查询用户的置放群组列表，可以指定置放群组 ID 或置放群组名称。
                  * @param req DescribeDeployGroupListRequest
                  * @return DescribeDeployGroupListOutcome
                  */
@@ -836,6 +921,15 @@ namespace TencentCloud
                 DescribeProjectSecurityGroupsOutcome DescribeProjectSecurityGroups(const Model::DescribeProjectSecurityGroupsRequest &request);
                 void DescribeProjectSecurityGroupsAsync(const Model::DescribeProjectSecurityGroupsRequest& request, const DescribeProjectSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectSecurityGroupsOutcomeCallable DescribeProjectSecurityGroupsCallable(const Model::DescribeProjectSecurityGroupsRequest& request);
+
+                /**
+                 *本接口(DescribeRoGroups)用于查询云数据库实例的所有的RO组的信息。
+                 * @param req DescribeRoGroupsRequest
+                 * @return DescribeRoGroupsOutcome
+                 */
+                DescribeRoGroupsOutcome DescribeRoGroups(const Model::DescribeRoGroupsRequest &request);
+                void DescribeRoGroupsAsync(const Model::DescribeRoGroupsRequest& request, const DescribeRoGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoGroupsOutcomeCallable DescribeRoGroupsCallable(const Model::DescribeRoGroupsRequest& request);
 
                 /**
                  *本接口(DescribeRollbackRangeTime)用于查询云数据库实例可回档的时间范围。
@@ -937,7 +1031,7 @@ namespace TencentCloud
                 InquiryPriceUpgradeInstancesOutcomeCallable InquiryPriceUpgradeInstancesCallable(const Model::InquiryPriceUpgradeInstancesRequest& request);
 
                 /**
-                 *本接口(IsolateDBInstance)用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行冲正。
+                 *本接口(IsolateDBInstance)用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。
                  * @param req IsolateDBInstanceRequest
                  * @return IsolateDBInstanceOutcome
                  */
@@ -965,6 +1059,9 @@ namespace TencentCloud
 
                 /**
                  *本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。
+
+注意，修改账号权限时，需要传入该账号下的全量权限信息。用户可以先通过 [查询云数据库账户的权限信息
+](https://cloud.tencent.com/document/api/236/17500) 查询该账号下的全量权限信息，然后进行权限修改。
                  * @param req ModifyAccountPrivilegesRequest
                  * @return ModifyAccountPrivilegesOutcome
                  */
@@ -1063,6 +1160,15 @@ namespace TencentCloud
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
 
                 /**
+                 *本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重等。
+                 * @param req ModifyRoGroupInfoRequest
+                 * @return ModifyRoGroupInfoOutcome
+                 */
+                ModifyRoGroupInfoOutcome ModifyRoGroupInfo(const Model::ModifyRoGroupInfoRequest &request);
+                void ModifyRoGroupInfoAsync(const Model::ModifyRoGroupInfoRequest& request, const ModifyRoGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoGroupInfoOutcomeCallable ModifyRoGroupInfoCallable(const Model::ModifyRoGroupInfoRequest& request);
+
+                /**
                  *本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。
                  * @param req ModifyTimeWindowRequest
                  * @return ModifyTimeWindowOutcome
@@ -1103,6 +1209,15 @@ namespace TencentCloud
                 OpenWanServiceOutcome OpenWanService(const Model::OpenWanServiceRequest &request);
                 void OpenWanServiceAsync(const Model::OpenWanServiceRequest& request, const OpenWanServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenWanServiceOutcomeCallable OpenWanServiceCallable(const Model::OpenWanServiceRequest& request);
+
+                /**
+                 *本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。
+                 * @param req ReleaseIsolatedDBInstancesRequest
+                 * @return ReleaseIsolatedDBInstancesOutcome
+                 */
+                ReleaseIsolatedDBInstancesOutcome ReleaseIsolatedDBInstances(const Model::ReleaseIsolatedDBInstancesRequest &request);
+                void ReleaseIsolatedDBInstancesAsync(const Model::ReleaseIsolatedDBInstancesRequest& request, const ReleaseIsolatedDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseIsolatedDBInstancesOutcomeCallable ReleaseIsolatedDBInstancesCallable(const Model::ReleaseIsolatedDBInstancesRequest& request);
 
                 /**
                  *本接口(RenewDBInstance)用于续费云数据库实例，仅支持付费模式为包年包月的实例。按量计费实例不需要续费。

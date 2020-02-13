@@ -33,7 +33,10 @@ BruteAttack::BruteAttack() :
     m_countHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_machineNameHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_isProVersionHasBeenSet(false),
+    m_banStatusHasBeenSet(false),
+    m_quuidHasBeenSet(false)
 {
 }
 
@@ -162,6 +165,36 @@ CoreInternalOutcome BruteAttack::Deserialize(const Value &value)
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("IsProVersion") && !value["IsProVersion"].IsNull())
+    {
+        if (!value["IsProVersion"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `BruteAttack.IsProVersion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isProVersion = value["IsProVersion"].GetBool();
+        m_isProVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BanStatus") && !value["BanStatus"].IsNull())
+    {
+        if (!value["BanStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BruteAttack.BanStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_banStatus = string(value["BanStatus"].GetString());
+        m_banStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Quuid") && !value["Quuid"].IsNull())
+    {
+        if (!value["Quuid"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BruteAttack.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quuid = string(value["Quuid"].GetString());
+        m_quuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +296,30 @@ void BruteAttack::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isProVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsProVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isProVersion, allocator);
+    }
+
+    if (m_banStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BanStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_banStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +515,53 @@ void BruteAttack::SetUuid(const string& _uuid)
 bool BruteAttack::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+bool BruteAttack::GetIsProVersion() const
+{
+    return m_isProVersion;
+}
+
+void BruteAttack::SetIsProVersion(const bool& _isProVersion)
+{
+    m_isProVersion = _isProVersion;
+    m_isProVersionHasBeenSet = true;
+}
+
+bool BruteAttack::IsProVersionHasBeenSet() const
+{
+    return m_isProVersionHasBeenSet;
+}
+
+string BruteAttack::GetBanStatus() const
+{
+    return m_banStatus;
+}
+
+void BruteAttack::SetBanStatus(const string& _banStatus)
+{
+    m_banStatus = _banStatus;
+    m_banStatusHasBeenSet = true;
+}
+
+bool BruteAttack::BanStatusHasBeenSet() const
+{
+    return m_banStatusHasBeenSet;
+}
+
+string BruteAttack::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void BruteAttack::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool BruteAttack::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
 }
 

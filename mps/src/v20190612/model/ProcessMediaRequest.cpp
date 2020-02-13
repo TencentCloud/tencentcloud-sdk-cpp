@@ -29,6 +29,7 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_outputDirHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
+    m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
@@ -86,6 +87,15 @@ string ProcessMediaRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_aiContentReviewTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiAnalysisTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AiAnalysisTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_aiAnalysisTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_aiRecognitionTaskHasBeenSet)
@@ -216,6 +226,22 @@ void ProcessMediaRequest::SetAiContentReviewTask(const AiContentReviewTaskInput&
 bool ProcessMediaRequest::AiContentReviewTaskHasBeenSet() const
 {
     return m_aiContentReviewTaskHasBeenSet;
+}
+
+AiAnalysisTaskInput ProcessMediaRequest::GetAiAnalysisTask() const
+{
+    return m_aiAnalysisTask;
+}
+
+void ProcessMediaRequest::SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask)
+{
+    m_aiAnalysisTask = _aiAnalysisTask;
+    m_aiAnalysisTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::AiAnalysisTaskHasBeenSet() const
+{
+    return m_aiAnalysisTaskHasBeenSet;
 }
 
 AiRecognitionTaskInput ProcessMediaRequest::GetAiRecognitionTask() const

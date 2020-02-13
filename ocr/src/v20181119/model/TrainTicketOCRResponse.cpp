@@ -34,7 +34,9 @@ TrainTicketOCRResponse::TrainTicketOCRResponse() :
     m_nameHasBeenSet(false),
     m_priceHasBeenSet(false),
     m_seatCategoryHasBeenSet(false),
-    m_iDHasBeenSet(false)
+    m_iDHasBeenSet(false),
+    m_invoiceTypeHasBeenSet(false),
+    m_serialNumberHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
         m_iDHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InvoiceType") && !rsp["InvoiceType"].IsNull())
+    {
+        if (!rsp["InvoiceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InvoiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceType = string(rsp["InvoiceType"].GetString());
+        m_invoiceTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SerialNumber") && !rsp["SerialNumber"].IsNull())
+    {
+        if (!rsp["SerialNumber"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SerialNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialNumber = string(rsp["SerialNumber"].GetString());
+        m_serialNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -275,6 +297,26 @@ string TrainTicketOCRResponse::GetID() const
 bool TrainTicketOCRResponse::IDHasBeenSet() const
 {
     return m_iDHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetInvoiceType() const
+{
+    return m_invoiceType;
+}
+
+bool TrainTicketOCRResponse::InvoiceTypeHasBeenSet() const
+{
+    return m_invoiceTypeHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetSerialNumber() const
+{
+    return m_serialNumber;
+}
+
+bool TrainTicketOCRResponse::SerialNumberHasBeenSet() const
+{
+    return m_serialNumberHasBeenSet;
 }
 
 

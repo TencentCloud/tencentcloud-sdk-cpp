@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool MsgHasBeenSet() const;
 
                     /**
-                     * 获取卡片id
-                     * @return Iccid 卡片id
+                     * 获取卡片ID
+                     * @return Iccid 卡片ID
                      */
                     std::string GetIccid() const;
 
                     /**
-                     * 设置卡片id
-                     * @param Iccid 卡片id
+                     * 设置卡片ID
+                     * @param Iccid 卡片ID
                      */
                     void SetIccid(const std::string& _iccid);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool IccidHasBeenSet() const;
 
                     /**
-                     * 获取流水id
-                     * @return Sid 流水id
+                     * 获取流水ID
+                     * @return Sid 流水ID
                      */
                     std::string GetSid() const;
 
                     /**
-                     * 设置流水id
-                     * @param Sid 流水id
+                     * 设置流水ID
+                     * @param Sid 流水ID
                      */
                     void SetSid(const std::string& _sid);
 
@@ -133,13 +133,13 @@ namespace TencentCloud
                     bool m_msgHasBeenSet;
 
                     /**
-                     * 卡片id
+                     * 卡片ID
                      */
                     std::string m_iccid;
                     bool m_iccidHasBeenSet;
 
                     /**
-                     * 流水id
+                     * 流水ID
                      */
                     std::string m_sid;
                     bool m_sidHasBeenSet;

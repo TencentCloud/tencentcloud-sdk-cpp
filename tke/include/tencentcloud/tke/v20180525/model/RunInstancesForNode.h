@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,24 @@ namespace TencentCloud
                      */
                     bool RunInstancesParaHasBeenSet() const;
 
+                    /**
+                     * 获取节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     * @return InstanceAdvancedSettingsOverrides 节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     */
+                    std::vector<InstanceAdvancedSettings> GetInstanceAdvancedSettingsOverrides() const;
+
+                    /**
+                     * 设置节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     * @param InstanceAdvancedSettingsOverrides 节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     */
+                    void SetInstanceAdvancedSettingsOverrides(const std::vector<InstanceAdvancedSettings>& _instanceAdvancedSettingsOverrides);
+
+                    /**
+                     * 判断参数 InstanceAdvancedSettingsOverrides 是否已赋值
+                     * @return InstanceAdvancedSettingsOverrides 是否已赋值
+                     */
+                    bool InstanceAdvancedSettingsOverridesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +114,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_runInstancesPara;
                     bool m_runInstancesParaHasBeenSet;
+
+                    /**
+                     * 节点高级设置，该参数会覆盖集群级别设置的InstanceAdvancedSettings，和上边的RunInstancesPara按照顺序一一对应（当前只对节点自定义参数ExtraArgs生效）。
+                     */
+                    std::vector<InstanceAdvancedSettings> m_instanceAdvancedSettingsOverrides;
+                    bool m_instanceAdvancedSettingsOverridesHasBeenSet;
 
                 };
             }

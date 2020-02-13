@@ -43,14 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件句柄，数组长度限制：16。
-                     * @return EventHandles 事件句柄，数组长度限制：16。
+                     * 获取事件句柄，即 [拉取事件通知](/document/product/266/33433) 接口输出参数中的 EventSet. EventHandle 字段。
+数组长度限制：16。
+                     * @return EventHandles 事件句柄，即 [拉取事件通知](/document/product/266/33433) 接口输出参数中的 EventSet. EventHandle 字段。
+数组长度限制：16。
                      */
                     std::vector<std::string> GetEventHandles() const;
 
                     /**
-                     * 设置事件句柄，数组长度限制：16。
-                     * @param EventHandles 事件句柄，数组长度限制：16。
+                     * 设置事件句柄，即 [拉取事件通知](/document/product/266/33433) 接口输出参数中的 EventSet. EventHandle 字段。
+数组长度限制：16。
+                     * @param EventHandles 事件句柄，即 [拉取事件通知](/document/product/266/33433) 接口输出参数中的 EventSet. EventHandle 字段。
+数组长度限制：16。
                      */
                     void SetEventHandles(const std::vector<std::string>& _eventHandles);
 
@@ -59,6 +63,24 @@ namespace TencentCloud
                      * @return EventHandles 是否已赋值
                      */
                     bool EventHandlesHasBeenSet() const;
+
+                    /**
+                     * 获取保留字段，特殊用途时使用。
+                     * @return ExtInfo 保留字段，特殊用途时使用。
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置保留字段，特殊用途时使用。
+                     * @param ExtInfo 保留字段，特殊用途时使用。
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     */
+                    bool ExtInfoHasBeenSet() const;
 
                     /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
@@ -81,10 +103,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件句柄，数组长度限制：16。
+                     * 事件句柄，即 [拉取事件通知](/document/product/266/33433) 接口输出参数中的 EventSet. EventHandle 字段。
+数组长度限制：16。
                      */
                     std::vector<std::string> m_eventHandles;
                     bool m_eventHandlesHasBeenSet;
+
+                    /**
+                     * 保留字段，特殊用途时使用。
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                     /**
                      * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

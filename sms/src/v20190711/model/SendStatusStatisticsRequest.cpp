@@ -24,11 +24,11 @@ using namespace rapidjson;
 using namespace std;
 
 SendStatusStatisticsRequest::SendStatusStatisticsRequest() :
-    m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),
     m_endDataTimeHasBeenSet(false),
-    m_smsSdkAppidHasBeenSet(false)
+    m_smsSdkAppidHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -38,22 +38,6 @@ string SendStatusStatisticsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_limitHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
 
     if (m_startDateTimeHasBeenSet)
     {
@@ -79,6 +63,22 @@ string SendStatusStatisticsRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_smsSdkAppid.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -86,38 +86,6 @@ string SendStatusStatisticsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t SendStatusStatisticsRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void SendStatusStatisticsRequest::SetLimit(const uint64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool SendStatusStatisticsRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
-uint64_t SendStatusStatisticsRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void SendStatusStatisticsRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool SendStatusStatisticsRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
 
 uint64_t SendStatusStatisticsRequest::GetStartDateTime() const
 {
@@ -165,6 +133,38 @@ void SendStatusStatisticsRequest::SetSmsSdkAppid(const string& _smsSdkAppid)
 bool SendStatusStatisticsRequest::SmsSdkAppidHasBeenSet() const
 {
     return m_smsSdkAppidHasBeenSet;
+}
+
+uint64_t SendStatusStatisticsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void SendStatusStatisticsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool SendStatusStatisticsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t SendStatusStatisticsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void SendStatusStatisticsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool SendStatusStatisticsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

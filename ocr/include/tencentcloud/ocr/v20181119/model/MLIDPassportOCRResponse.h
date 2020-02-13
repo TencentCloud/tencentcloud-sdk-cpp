@@ -154,6 +154,34 @@ namespace TencentCloud
                      */
                     bool ImageHasBeenSet() const;
 
+                    /**
+                     * 获取扩展字段:
+{
+    ID:{
+        Confidence:0.9999
+    },
+    Name:{
+        Confidence:0.9996
+    }
+}
+                     * @return AdvancedInfo 扩展字段:
+{
+    ID:{
+        Confidence:0.9999
+    },
+    Name:{
+        Confidence:0.9996
+    }
+}
+                     */
+                    std::string GetAdvancedInfo() const;
+
+                    /**
+                     * 判断参数 AdvancedInfo 是否已赋值
+                     * @return AdvancedInfo 是否已赋值
+                     */
+                    bool AdvancedInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +239,20 @@ namespace TencentCloud
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
+
+                    /**
+                     * 扩展字段:
+{
+    ID:{
+        Confidence:0.9999
+    },
+    Name:{
+        Confidence:0.9996
+    }
+}
+                     */
+                    std::string m_advancedInfo;
+                    bool m_advancedInfoHasBeenSet;
 
                 };
             }

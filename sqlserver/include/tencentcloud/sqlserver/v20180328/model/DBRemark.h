@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取据库名
-                     * @return Name 据库名
+                     * 获取数据库名称
+                     * @return Name 数据库名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置据库名
-                     * @param Name 据库名
+                     * 设置数据库名称
+                     * @param Name 数据库名称
                      */
                     void SetName(const std::string& _name);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 据库名
+                     * 数据库名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

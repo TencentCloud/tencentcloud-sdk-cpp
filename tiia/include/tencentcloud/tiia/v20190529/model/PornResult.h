@@ -165,14 +165,30 @@ BLOCK：违规
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
-                     * 获取取值'LABEL‘，LABEL表示结论和置信度来自标签分类。
-                     * @return Type 取值'LABEL‘，LABEL表示结论和置信度来自标签分类。
+                     * 获取色情识别类型：
+PORN：色情
+HOT：性感
+NORMAL：正常
+FAIL：识别失败
+                     * @return Type 色情识别类型：
+PORN：色情
+HOT：性感
+NORMAL：正常
+FAIL：识别失败
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置取值'LABEL‘，LABEL表示结论和置信度来自标签分类。
-                     * @param Type 取值'LABEL‘，LABEL表示结论和置信度来自标签分类。
+                     * 设置色情识别类型：
+PORN：色情
+HOT：性感
+NORMAL：正常
+FAIL：识别失败
+                     * @param Type 色情识别类型：
+PORN：色情
+HOT：性感
+NORMAL：正常
+FAIL：识别失败
                      */
                     void SetType(const std::string& _type);
 
@@ -222,7 +238,11 @@ BLOCK：违规
                     bool m_advancedInfoHasBeenSet;
 
                     /**
-                     * 取值'LABEL‘，LABEL表示结论和置信度来自标签分类。
+                     * 色情识别类型：
+PORN：色情
+HOT：性感
+NORMAL：正常
+FAIL：识别失败
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -28,7 +28,9 @@ CreateBandwidthPackageRequest::CreateBandwidthPackageRequest() :
     m_chargeTypeHasBeenSet(false),
     m_bandwidthPackageNameHasBeenSet(false),
     m_bandwidthPackageCountHasBeenSet(false),
-    m_internetMaxBandwidthHasBeenSet(false)
+    m_internetMaxBandwidthHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,29 @@ string CreateBandwidthPackageRequest::ToJsonString() const
         string key = "InternetMaxBandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_internetMaxBandwidth, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +190,38 @@ void CreateBandwidthPackageRequest::SetInternetMaxBandwidth(const int64_t& _inte
 bool CreateBandwidthPackageRequest::InternetMaxBandwidthHasBeenSet() const
 {
     return m_internetMaxBandwidthHasBeenSet;
+}
+
+vector<Tag> CreateBandwidthPackageRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateBandwidthPackageRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateBandwidthPackageRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string CreateBandwidthPackageRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CreateBandwidthPackageRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CreateBandwidthPackageRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 

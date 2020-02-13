@@ -41,7 +41,9 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_instanceTypesCheckPolicyHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
-    m_hostNameSettingsHasBeenSet(false)
+    m_hostNameSettingsHasBeenSet(false),
+    m_instanceNameSettingsHasBeenSet(false),
+    m_instanceChargePrepaidHasBeenSet(false)
 {
 }
 
@@ -224,6 +226,24 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_hostNameSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceNameSettingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceNameSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceChargePrepaidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -520,6 +540,38 @@ void CreateLaunchConfigurationRequest::SetHostNameSettings(const HostNameSetting
 bool CreateLaunchConfigurationRequest::HostNameSettingsHasBeenSet() const
 {
     return m_hostNameSettingsHasBeenSet;
+}
+
+InstanceNameSettings CreateLaunchConfigurationRequest::GetInstanceNameSettings() const
+{
+    return m_instanceNameSettings;
+}
+
+void CreateLaunchConfigurationRequest::SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings)
+{
+    m_instanceNameSettings = _instanceNameSettings;
+    m_instanceNameSettingsHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::InstanceNameSettingsHasBeenSet() const
+{
+    return m_instanceNameSettingsHasBeenSet;
+}
+
+InstanceChargePrepaid CreateLaunchConfigurationRequest::GetInstanceChargePrepaid() const
+{
+    return m_instanceChargePrepaid;
+}
+
+void CreateLaunchConfigurationRequest::SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid)
+{
+    m_instanceChargePrepaid = _instanceChargePrepaid;
+    m_instanceChargePrepaidHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::InstanceChargePrepaidHasBeenSet() const
+{
+    return m_instanceChargePrepaidHasBeenSet;
 }
 
 

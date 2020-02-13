@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool KeepEnableHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleId 规则ID
+                     * 获取规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     * @return RuleId 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param RuleId 规则ID
+                     * 设置规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     * @param RuleId 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
                      */
                     void SetRuleId(const std::string& _ruleId);
 
@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取证书来源，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]，当协议为http时也可以填0
-                     * @return CertType 证书来源，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]，当协议为http时也可以填0
+                     * 获取证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
+                     * @return CertType 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
                      */
                     uint64_t GetCertType() const;
 
                     /**
-                     * 设置证书来源，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]，当协议为http时也可以填0
-                     * @param CertType 证书来源，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]，当协议为http时也可以填0
+                     * 设置证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
+                     * @param CertType 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
                      */
                     void SetCertType(const uint64_t& _certType);
 
@@ -246,14 +246,14 @@ namespace TencentCloud
                     bool CertHasBeenSet() const;
 
                     /**
-                     * 获取当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @return PrivateKey 当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * 获取当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @return PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
                      */
                     std::string GetPrivateKey() const;
 
                     /**
-                     * 设置当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @param PrivateKey 当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * 设置当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @param PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
                      */
                     void SetPrivateKey(const std::string& _privateKey);
 
@@ -318,14 +318,14 @@ namespace TencentCloud
                     bool CCStatusHasBeenSet() const;
 
                     /**
-                     * 获取https的CC防护状态，取值[0(关闭), 1(开启)]
-                     * @return CCEnable https的CC防护状态，取值[0(关闭), 1(开启)]
+                     * 获取HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]
+                     * @return CCEnable HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]
                      */
                     uint64_t GetCCEnable() const;
 
                     /**
-                     * 设置https的CC防护状态，取值[0(关闭), 1(开启)]
-                     * @param CCEnable https的CC防护状态，取值[0(关闭), 1(开启)]
+                     * 设置HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]
+                     * @param CCEnable HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]
                      */
                     void SetCCEnable(const uint64_t& _cCEnable);
 
@@ -336,14 +336,14 @@ namespace TencentCloud
                     bool CCEnableHasBeenSet() const;
 
                     /**
-                     * 获取https的CC防护阈值
-                     * @return CCThreshold https的CC防护阈值
+                     * 获取HTTPS协议的CC防护阈值
+                     * @return CCThreshold HTTPS协议的CC防护阈值
                      */
                     uint64_t GetCCThreshold() const;
 
                     /**
-                     * 设置https的CC防护阈值
-                     * @param CCThreshold https的CC防护阈值
+                     * 设置HTTPS协议的CC防护阈值
+                     * @param CCThreshold HTTPS协议的CC防护阈值
                      */
                     void SetCCThreshold(const uint64_t& _cCThreshold);
 
@@ -354,14 +354,14 @@ namespace TencentCloud
                     bool CCThresholdHasBeenSet() const;
 
                     /**
-                     * 获取https的CC防护等级
-                     * @return CCLevel https的CC防护等级
+                     * 获取HTTPS协议的CC防护等级
+                     * @return CCLevel HTTPS协议的CC防护等级
                      */
                     std::string GetCCLevel() const;
 
                     /**
-                     * 设置https的CC防护等级
-                     * @param CCLevel https的CC防护等级
+                     * 设置HTTPS协议的CC防护等级
+                     * @param CCLevel HTTPS协议的CC防护等级
                      */
                     void SetCCLevel(const std::string& _cCLevel);
 
@@ -416,13 +416,13 @@ namespace TencentCloud
                     bool m_keepEnableHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 证书来源，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]，当协议为http时也可以填0
+                     * 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
                      */
                     uint64_t m_certType;
                     bool m_certTypeHasBeenSet;
@@ -440,7 +440,7 @@ namespace TencentCloud
                     bool m_certHasBeenSet;
 
                     /**
-                     * 当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;
@@ -464,19 +464,19 @@ namespace TencentCloud
                     bool m_cCStatusHasBeenSet;
 
                     /**
-                     * https的CC防护状态，取值[0(关闭), 1(开启)]
+                     * HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]
                      */
                     uint64_t m_cCEnable;
                     bool m_cCEnableHasBeenSet;
 
                     /**
-                     * https的CC防护阈值
+                     * HTTPS协议的CC防护阈值
                      */
                     uint64_t m_cCThreshold;
                     bool m_cCThresholdHasBeenSet;
 
                     /**
-                     * https的CC防护等级
+                     * HTTPS协议的CC防护等级
                      */
                     std::string m_cCLevel;
                     bool m_cCLevelHasBeenSet;

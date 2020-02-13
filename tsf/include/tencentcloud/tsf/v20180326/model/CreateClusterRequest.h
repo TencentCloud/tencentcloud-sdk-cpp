@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool TsfZoneIdHasBeenSet() const;
 
+                    /**
+                     * 获取私有网络子网ID
+                     * @return SubnetId 私有网络子网ID
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置私有网络子网ID
+                     * @param SubnetId 私有网络子网ID
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_tsfZoneId;
                     bool m_tsfZoneIdHasBeenSet;
+
+                    /**
+                     * 私有网络子网ID
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

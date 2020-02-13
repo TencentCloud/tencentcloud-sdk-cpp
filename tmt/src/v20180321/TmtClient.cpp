@@ -212,3 +212,46 @@ TmtClient::TextTranslateOutcomeCallable TmtClient::TextTranslateCallable(const T
     return task->get_future();
 }
 
+TmtClient::TextTranslateBatchOutcome TmtClient::TextTranslateBatch(const TextTranslateBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextTranslateBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextTranslateBatchResponse rsp = TextTranslateBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextTranslateBatchOutcome(rsp);
+        else
+            return TextTranslateBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return TextTranslateBatchOutcome(outcome.GetError());
+    }
+}
+
+void TmtClient::TextTranslateBatchAsync(const TextTranslateBatchRequest& request, const TextTranslateBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextTranslateBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmtClient::TextTranslateBatchOutcomeCallable TmtClient::TextTranslateBatchCallable(const TextTranslateBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextTranslateBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->TextTranslateBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

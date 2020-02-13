@@ -31,7 +31,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/AgentRunningMode.h
   include/tencentcloud/batch/v20170312/model/EnvData.h
   include/tencentcloud/batch/v20170312/model/DescribeTaskTemplatesRequest.h
-  include/tencentcloud/batch/v20170312/model/Notification.h
+  include/tencentcloud/batch/v20170312/model/EventConfig.h
   include/tencentcloud/batch/v20170312/model/SystemDisk.h
   include/tencentcloud/batch/v20170312/model/Task.h
   include/tencentcloud/batch/v20170312/model/InstanceTypeConfig.h
@@ -43,7 +43,9 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/MountDataDisk.h
   include/tencentcloud/batch/v20170312/model/TaskView.h
   include/tencentcloud/batch/v20170312/model/Externals.h
+  include/tencentcloud/batch/v20170312/model/OsInfo.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvResponse.h
+  include/tencentcloud/batch/v20170312/model/DescribeCpmOsInfoResponse.h
   include/tencentcloud/batch/v20170312/model/TerminateJobRequest.h
   include/tencentcloud/batch/v20170312/model/Application.h
   include/tencentcloud/batch/v20170312/model/EnvDataCpm.h
@@ -73,10 +75,11 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/DescribeJobResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfoRequest.h
   include/tencentcloud/batch/v20170312/model/ModifyTaskTemplateRequest.h
+  include/tencentcloud/batch/v20170312/model/DescribeCpmOsInfoRequest.h
   include/tencentcloud/batch/v20170312/model/DataDisk.h
   include/tencentcloud/batch/v20170312/model/NamedComputeEnv.h
   include/tencentcloud/batch/v20170312/model/DeleteJobResponse.h
-  include/tencentcloud/batch/v20170312/model/EventConfig.h
+  include/tencentcloud/batch/v20170312/model/Notification.h
   include/tencentcloud/batch/v20170312/model/SpotMarketOptions.h
   include/tencentcloud/batch/v20170312/model/CpmVirtualPrivateCloud.h
   include/tencentcloud/batch/v20170312/model/OutputMapping.h
@@ -147,7 +150,7 @@ set(batch_src
   src/v20170312/model/AgentRunningMode.cpp
   src/v20170312/model/EnvData.cpp
   src/v20170312/model/DescribeTaskTemplatesRequest.cpp
-  src/v20170312/model/Notification.cpp
+  src/v20170312/model/EventConfig.cpp
   src/v20170312/model/SystemDisk.cpp
   src/v20170312/model/Task.cpp
   src/v20170312/model/InstanceTypeConfig.cpp
@@ -159,7 +162,9 @@ set(batch_src
   src/v20170312/model/MountDataDisk.cpp
   src/v20170312/model/TaskView.cpp
   src/v20170312/model/Externals.cpp
+  src/v20170312/model/OsInfo.cpp
   src/v20170312/model/DescribeComputeEnvResponse.cpp
+  src/v20170312/model/DescribeCpmOsInfoResponse.cpp
   src/v20170312/model/TerminateJobRequest.cpp
   src/v20170312/model/Application.cpp
   src/v20170312/model/EnvDataCpm.cpp
@@ -189,10 +194,11 @@ set(batch_src
   src/v20170312/model/DescribeJobResponse.cpp
   src/v20170312/model/DescribeComputeEnvCreateInfoRequest.cpp
   src/v20170312/model/ModifyTaskTemplateRequest.cpp
+  src/v20170312/model/DescribeCpmOsInfoRequest.cpp
   src/v20170312/model/DataDisk.cpp
   src/v20170312/model/NamedComputeEnv.cpp
   src/v20170312/model/DeleteJobResponse.cpp
-  src/v20170312/model/EventConfig.cpp
+  src/v20170312/model/Notification.cpp
   src/v20170312/model/SpotMarketOptions.cpp
   src/v20170312/model/CpmVirtualPrivateCloud.cpp
   src/v20170312/model/OutputMapping.cpp

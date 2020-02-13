@@ -42,7 +42,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取创建的转发规则的唯一标识数组
+                     * @return LocationIds 创建的转发规则的唯一标识数组
+                     */
+                    std::vector<std::string> GetLocationIds() const;
+
+                    /**
+                     * 判断参数 LocationIds 是否已赋值
+                     * @return LocationIds 是否已赋值
+                     */
+                    bool LocationIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 创建的转发规则的唯一标识数组
+                     */
+                    std::vector<std::string> m_locationIds;
+                    bool m_locationIdsHasBeenSet;
 
                 };
             }

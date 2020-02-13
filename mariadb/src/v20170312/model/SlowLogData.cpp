@@ -38,7 +38,8 @@ SlowLogData::SlowLogData() :
     m_rowsSentSumHasBeenSet(false),
     m_tsMaxHasBeenSet(false),
     m_tsMinHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_exampleSqlHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,16 @@ CoreInternalOutcome SlowLogData::Deserialize(const Value &value)
         m_userHasBeenSet = true;
     }
 
+    if (value.HasMember("ExampleSql") && !value["ExampleSql"].IsNull())
+    {
+        if (!value["ExampleSql"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SlowLogData.ExampleSql` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exampleSql = string(value["ExampleSql"].GetString());
+        m_exampleSqlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +369,14 @@ void SlowLogData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "User";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_user.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exampleSqlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExampleSql";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_exampleSql.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -633,5 +652,21 @@ void SlowLogData::SetUser(const string& _user)
 bool SlowLogData::UserHasBeenSet() const
 {
     return m_userHasBeenSet;
+}
+
+string SlowLogData::GetExampleSql() const
+{
+    return m_exampleSql;
+}
+
+void SlowLogData::SetExampleSql(const string& _exampleSql)
+{
+    m_exampleSql = _exampleSql;
+    m_exampleSqlHasBeenSet = true;
+}
+
+bool SlowLogData::ExampleSqlHasBeenSet() const
+{
+    return m_exampleSqlHasBeenSet;
 }
 

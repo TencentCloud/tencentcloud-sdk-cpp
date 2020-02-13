@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool NotifyWechatHasBeenSet() const;
 
+                    /**
+                     * 获取提示
+                     * @return Tips 提示
+                     */
+                    uint64_t GetTips() const;
+
+                    /**
+                     * 设置提示
+                     * @param Tips 提示
+                     */
+                    void SetTips(const uint64_t& _tips);
+
+                    /**
+                     * 判断参数 Tips 是否已赋值
+                     * @return Tips 是否已赋值
+                     */
+                    bool TipsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     uint64_t m_notifyWechat;
                     bool m_notifyWechatHasBeenSet;
+
+                    /**
+                     * 提示
+                     */
+                    uint64_t m_tips;
+                    bool m_tipsHasBeenSet;
 
                 };
             }

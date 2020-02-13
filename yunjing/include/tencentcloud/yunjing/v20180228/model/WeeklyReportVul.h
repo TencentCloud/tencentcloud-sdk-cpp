@@ -84,11 +84,11 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞类型。
-<li> WEB : WEB漏洞</li>
+<li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
                      * @return VulType 漏洞类型。
-<li> WEB : WEB漏洞</li>
+<li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
                      */
@@ -96,11 +96,11 @@ namespace TencentCloud
 
                     /**
                      * 设置漏洞类型。
-<li> WEB : WEB漏洞</li>
+<li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
                      * @param VulType 漏洞类型。
-<li> WEB : WEB漏洞</li>
+<li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
                      */
@@ -194,7 +194,7 @@ namespace TencentCloud
 
                     /**
                      * 漏洞类型。
-<li> WEB : WEB漏洞</li>
+<li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
                      */

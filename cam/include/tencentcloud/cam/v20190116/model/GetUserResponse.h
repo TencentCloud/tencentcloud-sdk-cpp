@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子用户用户 ID
-                     * @return Uin 子用户用户 ID
+                     * 获取子用户用户 UIN
+                     * @return Uin 子用户用户 UIN
                      */
                     uint64_t GetUin() const;
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子用户用户 ID
+                     * 子用户用户 UIN
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;

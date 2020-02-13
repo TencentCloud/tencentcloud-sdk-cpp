@@ -175,6 +175,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/DeleteAttackLogsRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribeOpenPortsResponse.h
   include/tencentcloud/yunjing/v20180228/model/EditBashRuleResponse.h
+  include/tencentcloud/yunjing/v20180228/model/OpenProVersionResponse.h
   include/tencentcloud/yunjing/v20180228/model/DescribeMachineInfoRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribeMaliciousRequestsRequest.h
   include/tencentcloud/yunjing/v20180228/model/DescribeProcessesRequest.h
@@ -229,6 +230,7 @@ set(yunjing_public_header_model
   include/tencentcloud/yunjing/v20180228/model/DeleteMachineTagResponse.h
   include/tencentcloud/yunjing/v20180228/model/DescribeHistoryAccountsRequest.h
   include/tencentcloud/yunjing/v20180228/model/CloseProVersionRequest.h
+  include/tencentcloud/yunjing/v20180228/model/OpenProVersionRequest.h
   include/tencentcloud/yunjing/v20180228/model/DeleteBashRulesResponse.h
   include/tencentcloud/yunjing/v20180228/model/IgnoreImpactedHostsResponse.h
   include/tencentcloud/yunjing/v20180228/model/DeleteBashEventsRequest.h
@@ -416,6 +418,7 @@ set(yunjing_src
   src/v20180228/model/DeleteAttackLogsRequest.cpp
   src/v20180228/model/DescribeOpenPortsResponse.cpp
   src/v20180228/model/EditBashRuleResponse.cpp
+  src/v20180228/model/OpenProVersionResponse.cpp
   src/v20180228/model/DescribeMachineInfoRequest.cpp
   src/v20180228/model/DescribeMaliciousRequestsRequest.cpp
   src/v20180228/model/DescribeProcessesRequest.cpp
@@ -470,6 +473,7 @@ set(yunjing_src
   src/v20180228/model/DeleteMachineTagResponse.cpp
   src/v20180228/model/DescribeHistoryAccountsRequest.cpp
   src/v20180228/model/CloseProVersionRequest.cpp
+  src/v20180228/model/OpenProVersionRequest.cpp
   src/v20180228/model/DeleteBashRulesResponse.cpp
   src/v20180228/model/IgnoreImpactedHostsResponse.cpp
   src/v20180228/model/DeleteBashEventsRequest.cpp

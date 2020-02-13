@@ -24,7 +24,9 @@ using namespace TencentCloud::Tbaas::V20180416::Model;
 using namespace rapidjson;
 using namespace std;
 
-ApplyUserCertResponse::ApplyUserCertResponse()
+ApplyUserCertResponse::ApplyUserCertResponse() :
+    m_certIdHasBeenSet(false),
+    m_certDnHasBeenSet(false)
 {
 }
 
@@ -62,9 +64,49 @@ CoreInternalOutcome ApplyUserCertResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("CertId") && !rsp["CertId"].IsNull())
+    {
+        if (!rsp["CertId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `CertId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certId = rsp["CertId"].GetUint64();
+        m_certIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertDn") && !rsp["CertDn"].IsNull())
+    {
+        if (!rsp["CertDn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CertDn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certDn = string(rsp["CertDn"].GetString());
+        m_certDnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+uint64_t ApplyUserCertResponse::GetCertId() const
+{
+    return m_certId;
+}
+
+bool ApplyUserCertResponse::CertIdHasBeenSet() const
+{
+    return m_certIdHasBeenSet;
+}
+
+string ApplyUserCertResponse::GetCertDn() const
+{
+    return m_certDn;
+}
+
+bool ApplyUserCertResponse::CertDnHasBeenSet() const
+{
+    return m_certDnHasBeenSet;
+}
 
 

@@ -65,6 +65,42 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     * @return BeginTime 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     */
+                    std::string GetBeginTime() const;
+
+                    /**
+                     * 设置要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     * @param BeginTime 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     */
+                    void SetBeginTime(const std::string& _beginTime);
+
+                    /**
+                     * 判断参数 BeginTime 是否已赋值
+                     * @return BeginTime 是否已赋值
+                     */
+                    bool BeginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
+                     * @return EndTime 要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
+                     * @param EndTime 要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -73,6 +109,18 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00"
+                     */
+                    std::string m_beginTime;
+                    bool m_beginTimeHasBeenSet;
+
+                    /**
+                     * 要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59"
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

@@ -21,11 +21,12 @@ set(es_public_header
 set(es_public_header_model
   include/tencentcloud/es/v20180416/model/InstanceLog.h
   include/tencentcloud/es/v20180416/model/TaskDetail.h
+  include/tencentcloud/es/v20180416/model/NodeInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/OperationDetail.h
-  include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
+  include/tencentcloud/es/v20180416/model/EsPublicAcl.h
   include/tencentcloud/es/v20180416/model/DictInfo.h
-  include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
+  include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
@@ -38,11 +39,12 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DescribeInstancesResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsResponse.h
   include/tencentcloud/es/v20180416/model/RestartInstanceRequest.h
+  include/tencentcloud/es/v20180416/model/ZoneDetail.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesRequest.h
-  include/tencentcloud/es/v20180416/model/EsDictionaryInfo.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
-  include/tencentcloud/es/v20180416/model/MultiZoneInfo.h
+  include/tencentcloud/es/v20180416/model/EsDictionaryInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
+  include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceRequest.h
@@ -57,11 +59,12 @@ set(es_src
   src/v20180416/EsClient.cpp
   src/v20180416/model/InstanceLog.cpp
   src/v20180416/model/TaskDetail.cpp
+  src/v20180416/model/NodeInfo.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/OperationDetail.cpp
-  src/v20180416/model/RestartInstanceResponse.cpp
+  src/v20180416/model/EsPublicAcl.cpp
   src/v20180416/model/DictInfo.cpp
-  src/v20180416/model/UpgradeLicenseResponse.cpp
+  src/v20180416/model/RestartInstanceResponse.cpp
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
   src/v20180416/model/UpgradeLicenseRequest.cpp
@@ -74,11 +77,12 @@ set(es_src
   src/v20180416/model/DescribeInstancesResponse.cpp
   src/v20180416/model/DescribeInstanceLogsResponse.cpp
   src/v20180416/model/RestartInstanceRequest.cpp
+  src/v20180416/model/ZoneDetail.cpp
   src/v20180416/model/DescribeInstancesRequest.cpp
-  src/v20180416/model/EsDictionaryInfo.cpp
   src/v20180416/model/UpdateInstanceRequest.cpp
-  src/v20180416/model/MultiZoneInfo.cpp
+  src/v20180416/model/EsDictionaryInfo.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
+  src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/MasterNodeInfo.cpp
   src/v20180416/model/DeleteInstanceRequest.cpp

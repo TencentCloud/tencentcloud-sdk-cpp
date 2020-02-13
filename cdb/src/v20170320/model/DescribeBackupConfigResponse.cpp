@@ -29,7 +29,8 @@ DescribeBackupConfigResponse::DescribeBackupConfigResponse() :
     m_startTimeMaxHasBeenSet(false),
     m_backupExpireDaysHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
-    m_binlogExpireDaysHasBeenSet(false)
+    m_binlogExpireDaysHasBeenSet(false),
+    m_backupTimeWindowHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,23 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
         m_binlogExpireDaysHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BackupTimeWindow") && !rsp["BackupTimeWindow"].IsNull())
+    {
+        if (!rsp["BackupTimeWindow"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BackupTimeWindow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_backupTimeWindow.Deserialize(rsp["BackupTimeWindow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_backupTimeWindowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +188,16 @@ int64_t DescribeBackupConfigResponse::GetBinlogExpireDays() const
 bool DescribeBackupConfigResponse::BinlogExpireDaysHasBeenSet() const
 {
     return m_binlogExpireDaysHasBeenSet;
+}
+
+CommonTimeWindow DescribeBackupConfigResponse::GetBackupTimeWindow() const
+{
+    return m_backupTimeWindow;
+}
+
+bool DescribeBackupConfigResponse::BackupTimeWindowHasBeenSet() const
+{
+    return m_backupTimeWindowHasBeenSet;
 }
 
 

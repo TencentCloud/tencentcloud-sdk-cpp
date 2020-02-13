@@ -370,6 +370,24 @@ namespace TencentCloud
                      */
                     bool GpuRequestedHasBeenSet() const;
 
+                    /**
+                     * 获取节点所在伸缩组 ID
+                     * @return RsgAsGroupId 节点所在伸缩组 ID
+                     */
+                    std::string GetRsgAsGroupId() const;
+
+                    /**
+                     * 设置节点所在伸缩组 ID
+                     * @param RsgAsGroupId 节点所在伸缩组 ID
+                     */
+                    void SetRsgAsGroupId(const std::string& _rsgAsGroupId);
+
+                    /**
+                     * 判断参数 RsgAsGroupId 是否已赋值
+                     * @return RsgAsGroupId 是否已赋值
+                     */
+                    bool RsgAsGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +497,12 @@ namespace TencentCloud
                      */
                     uint64_t m_gpuRequested;
                     bool m_gpuRequestedHasBeenSet;
+
+                    /**
+                     * 节点所在伸缩组 ID
+                     */
+                    std::string m_rsgAsGroupId;
+                    bool m_rsgAsGroupIdHasBeenSet;
 
                 };
             }

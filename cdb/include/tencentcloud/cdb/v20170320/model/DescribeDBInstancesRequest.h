@@ -492,6 +492,24 @@ namespace TencentCloud
                      */
                     bool WithMasterHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组ID列表。
+                     * @return DeployGroupIds 置放群组ID列表。
+                     */
+                    std::vector<std::string> GetDeployGroupIds() const;
+
+                    /**
+                     * 设置置放群组ID列表。
+                     * @param DeployGroupIds 置放群组ID列表。
+                     */
+                    void SetDeployGroupIds(const std::vector<std::string>& _deployGroupIds);
+
+                    /**
+                     * 判断参数 DeployGroupIds 是否已赋值
+                     * @return DeployGroupIds 是否已赋值
+                     */
+                    bool DeployGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,6 +661,12 @@ namespace TencentCloud
                      */
                     int64_t m_withMaster;
                     bool m_withMasterHasBeenSet;
+
+                    /**
+                     * 置放群组ID列表。
+                     */
+                    std::vector<std::string> m_deployGroupIds;
+                    bool m_deployGroupIdsHasBeenSet;
 
                 };
             }

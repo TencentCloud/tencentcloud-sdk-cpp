@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
+                     * 获取应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BizId 应用id
+                     * @return BizId 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetBizId() const;
 
                     /**
-                     * 设置应用id
+                     * 设置应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizId 应用id
+                     * @param BizId 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBizId(const uint64_t& _bizId);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取文件id，表示文件唯一id
+                     * 获取文件ID，表示文件唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileId 文件id，表示文件唯一id
+                     * @return FileId 文件ID，表示文件唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置文件id，表示文件唯一id
+                     * 设置文件ID，表示文件唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileId 文件id，表示文件唯一id
+                     * @param FileId 文件ID，表示文件唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileId(const std::string& _fileId);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取用户id
+                     * 获取用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpenId 用户id
+                     * @return OpenId 用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户id
+                     * 设置用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId 用户id
+                     * @param OpenId 用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOpenId(const std::string& _openId);
@@ -182,14 +182,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 应用ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 文件id，表示文件唯一id
+                     * 文件ID，表示文件唯一ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
@@ -203,7 +203,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 用户id
+                     * 用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;

@@ -32,7 +32,8 @@ SentenceRecognitionRequest::SentenceRecognitionRequest() :
     m_usrAudioKeyHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_dataLenHasBeenSet(false)
+    m_dataLenHasBeenSet(false),
+    m_hotwordIdHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string SentenceRecognitionRequest::ToJsonString() const
         string key = "DataLen";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataLen, allocator);
+    }
+
+    if (m_hotwordIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HotwordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hotwordId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +274,22 @@ void SentenceRecognitionRequest::SetDataLen(const int64_t& _dataLen)
 bool SentenceRecognitionRequest::DataLenHasBeenSet() const
 {
     return m_dataLenHasBeenSet;
+}
+
+string SentenceRecognitionRequest::GetHotwordId() const
+{
+    return m_hotwordId;
+}
+
+void SentenceRecognitionRequest::SetHotwordId(const string& _hotwordId)
+{
+    m_hotwordId = _hotwordId;
+    m_hotwordIdHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::HotwordIdHasBeenSet() const
+{
+    return m_hotwordIdHasBeenSet;
 }
 
 

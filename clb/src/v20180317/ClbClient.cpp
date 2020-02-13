@@ -40,6 +40,49 @@ ClbClient::ClbClient(const Credential &credential, const string &region, const C
 }
 
 
+ClbClient::AssociateTargetGroupsOutcome ClbClient::AssociateTargetGroups(const AssociateTargetGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateTargetGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateTargetGroupsResponse rsp = AssociateTargetGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateTargetGroupsOutcome(rsp);
+        else
+            return AssociateTargetGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateTargetGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::AssociateTargetGroupsAsync(const AssociateTargetGroupsRequest& request, const AssociateTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateTargetGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::AssociateTargetGroupsOutcomeCallable ClbClient::AssociateTargetGroupsCallable(const AssociateTargetGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateTargetGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateTargetGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::AutoRewriteOutcome ClbClient::AutoRewrite(const AutoRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "AutoRewrite");
@@ -341,6 +384,49 @@ ClbClient::CreateRuleOutcomeCallable ClbClient::CreateRuleCallable(const CreateR
     return task->get_future();
 }
 
+ClbClient::CreateTargetGroupOutcome ClbClient::CreateTargetGroup(const CreateTargetGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTargetGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTargetGroupResponse rsp = CreateTargetGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTargetGroupOutcome(rsp);
+        else
+            return CreateTargetGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTargetGroupOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateTargetGroupAsync(const CreateTargetGroupRequest& request, const CreateTargetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTargetGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::CreateTargetGroupOutcomeCallable ClbClient::CreateTargetGroupCallable(const CreateTargetGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTargetGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTargetGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DeleteListenerOutcome ClbClient::DeleteListener(const DeleteListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteListener");
@@ -513,6 +599,92 @@ ClbClient::DeleteRuleOutcomeCallable ClbClient::DeleteRuleCallable(const DeleteR
     return task->get_future();
 }
 
+ClbClient::DeleteTargetGroupsOutcome ClbClient::DeleteTargetGroups(const DeleteTargetGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTargetGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTargetGroupsResponse rsp = DeleteTargetGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTargetGroupsOutcome(rsp);
+        else
+            return DeleteTargetGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTargetGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteTargetGroupsAsync(const DeleteTargetGroupsRequest& request, const DeleteTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTargetGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DeleteTargetGroupsOutcomeCallable ClbClient::DeleteTargetGroupsCallable(const DeleteTargetGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTargetGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTargetGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DeregisterTargetGroupInstancesOutcome ClbClient::DeregisterTargetGroupInstances(const DeregisterTargetGroupInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeregisterTargetGroupInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeregisterTargetGroupInstancesResponse rsp = DeregisterTargetGroupInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeregisterTargetGroupInstancesOutcome(rsp);
+        else
+            return DeregisterTargetGroupInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeregisterTargetGroupInstancesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeregisterTargetGroupInstancesAsync(const DeregisterTargetGroupInstancesRequest& request, const DeregisterTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeregisterTargetGroupInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DeregisterTargetGroupInstancesOutcomeCallable ClbClient::DeregisterTargetGroupInstancesCallable(const DeregisterTargetGroupInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeregisterTargetGroupInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeregisterTargetGroupInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DeregisterTargetsOutcome ClbClient::DeregisterTargets(const DeregisterTargetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeregisterTargets");
@@ -592,6 +764,92 @@ ClbClient::DeregisterTargetsFromClassicalLBOutcomeCallable ClbClient::Deregister
         [this, request]()
         {
             return this->DeregisterTargetsFromClassicalLB(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeBlockIPListOutcome ClbClient::DescribeBlockIPList(const DescribeBlockIPListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockIPList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockIPListResponse rsp = DescribeBlockIPListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockIPListOutcome(rsp);
+        else
+            return DescribeBlockIPListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockIPListOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeBlockIPListAsync(const DescribeBlockIPListRequest& request, const DescribeBlockIPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlockIPList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeBlockIPListOutcomeCallable ClbClient::DescribeBlockIPListCallable(const DescribeBlockIPListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlockIPListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlockIPList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeBlockIPTaskOutcome ClbClient::DescribeBlockIPTask(const DescribeBlockIPTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockIPTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockIPTaskResponse rsp = DescribeBlockIPTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockIPTaskOutcome(rsp);
+        else
+            return DescribeBlockIPTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockIPTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeBlockIPTaskAsync(const DescribeBlockIPTaskRequest& request, const DescribeBlockIPTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlockIPTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeBlockIPTaskOutcomeCallable ClbClient::DescribeBlockIPTaskCallable(const DescribeBlockIPTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlockIPTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlockIPTask(request);
         }
     );
 
@@ -814,6 +1072,49 @@ ClbClient::DescribeListenersOutcomeCallable ClbClient::DescribeListenersCallable
     return task->get_future();
 }
 
+ClbClient::DescribeLoadBalancerListByCertIdOutcome ClbClient::DescribeLoadBalancerListByCertId(const DescribeLoadBalancerListByCertIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadBalancerListByCertId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadBalancerListByCertIdResponse rsp = DescribeLoadBalancerListByCertIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadBalancerListByCertIdOutcome(rsp);
+        else
+            return DescribeLoadBalancerListByCertIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadBalancerListByCertIdOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeLoadBalancerListByCertIdAsync(const DescribeLoadBalancerListByCertIdRequest& request, const DescribeLoadBalancerListByCertIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoadBalancerListByCertId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeLoadBalancerListByCertIdOutcomeCallable ClbClient::DescribeLoadBalancerListByCertIdCallable(const DescribeLoadBalancerListByCertIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListByCertIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoadBalancerListByCertId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeLoadBalancersOutcome ClbClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoadBalancers");
@@ -893,6 +1194,135 @@ ClbClient::DescribeRewriteOutcomeCallable ClbClient::DescribeRewriteCallable(con
         [this, request]()
         {
             return this->DescribeRewrite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeTargetGroupInstancesOutcome ClbClient::DescribeTargetGroupInstances(const DescribeTargetGroupInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTargetGroupInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTargetGroupInstancesResponse rsp = DescribeTargetGroupInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTargetGroupInstancesOutcome(rsp);
+        else
+            return DescribeTargetGroupInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTargetGroupInstancesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeTargetGroupInstancesAsync(const DescribeTargetGroupInstancesRequest& request, const DescribeTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTargetGroupInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeTargetGroupInstancesOutcomeCallable ClbClient::DescribeTargetGroupInstancesCallable(const DescribeTargetGroupInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTargetGroupInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTargetGroupInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeTargetGroupListOutcome ClbClient::DescribeTargetGroupList(const DescribeTargetGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTargetGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTargetGroupListResponse rsp = DescribeTargetGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTargetGroupListOutcome(rsp);
+        else
+            return DescribeTargetGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTargetGroupListOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeTargetGroupListAsync(const DescribeTargetGroupListRequest& request, const DescribeTargetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTargetGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeTargetGroupListOutcomeCallable ClbClient::DescribeTargetGroupListCallable(const DescribeTargetGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTargetGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTargetGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeTargetGroupsOutcome ClbClient::DescribeTargetGroups(const DescribeTargetGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTargetGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTargetGroupsResponse rsp = DescribeTargetGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTargetGroupsOutcome(rsp);
+        else
+            return DescribeTargetGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTargetGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeTargetGroupsAsync(const DescribeTargetGroupsRequest& request, const DescribeTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTargetGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeTargetGroupsOutcomeCallable ClbClient::DescribeTargetGroupsCallable(const DescribeTargetGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTargetGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTargetGroups(request);
         }
     );
 
@@ -1029,6 +1459,49 @@ ClbClient::DescribeTaskStatusOutcomeCallable ClbClient::DescribeTaskStatusCallab
     return task->get_future();
 }
 
+ClbClient::DisassociateTargetGroupsOutcome ClbClient::DisassociateTargetGroups(const DisassociateTargetGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateTargetGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateTargetGroupsResponse rsp = DisassociateTargetGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateTargetGroupsOutcome(rsp);
+        else
+            return DisassociateTargetGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateTargetGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DisassociateTargetGroupsAsync(const DisassociateTargetGroupsRequest& request, const DisassociateTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateTargetGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DisassociateTargetGroupsOutcomeCallable ClbClient::DisassociateTargetGroupsCallable(const DisassociateTargetGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateTargetGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateTargetGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::ManualRewriteOutcome ClbClient::ManualRewrite(const ManualRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "ManualRewrite");
@@ -1065,6 +1538,49 @@ ClbClient::ManualRewriteOutcomeCallable ClbClient::ManualRewriteCallable(const M
         [this, request]()
         {
             return this->ManualRewrite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::ModifyBlockIPListOutcome ClbClient::ModifyBlockIPList(const ModifyBlockIPListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlockIPList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlockIPListResponse rsp = ModifyBlockIPListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlockIPListOutcome(rsp);
+        else
+            return ModifyBlockIPListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlockIPListOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyBlockIPListAsync(const ModifyBlockIPListRequest& request, const ModifyBlockIPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBlockIPList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyBlockIPListOutcomeCallable ClbClient::ModifyBlockIPListCallable(const ModifyBlockIPListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBlockIPListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBlockIPList(request);
         }
     );
 
@@ -1287,6 +1803,135 @@ ClbClient::ModifyRuleOutcomeCallable ClbClient::ModifyRuleCallable(const ModifyR
     return task->get_future();
 }
 
+ClbClient::ModifyTargetGroupAttributeOutcome ClbClient::ModifyTargetGroupAttribute(const ModifyTargetGroupAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTargetGroupAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTargetGroupAttributeResponse rsp = ModifyTargetGroupAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTargetGroupAttributeOutcome(rsp);
+        else
+            return ModifyTargetGroupAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTargetGroupAttributeOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyTargetGroupAttributeAsync(const ModifyTargetGroupAttributeRequest& request, const ModifyTargetGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTargetGroupAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyTargetGroupAttributeOutcomeCallable ClbClient::ModifyTargetGroupAttributeCallable(const ModifyTargetGroupAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTargetGroupAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTargetGroupAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::ModifyTargetGroupInstancesPortOutcome ClbClient::ModifyTargetGroupInstancesPort(const ModifyTargetGroupInstancesPortRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTargetGroupInstancesPort");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTargetGroupInstancesPortResponse rsp = ModifyTargetGroupInstancesPortResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTargetGroupInstancesPortOutcome(rsp);
+        else
+            return ModifyTargetGroupInstancesPortOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTargetGroupInstancesPortOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyTargetGroupInstancesPortAsync(const ModifyTargetGroupInstancesPortRequest& request, const ModifyTargetGroupInstancesPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTargetGroupInstancesPort(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyTargetGroupInstancesPortOutcomeCallable ClbClient::ModifyTargetGroupInstancesPortCallable(const ModifyTargetGroupInstancesPortRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTargetGroupInstancesPortOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTargetGroupInstancesPort(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::ModifyTargetGroupInstancesWeightOutcome ClbClient::ModifyTargetGroupInstancesWeight(const ModifyTargetGroupInstancesWeightRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTargetGroupInstancesWeight");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTargetGroupInstancesWeightResponse rsp = ModifyTargetGroupInstancesWeightResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTargetGroupInstancesWeightOutcome(rsp);
+        else
+            return ModifyTargetGroupInstancesWeightOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTargetGroupInstancesWeightOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyTargetGroupInstancesWeightAsync(const ModifyTargetGroupInstancesWeightRequest& request, const ModifyTargetGroupInstancesWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTargetGroupInstancesWeight(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyTargetGroupInstancesWeightOutcomeCallable ClbClient::ModifyTargetGroupInstancesWeightCallable(const ModifyTargetGroupInstancesWeightRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTargetGroupInstancesWeightOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTargetGroupInstancesWeight(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::ModifyTargetPortOutcome ClbClient::ModifyTargetPort(const ModifyTargetPortRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTargetPort");
@@ -1366,6 +2011,49 @@ ClbClient::ModifyTargetWeightOutcomeCallable ClbClient::ModifyTargetWeightCallab
         [this, request]()
         {
             return this->ModifyTargetWeight(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::RegisterTargetGroupInstancesOutcome ClbClient::RegisterTargetGroupInstances(const RegisterTargetGroupInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterTargetGroupInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterTargetGroupInstancesResponse rsp = RegisterTargetGroupInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterTargetGroupInstancesOutcome(rsp);
+        else
+            return RegisterTargetGroupInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterTargetGroupInstancesOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::RegisterTargetGroupInstancesAsync(const RegisterTargetGroupInstancesRequest& request, const RegisterTargetGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterTargetGroupInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::RegisterTargetGroupInstancesOutcomeCallable ClbClient::RegisterTargetGroupInstancesCallable(const RegisterTargetGroupInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterTargetGroupInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterTargetGroupInstances(request);
         }
     );
 

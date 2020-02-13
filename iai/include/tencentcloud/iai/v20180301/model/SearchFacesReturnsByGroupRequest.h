@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取希望搜索的人员库列表，上限10个。
-                     * @return GroupIds 希望搜索的人员库列表，上限10个。
+                     * 获取希望搜索的人员库列表，上限60个。
+                     * @return GroupIds 希望搜索的人员库列表，上限60个。
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置希望搜索的人员库列表，上限10个。
-                     * @param GroupIds 希望搜索的人员库列表，上限10个。
+                     * 设置希望搜索的人员库列表，上限60个。
+                     * @param GroupIds 希望搜索的人员库列表，上限60个。
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
 
@@ -275,7 +275,7 @@ MaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要�
                 private:
 
                     /**
-                     * 希望搜索的人员库列表，上限10个。
+                     * 希望搜索的人员库列表，上限60个。
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;

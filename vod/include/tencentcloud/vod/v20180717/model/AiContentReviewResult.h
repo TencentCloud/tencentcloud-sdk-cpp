@@ -31,6 +31,9 @@
 #include <tencentcloud/vod/v20180717/model/AiReviewTaskPornOcrResult.h>
 #include <tencentcloud/vod/v20180717/model/AiReviewTaskPoliticalAsrResult.h>
 #include <tencentcloud/vod/v20180717/model/AiReviewTaskPoliticalOcrResult.h>
+#include <tencentcloud/vod/v20180717/model/AiReviewTaskTerrorismOcrResult.h>
+#include <tencentcloud/vod/v20180717/model/AiReviewTaskProhibitedAsrResult.h>
+#include <tencentcloud/vod/v20180717/model/AiReviewTaskProhibitedOcrResult.h>
 
 
 namespace TencentCloud
@@ -62,6 +65,9 @@ namespace TencentCloud
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
 <li>Political.Asr：Asr 文字鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
+<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
 <li>Terrorism：图片鉴恐</li>
@@ -70,6 +76,9 @@ namespace TencentCloud
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
 <li>Political.Asr：Asr 文字鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
+<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
                     std::string GetType() const;
 
@@ -82,6 +91,9 @@ namespace TencentCloud
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
 <li>Political.Asr：Asr 文字鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
+<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      * @param Type 任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
 <li>Terrorism：图片鉴恐</li>
@@ -90,6 +102,9 @@ namespace TencentCloud
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
 <li>Political.Asr：Asr 文字鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
+<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -253,6 +268,72 @@ namespace TencentCloud
                      */
                     bool PoliticalOcrTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TerrorismOcrTask 视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiReviewTaskTerrorismOcrResult GetTerrorismOcrTask() const;
+
+                    /**
+                     * 设置视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TerrorismOcrTask 视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTerrorismOcrTask(const AiReviewTaskTerrorismOcrResult& _terrorismOcrTask);
+
+                    /**
+                     * 判断参数 TerrorismOcrTask 是否已赋值
+                     * @return TerrorismOcrTask 是否已赋值
+                     */
+                    bool TerrorismOcrTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频内容审核 Asr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Asr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProhibitedAsrTask 视频内容审核 Asr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Asr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiReviewTaskProhibitedAsrResult GetProhibitedAsrTask() const;
+
+                    /**
+                     * 设置视频内容审核 Asr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Asr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProhibitedAsrTask 视频内容审核 Asr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Asr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProhibitedAsrTask(const AiReviewTaskProhibitedAsrResult& _prohibitedAsrTask);
+
+                    /**
+                     * 判断参数 ProhibitedAsrTask 是否已赋值
+                     * @return ProhibitedAsrTask 是否已赋值
+                     */
+                    bool ProhibitedAsrTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频内容审核 Ocr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProhibitedOcrTask 视频内容审核 Ocr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiReviewTaskProhibitedOcrResult GetProhibitedOcrTask() const;
+
+                    /**
+                     * 设置视频内容审核 Ocr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProhibitedOcrTask 视频内容审核 Ocr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProhibitedOcrTask(const AiReviewTaskProhibitedOcrResult& _prohibitedOcrTask);
+
+                    /**
+                     * 判断参数 ProhibitedOcrTask 是否已赋值
+                     * @return ProhibitedOcrTask 是否已赋值
+                     */
+                    bool ProhibitedOcrTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +345,9 @@ namespace TencentCloud
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
 <li>Political.Asr：Asr 文字鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
+<li>Terrorism.Ocr：Ocr 文字鉴恐</li>
+<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -316,6 +400,27 @@ namespace TencentCloud
                      */
                     AiReviewTaskPoliticalOcrResult m_politicalOcrTask;
                     bool m_politicalOcrTaskHasBeenSet;
+
+                    /**
+                     * 视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiReviewTaskTerrorismOcrResult m_terrorismOcrTask;
+                    bool m_terrorismOcrTaskHasBeenSet;
+
+                    /**
+                     * 视频内容审核 Asr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Asr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiReviewTaskProhibitedAsrResult m_prohibitedAsrTask;
+                    bool m_prohibitedAsrTaskHasBeenSet;
+
+                    /**
+                     * 视频内容审核 Ocr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Ocr 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiReviewTaskProhibitedOcrResult m_prohibitedOcrTask;
+                    bool m_prohibitedOcrTaskHasBeenSet;
 
                 };
             }

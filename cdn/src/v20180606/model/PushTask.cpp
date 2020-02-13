@@ -27,7 +27,8 @@ PushTask::PushTask() :
     m_statusHasBeenSet(false),
     m_percentHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome PushTask::Deserialize(const Value &value)
         m_areaHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PushTask.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void PushTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void PushTask::SetArea(const string& _area)
 bool PushTask::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string PushTask::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void PushTask::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool PushTask::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

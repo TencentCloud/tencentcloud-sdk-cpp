@@ -28,6 +28,7 @@ ModifyAnimatedGraphicsTemplateRequest::ModifyAnimatedGraphicsTemplateRequest() :
     m_nameHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_fpsHasBeenSet(false),
     m_qualityHasBeenSet(false),
@@ -73,6 +74,14 @@ string ModifyAnimatedGraphicsTemplateRequest::ToJsonString() const
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
     }
 
     if (m_formatHasBeenSet)
@@ -185,6 +194,22 @@ void ModifyAnimatedGraphicsTemplateRequest::SetHeight(const uint64_t& _height)
 bool ModifyAnimatedGraphicsTemplateRequest::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+string ModifyAnimatedGraphicsTemplateRequest::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void ModifyAnimatedGraphicsTemplateRequest::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool ModifyAnimatedGraphicsTemplateRequest::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
 }
 
 string ModifyAnimatedGraphicsTemplateRequest::GetFormat() const

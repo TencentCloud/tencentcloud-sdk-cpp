@@ -25,7 +25,8 @@ VirtualPrivateCloud::VirtualPrivateCloud() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_asVpcGatewayHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressCountHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,16 @@ CoreInternalOutcome VirtualPrivateCloud::Deserialize(const Value &value)
         m_privateIpAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6AddressCount") && !value["Ipv6AddressCount"].IsNull())
+    {
+        if (!value["Ipv6AddressCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VirtualPrivateCloud.Ipv6AddressCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6AddressCount = value["Ipv6AddressCount"].GetUint64();
+        m_ipv6AddressCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +130,14 @@ void VirtualPrivateCloud::ToJsonObject(Value &value, Document::AllocatorType& al
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ipv6AddressCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Ipv6AddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6AddressCount, allocator);
     }
 
 }
@@ -186,5 +205,21 @@ void VirtualPrivateCloud::SetPrivateIpAddresses(const vector<string>& _privateIp
 bool VirtualPrivateCloud::PrivateIpAddressesHasBeenSet() const
 {
     return m_privateIpAddressesHasBeenSet;
+}
+
+uint64_t VirtualPrivateCloud::GetIpv6AddressCount() const
+{
+    return m_ipv6AddressCount;
+}
+
+void VirtualPrivateCloud::SetIpv6AddressCount(const uint64_t& _ipv6AddressCount)
+{
+    m_ipv6AddressCount = _ipv6AddressCount;
+    m_ipv6AddressCountHasBeenSet = true;
+}
+
+bool VirtualPrivateCloud::Ipv6AddressCountHasBeenSet() const
+{
+    return m_ipv6AddressCountHasBeenSet;
 }
 

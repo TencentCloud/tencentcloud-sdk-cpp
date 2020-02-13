@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/VpnGatewayQuota.h>
 
 
 namespace TencentCloud
@@ -316,6 +317,42 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取网关带宽配额信息
+                     * @return VpnGatewayQuotaSet 网关带宽配额信息
+                     */
+                    std::vector<VpnGatewayQuota> GetVpnGatewayQuotaSet() const;
+
+                    /**
+                     * 设置网关带宽配额信息
+                     * @param VpnGatewayQuotaSet 网关带宽配额信息
+                     */
+                    void SetVpnGatewayQuotaSet(const std::vector<VpnGatewayQuota>& _vpnGatewayQuotaSet);
+
+                    /**
+                     * 判断参数 VpnGatewayQuotaSet 是否已赋值
+                     * @return VpnGatewayQuotaSet 是否已赋值
+                     */
+                    bool VpnGatewayQuotaSetHasBeenSet() const;
+
+                    /**
+                     * 获取网关实例版本信息
+                     * @return Version 网关实例版本信息
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置网关实例版本信息
+                     * @param Version 网关实例版本信息
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +444,18 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 网关带宽配额信息
+                     */
+                    std::vector<VpnGatewayQuota> m_vpnGatewayQuotaSet;
+                    bool m_vpnGatewayQuotaSetHasBeenSet;
+
+                    /**
+                     * 网关实例版本信息
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }

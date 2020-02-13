@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分组所属应用ID
-                     * @return ApplicationId 分组所属应用ID
-                     */
-                    std::string GetApplicationId() const;
-
-                    /**
-                     * 设置分组所属应用ID
-                     * @param ApplicationId 分组所属应用ID
-                     */
-                    void SetApplicationId(const std::string& _applicationId);
-
-                    /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
-                     */
-                    bool ApplicationIdHasBeenSet() const;
-
-                    /**
                      * 获取搜索字段，模糊搜索groupName字段
                      * @return SearchWord 搜索字段，模糊搜索groupName字段
                      */
@@ -77,6 +59,24 @@ namespace TencentCloud
                      * @return SearchWord 是否已赋值
                      */
                     bool SearchWordHasBeenSet() const;
+
+                    /**
+                     * 获取分组所属应用ID
+                     * @return ApplicationId 分组所属应用ID
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置分组所属应用ID
+                     * @param ApplicationId 分组所属应用ID
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取排序字段，默认为 createTime字段，支持id， name， createTime
@@ -150,19 +150,55 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取分组所属名字空间ID
+                     * @return NamespaceId 分组所属名字空间ID
+                     */
+                    std::string GetNamespaceId() const;
 
                     /**
-                     * 分组所属应用ID
+                     * 设置分组所属名字空间ID
+                     * @param NamespaceId 分组所属名字空间ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    void SetNamespaceId(const std::string& _namespaceId);
+
+                    /**
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
+                     */
+                    bool NamespaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取分组所属集群ID
+                     * @return ClusterId 分组所属集群ID
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置分组所属集群ID
+                     * @param ClusterId 分组所属集群ID
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 搜索字段，模糊搜索groupName字段
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
+
+                    /**
+                     * 分组所属应用ID
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                     /**
                      * 排序字段，默认为 createTime字段，支持id， name， createTime
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 分组所属名字空间ID
+                     */
+                    std::string m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
+
+                    /**
+                     * 分组所属集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

@@ -332,6 +332,116 @@ namespace TencentCloud
                      */
                     bool PkgVersionHasBeenSet() const;
 
+                    /**
+                     * 获取所需实例内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Memory 所需实例内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMemory() const;
+
+                    /**
+                     * 设置所需实例内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Memory 所需实例内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMemory(const std::string& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取要求最小实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceRequest 要求最小实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInstanceRequest() const;
+
+                    /**
+                     * 设置要求最小实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceRequest 要求最小实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceRequest(const uint64_t& _instanceRequest);
+
+                    /**
+                     * 判断参数 InstanceRequest 是否已赋值
+                     * @return InstanceRequest 是否已赋值
+                     */
+                    bool InstanceRequestHasBeenSet() const;
+
+                    /**
+                     * 获取部署组启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartupParameters 部署组启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartupParameters() const;
+
+                    /**
+                     * 设置部署组启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartupParameters 部署组启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartupParameters(const std::string& _startupParameters);
+
+                    /**
+                     * 判断参数 StartupParameters 是否已赋值
+                     * @return StartupParameters 是否已赋值
+                     */
+                    bool StartupParametersHasBeenSet() const;
+
+                    /**
+                     * 获取应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationId 应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取部署组实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceCount 部署组实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInstanceCount() const;
+
+                    /**
+                     * 设置部署组实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceCount 部署组实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceCount(const uint64_t& _instanceCount);
+
+                    /**
+                     * 判断参数 InstanceCount 是否已赋值
+                     * @return InstanceCount 是否已赋值
+                     */
+                    bool InstanceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +534,41 @@ namespace TencentCloud
                      */
                     std::string m_pkgVersion;
                     bool m_pkgVersionHasBeenSet;
+
+                    /**
+                     * 所需实例内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 要求最小实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_instanceRequest;
+                    bool m_instanceRequestHasBeenSet;
+
+                    /**
+                     * 部署组启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startupParameters;
+                    bool m_startupParametersHasBeenSet;
+
+                    /**
+                     * 应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 部署组实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_instanceCount;
+                    bool m_instanceCountHasBeenSet;
 
                 };
             }

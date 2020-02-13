@@ -197,6 +197,8 @@
 #include <tencentcloud/yunjing/v20180228/model/ModifyLoginWhiteListResponse.h>
 #include <tencentcloud/yunjing/v20180228/model/ModifyProVersionRenewFlagRequest.h>
 #include <tencentcloud/yunjing/v20180228/model/ModifyProVersionRenewFlagResponse.h>
+#include <tencentcloud/yunjing/v20180228/model/OpenProVersionRequest.h>
+#include <tencentcloud/yunjing/v20180228/model/OpenProVersionResponse.h>
 #include <tencentcloud/yunjing/v20180228/model/OpenProVersionPrepaidRequest.h>
 #include <tencentcloud/yunjing/v20180228/model/OpenProVersionPrepaidResponse.h>
 #include <tencentcloud/yunjing/v20180228/model/RecoverMalwaresRequest.h>
@@ -494,6 +496,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyProVersionRenewFlagResponse> ModifyProVersionRenewFlagOutcome;
                 typedef std::future<ModifyProVersionRenewFlagOutcome> ModifyProVersionRenewFlagOutcomeCallable;
                 typedef std::function<void(const YunjingClient*, const Model::ModifyProVersionRenewFlagRequest&, ModifyProVersionRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProVersionRenewFlagAsyncHandler;
+                typedef Outcome<Error, Model::OpenProVersionResponse> OpenProVersionOutcome;
+                typedef std::future<OpenProVersionOutcome> OpenProVersionOutcomeCallable;
+                typedef std::function<void(const YunjingClient*, const Model::OpenProVersionRequest&, OpenProVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenProVersionAsyncHandler;
                 typedef Outcome<Error, Model::OpenProVersionPrepaidResponse> OpenProVersionPrepaidOutcome;
                 typedef std::future<OpenProVersionPrepaidOutcome> OpenProVersionPrepaidOutcomeCallable;
                 typedef std::function<void(const YunjingClient*, const Model::OpenProVersionPrepaidRequest&, OpenProVersionPrepaidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenProVersionPrepaidAsyncHandler;
@@ -1315,6 +1320,15 @@ namespace TencentCloud
                 ModifyProVersionRenewFlagOutcome ModifyProVersionRenewFlag(const Model::ModifyProVersionRenewFlagRequest &request);
                 void ModifyProVersionRenewFlagAsync(const Model::ModifyProVersionRenewFlagRequest& request, const ModifyProVersionRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProVersionRenewFlagOutcomeCallable ModifyProVersionRenewFlagCallable(const Model::ModifyProVersionRenewFlagRequest& request);
+
+                /**
+                 *本接口 (OpenProVersion) 用于开通专业版。
+                 * @param req OpenProVersionRequest
+                 * @return OpenProVersionOutcome
+                 */
+                OpenProVersionOutcome OpenProVersion(const Model::OpenProVersionRequest &request);
+                void OpenProVersionAsync(const Model::OpenProVersionRequest& request, const OpenProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenProVersionOutcomeCallable OpenProVersionCallable(const Model::OpenProVersionRequest& request);
 
                 /**
                  *本接口 (OpenProVersionPrepaid) 用于开通专业版(包年包月)。

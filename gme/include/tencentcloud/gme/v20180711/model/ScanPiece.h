@@ -128,17 +128,17 @@ namespace TencentCloud
                     bool ScanDetailHasBeenSet() const;
 
                     /**
-                     * 获取gme实时语音房间id，透传任务传入时的RoomId
+                     * 获取gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoomId gme实时语音房间id，透传任务传入时的RoomId
+                     * @return RoomId gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置gme实时语音房间id，透传任务传入时的RoomId
+                     * 设置gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoomId gme实时语音房间id，透传任务传入时的RoomId
+                     * @param RoomId gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -150,17 +150,17 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取gme实时语音用户id，透传任务传入时的OpenId
+                     * 获取gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpenId gme实时语音用户id，透传任务传入时的OpenId
+                     * @return OpenId gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置gme实时语音用户id，透传任务传入时的OpenId
+                     * 设置gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId gme实时语音用户id，透传任务传入时的OpenId
+                     * @param OpenId gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOpenId(const std::string& _openId);
@@ -237,6 +237,28 @@ namespace TencentCloud
                      */
                     bool DurationHasBeenSet() const;
 
+                    /**
+                     * 获取分片开始检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PieceStartTime 分片开始检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetPieceStartTime() const;
+
+                    /**
+                     * 设置分片开始检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PieceStartTime 分片开始检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPieceStartTime(const uint64_t& _pieceStartTime);
+
+                    /**
+                     * 判断参数 PieceStartTime 是否已赋值
+                     * @return PieceStartTime 是否已赋值
+                     */
+                    bool PieceStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,14 +288,14 @@ namespace TencentCloud
                     bool m_scanDetailHasBeenSet;
 
                     /**
-                     * gme实时语音房间id，透传任务传入时的RoomId
+                     * gme实时语音房间ID，透传任务传入时的RoomId
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * gme实时语音用户id，透传任务传入时的OpenId
+                     * gme实时语音用户ID，透传任务传入时的OpenId
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
@@ -299,6 +321,13 @@ namespace TencentCloud
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 分片开始检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_pieceStartTime;
+                    bool m_pieceStartTimeHasBeenSet;
 
                 };
             }

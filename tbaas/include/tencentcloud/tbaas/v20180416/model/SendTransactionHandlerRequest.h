@@ -97,24 +97,6 @@ namespace TencentCloud
                     bool GroupPkHasBeenSet() const;
 
                     /**
-                     * 获取私钥用户编号
-                     * @return KeyUser 私钥用户编号
-                     */
-                    std::string GetKeyUser() const;
-
-                    /**
-                     * 设置私钥用户编号
-                     * @param KeyUser 私钥用户编号
-                     */
-                    void SetKeyUser(const std::string& _keyUser);
-
-                    /**
-                     * 判断参数 KeyUser 是否已赋值
-                     * @return KeyUser 是否已赋值
-                     */
-                    bool KeyUserHasBeenSet() const;
-
-                    /**
                      * 获取合约编号
                      * @return ContractId 合约编号
                      */
@@ -187,12 +169,6 @@ namespace TencentCloud
                      */
                     std::string m_groupPk;
                     bool m_groupPkHasBeenSet;
-
-                    /**
-                     * 私钥用户编号
-                     */
-                    std::string m_keyUser;
-                    bool m_keyUserHasBeenSet;
 
                     /**
                      * 合约编号

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包配额数据结构
-                     * @return QuotaSet 带宽包配额数据结构
+                     * 获取带宽包配额详细信息
+                     * @return QuotaSet 带宽包配额详细信息
                      */
                     std::vector<Quota> GetQuotaSet() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包配额数据结构
+                     * 带宽包配额详细信息
                      */
                     std::vector<Quota> m_quotaSet;
                     bool m_quotaSetHasBeenSet;

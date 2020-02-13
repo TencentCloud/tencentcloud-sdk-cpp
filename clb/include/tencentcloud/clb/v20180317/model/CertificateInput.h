@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端证书的 ID，当监听器采用双向认证，即 SSLMode=mutual 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
-                     * @return CertCaId 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=mutual 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * 获取客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * @return CertCaId 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
                      */
                     std::string GetCertCaId() const;
 
                     /**
-                     * 设置客户端证书的 ID，当监听器采用双向认证，即 SSLMode=mutual 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
-                     * @param CertCaId 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=mutual 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * 设置客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * @param CertCaId 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
                      */
                     void SetCertCaId(const std::string& _certCaId);
 
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=mutual 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
                      */
                     std::string m_certCaId;
                     bool m_certCaIdHasBeenSet;

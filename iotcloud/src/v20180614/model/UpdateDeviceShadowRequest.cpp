@@ -27,7 +27,8 @@ UpdateDeviceShadowRequest::UpdateDeviceShadowRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_shadowVersionHasBeenSet(false)
+    m_shadowVersionHasBeenSet(false),
+    m_prefixHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string UpdateDeviceShadowRequest::ToJsonString() const
         string key = "ShadowVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shadowVersion, allocator);
+    }
+
+    if (m_prefixHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Prefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_prefix.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void UpdateDeviceShadowRequest::SetShadowVersion(const uint64_t& _shadowVersion)
 bool UpdateDeviceShadowRequest::ShadowVersionHasBeenSet() const
 {
     return m_shadowVersionHasBeenSet;
+}
+
+string UpdateDeviceShadowRequest::GetPrefix() const
+{
+    return m_prefix;
+}
+
+void UpdateDeviceShadowRequest::SetPrefix(const string& _prefix)
+{
+    m_prefix = _prefix;
+    m_prefixHasBeenSet = true;
+}
+
+bool UpdateDeviceShadowRequest::PrefixHasBeenSet() const
+{
+    return m_prefixHasBeenSet;
 }
 
 

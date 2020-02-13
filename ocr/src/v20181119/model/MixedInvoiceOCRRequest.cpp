@@ -25,7 +25,8 @@ using namespace std;
 
 MixedInvoiceOCRRequest::MixedInvoiceOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_typesHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,19 @@ string MixedInvoiceOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Types";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_types.begin(); itr != m_types.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -90,6 +104,22 @@ void MixedInvoiceOCRRequest::SetImageUrl(const string& _imageUrl)
 bool MixedInvoiceOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+vector<int64_t> MixedInvoiceOCRRequest::GetTypes() const
+{
+    return m_types;
+}
+
+void MixedInvoiceOCRRequest::SetTypes(const vector<int64_t>& _types)
+{
+    m_types = _types;
+    m_typesHasBeenSet = true;
+}
+
+bool MixedInvoiceOCRRequest::TypesHasBeenSet() const
+{
+    return m_typesHasBeenSet;
 }
 
 

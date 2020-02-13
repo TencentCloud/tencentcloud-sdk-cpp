@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取事件 ID 。
-                     * @return EventId 事件 ID 。
+                     * 获取事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。
+                     * @return EventId 事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。
                      */
                     int64_t GetEventId() const;
 
                     /**
-                     * 设置事件 ID 。
-                     * @param EventId 事件 ID 。
+                     * 设置事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。
+                     * @param EventId 事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。
                      */
                     void SetEventId(const int64_t& _eventId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 事件 ID 。
+                     * 事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;

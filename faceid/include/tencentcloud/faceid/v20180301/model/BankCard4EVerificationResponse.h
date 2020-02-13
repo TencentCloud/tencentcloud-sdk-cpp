@@ -64,7 +64,7 @@ namespace TencentCloud
 '-3': '身份证号码有误'
 '-4': '银行卡号码有误'
 '-5': '手机号码不合法'
-'-18': '服务繁忙'
+'-18': '验证中心服务繁忙'
                      * @return Result 认证结果码
 收费结果码：
 '0': '认证通过'
@@ -86,7 +86,7 @@ namespace TencentCloud
 '-3': '身份证号码有误'
 '-4': '银行卡号码有误'
 '-5': '手机号码不合法'
-'-18': '服务繁忙'
+'-18': '验证中心服务繁忙'
                      */
                     std::string GetResult() const;
 
@@ -97,8 +97,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取认证结果信息。
-                     * @return Description 认证结果信息。
+                     * 获取业务结果描述。
+                     * @return Description 业务结果描述。
                      */
                     std::string GetDescription() const;
 
@@ -132,13 +132,13 @@ namespace TencentCloud
 '-3': '身份证号码有误'
 '-4': '银行卡号码有误'
 '-5': '手机号码不合法'
-'-18': '服务繁忙'
+'-18': '验证中心服务繁忙'
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 认证结果信息。
+                     * 业务结果描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -274,6 +274,60 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取是否专业版。
+                     * @return IsProVersion 是否专业版。
+                     */
+                    bool GetIsProVersion() const;
+
+                    /**
+                     * 设置是否专业版。
+                     * @param IsProVersion 是否专业版。
+                     */
+                    void SetIsProVersion(const bool& _isProVersion);
+
+                    /**
+                     * 判断参数 IsProVersion 是否已赋值
+                     * @return IsProVersion 是否已赋值
+                     */
+                    bool IsProVersionHasBeenSet() const;
+
+                    /**
+                     * 获取阻断状态。
+                     * @return BanStatus 阻断状态。
+                     */
+                    std::string GetBanStatus() const;
+
+                    /**
+                     * 设置阻断状态。
+                     * @param BanStatus 阻断状态。
+                     */
+                    void SetBanStatus(const std::string& _banStatus);
+
+                    /**
+                     * 判断参数 BanStatus 是否已赋值
+                     * @return BanStatus 是否已赋值
+                     */
+                    bool BanStatusHasBeenSet() const;
+
+                    /**
+                     * 获取机器UUID
+                     * @return Quuid 机器UUID
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置机器UUID
+                     * @param Quuid 机器UUID
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     */
+                    bool QuuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +404,24 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 是否专业版。
+                     */
+                    bool m_isProVersion;
+                    bool m_isProVersionHasBeenSet;
+
+                    /**
+                     * 阻断状态。
+                     */
+                    std::string m_banStatus;
+                    bool m_banStatusHasBeenSet;
+
+                    /**
+                     * 机器UUID
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                 };
             }

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品自身id
-                     * @return ProductID 产品自身id
+                     * 获取产品自身ID
+                     * @return ProductID 产品自身ID
                      */
                     std::string GetProductID() const;
 
                     /**
-                     * 设置产品自身id
-                     * @param ProductID 产品自身id
+                     * 设置产品自身ID
+                     * @param ProductID 产品自身ID
                      */
                     void SetProductID(const std::string& _productID);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的id和设备信息。
-                     * @return BrokerSubscribe 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的id和设备信息。
+                     * 获取代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
+                     * @return BrokerSubscribe 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
                      */
                     BrokerSubscribe GetBrokerSubscribe() const;
 
                     /**
-                     * 设置代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的id和设备信息。
-                     * @param BrokerSubscribe 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的id和设备信息。
+                     * 设置代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
+                     * @param BrokerSubscribe 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
                      */
                     void SetBrokerSubscribe(const BrokerSubscribe& _brokerSubscribe);
 
@@ -118,7 +118,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品自身id
+                     * 产品自身ID
                      */
                     std::string m_productID;
                     bool m_productIDHasBeenSet;
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的id和设备信息。
+                     * 代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。
                      */
                     BrokerSubscribe m_brokerSubscribe;
                     bool m_brokerSubscribeHasBeenSet;

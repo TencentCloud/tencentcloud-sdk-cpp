@@ -25,7 +25,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_iPVSHasBeenSet(false),
     m_asEnabledHasBeenSet(false),
     m_containerRuntimeHasBeenSet(false),
-    m_nodeNameTypeHasBeenSet(false)
+    m_nodeNameTypeHasBeenSet(false),
+    m_extraArgsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,23 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_nodeNameTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraArgs") && !value["ExtraArgs"].IsNull())
+    {
+        if (!value["ExtraArgs"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.ExtraArgs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraArgs.Deserialize(value["ExtraArgs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraArgsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +129,15 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "NodeNameType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_nodeNameType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraArgsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -178,5 +205,21 @@ void ClusterAdvancedSettings::SetNodeNameType(const string& _nodeNameType)
 bool ClusterAdvancedSettings::NodeNameTypeHasBeenSet() const
 {
     return m_nodeNameTypeHasBeenSet;
+}
+
+ClusterExtraArgs ClusterAdvancedSettings::GetExtraArgs() const
+{
+    return m_extraArgs;
+}
+
+void ClusterAdvancedSettings::SetExtraArgs(const ClusterExtraArgs& _extraArgs)
+{
+    m_extraArgs = _extraArgs;
+    m_extraArgsHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::ExtraArgsHasBeenSet() const
+{
+    return m_extraArgsHasBeenSet;
 }
 

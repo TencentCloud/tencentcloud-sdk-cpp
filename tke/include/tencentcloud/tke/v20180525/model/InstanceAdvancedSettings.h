@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/Label.h>
+#include <tencentcloud/tke/v20180525/model/DataDisk.h>
+#include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
 
 
 namespace TencentCloud
@@ -137,6 +139,42 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取数据盘相关信息
+                     * @return DataDisks 数据盘相关信息
+                     */
+                    std::vector<DataDisk> GetDataDisks() const;
+
+                    /**
+                     * 设置数据盘相关信息
+                     * @param DataDisks 数据盘相关信息
+                     */
+                    void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
+
+                    /**
+                     * 判断参数 DataDisks 是否已赋值
+                     * @return DataDisks 是否已赋值
+                     */
+                    bool DataDisksHasBeenSet() const;
+
+                    /**
+                     * 获取节点相关的自定义参数信息
+                     * @return ExtraArgs 节点相关的自定义参数信息
+                     */
+                    InstanceExtraArgs GetExtraArgs() const;
+
+                    /**
+                     * 设置节点相关的自定义参数信息
+                     * @param ExtraArgs 节点相关的自定义参数信息
+                     */
+                    void SetExtraArgs(const InstanceExtraArgs& _extraArgs);
+
+                    /**
+                     * 判断参数 ExtraArgs 是否已赋值
+                     * @return ExtraArgs 是否已赋值
+                     */
+                    bool ExtraArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +206,18 @@ namespace TencentCloud
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 数据盘相关信息
+                     */
+                    std::vector<DataDisk> m_dataDisks;
+                    bool m_dataDisksHasBeenSet;
+
+                    /**
+                     * 节点相关的自定义参数信息
+                     */
+                    InstanceExtraArgs m_extraArgs;
+                    bool m_extraArgsHasBeenSet;
 
                 };
             }

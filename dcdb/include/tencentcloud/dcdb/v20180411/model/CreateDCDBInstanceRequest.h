@@ -163,14 +163,14 @@ namespace TencentCloud
                     bool ShardCountHasBeenSet() const;
 
                     /**
-                     * 获取欲购买实例的数量，目前只支持购买1个实例
-                     * @return Count 欲购买实例的数量，目前只支持购买1个实例
+                     * 获取欲购买实例的数量
+                     * @return Count 欲购买实例的数量
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置欲购买实例的数量，目前只支持购买1个实例
-                     * @param Count 欲购买实例的数量，目前只支持购买1个实例
+                     * 设置欲购买实例的数量
+                     * @param Count 欲购买实例的数量
                      */
                     void SetCount(const int64_t& _count);
 
@@ -304,6 +304,42 @@ namespace TencentCloud
                      */
                     bool VoucherIdsHasBeenSet() const;
 
+                    /**
+                     * 获取安全组id
+                     * @return SecurityGroupId 安全组id
+                     */
+                    std::string GetSecurityGroupId() const;
+
+                    /**
+                     * 设置安全组id
+                     * @param SecurityGroupId 安全组id
+                     */
+                    void SetSecurityGroupId(const std::string& _securityGroupId);
+
+                    /**
+                     * 判断参数 SecurityGroupId 是否已赋值
+                     * @return SecurityGroupId 是否已赋值
+                     */
+                    bool SecurityGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例名称， 可以通过该字段自主的设置实例的名字
+                     * @return InstanceName 实例名称， 可以通过该字段自主的设置实例的名字
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称， 可以通过该字段自主的设置实例的名字
+                     * @param InstanceName 实例名称， 可以通过该字段自主的设置实例的名字
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,7 +382,7 @@ namespace TencentCloud
                     bool m_shardCountHasBeenSet;
 
                     /**
-                     * 欲购买实例的数量，目前只支持购买1个实例
+                     * 欲购买实例的数量
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
@@ -390,6 +426,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
+
+                    /**
+                     * 安全组id
+                     */
+                    std::string m_securityGroupId;
+                    bool m_securityGroupIdHasBeenSet;
+
+                    /**
+                     * 实例名称， 可以通过该字段自主的设置实例的名字
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
 
                 };
             }

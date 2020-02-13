@@ -44,6 +44,18 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取符合条件的记录总数。
+                     * @return Total 符合条件的记录总数。
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
+                    /**
                      * 获取返回列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 返回列表。
@@ -57,19 +69,13 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
-                    /**
-                     * 获取符合条件的记录总数
-                     * @return Total 符合条件的记录总数
-                     */
-                    int64_t GetTotal() const;
-
-                    /**
-                     * 判断参数 Total 是否已赋值
-                     * @return Total 是否已赋值
-                     */
-                    bool TotalHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 符合条件的记录总数。
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                     /**
                      * 返回列表。
@@ -77,12 +83,6 @@ namespace TencentCloud
                      */
                     std::vector<DeployGroupInfo> m_items;
                     bool m_itemsHasBeenSet;
-
-                    /**
-                     * 符合条件的记录总数
-                     */
-                    int64_t m_total;
-                    bool m_totalHasBeenSet;
 
                 };
             }

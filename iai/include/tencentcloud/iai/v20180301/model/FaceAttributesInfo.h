@@ -37,7 +37,7 @@ namespace TencentCloud
             {
                 /**
                 * 人脸属性信息，包含性别( gender )、年龄( age )、表情( expression )、 
-魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
+魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。只有当 NeedFaceAttributes 设为 1 时才返回有效信息，最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceAttributesInfo 不具备参考意义。
                 */
                 class FaceAttributesInfo : public AbstractModel
                 {
@@ -121,17 +121,17 @@ namespace TencentCloud
                     bool GlassHasBeenSet() const;
 
                     /**
-                     * 获取上下偏移[-30,30]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * 获取上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
-                     * @return Pitch 上下偏移[-30,30]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * @return Pitch 上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
                      */
                     int64_t GetPitch() const;
 
                     /**
-                     * 设置上下偏移[-30,30]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * 设置上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
-                     * @param Pitch 上下偏移[-30,30]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * @param Pitch 上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
                      */
                     void SetPitch(const int64_t& _pitch);
@@ -143,17 +143,17 @@ namespace TencentCloud
                     bool PitchHasBeenSet() const;
 
                     /**
-                     * 获取左右偏移[-30,30]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * 获取左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
-                     * @return Yaw 左右偏移[-30,30]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * @return Yaw 左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
                      */
                     int64_t GetYaw() const;
 
                     /**
-                     * 设置左右偏移[-30,30]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * 设置左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
-                     * @param Yaw 左右偏移[-30,30]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * @param Yaw 左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
                      */
                     void SetYaw(const int64_t& _yaw);
@@ -165,17 +165,17 @@ namespace TencentCloud
                     bool YawHasBeenSet() const;
 
                     /**
-                     * 获取平面旋转[-180,180]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+                     * 获取平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
 建议：人脸入库选择[-20,20]的图片。
-                     * @return Roll 平面旋转[-180,180]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+                     * @return Roll 平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
 建议：人脸入库选择[-20,20]的图片。
                      */
                     int64_t GetRoll() const;
 
                     /**
-                     * 设置平面旋转[-180,180]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+                     * 设置平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
 建议：人脸入库选择[-20,20]的图片。
-                     * @param Roll 平面旋转[-180,180]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+                     * @param Roll 平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
 建议：人脸入库选择[-20,20]的图片。
                      */
                     void SetRoll(const int64_t& _roll);
@@ -319,21 +319,21 @@ namespace TencentCloud
                     bool m_glassHasBeenSet;
 
                     /**
-                     * 上下偏移[-30,30]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * 上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
                      */
                     int64_t m_pitch;
                     bool m_pitchHasBeenSet;
 
                     /**
-                     * 左右偏移[-30,30]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+                     * 左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
 建议：人脸入库选择[-10,10]的图片。
                      */
                     int64_t m_yaw;
                     bool m_yawHasBeenSet;
 
                     /**
-                     * 平面旋转[-180,180]。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+                     * 平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
 建议：人脸入库选择[-20,20]的图片。
                      */
                     int64_t m_roll;

@@ -35,7 +35,8 @@ DescribeFlowLogsRequest::DescribeFlowLogsRequest() :
     m_orderFieldHasBeenSet(false),
     m_orderDirectionHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,15 @@ string DescribeFlowLogsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_filters.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -340,6 +350,22 @@ void DescribeFlowLogsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeFlowLogsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+Filter DescribeFlowLogsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeFlowLogsRequest::SetFilters(const Filter& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeFlowLogsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

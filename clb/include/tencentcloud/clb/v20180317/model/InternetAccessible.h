@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 网络计费方式，最大出带宽
+                * 网络计费模式，最大出带宽
                 */
                 class InternetAccessible : public AbstractModel
                 {
@@ -49,16 +49,20 @@ namespace TencentCloud
                     /**
                      * 获取TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支持此种计费模式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetChargeType TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支持此种计费模式）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
                      * 设置TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支持此种计费模式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param InternetChargeType TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支持此种计费模式）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
@@ -70,13 +74,17 @@ BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支�
 
                     /**
                      * 获取最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
@@ -86,20 +94,51 @@ BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支�
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
+                    /**
+                     * 获取带宽包的类型，如SINGLEISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BandwidthpkgSubType 带宽包的类型，如SINGLEISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBandwidthpkgSubType() const;
+
+                    /**
+                     * 设置带宽包的类型，如SINGLEISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BandwidthpkgSubType 带宽包的类型，如SINGLEISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBandwidthpkgSubType(const std::string& _bandwidthpkgSubType);
+
+                    /**
+                     * 判断参数 BandwidthpkgSubType 是否已赋值
+                     * @return BandwidthpkgSubType 是否已赋值
+                     */
+                    bool BandwidthpkgSubTypeHasBeenSet() const;
+
                 private:
 
                     /**
                      * TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;
 BANDWIDTH_PACKAGE 按带宽包计费（当前，只有指定运营商时才支持此种计费模式）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
                      * 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
+
+                    /**
+                     * 带宽包的类型，如SINGLEISP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bandwidthpkgSubType;
+                    bool m_bandwidthpkgSubTypeHasBeenSet;
 
                 };
             }

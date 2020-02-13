@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取证书类型，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]
-                     * @return CertType 证书类型，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]
+                     * 获取证书类型，当为协议为HTTPS协议时必须填，取值[2(腾讯云托管证书)]
+                     * @return CertType 证书类型，当为协议为HTTPS协议时必须填，取值[2(腾讯云托管证书)]
                      */
                     uint64_t GetCertType() const;
 
                     /**
-                     * 设置证书类型，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]
-                     * @param CertType 证书类型，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]
+                     * 设置证书类型，当为协议为HTTPS协议时必须填，取值[2(腾讯云托管证书)]
+                     * @param CertType 证书类型，当为协议为HTTPS协议时必须填，取值[2(腾讯云托管证书)]
                      */
                     void SetCertType(const uint64_t& _certType);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool CertHasBeenSet() const;
 
                     /**
-                     * 获取当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @return PrivateKey 当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * 获取当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @return PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
                      */
                     std::string GetPrivateKey() const;
 
                     /**
-                     * 设置当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @param PrivateKey 当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * 设置当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @param PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
                      */
                     void SetPrivateKey(const std::string& _privateKey);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 证书类型，当为协议为https协议时必须填，取值[2(腾讯云托管证书)]
+                     * 证书类型，当为协议为HTTPS协议时必须填，取值[2(腾讯云托管证书)]
                      */
                     uint64_t m_certType;
                     bool m_certTypeHasBeenSet;
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_certHasBeenSet;
 
                     /**
-                     * 当证书来源为自有证书时，此字段必须填写证书秘钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;

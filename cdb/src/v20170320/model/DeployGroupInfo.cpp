@@ -25,8 +25,11 @@ DeployGroupInfo::DeployGroupInfo() :
     m_deployGroupIdHasBeenSet(false),
     m_deployGroupNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_quotaHasBeenSet(false),
+    m_affinityHasBeenSet(false),
+    m_limitNumHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_quotaHasBeenSet(false)
+    m_devClassHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,36 @@ CoreInternalOutcome DeployGroupInfo::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Quota") && !value["Quota"].IsNull())
+    {
+        if (!value["Quota"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DeployGroupInfo.Quota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quota = value["Quota"].GetInt64();
+        m_quotaHasBeenSet = true;
+    }
+
+    if (value.HasMember("Affinity") && !value["Affinity"].IsNull())
+    {
+        if (!value["Affinity"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeployGroupInfo.Affinity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_affinity = string(value["Affinity"].GetString());
+        m_affinityHasBeenSet = true;
+    }
+
+    if (value.HasMember("LimitNum") && !value["LimitNum"].IsNull())
+    {
+        if (!value["LimitNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DeployGroupInfo.LimitNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_limitNum = value["LimitNum"].GetInt64();
+        m_limitNumHasBeenSet = true;
+    }
+
     if (value.HasMember("Description") && !value["Description"].IsNull())
     {
         if (!value["Description"].IsString())
@@ -75,14 +108,14 @@ CoreInternalOutcome DeployGroupInfo::Deserialize(const Value &value)
         m_descriptionHasBeenSet = true;
     }
 
-    if (value.HasMember("Quota") && !value["Quota"].IsNull())
+    if (value.HasMember("DevClass") && !value["DevClass"].IsNull())
     {
-        if (!value["Quota"].IsInt64())
+        if (!value["DevClass"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DeployGroupInfo.Quota` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DeployGroupInfo.DevClass` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_quota = value["Quota"].GetInt64();
-        m_quotaHasBeenSet = true;
+        m_devClass = string(value["DevClass"].GetString());
+        m_devClassHasBeenSet = true;
     }
 
 
@@ -116,6 +149,30 @@ void DeployGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_quotaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quota, allocator);
+    }
+
+    if (m_affinityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Affinity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_affinity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LimitNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_limitNum, allocator);
+    }
+
     if (m_descriptionHasBeenSet)
     {
         Value iKey(kStringType);
@@ -124,12 +181,12 @@ void DeployGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
         value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_quotaHasBeenSet)
+    if (m_devClassHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Quota";
+        string key = "DevClass";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_quota, allocator);
+        value.AddMember(iKey, Value(m_devClass.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -183,6 +240,54 @@ bool DeployGroupInfo::CreateTimeHasBeenSet() const
     return m_createTimeHasBeenSet;
 }
 
+int64_t DeployGroupInfo::GetQuota() const
+{
+    return m_quota;
+}
+
+void DeployGroupInfo::SetQuota(const int64_t& _quota)
+{
+    m_quota = _quota;
+    m_quotaHasBeenSet = true;
+}
+
+bool DeployGroupInfo::QuotaHasBeenSet() const
+{
+    return m_quotaHasBeenSet;
+}
+
+string DeployGroupInfo::GetAffinity() const
+{
+    return m_affinity;
+}
+
+void DeployGroupInfo::SetAffinity(const string& _affinity)
+{
+    m_affinity = _affinity;
+    m_affinityHasBeenSet = true;
+}
+
+bool DeployGroupInfo::AffinityHasBeenSet() const
+{
+    return m_affinityHasBeenSet;
+}
+
+int64_t DeployGroupInfo::GetLimitNum() const
+{
+    return m_limitNum;
+}
+
+void DeployGroupInfo::SetLimitNum(const int64_t& _limitNum)
+{
+    m_limitNum = _limitNum;
+    m_limitNumHasBeenSet = true;
+}
+
+bool DeployGroupInfo::LimitNumHasBeenSet() const
+{
+    return m_limitNumHasBeenSet;
+}
+
 string DeployGroupInfo::GetDescription() const
 {
     return m_description;
@@ -199,19 +304,19 @@ bool DeployGroupInfo::DescriptionHasBeenSet() const
     return m_descriptionHasBeenSet;
 }
 
-int64_t DeployGroupInfo::GetQuota() const
+string DeployGroupInfo::GetDevClass() const
 {
-    return m_quota;
+    return m_devClass;
 }
 
-void DeployGroupInfo::SetQuota(const int64_t& _quota)
+void DeployGroupInfo::SetDevClass(const string& _devClass)
 {
-    m_quota = _quota;
-    m_quotaHasBeenSet = true;
+    m_devClass = _devClass;
+    m_devClassHasBeenSet = true;
 }
 
-bool DeployGroupInfo::QuotaHasBeenSet() const
+bool DeployGroupInfo::DevClassHasBeenSet() const
 {
-    return m_quotaHasBeenSet;
+    return m_devClassHasBeenSet;
 }
 

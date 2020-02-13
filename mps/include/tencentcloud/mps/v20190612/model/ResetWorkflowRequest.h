@@ -24,7 +24,8 @@
 #include <tencentcloud/mps/v20190612/model/WorkflowTrigger.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskInput.h>
-#include <tencentcloud/mps/v20190612/model/AiClassificationTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AiContentReviewTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
@@ -160,19 +161,37 @@ namespace TencentCloud
                      * 获取视频内容审核类型任务参数。
                      * @return AiContentReviewTask 视频内容审核类型任务参数。
                      */
-                    AiClassificationTaskInput GetAiContentReviewTask() const;
+                    AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
                      * 设置视频内容审核类型任务参数。
                      * @param AiContentReviewTask 视频内容审核类型任务参数。
                      */
-                    void SetAiContentReviewTask(const AiClassificationTaskInput& _aiContentReviewTask);
+                    void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
                     /**
                      * 判断参数 AiContentReviewTask 是否已赋值
                      * @return AiContentReviewTask 是否已赋值
                      */
                     bool AiContentReviewTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频内容分析类型任务参数。
+                     * @return AiAnalysisTask 视频内容分析类型任务参数。
+                     */
+                    AiAnalysisTaskInput GetAiAnalysisTask() const;
+
+                    /**
+                     * 设置视频内容分析类型任务参数。
+                     * @param AiAnalysisTask 视频内容分析类型任务参数。
+                     */
+                    void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
+
+                    /**
+                     * 判断参数 AiAnalysisTask 是否已赋值
+                     * @return AiAnalysisTask 是否已赋值
+                     */
+                    bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容识别类型任务参数。
@@ -269,8 +288,14 @@ namespace TencentCloud
                     /**
                      * 视频内容审核类型任务参数。
                      */
-                    AiClassificationTaskInput m_aiContentReviewTask;
+                    AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析类型任务参数。
+                     */
+                    AiAnalysisTaskInput m_aiAnalysisTask;
+                    bool m_aiAnalysisTaskHasBeenSet;
 
                     /**
                      * 视频内容识别类型任务参数。

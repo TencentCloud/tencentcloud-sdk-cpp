@@ -108,20 +108,20 @@ namespace TencentCloud
                     /**
                      * 获取创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      * @return StartTime 创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      * @param StartTime 创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -134,20 +134,20 @@ namespace TencentCloud
                     /**
                      * 获取创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      * @return EndTime 创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      * @param EndTime 创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -238,18 +238,18 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
-                     * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * 获取<div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @return Offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
-                     * @param Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * 设置<div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @param Offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -260,18 +260,18 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
-                     * @return Limit 分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * 获取<div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @return Limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
-                     * @param Limit 分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * 设置<div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @param Limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -324,7 +324,7 @@ namespace TencentCloud
                     /**
                      * 创建时间的开始时间。
 <li>大于等于开始时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -332,7 +332,7 @@ namespace TencentCloud
                     /**
                      * 创建时间的结束时间。
 <li>小于结束时间。</li>
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。</li>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。</li>
+                     * <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

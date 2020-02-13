@@ -27,7 +27,8 @@ ServiceStatus::ServiceStatus() :
     m_statusHasBeenSet(false),
     m_conditionsHasBeenSet(false),
     m_replicasHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_replicaInfosHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,26 @@ CoreInternalOutcome ServiceStatus::Deserialize(const Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplicaInfos") && !value["ReplicaInfos"].IsNull())
+    {
+        if (!value["ReplicaInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `ServiceStatus.ReplicaInfos` is not array type"));
+
+        const Value &tmpValue = value["ReplicaInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ReplicaInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_replicaInfos.push_back(item);
+        }
+        m_replicaInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -174,6 +195,21 @@ void ServiceStatus::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replicaInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReplicaInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_replicaInfos.begin(); itr != m_replicaInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -273,5 +309,21 @@ void ServiceStatus::SetMessage(const string& _message)
 bool ServiceStatus::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+vector<ReplicaInfo> ServiceStatus::GetReplicaInfos() const
+{
+    return m_replicaInfos;
+}
+
+void ServiceStatus::SetReplicaInfos(const vector<ReplicaInfo>& _replicaInfos)
+{
+    m_replicaInfos = _replicaInfos;
+    m_replicaInfosHasBeenSet = true;
+}
+
+bool ServiceStatus::ReplicaInfosHasBeenSet() const
+{
+    return m_replicaInfosHasBeenSet;
 }
 

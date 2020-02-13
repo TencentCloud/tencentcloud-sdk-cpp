@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id，创建应用后由后台生成并返回。
-                     * @return BizId 应用id，创建应用后由后台生成并返回。
+                     * 获取应用ID，创建应用后由后台生成并返回。
+                     * @return BizId 应用ID，创建应用后由后台生成并返回。
                      */
                     uint64_t GetBizId() const;
 
                     /**
-                     * 设置应用id，创建应用后由后台生成并返回。
-                     * @param BizId 应用id，创建应用后由后台生成并返回。
+                     * 设置应用ID，创建应用后由后台生成并返回。
+                     * @param BizId 应用ID，创建应用后由后台生成并返回。
                      */
                     void SetBizId(const uint64_t& _bizId);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id，创建应用后由后台生成并返回。
+                     * 应用ID，创建应用后由后台生成并返回。
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;

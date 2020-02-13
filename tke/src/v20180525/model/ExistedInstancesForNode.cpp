@@ -23,7 +23,8 @@ using namespace std;
 
 ExistedInstancesForNode::ExistedInstancesForNode() :
     m_nodeRoleHasBeenSet(false),
-    m_existedInstancesParaHasBeenSet(false)
+    m_existedInstancesParaHasBeenSet(false),
+    m_instanceAdvancedSettingsOverrideHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,23 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const Value &value)
         m_existedInstancesParaHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceAdvancedSettingsOverride") && !value["InstanceAdvancedSettingsOverride"].IsNull())
+    {
+        if (!value["InstanceAdvancedSettingsOverride"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ExistedInstancesForNode.InstanceAdvancedSettingsOverride` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceAdvancedSettingsOverride.Deserialize(value["InstanceAdvancedSettingsOverride"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceAdvancedSettingsOverrideHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,6 +99,15 @@ void ExistedInstancesForNode::ToJsonObject(Value &value, Document::AllocatorType
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_existedInstancesPara.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceAdvancedSettingsOverrideHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceAdvancedSettingsOverride";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceAdvancedSettingsOverride.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -116,5 +143,21 @@ void ExistedInstancesForNode::SetExistedInstancesPara(const ExistedInstancesPara
 bool ExistedInstancesForNode::ExistedInstancesParaHasBeenSet() const
 {
     return m_existedInstancesParaHasBeenSet;
+}
+
+InstanceAdvancedSettings ExistedInstancesForNode::GetInstanceAdvancedSettingsOverride() const
+{
+    return m_instanceAdvancedSettingsOverride;
+}
+
+void ExistedInstancesForNode::SetInstanceAdvancedSettingsOverride(const InstanceAdvancedSettings& _instanceAdvancedSettingsOverride)
+{
+    m_instanceAdvancedSettingsOverride = _instanceAdvancedSettingsOverride;
+    m_instanceAdvancedSettingsOverrideHasBeenSet = true;
+}
+
+bool ExistedInstancesForNode::InstanceAdvancedSettingsOverrideHasBeenSet() const
+{
+    return m_instanceAdvancedSettingsOverrideHasBeenSet;
 }
 

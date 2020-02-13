@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ConnHasBeenSet() const;
 
                     /**
-                     * 获取网卡入包量
-                     * @return PackageIn 网卡入包量
+                     * 获取网卡入包量，单位：个/秒
+                     * @return PackageIn 网卡入包量，单位：个/秒
                      */
                     std::vector<int64_t> GetPackageIn() const;
 
                     /**
-                     * 设置网卡入包量
-                     * @param PackageIn 网卡入包量
+                     * 设置网卡入包量，单位：个/秒
+                     * @param PackageIn 网卡入包量，单位：个/秒
                      */
                     void SetPackageIn(const std::vector<int64_t>& _packageIn);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PackageInHasBeenSet() const;
 
                     /**
-                     * 获取网卡出包量
-                     * @return PackageOut 网卡出包量
+                     * 获取网卡出包量，单位：个/秒
+                     * @return PackageOut 网卡出包量，单位：个/秒
                      */
                     std::vector<int64_t> GetPackageOut() const;
 
                     /**
-                     * 设置网卡出包量
-                     * @param PackageOut 网卡出包量
+                     * 设置网卡出包量，单位：个/秒
+                     * @param PackageOut 网卡出包量，单位：个/秒
                      */
                     void SetPackageOut(const std::vector<int64_t>& _packageOut);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool PackageOutHasBeenSet() const;
 
                     /**
-                     * 获取入流量，单位：KB
-                     * @return FlowIn 入流量，单位：KB
+                     * 获取入流量，单位：kbps
+                     * @return FlowIn 入流量，单位：kbps
                      */
                     std::vector<int64_t> GetFlowIn() const;
 
                     /**
-                     * 设置入流量，单位：KB
-                     * @param FlowIn 入流量，单位：KB
+                     * 设置入流量，单位：kbps
+                     * @param FlowIn 入流量，单位：kbps
                      */
                     void SetFlowIn(const std::vector<int64_t>& _flowIn);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool FlowInHasBeenSet() const;
 
                     /**
-                     * 获取出流量，单位：KB
-                     * @return FlowOut 出流量，单位：KB
+                     * 获取出流量，单位：kbps
+                     * @return FlowOut 出流量，单位：kbps
                      */
                     std::vector<int64_t> GetFlowOut() const;
 
                     /**
-                     * 设置出流量，单位：KB
-                     * @param FlowOut 出流量，单位：KB
+                     * 设置出流量，单位：kbps
+                     * @param FlowOut 出流量，单位：kbps
                      */
                     void SetFlowOut(const std::vector<int64_t>& _flowOut);
 
@@ -145,25 +145,25 @@ namespace TencentCloud
                     bool m_connHasBeenSet;
 
                     /**
-                     * 网卡入包量
+                     * 网卡入包量，单位：个/秒
                      */
                     std::vector<int64_t> m_packageIn;
                     bool m_packageInHasBeenSet;
 
                     /**
-                     * 网卡出包量
+                     * 网卡出包量，单位：个/秒
                      */
                     std::vector<int64_t> m_packageOut;
                     bool m_packageOutHasBeenSet;
 
                     /**
-                     * 入流量，单位：KB
+                     * 入流量，单位：kbps
                      */
                     std::vector<int64_t> m_flowIn;
                     bool m_flowInHasBeenSet;
 
                     /**
-                     * 出流量，单位：KB
+                     * 出流量，单位：kbps
                      */
                     std::vector<int64_t> m_flowOut;
                     bool m_flowOutHasBeenSet;

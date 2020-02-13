@@ -206,14 +206,14 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
-                     * 获取极速高清转码参数，需联系商务架构师开通后才能使用。
-                     * @return TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * 获取极速高清转码参数。
+                     * @return TEHDConfig 极速高清转码参数。
                      */
                     TEHDConfigForUpdate GetTEHDConfig() const;
 
                     /**
-                     * 设置极速高清转码参数，需联系商务架构师开通后才能使用。
-                     * @param TEHDConfig 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * 设置极速高清转码参数。
+                     * @param TEHDConfig 极速高清转码参数。
                      */
                     void SetTEHDConfig(const TEHDConfigForUpdate& _tEHDConfig);
 
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_audioTemplateHasBeenSet;
 
                     /**
-                     * 极速高清转码参数，需联系商务架构师开通后才能使用。
+                     * 极速高清转码参数。
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;

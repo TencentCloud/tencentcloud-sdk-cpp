@@ -86,14 +86,14 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
-                     * @return Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
+                     * 获取转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/862/37042)。
+                     * @return Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/862/37042)。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
-                     * @param Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
+                     * 设置转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/862/37042)。
+                     * @param Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/862/37042)。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -231,17 +231,13 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioStreamSet 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAudioStreamItem> GetAudioStreamSet() const;
 
                     /**
                      * 设置音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AudioStreamSet 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAudioStreamSet(const std::vector<MediaAudioStreamItem>& _audioStreamSet);
 
@@ -253,17 +249,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoStreamSet 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaVideoStreamItem> GetVideoStreamSet() const;
 
                     /**
                      * 设置视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param VideoStreamSet 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVideoStreamSet(const std::vector<MediaVideoStreamItem>& _videoStreamSet);
 
@@ -288,7 +280,7 @@ namespace TencentCloud
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
+                     * 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/862/37042)。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -337,14 +329,12 @@ namespace TencentCloud
 
                     /**
                      * 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAudioStreamItem> m_audioStreamSet;
                     bool m_audioStreamSetHasBeenSet;
 
                     /**
                      * 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaVideoStreamItem> m_videoStreamSet;
                     bool m_videoStreamSetHasBeenSet;

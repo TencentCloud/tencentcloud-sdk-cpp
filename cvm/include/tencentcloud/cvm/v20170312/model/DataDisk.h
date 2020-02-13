@@ -160,6 +160,44 @@ namespace TencentCloud
                      */
                     bool SnapshotIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据盘是否随子机销毁。取值范围：
+<li>TRUE：加密
+<li>FALSE：不加密<br>
+默认取值：FALSE<br>
+该参数目前仅用于 `RunInstances` 接口。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Encrypt 数据盘是否随子机销毁。取值范围：
+<li>TRUE：加密
+<li>FALSE：不加密<br>
+默认取值：FALSE<br>
+该参数目前仅用于 `RunInstances` 接口。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEncrypt() const;
+
+                    /**
+                     * 设置数据盘是否随子机销毁。取值范围：
+<li>TRUE：加密
+<li>FALSE：不加密<br>
+默认取值：FALSE<br>
+该参数目前仅用于 `RunInstances` 接口。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Encrypt 数据盘是否随子机销毁。取值范围：
+<li>TRUE：加密
+<li>FALSE：不加密<br>
+默认取值：FALSE<br>
+该参数目前仅用于 `RunInstances` 接口。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEncrypt(const bool& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     */
+                    bool EncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +235,17 @@ namespace TencentCloud
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
+
+                    /**
+                     * 数据盘是否随子机销毁。取值范围：
+<li>TRUE：加密
+<li>FALSE：不加密<br>
+默认取值：FALSE<br>
+该参数目前仅用于 `RunInstances` 接口。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_encrypt;
+                    bool m_encryptHasBeenSet;
 
                 };
             }

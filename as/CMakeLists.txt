@@ -35,11 +35,15 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CreatePaiInstanceRequest.h
   include/tencentcloud/as/v20180419/model/SystemDisk.h
   include/tencentcloud/as/v20180419/model/SpotMarketOptions.h
+  include/tencentcloud/as/v20180419/model/StopAutoScalingInstancesResponse.h
   include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesRequest.h
+  include/tencentcloud/as/v20180419/model/InstanceNameSettings.h
   include/tencentcloud/as/v20180419/model/ModifyScheduledActionResponse.h
+  include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.h
   include/tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h
   include/tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesResponse.h
   include/tencentcloud/as/v20180419/model/SetInstancesProtectionResponse.h
+  include/tencentcloud/as/v20180419/model/StartAutoScalingInstancesResponse.h
   include/tencentcloud/as/v20180419/model/CompleteLifecycleActionRequest.h
   include/tencentcloud/as/v20180419/model/CreateScalingPolicyResponse.h
   include/tencentcloud/as/v20180419/model/CreateNotificationConfigurationResponse.h
@@ -85,6 +89,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/PreviewPaiDomainNameRequest.h
   include/tencentcloud/as/v20180419/model/DeleteScalingPolicyRequest.h
   include/tencentcloud/as/v20180419/model/LoginSettings.h
+  include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupFromInstanceResponse.h
   include/tencentcloud/as/v20180419/model/DetachInstancesRequest.h
   include/tencentcloud/as/v20180419/model/Instance.h
   include/tencentcloud/as/v20180419/model/CreateScheduledActionRequest.h
@@ -121,10 +126,12 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/PreviewPaiDomainNameResponse.h
   include/tencentcloud/as/v20180419/model/DeleteAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/RemoveInstancesRequest.h
+  include/tencentcloud/as/v20180419/model/StartAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/AttachInstancesRequest.h
   include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesResponse.h
   include/tencentcloud/as/v20180419/model/Activity.h
   include/tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h
+  include/tencentcloud/as/v20180419/model/StopAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/RunMonitorServiceEnabled.h
   include/tencentcloud/as/v20180419/model/DeleteLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h
@@ -154,11 +161,15 @@ set(as_src
   src/v20180419/model/CreatePaiInstanceRequest.cpp
   src/v20180419/model/SystemDisk.cpp
   src/v20180419/model/SpotMarketOptions.cpp
+  src/v20180419/model/StopAutoScalingInstancesResponse.cpp
   src/v20180419/model/DescribeScalingPoliciesRequest.cpp
+  src/v20180419/model/InstanceNameSettings.cpp
   src/v20180419/model/ModifyScheduledActionResponse.cpp
+  src/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.cpp
   src/v20180419/model/ExecuteScalingPolicyResponse.cpp
   src/v20180419/model/ModifyLaunchConfigurationAttributesResponse.cpp
   src/v20180419/model/SetInstancesProtectionResponse.cpp
+  src/v20180419/model/StartAutoScalingInstancesResponse.cpp
   src/v20180419/model/CompleteLifecycleActionRequest.cpp
   src/v20180419/model/CreateScalingPolicyResponse.cpp
   src/v20180419/model/CreateNotificationConfigurationResponse.cpp
@@ -204,6 +215,7 @@ set(as_src
   src/v20180419/model/PreviewPaiDomainNameRequest.cpp
   src/v20180419/model/DeleteScalingPolicyRequest.cpp
   src/v20180419/model/LoginSettings.cpp
+  src/v20180419/model/CreateAutoScalingGroupFromInstanceResponse.cpp
   src/v20180419/model/DetachInstancesRequest.cpp
   src/v20180419/model/Instance.cpp
   src/v20180419/model/CreateScheduledActionRequest.cpp
@@ -240,10 +252,12 @@ set(as_src
   src/v20180419/model/PreviewPaiDomainNameResponse.cpp
   src/v20180419/model/DeleteAutoScalingGroupRequest.cpp
   src/v20180419/model/RemoveInstancesRequest.cpp
+  src/v20180419/model/StartAutoScalingInstancesRequest.cpp
   src/v20180419/model/AttachInstancesRequest.cpp
   src/v20180419/model/DescribeScalingPoliciesResponse.cpp
   src/v20180419/model/Activity.cpp
   src/v20180419/model/ModifyDesiredCapacityResponse.cpp
+  src/v20180419/model/StopAutoScalingInstancesRequest.cpp
   src/v20180419/model/RunMonitorServiceEnabled.cpp
   src/v20180419/model/DeleteLifecycleHookResponse.cpp
   src/v20180419/model/ActivtyRelatedInstance.cpp

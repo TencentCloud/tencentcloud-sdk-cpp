@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * bcos区块对象
+                * Bcos区块对象
                 */
                 class BcosBlockObj : public AbstractModel
                 {
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool BlockTimestampHasBeenSet() const;
 
                     /**
-                     * 获取打包节点id
-                     * @return Sealer 打包节点id
+                     * 获取打包节点ID
+                     * @return Sealer 打包节点ID
                      */
                     std::string GetSealer() const;
 
                     /**
-                     * 设置打包节点id
-                     * @param Sealer 打包节点id
+                     * 设置打包节点ID
+                     * @param Sealer 打包节点ID
                      */
                     void SetSealer(const std::string& _sealer);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_blockTimestampHasBeenSet;
 
                     /**
-                     * 打包节点id
+                     * 打包节点ID
                      */
                     std::string m_sealer;
                     bool m_sealerHasBeenSet;

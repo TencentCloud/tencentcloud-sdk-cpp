@@ -133,6 +133,8 @@
 #include <tencentcloud/vod/v20180717/model/EditMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionResponse.h>
+#include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionRequest.h>
+#include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyAIAnalysisTemplateRequest.h>
@@ -364,6 +366,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
                 typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
+                typedef Outcome<Error, Model::ForbidMediaDistributionResponse> ForbidMediaDistributionOutcome;
+                typedef std::future<ForbidMediaDistributionOutcome> ForbidMediaDistributionOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ForbidMediaDistributionRequest&, ForbidMediaDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidMediaDistributionAsyncHandler;
                 typedef Outcome<Error, Model::LiveRealTimeClipResponse> LiveRealTimeClipOutcome;
                 typedef std::future<LiveRealTimeClipOutcome> LiveRealTimeClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::LiveRealTimeClipRequest&, LiveRealTimeClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LiveRealTimeClipAsyncHandler;
@@ -582,7 +587,7 @@ namespace TencentCloud
                 CreateSnapshotByTimeOffsetTemplateOutcomeCallable CreateSnapshotByTimeOffsetTemplateCallable(const Model::CreateSnapshotByTimeOffsetTemplateRequest& request);
 
                 /**
-                 *创建用户自定义转码模板，数量上限：1000。
+                 *创建用户自定义转码模板，数量上限：100。
                  * @param req CreateTranscodeTemplateRequest
                  * @return CreateTranscodeTemplateOutcome
                  */
@@ -985,6 +990,16 @@ namespace TencentCloud
                 ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
 
                 /**
+                 ** 对媒体禁播后，除了点播控制台预览，其他场景访问视频各种资源的 URL（原始文件、转码输出文件、截图等）均会返回 403。
+  禁播/解禁操作全网生效时间约 5~10 分钟。
+                 * @param req ForbidMediaDistributionRequest
+                 * @return ForbidMediaDistributionOutcome
+                 */
+                ForbidMediaDistributionOutcome ForbidMediaDistribution(const Model::ForbidMediaDistributionRequest &request);
+                void ForbidMediaDistributionAsync(const Model::ForbidMediaDistributionRequest& request, const ForbidMediaDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ForbidMediaDistributionOutcomeCallable ForbidMediaDistributionCallable(const Model::ForbidMediaDistributionRequest& request);
+
+                /**
                  *直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。
 
 腾讯云点播支持两种即时剪辑模式：
@@ -1006,7 +1021,7 @@ namespace TencentCloud
 ### 剪辑不固化
 所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与直播录制视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与直播录制的完整视频有效期是一致的。一旦直播录制出来的视频被删除，也会导致该片段无法播放。
 
-剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（比如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。
+剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（例如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。
 
 剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。
                  * @param req LiveRealTimeClipRequest
@@ -1239,7 +1254,7 @@ namespace TencentCloud
                 ResetProcedureTemplateOutcomeCallable ResetProcedureTemplateCallable(const Model::ResetProcedureTemplateRequest& request);
 
                 /**
-                 *搜索媒体信息，支持各种条件筛选，以及对返回结果进行排序、过滤等功能，具体包括：
+                 *搜索媒体信息，支持多种条件筛选，以及支持对返回结果排序、过滤等功能，具体包括：
 - 根据媒体文件名或描述信息进行模糊搜索。
 - 根据媒体分类、标签进行检索。
     - 指定分类集合 ClassIds（见输入参数），返回满足集合中任意分类的媒体。例如：媒体分类有电影、电视剧、综艺，其中电影分类下又有子分类历史片、动作片、言情片。如果 ClassIds 指定了电影、电视剧，那么电影和电视剧下的所有子分类都会返回；而如果 ClassIds 指定的是历史片、动作片，那么只有这2个子分类下的媒体才会返回。
@@ -1250,8 +1265,9 @@ namespace TencentCloud
 - 允许对上述条件进行任意组合，检索同时满足以上条件的媒体。例如：筛选创建时间在2018年12月1日到2018年12月8日之间、分类为电影、带有宫斗标签的媒体。
 - 允许对结果进行排序并分页返回，通过 Offset 和 Limit （见输入参数）来控制分页。
 
-接口搜索限制：
-- 如果搜索结果超过5000条，不再支持分页查询超出部分的数据。如果搜索结果数量太多，建议使用更精细的筛选条件来减少搜索结果。
+<div id="maxResultsDesc">接口返回结果数限制：</div>
+- <b><a href="#p_offset">Offset</a> 和 <a href="#p_limit">Limit</a> 两个参数影响单次分页查询结果数。特别注意：当这2个值都缺省时，本接口最多只返回10条查询结果。</b>
+- <b>最大支持返回5000条搜索结果，超出部分不再支持查询。如果搜索结果量太大，建议使用更精细的筛选条件来减少搜索结果。</b>
                  * @param req SearchMediaRequest
                  * @return SearchMediaOutcome
                  */

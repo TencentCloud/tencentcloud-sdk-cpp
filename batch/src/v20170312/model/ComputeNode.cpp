@@ -31,7 +31,8 @@ ComputeNode::ComputeNode() :
     m_taskInstanceNumAvailableHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
-    m_publicIpAddressesHasBeenSet(false)
+    m_publicIpAddressesHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome ComputeNode::Deserialize(const Value &value)
         m_publicIpAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComputeNode.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(value["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void ComputeNode::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void ComputeNode::SetPublicIpAddresses(const vector<string>& _publicIpAddresses)
 bool ComputeNode::PublicIpAddressesHasBeenSet() const
 {
     return m_publicIpAddressesHasBeenSet;
+}
+
+string ComputeNode::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void ComputeNode::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool ComputeNode::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 

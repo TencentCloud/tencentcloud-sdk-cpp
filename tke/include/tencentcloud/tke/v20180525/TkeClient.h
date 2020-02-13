@@ -53,6 +53,10 @@
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteTableRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPResponse.h>
 
@@ -132,6 +138,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteClusterRouteTableResponse> DeleteClusterRouteTableOutcome;
                 typedef std::future<DeleteClusterRouteTableOutcome> DeleteClusterRouteTableOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterRouteTableRequest&, DeleteClusterRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterRouteTableAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterAsGroupOptionResponse> DescribeClusterAsGroupOptionOutcome;
+                typedef std::future<DescribeClusterAsGroupOptionOutcome> DescribeClusterAsGroupOptionOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterAsGroupOptionRequest&, DescribeClusterAsGroupOptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsGroupOptionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterAsGroupsResponse> DescribeClusterAsGroupsOutcome;
+                typedef std::future<DescribeClusterAsGroupsOutcome> DescribeClusterAsGroupsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterAsGroupsRequest&, DescribeClusterAsGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterEndpointStatusResponse> DescribeClusterEndpointStatusOutcome;
                 typedef std::future<DescribeClusterEndpointStatusOutcome> DescribeClusterEndpointStatusOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterEndpointStatusRequest&, DescribeClusterEndpointStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterEndpointStatusAsyncHandler;
@@ -159,6 +171,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRouteTableConflictsResponse> DescribeRouteTableConflictsOutcome;
                 typedef std::future<DescribeRouteTableConflictsOutcome> DescribeRouteTableConflictsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRouteTableConflictsRequest&, DescribeRouteTableConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableConflictsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyClusterAsGroupAttributeResponse> ModifyClusterAsGroupAttributeOutcome;
+                typedef std::future<ModifyClusterAsGroupAttributeOutcome> ModifyClusterAsGroupAttributeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterAsGroupAttributeRequest&, ModifyClusterAsGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsGroupAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyClusterEndpointSPResponse> ModifyClusterEndpointSPOutcome;
                 typedef std::future<ModifyClusterEndpointSPOutcome> ModifyClusterEndpointSPOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterEndpointSPRequest&, ModifyClusterEndpointSPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterEndpointSPAsyncHandler;
@@ -301,6 +316,24 @@ namespace TencentCloud
                 DeleteClusterRouteTableOutcomeCallable DeleteClusterRouteTableCallable(const Model::DeleteClusterRouteTableRequest& request);
 
                 /**
+                 *集群弹性伸缩配置
+                 * @param req DescribeClusterAsGroupOptionRequest
+                 * @return DescribeClusterAsGroupOptionOutcome
+                 */
+                DescribeClusterAsGroupOptionOutcome DescribeClusterAsGroupOption(const Model::DescribeClusterAsGroupOptionRequest &request);
+                void DescribeClusterAsGroupOptionAsync(const Model::DescribeClusterAsGroupOptionRequest& request, const DescribeClusterAsGroupOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterAsGroupOptionOutcomeCallable DescribeClusterAsGroupOptionCallable(const Model::DescribeClusterAsGroupOptionRequest& request);
+
+                /**
+                 *集群关联的伸缩组列表
+                 * @param req DescribeClusterAsGroupsRequest
+                 * @return DescribeClusterAsGroupsOutcome
+                 */
+                DescribeClusterAsGroupsOutcome DescribeClusterAsGroups(const Model::DescribeClusterAsGroupsRequest &request);
+                void DescribeClusterAsGroupsAsync(const Model::DescribeClusterAsGroupsRequest& request, const DescribeClusterAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterAsGroupsOutcomeCallable DescribeClusterAsGroupsCallable(const Model::DescribeClusterAsGroupsRequest& request);
+
+                /**
                  *查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)
                  * @param req DescribeClusterEndpointStatusRequest
                  * @return DescribeClusterEndpointStatusOutcome
@@ -380,6 +413,15 @@ namespace TencentCloud
                 DescribeRouteTableConflictsOutcome DescribeRouteTableConflicts(const Model::DescribeRouteTableConflictsRequest &request);
                 void DescribeRouteTableConflictsAsync(const Model::DescribeRouteTableConflictsRequest& request, const DescribeRouteTableConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteTableConflictsOutcomeCallable DescribeRouteTableConflictsCallable(const Model::DescribeRouteTableConflictsRequest& request);
+
+                /**
+                 *修改集群伸缩组属性
+                 * @param req ModifyClusterAsGroupAttributeRequest
+                 * @return ModifyClusterAsGroupAttributeOutcome
+                 */
+                ModifyClusterAsGroupAttributeOutcome ModifyClusterAsGroupAttribute(const Model::ModifyClusterAsGroupAttributeRequest &request);
+                void ModifyClusterAsGroupAttributeAsync(const Model::ModifyClusterAsGroupAttributeRequest& request, const ModifyClusterAsGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterAsGroupAttributeOutcomeCallable ModifyClusterAsGroupAttributeCallable(const Model::ModifyClusterAsGroupAttributeRequest& request);
 
                 /**
                  *修改托管集群外网端口的安全策略（老的方式，仅支持托管集群外网端口）

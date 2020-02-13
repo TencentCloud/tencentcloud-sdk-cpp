@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * bcos交易信息对象
+                * Bcos交易信息对象
                 */
                 class BcosTransInfo : public AbstractModel
                 {

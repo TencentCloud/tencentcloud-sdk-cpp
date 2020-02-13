@@ -29,7 +29,8 @@ AddExistedInstancesRequest::AddExistedInstancesRequest() :
     m_instanceAdvancedSettingsHasBeenSet(false),
     m_enhancedServiceHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_hostNameHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string AddExistedInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_hostName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -203,6 +212,22 @@ void AddExistedInstancesRequest::SetSecurityGroupIds(const vector<string>& _secu
 bool AddExistedInstancesRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+string AddExistedInstancesRequest::GetHostName() const
+{
+    return m_hostName;
+}
+
+void AddExistedInstancesRequest::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
 }
 
 

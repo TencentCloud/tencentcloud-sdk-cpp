@@ -33,6 +33,8 @@
 #include <tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/CreateDBInstanceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/CreateTmpInstancesRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DeleteAccountRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DeleteAccountResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeAccountPrivilegesRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDatabasesRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeFlowRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeFlowResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodRequest.h>
@@ -97,6 +101,8 @@
 #include <tencentcloud/mariadb/v20170312/model/RenewDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ResetAccountPasswordRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ResetAccountPasswordResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/RestartDBInstancesRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceResponse.h>
 
@@ -128,6 +134,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDBInstanceResponse> CreateDBInstanceOutcome;
                 typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::CreateDBInstanceRequest&, CreateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::CreateTmpInstancesResponse> CreateTmpInstancesOutcome;
+                typedef std::future<CreateTmpInstancesOutcome> CreateTmpInstancesOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::CreateTmpInstancesRequest&, CreateTmpInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTmpInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
@@ -167,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBSlowLogsResponse> DescribeDBSlowLogsOutcome;
                 typedef std::future<DescribeDBSlowLogsOutcome> DescribeDBSlowLogsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBSlowLogsRequest&, DescribeDBSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSlowLogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
+                typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
                 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
@@ -224,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResetAccountPasswordResponse> ResetAccountPasswordOutcome;
                 typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ResetAccountPasswordRequest&, ResetAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
+                typedef Outcome<Error, Model::RestartDBInstancesResponse> RestartDBInstancesOutcome;
+                typedef std::future<RestartDBInstancesOutcome> RestartDBInstancesOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::RestartDBInstancesRequest&, RestartDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstancesAsyncHandler;
                 typedef Outcome<Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
@@ -275,6 +290,15 @@ namespace TencentCloud
                 CreateDBInstanceOutcome CreateDBInstance(const Model::CreateDBInstanceRequest &request);
                 void CreateDBInstanceAsync(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request);
+
+                /**
+                 *本接口（CreateTmpInstances）用于创建临时实例。
+                 * @param req CreateTmpInstancesRequest
+                 * @return CreateTmpInstancesOutcome
+                 */
+                CreateTmpInstancesOutcome CreateTmpInstances(const Model::CreateTmpInstancesRequest &request);
+                void CreateTmpInstancesAsync(const Model::CreateTmpInstancesRequest& request, const CreateTmpInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTmpInstancesOutcomeCallable CreateTmpInstancesCallable(const Model::CreateTmpInstancesRequest& request);
 
                 /**
                  *本接口（DeleteAccount）用于删除云数据库账号。用户名+host唯一确定一个账号。
@@ -396,6 +420,15 @@ namespace TencentCloud
                 DescribeDBSlowLogsOutcomeCallable DescribeDBSlowLogsCallable(const Model::DescribeDBSlowLogsRequest& request);
 
                 /**
+                 *本接口（DescribeDatabases）用于查询云数据库实例的数据库列表。
+                 * @param req DescribeDatabasesRequest
+                 * @return DescribeDatabasesOutcome
+                 */
+                DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
+                void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
                  *本接口（DescribeFlow）用于查询流程状态。
                  * @param req DescribeFlowRequest
                  * @return DescribeFlowOutcome
@@ -414,7 +447,7 @@ namespace TencentCloud
                 DescribeLogFileRetentionPeriodOutcomeCallable DescribeLogFileRetentionPeriodCallable(const Model::DescribeLogFileRetentionPeriodRequest& request);
 
                 /**
-                 *本接口（DescribeOrders）用于查询云数据库订单信息。传入订单Id来查询订单关联的云数据库实例，和对应的任务流程ID。
+                 *本接口（DescribeOrders）用于查询云数据库订单信息。传入订单ID来查询订单关联的云数据库实例，和对应的任务流程ID。
                  * @param req DescribeOrdersRequest
                  * @return DescribeOrdersOutcome
                  */
@@ -568,6 +601,15 @@ namespace TencentCloud
                 ResetAccountPasswordOutcome ResetAccountPassword(const Model::ResetAccountPasswordRequest &request);
                 void ResetAccountPasswordAsync(const Model::ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetAccountPasswordOutcomeCallable ResetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request);
+
+                /**
+                 *本接口（RestartDBInstances）用于重启数据库实例
+                 * @param req RestartDBInstancesRequest
+                 * @return RestartDBInstancesOutcome
+                 */
+                RestartDBInstancesOutcome RestartDBInstances(const Model::RestartDBInstancesRequest &request);
+                void RestartDBInstancesAsync(const Model::RestartDBInstancesRequest& request, const RestartDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartDBInstancesOutcomeCallable RestartDBInstancesCallable(const Model::RestartDBInstancesRequest& request);
 
                 /**
                  *本接口(UpgradeDBInstance)用于扩容云数据库实例。本接口完成下单和支付两个动作，如果发生支付失败的错误，调用用户账户相关接口中的支付订单接口（PayDeals）重新支付即可。

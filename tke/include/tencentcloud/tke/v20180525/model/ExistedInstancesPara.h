@@ -140,14 +140,14 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取重装系统时，可以指定修改实例的HostName。
-                     * @return HostName 重装系统时，可以指定修改实例的HostName。
+                     * 获取重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
+                     * @return HostName 重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置重装系统时，可以指定修改实例的HostName。
-                     * @param HostName 重装系统时，可以指定修改实例的HostName。
+                     * 设置重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
+                     * @param HostName 重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
                      */
                     void SetHostName(const std::string& _hostName);
 
@@ -190,7 +190,7 @@ namespace TencentCloud
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 重装系统时，可以指定修改实例的HostName。
+                     * 重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;

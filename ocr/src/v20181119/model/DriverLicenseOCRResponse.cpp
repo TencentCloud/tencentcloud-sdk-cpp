@@ -34,7 +34,9 @@ DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
     m_classHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
-    m_cardCodeHasBeenSet(false)
+    m_cardCodeHasBeenSet(false),
+    m_recognizeWarnCodeHasBeenSet(false),
+    m_recognizeWarnMsgHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,32 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         m_cardCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecognizeWarnCode") && !rsp["RecognizeWarnCode"].IsNull())
+    {
+        if (!rsp["RecognizeWarnCode"].IsArray())
+            return CoreInternalOutcome(Error("response `RecognizeWarnCode` is not array type"));
+
+        const Value &tmpValue = rsp["RecognizeWarnCode"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_recognizeWarnCode.push_back((*itr).GetInt64());
+        }
+        m_recognizeWarnCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecognizeWarnMsg") && !rsp["RecognizeWarnMsg"].IsNull())
+    {
+        if (!rsp["RecognizeWarnMsg"].IsArray())
+            return CoreInternalOutcome(Error("response `RecognizeWarnMsg` is not array type"));
+
+        const Value &tmpValue = rsp["RecognizeWarnMsg"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_recognizeWarnMsg.push_back((*itr).GetString());
+        }
+        m_recognizeWarnMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -275,6 +303,26 @@ string DriverLicenseOCRResponse::GetCardCode() const
 bool DriverLicenseOCRResponse::CardCodeHasBeenSet() const
 {
     return m_cardCodeHasBeenSet;
+}
+
+vector<int64_t> DriverLicenseOCRResponse::GetRecognizeWarnCode() const
+{
+    return m_recognizeWarnCode;
+}
+
+bool DriverLicenseOCRResponse::RecognizeWarnCodeHasBeenSet() const
+{
+    return m_recognizeWarnCodeHasBeenSet;
+}
+
+vector<string> DriverLicenseOCRResponse::GetRecognizeWarnMsg() const
+{
+    return m_recognizeWarnMsg;
+}
+
+bool DriverLicenseOCRResponse::RecognizeWarnMsgHasBeenSet() const
+{
+    return m_recognizeWarnMsgHasBeenSet;
 }
 
 

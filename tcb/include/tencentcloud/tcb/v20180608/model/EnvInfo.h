@@ -27,6 +27,8 @@
 #include <tencentcloud/tcb/v20180608/model/DatabasesInfo.h>
 #include <tencentcloud/tcb/v20180608/model/StorageInfo.h>
 #include <tencentcloud/tcb/v20180608/model/FunctionInfo.h>
+#include <tencentcloud/tcb/v20180608/model/LogServiceInfo.h>
+#include <tencentcloud/tcb/v20180608/model/StaticStorageInfo.h>
 
 
 namespace TencentCloud
@@ -150,11 +152,9 @@ namespace TencentCloud
                     /**
                      * 获取环境状态。包含以下取值：
 <li>NORMAL：正常可用</li>
-<li>HALTED：停服，用量超限或后台封禁</li>
 <li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>
                      * @return Status 环境状态。包含以下取值：
 <li>NORMAL：正常可用</li>
-<li>HALTED：停服，用量超限或后台封禁</li>
 <li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>
                      */
                     std::string GetStatus() const;
@@ -162,11 +162,9 @@ namespace TencentCloud
                     /**
                      * 设置环境状态。包含以下取值：
 <li>NORMAL：正常可用</li>
-<li>HALTED：停服，用量超限或后台封禁</li>
 <li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>
                      * @param Status 环境状态。包含以下取值：
 <li>NORMAL：正常可用</li>
-<li>HALTED：停服，用量超限或后台封禁</li>
 <li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>
                      */
                     void SetStatus(const std::string& _status);
@@ -275,6 +273,72 @@ namespace TencentCloud
                      */
                     bool PackageNameHasBeenSet() const;
 
+                    /**
+                     * 获取云日志服务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogServices 云日志服务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LogServiceInfo> GetLogServices() const;
+
+                    /**
+                     * 设置云日志服务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogServices 云日志服务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogServices(const std::vector<LogServiceInfo>& _logServices);
+
+                    /**
+                     * 判断参数 LogServices 是否已赋值
+                     * @return LogServices 是否已赋值
+                     */
+                    bool LogServicesHasBeenSet() const;
+
+                    /**
+                     * 获取静态资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StaticStorages 静态资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StaticStorageInfo> GetStaticStorages() const;
+
+                    /**
+                     * 设置静态资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StaticStorages 静态资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStaticStorages(const std::vector<StaticStorageInfo>& _staticStorages);
+
+                    /**
+                     * 判断参数 StaticStorages 是否已赋值
+                     * @return StaticStorages 是否已赋值
+                     */
+                    bool StaticStoragesHasBeenSet() const;
+
+                    /**
+                     * 获取是否到期自动降为免费版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAutoDegrade 是否到期自动降为免费版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsAutoDegrade() const;
+
+                    /**
+                     * 设置是否到期自动降为免费版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsAutoDegrade 是否到期自动降为免费版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsAutoDegrade(const bool& _isAutoDegrade);
+
+                    /**
+                     * 判断参数 IsAutoDegrade 是否已赋值
+                     * @return IsAutoDegrade 是否已赋值
+                     */
+                    bool IsAutoDegradeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,7 +376,6 @@ namespace TencentCloud
                     /**
                      * 环境状态。包含以下取值：
 <li>NORMAL：正常可用</li>
-<li>HALTED：停服，用量超限或后台封禁</li>
 <li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>
                      */
                     std::string m_status;
@@ -349,6 +412,27 @@ namespace TencentCloud
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
+
+                    /**
+                     * 云日志服务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LogServiceInfo> m_logServices;
+                    bool m_logServicesHasBeenSet;
+
+                    /**
+                     * 静态资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StaticStorageInfo> m_staticStorages;
+                    bool m_staticStoragesHasBeenSet;
+
+                    /**
+                     * 是否到期自动降为免费版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAutoDegrade;
+                    bool m_isAutoDegradeHasBeenSet;
 
                 };
             }

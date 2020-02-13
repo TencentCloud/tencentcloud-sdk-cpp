@@ -24,13 +24,15 @@ using namespace rapidjson;
 using namespace std;
 
 CreateSampleSnapshotTemplateRequest::CreateSampleSnapshotTemplateRequest() :
-    m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false),
     m_sampleTypeHasBeenSet(false),
     m_sampleIntervalHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false),
+    m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_fillTypeHasBeenSet(false)
 {
 }
 
@@ -40,22 +42,6 @@ string CreateSampleSnapshotTemplateRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_widthHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Width";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_width, allocator);
-    }
-
-    if (m_heightHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Height";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_height, allocator);
-    }
 
     if (m_sampleTypeHasBeenSet)
     {
@@ -81,6 +67,30 @@ string CreateSampleSnapshotTemplateRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_widthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_resolutionAdaptiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionAdaptive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_formatHasBeenSet)
     {
         Value iKey(kStringType);
@@ -97,6 +107,14 @@ string CreateSampleSnapshotTemplateRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -104,38 +122,6 @@ string CreateSampleSnapshotTemplateRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t CreateSampleSnapshotTemplateRequest::GetWidth() const
-{
-    return m_width;
-}
-
-void CreateSampleSnapshotTemplateRequest::SetWidth(const uint64_t& _width)
-{
-    m_width = _width;
-    m_widthHasBeenSet = true;
-}
-
-bool CreateSampleSnapshotTemplateRequest::WidthHasBeenSet() const
-{
-    return m_widthHasBeenSet;
-}
-
-uint64_t CreateSampleSnapshotTemplateRequest::GetHeight() const
-{
-    return m_height;
-}
-
-void CreateSampleSnapshotTemplateRequest::SetHeight(const uint64_t& _height)
-{
-    m_height = _height;
-    m_heightHasBeenSet = true;
-}
-
-bool CreateSampleSnapshotTemplateRequest::HeightHasBeenSet() const
-{
-    return m_heightHasBeenSet;
-}
 
 string CreateSampleSnapshotTemplateRequest::GetSampleType() const
 {
@@ -185,6 +171,54 @@ bool CreateSampleSnapshotTemplateRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+uint64_t CreateSampleSnapshotTemplateRequest::GetWidth() const
+{
+    return m_width;
+}
+
+void CreateSampleSnapshotTemplateRequest::SetWidth(const uint64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool CreateSampleSnapshotTemplateRequest::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+uint64_t CreateSampleSnapshotTemplateRequest::GetHeight() const
+{
+    return m_height;
+}
+
+void CreateSampleSnapshotTemplateRequest::SetHeight(const uint64_t& _height)
+{
+    m_height = _height;
+    m_heightHasBeenSet = true;
+}
+
+bool CreateSampleSnapshotTemplateRequest::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
+}
+
+string CreateSampleSnapshotTemplateRequest::GetResolutionAdaptive() const
+{
+    return m_resolutionAdaptive;
+}
+
+void CreateSampleSnapshotTemplateRequest::SetResolutionAdaptive(const string& _resolutionAdaptive)
+{
+    m_resolutionAdaptive = _resolutionAdaptive;
+    m_resolutionAdaptiveHasBeenSet = true;
+}
+
+bool CreateSampleSnapshotTemplateRequest::ResolutionAdaptiveHasBeenSet() const
+{
+    return m_resolutionAdaptiveHasBeenSet;
+}
+
 string CreateSampleSnapshotTemplateRequest::GetFormat() const
 {
     return m_format;
@@ -215,6 +249,22 @@ void CreateSampleSnapshotTemplateRequest::SetComment(const string& _comment)
 bool CreateSampleSnapshotTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string CreateSampleSnapshotTemplateRequest::GetFillType() const
+{
+    return m_fillType;
+}
+
+void CreateSampleSnapshotTemplateRequest::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool CreateSampleSnapshotTemplateRequest::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
 }
 
 

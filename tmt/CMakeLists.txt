@@ -19,10 +19,12 @@ set(tmt_public_header
   )
 
 set(tmt_public_header_model
+  include/tencentcloud/tmt/v20180321/model/TextTranslateBatchRequest.h
   include/tencentcloud/tmt/v20180321/model/ImageTranslateResponse.h
   include/tencentcloud/tmt/v20180321/model/SpeechTranslateResponse.h
   include/tencentcloud/tmt/v20180321/model/ImageRecord.h
   include/tencentcloud/tmt/v20180321/model/LanguageDetectRequest.h
+  include/tencentcloud/tmt/v20180321/model/TextTranslateBatchResponse.h
   include/tencentcloud/tmt/v20180321/model/LanguageDetectResponse.h
   include/tencentcloud/tmt/v20180321/model/ItemValue.h
   include/tencentcloud/tmt/v20180321/model/TextTranslateResponse.h
@@ -33,10 +35,12 @@ set(tmt_public_header_model
 
 set(tmt_src
   src/v20180321/TmtClient.cpp
+  src/v20180321/model/TextTranslateBatchRequest.cpp
   src/v20180321/model/ImageTranslateResponse.cpp
   src/v20180321/model/SpeechTranslateResponse.cpp
   src/v20180321/model/ImageRecord.cpp
   src/v20180321/model/LanguageDetectRequest.cpp
+  src/v20180321/model/TextTranslateBatchResponse.cpp
   src/v20180321/model/LanguageDetectResponse.cpp
   src/v20180321/model/ItemValue.cpp
   src/v20180321/model/TextTranslateResponse.cpp
