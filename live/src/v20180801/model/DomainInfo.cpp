@@ -32,7 +32,8 @@ DomainInfo::DomainInfo() :
     m_isDelayLiveHasBeenSet(false),
     m_currentCNameHasBeenSet(false),
     m_rentTagHasBeenSet(false),
-    m_rentExpireTimeHasBeenSet(false)
+    m_rentExpireTimeHasBeenSet(false),
+    m_isMiniProgramLiveHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome DomainInfo::Deserialize(const Value &value)
         m_rentExpireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsMiniProgramLive") && !value["IsMiniProgramLive"].IsNull())
+    {
+        if (!value["IsMiniProgramLive"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DomainInfo.IsMiniProgramLive` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMiniProgramLive = value["IsMiniProgramLive"].GetInt64();
+        m_isMiniProgramLiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +255,14 @@ void DomainInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "RentExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_rentExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isMiniProgramLiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsMiniProgramLive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMiniProgramLive, allocator);
     }
 
 }
@@ -423,5 +442,21 @@ void DomainInfo::SetRentExpireTime(const string& _rentExpireTime)
 bool DomainInfo::RentExpireTimeHasBeenSet() const
 {
     return m_rentExpireTimeHasBeenSet;
+}
+
+int64_t DomainInfo::GetIsMiniProgramLive() const
+{
+    return m_isMiniProgramLive;
+}
+
+void DomainInfo::SetIsMiniProgramLive(const int64_t& _isMiniProgramLive)
+{
+    m_isMiniProgramLive = _isMiniProgramLive;
+    m_isMiniProgramLiveHasBeenSet = true;
+}
+
+bool DomainInfo::IsMiniProgramLiveHasBeenSet() const
+{
+    return m_isMiniProgramLiveHasBeenSet;
 }
 

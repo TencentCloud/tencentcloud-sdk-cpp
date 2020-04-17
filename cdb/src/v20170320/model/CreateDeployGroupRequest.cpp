@@ -27,7 +27,8 @@ CreateDeployGroupRequest::CreateDeployGroupRequest() :
     m_deployGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_affinityHasBeenSet(false),
-    m_limitNumHasBeenSet(false)
+    m_limitNumHasBeenSet(false),
+    m_devClassHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,19 @@ string CreateDeployGroupRequest::ToJsonString() const
         string key = "LimitNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limitNum, allocator);
+    }
+
+    if (m_devClassHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DevClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_devClass.begin(); itr != m_devClass.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -145,6 +159,22 @@ void CreateDeployGroupRequest::SetLimitNum(const int64_t& _limitNum)
 bool CreateDeployGroupRequest::LimitNumHasBeenSet() const
 {
     return m_limitNumHasBeenSet;
+}
+
+vector<string> CreateDeployGroupRequest::GetDevClass() const
+{
+    return m_devClass;
+}
+
+void CreateDeployGroupRequest::SetDevClass(const vector<string>& _devClass)
+{
+    m_devClass = _devClass;
+    m_devClassHasBeenSet = true;
+}
+
+bool CreateDeployGroupRequest::DevClassHasBeenSet() const
+{
+    return m_devClassHasBeenSet;
 }
 
 

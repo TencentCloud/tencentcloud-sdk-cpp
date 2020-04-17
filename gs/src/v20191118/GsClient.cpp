@@ -126,6 +126,92 @@ GsClient::DescribeWorkersOutcomeCallable GsClient::DescribeWorkersCallable(const
     return task->get_future();
 }
 
+GsClient::DescribeWorkersInfoOutcome GsClient::DescribeWorkersInfo(const DescribeWorkersInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkersInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkersInfoResponse rsp = DescribeWorkersInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkersInfoOutcome(rsp);
+        else
+            return DescribeWorkersInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkersInfoOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeWorkersInfoAsync(const DescribeWorkersInfoRequest& request, const DescribeWorkersInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkersInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeWorkersInfoOutcomeCallable GsClient::DescribeWorkersInfoCallable(const DescribeWorkersInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkersInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkersInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyWorkersOutcome GsClient::ModifyWorkers(const ModifyWorkersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkersResponse rsp = ModifyWorkersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkersOutcome(rsp);
+        else
+            return ModifyWorkersOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkersOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyWorkersAsync(const ModifyWorkersRequest& request, const ModifyWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWorkers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyWorkersOutcomeCallable GsClient::ModifyWorkersCallable(const ModifyWorkersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWorkersOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWorkers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::StopGameOutcome GsClient::StopGame(const StopGameRequest &request)
 {
     auto outcome = MakeRequest(request, "StopGame");

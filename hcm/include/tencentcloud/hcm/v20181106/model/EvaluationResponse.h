@@ -57,7 +57,9 @@ namespace TencentCloud
 
                     /**
                      * 获取识别出的算式信息；
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 识别出的算式信息；
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Item> GetItems() const;
 
@@ -66,6 +68,18 @@ namespace TencentCloud
                      * @return Items 是否已赋值
                      */
                     bool ItemsHasBeenSet() const;
+
+                    /**
+                     * 获取任务 id，用于查询接口
+                     * @return TaskId 任务 id，用于查询接口
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
@@ -77,9 +91,16 @@ namespace TencentCloud
 
                     /**
                      * 识别出的算式信息；
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Item> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 任务 id，用于查询接口
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

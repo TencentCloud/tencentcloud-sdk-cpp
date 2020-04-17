@@ -26,7 +26,9 @@ using namespace std;
 DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,22 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderByType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -122,6 +140,38 @@ void DescribeDBInstancesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeDBInstancesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeDBInstancesRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void DescribeDBInstancesRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
 }
 
 

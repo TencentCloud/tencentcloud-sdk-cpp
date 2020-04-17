@@ -116,42 +116,6 @@ namespace TencentCloud
                     bool AccountResIdHasBeenSet() const;
 
                     /**
-                     * 获取授权时间，格式为年月日时分秒，例20160801095509
-                     * @return AuthorizationTime 授权时间，格式为年月日时分秒，例20160801095509
-                     */
-                    std::string GetAuthorizationTime() const;
-
-                    /**
-                     * 设置授权时间，格式为年月日时分秒，例20160801095509
-                     * @param AuthorizationTime 授权时间，格式为年月日时分秒，例20160801095509
-                     */
-                    void SetAuthorizationTime(const std::string& _authorizationTime);
-
-                    /**
-                     * 判断参数 AuthorizationTime 是否已赋值
-                     * @return AuthorizationTime 是否已赋值
-                     */
-                    bool AuthorizationTimeHasBeenSet() const;
-
-                    /**
-                     * 获取授权IP地址
-                     * @return Position 授权IP地址
-                     */
-                    std::string GetPosition() const;
-
-                    /**
-                     * 设置授权IP地址
-                     * @param Position 授权IP地址
-                     */
-                    void SetPosition(const std::string& _position);
-
-                    /**
-                     * 判断参数 Position 是否已赋值
-                     * @return Position 是否已赋值
-                     */
-                    bool PositionHasBeenSet() const;
-
-                    /**
                      * 获取签署关键字，偏移坐标原点为关键字中心
                      * @return SignKeyword 签署关键字，偏移坐标原点为关键字中心
                      */
@@ -168,6 +132,42 @@ namespace TencentCloud
                      * @return SignKeyword 是否已赋值
                      */
                     bool SignKeywordHasBeenSet() const;
+
+                    /**
+                     * 获取授权时间（由平台自动填充）
+                     * @return AuthorizationTime 授权时间（由平台自动填充）
+                     */
+                    std::string GetAuthorizationTime() const;
+
+                    /**
+                     * 设置授权时间（由平台自动填充）
+                     * @param AuthorizationTime 授权时间（由平台自动填充）
+                     */
+                    void SetAuthorizationTime(const std::string& _authorizationTime);
+
+                    /**
+                     * 判断参数 AuthorizationTime 是否已赋值
+                     * @return AuthorizationTime 是否已赋值
+                     */
+                    bool AuthorizationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取授权IP地址（由平台自动填充）
+                     * @return Position 授权IP地址（由平台自动填充）
+                     */
+                    std::string GetPosition() const;
+
+                    /**
+                     * 设置授权IP地址（由平台自动填充）
+                     * @param Position 授权IP地址（由平台自动填充）
+                     */
+                    void SetPosition(const std::string& _position);
+
+                    /**
+                     * 判断参数 Position 是否已赋值
+                     * @return Position 是否已赋值
+                     */
+                    bool PositionHasBeenSet() const;
 
                     /**
                      * 获取签章ID
@@ -250,22 +250,22 @@ namespace TencentCloud
                     bool m_accountResIdHasBeenSet;
 
                     /**
-                     * 授权时间，格式为年月日时分秒，例20160801095509
+                     * 签署关键字，偏移坐标原点为关键字中心
+                     */
+                    SignKeyword m_signKeyword;
+                    bool m_signKeywordHasBeenSet;
+
+                    /**
+                     * 授权时间（由平台自动填充）
                      */
                     std::string m_authorizationTime;
                     bool m_authorizationTimeHasBeenSet;
 
                     /**
-                     * 授权IP地址
+                     * 授权IP地址（由平台自动填充）
                      */
                     std::string m_position;
                     bool m_positionHasBeenSet;
-
-                    /**
-                     * 签署关键字，偏移坐标原点为关键字中心
-                     */
-                    SignKeyword m_signKeyword;
-                    bool m_signKeywordHasBeenSet;
 
                     /**
                      * 签章ID

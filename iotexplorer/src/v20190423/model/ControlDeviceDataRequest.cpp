@@ -28,7 +28,8 @@ ControlDeviceDataRequest::ControlDeviceDataRequest() :
     m_deviceNameHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_dataTimestampHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string ControlDeviceDataRequest::ToJsonString() const
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTimestampHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataTimestamp, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void ControlDeviceDataRequest::SetDeviceId(const string& _deviceId)
 bool ControlDeviceDataRequest::DeviceIdHasBeenSet() const
 {
     return m_deviceIdHasBeenSet;
+}
+
+int64_t ControlDeviceDataRequest::GetDataTimestamp() const
+{
+    return m_dataTimestamp;
+}
+
+void ControlDeviceDataRequest::SetDataTimestamp(const int64_t& _dataTimestamp)
+{
+    m_dataTimestamp = _dataTimestamp;
+    m_dataTimestampHasBeenSet = true;
+}
+
+bool ControlDeviceDataRequest::DataTimestampHasBeenSet() const
+{
+    return m_dataTimestampHasBeenSet;
 }
 
 

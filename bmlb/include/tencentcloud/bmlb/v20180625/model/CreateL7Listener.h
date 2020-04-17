@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool BandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取转发协议。当Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。
+                     * @return ForwardProtocol 转发协议。当Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。
+                     */
+                    int64_t GetForwardProtocol() const;
+
+                    /**
+                     * 设置转发协议。当Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。
+                     * @param ForwardProtocol 转发协议。当Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。
+                     */
+                    void SetForwardProtocol(const int64_t& _forwardProtocol);
+
+                    /**
+                     * 判断参数 ForwardProtocol 是否已赋值
+                     * @return ForwardProtocol 是否已赋值
+                     */
+                    bool ForwardProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +353,12 @@ namespace TencentCloud
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 转发协议。当Protocol为https时并且SslMode为1或2时，有意义。可选的值为0：https，1：spdy，2：http2，3：spdy+http2。
+                     */
+                    int64_t m_forwardProtocol;
+                    bool m_forwardProtocolHasBeenSet;
 
                 };
             }

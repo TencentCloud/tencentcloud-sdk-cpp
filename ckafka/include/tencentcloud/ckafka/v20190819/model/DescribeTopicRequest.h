@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，不填则默认为10，最大值为20
-                     * @return Limit 返回数量，不填则默认为10，最大值为20
+                     * 获取返回数量，不填则默认为10，最大值为50
+                     * @return Limit 返回数量，不填则默认为10，最大值为50
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，不填则默认为10，最大值为20
-                     * @param Limit 返回数量，不填则默认为10，最大值为20
+                     * 设置返回数量，不填则默认为10，最大值为50
+                     * @param Limit 返回数量，不填则默认为10，最大值为50
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，不填则默认为10，最大值为20
+                     * 返回数量，不填则默认为10，最大值为50
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

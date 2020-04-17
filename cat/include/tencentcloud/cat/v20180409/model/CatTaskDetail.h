@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取任务ID
+                     * @return TaskId 任务ID
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param TaskId 任务Id
+                     * 设置任务ID
+                     * @param TaskId 任务ID
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool CatTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取拨测任务的Url
-                     * @return CgiUrl 拨测任务的Url
+                     * 获取拨测任务的URL
+                     * @return CgiUrl 拨测任务的URL
                      */
                     std::string GetCgiUrl() const;
 
                     /**
-                     * 设置拨测任务的Url
-                     * @param CgiUrl 拨测任务的Url
+                     * 设置拨测任务的URL
+                     * @param CgiUrl 拨测任务的URL
                      */
                     void SetCgiUrl(const std::string& _cgiUrl);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool CgiUrlHasBeenSet() const;
 
                     /**
-                     * 获取拨测分组id
-                     * @return AgentGroupId 拨测分组id
+                     * 获取拨测分组ID
+                     * @return AgentGroupId 拨测分组ID
                      */
                     uint64_t GetAgentGroupId() const;
 
                     /**
-                     * 设置拨测分组id
-                     * @param AgentGroupId 拨测分组id
+                     * 设置拨测分组ID
+                     * @param AgentGroupId 拨测分组ID
                      */
                     void SetAgentGroupId(const uint64_t& _agentGroupId);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool AgentGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略组id
-                     * @return PolicyGroupId 告警策略组id
+                     * 获取告警策略组ID
+                     * @return PolicyGroupId 告警策略组ID
                      */
                     uint64_t GetPolicyGroupId() const;
 
                     /**
-                     * 设置告警策略组id
-                     * @param PolicyGroupId 告警策略组id
+                     * 设置告警策略组ID
+                     * @param PolicyGroupId 告警策略组ID
                      */
                     void SetPolicyGroupId(const uint64_t& _policyGroupId);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取绑定的统一告警主题Id
-                     * @return TopicId 绑定的统一告警主题Id
+                     * 获取绑定的统一告警主题ID
+                     * @return TopicId 绑定的统一告警主题ID
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置绑定的统一告警主题Id
-                     * @param TopicId 绑定的统一告警主题Id
+                     * 设置绑定的统一告警主题ID
+                     * @param TopicId 绑定的统一告警主题ID
                      */
                     void SetTopicId(const std::string& _topicId);
 
@@ -335,14 +335,14 @@ namespace TencentCloud
                     bool CheckTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户agent 信息
-                     * @return UserAgent 用户agent 信息
+                     * 获取用户Agent信息
+                     * @return UserAgent 用户Agent信息
                      */
                     std::string GetUserAgent() const;
 
                     /**
-                     * 设置用户agent 信息
-                     * @param UserAgent 用户agent 信息
+                     * 设置用户Agent信息
+                     * @param UserAgent 用户Agent信息
                      */
                     void SetUserAgent(const std::string& _userAgent);
 
@@ -353,14 +353,14 @@ namespace TencentCloud
                     bool UserAgentHasBeenSet() const;
 
                     /**
-                     * 获取设置的cookie信息
-                     * @return Cookie 设置的cookie信息
+                     * 获取设置的Cookie信息
+                     * @return Cookie 设置的Cookie信息
                      */
                     std::string GetCookie() const;
 
                     /**
-                     * 设置设置的cookie信息
-                     * @param Cookie 设置的cookie信息
+                     * 设置设置的Cookie信息
+                     * @param Cookie 设置的Cookie信息
                      */
                     void SetCookie(const std::string& _cookie);
 
@@ -425,14 +425,14 @@ namespace TencentCloud
                     bool IsHeaderHasBeenSet() const;
 
                     /**
-                     * 获取目的dns服务器
-                     * @return DnsSvr 目的dns服务器
+                     * 获取目的DNS服务器
+                     * @return DnsSvr 目的DNS服务器
                      */
                     std::string GetDnsSvr() const;
 
                     /**
-                     * 设置目的dns服务器
-                     * @param DnsSvr 目的dns服务器
+                     * 设置目的DNS服务器
+                     * @param DnsSvr 目的DNS服务器
                      */
                     void SetDnsSvr(const std::string& _dnsSvr);
 
@@ -443,14 +443,14 @@ namespace TencentCloud
                     bool DnsSvrHasBeenSet() const;
 
                     /**
-                     * 获取需要检验是否在dns ip列表的ip
-                     * @return DnsCheckIp 需要检验是否在dns ip列表的ip
+                     * 获取需要检验是否在DNS IP列表的IP
+                     * @return DnsCheckIp 需要检验是否在DNS IP列表的IP
                      */
                     std::string GetDnsCheckIp() const;
 
                     /**
-                     * 设置需要检验是否在dns ip列表的ip
-                     * @param DnsCheckIp 需要检验是否在dns ip列表的ip
+                     * 设置需要检验是否在DNS IP列表的IP
+                     * @param DnsCheckIp 需要检验是否在DNS IP列表的IP
                      */
                     void SetDnsCheckIp(const std::string& _dnsCheckIp);
 
@@ -461,14 +461,14 @@ namespace TencentCloud
                     bool DnsCheckIpHasBeenSet() const;
 
                     /**
-                     * 获取dns查询类型
-                     * @return DnsQueryType dns查询类型
+                     * 获取DNS查询类型
+                     * @return DnsQueryType DNS查询类型
                      */
                     std::string GetDnsQueryType() const;
 
                     /**
-                     * 设置dns查询类型
-                     * @param DnsQueryType dns查询类型
+                     * 设置DNS查询类型
+                     * @param DnsQueryType DNS查询类型
                      */
                     void SetDnsQueryType(const std::string& _dnsQueryType);
 
@@ -479,14 +479,14 @@ namespace TencentCloud
                     bool DnsQueryTypeHasBeenSet() const;
 
                     /**
-                     * 获取登陆服务器的账号
-                     * @return UserName 登陆服务器的账号
+                     * 获取登录服务器的账号
+                     * @return UserName 登录服务器的账号
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置登陆服务器的账号
-                     * @param UserName 登陆服务器的账号
+                     * 设置登录服务器的账号
+                     * @param UserName 登录服务器的账号
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -497,14 +497,14 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取登陆服务器的密码
-                     * @return PassWord 登陆服务器的密码
+                     * 获取登录服务器的密码
+                     * @return PassWord 登录服务器的密码
                      */
                     std::string GetPassWord() const;
 
                     /**
-                     * 设置登陆服务器的密码
-                     * @param PassWord 登陆服务器的密码
+                     * 设置登录服务器的密码
+                     * @param PassWord 登录服务器的密码
                      */
                     void SetPassWord(const std::string& _passWord);
 
@@ -515,14 +515,14 @@ namespace TencentCloud
                     bool PassWordHasBeenSet() const;
 
                     /**
-                     * 获取是否使用安全链接ssl  0 不使用，1 使用
-                     * @return UseSecConn 是否使用安全链接ssl  0 不使用，1 使用
+                     * 获取是否使用安全链接SSL， 0 不使用，1 使用
+                     * @return UseSecConn 是否使用安全链接SSL， 0 不使用，1 使用
                      */
                     uint64_t GetUseSecConn() const;
 
                     /**
-                     * 设置是否使用安全链接ssl  0 不使用，1 使用
-                     * @param UseSecConn 是否使用安全链接ssl  0 不使用，1 使用
+                     * 设置是否使用安全链接SSL， 0 不使用，1 使用
+                     * @param UseSecConn 是否使用安全链接SSL， 0 不使用，1 使用
                      */
                     void SetUseSecConn(const uint64_t& _useSecConn);
 
@@ -533,14 +533,14 @@ namespace TencentCloud
                     bool UseSecConnHasBeenSet() const;
 
                     /**
-                     * 获取ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
-                     * @return NeedAuth ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
+                     * 获取FTP登录验证方式  0 不验证  1 匿名登录  2 需要身份验证
+                     * @return NeedAuth FTP登录验证方式  0 不验证  1 匿名登录  2 需要身份验证
                      */
                     uint64_t GetNeedAuth() const;
 
                     /**
-                     * 设置ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
-                     * @param NeedAuth ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
+                     * 设置FTP登录验证方式  0 不验证  1 匿名登录  2 需要身份验证
+                     * @param NeedAuth FTP登录验证方式  0 不验证  1 匿名登录  2 需要身份验证
                      */
                     void SetNeedAuth(const uint64_t& _needAuth);
 
@@ -569,14 +569,14 @@ namespace TencentCloud
                     bool ReqDataTypeHasBeenSet() const;
 
                     /**
-                     * 获取发起tcp, udp请求的协议请求数据
-                     * @return ReqData 发起tcp, udp请求的协议请求数据
+                     * 获取发起TCP, UDP请求的协议请求数据
+                     * @return ReqData 发起TCP, UDP请求的协议请求数据
                      */
                     std::string GetReqData() const;
 
                     /**
-                     * 设置发起tcp, udp请求的协议请求数据
-                     * @param ReqData 发起tcp, udp请求的协议请求数据
+                     * 设置发起TCP, UDP请求的协议请求数据
+                     * @param ReqData 发起TCP, UDP请求的协议请求数据
                      */
                     void SetReqData(const std::string& _reqData);
 
@@ -605,14 +605,14 @@ namespace TencentCloud
                     bool RespDataTypeHasBeenSet() const;
 
                     /**
-                     * 获取预期的udp请求的回应数据
-                     * @return RespData 预期的udp请求的回应数据
+                     * 获取预期的UDP请求的回应数据
+                     * @return RespData 预期的UDP请求的回应数据
                      */
                     std::string GetRespData() const;
 
                     /**
-                     * 设置预期的udp请求的回应数据
-                     * @param RespData 预期的udp请求的回应数据
+                     * 设置预期的UDP请求的回应数据
+                     * @param RespData 预期的UDP请求的回应数据
                      */
                     void SetRespData(const std::string& _respData);
 
@@ -643,7 +643,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务Id
+                     * 任务ID
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -667,19 +667,19 @@ namespace TencentCloud
                     bool m_catTypeNameHasBeenSet;
 
                     /**
-                     * 拨测任务的Url
+                     * 拨测任务的URL
                      */
                     std::string m_cgiUrl;
                     bool m_cgiUrlHasBeenSet;
 
                     /**
-                     * 拨测分组id
+                     * 拨测分组ID
                      */
                     uint64_t m_agentGroupId;
                     bool m_agentGroupIdHasBeenSet;
 
                     /**
-                     * 告警策略组id
+                     * 告警策略组ID
                      */
                     uint64_t m_policyGroupId;
                     bool m_policyGroupIdHasBeenSet;
@@ -703,7 +703,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 绑定的统一告警主题Id
+                     * 绑定的统一告警主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -739,13 +739,13 @@ namespace TencentCloud
                     bool m_checkTypeHasBeenSet;
 
                     /**
-                     * 用户agent 信息
+                     * 用户Agent信息
                      */
                     std::string m_userAgent;
                     bool m_userAgentHasBeenSet;
 
                     /**
-                     * 设置的cookie信息
+                     * 设置的Cookie信息
                      */
                     std::string m_cookie;
                     bool m_cookieHasBeenSet;
@@ -769,43 +769,43 @@ namespace TencentCloud
                     bool m_isHeaderHasBeenSet;
 
                     /**
-                     * 目的dns服务器
+                     * 目的DNS服务器
                      */
                     std::string m_dnsSvr;
                     bool m_dnsSvrHasBeenSet;
 
                     /**
-                     * 需要检验是否在dns ip列表的ip
+                     * 需要检验是否在DNS IP列表的IP
                      */
                     std::string m_dnsCheckIp;
                     bool m_dnsCheckIpHasBeenSet;
 
                     /**
-                     * dns查询类型
+                     * DNS查询类型
                      */
                     std::string m_dnsQueryType;
                     bool m_dnsQueryTypeHasBeenSet;
 
                     /**
-                     * 登陆服务器的账号
+                     * 登录服务器的账号
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 登陆服务器的密码
+                     * 登录服务器的密码
                      */
                     std::string m_passWord;
                     bool m_passWordHasBeenSet;
 
                     /**
-                     * 是否使用安全链接ssl  0 不使用，1 使用
+                     * 是否使用安全链接SSL， 0 不使用，1 使用
                      */
                     uint64_t m_useSecConn;
                     bool m_useSecConnHasBeenSet;
 
                     /**
-                     * ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
+                     * FTP登录验证方式  0 不验证  1 匿名登录  2 需要身份验证
                      */
                     uint64_t m_needAuth;
                     bool m_needAuthHasBeenSet;
@@ -817,7 +817,7 @@ namespace TencentCloud
                     bool m_reqDataTypeHasBeenSet;
 
                     /**
-                     * 发起tcp, udp请求的协议请求数据
+                     * 发起TCP, UDP请求的协议请求数据
                      */
                     std::string m_reqData;
                     bool m_reqDataHasBeenSet;
@@ -829,7 +829,7 @@ namespace TencentCloud
                     bool m_respDataTypeHasBeenSet;
 
                     /**
-                     * 预期的udp请求的回应数据
+                     * 预期的UDP请求的回应数据
                      */
                     std::string m_respData;
                     bool m_respDataHasBeenSet;

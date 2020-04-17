@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool TargetPortHasBeenSet() const;
 
+                    /**
+                     * 获取主机端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodePort 主机端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNodePort() const;
+
+                    /**
+                     * 设置主机端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodePort 主机端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodePort(const int64_t& _nodePort);
+
+                    /**
+                     * 判断参数 NodePort 是否已赋值
+                     * @return NodePort 是否已赋值
+                     */
+                    bool NodePortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     int64_t m_targetPort;
                     bool m_targetPortHasBeenSet;
+
+                    /**
+                     * 主机端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_nodePort;
+                    bool m_nodePortHasBeenSet;
 
                 };
             }

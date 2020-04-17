@@ -35,6 +35,8 @@
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h>
@@ -89,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetDetectInfoResponse> GetDetectInfoOutcome;
                 typedef std::future<GetDetectInfoOutcome> GetDetectInfoOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetDetectInfoRequest&, GetDetectInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDetectInfoAsyncHandler;
+                typedef Outcome<Error, Model::GetDetectInfoEnhancedResponse> GetDetectInfoEnhancedOutcome;
+                typedef std::future<GetDetectInfoEnhancedOutcome> GetDetectInfoEnhancedOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetDetectInfoEnhancedRequest&, GetDetectInfoEnhancedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDetectInfoEnhancedAsyncHandler;
                 typedef Outcome<Error, Model::GetLiveCodeResponse> GetLiveCodeOutcome;
                 typedef std::future<GetLiveCodeOutcome> GetLiveCodeOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetLiveCodeRequest&, GetLiveCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLiveCodeAsyncHandler;
@@ -180,6 +185,15 @@ namespace TencentCloud
                 GetDetectInfoOutcomeCallable GetDetectInfoCallable(const Model::GetDetectInfoRequest& request);
 
                 /**
+                 *完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\*24\*3,600秒）可多次拉取。
+                 * @param req GetDetectInfoEnhancedRequest
+                 * @return GetDetectInfoEnhancedOutcome
+                 */
+                GetDetectInfoEnhancedOutcome GetDetectInfoEnhanced(const Model::GetDetectInfoEnhancedRequest &request);
+                void GetDetectInfoEnhancedAsync(const Model::GetDetectInfoEnhancedRequest& request, const GetDetectInfoEnhancedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDetectInfoEnhancedOutcomeCallable GetDetectInfoEnhancedCallable(const Model::GetDetectInfoEnhancedRequest& request);
+
+                /**
                  *使用数字活体检测模式前，需调用本接口获取数字验证码。
                  * @param req GetLiveCodeRequest
                  * @return GetLiveCodeOutcome
@@ -243,7 +257,7 @@ namespace TencentCloud
                 LivenessRecognitionOutcomeCallable LivenessRecognitionCallable(const Model::LivenessRecognitionRequest& request);
 
                 /**
-                 *传入手机号或者姓名和身份证号，判断该信息是否已实名认证且年满18周岁。
+                 *未成年人守护接口是通过传入手机号或姓名和身份证号，结合权威数据源和腾讯健康守护可信模型，判断该信息是否真实且年满18周岁。腾讯健康守护可信模型覆盖了上十亿手机库源，覆盖率高、准确率高，如果不在库中的手机号，还可以通过姓名+身份证进行兜底验证。
                  * @param req MinorsVerificationRequest
                  * @return MinorsVerificationOutcome
                  */

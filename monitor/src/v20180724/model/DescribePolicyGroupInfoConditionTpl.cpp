@@ -26,7 +26,10 @@ DescribePolicyGroupInfoConditionTpl::DescribePolicyGroupInfoConditionTpl() :
     m_groupNameHasBeenSet(false),
     m_viewNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_lastEditUinHasBeenSet(false)
+    m_lastEditUinHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_insertTimeHasBeenSet(false),
+    m_isUnionRuleHasBeenSet(false)
 {
 }
 
@@ -85,6 +88,36 @@ CoreInternalOutcome DescribePolicyGroupInfoConditionTpl::Deserialize(const Value
         m_lastEditUinHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoConditionTpl.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = value["UpdateTime"].GetInt64();
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InsertTime") && !value["InsertTime"].IsNull())
+    {
+        if (!value["InsertTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoConditionTpl.InsertTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_insertTime = value["InsertTime"].GetInt64();
+        m_insertTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsUnionRule") && !value["IsUnionRule"].IsNull())
+    {
+        if (!value["IsUnionRule"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoConditionTpl.IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUnionRule = value["IsUnionRule"].GetInt64();
+        m_isUnionRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +163,30 @@ void DescribePolicyGroupInfoConditionTpl::ToJsonObject(Value &value, Document::A
         string key = "LastEditUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_lastEditUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_insertTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InsertTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_insertTime, allocator);
+    }
+
+    if (m_isUnionRuleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsUnionRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUnionRule, allocator);
     }
 
 }
@@ -213,5 +270,53 @@ void DescribePolicyGroupInfoConditionTpl::SetLastEditUin(const string& _lastEdit
 bool DescribePolicyGroupInfoConditionTpl::LastEditUinHasBeenSet() const
 {
     return m_lastEditUinHasBeenSet;
+}
+
+int64_t DescribePolicyGroupInfoConditionTpl::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void DescribePolicyGroupInfoConditionTpl::SetUpdateTime(const int64_t& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool DescribePolicyGroupInfoConditionTpl::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+int64_t DescribePolicyGroupInfoConditionTpl::GetInsertTime() const
+{
+    return m_insertTime;
+}
+
+void DescribePolicyGroupInfoConditionTpl::SetInsertTime(const int64_t& _insertTime)
+{
+    m_insertTime = _insertTime;
+    m_insertTimeHasBeenSet = true;
+}
+
+bool DescribePolicyGroupInfoConditionTpl::InsertTimeHasBeenSet() const
+{
+    return m_insertTimeHasBeenSet;
+}
+
+int64_t DescribePolicyGroupInfoConditionTpl::GetIsUnionRule() const
+{
+    return m_isUnionRule;
+}
+
+void DescribePolicyGroupInfoConditionTpl::SetIsUnionRule(const int64_t& _isUnionRule)
+{
+    m_isUnionRule = _isUnionRule;
+    m_isUnionRuleHasBeenSet = true;
+}
+
+bool DescribePolicyGroupInfoConditionTpl::IsUnionRuleHasBeenSet() const
+{
+    return m_isUnionRuleHasBeenSet;
 }
 

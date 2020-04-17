@@ -40,6 +40,49 @@ BizliveClient::BizliveClient(const Credential &credential, const string &region,
 }
 
 
+BizliveClient::CreateSessionOutcome BizliveClient::CreateSession(const CreateSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSessionResponse rsp = CreateSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSessionOutcome(rsp);
+        else
+            return CreateSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSessionOutcome(outcome.GetError());
+    }
+}
+
+void BizliveClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BizliveClient::CreateSessionOutcomeCallable BizliveClient::CreateSessionCallable(const CreateSessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSessionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BizliveClient::DescribeStreamPlayInfoListOutcome BizliveClient::DescribeStreamPlayInfoList(const DescribeStreamPlayInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStreamPlayInfoList");
@@ -76,6 +119,49 @@ BizliveClient::DescribeStreamPlayInfoListOutcomeCallable BizliveClient::Describe
         [this, request]()
         {
             return this->DescribeStreamPlayInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BizliveClient::DescribeWorkersOutcome BizliveClient::DescribeWorkers(const DescribeWorkersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkersResponse rsp = DescribeWorkersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkersOutcome(rsp);
+        else
+            return DescribeWorkersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkersOutcome(outcome.GetError());
+    }
+}
+
+void BizliveClient::DescribeWorkersAsync(const DescribeWorkersRequest& request, const DescribeWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BizliveClient::DescribeWorkersOutcomeCallable BizliveClient::DescribeWorkersCallable(const DescribeWorkersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkers(request);
         }
     );
 
@@ -162,6 +248,49 @@ BizliveClient::RegisterIMOutcomeCallable BizliveClient::RegisterIMCallable(const
         [this, request]()
         {
             return this->RegisterIM(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BizliveClient::StopGameOutcome BizliveClient::StopGame(const StopGameRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopGame");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopGameResponse rsp = StopGameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopGameOutcome(rsp);
+        else
+            return StopGameOutcome(o.GetError());
+    }
+    else
+    {
+        return StopGameOutcome(outcome.GetError());
+    }
+}
+
+void BizliveClient::StopGameAsync(const StopGameRequest& request, const StopGameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopGame(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BizliveClient::StopGameOutcomeCallable BizliveClient::StopGameCallable(const StopGameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopGameOutcome()>>(
+        [this, request]()
+        {
+            return this->StopGame(request);
         }
     );
 

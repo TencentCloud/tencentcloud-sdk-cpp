@@ -289,6 +289,50 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceResourceType 集群资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNamespaceResourceType() const;
+
+                    /**
+                     * 设置集群资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NamespaceResourceType 集群资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNamespaceResourceType(const std::string& _namespaceResourceType);
+
+                    /**
+                     * 判断参数 NamespaceResourceType 是否已赋值
+                     * @return NamespaceResourceType 是否已赋值
+                     */
+                    bool NamespaceResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceType 命名空间类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNamespaceType() const;
+
+                    /**
+                     * 设置命名空间类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NamespaceType 命名空间类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNamespaceType(const std::string& _namespaceType);
+
+                    /**
+                     * 判断参数 NamespaceType 是否已赋值
+                     * @return NamespaceType 是否已赋值
+                     */
+                    bool NamespaceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +411,20 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 集群资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceResourceType;
+                    bool m_namespaceResourceTypeHasBeenSet;
+
+                    /**
+                     * 命名空间类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceType;
+                    bool m_namespaceTypeHasBeenSet;
 
                 };
             }

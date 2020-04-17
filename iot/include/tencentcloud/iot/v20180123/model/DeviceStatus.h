@@ -84,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstOnline 首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFirstOnline() const;
 
                     /**
                      * 设置首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param FirstOnline 首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFirstOnline(const std::string& _firstOnline);
 
@@ -102,13 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取最后上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastOnline 最后上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLastOnline() const;
 
                     /**
                      * 设置最后上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param LastOnline 最后上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLastOnline(const std::string& _lastOnline);
 
@@ -152,12 +160,14 @@ namespace TencentCloud
 
                     /**
                      * 首次上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstOnline;
                     bool m_firstOnlineHasBeenSet;
 
                     /**
                      * 最后上线时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastOnline;
                     bool m_lastOnlineHasBeenSet;

@@ -49,13 +49,17 @@ namespace TencentCloud
 
                     /**
                      * 获取指标配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigManual 指标配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManual GetConfigManual() const;
 
                     /**
                      * 设置指标配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ConfigManual 指标配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfigManual(const DescribePolicyConditionListConfigManual& _configManual);
 
@@ -123,6 +127,7 @@ namespace TencentCloud
 
                     /**
                      * 指标配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribePolicyConditionListConfigManual m_configManual;
                     bool m_configManualHasBeenSet;

@@ -27,8 +27,10 @@ CreateRsgAsGroupRequest::CreateRsgAsGroupRequest() :
     m_rsgIdHasBeenSet(false),
     m_maxSizeHasBeenSet(false),
     m_minSizeHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_clusterHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_desiredSizeHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,14 @@ string CreateRsgAsGroupRequest::ToJsonString() const
         d.AddMember(iKey, m_minSize, allocator);
     }
 
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_clusterHasBeenSet)
     {
         Value iKey(kStringType);
@@ -77,6 +87,14 @@ string CreateRsgAsGroupRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_desiredSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DesiredSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_desiredSize, allocator);
     }
 
 
@@ -135,6 +153,22 @@ bool CreateRsgAsGroupRequest::MinSizeHasBeenSet() const
     return m_minSizeHasBeenSet;
 }
 
+string CreateRsgAsGroupRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void CreateRsgAsGroupRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool CreateRsgAsGroupRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
 string CreateRsgAsGroupRequest::GetCluster() const
 {
     return m_cluster;
@@ -165,6 +199,22 @@ void CreateRsgAsGroupRequest::SetName(const string& _name)
 bool CreateRsgAsGroupRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t CreateRsgAsGroupRequest::GetDesiredSize() const
+{
+    return m_desiredSize;
+}
+
+void CreateRsgAsGroupRequest::SetDesiredSize(const uint64_t& _desiredSize)
+{
+    m_desiredSize = _desiredSize;
+    m_desiredSizeHasBeenSet = true;
+}
+
+bool CreateRsgAsGroupRequest::DesiredSizeHasBeenSet() const
+{
+    return m_desiredSizeHasBeenSet;
 }
 
 

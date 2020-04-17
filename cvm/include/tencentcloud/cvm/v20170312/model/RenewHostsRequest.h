@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或多个待操作的CDH实例ID。
-                     * @return HostIds 一个或多个待操作的CDH实例ID。
+                     * 获取一个或多个待操作的CDH实例ID。每次请求的CDH实例的上限为100。
+                     * @return HostIds 一个或多个待操作的CDH实例ID。每次请求的CDH实例的上限为100。
                      */
                     std::vector<std::string> GetHostIds() const;
 
                     /**
-                     * 设置一个或多个待操作的CDH实例ID。
-                     * @param HostIds 一个或多个待操作的CDH实例ID。
+                     * 设置一个或多个待操作的CDH实例ID。每次请求的CDH实例的上限为100。
+                     * @param HostIds 一个或多个待操作的CDH实例ID。每次请求的CDH实例的上限为100。
                      */
                     void SetHostIds(const std::vector<std::string>& _hostIds);
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一个或多个待操作的CDH实例ID。
+                     * 一个或多个待操作的CDH实例ID。每次请求的CDH实例的上限为100。
                      */
                     std::vector<std::string> m_hostIds;
                     bool m_hostIdsHasBeenSet;

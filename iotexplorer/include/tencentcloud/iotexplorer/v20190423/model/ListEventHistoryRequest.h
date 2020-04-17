@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取搜索的事件类型
-                     * @return Type 搜索的事件类型
+                     * 获取搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件
+                     * @return Type 搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置搜索的事件类型
-                     * @param Type 搜索的事件类型
+                     * 设置搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件
+                     * @param Type 搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件
                      */
                     void SetType(const std::string& _type);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取起始时间, 为0 表示 当前时间 - 24h
-                     * @return StartTime 起始时间, 为0 表示 当前时间 - 24h
+                     * 获取起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h
+                     * @return StartTime 起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间, 为0 表示 当前时间 - 24h
-                     * @param StartTime 起始时间, 为0 表示 当前时间 - 24h
+                     * 设置起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h
+                     * @param StartTime 起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h
                      */
                     void SetStartTime(const int64_t& _startTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间, 为0 表示当前时间
-                     * @return EndTime 结束时间, 为0 表示当前时间
+                     * 获取结束时间（Unix 时间戳，秒级）, 为0 表示当前时间
+                     * @return EndTime 结束时间（Unix 时间戳，秒级）, 为0 表示当前时间
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间, 为0 表示当前时间
-                     * @param EndTime 结束时间, 为0 表示当前时间
+                     * 设置结束时间（Unix 时间戳，秒级）, 为0 表示当前时间
+                     * @param EndTime 结束时间（Unix 时间戳，秒级）, 为0 表示当前时间
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -183,19 +183,19 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 搜索的事件类型
+                     * 搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 起始时间, 为0 表示 当前时间 - 24h
+                     * 起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间, 为0 表示当前时间
+                     * 结束时间（Unix 时间戳，秒级）, 为0 表示当前时间
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

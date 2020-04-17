@@ -36,7 +36,8 @@ DeviceHardwareInfo::DeviceHardwareInfo() :
     m_memDescriptionHasBeenSet(false),
     m_diskDescriptionHasBeenSet(false),
     m_nicDescriptionHasBeenSet(false),
-    m_raidDescriptionHasBeenSet(false)
+    m_raidDescriptionHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,16 @@ CoreInternalOutcome DeviceHardwareInfo::Deserialize(const Value &value)
         m_raidDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceHardwareInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetUint64();
+        m_cpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +331,14 @@ void DeviceHardwareInfo::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "RaidDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_raidDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
     }
 
 }
@@ -563,5 +582,21 @@ void DeviceHardwareInfo::SetRaidDescription(const string& _raidDescription)
 bool DeviceHardwareInfo::RaidDescriptionHasBeenSet() const
 {
     return m_raidDescriptionHasBeenSet;
+}
+
+uint64_t DeviceHardwareInfo::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DeviceHardwareInfo::SetCpu(const uint64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DeviceHardwareInfo::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 

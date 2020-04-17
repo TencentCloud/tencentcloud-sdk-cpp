@@ -194,7 +194,7 @@ namespace TencentCloud
                 CreateAgentGroupOutcomeCallable CreateAgentGroupCallable(const Model::CreateAgentGroupRequest& request);
 
                 /**
-                 *创建拨测任务(扩充)
+                 *创建拨测任务(扩展)
                  * @param req CreateTaskExRequest
                  * @return CreateTaskExOutcome
                  */

@@ -262,6 +262,28 @@ namespace TencentCloud
                      */
                     bool DeactivedHasBeenSet() const;
 
+                    /**
+                     * 获取已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeactivedDetail 已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDeactivedDetail() const;
+
+                    /**
+                     * 设置已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeactivedDetail 已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
+
+                    /**
+                     * 判断参数 DeactivedDetail 是否已赋值
+                     * @return DeactivedDetail 是否已赋值
+                     */
+                    bool DeactivedDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +354,13 @@ namespace TencentCloud
                      */
                     uint64_t m_deactived;
                     bool m_deactivedHasBeenSet;
+
+                    /**
+                     * 已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_deactivedDetail;
+                    bool m_deactivedDetailHasBeenSet;
 
                 };
             }

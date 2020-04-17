@@ -130,9 +130,11 @@ namespace TencentCloud
                      * 获取告警码
 -9103	证照翻拍告警
 -9102	证照复印件告警
+-9106       证件遮挡告警
                      * @return Warn 告警码
 -9103	证照翻拍告警
 -9102	证照复印件告警
+-9106       证件遮挡告警
                      */
                     std::vector<int64_t> GetWarn() const;
 
@@ -230,6 +232,7 @@ namespace TencentCloud
                      * 告警码
 -9103	证照翻拍告警
 -9102	证照复印件告警
+-9106       证件遮挡告警
                      */
                     std::vector<int64_t> m_warn;
                     bool m_warnHasBeenSet;

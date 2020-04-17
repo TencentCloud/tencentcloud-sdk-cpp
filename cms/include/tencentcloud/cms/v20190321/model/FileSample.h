@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool FileUrlHasBeenSet() const;
 
+                    /**
+                     * 获取文件压缩后云url
+                     * @return CompressFileUrl 文件压缩后云url
+                     */
+                    std::string GetCompressFileUrl() const;
+
+                    /**
+                     * 设置文件压缩后云url
+                     * @param CompressFileUrl 文件压缩后云url
+                     */
+                    void SetCompressFileUrl(const std::string& _compressFileUrl);
+
+                    /**
+                     * 判断参数 CompressFileUrl 是否已赋值
+                     * @return CompressFileUrl 是否已赋值
+                     */
+                    bool CompressFileUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
+
+                    /**
+                     * 文件压缩后云url
+                     */
+                    std::string m_compressFileUrl;
+                    bool m_compressFileUrlHasBeenSet;
 
                 };
             }

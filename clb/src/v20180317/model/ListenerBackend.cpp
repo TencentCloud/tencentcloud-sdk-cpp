@@ -26,7 +26,8 @@ ListenerBackend::ListenerBackend() :
     m_protocolHasBeenSet(false),
     m_portHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+    m_targetsHasBeenSet(false),
+    m_endPortHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome ListenerBackend::Deserialize(const Value &value)
         m_targetsHasBeenSet = true;
     }
 
+    if (value.HasMember("EndPort") && !value["EndPort"].IsNull())
+    {
+        if (!value["EndPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ListenerBackend.EndPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endPort = value["EndPort"].GetInt64();
+        m_endPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ void ListenerBackend::ToJsonObject(Value &value, Document::AllocatorType& alloca
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_endPortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endPort, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ListenerBackend::SetTargets(const vector<Backend>& _targets)
 bool ListenerBackend::TargetsHasBeenSet() const
 {
     return m_targetsHasBeenSet;
+}
+
+int64_t ListenerBackend::GetEndPort() const
+{
+    return m_endPort;
+}
+
+void ListenerBackend::SetEndPort(const int64_t& _endPort)
+{
+    m_endPort = _endPort;
+    m_endPortHasBeenSet = true;
+}
+
+bool ListenerBackend::EndPortHasBeenSet() const
+{
+    return m_endPortHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ RouteTable::RouteTable() :
     m_associationSetHasBeenSet(false),
     m_routeSetHasBeenSet(false),
     m_mainHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,26 @@ CoreInternalOutcome RouteTable::Deserialize(const Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `RouteTable.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +223,21 @@ void RouteTable::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -317,5 +353,21 @@ void RouteTable::SetCreatedTime(const string& _createdTime)
 bool RouteTable::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+vector<Tag> RouteTable::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void RouteTable::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool RouteTable::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

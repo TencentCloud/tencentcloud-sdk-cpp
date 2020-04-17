@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待修改的签名Id。
-                     * @return SignId 待修改的签名Id。
+                     * 获取待修改的签名 ID。
+                     * @return SignId 待修改的签名 ID。
                      */
                     uint64_t GetSignId() const;
 
                     /**
-                     * 设置待修改的签名Id。
-                     * @param SignId 待修改的签名Id。
+                     * 设置待修改的签名 ID。
+                     * @param SignId 待修改的签名 ID。
                      */
                     void SetSignId(const uint64_t& _signId);
 
@@ -125,7 +125,7 @@ namespace TencentCloud
                     bool SignTypeHasBeenSet() const;
 
                     /**
-                     * 获取证明类型。其中：
+                     * 获取证明类型：
 0：三证合一。
 1：企业营业执照。
 2：组织机构代码证书。
@@ -134,7 +134,7 @@ namespace TencentCloud
 5：网站备案后台截图(个人开发网站)。
 6：小程序设置页面截图(个人认证小程序)。
 7：商标注册书。
-                     * @return DocumentType 证明类型。其中：
+                     * @return DocumentType 证明类型：
 0：三证合一。
 1：企业营业执照。
 2：组织机构代码证书。
@@ -147,7 +147,7 @@ namespace TencentCloud
                     uint64_t GetDocumentType() const;
 
                     /**
-                     * 设置证明类型。其中：
+                     * 设置证明类型：
 0：三证合一。
 1：企业营业执照。
 2：组织机构代码证书。
@@ -156,7 +156,7 @@ namespace TencentCloud
 5：网站备案后台截图(个人开发网站)。
 6：小程序设置页面截图(个人认证小程序)。
 7：商标注册书。
-                     * @param DocumentType 证明类型。其中：
+                     * @param DocumentType 证明类型：
 0：三证合一。
 1：企业营业执照。
 2：组织机构代码证书。
@@ -175,22 +175,22 @@ namespace TencentCloud
                     bool DocumentTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否国际短信。其中：
+                     * 获取是否国际/港澳台短信：
 0：表示国内短信。
-1：表示海外短信。
-                     * @return International 是否国际短信。其中：
+1：表示国际/港澳台短信。
+                     * @return International 是否国际/港澳台短信：
 0：表示国内短信。
-1：表示海外短信。
+1：表示国际/港澳台短信。
                      */
                     uint64_t GetInternational() const;
 
                     /**
-                     * 设置是否国际短信。其中：
+                     * 设置是否国际/港澳台短信：
 0：表示国内短信。
-1：表示海外短信。
-                     * @param International 是否国际短信。其中：
+1：表示国际/港澳台短信。
+                     * @param International 是否国际/港澳台短信：
 0：表示国内短信。
-1：表示海外短信。
+1：表示国际/港澳台短信。
                      */
                     void SetInternational(const uint64_t& _international);
 
@@ -201,20 +201,20 @@ namespace TencentCloud
                     bool InternationalHasBeenSet() const;
 
                     /**
-                     * 获取签名用途。其中：
+                     * 获取签名用途：
 0：自用。
 1：他用。
-                     * @return UsedMethod 签名用途。其中：
+                     * @return UsedMethod 签名用途：
 0：自用。
 1：他用。
                      */
                     uint64_t GetUsedMethod() const;
 
                     /**
-                     * 设置签名用途。其中：
+                     * 设置签名用途：
 0：自用。
 1：他用。
-                     * @param UsedMethod 签名用途。其中：
+                     * @param UsedMethod 签名用途：
 0：自用。
 1：他用。
                      */
@@ -291,7 +291,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待修改的签名Id。
+                     * 待修改的签名 ID。
                      */
                     uint64_t m_signId;
                     bool m_signIdHasBeenSet;
@@ -316,7 +316,7 @@ namespace TencentCloud
                     bool m_signTypeHasBeenSet;
 
                     /**
-                     * 证明类型。其中：
+                     * 证明类型：
 0：三证合一。
 1：企业营业执照。
 2：组织机构代码证书。
@@ -330,15 +330,15 @@ namespace TencentCloud
                     bool m_documentTypeHasBeenSet;
 
                     /**
-                     * 是否国际短信。其中：
+                     * 是否国际/港澳台短信：
 0：表示国内短信。
-1：表示海外短信。
+1：表示国际/港澳台短信。
                      */
                     uint64_t m_international;
                     bool m_internationalHasBeenSet;
 
                     /**
-                     * 签名用途。其中：
+                     * 签名用途：
 0：自用。
 1：他用。
                      */

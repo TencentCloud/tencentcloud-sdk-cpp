@@ -27,7 +27,8 @@ ModifyStudioProductRequest::ModifyStudioProductRequest() :
     m_productIdHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_productDescHasBeenSet(false),
-    m_moduleIdHasBeenSet(false)
+    m_moduleIdHasBeenSet(false),
+    m_enableProductScriptHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ModifyStudioProductRequest::ToJsonString() const
         string key = "ModuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_moduleId, allocator);
+    }
+
+    if (m_enableProductScriptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableProductScript";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_enableProductScript.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void ModifyStudioProductRequest::SetModuleId(const int64_t& _moduleId)
 bool ModifyStudioProductRequest::ModuleIdHasBeenSet() const
 {
     return m_moduleIdHasBeenSet;
+}
+
+string ModifyStudioProductRequest::GetEnableProductScript() const
+{
+    return m_enableProductScript;
+}
+
+void ModifyStudioProductRequest::SetEnableProductScript(const string& _enableProductScript)
+{
+    m_enableProductScript = _enableProductScript;
+    m_enableProductScriptHasBeenSet = true;
+}
+
+bool ModifyStudioProductRequest::EnableProductScriptHasBeenSet() const
+{
+    return m_enableProductScriptHasBeenSet;
 }
 
 

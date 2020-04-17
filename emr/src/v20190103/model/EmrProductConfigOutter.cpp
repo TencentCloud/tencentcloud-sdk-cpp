@@ -32,7 +32,12 @@ EmrProductConfigOutter::EmrProductConfigOutter() :
     m_taskResourceHasBeenSet(false),
     m_comResourceHasBeenSet(false),
     m_onCosHasBeenSet(false),
-    m_chargeTypeHasBeenSet(false)
+    m_chargeTypeHasBeenSet(false),
+    m_routerNodeSizeHasBeenSet(false),
+    m_supportHAHasBeenSet(false),
+    m_securityOnHasBeenSet(false),
+    m_securityGroupHasBeenSet(false),
+    m_cbsEncryptHasBeenSet(false)
 {
 }
 
@@ -182,6 +187,56 @@ CoreInternalOutcome EmrProductConfigOutter::Deserialize(const Value &value)
         m_chargeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RouterNodeSize") && !value["RouterNodeSize"].IsNull())
+    {
+        if (!value["RouterNodeSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `EmrProductConfigOutter.RouterNodeSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_routerNodeSize = value["RouterNodeSize"].GetInt64();
+        m_routerNodeSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportHA") && !value["SupportHA"].IsNull())
+    {
+        if (!value["SupportHA"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `EmrProductConfigOutter.SupportHA` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportHA = value["SupportHA"].GetBool();
+        m_supportHAHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityOn") && !value["SecurityOn"].IsNull())
+    {
+        if (!value["SecurityOn"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `EmrProductConfigOutter.SecurityOn` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityOn = value["SecurityOn"].GetBool();
+        m_securityOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroup") && !value["SecurityGroup"].IsNull())
+    {
+        if (!value["SecurityGroup"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EmrProductConfigOutter.SecurityGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroup = string(value["SecurityGroup"].GetString());
+        m_securityGroupHasBeenSet = true;
+    }
+
+    if (value.HasMember("CbsEncrypt") && !value["CbsEncrypt"].IsNull())
+    {
+        if (!value["CbsEncrypt"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `EmrProductConfigOutter.CbsEncrypt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cbsEncrypt = value["CbsEncrypt"].GetInt64();
+        m_cbsEncryptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -284,6 +339,46 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "ChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_chargeType, allocator);
+    }
+
+    if (m_routerNodeSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RouterNodeSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routerNodeSize, allocator);
+    }
+
+    if (m_supportHAHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SupportHA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportHA, allocator);
+    }
+
+    if (m_securityOnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_securityOn, allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_securityGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cbsEncryptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CbsEncrypt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cbsEncrypt, allocator);
     }
 
 }
@@ -463,5 +558,85 @@ void EmrProductConfigOutter::SetChargeType(const int64_t& _chargeType)
 bool EmrProductConfigOutter::ChargeTypeHasBeenSet() const
 {
     return m_chargeTypeHasBeenSet;
+}
+
+int64_t EmrProductConfigOutter::GetRouterNodeSize() const
+{
+    return m_routerNodeSize;
+}
+
+void EmrProductConfigOutter::SetRouterNodeSize(const int64_t& _routerNodeSize)
+{
+    m_routerNodeSize = _routerNodeSize;
+    m_routerNodeSizeHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::RouterNodeSizeHasBeenSet() const
+{
+    return m_routerNodeSizeHasBeenSet;
+}
+
+bool EmrProductConfigOutter::GetSupportHA() const
+{
+    return m_supportHA;
+}
+
+void EmrProductConfigOutter::SetSupportHA(const bool& _supportHA)
+{
+    m_supportHA = _supportHA;
+    m_supportHAHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::SupportHAHasBeenSet() const
+{
+    return m_supportHAHasBeenSet;
+}
+
+bool EmrProductConfigOutter::GetSecurityOn() const
+{
+    return m_securityOn;
+}
+
+void EmrProductConfigOutter::SetSecurityOn(const bool& _securityOn)
+{
+    m_securityOn = _securityOn;
+    m_securityOnHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::SecurityOnHasBeenSet() const
+{
+    return m_securityOnHasBeenSet;
+}
+
+string EmrProductConfigOutter::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+void EmrProductConfigOutter::SetSecurityGroup(const string& _securityGroup)
+{
+    m_securityGroup = _securityGroup;
+    m_securityGroupHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
+}
+
+int64_t EmrProductConfigOutter::GetCbsEncrypt() const
+{
+    return m_cbsEncrypt;
+}
+
+void EmrProductConfigOutter::SetCbsEncrypt(const int64_t& _cbsEncrypt)
+{
+    m_cbsEncrypt = _cbsEncrypt;
+    m_cbsEncryptHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::CbsEncryptHasBeenSet() const
+{
+    return m_cbsEncryptHasBeenSet;
 }
 

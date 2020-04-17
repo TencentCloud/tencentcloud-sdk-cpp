@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/OperateResponseData.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,28 @@ namespace TencentCloud
                      */
                     bool ReturnMessageHasBeenSet() const;
 
+                    /**
+                     * 获取操作型返回的Data数据,可能有flowId等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 操作型返回的Data数据,可能有flowId等
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperateResponseData GetData() const;
+
+                    /**
+                     * 设置操作型返回的Data数据,可能有flowId等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Data 操作型返回的Data数据,可能有flowId等
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetData(const OperateResponseData& _data);
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +118,13 @@ namespace TencentCloud
                      */
                     std::string m_returnMessage;
                     bool m_returnMessageHasBeenSet;
+
+                    /**
+                     * 操作型返回的Data数据,可能有flowId等
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperateResponseData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

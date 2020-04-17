@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待启用的直播域名
-                     * @return DomainName 待启用的直播域名
+                     * 获取待启用的直播域名。
+                     * @return DomainName 待启用的直播域名。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置待启用的直播域名
-                     * @param DomainName 待启用的直播域名
+                     * 设置待启用的直播域名。
+                     * @param DomainName 待启用的直播域名。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待启用的直播域名
+                     * 待启用的直播域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;

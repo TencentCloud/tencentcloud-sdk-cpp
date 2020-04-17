@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取盘类型
+                     * 获取硬盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskType 盘类型
+                     * @return DiskType 硬盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置盘类型
+                     * 设置硬盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskType 盘类型
+                     * @param DiskType 硬盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -222,6 +222,28 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType 规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceType 规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,7 +268,7 @@ namespace TencentCloud
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 盘类型
+                     * 硬盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
@@ -279,6 +301,13 @@ namespace TencentCloud
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

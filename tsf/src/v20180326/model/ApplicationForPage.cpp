@@ -31,7 +31,8 @@ ApplicationForPage::ApplicationForPage() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_applicationResourceTypeHasBeenSet(false),
-    m_applicationRuntimeTypeHasBeenSet(false)
+    m_applicationRuntimeTypeHasBeenSet(false),
+    m_apigatewayServiceIdHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome ApplicationForPage::Deserialize(const Value &value)
         m_applicationRuntimeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApigatewayServiceId") && !value["ApigatewayServiceId"].IsNull())
+    {
+        if (!value["ApigatewayServiceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ApplicationForPage.ApigatewayServiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apigatewayServiceId = string(value["ApigatewayServiceId"].GetString());
+        m_apigatewayServiceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void ApplicationForPage::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ApplicationRuntimeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apigatewayServiceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApigatewayServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_apigatewayServiceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void ApplicationForPage::SetApplicationRuntimeType(const string& _applicationRun
 bool ApplicationForPage::ApplicationRuntimeTypeHasBeenSet() const
 {
     return m_applicationRuntimeTypeHasBeenSet;
+}
+
+string ApplicationForPage::GetApigatewayServiceId() const
+{
+    return m_apigatewayServiceId;
+}
+
+void ApplicationForPage::SetApigatewayServiceId(const string& _apigatewayServiceId)
+{
+    m_apigatewayServiceId = _apigatewayServiceId;
+    m_apigatewayServiceIdHasBeenSet = true;
+}
+
+bool ApplicationForPage::ApigatewayServiceIdHasBeenSet() const
+{
+    return m_apigatewayServiceIdHasBeenSet;
 }
 

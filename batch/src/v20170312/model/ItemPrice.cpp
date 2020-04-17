@@ -25,7 +25,13 @@ ItemPrice::ItemPrice() :
     m_unitPriceHasBeenSet(false),
     m_chargeUnitHasBeenSet(false),
     m_originalPriceHasBeenSet(false),
-    m_discountPriceHasBeenSet(false)
+    m_discountPriceHasBeenSet(false),
+    m_discountHasBeenSet(false),
+    m_unitPriceDiscountHasBeenSet(false),
+    m_unitPriceSecondStepHasBeenSet(false),
+    m_unitPriceDiscountSecondStepHasBeenSet(false),
+    m_unitPriceThirdStepHasBeenSet(false),
+    m_unitPriceDiscountThirdStepHasBeenSet(false)
 {
 }
 
@@ -74,6 +80,66 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
         m_discountPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("Discount") && !value["Discount"].IsNull())
+    {
+        if (!value["Discount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.Discount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_discount = value["Discount"].GetUint64();
+        m_discountHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitPriceDiscount") && !value["UnitPriceDiscount"].IsNull())
+    {
+        if (!value["UnitPriceDiscount"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscount` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitPriceDiscount = value["UnitPriceDiscount"].GetDouble();
+        m_unitPriceDiscountHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitPriceSecondStep") && !value["UnitPriceSecondStep"].IsNull())
+    {
+        if (!value["UnitPriceSecondStep"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceSecondStep` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitPriceSecondStep = value["UnitPriceSecondStep"].GetDouble();
+        m_unitPriceSecondStepHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitPriceDiscountSecondStep") && !value["UnitPriceDiscountSecondStep"].IsNull())
+    {
+        if (!value["UnitPriceDiscountSecondStep"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscountSecondStep` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitPriceDiscountSecondStep = value["UnitPriceDiscountSecondStep"].GetDouble();
+        m_unitPriceDiscountSecondStepHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitPriceThirdStep") && !value["UnitPriceThirdStep"].IsNull())
+    {
+        if (!value["UnitPriceThirdStep"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceThirdStep` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitPriceThirdStep = value["UnitPriceThirdStep"].GetDouble();
+        m_unitPriceThirdStepHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnitPriceDiscountThirdStep") && !value["UnitPriceDiscountThirdStep"].IsNull())
+    {
+        if (!value["UnitPriceDiscountThirdStep"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `ItemPrice.UnitPriceDiscountThirdStep` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitPriceDiscountThirdStep = value["UnitPriceDiscountThirdStep"].GetDouble();
+        m_unitPriceDiscountThirdStepHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +177,54 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);
+    }
+
+    if (m_discountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Discount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discount, allocator);
+    }
+
+    if (m_unitPriceDiscountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnitPriceDiscount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unitPriceDiscount, allocator);
+    }
+
+    if (m_unitPriceSecondStepHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnitPriceSecondStep";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unitPriceSecondStep, allocator);
+    }
+
+    if (m_unitPriceDiscountSecondStepHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnitPriceDiscountSecondStep";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unitPriceDiscountSecondStep, allocator);
+    }
+
+    if (m_unitPriceThirdStepHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnitPriceThirdStep";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unitPriceThirdStep, allocator);
+    }
+
+    if (m_unitPriceDiscountThirdStepHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnitPriceDiscountThirdStep";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unitPriceDiscountThirdStep, allocator);
     }
 
 }
@@ -178,5 +292,101 @@ void ItemPrice::SetDiscountPrice(const double& _discountPrice)
 bool ItemPrice::DiscountPriceHasBeenSet() const
 {
     return m_discountPriceHasBeenSet;
+}
+
+uint64_t ItemPrice::GetDiscount() const
+{
+    return m_discount;
+}
+
+void ItemPrice::SetDiscount(const uint64_t& _discount)
+{
+    m_discount = _discount;
+    m_discountHasBeenSet = true;
+}
+
+bool ItemPrice::DiscountHasBeenSet() const
+{
+    return m_discountHasBeenSet;
+}
+
+double ItemPrice::GetUnitPriceDiscount() const
+{
+    return m_unitPriceDiscount;
+}
+
+void ItemPrice::SetUnitPriceDiscount(const double& _unitPriceDiscount)
+{
+    m_unitPriceDiscount = _unitPriceDiscount;
+    m_unitPriceDiscountHasBeenSet = true;
+}
+
+bool ItemPrice::UnitPriceDiscountHasBeenSet() const
+{
+    return m_unitPriceDiscountHasBeenSet;
+}
+
+double ItemPrice::GetUnitPriceSecondStep() const
+{
+    return m_unitPriceSecondStep;
+}
+
+void ItemPrice::SetUnitPriceSecondStep(const double& _unitPriceSecondStep)
+{
+    m_unitPriceSecondStep = _unitPriceSecondStep;
+    m_unitPriceSecondStepHasBeenSet = true;
+}
+
+bool ItemPrice::UnitPriceSecondStepHasBeenSet() const
+{
+    return m_unitPriceSecondStepHasBeenSet;
+}
+
+double ItemPrice::GetUnitPriceDiscountSecondStep() const
+{
+    return m_unitPriceDiscountSecondStep;
+}
+
+void ItemPrice::SetUnitPriceDiscountSecondStep(const double& _unitPriceDiscountSecondStep)
+{
+    m_unitPriceDiscountSecondStep = _unitPriceDiscountSecondStep;
+    m_unitPriceDiscountSecondStepHasBeenSet = true;
+}
+
+bool ItemPrice::UnitPriceDiscountSecondStepHasBeenSet() const
+{
+    return m_unitPriceDiscountSecondStepHasBeenSet;
+}
+
+double ItemPrice::GetUnitPriceThirdStep() const
+{
+    return m_unitPriceThirdStep;
+}
+
+void ItemPrice::SetUnitPriceThirdStep(const double& _unitPriceThirdStep)
+{
+    m_unitPriceThirdStep = _unitPriceThirdStep;
+    m_unitPriceThirdStepHasBeenSet = true;
+}
+
+bool ItemPrice::UnitPriceThirdStepHasBeenSet() const
+{
+    return m_unitPriceThirdStepHasBeenSet;
+}
+
+double ItemPrice::GetUnitPriceDiscountThirdStep() const
+{
+    return m_unitPriceDiscountThirdStep;
+}
+
+void ItemPrice::SetUnitPriceDiscountThirdStep(const double& _unitPriceDiscountThirdStep)
+{
+    m_unitPriceDiscountThirdStep = _unitPriceDiscountThirdStep;
+    m_unitPriceDiscountThirdStepHasBeenSet = true;
+}
+
+bool ItemPrice::UnitPriceDiscountThirdStepHasBeenSet() const
+{
+    return m_unitPriceDiscountThirdStepHasBeenSet;
 }
 

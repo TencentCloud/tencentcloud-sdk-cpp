@@ -34,7 +34,8 @@ SellConfig::SellConfig() :
     m_qpsHasBeenSet(false),
     m_iopsHasBeenSet(false),
     m_infoHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome SellConfig::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SellConfig.Tag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tag = value["Tag"].GetInt64();
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +293,14 @@ void SellConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tag, allocator);
     }
 
 }
@@ -493,5 +512,21 @@ void SellConfig::SetStatus(const int64_t& _status)
 bool SellConfig::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t SellConfig::GetTag() const
+{
+    return m_tag;
+}
+
+void SellConfig::SetTag(const int64_t& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool SellConfig::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

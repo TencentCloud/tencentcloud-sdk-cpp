@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ckafka/v20190819/model/DescribeGroup.h>
+#include <tencentcloud/ckafka/v20190819/model/GroupResponse.h>
 
 
 namespace TencentCloud
@@ -47,7 +47,7 @@ namespace TencentCloud
                      * 获取返回结果集列表
                      * @return Result 返回结果集列表
                      */
-                    std::vector<DescribeGroup> GetResult() const;
+                    GroupResponse GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -60,7 +60,7 @@ namespace TencentCloud
                     /**
                      * 返回结果集列表
                      */
-                    std::vector<DescribeGroup> m_result;
+                    GroupResponse m_result;
                     bool m_resultHasBeenSet;
 
                 };

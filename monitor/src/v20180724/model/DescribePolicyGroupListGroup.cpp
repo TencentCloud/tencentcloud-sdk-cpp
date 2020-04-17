@@ -40,7 +40,8 @@ DescribePolicyGroupListGroup::DescribePolicyGroupListGroup() :
     m_eventConditionsHasBeenSet(false),
     m_receiverInfosHasBeenSet(false),
     m_conditionsTempHasBeenSet(false),
-    m_instanceGroupHasBeenSet(false)
+    m_instanceGroupHasBeenSet(false),
+    m_isUnionRuleHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,16 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const Value &value
         m_instanceGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("IsUnionRule") && !value["IsUnionRule"].IsNull())
+    {
+        if (!value["IsUnionRule"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUnionRule = value["IsUnionRule"].GetInt64();
+        m_isUnionRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -463,6 +474,14 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_instanceGroup.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isUnionRuleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsUnionRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUnionRule, allocator);
     }
 
 }
@@ -770,5 +789,21 @@ void DescribePolicyGroupListGroup::SetInstanceGroup(const DescribePolicyGroupLis
 bool DescribePolicyGroupListGroup::InstanceGroupHasBeenSet() const
 {
     return m_instanceGroupHasBeenSet;
+}
+
+int64_t DescribePolicyGroupListGroup::GetIsUnionRule() const
+{
+    return m_isUnionRule;
+}
+
+void DescribePolicyGroupListGroup::SetIsUnionRule(const int64_t& _isUnionRule)
+{
+    m_isUnionRule = _isUnionRule;
+    m_isUnionRuleHasBeenSet = true;
+}
+
+bool DescribePolicyGroupListGroup::IsUnionRuleHasBeenSet() const
+{
+    return m_isUnionRuleHasBeenSet;
 }
 

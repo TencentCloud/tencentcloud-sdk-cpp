@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteUserRequest::DeleteUserRequest() :
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DeleteUserRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Force";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_force, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DeleteUserRequest::SetName(const string& _name)
 bool DeleteUserRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t DeleteUserRequest::GetForce() const
+{
+    return m_force;
+}
+
+void DeleteUserRequest::SetForce(const uint64_t& _force)
+{
+    m_force = _force;
+    m_forceHasBeenSet = true;
+}
+
+bool DeleteUserRequest::ForceHasBeenSet() const
+{
+    return m_forceHasBeenSet;
 }
 
 

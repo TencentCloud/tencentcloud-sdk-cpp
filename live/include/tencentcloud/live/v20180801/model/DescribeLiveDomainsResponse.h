@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总记录数
-                     * @return AllCount 总记录数
+                     * 获取总记录数。
+                     * @return AllCount 总记录数。
                      */
                     uint64_t GetAllCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool AllCountHasBeenSet() const;
 
                     /**
-                     * 获取域名详细信息列表
-                     * @return DomainList 域名详细信息列表
+                     * 获取域名详细信息列表。
+                     * @return DomainList 域名详细信息列表。
                      */
                     std::vector<DomainInfo> GetDomainList() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总记录数
+                     * 总记录数。
                      */
                     uint64_t m_allCount;
                     bool m_allCountHasBeenSet;
 
                     /**
-                     * 域名详细信息列表
+                     * 域名详细信息列表。
                      */
                     std::vector<DomainInfo> m_domainList;
                     bool m_domainListHasBeenSet;

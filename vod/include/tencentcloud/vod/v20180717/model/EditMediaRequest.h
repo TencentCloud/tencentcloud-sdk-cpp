@@ -180,6 +180,24 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
+                     * 获取任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @return TasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     */
+                    int64_t GetTasksPriority() const;
+
+                    /**
+                     * 设置任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @param TasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     */
+                    void SetTasksPriority(const int64_t& _tasksPriority);
+
+                    /**
+                     * 判断参数 TasksPriority 是否已赋值
+                     * @return TasksPriority 是否已赋值
+                     */
+                    bool TasksPriorityHasBeenSet() const;
+
+                    /**
                      * 获取用于任务去重的识别码，如果一天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于任务去重的识别码，如果一天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      */
@@ -260,6 +278,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     */
+                    int64_t m_tasksPriority;
+                    bool m_tasksPriorityHasBeenSet;
 
                     /**
                      * 用于任务去重的识别码，如果一天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。

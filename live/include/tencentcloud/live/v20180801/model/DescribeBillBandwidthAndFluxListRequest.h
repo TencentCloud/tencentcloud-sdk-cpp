@@ -99,24 +99,28 @@ namespace TencentCloud
                     /**
                      * 获取可选值：
 Mainland：查询国内数据，
-Oversea：则查询国外数据。
+Oversea：则查询国外数据，
 默认：查询国内+国外的数据。
+注：LEB（快直播）只支持国内+国外数据查询。
                      * @return MainlandOrOversea 可选值：
 Mainland：查询国内数据，
-Oversea：则查询国外数据。
+Oversea：则查询国外数据，
 默认：查询国内+国外的数据。
+注：LEB（快直播）只支持国内+国外数据查询。
                      */
                     std::string GetMainlandOrOversea() const;
 
                     /**
                      * 设置可选值：
 Mainland：查询国内数据，
-Oversea：则查询国外数据。
+Oversea：则查询国外数据，
 默认：查询国内+国外的数据。
+注：LEB（快直播）只支持国内+国外数据查询。
                      * @param MainlandOrOversea 可选值：
 Mainland：查询国内数据，
-Oversea：则查询国外数据。
+Oversea：则查询国外数据，
 默认：查询国内+国外的数据。
+注：LEB（快直播）只支持国内+国外数据查询。
                      */
                     void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
 
@@ -160,6 +164,24 @@ Oversea：则查询国外数据。
                      */
                     bool GranularityHasBeenSet() const;
 
+                    /**
+                     * 获取服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     * @return ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     */
+                    std::string GetServiceName() const;
+
+                    /**
+                     * 设置服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     * @param ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     */
+                    void SetServiceName(const std::string& _serviceName);
+
+                    /**
+                     * 判断参数 ServiceName 是否已赋值
+                     * @return ServiceName 是否已赋值
+                     */
+                    bool ServiceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,8 +205,9 @@ Oversea：则查询国外数据。
                     /**
                      * 可选值：
 Mainland：查询国内数据，
-Oversea：则查询国外数据。
+Oversea：则查询国外数据，
 默认：查询国内+国外的数据。
+注：LEB（快直播）只支持国内+国外数据查询。
                      */
                     std::string m_mainlandOrOversea;
                     bool m_mainlandOrOverseaHasBeenSet;
@@ -198,6 +221,12 @@ Oversea：则查询国外数据。
                      */
                     uint64_t m_granularity;
                     bool m_granularityHasBeenSet;
+
+                    /**
+                     * 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，默认值是LVB。
+                     */
+                    std::string m_serviceName;
+                    bool m_serviceNameHasBeenSet;
 
                 };
             }

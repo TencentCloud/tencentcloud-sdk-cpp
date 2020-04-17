@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份文件名
-                     * @return Name 备份文件名
+                     * 获取binlog 日志备份文件名
+                     * @return Name binlog 日志备份文件名
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置备份文件名
-                     * @param Name 备份文件名
+                     * 设置binlog 日志备份文件名
+                     * @param Name binlog 日志备份文件名
                      */
                     void SetName(const std::string& _name);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取备份快照时间，时间格式：2016-03-17 02:10:37
-                     * @return Date 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 获取文件存储时间，时间格式：2016-03-17 02:10:37
+                     * @return Date 文件存储时间，时间格式：2016-03-17 02:10:37
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置备份快照时间，时间格式：2016-03-17 02:10:37
-                     * @param Date 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 设置文件存储时间，时间格式：2016-03-17 02:10:37
+                     * @param Date 文件存储时间，时间格式：2016-03-17 02:10:37
                      */
                     void SetDate(const std::string& _date);
 
@@ -154,10 +154,46 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取binlog 文件起始时间
+                     * @return BinlogStartTime binlog 文件起始时间
+                     */
+                    std::string GetBinlogStartTime() const;
+
+                    /**
+                     * 设置binlog 文件起始时间
+                     * @param BinlogStartTime binlog 文件起始时间
+                     */
+                    void SetBinlogStartTime(const std::string& _binlogStartTime);
+
+                    /**
+                     * 判断参数 BinlogStartTime 是否已赋值
+                     * @return BinlogStartTime 是否已赋值
+                     */
+                    bool BinlogStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取binlog 文件截止时间
+                     * @return BinlogFinishTime binlog 文件截止时间
+                     */
+                    std::string GetBinlogFinishTime() const;
+
+                    /**
+                     * 设置binlog 文件截止时间
+                     * @param BinlogFinishTime binlog 文件截止时间
+                     */
+                    void SetBinlogFinishTime(const std::string& _binlogFinishTime);
+
+                    /**
+                     * 判断参数 BinlogFinishTime 是否已赋值
+                     * @return BinlogFinishTime 是否已赋值
+                     */
+                    bool BinlogFinishTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份文件名
+                     * binlog 日志备份文件名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -169,7 +205,7 @@ namespace TencentCloud
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 文件存储时间，时间格式：2016-03-17 02:10:37
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
@@ -191,6 +227,18 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * binlog 文件起始时间
+                     */
+                    std::string m_binlogStartTime;
+                    bool m_binlogStartTimeHasBeenSet;
+
+                    /**
+                     * binlog 文件截止时间
+                     */
+                    std::string m_binlogFinishTime;
+                    bool m_binlogFinishTimeHasBeenSet;
 
                 };
             }

@@ -40,6 +40,49 @@ TbpClient::TbpClient(const Credential &credential, const string &region, const C
 }
 
 
+TbpClient::CreateBotOutcome TbpClient::CreateBot(const CreateBotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBotResponse rsp = CreateBotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBotOutcome(rsp);
+        else
+            return CreateBotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBotOutcome(outcome.GetError());
+    }
+}
+
+void TbpClient::CreateBotAsync(const CreateBotRequest& request, const CreateBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbpClient::CreateBotOutcomeCallable TbpClient::CreateBotCallable(const CreateBotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBotOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbpClient::ResetOutcome TbpClient::Reset(const ResetRequest &request)
 {
     auto outcome = MakeRequest(request, "Reset");

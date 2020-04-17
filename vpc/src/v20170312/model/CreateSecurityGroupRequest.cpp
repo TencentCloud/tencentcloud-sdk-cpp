@@ -26,7 +26,8 @@ using namespace std;
 CreateSecurityGroupRequest::CreateSecurityGroupRequest() :
     m_groupNameHasBeenSet(false),
     m_groupDescriptionHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,21 @@ string CreateSecurityGroupRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -115,6 +131,22 @@ void CreateSecurityGroupRequest::SetProjectId(const string& _projectId)
 bool CreateSecurityGroupRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<Tag> CreateSecurityGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateSecurityGroupRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateSecurityGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

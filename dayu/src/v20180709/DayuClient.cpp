@@ -83,6 +83,49 @@ DayuClient::CreateBasicDDoSAlarmThresholdOutcomeCallable DayuClient::CreateBasic
     return task->get_future();
 }
 
+DayuClient::CreateBoundIPOutcome DayuClient::CreateBoundIP(const CreateBoundIPRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBoundIP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBoundIPResponse rsp = CreateBoundIPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBoundIPOutcome(rsp);
+        else
+            return CreateBoundIPOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBoundIPOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateBoundIPAsync(const CreateBoundIPRequest& request, const CreateBoundIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBoundIP(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateBoundIPOutcomeCallable DayuClient::CreateBoundIPCallable(const CreateBoundIPRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBoundIPOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBoundIP(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::CreateCCFrequencyRulesOutcome DayuClient::CreateCCFrequencyRules(const CreateCCFrequencyRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCCFrequencyRules");
@@ -384,6 +427,49 @@ DayuClient::CreateL4RulesOutcomeCallable DayuClient::CreateL4RulesCallable(const
     return task->get_future();
 }
 
+DayuClient::CreateL7CCRuleOutcome DayuClient::CreateL7CCRule(const CreateL7CCRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateL7CCRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateL7CCRuleResponse rsp = CreateL7CCRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateL7CCRuleOutcome(rsp);
+        else
+            return CreateL7CCRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateL7CCRuleOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateL7CCRuleAsync(const CreateL7CCRuleRequest& request, const CreateL7CCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateL7CCRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateL7CCRuleOutcomeCallable DayuClient::CreateL7CCRuleCallable(const CreateL7CCRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateL7CCRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateL7CCRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::CreateL7HealthConfigOutcome DayuClient::CreateL7HealthConfig(const CreateL7HealthConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateL7HealthConfig");
@@ -549,6 +635,49 @@ DayuClient::CreateL7RulesUploadOutcomeCallable DayuClient::CreateL7RulesUploadCa
         [this, request]()
         {
             return this->CreateL7RulesUpload(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::CreateNetReturnOutcome DayuClient::CreateNetReturn(const CreateNetReturnRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetReturn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetReturnResponse rsp = CreateNetReturnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetReturnOutcome(rsp);
+        else
+            return CreateNetReturnOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetReturnOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateNetReturnAsync(const CreateNetReturnRequest& request, const CreateNetReturnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetReturn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateNetReturnOutcomeCallable DayuClient::CreateNetReturnCallable(const CreateNetReturnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetReturnOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetReturn(request);
         }
     );
 
@@ -893,6 +1022,49 @@ DayuClient::DescribeActionLogOutcomeCallable DayuClient::DescribeActionLogCallab
         [this, request]()
         {
             return this->DescribeActionLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeBGPIPL7RuleMaxCntOutcome DayuClient::DescribeBGPIPL7RuleMaxCnt(const DescribeBGPIPL7RuleMaxCntRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBGPIPL7RuleMaxCnt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBGPIPL7RuleMaxCntResponse rsp = DescribeBGPIPL7RuleMaxCntResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBGPIPL7RuleMaxCntOutcome(rsp);
+        else
+            return DescribeBGPIPL7RuleMaxCntOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBGPIPL7RuleMaxCntOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeBGPIPL7RuleMaxCntAsync(const DescribeBGPIPL7RuleMaxCntRequest& request, const DescribeBGPIPL7RuleMaxCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBGPIPL7RuleMaxCnt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeBGPIPL7RuleMaxCntOutcomeCallable DayuClient::DescribeBGPIPL7RuleMaxCntCallable(const DescribeBGPIPL7RuleMaxCntRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBGPIPL7RuleMaxCntOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBGPIPL7RuleMaxCnt(request);
         }
     );
 
@@ -2577,6 +2749,49 @@ DayuClient::DescribeRuleSetsOutcomeCallable DayuClient::DescribeRuleSetsCallable
     return task->get_future();
 }
 
+DayuClient::DescribeSchedulingDomainListOutcome DayuClient::DescribeSchedulingDomainList(const DescribeSchedulingDomainListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSchedulingDomainList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSchedulingDomainListResponse rsp = DescribeSchedulingDomainListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSchedulingDomainListOutcome(rsp);
+        else
+            return DescribeSchedulingDomainListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSchedulingDomainListOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeSchedulingDomainListAsync(const DescribeSchedulingDomainListRequest& request, const DescribeSchedulingDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSchedulingDomainList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeSchedulingDomainListOutcomeCallable DayuClient::DescribeSchedulingDomainListCallable(const DescribeSchedulingDomainListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSchedulingDomainListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSchedulingDomainList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::DescribeSecIndexOutcome DayuClient::DescribeSecIndex(const DescribeSecIndexRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecIndex");
@@ -3946,6 +4161,49 @@ DayuClient::ModifyL7RulesOutcomeCallable DayuClient::ModifyL7RulesCallable(const
         [this, request]()
         {
             return this->ModifyL7Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::ModifyNetReturnSwitchOutcome DayuClient::ModifyNetReturnSwitch(const ModifyNetReturnSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNetReturnSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNetReturnSwitchResponse rsp = ModifyNetReturnSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNetReturnSwitchOutcome(rsp);
+        else
+            return ModifyNetReturnSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNetReturnSwitchOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::ModifyNetReturnSwitchAsync(const ModifyNetReturnSwitchRequest& request, const ModifyNetReturnSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNetReturnSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::ModifyNetReturnSwitchOutcomeCallable DayuClient::ModifyNetReturnSwitchCallable(const ModifyNetReturnSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNetReturnSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNetReturnSwitch(request);
         }
     );
 

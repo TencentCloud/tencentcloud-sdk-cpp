@@ -486,6 +486,50 @@ namespace TencentCloud
                      */
                     bool MicroserviceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationType ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationType() const;
+
+                    /**
+                     * 设置ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationType ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationType(const std::string& _applicationType);
+
+                    /**
+                     * 判断参数 ApplicationType 是否已赋值
+                     * @return ApplicationType 是否已赋值
+                     */
+                    bool ApplicationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取GroupResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupResourceType GroupResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupResourceType() const;
+
+                    /**
+                     * 设置GroupResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupResourceType GroupResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupResourceType(const std::string& _groupResourceType);
+
+                    /**
+                     * 判断参数 GroupResourceType 是否已赋值
+                     * @return GroupResourceType 是否已赋值
+                     */
+                    bool GroupResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,6 +671,20 @@ namespace TencentCloud
                      */
                     std::string m_microserviceType;
                     bool m_microserviceTypeHasBeenSet;
+
+                    /**
+                     * ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationType;
+                    bool m_applicationTypeHasBeenSet;
+
+                    /**
+                     * GroupResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupResourceType;
+                    bool m_groupResourceTypeHasBeenSet;
 
                 };
             }

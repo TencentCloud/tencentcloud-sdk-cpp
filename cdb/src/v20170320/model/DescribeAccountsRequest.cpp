@@ -26,7 +26,8 @@ using namespace std;
 DescribeAccountsRequest::DescribeAccountsRequest() :
     m_instanceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_accountRegexpHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeAccountsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_accountRegexpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccountRegexp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_accountRegexp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeAccountsRequest::SetLimit(const int64_t& _limit)
 bool DescribeAccountsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeAccountsRequest::GetAccountRegexp() const
+{
+    return m_accountRegexp;
+}
+
+void DescribeAccountsRequest::SetAccountRegexp(const string& _accountRegexp)
+{
+    m_accountRegexp = _accountRegexp;
+    m_accountRegexpHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::AccountRegexpHasBeenSet() const
+{
+    return m_accountRegexpHasBeenSet;
 }
 
 

@@ -210,6 +210,24 @@ namespace TencentCloud
                      */
                     bool NextActionHasBeenSet() const;
 
+                    /**
+                     * 获取用户添加到计算环境中的计算节点个数
+                     * @return AttachedComputeNodeCount 用户添加到计算环境中的计算节点个数
+                     */
+                    uint64_t GetAttachedComputeNodeCount() const;
+
+                    /**
+                     * 设置用户添加到计算环境中的计算节点个数
+                     * @param AttachedComputeNodeCount 用户添加到计算环境中的计算节点个数
+                     */
+                    void SetAttachedComputeNodeCount(const uint64_t& _attachedComputeNodeCount);
+
+                    /**
+                     * 判断参数 AttachedComputeNodeCount 是否已赋值
+                     * @return AttachedComputeNodeCount 是否已赋值
+                     */
+                    bool AttachedComputeNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +283,12 @@ namespace TencentCloud
                      */
                     std::string m_nextAction;
                     bool m_nextActionHasBeenSet;
+
+                    /**
+                     * 用户添加到计算环境中的计算节点个数
+                     */
+                    uint64_t m_attachedComputeNodeCount;
+                    bool m_attachedComputeNodeCountHasBeenSet;
 
                 };
             }

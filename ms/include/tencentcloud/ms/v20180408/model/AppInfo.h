@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool AppSizeHasBeenSet() const;
 
                     /**
-                     * 获取app的文件名，指定后加固后的文件名是{FileName}_legu.apk
-                     * @return FileName app的文件名，指定后加固后的文件名是{FileName}_legu.apk
+                     * 获取app的文件名
+                     * @return FileName app的文件名
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置app的文件名，指定后加固后的文件名是{FileName}_legu.apk
-                     * @param FileName app的文件名，指定后加固后的文件名是{FileName}_legu.apk
+                     * 设置app的文件名
+                     * @param FileName app的文件名
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_appSizeHasBeenSet;
 
                     /**
-                     * app的文件名，指定后加固后的文件名是{FileName}_legu.apk
+                     * app的文件名
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;

@@ -708,6 +708,72 @@ namespace TencentCloud
                      */
                     bool MemRequestHasBeenSet() const;
 
+                    /**
+                     * 获取子网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetId 子网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubnetId 子网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupResourceType 部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupResourceType() const;
+
+                    /**
+                     * 设置部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupResourceType 部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupResourceType(const std::string& _groupResourceType);
+
+                    /**
+                     * 判断参数 GroupResourceType 是否已赋值
+                     * @return GroupResourceType 是否已赋值
+                     */
+                    bool GroupResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取部署组实例个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceCount 部署组实例个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInstanceCount() const;
+
+                    /**
+                     * 设置部署组实例个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceCount 部署组实例个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceCount(const uint64_t& _instanceCount);
+
+                    /**
+                     * 判断参数 InstanceCount 是否已赋值
+                     * @return InstanceCount 是否已赋值
+                     */
+                    bool InstanceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -919,6 +985,27 @@ namespace TencentCloud
                      */
                     std::string m_memRequest;
                     bool m_memRequestHasBeenSet;
+
+                    /**
+                     * 子网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupResourceType;
+                    bool m_groupResourceTypeHasBeenSet;
+
+                    /**
+                     * 部署组实例个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_instanceCount;
+                    bool m_instanceCountHasBeenSet;
 
                 };
             }

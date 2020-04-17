@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool NeedRecordNumHasBeenSet() const;
 
+                    /**
+                     * 获取查询交易类型。如 按量计费日结，按量计费小时结 等
+                     * @return ActionType 查询交易类型。如 按量计费日结，按量计费小时结 等
+                     */
+                    std::string GetActionType() const;
+
+                    /**
+                     * 设置查询交易类型。如 按量计费日结，按量计费小时结 等
+                     * @param ActionType 查询交易类型。如 按量计费日结，按量计费小时结 等
+                     */
+                    void SetActionType(const std::string& _actionType);
+
+                    /**
+                     * 判断参数 ActionType 是否已赋值
+                     * @return ActionType 是否已赋值
+                     */
+                    bool ActionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +186,12 @@ namespace TencentCloud
                      */
                     int64_t m_needRecordNum;
                     bool m_needRecordNumHasBeenSet;
+
+                    /**
+                     * 查询交易类型。如 按量计费日结，按量计费小时结 等
+                     */
+                    std::string m_actionType;
+                    bool m_actionTypeHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ CCN::CCN() :
     m_stateHasBeenSet(false),
     m_qosLevelHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_bandwidthLimitTypeHasBeenSet(false)
+    m_bandwidthLimitTypeHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,26 @@ CoreInternalOutcome CCN::Deserialize(const Value &value)
         m_bandwidthLimitTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `CCN.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +227,21 @@ void CCN::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "BandwidthLimitType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_bandwidthLimitType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -353,5 +389,21 @@ void CCN::SetBandwidthLimitType(const string& _bandwidthLimitType)
 bool CCN::BandwidthLimitTypeHasBeenSet() const
 {
     return m_bandwidthLimitTypeHasBeenSet;
+}
+
+vector<Tag> CCN::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void CCN::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool CCN::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

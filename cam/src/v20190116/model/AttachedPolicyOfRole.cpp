@@ -27,7 +27,9 @@ AttachedPolicyOfRole::AttachedPolicyOfRole() :
     m_addTimeHasBeenSet(false),
     m_policyTypeHasBeenSet(false),
     m_createModeHasBeenSet(false),
-    m_deactivedHasBeenSet(false)
+    m_deactivedHasBeenSet(false),
+    m_deactivedDetailHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,29 @@ CoreInternalOutcome AttachedPolicyOfRole::Deserialize(const Value &value)
         m_deactivedHasBeenSet = true;
     }
 
+    if (value.HasMember("DeactivedDetail") && !value["DeactivedDetail"].IsNull())
+    {
+        if (!value["DeactivedDetail"].IsArray())
+            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.DeactivedDetail` is not array type"));
+
+        const Value &tmpValue = value["DeactivedDetail"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_deactivedDetail.push_back((*itr).GetString());
+        }
+        m_deactivedDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AttachedPolicyOfRole.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +174,27 @@ void AttachedPolicyOfRole::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "Deactived";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deactived, allocator);
+    }
+
+    if (m_deactivedDetailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeactivedDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_deactivedDetail.begin(); itr != m_deactivedDetail.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +294,37 @@ void AttachedPolicyOfRole::SetDeactived(const uint64_t& _deactived)
 bool AttachedPolicyOfRole::DeactivedHasBeenSet() const
 {
     return m_deactivedHasBeenSet;
+}
+
+vector<string> AttachedPolicyOfRole::GetDeactivedDetail() const
+{
+    return m_deactivedDetail;
+}
+
+void AttachedPolicyOfRole::SetDeactivedDetail(const vector<string>& _deactivedDetail)
+{
+    m_deactivedDetail = _deactivedDetail;
+    m_deactivedDetailHasBeenSet = true;
+}
+
+bool AttachedPolicyOfRole::DeactivedDetailHasBeenSet() const
+{
+    return m_deactivedDetailHasBeenSet;
+}
+
+string AttachedPolicyOfRole::GetDescription() const
+{
+    return m_description;
+}
+
+void AttachedPolicyOfRole::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool AttachedPolicyOfRole::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

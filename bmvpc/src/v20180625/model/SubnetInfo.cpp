@@ -39,7 +39,11 @@ SubnetInfo::SubnetInfo() :
     m_availableIpNumHasBeenSet(false),
     m_totalIpNumHasBeenSet(false),
     m_subnetCreateTimeHasBeenSet(false),
-    m_isSmartNicHasBeenSet(false)
+    m_isSmartNicHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_vpcZoneIdHasBeenSet(false),
+    m_vpcZoneHasBeenSet(false),
+    m_broadcastFlagHasBeenSet(false)
 {
 }
 
@@ -231,6 +235,46 @@ CoreInternalOutcome SubnetInfo::Deserialize(const Value &value)
         m_isSmartNicHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubnetInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcZoneId") && !value["VpcZoneId"].IsNull())
+    {
+        if (!value["VpcZoneId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SubnetInfo.VpcZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcZoneId = value["VpcZoneId"].GetUint64();
+        m_vpcZoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcZone") && !value["VpcZone"].IsNull())
+    {
+        if (!value["VpcZone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SubnetInfo.VpcZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcZone = string(value["VpcZone"].GetString());
+        m_vpcZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("BroadcastFlag") && !value["BroadcastFlag"].IsNull())
+    {
+        if (!value["BroadcastFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SubnetInfo.BroadcastFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_broadcastFlag = value["BroadcastFlag"].GetUint64();
+        m_broadcastFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -385,6 +429,38 @@ void SubnetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "IsSmartNic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSmartNic, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcZoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vpcZoneId, allocator);
+    }
+
+    if (m_vpcZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_broadcastFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BroadcastFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_broadcastFlag, allocator);
     }
 
 }
@@ -676,5 +752,69 @@ void SubnetInfo::SetIsSmartNic(const uint64_t& _isSmartNic)
 bool SubnetInfo::IsSmartNicHasBeenSet() const
 {
     return m_isSmartNicHasBeenSet;
+}
+
+string SubnetInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void SubnetInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool SubnetInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+uint64_t SubnetInfo::GetVpcZoneId() const
+{
+    return m_vpcZoneId;
+}
+
+void SubnetInfo::SetVpcZoneId(const uint64_t& _vpcZoneId)
+{
+    m_vpcZoneId = _vpcZoneId;
+    m_vpcZoneIdHasBeenSet = true;
+}
+
+bool SubnetInfo::VpcZoneIdHasBeenSet() const
+{
+    return m_vpcZoneIdHasBeenSet;
+}
+
+string SubnetInfo::GetVpcZone() const
+{
+    return m_vpcZone;
+}
+
+void SubnetInfo::SetVpcZone(const string& _vpcZone)
+{
+    m_vpcZone = _vpcZone;
+    m_vpcZoneHasBeenSet = true;
+}
+
+bool SubnetInfo::VpcZoneHasBeenSet() const
+{
+    return m_vpcZoneHasBeenSet;
+}
+
+uint64_t SubnetInfo::GetBroadcastFlag() const
+{
+    return m_broadcastFlag;
+}
+
+void SubnetInfo::SetBroadcastFlag(const uint64_t& _broadcastFlag)
+{
+    m_broadcastFlag = _broadcastFlag;
+    m_broadcastFlagHasBeenSet = true;
+}
+
+bool SubnetInfo::BroadcastFlagHasBeenSet() const
+{
+    return m_broadcastFlagHasBeenSet;
 }
 

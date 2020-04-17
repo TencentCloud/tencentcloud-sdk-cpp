@@ -44,13 +44,17 @@ namespace TencentCloud
 
                     /**
                      * 获取分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。
                      * @return Zones 分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。
                      * @param Zones 分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
@@ -344,6 +348,7 @@ namespace TencentCloud
 
                     /**
                      * 分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。
+注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;

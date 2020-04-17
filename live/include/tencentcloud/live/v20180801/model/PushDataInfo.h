@@ -306,6 +306,60 @@ namespace TencentCloud
                      */
                     bool AsampleRateHasBeenSet() const;
 
+                    /**
+                     * 获取metadata中的音频码率，单位是Kbps。
+                     * @return MetaAudioSpeed metadata中的音频码率，单位是Kbps。
+                     */
+                    uint64_t GetMetaAudioSpeed() const;
+
+                    /**
+                     * 设置metadata中的音频码率，单位是Kbps。
+                     * @param MetaAudioSpeed metadata中的音频码率，单位是Kbps。
+                     */
+                    void SetMetaAudioSpeed(const uint64_t& _metaAudioSpeed);
+
+                    /**
+                     * 判断参数 MetaAudioSpeed 是否已赋值
+                     * @return MetaAudioSpeed 是否已赋值
+                     */
+                    bool MetaAudioSpeedHasBeenSet() const;
+
+                    /**
+                     * 获取metadata中的视频码率，单位是Kbps。
+                     * @return MetaVideoSpeed metadata中的视频码率，单位是Kbps。
+                     */
+                    uint64_t GetMetaVideoSpeed() const;
+
+                    /**
+                     * 设置metadata中的视频码率，单位是Kbps。
+                     * @param MetaVideoSpeed metadata中的视频码率，单位是Kbps。
+                     */
+                    void SetMetaVideoSpeed(const uint64_t& _metaVideoSpeed);
+
+                    /**
+                     * 判断参数 MetaVideoSpeed 是否已赋值
+                     * @return MetaVideoSpeed 是否已赋值
+                     */
+                    bool MetaVideoSpeedHasBeenSet() const;
+
+                    /**
+                     * 获取metadata中的帧率。
+                     * @return MetaFps metadata中的帧率。
+                     */
+                    uint64_t GetMetaFps() const;
+
+                    /**
+                     * 设置metadata中的帧率。
+                     * @param MetaFps metadata中的帧率。
+                     */
+                    void SetMetaFps(const uint64_t& _metaFps);
+
+                    /**
+                     * 判断参数 MetaFps 是否已赋值
+                     * @return MetaFps 是否已赋值
+                     */
+                    bool MetaFpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -393,6 +447,24 @@ namespace TencentCloud
                      */
                     uint64_t m_asampleRate;
                     bool m_asampleRateHasBeenSet;
+
+                    /**
+                     * metadata中的音频码率，单位是Kbps。
+                     */
+                    uint64_t m_metaAudioSpeed;
+                    bool m_metaAudioSpeedHasBeenSet;
+
+                    /**
+                     * metadata中的视频码率，单位是Kbps。
+                     */
+                    uint64_t m_metaVideoSpeed;
+                    bool m_metaVideoSpeedHasBeenSet;
+
+                    /**
+                     * metadata中的帧率。
+                     */
+                    uint64_t m_metaFps;
+                    bool m_metaFpsHasBeenSet;
 
                 };
             }

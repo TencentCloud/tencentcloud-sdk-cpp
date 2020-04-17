@@ -25,7 +25,8 @@ ServiceTemplateGroup::ServiceTemplateGroup() :
     m_serviceTemplateGroupIdHasBeenSet(false),
     m_serviceTemplateGroupNameHasBeenSet(false),
     m_serviceTemplateIdSetHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_serviceTemplateSetHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,26 @@ CoreInternalOutcome ServiceTemplateGroup::Deserialize(const Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceTemplateSet") && !value["ServiceTemplateSet"].IsNull())
+    {
+        if (!value["ServiceTemplateSet"].IsArray())
+            return CoreInternalOutcome(Error("response `ServiceTemplateGroup.ServiceTemplateSet` is not array type"));
+
+        const Value &tmpValue = value["ServiceTemplateSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceTemplate item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceTemplateSet.push_back(item);
+        }
+        m_serviceTemplateSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +140,21 @@ void ServiceTemplateGroup::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceTemplateSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceTemplateSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceTemplateSet.begin(); itr != m_serviceTemplateSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -186,5 +222,21 @@ void ServiceTemplateGroup::SetCreatedTime(const string& _createdTime)
 bool ServiceTemplateGroup::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+vector<ServiceTemplate> ServiceTemplateGroup::GetServiceTemplateSet() const
+{
+    return m_serviceTemplateSet;
+}
+
+void ServiceTemplateGroup::SetServiceTemplateSet(const vector<ServiceTemplate>& _serviceTemplateSet)
+{
+    m_serviceTemplateSet = _serviceTemplateSet;
+    m_serviceTemplateSetHasBeenSet = true;
+}
+
+bool ServiceTemplateGroup::ServiceTemplateSetHasBeenSet() const
+{
+    return m_serviceTemplateSetHasBeenSet;
 }
 

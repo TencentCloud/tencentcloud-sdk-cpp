@@ -51,6 +51,8 @@
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversResponse.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h>
+#include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h>
+#include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectRequest.h>
@@ -111,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PutMonitorDataResponse> PutMonitorDataOutcome;
                 typedef std::future<PutMonitorDataOutcome> PutMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::PutMonitorDataRequest&, PutMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutMonitorDataAsyncHandler;
+                typedef Outcome<Error, Model::SendCustomAlarmMsgResponse> SendCustomAlarmMsgOutcome;
+                typedef std::future<SendCustomAlarmMsgOutcome> SendCustomAlarmMsgOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::SendCustomAlarmMsgRequest&, SendCustomAlarmMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendCustomAlarmMsgAsyncHandler;
                 typedef Outcome<Error, Model::UnBindingAllPolicyObjectResponse> UnBindingAllPolicyObjectOutcome;
                 typedef std::future<UnBindingAllPolicyObjectOutcome> UnBindingAllPolicyObjectOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UnBindingAllPolicyObjectRequest&, UnBindingAllPolicyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindingAllPolicyObjectAsyncHandler;
@@ -253,6 +258,15 @@ namespace TencentCloud
                 PutMonitorDataOutcome PutMonitorData(const Model::PutMonitorDataRequest &request);
                 void PutMonitorDataAsync(const Model::PutMonitorDataRequest& request, const PutMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PutMonitorDataOutcomeCallable PutMonitorDataCallable(const Model::PutMonitorDataRequest& request);
+
+                /**
+                 *发送自定义消息告警
+                 * @param req SendCustomAlarmMsgRequest
+                 * @return SendCustomAlarmMsgOutcome
+                 */
+                SendCustomAlarmMsgOutcome SendCustomAlarmMsg(const Model::SendCustomAlarmMsgRequest &request);
+                void SendCustomAlarmMsgAsync(const Model::SendCustomAlarmMsgRequest& request, const SendCustomAlarmMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendCustomAlarmMsgOutcomeCallable SendCustomAlarmMsgCallable(const Model::SendCustomAlarmMsgRequest& request);
 
                 /**
                  *删除全部的关联对象

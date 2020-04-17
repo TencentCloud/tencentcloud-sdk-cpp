@@ -27,7 +27,8 @@ CreateRoleRequest::CreateRoleRequest() :
     m_roleNameHasBeenSet(false),
     m_policyDocumentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_consoleLoginHasBeenSet(false)
+    m_consoleLoginHasBeenSet(false),
+    m_sessionDurationHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CreateRoleRequest::ToJsonString() const
         string key = "ConsoleLogin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_consoleLogin, allocator);
+    }
+
+    if (m_sessionDurationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sessionDuration, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CreateRoleRequest::SetConsoleLogin(const uint64_t& _consoleLogin)
 bool CreateRoleRequest::ConsoleLoginHasBeenSet() const
 {
     return m_consoleLoginHasBeenSet;
+}
+
+uint64_t CreateRoleRequest::GetSessionDuration() const
+{
+    return m_sessionDuration;
+}
+
+void CreateRoleRequest::SetSessionDuration(const uint64_t& _sessionDuration)
+{
+    m_sessionDuration = _sessionDuration;
+    m_sessionDurationHasBeenSet = true;
+}
+
+bool CreateRoleRequest::SessionDurationHasBeenSet() const
+{
+    return m_sessionDurationHasBeenSet;
 }
 
 

@@ -35,6 +35,8 @@ DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_cardCodeHasBeenSet(false),
+    m_archivesCodeHasBeenSet(false),
+    m_recordHasBeenSet(false),
     m_recognizeWarnCodeHasBeenSet(false),
     m_recognizeWarnMsgHasBeenSet(false)
 {
@@ -174,6 +176,26 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         m_cardCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ArchivesCode") && !rsp["ArchivesCode"].IsNull())
+    {
+        if (!rsp["ArchivesCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ArchivesCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archivesCode = string(rsp["ArchivesCode"].GetString());
+        m_archivesCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Record") && !rsp["Record"].IsNull())
+    {
+        if (!rsp["Record"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Record` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_record = string(rsp["Record"].GetString());
+        m_recordHasBeenSet = true;
+    }
+
     if (rsp.HasMember("RecognizeWarnCode") && !rsp["RecognizeWarnCode"].IsNull())
     {
         if (!rsp["RecognizeWarnCode"].IsArray())
@@ -303,6 +325,26 @@ string DriverLicenseOCRResponse::GetCardCode() const
 bool DriverLicenseOCRResponse::CardCodeHasBeenSet() const
 {
     return m_cardCodeHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetArchivesCode() const
+{
+    return m_archivesCode;
+}
+
+bool DriverLicenseOCRResponse::ArchivesCodeHasBeenSet() const
+{
+    return m_archivesCodeHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetRecord() const
+{
+    return m_record;
+}
+
+bool DriverLicenseOCRResponse::RecordHasBeenSet() const
+{
+    return m_recordHasBeenSet;
 }
 
 vector<int64_t> DriverLicenseOCRResponse::GetRecognizeWarnCode() const

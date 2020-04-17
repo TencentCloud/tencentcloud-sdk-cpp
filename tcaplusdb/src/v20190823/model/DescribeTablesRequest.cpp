@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeTablesRequest::DescribeTablesRequest() :
-    m_applicationIdHasBeenSet(false),
-    m_logicZoneIdsHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_tableGroupIdsHasBeenSet(false),
     m_selectedTablesHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
@@ -40,22 +40,22 @@ string DescribeTablesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_logicZoneIdsHasBeenSet)
+    if (m_tableGroupIdsHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "LogicZoneIds";
+        string key = "TableGroupIds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
-        for (auto itr = m_logicZoneIds.begin(); itr != m_logicZoneIds.end(); ++itr)
+        for (auto itr = m_tableGroupIds.begin(); itr != m_tableGroupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -115,44 +115,44 @@ string DescribeTablesRequest::ToJsonString() const
 }
 
 
-string DescribeTablesRequest::GetApplicationId() const
+string DescribeTablesRequest::GetClusterId() const
 {
-    return m_applicationId;
+    return m_clusterId;
 }
 
-void DescribeTablesRequest::SetApplicationId(const string& _applicationId)
+void DescribeTablesRequest::SetClusterId(const string& _clusterId)
 {
-    m_applicationId = _applicationId;
-    m_applicationIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool DescribeTablesRequest::ApplicationIdHasBeenSet() const
+bool DescribeTablesRequest::ClusterIdHasBeenSet() const
 {
-    return m_applicationIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
-vector<string> DescribeTablesRequest::GetLogicZoneIds() const
+vector<string> DescribeTablesRequest::GetTableGroupIds() const
 {
-    return m_logicZoneIds;
+    return m_tableGroupIds;
 }
 
-void DescribeTablesRequest::SetLogicZoneIds(const vector<string>& _logicZoneIds)
+void DescribeTablesRequest::SetTableGroupIds(const vector<string>& _tableGroupIds)
 {
-    m_logicZoneIds = _logicZoneIds;
-    m_logicZoneIdsHasBeenSet = true;
+    m_tableGroupIds = _tableGroupIds;
+    m_tableGroupIdsHasBeenSet = true;
 }
 
-bool DescribeTablesRequest::LogicZoneIdsHasBeenSet() const
+bool DescribeTablesRequest::TableGroupIdsHasBeenSet() const
 {
-    return m_logicZoneIdsHasBeenSet;
+    return m_tableGroupIdsHasBeenSet;
 }
 
-vector<SelectedTableInfo> DescribeTablesRequest::GetSelectedTables() const
+vector<SelectedTableInfoNew> DescribeTablesRequest::GetSelectedTables() const
 {
     return m_selectedTables;
 }
 
-void DescribeTablesRequest::SetSelectedTables(const vector<SelectedTableInfo>& _selectedTables)
+void DescribeTablesRequest::SetSelectedTables(const vector<SelectedTableInfoNew>& _selectedTables)
 {
     m_selectedTables = _selectedTables;
     m_selectedTablesHasBeenSet = true;

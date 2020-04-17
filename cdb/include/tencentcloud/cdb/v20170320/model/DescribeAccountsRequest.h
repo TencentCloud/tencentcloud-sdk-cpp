@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取匹配账号名的正则表达式，规则同 MySQL 官网。
+                     * @return AccountRegexp 匹配账号名的正则表达式，规则同 MySQL 官网。
+                     */
+                    std::string GetAccountRegexp() const;
+
+                    /**
+                     * 设置匹配账号名的正则表达式，规则同 MySQL 官网。
+                     * @param AccountRegexp 匹配账号名的正则表达式，规则同 MySQL 官网。
+                     */
+                    void SetAccountRegexp(const std::string& _accountRegexp);
+
+                    /**
+                     * 判断参数 AccountRegexp 是否已赋值
+                     * @return AccountRegexp 是否已赋值
+                     */
+                    bool AccountRegexpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 匹配账号名的正则表达式，规则同 MySQL 官网。
+                     */
+                    std::string m_accountRegexp;
+                    bool m_accountRegexpHasBeenSet;
 
                 };
             }

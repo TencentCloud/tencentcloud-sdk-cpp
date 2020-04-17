@@ -60,6 +60,42 @@ namespace TencentCloud
                      */
                     bool TldListHasBeenSet() const;
 
+                    /**
+                     * 获取查询购买的年份，默认会列出所有年份的价格
+                     * @return Year 查询购买的年份，默认会列出所有年份的价格
+                     */
+                    std::vector<int64_t> GetYear() const;
+
+                    /**
+                     * 设置查询购买的年份，默认会列出所有年份的价格
+                     * @param Year 查询购买的年份，默认会列出所有年份的价格
+                     */
+                    void SetYear(const std::vector<int64_t>& _year);
+
+                    /**
+                     * 判断参数 Year 是否已赋值
+                     * @return Year 是否已赋值
+                     */
+                    bool YearHasBeenSet() const;
+
+                    /**
+                     * 获取域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     * @return Operation 域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     */
+                    std::vector<std::string> GetOperation() const;
+
+                    /**
+                     * 设置域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     * @param Operation 域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     */
+                    void SetOperation(const std::vector<std::string>& _operation);
+
+                    /**
+                     * 判断参数 Operation 是否已赋值
+                     * @return Operation 是否已赋值
+                     */
+                    bool OperationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +103,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tldList;
                     bool m_tldListHasBeenSet;
+
+                    /**
+                     * 查询购买的年份，默认会列出所有年份的价格
+                     */
+                    std::vector<int64_t> m_year;
+                    bool m_yearHasBeenSet;
+
+                    /**
+                     * 域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入
+                     */
+                    std::vector<std::string> m_operation;
+                    bool m_operationHasBeenSet;
 
                 };
             }

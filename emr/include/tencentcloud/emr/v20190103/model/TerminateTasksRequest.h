@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取销毁节点所属实例ID
-                     * @return InstanceId 销毁节点所属实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置销毁节点所属实例ID
-                     * @param InstanceId 销毁节点所属实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取销毁节点ID
-                     * @return ResourceIds 销毁节点ID
+                     * 获取待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * @return ResourceIds 待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置销毁节点ID
-                     * @param ResourceIds 销毁节点ID
+                     * 设置待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * @param ResourceIds 待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 销毁节点所属实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 销毁节点ID
+                     * 待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;

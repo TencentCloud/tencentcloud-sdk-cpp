@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印图片url。
-                     * @return PictureUrl 水印图片url。
+                     * 获取水印图片 URL。
+                     * @return PictureUrl 水印图片 URL。
                      */
                     std::string GetPictureUrl() const;
 
                     /**
-                     * 设置水印图片url。
-                     * @param PictureUrl 水印图片url。
+                     * 设置水印图片 URL。
+                     * @param PictureUrl 水印图片 URL。
                      */
                     void SetPictureUrl(const std::string& _pictureUrl);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool WatermarkNameHasBeenSet() const;
 
                     /**
-                     * 获取显示位置,X轴偏移。
-                     * @return XPosition 显示位置,X轴偏移。
+                     * 获取显示位置, X轴偏移。
+                     * @return XPosition 显示位置, X轴偏移。
                      */
                     int64_t GetXPosition() const;
 
                     /**
-                     * 设置显示位置,X轴偏移。
-                     * @param XPosition 显示位置,X轴偏移。
+                     * 设置显示位置, X轴偏移。
+                     * @param XPosition 显示位置, X轴偏移。
                      */
                     void SetXPosition(const int64_t& _xPosition);
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 水印图片url。
+                     * 水印图片 URL。
                      */
                     std::string m_pictureUrl;
                     bool m_pictureUrlHasBeenSet;
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_watermarkNameHasBeenSet;
 
                     /**
-                     * 显示位置,X轴偏移。
+                     * 显示位置, X轴偏移。
                      */
                     int64_t m_xPosition;
                     bool m_xPositionHasBeenSet;

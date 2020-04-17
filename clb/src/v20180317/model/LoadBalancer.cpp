@@ -62,7 +62,10 @@ LoadBalancer::LoadBalancer() :
     m_exclusiveClusterHasBeenSet(false),
     m_iPv6ModeHasBeenSet(false),
     m_snatProHasBeenSet(false),
-    m_snatIpsHasBeenSet(false)
+    m_snatIpsHasBeenSet(false),
+    m_slaTypeHasBeenSet(false),
+    m_isBlockHasBeenSet(false),
+    m_isBlockTimeHasBeenSet(false)
 {
 }
 
@@ -559,6 +562,36 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_snatIpsHasBeenSet = true;
     }
 
+    if (value.HasMember("SlaType") && !value["SlaType"].IsNull())
+    {
+        if (!value["SlaType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.SlaType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_slaType = string(value["SlaType"].GetString());
+        m_slaTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsBlock") && !value["IsBlock"].IsNull())
+    {
+        if (!value["IsBlock"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.IsBlock` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBlock = value["IsBlock"].GetBool();
+        m_isBlockHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsBlockTime") && !value["IsBlockTime"].IsNull())
+    {
+        if (!value["IsBlockTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.IsBlockTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBlockTime = string(value["IsBlockTime"].GetString());
+        m_isBlockTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -929,6 +962,30 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_slaTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SlaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_slaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isBlockHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBlock, allocator);
+    }
+
+    if (m_isBlockTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsBlockTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_isBlockTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1588,5 +1645,53 @@ void LoadBalancer::SetSnatIps(const vector<SnatIp>& _snatIps)
 bool LoadBalancer::SnatIpsHasBeenSet() const
 {
     return m_snatIpsHasBeenSet;
+}
+
+string LoadBalancer::GetSlaType() const
+{
+    return m_slaType;
+}
+
+void LoadBalancer::SetSlaType(const string& _slaType)
+{
+    m_slaType = _slaType;
+    m_slaTypeHasBeenSet = true;
+}
+
+bool LoadBalancer::SlaTypeHasBeenSet() const
+{
+    return m_slaTypeHasBeenSet;
+}
+
+bool LoadBalancer::GetIsBlock() const
+{
+    return m_isBlock;
+}
+
+void LoadBalancer::SetIsBlock(const bool& _isBlock)
+{
+    m_isBlock = _isBlock;
+    m_isBlockHasBeenSet = true;
+}
+
+bool LoadBalancer::IsBlockHasBeenSet() const
+{
+    return m_isBlockHasBeenSet;
+}
+
+string LoadBalancer::GetIsBlockTime() const
+{
+    return m_isBlockTime;
+}
+
+void LoadBalancer::SetIsBlockTime(const string& _isBlockTime)
+{
+    m_isBlockTime = _isBlockTime;
+    m_isBlockTimeHasBeenSet = true;
+}
+
+bool LoadBalancer::IsBlockTimeHasBeenSet() const
+{
+    return m_isBlockTimeHasBeenSet;
 }
 

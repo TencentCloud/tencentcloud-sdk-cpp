@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取采样截图规格 ID，参见[采样截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 采样截图规格 ID，参见[采样截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置采样截图规格 ID，参见[采样截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Definition 采样截图规格 ID，参见[采样截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -72,11 +68,9 @@ namespace TencentCloud
                      * 获取采样方式，取值范围：
 <li>Percent：根据百分比间隔采样。</li>
 <li>Time：根据时间间隔采样。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleType 采样方式，取值范围：
 <li>Percent：根据百分比间隔采样。</li>
 <li>Time：根据时间间隔采样。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSampleType() const;
 
@@ -84,11 +78,9 @@ namespace TencentCloud
                      * 设置采样方式，取值范围：
 <li>Percent：根据百分比间隔采样。</li>
 <li>Time：根据时间间隔采样。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SampleType 采样方式，取值范围：
 <li>Percent：根据百分比间隔采样。</li>
 <li>Time：根据时间间隔采样。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSampleType(const std::string& _sampleType);
 
@@ -102,11 +94,9 @@ namespace TencentCloud
                      * 获取采样间隔
 <li>当 SampleType 为 Percent 时，该值表示多少百分比一张图。</li>
 <li>当 SampleType 为 Time 时，该值表示多少时间间隔一张图，单位秒， 第一张图均为视频首帧。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interval 采样间隔
 <li>当 SampleType 为 Percent 时，该值表示多少百分比一张图。</li>
 <li>当 SampleType 为 Time 时，该值表示多少时间间隔一张图，单位秒， 第一张图均为视频首帧。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetInterval() const;
 
@@ -114,11 +104,9 @@ namespace TencentCloud
                      * 设置采样间隔
 <li>当 SampleType 为 Percent 时，该值表示多少百分比一张图。</li>
 <li>当 SampleType 为 Time 时，该值表示多少时间间隔一张图，单位秒， 第一张图均为视频首帧。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Interval 采样间隔
 <li>当 SampleType 为 Percent 时，该值表示多少百分比一张图。</li>
 <li>当 SampleType 为 Time 时，该值表示多少时间间隔一张图，单位秒， 第一张图均为视频首帧。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInterval(const int64_t& _interval);
 
@@ -130,17 +118,13 @@ namespace TencentCloud
 
                     /**
                      * 获取生成的截图 url 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrlSet 生成的截图 url 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetImageUrlSet() const;
 
                     /**
                      * 设置生成的截图 url 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageUrlSet 生成的截图 url 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageUrlSet(const std::vector<std::string>& _imageUrlSet);
 
@@ -152,17 +136,13 @@ namespace TencentCloud
 
                     /**
                      * 获取截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetWaterMarkDefinition() const;
 
                     /**
                      * 设置截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWaterMarkDefinition(const std::vector<int64_t>& _waterMarkDefinition);
 
@@ -176,7 +156,6 @@ namespace TencentCloud
 
                     /**
                      * 采样截图规格 ID，参见[采样截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -185,7 +164,6 @@ namespace TencentCloud
                      * 采样方式，取值范围：
 <li>Percent：根据百分比间隔采样。</li>
 <li>Time：根据时间间隔采样。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sampleType;
                     bool m_sampleTypeHasBeenSet;
@@ -194,21 +172,18 @@ namespace TencentCloud
                      * 采样间隔
 <li>当 SampleType 为 Percent 时，该值表示多少百分比一张图。</li>
 <li>当 SampleType 为 Time 时，该值表示多少时间间隔一张图，单位秒， 第一张图均为视频首帧。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
                      * 生成的截图 url 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_imageUrlSet;
                     bool m_imageUrlSetHasBeenSet;
 
                     /**
                      * 截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_waterMarkDefinition;
                     bool m_waterMarkDefinitionHasBeenSet;

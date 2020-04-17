@@ -26,10 +26,9 @@ AdaptiveDynamicStreamingTemplate::AdaptiveDynamicStreamingTemplate() :
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_packageTypeHasBeenSet(false),
+    m_formatHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
-    m_videoTrackTemplateSetHasBeenSet(false),
-    m_audioTrackTemplateSetHasBeenSet(false),
+    m_streamInfosHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -82,14 +81,14 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const Value &v
         m_commentHasBeenSet = true;
     }
 
-    if (value.HasMember("PackageType") && !value["PackageType"].IsNull())
+    if (value.HasMember("Format") && !value["Format"].IsNull())
     {
-        if (!value["PackageType"].IsString())
+        if (!value["Format"].IsString())
         {
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.PackageType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_packageType = string(value["PackageType"].GetString());
-        m_packageTypeHasBeenSet = true;
+        m_format = string(value["Format"].GetString());
+        m_formatHasBeenSet = true;
     }
 
     if (value.HasMember("DrmType") && !value["DrmType"].IsNull())
@@ -102,44 +101,24 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const Value &v
         m_drmTypeHasBeenSet = true;
     }
 
-    if (value.HasMember("VideoTrackTemplateSet") && !value["VideoTrackTemplateSet"].IsNull())
+    if (value.HasMember("StreamInfos") && !value["StreamInfos"].IsNull())
     {
-        if (!value["VideoTrackTemplateSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.VideoTrackTemplateSet` is not array type"));
+        if (!value["StreamInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.StreamInfos` is not array type"));
 
-        const Value &tmpValue = value["VideoTrackTemplateSet"];
+        const Value &tmpValue = value["StreamInfos"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            VideoTrackTemplateInfo item;
+            AdaptiveStreamTemplate item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_videoTrackTemplateSet.push_back(item);
+            m_streamInfos.push_back(item);
         }
-        m_videoTrackTemplateSetHasBeenSet = true;
-    }
-
-    if (value.HasMember("AudioTrackTemplateSet") && !value["AudioTrackTemplateSet"].IsNull())
-    {
-        if (!value["AudioTrackTemplateSet"].IsArray())
-            return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplate.AudioTrackTemplateSet` is not array type"));
-
-        const Value &tmpValue = value["AudioTrackTemplateSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            AudioTrackTemplateInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_audioTrackTemplateSet.push_back(item);
-        }
-        m_audioTrackTemplateSetHasBeenSet = true;
+        m_streamInfosHasBeenSet = true;
     }
 
     if (value.HasMember("DisableHigherVideoBitrate") && !value["DisableHigherVideoBitrate"].IsNull())
@@ -221,12 +200,12 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(Value &value, Document::Allo
         value.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_packageTypeHasBeenSet)
+    if (m_formatHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "PackageType";
+        string key = "Format";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_packageType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
     if (m_drmTypeHasBeenSet)
@@ -237,30 +216,15 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(Value &value, Document::Allo
         value.AddMember(iKey, Value(m_drmType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_videoTrackTemplateSetHasBeenSet)
+    if (m_streamInfosHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "VideoTrackTemplateSet";
+        string key = "StreamInfos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_videoTrackTemplateSet.begin(); itr != m_videoTrackTemplateSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_audioTrackTemplateSetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "AudioTrackTemplateSet";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_audioTrackTemplateSet.begin(); itr != m_audioTrackTemplateSet.end(); ++itr, ++i)
+        for (auto itr = m_streamInfos.begin(); itr != m_streamInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -366,20 +330,20 @@ bool AdaptiveDynamicStreamingTemplate::CommentHasBeenSet() const
     return m_commentHasBeenSet;
 }
 
-string AdaptiveDynamicStreamingTemplate::GetPackageType() const
+string AdaptiveDynamicStreamingTemplate::GetFormat() const
 {
-    return m_packageType;
+    return m_format;
 }
 
-void AdaptiveDynamicStreamingTemplate::SetPackageType(const string& _packageType)
+void AdaptiveDynamicStreamingTemplate::SetFormat(const string& _format)
 {
-    m_packageType = _packageType;
-    m_packageTypeHasBeenSet = true;
+    m_format = _format;
+    m_formatHasBeenSet = true;
 }
 
-bool AdaptiveDynamicStreamingTemplate::PackageTypeHasBeenSet() const
+bool AdaptiveDynamicStreamingTemplate::FormatHasBeenSet() const
 {
-    return m_packageTypeHasBeenSet;
+    return m_formatHasBeenSet;
 }
 
 string AdaptiveDynamicStreamingTemplate::GetDrmType() const
@@ -398,36 +362,20 @@ bool AdaptiveDynamicStreamingTemplate::DrmTypeHasBeenSet() const
     return m_drmTypeHasBeenSet;
 }
 
-vector<VideoTrackTemplateInfo> AdaptiveDynamicStreamingTemplate::GetVideoTrackTemplateSet() const
+vector<AdaptiveStreamTemplate> AdaptiveDynamicStreamingTemplate::GetStreamInfos() const
 {
-    return m_videoTrackTemplateSet;
+    return m_streamInfos;
 }
 
-void AdaptiveDynamicStreamingTemplate::SetVideoTrackTemplateSet(const vector<VideoTrackTemplateInfo>& _videoTrackTemplateSet)
+void AdaptiveDynamicStreamingTemplate::SetStreamInfos(const vector<AdaptiveStreamTemplate>& _streamInfos)
 {
-    m_videoTrackTemplateSet = _videoTrackTemplateSet;
-    m_videoTrackTemplateSetHasBeenSet = true;
+    m_streamInfos = _streamInfos;
+    m_streamInfosHasBeenSet = true;
 }
 
-bool AdaptiveDynamicStreamingTemplate::VideoTrackTemplateSetHasBeenSet() const
+bool AdaptiveDynamicStreamingTemplate::StreamInfosHasBeenSet() const
 {
-    return m_videoTrackTemplateSetHasBeenSet;
-}
-
-vector<AudioTrackTemplateInfo> AdaptiveDynamicStreamingTemplate::GetAudioTrackTemplateSet() const
-{
-    return m_audioTrackTemplateSet;
-}
-
-void AdaptiveDynamicStreamingTemplate::SetAudioTrackTemplateSet(const vector<AudioTrackTemplateInfo>& _audioTrackTemplateSet)
-{
-    m_audioTrackTemplateSet = _audioTrackTemplateSet;
-    m_audioTrackTemplateSetHasBeenSet = true;
-}
-
-bool AdaptiveDynamicStreamingTemplate::AudioTrackTemplateSetHasBeenSet() const
-{
-    return m_audioTrackTemplateSetHasBeenSet;
+    return m_streamInfosHasBeenSet;
 }
 
 uint64_t AdaptiveDynamicStreamingTemplate::GetDisableHigherVideoBitrate() const

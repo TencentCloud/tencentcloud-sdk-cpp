@@ -29,7 +29,8 @@ OutterResource::OutterResource() :
     m_rootSizeHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome OutterResource::Deserialize(const Value &value)
         m_diskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OutterResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void OutterResource::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void OutterResource::SetDiskSize(const int64_t& _diskSize)
 bool OutterResource::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+string OutterResource::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void OutterResource::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool OutterResource::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

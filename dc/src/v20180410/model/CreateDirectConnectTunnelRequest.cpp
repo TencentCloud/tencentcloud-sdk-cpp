@@ -37,7 +37,8 @@ CreateDirectConnectTunnelRequest::CreateDirectConnectTunnelRequest() :
     m_routeFilterPrefixesHasBeenSet(false),
     m_vlanHasBeenSet(false),
     m_tencentAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false)
+    m_customerAddressHasBeenSet(false),
+    m_tencentBackupAddressHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,14 @@ string CreateDirectConnectTunnelRequest::ToJsonString() const
         string key = "CustomerAddress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_customerAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tencentBackupAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TencentBackupAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -398,6 +407,22 @@ void CreateDirectConnectTunnelRequest::SetCustomerAddress(const string& _custome
 bool CreateDirectConnectTunnelRequest::CustomerAddressHasBeenSet() const
 {
     return m_customerAddressHasBeenSet;
+}
+
+string CreateDirectConnectTunnelRequest::GetTencentBackupAddress() const
+{
+    return m_tencentBackupAddress;
+}
+
+void CreateDirectConnectTunnelRequest::SetTencentBackupAddress(const string& _tencentBackupAddress)
+{
+    m_tencentBackupAddress = _tencentBackupAddress;
+    m_tencentBackupAddressHasBeenSet = true;
+}
+
+bool CreateDirectConnectTunnelRequest::TencentBackupAddressHasBeenSet() const
+{
+    return m_tencentBackupAddressHasBeenSet;
 }
 
 

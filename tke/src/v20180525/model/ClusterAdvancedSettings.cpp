@@ -26,7 +26,9 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_asEnabledHasBeenSet(false),
     m_containerRuntimeHasBeenSet(false),
     m_nodeNameTypeHasBeenSet(false),
-    m_extraArgsHasBeenSet(false)
+    m_extraArgsHasBeenSet(false),
+    m_networkTypeHasBeenSet(false),
+    m_isNonStaticIpModeHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,26 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_extraArgsHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkType") && !value["NetworkType"].IsNull())
+    {
+        if (!value["NetworkType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkType = string(value["NetworkType"].GetString());
+        m_networkTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNonStaticIpMode") && !value["IsNonStaticIpMode"].IsNull())
+    {
+        if (!value["IsNonStaticIpMode"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.IsNonStaticIpMode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNonStaticIpMode = value["IsNonStaticIpMode"].GetBool();
+        m_isNonStaticIpModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +160,22 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_networkTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_networkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNonStaticIpModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsNonStaticIpMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNonStaticIpMode, allocator);
     }
 
 }
@@ -221,5 +259,37 @@ void ClusterAdvancedSettings::SetExtraArgs(const ClusterExtraArgs& _extraArgs)
 bool ClusterAdvancedSettings::ExtraArgsHasBeenSet() const
 {
     return m_extraArgsHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetNetworkType() const
+{
+    return m_networkType;
+}
+
+void ClusterAdvancedSettings::SetNetworkType(const string& _networkType)
+{
+    m_networkType = _networkType;
+    m_networkTypeHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::NetworkTypeHasBeenSet() const
+{
+    return m_networkTypeHasBeenSet;
+}
+
+bool ClusterAdvancedSettings::GetIsNonStaticIpMode() const
+{
+    return m_isNonStaticIpMode;
+}
+
+void ClusterAdvancedSettings::SetIsNonStaticIpMode(const bool& _isNonStaticIpMode)
+{
+    m_isNonStaticIpMode = _isNonStaticIpMode;
+    m_isNonStaticIpModeHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::IsNonStaticIpModeHasBeenSet() const
+{
+    return m_isNonStaticIpModeHasBeenSet;
 }
 

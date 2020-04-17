@@ -137,6 +137,42 @@ namespace TencentCloud
                      */
                     bool ExtraArgsHasBeenSet() const;
 
+                    /**
+                     * 获取集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     * @return NetworkType 集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     * @param NetworkType 集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。
+                     * @return IsNonStaticIpMode 集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。
+                     */
+                    bool GetIsNonStaticIpMode() const;
+
+                    /**
+                     * 设置集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。
+                     * @param IsNonStaticIpMode 集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。
+                     */
+                    void SetIsNonStaticIpMode(const bool& _isNonStaticIpMode);
+
+                    /**
+                     * 判断参数 IsNonStaticIpMode 是否已赋值
+                     * @return IsNonStaticIpMode 是否已赋值
+                     */
+                    bool IsNonStaticIpModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +204,18 @@ namespace TencentCloud
                      */
                     ClusterExtraArgs m_extraArgs;
                     bool m_extraArgsHasBeenSet;
+
+                    /**
+                     * 集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
+
+                    /**
+                     * 集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。
+                     */
+                    bool m_isNonStaticIpMode;
+                    bool m_isNonStaticIpModeHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ DescribeCaptchaResultRequest::DescribeCaptchaResultRequest() :
     m_businessIdHasBeenSet(false),
     m_sceneIdHasBeenSet(false),
     m_macAddressHasBeenSet(false),
-    m_imeiHasBeenSet(false)
+    m_imeiHasBeenSet(false),
+    m_needGetCaptchaTimeHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string DescribeCaptchaResultRequest::ToJsonString() const
         string key = "Imei";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imei.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needGetCaptchaTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedGetCaptchaTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needGetCaptchaTime, allocator);
     }
 
 
@@ -290,6 +299,22 @@ void DescribeCaptchaResultRequest::SetImei(const string& _imei)
 bool DescribeCaptchaResultRequest::ImeiHasBeenSet() const
 {
     return m_imeiHasBeenSet;
+}
+
+int64_t DescribeCaptchaResultRequest::GetNeedGetCaptchaTime() const
+{
+    return m_needGetCaptchaTime;
+}
+
+void DescribeCaptchaResultRequest::SetNeedGetCaptchaTime(const int64_t& _needGetCaptchaTime)
+{
+    m_needGetCaptchaTime = _needGetCaptchaTime;
+    m_needGetCaptchaTimeHasBeenSet = true;
+}
+
+bool DescribeCaptchaResultRequest::NeedGetCaptchaTimeHasBeenSet() const
+{
+    return m_needGetCaptchaTimeHasBeenSet;
 }
 
 

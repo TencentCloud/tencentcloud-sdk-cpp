@@ -83,6 +83,49 @@ PostgresClient::CloseDBExtranetAccessOutcomeCallable PostgresClient::CloseDBExtr
     return task->get_future();
 }
 
+PostgresClient::CloseServerlessDBExtranetAccessOutcome PostgresClient::CloseServerlessDBExtranetAccess(const CloseServerlessDBExtranetAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseServerlessDBExtranetAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseServerlessDBExtranetAccessResponse rsp = CloseServerlessDBExtranetAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseServerlessDBExtranetAccessOutcome(rsp);
+        else
+            return CloseServerlessDBExtranetAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseServerlessDBExtranetAccessOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CloseServerlessDBExtranetAccessAsync(const CloseServerlessDBExtranetAccessRequest& request, const CloseServerlessDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseServerlessDBExtranetAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CloseServerlessDBExtranetAccessOutcomeCallable PostgresClient::CloseServerlessDBExtranetAccessCallable(const CloseServerlessDBExtranetAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseServerlessDBExtranetAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseServerlessDBExtranetAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateDBInstancesOutcome PostgresClient::CreateDBInstances(const CreateDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBInstances");
@@ -119,6 +162,92 @@ PostgresClient::CreateDBInstancesOutcomeCallable PostgresClient::CreateDBInstanc
         [this, request]()
         {
             return this->CreateDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::CreateServerlessDBInstanceOutcome PostgresClient::CreateServerlessDBInstance(const CreateServerlessDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateServerlessDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServerlessDBInstanceResponse rsp = CreateServerlessDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServerlessDBInstanceOutcome(rsp);
+        else
+            return CreateServerlessDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateServerlessDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateServerlessDBInstanceAsync(const CreateServerlessDBInstanceRequest& request, const CreateServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateServerlessDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateServerlessDBInstanceOutcomeCallable PostgresClient::CreateServerlessDBInstanceCallable(const CreateServerlessDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateServerlessDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateServerlessDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DeleteServerlessDBInstanceOutcome PostgresClient::DeleteServerlessDBInstance(const DeleteServerlessDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteServerlessDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteServerlessDBInstanceResponse rsp = DeleteServerlessDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteServerlessDBInstanceOutcome(rsp);
+        else
+            return DeleteServerlessDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteServerlessDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteServerlessDBInstanceAsync(const DeleteServerlessDBInstanceRequest& request, const DeleteServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteServerlessDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteServerlessDBInstanceOutcomeCallable PostgresClient::DeleteServerlessDBInstanceCallable(const DeleteServerlessDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteServerlessDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteServerlessDBInstance(request);
         }
     );
 
@@ -427,6 +556,49 @@ PostgresClient::DescribeDBXlogsOutcomeCallable PostgresClient::DescribeDBXlogsCa
     return task->get_future();
 }
 
+PostgresClient::DescribeDatabasesOutcome PostgresClient::DescribeDatabases(const DescribeDatabasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabasesResponse rsp = DescribeDatabasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabasesOutcome(rsp);
+        else
+            return DescribeDatabasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabasesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDatabasesAsync(const DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatabases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDatabasesOutcomeCallable PostgresClient::DescribeDatabasesCallable(const DescribeDatabasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatabasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatabases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeOrdersOutcome PostgresClient::DescribeOrders(const DescribeOrdersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrders");
@@ -556,6 +728,49 @@ PostgresClient::DescribeRegionsOutcomeCallable PostgresClient::DescribeRegionsCa
     return task->get_future();
 }
 
+PostgresClient::DescribeServerlessDBInstancesOutcome PostgresClient::DescribeServerlessDBInstances(const DescribeServerlessDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerlessDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerlessDBInstancesResponse rsp = DescribeServerlessDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerlessDBInstancesOutcome(rsp);
+        else
+            return DescribeServerlessDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerlessDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeServerlessDBInstancesAsync(const DescribeServerlessDBInstancesRequest& request, const DescribeServerlessDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerlessDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeServerlessDBInstancesOutcomeCallable PostgresClient::DescribeServerlessDBInstancesCallable(const DescribeServerlessDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerlessDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerlessDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeZonesOutcome PostgresClient::DescribeZones(const DescribeZonesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZones");
@@ -592,6 +807,49 @@ PostgresClient::DescribeZonesOutcomeCallable PostgresClient::DescribeZonesCallab
         [this, request]()
         {
             return this->DescribeZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DestroyDBInstanceOutcome PostgresClient::DestroyDBInstance(const DestroyDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyDBInstanceResponse rsp = DestroyDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyDBInstanceOutcome(rsp);
+        else
+            return DestroyDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DestroyDBInstanceAsync(const DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DestroyDBInstanceOutcomeCallable PostgresClient::DestroyDBInstanceCallable(const DestroyDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyDBInstance(request);
         }
     );
 
@@ -936,6 +1194,49 @@ PostgresClient::OpenDBExtranetAccessOutcomeCallable PostgresClient::OpenDBExtran
         [this, request]()
         {
             return this->OpenDBExtranetAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::OpenServerlessDBExtranetAccessOutcome PostgresClient::OpenServerlessDBExtranetAccess(const OpenServerlessDBExtranetAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenServerlessDBExtranetAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenServerlessDBExtranetAccessResponse rsp = OpenServerlessDBExtranetAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenServerlessDBExtranetAccessOutcome(rsp);
+        else
+            return OpenServerlessDBExtranetAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenServerlessDBExtranetAccessOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::OpenServerlessDBExtranetAccessAsync(const OpenServerlessDBExtranetAccessRequest& request, const OpenServerlessDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenServerlessDBExtranetAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::OpenServerlessDBExtranetAccessOutcomeCallable PostgresClient::OpenServerlessDBExtranetAccessCallable(const OpenServerlessDBExtranetAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenServerlessDBExtranetAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenServerlessDBExtranetAccess(request);
         }
     );
 

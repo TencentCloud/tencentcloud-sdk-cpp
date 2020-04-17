@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性字段名称
+                     * 获取属性字段名称，对应数据模板中功能属性的标识符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FieldName 属性字段名称
+                     * @return FieldName 属性字段名称，对应数据模板中功能属性的标识符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFieldName() const;
@@ -102,7 +102,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性字段名称
+                     * 属性字段名称，对应数据模板中功能属性的标识符
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fieldName;

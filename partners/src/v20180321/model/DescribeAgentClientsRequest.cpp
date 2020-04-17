@@ -29,7 +29,9 @@ DescribeAgentClientsRequest::DescribeAgentClientsRequest() :
     m_clientFlagHasBeenSet(false),
     m_orderDirectionHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_salesUinHasBeenSet(false),
+    m_salesNameHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string DescribeAgentClientsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_salesUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_salesUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_salesName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +208,38 @@ void DescribeAgentClientsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeAgentClientsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeAgentClientsRequest::GetSalesUin() const
+{
+    return m_salesUin;
+}
+
+void DescribeAgentClientsRequest::SetSalesUin(const string& _salesUin)
+{
+    m_salesUin = _salesUin;
+    m_salesUinHasBeenSet = true;
+}
+
+bool DescribeAgentClientsRequest::SalesUinHasBeenSet() const
+{
+    return m_salesUinHasBeenSet;
+}
+
+string DescribeAgentClientsRequest::GetSalesName() const
+{
+    return m_salesName;
+}
+
+void DescribeAgentClientsRequest::SetSalesName(const string& _salesName)
+{
+    m_salesName = _salesName;
+    m_salesNameHasBeenSet = true;
+}
+
+bool DescribeAgentClientsRequest::SalesNameHasBeenSet() const
+{
+    return m_salesNameHasBeenSet;
 }
 
 

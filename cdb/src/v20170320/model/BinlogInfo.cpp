@@ -27,7 +27,9 @@ BinlogInfo::BinlogInfo() :
     m_dateHasBeenSet(false),
     m_intranetUrlHasBeenSet(false),
     m_internetUrlHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_binlogStartTimeHasBeenSet(false),
+    m_binlogFinishTimeHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,26 @@ CoreInternalOutcome BinlogInfo::Deserialize(const Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("BinlogStartTime") && !value["BinlogStartTime"].IsNull())
+    {
+        if (!value["BinlogStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BinlogInfo.BinlogStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_binlogStartTime = string(value["BinlogStartTime"].GetString());
+        m_binlogStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BinlogFinishTime") && !value["BinlogFinishTime"].IsNull())
+    {
+        if (!value["BinlogFinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BinlogInfo.BinlogFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_binlogFinishTime = string(value["BinlogFinishTime"].GetString());
+        m_binlogFinishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +171,22 @@ void BinlogInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogStartTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BinlogStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_binlogStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogFinishTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BinlogFinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_binlogFinishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +286,37 @@ void BinlogInfo::SetType(const string& _type)
 bool BinlogInfo::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string BinlogInfo::GetBinlogStartTime() const
+{
+    return m_binlogStartTime;
+}
+
+void BinlogInfo::SetBinlogStartTime(const string& _binlogStartTime)
+{
+    m_binlogStartTime = _binlogStartTime;
+    m_binlogStartTimeHasBeenSet = true;
+}
+
+bool BinlogInfo::BinlogStartTimeHasBeenSet() const
+{
+    return m_binlogStartTimeHasBeenSet;
+}
+
+string BinlogInfo::GetBinlogFinishTime() const
+{
+    return m_binlogFinishTime;
+}
+
+void BinlogInfo::SetBinlogFinishTime(const string& _binlogFinishTime)
+{
+    m_binlogFinishTime = _binlogFinishTime;
+    m_binlogFinishTimeHasBeenSet = true;
+}
+
+bool BinlogInfo::BinlogFinishTimeHasBeenSet() const
+{
+    return m_binlogFinishTimeHasBeenSet;
 }
 

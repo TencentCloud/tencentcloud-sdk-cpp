@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dc/v20180410/model/BgpPeer.h>
 #include <tencentcloud/dc/v20180410/model/RouteFilterPrefix.h>
+#include <tencentcloud/dc/v20180410/model/Tag.h>
 
 
 namespace TencentCloud
@@ -37,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 专线通道信息列表
+                * 专用通道信息列表
                 */
                 class DirectConnectTunnel : public AbstractModel
                 {
@@ -49,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专线通道ID
-                     * @return DirectConnectTunnelId 专线通道ID
+                     * 获取专用通道ID
+                     * @return DirectConnectTunnelId 专用通道ID
                      */
                     std::string GetDirectConnectTunnelId() const;
 
                     /**
-                     * 设置专线通道ID
-                     * @param DirectConnectTunnelId 专线通道ID
+                     * 设置专用通道ID
+                     * @param DirectConnectTunnelId 专用通道ID
                      */
                     void SetDirectConnectTunnelId(const std::string& _directConnectTunnelId);
 
@@ -85,7 +86,7 @@ namespace TencentCloud
                     bool DirectConnectIdHasBeenSet() const;
 
                     /**
-                     * 获取专线通道状态
+                     * 获取专用通道状态
 AVAILABLE:就绪或者已连接
 PENDING:申请中
 ALLOCATING:配置中
@@ -95,7 +96,7 @@ DELETING:删除中
 DELETED:删除完成
 COMFIRMING:待接受
 REJECTED:拒绝
-                     * @return State 专线通道状态
+                     * @return State 专用通道状态
 AVAILABLE:就绪或者已连接
 PENDING:申请中
 ALLOCATING:配置中
@@ -109,7 +110,7 @@ REJECTED:拒绝
                     std::string GetState() const;
 
                     /**
-                     * 设置专线通道状态
+                     * 设置专用通道状态
 AVAILABLE:就绪或者已连接
 PENDING:申请中
 ALLOCATING:配置中
@@ -119,7 +120,7 @@ DELETING:删除中
 DELETED:删除完成
 COMFIRMING:待接受
 REJECTED:拒绝
-                     * @param State 专线通道状态
+                     * @param State 专用通道状态
 AVAILABLE:就绪或者已连接
 PENDING:申请中
 ALLOCATING:配置中
@@ -157,14 +158,14 @@ REJECTED:拒绝
                     bool DirectConnectOwnerAccountHasBeenSet() const;
 
                     /**
-                     * 获取专线通道的拥有者，开发商账号 ID
-                     * @return OwnerAccount 专线通道的拥有者，开发商账号 ID
+                     * 获取专用通道的拥有者，开发商账号 ID
+                     * @return OwnerAccount 专用通道的拥有者，开发商账号 ID
                      */
                     std::string GetOwnerAccount() const;
 
                     /**
-                     * 设置专线通道的拥有者，开发商账号 ID
-                     * @param OwnerAccount 专线通道的拥有者，开发商账号 ID
+                     * 设置专用通道的拥有者，开发商账号 ID
+                     * @param OwnerAccount 专用通道的拥有者，开发商账号 ID
                      */
                     void SetOwnerAccount(const std::string& _ownerAccount);
 
@@ -197,14 +198,14 @@ REJECTED:拒绝
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取VPC地域
-                     * @return NetworkRegion VPC地域
+                     * 获取VPC地域对应的网络名，如ap-guangzhou
+                     * @return NetworkRegion VPC地域对应的网络名，如ap-guangzhou
                      */
                     std::string GetNetworkRegion() const;
 
                     /**
-                     * 设置VPC地域
-                     * @param NetworkRegion VPC地域
+                     * 设置VPC地域对应的网络名，如ap-guangzhou
+                     * @param NetworkRegion VPC地域对应的网络名，如ap-guangzhou
                      */
                     void SetNetworkRegion(const std::string& _networkRegion);
 
@@ -305,14 +306,14 @@ REJECTED:拒绝
                     bool RouteFilterPrefixesHasBeenSet() const;
 
                     /**
-                     * 获取专线通道的Vlan
-                     * @return Vlan 专线通道的Vlan
+                     * 获取专用通道的Vlan
+                     * @return Vlan 专用通道的Vlan
                      */
                     int64_t GetVlan() const;
 
                     /**
-                     * 设置专线通道的Vlan
-                     * @param Vlan 专线通道的Vlan
+                     * 设置专用通道的Vlan
+                     * @param Vlan 专用通道的Vlan
                      */
                     void SetVlan(const int64_t& _vlan);
 
@@ -359,14 +360,14 @@ REJECTED:拒绝
                     bool CustomerAddressHasBeenSet() const;
 
                     /**
-                     * 获取专线通道名称
-                     * @return DirectConnectTunnelName 专线通道名称
+                     * 获取专用通道名称
+                     * @return DirectConnectTunnelName 专用通道名称
                      */
                     std::string GetDirectConnectTunnelName() const;
 
                     /**
-                     * 设置专线通道名称
-                     * @param DirectConnectTunnelName 专线通道名称
+                     * 设置专用通道名称
+                     * @param DirectConnectTunnelName 专用通道名称
                      */
                     void SetDirectConnectTunnelName(const std::string& _directConnectTunnelName);
 
@@ -377,14 +378,14 @@ REJECTED:拒绝
                     bool DirectConnectTunnelNameHasBeenSet() const;
 
                     /**
-                     * 获取专线通道创建时间
-                     * @return CreatedTime 专线通道创建时间
+                     * 获取专用通道创建时间
+                     * @return CreatedTime 专用通道创建时间
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置专线通道创建时间
-                     * @param CreatedTime 专线通道创建时间
+                     * 设置专用通道创建时间
+                     * @param CreatedTime 专用通道创建时间
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
@@ -395,14 +396,14 @@ REJECTED:拒绝
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取专线通道带宽值
-                     * @return Bandwidth 专线通道带宽值
+                     * 获取专用通道带宽值
+                     * @return Bandwidth 专用通道带宽值
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置专线通道带宽值
-                     * @param Bandwidth 专线通道带宽值
+                     * 设置专用通道带宽值
+                     * @param Bandwidth 专用通道带宽值
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
 
@@ -412,10 +413,226 @@ REJECTED:拒绝
                      */
                     bool BandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取专用通道标签值
+                     * @return TagSet 专用通道标签值
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置专用通道标签值
+                     * @param TagSet 专用通道标签值
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
+                    /**
+                     * 获取关联的网络自定义探测ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetDetectId 关联的网络自定义探测ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNetDetectId() const;
+
+                    /**
+                     * 设置关联的网络自定义探测ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetDetectId 关联的网络自定义探测ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetDetectId(const std::string& _netDetectId);
+
+                    /**
+                     * 判断参数 NetDetectId 是否已赋值
+                     * @return NetDetectId 是否已赋值
+                     */
+                    bool NetDetectIdHasBeenSet() const;
+
+                    /**
+                     * 获取BGP community开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableBGPCommunity BGP community开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableBGPCommunity() const;
+
+                    /**
+                     * 设置BGP community开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableBGPCommunity BGP community开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableBGPCommunity(const bool& _enableBGPCommunity);
+
+                    /**
+                     * 判断参数 EnableBGPCommunity 是否已赋值
+                     * @return EnableBGPCommunity 是否已赋值
+                     */
+                    bool EnableBGPCommunityHasBeenSet() const;
+
+                    /**
+                     * 获取是否为Nat通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NatType 是否为Nat通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNatType() const;
+
+                    /**
+                     * 设置是否为Nat通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NatType 是否为Nat通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNatType(const int64_t& _natType);
+
+                    /**
+                     * 判断参数 NatType 是否已赋值
+                     * @return NatType 是否已赋值
+                     */
+                    bool NatTypeHasBeenSet() const;
+
+                    /**
+                     * 获取VPC地域简码，如gz、cd
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcRegion VPC地域简码，如gz、cd
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcRegion() const;
+
+                    /**
+                     * 设置VPC地域简码，如gz、cd
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcRegion VPC地域简码，如gz、cd
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcRegion(const std::string& _vpcRegion);
+
+                    /**
+                     * 判断参数 VpcRegion 是否已赋值
+                     * @return VpcRegion 是否已赋值
+                     */
+                    bool VpcRegionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启BFD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BfdEnable 是否开启BFD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBfdEnable() const;
+
+                    /**
+                     * 设置是否开启BFD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BfdEnable 是否开启BFD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBfdEnable(const int64_t& _bfdEnable);
+
+                    /**
+                     * 判断参数 BfdEnable 是否已赋值
+                     * @return BfdEnable 是否已赋值
+                     */
+                    bool BfdEnableHasBeenSet() const;
+
+                    /**
+                     * 获取专用通道接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessPointType 专用通道接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAccessPointType() const;
+
+                    /**
+                     * 设置专用通道接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccessPointType 专用通道接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccessPointType(const std::string& _accessPointType);
+
+                    /**
+                     * 判断参数 AccessPointType 是否已赋值
+                     * @return AccessPointType 是否已赋值
+                     */
+                    bool AccessPointTypeHasBeenSet() const;
+
+                    /**
+                     * 获取专线网关名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DirectConnectGatewayName 专线网关名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDirectConnectGatewayName() const;
+
+                    /**
+                     * 设置专线网关名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DirectConnectGatewayName 专线网关名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDirectConnectGatewayName(const std::string& _directConnectGatewayName);
+
+                    /**
+                     * 判断参数 DirectConnectGatewayName 是否已赋值
+                     * @return DirectConnectGatewayName 是否已赋值
+                     */
+                    bool DirectConnectGatewayNameHasBeenSet() const;
+
+                    /**
+                     * 获取VPC名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcName VPC名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcName() const;
+
+                    /**
+                     * 设置VPC名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcName VPC名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcName(const std::string& _vpcName);
+
+                    /**
+                     * 判断参数 VpcName 是否已赋值
+                     * @return VpcName 是否已赋值
+                     */
+                    bool VpcNameHasBeenSet() const;
+
+                    /**
+                     * 获取TencentBackupAddress，腾讯侧备用互联 IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTencentBackupAddress() const;
+
+                    /**
+                     * 设置TencentBackupAddress，腾讯侧备用互联 IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTencentBackupAddress(const std::string& _tencentBackupAddress);
+
+                    /**
+                     * 判断参数 TencentBackupAddress 是否已赋值
+                     * @return TencentBackupAddress 是否已赋值
+                     */
+                    bool TencentBackupAddressHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 专线通道ID
+                     * 专用通道ID
                      */
                     std::string m_directConnectTunnelId;
                     bool m_directConnectTunnelIdHasBeenSet;
@@ -427,7 +644,7 @@ REJECTED:拒绝
                     bool m_directConnectIdHasBeenSet;
 
                     /**
-                     * 专线通道状态
+                     * 专用通道状态
 AVAILABLE:就绪或者已连接
 PENDING:申请中
 ALLOCATING:配置中
@@ -448,7 +665,7 @@ REJECTED:拒绝
                     bool m_directConnectOwnerAccountHasBeenSet;
 
                     /**
-                     * 专线通道的拥有者，开发商账号 ID
+                     * 专用通道的拥有者，开发商账号 ID
                      */
                     std::string m_ownerAccount;
                     bool m_ownerAccountHasBeenSet;
@@ -461,7 +678,7 @@ REJECTED:拒绝
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * VPC地域
+                     * VPC地域对应的网络名，如ap-guangzhou
                      */
                     std::string m_networkRegion;
                     bool m_networkRegionHasBeenSet;
@@ -497,7 +714,7 @@ REJECTED:拒绝
                     bool m_routeFilterPrefixesHasBeenSet;
 
                     /**
-                     * 专线通道的Vlan
+                     * 专用通道的Vlan
                      */
                     int64_t m_vlan;
                     bool m_vlanHasBeenSet;
@@ -515,22 +732,91 @@ REJECTED:拒绝
                     bool m_customerAddressHasBeenSet;
 
                     /**
-                     * 专线通道名称
+                     * 专用通道名称
                      */
                     std::string m_directConnectTunnelName;
                     bool m_directConnectTunnelNameHasBeenSet;
 
                     /**
-                     * 专线通道创建时间
+                     * 专用通道创建时间
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 专线通道带宽值
+                     * 专用通道带宽值
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 专用通道标签值
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 关联的网络自定义探测ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_netDetectId;
+                    bool m_netDetectIdHasBeenSet;
+
+                    /**
+                     * BGP community开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableBGPCommunity;
+                    bool m_enableBGPCommunityHasBeenSet;
+
+                    /**
+                     * 是否为Nat通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_natType;
+                    bool m_natTypeHasBeenSet;
+
+                    /**
+                     * VPC地域简码，如gz、cd
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcRegion;
+                    bool m_vpcRegionHasBeenSet;
+
+                    /**
+                     * 是否开启BFD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_bfdEnable;
+                    bool m_bfdEnableHasBeenSet;
+
+                    /**
+                     * 专用通道接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessPointType;
+                    bool m_accessPointTypeHasBeenSet;
+
+                    /**
+                     * 专线网关名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_directConnectGatewayName;
+                    bool m_directConnectGatewayNameHasBeenSet;
+
+                    /**
+                     * VPC名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcName;
+                    bool m_vpcNameHasBeenSet;
+
+                    /**
+                     * TencentBackupAddress，腾讯侧备用互联 IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tencentBackupAddress;
+                    bool m_tencentBackupAddressHasBeenSet;
 
                 };
             }

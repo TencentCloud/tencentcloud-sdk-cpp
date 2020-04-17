@@ -24,6 +24,9 @@ using namespace std;
 TextData::TextData() :
     m_evilFlagHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
+    m_commonHasBeenSet(false),
+    m_iDHasBeenSet(false),
+    m_resHasBeenSet(false),
     m_keywordsHasBeenSet(false)
 {
 }
@@ -51,6 +54,57 @@ CoreInternalOutcome TextData::Deserialize(const Value &value)
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Common") && !value["Common"].IsNull())
+    {
+        if (!value["Common"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextData.Common` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_common.Deserialize(value["Common"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_commonHasBeenSet = true;
+    }
+
+    if (value.HasMember("ID") && !value["ID"].IsNull())
+    {
+        if (!value["ID"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextData.ID` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_iD.Deserialize(value["ID"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Res") && !value["Res"].IsNull())
+    {
+        if (!value["Res"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextData.Res` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_res.Deserialize(value["Res"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resHasBeenSet = true;
     }
 
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
@@ -87,6 +141,33 @@ void TextData::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
+    }
+
+    if (m_commonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Common";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_common.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_iDHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_iD.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Res";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_res.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_keywordsHasBeenSet)
@@ -135,6 +216,54 @@ void TextData::SetEvilType(const int64_t& _evilType)
 bool TextData::EvilTypeHasBeenSet() const
 {
     return m_evilTypeHasBeenSet;
+}
+
+TextOutputComm TextData::GetCommon() const
+{
+    return m_common;
+}
+
+void TextData::SetCommon(const TextOutputComm& _common)
+{
+    m_common = _common;
+    m_commonHasBeenSet = true;
+}
+
+bool TextData::CommonHasBeenSet() const
+{
+    return m_commonHasBeenSet;
+}
+
+TextOutputID TextData::GetID() const
+{
+    return m_iD;
+}
+
+void TextData::SetID(const TextOutputID& _iD)
+{
+    m_iD = _iD;
+    m_iDHasBeenSet = true;
+}
+
+bool TextData::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
+}
+
+TextOutputRes TextData::GetRes() const
+{
+    return m_res;
+}
+
+void TextData::SetRes(const TextOutputRes& _res)
+{
+    m_res = _res;
+    m_resHasBeenSet = true;
+}
+
+bool TextData::ResHasBeenSet() const
+{
+    return m_resHasBeenSet;
 }
 
 vector<string> TextData::GetKeywords() const

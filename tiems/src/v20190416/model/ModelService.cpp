@@ -46,7 +46,8 @@ ModelService::ModelService() :
     m_regionHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_gpuTypeHasBeenSet(false)
+    m_gpuTypeHasBeenSet(false),
+    m_logTopicIdHasBeenSet(false)
 {
 }
 
@@ -329,6 +330,16 @@ CoreInternalOutcome ModelService::Deserialize(const Value &value)
         m_gpuTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LogTopicId") && !value["LogTopicId"].IsNull())
+    {
+        if (!value["LogTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ModelService.LogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logTopicId = string(value["LogTopicId"].GetString());
+        m_logTopicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -543,6 +554,14 @@ void ModelService::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "GpuType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_gpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -946,5 +965,21 @@ void ModelService::SetGpuType(const string& _gpuType)
 bool ModelService::GpuTypeHasBeenSet() const
 {
     return m_gpuTypeHasBeenSet;
+}
+
+string ModelService::GetLogTopicId() const
+{
+    return m_logTopicId;
+}
+
+void ModelService::SetLogTopicId(const string& _logTopicId)
+{
+    m_logTopicId = _logTopicId;
+    m_logTopicIdHasBeenSet = true;
+}
+
+bool ModelService::LogTopicIdHasBeenSet() const
+{
+    return m_logTopicIdHasBeenSet;
 }
 

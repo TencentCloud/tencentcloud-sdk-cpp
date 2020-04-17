@@ -49,16 +49,20 @@ namespace TencentCloud
                     /**
                      * 获取类型，取值有：
 <li>PERSON：个人。</li>
+<li>TEAM：团队。</li>
                      * @return Type 类型，取值有：
 <li>PERSON：个人。</li>
+<li>TEAM：团队。</li>
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，取值有：
 <li>PERSON：个人。</li>
+<li>TEAM：团队。</li>
                      * @param Type 类型，取值有：
 <li>PERSON：个人。</li>
+<li>TEAM：团队。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -69,14 +73,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Id，当 Type=PERSON，取值为用户 Id。
-                     * @return Id Id，当 Type=PERSON，取值为用户 Id。
+                     * 获取Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。
+                     * @return Id Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Id，当 Type=PERSON，取值为用户 Id。
-                     * @param Id Id，当 Type=PERSON，取值为用户 Id。
+                     * 设置Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。
+                     * @param Id Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。
                      */
                     void SetId(const std::string& _id);
 
@@ -91,12 +95,13 @@ namespace TencentCloud
                     /**
                      * 类型，取值有：
 <li>PERSON：个人。</li>
+<li>TEAM：团队。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Id，当 Type=PERSON，取值为用户 Id。
+                     * Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

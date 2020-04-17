@@ -28,7 +28,8 @@ CreateCcnRequest::CreateCcnRequest() :
     m_ccnDescriptionHasBeenSet(false),
     m_qosLevelHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_bandwidthLimitTypeHasBeenSet(false)
+    m_bandwidthLimitTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,21 @@ string CreateCcnRequest::ToJsonString() const
         string key = "BandwidthLimitType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_bandwidthLimitType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -165,6 +181,22 @@ void CreateCcnRequest::SetBandwidthLimitType(const string& _bandwidthLimitType)
 bool CreateCcnRequest::BandwidthLimitTypeHasBeenSet() const
 {
     return m_bandwidthLimitTypeHasBeenSet;
+}
+
+vector<Tag> CreateCcnRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCcnRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCcnRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

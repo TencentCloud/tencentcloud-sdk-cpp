@@ -25,7 +25,8 @@ AddressTemplateGroup::AddressTemplateGroup() :
     m_addressTemplateGroupNameHasBeenSet(false),
     m_addressTemplateGroupIdHasBeenSet(false),
     m_addressTemplateIdSetHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_addressTemplateSetHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,26 @@ CoreInternalOutcome AddressTemplateGroup::Deserialize(const Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AddressTemplateSet") && !value["AddressTemplateSet"].IsNull())
+    {
+        if (!value["AddressTemplateSet"].IsArray())
+            return CoreInternalOutcome(Error("response `AddressTemplateGroup.AddressTemplateSet` is not array type"));
+
+        const Value &tmpValue = value["AddressTemplateSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AddressTemplateItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addressTemplateSet.push_back(item);
+        }
+        m_addressTemplateSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +140,21 @@ void AddressTemplateGroup::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressTemplateSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddressTemplateSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addressTemplateSet.begin(); itr != m_addressTemplateSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -186,5 +222,21 @@ void AddressTemplateGroup::SetCreatedTime(const string& _createdTime)
 bool AddressTemplateGroup::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+vector<AddressTemplateItem> AddressTemplateGroup::GetAddressTemplateSet() const
+{
+    return m_addressTemplateSet;
+}
+
+void AddressTemplateGroup::SetAddressTemplateSet(const vector<AddressTemplateItem>& _addressTemplateSet)
+{
+    m_addressTemplateSet = _addressTemplateSet;
+    m_addressTemplateSetHasBeenSet = true;
+}
+
+bool AddressTemplateGroup::AddressTemplateSetHasBeenSet() const
+{
+    return m_addressTemplateSetHasBeenSet;
 }
 

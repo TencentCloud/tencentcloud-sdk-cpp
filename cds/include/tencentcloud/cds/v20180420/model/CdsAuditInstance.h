@@ -244,6 +244,112 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceName 实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceName 实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取实例公网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicIp 实例公网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicIp() const;
+
+                    /**
+                     * 设置实例公网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicIp 实例公网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicIp(const std::string& _publicIp);
+
+                    /**
+                     * 判断参数 PublicIp 是否已赋值
+                     * @return PublicIp 是否已赋值
+                     */
+                    bool PublicIpHasBeenSet() const;
+
+                    /**
+                     * 获取实例私网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrivateIp 实例私网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPrivateIp() const;
+
+                    /**
+                     * 设置实例私网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PrivateIp 实例私网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrivateIp(const std::string& _privateIp);
+
+                    /**
+                     * 判断参数 PrivateIp 是否已赋值
+                     * @return PrivateIp 是否已赋值
+                     */
+                    bool PrivateIpHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型（版本）
+                     * @return InstanceType 实例类型（版本）
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型（版本）
+                     * @param InstanceType 实例类型（版本）
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pdomain 实例域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPdomain() const;
+
+                    /**
+                     * 设置实例域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Pdomain 实例域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPdomain(const std::string& _pdomain);
+
+                    /**
+                     * 判断参数 Pdomain 是否已赋值
+                     * @return Pdomain 是否已赋值
+                     */
+                    bool PdomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +417,40 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 实例公网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicIp;
+                    bool m_publicIpHasBeenSet;
+
+                    /**
+                     * 实例私网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privateIp;
+                    bool m_privateIpHasBeenSet;
+
+                    /**
+                     * 实例类型（版本）
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 实例域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pdomain;
+                    bool m_pdomainHasBeenSet;
 
                 };
             }

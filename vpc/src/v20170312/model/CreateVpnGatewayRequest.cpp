@@ -29,7 +29,8 @@ CreateVpnGatewayRequest::CreateVpnGatewayRequest() :
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string CreateVpnGatewayRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -191,6 +200,22 @@ void CreateVpnGatewayRequest::SetZone(const string& _zone)
 bool CreateVpnGatewayRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string CreateVpnGatewayRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateVpnGatewayRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateVpnGatewayRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

@@ -43,7 +43,11 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_createdPartitionsHasBeenSet(false),
     m_createdTopicsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_maxGroupNumHasBeenSet(false),
+    m_cvmHasBeenSet(false)
 {
 }
 
@@ -299,6 +303,49 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneIds") && !value["ZoneIds"].IsNull())
+    {
+        if (!value["ZoneIds"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceAttributesResponse.ZoneIds` is not array type"));
+
+        const Value &tmpValue = value["ZoneIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneIds.push_back((*itr).GetInt64());
+        }
+        m_zoneIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceAttributesResponse.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxGroupNum") && !value["MaxGroupNum"].IsNull())
+    {
+        if (!value["MaxGroupNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceAttributesResponse.MaxGroupNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxGroupNum = value["MaxGroupNum"].GetInt64();
+        m_maxGroupNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cvm") && !value["Cvm"].IsNull())
+    {
+        if (!value["Cvm"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceAttributesResponse.Cvm` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvm = value["Cvm"].GetInt64();
+        m_cvmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +542,43 @@ void InstanceAttributesResponse::ToJsonObject(Value &value, Document::AllocatorT
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxGroupNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxGroupNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxGroupNum, allocator);
+    }
+
+    if (m_cvmHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cvm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cvm, allocator);
     }
 
 }
@@ -850,5 +934,69 @@ void InstanceAttributesResponse::SetExpireTime(const uint64_t& _expireTime)
 bool InstanceAttributesResponse::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+vector<int64_t> InstanceAttributesResponse::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void InstanceAttributesResponse::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetVersion() const
+{
+    return m_version;
+}
+
+void InstanceAttributesResponse::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetMaxGroupNum() const
+{
+    return m_maxGroupNum;
+}
+
+void InstanceAttributesResponse::SetMaxGroupNum(const int64_t& _maxGroupNum)
+{
+    m_maxGroupNum = _maxGroupNum;
+    m_maxGroupNumHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::MaxGroupNumHasBeenSet() const
+{
+    return m_maxGroupNumHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetCvm() const
+{
+    return m_cvm;
+}
+
+void InstanceAttributesResponse::SetCvm(const int64_t& _cvm)
+{
+    m_cvm = _cvm;
+    m_cvmHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::CvmHasBeenSet() const
+{
+    return m_cvmHasBeenSet;
 }
 

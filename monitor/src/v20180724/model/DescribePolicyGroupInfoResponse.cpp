@@ -40,7 +40,8 @@ DescribePolicyGroupInfoResponse::DescribePolicyGroupInfoResponse() :
     m_receiverInfosHasBeenSet(false),
     m_callbackHasBeenSet(false),
     m_conditionsTempHasBeenSet(false),
-    m_canSetDefaultHasBeenSet(false)
+    m_canSetDefaultHasBeenSet(false),
+    m_isUnionRuleHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,16 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
         m_canSetDefaultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsUnionRule") && !rsp["IsUnionRule"].IsNull())
+    {
+        if (!rsp["IsUnionRule"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IsUnionRule` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUnionRule = rsp["IsUnionRule"].GetInt64();
+        m_isUnionRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -451,6 +462,16 @@ bool DescribePolicyGroupInfoResponse::GetCanSetDefault() const
 bool DescribePolicyGroupInfoResponse::CanSetDefaultHasBeenSet() const
 {
     return m_canSetDefaultHasBeenSet;
+}
+
+int64_t DescribePolicyGroupInfoResponse::GetIsUnionRule() const
+{
+    return m_isUnionRule;
+}
+
+bool DescribePolicyGroupInfoResponse::IsUnionRuleHasBeenSet() const
+{
+    return m_isUnionRuleHasBeenSet;
 }
 
 

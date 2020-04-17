@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取聚鑫分配的支付主MidasAppid
-                     * @return MidasAppId 聚鑫分配的支付主MidasAppid
+                     * 获取聚鑫分配的支付主MidasAppId
+                     * @return MidasAppId 聚鑫分配的支付主MidasAppId
                      */
                     std::string GetMidasAppId() const;
 
                     /**
-                     * 设置聚鑫分配的支付主MidasAppid
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppid
+                     * 设置聚鑫分配的支付主MidasAppId
+                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户Id，长度不小于5位， 仅支持字母和数字的组合
-                     * @return UserId 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 获取用户ID，长度不小于5位， 仅支持字母和数字的组合
+                     * @return UserId 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，长度不小于5位， 仅支持字母和数字的组合
-                     * @param UserId 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 设置用户ID，长度不小于5位， 仅支持字母和数字的组合
+                     * @param UserId 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 聚鑫分配的支付主MidasAppid
+                     * 聚鑫分配的支付主MidasAppId
                      */
                     std::string m_midasAppId;
                     bool m_midasAppIdHasBeenSet;
 
                     /**
-                     * 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

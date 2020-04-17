@@ -19,44 +19,62 @@ set(asr_public_header
   )
 
 set(asr_public_header_model
-  include/tencentcloud/asr/v20190614/model/CreateRecTaskResponse.h
-  include/tencentcloud/asr/v20190614/model/GetAsrVocabRequest.h
-  include/tencentcloud/asr/v20190614/model/Task.h
-  include/tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h
-  include/tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h
+  include/tencentcloud/asr/v20190614/model/SetVocabStateResponse.h
   include/tencentcloud/asr/v20190614/model/GetAsrVocabResponse.h
+  include/tencentcloud/asr/v20190614/model/HotWord.h
+  include/tencentcloud/asr/v20190614/model/GetAsrVocabRequest.h
+  include/tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h
+  include/tencentcloud/asr/v20190614/model/DownloadAsrVocabResponse.h
+  include/tencentcloud/asr/v20190614/model/CreateRecTaskResponse.h
+  include/tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h
+  include/tencentcloud/asr/v20190614/model/DeleteAsrVocabResponse.h
+  include/tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h
+  include/tencentcloud/asr/v20190614/model/CreateRecTaskRequest.h
+  include/tencentcloud/asr/v20190614/model/SentenceDetail.h
+  include/tencentcloud/asr/v20190614/model/DownloadAsrVocabRequest.h
+  include/tencentcloud/asr/v20190614/model/SetVocabStateRequest.h
+  include/tencentcloud/asr/v20190614/model/Vocab.h
+  include/tencentcloud/asr/v20190614/model/Task.h
   include/tencentcloud/asr/v20190614/model/TaskStatus.h
   include/tencentcloud/asr/v20190614/model/DeleteAsrVocabRequest.h
-  include/tencentcloud/asr/v20190614/model/DeleteAsrVocabResponse.h
-  include/tencentcloud/asr/v20190614/model/HotWord.h
-  include/tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h
-  include/tencentcloud/asr/v20190614/model/CreateRecTaskRequest.h
-  include/tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h
   include/tencentcloud/asr/v20190614/model/SentenceRecognitionRequest.h
-  include/tencentcloud/asr/v20190614/model/DescribeTaskStatusRequest.h
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h
+  include/tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h
+  include/tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h
+  include/tencentcloud/asr/v20190614/model/DescribeTaskStatusRequest.h
+  include/tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h
+  include/tencentcloud/asr/v20190614/model/SentenceWords.h
   )
 
 set(asr_src
   src/v20190614/AsrClient.cpp
-  src/v20190614/model/CreateRecTaskResponse.cpp
-  src/v20190614/model/GetAsrVocabRequest.cpp
-  src/v20190614/model/Task.cpp
-  src/v20190614/model/CreateAsrVocabResponse.cpp
-  src/v20190614/model/SentenceRecognitionResponse.cpp
+  src/v20190614/model/SetVocabStateResponse.cpp
   src/v20190614/model/GetAsrVocabResponse.cpp
+  src/v20190614/model/HotWord.cpp
+  src/v20190614/model/GetAsrVocabRequest.cpp
+  src/v20190614/model/DescribeTaskStatusResponse.cpp
+  src/v20190614/model/DownloadAsrVocabResponse.cpp
+  src/v20190614/model/CreateRecTaskResponse.cpp
+  src/v20190614/model/UpdateAsrVocabResponse.cpp
+  src/v20190614/model/DeleteAsrVocabResponse.cpp
+  src/v20190614/model/GetAsrVocabListRequest.cpp
+  src/v20190614/model/CreateRecTaskRequest.cpp
+  src/v20190614/model/SentenceDetail.cpp
+  src/v20190614/model/DownloadAsrVocabRequest.cpp
+  src/v20190614/model/SetVocabStateRequest.cpp
+  src/v20190614/model/Vocab.cpp
+  src/v20190614/model/Task.cpp
   src/v20190614/model/TaskStatus.cpp
   src/v20190614/model/DeleteAsrVocabRequest.cpp
-  src/v20190614/model/DeleteAsrVocabResponse.cpp
-  src/v20190614/model/HotWord.cpp
-  src/v20190614/model/UpdateAsrVocabResponse.cpp
-  src/v20190614/model/CreateRecTaskRequest.cpp
-  src/v20190614/model/DescribeTaskStatusResponse.cpp
   src/v20190614/model/SentenceRecognitionRequest.cpp
-  src/v20190614/model/DescribeTaskStatusRequest.cpp
   src/v20190614/model/CreateAsrVocabRequest.cpp
   src/v20190614/model/UpdateAsrVocabRequest.cpp
+  src/v20190614/model/CreateAsrVocabResponse.cpp
+  src/v20190614/model/SentenceRecognitionResponse.cpp
+  src/v20190614/model/DescribeTaskStatusRequest.cpp
+  src/v20190614/model/GetAsrVocabListResponse.cpp
+  src/v20190614/model/SentenceWords.cpp
   )
 
 set(asr_include

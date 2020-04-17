@@ -30,7 +30,9 @@ GetPolicyResponse::GetPolicyResponse() :
     m_typeHasBeenSet(false),
     m_addTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
+    m_policyDocumentHasBeenSet(false),
+    m_presetAliasHasBeenSet(false),
+    m_isServiceLinkedRolePolicyHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome GetPolicyResponse::Deserialize(const string &payload)
         m_policyDocumentHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PresetAlias") && !rsp["PresetAlias"].IsNull())
+    {
+        if (!rsp["PresetAlias"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PresetAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_presetAlias = string(rsp["PresetAlias"].GetString());
+        m_presetAliasHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsServiceLinkedRolePolicy") && !rsp["IsServiceLinkedRolePolicy"].IsNull())
+    {
+        if (!rsp["IsServiceLinkedRolePolicy"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `IsServiceLinkedRolePolicy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isServiceLinkedRolePolicy = rsp["IsServiceLinkedRolePolicy"].GetUint64();
+        m_isServiceLinkedRolePolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -191,6 +213,26 @@ string GetPolicyResponse::GetPolicyDocument() const
 bool GetPolicyResponse::PolicyDocumentHasBeenSet() const
 {
     return m_policyDocumentHasBeenSet;
+}
+
+string GetPolicyResponse::GetPresetAlias() const
+{
+    return m_presetAlias;
+}
+
+bool GetPolicyResponse::PresetAliasHasBeenSet() const
+{
+    return m_presetAliasHasBeenSet;
+}
+
+uint64_t GetPolicyResponse::GetIsServiceLinkedRolePolicy() const
+{
+    return m_isServiceLinkedRolePolicy;
+}
+
+bool GetPolicyResponse::IsServiceLinkedRolePolicyHasBeenSet() const
+{
+    return m_isServiceLinkedRolePolicyHasBeenSet;
 }
 
 

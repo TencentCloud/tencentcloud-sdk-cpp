@@ -289,6 +289,116 @@ namespace TencentCloud
                      */
                     bool ChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Router节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouterNodeSize Router节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRouterNodeSize() const;
+
+                    /**
+                     * 设置Router节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RouterNodeSize Router节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRouterNodeSize(const int64_t& _routerNodeSize);
+
+                    /**
+                     * 判断参数 RouterNodeSize 是否已赋值
+                     * @return RouterNodeSize 是否已赋值
+                     */
+                    bool RouterNodeSizeHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持HA
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportHA 是否支持HA
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSupportHA() const;
+
+                    /**
+                     * 设置是否支持HA
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SupportHA 是否支持HA
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSupportHA(const bool& _supportHA);
+
+                    /**
+                     * 判断参数 SupportHA 是否已赋值
+                     * @return SupportHA 是否已赋值
+                     */
+                    bool SupportHAHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持安全模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityOn 是否支持安全模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSecurityOn() const;
+
+                    /**
+                     * 设置是否支持安全模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityOn 是否支持安全模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityOn(const bool& _securityOn);
+
+                    /**
+                     * 判断参数 SecurityOn 是否已赋值
+                     * @return SecurityOn 是否已赋值
+                     */
+                    bool SecurityOnHasBeenSet() const;
+
+                    /**
+                     * 获取安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroup 安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSecurityGroup() const;
+
+                    /**
+                     * 设置安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityGroup 安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityGroup(const std::string& _securityGroup);
+
+                    /**
+                     * 判断参数 SecurityGroup 是否已赋值
+                     * @return SecurityGroup 是否已赋值
+                     */
+                    bool SecurityGroupHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启Cbs加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CbsEncrypt 是否开启Cbs加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCbsEncrypt() const;
+
+                    /**
+                     * 设置是否开启Cbs加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CbsEncrypt 是否开启Cbs加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCbsEncrypt(const int64_t& _cbsEncrypt);
+
+                    /**
+                     * 判断参数 CbsEncrypt 是否已赋值
+                     * @return CbsEncrypt 是否已赋值
+                     */
+                    bool CbsEncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +477,41 @@ namespace TencentCloud
                      */
                     int64_t m_chargeType;
                     bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * Router节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_routerNodeSize;
+                    bool m_routerNodeSizeHasBeenSet;
+
+                    /**
+                     * 是否支持HA
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_supportHA;
+                    bool m_supportHAHasBeenSet;
+
+                    /**
+                     * 是否支持安全模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_securityOn;
+                    bool m_securityOnHasBeenSet;
+
+                    /**
+                     * 安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_securityGroup;
+                    bool m_securityGroupHasBeenSet;
+
+                    /**
+                     * 是否开启Cbs加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cbsEncrypt;
+                    bool m_cbsEncryptHasBeenSet;
 
                 };
             }

@@ -27,6 +27,10 @@
 #include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeWorkersRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeWorkersResponse.h>
+#include <tencentcloud/gs/v20191118/model/DescribeWorkersInfoRequest.h>
+#include <tencentcloud/gs/v20191118/model/DescribeWorkersInfoResponse.h>
+#include <tencentcloud/gs/v20191118/model/ModifyWorkersRequest.h>
+#include <tencentcloud/gs/v20191118/model/ModifyWorkersResponse.h>
 #include <tencentcloud/gs/v20191118/model/StopGameRequest.h>
 #include <tencentcloud/gs/v20191118/model/StopGameResponse.h>
 #include <tencentcloud/gs/v20191118/model/TrylockWorkerRequest.h>
@@ -51,6 +55,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeWorkersResponse> DescribeWorkersOutcome;
                 typedef std::future<DescribeWorkersOutcome> DescribeWorkersOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeWorkersRequest&, DescribeWorkersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWorkersInfoResponse> DescribeWorkersInfoOutcome;
+                typedef std::future<DescribeWorkersInfoOutcome> DescribeWorkersInfoOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DescribeWorkersInfoRequest&, DescribeWorkersInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkersInfoAsyncHandler;
+                typedef Outcome<Error, Model::ModifyWorkersResponse> ModifyWorkersOutcome;
+                typedef std::future<ModifyWorkersOutcome> ModifyWorkersOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::ModifyWorkersRequest&, ModifyWorkersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkersAsyncHandler;
                 typedef Outcome<Error, Model::StopGameResponse> StopGameOutcome;
                 typedef std::future<StopGameOutcome> StopGameOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StopGameRequest&, StopGameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameAsyncHandler;
@@ -77,6 +87,24 @@ namespace TencentCloud
                 DescribeWorkersOutcome DescribeWorkers(const Model::DescribeWorkersRequest &request);
                 void DescribeWorkersAsync(const Model::DescribeWorkersRequest& request, const DescribeWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWorkersOutcomeCallable DescribeWorkersCallable(const Model::DescribeWorkersRequest& request);
+
+                /**
+                 *获取机器信息
+                 * @param req DescribeWorkersInfoRequest
+                 * @return DescribeWorkersInfoOutcome
+                 */
+                DescribeWorkersInfoOutcome DescribeWorkersInfo(const Model::DescribeWorkersInfoRequest &request);
+                void DescribeWorkersInfoAsync(const Model::DescribeWorkersInfoRequest& request, const DescribeWorkersInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkersInfoOutcomeCallable DescribeWorkersInfoCallable(const Model::DescribeWorkersInfoRequest& request);
+
+                /**
+                 *修改机器信息
+                 * @param req ModifyWorkersRequest
+                 * @return ModifyWorkersOutcome
+                 */
+                ModifyWorkersOutcome ModifyWorkers(const Model::ModifyWorkersRequest &request);
+                void ModifyWorkersAsync(const Model::ModifyWorkersRequest& request, const ModifyWorkersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkersOutcomeCallable ModifyWorkersCallable(const Model::ModifyWorkersRequest& request);
 
                 /**
                  *强制退出游戏

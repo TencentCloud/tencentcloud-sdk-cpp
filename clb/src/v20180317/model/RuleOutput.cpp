@@ -41,7 +41,8 @@ RuleOutput::RuleOutput() :
     m_targetGroupHasBeenSet(false),
     m_wafDomainIdHasBeenSet(false),
     m_trpcCalleeHasBeenSet(false),
-    m_trpcFuncHasBeenSet(false)
+    m_trpcFuncHasBeenSet(false),
+    m_quicStatusHasBeenSet(false)
 {
 }
 
@@ -278,6 +279,16 @@ CoreInternalOutcome RuleOutput::Deserialize(const Value &value)
         m_trpcFuncHasBeenSet = true;
     }
 
+    if (value.HasMember("QuicStatus") && !value["QuicStatus"].IsNull())
+    {
+        if (!value["QuicStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RuleOutput.QuicStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quicStatus = string(value["QuicStatus"].GetString());
+        m_quicStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -447,6 +458,14 @@ void RuleOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "TrpcFunc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_trpcFunc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quicStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "QuicStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_quicStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -770,5 +789,21 @@ void RuleOutput::SetTrpcFunc(const string& _trpcFunc)
 bool RuleOutput::TrpcFuncHasBeenSet() const
 {
     return m_trpcFuncHasBeenSet;
+}
+
+string RuleOutput::GetQuicStatus() const
+{
+    return m_quicStatus;
+}
+
+void RuleOutput::SetQuicStatus(const string& _quicStatus)
+{
+    m_quicStatus = _quicStatus;
+    m_quicStatusHasBeenSet = true;
+}
+
+bool RuleOutput::QuicStatusHasBeenSet() const
+{
+    return m_quicStatusHasBeenSet;
 }
 

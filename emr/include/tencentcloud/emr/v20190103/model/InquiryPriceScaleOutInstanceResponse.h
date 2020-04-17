@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取刊例价
+                     * 获取原价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginalCost 刊例价
+                     * @return OriginalCost 原价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginalCost() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool OriginalCostHasBeenSet() const;
 
                     /**
-                     * 获取折扣价格
+                     * 获取折扣价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiscountCost 折扣价格
+                     * @return DiscountCost 折扣价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDiscountCost() const;
@@ -72,9 +72,13 @@ namespace TencentCloud
                     bool DiscountCostHasBeenSet() const;
 
                     /**
-                     * 获取单位
+                     * 获取扩容的时间单位。取值范围：
+<li>s：表示秒。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Unit 单位
+                     * @return Unit 扩容的时间单位。取值范围：
+<li>s：表示秒。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUnit() const;
@@ -86,9 +90,9 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取询价配置
+                     * 获取询价的节点规格。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PriceSpec 询价配置
+                     * @return PriceSpec 询价的节点规格。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PriceResource GetPriceSpec() const;
@@ -102,28 +106,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刊例价
+                     * 原价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
-                     * 折扣价格
+                     * 折扣价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_discountCost;
                     bool m_discountCostHasBeenSet;
 
                     /**
-                     * 单位
+                     * 扩容的时间单位。取值范围：
+<li>s：表示秒。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * 询价配置
+                     * 询价的节点规格。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PriceResource m_priceSpec;

@@ -24,7 +24,7 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeTasksRequest::DescribeTasksRequest() :
-    m_applicationIdsHasBeenSet(false),
+    m_clusterIdsHasBeenSet(false),
     m_taskIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
@@ -39,14 +39,14 @@ string DescribeTasksRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdsHasBeenSet)
+    if (m_clusterIdsHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationIds";
+        string key = "ClusterIds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
-        for (auto itr = m_applicationIds.begin(); itr != m_applicationIds.end(); ++itr)
+        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -104,20 +104,20 @@ string DescribeTasksRequest::ToJsonString() const
 }
 
 
-vector<string> DescribeTasksRequest::GetApplicationIds() const
+vector<string> DescribeTasksRequest::GetClusterIds() const
 {
-    return m_applicationIds;
+    return m_clusterIds;
 }
 
-void DescribeTasksRequest::SetApplicationIds(const vector<string>& _applicationIds)
+void DescribeTasksRequest::SetClusterIds(const vector<string>& _clusterIds)
 {
-    m_applicationIds = _applicationIds;
-    m_applicationIdsHasBeenSet = true;
+    m_clusterIds = _clusterIds;
+    m_clusterIdsHasBeenSet = true;
 }
 
-bool DescribeTasksRequest::ApplicationIdsHasBeenSet() const
+bool DescribeTasksRequest::ClusterIdsHasBeenSet() const
 {
-    return m_applicationIdsHasBeenSet;
+    return m_clusterIdsHasBeenSet;
 }
 
 vector<string> DescribeTasksRequest::GetTaskIds() const

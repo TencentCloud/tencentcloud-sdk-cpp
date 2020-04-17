@@ -19,26 +19,36 @@ set(gs_public_header
   )
 
 set(gs_public_header_model
-  include/tencentcloud/gs/v20191118/model/DescribeWorkersResponse.h
+  include/tencentcloud/gs/v20191118/model/DescribeWorkersInfoResponse.h
+  include/tencentcloud/gs/v20191118/model/ModifyWorkersResponse.h
+  include/tencentcloud/gs/v20191118/model/StopGameResponse.h
   include/tencentcloud/gs/v20191118/model/WorkerRegionInfo.h
   include/tencentcloud/gs/v20191118/model/TrylockWorkerResponse.h
-  include/tencentcloud/gs/v20191118/model/StopGameRequest.h
-  include/tencentcloud/gs/v20191118/model/StopGameResponse.h
+  include/tencentcloud/gs/v20191118/model/DescribeWorkersResponse.h
+  include/tencentcloud/gs/v20191118/model/ModifyWorkersRequest.h
+  include/tencentcloud/gs/v20191118/model/DescribeWorkersInfoRequest.h
   include/tencentcloud/gs/v20191118/model/CreateSessionResponse.h
+  include/tencentcloud/gs/v20191118/model/StopGameRequest.h
   include/tencentcloud/gs/v20191118/model/TrylockWorkerRequest.h
+  include/tencentcloud/gs/v20191118/model/WorkerDetail.h
   include/tencentcloud/gs/v20191118/model/CreateSessionRequest.h
   include/tencentcloud/gs/v20191118/model/DescribeWorkersRequest.h
   )
 
 set(gs_src
   src/v20191118/GsClient.cpp
-  src/v20191118/model/DescribeWorkersResponse.cpp
+  src/v20191118/model/DescribeWorkersInfoResponse.cpp
+  src/v20191118/model/ModifyWorkersResponse.cpp
+  src/v20191118/model/StopGameResponse.cpp
   src/v20191118/model/WorkerRegionInfo.cpp
   src/v20191118/model/TrylockWorkerResponse.cpp
-  src/v20191118/model/StopGameRequest.cpp
-  src/v20191118/model/StopGameResponse.cpp
+  src/v20191118/model/DescribeWorkersResponse.cpp
+  src/v20191118/model/ModifyWorkersRequest.cpp
+  src/v20191118/model/DescribeWorkersInfoRequest.cpp
   src/v20191118/model/CreateSessionResponse.cpp
+  src/v20191118/model/StopGameRequest.cpp
   src/v20191118/model/TrylockWorkerRequest.cpp
+  src/v20191118/model/WorkerDetail.cpp
   src/v20191118/model/CreateSessionRequest.cpp
   src/v20191118/model/DescribeWorkersRequest.cpp
   )

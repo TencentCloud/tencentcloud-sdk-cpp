@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool CanvasHasBeenSet() const;
 
                     /**
-                     * 获取流布局参数
-                     * @return InputStreamList 流布局参数
+                     * 获取流布局参数，每路流的布局不能超出画布区域
+                     * @return InputStreamList 流布局参数，每路流的布局不能超出画布区域
                      */
                     std::vector<StreamLayout> GetInputStreamList() const;
 
                     /**
-                     * 设置流布局参数
-                     * @param InputStreamList 流布局参数
+                     * 设置流布局参数，每路流的布局不能超出画布区域
+                     * @param InputStreamList 流布局参数，每路流的布局不能超出画布区域
                      */
                     void SetInputStreamList(const std::vector<StreamLayout>& _inputStreamList);
 
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_canvasHasBeenSet;
 
                     /**
-                     * 流布局参数
+                     * 流布局参数，每路流的布局不能超出画布区域
                      */
                     std::vector<StreamLayout> m_inputStreamList;
                     bool m_inputStreamListHasBeenSet;

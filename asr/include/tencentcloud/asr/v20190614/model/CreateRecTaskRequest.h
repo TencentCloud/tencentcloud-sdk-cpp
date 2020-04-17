@@ -48,13 +48,15 @@ namespace TencentCloud
 8k_zh_s：电话 8k 中文普通话话者分离，仅用于单声道；
 16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
-16k_ca：16k 粤语。
+16k_ca：16k 粤语；
+16k_zh_video：16k 音视频领域模型。
                      * @return EngineModelType 引擎模型类型。
 8k_zh：电话 8k 中文普通话通用，可用于双声道音频的识别；
 8k_zh_s：电话 8k 中文普通话话者分离，仅用于单声道；
 16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
-16k_ca：16k 粤语。
+16k_ca：16k 粤语；
+16k_zh_video：16k 音视频领域模型。
                      */
                     std::string GetEngineModelType() const;
 
@@ -64,13 +66,15 @@ namespace TencentCloud
 8k_zh_s：电话 8k 中文普通话话者分离，仅用于单声道；
 16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
-16k_ca：16k 粤语。
+16k_ca：16k 粤语；
+16k_zh_video：16k 音视频领域模型。
                      * @param EngineModelType 引擎模型类型。
 8k_zh：电话 8k 中文普通话通用，可用于双声道音频的识别；
 8k_zh_s：电话 8k 中文普通话话者分离，仅用于单声道；
 16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
-16k_ca：16k 粤语。
+16k_ca：16k 粤语；
+16k_zh_video：16k 音视频领域模型。
                      */
                     void SetEngineModelType(const std::string& _engineModelType);
 
@@ -81,14 +85,14 @@ namespace TencentCloud
                     bool EngineModelTypeHasBeenSet() const;
 
                     /**
-                     * 获取语音声道数。1：单声道；2：双声道（仅在电话 8k 通用模型下支持）。
-                     * @return ChannelNum 语音声道数。1：单声道；2：双声道（仅在电话 8k 通用模型下支持）。
+                     * 获取语音声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模型）。
+                     * @return ChannelNum 语音声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模型）。
                      */
                     uint64_t GetChannelNum() const;
 
                     /**
-                     * 设置语音声道数。1：单声道；2：双声道（仅在电话 8k 通用模型下支持）。
-                     * @param ChannelNum 语音声道数。1：单声道；2：双声道（仅在电话 8k 通用模型下支持）。
+                     * 设置语音声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模型）。
+                     * @param ChannelNum 语音声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模型）。
                      */
                     void SetChannelNum(const uint64_t& _channelNum);
 
@@ -99,14 +103,14 @@ namespace TencentCloud
                     bool ChannelNumHasBeenSet() const;
 
                     /**
-                     * 获取识别结果文本编码方式。0：UTF-8。
-                     * @return ResTextFormat 识别结果文本编码方式。0：UTF-8。
+                     * 获取识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：仅支持16k中文引擎，含识别结果详情(词时间戳列表，一般用于生成字幕场景)。
+                     * @return ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：仅支持16k中文引擎，含识别结果详情(词时间戳列表，一般用于生成字幕场景)。
                      */
                     uint64_t GetResTextFormat() const;
 
                     /**
-                     * 设置识别结果文本编码方式。0：UTF-8。
-                     * @param ResTextFormat 识别结果文本编码方式。0：UTF-8。
+                     * 设置识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：仅支持16k中文引擎，含识别结果详情(词时间戳列表，一般用于生成字幕场景)。
+                     * @param ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：仅支持16k中文引擎，含识别结果详情(词时间戳列表，一般用于生成字幕场景)。
                      */
                     void SetResTextFormat(const uint64_t& _resTextFormat);
 
@@ -224,6 +228,42 @@ namespace TencentCloud
                      */
                     bool HotwordIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。
+                     * @return FilterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。
+                     */
+                    int64_t GetFilterDirty() const;
+
+                    /**
+                     * 设置是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。
+                     * @param FilterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。
+                     */
+                    void SetFilterDirty(const int64_t& _filterDirty);
+
+                    /**
+                     * 判断参数 FilterDirty 是否已赋值
+                     * @return FilterDirty 是否已赋值
+                     */
+                    bool FilterDirtyHasBeenSet() const;
+
+                    /**
+                     * 获取是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。
+                     * @return FilterModal 是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。
+                     */
+                    int64_t GetFilterModal() const;
+
+                    /**
+                     * 设置是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。
+                     * @param FilterModal 是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。
+                     */
+                    void SetFilterModal(const int64_t& _filterModal);
+
+                    /**
+                     * 判断参数 FilterModal 是否已赋值
+                     * @return FilterModal 是否已赋值
+                     */
+                    bool FilterModalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,19 +272,20 @@ namespace TencentCloud
 8k_zh_s：电话 8k 中文普通话话者分离，仅用于单声道；
 16k_zh：16k 中文普通话通用；
 16k_en：16k 英语；
-16k_ca：16k 粤语。
+16k_ca：16k 粤语；
+16k_zh_video：16k 音视频领域模型。
                      */
                     std::string m_engineModelType;
                     bool m_engineModelTypeHasBeenSet;
 
                     /**
-                     * 语音声道数。1：单声道；2：双声道（仅在电话 8k 通用模型下支持）。
+                     * 语音声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模型）。
                      */
                     uint64_t m_channelNum;
                     bool m_channelNumHasBeenSet;
 
                     /**
-                     * 识别结果文本编码方式。0：UTF-8。
+                     * 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：仅支持16k中文引擎，含识别结果详情(词时间戳列表，一般用于生成字幕场景)。
                      */
                     uint64_t m_resTextFormat;
                     bool m_resTextFormatHasBeenSet;
@@ -284,6 +325,18 @@ namespace TencentCloud
                      */
                     std::string m_hotwordId;
                     bool m_hotwordIdHasBeenSet;
+
+                    /**
+                     * 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。
+                     */
+                    int64_t m_filterDirty;
+                    bool m_filterDirtyHasBeenSet;
+
+                    /**
+                     * 是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。
+                     */
+                    int64_t m_filterModal;
+                    bool m_filterModalHasBeenSet;
 
                 };
             }

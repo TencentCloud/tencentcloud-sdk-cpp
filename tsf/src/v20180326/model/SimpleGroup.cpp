@@ -31,7 +31,10 @@ SimpleGroup::SimpleGroup() :
     m_clusterNameHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false)
+    m_namespaceNameHasBeenSet(false),
+    m_startupParametersHasBeenSet(false),
+    m_groupResourceTypeHasBeenSet(false),
+    m_appMicroServiceTypeHasBeenSet(false)
 {
 }
 
@@ -140,6 +143,36 @@ CoreInternalOutcome SimpleGroup::Deserialize(const Value &value)
         m_namespaceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("StartupParameters") && !value["StartupParameters"].IsNull())
+    {
+        if (!value["StartupParameters"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleGroup.StartupParameters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startupParameters = string(value["StartupParameters"].GetString());
+        m_startupParametersHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupResourceType") && !value["GroupResourceType"].IsNull())
+    {
+        if (!value["GroupResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleGroup.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupResourceType = string(value["GroupResourceType"].GetString());
+        m_groupResourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppMicroServiceType") && !value["AppMicroServiceType"].IsNull())
+    {
+        if (!value["AppMicroServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleGroup.AppMicroServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appMicroServiceType = string(value["AppMicroServiceType"].GetString());
+        m_appMicroServiceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +258,30 @@ void SimpleGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startupParametersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartupParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startupParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_groupResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appMicroServiceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppMicroServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_appMicroServiceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +445,53 @@ void SimpleGroup::SetNamespaceName(const string& _namespaceName)
 bool SimpleGroup::NamespaceNameHasBeenSet() const
 {
     return m_namespaceNameHasBeenSet;
+}
+
+string SimpleGroup::GetStartupParameters() const
+{
+    return m_startupParameters;
+}
+
+void SimpleGroup::SetStartupParameters(const string& _startupParameters)
+{
+    m_startupParameters = _startupParameters;
+    m_startupParametersHasBeenSet = true;
+}
+
+bool SimpleGroup::StartupParametersHasBeenSet() const
+{
+    return m_startupParametersHasBeenSet;
+}
+
+string SimpleGroup::GetGroupResourceType() const
+{
+    return m_groupResourceType;
+}
+
+void SimpleGroup::SetGroupResourceType(const string& _groupResourceType)
+{
+    m_groupResourceType = _groupResourceType;
+    m_groupResourceTypeHasBeenSet = true;
+}
+
+bool SimpleGroup::GroupResourceTypeHasBeenSet() const
+{
+    return m_groupResourceTypeHasBeenSet;
+}
+
+string SimpleGroup::GetAppMicroServiceType() const
+{
+    return m_appMicroServiceType;
+}
+
+void SimpleGroup::SetAppMicroServiceType(const string& _appMicroServiceType)
+{
+    m_appMicroServiceType = _appMicroServiceType;
+    m_appMicroServiceTypeHasBeenSet = true;
+}
+
+bool SimpleGroup::AppMicroServiceTypeHasBeenSet() const
+{
+    return m_appMicroServiceTypeHasBeenSet;
 }
 

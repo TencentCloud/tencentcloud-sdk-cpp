@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有网络 的 id
-                     * @return VpcId 私有网络 的 id
+                     * 获取私有网络 的 Id
+                     * @return VpcId 私有网络 的 Id
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络 的 id
-                     * @param VpcId 私有网络 的 id
+                     * 设置私有网络 的 Id
+                     * @param VpcId 私有网络 的 Id
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网的 id
-                     * @return SubnetId 子网的 id
+                     * 获取子网的 Id
+                     * @return SubnetId 子网的 Id
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网的 id
-                     * @param SubnetId 子网的 id
+                     * 设置子网的 Id
+                     * @param SubnetId 子网的 Id
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私有网络 的 id
+                     * 私有网络 的 Id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网的 id
+                     * 子网的 Id
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

@@ -61,7 +61,9 @@ BuyDevicesRequest::BuyDevicesRequest() :
     m_dataDiskCountHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileSystemHasBeenSet(false),
-    m_buySessionHasBeenSet(false)
+    m_buySessionHasBeenSet(false),
+    m_sgIdHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -391,6 +393,22 @@ string BuyDevicesRequest::ToJsonString() const
         string key = "BuySession";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_buySession.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sgIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SgId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sgId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1007,6 +1025,38 @@ void BuyDevicesRequest::SetBuySession(const string& _buySession)
 bool BuyDevicesRequest::BuySessionHasBeenSet() const
 {
     return m_buySessionHasBeenSet;
+}
+
+string BuyDevicesRequest::GetSgId() const
+{
+    return m_sgId;
+}
+
+void BuyDevicesRequest::SetSgId(const string& _sgId)
+{
+    m_sgId = _sgId;
+    m_sgIdHasBeenSet = true;
+}
+
+bool BuyDevicesRequest::SgIdHasBeenSet() const
+{
+    return m_sgIdHasBeenSet;
+}
+
+string BuyDevicesRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void BuyDevicesRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool BuyDevicesRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

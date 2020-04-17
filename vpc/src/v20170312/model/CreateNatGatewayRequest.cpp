@@ -30,7 +30,8 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_maxConcurrentConnectionHasBeenSet(false),
     m_addressCountHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,21 @@ string CreateNatGatewayRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -220,6 +236,22 @@ void CreateNatGatewayRequest::SetZone(const string& _zone)
 bool CreateNatGatewayRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+vector<Tag> CreateNatGatewayRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateNatGatewayRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateNatGatewayRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

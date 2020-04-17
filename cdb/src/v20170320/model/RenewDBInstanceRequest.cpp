@@ -25,7 +25,8 @@ using namespace std;
 
 RenewDBInstanceRequest::RenewDBInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_modifyPayTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string RenewDBInstanceRequest::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_modifyPayTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModifyPayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_modifyPayType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void RenewDBInstanceRequest::SetTimeSpan(const int64_t& _timeSpan)
 bool RenewDBInstanceRequest::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+string RenewDBInstanceRequest::GetModifyPayType() const
+{
+    return m_modifyPayType;
+}
+
+void RenewDBInstanceRequest::SetModifyPayType(const string& _modifyPayType)
+{
+    m_modifyPayType = _modifyPayType;
+    m_modifyPayTypeHasBeenSet = true;
+}
+
+bool RenewDBInstanceRequest::ModifyPayTypeHasBeenSet() const
+{
+    return m_modifyPayTypeHasBeenSet;
 }
 
 

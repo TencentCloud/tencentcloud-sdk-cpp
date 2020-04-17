@@ -479,6 +479,42 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取用户的AppId
+                     * @return AppId 用户的AppId
+                     */
+                    uint64_t GetAppId() const;
+
+                    /**
+                     * 设置用户的AppId
+                     * @param AppId 用户的AppId
+                     */
+                    void SetAppId(const uint64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例的Uid
+                     * @return Uid 实例的Uid
+                     */
+                    uint64_t GetUid() const;
+
+                    /**
+                     * 设置实例的Uid
+                     * @param Uid 实例的Uid
+                     */
+                    void SetUid(const uint64_t& _uid);
+
+                    /**
+                     * 判断参数 Uid 是否已赋值
+                     * @return Uid 是否已赋值
+                     */
+                    bool UidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +660,18 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 用户的AppId
+                     */
+                    uint64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 实例的Uid
+                     */
+                    uint64_t m_uid;
+                    bool m_uidHasBeenSet;
 
                 };
             }

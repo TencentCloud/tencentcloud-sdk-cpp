@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool KeyStateHasBeenSet() const;
 
                     /**
-                     * 获取CMK用途，当前是 ENCRYPT_DECRYPT
-                     * @return KeyUsage CMK用途，当前是 ENCRYPT_DECRYPT
+                     * 获取CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2
+                     * @return KeyUsage CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2
                      */
                     std::string GetKeyUsage() const;
 
                     /**
-                     * 设置CMK用途，当前是 ENCRYPT_DECRYPT
-                     * @param KeyUsage CMK用途，当前是 ENCRYPT_DECRYPT
+                     * 设置CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2
+                     * @param KeyUsage CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2
                      */
                     void SetKeyUsage(const std::string& _keyUsage);
 
@@ -343,7 +343,7 @@ namespace TencentCloud
                     bool m_keyStateHasBeenSet;
 
                     /**
-                     * CMK用途，当前是 ENCRYPT_DECRYPT
+                     * CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2
                      */
                     std::string m_keyUsage;
                     bool m_keyUsageHasBeenSet;

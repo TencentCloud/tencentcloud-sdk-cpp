@@ -43,14 +43,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
-                     * @return DisplayStrategy 集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     * 获取集群筛选策略。取值范围：
+<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li>
+<li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li>
+<li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>
+                     * @return DisplayStrategy 集群筛选策略。取值范围：
+<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li>
+<li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li>
+<li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>
                      */
                     std::string GetDisplayStrategy() const;
 
                     /**
-                     * 设置集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
-                     * @param DisplayStrategy 集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     * 设置集群筛选策略。取值范围：
+<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li>
+<li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li>
+<li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>
+                     * @param DisplayStrategy 集群筛选策略。取值范围：
+<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li>
+<li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li>
+<li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>
                      */
                     void SetDisplayStrategy(const std::string& _displayStrategy);
 
@@ -61,14 +73,14 @@ namespace TencentCloud
                     bool DisplayStrategyHasBeenSet() const;
 
                     /**
-                     * 获取查询列表,  如果不填写，返回该AppId下所有实例列表
-                     * @return InstanceIds 查询列表,  如果不填写，返回该AppId下所有实例列表
+                     * 获取按照一个或者多个实例ID查询。实例ID形如: emr-xxxxxxxx 。(此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的 Ids.N 一节)。如果不填写实例ID，返回该APPID下所有实例列表。
+                     * @return InstanceIds 按照一个或者多个实例ID查询。实例ID形如: emr-xxxxxxxx 。(此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的 Ids.N 一节)。如果不填写实例ID，返回该APPID下所有实例列表。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置查询列表,  如果不填写，返回该AppId下所有实例列表
-                     * @param InstanceIds 查询列表,  如果不填写，返回该AppId下所有实例列表
+                     * 设置按照一个或者多个实例ID查询。实例ID形如: emr-xxxxxxxx 。(此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的 Ids.N 一节)。如果不填写实例ID，返回该APPID下所有实例列表。
+                     * @param InstanceIds 按照一个或者多个实例ID查询。实例ID形如: emr-xxxxxxxx 。(此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的 Ids.N 一节)。如果不填写实例ID，返回该APPID下所有实例列表。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -79,14 +91,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取查询偏移量，默认0
-                     * @return Offset 查询偏移量，默认0
+                     * 获取页编号，默认值为0，表示第一页。
+                     * @return Offset 页编号，默认值为0，表示第一页。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询偏移量，默认0
-                     * @param Offset 查询偏移量，默认0
+                     * 设置页编号，默认值为0，表示第一页。
+                     * @param Offset 页编号，默认值为0，表示第一页。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -97,14 +109,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制，默认值10
-                     * @return Limit 查询结果限制，默认值10
+                     * 获取每页返回数量，默认值为10，最大值为100。
+                     * @return Limit 每页返回数量，默认值为10，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制，默认值10
-                     * @param Limit 查询结果限制，默认值10
+                     * 设置每页返回数量，默认值为10，最大值为100。
+                     * @param Limit 每页返回数量，默认值为10，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -115,14 +127,22 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取项目列表，默认值-1
-                     * @return ProjectId 项目列表，默认值-1
+                     * 获取建议必填-1，表示拉取所有项目下的集群。
+不填默认值为0，表示拉取默认项目下的集群。
+实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。
+                     * @return ProjectId 建议必填-1，表示拉取所有项目下的集群。
+不填默认值为0，表示拉取默认项目下的集群。
+实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目列表，默认值-1
-                     * @param ProjectId 项目列表，默认值-1
+                     * 设置建议必填-1，表示拉取所有项目下的集群。
+不填默认值为0，表示拉取默认项目下的集群。
+实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。
+                     * @param ProjectId 建议必填-1，表示拉取所有项目下的集群。
+不填默认值为0，表示拉取默认项目下的集群。
+实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -133,14 +153,26 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，当前支持以下排序字段：clusterId、addTime、status
-                     * @return OrderField 排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     * 获取排序字段。取值范围：
+<li>clusterId：表示按照实例ID排序。</li>
+<li>addTime：表示按照实例创建时间排序。</li>
+<li>status：表示按照实例的状态码排序。</li>
+                     * @return OrderField 排序字段。取值范围：
+<li>clusterId：表示按照实例ID排序。</li>
+<li>addTime：表示按照实例创建时间排序。</li>
+<li>status：表示按照实例的状态码排序。</li>
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序字段，当前支持以下排序字段：clusterId、addTime、status
-                     * @param OrderField 排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     * 设置排序字段。取值范围：
+<li>clusterId：表示按照实例ID排序。</li>
+<li>addTime：表示按照实例创建时间排序。</li>
+<li>status：表示按照实例的状态码排序。</li>
+                     * @param OrderField 排序字段。取值范围：
+<li>clusterId：表示按照实例ID排序。</li>
+<li>addTime：表示按照实例创建时间排序。</li>
+<li>status：表示按照实例的状态码排序。</li>
                      */
                     void SetOrderField(const std::string& _orderField);
 
@@ -151,14 +183,22 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方法，0降序，1升序
-                     * @return Asc 排序方法，0降序，1升序
+                     * 获取按照OrderField升序或者降序进行排序。取值范围：
+<li>0：表示降序。</li>
+<li>1：表示升序。</li>默认值为0。
+                     * @return Asc 按照OrderField升序或者降序进行排序。取值范围：
+<li>0：表示降序。</li>
+<li>1：表示升序。</li>默认值为0。
                      */
                     int64_t GetAsc() const;
 
                     /**
-                     * 设置排序方法，0降序，1升序
-                     * @param Asc 排序方法，0降序，1升序
+                     * 设置按照OrderField升序或者降序进行排序。取值范围：
+<li>0：表示降序。</li>
+<li>1：表示升序。</li>默认值为0。
+                     * @param Asc 按照OrderField升序或者降序进行排序。取值范围：
+<li>0：表示降序。</li>
+<li>1：表示升序。</li>默认值为0。
                      */
                     void SetAsc(const int64_t& _asc);
 
@@ -171,43 +211,53 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群展示策略，该字段取值根据所选页面不同输入不同，集群列表页：clusterList，集群监控：monitorManage，云硬件管理：cloudHardwareManage，组件管理页：componentManage
+                     * 集群筛选策略。取值范围：
+<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li>
+<li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li>
+<li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>
                      */
                     std::string m_displayStrategy;
                     bool m_displayStrategyHasBeenSet;
 
                     /**
-                     * 查询列表,  如果不填写，返回该AppId下所有实例列表
+                     * 按照一个或者多个实例ID查询。实例ID形如: emr-xxxxxxxx 。(此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的 Ids.N 一节)。如果不填写实例ID，返回该APPID下所有实例列表。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 查询偏移量，默认0
+                     * 页编号，默认值为0，表示第一页。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制，默认值10
+                     * 每页返回数量，默认值为10，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 项目列表，默认值-1
+                     * 建议必填-1，表示拉取所有项目下的集群。
+不填默认值为0，表示拉取默认项目下的集群。
+实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 排序字段，当前支持以下排序字段：clusterId、addTime、status
+                     * 排序字段。取值范围：
+<li>clusterId：表示按照实例ID排序。</li>
+<li>addTime：表示按照实例创建时间排序。</li>
+<li>status：表示按照实例的状态码排序。</li>
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 排序方法，0降序，1升序
+                     * 按照OrderField升序或者降序进行排序。取值范围：
+<li>0：表示降序。</li>
+<li>1：表示升序。</li>默认值为0。
                      */
                     int64_t m_asc;
                     bool m_ascHasBeenSet;

@@ -207,14 +207,14 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取策略组中的时间告警规则
-                     * @return EventConditions 策略组中的时间告警规则
+                     * 获取策略组中的事件告警规则
+                     * @return EventConditions 策略组中的事件告警规则
                      */
                     std::vector<CreatePolicyGroupEventCondition> GetEventConditions() const;
 
                     /**
-                     * 设置策略组中的时间告警规则
-                     * @param EventConditions 策略组中的时间告警规则
+                     * 设置策略组中的事件告警规则
+                     * @param EventConditions 策略组中的事件告警规则
                      */
                     void SetEventConditions(const std::vector<CreatePolicyGroupEventCondition>& _eventConditions);
 
@@ -241,6 +241,24 @@ namespace TencentCloud
                      * @return BackEndCall 是否已赋值
                      */
                     bool BackEndCallHasBeenSet() const;
+
+                    /**
+                     * 获取指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)
+                     * @return IsUnionRule 指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)
+                     */
+                    int64_t GetIsUnionRule() const;
+
+                    /**
+                     * 设置指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)
+                     * @param IsUnionRule 指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)
+                     */
+                    void SetIsUnionRule(const int64_t& _isUnionRule);
+
+                    /**
+                     * 判断参数 IsUnionRule 是否已赋值
+                     * @return IsUnionRule 是否已赋值
+                     */
+                    bool IsUnionRuleHasBeenSet() const;
 
                 private:
 
@@ -299,7 +317,7 @@ namespace TencentCloud
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 策略组中的时间告警规则
+                     * 策略组中的事件告警规则
                      */
                     std::vector<CreatePolicyGroupEventCondition> m_eventConditions;
                     bool m_eventConditionsHasBeenSet;
@@ -309,6 +327,12 @@ namespace TencentCloud
                      */
                     int64_t m_backEndCall;
                     bool m_backEndCallHasBeenSet;
+
+                    /**
+                     * 指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)
+                     */
+                    int64_t m_isUnionRule;
+                    bool m_isUnionRuleHasBeenSet;
 
                 };
             }

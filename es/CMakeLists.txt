@@ -20,6 +20,7 @@ set(es_public_header
 
 set(es_public_header_model
   include/tencentcloud/es/v20180416/model/InstanceLog.h
+  include/tencentcloud/es/v20180416/model/LocalDiskInfo.h
   include/tencentcloud/es/v20180416/model/TaskDetail.h
   include/tencentcloud/es/v20180416/model/NodeInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
@@ -58,6 +59,7 @@ set(es_public_header_model
 set(es_src
   src/v20180416/EsClient.cpp
   src/v20180416/model/InstanceLog.cpp
+  src/v20180416/model/LocalDiskInfo.cpp
   src/v20180416/model/TaskDetail.cpp
   src/v20180416/model/NodeInfo.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp

@@ -109,7 +109,6 @@ namespace TencentCloud
 20007：谩骂 
 20105：广告引流 
 24001：暴恐
-20004/21000：综合
                      * @return EvilType 恶意类型
 100：正常
 20001：政治
@@ -118,7 +117,6 @@ namespace TencentCloud
 20007：谩骂 
 20105：广告引流 
 24001：暴恐
-20004/21000：综合
                      */
                     uint64_t GetEvilType() const;
 
@@ -131,7 +129,6 @@ namespace TencentCloud
 20007：谩骂 
 20105：广告引流 
 24001：暴恐
-20004/21000：综合
                      * @param EvilType 恶意类型
 100：正常
 20001：政治
@@ -140,7 +137,6 @@ namespace TencentCloud
 20007：谩骂 
 20105：广告引流 
 24001：暴恐
-20004/21000：综合
                      */
                     void SetEvilType(const uint64_t& _evilType);
 
@@ -249,7 +245,6 @@ namespace TencentCloud
 20007：谩骂 
 20105：广告引流 
 24001：暴恐
-20004/21000：综合
                      */
                     uint64_t m_evilType;
                     bool m_evilTypeHasBeenSet;

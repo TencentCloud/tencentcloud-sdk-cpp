@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool SecurityProtoHasBeenSet() const;
 
+                    /**
+                     * 获取报文封装模式:默认为Tunnel
+                     * @return EncapMode 报文封装模式:默认为Tunnel
+                     */
+                    std::string GetEncapMode() const;
+
+                    /**
+                     * 设置报文封装模式:默认为Tunnel
+                     * @param EncapMode 报文封装模式:默认为Tunnel
+                     */
+                    void SetEncapMode(const std::string& _encapMode);
+
+                    /**
+                     * 判断参数 EncapMode 是否已赋值
+                     * @return EncapMode 是否已赋值
+                     */
+                    bool EncapModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_securityProto;
                     bool m_securityProtoHasBeenSet;
+
+                    /**
+                     * 报文封装模式:默认为Tunnel
+                     */
+                    std::string m_encapMode;
+                    bool m_encapModeHasBeenSet;
 
                 };
             }

@@ -103,7 +103,7 @@ CoreInternalOutcome VerifyIdlFilesResponse::Deserialize(const string &payload)
         const Value &tmpValue = rsp["TableInfos"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ParsedTableInfo item;
+            ParsedTableInfoNew item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -140,7 +140,7 @@ bool VerifyIdlFilesResponse::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-vector<ParsedTableInfo> VerifyIdlFilesResponse::GetTableInfos() const
+vector<ParsedTableInfoNew> VerifyIdlFilesResponse::GetTableInfos() const
 {
     return m_tableInfos;
 }

@@ -35,7 +35,8 @@ ReceiverInfo::ReceiverInfo() :
     m_recoverNotifyHasBeenSet(false),
     m_needSendNoticeHasBeenSet(false),
     m_receiverGroupListHasBeenSet(false),
-    m_receiverUserListHasBeenSet(false)
+    m_receiverUserListHasBeenSet(false),
+    m_receiveLanguageHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const Value &value)
         m_receiverUserListHasBeenSet = true;
     }
 
+    if (value.HasMember("ReceiveLanguage") && !value["ReceiveLanguage"].IsNull())
+    {
+        if (!value["ReceiveLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ReceiverInfo.ReceiveLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_receiveLanguage = string(value["ReceiveLanguage"].GetString());
+        m_receiveLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void ReceiverInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         {
             value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_receiveLanguageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReceiveLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_receiveLanguage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -584,5 +603,21 @@ void ReceiverInfo::SetReceiverUserList(const vector<int64_t>& _receiverUserList)
 bool ReceiverInfo::ReceiverUserListHasBeenSet() const
 {
     return m_receiverUserListHasBeenSet;
+}
+
+string ReceiverInfo::GetReceiveLanguage() const
+{
+    return m_receiveLanguage;
+}
+
+void ReceiverInfo::SetReceiveLanguage(const string& _receiveLanguage)
+{
+    m_receiveLanguage = _receiveLanguage;
+    m_receiveLanguageHasBeenSet = true;
+}
+
+bool ReceiverInfo::ReceiveLanguageHasBeenSet() const
+{
+    return m_receiveLanguageHasBeenSet;
 }
 

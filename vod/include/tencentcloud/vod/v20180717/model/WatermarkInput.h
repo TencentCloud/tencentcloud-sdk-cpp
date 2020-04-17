@@ -66,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextContent 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTextContent() const;
 
                     /**
                      * 设置文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TextContent 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTextContent(const std::string& _textContent);
 
@@ -88,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SvgContent SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSvgContent() const;
 
                     /**
                      * 设置SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SvgContent SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSvgContent(const std::string& _svgContent);
 
@@ -178,14 +170,12 @@ namespace TencentCloud
 
                     /**
                      * 文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_textContent;
                     bool m_textContentHasBeenSet;
 
                     /**
                      * SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_svgContent;
                     bool m_svgContentHasBeenSet;

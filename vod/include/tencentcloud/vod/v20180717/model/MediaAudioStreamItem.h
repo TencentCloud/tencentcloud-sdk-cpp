@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 音频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置音频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Bitrate 音频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流的采样率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SamplingRate 音频流的采样率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSamplingRate() const;
 
                     /**
                      * 设置音频流的采样率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SamplingRate 音频流的采样率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSamplingRate(const int64_t& _samplingRate);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流的编码格式，例如 aac。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codec 音频流的编码格式，例如 aac。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置音频流的编码格式，例如 aac。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Codec 音频流的编码格式，例如 aac。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCodec(const std::string& _codec);
 
@@ -116,21 +104,18 @@ namespace TencentCloud
 
                     /**
                      * 音频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
                      * 音频流的采样率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_samplingRate;
                     bool m_samplingRateHasBeenSet;
 
                     /**
                      * 音频流的编码格式，例如 aac。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;

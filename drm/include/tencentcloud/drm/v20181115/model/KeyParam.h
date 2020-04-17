@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 设置加密秘钥所需的参数
+                * 设置加密密钥所需的参数
                 */
                 class KeyParam : public AbstractModel
                 {

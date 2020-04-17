@@ -128,14 +128,14 @@ namespace TencentCloud
                     bool RoVipInfoHasBeenSet() const;
 
                     /**
-                     * 获取内存容量，单位为MB
-                     * @return Memory 内存容量，单位为MB
+                     * 获取内存容量，单位为 MB
+                     * @return Memory 内存容量，单位为 MB
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置内存容量，单位为MB
-                     * @param Memory 内存容量，单位为MB
+                     * 设置内存容量，单位为 MB
+                     * @param Memory 内存容量，单位为 MB
                      */
                     void SetMemory(const int64_t& _memory);
 
@@ -164,14 +164,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，例如：51102
-                     * @return VpcId 私有网络ID，例如：51102
+                     * 获取私有网络 ID，例如：51102
+                     * @return VpcId 私有网络 ID，例如：51102
                      */
                     int64_t GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，例如：51102
-                     * @param VpcId 私有网络ID，例如：51102
+                     * 设置私有网络 ID，例如：51102
+                     * @param VpcId 私有网络 ID，例如：51102
                      */
                     void SetVpcId(const int64_t& _vpcId);
 
@@ -204,14 +204,14 @@ namespace TencentCloud
                     bool SlaveInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID
+                     * @return InstanceId 实例 ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例 ID
+                     * @param InstanceId 实例 ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -222,14 +222,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取硬盘容量，单位为GB
-                     * @return Volume 硬盘容量，单位为GB
+                     * 获取硬盘容量，单位为 GB
+                     * @return Volume 硬盘容量，单位为 GB
                      */
                     int64_t GetVolume() const;
 
                     /**
-                     * 设置硬盘容量，单位为GB
-                     * @param Volume 硬盘容量，单位为GB
+                     * 设置硬盘容量，单位为 GB
+                     * @param Volume 硬盘容量，单位为 GB
                      */
                     void SetVolume(const int64_t& _volume);
 
@@ -298,14 +298,14 @@ namespace TencentCloud
                     bool RoGroupsHasBeenSet() const;
 
                     /**
-                     * 获取子网ID，例如：2333
-                     * @return SubnetId 子网ID，例如：2333
+                     * 获取子网 ID，例如：2333
+                     * @return SubnetId 子网 ID，例如：2333
                      */
                     int64_t GetSubnetId() const;
 
                     /**
-                     * 设置子网ID，例如：2333
-                     * @param SubnetId 子网ID，例如：2333
+                     * 设置子网 ID，例如：2333
+                     * @param SubnetId 子网 ID，例如：2333
                      */
                     void SetSubnetId(const int64_t& _subnetId);
 
@@ -334,14 +334,14 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取项目 ID
+                     * @return ProjectId 项目 ID
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * 设置项目 ID
+                     * @param ProjectId 项目 ID
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -446,14 +446,14 @@ namespace TencentCloud
                     bool MasterInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，可能的返回值：“HA”-高可用版；“BASIC”-基础版
-                     * @return DeviceType 实例类型，可能的返回值：“HA”-高可用版；“BASIC”-基础版
+                     * 获取实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
+                     * @return DeviceType 实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置实例类型，可能的返回值：“HA”-高可用版；“BASIC”-基础版
-                     * @param DeviceType 实例类型，可能的返回值：“HA”-高可用版；“BASIC”-基础版
+                     * 设置实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
+                     * @param DeviceType 实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
@@ -594,14 +594,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例IP
-                     * @return Vip 实例IP
+                     * 获取实例 IP
+                     * @return Vip 实例 IP
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置实例IP
-                     * @param Vip 实例IP
+                     * 设置实例 IP
+                     * @param Vip 实例 IP
                      */
                     void SetVip(const std::string& _vip);
 
@@ -684,14 +684,14 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取物理ID
-                     * @return PhysicalId 物理ID
+                     * 获取物理 ID
+                     * @return PhysicalId 物理 ID
                      */
                     std::string GetPhysicalId() const;
 
                     /**
-                     * 设置物理ID
-                     * @param PhysicalId 物理ID
+                     * 设置物理 ID
+                     * @param PhysicalId 物理 ID
                      */
                     void SetPhysicalId(const std::string& _physicalId);
 
@@ -778,17 +778,17 @@ namespace TencentCloud
                     bool DeviceClassHasBeenSet() const;
 
                     /**
-                     * 获取置放群组ID
+                     * 获取置放群组 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployGroupId 置放群组ID
+                     * @return DeployGroupId 置放群组 ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDeployGroupId() const;
 
                     /**
-                     * 设置置放群组ID
+                     * 设置置放群组 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeployGroupId 置放群组ID
+                     * @param DeployGroupId 置放群组 ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeployGroupId(const std::string& _deployGroupId);
@@ -798,6 +798,28 @@ namespace TencentCloud
                      * @return DeployGroupId 是否已赋值
                      */
                     bool DeployGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneId 可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneId 可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
 
                 private:
 
@@ -827,7 +849,7 @@ namespace TencentCloud
                     bool m_roVipInfoHasBeenSet;
 
                     /**
-                     * 内存容量，单位为MB
+                     * 内存容量，单位为 MB
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
@@ -839,7 +861,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 私有网络ID，例如：51102
+                     * 私有网络 ID，例如：51102
                      */
                     int64_t m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -852,13 +874,13 @@ namespace TencentCloud
                     bool m_slaveInfoHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 硬盘容量，单位为GB
+                     * 硬盘容量，单位为 GB
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;
@@ -883,7 +905,7 @@ namespace TencentCloud
                     bool m_roGroupsHasBeenSet;
 
                     /**
-                     * 子网ID，例如：2333
+                     * 子网 ID，例如：2333
                      */
                     int64_t m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -895,7 +917,7 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 项目 ID
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -932,7 +954,7 @@ namespace TencentCloud
                     bool m_masterInfoHasBeenSet;
 
                     /**
-                     * 实例类型，可能的返回值：“HA”-高可用版；“BASIC”-基础版
+                     * 实例类型，可能的返回值：“HA”-高可用版；“FE”-金融版；“BASIC”-基础版
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -981,7 +1003,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例IP
+                     * 实例 IP
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
@@ -1011,7 +1033,7 @@ namespace TencentCloud
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * 物理ID
+                     * 物理 ID
                      */
                     std::string m_physicalId;
                     bool m_physicalIdHasBeenSet;
@@ -1042,11 +1064,18 @@ namespace TencentCloud
                     bool m_deviceClassHasBeenSet;
 
                     /**
-                     * 置放群组ID
+                     * 置放群组 ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployGroupId;
                     bool m_deployGroupIdHasBeenSet;
+
+                    /**
+                     * 可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

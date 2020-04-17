@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ConfigNameHasBeenSet() const;
 
+                    /**
+                     * 获取配置项版本，精确查询，不传入时查询全量
+                     * @return ConfigVersion 配置项版本，精确查询，不传入时查询全量
+                     */
+                    std::string GetConfigVersion() const;
+
+                    /**
+                     * 设置配置项版本，精确查询，不传入时查询全量
+                     * @param ConfigVersion 配置项版本，精确查询，不传入时查询全量
+                     */
+                    void SetConfigVersion(const std::string& _configVersion);
+
+                    /**
+                     * 判断参数 ConfigVersion 是否已赋值
+                     * @return ConfigVersion 是否已赋值
+                     */
+                    bool ConfigVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_configName;
                     bool m_configNameHasBeenSet;
+
+                    /**
+                     * 配置项版本，精确查询，不传入时查询全量
+                     */
+                    std::string m_configVersion;
+                    bool m_configVersionHasBeenSet;
 
                 };
             }

@@ -27,6 +27,9 @@
 #include <tencentcloud/scf/v20180416/model/Tag.h>
 #include <tencentcloud/scf/v20180416/model/EipOutConfig.h>
 #include <tencentcloud/scf/v20180416/model/AccessInfo.h>
+#include <tencentcloud/scf/v20180416/model/LayerVersionInfo.h>
+#include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
+#include <tencentcloud/scf/v20180416/model/PublicNetConfigOut.h>
 
 
 namespace TencentCloud
@@ -408,6 +411,70 @@ namespace TencentCloud
                      */
                     bool L5EnableHasBeenSet() const;
 
+                    /**
+                     * 获取函数关联的Layer版本信息
+                     * @return Layers 函数关联的Layer版本信息
+                     */
+                    std::vector<LayerVersionInfo> GetLayers() const;
+
+                    /**
+                     * 判断参数 Layers 是否已赋值
+                     * @return Layers 是否已赋值
+                     */
+                    bool LayersHasBeenSet() const;
+
+                    /**
+                     * 获取函数关联的死信队列信息
+                     * @return DeadLetterConfig 函数关联的死信队列信息
+                     */
+                    DeadLetterConfig GetDeadLetterConfig() const;
+
+                    /**
+                     * 判断参数 DeadLetterConfig 是否已赋值
+                     * @return DeadLetterConfig 是否已赋值
+                     */
+                    bool DeadLetterConfigHasBeenSet() const;
+
+                    /**
+                     * 获取函数创建回见
+                     * @return AddTime 函数创建回见
+                     */
+                    std::string GetAddTime() const;
+
+                    /**
+                     * 判断参数 AddTime 是否已赋值
+                     * @return AddTime 是否已赋值
+                     */
+                    bool AddTimeHasBeenSet() const;
+
+                    /**
+                     * 获取公网访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicNetConfig 公网访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PublicNetConfigOut GetPublicNetConfig() const;
+
+                    /**
+                     * 判断参数 PublicNetConfig 是否已赋值
+                     * @return PublicNetConfig 是否已赋值
+                     */
+                    bool PublicNetConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用Ons
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OnsEnable 是否启用Ons
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOnsEnable() const;
+
+                    /**
+                     * 判断参数 OnsEnable 是否已赋值
+                     * @return OnsEnable 是否已赋值
+                     */
+                    bool OnsEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +656,38 @@ namespace TencentCloud
                      */
                     std::string m_l5Enable;
                     bool m_l5EnableHasBeenSet;
+
+                    /**
+                     * 函数关联的Layer版本信息
+                     */
+                    std::vector<LayerVersionInfo> m_layers;
+                    bool m_layersHasBeenSet;
+
+                    /**
+                     * 函数关联的死信队列信息
+                     */
+                    DeadLetterConfig m_deadLetterConfig;
+                    bool m_deadLetterConfigHasBeenSet;
+
+                    /**
+                     * 函数创建回见
+                     */
+                    std::string m_addTime;
+                    bool m_addTimeHasBeenSet;
+
+                    /**
+                     * 公网访问配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PublicNetConfigOut m_publicNetConfig;
+                    bool m_publicNetConfigHasBeenSet;
+
+                    /**
+                     * 是否启用Ons
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_onsEnable;
+                    bool m_onsEnableHasBeenSet;
 
                 };
             }

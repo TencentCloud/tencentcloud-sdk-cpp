@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool GroupDescHasBeenSet() const;
 
+                    /**
+                     * 获取部署组资源类型
+                     * @return GroupResourceType 部署组资源类型
+                     */
+                    std::string GetGroupResourceType() const;
+
+                    /**
+                     * 设置部署组资源类型
+                     * @param GroupResourceType 部署组资源类型
+                     */
+                    void SetGroupResourceType(const std::string& _groupResourceType);
+
+                    /**
+                     * 判断参数 GroupResourceType 是否已赋值
+                     * @return GroupResourceType 是否已赋值
+                     */
+                    bool GroupResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_groupDesc;
                     bool m_groupDescHasBeenSet;
+
+                    /**
+                     * 部署组资源类型
+                     */
+                    std::string m_groupResourceType;
+                    bool m_groupResourceTypeHasBeenSet;
 
                 };
             }

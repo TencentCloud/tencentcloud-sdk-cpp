@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拨测分组Id
-                     * @return GroupId 拨测分组Id
+                     * 获取拨测分组ID
+                     * @return GroupId 拨测分组ID
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置拨测分组Id
-                     * @param GroupId 拨测分组Id
+                     * 设置拨测分组ID
+                     * @param GroupId 拨测分组ID
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
@@ -158,7 +158,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拨测分组Id
+                     * 拨测分组ID
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;

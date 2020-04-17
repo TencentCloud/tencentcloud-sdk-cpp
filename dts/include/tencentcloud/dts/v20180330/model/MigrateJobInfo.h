@@ -28,6 +28,7 @@
 #include <tencentcloud/dts/v20180330/model/SrcInfo.h>
 #include <tencentcloud/dts/v20180330/model/DstInfo.h>
 #include <tencentcloud/dts/v20180330/model/MigrateDetailInfo.h>
+#include <tencentcloud/dts/v20180330/model/ErrorInfo.h>
 
 
 namespace TencentCloud
@@ -320,6 +321,24 @@ namespace TencentCloud
                      */
                     bool DetailHasBeenSet() const;
 
+                    /**
+                     * 获取任务错误信息提示，当任务发生错误时，不为null或者空值
+                     * @return ErrorInfo 任务错误信息提示，当任务发生错误时，不为null或者空值
+                     */
+                    std::vector<ErrorInfo> GetErrorInfo() const;
+
+                    /**
+                     * 设置任务错误信息提示，当任务发生错误时，不为null或者空值
+                     * @param ErrorInfo 任务错误信息提示，当任务发生错误时，不为null或者空值
+                     */
+                    void SetErrorInfo(const std::vector<ErrorInfo>& _errorInfo);
+
+                    /**
+                     * 判断参数 ErrorInfo 是否已赋值
+                     * @return ErrorInfo 是否已赋值
+                     */
+                    bool ErrorInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -411,6 +430,12 @@ namespace TencentCloud
                      */
                     MigrateDetailInfo m_detail;
                     bool m_detailHasBeenSet;
+
+                    /**
+                     * 任务错误信息提示，当任务发生错误时，不为null或者空值
+                     */
+                    std::vector<ErrorInfo> m_errorInfo;
+                    bool m_errorInfoHasBeenSet;
 
                 };
             }

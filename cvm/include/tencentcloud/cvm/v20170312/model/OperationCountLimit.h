@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例操作。
-                     * @return Operation 实例操作。
+                     * 获取实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
+                     * @return Operation 实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置实例操作。
-                     * @param Operation 实例操作。
+                     * 设置实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
+                     * @param Operation 实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
                      */
                     void SetOperation(const std::string& _operation);
 
@@ -121,7 +121,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例操作。
+                     * 实例操作。取值范围：<br><li>`INSTANCE_DEGRADE`：降配操作<br><li>`INTERNET_CHARGE_TYPE_CHANGE`：修改网络带宽计费模式
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;

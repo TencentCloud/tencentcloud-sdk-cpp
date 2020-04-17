@@ -141,17 +141,17 @@ namespace TencentCloud
                     bool CreateModeHasBeenSet() const;
 
                     /**
-                     * 获取是否已下线
+                     * 获取是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Deactived 是否已下线
+                     * @return Deactived 是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDeactived() const;
 
                     /**
-                     * 设置是否已下线
+                     * 设置是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deactived 是否已下线
+                     * @param Deactived 是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeactived(const uint64_t& _deactived);
@@ -161,6 +161,50 @@ namespace TencentCloud
                      * @return Deactived 是否已赋值
                      */
                     bool DeactivedHasBeenSet() const;
+
+                    /**
+                     * 获取已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeactivedDetail 已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDeactivedDetail() const;
+
+                    /**
+                     * 设置已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeactivedDetail 已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
+
+                    /**
+                     * 判断参数 DeactivedDetail 是否已赋值
+                     * @return DeactivedDetail 是否已赋值
+                     */
+                    bool DeactivedDetailHasBeenSet() const;
+
+                    /**
+                     * 获取策略描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 策略描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置策略描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Description 策略描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
 
                 private:
 
@@ -196,11 +240,25 @@ namespace TencentCloud
                     bool m_createModeHasBeenSet;
 
                     /**
-                     * 是否已下线
+                     * 是否已下线(0:否 1:是)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deactived;
                     bool m_deactivedHasBeenSet;
+
+                    /**
+                     * 已下线的产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_deactivedDetail;
+                    bool m_deactivedDetailHasBeenSet;
+
+                    /**
+                     * 策略描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cme/v20191029/model/SortBy.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
 
 
@@ -116,6 +117,32 @@ namespace TencentCloud
                     bool CategorySetHasBeenSet() const;
 
                     /**
+                     * 获取列表排序，支持下列排序字段：
+<li>CreateTime：创建时间；</li>
+<li>UpdateTime：更新时间。</li>
+                     * @return Sort 列表排序，支持下列排序字段：
+<li>CreateTime：创建时间；</li>
+<li>UpdateTime：更新时间。</li>
+                     */
+                    SortBy GetSort() const;
+
+                    /**
+                     * 设置列表排序，支持下列排序字段：
+<li>CreateTime：创建时间；</li>
+<li>UpdateTime：更新时间。</li>
+                     * @param Sort 列表排序，支持下列排序字段：
+<li>CreateTime：创建时间；</li>
+<li>UpdateTime：更新时间。</li>
+                     */
+                    void SetSort(const SortBy& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
                      * 获取项目归属者。
                      * @return Owner 项目归属者。
                      */
@@ -194,6 +221,14 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_categorySet;
                     bool m_categorySetHasBeenSet;
+
+                    /**
+                     * 列表排序，支持下列排序字段：
+<li>CreateTime：创建时间；</li>
+<li>UpdateTime：更新时间。</li>
+                     */
+                    SortBy m_sort;
+                    bool m_sortHasBeenSet;
 
                     /**
                      * 项目归属者。

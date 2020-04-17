@@ -36,7 +36,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_gpuHasBeenSet(false),
     m_gpuMemoryHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_gpuTypeHasBeenSet(false)
+    m_gpuTypeHasBeenSet(false),
+    m_logTopicIdHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,14 @@ string CreateServiceRequest::ToJsonString() const
         string key = "GpuType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_gpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -366,6 +375,22 @@ void CreateServiceRequest::SetGpuType(const string& _gpuType)
 bool CreateServiceRequest::GpuTypeHasBeenSet() const
 {
     return m_gpuTypeHasBeenSet;
+}
+
+string CreateServiceRequest::GetLogTopicId() const
+{
+    return m_logTopicId;
+}
+
+void CreateServiceRequest::SetLogTopicId(const string& _logTopicId)
+{
+    m_logTopicId = _logTopicId;
+    m_logTopicIdHasBeenSet = true;
+}
+
+bool CreateServiceRequest::LogTopicIdHasBeenSet() const
+{
+    return m_logTopicIdHasBeenSet;
 }
 
 

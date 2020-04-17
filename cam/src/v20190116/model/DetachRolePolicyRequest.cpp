@@ -26,7 +26,8 @@ using namespace std;
 DetachRolePolicyRequest::DetachRolePolicyRequest() :
     m_policyIdHasBeenSet(false),
     m_detachRoleIdHasBeenSet(false),
-    m_detachRoleNameHasBeenSet(false)
+    m_detachRoleNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DetachRolePolicyRequest::ToJsonString() const
         string key = "DetachRoleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_detachRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_policyName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DetachRolePolicyRequest::SetDetachRoleName(const string& _detachRoleName)
 bool DetachRolePolicyRequest::DetachRoleNameHasBeenSet() const
 {
     return m_detachRoleNameHasBeenSet;
+}
+
+string DetachRolePolicyRequest::GetPolicyName() const
+{
+    return m_policyName;
+}
+
+void DetachRolePolicyRequest::SetPolicyName(const string& _policyName)
+{
+    m_policyName = _policyName;
+    m_policyNameHasBeenSet = true;
+}
+
+bool DetachRolePolicyRequest::PolicyNameHasBeenSet() const
+{
+    return m_policyNameHasBeenSet;
 }
 
 

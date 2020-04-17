@@ -26,7 +26,8 @@ JobStatus::JobStatus() :
     m_messageHasBeenSet(false),
     m_desiredWorkersHasBeenSet(false),
     m_currentWorkersHasBeenSet(false),
-    m_replicasHasBeenSet(false)
+    m_replicasHasBeenSet(false),
+    m_replicaInfosHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,26 @@ CoreInternalOutcome JobStatus::Deserialize(const Value &value)
         m_replicasHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplicaInfos") && !value["ReplicaInfos"].IsNull())
+    {
+        if (!value["ReplicaInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `JobStatus.ReplicaInfos` is not array type"));
+
+        const Value &tmpValue = value["ReplicaInfos"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ReplicaInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_replicaInfos.push_back(item);
+        }
+        m_replicaInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +158,21 @@ void JobStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         for (auto itr = m_replicas.begin(); itr != m_replicas.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_replicaInfosHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReplicaInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_replicaInfos.begin(); itr != m_replicaInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -221,5 +257,21 @@ void JobStatus::SetReplicas(const vector<string>& _replicas)
 bool JobStatus::ReplicasHasBeenSet() const
 {
     return m_replicasHasBeenSet;
+}
+
+vector<ReplicaInfo> JobStatus::GetReplicaInfos() const
+{
+    return m_replicaInfos;
+}
+
+void JobStatus::SetReplicaInfos(const vector<ReplicaInfo>& _replicaInfos)
+{
+    m_replicaInfos = _replicaInfos;
+    m_replicaInfosHasBeenSet = true;
+}
+
+bool JobStatus::ReplicaInfosHasBeenSet() const
+{
+    return m_replicaInfosHasBeenSet;
 }
 

@@ -23,6 +23,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRequest.h
   include/tencentcloud/ckafka/v20190819/model/GroupInfoMember.h
   include/tencentcloud/ckafka/v20190819/model/DeleteUserRequest.h
+  include/tencentcloud/ckafka/v20190819/model/PartitionOffset.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesRequest.h
@@ -38,9 +39,11 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h
   include/tencentcloud/ckafka/v20190819/model/Topic.h
   include/tencentcloud/ckafka/v20190819/model/Tag.h
+  include/tencentcloud/ckafka/v20190819/model/GroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesConfig.h
+  include/tencentcloud/ckafka/v20190819/model/OperateResponseData.h
   include/tencentcloud/ckafka/v20190819/model/CreateUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h
@@ -117,6 +120,7 @@ set(ckafka_src
   src/v20190819/model/DeleteAclRequest.cpp
   src/v20190819/model/GroupInfoMember.cpp
   src/v20190819/model/DeleteUserRequest.cpp
+  src/v20190819/model/PartitionOffset.cpp
   src/v20190819/model/DescribeACLRequest.cpp
   src/v20190819/model/DescribeTopicAttributesRequest.cpp
   src/v20190819/model/DescribeInstanceAttributesRequest.cpp
@@ -132,9 +136,11 @@ set(ckafka_src
   src/v20190819/model/JgwOperateResponse.cpp
   src/v20190819/model/Topic.cpp
   src/v20190819/model/Tag.cpp
+  src/v20190819/model/GroupResponse.cpp
   src/v20190819/model/DescribeTopicAttributesResponse.cpp
   src/v20190819/model/DescribeGroupResponse.cpp
   src/v20190819/model/ModifyInstanceAttributesConfig.cpp
+  src/v20190819/model/OperateResponseData.cpp
   src/v20190819/model/CreateUserResponse.cpp
   src/v20190819/model/ModifyInstanceAttributesResponse.cpp
   src/v20190819/model/CreatePartitionResponse.cpp

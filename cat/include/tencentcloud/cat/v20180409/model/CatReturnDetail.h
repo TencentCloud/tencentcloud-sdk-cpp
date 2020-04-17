@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool MapKeyHasBeenSet() const;
 
                     /**
-                     * 获取拨测目标的ip
-                     * @return ServerIp 拨测目标的ip
+                     * 获取拨测目标的IP
+                     * @return ServerIp 拨测目标的IP
                      */
                     std::string GetServerIp() const;
 
                     /**
-                     * 设置拨测目标的ip
-                     * @param ServerIp 拨测目标的ip
+                     * 设置拨测目标的IP
+                     * @param ServerIp 拨测目标的IP
                      */
                     void SetServerIp(const std::string& _serverIp);
 
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_mapKeyHasBeenSet;
 
                     /**
-                     * 拨测目标的ip
+                     * 拨测目标的IP
                      */
                     std::string m_serverIp;
                     bool m_serverIpHasBeenSet;

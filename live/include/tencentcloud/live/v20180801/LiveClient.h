@@ -31,6 +31,10 @@
 #include <tencentcloud/live/v20180801/model/AddLiveWatermarkResponse.h>
 #include <tencentcloud/live/v20180801/model/BindLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/BindLiveDomainCertResponse.h>
+#include <tencentcloud/live/v20180801/model/CancelCommonMixStreamRequest.h>
+#include <tencentcloud/live/v20180801/model/CancelCommonMixStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackRuleRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackTemplateRequest.h>
@@ -85,6 +89,8 @@
 #include <tencentcloud/live/v20180801/model/DeletePullStreamConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeGroupProIspPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeGroupProIspPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeHttpStatusInfoListRequest.h>
@@ -165,6 +171,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeProvinceIspPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePullStreamConfigsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePullStreamConfigsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamPlayInfoListRequest.h>
@@ -241,6 +249,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BindLiveDomainCertResponse> BindLiveDomainCertOutcome;
                 typedef std::future<BindLiveDomainCertOutcome> BindLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::BindLiveDomainCertRequest&, BindLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindLiveDomainCertAsyncHandler;
+                typedef Outcome<Error, Model::CancelCommonMixStreamResponse> CancelCommonMixStreamOutcome;
+                typedef std::future<CancelCommonMixStreamOutcome> CancelCommonMixStreamOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CancelCommonMixStreamRequest&, CancelCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCommonMixStreamAsyncHandler;
+                typedef Outcome<Error, Model::CreateCommonMixStreamResponse> CreateCommonMixStreamOutcome;
+                typedef std::future<CreateCommonMixStreamOutcome> CreateCommonMixStreamOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateCommonMixStreamRequest&, CreateCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommonMixStreamAsyncHandler;
                 typedef Outcome<Error, Model::CreateLiveCallbackRuleResponse> CreateLiveCallbackRuleOutcome;
                 typedef std::future<CreateLiveCallbackRuleOutcome> CreateLiveCallbackRuleOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLiveCallbackRuleRequest&, CreateLiveCallbackRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveCallbackRuleAsyncHandler;
@@ -322,6 +336,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBillBandwidthAndFluxListResponse> DescribeBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeBillBandwidthAndFluxListOutcome> DescribeBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBillBandwidthAndFluxListRequest&, DescribeBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillBandwidthAndFluxListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConcurrentRecordStreamNumResponse> DescribeConcurrentRecordStreamNumOutcome;
+                typedef std::future<DescribeConcurrentRecordStreamNumOutcome> DescribeConcurrentRecordStreamNumOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeConcurrentRecordStreamNumRequest&, DescribeConcurrentRecordStreamNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrentRecordStreamNumAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGroupProIspPlayInfoListResponse> DescribeGroupProIspPlayInfoListOutcome;
                 typedef std::future<DescribeGroupProIspPlayInfoListOutcome> DescribeGroupProIspPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeGroupProIspPlayInfoListRequest&, DescribeGroupProIspPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupProIspPlayInfoListAsyncHandler;
@@ -442,6 +459,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePullStreamConfigsResponse> DescribePullStreamConfigsOutcome;
                 typedef std::future<DescribePullStreamConfigsOutcome> DescribePullStreamConfigsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribePullStreamConfigsRequest&, DescribePullStreamConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePullStreamConfigsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeScreenShotSheetNumListResponse> DescribeScreenShotSheetNumListOutcome;
+                typedef std::future<DescribeScreenShotSheetNumListOutcome> DescribeScreenShotSheetNumListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeScreenShotSheetNumListRequest&, DescribeScreenShotSheetNumListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenShotSheetNumListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeStreamDayPlayInfoListResponse> DescribeStreamDayPlayInfoListOutcome;
                 typedef std::future<DescribeStreamDayPlayInfoListOutcome> DescribeStreamDayPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeStreamDayPlayInfoListRequest&, DescribeStreamDayPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamDayPlayInfoListAsyncHandler;
@@ -542,7 +562,7 @@ namespace TencentCloud
                 AddLiveDomainOutcomeCallable AddLiveDomainCallable(const Model::AddLiveDomainRequest& request);
 
                 /**
-                 *添加水印，成功返回水印id后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印id绑定到流使用。
+                 *添加水印，成功返回水印 ID 后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印 ID 绑定到流使用。
                  * @param req AddLiveWatermarkRequest
                  * @return AddLiveWatermarkOutcome
                  */
@@ -559,6 +579,24 @@ namespace TencentCloud
                 BindLiveDomainCertOutcome BindLiveDomainCert(const Model::BindLiveDomainCertRequest &request);
                 void BindLiveDomainCertAsync(const Model::BindLiveDomainCertRequest& request, const BindLiveDomainCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindLiveDomainCertOutcomeCallable BindLiveDomainCertCallable(const Model::BindLiveDomainCertRequest& request);
+
+                /**
+                 *该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。
+                 * @param req CancelCommonMixStreamRequest
+                 * @return CancelCommonMixStreamOutcome
+                 */
+                CancelCommonMixStreamOutcome CancelCommonMixStream(const Model::CancelCommonMixStreamRequest &request);
+                void CancelCommonMixStreamAsync(const Model::CancelCommonMixStreamRequest& request, const CancelCommonMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelCommonMixStreamOutcomeCallable CancelCommonMixStreamCallable(const Model::CancelCommonMixStreamRequest& request);
+
+                /**
+                 *该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。
+                 * @param req CreateCommonMixStreamRequest
+                 * @return CreateCommonMixStreamOutcome
+                 */
+                CreateCommonMixStreamOutcome CreateCommonMixStream(const Model::CreateCommonMixStreamRequest &request);
+                void CreateCommonMixStreamAsync(const Model::CreateCommonMixStreamRequest& request, const CreateCommonMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCommonMixStreamOutcomeCallable CreateCommonMixStreamCallable(const Model::CreateCommonMixStreamRequest& request);
 
                 /**
                  *创建回调规则，需要先调用[CreateLiveCallbackTemplate](/document/product/267/32637)接口创建回调模板，将返回的模板id绑定到域名/路径进行使用。
@@ -604,6 +642,7 @@ namespace TencentCloud
 - 注意事项
   1. 调用接口超时设置应大于3秒，小于3秒重试以及频繁调用都有可能产生重复录制任务。
   2. 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持 H.264，音频编码类型支持 AAC。
+  3. 为避免恶意或非主观的频繁 API 请求，对定时录制模式最大创建任务数做了限制：其中，当天可以创建的最大任务数不超过4000（不含已删除的任务）；当前时刻并发运行的任务数不超过400。有超出此限制的需要提工单申请。
                  * @param req CreateLiveRecordRequest
                  * @return CreateLiveRecordOutcome
                  */
@@ -684,8 +723,8 @@ namespace TencentCloud
                  *创建临时拉流转推任务，目前限制添加10条任务。
 
 注意：该接口用于创建临时拉流转推任务，
-拉流源地址即FromUrl 可以是腾讯或非腾讯数据源，
-但转推目标地址即ToUrl 目前限制为已注册的腾讯直播域名。
+拉流源地址即 FromUrl 可以是腾讯或非腾讯数据源，
+但转推目标地址即 ToUrl 目前限制为已注册的腾讯直播域名。
                  * @param req CreatePullStreamConfigRequest
                  * @return CreatePullStreamConfigOutcome
                  */
@@ -829,6 +868,15 @@ namespace TencentCloud
                 DescribeBillBandwidthAndFluxListOutcomeCallable DescribeBillBandwidthAndFluxListCallable(const Model::DescribeBillBandwidthAndFluxListRequest& request);
 
                 /**
+                 *查询并发录制路数，对慢直播和普通直播适用。
+                 * @param req DescribeConcurrentRecordStreamNumRequest
+                 * @return DescribeConcurrentRecordStreamNumOutcome
+                 */
+                DescribeConcurrentRecordStreamNumOutcome DescribeConcurrentRecordStreamNum(const Model::DescribeConcurrentRecordStreamNumRequest &request);
+                void DescribeConcurrentRecordStreamNumAsync(const Model::DescribeConcurrentRecordStreamNumRequest& request, const DescribeConcurrentRecordStreamNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConcurrentRecordStreamNumOutcomeCallable DescribeConcurrentRecordStreamNumCallable(const Model::DescribeConcurrentRecordStreamNumRequest& request);
+
+                /**
                  *查询按省份和运营商分组的下行播放数据。
                  * @param req DescribeGroupProIspPlayInfoListRequest
                  * @return DescribeGroupProIspPlayInfoListOutcome
@@ -929,7 +977,7 @@ namespace TencentCloud
                 DescribeLiveDomainPlayInfoListOutcomeCallable DescribeLiveDomainPlayInfoListCallable(const Model::DescribeLiveDomainPlayInfoListRequest& request);
 
                 /**
-                 *根据域名状态、类型等信息查询用户的域名信息
+                 *根据域名状态、类型等信息查询用户的域名信息。
                  * @param req DescribeLiveDomainsRequest
                  * @return DescribeLiveDomainsOutcome
                  */
@@ -1195,6 +1243,15 @@ namespace TencentCloud
                 DescribePullStreamConfigsOutcomeCallable DescribePullStreamConfigsCallable(const Model::DescribePullStreamConfigsRequest& request);
 
                 /**
+                 *接口用来查询直播增值业务--截图的张数
+                 * @param req DescribeScreenShotSheetNumListRequest
+                 * @return DescribeScreenShotSheetNumListOutcome
+                 */
+                DescribeScreenShotSheetNumListOutcome DescribeScreenShotSheetNumList(const Model::DescribeScreenShotSheetNumListRequest &request);
+                void DescribeScreenShotSheetNumListAsync(const Model::DescribeScreenShotSheetNumListRequest& request, const DescribeScreenShotSheetNumListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScreenShotSheetNumListOutcomeCallable DescribeScreenShotSheetNumListCallable(const Model::DescribeScreenShotSheetNumListRequest& request);
+
+                /**
                  *查询天维度每条流的播放数据，包括总流量等。
                  * @param req DescribeStreamDayPlayInfoListRequest
                  * @return DescribeStreamDayPlayInfoListOutcome
@@ -1241,7 +1298,7 @@ namespace TencentCloud
                 DescribeVisitTopSumInfoListOutcomeCallable DescribeVisitTopSumInfoListCallable(const Model::DescribeVisitTopSumInfoListRequest& request);
 
                 /**
-                 *断开推流连接，但可以重新推流
+                 *断开推流连接，但可以重新推流。
                  * @param req DropLiveStreamRequest
                  * @return DropLiveStreamOutcome
                  */
@@ -1250,7 +1307,7 @@ namespace TencentCloud
                 DropLiveStreamOutcomeCallable DropLiveStreamCallable(const Model::DropLiveStreamRequest& request);
 
                 /**
-                 *启用状态为停用的直播域名
+                 *启用状态为停用的直播域名。
                  * @param req EnableLiveDomainRequest
                  * @return EnableLiveDomainOutcome
                  */
@@ -1313,7 +1370,7 @@ namespace TencentCloud
                 ModifyLivePlayAuthKeyOutcomeCallable ModifyLivePlayAuthKeyCallable(const Model::ModifyLivePlayAuthKeyRequest& request);
 
                 /**
-                 *修改播放域名信息
+                 *修改播放域名信息。
                  * @param req ModifyLivePlayDomainRequest
                  * @return ModifyLivePlayDomainOutcome
                  */

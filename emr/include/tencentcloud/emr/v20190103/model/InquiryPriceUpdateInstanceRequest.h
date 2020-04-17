@@ -45,14 +45,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间单位。s:按量用例单位。m:包年包月用例单位
-                     * @return TimeUnit 时间单位。s:按量用例单位。m:包年包月用例单位
+                     * 获取变配的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @return TimeUnit 变配的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时间单位。s:按量用例单位。m:包年包月用例单位
-                     * @param TimeUnit 时间单位。s:按量用例单位。m:包年包月用例单位
+                     * 设置变配的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @param TimeUnit 变配的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -63,14 +71,22 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取时间长度。按量用例长度为3600。
-                     * @return TimeSpan 时间长度。按量用例长度为3600。
+                     * 获取变配的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @return TimeSpan 变配的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置时间长度。按量用例长度为3600。
-                     * @param TimeSpan 时间长度。按量用例长度为3600。
+                     * 设置变配的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @param TimeSpan 变配的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
@@ -81,14 +97,14 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取变配参数
-                     * @return UpdateSpec 变配参数
+                     * 获取节点变配的目标配置。
+                     * @return UpdateSpec 节点变配的目标配置。
                      */
                     UpdateInstanceSettings GetUpdateSpec() const;
 
                     /**
-                     * 设置变配参数
-                     * @param UpdateSpec 变配参数
+                     * 设置节点变配的目标配置。
+                     * @param UpdateSpec 节点变配的目标配置。
                      */
                     void SetUpdateSpec(const UpdateInstanceSettings& _updateSpec);
 
@@ -99,14 +115,22 @@ namespace TencentCloud
                     bool UpdateSpecHasBeenSet() const;
 
                     /**
-                     * 获取计费类型
-                     * @return PayMode 计费类型
+                     * 获取实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @return PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置计费类型
-                     * @param PayMode 计费类型
+                     * 设置实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @param PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     void SetPayMode(const uint64_t& _payMode);
 
@@ -117,14 +141,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取位置信息
-                     * @return Placement 位置信息
+                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     Placement GetPlacement() const;
 
                     /**
-                     * 设置位置信息
-                     * @param Placement 位置信息
+                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     void SetPlacement(const Placement& _placement);
 
@@ -135,14 +159,18 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取货币种类
-                     * @return Currency 货币种类
+                     * 获取货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @return Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string GetCurrency() const;
 
                     /**
-                     * 设置货币种类
-                     * @param Currency 货币种类
+                     * 设置货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @param Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     void SetCurrency(const std::string& _currency);
 
@@ -155,37 +183,44 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间单位。s:按量用例单位。m:包年包月用例单位
+                     * 变配的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 时间长度。按量用例长度为3600。
+                     * 变配的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 变配参数
+                     * 节点变配的目标配置。
                      */
                     UpdateInstanceSettings m_updateSpec;
                     bool m_updateSpecHasBeenSet;
 
                     /**
-                     * 计费类型
+                     * 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 位置信息
+                     * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 货币种类
+                     * 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;

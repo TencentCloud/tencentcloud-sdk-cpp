@@ -172,6 +172,24 @@ namespace TencentCloud
                      */
                     bool QpsHasBeenSet() const;
 
+                    /**
+                     * 获取CPU核数
+                     * @return Cpu CPU核数
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置CPU核数
+                     * @param Cpu CPU核数
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +233,12 @@ namespace TencentCloud
                      */
                     int64_t m_qps;
                     bool m_qpsHasBeenSet;
+
+                    /**
+                     * CPU核数
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
 
                 };
             }

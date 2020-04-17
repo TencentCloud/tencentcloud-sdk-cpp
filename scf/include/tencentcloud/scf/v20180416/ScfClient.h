@@ -33,6 +33,8 @@
 #include <tencentcloud/scf/v20180416/model/CreateTriggerResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/DeleteLayerVersionRequest.h>
+#include <tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteNamespaceRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerRequest.h>
@@ -43,14 +45,22 @@
 #include <tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionLogsRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionLogsResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetLayerVersionRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/scf/v20180416/model/InvokeResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListLayerVersionsRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListLayerVersionsResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListLayersRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListLayersResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListNamespacesRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListNamespacesResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListVersionByFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListVersionByFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/PublishLayerVersionRequest.h>
+#include <tencentcloud/scf/v20180416/model/PublishLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/PublishVersionRequest.h>
 #include <tencentcloud/scf/v20180416/model/PublishVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h>
@@ -88,6 +98,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLayerVersionResponse> DeleteLayerVersionOutcome;
+                typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::DeleteLayerVersionRequest&, DeleteLayerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLayerVersionAsyncHandler;
                 typedef Outcome<Error, Model::DeleteNamespaceResponse> DeleteNamespaceOutcome;
                 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteNamespaceRequest&, DeleteNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
@@ -103,18 +116,30 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetFunctionLogsResponse> GetFunctionLogsOutcome;
                 typedef std::future<GetFunctionLogsOutcome> GetFunctionLogsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionLogsRequest&, GetFunctionLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionLogsAsyncHandler;
+                typedef Outcome<Error, Model::GetLayerVersionResponse> GetLayerVersionOutcome;
+                typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetLayerVersionRequest&, GetLayerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLayerVersionAsyncHandler;
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
                 typedef Outcome<Error, Model::ListFunctionsResponse> ListFunctionsOutcome;
                 typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListFunctionsRequest&, ListFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionsAsyncHandler;
+                typedef Outcome<Error, Model::ListLayerVersionsResponse> ListLayerVersionsOutcome;
+                typedef std::future<ListLayerVersionsOutcome> ListLayerVersionsOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListLayerVersionsRequest&, ListLayerVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLayerVersionsAsyncHandler;
+                typedef Outcome<Error, Model::ListLayersResponse> ListLayersOutcome;
+                typedef std::future<ListLayersOutcome> ListLayersOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListLayersRequest&, ListLayersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLayersAsyncHandler;
                 typedef Outcome<Error, Model::ListNamespacesResponse> ListNamespacesOutcome;
                 typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListNamespacesRequest&, ListNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListNamespacesAsyncHandler;
                 typedef Outcome<Error, Model::ListVersionByFunctionResponse> ListVersionByFunctionOutcome;
                 typedef std::future<ListVersionByFunctionOutcome> ListVersionByFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListVersionByFunctionRequest&, ListVersionByFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVersionByFunctionAsyncHandler;
+                typedef Outcome<Error, Model::PublishLayerVersionResponse> PublishLayerVersionOutcome;
+                typedef std::future<PublishLayerVersionOutcome> PublishLayerVersionOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::PublishLayerVersionRequest&, PublishLayerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishLayerVersionAsyncHandler;
                 typedef Outcome<Error, Model::PublishVersionResponse> PublishVersionOutcome;
                 typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::PublishVersionRequest&, PublishVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishVersionAsyncHandler;
@@ -182,6 +207,15 @@ namespace TencentCloud
                 DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request);
 
                 /**
+                 *删除指定层的指定版本，被删除的版本无法再关联到函数上，但不会影响正在引用这个层的函数。
+                 * @param req DeleteLayerVersionRequest
+                 * @return DeleteLayerVersionOutcome
+                 */
+                DeleteLayerVersionOutcome DeleteLayerVersion(const Model::DeleteLayerVersionRequest &request);
+                void DeleteLayerVersionAsync(const Model::DeleteLayerVersionRequest& request, const DeleteLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLayerVersionOutcomeCallable DeleteLayerVersionCallable(const Model::DeleteLayerVersionRequest& request);
+
+                /**
                  *该接口根据传入的参数创建命名空间。
                  * @param req DeleteNamespaceRequest
                  * @return DeleteNamespaceOutcome
@@ -227,6 +261,15 @@ namespace TencentCloud
                 GetFunctionLogsOutcomeCallable GetFunctionLogsCallable(const Model::GetFunctionLogsRequest& request);
 
                 /**
+                 *获取层版本详细信息，包括用于下载层中文件的链接。
+                 * @param req GetLayerVersionRequest
+                 * @return GetLayerVersionOutcome
+                 */
+                GetLayerVersionOutcome GetLayerVersion(const Model::GetLayerVersionRequest &request);
+                void GetLayerVersionAsync(const Model::GetLayerVersionRequest& request, const GetLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLayerVersionOutcomeCallable GetLayerVersionCallable(const Model::GetLayerVersionRequest& request);
+
+                /**
                  *该接口用于运行函数。
                  * @param req InvokeRequest
                  * @return InvokeOutcome
@@ -245,6 +288,24 @@ namespace TencentCloud
                 ListFunctionsOutcomeCallable ListFunctionsCallable(const Model::ListFunctionsRequest& request);
 
                 /**
+                 *返回指定层的全部版本的信息
+                 * @param req ListLayerVersionsRequest
+                 * @return ListLayerVersionsOutcome
+                 */
+                ListLayerVersionsOutcome ListLayerVersions(const Model::ListLayerVersionsRequest &request);
+                void ListLayerVersionsAsync(const Model::ListLayerVersionsRequest& request, const ListLayerVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListLayerVersionsOutcomeCallable ListLayerVersionsCallable(const Model::ListLayerVersionsRequest& request);
+
+                /**
+                 *返回全部层的列表，其中包含了每个层最新版本的信息，可以通过适配运行时进行过滤。
+                 * @param req ListLayersRequest
+                 * @return ListLayersOutcome
+                 */
+                ListLayersOutcome ListLayers(const Model::ListLayersRequest &request);
+                void ListLayersAsync(const Model::ListLayersRequest& request, const ListLayersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListLayersOutcomeCallable ListLayersCallable(const Model::ListLayersRequest& request);
+
+                /**
                  *列出命名空间列表
                  * @param req ListNamespacesRequest
                  * @return ListNamespacesOutcome
@@ -261,6 +322,15 @@ namespace TencentCloud
                 ListVersionByFunctionOutcome ListVersionByFunction(const Model::ListVersionByFunctionRequest &request);
                 void ListVersionByFunctionAsync(const Model::ListVersionByFunctionRequest& request, const ListVersionByFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListVersionByFunctionOutcomeCallable ListVersionByFunctionCallable(const Model::ListVersionByFunctionRequest& request);
+
+                /**
+                 *使用给定的zip文件或cos对象创建一个层的新版本，每次使用相同的层的名称调用本接口，都会生成一个新版本。
+                 * @param req PublishLayerVersionRequest
+                 * @return PublishLayerVersionOutcome
+                 */
+                PublishLayerVersionOutcome PublishLayerVersion(const Model::PublishLayerVersionRequest &request);
+                void PublishLayerVersionAsync(const Model::PublishLayerVersionRequest& request, const PublishLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishLayerVersionOutcomeCallable PublishLayerVersionCallable(const Model::PublishLayerVersionRequest& request);
 
                 /**
                  *该接口用于用户发布新版本函数。

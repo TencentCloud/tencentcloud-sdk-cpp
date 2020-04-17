@@ -24,7 +24,8 @@ using namespace std;
 UpdateInstanceSettings::UpdateInstanceSettings() :
     m_memoryHasBeenSet(false),
     m_cPUCoresHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome UpdateInstanceSettings::Deserialize(const Value &value)
         m_resourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `UpdateInstanceSettings.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void UpdateInstanceSettings::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void UpdateInstanceSettings::SetResourceId(const string& _resourceId)
 bool UpdateInstanceSettings::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string UpdateInstanceSettings::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void UpdateInstanceSettings::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool UpdateInstanceSettings::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

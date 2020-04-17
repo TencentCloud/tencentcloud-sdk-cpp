@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/scf/v20180416/model/Environment.h>
 #include <tencentcloud/scf/v20180416/model/VpcConfig.h>
+#include <tencentcloud/scf/v20180416/model/LayerVersionSimple.h>
+#include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
 
 
 namespace TencentCloud
@@ -278,6 +280,60 @@ namespace TencentCloud
                      */
                     bool L5EnableHasBeenSet() const;
 
+                    /**
+                     * 获取函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。
+                     * @return Layers 函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。
+                     */
+                    std::vector<LayerVersionSimple> GetLayers() const;
+
+                    /**
+                     * 设置函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。
+                     * @param Layers 函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。
+                     */
+                    void SetLayers(const std::vector<LayerVersionSimple>& _layers);
+
+                    /**
+                     * 判断参数 Layers 是否已赋值
+                     * @return Layers 是否已赋值
+                     */
+                    bool LayersHasBeenSet() const;
+
+                    /**
+                     * 获取函数关联的死信队列信息
+                     * @return DeadLetterConfig 函数关联的死信队列信息
+                     */
+                    DeadLetterConfig GetDeadLetterConfig() const;
+
+                    /**
+                     * 设置函数关联的死信队列信息
+                     * @param DeadLetterConfig 函数关联的死信队列信息
+                     */
+                    void SetDeadLetterConfig(const DeadLetterConfig& _deadLetterConfig);
+
+                    /**
+                     * 判断参数 DeadLetterConfig 是否已赋值
+                     * @return DeadLetterConfig 是否已赋值
+                     */
+                    bool DeadLetterConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启Ons访问能力，TRUE 为开启，FALSE为关闭
+                     * @return OnsEnable 是否开启Ons访问能力，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string GetOnsEnable() const;
+
+                    /**
+                     * 设置是否开启Ons访问能力，TRUE 为开启，FALSE为关闭
+                     * @param OnsEnable 是否开启Ons访问能力，TRUE 为开启，FALSE为关闭
+                     */
+                    void SetOnsEnable(const std::string& _onsEnable);
+
+                    /**
+                     * 判断参数 OnsEnable 是否已赋值
+                     * @return OnsEnable 是否已赋值
+                     */
+                    bool OnsEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +413,24 @@ namespace TencentCloud
                      */
                     std::string m_l5Enable;
                     bool m_l5EnableHasBeenSet;
+
+                    /**
+                     * 函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。
+                     */
+                    std::vector<LayerVersionSimple> m_layers;
+                    bool m_layersHasBeenSet;
+
+                    /**
+                     * 函数关联的死信队列信息
+                     */
+                    DeadLetterConfig m_deadLetterConfig;
+                    bool m_deadLetterConfigHasBeenSet;
+
+                    /**
+                     * 是否开启Ons访问能力，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string m_onsEnable;
+                    bool m_onsEnableHasBeenSet;
 
                 };
             }

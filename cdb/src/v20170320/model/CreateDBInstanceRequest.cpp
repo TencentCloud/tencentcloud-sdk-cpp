@@ -49,7 +49,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_instanceNameHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_deployGroupIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -286,6 +287,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -710,6 +719,22 @@ void CreateDBInstanceRequest::SetClientToken(const string& _clientToken)
 bool CreateDBInstanceRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void CreateDBInstanceRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 

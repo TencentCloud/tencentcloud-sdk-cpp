@@ -132,6 +132,42 @@ namespace TencentCloud
                      */
                     bool CreateUinHasBeenSet() const;
 
+                    /**
+                     * 获取标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值
+                     * @return TagKeys 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值
+                     */
+                    std::vector<std::string> GetTagKeys() const;
+
+                    /**
+                     * 设置标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值
+                     * @param TagKeys 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值
+                     */
+                    void SetTagKeys(const std::vector<std::string>& _tagKeys);
+
+                    /**
+                     * 判断参数 TagKeys 是否已赋值
+                     * @return TagKeys 是否已赋值
+                     */
+                    bool TagKeysHasBeenSet() const;
+
+                    /**
+                     * 获取是否展现项目标签
+                     * @return ShowProject 是否展现项目标签
+                     */
+                    uint64_t GetShowProject() const;
+
+                    /**
+                     * 设置是否展现项目标签
+                     * @param ShowProject 是否展现项目标签
+                     */
+                    void SetShowProject(const uint64_t& _showProject);
+
+                    /**
+                     * 判断参数 ShowProject 是否已赋值
+                     * @return ShowProject 是否已赋值
+                     */
+                    bool ShowProjectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +199,18 @@ namespace TencentCloud
                      */
                     uint64_t m_createUin;
                     bool m_createUinHasBeenSet;
+
+                    /**
+                     * 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只会本值
+                     */
+                    std::vector<std::string> m_tagKeys;
+                    bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 是否展现项目标签
+                     */
+                    uint64_t m_showProject;
+                    bool m_showProjectHasBeenSet;
 
                 };
             }

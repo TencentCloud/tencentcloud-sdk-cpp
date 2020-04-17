@@ -29,8 +29,8 @@ CreateContractByUploadRequest::CreateContractByUploadRequest() :
     m_signInfosHasBeenSet(false),
     m_contractFileHasBeenSet(false),
     m_contractNameHasBeenSet(false),
-    m_initiatorHasBeenSet(false),
     m_remarksHasBeenSet(false),
+    m_initiatorHasBeenSet(false),
     m_expireTimeHasBeenSet(false)
 {
 }
@@ -89,20 +89,20 @@ string CreateContractByUploadRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_contractName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_initiatorHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Initiator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_initiator.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_remarksHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Remarks";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_remarks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_initiatorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Initiator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_initiator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
@@ -201,22 +201,6 @@ bool CreateContractByUploadRequest::ContractNameHasBeenSet() const
     return m_contractNameHasBeenSet;
 }
 
-string CreateContractByUploadRequest::GetInitiator() const
-{
-    return m_initiator;
-}
-
-void CreateContractByUploadRequest::SetInitiator(const string& _initiator)
-{
-    m_initiator = _initiator;
-    m_initiatorHasBeenSet = true;
-}
-
-bool CreateContractByUploadRequest::InitiatorHasBeenSet() const
-{
-    return m_initiatorHasBeenSet;
-}
-
 string CreateContractByUploadRequest::GetRemarks() const
 {
     return m_remarks;
@@ -231,6 +215,22 @@ void CreateContractByUploadRequest::SetRemarks(const string& _remarks)
 bool CreateContractByUploadRequest::RemarksHasBeenSet() const
 {
     return m_remarksHasBeenSet;
+}
+
+string CreateContractByUploadRequest::GetInitiator() const
+{
+    return m_initiator;
+}
+
+void CreateContractByUploadRequest::SetInitiator(const string& _initiator)
+{
+    m_initiator = _initiator;
+    m_initiatorHasBeenSet = true;
+}
+
+bool CreateContractByUploadRequest::InitiatorHasBeenSet() const
+{
+    return m_initiatorHasBeenSet;
 }
 
 string CreateContractByUploadRequest::GetExpireTime() const

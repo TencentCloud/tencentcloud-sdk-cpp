@@ -341,6 +341,49 @@ TiiaClient::DetectProductOutcomeCallable TiiaClient::DetectProductCallable(const
     return task->get_future();
 }
 
+TiiaClient::DetectProductBetaOutcome TiiaClient::DetectProductBeta(const DetectProductBetaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectProductBeta");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectProductBetaResponse rsp = DetectProductBetaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectProductBetaOutcome(rsp);
+        else
+            return DetectProductBetaOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectProductBetaOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectProductBetaAsync(const DetectProductBetaRequest& request, const DetectProductBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectProductBeta(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectProductBetaOutcomeCallable TiiaClient::DetectProductBetaCallable(const DetectProductBetaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectProductBetaOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectProductBeta(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::EnhanceImageOutcome TiiaClient::EnhanceImage(const EnhanceImageRequest &request)
 {
     auto outcome = MakeRequest(request, "EnhanceImage");
@@ -377,49 +420,6 @@ TiiaClient::EnhanceImageOutcomeCallable TiiaClient::EnhanceImageCallable(const E
         [this, request]()
         {
             return this->EnhanceImage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TiiaClient::ImageModerationOutcome TiiaClient::ImageModeration(const ImageModerationRequest &request)
-{
-    auto outcome = MakeRequest(request, "ImageModeration");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ImageModerationResponse rsp = ImageModerationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ImageModerationOutcome(rsp);
-        else
-            return ImageModerationOutcome(o.GetError());
-    }
-    else
-    {
-        return ImageModerationOutcome(outcome.GetError());
-    }
-}
-
-void TiiaClient::ImageModerationAsync(const ImageModerationRequest& request, const ImageModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ImageModeration(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TiiaClient::ImageModerationOutcomeCallable TiiaClient::ImageModerationCallable(const ImageModerationRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ImageModerationOutcome()>>(
-        [this, request]()
-        {
-            return this->ImageModeration(request);
         }
     );
 

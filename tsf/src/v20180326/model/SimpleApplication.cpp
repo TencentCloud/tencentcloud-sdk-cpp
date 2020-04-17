@@ -30,7 +30,9 @@ SimpleApplication::SimpleApplication() :
     m_progLangHasBeenSet(false),
     m_applicationResourceTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_apigatewayServiceIdHasBeenSet(false),
+    m_applicationRuntimeTypeHasBeenSet(false)
 {
 }
 
@@ -129,6 +131,26 @@ CoreInternalOutcome SimpleApplication::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApigatewayServiceId") && !value["ApigatewayServiceId"].IsNull())
+    {
+        if (!value["ApigatewayServiceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleApplication.ApigatewayServiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apigatewayServiceId = string(value["ApigatewayServiceId"].GetString());
+        m_apigatewayServiceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationRuntimeType") && !value["ApplicationRuntimeType"].IsNull())
+    {
+        if (!value["ApplicationRuntimeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SimpleApplication.ApplicationRuntimeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationRuntimeType = string(value["ApplicationRuntimeType"].GetString());
+        m_applicationRuntimeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +228,22 @@ void SimpleApplication::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apigatewayServiceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApigatewayServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_apigatewayServiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationRuntimeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationRuntimeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -353,5 +391,37 @@ void SimpleApplication::SetUpdateTime(const string& _updateTime)
 bool SimpleApplication::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string SimpleApplication::GetApigatewayServiceId() const
+{
+    return m_apigatewayServiceId;
+}
+
+void SimpleApplication::SetApigatewayServiceId(const string& _apigatewayServiceId)
+{
+    m_apigatewayServiceId = _apigatewayServiceId;
+    m_apigatewayServiceIdHasBeenSet = true;
+}
+
+bool SimpleApplication::ApigatewayServiceIdHasBeenSet() const
+{
+    return m_apigatewayServiceIdHasBeenSet;
+}
+
+string SimpleApplication::GetApplicationRuntimeType() const
+{
+    return m_applicationRuntimeType;
+}
+
+void SimpleApplication::SetApplicationRuntimeType(const string& _applicationRuntimeType)
+{
+    m_applicationRuntimeType = _applicationRuntimeType;
+    m_applicationRuntimeTypeHasBeenSet = true;
+}
+
+bool SimpleApplication::ApplicationRuntimeTypeHasBeenSet() const
+{
+    return m_applicationRuntimeTypeHasBeenSet;
 }
 

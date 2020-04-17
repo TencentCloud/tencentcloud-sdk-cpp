@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取需要制作镜像的实例ID
-                     * @return InstanceId 需要制作镜像的实例ID
+                     * 获取需要制作镜像的实例ID。
+                     * @return InstanceId 需要制作镜像的实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置需要制作镜像的实例ID
-                     * @param InstanceId 需要制作镜像的实例ID
+                     * 设置需要制作镜像的实例ID。
+                     * @param InstanceId 需要制作镜像的实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool SysprepHasBeenSet() const;
 
                     /**
-                     * 获取实例需要制作镜像的数据盘Id
-                     * @return DataDiskIds 实例需要制作镜像的数据盘Id
+                     * 获取基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
+                     * @return DataDiskIds 基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
                      */
                     std::vector<std::string> GetDataDiskIds() const;
 
                     /**
-                     * 设置实例需要制作镜像的数据盘Id
-                     * @param DataDiskIds 实例需要制作镜像的数据盘Id
+                     * 设置基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
+                     * @param DataDiskIds 基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
                      */
                     void SetDataDiskIds(const std::vector<std::string>& _dataDiskIds);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool DataDiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取需要制作镜像的快照ID,必须包含一个系统盘快照
-                     * @return SnapshotIds 需要制作镜像的快照ID,必须包含一个系统盘快照
+                     * 获取基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。
+                     * @return SnapshotIds 基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
-                     * 设置需要制作镜像的快照ID,必须包含一个系统盘快照
-                     * @param SnapshotIds 需要制作镜像的快照ID,必须包含一个系统盘快照
+                     * 设置基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。
+                     * @param SnapshotIds 基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool SnapshotIdsHasBeenSet() const;
 
                     /**
-                     * 获取检测请求的合法性，但不会对操作的资源产生任何影响
-                     * @return DryRun 检测请求的合法性，但不会对操作的资源产生任何影响
+                     * 获取检测本次请求的是否成功，但不会对操作的资源产生任何影响
+                     * @return DryRun 检测本次请求的是否成功，但不会对操作的资源产生任何影响
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置检测请求的合法性，但不会对操作的资源产生任何影响
-                     * @param DryRun 检测请求的合法性，但不会对操作的资源产生任何影响
+                     * 设置检测本次请求的是否成功，但不会对操作的资源产生任何影响
+                     * @param DryRun 检测本次请求的是否成功，但不会对操作的资源产生任何影响
                      */
                     void SetDryRun(const bool& _dryRun);
 
@@ -199,7 +199,7 @@ namespace TencentCloud
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 需要制作镜像的实例ID
+                     * 需要制作镜像的实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -224,19 +224,19 @@ namespace TencentCloud
                     bool m_sysprepHasBeenSet;
 
                     /**
-                     * 实例需要制作镜像的数据盘Id
+                     * 基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
                      */
                     std::vector<std::string> m_dataDiskIds;
                     bool m_dataDiskIdsHasBeenSet;
 
                     /**
-                     * 需要制作镜像的快照ID,必须包含一个系统盘快照
+                     * 基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。
                      */
                     std::vector<std::string> m_snapshotIds;
                     bool m_snapshotIdsHasBeenSet;
 
                     /**
-                     * 检测请求的合法性，但不会对操作的资源产生任何影响
+                     * 检测本次请求的是否成功，但不会对操作的资源产生任何影响
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

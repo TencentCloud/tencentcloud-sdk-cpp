@@ -49,7 +49,10 @@ Instance::Instance() :
     m_uuidHasBeenSet(false),
     m_latestOperationHasBeenSet(false),
     m_latestOperationStateHasBeenSet(false),
-    m_latestOperationRequestIdHasBeenSet(false)
+    m_latestOperationRequestIdHasBeenSet(false),
+    m_disasterRecoverGroupIdHasBeenSet(false),
+    m_iPv6AddressesHasBeenSet(false),
+    m_camRoleNameHasBeenSet(false)
 {
 }
 
@@ -402,6 +405,39 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_latestOperationRequestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DisasterRecoverGroupId") && !value["DisasterRecoverGroupId"].IsNull())
+    {
+        if (!value["DisasterRecoverGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.DisasterRecoverGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_disasterRecoverGroupId = string(value["DisasterRecoverGroupId"].GetString());
+        m_disasterRecoverGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPv6Addresses") && !value["IPv6Addresses"].IsNull())
+    {
+        if (!value["IPv6Addresses"].IsArray())
+            return CoreInternalOutcome(Error("response `Instance.IPv6Addresses` is not array type"));
+
+        const Value &tmpValue = value["IPv6Addresses"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_iPv6Addresses.push_back((*itr).GetString());
+        }
+        m_iPv6AddressesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CamRoleName") && !value["CamRoleName"].IsNull())
+    {
+        if (!value["CamRoleName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.CamRoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_camRoleName = string(value["CamRoleName"].GetString());
+        m_camRoleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -665,6 +701,35 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "LatestOperationRequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_latestOperationRequestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disasterRecoverGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DisasterRecoverGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_disasterRecoverGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6AddressesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IPv6Addresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_iPv6Addresses.begin(); itr != m_iPv6Addresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_camRoleNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CamRoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_camRoleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1116,5 +1181,53 @@ void Instance::SetLatestOperationRequestId(const string& _latestOperationRequest
 bool Instance::LatestOperationRequestIdHasBeenSet() const
 {
     return m_latestOperationRequestIdHasBeenSet;
+}
+
+string Instance::GetDisasterRecoverGroupId() const
+{
+    return m_disasterRecoverGroupId;
+}
+
+void Instance::SetDisasterRecoverGroupId(const string& _disasterRecoverGroupId)
+{
+    m_disasterRecoverGroupId = _disasterRecoverGroupId;
+    m_disasterRecoverGroupIdHasBeenSet = true;
+}
+
+bool Instance::DisasterRecoverGroupIdHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdHasBeenSet;
+}
+
+vector<string> Instance::GetIPv6Addresses() const
+{
+    return m_iPv6Addresses;
+}
+
+void Instance::SetIPv6Addresses(const vector<string>& _iPv6Addresses)
+{
+    m_iPv6Addresses = _iPv6Addresses;
+    m_iPv6AddressesHasBeenSet = true;
+}
+
+bool Instance::IPv6AddressesHasBeenSet() const
+{
+    return m_iPv6AddressesHasBeenSet;
+}
+
+string Instance::GetCamRoleName() const
+{
+    return m_camRoleName;
+}
+
+void Instance::SetCamRoleName(const string& _camRoleName)
+{
+    m_camRoleName = _camRoleName;
+    m_camRoleNameHasBeenSet = true;
+}
+
+bool Instance::CamRoleNameHasBeenSet() const
+{
+    return m_camRoleNameHasBeenSet;
 }
 

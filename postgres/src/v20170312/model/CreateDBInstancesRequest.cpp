@@ -36,7 +36,9 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_voucherIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_activityIdHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -154,6 +156,22 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_activityIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActivityId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_activityId, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -370,6 +388,38 @@ void CreateDBInstancesRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool CreateDBInstancesRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+int64_t CreateDBInstancesRequest::GetActivityId() const
+{
+    return m_activityId;
+}
+
+void CreateDBInstancesRequest::SetActivityId(const int64_t& _activityId)
+{
+    m_activityId = _activityId;
+    m_activityIdHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::ActivityIdHasBeenSet() const
+{
+    return m_activityIdHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateDBInstancesRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取关联的流程 Id，可用于查询流程执行状态
-                     * @return FlowId 关联的流程 Id，可用于查询流程执行状态
+                     * 获取关联的流程 ID，可用于查询流程执行状态
+                     * @return FlowId 关联的流程 ID，可用于查询流程执行状态
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置关联的流程 Id，可用于查询流程执行状态
-                     * @param FlowId 关联的流程 Id，可用于查询流程执行状态
+                     * 设置关联的流程 ID，可用于查询流程执行状态
+                     * @param FlowId 关联的流程 ID，可用于查询流程执行状态
                      */
                     void SetFlowId(const int64_t& _flowId);
 
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_countHasBeenSet;
 
                     /**
-                     * 关联的流程 Id，可用于查询流程执行状态
+                     * 关联的流程 ID，可用于查询流程执行状态
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

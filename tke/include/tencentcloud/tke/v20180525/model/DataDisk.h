@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件系统
-                     * @return FileSystem 文件系统
+                     * 获取文件系统(ext3/ext4/xfs)
+                     * @return FileSystem 文件系统(ext3/ext4/xfs)
                      */
                     std::string GetFileSystem() const;
 
                     /**
-                     * 设置文件系统
-                     * @param FileSystem 文件系统
+                     * 设置文件系统(ext3/ext4/xfs)
+                     * @param FileSystem 文件系统(ext3/ext4/xfs)
                      */
                     void SetFileSystem(const std::string& _fileSystem);
 
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 文件系统
+                     * 文件系统(ext3/ext4/xfs)
                      */
                     std::string m_fileSystem;
                     bool m_fileSystemHasBeenSet;

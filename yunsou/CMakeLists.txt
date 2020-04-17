@@ -15,10 +15,20 @@
 #
 
 set(yunsou_public_header
+  include/tencentcloud/yunsou/v20191115/YunsouClient.h
   include/tencentcloud/yunsou/v20180504/YunsouClient.h
   )
 
 set(yunsou_public_header_model
+  include/tencentcloud/yunsou/v20191115/model/SearchResult.h
+  include/tencentcloud/yunsou/v20191115/model/SearchResultSeg.h
+  include/tencentcloud/yunsou/v20191115/model/DataManipulationResult.h
+  include/tencentcloud/yunsou/v20191115/model/SearchResultItem.h
+  include/tencentcloud/yunsou/v20191115/model/DataSearchResponse.h
+  include/tencentcloud/yunsou/v20191115/model/DataSearchRequest.h
+  include/tencentcloud/yunsou/v20191115/model/DataManipulationResultItem.h
+  include/tencentcloud/yunsou/v20191115/model/DataManipulationRequest.h
+  include/tencentcloud/yunsou/v20191115/model/DataManipulationResponse.h
   include/tencentcloud/yunsou/v20180504/model/DataSearchResponse.h
   include/tencentcloud/yunsou/v20180504/model/DataSearchRequest.h
   include/tencentcloud/yunsou/v20180504/model/DataManipulationRequest.h
@@ -26,7 +36,17 @@ set(yunsou_public_header_model
   )
 
 set(yunsou_src
+  src/v20191115/YunsouClient.cpp
   src/v20180504/YunsouClient.cpp
+  src/v20191115/model/SearchResult.cpp
+  src/v20191115/model/SearchResultSeg.cpp
+  src/v20191115/model/DataManipulationResult.cpp
+  src/v20191115/model/SearchResultItem.cpp
+  src/v20191115/model/DataSearchResponse.cpp
+  src/v20191115/model/DataSearchRequest.cpp
+  src/v20191115/model/DataManipulationResultItem.cpp
+  src/v20191115/model/DataManipulationRequest.cpp
+  src/v20191115/model/DataManipulationResponse.cpp
   src/v20180504/model/DataSearchResponse.cpp
   src/v20180504/model/DataSearchRequest.cpp
   src/v20180504/model/DataManipulationRequest.cpp

@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeTasksResponse::Deserialize(const string &payload)
         const Value &tmpValue = rsp["TaskInfos"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TaskInfo item;
+            TaskInfoNew item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -109,7 +109,7 @@ bool DescribeTasksResponse::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-vector<TaskInfo> DescribeTasksResponse::GetTaskInfos() const
+vector<TaskInfoNew> DescribeTasksResponse::GetTaskInfos() const
 {
     return m_taskInfos;
 }

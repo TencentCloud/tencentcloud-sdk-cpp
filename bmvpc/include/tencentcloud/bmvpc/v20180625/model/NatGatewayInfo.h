@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取网关状态，其中0表示创建中，1表示运行中，2表示创建失败
-                     * @return ProductionStatus 网关状态，其中0表示创建中，1表示运行中，2表示创建失败
+                     * 获取网关创建状态，其中0表示创建中，1表示运行中，2表示创建失败
+                     * @return ProductionStatus 网关创建状态，其中0表示创建中，1表示运行中，2表示创建失败
                      */
                     uint64_t GetProductionStatus() const;
 
                     /**
-                     * 设置网关状态，其中0表示创建中，1表示运行中，2表示创建失败
-                     * @param ProductionStatus 网关状态，其中0表示创建中，1表示运行中，2表示创建失败
+                     * 设置网关创建状态，其中0表示创建中，1表示运行中，2表示创建失败
+                     * @param ProductionStatus 网关创建状态，其中0表示创建中，1表示运行中，2表示创建失败
                      */
                     void SetProductionStatus(const uint64_t& _productionStatus);
 
@@ -280,6 +280,60 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取网关启用状态，1为禁用，0为启用。
+                     * @return State 网关启用状态，1为禁用，0为启用。
+                     */
+                    uint64_t GetState() const;
+
+                    /**
+                     * 设置网关启用状态，1为禁用，0为启用。
+                     * @param State 网关启用状态，1为禁用，0为启用。
+                     */
+                    void SetState(const uint64_t& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络整型ID
+                     * @return IntVpcId 私有网络整型ID
+                     */
+                    uint64_t GetIntVpcId() const;
+
+                    /**
+                     * 设置私有网络整型ID
+                     * @param IntVpcId 私有网络整型ID
+                     */
+                    void SetIntVpcId(const uint64_t& _intVpcId);
+
+                    /**
+                     * 判断参数 IntVpcId 是否已赋值
+                     * @return IntVpcId 是否已赋值
+                     */
+                    bool IntVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取NAT资源ID
+                     * @return NatResourceId NAT资源ID
+                     */
+                    uint64_t GetNatResourceId() const;
+
+                    /**
+                     * 设置NAT资源ID
+                     * @param NatResourceId NAT资源ID
+                     */
+                    void SetNatResourceId(const uint64_t& _natResourceId);
+
+                    /**
+                     * 判断参数 NatResourceId 是否已赋值
+                     * @return NatResourceId 是否已赋值
+                     */
+                    bool NatResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,7 +361,7 @@ namespace TencentCloud
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * 网关状态，其中0表示创建中，1表示运行中，2表示创建失败
+                     * 网关创建状态，其中0表示创建中，1表示运行中，2表示创建失败
                      */
                     uint64_t m_productionStatus;
                     bool m_productionStatusHasBeenSet;
@@ -359,6 +413,24 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 网关启用状态，1为禁用，0为启用。
+                     */
+                    uint64_t m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * 私有网络整型ID
+                     */
+                    uint64_t m_intVpcId;
+                    bool m_intVpcIdHasBeenSet;
+
+                    /**
+                     * NAT资源ID
+                     */
+                    uint64_t m_natResourceId;
+                    bool m_natResourceIdHasBeenSet;
 
                 };
             }

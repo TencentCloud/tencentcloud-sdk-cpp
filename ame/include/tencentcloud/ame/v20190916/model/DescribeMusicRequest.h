@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ItemIdHasBeenSet() const;
 
                     /**
-                     * 获取User identity ID，用来唯一标识用户
-                     * @return IdentityId User identity ID，用来唯一标识用户
+                     * 获取在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
+                     * @return IdentityId 在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
                      */
                     std::string GetIdentityId() const;
 
                     /**
-                     * 设置User identity ID，用来唯一标识用户
-                     * @param IdentityId User identity ID，用来唯一标识用户
+                     * 设置在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
+                     * @param IdentityId 在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
                      */
                     void SetIdentityId(const std::string& _identityId);
 
@@ -127,7 +127,7 @@ Values:Y , N(default)
                     bool m_itemIdHasBeenSet;
 
                     /**
-                     * User identity ID，用来唯一标识用户
+                     * 在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。
                      */
                     std::string m_identityId;
                     bool m_identityIdHasBeenSet;

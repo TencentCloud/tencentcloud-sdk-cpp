@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool MemoryHasBeenSet() const;
 
+                    /**
+                     * 获取FPGA核数，单位：核。
+                     * @return FPGA FPGA核数，单位：核。
+                     */
+                    int64_t GetFPGA() const;
+
+                    /**
+                     * 设置FPGA核数，单位：核。
+                     * @param FPGA FPGA核数，单位：核。
+                     */
+                    void SetFPGA(const int64_t& _fPGA);
+
+                    /**
+                     * 判断参数 FPGA 是否已赋值
+                     * @return FPGA 是否已赋值
+                     */
+                    bool FPGAHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
+
+                    /**
+                     * FPGA核数，单位：核。
+                     */
+                    int64_t m_fPGA;
+                    bool m_fPGAHasBeenSet;
 
                 };
             }

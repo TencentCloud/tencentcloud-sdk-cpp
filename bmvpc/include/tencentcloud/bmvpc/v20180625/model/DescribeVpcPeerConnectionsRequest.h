@@ -123,6 +123,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取私有网络ID
+                     * @return VpcId 私有网络ID
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置私有网络ID
+                     * @param VpcId 私有网络ID
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,6 +168,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 私有网络ID
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

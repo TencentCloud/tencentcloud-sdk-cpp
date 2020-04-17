@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的记录总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的记录总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -59,9 +57,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关键词信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WordSet 关键词信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiSampleWord> GetWordSet() const;
 
@@ -75,14 +71,12 @@ namespace TencentCloud
 
                     /**
                      * 符合条件的记录总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 关键词信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiSampleWord> m_wordSet;
                     bool m_wordSetHasBeenSet;

@@ -27,7 +27,8 @@ DescribeImageTagsRequest::DescribeImageTagsRequest() :
     m_applicationIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_queryImageIdFlagHasBeenSet(false)
+    m_queryImageIdFlagHasBeenSet(false),
+    m_searchWordHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DescribeImageTagsRequest::ToJsonString() const
         string key = "QueryImageIdFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queryImageIdFlag, allocator);
+    }
+
+    if (m_searchWordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_searchWord.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DescribeImageTagsRequest::SetQueryImageIdFlag(const int64_t& _queryImageIdF
 bool DescribeImageTagsRequest::QueryImageIdFlagHasBeenSet() const
 {
     return m_queryImageIdFlagHasBeenSet;
+}
+
+string DescribeImageTagsRequest::GetSearchWord() const
+{
+    return m_searchWord;
+}
+
+void DescribeImageTagsRequest::SetSearchWord(const string& _searchWord)
+{
+    m_searchWord = _searchWord;
+    m_searchWordHasBeenSet = true;
+}
+
+bool DescribeImageTagsRequest::SearchWordHasBeenSet() const
+{
+    return m_searchWordHasBeenSet;
 }
 
 

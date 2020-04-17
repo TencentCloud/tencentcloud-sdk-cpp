@@ -34,7 +34,8 @@ CreatePolicyGroupRequest::CreatePolicyGroupRequest() :
     m_insertTimeHasBeenSet(false),
     m_conditionsHasBeenSet(false),
     m_eventConditionsHasBeenSet(false),
-    m_backEndCallHasBeenSet(false)
+    m_backEndCallHasBeenSet(false),
+    m_isUnionRuleHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string CreatePolicyGroupRequest::ToJsonString() const
         string key = "BackEndCall";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backEndCall, allocator);
+    }
+
+    if (m_isUnionRuleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsUnionRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isUnionRule, allocator);
     }
 
 
@@ -329,6 +338,22 @@ void CreatePolicyGroupRequest::SetBackEndCall(const int64_t& _backEndCall)
 bool CreatePolicyGroupRequest::BackEndCallHasBeenSet() const
 {
     return m_backEndCallHasBeenSet;
+}
+
+int64_t CreatePolicyGroupRequest::GetIsUnionRule() const
+{
+    return m_isUnionRule;
+}
+
+void CreatePolicyGroupRequest::SetIsUnionRule(const int64_t& _isUnionRule)
+{
+    m_isUnionRule = _isUnionRule;
+    m_isUnionRuleHasBeenSet = true;
+}
+
+bool CreatePolicyGroupRequest::IsUnionRuleHasBeenSet() const
+{
+    return m_isUnionRuleHasBeenSet;
 }
 
 

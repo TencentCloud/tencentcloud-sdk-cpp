@@ -335,14 +335,14 @@ namespace TencentCloud
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡获得的公网IP地址,支持多个
-                     * @return LoadBalancerVips 负载均衡获得的公网IP地址,支持多个
+                     * 获取负载均衡的IPV4的VIP。
+                     * @return LoadBalancerVips 负载均衡的IPV4的VIP。
                      */
                     std::vector<std::string> GetLoadBalancerVips() const;
 
                     /**
-                     * 设置负载均衡获得的公网IP地址,支持多个
-                     * @param LoadBalancerVips 负载均衡获得的公网IP地址,支持多个
+                     * 设置负载均衡的IPV4的VIP。
+                     * @param LoadBalancerVips 负载均衡的IPV4的VIP。
                      */
                     void SetLoadBalancerVips(const std::vector<std::string>& _loadBalancerVips);
 
@@ -514,6 +514,46 @@ namespace TencentCloud
                      */
                     bool BzL7MetricsHasBeenSet() const;
 
+                    /**
+                     * 获取该负载均衡对应的所在的整形类型的VpcId
+                     * @return IntVpcId 该负载均衡对应的所在的整形类型的VpcId
+                     */
+                    uint64_t GetIntVpcId() const;
+
+                    /**
+                     * 设置该负载均衡对应的所在的整形类型的VpcId
+                     * @param IntVpcId 该负载均衡对应的所在的整形类型的VpcId
+                     */
+                    void SetIntVpcId(const uint64_t& _intVpcId);
+
+                    /**
+                     * 判断参数 IntVpcId 是否已赋值
+                     * @return IntVpcId 是否已赋值
+                     */
+                    bool IntVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡的IPV6或者IPV4的VIP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurVips 负载均衡的IPV6或者IPV4的VIP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCurVips() const;
+
+                    /**
+                     * 设置负载均衡的IPV6或者IPV4的VIP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CurVips 负载均衡的IPV6或者IPV4的VIP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCurVips(const std::vector<std::string>& _curVips);
+
+                    /**
+                     * 判断参数 CurVips 是否已赋值
+                     * @return CurVips 是否已赋值
+                     */
+                    bool CurVipsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -613,7 +653,7 @@ namespace TencentCloud
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
-                     * 负载均衡获得的公网IP地址,支持多个
+                     * 负载均衡的IPV4的VIP。
                      */
                     std::vector<std::string> m_loadBalancerVips;
                     bool m_loadBalancerVipsHasBeenSet;
@@ -671,6 +711,19 @@ namespace TencentCloud
                      */
                     std::string m_bzL7Metrics;
                     bool m_bzL7MetricsHasBeenSet;
+
+                    /**
+                     * 该负载均衡对应的所在的整形类型的VpcId
+                     */
+                    uint64_t m_intVpcId;
+                    bool m_intVpcIdHasBeenSet;
+
+                    /**
+                     * 负载均衡的IPV6或者IPV4的VIP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_curVips;
+                    bool m_curVipsHasBeenSet;
 
                 };
             }

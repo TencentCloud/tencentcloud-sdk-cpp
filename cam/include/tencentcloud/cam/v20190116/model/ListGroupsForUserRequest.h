@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool PageHasBeenSet() const;
 
+                    /**
+                     * 获取子账号UIN
+                     * @return SubUin 子账号UIN
+                     */
+                    uint64_t GetSubUin() const;
+
+                    /**
+                     * 设置子账号UIN
+                     * @param SubUin 子账号UIN
+                     */
+                    void SetSubUin(const uint64_t& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     */
+                    bool SubUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     uint64_t m_page;
                     bool m_pageHasBeenSet;
+
+                    /**
+                     * 子账号UIN
+                     */
+                    uint64_t m_subUin;
+                    bool m_subUinHasBeenSet;
 
                 };
             }

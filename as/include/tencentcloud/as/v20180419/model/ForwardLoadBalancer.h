@@ -119,6 +119,24 @@ namespace TencentCloud
                      */
                     bool LocationIdHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     * @return Region 负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     * @param Region 负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +162,12 @@ namespace TencentCloud
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
+
+                    /**
+                     * 负载均衡实例所属地域，默认取AS服务所在地域。格式与公共参数Region相同，如："ap-guangzhou"。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

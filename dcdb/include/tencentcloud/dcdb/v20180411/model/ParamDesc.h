@@ -141,6 +141,24 @@ namespace TencentCloud
                      */
                     bool ConstraintHasBeenSet() const;
 
+                    /**
+                     * 获取是否有设置过值，false:没有设置过值，true:有设置过值。
+                     * @return HaveSetValue 是否有设置过值，false:没有设置过值，true:有设置过值。
+                     */
+                    bool GetHaveSetValue() const;
+
+                    /**
+                     * 设置是否有设置过值，false:没有设置过值，true:有设置过值。
+                     * @param HaveSetValue 是否有设置过值，false:没有设置过值，true:有设置过值。
+                     */
+                    void SetHaveSetValue(const bool& _haveSetValue);
+
+                    /**
+                     * 判断参数 HaveSetValue 是否已赋值
+                     * @return HaveSetValue 是否已赋值
+                     */
+                    bool HaveSetValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +191,12 @@ namespace TencentCloud
                      */
                     ParamConstraint m_constraint;
                     bool m_constraintHasBeenSet;
+
+                    /**
+                     * 是否有设置过值，false:没有设置过值，true:有设置过值。
+                     */
+                    bool m_haveSetValue;
+                    bool m_haveSetValueHasBeenSet;
 
                 };
             }

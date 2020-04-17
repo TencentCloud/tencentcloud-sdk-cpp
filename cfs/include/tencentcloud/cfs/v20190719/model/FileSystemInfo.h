@@ -335,6 +335,24 @@ namespace TencentCloud
                      */
                     bool KmsKeyIdHasBeenSet() const;
 
+                    /**
+                     * 获取应用ID
+                     * @return AppId 应用ID
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置应用ID
+                     * @param AppId 应用ID
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +450,12 @@ namespace TencentCloud
                      */
                     std::string m_kmsKeyId;
                     bool m_kmsKeyIdHasBeenSet;
+
+                    /**
+                     * 应用ID
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

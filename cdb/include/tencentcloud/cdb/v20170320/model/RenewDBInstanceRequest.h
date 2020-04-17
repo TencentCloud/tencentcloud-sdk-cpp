@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool TimeSpanHasBeenSet() const;
 
+                    /**
+                     * 获取如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     * @return ModifyPayType 如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     */
+                    std::string GetModifyPayType() const;
+
+                    /**
+                     * 设置如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     * @param ModifyPayType 如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     */
+                    void SetModifyPayType(const std::string& _modifyPayType);
+
+                    /**
+                     * 判断参数 ModifyPayType 是否已赋值
+                     * @return ModifyPayType 是否已赋值
+                     */
+                    bool ModifyPayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 如果需要将按量计费实例续费为包年包月的实例，该入参的值需要指定为 "PREPAID" 。
+                     */
+                    std::string m_modifyPayType;
+                    bool m_modifyPayTypeHasBeenSet;
 
                 };
             }

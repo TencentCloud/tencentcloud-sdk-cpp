@@ -277,6 +277,24 @@ namespace TencentCloud
                      */
                     bool GpuTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Cls日志主题ID
+                     * @return LogTopicId Cls日志主题ID
+                     */
+                    std::string GetLogTopicId() const;
+
+                    /**
+                     * 设置Cls日志主题ID
+                     * @param LogTopicId Cls日志主题ID
+                     */
+                    void SetLogTopicId(const std::string& _logTopicId);
+
+                    /**
+                     * 判断参数 LogTopicId 是否已赋值
+                     * @return LogTopicId 是否已赋值
+                     */
+                    bool LogTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +374,12 @@ namespace TencentCloud
                      */
                     std::string m_gpuType;
                     bool m_gpuTypeHasBeenSet;
+
+                    /**
+                     * Cls日志主题ID
+                     */
+                    std::string m_logTopicId;
+                    bool m_logTopicIdHasBeenSet;
 
                 };
             }

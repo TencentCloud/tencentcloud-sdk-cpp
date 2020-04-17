@@ -37,7 +37,15 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_doNotStartHasBeenSet(false),
     m_repoNameHasBeenSet(false),
     m_updateTypeHasBeenSet(false),
-    m_updateIvlHasBeenSet(false)
+    m_updateIvlHasBeenSet(false),
+    m_agentCpuRequestHasBeenSet(false),
+    m_agentCpuLimitHasBeenSet(false),
+    m_agentMemRequestHasBeenSet(false),
+    m_agentMemLimitHasBeenSet(false),
+    m_istioCpuRequestHasBeenSet(false),
+    m_istioCpuLimitHasBeenSet(false),
+    m_istioMemRequestHasBeenSet(false),
+    m_istioMemLimitHasBeenSet(false)
 {
 }
 
@@ -158,6 +166,70 @@ string DeployContainerGroupRequest::ToJsonString() const
         string key = "UpdateIvl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_updateIvl, allocator);
+    }
+
+    if (m_agentCpuRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentCpuRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentCpuRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentCpuLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentCpuLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentCpuLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentMemRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentMemRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentMemRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentMemLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentMemLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentMemLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioCpuRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioCpuRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioCpuRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioCpuLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioCpuLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioCpuLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioMemRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioMemRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioMemRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioMemLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioMemLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioMemLimit.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -390,6 +462,134 @@ void DeployContainerGroupRequest::SetUpdateIvl(const int64_t& _updateIvl)
 bool DeployContainerGroupRequest::UpdateIvlHasBeenSet() const
 {
     return m_updateIvlHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetAgentCpuRequest() const
+{
+    return m_agentCpuRequest;
+}
+
+void DeployContainerGroupRequest::SetAgentCpuRequest(const string& _agentCpuRequest)
+{
+    m_agentCpuRequest = _agentCpuRequest;
+    m_agentCpuRequestHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::AgentCpuRequestHasBeenSet() const
+{
+    return m_agentCpuRequestHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetAgentCpuLimit() const
+{
+    return m_agentCpuLimit;
+}
+
+void DeployContainerGroupRequest::SetAgentCpuLimit(const string& _agentCpuLimit)
+{
+    m_agentCpuLimit = _agentCpuLimit;
+    m_agentCpuLimitHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::AgentCpuLimitHasBeenSet() const
+{
+    return m_agentCpuLimitHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetAgentMemRequest() const
+{
+    return m_agentMemRequest;
+}
+
+void DeployContainerGroupRequest::SetAgentMemRequest(const string& _agentMemRequest)
+{
+    m_agentMemRequest = _agentMemRequest;
+    m_agentMemRequestHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::AgentMemRequestHasBeenSet() const
+{
+    return m_agentMemRequestHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetAgentMemLimit() const
+{
+    return m_agentMemLimit;
+}
+
+void DeployContainerGroupRequest::SetAgentMemLimit(const string& _agentMemLimit)
+{
+    m_agentMemLimit = _agentMemLimit;
+    m_agentMemLimitHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::AgentMemLimitHasBeenSet() const
+{
+    return m_agentMemLimitHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetIstioCpuRequest() const
+{
+    return m_istioCpuRequest;
+}
+
+void DeployContainerGroupRequest::SetIstioCpuRequest(const string& _istioCpuRequest)
+{
+    m_istioCpuRequest = _istioCpuRequest;
+    m_istioCpuRequestHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::IstioCpuRequestHasBeenSet() const
+{
+    return m_istioCpuRequestHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetIstioCpuLimit() const
+{
+    return m_istioCpuLimit;
+}
+
+void DeployContainerGroupRequest::SetIstioCpuLimit(const string& _istioCpuLimit)
+{
+    m_istioCpuLimit = _istioCpuLimit;
+    m_istioCpuLimitHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::IstioCpuLimitHasBeenSet() const
+{
+    return m_istioCpuLimitHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetIstioMemRequest() const
+{
+    return m_istioMemRequest;
+}
+
+void DeployContainerGroupRequest::SetIstioMemRequest(const string& _istioMemRequest)
+{
+    m_istioMemRequest = _istioMemRequest;
+    m_istioMemRequestHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::IstioMemRequestHasBeenSet() const
+{
+    return m_istioMemRequestHasBeenSet;
+}
+
+string DeployContainerGroupRequest::GetIstioMemLimit() const
+{
+    return m_istioMemLimit;
+}
+
+void DeployContainerGroupRequest::SetIstioMemLimit(const string& _istioMemLimit)
+{
+    m_istioMemLimit = _istioMemLimit;
+    m_istioMemLimitHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::IstioMemLimitHasBeenSet() const
+{
+    return m_istioMemLimitHasBeenSet;
 }
 
 

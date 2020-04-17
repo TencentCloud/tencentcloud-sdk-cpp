@@ -298,6 +298,49 @@ FaceidClient::GetDetectInfoOutcomeCallable FaceidClient::GetDetectInfoCallable(c
     return task->get_future();
 }
 
+FaceidClient::GetDetectInfoEnhancedOutcome FaceidClient::GetDetectInfoEnhanced(const GetDetectInfoEnhancedRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDetectInfoEnhanced");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDetectInfoEnhancedResponse rsp = GetDetectInfoEnhancedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDetectInfoEnhancedOutcome(rsp);
+        else
+            return GetDetectInfoEnhancedOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDetectInfoEnhancedOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetDetectInfoEnhancedAsync(const GetDetectInfoEnhancedRequest& request, const GetDetectInfoEnhancedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDetectInfoEnhanced(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::GetDetectInfoEnhancedOutcomeCallable FaceidClient::GetDetectInfoEnhancedCallable(const GetDetectInfoEnhancedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDetectInfoEnhancedOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDetectInfoEnhanced(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::GetLiveCodeOutcome FaceidClient::GetLiveCode(const GetLiveCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "GetLiveCode");

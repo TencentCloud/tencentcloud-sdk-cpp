@@ -27,6 +27,7 @@ ImageData::ImageData() :
     m_codeDetectHasBeenSet(false),
     m_hotDetectHasBeenSet(false),
     m_illegalDetectHasBeenSet(false),
+    m_logoDetectHasBeenSet(false),
     m_oCRDetectHasBeenSet(false),
     m_polityDetectHasBeenSet(false),
     m_pornDetectHasBeenSet(false),
@@ -109,6 +110,23 @@ CoreInternalOutcome ImageData::Deserialize(const Value &value)
         }
 
         m_illegalDetectHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogoDetect") && !value["LogoDetect"].IsNull())
+    {
+        if (!value["LogoDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageData.LogoDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logoDetect.Deserialize(value["LogoDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logoDetectHasBeenSet = true;
     }
 
     if (value.HasMember("OCRDetect") && !value["OCRDetect"].IsNull())
@@ -246,6 +264,15 @@ void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         m_illegalDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_logoDetectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogoDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_logoDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_oCRDetectHasBeenSet)
     {
         Value iKey(kStringType);
@@ -372,6 +399,22 @@ void ImageData::SetIllegalDetect(const ImageIllegalDetect& _illegalDetect)
 bool ImageData::IllegalDetectHasBeenSet() const
 {
     return m_illegalDetectHasBeenSet;
+}
+
+LogoDetail ImageData::GetLogoDetect() const
+{
+    return m_logoDetect;
+}
+
+void ImageData::SetLogoDetect(const LogoDetail& _logoDetect)
+{
+    m_logoDetect = _logoDetect;
+    m_logoDetectHasBeenSet = true;
+}
+
+bool ImageData::LogoDetectHasBeenSet() const
+{
+    return m_logoDetectHasBeenSet;
 }
 
 OCRDetect ImageData::GetOCRDetect() const

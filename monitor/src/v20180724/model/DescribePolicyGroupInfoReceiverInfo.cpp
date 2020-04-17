@@ -34,7 +34,8 @@ DescribePolicyGroupInfoReceiverInfo::DescribePolicyGroupInfoReceiverInfo() :
     m_personIntervalHasBeenSet(false),
     m_needSendNoticeHasBeenSet(false),
     m_sendForHasBeenSet(false),
-    m_recoverNotifyHasBeenSet(false)
+    m_recoverNotifyHasBeenSet(false),
+    m_receiveLanguageHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,16 @@ CoreInternalOutcome DescribePolicyGroupInfoReceiverInfo::Deserialize(const Value
         m_recoverNotifyHasBeenSet = true;
     }
 
+    if (value.HasMember("ReceiveLanguage") && !value["ReceiveLanguage"].IsNull())
+    {
+        if (!value["ReceiveLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoReceiverInfo.ReceiveLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_receiveLanguage = string(value["ReceiveLanguage"].GetString());
+        m_receiveLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -330,6 +341,14 @@ void DescribePolicyGroupInfoReceiverInfo::ToJsonObject(Value &value, Document::A
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_receiveLanguageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReceiveLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_receiveLanguage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -541,5 +560,21 @@ void DescribePolicyGroupInfoReceiverInfo::SetRecoverNotify(const vector<string>&
 bool DescribePolicyGroupInfoReceiverInfo::RecoverNotifyHasBeenSet() const
 {
     return m_recoverNotifyHasBeenSet;
+}
+
+string DescribePolicyGroupInfoReceiverInfo::GetReceiveLanguage() const
+{
+    return m_receiveLanguage;
+}
+
+void DescribePolicyGroupInfoReceiverInfo::SetReceiveLanguage(const string& _receiveLanguage)
+{
+    m_receiveLanguage = _receiveLanguage;
+    m_receiveLanguageHasBeenSet = true;
+}
+
+bool DescribePolicyGroupInfoReceiverInfo::ReceiveLanguageHasBeenSet() const
+{
+    return m_receiveLanguageHasBeenSet;
 }
 

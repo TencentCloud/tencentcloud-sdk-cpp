@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取您的加速域名。
-                     * @return DomainName 您的加速域名。
+                     * 获取您的推流域名。
+                     * @return DomainName 您的推流域名。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置您的加速域名。
-                     * @param DomainName 您的加速域名。
+                     * 设置您的推流域名。
+                     * @param DomainName 您的推流域名。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 您的加速域名。
+                     * 您的推流域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;

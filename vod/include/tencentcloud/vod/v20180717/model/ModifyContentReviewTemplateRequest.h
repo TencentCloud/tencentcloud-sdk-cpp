@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/PornConfigureInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/TerrorismConfigureInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/PoliticalConfigureInfoForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/ProhibitedConfigureInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/UserDefineConfigureInfoForUpdate.h>
 
 
@@ -155,6 +156,36 @@ namespace TencentCloud
                     bool PoliticalConfigureHasBeenSet() const;
 
                     /**
+                     * 获取违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+                     * @return ProhibitedConfigure 违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+                     */
+                    ProhibitedConfigureInfoForUpdate GetProhibitedConfigure() const;
+
+                    /**
+                     * 设置违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+                     * @param ProhibitedConfigure 违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+                     */
+                    void SetProhibitedConfigure(const ProhibitedConfigureInfoForUpdate& _prohibitedConfigure);
+
+                    /**
+                     * 判断参数 ProhibitedConfigure 是否已赋值
+                     * @return ProhibitedConfigure 是否已赋值
+                     */
+                    bool ProhibitedConfigureHasBeenSet() const;
+
+                    /**
                      * 获取用户自定义内容审核控制参数。
                      * @return UserDefineConfigure 用户自定义内容审核控制参数。
                      */
@@ -271,6 +302,15 @@ namespace TencentCloud
                      */
                     PoliticalConfigureInfoForUpdate m_politicalConfigure;
                     bool m_politicalConfigureHasBeenSet;
+
+                    /**
+                     * 违禁控制参数。违禁内容包括：
+<li>谩骂；</li>
+<li>涉毒违法。</li>
+注意：此参数尚未支持。
+                     */
+                    ProhibitedConfigureInfoForUpdate m_prohibitedConfigure;
+                    bool m_prohibitedConfigureHasBeenSet;
 
                     /**
                      * 用户自定义内容审核控制参数。

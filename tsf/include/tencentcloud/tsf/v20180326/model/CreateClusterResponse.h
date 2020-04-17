@@ -50,7 +50,7 @@ false：操作失败。
 true：操作成功。
 false：操作失败。
                      */
-                    bool GetResult() const;
+                    std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -65,7 +65,7 @@ false：操作失败。
 true：操作成功。
 false：操作失败。
                      */
-                    bool m_result;
+                    std::string m_result;
                     bool m_resultHasBeenSet;
 
                 };

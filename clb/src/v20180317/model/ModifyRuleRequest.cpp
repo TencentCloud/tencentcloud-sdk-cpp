@@ -31,7 +31,9 @@ ModifyRuleRequest::ModifyRuleRequest() :
     m_healthCheckHasBeenSet(false),
     m_schedulerHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
-    m_forwardTypeHasBeenSet(false)
+    m_forwardTypeHasBeenSet(false),
+    m_trpcCalleeHasBeenSet(false),
+    m_trpcFuncHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,22 @@ string ModifyRuleRequest::ToJsonString() const
         string key = "ForwardType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_forwardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trpcCalleeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TrpcCallee";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_trpcCallee.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trpcFuncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TrpcFunc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_trpcFunc.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +259,38 @@ void ModifyRuleRequest::SetForwardType(const string& _forwardType)
 bool ModifyRuleRequest::ForwardTypeHasBeenSet() const
 {
     return m_forwardTypeHasBeenSet;
+}
+
+string ModifyRuleRequest::GetTrpcCallee() const
+{
+    return m_trpcCallee;
+}
+
+void ModifyRuleRequest::SetTrpcCallee(const string& _trpcCallee)
+{
+    m_trpcCallee = _trpcCallee;
+    m_trpcCalleeHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::TrpcCalleeHasBeenSet() const
+{
+    return m_trpcCalleeHasBeenSet;
+}
+
+string ModifyRuleRequest::GetTrpcFunc() const
+{
+    return m_trpcFunc;
+}
+
+void ModifyRuleRequest::SetTrpcFunc(const string& _trpcFunc)
+{
+    m_trpcFunc = _trpcFunc;
+    m_trpcFuncHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::TrpcFuncHasBeenSet() const
+{
+    return m_trpcFuncHasBeenSet;
 }
 
 

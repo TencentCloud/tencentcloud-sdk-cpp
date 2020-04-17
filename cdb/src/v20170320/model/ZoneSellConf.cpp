@@ -35,7 +35,9 @@ ZoneSellConf::ZoneSellConf() :
     m_zoneHasBeenSet(false),
     m_sellTypeHasBeenSet(false),
     m_zoneConfHasBeenSet(false),
-    m_drZoneHasBeenSet(false)
+    m_drZoneHasBeenSet(false),
+    m_isSupportRemoteRoHasBeenSet(false),
+    m_remoteRoZoneHasBeenSet(false)
 {
 }
 
@@ -210,6 +212,29 @@ CoreInternalOutcome ZoneSellConf::Deserialize(const Value &value)
         m_drZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportRemoteRo") && !value["IsSupportRemoteRo"].IsNull())
+    {
+        if (!value["IsSupportRemoteRo"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ZoneSellConf.IsSupportRemoteRo` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportRemoteRo = value["IsSupportRemoteRo"].GetBool();
+        m_isSupportRemoteRoHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemoteRoZone") && !value["RemoteRoZone"].IsNull())
+    {
+        if (!value["RemoteRoZone"].IsArray())
+            return CoreInternalOutcome(Error("response `ZoneSellConf.RemoteRoZone` is not array type"));
+
+        const Value &tmpValue = value["RemoteRoZone"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_remoteRoZone.push_back((*itr).GetString());
+        }
+        m_remoteRoZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -347,6 +372,27 @@ void ZoneSellConf::ToJsonObject(Value &value, Document::AllocatorType& allocator
         value.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_drZone.begin(); itr != m_drZone.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isSupportRemoteRoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsSupportRemoteRo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportRemoteRo, allocator);
+    }
+
+    if (m_remoteRoZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RemoteRoZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_remoteRoZone.begin(); itr != m_remoteRoZone.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -577,5 +623,37 @@ void ZoneSellConf::SetDrZone(const vector<string>& _drZone)
 bool ZoneSellConf::DrZoneHasBeenSet() const
 {
     return m_drZoneHasBeenSet;
+}
+
+bool ZoneSellConf::GetIsSupportRemoteRo() const
+{
+    return m_isSupportRemoteRo;
+}
+
+void ZoneSellConf::SetIsSupportRemoteRo(const bool& _isSupportRemoteRo)
+{
+    m_isSupportRemoteRo = _isSupportRemoteRo;
+    m_isSupportRemoteRoHasBeenSet = true;
+}
+
+bool ZoneSellConf::IsSupportRemoteRoHasBeenSet() const
+{
+    return m_isSupportRemoteRoHasBeenSet;
+}
+
+vector<string> ZoneSellConf::GetRemoteRoZone() const
+{
+    return m_remoteRoZone;
+}
+
+void ZoneSellConf::SetRemoteRoZone(const vector<string>& _remoteRoZone)
+{
+    m_remoteRoZone = _remoteRoZone;
+    m_remoteRoZoneHasBeenSet = true;
+}
+
+bool ZoneSellConf::RemoteRoZoneHasBeenSet() const
+{
+    return m_remoteRoZoneHasBeenSet;
 }
 

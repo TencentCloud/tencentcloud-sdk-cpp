@@ -332,6 +332,24 @@ STATIC：静态
                      */
                     bool CustomerAddressHasBeenSet() const;
 
+                    /**
+                     * 获取TencentBackupAddress，腾讯侧备用互联 IP
+                     * @return TencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
+                     */
+                    std::string GetTencentBackupAddress() const;
+
+                    /**
+                     * 设置TencentBackupAddress，腾讯侧备用互联 IP
+                     * @param TencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
+                     */
+                    void SetTencentBackupAddress(const std::string& _tencentBackupAddress);
+
+                    /**
+                     * 判断参数 TencentBackupAddress 是否已赋值
+                     * @return TencentBackupAddress 是否已赋值
+                     */
+                    bool TencentBackupAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +444,12 @@ STATIC：静态
                      */
                     std::string m_customerAddress;
                     bool m_customerAddressHasBeenSet;
+
+                    /**
+                     * TencentBackupAddress，腾讯侧备用互联 IP
+                     */
+                    std::string m_tencentBackupAddress;
+                    bool m_tencentBackupAddressHasBeenSet;
 
                 };
             }

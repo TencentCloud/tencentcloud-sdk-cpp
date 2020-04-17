@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h>
+#include <tencentcloud/emr/v20190103/model/Tag.h>
 
 
 namespace TencentCloud
@@ -290,17 +291,125 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取实例的状态码。取值范围：
+<li>2：表示集群运行中。</li>
+<li>3：表示集群创建中。</li>
+<li>4：表示集群扩容中。</li>
+<li>5：表示集群增加router节点中。</li>
+<li>6：表示集群安装组件中。</li>
+<li>7：表示集群执行命令中。</li>
+<li>8：表示重启服务中。</li>
+<li>9：表示进入维护中。</li>
+<li>10：表示服务暂停中。</li>
+<li>11：表示退出维护中。</li>
+<li>12：表示退出暂停中。</li>
+<li>13：表示配置下发中。</li>
+<li>14：表示销毁集群中。</li>
+<li>15：表示销毁core节点中。</li>
+<li>16：销毁task节点中。</li>
+<li>17：表示销毁router节点中。</li>
+<li>18：表示更改webproxy密码中。</li>
+<li>19：表示集群隔离中。</li>
+<li>20：表示集群冲正中。</li>
+<li>21：表示集群回收中。</li>
+<li>22：表示变配等待中。</li>
+<li>23：表示集群已隔离。</li>
+<li>24：表示缩容节点中。</li>
+<li>33：表示集群等待退费中。</li>
+<li>34：表示集群已退费。</li>
+<li>301：表示创建失败。</li>
+<li>302：表示扩容失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status 实例的状态码。取值范围：
+<li>2：表示集群运行中。</li>
+<li>3：表示集群创建中。</li>
+<li>4：表示集群扩容中。</li>
+<li>5：表示集群增加router节点中。</li>
+<li>6：表示集群安装组件中。</li>
+<li>7：表示集群执行命令中。</li>
+<li>8：表示重启服务中。</li>
+<li>9：表示进入维护中。</li>
+<li>10：表示服务暂停中。</li>
+<li>11：表示退出维护中。</li>
+<li>12：表示退出暂停中。</li>
+<li>13：表示配置下发中。</li>
+<li>14：表示销毁集群中。</li>
+<li>15：表示销毁core节点中。</li>
+<li>16：销毁task节点中。</li>
+<li>17：表示销毁router节点中。</li>
+<li>18：表示更改webproxy密码中。</li>
+<li>19：表示集群隔离中。</li>
+<li>20：表示集群冲正中。</li>
+<li>21：表示集群回收中。</li>
+<li>22：表示变配等待中。</li>
+<li>23：表示集群已隔离。</li>
+<li>24：表示缩容节点中。</li>
+<li>33：表示集群等待退费中。</li>
+<li>34：表示集群已退费。</li>
+<li>301：表示创建失败。</li>
+<li>302：表示扩容失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置实例的状态码。取值范围：
+<li>2：表示集群运行中。</li>
+<li>3：表示集群创建中。</li>
+<li>4：表示集群扩容中。</li>
+<li>5：表示集群增加router节点中。</li>
+<li>6：表示集群安装组件中。</li>
+<li>7：表示集群执行命令中。</li>
+<li>8：表示重启服务中。</li>
+<li>9：表示进入维护中。</li>
+<li>10：表示服务暂停中。</li>
+<li>11：表示退出维护中。</li>
+<li>12：表示退出暂停中。</li>
+<li>13：表示配置下发中。</li>
+<li>14：表示销毁集群中。</li>
+<li>15：表示销毁core节点中。</li>
+<li>16：销毁task节点中。</li>
+<li>17：表示销毁router节点中。</li>
+<li>18：表示更改webproxy密码中。</li>
+<li>19：表示集群隔离中。</li>
+<li>20：表示集群冲正中。</li>
+<li>21：表示集群回收中。</li>
+<li>22：表示变配等待中。</li>
+<li>23：表示集群已隔离。</li>
+<li>24：表示缩容节点中。</li>
+<li>33：表示集群等待退费中。</li>
+<li>34：表示集群已退费。</li>
+<li>301：表示创建失败。</li>
+<li>302：表示扩容失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param Status 实例的状态码。取值范围：
+<li>2：表示集群运行中。</li>
+<li>3：表示集群创建中。</li>
+<li>4：表示集群扩容中。</li>
+<li>5：表示集群增加router节点中。</li>
+<li>6：表示集群安装组件中。</li>
+<li>7：表示集群执行命令中。</li>
+<li>8：表示重启服务中。</li>
+<li>9：表示进入维护中。</li>
+<li>10：表示服务暂停中。</li>
+<li>11：表示退出维护中。</li>
+<li>12：表示退出暂停中。</li>
+<li>13：表示配置下发中。</li>
+<li>14：表示销毁集群中。</li>
+<li>15：表示销毁core节点中。</li>
+<li>16：销毁task节点中。</li>
+<li>17：表示销毁router节点中。</li>
+<li>18：表示更改webproxy密码中。</li>
+<li>19：表示集群隔离中。</li>
+<li>20：表示集群冲正中。</li>
+<li>21：表示集群回收中。</li>
+<li>22：表示变配等待中。</li>
+<li>23：表示集群已隔离。</li>
+<li>24：表示缩容节点中。</li>
+<li>33：表示集群等待退费中。</li>
+<li>34：表示集群已退费。</li>
+<li>301：表示创建失败。</li>
+<li>302：表示扩容失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const int64_t& _status);
@@ -531,6 +640,138 @@ namespace TencentCloud
                      */
                     bool AlarmInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否采用新架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsWoodpeckerCluster 是否采用新架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsWoodpeckerCluster() const;
+
+                    /**
+                     * 设置是否采用新架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsWoodpeckerCluster 是否采用新架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsWoodpeckerCluster(const int64_t& _isWoodpeckerCluster);
+
+                    /**
+                     * 判断参数 IsWoodpeckerCluster 是否已赋值
+                     * @return IsWoodpeckerCluster 是否已赋值
+                     */
+                    bool IsWoodpeckerClusterHasBeenSet() const;
+
+                    /**
+                     * 获取元数据库信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetaDb 元数据库信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMetaDb() const;
+
+                    /**
+                     * 设置元数据库信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetaDb 元数据库信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetaDb(const std::string& _metaDb);
+
+                    /**
+                     * 判断参数 MetaDb 是否已赋值
+                     * @return MetaDb 是否已赋值
+                     */
+                    bool MetaDbHasBeenSet() const;
+
+                    /**
+                     * 获取标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取Hive元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HiveMetaDb Hive元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHiveMetaDb() const;
+
+                    /**
+                     * 设置Hive元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HiveMetaDb Hive元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHiveMetaDb(const std::string& _hiveMetaDb);
+
+                    /**
+                     * 判断参数 HiveMetaDb 是否已赋值
+                     * @return HiveMetaDb 是否已赋值
+                     */
+                    bool HiveMetaDbHasBeenSet() const;
+
+                    /**
+                     * 获取集群类型:EMR,CLICKHOUSE,DRUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceClass 集群类型:EMR,CLICKHOUSE,DRUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServiceClass() const;
+
+                    /**
+                     * 设置集群类型:EMR,CLICKHOUSE,DRUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceClass 集群类型:EMR,CLICKHOUSE,DRUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceClass(const std::string& _serviceClass);
+
+                    /**
+                     * 判断参数 ServiceClass 是否已赋值
+                     * @return ServiceClass 是否已赋值
+                     */
+                    bool ServiceClassHasBeenSet() const;
+
+                    /**
+                     * 获取集群所有节点的别名序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AliasInfo 集群所有节点的别名序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAliasInfo() const;
+
+                    /**
+                     * 设置集群所有节点的别名序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AliasInfo 集群所有节点的别名序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAliasInfo(const std::string& _aliasInfo);
+
+                    /**
+                     * 判断参数 AliasInfo 是否已赋值
+                     * @return AliasInfo 是否已赋值
+                     */
+                    bool AliasInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -611,7 +852,34 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 状态
+                     * 实例的状态码。取值范围：
+<li>2：表示集群运行中。</li>
+<li>3：表示集群创建中。</li>
+<li>4：表示集群扩容中。</li>
+<li>5：表示集群增加router节点中。</li>
+<li>6：表示集群安装组件中。</li>
+<li>7：表示集群执行命令中。</li>
+<li>8：表示重启服务中。</li>
+<li>9：表示进入维护中。</li>
+<li>10：表示服务暂停中。</li>
+<li>11：表示退出维护中。</li>
+<li>12：表示退出暂停中。</li>
+<li>13：表示配置下发中。</li>
+<li>14：表示销毁集群中。</li>
+<li>15：表示销毁core节点中。</li>
+<li>16：销毁task节点中。</li>
+<li>17：表示销毁router节点中。</li>
+<li>18：表示更改webproxy密码中。</li>
+<li>19：表示集群隔离中。</li>
+<li>20：表示集群冲正中。</li>
+<li>21：表示集群回收中。</li>
+<li>22：表示变配等待中。</li>
+<li>23：表示集群已隔离。</li>
+<li>24：表示缩容节点中。</li>
+<li>33：表示集群等待退费中。</li>
+<li>34：表示集群已退费。</li>
+<li>301：表示创建失败。</li>
+<li>302：表示扩容失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
@@ -686,6 +954,48 @@ namespace TencentCloud
                      */
                     std::string m_alarmInfo;
                     bool m_alarmInfoHasBeenSet;
+
+                    /**
+                     * 是否采用新架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isWoodpeckerCluster;
+                    bool m_isWoodpeckerClusterHasBeenSet;
+
+                    /**
+                     * 元数据库信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metaDb;
+                    bool m_metaDbHasBeenSet;
+
+                    /**
+                     * 标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * Hive元数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hiveMetaDb;
+                    bool m_hiveMetaDbHasBeenSet;
+
+                    /**
+                     * 集群类型:EMR,CLICKHOUSE,DRUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceClass;
+                    bool m_serviceClassHasBeenSet;
+
+                    /**
+                     * 集群所有节点的别名序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aliasInfo;
+                    bool m_aliasInfoHasBeenSet;
 
                 };
             }

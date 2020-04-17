@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
+USER_ATTACHED：用户添加到计算环境中的实例资源。
+                     * @return ResourceOrigin 计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
+USER_ATTACHED：用户添加到计算环境中的实例资源。
+                     */
+                    std::string GetResourceOrigin() const;
+
+                    /**
+                     * 设置计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
+USER_ATTACHED：用户添加到计算环境中的实例资源。
+                     * @param ResourceOrigin 计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
+USER_ATTACHED：用户添加到计算环境中的实例资源。
+                     */
+                    void SetResourceOrigin(const std::string& _resourceOrigin);
+
+                    /**
+                     * 判断参数 ResourceOrigin 是否已赋值
+                     * @return ResourceOrigin 是否已赋值
+                     */
+                    bool ResourceOriginHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +333,13 @@ namespace TencentCloud
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>
+USER_ATTACHED：用户添加到计算环境中的实例资源。
+                     */
+                    std::string m_resourceOrigin;
+                    bool m_resourceOriginHasBeenSet;
 
                 };
             }

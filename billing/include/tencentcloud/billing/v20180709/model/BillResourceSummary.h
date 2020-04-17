@@ -591,6 +591,60 @@ namespace TencentCloud
                      */
                     bool OperateUinHasBeenSet() const;
 
+                    /**
+                     * 获取商品名称代码
+                     * @return BusinessCode 商品名称代码
+                     */
+                    std::string GetBusinessCode() const;
+
+                    /**
+                     * 设置商品名称代码
+                     * @param BusinessCode 商品名称代码
+                     */
+                    void SetBusinessCode(const std::string& _businessCode);
+
+                    /**
+                     * 判断参数 BusinessCode 是否已赋值
+                     * @return BusinessCode 是否已赋值
+                     */
+                    bool BusinessCodeHasBeenSet() const;
+
+                    /**
+                     * 获取子商品名称代码
+                     * @return ProductCode 子商品名称代码
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置子商品名称代码
+                     * @param ProductCode 子商品名称代码
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取区域ID
+                     * @return RegionId 区域ID
+                     */
+                    int64_t GetRegionId() const;
+
+                    /**
+                     * 设置区域ID
+                     * @param RegionId 区域ID
+                     */
+                    void SetRegionId(const int64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -773,6 +827,24 @@ namespace TencentCloud
                      */
                     std::string m_operateUin;
                     bool m_operateUinHasBeenSet;
+
+                    /**
+                     * 商品名称代码
+                     */
+                    std::string m_businessCode;
+                    bool m_businessCodeHasBeenSet;
+
+                    /**
+                     * 子商品名称代码
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 区域ID
+                     */
+                    int64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

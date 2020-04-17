@@ -27,7 +27,8 @@ DescribeVpcPeerConnectionsRequest::DescribeVpcPeerConnectionsRequest() :
     m_vpcPeerConnectionIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,14 @@ string DescribeVpcPeerConnectionsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -152,6 +161,22 @@ void DescribeVpcPeerConnectionsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeVpcPeerConnectionsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeVpcPeerConnectionsRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void DescribeVpcPeerConnectionsRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool DescribeVpcPeerConnectionsRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 
 

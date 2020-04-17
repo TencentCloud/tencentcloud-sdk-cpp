@@ -20,22 +20,36 @@ set(bizlive_public_header
 
 set(bizlive_public_header_model
   include/tencentcloud/bizlive/v20190313/model/DayStreamPlayInfo.h
-  include/tencentcloud/bizlive/v20190313/model/RegisterIMRequest.h
-  include/tencentcloud/bizlive/v20190313/model/ForbidLiveStreamRequest.h
-  include/tencentcloud/bizlive/v20190313/model/RegisterIMResponse.h
+  include/tencentcloud/bizlive/v20190313/model/DescribeWorkersResponse.h
   include/tencentcloud/bizlive/v20190313/model/ForbidLiveStreamResponse.h
+  include/tencentcloud/bizlive/v20190313/model/WorkerRegionInfo.h
+  include/tencentcloud/bizlive/v20190313/model/RegisterIMRequest.h
+  include/tencentcloud/bizlive/v20190313/model/StopGameResponse.h
+  include/tencentcloud/bizlive/v20190313/model/ForbidLiveStreamRequest.h
+  include/tencentcloud/bizlive/v20190313/model/StopGameRequest.h
+  include/tencentcloud/bizlive/v20190313/model/RegisterIMResponse.h
+  include/tencentcloud/bizlive/v20190313/model/DescribeWorkersRequest.h
+  include/tencentcloud/bizlive/v20190313/model/CreateSessionResponse.h
   include/tencentcloud/bizlive/v20190313/model/DescribeStreamPlayInfoListResponse.h
+  include/tencentcloud/bizlive/v20190313/model/CreateSessionRequest.h
   include/tencentcloud/bizlive/v20190313/model/DescribeStreamPlayInfoListRequest.h
   )
 
 set(bizlive_src
   src/v20190313/BizliveClient.cpp
   src/v20190313/model/DayStreamPlayInfo.cpp
-  src/v20190313/model/RegisterIMRequest.cpp
-  src/v20190313/model/ForbidLiveStreamRequest.cpp
-  src/v20190313/model/RegisterIMResponse.cpp
+  src/v20190313/model/DescribeWorkersResponse.cpp
   src/v20190313/model/ForbidLiveStreamResponse.cpp
+  src/v20190313/model/WorkerRegionInfo.cpp
+  src/v20190313/model/RegisterIMRequest.cpp
+  src/v20190313/model/StopGameResponse.cpp
+  src/v20190313/model/ForbidLiveStreamRequest.cpp
+  src/v20190313/model/StopGameRequest.cpp
+  src/v20190313/model/RegisterIMResponse.cpp
+  src/v20190313/model/DescribeWorkersRequest.cpp
+  src/v20190313/model/CreateSessionResponse.cpp
   src/v20190313/model/DescribeStreamPlayInfoListResponse.cpp
+  src/v20190313/model/CreateSessionRequest.cpp
   src/v20190313/model/DescribeStreamPlayInfoListRequest.cpp
   )
 

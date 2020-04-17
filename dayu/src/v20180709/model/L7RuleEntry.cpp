@@ -39,7 +39,8 @@ L7RuleEntry::L7RuleEntry() :
     m_cCStatusHasBeenSet(false),
     m_cCEnableHasBeenSet(false),
     m_cCThresholdHasBeenSet(false),
-    m_cCLevelHasBeenSet(false)
+    m_cCLevelHasBeenSet(false),
+    m_httpsToHttpEnableHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome L7RuleEntry::Deserialize(const Value &value)
         m_cCLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpsToHttpEnable") && !value["HttpsToHttpEnable"].IsNull())
+    {
+        if (!value["HttpsToHttpEnable"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `L7RuleEntry.HttpsToHttpEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpsToHttpEnable = value["HttpsToHttpEnable"].GetUint64();
+        m_httpsToHttpEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -394,6 +405,14 @@ void L7RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "CCLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_cCLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpsToHttpEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HttpsToHttpEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_httpsToHttpEnable, allocator);
     }
 
 }
@@ -685,5 +704,21 @@ void L7RuleEntry::SetCCLevel(const string& _cCLevel)
 bool L7RuleEntry::CCLevelHasBeenSet() const
 {
     return m_cCLevelHasBeenSet;
+}
+
+uint64_t L7RuleEntry::GetHttpsToHttpEnable() const
+{
+    return m_httpsToHttpEnable;
+}
+
+void L7RuleEntry::SetHttpsToHttpEnable(const uint64_t& _httpsToHttpEnable)
+{
+    m_httpsToHttpEnable = _httpsToHttpEnable;
+    m_httpsToHttpEnableHasBeenSet = true;
+}
+
+bool L7RuleEntry::HttpsToHttpEnableHasBeenSet() const
+{
+    return m_httpsToHttpEnableHasBeenSet;
 }
 

@@ -39,6 +39,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemsResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsFileSystemResponse.h
   include/tencentcloud/cfs/v20190719/model/FileSystemInfo.h
+  include/tencentcloud/cfs/v20190719/model/TagInfo.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsRequest.h
   include/tencentcloud/cfs/v20190719/model/AvailableZone.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsPGroupRequest.h
@@ -90,6 +91,7 @@ set(cfs_src
   src/v20190719/model/DescribeCfsFileSystemsResponse.cpp
   src/v20190719/model/CreateCfsFileSystemResponse.cpp
   src/v20190719/model/FileSystemInfo.cpp
+  src/v20190719/model/TagInfo.cpp
   src/v20190719/model/DescribeCfsPGroupsRequest.cpp
   src/v20190719/model/AvailableZone.cpp
   src/v20190719/model/CreateCfsPGroupRequest.cpp

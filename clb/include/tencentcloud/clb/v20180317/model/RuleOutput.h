@@ -446,6 +446,28 @@ namespace TencentCloud
                      */
                     bool TrpcFuncHasBeenSet() const;
 
+                    /**
+                     * 获取QUIC状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuicStatus QUIC状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetQuicStatus() const;
+
+                    /**
+                     * 设置QUIC状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QuicStatus QUIC状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQuicStatus(const std::string& _quicStatus);
+
+                    /**
+                     * 判断参数 QuicStatus 是否已赋值
+                     * @return QuicStatus 是否已赋值
+                     */
+                    bool QuicStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -576,6 +598,13 @@ namespace TencentCloud
                      */
                     std::string m_trpcFunc;
                     bool m_trpcFuncHasBeenSet;
+
+                    /**
+                     * QUIC状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_quicStatus;
+                    bool m_quicStatusHasBeenSet;
 
                 };
             }

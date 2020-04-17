@@ -280,6 +280,24 @@ namespace TencentCloud
                      */
                     bool InstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩组起始节点数
+                     * @return DesiredSize 伸缩组起始节点数
+                     */
+                    uint64_t GetDesiredSize() const;
+
+                    /**
+                     * 设置伸缩组起始节点数
+                     * @param DesiredSize 伸缩组起始节点数
+                     */
+                    void SetDesiredSize(const uint64_t& _desiredSize);
+
+                    /**
+                     * 判断参数 DesiredSize 是否已赋值
+                     * @return DesiredSize 是否已赋值
+                     */
+                    bool DesiredSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +377,12 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
+
+                    /**
+                     * 伸缩组起始节点数
+                     */
+                    uint64_t m_desiredSize;
+                    bool m_desiredSizeHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ NamedCpmComputeEnv::NamedCpmComputeEnv() :
     m_authenticationsHasBeenSet(false),
     m_inputMappingsHasBeenSet(false),
     m_notificationsHasBeenSet(false),
-    m_actionIfComputeNodeInactiveHasBeenSet(false)
+    m_actionIfComputeNodeInactiveHasBeenSet(false),
+    m_resourceMaxRetryCountHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,16 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const Value &value)
         m_actionIfComputeNodeInactiveHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceMaxRetryCount") && !value["ResourceMaxRetryCount"].IsNull())
+    {
+        if (!value["ResourceMaxRetryCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.ResourceMaxRetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceMaxRetryCount = value["ResourceMaxRetryCount"].GetInt64();
+        m_resourceMaxRetryCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -256,6 +267,14 @@ void NamedCpmComputeEnv::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ActionIfComputeNodeInactive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_actionIfComputeNodeInactive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceMaxRetryCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceMaxRetryCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceMaxRetryCount, allocator);
     }
 
 }
@@ -403,5 +422,21 @@ void NamedCpmComputeEnv::SetActionIfComputeNodeInactive(const string& _actionIfC
 bool NamedCpmComputeEnv::ActionIfComputeNodeInactiveHasBeenSet() const
 {
     return m_actionIfComputeNodeInactiveHasBeenSet;
+}
+
+int64_t NamedCpmComputeEnv::GetResourceMaxRetryCount() const
+{
+    return m_resourceMaxRetryCount;
+}
+
+void NamedCpmComputeEnv::SetResourceMaxRetryCount(const int64_t& _resourceMaxRetryCount)
+{
+    m_resourceMaxRetryCount = _resourceMaxRetryCount;
+    m_resourceMaxRetryCountHasBeenSet = true;
+}
+
+bool NamedCpmComputeEnv::ResourceMaxRetryCountHasBeenSet() const
+{
+    return m_resourceMaxRetryCountHasBeenSet;
 }
 

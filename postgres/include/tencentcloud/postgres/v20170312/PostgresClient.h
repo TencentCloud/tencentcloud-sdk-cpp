@@ -25,8 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CreateServerlessDBInstanceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CreateServerlessDBInstanceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DeleteServerlessDBInstanceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DeleteServerlessDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeAccountsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeAccountsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBBackupsRequest.h>
@@ -41,14 +47,20 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBXlogsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBXlogsResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDatabasesRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeProductConfigRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeProductConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeRegionsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InitDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/InitDBInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesRequest.h>
@@ -65,6 +77,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h>
+#include <tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessRequest.h>
+#include <tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RenewInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/RenewInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ResetAccountPasswordRequest.h>
@@ -92,9 +106,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CloseDBExtranetAccessResponse> CloseDBExtranetAccessOutcome;
                 typedef std::future<CloseDBExtranetAccessOutcome> CloseDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseDBExtranetAccessRequest&, CloseDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBExtranetAccessAsyncHandler;
+                typedef Outcome<Error, Model::CloseServerlessDBExtranetAccessResponse> CloseServerlessDBExtranetAccessOutcome;
+                typedef std::future<CloseServerlessDBExtranetAccessOutcome> CloseServerlessDBExtranetAccessOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CloseServerlessDBExtranetAccessRequest&, CloseServerlessDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseServerlessDBExtranetAccessAsyncHandler;
                 typedef Outcome<Error, Model::CreateDBInstancesResponse> CreateDBInstancesOutcome;
                 typedef std::future<CreateDBInstancesOutcome> CreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDBInstancesRequest&, CreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstancesAsyncHandler;
+                typedef Outcome<Error, Model::CreateServerlessDBInstanceResponse> CreateServerlessDBInstanceOutcome;
+                typedef std::future<CreateServerlessDBInstanceOutcome> CreateServerlessDBInstanceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CreateServerlessDBInstanceRequest&, CreateServerlessDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteServerlessDBInstanceResponse> DeleteServerlessDBInstanceOutcome;
+                typedef std::future<DeleteServerlessDBInstanceOutcome> DeleteServerlessDBInstanceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DeleteServerlessDBInstanceRequest&, DeleteServerlessDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
@@ -116,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBXlogsResponse> DescribeDBXlogsOutcome;
                 typedef std::future<DescribeDBXlogsOutcome> DescribeDBXlogsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBXlogsRequest&, DescribeDBXlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBXlogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
+                typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
@@ -125,9 +151,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeServerlessDBInstancesResponse> DescribeServerlessDBInstancesOutcome;
+                typedef std::future<DescribeServerlessDBInstancesOutcome> DescribeServerlessDBInstancesOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeServerlessDBInstancesRequest&, DescribeServerlessDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessDBInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+                typedef Outcome<Error, Model::DestroyDBInstanceResponse> DestroyDBInstanceOutcome;
+                typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DestroyDBInstanceRequest&, DestroyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
                 typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
@@ -152,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
+                typedef Outcome<Error, Model::OpenServerlessDBExtranetAccessResponse> OpenServerlessDBExtranetAccessOutcome;
+                typedef std::future<OpenServerlessDBExtranetAccessOutcome> OpenServerlessDBExtranetAccessOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::OpenServerlessDBExtranetAccessRequest&, OpenServerlessDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenServerlessDBExtranetAccessAsyncHandler;
                 typedef Outcome<Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -180,6 +215,15 @@ namespace TencentCloud
                 CloseDBExtranetAccessOutcomeCallable CloseDBExtranetAccessCallable(const Model::CloseDBExtranetAccessRequest& request);
 
                 /**
+                 *关闭serverlessDB实例外网
+                 * @param req CloseServerlessDBExtranetAccessRequest
+                 * @return CloseServerlessDBExtranetAccessOutcome
+                 */
+                CloseServerlessDBExtranetAccessOutcome CloseServerlessDBExtranetAccess(const Model::CloseServerlessDBExtranetAccessRequest &request);
+                void CloseServerlessDBExtranetAccessAsync(const Model::CloseServerlessDBExtranetAccessRequest& request, const CloseServerlessDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseServerlessDBExtranetAccessOutcomeCallable CloseServerlessDBExtranetAccessCallable(const Model::CloseServerlessDBExtranetAccessRequest& request);
+
+                /**
                  *本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。
                  * @param req CreateDBInstancesRequest
                  * @return CreateDBInstancesOutcome
@@ -187,6 +231,24 @@ namespace TencentCloud
                 CreateDBInstancesOutcome CreateDBInstances(const Model::CreateDBInstancesRequest &request);
                 void CreateDBInstancesAsync(const Model::CreateDBInstancesRequest& request, const CreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstancesOutcomeCallable CreateDBInstancesCallable(const Model::CreateDBInstancesRequest& request);
+
+                /**
+                 *本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。
+                 * @param req CreateServerlessDBInstanceRequest
+                 * @return CreateServerlessDBInstanceOutcome
+                 */
+                CreateServerlessDBInstanceOutcome CreateServerlessDBInstance(const Model::CreateServerlessDBInstanceRequest &request);
+                void CreateServerlessDBInstanceAsync(const Model::CreateServerlessDBInstanceRequest& request, const CreateServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServerlessDBInstanceOutcomeCallable CreateServerlessDBInstanceCallable(const Model::CreateServerlessDBInstanceRequest& request);
+
+                /**
+                 *本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。
+                 * @param req DeleteServerlessDBInstanceRequest
+                 * @return DeleteServerlessDBInstanceOutcome
+                 */
+                DeleteServerlessDBInstanceOutcome DeleteServerlessDBInstance(const Model::DeleteServerlessDBInstanceRequest &request);
+                void DeleteServerlessDBInstanceAsync(const Model::DeleteServerlessDBInstanceRequest& request, const DeleteServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServerlessDBInstanceOutcomeCallable DeleteServerlessDBInstanceCallable(const Model::DeleteServerlessDBInstanceRequest& request);
 
                 /**
                  *本接口（DescribeAccounts）用于获取实例用户列表。
@@ -252,6 +314,15 @@ namespace TencentCloud
                 DescribeDBXlogsOutcomeCallable DescribeDBXlogsCallable(const Model::DescribeDBXlogsRequest& request);
 
                 /**
+                 *接口（DescribeDatabases）用来拉取数据库列表
+                 * @param req DescribeDatabasesRequest
+                 * @return DescribeDatabasesOutcome
+                 */
+                DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
+                void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
                  *本接口（DescribeOrders）用于获取订单信息。
                  * @param req DescribeOrdersRequest
                  * @return DescribeOrdersOutcome
@@ -279,6 +350,15 @@ namespace TencentCloud
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
+                 *用于查询一个或多个serverlessDB实例的详细信息
+                 * @param req DescribeServerlessDBInstancesRequest
+                 * @return DescribeServerlessDBInstancesOutcome
+                 */
+                DescribeServerlessDBInstancesOutcome DescribeServerlessDBInstances(const Model::DescribeServerlessDBInstancesRequest &request);
+                void DescribeServerlessDBInstancesAsync(const Model::DescribeServerlessDBInstancesRequest& request, const DescribeServerlessDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServerlessDBInstancesOutcomeCallable DescribeServerlessDBInstancesCallable(const Model::DescribeServerlessDBInstancesRequest& request);
+
+                /**
                  *本接口 (DescribeZones) 用于查询支持的可用区信息。
                  * @param req DescribeZonesRequest
                  * @return DescribeZonesOutcome
@@ -286,6 +366,15 @@ namespace TencentCloud
                 DescribeZonesOutcome DescribeZones(const Model::DescribeZonesRequest &request);
                 void DescribeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
+
+                /**
+                 *本接口 (DestroyDBInstance) 用于销毁指定DBInstanceId对应的实例。
+                 * @param req DestroyDBInstanceRequest
+                 * @return DestroyDBInstanceOutcome
+                 */
+                DestroyDBInstanceOutcome DestroyDBInstance(const Model::DestroyDBInstanceRequest &request);
+                void DestroyDBInstanceAsync(const Model::DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyDBInstanceOutcomeCallable DestroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request);
 
                 /**
                  *本接口 (InitDBInstances) 用于初始化云数据库PostgreSQL实例。
@@ -358,6 +447,15 @@ namespace TencentCloud
                 OpenDBExtranetAccessOutcome OpenDBExtranetAccess(const Model::OpenDBExtranetAccessRequest &request);
                 void OpenDBExtranetAccessAsync(const Model::OpenDBExtranetAccessRequest& request, const OpenDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenDBExtranetAccessOutcomeCallable OpenDBExtranetAccessCallable(const Model::OpenDBExtranetAccessRequest& request);
+
+                /**
+                 *开通serverlessDB实例外网
+                 * @param req OpenServerlessDBExtranetAccessRequest
+                 * @return OpenServerlessDBExtranetAccessOutcome
+                 */
+                OpenServerlessDBExtranetAccessOutcome OpenServerlessDBExtranetAccess(const Model::OpenServerlessDBExtranetAccessRequest &request);
+                void OpenServerlessDBExtranetAccessAsync(const Model::OpenServerlessDBExtranetAccessRequest& request, const OpenServerlessDBExtranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenServerlessDBExtranetAccessOutcomeCallable OpenServerlessDBExtranetAccessCallable(const Model::OpenServerlessDBExtranetAccessRequest& request);
 
                 /**
                  *本接口（RenewInstance）用于续费实例。

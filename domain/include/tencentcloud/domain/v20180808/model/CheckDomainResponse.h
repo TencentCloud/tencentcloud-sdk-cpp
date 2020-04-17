@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool PremiumHasBeenSet() const;
 
                     /**
-                     * 获取价格
-                     * @return Price 价格
+                     * 获取域名价格
+                     * @return Price 域名价格
                      */
                     uint64_t GetPrice() const;
 
@@ -113,6 +113,86 @@ namespace TencentCloud
                      * @return BlackWord 是否已赋值
                      */
                     bool BlackWordHasBeenSet() const;
+
+                    /**
+                     * 获取溢价词描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Describe 溢价词描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescribe() const;
+
+                    /**
+                     * 判断参数 Describe 是否已赋值
+                     * @return Describe 是否已赋值
+                     */
+                    bool DescribeHasBeenSet() const;
+
+                    /**
+                     * 获取溢价词的续费价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeeRenew 溢价词的续费价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFeeRenew() const;
+
+                    /**
+                     * 判断参数 FeeRenew 是否已赋值
+                     * @return FeeRenew 是否已赋值
+                     */
+                    bool FeeRenewHasBeenSet() const;
+
+                    /**
+                     * 获取域名真实价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealPrice 域名真实价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRealPrice() const;
+
+                    /**
+                     * 判断参数 RealPrice 是否已赋值
+                     * @return RealPrice 是否已赋值
+                     */
+                    bool RealPriceHasBeenSet() const;
+
+                    /**
+                     * 获取溢价词的转入价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeeTransfer 溢价词的转入价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFeeTransfer() const;
+
+                    /**
+                     * 判断参数 FeeTransfer 是否已赋值
+                     * @return FeeTransfer 是否已赋值
+                     */
+                    bool FeeTransferHasBeenSet() const;
+
+                    /**
+                     * 获取溢价词的赎回价格
+                     * @return FeeRestore 溢价词的赎回价格
+                     */
+                    uint64_t GetFeeRestore() const;
+
+                    /**
+                     * 判断参数 FeeRestore 是否已赋值
+                     * @return FeeRestore 是否已赋值
+                     */
+                    bool FeeRestoreHasBeenSet() const;
+
+                    /**
+                     * 获取检测年限
+                     * @return Period 检测年限
+                     */
+                    uint64_t GetPeriod() const;
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
 
                 private:
 
@@ -141,7 +221,7 @@ namespace TencentCloud
                     bool m_premiumHasBeenSet;
 
                     /**
-                     * 价格
+                     * 域名价格
                      */
                     uint64_t m_price;
                     bool m_priceHasBeenSet;
@@ -151,6 +231,46 @@ namespace TencentCloud
                      */
                     bool m_blackWord;
                     bool m_blackWordHasBeenSet;
+
+                    /**
+                     * 溢价词描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_describe;
+                    bool m_describeHasBeenSet;
+
+                    /**
+                     * 溢价词的续费价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_feeRenew;
+                    bool m_feeRenewHasBeenSet;
+
+                    /**
+                     * 域名真实价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_realPrice;
+                    bool m_realPriceHasBeenSet;
+
+                    /**
+                     * 溢价词的转入价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_feeTransfer;
+                    bool m_feeTransferHasBeenSet;
+
+                    /**
+                     * 溢价词的赎回价格
+                     */
+                    uint64_t m_feeRestore;
+                    bool m_feeRestoreHasBeenSet;
+
+                    /**
+                     * 检测年限
+                     */
+                    uint64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

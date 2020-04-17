@@ -119,14 +119,34 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例同步状态
-                     * @return SyncStatus 实例同步状态
+                     * 获取实例同步状态。可能的返回值为：
+0 - 灾备未同步；
+1 - 灾备同步中；
+2 - 灾备同步成功；
+3 - 灾备同步失败；
+4 - 灾备同步修复中。
+                     * @return SyncStatus 实例同步状态。可能的返回值为：
+0 - 灾备未同步；
+1 - 灾备同步中；
+2 - 灾备同步成功；
+3 - 灾备同步失败；
+4 - 灾备同步修复中。
                      */
                     int64_t GetSyncStatus() const;
 
                     /**
-                     * 设置实例同步状态
-                     * @param SyncStatus 实例同步状态
+                     * 设置实例同步状态。可能的返回值为：
+0 - 灾备未同步；
+1 - 灾备同步中；
+2 - 灾备同步成功；
+3 - 灾备同步失败；
+4 - 灾备同步修复中。
+                     * @param SyncStatus 实例同步状态。可能的返回值为：
+0 - 灾备未同步；
+1 - 灾备同步中；
+2 - 灾备同步成功；
+3 - 灾备同步失败；
+4 - 灾备同步修复中。
                      */
                     void SetSyncStatus(const int64_t& _syncStatus);
 
@@ -199,7 +219,12 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例同步状态
+                     * 实例同步状态。可能的返回值为：
+0 - 灾备未同步；
+1 - 灾备同步中；
+2 - 灾备同步成功；
+3 - 灾备同步失败；
+4 - 灾备同步修复中。
                      */
                     int64_t m_syncStatus;
                     bool m_syncStatusHasBeenSet;

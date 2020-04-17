@@ -33,7 +33,12 @@ Cluster::Cluster() :
     m_projectIdHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
-    m_propertyHasBeenSet(false)
+    m_propertyHasBeenSet(false),
+    m_clusterMaterNodeNumHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_osCustomizeTypeHasBeenSet(false),
+    m_containerRuntimeHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
 }
 
@@ -179,6 +184,56 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
         m_propertyHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterMaterNodeNum") && !value["ClusterMaterNodeNum"].IsNull())
+    {
+        if (!value["ClusterMaterNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.ClusterMaterNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterMaterNodeNum = value["ClusterMaterNodeNum"].GetUint64();
+        m_clusterMaterNodeNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
+    {
+        if (!value["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(value["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsCustomizeType") && !value["OsCustomizeType"].IsNull())
+    {
+        if (!value["OsCustomizeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.OsCustomizeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osCustomizeType = string(value["OsCustomizeType"].GetString());
+        m_osCustomizeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerRuntime") && !value["ContainerRuntime"].IsNull())
+    {
+        if (!value["ContainerRuntime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.ContainerRuntime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerRuntime = string(value["ContainerRuntime"].GetString());
+        m_containerRuntimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -288,6 +343,46 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "Property";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_property.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterMaterNodeNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterMaterNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterMaterNodeNum, allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osCustomizeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsCustomizeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerRuntimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ContainerRuntime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_containerRuntime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -483,5 +578,85 @@ void Cluster::SetProperty(const string& _property)
 bool Cluster::PropertyHasBeenSet() const
 {
     return m_propertyHasBeenSet;
+}
+
+uint64_t Cluster::GetClusterMaterNodeNum() const
+{
+    return m_clusterMaterNodeNum;
+}
+
+void Cluster::SetClusterMaterNodeNum(const uint64_t& _clusterMaterNodeNum)
+{
+    m_clusterMaterNodeNum = _clusterMaterNodeNum;
+    m_clusterMaterNodeNumHasBeenSet = true;
+}
+
+bool Cluster::ClusterMaterNodeNumHasBeenSet() const
+{
+    return m_clusterMaterNodeNumHasBeenSet;
+}
+
+string Cluster::GetImageId() const
+{
+    return m_imageId;
+}
+
+void Cluster::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool Cluster::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
+}
+
+string Cluster::GetOsCustomizeType() const
+{
+    return m_osCustomizeType;
+}
+
+void Cluster::SetOsCustomizeType(const string& _osCustomizeType)
+{
+    m_osCustomizeType = _osCustomizeType;
+    m_osCustomizeTypeHasBeenSet = true;
+}
+
+bool Cluster::OsCustomizeTypeHasBeenSet() const
+{
+    return m_osCustomizeTypeHasBeenSet;
+}
+
+string Cluster::GetContainerRuntime() const
+{
+    return m_containerRuntime;
+}
+
+void Cluster::SetContainerRuntime(const string& _containerRuntime)
+{
+    m_containerRuntime = _containerRuntime;
+    m_containerRuntimeHasBeenSet = true;
+}
+
+bool Cluster::ContainerRuntimeHasBeenSet() const
+{
+    return m_containerRuntimeHasBeenSet;
+}
+
+string Cluster::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void Cluster::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool Cluster::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
 }
 

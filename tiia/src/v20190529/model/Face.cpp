@@ -29,7 +29,8 @@ Face::Face() :
     m_xHasBeenSet(false),
     m_yHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_iDHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome Face::Deserialize(const Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("ID") && !value["ID"].IsNull())
+    {
+        if (!value["ID"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Face.ID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iD = string(value["ID"].GetString());
+        m_iDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,6 +215,14 @@ void Face::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_iDHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_iD.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -335,5 +354,21 @@ void Face::SetHeight(const int64_t& _height)
 bool Face::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+string Face::GetID() const
+{
+    return m_iD;
+}
+
+void Face::SetID(const string& _iD)
+{
+    m_iD = _iD;
+    m_iDHasBeenSet = true;
+}
+
+bool Face::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
 }
 

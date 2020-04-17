@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeCfsFileSystemsResponse::DescribeCfsFileSystemsResponse() :
-    m_fileSystemsHasBeenSet(false)
+    m_fileSystemsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeCfsFileSystemsResponse::Deserialize(const string &pa
         m_fileSystemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<FileSystemInfo> DescribeCfsFileSystemsResponse::GetFileSystems() const
 bool DescribeCfsFileSystemsResponse::FileSystemsHasBeenSet() const
 {
     return m_fileSystemsHasBeenSet;
+}
+
+uint64_t DescribeCfsFileSystemsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeCfsFileSystemsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

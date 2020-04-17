@@ -32,7 +32,12 @@ CdsAuditInstance::CdsAuditInstance() :
     m_statusHasBeenSet(false),
     m_isolatedTimestampHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false),
+    m_privateIpHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_pdomainHasBeenSet(false)
 {
 }
 
@@ -151,6 +156,56 @@ CoreInternalOutcome CdsAuditInstance::Deserialize(const Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CdsAuditInstance.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIp") && !value["PublicIp"].IsNull())
+    {
+        if (!value["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CdsAuditInstance.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(value["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("PrivateIp") && !value["PrivateIp"].IsNull())
+    {
+        if (!value["PrivateIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CdsAuditInstance.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateIp = string(value["PrivateIp"].GetString());
+        m_privateIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CdsAuditInstance.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Pdomain") && !value["Pdomain"].IsNull())
+    {
+        if (!value["Pdomain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CdsAuditInstance.Pdomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pdomain = string(value["Pdomain"].GetString());
+        m_pdomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -244,6 +299,46 @@ void CdsAuditInstance::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_publicIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PrivateIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_privateIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pdomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Pdomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_pdomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -423,5 +518,85 @@ void CdsAuditInstance::SetExpireTime(const string& _expireTime)
 bool CdsAuditInstance::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string CdsAuditInstance::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CdsAuditInstance::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CdsAuditInstance::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+string CdsAuditInstance::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+void CdsAuditInstance::SetPublicIp(const string& _publicIp)
+{
+    m_publicIp = _publicIp;
+    m_publicIpHasBeenSet = true;
+}
+
+bool CdsAuditInstance::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
+}
+
+string CdsAuditInstance::GetPrivateIp() const
+{
+    return m_privateIp;
+}
+
+void CdsAuditInstance::SetPrivateIp(const string& _privateIp)
+{
+    m_privateIp = _privateIp;
+    m_privateIpHasBeenSet = true;
+}
+
+bool CdsAuditInstance::PrivateIpHasBeenSet() const
+{
+    return m_privateIpHasBeenSet;
+}
+
+string CdsAuditInstance::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void CdsAuditInstance::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool CdsAuditInstance::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string CdsAuditInstance::GetPdomain() const
+{
+    return m_pdomain;
+}
+
+void CdsAuditInstance::SetPdomain(const string& _pdomain)
+{
+    m_pdomain = _pdomain;
+    m_pdomainHasBeenSet = true;
+}
+
+bool CdsAuditInstance::PdomainHasBeenSet() const
+{
+    return m_pdomainHasBeenSet;
 }
 

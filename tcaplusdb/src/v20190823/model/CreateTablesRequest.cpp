@@ -24,7 +24,7 @@ using namespace rapidjson;
 using namespace std;
 
 CreateTablesRequest::CreateTablesRequest() :
-    m_applicationIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_idlFilesHasBeenSet(false),
     m_selectedTablesHasBeenSet(false)
 {
@@ -37,12 +37,12 @@ string CreateTablesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idlFilesHasBeenSet)
@@ -83,20 +83,20 @@ string CreateTablesRequest::ToJsonString() const
 }
 
 
-string CreateTablesRequest::GetApplicationId() const
+string CreateTablesRequest::GetClusterId() const
 {
-    return m_applicationId;
+    return m_clusterId;
 }
 
-void CreateTablesRequest::SetApplicationId(const string& _applicationId)
+void CreateTablesRequest::SetClusterId(const string& _clusterId)
 {
-    m_applicationId = _applicationId;
-    m_applicationIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool CreateTablesRequest::ApplicationIdHasBeenSet() const
+bool CreateTablesRequest::ClusterIdHasBeenSet() const
 {
-    return m_applicationIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
 vector<IdlFileInfo> CreateTablesRequest::GetIdlFiles() const
@@ -115,12 +115,12 @@ bool CreateTablesRequest::IdlFilesHasBeenSet() const
     return m_idlFilesHasBeenSet;
 }
 
-vector<SelectedTableInfo> CreateTablesRequest::GetSelectedTables() const
+vector<SelectedTableInfoNew> CreateTablesRequest::GetSelectedTables() const
 {
     return m_selectedTables;
 }
 
-void CreateTablesRequest::SetSelectedTables(const vector<SelectedTableInfo>& _selectedTables)
+void CreateTablesRequest::SetSelectedTables(const vector<SelectedTableInfoNew>& _selectedTables)
 {
     m_selectedTables = _selectedTables;
     m_selectedTablesHasBeenSet = true;

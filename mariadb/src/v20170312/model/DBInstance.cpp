@@ -59,7 +59,8 @@ DBInstance::DBInstance() :
     m_wanStatusHasBeenSet(false),
     m_isAuditSupportedHasBeenSet(false),
     m_machineHasBeenSet(false),
-    m_isEncryptSupportedHasBeenSet(false)
+    m_isEncryptSupportedHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -448,6 +449,16 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_isEncryptSupportedHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetInt64();
+        m_cpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -757,6 +768,14 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "IsEncryptSupported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isEncryptSupported, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
     }
 
 }
@@ -1368,5 +1387,21 @@ void DBInstance::SetIsEncryptSupported(const int64_t& _isEncryptSupported)
 bool DBInstance::IsEncryptSupportedHasBeenSet() const
 {
     return m_isEncryptSupportedHasBeenSet;
+}
+
+int64_t DBInstance::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DBInstance::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DBInstance::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 

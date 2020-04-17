@@ -29,7 +29,9 @@ RoleInfo::RoleInfo() :
     m_addTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_consoleLoginHasBeenSet(false),
-    m_roleTypeHasBeenSet(false)
+    m_roleTypeHasBeenSet(false),
+    m_sessionDurationHasBeenSet(false),
+    m_deletionTaskIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,26 @@ CoreInternalOutcome RoleInfo::Deserialize(const Value &value)
         m_roleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionDuration") && !value["SessionDuration"].IsNull())
+    {
+        if (!value["SessionDuration"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RoleInfo.SessionDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionDuration = value["SessionDuration"].GetUint64();
+        m_sessionDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeletionTaskId") && !value["DeletionTaskId"].IsNull())
+    {
+        if (!value["DeletionTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RoleInfo.DeletionTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionTaskId = string(value["DeletionTaskId"].GetString());
+        m_deletionTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +209,22 @@ void RoleInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "RoleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_roleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionDurationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionDuration, allocator);
+    }
+
+    if (m_deletionTaskIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeletionTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deletionTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +356,37 @@ void RoleInfo::SetRoleType(const string& _roleType)
 bool RoleInfo::RoleTypeHasBeenSet() const
 {
     return m_roleTypeHasBeenSet;
+}
+
+uint64_t RoleInfo::GetSessionDuration() const
+{
+    return m_sessionDuration;
+}
+
+void RoleInfo::SetSessionDuration(const uint64_t& _sessionDuration)
+{
+    m_sessionDuration = _sessionDuration;
+    m_sessionDurationHasBeenSet = true;
+}
+
+bool RoleInfo::SessionDurationHasBeenSet() const
+{
+    return m_sessionDurationHasBeenSet;
+}
+
+string RoleInfo::GetDeletionTaskId() const
+{
+    return m_deletionTaskId;
+}
+
+void RoleInfo::SetDeletionTaskId(const string& _deletionTaskId)
+{
+    m_deletionTaskId = _deletionTaskId;
+    m_deletionTaskIdHasBeenSet = true;
+}
+
+bool RoleInfo::DeletionTaskIdHasBeenSet() const
+{
+    return m_deletionTaskIdHasBeenSet;
 }
 

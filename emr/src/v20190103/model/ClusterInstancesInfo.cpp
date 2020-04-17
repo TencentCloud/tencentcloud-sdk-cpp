@@ -43,7 +43,13 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_tradeVersionHasBeenSet(false),
     m_resourceOrderIdHasBeenSet(false),
     m_isTradeClusterHasBeenSet(false),
-    m_alarmInfoHasBeenSet(false)
+    m_alarmInfoHasBeenSet(false),
+    m_isWoodpeckerClusterHasBeenSet(false),
+    m_metaDbHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_hiveMetaDbHasBeenSet(false),
+    m_serviceClassHasBeenSet(false),
+    m_aliasInfoHasBeenSet(false)
 {
 }
 
@@ -279,6 +285,76 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const Value &value)
         m_alarmInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("IsWoodpeckerCluster") && !value["IsWoodpeckerCluster"].IsNull())
+    {
+        if (!value["IsWoodpeckerCluster"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.IsWoodpeckerCluster` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isWoodpeckerCluster = value["IsWoodpeckerCluster"].GetInt64();
+        m_isWoodpeckerClusterHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaDb") && !value["MetaDb"].IsNull())
+    {
+        if (!value["MetaDb"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.MetaDb` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaDb = string(value["MetaDb"].GetString());
+        m_metaDbHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("HiveMetaDb") && !value["HiveMetaDb"].IsNull())
+    {
+        if (!value["HiveMetaDb"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.HiveMetaDb` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hiveMetaDb = string(value["HiveMetaDb"].GetString());
+        m_hiveMetaDbHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceClass") && !value["ServiceClass"].IsNull())
+    {
+        if (!value["ServiceClass"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.ServiceClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceClass = string(value["ServiceClass"].GetString());
+        m_serviceClassHasBeenSet = true;
+    }
+
+    if (value.HasMember("AliasInfo") && !value["AliasInfo"].IsNull())
+    {
+        if (!value["AliasInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.AliasInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasInfo = string(value["AliasInfo"].GetString());
+        m_aliasInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -461,6 +537,61 @@ void ClusterInstancesInfo::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "AlarmInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_alarmInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isWoodpeckerClusterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsWoodpeckerCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isWoodpeckerCluster, allocator);
+    }
+
+    if (m_metaDbHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaDb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_metaDb.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hiveMetaDbHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HiveMetaDb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_hiveMetaDb.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceClassHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serviceClass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AliasInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_aliasInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -816,5 +947,101 @@ void ClusterInstancesInfo::SetAlarmInfo(const string& _alarmInfo)
 bool ClusterInstancesInfo::AlarmInfoHasBeenSet() const
 {
     return m_alarmInfoHasBeenSet;
+}
+
+int64_t ClusterInstancesInfo::GetIsWoodpeckerCluster() const
+{
+    return m_isWoodpeckerCluster;
+}
+
+void ClusterInstancesInfo::SetIsWoodpeckerCluster(const int64_t& _isWoodpeckerCluster)
+{
+    m_isWoodpeckerCluster = _isWoodpeckerCluster;
+    m_isWoodpeckerClusterHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::IsWoodpeckerClusterHasBeenSet() const
+{
+    return m_isWoodpeckerClusterHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetMetaDb() const
+{
+    return m_metaDb;
+}
+
+void ClusterInstancesInfo::SetMetaDb(const string& _metaDb)
+{
+    m_metaDb = _metaDb;
+    m_metaDbHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::MetaDbHasBeenSet() const
+{
+    return m_metaDbHasBeenSet;
+}
+
+vector<Tag> ClusterInstancesInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void ClusterInstancesInfo::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetHiveMetaDb() const
+{
+    return m_hiveMetaDb;
+}
+
+void ClusterInstancesInfo::SetHiveMetaDb(const string& _hiveMetaDb)
+{
+    m_hiveMetaDb = _hiveMetaDb;
+    m_hiveMetaDbHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::HiveMetaDbHasBeenSet() const
+{
+    return m_hiveMetaDbHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetServiceClass() const
+{
+    return m_serviceClass;
+}
+
+void ClusterInstancesInfo::SetServiceClass(const string& _serviceClass)
+{
+    m_serviceClass = _serviceClass;
+    m_serviceClassHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ServiceClassHasBeenSet() const
+{
+    return m_serviceClassHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetAliasInfo() const
+{
+    return m_aliasInfo;
+}
+
+void ClusterInstancesInfo::SetAliasInfo(const string& _aliasInfo)
+{
+    m_aliasInfo = _aliasInfo;
+    m_aliasInfoHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::AliasInfoHasBeenSet() const
+{
+    return m_aliasInfoHasBeenSet;
 }
 

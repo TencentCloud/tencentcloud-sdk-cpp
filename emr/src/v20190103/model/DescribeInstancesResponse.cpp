@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeInstancesResponse::DescribeInstancesResponse() :
     m_totalCntHasBeenSet(false),
-    m_clusterListHasBeenSet(false)
+    m_clusterListHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ CoreInternalOutcome DescribeInstancesResponse::Deserialize(const string &payload
         m_clusterListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TagKeys") && !rsp["TagKeys"].IsNull())
+    {
+        if (!rsp["TagKeys"].IsArray())
+            return CoreInternalOutcome(Error("response `TagKeys` is not array type"));
+
+        const Value &tmpValue = rsp["TagKeys"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagKeys.push_back((*itr).GetString());
+        }
+        m_tagKeysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +131,16 @@ vector<ClusterInstancesInfo> DescribeInstancesResponse::GetClusterList() const
 bool DescribeInstancesResponse::ClusterListHasBeenSet() const
 {
     return m_clusterListHasBeenSet;
+}
+
+vector<string> DescribeInstancesResponse::GetTagKeys() const
+{
+    return m_tagKeys;
+}
+
+bool DescribeInstancesResponse::TagKeysHasBeenSet() const
+{
+    return m_tagKeysHasBeenSet;
 }
 
 

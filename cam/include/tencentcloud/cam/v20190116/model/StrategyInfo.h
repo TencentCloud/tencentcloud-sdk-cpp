@@ -246,6 +246,50 @@ namespace TencentCloud
                      */
                     bool DeactivedHasBeenSet() const;
 
+                    /**
+                     * 获取已下线产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeactivedDetail 已下线产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDeactivedDetail() const;
+
+                    /**
+                     * 设置已下线产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeactivedDetail 已下线产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
+
+                    /**
+                     * 判断参数 DeactivedDetail 是否已赋值
+                     * @return DeactivedDetail 是否已赋值
+                     */
+                    bool DeactivedDetailHasBeenSet() const;
+
+                    /**
+                     * 获取是否是服务相关角色策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsServiceLinkedPolicy 是否是服务相关角色策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsServiceLinkedPolicy() const;
+
+                    /**
+                     * 设置是否是服务相关角色策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsServiceLinkedPolicy 是否是服务相关角色策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsServiceLinkedPolicy(const uint64_t& _isServiceLinkedPolicy);
+
+                    /**
+                     * 判断参数 IsServiceLinkedPolicy 是否已赋值
+                     * @return IsServiceLinkedPolicy 是否已赋值
+                     */
+                    bool IsServiceLinkedPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +356,20 @@ namespace TencentCloud
                      */
                     uint64_t m_deactived;
                     bool m_deactivedHasBeenSet;
+
+                    /**
+                     * 已下线产品列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_deactivedDetail;
+                    bool m_deactivedDetailHasBeenSet;
+
+                    /**
+                     * 是否是服务相关角色策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isServiceLinkedPolicy;
+                    bool m_isServiceLinkedPolicyHasBeenSet;
 
                 };
             }

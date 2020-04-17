@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据协议 (1 使用物模型)
-                     * @return DataProtocol 数据协议 (1 使用物模型)
+                     * 获取数据协议 (1 使用物模型 2 为自定义)
+                     * @return DataProtocol 数据协议 (1 使用物模型 2 为自定义)
                      */
                     int64_t GetDataProtocol() const;
 
                     /**
-                     * 设置数据协议 (1 使用物模型)
-                     * @param DataProtocol 数据协议 (1 使用物模型)
+                     * 设置数据协议 (1 使用物模型 2 为自定义)
+                     * @param DataProtocol 数据协议 (1 使用物模型 2 为自定义)
                      */
                     void SetDataProtocol(const int64_t& _dataProtocol);
 
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 数据协议 (1 使用物模型)
+                     * 数据协议 (1 使用物模型 2 为自定义)
                      */
                     int64_t m_dataProtocol;
                     bool m_dataProtocolHasBeenSet;

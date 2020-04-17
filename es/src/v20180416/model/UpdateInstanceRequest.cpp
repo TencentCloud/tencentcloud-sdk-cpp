@@ -41,7 +41,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_publicAccessHasBeenSet(false),
     m_esPublicAclHasBeenSet(false),
     m_kibanaPublicAccessHasBeenSet(false),
-    m_kibanaPrivateAccessHasBeenSet(false)
+    m_kibanaPrivateAccessHasBeenSet(false),
+    m_basicSecurityTypeHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,14 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "KibanaPrivateAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_kibanaPrivateAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_basicSecurityTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BasicSecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_basicSecurityType, allocator);
     }
 
 
@@ -500,6 +509,22 @@ void UpdateInstanceRequest::SetKibanaPrivateAccess(const string& _kibanaPrivateA
 bool UpdateInstanceRequest::KibanaPrivateAccessHasBeenSet() const
 {
     return m_kibanaPrivateAccessHasBeenSet;
+}
+
+int64_t UpdateInstanceRequest::GetBasicSecurityType() const
+{
+    return m_basicSecurityType;
+}
+
+void UpdateInstanceRequest::SetBasicSecurityType(const int64_t& _basicSecurityType)
+{
+    m_basicSecurityType = _basicSecurityType;
+    m_basicSecurityTypeHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::BasicSecurityTypeHasBeenSet() const
+{
+    return m_basicSecurityTypeHasBeenSet;
 }
 
 

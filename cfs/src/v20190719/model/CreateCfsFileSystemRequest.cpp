@@ -32,7 +32,8 @@ CreateCfsFileSystemRequest::CreateCfsFileSystemRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_mountIPHasBeenSet(false),
-    m_fsNameHasBeenSet(false)
+    m_fsNameHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,21 @@ string CreateCfsFileSystemRequest::ToJsonString() const
         string key = "FsName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_fsName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -265,6 +281,22 @@ void CreateCfsFileSystemRequest::SetFsName(const string& _fsName)
 bool CreateCfsFileSystemRequest::FsNameHasBeenSet() const
 {
     return m_fsNameHasBeenSet;
+}
+
+vector<TagInfo> CreateCfsFileSystemRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateCfsFileSystemRequest::SetResourceTags(const vector<TagInfo>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateCfsFileSystemRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

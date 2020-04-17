@@ -65,21 +65,18 @@ CoreInternalOutcome DescribeGroupResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["Result"].IsArray())
-            return CoreInternalOutcome(Error("response `Result` is not array type"));
-
-        const Value &tmpValue = rsp["Result"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Result"].IsObject())
         {
-            DescribeGroup item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_result.push_back(item);
+            return CoreInternalOutcome(Error("response `Result` is not object type").SetRequestId(requestId));
         }
+
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_resultHasBeenSet = true;
     }
 
@@ -88,7 +85,7 @@ CoreInternalOutcome DescribeGroupResponse::Deserialize(const string &payload)
 }
 
 
-vector<DescribeGroup> DescribeGroupResponse::GetResult() const
+GroupResponse DescribeGroupResponse::GetResult() const
 {
     return m_result;
 }

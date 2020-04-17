@@ -34,7 +34,9 @@ DeviceClass::DeviceClass() :
     m_realPriceHasBeenSet(false),
     m_normalPriceHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
-    m_seriesHasBeenSet(false)
+    m_seriesHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,26 @@ CoreInternalOutcome DeviceClass::Deserialize(const Value &value)
         m_seriesHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceClass.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetUint64();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mem") && !value["Mem"].IsNull())
+    {
+        if (!value["Mem"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceClass.Mem` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mem = value["Mem"].GetUint64();
+        m_memHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +304,22 @@ void DeviceClass::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Series";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_series, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_memHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mem, allocator);
     }
 
 }
@@ -493,5 +531,37 @@ void DeviceClass::SetSeries(const uint64_t& _series)
 bool DeviceClass::SeriesHasBeenSet() const
 {
     return m_seriesHasBeenSet;
+}
+
+uint64_t DeviceClass::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DeviceClass::SetCpu(const uint64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DeviceClass::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+uint64_t DeviceClass::GetMem() const
+{
+    return m_mem;
+}
+
+void DeviceClass::SetMem(const uint64_t& _mem)
+{
+    m_mem = _mem;
+    m_memHasBeenSet = true;
+}
+
+bool DeviceClass::MemHasBeenSet() const
+{
+    return m_memHasBeenSet;
 }
 

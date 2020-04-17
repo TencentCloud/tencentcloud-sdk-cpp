@@ -33,7 +33,8 @@ DescribeBillDetailRequest::DescribeBillDetailRequest() :
     m_needRecordNumHasBeenSet(false),
     m_productCodeHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_actionTypeHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string DescribeBillDetailRequest::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -290,6 +299,22 @@ void DescribeBillDetailRequest::SetResourceId(const string& _resourceId)
 bool DescribeBillDetailRequest::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string DescribeBillDetailRequest::GetActionType() const
+{
+    return m_actionType;
+}
+
+void DescribeBillDetailRequest::SetActionType(const string& _actionType)
+{
+    m_actionType = _actionType;
+    m_actionTypeHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::ActionTypeHasBeenSet() const
+{
+    return m_actionTypeHasBeenSet;
 }
 
 

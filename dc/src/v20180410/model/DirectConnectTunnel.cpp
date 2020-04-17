@@ -39,7 +39,17 @@ DirectConnectTunnel::DirectConnectTunnel() :
     m_customerAddressHasBeenSet(false),
     m_directConnectTunnelNameHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_tagSetHasBeenSet(false),
+    m_netDetectIdHasBeenSet(false),
+    m_enableBGPCommunityHasBeenSet(false),
+    m_natTypeHasBeenSet(false),
+    m_vpcRegionHasBeenSet(false),
+    m_bfdEnableHasBeenSet(false),
+    m_accessPointTypeHasBeenSet(false),
+    m_directConnectGatewayNameHasBeenSet(false),
+    m_vpcNameHasBeenSet(false),
+    m_tencentBackupAddressHasBeenSet(false)
 {
 }
 
@@ -245,6 +255,116 @@ CoreInternalOutcome DirectConnectTunnel::Deserialize(const Value &value)
         m_bandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetDetectId") && !value["NetDetectId"].IsNull())
+    {
+        if (!value["NetDetectId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.NetDetectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netDetectId = string(value["NetDetectId"].GetString());
+        m_netDetectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableBGPCommunity") && !value["EnableBGPCommunity"].IsNull())
+    {
+        if (!value["EnableBGPCommunity"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.EnableBGPCommunity` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBGPCommunity = value["EnableBGPCommunity"].GetBool();
+        m_enableBGPCommunityHasBeenSet = true;
+    }
+
+    if (value.HasMember("NatType") && !value["NatType"].IsNull())
+    {
+        if (!value["NatType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.NatType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_natType = value["NatType"].GetInt64();
+        m_natTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcRegion") && !value["VpcRegion"].IsNull())
+    {
+        if (!value["VpcRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.VpcRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcRegion = string(value["VpcRegion"].GetString());
+        m_vpcRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BfdEnable") && !value["BfdEnable"].IsNull())
+    {
+        if (!value["BfdEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.BfdEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bfdEnable = value["BfdEnable"].GetInt64();
+        m_bfdEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointType") && !value["AccessPointType"].IsNull())
+    {
+        if (!value["AccessPointType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.AccessPointType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointType = string(value["AccessPointType"].GetString());
+        m_accessPointTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DirectConnectGatewayName") && !value["DirectConnectGatewayName"].IsNull())
+    {
+        if (!value["DirectConnectGatewayName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.DirectConnectGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_directConnectGatewayName = string(value["DirectConnectGatewayName"].GetString());
+        m_directConnectGatewayNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcName") && !value["VpcName"].IsNull())
+    {
+        if (!value["VpcName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcName = string(value["VpcName"].GetString());
+        m_vpcNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TencentBackupAddress") && !value["TencentBackupAddress"].IsNull())
+    {
+        if (!value["TencentBackupAddress"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnel.TencentBackupAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tencentBackupAddress = string(value["TencentBackupAddress"].GetString());
+        m_tencentBackupAddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -402,6 +522,93 @@ void DirectConnectTunnel::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_netDetectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetDetectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_netDetectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableBGPCommunityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableBGPCommunity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableBGPCommunity, allocator);
+    }
+
+    if (m_natTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NatType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_natType, allocator);
+    }
+
+    if (m_vpcRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bfdEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BfdEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bfdEnable, allocator);
+    }
+
+    if (m_accessPointTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessPointType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_accessPointType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_directConnectGatewayNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DirectConnectGatewayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_directConnectGatewayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tencentBackupAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TencentBackupAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -693,5 +900,165 @@ void DirectConnectTunnel::SetBandwidth(const int64_t& _bandwidth)
 bool DirectConnectTunnel::BandwidthHasBeenSet() const
 {
     return m_bandwidthHasBeenSet;
+}
+
+vector<Tag> DirectConnectTunnel::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void DirectConnectTunnel::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
+}
+
+string DirectConnectTunnel::GetNetDetectId() const
+{
+    return m_netDetectId;
+}
+
+void DirectConnectTunnel::SetNetDetectId(const string& _netDetectId)
+{
+    m_netDetectId = _netDetectId;
+    m_netDetectIdHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::NetDetectIdHasBeenSet() const
+{
+    return m_netDetectIdHasBeenSet;
+}
+
+bool DirectConnectTunnel::GetEnableBGPCommunity() const
+{
+    return m_enableBGPCommunity;
+}
+
+void DirectConnectTunnel::SetEnableBGPCommunity(const bool& _enableBGPCommunity)
+{
+    m_enableBGPCommunity = _enableBGPCommunity;
+    m_enableBGPCommunityHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::EnableBGPCommunityHasBeenSet() const
+{
+    return m_enableBGPCommunityHasBeenSet;
+}
+
+int64_t DirectConnectTunnel::GetNatType() const
+{
+    return m_natType;
+}
+
+void DirectConnectTunnel::SetNatType(const int64_t& _natType)
+{
+    m_natType = _natType;
+    m_natTypeHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::NatTypeHasBeenSet() const
+{
+    return m_natTypeHasBeenSet;
+}
+
+string DirectConnectTunnel::GetVpcRegion() const
+{
+    return m_vpcRegion;
+}
+
+void DirectConnectTunnel::SetVpcRegion(const string& _vpcRegion)
+{
+    m_vpcRegion = _vpcRegion;
+    m_vpcRegionHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::VpcRegionHasBeenSet() const
+{
+    return m_vpcRegionHasBeenSet;
+}
+
+int64_t DirectConnectTunnel::GetBfdEnable() const
+{
+    return m_bfdEnable;
+}
+
+void DirectConnectTunnel::SetBfdEnable(const int64_t& _bfdEnable)
+{
+    m_bfdEnable = _bfdEnable;
+    m_bfdEnableHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::BfdEnableHasBeenSet() const
+{
+    return m_bfdEnableHasBeenSet;
+}
+
+string DirectConnectTunnel::GetAccessPointType() const
+{
+    return m_accessPointType;
+}
+
+void DirectConnectTunnel::SetAccessPointType(const string& _accessPointType)
+{
+    m_accessPointType = _accessPointType;
+    m_accessPointTypeHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::AccessPointTypeHasBeenSet() const
+{
+    return m_accessPointTypeHasBeenSet;
+}
+
+string DirectConnectTunnel::GetDirectConnectGatewayName() const
+{
+    return m_directConnectGatewayName;
+}
+
+void DirectConnectTunnel::SetDirectConnectGatewayName(const string& _directConnectGatewayName)
+{
+    m_directConnectGatewayName = _directConnectGatewayName;
+    m_directConnectGatewayNameHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::DirectConnectGatewayNameHasBeenSet() const
+{
+    return m_directConnectGatewayNameHasBeenSet;
+}
+
+string DirectConnectTunnel::GetVpcName() const
+{
+    return m_vpcName;
+}
+
+void DirectConnectTunnel::SetVpcName(const string& _vpcName)
+{
+    m_vpcName = _vpcName;
+    m_vpcNameHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::VpcNameHasBeenSet() const
+{
+    return m_vpcNameHasBeenSet;
+}
+
+string DirectConnectTunnel::GetTencentBackupAddress() const
+{
+    return m_tencentBackupAddress;
+}
+
+void DirectConnectTunnel::SetTencentBackupAddress(const string& _tencentBackupAddress)
+{
+    m_tencentBackupAddress = _tencentBackupAddress;
+    m_tencentBackupAddressHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::TencentBackupAddressHasBeenSet() const
+{
+    return m_tencentBackupAddressHasBeenSet;
 }
 

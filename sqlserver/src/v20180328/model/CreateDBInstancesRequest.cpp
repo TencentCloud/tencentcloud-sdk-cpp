@@ -35,7 +35,8 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_periodHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
-    m_dBVersionHasBeenSet(false)
+    m_dBVersionHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "DBVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_dBVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 
@@ -345,6 +354,22 @@ void CreateDBInstancesRequest::SetDBVersion(const string& _dBVersion)
 bool CreateDBInstancesRequest::DBVersionHasBeenSet() const
 {
     return m_dBVersionHasBeenSet;
+}
+
+int64_t CreateDBInstancesRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void CreateDBInstancesRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

@@ -31,10 +31,16 @@
 #include <tencentcloud/asr/v20190614/model/DeleteAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/DescribeTaskStatusRequest.h>
 #include <tencentcloud/asr/v20190614/model/DescribeTaskStatusResponse.h>
+#include <tencentcloud/asr/v20190614/model/DownloadAsrVocabRequest.h>
+#include <tencentcloud/asr/v20190614/model/DownloadAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h>
+#include <tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h>
 #include <tencentcloud/asr/v20190614/model/SentenceRecognitionRequest.h>
 #include <tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h>
+#include <tencentcloud/asr/v20190614/model/SetVocabStateRequest.h>
+#include <tencentcloud/asr/v20190614/model/SetVocabStateResponse.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h>
 
@@ -63,12 +69,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
                 typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
+                typedef Outcome<Error, Model::DownloadAsrVocabResponse> DownloadAsrVocabOutcome;
+                typedef std::future<DownloadAsrVocabOutcome> DownloadAsrVocabOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::DownloadAsrVocabRequest&, DownloadAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadAsrVocabAsyncHandler;
                 typedef Outcome<Error, Model::GetAsrVocabResponse> GetAsrVocabOutcome;
                 typedef std::future<GetAsrVocabOutcome> GetAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::GetAsrVocabRequest&, GetAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrVocabAsyncHandler;
+                typedef Outcome<Error, Model::GetAsrVocabListResponse> GetAsrVocabListOutcome;
+                typedef std::future<GetAsrVocabListOutcome> GetAsrVocabListOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::GetAsrVocabListRequest&, GetAsrVocabListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrVocabListAsyncHandler;
                 typedef Outcome<Error, Model::SentenceRecognitionResponse> SentenceRecognitionOutcome;
                 typedef std::future<SentenceRecognitionOutcome> SentenceRecognitionOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::SentenceRecognitionRequest&, SentenceRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceRecognitionAsyncHandler;
+                typedef Outcome<Error, Model::SetVocabStateResponse> SetVocabStateOutcome;
+                typedef std::future<SetVocabStateOutcome> SetVocabStateOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::SetVocabStateRequest&, SetVocabStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVocabStateAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAsrVocabResponse> UpdateAsrVocabOutcome;
                 typedef std::future<UpdateAsrVocabOutcome> UpdateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::UpdateAsrVocabRequest&, UpdateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrVocabAsyncHandler;
@@ -126,6 +141,15 @@ namespace TencentCloud
                 DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
+                 *用户通过本接口进行热词表的下载，获得词表权重文件形式的 base64 值，文件形式为通过 “|” 分割的词和权重，即 word|weight 的形式。
+                 * @param req DownloadAsrVocabRequest
+                 * @return DownloadAsrVocabOutcome
+                 */
+                DownloadAsrVocabOutcome DownloadAsrVocab(const Model::DownloadAsrVocabRequest &request);
+                void DownloadAsrVocabAsync(const Model::DownloadAsrVocabRequest& request, const DownloadAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadAsrVocabOutcomeCallable DownloadAsrVocabCallable(const Model::DownloadAsrVocabRequest& request);
+
+                /**
                  *用户根据词表的ID可以获取对应的热词表信息
                  * @param req GetAsrVocabRequest
                  * @return GetAsrVocabOutcome
@@ -133,6 +157,15 @@ namespace TencentCloud
                 GetAsrVocabOutcome GetAsrVocab(const Model::GetAsrVocabRequest &request);
                 void GetAsrVocabAsync(const Model::GetAsrVocabRequest& request, const GetAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetAsrVocabOutcomeCallable GetAsrVocabCallable(const Model::GetAsrVocabRequest& request);
+
+                /**
+                 *用户通过该接口，可获得所有的热词表及其信息。
+                 * @param req GetAsrVocabListRequest
+                 * @return GetAsrVocabListOutcome
+                 */
+                GetAsrVocabListOutcome GetAsrVocabList(const Model::GetAsrVocabListRequest &request);
+                void GetAsrVocabListAsync(const Model::GetAsrVocabListRequest& request, const GetAsrVocabListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAsrVocabListOutcomeCallable GetAsrVocabListCallable(const Model::GetAsrVocabListRequest& request);
 
                 /**
                  *本接口用于对60秒之内的短音频文件进行识别。
@@ -147,6 +180,15 @@ namespace TencentCloud
                 SentenceRecognitionOutcome SentenceRecognition(const Model::SentenceRecognitionRequest &request);
                 void SentenceRecognitionAsync(const Model::SentenceRecognitionRequest& request, const SentenceRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SentenceRecognitionOutcomeCallable SentenceRecognitionCallable(const Model::SentenceRecognitionRequest& request);
+
+                /**
+                 *用户通过该接口可以设置热词表的默认状态。初始状态为0，用户可设置状态为1，即为默认状态。默认状态表示用户在请求识别时，如不设置热词表ID，则默认使用状态为1的热词表。
+                 * @param req SetVocabStateRequest
+                 * @return SetVocabStateOutcome
+                 */
+                SetVocabStateOutcome SetVocabState(const Model::SetVocabStateRequest &request);
+                void SetVocabStateAsync(const Model::SetVocabStateRequest& request, const SetVocabStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetVocabStateOutcomeCallable SetVocabStateCallable(const Model::SetVocabStateRequest& request);
 
                 /**
                  *用户通过本接口进行对应的词表信息更新。

@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取事件名称中文描述
-                     * @return EventNameCn 事件名称中文描述
+                     * 获取事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @return EventNameCn 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
                     std::string GetEventNameCn() const;
 
                     /**
-                     * 设置事件名称中文描述
-                     * @param EventNameCn 事件名称中文描述
+                     * 设置事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @param EventNameCn 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
                     void SetEventNameCn(const std::string& _eventNameCn);
 
@@ -246,14 +246,32 @@ namespace TencentCloud
                     bool RequestIDHasBeenSet() const;
 
                     /**
-                     * 获取资源类型中文描述
-                     * @return ResourceTypeCn 资源类型中文描述
+                     * 获取资源地域
+                     * @return ResourceRegion 资源地域
+                     */
+                    std::string GetResourceRegion() const;
+
+                    /**
+                     * 设置资源地域
+                     * @param ResourceRegion 资源地域
+                     */
+                    void SetResourceRegion(const std::string& _resourceRegion);
+
+                    /**
+                     * 判断参数 ResourceRegion 是否已赋值
+                     * @return ResourceRegion 是否已赋值
+                     */
+                    bool ResourceRegionHasBeenSet() const;
+
+                    /**
+                     * 获取资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @return ResourceTypeCn 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
                     std::string GetResourceTypeCn() const;
 
                     /**
-                     * 设置资源类型中文描述
-                     * @param ResourceTypeCn 资源类型中文描述
+                     * 设置资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
+                     * @param ResourceTypeCn 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
                     void SetResourceTypeCn(const std::string& _resourceTypeCn);
 
@@ -356,7 +374,7 @@ namespace TencentCloud
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * 事件名称中文描述
+                     * 事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
                     std::string m_eventNameCn;
                     bool m_eventNameCnHasBeenSet;
@@ -386,7 +404,13 @@ namespace TencentCloud
                     bool m_requestIDHasBeenSet;
 
                     /**
-                     * 资源类型中文描述
+                     * 资源地域
+                     */
+                    std::string m_resourceRegion;
+                    bool m_resourceRegionHasBeenSet;
+
+                    /**
+                     * 资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）
                      */
                     std::string m_resourceTypeCn;
                     bool m_resourceTypeCnHasBeenSet;

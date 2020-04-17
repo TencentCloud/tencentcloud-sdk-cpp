@@ -150,6 +150,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取业务员ID
+                     * @return SalesUin 业务员ID
+                     */
+                    std::string GetSalesUin() const;
+
+                    /**
+                     * 设置业务员ID
+                     * @param SalesUin 业务员ID
+                     */
+                    void SetSalesUin(const std::string& _salesUin);
+
+                    /**
+                     * 判断参数 SalesUin 是否已赋值
+                     * @return SalesUin 是否已赋值
+                     */
+                    bool SalesUinHasBeenSet() const;
+
+                    /**
+                     * 获取业务员姓名（模糊查询）
+                     * @return SalesName 业务员姓名（模糊查询）
+                     */
+                    std::string GetSalesName() const;
+
+                    /**
+                     * 设置业务员姓名（模糊查询）
+                     * @param SalesName 业务员姓名（模糊查询）
+                     */
+                    void SetSalesName(const std::string& _salesName);
+
+                    /**
+                     * 判断参数 SalesName 是否已赋值
+                     * @return SalesName 是否已赋值
+                     */
+                    bool SalesNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 业务员ID
+                     */
+                    std::string m_salesUin;
+                    bool m_salesUinHasBeenSet;
+
+                    /**
+                     * 业务员姓名（模糊查询）
+                     */
+                    std::string m_salesName;
+                    bool m_salesNameHasBeenSet;
 
                 };
             }

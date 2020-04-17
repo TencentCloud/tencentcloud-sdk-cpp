@@ -33,7 +33,8 @@ InstanceTypeQuotaItem::InstanceTypeQuotaItem() :
     m_typeNameHasBeenSet(false),
     m_localDiskTypeListHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_priceHasBeenSet(false)
+    m_priceHasBeenSet(false),
+    m_soldOutReasonHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const Value &value)
         m_priceHasBeenSet = true;
     }
 
+    if (value.HasMember("SoldOutReason") && !value["SoldOutReason"].IsNull())
+    {
+        if (!value["SoldOutReason"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.SoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_soldOutReason = string(value["SoldOutReason"].GetString());
+        m_soldOutReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +307,14 @@ void InstanceTypeQuotaItem::ToJsonObject(Value &value, Document::AllocatorType& 
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_price.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_soldOutReasonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SoldOutReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_soldOutReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -491,5 +510,21 @@ void InstanceTypeQuotaItem::SetPrice(const ItemPrice& _price)
 bool InstanceTypeQuotaItem::PriceHasBeenSet() const
 {
     return m_priceHasBeenSet;
+}
+
+string InstanceTypeQuotaItem::GetSoldOutReason() const
+{
+    return m_soldOutReason;
+}
+
+void InstanceTypeQuotaItem::SetSoldOutReason(const string& _soldOutReason)
+{
+    m_soldOutReason = _soldOutReason;
+    m_soldOutReasonHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::SoldOutReasonHasBeenSet() const
+{
+    return m_soldOutReasonHasBeenSet;
 }
 

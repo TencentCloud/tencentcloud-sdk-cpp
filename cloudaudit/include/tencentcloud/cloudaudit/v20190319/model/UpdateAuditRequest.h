@@ -187,6 +187,60 @@ namespace TencentCloud
                     bool IsEnableCmqNotifyHasBeenSet() const;
 
                     /**
+                     * 获取是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     * @return IsEnableKmsEncry 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     */
+                    int64_t GetIsEnableKmsEncry() const;
+
+                    /**
+                     * 设置是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     * @param IsEnableKmsEncry 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     */
+                    void SetIsEnableKmsEncry(const int64_t& _isEnableKmsEncry);
+
+                    /**
+                     * 判断参数 IsEnableKmsEncry 是否已赋值
+                     * @return IsEnableKmsEncry 是否已赋值
+                     */
+                    bool IsEnableKmsEncryHasBeenSet() const;
+
+                    /**
+                     * 获取CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。
+                     * @return KeyId CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 设置CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。
+                     * @param KeyId CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。
+                     */
+                    void SetKeyId(const std::string& _keyId);
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。
+                     * @return KmsRegion kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。
+                     */
+                    std::string GetKmsRegion() const;
+
+                    /**
+                     * 设置kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。
+                     * @param KmsRegion kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。
+                     */
+                    void SetKmsRegion(const std::string& _kmsRegion);
+
+                    /**
+                     * 判断参数 KmsRegion 是否已赋值
+                     * @return KmsRegion 是否已赋值
+                     */
+                    bool KmsRegionHasBeenSet() const;
+
+                    /**
                      * 获取日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。
                      * @return LogFilePrefix 日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。
                      */
@@ -271,6 +325,24 @@ namespace TencentCloud
                      */
                     int64_t m_isEnableCmqNotify;
                     bool m_isEnableCmqNotifyHasBeenSet;
+
+                    /**
+                     * 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     */
+                    int64_t m_isEnableKmsEncry;
+                    bool m_isEnableKmsEncryHasBeenSet;
+
+                    /**
+                     * CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
+
+                    /**
+                     * kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。
+                     */
+                    std::string m_kmsRegion;
+                    bool m_kmsRegionHasBeenSet;
 
                     /**
                      * 日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。

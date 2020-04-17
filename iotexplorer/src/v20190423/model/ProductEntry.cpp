@@ -35,7 +35,8 @@ ProductEntry::ProductEntry() :
     m_regionHasBeenSet(false),
     m_productTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_moduleIdHasBeenSet(false)
+    m_moduleIdHasBeenSet(false),
+    m_enableProductScriptHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome ProductEntry::Deserialize(const Value &value)
         m_moduleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableProductScript") && !value["EnableProductScript"].IsNull())
+    {
+        if (!value["EnableProductScript"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductEntry.EnableProductScript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableProductScript = string(value["EnableProductScript"].GetString());
+        m_enableProductScriptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "ModuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_moduleId, allocator);
+    }
+
+    if (m_enableProductScriptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableProductScript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_enableProductScript.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +547,21 @@ void ProductEntry::SetModuleId(const int64_t& _moduleId)
 bool ProductEntry::ModuleIdHasBeenSet() const
 {
     return m_moduleIdHasBeenSet;
+}
+
+string ProductEntry::GetEnableProductScript() const
+{
+    return m_enableProductScript;
+}
+
+void ProductEntry::SetEnableProductScript(const string& _enableProductScript)
+{
+    m_enableProductScript = _enableProductScript;
+    m_enableProductScriptHasBeenSet = true;
+}
+
+bool ProductEntry::EnableProductScriptHasBeenSet() const
+{
+    return m_enableProductScriptHasBeenSet;
 }
 

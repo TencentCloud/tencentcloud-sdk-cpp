@@ -173,14 +173,34 @@ namespace TencentCloud
                     bool PktlenMaxHasBeenSet() const;
 
                     /**
-                     * 获取是否检测载荷，取值范围[begin_l5(表示检测), no_match(表示不检测)]
-                     * @return MatchBegin 是否检测载荷，取值范围[begin_l5(表示检测), no_match(表示不检测)]
+                     * 获取是否检测载荷，取值范围[
+begin_l3(IP头)
+begin_l4(TCP头)
+begin_l5(载荷)
+no_match(不检测)
+]
+                     * @return MatchBegin 是否检测载荷，取值范围[
+begin_l3(IP头)
+begin_l4(TCP头)
+begin_l5(载荷)
+no_match(不检测)
+]
                      */
                     std::string GetMatchBegin() const;
 
                     /**
-                     * 设置是否检测载荷，取值范围[begin_l5(表示检测), no_match(表示不检测)]
-                     * @param MatchBegin 是否检测载荷，取值范围[begin_l5(表示检测), no_match(表示不检测)]
+                     * 设置是否检测载荷，取值范围[
+begin_l3(IP头)
+begin_l4(TCP头)
+begin_l5(载荷)
+no_match(不检测)
+]
+                     * @param MatchBegin 是否检测载荷，取值范围[
+begin_l3(IP头)
+begin_l4(TCP头)
+begin_l5(载荷)
+no_match(不检测)
+]
                      */
                     void SetMatchBegin(const std::string& _matchBegin);
 
@@ -343,7 +363,12 @@ namespace TencentCloud
                     bool m_pktlenMaxHasBeenSet;
 
                     /**
-                     * 是否检测载荷，取值范围[begin_l5(表示检测), no_match(表示不检测)]
+                     * 是否检测载荷，取值范围[
+begin_l3(IP头)
+begin_l4(TCP头)
+begin_l5(载荷)
+no_match(不检测)
+]
                      */
                     std::string m_matchBegin;
                     bool m_matchBeginHasBeenSet;

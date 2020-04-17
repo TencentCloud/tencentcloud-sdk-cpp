@@ -43,8 +43,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步任务ID。
-                     * @return AsyncRequestId 异步任务ID。
+                     * 获取异步任务ID。(该返回字段目前已废弃)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsyncRequestId 异步任务ID。(该返回字段目前已废弃)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAsyncRequestId() const;
 
@@ -57,7 +59,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步任务ID。
+                     * 异步任务ID。(该返回字段目前已废弃)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

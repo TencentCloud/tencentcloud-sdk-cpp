@@ -103,6 +103,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeWorkflowsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowResponse.h>
+#include <tencentcloud/mps/v20190612/model/EditMediaRequest.h>
+#include <tencentcloud/mps/v20190612/model/EditMediaResponse.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h>
 #include <tencentcloud/mps/v20190612/model/ManageTaskRequest.h>
@@ -273,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisableWorkflowResponse> DisableWorkflowOutcome;
                 typedef std::future<DisableWorkflowOutcome> DisableWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DisableWorkflowRequest&, DisableWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableWorkflowAsyncHandler;
+                typedef Outcome<Error, Model::EditMediaResponse> EditMediaOutcome;
+                typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
                 typedef Outcome<Error, Model::EnableWorkflowResponse> EnableWorkflowOutcome;
                 typedef std::future<EnableWorkflowOutcome> EnableWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EnableWorkflowRequest&, EnableWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWorkflowAsyncHandler;
@@ -704,6 +709,19 @@ namespace TencentCloud
                 DisableWorkflowOutcome DisableWorkflow(const Model::DisableWorkflowRequest &request);
                 void DisableWorkflowAsync(const Model::DisableWorkflowRequest& request, const DisableWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableWorkflowOutcomeCallable DisableWorkflowCallable(const Model::DisableWorkflowRequest& request);
+
+                /**
+                 *对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：
+
+1. 对一个文件进行剪辑，生成一个新的视频；
+2. 对多个文件进行拼接，生成一个新的视频；
+3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。
+                 * @param req EditMediaRequest
+                 * @return EditMediaOutcome
+                 */
+                EditMediaOutcome EditMedia(const Model::EditMediaRequest &request);
+                void EditMediaAsync(const Model::EditMediaRequest& request, const EditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EditMediaOutcomeCallable EditMediaCallable(const Model::EditMediaRequest& request);
 
                 /**
                  *启用工作流。

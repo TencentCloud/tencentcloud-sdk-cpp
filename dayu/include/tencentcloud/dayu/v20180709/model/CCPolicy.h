@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool RuleListHasBeenSet() const;
 
                     /**
-                     * 获取IP列表
-                     * @return IpList IP列表
+                     * 获取IP列表，如果不填时，请传空数组但不能为null；
+                     * @return IpList IP列表，如果不填时，请传空数组但不能为null；
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
-                     * 设置IP列表
-                     * @param IpList IP列表
+                     * 设置IP列表，如果不填时，请传空数组但不能为null；
+                     * @param IpList IP列表，如果不填时，请传空数组但不能为null；
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
@@ -314,7 +314,7 @@ namespace TencentCloud
                     bool m_ruleListHasBeenSet;
 
                     /**
-                     * IP列表
+                     * IP列表，如果不填时，请传空数组但不能为null；
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;

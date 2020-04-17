@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cms/v20190321/model/Logo.h>
 
 
 namespace TencentCloud
@@ -89,6 +90,24 @@ namespace TencentCloud
                      * @return HitFlag 是否已赋值
                      */
                     bool HitFlagHasBeenSet() const;
+
+                    /**
+                     * 获取命中的logo标签信息
+                     * @return PolityLogoDetail 命中的logo标签信息
+                     */
+                    std::vector<Logo> GetPolityLogoDetail() const;
+
+                    /**
+                     * 设置命中的logo标签信息
+                     * @param PolityLogoDetail 命中的logo标签信息
+                     */
+                    void SetPolityLogoDetail(const std::vector<Logo>& _polityLogoDetail);
+
+                    /**
+                     * 判断参数 PolityLogoDetail 是否已赋值
+                     * @return PolityLogoDetail 是否已赋值
+                     */
+                    bool PolityLogoDetailHasBeenSet() const;
 
                     /**
                      * 获取命中的人脸名称
@@ -177,6 +196,12 @@ namespace TencentCloud
                      */
                     int64_t m_hitFlag;
                     bool m_hitFlagHasBeenSet;
+
+                    /**
+                     * 命中的logo标签信息
+                     */
+                    std::vector<Logo> m_polityLogoDetail;
+                    bool m_polityLogoDetailHasBeenSet;
 
                     /**
                      * 命中的人脸名称

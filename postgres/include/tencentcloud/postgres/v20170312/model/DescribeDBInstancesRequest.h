@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件，目前支持：db-instance-id、db-instance-name两种。
-                     * @return Filters 过滤条件，目前支持：db-instance-id、db-instance-name两种。
+                     * 获取过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
+                     * @return Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，目前支持：db-instance-id、db-instance-name两种。
-                     * @param Filters 过滤条件，目前支持：db-instance-id、db-instance-name两种。
+                     * 设置过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
+                     * @param Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -97,10 +97,46 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * @return OrderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * @param OrderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式，包括升序、降序
+                     * @return OrderByType 排序方式，包括升序、降序
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序方式，包括升序、降序
+                     * @param OrderByType 排序方式，包括升序、降序
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 过滤条件，目前支持：db-instance-id、db-instance-name两种。
+                     * 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -116,6 +152,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 排序方式，包括升序、降序
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
 
                 };
             }

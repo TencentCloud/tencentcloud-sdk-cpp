@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h>
+#include <tencentcloud/emr/v20190103/model/Tag.h>
 
 
 namespace TencentCloud
@@ -44,14 +45,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间单位
-                     * @return TimeUnit 时间单位
+                     * 获取扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @return TimeUnit 扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时间单位
-                     * @param TimeUnit 时间单位
+                     * 设置扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @param TimeUnit 扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -62,14 +71,22 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取时间长度
-                     * @return TimeSpan 时间长度
+                     * 获取扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @return TimeSpan 扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置时间长度
-                     * @param TimeSpan 时间长度
+                     * 设置扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @param TimeSpan 扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
@@ -80,14 +97,14 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取扩容实例ID
-                     * @return InstanceId 扩容实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置扩容实例ID
-                     * @param InstanceId 扩容实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -98,14 +115,22 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取付费类型
-                     * @return PayMode 付费类型
+                     * 获取实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @return PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置付费类型
-                     * @param PayMode 付费类型
+                     * 设置实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @param PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     void SetPayMode(const uint64_t& _payMode);
 
@@ -116,14 +141,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取Token
-                     * @return ClientToken Token
+                     * 获取客户端Token。
+                     * @return ClientToken 客户端Token。
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置Token
-                     * @param ClientToken Token
+                     * 设置客户端Token。
+                     * @param ClientToken 客户端Token。
                      */
                     void SetClientToken(const std::string& _clientToken);
 
@@ -134,14 +159,14 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取预执行脚本设置
-                     * @return PreExecutedFileSettings 预执行脚本设置
+                     * 获取引导操作脚本设置。
+                     * @return PreExecutedFileSettings 引导操作脚本设置。
                      */
                     std::vector<PreExecuteFileSettings> GetPreExecutedFileSettings() const;
 
                     /**
-                     * 设置预执行脚本设置
-                     * @param PreExecutedFileSettings 预执行脚本设置
+                     * 设置引导操作脚本设置。
+                     * @param PreExecutedFileSettings 引导操作脚本设置。
                      */
                     void SetPreExecutedFileSettings(const std::vector<PreExecuteFileSettings>& _preExecutedFileSettings);
 
@@ -152,14 +177,14 @@ namespace TencentCloud
                     bool PreExecutedFileSettingsHasBeenSet() const;
 
                     /**
-                     * 获取扩容Task节点数量
-                     * @return TaskCount 扩容Task节点数量
+                     * 获取扩容的Task节点数量。
+                     * @return TaskCount 扩容的Task节点数量。
                      */
                     uint64_t GetTaskCount() const;
 
                     /**
-                     * 设置扩容Task节点数量
-                     * @param TaskCount 扩容Task节点数量
+                     * 设置扩容的Task节点数量。
+                     * @param TaskCount 扩容的Task节点数量。
                      */
                     void SetTaskCount(const uint64_t& _taskCount);
 
@@ -170,14 +195,14 @@ namespace TencentCloud
                     bool TaskCountHasBeenSet() const;
 
                     /**
-                     * 获取扩容Core节点数量
-                     * @return CoreCount 扩容Core节点数量
+                     * 获取扩容的Core节点数量。
+                     * @return CoreCount 扩容的Core节点数量。
                      */
                     uint64_t GetCoreCount() const;
 
                     /**
-                     * 设置扩容Core节点数量
-                     * @param CoreCount 扩容Core节点数量
+                     * 设置扩容的Core节点数量。
+                     * @param CoreCount 扩容的Core节点数量。
                      */
                     void SetCoreCount(const uint64_t& _coreCount);
 
@@ -188,14 +213,14 @@ namespace TencentCloud
                     bool CoreCountHasBeenSet() const;
 
                     /**
-                     * 获取扩容时不需要安装的进程
-                     * @return UnNecessaryNodeList 扩容时不需要安装的进程
+                     * 获取扩容时不需要安装的进程。
+                     * @return UnNecessaryNodeList 扩容时不需要安装的进程。
                      */
                     std::vector<uint64_t> GetUnNecessaryNodeList() const;
 
                     /**
-                     * 设置扩容时不需要安装的进程
-                     * @param UnNecessaryNodeList 扩容时不需要安装的进程
+                     * 设置扩容时不需要安装的进程。
+                     * @param UnNecessaryNodeList 扩容时不需要安装的进程。
                      */
                     void SetUnNecessaryNodeList(const std::vector<uint64_t>& _unNecessaryNodeList);
 
@@ -205,61 +230,197 @@ namespace TencentCloud
                      */
                     bool UnNecessaryNodeListHasBeenSet() const;
 
+                    /**
+                     * 获取扩容的Router节点数量。
+                     * @return RouterCount 扩容的Router节点数量。
+                     */
+                    uint64_t GetRouterCount() const;
+
+                    /**
+                     * 设置扩容的Router节点数量。
+                     * @param RouterCount 扩容的Router节点数量。
+                     */
+                    void SetRouterCount(const uint64_t& _routerCount);
+
+                    /**
+                     * 判断参数 RouterCount 是否已赋值
+                     * @return RouterCount 是否已赋值
+                     */
+                    bool RouterCountHasBeenSet() const;
+
+                    /**
+                     * 获取部署的服务。
+<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>
+<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>
+                     * @return SoftDeployInfo 部署的服务。
+<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>
+<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>
+                     */
+                    std::vector<uint64_t> GetSoftDeployInfo() const;
+
+                    /**
+                     * 设置部署的服务。
+<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>
+<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>
+                     * @param SoftDeployInfo 部署的服务。
+<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>
+<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>
+                     */
+                    void SetSoftDeployInfo(const std::vector<uint64_t>& _softDeployInfo);
+
+                    /**
+                     * 判断参数 SoftDeployInfo 是否已赋值
+                     * @return SoftDeployInfo 是否已赋值
+                     */
+                    bool SoftDeployInfoHasBeenSet() const;
+
+                    /**
+                     * 获取启动的进程。
+                     * @return ServiceNodeInfo 启动的进程。
+                     */
+                    std::vector<uint64_t> GetServiceNodeInfo() const;
+
+                    /**
+                     * 设置启动的进程。
+                     * @param ServiceNodeInfo 启动的进程。
+                     */
+                    void SetServiceNodeInfo(const std::vector<uint64_t>& _serviceNodeInfo);
+
+                    /**
+                     * 判断参数 ServiceNodeInfo 是否已赋值
+                     * @return ServiceNodeInfo 是否已赋值
+                     */
+                    bool ServiceNodeInfoHasBeenSet() const;
+
+                    /**
+                     * 获取分散置放群组ID列表，当前仅支持指定一个。
+                     * @return DisasterRecoverGroupIds 分散置放群组ID列表，当前仅支持指定一个。
+                     */
+                    std::vector<std::string> GetDisasterRecoverGroupIds() const;
+
+                    /**
+                     * 设置分散置放群组ID列表，当前仅支持指定一个。
+                     * @param DisasterRecoverGroupIds 分散置放群组ID列表，当前仅支持指定一个。
+                     */
+                    void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupIds 是否已赋值
+                     * @return DisasterRecoverGroupIds 是否已赋值
+                     */
+                    bool DisasterRecoverGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取扩容节点绑定标签列表。
+                     * @return Tags 扩容节点绑定标签列表。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置扩容节点绑定标签列表。
+                     * @param Tags 扩容节点绑定标签列表。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时间单位
+                     * 扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 时间长度
+                     * 扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 扩容实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 付费类型
+                     * 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * Token
+                     * 客户端Token。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 预执行脚本设置
+                     * 引导操作脚本设置。
                      */
                     std::vector<PreExecuteFileSettings> m_preExecutedFileSettings;
                     bool m_preExecutedFileSettingsHasBeenSet;
 
                     /**
-                     * 扩容Task节点数量
+                     * 扩容的Task节点数量。
                      */
                     uint64_t m_taskCount;
                     bool m_taskCountHasBeenSet;
 
                     /**
-                     * 扩容Core节点数量
+                     * 扩容的Core节点数量。
                      */
                     uint64_t m_coreCount;
                     bool m_coreCountHasBeenSet;
 
                     /**
-                     * 扩容时不需要安装的进程
+                     * 扩容时不需要安装的进程。
                      */
                     std::vector<uint64_t> m_unNecessaryNodeList;
                     bool m_unNecessaryNodeListHasBeenSet;
+
+                    /**
+                     * 扩容的Router节点数量。
+                     */
+                    uint64_t m_routerCount;
+                    bool m_routerCountHasBeenSet;
+
+                    /**
+                     * 部署的服务。
+<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>
+<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>
+                     */
+                    std::vector<uint64_t> m_softDeployInfo;
+                    bool m_softDeployInfoHasBeenSet;
+
+                    /**
+                     * 启动的进程。
+                     */
+                    std::vector<uint64_t> m_serviceNodeInfo;
+                    bool m_serviceNodeInfoHasBeenSet;
+
+                    /**
+                     * 分散置放群组ID列表，当前仅支持指定一个。
+                     */
+                    std::vector<std::string> m_disasterRecoverGroupIds;
+                    bool m_disasterRecoverGroupIdsHasBeenSet;
+
+                    /**
+                     * 扩容节点绑定标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

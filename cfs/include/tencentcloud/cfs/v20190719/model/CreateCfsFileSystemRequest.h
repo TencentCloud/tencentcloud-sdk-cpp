@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfs/v20190719/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -115,14 +116,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取文件系统存储类型，值为 SD ；其中 SD 为标准型存储
-                     * @return StorageType 文件系统存储类型，值为 SD ；其中 SD 为标准型存储
+                     * 获取文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
+                     * @return StorageType 文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置文件系统存储类型，值为 SD ；其中 SD 为标准型存储
-                     * @param StorageType 文件系统存储类型，值为 SD ；其中 SD 为标准型存储
+                     * 设置文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
+                     * @param StorageType 文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
                      */
                     void SetStorageType(const std::string& _storageType);
 
@@ -133,14 +134,14 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网路（VPC） ID
-                     * @return VpcId 私有网路（VPC） ID
+                     * 获取私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * @return VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网路（VPC） ID
-                     * @param VpcId 私有网路（VPC） ID
+                     * 设置私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
+                     * @param VpcId 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -151,14 +152,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID
-                     * @return SubnetId 子网 ID
+                     * 获取子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * @return SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID
-                     * @param SubnetId 子网 ID
+                     * 设置子网 ID，若网络类型选择的是VPC，该字段为必填。
+                     * @param SubnetId 子网 ID，若网络类型选择的是VPC，该字段为必填。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -204,6 +205,24 @@ namespace TencentCloud
                      */
                     bool FsNameHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统标签
+                     * @return ResourceTags 文件系统标签
+                     */
+                    std::vector<TagInfo> GetResourceTags() const;
+
+                    /**
+                     * 设置文件系统标签
+                     * @param ResourceTags 文件系统标签
+                     */
+                    void SetResourceTags(const std::vector<TagInfo>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -231,19 +250,19 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 文件系统存储类型，值为 SD ；其中 SD 为标准型存储
+                     * 文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 私有网路（VPC） ID
+                     * 私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID
+                     * 子网 ID，若网络类型选择的是VPC，该字段为必填。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -259,6 +278,12 @@ namespace TencentCloud
                      */
                     std::string m_fsName;
                     bool m_fsNameHasBeenSet;
+
+                    /**
+                     * 文件系统标签
+                     */
+                    std::vector<TagInfo> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

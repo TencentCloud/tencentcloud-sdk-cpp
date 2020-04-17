@@ -53,7 +53,8 @@ Disk::Disk() :
     m_shareableHasBeenSet(false),
     m_instanceIdListHasBeenSet(false),
     m_snapshotCountHasBeenSet(false),
-    m_snapshotSizeHasBeenSet(false)
+    m_snapshotSizeHasBeenSet(false),
+    m_backupDiskHasBeenSet(false)
 {
 }
 
@@ -405,6 +406,16 @@ CoreInternalOutcome Disk::Deserialize(const Value &value)
         m_snapshotSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupDisk") && !value["BackupDisk"].IsNull())
+    {
+        if (!value["BackupDisk"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Disk.BackupDisk` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupDisk = value["BackupDisk"].GetBool();
+        m_backupDiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -684,6 +695,14 @@ void Disk::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "SnapshotSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_snapshotSize, allocator);
+    }
+
+    if (m_backupDiskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BackupDisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupDisk, allocator);
     }
 
 }
@@ -1199,5 +1218,21 @@ void Disk::SetSnapshotSize(const uint64_t& _snapshotSize)
 bool Disk::SnapshotSizeHasBeenSet() const
 {
     return m_snapshotSizeHasBeenSet;
+}
+
+bool Disk::GetBackupDisk() const
+{
+    return m_backupDisk;
+}
+
+void Disk::SetBackupDisk(const bool& _backupDisk)
+{
+    m_backupDisk = _backupDisk;
+    m_backupDiskHasBeenSet = true;
+}
+
+bool Disk::BackupDiskHasBeenSet() const
+{
+    return m_backupDiskHasBeenSet;
 }
 

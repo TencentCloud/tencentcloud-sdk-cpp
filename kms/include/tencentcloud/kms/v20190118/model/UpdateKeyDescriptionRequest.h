@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取需要修改描述信息的的CMK ID
-                     * @return KeyId 需要修改描述信息的的CMK ID
+                     * 获取需要修改描述信息的CMK ID
+                     * @return KeyId 需要修改描述信息的CMK ID
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置需要修改描述信息的的CMK ID
-                     * @param KeyId 需要修改描述信息的的CMK ID
+                     * 设置需要修改描述信息的CMK ID
+                     * @param KeyId 需要修改描述信息的CMK ID
                      */
                     void SetKeyId(const std::string& _keyId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 需要修改描述信息的的CMK ID
+                     * 需要修改描述信息的CMK ID
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;

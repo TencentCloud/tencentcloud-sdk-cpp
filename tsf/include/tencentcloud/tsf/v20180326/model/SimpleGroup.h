@@ -266,6 +266,72 @@ namespace TencentCloud
                      */
                     bool NamespaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartupParameters 启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartupParameters() const;
+
+                    /**
+                     * 设置启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartupParameters 启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartupParameters(const std::string& _startupParameters);
+
+                    /**
+                     * 判断参数 StartupParameters 是否已赋值
+                     * @return StartupParameters 是否已赋值
+                     */
+                    bool StartupParametersHasBeenSet() const;
+
+                    /**
+                     * 获取部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupResourceType 部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupResourceType() const;
+
+                    /**
+                     * 设置部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupResourceType 部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupResourceType(const std::string& _groupResourceType);
+
+                    /**
+                     * 判断参数 GroupResourceType 是否已赋值
+                     * @return GroupResourceType 是否已赋值
+                     */
+                    bool GroupResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用微服务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppMicroServiceType 应用微服务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAppMicroServiceType() const;
+
+                    /**
+                     * 设置应用微服务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppMicroServiceType 应用微服务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppMicroServiceType(const std::string& _appMicroServiceType);
+
+                    /**
+                     * 判断参数 AppMicroServiceType 是否已赋值
+                     * @return AppMicroServiceType 是否已赋值
+                     */
+                    bool AppMicroServiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +403,27 @@ namespace TencentCloud
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * 启动参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startupParameters;
+                    bool m_startupParametersHasBeenSet;
+
+                    /**
+                     * 部署组资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupResourceType;
+                    bool m_groupResourceTypeHasBeenSet;
+
+                    /**
+                     * 应用微服务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appMicroServiceType;
+                    bool m_appMicroServiceTypeHasBeenSet;
 
                 };
             }

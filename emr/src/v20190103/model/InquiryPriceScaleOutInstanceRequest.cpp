@@ -31,7 +31,8 @@ InquiryPriceScaleOutInstanceRequest::InquiryPriceScaleOutInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_coreCountHasBeenSet(false),
     m_taskCountHasBeenSet(false),
-    m_currencyHasBeenSet(false)
+    m_currencyHasBeenSet(false),
+    m_routerCountHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string InquiryPriceScaleOutInstanceRequest::ToJsonString() const
         string key = "Currency";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_currency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routerCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RouterCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_routerCount, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void InquiryPriceScaleOutInstanceRequest::SetCurrency(const string& _currency)
 bool InquiryPriceScaleOutInstanceRequest::CurrencyHasBeenSet() const
 {
     return m_currencyHasBeenSet;
+}
+
+uint64_t InquiryPriceScaleOutInstanceRequest::GetRouterCount() const
+{
+    return m_routerCount;
+}
+
+void InquiryPriceScaleOutInstanceRequest::SetRouterCount(const uint64_t& _routerCount)
+{
+    m_routerCount = _routerCount;
+    m_routerCountHasBeenSet = true;
+}
+
+bool InquiryPriceScaleOutInstanceRequest::RouterCountHasBeenSet() const
+{
+    return m_routerCountHasBeenSet;
 }
 
 

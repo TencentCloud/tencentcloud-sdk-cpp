@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tbp/v20190311/model/CreateBotRequest.h>
+#include <tencentcloud/tbp/v20190311/model/CreateBotResponse.h>
 #include <tencentcloud/tbp/v20190311/model/ResetRequest.h>
 #include <tencentcloud/tbp/v20190311/model/ResetResponse.h>
 #include <tencentcloud/tbp/v20190311/model/TextProcessRequest.h>
@@ -43,6 +45,9 @@ namespace TencentCloud
                 TbpClient(const Credential &credential, const std::string &region);
                 TbpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateBotResponse> CreateBotOutcome;
+                typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
+                typedef std::function<void(const TbpClient*, const Model::CreateBotRequest&, CreateBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBotAsyncHandler;
                 typedef Outcome<Error, Model::ResetResponse> ResetOutcome;
                 typedef std::future<ResetOutcome> ResetOutcomeCallable;
                 typedef std::function<void(const TbpClient*, const Model::ResetRequest&, ResetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAsyncHandler;
@@ -54,6 +59,15 @@ namespace TencentCloud
                 typedef std::function<void(const TbpClient*, const Model::TextResetRequest&, TextResetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextResetAsyncHandler;
 
 
+
+                /**
+                 *创建机器人
+                 * @param req CreateBotRequest
+                 * @return CreateBotOutcome
+                 */
+                CreateBotOutcome CreateBot(const Model::CreateBotRequest &request);
+                void CreateBotAsync(const Model::CreateBotRequest& request, const CreateBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBotOutcomeCallable CreateBotCallable(const Model::CreateBotRequest& request);
 
                 /**
                  *对当前机器人的会话状态进行复位

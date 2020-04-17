@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移源实例的ID，MigrateType=1(CDB for SQLServers)时使用，格式如：mssql-si2823jyl
-                     * @return InstanceId 迁移源实例的ID，MigrateType=1(CDB for SQLServers)时使用，格式如：mssql-si2823jyl
+                     * 获取迁移源实例的ID，MigrateType=1(TencentDB for SQLServers)时使用，格式如：mssql-si2823jyl
+                     * @return InstanceId 迁移源实例的ID，MigrateType=1(TencentDB for SQLServers)时使用，格式如：mssql-si2823jyl
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置迁移源实例的ID，MigrateType=1(CDB for SQLServers)时使用，格式如：mssql-si2823jyl
-                     * @param InstanceId 迁移源实例的ID，MigrateType=1(CDB for SQLServers)时使用，格式如：mssql-si2823jyl
+                     * 设置迁移源实例的ID，MigrateType=1(TencentDB for SQLServers)时使用，格式如：mssql-si2823jyl
+                     * @param InstanceId 迁移源实例的ID，MigrateType=1(TencentDB for SQLServers)时使用，格式如：mssql-si2823jyl
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -229,7 +229,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移源实例的ID，MigrateType=1(CDB for SQLServers)时使用，格式如：mssql-si2823jyl
+                     * 迁移源实例的ID，MigrateType=1(TencentDB for SQLServers)时使用，格式如：mssql-si2823jyl
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

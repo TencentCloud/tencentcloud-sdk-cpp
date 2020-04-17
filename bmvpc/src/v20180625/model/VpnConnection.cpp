@@ -37,7 +37,11 @@ VpnConnection::VpnConnection() :
     m_iPSECOptionsSpecificationHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
-    m_vpcNameHasBeenSet(false)
+    m_vpcNameHasBeenSet(false),
+    m_vpnGatewayNameHasBeenSet(false),
+    m_customerGatewayNameHasBeenSet(false),
+    m_destinationCidrHasBeenSet(false),
+    m_sourceCidrHasBeenSet(false)
 {
 }
 
@@ -230,6 +234,52 @@ CoreInternalOutcome VpnConnection::Deserialize(const Value &value)
         m_vpcNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VpnGatewayName") && !value["VpnGatewayName"].IsNull())
+    {
+        if (!value["VpnGatewayName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpnConnection.VpnGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpnGatewayName = string(value["VpnGatewayName"].GetString());
+        m_vpnGatewayNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomerGatewayName") && !value["CustomerGatewayName"].IsNull())
+    {
+        if (!value["CustomerGatewayName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpnConnection.CustomerGatewayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customerGatewayName = string(value["CustomerGatewayName"].GetString());
+        m_customerGatewayNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DestinationCidr") && !value["DestinationCidr"].IsNull())
+    {
+        if (!value["DestinationCidr"].IsArray())
+            return CoreInternalOutcome(Error("response `VpnConnection.DestinationCidr` is not array type"));
+
+        const Value &tmpValue = value["DestinationCidr"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_destinationCidr.push_back((*itr).GetString());
+        }
+        m_destinationCidrHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceCidr") && !value["SourceCidr"].IsNull())
+    {
+        if (!value["SourceCidr"].IsArray())
+            return CoreInternalOutcome(Error("response `VpnConnection.SourceCidr` is not array type"));
+
+        const Value &tmpValue = value["SourceCidr"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sourceCidr.push_back((*itr).GetString());
+        }
+        m_sourceCidrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +422,48 @@ void VpnConnection::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpnGatewayNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpnGatewayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpnGatewayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerGatewayNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomerGatewayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_customerGatewayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationCidrHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DestinationCidr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_destinationCidr.begin(); itr != m_destinationCidr.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sourceCidrHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SourceCidr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceCidr.begin(); itr != m_sourceCidr.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -631,5 +723,69 @@ void VpnConnection::SetVpcName(const string& _vpcName)
 bool VpnConnection::VpcNameHasBeenSet() const
 {
     return m_vpcNameHasBeenSet;
+}
+
+string VpnConnection::GetVpnGatewayName() const
+{
+    return m_vpnGatewayName;
+}
+
+void VpnConnection::SetVpnGatewayName(const string& _vpnGatewayName)
+{
+    m_vpnGatewayName = _vpnGatewayName;
+    m_vpnGatewayNameHasBeenSet = true;
+}
+
+bool VpnConnection::VpnGatewayNameHasBeenSet() const
+{
+    return m_vpnGatewayNameHasBeenSet;
+}
+
+string VpnConnection::GetCustomerGatewayName() const
+{
+    return m_customerGatewayName;
+}
+
+void VpnConnection::SetCustomerGatewayName(const string& _customerGatewayName)
+{
+    m_customerGatewayName = _customerGatewayName;
+    m_customerGatewayNameHasBeenSet = true;
+}
+
+bool VpnConnection::CustomerGatewayNameHasBeenSet() const
+{
+    return m_customerGatewayNameHasBeenSet;
+}
+
+vector<string> VpnConnection::GetDestinationCidr() const
+{
+    return m_destinationCidr;
+}
+
+void VpnConnection::SetDestinationCidr(const vector<string>& _destinationCidr)
+{
+    m_destinationCidr = _destinationCidr;
+    m_destinationCidrHasBeenSet = true;
+}
+
+bool VpnConnection::DestinationCidrHasBeenSet() const
+{
+    return m_destinationCidrHasBeenSet;
+}
+
+vector<string> VpnConnection::GetSourceCidr() const
+{
+    return m_sourceCidr;
+}
+
+void VpnConnection::SetSourceCidr(const vector<string>& _sourceCidr)
+{
+    m_sourceCidr = _sourceCidr;
+    m_sourceCidrHasBeenSet = true;
+}
+
+bool VpnConnection::SourceCidrHasBeenSet() const
+{
+    return m_sourceCidrHasBeenSet;
 }
 

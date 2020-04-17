@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Music
+                * 音乐详情
                 */
                 class Music : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音乐播放链接相对路径，必须通过在音乐版权助手上登记的域名进行拼接。
-                     * @return Url 音乐播放链接相对路径，必须通过在音乐版权助手上登记的域名进行拼接。
+                     * 获取音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
+                     * @return Url 音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置音乐播放链接相对路径，必须通过在音乐版权助手上登记的域名进行拼接。
-                     * @param Url 音乐播放链接相对路径，必须通过在音乐版权助手上登记的域名进行拼接。
+                     * 设置音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
+                     * @param Url 音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -144,10 +144,32 @@ Unit :ms
                      */
                     bool AuditionEndHasBeenSet() const;
 
+                    /**
+                     * 获取音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
+如果添加过多个域名只返回第一个添加域名的播放全路径。
+                     * @return FullUrl 音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
+如果添加过多个域名只返回第一个添加域名的播放全路径。
+                     */
+                    std::string GetFullUrl() const;
+
+                    /**
+                     * 设置音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
+如果添加过多个域名只返回第一个添加域名的播放全路径。
+                     * @param FullUrl 音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
+如果添加过多个域名只返回第一个添加域名的播放全路径。
+                     */
+                    void SetFullUrl(const std::string& _fullUrl);
+
+                    /**
+                     * 判断参数 FullUrl 是否已赋值
+                     * @return FullUrl 是否已赋值
+                     */
+                    bool FullUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 音乐播放链接相对路径，必须通过在音乐版权助手上登记的域名进行拼接。
+                     * 音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -177,6 +199,13 @@ Unit :ms
                      */
                     uint64_t m_auditionEnd;
                     bool m_auditionEndHasBeenSet;
+
+                    /**
+                     * 音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。
+如果添加过多个域名只返回第一个添加域名的播放全路径。
+                     */
+                    std::string m_fullUrl;
+                    bool m_fullUrlHasBeenSet;
 
                 };
             }

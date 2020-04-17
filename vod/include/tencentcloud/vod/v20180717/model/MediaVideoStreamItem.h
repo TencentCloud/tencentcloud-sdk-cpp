@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 视频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置视频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Bitrate 视频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 视频流的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置视频流的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Height 视频流的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 视频流的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置视频流的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Width 视频流的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流的编码格式，例如 h264。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codec 视频流的编码格式，例如 h264。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置视频流的编码格式，例如 h264。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Codec 视频流的编码格式，例如 h264。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCodec(const std::string& _codec);
 
@@ -136,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取帧率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fps 帧率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置帧率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Fps 帧率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFps(const int64_t& _fps);
 
@@ -160,35 +140,30 @@ namespace TencentCloud
 
                     /**
                      * 视频流的码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
                      * 视频流的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 视频流的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 视频流的编码格式，例如 h264。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
                      * 帧率，单位：hz。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;

@@ -43,17 +43,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取推流域名。
+                     * 获取播放域名。
 域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。
-                     * @return DomainName 推流域名。
+                     * @return DomainName 播放域名。
 域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置推流域名。
+                     * 设置播放域名。
 域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。
-                     * @param DomainName 推流域名。
+                     * @param DomainName 播放域名。
 域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 推流域名。
+                     * 播放域名。
 域名维度转码，域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。
                      */
                     std::string m_domainName;

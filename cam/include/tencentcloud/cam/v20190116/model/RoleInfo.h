@@ -173,17 +173,17 @@ namespace TencentCloud
                     bool ConsoleLoginHasBeenSet() const;
 
                     /**
-                     * 获取角色类型，取user或system
+                     * 获取角色类型，取user、system或service_linked
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleType 角色类型，取user或system
+                     * @return RoleType 角色类型，取user、system或service_linked
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRoleType() const;
 
                     /**
-                     * 设置角色类型，取user或system
+                     * 设置角色类型，取user、system或service_linked
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleType 角色类型，取user或system
+                     * @param RoleType 角色类型，取user、system或service_linked
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRoleType(const std::string& _roleType);
@@ -193,6 +193,50 @@ namespace TencentCloud
                      * @return RoleType 是否已赋值
                      */
                     bool RoleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取有效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionDuration 有效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSessionDuration() const;
+
+                    /**
+                     * 设置有效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionDuration 有效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionDuration(const uint64_t& _sessionDuration);
+
+                    /**
+                     * 判断参数 SessionDuration 是否已赋值
+                     * @return SessionDuration 是否已赋值
+                     */
+                    bool SessionDurationHasBeenSet() const;
+
+                    /**
+                     * 获取服务相关角色删除TaskId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeletionTaskId 服务相关角色删除TaskId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeletionTaskId() const;
+
+                    /**
+                     * 设置服务相关角色删除TaskId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeletionTaskId 服务相关角色删除TaskId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeletionTaskId(const std::string& _deletionTaskId);
+
+                    /**
+                     * 判断参数 DeletionTaskId 是否已赋值
+                     * @return DeletionTaskId 是否已赋值
+                     */
+                    bool DeletionTaskIdHasBeenSet() const;
 
                 private:
 
@@ -239,11 +283,25 @@ namespace TencentCloud
                     bool m_consoleLoginHasBeenSet;
 
                     /**
-                     * 角色类型，取user或system
+                     * 角色类型，取user、system或service_linked
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleType;
                     bool m_roleTypeHasBeenSet;
+
+                    /**
+                     * 有效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_sessionDuration;
+                    bool m_sessionDurationHasBeenSet;
+
+                    /**
+                     * 服务相关角色删除TaskId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deletionTaskId;
+                    bool m_deletionTaskIdHasBeenSet;
 
                 };
             }

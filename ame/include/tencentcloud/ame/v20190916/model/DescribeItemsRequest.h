@@ -79,18 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
-                     * @return CategoryId （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
+                     * 获取（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * @return CategoryId （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      */
                     std::string GetCategoryId() const;
 
                     /**
-                     * 设置（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
-                     * @param CategoryId （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
+                     * 设置（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * @param CategoryId （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      */
                     void SetCategoryId(const std::string& _categoryId);
 
@@ -101,18 +97,14 @@ namespace TencentCloud
                     bool CategoryIdHasBeenSet() const;
 
                     /**
-                     * 获取（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
-                     * @return CategoryCode （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
+                     * 获取（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * @return CategoryCode （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      */
                     std::string GetCategoryCode() const;
 
                     /**
-                     * 设置（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
-                     * @param CategoryCode （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
+                     * 设置（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
+                     * @param CategoryCode （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      */
                     void SetCategoryCode(const std::string& _categoryCode);
 
@@ -137,15 +129,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
+                     * （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      */
                     std::string m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
-                     * （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从【获取分类内容（Station）列表接口】中获取。
-链接地址：https://cloud.tencent.com/document/product/1155/40109
+                     * （电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href="https://cloud.tencent.com/document/product/1155/40109">获取分类内容（Station）列表接口</a>中获取。
                      */
                     std::string m_categoryCode;
                     bool m_categoryCodeHasBeenSet;

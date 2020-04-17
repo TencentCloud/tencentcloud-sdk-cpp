@@ -586,6 +586,42 @@ namespace TencentCloud
                      */
                     bool PidHasBeenSet() const;
 
+                    /**
+                     * 获取实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串
+                     * @return UniqVpcId 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串
+                     * @param UniqVpcId 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串
+                     * @return UniqSubnetId 实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串
+                     */
+                    std::string GetUniqSubnetId() const;
+
+                    /**
+                     * 设置实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串
+                     * @param UniqSubnetId 实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串
+                     */
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+
+                    /**
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
+                     */
+                    bool UniqSubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -767,6 +803,18 @@ namespace TencentCloud
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;
+
+                    /**
+                     * 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * 实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串
+                     */
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
 
                 };
             }

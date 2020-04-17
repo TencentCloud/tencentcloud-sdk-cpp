@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/TableRollbackResult.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/TableRollbackResultNew.h>
 
 
 namespace TencentCloud
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表回档任务结果数量
-                     * @return TotalCount 表回档任务结果数量
+                     * 获取表格回档任务结果数量
+                     * @return TotalCount 表格回档任务结果数量
                      */
                     uint64_t GetTotalCount() const;
 
@@ -56,10 +56,10 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取表回档任务结果列表
-                     * @return TableResults 表回档任务结果列表
+                     * 获取表格回档任务结果列表
+                     * @return TableResults 表格回档任务结果列表
                      */
-                    std::vector<TableRollbackResult> GetTableResults() const;
+                    std::vector<TableRollbackResultNew> GetTableResults() const;
 
                     /**
                      * 判断参数 TableResults 是否已赋值
@@ -70,15 +70,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 表回档任务结果数量
+                     * 表格回档任务结果数量
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 表回档任务结果列表
+                     * 表格回档任务结果列表
                      */
-                    std::vector<TableRollbackResult> m_tableResults;
+                    std::vector<TableRollbackResultNew> m_tableResults;
                     bool m_tableResultsHasBeenSet;
 
                 };

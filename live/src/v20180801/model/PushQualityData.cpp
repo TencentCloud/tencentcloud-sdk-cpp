@@ -37,7 +37,10 @@ PushQualityData::PushQualityData() :
     m_audioRateHasBeenSet(false),
     m_localTsHasBeenSet(false),
     m_videoTsHasBeenSet(false),
-    m_audioTsHasBeenSet(false)
+    m_audioTsHasBeenSet(false),
+    m_metaVideoRateHasBeenSet(false),
+    m_metaAudioRateHasBeenSet(false),
+    m_mateFpsHasBeenSet(false)
 {
 }
 
@@ -206,6 +209,36 @@ CoreInternalOutcome PushQualityData::Deserialize(const Value &value)
         m_audioTsHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaVideoRate") && !value["MetaVideoRate"].IsNull())
+    {
+        if (!value["MetaVideoRate"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushQualityData.MetaVideoRate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaVideoRate = value["MetaVideoRate"].GetUint64();
+        m_metaVideoRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaAudioRate") && !value["MetaAudioRate"].IsNull())
+    {
+        if (!value["MetaAudioRate"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushQualityData.MetaAudioRate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaAudioRate = value["MetaAudioRate"].GetUint64();
+        m_metaAudioRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("MateFps") && !value["MateFps"].IsNull())
+    {
+        if (!value["MateFps"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PushQualityData.MateFps` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mateFps = value["MateFps"].GetUint64();
+        m_mateFpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -339,6 +372,30 @@ void PushQualityData::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "AudioTs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioTs, allocator);
+    }
+
+    if (m_metaVideoRateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaVideoRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metaVideoRate, allocator);
+    }
+
+    if (m_metaAudioRateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaAudioRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metaAudioRate, allocator);
+    }
+
+    if (m_mateFpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MateFps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mateFps, allocator);
     }
 
 }
@@ -598,5 +655,53 @@ void PushQualityData::SetAudioTs(const uint64_t& _audioTs)
 bool PushQualityData::AudioTsHasBeenSet() const
 {
     return m_audioTsHasBeenSet;
+}
+
+uint64_t PushQualityData::GetMetaVideoRate() const
+{
+    return m_metaVideoRate;
+}
+
+void PushQualityData::SetMetaVideoRate(const uint64_t& _metaVideoRate)
+{
+    m_metaVideoRate = _metaVideoRate;
+    m_metaVideoRateHasBeenSet = true;
+}
+
+bool PushQualityData::MetaVideoRateHasBeenSet() const
+{
+    return m_metaVideoRateHasBeenSet;
+}
+
+uint64_t PushQualityData::GetMetaAudioRate() const
+{
+    return m_metaAudioRate;
+}
+
+void PushQualityData::SetMetaAudioRate(const uint64_t& _metaAudioRate)
+{
+    m_metaAudioRate = _metaAudioRate;
+    m_metaAudioRateHasBeenSet = true;
+}
+
+bool PushQualityData::MetaAudioRateHasBeenSet() const
+{
+    return m_metaAudioRateHasBeenSet;
+}
+
+uint64_t PushQualityData::GetMateFps() const
+{
+    return m_mateFps;
+}
+
+void PushQualityData::SetMateFps(const uint64_t& _mateFps)
+{
+    m_mateFps = _mateFps;
+    m_mateFpsHasBeenSet = true;
+}
+
+bool PushQualityData::MateFpsHasBeenSet() const
+{
+    return m_mateFpsHasBeenSet;
 }
 

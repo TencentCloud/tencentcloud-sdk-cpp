@@ -395,17 +395,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取商品名称代码
+                     * 获取商品名称代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessCode 商品名称代码
+                     * @return BusinessCode 商品名称代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置商品名称代码
+                     * 设置商品名称代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessCode 商品名称代码
+                     * @param BusinessCode 商品名称代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -417,17 +417,17 @@ namespace TencentCloud
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
-                     * 获取子商品名称代码
+                     * 获取子商品名称代码 （未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductCode 子商品名称代码
+                     * @return ProductCode 子商品名称代码 （未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置子商品名称代码
+                     * 设置子商品名称代码 （未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCode 子商品名称代码
+                     * @param ProductCode 子商品名称代码 （未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -439,17 +439,17 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取交易类型代码
+                     * 获取交易类型代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActionType 交易类型代码
+                     * @return ActionType 交易类型代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置交易类型代码
+                     * 设置交易类型代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActionType 交易类型代码
+                     * @param ActionType 交易类型代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetActionType(const std::string& _actionType);
@@ -459,6 +459,28 @@ namespace TencentCloud
                      * @return ActionType 是否已赋值
                      */
                     bool ActionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionId 区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegionId() const;
+
+                    /**
+                     * 设置区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionId 区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionId(const std::string& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
 
                 private:
 
@@ -578,25 +600,32 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 商品名称代码
+                     * 商品名称代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
-                     * 子商品名称代码
+                     * 子商品名称代码 （未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 交易类型代码
+                     * 交易类型代码（未开放的字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
+
+                    /**
+                     * 区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

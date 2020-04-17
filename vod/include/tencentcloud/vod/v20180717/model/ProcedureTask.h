@@ -97,17 +97,13 @@ namespace TencentCloud
 
                     /**
                      * 获取已弃用，请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 已弃用，请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置已弃用，请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrCode 已弃用，请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -119,17 +115,13 @@ namespace TencentCloud
 
                     /**
                      * 获取已弃用，请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 已弃用，请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置已弃用，请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Message 已弃用，请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -143,11 +135,9 @@ namespace TencentCloud
                      * 获取媒体文件 ID
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 FileId；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Id。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 媒体文件 ID
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 FileId；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Id。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
@@ -155,11 +145,9 @@ namespace TencentCloud
                      * 设置媒体文件 ID
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 FileId；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Id。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileId 媒体文件 ID
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 FileId；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Id。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -173,11 +161,9 @@ namespace TencentCloud
                      * 获取媒体文件名称
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 BasicInfo.Name；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Name。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 媒体文件名称
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 BasicInfo.Name；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Name。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileName() const;
 
@@ -185,11 +171,9 @@ namespace TencentCloud
                      * 设置媒体文件名称
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 BasicInfo.Name；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Name。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileName 媒体文件名称
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 BasicInfo.Name；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Name。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -227,13 +211,17 @@ namespace TencentCloud
 
                     /**
                      * 获取原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param MetaData 原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
@@ -333,17 +321,13 @@ namespace TencentCloud
 
                     /**
                      * 获取任务流的优先级，取值范围为 [-10, 10]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TasksPriority 任务流的优先级，取值范围为 [-10, 10]。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
                      * 设置任务流的优先级，取值范围为 [-10, 10]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TasksPriority 任务流的优先级，取值范围为 [-10, 10]。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
 
@@ -358,12 +342,10 @@ namespace TencentCloud
 <li>Finish：只有当任务流全部执行完毕时，才发起一次事件通知；</li>
 <li>Change：只要任务流中每个子任务的状态发生变化，都进行事件通知；</li>
 <li>None：不接受该任务流回调。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TasksNotifyMode 任务流状态变更通知模式。
 <li>Finish：只有当任务流全部执行完毕时，才发起一次事件通知；</li>
 <li>Change：只要任务流中每个子任务的状态发生变化，都进行事件通知；</li>
 <li>None：不接受该任务流回调。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTasksNotifyMode() const;
 
@@ -372,12 +354,10 @@ namespace TencentCloud
 <li>Finish：只有当任务流全部执行完毕时，才发起一次事件通知；</li>
 <li>Change：只要任务流中每个子任务的状态发生变化，都进行事件通知；</li>
 <li>None：不接受该任务流回调。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TasksNotifyMode 任务流状态变更通知模式。
 <li>Finish：只有当任务流全部执行完毕时，才发起一次事件通知；</li>
 <li>Change：只要任务流中每个子任务的状态发生变化，都进行事件通知；</li>
 <li>None：不接受该任务流回调。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTasksNotifyMode(const std::string& _tasksNotifyMode);
 
@@ -389,17 +369,13 @@ namespace TencentCloud
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
@@ -411,17 +387,13 @@ namespace TencentCloud
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSessionId(const std::string& _sessionId);
 
@@ -449,14 +421,12 @@ namespace TencentCloud
 
                     /**
                      * 已弃用，请使用各个具体任务的 ErrCode。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 已弃用，请使用各个具体任务的 Message。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
@@ -465,7 +435,6 @@ namespace TencentCloud
                      * 媒体文件 ID
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 FileId；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Id。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
@@ -474,7 +443,6 @@ namespace TencentCloud
                      * 媒体文件名称
 <li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 BasicInfo.Name；</li>
 <li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Name。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -489,6 +457,7 @@ namespace TencentCloud
 
                     /**
                      * 原始视频的元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
@@ -523,7 +492,6 @@ namespace TencentCloud
 
                     /**
                      * 任务流的优先级，取值范围为 [-10, 10]。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
@@ -533,21 +501,18 @@ namespace TencentCloud
 <li>Finish：只有当任务流全部执行完毕时，才发起一次事件通知；</li>
 <li>Change：只要任务流中每个子任务的状态发生变化，都进行事件通知；</li>
 <li>None：不接受该任务流回调。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tasksNotifyMode;
                     bool m_tasksNotifyModeHasBeenSet;
 
                     /**
                      * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

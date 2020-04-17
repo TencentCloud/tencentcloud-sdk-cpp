@@ -37,6 +37,8 @@
 #include <tencentcloud/clb/v20180317/model/CreateListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateLoadBalancerResponse.h>
+#include <tencentcloud/clb/v20180317/model/CreateLoadBalancerSnatIpsRequest.h>
+#include <tencentcloud/clb/v20180317/model/CreateLoadBalancerSnatIpsResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateRuleRequest.h>
 #include <tencentcloud/clb/v20180317/model/CreateRuleResponse.h>
 #include <tencentcloud/clb/v20180317/model/CreateTargetGroupRequest.h>
@@ -45,6 +47,10 @@
 #include <tencentcloud/clb/v20180317/model/DeleteListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerListenersRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerListenersResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerSnatIpsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeleteLoadBalancerSnatIpsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteRuleRequest.h>
@@ -123,6 +129,8 @@
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBResponse.h>
 #include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersRequest.h>
 #include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersResponse.h>
+#include <tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogRequest.h>
+#include <tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetSecurityGroupForLoadbalancersRequest.h>
@@ -162,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateLoadBalancerResponse> CreateLoadBalancerOutcome;
                 typedef std::future<CreateLoadBalancerOutcome> CreateLoadBalancerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateLoadBalancerRequest&, CreateLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerAsyncHandler;
+                typedef Outcome<Error, Model::CreateLoadBalancerSnatIpsResponse> CreateLoadBalancerSnatIpsOutcome;
+                typedef std::future<CreateLoadBalancerSnatIpsOutcome> CreateLoadBalancerSnatIpsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::CreateLoadBalancerSnatIpsRequest&, CreateLoadBalancerSnatIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerSnatIpsAsyncHandler;
                 typedef Outcome<Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
@@ -174,6 +185,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteLoadBalancerResponse> DeleteLoadBalancerOutcome;
                 typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteLoadBalancerRequest&, DeleteLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLoadBalancerListenersResponse> DeleteLoadBalancerListenersOutcome;
+                typedef std::future<DeleteLoadBalancerListenersOutcome> DeleteLoadBalancerListenersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteLoadBalancerListenersRequest&, DeleteLoadBalancerListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerListenersAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLoadBalancerSnatIpsResponse> DeleteLoadBalancerSnatIpsOutcome;
+                typedef std::future<DeleteLoadBalancerSnatIpsOutcome> DeleteLoadBalancerSnatIpsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeleteLoadBalancerSnatIpsRequest&, DeleteLoadBalancerSnatIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerSnatIpsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteRewriteResponse> DeleteRewriteOutcome;
                 typedef std::future<DeleteRewriteOutcome> DeleteRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteRewriteRequest&, DeleteRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRewriteAsyncHandler;
@@ -291,6 +308,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReplaceCertForLoadBalancersResponse> ReplaceCertForLoadBalancersOutcome;
                 typedef std::future<ReplaceCertForLoadBalancersOutcome> ReplaceCertForLoadBalancersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ReplaceCertForLoadBalancersRequest&, ReplaceCertForLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceCertForLoadBalancersAsyncHandler;
+                typedef Outcome<Error, Model::SetLoadBalancerClsLogResponse> SetLoadBalancerClsLogOutcome;
+                typedef std::future<SetLoadBalancerClsLogOutcome> SetLoadBalancerClsLogOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::SetLoadBalancerClsLogRequest&, SetLoadBalancerClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerClsLogAsyncHandler;
                 typedef Outcome<Error, Model::SetLoadBalancerSecurityGroupsResponse> SetLoadBalancerSecurityGroupsOutcome;
                 typedef std::future<SetLoadBalancerSecurityGroupsOutcome> SetLoadBalancerSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::SetLoadBalancerSecurityGroupsRequest&, SetLoadBalancerSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerSecurityGroupsAsyncHandler;
@@ -301,7 +321,7 @@ namespace TencentCloud
 
 
                 /**
-                 *监听器或转发规则绑定目标组。
+                 *本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。
 本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req AssociateTargetGroupsRequest
                  * @return AssociateTargetGroupsOutcome
@@ -370,6 +390,15 @@ namespace TencentCloud
                 CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request);
 
                 /**
+                 *针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启
+                 * @param req CreateLoadBalancerSnatIpsRequest
+                 * @return CreateLoadBalancerSnatIpsOutcome
+                 */
+                CreateLoadBalancerSnatIpsOutcome CreateLoadBalancerSnatIps(const Model::CreateLoadBalancerSnatIpsRequest &request);
+                void CreateLoadBalancerSnatIpsAsync(const Model::CreateLoadBalancerSnatIpsRequest& request, const CreateLoadBalancerSnatIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLoadBalancerSnatIpsOutcomeCallable CreateLoadBalancerSnatIpsCallable(const Model::CreateLoadBalancerSnatIpsRequest& request);
+
+                /**
                  *CreateRule 接口用于在一个已存在的负载均衡七层监听器下创建转发规则，七层监听器中，后端服务必须绑定到规则上而非监听器上。
 本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。
                  * @param req CreateRuleRequest
@@ -407,6 +436,25 @@ namespace TencentCloud
                 DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest &request);
                 void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request);
+
+                /**
+                 *该接口支持删除负载均衡的多个监听器。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+                 * @param req DeleteLoadBalancerListenersRequest
+                 * @return DeleteLoadBalancerListenersOutcome
+                 */
+                DeleteLoadBalancerListenersOutcome DeleteLoadBalancerListeners(const Model::DeleteLoadBalancerListenersRequest &request);
+                void DeleteLoadBalancerListenersAsync(const Model::DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoadBalancerListenersOutcomeCallable DeleteLoadBalancerListenersCallable(const Model::DeleteLoadBalancerListenersRequest& request);
+
+                /**
+                 *对于SnatPro的负载均衡，这个接口用于删除SnatIp
+                 * @param req DeleteLoadBalancerSnatIpsRequest
+                 * @return DeleteLoadBalancerSnatIpsOutcome
+                 */
+                DeleteLoadBalancerSnatIpsOutcome DeleteLoadBalancerSnatIps(const Model::DeleteLoadBalancerSnatIpsRequest &request);
+                void DeleteLoadBalancerSnatIpsAsync(const Model::DeleteLoadBalancerSnatIpsRequest& request, const DeleteLoadBalancerSnatIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoadBalancerSnatIpsOutcomeCallable DeleteLoadBalancerSnatIpsCallable(const Model::DeleteLoadBalancerSnatIpsRequest& request);
 
                 /**
                  *DeleteRewrite 接口支持删除指定转发规则之间的重定向关系。
@@ -781,6 +829,15 @@ namespace TencentCloud
                 ReplaceCertForLoadBalancersOutcome ReplaceCertForLoadBalancers(const Model::ReplaceCertForLoadBalancersRequest &request);
                 void ReplaceCertForLoadBalancersAsync(const Model::ReplaceCertForLoadBalancersRequest& request, const ReplaceCertForLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReplaceCertForLoadBalancersOutcomeCallable ReplaceCertForLoadBalancersCallable(const Model::ReplaceCertForLoadBalancersRequest& request);
+
+                /**
+                 *增加、删除、更新负载均衡的日志服务(CLS)主题
+                 * @param req SetLoadBalancerClsLogRequest
+                 * @return SetLoadBalancerClsLogOutcome
+                 */
+                SetLoadBalancerClsLogOutcome SetLoadBalancerClsLog(const Model::SetLoadBalancerClsLogRequest &request);
+                void SetLoadBalancerClsLogAsync(const Model::SetLoadBalancerClsLogRequest& request, const SetLoadBalancerClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetLoadBalancerClsLogOutcomeCallable SetLoadBalancerClsLogCallable(const Model::SetLoadBalancerClsLogRequest& request);
 
                 /**
                  *SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 DescribeLoadBalancers 接口。本接口是set语义，

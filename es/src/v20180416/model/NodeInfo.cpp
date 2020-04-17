@@ -26,7 +26,9 @@ NodeInfo::NodeInfo() :
     m_nodeTypeHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_localDiskInfoHasBeenSet(false),
+    m_diskCountHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,33 @@ CoreInternalOutcome NodeInfo::Deserialize(const Value &value)
         m_diskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalDiskInfo") && !value["LocalDiskInfo"].IsNull())
+    {
+        if (!value["LocalDiskInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `NodeInfo.LocalDiskInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_localDiskInfo.Deserialize(value["LocalDiskInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_localDiskInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskCount") && !value["DiskCount"].IsNull())
+    {
+        if (!value["DiskCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NodeInfo.DiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskCount = value["DiskCount"].GetUint64();
+        m_diskCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +159,23 @@ void NodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_localDiskInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalDiskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_localDiskInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_diskCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskCount, allocator);
     }
 
 }
@@ -213,5 +259,37 @@ void NodeInfo::SetDiskSize(const uint64_t& _diskSize)
 bool NodeInfo::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+LocalDiskInfo NodeInfo::GetLocalDiskInfo() const
+{
+    return m_localDiskInfo;
+}
+
+void NodeInfo::SetLocalDiskInfo(const LocalDiskInfo& _localDiskInfo)
+{
+    m_localDiskInfo = _localDiskInfo;
+    m_localDiskInfoHasBeenSet = true;
+}
+
+bool NodeInfo::LocalDiskInfoHasBeenSet() const
+{
+    return m_localDiskInfoHasBeenSet;
+}
+
+uint64_t NodeInfo::GetDiskCount() const
+{
+    return m_diskCount;
+}
+
+void NodeInfo::SetDiskCount(const uint64_t& _diskCount)
+{
+    m_diskCount = _diskCount;
+    m_diskCountHasBeenSet = true;
+}
+
+bool NodeInfo::DiskCountHasBeenSet() const
+{
+    return m_diskCountHasBeenSet;
 }
 

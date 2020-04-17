@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool CatTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取任务ID
+                     * @return TaskId 任务ID
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param TaskId 任务Id
+                     * 设置任务ID
+                     * @param TaskId 任务ID
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool IspHasBeenSet() const;
 
                     /**
-                     * 获取被拨测Server 的Ip
-                     * @return ServerIp 被拨测Server 的Ip
+                     * 获取被拨测Server的IP
+                     * @return ServerIp 被拨测Server的IP
                      */
                     std::string GetServerIp() const;
 
                     /**
-                     * 设置被拨测Server 的Ip
-                     * @param ServerIp 被拨测Server 的Ip
+                     * 设置被拨测Server的IP
+                     * @param ServerIp 被拨测Server的IP
                      */
                     void SetServerIp(const std::string& _serverIp);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ServerIpHasBeenSet() const;
 
                     /**
-                     * 获取被拨测Server 的域名
-                     * @return DomainName 被拨测Server 的域名
+                     * 获取被拨测Server的域名
+                     * @return DomainName 被拨测Server的域名
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置被拨测Server 的域名
-                     * @param DomainName 被拨测Server 的域名
+                     * 设置被拨测Server的域名
+                     * @param DomainName 被拨测Server的域名
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool RespMsgHasBeenSet() const;
 
                     /**
-                     * 获取客户端ip
-                     * @return ClientIp 客户端ip
+                     * 获取客户端IP
+                     * @return ClientIp 客户端IP
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置客户端ip
-                     * @param ClientIp 客户端ip
+                     * 设置客户端IP
+                     * @param ClientIp 客户端IP
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -457,7 +457,7 @@ namespace TencentCloud
                     bool m_catTypeNameHasBeenSet;
 
                     /**
-                     * 任务Id
+                     * 任务ID
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -475,13 +475,13 @@ namespace TencentCloud
                     bool m_ispHasBeenSet;
 
                     /**
-                     * 被拨测Server 的Ip
+                     * 被拨测Server的IP
                      */
                     std::string m_serverIp;
                     bool m_serverIpHasBeenSet;
 
                     /**
-                     * 被拨测Server 的域名
+                     * 被拨测Server的域名
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
@@ -529,7 +529,7 @@ namespace TencentCloud
                     bool m_respMsgHasBeenSet;
 
                     /**
-                     * 客户端ip
+                     * 客户端IP
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Coord.h>
+#include <tencentcloud/ocr/v20181119/model/ItemCoord.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,24 @@ GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @return ItemPolygon 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord GetItemPolygon() const;
+
+                    /**
+                     * 设置文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @param ItemPolygon 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    void SetItemPolygon(const ItemCoord& _itemPolygon);
+
+                    /**
+                     * 判断参数 ItemPolygon 是否已赋值
+                     * @return ItemPolygon 是否已赋值
+                     */
+                    bool ItemPolygonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +173,12 @@ GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     */
+                    ItemCoord m_itemPolygon;
+                    bool m_itemPolygonHasBeenSet;
 
                 };
             }

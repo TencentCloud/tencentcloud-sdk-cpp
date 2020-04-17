@@ -1760,6 +1760,49 @@ MpsClient::DisableWorkflowOutcomeCallable MpsClient::DisableWorkflowCallable(con
     return task->get_future();
 }
 
+MpsClient::EditMediaOutcome MpsClient::EditMedia(const EditMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditMediaResponse rsp = EditMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditMediaOutcome(rsp);
+        else
+            return EditMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return EditMediaOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::EditMediaAsync(const EditMediaRequest& request, const EditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::EditMediaOutcomeCallable MpsClient::EditMediaCallable(const EditMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->EditMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::EnableWorkflowOutcome MpsClient::EnableWorkflow(const EnableWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableWorkflow");

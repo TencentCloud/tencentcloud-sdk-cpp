@@ -40,7 +40,10 @@ InstanceDetail::InstanceDetail() :
     m_expireTimeHasBeenSet(false),
     m_isInternalHasBeenSet(false),
     m_topicNumHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false),
+    m_cvmHasBeenSet(false)
 {
 }
 
@@ -181,11 +184,11 @@ CoreInternalOutcome InstanceDetail::Deserialize(const Value &value)
 
     if (value.HasMember("Healthy") && !value["Healthy"].IsNull())
     {
-        if (!value["Healthy"].IsString())
+        if (!value["Healthy"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `InstanceDetail.Healthy` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `InstanceDetail.Healthy` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_healthy = string(value["Healthy"].GetString());
+        m_healthy = value["Healthy"].GetInt64();
         m_healthyHasBeenSet = true;
     }
 
@@ -257,6 +260,39 @@ CoreInternalOutcome InstanceDetail::Deserialize(const Value &value)
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceDetail.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneIds") && !value["ZoneIds"].IsNull())
+    {
+        if (!value["ZoneIds"].IsArray())
+            return CoreInternalOutcome(Error("response `InstanceDetail.ZoneIds` is not array type"));
+
+        const Value &tmpValue = value["ZoneIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneIds.push_back((*itr).GetInt64());
+        }
+        m_zoneIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cvm") && !value["Cvm"].IsNull())
+    {
+        if (!value["Cvm"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceDetail.Cvm` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cvm = value["Cvm"].GetInt64();
+        m_cvmHasBeenSet = true;
     }
 
 
@@ -374,7 +410,7 @@ void InstanceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
         Value iKey(kStringType);
         string key = "Healthy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_healthy, allocator);
     }
 
     if (m_healthyMessageHasBeenSet)
@@ -430,6 +466,35 @@ void InstanceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_cvmHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cvm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cvm, allocator);
     }
 
 }
@@ -627,12 +692,12 @@ bool InstanceDetail::RenewFlagHasBeenSet() const
     return m_renewFlagHasBeenSet;
 }
 
-string InstanceDetail::GetHealthy() const
+int64_t InstanceDetail::GetHealthy() const
 {
     return m_healthy;
 }
 
-void InstanceDetail::SetHealthy(const string& _healthy)
+void InstanceDetail::SetHealthy(const int64_t& _healthy)
 {
     m_healthy = _healthy;
     m_healthyHasBeenSet = true;
@@ -737,5 +802,53 @@ void InstanceDetail::SetTags(const vector<Tag>& _tags)
 bool InstanceDetail::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string InstanceDetail::GetVersion() const
+{
+    return m_version;
+}
+
+void InstanceDetail::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool InstanceDetail::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+vector<int64_t> InstanceDetail::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void InstanceDetail::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool InstanceDetail::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
+}
+
+int64_t InstanceDetail::GetCvm() const
+{
+    return m_cvm;
+}
+
+void InstanceDetail::SetCvm(const int64_t& _cvm)
+{
+    m_cvm = _cvm;
+    m_cvmHasBeenSet = true;
+}
+
+bool InstanceDetail::CvmHasBeenSet() const
+{
+    return m_cvmHasBeenSet;
 }
 

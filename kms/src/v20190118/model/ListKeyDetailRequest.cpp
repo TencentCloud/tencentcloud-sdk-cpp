@@ -30,7 +30,8 @@ ListKeyDetailRequest::ListKeyDetailRequest() :
     m_orderTypeHasBeenSet(false),
     m_keyStateHasBeenSet(false),
     m_searchKeyAliasHasBeenSet(false),
-    m_originHasBeenSet(false)
+    m_originHasBeenSet(false),
+    m_keyUsageHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string ListKeyDetailRequest::ToJsonString() const
         string key = "Origin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_origin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyUsageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KeyUsage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_keyUsage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void ListKeyDetailRequest::SetOrigin(const string& _origin)
 bool ListKeyDetailRequest::OriginHasBeenSet() const
 {
     return m_originHasBeenSet;
+}
+
+string ListKeyDetailRequest::GetKeyUsage() const
+{
+    return m_keyUsage;
+}
+
+void ListKeyDetailRequest::SetKeyUsage(const string& _keyUsage)
+{
+    m_keyUsage = _keyUsage;
+    m_keyUsageHasBeenSet = true;
+}
+
+bool ListKeyDetailRequest::KeyUsageHasBeenSet() const
+{
+    return m_keyUsageHasBeenSet;
 }
 
 

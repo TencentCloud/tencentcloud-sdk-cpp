@@ -30,7 +30,8 @@ LifecycleHook::LifecycleHook() :
     m_lifecycleTransitionHasBeenSet(false),
     m_notificationMetadataHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_notificationTargetHasBeenSet(false)
+    m_notificationTargetHasBeenSet(false),
+    m_lifecycleTransitionTypeHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,16 @@ CoreInternalOutcome LifecycleHook::Deserialize(const Value &value)
         m_notificationTargetHasBeenSet = true;
     }
 
+    if (value.HasMember("LifecycleTransitionType") && !value["LifecycleTransitionType"].IsNull())
+    {
+        if (!value["LifecycleTransitionType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LifecycleHook.LifecycleTransitionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lifecycleTransitionType = string(value["LifecycleTransitionType"].GetString());
+        m_lifecycleTransitionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -214,6 +225,14 @@ void LifecycleHook::ToJsonObject(Value &value, Document::AllocatorType& allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_notificationTarget.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lifecycleTransitionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LifecycleTransitionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_lifecycleTransitionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -361,5 +380,21 @@ void LifecycleHook::SetNotificationTarget(const NotificationTarget& _notificatio
 bool LifecycleHook::NotificationTargetHasBeenSet() const
 {
     return m_notificationTargetHasBeenSet;
+}
+
+string LifecycleHook::GetLifecycleTransitionType() const
+{
+    return m_lifecycleTransitionType;
+}
+
+void LifecycleHook::SetLifecycleTransitionType(const string& _lifecycleTransitionType)
+{
+    m_lifecycleTransitionType = _lifecycleTransitionType;
+    m_lifecycleTransitionTypeHasBeenSet = true;
+}
+
+bool LifecycleHook::LifecycleTransitionTypeHasBeenSet() const
+{
+    return m_lifecycleTransitionTypeHasBeenSet;
 }
 

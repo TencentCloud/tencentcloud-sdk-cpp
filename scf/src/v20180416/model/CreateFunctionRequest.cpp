@@ -38,7 +38,9 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_codeSourceHasBeenSet(false)
+    m_codeSourceHasBeenSet(false),
+    m_layersHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false)
 {
 }
 
@@ -170,6 +172,30 @@ string CreateFunctionRequest::ToJsonString() const
         string key = "CodeSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_codeSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_layersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Layers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_layers.begin(); itr != m_layers.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deadLetterConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeadLetterConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_deadLetterConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -418,6 +444,38 @@ void CreateFunctionRequest::SetCodeSource(const string& _codeSource)
 bool CreateFunctionRequest::CodeSourceHasBeenSet() const
 {
     return m_codeSourceHasBeenSet;
+}
+
+vector<LayerVersionSimple> CreateFunctionRequest::GetLayers() const
+{
+    return m_layers;
+}
+
+void CreateFunctionRequest::SetLayers(const vector<LayerVersionSimple>& _layers)
+{
+    m_layers = _layers;
+    m_layersHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::LayersHasBeenSet() const
+{
+    return m_layersHasBeenSet;
+}
+
+DeadLetterConfig CreateFunctionRequest::GetDeadLetterConfig() const
+{
+    return m_deadLetterConfig;
+}
+
+void CreateFunctionRequest::SetDeadLetterConfig(const DeadLetterConfig& _deadLetterConfig)
+{
+    m_deadLetterConfig = _deadLetterConfig;
+    m_deadLetterConfigHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::DeadLetterConfigHasBeenSet() const
+{
+    return m_deadLetterConfigHasBeenSet;
 }
 
 

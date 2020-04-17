@@ -109,6 +109,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePodInstancesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribePodInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsRequest.h>
@@ -312,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePkgsResponse> DescribePkgsOutcome;
                 typedef std::future<DescribePkgsOutcome> DescribePkgsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePkgsRequest&, DescribePkgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePkgsAsyncHandler;
+                typedef Outcome<Error, Model::DescribePodInstancesResponse> DescribePodInstancesOutcome;
+                typedef std::future<DescribePodInstancesOutcome> DescribePodInstancesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribePodInstancesRequest&, DescribePodInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribePublicConfigResponse> DescribePublicConfigOutcome;
                 typedef std::future<DescribePublicConfigOutcome> DescribePublicConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePublicConfigRequest&, DescribePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicConfigAsyncHandler;
@@ -460,7 +465,7 @@ namespace TencentCloud
                 CreateContainGroupOutcomeCallable CreateContainGroupCallable(const Model::CreateContainGroupRequest& request);
 
                 /**
-                 *创建容器部署组
+                 *创建虚拟机部署组
                  * @param req CreateGroupRequest
                  * @return CreateGroupOutcome
                  */
@@ -793,6 +798,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribePkgsOutcome DescribePkgs(const Model::DescribePkgsRequest &request);
                 void DescribePkgsAsync(const Model::DescribePkgsRequest& request, const DescribePkgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePkgsOutcomeCallable DescribePkgsCallable(const Model::DescribePkgsRequest& request);
+
+                /**
+                 *获取部署组实例列表
+                 * @param req DescribePodInstancesRequest
+                 * @return DescribePodInstancesOutcome
+                 */
+                DescribePodInstancesOutcome DescribePodInstances(const Model::DescribePodInstancesRequest &request);
+                void DescribePodInstancesAsync(const Model::DescribePodInstancesRequest& request, const DescribePodInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePodInstancesOutcomeCallable DescribePodInstancesCallable(const Model::DescribePodInstancesRequest& request);
 
                 /**
                  *查询公共配置（单条）

@@ -23,24 +23,40 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h>
-#include <tencentcloud/tcb/v20180608/model/CreateMysqlInstanceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/CreateMysqlInstanceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEndUsersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
-#include <tencentcloud/tcb/v20180608/model/IsolateMysqlInstanceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/IsolateMysqlInstanceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
-#include <tencentcloud/tcb/v20180608/model/OfflineMysqlInstanceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/OfflineMysqlInstanceResponse.h>
-#include <tencentcloud/tcb/v20180608/model/UpgradeMysqlInstanceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/UpgradeMysqlInstanceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h>
 
 
 namespace TencentCloud
@@ -55,35 +71,68 @@ namespace TencentCloud
                 TcbClient(const Credential &credential, const std::string &region);
                 TcbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CheckTcbServiceResponse> CheckTcbServiceOutcome;
+                typedef std::future<CheckTcbServiceOutcome> CheckTcbServiceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CheckTcbServiceRequest&, CheckTcbServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTcbServiceAsyncHandler;
                 typedef Outcome<Error, Model::CommonServiceAPIResponse> CommonServiceAPIOutcome;
                 typedef std::future<CommonServiceAPIOutcome> CommonServiceAPIOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CommonServiceAPIRequest&, CommonServiceAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommonServiceAPIAsyncHandler;
-                typedef Outcome<Error, Model::CreateMysqlInstanceResponse> CreateMysqlInstanceOutcome;
-                typedef std::future<CreateMysqlInstanceOutcome> CreateMysqlInstanceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::CreateMysqlInstanceRequest&, CreateMysqlInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMysqlInstanceAsyncHandler;
+                typedef Outcome<Error, Model::CreateAuthDomainResponse> CreateAuthDomainOutcome;
+                typedef std::future<CreateAuthDomainOutcome> CreateAuthDomainOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateAuthDomainRequest&, CreateAuthDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthDomainAsyncHandler;
+                typedef Outcome<Error, Model::CreateHostingDomainResponse> CreateHostingDomainOutcome;
+                typedef std::future<CreateHostingDomainOutcome> CreateHostingDomainOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateHostingDomainRequest&, CreateHostingDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostingDomainAsyncHandler;
+                typedef Outcome<Error, Model::CreateStaticStoreResponse> CreateStaticStoreOutcome;
+                typedef std::future<CreateStaticStoreOutcome> CreateStaticStoreOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateStaticStoreRequest&, CreateStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaticStoreAsyncHandler;
+                typedef Outcome<Error, Model::DeleteEndUserResponse> DeleteEndUserOutcome;
+                typedef std::future<DeleteEndUserOutcome> DeleteEndUserOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteEndUserRequest&, DeleteEndUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEndUserAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAuthDomainsResponse> DescribeAuthDomainsOutcome;
+                typedef std::future<DescribeAuthDomainsOutcome> DescribeAuthDomainsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeAuthDomainsRequest&, DescribeAuthDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthDomainsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDatabaseACLResponse> DescribeDatabaseACLOutcome;
                 typedef std::future<DescribeDatabaseACLOutcome> DescribeDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeDatabaseACLRequest&, DescribeDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseACLAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEndUsersResponse> DescribeEndUsersOutcome;
+                typedef std::future<DescribeEndUsersOutcome> DescribeEndUsersOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEndUsersRequest&, DescribeEndUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndUsersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEnvLimitResponse> DescribeEnvLimitOutcome;
+                typedef std::future<DescribeEnvLimitOutcome> DescribeEnvLimitOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvLimitRequest&, DescribeEnvLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvLimitAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEnvsResponse> DescribeEnvsOutcome;
                 typedef std::future<DescribeEnvsOutcome> DescribeEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvsRequest&, DescribeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvsAsyncHandler;
-                typedef Outcome<Error, Model::IsolateMysqlInstanceResponse> IsolateMysqlInstanceOutcome;
-                typedef std::future<IsolateMysqlInstanceOutcome> IsolateMysqlInstanceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::IsolateMysqlInstanceRequest&, IsolateMysqlInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateMysqlInstanceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeQuotaDataResponse> DescribeQuotaDataOutcome;
+                typedef std::future<DescribeQuotaDataOutcome> DescribeQuotaDataOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeQuotaDataRequest&, DescribeQuotaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaDataAsyncHandler;
+                typedef Outcome<Error, Model::DestroyEnvResponse> DestroyEnvOutcome;
+                typedef std::future<DestroyEnvOutcome> DestroyEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DestroyEnvRequest&, DestroyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvAsyncHandler;
+                typedef Outcome<Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
+                typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDatabaseACLResponse> ModifyDatabaseACLOutcome;
                 typedef std::future<ModifyDatabaseACLOutcome> ModifyDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyDatabaseACLRequest&, ModifyDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseACLAsyncHandler;
                 typedef Outcome<Error, Model::ModifyEnvResponse> ModifyEnvOutcome;
                 typedef std::future<ModifyEnvOutcome> ModifyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvRequest&, ModifyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvAsyncHandler;
-                typedef Outcome<Error, Model::OfflineMysqlInstanceResponse> OfflineMysqlInstanceOutcome;
-                typedef std::future<OfflineMysqlInstanceOutcome> OfflineMysqlInstanceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::OfflineMysqlInstanceRequest&, OfflineMysqlInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineMysqlInstanceAsyncHandler;
-                typedef Outcome<Error, Model::UpgradeMysqlInstanceResponse> UpgradeMysqlInstanceOutcome;
-                typedef std::future<UpgradeMysqlInstanceOutcome> UpgradeMysqlInstanceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::UpgradeMysqlInstanceRequest&, UpgradeMysqlInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeMysqlInstanceAsyncHandler;
+                typedef Outcome<Error, Model::ReinstateEnvResponse> ReinstateEnvOutcome;
+                typedef std::future<ReinstateEnvOutcome> ReinstateEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ReinstateEnvRequest&, ReinstateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReinstateEnvAsyncHandler;
 
 
+
+                /**
+                 *检查是否开通Tcb服务
+                 * @param req CheckTcbServiceRequest
+                 * @return CheckTcbServiceOutcome
+                 */
+                CheckTcbServiceOutcome CheckTcbService(const Model::CheckTcbServiceRequest &request);
+                void CheckTcbServiceAsync(const Model::CheckTcbServiceRequest& request, const CheckTcbServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckTcbServiceOutcomeCallable CheckTcbServiceCallable(const Model::CheckTcbServiceRequest& request);
 
                 /**
                  *TCB云API统一入口
@@ -95,13 +144,49 @@ namespace TencentCloud
                 CommonServiceAPIOutcomeCallable CommonServiceAPICallable(const Model::CommonServiceAPIRequest& request);
 
                 /**
-                 *创建mysql实例
-                 * @param req CreateMysqlInstanceRequest
-                 * @return CreateMysqlInstanceOutcome
+                 *增加安全域名
+                 * @param req CreateAuthDomainRequest
+                 * @return CreateAuthDomainOutcome
                  */
-                CreateMysqlInstanceOutcome CreateMysqlInstance(const Model::CreateMysqlInstanceRequest &request);
-                void CreateMysqlInstanceAsync(const Model::CreateMysqlInstanceRequest& request, const CreateMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateMysqlInstanceOutcomeCallable CreateMysqlInstanceCallable(const Model::CreateMysqlInstanceRequest& request);
+                CreateAuthDomainOutcome CreateAuthDomain(const Model::CreateAuthDomainRequest &request);
+                void CreateAuthDomainAsync(const Model::CreateAuthDomainRequest& request, const CreateAuthDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuthDomainOutcomeCallable CreateAuthDomainCallable(const Model::CreateAuthDomainRequest& request);
+
+                /**
+                 *创建托管域名
+                 * @param req CreateHostingDomainRequest
+                 * @return CreateHostingDomainOutcome
+                 */
+                CreateHostingDomainOutcome CreateHostingDomain(const Model::CreateHostingDomainRequest &request);
+                void CreateHostingDomainAsync(const Model::CreateHostingDomainRequest& request, const CreateHostingDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHostingDomainOutcomeCallable CreateHostingDomainCallable(const Model::CreateHostingDomainRequest& request);
+
+                /**
+                 *创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看
+                 * @param req CreateStaticStoreRequest
+                 * @return CreateStaticStoreOutcome
+                 */
+                CreateStaticStoreOutcome CreateStaticStore(const Model::CreateStaticStoreRequest &request);
+                void CreateStaticStoreAsync(const Model::CreateStaticStoreRequest& request, const CreateStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStaticStoreOutcomeCallable CreateStaticStoreCallable(const Model::CreateStaticStoreRequest& request);
+
+                /**
+                 *删除终端用户
+                 * @param req DeleteEndUserRequest
+                 * @return DeleteEndUserOutcome
+                 */
+                DeleteEndUserOutcome DeleteEndUser(const Model::DeleteEndUserRequest &request);
+                void DeleteEndUserAsync(const Model::DeleteEndUserRequest& request, const DeleteEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEndUserOutcomeCallable DeleteEndUserCallable(const Model::DeleteEndUserRequest& request);
+
+                /**
+                 *获取安全域名列表
+                 * @param req DescribeAuthDomainsRequest
+                 * @return DescribeAuthDomainsOutcome
+                 */
+                DescribeAuthDomainsOutcome DescribeAuthDomains(const Model::DescribeAuthDomainsRequest &request);
+                void DescribeAuthDomainsAsync(const Model::DescribeAuthDomainsRequest& request, const DescribeAuthDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuthDomainsOutcomeCallable DescribeAuthDomainsCallable(const Model::DescribeAuthDomainsRequest& request);
 
                 /**
                  *获取数据库权限
@@ -113,6 +198,24 @@ namespace TencentCloud
                 DescribeDatabaseACLOutcomeCallable DescribeDatabaseACLCallable(const Model::DescribeDatabaseACLRequest& request);
 
                 /**
+                 *获取终端用户列表
+                 * @param req DescribeEndUsersRequest
+                 * @return DescribeEndUsersOutcome
+                 */
+                DescribeEndUsersOutcome DescribeEndUsers(const Model::DescribeEndUsersRequest &request);
+                void DescribeEndUsersAsync(const Model::DescribeEndUsersRequest& request, const DescribeEndUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEndUsersOutcomeCallable DescribeEndUsersCallable(const Model::DescribeEndUsersRequest& request);
+
+                /**
+                 *查询环境个数上限
+                 * @param req DescribeEnvLimitRequest
+                 * @return DescribeEnvLimitOutcome
+                 */
+                DescribeEnvLimitOutcome DescribeEnvLimit(const Model::DescribeEnvLimitRequest &request);
+                void DescribeEnvLimitAsync(const Model::DescribeEnvLimitRequest& request, const DescribeEnvLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvLimitOutcomeCallable DescribeEnvLimitCallable(const Model::DescribeEnvLimitRequest& request);
+
+                /**
                  *获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数
                  * @param req DescribeEnvsRequest
                  * @return DescribeEnvsOutcome
@@ -122,13 +225,31 @@ namespace TencentCloud
                 DescribeEnvsOutcomeCallable DescribeEnvsCallable(const Model::DescribeEnvsRequest& request);
 
                 /**
-                 *隔离mysql实例
-                 * @param req IsolateMysqlInstanceRequest
-                 * @return IsolateMysqlInstanceOutcome
+                 *查询指定指标的配额使用量
+                 * @param req DescribeQuotaDataRequest
+                 * @return DescribeQuotaDataOutcome
                  */
-                IsolateMysqlInstanceOutcome IsolateMysqlInstance(const Model::IsolateMysqlInstanceRequest &request);
-                void IsolateMysqlInstanceAsync(const Model::IsolateMysqlInstanceRequest& request, const IsolateMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                IsolateMysqlInstanceOutcomeCallable IsolateMysqlInstanceCallable(const Model::IsolateMysqlInstanceRequest& request);
+                DescribeQuotaDataOutcome DescribeQuotaData(const Model::DescribeQuotaDataRequest &request);
+                void DescribeQuotaDataAsync(const Model::DescribeQuotaDataRequest& request, const DescribeQuotaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQuotaDataOutcomeCallable DescribeQuotaDataCallable(const Model::DescribeQuotaDataRequest& request);
+
+                /**
+                 *销毁环境
+                 * @param req DestroyEnvRequest
+                 * @return DestroyEnvOutcome
+                 */
+                DestroyEnvOutcome DestroyEnv(const Model::DestroyEnvRequest &request);
+                void DestroyEnvAsync(const Model::DestroyEnvRequest& request, const DestroyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyEnvOutcomeCallable DestroyEnvCallable(const Model::DestroyEnvRequest& request);
+
+                /**
+                 *销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看
+                 * @param req DestroyStaticStoreRequest
+                 * @return DestroyStaticStoreOutcome
+                 */
+                DestroyStaticStoreOutcome DestroyStaticStore(const Model::DestroyStaticStoreRequest &request);
+                void DestroyStaticStoreAsync(const Model::DestroyStaticStoreRequest& request, const DestroyStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyStaticStoreOutcomeCallable DestroyStaticStoreCallable(const Model::DestroyStaticStoreRequest& request);
 
                 /**
                  *修改数据库权限
@@ -149,22 +270,13 @@ namespace TencentCloud
                 ModifyEnvOutcomeCallable ModifyEnvCallable(const Model::ModifyEnvRequest& request);
 
                 /**
-                 *下线mysql实例
-                 * @param req OfflineMysqlInstanceRequest
-                 * @return OfflineMysqlInstanceOutcome
+                 *针对已隔离的免费环境，可以通过本接口将其恢复访问。
+                 * @param req ReinstateEnvRequest
+                 * @return ReinstateEnvOutcome
                  */
-                OfflineMysqlInstanceOutcome OfflineMysqlInstance(const Model::OfflineMysqlInstanceRequest &request);
-                void OfflineMysqlInstanceAsync(const Model::OfflineMysqlInstanceRequest& request, const OfflineMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                OfflineMysqlInstanceOutcomeCallable OfflineMysqlInstanceCallable(const Model::OfflineMysqlInstanceRequest& request);
-
-                /**
-                 *升级mysql实例
-                 * @param req UpgradeMysqlInstanceRequest
-                 * @return UpgradeMysqlInstanceOutcome
-                 */
-                UpgradeMysqlInstanceOutcome UpgradeMysqlInstance(const Model::UpgradeMysqlInstanceRequest &request);
-                void UpgradeMysqlInstanceAsync(const Model::UpgradeMysqlInstanceRequest& request, const UpgradeMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpgradeMysqlInstanceOutcomeCallable UpgradeMysqlInstanceCallable(const Model::UpgradeMysqlInstanceRequest& request);
+                ReinstateEnvOutcome ReinstateEnv(const Model::ReinstateEnvRequest &request);
+                void ReinstateEnvAsync(const Model::ReinstateEnvRequest& request, const ReinstateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReinstateEnvOutcomeCallable ReinstateEnvCallable(const Model::ReinstateEnvRequest& request);
 
             };
         }

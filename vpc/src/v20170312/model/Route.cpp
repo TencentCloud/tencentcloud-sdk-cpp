@@ -28,7 +28,8 @@ Route::Route() :
     m_routeIdHasBeenSet(false),
     m_routeDescriptionHasBeenSet(false),
     m_enabledHasBeenSet(false),
-    m_routeTypeHasBeenSet(false)
+    m_routeTypeHasBeenSet(false),
+    m_routeTableIdHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome Route::Deserialize(const Value &value)
         m_routeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteTableId") && !value["RouteTableId"].IsNull())
+    {
+        if (!value["RouteTableId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Route.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeTableId = string(value["RouteTableId"].GetString());
+        m_routeTableIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "RouteType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_routeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeTableIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RouteTableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_routeTableId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void Route::SetRouteType(const string& _routeType)
 bool Route::RouteTypeHasBeenSet() const
 {
     return m_routeTypeHasBeenSet;
+}
+
+string Route::GetRouteTableId() const
+{
+    return m_routeTableId;
+}
+
+void Route::SetRouteTableId(const string& _routeTableId)
+{
+    m_routeTableId = _routeTableId;
+    m_routeTableIdHasBeenSet = true;
+}
+
+bool Route::RouteTableIdHasBeenSet() const
+{
+    return m_routeTableIdHasBeenSet;
 }
 

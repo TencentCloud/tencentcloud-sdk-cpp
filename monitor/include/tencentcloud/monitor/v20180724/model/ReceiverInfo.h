@@ -298,6 +298,24 @@ namespace TencentCloud
                      */
                     bool ReceiverUserListHasBeenSet() const;
 
+                    /**
+                     * 获取告警接收语言，枚举值（zh-CN，en-US）
+                     * @return ReceiveLanguage 告警接收语言，枚举值（zh-CN，en-US）
+                     */
+                    std::string GetReceiveLanguage() const;
+
+                    /**
+                     * 设置告警接收语言，枚举值（zh-CN，en-US）
+                     * @param ReceiveLanguage 告警接收语言，枚举值（zh-CN，en-US）
+                     */
+                    void SetReceiveLanguage(const std::string& _receiveLanguage);
+
+                    /**
+                     * 判断参数 ReceiveLanguage 是否已赋值
+                     * @return ReceiveLanguage 是否已赋值
+                     */
+                    bool ReceiveLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +401,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_receiverUserList;
                     bool m_receiverUserListHasBeenSet;
+
+                    /**
+                     * 告警接收语言，枚举值（zh-CN，en-US）
+                     */
+                    std::string m_receiveLanguage;
+                    bool m_receiveLanguageHasBeenSet;
 
                 };
             }

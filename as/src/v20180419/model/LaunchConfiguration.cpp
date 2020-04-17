@@ -376,21 +376,18 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const Value &value)
 
     if (value.HasMember("InstanceNameSettings") && !value["InstanceNameSettings"].IsNull())
     {
-        if (!value["InstanceNameSettings"].IsArray())
-            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceNameSettings` is not array type"));
-
-        const Value &tmpValue = value["InstanceNameSettings"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["InstanceNameSettings"].IsObject())
         {
-            InstanceNameSettings item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_instanceNameSettings.push_back(item);
+            return CoreInternalOutcome(Error("response `LaunchConfiguration.InstanceNameSettings` is not object type").SetRequestId(requestId));
         }
+
+        CoreInternalOutcome outcome = m_instanceNameSettings.Deserialize(value["InstanceNameSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_instanceNameSettingsHasBeenSet = true;
     }
 
@@ -652,14 +649,8 @@ void LaunchConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
         Value iKey(kStringType);
         string key = "InstanceNameSettings";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_instanceNameSettings.begin(); itr != m_instanceNameSettings.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceNameSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_instanceChargePrepaidHasBeenSet)
@@ -1058,12 +1049,12 @@ bool LaunchConfiguration::HostNameSettingsHasBeenSet() const
     return m_hostNameSettingsHasBeenSet;
 }
 
-vector<InstanceNameSettings> LaunchConfiguration::GetInstanceNameSettings() const
+InstanceNameSettings LaunchConfiguration::GetInstanceNameSettings() const
 {
     return m_instanceNameSettings;
 }
 
-void LaunchConfiguration::SetInstanceNameSettings(const vector<InstanceNameSettings>& _instanceNameSettings)
+void LaunchConfiguration::SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings)
 {
     m_instanceNameSettings = _instanceNameSettings;
     m_instanceNameSettingsHasBeenSet = true;

@@ -53,15 +53,17 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/MetricDatum.h
   include/tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCallback.h
+  include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualCalcType.h
   include/tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h
   include/tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h
   include/tencentcloud/monitor/v20180724/model/ReceiverInfo.h
+  include/tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListDimensions.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListResponse.h
-  include/tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h
+  include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListDimension.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCondition.h
   include/tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectResponse.h
   include/tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h
@@ -73,8 +75,10 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/InstanceGroup.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoEventCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribeBaseMetricsResponse.h
+  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualPeriodNum.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstance.h
+  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupListRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeAccidentEventListResponse.h
@@ -127,15 +131,17 @@ set(monitor_src
   src/v20180724/model/MetricDatum.cpp
   src/v20180724/model/DeletePolicyGroupRequest.cpp
   src/v20180724/model/DescribePolicyGroupInfoCallback.cpp
+  src/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.cpp
   src/v20180724/model/DescribePolicyConditionListResponse.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualCalcType.cpp
   src/v20180724/model/UnBindingAllPolicyObjectRequest.cpp
   src/v20180724/model/PutMonitorDataResponse.cpp
   src/v20180724/model/ReceiverInfo.cpp
+  src/v20180724/model/ModifyAlarmReceiversRequest.cpp
   src/v20180724/model/DescribeProductEventListDimensions.cpp
   src/v20180724/model/DescribePolicyGroupInfoResponse.cpp
   src/v20180724/model/DescribeBasicAlarmListResponse.cpp
-  src/v20180724/model/ModifyAlarmReceiversRequest.cpp
+  src/v20180724/model/DescribeBindingPolicyObjectListDimension.cpp
   src/v20180724/model/DescribePolicyGroupInfoCondition.cpp
   src/v20180724/model/UnBindingPolicyObjectResponse.cpp
   src/v20180724/model/GetMonitorDataResponse.cpp
@@ -147,8 +153,10 @@ set(monitor_src
   src/v20180724/model/InstanceGroup.cpp
   src/v20180724/model/DescribePolicyGroupInfoEventCondition.cpp
   src/v20180724/model/DescribeBaseMetricsResponse.cpp
+  src/v20180724/model/SendCustomAlarmMsgResponse.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualPeriodNum.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListInstance.cpp
+  src/v20180724/model/SendCustomAlarmMsgRequest.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.cpp
   src/v20180724/model/DescribePolicyGroupListRequest.cpp
   src/v20180724/model/DescribeAccidentEventListResponse.cpp

@@ -1,0 +1,382 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/vod/v20180717/model/PlayerConfig.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Vod::V20180717::Model;
+using namespace rapidjson;
+using namespace std;
+
+PlayerConfig::PlayerConfig() :
+    m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_drmSwitchHasBeenSet(false),
+    m_adaptiveDynamicStreamingDefinitionHasBeenSet(false),
+    m_drmStreamingsInfoHasBeenSet(false),
+    m_imageSpriteDefinitionHasBeenSet(false),
+    m_resolutionNameSetHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome PlayerConfig::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DrmSwitch") && !value["DrmSwitch"].IsNull())
+    {
+        if (!value["DrmSwitch"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.DrmSwitch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_drmSwitch = string(value["DrmSwitch"].GetString());
+        m_drmSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdaptiveDynamicStreamingDefinition") && !value["AdaptiveDynamicStreamingDefinition"].IsNull())
+    {
+        if (!value["AdaptiveDynamicStreamingDefinition"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.AdaptiveDynamicStreamingDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_adaptiveDynamicStreamingDefinition = value["AdaptiveDynamicStreamingDefinition"].GetUint64();
+        m_adaptiveDynamicStreamingDefinitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DrmStreamingsInfo") && !value["DrmStreamingsInfo"].IsNull())
+    {
+        if (!value["DrmStreamingsInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.DrmStreamingsInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_drmStreamingsInfo.Deserialize(value["DrmStreamingsInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_drmStreamingsInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageSpriteDefinition") && !value["ImageSpriteDefinition"].IsNull())
+    {
+        if (!value["ImageSpriteDefinition"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.ImageSpriteDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageSpriteDefinition = value["ImageSpriteDefinition"].GetUint64();
+        m_imageSpriteDefinitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResolutionNameSet") && !value["ResolutionNameSet"].IsNull())
+    {
+        if (!value["ResolutionNameSet"].IsArray())
+            return CoreInternalOutcome(Error("response `PlayerConfig.ResolutionNameSet` is not array type"));
+
+        const Value &tmpValue = value["ResolutionNameSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResolutionNameInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resolutionNameSet.push_back(item);
+        }
+        m_resolutionNameSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void PlayerConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drmSwitchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DrmSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_drmSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_adaptiveDynamicStreamingDefinitionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdaptiveDynamicStreamingDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_adaptiveDynamicStreamingDefinition, allocator);
+    }
+
+    if (m_drmStreamingsInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DrmStreamingsInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_drmStreamingsInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageSpriteDefinitionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageSpriteDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageSpriteDefinition, allocator);
+    }
+
+    if (m_resolutionNameSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResolutionNameSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resolutionNameSet.begin(); itr != m_resolutionNameSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string PlayerConfig::GetName() const
+{
+    return m_name;
+}
+
+void PlayerConfig::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool PlayerConfig::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string PlayerConfig::GetType() const
+{
+    return m_type;
+}
+
+void PlayerConfig::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool PlayerConfig::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string PlayerConfig::GetDrmSwitch() const
+{
+    return m_drmSwitch;
+}
+
+void PlayerConfig::SetDrmSwitch(const string& _drmSwitch)
+{
+    m_drmSwitch = _drmSwitch;
+    m_drmSwitchHasBeenSet = true;
+}
+
+bool PlayerConfig::DrmSwitchHasBeenSet() const
+{
+    return m_drmSwitchHasBeenSet;
+}
+
+uint64_t PlayerConfig::GetAdaptiveDynamicStreamingDefinition() const
+{
+    return m_adaptiveDynamicStreamingDefinition;
+}
+
+void PlayerConfig::SetAdaptiveDynamicStreamingDefinition(const uint64_t& _adaptiveDynamicStreamingDefinition)
+{
+    m_adaptiveDynamicStreamingDefinition = _adaptiveDynamicStreamingDefinition;
+    m_adaptiveDynamicStreamingDefinitionHasBeenSet = true;
+}
+
+bool PlayerConfig::AdaptiveDynamicStreamingDefinitionHasBeenSet() const
+{
+    return m_adaptiveDynamicStreamingDefinitionHasBeenSet;
+}
+
+DrmStreamingsInfo PlayerConfig::GetDrmStreamingsInfo() const
+{
+    return m_drmStreamingsInfo;
+}
+
+void PlayerConfig::SetDrmStreamingsInfo(const DrmStreamingsInfo& _drmStreamingsInfo)
+{
+    m_drmStreamingsInfo = _drmStreamingsInfo;
+    m_drmStreamingsInfoHasBeenSet = true;
+}
+
+bool PlayerConfig::DrmStreamingsInfoHasBeenSet() const
+{
+    return m_drmStreamingsInfoHasBeenSet;
+}
+
+uint64_t PlayerConfig::GetImageSpriteDefinition() const
+{
+    return m_imageSpriteDefinition;
+}
+
+void PlayerConfig::SetImageSpriteDefinition(const uint64_t& _imageSpriteDefinition)
+{
+    m_imageSpriteDefinition = _imageSpriteDefinition;
+    m_imageSpriteDefinitionHasBeenSet = true;
+}
+
+bool PlayerConfig::ImageSpriteDefinitionHasBeenSet() const
+{
+    return m_imageSpriteDefinitionHasBeenSet;
+}
+
+vector<ResolutionNameInfo> PlayerConfig::GetResolutionNameSet() const
+{
+    return m_resolutionNameSet;
+}
+
+void PlayerConfig::SetResolutionNameSet(const vector<ResolutionNameInfo>& _resolutionNameSet)
+{
+    m_resolutionNameSet = _resolutionNameSet;
+    m_resolutionNameSetHasBeenSet = true;
+}
+
+bool PlayerConfig::ResolutionNameSetHasBeenSet() const
+{
+    return m_resolutionNameSetHasBeenSet;
+}
+
+string PlayerConfig::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void PlayerConfig::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool PlayerConfig::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string PlayerConfig::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void PlayerConfig::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool PlayerConfig::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+

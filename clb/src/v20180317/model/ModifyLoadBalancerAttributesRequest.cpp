@@ -28,7 +28,8 @@ ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_loadBalancerNameHasBeenSet(false),
     m_targetRegionInfoHasBeenSet(false),
     m_internetChargeInfoHasBeenSet(false),
-    m_loadBalancerPassToTargetHasBeenSet(false)
+    m_loadBalancerPassToTargetHasBeenSet(false),
+    m_snatProHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         string key = "LoadBalancerPassToTarget";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
+    }
+
+    if (m_snatProHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SnatPro";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_snatPro, allocator);
     }
 
 
@@ -167,6 +176,22 @@ void ModifyLoadBalancerAttributesRequest::SetLoadBalancerPassToTarget(const bool
 bool ModifyLoadBalancerAttributesRequest::LoadBalancerPassToTargetHasBeenSet() const
 {
     return m_loadBalancerPassToTargetHasBeenSet;
+}
+
+bool ModifyLoadBalancerAttributesRequest::GetSnatPro() const
+{
+    return m_snatPro;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetSnatPro(const bool& _snatPro)
+{
+    m_snatPro = _snatPro;
+    m_snatProHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::SnatProHasBeenSet() const
+{
+    return m_snatProHasBeenSet;
 }
 
 

@@ -28,7 +28,9 @@ DescribeTagsRequest::DescribeTagsRequest() :
     m_tagValueHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_createUinHasBeenSet(false)
+    m_createUinHasBeenSet(false),
+    m_tagKeysHasBeenSet(false),
+    m_showProjectHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,27 @@ string DescribeTagsRequest::ToJsonString() const
         string key = "CreateUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_createUin, allocator);
+    }
+
+    if (m_tagKeysHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagKeys.begin(); itr != m_tagKeys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_showProjectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShowProject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showProject, allocator);
     }
 
 
@@ -165,6 +188,38 @@ void DescribeTagsRequest::SetCreateUin(const uint64_t& _createUin)
 bool DescribeTagsRequest::CreateUinHasBeenSet() const
 {
     return m_createUinHasBeenSet;
+}
+
+vector<string> DescribeTagsRequest::GetTagKeys() const
+{
+    return m_tagKeys;
+}
+
+void DescribeTagsRequest::SetTagKeys(const vector<string>& _tagKeys)
+{
+    m_tagKeys = _tagKeys;
+    m_tagKeysHasBeenSet = true;
+}
+
+bool DescribeTagsRequest::TagKeysHasBeenSet() const
+{
+    return m_tagKeysHasBeenSet;
+}
+
+uint64_t DescribeTagsRequest::GetShowProject() const
+{
+    return m_showProject;
+}
+
+void DescribeTagsRequest::SetShowProject(const uint64_t& _showProject)
+{
+    m_showProject = _showProject;
+    m_showProjectHasBeenSet = true;
+}
+
+bool DescribeTagsRequest::ShowProjectHasBeenSet() const
+{
+    return m_showProjectHasBeenSet;
 }
 
 

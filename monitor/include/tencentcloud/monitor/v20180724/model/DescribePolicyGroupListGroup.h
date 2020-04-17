@@ -413,6 +413,28 @@ namespace TencentCloud
                      */
                     bool InstanceGroupHasBeenSet() const;
 
+                    /**
+                     * 获取且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsUnionRule 且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsUnionRule() const;
+
+                    /**
+                     * 设置且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsUnionRule 且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsUnionRule(const int64_t& _isUnionRule);
+
+                    /**
+                     * 判断参数 IsUnionRule 是否已赋值
+                     * @return IsUnionRule 是否已赋值
+                     */
+                    bool IsUnionRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +555,13 @@ namespace TencentCloud
                      */
                     DescribePolicyGroupListGroupInstanceGroup m_instanceGroup;
                     bool m_instanceGroupHasBeenSet;
+
+                    /**
+                     * 且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isUnionRule;
+                    bool m_isUnionRuleHasBeenSet;
 
                 };
             }

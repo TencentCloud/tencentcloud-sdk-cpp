@@ -27,7 +27,11 @@ DescribeVpnConnectionsRequest::DescribeVpnConnectionsRequest() :
     m_vpnConnectionIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_vpnGatewayIdHasBeenSet(false),
+    m_vpnConnectionNameHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false)
 {
 }
 
@@ -80,6 +84,38 @@ string DescribeVpnConnectionsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_vpnGatewayIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpnGatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vpnGatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpnConnectionNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpnConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vpnConnectionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -152,6 +188,70 @@ void DescribeVpnConnectionsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeVpnConnectionsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeVpnConnectionsRequest::GetVpnGatewayId() const
+{
+    return m_vpnGatewayId;
+}
+
+void DescribeVpnConnectionsRequest::SetVpnGatewayId(const string& _vpnGatewayId)
+{
+    m_vpnGatewayId = _vpnGatewayId;
+    m_vpnGatewayIdHasBeenSet = true;
+}
+
+bool DescribeVpnConnectionsRequest::VpnGatewayIdHasBeenSet() const
+{
+    return m_vpnGatewayIdHasBeenSet;
+}
+
+string DescribeVpnConnectionsRequest::GetVpnConnectionName() const
+{
+    return m_vpnConnectionName;
+}
+
+void DescribeVpnConnectionsRequest::SetVpnConnectionName(const string& _vpnConnectionName)
+{
+    m_vpnConnectionName = _vpnConnectionName;
+    m_vpnConnectionNameHasBeenSet = true;
+}
+
+bool DescribeVpnConnectionsRequest::VpnConnectionNameHasBeenSet() const
+{
+    return m_vpnConnectionNameHasBeenSet;
+}
+
+string DescribeVpnConnectionsRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeVpnConnectionsRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeVpnConnectionsRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeVpnConnectionsRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeVpnConnectionsRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeVpnConnectionsRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
 }
 
 

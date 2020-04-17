@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDomainPriceListRequest::DescribeDomainPriceListRequest() :
-    m_tldListHasBeenSet(false)
+    m_tldListHasBeenSet(false),
+    m_yearHasBeenSet(false),
+    m_operationHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,32 @@ string DescribeDomainPriceListRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_tldList.begin(); itr != m_tldList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_yearHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Year";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_year.begin(); itr != m_year.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_operationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Operation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_operation.begin(); itr != m_operation.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -70,6 +98,38 @@ void DescribeDomainPriceListRequest::SetTldList(const vector<string>& _tldList)
 bool DescribeDomainPriceListRequest::TldListHasBeenSet() const
 {
     return m_tldListHasBeenSet;
+}
+
+vector<int64_t> DescribeDomainPriceListRequest::GetYear() const
+{
+    return m_year;
+}
+
+void DescribeDomainPriceListRequest::SetYear(const vector<int64_t>& _year)
+{
+    m_year = _year;
+    m_yearHasBeenSet = true;
+}
+
+bool DescribeDomainPriceListRequest::YearHasBeenSet() const
+{
+    return m_yearHasBeenSet;
+}
+
+vector<string> DescribeDomainPriceListRequest::GetOperation() const
+{
+    return m_operation;
+}
+
+void DescribeDomainPriceListRequest::SetOperation(const vector<string>& _operation)
+{
+    m_operation = _operation;
+    m_operationHasBeenSet = true;
+}
+
+bool DescribeDomainPriceListRequest::OperationHasBeenSet() const
+{
+    return m_operationHasBeenSet;
 }
 
 

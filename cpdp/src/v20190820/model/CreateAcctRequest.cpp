@@ -34,7 +34,8 @@ CreateAcctRequest::CreateAcctRequest() :
     m_midasSecretIdHasBeenSet(false),
     m_midasSignatureHasBeenSet(false),
     m_subMchTypeHasBeenSet(false),
-    m_shortNameHasBeenSet(false)
+    m_shortNameHasBeenSet(false),
+    m_subMerchantMemberTypeHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string CreateAcctRequest::ToJsonString() const
         string key = "ShortName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_shortName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subMerchantMemberTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubMerchantMemberType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subMerchantMemberType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void CreateAcctRequest::SetShortName(const string& _shortName)
 bool CreateAcctRequest::ShortNameHasBeenSet() const
 {
     return m_shortNameHasBeenSet;
+}
+
+string CreateAcctRequest::GetSubMerchantMemberType() const
+{
+    return m_subMerchantMemberType;
+}
+
+void CreateAcctRequest::SetSubMerchantMemberType(const string& _subMerchantMemberType)
+{
+    m_subMerchantMemberType = _subMerchantMemberType;
+    m_subMerchantMemberTypeHasBeenSet = true;
+}
+
+bool CreateAcctRequest::SubMerchantMemberTypeHasBeenSet() const
+{
+    return m_subMerchantMemberTypeHasBeenSet;
 }
 
 

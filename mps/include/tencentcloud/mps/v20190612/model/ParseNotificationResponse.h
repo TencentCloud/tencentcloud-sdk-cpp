@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
+#include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
 
 
 namespace TencentCloud
@@ -46,8 +47,10 @@ namespace TencentCloud
                     /**
                      * 获取支持事件类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
+<li>EditMediaTask：视频编辑任务。</li>
                      * @return EventType 支持事件类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
+<li>EditMediaTask：视频编辑任务。</li>
                      */
                     std::string GetEventType() const;
 
@@ -70,6 +73,20 @@ namespace TencentCloud
                      * @return WorkflowTaskEvent 是否已赋值
                      */
                     bool WorkflowTaskEventHasBeenSet() const;
+
+                    /**
+                     * 获取视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EditMediaTaskEvent 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EditMediaTask GetEditMediaTaskEvent() const;
+
+                    /**
+                     * 判断参数 EditMediaTaskEvent 是否已赋值
+                     * @return EditMediaTaskEvent 是否已赋值
+                     */
+                    bool EditMediaTaskEventHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。
@@ -100,6 +117,7 @@ namespace TencentCloud
                     /**
                      * 支持事件类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
+<li>EditMediaTask：视频编辑任务。</li>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
@@ -110,6 +128,13 @@ namespace TencentCloud
                      */
                     WorkflowTask m_workflowTaskEvent;
                     bool m_workflowTaskEventHasBeenSet;
+
+                    /**
+                     * 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EditMediaTask m_editMediaTaskEvent;
+                    bool m_editMediaTaskEventHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。

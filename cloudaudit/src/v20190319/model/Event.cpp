@@ -33,6 +33,7 @@ Event::Event() :
     m_eventSourceHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
     m_requestIDHasBeenSet(false),
+    m_resourceRegionHasBeenSet(false),
     m_resourceTypeCnHasBeenSet(false),
     m_secretIdHasBeenSet(false),
     m_sourceIPAddressHasBeenSet(false),
@@ -160,6 +161,16 @@ CoreInternalOutcome Event::Deserialize(const Value &value)
         }
         m_requestID = string(value["RequestID"].GetString());
         m_requestIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceRegion") && !value["ResourceRegion"].IsNull())
+    {
+        if (!value["ResourceRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Event.ResourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceRegion = string(value["ResourceRegion"].GetString());
+        m_resourceRegionHasBeenSet = true;
     }
 
     if (value.HasMember("ResourceTypeCn") && !value["ResourceTypeCn"].IsNull())
@@ -296,6 +307,14 @@ void Event::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "RequestID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_requestID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceTypeCnHasBeenSet)
@@ -507,6 +526,22 @@ void Event::SetRequestID(const string& _requestID)
 bool Event::RequestIDHasBeenSet() const
 {
     return m_requestIDHasBeenSet;
+}
+
+string Event::GetResourceRegion() const
+{
+    return m_resourceRegion;
+}
+
+void Event::SetResourceRegion(const string& _resourceRegion)
+{
+    m_resourceRegion = _resourceRegion;
+    m_resourceRegionHasBeenSet = true;
+}
+
+bool Event::ResourceRegionHasBeenSet() const
+{
+    return m_resourceRegionHasBeenSet;
 }
 
 string Event::GetResourceTypeCn() const

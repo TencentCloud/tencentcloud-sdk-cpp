@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h>
 
 
 namespace TencentCloud
@@ -44,34 +44,34 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带扩缩容表所属应用实例ID
-                     * @return ApplicationId 带扩缩容表所属应用实例ID
+                     * 获取带扩缩容表所属集群ID
+                     * @return ClusterId 带扩缩容表所属集群ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置带扩缩容表所属应用实例ID
-                     * @param ApplicationId 带扩缩容表所属应用实例ID
+                     * 设置带扩缩容表所属集群ID
+                     * @param ClusterId 带扩缩容表所属集群ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取已选中待修改的表配额列表
                      * @return TableQuotas 已选中待修改的表配额列表
                      */
-                    std::vector<SelectedTableInfo> GetTableQuotas() const;
+                    std::vector<SelectedTableInfoNew> GetTableQuotas() const;
 
                     /**
                      * 设置已选中待修改的表配额列表
                      * @param TableQuotas 已选中待修改的表配额列表
                      */
-                    void SetTableQuotas(const std::vector<SelectedTableInfo>& _tableQuotas);
+                    void SetTableQuotas(const std::vector<SelectedTableInfoNew>& _tableQuotas);
 
                     /**
                      * 判断参数 TableQuotas 是否已赋值
@@ -82,15 +82,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带扩缩容表所属应用实例ID
+                     * 带扩缩容表所属集群ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 已选中待修改的表配额列表
                      */
-                    std::vector<SelectedTableInfo> m_tableQuotas;
+                    std::vector<SelectedTableInfoNew> m_tableQuotas;
                     bool m_tableQuotasHasBeenSet;
 
                 };

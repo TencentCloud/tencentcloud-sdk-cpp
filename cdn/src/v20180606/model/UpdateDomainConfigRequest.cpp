@@ -51,7 +51,9 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_maxAgeHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_specificConfigHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_originPullTimeoutHasBeenSet(false),
+    m_awsPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -308,6 +310,24 @@ string UpdateDomainConfigRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originPullTimeoutHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginPullTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_originPullTimeout.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_awsPrivateAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AwsPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_awsPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -764,6 +784,38 @@ void UpdateDomainConfigRequest::SetArea(const string& _area)
 bool UpdateDomainConfigRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+OriginPullTimeout UpdateDomainConfigRequest::GetOriginPullTimeout() const
+{
+    return m_originPullTimeout;
+}
+
+void UpdateDomainConfigRequest::SetOriginPullTimeout(const OriginPullTimeout& _originPullTimeout)
+{
+    m_originPullTimeout = _originPullTimeout;
+    m_originPullTimeoutHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::OriginPullTimeoutHasBeenSet() const
+{
+    return m_originPullTimeoutHasBeenSet;
+}
+
+AwsPrivateAccess UpdateDomainConfigRequest::GetAwsPrivateAccess() const
+{
+    return m_awsPrivateAccess;
+}
+
+void UpdateDomainConfigRequest::SetAwsPrivateAccess(const AwsPrivateAccess& _awsPrivateAccess)
+{
+    m_awsPrivateAccess = _awsPrivateAccess;
+    m_awsPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::AwsPrivateAccessHasBeenSet() const
+{
+    return m_awsPrivateAccessHasBeenSet;
 }
 
 

@@ -60,7 +60,9 @@ DetailDomain::DetailDomain() :
     m_specificConfigHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_readonlyHasBeenSet(false),
-    m_originPullTimeoutHasBeenSet(false)
+    m_originPullTimeoutHasBeenSet(false),
+    m_awsPrivateAccessHasBeenSet(false),
+    m_securityConfigHasBeenSet(false)
 {
 }
 
@@ -648,6 +650,43 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_originPullTimeoutHasBeenSet = true;
     }
 
+    if (value.HasMember("AwsPrivateAccess") && !value["AwsPrivateAccess"].IsNull())
+    {
+        if (!value["AwsPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.AwsPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_awsPrivateAccess.Deserialize(value["AwsPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_awsPrivateAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityConfig") && !value["SecurityConfig"].IsNull())
+    {
+        if (!value["SecurityConfig"].IsArray())
+            return CoreInternalOutcome(Error("response `DetailDomain.SecurityConfig` is not array type"));
+
+        const Value &tmpValue = value["SecurityConfig"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_securityConfig.push_back(item);
+        }
+        m_securityConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -992,6 +1031,30 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_originPullTimeout.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_awsPrivateAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AwsPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_awsPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_securityConfig.begin(); itr != m_securityConfig.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1619,5 +1682,37 @@ void DetailDomain::SetOriginPullTimeout(const OriginPullTimeout& _originPullTime
 bool DetailDomain::OriginPullTimeoutHasBeenSet() const
 {
     return m_originPullTimeoutHasBeenSet;
+}
+
+AwsPrivateAccess DetailDomain::GetAwsPrivateAccess() const
+{
+    return m_awsPrivateAccess;
+}
+
+void DetailDomain::SetAwsPrivateAccess(const AwsPrivateAccess& _awsPrivateAccess)
+{
+    m_awsPrivateAccess = _awsPrivateAccess;
+    m_awsPrivateAccessHasBeenSet = true;
+}
+
+bool DetailDomain::AwsPrivateAccessHasBeenSet() const
+{
+    return m_awsPrivateAccessHasBeenSet;
+}
+
+vector<SecurityConfig> DetailDomain::GetSecurityConfig() const
+{
+    return m_securityConfig;
+}
+
+void DetailDomain::SetSecurityConfig(const vector<SecurityConfig>& _securityConfig)
+{
+    m_securityConfig = _securityConfig;
+    m_securityConfigHasBeenSet = true;
+}
+
+bool DetailDomain::SecurityConfigHasBeenSet() const
+{
+    return m_securityConfigHasBeenSet;
 }
 

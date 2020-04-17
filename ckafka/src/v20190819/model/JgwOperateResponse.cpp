@@ -23,7 +23,8 @@ using namespace std;
 
 JgwOperateResponse::JgwOperateResponse() :
     m_returnCodeHasBeenSet(false),
-    m_returnMessageHasBeenSet(false)
+    m_returnMessageHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,23 @@ CoreInternalOutcome JgwOperateResponse::Deserialize(const Value &value)
         m_returnMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("Data") && !value["Data"].IsNull())
+    {
+        if (!value["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `JgwOperateResponse.Data` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(value["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void JgwOperateResponse::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ReturnMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_returnMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +135,21 @@ void JgwOperateResponse::SetReturnMessage(const string& _returnMessage)
 bool JgwOperateResponse::ReturnMessageHasBeenSet() const
 {
     return m_returnMessageHasBeenSet;
+}
+
+OperateResponseData JgwOperateResponse::GetData() const
+{
+    return m_data;
+}
+
+void JgwOperateResponse::SetData(const OperateResponseData& _data)
+{
+    m_data = _data;
+    m_dataHasBeenSet = true;
+}
+
+bool JgwOperateResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 

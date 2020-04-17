@@ -45,6 +45,8 @@
 #include <tencentcloud/cdn/v20180606/model/Referer.h>
 #include <tencentcloud/cdn/v20180606/model/MaxAge.h>
 #include <tencentcloud/cdn/v20180606/model/SpecificConfig.h>
+#include <tencentcloud/cdn/v20180606/model/OriginPullTimeout.h>
+#include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -598,6 +600,42 @@ global：全球加速
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取回源超时配置
+                     * @return OriginPullTimeout 回源超时配置
+                     */
+                    OriginPullTimeout GetOriginPullTimeout() const;
+
+                    /**
+                     * 设置回源超时配置
+                     * @param OriginPullTimeout 回源超时配置
+                     */
+                    void SetOriginPullTimeout(const OriginPullTimeout& _originPullTimeout);
+
+                    /**
+                     * 判断参数 OriginPullTimeout 是否已赋值
+                     * @return OriginPullTimeout 是否已赋值
+                     */
+                    bool OriginPullTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取回源S3私有鉴权
+                     * @return AwsPrivateAccess 回源S3私有鉴权
+                     */
+                    AwsPrivateAccess GetAwsPrivateAccess() const;
+
+                    /**
+                     * 设置回源S3私有鉴权
+                     * @param AwsPrivateAccess 回源S3私有鉴权
+                     */
+                    void SetAwsPrivateAccess(const AwsPrivateAccess& _awsPrivateAccess);
+
+                    /**
+                     * 判断参数 AwsPrivateAccess 是否已赋值
+                     * @return AwsPrivateAccess 是否已赋值
+                     */
+                    bool AwsPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -774,6 +812,18 @@ global：全球加速
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 回源超时配置
+                     */
+                    OriginPullTimeout m_originPullTimeout;
+                    bool m_originPullTimeoutHasBeenSet;
+
+                    /**
+                     * 回源S3私有鉴权
+                     */
+                    AwsPrivateAccess m_awsPrivateAccess;
+                    bool m_awsPrivateAccessHasBeenSet;
 
                 };
             }

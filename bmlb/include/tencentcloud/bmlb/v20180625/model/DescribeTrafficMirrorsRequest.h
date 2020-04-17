@@ -132,6 +132,60 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段。trafficMirrorId或者createTime。
+                     * @return OrderField 排序字段。trafficMirrorId或者createTime。
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段。trafficMirrorId或者createTime。
+                     * @param OrderField 排序字段。trafficMirrorId或者createTime。
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式，取值：0:增序(默认)，1:降序
+                     * @return Order 排序方式，取值：0:增序(默认)，1:降序
+                     */
+                    int64_t GetOrder() const;
+
+                    /**
+                     * 设置排序方式，取值：0:增序(默认)，1:降序
+                     * @param Order 排序方式，取值：0:增序(默认)，1:降序
+                     */
+                    void SetOrder(const int64_t& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取模糊匹配trafficMirrorId或者alias字段。
+                     * @return SearchKey 模糊匹配trafficMirrorId或者alias字段。
+                     */
+                    std::string GetSearchKey() const;
+
+                    /**
+                     * 设置模糊匹配trafficMirrorId或者alias字段。
+                     * @param SearchKey 模糊匹配trafficMirrorId或者alias字段。
+                     */
+                    void SetSearchKey(const std::string& _searchKey);
+
+                    /**
+                     * 判断参数 SearchKey 是否已赋值
+                     * @return SearchKey 是否已赋值
+                     */
+                    bool SearchKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +217,24 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 排序字段。trafficMirrorId或者createTime。
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 排序方式，取值：0:增序(默认)，1:降序
+                     */
+                    int64_t m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * 模糊匹配trafficMirrorId或者alias字段。
+                     */
+                    std::string m_searchKey;
+                    bool m_searchKeyHasBeenSet;
 
                 };
             }

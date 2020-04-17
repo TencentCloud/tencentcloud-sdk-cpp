@@ -43,6 +43,18 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取操作样本失败时返回的错误信息示例：  "样本1":错误码，"样本2":错误码
+                     * @return ErrMsg 操作样本失败时返回的错误信息示例：  "样本1":错误码，"样本2":错误码
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
+                    /**
                      * 获取任务状态
 1：已完成
 2：处理中
@@ -59,6 +71,12 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 操作样本失败时返回的错误信息示例：  "样本1":错误码，"样本2":错误码
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
 
                     /**
                      * 任务状态

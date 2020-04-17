@@ -97,6 +97,24 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
+                     * 获取伸缩组的节点规格
+                     * @return InstanceType 伸缩组的节点规格
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置伸缩组的节点规格
+                     * @param InstanceType 伸缩组的节点规格
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
                      * 获取资源组所在的集群名
                      * @return Cluster 资源组所在的集群名
                      */
@@ -132,6 +150,24 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩组期望的节点数
+                     * @return DesiredSize 伸缩组期望的节点数
+                     */
+                    uint64_t GetDesiredSize() const;
+
+                    /**
+                     * 设置伸缩组期望的节点数
+                     * @param DesiredSize 伸缩组期望的节点数
+                     */
+                    void SetDesiredSize(const uint64_t& _desiredSize);
+
+                    /**
+                     * 判断参数 DesiredSize 是否已赋值
+                     * @return DesiredSize 是否已赋值
+                     */
+                    bool DesiredSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +189,12 @@ namespace TencentCloud
                     bool m_minSizeHasBeenSet;
 
                     /**
+                     * 伸缩组的节点规格
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
                      * 资源组所在的集群名
                      */
                     std::string m_cluster;
@@ -163,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 伸缩组期望的节点数
+                     */
+                    uint64_t m_desiredSize;
+                    bool m_desiredSizeHasBeenSet;
 
                 };
             }

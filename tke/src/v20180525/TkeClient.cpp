@@ -1115,6 +1115,92 @@ TkeClient::DescribeExistedInstancesOutcomeCallable TkeClient::DescribeExistedIns
     return task->get_future();
 }
 
+TkeClient::DescribeImagesOutcome TkeClient::DescribeImages(const DescribeImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImagesResponse rsp = DescribeImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImagesOutcome(rsp);
+        else
+            return DescribeImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImagesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeImagesOutcomeCallable TkeClient::DescribeImagesCallable(const DescribeImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeRegionsOutcome TkeClient::DescribeRegions(const DescribeRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionsResponse rsp = DescribeRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionsOutcome(rsp);
+        else
+            return DescribeRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeRegionsOutcomeCallable TkeClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeRouteTableConflictsOutcome TkeClient::DescribeRouteTableConflicts(const DescribeRouteTableConflictsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRouteTableConflicts");
@@ -1194,6 +1280,49 @@ TkeClient::ModifyClusterAsGroupAttributeOutcomeCallable TkeClient::ModifyCluster
         [this, request]()
         {
             return this->ModifyClusterAsGroupAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterAttributeOutcome TkeClient::ModifyClusterAttribute(const ModifyClusterAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterAttributeResponse rsp = ModifyClusterAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterAttributeOutcome(rsp);
+        else
+            return ModifyClusterAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterAttributeAsync(const ModifyClusterAttributeRequest& request, const ModifyClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterAttributeOutcomeCallable TkeClient::ModifyClusterAttributeCallable(const ModifyClusterAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterAttribute(request);
         }
     );
 

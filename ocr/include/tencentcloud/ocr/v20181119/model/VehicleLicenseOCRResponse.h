@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool BackInfoHasBeenSet() const;
 
                     /**
-                     * 获取告警码	告警码消息	                                                告警码说明
--9102	WARN_DRIVER_LICENSE_COPY_CARD	        复印件告警
--9103	WARN_DRIVER_LICENSE_SCREENED_CARD	翻拍件告警
--9106	WARN_DRIVER_LICENSE_PS_CARD	                ps告警
+                     * 获取Code 告警码列表和释义：
+-9102 复印件告警
+-9103 翻拍件告警
+-9106 ps告警
 注：告警码可以同时存在多个
-                     * @return RecognizeWarnCode 告警码	告警码消息	                                                告警码说明
--9102	WARN_DRIVER_LICENSE_COPY_CARD	        复印件告警
--9103	WARN_DRIVER_LICENSE_SCREENED_CARD	翻拍件告警
--9106	WARN_DRIVER_LICENSE_PS_CARD	                ps告警
+                     * @return RecognizeWarnCode Code 告警码列表和释义：
+-9102 复印件告警
+-9103 翻拍件告警
+-9106 ps告警
 注：告警码可以同时存在多个
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
@@ -93,9 +93,15 @@ namespace TencentCloud
                     bool RecognizeWarnCodeHasBeenSet() const;
 
                     /**
-                     * 获取告警码说明
+                     * 获取告警码说明：
+WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
+WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
+WARN_DRIVER_LICENSE_PS_CARD ps告警
 注：告警信息可以同时存在多个
-                     * @return RecognizeWarnMsg 告警码说明
+                     * @return RecognizeWarnMsg 告警码说明：
+WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
+WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
+WARN_DRIVER_LICENSE_PS_CARD ps告警
 注：告警信息可以同时存在多个
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
@@ -123,17 +129,20 @@ namespace TencentCloud
                     bool m_backInfoHasBeenSet;
 
                     /**
-                     * 告警码	告警码消息	                                                告警码说明
--9102	WARN_DRIVER_LICENSE_COPY_CARD	        复印件告警
--9103	WARN_DRIVER_LICENSE_SCREENED_CARD	翻拍件告警
--9106	WARN_DRIVER_LICENSE_PS_CARD	                ps告警
+                     * Code 告警码列表和释义：
+-9102 复印件告警
+-9103 翻拍件告警
+-9106 ps告警
 注：告警码可以同时存在多个
                      */
                     std::vector<int64_t> m_recognizeWarnCode;
                     bool m_recognizeWarnCodeHasBeenSet;
 
                     /**
-                     * 告警码说明
+                     * 告警码说明：
+WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
+WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
+WARN_DRIVER_LICENSE_PS_CARD ps告警
 注：告警信息可以同时存在多个
                      */
                     std::vector<std::string> m_recognizeWarnMsg;

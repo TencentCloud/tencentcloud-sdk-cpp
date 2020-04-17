@@ -233,14 +233,8 @@ string UpgradeLaunchConfigurationRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "InstanceNameSettings";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_instanceNameSettings.begin(); itr != m_instanceNameSettings.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_instanceNameSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_instanceChargePrepaidHasBeenSet)
@@ -548,12 +542,12 @@ bool UpgradeLaunchConfigurationRequest::HostNameSettingsHasBeenSet() const
     return m_hostNameSettingsHasBeenSet;
 }
 
-vector<InstanceNameSettings> UpgradeLaunchConfigurationRequest::GetInstanceNameSettings() const
+InstanceNameSettings UpgradeLaunchConfigurationRequest::GetInstanceNameSettings() const
 {
     return m_instanceNameSettings;
 }
 
-void UpgradeLaunchConfigurationRequest::SetInstanceNameSettings(const vector<InstanceNameSettings>& _instanceNameSettings)
+void UpgradeLaunchConfigurationRequest::SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings)
 {
     m_instanceNameSettings = _instanceNameSettings;
     m_instanceNameSettingsHasBeenSet = true;

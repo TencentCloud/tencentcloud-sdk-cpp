@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最大副本数
-                     * @return MaxReplicas 最大副本数
+                     * 获取最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * @return MaxReplicas 最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      */
                     uint64_t GetMaxReplicas() const;
 
                     /**
-                     * 设置最大副本数
-                     * @param MaxReplicas 最大副本数
+                     * 设置最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * @param MaxReplicas 最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      */
                     void SetMaxReplicas(const uint64_t& _maxReplicas);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
-                     * 获取最小副本数
-                     * @return MinReplicas 最小副本数
+                     * 获取最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * @return MinReplicas 最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      */
                     uint64_t GetMinReplicas() const;
 
                     /**
-                     * 设置最小副本数
-                     * @param MinReplicas 最小副本数
+                     * 设置最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * @param MinReplicas 最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      */
                     void SetMinReplicas(const uint64_t& _minReplicas);
 
@@ -122,13 +122,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最大副本数
+                     * 最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      */
                     uint64_t m_maxReplicas;
                     bool m_maxReplicasHasBeenSet;
 
                     /**
-                     * 最小副本数
+                     * 最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      */
                     uint64_t m_minReplicas;
                     bool m_minReplicasHasBeenSet;

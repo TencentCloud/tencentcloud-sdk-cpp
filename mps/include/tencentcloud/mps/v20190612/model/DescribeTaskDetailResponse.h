@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
+#include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamProcessTask.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
@@ -48,9 +49,11 @@ namespace TencentCloud
                     /**
                      * 获取任务类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
+<li>EditMediaTask：视频编辑任务。</li>
 <li>LiveStreamProcessTask：直播流处理任务。</li>
                      * @return TaskType 任务类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
+<li>EditMediaTask：视频编辑任务。</li>
 <li>LiveStreamProcessTask：直播流处理任务。</li>
                      */
                     std::string GetTaskType() const;
@@ -80,8 +83,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return CreateTime 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return CreateTime 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetCreateTime() const;
 
@@ -92,8 +95,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetBeginProcessTime() const;
 
@@ -104,8 +107,8 @@ namespace TencentCloud
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string GetFinishTime() const;
 
@@ -128,6 +131,20 @@ namespace TencentCloud
                      * @return WorkflowTask 是否已赋值
                      */
                     bool WorkflowTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EditMediaTask 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EditMediaTask GetEditMediaTask() const;
+
+                    /**
+                     * 判断参数 EditMediaTask 是否已赋值
+                     * @return EditMediaTask 是否已赋值
+                     */
+                    bool EditMediaTaskHasBeenSet() const;
 
                     /**
                      * 获取直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。
@@ -198,6 +215,7 @@ namespace TencentCloud
                     /**
                      * 任务类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
+<li>EditMediaTask：视频编辑任务。</li>
 <li>LiveStreamProcessTask：直播流处理任务。</li>
                      */
                     std::string m_taskType;
@@ -213,19 +231,19 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
-                     * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
@@ -236,6 +254,13 @@ namespace TencentCloud
                      */
                     WorkflowTask m_workflowTask;
                     bool m_workflowTaskHasBeenSet;
+
+                    /**
+                     * 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EditMediaTask m_editMediaTask;
+                    bool m_editMediaTaskHasBeenSet;
 
                     /**
                      * 直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。

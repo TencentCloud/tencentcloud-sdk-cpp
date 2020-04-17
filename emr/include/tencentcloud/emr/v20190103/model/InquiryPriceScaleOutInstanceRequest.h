@@ -43,14 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间单位。s:按量用例单位。m:包年包月用例单位
-                     * @return TimeUnit 时间单位。s:按量用例单位。m:包年包月用例单位
+                     * 获取扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @return TimeUnit 扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时间单位。s:按量用例单位。m:包年包月用例单位
-                     * @param TimeUnit 时间单位。s:按量用例单位。m:包年包月用例单位
+                     * 设置扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @param TimeUnit 扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -61,14 +69,22 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取时间长度。按量用例长度为3600。
-                     * @return TimeSpan 时间长度。按量用例长度为3600。
+                     * 获取扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @return TimeSpan 扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置时间长度。按量用例长度为3600。
-                     * @param TimeSpan 时间长度。按量用例长度为3600。
+                     * 设置扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @param TimeSpan 扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
@@ -79,14 +95,14 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取Zone ID
-                     * @return ZoneId Zone ID
+                     * 获取实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。
+                     * @return ZoneId 实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置Zone ID
-                     * @param ZoneId Zone ID
+                     * 设置实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。
+                     * @param ZoneId 实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
@@ -97,14 +113,22 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取计费类型
-                     * @return PayMode 计费类型
+                     * 获取实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @return PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置计费类型
-                     * @param PayMode 计费类型
+                     * 设置实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @param PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     void SetPayMode(const uint64_t& _payMode);
 
@@ -115,14 +139,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -133,14 +157,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取扩容Core节点个数
-                     * @return CoreCount 扩容Core节点个数
+                     * 获取扩容的Core节点数量。
+                     * @return CoreCount 扩容的Core节点数量。
                      */
                     uint64_t GetCoreCount() const;
 
                     /**
-                     * 设置扩容Core节点个数
-                     * @param CoreCount 扩容Core节点个数
+                     * 设置扩容的Core节点数量。
+                     * @param CoreCount 扩容的Core节点数量。
                      */
                     void SetCoreCount(const uint64_t& _coreCount);
 
@@ -151,14 +175,14 @@ namespace TencentCloud
                     bool CoreCountHasBeenSet() const;
 
                     /**
-                     * 获取扩容Task节点个数
-                     * @return TaskCount 扩容Task节点个数
+                     * 获取扩容的Task节点数量。
+                     * @return TaskCount 扩容的Task节点数量。
                      */
                     uint64_t GetTaskCount() const;
 
                     /**
-                     * 设置扩容Task节点个数
-                     * @param TaskCount 扩容Task节点个数
+                     * 设置扩容的Task节点数量。
+                     * @param TaskCount 扩容的Task节点数量。
                      */
                     void SetTaskCount(const uint64_t& _taskCount);
 
@@ -169,14 +193,18 @@ namespace TencentCloud
                     bool TaskCountHasBeenSet() const;
 
                     /**
-                     * 获取货币种类
-                     * @return Currency 货币种类
+                     * 获取货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @return Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string GetCurrency() const;
 
                     /**
-                     * 设置货币种类
-                     * @param Currency 货币种类
+                     * 设置货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @param Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     void SetCurrency(const std::string& _currency);
 
@@ -186,55 +214,86 @@ namespace TencentCloud
                      */
                     bool CurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取扩容的Router节点数量。
+                     * @return RouterCount 扩容的Router节点数量。
+                     */
+                    uint64_t GetRouterCount() const;
+
+                    /**
+                     * 设置扩容的Router节点数量。
+                     * @param RouterCount 扩容的Router节点数量。
+                     */
+                    void SetRouterCount(const uint64_t& _routerCount);
+
+                    /**
+                     * 判断参数 RouterCount 是否已赋值
+                     * @return RouterCount 是否已赋值
+                     */
+                    bool RouterCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时间单位。s:按量用例单位。m:包年包月用例单位
+                     * 扩容的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 时间长度。按量用例长度为3600。
+                     * 扩容的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * Zone ID
+                     * 实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 计费类型
+                     * 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 扩容Core节点个数
+                     * 扩容的Core节点数量。
                      */
                     uint64_t m_coreCount;
                     bool m_coreCountHasBeenSet;
 
                     /**
-                     * 扩容Task节点个数
+                     * 扩容的Task节点数量。
                      */
                     uint64_t m_taskCount;
                     bool m_taskCountHasBeenSet;
 
                     /**
-                     * 货币种类
+                     * 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
+
+                    /**
+                     * 扩容的Router节点数量。
+                     */
+                    uint64_t m_routerCount;
+                    bool m_routerCountHasBeenSet;
 
                 };
             }

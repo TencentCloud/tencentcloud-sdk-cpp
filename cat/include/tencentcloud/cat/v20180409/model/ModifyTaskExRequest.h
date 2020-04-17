@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CatTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取拨测的url  例如：www.qq.com (url域名解析需要能解析出具体的ip)
-                     * @return Url 拨测的url  例如：www.qq.com (url域名解析需要能解析出具体的ip)
+                     * 获取拨测的URL，例如：www.qq.com (URL域名解析需要能解析出具体的IP)
+                     * @return Url 拨测的URL，例如：www.qq.com (URL域名解析需要能解析出具体的IP)
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置拨测的url  例如：www.qq.com (url域名解析需要能解析出具体的ip)
-                     * @param Url 拨测的url  例如：www.qq.com (url域名解析需要能解析出具体的ip)
+                     * 设置拨测的URL，例如：www.qq.com (URL域名解析需要能解析出具体的IP)
+                     * @param Url 拨测的URL，例如：www.qq.com (URL域名解析需要能解析出具体的IP)
                      */
                     void SetUrl(const std::string& _url);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取验证成功的拨测任务id
-                     * @return TaskId 验证成功的拨测任务id
+                     * 获取验证成功的拨测任务ID
+                     * @return TaskId 验证成功的拨测任务ID
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置验证成功的拨测任务id
-                     * @param TaskId 验证成功的拨测任务id
+                     * 设置验证成功的拨测任务ID
+                     * @param TaskId 验证成功的拨测任务ID
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。注意，Type为0时，AgentGroupId为必填
-                     * @return AgentGroupId 拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。注意，Type为0时，AgentGroupId为必填
+                     * 获取拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填
+                     * @return AgentGroupId 拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填
                      */
                     uint64_t GetAgentGroupId() const;
 
                     /**
-                     * 设置拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。注意，Type为0时，AgentGroupId为必填
-                     * @param AgentGroupId 拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。注意，Type为0时，AgentGroupId为必填
+                     * 设置拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填
+                     * @param AgentGroupId 拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填
                      */
                     void SetAgentGroupId(const uint64_t& _agentGroupId);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）
-                     * @return IsHeader 是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）
+                     * 获取是否为Header请求（非0 发起Header 请求。为0，且PostData非空，发起POST请求。为0，PostData为空，发起GET请求）
+                     * @return IsHeader 是否为Header请求（非0 发起Header 请求。为0，且PostData非空，发起POST请求。为0，PostData为空，发起GET请求）
                      */
                     uint64_t GetIsHeader() const;
 
                     /**
-                     * 设置是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）
-                     * @param IsHeader 是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）
+                     * 设置是否为Header请求（非0 发起Header 请求。为0，且PostData非空，发起POST请求。为0，PostData为空，发起GET请求）
+                     * @param IsHeader 是否为Header请求（非0 发起Header 请求。为0，且PostData非空，发起POST请求。为0，PostData为空，发起GET请求）
                      */
                     void SetIsHeader(const uint64_t& _isHeader);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool IsHeaderHasBeenSet() const;
 
                     /**
-                     * 获取url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
-                     * @return SslVer url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
+                     * 获取URL中含有"https"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
+                     * @return SslVer URL中含有"https"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
                      */
                     std::string GetSslVer() const;
 
                     /**
-                     * 设置url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
-                     * @param SslVer url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
+                     * 设置URL中含有"https"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
+                     * @param SslVer URL中含有"https"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
                      */
                     void SetSslVer(const std::string& _sslVer);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool SslVerHasBeenSet() const;
 
                     /**
-                     * 获取POST 请求数据。空字符串表示非POST请求
-                     * @return PostData POST 请求数据。空字符串表示非POST请求
+                     * 获取POST 请求数据，空字符串表示非POST请求
+                     * @return PostData POST 请求数据，空字符串表示非POST请求
                      */
                     std::string GetPostData() const;
 
                     /**
-                     * 设置POST 请求数据。空字符串表示非POST请求
-                     * @param PostData POST 请求数据。空字符串表示非POST请求
+                     * 设置POST 请求数据，空字符串表示非POST请求
+                     * @param PostData POST 请求数据，空字符串表示非POST请求
                      */
                     void SetPostData(const std::string& _postData);
 
@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool PostDataHasBeenSet() const;
 
                     /**
-                     * 获取用户agent 信息
-                     * @return UserAgent 用户agent 信息
+                     * 获取用户Agent信息
+                     * @return UserAgent 用户Agent信息
                      */
                     std::string GetUserAgent() const;
 
                     /**
-                     * 设置用户agent 信息
-                     * @param UserAgent 用户agent 信息
+                     * 设置用户Agent信息
+                     * @param UserAgent 用户Agent信息
                      */
                     void SetUserAgent(const std::string& _userAgent);
 
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool CheckStrHasBeenSet() const;
 
                     /**
-                     * 获取1 表示通过检查结果是否包含checkStr 进行校验
-                     * @return CheckType 1 表示通过检查结果是否包含checkStr 进行校验
+                     * 获取1 表示通过检查结果是否包含CheckStr 进行校验
+                     * @return CheckType 1 表示通过检查结果是否包含CheckStr 进行校验
                      */
                     uint64_t GetCheckType() const;
 
                     /**
-                     * 设置1 表示通过检查结果是否包含checkStr 进行校验
-                     * @param CheckType 1 表示通过检查结果是否包含checkStr 进行校验
+                     * 设置1 表示通过检查结果是否包含CheckStr 进行校验
+                     * @param CheckType 1 表示通过检查结果是否包含CheckStr 进行校验
                      */
                     void SetCheckType(const uint64_t& _checkType);
 
@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool CheckTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要设置的cookie信息
-                     * @return Cookie 需要设置的cookie信息
+                     * 获取需要设置的Cookie信息
+                     * @return Cookie 需要设置的Cookie信息
                      */
                     std::string GetCookie() const;
 
                     /**
-                     * 设置需要设置的cookie信息
-                     * @param Cookie 需要设置的cookie信息
+                     * 设置需要设置的Cookie信息
+                     * @param Cookie 需要设置的Cookie信息
                      */
                     void SetCookie(const std::string& _cookie);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool CookieHasBeenSet() const;
 
                     /**
-                     * 获取登陆服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测。
-                     * @return UserName 登陆服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测。
+                     * 获取登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测
+                     * @return UserName 登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置登陆服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测。
-                     * @param UserName 登陆服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测。
+                     * 设置登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测
+                     * @param UserName 登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -331,14 +331,14 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取登陆服务器的密码
-                     * @return PassWord 登陆服务器的密码
+                     * 获取登录服务器的密码
+                     * @return PassWord 登录服务器的密码
                      */
                     std::string GetPassWord() const;
 
                     /**
-                     * 设置登陆服务器的密码
-                     * @param PassWord 登陆服务器的密码
+                     * 设置登录服务器的密码
+                     * @param PassWord 登录服务器的密码
                      */
                     void SetPassWord(const std::string& _passWord);
 
@@ -349,14 +349,14 @@ namespace TencentCloud
                     bool PassWordHasBeenSet() const;
 
                     /**
-                     * 获取缺省为0。0 表示请求为字符串类型。1表示为二进制类型
-                     * @return ReqDataType 缺省为0。0 表示请求为字符串类型。1表示为二进制类型
+                     * 获取缺省为0，0 表示请求为字符串类型, 1表示为二进制类型
+                     * @return ReqDataType 缺省为0，0 表示请求为字符串类型, 1表示为二进制类型
                      */
                     uint64_t GetReqDataType() const;
 
                     /**
-                     * 设置缺省为0。0 表示请求为字符串类型。1表示为二进制类型
-                     * @param ReqDataType 缺省为0。0 表示请求为字符串类型。1表示为二进制类型
+                     * 设置缺省为0，0 表示请求为字符串类型, 1表示为二进制类型
+                     * @param ReqDataType 缺省为0，0 表示请求为字符串类型, 1表示为二进制类型
                      */
                     void SetReqDataType(const uint64_t& _reqDataType);
 
@@ -367,14 +367,14 @@ namespace TencentCloud
                     bool ReqDataTypeHasBeenSet() const;
 
                     /**
-                     * 获取发起tcp, udp请求的协议请求数据
-                     * @return ReqData 发起tcp, udp请求的协议请求数据
+                     * 获取发起TCP, UDP请求的协议请求数据
+                     * @return ReqData 发起TCP, UDP请求的协议请求数据
                      */
                     std::string GetReqData() const;
 
                     /**
-                     * 设置发起tcp, udp请求的协议请求数据
-                     * @param ReqData 发起tcp, udp请求的协议请求数据
+                     * 设置发起TCP, UDP请求的协议请求数据
+                     * @param ReqData 发起TCP, UDP请求的协议请求数据
                      */
                     void SetReqData(const std::string& _reqData);
 
@@ -403,14 +403,14 @@ namespace TencentCloud
                     bool RespDataTypeHasBeenSet() const;
 
                     /**
-                     * 获取预期的udp请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
-                     * @return RespData 预期的udp请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
+                     * 获取预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
+                     * @return RespData 预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
                      */
                     std::string GetRespData() const;
 
                     /**
-                     * 设置预期的udp请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
-                     * @param RespData 预期的udp请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
+                     * 设置预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
+                     * @param RespData 预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
                      */
                     void SetRespData(const std::string& _respData);
 
@@ -421,14 +421,14 @@ namespace TencentCloud
                     bool RespDataHasBeenSet() const;
 
                     /**
-                     * 获取目的dns服务器  可以为空字符串
-                     * @return DnsSvr 目的dns服务器  可以为空字符串
+                     * 获取目的DNS服务器，可以为空字符串
+                     * @return DnsSvr 目的DNS服务器，可以为空字符串
                      */
                     std::string GetDnsSvr() const;
 
                     /**
-                     * 设置目的dns服务器  可以为空字符串
-                     * @param DnsSvr 目的dns服务器  可以为空字符串
+                     * 设置目的DNS服务器，可以为空字符串
+                     * @param DnsSvr 目的DNS服务器，可以为空字符串
                      */
                     void SetDnsSvr(const std::string& _dnsSvr);
 
@@ -439,14 +439,14 @@ namespace TencentCloud
                     bool DnsSvrHasBeenSet() const;
 
                     /**
-                     * 获取需要检验是否在dns ip列表的ip。可以为空字符串，表示不校验
-                     * @return DnsCheckIp 需要检验是否在dns ip列表的ip。可以为空字符串，表示不校验
+                     * 获取需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验
+                     * @return DnsCheckIp 需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验
                      */
                     std::string GetDnsCheckIp() const;
 
                     /**
-                     * 设置需要检验是否在dns ip列表的ip。可以为空字符串，表示不校验
-                     * @param DnsCheckIp 需要检验是否在dns ip列表的ip。可以为空字符串，表示不校验
+                     * 设置需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验
+                     * @param DnsCheckIp 需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验
                      */
                     void SetDnsCheckIp(const std::string& _dnsCheckIp);
 
@@ -475,14 +475,14 @@ namespace TencentCloud
                     bool DnsQueryTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否使用安全链接ssl  0 不使用，1 使用
-                     * @return UseSecConn 是否使用安全链接ssl  0 不使用，1 使用
+                     * 获取是否使用安全链接SSL， 0 不使用，1 使用
+                     * @return UseSecConn 是否使用安全链接SSL， 0 不使用，1 使用
                      */
                     uint64_t GetUseSecConn() const;
 
                     /**
-                     * 设置是否使用安全链接ssl  0 不使用，1 使用
-                     * @param UseSecConn 是否使用安全链接ssl  0 不使用，1 使用
+                     * 设置是否使用安全链接SSL， 0 不使用，1 使用
+                     * @param UseSecConn 是否使用安全链接SSL， 0 不使用，1 使用
                      */
                     void SetUseSecConn(const uint64_t& _useSecConn);
 
@@ -493,14 +493,14 @@ namespace TencentCloud
                     bool UseSecConnHasBeenSet() const;
 
                     /**
-                     * 获取ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
-                     * @return NeedAuth ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
+                     * 获取FTP登录验证方式，  0 不验证  1 匿名登录  2 需要身份验证
+                     * @return NeedAuth FTP登录验证方式，  0 不验证  1 匿名登录  2 需要身份验证
                      */
                     uint64_t GetNeedAuth() const;
 
                     /**
-                     * 设置ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
-                     * @param NeedAuth ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
+                     * 设置FTP登录验证方式，  0 不验证  1 匿名登录  2 需要身份验证
+                     * @param NeedAuth FTP登录验证方式，  0 不验证  1 匿名登录  2 需要身份验证
                      */
                     void SetNeedAuth(const uint64_t& _needAuth);
 
@@ -555,7 +555,7 @@ namespace TencentCloud
                     bool m_catTypeNameHasBeenSet;
 
                     /**
-                     * 拨测的url  例如：www.qq.com (url域名解析需要能解析出具体的ip)
+                     * 拨测的URL，例如：www.qq.com (URL域名解析需要能解析出具体的IP)
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -573,13 +573,13 @@ namespace TencentCloud
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 验证成功的拨测任务id
+                     * 验证成功的拨测任务ID
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 拨测分组id，体现本拨测任务要采用那些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的groupId的值。注意，Type为0时，AgentGroupId为必填
+                     * 拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填
                      */
                     uint64_t m_agentGroupId;
                     bool m_agentGroupIdHasBeenSet;
@@ -597,25 +597,25 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）
+                     * 是否为Header请求（非0 发起Header 请求。为0，且PostData非空，发起POST请求。为0，PostData为空，发起GET请求）
                      */
                     uint64_t m_isHeader;
                     bool m_isHeaderHasBeenSet;
 
                     /**
-                     * url中含有https时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
+                     * URL中含有"https"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一
                      */
                     std::string m_sslVer;
                     bool m_sslVerHasBeenSet;
 
                     /**
-                     * POST 请求数据。空字符串表示非POST请求
+                     * POST 请求数据，空字符串表示非POST请求
                      */
                     std::string m_postData;
                     bool m_postDataHasBeenSet;
 
                     /**
-                     * 用户agent 信息
+                     * 用户Agent信息
                      */
                     std::string m_userAgent;
                     bool m_userAgentHasBeenSet;
@@ -627,37 +627,37 @@ namespace TencentCloud
                     bool m_checkStrHasBeenSet;
 
                     /**
-                     * 1 表示通过检查结果是否包含checkStr 进行校验
+                     * 1 表示通过检查结果是否包含CheckStr 进行校验
                      */
                     uint64_t m_checkType;
                     bool m_checkTypeHasBeenSet;
 
                     /**
-                     * 需要设置的cookie信息
+                     * 需要设置的Cookie信息
                      */
                     std::string m_cookie;
                     bool m_cookieHasBeenSet;
 
                     /**
-                     * 登陆服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测。
+                     * 登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 登陆服务器的密码
+                     * 登录服务器的密码
                      */
                     std::string m_passWord;
                     bool m_passWordHasBeenSet;
 
                     /**
-                     * 缺省为0。0 表示请求为字符串类型。1表示为二进制类型
+                     * 缺省为0，0 表示请求为字符串类型, 1表示为二进制类型
                      */
                     uint64_t m_reqDataType;
                     bool m_reqDataTypeHasBeenSet;
 
                     /**
-                     * 发起tcp, udp请求的协议请求数据
+                     * 发起TCP, UDP请求的协议请求数据
                      */
                     std::string m_reqData;
                     bool m_reqDataHasBeenSet;
@@ -669,19 +669,19 @@ namespace TencentCloud
                     bool m_respDataTypeHasBeenSet;
 
                     /**
-                     * 预期的udp请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
+                     * 预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过
                      */
                     std::string m_respData;
                     bool m_respDataHasBeenSet;
 
                     /**
-                     * 目的dns服务器  可以为空字符串
+                     * 目的DNS服务器，可以为空字符串
                      */
                     std::string m_dnsSvr;
                     bool m_dnsSvrHasBeenSet;
 
                     /**
-                     * 需要检验是否在dns ip列表的ip。可以为空字符串，表示不校验
+                     * 需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验
                      */
                     std::string m_dnsCheckIp;
                     bool m_dnsCheckIpHasBeenSet;
@@ -693,13 +693,13 @@ namespace TencentCloud
                     bool m_dnsQueryTypeHasBeenSet;
 
                     /**
-                     * 是否使用安全链接ssl  0 不使用，1 使用
+                     * 是否使用安全链接SSL， 0 不使用，1 使用
                      */
                     uint64_t m_useSecConn;
                     bool m_useSecConnHasBeenSet;
 
                     /**
-                     * ftp登陆验证方式  0 不验证  1 匿名登陆  2 需要身份验证
+                     * FTP登录验证方式，  0 不验证  1 匿名登录  2 需要身份验证
                      */
                     uint64_t m_needAuth;
                     bool m_needAuthHasBeenSet;

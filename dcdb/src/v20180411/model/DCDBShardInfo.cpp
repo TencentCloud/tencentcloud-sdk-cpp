@@ -44,7 +44,8 @@ DCDBShardInfo::DCDBShardInfo() :
     m_proxyVersionHasBeenSet(false),
     m_paymodeHasBeenSet(false),
     m_shardMasterZoneHasBeenSet(false),
-    m_shardSlaveZonesHasBeenSet(false)
+    m_shardSlaveZonesHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -286,6 +287,16 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
         m_shardSlaveZonesHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBShardInfo.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetInt64();
+        m_cpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -480,6 +491,14 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
     }
 
 }
@@ -851,5 +870,21 @@ void DCDBShardInfo::SetShardSlaveZones(const vector<string>& _shardSlaveZones)
 bool DCDBShardInfo::ShardSlaveZonesHasBeenSet() const
 {
     return m_shardSlaveZonesHasBeenSet;
+}
+
+int64_t DCDBShardInfo::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DCDBShardInfo::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DCDBShardInfo::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 

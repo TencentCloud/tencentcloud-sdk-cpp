@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool VoucherIdsHasBeenSet() const;
 
+                    /**
+                     * 获取活动ID
+                     * @return ActivityId 活动ID
+                     */
+                    int64_t GetActivityId() const;
+
+                    /**
+                     * 设置活动ID
+                     * @param ActivityId 活动ID
+                     */
+                    void SetActivityId(const int64_t& _activityId);
+
+                    /**
+                     * 判断参数 ActivityId 是否已赋值
+                     * @return ActivityId 是否已赋值
+                     */
+                    bool ActivityIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
+
+                    /**
+                     * 活动ID
+                     */
+                    int64_t m_activityId;
+                    bool m_activityIdHasBeenSet;
 
                 };
             }

@@ -27,7 +27,8 @@ VpcInfo::VpcInfo() :
     m_cidrBlockHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_intVpcIdHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome VpcInfo::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IntVpcId") && !value["IntVpcId"].IsNull())
+    {
+        if (!value["IntVpcId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VpcInfo.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intVpcId = value["IntVpcId"].GetUint64();
+        m_intVpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void VpcInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intVpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IntVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intVpcId, allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void VpcInfo::SetCreateTime(const string& _createTime)
 bool VpcInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t VpcInfo::GetIntVpcId() const
+{
+    return m_intVpcId;
+}
+
+void VpcInfo::SetIntVpcId(const uint64_t& _intVpcId)
+{
+    m_intVpcId = _intVpcId;
+    m_intVpcIdHasBeenSet = true;
+}
+
+bool VpcInfo::IntVpcIdHasBeenSet() const
+{
+    return m_intVpcIdHasBeenSet;
 }
 

@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool VpcPeerConnectionNameHasBeenSet() const;
 
                     /**
-                     * 获取对等连接状态
-                     * @return State 对等连接状态
+                     * 获取对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
+                     * @return State 对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置对等连接状态
-                     * @param State 对等连接状态
+                     * 设置对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
+                     * @param State 对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
                      */
                     void SetState(const std::string& _state);
 
@@ -403,7 +403,7 @@ namespace TencentCloud
                     bool m_vpcPeerConnectionNameHasBeenSet;
 
                     /**
-                     * 对等连接状态
+                     * 对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

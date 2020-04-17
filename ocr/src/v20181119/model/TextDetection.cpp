@@ -25,7 +25,8 @@ TextDetection::TextDetection() :
     m_detectedTextHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_polygonHasBeenSet(false),
-    m_advancedInfoHasBeenSet(false)
+    m_advancedInfoHasBeenSet(false),
+    m_itemPolygonHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,23 @@ CoreInternalOutcome TextDetection::Deserialize(const Value &value)
         m_advancedInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemPolygon") && !value["ItemPolygon"].IsNull())
+    {
+        if (!value["ItemPolygon"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TextDetection.ItemPolygon` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_itemPolygon.Deserialize(value["ItemPolygon"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_itemPolygonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +146,15 @@ void TextDetection::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemPolygonHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ItemPolygon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_itemPolygon.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -195,5 +222,21 @@ void TextDetection::SetAdvancedInfo(const string& _advancedInfo)
 bool TextDetection::AdvancedInfoHasBeenSet() const
 {
     return m_advancedInfoHasBeenSet;
+}
+
+ItemCoord TextDetection::GetItemPolygon() const
+{
+    return m_itemPolygon;
+}
+
+void TextDetection::SetItemPolygon(const ItemCoord& _itemPolygon)
+{
+    m_itemPolygon = _itemPolygon;
+    m_itemPolygonHasBeenSet = true;
+}
+
+bool TextDetection::ItemPolygonHasBeenSet() const
+{
+    return m_itemPolygonHasBeenSet;
 }
 

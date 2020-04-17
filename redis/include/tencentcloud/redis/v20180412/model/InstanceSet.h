@@ -708,6 +708,160 @@ namespace TencentCloud
                      */
                     bool NoAuthHasBeenSet() const;
 
+                    /**
+                     * 获取客户端连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientLimit 客户端连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClientLimit() const;
+
+                    /**
+                     * 设置客户端连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientLimit 客户端连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientLimit(const int64_t& _clientLimit);
+
+                    /**
+                     * 判断参数 ClientLimit 是否已赋值
+                     * @return ClientLimit 是否已赋值
+                     */
+                    bool ClientLimitHasBeenSet() const;
+
+                    /**
+                     * 获取DTS状态（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DtsStatus DTS状态（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDtsStatus() const;
+
+                    /**
+                     * 设置DTS状态（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DtsStatus DTS状态（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDtsStatus(const int64_t& _dtsStatus);
+
+                    /**
+                     * 判断参数 DtsStatus 是否已赋值
+                     * @return DtsStatus 是否已赋值
+                     */
+                    bool DtsStatusHasBeenSet() const;
+
+                    /**
+                     * 获取分片带宽上限，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetLimit 分片带宽上限，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNetLimit() const;
+
+                    /**
+                     * 设置分片带宽上限，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetLimit 分片带宽上限，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetLimit(const int64_t& _netLimit);
+
+                    /**
+                     * 判断参数 NetLimit 是否已赋值
+                     * @return NetLimit 是否已赋值
+                     */
+                    bool NetLimitHasBeenSet() const;
+
+                    /**
+                     * 获取免密实例标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PasswordFree 免密实例标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPasswordFree() const;
+
+                    /**
+                     * 设置免密实例标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PasswordFree 免密实例标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPasswordFree(const int64_t& _passwordFree);
+
+                    /**
+                     * 判断参数 PasswordFree 是否已赋值
+                     * @return PasswordFree 是否已赋值
+                     */
+                    bool PasswordFreeHasBeenSet() const;
+
+                    /**
+                     * 获取实例只读标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadOnly 实例只读标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReadOnly() const;
+
+                    /**
+                     * 设置实例只读标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReadOnly 实例只读标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReadOnly(const int64_t& _readOnly);
+
+                    /**
+                     * 判断参数 ReadOnly 是否已赋值
+                     * @return ReadOnly 是否已赋值
+                     */
+                    bool ReadOnlyHasBeenSet() const;
+
+                    /**
+                     * 获取内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vip6 内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVip6() const;
+
+                    /**
+                     * 设置内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Vip6 内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVip6(const std::string& _vip6);
+
+                    /**
+                     * 判断参数 Vip6 是否已赋值
+                     * @return Vip6 是否已赋值
+                     */
+                    bool Vip6HasBeenSet() const;
+
+                    /**
+                     * 获取内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemainBandwidthDuration 内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRemainBandwidthDuration() const;
+
+                    /**
+                     * 设置内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemainBandwidthDuration 内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemainBandwidthDuration(const std::string& _remainBandwidthDuration);
+
+                    /**
+                     * 判断参数 RemainBandwidthDuration 是否已赋值
+                     * @return RemainBandwidthDuration 是否已赋值
+                     */
+                    bool RemainBandwidthDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -928,6 +1082,55 @@ namespace TencentCloud
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
+
+                    /**
+                     * 客户端连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clientLimit;
+                    bool m_clientLimitHasBeenSet;
+
+                    /**
+                     * DTS状态（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dtsStatus;
+                    bool m_dtsStatusHasBeenSet;
+
+                    /**
+                     * 分片带宽上限，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_netLimit;
+                    bool m_netLimitHasBeenSet;
+
+                    /**
+                     * 免密实例标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_passwordFree;
+                    bool m_passwordFreeHasBeenSet;
+
+                    /**
+                     * 实例只读标识（内部参数，用户可忽略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_readOnly;
+                    bool m_readOnlyHasBeenSet;
+
+                    /**
+                     * 内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vip6;
+                    bool m_vip6HasBeenSet;
+
+                    /**
+                     * 内部参数，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remainBandwidthDuration;
+                    bool m_remainBandwidthDurationHasBeenSet;
 
                 };
             }

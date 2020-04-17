@@ -82,7 +82,7 @@ CoreInternalOutcome DescribeTablesInRecycleResponse::Deserialize(const string &p
         const Value &tmpValue = rsp["TableInfos"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TableInfo item;
+            TableInfoNew item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -109,7 +109,7 @@ bool DescribeTablesInRecycleResponse::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-vector<TableInfo> DescribeTablesInRecycleResponse::GetTableInfos() const
+vector<TableInfoNew> DescribeTablesInRecycleResponse::GetTableInfos() const
 {
     return m_tableInfos;
 }

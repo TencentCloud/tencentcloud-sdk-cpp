@@ -107,6 +107,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeDeployGroupListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDeviceMonitorInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDeviceMonitorInfoResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeErrorLogDataRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeErrorLogDataResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h>
@@ -121,6 +123,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeSlowLogDataRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeSlowLogDataResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesRequest.h>
@@ -337,6 +341,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDeviceMonitorInfoResponse> DescribeDeviceMonitorInfoOutcome;
                 typedef std::future<DescribeDeviceMonitorInfoOutcome> DescribeDeviceMonitorInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDeviceMonitorInfoRequest&, DescribeDeviceMonitorInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceMonitorInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeErrorLogDataResponse> DescribeErrorLogDataOutcome;
+                typedef std::future<DescribeErrorLogDataOutcome> DescribeErrorLogDataOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeErrorLogDataRequest&, DescribeErrorLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorLogDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceParamRecordsResponse> DescribeInstanceParamRecordsOutcome;
                 typedef std::future<DescribeInstanceParamRecordsOutcome> DescribeInstanceParamRecordsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceParamRecordsRequest&, DescribeInstanceParamRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamRecordsAsyncHandler;
@@ -358,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRollbackRangeTimeResponse> DescribeRollbackRangeTimeOutcome;
                 typedef std::future<DescribeRollbackRangeTimeOutcome> DescribeRollbackRangeTimeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRollbackRangeTimeRequest&, DescribeRollbackRangeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackRangeTimeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSlowLogDataResponse> DescribeSlowLogDataOutcome;
+                typedef std::future<DescribeSlowLogDataOutcome> DescribeSlowLogDataOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeSlowLogDataRequest&, DescribeSlowLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSlowLogsResponse> DescribeSlowLogsOutcome;
                 typedef std::future<DescribeSlowLogsOutcome> DescribeSlowLogsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeSlowLogsRequest&, DescribeSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogsAsyncHandler;
@@ -602,7 +612,7 @@ namespace TencentCloud
                 DeleteAccountsOutcomeCallable DeleteAccountsCallable(const Model::DeleteAccountsRequest& request);
 
                 /**
-                 *本接口(DeleteBackup)用于删除数据库备份。
+                 *本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。
                  * @param req DeleteBackupRequest
                  * @return DeleteBackupOutcome
                  */
@@ -732,7 +742,7 @@ namespace TencentCloud
                 DescribeBinlogBackupOverviewOutcomeCallable DescribeBinlogBackupOverviewCallable(const Model::DescribeBinlogBackupOverviewRequest& request);
 
                 /**
-                 *本接口(DescribeBinlogs)用于查询云数据库实例的二进制数据。
+                 *本接口(DescribeBinlogs)用于查询云数据库实例的 binlog 文件列表。
                  * @param req DescribeBinlogsRequest
                  * @return DescribeBinlogsOutcome
                  */
@@ -878,6 +888,15 @@ namespace TencentCloud
                 DescribeDeviceMonitorInfoOutcomeCallable DescribeDeviceMonitorInfoCallable(const Model::DescribeDeviceMonitorInfoRequest& request);
 
                 /**
+                 *根据检索条件查询实例错误日志详情。只能查询一个月之内的错误日志。
+                 * @param req DescribeErrorLogDataRequest
+                 * @return DescribeErrorLogDataOutcome
+                 */
+                DescribeErrorLogDataOutcome DescribeErrorLogData(const Model::DescribeErrorLogDataRequest &request);
+                void DescribeErrorLogDataAsync(const Model::DescribeErrorLogDataRequest& request, const DescribeErrorLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeErrorLogDataOutcomeCallable DescribeErrorLogDataCallable(const Model::DescribeErrorLogDataRequest& request);
+
+                /**
                  *该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。
                  * @param req DescribeInstanceParamRecordsRequest
                  * @return DescribeInstanceParamRecordsOutcome
@@ -939,6 +958,15 @@ namespace TencentCloud
                 DescribeRollbackRangeTimeOutcome DescribeRollbackRangeTime(const Model::DescribeRollbackRangeTimeRequest &request);
                 void DescribeRollbackRangeTimeAsync(const Model::DescribeRollbackRangeTimeRequest& request, const DescribeRollbackRangeTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRollbackRangeTimeOutcomeCallable DescribeRollbackRangeTimeCallable(const Model::DescribeRollbackRangeTimeRequest& request);
+
+                /**
+                 *条件检索实例的慢日志。只允许查看一个月之内的慢日志
+                 * @param req DescribeSlowLogDataRequest
+                 * @return DescribeSlowLogDataOutcome
+                 */
+                DescribeSlowLogDataOutcome DescribeSlowLogData(const Model::DescribeSlowLogDataRequest &request);
+                void DescribeSlowLogDataAsync(const Model::DescribeSlowLogDataRequest& request, const DescribeSlowLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowLogDataOutcomeCallable DescribeSlowLogDataCallable(const Model::DescribeSlowLogDataRequest& request);
 
                 /**
                  *本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。
@@ -1220,7 +1248,7 @@ namespace TencentCloud
                 ReleaseIsolatedDBInstancesOutcomeCallable ReleaseIsolatedDBInstancesCallable(const Model::ReleaseIsolatedDBInstancesRequest& request);
 
                 /**
-                 *本接口(RenewDBInstance)用于续费云数据库实例，仅支持付费模式为包年包月的实例。按量计费实例不需要续费。
+                 *本接口(RenewDBInstance)用于续费云数据库实例，支持付费模式为包年包月的实例。按量计费实例可通过该接口续费为包年包月的实例。
                  * @param req RenewDBInstanceRequest
                  * @return RenewDBInstanceOutcome
                  */

@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool TransactorPhoneHasBeenSet() const;
 
+                    /**
+                     * 获取企业联系人邮箱
+                     * @return Email 企业联系人邮箱
+                     */
+                    std::string GetEmail() const;
+
+                    /**
+                     * 设置企业联系人邮箱
+                     * @param Email 企业联系人邮箱
+                     */
+                    void SetEmail(const std::string& _email);
+
+                    /**
+                     * 判断参数 Email 是否已赋值
+                     * @return Email 是否已赋值
+                     */
+                    bool EmailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     std::string m_transactorPhone;
                     bool m_transactorPhoneHasBeenSet;
+
+                    /**
+                     * 企业联系人邮箱
+                     */
+                    std::string m_email;
+                    bool m_emailHasBeenSet;
 
                 };
             }

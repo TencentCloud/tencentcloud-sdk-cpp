@@ -98,6 +98,32 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+                     * @return AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+                     */
+                    std::string GetAspectRatio() const;
+
+                    /**
+                     * 设置画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+                     * @param AspectRatio 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+                     */
+                    void SetAspectRatio(const std::string& _aspectRatio);
+
+                    /**
+                     * 判断参数 AspectRatio 是否已赋值
+                     * @return AspectRatio 是否已赋值
+                     */
+                    bool AspectRatioHasBeenSet() const;
+
+                    /**
                      * 获取归属者。
                      * @return Owner 归属者。
                      */
@@ -134,6 +160,14 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 画布宽高比，取值有：
+<li>16:9；</li>
+<li>9:16。</li>
+                     */
+                    std::string m_aspectRatio;
+                    bool m_aspectRatioHasBeenSet;
 
                     /**
                      * 归属者。

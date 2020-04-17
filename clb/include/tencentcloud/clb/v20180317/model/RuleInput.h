@@ -268,6 +268,24 @@ namespace TencentCloud
                      */
                     bool TrpcFuncHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     * @return Quic 是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     */
+                    bool GetQuic() const;
+
+                    /**
+                     * 设置是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     * @param Quic 是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     */
+                    void SetQuic(const bool& _quic);
+
+                    /**
+                     * 判断参数 Quic 是否已赋值
+                     * @return Quic 是否已赋值
+                     */
+                    bool QuicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +360,12 @@ namespace TencentCloud
                      */
                     std::string m_trpcFunc;
                     bool m_trpcFuncHasBeenSet;
+
+                    /**
+                     * 是否开启QUIC，注意，只有HTTPS域名才能开启QUIC
+                     */
+                    bool m_quic;
+                    bool m_quicHasBeenSet;
 
                 };
             }

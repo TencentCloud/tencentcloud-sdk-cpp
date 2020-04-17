@@ -58,9 +58,7 @@ namespace TencentCloud
 
                     /**
                      * 获取处理失败的人脸信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailFaceInfoSet 处理失败的人脸信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiSampleFailFaceInfo> GetFailFaceInfoSet() const;
 
@@ -80,7 +78,6 @@ namespace TencentCloud
 
                     /**
                      * 处理失败的人脸信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiSampleFailFaceInfo> m_failFaceInfoSet;
                     bool m_failFaceInfoSetHasBeenSet;

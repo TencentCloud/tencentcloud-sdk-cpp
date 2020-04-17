@@ -29,7 +29,9 @@ AgentClientElem::AgentClientElem() :
     m_mailHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_hasOverdueBillHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_salesUinHasBeenSet(false),
+    m_salesNameHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,26 @@ CoreInternalOutcome AgentClientElem::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("SalesUin") && !value["SalesUin"].IsNull())
+    {
+        if (!value["SalesUin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentClientElem.SalesUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_salesUin = string(value["SalesUin"].GetString());
+        m_salesUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SalesName") && !value["SalesName"].IsNull())
+    {
+        if (!value["SalesName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentClientElem.SalesName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_salesName = string(value["SalesName"].GetString());
+        m_salesNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +209,22 @@ void AgentClientElem::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_salesUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_salesUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SalesName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_salesName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +356,37 @@ void AgentClientElem::SetStatus(const uint64_t& _status)
 bool AgentClientElem::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string AgentClientElem::GetSalesUin() const
+{
+    return m_salesUin;
+}
+
+void AgentClientElem::SetSalesUin(const string& _salesUin)
+{
+    m_salesUin = _salesUin;
+    m_salesUinHasBeenSet = true;
+}
+
+bool AgentClientElem::SalesUinHasBeenSet() const
+{
+    return m_salesUinHasBeenSet;
+}
+
+string AgentClientElem::GetSalesName() const
+{
+    return m_salesName;
+}
+
+void AgentClientElem::SetSalesName(const string& _salesName)
+{
+    m_salesName = _salesName;
+    m_salesNameHasBeenSet = true;
+}
+
+bool AgentClientElem::SalesNameHasBeenSet() const
+{
+    return m_salesNameHasBeenSet;
 }
 

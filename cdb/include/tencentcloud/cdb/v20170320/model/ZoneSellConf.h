@@ -300,6 +300,46 @@ namespace TencentCloud
                      */
                     bool DrZoneHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持跨可用区只读
+                     * @return IsSupportRemoteRo 是否支持跨可用区只读
+                     */
+                    bool GetIsSupportRemoteRo() const;
+
+                    /**
+                     * 设置是否支持跨可用区只读
+                     * @param IsSupportRemoteRo 是否支持跨可用区只读
+                     */
+                    void SetIsSupportRemoteRo(const bool& _isSupportRemoteRo);
+
+                    /**
+                     * 判断参数 IsSupportRemoteRo 是否已赋值
+                     * @return IsSupportRemoteRo 是否已赋值
+                     */
+                    bool IsSupportRemoteRoHasBeenSet() const;
+
+                    /**
+                     * 获取可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoteRoZone 可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetRemoteRoZone() const;
+
+                    /**
+                     * 设置可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemoteRoZone 可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemoteRoZone(const std::vector<std::string>& _remoteRoZone);
+
+                    /**
+                     * 判断参数 RemoteRoZone 是否已赋值
+                     * @return RemoteRoZone 是否已赋值
+                     */
+                    bool RemoteRoZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,6 +425,19 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_drZone;
                     bool m_drZoneHasBeenSet;
+
+                    /**
+                     * 是否支持跨可用区只读
+                     */
+                    bool m_isSupportRemoteRo;
+                    bool m_isSupportRemoteRoHasBeenSet;
+
+                    /**
+                     * 可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_remoteRoZone;
+                    bool m_remoteRoZoneHasBeenSet;
 
                 };
             }

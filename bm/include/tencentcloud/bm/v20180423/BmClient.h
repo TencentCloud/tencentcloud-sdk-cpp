@@ -111,6 +111,8 @@
 #include <tencentcloud/bm/v20180423/model/RebootDevicesResponse.h>
 #include <tencentcloud/bm/v20180423/model/RecoverDevicesRequest.h>
 #include <tencentcloud/bm/v20180423/model/RecoverDevicesResponse.h>
+#include <tencentcloud/bm/v20180423/model/ReloadDeviceOsRequest.h>
+#include <tencentcloud/bm/v20180423/model/ReloadDeviceOsResponse.h>
 #include <tencentcloud/bm/v20180423/model/RepairTaskControlRequest.h>
 #include <tencentcloud/bm/v20180423/model/RepairTaskControlResponse.h>
 #include <tencentcloud/bm/v20180423/model/ResetDevicePasswordRequest.h>
@@ -273,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RecoverDevicesResponse> RecoverDevicesOutcome;
                 typedef std::future<RecoverDevicesOutcome> RecoverDevicesOutcomeCallable;
                 typedef std::function<void(const BmClient*, const Model::RecoverDevicesRequest&, RecoverDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverDevicesAsyncHandler;
+                typedef Outcome<Error, Model::ReloadDeviceOsResponse> ReloadDeviceOsOutcome;
+                typedef std::future<ReloadDeviceOsOutcome> ReloadDeviceOsOutcomeCallable;
+                typedef std::function<void(const BmClient*, const Model::ReloadDeviceOsRequest&, ReloadDeviceOsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReloadDeviceOsAsyncHandler;
                 typedef Outcome<Error, Model::RepairTaskControlResponse> RepairTaskControlOutcome;
                 typedef std::future<RepairTaskControlOutcome> RepairTaskControlOutcomeCallable;
                 typedef std::function<void(const BmClient*, const Model::RepairTaskControlRequest&, RepairTaskControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RepairTaskControlAsyncHandler;
@@ -705,6 +710,15 @@ TaskStatus（任务状态ID）与状态中文名的对应关系如下：<br>
                 RecoverDevicesOutcome RecoverDevices(const Model::RecoverDevicesRequest &request);
                 void RecoverDevicesAsync(const Model::RecoverDevicesRequest& request, const RecoverDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecoverDevicesOutcomeCallable RecoverDevicesCallable(const Model::RecoverDevicesRequest& request);
+
+                /**
+                 *重装操作系统
+                 * @param req ReloadDeviceOsRequest
+                 * @return ReloadDeviceOsOutcome
+                 */
+                ReloadDeviceOsOutcome ReloadDeviceOs(const Model::ReloadDeviceOsRequest &request);
+                void ReloadDeviceOsAsync(const Model::ReloadDeviceOsRequest& request, const ReloadDeviceOsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReloadDeviceOsOutcomeCallable ReloadDeviceOsCallable(const Model::ReloadDeviceOsRequest& request);
 
                 /**
                  *此接口用于操作维修任务<br>

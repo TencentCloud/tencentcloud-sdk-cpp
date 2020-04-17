@@ -25,7 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 CreateDBInstancesResponse::CreateDBInstancesResponse() :
-    m_dealNamesHasBeenSet(false)
+    m_dealNamesHasBeenSet(false),
+    m_billIdHasBeenSet(false),
+    m_dBInstanceIdSetHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,29 @@ CoreInternalOutcome CreateDBInstancesResponse::Deserialize(const string &payload
         m_dealNamesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BillId") && !rsp["BillId"].IsNull())
+    {
+        if (!rsp["BillId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billId = string(rsp["BillId"].GetString());
+        m_billIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DBInstanceIdSet") && !rsp["DBInstanceIdSet"].IsNull())
+    {
+        if (!rsp["DBInstanceIdSet"].IsArray())
+            return CoreInternalOutcome(Error("response `DBInstanceIdSet` is not array type"));
+
+        const Value &tmpValue = rsp["DBInstanceIdSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dBInstanceIdSet.push_back((*itr).GetString());
+        }
+        m_dBInstanceIdSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +114,26 @@ vector<string> CreateDBInstancesResponse::GetDealNames() const
 bool CreateDBInstancesResponse::DealNamesHasBeenSet() const
 {
     return m_dealNamesHasBeenSet;
+}
+
+string CreateDBInstancesResponse::GetBillId() const
+{
+    return m_billId;
+}
+
+bool CreateDBInstancesResponse::BillIdHasBeenSet() const
+{
+    return m_billIdHasBeenSet;
+}
+
+vector<string> CreateDBInstancesResponse::GetDBInstanceIdSet() const
+{
+    return m_dBInstanceIdSet;
+}
+
+bool CreateDBInstancesResponse::DBInstanceIdSetHasBeenSet() const
+{
+    return m_dBInstanceIdSetHasBeenSet;
 }
 
 

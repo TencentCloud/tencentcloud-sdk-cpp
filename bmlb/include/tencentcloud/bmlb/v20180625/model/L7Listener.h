@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool AddTimestampHasBeenSet() const;
 
                     /**
-                     * 获取https转发类型。0：关闭。1：spdy。2：http2。3：spdy+http2。
-                     * @return ForwardProtocol https转发类型。0：关闭。1：spdy。2：http2。3：spdy+http2。
+                     * 获取https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
+                     * @return ForwardProtocol https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
                      */
                     int64_t GetForwardProtocol() const;
 
                     /**
-                     * 设置https转发类型。0：关闭。1：spdy。2：http2。3：spdy+http2。
-                     * @param ForwardProtocol https转发类型。0：关闭。1：spdy。2：http2。3：spdy+http2。
+                     * 设置https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
+                     * @param ForwardProtocol https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
                      */
                     void SetForwardProtocol(const int64_t& _forwardProtocol);
 
@@ -331,7 +331,7 @@ namespace TencentCloud
                     bool m_addTimestampHasBeenSet;
 
                     /**
-                     * https转发类型。0：关闭。1：spdy。2：http2。3：spdy+http2。
+                     * https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
                      */
                     int64_t m_forwardProtocol;
                     bool m_forwardProtocolHasBeenSet;

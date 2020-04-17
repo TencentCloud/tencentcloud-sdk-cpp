@@ -272,6 +272,112 @@ namespace TencentCloud
                      */
                     bool PropertyHasBeenSet() const;
 
+                    /**
+                     * 获取集群当前master数量
+                     * @return ClusterMaterNodeNum 集群当前master数量
+                     */
+                    uint64_t GetClusterMaterNodeNum() const;
+
+                    /**
+                     * 设置集群当前master数量
+                     * @param ClusterMaterNodeNum 集群当前master数量
+                     */
+                    void SetClusterMaterNodeNum(const uint64_t& _clusterMaterNodeNum);
+
+                    /**
+                     * 判断参数 ClusterMaterNodeNum 是否已赋值
+                     * @return ClusterMaterNodeNum 是否已赋值
+                     */
+                    bool ClusterMaterNodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取集群使用镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageId 集群使用镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置集群使用镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageId 集群使用镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     */
+                    bool ImageIdHasBeenSet() const;
+
+                    /**
+                     * 获取OsCustomizeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OsCustomizeType OsCustomizeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOsCustomizeType() const;
+
+                    /**
+                     * 设置OsCustomizeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OsCustomizeType OsCustomizeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOsCustomizeType(const std::string& _osCustomizeType);
+
+                    /**
+                     * 判断参数 OsCustomizeType 是否已赋值
+                     * @return OsCustomizeType 是否已赋值
+                     */
+                    bool OsCustomizeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群运行环境docker或container
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerRuntime 集群运行环境docker或container
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerRuntime() const;
+
+                    /**
+                     * 设置集群运行环境docker或container
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerRuntime 集群运行环境docker或container
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerRuntime(const std::string& _containerRuntime);
+
+                    /**
+                     * 判断参数 ContainerRuntime 是否已赋值
+                     * @return ContainerRuntime 是否已赋值
+                     */
+                    bool ContainerRuntimeHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +453,40 @@ namespace TencentCloud
                      */
                     std::string m_property;
                     bool m_propertyHasBeenSet;
+
+                    /**
+                     * 集群当前master数量
+                     */
+                    uint64_t m_clusterMaterNodeNum;
+                    bool m_clusterMaterNodeNumHasBeenSet;
+
+                    /**
+                     * 集群使用镜像id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
+
+                    /**
+                     * OsCustomizeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_osCustomizeType;
+                    bool m_osCustomizeTypeHasBeenSet;
+
+                    /**
+                     * 集群运行环境docker或container
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerRuntime;
+                    bool m_containerRuntimeHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 ModifyHostsAttributeRequest::ModifyHostsAttributeRequest() :
     m_hostIdsHasBeenSet(false),
     m_hostNameHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string ModifyHostsAttributeRequest::ToJsonString() const
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void ModifyHostsAttributeRequest::SetRenewFlag(const string& _renewFlag)
 bool ModifyHostsAttributeRequest::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+uint64_t ModifyHostsAttributeRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ModifyHostsAttributeRequest::SetProjectId(const uint64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ModifyHostsAttributeRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

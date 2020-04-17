@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写；
-                     * @return RuleConfig 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写；
+                     * 获取7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
+                     * @return RuleConfig 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
                      */
                     std::vector<CCRuleConfig> GetRuleConfig() const;
 
                     /**
-                     * 设置7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写；
-                     * @param RuleConfig 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写；
+                     * 设置7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
+                     * @param RuleConfig 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
                      */
                     void SetRuleConfig(const std::vector<CCRuleConfig>& _ruleConfig);
 
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写；
+                     * 7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；
                      */
                     std::vector<CCRuleConfig> m_ruleConfig;
                     bool m_ruleConfigHasBeenSet;

@@ -24,7 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeEnvsRequest::DescribeEnvsRequest() :
-    m_envIdHasBeenSet(false)
+    m_envIdHasBeenSet(false),
+    m_isVisibleHasBeenSet(false),
+    m_channelsHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,27 @@ string DescribeEnvsRequest::ToJsonString() const
         string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isVisibleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsVisible";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isVisible, allocator);
+    }
+
+    if (m_channelsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Channels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_channels.begin(); itr != m_channels.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -65,6 +88,38 @@ void DescribeEnvsRequest::SetEnvId(const string& _envId)
 bool DescribeEnvsRequest::EnvIdHasBeenSet() const
 {
     return m_envIdHasBeenSet;
+}
+
+bool DescribeEnvsRequest::GetIsVisible() const
+{
+    return m_isVisible;
+}
+
+void DescribeEnvsRequest::SetIsVisible(const bool& _isVisible)
+{
+    m_isVisible = _isVisible;
+    m_isVisibleHasBeenSet = true;
+}
+
+bool DescribeEnvsRequest::IsVisibleHasBeenSet() const
+{
+    return m_isVisibleHasBeenSet;
+}
+
+vector<string> DescribeEnvsRequest::GetChannels() const
+{
+    return m_channels;
+}
+
+void DescribeEnvsRequest::SetChannels(const vector<string>& _channels)
+{
+    m_channels = _channels;
+    m_channelsHasBeenSet = true;
+}
+
+bool DescribeEnvsRequest::ChannelsHasBeenSet() const
+{
+    return m_channelsHasBeenSet;
 }
 
 

@@ -127,6 +127,54 @@ namespace TencentCloud
                     bool IsEnableCmqNotifyHasBeenSet() const;
 
                     /**
+                     * 获取是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     * @return IsEnableKmsEncry 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     */
+                    int64_t GetIsEnableKmsEncry() const;
+
+                    /**
+                     * 判断参数 IsEnableKmsEncry 是否已赋值
+                     * @return IsEnableKmsEncry 是否已赋值
+                     */
+                    bool IsEnableKmsEncryHasBeenSet() const;
+
+                    /**
+                     * 获取CMK的全局唯一标识符。
+                     * @return KeyId CMK的全局唯一标识符。
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取CMK别名。
+                     * @return KmsAlias CMK别名。
+                     */
+                    std::string GetKmsAlias() const;
+
+                    /**
+                     * 判断参数 KmsAlias 是否已赋值
+                     * @return KmsAlias 是否已赋值
+                     */
+                    bool KmsAliasHasBeenSet() const;
+
+                    /**
+                     * 获取kms地域。
+                     * @return KmsRegion kms地域。
+                     */
+                    std::string GetKmsRegion() const;
+
+                    /**
+                     * 判断参数 KmsRegion 是否已赋值
+                     * @return KmsRegion 是否已赋值
+                     */
+                    bool KmsRegionHasBeenSet() const;
+
+                    /**
                      * 获取日志前缀。
                      * @return LogFilePrefix 日志前缀。
                      */
@@ -193,6 +241,30 @@ namespace TencentCloud
                      */
                     int64_t m_isEnableCmqNotify;
                     bool m_isEnableCmqNotifyHasBeenSet;
+
+                    /**
+                     * 是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。
+                     */
+                    int64_t m_isEnableKmsEncry;
+                    bool m_isEnableKmsEncryHasBeenSet;
+
+                    /**
+                     * CMK的全局唯一标识符。
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
+
+                    /**
+                     * CMK别名。
+                     */
+                    std::string m_kmsAlias;
+                    bool m_kmsAliasHasBeenSet;
+
+                    /**
+                     * kms地域。
+                     */
+                    std::string m_kmsRegion;
+                    bool m_kmsRegionHasBeenSet;
 
                     /**
                      * 日志前缀。

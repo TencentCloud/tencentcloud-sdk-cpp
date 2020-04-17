@@ -24,7 +24,8 @@ using namespace std;
 ProtocolPort::ProtocolPort() :
     m_protocolHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_targetPortHasBeenSet(false)
+    m_targetPortHasBeenSet(false),
+    m_nodePortHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome ProtocolPort::Deserialize(const Value &value)
         m_targetPortHasBeenSet = true;
     }
 
+    if (value.HasMember("NodePort") && !value["NodePort"].IsNull())
+    {
+        if (!value["NodePort"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProtocolPort.NodePort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodePort = value["NodePort"].GetInt64();
+        m_nodePortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void ProtocolPort::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "TargetPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetPort, allocator);
+    }
+
+    if (m_nodePortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodePort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodePort, allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void ProtocolPort::SetTargetPort(const int64_t& _targetPort)
 bool ProtocolPort::TargetPortHasBeenSet() const
 {
     return m_targetPortHasBeenSet;
+}
+
+int64_t ProtocolPort::GetNodePort() const
+{
+    return m_nodePort;
+}
+
+void ProtocolPort::SetNodePort(const int64_t& _nodePort)
+{
+    m_nodePort = _nodePort;
+    m_nodePortHasBeenSet = true;
+}
+
+bool ProtocolPort::NodePortHasBeenSet() const
+{
+    return m_nodePortHasBeenSet;
 }
 

@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/TableResult.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/TableResultNew.h>
 
 
 namespace TencentCloud
@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量创建表结果数量
-                     * @return TotalCount 批量创建表结果数量
+                     * 获取批量创建表格结果数量
+                     * @return TotalCount 批量创建表格结果数量
                      */
                     uint64_t GetTotalCount() const;
 
@@ -56,10 +56,10 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取批量创建表结果列表
-                     * @return TableResults 批量创建表结果列表
+                     * 获取批量创建表格结果列表
+                     * @return TableResults 批量创建表格结果列表
                      */
-                    std::vector<TableResult> GetTableResults() const;
+                    std::vector<TableResultNew> GetTableResults() const;
 
                     /**
                      * 判断参数 TableResults 是否已赋值
@@ -70,15 +70,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量创建表结果数量
+                     * 批量创建表格结果数量
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 批量创建表结果列表
+                     * 批量创建表格结果列表
                      */
-                    std::vector<TableResult> m_tableResults;
+                    std::vector<TableResultNew> m_tableResults;
                     bool m_tableResultsHasBeenSet;
 
                 };

@@ -212,6 +212,92 @@ LiveClient::BindLiveDomainCertOutcomeCallable LiveClient::BindLiveDomainCertCall
     return task->get_future();
 }
 
+LiveClient::CancelCommonMixStreamOutcome LiveClient::CancelCommonMixStream(const CancelCommonMixStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelCommonMixStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelCommonMixStreamResponse rsp = CancelCommonMixStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelCommonMixStreamOutcome(rsp);
+        else
+            return CancelCommonMixStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelCommonMixStreamOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CancelCommonMixStreamAsync(const CancelCommonMixStreamRequest& request, const CancelCommonMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelCommonMixStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CancelCommonMixStreamOutcomeCallable LiveClient::CancelCommonMixStreamCallable(const CancelCommonMixStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelCommonMixStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelCommonMixStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateCommonMixStreamOutcome LiveClient::CreateCommonMixStream(const CreateCommonMixStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCommonMixStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCommonMixStreamResponse rsp = CreateCommonMixStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCommonMixStreamOutcome(rsp);
+        else
+            return CreateCommonMixStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCommonMixStreamOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateCommonMixStreamAsync(const CreateCommonMixStreamRequest& request, const CreateCommonMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCommonMixStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateCommonMixStreamOutcomeCallable LiveClient::CreateCommonMixStreamCallable(const CreateCommonMixStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCommonMixStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCommonMixStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::CreateLiveCallbackRuleOutcome LiveClient::CreateLiveCallbackRule(const CreateLiveCallbackRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLiveCallbackRule");
@@ -1366,6 +1452,49 @@ LiveClient::DescribeBillBandwidthAndFluxListOutcomeCallable LiveClient::Describe
         [this, request]()
         {
             return this->DescribeBillBandwidthAndFluxList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeConcurrentRecordStreamNumOutcome LiveClient::DescribeConcurrentRecordStreamNum(const DescribeConcurrentRecordStreamNumRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConcurrentRecordStreamNum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConcurrentRecordStreamNumResponse rsp = DescribeConcurrentRecordStreamNumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConcurrentRecordStreamNumOutcome(rsp);
+        else
+            return DescribeConcurrentRecordStreamNumOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConcurrentRecordStreamNumOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeConcurrentRecordStreamNumAsync(const DescribeConcurrentRecordStreamNumRequest& request, const DescribeConcurrentRecordStreamNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConcurrentRecordStreamNum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeConcurrentRecordStreamNumOutcomeCallable LiveClient::DescribeConcurrentRecordStreamNumCallable(const DescribeConcurrentRecordStreamNumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConcurrentRecordStreamNumOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConcurrentRecordStreamNum(request);
         }
     );
 
@@ -3086,6 +3215,49 @@ LiveClient::DescribePullStreamConfigsOutcomeCallable LiveClient::DescribePullStr
         [this, request]()
         {
             return this->DescribePullStreamConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeScreenShotSheetNumListOutcome LiveClient::DescribeScreenShotSheetNumList(const DescribeScreenShotSheetNumListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScreenShotSheetNumList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScreenShotSheetNumListResponse rsp = DescribeScreenShotSheetNumListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScreenShotSheetNumListOutcome(rsp);
+        else
+            return DescribeScreenShotSheetNumListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScreenShotSheetNumListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeScreenShotSheetNumListAsync(const DescribeScreenShotSheetNumListRequest& request, const DescribeScreenShotSheetNumListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScreenShotSheetNumList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeScreenShotSheetNumListOutcomeCallable LiveClient::DescribeScreenShotSheetNumListCallable(const DescribeScreenShotSheetNumListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScreenShotSheetNumListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScreenShotSheetNumList(request);
         }
     );
 

@@ -27,7 +27,8 @@ using namespace std;
 DescribeBindingPolicyObjectListResponse::DescribeBindingPolicyObjectListResponse() :
     m_listHasBeenSet(false),
     m_totalHasBeenSet(false),
-    m_noShieldedSumHasBeenSet(false)
+    m_noShieldedSumHasBeenSet(false),
+    m_instanceGroupHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,23 @@ CoreInternalOutcome DescribeBindingPolicyObjectListResponse::Deserialize(const s
         m_noShieldedSumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceGroup") && !rsp["InstanceGroup"].IsNull())
+    {
+        if (!rsp["InstanceGroup"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `InstanceGroup` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceGroup.Deserialize(rsp["InstanceGroup"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +156,16 @@ int64_t DescribeBindingPolicyObjectListResponse::GetNoShieldedSum() const
 bool DescribeBindingPolicyObjectListResponse::NoShieldedSumHasBeenSet() const
 {
     return m_noShieldedSumHasBeenSet;
+}
+
+DescribeBindingPolicyObjectListInstanceGroup DescribeBindingPolicyObjectListResponse::GetInstanceGroup() const
+{
+    return m_instanceGroup;
+}
+
+bool DescribeBindingPolicyObjectListResponse::InstanceGroupHasBeenSet() const
+{
+    return m_instanceGroupHasBeenSet;
 }
 
 

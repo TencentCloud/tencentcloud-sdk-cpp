@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool CommissionHasBeenSet() const;
 
                     /**
-                     * 获取STRING(3)，币种
-                     * @return Ccy STRING(3)，币种
+                     * 获取STRING(3)，币种。如RMB
+                     * @return Ccy STRING(3)，币种。如RMB
                      */
                     std::string GetCcy() const;
 
                     /**
-                     * 设置STRING(3)，币种
-                     * @param Ccy STRING(3)，币种
+                     * 设置STRING(3)，币种。如RMB
+                     * @param Ccy STRING(3)，币种。如RMB
                      */
                     void SetCcy(const std::string& _ccy);
 
@@ -115,14 +115,26 @@ namespace TencentCloud
                     bool CcyHasBeenSet() const;
 
                     /**
-                     * 获取STRING(20)，支付渠道类型
-                     * @return PayChannelType STRING(20)，支付渠道类型
+                     * 获取STRING(20)，支付渠道类型。
+0001-微信
+0002-支付宝
+0003-京东支付
+                     * @return PayChannelType STRING(20)，支付渠道类型。
+0001-微信
+0002-支付宝
+0003-京东支付
                      */
                     std::string GetPayChannelType() const;
 
                     /**
-                     * 设置STRING(20)，支付渠道类型
-                     * @param PayChannelType STRING(20)，支付渠道类型
+                     * 设置STRING(20)，支付渠道类型。
+0001-微信
+0002-支付宝
+0003-京东支付
+                     * @param PayChannelType STRING(20)，支付渠道类型。
+0001-微信
+0002-支付宝
+0003-京东支付
                      */
                     void SetPayChannelType(const std::string& _payChannelType);
 
@@ -315,13 +327,16 @@ namespace TencentCloud
                     bool m_commissionHasBeenSet;
 
                     /**
-                     * STRING(3)，币种
+                     * STRING(3)，币种。如RMB
                      */
                     std::string m_ccy;
                     bool m_ccyHasBeenSet;
 
                     /**
-                     * STRING(20)，支付渠道类型
+                     * STRING(20)，支付渠道类型。
+0001-微信
+0002-支付宝
+0003-京东支付
                      */
                     std::string m_payChannelType;
                     bool m_payChannelTypeHasBeenSet;

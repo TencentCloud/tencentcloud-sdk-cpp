@@ -34,7 +34,9 @@ Subnet::Subnet() :
     m_availableIpAddressCountHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
     m_networkAclIdHasBeenSet(false),
-    m_isRemoteVpcSnatHasBeenSet(false)
+    m_isRemoteVpcSnatHasBeenSet(false),
+    m_totalIpAddressCountHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,36 @@ CoreInternalOutcome Subnet::Deserialize(const Value &value)
         m_isRemoteVpcSnatHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalIpAddressCount") && !value["TotalIpAddressCount"].IsNull())
+    {
+        if (!value["TotalIpAddressCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.TotalIpAddressCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalIpAddressCount = value["TotalIpAddressCount"].GetUint64();
+        m_totalIpAddressCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `Subnet.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +314,29 @@ void Subnet::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "IsRemoteVpcSnat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isRemoteVpcSnat, allocator);
+    }
+
+    if (m_totalIpAddressCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TotalIpAddressCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalIpAddressCount, allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -493,5 +548,37 @@ void Subnet::SetIsRemoteVpcSnat(const bool& _isRemoteVpcSnat)
 bool Subnet::IsRemoteVpcSnatHasBeenSet() const
 {
     return m_isRemoteVpcSnatHasBeenSet;
+}
+
+uint64_t Subnet::GetTotalIpAddressCount() const
+{
+    return m_totalIpAddressCount;
+}
+
+void Subnet::SetTotalIpAddressCount(const uint64_t& _totalIpAddressCount)
+{
+    m_totalIpAddressCount = _totalIpAddressCount;
+    m_totalIpAddressCountHasBeenSet = true;
+}
+
+bool Subnet::TotalIpAddressCountHasBeenSet() const
+{
+    return m_totalIpAddressCountHasBeenSet;
+}
+
+vector<Tag> Subnet::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void Subnet::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool Subnet::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

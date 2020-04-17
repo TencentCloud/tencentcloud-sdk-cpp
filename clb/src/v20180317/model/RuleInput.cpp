@@ -33,7 +33,8 @@ RuleInput::RuleInput() :
     m_http2HasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_trpcCalleeHasBeenSet(false),
-    m_trpcFuncHasBeenSet(false)
+    m_trpcFuncHasBeenSet(false),
+    m_quicHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,16 @@ CoreInternalOutcome RuleInput::Deserialize(const Value &value)
         m_trpcFuncHasBeenSet = true;
     }
 
+    if (value.HasMember("Quic") && !value["Quic"].IsNull())
+    {
+        if (!value["Quic"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RuleInput.Quic` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_quic = value["Quic"].GetBool();
+        m_quicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +290,14 @@ void RuleInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "TrpcFunc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_trpcFunc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quicHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quic, allocator);
     }
 
 }
@@ -474,5 +493,21 @@ void RuleInput::SetTrpcFunc(const string& _trpcFunc)
 bool RuleInput::TrpcFuncHasBeenSet() const
 {
     return m_trpcFuncHasBeenSet;
+}
+
+bool RuleInput::GetQuic() const
+{
+    return m_quic;
+}
+
+void RuleInput::SetQuic(const bool& _quic)
+{
+    m_quic = _quic;
+    m_quicHasBeenSet = true;
+}
+
+bool RuleInput::QuicHasBeenSet() const
+{
+    return m_quicHasBeenSet;
 }
 

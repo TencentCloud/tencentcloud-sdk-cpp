@@ -27,6 +27,8 @@ ComposeMediaRequest::ComposeMediaRequest() :
     m_tracksHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_canvasHasBeenSet(false),
+    m_sessionContextHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -69,6 +71,22 @@ string ComposeMediaRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_canvas.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -133,6 +151,38 @@ void ComposeMediaRequest::SetCanvas(const Canvas& _canvas)
 bool ComposeMediaRequest::CanvasHasBeenSet() const
 {
     return m_canvasHasBeenSet;
+}
+
+string ComposeMediaRequest::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void ComposeMediaRequest::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool ComposeMediaRequest::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
+}
+
+string ComposeMediaRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void ComposeMediaRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool ComposeMediaRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 uint64_t ComposeMediaRequest::GetSubAppId() const

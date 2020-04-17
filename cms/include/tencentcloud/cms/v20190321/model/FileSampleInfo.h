@@ -90,7 +90,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
                      * @return EvilType 恶意类型
 100：正常
 20001：政治
@@ -98,7 +97,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
                      */
                     uint64_t GetEvilType() const;
 
@@ -110,7 +108,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
                      * @param EvilType 恶意类型
 100：正常
 20001：政治
@@ -118,7 +115,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
                      */
                     void SetEvilType(const uint64_t& _evilType);
 
@@ -253,6 +249,24 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取文件压缩后云url
+                     * @return CompressFileUrl 文件压缩后云url
+                     */
+                    std::string GetCompressFileUrl() const;
+
+                    /**
+                     * 设置文件压缩后云url
+                     * @param CompressFileUrl 文件压缩后云url
+                     */
+                    void SetCompressFileUrl(const std::string& _compressFileUrl);
+
+                    /**
+                     * 判断参数 CompressFileUrl 是否已赋值
+                     * @return CompressFileUrl 是否已赋值
+                     */
+                    bool CompressFileUrlHasBeenSet() const;
+
+                    /**
                      * 获取文件的url
                      * @return FileUrl 文件的url
                      */
@@ -292,7 +306,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
                      */
                     uint64_t m_evilType;
                     bool m_evilTypeHasBeenSet;
@@ -336,6 +349,12 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 文件压缩后云url
+                     */
+                    std::string m_compressFileUrl;
+                    bool m_compressFileUrlHasBeenSet;
 
                     /**
                      * 文件的url

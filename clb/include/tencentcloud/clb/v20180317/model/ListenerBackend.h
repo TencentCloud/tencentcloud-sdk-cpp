@@ -146,6 +146,28 @@ namespace TencentCloud
                      */
                     bool TargetsHasBeenSet() const;
 
+                    /**
+                     * 获取若支持端口段，则为端口段结束端口；若不支持端口段，则为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndPort 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEndPort() const;
+
+                    /**
+                     * 设置若支持端口段，则为端口段结束端口；若不支持端口段，则为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndPort 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndPort(const int64_t& _endPort);
+
+                    /**
+                     * 判断参数 EndPort 是否已赋值
+                     * @return EndPort 是否已赋值
+                     */
+                    bool EndPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,13 @@ namespace TencentCloud
                      */
                     std::vector<Backend> m_targets;
                     bool m_targetsHasBeenSet;
+
+                    /**
+                     * 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_endPort;
+                    bool m_endPortHasBeenSet;
 
                 };
             }

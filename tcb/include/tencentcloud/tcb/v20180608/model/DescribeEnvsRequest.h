@@ -60,6 +60,46 @@ namespace TencentCloud
                      */
                     bool EnvIdHasBeenSet() const;
 
+                    /**
+                     * 获取指定Channels字段为可见渠道列表或不可见渠道列表
+如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     * @return IsVisible 指定Channels字段为可见渠道列表或不可见渠道列表
+如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     */
+                    bool GetIsVisible() const;
+
+                    /**
+                     * 设置指定Channels字段为可见渠道列表或不可见渠道列表
+如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     * @param IsVisible 指定Channels字段为可见渠道列表或不可见渠道列表
+如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     */
+                    void SetIsVisible(const bool& _isVisible);
+
+                    /**
+                     * 判断参数 IsVisible 是否已赋值
+                     * @return IsVisible 是否已赋值
+                     */
+                    bool IsVisibleHasBeenSet() const;
+
+                    /**
+                     * 获取渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     * @return Channels 渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     */
+                    std::vector<std::string> GetChannels() const;
+
+                    /**
+                     * 设置渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     * @param Channels 渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     */
+                    void SetChannels(const std::vector<std::string>& _channels);
+
+                    /**
+                     * 判断参数 Channels 是否已赋值
+                     * @return Channels 是否已赋值
+                     */
+                    bool ChannelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +107,19 @@ namespace TencentCloud
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
+
+                    /**
+                     * 指定Channels字段为可见渠道列表或不可见渠道列表
+如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     */
+                    bool m_isVisible;
+                    bool m_isVisibleHasBeenSet;
+
+                    /**
+                     * 渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     */
+                    std::vector<std::string> m_channels;
+                    bool m_channelsHasBeenSet;
 
                 };
             }

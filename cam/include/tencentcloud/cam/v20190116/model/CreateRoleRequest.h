@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ConsoleLoginHasBeenSet() const;
 
+                    /**
+                     * 获取申请角色临时密钥的最长有效期限制(范围：0~43200)
+                     * @return SessionDuration 申请角色临时密钥的最长有效期限制(范围：0~43200)
+                     */
+                    uint64_t GetSessionDuration() const;
+
+                    /**
+                     * 设置申请角色临时密钥的最长有效期限制(范围：0~43200)
+                     * @param SessionDuration 申请角色临时密钥的最长有效期限制(范围：0~43200)
+                     */
+                    void SetSessionDuration(const uint64_t& _sessionDuration);
+
+                    /**
+                     * 判断参数 SessionDuration 是否已赋值
+                     * @return SessionDuration 是否已赋值
+                     */
+                    bool SessionDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_consoleLogin;
                     bool m_consoleLoginHasBeenSet;
+
+                    /**
+                     * 申请角色临时密钥的最长有效期限制(范围：0~43200)
+                     */
+                    uint64_t m_sessionDuration;
+                    bool m_sessionDurationHasBeenSet;
 
                 };
             }

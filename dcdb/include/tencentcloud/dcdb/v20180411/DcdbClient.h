@@ -65,6 +65,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeProjectsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeProjectsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeShardSpecRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeShardSpecResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeSqlLogsRequest.h>
@@ -166,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProjectsResponse> DescribeProjectsOutcome;
+                typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeProjectsRequest&, DescribeProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeShardSpecResponse> DescribeShardSpecOutcome;
                 typedef std::future<DescribeShardSpecOutcome> DescribeShardSpecOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeShardSpecRequest&, DescribeShardSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShardSpecAsyncHandler;
@@ -396,6 +401,15 @@ namespace TencentCloud
                 DescribeOrdersOutcome DescribeOrders(const Model::DescribeOrdersRequest &request);
                 void DescribeOrdersAsync(const Model::DescribeOrdersRequest& request, const DescribeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOrdersOutcomeCallable DescribeOrdersCallable(const Model::DescribeOrdersRequest& request);
+
+                /**
+                 *本接口（DescribeProjects）用于查询项目列表
+                 * @param req DescribeProjectsRequest
+                 * @return DescribeProjectsOutcome
+                 */
+                DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest &request);
+                void DescribeProjectsAsync(const Model::DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request);
 
                 /**
                  *查询可创建的分布式数据库可售卖的分片规格配置。

@@ -43,18 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日期，
-格式：YYYY-mm-dd。
-                     * @return DayTime 日期，
-格式：YYYY-mm-dd。
+                     * 获取日期，格式：YYYY-mm-dd。
+第二天凌晨3点出昨天的数据，建议在这个时间点之后查询最新数据。
+                     * @return DayTime 日期，格式：YYYY-mm-dd。
+第二天凌晨3点出昨天的数据，建议在这个时间点之后查询最新数据。
                      */
                     std::string GetDayTime() const;
 
                     /**
-                     * 设置日期，
-格式：YYYY-mm-dd。
-                     * @param DayTime 日期，
-格式：YYYY-mm-dd。
+                     * 设置日期，格式：YYYY-mm-dd。
+第二天凌晨3点出昨天的数据，建议在这个时间点之后查询最新数据。
+                     * @param DayTime 日期，格式：YYYY-mm-dd。
+第二天凌晨3点出昨天的数据，建议在这个时间点之后查询最新数据。
                      */
                     void SetDayTime(const std::string& _dayTime);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PlayDomainHasBeenSet() const;
 
                     /**
-                     * 获取页号，范围[1,10]，默认值是1。
-                     * @return PageNum 页号，范围[1,10]，默认值是1。
+                     * 获取页号，范围[1,1000]，默认值是1。
+                     * @return PageNum 页号，范围[1,1000]，默认值是1。
                      */
                     uint64_t GetPageNum() const;
 
                     /**
-                     * 设置页号，范围[1,10]，默认值是1。
-                     * @param PageNum 页号，范围[1,10]，默认值是1。
+                     * 设置页号，范围[1,1000]，默认值是1。
+                     * @param PageNum 页号，范围[1,1000]，默认值是1。
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
@@ -121,8 +121,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日期，
-格式：YYYY-mm-dd。
+                     * 日期，格式：YYYY-mm-dd。
+第二天凌晨3点出昨天的数据，建议在这个时间点之后查询最新数据。
                      */
                     std::string m_dayTime;
                     bool m_dayTimeHasBeenSet;
@@ -134,7 +134,7 @@ namespace TencentCloud
                     bool m_playDomainHasBeenSet;
 
                     /**
-                     * 页号，范围[1,10]，默认值是1。
+                     * 页号，范围[1,1000]，默认值是1。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;

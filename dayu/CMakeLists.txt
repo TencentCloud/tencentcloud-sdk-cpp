@@ -24,6 +24,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DeleteDDoSPolicyCaseRequest.h
   include/tencentcloud/dayu/v20180709/model/CreateDDoSPolicyResponse.h
   include/tencentcloud/dayu/v20180709/model/DeleteL7RulesRequest.h
+  include/tencentcloud/dayu/v20180709/model/CreateBoundIPRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeCCEvListRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeTransmitStatisResponse.h
   include/tencentcloud/dayu/v20180709/model/DDosPolicy.h
@@ -45,8 +46,10 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/ModifyDDoSAlarmThresholdRequest.h
   include/tencentcloud/dayu/v20180709/model/CreateDDoSPolicyRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCThresholdResponse.h
+  include/tencentcloud/dayu/v20180709/model/ModifyNetReturnSwitchResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeActionLogRequest.h
   include/tencentcloud/dayu/v20180709/model/CreateL7RuleCertRequest.h
+  include/tencentcloud/dayu/v20180709/model/DescribeBGPIPL7RuleMaxCntResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribePcapResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribePackIndexResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSAttackSourceRequest.h
@@ -56,7 +59,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetIpLogRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSUsedStatisResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdRequest.h
-  include/tencentcloud/dayu/v20180709/model/CreateL4HealthConfigResponse.h
+  include/tencentcloud/dayu/v20180709/model/CreateDDoSPolicyCaseResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeIPProductInfoResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyDDoSSwitchResponse.h
   include/tencentcloud/dayu/v20180709/model/IpBlockData.h
@@ -69,7 +72,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/ModifyL4KeepTimeResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyL7RulesResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeL7HealthConfigRequest.h
-  include/tencentcloud/dayu/v20180709/model/DescribeL4HealthConfigResponse.h
+  include/tencentcloud/dayu/v20180709/model/BoundIpInfo.h
   include/tencentcloud/dayu/v20180709/model/DescribePcapRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSAlarmThresholdResponse.h
   include/tencentcloud/dayu/v20180709/model/KeyValueRecord.h
@@ -86,7 +89,8 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/ModifyResourceRenewFlagRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeCCEvListResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeCCFrequencyRulesRequest.h
-  include/tencentcloud/dayu/v20180709/model/CreateDDoSPolicyCaseRequest.h
+  include/tencentcloud/dayu/v20180709/model/CreateL4HealthConfigRequest.h
+  include/tencentcloud/dayu/v20180709/model/DescribeBGPIPL7RuleMaxCntRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyDDoSPolicyNameResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeCCAlarmThresholdRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCUrlAllowRequest.h
@@ -107,13 +111,15 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetCountRequest.h
   include/tencentcloud/dayu/v20180709/model/Paging.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCSelfDefinePolicyRequest.h
+  include/tencentcloud/dayu/v20180709/model/L4HealthConfig.h
   include/tencentcloud/dayu/v20180709/model/CreateCCSelfDefinePolicyRequest.h
   include/tencentcloud/dayu/v20180709/model/SuccessCode.h
   include/tencentcloud/dayu/v20180709/model/DescribleL4RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/L4RuleEntry.h
   include/tencentcloud/dayu/v20180709/model/DescribeL4HealthConfigRequest.h
-  include/tencentcloud/dayu/v20180709/model/ModifyL4RulesRequest.h
-  include/tencentcloud/dayu/v20180709/model/DescribeDDoSIpLogRequest.h
+  include/tencentcloud/dayu/v20180709/model/CreateL7CCRuleResponse.h
+  include/tencentcloud/dayu/v20180709/model/ModifyNetReturnSwitchRequest.h
+  include/tencentcloud/dayu/v20180709/model/CreateL7CCRuleRequest.h
   include/tencentcloud/dayu/v20180709/model/CreateL7RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/CreateL4RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetEvListResponse.h
@@ -121,11 +127,12 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeL4RulesErrHealthRequest.h
   include/tencentcloud/dayu/v20180709/model/L4RuleSource.h
   include/tencentcloud/dayu/v20180709/model/CreateBasicDDoSAlarmThresholdResponse.h
+  include/tencentcloud/dayu/v20180709/model/CreateNetReturnResponse.h
   include/tencentcloud/dayu/v20180709/model/DeleteL4RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCAlarmThresholdResponse.h
   include/tencentcloud/dayu/v20180709/model/CreateL7HealthConfigRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeIPProductInfoRequest.h
-  include/tencentcloud/dayu/v20180709/model/ModifyDDoSSwitchRequest.h
+  include/tencentcloud/dayu/v20180709/model/DescribeL4HealthConfigResponse.h
   include/tencentcloud/dayu/v20180709/model/CreateL7RuleCertResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSAttackIPRegionMapRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyDDoSPolicyRequest.h
@@ -138,7 +145,7 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/ModifyCCFrequencyRulesRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCPolicySwitchResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyDDoSThresholdResponse.h
-  include/tencentcloud/dayu/v20180709/model/CreateL4HealthConfigRequest.h
+  include/tencentcloud/dayu/v20180709/model/CreateDDoSPolicyCaseRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCIpAllowDenyResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCAlarmThresholdRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeCCFrequencyRulesResponse.h
@@ -149,19 +156,24 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/ModifyCCPolicySwitchRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCFrequencyRulesResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyL4KeepTimeRequest.h
+  include/tencentcloud/dayu/v20180709/model/SchedulingDomain.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCHostProtectionRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeIpBlockListRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetCountResponse.h
   include/tencentcloud/dayu/v20180709/model/CreateL7RulesResponse.h
   include/tencentcloud/dayu/v20180709/model/BaradData.h
+  include/tencentcloud/dayu/v20180709/model/ModifyDDoSSwitchRequest.h
+  include/tencentcloud/dayu/v20180709/model/CreateNetReturnRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyDDoSAIStatusRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeResourceListResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCThresholdRequest.h
+  include/tencentcloud/dayu/v20180709/model/ModifyDDoSDefendStatusResponse.h
   include/tencentcloud/dayu/v20180709/model/CreateBasicDDoSAlarmThresholdRequest.h
-  include/tencentcloud/dayu/v20180709/model/L4HealthConfig.h
+  include/tencentcloud/dayu/v20180709/model/CCRuleConfig.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSEvInfoResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribleRegionCountRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyCCSelfDefinePolicyResponse.h
+  include/tencentcloud/dayu/v20180709/model/DescribeDDoSIpLogRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSAlarmThresholdRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribePolicyCaseRequest.h
   include/tencentcloud/dayu/v20180709/model/WaterPrintPolicy.h
@@ -170,18 +182,20 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSPolicyResponse.h
   include/tencentcloud/dayu/v20180709/model/DeleteCCFrequencyRulesResponse.h
   include/tencentcloud/dayu/v20180709/model/DeleteDDoSPolicyCaseResponse.h
-  include/tencentcloud/dayu/v20180709/model/CreateDDoSPolicyCaseResponse.h
+  include/tencentcloud/dayu/v20180709/model/CreateL4HealthConfigResponse.h
   include/tencentcloud/dayu/v20180709/model/ModifyL7RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/ModifyElasticLimitResponse.h
   include/tencentcloud/dayu/v20180709/model/DDoSAttackSourceRecord.h
   include/tencentcloud/dayu/v20180709/model/CreateUnblockIpResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribePackIndexRequest.h
+  include/tencentcloud/dayu/v20180709/model/ModifyL4RulesRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSEvListResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSPolicyRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribeL7HealthConfigResponse.h
   include/tencentcloud/dayu/v20180709/model/CCFrequencyRule.h
   include/tencentcloud/dayu/v20180709/model/CreateCCSelfDefinePolicyResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSAttackSourceResponse.h
+  include/tencentcloud/dayu/v20180709/model/CreateBoundIPResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSUsedStatisRequest.h
   include/tencentcloud/dayu/v20180709/model/DDoSPolicyDropOption.h
   include/tencentcloud/dayu/v20180709/model/ModifyElasticLimitRequest.h
@@ -209,11 +223,12 @@ set(dayu_public_header_model
   include/tencentcloud/dayu/v20180709/model/L7HealthConfig.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetEvInfoResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeRuleSetsRequest.h
-  include/tencentcloud/dayu/v20180709/model/ModifyDDoSDefendStatusResponse.h
+  include/tencentcloud/dayu/v20180709/model/DescribeSchedulingDomainListRequest.h
   include/tencentcloud/dayu/v20180709/model/DescribleL7RulesResponse.h
   include/tencentcloud/dayu/v20180709/model/CreateCCFrequencyRulesResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeIpBlockListResponse.h
   include/tencentcloud/dayu/v20180709/model/DDoSPolicyPortLimit.h
+  include/tencentcloud/dayu/v20180709/model/DescribeSchedulingDomainListResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeDDoSNetTrendResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribeUnBlockStatisResponse.h
   include/tencentcloud/dayu/v20180709/model/DescribleL7RulesRequest.h
@@ -247,6 +262,7 @@ set(dayu_src
   src/v20180709/model/DeleteDDoSPolicyCaseRequest.cpp
   src/v20180709/model/CreateDDoSPolicyResponse.cpp
   src/v20180709/model/DeleteL7RulesRequest.cpp
+  src/v20180709/model/CreateBoundIPRequest.cpp
   src/v20180709/model/DescribeCCEvListRequest.cpp
   src/v20180709/model/DescribeTransmitStatisResponse.cpp
   src/v20180709/model/DDosPolicy.cpp
@@ -268,8 +284,10 @@ set(dayu_src
   src/v20180709/model/ModifyDDoSAlarmThresholdRequest.cpp
   src/v20180709/model/CreateDDoSPolicyRequest.cpp
   src/v20180709/model/ModifyCCThresholdResponse.cpp
+  src/v20180709/model/ModifyNetReturnSwitchResponse.cpp
   src/v20180709/model/DescribeActionLogRequest.cpp
   src/v20180709/model/CreateL7RuleCertRequest.cpp
+  src/v20180709/model/DescribeBGPIPL7RuleMaxCntResponse.cpp
   src/v20180709/model/DescribePcapResponse.cpp
   src/v20180709/model/DescribePackIndexResponse.cpp
   src/v20180709/model/DescribeDDoSAttackSourceRequest.cpp
@@ -279,7 +297,7 @@ set(dayu_src
   src/v20180709/model/DescribeDDoSNetIpLogRequest.cpp
   src/v20180709/model/DescribeDDoSUsedStatisResponse.cpp
   src/v20180709/model/DescribeBasicCCThresholdRequest.cpp
-  src/v20180709/model/CreateL4HealthConfigResponse.cpp
+  src/v20180709/model/CreateDDoSPolicyCaseResponse.cpp
   src/v20180709/model/DescribeIPProductInfoResponse.cpp
   src/v20180709/model/ModifyDDoSSwitchResponse.cpp
   src/v20180709/model/IpBlockData.cpp
@@ -292,7 +310,7 @@ set(dayu_src
   src/v20180709/model/ModifyL4KeepTimeResponse.cpp
   src/v20180709/model/ModifyL7RulesResponse.cpp
   src/v20180709/model/DescribeL7HealthConfigRequest.cpp
-  src/v20180709/model/DescribeL4HealthConfigResponse.cpp
+  src/v20180709/model/BoundIpInfo.cpp
   src/v20180709/model/DescribePcapRequest.cpp
   src/v20180709/model/DescribeDDoSAlarmThresholdResponse.cpp
   src/v20180709/model/KeyValueRecord.cpp
@@ -309,7 +327,8 @@ set(dayu_src
   src/v20180709/model/ModifyResourceRenewFlagRequest.cpp
   src/v20180709/model/DescribeCCEvListResponse.cpp
   src/v20180709/model/DescribeCCFrequencyRulesRequest.cpp
-  src/v20180709/model/CreateDDoSPolicyCaseRequest.cpp
+  src/v20180709/model/CreateL4HealthConfigRequest.cpp
+  src/v20180709/model/DescribeBGPIPL7RuleMaxCntRequest.cpp
   src/v20180709/model/ModifyDDoSPolicyNameResponse.cpp
   src/v20180709/model/DescribeCCAlarmThresholdRequest.cpp
   src/v20180709/model/ModifyCCUrlAllowRequest.cpp
@@ -330,13 +349,15 @@ set(dayu_src
   src/v20180709/model/DescribeDDoSNetCountRequest.cpp
   src/v20180709/model/Paging.cpp
   src/v20180709/model/ModifyCCSelfDefinePolicyRequest.cpp
+  src/v20180709/model/L4HealthConfig.cpp
   src/v20180709/model/CreateCCSelfDefinePolicyRequest.cpp
   src/v20180709/model/SuccessCode.cpp
   src/v20180709/model/DescribleL4RulesRequest.cpp
   src/v20180709/model/L4RuleEntry.cpp
   src/v20180709/model/DescribeL4HealthConfigRequest.cpp
-  src/v20180709/model/ModifyL4RulesRequest.cpp
-  src/v20180709/model/DescribeDDoSIpLogRequest.cpp
+  src/v20180709/model/CreateL7CCRuleResponse.cpp
+  src/v20180709/model/ModifyNetReturnSwitchRequest.cpp
+  src/v20180709/model/CreateL7CCRuleRequest.cpp
   src/v20180709/model/CreateL7RulesRequest.cpp
   src/v20180709/model/CreateL4RulesRequest.cpp
   src/v20180709/model/DescribeDDoSNetEvListResponse.cpp
@@ -344,11 +365,12 @@ set(dayu_src
   src/v20180709/model/DescribeL4RulesErrHealthRequest.cpp
   src/v20180709/model/L4RuleSource.cpp
   src/v20180709/model/CreateBasicDDoSAlarmThresholdResponse.cpp
+  src/v20180709/model/CreateNetReturnResponse.cpp
   src/v20180709/model/DeleteL4RulesRequest.cpp
   src/v20180709/model/ModifyCCAlarmThresholdResponse.cpp
   src/v20180709/model/CreateL7HealthConfigRequest.cpp
   src/v20180709/model/DescribeIPProductInfoRequest.cpp
-  src/v20180709/model/ModifyDDoSSwitchRequest.cpp
+  src/v20180709/model/DescribeL4HealthConfigResponse.cpp
   src/v20180709/model/CreateL7RuleCertResponse.cpp
   src/v20180709/model/DescribeDDoSAttackIPRegionMapRequest.cpp
   src/v20180709/model/ModifyDDoSPolicyRequest.cpp
@@ -361,7 +383,7 @@ set(dayu_src
   src/v20180709/model/ModifyCCFrequencyRulesRequest.cpp
   src/v20180709/model/ModifyCCPolicySwitchResponse.cpp
   src/v20180709/model/ModifyDDoSThresholdResponse.cpp
-  src/v20180709/model/CreateL4HealthConfigRequest.cpp
+  src/v20180709/model/CreateDDoSPolicyCaseRequest.cpp
   src/v20180709/model/ModifyCCIpAllowDenyResponse.cpp
   src/v20180709/model/ModifyCCAlarmThresholdRequest.cpp
   src/v20180709/model/DescribeCCFrequencyRulesResponse.cpp
@@ -372,19 +394,24 @@ set(dayu_src
   src/v20180709/model/ModifyCCPolicySwitchRequest.cpp
   src/v20180709/model/ModifyCCFrequencyRulesResponse.cpp
   src/v20180709/model/ModifyL4KeepTimeRequest.cpp
+  src/v20180709/model/SchedulingDomain.cpp
   src/v20180709/model/ModifyCCHostProtectionRequest.cpp
   src/v20180709/model/DescribeIpBlockListRequest.cpp
   src/v20180709/model/DescribeDDoSNetCountResponse.cpp
   src/v20180709/model/CreateL7RulesResponse.cpp
   src/v20180709/model/BaradData.cpp
+  src/v20180709/model/ModifyDDoSSwitchRequest.cpp
+  src/v20180709/model/CreateNetReturnRequest.cpp
   src/v20180709/model/ModifyDDoSAIStatusRequest.cpp
   src/v20180709/model/DescribeResourceListResponse.cpp
   src/v20180709/model/ModifyCCThresholdRequest.cpp
+  src/v20180709/model/ModifyDDoSDefendStatusResponse.cpp
   src/v20180709/model/CreateBasicDDoSAlarmThresholdRequest.cpp
-  src/v20180709/model/L4HealthConfig.cpp
+  src/v20180709/model/CCRuleConfig.cpp
   src/v20180709/model/DescribeDDoSEvInfoResponse.cpp
   src/v20180709/model/DescribleRegionCountRequest.cpp
   src/v20180709/model/ModifyCCSelfDefinePolicyResponse.cpp
+  src/v20180709/model/DescribeDDoSIpLogRequest.cpp
   src/v20180709/model/DescribeDDoSAlarmThresholdRequest.cpp
   src/v20180709/model/DescribePolicyCaseRequest.cpp
   src/v20180709/model/WaterPrintPolicy.cpp
@@ -393,18 +420,20 @@ set(dayu_src
   src/v20180709/model/DescribeDDoSPolicyResponse.cpp
   src/v20180709/model/DeleteCCFrequencyRulesResponse.cpp
   src/v20180709/model/DeleteDDoSPolicyCaseResponse.cpp
-  src/v20180709/model/CreateDDoSPolicyCaseResponse.cpp
+  src/v20180709/model/CreateL4HealthConfigResponse.cpp
   src/v20180709/model/ModifyL7RulesRequest.cpp
   src/v20180709/model/ModifyElasticLimitResponse.cpp
   src/v20180709/model/DDoSAttackSourceRecord.cpp
   src/v20180709/model/CreateUnblockIpResponse.cpp
   src/v20180709/model/DescribePackIndexRequest.cpp
+  src/v20180709/model/ModifyL4RulesRequest.cpp
   src/v20180709/model/DescribeDDoSEvListResponse.cpp
   src/v20180709/model/DescribeDDoSPolicyRequest.cpp
   src/v20180709/model/DescribeL7HealthConfigResponse.cpp
   src/v20180709/model/CCFrequencyRule.cpp
   src/v20180709/model/CreateCCSelfDefinePolicyResponse.cpp
   src/v20180709/model/DescribeDDoSAttackSourceResponse.cpp
+  src/v20180709/model/CreateBoundIPResponse.cpp
   src/v20180709/model/DescribeDDoSUsedStatisRequest.cpp
   src/v20180709/model/DDoSPolicyDropOption.cpp
   src/v20180709/model/ModifyElasticLimitRequest.cpp
@@ -432,11 +461,12 @@ set(dayu_src
   src/v20180709/model/L7HealthConfig.cpp
   src/v20180709/model/DescribeDDoSNetEvInfoResponse.cpp
   src/v20180709/model/DescribeRuleSetsRequest.cpp
-  src/v20180709/model/ModifyDDoSDefendStatusResponse.cpp
+  src/v20180709/model/DescribeSchedulingDomainListRequest.cpp
   src/v20180709/model/DescribleL7RulesResponse.cpp
   src/v20180709/model/CreateCCFrequencyRulesResponse.cpp
   src/v20180709/model/DescribeIpBlockListResponse.cpp
   src/v20180709/model/DDoSPolicyPortLimit.cpp
+  src/v20180709/model/DescribeSchedulingDomainListResponse.cpp
   src/v20180709/model/DescribeDDoSNetTrendResponse.cpp
   src/v20180709/model/DescribeUnBlockStatisResponse.cpp
   src/v20180709/model/DescribleL7RulesRequest.cpp

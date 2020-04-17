@@ -34,7 +34,8 @@ TrafficMirrorReceiver::TrafficMirrorReceiver() :
     m_vpcIdHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_operatesHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,19 @@ CoreInternalOutcome TrafficMirrorReceiver::Deserialize(const Value &value)
         m_healthStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Operates") && !value["Operates"].IsNull())
+    {
+        if (!value["Operates"].IsArray())
+            return CoreInternalOutcome(Error("response `TrafficMirrorReceiver.Operates` is not array type"));
+
+        const Value &tmpValue = value["Operates"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_operates.push_back((*itr).GetString());
+        }
+        m_operatesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +296,19 @@ void TrafficMirrorReceiver::ToJsonObject(Value &value, Document::AllocatorType& 
         string key = "HealthStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_healthStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Operates";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_operates.begin(); itr != m_operates.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -493,5 +520,21 @@ void TrafficMirrorReceiver::SetHealthStatus(const string& _healthStatus)
 bool TrafficMirrorReceiver::HealthStatusHasBeenSet() const
 {
     return m_healthStatusHasBeenSet;
+}
+
+vector<string> TrafficMirrorReceiver::GetOperates() const
+{
+    return m_operates;
+}
+
+void TrafficMirrorReceiver::SetOperates(const vector<string>& _operates)
+{
+    m_operates = _operates;
+    m_operatesHasBeenSet = true;
+}
+
+bool TrafficMirrorReceiver::OperatesHasBeenSet() const
+{
+    return m_operatesHasBeenSet;
 }
 

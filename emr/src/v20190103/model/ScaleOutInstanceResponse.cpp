@@ -27,7 +27,9 @@ using namespace std;
 ScaleOutInstanceResponse::ScaleOutInstanceResponse() :
     m_instanceIdHasBeenSet(false),
     m_dealNamesHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
+    m_billIdHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,26 @@ CoreInternalOutcome ScaleOutInstanceResponse::Deserialize(const string &payload)
         m_clientTokenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BillId") && !rsp["BillId"].IsNull())
+    {
+        if (!rsp["BillId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billId = string(rsp["BillId"].GetString());
+        m_billIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -131,6 +153,26 @@ string ScaleOutInstanceResponse::GetClientToken() const
 bool ScaleOutInstanceResponse::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+int64_t ScaleOutInstanceResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool ScaleOutInstanceResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
+
+string ScaleOutInstanceResponse::GetBillId() const
+{
+    return m_billId;
+}
+
+bool ScaleOutInstanceResponse::BillIdHasBeenSet() const
+{
+    return m_billIdHasBeenSet;
 }
 
 

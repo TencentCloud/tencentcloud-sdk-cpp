@@ -40,6 +40,49 @@ BatchClient::BatchClient(const Credential &credential, const string &region, con
 }
 
 
+BatchClient::AttachInstancesOutcome BatchClient::AttachInstances(const AttachInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachInstancesResponse rsp = AttachInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachInstancesOutcome(rsp);
+        else
+            return AttachInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachInstancesOutcome(outcome.GetError());
+    }
+}
+
+void BatchClient::AttachInstancesAsync(const AttachInstancesRequest& request, const AttachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BatchClient::AttachInstancesOutcomeCallable BatchClient::AttachInstancesCallable(const AttachInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BatchClient::CreateComputeEnvOutcome BatchClient::CreateComputeEnv(const CreateComputeEnvRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateComputeEnv");
@@ -936,6 +979,49 @@ BatchClient::DescribeTaskTemplatesOutcomeCallable BatchClient::DescribeTaskTempl
         [this, request]()
         {
             return this->DescribeTaskTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BatchClient::DetachInstancesOutcome BatchClient::DetachInstances(const DetachInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachInstancesResponse rsp = DetachInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachInstancesOutcome(rsp);
+        else
+            return DetachInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachInstancesOutcome(outcome.GetError());
+    }
+}
+
+void BatchClient::DetachInstancesAsync(const DetachInstancesRequest& request, const DetachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BatchClient::DetachInstancesOutcomeCallable BatchClient::DetachInstancesCallable(const DetachInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachInstances(request);
         }
     );
 

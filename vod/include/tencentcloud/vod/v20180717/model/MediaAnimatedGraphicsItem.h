@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转动图的文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 转动图的文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置转动图的文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Url 转动图的文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转动图模板 ID，参见[转动图参数模板](https://cloud.tencent.com/document/product/266/33481#.3Cspan-id-.3D-.22zdt.22.3E.3C.2Fspan.3E.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 转动图模板 ID，参见[转动图参数模板](https://cloud.tencent.com/document/product/266/33481#.3Cspan-id-.3D-.22zdt.22.3E.3C.2Fspan.3E.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置转动图模板 ID，参见[转动图参数模板](https://cloud.tencent.com/document/product/266/33481#.3Cspan-id-.3D-.22zdt.22.3E.3C.2Fspan.3E.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Definition 转动图模板 ID，参见[转动图参数模板](https://cloud.tencent.com/document/product/266/33481#.3Cspan-id-.3D-.22zdt.22.3E.3C.2Fspan.3E.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图格式，如 gif。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Container 动图格式，如 gif。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置动图格式，如 gif。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Container 动图格式，如 gif。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContainer(const std::string& _container);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 动图的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置动图的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Height 动图的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -136,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 动图的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置动图的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Width 动图的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -158,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 动图码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置动图码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Bitrate 动图码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
@@ -180,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图大小，单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 动图大小，单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置动图大小，单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Size 动图大小，单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSize(const int64_t& _size);
 
@@ -202,17 +174,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图的md5值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 动图的md5值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置动图的md5值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Md5 动图的md5值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMd5(const std::string& _md5);
 
@@ -224,17 +192,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图在视频中的起始时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 动图在视频中的起始时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置动图在视频中的起始时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param StartTimeOffset 动图在视频中的起始时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
@@ -246,17 +210,13 @@ namespace TencentCloud
 
                     /**
                      * 获取动图在视频中的结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeOffset 动图在视频中的结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置动图在视频中的结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param EndTimeOffset 动图在视频中的结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
@@ -270,70 +230,60 @@ namespace TencentCloud
 
                     /**
                      * 转动图的文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 转动图模板 ID，参见[转动图参数模板](https://cloud.tencent.com/document/product/266/33481#.3Cspan-id-.3D-.22zdt.22.3E.3C.2Fspan.3E.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
                      * 动图格式，如 gif。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
                      * 动图的高度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 动图的宽度，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 动图码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
                      * 动图大小，单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 动图的md5值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
                      * 动图在视频中的起始时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
                      * 动图在视频中的结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

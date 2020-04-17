@@ -26,7 +26,8 @@ TagResource::TagResource() :
     m_tagValueHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_tagKeyMd5HasBeenSet(false),
-    m_tagValueMd5HasBeenSet(false)
+    m_tagValueMd5HasBeenSet(false),
+    m_serviceTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome TagResource::Deserialize(const Value &value)
         m_tagValueMd5HasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceType") && !value["ServiceType"].IsNull())
+    {
+        if (!value["ServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TagResource.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceType = string(value["ServiceType"].GetString());
+        m_serviceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void TagResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "TagValueMd5";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_tagValueMd5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void TagResource::SetTagValueMd5(const string& _tagValueMd5)
 bool TagResource::TagValueMd5HasBeenSet() const
 {
     return m_tagValueMd5HasBeenSet;
+}
+
+string TagResource::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void TagResource::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool TagResource::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
 }
 

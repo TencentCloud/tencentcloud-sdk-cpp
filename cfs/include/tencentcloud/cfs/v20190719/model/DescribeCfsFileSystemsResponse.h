@@ -55,6 +55,18 @@ namespace TencentCloud
                      */
                     bool FileSystemsHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统总数
+                     * @return TotalCount 文件系统总数
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +74,12 @@ namespace TencentCloud
                      */
                     std::vector<FileSystemInfo> m_fileSystems;
                     bool m_fileSystemsHasBeenSet;
+
+                    /**
+                     * 文件系统总数
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

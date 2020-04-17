@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取人员库自定义描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupExDescriptionIndex 人员库自定义描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetGroupExDescriptionIndex() const;
 
                     /**
                      * 设置人员库自定义描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param GroupExDescriptionIndex 人员库自定义描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGroupExDescriptionIndex(const uint64_t& _groupExDescriptionIndex);
 
@@ -86,6 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 人员库自定义描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_groupExDescriptionIndex;
                     bool m_groupExDescriptionIndexHasBeenSet;

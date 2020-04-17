@@ -40,6 +40,49 @@ TcbClient::TcbClient(const Credential &credential, const string &region, const C
 }
 
 
+TcbClient::CheckTcbServiceOutcome TcbClient::CheckTcbService(const CheckTcbServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckTcbService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckTcbServiceResponse rsp = CheckTcbServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckTcbServiceOutcome(rsp);
+        else
+            return CheckTcbServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckTcbServiceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CheckTcbServiceAsync(const CheckTcbServiceRequest& request, const CheckTcbServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckTcbService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CheckTcbServiceOutcomeCallable TcbClient::CheckTcbServiceCallable(const CheckTcbServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckTcbServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckTcbService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::CommonServiceAPIOutcome TcbClient::CommonServiceAPI(const CommonServiceAPIRequest &request)
 {
     auto outcome = MakeRequest(request, "CommonServiceAPI");
@@ -83,42 +126,214 @@ TcbClient::CommonServiceAPIOutcomeCallable TcbClient::CommonServiceAPICallable(c
     return task->get_future();
 }
 
-TcbClient::CreateMysqlInstanceOutcome TcbClient::CreateMysqlInstance(const CreateMysqlInstanceRequest &request)
+TcbClient::CreateAuthDomainOutcome TcbClient::CreateAuthDomain(const CreateAuthDomainRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateMysqlInstance");
+    auto outcome = MakeRequest(request, "CreateAuthDomain");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateMysqlInstanceResponse rsp = CreateMysqlInstanceResponse();
+        CreateAuthDomainResponse rsp = CreateAuthDomainResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateMysqlInstanceOutcome(rsp);
+            return CreateAuthDomainOutcome(rsp);
         else
-            return CreateMysqlInstanceOutcome(o.GetError());
+            return CreateAuthDomainOutcome(o.GetError());
     }
     else
     {
-        return CreateMysqlInstanceOutcome(outcome.GetError());
+        return CreateAuthDomainOutcome(outcome.GetError());
     }
 }
 
-void TcbClient::CreateMysqlInstanceAsync(const CreateMysqlInstanceRequest& request, const CreateMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcbClient::CreateAuthDomainAsync(const CreateAuthDomainRequest& request, const CreateAuthDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateMysqlInstance(request), context);
+        handler(this, request, this->CreateAuthDomain(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcbClient::CreateMysqlInstanceOutcomeCallable TcbClient::CreateMysqlInstanceCallable(const CreateMysqlInstanceRequest &request)
+TcbClient::CreateAuthDomainOutcomeCallable TcbClient::CreateAuthDomainCallable(const CreateAuthDomainRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateMysqlInstanceOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CreateAuthDomainOutcome()>>(
         [this, request]()
         {
-            return this->CreateMysqlInstance(request);
+            return this->CreateAuthDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::CreateHostingDomainOutcome TcbClient::CreateHostingDomain(const CreateHostingDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHostingDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHostingDomainResponse rsp = CreateHostingDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHostingDomainOutcome(rsp);
+        else
+            return CreateHostingDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHostingDomainOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateHostingDomainAsync(const CreateHostingDomainRequest& request, const CreateHostingDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHostingDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateHostingDomainOutcomeCallable TcbClient::CreateHostingDomainCallable(const CreateHostingDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHostingDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHostingDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::CreateStaticStoreOutcome TcbClient::CreateStaticStore(const CreateStaticStoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStaticStore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStaticStoreResponse rsp = CreateStaticStoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStaticStoreOutcome(rsp);
+        else
+            return CreateStaticStoreOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStaticStoreOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateStaticStoreAsync(const CreateStaticStoreRequest& request, const CreateStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStaticStore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateStaticStoreOutcomeCallable TcbClient::CreateStaticStoreCallable(const CreateStaticStoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStaticStoreOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStaticStore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DeleteEndUserOutcome TcbClient::DeleteEndUser(const DeleteEndUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEndUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEndUserResponse rsp = DeleteEndUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEndUserOutcome(rsp);
+        else
+            return DeleteEndUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEndUserOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteEndUserAsync(const DeleteEndUserRequest& request, const DeleteEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEndUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DeleteEndUserOutcomeCallable TcbClient::DeleteEndUserCallable(const DeleteEndUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEndUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEndUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeAuthDomainsOutcome TcbClient::DescribeAuthDomains(const DescribeAuthDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuthDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuthDomainsResponse rsp = DescribeAuthDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuthDomainsOutcome(rsp);
+        else
+            return DescribeAuthDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuthDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeAuthDomainsAsync(const DescribeAuthDomainsRequest& request, const DescribeAuthDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuthDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeAuthDomainsOutcomeCallable TcbClient::DescribeAuthDomainsCallable(const DescribeAuthDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuthDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuthDomains(request);
         }
     );
 
@@ -169,6 +384,92 @@ TcbClient::DescribeDatabaseACLOutcomeCallable TcbClient::DescribeDatabaseACLCall
     return task->get_future();
 }
 
+TcbClient::DescribeEndUsersOutcome TcbClient::DescribeEndUsers(const DescribeEndUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEndUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEndUsersResponse rsp = DescribeEndUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEndUsersOutcome(rsp);
+        else
+            return DescribeEndUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEndUsersOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEndUsersAsync(const DescribeEndUsersRequest& request, const DescribeEndUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEndUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeEndUsersOutcomeCallable TcbClient::DescribeEndUsersCallable(const DescribeEndUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEndUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEndUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeEnvLimitOutcome TcbClient::DescribeEnvLimit(const DescribeEnvLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvLimitResponse rsp = DescribeEnvLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvLimitOutcome(rsp);
+        else
+            return DescribeEnvLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvLimitOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEnvLimitAsync(const DescribeEnvLimitRequest& request, const DescribeEnvLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeEnvLimitOutcomeCallable TcbClient::DescribeEnvLimitCallable(const DescribeEnvLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeEnvsOutcome TcbClient::DescribeEnvs(const DescribeEnvsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvs");
@@ -212,42 +513,128 @@ TcbClient::DescribeEnvsOutcomeCallable TcbClient::DescribeEnvsCallable(const Des
     return task->get_future();
 }
 
-TcbClient::IsolateMysqlInstanceOutcome TcbClient::IsolateMysqlInstance(const IsolateMysqlInstanceRequest &request)
+TcbClient::DescribeQuotaDataOutcome TcbClient::DescribeQuotaData(const DescribeQuotaDataRequest &request)
 {
-    auto outcome = MakeRequest(request, "IsolateMysqlInstance");
+    auto outcome = MakeRequest(request, "DescribeQuotaData");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        IsolateMysqlInstanceResponse rsp = IsolateMysqlInstanceResponse();
+        DescribeQuotaDataResponse rsp = DescribeQuotaDataResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return IsolateMysqlInstanceOutcome(rsp);
+            return DescribeQuotaDataOutcome(rsp);
         else
-            return IsolateMysqlInstanceOutcome(o.GetError());
+            return DescribeQuotaDataOutcome(o.GetError());
     }
     else
     {
-        return IsolateMysqlInstanceOutcome(outcome.GetError());
+        return DescribeQuotaDataOutcome(outcome.GetError());
     }
 }
 
-void TcbClient::IsolateMysqlInstanceAsync(const IsolateMysqlInstanceRequest& request, const IsolateMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcbClient::DescribeQuotaDataAsync(const DescribeQuotaDataRequest& request, const DescribeQuotaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->IsolateMysqlInstance(request), context);
+        handler(this, request, this->DescribeQuotaData(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcbClient::IsolateMysqlInstanceOutcomeCallable TcbClient::IsolateMysqlInstanceCallable(const IsolateMysqlInstanceRequest &request)
+TcbClient::DescribeQuotaDataOutcomeCallable TcbClient::DescribeQuotaDataCallable(const DescribeQuotaDataRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<IsolateMysqlInstanceOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DescribeQuotaDataOutcome()>>(
         [this, request]()
         {
-            return this->IsolateMysqlInstance(request);
+            return this->DescribeQuotaData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DestroyEnvOutcome TcbClient::DestroyEnv(const DestroyEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyEnvResponse rsp = DestroyEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyEnvOutcome(rsp);
+        else
+            return DestroyEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DestroyEnvAsync(const DestroyEnvRequest& request, const DestroyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyEnv(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DestroyEnvOutcomeCallable TcbClient::DestroyEnvCallable(const DestroyEnvRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyEnvOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyEnv(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DestroyStaticStoreOutcome TcbClient::DestroyStaticStore(const DestroyStaticStoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyStaticStore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyStaticStoreResponse rsp = DestroyStaticStoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyStaticStoreOutcome(rsp);
+        else
+            return DestroyStaticStoreOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyStaticStoreOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DestroyStaticStoreAsync(const DestroyStaticStoreRequest& request, const DestroyStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyStaticStore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallable(const DestroyStaticStoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyStaticStoreOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyStaticStore(request);
         }
     );
 
@@ -341,85 +728,42 @@ TcbClient::ModifyEnvOutcomeCallable TcbClient::ModifyEnvCallable(const ModifyEnv
     return task->get_future();
 }
 
-TcbClient::OfflineMysqlInstanceOutcome TcbClient::OfflineMysqlInstance(const OfflineMysqlInstanceRequest &request)
+TcbClient::ReinstateEnvOutcome TcbClient::ReinstateEnv(const ReinstateEnvRequest &request)
 {
-    auto outcome = MakeRequest(request, "OfflineMysqlInstance");
+    auto outcome = MakeRequest(request, "ReinstateEnv");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        OfflineMysqlInstanceResponse rsp = OfflineMysqlInstanceResponse();
+        ReinstateEnvResponse rsp = ReinstateEnvResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return OfflineMysqlInstanceOutcome(rsp);
+            return ReinstateEnvOutcome(rsp);
         else
-            return OfflineMysqlInstanceOutcome(o.GetError());
+            return ReinstateEnvOutcome(o.GetError());
     }
     else
     {
-        return OfflineMysqlInstanceOutcome(outcome.GetError());
+        return ReinstateEnvOutcome(outcome.GetError());
     }
 }
 
-void TcbClient::OfflineMysqlInstanceAsync(const OfflineMysqlInstanceRequest& request, const OfflineMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcbClient::ReinstateEnvAsync(const ReinstateEnvRequest& request, const ReinstateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->OfflineMysqlInstance(request), context);
+        handler(this, request, this->ReinstateEnv(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcbClient::OfflineMysqlInstanceOutcomeCallable TcbClient::OfflineMysqlInstanceCallable(const OfflineMysqlInstanceRequest &request)
+TcbClient::ReinstateEnvOutcomeCallable TcbClient::ReinstateEnvCallable(const ReinstateEnvRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<OfflineMysqlInstanceOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<ReinstateEnvOutcome()>>(
         [this, request]()
         {
-            return this->OfflineMysqlInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcbClient::UpgradeMysqlInstanceOutcome TcbClient::UpgradeMysqlInstance(const UpgradeMysqlInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "UpgradeMysqlInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        UpgradeMysqlInstanceResponse rsp = UpgradeMysqlInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return UpgradeMysqlInstanceOutcome(rsp);
-        else
-            return UpgradeMysqlInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return UpgradeMysqlInstanceOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::UpgradeMysqlInstanceAsync(const UpgradeMysqlInstanceRequest& request, const UpgradeMysqlInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeMysqlInstance(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcbClient::UpgradeMysqlInstanceOutcomeCallable TcbClient::UpgradeMysqlInstanceCallable(const UpgradeMysqlInstanceRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<UpgradeMysqlInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeMysqlInstance(request);
+            return this->ReinstateEnv(request);
         }
     );
 

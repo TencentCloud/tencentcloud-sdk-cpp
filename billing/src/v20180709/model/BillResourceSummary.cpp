@@ -51,7 +51,10 @@ BillResourceSummary::BillResourceSummary() :
     m_tagsHasBeenSet(false),
     m_payerUinHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
-    m_operateUinHasBeenSet(false)
+    m_operateUinHasBeenSet(false),
+    m_businessCodeHasBeenSet(false),
+    m_productCodeHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -370,6 +373,36 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const Value &value)
         m_operateUinHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessCode") && !value["BusinessCode"].IsNull())
+    {
+        if (!value["BusinessCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillResourceSummary.BusinessCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessCode = string(value["BusinessCode"].GetString());
+        m_businessCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductCode") && !value["ProductCode"].IsNull())
+    {
+        if (!value["ProductCode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillResourceSummary.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCode = string(value["ProductCode"].GetString());
+        m_productCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BillResourceSummary.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = value["RegionId"].GetInt64();
+        m_regionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -622,6 +655,30 @@ void BillResourceSummary::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "OperateUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_operateUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BusinessCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_businessCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_productCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionId, allocator);
     }
 
 }
@@ -1105,5 +1162,53 @@ void BillResourceSummary::SetOperateUin(const string& _operateUin)
 bool BillResourceSummary::OperateUinHasBeenSet() const
 {
     return m_operateUinHasBeenSet;
+}
+
+string BillResourceSummary::GetBusinessCode() const
+{
+    return m_businessCode;
+}
+
+void BillResourceSummary::SetBusinessCode(const string& _businessCode)
+{
+    m_businessCode = _businessCode;
+    m_businessCodeHasBeenSet = true;
+}
+
+bool BillResourceSummary::BusinessCodeHasBeenSet() const
+{
+    return m_businessCodeHasBeenSet;
+}
+
+string BillResourceSummary::GetProductCode() const
+{
+    return m_productCode;
+}
+
+void BillResourceSummary::SetProductCode(const string& _productCode)
+{
+    m_productCode = _productCode;
+    m_productCodeHasBeenSet = true;
+}
+
+bool BillResourceSummary::ProductCodeHasBeenSet() const
+{
+    return m_productCodeHasBeenSet;
+}
+
+int64_t BillResourceSummary::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void BillResourceSummary::SetRegionId(const int64_t& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool BillResourceSummary::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 

@@ -24,6 +24,7 @@ using namespace std;
 ImagePolityDetect::ImagePolityDetect() :
     m_evilTypeHasBeenSet(false),
     m_hitFlagHasBeenSet(false),
+    m_polityLogoDetailHasBeenSet(false),
     m_faceNamesHasBeenSet(false),
     m_keywordsHasBeenSet(false),
     m_polityItemsHasBeenSet(false),
@@ -54,6 +55,26 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
         }
         m_hitFlag = value["HitFlag"].GetInt64();
         m_hitFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolityLogoDetail") && !value["PolityLogoDetail"].IsNull())
+    {
+        if (!value["PolityLogoDetail"].IsArray())
+            return CoreInternalOutcome(Error("response `ImagePolityDetect.PolityLogoDetail` is not array type"));
+
+        const Value &tmpValue = value["PolityLogoDetail"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Logo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_polityLogoDetail.push_back(item);
+        }
+        m_polityLogoDetailHasBeenSet = true;
     }
 
     if (value.HasMember("FaceNames") && !value["FaceNames"].IsNull())
@@ -126,6 +147,21 @@ void ImagePolityDetect::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "HitFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hitFlag, allocator);
+    }
+
+    if (m_polityLogoDetailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolityLogoDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_polityLogoDetail.begin(); itr != m_polityLogoDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_faceNamesHasBeenSet)
@@ -208,6 +244,22 @@ void ImagePolityDetect::SetHitFlag(const int64_t& _hitFlag)
 bool ImagePolityDetect::HitFlagHasBeenSet() const
 {
     return m_hitFlagHasBeenSet;
+}
+
+vector<Logo> ImagePolityDetect::GetPolityLogoDetail() const
+{
+    return m_polityLogoDetail;
+}
+
+void ImagePolityDetect::SetPolityLogoDetail(const vector<Logo>& _polityLogoDetail)
+{
+    m_polityLogoDetail = _polityLogoDetail;
+    m_polityLogoDetailHasBeenSet = true;
+}
+
+bool ImagePolityDetect::PolityLogoDetailHasBeenSet() const
+{
+    return m_polityLogoDetailHasBeenSet;
 }
 
 vector<string> ImagePolityDetect::GetFaceNames() const

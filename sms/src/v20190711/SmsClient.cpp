@@ -255,6 +255,92 @@ SmsClient::DeleteSmsTemplateOutcomeCallable SmsClient::DeleteSmsTemplateCallable
     return task->get_future();
 }
 
+SmsClient::DescribeSmsSignListOutcome SmsClient::DescribeSmsSignList(const DescribeSmsSignListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmsSignList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmsSignListResponse rsp = DescribeSmsSignListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmsSignListOutcome(rsp);
+        else
+            return DescribeSmsSignListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmsSignListOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::DescribeSmsSignListAsync(const DescribeSmsSignListRequest& request, const DescribeSmsSignListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmsSignList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::DescribeSmsSignListOutcomeCallable SmsClient::DescribeSmsSignListCallable(const DescribeSmsSignListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmsSignListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmsSignList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmsClient::DescribeSmsTemplateListOutcome SmsClient::DescribeSmsTemplateList(const DescribeSmsTemplateListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmsTemplateList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmsTemplateListResponse rsp = DescribeSmsTemplateListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmsTemplateListOutcome(rsp);
+        else
+            return DescribeSmsTemplateListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmsTemplateListOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::DescribeSmsTemplateListAsync(const DescribeSmsTemplateListRequest& request, const DescribeSmsTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmsTemplateList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::DescribeSmsTemplateListOutcomeCallable SmsClient::DescribeSmsTemplateListCallable(const DescribeSmsTemplateListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmsTemplateListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmsTemplateList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SmsClient::ModifySmsSignOutcome SmsClient::ModifySmsSign(const ModifySmsSignRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySmsSign");

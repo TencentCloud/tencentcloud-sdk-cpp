@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拨测任务id。验证通过后，创建任务时使用，传递给CreateTask 接口。
-                     * @return TaskId 拨测任务id。验证通过后，创建任务时使用，传递给CreateTask 接口。
+                     * 获取拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。
+                     * @return TaskId 拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。
                      */
                     uint64_t GetTaskId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拨测任务id。验证通过后，创建任务时使用，传递给CreateTask 接口。
+                     * 拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

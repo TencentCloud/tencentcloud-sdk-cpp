@@ -24,7 +24,7 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteIdlFilesRequest::DeleteIdlFilesRequest() :
-    m_applicationIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_idlFilesHasBeenSet(false)
 {
 }
@@ -36,12 +36,12 @@ string DeleteIdlFilesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idlFilesHasBeenSet)
@@ -67,20 +67,20 @@ string DeleteIdlFilesRequest::ToJsonString() const
 }
 
 
-string DeleteIdlFilesRequest::GetApplicationId() const
+string DeleteIdlFilesRequest::GetClusterId() const
 {
-    return m_applicationId;
+    return m_clusterId;
 }
 
-void DeleteIdlFilesRequest::SetApplicationId(const string& _applicationId)
+void DeleteIdlFilesRequest::SetClusterId(const string& _clusterId)
 {
-    m_applicationId = _applicationId;
-    m_applicationIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool DeleteIdlFilesRequest::ApplicationIdHasBeenSet() const
+bool DeleteIdlFilesRequest::ClusterIdHasBeenSet() const
 {
-    return m_applicationIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
 vector<IdlFileInfo> DeleteIdlFilesRequest::GetIdlFiles() const

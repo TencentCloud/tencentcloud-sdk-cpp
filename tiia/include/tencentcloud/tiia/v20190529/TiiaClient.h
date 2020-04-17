@@ -37,10 +37,10 @@
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectProductBetaRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectProductBetaResponse.h>
 #include <tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h>
 #include <tencentcloud/tiia/v20190529/model/EnhanceImageResponse.h>
-#include <tencentcloud/tiia/v20190529/model/ImageModerationRequest.h>
-#include <tencentcloud/tiia/v20190529/model/ImageModerationResponse.h>
 #include <tencentcloud/tiia/v20190529/model/RecognizeCarRequest.h>
 #include <tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h>
 
@@ -78,12 +78,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetectProductResponse> DetectProductOutcome;
                 typedef std::future<DetectProductOutcome> DetectProductOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectProductRequest&, DetectProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectProductAsyncHandler;
+                typedef Outcome<Error, Model::DetectProductBetaResponse> DetectProductBetaOutcome;
+                typedef std::future<DetectProductBetaOutcome> DetectProductBetaOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectProductBetaRequest&, DetectProductBetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectProductBetaAsyncHandler;
                 typedef Outcome<Error, Model::EnhanceImageResponse> EnhanceImageOutcome;
                 typedef std::future<EnhanceImageOutcome> EnhanceImageOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::EnhanceImageRequest&, EnhanceImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceImageAsyncHandler;
-                typedef Outcome<Error, Model::ImageModerationResponse> ImageModerationOutcome;
-                typedef std::future<ImageModerationOutcome> ImageModerationOutcomeCallable;
-                typedef std::function<void(const TiiaClient*, const Model::ImageModerationRequest&, ImageModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageModerationAsyncHandler;
                 typedef Outcome<Error, Model::RecognizeCarResponse> RecognizeCarOutcome;
                 typedef std::future<RecognizeCarOutcome> RecognizeCarOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::RecognizeCarRequest&, RecognizeCarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCarAsyncHandler;
@@ -143,7 +143,7 @@ namespace TencentCloud
                 /**
                  *图像标签利用深度学习技术、海量训练数据，可以对图片进行智能分类、物体识别等。
 
-目前支持8个大类、六十多个子类、数千个标签。涵盖各种日常场景、动植物、物品、美食、卡证等。具体分类请见图像分析常见问题功能和限制部分（https://cloud.tencent.com/document/product/865/17629 ）
+目前支持8个大类、六十多个子类、数千个标签。涵盖各种日常场景、动植物、物品、美食、卡证等。具体分类请见[图像分析常见问题功能与限制相关](https://cloud.tencent.com/document/product/865/39164)。
 
 图像标签提供三个版本供选择：
 
@@ -190,6 +190,24 @@ namespace TencentCloud
                 DetectProductOutcomeCallable DetectProductCallable(const Model::DetectProductRequest& request);
 
                 /**
+                 *商品识别-微信识物版，基于人工智能技术、海量训练图片、亿级商品库，可以实现全覆盖、细粒度、高准确率的商品识别和商品推荐功能。
+本服务可以识别出图片中的主体位置、主体商品类型，覆盖亿级SKU，输出具体商品的价格、型号等详细信息。
+客户无需自建商品库，即可快速实现商品识别、拍照搜商品等功能。
+
+目前“商品识别-微信识物版”为内测服务，需要申请、开通后方可使用。请在[服务开通申请表](https://cloud.tencent.com/apply/p/y1q2mnf0vdl) 中填写详细信息和需求，如果通过审核，我们将会在2个工作日内与您联系，并开通服务。
+内测期间，本服务免费提供最高2QPS，收费模式和标准会在正式版上线前通过站内信、短信通知客户。如果需要提升并发，请与我们联系洽谈。
+
+注意：本文档为内测版本，仅适用于功能体验和测试，正式业务接入请等待正式版。正式版的输入、输出可能会与内测版存在少量差异。
+>     
+- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
+                 * @param req DetectProductBetaRequest
+                 * @return DetectProductBetaOutcome
+                 */
+                DetectProductBetaOutcome DetectProductBeta(const Model::DetectProductBetaRequest &request);
+                void DetectProductBetaAsync(const Model::DetectProductBetaRequest& request, const DetectProductBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectProductBetaOutcomeCallable DetectProductBetaCallable(const Model::DetectProductBetaRequest& request);
+
+                /**
                  *传入一张图片，输出清晰度提升后的图片。
 
 可以消除图片有损压缩导致的噪声，和使用滤镜、拍摄失焦导致的模糊。让图片的边缘和细节更加清晰自然。
@@ -201,29 +219,6 @@ namespace TencentCloud
                 EnhanceImageOutcome EnhanceImage(const Model::EnhanceImageRequest &request);
                 void EnhanceImageAsync(const Model::EnhanceImageRequest& request, const EnhanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnhanceImageOutcomeCallable EnhanceImageCallable(const Model::EnhanceImageRequest& request);
-
-                /**
-                 *图像审核包含鉴黄、政治敏感识别、暴恐识别、图文审核等服务。
-
-• 鉴黄：识别图片中是否存在涉黄内容，将图片分为正常、性感、色情三类，并输出分类的置信度。
-
-• 政治敏感识别：识别图片中是否存在政治人物、政治恶搞、著名政治事件照片等内容。
-
-• 暴恐识别：识别图片中的暴力恐怖元素，例如武器、管制刀具、血腥、恐怖主义等。
-
-• 图文审核：结合OCR、NLP和二维码识别算法，分析图片中的文字是否违规，或是否存在二维码等营销内容，并输出违规内容的类别（涉黄、涉政、谩骂、广告营销、暴恐等）。
-
-为了方便使用、减少图片传输次数，图像审核包装成多合一接口，实际上是多个服务。
-
-图像审核根据服务的调用次数收费。例如一张图片同时调用鉴黄、图文审核两个服务，那么此次调用按照两次计费。
->     
-- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
-                 * @param req ImageModerationRequest
-                 * @return ImageModerationOutcome
-                 */
-                ImageModerationOutcome ImageModeration(const Model::ImageModerationRequest &request);
-                void ImageModerationAsync(const Model::ImageModerationRequest& request, const ImageModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ImageModerationOutcomeCallable ImageModerationCallable(const Model::ImageModerationRequest& request);
 
                 /**
                  *腾讯云车辆属性识别可对汽车车身及车辆属性进行检测与识别，目前支持11种车身颜色、20多种车型、300多种品牌、4000多种车系+年款的识别，同时支持对车辆的位置进行检测。如果图片中存在多辆车，会分别输出每辆车的车型和坐标。

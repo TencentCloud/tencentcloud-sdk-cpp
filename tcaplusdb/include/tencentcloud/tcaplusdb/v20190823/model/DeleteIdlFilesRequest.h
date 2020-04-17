@@ -44,22 +44,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用实例ID
-                     * @return ApplicationId 应用实例ID
+                     * 获取IDL所属集群ID
+                     * @return ClusterId IDL所属集群ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置应用实例ID
-                     * @param ApplicationId 应用实例ID
+                     * 设置IDL所属集群ID
+                     * @param ClusterId IDL所属集群ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取待删除的IDL文件信息列表
@@ -82,10 +82,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用实例ID
+                     * IDL所属集群ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 待删除的IDL文件信息列表

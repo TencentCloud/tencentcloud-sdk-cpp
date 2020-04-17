@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool EnableActionClassHasBeenSet() const;
 
                     /**
-                     * 获取人脸检测选项
-                     * @return EnableFaceDetect 人脸检测选项
+                     * 获取人脸检测选项（默认为true，目前不可编辑）
+                     * @return EnableFaceDetect 人脸检测选项（默认为true，目前不可编辑）
                      */
                     bool GetEnableFaceDetect() const;
 
                     /**
-                     * 设置人脸检测选项
-                     * @param EnableFaceDetect 人脸检测选项
+                     * 设置人脸检测选项（默认为true，目前不可编辑）
+                     * @param EnableFaceDetect 人脸检测选项（默认为true，目前不可编辑）
                      */
                     void SetEnableFaceDetect(const bool& _enableFaceDetect);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool EnableFaceExpressionHasBeenSet() const;
 
                     /**
-                     * 获取人脸检索选项
-                     * @return EnableFaceIdentify 人脸检索选项
+                     * 获取人脸检索选项（默认为true，目前不可编辑）
+                     * @return EnableFaceIdentify 人脸检索选项（默认为true，目前不可编辑）
                      */
                     bool GetEnableFaceIdentify() const;
 
                     /**
-                     * 设置人脸检索选项
-                     * @param EnableFaceIdentify 人脸检索选项
+                     * 设置人脸检索选项（默认为true，目前不可编辑）
+                     * @param EnableFaceIdentify 人脸检索选项（默认为true，目前不可编辑）
                      */
                     void SetEnableFaceIdentify(const bool& _enableFaceIdentify);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool EnableTeacherBodyMovementsHasBeenSet() const;
 
                     /**
-                     * 获取判断老师是否在屏幕中
-                     * @return EnableTeacherOutScreen 判断老师是否在屏幕中
+                     * 获取判断老师是否在屏幕中（该功能尚未支持）
+                     * @return EnableTeacherOutScreen 判断老师是否在屏幕中（该功能尚未支持）
                      */
                     bool GetEnableTeacherOutScreen() const;
 
                     /**
-                     * 设置判断老师是否在屏幕中
-                     * @param EnableTeacherOutScreen 判断老师是否在屏幕中
+                     * 设置判断老师是否在屏幕中（该功能尚未支持）
+                     * @param EnableTeacherOutScreen 判断老师是否在屏幕中（该功能尚未支持）
                      */
                     void SetEnableTeacherOutScreen(const bool& _enableTeacherOutScreen);
 
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_enableActionClassHasBeenSet;
 
                     /**
-                     * 人脸检测选项
+                     * 人脸检测选项（默认为true，目前不可编辑）
                      */
                     bool m_enableFaceDetect;
                     bool m_enableFaceDetectHasBeenSet;
@@ -247,7 +247,7 @@ namespace TencentCloud
                     bool m_enableFaceExpressionHasBeenSet;
 
                     /**
-                     * 人脸检索选项
+                     * 人脸检索选项（默认为true，目前不可编辑）
                      */
                     bool m_enableFaceIdentify;
                     bool m_enableFaceIdentifyHasBeenSet;
@@ -283,7 +283,7 @@ namespace TencentCloud
                     bool m_enableTeacherBodyMovementsHasBeenSet;
 
                     /**
-                     * 判断老师是否在屏幕中
+                     * 判断老师是否在屏幕中（该功能尚未支持）
                      */
                     bool m_enableTeacherOutScreen;
                     bool m_enableTeacherOutScreenHasBeenSet;

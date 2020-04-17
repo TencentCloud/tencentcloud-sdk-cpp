@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取[实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
-                     * @return InstanceStatusSet [实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
+                     * 获取[实例状态](https://cloud.tencent.com/document/api/213/15753#InstanceStatus) 列表。
+                     * @return InstanceStatusSet [实例状态](https://cloud.tencent.com/document/api/213/15753#InstanceStatus) 列表。
                      */
                     std::vector<InstanceStatus> GetInstanceStatusSet() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * [实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
+                     * [实例状态](https://cloud.tencent.com/document/api/213/15753#InstanceStatus) 列表。
                      */
                     std::vector<InstanceStatus> m_instanceStatusSet;
                     bool m_instanceStatusSetHasBeenSet;

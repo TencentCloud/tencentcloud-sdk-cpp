@@ -32,7 +32,11 @@ InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
     m_supportHAHasBeenSet(false),
     m_softwareHasBeenSet(false),
     m_placementHasBeenSet(false),
-    m_vPCSettingsHasBeenSet(false)
+    m_vPCSettingsHasBeenSet(false),
+    m_metaTypeHasBeenSet(false),
+    m_unifyMetaInstanceIdHasBeenSet(false),
+    m_metaDBInfoHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -121,6 +125,39 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_vPCSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_metaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unifyMetaInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnifyMetaInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_unifyMetaInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaDBInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaDBInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_metaDBInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_productId, allocator);
     }
 
 
@@ -273,6 +310,70 @@ void InquiryPriceCreateInstanceRequest::SetVPCSettings(const VPCSettings& _vPCSe
 bool InquiryPriceCreateInstanceRequest::VPCSettingsHasBeenSet() const
 {
     return m_vPCSettingsHasBeenSet;
+}
+
+string InquiryPriceCreateInstanceRequest::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void InquiryPriceCreateInstanceRequest::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
+}
+
+string InquiryPriceCreateInstanceRequest::GetUnifyMetaInstanceId() const
+{
+    return m_unifyMetaInstanceId;
+}
+
+void InquiryPriceCreateInstanceRequest::SetUnifyMetaInstanceId(const string& _unifyMetaInstanceId)
+{
+    m_unifyMetaInstanceId = _unifyMetaInstanceId;
+    m_unifyMetaInstanceIdHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::UnifyMetaInstanceIdHasBeenSet() const
+{
+    return m_unifyMetaInstanceIdHasBeenSet;
+}
+
+CustomMetaInfo InquiryPriceCreateInstanceRequest::GetMetaDBInfo() const
+{
+    return m_metaDBInfo;
+}
+
+void InquiryPriceCreateInstanceRequest::SetMetaDBInfo(const CustomMetaInfo& _metaDBInfo)
+{
+    m_metaDBInfo = _metaDBInfo;
+    m_metaDBInfoHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::MetaDBInfoHasBeenSet() const
+{
+    return m_metaDBInfoHasBeenSet;
+}
+
+uint64_t InquiryPriceCreateInstanceRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void InquiryPriceCreateInstanceRequest::SetProductId(const uint64_t& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 
 

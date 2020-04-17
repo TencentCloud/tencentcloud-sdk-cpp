@@ -28,7 +28,8 @@ DescribeBillBandwidthAndFluxListRequest::DescribeBillBandwidthAndFluxListRequest
     m_endTimeHasBeenSet(false),
     m_playDomainsHasBeenSet(false),
     m_mainlandOrOverseaHasBeenSet(false),
-    m_granularityHasBeenSet(false)
+    m_granularityHasBeenSet(false),
+    m_serviceNameHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string DescribeBillBandwidthAndFluxListRequest::ToJsonString() const
         string key = "Granularity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_granularity, allocator);
+    }
+
+    if (m_serviceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_serviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void DescribeBillBandwidthAndFluxListRequest::SetGranularity(const uint64_t& _gr
 bool DescribeBillBandwidthAndFluxListRequest::GranularityHasBeenSet() const
 {
     return m_granularityHasBeenSet;
+}
+
+string DescribeBillBandwidthAndFluxListRequest::GetServiceName() const
+{
+    return m_serviceName;
+}
+
+void DescribeBillBandwidthAndFluxListRequest::SetServiceName(const string& _serviceName)
+{
+    m_serviceName = _serviceName;
+    m_serviceNameHasBeenSet = true;
+}
+
+bool DescribeBillBandwidthAndFluxListRequest::ServiceNameHasBeenSet() const
+{
+    return m_serviceNameHasBeenSet;
 }
 
 

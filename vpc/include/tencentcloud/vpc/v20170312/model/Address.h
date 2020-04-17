@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/AlgType.h>
 
 
 namespace TencentCloud
@@ -280,6 +281,24 @@ namespace TencentCloud
                      */
                     bool CascadeReleaseHasBeenSet() const;
 
+                    /**
+                     * 获取EIP ALG开启的协议类型。
+                     * @return EipAlgType EIP ALG开启的协议类型。
+                     */
+                    AlgType GetEipAlgType() const;
+
+                    /**
+                     * 设置EIP ALG开启的协议类型。
+                     * @param EipAlgType EIP ALG开启的协议类型。
+                     */
+                    void SetEipAlgType(const AlgType& _eipAlgType);
+
+                    /**
+                     * 判断参数 EipAlgType 是否已赋值
+                     * @return EipAlgType 是否已赋值
+                     */
+                    bool EipAlgTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +378,12 @@ namespace TencentCloud
                      */
                     bool m_cascadeRelease;
                     bool m_cascadeReleaseHasBeenSet;
+
+                    /**
+                     * EIP ALG开启的协议类型。
+                     */
+                    AlgType m_eipAlgType;
+                    bool m_eipAlgTypeHasBeenSet;
 
                 };
             }

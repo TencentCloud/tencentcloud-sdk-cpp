@@ -40,6 +40,92 @@ KmsClient::KmsClient(const Credential &credential, const string &region, const C
 }
 
 
+KmsClient::AsymmetricRsaDecryptOutcome KmsClient::AsymmetricRsaDecrypt(const AsymmetricRsaDecryptRequest &request)
+{
+    auto outcome = MakeRequest(request, "AsymmetricRsaDecrypt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AsymmetricRsaDecryptResponse rsp = AsymmetricRsaDecryptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AsymmetricRsaDecryptOutcome(rsp);
+        else
+            return AsymmetricRsaDecryptOutcome(o.GetError());
+    }
+    else
+    {
+        return AsymmetricRsaDecryptOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::AsymmetricRsaDecryptAsync(const AsymmetricRsaDecryptRequest& request, const AsymmetricRsaDecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AsymmetricRsaDecrypt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::AsymmetricRsaDecryptOutcomeCallable KmsClient::AsymmetricRsaDecryptCallable(const AsymmetricRsaDecryptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AsymmetricRsaDecryptOutcome()>>(
+        [this, request]()
+        {
+            return this->AsymmetricRsaDecrypt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::AsymmetricSm2DecryptOutcome KmsClient::AsymmetricSm2Decrypt(const AsymmetricSm2DecryptRequest &request)
+{
+    auto outcome = MakeRequest(request, "AsymmetricSm2Decrypt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AsymmetricSm2DecryptResponse rsp = AsymmetricSm2DecryptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AsymmetricSm2DecryptOutcome(rsp);
+        else
+            return AsymmetricSm2DecryptOutcome(o.GetError());
+    }
+    else
+    {
+        return AsymmetricSm2DecryptOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::AsymmetricSm2DecryptAsync(const AsymmetricSm2DecryptRequest& request, const AsymmetricSm2DecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AsymmetricSm2Decrypt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::AsymmetricSm2DecryptOutcomeCallable KmsClient::AsymmetricSm2DecryptCallable(const AsymmetricSm2DecryptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AsymmetricSm2DecryptOutcome()>>(
+        [this, request]()
+        {
+            return this->AsymmetricSm2Decrypt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::CancelKeyDeletionOutcome KmsClient::CancelKeyDeletion(const CancelKeyDeletionRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelKeyDeletion");
@@ -119,6 +205,49 @@ KmsClient::CreateKeyOutcomeCallable KmsClient::CreateKeyCallable(const CreateKey
         [this, request]()
         {
             return this->CreateKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::CreateWhiteBoxKeyOutcome KmsClient::CreateWhiteBoxKey(const CreateWhiteBoxKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWhiteBoxKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWhiteBoxKeyResponse rsp = CreateWhiteBoxKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWhiteBoxKeyOutcome(rsp);
+        else
+            return CreateWhiteBoxKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWhiteBoxKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::CreateWhiteBoxKeyAsync(const CreateWhiteBoxKeyRequest& request, const CreateWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWhiteBoxKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::CreateWhiteBoxKeyOutcomeCallable KmsClient::CreateWhiteBoxKeyCallable(const CreateWhiteBoxKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWhiteBoxKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWhiteBoxKey(request);
         }
     );
 
@@ -212,6 +341,49 @@ KmsClient::DeleteImportedKeyMaterialOutcomeCallable KmsClient::DeleteImportedKey
     return task->get_future();
 }
 
+KmsClient::DeleteWhiteBoxKeyOutcome KmsClient::DeleteWhiteBoxKey(const DeleteWhiteBoxKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWhiteBoxKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWhiteBoxKeyResponse rsp = DeleteWhiteBoxKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWhiteBoxKeyOutcome(rsp);
+        else
+            return DeleteWhiteBoxKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWhiteBoxKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DeleteWhiteBoxKeyAsync(const DeleteWhiteBoxKeyRequest& request, const DeleteWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWhiteBoxKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DeleteWhiteBoxKeyOutcomeCallable KmsClient::DeleteWhiteBoxKeyCallable(const DeleteWhiteBoxKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWhiteBoxKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWhiteBoxKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::DescribeKeyOutcome KmsClient::DescribeKey(const DescribeKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKey");
@@ -291,6 +463,178 @@ KmsClient::DescribeKeysOutcomeCallable KmsClient::DescribeKeysCallable(const Des
         [this, request]()
         {
             return this->DescribeKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DescribeWhiteBoxDecryptKeyOutcome KmsClient::DescribeWhiteBoxDecryptKey(const DescribeWhiteBoxDecryptKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteBoxDecryptKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteBoxDecryptKeyResponse rsp = DescribeWhiteBoxDecryptKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteBoxDecryptKeyOutcome(rsp);
+        else
+            return DescribeWhiteBoxDecryptKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteBoxDecryptKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DescribeWhiteBoxDecryptKeyAsync(const DescribeWhiteBoxDecryptKeyRequest& request, const DescribeWhiteBoxDecryptKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteBoxDecryptKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DescribeWhiteBoxDecryptKeyOutcomeCallable KmsClient::DescribeWhiteBoxDecryptKeyCallable(const DescribeWhiteBoxDecryptKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteBoxDecryptKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteBoxDecryptKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DescribeWhiteBoxKeyOutcome KmsClient::DescribeWhiteBoxKey(const DescribeWhiteBoxKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteBoxKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteBoxKeyResponse rsp = DescribeWhiteBoxKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteBoxKeyOutcome(rsp);
+        else
+            return DescribeWhiteBoxKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteBoxKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DescribeWhiteBoxKeyAsync(const DescribeWhiteBoxKeyRequest& request, const DescribeWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteBoxKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DescribeWhiteBoxKeyOutcomeCallable KmsClient::DescribeWhiteBoxKeyCallable(const DescribeWhiteBoxKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteBoxKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteBoxKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DescribeWhiteBoxKeyDetailsOutcome KmsClient::DescribeWhiteBoxKeyDetails(const DescribeWhiteBoxKeyDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteBoxKeyDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteBoxKeyDetailsResponse rsp = DescribeWhiteBoxKeyDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteBoxKeyDetailsOutcome(rsp);
+        else
+            return DescribeWhiteBoxKeyDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteBoxKeyDetailsOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DescribeWhiteBoxKeyDetailsAsync(const DescribeWhiteBoxKeyDetailsRequest& request, const DescribeWhiteBoxKeyDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteBoxKeyDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DescribeWhiteBoxKeyDetailsOutcomeCallable KmsClient::DescribeWhiteBoxKeyDetailsCallable(const DescribeWhiteBoxKeyDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteBoxKeyDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteBoxKeyDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DescribeWhiteBoxServiceStatusOutcome KmsClient::DescribeWhiteBoxServiceStatus(const DescribeWhiteBoxServiceStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteBoxServiceStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteBoxServiceStatusResponse rsp = DescribeWhiteBoxServiceStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteBoxServiceStatusOutcome(rsp);
+        else
+            return DescribeWhiteBoxServiceStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteBoxServiceStatusOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DescribeWhiteBoxServiceStatusAsync(const DescribeWhiteBoxServiceStatusRequest& request, const DescribeWhiteBoxServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteBoxServiceStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DescribeWhiteBoxServiceStatusOutcomeCallable KmsClient::DescribeWhiteBoxServiceStatusCallable(const DescribeWhiteBoxServiceStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteBoxServiceStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteBoxServiceStatus(request);
         }
     );
 
@@ -427,6 +771,92 @@ KmsClient::DisableKeysOutcomeCallable KmsClient::DisableKeysCallable(const Disab
     return task->get_future();
 }
 
+KmsClient::DisableWhiteBoxKeyOutcome KmsClient::DisableWhiteBoxKey(const DisableWhiteBoxKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableWhiteBoxKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableWhiteBoxKeyResponse rsp = DisableWhiteBoxKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableWhiteBoxKeyOutcome(rsp);
+        else
+            return DisableWhiteBoxKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableWhiteBoxKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DisableWhiteBoxKeyAsync(const DisableWhiteBoxKeyRequest& request, const DisableWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableWhiteBoxKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DisableWhiteBoxKeyOutcomeCallable KmsClient::DisableWhiteBoxKeyCallable(const DisableWhiteBoxKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableWhiteBoxKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableWhiteBoxKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::DisableWhiteBoxKeysOutcome KmsClient::DisableWhiteBoxKeys(const DisableWhiteBoxKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableWhiteBoxKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableWhiteBoxKeysResponse rsp = DisableWhiteBoxKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableWhiteBoxKeysOutcome(rsp);
+        else
+            return DisableWhiteBoxKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableWhiteBoxKeysOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DisableWhiteBoxKeysAsync(const DisableWhiteBoxKeysRequest& request, const DisableWhiteBoxKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableWhiteBoxKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DisableWhiteBoxKeysOutcomeCallable KmsClient::DisableWhiteBoxKeysCallable(const DisableWhiteBoxKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableWhiteBoxKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableWhiteBoxKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::EnableKeyOutcome KmsClient::EnableKey(const EnableKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableKey");
@@ -556,6 +986,92 @@ KmsClient::EnableKeysOutcomeCallable KmsClient::EnableKeysCallable(const EnableK
     return task->get_future();
 }
 
+KmsClient::EnableWhiteBoxKeyOutcome KmsClient::EnableWhiteBoxKey(const EnableWhiteBoxKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableWhiteBoxKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableWhiteBoxKeyResponse rsp = EnableWhiteBoxKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableWhiteBoxKeyOutcome(rsp);
+        else
+            return EnableWhiteBoxKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableWhiteBoxKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::EnableWhiteBoxKeyAsync(const EnableWhiteBoxKeyRequest& request, const EnableWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableWhiteBoxKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::EnableWhiteBoxKeyOutcomeCallable KmsClient::EnableWhiteBoxKeyCallable(const EnableWhiteBoxKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableWhiteBoxKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableWhiteBoxKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::EnableWhiteBoxKeysOutcome KmsClient::EnableWhiteBoxKeys(const EnableWhiteBoxKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableWhiteBoxKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableWhiteBoxKeysResponse rsp = EnableWhiteBoxKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableWhiteBoxKeysOutcome(rsp);
+        else
+            return EnableWhiteBoxKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableWhiteBoxKeysOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::EnableWhiteBoxKeysAsync(const EnableWhiteBoxKeysRequest& request, const EnableWhiteBoxKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableWhiteBoxKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::EnableWhiteBoxKeysOutcomeCallable KmsClient::EnableWhiteBoxKeysCallable(const EnableWhiteBoxKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableWhiteBoxKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableWhiteBoxKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::EncryptOutcome KmsClient::Encrypt(const EncryptRequest &request)
 {
     auto outcome = MakeRequest(request, "Encrypt");
@@ -592,6 +1108,49 @@ KmsClient::EncryptOutcomeCallable KmsClient::EncryptCallable(const EncryptReques
         [this, request]()
         {
             return this->Encrypt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::EncryptByWhiteBoxOutcome KmsClient::EncryptByWhiteBox(const EncryptByWhiteBoxRequest &request)
+{
+    auto outcome = MakeRequest(request, "EncryptByWhiteBox");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EncryptByWhiteBoxResponse rsp = EncryptByWhiteBoxResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EncryptByWhiteBoxOutcome(rsp);
+        else
+            return EncryptByWhiteBoxOutcome(o.GetError());
+    }
+    else
+    {
+        return EncryptByWhiteBoxOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::EncryptByWhiteBoxAsync(const EncryptByWhiteBoxRequest& request, const EncryptByWhiteBoxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EncryptByWhiteBox(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::EncryptByWhiteBoxOutcomeCallable KmsClient::EncryptByWhiteBoxCallable(const EncryptByWhiteBoxRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EncryptByWhiteBoxOutcome()>>(
+        [this, request]()
+        {
+            return this->EncryptByWhiteBox(request);
         }
     );
 
@@ -771,6 +1330,49 @@ KmsClient::GetParametersForImportOutcomeCallable KmsClient::GetParametersForImpo
     return task->get_future();
 }
 
+KmsClient::GetPublicKeyOutcome KmsClient::GetPublicKey(const GetPublicKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPublicKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPublicKeyResponse rsp = GetPublicKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPublicKeyOutcome(rsp);
+        else
+            return GetPublicKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPublicKeyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::GetPublicKeyAsync(const GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPublicKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::GetPublicKeyOutcomeCallable KmsClient::GetPublicKeyCallable(const GetPublicKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPublicKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPublicKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::GetServiceStatusOutcome KmsClient::GetServiceStatus(const GetServiceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetServiceStatus");
@@ -850,6 +1452,49 @@ KmsClient::ImportKeyMaterialOutcomeCallable KmsClient::ImportKeyMaterialCallable
         [this, request]()
         {
             return this->ImportKeyMaterial(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::ListAlgorithmsOutcome KmsClient::ListAlgorithms(const ListAlgorithmsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAlgorithms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAlgorithmsResponse rsp = ListAlgorithmsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAlgorithmsOutcome(rsp);
+        else
+            return ListAlgorithmsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAlgorithmsOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::ListAlgorithmsAsync(const ListAlgorithmsRequest& request, const ListAlgorithmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAlgorithms(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::ListAlgorithmsOutcomeCallable KmsClient::ListAlgorithmsCallable(const ListAlgorithmsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAlgorithmsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAlgorithms(request);
         }
     );
 

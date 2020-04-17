@@ -33,7 +33,8 @@ CreateL7Listener::CreateL7Listener() :
     m_certCaIdHasBeenSet(false),
     m_certCaNameHasBeenSet(false),
     m_certCaContentHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_forwardProtocolHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const Value &value)
         m_bandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardProtocol") && !value["ForwardProtocol"].IsNull())
+    {
+        if (!value["ForwardProtocol"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CreateL7Listener.ForwardProtocol` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardProtocol = value["ForwardProtocol"].GetInt64();
+        m_forwardProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void CreateL7Listener::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_forwardProtocolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForwardProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forwardProtocol, allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void CreateL7Listener::SetBandwidth(const int64_t& _bandwidth)
 bool CreateL7Listener::BandwidthHasBeenSet() const
 {
     return m_bandwidthHasBeenSet;
+}
+
+int64_t CreateL7Listener::GetForwardProtocol() const
+{
+    return m_forwardProtocol;
+}
+
+void CreateL7Listener::SetForwardProtocol(const int64_t& _forwardProtocol)
+{
+    m_forwardProtocol = _forwardProtocol;
+    m_forwardProtocolHasBeenSet = true;
+}
+
+bool CreateL7Listener::ForwardProtocolHasBeenSet() const
+{
+    return m_forwardProtocolHasBeenSet;
 }
 

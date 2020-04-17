@@ -19,11 +19,8 @@ set(cms_public_header
   )
 
 set(cms_public_header_model
-  include/tencentcloud/cms/v20190321/model/AudioModerationResponse.h
-  include/tencentcloud/cms/v20190321/model/DescribeModerationOverviewRequest.h
   include/tencentcloud/cms/v20190321/model/TextModerationResponse.h
   include/tencentcloud/cms/v20190321/model/TextData.h
-  include/tencentcloud/cms/v20190321/model/VideoModerationResponse.h
   include/tencentcloud/cms/v20190321/model/TextModerationRequest.h
   include/tencentcloud/cms/v20190321/model/ImageModerationResponse.h
   include/tencentcloud/cms/v20190321/model/ImageModerationRequest.h
@@ -33,7 +30,7 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/DeleteTextSampleResponse.h
   include/tencentcloud/cms/v20190321/model/TextSample.h
   include/tencentcloud/cms/v20190321/model/CreateTextSampleResponse.h
-  include/tencentcloud/cms/v20190321/model/OverviewRecord.h
+  include/tencentcloud/cms/v20190321/model/TextOutputID.h
   include/tencentcloud/cms/v20190321/model/FileSampleInfo.h
   include/tencentcloud/cms/v20190321/model/DescribeFileSampleRequest.h
   include/tencentcloud/cms/v20190321/model/CodeDetect.h
@@ -43,30 +40,29 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/DeleteFileSampleResponse.h
   include/tencentcloud/cms/v20190321/model/FileSample.h
   include/tencentcloud/cms/v20190321/model/DescribeFileSampleResponse.h
+  include/tencentcloud/cms/v20190321/model/TextOutputRes.h
   include/tencentcloud/cms/v20190321/model/CreateTextSampleRequest.h
   include/tencentcloud/cms/v20190321/model/DeleteFileSampleRequest.h
   include/tencentcloud/cms/v20190321/model/Filter.h
   include/tencentcloud/cms/v20190321/model/OCRDetect.h
-  include/tencentcloud/cms/v20190321/model/DescribeModerationOverviewResponse.h
   include/tencentcloud/cms/v20190321/model/Similar.h
   include/tencentcloud/cms/v20190321/model/ImageHotDetect.h
+  include/tencentcloud/cms/v20190321/model/TextOutputComm.h
   include/tencentcloud/cms/v20190321/model/DescribeTextSampleRequest.h
-  include/tencentcloud/cms/v20190321/model/AudioModerationRequest.h
   include/tencentcloud/cms/v20190321/model/CodeDetail.h
   include/tencentcloud/cms/v20190321/model/ImagePolityDetect.h
   include/tencentcloud/cms/v20190321/model/ImageIllegalDetect.h
+  include/tencentcloud/cms/v20190321/model/RrectF.h
   include/tencentcloud/cms/v20190321/model/CreateFileSampleResponse.h
-  include/tencentcloud/cms/v20190321/model/VideoModerationRequest.h
+  include/tencentcloud/cms/v20190321/model/LogoDetail.h
+  include/tencentcloud/cms/v20190321/model/Logo.h
   include/tencentcloud/cms/v20190321/model/DeleteTextSampleRequest.h
   )
 
 set(cms_src
   src/v20190321/CmsClient.cpp
-  src/v20190321/model/AudioModerationResponse.cpp
-  src/v20190321/model/DescribeModerationOverviewRequest.cpp
   src/v20190321/model/TextModerationResponse.cpp
   src/v20190321/model/TextData.cpp
-  src/v20190321/model/VideoModerationResponse.cpp
   src/v20190321/model/TextModerationRequest.cpp
   src/v20190321/model/ImageModerationResponse.cpp
   src/v20190321/model/ImageModerationRequest.cpp
@@ -76,7 +72,7 @@ set(cms_src
   src/v20190321/model/DeleteTextSampleResponse.cpp
   src/v20190321/model/TextSample.cpp
   src/v20190321/model/CreateTextSampleResponse.cpp
-  src/v20190321/model/OverviewRecord.cpp
+  src/v20190321/model/TextOutputID.cpp
   src/v20190321/model/FileSampleInfo.cpp
   src/v20190321/model/DescribeFileSampleRequest.cpp
   src/v20190321/model/CodeDetect.cpp
@@ -86,20 +82,22 @@ set(cms_src
   src/v20190321/model/DeleteFileSampleResponse.cpp
   src/v20190321/model/FileSample.cpp
   src/v20190321/model/DescribeFileSampleResponse.cpp
+  src/v20190321/model/TextOutputRes.cpp
   src/v20190321/model/CreateTextSampleRequest.cpp
   src/v20190321/model/DeleteFileSampleRequest.cpp
   src/v20190321/model/Filter.cpp
   src/v20190321/model/OCRDetect.cpp
-  src/v20190321/model/DescribeModerationOverviewResponse.cpp
   src/v20190321/model/Similar.cpp
   src/v20190321/model/ImageHotDetect.cpp
+  src/v20190321/model/TextOutputComm.cpp
   src/v20190321/model/DescribeTextSampleRequest.cpp
-  src/v20190321/model/AudioModerationRequest.cpp
   src/v20190321/model/CodeDetail.cpp
   src/v20190321/model/ImagePolityDetect.cpp
   src/v20190321/model/ImageIllegalDetect.cpp
+  src/v20190321/model/RrectF.cpp
   src/v20190321/model/CreateFileSampleResponse.cpp
-  src/v20190321/model/VideoModerationRequest.cpp
+  src/v20190321/model/LogoDetail.cpp
+  src/v20190321/model/Logo.cpp
   src/v20190321/model/DeleteTextSampleRequest.cpp
   )
 

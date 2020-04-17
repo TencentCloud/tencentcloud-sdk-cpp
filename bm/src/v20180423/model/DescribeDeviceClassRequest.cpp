@@ -23,7 +23,9 @@ using namespace TencentCloud::Bm::V20180423::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeDeviceClassRequest::DescribeDeviceClassRequest()
+DescribeDeviceClassRequest::DescribeDeviceClassRequest() :
+    m_onSaleHasBeenSet(false),
+    m_needPriceInfoHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,22 @@ string DescribeDeviceClassRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_onSaleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OnSale";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_onSale, allocator);
+    }
+
+    if (m_needPriceInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedPriceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPriceInfo, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +59,37 @@ string DescribeDeviceClassRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeDeviceClassRequest::GetOnSale() const
+{
+    return m_onSale;
+}
+
+void DescribeDeviceClassRequest::SetOnSale(const uint64_t& _onSale)
+{
+    m_onSale = _onSale;
+    m_onSaleHasBeenSet = true;
+}
+
+bool DescribeDeviceClassRequest::OnSaleHasBeenSet() const
+{
+    return m_onSaleHasBeenSet;
+}
+
+uint64_t DescribeDeviceClassRequest::GetNeedPriceInfo() const
+{
+    return m_needPriceInfo;
+}
+
+void DescribeDeviceClassRequest::SetNeedPriceInfo(const uint64_t& _needPriceInfo)
+{
+    m_needPriceInfo = _needPriceInfo;
+    m_needPriceInfoHasBeenSet = true;
+}
+
+bool DescribeDeviceClassRequest::NeedPriceInfoHasBeenSet() const
+{
+    return m_needPriceInfoHasBeenSet;
+}
 
 

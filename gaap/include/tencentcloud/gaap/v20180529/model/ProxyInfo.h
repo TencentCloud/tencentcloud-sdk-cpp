@@ -520,6 +520,28 @@ UNKNOWN，未知状态。
                      */
                     bool SupportSecurityHasBeenSet() const;
 
+                    /**
+                     * 获取计费类型:(0:按带宽计费  1:按流量计费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingType 计费类型:(0:按带宽计费  1:按流量计费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBillingType() const;
+
+                    /**
+                     * 设置计费类型:(0:按带宽计费  1:按流量计费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BillingType 计费类型:(0:按带宽计费  1:按流量计费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBillingType(const int64_t& _billingType);
+
+                    /**
+                     * 判断参数 BillingType 是否已赋值
+                     * @return BillingType 是否已赋值
+                     */
+                    bool BillingTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -672,6 +694,13 @@ UNKNOWN，未知状态。
                      */
                     int64_t m_supportSecurity;
                     bool m_supportSecurityHasBeenSet;
+
+                    /**
+                     * 计费类型:(0:按带宽计费  1:按流量计费）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_billingType;
+                    bool m_billingTypeHasBeenSet;
 
                 };
             }

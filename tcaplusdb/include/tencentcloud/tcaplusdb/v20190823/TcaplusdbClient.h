@@ -27,26 +27,30 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/ClearTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CompareIdlFilesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CompareIdlFilesResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/CreateAppRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/CreateAppResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateBackupRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateBackupResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateClusterRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateClusterResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateTableGroupRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/CreateTableGroupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTablesResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/CreateZoneRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/CreateZoneResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DeleteAppRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DeleteAppResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteClusterRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteClusterResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTablesResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DeleteZoneRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DeleteZoneResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DescribeAppsRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DescribeAppsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeClustersRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeClustersResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTablesInRecycleRequest.h>
@@ -55,20 +59,18 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTasksResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DescribeZonesRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/DescribeZonesResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/ModifyAppNameRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/ModifyAppNameResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/ModifyAppPasswordRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/ModifyAppPasswordResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableQuotasRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableQuotasResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTablesResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/ModifyZoneNameRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/ModifyZoneNameResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesRequest.h>
@@ -95,36 +97,42 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CompareIdlFilesResponse> CompareIdlFilesOutcome;
                 typedef std::future<CompareIdlFilesOutcome> CompareIdlFilesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::CompareIdlFilesRequest&, CompareIdlFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompareIdlFilesAsyncHandler;
-                typedef Outcome<Error, Model::CreateAppResponse> CreateAppOutcome;
-                typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Error, Model::CreateBackupResponse> CreateBackupOutcome;
+                typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::CreateBackupRequest&, CreateBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
+                typedef Outcome<Error, Model::CreateClusterResponse> CreateClusterOutcome;
+                typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Error, Model::CreateTableGroupResponse> CreateTableGroupOutcome;
+                typedef std::future<CreateTableGroupOutcome> CreateTableGroupOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::CreateTableGroupRequest&, CreateTableGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTableGroupAsyncHandler;
                 typedef Outcome<Error, Model::CreateTablesResponse> CreateTablesOutcome;
                 typedef std::future<CreateTablesOutcome> CreateTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::CreateTablesRequest&, CreateTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTablesAsyncHandler;
-                typedef Outcome<Error, Model::CreateZoneResponse> CreateZoneOutcome;
-                typedef std::future<CreateZoneOutcome> CreateZoneOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::CreateZoneRequest&, CreateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateZoneAsyncHandler;
-                typedef Outcome<Error, Model::DeleteAppResponse> DeleteAppOutcome;
-                typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::DeleteAppRequest&, DeleteAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppAsyncHandler;
+                typedef Outcome<Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
+                typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
                 typedef Outcome<Error, Model::DeleteIdlFilesResponse> DeleteIdlFilesOutcome;
                 typedef std::future<DeleteIdlFilesOutcome> DeleteIdlFilesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteIdlFilesRequest&, DeleteIdlFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIdlFilesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteTableGroupResponse> DeleteTableGroupOutcome;
+                typedef std::future<DeleteTableGroupOutcome> DeleteTableGroupOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DeleteTableGroupRequest&, DeleteTableGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableGroupAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTablesResponse> DeleteTablesOutcome;
                 typedef std::future<DeleteTablesOutcome> DeleteTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteTablesRequest&, DeleteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTablesAsyncHandler;
-                typedef Outcome<Error, Model::DeleteZoneResponse> DeleteZoneOutcome;
-                typedef std::future<DeleteZoneOutcome> DeleteZoneOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::DeleteZoneRequest&, DeleteZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteZoneAsyncHandler;
-                typedef Outcome<Error, Model::DescribeAppsResponse> DescribeAppsOutcome;
-                typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeAppsRequest&, DescribeAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
+                typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
                 typedef Outcome<Error, Model::DescribeIdlFileInfosResponse> DescribeIdlFileInfosOutcome;
                 typedef std::future<DescribeIdlFileInfosOutcome> DescribeIdlFileInfosOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeIdlFileInfosRequest&, DescribeIdlFileInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdlFileInfosAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTableGroupsResponse> DescribeTableGroupsOutcome;
+                typedef std::future<DescribeTableGroupsOutcome> DescribeTableGroupsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeTableGroupsRequest&, DescribeTableGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableGroupsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
                 typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
@@ -137,15 +145,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUinInWhitelistResponse> DescribeUinInWhitelistOutcome;
                 typedef std::future<DescribeUinInWhitelistOutcome> DescribeUinInWhitelistOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeUinInWhitelistRequest&, DescribeUinInWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUinInWhitelistAsyncHandler;
-                typedef Outcome<Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
-                typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
-                typedef Outcome<Error, Model::ModifyAppNameResponse> ModifyAppNameOutcome;
-                typedef std::future<ModifyAppNameOutcome> ModifyAppNameOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyAppNameRequest&, ModifyAppNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppNameAsyncHandler;
-                typedef Outcome<Error, Model::ModifyAppPasswordResponse> ModifyAppPasswordOutcome;
-                typedef std::future<ModifyAppPasswordOutcome> ModifyAppPasswordOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyAppPasswordRequest&, ModifyAppPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppPasswordAsyncHandler;
+                typedef Outcome<Error, Model::ModifyClusterNameResponse> ModifyClusterNameOutcome;
+                typedef std::future<ModifyClusterNameOutcome> ModifyClusterNameOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterNameRequest&, ModifyClusterNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNameAsyncHandler;
+                typedef Outcome<Error, Model::ModifyClusterPasswordResponse> ModifyClusterPasswordOutcome;
+                typedef std::future<ModifyClusterPasswordOutcome> ModifyClusterPasswordOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterPasswordRequest&, ModifyClusterPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterPasswordAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTableGroupNameResponse> ModifyTableGroupNameOutcome;
+                typedef std::future<ModifyTableGroupNameOutcome> ModifyTableGroupNameOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableGroupNameRequest&, ModifyTableGroupNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableGroupNameAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTableMemosResponse> ModifyTableMemosOutcome;
                 typedef std::future<ModifyTableMemosOutcome> ModifyTableMemosOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableMemosRequest&, ModifyTableMemosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableMemosAsyncHandler;
@@ -155,9 +163,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyTablesResponse> ModifyTablesOutcome;
                 typedef std::future<ModifyTablesOutcome> ModifyTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTablesRequest&, ModifyTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTablesAsyncHandler;
-                typedef Outcome<Error, Model::ModifyZoneNameResponse> ModifyZoneNameOutcome;
-                typedef std::future<ModifyZoneNameOutcome> ModifyZoneNameOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyZoneNameRequest&, ModifyZoneNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneNameAsyncHandler;
                 typedef Outcome<Error, Model::RecoverRecycleTablesResponse> RecoverRecycleTablesOutcome;
                 typedef std::future<RecoverRecycleTablesOutcome> RecoverRecycleTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::RecoverRecycleTablesRequest&, RecoverRecycleTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverRecycleTablesAsyncHandler;
@@ -180,7 +185,7 @@ namespace TencentCloud
                 ClearTablesOutcomeCallable ClearTablesCallable(const Model::ClearTablesRequest& request);
 
                 /**
-                 *选中目标表，上传并校验改表文件，返回是否允许修改表结构
+                 *选中目标表格，上传并校验改表文件，返回是否允许修改表格结构的结果。
                  * @param req CompareIdlFilesRequest
                  * @return CompareIdlFilesOutcome
                  */
@@ -189,16 +194,34 @@ namespace TencentCloud
                 CompareIdlFilesOutcomeCallable CompareIdlFilesCallable(const Model::CompareIdlFilesRequest& request);
 
                 /**
-                 *本接口用于创建TcaplusDB应用
-                 * @param req CreateAppRequest
-                 * @return CreateAppOutcome
+                 *用户创建备份任务
+                 * @param req CreateBackupRequest
+                 * @return CreateBackupOutcome
                  */
-                CreateAppOutcome CreateApp(const Model::CreateAppRequest &request);
-                void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
+                CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest &request);
+                void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request);
 
                 /**
-                 *根据选择的IDL文件列表，批量创建表
+                 *本接口用于创建TcaplusDB集群
+                 * @param req CreateClusterRequest
+                 * @return CreateClusterOutcome
+                 */
+                CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
+                void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
+
+                /**
+                 *在TcaplusDB集群下创建表格组
+                 * @param req CreateTableGroupRequest
+                 * @return CreateTableGroupOutcome
+                 */
+                CreateTableGroupOutcome CreateTableGroup(const Model::CreateTableGroupRequest &request);
+                void CreateTableGroupAsync(const Model::CreateTableGroupRequest& request, const CreateTableGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTableGroupOutcomeCallable CreateTableGroupCallable(const Model::CreateTableGroupRequest& request);
+
+                /**
+                 *根据选择的IDL文件列表，批量创建表格
                  * @param req CreateTablesRequest
                  * @return CreateTablesOutcome
                  */
@@ -207,25 +230,16 @@ namespace TencentCloud
                 CreateTablesOutcomeCallable CreateTablesCallable(const Model::CreateTablesRequest& request);
 
                 /**
-                 *在TcaplusDB应用下创建大区
-                 * @param req CreateZoneRequest
-                 * @return CreateZoneOutcome
+                 *删除TcaplusDB集群，必须在集群所属所有资源（包括表格组，表）都已经释放的情况下才会成功。
+                 * @param req DeleteClusterRequest
+                 * @return DeleteClusterOutcome
                  */
-                CreateZoneOutcome CreateZone(const Model::CreateZoneRequest &request);
-                void CreateZoneAsync(const Model::CreateZoneRequest& request, const CreateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateZoneOutcomeCallable CreateZoneCallable(const Model::CreateZoneRequest& request);
+                DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest &request);
+                void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request);
 
                 /**
-                 *删除TcaplusDB应用实例，必须在应用实例所属所有资源（包括大区，表）都已经释放的情况下才会成功。
-                 * @param req DeleteAppRequest
-                 * @return DeleteAppOutcome
-                 */
-                DeleteAppOutcome DeleteApp(const Model::DeleteAppRequest &request);
-                void DeleteAppAsync(const Model::DeleteAppRequest& request, const DeleteAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteAppOutcomeCallable DeleteAppCallable(const Model::DeleteAppRequest& request);
-
-                /**
-                 *指定应用ID和待删除IDL文件的信息，删除目标文件，如果文件正在被表关联则删除失败。
+                 *指定集群ID和待删除IDL文件的信息，删除目标文件，如果文件正在被表关联则删除失败。
                  * @param req DeleteIdlFilesRequest
                  * @return DeleteIdlFilesOutcome
                  */
@@ -234,7 +248,16 @@ namespace TencentCloud
                 DeleteIdlFilesOutcomeCallable DeleteIdlFilesCallable(const Model::DeleteIdlFilesRequest& request);
 
                 /**
-                 *根据指定的表信息删除目标表
+                 *删除表格组
+                 * @param req DeleteTableGroupRequest
+                 * @return DeleteTableGroupOutcome
+                 */
+                DeleteTableGroupOutcome DeleteTableGroup(const Model::DeleteTableGroupRequest &request);
+                void DeleteTableGroupAsync(const Model::DeleteTableGroupRequest& request, const DeleteTableGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTableGroupOutcomeCallable DeleteTableGroupCallable(const Model::DeleteTableGroupRequest& request);
+
+                /**
+                 *删除指定的表,第一次调用此接口代表将表移动至回收站，再次调用代表将此表格从回收站中彻底删除。
                  * @param req DeleteTablesRequest
                  * @return DeleteTablesOutcome
                  */
@@ -243,22 +266,13 @@ namespace TencentCloud
                 DeleteTablesOutcomeCallable DeleteTablesCallable(const Model::DeleteTablesRequest& request);
 
                 /**
-                 *删除大区
-                 * @param req DeleteZoneRequest
-                 * @return DeleteZoneOutcome
+                 *查询TcaplusDB集群列表，包含集群详细信息。
+                 * @param req DescribeClustersRequest
+                 * @return DescribeClustersOutcome
                  */
-                DeleteZoneOutcome DeleteZone(const Model::DeleteZoneRequest &request);
-                void DeleteZoneAsync(const Model::DeleteZoneRequest& request, const DeleteZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteZoneOutcomeCallable DeleteZoneCallable(const Model::DeleteZoneRequest& request);
-
-                /**
-                 *查询TcaplusDB应用列表，包含应用详细信息。
-                 * @param req DescribeAppsRequest
-                 * @return DescribeAppsOutcome
-                 */
-                DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest &request);
-                void DescribeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAppsOutcomeCallable DescribeAppsCallable(const Model::DescribeAppsRequest& request);
+                DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
+                void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
                  *查询表描述文件详情
@@ -277,6 +291,15 @@ namespace TencentCloud
                 DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
                 void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
+
+                /**
+                 *查询表格组列表
+                 * @param req DescribeTableGroupsRequest
+                 * @return DescribeTableGroupsOutcome
+                 */
+                DescribeTableGroupsOutcome DescribeTableGroups(const Model::DescribeTableGroupsRequest &request);
+                void DescribeTableGroupsAsync(const Model::DescribeTableGroupsRequest& request, const DescribeTableGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableGroupsOutcomeCallable DescribeTableGroupsCallable(const Model::DescribeTableGroupsRequest& request);
 
                 /**
                  *查询表详情
@@ -315,31 +338,31 @@ namespace TencentCloud
                 DescribeUinInWhitelistOutcomeCallable DescribeUinInWhitelistCallable(const Model::DescribeUinInWhitelistRequest& request);
 
                 /**
-                 *查询大区列表
-                 * @param req DescribeZonesRequest
-                 * @return DescribeZonesOutcome
+                 *修改指定的集群名称
+                 * @param req ModifyClusterNameRequest
+                 * @return ModifyClusterNameOutcome
                  */
-                DescribeZonesOutcome DescribeZones(const Model::DescribeZonesRequest &request);
-                void DescribeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
+                ModifyClusterNameOutcome ModifyClusterName(const Model::ModifyClusterNameRequest &request);
+                void ModifyClusterNameAsync(const Model::ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterNameOutcomeCallable ModifyClusterNameCallable(const Model::ModifyClusterNameRequest& request);
 
                 /**
-                 *修改指定的应用名称
-                 * @param req ModifyAppNameRequest
-                 * @return ModifyAppNameOutcome
+                 *修改指定集群的密码，后台将在旧密码失效之前同时支持TcaplusDB SDK使用旧密码和新密码访问数据库。在旧密码失效之前不能提交新的密码修改请求，在旧密码失效之后不能提交修改旧密码过期时间的请求。
+                 * @param req ModifyClusterPasswordRequest
+                 * @return ModifyClusterPasswordOutcome
                  */
-                ModifyAppNameOutcome ModifyAppName(const Model::ModifyAppNameRequest &request);
-                void ModifyAppNameAsync(const Model::ModifyAppNameRequest& request, const ModifyAppNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAppNameOutcomeCallable ModifyAppNameCallable(const Model::ModifyAppNameRequest& request);
+                ModifyClusterPasswordOutcome ModifyClusterPassword(const Model::ModifyClusterPasswordRequest &request);
+                void ModifyClusterPasswordAsync(const Model::ModifyClusterPasswordRequest& request, const ModifyClusterPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterPasswordOutcomeCallable ModifyClusterPasswordCallable(const Model::ModifyClusterPasswordRequest& request);
 
                 /**
-                 *修改指定AppInstanceId的实例密码，后台将在旧密码失效之前同时支持TcaplusDB SDK使用旧密码和新密码访问数据库。在旧密码失效之前不能提交新的密码修改请求，在旧密码失效之后不能提交修改旧密码过期时间的请求。
-                 * @param req ModifyAppPasswordRequest
-                 * @return ModifyAppPasswordOutcome
+                 *修改TcaplusDB表格组名称
+                 * @param req ModifyTableGroupNameRequest
+                 * @return ModifyTableGroupNameOutcome
                  */
-                ModifyAppPasswordOutcome ModifyAppPassword(const Model::ModifyAppPasswordRequest &request);
-                void ModifyAppPasswordAsync(const Model::ModifyAppPasswordRequest& request, const ModifyAppPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAppPasswordOutcomeCallable ModifyAppPasswordCallable(const Model::ModifyAppPasswordRequest& request);
+                ModifyTableGroupNameOutcome ModifyTableGroupName(const Model::ModifyTableGroupNameRequest &request);
+                void ModifyTableGroupNameAsync(const Model::ModifyTableGroupNameRequest& request, const ModifyTableGroupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTableGroupNameOutcomeCallable ModifyTableGroupNameCallable(const Model::ModifyTableGroupNameRequest& request);
 
                 /**
                  *修改表备注信息
@@ -351,7 +374,7 @@ namespace TencentCloud
                 ModifyTableMemosOutcomeCallable ModifyTableMemosCallable(const Model::ModifyTableMemosRequest& request);
 
                 /**
-                 *表扩缩容
+                 *表格扩缩容
                  * @param req ModifyTableQuotasRequest
                  * @return ModifyTableQuotasOutcome
                  */
@@ -369,15 +392,6 @@ namespace TencentCloud
                 ModifyTablesOutcomeCallable ModifyTablesCallable(const Model::ModifyTablesRequest& request);
 
                 /**
-                 *修改TcaplusDB大区名称
-                 * @param req ModifyZoneNameRequest
-                 * @return ModifyZoneNameOutcome
-                 */
-                ModifyZoneNameOutcome ModifyZoneName(const Model::ModifyZoneNameRequest &request);
-                void ModifyZoneNameAsync(const Model::ModifyZoneNameRequest& request, const ModifyZoneNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyZoneNameOutcomeCallable ModifyZoneNameCallable(const Model::ModifyZoneNameRequest& request);
-
-                /**
                  *恢复回收站中，用户自行删除的表。对欠费待释放的表无效。
                  * @param req RecoverRecycleTablesRequest
                  * @return RecoverRecycleTablesOutcome
@@ -387,7 +401,7 @@ namespace TencentCloud
                 RecoverRecycleTablesOutcomeCallable RecoverRecycleTablesCallable(const Model::RecoverRecycleTablesRequest& request);
 
                 /**
-                 *表数据回档
+                 *表格数据回档
                  * @param req RollbackTablesRequest
                  * @return RollbackTablesOutcome
                  */
@@ -396,7 +410,7 @@ namespace TencentCloud
                 RollbackTablesOutcomeCallable RollbackTablesCallable(const Model::RollbackTablesRequest& request);
 
                 /**
-                 *上传并校验加表文件，返回校验合法的表定义
+                 *上传并校验创建表格文件，返回校验合法的表格定义
                  * @param req VerifyIdlFilesRequest
                  * @return VerifyIdlFilesOutcome
                  */

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -232,6 +233,42 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     bool ApplicableForCLBHasBeenSet() const;
 
+                    /**
+                     * 获取需要关联的标签列表。
+                     * @return Tags 需要关联的标签列表。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置需要关联的标签列表。
+                     * @param Tags 需要关联的标签列表。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取BGP带宽包唯一ID参数。设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的EIP加入该BGP带宽包并采用带宽包计费
+                     * @return BandwidthPackageId BGP带宽包唯一ID参数。设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的EIP加入该BGP带宽包并采用带宽包计费
+                     */
+                    std::string GetBandwidthPackageId() const;
+
+                    /**
+                     * 设置BGP带宽包唯一ID参数。设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的EIP加入该BGP带宽包并采用带宽包计费
+                     * @param BandwidthPackageId BGP带宽包唯一ID参数。设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的EIP加入该BGP带宽包并采用带宽包计费
+                     */
+                    void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
+
+                    /**
+                     * 判断参数 BandwidthPackageId 是否已赋值
+                     * @return BandwidthPackageId 是否已赋值
+                     */
+                    bool BandwidthPackageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +328,18 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     bool m_applicableForCLB;
                     bool m_applicableForCLBHasBeenSet;
+
+                    /**
+                     * 需要关联的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * BGP带宽包唯一ID参数。设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的EIP加入该BGP带宽包并采用带宽包计费
+                     */
+                    std::string m_bandwidthPackageId;
+                    bool m_bandwidthPackageIdHasBeenSet;
 
                 };
             }

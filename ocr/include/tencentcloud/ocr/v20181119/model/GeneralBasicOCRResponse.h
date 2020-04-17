@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool LanguageHasBeenSet() const;
 
+                    /**
+                     * 获取图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负
+                     * @return Angel 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负
+                     */
+                    double GetAngel() const;
+
+                    /**
+                     * 判断参数 Angel 是否已赋值
+                     * @return Angel 是否已赋值
+                     */
+                    bool AngelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;
+
+                    /**
+                     * 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负
+                     */
+                    double m_angel;
+                    bool m_angelHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateDBInstancesResponse::CreateDBInstancesResponse() :
-    m_dealNameHasBeenSet(false)
+    m_dealNameHasBeenSet(false),
+    m_dealNamesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,19 @@ CoreInternalOutcome CreateDBInstancesResponse::Deserialize(const string &payload
         m_dealNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DealNames") && !rsp["DealNames"].IsNull())
+    {
+        if (!rsp["DealNames"].IsArray())
+            return CoreInternalOutcome(Error("response `DealNames` is not array type"));
+
+        const Value &tmpValue = rsp["DealNames"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dealNames.push_back((*itr).GetString());
+        }
+        m_dealNamesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +100,16 @@ string CreateDBInstancesResponse::GetDealName() const
 bool CreateDBInstancesResponse::DealNameHasBeenSet() const
 {
     return m_dealNameHasBeenSet;
+}
+
+vector<string> CreateDBInstancesResponse::GetDealNames() const
+{
+    return m_dealNames;
+}
+
+bool CreateDBInstancesResponse::DealNamesHasBeenSet() const
+{
+    return m_dealNamesHasBeenSet;
 }
 
 

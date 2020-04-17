@@ -222,6 +222,24 @@ topspeed_H265 =》极速高清-H265。
                      */
                     bool PushDomainHasBeenSet() const;
 
+                    /**
+                     * 获取分辨率。
+                     * @return Resolution 分辨率。
+                     */
+                    std::string GetResolution() const;
+
+                    /**
+                     * 设置分辨率。
+                     * @param Resolution 分辨率。
+                     */
+                    void SetResolution(const std::string& _resolution);
+
+                    /**
+                     * 判断参数 Resolution 是否已赋值
+                     * @return Resolution 是否已赋值
+                     */
+                    bool ResolutionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +297,12 @@ topspeed_H265 =》极速高清-H265。
                      */
                     std::string m_pushDomain;
                     bool m_pushDomainHasBeenSet;
+
+                    /**
+                     * 分辨率。
+                     */
+                    std::string m_resolution;
+                    bool m_resolutionHasBeenSet;
 
                 };
             }

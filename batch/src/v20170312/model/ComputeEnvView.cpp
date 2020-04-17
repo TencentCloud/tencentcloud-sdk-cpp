@@ -30,7 +30,8 @@ ComputeEnvView::ComputeEnvView() :
     m_envTypeHasBeenSet(false),
     m_desiredComputeNodeCountHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_nextActionHasBeenSet(false)
+    m_nextActionHasBeenSet(false),
+    m_attachedComputeNodeCountHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,16 @@ CoreInternalOutcome ComputeEnvView::Deserialize(const Value &value)
         m_nextActionHasBeenSet = true;
     }
 
+    if (value.HasMember("AttachedComputeNodeCount") && !value["AttachedComputeNodeCount"].IsNull())
+    {
+        if (!value["AttachedComputeNodeCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ComputeEnvView.AttachedComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachedComputeNodeCount = value["AttachedComputeNodeCount"].GetUint64();
+        m_attachedComputeNodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void ComputeEnvView::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "NextAction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_nextAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attachedComputeNodeCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachedComputeNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attachedComputeNodeCount, allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void ComputeEnvView::SetNextAction(const string& _nextAction)
 bool ComputeEnvView::NextActionHasBeenSet() const
 {
     return m_nextActionHasBeenSet;
+}
+
+uint64_t ComputeEnvView::GetAttachedComputeNodeCount() const
+{
+    return m_attachedComputeNodeCount;
+}
+
+void ComputeEnvView::SetAttachedComputeNodeCount(const uint64_t& _attachedComputeNodeCount)
+{
+    m_attachedComputeNodeCount = _attachedComputeNodeCount;
+    m_attachedComputeNodeCountHasBeenSet = true;
+}
+
+bool ComputeEnvView::AttachedComputeNodeCountHasBeenSet() const
+{
+    return m_attachedComputeNodeCountHasBeenSet;
 }
 

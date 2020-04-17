@@ -371,6 +371,28 @@ namespace TencentCloud
                      */
                     bool CCLevelHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HttpsToHttpEnable 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetHttpsToHttpEnable() const;
+
+                    /**
+                     * 设置是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HttpsToHttpEnable 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttpsToHttpEnable(const uint64_t& _httpsToHttpEnable);
+
+                    /**
+                     * 判断参数 HttpsToHttpEnable 是否已赋值
+                     * @return HttpsToHttpEnable 是否已赋值
+                     */
+                    bool HttpsToHttpEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +502,13 @@ namespace TencentCloud
                      */
                     std::string m_cCLevel;
                     bool m_cCLevelHasBeenSet;
+
+                    /**
+                     * 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_httpsToHttpEnable;
+                    bool m_httpsToHttpEnableHasBeenSet;
 
                 };
             }

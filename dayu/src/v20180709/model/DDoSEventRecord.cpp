@@ -33,7 +33,8 @@ DDoSEventRecord::DDoSEventRecord() :
     m_blockFlagHasBeenSet(false),
     m_overLoadHasBeenSet(false),
     m_attackStatusHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_eventIdHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const Value &value)
         m_resourceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EventId") && !value["EventId"].IsNull())
+    {
+        if (!value["EventId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DDoSEventRecord.EventId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventId = string(value["EventId"].GetString());
+        m_eventIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void DDoSEventRecord::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void DDoSEventRecord::SetResourceName(const string& _resourceName)
 bool DDoSEventRecord::ResourceNameHasBeenSet() const
 {
     return m_resourceNameHasBeenSet;
+}
+
+string DDoSEventRecord::GetEventId() const
+{
+    return m_eventId;
+}
+
+void DDoSEventRecord::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool DDoSEventRecord::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
 }
 

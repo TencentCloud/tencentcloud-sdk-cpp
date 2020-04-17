@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CdnIp 属性详情。
+                * IP 属性信息
                 */
                 class CdnIp : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点 ip。
-                     * @return Ip 节点 ip。
+                     * 获取指定查询的 IP
+                     * @return Ip 指定查询的 IP
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置节点 ip。
-                     * @param Ip 节点 ip。
+                     * 设置指定查询的 IP
+                     * @param Ip 指定查询的 IP
                      */
                     void SetIp(const std::string& _ip);
 
@@ -66,14 +66,22 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取是否为腾讯云 CDN 加速节点。yes 表示该节点为腾讯云 CDN 节点，no 表示该节点不是腾讯云 CDN 节点。
-                     * @return Platform 是否为腾讯云 CDN 加速节点。yes 表示该节点为腾讯云 CDN 节点，no 表示该节点不是腾讯云 CDN 节点。
+                     * 获取IP 归属：
+yes：节点归属于腾讯云 CDN
+no：节点不属于腾讯云 CDN
+                     * @return Platform IP 归属：
+yes：节点归属于腾讯云 CDN
+no：节点不属于腾讯云 CDN
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置是否为腾讯云 CDN 加速节点。yes 表示该节点为腾讯云 CDN 节点，no 表示该节点不是腾讯云 CDN 节点。
-                     * @param Platform 是否为腾讯云 CDN 加速节点。yes 表示该节点为腾讯云 CDN 节点，no 表示该节点不是腾讯云 CDN 节点。
+                     * 设置IP 归属：
+yes：节点归属于腾讯云 CDN
+no：节点不属于腾讯云 CDN
+                     * @param Platform IP 归属：
+yes：节点归属于腾讯云 CDN
+no：节点不属于腾讯云 CDN
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -84,14 +92,18 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取表示该节点所处的省份/国家。unknown 表示节点位置未知。
-                     * @return Location 表示该节点所处的省份/国家。unknown 表示节点位置未知。
+                     * 获取节点所处的省份/国家
+unknown 表示节点位置未知
+                     * @return Location 节点所处的省份/国家
+unknown 表示节点位置未知
                      */
                     std::string GetLocation() const;
 
                     /**
-                     * 设置表示该节点所处的省份/国家。unknown 表示节点位置未知。
-                     * @param Location 表示该节点所处的省份/国家。unknown 表示节点位置未知。
+                     * 设置节点所处的省份/国家
+unknown 表示节点位置未知
+                     * @param Location 节点所处的省份/国家
+unknown 表示节点位置未知
                      */
                     void SetLocation(const std::string& _location);
 
@@ -102,14 +114,14 @@ namespace TencentCloud
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取节点上下线历史记录。
-                     * @return History 节点上下线历史记录。
+                     * 获取节点上下线历史记录
+                     * @return History 节点上下线历史记录
                      */
                     std::vector<CdnIpHistory> GetHistory() const;
 
                     /**
-                     * 设置节点上下线历史记录。
-                     * @param History 节点上下线历史记录。
+                     * 设置节点上下线历史记录
+                     * @param History 节点上下线历史记录
                      */
                     void SetHistory(const std::vector<CdnIpHistory>& _history);
 
@@ -120,14 +132,26 @@ namespace TencentCloud
                     bool HistoryHasBeenSet() const;
 
                     /**
-                     * 获取节点的服务地域。mainland 表示服务地域为中国境内，overseas 表示服务地域为中国境外， unknown 表示服务地域未知。
-                     * @return Area 节点的服务地域。mainland 表示服务地域为中国境内，overseas 表示服务地域为中国境外， unknown 表示服务地域未知。
+                     * 获取节点的所在区域
+mainland：中国境内加速节点
+overseas：中国境外加速节点
+unknown：服务地域无法获取
+                     * @return Area 节点的所在区域
+mainland：中国境内加速节点
+overseas：中国境外加速节点
+unknown：服务地域无法获取
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置节点的服务地域。mainland 表示服务地域为中国境内，overseas 表示服务地域为中国境外， unknown 表示服务地域未知。
-                     * @param Area 节点的服务地域。mainland 表示服务地域为中国境内，overseas 表示服务地域为中国境外， unknown 表示服务地域未知。
+                     * 设置节点的所在区域
+mainland：中国境内加速节点
+overseas：中国境外加速节点
+unknown：服务地域无法获取
+                     * @param Area 节点的所在区域
+mainland：中国境内加速节点
+overseas：中国境外加速节点
+unknown：服务地域无法获取
                      */
                     void SetArea(const std::string& _area);
 
@@ -140,31 +164,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点 ip。
+                     * 指定查询的 IP
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 是否为腾讯云 CDN 加速节点。yes 表示该节点为腾讯云 CDN 节点，no 表示该节点不是腾讯云 CDN 节点。
+                     * IP 归属：
+yes：节点归属于腾讯云 CDN
+no：节点不属于腾讯云 CDN
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 表示该节点所处的省份/国家。unknown 表示节点位置未知。
+                     * 节点所处的省份/国家
+unknown 表示节点位置未知
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
-                     * 节点上下线历史记录。
+                     * 节点上下线历史记录
                      */
                     std::vector<CdnIpHistory> m_history;
                     bool m_historyHasBeenSet;
 
                     /**
-                     * 节点的服务地域。mainland 表示服务地域为中国境内，overseas 表示服务地域为中国境外， unknown 表示服务地域未知。
+                     * 节点的所在区域
+mainland：中国境内加速节点
+overseas：中国境外加速节点
+unknown：服务地域无法获取
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

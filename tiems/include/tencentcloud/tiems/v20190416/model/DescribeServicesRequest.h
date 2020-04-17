@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选选项，支持按照name等字段进行筛选
-                     * @return Filters 筛选选项，支持按照name等字段进行筛选
+                     * 获取筛选选项，支持筛选的字段：id, region, zone, cluster, status, runtime, rsg_id
+                     * @return Filters 筛选选项，支持筛选的字段：id, region, zone, cluster, status, runtime, rsg_id
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置筛选选项，支持按照name等字段进行筛选
-                     * @param Filters 筛选选项，支持按照name等字段进行筛选
+                     * 设置筛选选项，支持筛选的字段：id, region, zone, cluster, status, runtime, rsg_id
+                     * @param Filters 筛选选项，支持筛选的字段：id, region, zone, cluster, status, runtime, rsg_id
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 筛选选项，支持按照name等字段进行筛选
+                     * 筛选选项，支持筛选的字段：id, region, zone, cluster, status, runtime, rsg_id
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

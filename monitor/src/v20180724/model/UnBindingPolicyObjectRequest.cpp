@@ -26,7 +26,8 @@ using namespace std;
 UnBindingPolicyObjectRequest::UnBindingPolicyObjectRequest() :
     m_moduleHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_uniqueIdHasBeenSet(false)
+    m_uniqueIdHasBeenSet(false),
+    m_instanceGroupIdHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string UnBindingPolicyObjectRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_instanceGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceGroupId, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void UnBindingPolicyObjectRequest::SetUniqueId(const vector<string>& _uniqueId)
 bool UnBindingPolicyObjectRequest::UniqueIdHasBeenSet() const
 {
     return m_uniqueIdHasBeenSet;
+}
+
+int64_t UnBindingPolicyObjectRequest::GetInstanceGroupId() const
+{
+    return m_instanceGroupId;
+}
+
+void UnBindingPolicyObjectRequest::SetInstanceGroupId(const int64_t& _instanceGroupId)
+{
+    m_instanceGroupId = _instanceGroupId;
+    m_instanceGroupIdHasBeenSet = true;
+}
+
+bool UnBindingPolicyObjectRequest::InstanceGroupIdHasBeenSet() const
+{
+    return m_instanceGroupIdHasBeenSet;
 }
 
 

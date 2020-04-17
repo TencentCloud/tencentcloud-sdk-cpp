@@ -59,6 +59,8 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DetachDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DetachDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/GetSnapOverviewRequest.h>
+#include <tencentcloud/cbs/v20170312/model/GetSnapOverviewResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceRenewDisksRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetachDisksResponse> DetachDisksOutcome;
                 typedef std::future<DetachDisksOutcome> DetachDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DetachDisksRequest&, DetachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachDisksAsyncHandler;
+                typedef Outcome<Error, Model::GetSnapOverviewResponse> GetSnapOverviewOutcome;
+                typedef std::future<GetSnapOverviewOutcome> GetSnapOverviewOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::GetSnapOverviewRequest&, GetSnapOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSnapOverviewAsyncHandler;
                 typedef Outcome<Error, Model::InquiryPriceCreateDisksResponse> InquiryPriceCreateDisksOutcome;
                 typedef std::future<InquiryPriceCreateDisksOutcome> InquiryPriceCreateDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquiryPriceCreateDisksRequest&, InquiryPriceCreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateDisksAsyncHandler;
@@ -402,6 +407,15 @@ namespace TencentCloud
                 DetachDisksOutcome DetachDisks(const Model::DetachDisksRequest &request);
                 void DetachDisksAsync(const Model::DetachDisksRequest& request, const DetachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachDisksOutcomeCallable DetachDisksCallable(const Model::DetachDisksRequest& request);
+
+                /**
+                 *获取快照概览信息
+                 * @param req GetSnapOverviewRequest
+                 * @return GetSnapOverviewOutcome
+                 */
+                GetSnapOverviewOutcome GetSnapOverview(const Model::GetSnapOverviewRequest &request);
+                void GetSnapOverviewAsync(const Model::GetSnapOverviewRequest& request, const GetSnapOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSnapOverviewOutcomeCallable GetSnapOverviewCallable(const Model::GetSnapOverviewRequest& request);
 
                 /**
                  *本接口（InquiryPriceCreateDisks）用于创建云硬盘询价。

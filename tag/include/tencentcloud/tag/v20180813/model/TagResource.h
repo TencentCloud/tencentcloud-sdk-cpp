@@ -136,6 +136,28 @@ namespace TencentCloud
                      */
                     bool TagValueMd5HasBeenSet() const;
 
+                    /**
+                     * 获取资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceType 资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceType 资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +189,13 @@ namespace TencentCloud
                      */
                     std::string m_tagValueMd5;
                     bool m_tagValueMd5HasBeenSet;
+
+                    /**
+                     * 资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
 
                 };
             }

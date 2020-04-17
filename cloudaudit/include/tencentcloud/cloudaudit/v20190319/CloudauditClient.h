@@ -101,7 +101,11 @@ namespace TencentCloud
 
 
                 /**
-                 *创建跟踪集
+                 *参数要求：
+1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。
+2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。
+3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。
+4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项
                  * @param req CreateAuditRequest
                  * @return CreateAuditOutcome
                  */
@@ -204,6 +208,7 @@ namespace TencentCloud
 1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。
 2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。
 3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。
+4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项
                  * @param req UpdateAuditRequest
                  * @return UpdateAuditOutcome
                  */

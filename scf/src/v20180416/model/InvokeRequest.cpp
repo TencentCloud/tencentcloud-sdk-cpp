@@ -29,7 +29,8 @@ InvokeRequest::InvokeRequest() :
     m_qualifierHasBeenSet(false),
     m_clientContextHasBeenSet(false),
     m_logTypeHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_routingKeyHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string InvokeRequest::ToJsonString() const
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routingKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RoutingKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_routingKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void InvokeRequest::SetNamespace(const string& _namespace)
 bool InvokeRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+string InvokeRequest::GetRoutingKey() const
+{
+    return m_routingKey;
+}
+
+void InvokeRequest::SetRoutingKey(const string& _routingKey)
+{
+    m_routingKey = _routingKey;
+    m_routingKeyHasBeenSet = true;
+}
+
+bool InvokeRequest::RoutingKeyHasBeenSet() const
+{
+    return m_routingKeyHasBeenSet;
 }
 
 

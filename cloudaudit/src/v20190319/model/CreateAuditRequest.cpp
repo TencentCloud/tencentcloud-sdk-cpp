@@ -33,6 +33,9 @@ CreateAuditRequest::CreateAuditRequest() :
     m_cmqQueueNameHasBeenSet(false),
     m_cmqRegionHasBeenSet(false),
     m_isCreateNewQueueHasBeenSet(false),
+    m_isEnableKmsEncryHasBeenSet(false),
+    m_keyIdHasBeenSet(false),
+    m_kmsRegionHasBeenSet(false),
     m_logFilePrefixHasBeenSet(false)
 {
 }
@@ -114,6 +117,30 @@ string CreateAuditRequest::ToJsonString() const
         string key = "IsCreateNewQueue";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isCreateNewQueue, allocator);
+    }
+
+    if (m_isEnableKmsEncryHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsEnableKmsEncry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEnableKmsEncry, allocator);
+    }
+
+    if (m_keyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_keyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KmsRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_kmsRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logFilePrefixHasBeenSet)
@@ -274,6 +301,54 @@ void CreateAuditRequest::SetIsCreateNewQueue(const int64_t& _isCreateNewQueue)
 bool CreateAuditRequest::IsCreateNewQueueHasBeenSet() const
 {
     return m_isCreateNewQueueHasBeenSet;
+}
+
+int64_t CreateAuditRequest::GetIsEnableKmsEncry() const
+{
+    return m_isEnableKmsEncry;
+}
+
+void CreateAuditRequest::SetIsEnableKmsEncry(const int64_t& _isEnableKmsEncry)
+{
+    m_isEnableKmsEncry = _isEnableKmsEncry;
+    m_isEnableKmsEncryHasBeenSet = true;
+}
+
+bool CreateAuditRequest::IsEnableKmsEncryHasBeenSet() const
+{
+    return m_isEnableKmsEncryHasBeenSet;
+}
+
+string CreateAuditRequest::GetKeyId() const
+{
+    return m_keyId;
+}
+
+void CreateAuditRequest::SetKeyId(const string& _keyId)
+{
+    m_keyId = _keyId;
+    m_keyIdHasBeenSet = true;
+}
+
+bool CreateAuditRequest::KeyIdHasBeenSet() const
+{
+    return m_keyIdHasBeenSet;
+}
+
+string CreateAuditRequest::GetKmsRegion() const
+{
+    return m_kmsRegion;
+}
+
+void CreateAuditRequest::SetKmsRegion(const string& _kmsRegion)
+{
+    m_kmsRegion = _kmsRegion;
+    m_kmsRegionHasBeenSet = true;
+}
+
+bool CreateAuditRequest::KmsRegionHasBeenSet() const
+{
+    return m_kmsRegionHasBeenSet;
 }
 
 string CreateAuditRequest::GetLogFilePrefix() const

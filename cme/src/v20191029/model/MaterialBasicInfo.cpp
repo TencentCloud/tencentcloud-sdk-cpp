@@ -1,0 +1,373 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cme/v20191029/model/MaterialBasicInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cme::V20191029::Model;
+using namespace rapidjson;
+using namespace std;
+
+MaterialBasicInfo::MaterialBasicInfo() :
+    m_materialIdHasBeenSet(false),
+    m_materialTypeHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_classPathHasBeenSet(false),
+    m_tagSetHasBeenSet(false),
+    m_previewUrlHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome MaterialBasicInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("MaterialId") && !value["MaterialId"].IsNull())
+    {
+        if (!value["MaterialId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_materialId = string(value["MaterialId"].GetString());
+        m_materialIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaterialType") && !value["MaterialType"].IsNull())
+    {
+        if (!value["MaterialType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.MaterialType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_materialType = string(value["MaterialType"].GetString());
+        m_materialTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Owner") && !value["Owner"].IsNull())
+    {
+        if (!value["Owner"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.Owner` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownerHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClassPath") && !value["ClassPath"].IsNull())
+    {
+        if (!value["ClassPath"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.ClassPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_classPath = string(value["ClassPath"].GetString());
+        m_classPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagSet.push_back((*itr).GetString());
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreviewUrl") && !value["PreviewUrl"].IsNull())
+    {
+        if (!value["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(value["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void MaterialBasicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_materialIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaterialId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_materialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_materialTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaterialType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_materialType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_owner.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classPathHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClassPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_previewUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_previewUrl.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string MaterialBasicInfo::GetMaterialId() const
+{
+    return m_materialId;
+}
+
+void MaterialBasicInfo::SetMaterialId(const string& _materialId)
+{
+    m_materialId = _materialId;
+    m_materialIdHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::MaterialIdHasBeenSet() const
+{
+    return m_materialIdHasBeenSet;
+}
+
+string MaterialBasicInfo::GetMaterialType() const
+{
+    return m_materialType;
+}
+
+void MaterialBasicInfo::SetMaterialType(const string& _materialType)
+{
+    m_materialType = _materialType;
+    m_materialTypeHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::MaterialTypeHasBeenSet() const
+{
+    return m_materialTypeHasBeenSet;
+}
+
+Entity MaterialBasicInfo::GetOwner() const
+{
+    return m_owner;
+}
+
+void MaterialBasicInfo::SetOwner(const Entity& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
+}
+
+string MaterialBasicInfo::GetName() const
+{
+    return m_name;
+}
+
+void MaterialBasicInfo::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string MaterialBasicInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void MaterialBasicInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string MaterialBasicInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void MaterialBasicInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string MaterialBasicInfo::GetClassPath() const
+{
+    return m_classPath;
+}
+
+void MaterialBasicInfo::SetClassPath(const string& _classPath)
+{
+    m_classPath = _classPath;
+    m_classPathHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::ClassPathHasBeenSet() const
+{
+    return m_classPathHasBeenSet;
+}
+
+vector<string> MaterialBasicInfo::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void MaterialBasicInfo::SetTagSet(const vector<string>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
+}
+
+string MaterialBasicInfo::GetPreviewUrl() const
+{
+    return m_previewUrl;
+}
+
+void MaterialBasicInfo::SetPreviewUrl(const string& _previewUrl)
+{
+    m_previewUrl = _previewUrl;
+    m_previewUrlHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::PreviewUrlHasBeenSet() const
+{
+    return m_previewUrlHasBeenSet;
+}
+

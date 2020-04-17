@@ -19,28 +19,64 @@ set(ticm_public_header
   )
 
 set(ticm_public_header_model
-  include/tencentcloud/ticm/v20181127/model/ImageModerationRequest.h
+  include/tencentcloud/ticm/v20181127/model/VodPoliticalOcrReviewResult.h
   include/tencentcloud/ticm/v20181127/model/Candidate.h
   include/tencentcloud/ticm/v20181127/model/TerrorismResult.h
-  include/tencentcloud/ticm/v20181127/model/PoliticsResult.h
-  include/tencentcloud/ticm/v20181127/model/PornResult.h
-  include/tencentcloud/ticm/v20181127/model/DisgustResult.h
-  include/tencentcloud/ticm/v20181127/model/FaceRect.h
-  include/tencentcloud/ticm/v20181127/model/FaceResult.h
+  include/tencentcloud/ticm/v20181127/model/VodPoliticalAsrReviewResult.h
+  include/tencentcloud/ticm/v20181127/model/VideoModerationResponse.h
+  include/tencentcloud/ticm/v20181127/model/VodMetaData.h
   include/tencentcloud/ticm/v20181127/model/ImageModerationResponse.h
+  include/tencentcloud/ticm/v20181127/model/VodVideoStreamItem.h
+  include/tencentcloud/ticm/v20181127/model/ImageModerationRequest.h
+  include/tencentcloud/ticm/v20181127/model/VideoModerationRequest.h
+  include/tencentcloud/ticm/v20181127/model/VodPoliticalReviewSegmentItem.h
+  include/tencentcloud/ticm/v20181127/model/VodPornReviewResult.h
+  include/tencentcloud/ticm/v20181127/model/DisgustResult.h
+  include/tencentcloud/ticm/v20181127/model/VodPornReviewSegmentItem.h
+  include/tencentcloud/ticm/v20181127/model/VodPoliticalReviewResult.h
+  include/tencentcloud/ticm/v20181127/model/VodAudioStreamItem.h
+  include/tencentcloud/ticm/v20181127/model/VodOcrTextSegmentItem.h
+  include/tencentcloud/ticm/v20181127/model/PoliticsResult.h
+  include/tencentcloud/ticm/v20181127/model/VodAsrTextSegmentItem.h
+  include/tencentcloud/ticm/v20181127/model/PornResult.h
+  include/tencentcloud/ticm/v20181127/model/DescribeVideoTaskRequest.h
+  include/tencentcloud/ticm/v20181127/model/VodTerrorismReviewResult.h
+  include/tencentcloud/ticm/v20181127/model/FaceResult.h
+  include/tencentcloud/ticm/v20181127/model/VodPornAsrReviewResult.h
+  include/tencentcloud/ticm/v20181127/model/DescribeVideoTaskResponse.h
+  include/tencentcloud/ticm/v20181127/model/FaceRect.h
+  include/tencentcloud/ticm/v20181127/model/VodPornOcrResult.h
   )
 
 set(ticm_src
   src/v20181127/TicmClient.cpp
-  src/v20181127/model/ImageModerationRequest.cpp
+  src/v20181127/model/VodPoliticalOcrReviewResult.cpp
   src/v20181127/model/Candidate.cpp
   src/v20181127/model/TerrorismResult.cpp
-  src/v20181127/model/PoliticsResult.cpp
-  src/v20181127/model/PornResult.cpp
-  src/v20181127/model/DisgustResult.cpp
-  src/v20181127/model/FaceRect.cpp
-  src/v20181127/model/FaceResult.cpp
+  src/v20181127/model/VodPoliticalAsrReviewResult.cpp
+  src/v20181127/model/VideoModerationResponse.cpp
+  src/v20181127/model/VodMetaData.cpp
   src/v20181127/model/ImageModerationResponse.cpp
+  src/v20181127/model/VodVideoStreamItem.cpp
+  src/v20181127/model/ImageModerationRequest.cpp
+  src/v20181127/model/VideoModerationRequest.cpp
+  src/v20181127/model/VodPoliticalReviewSegmentItem.cpp
+  src/v20181127/model/VodPornReviewResult.cpp
+  src/v20181127/model/DisgustResult.cpp
+  src/v20181127/model/VodPornReviewSegmentItem.cpp
+  src/v20181127/model/VodPoliticalReviewResult.cpp
+  src/v20181127/model/VodAudioStreamItem.cpp
+  src/v20181127/model/VodOcrTextSegmentItem.cpp
+  src/v20181127/model/PoliticsResult.cpp
+  src/v20181127/model/VodAsrTextSegmentItem.cpp
+  src/v20181127/model/PornResult.cpp
+  src/v20181127/model/DescribeVideoTaskRequest.cpp
+  src/v20181127/model/VodTerrorismReviewResult.cpp
+  src/v20181127/model/FaceResult.cpp
+  src/v20181127/model/VodPornAsrReviewResult.cpp
+  src/v20181127/model/DescribeVideoTaskResponse.cpp
+  src/v20181127/model/FaceRect.cpp
+  src/v20181127/model/VodPornOcrResult.cpp
   )
 
 set(ticm_include

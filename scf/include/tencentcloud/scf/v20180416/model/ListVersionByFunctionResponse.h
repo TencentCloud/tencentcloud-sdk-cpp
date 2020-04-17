@@ -69,6 +69,20 @@ namespace TencentCloud
                      */
                     bool VersionsHasBeenSet() const;
 
+                    /**
+                     * 获取函数版本总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 函数版本总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -83,6 +97,13 @@ namespace TencentCloud
                      */
                     std::vector<FunctionVersion> m_versions;
                     bool m_versionsHasBeenSet;
+
+                    /**
+                     * 函数版本总数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

@@ -255,6 +255,49 @@ ScfClient::DeleteFunctionOutcomeCallable ScfClient::DeleteFunctionCallable(const
     return task->get_future();
 }
 
+ScfClient::DeleteLayerVersionOutcome ScfClient::DeleteLayerVersion(const DeleteLayerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLayerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLayerVersionResponse rsp = DeleteLayerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLayerVersionOutcome(rsp);
+        else
+            return DeleteLayerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLayerVersionOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::DeleteLayerVersionAsync(const DeleteLayerVersionRequest& request, const DeleteLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLayerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::DeleteLayerVersionOutcomeCallable ScfClient::DeleteLayerVersionCallable(const DeleteLayerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLayerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLayerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::DeleteNamespaceOutcome ScfClient::DeleteNamespace(const DeleteNamespaceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteNamespace");
@@ -470,6 +513,49 @@ ScfClient::GetFunctionLogsOutcomeCallable ScfClient::GetFunctionLogsCallable(con
     return task->get_future();
 }
 
+ScfClient::GetLayerVersionOutcome ScfClient::GetLayerVersion(const GetLayerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetLayerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetLayerVersionResponse rsp = GetLayerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetLayerVersionOutcome(rsp);
+        else
+            return GetLayerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return GetLayerVersionOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetLayerVersionAsync(const GetLayerVersionRequest& request, const GetLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetLayerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetLayerVersionOutcomeCallable ScfClient::GetLayerVersionCallable(const GetLayerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetLayerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->GetLayerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::InvokeOutcome ScfClient::Invoke(const InvokeRequest &request)
 {
     auto outcome = MakeRequest(request, "Invoke");
@@ -556,6 +642,92 @@ ScfClient::ListFunctionsOutcomeCallable ScfClient::ListFunctionsCallable(const L
     return task->get_future();
 }
 
+ScfClient::ListLayerVersionsOutcome ScfClient::ListLayerVersions(const ListLayerVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListLayerVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListLayerVersionsResponse rsp = ListLayerVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListLayerVersionsOutcome(rsp);
+        else
+            return ListLayerVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListLayerVersionsOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListLayerVersionsAsync(const ListLayerVersionsRequest& request, const ListLayerVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListLayerVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListLayerVersionsOutcomeCallable ScfClient::ListLayerVersionsCallable(const ListLayerVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListLayerVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListLayerVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::ListLayersOutcome ScfClient::ListLayers(const ListLayersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListLayers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListLayersResponse rsp = ListLayersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListLayersOutcome(rsp);
+        else
+            return ListLayersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListLayersOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListLayersAsync(const ListLayersRequest& request, const ListLayersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListLayers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListLayersOutcomeCallable ScfClient::ListLayersCallable(const ListLayersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListLayersOutcome()>>(
+        [this, request]()
+        {
+            return this->ListLayers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::ListNamespacesOutcome ScfClient::ListNamespaces(const ListNamespacesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListNamespaces");
@@ -635,6 +807,49 @@ ScfClient::ListVersionByFunctionOutcomeCallable ScfClient::ListVersionByFunction
         [this, request]()
         {
             return this->ListVersionByFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::PublishLayerVersionOutcome ScfClient::PublishLayerVersion(const PublishLayerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishLayerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishLayerVersionResponse rsp = PublishLayerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishLayerVersionOutcome(rsp);
+        else
+            return PublishLayerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishLayerVersionOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::PublishLayerVersionAsync(const PublishLayerVersionRequest& request, const PublishLayerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishLayerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::PublishLayerVersionOutcomeCallable ScfClient::PublishLayerVersionCallable(const PublishLayerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishLayerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishLayerVersion(request);
         }
     );
 

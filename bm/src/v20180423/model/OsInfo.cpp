@@ -28,7 +28,9 @@ OsInfo::OsInfo() :
     m_osEnglishDescriptionHasBeenSet(false),
     m_osClassHasBeenSet(false),
     m_imageTagHasBeenSet(false),
-    m_maxPartitionSizeHasBeenSet(false)
+    m_maxPartitionSizeHasBeenSet(false),
+    m_osMinorVersionHasBeenSet(false),
+    m_osMinorClassHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,26 @@ CoreInternalOutcome OsInfo::Deserialize(const Value &value)
         m_maxPartitionSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("OsMinorVersion") && !value["OsMinorVersion"].IsNull())
+    {
+        if (!value["OsMinorVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OsInfo.OsMinorVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osMinorVersion = string(value["OsMinorVersion"].GetString());
+        m_osMinorVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsMinorClass") && !value["OsMinorClass"].IsNull())
+    {
+        if (!value["OsMinorClass"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OsInfo.OsMinorClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_osMinorClass = string(value["OsMinorClass"].GetString());
+        m_osMinorClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +190,22 @@ void OsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "MaxPartitionSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxPartitionSize, allocator);
+    }
+
+    if (m_osMinorVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsMinorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_osMinorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_osMinorClassHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OsMinorClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_osMinorClass.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +321,37 @@ void OsInfo::SetMaxPartitionSize(const uint64_t& _maxPartitionSize)
 bool OsInfo::MaxPartitionSizeHasBeenSet() const
 {
     return m_maxPartitionSizeHasBeenSet;
+}
+
+string OsInfo::GetOsMinorVersion() const
+{
+    return m_osMinorVersion;
+}
+
+void OsInfo::SetOsMinorVersion(const string& _osMinorVersion)
+{
+    m_osMinorVersion = _osMinorVersion;
+    m_osMinorVersionHasBeenSet = true;
+}
+
+bool OsInfo::OsMinorVersionHasBeenSet() const
+{
+    return m_osMinorVersionHasBeenSet;
+}
+
+string OsInfo::GetOsMinorClass() const
+{
+    return m_osMinorClass;
+}
+
+void OsInfo::SetOsMinorClass(const string& _osMinorClass)
+{
+    m_osMinorClass = _osMinorClass;
+    m_osMinorClassHasBeenSet = true;
+}
+
+bool OsInfo::OsMinorClassHasBeenSet() const
+{
+    return m_osMinorClassHasBeenSet;
 }
 

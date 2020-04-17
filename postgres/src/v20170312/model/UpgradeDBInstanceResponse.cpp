@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 UpgradeDBInstanceResponse::UpgradeDBInstanceResponse() :
-    m_dealNameHasBeenSet(false)
+    m_dealNameHasBeenSet(false),
+    m_billIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome UpgradeDBInstanceResponse::Deserialize(const string &payload
         m_dealNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BillId") && !rsp["BillId"].IsNull())
+    {
+        if (!rsp["BillId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billId = string(rsp["BillId"].GetString());
+        m_billIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string UpgradeDBInstanceResponse::GetDealName() const
 bool UpgradeDBInstanceResponse::DealNameHasBeenSet() const
 {
     return m_dealNameHasBeenSet;
+}
+
+string UpgradeDBInstanceResponse::GetBillId() const
+{
+    return m_billId;
+}
+
+bool UpgradeDBInstanceResponse::BillIdHasBeenSet() const
+{
+    return m_billIdHasBeenSet;
 }
 
 

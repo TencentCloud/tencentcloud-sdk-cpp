@@ -23,12 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dts/v20180330/model/ActivateSubscribeRequest.h>
+#include <tencentcloud/dts/v20180330/model/ActivateSubscribeResponse.h>
 #include <tencentcloud/dts/v20180330/model/CompleteMigrateJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/CompleteMigrateJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/CreateMigrateCheckJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/CreateMigrateCheckJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/CreateMigrateJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/CreateMigrateJobResponse.h>
+#include <tencentcloud/dts/v20180330/model/CreateSubscribeRequest.h>
+#include <tencentcloud/dts/v20180330/model/CreateSubscribeResponse.h>
 #include <tencentcloud/dts/v20180330/model/CreateSyncCheckJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/CreateSyncCheckJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/CreateSyncJobRequest.h>
@@ -37,18 +41,40 @@
 #include <tencentcloud/dts/v20180330/model/DeleteMigrateJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/DeleteSyncJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/DeleteSyncJobResponse.h>
+#include <tencentcloud/dts/v20180330/model/DescribeAsyncRequestInfoRequest.h>
+#include <tencentcloud/dts/v20180330/model/DescribeAsyncRequestInfoResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeMigrateCheckJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/DescribeMigrateCheckJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeMigrateJobsRequest.h>
 #include <tencentcloud/dts/v20180330/model/DescribeMigrateJobsResponse.h>
+#include <tencentcloud/dts/v20180330/model/DescribeRegionConfRequest.h>
+#include <tencentcloud/dts/v20180330/model/DescribeRegionConfResponse.h>
+#include <tencentcloud/dts/v20180330/model/DescribeSubscribeConfRequest.h>
+#include <tencentcloud/dts/v20180330/model/DescribeSubscribeConfResponse.h>
+#include <tencentcloud/dts/v20180330/model/DescribeSubscribesRequest.h>
+#include <tencentcloud/dts/v20180330/model/DescribeSubscribesResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSyncCheckJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSyncCheckJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSyncJobsRequest.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSyncJobsResponse.h>
+#include <tencentcloud/dts/v20180330/model/IsolateSubscribeRequest.h>
+#include <tencentcloud/dts/v20180330/model/IsolateSubscribeResponse.h>
 #include <tencentcloud/dts/v20180330/model/ModifyMigrateJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/ModifyMigrateJobResponse.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeConsumeTimeRequest.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeConsumeTimeResponse.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeNameRequest.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeNameResponse.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeObjectsRequest.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeObjectsResponse.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeVipVportRequest.h>
+#include <tencentcloud/dts/v20180330/model/ModifySubscribeVipVportResponse.h>
 #include <tencentcloud/dts/v20180330/model/ModifySyncJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/ModifySyncJobResponse.h>
+#include <tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeRequest.h>
+#include <tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeResponse.h>
+#include <tencentcloud/dts/v20180330/model/ResetSubscribeRequest.h>
+#include <tencentcloud/dts/v20180330/model/ResetSubscribeResponse.h>
 #include <tencentcloud/dts/v20180330/model/StartMigrateJobRequest.h>
 #include <tencentcloud/dts/v20180330/model/StartMigrateJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/StartSyncJobRequest.h>
@@ -71,6 +97,9 @@ namespace TencentCloud
                 DtsClient(const Credential &credential, const std::string &region);
                 DtsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ActivateSubscribeResponse> ActivateSubscribeOutcome;
+                typedef std::future<ActivateSubscribeOutcome> ActivateSubscribeOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ActivateSubscribeRequest&, ActivateSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateSubscribeAsyncHandler;
                 typedef Outcome<Error, Model::CompleteMigrateJobResponse> CompleteMigrateJobOutcome;
                 typedef std::future<CompleteMigrateJobOutcome> CompleteMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::CompleteMigrateJobRequest&, CompleteMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteMigrateJobAsyncHandler;
@@ -80,6 +109,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateMigrateJobResponse> CreateMigrateJobOutcome;
                 typedef std::future<CreateMigrateJobOutcome> CreateMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::CreateMigrateJobRequest&, CreateMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMigrateJobAsyncHandler;
+                typedef Outcome<Error, Model::CreateSubscribeResponse> CreateSubscribeOutcome;
+                typedef std::future<CreateSubscribeOutcome> CreateSubscribeOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::CreateSubscribeRequest&, CreateSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubscribeAsyncHandler;
                 typedef Outcome<Error, Model::CreateSyncCheckJobResponse> CreateSyncCheckJobOutcome;
                 typedef std::future<CreateSyncCheckJobOutcome> CreateSyncCheckJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::CreateSyncCheckJobRequest&, CreateSyncCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSyncCheckJobAsyncHandler;
@@ -92,24 +124,57 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteSyncJobResponse> DeleteSyncJobOutcome;
                 typedef std::future<DeleteSyncJobOutcome> DeleteSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DeleteSyncJobRequest&, DeleteSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSyncJobAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncRequestInfoResponse> DescribeAsyncRequestInfoOutcome;
+                typedef std::future<DescribeAsyncRequestInfoOutcome> DescribeAsyncRequestInfoOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeAsyncRequestInfoRequest&, DescribeAsyncRequestInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncRequestInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMigrateCheckJobResponse> DescribeMigrateCheckJobOutcome;
                 typedef std::future<DescribeMigrateCheckJobOutcome> DescribeMigrateCheckJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeMigrateCheckJobRequest&, DescribeMigrateCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateCheckJobAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMigrateJobsResponse> DescribeMigrateJobsOutcome;
                 typedef std::future<DescribeMigrateJobsOutcome> DescribeMigrateJobsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeMigrateJobsRequest&, DescribeMigrateJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateJobsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRegionConfResponse> DescribeRegionConfOutcome;
+                typedef std::future<DescribeRegionConfOutcome> DescribeRegionConfOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeRegionConfRequest&, DescribeRegionConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionConfAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSubscribeConfResponse> DescribeSubscribeConfOutcome;
+                typedef std::future<DescribeSubscribeConfOutcome> DescribeSubscribeConfOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeSubscribeConfRequest&, DescribeSubscribeConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribeConfAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSubscribesResponse> DescribeSubscribesOutcome;
+                typedef std::future<DescribeSubscribesOutcome> DescribeSubscribesOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeSubscribesRequest&, DescribeSubscribesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSyncCheckJobResponse> DescribeSyncCheckJobOutcome;
                 typedef std::future<DescribeSyncCheckJobOutcome> DescribeSyncCheckJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSyncCheckJobRequest&, DescribeSyncCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncCheckJobAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSyncJobsResponse> DescribeSyncJobsOutcome;
                 typedef std::future<DescribeSyncJobsOutcome> DescribeSyncJobsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSyncJobsRequest&, DescribeSyncJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncJobsAsyncHandler;
+                typedef Outcome<Error, Model::IsolateSubscribeResponse> IsolateSubscribeOutcome;
+                typedef std::future<IsolateSubscribeOutcome> IsolateSubscribeOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::IsolateSubscribeRequest&, IsolateSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateSubscribeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyMigrateJobResponse> ModifyMigrateJobOutcome;
                 typedef std::future<ModifyMigrateJobOutcome> ModifyMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifyMigrateJobRequest&, ModifyMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrateJobAsyncHandler;
+                typedef Outcome<Error, Model::ModifySubscribeConsumeTimeResponse> ModifySubscribeConsumeTimeOutcome;
+                typedef std::future<ModifySubscribeConsumeTimeOutcome> ModifySubscribeConsumeTimeOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySubscribeConsumeTimeRequest&, ModifySubscribeConsumeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeConsumeTimeAsyncHandler;
+                typedef Outcome<Error, Model::ModifySubscribeNameResponse> ModifySubscribeNameOutcome;
+                typedef std::future<ModifySubscribeNameOutcome> ModifySubscribeNameOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySubscribeNameRequest&, ModifySubscribeNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeNameAsyncHandler;
+                typedef Outcome<Error, Model::ModifySubscribeObjectsResponse> ModifySubscribeObjectsOutcome;
+                typedef std::future<ModifySubscribeObjectsOutcome> ModifySubscribeObjectsOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySubscribeObjectsRequest&, ModifySubscribeObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeObjectsAsyncHandler;
+                typedef Outcome<Error, Model::ModifySubscribeVipVportResponse> ModifySubscribeVipVportOutcome;
+                typedef std::future<ModifySubscribeVipVportOutcome> ModifySubscribeVipVportOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySubscribeVipVportRequest&, ModifySubscribeVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscribeVipVportAsyncHandler;
                 typedef Outcome<Error, Model::ModifySyncJobResponse> ModifySyncJobOutcome;
                 typedef std::future<ModifySyncJobOutcome> ModifySyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifySyncJobRequest&, ModifySyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncJobAsyncHandler;
+                typedef Outcome<Error, Model::OfflineIsolatedSubscribeResponse> OfflineIsolatedSubscribeOutcome;
+                typedef std::future<OfflineIsolatedSubscribeOutcome> OfflineIsolatedSubscribeOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::OfflineIsolatedSubscribeRequest&, OfflineIsolatedSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineIsolatedSubscribeAsyncHandler;
+                typedef Outcome<Error, Model::ResetSubscribeResponse> ResetSubscribeOutcome;
+                typedef std::future<ResetSubscribeOutcome> ResetSubscribeOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ResetSubscribeRequest&, ResetSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSubscribeAsyncHandler;
                 typedef Outcome<Error, Model::StartMigrateJobResponse> StartMigrateJobOutcome;
                 typedef std::future<StartMigrateJobOutcome> StartMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StartMigrateJobRequest&, StartMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMigrateJobAsyncHandler;
@@ -124,6 +189,15 @@ namespace TencentCloud
                 typedef std::function<void(const DtsClient*, const Model::SwitchDrToMasterRequest&, SwitchDrToMasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDrToMasterAsyncHandler;
 
 
+
+                /**
+                 *本接口用于配置数据订阅，只有在未配置状态的订阅实例才能调用此接口。
+                 * @param req ActivateSubscribeRequest
+                 * @return ActivateSubscribeOutcome
+                 */
+                ActivateSubscribeOutcome ActivateSubscribe(const Model::ActivateSubscribeRequest &request);
+                void ActivateSubscribeAsync(const Model::ActivateSubscribeRequest& request, const ActivateSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateSubscribeOutcomeCallable ActivateSubscribeCallable(const Model::ActivateSubscribeRequest& request);
 
                 /**
                  *本接口（CompleteMigrateJob）用于完成数据迁移任务。
@@ -158,6 +232,15 @@ namespace TencentCloud
                 CreateMigrateJobOutcome CreateMigrateJob(const Model::CreateMigrateJobRequest &request);
                 void CreateMigrateJobAsync(const Model::CreateMigrateJobRequest& request, const CreateMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMigrateJobOutcomeCallable CreateMigrateJobCallable(const Model::CreateMigrateJobRequest& request);
+
+                /**
+                 *本接口(CreateSubscribe)用于创建一个数据订阅实例。
+                 * @param req CreateSubscribeRequest
+                 * @return CreateSubscribeOutcome
+                 */
+                CreateSubscribeOutcome CreateSubscribe(const Model::CreateSubscribeRequest &request);
+                void CreateSubscribeAsync(const Model::CreateSubscribeRequest& request, const CreateSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSubscribeOutcomeCallable CreateSubscribeCallable(const Model::CreateSubscribeRequest& request);
 
                 /**
                  *在调用 StartSyncJob 接口启动灾备同步前, 必须调用本接口创建校验, 且校验成功后才能开始同步数据. 校验的结果可以通过 DescribeSyncCheckJob 查看.
@@ -198,6 +281,15 @@ namespace TencentCloud
                 DeleteSyncJobOutcomeCallable DeleteSyncJobCallable(const Model::DeleteSyncJobRequest& request);
 
                 /**
+                 *本接口（DescribeAsyncRequestInfo）用于查询任务执行结果
+                 * @param req DescribeAsyncRequestInfoRequest
+                 * @return DescribeAsyncRequestInfoOutcome
+                 */
+                DescribeAsyncRequestInfoOutcome DescribeAsyncRequestInfo(const Model::DescribeAsyncRequestInfoRequest &request);
+                void DescribeAsyncRequestInfoAsync(const Model::DescribeAsyncRequestInfoRequest& request, const DescribeAsyncRequestInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncRequestInfoOutcomeCallable DescribeAsyncRequestInfoCallable(const Model::DescribeAsyncRequestInfoRequest& request);
+
+                /**
                  *本接口用于创建校验后,获取校验的结果. 能查询到当前校验的状态和进度. 
 若通过校验, 则可调用'StartMigrateJob' 开始迁移.
 若未通过校验, 则能查询到校验失败的原因. 请按照报错, 通过'ModifyMigrateJob'修改迁移配置或是调整源/目标实例的相关参数.
@@ -217,6 +309,33 @@ namespace TencentCloud
                 DescribeMigrateJobsOutcome DescribeMigrateJobs(const Model::DescribeMigrateJobsRequest &request);
                 void DescribeMigrateJobsAsync(const Model::DescribeMigrateJobsRequest& request, const DescribeMigrateJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMigrateJobsOutcomeCallable DescribeMigrateJobsCallable(const Model::DescribeMigrateJobsRequest& request);
+
+                /**
+                 *本接口（DescribeRegionConf）用于查询可售卖订阅实例的地域
+                 * @param req DescribeRegionConfRequest
+                 * @return DescribeRegionConfOutcome
+                 */
+                DescribeRegionConfOutcome DescribeRegionConf(const Model::DescribeRegionConfRequest &request);
+                void DescribeRegionConfAsync(const Model::DescribeRegionConfRequest& request, const DescribeRegionConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegionConfOutcomeCallable DescribeRegionConfCallable(const Model::DescribeRegionConfRequest& request);
+
+                /**
+                 *本接口（DescribeSubscribeConf）用于查询订阅实例配置
+                 * @param req DescribeSubscribeConfRequest
+                 * @return DescribeSubscribeConfOutcome
+                 */
+                DescribeSubscribeConfOutcome DescribeSubscribeConf(const Model::DescribeSubscribeConfRequest &request);
+                void DescribeSubscribeConfAsync(const Model::DescribeSubscribeConfRequest& request, const DescribeSubscribeConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubscribeConfOutcomeCallable DescribeSubscribeConfCallable(const Model::DescribeSubscribeConfRequest& request);
+
+                /**
+                 *本接口(DescribeSubscribes)获取数据订阅实例信息列表，默认分页，每次返回20条
+                 * @param req DescribeSubscribesRequest
+                 * @return DescribeSubscribesOutcome
+                 */
+                DescribeSubscribesOutcome DescribeSubscribes(const Model::DescribeSubscribesRequest &request);
+                void DescribeSubscribesAsync(const Model::DescribeSubscribesRequest& request, const DescribeSubscribesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubscribesOutcomeCallable DescribeSubscribesCallable(const Model::DescribeSubscribesRequest& request);
 
                 /**
                  *本接口用于在通过 CreateSyncCheckJob 接口创建灾备同步校验任务后，获取校验的结果。能查询到当前校验的状态和进度。
@@ -242,6 +361,15 @@ namespace TencentCloud
                 DescribeSyncJobsOutcomeCallable DescribeSyncJobsCallable(const Model::DescribeSyncJobsRequest& request);
 
                 /**
+                 *本接口（IsolateSubscribe）用于隔离小时计费的订阅实例。调用后，订阅实例将不能使用，同时停止计费。
+                 * @param req IsolateSubscribeRequest
+                 * @return IsolateSubscribeOutcome
+                 */
+                IsolateSubscribeOutcome IsolateSubscribe(const Model::IsolateSubscribeRequest &request);
+                void IsolateSubscribeAsync(const Model::IsolateSubscribeRequest& request, const IsolateSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateSubscribeOutcomeCallable IsolateSubscribeCallable(const Model::IsolateSubscribeRequest& request);
+
+                /**
                  *本接口（ModifyMigrateJob）用于修改数据迁移任务。
 当迁移任务处于下述状态时，允许调用本接口修改迁移任务：迁移创建中（status=1）、 校验成功(status=4)、校验失败(status=5)、迁移失败(status=10)。但源实例、目标实例类型和目标实例地域不允许修改。
 
@@ -254,6 +382,42 @@ namespace TencentCloud
                 ModifyMigrateJobOutcomeCallable ModifyMigrateJobCallable(const Model::ModifyMigrateJobRequest& request);
 
                 /**
+                 *本接口(ModifySubscribeConsumeTime)用于修改数据订阅通道的消费时间点
+                 * @param req ModifySubscribeConsumeTimeRequest
+                 * @return ModifySubscribeConsumeTimeOutcome
+                 */
+                ModifySubscribeConsumeTimeOutcome ModifySubscribeConsumeTime(const Model::ModifySubscribeConsumeTimeRequest &request);
+                void ModifySubscribeConsumeTimeAsync(const Model::ModifySubscribeConsumeTimeRequest& request, const ModifySubscribeConsumeTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubscribeConsumeTimeOutcomeCallable ModifySubscribeConsumeTimeCallable(const Model::ModifySubscribeConsumeTimeRequest& request);
+
+                /**
+                 *本接口(ModifySubscribeName)用于修改数据订阅实例的名称
+                 * @param req ModifySubscribeNameRequest
+                 * @return ModifySubscribeNameOutcome
+                 */
+                ModifySubscribeNameOutcome ModifySubscribeName(const Model::ModifySubscribeNameRequest &request);
+                void ModifySubscribeNameAsync(const Model::ModifySubscribeNameRequest& request, const ModifySubscribeNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubscribeNameOutcomeCallable ModifySubscribeNameCallable(const Model::ModifySubscribeNameRequest& request);
+
+                /**
+                 *本接口(ModifySubscribeObjects)用于修改数据订阅通道的订阅规则
+                 * @param req ModifySubscribeObjectsRequest
+                 * @return ModifySubscribeObjectsOutcome
+                 */
+                ModifySubscribeObjectsOutcome ModifySubscribeObjects(const Model::ModifySubscribeObjectsRequest &request);
+                void ModifySubscribeObjectsAsync(const Model::ModifySubscribeObjectsRequest& request, const ModifySubscribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubscribeObjectsOutcomeCallable ModifySubscribeObjectsCallable(const Model::ModifySubscribeObjectsRequest& request);
+
+                /**
+                 *本接口(ModifySubscribeVipVport)用于修改数据订阅实例的IP和端口号
+                 * @param req ModifySubscribeVipVportRequest
+                 * @return ModifySubscribeVipVportOutcome
+                 */
+                ModifySubscribeVipVportOutcome ModifySubscribeVipVport(const Model::ModifySubscribeVipVportRequest &request);
+                void ModifySubscribeVipVportAsync(const Model::ModifySubscribeVipVportRequest& request, const ModifySubscribeVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubscribeVipVportOutcomeCallable ModifySubscribeVipVportCallable(const Model::ModifySubscribeVipVportRequest& request);
+
+                /**
                  *修改灾备同步任务. 
 当同步任务处于下述状态时, 允许调用本接口: 同步任务创建中, 创建完成, 校验成功, 校验失败. 
 源实例和目标实例信息不允许修改，可以修改任务名、需要同步的库表。
@@ -263,6 +427,24 @@ namespace TencentCloud
                 ModifySyncJobOutcome ModifySyncJob(const Model::ModifySyncJobRequest &request);
                 void ModifySyncJobAsync(const Model::ModifySyncJobRequest& request, const ModifySyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySyncJobOutcomeCallable ModifySyncJobCallable(const Model::ModifySyncJobRequest& request);
+
+                /**
+                 *本接口（OfflineIsolatedSubscribe）用于下线已隔离的数据订阅实例
+                 * @param req OfflineIsolatedSubscribeRequest
+                 * @return OfflineIsolatedSubscribeOutcome
+                 */
+                OfflineIsolatedSubscribeOutcome OfflineIsolatedSubscribe(const Model::OfflineIsolatedSubscribeRequest &request);
+                void OfflineIsolatedSubscribeAsync(const Model::OfflineIsolatedSubscribeRequest& request, const OfflineIsolatedSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OfflineIsolatedSubscribeOutcomeCallable OfflineIsolatedSubscribeCallable(const Model::OfflineIsolatedSubscribeRequest& request);
+
+                /**
+                 *本接口(ResetSubscribe)用于重置数据订阅实例，已经激活的数据订阅实例，重置后可以使用ActivateSubscribe接口绑定其他的数据库实例
+                 * @param req ResetSubscribeRequest
+                 * @return ResetSubscribeOutcome
+                 */
+                ResetSubscribeOutcome ResetSubscribe(const Model::ResetSubscribeRequest &request);
+                void ResetSubscribeAsync(const Model::ResetSubscribeRequest& request, const ResetSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetSubscribeOutcomeCallable ResetSubscribeCallable(const Model::ResetSubscribeRequest& request);
 
                 /**
                  *本接口（StartMigrationJob）用于启动迁移任务。非定时迁移任务会在调用后立即开始迁移，定时任务则会开始倒计时。

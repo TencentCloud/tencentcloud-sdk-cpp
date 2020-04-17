@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 VerifyIdlFilesRequest::VerifyIdlFilesRequest() :
-    m_applicationIdHasBeenSet(false),
-    m_logicZoneIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_tableGroupIdHasBeenSet(false),
     m_existingIdlFilesHasBeenSet(false),
     m_newIdlFilesHasBeenSet(false)
 {
@@ -38,20 +38,20 @@ string VerifyIdlFilesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_logicZoneIdHasBeenSet)
+    if (m_tableGroupIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "LogicZoneId";
+        string key = "TableGroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_logicZoneId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_tableGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_existingIdlFilesHasBeenSet)
@@ -92,36 +92,36 @@ string VerifyIdlFilesRequest::ToJsonString() const
 }
 
 
-string VerifyIdlFilesRequest::GetApplicationId() const
+string VerifyIdlFilesRequest::GetClusterId() const
 {
-    return m_applicationId;
+    return m_clusterId;
 }
 
-void VerifyIdlFilesRequest::SetApplicationId(const string& _applicationId)
+void VerifyIdlFilesRequest::SetClusterId(const string& _clusterId)
 {
-    m_applicationId = _applicationId;
-    m_applicationIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool VerifyIdlFilesRequest::ApplicationIdHasBeenSet() const
+bool VerifyIdlFilesRequest::ClusterIdHasBeenSet() const
 {
-    return m_applicationIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
-string VerifyIdlFilesRequest::GetLogicZoneId() const
+string VerifyIdlFilesRequest::GetTableGroupId() const
 {
-    return m_logicZoneId;
+    return m_tableGroupId;
 }
 
-void VerifyIdlFilesRequest::SetLogicZoneId(const string& _logicZoneId)
+void VerifyIdlFilesRequest::SetTableGroupId(const string& _tableGroupId)
 {
-    m_logicZoneId = _logicZoneId;
-    m_logicZoneIdHasBeenSet = true;
+    m_tableGroupId = _tableGroupId;
+    m_tableGroupIdHasBeenSet = true;
 }
 
-bool VerifyIdlFilesRequest::LogicZoneIdHasBeenSet() const
+bool VerifyIdlFilesRequest::TableGroupIdHasBeenSet() const
 {
-    return m_logicZoneIdHasBeenSet;
+    return m_tableGroupIdHasBeenSet;
 }
 
 vector<IdlFileInfo> VerifyIdlFilesRequest::GetExistingIdlFiles() const

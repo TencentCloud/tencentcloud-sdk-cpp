@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool VpnGatewayNameHasBeenSet() const;
 
                     /**
-                     * 获取网关实例类型：'IPSEC', 'SSL'。
-                     * @return Type 网关实例类型：'IPSEC', 'SSL'。
+                     * 获取网关实例类型：'IPSEC', 'SSL','CCN'。
+                     * @return Type 网关实例类型：'IPSEC', 'SSL','CCN'。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置网关实例类型：'IPSEC', 'SSL'。
-                     * @param Type 网关实例类型：'IPSEC', 'SSL'。
+                     * 设置网关实例类型：'IPSEC', 'SSL','CCN'。
+                     * @param Type 网关实例类型：'IPSEC', 'SSL','CCN'。
                      */
                     void SetType(const std::string& _type);
 
@@ -353,6 +353,24 @@ namespace TencentCloud
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取Type值为CCN时，该值表示云联网实例ID
+                     * @return NetworkInstanceId Type值为CCN时，该值表示云联网实例ID
+                     */
+                    std::string GetNetworkInstanceId() const;
+
+                    /**
+                     * 设置Type值为CCN时，该值表示云联网实例ID
+                     * @param NetworkInstanceId Type值为CCN时，该值表示云联网实例ID
+                     */
+                    void SetNetworkInstanceId(const std::string& _networkInstanceId);
+
+                    /**
+                     * 判断参数 NetworkInstanceId 是否已赋值
+                     * @return NetworkInstanceId 是否已赋值
+                     */
+                    bool NetworkInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,7 +392,7 @@ namespace TencentCloud
                     bool m_vpnGatewayNameHasBeenSet;
 
                     /**
-                     * 网关实例类型：'IPSEC', 'SSL'。
+                     * 网关实例类型：'IPSEC', 'SSL','CCN'。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -456,6 +474,12 @@ namespace TencentCloud
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * Type值为CCN时，该值表示云联网实例ID
+                     */
+                    std::string m_networkInstanceId;
+                    bool m_networkInstanceIdHasBeenSet;
 
                 };
             }

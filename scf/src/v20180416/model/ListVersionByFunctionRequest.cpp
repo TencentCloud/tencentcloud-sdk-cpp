@@ -25,7 +25,11 @@ using namespace std;
 
 ListVersionByFunctionRequest::ListVersionByFunctionRequest() :
     m_functionNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_orderByHasBeenSet(false)
 {
 }
 
@@ -50,6 +54,38 @@ string ListVersionByFunctionRequest::ToJsonString() const
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderBy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +126,70 @@ void ListVersionByFunctionRequest::SetNamespace(const string& _namespace)
 bool ListVersionByFunctionRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+uint64_t ListVersionByFunctionRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void ListVersionByFunctionRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ListVersionByFunctionRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t ListVersionByFunctionRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void ListVersionByFunctionRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ListVersionByFunctionRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string ListVersionByFunctionRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void ListVersionByFunctionRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool ListVersionByFunctionRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string ListVersionByFunctionRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void ListVersionByFunctionRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool ListVersionByFunctionRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
 }
 
 

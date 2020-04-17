@@ -46,7 +46,9 @@ Cluster::Cluster() :
     m_deleteFlagReasonHasBeenSet(false),
     m_clusterLimitCpuHasBeenSet(false),
     m_clusterLimitMemHasBeenSet(false),
-    m_runServiceInstanceCountHasBeenSet(false)
+    m_runServiceInstanceCountHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_operationInfoHasBeenSet(false)
 {
 }
 
@@ -305,6 +307,33 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
         m_runServiceInstanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperationInfo") && !value["OperationInfo"].IsNull())
+    {
+        if (!value["OperationInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.OperationInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_operationInfo.Deserialize(value["OperationInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_operationInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -510,6 +539,23 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "RunServiceInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runServiceInstanceCount, allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OperationInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_operationInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -913,5 +959,37 @@ void Cluster::SetRunServiceInstanceCount(const int64_t& _runServiceInstanceCount
 bool Cluster::RunServiceInstanceCountHasBeenSet() const
 {
     return m_runServiceInstanceCountHasBeenSet;
+}
+
+string Cluster::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void Cluster::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool Cluster::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+OperationInfo Cluster::GetOperationInfo() const
+{
+    return m_operationInfo;
+}
+
+void Cluster::SetOperationInfo(const OperationInfo& _operationInfo)
+{
+    m_operationInfo = _operationInfo;
+    m_operationInfoHasBeenSet = true;
+}
+
+bool Cluster::OperationInfoHasBeenSet() const
+{
+    return m_operationInfoHasBeenSet;
 }
 

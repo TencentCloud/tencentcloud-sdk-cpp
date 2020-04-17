@@ -43,7 +43,11 @@ DirectConnect::DirectConnect() :
     m_expiredTimeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_faultReportContactPersonHasBeenSet(false),
-    m_faultReportContactNumberHasBeenSet(false)
+    m_faultReportContactNumberHasBeenSet(false),
+    m_tagSetHasBeenSet(false),
+    m_accessPointTypeHasBeenSet(false),
+    m_idcCityHasBeenSet(false),
+    m_chargeStateHasBeenSet(false)
 {
 }
 
@@ -272,6 +276,56 @@ CoreInternalOutcome DirectConnect::Deserialize(const Value &value)
         m_faultReportContactNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `DirectConnect.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointType") && !value["AccessPointType"].IsNull())
+    {
+        if (!value["AccessPointType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.AccessPointType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointType = string(value["AccessPointType"].GetString());
+        m_accessPointTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdcCity") && !value["IdcCity"].IsNull())
+    {
+        if (!value["IdcCity"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.IdcCity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idcCity = string(value["IdcCity"].GetString());
+        m_idcCityHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChargeState") && !value["ChargeState"].IsNull())
+    {
+        if (!value["ChargeState"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.ChargeState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeState = string(value["ChargeState"].GetString());
+        m_chargeStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -453,6 +507,45 @@ void DirectConnect::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "FaultReportContactNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_faultReportContactNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_accessPointTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessPointType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_accessPointType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idcCityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IdcCity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_idcCity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ChargeState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_chargeState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -808,5 +901,69 @@ void DirectConnect::SetFaultReportContactNumber(const string& _faultReportContac
 bool DirectConnect::FaultReportContactNumberHasBeenSet() const
 {
     return m_faultReportContactNumberHasBeenSet;
+}
+
+vector<Tag> DirectConnect::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void DirectConnect::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool DirectConnect::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
+}
+
+string DirectConnect::GetAccessPointType() const
+{
+    return m_accessPointType;
+}
+
+void DirectConnect::SetAccessPointType(const string& _accessPointType)
+{
+    m_accessPointType = _accessPointType;
+    m_accessPointTypeHasBeenSet = true;
+}
+
+bool DirectConnect::AccessPointTypeHasBeenSet() const
+{
+    return m_accessPointTypeHasBeenSet;
+}
+
+string DirectConnect::GetIdcCity() const
+{
+    return m_idcCity;
+}
+
+void DirectConnect::SetIdcCity(const string& _idcCity)
+{
+    m_idcCity = _idcCity;
+    m_idcCityHasBeenSet = true;
+}
+
+bool DirectConnect::IdcCityHasBeenSet() const
+{
+    return m_idcCityHasBeenSet;
+}
+
+string DirectConnect::GetChargeState() const
+{
+    return m_chargeState;
+}
+
+void DirectConnect::SetChargeState(const string& _chargeState)
+{
+    m_chargeState = _chargeState;
+    m_chargeStateHasBeenSet = true;
+}
+
+bool DirectConnect::ChargeStateHasBeenSet() const
+{
+    return m_chargeStateHasBeenSet;
 }
 

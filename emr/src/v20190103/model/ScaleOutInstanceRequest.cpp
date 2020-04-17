@@ -32,7 +32,12 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_preExecutedFileSettingsHasBeenSet(false),
     m_taskCountHasBeenSet(false),
     m_coreCountHasBeenSet(false),
-    m_unNecessaryNodeListHasBeenSet(false)
+    m_unNecessaryNodeListHasBeenSet(false),
+    m_routerCountHasBeenSet(false),
+    m_softDeployInfoHasBeenSet(false),
+    m_serviceNodeInfoHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -124,6 +129,68 @@ string ScaleOutInstanceRequest::ToJsonString() const
         for (auto itr = m_unNecessaryNodeList.begin(); itr != m_unNecessaryNodeList.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_routerCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RouterCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_routerCount, allocator);
+    }
+
+    if (m_softDeployInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SoftDeployInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_softDeployInfo.begin(); itr != m_softDeployInfo.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_serviceNodeInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceNodeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceNodeInfo.begin(); itr != m_serviceNodeInfo.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -277,6 +344,86 @@ void ScaleOutInstanceRequest::SetUnNecessaryNodeList(const vector<uint64_t>& _un
 bool ScaleOutInstanceRequest::UnNecessaryNodeListHasBeenSet() const
 {
     return m_unNecessaryNodeListHasBeenSet;
+}
+
+uint64_t ScaleOutInstanceRequest::GetRouterCount() const
+{
+    return m_routerCount;
+}
+
+void ScaleOutInstanceRequest::SetRouterCount(const uint64_t& _routerCount)
+{
+    m_routerCount = _routerCount;
+    m_routerCountHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::RouterCountHasBeenSet() const
+{
+    return m_routerCountHasBeenSet;
+}
+
+vector<uint64_t> ScaleOutInstanceRequest::GetSoftDeployInfo() const
+{
+    return m_softDeployInfo;
+}
+
+void ScaleOutInstanceRequest::SetSoftDeployInfo(const vector<uint64_t>& _softDeployInfo)
+{
+    m_softDeployInfo = _softDeployInfo;
+    m_softDeployInfoHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::SoftDeployInfoHasBeenSet() const
+{
+    return m_softDeployInfoHasBeenSet;
+}
+
+vector<uint64_t> ScaleOutInstanceRequest::GetServiceNodeInfo() const
+{
+    return m_serviceNodeInfo;
+}
+
+void ScaleOutInstanceRequest::SetServiceNodeInfo(const vector<uint64_t>& _serviceNodeInfo)
+{
+    m_serviceNodeInfo = _serviceNodeInfo;
+    m_serviceNodeInfoHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ServiceNodeInfoHasBeenSet() const
+{
+    return m_serviceNodeInfoHasBeenSet;
+}
+
+vector<string> ScaleOutInstanceRequest::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void ScaleOutInstanceRequest::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
+}
+
+vector<Tag> ScaleOutInstanceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ScaleOutInstanceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

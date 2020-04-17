@@ -212,6 +212,49 @@ AsrClient::DescribeTaskStatusOutcomeCallable AsrClient::DescribeTaskStatusCallab
     return task->get_future();
 }
 
+AsrClient::DownloadAsrVocabOutcome AsrClient::DownloadAsrVocab(const DownloadAsrVocabRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadAsrVocab");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadAsrVocabResponse rsp = DownloadAsrVocabResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadAsrVocabOutcome(rsp);
+        else
+            return DownloadAsrVocabOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadAsrVocabOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::DownloadAsrVocabAsync(const DownloadAsrVocabRequest& request, const DownloadAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadAsrVocab(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::DownloadAsrVocabOutcomeCallable AsrClient::DownloadAsrVocabCallable(const DownloadAsrVocabRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadAsrVocabOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadAsrVocab(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::GetAsrVocabOutcome AsrClient::GetAsrVocab(const GetAsrVocabRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAsrVocab");
@@ -255,6 +298,49 @@ AsrClient::GetAsrVocabOutcomeCallable AsrClient::GetAsrVocabCallable(const GetAs
     return task->get_future();
 }
 
+AsrClient::GetAsrVocabListOutcome AsrClient::GetAsrVocabList(const GetAsrVocabListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAsrVocabList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAsrVocabListResponse rsp = GetAsrVocabListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAsrVocabListOutcome(rsp);
+        else
+            return GetAsrVocabListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAsrVocabListOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::GetAsrVocabListAsync(const GetAsrVocabListRequest& request, const GetAsrVocabListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAsrVocabList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::GetAsrVocabListOutcomeCallable AsrClient::GetAsrVocabListCallable(const GetAsrVocabListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAsrVocabListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAsrVocabList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::SentenceRecognitionOutcome AsrClient::SentenceRecognition(const SentenceRecognitionRequest &request)
 {
     auto outcome = MakeRequest(request, "SentenceRecognition");
@@ -291,6 +377,49 @@ AsrClient::SentenceRecognitionOutcomeCallable AsrClient::SentenceRecognitionCall
         [this, request]()
         {
             return this->SentenceRecognition(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::SetVocabStateOutcome AsrClient::SetVocabState(const SetVocabStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetVocabState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetVocabStateResponse rsp = SetVocabStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetVocabStateOutcome(rsp);
+        else
+            return SetVocabStateOutcome(o.GetError());
+    }
+    else
+    {
+        return SetVocabStateOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::SetVocabStateAsync(const SetVocabStateRequest& request, const SetVocabStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetVocabState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::SetVocabStateOutcomeCallable AsrClient::SetVocabStateCallable(const SetVocabStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetVocabStateOutcome()>>(
+        [this, request]()
+        {
+            return this->SetVocabState(request);
         }
     );
 

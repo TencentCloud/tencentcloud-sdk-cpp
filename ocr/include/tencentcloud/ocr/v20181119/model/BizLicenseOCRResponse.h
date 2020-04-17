@@ -150,6 +150,18 @@ namespace TencentCloud
                      */
                     bool ComposingFormHasBeenSet() const;
 
+                    /**
+                     * 获取成立日期
+                     * @return SetDate 成立日期
+                     */
+                    std::string GetSetDate() const;
+
+                    /**
+                     * 判断参数 SetDate 是否已赋值
+                     * @return SetDate 是否已赋值
+                     */
+                    bool SetDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +217,12 @@ namespace TencentCloud
                      */
                     std::string m_composingForm;
                     bool m_composingFormHasBeenSet;
+
+                    /**
+                     * 成立日期
+                     */
+                    std::string m_setDate;
+                    bool m_setDateHasBeenSet;
 
                 };
             }

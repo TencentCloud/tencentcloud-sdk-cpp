@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务概要列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskSet 任务概要列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskSimpleInfo> GetTaskSet() const;
 
@@ -59,9 +57,7 @@ namespace TencentCloud
 
                     /**
                      * 获取翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScrollToken 翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetScrollToken() const;
 
@@ -75,14 +71,12 @@ namespace TencentCloud
 
                     /**
                      * 任务概要列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskSimpleInfo> m_taskSet;
                     bool m_taskSetHasBeenSet;
 
                     /**
                      * 翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scrollToken;
                     bool m_scrollTokenHasBeenSet;

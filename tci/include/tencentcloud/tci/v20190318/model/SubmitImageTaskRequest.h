@@ -117,6 +117,24 @@ namespace TencentCloud
                     bool LightStandardSetHasBeenSet() const;
 
                     /**
+                     * 获取结果更新回调地址。
+                     * @return EventsCallBack 结果更新回调地址。
+                     */
+                    std::string GetEventsCallBack() const;
+
+                    /**
+                     * 设置结果更新回调地址。
+                     * @param EventsCallBack 结果更新回调地址。
+                     */
+                    void SetEventsCallBack(const std::string& _eventsCallBack);
+
+                    /**
+                     * 判断参数 EventsCallBack 是否已赋值
+                     * @return EventsCallBack 是否已赋值
+                     */
+                    bool EventsCallBackHasBeenSet() const;
+
+                    /**
                      * 获取抽帧的时间间隔，单位毫秒，默认值1000，保留字段，当前不支持填写。
                      * @return FrameInterval 抽帧的时间间隔，单位毫秒，默认值1000，保留字段，当前不支持填写。
                      */
@@ -213,6 +231,12 @@ namespace TencentCloud
                      */
                     std::vector<LightStandard> m_lightStandardSet;
                     bool m_lightStandardSetHasBeenSet;
+
+                    /**
+                     * 结果更新回调地址。
+                     */
+                    std::string m_eventsCallBack;
+                    bool m_eventsCallBackHasBeenSet;
 
                     /**
                      * 抽帧的时间间隔，单位毫秒，默认值1000，保留字段，当前不支持填写。

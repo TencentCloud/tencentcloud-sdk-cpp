@@ -1932,6 +1932,49 @@ BmClient::RecoverDevicesOutcomeCallable BmClient::RecoverDevicesCallable(const R
     return task->get_future();
 }
 
+BmClient::ReloadDeviceOsOutcome BmClient::ReloadDeviceOs(const ReloadDeviceOsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReloadDeviceOs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReloadDeviceOsResponse rsp = ReloadDeviceOsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReloadDeviceOsOutcome(rsp);
+        else
+            return ReloadDeviceOsOutcome(o.GetError());
+    }
+    else
+    {
+        return ReloadDeviceOsOutcome(outcome.GetError());
+    }
+}
+
+void BmClient::ReloadDeviceOsAsync(const ReloadDeviceOsRequest& request, const ReloadDeviceOsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReloadDeviceOs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmClient::ReloadDeviceOsOutcomeCallable BmClient::ReloadDeviceOsCallable(const ReloadDeviceOsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReloadDeviceOsOutcome()>>(
+        [this, request]()
+        {
+            return this->ReloadDeviceOs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmClient::RepairTaskControlOutcome BmClient::RepairTaskControl(const RepairTaskControlRequest &request)
 {
     auto outcome = MakeRequest(request, "RepairTaskControl");

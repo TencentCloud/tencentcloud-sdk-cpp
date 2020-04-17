@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取任务ID
+                     * @return TaskId 任务ID
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param TaskId 任务Id
+                     * 设置任务ID
+                     * @param TaskId 任务ID
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取拨测任务的Url
-                     * @return CgiUrl 拨测任务的Url
+                     * 获取拨测任务的URL
+                     * @return CgiUrl 拨测任务的URL
                      */
                     std::string GetCgiUrl() const;
 
                     /**
-                     * 设置拨测任务的Url
-                     * @param CgiUrl 拨测任务的Url
+                     * 设置拨测任务的URL
+                     * @param CgiUrl 拨测任务的URL
                      */
                     void SetCgiUrl(const std::string& _cgiUrl);
 
@@ -229,7 +229,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务Id
+                     * 任务ID
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -259,7 +259,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 拨测任务的Url
+                     * 拨测任务的URL
                      */
                     std::string m_cgiUrl;
                     bool m_cgiUrlHasBeenSet;

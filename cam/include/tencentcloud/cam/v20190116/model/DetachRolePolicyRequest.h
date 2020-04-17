@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略ID
-                     * @return PolicyId 策略ID
+                     * 获取策略ID，入参PolicyId与PolicyName二选一
+                     * @return PolicyId 策略ID，入参PolicyId与PolicyName二选一
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * 设置策略ID，入参PolicyId与PolicyName二选一
+                     * @param PolicyId 策略ID，入参PolicyId与PolicyName二选一
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
@@ -96,10 +96,28 @@ namespace TencentCloud
                      */
                     bool DetachRoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取策略名，入参PolicyId与PolicyName二选一
+                     * @return PolicyName 策略名，入参PolicyId与PolicyName二选一
+                     */
+                    std::string GetPolicyName() const;
+
+                    /**
+                     * 设置策略名，入参PolicyId与PolicyName二选一
+                     * @param PolicyName 策略名，入参PolicyId与PolicyName二选一
+                     */
+                    void SetPolicyName(const std::string& _policyName);
+
+                    /**
+                     * 判断参数 PolicyName 是否已赋值
+                     * @return PolicyName 是否已赋值
+                     */
+                    bool PolicyNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略ID
+                     * 策略ID，入参PolicyId与PolicyName二选一
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_detachRoleName;
                     bool m_detachRoleNameHasBeenSet;
+
+                    /**
+                     * 策略名，入参PolicyId与PolicyName二选一
+                     */
+                    std::string m_policyName;
+                    bool m_policyNameHasBeenSet;
 
                 };
             }

@@ -32,7 +32,8 @@ NamedComputeEnv::NamedComputeEnv() :
     m_inputMappingsHasBeenSet(false),
     m_agentRunningModeHasBeenSet(false),
     m_notificationsHasBeenSet(false),
-    m_actionIfComputeNodeInactiveHasBeenSet(false)
+    m_actionIfComputeNodeInactiveHasBeenSet(false),
+    m_resourceMaxRetryCountHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,16 @@ CoreInternalOutcome NamedComputeEnv::Deserialize(const Value &value)
         m_actionIfComputeNodeInactiveHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceMaxRetryCount") && !value["ResourceMaxRetryCount"].IsNull())
+    {
+        if (!value["ResourceMaxRetryCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NamedComputeEnv.ResourceMaxRetryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceMaxRetryCount = value["ResourceMaxRetryCount"].GetInt64();
+        m_resourceMaxRetryCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void NamedComputeEnv::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "ActionIfComputeNodeInactive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_actionIfComputeNodeInactive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceMaxRetryCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceMaxRetryCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceMaxRetryCount, allocator);
     }
 
 }
@@ -498,5 +517,21 @@ void NamedComputeEnv::SetActionIfComputeNodeInactive(const string& _actionIfComp
 bool NamedComputeEnv::ActionIfComputeNodeInactiveHasBeenSet() const
 {
     return m_actionIfComputeNodeInactiveHasBeenSet;
+}
+
+int64_t NamedComputeEnv::GetResourceMaxRetryCount() const
+{
+    return m_resourceMaxRetryCount;
+}
+
+void NamedComputeEnv::SetResourceMaxRetryCount(const int64_t& _resourceMaxRetryCount)
+{
+    m_resourceMaxRetryCount = _resourceMaxRetryCount;
+    m_resourceMaxRetryCountHasBeenSet = true;
+}
+
+bool NamedComputeEnv::ResourceMaxRetryCountHasBeenSet() const
+{
+    return m_resourceMaxRetryCountHasBeenSet;
 }
 

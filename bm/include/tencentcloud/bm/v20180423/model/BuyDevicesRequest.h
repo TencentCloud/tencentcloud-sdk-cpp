@@ -549,17 +549,17 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU型号ID，自定义机型需要传入，取值：
-<br/><li>1: E5-2620v3 (6核) * 2</li><li>2: E5-2680v4 (14核) * 2</li><li>3: E5-2670v3 (12核) * 2</li><li>4: E5-2620v4 (8核) * 2</li><li>5: 4110 (8核) * 2</li><li>6: 6133 (20核) * 2</li><br/>
+<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>
                      * @return CpuId CPU型号ID，自定义机型需要传入，取值：
-<br/><li>1: E5-2620v3 (6核) * 2</li><li>2: E5-2680v4 (14核) * 2</li><li>3: E5-2670v3 (12核) * 2</li><li>4: E5-2620v4 (8核) * 2</li><li>5: 4110 (8核) * 2</li><li>6: 6133 (20核) * 2</li><br/>
+<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>
                      */
                     uint64_t GetCpuId() const;
 
                     /**
                      * 设置CPU型号ID，自定义机型需要传入，取值：
-<br/><li>1: E5-2620v3 (6核) * 2</li><li>2: E5-2680v4 (14核) * 2</li><li>3: E5-2670v3 (12核) * 2</li><li>4: E5-2620v4 (8核) * 2</li><li>5: 4110 (8核) * 2</li><li>6: 6133 (20核) * 2</li><br/>
+<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>
                      * @param CpuId CPU型号ID，自定义机型需要传入，取值：
-<br/><li>1: E5-2620v3 (6核) * 2</li><li>2: E5-2680v4 (14核) * 2</li><li>3: E5-2670v3 (12核) * 2</li><li>4: E5-2620v4 (8核) * 2</li><li>5: 4110 (8核) * 2</li><li>6: 6133 (20核) * 2</li><br/>
+<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>
                      */
                     void SetCpuId(const uint64_t& _cpuId);
 
@@ -730,6 +730,42 @@ namespace TencentCloud
                      * @return BuySession 是否已赋值
                      */
                     bool BuySessionHasBeenSet() const;
+
+                    /**
+                     * 获取绑定已有的安全组ID。仅在NeedSecurityAgent为1时生效
+                     * @return SgId 绑定已有的安全组ID。仅在NeedSecurityAgent为1时生效
+                     */
+                    std::string GetSgId() const;
+
+                    /**
+                     * 设置绑定已有的安全组ID。仅在NeedSecurityAgent为1时生效
+                     * @param SgId 绑定已有的安全组ID。仅在NeedSecurityAgent为1时生效
+                     */
+                    void SetSgId(const std::string& _sgId);
+
+                    /**
+                     * 判断参数 SgId 是否已赋值
+                     * @return SgId 是否已赋值
+                     */
+                    bool SgIdHasBeenSet() const;
+
+                    /**
+                     * 获取安全组模板ID，由模板创建新安全组并绑定。TemplateId和SgId不能同时传入
+                     * @return TemplateId 安全组模板ID，由模板创建新安全组并绑定。TemplateId和SgId不能同时传入
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置安全组模板ID，由模板创建新安全组并绑定。TemplateId和SgId不能同时传入
+                     * @param TemplateId 安全组模板ID，由模板创建新安全组并绑定。TemplateId和SgId不能同时传入
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
 
                 private:
 
@@ -903,7 +939,7 @@ namespace TencentCloud
 
                     /**
                      * CPU型号ID，自定义机型需要传入，取值：
-<br/><li>1: E5-2620v3 (6核) * 2</li><li>2: E5-2680v4 (14核) * 2</li><li>3: E5-2670v3 (12核) * 2</li><li>4: E5-2620v4 (8核) * 2</li><li>5: 4110 (8核) * 2</li><li>6: 6133 (20核) * 2</li><br/>
+<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>
                      */
                     uint64_t m_cpuId;
                     bool m_cpuIdHasBeenSet;
@@ -961,6 +997,18 @@ namespace TencentCloud
                      */
                     std::string m_buySession;
                     bool m_buySessionHasBeenSet;
+
+                    /**
+                     * 绑定已有的安全组ID。仅在NeedSecurityAgent为1时生效
+                     */
+                    std::string m_sgId;
+                    bool m_sgIdHasBeenSet;
+
+                    /**
+                     * 安全组模板ID，由模板创建新安全组并绑定。TemplateId和SgId不能同时传入
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

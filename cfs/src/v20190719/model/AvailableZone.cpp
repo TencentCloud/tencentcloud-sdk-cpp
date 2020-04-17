@@ -25,7 +25,8 @@ AvailableZone::AvailableZone() :
     m_zoneHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_zoneCnNameHasBeenSet(false),
-    m_typesHasBeenSet(false)
+    m_typesHasBeenSet(false),
+    m_zoneNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome AvailableZone::Deserialize(const Value &value)
         m_typesHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
+    {
+        if (!value["ZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AvailableZone.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneName = string(value["ZoneName"].GetString());
+        m_zoneNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,14 @@ void AvailableZone::ToJsonObject(Value &value, Document::AllocatorType& allocato
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_zoneNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -195,5 +214,21 @@ void AvailableZone::SetTypes(const vector<AvailableType>& _types)
 bool AvailableZone::TypesHasBeenSet() const
 {
     return m_typesHasBeenSet;
+}
+
+string AvailableZone::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void AvailableZone::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool AvailableZone::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
 }
 

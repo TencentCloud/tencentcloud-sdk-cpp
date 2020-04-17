@@ -668,6 +668,24 @@ namespace TencentCloud
                      */
                     bool SnapshotSizeHasBeenSet() const;
 
+                    /**
+                     * 获取云盘因欠费销毁或者期销毁时， 是否使用快照备份数据的标识。True， 销毁时创建快照进行数据备份。False 表示直接销毁，不进行数据备份。
+                     * @return BackupDisk 云盘因欠费销毁或者期销毁时， 是否使用快照备份数据的标识。True， 销毁时创建快照进行数据备份。False 表示直接销毁，不进行数据备份。
+                     */
+                    bool GetBackupDisk() const;
+
+                    /**
+                     * 设置云盘因欠费销毁或者期销毁时， 是否使用快照备份数据的标识。True， 销毁时创建快照进行数据备份。False 表示直接销毁，不进行数据备份。
+                     * @param BackupDisk 云盘因欠费销毁或者期销毁时， 是否使用快照备份数据的标识。True， 销毁时创建快照进行数据备份。False 表示直接销毁，不进行数据备份。
+                     */
+                    void SetBackupDisk(const bool& _backupDisk);
+
+                    /**
+                     * 判断参数 BackupDisk 是否已赋值
+                     * @return BackupDisk 是否已赋值
+                     */
+                    bool BackupDiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -872,6 +890,12 @@ namespace TencentCloud
                      */
                     uint64_t m_snapshotSize;
                     bool m_snapshotSizeHasBeenSet;
+
+                    /**
+                     * 云盘因欠费销毁或者期销毁时， 是否使用快照备份数据的标识。True， 销毁时创建快照进行数据备份。False 表示直接销毁，不进行数据备份。
+                     */
+                    bool m_backupDisk;
+                    bool m_backupDiskHasBeenSet;
 
                 };
             }

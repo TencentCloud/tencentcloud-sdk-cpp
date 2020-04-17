@@ -228,13 +228,17 @@ namespace TencentCloud
 
                     /**
                      * 获取操作系统
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Os 操作系统
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOs() const;
 
                     /**
                      * 设置操作系统
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Os 操作系统
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOs(const std::string& _os);
 
@@ -344,6 +348,7 @@ namespace TencentCloud
 
                     /**
                      * 操作系统
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;

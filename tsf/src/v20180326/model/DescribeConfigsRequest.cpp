@@ -29,7 +29,8 @@ DescribeConfigsRequest::DescribeConfigsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_configIdListHasBeenSet(false),
-    m_configNameHasBeenSet(false)
+    m_configNameHasBeenSet(false),
+    m_configVersionHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,14 @@ string DescribeConfigsRequest::ToJsonString() const
         string key = "ConfigName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_configName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConfigVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_configVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +204,22 @@ void DescribeConfigsRequest::SetConfigName(const string& _configName)
 bool DescribeConfigsRequest::ConfigNameHasBeenSet() const
 {
     return m_configNameHasBeenSet;
+}
+
+string DescribeConfigsRequest::GetConfigVersion() const
+{
+    return m_configVersion;
+}
+
+void DescribeConfigsRequest::SetConfigVersion(const string& _configVersion)
+{
+    m_configVersion = _configVersion;
+    m_configVersionHasBeenSet = true;
+}
+
+bool DescribeConfigsRequest::ConfigVersionHasBeenSet() const
+{
+    return m_configVersionHasBeenSet;
 }
 
 

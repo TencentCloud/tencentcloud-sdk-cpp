@@ -34,7 +34,8 @@ DescribeComputeEnvResponse::DescribeComputeEnvResponse() :
     m_desiredComputeNodeCountHasBeenSet(false),
     m_envTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_nextActionHasBeenSet(false)
+    m_nextActionHasBeenSet(false),
+    m_attachedComputeNodeCountHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,16 @@ CoreInternalOutcome DescribeComputeEnvResponse::Deserialize(const string &payloa
         m_nextActionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AttachedComputeNodeCount") && !rsp["AttachedComputeNodeCount"].IsNull())
+    {
+        if (!rsp["AttachedComputeNodeCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AttachedComputeNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachedComputeNodeCount = rsp["AttachedComputeNodeCount"].GetUint64();
+        m_attachedComputeNodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -299,6 +310,16 @@ string DescribeComputeEnvResponse::GetNextAction() const
 bool DescribeComputeEnvResponse::NextActionHasBeenSet() const
 {
     return m_nextActionHasBeenSet;
+}
+
+uint64_t DescribeComputeEnvResponse::GetAttachedComputeNodeCount() const
+{
+    return m_attachedComputeNodeCount;
+}
+
+bool DescribeComputeEnvResponse::AttachedComputeNodeCountHasBeenSet() const
+{
+    return m_attachedComputeNodeCountHasBeenSet;
 }
 
 

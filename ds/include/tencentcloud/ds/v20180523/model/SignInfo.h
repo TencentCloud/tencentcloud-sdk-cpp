@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AccountResIdHasBeenSet() const;
 
                     /**
-                     * 获取授权时间，格式为年月日时分秒，例20160801095509
-                     * @return AuthorizationTime 授权时间，格式为年月日时分秒，例20160801095509
+                     * 获取授权时间（上传合同可不传该参数）
+                     * @return AuthorizationTime 授权时间（上传合同可不传该参数）
                      */
                     std::string GetAuthorizationTime() const;
 
                     /**
-                     * 设置授权时间，格式为年月日时分秒，例20160801095509
-                     * @param AuthorizationTime 授权时间，格式为年月日时分秒，例20160801095509
+                     * 设置授权时间（上传合同可不传该参数）
+                     * @param AuthorizationTime 授权时间（上传合同可不传该参数）
                      */
                     void SetAuthorizationTime(const std::string& _authorizationTime);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AuthorizationTimeHasBeenSet() const;
 
                     /**
-                     * 获取授权IP地址
-                     * @return Location 授权IP地址
+                     * 获取授权IP地址（上传合同可不传该参数）
+                     * @return Location 授权IP地址（上传合同可不传该参数）
                      */
                     std::string GetLocation() const;
 
                     /**
-                     * 设置授权IP地址
-                     * @param Location 授权IP地址
+                     * 设置授权IP地址（上传合同可不传该参数）
+                     * @param Location 授权IP地址（上传合同可不传该参数）
                      */
                     void SetLocation(const std::string& _location);
 
@@ -181,13 +181,13 @@ namespace TencentCloud
                     bool m_accountResIdHasBeenSet;
 
                     /**
-                     * 授权时间，格式为年月日时分秒，例20160801095509
+                     * 授权时间（上传合同可不传该参数）
                      */
                     std::string m_authorizationTime;
                     bool m_authorizationTimeHasBeenSet;
 
                     /**
-                     * 授权IP地址
+                     * 授权IP地址（上传合同可不传该参数）
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;

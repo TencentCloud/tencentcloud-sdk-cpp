@@ -174,13 +174,17 @@ namespace TencentCloud
 
                     /**
                      * 获取比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等，7表示日同比上涨，8表示日同比下降，9表示周同比上涨，10表示周同比下降，11表示周期环比上涨，12表示周期环比下降
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalcType 比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等，7表示日同比上涨，8表示日同比下降，9表示周同比上涨，10表示周同比下降，11表示周期环比上涨，12表示周期环比下降
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCalcType() const;
 
                     /**
                      * 设置比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等，7表示日同比上涨，8表示日同比下降，9表示周同比上涨，10表示周同比下降，11表示周期环比上涨，12表示周期环比下降
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param CalcType 比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等，7表示日同比上涨，8表示日同比下降，9表示周同比上涨，10表示周同比下降，11表示周期环比上涨，12表示周期环比下降
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCalcType(const int64_t& _calcType);
 
@@ -192,13 +196,17 @@ namespace TencentCloud
 
                     /**
                      * 获取检测阈值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalcValue 检测阈值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCalcValue() const;
 
                     /**
                      * 设置检测阈值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param CalcValue 检测阈值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCalcValue(const std::string& _calcValue);
 
@@ -210,13 +218,17 @@ namespace TencentCloud
 
                     /**
                      * 获取持续多长时间触发规则会告警(单位秒)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinueTime 持续多长时间触发规则会告警(单位秒)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetContinueTime() const;
 
                     /**
                      * 设置持续多长时间触发规则会告警(单位秒)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ContinueTime 持续多长时间触发规则会告警(单位秒)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContinueTime(const int64_t& _continueTime);
 
@@ -272,18 +284,21 @@ namespace TencentCloud
 
                     /**
                      * 比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等，7表示日同比上涨，8表示日同比下降，9表示周同比上涨，10表示周同比下降，11表示周期环比上涨，12表示周期环比下降
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_calcType;
                     bool m_calcTypeHasBeenSet;
 
                     /**
                      * 检测阈值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calcValue;
                     bool m_calcValueHasBeenSet;
 
                     /**
                      * 持续多长时间触发规则会告警(单位秒)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_continueTime;
                     bool m_continueTimeHasBeenSet;

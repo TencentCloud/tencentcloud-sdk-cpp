@@ -228,6 +228,24 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     bool RouteTypeHasBeenSet() const;
 
+                    /**
+                     * 获取路由表实例ID，例如：rtb-azd4dt1c。
+                     * @return RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     */
+                    std::string GetRouteTableId() const;
+
+                    /**
+                     * 设置路由表实例ID，例如：rtb-azd4dt1c。
+                     * @param RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
+                     */
+                    void SetRouteTableId(const std::string& _routeTableId);
+
+                    /**
+                     * 判断参数 RouteTableId 是否已赋值
+                     * @return RouteTableId 是否已赋值
+                     */
+                    bool RouteTableIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +303,12 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     std::string m_routeType;
                     bool m_routeTypeHasBeenSet;
+
+                    /**
+                     * 路由表实例ID，例如：rtb-azd4dt1c。
+                     */
+                    std::string m_routeTableId;
+                    bool m_routeTableIdHasBeenSet;
 
                 };
             }

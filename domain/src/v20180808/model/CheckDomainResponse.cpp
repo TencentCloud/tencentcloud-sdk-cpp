@@ -30,7 +30,13 @@ CheckDomainResponse::CheckDomainResponse() :
     m_reasonHasBeenSet(false),
     m_premiumHasBeenSet(false),
     m_priceHasBeenSet(false),
-    m_blackWordHasBeenSet(false)
+    m_blackWordHasBeenSet(false),
+    m_describeHasBeenSet(false),
+    m_feeRenewHasBeenSet(false),
+    m_realPriceHasBeenSet(false),
+    m_feeTransferHasBeenSet(false),
+    m_feeRestoreHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -128,6 +134,66 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
         m_blackWordHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Describe") && !rsp["Describe"].IsNull())
+    {
+        if (!rsp["Describe"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Describe` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_describe = string(rsp["Describe"].GetString());
+        m_describeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FeeRenew") && !rsp["FeeRenew"].IsNull())
+    {
+        if (!rsp["FeeRenew"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FeeRenew` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_feeRenew = rsp["FeeRenew"].GetUint64();
+        m_feeRenewHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RealPrice") && !rsp["RealPrice"].IsNull())
+    {
+        if (!rsp["RealPrice"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RealPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_realPrice = rsp["RealPrice"].GetUint64();
+        m_realPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FeeTransfer") && !rsp["FeeTransfer"].IsNull())
+    {
+        if (!rsp["FeeTransfer"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FeeTransfer` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_feeTransfer = rsp["FeeTransfer"].GetUint64();
+        m_feeTransferHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FeeRestore") && !rsp["FeeRestore"].IsNull())
+    {
+        if (!rsp["FeeRestore"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FeeRestore` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_feeRestore = rsp["FeeRestore"].GetUint64();
+        m_feeRestoreHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Period") && !rsp["Period"].IsNull())
+    {
+        if (!rsp["Period"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Period` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_period = rsp["Period"].GetUint64();
+        m_periodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -191,6 +257,66 @@ bool CheckDomainResponse::GetBlackWord() const
 bool CheckDomainResponse::BlackWordHasBeenSet() const
 {
     return m_blackWordHasBeenSet;
+}
+
+string CheckDomainResponse::GetDescribe() const
+{
+    return m_describe;
+}
+
+bool CheckDomainResponse::DescribeHasBeenSet() const
+{
+    return m_describeHasBeenSet;
+}
+
+uint64_t CheckDomainResponse::GetFeeRenew() const
+{
+    return m_feeRenew;
+}
+
+bool CheckDomainResponse::FeeRenewHasBeenSet() const
+{
+    return m_feeRenewHasBeenSet;
+}
+
+uint64_t CheckDomainResponse::GetRealPrice() const
+{
+    return m_realPrice;
+}
+
+bool CheckDomainResponse::RealPriceHasBeenSet() const
+{
+    return m_realPriceHasBeenSet;
+}
+
+uint64_t CheckDomainResponse::GetFeeTransfer() const
+{
+    return m_feeTransfer;
+}
+
+bool CheckDomainResponse::FeeTransferHasBeenSet() const
+{
+    return m_feeTransferHasBeenSet;
+}
+
+uint64_t CheckDomainResponse::GetFeeRestore() const
+{
+    return m_feeRestore;
+}
+
+bool CheckDomainResponse::FeeRestoreHasBeenSet() const
+{
+    return m_feeRestoreHasBeenSet;
+}
+
+uint64_t CheckDomainResponse::GetPeriod() const
+{
+    return m_period;
+}
+
+bool CheckDomainResponse::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

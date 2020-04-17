@@ -30,7 +30,11 @@ PriceResource::PriceResource() :
     m_cpuHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_multiDisksHasBeenSet(false),
-    m_diskCntHasBeenSet(false)
+    m_diskCntHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_diskNumHasBeenSet(false),
+    m_localDiskNumHasBeenSet(false)
 {
 }
 
@@ -139,6 +143,56 @@ CoreInternalOutcome PriceResource::Deserialize(const Value &value)
         m_diskCntHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PriceResource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `PriceResource.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskNum") && !value["DiskNum"].IsNull())
+    {
+        if (!value["DiskNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PriceResource.DiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskNum = value["DiskNum"].GetInt64();
+        m_diskNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("LocalDiskNum") && !value["LocalDiskNum"].IsNull())
+    {
+        if (!value["LocalDiskNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PriceResource.LocalDiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_localDiskNum = value["LocalDiskNum"].GetInt64();
+        m_localDiskNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +277,45 @@ void PriceResource::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "DiskCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskCnt, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_diskNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskNum, allocator);
+    }
+
+    if (m_localDiskNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalDiskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_localDiskNum, allocator);
     }
 
 }
@@ -370,5 +463,69 @@ void PriceResource::SetDiskCnt(const int64_t& _diskCnt)
 bool PriceResource::DiskCntHasBeenSet() const
 {
     return m_diskCntHasBeenSet;
+}
+
+string PriceResource::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void PriceResource::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool PriceResource::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+vector<Tag> PriceResource::GetTags() const
+{
+    return m_tags;
+}
+
+void PriceResource::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool PriceResource::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t PriceResource::GetDiskNum() const
+{
+    return m_diskNum;
+}
+
+void PriceResource::SetDiskNum(const int64_t& _diskNum)
+{
+    m_diskNum = _diskNum;
+    m_diskNumHasBeenSet = true;
+}
+
+bool PriceResource::DiskNumHasBeenSet() const
+{
+    return m_diskNumHasBeenSet;
+}
+
+int64_t PriceResource::GetLocalDiskNum() const
+{
+    return m_localDiskNum;
+}
+
+void PriceResource::SetLocalDiskNum(const int64_t& _localDiskNum)
+{
+    m_localDiskNum = _localDiskNum;
+    m_localDiskNumHasBeenSet = true;
+}
+
+bool PriceResource::LocalDiskNumHasBeenSet() const
+{
+    return m_localDiskNumHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ using namespace std;
 DescribeTagKeysRequest::DescribeTagKeysRequest() :
     m_createUinHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_showProjectHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeTagKeysRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_showProjectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ShowProject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showProject, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeTagKeysRequest::SetLimit(const uint64_t& _limit)
 bool DescribeTagKeysRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+uint64_t DescribeTagKeysRequest::GetShowProject() const
+{
+    return m_showProject;
+}
+
+void DescribeTagKeysRequest::SetShowProject(const uint64_t& _showProject)
+{
+    m_showProject = _showProject;
+    m_showProjectHasBeenSet = true;
+}
+
+bool DescribeTagKeysRequest::ShowProjectHasBeenSet() const
+{
+    return m_showProjectHasBeenSet;
 }
 
 

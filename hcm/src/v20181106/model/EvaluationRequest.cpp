@@ -29,7 +29,8 @@ EvaluationRequest::EvaluationRequest() :
     m_hcmAppidHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_supportHorizontalImageHasBeenSet(false),
-    m_rejectNonArithmeticImageHasBeenSet(false)
+    m_rejectNonArithmeticImageHasBeenSet(false),
+    m_isAsyncHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string EvaluationRequest::ToJsonString() const
         string key = "RejectNonArithmeticImage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rejectNonArithmeticImage, allocator);
+    }
+
+    if (m_isAsyncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsAsync";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAsync, allocator);
     }
 
 
@@ -190,6 +199,22 @@ void EvaluationRequest::SetRejectNonArithmeticImage(const bool& _rejectNonArithm
 bool EvaluationRequest::RejectNonArithmeticImageHasBeenSet() const
 {
     return m_rejectNonArithmeticImageHasBeenSet;
+}
+
+int64_t EvaluationRequest::GetIsAsync() const
+{
+    return m_isAsync;
+}
+
+void EvaluationRequest::SetIsAsync(const int64_t& _isAsync)
+{
+    m_isAsync = _isAsync;
+    m_isAsyncHasBeenSet = true;
+}
+
+bool EvaluationRequest::IsAsyncHasBeenSet() const
+{
+    return m_isAsyncHasBeenSet;
 }
 
 

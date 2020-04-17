@@ -28,13 +28,13 @@ RefundRequest::RefundRequest() :
     m_refundIdHasBeenSet(false),
     m_midasAppIdHasBeenSet(false),
     m_totalRefundAmtHasBeenSet(false),
-    m_subOrderRefundListHasBeenSet(false),
     m_midasSecretIdHasBeenSet(false),
     m_midasSignatureHasBeenSet(false),
     m_outTradeNoHasBeenSet(false),
     m_mchRefundAmtHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
-    m_platformRefundAmtHasBeenSet(false)
+    m_platformRefundAmtHasBeenSet(false),
+    m_subOrderRefundListHasBeenSet(false)
 {
 }
 
@@ -75,21 +75,6 @@ string RefundRequest::ToJsonString() const
         string key = "TotalRefundAmt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_totalRefundAmt, allocator);
-    }
-
-    if (m_subOrderRefundListHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SubOrderRefundList";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_subOrderRefundList.begin(); itr != m_subOrderRefundList.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_midasSecretIdHasBeenSet)
@@ -138,6 +123,21 @@ string RefundRequest::ToJsonString() const
         string key = "PlatformRefundAmt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_platformRefundAmt, allocator);
+    }
+
+    if (m_subOrderRefundListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubOrderRefundList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subOrderRefundList.begin(); itr != m_subOrderRefundList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -210,22 +210,6 @@ void RefundRequest::SetTotalRefundAmt(const int64_t& _totalRefundAmt)
 bool RefundRequest::TotalRefundAmtHasBeenSet() const
 {
     return m_totalRefundAmtHasBeenSet;
-}
-
-vector<RefundOutSubOrderRefundList> RefundRequest::GetSubOrderRefundList() const
-{
-    return m_subOrderRefundList;
-}
-
-void RefundRequest::SetSubOrderRefundList(const vector<RefundOutSubOrderRefundList>& _subOrderRefundList)
-{
-    m_subOrderRefundList = _subOrderRefundList;
-    m_subOrderRefundListHasBeenSet = true;
-}
-
-bool RefundRequest::SubOrderRefundListHasBeenSet() const
-{
-    return m_subOrderRefundListHasBeenSet;
 }
 
 string RefundRequest::GetMidasSecretId() const
@@ -322,6 +306,22 @@ void RefundRequest::SetPlatformRefundAmt(const int64_t& _platformRefundAmt)
 bool RefundRequest::PlatformRefundAmtHasBeenSet() const
 {
     return m_platformRefundAmtHasBeenSet;
+}
+
+vector<RefundOutSubOrderRefundList> RefundRequest::GetSubOrderRefundList() const
+{
+    return m_subOrderRefundList;
+}
+
+void RefundRequest::SetSubOrderRefundList(const vector<RefundOutSubOrderRefundList>& _subOrderRefundList)
+{
+    m_subOrderRefundList = _subOrderRefundList;
+    m_subOrderRefundListHasBeenSet = true;
+}
+
+bool RefundRequest::SubOrderRefundListHasBeenSet() const
+{
+    return m_subOrderRefundListHasBeenSet;
 }
 
 

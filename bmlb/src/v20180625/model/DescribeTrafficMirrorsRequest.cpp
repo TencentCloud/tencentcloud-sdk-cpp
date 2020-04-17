@@ -28,7 +28,10 @@ DescribeTrafficMirrorsRequest::DescribeTrafficMirrorsRequest() :
     m_aliasesHasBeenSet(false),
     m_vpcIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_searchKeyHasBeenSet(false)
 {
 }
 
@@ -92,6 +95,30 @@ string DescribeTrafficMirrorsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_order, allocator);
+    }
+
+    if (m_searchKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SearchKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_searchKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -180,6 +207,54 @@ void DescribeTrafficMirrorsRequest::SetLimit(const int64_t& _limit)
 bool DescribeTrafficMirrorsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeTrafficMirrorsRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeTrafficMirrorsRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeTrafficMirrorsRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+int64_t DescribeTrafficMirrorsRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeTrafficMirrorsRequest::SetOrder(const int64_t& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeTrafficMirrorsRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeTrafficMirrorsRequest::GetSearchKey() const
+{
+    return m_searchKey;
+}
+
+void DescribeTrafficMirrorsRequest::SetSearchKey(const string& _searchKey)
+{
+    m_searchKey = _searchKey;
+    m_searchKeyHasBeenSet = true;
+}
+
+bool DescribeTrafficMirrorsRequest::SearchKeyHasBeenSet() const
+{
+    return m_searchKeyHasBeenSet;
 }
 
 

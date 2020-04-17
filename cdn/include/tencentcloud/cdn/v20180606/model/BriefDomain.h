@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CDN域名简要信息。
+                * 域名基础配置信息，含 CNAME、状态、业务类型、加速区域、创建时间、更新时间、源站配置等。
                 */
                 class BriefDomain : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名ID。
-                     * @return ResourceId 域名ID。
+                     * 获取域名 ID
+                     * @return ResourceId 域名 ID
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置域名ID。
-                     * @param ResourceId 域名ID。
+                     * 设置域名 ID
+                     * @param ResourceId 域名 ID
                      */
                     void SetResourceId(const std::string& _resourceId);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云账号ID。
-                     * @return AppId 腾讯云账号ID。
+                     * 获取腾讯云账号 ID
+                     * @return AppId 腾讯云账号 ID
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置腾讯云账号ID。
-                     * @param AppId 腾讯云账号ID。
+                     * 设置腾讯云账号 ID
+                     * @param AppId 腾讯云账号 ID
                      */
                     void SetAppId(const int64_t& _appId);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取CDN加速域名。
-                     * @return Domain CDN加速域名。
+                     * 获取加速域名
+                     * @return Domain 加速域名
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置CDN加速域名。
-                     * @param Domain CDN加速域名。
+                     * 设置加速域名
+                     * @param Domain 加速域名
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名CName。
-                     * @return Cname 域名CName。
+                     * 获取域名对应的 CNAME 地址
+                     * @return Cname 域名对应的 CNAME 地址
                      */
                     std::string GetCname() const;
 
                     /**
-                     * 设置域名CName。
-                     * @param Cname 域名CName。
+                     * 设置域名对应的 CNAME 地址
+                     * @param Cname 域名对应的 CNAME 地址
                      */
                     void SetCname(const std::string& _cname);
 
@@ -120,14 +120,30 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
-                     * @return Status 域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
+                     * 获取加速服务状态
+rejected：域名审核未通过，域名备案过期/被注销导致
+processing：部署中
+online：已启动
+offline：已关闭
+                     * @return Status 加速服务状态
+rejected：域名审核未通过，域名备案过期/被注销导致
+processing：部署中
+online：已启动
+offline：已关闭
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
-                     * @param Status 域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
+                     * 设置加速服务状态
+rejected：域名审核未通过，域名备案过期/被注销导致
+processing：部署中
+online：已启动
+offline：已关闭
+                     * @param Status 加速服务状态
+rejected：域名审核未通过，域名备案过期/被注销导致
+processing：部署中
+online：已启动
+offline：已关闭
                      */
                     void SetStatus(const std::string& _status);
 
@@ -138,14 +154,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
+                     * 获取项目 ID，可前往腾讯云项目管理页面查看
+                     * @return ProjectId 项目 ID，可前往腾讯云项目管理页面查看
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。
-                     * @param ProjectId 项目ID。
+                     * 设置项目 ID，可前往腾讯云项目管理页面查看
+                     * @param ProjectId 项目 ID，可前往腾讯云项目管理页面查看
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -156,14 +172,26 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。
-                     * @return ServiceType 域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。
+                     * 获取域名业务类型
+web：静态加速
+download：下载加速
+media：流媒体点播加速
+                     * @return ServiceType 域名业务类型
+web：静态加速
+download：下载加速
+media：流媒体点播加速
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。
-                     * @param ServiceType 域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。
+                     * 设置域名业务类型
+web：静态加速
+download：下载加速
+media：流媒体点播加速
+                     * @param ServiceType 域名业务类型
+web：静态加速
+download：下载加速
+media：流媒体点播加速
                      */
                     void SetServiceType(const std::string& _serviceType);
 
@@ -174,14 +202,14 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取域名创建时间。
-                     * @return CreateTime 域名创建时间。
+                     * 获取域名创建时间
+                     * @return CreateTime 域名创建时间
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置域名创建时间。
-                     * @param CreateTime 域名创建时间。
+                     * 设置域名创建时间
+                     * @param CreateTime 域名创建时间
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -192,14 +220,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取域名更新时间。
-                     * @return UpdateTime 域名更新时间。
+                     * 获取域名更新时间
+                     * @return UpdateTime 域名更新时间
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置域名更新时间。
-                     * @param UpdateTime 域名更新时间。
+                     * 设置域名更新时间
+                     * @param UpdateTime 域名更新时间
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -210,14 +238,14 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取源站配置详情。
-                     * @return Origin 源站配置详情。
+                     * 获取源站配置详情
+                     * @return Origin 源站配置详情
                      */
                     Origin GetOrigin() const;
 
                     /**
-                     * 设置源站配置详情。
-                     * @param Origin 源站配置详情。
+                     * 设置源站配置详情
+                     * @param Origin 源站配置详情
                      */
                     void SetOrigin(const Origin& _origin);
 
@@ -228,14 +256,46 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示。
-                     * @return Disable 域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示。
+                     * 获取域名封禁状态
+normal：正常状态
+overdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务
+malicious：域名出现恶意行为，强制关闭加速服务
+ddos：域名被大规模 DDoS 攻击，关闭加速服务
+idle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务
+unlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务
+capping：触发配置的带宽阈值上限
+readonly：域名存在特殊配置，被锁定
+                     * @return Disable 域名封禁状态
+normal：正常状态
+overdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务
+malicious：域名出现恶意行为，强制关闭加速服务
+ddos：域名被大规模 DDoS 攻击，关闭加速服务
+idle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务
+unlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务
+capping：触发配置的带宽阈值上限
+readonly：域名存在特殊配置，被锁定
                      */
                     std::string GetDisable() const;
 
                     /**
-                     * 设置域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示。
-                     * @param Disable 域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示。
+                     * 设置域名封禁状态
+normal：正常状态
+overdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务
+malicious：域名出现恶意行为，强制关闭加速服务
+ddos：域名被大规模 DDoS 攻击，关闭加速服务
+idle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务
+unlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务
+capping：触发配置的带宽阈值上限
+readonly：域名存在特殊配置，被锁定
+                     * @param Disable 域名封禁状态
+normal：正常状态
+overdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务
+malicious：域名出现恶意行为，强制关闭加速服务
+ddos：域名被大规模 DDoS 攻击，关闭加速服务
+idle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务
+unlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务
+capping：触发配置的带宽阈值上限
+readonly：域名存在特殊配置，被锁定
                      */
                     void SetDisable(const std::string& _disable);
 
@@ -246,14 +306,26 @@ namespace TencentCloud
                     bool DisableHasBeenSet() const;
 
                     /**
-                     * 获取加速区域，mainland，oversea或global。
-                     * @return Area 加速区域，mainland，oversea或global。
+                     * 获取加速区域
+mainland：中国境内加速
+overseas：中国境外加速
+global：全球加速
+                     * @return Area 加速区域
+mainland：中国境内加速
+overseas：中国境外加速
+global：全球加速
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置加速区域，mainland，oversea或global。
-                     * @param Area 加速区域，mainland，oversea或global。
+                     * 设置加速区域
+mainland：中国境内加速
+overseas：中国境外加速
+global：全球加速
+                     * @param Area 加速区域
+mainland：中国境内加速
+overseas：中国境外加速
+global：全球加速
                      */
                     void SetArea(const std::string& _area);
 
@@ -264,14 +336,30 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取域名锁定状态，normal，mainland，overseas或global，分别表示未被锁定，国内锁定，海外锁定或全球锁定。
-                     * @return Readonly 域名锁定状态，normal，mainland，overseas或global，分别表示未被锁定，国内锁定，海外锁定或全球锁定。
+                     * 获取域名锁定状态
+normal：未锁定
+mainland：中国境内锁定
+overseas：中国境外锁定
+global：全球锁定
+                     * @return Readonly 域名锁定状态
+normal：未锁定
+mainland：中国境内锁定
+overseas：中国境外锁定
+global：全球锁定
                      */
                     std::string GetReadonly() const;
 
                     /**
-                     * 设置域名锁定状态，normal，mainland，overseas或global，分别表示未被锁定，国内锁定，海外锁定或全球锁定。
-                     * @param Readonly 域名锁定状态，normal，mainland，overseas或global，分别表示未被锁定，国内锁定，海外锁定或全球锁定。
+                     * 设置域名锁定状态
+normal：未锁定
+mainland：中国境内锁定
+overseas：中国境外锁定
+global：全球锁定
+                     * @param Readonly 域名锁定状态
+normal：未锁定
+mainland：中国境内锁定
+overseas：中国境外锁定
+global：全球锁定
                      */
                     void SetReadonly(const std::string& _readonly);
 
@@ -284,79 +372,101 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名ID。
+                     * 域名 ID
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 腾讯云账号ID。
+                     * 腾讯云账号 ID
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * CDN加速域名。
+                     * 加速域名
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名CName。
+                     * 域名对应的 CNAME 地址
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * 域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。
+                     * 加速服务状态
+rejected：域名审核未通过，域名备案过期/被注销导致
+processing：部署中
+online：已启动
+offline：已关闭
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 项目ID。
+                     * 项目 ID，可前往腾讯云项目管理页面查看
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。
+                     * 域名业务类型
+web：静态加速
+download：下载加速
+media：流媒体点播加速
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 域名创建时间。
+                     * 域名创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 域名更新时间。
+                     * 域名更新时间
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 源站配置详情。
+                     * 源站配置详情
                      */
                     Origin m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * 域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示。
+                     * 域名封禁状态
+normal：正常状态
+overdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务
+malicious：域名出现恶意行为，强制关闭加速服务
+ddos：域名被大规模 DDoS 攻击，关闭加速服务
+idle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务
+unlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务
+capping：触发配置的带宽阈值上限
+readonly：域名存在特殊配置，被锁定
                      */
                     std::string m_disable;
                     bool m_disableHasBeenSet;
 
                     /**
-                     * 加速区域，mainland，oversea或global。
+                     * 加速区域
+mainland：中国境内加速
+overseas：中国境外加速
+global：全球加速
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 域名锁定状态，normal，mainland，overseas或global，分别表示未被锁定，国内锁定，海外锁定或全球锁定。
+                     * 域名锁定状态
+normal：未锁定
+mainland：中国境内锁定
+overseas：中国境外锁定
+global：全球锁定
                      */
                     std::string m_readonly;
                     bool m_readonlyHasBeenSet;

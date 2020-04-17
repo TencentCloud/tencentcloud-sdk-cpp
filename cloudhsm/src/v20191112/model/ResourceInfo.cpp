@@ -1,0 +1,689 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cloudhsm/v20191112/model/ResourceInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cloudhsm::V20191112::Model;
+using namespace rapidjson;
+using namespace std;
+
+ResourceInfo::ResourceInfo() :
+    m_resourceIdHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_vipHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_vsmTypeHasBeenSet(false),
+    m_regionIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_regionNameHasBeenSet(false),
+    m_zoneNameHasBeenSet(false),
+    m_sgListHasBeenSet(false),
+    m_subnetNameHasBeenSet(false),
+    m_expiredHasBeenSet(false),
+    m_remainSecondsHasBeenSet(false),
+    m_vpcNameHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome ResourceInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceName") && !value["ResourceName"].IsNull())
+    {
+        if (!value["ResourceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.ResourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceName = string(value["ResourceName"].GetString());
+        m_resourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vip") && !value["Vip"].IsNull())
+    {
+        if (!value["Vip"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.Vip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vip = string(value["Vip"].GetString());
+        m_vipHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Model") && !value["Model"].IsNull())
+    {
+        if (!value["Model"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.Model` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_model = string(value["Model"].GetString());
+        m_modelHasBeenSet = true;
+    }
+
+    if (value.HasMember("VsmType") && !value["VsmType"].IsNull())
+    {
+        if (!value["VsmType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.VsmType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vsmType = value["VsmType"].GetInt64();
+        m_vsmTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = value["RegionId"].GetInt64();
+        m_regionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = value["ExpireTime"].GetInt64();
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionName") && !value["RegionName"].IsNull())
+    {
+        if (!value["RegionName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.RegionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionName = string(value["RegionName"].GetString());
+        m_regionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
+    {
+        if (!value["ZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneName = string(value["ZoneName"].GetString());
+        m_zoneNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SgList") && !value["SgList"].IsNull())
+    {
+        if (!value["SgList"].IsArray())
+            return CoreInternalOutcome(Error("response `ResourceInfo.SgList` is not array type"));
+
+        const Value &tmpValue = value["SgList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SgUnit item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sgList.push_back(item);
+        }
+        m_sgListHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetName") && !value["SubnetName"].IsNull())
+    {
+        if (!value["SubnetName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetName = string(value["SubnetName"].GetString());
+        m_subnetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Expired") && !value["Expired"].IsNull())
+    {
+        if (!value["Expired"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.Expired` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_expired = value["Expired"].GetBool();
+        m_expiredHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemainSeconds") && !value["RemainSeconds"].IsNull())
+    {
+        if (!value["RemainSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.RemainSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remainSeconds = value["RemainSeconds"].GetInt64();
+        m_remainSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcName") && !value["VpcName"].IsNull())
+    {
+        if (!value["VpcName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcName = string(value["VpcName"].GetString());
+        m_vpcNameHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_resourceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vsmTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VsmType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vsmType, allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionId, allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sgListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SgList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sgList.begin(); itr != m_sgList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_subnetNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subnetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Expired";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expired, allocator);
+    }
+
+    if (m_remainSecondsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RemainSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainSeconds, allocator);
+    }
+
+    if (m_vpcNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string ResourceInfo::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void ResourceInfo::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool ResourceInfo::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
+}
+
+string ResourceInfo::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void ResourceInfo::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool ResourceInfo::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
+}
+
+int64_t ResourceInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void ResourceInfo::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ResourceInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string ResourceInfo::GetVip() const
+{
+    return m_vip;
+}
+
+void ResourceInfo::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool ResourceInfo::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
+}
+
+string ResourceInfo::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void ResourceInfo::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool ResourceInfo::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string ResourceInfo::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void ResourceInfo::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool ResourceInfo::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+string ResourceInfo::GetModel() const
+{
+    return m_model;
+}
+
+void ResourceInfo::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool ResourceInfo::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
+}
+
+int64_t ResourceInfo::GetVsmType() const
+{
+    return m_vsmType;
+}
+
+void ResourceInfo::SetVsmType(const int64_t& _vsmType)
+{
+    m_vsmType = _vsmType;
+    m_vsmTypeHasBeenSet = true;
+}
+
+bool ResourceInfo::VsmTypeHasBeenSet() const
+{
+    return m_vsmTypeHasBeenSet;
+}
+
+int64_t ResourceInfo::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void ResourceInfo::SetRegionId(const int64_t& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool ResourceInfo::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
+}
+
+int64_t ResourceInfo::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void ResourceInfo::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool ResourceInfo::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+int64_t ResourceInfo::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void ResourceInfo::SetExpireTime(const int64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool ResourceInfo::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string ResourceInfo::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void ResourceInfo::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool ResourceInfo::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
+}
+
+string ResourceInfo::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void ResourceInfo::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool ResourceInfo::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
+}
+
+vector<SgUnit> ResourceInfo::GetSgList() const
+{
+    return m_sgList;
+}
+
+void ResourceInfo::SetSgList(const vector<SgUnit>& _sgList)
+{
+    m_sgList = _sgList;
+    m_sgListHasBeenSet = true;
+}
+
+bool ResourceInfo::SgListHasBeenSet() const
+{
+    return m_sgListHasBeenSet;
+}
+
+string ResourceInfo::GetSubnetName() const
+{
+    return m_subnetName;
+}
+
+void ResourceInfo::SetSubnetName(const string& _subnetName)
+{
+    m_subnetName = _subnetName;
+    m_subnetNameHasBeenSet = true;
+}
+
+bool ResourceInfo::SubnetNameHasBeenSet() const
+{
+    return m_subnetNameHasBeenSet;
+}
+
+bool ResourceInfo::GetExpired() const
+{
+    return m_expired;
+}
+
+void ResourceInfo::SetExpired(const bool& _expired)
+{
+    m_expired = _expired;
+    m_expiredHasBeenSet = true;
+}
+
+bool ResourceInfo::ExpiredHasBeenSet() const
+{
+    return m_expiredHasBeenSet;
+}
+
+int64_t ResourceInfo::GetRemainSeconds() const
+{
+    return m_remainSeconds;
+}
+
+void ResourceInfo::SetRemainSeconds(const int64_t& _remainSeconds)
+{
+    m_remainSeconds = _remainSeconds;
+    m_remainSecondsHasBeenSet = true;
+}
+
+bool ResourceInfo::RemainSecondsHasBeenSet() const
+{
+    return m_remainSecondsHasBeenSet;
+}
+
+string ResourceInfo::GetVpcName() const
+{
+    return m_vpcName;
+}
+
+void ResourceInfo::SetVpcName(const string& _vpcName)
+{
+    m_vpcName = _vpcName;
+    m_vpcNameHasBeenSet = true;
+}
+
+bool ResourceInfo::VpcNameHasBeenSet() const
+{
+    return m_vpcNameHasBeenSet;
+}
+

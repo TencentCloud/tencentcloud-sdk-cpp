@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/asr/v20190614/model/SentenceDetail.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,28 @@ namespace TencentCloud
                      */
                     bool ErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取识别结果详情，包含每个句子中的词时间偏移，一般用于生成字幕的场景。(录音识别请求中ResTextFormat=1时该字段不为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResultDetail 识别结果详情，包含每个句子中的词时间偏移，一般用于生成字幕的场景。(录音识别请求中ResTextFormat=1时该字段不为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SentenceDetail> GetResultDetail() const;
+
+                    /**
+                     * 设置识别结果详情，包含每个句子中的词时间偏移，一般用于生成字幕的场景。(录音识别请求中ResTextFormat=1时该字段不为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResultDetail 识别结果详情，包含每个句子中的词时间偏移，一般用于生成字幕的场景。(录音识别请求中ResTextFormat=1时该字段不为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResultDetail(const std::vector<SentenceDetail>& _resultDetail);
+
+                    /**
+                     * 判断参数 ResultDetail 是否已赋值
+                     * @return ResultDetail 是否已赋值
+                     */
+                    bool ResultDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +190,13 @@ namespace TencentCloud
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
+
+                    /**
+                     * 识别结果详情，包含每个句子中的词时间偏移，一般用于生成字幕的场景。(录音识别请求中ResTextFormat=1时该字段不为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SentenceDetail> m_resultDetail;
+                    bool m_resultDetailHasBeenSet;
 
                 };
             }

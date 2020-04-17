@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否展现项目
+                     * @return ShowProject 是否展现项目
+                     */
+                    uint64_t GetShowProject() const;
+
+                    /**
+                     * 设置是否展现项目
+                     * @param ShowProject 是否展现项目
+                     */
+                    void SetShowProject(const uint64_t& _showProject);
+
+                    /**
+                     * 判断参数 ShowProject 是否已赋值
+                     * @return ShowProject 是否已赋值
+                     */
+                    bool ShowProjectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否展现项目
+                     */
+                    uint64_t m_showProject;
+                    bool m_showProjectHasBeenSet;
 
                 };
             }

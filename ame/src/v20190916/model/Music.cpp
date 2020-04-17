@@ -26,7 +26,8 @@ Music::Music() :
     m_fileSizeHasBeenSet(false),
     m_fileExtensionHasBeenSet(false),
     m_auditionBeginHasBeenSet(false),
-    m_auditionEndHasBeenSet(false)
+    m_auditionEndHasBeenSet(false),
+    m_fullUrlHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome Music::Deserialize(const Value &value)
         m_auditionEndHasBeenSet = true;
     }
 
+    if (value.HasMember("FullUrl") && !value["FullUrl"].IsNull())
+    {
+        if (!value["FullUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Music.FullUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullUrl = string(value["FullUrl"].GetString());
+        m_fullUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void Music::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "AuditionEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditionEnd, allocator);
+    }
+
+    if (m_fullUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FullUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fullUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void Music::SetAuditionEnd(const uint64_t& _auditionEnd)
 bool Music::AuditionEndHasBeenSet() const
 {
     return m_auditionEndHasBeenSet;
+}
+
+string Music::GetFullUrl() const
+{
+    return m_fullUrl;
+}
+
+void Music::SetFullUrl(const string& _fullUrl)
+{
+    m_fullUrl = _fullUrl;
+    m_fullUrlHasBeenSet = true;
+}
+
+bool Music::FullUrlHasBeenSet() const
+{
+    return m_fullUrlHasBeenSet;
 }
 

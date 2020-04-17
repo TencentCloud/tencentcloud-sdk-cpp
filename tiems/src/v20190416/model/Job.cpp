@@ -45,7 +45,8 @@ Job::Job() :
     m_configNameHasBeenSet(false),
     m_configVersionHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
-    m_quantizationInputHasBeenSet(false)
+    m_quantizationInputHasBeenSet(false),
+    m_logTopicIdHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome Job::Deserialize(const Value &value)
         m_quantizationInputHasBeenSet = true;
     }
 
+    if (value.HasMember("LogTopicId") && !value["LogTopicId"].IsNull())
+    {
+        if (!value["LogTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Job.LogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logTopicId = string(value["LogTopicId"].GetString());
+        m_logTopicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +526,14 @@ void Job::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_quantizationInput.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_logTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -902,5 +921,21 @@ void Job::SetQuantizationInput(const QuantizationInput& _quantizationInput)
 bool Job::QuantizationInputHasBeenSet() const
 {
     return m_quantizationInputHasBeenSet;
+}
+
+string Job::GetLogTopicId() const
+{
+    return m_logTopicId;
+}
+
+void Job::SetLogTopicId(const string& _logTopicId)
+{
+    m_logTopicId = _logTopicId;
+    m_logTopicIdHasBeenSet = true;
+}
+
+bool Job::LogTopicIdHasBeenSet() const
+{
+    return m_logTopicIdHasBeenSet;
 }
 

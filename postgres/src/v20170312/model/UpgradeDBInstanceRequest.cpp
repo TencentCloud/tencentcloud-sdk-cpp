@@ -28,7 +28,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_storageHasBeenSet(false),
     m_dBInstanceIdHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_activityIdHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_activityIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActivityId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_activityId, allocator);
     }
 
 
@@ -170,6 +179,22 @@ void UpgradeDBInstanceRequest::SetVoucherIds(const vector<string>& _voucherIds)
 bool UpgradeDBInstanceRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetActivityId() const
+{
+    return m_activityId;
+}
+
+void UpgradeDBInstanceRequest::SetActivityId(const int64_t& _activityId)
+{
+    m_activityId = _activityId;
+    m_activityIdHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::ActivityIdHasBeenSet() const
+{
+    return m_activityIdHasBeenSet;
 }
 
 

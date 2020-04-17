@@ -44,40 +44,40 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待加表的应用实例ID
-                     * @return ApplicationId 待加表的应用实例ID
+                     * 获取待创建表格的集群ID
+                     * @return ClusterId 待创建表格的集群ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置待加表的应用实例ID
-                     * @param ApplicationId 待加表的应用实例ID
+                     * 设置待创建表格的集群ID
+                     * @param ClusterId 待创建表格的集群ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取待加表的大区ID
-                     * @return LogicZoneId 待加表的大区ID
+                     * 获取待创建表格的表格组ID
+                     * @return TableGroupId 待创建表格的表格组ID
                      */
-                    std::string GetLogicZoneId() const;
+                    std::string GetTableGroupId() const;
 
                     /**
-                     * 设置待加表的大区ID
-                     * @param LogicZoneId 待加表的大区ID
+                     * 设置待创建表格的表格组ID
+                     * @param TableGroupId 待创建表格的表格组ID
                      */
-                    void SetLogicZoneId(const std::string& _logicZoneId);
+                    void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
-                     * 判断参数 LogicZoneId 是否已赋值
-                     * @return LogicZoneId 是否已赋值
+                     * 判断参数 TableGroupId 是否已赋值
+                     * @return TableGroupId 是否已赋值
                      */
-                    bool LogicZoneIdHasBeenSet() const;
+                    bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取曾经上传过的IDL文件信息列表，与NewIdlFiles至少有一者
@@ -118,16 +118,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待加表的应用实例ID
+                     * 待创建表格的集群ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 待加表的大区ID
+                     * 待创建表格的表格组ID
                      */
-                    std::string m_logicZoneId;
-                    bool m_logicZoneIdHasBeenSet;
+                    std::string m_tableGroupId;
+                    bool m_tableGroupIdHasBeenSet;
 
                     /**
                      * 曾经上传过的IDL文件信息列表，与NewIdlFiles至少有一者

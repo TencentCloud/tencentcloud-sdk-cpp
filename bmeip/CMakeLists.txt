@@ -40,6 +40,7 @@ set(bmeip_public_header_model
   include/tencentcloud/bmeip/v20180625/model/UnbindRsResponse.h
   include/tencentcloud/bmeip/v20180625/model/BindRsRequest.h
   include/tencentcloud/bmeip/v20180625/model/UnbindHostedRequest.h
+  include/tencentcloud/bmeip/v20180625/model/UnbindRsListResponse.h
   include/tencentcloud/bmeip/v20180625/model/BindVpcIpResponse.h
   include/tencentcloud/bmeip/v20180625/model/DescribeEipsRequest.h
   include/tencentcloud/bmeip/v20180625/model/ModifyEipNameRequest.h
@@ -54,6 +55,8 @@ set(bmeip_public_header_model
   include/tencentcloud/bmeip/v20180625/model/ModifyEipChargeRequest.h
   include/tencentcloud/bmeip/v20180625/model/DescribeEipQuotaRequest.h
   include/tencentcloud/bmeip/v20180625/model/DeleteEipRequest.h
+  include/tencentcloud/bmeip/v20180625/model/EipRsMap.h
+  include/tencentcloud/bmeip/v20180625/model/UnbindRsListRequest.h
   include/tencentcloud/bmeip/v20180625/model/DeleteEipAclResponse.h
   include/tencentcloud/bmeip/v20180625/model/DescribeEipAclsRequest.h
   include/tencentcloud/bmeip/v20180625/model/BindEipAclsRequest.h
@@ -86,6 +89,7 @@ set(bmeip_src
   src/v20180625/model/UnbindRsResponse.cpp
   src/v20180625/model/BindRsRequest.cpp
   src/v20180625/model/UnbindHostedRequest.cpp
+  src/v20180625/model/UnbindRsListResponse.cpp
   src/v20180625/model/BindVpcIpResponse.cpp
   src/v20180625/model/DescribeEipsRequest.cpp
   src/v20180625/model/ModifyEipNameRequest.cpp
@@ -100,6 +104,8 @@ set(bmeip_src
   src/v20180625/model/ModifyEipChargeRequest.cpp
   src/v20180625/model/DescribeEipQuotaRequest.cpp
   src/v20180625/model/DeleteEipRequest.cpp
+  src/v20180625/model/EipRsMap.cpp
+  src/v20180625/model/UnbindRsListRequest.cpp
   src/v20180625/model/DeleteEipAclResponse.cpp
   src/v20180625/model/DescribeEipAclsRequest.cpp
   src/v20180625/model/BindEipAclsRequest.cpp

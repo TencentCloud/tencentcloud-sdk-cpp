@@ -255,6 +255,92 @@ CamClient::AttachUserPolicyOutcomeCallable CamClient::AttachUserPolicyCallable(c
     return task->get_future();
 }
 
+CamClient::CheckOutcome CamClient::Check(const CheckRequest &request)
+{
+    auto outcome = MakeRequest(request, "Check");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckResponse rsp = CheckResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckOutcome(rsp);
+        else
+            return CheckOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CheckAsync(const CheckRequest& request, const CheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->Check(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CheckOutcomeCallable CamClient::CheckCallable(const CheckRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckOutcome()>>(
+        [this, request]()
+        {
+            return this->Check(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::CheckNewMfaCodeOutcome CamClient::CheckNewMfaCode(const CheckNewMfaCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckNewMfaCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckNewMfaCodeResponse rsp = CheckNewMfaCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckNewMfaCodeOutcome(rsp);
+        else
+            return CheckNewMfaCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckNewMfaCodeOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CheckNewMfaCodeAsync(const CheckNewMfaCodeRequest& request, const CheckNewMfaCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckNewMfaCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CheckNewMfaCodeOutcomeCallable CamClient::CheckNewMfaCodeCallable(const CheckNewMfaCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckNewMfaCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckNewMfaCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::ConsumeCustomMFATokenOutcome CamClient::ConsumeCustomMFAToken(const ConsumeCustomMFATokenRequest &request)
 {
     auto outcome = MakeRequest(request, "ConsumeCustomMFAToken");
@@ -685,6 +771,92 @@ CamClient::DeleteUserOutcomeCallable CamClient::DeleteUserCallable(const DeleteU
     return task->get_future();
 }
 
+CamClient::DescribeMFADeviceCollOutcome CamClient::DescribeMFADeviceColl(const DescribeMFADeviceCollRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMFADeviceColl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMFADeviceCollResponse rsp = DescribeMFADeviceCollResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMFADeviceCollOutcome(rsp);
+        else
+            return DescribeMFADeviceCollOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMFADeviceCollOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DescribeMFADeviceCollAsync(const DescribeMFADeviceCollRequest& request, const DescribeMFADeviceCollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMFADeviceColl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DescribeMFADeviceCollOutcomeCallable CamClient::DescribeMFADeviceCollCallable(const DescribeMFADeviceCollRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMFADeviceCollOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMFADeviceColl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DescribeMfaCodeStatusOutcome CamClient::DescribeMfaCodeStatus(const DescribeMfaCodeStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMfaCodeStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMfaCodeStatusResponse rsp = DescribeMfaCodeStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMfaCodeStatusOutcome(rsp);
+        else
+            return DescribeMfaCodeStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMfaCodeStatusOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DescribeMfaCodeStatusAsync(const DescribeMfaCodeStatusRequest& request, const DescribeMfaCodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMfaCodeStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DescribeMfaCodeStatusOutcomeCallable CamClient::DescribeMfaCodeStatusCallable(const DescribeMfaCodeStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMfaCodeStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMfaCodeStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DescribeRoleListOutcome CamClient::DescribeRoleList(const DescribeRoleListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoleList");
@@ -850,6 +1022,135 @@ CamClient::DetachUserPolicyOutcomeCallable CamClient::DetachUserPolicyCallable(c
         [this, request]()
         {
             return this->DetachUserPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DetectAuthOutcome CamClient::DetectAuth(const DetectAuthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectAuth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectAuthResponse rsp = DetectAuthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectAuthOutcome(rsp);
+        else
+            return DetectAuthOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectAuthOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DetectAuthAsync(const DetectAuthRequest& request, const DetectAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectAuth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DetectAuthOutcomeCallable CamClient::DetectAuthCallable(const DetectAuthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectAuthOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectAuth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DetectMaskAuthOutcome CamClient::DetectMaskAuth(const DetectMaskAuthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectMaskAuth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectMaskAuthResponse rsp = DetectMaskAuthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectMaskAuthOutcome(rsp);
+        else
+            return DetectMaskAuthOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectMaskAuthOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DetectMaskAuthAsync(const DetectMaskAuthRequest& request, const DetectMaskAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectMaskAuth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DetectMaskAuthOutcomeCallable CamClient::DetectMaskAuthCallable(const DetectMaskAuthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectMaskAuthOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectMaskAuth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DetectStateOutcome CamClient::DetectState(const DetectStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectStateResponse rsp = DetectStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectStateOutcome(rsp);
+        else
+            return DetectStateOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectStateOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DetectStateAsync(const DetectStateRequest& request, const DetectStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DetectStateOutcomeCallable CamClient::DetectStateCallable(const DetectStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectStateOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectState(request);
         }
     );
 
@@ -1237,6 +1538,49 @@ CamClient::ListAttachedUserPoliciesOutcomeCallable CamClient::ListAttachedUserPo
         [this, request]()
         {
             return this->ListAttachedUserPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::ListCollaboratorsOutcome CamClient::ListCollaborators(const ListCollaboratorsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListCollaborators");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListCollaboratorsResponse rsp = ListCollaboratorsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListCollaboratorsOutcome(rsp);
+        else
+            return ListCollaboratorsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListCollaboratorsOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListCollaboratorsAsync(const ListCollaboratorsRequest& request, const ListCollaboratorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListCollaborators(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListCollaboratorsOutcomeCallable CamClient::ListCollaboratorsCallable(const ListCollaboratorsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListCollaboratorsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListCollaborators(request);
         }
     );
 
@@ -1717,42 +2061,42 @@ CamClient::UpdateGroupOutcomeCallable CamClient::UpdateGroupCallable(const Updat
     return task->get_future();
 }
 
-CamClient::UpdatePolicyOutcome CamClient::UpdatePolicy(const UpdatePolicyRequest &request)
+CamClient::UpdateRoleConsoleLoginOutcome CamClient::UpdateRoleConsoleLogin(const UpdateRoleConsoleLoginRequest &request)
 {
-    auto outcome = MakeRequest(request, "UpdatePolicy");
+    auto outcome = MakeRequest(request, "UpdateRoleConsoleLogin");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        UpdatePolicyResponse rsp = UpdatePolicyResponse();
+        UpdateRoleConsoleLoginResponse rsp = UpdateRoleConsoleLoginResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return UpdatePolicyOutcome(rsp);
+            return UpdateRoleConsoleLoginOutcome(rsp);
         else
-            return UpdatePolicyOutcome(o.GetError());
+            return UpdateRoleConsoleLoginOutcome(o.GetError());
     }
     else
     {
-        return UpdatePolicyOutcome(outcome.GetError());
+        return UpdateRoleConsoleLoginOutcome(outcome.GetError());
     }
 }
 
-void CamClient::UpdatePolicyAsync(const UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CamClient::UpdateRoleConsoleLoginAsync(const UpdateRoleConsoleLoginRequest& request, const UpdateRoleConsoleLoginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->UpdatePolicy(request), context);
+        handler(this, request, this->UpdateRoleConsoleLogin(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CamClient::UpdatePolicyOutcomeCallable CamClient::UpdatePolicyCallable(const UpdatePolicyRequest &request)
+CamClient::UpdateRoleConsoleLoginOutcomeCallable CamClient::UpdateRoleConsoleLoginCallable(const UpdateRoleConsoleLoginRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<UpdatePolicyOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<UpdateRoleConsoleLoginOutcome()>>(
         [this, request]()
         {
-            return this->UpdatePolicy(request);
+            return this->UpdateRoleConsoleLogin(request);
         }
     );
 

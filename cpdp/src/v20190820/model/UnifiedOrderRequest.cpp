@@ -33,7 +33,6 @@ UnifiedOrderRequest::UnifiedOrderRequest() :
     m_totalAmtHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_realChannelHasBeenSet(false),
-    m_subOrderListHasBeenSet(false),
     m_originalAmtHasBeenSet(false),
     m_midasSecretIdHasBeenSet(false),
     m_midasSignatureHasBeenSet(false),
@@ -42,6 +41,7 @@ UnifiedOrderRequest::UnifiedOrderRequest() :
     m_metadataHasBeenSet(false),
     m_quantityHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
+    m_subOrderListHasBeenSet(false),
     m_totalMchIncomeHasBeenSet(false),
     m_totalPlatformIncomeHasBeenSet(false),
     m_wxOpenIdHasBeenSet(false),
@@ -128,21 +128,6 @@ string UnifiedOrderRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_realChannel.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subOrderListHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SubOrderList";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_subOrderList.begin(); itr != m_subOrderList.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_originalAmtHasBeenSet)
     {
         Value iKey(kStringType);
@@ -205,6 +190,21 @@ string UnifiedOrderRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subOrderListHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubOrderList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subOrderList.begin(); itr != m_subOrderList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_totalMchIncomeHasBeenSet)
@@ -391,22 +391,6 @@ bool UnifiedOrderRequest::RealChannelHasBeenSet() const
     return m_realChannelHasBeenSet;
 }
 
-vector<UnifiedOrderInSubOrderList> UnifiedOrderRequest::GetSubOrderList() const
-{
-    return m_subOrderList;
-}
-
-void UnifiedOrderRequest::SetSubOrderList(const vector<UnifiedOrderInSubOrderList>& _subOrderList)
-{
-    m_subOrderList = _subOrderList;
-    m_subOrderListHasBeenSet = true;
-}
-
-bool UnifiedOrderRequest::SubOrderListHasBeenSet() const
-{
-    return m_subOrderListHasBeenSet;
-}
-
 int64_t UnifiedOrderRequest::GetOriginalAmt() const
 {
     return m_originalAmt;
@@ -533,6 +517,22 @@ void UnifiedOrderRequest::SetSubAppId(const string& _subAppId)
 bool UnifiedOrderRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+vector<UnifiedOrderInSubOrderList> UnifiedOrderRequest::GetSubOrderList() const
+{
+    return m_subOrderList;
+}
+
+void UnifiedOrderRequest::SetSubOrderList(const vector<UnifiedOrderInSubOrderList>& _subOrderList)
+{
+    m_subOrderList = _subOrderList;
+    m_subOrderListHasBeenSet = true;
+}
+
+bool UnifiedOrderRequest::SubOrderListHasBeenSet() const
+{
+    return m_subOrderListHasBeenSet;
 }
 
 int64_t UnifiedOrderRequest::GetTotalMchIncome() const

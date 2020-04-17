@@ -29,11 +29,12 @@ DescribeDeviceInventoryRequest::DescribeDeviceInventoryRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_cpuIdHasBeenSet(false),
-    m_diskTypeHasBeenSet(false),
-    m_diskSizeHasBeenSet(false),
-    m_diskNumHasBeenSet(false),
-    m_memHasBeenSet(false),
-    m_haveRaidCardHasBeenSet(false)
+    m_memSizeHasBeenSet(false),
+    m_containRaidCardHasBeenSet(false),
+    m_systemDiskTypeIdHasBeenSet(false),
+    m_systemDiskCountHasBeenSet(false),
+    m_dataDiskTypeIdHasBeenSet(false),
+    m_dataDiskCountHasBeenSet(false)
 {
 }
 
@@ -84,44 +85,52 @@ string DescribeDeviceInventoryRequest::ToJsonString() const
         d.AddMember(iKey, m_cpuId, allocator);
     }
 
-    if (m_diskTypeHasBeenSet)
+    if (m_memSizeHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "DiskType";
+        string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_memSize, allocator);
     }
 
-    if (m_diskSizeHasBeenSet)
+    if (m_containRaidCardHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "DiskSize";
+        string key = "ContainRaidCard";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_diskSize, allocator);
+        d.AddMember(iKey, m_containRaidCard, allocator);
     }
 
-    if (m_diskNumHasBeenSet)
+    if (m_systemDiskTypeIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "DiskNum";
+        string key = "SystemDiskTypeId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_diskNum, allocator);
+        d.AddMember(iKey, m_systemDiskTypeId, allocator);
     }
 
-    if (m_memHasBeenSet)
+    if (m_systemDiskCountHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Mem";
+        string key = "SystemDiskCount";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_mem, allocator);
+        d.AddMember(iKey, m_systemDiskCount, allocator);
     }
 
-    if (m_haveRaidCardHasBeenSet)
+    if (m_dataDiskTypeIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "HaveRaidCard";
+        string key = "DataDiskTypeId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_haveRaidCard, allocator);
+        d.AddMember(iKey, m_dataDiskTypeId, allocator);
+    }
+
+    if (m_dataDiskCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataDiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataDiskCount, allocator);
     }
 
 
@@ -212,84 +221,100 @@ bool DescribeDeviceInventoryRequest::CpuIdHasBeenSet() const
     return m_cpuIdHasBeenSet;
 }
 
-string DescribeDeviceInventoryRequest::GetDiskType() const
+uint64_t DescribeDeviceInventoryRequest::GetMemSize() const
 {
-    return m_diskType;
+    return m_memSize;
 }
 
-void DescribeDeviceInventoryRequest::SetDiskType(const string& _diskType)
+void DescribeDeviceInventoryRequest::SetMemSize(const uint64_t& _memSize)
 {
-    m_diskType = _diskType;
-    m_diskTypeHasBeenSet = true;
+    m_memSize = _memSize;
+    m_memSizeHasBeenSet = true;
 }
 
-bool DescribeDeviceInventoryRequest::DiskTypeHasBeenSet() const
+bool DescribeDeviceInventoryRequest::MemSizeHasBeenSet() const
 {
-    return m_diskTypeHasBeenSet;
+    return m_memSizeHasBeenSet;
 }
 
-uint64_t DescribeDeviceInventoryRequest::GetDiskSize() const
+uint64_t DescribeDeviceInventoryRequest::GetContainRaidCard() const
 {
-    return m_diskSize;
+    return m_containRaidCard;
 }
 
-void DescribeDeviceInventoryRequest::SetDiskSize(const uint64_t& _diskSize)
+void DescribeDeviceInventoryRequest::SetContainRaidCard(const uint64_t& _containRaidCard)
 {
-    m_diskSize = _diskSize;
-    m_diskSizeHasBeenSet = true;
+    m_containRaidCard = _containRaidCard;
+    m_containRaidCardHasBeenSet = true;
 }
 
-bool DescribeDeviceInventoryRequest::DiskSizeHasBeenSet() const
+bool DescribeDeviceInventoryRequest::ContainRaidCardHasBeenSet() const
 {
-    return m_diskSizeHasBeenSet;
+    return m_containRaidCardHasBeenSet;
 }
 
-uint64_t DescribeDeviceInventoryRequest::GetDiskNum() const
+uint64_t DescribeDeviceInventoryRequest::GetSystemDiskTypeId() const
 {
-    return m_diskNum;
+    return m_systemDiskTypeId;
 }
 
-void DescribeDeviceInventoryRequest::SetDiskNum(const uint64_t& _diskNum)
+void DescribeDeviceInventoryRequest::SetSystemDiskTypeId(const uint64_t& _systemDiskTypeId)
 {
-    m_diskNum = _diskNum;
-    m_diskNumHasBeenSet = true;
+    m_systemDiskTypeId = _systemDiskTypeId;
+    m_systemDiskTypeIdHasBeenSet = true;
 }
 
-bool DescribeDeviceInventoryRequest::DiskNumHasBeenSet() const
+bool DescribeDeviceInventoryRequest::SystemDiskTypeIdHasBeenSet() const
 {
-    return m_diskNumHasBeenSet;
+    return m_systemDiskTypeIdHasBeenSet;
 }
 
-uint64_t DescribeDeviceInventoryRequest::GetMem() const
+uint64_t DescribeDeviceInventoryRequest::GetSystemDiskCount() const
 {
-    return m_mem;
+    return m_systemDiskCount;
 }
 
-void DescribeDeviceInventoryRequest::SetMem(const uint64_t& _mem)
+void DescribeDeviceInventoryRequest::SetSystemDiskCount(const uint64_t& _systemDiskCount)
 {
-    m_mem = _mem;
-    m_memHasBeenSet = true;
+    m_systemDiskCount = _systemDiskCount;
+    m_systemDiskCountHasBeenSet = true;
 }
 
-bool DescribeDeviceInventoryRequest::MemHasBeenSet() const
+bool DescribeDeviceInventoryRequest::SystemDiskCountHasBeenSet() const
 {
-    return m_memHasBeenSet;
+    return m_systemDiskCountHasBeenSet;
 }
 
-uint64_t DescribeDeviceInventoryRequest::GetHaveRaidCard() const
+uint64_t DescribeDeviceInventoryRequest::GetDataDiskTypeId() const
 {
-    return m_haveRaidCard;
+    return m_dataDiskTypeId;
 }
 
-void DescribeDeviceInventoryRequest::SetHaveRaidCard(const uint64_t& _haveRaidCard)
+void DescribeDeviceInventoryRequest::SetDataDiskTypeId(const uint64_t& _dataDiskTypeId)
 {
-    m_haveRaidCard = _haveRaidCard;
-    m_haveRaidCardHasBeenSet = true;
+    m_dataDiskTypeId = _dataDiskTypeId;
+    m_dataDiskTypeIdHasBeenSet = true;
 }
 
-bool DescribeDeviceInventoryRequest::HaveRaidCardHasBeenSet() const
+bool DescribeDeviceInventoryRequest::DataDiskTypeIdHasBeenSet() const
 {
-    return m_haveRaidCardHasBeenSet;
+    return m_dataDiskTypeIdHasBeenSet;
+}
+
+uint64_t DescribeDeviceInventoryRequest::GetDataDiskCount() const
+{
+    return m_dataDiskCount;
+}
+
+void DescribeDeviceInventoryRequest::SetDataDiskCount(const uint64_t& _dataDiskCount)
+{
+    m_dataDiskCount = _dataDiskCount;
+    m_dataDiskCountHasBeenSet = true;
+}
+
+bool DescribeDeviceInventoryRequest::DataDiskCountHasBeenSet() const
+{
+    return m_dataDiskCountHasBeenSet;
 }
 
 

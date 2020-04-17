@@ -67,9 +67,11 @@ namespace TencentCloud
                     /**
                      * 获取任务类型，包含：
 <li> WorkflowTask：工作流处理任务；</li>
+<li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
                      * @return TaskType 任务类型，包含：
 <li> WorkflowTask：工作流处理任务；</li>
+<li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
                      */
                     std::string GetTaskType() const;
@@ -77,9 +79,11 @@ namespace TencentCloud
                     /**
                      * 设置任务类型，包含：
 <li> WorkflowTask：工作流处理任务；</li>
+<li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
                      * @param TaskType 任务类型，包含：
 <li> WorkflowTask：工作流处理任务；</li>
+<li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -155,6 +159,7 @@ namespace TencentCloud
                     /**
                      * 任务类型，包含：
 <li> WorkflowTask：工作流处理任务；</li>
+<li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
                      */
                     std::string m_taskType;

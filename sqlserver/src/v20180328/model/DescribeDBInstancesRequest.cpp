@@ -29,7 +29,9 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_instanceIdSetHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,22 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -195,6 +213,38 @@ void DescribeDBInstancesRequest::SetPayMode(const int64_t& _payMode)
 bool DescribeDBInstancesRequest::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void DescribeDBInstancesRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void DescribeDBInstancesRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 
 

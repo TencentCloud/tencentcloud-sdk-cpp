@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/TableResult.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/TableResultNew.h>
 
 
 namespace TencentCloud
@@ -59,7 +59,7 @@ namespace TencentCloud
                      * 获取删除表结果详情列表
                      * @return TableResults 删除表结果详情列表
                      */
-                    std::vector<TableResult> GetTableResults() const;
+                    std::vector<TableResultNew> GetTableResults() const;
 
                     /**
                      * 判断参数 TableResults 是否已赋值
@@ -78,7 +78,7 @@ namespace TencentCloud
                     /**
                      * 删除表结果详情列表
                      */
-                    std::vector<TableResult> m_tableResults;
+                    std::vector<TableResultNew> m_tableResults;
                     bool m_tableResultsHasBeenSet;
 
                 };

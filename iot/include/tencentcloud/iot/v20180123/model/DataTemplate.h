@@ -52,13 +52,17 @@ namespace TencentCloud
 
                     /**
                      * 获取数字类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Number 数字类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NumberData GetNumber() const;
 
                     /**
                      * 设置数字类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Number 数字类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNumber(const NumberData& _number);
 
@@ -70,13 +74,17 @@ namespace TencentCloud
 
                     /**
                      * 获取字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return String 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StringData GetString() const;
 
                     /**
                      * 设置字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param String 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetString(const StringData& _string);
 
@@ -88,13 +96,17 @@ namespace TencentCloud
 
                     /**
                      * 获取枚举类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enum 枚举类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EnumData GetEnum() const;
 
                     /**
                      * 设置枚举类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Enum 枚举类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEnum(const EnumData& _enum);
 
@@ -106,13 +118,17 @@ namespace TencentCloud
 
                     /**
                      * 获取布尔类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bool 布尔类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BoolData GetBool() const;
 
                     /**
                      * 设置布尔类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Bool 布尔类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBool(const BoolData& _bool);
 
@@ -126,24 +142,28 @@ namespace TencentCloud
 
                     /**
                      * 数字类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NumberData m_number;
                     bool m_numberHasBeenSet;
 
                     /**
                      * 字符串类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StringData m_string;
                     bool m_stringHasBeenSet;
 
                     /**
                      * 枚举类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EnumData m_enum;
                     bool m_enumHasBeenSet;
 
                     /**
                      * 布尔类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BoolData m_bool;
                     bool m_boolHasBeenSet;

@@ -97,14 +97,22 @@ namespace TencentCloud
                     bool SmsTypeHasBeenSet() const;
 
                     /**
-                     * 获取0表示国内短信，1表示国际/港澳台短信，默认为0。
-                     * @return International 0表示国内短信，1表示国际/港澳台短信，默认为0。
+                     * 获取是否国际/港澳台短信：
+0：表示国内短信。
+1：表示国际/港澳台短信。
+                     * @return International 是否国际/港澳台短信：
+0：表示国内短信。
+1：表示国际/港澳台短信。
                      */
                     uint64_t GetInternational() const;
 
                     /**
-                     * 设置0表示国内短信，1表示国际/港澳台短信，默认为0。
-                     * @param International 0表示国内短信，1表示国际/港澳台短信，默认为0。
+                     * 设置是否国际/港澳台短信：
+0：表示国内短信。
+1：表示国际/港澳台短信。
+                     * @param International 是否国际/港澳台短信：
+0：表示国内短信。
+1：表示国际/港澳台短信。
                      */
                     void SetInternational(const uint64_t& _international);
 
@@ -153,7 +161,9 @@ namespace TencentCloud
                     bool m_smsTypeHasBeenSet;
 
                     /**
-                     * 0表示国内短信，1表示国际/港澳台短信，默认为0。
+                     * 是否国际/港澳台短信：
+0：表示国内短信。
+1：表示国际/港澳台短信。
                      */
                     uint64_t m_international;
                     bool m_internationalHasBeenSet;

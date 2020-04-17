@@ -86,6 +86,50 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAddTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AddTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAddTime(const std::string& _addTime);
+
+                    /**
+                     * 判断参数 AddTime 是否已赋值
+                     * @return AddTime 是否已赋值
+                     */
+                    bool AddTimeHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetModTime() const;
+
+                    /**
+                     * 设置更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModTime(const std::string& _modTime);
+
+                    /**
+                     * 判断参数 ModTime 是否已赋值
+                     * @return ModTime 是否已赋值
+                     */
+                    bool ModTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +144,20 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_addTime;
+                    bool m_addTimeHasBeenSet;
+
+                    /**
+                     * 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modTime;
+                    bool m_modTimeHasBeenSet;
 
                 };
             }

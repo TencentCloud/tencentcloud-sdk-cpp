@@ -34,7 +34,8 @@ RsgAsGroup::RsgAsGroup() :
     m_updateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_instanceCountHasBeenSet(false)
+    m_instanceCountHasBeenSet(false),
+    m_desiredSizeHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome RsgAsGroup::Deserialize(const Value &value)
         m_instanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("DesiredSize") && !value["DesiredSize"].IsNull())
+    {
+        if (!value["DesiredSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `RsgAsGroup.DesiredSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredSize = value["DesiredSize"].GetUint64();
+        m_desiredSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +293,14 @@ void RsgAsGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_desiredSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DesiredSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredSize, allocator);
     }
 
 }
@@ -493,5 +512,21 @@ void RsgAsGroup::SetInstanceCount(const uint64_t& _instanceCount)
 bool RsgAsGroup::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
+}
+
+uint64_t RsgAsGroup::GetDesiredSize() const
+{
+    return m_desiredSize;
+}
+
+void RsgAsGroup::SetDesiredSize(const uint64_t& _desiredSize)
+{
+    m_desiredSize = _desiredSize;
+    m_desiredSizeHasBeenSet = true;
+}
+
+bool RsgAsGroup::DesiredSizeHasBeenSet() const
+{
+    return m_desiredSizeHasBeenSet;
 }
 

@@ -28,6 +28,7 @@ LookUpEventsRequest::LookUpEventsRequest() :
     m_startTimeHasBeenSet(false),
     m_lookupAttributesHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
+    m_modeHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -76,6 +77,14 @@ string LookUpEventsRequest::ToJsonString() const
         string key = "MaxResults";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxResults, allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nextTokenHasBeenSet)
@@ -156,6 +165,22 @@ void LookUpEventsRequest::SetMaxResults(const int64_t& _maxResults)
 bool LookUpEventsRequest::MaxResultsHasBeenSet() const
 {
     return m_maxResultsHasBeenSet;
+}
+
+string LookUpEventsRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void LookUpEventsRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool LookUpEventsRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 string LookUpEventsRequest::GetNextToken() const

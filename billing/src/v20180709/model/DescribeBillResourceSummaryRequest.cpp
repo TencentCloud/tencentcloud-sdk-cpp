@@ -28,7 +28,8 @@ DescribeBillResourceSummaryRequest::DescribeBillResourceSummaryRequest() :
     m_limitHasBeenSet(false),
     m_periodTypeHasBeenSet(false),
     m_monthHasBeenSet(false),
-    m_needRecordNumHasBeenSet(false)
+    m_needRecordNumHasBeenSet(false),
+    m_actionTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string DescribeBillResourceSummaryRequest::ToJsonString() const
         string key = "NeedRecordNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needRecordNum, allocator);
+    }
+
+    if (m_actionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void DescribeBillResourceSummaryRequest::SetNeedRecordNum(const int64_t& _needRe
 bool DescribeBillResourceSummaryRequest::NeedRecordNumHasBeenSet() const
 {
     return m_needRecordNumHasBeenSet;
+}
+
+string DescribeBillResourceSummaryRequest::GetActionType() const
+{
+    return m_actionType;
+}
+
+void DescribeBillResourceSummaryRequest::SetActionType(const string& _actionType)
+{
+    m_actionType = _actionType;
+    m_actionTypeHasBeenSet = true;
+}
+
+bool DescribeBillResourceSummaryRequest::ActionTypeHasBeenSet() const
+{
+    return m_actionTypeHasBeenSet;
 }
 
 

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取属性数据
-                     * @return Data 属性数据
+                     * 获取属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
+                     * @return Data 属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
                      */
                     std::string GetData() const;
 
                     /**
-                     * 设置属性数据
-                     * @param Data 属性数据
+                     * 设置属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
+                     * @param Data 属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
                      */
                     void SetData(const std::string& _data);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取请求类型
-                     * @return Method 请求类型
+                     * 获取请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
+                     * @return Method 请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置请求类型
-                     * @param Method 请求类型
+                     * 设置请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
+                     * @param Method 请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
                      */
                     void SetMethod(const std::string& _method);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取设备ID，该字段有值将代替 ProductId/DeviceName
-                     * @return DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName
+                     * 获取设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
+                     * @return DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID，该字段有值将代替 ProductId/DeviceName
-                     * @param DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName
+                     * 设置设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
+                     * @param DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
@@ -131,6 +131,24 @@ namespace TencentCloud
                      * @return DeviceId 是否已赋值
                      */
                     bool DeviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     * @return DataTimestamp 上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     */
+                    int64_t GetDataTimestamp() const;
+
+                    /**
+                     * 设置上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     * @param DataTimestamp 上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     */
+                    void SetDataTimestamp(const int64_t& _dataTimestamp);
+
+                    /**
+                     * 判断参数 DataTimestamp 是否已赋值
+                     * @return DataTimestamp 是否已赋值
+                     */
+                    bool DataTimestampHasBeenSet() const;
 
                 private:
 
@@ -147,22 +165,28 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 属性数据
+                     * 属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 请求类型
+                     * 请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 设备ID，该字段有值将代替 ProductId/DeviceName
+                     * 设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     */
+                    int64_t m_dataTimestamp;
+                    bool m_dataTimestampHasBeenSet;
 
                 };
             }

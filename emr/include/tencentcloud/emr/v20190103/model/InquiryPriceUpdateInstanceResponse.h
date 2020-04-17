@@ -43,9 +43,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取刊例价
+                     * 获取原价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginalCost 刊例价
+                     * @return OriginalCost 原价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetOriginalCost() const;
@@ -57,9 +57,9 @@ namespace TencentCloud
                     bool OriginalCostHasBeenSet() const;
 
                     /**
-                     * 获取折扣价格
+                     * 获取折扣价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiscountCost 折扣价格
+                     * @return DiscountCost 折扣价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetDiscountCost() const;
@@ -71,9 +71,13 @@ namespace TencentCloud
                     bool DiscountCostHasBeenSet() const;
 
                     /**
-                     * 获取时间单位，"s","m"
+                     * 获取变配的时间单位。取值范围：
+<li>s：表示秒。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeUnit 时间单位，"s","m"
+                     * @return TimeUnit 变配的时间单位。取值范围：
+<li>s：表示秒。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTimeUnit() const;
@@ -85,9 +89,9 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取时间数量
+                     * 获取变配的时长。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeSpan 时间数量
+                     * @return TimeSpan 变配的时长。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTimeSpan() const;
@@ -101,28 +105,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刊例价
+                     * 原价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
-                     * 折扣价格
+                     * 折扣价，单位为元。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discountCost;
                     bool m_discountCostHasBeenSet;
 
                     /**
-                     * 时间单位，"s","m"
+                     * 变配的时间单位。取值范围：
+<li>s：表示秒。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 时间数量
+                     * 变配的时长。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;

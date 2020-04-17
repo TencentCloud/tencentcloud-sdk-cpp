@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RO 组的实例 ID。
-                     * @return RoGroupId RO 组的实例 ID。
+                     * 获取RO 组的 ID。
+                     * @return RoGroupId RO 组的 ID。
                      */
                     std::string GetRoGroupId() const;
 
                     /**
-                     * 设置RO 组的实例 ID。
-                     * @param RoGroupId RO 组的实例 ID。
+                     * 设置RO 组的 ID。
+                     * @param RoGroupId RO 组的 ID。
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
 
@@ -119,7 +119,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RO 组的实例 ID。
+                     * RO 组的 ID。
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;

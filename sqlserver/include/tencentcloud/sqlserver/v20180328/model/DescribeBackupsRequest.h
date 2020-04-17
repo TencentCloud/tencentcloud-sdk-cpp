@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页返回，每页返回数量，默认为20，最大值为 100
-                     * @return Limit 分页返回，每页返回数量，默认为20，最大值为 100
+                     * 获取分页返回，每页返回的数目，取值为1-100，默认值为20
+                     * @return Limit 分页返回，每页返回的数目，取值为1-100，默认值为20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页返回，每页返回数量，默认为20，最大值为 100
-                     * @param Limit 分页返回，每页返回数量，默认为20，最大值为 100
+                     * 设置分页返回，每页返回的数目，取值为1-100，默认值为20
+                     * @param Limit 分页返回，每页返回的数目，取值为1-100，默认值为20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为 0
-                     * @return Offset 偏移量，默认为 0
+                     * 获取分页返回，页编号，默认值为第0页
+                     * @return Offset 分页返回，页编号，默认值为第0页
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为 0
-                     * @param Offset 偏移量，默认为 0
+                     * 设置分页返回，页编号，默认值为第0页
+                     * @param Offset 分页返回，页编号，默认值为第0页
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分页返回，每页返回数量，默认为20，最大值为 100
+                     * 分页返回，每页返回的数目，取值为1-100，默认值为20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为 0
+                     * 分页返回，页编号，默认值为第0页
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

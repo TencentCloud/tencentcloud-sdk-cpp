@@ -276,6 +276,24 @@ namespace TencentCloud
                      */
                     bool UserIpHasBeenSet() const;
 
+                    /**
+                     * 获取优化项，便于客户灰度开启新的优化项，默认为0
+                     * @return Optimization 优化项，便于客户灰度开启新的优化项，默认为0
+                     */
+                    uint64_t GetOptimization() const;
+
+                    /**
+                     * 设置优化项，便于客户灰度开启新的优化项，默认为0
+                     * @param Optimization 优化项，便于客户灰度开启新的优化项，默认为0
+                     */
+                    void SetOptimization(const uint64_t& _optimization);
+
+                    /**
+                     * 判断参数 Optimization 是否已赋值
+                     * @return Optimization 是否已赋值
+                     */
+                    bool OptimizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +373,12 @@ namespace TencentCloud
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
+
+                    /**
+                     * 优化项，便于客户灰度开启新的优化项，默认为0
+                     */
+                    uint64_t m_optimization;
+                    bool m_optimizationHasBeenSet;
 
                 };
             }

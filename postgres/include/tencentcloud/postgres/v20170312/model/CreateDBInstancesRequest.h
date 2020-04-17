@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本，目前只支持：9.3.5、9.5.4两种版本。
-                     * @return DBVersion PostgreSQL内核版本，目前只支持：9.3.5、9.5.4两种版本。
+                     * 获取PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
+                     * @return DBVersion PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL内核版本，目前只支持：9.3.5、9.5.4两种版本。
-                     * @param DBVersion PostgreSQL内核版本，目前只支持：9.3.5、9.5.4两种版本。
+                     * 设置PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
+                     * @param DBVersion PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。
-                     * @return Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。
+                     * 获取购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * @return Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。
-                     * @param Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。
+                     * 设置购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * @param Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
                      */
                     void SetPeriod(const uint64_t& _period);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
-                     * @return InstanceChargeType 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
+                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
-                     * @param InstanceChargeType 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
+                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * @param InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
@@ -276,6 +276,42 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取活动ID
+                     * @return ActivityId 活动ID
+                     */
+                    int64_t GetActivityId() const;
+
+                    /**
+                     * 设置活动ID
+                     * @param ActivityId 活动ID
+                     */
+                    void SetActivityId(const int64_t& _activityId);
+
+                    /**
+                     * 判断参数 ActivityId 是否已赋值
+                     * @return ActivityId 是否已赋值
+                     */
+                    bool ActivityIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例名
+                     * @return Name 实例名
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置实例名
+                     * @param Name 实例名
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,7 +321,7 @@ namespace TencentCloud
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本，目前只支持：9.3.5、9.5.4两种版本。
+                     * PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
@@ -303,7 +339,7 @@ namespace TencentCloud
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。
+                     * 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
@@ -321,7 +357,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
+                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -355,6 +391,18 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 活动ID
+                     */
+                    int64_t m_activityId;
+                    bool m_activityIdHasBeenSet;
+
+                    /**
+                     * 实例名
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

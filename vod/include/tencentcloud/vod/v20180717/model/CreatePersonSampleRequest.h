@@ -61,28 +61,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     * @return FaceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     */
-                    std::vector<std::string> GetFaceContents() const;
-
-                    /**
-                     * 设置人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     * @param FaceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     */
-                    void SetFaceContents(const std::vector<std::string>& _faceContents);
-
-                    /**
-                     * 判断参数 FaceContents 是否已赋值
-                     * @return FaceContents 是否已赋值
-                     */
-                    bool FaceContentsHasBeenSet() const;
-
-                    /**
                      * 获取人物应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
 2. Review：用于内容审核，等价于 Review.Face。
@@ -129,6 +107,28 @@ namespace TencentCloud
                      * @return Description 是否已赋值
                      */
                     bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * @return FaceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     */
+                    std::vector<std::string> GetFaceContents() const;
+
+                    /**
+                     * 设置人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     * @param FaceContents 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     */
+                    void SetFaceContents(const std::vector<std::string>& _faceContents);
+
+                    /**
+                     * 判断参数 FaceContents 是否已赋值
+                     * @return FaceContents 是否已赋值
+                     */
+                    bool FaceContentsHasBeenSet() const;
 
                     /**
                      * 获取人物标签
@@ -183,13 +183,6 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
-注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
-                     */
-                    std::vector<std::string> m_faceContents;
-                    bool m_faceContentsHasBeenSet;
-
-                    /**
                      * 人物应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
 2. Review：用于内容审核，等价于 Review.Face。
@@ -203,6 +196,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串，仅支持 jpeg、png 图片格式。数组长度限制：5 张图片。
+注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。
+                     */
+                    std::vector<std::string> m_faceContents;
+                    bool m_faceContentsHasBeenSet;
 
                     /**
                      * 人物标签

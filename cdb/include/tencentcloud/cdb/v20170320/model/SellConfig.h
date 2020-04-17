@@ -280,6 +280,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取标签值
+                     * @return Tag 标签值
+                     */
+                    int64_t GetTag() const;
+
+                    /**
+                     * 设置标签值
+                     * @param Tag 标签值
+                     */
+                    void SetTag(const int64_t& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +377,12 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 标签值
+                     */
+                    int64_t m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

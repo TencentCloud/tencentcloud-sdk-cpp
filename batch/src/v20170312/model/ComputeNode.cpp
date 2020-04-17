@@ -32,7 +32,8 @@ ComputeNode::ComputeNode() :
     m_agentVersionHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_resourceOriginHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,16 @@ CoreInternalOutcome ComputeNode::Deserialize(const Value &value)
         m_resourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceOrigin") && !value["ResourceOrigin"].IsNull())
+    {
+        if (!value["ResourceOrigin"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ComputeNode.ResourceOrigin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceOrigin = string(value["ResourceOrigin"].GetString());
+        m_resourceOriginHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void ComputeNode::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceOriginHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceOrigin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceOrigin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void ComputeNode::SetResourceType(const string& _resourceType)
 bool ComputeNode::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+string ComputeNode::GetResourceOrigin() const
+{
+    return m_resourceOrigin;
+}
+
+void ComputeNode::SetResourceOrigin(const string& _resourceOrigin)
+{
+    m_resourceOrigin = _resourceOrigin;
+    m_resourceOriginHasBeenSet = true;
+}
+
+bool ComputeNode::ResourceOriginHasBeenSet() const
+{
+    return m_resourceOriginHasBeenSet;
 }
 

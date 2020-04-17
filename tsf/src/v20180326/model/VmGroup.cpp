@@ -41,7 +41,9 @@ VmGroup::VmGroup() :
     m_updateTimeHasBeenSet(false),
     m_offInstanceCountHasBeenSet(false),
     m_groupDescHasBeenSet(false),
-    m_microserviceTypeHasBeenSet(false)
+    m_microserviceTypeHasBeenSet(false),
+    m_applicationTypeHasBeenSet(false),
+    m_groupResourceTypeHasBeenSet(false)
 {
 }
 
@@ -250,6 +252,26 @@ CoreInternalOutcome VmGroup::Deserialize(const Value &value)
         m_microserviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationType") && !value["ApplicationType"].IsNull())
+    {
+        if (!value["ApplicationType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationType = string(value["ApplicationType"].GetString());
+        m_applicationTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupResourceType") && !value["GroupResourceType"].IsNull())
+    {
+        if (!value["GroupResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupResourceType = string(value["GroupResourceType"].GetString());
+        m_groupResourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +437,22 @@ void VmGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "MicroserviceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_groupResourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -738,5 +776,37 @@ void VmGroup::SetMicroserviceType(const string& _microserviceType)
 bool VmGroup::MicroserviceTypeHasBeenSet() const
 {
     return m_microserviceTypeHasBeenSet;
+}
+
+string VmGroup::GetApplicationType() const
+{
+    return m_applicationType;
+}
+
+void VmGroup::SetApplicationType(const string& _applicationType)
+{
+    m_applicationType = _applicationType;
+    m_applicationTypeHasBeenSet = true;
+}
+
+bool VmGroup::ApplicationTypeHasBeenSet() const
+{
+    return m_applicationTypeHasBeenSet;
+}
+
+string VmGroup::GetGroupResourceType() const
+{
+    return m_groupResourceType;
+}
+
+void VmGroup::SetGroupResourceType(const string& _groupResourceType)
+{
+    m_groupResourceType = _groupResourceType;
+    m_groupResourceTypeHasBeenSet = true;
+}
+
+bool VmGroup::GroupResourceTypeHasBeenSet() const
+{
+    return m_groupResourceTypeHasBeenSet;
 }
 

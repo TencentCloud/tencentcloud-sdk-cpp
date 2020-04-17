@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拨测结果查询id。接下来可以使用查询拨测是否能够成功，验证能否通过。
-                     * @return ResultId 拨测结果查询id。接下来可以使用查询拨测是否能够成功，验证能否通过。
+                     * 获取拨测结果查询ID。接下来可以使用查询拨测是否能够成功，验证能否通过。
+                     * @return ResultId 拨测结果查询ID。接下来可以使用查询拨测是否能够成功，验证能否通过。
                      */
                     uint64_t GetResultId() const;
 
@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool ResultIdHasBeenSet() const;
 
                     /**
-                     * 获取拨测任务id。验证通过后，创建任务时使用，传递给CreateTask 接口。
-                     * @return TaskId 拨测任务id。验证通过后，创建任务时使用，传递给CreateTask 接口。
+                     * 获取拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。
+                     * @return TaskId 拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。
                      */
                     uint64_t GetTaskId() const;
 
@@ -69,13 +69,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拨测结果查询id。接下来可以使用查询拨测是否能够成功，验证能否通过。
+                     * 拨测结果查询ID。接下来可以使用查询拨测是否能够成功，验证能否通过。
                      */
                     uint64_t m_resultId;
                     bool m_resultIdHasBeenSet;
 
                     /**
-                     * 拨测任务id。验证通过后，创建任务时使用，传递给CreateTask 接口。
+                     * 拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

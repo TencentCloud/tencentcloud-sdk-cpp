@@ -298,6 +298,49 @@ VodClient::CreateAIRecognitionTemplateOutcomeCallable VodClient::CreateAIRecogni
     return task->get_future();
 }
 
+VodClient::CreateAdaptiveDynamicStreamingTemplateOutcome VodClient::CreateAdaptiveDynamicStreamingTemplate(const CreateAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAdaptiveDynamicStreamingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAdaptiveDynamicStreamingTemplateResponse rsp = CreateAdaptiveDynamicStreamingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAdaptiveDynamicStreamingTemplateOutcome(rsp);
+        else
+            return CreateAdaptiveDynamicStreamingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAdaptiveDynamicStreamingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAdaptiveDynamicStreamingTemplateAsync(const CreateAdaptiveDynamicStreamingTemplateRequest& request, const CreateAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAdaptiveDynamicStreamingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::CreateAdaptiveDynamicStreamingTemplateCallable(const CreateAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAdaptiveDynamicStreamingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAdaptiveDynamicStreamingTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateAnimatedGraphicsTemplateOutcome VodClient::CreateAnimatedGraphicsTemplate(const CreateAnimatedGraphicsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAnimatedGraphicsTemplate");
@@ -642,6 +685,49 @@ VodClient::CreateSnapshotByTimeOffsetTemplateOutcomeCallable VodClient::CreateSn
     return task->get_future();
 }
 
+VodClient::CreateSuperPlayerConfigOutcome VodClient::CreateSuperPlayerConfig(const CreateSuperPlayerConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSuperPlayerConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSuperPlayerConfigResponse rsp = CreateSuperPlayerConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSuperPlayerConfigOutcome(rsp);
+        else
+            return CreateSuperPlayerConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSuperPlayerConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateSuperPlayerConfigAsync(const CreateSuperPlayerConfigRequest& request, const CreateSuperPlayerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSuperPlayerConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateSuperPlayerConfigOutcomeCallable VodClient::CreateSuperPlayerConfigCallable(const CreateSuperPlayerConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSuperPlayerConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSuperPlayerConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateTranscodeTemplateOutcome VodClient::CreateTranscodeTemplate(const CreateTranscodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTranscodeTemplate");
@@ -850,6 +936,49 @@ VodClient::DeleteAIRecognitionTemplateOutcomeCallable VodClient::DeleteAIRecogni
         [this, request]()
         {
             return this->DeleteAIRecognitionTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteAdaptiveDynamicStreamingTemplateOutcome VodClient::DeleteAdaptiveDynamicStreamingTemplate(const DeleteAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAdaptiveDynamicStreamingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAdaptiveDynamicStreamingTemplateResponse rsp = DeleteAdaptiveDynamicStreamingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAdaptiveDynamicStreamingTemplateOutcome(rsp);
+        else
+            return DeleteAdaptiveDynamicStreamingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAdaptiveDynamicStreamingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteAdaptiveDynamicStreamingTemplateAsync(const DeleteAdaptiveDynamicStreamingTemplateRequest& request, const DeleteAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAdaptiveDynamicStreamingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::DeleteAdaptiveDynamicStreamingTemplateCallable(const DeleteAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAdaptiveDynamicStreamingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAdaptiveDynamicStreamingTemplate(request);
         }
     );
 
@@ -1237,6 +1366,49 @@ VodClient::DeleteSnapshotByTimeOffsetTemplateOutcomeCallable VodClient::DeleteSn
         [this, request]()
         {
             return this->DeleteSnapshotByTimeOffsetTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteSuperPlayerConfigOutcome VodClient::DeleteSuperPlayerConfig(const DeleteSuperPlayerConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSuperPlayerConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSuperPlayerConfigResponse rsp = DeleteSuperPlayerConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSuperPlayerConfigOutcome(rsp);
+        else
+            return DeleteSuperPlayerConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSuperPlayerConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteSuperPlayerConfigAsync(const DeleteSuperPlayerConfigRequest& request, const DeleteSuperPlayerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSuperPlayerConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteSuperPlayerConfigOutcomeCallable VodClient::DeleteSuperPlayerConfigCallable(const DeleteSuperPlayerConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSuperPlayerConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSuperPlayerConfig(request);
         }
     );
 
@@ -1803,6 +1975,49 @@ VodClient::DescribeMediaInfosOutcomeCallable VodClient::DescribeMediaInfosCallab
     return task->get_future();
 }
 
+VodClient::DescribeMediaProcessUsageDataOutcome VodClient::DescribeMediaProcessUsageData(const DescribeMediaProcessUsageDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMediaProcessUsageData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMediaProcessUsageDataResponse rsp = DescribeMediaProcessUsageDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMediaProcessUsageDataOutcome(rsp);
+        else
+            return DescribeMediaProcessUsageDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMediaProcessUsageDataOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeMediaProcessUsageDataAsync(const DescribeMediaProcessUsageDataRequest& request, const DescribeMediaProcessUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMediaProcessUsageData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeMediaProcessUsageDataOutcomeCallable VodClient::DescribeMediaProcessUsageDataCallable(const DescribeMediaProcessUsageDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMediaProcessUsageDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMediaProcessUsageData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribePersonSamplesOutcome VodClient::DescribePersonSamples(const DescribePersonSamplesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePersonSamples");
@@ -2018,6 +2233,92 @@ VodClient::DescribeSnapshotByTimeOffsetTemplatesOutcomeCallable VodClient::Descr
     return task->get_future();
 }
 
+VodClient::DescribeStorageDataOutcome VodClient::DescribeStorageData(const DescribeStorageDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStorageData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStorageDataResponse rsp = DescribeStorageDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStorageDataOutcome(rsp);
+        else
+            return DescribeStorageDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStorageDataOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeStorageDataAsync(const DescribeStorageDataRequest& request, const DescribeStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStorageData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeStorageDataOutcomeCallable VodClient::DescribeStorageDataCallable(const DescribeStorageDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStorageDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStorageData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeStorageDetailsOutcome VodClient::DescribeStorageDetails(const DescribeStorageDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStorageDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStorageDetailsResponse rsp = DescribeStorageDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStorageDetailsOutcome(rsp);
+        else
+            return DescribeStorageDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStorageDetailsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeStorageDetailsAsync(const DescribeStorageDetailsRequest& request, const DescribeStorageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStorageDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeStorageDetailsOutcomeCallable VodClient::DescribeStorageDetailsCallable(const DescribeStorageDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStorageDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStorageDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeSubAppIdsOutcome VodClient::DescribeSubAppIds(const DescribeSubAppIdsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubAppIds");
@@ -2054,6 +2355,49 @@ VodClient::DescribeSubAppIdsOutcomeCallable VodClient::DescribeSubAppIdsCallable
         [this, request]()
         {
             return this->DescribeSubAppIds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeSuperPlayerConfigsOutcome VodClient::DescribeSuperPlayerConfigs(const DescribeSuperPlayerConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSuperPlayerConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSuperPlayerConfigsResponse rsp = DescribeSuperPlayerConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSuperPlayerConfigsOutcome(rsp);
+        else
+            return DescribeSuperPlayerConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSuperPlayerConfigsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeSuperPlayerConfigsAsync(const DescribeSuperPlayerConfigsRequest& request, const DescribeSuperPlayerConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSuperPlayerConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeSuperPlayerConfigsOutcomeCallable VodClient::DescribeSuperPlayerConfigsCallable(const DescribeSuperPlayerConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSuperPlayerConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSuperPlayerConfigs(request);
         }
     );
 
@@ -2577,6 +2921,49 @@ VodClient::ModifyAIRecognitionTemplateOutcomeCallable VodClient::ModifyAIRecogni
     return task->get_future();
 }
 
+VodClient::ModifyAdaptiveDynamicStreamingTemplateOutcome VodClient::ModifyAdaptiveDynamicStreamingTemplate(const ModifyAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAdaptiveDynamicStreamingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAdaptiveDynamicStreamingTemplateResponse rsp = ModifyAdaptiveDynamicStreamingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAdaptiveDynamicStreamingTemplateOutcome(rsp);
+        else
+            return ModifyAdaptiveDynamicStreamingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAdaptiveDynamicStreamingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyAdaptiveDynamicStreamingTemplateAsync(const ModifyAdaptiveDynamicStreamingTemplateRequest& request, const ModifyAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAdaptiveDynamicStreamingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::ModifyAdaptiveDynamicStreamingTemplateCallable(const ModifyAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAdaptiveDynamicStreamingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAdaptiveDynamicStreamingTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyAnimatedGraphicsTemplateOutcome VodClient::ModifyAnimatedGraphicsTemplate(const ModifyAnimatedGraphicsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAnimatedGraphicsTemplate");
@@ -3007,6 +3394,49 @@ VodClient::ModifySubAppIdStatusOutcomeCallable VodClient::ModifySubAppIdStatusCa
     return task->get_future();
 }
 
+VodClient::ModifySuperPlayerConfigOutcome VodClient::ModifySuperPlayerConfig(const ModifySuperPlayerConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySuperPlayerConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySuperPlayerConfigResponse rsp = ModifySuperPlayerConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySuperPlayerConfigOutcome(rsp);
+        else
+            return ModifySuperPlayerConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySuperPlayerConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifySuperPlayerConfigAsync(const ModifySuperPlayerConfigRequest& request, const ModifySuperPlayerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySuperPlayerConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifySuperPlayerConfigOutcomeCallable VodClient::ModifySuperPlayerConfigCallable(const ModifySuperPlayerConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySuperPlayerConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySuperPlayerConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyTranscodeTemplateOutcome VodClient::ModifyTranscodeTemplate(const ModifyTranscodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTranscodeTemplate");
@@ -3129,6 +3559,49 @@ VodClient::ModifyWordSampleOutcomeCallable VodClient::ModifyWordSampleCallable(c
         [this, request]()
         {
             return this->ModifyWordSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ParseStreamingManifestOutcome VodClient::ParseStreamingManifest(const ParseStreamingManifestRequest &request)
+{
+    auto outcome = MakeRequest(request, "ParseStreamingManifest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ParseStreamingManifestResponse rsp = ParseStreamingManifestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ParseStreamingManifestOutcome(rsp);
+        else
+            return ParseStreamingManifestOutcome(o.GetError());
+    }
+    else
+    {
+        return ParseStreamingManifestOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ParseStreamingManifestAsync(const ParseStreamingManifestRequest& request, const ParseStreamingManifestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ParseStreamingManifest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ParseStreamingManifestOutcomeCallable VodClient::ParseStreamingManifestCallable(const ParseStreamingManifestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ParseStreamingManifestOutcome()>>(
+        [this, request]()
+        {
+            return this->ParseStreamingManifest(request);
         }
     );
 

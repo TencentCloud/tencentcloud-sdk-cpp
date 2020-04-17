@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例数量
-                     * @return TotalCnt 实例数量
+                     * 获取符合条件的实例总数。
+                     * @return TotalCnt 符合条件的实例总数。
                      */
                     int64_t GetTotalCnt() const;
 
@@ -56,9 +56,9 @@ namespace TencentCloud
                     bool TotalCntHasBeenSet() const;
 
                     /**
-                     * 获取集群实例信息列表
+                     * 获取EMR实例详细信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterList 集群实例信息列表
+                     * @return ClusterList EMR实例详细信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClusterInstancesInfo> GetClusterList() const;
@@ -69,20 +69,41 @@ namespace TencentCloud
                      */
                     bool ClusterListHasBeenSet() const;
 
+                    /**
+                     * 获取实例关联的标签键列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagKeys 实例关联的标签键列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTagKeys() const;
+
+                    /**
+                     * 判断参数 TagKeys 是否已赋值
+                     * @return TagKeys 是否已赋值
+                     */
+                    bool TagKeysHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例数量
+                     * 符合条件的实例总数。
                      */
                     int64_t m_totalCnt;
                     bool m_totalCntHasBeenSet;
 
                     /**
-                     * 集群实例信息列表
+                     * EMR实例详细信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClusterInstancesInfo> m_clusterList;
                     bool m_clusterListHasBeenSet;
+
+                    /**
+                     * 实例关联的标签键列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tagKeys;
+                    bool m_tagKeysHasBeenSet;
 
                 };
             }

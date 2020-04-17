@@ -24,7 +24,7 @@ using namespace rapidjson;
 using namespace std;
 
 RecoverRecycleTablesRequest::RecoverRecycleTablesRequest() :
-    m_applicationIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_selectedTablesHasBeenSet(false)
 {
 }
@@ -36,12 +36,12 @@ string RecoverRecycleTablesRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_selectedTablesHasBeenSet)
@@ -67,28 +67,28 @@ string RecoverRecycleTablesRequest::ToJsonString() const
 }
 
 
-string RecoverRecycleTablesRequest::GetApplicationId() const
+string RecoverRecycleTablesRequest::GetClusterId() const
 {
-    return m_applicationId;
+    return m_clusterId;
 }
 
-void RecoverRecycleTablesRequest::SetApplicationId(const string& _applicationId)
+void RecoverRecycleTablesRequest::SetClusterId(const string& _clusterId)
 {
-    m_applicationId = _applicationId;
-    m_applicationIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool RecoverRecycleTablesRequest::ApplicationIdHasBeenSet() const
+bool RecoverRecycleTablesRequest::ClusterIdHasBeenSet() const
 {
-    return m_applicationIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
-vector<SelectedTableInfo> RecoverRecycleTablesRequest::GetSelectedTables() const
+vector<SelectedTableInfoNew> RecoverRecycleTablesRequest::GetSelectedTables() const
 {
     return m_selectedTables;
 }
 
-void RecoverRecycleTablesRequest::SetSelectedTables(const vector<SelectedTableInfo>& _selectedTables)
+void RecoverRecycleTablesRequest::SetSelectedTables(const vector<SelectedTableInfoNew>& _selectedTables)
 {
     m_selectedTables = _selectedTables;
     m_selectedTablesHasBeenSet = true;

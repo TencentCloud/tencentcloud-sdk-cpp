@@ -209,6 +209,24 @@ namespace TencentCloud
                      */
                     bool NotificationTargetHasBeenSet() const;
 
+                    /**
+                     * 获取生命周期挂钩适用场景
+                     * @return LifecycleTransitionType 生命周期挂钩适用场景
+                     */
+                    std::string GetLifecycleTransitionType() const;
+
+                    /**
+                     * 设置生命周期挂钩适用场景
+                     * @param LifecycleTransitionType 生命周期挂钩适用场景
+                     */
+                    void SetLifecycleTransitionType(const std::string& _lifecycleTransitionType);
+
+                    /**
+                     * 判断参数 LifecycleTransitionType 是否已赋值
+                     * @return LifecycleTransitionType 是否已赋值
+                     */
+                    bool LifecycleTransitionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +282,12 @@ namespace TencentCloud
                      */
                     NotificationTarget m_notificationTarget;
                     bool m_notificationTargetHasBeenSet;
+
+                    /**
+                     * 生命周期挂钩适用场景
+                     */
+                    std::string m_lifecycleTransitionType;
+                    bool m_lifecycleTransitionTypeHasBeenSet;
 
                 };
             }

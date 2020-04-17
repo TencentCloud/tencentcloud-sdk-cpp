@@ -28,9 +28,9 @@ SignContractByCoordinateRequest::SignContractByCoordinateRequest() :
     m_operationHasBeenSet(false),
     m_contractResIdHasBeenSet(false),
     m_accountResIdHasBeenSet(false),
+    m_signLocationsHasBeenSet(false),
     m_authorizationTimeHasBeenSet(false),
     m_positionHasBeenSet(false),
-    m_signLocationsHasBeenSet(false),
     m_sealResIdHasBeenSet(false),
     m_certTypeHasBeenSet(false),
     m_imageDataHasBeenSet(false)
@@ -76,6 +76,21 @@ string SignContractByCoordinateRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_accountResId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_signLocationsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SignLocations";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_signLocations.begin(); itr != m_signLocations.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_authorizationTimeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -90,21 +105,6 @@ string SignContractByCoordinateRequest::ToJsonString() const
         string key = "Position";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_position.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_signLocationsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SignLocations";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_signLocations.begin(); itr != m_signLocations.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_sealResIdHasBeenSet)
@@ -203,6 +203,22 @@ bool SignContractByCoordinateRequest::AccountResIdHasBeenSet() const
     return m_accountResIdHasBeenSet;
 }
 
+vector<SignLocation> SignContractByCoordinateRequest::GetSignLocations() const
+{
+    return m_signLocations;
+}
+
+void SignContractByCoordinateRequest::SetSignLocations(const vector<SignLocation>& _signLocations)
+{
+    m_signLocations = _signLocations;
+    m_signLocationsHasBeenSet = true;
+}
+
+bool SignContractByCoordinateRequest::SignLocationsHasBeenSet() const
+{
+    return m_signLocationsHasBeenSet;
+}
+
 string SignContractByCoordinateRequest::GetAuthorizationTime() const
 {
     return m_authorizationTime;
@@ -233,22 +249,6 @@ void SignContractByCoordinateRequest::SetPosition(const string& _position)
 bool SignContractByCoordinateRequest::PositionHasBeenSet() const
 {
     return m_positionHasBeenSet;
-}
-
-vector<SignLocation> SignContractByCoordinateRequest::GetSignLocations() const
-{
-    return m_signLocations;
-}
-
-void SignContractByCoordinateRequest::SetSignLocations(const vector<SignLocation>& _signLocations)
-{
-    m_signLocations = _signLocations;
-    m_signLocationsHasBeenSet = true;
-}
-
-bool SignContractByCoordinateRequest::SignLocationsHasBeenSet() const
-{
-    return m_signLocationsHasBeenSet;
 }
 
 string SignContractByCoordinateRequest::GetSealResId() const

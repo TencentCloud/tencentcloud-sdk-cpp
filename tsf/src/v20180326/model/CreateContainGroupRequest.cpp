@@ -37,7 +37,17 @@ CreateContainGroupRequest::CreateContainGroupRequest() :
     m_updateTypeHasBeenSet(false),
     m_updateIvlHasBeenSet(false),
     m_cpuRequestHasBeenSet(false),
-    m_memRequestHasBeenSet(false)
+    m_memRequestHasBeenSet(false),
+    m_groupResourceTypeHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_agentCpuRequestHasBeenSet(false),
+    m_agentCpuLimitHasBeenSet(false),
+    m_agentMemRequestHasBeenSet(false),
+    m_agentMemLimitHasBeenSet(false),
+    m_istioCpuRequestHasBeenSet(false),
+    m_istioCpuLimitHasBeenSet(false),
+    m_istioMemRequestHasBeenSet(false),
+    m_istioMemLimitHasBeenSet(false)
 {
 }
 
@@ -165,6 +175,86 @@ string CreateContainGroupRequest::ToJsonString() const
         string key = "MemRequest";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_memRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentCpuRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentCpuRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentCpuRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentCpuLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentCpuLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentCpuLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentMemRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentMemRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentMemRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentMemLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgentMemLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_agentMemLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioCpuRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioCpuRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioCpuRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioCpuLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioCpuLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioCpuLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioMemRequestHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioMemRequest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioMemRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_istioMemLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IstioMemLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_istioMemLimit.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -397,6 +487,166 @@ void CreateContainGroupRequest::SetMemRequest(const string& _memRequest)
 bool CreateContainGroupRequest::MemRequestHasBeenSet() const
 {
     return m_memRequestHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetGroupResourceType() const
+{
+    return m_groupResourceType;
+}
+
+void CreateContainGroupRequest::SetGroupResourceType(const string& _groupResourceType)
+{
+    m_groupResourceType = _groupResourceType;
+    m_groupResourceTypeHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::GroupResourceTypeHasBeenSet() const
+{
+    return m_groupResourceTypeHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void CreateContainGroupRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetAgentCpuRequest() const
+{
+    return m_agentCpuRequest;
+}
+
+void CreateContainGroupRequest::SetAgentCpuRequest(const string& _agentCpuRequest)
+{
+    m_agentCpuRequest = _agentCpuRequest;
+    m_agentCpuRequestHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::AgentCpuRequestHasBeenSet() const
+{
+    return m_agentCpuRequestHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetAgentCpuLimit() const
+{
+    return m_agentCpuLimit;
+}
+
+void CreateContainGroupRequest::SetAgentCpuLimit(const string& _agentCpuLimit)
+{
+    m_agentCpuLimit = _agentCpuLimit;
+    m_agentCpuLimitHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::AgentCpuLimitHasBeenSet() const
+{
+    return m_agentCpuLimitHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetAgentMemRequest() const
+{
+    return m_agentMemRequest;
+}
+
+void CreateContainGroupRequest::SetAgentMemRequest(const string& _agentMemRequest)
+{
+    m_agentMemRequest = _agentMemRequest;
+    m_agentMemRequestHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::AgentMemRequestHasBeenSet() const
+{
+    return m_agentMemRequestHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetAgentMemLimit() const
+{
+    return m_agentMemLimit;
+}
+
+void CreateContainGroupRequest::SetAgentMemLimit(const string& _agentMemLimit)
+{
+    m_agentMemLimit = _agentMemLimit;
+    m_agentMemLimitHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::AgentMemLimitHasBeenSet() const
+{
+    return m_agentMemLimitHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetIstioCpuRequest() const
+{
+    return m_istioCpuRequest;
+}
+
+void CreateContainGroupRequest::SetIstioCpuRequest(const string& _istioCpuRequest)
+{
+    m_istioCpuRequest = _istioCpuRequest;
+    m_istioCpuRequestHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::IstioCpuRequestHasBeenSet() const
+{
+    return m_istioCpuRequestHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetIstioCpuLimit() const
+{
+    return m_istioCpuLimit;
+}
+
+void CreateContainGroupRequest::SetIstioCpuLimit(const string& _istioCpuLimit)
+{
+    m_istioCpuLimit = _istioCpuLimit;
+    m_istioCpuLimitHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::IstioCpuLimitHasBeenSet() const
+{
+    return m_istioCpuLimitHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetIstioMemRequest() const
+{
+    return m_istioMemRequest;
+}
+
+void CreateContainGroupRequest::SetIstioMemRequest(const string& _istioMemRequest)
+{
+    m_istioMemRequest = _istioMemRequest;
+    m_istioMemRequestHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::IstioMemRequestHasBeenSet() const
+{
+    return m_istioMemRequestHasBeenSet;
+}
+
+string CreateContainGroupRequest::GetIstioMemLimit() const
+{
+    return m_istioMemLimit;
+}
+
+void CreateContainGroupRequest::SetIstioMemLimit(const string& _istioMemLimit)
+{
+    m_istioMemLimit = _istioMemLimit;
+    m_istioMemLimitHasBeenSet = true;
+}
+
+bool CreateContainGroupRequest::IstioMemLimitHasBeenSet() const
+{
+    return m_istioMemLimitHasBeenSet;
 }
 
 

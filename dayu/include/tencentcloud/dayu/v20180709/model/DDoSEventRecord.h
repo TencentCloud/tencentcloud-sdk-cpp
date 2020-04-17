@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool ResourceNameHasBeenSet() const;
 
+                    /**
+                     * 获取攻击事件Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventId 攻击事件Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置攻击事件Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EventId 攻击事件Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +362,13 @@ namespace TencentCloud
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
+
+                    /**
+                     * 攻击事件Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                 };
             }

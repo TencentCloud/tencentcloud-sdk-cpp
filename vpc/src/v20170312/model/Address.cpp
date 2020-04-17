@@ -34,7 +34,8 @@ Address::Address() :
     m_isBlockedHasBeenSet(false),
     m_isEipDirectConnectionHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
-    m_cascadeReleaseHasBeenSet(false)
+    m_cascadeReleaseHasBeenSet(false),
+    m_eipAlgTypeHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,23 @@ CoreInternalOutcome Address::Deserialize(const Value &value)
         m_cascadeReleaseHasBeenSet = true;
     }
 
+    if (value.HasMember("EipAlgType") && !value["EipAlgType"].IsNull())
+    {
+        if (!value["EipAlgType"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Address.EipAlgType` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eipAlgType.Deserialize(value["EipAlgType"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eipAlgTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +300,15 @@ void Address::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "CascadeRelease";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cascadeRelease, allocator);
+    }
+
+    if (m_eipAlgTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EipAlgType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_eipAlgType.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -493,5 +520,21 @@ void Address::SetCascadeRelease(const bool& _cascadeRelease)
 bool Address::CascadeReleaseHasBeenSet() const
 {
     return m_cascadeReleaseHasBeenSet;
+}
+
+AlgType Address::GetEipAlgType() const
+{
+    return m_eipAlgType;
+}
+
+void Address::SetEipAlgType(const AlgType& _eipAlgType)
+{
+    m_eipAlgType = _eipAlgType;
+    m_eipAlgTypeHasBeenSet = true;
+}
+
+bool Address::EipAlgTypeHasBeenSet() const
+{
+    return m_eipAlgTypeHasBeenSet;
 }
 

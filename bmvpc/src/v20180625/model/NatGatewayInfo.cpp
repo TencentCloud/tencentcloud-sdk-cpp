@@ -34,7 +34,10 @@ NatGatewayInfo::NatGatewayInfo() :
     m_forwardModeHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_intVpcIdHasBeenSet(false),
+    m_natResourceIdHasBeenSet(false)
 {
 }
 
@@ -176,6 +179,36 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NatGatewayInfo.State` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = value["State"].GetUint64();
+        m_stateHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntVpcId") && !value["IntVpcId"].IsNull())
+    {
+        if (!value["IntVpcId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NatGatewayInfo.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intVpcId = value["IntVpcId"].GetUint64();
+        m_intVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("NatResourceId") && !value["NatResourceId"].IsNull())
+    {
+        if (!value["NatResourceId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NatGatewayInfo.NatResourceId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_natResourceId = value["NatResourceId"].GetUint64();
+        m_natResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -290,6 +323,30 @@ void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_intVpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IntVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intVpcId, allocator);
+    }
+
+    if (m_natResourceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NatResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_natResourceId, allocator);
     }
 
 }
@@ -501,5 +558,53 @@ void NatGatewayInfo::SetCreateTime(const string& _createTime)
 bool NatGatewayInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t NatGatewayInfo::GetState() const
+{
+    return m_state;
+}
+
+void NatGatewayInfo::SetState(const uint64_t& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool NatGatewayInfo::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
+}
+
+uint64_t NatGatewayInfo::GetIntVpcId() const
+{
+    return m_intVpcId;
+}
+
+void NatGatewayInfo::SetIntVpcId(const uint64_t& _intVpcId)
+{
+    m_intVpcId = _intVpcId;
+    m_intVpcIdHasBeenSet = true;
+}
+
+bool NatGatewayInfo::IntVpcIdHasBeenSet() const
+{
+    return m_intVpcIdHasBeenSet;
+}
+
+uint64_t NatGatewayInfo::GetNatResourceId() const
+{
+    return m_natResourceId;
+}
+
+void NatGatewayInfo::SetNatResourceId(const uint64_t& _natResourceId)
+{
+    m_natResourceId = _natResourceId;
+    m_natResourceIdHasBeenSet = true;
+}
+
+bool NatGatewayInfo::NatResourceIdHasBeenSet() const
+{
+    return m_natResourceIdHasBeenSet;
 }
 

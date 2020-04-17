@@ -151,6 +151,24 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取VPN网关类型。值“CCN”云联网类型VPN网关
+                     * @return Type VPN网关类型。值“CCN”云联网类型VPN网关
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置VPN网关类型。值“CCN”云联网类型VPN网关
+                     * @param Type VPN网关类型。值“CCN”云联网类型VPN网关
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * VPN网关类型。值“CCN”云联网类型VPN网关
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

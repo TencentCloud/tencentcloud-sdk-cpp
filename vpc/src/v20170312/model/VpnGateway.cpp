@@ -38,7 +38,8 @@ VpnGateway::VpnGateway() :
     m_restrictStateHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_vpnGatewayQuotaSetHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_networkInstanceIdHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome VpnGateway::Deserialize(const Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkInstanceId") && !value["NetworkInstanceId"].IsNull())
+    {
+        if (!value["NetworkInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VpnGateway.NetworkInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkInstanceId = string(value["NetworkInstanceId"].GetString());
+        m_networkInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -375,6 +386,14 @@ void VpnGateway::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetworkInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_networkInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -650,5 +669,21 @@ void VpnGateway::SetVersion(const string& _version)
 bool VpnGateway::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+string VpnGateway::GetNetworkInstanceId() const
+{
+    return m_networkInstanceId;
+}
+
+void VpnGateway::SetNetworkInstanceId(const string& _networkInstanceId)
+{
+    m_networkInstanceId = _networkInstanceId;
+    m_networkInstanceIdHasBeenSet = true;
+}
+
+bool VpnGateway::NetworkInstanceIdHasBeenSet() const
+{
+    return m_networkInstanceIdHasBeenSet;
 }
 

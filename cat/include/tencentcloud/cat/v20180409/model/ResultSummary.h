@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LogTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取任务ID
+                     * @return TaskId 任务ID
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param TaskId 任务Id
+                     * 设置任务ID
+                     * @param TaskId 任务ID
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_logTimeHasBeenSet;
 
                     /**
-                     * 任务Id
+                     * 任务ID
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

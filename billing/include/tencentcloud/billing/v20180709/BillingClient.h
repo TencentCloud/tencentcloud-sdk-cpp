@@ -27,6 +27,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillListRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeRequest.h>
@@ -75,6 +77,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBillDetailResponse> DescribeBillDetailOutcome;
                 typedef std::future<DescribeBillDetailOutcome> DescribeBillDetailOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillDetailRequest&, DescribeBillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBillListResponse> DescribeBillListOutcome;
+                typedef std::future<DescribeBillListOutcome> DescribeBillListOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillListRequest&, DescribeBillListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBillResourceSummaryResponse> DescribeBillResourceSummaryOutcome;
                 typedef std::future<DescribeBillResourceSummaryOutcome> DescribeBillResourceSummaryOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillResourceSummaryRequest&, DescribeBillResourceSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillResourceSummaryAsyncHandler;
@@ -137,6 +142,15 @@ namespace TencentCloud
                 DescribeBillDetailOutcome DescribeBillDetail(const Model::DescribeBillDetailRequest &request);
                 void DescribeBillDetailAsync(const Model::DescribeBillDetailRequest& request, const DescribeBillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillDetailOutcomeCallable DescribeBillDetailCallable(const Model::DescribeBillDetailRequest& request);
+
+                /**
+                 *获取收支明细列表，支持翻页和参数过滤
+                 * @param req DescribeBillListRequest
+                 * @return DescribeBillListOutcome
+                 */
+                DescribeBillListOutcome DescribeBillList(const Model::DescribeBillListRequest &request);
+                void DescribeBillListAsync(const Model::DescribeBillListRequest& request, const DescribeBillListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillListOutcomeCallable DescribeBillListCallable(const Model::DescribeBillListRequest& request);
 
                 /**
                  *查询账单资源汇总数据 

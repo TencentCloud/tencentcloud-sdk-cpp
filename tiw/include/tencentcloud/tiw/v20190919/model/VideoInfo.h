@@ -157,13 +157,13 @@ namespace TencentCloud
                     /**
                      * 获取视频流类型 
 - 0：摄像头视频 
-- 1：屏幕分享视频（仅课后录制支持）
+- 1：屏幕分享视频
 - 2：白板视频 
 - 3：混流视频
 - 4：纯音频（mp3)
                      * @return VideoType 视频流类型 
 - 0：摄像头视频 
-- 1：屏幕分享视频（仅课后录制支持）
+- 1：屏幕分享视频
 - 2：白板视频 
 - 3：混流视频
 - 4：纯音频（mp3)
@@ -173,13 +173,13 @@ namespace TencentCloud
                     /**
                      * 设置视频流类型 
 - 0：摄像头视频 
-- 1：屏幕分享视频（仅课后录制支持）
+- 1：屏幕分享视频
 - 2：白板视频 
 - 3：混流视频
 - 4：纯音频（mp3)
                      * @param VideoType 视频流类型 
 - 0：摄像头视频 
-- 1：屏幕分享视频（仅课后录制支持）
+- 1：屏幕分享视频
 - 2：白板视频 
 - 3：混流视频
 - 4：纯音频（mp3)
@@ -193,14 +193,14 @@ namespace TencentCloud
                     bool VideoTypeHasBeenSet() const;
 
                     /**
-                     * 获取摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型）
-                     * @return UserId 摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型）
+                     * 获取摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型、辅路视频tic_substream_用户Id）
+                     * @return UserId 摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型、辅路视频tic_substream_用户Id）
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型）
-                     * @param UserId 摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型）
+                     * 设置摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型、辅路视频tic_substream_用户Id）
+                     * @param UserId 摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型、辅路视频tic_substream_用户Id）
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -251,7 +251,7 @@ namespace TencentCloud
                     /**
                      * 视频流类型 
 - 0：摄像头视频 
-- 1：屏幕分享视频（仅课后录制支持）
+- 1：屏幕分享视频
 - 2：白板视频 
 - 3：混流视频
 - 4：纯音频（mp3)
@@ -260,7 +260,7 @@ namespace TencentCloud
                     bool m_videoTypeHasBeenSet;
 
                     /**
-                     * 摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型）
+                     * 摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型、辅路视频tic_substream_用户Id）
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

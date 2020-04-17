@@ -157,6 +157,24 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
+                     * 获取视频拍摄时的选择角度，单位：度
+                     * @return Rotate 视频拍摄时的选择角度，单位：度
+                     */
+                    int64_t GetRotate() const;
+
+                    /**
+                     * 设置视频拍摄时的选择角度，单位：度
+                     * @param Rotate 视频拍摄时的选择角度，单位：度
+                     */
+                    void SetRotate(const int64_t& _rotate);
+
+                    /**
+                     * 判断参数 Rotate 是否已赋值
+                     * @return Rotate 是否已赋值
+                     */
+                    bool RotateHasBeenSet() const;
+
+                    /**
                      * 获取视频流信息。
                      * @return VideoStreamInfoSet 视频流信息。
                      */
@@ -229,6 +247,12 @@ namespace TencentCloud
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 视频拍摄时的选择角度，单位：度
+                     */
+                    int64_t m_rotate;
+                    bool m_rotateHasBeenSet;
 
                     /**
                      * 视频流信息。

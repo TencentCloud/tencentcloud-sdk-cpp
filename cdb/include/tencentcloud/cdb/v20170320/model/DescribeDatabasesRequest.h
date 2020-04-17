@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取匹配数据库库名的正则表达式，规则同 MySQL 官网
-                     * @return DatabaseRegexp 匹配数据库库名的正则表达式，规则同 MySQL 官网
+                     * 获取匹配数据库库名的正则表达式。
+                     * @return DatabaseRegexp 匹配数据库库名的正则表达式。
                      */
                     std::string GetDatabaseRegexp() const;
 
                     /**
-                     * 设置匹配数据库库名的正则表达式，规则同 MySQL 官网
-                     * @param DatabaseRegexp 匹配数据库库名的正则表达式，规则同 MySQL 官网
+                     * 设置匹配数据库库名的正则表达式。
+                     * @param DatabaseRegexp 匹配数据库库名的正则表达式。
                      */
                     void SetDatabaseRegexp(const std::string& _databaseRegexp);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 匹配数据库库名的正则表达式，规则同 MySQL 官网
+                     * 匹配数据库库名的正则表达式。
                      */
                     std::string m_databaseRegexp;
                     bool m_databaseRegexpHasBeenSet;

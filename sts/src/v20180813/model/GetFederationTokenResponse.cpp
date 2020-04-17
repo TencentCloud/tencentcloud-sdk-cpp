@@ -26,7 +26,8 @@ using namespace std;
 
 GetFederationTokenResponse::GetFederationTokenResponse() :
     m_credentialsHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+    m_expiredTimeHasBeenSet(false),
+    m_expirationHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome GetFederationTokenResponse::Deserialize(const string &payloa
         m_expiredTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Expiration") && !rsp["Expiration"].IsNull())
+    {
+        if (!rsp["Expiration"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Expiration` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiration = string(rsp["Expiration"].GetString());
+        m_expirationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -114,6 +125,16 @@ uint64_t GetFederationTokenResponse::GetExpiredTime() const
 bool GetFederationTokenResponse::ExpiredTimeHasBeenSet() const
 {
     return m_expiredTimeHasBeenSet;
+}
+
+string GetFederationTokenResponse::GetExpiration() const
+{
+    return m_expiration;
+}
+
+bool GetFederationTokenResponse::ExpirationHasBeenSet() const
+{
+    return m_expirationHasBeenSet;
 }
 
 

@@ -137,6 +137,60 @@ namespace TencentCloud
                      */
                     bool OwnerHasBeenSet() const;
 
+                    /**
+                     * 获取项目封面图片地址。
+                     * @return CoverUrl 项目封面图片地址。
+                     */
+                    std::string GetCoverUrl() const;
+
+                    /**
+                     * 设置项目封面图片地址。
+                     * @param CoverUrl 项目封面图片地址。
+                     */
+                    void SetCoverUrl(const std::string& _coverUrl);
+
+                    /**
+                     * 判断参数 CoverUrl 是否已赋值
+                     * @return CoverUrl 是否已赋值
+                     */
+                    bool CoverUrlHasBeenSet() const;
+
+                    /**
+                     * 获取项目创建时间，格式按照 ISO 8601 标准表示。
+                     * @return CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置项目创建时间，格式按照 ISO 8601 标准表示。
+                     * @param CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取项目更新时间，格式按照 ISO 8601 标准表示。
+                     * @return UpdateTime 项目更新时间，格式按照 ISO 8601 标准表示。
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置项目更新时间，格式按照 ISO 8601 标准表示。
+                     * @param UpdateTime 项目更新时间，格式按照 ISO 8601 标准表示。
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +222,24 @@ namespace TencentCloud
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 项目封面图片地址。
+                     */
+                    std::string m_coverUrl;
+                    bool m_coverUrlHasBeenSet;
+
+                    /**
+                     * 项目创建时间，格式按照 ISO 8601 标准表示。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 项目更新时间，格式按照 ISO 8601 标准表示。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

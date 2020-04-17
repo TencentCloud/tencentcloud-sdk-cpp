@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份文件所属的副本集/分片id
-                     * @return ReplicateSetId 备份文件所属的副本集/分片id
+                     * 获取备份文件所属的副本集/分片ID
+                     * @return ReplicateSetId 备份文件所属的副本集/分片ID
                      */
                     std::string GetReplicateSetId() const;
 
                     /**
-                     * 设置备份文件所属的副本集/分片id
-                     * @param ReplicateSetId 备份文件所属的副本集/分片id
+                     * 设置备份文件所属的副本集/分片ID
+                     * @param ReplicateSetId 备份文件所属的副本集/分片ID
                      */
                     void SetReplicateSetId(const std::string& _replicateSetId);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份文件所属的副本集/分片id
+                     * 备份文件所属的副本集/分片ID
                      */
                     std::string m_replicateSetId;
                     bool m_replicateSetIdHasBeenSet;

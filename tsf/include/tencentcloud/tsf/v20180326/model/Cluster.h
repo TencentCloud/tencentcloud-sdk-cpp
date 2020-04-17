@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/OperationInfo.h>
 
 
 namespace TencentCloud
@@ -596,6 +597,50 @@ namespace TencentCloud
                      */
                     bool RunServiceInstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取集群所属子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetId 集群所属子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置集群所属子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubnetId 集群所属子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取返回给前端的控制信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperationInfo 返回给前端的控制信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperationInfo GetOperationInfo() const;
+
+                    /**
+                     * 设置返回给前端的控制信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperationInfo 返回给前端的控制信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperationInfo(const OperationInfo& _operationInfo);
+
+                    /**
+                     * 判断参数 OperationInfo 是否已赋值
+                     * @return OperationInfo 是否已赋值
+                     */
+                    bool OperationInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -772,6 +817,20 @@ namespace TencentCloud
                      */
                     int64_t m_runServiceInstanceCount;
                     bool m_runServiceInstanceCountHasBeenSet;
+
+                    /**
+                     * 集群所属子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 返回给前端的控制信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperationInfo m_operationInfo;
+                    bool m_operationInfoHasBeenSet;
 
                 };
             }

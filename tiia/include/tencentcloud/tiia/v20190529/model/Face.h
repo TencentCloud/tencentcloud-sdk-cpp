@@ -195,6 +195,28 @@ namespace TencentCloud
                      */
                     bool HeightHasBeenSet() const;
 
+                    /**
+                     * 获取公众人物的唯一编号，可以用于区分同名人物、一个人物不同称呼等情况。唯一编号为8个字符构成的字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ID 公众人物的唯一编号，可以用于区分同名人物、一个人物不同称呼等情况。唯一编号为8个字符构成的字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetID() const;
+
+                    /**
+                     * 设置公众人物的唯一编号，可以用于区分同名人物、一个人物不同称呼等情况。唯一编号为8个字符构成的字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ID 公众人物的唯一编号，可以用于区分同名人物、一个人物不同称呼等情况。唯一编号为8个字符构成的字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetID(const std::string& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     */
+                    bool IDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,6 +267,13 @@ namespace TencentCloud
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 公众人物的唯一编号，可以用于区分同名人物、一个人物不同称呼等情况。唯一编号为8个字符构成的字符串。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iD;
+                    bool m_iDHasBeenSet;
 
                 };
             }

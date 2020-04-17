@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h>
 
 
 namespace TencentCloud
@@ -44,34 +44,34 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表所属应用实例ID
-                     * @return ApplicationId 表所属应用实例ID
+                     * 获取表所属集群实例ID
+                     * @return ClusterId 表所属集群实例ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置表所属应用实例ID
-                     * @param ApplicationId 表所属应用实例ID
+                     * 设置表所属集群实例ID
+                     * @param ClusterId 表所属集群实例ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取待清理表信息列表
                      * @return SelectedTables 待清理表信息列表
                      */
-                    std::vector<SelectedTableInfo> GetSelectedTables() const;
+                    std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
                      * 设置待清理表信息列表
                      * @param SelectedTables 待清理表信息列表
                      */
-                    void SetSelectedTables(const std::vector<SelectedTableInfo>& _selectedTables);
+                    void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
@@ -82,15 +82,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 表所属应用实例ID
+                     * 表所属集群实例ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 待清理表信息列表
                      */
-                    std::vector<SelectedTableInfo> m_selectedTables;
+                    std::vector<SelectedTableInfoNew> m_selectedTables;
                     bool m_selectedTablesHasBeenSet;
 
                 };

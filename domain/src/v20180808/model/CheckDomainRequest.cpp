@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 CheckDomainRequest::CheckDomainRequest() :
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string CheckDomainRequest::ToJsonString() const
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_period.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void CheckDomainRequest::SetDomainName(const string& _domainName)
 bool CheckDomainRequest::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+string CheckDomainRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CheckDomainRequest::SetPeriod(const string& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CheckDomainRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

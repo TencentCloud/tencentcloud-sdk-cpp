@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool RequestDataHasBeenSet() const;
 
                     /**
-                     * 获取客户用于计费的资源Id
-                     * @return ResourceId 客户用于计费的资源Id
+                     * 获取客户用于计费的资源ID
+                     * @return ResourceId 客户用于计费的资源ID
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置客户用于计费的资源Id
-                     * @param ResourceId 客户用于计费的资源Id
+                     * 设置客户用于计费的资源ID
+                     * @param ResourceId 客户用于计费的资源ID
                      */
                     void SetResourceId(const std::string& _resourceId);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_requestDataHasBeenSet;
 
                     /**
-                     * 客户用于计费的资源Id
+                     * 客户用于计费的资源ID
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

@@ -31,7 +31,9 @@ StrategyInfo::StrategyInfo() :
     m_attachmentsHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_isAttachedHasBeenSet(false),
-    m_deactivedHasBeenSet(false)
+    m_deactivedHasBeenSet(false),
+    m_deactivedDetailHasBeenSet(false),
+    m_isServiceLinkedPolicyHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,29 @@ CoreInternalOutcome StrategyInfo::Deserialize(const Value &value)
         m_deactivedHasBeenSet = true;
     }
 
+    if (value.HasMember("DeactivedDetail") && !value["DeactivedDetail"].IsNull())
+    {
+        if (!value["DeactivedDetail"].IsArray())
+            return CoreInternalOutcome(Error("response `StrategyInfo.DeactivedDetail` is not array type"));
+
+        const Value &tmpValue = value["DeactivedDetail"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_deactivedDetail.push_back((*itr).GetString());
+        }
+        m_deactivedDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsServiceLinkedPolicy") && !value["IsServiceLinkedPolicy"].IsNull())
+    {
+        if (!value["IsServiceLinkedPolicy"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `StrategyInfo.IsServiceLinkedPolicy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isServiceLinkedPolicy = value["IsServiceLinkedPolicy"].GetUint64();
+        m_isServiceLinkedPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +250,27 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "Deactived";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deactived, allocator);
+    }
+
+    if (m_deactivedDetailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeactivedDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_deactivedDetail.begin(); itr != m_deactivedDetail.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isServiceLinkedPolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsServiceLinkedPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isServiceLinkedPolicy, allocator);
     }
 
 }
@@ -388,5 +434,37 @@ void StrategyInfo::SetDeactived(const uint64_t& _deactived)
 bool StrategyInfo::DeactivedHasBeenSet() const
 {
     return m_deactivedHasBeenSet;
+}
+
+vector<string> StrategyInfo::GetDeactivedDetail() const
+{
+    return m_deactivedDetail;
+}
+
+void StrategyInfo::SetDeactivedDetail(const vector<string>& _deactivedDetail)
+{
+    m_deactivedDetail = _deactivedDetail;
+    m_deactivedDetailHasBeenSet = true;
+}
+
+bool StrategyInfo::DeactivedDetailHasBeenSet() const
+{
+    return m_deactivedDetailHasBeenSet;
+}
+
+uint64_t StrategyInfo::GetIsServiceLinkedPolicy() const
+{
+    return m_isServiceLinkedPolicy;
+}
+
+void StrategyInfo::SetIsServiceLinkedPolicy(const uint64_t& _isServiceLinkedPolicy)
+{
+    m_isServiceLinkedPolicy = _isServiceLinkedPolicy;
+    m_isServiceLinkedPolicyHasBeenSet = true;
+}
+
+bool StrategyInfo::IsServiceLinkedPolicyHasBeenSet() const
+{
+    return m_isServiceLinkedPolicyHasBeenSet;
 }
 

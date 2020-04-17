@@ -27,7 +27,8 @@ using namespace std;
 DescribeCaptchaResultResponse::DescribeCaptchaResultResponse() :
     m_captchaCodeHasBeenSet(false),
     m_captchaMsgHasBeenSet(false),
-    m_evilLevelHasBeenSet(false)
+    m_evilLevelHasBeenSet(false),
+    m_getCaptchaTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome DescribeCaptchaResultResponse::Deserialize(const string &pay
         m_evilLevelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GetCaptchaTime") && !rsp["GetCaptchaTime"].IsNull())
+    {
+        if (!rsp["GetCaptchaTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `GetCaptchaTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_getCaptchaTime = rsp["GetCaptchaTime"].GetInt64();
+        m_getCaptchaTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,16 @@ int64_t DescribeCaptchaResultResponse::GetEvilLevel() const
 bool DescribeCaptchaResultResponse::EvilLevelHasBeenSet() const
 {
     return m_evilLevelHasBeenSet;
+}
+
+int64_t DescribeCaptchaResultResponse::GetGetCaptchaTime() const
+{
+    return m_getCaptchaTime;
+}
+
+bool DescribeCaptchaResultResponse::GetCaptchaTimeHasBeenSet() const
+{
+    return m_getCaptchaTimeHasBeenSet;
 }
 
 

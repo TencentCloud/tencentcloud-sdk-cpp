@@ -26,7 +26,8 @@ ParamDesc::ParamDesc() :
     m_valueHasBeenSet(false),
     m_setValueHasBeenSet(false),
     m_defaultHasBeenSet(false),
-    m_constraintHasBeenSet(false)
+    m_constraintHasBeenSet(false),
+    m_haveSetValueHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,16 @@ CoreInternalOutcome ParamDesc::Deserialize(const Value &value)
         m_constraintHasBeenSet = true;
     }
 
+    if (value.HasMember("HaveSetValue") && !value["HaveSetValue"].IsNull())
+    {
+        if (!value["HaveSetValue"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ParamDesc.HaveSetValue` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_haveSetValue = value["HaveSetValue"].GetBool();
+        m_haveSetValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +149,14 @@ void ParamDesc::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_constraint.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_haveSetValueHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HaveSetValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_haveSetValue, allocator);
     }
 
 }
@@ -221,5 +240,21 @@ void ParamDesc::SetConstraint(const ParamConstraint& _constraint)
 bool ParamDesc::ConstraintHasBeenSet() const
 {
     return m_constraintHasBeenSet;
+}
+
+bool ParamDesc::GetHaveSetValue() const
+{
+    return m_haveSetValue;
+}
+
+void ParamDesc::SetHaveSetValue(const bool& _haveSetValue)
+{
+    m_haveSetValue = _haveSetValue;
+    m_haveSetValueHasBeenSet = true;
+}
+
+bool ParamDesc::HaveSetValueHasBeenSet() const
+{
+    return m_haveSetValueHasBeenSet;
 }
 

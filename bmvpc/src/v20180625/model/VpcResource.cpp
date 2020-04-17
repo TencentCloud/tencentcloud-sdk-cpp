@@ -41,7 +41,11 @@ VpcResource::VpcResource() :
     m_ipsecVpnGwNumHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_isOldHasBeenSet(false)
+    m_isOldHasBeenSet(false),
+    m_ccnServiceNumHasBeenSet(false),
+    m_vpcPeerLimitToAllRegionHasBeenSet(false),
+    m_vpcPeerLimitToSameRegionHasBeenSet(false),
+    m_intVpcIdHasBeenSet(false)
 {
 }
 
@@ -250,6 +254,46 @@ CoreInternalOutcome VpcResource::Deserialize(const Value &value)
         m_isOldHasBeenSet = true;
     }
 
+    if (value.HasMember("CcnServiceNum") && !value["CcnServiceNum"].IsNull())
+    {
+        if (!value["CcnServiceNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VpcResource.CcnServiceNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnServiceNum = value["CcnServiceNum"].GetUint64();
+        m_ccnServiceNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcPeerLimitToAllRegion") && !value["VpcPeerLimitToAllRegion"].IsNull())
+    {
+        if (!value["VpcPeerLimitToAllRegion"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VpcResource.VpcPeerLimitToAllRegion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcPeerLimitToAllRegion = value["VpcPeerLimitToAllRegion"].GetUint64();
+        m_vpcPeerLimitToAllRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcPeerLimitToSameRegion") && !value["VpcPeerLimitToSameRegion"].IsNull())
+    {
+        if (!value["VpcPeerLimitToSameRegion"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VpcResource.VpcPeerLimitToSameRegion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcPeerLimitToSameRegion = value["VpcPeerLimitToSameRegion"].GetUint64();
+        m_vpcPeerLimitToSameRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntVpcId") && !value["IntVpcId"].IsNull())
+    {
+        if (!value["IntVpcId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `VpcResource.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intVpcId = value["IntVpcId"].GetUint64();
+        m_intVpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +459,38 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "IsOld";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOld, allocator);
+    }
+
+    if (m_ccnServiceNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CcnServiceNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ccnServiceNum, allocator);
+    }
+
+    if (m_vpcPeerLimitToAllRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcPeerLimitToAllRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vpcPeerLimitToAllRegion, allocator);
+    }
+
+    if (m_vpcPeerLimitToSameRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcPeerLimitToSameRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vpcPeerLimitToSameRegion, allocator);
+    }
+
+    if (m_intVpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IntVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intVpcId, allocator);
     }
 
 }
@@ -738,5 +814,69 @@ void VpcResource::SetIsOld(const bool& _isOld)
 bool VpcResource::IsOldHasBeenSet() const
 {
     return m_isOldHasBeenSet;
+}
+
+uint64_t VpcResource::GetCcnServiceNum() const
+{
+    return m_ccnServiceNum;
+}
+
+void VpcResource::SetCcnServiceNum(const uint64_t& _ccnServiceNum)
+{
+    m_ccnServiceNum = _ccnServiceNum;
+    m_ccnServiceNumHasBeenSet = true;
+}
+
+bool VpcResource::CcnServiceNumHasBeenSet() const
+{
+    return m_ccnServiceNumHasBeenSet;
+}
+
+uint64_t VpcResource::GetVpcPeerLimitToAllRegion() const
+{
+    return m_vpcPeerLimitToAllRegion;
+}
+
+void VpcResource::SetVpcPeerLimitToAllRegion(const uint64_t& _vpcPeerLimitToAllRegion)
+{
+    m_vpcPeerLimitToAllRegion = _vpcPeerLimitToAllRegion;
+    m_vpcPeerLimitToAllRegionHasBeenSet = true;
+}
+
+bool VpcResource::VpcPeerLimitToAllRegionHasBeenSet() const
+{
+    return m_vpcPeerLimitToAllRegionHasBeenSet;
+}
+
+uint64_t VpcResource::GetVpcPeerLimitToSameRegion() const
+{
+    return m_vpcPeerLimitToSameRegion;
+}
+
+void VpcResource::SetVpcPeerLimitToSameRegion(const uint64_t& _vpcPeerLimitToSameRegion)
+{
+    m_vpcPeerLimitToSameRegion = _vpcPeerLimitToSameRegion;
+    m_vpcPeerLimitToSameRegionHasBeenSet = true;
+}
+
+bool VpcResource::VpcPeerLimitToSameRegionHasBeenSet() const
+{
+    return m_vpcPeerLimitToSameRegionHasBeenSet;
+}
+
+uint64_t VpcResource::GetIntVpcId() const
+{
+    return m_intVpcId;
+}
+
+void VpcResource::SetIntVpcId(const uint64_t& _intVpcId)
+{
+    m_intVpcId = _intVpcId;
+    m_intVpcIdHasBeenSet = true;
+}
+
+bool VpcResource::IntVpcIdHasBeenSet() const
+{
+    return m_intVpcIdHasBeenSet;
 }
 

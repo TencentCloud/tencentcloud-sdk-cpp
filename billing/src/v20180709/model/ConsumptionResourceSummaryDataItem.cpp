@@ -33,7 +33,8 @@ ConsumptionResourceSummaryDataItem::ConsumptionResourceSummaryDataItem() :
     m_payModeHasBeenSet(false),
     m_payModeNameHasBeenSet(false),
     m_businessCodeHasBeenSet(false),
-    m_businessCodeNameHasBeenSet(false)
+    m_businessCodeNameHasBeenSet(false),
+    m_consumptionTypeNameHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const Value 
         m_businessCodeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumptionTypeName") && !value["ConsumptionTypeName"].IsNull())
+    {
+        if (!value["ConsumptionTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryDataItem.ConsumptionTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumptionTypeName = string(value["ConsumptionTypeName"].GetString());
+        m_consumptionTypeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void ConsumptionResourceSummaryDataItem::ToJsonObject(Value &value, Document::Al
         string key = "BusinessCodeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_businessCodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumptionTypeNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConsumptionTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_consumptionTypeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void ConsumptionResourceSummaryDataItem::SetBusinessCodeName(const string& _busi
 bool ConsumptionResourceSummaryDataItem::BusinessCodeNameHasBeenSet() const
 {
     return m_businessCodeNameHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetConsumptionTypeName() const
+{
+    return m_consumptionTypeName;
+}
+
+void ConsumptionResourceSummaryDataItem::SetConsumptionTypeName(const string& _consumptionTypeName)
+{
+    m_consumptionTypeName = _consumptionTypeName;
+    m_consumptionTypeNameHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::ConsumptionTypeNameHasBeenSet() const
+{
+    return m_consumptionTypeNameHasBeenSet;
 }
 

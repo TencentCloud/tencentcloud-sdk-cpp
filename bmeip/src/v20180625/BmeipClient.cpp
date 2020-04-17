@@ -814,6 +814,49 @@ BmeipClient::UnbindRsOutcomeCallable BmeipClient::UnbindRsCallable(const UnbindR
     return task->get_future();
 }
 
+BmeipClient::UnbindRsListOutcome BmeipClient::UnbindRsList(const UnbindRsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindRsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindRsListResponse rsp = UnbindRsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindRsListOutcome(rsp);
+        else
+            return UnbindRsListOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindRsListOutcome(outcome.GetError());
+    }
+}
+
+void BmeipClient::UnbindRsListAsync(const UnbindRsListRequest& request, const UnbindRsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindRsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmeipClient::UnbindRsListOutcomeCallable BmeipClient::UnbindRsListCallable(const UnbindRsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindRsListOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindRsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmeipClient::UnbindVpcIpOutcome BmeipClient::UnbindVpcIp(const UnbindVpcIpRequest &request)
 {
     auto outcome = MakeRequest(request, "UnbindVpcIp");

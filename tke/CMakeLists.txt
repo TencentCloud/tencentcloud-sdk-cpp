@@ -35,17 +35,21 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/RunInstancesForNode.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteResponse.h
   include/tencentcloud/tke/v20180525/model/RouteTableInfo.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroup.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusRequest.h
   include/tencentcloud/tke/v20180525/model/Tag.h
   include/tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h
+  include/tencentcloud/tke/v20180525/model/DescribeImagesResponse.h
   include/tencentcloud/tke/v20180525/model/AutoScalingGroupRange.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterAttributeRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointVipResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClustersRequest.h
+  include/tencentcloud/tke/v20180525/model/RegionInstance.h
   include/tencentcloud/tke/v20180525/model/Label.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterBasicSettings.h
@@ -58,7 +62,8 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointVipRequest.h
   include/tencentcloud/tke/v20180525/model/ExistedInstance.h
   include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h
-  include/tencentcloud/tke/v20180525/model/InstanceExtraArgs.h
+  include/tencentcloud/tke/v20180525/model/TagSpecification.h
+  include/tencentcloud/tke/v20180525/model/DescribeRegionsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClustersResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterExtraArgs.h
   include/tencentcloud/tke/v20180525/model/DataDisk.h
@@ -71,11 +76,12 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/RunSecurityServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteTableRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRequest.h
-  include/tencentcloud/tke/v20180525/model/TagSpecification.h
+  include/tencentcloud/tke/v20180525/model/InstanceExtraArgs.h
   include/tencentcloud/tke/v20180525/model/CreateClusterAsGroupResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/Filter.h
+  include/tencentcloud/tke/v20180525/model/ImageInstance.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAdvancedSettings.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipRequest.h
@@ -84,6 +90,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointRequest.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupOption.h
@@ -95,6 +102,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeImagesRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h
   include/tencentcloud/tke/v20180525/model/ExistedInstancesPara.h
@@ -125,17 +133,21 @@ set(tke_src
   src/v20180525/model/RunInstancesForNode.cpp
   src/v20180525/model/DeleteClusterAsGroupsRequest.cpp
   src/v20180525/model/DescribeExistedInstancesRequest.cpp
+  src/v20180525/model/DescribeRegionsResponse.cpp
   src/v20180525/model/CreateClusterRouteResponse.cpp
   src/v20180525/model/RouteTableInfo.cpp
   src/v20180525/model/ClusterAsGroup.cpp
   src/v20180525/model/DescribeClusterEndpointStatusRequest.cpp
   src/v20180525/model/Tag.cpp
   src/v20180525/model/ClusterNetworkSettings.cpp
+  src/v20180525/model/DescribeImagesResponse.cpp
   src/v20180525/model/AutoScalingGroupRange.cpp
+  src/v20180525/model/ModifyClusterAttributeRequest.cpp
   src/v20180525/model/DeleteClusterRouteResponse.cpp
   src/v20180525/model/CreateClusterEndpointVipResponse.cpp
   src/v20180525/model/DescribeClusterRoutesResponse.cpp
   src/v20180525/model/DescribeClustersRequest.cpp
+  src/v20180525/model/RegionInstance.cpp
   src/v20180525/model/Label.cpp
   src/v20180525/model/DeleteClusterEndpointVipResponse.cpp
   src/v20180525/model/ClusterBasicSettings.cpp
@@ -148,7 +160,8 @@ set(tke_src
   src/v20180525/model/CreateClusterEndpointVipRequest.cpp
   src/v20180525/model/ExistedInstance.cpp
   src/v20180525/model/DescribeRouteTableConflictsResponse.cpp
-  src/v20180525/model/InstanceExtraArgs.cpp
+  src/v20180525/model/TagSpecification.cpp
+  src/v20180525/model/DescribeRegionsRequest.cpp
   src/v20180525/model/DescribeClustersResponse.cpp
   src/v20180525/model/ClusterExtraArgs.cpp
   src/v20180525/model/DataDisk.cpp
@@ -161,11 +174,12 @@ set(tke_src
   src/v20180525/model/RunSecurityServiceEnabled.cpp
   src/v20180525/model/DeleteClusterRouteTableRequest.cpp
   src/v20180525/model/CreateClusterRequest.cpp
-  src/v20180525/model/TagSpecification.cpp
+  src/v20180525/model/InstanceExtraArgs.cpp
   src/v20180525/model/CreateClusterAsGroupResponse.cpp
   src/v20180525/model/DeleteClusterAsGroupsResponse.cpp
   src/v20180525/model/DescribeClusterInstancesRequest.cpp
   src/v20180525/model/Filter.cpp
+  src/v20180525/model/ImageInstance.cpp
   src/v20180525/model/CreateClusterEndpointResponse.cpp
   src/v20180525/model/ClusterAdvancedSettings.cpp
   src/v20180525/model/DeleteClusterEndpointVipRequest.cpp
@@ -174,6 +188,7 @@ set(tke_src
   src/v20180525/model/AddExistedInstancesResponse.cpp
   src/v20180525/model/DeleteClusterRouteTableResponse.cpp
   src/v20180525/model/DescribeClusterAsGroupOptionRequest.cpp
+  src/v20180525/model/ModifyClusterAttributeResponse.cpp
   src/v20180525/model/CreateClusterEndpointRequest.cpp
   src/v20180525/model/AddExistedInstancesRequest.cpp
   src/v20180525/model/ClusterAsGroupOption.cpp
@@ -185,6 +200,7 @@ set(tke_src
   src/v20180525/model/DeleteClusterEndpointRequest.cpp
   src/v20180525/model/CreateClusterRouteTableRequest.cpp
   src/v20180525/model/DescribeClusterAsGroupsRequest.cpp
+  src/v20180525/model/DescribeImagesRequest.cpp
   src/v20180525/model/ModifyClusterEndpointSPResponse.cpp
   src/v20180525/model/DescribeRouteTableConflictsRequest.cpp
   src/v20180525/model/ExistedInstancesPara.cpp

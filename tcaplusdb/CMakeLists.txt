@@ -20,139 +20,143 @@ set(tcaplusdb_public_header
 
 set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyZoneNameRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTasksRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/IdlFileInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/ClearTablesRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTasksRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DescribeClustersRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableQuotasResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyAppNameRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesInRecycleRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DescribeAppsRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DeleteZoneRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/TableResult.h
+  include/tencentcloud/tcaplusdb/v20190823/model/CreateBackupRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteClusterResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/VerifyIdlFilesRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/ClearTablesResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ParsedTableInfo.h
+  include/tencentcloud/tcaplusdb/v20190823/model/TableResultNew.h
+  include/tencentcloud/tcaplusdb/v20190823/model/CreateClusterResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ErrorInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/CreateTablesRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ClusterInfo.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ParsedTableInfoNew.h
   include/tencentcloud/tcaplusdb/v20190823/model/RegionInfo.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DescribeZonesRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DeleteAppRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/TableInfoNew.h
+  include/tencentcloud/tcaplusdb/v20190823/model/TaskInfoNew.h
+  include/tencentcloud/tcaplusdb/v20190823/model/RollbackTablesResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesInRecycleResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyAppPasswordResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupsResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyTablesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfo.h
-  include/tencentcloud/tcaplusdb/v20190823/model/VerifyIdlFilesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/TableRollbackResult.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableQuotasResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/AppInfo.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/RollbackTablesRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/CreateBackupResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/TableRollbackResultNew.h
+  include/tencentcloud/tcaplusdb/v20190823/model/VerifyIdlFilesResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteClusterRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeTasksResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DeleteTablesRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/Filter.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ZoneInfo.h
+  include/tencentcloud/tcaplusdb/v20190823/model/CreateTableGroupResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/CreateZoneResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyZoneNameResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupsRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/CompareIdlFilesRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/VerifyIdlFilesRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DescribeAppsResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DeleteZoneResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h
   include/tencentcloud/tcaplusdb/v20190823/model/IdlFileInfoWithoutContent.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/TableInfo.h
-  include/tencentcloud/tcaplusdb/v20190823/model/RollbackTablesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ErrorInfo.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/CreateClusterRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/Filter.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteTablesResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableQuotasRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/CompareIdlFilesResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyTablesRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/CreateAppRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/CreateTablesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyAppPasswordRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/CreateAppResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesInRecycleRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeTablesRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DescribeZonesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/CreateZoneRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/ModifyAppNameResponse.h
+  include/tencentcloud/tcaplusdb/v20190823/model/DescribeClustersResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DeleteTablesResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/DeleteAppResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/TaskInfo.h
+  include/tencentcloud/tcaplusdb/v20190823/model/CreateTableGroupRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/TableGroupInfo.h
   )
 
 set(tcaplusdb_src
   src/v20190823/TcaplusdbClient.cpp
   src/v20190823/model/DescribeUinInWhitelistResponse.cpp
-  src/v20190823/model/ModifyZoneNameRequest.cpp
+  src/v20190823/model/DescribeTasksRequest.cpp
   src/v20190823/model/IdlFileInfo.cpp
   src/v20190823/model/ClearTablesRequest.cpp
-  src/v20190823/model/DescribeTasksRequest.cpp
+  src/v20190823/model/DescribeClustersRequest.cpp
+  src/v20190823/model/ModifyTableQuotasResponse.cpp
   src/v20190823/model/DescribeIdlFileInfosResponse.cpp
-  src/v20190823/model/ModifyAppNameRequest.cpp
-  src/v20190823/model/DescribeTablesInRecycleRequest.cpp
-  src/v20190823/model/DescribeAppsRequest.cpp
-  src/v20190823/model/DeleteZoneRequest.cpp
-  src/v20190823/model/TableResult.cpp
+  src/v20190823/model/CreateBackupRequest.cpp
+  src/v20190823/model/ModifyTableGroupNameResponse.cpp
+  src/v20190823/model/RecoverRecycleTablesResponse.cpp
+  src/v20190823/model/ModifyClusterPasswordResponse.cpp
+  src/v20190823/model/DeleteClusterResponse.cpp
+  src/v20190823/model/VerifyIdlFilesRequest.cpp
+  src/v20190823/model/ModifyClusterNameRequest.cpp
   src/v20190823/model/ClearTablesResponse.cpp
   src/v20190823/model/DescribeIdlFileInfosRequest.cpp
-  src/v20190823/model/ParsedTableInfo.cpp
+  src/v20190823/model/TableResultNew.cpp
+  src/v20190823/model/CreateClusterResponse.cpp
+  src/v20190823/model/ErrorInfo.cpp
   src/v20190823/model/CreateTablesRequest.cpp
-  src/v20190823/model/ModifyTableMemosRequest.cpp
-  src/v20190823/model/RecoverRecycleTablesResponse.cpp
+  src/v20190823/model/ClusterInfo.cpp
+  src/v20190823/model/ParsedTableInfoNew.cpp
   src/v20190823/model/RegionInfo.cpp
-  src/v20190823/model/DescribeZonesRequest.cpp
-  src/v20190823/model/DeleteAppRequest.cpp
+  src/v20190823/model/TableInfoNew.cpp
+  src/v20190823/model/TaskInfoNew.cpp
+  src/v20190823/model/RollbackTablesResponse.cpp
   src/v20190823/model/DescribeTablesInRecycleResponse.cpp
-  src/v20190823/model/DescribeTablesResponse.cpp
-  src/v20190823/model/ModifyAppPasswordResponse.cpp
-  src/v20190823/model/DeleteIdlFilesRequest.cpp
+  src/v20190823/model/DescribeTableGroupsResponse.cpp
   src/v20190823/model/ModifyTablesResponse.cpp
-  src/v20190823/model/SelectedTableInfo.cpp
-  src/v20190823/model/VerifyIdlFilesResponse.cpp
-  src/v20190823/model/TableRollbackResult.cpp
-  src/v20190823/model/ModifyTableQuotasResponse.cpp
-  src/v20190823/model/AppInfo.cpp
+  src/v20190823/model/ModifyTableMemosResponse.cpp
   src/v20190823/model/RollbackTablesRequest.cpp
+  src/v20190823/model/DeleteIdlFilesRequest.cpp
+  src/v20190823/model/DeleteTableGroupResponse.cpp
+  src/v20190823/model/CreateBackupResponse.cpp
+  src/v20190823/model/TableRollbackResultNew.cpp
+  src/v20190823/model/VerifyIdlFilesResponse.cpp
+  src/v20190823/model/DeleteClusterRequest.cpp
+  src/v20190823/model/DescribeTablesResponse.cpp
+  src/v20190823/model/ModifyClusterNameResponse.cpp
   src/v20190823/model/RecoverRecycleTablesRequest.cpp
   src/v20190823/model/DescribeTasksResponse.cpp
   src/v20190823/model/DeleteTablesRequest.cpp
   src/v20190823/model/DescribeUinInWhitelistRequest.cpp
-  src/v20190823/model/Filter.cpp
-  src/v20190823/model/ZoneInfo.cpp
+  src/v20190823/model/CreateTableGroupResponse.cpp
+  src/v20190823/model/ModifyTableGroupNameRequest.cpp
   src/v20190823/model/DescribeRegionsResponse.cpp
-  src/v20190823/model/CreateZoneResponse.cpp
-  src/v20190823/model/ModifyZoneNameResponse.cpp
+  src/v20190823/model/DescribeTableGroupsRequest.cpp
   src/v20190823/model/CompareIdlFilesRequest.cpp
-  src/v20190823/model/VerifyIdlFilesRequest.cpp
-  src/v20190823/model/DescribeAppsResponse.cpp
-  src/v20190823/model/DeleteZoneResponse.cpp
+  src/v20190823/model/SelectedTableInfoNew.cpp
   src/v20190823/model/IdlFileInfoWithoutContent.cpp
-  src/v20190823/model/ModifyTableMemosResponse.cpp
-  src/v20190823/model/TableInfo.cpp
-  src/v20190823/model/RollbackTablesResponse.cpp
-  src/v20190823/model/ErrorInfo.cpp
+  src/v20190823/model/ModifyClusterPasswordRequest.cpp
+  src/v20190823/model/CreateClusterRequest.cpp
+  src/v20190823/model/Filter.cpp
+  src/v20190823/model/DeleteTablesResponse.cpp
   src/v20190823/model/ModifyTableQuotasRequest.cpp
   src/v20190823/model/CompareIdlFilesResponse.cpp
   src/v20190823/model/ModifyTablesRequest.cpp
-  src/v20190823/model/CreateAppRequest.cpp
+  src/v20190823/model/DeleteTableGroupRequest.cpp
   src/v20190823/model/CreateTablesResponse.cpp
-  src/v20190823/model/ModifyAppPasswordRequest.cpp
-  src/v20190823/model/CreateAppResponse.cpp
+  src/v20190823/model/DescribeTablesInRecycleRequest.cpp
   src/v20190823/model/DescribeTablesRequest.cpp
   src/v20190823/model/DescribeRegionsRequest.cpp
-  src/v20190823/model/DescribeZonesResponse.cpp
-  src/v20190823/model/CreateZoneRequest.cpp
-  src/v20190823/model/ModifyAppNameResponse.cpp
+  src/v20190823/model/DescribeClustersResponse.cpp
   src/v20190823/model/DeleteIdlFilesResponse.cpp
-  src/v20190823/model/DeleteTablesResponse.cpp
-  src/v20190823/model/DeleteAppResponse.cpp
-  src/v20190823/model/TaskInfo.cpp
+  src/v20190823/model/CreateTableGroupRequest.cpp
+  src/v20190823/model/ModifyTableMemosRequest.cpp
+  src/v20190823/model/TableGroupInfo.cpp
   )
 
 set(tcaplusdb_include

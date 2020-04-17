@@ -35,7 +35,8 @@ VmGroupSimple::VmGroupSimple() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_microserviceTypeHasBeenSet(false)
+    m_microserviceTypeHasBeenSet(false),
+    m_groupResourceTypeHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const Value &value)
         m_microserviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupResourceType") && !value["GroupResourceType"].IsNull())
+    {
+        if (!value["GroupResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroupSimple.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupResourceType = string(value["GroupResourceType"].GetString());
+        m_groupResourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void VmGroupSimple::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "MicroserviceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_groupResourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +547,21 @@ void VmGroupSimple::SetMicroserviceType(const string& _microserviceType)
 bool VmGroupSimple::MicroserviceTypeHasBeenSet() const
 {
     return m_microserviceTypeHasBeenSet;
+}
+
+string VmGroupSimple::GetGroupResourceType() const
+{
+    return m_groupResourceType;
+}
+
+void VmGroupSimple::SetGroupResourceType(const string& _groupResourceType)
+{
+    m_groupResourceType = _groupResourceType;
+    m_groupResourceTypeHasBeenSet = true;
+}
+
+bool VmGroupSimple::GroupResourceTypeHasBeenSet() const
+{
+    return m_groupResourceTypeHasBeenSet;
 }
 

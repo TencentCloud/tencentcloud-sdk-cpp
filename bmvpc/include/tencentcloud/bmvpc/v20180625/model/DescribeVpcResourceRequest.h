@@ -66,12 +66,12 @@ namespace TencentCloud
 vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
-state - String - （过滤条件）VPC状态。
+state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
                      * @return Filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
 vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
-state - String - （过滤条件）VPC状态。
+state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -80,12 +80,12 @@ state - String - （过滤条件）VPC状态。
 vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
-state - String - （过滤条件）VPC状态。
+state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
                      * @param Filters 过滤条件，参数不支持同时指定SubnetIds和Filters。
 vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
-state - String - （过滤条件）VPC状态。
+state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -131,6 +131,42 @@ state - String - （过滤条件）VPC状态。
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段
+                     * @return OrderField 排序字段
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param OrderField 排序字段
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方向, “asc”、“desc”
+                     * @return OrderDirection 排序方向, “asc”、“desc”
+                     */
+                    std::string GetOrderDirection() const;
+
+                    /**
+                     * 设置排序方向, “asc”、“desc”
+                     * @param OrderDirection 排序方向, “asc”、“desc”
+                     */
+                    void SetOrderDirection(const std::string& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,7 +180,7 @@ state - String - （过滤条件）VPC状态。
 vpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。
 vpc-name - String - （过滤条件）私有网络名称。
 zone - String - （过滤条件）可用区。
-state - String - （过滤条件）VPC状态。
+state - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -160,6 +196,18 @@ state - String - （过滤条件）VPC状态。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 排序方向, “asc”、“desc”
+                     */
+                    std::string m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
 
                 };
             }

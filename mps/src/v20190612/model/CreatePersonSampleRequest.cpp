@@ -25,9 +25,9 @@ using namespace std;
 
 CreatePersonSampleRequest::CreatePersonSampleRequest() :
     m_nameHasBeenSet(false),
-    m_faceContentsHasBeenSet(false),
     m_usagesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_faceContentsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -45,19 +45,6 @@ string CreatePersonSampleRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_faceContentsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "FaceContents";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_faceContents.begin(); itr != m_faceContents.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_usagesHasBeenSet)
@@ -79,6 +66,19 @@ string CreatePersonSampleRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_faceContentsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FaceContents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_faceContents.begin(); itr != m_faceContents.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_tagsHasBeenSet)
@@ -118,22 +118,6 @@ bool CreatePersonSampleRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-vector<string> CreatePersonSampleRequest::GetFaceContents() const
-{
-    return m_faceContents;
-}
-
-void CreatePersonSampleRequest::SetFaceContents(const vector<string>& _faceContents)
-{
-    m_faceContents = _faceContents;
-    m_faceContentsHasBeenSet = true;
-}
-
-bool CreatePersonSampleRequest::FaceContentsHasBeenSet() const
-{
-    return m_faceContentsHasBeenSet;
-}
-
 vector<string> CreatePersonSampleRequest::GetUsages() const
 {
     return m_usages;
@@ -164,6 +148,22 @@ void CreatePersonSampleRequest::SetDescription(const string& _description)
 bool CreatePersonSampleRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<string> CreatePersonSampleRequest::GetFaceContents() const
+{
+    return m_faceContents;
+}
+
+void CreatePersonSampleRequest::SetFaceContents(const vector<string>& _faceContents)
+{
+    m_faceContents = _faceContents;
+    m_faceContentsHasBeenSet = true;
+}
+
+bool CreatePersonSampleRequest::FaceContentsHasBeenSet() const
+{
+    return m_faceContentsHasBeenSet;
 }
 
 vector<string> CreatePersonSampleRequest::GetTags() const

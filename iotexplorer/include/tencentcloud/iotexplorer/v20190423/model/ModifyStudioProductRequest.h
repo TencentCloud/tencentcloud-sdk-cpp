@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ModuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开二进制转Json功能, 取值为字符串 true/false
+                     * @return EnableProductScript 是否打开二进制转Json功能, 取值为字符串 true/false
+                     */
+                    std::string GetEnableProductScript() const;
+
+                    /**
+                     * 设置是否打开二进制转Json功能, 取值为字符串 true/false
+                     * @param EnableProductScript 是否打开二进制转Json功能, 取值为字符串 true/false
+                     */
+                    void SetEnableProductScript(const std::string& _enableProductScript);
+
+                    /**
+                     * 判断参数 EnableProductScript 是否已赋值
+                     * @return EnableProductScript 是否已赋值
+                     */
+                    bool EnableProductScriptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_moduleId;
                     bool m_moduleIdHasBeenSet;
+
+                    /**
+                     * 是否打开二进制转Json功能, 取值为字符串 true/false
+                     */
+                    std::string m_enableProductScript;
+                    bool m_enableProductScriptHasBeenSet;
 
                 };
             }

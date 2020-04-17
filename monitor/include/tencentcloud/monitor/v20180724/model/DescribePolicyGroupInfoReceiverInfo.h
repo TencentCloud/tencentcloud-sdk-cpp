@@ -284,6 +284,28 @@ namespace TencentCloud
                      */
                     bool RecoverNotifyHasBeenSet() const;
 
+                    /**
+                     * 获取告警发送语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReceiveLanguage 告警发送语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReceiveLanguage() const;
+
+                    /**
+                     * 设置告警发送语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReceiveLanguage 告警发送语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReceiveLanguage(const std::string& _receiveLanguage);
+
+                    /**
+                     * 判断参数 ReceiveLanguage 是否已赋值
+                     * @return ReceiveLanguage 是否已赋值
+                     */
+                    bool ReceiveLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +386,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_recoverNotify;
                     bool m_recoverNotifyHasBeenSet;
+
+                    /**
+                     * 告警发送语言
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_receiveLanguage;
+                    bool m_receiveLanguageHasBeenSet;
 
                 };
             }

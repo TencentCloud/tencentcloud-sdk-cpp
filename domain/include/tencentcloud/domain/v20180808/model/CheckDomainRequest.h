@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool DomainNameHasBeenSet() const;
 
+                    /**
+                     * 获取年限
+                     * @return Period 年限
+                     */
+                    std::string GetPeriod() const;
+
+                    /**
+                     * 设置年限
+                     * @param Period 年限
+                     */
+                    void SetPeriod(const std::string& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 年限
+                     */
+                    std::string m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeEipsResponse::DescribeEipsResponse() :
-    m_eipSetHasBeenSet(false)
+    m_eipSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeEipsResponse::Deserialize(const string &payload)
         m_eipSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<EipInfo> DescribeEipsResponse::GetEipSet() const
 bool DescribeEipsResponse::EipSetHasBeenSet() const
 {
     return m_eipSetHasBeenSet;
+}
+
+uint64_t DescribeEipsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeEipsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

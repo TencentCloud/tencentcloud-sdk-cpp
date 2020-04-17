@@ -137,14 +137,14 @@ NORMAL_CVM：普通云服务器；
                     bool NextHopDestinationHasBeenSet() const;
 
                     /**
-                     * 获取网络探测实例ID。形如：netd-12345678。
-                     * @return NetDetectId 网络探测实例ID。形如：netd-12345678。
+                     * 获取网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @return NetDetectId 网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string GetNetDetectId() const;
 
                     /**
-                     * 设置网络探测实例ID。形如：netd-12345678。
-                     * @param NetDetectId 网络探测实例ID。形如：netd-12345678。
+                     * 设置网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @param NetDetectId 网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     void SetNetDetectId(const std::string& _netDetectId);
 
@@ -155,14 +155,14 @@ NORMAL_CVM：普通云服务器；
                     bool NetDetectIdHasBeenSet() const;
 
                     /**
-                     * 获取`VPC`实例`ID`。形如：`vpc-12345678`
-                     * @return VpcId `VPC`实例`ID`。形如：`vpc-12345678`
+                     * 获取`VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @return VpcId `VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`。形如：`vpc-12345678`
-                     * @param VpcId `VPC`实例`ID`。形如：`vpc-12345678`
+                     * 设置`VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @param VpcId `VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -173,14 +173,14 @@ NORMAL_CVM：普通云服务器；
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网实例ID。形如：subnet-12345678。
-                     * @return SubnetId 子网实例ID。形如：subnet-12345678。
+                     * 获取子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @return SubnetId 子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网实例ID。形如：subnet-12345678。
-                     * @param SubnetId 子网实例ID。形如：subnet-12345678。
+                     * 设置子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @param SubnetId 子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -191,14 +191,14 @@ NORMAL_CVM：普通云服务器；
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取网络探测名称，最大长度不能超过60个字节。
-                     * @return NetDetectName 网络探测名称，最大长度不能超过60个字节。
+                     * 获取网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @return NetDetectName 网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string GetNetDetectName() const;
 
                     /**
-                     * 设置网络探测名称，最大长度不能超过60个字节。
-                     * @param NetDetectName 网络探测名称，最大长度不能超过60个字节。
+                     * 设置网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
+                     * @param NetDetectName 网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     void SetNetDetectName(const std::string& _netDetectName);
 
@@ -239,25 +239,25 @@ NORMAL_CVM：普通云服务器；
                     bool m_nextHopDestinationHasBeenSet;
 
                     /**
-                     * 网络探测实例ID。形如：netd-12345678。
+                     * 网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string m_netDetectId;
                     bool m_netDetectIdHasBeenSet;
 
                     /**
-                     * `VPC`实例`ID`。形如：`vpc-12345678`
+                     * `VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网实例ID。形如：subnet-12345678。
+                     * 子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 网络探测名称，最大长度不能超过60个字节。
+                     * 网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。
                      */
                     std::string m_netDetectName;
                     bool m_netDetectNameHasBeenSet;

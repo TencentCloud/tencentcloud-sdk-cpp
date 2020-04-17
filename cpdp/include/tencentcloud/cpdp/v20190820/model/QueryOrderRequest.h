@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户Id，长度不小于5位， 仅支持字母和数字的组合
-                     * @return UserId 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 获取用户ID，长度不小于5位， 仅支持字母和数字的组合
+                     * @return UserId 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，长度不小于5位， 仅支持字母和数字的组合
-                     * @param UserId 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 设置用户ID，长度不小于5位， 仅支持字母和数字的组合
+                     * @param UserId 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -253,7 +253,7 @@ type=by_user根据用户id 查订单 。
                     bool m_midasAppIdHasBeenSet;
 
                     /**
-                     * 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

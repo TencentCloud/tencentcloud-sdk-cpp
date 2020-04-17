@@ -36,7 +36,10 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
     m_publishHasBeenSet(false),
-    m_l5EnableHasBeenSet(false)
+    m_l5EnableHasBeenSet(false),
+    m_layersHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_onsEnableHasBeenSet(false)
 {
 }
 
@@ -151,6 +154,38 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         string key = "L5Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_l5Enable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_layersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Layers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_layers.begin(); itr != m_layers.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deadLetterConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeadLetterConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_deadLetterConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_onsEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OnsEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_onsEnable.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -367,6 +402,54 @@ void UpdateFunctionConfigurationRequest::SetL5Enable(const string& _l5Enable)
 bool UpdateFunctionConfigurationRequest::L5EnableHasBeenSet() const
 {
     return m_l5EnableHasBeenSet;
+}
+
+vector<LayerVersionSimple> UpdateFunctionConfigurationRequest::GetLayers() const
+{
+    return m_layers;
+}
+
+void UpdateFunctionConfigurationRequest::SetLayers(const vector<LayerVersionSimple>& _layers)
+{
+    m_layers = _layers;
+    m_layersHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::LayersHasBeenSet() const
+{
+    return m_layersHasBeenSet;
+}
+
+DeadLetterConfig UpdateFunctionConfigurationRequest::GetDeadLetterConfig() const
+{
+    return m_deadLetterConfig;
+}
+
+void UpdateFunctionConfigurationRequest::SetDeadLetterConfig(const DeadLetterConfig& _deadLetterConfig)
+{
+    m_deadLetterConfig = _deadLetterConfig;
+    m_deadLetterConfigHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::DeadLetterConfigHasBeenSet() const
+{
+    return m_deadLetterConfigHasBeenSet;
+}
+
+string UpdateFunctionConfigurationRequest::GetOnsEnable() const
+{
+    return m_onsEnable;
+}
+
+void UpdateFunctionConfigurationRequest::SetOnsEnable(const string& _onsEnable)
+{
+    m_onsEnable = _onsEnable;
+    m_onsEnableHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::OnsEnableHasBeenSet() const
+{
+    return m_onsEnableHasBeenSet;
 }
 
 

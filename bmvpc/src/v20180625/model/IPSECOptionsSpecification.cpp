@@ -27,7 +27,8 @@ IPSECOptionsSpecification::IPSECOptionsSpecification() :
     m_encryptAlgorithmHasBeenSet(false),
     m_integrityAlgorithHasBeenSet(false),
     m_iPSECSaLifetimeSecondsHasBeenSet(false),
-    m_securityProtoHasBeenSet(false)
+    m_securityProtoHasBeenSet(false),
+    m_encapModeHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const Value &value)
         m_securityProtoHasBeenSet = true;
     }
 
+    if (value.HasMember("EncapMode") && !value["EncapMode"].IsNull())
+    {
+        if (!value["EncapMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IPSECOptionsSpecification.EncapMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encapMode = string(value["EncapMode"].GetString());
+        m_encapModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void IPSECOptionsSpecification::ToJsonObject(Value &value, Document::AllocatorTy
         string key = "SecurityProto";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_securityProto.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encapModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncapMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_encapMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void IPSECOptionsSpecification::SetSecurityProto(const string& _securityProto)
 bool IPSECOptionsSpecification::SecurityProtoHasBeenSet() const
 {
     return m_securityProtoHasBeenSet;
+}
+
+string IPSECOptionsSpecification::GetEncapMode() const
+{
+    return m_encapMode;
+}
+
+void IPSECOptionsSpecification::SetEncapMode(const string& _encapMode)
+{
+    m_encapMode = _encapMode;
+    m_encapModeHasBeenSet = true;
+}
+
+bool IPSECOptionsSpecification::EncapModeHasBeenSet() const
+{
+    return m_encapModeHasBeenSet;
 }
 

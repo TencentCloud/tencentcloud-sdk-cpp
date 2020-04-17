@@ -268,13 +268,13 @@ namespace TencentCloud
                      * 获取实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
                      * @return Healthy 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
                      */
-                    std::string GetHealthy() const;
+                    int64_t GetHealthy() const;
 
                     /**
                      * 设置实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
                      * @param Healthy 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
                      */
-                    void SetHealthy(const std::string& _healthy);
+                    void SetHealthy(const int64_t& _healthy);
 
                     /**
                      * 判断参数 Healthy 是否已赋值
@@ -390,6 +390,72 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Version kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneIds 跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 设置跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneIds 跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneIds(const std::vector<int64_t>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
+                    /**
+                     * 获取ckafka售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Cvm ckafka售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCvm() const;
+
+                    /**
+                     * 设置ckafka售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Cvm ckafka售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCvm(const int64_t& _cvm);
+
+                    /**
+                     * 判断参数 Cvm 是否已赋值
+                     * @return Cvm 是否已赋值
+                     */
+                    bool CvmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,7 +533,7 @@ namespace TencentCloud
                     /**
                      * 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
                      */
-                    std::string m_healthy;
+                    int64_t m_healthy;
                     bool m_healthyHasBeenSet;
 
                     /**
@@ -505,6 +571,27 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
+
+                    /**
+                     * ckafka售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cvm;
+                    bool m_cvmHasBeenSet;
 
                 };
             }

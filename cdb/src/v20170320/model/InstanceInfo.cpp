@@ -61,7 +61,8 @@ InstanceInfo::InstanceInfo() :
     m_qpsHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
     m_deviceClassHasBeenSet(false),
-    m_deployGroupIdHasBeenSet(false)
+    m_deployGroupIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -511,6 +512,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const Value &value)
         m_deployGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -853,6 +864,14 @@ void InstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "DeployGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
     }
 
 }
@@ -1496,5 +1515,21 @@ void InstanceInfo::SetDeployGroupId(const string& _deployGroupId)
 bool InstanceInfo::DeployGroupIdHasBeenSet() const
 {
     return m_deployGroupIdHasBeenSet;
+}
+
+int64_t InstanceInfo::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void InstanceInfo::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool InstanceInfo::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 

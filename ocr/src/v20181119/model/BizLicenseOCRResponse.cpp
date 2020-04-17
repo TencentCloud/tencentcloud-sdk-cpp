@@ -33,7 +33,8 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_businessHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_composingFormHasBeenSet(false)
+    m_composingFormHasBeenSet(false),
+    m_setDateHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_composingFormHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SetDate") && !rsp["SetDate"].IsNull())
+    {
+        if (!rsp["SetDate"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SetDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setDate = string(rsp["SetDate"].GetString());
+        m_setDateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -254,6 +265,16 @@ string BizLicenseOCRResponse::GetComposingForm() const
 bool BizLicenseOCRResponse::ComposingFormHasBeenSet() const
 {
     return m_composingFormHasBeenSet;
+}
+
+string BizLicenseOCRResponse::GetSetDate() const
+{
+    return m_setDate;
+}
+
+bool BizLicenseOCRResponse::SetDateHasBeenSet() const
+{
+    return m_setDateHasBeenSet;
 }
 
 

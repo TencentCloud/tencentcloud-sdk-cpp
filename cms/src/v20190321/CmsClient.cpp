@@ -40,49 +40,6 @@ CmsClient::CmsClient(const Credential &credential, const string &region, const C
 }
 
 
-CmsClient::AudioModerationOutcome CmsClient::AudioModeration(const AudioModerationRequest &request)
-{
-    auto outcome = MakeRequest(request, "AudioModeration");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AudioModerationResponse rsp = AudioModerationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AudioModerationOutcome(rsp);
-        else
-            return AudioModerationOutcome(o.GetError());
-    }
-    else
-    {
-        return AudioModerationOutcome(outcome.GetError());
-    }
-}
-
-void CmsClient::AudioModerationAsync(const AudioModerationRequest& request, const AudioModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AudioModeration(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CmsClient::AudioModerationOutcomeCallable CmsClient::AudioModerationCallable(const AudioModerationRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<AudioModerationOutcome()>>(
-        [this, request]()
-        {
-            return this->AudioModeration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CmsClient::CreateFileSampleOutcome CmsClient::CreateFileSample(const CreateFileSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFileSample");
@@ -298,49 +255,6 @@ CmsClient::DescribeFileSampleOutcomeCallable CmsClient::DescribeFileSampleCallab
     return task->get_future();
 }
 
-CmsClient::DescribeModerationOverviewOutcome CmsClient::DescribeModerationOverview(const DescribeModerationOverviewRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeModerationOverview");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeModerationOverviewResponse rsp = DescribeModerationOverviewResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeModerationOverviewOutcome(rsp);
-        else
-            return DescribeModerationOverviewOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeModerationOverviewOutcome(outcome.GetError());
-    }
-}
-
-void CmsClient::DescribeModerationOverviewAsync(const DescribeModerationOverviewRequest& request, const DescribeModerationOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeModerationOverview(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CmsClient::DescribeModerationOverviewOutcomeCallable CmsClient::DescribeModerationOverviewCallable(const DescribeModerationOverviewRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeModerationOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeModerationOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CmsClient::DescribeTextSampleOutcome CmsClient::DescribeTextSample(const DescribeTextSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTextSample");
@@ -463,49 +377,6 @@ CmsClient::TextModerationOutcomeCallable CmsClient::TextModerationCallable(const
         [this, request]()
         {
             return this->TextModeration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CmsClient::VideoModerationOutcome CmsClient::VideoModeration(const VideoModerationRequest &request)
-{
-    auto outcome = MakeRequest(request, "VideoModeration");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        VideoModerationResponse rsp = VideoModerationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return VideoModerationOutcome(rsp);
-        else
-            return VideoModerationOutcome(o.GetError());
-    }
-    else
-    {
-        return VideoModerationOutcome(outcome.GetError());
-    }
-}
-
-void CmsClient::VideoModerationAsync(const VideoModerationRequest& request, const VideoModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->VideoModeration(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CmsClient::VideoModerationOutcomeCallable CmsClient::VideoModerationCallable(const VideoModerationRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<VideoModerationOutcome()>>(
-        [this, request]()
-        {
-            return this->VideoModeration(request);
         }
     );
 

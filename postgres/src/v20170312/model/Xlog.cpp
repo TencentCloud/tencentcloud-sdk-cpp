@@ -26,7 +26,8 @@ Xlog::Xlog() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_internalAddrHasBeenSet(false),
-    m_externalAddrHasBeenSet(false)
+    m_externalAddrHasBeenSet(false),
+    m_sizeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome Xlog::Deserialize(const Value &value)
         m_externalAddrHasBeenSet = true;
     }
 
+    if (value.HasMember("Size") && !value["Size"].IsNull())
+    {
+        if (!value["Size"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Xlog.Size` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_size = value["Size"].GetInt64();
+        m_sizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +141,14 @@ void Xlog::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "ExternalAddr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_externalAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_size, allocator);
     }
 
 }
@@ -213,5 +232,21 @@ void Xlog::SetExternalAddr(const string& _externalAddr)
 bool Xlog::ExternalAddrHasBeenSet() const
 {
     return m_externalAddrHasBeenSet;
+}
+
+int64_t Xlog::GetSize() const
+{
+    return m_size;
+}
+
+void Xlog::SetSize(const int64_t& _size)
+{
+    m_size = _size;
+    m_sizeHasBeenSet = true;
+}
+
+bool Xlog::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
 }
 

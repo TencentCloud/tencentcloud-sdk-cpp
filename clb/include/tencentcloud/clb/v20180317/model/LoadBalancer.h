@@ -944,6 +944,72 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool SnatIpsHasBeenSet() const;
 
+                    /**
+                     * 获取性能保障规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaType 性能保障规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSlaType() const;
+
+                    /**
+                     * 设置性能保障规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SlaType 性能保障规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSlaType(const std::string& _slaType);
+
+                    /**
+                     * 判断参数 SlaType 是否已赋值
+                     * @return SlaType 是否已赋值
+                     */
+                    bool SlaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取vip是否被封堵
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsBlock vip是否被封堵
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsBlock() const;
+
+                    /**
+                     * 设置vip是否被封堵
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsBlock vip是否被封堵
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsBlock(const bool& _isBlock);
+
+                    /**
+                     * 判断参数 IsBlock 是否已赋值
+                     * @return IsBlock 是否已赋值
+                     */
+                    bool IsBlockHasBeenSet() const;
+
+                    /**
+                     * 获取封堵或解封时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsBlockTime 封堵或解封时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsBlockTime() const;
+
+                    /**
+                     * 设置封堵或解封时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsBlockTime 封堵或解封时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsBlockTime(const std::string& _isBlockTime);
+
+                    /**
+                     * 判断参数 IsBlockTime 是否已赋值
+                     * @return IsBlockTime 是否已赋值
+                     */
+                    bool IsBlockTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1229,6 +1295,27 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::vector<SnatIp> m_snatIps;
                     bool m_snatIpsHasBeenSet;
+
+                    /**
+                     * 性能保障规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_slaType;
+                    bool m_slaTypeHasBeenSet;
+
+                    /**
+                     * vip是否被封堵
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isBlock;
+                    bool m_isBlockHasBeenSet;
+
+                    /**
+                     * 封堵或解封时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isBlockTime;
+                    bool m_isBlockTimeHasBeenSet;
 
                 };
             }

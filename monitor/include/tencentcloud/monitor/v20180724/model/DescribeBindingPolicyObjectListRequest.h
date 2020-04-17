@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListDimension.h>
 
 
 namespace TencentCloud
@@ -78,6 +79,60 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取分页参数，每页返回的数量，取值1~100，默认20
+                     * @return Limit 分页参数，每页返回的数量，取值1~100，默认20
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置分页参数，每页返回的数量，取值1~100，默认20
+                     * @param Limit 分页参数，每页返回的数量，取值1~100，默认20
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页参数，页偏移量，从0开始计数，默认0
+                     * @return Offset 分页参数，页偏移量，从0开始计数，默认0
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页参数，页偏移量，从0开始计数，默认0
+                     * @param Offset 分页参数，页偏移量，从0开始计数，默认0
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取筛选对象的维度信息
+                     * @return Dimensions 筛选对象的维度信息
+                     */
+                    std::vector<DescribeBindingPolicyObjectListDimension> GetDimensions() const;
+
+                    /**
+                     * 设置筛选对象的维度信息
+                     * @param Dimensions 筛选对象的维度信息
+                     */
+                    void SetDimensions(const std::vector<DescribeBindingPolicyObjectListDimension>& _dimensions);
+
+                    /**
+                     * 判断参数 Dimensions 是否已赋值
+                     * @return Dimensions 是否已赋值
+                     */
+                    bool DimensionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +146,24 @@ namespace TencentCloud
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 分页参数，每页返回的数量，取值1~100，默认20
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页参数，页偏移量，从0开始计数，默认0
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 筛选对象的维度信息
+                     */
+                    std::vector<DescribeBindingPolicyObjectListDimension> m_dimensions;
+                    bool m_dimensionsHasBeenSet;
 
                 };
             }

@@ -127,14 +127,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取页数，默认为 0
-                     * @return Offset 页数，默认为 0
+                     * 获取分页返回，页编号，默认值为第0页
+                     * @return Offset 分页返回，页编号，默认值为第0页
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置页数，默认为 0
-                     * @param Offset 页数，默认为 0
+                     * 设置分页返回，页编号，默认值为第0页
+                     * @param Offset 分页返回，页编号，默认值为第0页
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -145,14 +145,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取页大小，默认为50
-                     * @return Limit 页大小，默认为50
+                     * 获取分页返回，每页返回的数目，取值为1-100，默认值为100
+                     * @return Limit 分页返回，每页返回的数目，取值为1-100，默认值为100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置页大小，默认为50
-                     * @param Limit 页大小，默认为50
+                     * 设置分页返回，每页返回的数目，取值为1-100，默认值为100
+                     * @param Limit 分页返回，每页返回的数目，取值为1-100，默认值为100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -198,6 +198,42 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * @return VpcId 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * @param VpcId 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * @return SubnetId 实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * @param SubnetId 实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,13 +261,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 页数，默认为 0
+                     * 分页返回，页编号，默认值为第0页
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 页大小，默认为50
+                     * 分页返回，每页返回的数目，取值为1-100，默认值为100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -247,6 +283,18 @@ namespace TencentCloud
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

@@ -45,7 +45,9 @@ DBInstance::DBInstance() :
     m_payTypeHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_dBInstanceNetInfoHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_uidHasBeenSet(false)
 {
 }
 
@@ -304,6 +306,26 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetUint64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uid") && !value["Uid"].IsNull())
+    {
+        if (!value["Uid"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.Uid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uid = value["Uid"].GetUint64();
+        m_uidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -508,6 +530,22 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_uidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uid, allocator);
     }
 
 }
@@ -895,5 +933,37 @@ void DBInstance::SetType(const string& _type)
 bool DBInstance::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+uint64_t DBInstance::GetAppId() const
+{
+    return m_appId;
+}
+
+void DBInstance::SetAppId(const uint64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool DBInstance::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+uint64_t DBInstance::GetUid() const
+{
+    return m_uid;
+}
+
+void DBInstance::SetUid(const uint64_t& _uid)
+{
+    m_uid = _uid;
+    m_uidHasBeenSet = true;
+}
+
+bool DBInstance::UidHasBeenSet() const
+{
+    return m_uidHasBeenSet;
 }
 

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拨测分组id
-                     * @return GroupId 拨测分组id
+                     * 获取拨测分组ID
+                     * @return GroupId 拨测分组ID
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置拨测分组id
-                     * @param GroupId 拨测分组id
+                     * 设置拨测分组ID
+                     * @param GroupId 拨测分组ID
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取是否为默认分组。取值可为0，1
-                     * @return IsDefault 是否为默认分组。取值可为0，1
+                     * 获取是否为默认分组。取值可为0，1。取 1 时表示设置为默认分组
+                     * @return IsDefault 是否为默认分组。取值可为0，1。取 1 时表示设置为默认分组
                      */
                     int64_t GetIsDefault() const;
 
                     /**
-                     * 设置是否为默认分组。取值可为0，1
-                     * @param IsDefault 是否为默认分组。取值可为0，1
+                     * 设置是否为默认分组。取值可为0，1。取 1 时表示设置为默认分组
+                     * @param IsDefault 是否为默认分组。取值可为0，1。取 1 时表示设置为默认分组
                      */
                     void SetIsDefault(const int64_t& _isDefault);
 
@@ -118,7 +118,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拨测分组id
+                     * 拨测分组ID
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 是否为默认分组。取值可为0，1
+                     * 是否为默认分组。取值可为0，1。取 1 时表示设置为默认分组
                      */
                     int64_t m_isDefault;
                     bool m_isDefaultHasBeenSet;

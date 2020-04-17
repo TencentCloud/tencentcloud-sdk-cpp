@@ -136,6 +136,72 @@ namespace TencentCloud
                      */
                     bool LastEditUinHasBeenSet() const;
 
+                    /**
+                     * 获取更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUpdateTime() const;
+
+                    /**
+                     * 设置更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateTime(const int64_t& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InsertTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInsertTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InsertTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInsertTime(const int64_t& _insertTime);
+
+                    /**
+                     * 判断参数 InsertTime 是否已赋值
+                     * @return InsertTime 是否已赋值
+                     */
+                    bool InsertTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否且规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsUnionRule 是否且规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsUnionRule() const;
+
+                    /**
+                     * 设置是否且规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsUnionRule 是否且规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsUnionRule(const int64_t& _isUnionRule);
+
+                    /**
+                     * 判断参数 IsUnionRule 是否已赋值
+                     * @return IsUnionRule 是否已赋值
+                     */
+                    bool IsUnionRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +233,27 @@ namespace TencentCloud
                      */
                     std::string m_lastEditUin;
                     bool m_lastEditUinHasBeenSet;
+
+                    /**
+                     * 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_insertTime;
+                    bool m_insertTimeHasBeenSet;
+
+                    /**
+                     * 是否且规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isUnionRule;
+                    bool m_isUnionRuleHasBeenSet;
 
                 };
             }

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题的Id
-                     * @return TopicId 主题的Id
+                     * 获取主题的ID
+                     * @return TopicId 主题的ID
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置主题的Id
-                     * @param TopicId 主题的Id
+                     * 设置主题的ID
+                     * @param TopicId 主题的ID
                      */
                     void SetTopicId(const std::string& _topicId);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主题的Id
+                     * 主题的ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

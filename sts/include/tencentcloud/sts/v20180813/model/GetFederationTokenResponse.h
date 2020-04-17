@@ -67,6 +67,20 @@ namespace TencentCloud
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取证书有效的时间，以 iso8601 格式的 UTC 时间表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Expiration 证书有效的时间，以 iso8601 格式的 UTC 时间表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExpiration() const;
+
+                    /**
+                     * 判断参数 Expiration 是否已赋值
+                     * @return Expiration 是否已赋值
+                     */
+                    bool ExpirationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +94,13 @@ namespace TencentCloud
                      */
                     uint64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
+
+                    /**
+                     * 证书有效的时间，以 iso8601 格式的 UTC 时间表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_expiration;
+                    bool m_expirationHasBeenSet;
 
                 };
             }

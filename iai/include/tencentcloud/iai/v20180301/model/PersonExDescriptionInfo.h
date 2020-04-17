@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取人员描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersonExDescriptionIndex 人员描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetPersonExDescriptionIndex() const;
 
                     /**
                      * 设置人员描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param PersonExDescriptionIndex 人员描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPersonExDescriptionIndex(const uint64_t& _personExDescriptionIndex);
 
@@ -86,6 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 人员描述字段Index，从0开始
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_personExDescriptionIndex;
                     bool m_personExDescriptionIndexHasBeenSet;

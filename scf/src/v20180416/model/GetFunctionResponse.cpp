@@ -54,7 +54,12 @@ GetFunctionResponse::GetFunctionResponse() :
     m_eipConfigHasBeenSet(false),
     m_accessInfoHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_l5EnableHasBeenSet(false)
+    m_l5EnableHasBeenSet(false),
+    m_layersHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_addTimeHasBeenSet(false),
+    m_publicNetConfigHasBeenSet(false),
+    m_onsEnableHasBeenSet(false)
 {
 }
 
@@ -440,6 +445,80 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_l5EnableHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Layers") && !rsp["Layers"].IsNull())
+    {
+        if (!rsp["Layers"].IsArray())
+            return CoreInternalOutcome(Error("response `Layers` is not array type"));
+
+        const Value &tmpValue = rsp["Layers"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LayerVersionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_layers.push_back(item);
+        }
+        m_layersHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeadLetterConfig") && !rsp["DeadLetterConfig"].IsNull())
+    {
+        if (!rsp["DeadLetterConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DeadLetterConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_deadLetterConfig.Deserialize(rsp["DeadLetterConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_deadLetterConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AddTime") && !rsp["AddTime"].IsNull())
+    {
+        if (!rsp["AddTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addTime = string(rsp["AddTime"].GetString());
+        m_addTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PublicNetConfig") && !rsp["PublicNetConfig"].IsNull())
+    {
+        if (!rsp["PublicNetConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PublicNetConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicNetConfig.Deserialize(rsp["PublicNetConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicNetConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OnsEnable") && !rsp["OnsEnable"].IsNull())
+    {
+        if (!rsp["OnsEnable"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OnsEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_onsEnable = string(rsp["OnsEnable"].GetString());
+        m_onsEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -743,6 +822,56 @@ string GetFunctionResponse::GetL5Enable() const
 bool GetFunctionResponse::L5EnableHasBeenSet() const
 {
     return m_l5EnableHasBeenSet;
+}
+
+vector<LayerVersionInfo> GetFunctionResponse::GetLayers() const
+{
+    return m_layers;
+}
+
+bool GetFunctionResponse::LayersHasBeenSet() const
+{
+    return m_layersHasBeenSet;
+}
+
+DeadLetterConfig GetFunctionResponse::GetDeadLetterConfig() const
+{
+    return m_deadLetterConfig;
+}
+
+bool GetFunctionResponse::DeadLetterConfigHasBeenSet() const
+{
+    return m_deadLetterConfigHasBeenSet;
+}
+
+string GetFunctionResponse::GetAddTime() const
+{
+    return m_addTime;
+}
+
+bool GetFunctionResponse::AddTimeHasBeenSet() const
+{
+    return m_addTimeHasBeenSet;
+}
+
+PublicNetConfigOut GetFunctionResponse::GetPublicNetConfig() const
+{
+    return m_publicNetConfig;
+}
+
+bool GetFunctionResponse::PublicNetConfigHasBeenSet() const
+{
+    return m_publicNetConfigHasBeenSet;
+}
+
+string GetFunctionResponse::GetOnsEnable() const
+{
+    return m_onsEnable;
+}
+
+bool GetFunctionResponse::OnsEnableHasBeenSet() const
+{
+    return m_onsEnableHasBeenSet;
 }
 
 

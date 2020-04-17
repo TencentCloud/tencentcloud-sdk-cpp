@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/AddressTemplateItem.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,24 @@ namespace TencentCloud
                      */
                     bool CreatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取IP地址模板实例。
+                     * @return AddressTemplateSet IP地址模板实例。
+                     */
+                    std::vector<AddressTemplateItem> GetAddressTemplateSet() const;
+
+                    /**
+                     * 设置IP地址模板实例。
+                     * @param AddressTemplateSet IP地址模板实例。
+                     */
+                    void SetAddressTemplateSet(const std::vector<AddressTemplateItem>& _addressTemplateSet);
+
+                    /**
+                     * 判断参数 AddressTemplateSet 是否已赋值
+                     * @return AddressTemplateSet 是否已赋值
+                     */
+                    bool AddressTemplateSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +162,12 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * IP地址模板实例。
+                     */
+                    std::vector<AddressTemplateItem> m_addressTemplateSet;
+                    bool m_addressTemplateSetHasBeenSet;
 
                 };
             }

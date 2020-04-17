@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例详情中的标识对象
+                * 实例详情中的标签对象
                 */
                 class Tag : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标识的key
-                     * @return TagKey 标识的key
+                     * 获取标签的key
+                     * @return TagKey 标签的key
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置标识的key
-                     * @param TagKey 标识的key
+                     * 设置标签的key
+                     * @param TagKey 标签的key
                      */
                     void SetTagKey(const std::string& _tagKey);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取标识的值
-                     * @return TagValue 标识的值
+                     * 获取标签的值
+                     * @return TagValue 标签的值
                      */
                     std::string GetTagValue() const;
 
                     /**
-                     * 设置标识的值
-                     * @param TagValue 标识的值
+                     * 设置标签的值
+                     * @param TagValue 标签的值
                      */
                     void SetTagValue(const std::string& _tagValue);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标识的key
+                     * 标签的key
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 标识的值
+                     * 标签的值
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;

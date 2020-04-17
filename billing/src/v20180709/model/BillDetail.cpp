@@ -43,7 +43,8 @@ BillDetail::BillDetail() :
     m_tagsHasBeenSet(false),
     m_businessCodeHasBeenSet(false),
     m_productCodeHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+    m_actionTypeHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,16 @@ CoreInternalOutcome BillDetail::Deserialize(const Value &value)
         m_actionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BillDetail.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = string(value["RegionId"].GetString());
+        m_regionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -487,6 +498,14 @@ void BillDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void BillDetail::SetActionType(const string& _actionType)
 bool BillDetail::ActionTypeHasBeenSet() const
 {
     return m_actionTypeHasBeenSet;
+}
+
+string BillDetail::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void BillDetail::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool BillDetail::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 GeneralEfficientOCRResponse::GeneralEfficientOCRResponse() :
-    m_textDetectionsHasBeenSet(false)
+    m_textDetectionsHasBeenSet(false),
+    m_angelHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome GeneralEfficientOCRResponse::Deserialize(const string &paylo
         m_textDetectionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angel") && !rsp["Angel"].IsNull())
+    {
+        if (!rsp["Angel"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Angel` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angel = rsp["Angel"].GetDouble();
+        m_angelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<TextDetection> GeneralEfficientOCRResponse::GetTextDetections() const
 bool GeneralEfficientOCRResponse::TextDetectionsHasBeenSet() const
 {
     return m_textDetectionsHasBeenSet;
+}
+
+double GeneralEfficientOCRResponse::GetAngel() const
+{
+    return m_angel;
+}
+
+bool GeneralEfficientOCRResponse::AngelHasBeenSet() const
+{
+    return m_angelHasBeenSet;
 }
 
 

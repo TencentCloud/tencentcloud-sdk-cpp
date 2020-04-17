@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h>
 
 
 namespace TencentCloud
@@ -44,34 +44,34 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表所属应用实例ID
-                     * @return ApplicationId 表所属应用实例ID
+                     * 获取表所属集群实例ID
+                     * @return ClusterId 表所属集群实例ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置表所属应用实例ID
-                     * @param ApplicationId 表所属应用实例ID
+                     * 设置表所属集群实例ID
+                     * @param ClusterId 表所属集群实例ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取选定表详情列表
                      * @return TableMemos 选定表详情列表
                      */
-                    std::vector<SelectedTableInfo> GetTableMemos() const;
+                    std::vector<SelectedTableInfoNew> GetTableMemos() const;
 
                     /**
                      * 设置选定表详情列表
                      * @param TableMemos 选定表详情列表
                      */
-                    void SetTableMemos(const std::vector<SelectedTableInfo>& _tableMemos);
+                    void SetTableMemos(const std::vector<SelectedTableInfoNew>& _tableMemos);
 
                     /**
                      * 判断参数 TableMemos 是否已赋值
@@ -82,15 +82,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 表所属应用实例ID
+                     * 表所属集群实例ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * 选定表详情列表
                      */
-                    std::vector<SelectedTableInfo> m_tableMemos;
+                    std::vector<SelectedTableInfoNew> m_tableMemos;
                     bool m_tableMemosHasBeenSet;
 
                 };

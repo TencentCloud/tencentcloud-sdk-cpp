@@ -814,6 +814,49 @@ CbsClient::DetachDisksOutcomeCallable CbsClient::DetachDisksCallable(const Detac
     return task->get_future();
 }
 
+CbsClient::GetSnapOverviewOutcome CbsClient::GetSnapOverview(const GetSnapOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSnapOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSnapOverviewResponse rsp = GetSnapOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSnapOverviewOutcome(rsp);
+        else
+            return GetSnapOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSnapOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::GetSnapOverviewAsync(const GetSnapOverviewRequest& request, const GetSnapOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetSnapOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::GetSnapOverviewOutcomeCallable CbsClient::GetSnapOverviewCallable(const GetSnapOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetSnapOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->GetSnapOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::InquiryPriceCreateDisksOutcome CbsClient::InquiryPriceCreateDisks(const InquiryPriceCreateDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceCreateDisks");

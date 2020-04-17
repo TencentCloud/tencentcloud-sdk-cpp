@@ -25,6 +25,7 @@ using namespace rapidjson;
 using namespace std;
 
 CreateTextSampleResponse::CreateTextSampleResponse() :
+    m_errMsgHasBeenSet(false),
     m_progressHasBeenSet(false)
 {
 }
@@ -63,6 +64,16 @@ CoreInternalOutcome CreateTextSampleResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ErrMsg") && !rsp["ErrMsg"].IsNull())
+    {
+        if (!rsp["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(rsp["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Progress") && !rsp["Progress"].IsNull())
     {
         if (!rsp["Progress"].IsUint64())
@@ -77,6 +88,16 @@ CoreInternalOutcome CreateTextSampleResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+
+string CreateTextSampleResponse::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+bool CreateTextSampleResponse::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
 
 uint64_t CreateTextSampleResponse::GetProgress() const
 {

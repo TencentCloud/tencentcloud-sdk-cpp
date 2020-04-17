@@ -1846,6 +1846,49 @@ CdbClient::DescribeDeviceMonitorInfoOutcomeCallable CdbClient::DescribeDeviceMon
     return task->get_future();
 }
 
+CdbClient::DescribeErrorLogDataOutcome CdbClient::DescribeErrorLogData(const DescribeErrorLogDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeErrorLogData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeErrorLogDataResponse rsp = DescribeErrorLogDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeErrorLogDataOutcome(rsp);
+        else
+            return DescribeErrorLogDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeErrorLogDataOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeErrorLogDataAsync(const DescribeErrorLogDataRequest& request, const DescribeErrorLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeErrorLogData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeErrorLogDataOutcomeCallable CdbClient::DescribeErrorLogDataCallable(const DescribeErrorLogDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeErrorLogDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeErrorLogData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeInstanceParamRecordsOutcome CdbClient::DescribeInstanceParamRecords(const DescribeInstanceParamRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceParamRecords");
@@ -2140,6 +2183,49 @@ CdbClient::DescribeRollbackRangeTimeOutcomeCallable CdbClient::DescribeRollbackR
         [this, request]()
         {
             return this->DescribeRollbackRangeTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeSlowLogDataOutcome CdbClient::DescribeSlowLogData(const DescribeSlowLogDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLogData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogDataResponse rsp = DescribeSlowLogDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogDataOutcome(rsp);
+        else
+            return DescribeSlowLogDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogDataOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeSlowLogDataAsync(const DescribeSlowLogDataRequest& request, const DescribeSlowLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLogData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeSlowLogDataOutcomeCallable CdbClient::DescribeSlowLogDataCallable(const DescribeSlowLogDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLogData(request);
         }
     );
 

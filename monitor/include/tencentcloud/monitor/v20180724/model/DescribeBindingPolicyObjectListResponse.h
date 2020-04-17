@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstance.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.h>
 
 
 namespace TencentCloud
@@ -81,6 +82,20 @@ namespace TencentCloud
                      */
                     bool NoShieldedSumHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的实例分组信息，没有绑定实例分组则为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceGroup 绑定的实例分组信息，没有绑定实例分组则为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeBindingPolicyObjectListInstanceGroup GetInstanceGroup() const;
+
+                    /**
+                     * 判断参数 InstanceGroup 是否已赋值
+                     * @return InstanceGroup 是否已赋值
+                     */
+                    bool InstanceGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +116,13 @@ namespace TencentCloud
                      */
                     int64_t m_noShieldedSum;
                     bool m_noShieldedSumHasBeenSet;
+
+                    /**
+                     * 绑定的实例分组信息，没有绑定实例分组则为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeBindingPolicyObjectListInstanceGroup m_instanceGroup;
+                    bool m_instanceGroupHasBeenSet;
 
                 };
             }

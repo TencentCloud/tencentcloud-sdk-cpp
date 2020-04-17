@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/batch/v20170312/model/AttachInstancesRequest.h>
+#include <tencentcloud/batch/v20170312/model/AttachInstancesResponse.h>
 #include <tencentcloud/batch/v20170312/model/CreateComputeEnvRequest.h>
 #include <tencentcloud/batch/v20170312/model/CreateComputeEnvResponse.h>
 #include <tencentcloud/batch/v20170312/model/CreateCpmComputeEnvRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/batch/v20170312/model/DescribeTaskLogsResponse.h>
 #include <tencentcloud/batch/v20170312/model/DescribeTaskTemplatesRequest.h>
 #include <tencentcloud/batch/v20170312/model/DescribeTaskTemplatesResponse.h>
+#include <tencentcloud/batch/v20170312/model/DetachInstancesRequest.h>
+#include <tencentcloud/batch/v20170312/model/DetachInstancesResponse.h>
 #include <tencentcloud/batch/v20170312/model/ModifyComputeEnvRequest.h>
 #include <tencentcloud/batch/v20170312/model/ModifyComputeEnvResponse.h>
 #include <tencentcloud/batch/v20170312/model/ModifyTaskTemplateRequest.h>
@@ -95,6 +99,9 @@ namespace TencentCloud
                 BatchClient(const Credential &credential, const std::string &region);
                 BatchClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AttachInstancesResponse> AttachInstancesOutcome;
+                typedef std::future<AttachInstancesOutcome> AttachInstancesOutcomeCallable;
+                typedef std::function<void(const BatchClient*, const Model::AttachInstancesRequest&, AttachInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachInstancesAsyncHandler;
                 typedef Outcome<Error, Model::CreateComputeEnvResponse> CreateComputeEnvOutcome;
                 typedef std::future<CreateComputeEnvOutcome> CreateComputeEnvOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::CreateComputeEnvRequest&, CreateComputeEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateComputeEnvAsyncHandler;
@@ -158,6 +165,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskTemplatesResponse> DescribeTaskTemplatesOutcome;
                 typedef std::future<DescribeTaskTemplatesOutcome> DescribeTaskTemplatesOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::DescribeTaskTemplatesRequest&, DescribeTaskTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DetachInstancesResponse> DetachInstancesOutcome;
+                typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
+                typedef std::function<void(const BatchClient*, const Model::DetachInstancesRequest&, DetachInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachInstancesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyComputeEnvResponse> ModifyComputeEnvOutcome;
                 typedef std::future<ModifyComputeEnvOutcome> ModifyComputeEnvOutcomeCallable;
                 typedef std::function<void(const BatchClient*, const Model::ModifyComputeEnvRequest&, ModifyComputeEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyComputeEnvAsyncHandler;
@@ -184,6 +194,21 @@ namespace TencentCloud
                 typedef std::function<void(const BatchClient*, const Model::TerminateTaskInstanceRequest&, TerminateTaskInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateTaskInstanceAsyncHandler;
 
 
+
+                /**
+                 *此接口可将已存在实例添加到计算环境中。
+实例需要满足如下条件：<br/>
+1.实例不在批量计算系统中。<br/>
+2.实例状态要求处于运行中。<br/>
+3.支持预付费实例，按小时后付费实例，专享子机实例。不支持竞价实例。<br/>
+
+此接口会将加入到计算环境中的实例重设UserData和重装操作系统。
+                 * @param req AttachInstancesRequest
+                 * @return AttachInstancesOutcome
+                 */
+                AttachInstancesOutcome AttachInstances(const Model::AttachInstancesRequest &request);
+                void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const AttachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachInstancesOutcomeCallable AttachInstancesCallable(const Model::AttachInstancesRequest& request);
 
                 /**
                  *用于创建计算环境
@@ -375,6 +400,15 @@ namespace TencentCloud
                 DescribeTaskTemplatesOutcome DescribeTaskTemplates(const Model::DescribeTaskTemplatesRequest &request);
                 void DescribeTaskTemplatesAsync(const Model::DescribeTaskTemplatesRequest& request, const DescribeTaskTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskTemplatesOutcomeCallable DescribeTaskTemplatesCallable(const Model::DescribeTaskTemplatesRequest& request);
+
+                /**
+                 *将添加到计算环境中的实例从计算环境中移出。若是由批量计算自动创建的计算节点实例则不允许移出。
+                 * @param req DetachInstancesRequest
+                 * @return DetachInstancesOutcome
+                 */
+                DetachInstancesOutcome DetachInstances(const Model::DetachInstancesRequest &request);
+                void DetachInstancesAsync(const Model::DetachInstancesRequest& request, const DetachInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachInstancesOutcomeCallable DetachInstancesCallable(const Model::DetachInstancesRequest& request);
 
                 /**
                  *用于修改计算环境属性

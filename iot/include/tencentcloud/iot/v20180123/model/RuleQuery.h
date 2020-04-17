@@ -84,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic Topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Topic Topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTopic(const std::string& _topic);
 
@@ -102,13 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取产品Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProductId 产品Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProductId(const std::string& _productId);
 
@@ -134,12 +142,14 @@ namespace TencentCloud
 
                     /**
                      * Topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
                      * 产品Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;

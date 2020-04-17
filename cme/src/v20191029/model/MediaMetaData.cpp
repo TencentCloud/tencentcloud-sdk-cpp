@@ -28,6 +28,7 @@ MediaMetaData::MediaMetaData() :
     m_heightHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_durationHasBeenSet(false),
+    m_rotateHasBeenSet(false),
     m_videoStreamInfoSetHasBeenSet(false),
     m_audioStreamInfoSetHasBeenSet(false)
 {
@@ -96,6 +97,16 @@ CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Rotate") && !value["Rotate"].IsNull())
+    {
+        if (!value["Rotate"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MediaMetaData.Rotate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotate = value["Rotate"].GetInt64();
+        m_rotateHasBeenSet = true;
     }
 
     if (value.HasMember("VideoStreamInfoSet") && !value["VideoStreamInfoSet"].IsNull())
@@ -191,6 +202,14 @@ void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_rotateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Rotate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rotate, allocator);
     }
 
     if (m_videoStreamInfoSetHasBeenSet)
@@ -320,6 +339,22 @@ void MediaMetaData::SetDuration(const double& _duration)
 bool MediaMetaData::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+int64_t MediaMetaData::GetRotate() const
+{
+    return m_rotate;
+}
+
+void MediaMetaData::SetRotate(const int64_t& _rotate)
+{
+    m_rotate = _rotate;
+    m_rotateHasBeenSet = true;
+}
+
+bool MediaMetaData::RotateHasBeenSet() const
+{
+    return m_rotateHasBeenSet;
 }
 
 vector<VideoStreamInfo> MediaMetaData::GetVideoStreamInfoSet() const

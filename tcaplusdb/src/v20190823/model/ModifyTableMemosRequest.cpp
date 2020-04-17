@@ -24,7 +24,7 @@ using namespace rapidjson;
 using namespace std;
 
 ModifyTableMemosRequest::ModifyTableMemosRequest() :
-    m_applicationIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_tableMemosHasBeenSet(false)
 {
 }
@@ -36,12 +36,12 @@ string ModifyTableMemosRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableMemosHasBeenSet)
@@ -67,28 +67,28 @@ string ModifyTableMemosRequest::ToJsonString() const
 }
 
 
-string ModifyTableMemosRequest::GetApplicationId() const
+string ModifyTableMemosRequest::GetClusterId() const
 {
-    return m_applicationId;
+    return m_clusterId;
 }
 
-void ModifyTableMemosRequest::SetApplicationId(const string& _applicationId)
+void ModifyTableMemosRequest::SetClusterId(const string& _clusterId)
 {
-    m_applicationId = _applicationId;
-    m_applicationIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool ModifyTableMemosRequest::ApplicationIdHasBeenSet() const
+bool ModifyTableMemosRequest::ClusterIdHasBeenSet() const
 {
-    return m_applicationIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
-vector<SelectedTableInfo> ModifyTableMemosRequest::GetTableMemos() const
+vector<SelectedTableInfoNew> ModifyTableMemosRequest::GetTableMemos() const
 {
     return m_tableMemos;
 }
 
-void ModifyTableMemosRequest::SetTableMemos(const vector<SelectedTableInfo>& _tableMemos)
+void ModifyTableMemosRequest::SetTableMemos(const vector<SelectedTableInfoNew>& _tableMemos)
 {
     m_tableMemos = _tableMemos;
     m_tableMemosHasBeenSet = true;

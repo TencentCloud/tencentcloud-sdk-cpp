@@ -24,6 +24,7 @@
 #include <tencentcloud/emr/v20190103/model/NewResourceSpec.h>
 #include <tencentcloud/emr/v20190103/model/Placement.h>
 #include <tencentcloud/emr/v20190103/model/VPCSettings.h>
+#include <tencentcloud/emr/v20190103/model/CustomMetaInfo.h>
 
 
 namespace TencentCloud
@@ -46,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间单位
-                     * @return TimeUnit 时间单位
+                     * 获取购买实例的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @return TimeUnit 购买实例的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时间单位
-                     * @param TimeUnit 时间单位
+                     * 设置购买实例的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
+                     * @param TimeUnit 购买实例的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -64,14 +73,22 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取时间长度
-                     * @return TimeSpan 时间长度
+                     * 获取购买实例的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @return TimeSpan 购买实例的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置时间长度
-                     * @param TimeSpan 时间长度
+                     * 设置购买实例的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
+                     * @param TimeSpan 购买实例的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
@@ -82,14 +99,14 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取询价资源描述
-                     * @return ResourceSpec 询价资源描述
+                     * 获取询价的节点规格。
+                     * @return ResourceSpec 询价的节点规格。
                      */
                     NewResourceSpec GetResourceSpec() const;
 
                     /**
-                     * 设置询价资源描述
-                     * @param ResourceSpec 询价资源描述
+                     * 设置询价的节点规格。
+                     * @param ResourceSpec 询价的节点规格。
                      */
                     void SetResourceSpec(const NewResourceSpec& _resourceSpec);
 
@@ -100,14 +117,18 @@ namespace TencentCloud
                     bool ResourceSpecHasBeenSet() const;
 
                     /**
-                     * 获取货币种类
-                     * @return Currency 货币种类
+                     * 获取货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @return Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string GetCurrency() const;
 
                     /**
-                     * 设置货币种类
-                     * @param Currency 货币种类
+                     * 设置货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @param Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     void SetCurrency(const std::string& _currency);
 
@@ -118,14 +139,22 @@ namespace TencentCloud
                     bool CurrencyHasBeenSet() const;
 
                     /**
-                     * 获取计费类型
-                     * @return PayMode 计费类型
+                     * 获取实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @return PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置计费类型
-                     * @param PayMode 计费类型
+                     * 设置实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
+                     * @param PayMode 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     void SetPayMode(const uint64_t& _payMode);
 
@@ -136,14 +165,22 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取是否支持HA， 1 支持，0 不支持
-                     * @return SupportHA 是否支持HA， 1 支持，0 不支持
+                     * 获取是否开启节点高可用。取值范围：
+<li>0：表示不开启节点高可用。</li>
+<li>1：表示开启节点高可用。</li>
+                     * @return SupportHA 是否开启节点高可用。取值范围：
+<li>0：表示不开启节点高可用。</li>
+<li>1：表示开启节点高可用。</li>
                      */
                     uint64_t GetSupportHA() const;
 
                     /**
-                     * 设置是否支持HA， 1 支持，0 不支持
-                     * @param SupportHA 是否支持HA， 1 支持，0 不支持
+                     * 设置是否开启节点高可用。取值范围：
+<li>0：表示不开启节点高可用。</li>
+<li>1：表示开启节点高可用。</li>
+                     * @param SupportHA 是否开启节点高可用。取值范围：
+<li>0：表示不开启节点高可用。</li>
+<li>1：表示开启节点高可用。</li>
                      */
                     void SetSupportHA(const uint64_t& _supportHA);
 
@@ -154,14 +191,30 @@ namespace TencentCloud
                     bool SupportHAHasBeenSet() const;
 
                     /**
-                     * 获取软件列表
-                     * @return Software 软件列表
+                     * 获取部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：
+<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
+                     * @return Software 部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：
+<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
                      */
                     std::vector<std::string> GetSoftware() const;
 
                     /**
-                     * 设置软件列表
-                     * @param Software 软件列表
+                     * 设置部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：
+<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
+                     * @param Software 部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：
+<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
                      */
                     void SetSoftware(const std::vector<std::string>& _software);
 
@@ -172,14 +225,14 @@ namespace TencentCloud
                     bool SoftwareHasBeenSet() const;
 
                     /**
-                     * 获取位置信息
-                     * @return Placement 位置信息
+                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     Placement GetPlacement() const;
 
                     /**
-                     * 设置位置信息
-                     * @param Placement 位置信息
+                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     void SetPlacement(const Placement& _placement);
 
@@ -190,14 +243,14 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取VPC信息
-                     * @return VPCSettings VPC信息
+                     * 获取私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * @return VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
                      */
                     VPCSettings GetVPCSettings() const;
 
                     /**
-                     * 设置VPC信息
-                     * @param VPCSettings VPC信息
+                     * 设置私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * @param VPCSettings 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
                      */
                     void SetVPCSettings(const VPCSettings& _vPCSettings);
 
@@ -207,61 +260,205 @@ namespace TencentCloud
                      */
                     bool VPCSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取hive共享元数据库类型。取值范围：
+<li>EMR_NEW_META：表示集群默认创建</li>
+<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
+<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * @return MetaType hive共享元数据库类型。取值范围：
+<li>EMR_NEW_META：表示集群默认创建</li>
+<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
+<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     */
+                    std::string GetMetaType() const;
+
+                    /**
+                     * 设置hive共享元数据库类型。取值范围：
+<li>EMR_NEW_META：表示集群默认创建</li>
+<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
+<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     * @param MetaType hive共享元数据库类型。取值范围：
+<li>EMR_NEW_META：表示集群默认创建</li>
+<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
+<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     */
+                    void SetMetaType(const std::string& _metaType);
+
+                    /**
+                     * 判断参数 MetaType 是否已赋值
+                     * @return MetaType 是否已赋值
+                     */
+                    bool MetaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取EMR-MetaDB实例
+                     * @return UnifyMetaInstanceId EMR-MetaDB实例
+                     */
+                    std::string GetUnifyMetaInstanceId() const;
+
+                    /**
+                     * 设置EMR-MetaDB实例
+                     * @param UnifyMetaInstanceId EMR-MetaDB实例
+                     */
+                    void SetUnifyMetaInstanceId(const std::string& _unifyMetaInstanceId);
+
+                    /**
+                     * 判断参数 UnifyMetaInstanceId 是否已赋值
+                     * @return UnifyMetaInstanceId 是否已赋值
+                     */
+                    bool UnifyMetaInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取自定义MetaDB信息
+                     * @return MetaDBInfo 自定义MetaDB信息
+                     */
+                    CustomMetaInfo GetMetaDBInfo() const;
+
+                    /**
+                     * 设置自定义MetaDB信息
+                     * @param MetaDBInfo 自定义MetaDB信息
+                     */
+                    void SetMetaDBInfo(const CustomMetaInfo& _metaDBInfo);
+
+                    /**
+                     * 判断参数 MetaDBInfo 是否已赋值
+                     * @return MetaDBInfo 是否已赋值
+                     */
+                    bool MetaDBInfoHasBeenSet() const;
+
+                    /**
+                     * 获取产品ID，不同产品ID表示不同的EMR产品版本。取值范围：
+<li>1：表示EMR-V1.3.1。</li>
+<li>2：表示EMR-V2.0.1。</li>
+<li>4：表示EMR-V2.1.0。</li>
+<li>7：表示EMR-V3.0.0。</li>
+                     * @return ProductId 产品ID，不同产品ID表示不同的EMR产品版本。取值范围：
+<li>1：表示EMR-V1.3.1。</li>
+<li>2：表示EMR-V2.0.1。</li>
+<li>4：表示EMR-V2.1.0。</li>
+<li>7：表示EMR-V3.0.0。</li>
+                     */
+                    uint64_t GetProductId() const;
+
+                    /**
+                     * 设置产品ID，不同产品ID表示不同的EMR产品版本。取值范围：
+<li>1：表示EMR-V1.3.1。</li>
+<li>2：表示EMR-V2.0.1。</li>
+<li>4：表示EMR-V2.1.0。</li>
+<li>7：表示EMR-V3.0.0。</li>
+                     * @param ProductId 产品ID，不同产品ID表示不同的EMR产品版本。取值范围：
+<li>1：表示EMR-V1.3.1。</li>
+<li>2：表示EMR-V2.0.1。</li>
+<li>4：表示EMR-V2.1.0。</li>
+<li>7：表示EMR-V3.0.0。</li>
+                     */
+                    void SetProductId(const uint64_t& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时间单位
+                     * 购买实例的时间单位。取值范围：
+<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>
+<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 时间长度
+                     * 购买实例的时长。结合TimeUnit一起使用。
+<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>
+<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 询价资源描述
+                     * 询价的节点规格。
                      */
                     NewResourceSpec m_resourceSpec;
                     bool m_resourceSpecHasBeenSet;
 
                     /**
-                     * 货币种类
+                     * 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
 
                     /**
-                     * 计费类型
+                     * 实例计费模式。取值范围：
+<li>0：表示按量计费。</li>
+<li>1：表示包年包月。</li>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 是否支持HA， 1 支持，0 不支持
+                     * 是否开启节点高可用。取值范围：
+<li>0：表示不开启节点高可用。</li>
+<li>1：表示开启节点高可用。</li>
                      */
                     uint64_t m_supportHA;
                     bool m_supportHAHasBeenSet;
 
                     /**
-                     * 软件列表
+                     * 部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：
+<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>
+<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>
                      */
                     std::vector<std::string> m_software;
                     bool m_softwareHasBeenSet;
 
                     /**
-                     * 位置信息
+                     * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
 
                     /**
-                     * VPC信息
+                     * 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
                      */
                     VPCSettings m_vPCSettings;
                     bool m_vPCSettingsHasBeenSet;
+
+                    /**
+                     * hive共享元数据库类型。取值范围：
+<li>EMR_NEW_META：表示集群默认创建</li>
+<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>
+<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>
+                     */
+                    std::string m_metaType;
+                    bool m_metaTypeHasBeenSet;
+
+                    /**
+                     * EMR-MetaDB实例
+                     */
+                    std::string m_unifyMetaInstanceId;
+                    bool m_unifyMetaInstanceIdHasBeenSet;
+
+                    /**
+                     * 自定义MetaDB信息
+                     */
+                    CustomMetaInfo m_metaDBInfo;
+                    bool m_metaDBInfoHasBeenSet;
+
+                    /**
+                     * 产品ID，不同产品ID表示不同的EMR产品版本。取值范围：
+<li>1：表示EMR-V1.3.1。</li>
+<li>2：表示EMR-V2.0.1。</li>
+<li>4：表示EMR-V2.1.0。</li>
+<li>7：表示EMR-V3.0.0。</li>
+                     */
+                    uint64_t m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

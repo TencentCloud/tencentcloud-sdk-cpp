@@ -23,32 +23,58 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptRequest.h>
+#include <tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/AsymmetricSm2DecryptRequest.h>
+#include <tencentcloud/kms/v20190118/model/AsymmetricSm2DecryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/CancelKeyDeletionRequest.h>
 #include <tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/CreateWhiteBoxKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/CreateWhiteBoxKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DecryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/DecryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/DeleteImportedKeyMaterialRequest.h>
 #include <tencentcloud/kms/v20190118/model/DeleteImportedKeyMaterialResponse.h>
+#include <tencentcloud/kms/v20190118/model/DeleteWhiteBoxKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/DeleteWhiteBoxKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DescribeKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/DescribeKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DescribeKeysRequest.h>
 #include <tencentcloud/kms/v20190118/model/DescribeKeysResponse.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyDetailsResponse.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxServiceStatusRequest.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxServiceStatusResponse.h>
 #include <tencentcloud/kms/v20190118/model/DisableKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/DisableKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DisableKeyRotationRequest.h>
 #include <tencentcloud/kms/v20190118/model/DisableKeyRotationResponse.h>
 #include <tencentcloud/kms/v20190118/model/DisableKeysRequest.h>
 #include <tencentcloud/kms/v20190118/model/DisableKeysResponse.h>
+#include <tencentcloud/kms/v20190118/model/DisableWhiteBoxKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/DisableWhiteBoxKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/DisableWhiteBoxKeysRequest.h>
+#include <tencentcloud/kms/v20190118/model/DisableWhiteBoxKeysResponse.h>
 #include <tencentcloud/kms/v20190118/model/EnableKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/EnableKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/EnableKeyRotationRequest.h>
 #include <tencentcloud/kms/v20190118/model/EnableKeyRotationResponse.h>
 #include <tencentcloud/kms/v20190118/model/EnableKeysRequest.h>
 #include <tencentcloud/kms/v20190118/model/EnableKeysResponse.h>
+#include <tencentcloud/kms/v20190118/model/EnableWhiteBoxKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/EnableWhiteBoxKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/EnableWhiteBoxKeysRequest.h>
+#include <tencentcloud/kms/v20190118/model/EnableWhiteBoxKeysResponse.h>
 #include <tencentcloud/kms/v20190118/model/EncryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/EncryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/EncryptByWhiteBoxRequest.h>
+#include <tencentcloud/kms/v20190118/model/EncryptByWhiteBoxResponse.h>
 #include <tencentcloud/kms/v20190118/model/GenerateDataKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/GenerateDataKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/GenerateRandomRequest.h>
@@ -57,10 +83,14 @@
 #include <tencentcloud/kms/v20190118/model/GetKeyRotationStatusResponse.h>
 #include <tencentcloud/kms/v20190118/model/GetParametersForImportRequest.h>
 #include <tencentcloud/kms/v20190118/model/GetParametersForImportResponse.h>
+#include <tencentcloud/kms/v20190118/model/GetPublicKeyRequest.h>
+#include <tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/GetServiceStatusRequest.h>
 #include <tencentcloud/kms/v20190118/model/GetServiceStatusResponse.h>
 #include <tencentcloud/kms/v20190118/model/ImportKeyMaterialRequest.h>
 #include <tencentcloud/kms/v20190118/model/ImportKeyMaterialResponse.h>
+#include <tencentcloud/kms/v20190118/model/ListAlgorithmsRequest.h>
+#include <tencentcloud/kms/v20190118/model/ListAlgorithmsResponse.h>
 #include <tencentcloud/kms/v20190118/model/ListKeyDetailRequest.h>
 #include <tencentcloud/kms/v20190118/model/ListKeyDetailResponse.h>
 #include <tencentcloud/kms/v20190118/model/ListKeysRequest.h>
@@ -87,24 +117,48 @@ namespace TencentCloud
                 KmsClient(const Credential &credential, const std::string &region);
                 KmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AsymmetricRsaDecryptResponse> AsymmetricRsaDecryptOutcome;
+                typedef std::future<AsymmetricRsaDecryptOutcome> AsymmetricRsaDecryptOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::AsymmetricRsaDecryptRequest&, AsymmetricRsaDecryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AsymmetricRsaDecryptAsyncHandler;
+                typedef Outcome<Error, Model::AsymmetricSm2DecryptResponse> AsymmetricSm2DecryptOutcome;
+                typedef std::future<AsymmetricSm2DecryptOutcome> AsymmetricSm2DecryptOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::AsymmetricSm2DecryptRequest&, AsymmetricSm2DecryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AsymmetricSm2DecryptAsyncHandler;
                 typedef Outcome<Error, Model::CancelKeyDeletionResponse> CancelKeyDeletionOutcome;
                 typedef std::future<CancelKeyDeletionOutcome> CancelKeyDeletionOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::CancelKeyDeletionRequest&, CancelKeyDeletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKeyDeletionAsyncHandler;
                 typedef Outcome<Error, Model::CreateKeyResponse> CreateKeyOutcome;
                 typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::CreateKeyRequest&, CreateKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyAsyncHandler;
+                typedef Outcome<Error, Model::CreateWhiteBoxKeyResponse> CreateWhiteBoxKeyOutcome;
+                typedef std::future<CreateWhiteBoxKeyOutcome> CreateWhiteBoxKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::CreateWhiteBoxKeyRequest&, CreateWhiteBoxKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWhiteBoxKeyAsyncHandler;
                 typedef Outcome<Error, Model::DecryptResponse> DecryptOutcome;
                 typedef std::future<DecryptOutcome> DecryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DecryptRequest&, DecryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DecryptAsyncHandler;
                 typedef Outcome<Error, Model::DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialOutcome;
                 typedef std::future<DeleteImportedKeyMaterialOutcome> DeleteImportedKeyMaterialOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DeleteImportedKeyMaterialRequest&, DeleteImportedKeyMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImportedKeyMaterialAsyncHandler;
+                typedef Outcome<Error, Model::DeleteWhiteBoxKeyResponse> DeleteWhiteBoxKeyOutcome;
+                typedef std::future<DeleteWhiteBoxKeyOutcome> DeleteWhiteBoxKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DeleteWhiteBoxKeyRequest&, DeleteWhiteBoxKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhiteBoxKeyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeKeyResponse> DescribeKeyOutcome;
                 typedef std::future<DescribeKeyOutcome> DescribeKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DescribeKeyRequest&, DescribeKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeKeysResponse> DescribeKeysOutcome;
                 typedef std::future<DescribeKeysOutcome> DescribeKeysOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DescribeKeysRequest&, DescribeKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeysAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWhiteBoxDecryptKeyResponse> DescribeWhiteBoxDecryptKeyOutcome;
+                typedef std::future<DescribeWhiteBoxDecryptKeyOutcome> DescribeWhiteBoxDecryptKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DescribeWhiteBoxDecryptKeyRequest&, DescribeWhiteBoxDecryptKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoxDecryptKeyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWhiteBoxKeyResponse> DescribeWhiteBoxKeyOutcome;
+                typedef std::future<DescribeWhiteBoxKeyOutcome> DescribeWhiteBoxKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DescribeWhiteBoxKeyRequest&, DescribeWhiteBoxKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoxKeyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWhiteBoxKeyDetailsResponse> DescribeWhiteBoxKeyDetailsOutcome;
+                typedef std::future<DescribeWhiteBoxKeyDetailsOutcome> DescribeWhiteBoxKeyDetailsOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DescribeWhiteBoxKeyDetailsRequest&, DescribeWhiteBoxKeyDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoxKeyDetailsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWhiteBoxServiceStatusResponse> DescribeWhiteBoxServiceStatusOutcome;
+                typedef std::future<DescribeWhiteBoxServiceStatusOutcome> DescribeWhiteBoxServiceStatusOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DescribeWhiteBoxServiceStatusRequest&, DescribeWhiteBoxServiceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoxServiceStatusAsyncHandler;
                 typedef Outcome<Error, Model::DisableKeyResponse> DisableKeyOutcome;
                 typedef std::future<DisableKeyOutcome> DisableKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DisableKeyRequest&, DisableKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableKeyAsyncHandler;
@@ -114,6 +168,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisableKeysResponse> DisableKeysOutcome;
                 typedef std::future<DisableKeysOutcome> DisableKeysOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DisableKeysRequest&, DisableKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableKeysAsyncHandler;
+                typedef Outcome<Error, Model::DisableWhiteBoxKeyResponse> DisableWhiteBoxKeyOutcome;
+                typedef std::future<DisableWhiteBoxKeyOutcome> DisableWhiteBoxKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DisableWhiteBoxKeyRequest&, DisableWhiteBoxKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableWhiteBoxKeyAsyncHandler;
+                typedef Outcome<Error, Model::DisableWhiteBoxKeysResponse> DisableWhiteBoxKeysOutcome;
+                typedef std::future<DisableWhiteBoxKeysOutcome> DisableWhiteBoxKeysOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DisableWhiteBoxKeysRequest&, DisableWhiteBoxKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableWhiteBoxKeysAsyncHandler;
                 typedef Outcome<Error, Model::EnableKeyResponse> EnableKeyOutcome;
                 typedef std::future<EnableKeyOutcome> EnableKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::EnableKeyRequest&, EnableKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableKeyAsyncHandler;
@@ -123,9 +183,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableKeysResponse> EnableKeysOutcome;
                 typedef std::future<EnableKeysOutcome> EnableKeysOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::EnableKeysRequest&, EnableKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableKeysAsyncHandler;
+                typedef Outcome<Error, Model::EnableWhiteBoxKeyResponse> EnableWhiteBoxKeyOutcome;
+                typedef std::future<EnableWhiteBoxKeyOutcome> EnableWhiteBoxKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::EnableWhiteBoxKeyRequest&, EnableWhiteBoxKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWhiteBoxKeyAsyncHandler;
+                typedef Outcome<Error, Model::EnableWhiteBoxKeysResponse> EnableWhiteBoxKeysOutcome;
+                typedef std::future<EnableWhiteBoxKeysOutcome> EnableWhiteBoxKeysOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::EnableWhiteBoxKeysRequest&, EnableWhiteBoxKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWhiteBoxKeysAsyncHandler;
                 typedef Outcome<Error, Model::EncryptResponse> EncryptOutcome;
                 typedef std::future<EncryptOutcome> EncryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::EncryptRequest&, EncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EncryptAsyncHandler;
+                typedef Outcome<Error, Model::EncryptByWhiteBoxResponse> EncryptByWhiteBoxOutcome;
+                typedef std::future<EncryptByWhiteBoxOutcome> EncryptByWhiteBoxOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::EncryptByWhiteBoxRequest&, EncryptByWhiteBoxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EncryptByWhiteBoxAsyncHandler;
                 typedef Outcome<Error, Model::GenerateDataKeyResponse> GenerateDataKeyOutcome;
                 typedef std::future<GenerateDataKeyOutcome> GenerateDataKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GenerateDataKeyRequest&, GenerateDataKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDataKeyAsyncHandler;
@@ -138,12 +207,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetParametersForImportResponse> GetParametersForImportOutcome;
                 typedef std::future<GetParametersForImportOutcome> GetParametersForImportOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GetParametersForImportRequest&, GetParametersForImportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetParametersForImportAsyncHandler;
+                typedef Outcome<Error, Model::GetPublicKeyResponse> GetPublicKeyOutcome;
+                typedef std::future<GetPublicKeyOutcome> GetPublicKeyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::GetPublicKeyRequest&, GetPublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPublicKeyAsyncHandler;
                 typedef Outcome<Error, Model::GetServiceStatusResponse> GetServiceStatusOutcome;
                 typedef std::future<GetServiceStatusOutcome> GetServiceStatusOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::GetServiceStatusRequest&, GetServiceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceStatusAsyncHandler;
                 typedef Outcome<Error, Model::ImportKeyMaterialResponse> ImportKeyMaterialOutcome;
                 typedef std::future<ImportKeyMaterialOutcome> ImportKeyMaterialOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ImportKeyMaterialRequest&, ImportKeyMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyMaterialAsyncHandler;
+                typedef Outcome<Error, Model::ListAlgorithmsResponse> ListAlgorithmsOutcome;
+                typedef std::future<ListAlgorithmsOutcome> ListAlgorithmsOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::ListAlgorithmsRequest&, ListAlgorithmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAlgorithmsAsyncHandler;
                 typedef Outcome<Error, Model::ListKeyDetailResponse> ListKeyDetailOutcome;
                 typedef std::future<ListKeyDetailOutcome> ListKeyDetailOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ListKeyDetailRequest&, ListKeyDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListKeyDetailAsyncHandler;
@@ -166,6 +241,24 @@ namespace TencentCloud
 
 
                 /**
+                 *使用指定的RSA非对称密钥的私钥进行数据解密，密文必须是使用对应公钥加密的。处于Enabled 状态的非对称密钥才能进行解密操作。
+                 * @param req AsymmetricRsaDecryptRequest
+                 * @return AsymmetricRsaDecryptOutcome
+                 */
+                AsymmetricRsaDecryptOutcome AsymmetricRsaDecrypt(const Model::AsymmetricRsaDecryptRequest &request);
+                void AsymmetricRsaDecryptAsync(const Model::AsymmetricRsaDecryptRequest& request, const AsymmetricRsaDecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AsymmetricRsaDecryptOutcomeCallable AsymmetricRsaDecryptCallable(const Model::AsymmetricRsaDecryptRequest& request);
+
+                /**
+                 *使用指定的SM2非对称密钥的私钥进行数据解密，密文必须是使用对应公钥加密的。处于Enabled 状态的非对称密钥才能进行解密操作。传入的密文的长度不能超过256字节。
+                 * @param req AsymmetricSm2DecryptRequest
+                 * @return AsymmetricSm2DecryptOutcome
+                 */
+                AsymmetricSm2DecryptOutcome AsymmetricSm2Decrypt(const Model::AsymmetricSm2DecryptRequest &request);
+                void AsymmetricSm2DecryptAsync(const Model::AsymmetricSm2DecryptRequest& request, const AsymmetricSm2DecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AsymmetricSm2DecryptOutcomeCallable AsymmetricSm2DecryptCallable(const Model::AsymmetricSm2DecryptRequest& request);
+
+                /**
                  *取消CMK的计划删除操作
                  * @param req CancelKeyDeletionRequest
                  * @return CancelKeyDeletionOutcome
@@ -182,6 +275,15 @@ namespace TencentCloud
                 CreateKeyOutcome CreateKey(const Model::CreateKeyRequest &request);
                 void CreateKeyAsync(const Model::CreateKeyRequest& request, const CreateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateKeyOutcomeCallable CreateKeyCallable(const Model::CreateKeyRequest& request);
+
+                /**
+                 *创建白盒密钥。 密钥个数的上限为 50。
+                 * @param req CreateWhiteBoxKeyRequest
+                 * @return CreateWhiteBoxKeyOutcome
+                 */
+                CreateWhiteBoxKeyOutcome CreateWhiteBoxKey(const Model::CreateWhiteBoxKeyRequest &request);
+                void CreateWhiteBoxKeyAsync(const Model::CreateWhiteBoxKeyRequest& request, const CreateWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWhiteBoxKeyOutcomeCallable CreateWhiteBoxKeyCallable(const Model::CreateWhiteBoxKeyRequest& request);
 
                 /**
                  *本接口用于解密密文，得到明文数据。
@@ -202,6 +304,15 @@ namespace TencentCloud
                 DeleteImportedKeyMaterialOutcomeCallable DeleteImportedKeyMaterialCallable(const Model::DeleteImportedKeyMaterialRequest& request);
 
                 /**
+                 *删除白盒密钥, 注意：必须先禁用后，才可以删除。
+                 * @param req DeleteWhiteBoxKeyRequest
+                 * @return DeleteWhiteBoxKeyOutcome
+                 */
+                DeleteWhiteBoxKeyOutcome DeleteWhiteBoxKey(const Model::DeleteWhiteBoxKeyRequest &request);
+                void DeleteWhiteBoxKeyAsync(const Model::DeleteWhiteBoxKeyRequest& request, const DeleteWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWhiteBoxKeyOutcomeCallable DeleteWhiteBoxKeyCallable(const Model::DeleteWhiteBoxKeyRequest& request);
+
+                /**
                  *用于获取指定KeyId的主密钥属性详情信息。
                  * @param req DescribeKeyRequest
                  * @return DescribeKeyOutcome
@@ -218,6 +329,42 @@ namespace TencentCloud
                 DescribeKeysOutcome DescribeKeys(const Model::DescribeKeysRequest &request);
                 void DescribeKeysAsync(const Model::DescribeKeysRequest& request, const DescribeKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKeysOutcomeCallable DescribeKeysCallable(const Model::DescribeKeysRequest& request);
+
+                /**
+                 *获取白盒解密密钥
+                 * @param req DescribeWhiteBoxDecryptKeyRequest
+                 * @return DescribeWhiteBoxDecryptKeyOutcome
+                 */
+                DescribeWhiteBoxDecryptKeyOutcome DescribeWhiteBoxDecryptKey(const Model::DescribeWhiteBoxDecryptKeyRequest &request);
+                void DescribeWhiteBoxDecryptKeyAsync(const Model::DescribeWhiteBoxDecryptKeyRequest& request, const DescribeWhiteBoxDecryptKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteBoxDecryptKeyOutcomeCallable DescribeWhiteBoxDecryptKeyCallable(const Model::DescribeWhiteBoxDecryptKeyRequest& request);
+
+                /**
+                 *展示白盒密钥的信息
+                 * @param req DescribeWhiteBoxKeyRequest
+                 * @return DescribeWhiteBoxKeyOutcome
+                 */
+                DescribeWhiteBoxKeyOutcome DescribeWhiteBoxKey(const Model::DescribeWhiteBoxKeyRequest &request);
+                void DescribeWhiteBoxKeyAsync(const Model::DescribeWhiteBoxKeyRequest& request, const DescribeWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteBoxKeyOutcomeCallable DescribeWhiteBoxKeyCallable(const Model::DescribeWhiteBoxKeyRequest& request);
+
+                /**
+                 *获取白盒密钥列表
+                 * @param req DescribeWhiteBoxKeyDetailsRequest
+                 * @return DescribeWhiteBoxKeyDetailsOutcome
+                 */
+                DescribeWhiteBoxKeyDetailsOutcome DescribeWhiteBoxKeyDetails(const Model::DescribeWhiteBoxKeyDetailsRequest &request);
+                void DescribeWhiteBoxKeyDetailsAsync(const Model::DescribeWhiteBoxKeyDetailsRequest& request, const DescribeWhiteBoxKeyDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteBoxKeyDetailsOutcomeCallable DescribeWhiteBoxKeyDetailsCallable(const Model::DescribeWhiteBoxKeyDetailsRequest& request);
+
+                /**
+                 *获取白盒密钥服务状态
+                 * @param req DescribeWhiteBoxServiceStatusRequest
+                 * @return DescribeWhiteBoxServiceStatusOutcome
+                 */
+                DescribeWhiteBoxServiceStatusOutcome DescribeWhiteBoxServiceStatus(const Model::DescribeWhiteBoxServiceStatusRequest &request);
+                void DescribeWhiteBoxServiceStatusAsync(const Model::DescribeWhiteBoxServiceStatusRequest& request, const DescribeWhiteBoxServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteBoxServiceStatusOutcomeCallable DescribeWhiteBoxServiceStatusCallable(const Model::DescribeWhiteBoxServiceStatusRequest& request);
 
                 /**
                  *本接口用于禁用一个主密钥，处于禁用状态的Key无法用于加密、解密操作。
@@ -247,6 +394,24 @@ namespace TencentCloud
                 DisableKeysOutcomeCallable DisableKeysCallable(const Model::DisableKeysRequest& request);
 
                 /**
+                 *禁用白盒密钥
+                 * @param req DisableWhiteBoxKeyRequest
+                 * @return DisableWhiteBoxKeyOutcome
+                 */
+                DisableWhiteBoxKeyOutcome DisableWhiteBoxKey(const Model::DisableWhiteBoxKeyRequest &request);
+                void DisableWhiteBoxKeyAsync(const Model::DisableWhiteBoxKeyRequest& request, const DisableWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableWhiteBoxKeyOutcomeCallable DisableWhiteBoxKeyCallable(const Model::DisableWhiteBoxKeyRequest& request);
+
+                /**
+                 *批量禁用白盒密钥
+                 * @param req DisableWhiteBoxKeysRequest
+                 * @return DisableWhiteBoxKeysOutcome
+                 */
+                DisableWhiteBoxKeysOutcome DisableWhiteBoxKeys(const Model::DisableWhiteBoxKeysRequest &request);
+                void DisableWhiteBoxKeysAsync(const Model::DisableWhiteBoxKeysRequest& request, const DisableWhiteBoxKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableWhiteBoxKeysOutcomeCallable DisableWhiteBoxKeysCallable(const Model::DisableWhiteBoxKeysRequest& request);
+
+                /**
                  *用于启用一个指定的CMK。
                  * @param req EnableKeyRequest
                  * @return EnableKeyOutcome
@@ -274,6 +439,24 @@ namespace TencentCloud
                 EnableKeysOutcomeCallable EnableKeysCallable(const Model::EnableKeysRequest& request);
 
                 /**
+                 *批量启用白盒密钥
+                 * @param req EnableWhiteBoxKeyRequest
+                 * @return EnableWhiteBoxKeyOutcome
+                 */
+                EnableWhiteBoxKeyOutcome EnableWhiteBoxKey(const Model::EnableWhiteBoxKeyRequest &request);
+                void EnableWhiteBoxKeyAsync(const Model::EnableWhiteBoxKeyRequest& request, const EnableWhiteBoxKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableWhiteBoxKeyOutcomeCallable EnableWhiteBoxKeyCallable(const Model::EnableWhiteBoxKeyRequest& request);
+
+                /**
+                 *批量启用白盒密钥
+                 * @param req EnableWhiteBoxKeysRequest
+                 * @return EnableWhiteBoxKeysOutcome
+                 */
+                EnableWhiteBoxKeysOutcome EnableWhiteBoxKeys(const Model::EnableWhiteBoxKeysRequest &request);
+                void EnableWhiteBoxKeysAsync(const Model::EnableWhiteBoxKeysRequest& request, const EnableWhiteBoxKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableWhiteBoxKeysOutcomeCallable EnableWhiteBoxKeysCallable(const Model::EnableWhiteBoxKeysRequest& request);
+
+                /**
                  *本接口用于加密最多为4KB任意数据，可用于加密数据库密码，RSA Key，或其它较小的敏感信息。对于应用的数据加密，使用GenerateDataKey生成的DataKey进行本地数据的加解密操作
                  * @param req EncryptRequest
                  * @return EncryptOutcome
@@ -281,6 +464,15 @@ namespace TencentCloud
                 EncryptOutcome Encrypt(const Model::EncryptRequest &request);
                 void EncryptAsync(const Model::EncryptRequest& request, const EncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EncryptOutcomeCallable EncryptCallable(const Model::EncryptRequest& request);
+
+                /**
+                 *使用白盒密钥进行加密
+                 * @param req EncryptByWhiteBoxRequest
+                 * @return EncryptByWhiteBoxOutcome
+                 */
+                EncryptByWhiteBoxOutcome EncryptByWhiteBox(const Model::EncryptByWhiteBoxRequest &request);
+                void EncryptByWhiteBoxAsync(const Model::EncryptByWhiteBoxRequest& request, const EncryptByWhiteBoxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EncryptByWhiteBoxOutcomeCallable EncryptByWhiteBoxCallable(const Model::EncryptByWhiteBoxRequest& request);
 
                 /**
                  *本接口生成一个数据密钥，您可以用这个密钥进行本地数据的加密。
@@ -319,6 +511,15 @@ namespace TencentCloud
                 GetParametersForImportOutcomeCallable GetParametersForImportCallable(const Model::GetParametersForImportRequest& request);
 
                 /**
+                 *该接口用户获取 KeyUsage为ASYMMETRIC_DECRYPT_RSA_2048 和 ASYMMETRIC_DECRYPT_SM2 的非对称密钥的公钥信息，使用该公钥用户可在本地进行数据加密，使用该公钥加密的数据只能通过KMS使用对应的私钥进行解密。只有处于Enabled状态的非对称密钥才可能获取公钥。
+                 * @param req GetPublicKeyRequest
+                 * @return GetPublicKeyOutcome
+                 */
+                GetPublicKeyOutcome GetPublicKey(const Model::GetPublicKeyRequest &request);
+                void GetPublicKeyAsync(const Model::GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPublicKeyOutcomeCallable GetPublicKeyCallable(const Model::GetPublicKeyRequest& request);
+
+                /**
                  *用于查询该用户是否已开通KMS服务
                  * @param req GetServiceStatusRequest
                  * @return GetServiceStatusOutcome
@@ -336,6 +537,15 @@ namespace TencentCloud
                 ImportKeyMaterialOutcome ImportKeyMaterial(const Model::ImportKeyMaterialRequest &request);
                 void ImportKeyMaterialAsync(const Model::ImportKeyMaterialRequest& request, const ImportKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportKeyMaterialOutcomeCallable ImportKeyMaterialCallable(const Model::ImportKeyMaterialRequest& request);
+
+                /**
+                 *列出当前Region支持的加密方式
+                 * @param req ListAlgorithmsRequest
+                 * @return ListAlgorithmsOutcome
+                 */
+                ListAlgorithmsOutcome ListAlgorithms(const Model::ListAlgorithmsRequest &request);
+                void ListAlgorithmsAsync(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAlgorithmsOutcomeCallable ListAlgorithmsCallable(const Model::ListAlgorithmsRequest& request);
 
                 /**
                  *根据指定Offset和Limit获取主密钥列表详情。

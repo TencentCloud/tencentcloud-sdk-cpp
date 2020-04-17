@@ -557,6 +557,28 @@ namespace TencentCloud
                      */
                     bool QuantizationInputHasBeenSet() const;
 
+                    /**
+                     * 获取Cls日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogTopicId Cls日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogTopicId() const;
+
+                    /**
+                     * 设置Cls日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogTopicId Cls日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogTopicId(const std::string& _logTopicId);
+
+                    /**
+                     * 判断参数 LogTopicId 是否已赋值
+                     * @return LogTopicId 是否已赋值
+                     */
+                    bool LogTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -721,6 +743,13 @@ namespace TencentCloud
                      */
                     QuantizationInput m_quantizationInput;
                     bool m_quantizationInputHasBeenSet;
+
+                    /**
+                     * Cls日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logTopicId;
+                    bool m_logTopicIdHasBeenSet;
 
                 };
             }

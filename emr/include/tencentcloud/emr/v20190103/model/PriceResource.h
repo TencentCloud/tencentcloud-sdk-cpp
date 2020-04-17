@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/MultiDisk.h>
+#include <tencentcloud/emr/v20190103/model/Tag.h>
 
 
 namespace TencentCloud
@@ -245,6 +246,94 @@ namespace TencentCloud
                      */
                     bool DiskCntHasBeenSet() const;
 
+                    /**
+                     * 获取规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType 规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceType 规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskNum 磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDiskNum() const;
+
+                    /**
+                     * 设置磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskNum 磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskNum(const int64_t& _diskNum);
+
+                    /**
+                     * 判断参数 DiskNum 是否已赋值
+                     * @return DiskNum 是否已赋值
+                     */
+                    bool DiskNumHasBeenSet() const;
+
+                    /**
+                     * 获取本地盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalDiskNum 本地盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLocalDiskNum() const;
+
+                    /**
+                     * 设置本地盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocalDiskNum 本地盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocalDiskNum(const int64_t& _localDiskNum);
+
+                    /**
+                     * 判断参数 LocalDiskNum 是否已赋值
+                     * @return LocalDiskNum 是否已赋值
+                     */
+                    bool LocalDiskNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +398,34 @@ namespace TencentCloud
                      */
                     int64_t m_diskCnt;
                     bool m_diskCntHasBeenSet;
+
+                    /**
+                     * 规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 磁盘数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_diskNum;
+                    bool m_diskNumHasBeenSet;
+
+                    /**
+                     * 本地盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_localDiskNum;
+                    bool m_localDiskNumHasBeenSet;
 
                 };
             }

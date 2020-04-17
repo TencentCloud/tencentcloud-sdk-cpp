@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool QueryImageIdFlagHasBeenSet() const;
 
+                    /**
+                     * 获取可用于搜索的 tag 名字
+                     * @return SearchWord 可用于搜索的 tag 名字
+                     */
+                    std::string GetSearchWord() const;
+
+                    /**
+                     * 设置可用于搜索的 tag 名字
+                     * @param SearchWord 可用于搜索的 tag 名字
+                     */
+                    void SetSearchWord(const std::string& _searchWord);
+
+                    /**
+                     * 判断参数 SearchWord 是否已赋值
+                     * @return SearchWord 是否已赋值
+                     */
+                    bool SearchWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_queryImageIdFlag;
                     bool m_queryImageIdFlagHasBeenSet;
+
+                    /**
+                     * 可用于搜索的 tag 名字
+                     */
+                    std::string m_searchWord;
+                    bool m_searchWordHasBeenSet;
 
                 };
             }

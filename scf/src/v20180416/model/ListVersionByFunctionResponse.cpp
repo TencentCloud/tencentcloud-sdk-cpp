@@ -26,7 +26,8 @@ using namespace std;
 
 ListVersionByFunctionResponse::ListVersionByFunctionResponse() :
     m_functionVersionHasBeenSet(false),
-    m_versionsHasBeenSet(false)
+    m_versionsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome ListVersionByFunctionResponse::Deserialize(const string &pay
         m_versionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +131,16 @@ vector<FunctionVersion> ListVersionByFunctionResponse::GetVersions() const
 bool ListVersionByFunctionResponse::VersionsHasBeenSet() const
 {
     return m_versionsHasBeenSet;
+}
+
+uint64_t ListVersionByFunctionResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool ListVersionByFunctionResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

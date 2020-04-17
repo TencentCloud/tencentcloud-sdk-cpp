@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取CpuId，自定义机型时需传入
-                     * @return CpuId CpuId，自定义机型时需传入
+                     * 获取CPU型号ID，查询自定义机型时必填
+                     * @return CpuId CPU型号ID，查询自定义机型时必填
                      */
                     uint64_t GetCpuId() const;
 
                     /**
-                     * 设置CpuId，自定义机型时需传入
-                     * @param CpuId CpuId，自定义机型时需传入
+                     * 设置CPU型号ID，查询自定义机型时必填
+                     * @param CpuId CPU型号ID，查询自定义机型时必填
                      */
                     void SetCpuId(const uint64_t& _cpuId);
 
@@ -133,94 +133,112 @@ namespace TencentCloud
                     bool CpuIdHasBeenSet() const;
 
                     /**
-                     * 获取硬盘类型，自定义机型时需传入
-                     * @return DiskType 硬盘类型，自定义机型时需传入
+                     * 获取内存大小，单位为G，查询自定义机型时必填
+                     * @return MemSize 内存大小，单位为G，查询自定义机型时必填
                      */
-                    std::string GetDiskType() const;
+                    uint64_t GetMemSize() const;
 
                     /**
-                     * 设置硬盘类型，自定义机型时需传入
-                     * @param DiskType 硬盘类型，自定义机型时需传入
+                     * 设置内存大小，单位为G，查询自定义机型时必填
+                     * @param MemSize 内存大小，单位为G，查询自定义机型时必填
                      */
-                    void SetDiskType(const std::string& _diskType);
+                    void SetMemSize(const uint64_t& _memSize);
 
                     /**
-                     * 判断参数 DiskType 是否已赋值
-                     * @return DiskType 是否已赋值
+                     * 判断参数 MemSize 是否已赋值
+                     * @return MemSize 是否已赋值
                      */
-                    bool DiskTypeHasBeenSet() const;
+                    bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取单块硬盘大小，自定义机型时需传入
-                     * @return DiskSize 单块硬盘大小，自定义机型时需传入
+                     * 获取是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
+                     * @return ContainRaidCard 是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
                      */
-                    uint64_t GetDiskSize() const;
+                    uint64_t GetContainRaidCard() const;
 
                     /**
-                     * 设置单块硬盘大小，自定义机型时需传入
-                     * @param DiskSize 单块硬盘大小，自定义机型时需传入
+                     * 设置是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
+                     * @param ContainRaidCard 是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
                      */
-                    void SetDiskSize(const uint64_t& _diskSize);
+                    void SetContainRaidCard(const uint64_t& _containRaidCard);
 
                     /**
-                     * 判断参数 DiskSize 是否已赋值
-                     * @return DiskSize 是否已赋值
+                     * 判断参数 ContainRaidCard 是否已赋值
+                     * @return ContainRaidCard 是否已赋值
                      */
-                    bool DiskSizeHasBeenSet() const;
+                    bool ContainRaidCardHasBeenSet() const;
 
                     /**
-                     * 获取硬盘数量，自定义机型时需传入
-                     * @return DiskNum 硬盘数量，自定义机型时需传入
+                     * 获取系统盘类型ID，查询自定义机型时必填
+                     * @return SystemDiskTypeId 系统盘类型ID，查询自定义机型时必填
                      */
-                    uint64_t GetDiskNum() const;
+                    uint64_t GetSystemDiskTypeId() const;
 
                     /**
-                     * 设置硬盘数量，自定义机型时需传入
-                     * @param DiskNum 硬盘数量，自定义机型时需传入
+                     * 设置系统盘类型ID，查询自定义机型时必填
+                     * @param SystemDiskTypeId 系统盘类型ID，查询自定义机型时必填
                      */
-                    void SetDiskNum(const uint64_t& _diskNum);
+                    void SetSystemDiskTypeId(const uint64_t& _systemDiskTypeId);
 
                     /**
-                     * 判断参数 DiskNum 是否已赋值
-                     * @return DiskNum 是否已赋值
+                     * 判断参数 SystemDiskTypeId 是否已赋值
+                     * @return SystemDiskTypeId 是否已赋值
                      */
-                    bool DiskNumHasBeenSet() const;
+                    bool SystemDiskTypeIdHasBeenSet() const;
 
                     /**
-                     * 获取内存总大小，自定义机型时需传入
-                     * @return Mem 内存总大小，自定义机型时需传入
+                     * 获取系统盘数量，查询自定义机型时必填
+                     * @return SystemDiskCount 系统盘数量，查询自定义机型时必填
                      */
-                    uint64_t GetMem() const;
+                    uint64_t GetSystemDiskCount() const;
 
                     /**
-                     * 设置内存总大小，自定义机型时需传入
-                     * @param Mem 内存总大小，自定义机型时需传入
+                     * 设置系统盘数量，查询自定义机型时必填
+                     * @param SystemDiskCount 系统盘数量，查询自定义机型时必填
                      */
-                    void SetMem(const uint64_t& _mem);
+                    void SetSystemDiskCount(const uint64_t& _systemDiskCount);
 
                     /**
-                     * 判断参数 Mem 是否已赋值
-                     * @return Mem 是否已赋值
+                     * 判断参数 SystemDiskCount 是否已赋值
+                     * @return SystemDiskCount 是否已赋值
                      */
-                    bool MemHasBeenSet() const;
+                    bool SystemDiskCountHasBeenSet() const;
 
                     /**
-                     * 获取是否支持raid，自定义机型时需传入
-                     * @return HaveRaidCard 是否支持raid，自定义机型时需传入
+                     * 获取数据盘类型ID，查询自定义机型时可填
+                     * @return DataDiskTypeId 数据盘类型ID，查询自定义机型时可填
                      */
-                    uint64_t GetHaveRaidCard() const;
+                    uint64_t GetDataDiskTypeId() const;
 
                     /**
-                     * 设置是否支持raid，自定义机型时需传入
-                     * @param HaveRaidCard 是否支持raid，自定义机型时需传入
+                     * 设置数据盘类型ID，查询自定义机型时可填
+                     * @param DataDiskTypeId 数据盘类型ID，查询自定义机型时可填
                      */
-                    void SetHaveRaidCard(const uint64_t& _haveRaidCard);
+                    void SetDataDiskTypeId(const uint64_t& _dataDiskTypeId);
 
                     /**
-                     * 判断参数 HaveRaidCard 是否已赋值
-                     * @return HaveRaidCard 是否已赋值
+                     * 判断参数 DataDiskTypeId 是否已赋值
+                     * @return DataDiskTypeId 是否已赋值
                      */
-                    bool HaveRaidCardHasBeenSet() const;
+                    bool DataDiskTypeIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘数量，查询自定义机型时可填
+                     * @return DataDiskCount 数据盘数量，查询自定义机型时可填
+                     */
+                    uint64_t GetDataDiskCount() const;
+
+                    /**
+                     * 设置数据盘数量，查询自定义机型时可填
+                     * @param DataDiskCount 数据盘数量，查询自定义机型时可填
+                     */
+                    void SetDataDiskCount(const uint64_t& _dataDiskCount);
+
+                    /**
+                     * 判断参数 DataDiskCount 是否已赋值
+                     * @return DataDiskCount 是否已赋值
+                     */
+                    bool DataDiskCountHasBeenSet() const;
 
                 private:
 
@@ -249,40 +267,46 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * CpuId，自定义机型时需传入
+                     * CPU型号ID，查询自定义机型时必填
                      */
                     uint64_t m_cpuId;
                     bool m_cpuIdHasBeenSet;
 
                     /**
-                     * 硬盘类型，自定义机型时需传入
+                     * 内存大小，单位为G，查询自定义机型时必填
                      */
-                    std::string m_diskType;
-                    bool m_diskTypeHasBeenSet;
+                    uint64_t m_memSize;
+                    bool m_memSizeHasBeenSet;
 
                     /**
-                     * 单块硬盘大小，自定义机型时需传入
+                     * 是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填
                      */
-                    uint64_t m_diskSize;
-                    bool m_diskSizeHasBeenSet;
+                    uint64_t m_containRaidCard;
+                    bool m_containRaidCardHasBeenSet;
 
                     /**
-                     * 硬盘数量，自定义机型时需传入
+                     * 系统盘类型ID，查询自定义机型时必填
                      */
-                    uint64_t m_diskNum;
-                    bool m_diskNumHasBeenSet;
+                    uint64_t m_systemDiskTypeId;
+                    bool m_systemDiskTypeIdHasBeenSet;
 
                     /**
-                     * 内存总大小，自定义机型时需传入
+                     * 系统盘数量，查询自定义机型时必填
                      */
-                    uint64_t m_mem;
-                    bool m_memHasBeenSet;
+                    uint64_t m_systemDiskCount;
+                    bool m_systemDiskCountHasBeenSet;
 
                     /**
-                     * 是否支持raid，自定义机型时需传入
+                     * 数据盘类型ID，查询自定义机型时可填
                      */
-                    uint64_t m_haveRaidCard;
-                    bool m_haveRaidCardHasBeenSet;
+                    uint64_t m_dataDiskTypeId;
+                    bool m_dataDiskTypeIdHasBeenSet;
+
+                    /**
+                     * 数据盘数量，查询自定义机型时可填
+                     */
+                    uint64_t m_dataDiskCount;
+                    bool m_dataDiskCountHasBeenSet;
 
                 };
             }

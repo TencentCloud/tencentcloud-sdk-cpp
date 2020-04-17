@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时
-                     * @return TaskStatus 任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时
+                     * 获取任务状态: 0-请返回,1-已完成,2-处理中,3-处理出错,4-处理超时
+                     * @return TaskStatus 任务状态: 0-请返回,1-已完成,2-处理中,3-处理出错,4-处理超时
                      */
                     uint64_t GetTaskStatus() const;
 
@@ -107,7 +107,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时
+                     * 任务状态: 0-请返回,1-已完成,2-处理中,3-处理出错,4-处理超时
                      */
                     uint64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本内容Base64编码
-                     * @return Content 文本内容Base64编码
+                     * 获取文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
+                     * @return Content 文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置文本内容Base64编码
-                     * @param Content 文本内容Base64编码
+                     * 设置文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
+                     * @param Content 文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
                      */
                     void SetContent(const std::string& _content);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本内容Base64编码
+                     * 文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

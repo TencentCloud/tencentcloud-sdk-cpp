@@ -134,24 +134,6 @@ namespace TencentCloud
                     bool ContractNameHasBeenSet() const;
 
                     /**
-                     * 获取合同发起方帐号ID
-                     * @return Initiator 合同发起方帐号ID
-                     */
-                    std::string GetInitiator() const;
-
-                    /**
-                     * 设置合同发起方帐号ID
-                     * @param Initiator 合同发起方帐号ID
-                     */
-                    void SetInitiator(const std::string& _initiator);
-
-                    /**
-                     * 判断参数 Initiator 是否已赋值
-                     * @return Initiator 是否已赋值
-                     */
-                    bool InitiatorHasBeenSet() const;
-
-                    /**
                      * 获取备注
                      * @return Remarks 备注
                      */
@@ -168,6 +150,24 @@ namespace TencentCloud
                      * @return Remarks 是否已赋值
                      */
                     bool RemarksHasBeenSet() const;
+
+                    /**
+                     * 获取合同发起方腾讯云帐号ID（由平台自动填写）
+                     * @return Initiator 合同发起方腾讯云帐号ID（由平台自动填写）
+                     */
+                    std::string GetInitiator() const;
+
+                    /**
+                     * 设置合同发起方腾讯云帐号ID（由平台自动填写）
+                     * @param Initiator 合同发起方腾讯云帐号ID（由平台自动填写）
+                     */
+                    void SetInitiator(const std::string& _initiator);
+
+                    /**
+                     * 判断参数 Initiator 是否已赋值
+                     * @return Initiator 是否已赋值
+                     */
+                    bool InitiatorHasBeenSet() const;
 
                     /**
                      * 获取合同长时间未签署的过期时间
@@ -220,16 +220,16 @@ namespace TencentCloud
                     bool m_contractNameHasBeenSet;
 
                     /**
-                     * 合同发起方帐号ID
-                     */
-                    std::string m_initiator;
-                    bool m_initiatorHasBeenSet;
-
-                    /**
                      * 备注
                      */
                     std::string m_remarks;
                     bool m_remarksHasBeenSet;
+
+                    /**
+                     * 合同发起方腾讯云帐号ID（由平台自动填写）
+                     */
+                    std::string m_initiator;
+                    bool m_initiatorHasBeenSet;
 
                     /**
                      * 合同长时间未签署的过期时间

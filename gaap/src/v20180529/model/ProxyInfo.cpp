@@ -43,7 +43,8 @@ ProxyInfo::ProxyInfo() :
     m_realServerRegionInfoHasBeenSet(false),
     m_forwardIPHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_supportSecurityHasBeenSet(false)
+    m_supportSecurityHasBeenSet(false),
+    m_billingTypeHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         m_supportSecurityHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingType") && !value["BillingType"].IsNull())
+    {
+        if (!value["BillingType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProxyInfo.BillingType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingType = value["BillingType"].GetInt64();
+        m_billingTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -494,6 +505,14 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "SupportSecurity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportSecurity, allocator);
+    }
+
+    if (m_billingTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BillingType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billingType, allocator);
     }
 
 }
@@ -849,5 +868,21 @@ void ProxyInfo::SetSupportSecurity(const int64_t& _supportSecurity)
 bool ProxyInfo::SupportSecurityHasBeenSet() const
 {
     return m_supportSecurityHasBeenSet;
+}
+
+int64_t ProxyInfo::GetBillingType() const
+{
+    return m_billingType;
+}
+
+void ProxyInfo::SetBillingType(const int64_t& _billingType)
+{
+    m_billingType = _billingType;
+    m_billingTypeHasBeenSet = true;
+}
+
+bool ProxyInfo::BillingTypeHasBeenSet() const
+{
+    return m_billingTypeHasBeenSet;
 }
 

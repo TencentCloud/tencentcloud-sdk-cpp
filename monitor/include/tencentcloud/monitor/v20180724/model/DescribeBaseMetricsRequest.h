@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务命名空间
-                     * @return Namespace 业务命名空间
+                     * 获取业务命名空间，各个云产品的业务命名空间不同。如需获取业务命名空间，请前往各产品监控接口文档，例如云服务器的命名空间，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
+                     * @return Namespace 业务命名空间，各个云产品的业务命名空间不同。如需获取业务命名空间，请前往各产品监控接口文档，例如云服务器的命名空间，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置业务命名空间
-                     * @param Namespace 业务命名空间
+                     * 设置业务命名空间，各个云产品的业务命名空间不同。如需获取业务命名空间，请前往各产品监控接口文档，例如云服务器的命名空间，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
+                     * @param Namespace 业务命名空间，各个云产品的业务命名空间不同。如需获取业务命名空间，请前往各产品监控接口文档，例如云服务器的命名空间，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取指标名
-                     * @return MetricName 指标名
+                     * 获取指标名，各个云产品的指标名不同。如需获取指标名，请前往各产品监控接口文档，例如云服务器的指标名，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
+                     * @return MetricName 指标名，各个云产品的指标名不同。如需获取指标名，请前往各产品监控接口文档，例如云服务器的指标名，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名
-                     * @param MetricName 指标名
+                     * 设置指标名，各个云产品的指标名不同。如需获取指标名，请前往各产品监控接口文档，例如云服务器的指标名，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
+                     * @param MetricName 指标名，各个云产品的指标名不同。如需获取指标名，请前往各产品监控接口文档，例如云服务器的指标名，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务命名空间
+                     * 业务命名空间，各个云产品的业务命名空间不同。如需获取业务命名空间，请前往各产品监控接口文档，例如云服务器的命名空间，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 指标名
+                     * 指标名，各个云产品的指标名不同。如需获取指标名，请前往各产品监控接口文档，例如云服务器的指标名，可参见 [云服务器监控接口](https://cloud.tencent.com/document/api/248/30385)
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

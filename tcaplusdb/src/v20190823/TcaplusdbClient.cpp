@@ -126,42 +126,128 @@ TcaplusdbClient::CompareIdlFilesOutcomeCallable TcaplusdbClient::CompareIdlFiles
     return task->get_future();
 }
 
-TcaplusdbClient::CreateAppOutcome TcaplusdbClient::CreateApp(const CreateAppRequest &request)
+TcaplusdbClient::CreateBackupOutcome TcaplusdbClient::CreateBackup(const CreateBackupRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateApp");
+    auto outcome = MakeRequest(request, "CreateBackup");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateAppResponse rsp = CreateAppResponse();
+        CreateBackupResponse rsp = CreateBackupResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateAppOutcome(rsp);
+            return CreateBackupOutcome(rsp);
         else
-            return CreateAppOutcome(o.GetError());
+            return CreateBackupOutcome(o.GetError());
     }
     else
     {
-        return CreateAppOutcome(outcome.GetError());
+        return CreateBackupOutcome(outcome.GetError());
     }
 }
 
-void TcaplusdbClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcaplusdbClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateApp(request), context);
+        handler(this, request, this->CreateBackup(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcaplusdbClient::CreateAppOutcomeCallable TcaplusdbClient::CreateAppCallable(const CreateAppRequest &request)
+TcaplusdbClient::CreateBackupOutcomeCallable TcaplusdbClient::CreateBackupCallable(const CreateBackupRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateAppOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CreateBackupOutcome()>>(
         [this, request]()
         {
-            return this->CreateApp(request);
+            return this->CreateBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::CreateClusterOutcome TcaplusdbClient::CreateCluster(const CreateClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterResponse rsp = CreateClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterOutcome(rsp);
+        else
+            return CreateClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::CreateClusterOutcomeCallable TcaplusdbClient::CreateClusterCallable(const CreateClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::CreateTableGroupOutcome TcaplusdbClient::CreateTableGroup(const CreateTableGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTableGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTableGroupResponse rsp = CreateTableGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTableGroupOutcome(rsp);
+        else
+            return CreateTableGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTableGroupOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::CreateTableGroupAsync(const CreateTableGroupRequest& request, const CreateTableGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTableGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::CreateTableGroupOutcomeCallable TcaplusdbClient::CreateTableGroupCallable(const CreateTableGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTableGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTableGroup(request);
         }
     );
 
@@ -212,85 +298,42 @@ TcaplusdbClient::CreateTablesOutcomeCallable TcaplusdbClient::CreateTablesCallab
     return task->get_future();
 }
 
-TcaplusdbClient::CreateZoneOutcome TcaplusdbClient::CreateZone(const CreateZoneRequest &request)
+TcaplusdbClient::DeleteClusterOutcome TcaplusdbClient::DeleteCluster(const DeleteClusterRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateZone");
+    auto outcome = MakeRequest(request, "DeleteCluster");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateZoneResponse rsp = CreateZoneResponse();
+        DeleteClusterResponse rsp = DeleteClusterResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateZoneOutcome(rsp);
+            return DeleteClusterOutcome(rsp);
         else
-            return CreateZoneOutcome(o.GetError());
+            return DeleteClusterOutcome(o.GetError());
     }
     else
     {
-        return CreateZoneOutcome(outcome.GetError());
+        return DeleteClusterOutcome(outcome.GetError());
     }
 }
 
-void TcaplusdbClient::CreateZoneAsync(const CreateZoneRequest& request, const CreateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcaplusdbClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateZone(request), context);
+        handler(this, request, this->DeleteCluster(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcaplusdbClient::CreateZoneOutcomeCallable TcaplusdbClient::CreateZoneCallable(const CreateZoneRequest &request)
+TcaplusdbClient::DeleteClusterOutcomeCallable TcaplusdbClient::DeleteClusterCallable(const DeleteClusterRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateZoneOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
         [this, request]()
         {
-            return this->CreateZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcaplusdbClient::DeleteAppOutcome TcaplusdbClient::DeleteApp(const DeleteAppRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteApp");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteAppResponse rsp = DeleteAppResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteAppOutcome(rsp);
-        else
-            return DeleteAppOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteAppOutcome(outcome.GetError());
-    }
-}
-
-void TcaplusdbClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteApp(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcaplusdbClient::DeleteAppOutcomeCallable TcaplusdbClient::DeleteAppCallable(const DeleteAppRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteAppOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteApp(request);
+            return this->DeleteCluster(request);
         }
     );
 
@@ -341,6 +384,49 @@ TcaplusdbClient::DeleteIdlFilesOutcomeCallable TcaplusdbClient::DeleteIdlFilesCa
     return task->get_future();
 }
 
+TcaplusdbClient::DeleteTableGroupOutcome TcaplusdbClient::DeleteTableGroup(const DeleteTableGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTableGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTableGroupResponse rsp = DeleteTableGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTableGroupOutcome(rsp);
+        else
+            return DeleteTableGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTableGroupOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DeleteTableGroupAsync(const DeleteTableGroupRequest& request, const DeleteTableGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTableGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DeleteTableGroupOutcomeCallable TcaplusdbClient::DeleteTableGroupCallable(const DeleteTableGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTableGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTableGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::DeleteTablesOutcome TcaplusdbClient::DeleteTables(const DeleteTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTables");
@@ -384,85 +470,42 @@ TcaplusdbClient::DeleteTablesOutcomeCallable TcaplusdbClient::DeleteTablesCallab
     return task->get_future();
 }
 
-TcaplusdbClient::DeleteZoneOutcome TcaplusdbClient::DeleteZone(const DeleteZoneRequest &request)
+TcaplusdbClient::DescribeClustersOutcome TcaplusdbClient::DescribeClusters(const DescribeClustersRequest &request)
 {
-    auto outcome = MakeRequest(request, "DeleteZone");
+    auto outcome = MakeRequest(request, "DescribeClusters");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DeleteZoneResponse rsp = DeleteZoneResponse();
+        DescribeClustersResponse rsp = DescribeClustersResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DeleteZoneOutcome(rsp);
+            return DescribeClustersOutcome(rsp);
         else
-            return DeleteZoneOutcome(o.GetError());
+            return DescribeClustersOutcome(o.GetError());
     }
     else
     {
-        return DeleteZoneOutcome(outcome.GetError());
+        return DescribeClustersOutcome(outcome.GetError());
     }
 }
 
-void TcaplusdbClient::DeleteZoneAsync(const DeleteZoneRequest& request, const DeleteZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcaplusdbClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DeleteZone(request), context);
+        handler(this, request, this->DescribeClusters(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcaplusdbClient::DeleteZoneOutcomeCallable TcaplusdbClient::DeleteZoneCallable(const DeleteZoneRequest &request)
+TcaplusdbClient::DescribeClustersOutcomeCallable TcaplusdbClient::DescribeClustersCallable(const DescribeClustersRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteZoneOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
         [this, request]()
         {
-            return this->DeleteZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcaplusdbClient::DescribeAppsOutcome TcaplusdbClient::DescribeApps(const DescribeAppsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeApps");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAppsResponse rsp = DescribeAppsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAppsOutcome(rsp);
-        else
-            return DescribeAppsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAppsOutcome(outcome.GetError());
-    }
-}
-
-void TcaplusdbClient::DescribeAppsAsync(const DescribeAppsRequest& request, const DescribeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApps(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcaplusdbClient::DescribeAppsOutcomeCallable TcaplusdbClient::DescribeAppsCallable(const DescribeAppsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAppsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApps(request);
+            return this->DescribeClusters(request);
         }
     );
 
@@ -549,6 +592,49 @@ TcaplusdbClient::DescribeRegionsOutcomeCallable TcaplusdbClient::DescribeRegions
         [this, request]()
         {
             return this->DescribeRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::DescribeTableGroupsOutcome TcaplusdbClient::DescribeTableGroups(const DescribeTableGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableGroupsResponse rsp = DescribeTableGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableGroupsOutcome(rsp);
+        else
+            return DescribeTableGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DescribeTableGroupsAsync(const DescribeTableGroupsRequest& request, const DescribeTableGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DescribeTableGroupsOutcomeCallable TcaplusdbClient::DescribeTableGroupsCallable(const DescribeTableGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableGroups(request);
         }
     );
 
@@ -728,42 +814,42 @@ TcaplusdbClient::DescribeUinInWhitelistOutcomeCallable TcaplusdbClient::Describe
     return task->get_future();
 }
 
-TcaplusdbClient::DescribeZonesOutcome TcaplusdbClient::DescribeZones(const DescribeZonesRequest &request)
+TcaplusdbClient::ModifyClusterNameOutcome TcaplusdbClient::ModifyClusterName(const ModifyClusterNameRequest &request)
 {
-    auto outcome = MakeRequest(request, "DescribeZones");
+    auto outcome = MakeRequest(request, "ModifyClusterName");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DescribeZonesResponse rsp = DescribeZonesResponse();
+        ModifyClusterNameResponse rsp = ModifyClusterNameResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DescribeZonesOutcome(rsp);
+            return ModifyClusterNameOutcome(rsp);
         else
-            return DescribeZonesOutcome(o.GetError());
+            return ModifyClusterNameOutcome(o.GetError());
     }
     else
     {
-        return DescribeZonesOutcome(outcome.GetError());
+        return ModifyClusterNameOutcome(outcome.GetError());
     }
 }
 
-void TcaplusdbClient::DescribeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcaplusdbClient::ModifyClusterNameAsync(const ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DescribeZones(request), context);
+        handler(this, request, this->ModifyClusterName(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcaplusdbClient::DescribeZonesOutcomeCallable TcaplusdbClient::DescribeZonesCallable(const DescribeZonesRequest &request)
+TcaplusdbClient::ModifyClusterNameOutcomeCallable TcaplusdbClient::ModifyClusterNameCallable(const ModifyClusterNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<ModifyClusterNameOutcome()>>(
         [this, request]()
         {
-            return this->DescribeZones(request);
+            return this->ModifyClusterName(request);
         }
     );
 
@@ -771,42 +857,42 @@ TcaplusdbClient::DescribeZonesOutcomeCallable TcaplusdbClient::DescribeZonesCall
     return task->get_future();
 }
 
-TcaplusdbClient::ModifyAppNameOutcome TcaplusdbClient::ModifyAppName(const ModifyAppNameRequest &request)
+TcaplusdbClient::ModifyClusterPasswordOutcome TcaplusdbClient::ModifyClusterPassword(const ModifyClusterPasswordRequest &request)
 {
-    auto outcome = MakeRequest(request, "ModifyAppName");
+    auto outcome = MakeRequest(request, "ModifyClusterPassword");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        ModifyAppNameResponse rsp = ModifyAppNameResponse();
+        ModifyClusterPasswordResponse rsp = ModifyClusterPasswordResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return ModifyAppNameOutcome(rsp);
+            return ModifyClusterPasswordOutcome(rsp);
         else
-            return ModifyAppNameOutcome(o.GetError());
+            return ModifyClusterPasswordOutcome(o.GetError());
     }
     else
     {
-        return ModifyAppNameOutcome(outcome.GetError());
+        return ModifyClusterPasswordOutcome(outcome.GetError());
     }
 }
 
-void TcaplusdbClient::ModifyAppNameAsync(const ModifyAppNameRequest& request, const ModifyAppNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcaplusdbClient::ModifyClusterPasswordAsync(const ModifyClusterPasswordRequest& request, const ModifyClusterPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->ModifyAppName(request), context);
+        handler(this, request, this->ModifyClusterPassword(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcaplusdbClient::ModifyAppNameOutcomeCallable TcaplusdbClient::ModifyAppNameCallable(const ModifyAppNameRequest &request)
+TcaplusdbClient::ModifyClusterPasswordOutcomeCallable TcaplusdbClient::ModifyClusterPasswordCallable(const ModifyClusterPasswordRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAppNameOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<ModifyClusterPasswordOutcome()>>(
         [this, request]()
         {
-            return this->ModifyAppName(request);
+            return this->ModifyClusterPassword(request);
         }
     );
 
@@ -814,42 +900,42 @@ TcaplusdbClient::ModifyAppNameOutcomeCallable TcaplusdbClient::ModifyAppNameCall
     return task->get_future();
 }
 
-TcaplusdbClient::ModifyAppPasswordOutcome TcaplusdbClient::ModifyAppPassword(const ModifyAppPasswordRequest &request)
+TcaplusdbClient::ModifyTableGroupNameOutcome TcaplusdbClient::ModifyTableGroupName(const ModifyTableGroupNameRequest &request)
 {
-    auto outcome = MakeRequest(request, "ModifyAppPassword");
+    auto outcome = MakeRequest(request, "ModifyTableGroupName");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        ModifyAppPasswordResponse rsp = ModifyAppPasswordResponse();
+        ModifyTableGroupNameResponse rsp = ModifyTableGroupNameResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return ModifyAppPasswordOutcome(rsp);
+            return ModifyTableGroupNameOutcome(rsp);
         else
-            return ModifyAppPasswordOutcome(o.GetError());
+            return ModifyTableGroupNameOutcome(o.GetError());
     }
     else
     {
-        return ModifyAppPasswordOutcome(outcome.GetError());
+        return ModifyTableGroupNameOutcome(outcome.GetError());
     }
 }
 
-void TcaplusdbClient::ModifyAppPasswordAsync(const ModifyAppPasswordRequest& request, const ModifyAppPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcaplusdbClient::ModifyTableGroupNameAsync(const ModifyTableGroupNameRequest& request, const ModifyTableGroupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->ModifyAppPassword(request), context);
+        handler(this, request, this->ModifyTableGroupName(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TcaplusdbClient::ModifyAppPasswordOutcomeCallable TcaplusdbClient::ModifyAppPasswordCallable(const ModifyAppPasswordRequest &request)
+TcaplusdbClient::ModifyTableGroupNameOutcomeCallable TcaplusdbClient::ModifyTableGroupNameCallable(const ModifyTableGroupNameRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<ModifyAppPasswordOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<ModifyTableGroupNameOutcome()>>(
         [this, request]()
         {
-            return this->ModifyAppPassword(request);
+            return this->ModifyTableGroupName(request);
         }
     );
 
@@ -979,49 +1065,6 @@ TcaplusdbClient::ModifyTablesOutcomeCallable TcaplusdbClient::ModifyTablesCallab
         [this, request]()
         {
             return this->ModifyTables(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcaplusdbClient::ModifyZoneNameOutcome TcaplusdbClient::ModifyZoneName(const ModifyZoneNameRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyZoneName");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyZoneNameResponse rsp = ModifyZoneNameResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyZoneNameOutcome(rsp);
-        else
-            return ModifyZoneNameOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyZoneNameOutcome(outcome.GetError());
-    }
-}
-
-void TcaplusdbClient::ModifyZoneNameAsync(const ModifyZoneNameRequest& request, const ModifyZoneNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyZoneName(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcaplusdbClient::ModifyZoneNameOutcomeCallable TcaplusdbClient::ModifyZoneNameCallable(const ModifyZoneNameRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyZoneNameOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyZoneName(request);
         }
     );
 

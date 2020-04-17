@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取区间开始时间
-                     * @return MinTime 区间开始时间
+                     * 获取区间开始时间（Unix 时间戳，毫秒级）
+                     * @return MinTime 区间开始时间（Unix 时间戳，毫秒级）
                      */
                     uint64_t GetMinTime() const;
 
                     /**
-                     * 设置区间开始时间
-                     * @param MinTime 区间开始时间
+                     * 设置区间开始时间（Unix 时间戳，毫秒级）
+                     * @param MinTime 区间开始时间（Unix 时间戳，毫秒级）
                      */
                     void SetMinTime(const uint64_t& _minTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MinTimeHasBeenSet() const;
 
                     /**
-                     * 获取区间结束时间
-                     * @return MaxTime 区间结束时间
+                     * 获取区间结束时间（Unix 时间戳，毫秒级）
+                     * @return MaxTime 区间结束时间（Unix 时间戳，毫秒级）
                      */
                     uint64_t GetMaxTime() const;
 
                     /**
-                     * 设置区间结束时间
-                     * @param MaxTime 区间结束时间
+                     * 设置区间结束时间（Unix 时间戳，毫秒级）
+                     * @param MaxTime 区间结束时间（Unix 时间戳，毫秒级）
                      */
                     void SetMaxTime(const uint64_t& _maxTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取属性字段名称
-                     * @return FieldName 属性字段名称
+                     * 获取属性字段名称，对应数据模板中功能属性的标识符
+                     * @return FieldName 属性字段名称，对应数据模板中功能属性的标识符
                      */
                     std::string GetFieldName() const;
 
                     /**
-                     * 设置属性字段名称
-                     * @param FieldName 属性字段名称
+                     * 设置属性字段名称，对应数据模板中功能属性的标识符
+                     * @param FieldName 属性字段名称，对应数据模板中功能属性的标识符
                      */
                     void SetFieldName(const std::string& _fieldName);
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 区间开始时间
+                     * 区间开始时间（Unix 时间戳，毫秒级）
                      */
                     uint64_t m_minTime;
                     bool m_minTimeHasBeenSet;
 
                     /**
-                     * 区间结束时间
+                     * 区间结束时间（Unix 时间戳，毫秒级）
                      */
                     uint64_t m_maxTime;
                     bool m_maxTimeHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 属性字段名称
+                     * 属性字段名称，对应数据模板中功能属性的标识符
                      */
                     std::string m_fieldName;
                     bool m_fieldNameHasBeenSet;

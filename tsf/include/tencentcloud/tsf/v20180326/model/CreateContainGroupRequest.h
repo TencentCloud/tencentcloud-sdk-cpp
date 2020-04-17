@@ -295,6 +295,186 @@ namespace TencentCloud
                      */
                     bool MemRequestHasBeenSet() const;
 
+                    /**
+                     * 获取部署组资源类型
+                     * @return GroupResourceType 部署组资源类型
+                     */
+                    std::string GetGroupResourceType() const;
+
+                    /**
+                     * 设置部署组资源类型
+                     * @param GroupResourceType 部署组资源类型
+                     */
+                    void SetGroupResourceType(const std::string& _groupResourceType);
+
+                    /**
+                     * 判断参数 GroupResourceType 是否已赋值
+                     * @return GroupResourceType 是否已赋值
+                     */
+                    bool GroupResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取子网ID
+                     * @return SubnetId 子网ID
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网ID
+                     * @param SubnetId 子网ID
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取agent 容器分配的 CPU 核数，对应 K8S 的 request
+                     * @return AgentCpuRequest agent 容器分配的 CPU 核数，对应 K8S 的 request
+                     */
+                    std::string GetAgentCpuRequest() const;
+
+                    /**
+                     * 设置agent 容器分配的 CPU 核数，对应 K8S 的 request
+                     * @param AgentCpuRequest agent 容器分配的 CPU 核数，对应 K8S 的 request
+                     */
+                    void SetAgentCpuRequest(const std::string& _agentCpuRequest);
+
+                    /**
+                     * 判断参数 AgentCpuRequest 是否已赋值
+                     * @return AgentCpuRequest 是否已赋值
+                     */
+                    bool AgentCpuRequestHasBeenSet() const;
+
+                    /**
+                     * 获取agent 容器最大的 CPU 核数，对应 K8S 的 limit
+                     * @return AgentCpuLimit agent 容器最大的 CPU 核数，对应 K8S 的 limit
+                     */
+                    std::string GetAgentCpuLimit() const;
+
+                    /**
+                     * 设置agent 容器最大的 CPU 核数，对应 K8S 的 limit
+                     * @param AgentCpuLimit agent 容器最大的 CPU 核数，对应 K8S 的 limit
+                     */
+                    void SetAgentCpuLimit(const std::string& _agentCpuLimit);
+
+                    /**
+                     * 判断参数 AgentCpuLimit 是否已赋值
+                     * @return AgentCpuLimit 是否已赋值
+                     */
+                    bool AgentCpuLimitHasBeenSet() const;
+
+                    /**
+                     * 获取agent 容器分配的内存 MiB 数，对应 K8S 的 request
+                     * @return AgentMemRequest agent 容器分配的内存 MiB 数，对应 K8S 的 request
+                     */
+                    std::string GetAgentMemRequest() const;
+
+                    /**
+                     * 设置agent 容器分配的内存 MiB 数，对应 K8S 的 request
+                     * @param AgentMemRequest agent 容器分配的内存 MiB 数，对应 K8S 的 request
+                     */
+                    void SetAgentMemRequest(const std::string& _agentMemRequest);
+
+                    /**
+                     * 判断参数 AgentMemRequest 是否已赋值
+                     * @return AgentMemRequest 是否已赋值
+                     */
+                    bool AgentMemRequestHasBeenSet() const;
+
+                    /**
+                     * 获取agent 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     * @return AgentMemLimit agent 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     */
+                    std::string GetAgentMemLimit() const;
+
+                    /**
+                     * 设置agent 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     * @param AgentMemLimit agent 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     */
+                    void SetAgentMemLimit(const std::string& _agentMemLimit);
+
+                    /**
+                     * 判断参数 AgentMemLimit 是否已赋值
+                     * @return AgentMemLimit 是否已赋值
+                     */
+                    bool AgentMemLimitHasBeenSet() const;
+
+                    /**
+                     * 获取istioproxy 容器分配的 CPU 核数，对应 K8S 的 request
+                     * @return IstioCpuRequest istioproxy 容器分配的 CPU 核数，对应 K8S 的 request
+                     */
+                    std::string GetIstioCpuRequest() const;
+
+                    /**
+                     * 设置istioproxy 容器分配的 CPU 核数，对应 K8S 的 request
+                     * @param IstioCpuRequest istioproxy 容器分配的 CPU 核数，对应 K8S 的 request
+                     */
+                    void SetIstioCpuRequest(const std::string& _istioCpuRequest);
+
+                    /**
+                     * 判断参数 IstioCpuRequest 是否已赋值
+                     * @return IstioCpuRequest 是否已赋值
+                     */
+                    bool IstioCpuRequestHasBeenSet() const;
+
+                    /**
+                     * 获取istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit
+                     * @return IstioCpuLimit istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit
+                     */
+                    std::string GetIstioCpuLimit() const;
+
+                    /**
+                     * 设置istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit
+                     * @param IstioCpuLimit istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit
+                     */
+                    void SetIstioCpuLimit(const std::string& _istioCpuLimit);
+
+                    /**
+                     * 判断参数 IstioCpuLimit 是否已赋值
+                     * @return IstioCpuLimit 是否已赋值
+                     */
+                    bool IstioCpuLimitHasBeenSet() const;
+
+                    /**
+                     * 获取istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request
+                     * @return IstioMemRequest istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request
+                     */
+                    std::string GetIstioMemRequest() const;
+
+                    /**
+                     * 设置istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request
+                     * @param IstioMemRequest istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request
+                     */
+                    void SetIstioMemRequest(const std::string& _istioMemRequest);
+
+                    /**
+                     * 判断参数 IstioMemRequest 是否已赋值
+                     * @return IstioMemRequest 是否已赋值
+                     */
+                    bool IstioMemRequestHasBeenSet() const;
+
+                    /**
+                     * 获取istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     * @return IstioMemLimit istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     */
+                    std::string GetIstioMemLimit() const;
+
+                    /**
+                     * 设置istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     * @param IstioMemLimit istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     */
+                    void SetIstioMemLimit(const std::string& _istioMemLimit);
+
+                    /**
+                     * 判断参数 IstioMemLimit 是否已赋值
+                     * @return IstioMemLimit 是否已赋值
+                     */
+                    bool IstioMemLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +560,66 @@ namespace TencentCloud
                      */
                     std::string m_memRequest;
                     bool m_memRequestHasBeenSet;
+
+                    /**
+                     * 部署组资源类型
+                     */
+                    std::string m_groupResourceType;
+                    bool m_groupResourceTypeHasBeenSet;
+
+                    /**
+                     * 子网ID
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * agent 容器分配的 CPU 核数，对应 K8S 的 request
+                     */
+                    std::string m_agentCpuRequest;
+                    bool m_agentCpuRequestHasBeenSet;
+
+                    /**
+                     * agent 容器最大的 CPU 核数，对应 K8S 的 limit
+                     */
+                    std::string m_agentCpuLimit;
+                    bool m_agentCpuLimitHasBeenSet;
+
+                    /**
+                     * agent 容器分配的内存 MiB 数，对应 K8S 的 request
+                     */
+                    std::string m_agentMemRequest;
+                    bool m_agentMemRequestHasBeenSet;
+
+                    /**
+                     * agent 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     */
+                    std::string m_agentMemLimit;
+                    bool m_agentMemLimitHasBeenSet;
+
+                    /**
+                     * istioproxy 容器分配的 CPU 核数，对应 K8S 的 request
+                     */
+                    std::string m_istioCpuRequest;
+                    bool m_istioCpuRequestHasBeenSet;
+
+                    /**
+                     * istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit
+                     */
+                    std::string m_istioCpuLimit;
+                    bool m_istioCpuLimitHasBeenSet;
+
+                    /**
+                     * istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request
+                     */
+                    std::string m_istioMemRequest;
+                    bool m_istioMemRequestHasBeenSet;
+
+                    /**
+                     * istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit
+                     */
+                    std::string m_istioMemLimit;
+                    bool m_istioMemLimitHasBeenSet;
 
                 };
             }

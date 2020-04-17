@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/TaskInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/TaskInfoNew.h>
 
 
 namespace TencentCloud
@@ -59,7 +59,7 @@ namespace TencentCloud
                      * 获取查询到的任务详情列表
                      * @return TaskInfos 查询到的任务详情列表
                      */
-                    std::vector<TaskInfo> GetTaskInfos() const;
+                    std::vector<TaskInfoNew> GetTaskInfos() const;
 
                     /**
                      * 判断参数 TaskInfos 是否已赋值
@@ -78,7 +78,7 @@ namespace TencentCloud
                     /**
                      * 查询到的任务详情列表
                      */
-                    std::vector<TaskInfo> m_taskInfos;
+                    std::vector<TaskInfoNew> m_taskInfos;
                     bool m_taskInfosHasBeenSet;
 
                 };

@@ -36,7 +36,8 @@ MigrateJobInfo::MigrateJobInfo() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_errorInfoHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,26 @@ CoreInternalOutcome MigrateJobInfo::Deserialize(const Value &value)
         m_detailHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorInfo") && !value["ErrorInfo"].IsNull())
+    {
+        if (!value["ErrorInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `MigrateJobInfo.ErrorInfo` is not array type"));
+
+        const Value &tmpValue = value["ErrorInfo"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ErrorInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_errorInfo.push_back(item);
+        }
+        m_errorInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -352,6 +373,21 @@ void MigrateJobInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_detail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_errorInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_errorInfo.begin(); itr != m_errorInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -595,5 +631,21 @@ void MigrateJobInfo::SetDetail(const MigrateDetailInfo& _detail)
 bool MigrateJobInfo::DetailHasBeenSet() const
 {
     return m_detailHasBeenSet;
+}
+
+vector<ErrorInfo> MigrateJobInfo::GetErrorInfo() const
+{
+    return m_errorInfo;
+}
+
+void MigrateJobInfo::SetErrorInfo(const vector<ErrorInfo>& _errorInfo)
+{
+    m_errorInfo = _errorInfo;
+    m_errorInfoHasBeenSet = true;
+}
+
+bool MigrateJobInfo::ErrorInfoHasBeenSet() const
+{
+    return m_errorInfoHasBeenSet;
 }
 

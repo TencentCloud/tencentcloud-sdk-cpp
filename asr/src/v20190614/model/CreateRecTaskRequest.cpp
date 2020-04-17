@@ -32,7 +32,9 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_urlHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_dataLenHasBeenSet(false),
-    m_hotwordIdHasBeenSet(false)
+    m_hotwordIdHasBeenSet(false),
+    m_filterDirtyHasBeenSet(false),
+    m_filterModalHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,22 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "HotwordId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_hotwordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterDirtyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterDirty";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterDirty, allocator);
+    }
+
+    if (m_filterModalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterModal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterModal, allocator);
     }
 
 
@@ -265,6 +283,38 @@ void CreateRecTaskRequest::SetHotwordId(const string& _hotwordId)
 bool CreateRecTaskRequest::HotwordIdHasBeenSet() const
 {
     return m_hotwordIdHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetFilterDirty() const
+{
+    return m_filterDirty;
+}
+
+void CreateRecTaskRequest::SetFilterDirty(const int64_t& _filterDirty)
+{
+    m_filterDirty = _filterDirty;
+    m_filterDirtyHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::FilterDirtyHasBeenSet() const
+{
+    return m_filterDirtyHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetFilterModal() const
+{
+    return m_filterModal;
+}
+
+void CreateRecTaskRequest::SetFilterModal(const int64_t& _filterModal)
+{
+    m_filterModal = _filterModal;
+    m_filterModalHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::FilterModalHasBeenSet() const
+{
+    return m_filterModalHasBeenSet;
 }
 
 

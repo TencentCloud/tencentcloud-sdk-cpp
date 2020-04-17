@@ -442,6 +442,50 @@ namespace TencentCloud
                      */
                     bool MgtIpHasBeenSet() const;
 
+                    /**
+                     * 获取故障类中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskTypeName 故障类中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskTypeName() const;
+
+                    /**
+                     * 设置故障类中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskTypeName 故障类中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskTypeName(const std::string& _taskTypeName);
+
+                    /**
+                     * 判断参数 TaskTypeName 是否已赋值
+                     * @return TaskTypeName 是否已赋值
+                     */
+                    bool TaskTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskSubType 故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskSubType() const;
+
+                    /**
+                     * 设置故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskSubType 故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskSubType(const std::string& _taskSubType);
+
+                    /**
+                     * 判断参数 TaskSubType 是否已赋值
+                     * @return TaskSubType 是否已赋值
+                     */
+                    bool TaskSubTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -575,6 +619,20 @@ namespace TencentCloud
                      */
                     std::string m_mgtIp;
                     bool m_mgtIpHasBeenSet;
+
+                    /**
+                     * 故障类中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskTypeName;
+                    bool m_taskTypeNameHasBeenSet;
+
+                    /**
+                     * 故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskSubType;
+                    bool m_taskSubTypeHasBeenSet;
 
                 };
             }

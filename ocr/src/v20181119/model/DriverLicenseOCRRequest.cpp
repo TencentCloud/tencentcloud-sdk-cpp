@@ -25,7 +25,8 @@ using namespace std;
 
 DriverLicenseOCRRequest::DriverLicenseOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_cardSideHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DriverLicenseOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cardSideHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CardSide";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cardSide.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DriverLicenseOCRRequest::SetImageUrl(const string& _imageUrl)
 bool DriverLicenseOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+string DriverLicenseOCRRequest::GetCardSide() const
+{
+    return m_cardSide;
+}
+
+void DriverLicenseOCRRequest::SetCardSide(const string& _cardSide)
+{
+    m_cardSide = _cardSide;
+    m_cardSideHasBeenSet = true;
+}
+
+bool DriverLicenseOCRRequest::CardSideHasBeenSet() const
+{
+    return m_cardSideHasBeenSet;
 }
 
 

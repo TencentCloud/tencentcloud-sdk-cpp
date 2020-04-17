@@ -119,6 +119,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取是否为管理员账户，默认为否
+                     * @return IsAdmin 是否为管理员账户，默认为否
+                     */
+                    bool GetIsAdmin() const;
+
+                    /**
+                     * 设置是否为管理员账户，默认为否
+                     * @param IsAdmin 是否为管理员账户，默认为否
+                     */
+                    void SetIsAdmin(const bool& _isAdmin);
+
+                    /**
+                     * 判断参数 IsAdmin 是否已赋值
+                     * @return IsAdmin 是否已赋值
+                     */
+                    bool IsAdminHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +162,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 是否为管理员账户，默认为否
+                     */
+                    bool m_isAdmin;
+                    bool m_isAdminHasBeenSet;
 
                 };
             }

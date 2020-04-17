@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
-                     * @return InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
+                     * 获取被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
+                     * @return InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
-                     * @param InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
+                     * 设置被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
+                     * @param InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
+                     * 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

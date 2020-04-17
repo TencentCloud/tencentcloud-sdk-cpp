@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool OffsiteFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否需要充值mfa
-                     * @return NeedResetMfa 是否需要充值mfa
+                     * 获取是否需要重置mfa
+                     * @return NeedResetMfa 是否需要重置mfa
                      */
                     uint64_t GetNeedResetMfa() const;
 
                     /**
-                     * 设置是否需要充值mfa
-                     * @param NeedResetMfa 是否需要充值mfa
+                     * 设置是否需要重置mfa
+                     * @param NeedResetMfa 是否需要重置mfa
                      */
                     void SetNeedResetMfa(const uint64_t& _needResetMfa);
 
@@ -161,7 +161,7 @@ namespace TencentCloud
                     bool m_offsiteFlagHasBeenSet;
 
                     /**
-                     * 是否需要充值mfa
+                     * 是否需要重置mfa
                      */
                     uint64_t m_needResetMfa;
                     bool m_needResetMfaHasBeenSet;

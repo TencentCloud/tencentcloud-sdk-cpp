@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool ExternalAddrHasBeenSet() const;
 
+                    /**
+                     * 获取备份文件大小
+                     * @return Size 备份文件大小
+                     */
+                    int64_t GetSize() const;
+
+                    /**
+                     * 设置备份文件大小
+                     * @param Size 备份文件大小
+                     */
+                    void SetSize(const int64_t& _size);
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     */
+                    bool SizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_externalAddr;
                     bool m_externalAddrHasBeenSet;
+
+                    /**
+                     * 备份文件大小
+                     */
+                    int64_t m_size;
+                    bool m_sizeHasBeenSet;
 
                 };
             }

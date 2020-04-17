@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/ServiceTemplate.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,24 @@ namespace TencentCloud
                      */
                     bool CreatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取协议端口模板实例信息。
+                     * @return ServiceTemplateSet 协议端口模板实例信息。
+                     */
+                    std::vector<ServiceTemplate> GetServiceTemplateSet() const;
+
+                    /**
+                     * 设置协议端口模板实例信息。
+                     * @param ServiceTemplateSet 协议端口模板实例信息。
+                     */
+                    void SetServiceTemplateSet(const std::vector<ServiceTemplate>& _serviceTemplateSet);
+
+                    /**
+                     * 判断参数 ServiceTemplateSet 是否已赋值
+                     * @return ServiceTemplateSet 是否已赋值
+                     */
+                    bool ServiceTemplateSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +162,12 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 协议端口模板实例信息。
+                     */
+                    std::vector<ServiceTemplate> m_serviceTemplateSet;
+                    bool m_serviceTemplateSetHasBeenSet;
 
                 };
             }

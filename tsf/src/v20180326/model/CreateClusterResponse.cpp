@@ -65,11 +65,11 @@ CoreInternalOutcome CreateClusterResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["Result"].IsBool())
+        if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_result = rsp["Result"].GetBool();
+        m_result = string(rsp["Result"].GetString());
         m_resultHasBeenSet = true;
     }
 
@@ -78,7 +78,7 @@ CoreInternalOutcome CreateClusterResponse::Deserialize(const string &payload)
 }
 
 
-bool CreateClusterResponse::GetResult() const
+string CreateClusterResponse::GetResult() const
 {
     return m_result;
 }

@@ -24,8 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/vod/v20180717/model/VideoTrackTemplateInfo.h>
-#include <tencentcloud/vod/v20180717/model/AudioTrackTemplateInfo.h>
+#include <tencentcloud/vod/v20180717/model/AdaptiveStreamTemplate.h>
 
 
 namespace TencentCloud
@@ -129,30 +128,26 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取打包类型，取值范围：
-<li>hls；</li>
-<li>dash。</li>
-                     * @return PackageType 打包类型，取值范围：
-<li>hls；</li>
-<li>dash。</li>
+                     * 获取自适应转码格式，取值范围：
+<li>HLS。</li>
+                     * @return Format 自适应转码格式，取值范围：
+<li>HLS。</li>
                      */
-                    std::string GetPackageType() const;
+                    std::string GetFormat() const;
 
                     /**
-                     * 设置打包类型，取值范围：
-<li>hls；</li>
-<li>dash。</li>
-                     * @param PackageType 打包类型，取值范围：
-<li>hls；</li>
-<li>dash。</li>
+                     * 设置自适应转码格式，取值范围：
+<li>HLS。</li>
+                     * @param Format 自适应转码格式，取值范围：
+<li>HLS。</li>
                      */
-                    void SetPackageType(const std::string& _packageType);
+                    void SetFormat(const std::string& _format);
 
                     /**
-                     * 判断参数 PackageType 是否已赋值
-                     * @return PackageType 是否已赋值
+                     * 判断参数 Format 是否已赋值
+                     * @return Format 是否已赋值
                      */
-                    bool PackageTypeHasBeenSet() const;
+                    bool FormatHasBeenSet() const;
 
                     /**
                      * 获取DRM 类型，取值范围：
@@ -189,40 +184,22 @@ namespace TencentCloud
                     bool DrmTypeHasBeenSet() const;
 
                     /**
-                     * 获取视频轨模板列表。
-                     * @return VideoTrackTemplateSet 视频轨模板列表。
+                     * 获取自适应转码输入流参数信息，最多输入10路流。
+                     * @return StreamInfos 自适应转码输入流参数信息，最多输入10路流。
                      */
-                    std::vector<VideoTrackTemplateInfo> GetVideoTrackTemplateSet() const;
+                    std::vector<AdaptiveStreamTemplate> GetStreamInfos() const;
 
                     /**
-                     * 设置视频轨模板列表。
-                     * @param VideoTrackTemplateSet 视频轨模板列表。
+                     * 设置自适应转码输入流参数信息，最多输入10路流。
+                     * @param StreamInfos 自适应转码输入流参数信息，最多输入10路流。
                      */
-                    void SetVideoTrackTemplateSet(const std::vector<VideoTrackTemplateInfo>& _videoTrackTemplateSet);
+                    void SetStreamInfos(const std::vector<AdaptiveStreamTemplate>& _streamInfos);
 
                     /**
-                     * 判断参数 VideoTrackTemplateSet 是否已赋值
-                     * @return VideoTrackTemplateSet 是否已赋值
+                     * 判断参数 StreamInfos 是否已赋值
+                     * @return StreamInfos 是否已赋值
                      */
-                    bool VideoTrackTemplateSetHasBeenSet() const;
-
-                    /**
-                     * 获取音频轨模板列表。
-                     * @return AudioTrackTemplateSet 音频轨模板列表。
-                     */
-                    std::vector<AudioTrackTemplateInfo> GetAudioTrackTemplateSet() const;
-
-                    /**
-                     * 设置音频轨模板列表。
-                     * @param AudioTrackTemplateSet 音频轨模板列表。
-                     */
-                    void SetAudioTrackTemplateSet(const std::vector<AudioTrackTemplateInfo>& _audioTrackTemplateSet);
-
-                    /**
-                     * 判断参数 AudioTrackTemplateSet 是否已赋值
-                     * @return AudioTrackTemplateSet 是否已赋值
-                     */
-                    bool AudioTrackTemplateSetHasBeenSet() const;
+                    bool StreamInfosHasBeenSet() const;
 
                     /**
                      * 获取是否禁止视频低码率转高码率，取值范围：
@@ -341,12 +318,11 @@ namespace TencentCloud
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 打包类型，取值范围：
-<li>hls；</li>
-<li>dash。</li>
+                     * 自适应转码格式，取值范围：
+<li>HLS。</li>
                      */
-                    std::string m_packageType;
-                    bool m_packageTypeHasBeenSet;
+                    std::string m_format;
+                    bool m_formatHasBeenSet;
 
                     /**
                      * DRM 类型，取值范围：
@@ -359,16 +335,10 @@ namespace TencentCloud
                     bool m_drmTypeHasBeenSet;
 
                     /**
-                     * 视频轨模板列表。
+                     * 自适应转码输入流参数信息，最多输入10路流。
                      */
-                    std::vector<VideoTrackTemplateInfo> m_videoTrackTemplateSet;
-                    bool m_videoTrackTemplateSetHasBeenSet;
-
-                    /**
-                     * 音频轨模板列表。
-                     */
-                    std::vector<AudioTrackTemplateInfo> m_audioTrackTemplateSet;
-                    bool m_audioTrackTemplateSetHasBeenSet;
+                    std::vector<AdaptiveStreamTemplate> m_streamInfos;
+                    bool m_streamInfosHasBeenSet;
 
                     /**
                      * 是否禁止视频低码率转高码率，取值范围：

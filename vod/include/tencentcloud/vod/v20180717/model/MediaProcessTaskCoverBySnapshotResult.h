@@ -71,12 +71,10 @@ namespace TencentCloud
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码，0 表示成功，其他值表示失败：
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
@@ -85,12 +83,10 @@ namespace TencentCloud
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrCode 错误码，0 表示成功，其他值表示失败：
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -102,17 +98,13 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -171,14 +163,12 @@ namespace TencentCloud
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

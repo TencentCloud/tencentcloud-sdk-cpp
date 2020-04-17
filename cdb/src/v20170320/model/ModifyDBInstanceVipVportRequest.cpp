@@ -28,7 +28,8 @@ ModifyDBInstanceVipVportRequest::ModifyDBInstanceVipVportRequest() :
     m_dstIpHasBeenSet(false),
     m_dstPortHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
-    m_uniqSubnetIdHasBeenSet(false)
+    m_uniqSubnetIdHasBeenSet(false),
+    m_releaseDurationHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string ModifyDBInstanceVipVportRequest::ToJsonString() const
         string key = "UniqSubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_releaseDurationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReleaseDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_releaseDuration, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void ModifyDBInstanceVipVportRequest::SetUniqSubnetId(const string& _uniqSubnetI
 bool ModifyDBInstanceVipVportRequest::UniqSubnetIdHasBeenSet() const
 {
     return m_uniqSubnetIdHasBeenSet;
+}
+
+int64_t ModifyDBInstanceVipVportRequest::GetReleaseDuration() const
+{
+    return m_releaseDuration;
+}
+
+void ModifyDBInstanceVipVportRequest::SetReleaseDuration(const int64_t& _releaseDuration)
+{
+    m_releaseDuration = _releaseDuration;
+    m_releaseDurationHasBeenSet = true;
+}
+
+bool ModifyDBInstanceVipVportRequest::ReleaseDurationHasBeenSet() const
+{
+    return m_releaseDurationHasBeenSet;
 }
 
 

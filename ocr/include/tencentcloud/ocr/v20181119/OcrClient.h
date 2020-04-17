@@ -65,6 +65,8 @@
 #include <tencentcloud/ocr/v20181119/model/GeneralFastOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/InstitutionOCRRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/ocr/v20181119/model/MLIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MLIDPassportOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/MLIDPassportOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/MainlandPermitOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/MainlandPermitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceDetectRequest.h>
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceDetectResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceOCRRequest.h>
@@ -198,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GeneralHandwritingOCRResponse> GeneralHandwritingOCROutcome;
                 typedef std::future<GeneralHandwritingOCROutcome> GeneralHandwritingOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::GeneralHandwritingOCRRequest&, GeneralHandwritingOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> GeneralHandwritingOCRAsyncHandler;
+                typedef Outcome<Error, Model::HmtResidentPermitOCRResponse> HmtResidentPermitOCROutcome;
+                typedef std::future<HmtResidentPermitOCROutcome> HmtResidentPermitOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::HmtResidentPermitOCRRequest&, HmtResidentPermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HmtResidentPermitOCRAsyncHandler;
                 typedef Outcome<Error, Model::IDCardOCRResponse> IDCardOCROutcome;
                 typedef std::future<IDCardOCROutcome> IDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::IDCardOCRRequest&, IDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> IDCardOCRAsyncHandler;
@@ -219,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::MLIDPassportOCRResponse> MLIDPassportOCROutcome;
                 typedef std::future<MLIDPassportOCROutcome> MLIDPassportOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::MLIDPassportOCRRequest&, MLIDPassportOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> MLIDPassportOCRAsyncHandler;
+                typedef Outcome<Error, Model::MainlandPermitOCRResponse> MainlandPermitOCROutcome;
+                typedef std::future<MainlandPermitOCROutcome> MainlandPermitOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::MainlandPermitOCRRequest&, MainlandPermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> MainlandPermitOCRAsyncHandler;
                 typedef Outcome<Error, Model::MixedInvoiceDetectResponse> MixedInvoiceDetectOutcome;
                 typedef std::future<MixedInvoiceDetectOutcome> MixedInvoiceDetectOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::MixedInvoiceDetectRequest&, MixedInvoiceDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MixedInvoiceDetectAsyncHandler;
@@ -340,7 +350,13 @@ namespace TencentCloud
                 CarInvoiceOCROutcomeCallable CarInvoiceOCRCallable(const Model::CarInvoiceOCRRequest& request);
 
                 /**
-                 *本接口支持对驾驶证主页所有字段的自动定位与识别，包含证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限等。
+                 *本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。
+
+驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限。
+
+驾驶证副页：包括证号、姓名、档案编号、记录。
+
+另外，本接口还支持复印件、翻拍和PS告警功能。
                  * @param req DriverLicenseOCRRequest
                  * @return DriverLicenseOCROutcome
                  */
@@ -478,7 +494,61 @@ namespace TencentCloud
                 GeneralHandwritingOCROutcomeCallable GeneralHandwritingOCRCallable(const Model::GeneralHandwritingOCRRequest& request);
 
                 /**
-                 *本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限；具备身份证照片、人像照片的裁剪功能和翻拍、PS、复印件告警功能，以及边框和框内遮挡告警、临时身份证告警和身份证有效期不合法告警等扩展功能。
+                 *港澳台居住证OCR支持港澳台居住证正反面全字段内容检测识别功能，包括姓名、性别、出生日期、地址、身份证ID、签发机关、有效期限、签发次数、通行证号码关键字段识别。可以应用于港澳台居住证信息有效性校验场景，例如银行开户、用户注册等场景。
+                 * @param req HmtResidentPermitOCRRequest
+                 * @return HmtResidentPermitOCROutcome
+                 */
+                HmtResidentPermitOCROutcome HmtResidentPermitOCR(const Model::HmtResidentPermitOCRRequest &request);
+                void HmtResidentPermitOCRAsync(const Model::HmtResidentPermitOCRRequest& request, const HmtResidentPermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                HmtResidentPermitOCROutcomeCallable HmtResidentPermitOCRCallable(const Model::HmtResidentPermitOCRRequest& request);
+
+                /**
+                 *本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别准确度达到99%以上。
+
+另外，本接口还支持多种增值能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备9种告警功能，如下表所示。
+
+<table style="width:650px">
+      <thead>
+        <tr>
+       <th width="150">增值能力</th>
+          <th width="500">能力项</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">裁剪功能</td>
+          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>
+        </tr>
+        <tr>
+          <td>人像照片裁剪（自动抠取身份证头像区域）</td>
+        </tr>
+        <tr>
+          <td rowspan="9">告警功能</td>
+          <td>身份证有效日期不合法告警</td>
+        </tr>
+        <tr>
+          <td>身份证边框不完整告警</td>
+        </tr>
+        <tr>
+          <td>身份证复印件告警</td>
+        </tr>
+        <tr>
+          <td>身份证翻拍告警</td>
+        </tr>
+          <tr>
+          <td>身份证框内遮挡告警</td>
+        </tr>
+         <tr>
+          <td>临时身份证告警</td>
+        </tr>
+          <tr>
+          <td>身份证 PS 告警</td>
+        </tr>
+          <tr>
+          <td>图片模糊告警</td>
+        </tr>
+      </tbody>
+    </table>
                  * @param req IDCardOCRRequest
                  * @return IDCardOCROutcome
                  */
@@ -534,7 +604,7 @@ namespace TencentCloud
                 MLIDCardOCROutcomeCallable MLIDCardOCRCallable(const Model::MLIDCardOCRRequest& request);
 
                 /**
-                 *本接口支持马来西亚护照识别，识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍；具备护照人像照片的裁剪功能和翻拍、复印件告警功能。
+                 *本接口支持中国港澳台地区以及其他国家、地区的护照。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍；具备护照人像照片的裁剪功能和翻拍、复印件告警功能。
 本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)
                  * @param req MLIDPassportOCRRequest
                  * @return MLIDPassportOCROutcome
@@ -542,6 +612,15 @@ namespace TencentCloud
                 MLIDPassportOCROutcome MLIDPassportOCR(const Model::MLIDPassportOCRRequest &request);
                 void MLIDPassportOCRAsync(const Model::MLIDPassportOCRRequest& request, const MLIDPassportOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MLIDPassportOCROutcomeCallable MLIDPassportOCRCallable(const Model::MLIDPassportOCRRequest& request);
+
+                /**
+                 *智能识别并结构化港澳台居民来往内地通行证正面全部字段，包含中文姓名、英文姓名、性别、出生日期、签发机关、有效期限、证件号、签发地点、签发次数、证件类别。
+                 * @param req MainlandPermitOCRRequest
+                 * @return MainlandPermitOCROutcome
+                 */
+                MainlandPermitOCROutcome MainlandPermitOCR(const Model::MainlandPermitOCRRequest &request);
+                void MainlandPermitOCRAsync(const Model::MainlandPermitOCRRequest& request, const MainlandPermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MainlandPermitOCROutcomeCallable MainlandPermitOCRCallable(const Model::MainlandPermitOCRRequest& request);
 
                 /**
                  *本接口支持多张、多类型票据的混合检测和自动分类，返回对应票据类型。目前已支持增值税发票、增值税发票（卷票）、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票、酒店账单、客运限额发票、购物小票、完税证明共15种票据。
@@ -571,7 +650,7 @@ namespace TencentCloud
                 OrgCodeCertOCROutcomeCallable OrgCodeCertOCRCallable(const Model::OrgCodeCertOCRRequest& request);
 
                 /**
-                 *本接口支持中国大陆护照、中国香港护照、泰国护照及其他国外护照个人资料页多个字段的检测与识别。其中中国大陆居民护照识别，已支持字段包括英文姓名、中文姓名、国家码、护照号、出生地、出生日期、国籍英文、性别英文、有效期、签发地点英文、签发日期、持证人签名、护照机读码（MRZ码）等。中国香港护照、泰国护照及其他国外护照识别，已支持字段包括英文姓名、国籍、签发日期、性别、护照号码等。
+                 *本接口支持中国大陆地区护照个人资料页多个字段的检测与识别。已支持字段包括英文姓名、中文姓名、国家码、护照号、出生地、出生日期、国籍英文、性别英文、有效期、签发地点英文、签发日期、持证人签名、护照机读码（MRZ码）等。
                  * @param req PassportOCRRequest
                  * @return PassportOCROutcome
                  */
@@ -699,7 +778,13 @@ namespace TencentCloud
                 VatRollInvoiceOCROutcomeCallable VatRollInvoiceOCRCallable(const Model::VatRollInvoiceOCRRequest& request);
 
                 /**
-                 *本接口支持行驶证主页和副页所有字段的自动定位与识别，包含车牌号码、车辆类型、所有人、住址、使用性质、品牌型号、车辆识别代码、发动机号、注册日期、发证日期等。
+                 *本接口支持行驶证主页和副页所有字段的自动定位与识别。
+
+行驶证主页：车牌号码、车辆类型、所有人、住址、使用性质、品牌型号、识别代码、发动机号、注册日期、发证日期、发证单位。
+
+行驶证副页：号牌号码、档案编号、核定载人数、总质量、整备质量、核定载质量、外廓尺寸、准牵引总质量、备注、检验记录。
+
+另外，本接口还支持复印件、翻拍和PS告警功能。
                  * @param req VehicleLicenseOCRRequest
                  * @return VehicleLicenseOCROutcome
                  */

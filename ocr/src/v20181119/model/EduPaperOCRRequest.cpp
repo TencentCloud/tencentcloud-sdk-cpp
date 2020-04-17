@@ -25,7 +25,8 @@ using namespace std;
 
 EduPaperOCRRequest::EduPaperOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string EduPaperOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_config.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void EduPaperOCRRequest::SetImageUrl(const string& _imageUrl)
 bool EduPaperOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+string EduPaperOCRRequest::GetConfig() const
+{
+    return m_config;
+}
+
+void EduPaperOCRRequest::SetConfig(const string& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool EduPaperOCRRequest::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/PartitionOffset.h>
 
 
 namespace TencentCloud
@@ -86,6 +87,28 @@ namespace TencentCloud
                      */
                     bool PartitionHasBeenSet() const;
 
+                    /**
+                     * 获取分区offset信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PartitionOffset 分区offset信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PartitionOffset> GetPartitionOffset() const;
+
+                    /**
+                     * 设置分区offset信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PartitionOffset 分区offset信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPartitionOffset(const std::vector<PartitionOffset>& _partitionOffset);
+
+                    /**
+                     * 判断参数 PartitionOffset 是否已赋值
+                     * @return PartitionOffset 是否已赋值
+                     */
+                    bool PartitionOffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +123,13 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_partition;
                     bool m_partitionHasBeenSet;
+
+                    /**
+                     * 分区offset信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PartitionOffset> m_partitionOffset;
+                    bool m_partitionOffsetHasBeenSet;
 
                 };
             }

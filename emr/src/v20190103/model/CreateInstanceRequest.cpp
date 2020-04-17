@@ -43,7 +43,13 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_needMasterWanHasBeenSet(false),
     m_remoteLoginAtCreateHasBeenSet(false),
     m_checkSecurityHasBeenSet(false),
-    m_extendFsFieldHasBeenSet(false)
+    m_extendFsFieldHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false),
+    m_cbsEncryptHasBeenSet(false),
+    m_metaTypeHasBeenSet(false),
+    m_unifyMetaInstanceIdHasBeenSet(false),
+    m_metaDBInfoHasBeenSet(false)
 {
 }
 
@@ -229,6 +235,67 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "ExtendFsField";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_extendFsField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cbsEncryptHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CbsEncrypt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cbsEncrypt, allocator);
+    }
+
+    if (m_metaTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_metaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unifyMetaInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnifyMetaInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_unifyMetaInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaDBInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetaDBInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_metaDBInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -557,6 +624,102 @@ void CreateInstanceRequest::SetExtendFsField(const string& _extendFsField)
 bool CreateInstanceRequest::ExtendFsFieldHasBeenSet() const
 {
     return m_extendFsFieldHasBeenSet;
+}
+
+vector<Tag> CreateInstanceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateInstanceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+vector<string> CreateInstanceRequest::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void CreateInstanceRequest::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
+}
+
+uint64_t CreateInstanceRequest::GetCbsEncrypt() const
+{
+    return m_cbsEncrypt;
+}
+
+void CreateInstanceRequest::SetCbsEncrypt(const uint64_t& _cbsEncrypt)
+{
+    m_cbsEncrypt = _cbsEncrypt;
+    m_cbsEncryptHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::CbsEncryptHasBeenSet() const
+{
+    return m_cbsEncryptHasBeenSet;
+}
+
+string CreateInstanceRequest::GetMetaType() const
+{
+    return m_metaType;
+}
+
+void CreateInstanceRequest::SetMetaType(const string& _metaType)
+{
+    m_metaType = _metaType;
+    m_metaTypeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::MetaTypeHasBeenSet() const
+{
+    return m_metaTypeHasBeenSet;
+}
+
+string CreateInstanceRequest::GetUnifyMetaInstanceId() const
+{
+    return m_unifyMetaInstanceId;
+}
+
+void CreateInstanceRequest::SetUnifyMetaInstanceId(const string& _unifyMetaInstanceId)
+{
+    m_unifyMetaInstanceId = _unifyMetaInstanceId;
+    m_unifyMetaInstanceIdHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::UnifyMetaInstanceIdHasBeenSet() const
+{
+    return m_unifyMetaInstanceIdHasBeenSet;
+}
+
+CustomMetaInfo CreateInstanceRequest::GetMetaDBInfo() const
+{
+    return m_metaDBInfo;
+}
+
+void CreateInstanceRequest::SetMetaDBInfo(const CustomMetaInfo& _metaDBInfo)
+{
+    m_metaDBInfo = _metaDBInfo;
+    m_metaDBInfoHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::MetaDBInfoHasBeenSet() const
+{
+    return m_metaDBInfoHasBeenSet;
 }
 
 

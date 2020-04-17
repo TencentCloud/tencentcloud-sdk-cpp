@@ -26,7 +26,8 @@ using namespace std;
 
 EvaluationResponse::EvaluationResponse() :
     m_sessionIdHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome EvaluationResponse::Deserialize(const string &payload)
         m_itemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ vector<Item> EvaluationResponse::GetItems() const
 bool EvaluationResponse::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+string EvaluationResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool EvaluationResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

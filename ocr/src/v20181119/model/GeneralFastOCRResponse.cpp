@@ -26,7 +26,8 @@ using namespace std;
 
 GeneralFastOCRResponse::GeneralFastOCRResponse() :
     m_textDetectionsHasBeenSet(false),
-    m_languageHasBeenSet(false)
+    m_languageHasBeenSet(false),
+    m_angelHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome GeneralFastOCRResponse::Deserialize(const string &payload)
         m_languageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angel") && !rsp["Angel"].IsNull())
+    {
+        if (!rsp["Angel"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Angel` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angel = rsp["Angel"].GetDouble();
+        m_angelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ string GeneralFastOCRResponse::GetLanguage() const
 bool GeneralFastOCRResponse::LanguageHasBeenSet() const
 {
     return m_languageHasBeenSet;
+}
+
+double GeneralFastOCRResponse::GetAngel() const
+{
+    return m_angel;
+}
+
+bool GeneralFastOCRResponse::AngelHasBeenSet() const
+{
+    return m_angelHasBeenSet;
 }
 
 

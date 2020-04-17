@@ -25,7 +25,10 @@ ClusterCIDRSettings::ClusterCIDRSettings() :
     m_clusterCIDRHasBeenSet(false),
     m_ignoreClusterCIDRConflictHasBeenSet(false),
     m_maxNodePodNumHasBeenSet(false),
-    m_maxClusterServiceNumHasBeenSet(false)
+    m_maxClusterServiceNumHasBeenSet(false),
+    m_serviceCIDRHasBeenSet(false),
+    m_eniSubnetIdsHasBeenSet(false),
+    m_claimExpiredSecondsHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,39 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const Value &value)
         m_maxClusterServiceNumHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceCIDR") && !value["ServiceCIDR"].IsNull())
+    {
+        if (!value["ServiceCIDR"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.ServiceCIDR` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceCIDR = string(value["ServiceCIDR"].GetString());
+        m_serviceCIDRHasBeenSet = true;
+    }
+
+    if (value.HasMember("EniSubnetIds") && !value["EniSubnetIds"].IsNull())
+    {
+        if (!value["EniSubnetIds"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.EniSubnetIds` is not array type"));
+
+        const Value &tmpValue = value["EniSubnetIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_eniSubnetIds.push_back((*itr).GetString());
+        }
+        m_eniSubnetIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClaimExpiredSeconds") && !value["ClaimExpiredSeconds"].IsNull())
+    {
+        if (!value["ClaimExpiredSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterCIDRSettings.ClaimExpiredSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_claimExpiredSeconds = value["ClaimExpiredSeconds"].GetInt64();
+        m_claimExpiredSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +147,35 @@ void ClusterCIDRSettings::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "MaxClusterServiceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxClusterServiceNum, allocator);
+    }
+
+    if (m_serviceCIDRHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceCIDR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serviceCIDR.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eniSubnetIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EniSubnetIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_eniSubnetIds.begin(); itr != m_eniSubnetIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_claimExpiredSecondsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClaimExpiredSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_claimExpiredSeconds, allocator);
     }
 
 }
@@ -178,5 +243,53 @@ void ClusterCIDRSettings::SetMaxClusterServiceNum(const uint64_t& _maxClusterSer
 bool ClusterCIDRSettings::MaxClusterServiceNumHasBeenSet() const
 {
     return m_maxClusterServiceNumHasBeenSet;
+}
+
+string ClusterCIDRSettings::GetServiceCIDR() const
+{
+    return m_serviceCIDR;
+}
+
+void ClusterCIDRSettings::SetServiceCIDR(const string& _serviceCIDR)
+{
+    m_serviceCIDR = _serviceCIDR;
+    m_serviceCIDRHasBeenSet = true;
+}
+
+bool ClusterCIDRSettings::ServiceCIDRHasBeenSet() const
+{
+    return m_serviceCIDRHasBeenSet;
+}
+
+vector<string> ClusterCIDRSettings::GetEniSubnetIds() const
+{
+    return m_eniSubnetIds;
+}
+
+void ClusterCIDRSettings::SetEniSubnetIds(const vector<string>& _eniSubnetIds)
+{
+    m_eniSubnetIds = _eniSubnetIds;
+    m_eniSubnetIdsHasBeenSet = true;
+}
+
+bool ClusterCIDRSettings::EniSubnetIdsHasBeenSet() const
+{
+    return m_eniSubnetIdsHasBeenSet;
+}
+
+int64_t ClusterCIDRSettings::GetClaimExpiredSeconds() const
+{
+    return m_claimExpiredSeconds;
+}
+
+void ClusterCIDRSettings::SetClaimExpiredSeconds(const int64_t& _claimExpiredSeconds)
+{
+    m_claimExpiredSeconds = _claimExpiredSeconds;
+    m_claimExpiredSecondsHasBeenSet = true;
+}
+
+bool ClusterCIDRSettings::ClaimExpiredSecondsHasBeenSet() const
+{
+    return m_claimExpiredSecondsHasBeenSet;
 }
 

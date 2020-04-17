@@ -116,6 +116,24 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
+                     * 获取云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     * @return Mode 云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     * @param Mode 云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
                      * 获取查看更多日志的凭证
                      * @return NextToken 查看更多日志的凭证
                      */
@@ -158,6 +176,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
+
+                    /**
+                     * 云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                     /**
                      * 查看更多日志的凭证

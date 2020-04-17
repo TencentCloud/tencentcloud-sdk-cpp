@@ -77,7 +77,9 @@ set(bm_public_header_model
   include/tencentcloud/bm/v20180423/model/DescribeDeviceHardwareInfoResponse.h
   include/tencentcloud/bm/v20180423/model/ModifyUserCmdRequest.h
   include/tencentcloud/bm/v20180423/model/DescribeDevicePriceInfoResponse.h
+  include/tencentcloud/bm/v20180423/model/ReloadDeviceOsResponse.h
   include/tencentcloud/bm/v20180423/model/RunUserCmdResponse.h
+  include/tencentcloud/bm/v20180423/model/ReloadDeviceOsRequest.h
   include/tencentcloud/bm/v20180423/model/DescribeUserCmdsRequest.h
   include/tencentcloud/bm/v20180423/model/DescribeTaskInfoRequest.h
   include/tencentcloud/bm/v20180423/model/RepairTaskControlResponse.h
@@ -215,7 +217,9 @@ set(bm_src
   src/v20180423/model/DescribeDeviceHardwareInfoResponse.cpp
   src/v20180423/model/ModifyUserCmdRequest.cpp
   src/v20180423/model/DescribeDevicePriceInfoResponse.cpp
+  src/v20180423/model/ReloadDeviceOsResponse.cpp
   src/v20180423/model/RunUserCmdResponse.cpp
+  src/v20180423/model/ReloadDeviceOsRequest.cpp
   src/v20180423/model/DescribeUserCmdsRequest.cpp
   src/v20180423/model/DescribeTaskInfoRequest.cpp
   src/v20180423/model/RepairTaskControlResponse.cpp

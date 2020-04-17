@@ -47,7 +47,9 @@ LoadBalancer::LoadBalancer() :
     m_ipProtocolTypeHasBeenSet(false),
     m_bzPayModeHasBeenSet(false),
     m_bzL4MetricsHasBeenSet(false),
-    m_bzL7MetricsHasBeenSet(false)
+    m_bzL7MetricsHasBeenSet(false),
+    m_intVpcIdHasBeenSet(false),
+    m_curVipsHasBeenSet(false)
 {
 }
 
@@ -325,6 +327,29 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_bzL7MetricsHasBeenSet = true;
     }
 
+    if (value.HasMember("IntVpcId") && !value["IntVpcId"].IsNull())
+    {
+        if (!value["IntVpcId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.IntVpcId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intVpcId = value["IntVpcId"].GetUint64();
+        m_intVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurVips") && !value["CurVips"].IsNull())
+    {
+        if (!value["CurVips"].IsArray())
+            return CoreInternalOutcome(Error("response `LoadBalancer.CurVips` is not array type"));
+
+        const Value &tmpValue = value["CurVips"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_curVips.push_back((*itr).GetString());
+        }
+        m_curVipsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +578,27 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "BzL7Metrics";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_bzL7Metrics.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intVpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IntVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intVpcId, allocator);
+    }
+
+    if (m_curVipsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CurVips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_curVips.begin(); itr != m_curVips.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -972,5 +1018,37 @@ void LoadBalancer::SetBzL7Metrics(const string& _bzL7Metrics)
 bool LoadBalancer::BzL7MetricsHasBeenSet() const
 {
     return m_bzL7MetricsHasBeenSet;
+}
+
+uint64_t LoadBalancer::GetIntVpcId() const
+{
+    return m_intVpcId;
+}
+
+void LoadBalancer::SetIntVpcId(const uint64_t& _intVpcId)
+{
+    m_intVpcId = _intVpcId;
+    m_intVpcIdHasBeenSet = true;
+}
+
+bool LoadBalancer::IntVpcIdHasBeenSet() const
+{
+    return m_intVpcIdHasBeenSet;
+}
+
+vector<string> LoadBalancer::GetCurVips() const
+{
+    return m_curVips;
+}
+
+void LoadBalancer::SetCurVips(const vector<string>& _curVips)
+{
+    m_curVips = _curVips;
+    m_curVipsHasBeenSet = true;
+}
+
+bool LoadBalancer::CurVipsHasBeenSet() const
+{
+    return m_curVipsHasBeenSet;
 }
 

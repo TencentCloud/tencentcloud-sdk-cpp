@@ -23,7 +23,8 @@ using namespace std;
 
 SubscribedInfo::SubscribedInfo() :
     m_topicNameHasBeenSet(false),
-    m_partitionHasBeenSet(false)
+    m_partitionHasBeenSet(false),
+    m_partitionOffsetHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,26 @@ CoreInternalOutcome SubscribedInfo::Deserialize(const Value &value)
         m_partitionHasBeenSet = true;
     }
 
+    if (value.HasMember("PartitionOffset") && !value["PartitionOffset"].IsNull())
+    {
+        if (!value["PartitionOffset"].IsArray())
+            return CoreInternalOutcome(Error("response `SubscribedInfo.PartitionOffset` is not array type"));
+
+        const Value &tmpValue = value["PartitionOffset"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PartitionOffset item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_partitionOffset.push_back(item);
+        }
+        m_partitionOffsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +101,21 @@ void SubscribedInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         for (auto itr = m_partition.begin(); itr != m_partition.end(); ++itr)
         {
             value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_partitionOffsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PartitionOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_partitionOffset.begin(); itr != m_partitionOffset.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -116,5 +152,21 @@ void SubscribedInfo::SetPartition(const vector<int64_t>& _partition)
 bool SubscribedInfo::PartitionHasBeenSet() const
 {
     return m_partitionHasBeenSet;
+}
+
+vector<PartitionOffset> SubscribedInfo::GetPartitionOffset() const
+{
+    return m_partitionOffset;
+}
+
+void SubscribedInfo::SetPartitionOffset(const vector<PartitionOffset>& _partitionOffset)
+{
+    m_partitionOffset = _partitionOffset;
+    m_partitionOffsetHasBeenSet = true;
+}
+
+bool SubscribedInfo::PartitionOffsetHasBeenSet() const
+{
+    return m_partitionOffsetHasBeenSet;
 }
 

@@ -28,6 +28,7 @@ SubmitImageTaskRequest::SubmitImageTaskRequest() :
     m_fileTypeHasBeenSet(false),
     m_functionsHasBeenSet(false),
     m_lightStandardSetHasBeenSet(false),
+    m_eventsCallBackHasBeenSet(false),
     m_frameIntervalHasBeenSet(false),
     m_librarySetHasBeenSet(false),
     m_maxVideoDurationHasBeenSet(false),
@@ -80,6 +81,14 @@ string SubmitImageTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eventsCallBackHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventsCallBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eventsCallBack.c_str(), allocator).Move(), allocator);
     }
 
     if (m_frameIntervalHasBeenSet)
@@ -189,6 +198,22 @@ void SubmitImageTaskRequest::SetLightStandardSet(const vector<LightStandard>& _l
 bool SubmitImageTaskRequest::LightStandardSetHasBeenSet() const
 {
     return m_lightStandardSetHasBeenSet;
+}
+
+string SubmitImageTaskRequest::GetEventsCallBack() const
+{
+    return m_eventsCallBack;
+}
+
+void SubmitImageTaskRequest::SetEventsCallBack(const string& _eventsCallBack)
+{
+    m_eventsCallBack = _eventsCallBack;
+    m_eventsCallBackHasBeenSet = true;
+}
+
+bool SubmitImageTaskRequest::EventsCallBackHasBeenSet() const
+{
+    return m_eventsCallBackHasBeenSet;
 }
 
 int64_t SubmitImageTaskRequest::GetFrameInterval() const

@@ -85,6 +85,8 @@ namespace TencentCloud
 <li> na-toronto-1 </li>
 <li> na-ashburn-1 </li>
 <li> na-ashburn-2 </li>
+<li> ap-nanjing-1 </li>
+<li> ap-nanjing-2 </li>
                      * @return Zone 可用区名称，例如，ap-guangzhou-3
 全网可用区名称如下：
 <li> ap-chongqing-1 </li>
@@ -123,6 +125,8 @@ namespace TencentCloud
 <li> na-toronto-1 </li>
 <li> na-ashburn-1 </li>
 <li> na-ashburn-2 </li>
+<li> ap-nanjing-1 </li>
+<li> ap-nanjing-2 </li>
                      */
                     std::string GetZone() const;
 
@@ -165,6 +169,8 @@ namespace TencentCloud
 <li> na-toronto-1 </li>
 <li> na-ashburn-1 </li>
 <li> na-ashburn-2 </li>
+<li> ap-nanjing-1 </li>
+<li> ap-nanjing-2 </li>
                      * @param Zone 可用区名称，例如，ap-guangzhou-3
 全网可用区名称如下：
 <li> ap-chongqing-1 </li>
@@ -203,6 +209,8 @@ namespace TencentCloud
 <li> na-toronto-1 </li>
 <li> na-ashburn-1 </li>
 <li> na-ashburn-2 </li>
+<li> ap-nanjing-1 </li>
+<li> ap-nanjing-2 </li>
                      */
                     void SetZone(const std::string& _zone);
 
@@ -307,6 +315,8 @@ namespace TencentCloud
 <li> na-toronto-1 </li>
 <li> na-ashburn-1 </li>
 <li> na-ashburn-2 </li>
+<li> ap-nanjing-1 </li>
+<li> ap-nanjing-2 </li>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

@@ -43,17 +43,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结束时间，北京时间，
+                     * 获取结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
-                     * @return EndTime 结束时间，北京时间，
+                     * @return EndTime 结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，北京时间，
+                     * 设置结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
-                     * @param EndTime 结束时间，北京时间，
+                     * @param EndTime 结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -83,17 +83,17 @@ namespace TencentCloud
                     bool PlayDomainHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，北京时间，
+                     * 获取开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
-                     * @return StartTime 开始时间，北京时间，
+                     * @return StartTime 开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，北京时间，
+                     * 设置开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
-                     * @param StartTime 开始时间，北京时间，
+                     * @param StartTime 开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 结束时间，北京时间，
+                     * 结束时间，北京时间，格式：2019-04-28 10:36:00
 结束时间 和 开始时间  必须在同一天内。
                      */
                     std::string m_endTime;
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_playDomainHasBeenSet;
 
                     /**
-                     * 开始时间，北京时间，
+                     * 开始时间，北京时间，格式：2019-04-28 10:36:00
 当前时间 和 开始时间 间隔不超过30天。
                      */
                     std::string m_startTime;

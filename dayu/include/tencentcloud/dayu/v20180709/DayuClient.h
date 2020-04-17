@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/dayu/v20180709/model/CreateBasicDDoSAlarmThresholdRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateBasicDDoSAlarmThresholdResponse.h>
+#include <tencentcloud/dayu/v20180709/model/CreateBoundIPRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateBoundIPResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateCCFrequencyRulesRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateCCFrequencyRulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateCCSelfDefinePolicyRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/dayu/v20180709/model/CreateL4HealthConfigResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL4RulesRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL4RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/CreateL7CCRuleRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateL7CCRuleResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7HealthConfigRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7HealthConfigResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7RuleCertRequest.h>
@@ -47,6 +51,8 @@
 #include <tencentcloud/dayu/v20180709/model/CreateL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7RulesUploadRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateL7RulesUploadResponse.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNetReturnRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNetReturnResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteCCFrequencyRulesRequest.h>
@@ -63,6 +69,8 @@
 #include <tencentcloud/dayu/v20180709/model/DeleteL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeActionLogRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeActionLogResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBGPIPL7RuleMaxCntRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeBGPIPL7RuleMaxCntResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBaradDataRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBaradDataResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBasicCCThresholdRequest.h>
@@ -141,6 +149,8 @@
 #include <tencentcloud/dayu/v20180709/model/DescribeResourceListResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeRuleSetsRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeRuleSetsResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeSchedulingDomainListRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeSchedulingDomainListResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeSecIndexRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeSecIndexResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeSourceIpSegmentRequest.h>
@@ -205,6 +215,8 @@
 #include <tencentcloud/dayu/v20180709/model/ModifyL4RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyL7RulesRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyL7RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyNetReturnSwitchRequest.h>
+#include <tencentcloud/dayu/v20180709/model/ModifyNetReturnSwitchResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResBindDDoSPolicyRequest.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResBindDDoSPolicyResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyResourceRenewFlagRequest.h>
@@ -226,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateBasicDDoSAlarmThresholdResponse> CreateBasicDDoSAlarmThresholdOutcome;
                 typedef std::future<CreateBasicDDoSAlarmThresholdOutcome> CreateBasicDDoSAlarmThresholdOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateBasicDDoSAlarmThresholdRequest&, CreateBasicDDoSAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBasicDDoSAlarmThresholdAsyncHandler;
+                typedef Outcome<Error, Model::CreateBoundIPResponse> CreateBoundIPOutcome;
+                typedef std::future<CreateBoundIPOutcome> CreateBoundIPOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateBoundIPRequest&, CreateBoundIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBoundIPAsyncHandler;
                 typedef Outcome<Error, Model::CreateCCFrequencyRulesResponse> CreateCCFrequencyRulesOutcome;
                 typedef std::future<CreateCCFrequencyRulesOutcome> CreateCCFrequencyRulesOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateCCFrequencyRulesRequest&, CreateCCFrequencyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCCFrequencyRulesAsyncHandler;
@@ -247,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateL4RulesResponse> CreateL4RulesOutcome;
                 typedef std::future<CreateL4RulesOutcome> CreateL4RulesOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateL4RulesRequest&, CreateL4RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL4RulesAsyncHandler;
+                typedef Outcome<Error, Model::CreateL7CCRuleResponse> CreateL7CCRuleOutcome;
+                typedef std::future<CreateL7CCRuleOutcome> CreateL7CCRuleOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateL7CCRuleRequest&, CreateL7CCRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7CCRuleAsyncHandler;
                 typedef Outcome<Error, Model::CreateL7HealthConfigResponse> CreateL7HealthConfigOutcome;
                 typedef std::future<CreateL7HealthConfigOutcome> CreateL7HealthConfigOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateL7HealthConfigRequest&, CreateL7HealthConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7HealthConfigAsyncHandler;
@@ -259,6 +277,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateL7RulesUploadResponse> CreateL7RulesUploadOutcome;
                 typedef std::future<CreateL7RulesUploadOutcome> CreateL7RulesUploadOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateL7RulesUploadRequest&, CreateL7RulesUploadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7RulesUploadAsyncHandler;
+                typedef Outcome<Error, Model::CreateNetReturnResponse> CreateNetReturnOutcome;
+                typedef std::future<CreateNetReturnOutcome> CreateNetReturnOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateNetReturnRequest&, CreateNetReturnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetReturnAsyncHandler;
                 typedef Outcome<Error, Model::CreateUnblockIpResponse> CreateUnblockIpOutcome;
                 typedef std::future<CreateUnblockIpOutcome> CreateUnblockIpOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateUnblockIpRequest&, CreateUnblockIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnblockIpAsyncHandler;
@@ -283,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeActionLogResponse> DescribeActionLogOutcome;
                 typedef std::future<DescribeActionLogOutcome> DescribeActionLogOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeActionLogRequest&, DescribeActionLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionLogAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBGPIPL7RuleMaxCntResponse> DescribeBGPIPL7RuleMaxCntOutcome;
+                typedef std::future<DescribeBGPIPL7RuleMaxCntOutcome> DescribeBGPIPL7RuleMaxCntOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeBGPIPL7RuleMaxCntRequest&, DescribeBGPIPL7RuleMaxCntOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBGPIPL7RuleMaxCntAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBaradDataResponse> DescribeBaradDataOutcome;
                 typedef std::future<DescribeBaradDataOutcome> DescribeBaradDataOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeBaradDataRequest&, DescribeBaradDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaradDataAsyncHandler;
@@ -400,6 +424,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRuleSetsResponse> DescribeRuleSetsOutcome;
                 typedef std::future<DescribeRuleSetsOutcome> DescribeRuleSetsOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeRuleSetsRequest&, DescribeRuleSetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleSetsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSchedulingDomainListResponse> DescribeSchedulingDomainListOutcome;
+                typedef std::future<DescribeSchedulingDomainListOutcome> DescribeSchedulingDomainListOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeSchedulingDomainListRequest&, DescribeSchedulingDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSchedulingDomainListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSecIndexResponse> DescribeSecIndexOutcome;
                 typedef std::future<DescribeSecIndexOutcome> DescribeSecIndexOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeSecIndexRequest&, DescribeSecIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecIndexAsyncHandler;
@@ -496,6 +523,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyL7RulesResponse> ModifyL7RulesOutcome;
                 typedef std::future<ModifyL7RulesOutcome> ModifyL7RulesOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyL7RulesRequest&, ModifyL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7RulesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyNetReturnSwitchResponse> ModifyNetReturnSwitchOutcome;
+                typedef std::future<ModifyNetReturnSwitchOutcome> ModifyNetReturnSwitchOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::ModifyNetReturnSwitchRequest&, ModifyNetReturnSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetReturnSwitchAsyncHandler;
                 typedef Outcome<Error, Model::ModifyResBindDDoSPolicyResponse> ModifyResBindDDoSPolicyOutcome;
                 typedef std::future<ModifyResBindDDoSPolicyOutcome> ModifyResBindDDoSPolicyOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::ModifyResBindDDoSPolicyRequest&, ModifyResBindDDoSPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResBindDDoSPolicyAsyncHandler;
@@ -513,6 +543,15 @@ namespace TencentCloud
                 CreateBasicDDoSAlarmThresholdOutcome CreateBasicDDoSAlarmThreshold(const Model::CreateBasicDDoSAlarmThresholdRequest &request);
                 void CreateBasicDDoSAlarmThresholdAsync(const Model::CreateBasicDDoSAlarmThresholdRequest& request, const CreateBasicDDoSAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBasicDDoSAlarmThresholdOutcomeCallable CreateBasicDDoSAlarmThresholdCallable(const Model::CreateBasicDDoSAlarmThresholdRequest& request);
+
+                /**
+                 *绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。
+                 * @param req CreateBoundIPRequest
+                 * @return CreateBoundIPOutcome
+                 */
+                CreateBoundIPOutcome CreateBoundIP(const Model::CreateBoundIPRequest &request);
+                void CreateBoundIPAsync(const Model::CreateBoundIPRequest& request, const CreateBoundIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBoundIPOutcomeCallable CreateBoundIPCallable(const Model::CreateBoundIPRequest& request);
 
                 /**
                  *添加CC防护的访问频率控制规则
@@ -578,6 +617,15 @@ namespace TencentCloud
                 CreateL4RulesOutcomeCallable CreateL4RulesCallable(const Model::CreateL4RulesRequest& request);
 
                 /**
+                 *此接口是7层CC的访问频控自定义规则（IP+Host维度，不支持具体的URI），此接口已弃用，请调用新接口CreateCCFrequencyRules，新接口同时支持IP+Host维度以及具体的URI；
+                 * @param req CreateL7CCRuleRequest
+                 * @return CreateL7CCRuleOutcome
+                 */
+                CreateL7CCRuleOutcome CreateL7CCRule(const Model::CreateL7CCRuleRequest &request);
+                void CreateL7CCRuleAsync(const Model::CreateL7CCRuleRequest& request, const CreateL7CCRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateL7CCRuleOutcomeCallable CreateL7CCRuleCallable(const Model::CreateL7CCRuleRequest& request);
+
+                /**
                  *上传七层健康检查配置
                  * @param req CreateL7HealthConfigRequest
                  * @return CreateL7HealthConfigOutcome
@@ -612,6 +660,15 @@ namespace TencentCloud
                 CreateL7RulesUploadOutcome CreateL7RulesUpload(const Model::CreateL7RulesUploadRequest &request);
                 void CreateL7RulesUploadAsync(const Model::CreateL7RulesUploadRequest& request, const CreateL7RulesUploadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateL7RulesUploadOutcomeCallable CreateL7RulesUploadCallable(const Model::CreateL7RulesUploadRequest& request);
+
+                /**
+                 *高防IP专业版一键切回源站
+                 * @param req CreateNetReturnRequest
+                 * @return CreateNetReturnOutcome
+                 */
+                CreateNetReturnOutcome CreateNetReturn(const Model::CreateNetReturnRequest &request);
+                void CreateNetReturnAsync(const Model::CreateNetReturnRequest& request, const CreateNetReturnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNetReturnOutcomeCallable CreateNetReturnCallable(const Model::CreateNetReturnRequest& request);
 
                 /**
                  *IP解封操作
@@ -684,6 +741,16 @@ namespace TencentCloud
                 DescribeActionLogOutcome DescribeActionLog(const Model::DescribeActionLogRequest &request);
                 void DescribeActionLogAsync(const Model::DescribeActionLogRequest& request, const DescribeActionLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeActionLogOutcomeCallable DescribeActionLogCallable(const Model::DescribeActionLogRequest& request);
+
+                /**
+                 *获取高防IP可添加的最多7层规则数量
+
+                 * @param req DescribeBGPIPL7RuleMaxCntRequest
+                 * @return DescribeBGPIPL7RuleMaxCntOutcome
+                 */
+                DescribeBGPIPL7RuleMaxCntOutcome DescribeBGPIPL7RuleMaxCnt(const Model::DescribeBGPIPL7RuleMaxCntRequest &request);
+                void DescribeBGPIPL7RuleMaxCntAsync(const Model::DescribeBGPIPL7RuleMaxCntRequest& request, const DescribeBGPIPL7RuleMaxCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBGPIPL7RuleMaxCntOutcomeCallable DescribeBGPIPL7RuleMaxCntCallable(const Model::DescribeBGPIPL7RuleMaxCntRequest& request);
 
                 /**
                  *为大禹子产品提供业务转发指标数据的接口
@@ -1037,6 +1104,15 @@ namespace TencentCloud
                 DescribeRuleSetsOutcomeCallable DescribeRuleSetsCallable(const Model::DescribeRuleSetsRequest& request);
 
                 /**
+                 *获取调度域名列表
+                 * @param req DescribeSchedulingDomainListRequest
+                 * @return DescribeSchedulingDomainListOutcome
+                 */
+                DescribeSchedulingDomainListOutcome DescribeSchedulingDomainList(const Model::DescribeSchedulingDomainListRequest &request);
+                void DescribeSchedulingDomainListAsync(const Model::DescribeSchedulingDomainListRequest& request, const DescribeSchedulingDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSchedulingDomainListOutcomeCallable DescribeSchedulingDomainListCallable(const Model::DescribeSchedulingDomainListRequest& request);
+
+                /**
                  *获取本月安全统计
                  * @param req DescribeSecIndexRequest
                  * @return DescribeSecIndexOutcome
@@ -1323,6 +1399,15 @@ namespace TencentCloud
                 ModifyL7RulesOutcome ModifyL7Rules(const Model::ModifyL7RulesRequest &request);
                 void ModifyL7RulesAsync(const Model::ModifyL7RulesRequest& request, const ModifyL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyL7RulesOutcomeCallable ModifyL7RulesCallable(const Model::ModifyL7RulesRequest& request);
+
+                /**
+                 *在客户收攻击或者被封堵时，切回到源站，并设置回切的时长
+                 * @param req ModifyNetReturnSwitchRequest
+                 * @return ModifyNetReturnSwitchOutcome
+                 */
+                ModifyNetReturnSwitchOutcome ModifyNetReturnSwitch(const Model::ModifyNetReturnSwitchRequest &request);
+                void ModifyNetReturnSwitchAsync(const Model::ModifyNetReturnSwitchRequest& request, const ModifyNetReturnSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNetReturnSwitchOutcomeCallable ModifyNetReturnSwitchCallable(const Model::ModifyNetReturnSwitchRequest& request);
 
                 /**
                  *资源实例绑定DDoS高级策略

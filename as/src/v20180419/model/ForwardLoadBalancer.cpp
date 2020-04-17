@@ -25,7 +25,8 @@ ForwardLoadBalancer::ForwardLoadBalancer() :
     m_loadBalancerIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
     m_targetAttributesHasBeenSet(false),
-    m_locationIdHasBeenSet(false)
+    m_locationIdHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ForwardLoadBalancer::Deserialize(const Value &value)
         m_locationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ForwardLoadBalancer.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,14 @@ void ForwardLoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "LocationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_locationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -195,5 +214,21 @@ void ForwardLoadBalancer::SetLocationId(const string& _locationId)
 bool ForwardLoadBalancer::LocationIdHasBeenSet() const
 {
     return m_locationIdHasBeenSet;
+}
+
+string ForwardLoadBalancer::GetRegion() const
+{
+    return m_region;
+}
+
+void ForwardLoadBalancer::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool ForwardLoadBalancer::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ using namespace std;
 ListGroupsForUserRequest::ListGroupsForUserRequest() :
     m_uidHasBeenSet(false),
     m_rpHasBeenSet(false),
-    m_pageHasBeenSet(false)
+    m_pageHasBeenSet(false),
+    m_subUinHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string ListGroupsForUserRequest::ToJsonString() const
         string key = "Page";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_page, allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subUin, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void ListGroupsForUserRequest::SetPage(const uint64_t& _page)
 bool ListGroupsForUserRequest::PageHasBeenSet() const
 {
     return m_pageHasBeenSet;
+}
+
+uint64_t ListGroupsForUserRequest::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void ListGroupsForUserRequest::SetSubUin(const uint64_t& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool ListGroupsForUserRequest::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
 }
 
 

@@ -51,13 +51,17 @@ namespace TencentCloud
 
                     /**
                      * 获取转发至topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic 转发至topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicAction GetTopic() const;
 
                     /**
                      * 设置转发至topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Topic 转发至topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTopic(const TopicAction& _topic);
 
@@ -69,13 +73,17 @@ namespace TencentCloud
 
                     /**
                      * 获取转发至第三发
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 转发至第三发
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceAction GetService() const;
 
                     /**
                      * 设置转发至第三发
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Service 转发至第三发
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetService(const ServiceAction& _service);
 
@@ -87,13 +95,17 @@ namespace TencentCloud
 
                     /**
                      * 获取转发至第三发Ckafka
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ckafka 转发至第三发Ckafka
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CkafkaAction GetCkafka() const;
 
                     /**
                      * 设置转发至第三发Ckafka
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Ckafka 转发至第三发Ckafka
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCkafka(const CkafkaAction& _ckafka);
 
@@ -107,18 +119,21 @@ namespace TencentCloud
 
                     /**
                      * 转发至topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicAction m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
                      * 转发至第三发
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceAction m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
                      * 转发至第三发Ckafka
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CkafkaAction m_ckafka;
                     bool m_ckafkaHasBeenSet;

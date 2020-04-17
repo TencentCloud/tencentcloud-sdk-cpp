@@ -59,7 +59,8 @@ DCDBInstanceInfo::DCDBInstanceInfo() :
     m_paymodeHasBeenSet(false),
     m_lockerHasBeenSet(false),
     m_wanStatusHasBeenSet(false),
-    m_isAuditSupportedHasBeenSet(false)
+    m_isAuditSupportedHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -458,6 +459,16 @@ CoreInternalOutcome DCDBInstanceInfo::Deserialize(const Value &value)
         m_isAuditSupportedHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DCDBInstanceInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetUint64();
+        m_cpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -774,6 +785,14 @@ void DCDBInstanceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "IsAuditSupported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAuditSupported, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
     }
 
 }
@@ -1385,5 +1404,21 @@ void DCDBInstanceInfo::SetIsAuditSupported(const uint64_t& _isAuditSupported)
 bool DCDBInstanceInfo::IsAuditSupportedHasBeenSet() const
 {
     return m_isAuditSupportedHasBeenSet;
+}
+
+uint64_t DCDBInstanceInfo::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DCDBInstanceInfo::SetCpu(const uint64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DCDBInstanceInfo::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 

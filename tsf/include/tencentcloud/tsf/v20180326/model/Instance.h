@@ -662,6 +662,182 @@ namespace TencentCloud
                      */
                     bool OperationStateHasBeenSet() const;
 
+                    /**
+                     * 获取NamespaceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceId NamespaceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNamespaceId() const;
+
+                    /**
+                     * 设置NamespaceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NamespaceId NamespaceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNamespaceId(const std::string& _namespaceId);
+
+                    /**
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
+                     */
+                    bool NamespaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取InstanceZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceZoneId InstanceZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceZoneId() const;
+
+                    /**
+                     * 设置InstanceZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceZoneId InstanceZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceZoneId(const std::string& _instanceZoneId);
+
+                    /**
+                     * 判断参数 InstanceZoneId 是否已赋值
+                     * @return InstanceZoneId 是否已赋值
+                     */
+                    bool InstanceZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取InstanceImportMode
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceImportMode InstanceImportMode
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceImportMode() const;
+
+                    /**
+                     * 设置InstanceImportMode
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceImportMode InstanceImportMode
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceImportMode(const std::string& _instanceImportMode);
+
+                    /**
+                     * 判断参数 InstanceImportMode 是否已赋值
+                     * @return InstanceImportMode 是否已赋值
+                     */
+                    bool InstanceImportModeHasBeenSet() const;
+
+                    /**
+                     * 获取ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationType ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationType() const;
+
+                    /**
+                     * 设置ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationType ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationType(const std::string& _applicationType);
+
+                    /**
+                     * 判断参数 ApplicationType 是否已赋值
+                     * @return ApplicationType 是否已赋值
+                     */
+                    bool ApplicationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationResourceType ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationResourceType() const;
+
+                    /**
+                     * 设置ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationResourceType ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationResourceType(const std::string& _applicationResourceType);
+
+                    /**
+                     * 判断参数 ApplicationResourceType 是否已赋值
+                     * @return ApplicationResourceType 是否已赋值
+                     */
+                    bool ApplicationResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取ServiceSidecarStatus
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceSidecarStatus ServiceSidecarStatus
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServiceSidecarStatus() const;
+
+                    /**
+                     * 设置ServiceSidecarStatus
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceSidecarStatus ServiceSidecarStatus
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceSidecarStatus(const std::string& _serviceSidecarStatus);
+
+                    /**
+                     * 判断参数 ServiceSidecarStatus 是否已赋值
+                     * @return ServiceSidecarStatus 是否已赋值
+                     */
+                    bool ServiceSidecarStatusHasBeenSet() const;
+
+                    /**
+                     * 获取GroupName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupName GroupName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置GroupName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupName GroupName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     */
+                    bool GroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取NamespaceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceName NamespaceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNamespaceName() const;
+
+                    /**
+                     * 设置NamespaceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NamespaceName NamespaceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNamespaceName(const std::string& _namespaceName);
+
+                    /**
+                     * 判断参数 NamespaceName 是否已赋值
+                     * @return NamespaceName 是否已赋值
+                     */
+                    bool NamespaceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -859,6 +1035,62 @@ namespace TencentCloud
                      */
                     int64_t m_operationState;
                     bool m_operationStateHasBeenSet;
+
+                    /**
+                     * NamespaceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
+
+                    /**
+                     * InstanceZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceZoneId;
+                    bool m_instanceZoneIdHasBeenSet;
+
+                    /**
+                     * InstanceImportMode
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceImportMode;
+                    bool m_instanceImportModeHasBeenSet;
+
+                    /**
+                     * ApplicationType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationType;
+                    bool m_applicationTypeHasBeenSet;
+
+                    /**
+                     * ApplicationResourceType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationResourceType;
+                    bool m_applicationResourceTypeHasBeenSet;
+
+                    /**
+                     * ServiceSidecarStatus
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceSidecarStatus;
+                    bool m_serviceSidecarStatusHasBeenSet;
+
+                    /**
+                     * GroupName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
+
+                    /**
+                     * NamespaceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceName;
+                    bool m_namespaceNameHasBeenSet;
 
                 };
             }

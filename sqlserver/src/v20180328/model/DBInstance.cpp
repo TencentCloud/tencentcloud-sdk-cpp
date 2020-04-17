@@ -51,7 +51,9 @@ DBInstance::DBInstance() :
     m_cpuHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false),
+    m_uniqSubnetIdHasBeenSet(false)
 {
 }
 
@@ -360,6 +362,26 @@ CoreInternalOutcome DBInstance::Deserialize(const Value &value)
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("UniqVpcId") && !value["UniqVpcId"].IsNull())
+    {
+        if (!value["UniqVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqVpcId = string(value["UniqVpcId"].GetString());
+        m_uniqVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UniqSubnetId") && !value["UniqSubnetId"].IsNull())
+    {
+        if (!value["UniqSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DBInstance.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqSubnetId = string(value["UniqSubnetId"].GetString());
+        m_uniqSubnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -605,6 +627,22 @@ void DBInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqSubnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UniqSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1088,5 +1126,37 @@ void DBInstance::SetPid(const int64_t& _pid)
 bool DBInstance::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+string DBInstance::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void DBInstance::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool DBInstance::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
+}
+
+string DBInstance::GetUniqSubnetId() const
+{
+    return m_uniqSubnetId;
+}
+
+void DBInstance::SetUniqSubnetId(const string& _uniqSubnetId)
+{
+    m_uniqSubnetId = _uniqSubnetId;
+    m_uniqSubnetIdHasBeenSet = true;
+}
+
+bool DBInstance::UniqSubnetIdHasBeenSet() const
+{
+    return m_uniqSubnetIdHasBeenSet;
 }
 

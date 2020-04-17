@@ -263,6 +263,24 @@ namespace TencentCloud
                      */
                     bool RuleSetHasBeenSet() const;
 
+                    /**
+                     * 获取https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
+                     * @return ForwardProtocol https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
+                     */
+                    int64_t GetForwardProtocol() const;
+
+                    /**
+                     * 设置https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
+                     * @param ForwardProtocol https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
+                     */
+                    void SetForwardProtocol(const int64_t& _forwardProtocol);
+
+                    /**
+                     * 判断参数 ForwardProtocol 是否已赋值
+                     * @return ForwardProtocol 是否已赋值
+                     */
+                    bool ForwardProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +354,12 @@ namespace TencentCloud
                      */
                     std::vector<L7ListenerInfoRule> m_ruleSet;
                     bool m_ruleSetHasBeenSet;
+
+                    /**
+                     * https转发类型。0：https。1：spdy。2：http2。3：spdy+http2。
+                     */
+                    int64_t m_forwardProtocol;
+                    bool m_forwardProtocolHasBeenSet;
 
                 };
             }

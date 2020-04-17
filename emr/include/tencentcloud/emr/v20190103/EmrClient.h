@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h>
@@ -58,6 +60,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterNodesResponse> DescribeClusterNodesOutcome;
+                typedef std::future<DescribeClusterNodesOutcome> DescribeClusterNodesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeClusterNodesRequest&, DescribeClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -93,6 +98,15 @@ namespace TencentCloud
                 CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
                 void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
+
+                /**
+                 *查询硬件节点信息
+                 * @param req DescribeClusterNodesRequest
+                 * @return DescribeClusterNodesOutcome
+                 */
+                DescribeClusterNodesOutcome DescribeClusterNodes(const Model::DescribeClusterNodesRequest &request);
+                void DescribeClusterNodesAsync(const Model::DescribeClusterNodesRequest& request, const DescribeClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterNodesOutcomeCallable DescribeClusterNodesCallable(const Model::DescribeClusterNodesRequest& request);
 
                 /**
                  *查询EMR实例
@@ -149,7 +163,7 @@ namespace TencentCloud
                 ScaleOutInstanceOutcomeCallable ScaleOutInstanceCallable(const Model::ScaleOutInstanceRequest& request);
 
                 /**
-                 *销毁EMR实例
+                 *销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。
                  * @param req TerminateInstanceRequest
                  * @return TerminateInstanceOutcome
                  */

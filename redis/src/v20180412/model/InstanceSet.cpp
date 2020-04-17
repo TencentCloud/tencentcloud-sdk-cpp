@@ -57,7 +57,14 @@ InstanceSet::InstanceSet() :
     m_slaveReadWeightHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
     m_projectNameHasBeenSet(false),
-    m_noAuthHasBeenSet(false)
+    m_noAuthHasBeenSet(false),
+    m_clientLimitHasBeenSet(false),
+    m_dtsStatusHasBeenSet(false),
+    m_netLimitHasBeenSet(false),
+    m_passwordFreeHasBeenSet(false),
+    m_readOnlyHasBeenSet(false),
+    m_vip6HasBeenSet(false),
+    m_remainBandwidthDurationHasBeenSet(false)
 {
 }
 
@@ -449,6 +456,76 @@ CoreInternalOutcome InstanceSet::Deserialize(const Value &value)
         m_noAuthHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientLimit") && !value["ClientLimit"].IsNull())
+    {
+        if (!value["ClientLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.ClientLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientLimit = value["ClientLimit"].GetInt64();
+        m_clientLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("DtsStatus") && !value["DtsStatus"].IsNull())
+    {
+        if (!value["DtsStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.DtsStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dtsStatus = value["DtsStatus"].GetInt64();
+        m_dtsStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetLimit") && !value["NetLimit"].IsNull())
+    {
+        if (!value["NetLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.NetLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_netLimit = value["NetLimit"].GetInt64();
+        m_netLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("PasswordFree") && !value["PasswordFree"].IsNull())
+    {
+        if (!value["PasswordFree"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.PasswordFree` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwordFree = value["PasswordFree"].GetInt64();
+        m_passwordFreeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
+    {
+        if (!value["ReadOnly"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.ReadOnly` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readOnly = value["ReadOnly"].GetInt64();
+        m_readOnlyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vip6") && !value["Vip6"].IsNull())
+    {
+        if (!value["Vip6"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.Vip6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vip6 = string(value["Vip6"].GetString());
+        m_vip6HasBeenSet = true;
+    }
+
+    if (value.HasMember("RemainBandwidthDuration") && !value["RemainBandwidthDuration"].IsNull())
+    {
+        if (!value["RemainBandwidthDuration"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceSet.RemainBandwidthDuration` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remainBandwidthDuration = string(value["RemainBandwidthDuration"].GetString());
+        m_remainBandwidthDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -761,6 +838,62 @@ void InstanceSet::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "NoAuth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noAuth, allocator);
+    }
+
+    if (m_clientLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientLimit, allocator);
+    }
+
+    if (m_dtsStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DtsStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dtsStatus, allocator);
+    }
+
+    if (m_netLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NetLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_netLimit, allocator);
+    }
+
+    if (m_passwordFreeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PasswordFree";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_passwordFree, allocator);
+    }
+
+    if (m_readOnlyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ReadOnly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readOnly, allocator);
+    }
+
+    if (m_vip6HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vip6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vip6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remainBandwidthDurationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RemainBandwidthDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remainBandwidthDuration.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1340,5 +1473,117 @@ void InstanceSet::SetNoAuth(const bool& _noAuth)
 bool InstanceSet::NoAuthHasBeenSet() const
 {
     return m_noAuthHasBeenSet;
+}
+
+int64_t InstanceSet::GetClientLimit() const
+{
+    return m_clientLimit;
+}
+
+void InstanceSet::SetClientLimit(const int64_t& _clientLimit)
+{
+    m_clientLimit = _clientLimit;
+    m_clientLimitHasBeenSet = true;
+}
+
+bool InstanceSet::ClientLimitHasBeenSet() const
+{
+    return m_clientLimitHasBeenSet;
+}
+
+int64_t InstanceSet::GetDtsStatus() const
+{
+    return m_dtsStatus;
+}
+
+void InstanceSet::SetDtsStatus(const int64_t& _dtsStatus)
+{
+    m_dtsStatus = _dtsStatus;
+    m_dtsStatusHasBeenSet = true;
+}
+
+bool InstanceSet::DtsStatusHasBeenSet() const
+{
+    return m_dtsStatusHasBeenSet;
+}
+
+int64_t InstanceSet::GetNetLimit() const
+{
+    return m_netLimit;
+}
+
+void InstanceSet::SetNetLimit(const int64_t& _netLimit)
+{
+    m_netLimit = _netLimit;
+    m_netLimitHasBeenSet = true;
+}
+
+bool InstanceSet::NetLimitHasBeenSet() const
+{
+    return m_netLimitHasBeenSet;
+}
+
+int64_t InstanceSet::GetPasswordFree() const
+{
+    return m_passwordFree;
+}
+
+void InstanceSet::SetPasswordFree(const int64_t& _passwordFree)
+{
+    m_passwordFree = _passwordFree;
+    m_passwordFreeHasBeenSet = true;
+}
+
+bool InstanceSet::PasswordFreeHasBeenSet() const
+{
+    return m_passwordFreeHasBeenSet;
+}
+
+int64_t InstanceSet::GetReadOnly() const
+{
+    return m_readOnly;
+}
+
+void InstanceSet::SetReadOnly(const int64_t& _readOnly)
+{
+    m_readOnly = _readOnly;
+    m_readOnlyHasBeenSet = true;
+}
+
+bool InstanceSet::ReadOnlyHasBeenSet() const
+{
+    return m_readOnlyHasBeenSet;
+}
+
+string InstanceSet::GetVip6() const
+{
+    return m_vip6;
+}
+
+void InstanceSet::SetVip6(const string& _vip6)
+{
+    m_vip6 = _vip6;
+    m_vip6HasBeenSet = true;
+}
+
+bool InstanceSet::Vip6HasBeenSet() const
+{
+    return m_vip6HasBeenSet;
+}
+
+string InstanceSet::GetRemainBandwidthDuration() const
+{
+    return m_remainBandwidthDuration;
+}
+
+void InstanceSet::SetRemainBandwidthDuration(const string& _remainBandwidthDuration)
+{
+    m_remainBandwidthDuration = _remainBandwidthDuration;
+    m_remainBandwidthDurationHasBeenSet = true;
+}
+
+bool InstanceSet::RemainBandwidthDurationHasBeenSet() const
+{
+    return m_remainBandwidthDurationHasBeenSet;
 }
 

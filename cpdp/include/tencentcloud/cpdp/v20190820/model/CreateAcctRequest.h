@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
-                     * 获取业务平台的子商户Id，唯一
-                     * @return SubMchId 业务平台的子商户Id，唯一
+                     * 获取业务平台的子商户ID，唯一
+                     * @return SubMchId 业务平台的子商户ID，唯一
                      */
                     std::string GetSubMchId() const;
 
                     /**
-                     * 设置业务平台的子商户Id，唯一
-                     * @param SubMchId 业务平台的子商户Id，唯一
+                     * 设置业务平台的子商户ID，唯一
+                     * @param SubMchId 业务平台的子商户ID，唯一
                      */
                     void SetSubMchId(const std::string& _subMchId);
 
@@ -264,6 +264,36 @@ namespace TencentCloud
                      */
                     bool ShortNameHasBeenSet() const;
 
+                    /**
+                     * 获取子商户会员类型：
+general:普通子账户
+merchant:商户子账户
+缺省： general
+                     * @return SubMerchantMemberType 子商户会员类型：
+general:普通子账户
+merchant:商户子账户
+缺省： general
+                     */
+                    std::string GetSubMerchantMemberType() const;
+
+                    /**
+                     * 设置子商户会员类型：
+general:普通子账户
+merchant:商户子账户
+缺省： general
+                     * @param SubMerchantMemberType 子商户会员类型：
+general:普通子账户
+merchant:商户子账户
+缺省： general
+                     */
+                    void SetSubMerchantMemberType(const std::string& _subMerchantMemberType);
+
+                    /**
+                     * 判断参数 SubMerchantMemberType 是否已赋值
+                     * @return SubMerchantMemberType 是否已赋值
+                     */
+                    bool SubMerchantMemberTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,7 +303,7 @@ namespace TencentCloud
                     bool m_midasAppIdHasBeenSet;
 
                     /**
-                     * 业务平台的子商户Id，唯一
+                     * 业务平台的子商户ID，唯一
                      */
                     std::string m_subMchId;
                     bool m_subMchIdHasBeenSet;
@@ -337,6 +367,15 @@ namespace TencentCloud
                      */
                     std::string m_shortName;
                     bool m_shortNameHasBeenSet;
+
+                    /**
+                     * 子商户会员类型：
+general:普通子账户
+merchant:商户子账户
+缺省： general
+                     */
+                    std::string m_subMerchantMemberType;
+                    bool m_subMerchantMemberTypeHasBeenSet;
 
                 };
             }

@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取函数灰度流量控制调用，以json格式传入，例如{"k":"v"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节
+                     * @return RoutingKey 函数灰度流量控制调用，以json格式传入，例如{"k":"v"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节
+                     */
+                    std::string GetRoutingKey() const;
+
+                    /**
+                     * 设置函数灰度流量控制调用，以json格式传入，例如{"k":"v"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节
+                     * @param RoutingKey 函数灰度流量控制调用，以json格式传入，例如{"k":"v"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节
+                     */
+                    void SetRoutingKey(const std::string& _routingKey);
+
+                    /**
+                     * 判断参数 RoutingKey 是否已赋值
+                     * @return RoutingKey 是否已赋值
+                     */
+                    bool RoutingKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 函数灰度流量控制调用，以json格式传入，例如{"k":"v"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节
+                     */
+                    std::string m_routingKey;
+                    bool m_routingKeyHasBeenSet;
 
                 };
             }

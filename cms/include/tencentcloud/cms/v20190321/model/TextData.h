@@ -24,6 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cms/v20190321/model/TextOutputComm.h>
+#include <tencentcloud/cms/v20190321/model/TextOutputID.h>
+#include <tencentcloud/cms/v20190321/model/TextOutputRes.h>
 
 
 namespace TencentCloud
@@ -73,7 +76,6 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
-21000：综合
                      * @return EvilType 恶意类型
 100：正常
 20001：政治
@@ -82,7 +84,6 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
-21000：综合
                      */
                     int64_t GetEvilType() const;
 
@@ -95,7 +96,6 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
-21000：综合
                      * @param EvilType 恶意类型
 100：正常
 20001：政治
@@ -104,7 +104,6 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
-21000：综合
                      */
                     void SetEvilType(const int64_t& _evilType);
 
@@ -113,6 +112,60 @@ namespace TencentCloud
                      * @return EvilType 是否已赋值
                      */
                     bool EvilTypeHasBeenSet() const;
+
+                    /**
+                     * 获取消息类公共相关参数
+                     * @return Common 消息类公共相关参数
+                     */
+                    TextOutputComm GetCommon() const;
+
+                    /**
+                     * 设置消息类公共相关参数
+                     * @param Common 消息类公共相关参数
+                     */
+                    void SetCommon(const TextOutputComm& _common);
+
+                    /**
+                     * 判断参数 Common 是否已赋值
+                     * @return Common 是否已赋值
+                     */
+                    bool CommonHasBeenSet() const;
+
+                    /**
+                     * 获取消息类ID信息
+                     * @return ID 消息类ID信息
+                     */
+                    TextOutputID GetID() const;
+
+                    /**
+                     * 设置消息类ID信息
+                     * @param ID 消息类ID信息
+                     */
+                    void SetID(const TextOutputID& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     */
+                    bool IDHasBeenSet() const;
+
+                    /**
+                     * 获取消息类输出结果
+                     * @return Res 消息类输出结果
+                     */
+                    TextOutputRes GetRes() const;
+
+                    /**
+                     * 设置消息类输出结果
+                     * @param Res 消息类输出结果
+                     */
+                    void SetRes(const TextOutputRes& _res);
+
+                    /**
+                     * 判断参数 Res 是否已赋值
+                     * @return Res 是否已赋值
+                     */
+                    bool ResHasBeenSet() const;
 
                     /**
                      * 获取命中的关键词
@@ -149,10 +202,27 @@ namespace TencentCloud
 20007：谩骂
 20105：广告引流 
 24001：暴恐
-21000：综合
                      */
                     int64_t m_evilType;
                     bool m_evilTypeHasBeenSet;
+
+                    /**
+                     * 消息类公共相关参数
+                     */
+                    TextOutputComm m_common;
+                    bool m_commonHasBeenSet;
+
+                    /**
+                     * 消息类ID信息
+                     */
+                    TextOutputID m_iD;
+                    bool m_iDHasBeenSet;
+
+                    /**
+                     * 消息类输出结果
+                     */
+                    TextOutputRes m_res;
+                    bool m_resHasBeenSet;
 
                     /**
                      * 命中的关键词

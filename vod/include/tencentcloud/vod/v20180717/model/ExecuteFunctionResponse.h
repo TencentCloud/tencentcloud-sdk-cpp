@@ -44,9 +44,7 @@ namespace TencentCloud
 
                     /**
                      * 获取处理结果打包后的字符串，具体与后台一同协调。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 处理结果打包后的字符串，具体与后台一同协调。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResult() const;
 
@@ -60,7 +58,6 @@ namespace TencentCloud
 
                     /**
                      * 处理结果打包后的字符串，具体与后台一同协调。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

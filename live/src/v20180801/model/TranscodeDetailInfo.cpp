@@ -29,7 +29,8 @@ TranscodeDetailInfo::TranscodeDetailInfo() :
     m_moduleCodecHasBeenSet(false),
     m_bitrateHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_pushDomainHasBeenSet(false)
+    m_pushDomainHasBeenSet(false),
+    m_resolutionHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const Value &value)
         m_pushDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("Resolution") && !value["Resolution"].IsNull())
+    {
+        if (!value["Resolution"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TranscodeDetailInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolution = string(value["Resolution"].GetString());
+        m_resolutionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void TranscodeDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "PushDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_pushDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resolutionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Resolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resolution.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -318,5 +337,21 @@ void TranscodeDetailInfo::SetPushDomain(const string& _pushDomain)
 bool TranscodeDetailInfo::PushDomainHasBeenSet() const
 {
     return m_pushDomainHasBeenSet;
+}
+
+string TranscodeDetailInfo::GetResolution() const
+{
+    return m_resolution;
+}
+
+void TranscodeDetailInfo::SetResolution(const string& _resolution)
+{
+    m_resolution = _resolution;
+    m_resolutionHasBeenSet = true;
+}
+
+bool TranscodeDetailInfo::ResolutionHasBeenSet() const
+{
+    return m_resolutionHasBeenSet;
 }
 

@@ -32,7 +32,9 @@ set(tbp_public_header_model
   include/tencentcloud/tbp/v20190311/model/TextResetRequest.h
   include/tencentcloud/tbp/v20190311/model/ResetRequest.h
   include/tencentcloud/tbp/v20190311/model/TextResetResponse.h
+  include/tencentcloud/tbp/v20190311/model/CreateBotResponse.h
   include/tencentcloud/tbp/v20190311/model/ResetResponse.h
+  include/tencentcloud/tbp/v20190311/model/CreateBotRequest.h
   include/tencentcloud/tbp/v20190311/model/TextProcessRequest.h
   )
 
@@ -51,7 +53,9 @@ set(tbp_src
   src/v20190311/model/TextResetRequest.cpp
   src/v20190311/model/ResetRequest.cpp
   src/v20190311/model/TextResetResponse.cpp
+  src/v20190311/model/CreateBotResponse.cpp
   src/v20190311/model/ResetResponse.cpp
+  src/v20190311/model/CreateBotRequest.cpp
   src/v20190311/model/TextProcessRequest.cpp
   )
 

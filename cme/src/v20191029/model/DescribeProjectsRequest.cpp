@@ -28,6 +28,7 @@ DescribeProjectsRequest::DescribeProjectsRequest() :
     m_projectIdsHasBeenSet(false),
     m_aspectRatioSetHasBeenSet(false),
     m_categorySetHasBeenSet(false),
+    m_sortHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
@@ -86,6 +87,15 @@ string DescribeProjectsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_sort.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_ownerHasBeenSet)
@@ -183,6 +193,22 @@ void DescribeProjectsRequest::SetCategorySet(const vector<string>& _categorySet)
 bool DescribeProjectsRequest::CategorySetHasBeenSet() const
 {
     return m_categorySetHasBeenSet;
+}
+
+SortBy DescribeProjectsRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeProjectsRequest::SetSort(const SortBy& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeProjectsRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
 }
 
 Entity DescribeProjectsRequest::GetOwner() const

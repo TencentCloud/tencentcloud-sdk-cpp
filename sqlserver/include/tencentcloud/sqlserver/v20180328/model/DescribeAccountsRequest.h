@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页返回，从第几页开始返回。从第0页开始，默认第0页
-                     * @return Offset 分页返回，从第几页开始返回。从第0页开始，默认第0页
+                     * 获取分页返回，页编号，默认值为第0页
+                     * @return Offset 分页返回，页编号，默认值为第0页
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页返回，从第几页开始返回。从第0页开始，默认第0页
-                     * @param Offset 分页返回，从第几页开始返回。从第0页开始，默认第0页
+                     * 设置分页返回，页编号，默认值为第0页
+                     * @param Offset 分页返回，页编号，默认值为第0页
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页返回，从第几页开始返回。从第0页开始，默认第0页
+                     * 分页返回，页编号，默认值为第0页
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

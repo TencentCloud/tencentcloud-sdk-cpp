@@ -26,7 +26,8 @@ using namespace std;
 CreateTextSampleRequest::CreateTextSampleRequest() :
     m_contentsHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_labelHasBeenSet(false),
+    m_testHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string CreateTextSampleRequest::ToJsonString() const
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_label, allocator);
+    }
+
+    if (m_testHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Test";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_test.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -120,6 +129,22 @@ void CreateTextSampleRequest::SetLabel(const uint64_t& _label)
 bool CreateTextSampleRequest::LabelHasBeenSet() const
 {
     return m_labelHasBeenSet;
+}
+
+string CreateTextSampleRequest::GetTest() const
+{
+    return m_test;
+}
+
+void CreateTextSampleRequest::SetTest(const string& _test)
+{
+    m_test = _test;
+    m_testHasBeenSet = true;
+}
+
+bool CreateTextSampleRequest::TestHasBeenSet() const
+{
+    return m_testHasBeenSet;
 }
 
 

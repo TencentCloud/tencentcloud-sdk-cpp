@@ -26,7 +26,10 @@ ProjectInfo::ProjectInfo() :
     m_nameHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
     m_categoryHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_coverUrlHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -92,6 +95,36 @@ CoreInternalOutcome ProjectInfo::Deserialize(const Value &value)
         m_ownerHasBeenSet = true;
     }
 
+    if (value.HasMember("CoverUrl") && !value["CoverUrl"].IsNull())
+    {
+        if (!value["CoverUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProjectInfo.CoverUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coverUrl = string(value["CoverUrl"].GetString());
+        m_coverUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProjectInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +171,30 @@ void ProjectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_owner.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_coverUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CoverUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_coverUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -221,5 +278,53 @@ void ProjectInfo::SetOwner(const Entity& _owner)
 bool ProjectInfo::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+string ProjectInfo::GetCoverUrl() const
+{
+    return m_coverUrl;
+}
+
+void ProjectInfo::SetCoverUrl(const string& _coverUrl)
+{
+    m_coverUrl = _coverUrl;
+    m_coverUrlHasBeenSet = true;
+}
+
+bool ProjectInfo::CoverUrlHasBeenSet() const
+{
+    return m_coverUrlHasBeenSet;
+}
+
+string ProjectInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ProjectInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ProjectInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string ProjectInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void ProjectInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool ProjectInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

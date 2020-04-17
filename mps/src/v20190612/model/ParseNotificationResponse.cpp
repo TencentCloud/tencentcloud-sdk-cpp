@@ -27,6 +27,7 @@ using namespace std;
 ParseNotificationResponse::ParseNotificationResponse() :
     m_eventTypeHasBeenSet(false),
     m_workflowTaskEventHasBeenSet(false),
+    m_editMediaTaskEventHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -93,6 +94,23 @@ CoreInternalOutcome ParseNotificationResponse::Deserialize(const string &payload
         m_workflowTaskEventHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EditMediaTaskEvent") && !rsp["EditMediaTaskEvent"].IsNull())
+    {
+        if (!rsp["EditMediaTaskEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTaskEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_editMediaTaskEvent.Deserialize(rsp["EditMediaTaskEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_editMediaTaskEventHasBeenSet = true;
+    }
+
     if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
     {
         if (!rsp["SessionId"].IsString())
@@ -136,6 +154,16 @@ WorkflowTask ParseNotificationResponse::GetWorkflowTaskEvent() const
 bool ParseNotificationResponse::WorkflowTaskEventHasBeenSet() const
 {
     return m_workflowTaskEventHasBeenSet;
+}
+
+EditMediaTask ParseNotificationResponse::GetEditMediaTaskEvent() const
+{
+    return m_editMediaTaskEvent;
+}
+
+bool ParseNotificationResponse::EditMediaTaskEventHasBeenSet() const
+{
+    return m_editMediaTaskEventHasBeenSet;
 }
 
 string ParseNotificationResponse::GetSessionId() const

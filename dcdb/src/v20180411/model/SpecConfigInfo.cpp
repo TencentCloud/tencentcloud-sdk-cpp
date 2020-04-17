@@ -28,7 +28,8 @@ SpecConfigInfo::SpecConfigInfo() :
     m_maxStorageHasBeenSet(false),
     m_suitInfoHasBeenSet(false),
     m_pidHasBeenSet(false),
-    m_qpsHasBeenSet(false)
+    m_qpsHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const Value &value)
         m_qpsHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SpecConfigInfo.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetInt64();
+        m_cpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void SpecConfigInfo::SetQps(const int64_t& _qps)
 bool SpecConfigInfo::QpsHasBeenSet() const
 {
     return m_qpsHasBeenSet;
+}
+
+int64_t SpecConfigInfo::GetCpu() const
+{
+    return m_cpu;
+}
+
+void SpecConfigInfo::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool SpecConfigInfo::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 

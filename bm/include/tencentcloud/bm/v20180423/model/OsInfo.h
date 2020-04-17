@@ -172,6 +172,50 @@ namespace TencentCloud
                      */
                     bool MaxPartitionSizeHasBeenSet() const;
 
+                    /**
+                     * 获取黑石版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OsMinorVersion 黑石版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOsMinorVersion() const;
+
+                    /**
+                     * 设置黑石版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OsMinorVersion 黑石版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOsMinorVersion(const std::string& _osMinorVersion);
+
+                    /**
+                     * 判断参数 OsMinorVersion 是否已赋值
+                     * @return OsMinorVersion 是否已赋值
+                     */
+                    bool OsMinorVersionHasBeenSet() const;
+
+                    /**
+                     * 获取黑石版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OsMinorClass 黑石版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOsMinorClass() const;
+
+                    /**
+                     * 设置黑石版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OsMinorClass 黑石版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOsMinorClass(const std::string& _osMinorClass);
+
+                    /**
+                     * 判断参数 OsMinorClass 是否已赋值
+                     * @return OsMinorClass 是否已赋值
+                     */
+                    bool OsMinorClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +259,20 @@ namespace TencentCloud
                      */
                     uint64_t m_maxPartitionSize;
                     bool m_maxPartitionSizeHasBeenSet;
+
+                    /**
+                     * 黑石版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_osMinorVersion;
+                    bool m_osMinorVersionHasBeenSet;
+
+                    /**
+                     * 黑石版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_osMinorClass;
+                    bool m_osMinorClassHasBeenSet;
 
                 };
             }

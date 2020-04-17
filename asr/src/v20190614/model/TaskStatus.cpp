@@ -26,7 +26,8 @@ TaskStatus::TaskStatus() :
     m_statusHasBeenSet(false),
     m_statusStrHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_resultDetailHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,26 @@ CoreInternalOutcome TaskStatus::Deserialize(const Value &value)
         m_errorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultDetail") && !value["ResultDetail"].IsNull())
+    {
+        if (!value["ResultDetail"].IsArray())
+            return CoreInternalOutcome(Error("response `TaskStatus.ResultDetail` is not array type"));
+
+        const Value &tmpValue = value["ResultDetail"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SentenceDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resultDetail.push_back(item);
+        }
+        m_resultDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +151,21 @@ void TaskStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "ErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultDetailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResultDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resultDetail.begin(); itr != m_resultDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -213,5 +249,21 @@ void TaskStatus::SetErrorMsg(const string& _errorMsg)
 bool TaskStatus::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+vector<SentenceDetail> TaskStatus::GetResultDetail() const
+{
+    return m_resultDetail;
+}
+
+void TaskStatus::SetResultDetail(const vector<SentenceDetail>& _resultDetail)
+{
+    m_resultDetail = _resultDetail;
+    m_resultDetailHasBeenSet = true;
+}
+
+bool TaskStatus::ResultDetailHasBeenSet() const
+{
+    return m_resultDetailHasBeenSet;
 }
 

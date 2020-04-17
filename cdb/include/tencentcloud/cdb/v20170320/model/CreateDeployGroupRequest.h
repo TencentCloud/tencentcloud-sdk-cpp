@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LimitNumHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组机型属性，可选参数：SH12+SH02、TS85。
+                     * @return DevClass 置放群组机型属性，可选参数：SH12+SH02、TS85。
+                     */
+                    std::vector<std::string> GetDevClass() const;
+
+                    /**
+                     * 设置置放群组机型属性，可选参数：SH12+SH02、TS85。
+                     * @param DevClass 置放群组机型属性，可选参数：SH12+SH02、TS85。
+                     */
+                    void SetDevClass(const std::vector<std::string>& _devClass);
+
+                    /**
+                     * 判断参数 DevClass 是否已赋值
+                     * @return DevClass 是否已赋值
+                     */
+                    bool DevClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_limitNum;
                     bool m_limitNumHasBeenSet;
+
+                    /**
+                     * 置放群组机型属性，可选参数：SH12+SH02、TS85。
+                     */
+                    std::vector<std::string> m_devClass;
+                    bool m_devClassHasBeenSet;
 
                 };
             }

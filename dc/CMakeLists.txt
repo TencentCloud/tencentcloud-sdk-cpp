@@ -46,6 +46,7 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/AccessPoint.h
   include/tencentcloud/dc/v20180410/model/DeleteDirectConnectRequest.h
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelsResponse.h
+  include/tencentcloud/dc/v20180410/model/Tag.h
   include/tencentcloud/dc/v20180410/model/DirectConnectTunnel.h
   )
 
@@ -78,6 +79,7 @@ set(dc_src
   src/v20180410/model/AccessPoint.cpp
   src/v20180410/model/DeleteDirectConnectRequest.cpp
   src/v20180410/model/DescribeDirectConnectTunnelsResponse.cpp
+  src/v20180410/model/Tag.cpp
   src/v20180410/model/DirectConnectTunnel.cpp
   )
 

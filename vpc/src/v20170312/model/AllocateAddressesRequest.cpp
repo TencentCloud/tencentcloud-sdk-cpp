@@ -30,7 +30,9 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
     m_anycastZoneHasBeenSet(false),
-    m_applicableForCLBHasBeenSet(false)
+    m_applicableForCLBHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_bandwidthPackageIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,29 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "ApplicableForCLB";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_applicableForCLB, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_bandwidthPackageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BandwidthPackageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +240,38 @@ void AllocateAddressesRequest::SetApplicableForCLB(const bool& _applicableForCLB
 bool AllocateAddressesRequest::ApplicableForCLBHasBeenSet() const
 {
     return m_applicableForCLBHasBeenSet;
+}
+
+vector<Tag> AllocateAddressesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void AllocateAddressesRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetBandwidthPackageId() const
+{
+    return m_bandwidthPackageId;
+}
+
+void AllocateAddressesRequest::SetBandwidthPackageId(const string& _bandwidthPackageId)
+{
+    m_bandwidthPackageId = _bandwidthPackageId;
+    m_bandwidthPackageIdHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::BandwidthPackageIdHasBeenSet() const
+{
+    return m_bandwidthPackageIdHasBeenSet;
 }
 
 

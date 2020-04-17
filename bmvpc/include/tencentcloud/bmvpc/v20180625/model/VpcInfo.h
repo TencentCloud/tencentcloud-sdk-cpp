@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取整型私有网络ID。
+                     * @return IntVpcId 整型私有网络ID。
+                     */
+                    uint64_t GetIntVpcId() const;
+
+                    /**
+                     * 设置整型私有网络ID。
+                     * @param IntVpcId 整型私有网络ID。
+                     */
+                    void SetIntVpcId(const uint64_t& _intVpcId);
+
+                    /**
+                     * 判断参数 IntVpcId 是否已赋值
+                     * @return IntVpcId 是否已赋值
+                     */
+                    bool IntVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 整型私有网络ID。
+                     */
+                    uint64_t m_intVpcId;
+                    bool m_intVpcIdHasBeenSet;
 
                 };
             }

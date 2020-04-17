@@ -27,7 +27,9 @@ DescribeVpnGatewaysRequest::DescribeVpnGatewaysRequest() :
     m_vpnGatewayIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,22 @@ string DescribeVpnGatewaysRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -152,6 +170,38 @@ void DescribeVpnGatewaysRequest::SetLimit(const uint64_t& _limit)
 bool DescribeVpnGatewaysRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeVpnGatewaysRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeVpnGatewaysRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeVpnGatewaysRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeVpnGatewaysRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeVpnGatewaysRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeVpnGatewaysRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
 }
 
 

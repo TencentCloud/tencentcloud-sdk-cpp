@@ -453,6 +453,94 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneIds 跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 设置跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneIds 跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneIds(const std::vector<int64_t>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
+                    /**
+                     * 获取kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Version kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取最大分组数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxGroupNum 最大分组数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxGroupNum() const;
+
+                    /**
+                     * 设置最大分组数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxGroupNum 最大分组数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxGroupNum(const int64_t& _maxGroupNum);
+
+                    /**
+                     * 判断参数 MaxGroupNum 是否已赋值
+                     * @return MaxGroupNum 是否已赋值
+                     */
+                    bool MaxGroupNumHasBeenSet() const;
+
+                    /**
+                     * 获取售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Cvm 售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCvm() const;
+
+                    /**
+                     * 设置售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Cvm 售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCvm(const int64_t& _cvm);
+
+                    /**
+                     * 判断参数 Cvm 是否已赋值
+                     * @return Cvm 是否已赋值
+                     */
+                    bool CvmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +676,34 @@ namespace TencentCloud
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 跨可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
+
+                    /**
+                     * kafka版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 最大分组数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxGroupNum;
+                    bool m_maxGroupNumHasBeenSet;
+
+                    /**
+                     * 售卖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cvm;
+                    bool m_cvmHasBeenSet;
 
                 };
             }

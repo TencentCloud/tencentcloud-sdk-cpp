@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/es/v20180416/model/LocalDiskInfo.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,46 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取节点本地盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalDiskInfo 节点本地盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LocalDiskInfo GetLocalDiskInfo() const;
+
+                    /**
+                     * 设置节点本地盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocalDiskInfo 节点本地盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocalDiskInfo(const LocalDiskInfo& _localDiskInfo);
+
+                    /**
+                     * 判断参数 LocalDiskInfo 是否已赋值
+                     * @return LocalDiskInfo 是否已赋值
+                     */
+                    bool LocalDiskInfoHasBeenSet() const;
+
+                    /**
+                     * 获取节点磁盘块数
+                     * @return DiskCount 节点磁盘块数
+                     */
+                    uint64_t GetDiskCount() const;
+
+                    /**
+                     * 设置节点磁盘块数
+                     * @param DiskCount 节点磁盘块数
+                     */
+                    void SetDiskCount(const uint64_t& _diskCount);
+
+                    /**
+                     * 判断参数 DiskCount 是否已赋值
+                     * @return DiskCount 是否已赋值
+                     */
+                    bool DiskCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +223,19 @@ namespace TencentCloud
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 节点本地盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LocalDiskInfo m_localDiskInfo;
+                    bool m_localDiskInfoHasBeenSet;
+
+                    /**
+                     * 节点磁盘块数
+                     */
+                    uint64_t m_diskCount;
+                    bool m_diskCountHasBeenSet;
 
                 };
             }

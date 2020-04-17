@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/Filter.h>
 
 
@@ -45,52 +45,52 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待查询表所属应用实例ID
-                     * @return ApplicationId 待查询表所属应用实例ID
+                     * 获取待查询表格所属集群ID
+                     * @return ClusterId 待查询表格所属集群ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置待查询表所属应用实例ID
-                     * @param ApplicationId 待查询表所属应用实例ID
+                     * 设置待查询表格所属集群ID
+                     * @param ClusterId 待查询表格所属集群ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取待查询表所属大区列表
-                     * @return LogicZoneIds 待查询表所属大区列表
+                     * 获取待查询表格所属表格组ID列表
+                     * @return TableGroupIds 待查询表格所属表格组ID列表
                      */
-                    std::vector<std::string> GetLogicZoneIds() const;
+                    std::vector<std::string> GetTableGroupIds() const;
 
                     /**
-                     * 设置待查询表所属大区列表
-                     * @param LogicZoneIds 待查询表所属大区列表
+                     * 设置待查询表格所属表格组ID列表
+                     * @param TableGroupIds 待查询表格所属表格组ID列表
                      */
-                    void SetLogicZoneIds(const std::vector<std::string>& _logicZoneIds);
+                    void SetTableGroupIds(const std::vector<std::string>& _tableGroupIds);
 
                     /**
-                     * 判断参数 LogicZoneIds 是否已赋值
-                     * @return LogicZoneIds 是否已赋值
+                     * 判断参数 TableGroupIds 是否已赋值
+                     * @return TableGroupIds 是否已赋值
                      */
-                    bool LogicZoneIdsHasBeenSet() const;
+                    bool TableGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取待查询表信息列表
-                     * @return SelectedTables 待查询表信息列表
+                     * 获取待查询表格信息列表
+                     * @return SelectedTables 待查询表格信息列表
                      */
-                    std::vector<SelectedTableInfo> GetSelectedTables() const;
+                    std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
-                     * 设置待查询表信息列表
-                     * @param SelectedTables 待查询表信息列表
+                     * 设置待查询表格信息列表
+                     * @param SelectedTables 待查询表格信息列表
                      */
-                    void SetSelectedTables(const std::vector<SelectedTableInfo>& _selectedTables);
+                    void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取查询结果偏移量
+                     * @return Offset 查询结果偏移量
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置查询结果偏移量
+                     * @param Offset 查询结果偏移量
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取结果列表数量
-                     * @return Limit 结果列表数量
+                     * 获取查询结果返回记录数量
+                     * @return Limit 查询结果返回记录数量
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置结果列表数量
-                     * @param Limit 结果列表数量
+                     * 设置查询结果返回记录数量
+                     * @param Limit 查询结果返回记录数量
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -155,21 +155,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待查询表所属应用实例ID
+                     * 待查询表格所属集群ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 待查询表所属大区列表
+                     * 待查询表格所属表格组ID列表
                      */
-                    std::vector<std::string> m_logicZoneIds;
-                    bool m_logicZoneIdsHasBeenSet;
+                    std::vector<std::string> m_tableGroupIds;
+                    bool m_tableGroupIdsHasBeenSet;
 
                     /**
-                     * 待查询表信息列表
+                     * 待查询表格信息列表
                      */
-                    std::vector<SelectedTableInfo> m_selectedTables;
+                    std::vector<SelectedTableInfoNew> m_selectedTables;
                     bool m_selectedTablesHasBeenSet;
 
                     /**
@@ -179,13 +179,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 查询结果偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 结果列表数量
+                     * 查询结果返回记录数量
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

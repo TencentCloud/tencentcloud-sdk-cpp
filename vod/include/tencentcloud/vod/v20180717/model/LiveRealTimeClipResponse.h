@@ -57,9 +57,7 @@ namespace TencentCloud
 
                     /**
                      * 获取剪辑固化后的视频的媒体文件的唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 剪辑固化后的视频的媒体文件的唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
@@ -71,9 +69,7 @@ namespace TencentCloud
 
                     /**
                      * 获取剪辑固化后的视频任务流 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VodTaskId 剪辑固化后的视频任务流 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVodTaskId() const;
 
@@ -107,14 +103,12 @@ namespace TencentCloud
 
                     /**
                      * 剪辑固化后的视频的媒体文件的唯一标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 剪辑固化后的视频任务流 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vodTaskId;
                     bool m_vodTaskIdHasBeenSet;

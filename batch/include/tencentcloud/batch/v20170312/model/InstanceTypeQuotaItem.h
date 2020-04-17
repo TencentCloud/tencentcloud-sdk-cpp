@@ -269,6 +269,28 @@ namespace TencentCloud
                      */
                     bool PriceHasBeenSet() const;
 
+                    /**
+                     * 获取售罄原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SoldOutReason 售罄原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSoldOutReason() const;
+
+                    /**
+                     * 设置售罄原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SoldOutReason 售罄原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSoldOutReason(const std::string& _soldOutReason);
+
+                    /**
+                     * 判断参数 SoldOutReason 是否已赋值
+                     * @return SoldOutReason 是否已赋值
+                     */
+                    bool SoldOutReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,6 +365,13 @@ namespace TencentCloud
                      */
                     ItemPrice m_price;
                     bool m_priceHasBeenSet;
+
+                    /**
+                     * 售罄原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_soldOutReason;
+                    bool m_soldOutReasonHasBeenSet;
 
                 };
             }

@@ -69,7 +69,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
 20105：广告引流
                      * @return EvilType 恶意类型
 100：正常
@@ -78,7 +77,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
 20105：广告引流
                      */
                     int64_t GetEvilType() const;
@@ -91,7 +89,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
 20105：广告引流
                      * @param EvilType 恶意类型
 100：正常
@@ -100,7 +97,6 @@ namespace TencentCloud
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
 20105：广告引流
                      */
                     void SetEvilType(const int64_t& _evilType);
@@ -112,26 +108,14 @@ namespace TencentCloud
                     bool EvilTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件类型
-image：图片
-audio：音频
-video：视频
-                     * @return FileType 文件类型
-image：图片
-audio：音频
-video：视频
+                     * 获取image：图片
+                     * @return FileType image：图片
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置文件类型
-image：图片
-audio：音频
-video：视频
-                     * @param FileType 文件类型
-image：图片
-audio：音频
-video：视频
+                     * 设置image：图片
+                     * @param FileType image：图片
                      */
                     void SetFileType(const std::string& _fileType);
 
@@ -183,17 +167,13 @@ video：视频
 20006：涉毒违法
 20007：谩骂 
 24001：暴恐
-21000：综合
 20105：广告引流
                      */
                     int64_t m_evilType;
                     bool m_evilTypeHasBeenSet;
 
                     /**
-                     * 文件类型
-image：图片
-audio：音频
-video：视频
+                     * image：图片
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;

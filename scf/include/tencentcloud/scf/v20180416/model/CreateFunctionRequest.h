@@ -24,6 +24,8 @@
 #include <tencentcloud/scf/v20180416/model/Code.h>
 #include <tencentcloud/scf/v20180416/model/Environment.h>
 #include <tencentcloud/scf/v20180416/model/VpcConfig.h>
+#include <tencentcloud/scf/v20180416/model/LayerVersionSimple.h>
+#include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
 
 
 namespace TencentCloud
@@ -315,6 +317,42 @@ namespace TencentCloud
                      */
                     bool CodeSourceHasBeenSet() const;
 
+                    /**
+                     * 获取函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。
+                     * @return Layers 函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。
+                     */
+                    std::vector<LayerVersionSimple> GetLayers() const;
+
+                    /**
+                     * 设置函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。
+                     * @param Layers 函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。
+                     */
+                    void SetLayers(const std::vector<LayerVersionSimple>& _layers);
+
+                    /**
+                     * 判断参数 Layers 是否已赋值
+                     * @return Layers 是否已赋值
+                     */
+                    bool LayersHasBeenSet() const;
+
+                    /**
+                     * 获取死信队列参数
+                     * @return DeadLetterConfig 死信队列参数
+                     */
+                    DeadLetterConfig GetDeadLetterConfig() const;
+
+                    /**
+                     * 设置死信队列参数
+                     * @param DeadLetterConfig 死信队列参数
+                     */
+                    void SetDeadLetterConfig(const DeadLetterConfig& _deadLetterConfig);
+
+                    /**
+                     * 判断参数 DeadLetterConfig 是否已赋值
+                     * @return DeadLetterConfig 是否已赋值
+                     */
+                    bool DeadLetterConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +444,18 @@ namespace TencentCloud
                      */
                     std::string m_codeSource;
                     bool m_codeSourceHasBeenSet;
+
+                    /**
+                     * 函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。
+                     */
+                    std::vector<LayerVersionSimple> m_layers;
+                    bool m_layersHasBeenSet;
+
+                    /**
+                     * 死信队列参数
+                     */
+                    DeadLetterConfig m_deadLetterConfig;
+                    bool m_deadLetterConfigHasBeenSet;
 
                 };
             }

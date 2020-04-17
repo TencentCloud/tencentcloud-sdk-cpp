@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool NotificationTargetHasBeenSet() const;
 
+                    /**
+                     * 获取进行生命周期挂钩的场景类型，取值范围包括NORMAL 和 EXTENSION。说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstaces接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
+                     * @return LifecycleTransitionType 进行生命周期挂钩的场景类型，取值范围包括NORMAL 和 EXTENSION。说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstaces接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
+                     */
+                    std::string GetLifecycleTransitionType() const;
+
+                    /**
+                     * 设置进行生命周期挂钩的场景类型，取值范围包括NORMAL 和 EXTENSION。说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstaces接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
+                     * @param LifecycleTransitionType 进行生命周期挂钩的场景类型，取值范围包括NORMAL 和 EXTENSION。说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstaces接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
+                     */
+                    void SetLifecycleTransitionType(const std::string& _lifecycleTransitionType);
+
+                    /**
+                     * 判断参数 LifecycleTransitionType 是否已赋值
+                     * @return LifecycleTransitionType 是否已赋值
+                     */
+                    bool LifecycleTransitionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     NotificationTarget m_notificationTarget;
                     bool m_notificationTargetHasBeenSet;
+
+                    /**
+                     * 进行生命周期挂钩的场景类型，取值范围包括NORMAL 和 EXTENSION。说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstaces接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。
+                     */
+                    std::string m_lifecycleTransitionType;
+                    bool m_lifecycleTransitionTypeHasBeenSet;
 
                 };
             }

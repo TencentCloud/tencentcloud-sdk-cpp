@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
@@ -55,9 +55,9 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取订单号
+                     * 获取订单号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealNames 订单号
+                     * @return DealNames 订单号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -69,9 +69,9 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取token
+                     * 获取客户端Token。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClientToken token
+                     * @return ClientToken 客户端Token。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetClientToken() const;
@@ -82,27 +82,69 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取扩容流程ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowId 扩容流程ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFlowId() const;
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     */
+                    bool FlowIdHasBeenSet() const;
+
+                    /**
+                     * 获取大订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillId 大订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBillId() const;
+
+                    /**
+                     * 判断参数 BillId 是否已赋值
+                     * @return BillId 是否已赋值
+                     */
+                    bool BillIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 订单号
+                     * 订单号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * token
+                     * 客户端Token。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 扩容流程ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 大订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billId;
+                    bool m_billIdHasBeenSet;
 
                 };
             }

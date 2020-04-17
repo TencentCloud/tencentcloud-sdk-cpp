@@ -22,7 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/IdlFileInfo.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h>
 
 
 namespace TencentCloud
@@ -45,32 +45,32 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待创建表所属应用实例ID
-                     * @return ApplicationId 待创建表所属应用实例ID
+                     * 获取待创建表格所属集群ID
+                     * @return ClusterId 待创建表格所属集群ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置待创建表所属应用实例ID
-                     * @param ApplicationId 待创建表所属应用实例ID
+                     * 设置待创建表格所属集群ID
+                     * @param ClusterId 待创建表格所属集群ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取用户选定的建表IDL文件列表
-                     * @return IdlFiles 用户选定的建表IDL文件列表
+                     * 获取用户选定的建表格IDL文件列表
+                     * @return IdlFiles 用户选定的建表格IDL文件列表
                      */
                     std::vector<IdlFileInfo> GetIdlFiles() const;
 
                     /**
-                     * 设置用户选定的建表IDL文件列表
-                     * @param IdlFiles 用户选定的建表IDL文件列表
+                     * 设置用户选定的建表格IDL文件列表
+                     * @param IdlFiles 用户选定的建表格IDL文件列表
                      */
                     void SetIdlFiles(const std::vector<IdlFileInfo>& _idlFiles);
 
@@ -81,16 +81,16 @@ namespace TencentCloud
                     bool IdlFilesHasBeenSet() const;
 
                     /**
-                     * 获取待创建表信息列表
-                     * @return SelectedTables 待创建表信息列表
+                     * 获取待创建表格信息列表
+                     * @return SelectedTables 待创建表格信息列表
                      */
-                    std::vector<SelectedTableInfo> GetSelectedTables() const;
+                    std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
-                     * 设置待创建表信息列表
-                     * @param SelectedTables 待创建表信息列表
+                     * 设置待创建表格信息列表
+                     * @param SelectedTables 待创建表格信息列表
                      */
-                    void SetSelectedTables(const std::vector<SelectedTableInfo>& _selectedTables);
+                    void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
@@ -101,21 +101,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待创建表所属应用实例ID
+                     * 待创建表格所属集群ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 用户选定的建表IDL文件列表
+                     * 用户选定的建表格IDL文件列表
                      */
                     std::vector<IdlFileInfo> m_idlFiles;
                     bool m_idlFilesHasBeenSet;
 
                     /**
-                     * 待创建表信息列表
+                     * 待创建表格信息列表
                      */
-                    std::vector<SelectedTableInfo> m_selectedTables;
+                    std::vector<SelectedTableInfoNew> m_selectedTables;
                     bool m_selectedTablesHasBeenSet;
 
                 };

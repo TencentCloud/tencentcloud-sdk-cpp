@@ -126,6 +126,34 @@ namespace TencentCloud
                      */
                     bool PolicyDocumentHasBeenSet() const;
 
+                    /**
+                     * 获取备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PresetAlias 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPresetAlias() const;
+
+                    /**
+                     * 判断参数 PresetAlias 是否已赋值
+                     * @return PresetAlias 是否已赋值
+                     */
+                    bool PresetAliasHasBeenSet() const;
+
+                    /**
+                     * 获取是否服务相关策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsServiceLinkedRolePolicy 是否服务相关策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsServiceLinkedRolePolicy() const;
+
+                    /**
+                     * 判断参数 IsServiceLinkedRolePolicy 是否已赋值
+                     * @return IsServiceLinkedRolePolicy 是否已赋值
+                     */
+                    bool IsServiceLinkedRolePolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +197,20 @@ namespace TencentCloud
                      */
                     std::string m_policyDocument;
                     bool m_policyDocumentHasBeenSet;
+
+                    /**
+                     * 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_presetAlias;
+                    bool m_presetAliasHasBeenSet;
+
+                    /**
+                     * 是否服务相关策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isServiceLinkedRolePolicy;
+                    bool m_isServiceLinkedRolePolicyHasBeenSet;
 
                 };
             }

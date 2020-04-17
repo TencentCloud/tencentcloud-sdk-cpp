@@ -337,6 +337,86 @@ namespace TencentCloud
                      */
                     bool VpcNameHasBeenSet() const;
 
+                    /**
+                     * 获取VPN网关名称
+                     * @return VpnGatewayName VPN网关名称
+                     */
+                    std::string GetVpnGatewayName() const;
+
+                    /**
+                     * 设置VPN网关名称
+                     * @param VpnGatewayName VPN网关名称
+                     */
+                    void SetVpnGatewayName(const std::string& _vpnGatewayName);
+
+                    /**
+                     * 判断参数 VpnGatewayName 是否已赋值
+                     * @return VpnGatewayName 是否已赋值
+                     */
+                    bool VpnGatewayNameHasBeenSet() const;
+
+                    /**
+                     * 获取对端网关名称
+                     * @return CustomerGatewayName 对端网关名称
+                     */
+                    std::string GetCustomerGatewayName() const;
+
+                    /**
+                     * 设置对端网关名称
+                     * @param CustomerGatewayName 对端网关名称
+                     */
+                    void SetCustomerGatewayName(const std::string& _customerGatewayName);
+
+                    /**
+                     * 判断参数 CustomerGatewayName 是否已赋值
+                     * @return CustomerGatewayName 是否已赋值
+                     */
+                    bool CustomerGatewayNameHasBeenSet() const;
+
+                    /**
+                     * 获取IPSEC VPN通道路由策略目的端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DestinationCidr IPSEC VPN通道路由策略目的端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDestinationCidr() const;
+
+                    /**
+                     * 设置IPSEC VPN通道路由策略目的端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DestinationCidr IPSEC VPN通道路由策略目的端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDestinationCidr(const std::vector<std::string>& _destinationCidr);
+
+                    /**
+                     * 判断参数 DestinationCidr 是否已赋值
+                     * @return DestinationCidr 是否已赋值
+                     */
+                    bool DestinationCidrHasBeenSet() const;
+
+                    /**
+                     * 获取IPSEC VPN通道路由策略源端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceCidr IPSEC VPN通道路由策略源端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSourceCidr() const;
+
+                    /**
+                     * 设置IPSEC VPN通道路由策略源端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SourceCidr IPSEC VPN通道路由策略源端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSourceCidr(const std::vector<std::string>& _sourceCidr);
+
+                    /**
+                     * 判断参数 SourceCidr 是否已赋值
+                     * @return SourceCidr 是否已赋值
+                     */
+                    bool SourceCidrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -434,6 +514,32 @@ namespace TencentCloud
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
+
+                    /**
+                     * VPN网关名称
+                     */
+                    std::string m_vpnGatewayName;
+                    bool m_vpnGatewayNameHasBeenSet;
+
+                    /**
+                     * 对端网关名称
+                     */
+                    std::string m_customerGatewayName;
+                    bool m_customerGatewayNameHasBeenSet;
+
+                    /**
+                     * IPSEC VPN通道路由策略目的端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_destinationCidr;
+                    bool m_destinationCidrHasBeenSet;
+
+                    /**
+                     * IPSEC VPN通道路由策略源端地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_sourceCidr;
+                    bool m_sourceCidrHasBeenSet;
 
                 };
             }

@@ -54,6 +54,30 @@ namespace TencentCloud
                      */
                     bool DealNamesHasBeenSet() const;
 
+                    /**
+                     * 获取冻结流水号
+                     * @return BillId 冻结流水号
+                     */
+                    std::string GetBillId() const;
+
+                    /**
+                     * 判断参数 BillId 是否已赋值
+                     * @return BillId 是否已赋值
+                     */
+                    bool BillIdHasBeenSet() const;
+
+                    /**
+                     * 获取创建成功的实例ID集合，只在后付费情景下有返回值
+                     * @return DBInstanceIdSet 创建成功的实例ID集合，只在后付费情景下有返回值
+                     */
+                    std::vector<std::string> GetDBInstanceIdSet() const;
+
+                    /**
+                     * 判断参数 DBInstanceIdSet 是否已赋值
+                     * @return DBInstanceIdSet 是否已赋值
+                     */
+                    bool DBInstanceIdSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +85,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
+
+                    /**
+                     * 冻结流水号
+                     */
+                    std::string m_billId;
+                    bool m_billIdHasBeenSet;
+
+                    /**
+                     * 创建成功的实例ID集合，只在后付费情景下有返回值
+                     */
+                    std::vector<std::string> m_dBInstanceIdSet;
+                    bool m_dBInstanceIdSetHasBeenSet;
 
                 };
             }

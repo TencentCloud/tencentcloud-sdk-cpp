@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 获取推流路径，与推流和播放地址中的 AppName保持一致，默认为 live。
+                     * @return AppName 推流路径，与推流和播放地址中的 AppName保持一致，默认为 live。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 设置推流路径，与推流和播放地址中的 AppName保持一致，默认为 live。
+                     * @param AppName 推流路径，与推流和播放地址中的 AppName保持一致，默认为 live。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -97,17 +97,17 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取录制开始时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
+                     * 获取录制开始时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
 定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。
-                     * @return StartTime 录制开始时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
+                     * @return StartTime 录制开始时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
 定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置录制开始时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
+                     * 设置录制开始时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
 定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。
-                     * @param StartTime 录制开始时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
+                     * @param StartTime 录制开始时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
 定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -119,17 +119,17 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取录制结束时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
+                     * 获取录制结束时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
 定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。
-                     * @return EndTime 录制结束时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
+                     * @return EndTime 录制结束时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
 定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置录制结束时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
+                     * 设置录制结束时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
 定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。
-                     * @param EndTime 录制结束时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
+                     * @param EndTime 录制结束时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
 定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -223,25 +223,25 @@ namespace TencentCloud
                     bool HighlightHasBeenSet() const;
 
                     /**
-                     * 获取开启A+B=C混流C流录制标志。
-0：不开启A+B=C混流C流录制【默认】。
-1：开启A+B=C混流C流录制。
+                     * 获取开启 A+B=C混流C流录制标志。
+0：不开启 A+B=C混流C流录制【默认】。
+1：开启 A+B=C混流C流录制。
 在定时录制模式或实时视频录制模式下，该参数均有效。
-                     * @return MixStream 开启A+B=C混流C流录制标志。
-0：不开启A+B=C混流C流录制【默认】。
-1：开启A+B=C混流C流录制。
+                     * @return MixStream 开启 A+B=C混流C流录制标志。
+0：不开启 A+B=C混流C流录制【默认】。
+1：开启 A+B=C混流C流录制。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      */
                     int64_t GetMixStream() const;
 
                     /**
-                     * 设置开启A+B=C混流C流录制标志。
-0：不开启A+B=C混流C流录制【默认】。
-1：开启A+B=C混流C流录制。
+                     * 设置开启 A+B=C混流C流录制标志。
+0：不开启 A+B=C混流C流录制【默认】。
+1：开启 A+B=C混流C流录制。
 在定时录制模式或实时视频录制模式下，该参数均有效。
-                     * @param MixStream 开启A+B=C混流C流录制标志。
-0：不开启A+B=C混流C流录制【默认】。
-1：开启A+B=C混流C流录制。
+                     * @param MixStream 开启 A+B=C混流C流录制标志。
+0：不开启 A+B=C混流C流录制【默认】。
+1：开启 A+B=C混流C流录制。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      */
                     void SetMixStream(const int64_t& _mixStream);
@@ -254,15 +254,15 @@ namespace TencentCloud
 
                     /**
                      * 获取录制流参数。当前支持以下参数：
-record_interval - 录制分片时长，单位 秒，1800 - 7200
-storage_time - 录制文件存储时长，单位 秒
-eg. record_interval=3600&storage_time=2592000
+record_interval - 录制分片时长，单位 秒，1800 - 7200。
+storage_time - 录制文件存储时长，单位 秒。
+eg. record_interval=3600&storage_time=2592000。
 注：参数需要url encode。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      * @return StreamParam 录制流参数。当前支持以下参数：
-record_interval - 录制分片时长，单位 秒，1800 - 7200
-storage_time - 录制文件存储时长，单位 秒
-eg. record_interval=3600&storage_time=2592000
+record_interval - 录制分片时长，单位 秒，1800 - 7200。
+storage_time - 录制文件存储时长，单位 秒。
+eg. record_interval=3600&storage_time=2592000。
 注：参数需要url encode。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      */
@@ -270,15 +270,15 @@ eg. record_interval=3600&storage_time=2592000
 
                     /**
                      * 设置录制流参数。当前支持以下参数：
-record_interval - 录制分片时长，单位 秒，1800 - 7200
-storage_time - 录制文件存储时长，单位 秒
-eg. record_interval=3600&storage_time=2592000
+record_interval - 录制分片时长，单位 秒，1800 - 7200。
+storage_time - 录制文件存储时长，单位 秒。
+eg. record_interval=3600&storage_time=2592000。
 注：参数需要url encode。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      * @param StreamParam 录制流参数。当前支持以下参数：
-record_interval - 录制分片时长，单位 秒，1800 - 7200
-storage_time - 录制文件存储时长，单位 秒
-eg. record_interval=3600&storage_time=2592000
+record_interval - 录制分片时长，单位 秒，1800 - 7200。
+storage_time - 录制文件存储时长，单位 秒。
+eg. record_interval=3600&storage_time=2592000。
 注：参数需要url encode。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      */
@@ -299,7 +299,7 @@ eg. record_interval=3600&storage_time=2592000
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 推流路径，与推流和播放地址中的 AppName保持一致，默认为 live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
@@ -311,14 +311,14 @@ eg. record_interval=3600&storage_time=2592000
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 录制开始时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
+                     * 录制开始时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:10:01，编码为：2017-01-01+10%3a10%3a01。
 定时录制模式，必须设置该字段；实时视频录制模式，忽略该字段。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 录制结束时间。中国标准时间，需要URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
+                     * 录制结束时间。中国标准时间，需要 URLEncode(rfc3986)。如 2017-01-01 10:30:01，编码为：2017-01-01+10%3a30%3a01。
 定时录制模式，必须设置该字段；实时录制模式，为可选字段。如果通过Highlight参数，设置录制为实时视频录制模式，其设置的结束时间不应超过当前时间+30分钟，如果设置的结束时间超过当前时间+30分钟或者小于当前时间或者不设置该参数，则实际结束时间为当前时间+30分钟。
                      */
                     std::string m_endTime;
@@ -350,9 +350,9 @@ eg. record_interval=3600&storage_time=2592000
                     bool m_highlightHasBeenSet;
 
                     /**
-                     * 开启A+B=C混流C流录制标志。
-0：不开启A+B=C混流C流录制【默认】。
-1：开启A+B=C混流C流录制。
+                     * 开启 A+B=C混流C流录制标志。
+0：不开启 A+B=C混流C流录制【默认】。
+1：开启 A+B=C混流C流录制。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      */
                     int64_t m_mixStream;
@@ -360,9 +360,9 @@ eg. record_interval=3600&storage_time=2592000
 
                     /**
                      * 录制流参数。当前支持以下参数：
-record_interval - 录制分片时长，单位 秒，1800 - 7200
-storage_time - 录制文件存储时长，单位 秒
-eg. record_interval=3600&storage_time=2592000
+record_interval - 录制分片时长，单位 秒，1800 - 7200。
+storage_time - 录制文件存储时长，单位 秒。
+eg. record_interval=3600&storage_time=2592000。
 注：参数需要url encode。
 在定时录制模式或实时视频录制模式下，该参数均有效。
                      */

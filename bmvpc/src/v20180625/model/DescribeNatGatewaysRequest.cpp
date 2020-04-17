@@ -29,7 +29,10 @@ DescribeNatGatewaysRequest::DescribeNatGatewaysRequest() :
     m_searchKeyHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false)
 {
 }
 
@@ -86,6 +89,30 @@ string DescribeNatGatewaysRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +217,54 @@ void DescribeNatGatewaysRequest::SetLimit(const uint64_t& _limit)
 bool DescribeNatGatewaysRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeNatGatewaysRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void DescribeNatGatewaysRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool DescribeNatGatewaysRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string DescribeNatGatewaysRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeNatGatewaysRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeNatGatewaysRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeNatGatewaysRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeNatGatewaysRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeNatGatewaysRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
 }
 
 

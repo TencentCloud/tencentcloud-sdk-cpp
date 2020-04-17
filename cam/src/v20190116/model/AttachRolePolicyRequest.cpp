@@ -26,7 +26,8 @@ using namespace std;
 AttachRolePolicyRequest::AttachRolePolicyRequest() :
     m_policyIdHasBeenSet(false),
     m_attachRoleIdHasBeenSet(false),
-    m_attachRoleNameHasBeenSet(false)
+    m_attachRoleNameHasBeenSet(false),
+    m_policyNameHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string AttachRolePolicyRequest::ToJsonString() const
         string key = "AttachRoleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_attachRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_policyName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void AttachRolePolicyRequest::SetAttachRoleName(const string& _attachRoleName)
 bool AttachRolePolicyRequest::AttachRoleNameHasBeenSet() const
 {
     return m_attachRoleNameHasBeenSet;
+}
+
+string AttachRolePolicyRequest::GetPolicyName() const
+{
+    return m_policyName;
+}
+
+void AttachRolePolicyRequest::SetPolicyName(const string& _policyName)
+{
+    m_policyName = _policyName;
+    m_policyNameHasBeenSet = true;
+}
+
+bool AttachRolePolicyRequest::PolicyNameHasBeenSet() const
+{
+    return m_policyNameHasBeenSet;
 }
 
 

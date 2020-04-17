@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名状态过滤。0-停用，1-启用
-                     * @return DomainStatus 域名状态过滤。0-停用，1-启用
+                     * 获取域名状态过滤。0-停用，1-启用。
+                     * @return DomainStatus 域名状态过滤。0-停用，1-启用。
                      */
                     uint64_t GetDomainStatus() const;
 
                     /**
-                     * 设置域名状态过滤。0-停用，1-启用
-                     * @param DomainStatus 域名状态过滤。0-停用，1-启用
+                     * 设置域名状态过滤。0-停用，1-启用。
+                     * @param DomainStatus 域名状态过滤。0-停用，1-启用。
                      */
                     void SetDomainStatus(const uint64_t& _domainStatus);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainStatusHasBeenSet() const;
 
                     /**
-                     * 获取域名类型过滤。0-推流，1-播放
-                     * @return DomainType 域名类型过滤。0-推流，1-播放
+                     * 获取域名类型过滤。0-推流，1-播放。
+                     * @return DomainType 域名类型过滤。0-推流，1-播放。
                      */
                     uint64_t GetDomainType() const;
 
                     /**
-                     * 设置域名类型过滤。0-推流，1-播放
-                     * @param DomainType 域名类型过滤。0-推流，1-播放
+                     * 设置域名类型过滤。0-推流，1-播放。
+                     * @param DomainType 域名类型过滤。0-推流，1-播放。
                      */
                     void SetDomainType(const uint64_t& _domainType);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DomainTypeHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，范围：10~100。默认10
-                     * @return PageSize 分页大小，范围：10~100。默认10
+                     * 获取分页大小，范围：10~100。默认10。
+                     * @return PageSize 分页大小，范围：10~100。默认10。
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小，范围：10~100。默认10
-                     * @param PageSize 分页大小，范围：10~100。默认10
+                     * 设置分页大小，范围：10~100。默认10。
+                     * @param PageSize 分页大小，范围：10~100。默认10。
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取取第几页，范围：1~100000。默认1
-                     * @return PageNum 取第几页，范围：1~100000。默认1
+                     * 获取取第几页，范围：1~100000。默认1。
+                     * @return PageNum 取第几页，范围：1~100000。默认1。
                      */
                     uint64_t GetPageNum() const;
 
                     /**
-                     * 设置取第几页，范围：1~100000。默认1
-                     * @param PageNum 取第几页，范围：1~100000。默认1
+                     * 设置取第几页，范围：1~100000。默认1。
+                     * @param PageNum 取第几页，范围：1~100000。默认1。
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取0 普通直播 1慢直播 默认0
-                     * @return IsDelayLive 0 普通直播 1慢直播 默认0
+                     * 获取0 普通直播 1慢直播 默认0。
+                     * @return IsDelayLive 0 普通直播 1慢直播 默认0。
                      */
                     uint64_t GetIsDelayLive() const;
 
                     /**
-                     * 设置0 普通直播 1慢直播 默认0
-                     * @param IsDelayLive 0 普通直播 1慢直播 默认0
+                     * 设置0 普通直播 1慢直播 默认0。
+                     * @param IsDelayLive 0 普通直播 1慢直播 默认0。
                      */
                     void SetIsDelayLive(const uint64_t& _isDelayLive);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool IsDelayLiveHasBeenSet() const;
 
                     /**
-                     * 获取域名前缀
-                     * @return DomainPrefix 域名前缀
+                     * 获取域名前缀。
+                     * @return DomainPrefix 域名前缀。
                      */
                     std::string GetDomainPrefix() const;
 
                     /**
-                     * 设置域名前缀
-                     * @param DomainPrefix 域名前缀
+                     * 设置域名前缀。
+                     * @param DomainPrefix 域名前缀。
                      */
                     void SetDomainPrefix(const std::string& _domainPrefix);
 
@@ -153,37 +153,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名状态过滤。0-停用，1-启用
+                     * 域名状态过滤。0-停用，1-启用。
                      */
                     uint64_t m_domainStatus;
                     bool m_domainStatusHasBeenSet;
 
                     /**
-                     * 域名类型过滤。0-推流，1-播放
+                     * 域名类型过滤。0-推流，1-播放。
                      */
                     uint64_t m_domainType;
                     bool m_domainTypeHasBeenSet;
 
                     /**
-                     * 分页大小，范围：10~100。默认10
+                     * 分页大小，范围：10~100。默认10。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 取第几页，范围：1~100000。默认1
+                     * 取第几页，范围：1~100000。默认1。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 0 普通直播 1慢直播 默认0
+                     * 0 普通直播 1慢直播 默认0。
                      */
                     uint64_t m_isDelayLive;
                     bool m_isDelayLiveHasBeenSet;
 
                     /**
-                     * 域名前缀
+                     * 域名前缀。
                      */
                     std::string m_domainPrefix;
                     bool m_domainPrefixHasBeenSet;

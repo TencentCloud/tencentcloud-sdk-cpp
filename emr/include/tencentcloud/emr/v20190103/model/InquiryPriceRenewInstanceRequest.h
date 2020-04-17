@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间长度
-                     * @return TimeSpan 时间长度
+                     * 获取实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * @return TimeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置时间长度
-                     * @param TimeSpan 时间长度
+                     * 设置实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * @param TimeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取资源ID列表
-                     * @return ResourceIds 资源ID列表
+                     * 获取待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * @return ResourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置资源ID列表
-                     * @param ResourceIds 资源ID列表
+                     * 设置待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * @param ResourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取位置信息
-                     * @return Placement 位置信息
+                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     Placement GetPlacement() const;
 
                     /**
-                     * 设置位置信息
-                     * @param Placement 位置信息
+                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     void SetPlacement(const Placement& _placement);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取计费模式，0表示按量，1表示包年报月，此处只能为包年包月
-                     * @return PayMode 计费模式，0表示按量，1表示包年报月，此处只能为包年包月
+                     * 获取实例计费模式。此处只支持取值为1，表示包年包月。
+                     * @return PayMode 实例计费模式。此处只支持取值为1，表示包年包月。
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置计费模式，0表示按量，1表示包年报月，此处只能为包年包月
-                     * @param PayMode 计费模式，0表示按量，1表示包年报月，此处只能为包年包月
+                     * 设置实例计费模式。此处只支持取值为1，表示包年包月。
+                     * @param PayMode 实例计费模式。此处只支持取值为1，表示包年包月。
                      */
                     void SetPayMode(const int64_t& _payMode);
 
@@ -116,14 +116,18 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取时间单位，默认为m
-                     * @return TimeUnit 时间单位，默认为m
+                     * 获取实例续费的时间单位。取值范围：
+<li>m：表示月份。</li>
+                     * @return TimeUnit 实例续费的时间单位。取值范围：
+<li>m：表示月份。</li>
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时间单位，默认为m
-                     * @param TimeUnit 时间单位，默认为m
+                     * 设置实例续费的时间单位。取值范围：
+<li>m：表示月份。</li>
+                     * @param TimeUnit 实例续费的时间单位。取值范围：
+<li>m：表示月份。</li>
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -134,14 +138,18 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取货币种类
-                     * @return Currency 货币种类
+                     * 获取货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @return Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string GetCurrency() const;
 
                     /**
-                     * 设置货币种类
-                     * @param Currency 货币种类
+                     * 设置货币种类。取值范围：
+<li>CNY：表示人民币。</li>
+                     * @param Currency 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     void SetCurrency(const std::string& _currency);
 
@@ -154,37 +162,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间长度
+                     * 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 资源ID列表
+                     * 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 位置信息
+                     * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 计费模式，0表示按量，1表示包年报月，此处只能为包年包月
+                     * 实例计费模式。此处只支持取值为1，表示包年包月。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 时间单位，默认为m
+                     * 实例续费的时间单位。取值范围：
+<li>m：表示月份。</li>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 货币种类
+                     * 货币种类。取值范围：
+<li>CNY：表示人民币。</li>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;

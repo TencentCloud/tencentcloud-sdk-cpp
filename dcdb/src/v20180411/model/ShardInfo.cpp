@@ -30,7 +30,8 @@ ShardInfo::ShardInfo() :
     m_storageHasBeenSet(false),
     m_shardIdHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,16 @@ CoreInternalOutcome ShardInfo::Deserialize(const Value &value)
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ShardInfo.Cpu` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetUint64();
+        m_cpuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void ShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
     }
 
 }
@@ -353,5 +372,21 @@ void ShardInfo::SetPid(const int64_t& _pid)
 bool ShardInfo::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+uint64_t ShardInfo::GetCpu() const
+{
+    return m_cpu;
+}
+
+void ShardInfo::SetCpu(const uint64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool ShardInfo::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 

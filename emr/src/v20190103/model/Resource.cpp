@@ -29,7 +29,11 @@ Resource::Resource() :
     m_cpuHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_rootSizeHasBeenSet(false),
-    m_multiDisksHasBeenSet(false)
+    m_multiDisksHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_localDiskNumHasBeenSet(false),
+    m_diskNumHasBeenSet(false)
 {
 }
 
@@ -128,6 +132,56 @@ CoreInternalOutcome Resource::Deserialize(const Value &value)
         m_multiDisksHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `Resource.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Resource.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LocalDiskNum") && !value["LocalDiskNum"].IsNull())
+    {
+        if (!value["LocalDiskNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Resource.LocalDiskNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_localDiskNum = value["LocalDiskNum"].GetUint64();
+        m_localDiskNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskNum") && !value["DiskNum"].IsNull())
+    {
+        if (!value["DiskNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Resource.DiskNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskNum = value["DiskNum"].GetUint64();
+        m_diskNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,6 +258,45 @@ void Resource::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localDiskNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalDiskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_localDiskNum, allocator);
+    }
+
+    if (m_diskNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskNum, allocator);
     }
 
 }
@@ -335,5 +428,69 @@ void Resource::SetMultiDisks(const vector<MultiDisk>& _multiDisks)
 bool Resource::MultiDisksHasBeenSet() const
 {
     return m_multiDisksHasBeenSet;
+}
+
+vector<Tag> Resource::GetTags() const
+{
+    return m_tags;
+}
+
+void Resource::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Resource::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string Resource::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void Resource::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool Resource::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+uint64_t Resource::GetLocalDiskNum() const
+{
+    return m_localDiskNum;
+}
+
+void Resource::SetLocalDiskNum(const uint64_t& _localDiskNum)
+{
+    m_localDiskNum = _localDiskNum;
+    m_localDiskNumHasBeenSet = true;
+}
+
+bool Resource::LocalDiskNumHasBeenSet() const
+{
+    return m_localDiskNumHasBeenSet;
+}
+
+uint64_t Resource::GetDiskNum() const
+{
+    return m_diskNum;
+}
+
+void Resource::SetDiskNum(const uint64_t& _diskNum)
+{
+    m_diskNum = _diskNum;
+    m_diskNumHasBeenSet = true;
+}
+
+bool Resource::DiskNumHasBeenSet() const
+{
+    return m_diskNumHasBeenSet;
 }
 

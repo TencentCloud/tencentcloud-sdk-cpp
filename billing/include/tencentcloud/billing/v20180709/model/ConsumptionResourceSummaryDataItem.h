@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool BusinessCodeNameHasBeenSet() const;
 
+                    /**
+                     * 获取消耗类型
+                     * @return ConsumptionTypeName 消耗类型
+                     */
+                    std::string GetConsumptionTypeName() const;
+
+                    /**
+                     * 设置消耗类型
+                     * @param ConsumptionTypeName 消耗类型
+                     */
+                    void SetConsumptionTypeName(const std::string& _consumptionTypeName);
+
+                    /**
+                     * 判断参数 ConsumptionTypeName 是否已赋值
+                     * @return ConsumptionTypeName 是否已赋值
+                     */
+                    bool ConsumptionTypeNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +353,12 @@ namespace TencentCloud
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;
+
+                    /**
+                     * 消耗类型
+                     */
+                    std::string m_consumptionTypeName;
+                    bool m_consumptionTypeNameHasBeenSet;
 
                 };
             }

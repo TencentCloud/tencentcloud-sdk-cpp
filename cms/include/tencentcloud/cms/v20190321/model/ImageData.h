@@ -27,6 +27,7 @@
 #include <tencentcloud/cms/v20190321/model/CodeDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImageHotDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImageIllegalDetect.h>
+#include <tencentcloud/cms/v20190321/model/LogoDetail.h>
 #include <tencentcloud/cms/v20190321/model/OCRDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePolityDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePornDetect.h>
@@ -81,7 +82,6 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
-21000：综合
                      * @return EvilType 恶意类型
 100：正常 
 20001：政治
@@ -90,7 +90,6 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
-21000：综合
                      */
                     int64_t GetEvilType() const;
 
@@ -103,7 +102,6 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
-21000：综合
                      * @param EvilType 恶意类型
 100：正常 
 20001：政治
@@ -112,7 +110,6 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
-21000：综合
                      */
                     void SetEvilType(const int64_t& _evilType);
 
@@ -175,6 +172,24 @@ namespace TencentCloud
                      * @return IllegalDetect 是否已赋值
                      */
                     bool IllegalDetectHasBeenSet() const;
+
+                    /**
+                     * 获取logo详情
+                     * @return LogoDetect logo详情
+                     */
+                    LogoDetail GetLogoDetect() const;
+
+                    /**
+                     * 设置logo详情
+                     * @param LogoDetect logo详情
+                     */
+                    void SetLogoDetect(const LogoDetail& _logoDetect);
+
+                    /**
+                     * 判断参数 LogoDetect 是否已赋值
+                     * @return LogoDetect 是否已赋值
+                     */
+                    bool LogoDetectHasBeenSet() const;
 
                     /**
                      * 获取图片OCR详情
@@ -283,7 +298,6 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
-21000：综合
                      */
                     int64_t m_evilType;
                     bool m_evilTypeHasBeenSet;
@@ -305,6 +319,12 @@ namespace TencentCloud
                      */
                     ImageIllegalDetect m_illegalDetect;
                     bool m_illegalDetectHasBeenSet;
+
+                    /**
+                     * logo详情
+                     */
+                    LogoDetail m_logoDetect;
+                    bool m_logoDetectHasBeenSet;
 
                     /**
                      * 图片OCR详情

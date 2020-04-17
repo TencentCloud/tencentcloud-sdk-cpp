@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool CurrencyTypeHasBeenSet() const;
 
                     /**
-                     * 获取聚鑫分配的支付主MidasAppid
-                     * @return MidasAppId 聚鑫分配的支付主MidasAppid
+                     * 获取聚鑫分配的支付主MidasAppId
+                     * @return MidasAppId 聚鑫分配的支付主MidasAppId
                      */
                     std::string GetMidasAppId() const;
 
                     /**
-                     * 设置聚鑫分配的支付主MidasAppid
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppid
+                     * 设置聚鑫分配的支付主MidasAppId
+                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool ProductDetailHasBeenSet() const;
 
                     /**
-                     * 获取商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
-                     * @return ProductId 商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * 获取商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * @return ProductId 商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
-                     * @param ProductId 商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * 设置商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * @param ProductId 商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
                      */
                     void SetProductId(const std::string& _productId);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool TotalAmtHasBeenSet() const;
 
                     /**
-                     * 获取用户Id，长度不小于5位，仅支持字母和数字的组合
-                     * @return UserId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * 获取用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * @return UserId 用户ID，长度不小于5位，仅支持字母和数字的组合
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，长度不小于5位，仅支持字母和数字的组合
-                     * @param UserId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * 设置用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * @param UserId 用户ID，长度不小于5位，仅支持字母和数字的组合
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取银行真实渠道.如:bank_ccb
-                     * @return RealChannel 银行真实渠道.如:bank_ccb
+                     * 获取银行真实渠道.如:bank_pingan
+                     * @return RealChannel 银行真实渠道.如:bank_pingan
                      */
                     std::string GetRealChannel() const;
 
                     /**
-                     * 设置银行真实渠道.如:bank_ccb
-                     * @param RealChannel 银行真实渠道.如:bank_ccb
+                     * 设置银行真实渠道.如:bank_pingan
+                     * @param RealChannel 银行真实渠道.如:bank_pingan
                      */
                     void SetRealChannel(const std::string& _realChannel);
 
@@ -204,24 +204,6 @@ namespace TencentCloud
                      * @return RealChannel 是否已赋值
                      */
                     bool RealChannelHasBeenSet() const;
-
-                    /**
-                     * 获取子订单信息列表，格式：子订单号、子应用Id、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
-                     * @return SubOrderList 子订单信息列表，格式：子订单号、子应用Id、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
-                     */
-                    std::vector<UnifiedOrderInSubOrderList> GetSubOrderList() const;
-
-                    /**
-                     * 设置子订单信息列表，格式：子订单号、子应用Id、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
-                     * @param SubOrderList 子订单信息列表，格式：子订单号、子应用Id、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
-                     */
-                    void SetSubOrderList(const std::vector<UnifiedOrderInSubOrderList>& _subOrderList);
-
-                    /**
-                     * 判断参数 SubOrderList 是否已赋值
-                     * @return SubOrderList 是否已赋值
-                     */
-                    bool SubOrderListHasBeenSet() const;
 
                     /**
                      * 获取原始金额
@@ -372,6 +354,28 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
+                     * 获取子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
+注：接入银行或其他支付渠道服务商模式下，必传
+                     * @return SubOrderList 子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
+注：接入银行或其他支付渠道服务商模式下，必传
+                     */
+                    std::vector<UnifiedOrderInSubOrderList> GetSubOrderList() const;
+
+                    /**
+                     * 设置子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
+注：接入银行或其他支付渠道服务商模式下，必传
+                     * @param SubOrderList 子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
+注：接入银行或其他支付渠道服务商模式下，必传
+                     */
+                    void SetSubOrderList(const std::vector<UnifiedOrderInSubOrderList>& _subOrderList);
+
+                    /**
+                     * 判断参数 SubOrderList 是否已赋值
+                     * @return SubOrderList 是否已赋值
+                     */
+                    bool SubOrderListHasBeenSet() const;
+
+                    /**
                      * 获取结算应收金额，单位：分
                      * @return TotalMchIncome 结算应收金额，单位：分
                      */
@@ -452,7 +456,7 @@ namespace TencentCloud
                     bool m_currencyTypeHasBeenSet;
 
                     /**
-                     * 聚鑫分配的支付主MidasAppid
+                     * 聚鑫分配的支付主MidasAppId
                      */
                     std::string m_midasAppId;
                     bool m_midasAppIdHasBeenSet;
@@ -470,7 +474,7 @@ namespace TencentCloud
                     bool m_productDetailHasBeenSet;
 
                     /**
-                     * 商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * 商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
@@ -488,22 +492,16 @@ namespace TencentCloud
                     bool m_totalAmtHasBeenSet;
 
                     /**
-                     * 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * 用户ID，长度不小于5位，仅支持字母和数字的组合
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 银行真实渠道.如:bank_ccb
+                     * 银行真实渠道.如:bank_pingan
                      */
                     std::string m_realChannel;
                     bool m_realChannelHasBeenSet;
-
-                    /**
-                     * 子订单信息列表，格式：子订单号、子应用Id、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
-                     */
-                    std::vector<UnifiedOrderInSubOrderList> m_subOrderList;
-                    bool m_subOrderListHasBeenSet;
 
                     /**
                      * 原始金额
@@ -553,6 +551,13 @@ namespace TencentCloud
                      */
                     std::string m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)
+注：接入银行或其他支付渠道服务商模式下，必传
+                     */
+                    std::vector<UnifiedOrderInSubOrderList> m_subOrderList;
+                    bool m_subOrderListHasBeenSet;
 
                     /**
                      * 结算应收金额，单位：分

@@ -33,7 +33,8 @@ L7ListenerInfo::L7ListenerInfo() :
     m_certCaIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_addTimestampHasBeenSet(false),
-    m_ruleSetHasBeenSet(false)
+    m_ruleSetHasBeenSet(false),
+    m_forwardProtocolHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome L7ListenerInfo::Deserialize(const Value &value)
         m_ruleSetHasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardProtocol") && !value["ForwardProtocol"].IsNull())
+    {
+        if (!value["ForwardProtocol"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `L7ListenerInfo.ForwardProtocol` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardProtocol = value["ForwardProtocol"].GetInt64();
+        m_forwardProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -280,6 +291,14 @@ void L7ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_forwardProtocolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForwardProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forwardProtocol, allocator);
     }
 
 }
@@ -475,5 +494,21 @@ void L7ListenerInfo::SetRuleSet(const vector<L7ListenerInfoRule>& _ruleSet)
 bool L7ListenerInfo::RuleSetHasBeenSet() const
 {
     return m_ruleSetHasBeenSet;
+}
+
+int64_t L7ListenerInfo::GetForwardProtocol() const
+{
+    return m_forwardProtocol;
+}
+
+void L7ListenerInfo::SetForwardProtocol(const int64_t& _forwardProtocol)
+{
+    m_forwardProtocol = _forwardProtocol;
+    m_forwardProtocolHasBeenSet = true;
+}
+
+bool L7ListenerInfo::ForwardProtocolHasBeenSet() const
+{
+    return m_forwardProtocolHasBeenSet;
 }
 

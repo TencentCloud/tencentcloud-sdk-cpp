@@ -1889,6 +1889,49 @@ TsfClient::DescribePkgsOutcomeCallable TsfClient::DescribePkgsCallable(const Des
     return task->get_future();
 }
 
+TsfClient::DescribePodInstancesOutcome TsfClient::DescribePodInstances(const DescribePodInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePodInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePodInstancesResponse rsp = DescribePodInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePodInstancesOutcome(rsp);
+        else
+            return DescribePodInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePodInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribePodInstancesAsync(const DescribePodInstancesRequest& request, const DescribePodInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePodInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribePodInstancesOutcomeCallable TsfClient::DescribePodInstancesCallable(const DescribePodInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePodInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePodInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribePublicConfigOutcome TsfClient::DescribePublicConfig(const DescribePublicConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicConfig");

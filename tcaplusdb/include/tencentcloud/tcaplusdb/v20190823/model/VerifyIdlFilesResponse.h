@@ -22,7 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/IdlFileInfo.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/ParsedTableInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ParsedTableInfoNew.h>
 
 
 namespace TencentCloud
@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本次上传校验所有的Idl文件信息列表
-                     * @return IdlFiles 本次上传校验所有的Idl文件信息列表
+                     * 获取本次上传校验所有的IDL文件信息列表
+                     * @return IdlFiles 本次上传校验所有的IDL文件信息列表
                      */
                     std::vector<IdlFileInfo> GetIdlFiles() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool IdlFilesHasBeenSet() const;
 
                     /**
-                     * 获取读取Idl描述文件后解析出的合法表数量，不包含已经创建的表
-                     * @return TotalCount 读取Idl描述文件后解析出的合法表数量，不包含已经创建的表
+                     * 获取读取IDL描述文件后解析出的合法表数量，不包含已经创建的表
+                     * @return TotalCount 读取IDL描述文件后解析出的合法表数量，不包含已经创建的表
                      */
                     uint64_t GetTotalCount() const;
 
@@ -69,10 +69,10 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取读取Idl描述文件后解析出的合法表列表，不包含已经创建的表
-                     * @return TableInfos 读取Idl描述文件后解析出的合法表列表，不包含已经创建的表
+                     * 获取读取IDL描述文件后解析出的合法表列表，不包含已经创建的表
+                     * @return TableInfos 读取IDL描述文件后解析出的合法表列表，不包含已经创建的表
                      */
-                    std::vector<ParsedTableInfo> GetTableInfos() const;
+                    std::vector<ParsedTableInfoNew> GetTableInfos() const;
 
                     /**
                      * 判断参数 TableInfos 是否已赋值
@@ -83,21 +83,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本次上传校验所有的Idl文件信息列表
+                     * 本次上传校验所有的IDL文件信息列表
                      */
                     std::vector<IdlFileInfo> m_idlFiles;
                     bool m_idlFilesHasBeenSet;
 
                     /**
-                     * 读取Idl描述文件后解析出的合法表数量，不包含已经创建的表
+                     * 读取IDL描述文件后解析出的合法表数量，不包含已经创建的表
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 读取Idl描述文件后解析出的合法表列表，不包含已经创建的表
+                     * 读取IDL描述文件后解析出的合法表列表，不包含已经创建的表
                      */
-                    std::vector<ParsedTableInfo> m_tableInfos;
+                    std::vector<ParsedTableInfoNew> m_tableInfos;
                     bool m_tableInfosHasBeenSet;
 
                 };

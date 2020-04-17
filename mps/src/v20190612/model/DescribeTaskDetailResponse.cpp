@@ -31,6 +31,7 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_beginProcessTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
     m_workflowTaskHasBeenSet(false),
+    m_editMediaTaskHasBeenSet(false),
     m_liveStreamProcessTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
@@ -138,6 +139,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         }
 
         m_workflowTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EditMediaTask") && !rsp["EditMediaTask"].IsNull())
+    {
+        if (!rsp["EditMediaTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_editMediaTask.Deserialize(rsp["EditMediaTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_editMediaTaskHasBeenSet = true;
     }
 
     if (rsp.HasMember("LiveStreamProcessTask") && !rsp["LiveStreamProcessTask"].IsNull())
@@ -267,6 +285,16 @@ WorkflowTask DescribeTaskDetailResponse::GetWorkflowTask() const
 bool DescribeTaskDetailResponse::WorkflowTaskHasBeenSet() const
 {
     return m_workflowTaskHasBeenSet;
+}
+
+EditMediaTask DescribeTaskDetailResponse::GetEditMediaTask() const
+{
+    return m_editMediaTask;
+}
+
+bool DescribeTaskDetailResponse::EditMediaTaskHasBeenSet() const
+{
+    return m_editMediaTaskHasBeenSet;
 }
 
 LiveStreamProcessTask DescribeTaskDetailResponse::GetLiveStreamProcessTask() const

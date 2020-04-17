@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool ApplicationRuntimeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Apigateway的serviceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApigatewayServiceId Apigateway的serviceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApigatewayServiceId() const;
+
+                    /**
+                     * 设置Apigateway的serviceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApigatewayServiceId Apigateway的serviceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApigatewayServiceId(const std::string& _apigatewayServiceId);
+
+                    /**
+                     * 判断参数 ApigatewayServiceId 是否已赋值
+                     * @return ApigatewayServiceId 是否已赋值
+                     */
+                    bool ApigatewayServiceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +359,13 @@ namespace TencentCloud
                      */
                     std::string m_applicationRuntimeType;
                     bool m_applicationRuntimeTypeHasBeenSet;
+
+                    /**
+                     * Apigateway的serviceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apigatewayServiceId;
+                    bool m_apigatewayServiceIdHasBeenSet;
 
                 };
             }

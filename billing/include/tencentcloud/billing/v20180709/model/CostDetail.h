@@ -307,13 +307,13 @@ namespace TencentCloud
                      * 获取组件明细
                      * @return ComponentSet 组件明细
                      */
-                    CostComponentSet GetComponentSet() const;
+                    std::vector<CostComponentSet> GetComponentSet() const;
 
                     /**
                      * 设置组件明细
                      * @param ComponentSet 组件明细
                      */
-                    void SetComponentSet(const CostComponentSet& _componentSet);
+                    void SetComponentSet(const std::vector<CostComponentSet>& _componentSet);
 
                     /**
                      * 判断参数 ComponentSet 是否已赋值
@@ -429,7 +429,7 @@ namespace TencentCloud
                     /**
                      * 组件明细
                      */
-                    CostComponentSet m_componentSet;
+                    std::vector<CostComponentSet> m_componentSet;
                     bool m_componentSetHasBeenSet;
 
                     /**

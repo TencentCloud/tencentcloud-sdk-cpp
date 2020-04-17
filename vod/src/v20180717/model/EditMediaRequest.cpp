@@ -31,6 +31,7 @@ EditMediaRequest::EditMediaRequest() :
     m_procedureNameHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
+    m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
@@ -112,6 +113,14 @@ string EditMediaRequest::ToJsonString() const
         string key = "SessionContext";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tasksPriorityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TasksPriority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tasksPriority, allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -248,6 +257,22 @@ void EditMediaRequest::SetSessionContext(const string& _sessionContext)
 bool EditMediaRequest::SessionContextHasBeenSet() const
 {
     return m_sessionContextHasBeenSet;
+}
+
+int64_t EditMediaRequest::GetTasksPriority() const
+{
+    return m_tasksPriority;
+}
+
+void EditMediaRequest::SetTasksPriority(const int64_t& _tasksPriority)
+{
+    m_tasksPriority = _tasksPriority;
+    m_tasksPriorityHasBeenSet = true;
+}
+
+bool EditMediaRequest::TasksPriorityHasBeenSet() const
+{
+    return m_tasksPriorityHasBeenSet;
 }
 
 string EditMediaRequest::GetSessionId() const

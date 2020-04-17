@@ -30,6 +30,7 @@ ModifyContentReviewTemplateRequest::ModifyContentReviewTemplateRequest() :
     m_pornConfigureHasBeenSet(false),
     m_terrorismConfigureHasBeenSet(false),
     m_politicalConfigureHasBeenSet(false),
+    m_prohibitedConfigureHasBeenSet(false),
     m_userDefineConfigureHasBeenSet(false),
     m_screenshotIntervalHasBeenSet(false),
     m_reviewWallSwitchHasBeenSet(false),
@@ -93,6 +94,15 @@ string ModifyContentReviewTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_politicalConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_prohibitedConfigureHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProhibitedConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_prohibitedConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_userDefineConfigureHasBeenSet)
@@ -230,6 +240,22 @@ void ModifyContentReviewTemplateRequest::SetPoliticalConfigure(const PoliticalCo
 bool ModifyContentReviewTemplateRequest::PoliticalConfigureHasBeenSet() const
 {
     return m_politicalConfigureHasBeenSet;
+}
+
+ProhibitedConfigureInfoForUpdate ModifyContentReviewTemplateRequest::GetProhibitedConfigure() const
+{
+    return m_prohibitedConfigure;
+}
+
+void ModifyContentReviewTemplateRequest::SetProhibitedConfigure(const ProhibitedConfigureInfoForUpdate& _prohibitedConfigure)
+{
+    m_prohibitedConfigure = _prohibitedConfigure;
+    m_prohibitedConfigureHasBeenSet = true;
+}
+
+bool ModifyContentReviewTemplateRequest::ProhibitedConfigureHasBeenSet() const
+{
+    return m_prohibitedConfigureHasBeenSet;
 }
 
 UserDefineConfigureInfoForUpdate ModifyContentReviewTemplateRequest::GetUserDefineConfigure() const

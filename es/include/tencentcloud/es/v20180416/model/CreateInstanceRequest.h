@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例版本（支持"5.6.4"、"6.4.3"）
-                     * @return EsVersion 实例版本（支持"5.6.4"、"6.4.3"）
+                     * 获取实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
+                     * @return EsVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
                      */
                     std::string GetEsVersion() const;
 
                     /**
-                     * 设置实例版本（支持"5.6.4"、"6.4.3"）
-                     * @param EsVersion 实例版本（支持"5.6.4"、"6.4.3"）
+                     * 设置实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
+                     * @param EsVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
                      */
                     void SetEsVersion(const std::string& _esVersion);
 
@@ -572,7 +572,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例版本（支持"5.6.4"、"6.4.3"）
+                     * 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
                      */
                     std::string m_esVersion;
                     bool m_esVersionHasBeenSet;

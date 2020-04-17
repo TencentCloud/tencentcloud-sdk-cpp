@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -280,6 +281,42 @@ namespace TencentCloud
                      */
                     bool IsRemoteVpcSnatHasBeenSet() const;
 
+                    /**
+                     * 获取子网`IP`总数。
+                     * @return TotalIpAddressCount 子网`IP`总数。
+                     */
+                    uint64_t GetTotalIpAddressCount() const;
+
+                    /**
+                     * 设置子网`IP`总数。
+                     * @param TotalIpAddressCount 子网`IP`总数。
+                     */
+                    void SetTotalIpAddressCount(const uint64_t& _totalIpAddressCount);
+
+                    /**
+                     * 判断参数 TotalIpAddressCount 是否已赋值
+                     * @return TotalIpAddressCount 是否已赋值
+                     */
+                    bool TotalIpAddressCountHasBeenSet() const;
+
+                    /**
+                     * 获取标签键值对。
+                     * @return TagSet 标签键值对。
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对。
+                     * @param TagSet 标签键值对。
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +396,18 @@ namespace TencentCloud
                      */
                     bool m_isRemoteVpcSnat;
                     bool m_isRemoteVpcSnatHasBeenSet;
+
+                    /**
+                     * 子网`IP`总数。
+                     */
+                    uint64_t m_totalIpAddressCount;
+                    bool m_totalIpAddressCountHasBeenSet;
+
+                    /**
+                     * 标签键值对。
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
 
                 };
             }

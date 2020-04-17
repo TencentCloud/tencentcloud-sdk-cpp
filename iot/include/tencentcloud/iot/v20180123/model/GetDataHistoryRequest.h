@@ -118,13 +118,13 @@ namespace TencentCloud
                      * 获取查询数据量
                      * @return Size 查询数据量
                      */
-                    std::vector<uint64_t> GetSize() const;
+                    uint64_t GetSize() const;
 
                     /**
                      * 设置查询数据量
                      * @param Size 查询数据量
                      */
-                    void SetSize(const std::vector<uint64_t>& _size);
+                    void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
@@ -197,7 +197,7 @@ namespace TencentCloud
                     /**
                      * 查询数据量
                      */
-                    std::vector<uint64_t> m_size;
+                    uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**

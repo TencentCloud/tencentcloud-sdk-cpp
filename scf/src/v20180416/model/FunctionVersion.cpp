@@ -23,7 +23,9 @@ using namespace std;
 
 FunctionVersion::FunctionVersion() :
     m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_addTimeHasBeenSet(false),
+    m_modTimeHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,26 @@ CoreInternalOutcome FunctionVersion::Deserialize(const Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("AddTime") && !value["AddTime"].IsNull())
+    {
+        if (!value["AddTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FunctionVersion.AddTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addTime = string(value["AddTime"].GetString());
+        m_addTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModTime") && !value["ModTime"].IsNull())
+    {
+        if (!value["ModTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FunctionVersion.ModTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modTime = string(value["ModTime"].GetString());
+        m_modTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +95,22 @@ void FunctionVersion::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_addTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_modTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +146,37 @@ void FunctionVersion::SetDescription(const string& _description)
 bool FunctionVersion::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string FunctionVersion::GetAddTime() const
+{
+    return m_addTime;
+}
+
+void FunctionVersion::SetAddTime(const string& _addTime)
+{
+    m_addTime = _addTime;
+    m_addTimeHasBeenSet = true;
+}
+
+bool FunctionVersion::AddTimeHasBeenSet() const
+{
+    return m_addTimeHasBeenSet;
+}
+
+string FunctionVersion::GetModTime() const
+{
+    return m_modTime;
+}
+
+void FunctionVersion::SetModTime(const string& _modTime)
+{
+    m_modTime = _modTime;
+    m_modTimeHasBeenSet = true;
+}
+
+bool FunctionVersion::ModTimeHasBeenSet() const
+{
+    return m_modTimeHasBeenSet;
 }
 

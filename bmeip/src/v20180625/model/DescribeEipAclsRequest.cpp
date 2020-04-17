@@ -27,7 +27,13 @@ DescribeEipAclsRequest::DescribeEipAclsRequest() :
     m_aclNameHasBeenSet(false),
     m_aclIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_eipIdsHasBeenSet(false),
+    m_eipIpsHasBeenSet(false),
+    m_eipNamesHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_aclNamesHasBeenSet(false)
 {
 }
 
@@ -73,6 +79,74 @@ string DescribeEipAclsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_eipIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EipIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_eipIds.begin(); itr != m_eipIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_eipIpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EipIps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_eipIps.begin(); itr != m_eipIps.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_eipNamesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EipNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_eipNames.begin(); itr != m_eipNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_order, allocator);
+    }
+
+    if (m_aclNamesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AclNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_aclNames.begin(); itr != m_aclNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -145,6 +219,102 @@ void DescribeEipAclsRequest::SetLimit(const int64_t& _limit)
 bool DescribeEipAclsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeEipAclsRequest::GetEipIds() const
+{
+    return m_eipIds;
+}
+
+void DescribeEipAclsRequest::SetEipIds(const vector<string>& _eipIds)
+{
+    m_eipIds = _eipIds;
+    m_eipIdsHasBeenSet = true;
+}
+
+bool DescribeEipAclsRequest::EipIdsHasBeenSet() const
+{
+    return m_eipIdsHasBeenSet;
+}
+
+vector<string> DescribeEipAclsRequest::GetEipIps() const
+{
+    return m_eipIps;
+}
+
+void DescribeEipAclsRequest::SetEipIps(const vector<string>& _eipIps)
+{
+    m_eipIps = _eipIps;
+    m_eipIpsHasBeenSet = true;
+}
+
+bool DescribeEipAclsRequest::EipIpsHasBeenSet() const
+{
+    return m_eipIpsHasBeenSet;
+}
+
+vector<string> DescribeEipAclsRequest::GetEipNames() const
+{
+    return m_eipNames;
+}
+
+void DescribeEipAclsRequest::SetEipNames(const vector<string>& _eipNames)
+{
+    m_eipNames = _eipNames;
+    m_eipNamesHasBeenSet = true;
+}
+
+bool DescribeEipAclsRequest::EipNamesHasBeenSet() const
+{
+    return m_eipNamesHasBeenSet;
+}
+
+string DescribeEipAclsRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeEipAclsRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeEipAclsRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+uint64_t DescribeEipAclsRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeEipAclsRequest::SetOrder(const uint64_t& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeEipAclsRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+vector<string> DescribeEipAclsRequest::GetAclNames() const
+{
+    return m_aclNames;
+}
+
+void DescribeEipAclsRequest::SetAclNames(const vector<string>& _aclNames)
+{
+    m_aclNames = _aclNames;
+    m_aclNamesHasBeenSet = true;
+}
+
+bool DescribeEipAclsRequest::AclNamesHasBeenSet() const
+{
+    return m_aclNamesHasBeenSet;
 }
 
 

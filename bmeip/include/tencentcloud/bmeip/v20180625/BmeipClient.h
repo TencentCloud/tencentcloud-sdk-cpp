@@ -59,6 +59,8 @@
 #include <tencentcloud/bmeip/v20180625/model/UnbindHostedResponse.h>
 #include <tencentcloud/bmeip/v20180625/model/UnbindRsRequest.h>
 #include <tencentcloud/bmeip/v20180625/model/UnbindRsResponse.h>
+#include <tencentcloud/bmeip/v20180625/model/UnbindRsListRequest.h>
+#include <tencentcloud/bmeip/v20180625/model/UnbindRsListResponse.h>
 #include <tencentcloud/bmeip/v20180625/model/UnbindVpcIpRequest.h>
 #include <tencentcloud/bmeip/v20180625/model/UnbindVpcIpResponse.h>
 
@@ -129,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UnbindRsResponse> UnbindRsOutcome;
                 typedef std::future<UnbindRsOutcome> UnbindRsOutcomeCallable;
                 typedef std::function<void(const BmeipClient*, const Model::UnbindRsRequest&, UnbindRsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindRsAsyncHandler;
+                typedef Outcome<Error, Model::UnbindRsListResponse> UnbindRsListOutcome;
+                typedef std::future<UnbindRsListOutcome> UnbindRsListOutcomeCallable;
+                typedef std::function<void(const BmeipClient*, const Model::UnbindRsListRequest&, UnbindRsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindRsListAsyncHandler;
                 typedef Outcome<Error, Model::UnbindVpcIpResponse> UnbindVpcIpOutcome;
                 typedef std::future<UnbindVpcIpOutcome> UnbindVpcIpOutcomeCallable;
                 typedef std::function<void(const BmeipClient*, const Model::UnbindVpcIpRequest&, UnbindVpcIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindVpcIpAsyncHandler;
@@ -296,6 +301,15 @@ namespace TencentCloud
                 UnbindRsOutcome UnbindRs(const Model::UnbindRsRequest &request);
                 void UnbindRsAsync(const Model::UnbindRsRequest& request, const UnbindRsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindRsOutcomeCallable UnbindRsCallable(const Model::UnbindRsRequest& request);
+
+                /**
+                 *批量解绑物理机弹性公网IP接口
+                 * @param req UnbindRsListRequest
+                 * @return UnbindRsListOutcome
+                 */
+                UnbindRsListOutcome UnbindRsList(const Model::UnbindRsListRequest &request);
+                void UnbindRsListAsync(const Model::UnbindRsListRequest& request, const UnbindRsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindRsListOutcomeCallable UnbindRsListCallable(const Model::UnbindRsListRequest& request);
 
                 /**
                  *黑石EIP解绑VPCIP

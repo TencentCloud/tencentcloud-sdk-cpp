@@ -188,18 +188,21 @@ CoreInternalOutcome CostDetail::Deserialize(const Value &value)
 
     if (value.HasMember("ComponentSet") && !value["ComponentSet"].IsNull())
     {
-        if (!value["ComponentSet"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `CostDetail.ComponentSet` is not object type").SetRequestId(requestId));
-        }
+        if (!value["ComponentSet"].IsArray())
+            return CoreInternalOutcome(Error("response `CostDetail.ComponentSet` is not array type"));
 
-        CoreInternalOutcome outcome = m_componentSet.Deserialize(value["ComponentSet"]);
-        if (!outcome.IsSuccess())
+        const Value &tmpValue = value["ComponentSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            CostComponentSet item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_componentSet.push_back(item);
         }
-
         m_componentSetHasBeenSet = true;
     }
 
@@ -337,8 +340,14 @@ void CostDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         Value iKey(kStringType);
         string key = "ComponentSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_componentSet.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_componentSet.begin(); itr != m_componentSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_productCodeHasBeenSet)
@@ -576,12 +585,12 @@ bool CostDetail::FeeEndTimeHasBeenSet() const
     return m_feeEndTimeHasBeenSet;
 }
 
-CostComponentSet CostDetail::GetComponentSet() const
+vector<CostComponentSet> CostDetail::GetComponentSet() const
 {
     return m_componentSet;
 }
 
-void CostDetail::SetComponentSet(const CostComponentSet& _componentSet)
+void CostDetail::SetComponentSet(const vector<CostComponentSet>& _componentSet)
 {
     m_componentSet = _componentSet;
     m_componentSetHasBeenSet = true;

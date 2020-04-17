@@ -82,7 +82,7 @@ CoreInternalOutcome CreateTablesResponse::Deserialize(const string &payload)
         const Value &tmpValue = rsp["TableResults"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TableResult item;
+            TableResultNew item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -109,7 +109,7 @@ bool CreateTablesResponse::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-vector<TableResult> CreateTablesResponse::GetTableResults() const
+vector<TableResultNew> CreateTablesResponse::GetTableResults() const
 {
     return m_tableResults;
 }

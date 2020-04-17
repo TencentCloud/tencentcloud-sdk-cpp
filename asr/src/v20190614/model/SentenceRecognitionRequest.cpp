@@ -33,7 +33,10 @@ SentenceRecognitionRequest::SentenceRecognitionRequest() :
     m_urlHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_dataLenHasBeenSet(false),
-    m_hotwordIdHasBeenSet(false)
+    m_hotwordIdHasBeenSet(false),
+    m_filterDirtyHasBeenSet(false),
+    m_filterModalHasBeenSet(false),
+    m_filterPuncHasBeenSet(false)
 {
 }
 
@@ -122,6 +125,30 @@ string SentenceRecognitionRequest::ToJsonString() const
         string key = "HotwordId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_hotwordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterDirtyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterDirty";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterDirty, allocator);
+    }
+
+    if (m_filterModalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterModal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterModal, allocator);
+    }
+
+    if (m_filterPuncHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FilterPunc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterPunc, allocator);
     }
 
 
@@ -290,6 +317,54 @@ void SentenceRecognitionRequest::SetHotwordId(const string& _hotwordId)
 bool SentenceRecognitionRequest::HotwordIdHasBeenSet() const
 {
     return m_hotwordIdHasBeenSet;
+}
+
+int64_t SentenceRecognitionRequest::GetFilterDirty() const
+{
+    return m_filterDirty;
+}
+
+void SentenceRecognitionRequest::SetFilterDirty(const int64_t& _filterDirty)
+{
+    m_filterDirty = _filterDirty;
+    m_filterDirtyHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::FilterDirtyHasBeenSet() const
+{
+    return m_filterDirtyHasBeenSet;
+}
+
+int64_t SentenceRecognitionRequest::GetFilterModal() const
+{
+    return m_filterModal;
+}
+
+void SentenceRecognitionRequest::SetFilterModal(const int64_t& _filterModal)
+{
+    m_filterModal = _filterModal;
+    m_filterModalHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::FilterModalHasBeenSet() const
+{
+    return m_filterModalHasBeenSet;
+}
+
+int64_t SentenceRecognitionRequest::GetFilterPunc() const
+{
+    return m_filterPunc;
+}
+
+void SentenceRecognitionRequest::SetFilterPunc(const int64_t& _filterPunc)
+{
+    m_filterPunc = _filterPunc;
+    m_filterPuncHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::FilterPuncHasBeenSet() const
+{
+    return m_filterPuncHasBeenSet;
 }
 
 

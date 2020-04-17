@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证码类型，9：滑块验证码
-                     * @return CaptchaType 验证码类型，9：滑块验证码
+                     * 获取固定填值：9。可在控制台配置不同验证码类型。
+                     * @return CaptchaType 固定填值：9。可在控制台配置不同验证码类型。
                      */
                     uint64_t GetCaptchaType() const;
 
                     /**
-                     * 设置验证码类型，9：滑块验证码
-                     * @param CaptchaType 验证码类型，9：滑块验证码
+                     * 设置固定填值：9。可在控制台配置不同验证码类型。
+                     * @param CaptchaType 固定填值：9。可在控制台配置不同验证码类型。
                      */
                     void SetCaptchaType(const uint64_t& _captchaType);
 
@@ -222,10 +222,28 @@ namespace TencentCloud
                      */
                     bool ImeiHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回前端获取验证码时间，取值1：需要返回
+                     * @return NeedGetCaptchaTime 是否返回前端获取验证码时间，取值1：需要返回
+                     */
+                    int64_t GetNeedGetCaptchaTime() const;
+
+                    /**
+                     * 设置是否返回前端获取验证码时间，取值1：需要返回
+                     * @param NeedGetCaptchaTime 是否返回前端获取验证码时间，取值1：需要返回
+                     */
+                    void SetNeedGetCaptchaTime(const int64_t& _needGetCaptchaTime);
+
+                    /**
+                     * 判断参数 NeedGetCaptchaTime 是否已赋值
+                     * @return NeedGetCaptchaTime 是否已赋值
+                     */
+                    bool NeedGetCaptchaTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 验证码类型，9：滑块验证码
+                     * 固定填值：9。可在控制台配置不同验证码类型。
                      */
                     uint64_t m_captchaType;
                     bool m_captchaTypeHasBeenSet;
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     std::string m_imei;
                     bool m_imeiHasBeenSet;
+
+                    /**
+                     * 是否返回前端获取验证码时间，取值1：需要返回
+                     */
+                    int64_t m_needGetCaptchaTime;
+                    bool m_needGetCaptchaTimeHasBeenSet;
 
                 };
             }

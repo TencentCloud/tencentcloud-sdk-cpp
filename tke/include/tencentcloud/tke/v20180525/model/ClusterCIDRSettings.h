@@ -118,6 +118,60 @@ namespace TencentCloud
                      */
                     bool MaxClusterServiceNumHasBeenSet() const;
 
+                    /**
+                     * 获取用于分配集群服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
+                     * @return ServiceCIDR 用于分配集群服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
+                     */
+                    std::string GetServiceCIDR() const;
+
+                    /**
+                     * 设置用于分配集群服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
+                     * @param ServiceCIDR 用于分配集群服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
+                     */
+                    void SetServiceCIDR(const std::string& _serviceCIDR);
+
+                    /**
+                     * 判断参数 ServiceCIDR 是否已赋值
+                     * @return ServiceCIDR 是否已赋值
+                     */
+                    bool ServiceCIDRHasBeenSet() const;
+
+                    /**
+                     * 获取VPC-CNI网络模式下，弹性网卡的子网Id。
+                     * @return EniSubnetIds VPC-CNI网络模式下，弹性网卡的子网Id。
+                     */
+                    std::vector<std::string> GetEniSubnetIds() const;
+
+                    /**
+                     * 设置VPC-CNI网络模式下，弹性网卡的子网Id。
+                     * @param EniSubnetIds VPC-CNI网络模式下，弹性网卡的子网Id。
+                     */
+                    void SetEniSubnetIds(const std::vector<std::string>& _eniSubnetIds);
+
+                    /**
+                     * 判断参数 EniSubnetIds 是否已赋值
+                     * @return EniSubnetIds 是否已赋值
+                     */
+                    bool EniSubnetIdsHasBeenSet() const;
+
+                    /**
+                     * 获取VPC-CNI网络模式下，弹性网卡IP的回收时间，取值范围[300,15768000)
+                     * @return ClaimExpiredSeconds VPC-CNI网络模式下，弹性网卡IP的回收时间，取值范围[300,15768000)
+                     */
+                    int64_t GetClaimExpiredSeconds() const;
+
+                    /**
+                     * 设置VPC-CNI网络模式下，弹性网卡IP的回收时间，取值范围[300,15768000)
+                     * @param ClaimExpiredSeconds VPC-CNI网络模式下，弹性网卡IP的回收时间，取值范围[300,15768000)
+                     */
+                    void SetClaimExpiredSeconds(const int64_t& _claimExpiredSeconds);
+
+                    /**
+                     * 判断参数 ClaimExpiredSeconds 是否已赋值
+                     * @return ClaimExpiredSeconds 是否已赋值
+                     */
+                    bool ClaimExpiredSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +197,24 @@ namespace TencentCloud
                      */
                     uint64_t m_maxClusterServiceNum;
                     bool m_maxClusterServiceNumHasBeenSet;
+
+                    /**
+                     * 用于分配集群服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。
+                     */
+                    std::string m_serviceCIDR;
+                    bool m_serviceCIDRHasBeenSet;
+
+                    /**
+                     * VPC-CNI网络模式下，弹性网卡的子网Id。
+                     */
+                    std::vector<std::string> m_eniSubnetIds;
+                    bool m_eniSubnetIdsHasBeenSet;
+
+                    /**
+                     * VPC-CNI网络模式下，弹性网卡IP的回收时间，取值范围[300,15768000)
+                     */
+                    int64_t m_claimExpiredSeconds;
+                    bool m_claimExpiredSecondsHasBeenSet;
 
                 };
             }

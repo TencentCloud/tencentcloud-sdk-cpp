@@ -25,7 +25,8 @@ MigrateStepDetailInfo::MigrateStepDetailInfo() :
     m_stepNoHasBeenSet(false),
     m_stepNameHasBeenSet(false),
     m_stepIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MigrateStepDetailInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void MigrateStepDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& 
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void MigrateStepDetailInfo::SetStatus(const int64_t& _status)
 bool MigrateStepDetailInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string MigrateStepDetailInfo::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void MigrateStepDetailInfo::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool MigrateStepDetailInfo::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 

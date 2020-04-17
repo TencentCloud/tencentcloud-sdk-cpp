@@ -32,7 +32,9 @@ Namespace::Namespace() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_clusterListHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_namespaceResourceTypeHasBeenSet(false),
+    m_namespaceTypeHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome Namespace::Deserialize(const Value &value)
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NamespaceResourceType") && !value["NamespaceResourceType"].IsNull())
+    {
+        if (!value["NamespaceResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Namespace.NamespaceResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceResourceType = string(value["NamespaceResourceType"].GetString());
+        m_namespaceResourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NamespaceType") && !value["NamespaceType"].IsNull())
+    {
+        if (!value["NamespaceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Namespace.NamespaceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceType = string(value["NamespaceType"].GetString());
+        m_namespaceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +283,22 @@ void Namespace::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_namespaceResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_namespaceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -440,5 +478,37 @@ void Namespace::SetClusterId(const string& _clusterId)
 bool Namespace::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string Namespace::GetNamespaceResourceType() const
+{
+    return m_namespaceResourceType;
+}
+
+void Namespace::SetNamespaceResourceType(const string& _namespaceResourceType)
+{
+    m_namespaceResourceType = _namespaceResourceType;
+    m_namespaceResourceTypeHasBeenSet = true;
+}
+
+bool Namespace::NamespaceResourceTypeHasBeenSet() const
+{
+    return m_namespaceResourceTypeHasBeenSet;
+}
+
+string Namespace::GetNamespaceType() const
+{
+    return m_namespaceType;
+}
+
+void Namespace::SetNamespaceType(const string& _namespaceType)
+{
+    m_namespaceType = _namespaceType;
+    m_namespaceTypeHasBeenSet = true;
+}
+
+bool Namespace::NamespaceTypeHasBeenSet() const
+{
+    return m_namespaceTypeHasBeenSet;
 }
 

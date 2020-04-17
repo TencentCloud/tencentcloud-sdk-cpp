@@ -190,6 +190,50 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取业务员ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SalesUin 业务员ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSalesUin() const;
+
+                    /**
+                     * 设置业务员ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SalesUin 业务员ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSalesUin(const std::string& _salesUin);
+
+                    /**
+                     * 判断参数 SalesUin 是否已赋值
+                     * @return SalesUin 是否已赋值
+                     */
+                    bool SalesUinHasBeenSet() const;
+
+                    /**
+                     * 获取业务员姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SalesName 业务员姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSalesName() const;
+
+                    /**
+                     * 设置业务员姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SalesName 业务员姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSalesName(const std::string& _salesName);
+
+                    /**
+                     * 判断参数 SalesName 是否已赋值
+                     * @return SalesName 是否已赋值
+                     */
+                    bool SalesNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +283,20 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 业务员ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_salesUin;
+                    bool m_salesUinHasBeenSet;
+
+                    /**
+                     * 业务员姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_salesName;
+                    bool m_salesNameHasBeenSet;
 
                 };
             }

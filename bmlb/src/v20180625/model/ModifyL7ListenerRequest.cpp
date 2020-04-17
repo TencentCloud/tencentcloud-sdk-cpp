@@ -35,7 +35,8 @@ ModifyL7ListenerRequest::ModifyL7ListenerRequest() :
     m_certCaIdHasBeenSet(false),
     m_certCaNameHasBeenSet(false),
     m_certCaContentHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_forwardProtocolHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string ModifyL7ListenerRequest::ToJsonString() const
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_forwardProtocolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ForwardProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forwardProtocol, allocator);
     }
 
 
@@ -340,6 +349,22 @@ void ModifyL7ListenerRequest::SetBandwidth(const int64_t& _bandwidth)
 bool ModifyL7ListenerRequest::BandwidthHasBeenSet() const
 {
     return m_bandwidthHasBeenSet;
+}
+
+int64_t ModifyL7ListenerRequest::GetForwardProtocol() const
+{
+    return m_forwardProtocol;
+}
+
+void ModifyL7ListenerRequest::SetForwardProtocol(const int64_t& _forwardProtocol)
+{
+    m_forwardProtocol = _forwardProtocol;
+    m_forwardProtocolHasBeenSet = true;
+}
+
+bool ModifyL7ListenerRequest::ForwardProtocolHasBeenSet() const
+{
+    return m_forwardProtocolHasBeenSet;
 }
 
 

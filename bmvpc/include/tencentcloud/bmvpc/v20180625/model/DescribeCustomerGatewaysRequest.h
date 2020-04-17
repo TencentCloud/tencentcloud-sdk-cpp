@@ -131,6 +131,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段, 支持"CreateTime"排序
+                     * @return OrderField 排序字段, 支持"CreateTime"排序
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段, 支持"CreateTime"排序
+                     * @param OrderField 排序字段, 支持"CreateTime"排序
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方向, “asc”、“desc”
+                     * @return OrderDirection 排序方向, “asc”、“desc”
+                     */
+                    std::string GetOrderDirection() const;
+
+                    /**
+                     * 设置排序方向, “asc”、“desc”
+                     * @param OrderDirection 排序方向, “asc”、“desc”
+                     */
+                    void SetOrderDirection(const std::string& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +196,18 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 排序字段, 支持"CreateTime"排序
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 排序方向, “asc”、“desc”
+                     */
+                    std::string m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
 
                 };
             }

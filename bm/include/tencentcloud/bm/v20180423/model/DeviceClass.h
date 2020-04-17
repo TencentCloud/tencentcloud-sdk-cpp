@@ -174,13 +174,17 @@ namespace TencentCloud
 
                     /**
                      * 获取单价折扣
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Discount 单价折扣
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置单价折扣
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Discount 单价折扣
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiscount(const double& _discount);
 
@@ -192,13 +196,17 @@ namespace TencentCloud
 
                     /**
                      * 获取用户刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 用户刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetUnitPrice() const;
 
                     /**
                      * 设置用户刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param UnitPrice 用户刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUnitPrice(const uint64_t& _unitPrice);
 
@@ -210,13 +218,17 @@ namespace TencentCloud
 
                     /**
                      * 获取实际价格
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealPrice 实际价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetRealPrice() const;
 
                     /**
                      * 设置实际价格
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param RealPrice 实际价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRealPrice(const uint64_t& _realPrice);
 
@@ -228,13 +240,17 @@ namespace TencentCloud
 
                     /**
                      * 获取官网刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return NormalPrice 官网刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetNormalPrice() const;
 
                     /**
                      * 设置官网刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param NormalPrice 官网刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNormalPrice(const uint64_t& _normalPrice);
 
@@ -279,6 +295,42 @@ namespace TencentCloud
                      * @return Series 是否已赋值
                      */
                     bool SeriesHasBeenSet() const;
+
+                    /**
+                     * 获取cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     * @return Cpu cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     */
+                    uint64_t GetCpu() const;
+
+                    /**
+                     * 设置cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     * @param Cpu cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     */
+                    void SetCpu(const uint64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取内存容量。单位G
+                     * @return Mem 内存容量。单位G
+                     */
+                    uint64_t GetMem() const;
+
+                    /**
+                     * 设置内存容量。单位G
+                     * @param Mem 内存容量。单位G
+                     */
+                    void SetMem(const uint64_t& _mem);
+
+                    /**
+                     * 判断参数 Mem 是否已赋值
+                     * @return Mem 是否已赋值
+                     */
+                    bool MemHasBeenSet() const;
 
                 private:
 
@@ -326,24 +378,28 @@ namespace TencentCloud
 
                     /**
                      * 单价折扣
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
                      * 用户刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
                      * 实际价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realPrice;
                     bool m_realPriceHasBeenSet;
 
                     /**
                      * 官网刊例价格
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_normalPrice;
                     bool m_normalPriceHasBeenSet;
@@ -359,6 +415,18 @@ namespace TencentCloud
                      */
                     uint64_t m_series;
                     bool m_seriesHasBeenSet;
+
+                    /**
+                     * cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     */
+                    uint64_t m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * 内存容量。单位G
+                     */
+                    uint64_t m_mem;
+                    bool m_memHasBeenSet;
 
                 };
             }

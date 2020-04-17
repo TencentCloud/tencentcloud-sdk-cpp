@@ -25,7 +25,10 @@ using namespace std;
 
 DescribeBindingPolicyObjectListRequest::DescribeBindingPolicyObjectListRequest() :
     m_moduleHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_dimensionsHasBeenSet(false)
 {
 }
 
@@ -50,6 +53,37 @@ string DescribeBindingPolicyObjectListRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_dimensionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Dimensions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dimensions.begin(); itr != m_dimensions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -90,6 +124,54 @@ void DescribeBindingPolicyObjectListRequest::SetGroupId(const int64_t& _groupId)
 bool DescribeBindingPolicyObjectListRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+int64_t DescribeBindingPolicyObjectListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeBindingPolicyObjectListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeBindingPolicyObjectListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeBindingPolicyObjectListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeBindingPolicyObjectListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeBindingPolicyObjectListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+vector<DescribeBindingPolicyObjectListDimension> DescribeBindingPolicyObjectListRequest::GetDimensions() const
+{
+    return m_dimensions;
+}
+
+void DescribeBindingPolicyObjectListRequest::SetDimensions(const vector<DescribeBindingPolicyObjectListDimension>& _dimensions)
+{
+    m_dimensions = _dimensions;
+    m_dimensionsHasBeenSet = true;
+}
+
+bool DescribeBindingPolicyObjectListRequest::DimensionsHasBeenSet() const
+{
+    return m_dimensionsHasBeenSet;
 }
 
 

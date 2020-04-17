@@ -62,13 +62,13 @@ namespace TencentCloud
                     bool VpnConnectionIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
+                     * 获取过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
 <li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>
 <li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>
 <li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>
 <li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>
 <li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8"`。</li>
-                     * @return Filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
+                     * @return Filters 过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
 <li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>
 <li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>
 <li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>
@@ -78,13 +78,13 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
+                     * 设置过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
 <li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>
 <li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>
 <li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>
 <li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>
 <li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8"`。</li>
-                     * @param Filters 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
+                     * @param Filters 过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
 <li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>
 <li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>
 <li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>
@@ -144,7 +144,7 @@ namespace TencentCloud
                     bool m_vpnConnectionIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
+                     * 过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
 <li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>
 <li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>
 <li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>

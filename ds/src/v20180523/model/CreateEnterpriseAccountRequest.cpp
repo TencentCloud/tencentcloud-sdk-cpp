@@ -33,7 +33,8 @@ CreateEnterpriseAccountRequest::CreateEnterpriseAccountRequest() :
     m_transactorNameHasBeenSet(false),
     m_transactorIdentTypeHasBeenSet(false),
     m_transactorIdentNoHasBeenSet(false),
-    m_transactorPhoneHasBeenSet(false)
+    m_transactorPhoneHasBeenSet(false),
+    m_emailHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string CreateEnterpriseAccountRequest::ToJsonString() const
         string key = "TransactorPhone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_transactorPhone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_emailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Email";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_email.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -290,6 +299,22 @@ void CreateEnterpriseAccountRequest::SetTransactorPhone(const string& _transacto
 bool CreateEnterpriseAccountRequest::TransactorPhoneHasBeenSet() const
 {
     return m_transactorPhoneHasBeenSet;
+}
+
+string CreateEnterpriseAccountRequest::GetEmail() const
+{
+    return m_email;
+}
+
+void CreateEnterpriseAccountRequest::SetEmail(const string& _email)
+{
+    m_email = _email;
+    m_emailHasBeenSet = true;
+}
+
+bool CreateEnterpriseAccountRequest::EmailHasBeenSet() const
+{
+    return m_emailHasBeenSet;
 }
 
 

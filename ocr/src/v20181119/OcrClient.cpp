@@ -943,6 +943,49 @@ OcrClient::GeneralHandwritingOCROutcomeCallable OcrClient::GeneralHandwritingOCR
     return task->get_future();
 }
 
+OcrClient::HmtResidentPermitOCROutcome OcrClient::HmtResidentPermitOCR(const HmtResidentPermitOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "HmtResidentPermitOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HmtResidentPermitOCRResponse rsp = HmtResidentPermitOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HmtResidentPermitOCROutcome(rsp);
+        else
+            return HmtResidentPermitOCROutcome(o.GetError());
+    }
+    else
+    {
+        return HmtResidentPermitOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::HmtResidentPermitOCRAsync(const HmtResidentPermitOCRRequest& request, const HmtResidentPermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HmtResidentPermitOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::HmtResidentPermitOCROutcomeCallable OcrClient::HmtResidentPermitOCRCallable(const HmtResidentPermitOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HmtResidentPermitOCROutcome()>>(
+        [this, request]()
+        {
+            return this->HmtResidentPermitOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::IDCardOCROutcome OcrClient::IDCardOCR(const IDCardOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "IDCardOCR");
@@ -1237,6 +1280,49 @@ OcrClient::MLIDPassportOCROutcomeCallable OcrClient::MLIDPassportOCRCallable(con
         [this, request]()
         {
             return this->MLIDPassportOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::MainlandPermitOCROutcome OcrClient::MainlandPermitOCR(const MainlandPermitOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "MainlandPermitOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MainlandPermitOCRResponse rsp = MainlandPermitOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MainlandPermitOCROutcome(rsp);
+        else
+            return MainlandPermitOCROutcome(o.GetError());
+    }
+    else
+    {
+        return MainlandPermitOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::MainlandPermitOCRAsync(const MainlandPermitOCRRequest& request, const MainlandPermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MainlandPermitOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::MainlandPermitOCROutcomeCallable OcrClient::MainlandPermitOCRCallable(const MainlandPermitOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MainlandPermitOCROutcome()>>(
+        [this, request]()
+        {
+            return this->MainlandPermitOCR(request);
         }
     );
 

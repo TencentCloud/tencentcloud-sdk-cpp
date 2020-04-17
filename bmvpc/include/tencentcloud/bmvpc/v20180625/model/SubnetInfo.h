@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取可用区ID。
-                     * @return ZoneId 可用区ID。
+                     * 获取子网可用区ID。
+                     * @return ZoneId 子网可用区ID。
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置可用区ID。
-                     * @param ZoneId 可用区ID。
+                     * 设置子网可用区ID。
+                     * @param ZoneId 子网可用区ID。
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
@@ -370,6 +370,82 @@ namespace TencentCloud
                      */
                     bool IsSmartNicHasBeenSet() const;
 
+                    /**
+                     * 获取子网可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 子网可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置子网可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zone 子网可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取VPC所在可用区ID
+                     * @return VpcZoneId VPC所在可用区ID
+                     */
+                    uint64_t GetVpcZoneId() const;
+
+                    /**
+                     * 设置VPC所在可用区ID
+                     * @param VpcZoneId VPC所在可用区ID
+                     */
+                    void SetVpcZoneId(const uint64_t& _vpcZoneId);
+
+                    /**
+                     * 判断参数 VpcZoneId 是否已赋值
+                     * @return VpcZoneId 是否已赋值
+                     */
+                    bool VpcZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取VPC所在可用区
+                     * @return VpcZone VPC所在可用区
+                     */
+                    std::string GetVpcZone() const;
+
+                    /**
+                     * 设置VPC所在可用区
+                     * @param VpcZone VPC所在可用区
+                     */
+                    void SetVpcZone(const std::string& _vpcZone);
+
+                    /**
+                     * 判断参数 VpcZone 是否已赋值
+                     * @return VpcZone 是否已赋值
+                     */
+                    bool VpcZoneHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启广播，关闭为0，开启为1。
+                     * @return BroadcastFlag 是否开启广播，关闭为0，开启为1。
+                     */
+                    uint64_t GetBroadcastFlag() const;
+
+                    /**
+                     * 设置是否开启广播，关闭为0，开启为1。
+                     * @param BroadcastFlag 是否开启广播，关闭为0，开启为1。
+                     */
+                    void SetBroadcastFlag(const uint64_t& _broadcastFlag);
+
+                    /**
+                     * 判断参数 BroadcastFlag 是否已赋值
+                     * @return BroadcastFlag 是否已赋值
+                     */
+                    bool BroadcastFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -415,7 +491,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 可用区ID。
+                     * 子网可用区ID。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -479,6 +555,31 @@ namespace TencentCloud
                      */
                     uint64_t m_isSmartNic;
                     bool m_isSmartNicHasBeenSet;
+
+                    /**
+                     * 子网可用区。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * VPC所在可用区ID
+                     */
+                    uint64_t m_vpcZoneId;
+                    bool m_vpcZoneIdHasBeenSet;
+
+                    /**
+                     * VPC所在可用区
+                     */
+                    std::string m_vpcZone;
+                    bool m_vpcZoneHasBeenSet;
+
+                    /**
+                     * 是否开启广播，关闭为0，开启为1。
+                     */
+                    uint64_t m_broadcastFlag;
+                    bool m_broadcastFlagHasBeenSet;
 
                 };
             }

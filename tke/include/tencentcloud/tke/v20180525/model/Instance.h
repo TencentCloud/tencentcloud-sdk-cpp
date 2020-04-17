@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,90 @@ namespace TencentCloud
                      */
                     bool InstanceStateHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否封锁状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DrainStatus 实例是否封锁状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDrainStatus() const;
+
+                    /**
+                     * 设置实例是否封锁状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DrainStatus 实例是否封锁状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDrainStatus(const std::string& _drainStatus);
+
+                    /**
+                     * 判断参数 DrainStatus 是否已赋值
+                     * @return DrainStatus 是否已赋值
+                     */
+                    bool DrainStatusHasBeenSet() const;
+
+                    /**
+                     * 获取节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceAdvancedSettings 节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
+
+                    /**
+                     * 设置节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceAdvancedSettings 节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
+
+                    /**
+                     * 判断参数 InstanceAdvancedSettings 是否已赋值
+                     * @return InstanceAdvancedSettings 是否已赋值
+                     */
+                    bool InstanceAdvancedSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取添加时间
+                     * @return CreatedTime 添加时间
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置添加时间
+                     * @param CreatedTime 添加时间
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LanIP 节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLanIP() const;
+
+                    /**
+                     * 设置节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LanIP 节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLanIP(const std::string& _lanIP);
+
+                    /**
+                     * 判断参数 LanIP 是否已赋值
+                     * @return LanIP 是否已赋值
+                     */
+                    bool LanIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +228,33 @@ namespace TencentCloud
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * 实例是否封锁状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_drainStatus;
+                    bool m_drainStatusHasBeenSet;
+
+                    /**
+                     * 节点配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceAdvancedSettings m_instanceAdvancedSettings;
+                    bool m_instanceAdvancedSettingsHasBeenSet;
+
+                    /**
+                     * 添加时间
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 节点内网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lanIP;
+                    bool m_lanIPHasBeenSet;
 
                 };
             }

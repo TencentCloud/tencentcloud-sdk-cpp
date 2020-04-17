@@ -120,6 +120,24 @@ namespace TencentCloud
                      */
                     bool EnableHasBeenSet() const;
 
+                    /**
+                     * 获取点播子应用ID。
+                     * @return VodSubAppId 点播子应用ID。
+                     */
+                    int64_t GetVodSubAppId() const;
+
+                    /**
+                     * 设置点播子应用ID。
+                     * @param VodSubAppId 点播子应用ID。
+                     */
+                    void SetVodSubAppId(const int64_t& _vodSubAppId);
+
+                    /**
+                     * 判断参数 VodSubAppId 是否已赋值
+                     * @return VodSubAppId 是否已赋值
+                     */
+                    bool VodSubAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +162,12 @@ namespace TencentCloud
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
+
+                    /**
+                     * 点播子应用ID。
+                     */
+                    int64_t m_vodSubAppId;
+                    bool m_vodSubAppIdHasBeenSet;
 
                 };
             }

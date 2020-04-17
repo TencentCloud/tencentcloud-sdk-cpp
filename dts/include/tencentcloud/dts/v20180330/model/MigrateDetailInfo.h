@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool CurrentStepProgressHasBeenSet() const;
 
                     /**
-                     * 获取主从差距，MB
-                     * @return MasterSlaveDistance 主从差距，MB
+                     * 获取主从差距，MB；在增量同步阶段有效，目前支持产品为：redis和mysql
+                     * @return MasterSlaveDistance 主从差距，MB；在增量同步阶段有效，目前支持产品为：redis和mysql
                      */
                     int64_t GetMasterSlaveDistance() const;
 
                     /**
-                     * 设置主从差距，MB
-                     * @param MasterSlaveDistance 主从差距，MB
+                     * 设置主从差距，MB；在增量同步阶段有效，目前支持产品为：redis和mysql
+                     * @param MasterSlaveDistance 主从差距，MB；在增量同步阶段有效，目前支持产品为：redis和mysql
                      */
                     void SetMasterSlaveDistance(const int64_t& _masterSlaveDistance);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool MasterSlaveDistanceHasBeenSet() const;
 
                     /**
-                     * 获取主从差距，秒
-                     * @return SecondsBehindMaster 主从差距，秒
+                     * 获取主从差距，秒；在增量同步阶段有效，目前支持产品为：mysql
+                     * @return SecondsBehindMaster 主从差距，秒；在增量同步阶段有效，目前支持产品为：mysql
                      */
                     int64_t GetSecondsBehindMaster() const;
 
                     /**
-                     * 设置主从差距，秒
-                     * @param SecondsBehindMaster 主从差距，秒
+                     * 设置主从差距，秒；在增量同步阶段有效，目前支持产品为：mysql
+                     * @param SecondsBehindMaster 主从差距，秒；在增量同步阶段有效，目前支持产品为：mysql
                      */
                     void SetSecondsBehindMaster(const int64_t& _secondsBehindMaster);
 
@@ -200,13 +200,13 @@ namespace TencentCloud
                     bool m_currentStepProgressHasBeenSet;
 
                     /**
-                     * 主从差距，MB
+                     * 主从差距，MB；在增量同步阶段有效，目前支持产品为：redis和mysql
                      */
                     int64_t m_masterSlaveDistance;
                     bool m_masterSlaveDistanceHasBeenSet;
 
                     /**
-                     * 主从差距，秒
+                     * 主从差距，秒；在增量同步阶段有效，目前支持产品为：mysql
                      */
                     int64_t m_secondsBehindMaster;
                     bool m_secondsBehindMasterHasBeenSet;

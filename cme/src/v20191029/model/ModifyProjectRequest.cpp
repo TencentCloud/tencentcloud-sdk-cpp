@@ -27,6 +27,7 @@ ModifyProjectRequest::ModifyProjectRequest() :
     m_platformHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_aspectRatioHasBeenSet(false),
     m_ownerHasBeenSet(false)
 {
 }
@@ -60,6 +61,14 @@ string ModifyProjectRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aspectRatioHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AspectRatio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ownerHasBeenSet)
@@ -125,6 +134,22 @@ void ModifyProjectRequest::SetName(const string& _name)
 bool ModifyProjectRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string ModifyProjectRequest::GetAspectRatio() const
+{
+    return m_aspectRatio;
+}
+
+void ModifyProjectRequest::SetAspectRatio(const string& _aspectRatio)
+{
+    m_aspectRatio = _aspectRatio;
+    m_aspectRatioHasBeenSet = true;
+}
+
+bool ModifyProjectRequest::AspectRatioHasBeenSet() const
+{
+    return m_aspectRatioHasBeenSet;
 }
 
 Entity ModifyProjectRequest::GetOwner() const

@@ -1,0 +1,197 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_DESCRIBEIMAGESREQUEST_H_
+#define TENCENTCLOUD_TCR_V20190924_MODEL_DESCRIBEIMAGESREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tcr
+    {
+        namespace V20190924
+        {
+            namespace Model
+            {
+                /**
+                * DescribeImages请求参数结构体
+                */
+                class DescribeImagesRequest : public AbstractModel
+                {
+                public:
+                    DescribeImagesRequest();
+                    ~DescribeImagesRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取实例ID
+                     * @return RegistryId 实例ID
+                     */
+                    std::string GetRegistryId() const;
+
+                    /**
+                     * 设置实例ID
+                     * @param RegistryId 实例ID
+                     */
+                    void SetRegistryId(const std::string& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间名称
+                     * @return NamespaceName 命名空间名称
+                     */
+                    std::string GetNamespaceName() const;
+
+                    /**
+                     * 设置命名空间名称
+                     * @param NamespaceName 命名空间名称
+                     */
+                    void SetNamespaceName(const std::string& _namespaceName);
+
+                    /**
+                     * 判断参数 NamespaceName 是否已赋值
+                     * @return NamespaceName 是否已赋值
+                     */
+                    bool NamespaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取镜像仓库名称
+                     * @return RepositoryName 镜像仓库名称
+                     */
+                    std::string GetRepositoryName() const;
+
+                    /**
+                     * 设置镜像仓库名称
+                     * @param RepositoryName 镜像仓库名称
+                     */
+                    void SetRepositoryName(const std::string& _repositoryName);
+
+                    /**
+                     * 判断参数 RepositoryName 是否已赋值
+                     * @return RepositoryName 是否已赋值
+                     */
+                    bool RepositoryNameHasBeenSet() const;
+
+                    /**
+                     * 获取指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     * @return ImageVersion 指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     */
+                    std::string GetImageVersion() const;
+
+                    /**
+                     * 设置指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     * @param ImageVersion 指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     */
+                    void SetImageVersion(const std::string& _imageVersion);
+
+                    /**
+                     * 判断参数 ImageVersion 是否已赋值
+                     * @return ImageVersion 是否已赋值
+                     */
+                    bool ImageVersionHasBeenSet() const;
+
+                    /**
+                     * 获取每页个数，用于分页，默认20
+                     * @return Limit 每页个数，用于分页，默认20
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置每页个数，用于分页，默认20
+                     * @param Limit 每页个数，用于分页，默认20
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取页数，默认值为1
+                     * @return Offset 页数，默认值为1
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置页数，默认值为1
+                     * @param Offset 页数，默认值为1
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 实例ID
+                     */
+                    std::string m_registryId;
+                    bool m_registryIdHasBeenSet;
+
+                    /**
+                     * 命名空间名称
+                     */
+                    std::string m_namespaceName;
+                    bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * 镜像仓库名称
+                     */
+                    std::string m_repositoryName;
+                    bool m_repositoryNameHasBeenSet;
+
+                    /**
+                     * 指定镜像版本(Tag)，不填默认返回仓库内全部容器镜像
+                     */
+                    std::string m_imageVersion;
+                    bool m_imageVersionHasBeenSet;
+
+                    /**
+                     * 每页个数，用于分页，默认20
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 页数，默认值为1
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_DESCRIBEIMAGESREQUEST_H_

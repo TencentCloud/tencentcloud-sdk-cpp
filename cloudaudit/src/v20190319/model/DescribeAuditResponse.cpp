@@ -32,6 +32,10 @@ DescribeAuditResponse::DescribeAuditResponse() :
     m_cosBucketNameHasBeenSet(false),
     m_cosRegionHasBeenSet(false),
     m_isEnableCmqNotifyHasBeenSet(false),
+    m_isEnableKmsEncryHasBeenSet(false),
+    m_keyIdHasBeenSet(false),
+    m_kmsAliasHasBeenSet(false),
+    m_kmsRegionHasBeenSet(false),
     m_logFilePrefixHasBeenSet(false),
     m_readWriteAttributeHasBeenSet(false)
 {
@@ -141,6 +145,46 @@ CoreInternalOutcome DescribeAuditResponse::Deserialize(const string &payload)
         m_isEnableCmqNotifyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsEnableKmsEncry") && !rsp["IsEnableKmsEncry"].IsNull())
+    {
+        if (!rsp["IsEnableKmsEncry"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `IsEnableKmsEncry` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEnableKmsEncry = rsp["IsEnableKmsEncry"].GetInt64();
+        m_isEnableKmsEncryHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KeyId") && !rsp["KeyId"].IsNull())
+    {
+        if (!rsp["KeyId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyId = string(rsp["KeyId"].GetString());
+        m_keyIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KmsAlias") && !rsp["KmsAlias"].IsNull())
+    {
+        if (!rsp["KmsAlias"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `KmsAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsAlias = string(rsp["KmsAlias"].GetString());
+        m_kmsAliasHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KmsRegion") && !rsp["KmsRegion"].IsNull())
+    {
+        if (!rsp["KmsRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `KmsRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsRegion = string(rsp["KmsRegion"].GetString());
+        m_kmsRegionHasBeenSet = true;
+    }
+
     if (rsp.HasMember("LogFilePrefix") && !rsp["LogFilePrefix"].IsNull())
     {
         if (!rsp["LogFilePrefix"].IsString())
@@ -234,6 +278,46 @@ int64_t DescribeAuditResponse::GetIsEnableCmqNotify() const
 bool DescribeAuditResponse::IsEnableCmqNotifyHasBeenSet() const
 {
     return m_isEnableCmqNotifyHasBeenSet;
+}
+
+int64_t DescribeAuditResponse::GetIsEnableKmsEncry() const
+{
+    return m_isEnableKmsEncry;
+}
+
+bool DescribeAuditResponse::IsEnableKmsEncryHasBeenSet() const
+{
+    return m_isEnableKmsEncryHasBeenSet;
+}
+
+string DescribeAuditResponse::GetKeyId() const
+{
+    return m_keyId;
+}
+
+bool DescribeAuditResponse::KeyIdHasBeenSet() const
+{
+    return m_keyIdHasBeenSet;
+}
+
+string DescribeAuditResponse::GetKmsAlias() const
+{
+    return m_kmsAlias;
+}
+
+bool DescribeAuditResponse::KmsAliasHasBeenSet() const
+{
+    return m_kmsAliasHasBeenSet;
+}
+
+string DescribeAuditResponse::GetKmsRegion() const
+{
+    return m_kmsRegion;
+}
+
+bool DescribeAuditResponse::KmsRegionHasBeenSet() const
+{
+    return m_kmsRegionHasBeenSet;
 }
 
 string DescribeAuditResponse::GetLogFilePrefix() const

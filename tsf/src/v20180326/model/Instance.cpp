@@ -49,7 +49,15 @@ Instance::Instance() :
     m_clusterTypeHasBeenSet(false),
     m_restrictStateHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_operationStateHasBeenSet(false)
+    m_operationStateHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false),
+    m_instanceZoneIdHasBeenSet(false),
+    m_instanceImportModeHasBeenSet(false),
+    m_applicationTypeHasBeenSet(false),
+    m_applicationResourceTypeHasBeenSet(false),
+    m_serviceSidecarStatusHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_namespaceNameHasBeenSet(false)
 {
 }
 
@@ -338,6 +346,86 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_operationStateHasBeenSet = true;
     }
 
+    if (value.HasMember("NamespaceId") && !value["NamespaceId"].IsNull())
+    {
+        if (!value["NamespaceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.NamespaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceId = string(value["NamespaceId"].GetString());
+        m_namespaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceZoneId") && !value["InstanceZoneId"].IsNull())
+    {
+        if (!value["InstanceZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.InstanceZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceZoneId = string(value["InstanceZoneId"].GetString());
+        m_instanceZoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceImportMode") && !value["InstanceImportMode"].IsNull())
+    {
+        if (!value["InstanceImportMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.InstanceImportMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceImportMode = string(value["InstanceImportMode"].GetString());
+        m_instanceImportModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationType") && !value["ApplicationType"].IsNull())
+    {
+        if (!value["ApplicationType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.ApplicationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationType = string(value["ApplicationType"].GetString());
+        m_applicationTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationResourceType") && !value["ApplicationResourceType"].IsNull())
+    {
+        if (!value["ApplicationResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.ApplicationResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationResourceType = string(value["ApplicationResourceType"].GetString());
+        m_applicationResourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceSidecarStatus") && !value["ServiceSidecarStatus"].IsNull())
+    {
+        if (!value["ServiceSidecarStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.ServiceSidecarStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceSidecarStatus = string(value["ServiceSidecarStatus"].GetString());
+        m_serviceSidecarStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
+    {
+        if (!value["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(value["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NamespaceName") && !value["NamespaceName"].IsNull())
+    {
+        if (!value["NamespaceName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceName = string(value["NamespaceName"].GetString());
+        m_namespaceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -567,6 +655,70 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "OperationState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operationState, allocator);
+    }
+
+    if (m_namespaceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceZoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceZoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceImportModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceImportMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceImportMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceSidecarStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceSidecarStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serviceSidecarStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1018,5 +1170,133 @@ void Instance::SetOperationState(const int64_t& _operationState)
 bool Instance::OperationStateHasBeenSet() const
 {
     return m_operationStateHasBeenSet;
+}
+
+string Instance::GetNamespaceId() const
+{
+    return m_namespaceId;
+}
+
+void Instance::SetNamespaceId(const string& _namespaceId)
+{
+    m_namespaceId = _namespaceId;
+    m_namespaceIdHasBeenSet = true;
+}
+
+bool Instance::NamespaceIdHasBeenSet() const
+{
+    return m_namespaceIdHasBeenSet;
+}
+
+string Instance::GetInstanceZoneId() const
+{
+    return m_instanceZoneId;
+}
+
+void Instance::SetInstanceZoneId(const string& _instanceZoneId)
+{
+    m_instanceZoneId = _instanceZoneId;
+    m_instanceZoneIdHasBeenSet = true;
+}
+
+bool Instance::InstanceZoneIdHasBeenSet() const
+{
+    return m_instanceZoneIdHasBeenSet;
+}
+
+string Instance::GetInstanceImportMode() const
+{
+    return m_instanceImportMode;
+}
+
+void Instance::SetInstanceImportMode(const string& _instanceImportMode)
+{
+    m_instanceImportMode = _instanceImportMode;
+    m_instanceImportModeHasBeenSet = true;
+}
+
+bool Instance::InstanceImportModeHasBeenSet() const
+{
+    return m_instanceImportModeHasBeenSet;
+}
+
+string Instance::GetApplicationType() const
+{
+    return m_applicationType;
+}
+
+void Instance::SetApplicationType(const string& _applicationType)
+{
+    m_applicationType = _applicationType;
+    m_applicationTypeHasBeenSet = true;
+}
+
+bool Instance::ApplicationTypeHasBeenSet() const
+{
+    return m_applicationTypeHasBeenSet;
+}
+
+string Instance::GetApplicationResourceType() const
+{
+    return m_applicationResourceType;
+}
+
+void Instance::SetApplicationResourceType(const string& _applicationResourceType)
+{
+    m_applicationResourceType = _applicationResourceType;
+    m_applicationResourceTypeHasBeenSet = true;
+}
+
+bool Instance::ApplicationResourceTypeHasBeenSet() const
+{
+    return m_applicationResourceTypeHasBeenSet;
+}
+
+string Instance::GetServiceSidecarStatus() const
+{
+    return m_serviceSidecarStatus;
+}
+
+void Instance::SetServiceSidecarStatus(const string& _serviceSidecarStatus)
+{
+    m_serviceSidecarStatus = _serviceSidecarStatus;
+    m_serviceSidecarStatusHasBeenSet = true;
+}
+
+bool Instance::ServiceSidecarStatusHasBeenSet() const
+{
+    return m_serviceSidecarStatusHasBeenSet;
+}
+
+string Instance::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void Instance::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool Instance::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
+}
+
+string Instance::GetNamespaceName() const
+{
+    return m_namespaceName;
+}
+
+void Instance::SetNamespaceName(const string& _namespaceName)
+{
+    m_namespaceName = _namespaceName;
+    m_namespaceNameHasBeenSet = true;
+}
+
+bool Instance::NamespaceNameHasBeenSet() const
+{
+    return m_namespaceNameHasBeenSet;
 }
 

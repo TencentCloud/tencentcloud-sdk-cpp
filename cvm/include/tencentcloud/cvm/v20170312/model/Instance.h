@@ -329,13 +329,17 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+<br><li>注意：后付费模式本项为null
                      * @return RenewFlag 自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+<br><li>注意：后付费模式本项为null
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+<br><li>注意：后付费模式本项为null
                      * @param RenewFlag 自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+<br><li>注意：后付费模式本项为null
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
@@ -364,14 +368,14 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @return ExpiredTime 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 获取到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null
+                     * @return ExpiredTime 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param ExpiredTime 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 设置到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null
+                     * @param ExpiredTime 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
 
@@ -577,6 +581,72 @@ namespace TencentCloud
                      */
                     bool LatestOperationRequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取分散置放群组ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisasterRecoverGroupId 分散置放群组ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDisasterRecoverGroupId() const;
+
+                    /**
+                     * 设置分散置放群组ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisasterRecoverGroupId 分散置放群组ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupId 是否已赋值
+                     * @return DisasterRecoverGroupId 是否已赋值
+                     */
+                    bool DisasterRecoverGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPv6Addresses 实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetIPv6Addresses() const;
+
+                    /**
+                     * 设置实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IPv6Addresses 实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIPv6Addresses(const std::vector<std::string>& _iPv6Addresses);
+
+                    /**
+                     * 判断参数 IPv6Addresses 是否已赋值
+                     * @return IPv6Addresses 是否已赋值
+                     */
+                    bool IPv6AddressesHasBeenSet() const;
+
+                    /**
+                     * 获取CAM角色名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CamRoleName CAM角色名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCamRoleName() const;
+
+                    /**
+                     * 设置CAM角色名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CamRoleName CAM角色名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCamRoleName(const std::string& _camRoleName);
+
+                    /**
+                     * 判断参数 CamRoleName 是否已赋值
+                     * @return CamRoleName 是否已赋值
+                     */
+                    bool CamRoleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -672,6 +742,7 @@ namespace TencentCloud
 
                     /**
                      * 自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+<br><li>注意：后付费模式本项为null
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -683,7 +754,7 @@ namespace TencentCloud
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
@@ -751,6 +822,27 @@ namespace TencentCloud
                      */
                     std::string m_latestOperationRequestId;
                     bool m_latestOperationRequestIdHasBeenSet;
+
+                    /**
+                     * 分散置放群组ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_disasterRecoverGroupId;
+                    bool m_disasterRecoverGroupIdHasBeenSet;
+
+                    /**
+                     * 实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_iPv6Addresses;
+                    bool m_iPv6AddressesHasBeenSet;
+
+                    /**
+                     * CAM角色名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_camRoleName;
+                    bool m_camRoleNameHasBeenSet;
 
                 };
             }

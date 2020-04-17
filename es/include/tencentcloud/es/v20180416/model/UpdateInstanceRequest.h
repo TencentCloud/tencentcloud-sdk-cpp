@@ -394,6 +394,24 @@ namespace TencentCloud
                      */
                     bool KibanaPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取ES 6.8及以上版本基础版开启或关闭用户认证
+                     * @return BasicSecurityType ES 6.8及以上版本基础版开启或关闭用户认证
+                     */
+                    int64_t GetBasicSecurityType() const;
+
+                    /**
+                     * 设置ES 6.8及以上版本基础版开启或关闭用户认证
+                     * @param BasicSecurityType ES 6.8及以上版本基础版开启或关闭用户认证
+                     */
+                    void SetBasicSecurityType(const int64_t& _basicSecurityType);
+
+                    /**
+                     * 判断参数 BasicSecurityType 是否已赋值
+                     * @return BasicSecurityType 是否已赋值
+                     */
+                    bool BasicSecurityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -509,6 +527,12 @@ namespace TencentCloud
                      */
                     std::string m_kibanaPrivateAccess;
                     bool m_kibanaPrivateAccessHasBeenSet;
+
+                    /**
+                     * ES 6.8及以上版本基础版开启或关闭用户认证
+                     */
+                    int64_t m_basicSecurityType;
+                    bool m_basicSecurityTypeHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ AccountCreateInfo::AccountCreateInfo() :
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_dBPrivilegesHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_isAdminHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAdmin") && !value["IsAdmin"].IsNull())
+    {
+        if (!value["IsAdmin"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `AccountCreateInfo.IsAdmin` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAdmin = value["IsAdmin"].GetBool();
+        m_isAdminHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,14 @@ void AccountCreateInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAdminHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsAdmin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAdmin, allocator);
     }
 
 }
@@ -195,5 +214,21 @@ void AccountCreateInfo::SetRemark(const string& _remark)
 bool AccountCreateInfo::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+bool AccountCreateInfo::GetIsAdmin() const
+{
+    return m_isAdmin;
+}
+
+void AccountCreateInfo::SetIsAdmin(const bool& _isAdmin)
+{
+    m_isAdmin = _isAdmin;
+    m_isAdminHasBeenSet = true;
+}
+
+bool AccountCreateInfo::IsAdminHasBeenSet() const
+{
+    return m_isAdminHasBeenSet;
 }
 

@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。
+                     * @return ReleaseDuration 进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。
+                     */
+                    int64_t GetReleaseDuration() const;
+
+                    /**
+                     * 设置进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。
+                     * @param ReleaseDuration 进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。
+                     */
+                    void SetReleaseDuration(const int64_t& _releaseDuration);
+
+                    /**
+                     * 判断参数 ReleaseDuration 是否已赋值
+                     * @return ReleaseDuration 是否已赋值
+                     */
+                    bool ReleaseDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。
+                     */
+                    int64_t m_releaseDuration;
+                    bool m_releaseDurationHasBeenSet;
 
                 };
             }

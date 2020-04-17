@@ -51,7 +51,10 @@ ContainerGroupDetail::ContainerGroupDetail() :
     m_statusHasBeenSet(false),
     m_microserviceTypeHasBeenSet(false),
     m_cpuRequestHasBeenSet(false),
-    m_memRequestHasBeenSet(false)
+    m_memRequestHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_groupResourceTypeHasBeenSet(false),
+    m_instanceCountHasBeenSet(false)
 {
 }
 
@@ -380,6 +383,36 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const Value &value)
         m_memRequestHasBeenSet = true;
     }
 
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ContainerGroupDetail.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupResourceType") && !value["GroupResourceType"].IsNull())
+    {
+        if (!value["GroupResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ContainerGroupDetail.GroupResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupResourceType = string(value["GroupResourceType"].GetString());
+        m_groupResourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceCount") && !value["InstanceCount"].IsNull())
+    {
+        if (!value["InstanceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ContainerGroupDetail.InstanceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceCount = value["InstanceCount"].GetUint64();
+        m_instanceCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -639,6 +672,30 @@ void ContainerGroupDetail::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "MemRequest";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_memRequest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_groupResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceCount, allocator);
     }
 
 }
@@ -1122,5 +1179,53 @@ void ContainerGroupDetail::SetMemRequest(const string& _memRequest)
 bool ContainerGroupDetail::MemRequestHasBeenSet() const
 {
     return m_memRequestHasBeenSet;
+}
+
+string ContainerGroupDetail::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void ContainerGroupDetail::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+string ContainerGroupDetail::GetGroupResourceType() const
+{
+    return m_groupResourceType;
+}
+
+void ContainerGroupDetail::SetGroupResourceType(const string& _groupResourceType)
+{
+    m_groupResourceType = _groupResourceType;
+    m_groupResourceTypeHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::GroupResourceTypeHasBeenSet() const
+{
+    return m_groupResourceTypeHasBeenSet;
+}
+
+uint64_t ContainerGroupDetail::GetInstanceCount() const
+{
+    return m_instanceCount;
+}
+
+void ContainerGroupDetail::SetInstanceCount(const uint64_t& _instanceCount)
+{
+    m_instanceCount = _instanceCount;
+    m_instanceCountHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::InstanceCountHasBeenSet() const
+{
+    return m_instanceCountHasBeenSet;
 }
 

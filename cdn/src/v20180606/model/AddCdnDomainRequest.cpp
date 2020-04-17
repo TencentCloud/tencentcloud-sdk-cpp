@@ -52,7 +52,8 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_maxAgeHasBeenSet(false),
     m_ipv6HasBeenSet(false),
     m_specificConfigHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_originPullTimeoutHasBeenSet(false)
 {
 }
 
@@ -318,6 +319,15 @@ string AddCdnDomainRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originPullTimeoutHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OriginPullTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_originPullTimeout.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -790,6 +800,22 @@ void AddCdnDomainRequest::SetArea(const string& _area)
 bool AddCdnDomainRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+OriginPullTimeout AddCdnDomainRequest::GetOriginPullTimeout() const
+{
+    return m_originPullTimeout;
+}
+
+void AddCdnDomainRequest::SetOriginPullTimeout(const OriginPullTimeout& _originPullTimeout)
+{
+    m_originPullTimeout = _originPullTimeout;
+    m_originPullTimeoutHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::OriginPullTimeoutHasBeenSet() const
+{
+    return m_originPullTimeoutHasBeenSet;
 }
 
 

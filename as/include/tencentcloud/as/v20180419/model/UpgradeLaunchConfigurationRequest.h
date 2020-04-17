@@ -408,13 +408,13 @@ namespace TencentCloud
                      * 获取云服务器实例名（InstanceName）的相关设置。
                      * @return InstanceNameSettings 云服务器实例名（InstanceName）的相关设置。
                      */
-                    std::vector<InstanceNameSettings> GetInstanceNameSettings() const;
+                    InstanceNameSettings GetInstanceNameSettings() const;
 
                     /**
                      * 设置云服务器实例名（InstanceName）的相关设置。
                      * @param InstanceNameSettings 云服务器实例名（InstanceName）的相关设置。
                      */
-                    void SetInstanceNameSettings(const std::vector<InstanceNameSettings>& _instanceNameSettings);
+                    void SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings);
 
                     /**
                      * 判断参数 InstanceNameSettings 是否已赋值
@@ -560,7 +560,7 @@ namespace TencentCloud
                     /**
                      * 云服务器实例名（InstanceName）的相关设置。
                      */
-                    std::vector<InstanceNameSettings> m_instanceNameSettings;
+                    InstanceNameSettings m_instanceNameSettings;
                     bool m_instanceNameSettingsHasBeenSet;
 
                     /**

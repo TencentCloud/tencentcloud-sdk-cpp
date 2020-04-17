@@ -43,50 +43,50 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件所属应用实例ID
-                     * @return ApplicationId 文件所属应用实例ID
+                     * 获取文件所属集群ID
+                     * @return ClusterId 文件所属集群ID
                      */
-                    std::string GetApplicationId() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置文件所属应用实例ID
-                     * @param ApplicationId 文件所属应用实例ID
+                     * 设置文件所属集群ID
+                     * @param ClusterId 文件所属集群ID
                      */
-                    void SetApplicationId(const std::string& _applicationId);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      */
-                    bool ApplicationIdHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取文件所属大区ID
-                     * @return LogicZoneIds 文件所属大区ID
+                     * 获取文件所属表格组ID
+                     * @return TableGroupIds 文件所属表格组ID
                      */
-                    std::vector<std::string> GetLogicZoneIds() const;
+                    std::vector<std::string> GetTableGroupIds() const;
 
                     /**
-                     * 设置文件所属大区ID
-                     * @param LogicZoneIds 文件所属大区ID
+                     * 设置文件所属表格组ID
+                     * @param TableGroupIds 文件所属表格组ID
                      */
-                    void SetLogicZoneIds(const std::vector<std::string>& _logicZoneIds);
+                    void SetTableGroupIds(const std::vector<std::string>& _tableGroupIds);
 
                     /**
-                     * 判断参数 LogicZoneIds 是否已赋值
-                     * @return LogicZoneIds 是否已赋值
+                     * 判断参数 TableGroupIds 是否已赋值
+                     * @return TableGroupIds 是否已赋值
                      */
-                    bool LogicZoneIdsHasBeenSet() const;
+                    bool TableGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取指定文件ID
-                     * @return IdlFileIds 指定文件ID
+                     * 获取指定文件ID列表
+                     * @return IdlFileIds 指定文件ID列表
                      */
                     std::vector<std::string> GetIdlFileIds() const;
 
                     /**
-                     * 设置指定文件ID
-                     * @param IdlFileIds 指定文件ID
+                     * 设置指定文件ID列表
+                     * @param IdlFileIds 指定文件ID列表
                      */
                     void SetIdlFileIds(const std::vector<std::string>& _idlFileIds);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool IdlFileIdsHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取查询列表偏移量
+                     * @return Offset 查询列表偏移量
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置查询列表偏移量
+                     * @param Offset 查询列表偏移量
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取文件列表大小
-                     * @return Limit 文件列表大小
+                     * 获取查询列表返回记录数
+                     * @return Limit 查询列表返回记录数
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置文件列表大小
-                     * @param Limit 文件列表大小
+                     * 设置查询列表返回记录数
+                     * @param Limit 查询列表返回记录数
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -135,31 +135,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件所属应用实例ID
+                     * 文件所属集群ID
                      */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 文件所属大区ID
+                     * 文件所属表格组ID
                      */
-                    std::vector<std::string> m_logicZoneIds;
-                    bool m_logicZoneIdsHasBeenSet;
+                    std::vector<std::string> m_tableGroupIds;
+                    bool m_tableGroupIdsHasBeenSet;
 
                     /**
-                     * 指定文件ID
+                     * 指定文件ID列表
                      */
                     std::vector<std::string> m_idlFileIds;
                     bool m_idlFileIdsHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 查询列表偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 文件列表大小
+                     * 查询列表返回记录数
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

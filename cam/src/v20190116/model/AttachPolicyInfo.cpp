@@ -31,7 +31,8 @@ AttachPolicyInfo::AttachPolicyInfo() :
     m_operateOwnerUinHasBeenSet(false),
     m_operateUinHasBeenSet(false),
     m_operateUinTypeHasBeenSet(false),
-    m_deactivedHasBeenSet(false)
+    m_deactivedHasBeenSet(false),
+    m_deactivedDetailHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,19 @@ CoreInternalOutcome AttachPolicyInfo::Deserialize(const Value &value)
         m_deactivedHasBeenSet = true;
     }
 
+    if (value.HasMember("DeactivedDetail") && !value["DeactivedDetail"].IsNull())
+    {
+        if (!value["DeactivedDetail"].IsArray())
+            return CoreInternalOutcome(Error("response `AttachPolicyInfo.DeactivedDetail` is not array type"));
+
+        const Value &tmpValue = value["DeactivedDetail"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_deactivedDetail.push_back((*itr).GetString());
+        }
+        m_deactivedDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +239,19 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "Deactived";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deactived, allocator);
+    }
+
+    if (m_deactivedDetailHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeactivedDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_deactivedDetail.begin(); itr != m_deactivedDetail.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -388,5 +415,21 @@ void AttachPolicyInfo::SetDeactived(const uint64_t& _deactived)
 bool AttachPolicyInfo::DeactivedHasBeenSet() const
 {
     return m_deactivedHasBeenSet;
+}
+
+vector<string> AttachPolicyInfo::GetDeactivedDetail() const
+{
+    return m_deactivedDetail;
+}
+
+void AttachPolicyInfo::SetDeactivedDetail(const vector<string>& _deactivedDetail)
+{
+    m_deactivedDetail = _deactivedDetail;
+    m_deactivedDetailHasBeenSet = true;
+}
+
+bool AttachPolicyInfo::DeactivedDetailHasBeenSet() const
+{
+    return m_deactivedDetailHasBeenSet;
 }
 

@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool HostChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
-                     * @return HostChargeType 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
+                     * 获取实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式），默认为：'PREPAID'。
+                     * @return HostChargeType 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式），默认为：'PREPAID'。
                      */
                     std::string GetHostChargeType() const;
 
                     /**
-                     * 设置实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
-                     * @param HostChargeType 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
+                     * 设置实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式），默认为：'PREPAID'。
+                     * @param HostChargeType 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式），默认为：'PREPAID'。
                      */
                     void SetHostChargeType(const std::string& _hostChargeType);
 
@@ -136,14 +136,14 @@ namespace TencentCloud
                     bool HostTypeHasBeenSet() const;
 
                     /**
-                     * 获取购买CDH实例数量。
-                     * @return HostCount 购买CDH实例数量。
+                     * 获取购买CDH实例数量，默认为：1。
+                     * @return HostCount 购买CDH实例数量，默认为：1。
                      */
                     uint64_t GetHostCount() const;
 
                     /**
-                     * 设置购买CDH实例数量。
-                     * @param HostCount 购买CDH实例数量。
+                     * 设置购买CDH实例数量，默认为：1。
+                     * @param HostCount 购买CDH实例数量，默认为：1。
                      */
                     void SetHostCount(const uint64_t& _hostCount);
 
@@ -192,7 +192,7 @@ namespace TencentCloud
                     bool m_hostChargePrepaidHasBeenSet;
 
                     /**
-                     * 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
+                     * 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式），默认为：'PREPAID'。
                      */
                     std::string m_hostChargeType;
                     bool m_hostChargeTypeHasBeenSet;
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_hostTypeHasBeenSet;
 
                     /**
-                     * 购买CDH实例数量。
+                     * 购买CDH实例数量，默认为：1。
                      */
                     uint64_t m_hostCount;
                     bool m_hostCountHasBeenSet;

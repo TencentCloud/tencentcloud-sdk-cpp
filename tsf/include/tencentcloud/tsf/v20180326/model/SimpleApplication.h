@@ -244,6 +244,50 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取ApigatewayServiceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApigatewayServiceId ApigatewayServiceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApigatewayServiceId() const;
+
+                    /**
+                     * 设置ApigatewayServiceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApigatewayServiceId ApigatewayServiceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApigatewayServiceId(const std::string& _apigatewayServiceId);
+
+                    /**
+                     * 判断参数 ApigatewayServiceId 是否已赋值
+                     * @return ApigatewayServiceId 是否已赋值
+                     */
+                    bool ApigatewayServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取ApplicationRuntimeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationRuntimeType ApplicationRuntimeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationRuntimeType() const;
+
+                    /**
+                     * 设置ApplicationRuntimeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationRuntimeType ApplicationRuntimeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationRuntimeType(const std::string& _applicationRuntimeType);
+
+                    /**
+                     * 判断参数 ApplicationRuntimeType 是否已赋值
+                     * @return ApplicationRuntimeType 是否已赋值
+                     */
+                    bool ApplicationRuntimeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +352,20 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * ApigatewayServiceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apigatewayServiceId;
+                    bool m_apigatewayServiceIdHasBeenSet;
+
+                    /**
+                     * ApplicationRuntimeType
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationRuntimeType;
+                    bool m_applicationRuntimeTypeHasBeenSet;
 
                 };
             }

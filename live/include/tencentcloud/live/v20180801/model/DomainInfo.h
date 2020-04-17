@@ -217,14 +217,14 @@ namespace TencentCloud
                     bool CurrentCNameHasBeenSet() const;
 
                     /**
-                     * 获取是否租用域名
-                     * @return RentTag 是否租用域名
+                     * 获取已无效，可忽略。
+                     * @return RentTag 已无效，可忽略。
                      */
                     int64_t GetRentTag() const;
 
                     /**
-                     * 设置是否租用域名
-                     * @param RentTag 是否租用域名
+                     * 设置已无效，可忽略。
+                     * @param RentTag 已无效，可忽略。
                      */
                     void SetRentTag(const int64_t& _rentTag);
 
@@ -235,14 +235,14 @@ namespace TencentCloud
                     bool RentTagHasBeenSet() const;
 
                     /**
-                     * 获取租用域名过期时间
-                     * @return RentExpireTime 租用域名过期时间
+                     * 获取已无效，可忽略。
+                     * @return RentExpireTime 已无效，可忽略。
                      */
                     std::string GetRentExpireTime() const;
 
                     /**
-                     * 设置租用域名过期时间
-                     * @param RentExpireTime 租用域名过期时间
+                     * 设置已无效，可忽略。
+                     * @param RentExpireTime 已无效，可忽略。
                      */
                     void SetRentExpireTime(const std::string& _rentExpireTime);
 
@@ -251,6 +251,32 @@ namespace TencentCloud
                      * @return RentExpireTime 是否已赋值
                      */
                     bool RentExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取0：标准直播，
+1：小程序直播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsMiniProgramLive 0：标准直播，
+1：小程序直播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsMiniProgramLive() const;
+
+                    /**
+                     * 设置0：标准直播，
+1：小程序直播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsMiniProgramLive 0：标准直播，
+1：小程序直播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsMiniProgramLive(const int64_t& _isMiniProgramLive);
+
+                    /**
+                     * 判断参数 IsMiniProgramLive 是否已赋值
+                     * @return IsMiniProgramLive 是否已赋值
+                     */
+                    bool IsMiniProgramLiveHasBeenSet() const;
 
                 private:
 
@@ -311,16 +337,24 @@ namespace TencentCloud
                     bool m_currentCNameHasBeenSet;
 
                     /**
-                     * 是否租用域名
+                     * 已无效，可忽略。
                      */
                     int64_t m_rentTag;
                     bool m_rentTagHasBeenSet;
 
                     /**
-                     * 租用域名过期时间
+                     * 已无效，可忽略。
                      */
                     std::string m_rentExpireTime;
                     bool m_rentExpireTimeHasBeenSet;
+
+                    /**
+                     * 0：标准直播，
+1：小程序直播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isMiniProgramLive;
+                    bool m_isMiniProgramLiveHasBeenSet;
 
                 };
             }

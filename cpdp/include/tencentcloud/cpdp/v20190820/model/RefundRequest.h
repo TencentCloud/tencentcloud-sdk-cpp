@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id，长度不小于5位， 仅支持字母和数字的组合
-                     * @return UserId 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 获取用户ID，长度不小于5位， 仅支持字母和数字的组合
+                     * @return UserId 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，长度不小于5位， 仅支持字母和数字的组合
-                     * @param UserId 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 设置用户ID，长度不小于5位， 仅支持字母和数字的组合
+                     * @param UserId 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool RefundIdHasBeenSet() const;
 
                     /**
-                     * 获取聚鑫分配的支付主MidasAppid
-                     * @return MidasAppId 聚鑫分配的支付主MidasAppid
+                     * 获取聚鑫分配的支付主MidasAppId
+                     * @return MidasAppId 聚鑫分配的支付主MidasAppId
                      */
                     std::string GetMidasAppId() const;
 
                     /**
-                     * 设置聚鑫分配的支付主MidasAppid
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppid
+                     * 设置聚鑫分配的支付主MidasAppId
+                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
-                     * 获取退款金额，单位：分。备 注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额做为退款金额
-                     * @return TotalRefundAmt 退款金额，单位：分。备 注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额做为退款金额
+                     * 获取退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额
+                     * @return TotalRefundAmt 退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额
                      */
                     int64_t GetTotalRefundAmt() const;
 
                     /**
-                     * 设置退款金额，单位：分。备 注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额做为退款金额
-                     * @param TotalRefundAmt 退款金额，单位：分。备 注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额做为退款金额
+                     * 设置退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额
+                     * @param TotalRefundAmt 退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额
                      */
                     void SetTotalRefundAmt(const int64_t& _totalRefundAmt);
 
@@ -114,24 +114,6 @@ namespace TencentCloud
                      * @return TotalRefundAmt 是否已赋值
                      */
                     bool TotalRefundAmtHasBeenSet() const;
-
-                    /**
-                     * 获取支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算 出来总和。
-                     * @return SubOrderRefundList 支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算 出来总和。
-                     */
-                    std::vector<RefundOutSubOrderRefundList> GetSubOrderRefundList() const;
-
-                    /**
-                     * 设置支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算 出来总和。
-                     * @param SubOrderRefundList 支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算 出来总和。
-                     */
-                    void SetSubOrderRefundList(const std::vector<RefundOutSubOrderRefundList>& _subOrderRefundList);
-
-                    /**
-                     * 判断参数 SubOrderRefundList 是否已赋值
-                     * @return SubOrderRefundList 是否已赋值
-                     */
-                    bool SubOrderRefundListHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的安全ID
@@ -241,10 +223,28 @@ namespace TencentCloud
                      */
                     bool PlatformRefundAmtHasBeenSet() const;
 
+                    /**
+                     * 获取支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。
+                     * @return SubOrderRefundList 支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。
+                     */
+                    std::vector<RefundOutSubOrderRefundList> GetSubOrderRefundList() const;
+
+                    /**
+                     * 设置支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。
+                     * @param SubOrderRefundList 支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。
+                     */
+                    void SetSubOrderRefundList(const std::vector<RefundOutSubOrderRefundList>& _subOrderRefundList);
+
+                    /**
+                     * 判断参数 SubOrderRefundList 是否已赋值
+                     * @return SubOrderRefundList 是否已赋值
+                     */
+                    bool SubOrderRefundListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户Id，长度不小于5位， 仅支持字母和数字的组合
+                     * 用户ID，长度不小于5位， 仅支持字母和数字的组合
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
@@ -256,22 +256,16 @@ namespace TencentCloud
                     bool m_refundIdHasBeenSet;
 
                     /**
-                     * 聚鑫分配的支付主MidasAppid
+                     * 聚鑫分配的支付主MidasAppId
                      */
                     std::string m_midasAppId;
                     bool m_midasAppIdHasBeenSet;
 
                     /**
-                     * 退款金额，单位：分。备 注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额做为退款金额
+                     * 退款金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额
                      */
                     int64_t m_totalRefundAmt;
                     bool m_totalRefundAmtHasBeenSet;
-
-                    /**
-                     * 支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算 出来总和。
-                     */
-                    std::vector<RefundOutSubOrderRefundList> m_subOrderRefundList;
-                    bool m_subOrderRefundListHasBeenSet;
 
                     /**
                      * 聚鑫分配的安全ID
@@ -308,6 +302,12 @@ namespace TencentCloud
                      */
                     int64_t m_platformRefundAmt;
                     bool m_platformRefundAmtHasBeenSet;
+
+                    /**
+                     * 支持多个子订单批量退款单 个子订单退款支持传 SubOutTradeNo ，也支持传 SubOutTradeNoList ，都传的时候以 SubOutTradeNoList 为准。  如果传了子单退款细节，外 部不需要再传退款金额，平 台应退，商户应退金额，我 们可以直接根据子单退款算出来总和。
+                     */
+                    std::vector<RefundOutSubOrderRefundList> m_subOrderRefundList;
+                    bool m_subOrderRefundListHasBeenSet;
 
                 };
             }

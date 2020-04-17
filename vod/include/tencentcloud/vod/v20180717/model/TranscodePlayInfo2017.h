@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
-                     * @return Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
+                     * 获取转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
+                     * @return Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
-                     * @param Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
+                     * 设置转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
+                     * @param Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
+                     * 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

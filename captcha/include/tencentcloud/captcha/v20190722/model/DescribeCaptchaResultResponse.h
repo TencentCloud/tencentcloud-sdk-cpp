@@ -124,6 +124,20 @@ namespace TencentCloud
                      */
                     bool EvilLevelHasBeenSet() const;
 
+                    /**
+                     * 获取前端获取验证码时间，时间戳格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GetCaptchaTime 前端获取验证码时间，时间戳格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetGetCaptchaTime() const;
+
+                    /**
+                     * 判断参数 GetCaptchaTime 是否已赋值
+                     * @return GetCaptchaTime 是否已赋值
+                     */
+                    bool GetCaptchaTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -166,6 +180,13 @@ namespace TencentCloud
                      */
                     int64_t m_evilLevel;
                     bool m_evilLevelHasBeenSet;
+
+                    /**
+                     * 前端获取验证码时间，时间戳格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_getCaptchaTime;
+                    bool m_getCaptchaTimeHasBeenSet;
 
                 };
             }

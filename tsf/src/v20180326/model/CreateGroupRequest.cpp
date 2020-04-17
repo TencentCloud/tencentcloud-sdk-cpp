@@ -28,7 +28,8 @@ CreateGroupRequest::CreateGroupRequest() :
     m_namespaceIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_groupDescHasBeenSet(false)
+    m_groupDescHasBeenSet(false),
+    m_groupResourceTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateGroupRequest::ToJsonString() const
         string key = "GroupDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_groupDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupResourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupResourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateGroupRequest::SetGroupDesc(const string& _groupDesc)
 bool CreateGroupRequest::GroupDescHasBeenSet() const
 {
     return m_groupDescHasBeenSet;
+}
+
+string CreateGroupRequest::GetGroupResourceType() const
+{
+    return m_groupResourceType;
+}
+
+void CreateGroupRequest::SetGroupResourceType(const string& _groupResourceType)
+{
+    m_groupResourceType = _groupResourceType;
+    m_groupResourceTypeHasBeenSet = true;
+}
+
+bool CreateGroupRequest::GroupResourceTypeHasBeenSet() const
+{
+    return m_groupResourceTypeHasBeenSet;
 }
 
 

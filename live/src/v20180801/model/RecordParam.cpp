@@ -24,7 +24,8 @@ using namespace std;
 RecordParam::RecordParam() :
     m_recordIntervalHasBeenSet(false),
     m_storageTimeHasBeenSet(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_vodSubAppIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome RecordParam::Deserialize(const Value &value)
         m_enableHasBeenSet = true;
     }
 
+    if (value.HasMember("VodSubAppId") && !value["VodSubAppId"].IsNull())
+    {
+        if (!value["VodSubAppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RecordParam.VodSubAppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodSubAppId = value["VodSubAppId"].GetInt64();
+        m_vodSubAppIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void RecordParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
+    }
+
+    if (m_vodSubAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VodSubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vodSubAppId, allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void RecordParam::SetEnable(const int64_t& _enable)
 bool RecordParam::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+int64_t RecordParam::GetVodSubAppId() const
+{
+    return m_vodSubAppId;
+}
+
+void RecordParam::SetVodSubAppId(const int64_t& _vodSubAppId)
+{
+    m_vodSubAppId = _vodSubAppId;
+    m_vodSubAppIdHasBeenSet = true;
+}
+
+bool RecordParam::VodSubAppIdHasBeenSet() const
+{
+    return m_vodSubAppIdHasBeenSet;
 }
 

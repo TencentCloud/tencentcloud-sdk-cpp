@@ -280,6 +280,24 @@ namespace TencentCloud
                      */
                     bool HealthStatusHasBeenSet() const;
 
+                    /**
+                     * 获取接收机的可以执行的操作集合。
+                     * @return Operates 接收机的可以执行的操作集合。
+                     */
+                    std::vector<std::string> GetOperates() const;
+
+                    /**
+                     * 设置接收机的可以执行的操作集合。
+                     * @param Operates 接收机的可以执行的操作集合。
+                     */
+                    void SetOperates(const std::vector<std::string>& _operates);
+
+                    /**
+                     * 判断参数 Operates 是否已赋值
+                     * @return Operates 是否已赋值
+                     */
+                    bool OperatesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +377,12 @@ namespace TencentCloud
                      */
                     std::string m_healthStatus;
                     bool m_healthStatusHasBeenSet;
+
+                    /**
+                     * 接收机的可以执行的操作集合。
+                     */
+                    std::vector<std::string> m_operates;
+                    bool m_operatesHasBeenSet;
 
                 };
             }

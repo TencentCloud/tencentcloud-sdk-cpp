@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取LUT文件。 用于试唇色。须为 512*512的PNG图片。
-                     * @return LUTFile LUT文件。 用于试唇色。须为 512*512的PNG图片。
+                     * 获取用于试唇色，要求必须是LUT 格式的cube文件转换成512*512的PNG图片。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。了解 [cube文件转png图片小工具](http://yyb.gtimg.com/aiplat/static/qcloud-cube-to-png.html)。
+                     * @return LUTFile 用于试唇色，要求必须是LUT 格式的cube文件转换成512*512的PNG图片。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。了解 [cube文件转png图片小工具](http://yyb.gtimg.com/aiplat/static/qcloud-cube-to-png.html)。
                      */
                     std::string GetLUTFile() const;
 
                     /**
-                     * 设置LUT文件。 用于试唇色。须为 512*512的PNG图片。
-                     * @param LUTFile LUT文件。 用于试唇色。须为 512*512的PNG图片。
+                     * 设置用于试唇色，要求必须是LUT 格式的cube文件转换成512*512的PNG图片。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。了解 [cube文件转png图片小工具](http://yyb.gtimg.com/aiplat/static/qcloud-cube-to-png.html)。
+                     * @param LUTFile 用于试唇色，要求必须是LUT 格式的cube文件转换成512*512的PNG图片。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。了解 [cube文件转png图片小工具](http://yyb.gtimg.com/aiplat/static/qcloud-cube-to-png.html)。
                      */
                     void SetLUTFile(const std::string& _lUTFile);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * LUT文件。 用于试唇色。须为 512*512的PNG图片。
+                     * 用于试唇色，要求必须是LUT 格式的cube文件转换成512*512的PNG图片。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。了解 [cube文件转png图片小工具](http://yyb.gtimg.com/aiplat/static/qcloud-cube-to-png.html)。
                      */
                     std::string m_lUTFile;
                     bool m_lUTFileHasBeenSet;

@@ -341,6 +341,49 @@ ClbClient::CreateLoadBalancerOutcomeCallable ClbClient::CreateLoadBalancerCallab
     return task->get_future();
 }
 
+ClbClient::CreateLoadBalancerSnatIpsOutcome ClbClient::CreateLoadBalancerSnatIps(const CreateLoadBalancerSnatIpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLoadBalancerSnatIps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLoadBalancerSnatIpsResponse rsp = CreateLoadBalancerSnatIpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLoadBalancerSnatIpsOutcome(rsp);
+        else
+            return CreateLoadBalancerSnatIpsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLoadBalancerSnatIpsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::CreateLoadBalancerSnatIpsAsync(const CreateLoadBalancerSnatIpsRequest& request, const CreateLoadBalancerSnatIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLoadBalancerSnatIps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::CreateLoadBalancerSnatIpsOutcomeCallable ClbClient::CreateLoadBalancerSnatIpsCallable(const CreateLoadBalancerSnatIpsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLoadBalancerSnatIpsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLoadBalancerSnatIps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::CreateRuleOutcome ClbClient::CreateRule(const CreateRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRule");
@@ -506,6 +549,92 @@ ClbClient::DeleteLoadBalancerOutcomeCallable ClbClient::DeleteLoadBalancerCallab
         [this, request]()
         {
             return this->DeleteLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DeleteLoadBalancerListenersOutcome ClbClient::DeleteLoadBalancerListeners(const DeleteLoadBalancerListenersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLoadBalancerListeners");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLoadBalancerListenersResponse rsp = DeleteLoadBalancerListenersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLoadBalancerListenersOutcome(rsp);
+        else
+            return DeleteLoadBalancerListenersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLoadBalancerListenersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLoadBalancerListeners(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DeleteLoadBalancerListenersOutcomeCallable ClbClient::DeleteLoadBalancerListenersCallable(const DeleteLoadBalancerListenersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerListenersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLoadBalancerListeners(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DeleteLoadBalancerSnatIpsOutcome ClbClient::DeleteLoadBalancerSnatIps(const DeleteLoadBalancerSnatIpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLoadBalancerSnatIps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLoadBalancerSnatIpsResponse rsp = DeleteLoadBalancerSnatIpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLoadBalancerSnatIpsOutcome(rsp);
+        else
+            return DeleteLoadBalancerSnatIpsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLoadBalancerSnatIpsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeleteLoadBalancerSnatIpsAsync(const DeleteLoadBalancerSnatIpsRequest& request, const DeleteLoadBalancerSnatIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLoadBalancerSnatIps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DeleteLoadBalancerSnatIpsOutcomeCallable ClbClient::DeleteLoadBalancerSnatIpsCallable(const DeleteLoadBalancerSnatIpsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerSnatIpsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLoadBalancerSnatIps(request);
         }
     );
 
@@ -2183,6 +2312,49 @@ ClbClient::ReplaceCertForLoadBalancersOutcomeCallable ClbClient::ReplaceCertForL
         [this, request]()
         {
             return this->ReplaceCertForLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::SetLoadBalancerClsLogOutcome ClbClient::SetLoadBalancerClsLog(const SetLoadBalancerClsLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetLoadBalancerClsLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetLoadBalancerClsLogResponse rsp = SetLoadBalancerClsLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetLoadBalancerClsLogOutcome(rsp);
+        else
+            return SetLoadBalancerClsLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SetLoadBalancerClsLogOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::SetLoadBalancerClsLogAsync(const SetLoadBalancerClsLogRequest& request, const SetLoadBalancerClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetLoadBalancerClsLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::SetLoadBalancerClsLogOutcomeCallable ClbClient::SetLoadBalancerClsLogCallable(const SetLoadBalancerClsLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetLoadBalancerClsLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SetLoadBalancerClsLog(request);
         }
     );
 

@@ -316,6 +316,24 @@ namespace TencentCloud
                      */
                     bool RaidDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     * @return Cpu cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     */
+                    uint64_t GetCpu() const;
+
+                    /**
+                     * 设置cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     * @param Cpu cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     */
+                    void SetCpu(const uint64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +425,12 @@ namespace TencentCloud
                      */
                     std::string m_raidDescription;
                     bool m_raidDescriptionHasBeenSet;
+
+                    /**
+                     * cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2
+                     */
+                    uint64_t m_cpu;
+                    bool m_cpuHasBeenSet;
 
                 };
             }

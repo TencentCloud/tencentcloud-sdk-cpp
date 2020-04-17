@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dc/v20180410/model/Tag.h>
 
 
 namespace TencentCloud
@@ -518,6 +519,90 @@ namespace TencentCloud
                      */
                     bool FaultReportContactNumberHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSet 标签键值对
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagSet 标签键值对
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
+                    /**
+                     * 获取物理专线的接入点类型。
+                     * @return AccessPointType 物理专线的接入点类型。
+                     */
+                    std::string GetAccessPointType() const;
+
+                    /**
+                     * 设置物理专线的接入点类型。
+                     * @param AccessPointType 物理专线的接入点类型。
+                     */
+                    void SetAccessPointType(const std::string& _accessPointType);
+
+                    /**
+                     * 判断参数 AccessPointType 是否已赋值
+                     * @return AccessPointType 是否已赋值
+                     */
+                    bool AccessPointTypeHasBeenSet() const;
+
+                    /**
+                     * 获取IDC所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdcCity IDC所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIdcCity() const;
+
+                    /**
+                     * 设置IDC所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IdcCity IDC所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIdcCity(const std::string& _idcCity);
+
+                    /**
+                     * 判断参数 IdcCity 是否已赋值
+                     * @return IdcCity 是否已赋值
+                     */
+                    bool IdcCityHasBeenSet() const;
+
+                    /**
+                     * 获取计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeState 计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChargeState() const;
+
+                    /**
+                     * 设置计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChargeState 计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChargeState(const std::string& _chargeState);
+
+                    /**
+                     * 判断参数 ChargeState 是否已赋值
+                     * @return ChargeState 是否已赋值
+                     */
+                    bool ChargeStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -670,6 +755,33 @@ namespace TencentCloud
                      */
                     std::string m_faultReportContactNumber;
                     bool m_faultReportContactNumberHasBeenSet;
+
+                    /**
+                     * 标签键值对
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 物理专线的接入点类型。
+                     */
+                    std::string m_accessPointType;
+                    bool m_accessPointTypeHasBeenSet;
+
+                    /**
+                     * IDC所在城市
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_idcCity;
+                    bool m_idcCityHasBeenSet;
+
+                    /**
+                     * 计费状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chargeState;
+                    bool m_chargeStateHasBeenSet;
 
                 };
             }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取appId 值测试时由腾讯统一分配
-                     * @return BizAppId appId 值测试时由腾讯统一分配
+                     * 获取业务appid
+                     * @return BizAppId 业务appid
                      */
                     std::string GetBizAppId() const;
 
                     /**
-                     * 设置appId 值测试时由腾讯统一分配
-                     * @param BizAppId appId 值测试时由腾讯统一分配
+                     * 设置业务appid
+                     * @param BizAppId 业务appid
                      */
                     void SetBizAppId(const std::string& _bizAppId);
 
@@ -343,7 +343,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * appId 值测试时由腾讯统一分配
+                     * 业务appid
                      */
                     std::string m_bizAppId;
                     bool m_bizAppIdHasBeenSet;

@@ -83,12 +83,7 @@ string GetDataHistoryRequest::ToJsonString() const
         Value iKey(kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_size.begin(); itr != m_size.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
-        }
+        d.AddMember(iKey, m_size, allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -179,12 +174,12 @@ bool GetDataHistoryRequest::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
-vector<uint64_t> GetDataHistoryRequest::GetSize() const
+uint64_t GetDataHistoryRequest::GetSize() const
 {
     return m_size;
 }
 
-void GetDataHistoryRequest::SetSize(const vector<uint64_t>& _size)
+void GetDataHistoryRequest::SetSize(const uint64_t& _size)
 {
     m_size = _size;
     m_sizeHasBeenSet = true;

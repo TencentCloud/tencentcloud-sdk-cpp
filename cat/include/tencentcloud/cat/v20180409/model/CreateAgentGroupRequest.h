@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取是否为默认分组，取值可为 0 或 1
-                     * @return IsDefault 是否为默认分组，取值可为 0 或 1
+                     * 获取是否为默认分组，取值可为 0 或 1。取 1 时表示设置为默认分组
+                     * @return IsDefault 是否为默认分组，取值可为 0 或 1。取 1 时表示设置为默认分组
                      */
                     int64_t GetIsDefault() const;
 
                     /**
-                     * 设置是否为默认分组，取值可为 0 或 1
-                     * @param IsDefault 是否为默认分组，取值可为 0 或 1
+                     * 设置是否为默认分组，取值可为 0 或 1。取 1 时表示设置为默认分组
+                     * @param IsDefault 是否为默认分组，取值可为 0 或 1。取 1 时表示设置为默认分组
                      */
                     void SetIsDefault(const int64_t& _isDefault);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgentList 的返回结果。
-                     * @return Agents Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgentList 的返回结果。
+                     * 获取Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。
+                     * @return Agents Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。
                      */
                     std::vector<CatAgent> GetAgents() const;
 
                     /**
-                     * 设置Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgentList 的返回结果。
-                     * @param Agents Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgentList 的返回结果。
+                     * 设置Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。
+                     * @param Agents Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。
                      */
                     void SetAgents(const std::vector<CatAgent>& _agents);
 
@@ -106,13 +106,13 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 是否为默认分组，取值可为 0 或 1
+                     * 是否为默认分组，取值可为 0 或 1。取 1 时表示设置为默认分组
                      */
                     int64_t m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgentList 的返回结果。
+                     * Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。
                      */
                     std::vector<CatAgent> m_agents;
                     bool m_agentsHasBeenSet;

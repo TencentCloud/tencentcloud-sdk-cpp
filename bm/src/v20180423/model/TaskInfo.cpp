@@ -43,7 +43,9 @@ TaskInfo::TaskInfo() :
     m_subnetCidrBlockHasBeenSet(false),
     m_wanIpHasBeenSet(false),
     m_lanIpHasBeenSet(false),
-    m_mgtIpHasBeenSet(false)
+    m_mgtIpHasBeenSet(false),
+    m_taskTypeNameHasBeenSet(false),
+    m_taskSubTypeHasBeenSet(false)
 {
 }
 
@@ -272,6 +274,26 @@ CoreInternalOutcome TaskInfo::Deserialize(const Value &value)
         m_mgtIpHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskTypeName") && !value["TaskTypeName"].IsNull())
+    {
+        if (!value["TaskTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskInfo.TaskTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskTypeName = string(value["TaskTypeName"].GetString());
+        m_taskTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskSubType") && !value["TaskSubType"].IsNull())
+    {
+        if (!value["TaskSubType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskInfo.TaskSubType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskSubType = string(value["TaskSubType"].GetString());
+        m_taskSubTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -453,6 +475,22 @@ void TaskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "MgtIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_mgtIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TaskTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_taskTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskSubTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TaskSubType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_taskSubType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -808,5 +846,37 @@ void TaskInfo::SetMgtIp(const string& _mgtIp)
 bool TaskInfo::MgtIpHasBeenSet() const
 {
     return m_mgtIpHasBeenSet;
+}
+
+string TaskInfo::GetTaskTypeName() const
+{
+    return m_taskTypeName;
+}
+
+void TaskInfo::SetTaskTypeName(const string& _taskTypeName)
+{
+    m_taskTypeName = _taskTypeName;
+    m_taskTypeNameHasBeenSet = true;
+}
+
+bool TaskInfo::TaskTypeNameHasBeenSet() const
+{
+    return m_taskTypeNameHasBeenSet;
+}
+
+string TaskInfo::GetTaskSubType() const
+{
+    return m_taskSubType;
+}
+
+void TaskInfo::SetTaskSubType(const string& _taskSubType)
+{
+    m_taskSubType = _taskSubType;
+    m_taskSubTypeHasBeenSet = true;
+}
+
+bool TaskInfo::TaskSubTypeHasBeenSet() const
+{
+    return m_taskSubTypeHasBeenSet;
 }
 

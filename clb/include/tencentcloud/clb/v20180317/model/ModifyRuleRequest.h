@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
-                     * @return ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     * 获取负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
+                     * @return ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
                      */
                     std::string GetForwardType() const;
 
                     /**
-                     * 设置负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
-                     * @param ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     * 设置负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
+                     * @param ForwardType 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
                      */
                     void SetForwardType(const std::string& _forwardType);
 
@@ -190,6 +190,42 @@ namespace TencentCloud
                      * @return ForwardType 是否已赋值
                      */
                     bool ForwardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取TRPC被调服务器路由，ForwardType为TRPC时必填
+                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填
+                     */
+                    std::string GetTrpcCallee() const;
+
+                    /**
+                     * 设置TRPC被调服务器路由，ForwardType为TRPC时必填
+                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填
+                     */
+                    void SetTrpcCallee(const std::string& _trpcCallee);
+
+                    /**
+                     * 判断参数 TrpcCallee 是否已赋值
+                     * @return TrpcCallee 是否已赋值
+                     */
+                    bool TrpcCalleeHasBeenSet() const;
+
+                    /**
+                     * 获取TRPC调用服务接口，ForwardType为TRPC时必填
+                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填
+                     */
+                    std::string GetTrpcFunc() const;
+
+                    /**
+                     * 设置TRPC调用服务接口，ForwardType为TRPC时必填
+                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填
+                     */
+                    void SetTrpcFunc(const std::string& _trpcFunc);
+
+                    /**
+                     * 判断参数 TrpcFunc 是否已赋值
+                     * @return TrpcFunc 是否已赋值
+                     */
+                    bool TrpcFuncHasBeenSet() const;
 
                 private:
 
@@ -237,10 +273,22 @@ namespace TencentCloud
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS
+                     * 负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC
                      */
                     std::string m_forwardType;
                     bool m_forwardTypeHasBeenSet;
+
+                    /**
+                     * TRPC被调服务器路由，ForwardType为TRPC时必填
+                     */
+                    std::string m_trpcCallee;
+                    bool m_trpcCalleeHasBeenSet;
+
+                    /**
+                     * TRPC调用服务接口，ForwardType为TRPC时必填
+                     */
+                    std::string m_trpcFunc;
+                    bool m_trpcFuncHasBeenSet;
 
                 };
             }

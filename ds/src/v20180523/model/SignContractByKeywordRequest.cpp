@@ -28,9 +28,9 @@ SignContractByKeywordRequest::SignContractByKeywordRequest() :
     m_operationHasBeenSet(false),
     m_contractResIdHasBeenSet(false),
     m_accountResIdHasBeenSet(false),
+    m_signKeywordHasBeenSet(false),
     m_authorizationTimeHasBeenSet(false),
     m_positionHasBeenSet(false),
-    m_signKeywordHasBeenSet(false),
     m_sealResIdHasBeenSet(false),
     m_certTypeHasBeenSet(false),
     m_imageDataHasBeenSet(false)
@@ -76,6 +76,15 @@ string SignContractByKeywordRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_accountResId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_signKeywordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SignKeyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_signKeyword.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_authorizationTimeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -90,15 +99,6 @@ string SignContractByKeywordRequest::ToJsonString() const
         string key = "Position";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_position.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_signKeywordHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SignKeyword";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_signKeyword.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_sealResIdHasBeenSet)
@@ -197,6 +197,22 @@ bool SignContractByKeywordRequest::AccountResIdHasBeenSet() const
     return m_accountResIdHasBeenSet;
 }
 
+SignKeyword SignContractByKeywordRequest::GetSignKeyword() const
+{
+    return m_signKeyword;
+}
+
+void SignContractByKeywordRequest::SetSignKeyword(const SignKeyword& _signKeyword)
+{
+    m_signKeyword = _signKeyword;
+    m_signKeywordHasBeenSet = true;
+}
+
+bool SignContractByKeywordRequest::SignKeywordHasBeenSet() const
+{
+    return m_signKeywordHasBeenSet;
+}
+
 string SignContractByKeywordRequest::GetAuthorizationTime() const
 {
     return m_authorizationTime;
@@ -227,22 +243,6 @@ void SignContractByKeywordRequest::SetPosition(const string& _position)
 bool SignContractByKeywordRequest::PositionHasBeenSet() const
 {
     return m_positionHasBeenSet;
-}
-
-SignKeyword SignContractByKeywordRequest::GetSignKeyword() const
-{
-    return m_signKeyword;
-}
-
-void SignContractByKeywordRequest::SetSignKeyword(const SignKeyword& _signKeyword)
-{
-    m_signKeyword = _signKeyword;
-    m_signKeywordHasBeenSet = true;
-}
-
-bool SignContractByKeywordRequest::SignKeywordHasBeenSet() const
-{
-    return m_signKeywordHasBeenSet;
 }
 
 string SignContractByKeywordRequest::GetSealResId() const

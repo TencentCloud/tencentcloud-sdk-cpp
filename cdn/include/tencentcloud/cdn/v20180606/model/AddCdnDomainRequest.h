@@ -46,6 +46,7 @@
 #include <tencentcloud/cdn/v20180606/model/MaxAge.h>
 #include <tencentcloud/cdn/v20180606/model/Ipv6.h>
 #include <tencentcloud/cdn/v20180606/model/SpecificConfig.h>
+#include <tencentcloud/cdn/v20180606/model/OriginPullTimeout.h>
 
 
 namespace TencentCloud
@@ -621,6 +622,24 @@ global：全球加速
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取回源超时配置
+                     * @return OriginPullTimeout 回源超时配置
+                     */
+                    OriginPullTimeout GetOriginPullTimeout() const;
+
+                    /**
+                     * 设置回源超时配置
+                     * @param OriginPullTimeout 回源超时配置
+                     */
+                    void SetOriginPullTimeout(const OriginPullTimeout& _originPullTimeout);
+
+                    /**
+                     * 判断参数 OriginPullTimeout 是否已赋值
+                     * @return OriginPullTimeout 是否已赋值
+                     */
+                    bool OriginPullTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -804,6 +823,12 @@ global：全球加速
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 回源超时配置
+                     */
+                    OriginPullTimeout m_originPullTimeout;
+                    bool m_originPullTimeoutHasBeenSet;
 
                 };
             }

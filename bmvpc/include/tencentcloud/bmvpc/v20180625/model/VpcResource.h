@@ -406,6 +406,90 @@ namespace TencentCloud
                      */
                     bool IsOldHasBeenSet() const;
 
+                    /**
+                     * 获取云联网服务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CcnServiceNum 云联网服务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCcnServiceNum() const;
+
+                    /**
+                     * 设置云联网服务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CcnServiceNum 云联网服务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCcnServiceNum(const uint64_t& _ccnServiceNum);
+
+                    /**
+                     * 判断参数 CcnServiceNum 是否已赋值
+                     * @return CcnServiceNum 是否已赋值
+                     */
+                    bool CcnServiceNumHasBeenSet() const;
+
+                    /**
+                     * 获取VPC允许创建的对等连接个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcPeerLimitToAllRegion VPC允许创建的对等连接个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVpcPeerLimitToAllRegion() const;
+
+                    /**
+                     * 设置VPC允许创建的对等连接个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcPeerLimitToAllRegion VPC允许创建的对等连接个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcPeerLimitToAllRegion(const uint64_t& _vpcPeerLimitToAllRegion);
+
+                    /**
+                     * 判断参数 VpcPeerLimitToAllRegion 是否已赋值
+                     * @return VpcPeerLimitToAllRegion 是否已赋值
+                     */
+                    bool VpcPeerLimitToAllRegionHasBeenSet() const;
+
+                    /**
+                     * 获取VPC允许创建的同地域的对等连接的个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcPeerLimitToSameRegion VPC允许创建的同地域的对等连接的个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVpcPeerLimitToSameRegion() const;
+
+                    /**
+                     * 设置VPC允许创建的同地域的对等连接的个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcPeerLimitToSameRegion VPC允许创建的同地域的对等连接的个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcPeerLimitToSameRegion(const uint64_t& _vpcPeerLimitToSameRegion);
+
+                    /**
+                     * 判断参数 VpcPeerLimitToSameRegion 是否已赋值
+                     * @return VpcPeerLimitToSameRegion 是否已赋值
+                     */
+                    bool VpcPeerLimitToSameRegionHasBeenSet() const;
+
+                    /**
+                     * 获取整型私有网络ID
+                     * @return IntVpcId 整型私有网络ID
+                     */
+                    uint64_t GetIntVpcId() const;
+
+                    /**
+                     * 设置整型私有网络ID
+                     * @param IntVpcId 整型私有网络ID
+                     */
+                    void SetIntVpcId(const uint64_t& _intVpcId);
+
+                    /**
+                     * 判断参数 IntVpcId 是否已赋值
+                     * @return IntVpcId 是否已赋值
+                     */
+                    bool IntVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +611,33 @@ namespace TencentCloud
                      */
                     bool m_isOld;
                     bool m_isOldHasBeenSet;
+
+                    /**
+                     * 云联网服务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ccnServiceNum;
+                    bool m_ccnServiceNumHasBeenSet;
+
+                    /**
+                     * VPC允许创建的对等连接个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vpcPeerLimitToAllRegion;
+                    bool m_vpcPeerLimitToAllRegionHasBeenSet;
+
+                    /**
+                     * VPC允许创建的同地域的对等连接的个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vpcPeerLimitToSameRegion;
+                    bool m_vpcPeerLimitToSameRegionHasBeenSet;
+
+                    /**
+                     * 整型私有网络ID
+                     */
+                    uint64_t m_intVpcId;
+                    bool m_intVpcIdHasBeenSet;
 
                 };
             }

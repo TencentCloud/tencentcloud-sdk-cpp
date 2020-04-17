@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取计费时长单位, m:按月计费; d:按天计费
-                     * @return TimeUnit 计费时长单位, m:按月计费; d:按天计费
+                     * 获取计费时长单位, M:按月计费; D:按天计费
+                     * @return TimeUnit 计费时长单位, M:按月计费; D:按天计费
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置计费时长单位, m:按月计费; d:按天计费
-                     * @param TimeUnit 计费时长单位, m:按月计费; d:按天计费
+                     * 设置计费时长单位, M:按月计费; D:按天计费
+                     * @param TimeUnit 计费时长单位, M:按月计费; D:按天计费
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
@@ -445,7 +445,7 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 计费时长单位, m:按月计费; d:按天计费
+                     * 计费时长单位, M:按月计费; D:按天计费
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;

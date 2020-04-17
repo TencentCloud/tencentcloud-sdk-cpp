@@ -27,7 +27,8 @@ InstanceTypeConfig::InstanceTypeConfig() :
     m_instanceFamilyHasBeenSet(false),
     m_gPUHasBeenSet(false),
     m_cPUHasBeenSet(false),
-    m_memoryHasBeenSet(false)
+    m_memoryHasBeenSet(false),
+    m_fPGAHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const Value &value)
         m_memoryHasBeenSet = true;
     }
 
+    if (value.HasMember("FPGA") && !value["FPGA"].IsNull())
+    {
+        if (!value["FPGA"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeConfig.FPGA` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fPGA = value["FPGA"].GetInt64();
+        m_fPGAHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void InstanceTypeConfig::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_fPGAHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FPGA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fPGA, allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void InstanceTypeConfig::SetMemory(const int64_t& _memory)
 bool InstanceTypeConfig::MemoryHasBeenSet() const
 {
     return m_memoryHasBeenSet;
+}
+
+int64_t InstanceTypeConfig::GetFPGA() const
+{
+    return m_fPGA;
+}
+
+void InstanceTypeConfig::SetFPGA(const int64_t& _fPGA)
+{
+    m_fPGA = _fPGA;
+    m_fPGAHasBeenSet = true;
+}
+
+bool InstanceTypeConfig::FPGAHasBeenSet() const
+{
+    return m_fPGAHasBeenSet;
 }
 

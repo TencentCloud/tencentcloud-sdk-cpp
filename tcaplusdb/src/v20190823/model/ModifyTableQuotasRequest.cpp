@@ -24,7 +24,7 @@ using namespace rapidjson;
 using namespace std;
 
 ModifyTableQuotasRequest::ModifyTableQuotasRequest() :
-    m_applicationIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_tableQuotasHasBeenSet(false)
 {
 }
@@ -36,12 +36,12 @@ string ModifyTableQuotasRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_applicationIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ApplicationId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableQuotasHasBeenSet)
@@ -67,28 +67,28 @@ string ModifyTableQuotasRequest::ToJsonString() const
 }
 
 
-string ModifyTableQuotasRequest::GetApplicationId() const
+string ModifyTableQuotasRequest::GetClusterId() const
 {
-    return m_applicationId;
+    return m_clusterId;
 }
 
-void ModifyTableQuotasRequest::SetApplicationId(const string& _applicationId)
+void ModifyTableQuotasRequest::SetClusterId(const string& _clusterId)
 {
-    m_applicationId = _applicationId;
-    m_applicationIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool ModifyTableQuotasRequest::ApplicationIdHasBeenSet() const
+bool ModifyTableQuotasRequest::ClusterIdHasBeenSet() const
 {
-    return m_applicationIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
-vector<SelectedTableInfo> ModifyTableQuotasRequest::GetTableQuotas() const
+vector<SelectedTableInfoNew> ModifyTableQuotasRequest::GetTableQuotas() const
 {
     return m_tableQuotas;
 }
 
-void ModifyTableQuotasRequest::SetTableQuotas(const vector<SelectedTableInfo>& _tableQuotas)
+void ModifyTableQuotasRequest::SetTableQuotas(const vector<SelectedTableInfoNew>& _tableQuotas)
 {
     m_tableQuotas = _tableQuotas;
     m_tableQuotasHasBeenSet = true;

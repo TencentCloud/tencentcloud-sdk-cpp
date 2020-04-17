@@ -134,6 +134,24 @@ namespace TencentCloud
                      */
                     bool LoadBalancerPassToTargetHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SnatPro
+                     * @return SnatPro 是否开启SnatPro
+                     */
+                    bool GetSnatPro() const;
+
+                    /**
+                     * 设置是否开启SnatPro
+                     * @param SnatPro 是否开启SnatPro
+                     */
+                    void SetSnatPro(const bool& _snatPro);
+
+                    /**
+                     * 判断参数 SnatPro 是否已赋值
+                     * @return SnatPro 是否已赋值
+                     */
+                    bool SnatProHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +183,12 @@ namespace TencentCloud
                      */
                     bool m_loadBalancerPassToTarget;
                     bool m_loadBalancerPassToTargetHasBeenSet;
+
+                    /**
+                     * 是否开启SnatPro
+                     */
+                    bool m_snatPro;
+                    bool m_snatProHasBeenSet;
 
                 };
             }

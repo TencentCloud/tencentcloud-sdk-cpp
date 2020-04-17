@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取雪碧图规格，参见[雪碧图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 雪碧图规格，参见[雪碧图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置雪碧图规格，参见[雪碧图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Definition 雪碧图规格，参见[雪碧图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取雪碧图小图的高度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 雪碧图小图的高度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置雪碧图小图的高度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Height 雪碧图小图的高度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取雪碧图小图的宽度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 雪碧图小图的宽度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置雪碧图小图的宽度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Width 雪碧图小图的宽度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取每一张雪碧图大图里小图的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 每一张雪碧图大图里小图的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置每一张雪碧图大图里小图的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TotalCount 每一张雪碧图大图里小图的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
@@ -136,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取每一张雪碧图大图的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrlSet 每一张雪碧图大图的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetImageUrlSet() const;
 
                     /**
                      * 设置每一张雪碧图大图的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageUrlSet 每一张雪碧图大图的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageUrlSet(const std::vector<std::string>& _imageUrlSet);
 
@@ -158,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebVttUrl 雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWebVttUrl() const;
 
                     /**
                      * 设置雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WebVttUrl 雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWebVttUrl(const std::string& _webVttUrl);
 
@@ -182,42 +158,36 @@ namespace TencentCloud
 
                     /**
                      * 雪碧图规格，参见[雪碧图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
                      * 雪碧图小图的高度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 雪碧图小图的宽度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 每一张雪碧图大图里小图的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 每一张雪碧图大图的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_imageUrlSet;
                     bool m_imageUrlSetHasBeenSet;
 
                     /**
                      * 雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webVttUrl;
                     bool m_webVttUrlHasBeenSet;

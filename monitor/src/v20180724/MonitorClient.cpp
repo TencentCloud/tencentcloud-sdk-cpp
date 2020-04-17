@@ -642,6 +642,49 @@ MonitorClient::PutMonitorDataOutcomeCallable MonitorClient::PutMonitorDataCallab
     return task->get_future();
 }
 
+MonitorClient::SendCustomAlarmMsgOutcome MonitorClient::SendCustomAlarmMsg(const SendCustomAlarmMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendCustomAlarmMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendCustomAlarmMsgResponse rsp = SendCustomAlarmMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendCustomAlarmMsgOutcome(rsp);
+        else
+            return SendCustomAlarmMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return SendCustomAlarmMsgOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::SendCustomAlarmMsgAsync(const SendCustomAlarmMsgRequest& request, const SendCustomAlarmMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendCustomAlarmMsg(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::SendCustomAlarmMsgOutcomeCallable MonitorClient::SendCustomAlarmMsgCallable(const SendCustomAlarmMsgRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendCustomAlarmMsgOutcome()>>(
+        [this, request]()
+        {
+            return this->SendCustomAlarmMsg(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::UnBindingAllPolicyObjectOutcome MonitorClient::UnBindingAllPolicyObject(const UnBindingAllPolicyObjectRequest &request)
 {
     auto outcome = MakeRequest(request, "UnBindingAllPolicyObject");

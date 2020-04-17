@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取二维码在图片中的位置，由4个点的坐标表示
-                     * @return CodePosition 二维码在图片中的位置，由4个点的坐标表示
+                     * 获取二维码在图片中的位置，由边界点的坐标表示
+                     * @return CodePosition 二维码在图片中的位置，由边界点的坐标表示
                      */
                     std::vector<CodePosition> GetCodePosition() const;
 
                     /**
-                     * 设置二维码在图片中的位置，由4个点的坐标表示
-                     * @param CodePosition 二维码在图片中的位置，由4个点的坐标表示
+                     * 设置二维码在图片中的位置，由边界点的坐标表示
+                     * @param CodePosition 二维码在图片中的位置，由边界点的坐标表示
                      */
                     void SetCodePosition(const std::vector<CodePosition>& _codePosition);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool CodeTextHasBeenSet() const;
 
                     /**
-                     * 获取二维码的类型：1：ONED_BARCODE，2：QRCOD，3:WXCODE，4：PDF417，5:DATAMATRIX
-                     * @return CodeType 二维码的类型：1：ONED_BARCODE，2：QRCOD，3:WXCODE，4：PDF417，5:DATAMATRIX
+                     * 获取二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
+                     * @return CodeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
                      */
                     int64_t GetCodeType() const;
 
                     /**
-                     * 设置二维码的类型：1：ONED_BARCODE，2：QRCOD，3:WXCODE，4：PDF417，5:DATAMATRIX
-                     * @param CodeType 二维码的类型：1：ONED_BARCODE，2：QRCOD，3:WXCODE，4：PDF417，5:DATAMATRIX
+                     * 设置二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
+                     * @param CodeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
                      */
                     void SetCodeType(const int64_t& _codeType);
 
@@ -122,7 +122,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 二维码在图片中的位置，由4个点的坐标表示
+                     * 二维码在图片中的位置，由边界点的坐标表示
                      */
                     std::vector<CodePosition> m_codePosition;
                     bool m_codePositionHasBeenSet;
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_codeTextHasBeenSet;
 
                     /**
-                     * 二维码的类型：1：ONED_BARCODE，2：QRCOD，3:WXCODE，4：PDF417，5:DATAMATRIX
+                     * 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
                      */
                     int64_t m_codeType;
                     bool m_codeTypeHasBeenSet;

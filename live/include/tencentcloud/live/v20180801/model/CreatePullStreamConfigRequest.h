@@ -43,14 +43,30 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源Url。目前可支持直播流及点播文件。
-                     * @return FromUrl 源Url。目前可支持直播流及点播文件。
+                     * 获取源 Url ，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播url之间使用空格拼接。
+2. 目前上限支持10个url。
+3. 支持拉流文件格式：flv，rtmp，hls，mp4。
+                     * @return FromUrl 源 Url ，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播url之间使用空格拼接。
+2. 目前上限支持10个url。
+3. 支持拉流文件格式：flv，rtmp，hls，mp4。
                      */
                     std::string GetFromUrl() const;
 
                     /**
-                     * 设置源Url。目前可支持直播流及点播文件。
-                     * @param FromUrl 源Url。目前可支持直播流及点播文件。
+                     * 设置源 Url ，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播url之间使用空格拼接。
+2. 目前上限支持10个url。
+3. 支持拉流文件格式：flv，rtmp，hls，mp4。
+                     * @param FromUrl 源 Url ，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播url之间使用空格拼接。
+2. 目前上限支持10个url。
+3. 支持拉流文件格式：flv，rtmp，hls，mp4。
                      */
                     void SetFromUrl(const std::string& _fromUrl);
 
@@ -61,14 +77,18 @@ namespace TencentCloud
                     bool FromUrlHasBeenSet() const;
 
                     /**
-                     * 获取目的Url，目前限制该目标地址为腾讯域名。
-                     * @return ToUrl 目的Url，目前限制该目标地址为腾讯域名。
+                     * 获取目的 Url ，用于推流的地址，目前限制该目标地址为腾讯域名。
+仅支持：rtmp 协议。
+                     * @return ToUrl 目的 Url ，用于推流的地址，目前限制该目标地址为腾讯域名。
+仅支持：rtmp 协议。
                      */
                     std::string GetToUrl() const;
 
                     /**
-                     * 设置目的Url，目前限制该目标地址为腾讯域名。
-                     * @param ToUrl 目的Url，目前限制该目标地址为腾讯域名。
+                     * 设置目的 Url ，用于推流的地址，目前限制该目标地址为腾讯域名。
+仅支持：rtmp 协议。
+                     * @param ToUrl 目的 Url ，用于推流的地址，目前限制该目标地址为腾讯域名。
+仅支持：rtmp 协议。
                      */
                     void SetToUrl(const std::string& _toUrl);
 
@@ -118,13 +138,13 @@ namespace TencentCloud
 2-移动，
 3-联通，
 4-其他。
-注：AreaId为4的时候,IspId只能为其他。
+注：AreaId 为4的时候，IspId 只能为其他。
                      * @return IspId 选择完成转拉推服务使用的运营商网络：
 1-电信，
 2-移动，
 3-联通，
 4-其他。
-注：AreaId为4的时候,IspId只能为其他。
+注：AreaId 为4的时候，IspId 只能为其他。
                      */
                     int64_t GetIspId() const;
 
@@ -134,13 +154,13 @@ namespace TencentCloud
 2-移动，
 3-联通，
 4-其他。
-注：AreaId为4的时候,IspId只能为其他。
+注：AreaId 为4的时候，IspId 只能为其他。
                      * @param IspId 选择完成转拉推服务使用的运营商网络：
 1-电信，
 2-移动，
 3-联通，
 4-其他。
-注：AreaId为4的时候,IspId只能为其他。
+注：AreaId 为4的时候，IspId 只能为其他。
                      */
                     void SetIspId(const int64_t& _ispId);
 
@@ -152,11 +172,11 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return StartTime 开始时间。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
@@ -164,11 +184,11 @@ namespace TencentCloud
 
                     /**
                      * 设置开始时间。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @param StartTime 开始时间。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
@@ -185,14 +205,14 @@ namespace TencentCloud
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return EndTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
@@ -203,14 +223,14 @@ namespace TencentCloud
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @param EndTime 结束时间，注意：
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
@@ -225,13 +245,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源Url。目前可支持直播流及点播文件。
+                     * 源 Url ，用于拉流的地址。目前可支持直播流及点播文件。
+注意：
+1. 多个点播url之间使用空格拼接。
+2. 目前上限支持10个url。
+3. 支持拉流文件格式：flv，rtmp，hls，mp4。
                      */
                     std::string m_fromUrl;
                     bool m_fromUrlHasBeenSet;
 
                     /**
-                     * 目的Url，目前限制该目标地址为腾讯域名。
+                     * 目的 Url ，用于推流的地址，目前限制该目标地址为腾讯域名。
+仅支持：rtmp 协议。
                      */
                     std::string m_toUrl;
                     bool m_toUrlHasBeenSet;
@@ -252,14 +277,14 @@ namespace TencentCloud
 2-移动，
 3-联通，
 4-其他。
-注：AreaId为4的时候,IspId只能为其他。
+注：AreaId 为4的时候，IspId 只能为其他。
                      */
                     int64_t m_ispId;
                     bool m_ispIdHasBeenSet;
 
                     /**
                      * 开始时间。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
@@ -271,7 +296,7 @@ namespace TencentCloud
 1. 结束时间必须大于开始时间；
 2. 结束时间和开始时间必须大于当前时间；
 3. 结束时间 和 开始时间 间隔必须小于七天。
-使用UTC格式时间，
+使用 UTC 格式时间，
 例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */

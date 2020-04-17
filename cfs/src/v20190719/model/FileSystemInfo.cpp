@@ -37,7 +37,8 @@ FileSystemInfo::FileSystemInfo() :
     m_pGroupHasBeenSet(false),
     m_fsNameHasBeenSet(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,16 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const Value &value)
         m_kmsKeyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `FileSystemInfo.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -347,6 +358,14 @@ void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "KmsKeyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
     }
 
 }
@@ -606,5 +625,21 @@ void FileSystemInfo::SetKmsKeyId(const string& _kmsKeyId)
 bool FileSystemInfo::KmsKeyIdHasBeenSet() const
 {
     return m_kmsKeyIdHasBeenSet;
+}
+
+int64_t FileSystemInfo::GetAppId() const
+{
+    return m_appId;
+}
+
+void FileSystemInfo::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool FileSystemInfo::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

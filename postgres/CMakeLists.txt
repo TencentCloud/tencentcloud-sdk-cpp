@@ -20,10 +20,13 @@ set(postgres_public_header
 
 set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/CreateDBInstancesRequest.h
-  include/tencentcloud/postgres/v20170312/model/RestartDBInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessResponse.h
+  include/tencentcloud/postgres/v20170312/model/DestroyDBInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/CreateServerlessDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/SetAutoRenewFlagRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h
+  include/tencentcloud/postgres/v20170312/model/DeleteServerlessDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBXlogsRequest.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/AccountInfo.h
@@ -32,68 +35,85 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeDBErrlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h
-  include/tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceResponse.h
+  include/tencentcloud/postgres/v20170312/model/SpecItemInfo.h
+  include/tencentcloud/postgres/v20170312/model/DescribeProductConfigRequest.h
+  include/tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h
+  include/tencentcloud/postgres/v20170312/model/RestartDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ErrLogDetail.h
-  include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h
+  include/tencentcloud/postgres/v20170312/model/ServerlessDBInstance.h
+  include/tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h
   include/tencentcloud/postgres/v20170312/model/RenewInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h
-  include/tencentcloud/postgres/v20170312/model/SpecInfo.h
+  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/RegionInfo.h
+  include/tencentcloud/postgres/v20170312/model/DeleteServerlessDBInstanceResponse.h
+  include/tencentcloud/postgres/v20170312/model/SlowlogDetail.h
   include/tencentcloud/postgres/v20170312/model/InitDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/RestartDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/SetAutoRenewFlagResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstancesResponse.h
-  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h
+  include/tencentcloud/postgres/v20170312/model/SpecInfo.h
   include/tencentcloud/postgres/v20170312/model/DBInstance.h
   include/tencentcloud/postgres/v20170312/model/DescribeProductConfigResponse.h
   include/tencentcloud/postgres/v20170312/model/ResetAccountPasswordResponse.h
   include/tencentcloud/postgres/v20170312/model/ResetAccountPasswordRequest.h
-  include/tencentcloud/postgres/v20170312/model/DescribeProductConfigRequest.h
-  include/tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessRequest.h
+  include/tencentcloud/postgres/v20170312/model/DescribeOrdersRequest.h
+  include/tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/InitDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBBackupsRequest.h
-  include/tencentcloud/postgres/v20170312/model/SpecItemInfo.h
+  include/tencentcloud/postgres/v20170312/model/ServerlessDBAccount.h
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/Filter.h
   include/tencentcloud/postgres/v20170312/model/RenewInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/PgDeal.h
   include/tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h
-  include/tencentcloud/postgres/v20170312/model/ZoneInfo.h
+  include/tencentcloud/postgres/v20170312/model/DescribeDatabasesRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeAccountsResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBErrlogsRequest.h
+  include/tencentcloud/postgres/v20170312/model/ZoneInfo.h
   include/tencentcloud/postgres/v20170312/model/DBBackup.h
   include/tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectRequest.h
+  include/tencentcloud/postgres/v20170312/model/ServerlessDBInstanceNetInfo.h
+  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameResponse.h
+  include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h
-  include/tencentcloud/postgres/v20170312/model/SlowlogDetail.h
+  include/tencentcloud/postgres/v20170312/model/DestroyDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsRequest.h
+  include/tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBBackupsResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeRegionsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeZonesResponse.h
   include/tencentcloud/postgres/v20170312/model/NormalQueryItem.h
-  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h
+  include/tencentcloud/postgres/v20170312/model/CreateServerlessDBInstanceResponse.h
+  include/tencentcloud/postgres/v20170312/model/DescribeDatabasesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBXlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceAttributeRequest.h
-  include/tencentcloud/postgres/v20170312/model/DescribeOrdersRequest.h
+  include/tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessRequest.h
+  include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyAccountRemarkRequest.h
-  include/tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h
+  include/tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/Xlog.h
   )
 
 set(postgres_src
   src/v20170312/PostgresClient.cpp
   src/v20170312/model/CreateDBInstancesRequest.cpp
-  src/v20170312/model/RestartDBInstanceRequest.cpp
+  src/v20170312/model/CloseServerlessDBExtranetAccessResponse.cpp
+  src/v20170312/model/DestroyDBInstanceRequest.cpp
+  src/v20170312/model/CreateServerlessDBInstanceRequest.cpp
   src/v20170312/model/InquiryPriceRenewDBInstanceRequest.cpp
   src/v20170312/model/SetAutoRenewFlagRequest.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
+  src/v20170312/model/DeleteServerlessDBInstanceRequest.cpp
   src/v20170312/model/DescribeDBXlogsRequest.cpp
   src/v20170312/model/InquiryPriceCreateDBInstancesResponse.cpp
   src/v20170312/model/AccountInfo.cpp
@@ -102,58 +122,72 @@ set(postgres_src
   src/v20170312/model/DescribeDBErrlogsResponse.cpp
   src/v20170312/model/InquiryPriceCreateDBInstancesRequest.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
-  src/v20170312/model/InquiryPriceUpgradeDBInstanceResponse.cpp
+  src/v20170312/model/SpecItemInfo.cpp
+  src/v20170312/model/DescribeProductConfigRequest.cpp
+  src/v20170312/model/CreateDBInstancesResponse.cpp
+  src/v20170312/model/RestartDBInstanceRequest.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
   src/v20170312/model/ErrLogDetail.cpp
-  src/v20170312/model/ModifyAccountRemarkResponse.cpp
+  src/v20170312/model/ServerlessDBInstance.cpp
+  src/v20170312/model/DescribeServerlessDBInstancesResponse.cpp
   src/v20170312/model/ModifyDBInstancesProjectResponse.cpp
   src/v20170312/model/RenewInstanceResponse.cpp
   src/v20170312/model/DescribeZonesRequest.cpp
-  src/v20170312/model/SpecInfo.cpp
+  src/v20170312/model/UpgradeDBInstanceRequest.cpp
+  src/v20170312/model/OpenServerlessDBExtranetAccessRequest.cpp
   src/v20170312/model/RegionInfo.cpp
+  src/v20170312/model/DeleteServerlessDBInstanceResponse.cpp
+  src/v20170312/model/SlowlogDetail.cpp
   src/v20170312/model/InitDBInstancesRequest.cpp
   src/v20170312/model/RestartDBInstanceResponse.cpp
   src/v20170312/model/SetAutoRenewFlagResponse.cpp
   src/v20170312/model/DescribeDBInstancesResponse.cpp
-  src/v20170312/model/UpgradeDBInstanceResponse.cpp
+  src/v20170312/model/SpecInfo.cpp
   src/v20170312/model/DBInstance.cpp
   src/v20170312/model/DescribeProductConfigResponse.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
   src/v20170312/model/ResetAccountPasswordRequest.cpp
-  src/v20170312/model/DescribeProductConfigRequest.cpp
-  src/v20170312/model/CloseDBExtranetAccessRequest.cpp
+  src/v20170312/model/DescribeOrdersRequest.cpp
+  src/v20170312/model/InquiryPriceUpgradeDBInstanceResponse.cpp
   src/v20170312/model/InitDBInstancesResponse.cpp
   src/v20170312/model/DescribeDBBackupsRequest.cpp
-  src/v20170312/model/SpecItemInfo.cpp
+  src/v20170312/model/ServerlessDBAccount.cpp
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/Filter.cpp
   src/v20170312/model/RenewInstanceRequest.cpp
   src/v20170312/model/PgDeal.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp
-  src/v20170312/model/ZoneInfo.cpp
+  src/v20170312/model/DescribeDatabasesRequest.cpp
   src/v20170312/model/DescribeAccountsResponse.cpp
   src/v20170312/model/InquiryPriceRenewDBInstanceResponse.cpp
   src/v20170312/model/DescribeDBErrlogsRequest.cpp
+  src/v20170312/model/ZoneInfo.cpp
   src/v20170312/model/DBBackup.cpp
   src/v20170312/model/DBInstanceNetInfo.cpp
   src/v20170312/model/ModifyDBInstancesProjectRequest.cpp
+  src/v20170312/model/ServerlessDBInstanceNetInfo.cpp
+  src/v20170312/model/UpgradeDBInstanceResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameResponse.cpp
+  src/v20170312/model/OpenServerlessDBExtranetAccessResponse.cpp
   src/v20170312/model/CloseDBExtranetAccessResponse.cpp
-  src/v20170312/model/SlowlogDetail.cpp
+  src/v20170312/model/DestroyDBInstanceResponse.cpp
   src/v20170312/model/DescribeDBInstanceAttributeResponse.cpp
   src/v20170312/model/DescribeDBSlowlogsRequest.cpp
+  src/v20170312/model/DescribeServerlessDBInstancesRequest.cpp
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
   src/v20170312/model/DescribeDBBackupsResponse.cpp
   src/v20170312/model/DescribeRegionsRequest.cpp
   src/v20170312/model/DescribeZonesResponse.cpp
   src/v20170312/model/NormalQueryItem.cpp
-  src/v20170312/model/UpgradeDBInstanceRequest.cpp
+  src/v20170312/model/CreateServerlessDBInstanceResponse.cpp
+  src/v20170312/model/DescribeDatabasesResponse.cpp
   src/v20170312/model/DescribeDBXlogsResponse.cpp
   src/v20170312/model/DescribeDBInstanceAttributeRequest.cpp
-  src/v20170312/model/DescribeOrdersRequest.cpp
+  src/v20170312/model/CloseServerlessDBExtranetAccessRequest.cpp
+  src/v20170312/model/ModifyAccountRemarkResponse.cpp
   src/v20170312/model/DescribeDBSlowlogsResponse.cpp
   src/v20170312/model/ModifyAccountRemarkRequest.cpp
-  src/v20170312/model/CreateDBInstancesResponse.cpp
+  src/v20170312/model/CloseDBExtranetAccessRequest.cpp
   src/v20170312/model/Xlog.cpp
   )
 

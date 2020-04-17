@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool DealNameHasBeenSet() const;
 
+                    /**
+                     * 获取冻结流水号
+                     * @return BillId 冻结流水号
+                     */
+                    std::string GetBillId() const;
+
+                    /**
+                     * 判断参数 BillId 是否已赋值
+                     * @return BillId 是否已赋值
+                     */
+                    bool BillIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
+
+                    /**
+                     * 冻结流水号
+                     */
+                    std::string m_billId;
+                    bool m_billIdHasBeenSet;
 
                 };
             }

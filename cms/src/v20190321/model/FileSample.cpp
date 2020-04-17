@@ -24,7 +24,8 @@ using namespace std;
 FileSample::FileSample() :
     m_fileMd5HasBeenSet(false),
     m_fileNameHasBeenSet(false),
-    m_fileUrlHasBeenSet(false)
+    m_fileUrlHasBeenSet(false),
+    m_compressFileUrlHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome FileSample::Deserialize(const Value &value)
         m_fileUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("CompressFileUrl") && !value["CompressFileUrl"].IsNull())
+    {
+        if (!value["CompressFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `FileSample.CompressFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compressFileUrl = string(value["CompressFileUrl"].GetString());
+        m_compressFileUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void FileSample::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "FileUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressFileUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CompressFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_compressFileUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void FileSample::SetFileUrl(const string& _fileUrl)
 bool FileSample::FileUrlHasBeenSet() const
 {
     return m_fileUrlHasBeenSet;
+}
+
+string FileSample::GetCompressFileUrl() const
+{
+    return m_compressFileUrl;
+}
+
+void FileSample::SetCompressFileUrl(const string& _compressFileUrl)
+{
+    m_compressFileUrl = _compressFileUrl;
+    m_compressFileUrlHasBeenSet = true;
+}
+
+bool FileSample::CompressFileUrlHasBeenSet() const
+{
+    return m_compressFileUrlHasBeenSet;
 }
 

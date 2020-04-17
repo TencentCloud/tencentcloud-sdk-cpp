@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 二维码在图片中的位置，由4个点的坐标表示
+                * 二维码在图片中的位置，由边界点的坐标表示
                 */
                 class CodePosition : public AbstractModel
                 {

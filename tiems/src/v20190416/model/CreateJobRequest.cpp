@@ -36,7 +36,8 @@ CreateJobRequest::CreateJobRequest() :
     m_gpuHasBeenSet(false),
     m_gpuMemoryHasBeenSet(false),
     m_gpuTypeHasBeenSet(false),
-    m_quantizationInputHasBeenSet(false)
+    m_quantizationInputHasBeenSet(false),
+    m_logTopicIdHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,14 @@ string CreateJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_quantizationInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_logTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -367,6 +376,22 @@ void CreateJobRequest::SetQuantizationInput(const QuantizationInput& _quantizati
 bool CreateJobRequest::QuantizationInputHasBeenSet() const
 {
     return m_quantizationInputHasBeenSet;
+}
+
+string CreateJobRequest::GetLogTopicId() const
+{
+    return m_logTopicId;
+}
+
+void CreateJobRequest::SetLogTopicId(const string& _logTopicId)
+{
+    m_logTopicId = _logTopicId;
+    m_logTopicIdHasBeenSet = true;
+}
+
+bool CreateJobRequest::LogTopicIdHasBeenSet() const
+{
+    return m_logTopicIdHasBeenSet;
 }
 
 
