@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频转动图结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnimatedGraphicsSet 视频转动图结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAnimatedGraphicsItem> GetAnimatedGraphicsSet() const;
 
                     /**
                      * 设置视频转动图结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AnimatedGraphicsSet 视频转动图结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAnimatedGraphicsSet(const std::vector<MediaAnimatedGraphicsItem>& _animatedGraphicsSet);
 
@@ -73,7 +69,6 @@ namespace TencentCloud
 
                     /**
                      * 视频转动图结果信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAnimatedGraphicsItem> m_animatedGraphicsSet;
                     bool m_animatedGraphicsSetHasBeenSet;

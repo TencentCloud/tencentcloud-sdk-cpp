@@ -33,7 +33,8 @@ Activity::Activity() :
     m_endTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_activityRelatedInstanceSetHasBeenSet(false),
-    m_statusMessageSimplifiedHasBeenSet(false)
+    m_statusMessageSimplifiedHasBeenSet(false),
+    m_lifecycleActionResultSetHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,26 @@ CoreInternalOutcome Activity::Deserialize(const Value &value)
         m_statusMessageSimplifiedHasBeenSet = true;
     }
 
+    if (value.HasMember("LifecycleActionResultSet") && !value["LifecycleActionResultSet"].IsNull())
+    {
+        if (!value["LifecycleActionResultSet"].IsArray())
+            return CoreInternalOutcome(Error("response `Activity.LifecycleActionResultSet` is not array type"));
+
+        const Value &tmpValue = value["LifecycleActionResultSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LifecycleActionResultInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_lifecycleActionResultSet.push_back(item);
+        }
+        m_lifecycleActionResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -280,6 +301,21 @@ void Activity::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "StatusMessageSimplified";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_statusMessageSimplified.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lifecycleActionResultSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LifecycleActionResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_lifecycleActionResultSet.begin(); itr != m_lifecycleActionResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -475,5 +511,21 @@ void Activity::SetStatusMessageSimplified(const string& _statusMessageSimplified
 bool Activity::StatusMessageSimplifiedHasBeenSet() const
 {
     return m_statusMessageSimplifiedHasBeenSet;
+}
+
+vector<LifecycleActionResultInfo> Activity::GetLifecycleActionResultSet() const
+{
+    return m_lifecycleActionResultSet;
+}
+
+void Activity::SetLifecycleActionResultSet(const vector<LifecycleActionResultInfo>& _lifecycleActionResultSet)
+{
+    m_lifecycleActionResultSet = _lifecycleActionResultSet;
+    m_lifecycleActionResultSetHasBeenSet = true;
+}
+
+bool Activity::LifecycleActionResultSetHasBeenSet() const
+{
+    return m_lifecycleActionResultSetHasBeenSet;
 }
 

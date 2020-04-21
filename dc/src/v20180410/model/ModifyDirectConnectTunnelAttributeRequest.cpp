@@ -30,7 +30,8 @@ ModifyDirectConnectTunnelAttributeRequest::ModifyDirectConnectTunnelAttributeReq
     m_routeFilterPrefixesHasBeenSet(false),
     m_tencentAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_tencentBackupAddressHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyDirectConnectTunnelAttributeRequest::ToJsonString() const
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_tencentBackupAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TencentBackupAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -223,6 +232,22 @@ void ModifyDirectConnectTunnelAttributeRequest::SetBandwidth(const int64_t& _ban
 bool ModifyDirectConnectTunnelAttributeRequest::BandwidthHasBeenSet() const
 {
     return m_bandwidthHasBeenSet;
+}
+
+string ModifyDirectConnectTunnelAttributeRequest::GetTencentBackupAddress() const
+{
+    return m_tencentBackupAddress;
+}
+
+void ModifyDirectConnectTunnelAttributeRequest::SetTencentBackupAddress(const string& _tencentBackupAddress)
+{
+    m_tencentBackupAddress = _tencentBackupAddress;
+    m_tencentBackupAddressHasBeenSet = true;
+}
+
+bool ModifyDirectConnectTunnelAttributeRequest::TencentBackupAddressHasBeenSet() const
+{
+    return m_tencentBackupAddressHasBeenSet;
 }
 
 

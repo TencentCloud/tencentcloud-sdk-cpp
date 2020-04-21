@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转自适应码流信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdaptiveDynamicStreamingSet 转自适应码流信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdaptiveDynamicStreamingInfoItem> GetAdaptiveDynamicStreamingSet() const;
 
                     /**
                      * 设置转自适应码流信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AdaptiveDynamicStreamingSet 转自适应码流信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAdaptiveDynamicStreamingSet(const std::vector<AdaptiveDynamicStreamingInfoItem>& _adaptiveDynamicStreamingSet);
 
@@ -73,7 +69,6 @@ namespace TencentCloud
 
                     /**
                      * 转自适应码流信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdaptiveDynamicStreamingInfoItem> m_adaptiveDynamicStreamingSet;
                     bool m_adaptiveDynamicStreamingSetHasBeenSet;

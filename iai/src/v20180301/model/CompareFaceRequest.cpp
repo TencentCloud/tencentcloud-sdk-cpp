@@ -29,7 +29,8 @@ CompareFaceRequest::CompareFaceRequest() :
     m_urlAHasBeenSet(false),
     m_urlBHasBeenSet(false),
     m_faceModelVersionHasBeenSet(false),
-    m_qualityControlHasBeenSet(false)
+    m_qualityControlHasBeenSet(false),
+    m_needRotateDetectionHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string CompareFaceRequest::ToJsonString() const
         string key = "QualityControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qualityControl, allocator);
+    }
+
+    if (m_needRotateDetectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedRotateDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRotateDetection, allocator);
     }
 
 
@@ -190,6 +199,22 @@ void CompareFaceRequest::SetQualityControl(const uint64_t& _qualityControl)
 bool CompareFaceRequest::QualityControlHasBeenSet() const
 {
     return m_qualityControlHasBeenSet;
+}
+
+uint64_t CompareFaceRequest::GetNeedRotateDetection() const
+{
+    return m_needRotateDetection;
+}
+
+void CompareFaceRequest::SetNeedRotateDetection(const uint64_t& _needRotateDetection)
+{
+    m_needRotateDetection = _needRotateDetection;
+    m_needRotateDetectionHasBeenSet = true;
+}
+
+bool CompareFaceRequest::NeedRotateDetectionHasBeenSet() const
+{
+    return m_needRotateDetectionHasBeenSet;
 }
 
 

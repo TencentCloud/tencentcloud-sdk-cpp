@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h>
+#include <tencentcloud/as/v20180419/model/LifecycleActionResultInfo.h>
 
 
 namespace TencentCloud
@@ -299,6 +300,24 @@ namespace TencentCloud
                      */
                     bool StatusMessageSimplifiedHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩活动中生命周期挂钩的执行结果。
+                     * @return LifecycleActionResultSet 伸缩活动中生命周期挂钩的执行结果。
+                     */
+                    std::vector<LifecycleActionResultInfo> GetLifecycleActionResultSet() const;
+
+                    /**
+                     * 设置伸缩活动中生命周期挂钩的执行结果。
+                     * @param LifecycleActionResultSet 伸缩活动中生命周期挂钩的执行结果。
+                     */
+                    void SetLifecycleActionResultSet(const std::vector<LifecycleActionResultInfo>& _lifecycleActionResultSet);
+
+                    /**
+                     * 判断参数 LifecycleActionResultSet 是否已赋值
+                     * @return LifecycleActionResultSet 是否已赋值
+                     */
+                    bool LifecycleActionResultSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +400,12 @@ namespace TencentCloud
                      */
                     std::string m_statusMessageSimplified;
                     bool m_statusMessageSimplifiedHasBeenSet;
+
+                    /**
+                     * 伸缩活动中生命周期挂钩的执行结果。
+                     */
+                    std::vector<LifecycleActionResultInfo> m_lifecycleActionResultSet;
+                    bool m_lifecycleActionResultSetHasBeenSet;
 
                 };
             }

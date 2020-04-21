@@ -60,6 +60,42 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询返回记录条数，默认为10000。
+                     * @return Limit 查询返回记录条数，默认为10000。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置查询返回记录条数，默认为10000。
+                     * @param Limit 查询返回记录条数，默认为10000。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量，默认值为0。
+                     * @return Offset 偏移量，默认值为0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，默认值为0。
+                     * @param Offset 偏移量，默认值为0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +103,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 查询返回记录条数，默认为10000。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 偏移量，默认值为0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

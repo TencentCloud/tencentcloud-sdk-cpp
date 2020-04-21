@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 媒体文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置媒体文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 媒体文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -71,17 +67,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 媒体文件描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置媒体文件描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Description 媒体文件描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -93,17 +85,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CreateTime 媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -115,17 +103,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param UpdateTime 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -137,17 +121,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ExpireTime 媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
@@ -159,17 +139,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的分类 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassId 媒体文件的分类 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetClassId() const;
 
                     /**
                      * 设置媒体文件的分类 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ClassId 媒体文件的分类 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetClassId(const int64_t& _classId);
 
@@ -181,17 +157,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的分类名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassName 媒体文件的分类名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetClassName() const;
 
                     /**
                      * 设置媒体文件的分类名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ClassName 媒体文件的分类名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetClassName(const std::string& _className);
 
@@ -203,17 +175,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassPath 媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetClassPath() const;
 
                     /**
                      * 设置媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ClassPath 媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetClassPath(const std::string& _classPath);
 
@@ -225,17 +193,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的封面图片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverUrl 媒体文件的封面图片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCoverUrl() const;
 
                     /**
                      * 设置媒体文件的封面图片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CoverUrl 媒体文件的封面图片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
 
@@ -247,17 +211,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的封装格式，例如 mp4、flv 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 媒体文件的封装格式，例如 mp4、flv 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置媒体文件的封装格式，例如 mp4、flv 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Type 媒体文件的封装格式，例如 mp4、flv 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const std::string& _type);
 
@@ -269,17 +229,13 @@ namespace TencentCloud
 
                     /**
                      * 获取原始媒体文件的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaUrl 原始媒体文件的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMediaUrl() const;
 
                     /**
                      * 设置原始媒体文件的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MediaUrl 原始媒体文件的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMediaUrl(const std::string& _mediaUrl);
 
@@ -313,17 +269,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件存储地区，如 ap-guangzhou，参见[地域列表](https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageRegion 媒体文件存储地区，如 ap-guangzhou，参见[地域列表](https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 设置媒体文件存储地区，如 ap-guangzhou，参见[地域列表](https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param StorageRegion 媒体文件存储地区，如 ap-guangzhou，参见[地域列表](https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
@@ -335,17 +287,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 媒体文件的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
                      * 设置媒体文件的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TagSet 媒体文件的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
@@ -357,17 +305,13 @@ namespace TencentCloud
 
                     /**
                      * 获取直播录制文件的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vid 直播录制文件的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVid() const;
 
                     /**
                      * 设置直播录制文件的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Vid 直播录制文件的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVid(const std::string& _vid);
 
@@ -381,77 +325,66 @@ namespace TencentCloud
 
                     /**
                      * 媒体文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 媒体文件描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 媒体文件的分类 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
                      * 媒体文件的分类名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_className;
                     bool m_classNameHasBeenSet;
 
                     /**
                      * 媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
 
                     /**
                      * 媒体文件的封面图片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;
 
                     /**
                      * 媒体文件的封装格式，例如 mp4、flv 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 原始媒体文件的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mediaUrl;
                     bool m_mediaUrlHasBeenSet;
@@ -465,21 +398,18 @@ namespace TencentCloud
 
                     /**
                      * 媒体文件存储地区，如 ap-guangzhou，参见[地域列表](https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageRegion;
                     bool m_storageRegionHasBeenSet;
 
                     /**
                      * 媒体文件的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
                      * 直播录制文件的唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vid;
                     bool m_vidHasBeenSet;

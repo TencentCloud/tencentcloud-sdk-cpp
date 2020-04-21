@@ -513,6 +513,49 @@ TcrClient::CreateUserPersonalOutcomeCallable TcrClient::CreateUserPersonalCallab
     return task->get_future();
 }
 
+TcrClient::CreateWebhookTriggerOutcome TcrClient::CreateWebhookTrigger(const CreateWebhookTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWebhookTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWebhookTriggerResponse rsp = CreateWebhookTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWebhookTriggerOutcome(rsp);
+        else
+            return CreateWebhookTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWebhookTriggerOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateWebhookTriggerAsync(const CreateWebhookTriggerRequest& request, const CreateWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWebhookTrigger(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateWebhookTriggerOutcomeCallable TcrClient::CreateWebhookTriggerCallable(const CreateWebhookTriggerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWebhookTriggerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWebhookTrigger(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DeleteApplicationTriggerPersonalOutcome TcrClient::DeleteApplicationTriggerPersonal(const DeleteApplicationTriggerPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApplicationTriggerPersonal");
@@ -900,6 +943,49 @@ TcrClient::DeleteRepositoryPersonalOutcomeCallable TcrClient::DeleteRepositoryPe
     return task->get_future();
 }
 
+TcrClient::DeleteWebhookTriggerOutcome TcrClient::DeleteWebhookTrigger(const DeleteWebhookTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWebhookTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWebhookTriggerResponse rsp = DeleteWebhookTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWebhookTriggerOutcome(rsp);
+        else
+            return DeleteWebhookTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWebhookTriggerOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteWebhookTriggerAsync(const DeleteWebhookTriggerRequest& request, const DeleteWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWebhookTrigger(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteWebhookTriggerOutcomeCallable TcrClient::DeleteWebhookTriggerCallable(const DeleteWebhookTriggerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWebhookTriggerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWebhookTrigger(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeApplicationTriggerLogPersonalOutcome TcrClient::DescribeApplicationTriggerLogPersonal(const DescribeApplicationTriggerLogPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApplicationTriggerLogPersonal");
@@ -1151,6 +1237,49 @@ TcrClient::DescribeImageLifecyclePersonalOutcomeCallable TcrClient::DescribeImag
         [this, request]()
         {
             return this->DescribeImageLifecyclePersonal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeImageManifestsOutcome TcrClient::DescribeImageManifests(const DescribeImageManifestsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageManifests");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageManifestsResponse rsp = DescribeImageManifestsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageManifestsOutcome(rsp);
+        else
+            return DescribeImageManifestsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageManifestsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeImageManifestsAsync(const DescribeImageManifestsRequest& request, const DescribeImageManifestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageManifests(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeImageManifestsOutcomeCallable TcrClient::DescribeImageManifestsCallable(const DescribeImageManifestsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageManifestsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageManifests(request);
         }
     );
 
@@ -1674,6 +1803,92 @@ TcrClient::DescribeUserQuotaPersonalOutcomeCallable TcrClient::DescribeUserQuota
     return task->get_future();
 }
 
+TcrClient::DescribeWebhookTriggerOutcome TcrClient::DescribeWebhookTrigger(const DescribeWebhookTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebhookTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebhookTriggerResponse rsp = DescribeWebhookTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebhookTriggerOutcome(rsp);
+        else
+            return DescribeWebhookTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebhookTriggerOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeWebhookTriggerAsync(const DescribeWebhookTriggerRequest& request, const DescribeWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebhookTrigger(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeWebhookTriggerOutcomeCallable TcrClient::DescribeWebhookTriggerCallable(const DescribeWebhookTriggerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebhookTriggerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebhookTrigger(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeWebhookTriggerLogOutcome TcrClient::DescribeWebhookTriggerLog(const DescribeWebhookTriggerLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebhookTriggerLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebhookTriggerLogResponse rsp = DescribeWebhookTriggerLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebhookTriggerLogOutcome(rsp);
+        else
+            return DescribeWebhookTriggerLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebhookTriggerLogOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeWebhookTriggerLogAsync(const DescribeWebhookTriggerLogRequest& request, const DescribeWebhookTriggerLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebhookTriggerLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeWebhookTriggerLogOutcomeCallable TcrClient::DescribeWebhookTriggerLogCallable(const DescribeWebhookTriggerLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebhookTriggerLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebhookTriggerLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DuplicateImagePersonalOutcome TcrClient::DuplicateImagePersonal(const DuplicateImagePersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DuplicateImagePersonal");
@@ -2054,6 +2269,49 @@ TcrClient::ModifyUserPasswordPersonalOutcomeCallable TcrClient::ModifyUserPasswo
         [this, request]()
         {
             return this->ModifyUserPasswordPersonal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::ModifyWebhookTriggerOutcome TcrClient::ModifyWebhookTrigger(const ModifyWebhookTriggerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWebhookTrigger");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWebhookTriggerResponse rsp = ModifyWebhookTriggerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWebhookTriggerOutcome(rsp);
+        else
+            return ModifyWebhookTriggerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWebhookTriggerOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ModifyWebhookTriggerAsync(const ModifyWebhookTriggerRequest& request, const ModifyWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWebhookTrigger(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ModifyWebhookTriggerOutcomeCallable TcrClient::ModifyWebhookTriggerCallable(const ModifyWebhookTriggerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWebhookTriggerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWebhookTrigger(request);
         }
     );
 

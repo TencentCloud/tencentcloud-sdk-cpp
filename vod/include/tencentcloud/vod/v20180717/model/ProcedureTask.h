@@ -233,17 +233,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频处理任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaProcessResultSet 视频处理任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaProcessTaskResult> GetMediaProcessResultSet() const;
 
                     /**
                      * 设置视频处理任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MediaProcessResultSet 视频处理任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMediaProcessResultSet(const std::vector<MediaProcessTaskResult>& _mediaProcessResultSet);
 
@@ -255,17 +251,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频内容审核任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
 
                     /**
                      * 设置视频内容审核任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
 
@@ -277,17 +269,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频内容分析任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiAnalysisResultSet 视频内容分析任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiAnalysisResult> GetAiAnalysisResultSet() const;
 
                     /**
                      * 设置视频内容分析任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AiAnalysisResultSet 视频内容分析任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAiAnalysisResultSet(const std::vector<AiAnalysisResult>& _aiAnalysisResultSet);
 
@@ -299,17 +287,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频内容识别任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiRecognitionResult> GetAiRecognitionResultSet() const;
 
                     /**
                      * 设置视频内容识别任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAiRecognitionResultSet(const std::vector<AiRecognitionResult>& _aiRecognitionResultSet);
 
@@ -464,28 +448,24 @@ namespace TencentCloud
 
                     /**
                      * 视频处理任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaProcessTaskResult> m_mediaProcessResultSet;
                     bool m_mediaProcessResultSetHasBeenSet;
 
                     /**
                      * 视频内容审核任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiContentReviewResult> m_aiContentReviewResultSet;
                     bool m_aiContentReviewResultSetHasBeenSet;
 
                     /**
                      * 视频内容分析任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiAnalysisResult> m_aiAnalysisResultSet;
                     bool m_aiAnalysisResultSetHasBeenSet;
 
                     /**
                      * 视频内容识别任务的执行状态与结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AiRecognitionResult> m_aiRecognitionResultSet;
                     bool m_aiRecognitionResultSetHasBeenSet;

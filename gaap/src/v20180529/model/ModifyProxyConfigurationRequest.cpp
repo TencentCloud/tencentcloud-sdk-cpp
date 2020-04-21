@@ -28,7 +28,8 @@ ModifyProxyConfigurationRequest::ModifyProxyConfigurationRequest() :
     m_bandwidthHasBeenSet(false),
     m_concurrentHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_proxyIdHasBeenSet(false)
+    m_proxyIdHasBeenSet(false),
+    m_billingTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string ModifyProxyConfigurationRequest::ToJsonString() const
         string key = "ProxyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_proxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BillingType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_billingType, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void ModifyProxyConfigurationRequest::SetProxyId(const string& _proxyId)
 bool ModifyProxyConfigurationRequest::ProxyIdHasBeenSet() const
 {
     return m_proxyIdHasBeenSet;
+}
+
+int64_t ModifyProxyConfigurationRequest::GetBillingType() const
+{
+    return m_billingType;
+}
+
+void ModifyProxyConfigurationRequest::SetBillingType(const int64_t& _billingType)
+{
+    m_billingType = _billingType;
+    m_billingTypeHasBeenSet = true;
+}
+
+bool ModifyProxyConfigurationRequest::BillingTypeHasBeenSet() const
+{
+    return m_billingTypeHasBeenSet;
 }
 
 

@@ -1,0 +1,312 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/tcr/v20190924/model/WebhookTrigger.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace rapidjson;
+using namespace std;
+
+WebhookTrigger::WebhookTrigger() :
+    m_nameHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_eventTypesHasBeenSet(false),
+    m_conditionHasBeenSet(false),
+    m_enabledHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome WebhookTrigger::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WebhookTrigger.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Targets") && !value["Targets"].IsNull())
+    {
+        if (!value["Targets"].IsArray())
+            return CoreInternalOutcome(Error("response `WebhookTrigger.Targets` is not array type"));
+
+        const Value &tmpValue = value["Targets"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WebhookTarget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_targets.push_back(item);
+        }
+        m_targetsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventTypes") && !value["EventTypes"].IsNull())
+    {
+        if (!value["EventTypes"].IsArray())
+            return CoreInternalOutcome(Error("response `WebhookTrigger.EventTypes` is not array type"));
+
+        const Value &tmpValue = value["EventTypes"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_eventTypes.push_back((*itr).GetString());
+        }
+        m_eventTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Condition") && !value["Condition"].IsNull())
+    {
+        if (!value["Condition"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WebhookTrigger.Condition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_condition = string(value["Condition"].GetString());
+        m_conditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
+    {
+        if (!value["Enabled"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `WebhookTrigger.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabled = value["Enabled"].GetBool();
+        m_enabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `WebhookTrigger.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetInt64();
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WebhookTrigger.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void WebhookTrigger::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Targets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_targets.begin(); itr != m_targets.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_eventTypesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_eventTypes.begin(); itr != m_eventTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_conditionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Condition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_condition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enabledHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabled, allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string WebhookTrigger::GetName() const
+{
+    return m_name;
+}
+
+void WebhookTrigger::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool WebhookTrigger::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+vector<WebhookTarget> WebhookTrigger::GetTargets() const
+{
+    return m_targets;
+}
+
+void WebhookTrigger::SetTargets(const vector<WebhookTarget>& _targets)
+{
+    m_targets = _targets;
+    m_targetsHasBeenSet = true;
+}
+
+bool WebhookTrigger::TargetsHasBeenSet() const
+{
+    return m_targetsHasBeenSet;
+}
+
+vector<string> WebhookTrigger::GetEventTypes() const
+{
+    return m_eventTypes;
+}
+
+void WebhookTrigger::SetEventTypes(const vector<string>& _eventTypes)
+{
+    m_eventTypes = _eventTypes;
+    m_eventTypesHasBeenSet = true;
+}
+
+bool WebhookTrigger::EventTypesHasBeenSet() const
+{
+    return m_eventTypesHasBeenSet;
+}
+
+string WebhookTrigger::GetCondition() const
+{
+    return m_condition;
+}
+
+void WebhookTrigger::SetCondition(const string& _condition)
+{
+    m_condition = _condition;
+    m_conditionHasBeenSet = true;
+}
+
+bool WebhookTrigger::ConditionHasBeenSet() const
+{
+    return m_conditionHasBeenSet;
+}
+
+bool WebhookTrigger::GetEnabled() const
+{
+    return m_enabled;
+}
+
+void WebhookTrigger::SetEnabled(const bool& _enabled)
+{
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
+}
+
+bool WebhookTrigger::EnabledHasBeenSet() const
+{
+    return m_enabledHasBeenSet;
+}
+
+int64_t WebhookTrigger::GetId() const
+{
+    return m_id;
+}
+
+void WebhookTrigger::SetId(const int64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool WebhookTrigger::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string WebhookTrigger::GetDescription() const
+{
+    return m_description;
+}
+
+void WebhookTrigger::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool WebhookTrigger::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+

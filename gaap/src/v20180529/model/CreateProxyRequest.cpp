@@ -33,7 +33,8 @@ CreateProxyRequest::CreateProxyRequest() :
     m_clientTokenHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_clonedProxyIdHasBeenSet(false)
+    m_clonedProxyIdHasBeenSet(false),
+    m_billingTypeHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,14 @@ string CreateProxyRequest::ToJsonString() const
         string key = "ClonedProxyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clonedProxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BillingType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_billingType, allocator);
     }
 
 
@@ -297,6 +306,22 @@ void CreateProxyRequest::SetClonedProxyId(const string& _clonedProxyId)
 bool CreateProxyRequest::ClonedProxyIdHasBeenSet() const
 {
     return m_clonedProxyIdHasBeenSet;
+}
+
+int64_t CreateProxyRequest::GetBillingType() const
+{
+    return m_billingType;
+}
+
+void CreateProxyRequest::SetBillingType(const int64_t& _billingType)
+{
+    m_billingType = _billingType;
+    m_billingTypeHasBeenSet = true;
+}
+
+bool CreateProxyRequest::BillingTypeHasBeenSet() const
+{
+    return m_billingTypeHasBeenSet;
 }
 
 

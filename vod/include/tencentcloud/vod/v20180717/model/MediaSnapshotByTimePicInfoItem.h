@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeOffset 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetTimeOffset() const;
 
                     /**
                      * 设置该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TimeOffset 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTimeOffset(const double& _timeOffset);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取该张截图的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 该张截图的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置该张截图的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Url 该张截图的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetWaterMarkDefinition() const;
 
                     /**
                      * 设置截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WaterMarkDefinition 截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWaterMarkDefinition(const std::vector<int64_t>& _waterMarkDefinition);
 
@@ -116,21 +104,18 @@ namespace TencentCloud
 
                     /**
                      * 该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_timeOffset;
                     bool m_timeOffsetHasBeenSet;
 
                     /**
                      * 该张截图的 URL 地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 截图如果被打上了水印，被打水印的模板 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_waterMarkDefinition;
                     bool m_waterMarkDefinitionHasBeenSet;

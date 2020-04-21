@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeClientConnectionsResponse::DescribeClientConnectionsResponse() :
-    m_clientsHasBeenSet(false)
+    m_clientsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeClientConnectionsResponse::Deserialize(const string 
         m_clientsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,16 @@ vector<ClientConnection> DescribeClientConnectionsResponse::GetClients() const
 bool DescribeClientConnectionsResponse::ClientsHasBeenSet() const
 {
     return m_clientsHasBeenSet;
+}
+
+uint64_t DescribeClientConnectionsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeClientConnectionsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

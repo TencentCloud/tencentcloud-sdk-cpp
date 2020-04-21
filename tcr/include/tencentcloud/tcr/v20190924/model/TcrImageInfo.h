@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool ImageVersionHasBeenSet() const;
 
+                    /**
+                     * 获取更新时间
+                     * @return UpdateTime 更新时间
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置更新时间
+                     * @param UpdateTime 更新时间
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_imageVersion;
                     bool m_imageVersionHasBeenSet;
+
+                    /**
+                     * 更新时间
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

@@ -138,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
                      * 设置任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
 
@@ -160,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
@@ -247,14 +239,12 @@ namespace TencentCloud
 
                     /**
                      * 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
                      * 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

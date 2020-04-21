@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取各规格的转码信息集合，每个元素代表一个规格的转码结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeSet 各规格的转码信息集合，每个元素代表一个规格的转码结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaTranscodeItem> GetTranscodeSet() const;
 
                     /**
                      * 设置各规格的转码信息集合，每个元素代表一个规格的转码结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TranscodeSet 各规格的转码信息集合，每个元素代表一个规格的转码结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTranscodeSet(const std::vector<MediaTranscodeItem>& _transcodeSet);
 
@@ -73,7 +69,6 @@ namespace TencentCloud
 
                     /**
                      * 各规格的转码信息集合，每个元素代表一个规格的转码结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaTranscodeItem> m_transcodeSet;
                     bool m_transcodeSetHasBeenSet;

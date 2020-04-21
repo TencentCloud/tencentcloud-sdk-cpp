@@ -67,17 +67,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Transitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TransitionOpertion> GetTransitions() const;
 
                     /**
                      * 设置转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Transitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTransitions(const std::vector<TransitionOpertion>& _transitions);
 
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TransitionOpertion> m_transitions;
                     bool m_transitionsHasBeenSet;

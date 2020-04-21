@@ -43,12 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建集群操作是否成功。
-true：操作成功。
-false：操作失败。
-                     * @return Result 创建集群操作是否成功。
-true：操作成功。
-false：操作失败。
+                     * 获取集群ID
+                     * @return Result 集群ID
                      */
                     std::string GetResult() const;
 
@@ -61,9 +57,7 @@ false：操作失败。
                 private:
 
                     /**
-                     * 创建集群操作是否成功。
-true：操作成功。
-false：操作失败。
+                     * 集群ID
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

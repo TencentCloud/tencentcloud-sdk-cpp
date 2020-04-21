@@ -170,6 +170,24 @@ namespace TencentCloud
                      */
                     bool BandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取腾讯侧备用互联IP
+                     * @return TencentBackupAddress 腾讯侧备用互联IP
+                     */
+                    std::string GetTencentBackupAddress() const;
+
+                    /**
+                     * 设置腾讯侧备用互联IP
+                     * @param TencentBackupAddress 腾讯侧备用互联IP
+                     */
+                    void SetTencentBackupAddress(const std::string& _tencentBackupAddress);
+
+                    /**
+                     * 判断参数 TencentBackupAddress 是否已赋值
+                     * @return TencentBackupAddress 是否已赋值
+                     */
+                    bool TencentBackupAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +231,12 @@ namespace TencentCloud
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 腾讯侧备用互联IP
+                     */
+                    std::string m_tencentBackupAddress;
+                    bool m_tencentBackupAddressHasBeenSet;
 
                 };
             }

@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取特定规格的指定时间点截图信息集合。目前每种规格只能有一套截图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotByTimeOffsetSet 特定规格的指定时间点截图信息集合。目前每种规格只能有一套截图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaSnapshotByTimeOffsetItem> GetSnapshotByTimeOffsetSet() const;
 
                     /**
                      * 设置特定规格的指定时间点截图信息集合。目前每种规格只能有一套截图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SnapshotByTimeOffsetSet 特定规格的指定时间点截图信息集合。目前每种规格只能有一套截图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSnapshotByTimeOffsetSet(const std::vector<MediaSnapshotByTimeOffsetItem>& _snapshotByTimeOffsetSet);
 
@@ -73,7 +69,6 @@ namespace TencentCloud
 
                     /**
                      * 特定规格的指定时间点截图信息集合。目前每种规格只能有一套截图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaSnapshotByTimeOffsetItem> m_snapshotByTimeOffsetSet;
                     bool m_snapshotByTimeOffsetSetHasBeenSet;

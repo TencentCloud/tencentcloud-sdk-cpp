@@ -40,6 +40,135 @@ CpdpClient::CpdpClient(const Credential &credential, const string &region, const
 }
 
 
+CpdpClient::ApplyApplicationMaterialOutcome CpdpClient::ApplyApplicationMaterial(const ApplyApplicationMaterialRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyApplicationMaterial");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyApplicationMaterialResponse rsp = ApplyApplicationMaterialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyApplicationMaterialOutcome(rsp);
+        else
+            return ApplyApplicationMaterialOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyApplicationMaterialOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyApplicationMaterialAsync(const ApplyApplicationMaterialRequest& request, const ApplyApplicationMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyApplicationMaterial(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyApplicationMaterialOutcomeCallable CpdpClient::ApplyApplicationMaterialCallable(const ApplyApplicationMaterialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyApplicationMaterialOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyApplicationMaterial(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ApplyOutwardOrderOutcome CpdpClient::ApplyOutwardOrder(const ApplyOutwardOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyOutwardOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyOutwardOrderResponse rsp = ApplyOutwardOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyOutwardOrderOutcome(rsp);
+        else
+            return ApplyOutwardOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyOutwardOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyOutwardOrderAsync(const ApplyOutwardOrderRequest& request, const ApplyOutwardOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyOutwardOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyOutwardOrderOutcomeCallable CpdpClient::ApplyOutwardOrderCallable(const ApplyOutwardOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyOutwardOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyOutwardOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ApplyPayerInfoOutcome CpdpClient::ApplyPayerInfo(const ApplyPayerInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyPayerInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyPayerInfoResponse rsp = ApplyPayerInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyPayerInfoOutcome(rsp);
+        else
+            return ApplyPayerInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyPayerInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyPayerInfoAsync(const ApplyPayerInfoRequest& request, const ApplyPayerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyPayerInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyPayerInfoOutcomeCallable CpdpClient::ApplyPayerInfoCallable(const ApplyPayerInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyPayerInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyPayerInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::ApplyReWithdrawalOutcome CpdpClient::ApplyReWithdrawal(const ApplyReWithdrawalRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyReWithdrawal");
@@ -76,6 +205,49 @@ CpdpClient::ApplyReWithdrawalOutcomeCallable CpdpClient::ApplyReWithdrawalCallab
         [this, request]()
         {
             return this->ApplyReWithdrawal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ApplyTradeOutcome CpdpClient::ApplyTrade(const ApplyTradeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyTrade");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyTradeResponse rsp = ApplyTradeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyTradeOutcome(rsp);
+        else
+            return ApplyTradeOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyTradeOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyTradeAsync(const ApplyTradeRequest& request, const ApplyTradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyTrade(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyTradeOutcomeCallable CpdpClient::ApplyTradeCallable(const ApplyTradeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyTradeOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyTrade(request);
         }
     );
 
@@ -857,6 +1029,49 @@ CpdpClient::QueryAcctInfoListOutcomeCallable CpdpClient::QueryAcctInfoListCallab
     return task->get_future();
 }
 
+CpdpClient::QueryApplicationMaterialOutcome CpdpClient::QueryApplicationMaterial(const QueryApplicationMaterialRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryApplicationMaterial");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryApplicationMaterialResponse rsp = QueryApplicationMaterialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryApplicationMaterialOutcome(rsp);
+        else
+            return QueryApplicationMaterialOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryApplicationMaterialOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryApplicationMaterialAsync(const QueryApplicationMaterialRequest& request, const QueryApplicationMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryApplicationMaterial(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryApplicationMaterialOutcomeCallable CpdpClient::QueryApplicationMaterialCallable(const QueryApplicationMaterialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryApplicationMaterialOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryApplicationMaterial(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryBalanceOutcome CpdpClient::QueryBalance(const QueryBalanceRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryBalance");
@@ -1115,6 +1330,49 @@ CpdpClient::QueryCustAcctIdBalanceOutcomeCallable CpdpClient::QueryCustAcctIdBal
     return task->get_future();
 }
 
+CpdpClient::QueryExchangeRateOutcome CpdpClient::QueryExchangeRate(const QueryExchangeRateRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryExchangeRate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryExchangeRateResponse rsp = QueryExchangeRateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryExchangeRateOutcome(rsp);
+        else
+            return QueryExchangeRateOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryExchangeRateOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryExchangeRateAsync(const QueryExchangeRateRequest& request, const QueryExchangeRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryExchangeRate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryExchangeRateOutcomeCallable CpdpClient::QueryExchangeRateCallable(const QueryExchangeRateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryExchangeRateOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryExchangeRate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryInvoiceOutcome CpdpClient::QueryInvoice(const QueryInvoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryInvoice");
@@ -1287,6 +1545,49 @@ CpdpClient::QueryMemberTransactionOutcomeCallable CpdpClient::QueryMemberTransac
     return task->get_future();
 }
 
+CpdpClient::QueryMerchantBalanceOutcome CpdpClient::QueryMerchantBalance(const QueryMerchantBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMerchantBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMerchantBalanceResponse rsp = QueryMerchantBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMerchantBalanceOutcome(rsp);
+        else
+            return QueryMerchantBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMerchantBalanceOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryMerchantBalanceAsync(const QueryMerchantBalanceRequest& request, const QueryMerchantBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMerchantBalance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryMerchantBalanceOutcomeCallable CpdpClient::QueryMerchantBalanceCallable(const QueryMerchantBalanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMerchantBalanceOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMerchantBalance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryMerchantInfoForManagementOutcome CpdpClient::QueryMerchantInfoForManagement(const QueryMerchantInfoForManagementRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryMerchantInfoForManagement");
@@ -1366,6 +1667,92 @@ CpdpClient::QueryOrderOutcomeCallable CpdpClient::QueryOrderCallable(const Query
         [this, request]()
         {
             return this->QueryOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryOutwardOrderOutcome CpdpClient::QueryOutwardOrder(const QueryOutwardOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOutwardOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOutwardOrderResponse rsp = QueryOutwardOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOutwardOrderOutcome(rsp);
+        else
+            return QueryOutwardOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOutwardOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOutwardOrderAsync(const QueryOutwardOrderRequest& request, const QueryOutwardOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOutwardOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOutwardOrderOutcomeCallable CpdpClient::QueryOutwardOrderCallable(const QueryOutwardOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOutwardOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOutwardOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryPayerInfoOutcome CpdpClient::QueryPayerInfo(const QueryPayerInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryPayerInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryPayerInfoResponse rsp = QueryPayerInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryPayerInfoOutcome(rsp);
+        else
+            return QueryPayerInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryPayerInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryPayerInfoAsync(const QueryPayerInfoRequest& request, const QueryPayerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryPayerInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryPayerInfoOutcomeCallable CpdpClient::QueryPayerInfoCallable(const QueryPayerInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryPayerInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryPayerInfo(request);
         }
     );
 
@@ -1538,6 +1925,49 @@ CpdpClient::QuerySmallAmountTransferOutcomeCallable CpdpClient::QuerySmallAmount
         [this, request]()
         {
             return this->QuerySmallAmountTransfer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryTradeOutcome CpdpClient::QueryTrade(const QueryTradeRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryTrade");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryTradeResponse rsp = QueryTradeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryTradeOutcome(rsp);
+        else
+            return QueryTradeOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryTradeOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryTradeAsync(const QueryTradeRequest& request, const QueryTradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryTrade(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryTradeOutcomeCallable CpdpClient::QueryTradeCallable(const QueryTradeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryTradeOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryTrade(request);
         }
     );
 

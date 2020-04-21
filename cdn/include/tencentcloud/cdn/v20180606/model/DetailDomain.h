@@ -1013,7 +1013,7 @@ global：全球锁定
                      * @return SecurityConfig Scdn配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<SecurityConfig> GetSecurityConfig() const;
+                    SecurityConfig GetSecurityConfig() const;
 
                     /**
                      * 设置Scdn配置
@@ -1021,7 +1021,7 @@ global：全球锁定
                      * @param SecurityConfig Scdn配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetSecurityConfig(const std::vector<SecurityConfig>& _securityConfig);
+                    void SetSecurityConfig(const SecurityConfig& _securityConfig);
 
                     /**
                      * 判断参数 SecurityConfig 是否已赋值
@@ -1328,7 +1328,7 @@ global：全球锁定
                      * Scdn配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<SecurityConfig> m_securityConfig;
+                    SecurityConfig m_securityConfig;
                     bool m_securityConfigHasBeenSet;
 
                 };

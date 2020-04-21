@@ -669,21 +669,18 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
 
     if (value.HasMember("SecurityConfig") && !value["SecurityConfig"].IsNull())
     {
-        if (!value["SecurityConfig"].IsArray())
-            return CoreInternalOutcome(Error("response `DetailDomain.SecurityConfig` is not array type"));
-
-        const Value &tmpValue = value["SecurityConfig"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["SecurityConfig"].IsObject())
         {
-            SecurityConfig item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_securityConfig.push_back(item);
+            return CoreInternalOutcome(Error("response `DetailDomain.SecurityConfig` is not object type").SetRequestId(requestId));
         }
+
+        CoreInternalOutcome outcome = m_securityConfig.Deserialize(value["SecurityConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_securityConfigHasBeenSet = true;
     }
 
@@ -1047,14 +1044,8 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         Value iKey(kStringType);
         string key = "SecurityConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_securityConfig.begin(); itr != m_securityConfig.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_securityConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1700,12 +1691,12 @@ bool DetailDomain::AwsPrivateAccessHasBeenSet() const
     return m_awsPrivateAccessHasBeenSet;
 }
 
-vector<SecurityConfig> DetailDomain::GetSecurityConfig() const
+SecurityConfig DetailDomain::GetSecurityConfig() const
 {
     return m_securityConfig;
 }
 
-void DetailDomain::SetSecurityConfig(const vector<SecurityConfig>& _securityConfig)
+void DetailDomain::SetSecurityConfig(const SecurityConfig& _securityConfig)
 {
     m_securityConfig = _securityConfig;
     m_securityConfigHasBeenSet = true;

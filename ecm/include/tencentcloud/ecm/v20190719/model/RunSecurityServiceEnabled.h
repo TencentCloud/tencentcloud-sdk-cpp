@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取云镜版本：0 基础版，1 专业版
-                     * @return Version 云镜版本：0 基础版，1 专业版
+                     * 获取云镜版本：0 基础版，1 专业版。目前仅支持基础版
+                     * @return Version 云镜版本：0 基础版，1 专业版。目前仅支持基础版
                      */
                     int64_t GetVersion() const;
 
                     /**
-                     * 设置云镜版本：0 基础版，1 专业版
-                     * @param Version 云镜版本：0 基础版，1 专业版
+                     * 设置云镜版本：0 基础版，1 专业版。目前仅支持基础版
+                     * @param Version 云镜版本：0 基础版，1 专业版。目前仅支持基础版
                      */
                     void SetVersion(const int64_t& _version);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 云镜版本：0 基础版，1 专业版
+                     * 云镜版本：0 基础版，1 专业版。目前仅支持基础版
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;

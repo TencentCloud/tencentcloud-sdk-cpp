@@ -50,17 +50,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转码后的视频文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 转码后的视频文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置转码后的视频文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Url 转码后的视频文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -72,17 +68,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -94,17 +86,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流码率平均值与音频流码率平均值之和， 单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 视频流码率平均值与音频流码率平均值之和， 单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置视频流码率平均值与音频流码率平均值之和， 单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Bitrate 视频流码率平均值与音频流码率平均值之和， 单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
@@ -116,17 +104,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流高度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 视频流高度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置视频流高度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Height 视频流高度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -138,17 +122,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流宽度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 视频流宽度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置视频流宽度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Width 视频流宽度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -160,17 +140,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Size 媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSize(const int64_t& _size);
 
@@ -182,17 +158,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Duration 视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDuration(const double& _duration);
 
@@ -204,17 +176,13 @@ namespace TencentCloud
 
                     /**
                      * 获取容器类型，例如 m4a，mp4 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Container 容器类型，例如 m4a，mp4 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置容器类型，例如 m4a，mp4 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Container 容器类型，例如 m4a，mp4 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContainer(const std::string& _container);
 
@@ -226,17 +194,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频的 md5 值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 视频的 md5 值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置视频的 md5 值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Md5 视频的 md5 值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMd5(const std::string& _md5);
 
@@ -248,17 +212,13 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioStreamSet 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAudioStreamItem> GetAudioStreamSet() const;
 
                     /**
                      * 设置音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AudioStreamSet 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAudioStreamSet(const std::vector<MediaAudioStreamItem>& _audioStreamSet);
 
@@ -270,17 +230,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoStreamSet 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaVideoStreamItem> GetVideoStreamSet() const;
 
                     /**
                      * 设置视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param VideoStreamSet 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVideoStreamSet(const std::vector<MediaVideoStreamItem>& _videoStreamSet);
 
@@ -294,77 +250,66 @@ namespace TencentCloud
 
                     /**
                      * 转码后的视频文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
                      * 视频流码率平均值与音频流码率平均值之和， 单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
                      * 视频流高度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 视频流宽度的最大值，单位：px。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 容器类型，例如 m4a，mp4 等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
                      * 视频的 md5 值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
                      * 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAudioStreamItem> m_audioStreamSet;
                     bool m_audioStreamSetHasBeenSet;
 
                     /**
                      * 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaVideoStreamItem> m_videoStreamSet;
                     bool m_videoStreamSetHasBeenSet;

@@ -120,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取当前分类的第一级子类 ID 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubClassIdSet 当前分类的第一级子类 ID 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetSubClassIdSet() const;
 
                     /**
                      * 设置当前分类的第一级子类 ID 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SubClassIdSet 当前分类的第一级子类 ID 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubClassIdSet(const std::vector<int64_t>& _subClassIdSet);
 
@@ -168,7 +164,6 @@ namespace TencentCloud
 
                     /**
                      * 当前分类的第一级子类 ID 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_subClassIdSet;
                     bool m_subClassIdSetHasBeenSet;

@@ -261,17 +261,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对贴图进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageOperations 对贴图进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageTransform> GetImageOperations() const;
 
                     /**
                      * 设置对贴图进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageOperations 对贴图进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageOperations(const std::vector<ImageTransform>& _imageOperations);
 
@@ -350,7 +346,6 @@ namespace TencentCloud
 
                     /**
                      * 对贴图进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageTransform> m_imageOperations;
                     bool m_imageOperationsHasBeenSet;

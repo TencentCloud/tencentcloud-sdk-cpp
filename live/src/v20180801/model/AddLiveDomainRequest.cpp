@@ -27,7 +27,8 @@ AddLiveDomainRequest::AddLiveDomainRequest() :
     m_domainNameHasBeenSet(false),
     m_domainTypeHasBeenSet(false),
     m_playTypeHasBeenSet(false),
-    m_isDelayLiveHasBeenSet(false)
+    m_isDelayLiveHasBeenSet(false),
+    m_isMiniProgramLiveHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string AddLiveDomainRequest::ToJsonString() const
         string key = "IsDelayLive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDelayLive, allocator);
+    }
+
+    if (m_isMiniProgramLiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsMiniProgramLive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isMiniProgramLive, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void AddLiveDomainRequest::SetIsDelayLive(const int64_t& _isDelayLive)
 bool AddLiveDomainRequest::IsDelayLiveHasBeenSet() const
 {
     return m_isDelayLiveHasBeenSet;
+}
+
+int64_t AddLiveDomainRequest::GetIsMiniProgramLive() const
+{
+    return m_isMiniProgramLive;
+}
+
+void AddLiveDomainRequest::SetIsMiniProgramLive(const int64_t& _isMiniProgramLive)
+{
+    m_isMiniProgramLive = _isMiniProgramLive;
+    m_isMiniProgramLiveHasBeenSet = true;
+}
+
+bool AddLiveDomainRequest::IsMiniProgramLiveHasBeenSet() const
+{
+    return m_isMiniProgramLiveHasBeenSet;
 }
 
 

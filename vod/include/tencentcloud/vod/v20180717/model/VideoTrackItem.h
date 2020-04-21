@@ -266,17 +266,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对图像进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageOperations 对图像进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageTransform> GetImageOperations() const;
 
                     /**
                      * 设置对图像进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageOperations 对图像进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageOperations(const std::vector<ImageTransform>& _imageOperations);
 
@@ -288,17 +284,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对音频进行操作，如静音等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioOperations 对音频进行操作，如静音等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioTransform> GetAudioOperations() const;
 
                     /**
                      * 设置对音频进行操作，如静音等。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AudioOperations 对音频进行操作，如静音等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAudioOperations(const std::vector<AudioTransform>& _audioOperations);
 
@@ -378,14 +370,12 @@ namespace TencentCloud
 
                     /**
                      * 对图像进行的操作，如图像旋转等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageTransform> m_imageOperations;
                     bool m_imageOperationsHasBeenSet;
 
                     /**
                      * 对音频进行操作，如静音等。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioTransform> m_audioOperations;
                     bool m_audioOperationsHasBeenSet;

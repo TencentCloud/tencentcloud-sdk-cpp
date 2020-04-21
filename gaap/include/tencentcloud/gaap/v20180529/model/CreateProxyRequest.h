@@ -231,6 +231,24 @@ namespace TencentCloud
                      */
                     bool ClonedProxyIdHasBeenSet() const;
 
+                    /**
+                     * 获取计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     * @return BillingType 计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     */
+                    int64_t GetBillingType() const;
+
+                    /**
+                     * 设置计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     * @param BillingType 计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     */
+                    void SetBillingType(const int64_t& _billingType);
+
+                    /**
+                     * 判断参数 BillingType 是否已赋值
+                     * @return BillingType 是否已赋值
+                     */
+                    bool BillingTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +312,12 @@ namespace TencentCloud
                      */
                     std::string m_clonedProxyId;
                     bool m_clonedProxyIdHasBeenSet;
+
+                    /**
+                     * 计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     */
+                    int64_t m_billingType;
+                    bool m_billingTypeHasBeenSet;
 
                 };
             }

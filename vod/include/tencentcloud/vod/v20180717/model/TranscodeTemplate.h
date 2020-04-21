@@ -87,17 +87,13 @@ namespace TencentCloud
 
                     /**
                      * 获取转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -109,17 +105,13 @@ namespace TencentCloud
 
                     /**
                      * 获取模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Comment 模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -351,14 +343,12 @@ namespace TencentCloud
 
                     /**
                      * 转码模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 模板描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;

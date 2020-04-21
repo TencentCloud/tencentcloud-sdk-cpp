@@ -150,6 +150,36 @@ namespace TencentCloud
                      */
                     bool IsDelayLiveHasBeenSet() const;
 
+                    /**
+                     * 获取是否是小程序直播：
+0： 标准直播，
+1 ：小程序直播 。
+默认值： 0。
+                     * @return IsMiniProgramLive 是否是小程序直播：
+0： 标准直播，
+1 ：小程序直播 。
+默认值： 0。
+                     */
+                    int64_t GetIsMiniProgramLive() const;
+
+                    /**
+                     * 设置是否是小程序直播：
+0： 标准直播，
+1 ：小程序直播 。
+默认值： 0。
+                     * @param IsMiniProgramLive 是否是小程序直播：
+0： 标准直播，
+1 ：小程序直播 。
+默认值： 0。
+                     */
+                    void SetIsMiniProgramLive(const int64_t& _isMiniProgramLive);
+
+                    /**
+                     * 判断参数 IsMiniProgramLive 是否已赋值
+                     * @return IsMiniProgramLive 是否已赋值
+                     */
+                    bool IsMiniProgramLiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +214,15 @@ namespace TencentCloud
                      */
                     int64_t m_isDelayLive;
                     bool m_isDelayLiveHasBeenSet;
+
+                    /**
+                     * 是否是小程序直播：
+0： 标准直播，
+1 ：小程序直播 。
+默认值： 0。
+                     */
+                    int64_t m_isMiniProgramLive;
+                    bool m_isMiniProgramLiveHasBeenSet;
 
                 };
             }

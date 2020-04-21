@@ -27,7 +27,8 @@ VerifyPersonRequest::VerifyPersonRequest() :
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_personIdHasBeenSet(false),
-    m_qualityControlHasBeenSet(false)
+    m_qualityControlHasBeenSet(false),
+    m_needRotateDetectionHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string VerifyPersonRequest::ToJsonString() const
         string key = "QualityControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qualityControl, allocator);
+    }
+
+    if (m_needRotateDetectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedRotateDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRotateDetection, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void VerifyPersonRequest::SetQualityControl(const uint64_t& _qualityControl)
 bool VerifyPersonRequest::QualityControlHasBeenSet() const
 {
     return m_qualityControlHasBeenSet;
+}
+
+uint64_t VerifyPersonRequest::GetNeedRotateDetection() const
+{
+    return m_needRotateDetection;
+}
+
+void VerifyPersonRequest::SetNeedRotateDetection(const uint64_t& _needRotateDetection)
+{
+    m_needRotateDetection = _needRotateDetection;
+    m_needRotateDetectionHasBeenSet = true;
+}
+
+bool VerifyPersonRequest::NeedRotateDetectionHasBeenSet() const
+{
+    return m_needRotateDetectionHasBeenSet;
 }
 
 

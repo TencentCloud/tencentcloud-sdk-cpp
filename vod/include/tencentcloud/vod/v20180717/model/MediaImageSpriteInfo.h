@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取特定规格的雪碧图信息集合，每个元素代表一套相同规格的雪碧图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSpriteSet 特定规格的雪碧图信息集合，每个元素代表一套相同规格的雪碧图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaImageSpriteItem> GetImageSpriteSet() const;
 
                     /**
                      * 设置特定规格的雪碧图信息集合，每个元素代表一套相同规格的雪碧图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageSpriteSet 特定规格的雪碧图信息集合，每个元素代表一套相同规格的雪碧图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageSpriteSet(const std::vector<MediaImageSpriteItem>& _imageSpriteSet);
 
@@ -73,7 +69,6 @@ namespace TencentCloud
 
                     /**
                      * 特定规格的雪碧图信息集合，每个元素代表一套相同规格的雪碧图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaImageSpriteItem> m_imageSpriteSet;
                     bool m_imageSpriteSetHasBeenSet;

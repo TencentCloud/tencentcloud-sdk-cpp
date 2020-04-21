@@ -32,7 +32,8 @@ SearchFacesReturnsByGroupRequest::SearchFacesReturnsByGroupRequest() :
     m_maxPersonNumPerGroupHasBeenSet(false),
     m_needPersonInfoHasBeenSet(false),
     m_qualityControlHasBeenSet(false),
-    m_faceMatchThresholdHasBeenSet(false)
+    m_faceMatchThresholdHasBeenSet(false),
+    m_needRotateDetectionHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string SearchFacesReturnsByGroupRequest::ToJsonString() const
         string key = "FaceMatchThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_faceMatchThreshold, allocator);
+    }
+
+    if (m_needRotateDetectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedRotateDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRotateDetection, allocator);
     }
 
 
@@ -270,6 +279,22 @@ void SearchFacesReturnsByGroupRequest::SetFaceMatchThreshold(const double& _face
 bool SearchFacesReturnsByGroupRequest::FaceMatchThresholdHasBeenSet() const
 {
     return m_faceMatchThresholdHasBeenSet;
+}
+
+uint64_t SearchFacesReturnsByGroupRequest::GetNeedRotateDetection() const
+{
+    return m_needRotateDetection;
+}
+
+void SearchFacesReturnsByGroupRequest::SetNeedRotateDetection(const uint64_t& _needRotateDetection)
+{
+    m_needRotateDetection = _needRotateDetection;
+    m_needRotateDetectionHasBeenSet = true;
+}
+
+bool SearchFacesReturnsByGroupRequest::NeedRotateDetectionHasBeenSet() const
+{
+    return m_needRotateDetectionHasBeenSet;
 }
 
 

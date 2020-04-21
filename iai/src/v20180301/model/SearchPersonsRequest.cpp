@@ -32,7 +32,8 @@ SearchPersonsRequest::SearchPersonsRequest() :
     m_maxPersonNumHasBeenSet(false),
     m_qualityControlHasBeenSet(false),
     m_faceMatchThresholdHasBeenSet(false),
-    m_needPersonInfoHasBeenSet(false)
+    m_needPersonInfoHasBeenSet(false),
+    m_needRotateDetectionHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string SearchPersonsRequest::ToJsonString() const
         string key = "NeedPersonInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needPersonInfo, allocator);
+    }
+
+    if (m_needRotateDetectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedRotateDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRotateDetection, allocator);
     }
 
 
@@ -270,6 +279,22 @@ void SearchPersonsRequest::SetNeedPersonInfo(const int64_t& _needPersonInfo)
 bool SearchPersonsRequest::NeedPersonInfoHasBeenSet() const
 {
     return m_needPersonInfoHasBeenSet;
+}
+
+uint64_t SearchPersonsRequest::GetNeedRotateDetection() const
+{
+    return m_needRotateDetection;
+}
+
+void SearchPersonsRequest::SetNeedRotateDetection(const uint64_t& _needRotateDetection)
+{
+    m_needRotateDetection = _needRotateDetection;
+    m_needRotateDetectionHasBeenSet = true;
+}
+
+bool SearchPersonsRequest::NeedRotateDetectionHasBeenSet() const
+{
+    return m_needRotateDetectionHasBeenSet;
 }
 
 

@@ -341,6 +341,92 @@ MongodbClient::DescribeDBInstancesOutcomeCallable MongodbClient::DescribeDBInsta
     return task->get_future();
 }
 
+MongodbClient::DescribeSlowLogPatternsOutcome MongodbClient::DescribeSlowLogPatterns(const DescribeSlowLogPatternsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLogPatterns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogPatternsResponse rsp = DescribeSlowLogPatternsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogPatternsOutcome(rsp);
+        else
+            return DescribeSlowLogPatternsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogPatternsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeSlowLogPatternsAsync(const DescribeSlowLogPatternsRequest& request, const DescribeSlowLogPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLogPatterns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeSlowLogPatternsOutcomeCallable MongodbClient::DescribeSlowLogPatternsCallable(const DescribeSlowLogPatternsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogPatternsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLogPatterns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DescribeSlowLogsOutcome MongodbClient::DescribeSlowLogs(const DescribeSlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogsResponse rsp = DescribeSlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogsOutcome(rsp);
+        else
+            return DescribeSlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeSlowLogsAsync(const DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeSlowLogsOutcomeCallable MongodbClient::DescribeSlowLogsCallable(const DescribeSlowLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeSpecInfoOutcome MongodbClient::DescribeSpecInfo(const DescribeSpecInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSpecInfo");
@@ -549,6 +635,49 @@ MongodbClient::RenameInstanceOutcomeCallable MongodbClient::RenameInstanceCallab
         [this, request]()
         {
             return this->RenameInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::RenewDBInstancesOutcome MongodbClient::RenewDBInstances(const RenewDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewDBInstancesResponse rsp = RenewDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewDBInstancesOutcome(rsp);
+        else
+            return RenewDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::RenewDBInstancesAsync(const RenewDBInstancesRequest& request, const RenewDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::RenewDBInstancesOutcomeCallable MongodbClient::RenewDBInstancesCallable(const RenewDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewDBInstances(request);
         }
     );
 

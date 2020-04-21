@@ -40,6 +40,178 @@ EcmClient::EcmClient(const Credential &credential, const string &region, const C
 }
 
 
+EcmClient::AllocateAddressesOutcome EcmClient::AllocateAddresses(const AllocateAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AllocateAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AllocateAddressesResponse rsp = AllocateAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AllocateAddressesOutcome(rsp);
+        else
+            return AllocateAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return AllocateAddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AllocateAddressesAsync(const AllocateAddressesRequest& request, const AllocateAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AllocateAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AllocateAddressesOutcomeCallable EcmClient::AllocateAddressesCallable(const AllocateAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AllocateAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->AllocateAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::AssignPrivateIpAddressesOutcome EcmClient::AssignPrivateIpAddresses(const AssignPrivateIpAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssignPrivateIpAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssignPrivateIpAddressesResponse rsp = AssignPrivateIpAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssignPrivateIpAddressesOutcome(rsp);
+        else
+            return AssignPrivateIpAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return AssignPrivateIpAddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AssignPrivateIpAddressesAsync(const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssignPrivateIpAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AssignPrivateIpAddressesOutcomeCallable EcmClient::AssignPrivateIpAddressesCallable(const AssignPrivateIpAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssignPrivateIpAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->AssignPrivateIpAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::AssociateAddressOutcome EcmClient::AssociateAddress(const AssociateAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateAddressResponse rsp = AssociateAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateAddressOutcome(rsp);
+        else
+            return AssociateAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateAddressOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AssociateAddressAsync(const AssociateAddressRequest& request, const AssociateAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AssociateAddressOutcomeCallable EcmClient::AssociateAddressCallable(const AssociateAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::AttachNetworkInterfaceOutcome EcmClient::AttachNetworkInterface(const AttachNetworkInterfaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachNetworkInterface");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachNetworkInterfaceResponse rsp = AttachNetworkInterfaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachNetworkInterfaceOutcome(rsp);
+        else
+            return AttachNetworkInterfaceOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachNetworkInterfaceOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AttachNetworkInterfaceAsync(const AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachNetworkInterface(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AttachNetworkInterfaceOutcomeCallable EcmClient::AttachNetworkInterfaceCallable(const AttachNetworkInterfaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachNetworkInterfaceOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateModuleOutcome EcmClient::CreateModule(const CreateModuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateModule");
@@ -76,6 +248,135 @@ EcmClient::CreateModuleOutcomeCallable EcmClient::CreateModuleCallable(const Cre
         [this, request]()
         {
             return this->CreateModule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::CreateNetworkInterfaceOutcome EcmClient::CreateNetworkInterface(const CreateNetworkInterfaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetworkInterface");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetworkInterfaceResponse rsp = CreateNetworkInterfaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetworkInterfaceOutcome(rsp);
+        else
+            return CreateNetworkInterfaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetworkInterfaceOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateNetworkInterfaceAsync(const CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetworkInterface(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateNetworkInterfaceOutcomeCallable EcmClient::CreateNetworkInterfaceCallable(const CreateNetworkInterfaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetworkInterfaceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::CreateSubnetOutcome EcmClient::CreateSubnet(const CreateSubnetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubnet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubnetResponse rsp = CreateSubnetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubnetOutcome(rsp);
+        else
+            return CreateSubnetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubnetOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateSubnetAsync(const CreateSubnetRequest& request, const CreateSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSubnet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateSubnetOutcomeCallable EcmClient::CreateSubnetCallable(const CreateSubnetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSubnetOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::CreateVpcOutcome EcmClient::CreateVpc(const CreateVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVpcResponse rsp = CreateVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVpcOutcome(rsp);
+        else
+            return CreateVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVpcOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateVpcAsync(const CreateVpcRequest& request, const CreateVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVpc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateVpcOutcomeCallable EcmClient::CreateVpcCallable(const CreateVpcRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVpcOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVpc(request);
         }
     );
 
@@ -162,6 +463,221 @@ EcmClient::DeleteModuleOutcomeCallable EcmClient::DeleteModuleCallable(const Del
         [this, request]()
         {
             return this->DeleteModule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteNetworkInterfaceOutcome EcmClient::DeleteNetworkInterface(const DeleteNetworkInterfaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNetworkInterface");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNetworkInterfaceResponse rsp = DeleteNetworkInterfaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNetworkInterfaceOutcome(rsp);
+        else
+            return DeleteNetworkInterfaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNetworkInterfaceOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteNetworkInterfaceAsync(const DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNetworkInterface(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteNetworkInterfaceOutcomeCallable EcmClient::DeleteNetworkInterfaceCallable(const DeleteNetworkInterfaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNetworkInterfaceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteSubnetOutcome EcmClient::DeleteSubnet(const DeleteSubnetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSubnet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSubnetResponse rsp = DeleteSubnetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSubnetOutcome(rsp);
+        else
+            return DeleteSubnetOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSubnetOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteSubnetAsync(const DeleteSubnetRequest& request, const DeleteSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSubnet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteSubnetOutcomeCallable EcmClient::DeleteSubnetCallable(const DeleteSubnetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSubnetOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DeleteVpcOutcome EcmClient::DeleteVpc(const DeleteVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVpcResponse rsp = DeleteVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVpcOutcome(rsp);
+        else
+            return DeleteVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVpcOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DeleteVpcAsync(const DeleteVpcRequest& request, const DeleteVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVpc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DeleteVpcOutcomeCallable EcmClient::DeleteVpcCallable(const DeleteVpcRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVpcOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVpc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeAddressQuotaOutcome EcmClient::DescribeAddressQuota(const DescribeAddressQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddressQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressQuotaResponse rsp = DescribeAddressQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressQuotaOutcome(rsp);
+        else
+            return DescribeAddressQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressQuotaOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeAddressQuotaAsync(const DescribeAddressQuotaRequest& request, const DescribeAddressQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddressQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeAddressQuotaOutcomeCallable EcmClient::DescribeAddressQuotaCallable(const DescribeAddressQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddressQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeAddressesOutcome EcmClient::DescribeAddresses(const DescribeAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressesResponse rsp = DescribeAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressesOutcome(rsp);
+        else
+            return DescribeAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeAddressesAsync(const DescribeAddressesRequest& request, const DescribeAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeAddressesOutcomeCallable EcmClient::DescribeAddressesCallable(const DescribeAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddresses(request);
         }
     );
 
@@ -513,6 +1029,49 @@ EcmClient::DescribeModuleDetailOutcomeCallable EcmClient::DescribeModuleDetailCa
     return task->get_future();
 }
 
+EcmClient::DescribeNetworkInterfacesOutcome EcmClient::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkInterfaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkInterfacesResponse rsp = DescribeNetworkInterfacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkInterfacesOutcome(rsp);
+        else
+            return DescribeNetworkInterfacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkInterfacesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeNetworkInterfacesAsync(const DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkInterfaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeNetworkInterfacesOutcomeCallable EcmClient::DescribeNetworkInterfacesCallable(const DescribeNetworkInterfacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkInterfacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkInterfaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeNodeOutcome EcmClient::DescribeNode(const DescribeNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNode");
@@ -642,6 +1201,178 @@ EcmClient::DescribePeakNetworkOverviewOutcomeCallable EcmClient::DescribePeakNet
     return task->get_future();
 }
 
+EcmClient::DescribeSubnetsOutcome EcmClient::DescribeSubnets(const DescribeSubnetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubnets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubnetsResponse rsp = DescribeSubnetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubnetsOutcome(rsp);
+        else
+            return DescribeSubnetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubnetsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeSubnetsAsync(const DescribeSubnetsRequest& request, const DescribeSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubnets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeSubnetsOutcomeCallable EcmClient::DescribeSubnetsCallable(const DescribeSubnetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubnetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubnets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeTaskResultOutcome EcmClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskResultResponse rsp = DescribeTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskResultOutcome(rsp);
+        else
+            return DescribeTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeTaskResultAsync(const DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeTaskResultOutcomeCallable EcmClient::DescribeTaskResultCallable(const DescribeTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DetachNetworkInterfaceOutcome EcmClient::DetachNetworkInterface(const DetachNetworkInterfaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachNetworkInterface");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachNetworkInterfaceResponse rsp = DetachNetworkInterfaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachNetworkInterfaceOutcome(rsp);
+        else
+            return DetachNetworkInterfaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachNetworkInterfaceOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DetachNetworkInterfaceAsync(const DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachNetworkInterface(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DetachNetworkInterfaceOutcomeCallable EcmClient::DetachNetworkInterfaceCallable(const DetachNetworkInterfaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachNetworkInterfaceOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DisassociateAddressOutcome EcmClient::DisassociateAddress(const DisassociateAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateAddressResponse rsp = DisassociateAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateAddressOutcome(rsp);
+        else
+            return DisassociateAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateAddressOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DisassociateAddressAsync(const DisassociateAddressRequest& request, const DisassociateAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DisassociateAddressOutcomeCallable EcmClient::DisassociateAddressCallable(const DisassociateAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ImportImageOutcome EcmClient::ImportImage(const ImportImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportImage");
@@ -678,6 +1409,178 @@ EcmClient::ImportImageOutcomeCallable EcmClient::ImportImageCallable(const Impor
         [this, request]()
         {
             return this->ImportImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::MigrateNetworkInterfaceOutcome EcmClient::MigrateNetworkInterface(const MigrateNetworkInterfaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "MigrateNetworkInterface");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MigrateNetworkInterfaceResponse rsp = MigrateNetworkInterfaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MigrateNetworkInterfaceOutcome(rsp);
+        else
+            return MigrateNetworkInterfaceOutcome(o.GetError());
+    }
+    else
+    {
+        return MigrateNetworkInterfaceOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::MigrateNetworkInterfaceAsync(const MigrateNetworkInterfaceRequest& request, const MigrateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MigrateNetworkInterface(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::MigrateNetworkInterfaceOutcomeCallable EcmClient::MigrateNetworkInterfaceCallable(const MigrateNetworkInterfaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MigrateNetworkInterfaceOutcome()>>(
+        [this, request]()
+        {
+            return this->MigrateNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::MigratePrivateIpAddressOutcome EcmClient::MigratePrivateIpAddress(const MigratePrivateIpAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "MigratePrivateIpAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MigratePrivateIpAddressResponse rsp = MigratePrivateIpAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MigratePrivateIpAddressOutcome(rsp);
+        else
+            return MigratePrivateIpAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return MigratePrivateIpAddressOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::MigratePrivateIpAddressAsync(const MigratePrivateIpAddressRequest& request, const MigratePrivateIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MigratePrivateIpAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::MigratePrivateIpAddressOutcomeCallable EcmClient::MigratePrivateIpAddressCallable(const MigratePrivateIpAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MigratePrivateIpAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->MigratePrivateIpAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyAddressAttributeOutcome EcmClient::ModifyAddressAttribute(const ModifyAddressAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAddressAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAddressAttributeResponse rsp = ModifyAddressAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAddressAttributeOutcome(rsp);
+        else
+            return ModifyAddressAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAddressAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyAddressAttributeAsync(const ModifyAddressAttributeRequest& request, const ModifyAddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAddressAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyAddressAttributeOutcomeCallable EcmClient::ModifyAddressAttributeCallable(const ModifyAddressAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAddressAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAddressAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyAddressesBandwidthOutcome EcmClient::ModifyAddressesBandwidth(const ModifyAddressesBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAddressesBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAddressesBandwidthResponse rsp = ModifyAddressesBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAddressesBandwidthOutcome(rsp);
+        else
+            return ModifyAddressesBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAddressesBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyAddressesBandwidthAsync(const ModifyAddressesBandwidthRequest& request, const ModifyAddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAddressesBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyAddressesBandwidthOutcomeCallable EcmClient::ModifyAddressesBandwidthCallable(const ModifyAddressesBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAddressesBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAddressesBandwidth(request);
         }
     );
 
@@ -857,6 +1760,92 @@ EcmClient::ModifyModuleNetworkOutcomeCallable EcmClient::ModifyModuleNetworkCall
     return task->get_future();
 }
 
+EcmClient::ModifySubnetAttributeOutcome EcmClient::ModifySubnetAttribute(const ModifySubnetAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySubnetAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySubnetAttributeResponse rsp = ModifySubnetAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySubnetAttributeOutcome(rsp);
+        else
+            return ModifySubnetAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySubnetAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifySubnetAttributeAsync(const ModifySubnetAttributeRequest& request, const ModifySubnetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySubnetAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifySubnetAttributeOutcomeCallable EcmClient::ModifySubnetAttributeCallable(const ModifySubnetAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySubnetAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySubnetAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyVpcAttributeOutcome EcmClient::ModifyVpcAttribute(const ModifyVpcAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVpcAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVpcAttributeResponse rsp = ModifyVpcAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVpcAttributeOutcome(rsp);
+        else
+            return ModifyVpcAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVpcAttributeOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyVpcAttributeAsync(const ModifyVpcAttributeRequest& request, const ModifyVpcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVpcAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyVpcAttributeOutcomeCallable EcmClient::ModifyVpcAttributeCallable(const ModifyVpcAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVpcAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVpcAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::RebootInstancesOutcome EcmClient::RebootInstances(const RebootInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RebootInstances");
@@ -893,6 +1882,92 @@ EcmClient::RebootInstancesOutcomeCallable EcmClient::RebootInstancesCallable(con
         [this, request]()
         {
             return this->RebootInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ReleaseAddressesOutcome EcmClient::ReleaseAddresses(const ReleaseAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseAddressesResponse rsp = ReleaseAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseAddressesOutcome(rsp);
+        else
+            return ReleaseAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseAddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ReleaseAddressesAsync(const ReleaseAddressesRequest& request, const ReleaseAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ReleaseAddressesOutcomeCallable EcmClient::ReleaseAddressesCallable(const ReleaseAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::RemovePrivateIpAddressesOutcome EcmClient::RemovePrivateIpAddresses(const RemovePrivateIpAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemovePrivateIpAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemovePrivateIpAddressesResponse rsp = RemovePrivateIpAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemovePrivateIpAddressesOutcome(rsp);
+        else
+            return RemovePrivateIpAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return RemovePrivateIpAddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::RemovePrivateIpAddressesAsync(const RemovePrivateIpAddressesRequest& request, const RemovePrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemovePrivateIpAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::RemovePrivateIpAddressesOutcomeCallable EcmClient::RemovePrivateIpAddressesCallable(const RemovePrivateIpAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemovePrivateIpAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->RemovePrivateIpAddresses(request);
         }
     );
 
@@ -979,6 +2054,49 @@ EcmClient::ResetInstancesMaxBandwidthOutcomeCallable EcmClient::ResetInstancesMa
         [this, request]()
         {
             return this->ResetInstancesMaxBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::RunInstancesOutcome EcmClient::RunInstances(const RunInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunInstancesResponse rsp = RunInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunInstancesOutcome(rsp);
+        else
+            return RunInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RunInstancesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::RunInstancesAsync(const RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::RunInstancesOutcomeCallable EcmClient::RunInstancesCallable(const RunInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RunInstances(request);
         }
     );
 

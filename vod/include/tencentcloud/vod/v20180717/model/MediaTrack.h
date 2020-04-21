@@ -87,17 +87,13 @@ namespace TencentCloud
 
                     /**
                      * 获取轨道上的媒体片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackItems 轨道上的媒体片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaTrackItem> GetTrackItems() const;
 
                     /**
                      * 设置轨道上的媒体片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TrackItems 轨道上的媒体片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTrackItems(const std::vector<MediaTrackItem>& _trackItems);
 
@@ -122,7 +118,6 @@ namespace TencentCloud
 
                     /**
                      * 轨道上的媒体片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaTrackItem> m_trackItems;
                     bool m_trackItemsHasBeenSet;

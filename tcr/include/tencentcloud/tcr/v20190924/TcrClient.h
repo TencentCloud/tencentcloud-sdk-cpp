@@ -45,6 +45,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateUserPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateUserPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.h>
@@ -63,6 +65,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalRequest.h>
@@ -75,6 +79,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImageLifecyclePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImageLifecyclePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeImageManifestsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeImageManifestsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImagesRequest.h>
@@ -99,6 +105,10 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.h>
@@ -117,6 +127,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryInfoPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalRequest.h>
@@ -168,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateUserPersonalResponse> CreateUserPersonalOutcome;
                 typedef std::future<CreateUserPersonalOutcome> CreateUserPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateUserPersonalRequest&, CreateUserPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserPersonalAsyncHandler;
+                typedef Outcome<Error, Model::CreateWebhookTriggerResponse> CreateWebhookTriggerOutcome;
+                typedef std::future<CreateWebhookTriggerOutcome> CreateWebhookTriggerOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateWebhookTriggerRequest&, CreateWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebhookTriggerAsyncHandler;
                 typedef Outcome<Error, Model::DeleteApplicationTriggerPersonalResponse> DeleteApplicationTriggerPersonalOutcome;
                 typedef std::future<DeleteApplicationTriggerPersonalOutcome> DeleteApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteApplicationTriggerPersonalRequest&, DeleteApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationTriggerPersonalAsyncHandler;
@@ -195,6 +210,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteRepositoryPersonalResponse> DeleteRepositoryPersonalOutcome;
                 typedef std::future<DeleteRepositoryPersonalOutcome> DeleteRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteRepositoryPersonalRequest&, DeleteRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryPersonalAsyncHandler;
+                typedef Outcome<Error, Model::DeleteWebhookTriggerResponse> DeleteWebhookTriggerOutcome;
+                typedef std::future<DeleteWebhookTriggerOutcome> DeleteWebhookTriggerOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteWebhookTriggerRequest&, DeleteWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebhookTriggerAsyncHandler;
                 typedef Outcome<Error, Model::DescribeApplicationTriggerLogPersonalResponse> DescribeApplicationTriggerLogPersonalOutcome;
                 typedef std::future<DescribeApplicationTriggerLogPersonalOutcome> DescribeApplicationTriggerLogPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeApplicationTriggerLogPersonalRequest&, DescribeApplicationTriggerLogPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationTriggerLogPersonalAsyncHandler;
@@ -213,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeImageLifecyclePersonalResponse> DescribeImageLifecyclePersonalOutcome;
                 typedef std::future<DescribeImageLifecyclePersonalOutcome> DescribeImageLifecyclePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeImageLifecyclePersonalRequest&, DescribeImageLifecyclePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageLifecyclePersonalAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImageManifestsResponse> DescribeImageManifestsOutcome;
+                typedef std::future<DescribeImageManifestsOutcome> DescribeImageManifestsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeImageManifestsRequest&, DescribeImageManifestsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageManifestsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImagePersonalResponse> DescribeImagePersonalOutcome;
                 typedef std::future<DescribeImagePersonalOutcome> DescribeImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeImagePersonalRequest&, DescribeImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagePersonalAsyncHandler;
@@ -249,6 +270,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUserQuotaPersonalResponse> DescribeUserQuotaPersonalOutcome;
                 typedef std::future<DescribeUserQuotaPersonalOutcome> DescribeUserQuotaPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeUserQuotaPersonalRequest&, DescribeUserQuotaPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaPersonalAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWebhookTriggerResponse> DescribeWebhookTriggerOutcome;
+                typedef std::future<DescribeWebhookTriggerOutcome> DescribeWebhookTriggerOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeWebhookTriggerRequest&, DescribeWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebhookTriggerAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWebhookTriggerLogResponse> DescribeWebhookTriggerLogOutcome;
+                typedef std::future<DescribeWebhookTriggerLogOutcome> DescribeWebhookTriggerLogOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeWebhookTriggerLogRequest&, DescribeWebhookTriggerLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebhookTriggerLogAsyncHandler;
                 typedef Outcome<Error, Model::DuplicateImagePersonalResponse> DuplicateImagePersonalOutcome;
                 typedef std::future<DuplicateImagePersonalOutcome> DuplicateImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DuplicateImagePersonalRequest&, DuplicateImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateImagePersonalAsyncHandler;
@@ -276,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyUserPasswordPersonalResponse> ModifyUserPasswordPersonalOutcome;
                 typedef std::future<ModifyUserPasswordPersonalOutcome> ModifyUserPasswordPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyUserPasswordPersonalRequest&, ModifyUserPasswordPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserPasswordPersonalAsyncHandler;
+                typedef Outcome<Error, Model::ModifyWebhookTriggerResponse> ModifyWebhookTriggerOutcome;
+                typedef std::future<ModifyWebhookTriggerOutcome> ModifyWebhookTriggerOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyWebhookTriggerRequest&, ModifyWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebhookTriggerAsyncHandler;
                 typedef Outcome<Error, Model::ValidateNamespaceExistPersonalResponse> ValidateNamespaceExistPersonalOutcome;
                 typedef std::future<ValidateNamespaceExistPersonalOutcome> ValidateNamespaceExistPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ValidateNamespaceExistPersonalRequest&, ValidateNamespaceExistPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ValidateNamespaceExistPersonalAsyncHandler;
@@ -385,6 +415,15 @@ namespace TencentCloud
                 CreateUserPersonalOutcomeCallable CreateUserPersonalCallable(const Model::CreateUserPersonalRequest& request);
 
                 /**
+                 *创建触发器
+                 * @param req CreateWebhookTriggerRequest
+                 * @return CreateWebhookTriggerOutcome
+                 */
+                CreateWebhookTriggerOutcome CreateWebhookTrigger(const Model::CreateWebhookTriggerRequest &request);
+                void CreateWebhookTriggerAsync(const Model::CreateWebhookTriggerRequest& request, const CreateWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWebhookTriggerOutcomeCallable CreateWebhookTriggerCallable(const Model::CreateWebhookTriggerRequest& request);
+
+                /**
                  *用于删除应用更新触发器
                  * @param req DeleteApplicationTriggerPersonalRequest
                  * @return DeleteApplicationTriggerPersonalOutcome
@@ -466,6 +505,15 @@ namespace TencentCloud
                 DeleteRepositoryPersonalOutcomeCallable DeleteRepositoryPersonalCallable(const Model::DeleteRepositoryPersonalRequest& request);
 
                 /**
+                 *删除触发器
+                 * @param req DeleteWebhookTriggerRequest
+                 * @return DeleteWebhookTriggerOutcome
+                 */
+                DeleteWebhookTriggerOutcome DeleteWebhookTrigger(const Model::DeleteWebhookTriggerRequest &request);
+                void DeleteWebhookTriggerAsync(const Model::DeleteWebhookTriggerRequest& request, const DeleteWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWebhookTriggerOutcomeCallable DeleteWebhookTriggerCallable(const Model::DeleteWebhookTriggerRequest& request);
+
+                /**
                  *用于查询应用更新触发器触发日志
                  * @param req DescribeApplicationTriggerLogPersonalRequest
                  * @return DescribeApplicationTriggerLogPersonalOutcome
@@ -518,6 +566,15 @@ namespace TencentCloud
                 DescribeImageLifecyclePersonalOutcome DescribeImageLifecyclePersonal(const Model::DescribeImageLifecyclePersonalRequest &request);
                 void DescribeImageLifecyclePersonalAsync(const Model::DescribeImageLifecyclePersonalRequest& request, const DescribeImageLifecyclePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageLifecyclePersonalOutcomeCallable DescribeImageLifecyclePersonalCallable(const Model::DescribeImageLifecyclePersonalRequest& request);
+
+                /**
+                 *查询容器镜像Manifest信息
+                 * @param req DescribeImageManifestsRequest
+                 * @return DescribeImageManifestsOutcome
+                 */
+                DescribeImageManifestsOutcome DescribeImageManifests(const Model::DescribeImageManifestsRequest &request);
+                void DescribeImageManifestsAsync(const Model::DescribeImageManifestsRequest& request, const DescribeImageManifestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageManifestsOutcomeCallable DescribeImageManifestsCallable(const Model::DescribeImageManifestsRequest& request);
 
                 /**
                  *用于获取个人版镜像仓库tag列表
@@ -628,6 +685,24 @@ namespace TencentCloud
                 DescribeUserQuotaPersonalOutcomeCallable DescribeUserQuotaPersonalCallable(const Model::DescribeUserQuotaPersonalRequest& request);
 
                 /**
+                 *查询触发器
+                 * @param req DescribeWebhookTriggerRequest
+                 * @return DescribeWebhookTriggerOutcome
+                 */
+                DescribeWebhookTriggerOutcome DescribeWebhookTrigger(const Model::DescribeWebhookTriggerRequest &request);
+                void DescribeWebhookTriggerAsync(const Model::DescribeWebhookTriggerRequest& request, const DescribeWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebhookTriggerOutcomeCallable DescribeWebhookTriggerCallable(const Model::DescribeWebhookTriggerRequest& request);
+
+                /**
+                 *获取触发器日志
+                 * @param req DescribeWebhookTriggerLogRequest
+                 * @return DescribeWebhookTriggerLogOutcome
+                 */
+                DescribeWebhookTriggerLogOutcome DescribeWebhookTriggerLog(const Model::DescribeWebhookTriggerLogRequest &request);
+                void DescribeWebhookTriggerLogAsync(const Model::DescribeWebhookTriggerLogRequest& request, const DescribeWebhookTriggerLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebhookTriggerLogOutcomeCallable DescribeWebhookTriggerLogCallable(const Model::DescribeWebhookTriggerLogRequest& request);
+
+                /**
                  *用于在个人版镜像仓库中复制镜像版本
                  * @param req DuplicateImagePersonalRequest
                  * @return DuplicateImagePersonalOutcome
@@ -707,6 +782,15 @@ namespace TencentCloud
                 ModifyUserPasswordPersonalOutcome ModifyUserPasswordPersonal(const Model::ModifyUserPasswordPersonalRequest &request);
                 void ModifyUserPasswordPersonalAsync(const Model::ModifyUserPasswordPersonalRequest& request, const ModifyUserPasswordPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserPasswordPersonalOutcomeCallable ModifyUserPasswordPersonalCallable(const Model::ModifyUserPasswordPersonalRequest& request);
+
+                /**
+                 *更新触发器
+                 * @param req ModifyWebhookTriggerRequest
+                 * @return ModifyWebhookTriggerOutcome
+                 */
+                ModifyWebhookTriggerOutcome ModifyWebhookTrigger(const Model::ModifyWebhookTriggerRequest &request);
+                void ModifyWebhookTriggerAsync(const Model::ModifyWebhookTriggerRequest& request, const ModifyWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWebhookTriggerOutcomeCallable ModifyWebhookTriggerCallable(const Model::ModifyWebhookTriggerRequest& request);
 
                 /**
                  *查询个人版用户命名空间是否存在

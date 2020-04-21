@@ -176,17 +176,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoStreamSet 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaVideoStreamItem> GetVideoStreamSet() const;
 
                     /**
                      * 设置视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param VideoStreamSet 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVideoStreamSet(const std::vector<MediaVideoStreamItem>& _videoStreamSet);
 
@@ -198,17 +194,13 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioStreamSet 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAudioStreamItem> GetAudioStreamSet() const;
 
                     /**
                      * 设置音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AudioStreamSet 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAudioStreamSet(const std::vector<MediaAudioStreamItem>& _audioStreamSet);
 
@@ -300,14 +292,12 @@ namespace TencentCloud
 
                     /**
                      * 视频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaVideoStreamItem> m_videoStreamSet;
                     bool m_videoStreamSetHasBeenSet;
 
                     /**
                      * 音频流信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaAudioStreamItem> m_audioStreamSet;
                     bool m_audioStreamSetHasBeenSet;

@@ -74,12 +74,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 鉴黄结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
@@ -88,12 +86,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Suggestion 鉴黄结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -109,13 +105,11 @@ namespace TencentCloud
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 视频鉴黄结果标签，取值范围：
 <li>porn：色情。</li>
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
@@ -125,13 +119,11 @@ namespace TencentCloud
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Label 视频鉴黄结果标签，取值范围：
 <li>porn：色情。</li>
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -143,17 +135,13 @@ namespace TencentCloud
 
                     /**
                      * 获取有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentSet 有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SegmentSet 有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewSegmentItem>& _segmentSet);
 
@@ -177,7 +165,6 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
@@ -188,14 +175,12 @@ namespace TencentCloud
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 有涉黄嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

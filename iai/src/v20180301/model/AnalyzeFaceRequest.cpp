@@ -27,7 +27,8 @@ AnalyzeFaceRequest::AnalyzeFaceRequest() :
     m_modeHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_faceModelVersionHasBeenSet(false)
+    m_faceModelVersionHasBeenSet(false),
+    m_needRotateDetectionHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string AnalyzeFaceRequest::ToJsonString() const
         string key = "FaceModelVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needRotateDetectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NeedRotateDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRotateDetection, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void AnalyzeFaceRequest::SetFaceModelVersion(const string& _faceModelVersion)
 bool AnalyzeFaceRequest::FaceModelVersionHasBeenSet() const
 {
     return m_faceModelVersionHasBeenSet;
+}
+
+uint64_t AnalyzeFaceRequest::GetNeedRotateDetection() const
+{
+    return m_needRotateDetection;
+}
+
+void AnalyzeFaceRequest::SetNeedRotateDetection(const uint64_t& _needRotateDetection)
+{
+    m_needRotateDetection = _needRotateDetection;
+    m_needRotateDetectionHasBeenSet = true;
+}
+
+bool AnalyzeFaceRequest::NeedRotateDetectionHasBeenSet() const
+{
+    return m_needRotateDetectionHasBeenSet;
 }
 
 

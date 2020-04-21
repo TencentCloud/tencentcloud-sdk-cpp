@@ -57,7 +57,9 @@ namespace TencentCloud
 
                     /**
                      * 获取通道带宽费用梯度价格。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthUnitPrice 通道带宽费用梯度价格。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BandwidthPriceGradient> GetBandwidthUnitPrice() const;
 
@@ -91,6 +93,34 @@ namespace TencentCloud
                      */
                     bool CurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取通道的流量费用价格，单位: 元/GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowUnitPrice 通道的流量费用价格，单位: 元/GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetFlowUnitPrice() const;
+
+                    /**
+                     * 判断参数 FlowUnitPrice 是否已赋值
+                     * @return FlowUnitPrice 是否已赋值
+                     */
+                    bool FlowUnitPriceHasBeenSet() const;
+
+                    /**
+                     * 获取通道的流量费用折扣价格，单位:元/GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountFlowUnitPrice 通道的流量费用折扣价格，单位:元/GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDiscountFlowUnitPrice() const;
+
+                    /**
+                     * 判断参数 DiscountFlowUnitPrice 是否已赋值
+                     * @return DiscountFlowUnitPrice 是否已赋值
+                     */
+                    bool DiscountFlowUnitPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 通道带宽费用梯度价格。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BandwidthPriceGradient> m_bandwidthUnitPrice;
                     bool m_bandwidthUnitPriceHasBeenSet;
@@ -116,6 +147,20 @@ namespace TencentCloud
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
+
+                    /**
+                     * 通道的流量费用价格，单位: 元/GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_flowUnitPrice;
+                    bool m_flowUnitPriceHasBeenSet;
+
+                    /**
+                     * 通道的流量费用折扣价格，单位:元/GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_discountFlowUnitPrice;
+                    bool m_discountFlowUnitPriceHasBeenSet;
 
                 };
             }

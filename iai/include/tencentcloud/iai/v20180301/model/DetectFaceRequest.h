@@ -232,6 +232,24 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     bool FaceModelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     * @return NeedRotateDetection 是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     */
+                    uint64_t GetNeedRotateDetection() const;
+
+                    /**
+                     * 设置是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     * @param NeedRotateDetection 是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     */
+                    void SetNeedRotateDetection(const uint64_t& _needRotateDetection);
+
+                    /**
+                     * 判断参数 NeedRotateDetection 是否已赋值
+                     * @return NeedRotateDetection 是否已赋值
+                     */
+                    bool NeedRotateDetectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +309,12 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     std::string m_faceModelVersion;
                     bool m_faceModelVersionHasBeenSet;
+
+                    /**
+                     * 是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。
+                     */
+                    uint64_t m_needRotateDetection;
+                    bool m_needRotateDetectionHasBeenSet;
 
                 };
             }

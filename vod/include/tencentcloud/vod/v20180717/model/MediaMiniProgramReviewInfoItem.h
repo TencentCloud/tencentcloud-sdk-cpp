@@ -86,17 +86,13 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序审核视频播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 小程序审核视频播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置小程序审核视频播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Url 小程序审核视频播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -134,17 +130,13 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序审核元素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReviewSummary 小程序审核元素。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaMiniProgramReviewElem> GetReviewSummary() const;
 
                     /**
                      * 设置小程序审核元素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ReviewSummary 小程序审核元素。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReviewSummary(const std::vector<MediaMiniProgramReviewElem>& _reviewSummary);
 
@@ -170,7 +162,6 @@ namespace TencentCloud
 
                     /**
                      * 小程序审核视频播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -185,7 +176,6 @@ namespace TencentCloud
 
                     /**
                      * 小程序审核元素。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaMiniProgramReviewElem> m_reviewSummary;
                     bool m_reviewSummaryHasBeenSet;

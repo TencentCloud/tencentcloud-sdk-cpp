@@ -98,11 +98,9 @@ FINISH：已完成。
                      * 获取错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
@@ -110,11 +108,9 @@ FINISH：已完成。
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -126,17 +122,13 @@ FINISH：已完成。
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -148,17 +140,13 @@ FINISH：已完成。
 
                     /**
                      * 获取发布视频文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 发布视频文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置发布视频文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileId 发布视频文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -170,17 +158,13 @@ FINISH：已完成。
 
                     /**
                      * 获取微信发布模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 微信发布模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置微信发布模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Definition 微信发布模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefinition(const uint64_t& _definition);
 
@@ -192,17 +176,13 @@ FINISH：已完成。
 
                     /**
                      * 获取发布视频所对应的转码模板 ID，为 0 代表原始视频。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetSourceDefinition() const;
 
                     /**
                      * 设置发布视频所对应的转码模板 ID，为 0 代表原始视频。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SourceDefinition 发布视频所对应的转码模板 ID，为 0 代表原始视频。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSourceDefinition(const uint64_t& _sourceDefinition);
 
@@ -218,13 +198,11 @@ FINISH：已完成。
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatStatus 微信发布状态，取值：
 <li>FAIL：失败；</li>
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWechatStatus() const;
 
@@ -234,13 +212,11 @@ FINISH：已完成。
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WechatStatus 微信发布状态，取值：
 <li>FAIL：失败；</li>
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWechatStatus(const std::string& _wechatStatus);
 
@@ -252,17 +228,13 @@ FINISH：已完成。
 
                     /**
                      * 获取微信 Vid。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatVid 微信 Vid。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWechatVid() const;
 
                     /**
                      * 设置微信 Vid。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WechatVid 微信 Vid。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWechatVid(const std::string& _wechatVid);
 
@@ -274,17 +246,13 @@ FINISH：已完成。
 
                     /**
                      * 获取微信地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatUrl 微信地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWechatUrl() const;
 
                     /**
                      * 设置微信地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WechatUrl 微信地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWechatUrl(const std::string& _wechatUrl);
 
@@ -315,35 +283,30 @@ FINISH：已完成。
                      * 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 发布视频文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 微信发布模板 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
                      * 发布视频所对应的转码模板 ID，为 0 代表原始视频。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sourceDefinition;
                     bool m_sourceDefinitionHasBeenSet;
@@ -354,21 +317,18 @@ FINISH：已完成。
 <li>SUCCESS：成功；</li>
 <li>AUDITNOTPASS：审核未通过；</li>
 <li>NOTTRIGGERED：尚未发起微信发布。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wechatStatus;
                     bool m_wechatStatusHasBeenSet;
 
                     /**
                      * 微信 Vid。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wechatVid;
                     bool m_wechatVidHasBeenSet;
 
                     /**
                      * 微信地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wechatUrl;
                     bool m_wechatUrlHasBeenSet;

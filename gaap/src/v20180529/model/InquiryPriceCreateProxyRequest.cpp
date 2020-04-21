@@ -29,7 +29,8 @@ InquiryPriceCreateProxyRequest::InquiryPriceCreateProxyRequest() :
     m_destRegionHasBeenSet(false),
     m_concurrencyHasBeenSet(false),
     m_realServerRegionHasBeenSet(false),
-    m_concurrentHasBeenSet(false)
+    m_concurrentHasBeenSet(false),
+    m_billingTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string InquiryPriceCreateProxyRequest::ToJsonString() const
         string key = "Concurrent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_concurrent, allocator);
+    }
+
+    if (m_billingTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BillingType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_billingType, allocator);
     }
 
 
@@ -190,6 +199,22 @@ void InquiryPriceCreateProxyRequest::SetConcurrent(const int64_t& _concurrent)
 bool InquiryPriceCreateProxyRequest::ConcurrentHasBeenSet() const
 {
     return m_concurrentHasBeenSet;
+}
+
+int64_t InquiryPriceCreateProxyRequest::GetBillingType() const
+{
+    return m_billingType;
+}
+
+void InquiryPriceCreateProxyRequest::SetBillingType(const int64_t& _billingType)
+{
+    m_billingType = _billingType;
+    m_billingTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateProxyRequest::BillingTypeHasBeenSet() const
+{
+    return m_billingTypeHasBeenSet;
 }
 
 

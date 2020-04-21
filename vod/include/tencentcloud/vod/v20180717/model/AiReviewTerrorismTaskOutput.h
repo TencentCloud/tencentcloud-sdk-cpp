@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频暴恐评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 视频暴恐评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置视频暴恐评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Confidence 视频暴恐评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -74,12 +70,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 暴恐结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
@@ -88,12 +82,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Suggestion 暴恐结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -113,7 +105,6 @@ namespace TencentCloud
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
 <li>terrorists：暴恐人物。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 视频暴恐结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
@@ -123,7 +114,6 @@ namespace TencentCloud
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
 <li>terrorists：暴恐人物。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
@@ -137,7 +127,6 @@ namespace TencentCloud
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
 <li>terrorists：暴恐人物。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Label 视频暴恐结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
@@ -147,7 +136,6 @@ namespace TencentCloud
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
 <li>terrorists：暴恐人物。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -159,17 +147,13 @@ namespace TencentCloud
 
                     /**
                      * 获取有暴恐嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentSet 有暴恐嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置有暴恐嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SegmentSet 有暴恐嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewSegmentItem>& _segmentSet);
 
@@ -183,7 +167,6 @@ namespace TencentCloud
 
                     /**
                      * 视频暴恐评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
@@ -193,7 +176,6 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
@@ -208,14 +190,12 @@ namespace TencentCloud
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
 <li>terrorists：暴恐人物。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 有暴恐嫌疑的视频片段列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaContentReviewSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

@@ -24,7 +24,8 @@ using namespace std;
 TcrImageInfo::TcrImageInfo() :
     m_digestHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_imageVersionHasBeenSet(false)
+    m_imageVersionHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome TcrImageInfo::Deserialize(const Value &value)
         m_imageVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TcrImageInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void TcrImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "ImageVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_imageVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void TcrImageInfo::SetImageVersion(const string& _imageVersion)
 bool TcrImageInfo::ImageVersionHasBeenSet() const
 {
     return m_imageVersionHasBeenSet;
+}
+
+string TcrImageInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void TcrImageInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool TcrImageInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

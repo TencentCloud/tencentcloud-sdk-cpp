@@ -28,7 +28,9 @@ InquiryPriceCreateProxyResponse::InquiryPriceCreateProxyResponse() :
     m_proxyDailyPriceHasBeenSet(false),
     m_bandwidthUnitPriceHasBeenSet(false),
     m_discountProxyDailyPriceHasBeenSet(false),
-    m_currencyHasBeenSet(false)
+    m_currencyHasBeenSet(false),
+    m_flowUnitPriceHasBeenSet(false),
+    m_discountFlowUnitPriceHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
         m_currencyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowUnitPrice") && !rsp["FlowUnitPrice"].IsNull())
+    {
+        if (!rsp["FlowUnitPrice"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `FlowUnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowUnitPrice = rsp["FlowUnitPrice"].GetDouble();
+        m_flowUnitPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DiscountFlowUnitPrice") && !rsp["DiscountFlowUnitPrice"].IsNull())
+    {
+        if (!rsp["DiscountFlowUnitPrice"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `DiscountFlowUnitPrice` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountFlowUnitPrice = rsp["DiscountFlowUnitPrice"].GetDouble();
+        m_discountFlowUnitPriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -159,6 +181,26 @@ string InquiryPriceCreateProxyResponse::GetCurrency() const
 bool InquiryPriceCreateProxyResponse::CurrencyHasBeenSet() const
 {
     return m_currencyHasBeenSet;
+}
+
+double InquiryPriceCreateProxyResponse::GetFlowUnitPrice() const
+{
+    return m_flowUnitPrice;
+}
+
+bool InquiryPriceCreateProxyResponse::FlowUnitPriceHasBeenSet() const
+{
+    return m_flowUnitPriceHasBeenSet;
+}
+
+double InquiryPriceCreateProxyResponse::GetDiscountFlowUnitPrice() const
+{
+    return m_discountFlowUnitPrice;
+}
+
+bool InquiryPriceCreateProxyResponse::DiscountFlowUnitPriceHasBeenSet() const
+{
+    return m_discountFlowUnitPriceHasBeenSet;
 }
 
 

@@ -85,17 +85,13 @@ namespace TencentCloud
 
                     /**
                      * 获取人物描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 人物描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置人物描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Description 人物描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -125,17 +121,13 @@ namespace TencentCloud
 
                     /**
                      * 获取人物标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 人物标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetTagSet() const;
 
                     /**
                      * 设置人物标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TagSet 人物标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTagSet(const std::vector<std::string>& _tagSet);
 
@@ -215,7 +207,6 @@ namespace TencentCloud
 
                     /**
                      * 人物描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -228,7 +219,6 @@ namespace TencentCloud
 
                     /**
                      * 人物标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tagSet;
                     bool m_tagSetHasBeenSet;

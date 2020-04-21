@@ -5501,6 +5501,49 @@ VpcClient::DescribeVpnConnectionsOutcomeCallable VpcClient::DescribeVpnConnectio
     return task->get_future();
 }
 
+VpcClient::DescribeVpnGatewayCcnRoutesOutcome VpcClient::DescribeVpnGatewayCcnRoutes(const DescribeVpnGatewayCcnRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpnGatewayCcnRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpnGatewayCcnRoutesResponse rsp = DescribeVpnGatewayCcnRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpnGatewayCcnRoutesOutcome(rsp);
+        else
+            return DescribeVpnGatewayCcnRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpnGatewayCcnRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeVpnGatewayCcnRoutesAsync(const DescribeVpnGatewayCcnRoutesRequest& request, const DescribeVpnGatewayCcnRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpnGatewayCcnRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeVpnGatewayCcnRoutesOutcomeCallable VpcClient::DescribeVpnGatewayCcnRoutesCallable(const DescribeVpnGatewayCcnRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpnGatewayCcnRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpnGatewayCcnRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeVpnGatewaysOutcome VpcClient::DescribeVpnGateways(const DescribeVpnGatewaysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpnGateways");

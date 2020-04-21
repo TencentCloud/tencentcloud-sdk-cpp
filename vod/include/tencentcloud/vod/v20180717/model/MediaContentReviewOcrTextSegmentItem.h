@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param StartTimeOffset 嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param EndTimeOffset 嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑片段置信度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 嫌疑片段置信度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置嫌疑片段置信度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Confidence 嫌疑片段置信度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -117,12 +105,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 嫌疑片段审核结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
@@ -131,12 +117,10 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Suggestion 嫌疑片段审核结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
@@ -148,17 +132,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑关键词列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeywordSet 嫌疑关键词列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetKeywordSet() const;
 
                     /**
                      * 设置嫌疑关键词列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param KeywordSet 嫌疑关键词列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetKeywordSet(const std::vector<std::string>& _keywordSet);
 
@@ -170,17 +150,13 @@ namespace TencentCloud
 
                     /**
                      * 获取嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AreaCoordSet 嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AreaCoordSet 嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
@@ -234,21 +210,18 @@ PicUrlExpireTime 时间点后图片将被删除）。
 
                     /**
                      * 嫌疑片段起始的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
                      * 嫌疑片段结束的偏移时间，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
                      * 嫌疑片段置信度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
@@ -258,21 +231,18 @@ PicUrlExpireTime 时间点后图片将被删除）。
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
                      * 嫌疑关键词列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keywordSet;
                     bool m_keywordSetHasBeenSet;
 
                     /**
                      * 嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;

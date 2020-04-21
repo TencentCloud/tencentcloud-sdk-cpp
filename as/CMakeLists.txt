@@ -117,6 +117,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/DescribeLaunchConfigurationsRequest.h
   include/tencentcloud/as/v20180419/model/NotificationTarget.h
   include/tencentcloud/as/v20180419/model/DeleteAutoScalingGroupResponse.h
+  include/tencentcloud/as/v20180419/model/LifecycleActionResultInfo.h
   include/tencentcloud/as/v20180419/model/AutoScalingGroupAbstract.h
   include/tencentcloud/as/v20180419/model/EnableAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/MetricAlarm.h
@@ -243,6 +244,7 @@ set(as_src
   src/v20180419/model/DescribeLaunchConfigurationsRequest.cpp
   src/v20180419/model/NotificationTarget.cpp
   src/v20180419/model/DeleteAutoScalingGroupResponse.cpp
+  src/v20180419/model/LifecycleActionResultInfo.cpp
   src/v20180419/model/AutoScalingGroupAbstract.cpp
   src/v20180419/model/EnableAutoScalingGroupRequest.cpp
   src/v20180419/model/MetricAlarm.cpp
