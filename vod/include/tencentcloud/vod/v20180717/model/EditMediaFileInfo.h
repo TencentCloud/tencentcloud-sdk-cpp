@@ -66,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频剪辑的起始偏移时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 视频剪辑的起始偏移时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置视频剪辑的起始偏移时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param StartTimeOffset 视频剪辑的起始偏移时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
@@ -88,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频剪辑的起始结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeOffset 视频剪辑的起始结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置视频剪辑的起始结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param EndTimeOffset 视频剪辑的起始结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
@@ -118,14 +110,12 @@ namespace TencentCloud
 
                     /**
                      * 视频剪辑的起始偏移时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
                      * 视频剪辑的起始结束时间偏移，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

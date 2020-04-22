@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频鉴黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 视频鉴黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置视频鉴黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Confidence 视频鉴黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -155,7 +151,6 @@ namespace TencentCloud
 
                     /**
                      * 视频鉴黄评分，分值为0到100。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;

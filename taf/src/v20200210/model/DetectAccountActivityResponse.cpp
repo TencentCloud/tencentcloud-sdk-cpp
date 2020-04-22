@@ -14,24 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/DescribeMFADeviceCollResponse.h>
+#include <tencentcloud/taf/v20200210/model/DetectAccountActivityResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cam::V20190116::Model;
+using namespace TencentCloud::Taf::V20200210::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeMFADeviceCollResponse::DescribeMFADeviceCollResponse() :
-    m_statusHasBeenSet(false),
-    m_tokenSnHasBeenSet(false),
-    m_tokenTypeHasBeenSet(false)
+DetectAccountActivityResponse::DetectAccountActivityResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeMFADeviceCollResponse::Deserialize(const string &payload)
+CoreInternalOutcome DetectAccountActivityResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -65,34 +63,21 @@ CoreInternalOutcome DescribeMFADeviceCollResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Status"].IsUint64())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_status = rsp["Status"].GetUint64();
-        m_statusHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("TokenSn") && !rsp["TokenSn"].IsNull())
-    {
-        if (!rsp["TokenSn"].IsString())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Error("response `TokenSn` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_tokenSn = string(rsp["TokenSn"].GetString());
-        m_tokenSnHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("TokenType") && !rsp["TokenType"].IsNull())
-    {
-        if (!rsp["TokenType"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `TokenType` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_tokenType = rsp["TokenType"].GetUint64();
-        m_tokenTypeHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
@@ -100,34 +85,14 @@ CoreInternalOutcome DescribeMFADeviceCollResponse::Deserialize(const string &pay
 }
 
 
-uint64_t DescribeMFADeviceCollResponse::GetStatus() const
+OutputDetectAccountActivity DetectAccountActivityResponse::GetData() const
 {
-    return m_status;
+    return m_data;
 }
 
-bool DescribeMFADeviceCollResponse::StatusHasBeenSet() const
+bool DetectAccountActivityResponse::DataHasBeenSet() const
 {
-    return m_statusHasBeenSet;
-}
-
-string DescribeMFADeviceCollResponse::GetTokenSn() const
-{
-    return m_tokenSn;
-}
-
-bool DescribeMFADeviceCollResponse::TokenSnHasBeenSet() const
-{
-    return m_tokenSnHasBeenSet;
-}
-
-uint64_t DescribeMFADeviceCollResponse::GetTokenType() const
-{
-    return m_tokenType;
-}
-
-bool DescribeMFADeviceCollResponse::TokenTypeHasBeenSet() const
-{
-    return m_tokenTypeHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

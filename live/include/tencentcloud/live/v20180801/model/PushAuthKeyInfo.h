@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 推流鉴权key信息
+                * 推流鉴权key信息。
                 */
                 class PushAuthKeyInfo : public AbstractModel
                 {
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取主鉴权key。
-                     * @return MasterAuthKey 主鉴权key。
+                     * 获取主鉴权 Key。
+                     * @return MasterAuthKey 主鉴权 Key。
                      */
                     std::string GetMasterAuthKey() const;
 
                     /**
-                     * 设置主鉴权key。
-                     * @param MasterAuthKey 主鉴权key。
+                     * 设置主鉴权 Key。
+                     * @param MasterAuthKey 主鉴权 Key。
                      */
                     void SetMasterAuthKey(const std::string& _masterAuthKey);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool MasterAuthKeyHasBeenSet() const;
 
                     /**
-                     * 获取备鉴权key。
-                     * @return BackupAuthKey 备鉴权key。
+                     * 获取备鉴权 Key。
+                     * @return BackupAuthKey 备鉴权 Key。
                      */
                     std::string GetBackupAuthKey() const;
 
                     /**
-                     * 设置备鉴权key。
-                     * @param BackupAuthKey 备鉴权key。
+                     * 设置备鉴权 Key。
+                     * @param BackupAuthKey 备鉴权 Key。
                      */
                     void SetBackupAuthKey(const std::string& _backupAuthKey);
 
@@ -151,13 +151,13 @@ namespace TencentCloud
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 主鉴权key。
+                     * 主鉴权 Key。
                      */
                     std::string m_masterAuthKey;
                     bool m_masterAuthKeyHasBeenSet;
 
                     /**
-                     * 备鉴权key。
+                     * 备鉴权 Key。
                      */
                     std::string m_backupAuthKey;
                     bool m_backupAuthKeyHasBeenSet;

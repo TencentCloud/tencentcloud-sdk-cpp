@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 带宽和流量信息
+                * 带宽和流量信息。
                 */
                 class BillDataInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @return Time 时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 获取时间点，格式: yyyy-mm-dd HH:MM:SS。
+                     * @return Time 时间点，格式: yyyy-mm-dd HH:MM:SS。
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @param Time 时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 设置时间点，格式: yyyy-mm-dd HH:MM:SS。
+                     * @param Time 时间点，格式: yyyy-mm-dd HH:MM:SS。
                      */
                     void SetTime(const std::string& _time);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取带宽，单位是Mbps。
-                     * @return Bandwidth 带宽，单位是Mbps。
+                     * 获取带宽，单位是 Mbps。
+                     * @return Bandwidth 带宽，单位是 Mbps。
                      */
                     double GetBandwidth() const;
 
                     /**
-                     * 设置带宽，单位是Mbps。
-                     * @param Bandwidth 带宽，单位是Mbps。
+                     * 设置带宽，单位是 Mbps。
+                     * @param Bandwidth 带宽，单位是 Mbps。
                      */
                     void SetBandwidth(const double& _bandwidth);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取流量，单位是MB。
-                     * @return Flux 流量，单位是MB。
+                     * 获取流量，单位是 MB。
+                     * @return Flux 流量，单位是 MB。
                      */
                     double GetFlux() const;
 
                     /**
-                     * 设置流量，单位是MB。
-                     * @param Flux 流量，单位是MB。
+                     * 设置流量，单位是 MB。
+                     * @param Flux 流量，单位是 MB。
                      */
                     void SetFlux(const double& _flux);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool FluxHasBeenSet() const;
 
                     /**
-                     * 获取峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
-                     * @return PeakTime 峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * 获取峰值时间点，格式: yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * @return PeakTime 峰值时间点，格式: yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
                      */
                     std::string GetPeakTime() const;
 
                     /**
-                     * 设置峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
-                     * @param PeakTime 峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * 设置峰值时间点，格式: yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * @param PeakTime 峰值时间点，格式: yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
                      */
                     void SetPeakTime(const std::string& _peakTime);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 时间点，格式: yyyy-mm-dd HH:MM:SS。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 带宽，单位是Mbps。
+                     * 带宽，单位是 Mbps。
                      */
                     double m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 流量，单位是MB。
+                     * 流量，单位是 MB。
                      */
                     double m_flux;
                     bool m_fluxHasBeenSet;
 
                     /**
-                     * 峰值时间点，格式为yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
+                     * 峰值时间点，格式: yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。
                      */
                     std::string m_peakTime;
                     bool m_peakTimeHasBeenSet;

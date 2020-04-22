@@ -66,17 +66,205 @@ namespace TencentCloud
 
                     /**
                      * 获取行为的JSON字符串，大部分种类举例如下：
-[{"republish":{"topic":"TEST/test"}},{"forward":{"api":"http://127.0.0.1:8080"}},{"ckafka":{"instance":{"id":"ckafka-test","name":""},"topic":{"id":"topic-test","name":"test"},"region":"gz"}},{"cmqqueue":{"queuename":"queue-test-TEST","region":"gz"}},{"mysql":{"instanceid":"cdb-test","region":"gz","username":"test","userpwd":"*****","dbname":"d_mqtt","tablename":"t_test","fieldpairs":[{"field":"test","value":"test"}],"devicetype":"CUSTOM"}}]
+[
+    {
+        "republish": {
+            "topic": "TEST/test"
+        }
+    },
+    {
+        "forward": {
+            "api": "http://127.0.0.1:8080"
+        }
+    },
+    {
+        "ckafka": {
+            "instance": {
+                "id": "ckafka-test",
+                "name": ""
+            },
+            "topic": {
+                "id": "topic-test",
+                "name": "test"
+            },
+            "region": "gz"
+        }
+    },
+    {
+        "cmqqueue": {
+            "queuename": "queue-test-TEST",
+            "region": "gz"
+        }
+    },
+    {
+        "mysql": {
+            "instanceid": "cdb-test",
+            "region": "gz",
+            "username": "test",
+            "userpwd": "*****",
+            "dbname": "d_mqtt",
+            "tablename": "t_test",
+            "fieldpairs": [
+                {
+                    "field": "test",
+                    "value": "test"
+                }
+            ],
+            "devicetype": "CUSTOM"
+        }
+    }
+]
                      * @return Actions 行为的JSON字符串，大部分种类举例如下：
-[{"republish":{"topic":"TEST/test"}},{"forward":{"api":"http://127.0.0.1:8080"}},{"ckafka":{"instance":{"id":"ckafka-test","name":""},"topic":{"id":"topic-test","name":"test"},"region":"gz"}},{"cmqqueue":{"queuename":"queue-test-TEST","region":"gz"}},{"mysql":{"instanceid":"cdb-test","region":"gz","username":"test","userpwd":"*****","dbname":"d_mqtt","tablename":"t_test","fieldpairs":[{"field":"test","value":"test"}],"devicetype":"CUSTOM"}}]
+[
+    {
+        "republish": {
+            "topic": "TEST/test"
+        }
+    },
+    {
+        "forward": {
+            "api": "http://127.0.0.1:8080"
+        }
+    },
+    {
+        "ckafka": {
+            "instance": {
+                "id": "ckafka-test",
+                "name": ""
+            },
+            "topic": {
+                "id": "topic-test",
+                "name": "test"
+            },
+            "region": "gz"
+        }
+    },
+    {
+        "cmqqueue": {
+            "queuename": "queue-test-TEST",
+            "region": "gz"
+        }
+    },
+    {
+        "mysql": {
+            "instanceid": "cdb-test",
+            "region": "gz",
+            "username": "test",
+            "userpwd": "*****",
+            "dbname": "d_mqtt",
+            "tablename": "t_test",
+            "fieldpairs": [
+                {
+                    "field": "test",
+                    "value": "test"
+                }
+            ],
+            "devicetype": "CUSTOM"
+        }
+    }
+]
                      */
                     std::string GetActions() const;
 
                     /**
                      * 设置行为的JSON字符串，大部分种类举例如下：
-[{"republish":{"topic":"TEST/test"}},{"forward":{"api":"http://127.0.0.1:8080"}},{"ckafka":{"instance":{"id":"ckafka-test","name":""},"topic":{"id":"topic-test","name":"test"},"region":"gz"}},{"cmqqueue":{"queuename":"queue-test-TEST","region":"gz"}},{"mysql":{"instanceid":"cdb-test","region":"gz","username":"test","userpwd":"*****","dbname":"d_mqtt","tablename":"t_test","fieldpairs":[{"field":"test","value":"test"}],"devicetype":"CUSTOM"}}]
+[
+    {
+        "republish": {
+            "topic": "TEST/test"
+        }
+    },
+    {
+        "forward": {
+            "api": "http://127.0.0.1:8080"
+        }
+    },
+    {
+        "ckafka": {
+            "instance": {
+                "id": "ckafka-test",
+                "name": ""
+            },
+            "topic": {
+                "id": "topic-test",
+                "name": "test"
+            },
+            "region": "gz"
+        }
+    },
+    {
+        "cmqqueue": {
+            "queuename": "queue-test-TEST",
+            "region": "gz"
+        }
+    },
+    {
+        "mysql": {
+            "instanceid": "cdb-test",
+            "region": "gz",
+            "username": "test",
+            "userpwd": "*****",
+            "dbname": "d_mqtt",
+            "tablename": "t_test",
+            "fieldpairs": [
+                {
+                    "field": "test",
+                    "value": "test"
+                }
+            ],
+            "devicetype": "CUSTOM"
+        }
+    }
+]
                      * @param Actions 行为的JSON字符串，大部分种类举例如下：
-[{"republish":{"topic":"TEST/test"}},{"forward":{"api":"http://127.0.0.1:8080"}},{"ckafka":{"instance":{"id":"ckafka-test","name":""},"topic":{"id":"topic-test","name":"test"},"region":"gz"}},{"cmqqueue":{"queuename":"queue-test-TEST","region":"gz"}},{"mysql":{"instanceid":"cdb-test","region":"gz","username":"test","userpwd":"*****","dbname":"d_mqtt","tablename":"t_test","fieldpairs":[{"field":"test","value":"test"}],"devicetype":"CUSTOM"}}]
+[
+    {
+        "republish": {
+            "topic": "TEST/test"
+        }
+    },
+    {
+        "forward": {
+            "api": "http://127.0.0.1:8080"
+        }
+    },
+    {
+        "ckafka": {
+            "instance": {
+                "id": "ckafka-test",
+                "name": ""
+            },
+            "topic": {
+                "id": "topic-test",
+                "name": "test"
+            },
+            "region": "gz"
+        }
+    },
+    {
+        "cmqqueue": {
+            "queuename": "queue-test-TEST",
+            "region": "gz"
+        }
+    },
+    {
+        "mysql": {
+            "instanceid": "cdb-test",
+            "region": "gz",
+            "username": "test",
+            "userpwd": "*****",
+            "dbname": "d_mqtt",
+            "tablename": "t_test",
+            "fieldpairs": [
+                {
+                    "field": "test",
+                    "value": "test"
+                }
+            ],
+            "devicetype": "CUSTOM"
+        }
+    }
+]
                      */
                     void SetActions(const std::string& _actions);
 
@@ -132,7 +320,54 @@ namespace TencentCloud
 
                     /**
                      * 行为的JSON字符串，大部分种类举例如下：
-[{"republish":{"topic":"TEST/test"}},{"forward":{"api":"http://127.0.0.1:8080"}},{"ckafka":{"instance":{"id":"ckafka-test","name":""},"topic":{"id":"topic-test","name":"test"},"region":"gz"}},{"cmqqueue":{"queuename":"queue-test-TEST","region":"gz"}},{"mysql":{"instanceid":"cdb-test","region":"gz","username":"test","userpwd":"*****","dbname":"d_mqtt","tablename":"t_test","fieldpairs":[{"field":"test","value":"test"}],"devicetype":"CUSTOM"}}]
+[
+    {
+        "republish": {
+            "topic": "TEST/test"
+        }
+    },
+    {
+        "forward": {
+            "api": "http://127.0.0.1:8080"
+        }
+    },
+    {
+        "ckafka": {
+            "instance": {
+                "id": "ckafka-test",
+                "name": ""
+            },
+            "topic": {
+                "id": "topic-test",
+                "name": "test"
+            },
+            "region": "gz"
+        }
+    },
+    {
+        "cmqqueue": {
+            "queuename": "queue-test-TEST",
+            "region": "gz"
+        }
+    },
+    {
+        "mysql": {
+            "instanceid": "cdb-test",
+            "region": "gz",
+            "username": "test",
+            "userpwd": "*****",
+            "dbname": "d_mqtt",
+            "tablename": "t_test",
+            "fieldpairs": [
+                {
+                    "field": "test",
+                    "value": "test"
+                }
+            ],
+            "devicetype": "CUSTOM"
+        }
+    }
+]
                      */
                     std::string m_actions;
                     bool m_actionsHasBeenSet;

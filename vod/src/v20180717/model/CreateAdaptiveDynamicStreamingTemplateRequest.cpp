@@ -30,7 +30,8 @@ CreateAdaptiveDynamicStreamingTemplateRequest::CreateAdaptiveDynamicStreamingTem
     m_drmTypeHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,14 @@ string CreateAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -222,6 +231,22 @@ void CreateAdaptiveDynamicStreamingTemplateRequest::SetComment(const string& _co
 bool CreateAdaptiveDynamicStreamingTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+uint64_t CreateAdaptiveDynamicStreamingTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateAdaptiveDynamicStreamingTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateAdaptiveDynamicStreamingTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 

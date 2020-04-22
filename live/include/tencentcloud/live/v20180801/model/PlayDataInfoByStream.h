@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 流维度的播放信息
+                * 流维度的播放信息。
                 */
                 class PlayDataInfoByStream : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取总流量（单位MB）。
-                     * @return TotalFlux 总流量（单位MB）。
+                     * 获取总流量，单位: MB。
+                     * @return TotalFlux 总流量，单位: MB。
                      */
                     double GetTotalFlux() const;
 
                     /**
-                     * 设置总流量（单位MB）。
-                     * @param TotalFlux 总流量（单位MB）。
+                     * 设置总流量，单位: MB。
+                     * @param TotalFlux 总流量，单位: MB。
                      */
                     void SetTotalFlux(const double& _totalFlux);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 总流量（单位MB）。
+                     * 总流量，单位: MB。
                      */
                     double m_totalFlux;
                     bool m_totalFluxHasBeenSet;

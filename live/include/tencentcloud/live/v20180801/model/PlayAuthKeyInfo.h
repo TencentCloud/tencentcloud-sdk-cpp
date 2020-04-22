@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 播放鉴权key信息
+                * 播放鉴权key信息。
                 */
                 class PlayAuthKeyInfo : public AbstractModel
                 {
@@ -65,14 +65,22 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取是否启用，0：关闭，1：启用。
-                     * @return Enable 是否启用，0：关闭，1：启用。
+                     * 获取是否启用:
+0: 关闭。
+1: 启用。
+                     * @return Enable 是否启用:
+0: 关闭。
+1: 启用。
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置是否启用，0：关闭，1：启用。
-                     * @param Enable 是否启用，0：关闭，1：启用。
+                     * 设置是否启用:
+0: 关闭。
+1: 启用。
+                     * @param Enable 是否启用:
+0: 关闭。
+1: 启用。
                      */
                     void SetEnable(const int64_t& _enable);
 
@@ -83,14 +91,14 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取鉴权key。
-                     * @return AuthKey 鉴权key。
+                     * 获取鉴权 Key。
+                     * @return AuthKey 鉴权 Key。
                      */
                     std::string GetAuthKey() const;
 
                     /**
-                     * 设置鉴权key。
-                     * @param AuthKey 鉴权key。
+                     * 设置鉴权 Key。
+                     * @param AuthKey 鉴权 Key。
                      */
                     void SetAuthKey(const std::string& _authKey);
 
@@ -119,14 +127,14 @@ namespace TencentCloud
                     bool AuthDeltaHasBeenSet() const;
 
                     /**
-                     * 获取鉴权BackKey。
-                     * @return AuthBackKey 鉴权BackKey。
+                     * 获取鉴权 BackKey。
+                     * @return AuthBackKey 鉴权 BackKey。
                      */
                     std::string GetAuthBackKey() const;
 
                     /**
-                     * 设置鉴权BackKey。
-                     * @param AuthBackKey 鉴权BackKey。
+                     * 设置鉴权 BackKey。
+                     * @param AuthBackKey 鉴权 BackKey。
                      */
                     void SetAuthBackKey(const std::string& _authBackKey);
 
@@ -145,13 +153,15 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 是否启用，0：关闭，1：启用。
+                     * 是否启用:
+0: 关闭。
+1: 启用。
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 鉴权key。
+                     * 鉴权 Key。
                      */
                     std::string m_authKey;
                     bool m_authKeyHasBeenSet;
@@ -163,7 +173,7 @@ namespace TencentCloud
                     bool m_authDeltaHasBeenSet;
 
                     /**
-                     * 鉴权BackKey。
+                     * 鉴权 BackKey。
                      */
                     std::string m_authBackKey;
                     bool m_authBackKeyHasBeenSet;

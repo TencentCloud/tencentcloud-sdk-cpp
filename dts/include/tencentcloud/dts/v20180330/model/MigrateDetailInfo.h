@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool StepNowHasBeenSet() const;
 
                     /**
-                     * 获取总进度,如：
-                     * @return Progress 总进度,如：
+                     * 获取总进度,如："10"
+                     * @return Progress 总进度,如："10"
                      */
                     std::string GetProgress() const;
 
                     /**
-                     * 设置总进度,如：
-                     * @param Progress 总进度,如：
+                     * 设置总进度,如："10"
+                     * @param Progress 总进度,如："10"
                      */
                     void SetProgress(const std::string& _progress);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤进度,如:
-                     * @return CurrentStepProgress 当前步骤进度,如:
+                     * 获取当前步骤进度,如:"1"
+                     * @return CurrentStepProgress 当前步骤进度,如:"1"
                      */
                     std::string GetCurrentStepProgress() const;
 
                     /**
-                     * 设置当前步骤进度,如:
-                     * @param CurrentStepProgress 当前步骤进度,如:
+                     * 设置当前步骤进度,如:"1"
+                     * @param CurrentStepProgress 当前步骤进度,如:"1"
                      */
                     void SetCurrentStepProgress(const std::string& _currentStepProgress);
 
@@ -188,13 +188,13 @@ namespace TencentCloud
                     bool m_stepNowHasBeenSet;
 
                     /**
-                     * 总进度,如：
+                     * 总进度,如："10"
                      */
                     std::string m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 当前步骤进度,如:
+                     * 当前步骤进度,如:"1"
                      */
                     std::string m_currentStepProgress;
                     bool m_currentStepProgressHasBeenSet;

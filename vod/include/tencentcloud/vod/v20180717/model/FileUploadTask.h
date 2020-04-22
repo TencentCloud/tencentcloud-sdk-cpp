@@ -86,17 +86,13 @@ namespace TencentCloud
 
                     /**
                      * 获取若视频上传时指定了视频处理流程，则该字段为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcedureTaskId 若视频上传时指定了视频处理流程，则该字段为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
                      * 设置若视频上传时指定了视频处理流程，则该字段为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProcedureTaskId 若视频上传时指定了视频处理流程，则该字段为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
 
@@ -144,7 +140,6 @@ namespace TencentCloud
 
                     /**
                      * 若视频上传时指定了视频处理流程，则该字段为流程任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;

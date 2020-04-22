@@ -298,6 +298,49 @@ MongodbClient::DescribeDBBackupsOutcomeCallable MongodbClient::DescribeDBBackups
     return task->get_future();
 }
 
+MongodbClient::DescribeDBInstanceDealOutcome MongodbClient::DescribeDBInstanceDeal(const DescribeDBInstanceDealRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceDeal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceDealResponse rsp = DescribeDBInstanceDealResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceDealOutcome(rsp);
+        else
+            return DescribeDBInstanceDealOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceDealOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceDealAsync(const DescribeDBInstanceDealRequest& request, const DescribeDBInstanceDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceDeal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeDBInstanceDealOutcomeCallable MongodbClient::DescribeDBInstanceDealCallable(const DescribeDBInstanceDealRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceDealOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceDeal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeDBInstancesOutcome MongodbClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");
@@ -463,6 +506,135 @@ MongodbClient::DescribeSpecInfoOutcomeCallable MongodbClient::DescribeSpecInfoCa
         [this, request]()
         {
             return this->DescribeSpecInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::InquirePriceCreateDBInstancesOutcome MongodbClient::InquirePriceCreateDBInstances(const InquirePriceCreateDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreateDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateDBInstancesResponse rsp = InquirePriceCreateDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateDBInstancesOutcome(rsp);
+        else
+            return InquirePriceCreateDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::InquirePriceCreateDBInstancesAsync(const InquirePriceCreateDBInstancesRequest& request, const InquirePriceCreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceCreateDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::InquirePriceCreateDBInstancesOutcomeCallable MongodbClient::InquirePriceCreateDBInstancesCallable(const InquirePriceCreateDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceCreateDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceCreateDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::InquirePriceModifyDBInstanceSpecOutcome MongodbClient::InquirePriceModifyDBInstanceSpec(const InquirePriceModifyDBInstanceSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceModifyDBInstanceSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceModifyDBInstanceSpecResponse rsp = InquirePriceModifyDBInstanceSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceModifyDBInstanceSpecOutcome(rsp);
+        else
+            return InquirePriceModifyDBInstanceSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceModifyDBInstanceSpecOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::InquirePriceModifyDBInstanceSpecAsync(const InquirePriceModifyDBInstanceSpecRequest& request, const InquirePriceModifyDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceModifyDBInstanceSpec(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::InquirePriceModifyDBInstanceSpecOutcomeCallable MongodbClient::InquirePriceModifyDBInstanceSpecCallable(const InquirePriceModifyDBInstanceSpecRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceModifyDBInstanceSpecOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceModifyDBInstanceSpec(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::InquirePriceRenewDBInstancesOutcome MongodbClient::InquirePriceRenewDBInstances(const InquirePriceRenewDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceRenewDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceRenewDBInstancesResponse rsp = InquirePriceRenewDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceRenewDBInstancesOutcome(rsp);
+        else
+            return InquirePriceRenewDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceRenewDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::InquirePriceRenewDBInstancesAsync(const InquirePriceRenewDBInstancesRequest& request, const InquirePriceRenewDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceRenewDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::InquirePriceRenewDBInstancesOutcomeCallable MongodbClient::InquirePriceRenewDBInstancesCallable(const InquirePriceRenewDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceRenewDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceRenewDBInstances(request);
         }
     );
 

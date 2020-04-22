@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名。非空的字符串
-                     * @return TemplateName 模板名。非空的字符串
+                     * 获取模板名。仅支持中文、英文、数字、_、-。
+                     * @return TemplateName 模板名。仅支持中文、英文、数字、_、-。
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名。非空的字符串
-                     * @param TemplateName 模板名。非空的字符串
+                     * 设置模板名。仅支持中文、英文、数字、_、-。
+                     * @param TemplateName 模板名。仅支持中文、英文、数字、_、-。
                      */
                     void SetTemplateName(const std::string& _templateName);
 
@@ -153,17 +153,21 @@ namespace TencentCloud
                     bool AacParamHasBeenSet() const;
 
                     /**
-                     * 获取0：普通直播，
+                     * 获取直播类型，默认 0。
+0：普通直播，
 1：慢直播。
-                     * @return IsDelayLive 0：普通直播，
+                     * @return IsDelayLive 直播类型，默认 0。
+0：普通直播，
 1：慢直播。
                      */
                     int64_t GetIsDelayLive() const;
 
                     /**
-                     * 设置0：普通直播，
+                     * 设置直播类型，默认 0。
+0：普通直播，
 1：慢直播。
-                     * @param IsDelayLive 0：普通直播，
+                     * @param IsDelayLive 直播类型，默认 0。
+0：普通直播，
 1：慢直播。
                      */
                     void SetIsDelayLive(const int64_t& _isDelayLive);
@@ -213,7 +217,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名。非空的字符串
+                     * 模板名。仅支持中文、英文、数字、_、-。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
@@ -249,7 +253,8 @@ namespace TencentCloud
                     bool m_aacParamHasBeenSet;
 
                     /**
-                     * 0：普通直播，
+                     * 直播类型，默认 0。
+0：普通直播，
 1：慢直播。
                      */
                     int64_t m_isDelayLive;

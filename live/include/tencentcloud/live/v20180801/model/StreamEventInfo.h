@@ -102,21 +102,17 @@ namespace TencentCloud
 
                     /**
                      * 获取推流开始时间。
-UTC格式时间，
-例如：2019-01-07T12:00:00Z。
+UTC 格式时间，例如：2019-01-07T12:00:00Z。
                      * @return StreamStartTime 推流开始时间。
-UTC格式时间，
-例如：2019-01-07T12:00:00Z。
+UTC 格式时间，例如：2019-01-07T12:00:00Z。
                      */
                     std::string GetStreamStartTime() const;
 
                     /**
                      * 设置推流开始时间。
-UTC格式时间，
-例如：2019-01-07T12:00:00Z。
+UTC 格式时间，例如：2019-01-07T12:00:00Z。
                      * @param StreamStartTime 推流开始时间。
-UTC格式时间，
-例如：2019-01-07T12:00:00Z。
+UTC 格式时间，例如：2019-01-07T12:00:00Z。
                      */
                     void SetStreamStartTime(const std::string& _streamStartTime);
 
@@ -128,21 +124,17 @@ UTC格式时间，
 
                     /**
                      * 获取推流结束时间。
-UTC格式时间，
-例如：2019-01-07T15:00:00Z。
+UTC 格式时间，例如：2019-01-07T15:00:00Z。
                      * @return StreamEndTime 推流结束时间。
-UTC格式时间，
-例如：2019-01-07T15:00:00Z。
+UTC 格式时间，例如：2019-01-07T15:00:00Z。
                      */
                     std::string GetStreamEndTime() const;
 
                     /**
                      * 设置推流结束时间。
-UTC格式时间，
-例如：2019-01-07T15:00:00Z。
+UTC 格式时间，例如：2019-01-07T15:00:00Z。
                      * @param StreamEndTime 推流结束时间。
-UTC格式时间，
-例如：2019-01-07T15:00:00Z。
+UTC 格式时间，例如：2019-01-07T15:00:00Z。
                      */
                     void SetStreamEndTime(const std::string& _streamEndTime);
 
@@ -189,14 +181,14 @@ UTC格式时间，
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取主播IP。
-                     * @return ClientIp 主播IP。
+                     * 获取主播 IP。
+                     * @return ClientIp 主播 IP。
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置主播IP。
-                     * @param ClientIp 主播IP。
+                     * 设置主播 IP。
+                     * @param ClientIp 主播 IP。
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -246,16 +238,14 @@ UTC格式时间，
 
                     /**
                      * 推流开始时间。
-UTC格式时间，
-例如：2019-01-07T12:00:00Z。
+UTC 格式时间，例如：2019-01-07T12:00:00Z。
                      */
                     std::string m_streamStartTime;
                     bool m_streamStartTimeHasBeenSet;
 
                     /**
                      * 推流结束时间。
-UTC格式时间，
-例如：2019-01-07T15:00:00Z。
+UTC 格式时间，例如：2019-01-07T15:00:00Z。
                      */
                     std::string m_streamEndTime;
                     bool m_streamEndTimeHasBeenSet;
@@ -273,7 +263,7 @@ UTC格式时间，
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 主播IP。
+                     * 主播 IP。
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;

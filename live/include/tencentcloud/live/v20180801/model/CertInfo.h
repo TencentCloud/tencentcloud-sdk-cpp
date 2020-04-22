@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 证书信息
+                * 证书信息。
                 */
                 class CertInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书Id。
-                     * @return CertId 证书Id。
+                     * 获取证书 ID。
+                     * @return CertId 证书 ID。
                      */
                     int64_t GetCertId() const;
 
                     /**
-                     * 设置证书Id。
-                     * @param CertId 证书Id。
+                     * 设置证书 ID。
+                     * @param CertId 证书 ID。
                      */
                     void SetCertId(const int64_t& _certId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，UTC格式。
-                     * @return CreateTime 创建时间，UTC格式。
+                     * 获取创建时间，UTC 格式。
+                     * @return CreateTime 创建时间，UTC 格式。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，UTC格式。
-                     * @param CreateTime 创建时间，UTC格式。
+                     * 设置创建时间，UTC 格式。
+                     * @param CreateTime 创建时间，UTC 格式。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -137,21 +137,21 @@ namespace TencentCloud
                     bool HttpsCrtHasBeenSet() const;
 
                     /**
-                     * 获取证书类型。
-0：腾讯云托管证书
+                     * 获取证书类型:
+0：腾讯云托管证书。
 1：用户添加证书。
-                     * @return CertType 证书类型。
-0：腾讯云托管证书
+                     * @return CertType 证书类型:
+0：腾讯云托管证书。
 1：用户添加证书。
                      */
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置证书类型。
-0：腾讯云托管证书
+                     * 设置证书类型:
+0：腾讯云托管证书。
 1：用户添加证书。
-                     * @param CertType 证书类型。
-0：腾讯云托管证书
+                     * @param CertType 证书类型:
+0：腾讯云托管证书。
 1：用户添加证书。
                      */
                     void SetCertType(const int64_t& _certType);
@@ -163,14 +163,14 @@ namespace TencentCloud
                     bool CertTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间，UTC格式。
-                     * @return CertExpireTime 证书过期时间，UTC格式。
+                     * 获取证书过期时间，UTC 格式。
+                     * @return CertExpireTime 证书过期时间，UTC 格式。
                      */
                     std::string GetCertExpireTime() const;
 
                     /**
-                     * 设置证书过期时间，UTC格式。
-                     * @param CertExpireTime 证书过期时间，UTC格式。
+                     * 设置证书过期时间，UTC 格式。
+                     * @param CertExpireTime 证书过期时间，UTC 格式。
                      */
                     void SetCertExpireTime(const std::string& _certExpireTime);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书Id。
+                     * 证书 ID。
                      */
                     int64_t m_certId;
                     bool m_certIdHasBeenSet;
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建时间，UTC格式。
+                     * 创建时间，UTC 格式。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -231,15 +231,15 @@ namespace TencentCloud
                     bool m_httpsCrtHasBeenSet;
 
                     /**
-                     * 证书类型。
-0：腾讯云托管证书
+                     * 证书类型:
+0：腾讯云托管证书。
 1：用户添加证书。
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
 
                     /**
-                     * 证书过期时间，UTC格式。
+                     * 证书过期时间，UTC 格式。
                      */
                     std::string m_certExpireTime;
                     bool m_certExpireTimeHasBeenSet;

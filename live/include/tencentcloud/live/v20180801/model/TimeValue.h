@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取utc时间，时间格式为yyyy-mm-ddTHH:MM:SSZ。
-                     * @return Time utc时间，时间格式为yyyy-mm-ddTHH:MM:SSZ。
+                     * 获取UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
+                     * @return Time UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置utc时间，时间格式为yyyy-mm-ddTHH:MM:SSZ。
-                     * @param Time utc时间，时间格式为yyyy-mm-ddTHH:MM:SSZ。
+                     * 设置UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
+                     * @param Time UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
                      */
                     void SetTime(const std::string& _time);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * utc时间，时间格式为yyyy-mm-ddTHH:MM:SSZ。
+                     * UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;

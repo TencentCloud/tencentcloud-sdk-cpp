@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取推流域名。多域名用户需要填写DomainName。
-                     * @return DomainName 推流域名。多域名用户需要填写DomainName。
+                     * 获取推流域名。多域名用户需要填写 DomainName。
+                     * @return DomainName 推流域名。多域名用户需要填写 DomainName。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置推流域名。多域名用户需要填写DomainName。
-                     * @param DomainName 推流域名。多域名用户需要填写DomainName。
+                     * 设置推流域名。多域名用户需要填写 DomainName。
+                     * @param DomainName 推流域名。多域名用户需要填写 DomainName。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。多路径用户需要填写AppName。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。多路径用户需要填写AppName。
+                     * 获取推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。多路径用户需要填写 AppName。
+                     * @return AppName 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。多路径用户需要填写 AppName。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。多路径用户需要填写AppName。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。多路径用户需要填写AppName。
+                     * 设置推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。多路径用户需要填写 AppName。
+                     * @param AppName 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。多路径用户需要填写 AppName。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -143,13 +143,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 推流域名。多域名用户需要填写DomainName。
+                     * 推流域名。多域名用户需要填写 DomainName。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。多路径用户需要填写AppName。
+                     * 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。多路径用户需要填写 AppName。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

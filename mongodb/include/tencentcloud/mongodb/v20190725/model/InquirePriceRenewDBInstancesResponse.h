@@ -14,53 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CAM_V20190116_MODEL_DETECTMASKAUTHRESPONSE_H_
-#define TENCENTCLOUD_CAM_V20190116_MODEL_DETECTMASKAUTHRESPONSE_H_
+#ifndef TENCENTCLOUD_MONGODB_V20190725_MODEL_INQUIREPRICERENEWDBINSTANCESRESPONSE_H_
+#define TENCENTCLOUD_MONGODB_V20190725_MODEL_INQUIREPRICERENEWDBINSTANCESRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mongodb/v20190725/model/DBInstancePrice.h>
 
 
 namespace TencentCloud
 {
-    namespace Cam
+    namespace Mongodb
     {
-        namespace V20190116
+        namespace V20190725
         {
             namespace Model
             {
                 /**
-                * DetectMaskAuth返回参数结构体
+                * InquirePriceRenewDBInstances返回参数结构体
                 */
-                class DetectMaskAuthResponse : public AbstractModel
+                class InquirePriceRenewDBInstancesResponse : public AbstractModel
                 {
                 public:
-                    DetectMaskAuthResponse();
-                    ~DetectMaskAuthResponse() = default;
+                    InquirePriceRenewDBInstancesResponse();
+                    ~InquirePriceRenewDBInstancesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取人脸核身Token
-                     * @return Token 人脸核身Token
+                     * 获取价格
+                     * @return Price 价格
                      */
-                    std::string GetToken() const;
+                    DBInstancePrice GetPrice() const;
 
                     /**
-                     * 判断参数 Token 是否已赋值
-                     * @return Token 是否已赋值
+                     * 判断参数 Price 是否已赋值
+                     * @return Price 是否已赋值
                      */
-                    bool TokenHasBeenSet() const;
+                    bool PriceHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 人脸核身Token
+                     * 价格
                      */
-                    std::string m_token;
-                    bool m_tokenHasBeenSet;
+                    DBInstancePrice m_price;
+                    bool m_priceHasBeenSet;
 
                 };
             }
@@ -68,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CAM_V20190116_MODEL_DETECTMASKAUTHRESPONSE_H_
+#endif // !TENCENTCLOUD_MONGODB_V20190725_MODEL_INQUIREPRICERENEWDBINSTANCESRESPONSE_H_

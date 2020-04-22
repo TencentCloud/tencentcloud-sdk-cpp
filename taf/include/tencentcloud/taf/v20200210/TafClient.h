@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/taf/v20200210/model/DetectAccountActivityRequest.h>
+#include <tencentcloud/taf/v20200210/model/DetectAccountActivityResponse.h>
 #include <tencentcloud/taf/v20200210/model/DetectFraudKOLRequest.h>
 #include <tencentcloud/taf/v20200210/model/DetectFraudKOLResponse.h>
 #include <tencentcloud/taf/v20200210/model/EnhanceTaDegreeRequest.h>
@@ -49,6 +51,9 @@ namespace TencentCloud
                 TafClient(const Credential &credential, const std::string &region);
                 TafClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DetectAccountActivityResponse> DetectAccountActivityOutcome;
+                typedef std::future<DetectAccountActivityOutcome> DetectAccountActivityOutcomeCallable;
+                typedef std::function<void(const TafClient*, const Model::DetectAccountActivityRequest&, DetectAccountActivityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAccountActivityAsyncHandler;
                 typedef Outcome<Error, Model::DetectFraudKOLResponse> DetectFraudKOLOutcome;
                 typedef std::future<DetectFraudKOLOutcome> DetectFraudKOLOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::DetectFraudKOLRequest&, DetectFraudKOLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectFraudKOLAsyncHandler;
@@ -69,6 +74,15 @@ namespace TencentCloud
                 typedef std::function<void(const TafClient*, const Model::SendTrafficSecuritySmsMessageRequest&, SendTrafficSecuritySmsMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendTrafficSecuritySmsMessageAsyncHandler;
 
 
+
+                /**
+                 *DetectAccountActivity
+                 * @param req DetectAccountActivityRequest
+                 * @return DetectAccountActivityOutcome
+                 */
+                DetectAccountActivityOutcome DetectAccountActivity(const Model::DetectAccountActivityRequest &request);
+                void DetectAccountActivityAsync(const Model::DetectAccountActivityRequest& request, const DetectAccountActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectAccountActivityOutcomeCallable DetectAccountActivityCallable(const Model::DetectAccountActivityRequest& request);
 
                 /**
                  *DetectFraudKOL

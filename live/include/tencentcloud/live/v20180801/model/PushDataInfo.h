@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取推流客户端ip。
-                     * @return ClientIp 推流客户端ip。
+                     * 获取推流客户端 IP。
+                     * @return ClientIp 推流客户端 IP。
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置推流客户端ip。
-                     * @param ClientIp 推流客户端ip。
+                     * 设置推流客户端 IP。
+                     * @param ClientIp 推流客户端 IP。
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ClientIpHasBeenSet() const;
 
                     /**
-                     * 获取接流服务器ip。
-                     * @return ServerIp 接流服务器ip。
+                     * 获取接流服务器 IP。
+                     * @return ServerIp 接流服务器 IP。
                      */
                     std::string GetServerIp() const;
 
                     /**
-                     * 设置接流服务器ip。
-                     * @param ServerIp 接流服务器ip。
+                     * 设置接流服务器 IP。
+                     * @param ServerIp 接流服务器 IP。
                      */
                     void SetServerIp(const std::string& _serverIp);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ServerIpHasBeenSet() const;
 
                     /**
-                     * 获取推流视频帧率，单位是Hz。
-                     * @return VideoFps 推流视频帧率，单位是Hz。
+                     * 获取推流视频帧率，单位: Hz。
+                     * @return VideoFps 推流视频帧率，单位: Hz。
                      */
                     uint64_t GetVideoFps() const;
 
                     /**
-                     * 设置推流视频帧率，单位是Hz。
-                     * @param VideoFps 推流视频帧率，单位是Hz。
+                     * 设置推流视频帧率，单位: Hz。
+                     * @param VideoFps 推流视频帧率，单位: Hz。
                      */
                     void SetVideoFps(const uint64_t& _videoFps);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool VideoFpsHasBeenSet() const;
 
                     /**
-                     * 获取推流视频码率，单位是bps。
-                     * @return VideoSpeed 推流视频码率，单位是bps。
+                     * 获取推流视频码率，单位: bps。
+                     * @return VideoSpeed 推流视频码率，单位: bps。
                      */
                     uint64_t GetVideoSpeed() const;
 
                     /**
-                     * 设置推流视频码率，单位是bps。
-                     * @param VideoSpeed 推流视频码率，单位是bps。
+                     * 设置推流视频码率，单位: bps。
+                     * @param VideoSpeed 推流视频码率，单位: bps。
                      */
                     void SetVideoSpeed(const uint64_t& _videoSpeed);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool VideoSpeedHasBeenSet() const;
 
                     /**
-                     * 获取推流音频帧率，单位是Hz。
-                     * @return AudioFps 推流音频帧率，单位是Hz。
+                     * 获取推流音频帧率，单位: Hz。
+                     * @return AudioFps 推流音频帧率，单位: Hz。
                      */
                     uint64_t GetAudioFps() const;
 
                     /**
-                     * 设置推流音频帧率，单位是Hz。
-                     * @param AudioFps 推流音频帧率，单位是Hz。
+                     * 设置推流音频帧率，单位: Hz。
+                     * @param AudioFps 推流音频帧率，单位: Hz。
                      */
                     void SetAudioFps(const uint64_t& _audioFps);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool AudioFpsHasBeenSet() const;
 
                     /**
-                     * 获取推流音频码率，单位是bps。
-                     * @return AudioSpeed 推流音频码率，单位是bps。
+                     * 获取推流音频码率，单位: bps。
+                     * @return AudioSpeed 推流音频码率，单位: bps。
                      */
                     uint64_t GetAudioSpeed() const;
 
                     /**
-                     * 设置推流音频码率，单位是bps。
-                     * @param AudioSpeed 推流音频码率，单位是bps。
+                     * 设置推流音频码率，单位: bps。
+                     * @param AudioSpeed 推流音频码率，单位: bps。
                      */
                     void SetAudioSpeed(const uint64_t& _audioSpeed);
 
@@ -307,14 +307,14 @@ namespace TencentCloud
                     bool AsampleRateHasBeenSet() const;
 
                     /**
-                     * 获取metadata中的音频码率，单位是Kbps。
-                     * @return MetaAudioSpeed metadata中的音频码率，单位是Kbps。
+                     * 获取metadata 中的音频码率，单位: Kbps。
+                     * @return MetaAudioSpeed metadata 中的音频码率，单位: Kbps。
                      */
                     uint64_t GetMetaAudioSpeed() const;
 
                     /**
-                     * 设置metadata中的音频码率，单位是Kbps。
-                     * @param MetaAudioSpeed metadata中的音频码率，单位是Kbps。
+                     * 设置metadata 中的音频码率，单位: Kbps。
+                     * @param MetaAudioSpeed metadata 中的音频码率，单位: Kbps。
                      */
                     void SetMetaAudioSpeed(const uint64_t& _metaAudioSpeed);
 
@@ -325,14 +325,14 @@ namespace TencentCloud
                     bool MetaAudioSpeedHasBeenSet() const;
 
                     /**
-                     * 获取metadata中的视频码率，单位是Kbps。
-                     * @return MetaVideoSpeed metadata中的视频码率，单位是Kbps。
+                     * 获取metadata 中的视频码率，单位: Kbps。
+                     * @return MetaVideoSpeed metadata 中的视频码率，单位: Kbps。
                      */
                     uint64_t GetMetaVideoSpeed() const;
 
                     /**
-                     * 设置metadata中的视频码率，单位是Kbps。
-                     * @param MetaVideoSpeed metadata中的视频码率，单位是Kbps。
+                     * 设置metadata 中的视频码率，单位: Kbps。
+                     * @param MetaVideoSpeed metadata 中的视频码率，单位: Kbps。
                      */
                     void SetMetaVideoSpeed(const uint64_t& _metaVideoSpeed);
 
@@ -343,14 +343,14 @@ namespace TencentCloud
                     bool MetaVideoSpeedHasBeenSet() const;
 
                     /**
-                     * 获取metadata中的帧率。
-                     * @return MetaFps metadata中的帧率。
+                     * 获取metadata 中的帧率。
+                     * @return MetaFps metadata 中的帧率。
                      */
                     uint64_t GetMetaFps() const;
 
                     /**
-                     * 设置metadata中的帧率。
-                     * @param MetaFps metadata中的帧率。
+                     * 设置metadata 中的帧率。
+                     * @param MetaFps metadata 中的帧率。
                      */
                     void SetMetaFps(const uint64_t& _metaFps);
 
@@ -375,37 +375,37 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 推流客户端ip。
+                     * 推流客户端 IP。
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
-                     * 接流服务器ip。
+                     * 接流服务器 IP。
                      */
                     std::string m_serverIp;
                     bool m_serverIpHasBeenSet;
 
                     /**
-                     * 推流视频帧率，单位是Hz。
+                     * 推流视频帧率，单位: Hz。
                      */
                     uint64_t m_videoFps;
                     bool m_videoFpsHasBeenSet;
 
                     /**
-                     * 推流视频码率，单位是bps。
+                     * 推流视频码率，单位: bps。
                      */
                     uint64_t m_videoSpeed;
                     bool m_videoSpeedHasBeenSet;
 
                     /**
-                     * 推流音频帧率，单位是Hz。
+                     * 推流音频帧率，单位: Hz。
                      */
                     uint64_t m_audioFps;
                     bool m_audioFpsHasBeenSet;
 
                     /**
-                     * 推流音频码率，单位是bps。
+                     * 推流音频码率，单位: bps。
                      */
                     uint64_t m_audioSpeed;
                     bool m_audioSpeedHasBeenSet;
@@ -449,19 +449,19 @@ namespace TencentCloud
                     bool m_asampleRateHasBeenSet;
 
                     /**
-                     * metadata中的音频码率，单位是Kbps。
+                     * metadata 中的音频码率，单位: Kbps。
                      */
                     uint64_t m_metaAudioSpeed;
                     bool m_metaAudioSpeedHasBeenSet;
 
                     /**
-                     * metadata中的视频码率，单位是Kbps。
+                     * metadata 中的视频码率，单位: Kbps。
                      */
                     uint64_t m_metaVideoSpeed;
                     bool m_metaVideoSpeedHasBeenSet;
 
                     /**
-                     * metadata中的帧率。
+                     * metadata 中的帧率。
                      */
                     uint64_t m_metaFps;
                     bool m_metaFpsHasBeenSet;

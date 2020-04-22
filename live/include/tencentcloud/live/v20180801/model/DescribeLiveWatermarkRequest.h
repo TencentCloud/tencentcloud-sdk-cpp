@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印ID。
-                     * @return WatermarkId 水印ID。
+                     * 获取水印 ID。
+                     * @return WatermarkId 水印 ID。
                      */
                     uint64_t GetWatermarkId() const;
 
                     /**
-                     * 设置水印ID。
-                     * @param WatermarkId 水印ID。
+                     * 设置水印 ID。
+                     * @param WatermarkId 水印 ID。
                      */
                     void SetWatermarkId(const uint64_t& _watermarkId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 水印ID。
+                     * 水印 ID。
                      */
                     uint64_t m_watermarkId;
                     bool m_watermarkIdHasBeenSet;

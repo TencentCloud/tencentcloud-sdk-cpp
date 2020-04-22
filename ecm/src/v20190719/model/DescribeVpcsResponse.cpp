@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/DetectMaskAuthResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cam::V20190116::Model;
+using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace rapidjson;
 using namespace std;
 
-DetectMaskAuthResponse::DetectMaskAuthResponse() :
-    m_tokenHasBeenSet(false)
+DescribeVpcsResponse::DescribeVpcsResponse() :
+    m_totalCountHasBeenSet(false),
+    m_vpcSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DetectMaskAuthResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeVpcsResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,14 +64,34 @@ CoreInternalOutcome DetectMaskAuthResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Token") && !rsp["Token"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Token"].IsString())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_token = string(rsp["Token"].GetString());
-        m_tokenHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VpcSet") && !rsp["VpcSet"].IsNull())
+    {
+        if (!rsp["VpcSet"].IsArray())
+            return CoreInternalOutcome(Error("response `VpcSet` is not array type"));
+
+        const Value &tmpValue = rsp["VpcSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcSet.push_back(item);
+        }
+        m_vpcSetHasBeenSet = true;
     }
 
 
@@ -78,14 +99,24 @@ CoreInternalOutcome DetectMaskAuthResponse::Deserialize(const string &payload)
 }
 
 
-string DetectMaskAuthResponse::GetToken() const
+uint64_t DescribeVpcsResponse::GetTotalCount() const
 {
-    return m_token;
+    return m_totalCount;
 }
 
-bool DetectMaskAuthResponse::TokenHasBeenSet() const
+bool DescribeVpcsResponse::TotalCountHasBeenSet() const
 {
-    return m_tokenHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<VpcInfo> DescribeVpcsResponse::GetVpcSet() const
+{
+    return m_vpcSet;
+}
+
+bool DescribeVpcsResponse::VpcSetHasBeenSet() const
+{
+    return m_vpcSetHasBeenSet;
 }
 
 

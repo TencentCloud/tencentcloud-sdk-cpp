@@ -81,6 +81,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskResultRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeTaskResultResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeVpcsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h>
@@ -222,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
                 typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
+                typedef Outcome<Error, Model::DescribeVpcsResponse> DescribeVpcsOutcome;
+                typedef std::future<DescribeVpcsOutcome> DescribeVpcsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeVpcsRequest&, DescribeVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcsAsyncHandler;
                 typedef Outcome<Error, Model::DetachNetworkInterfaceResponse> DetachNetworkInterfaceOutcome;
                 typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DetachNetworkInterfaceRequest&, DetachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNetworkInterfaceAsyncHandler;
@@ -551,6 +556,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DescribeTaskResultOutcome DescribeTaskResult(const Model::DescribeTaskResultRequest &request);
                 void DescribeTaskResultAsync(const Model::DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskResultOutcomeCallable DescribeTaskResultCallable(const Model::DescribeTaskResultRequest& request);
+
+                /**
+                 *查询私有网络列表
+                 * @param req DescribeVpcsRequest
+                 * @return DescribeVpcsOutcome
+                 */
+                DescribeVpcsOutcome DescribeVpcs(const Model::DescribeVpcsRequest &request);
+                void DescribeVpcsAsync(const Model::DescribeVpcsRequest& request, const DescribeVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcsOutcomeCallable DescribeVpcsCallable(const Model::DescribeVpcsRequest& request);
 
                 /**
                  *弹性网卡解绑云主机

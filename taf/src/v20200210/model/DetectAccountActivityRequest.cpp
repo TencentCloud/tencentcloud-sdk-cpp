@@ -14,33 +14,34 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/DescribeMFADeviceCollRequest.h>
+#include <tencentcloud/taf/v20200210/model/DetectAccountActivityRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cam::V20190116::Model;
+using namespace TencentCloud::Taf::V20200210::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeMFADeviceCollRequest::DescribeMFADeviceCollRequest() :
-    m_subUinHasBeenSet(false)
+DetectAccountActivityRequest::DetectAccountActivityRequest() :
+    m_businessSecurityDataHasBeenSet(false)
 {
 }
 
-string DescribeMFADeviceCollRequest::ToJsonString() const
+string DetectAccountActivityRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_subUinHasBeenSet)
+    if (m_businessSecurityDataHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "SubUin";
+        string key = "BusinessSecurityData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subUin, allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_businessSecurityData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -51,20 +52,20 @@ string DescribeMFADeviceCollRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeMFADeviceCollRequest::GetSubUin() const
+InputDetectAccountActivity DetectAccountActivityRequest::GetBusinessSecurityData() const
 {
-    return m_subUin;
+    return m_businessSecurityData;
 }
 
-void DescribeMFADeviceCollRequest::SetSubUin(const uint64_t& _subUin)
+void DetectAccountActivityRequest::SetBusinessSecurityData(const InputDetectAccountActivity& _businessSecurityData)
 {
-    m_subUin = _subUin;
-    m_subUinHasBeenSet = true;
+    m_businessSecurityData = _businessSecurityData;
+    m_businessSecurityDataHasBeenSet = true;
 }
 
-bool DescribeMFADeviceCollRequest::SubUinHasBeenSet() const
+bool DetectAccountActivityRequest::BusinessSecurityDataHasBeenSet() const
 {
-    return m_subUinHasBeenSet;
+    return m_businessSecurityDataHasBeenSet;
 }
 
 

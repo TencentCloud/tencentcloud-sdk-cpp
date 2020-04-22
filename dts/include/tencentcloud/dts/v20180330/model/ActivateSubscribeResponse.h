@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置数据订阅任务任务ID。
-                     * @return AsyncRequestId 配置数据订阅任务任务ID。
+                     * 获取配置数据订阅任务ID。
+                     * @return AsyncRequestId 配置数据订阅任务ID。
                      */
                     std::string GetAsyncRequestId() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置数据订阅任务任务ID。
+                     * 配置数据订阅任务ID。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

@@ -35,8 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 水印信息
-
+                * 水印信息。
                 */
                 class WatermarkInfo : public AbstractModel
                 {
@@ -48,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印ID。
-                     * @return WatermarkId 水印ID。
+                     * 获取水印 ID。
+                     * @return WatermarkId 水印 ID。
                      */
                     int64_t GetWatermarkId() const;
 
                     /**
-                     * 设置水印ID。
-                     * @param WatermarkId 水印ID。
+                     * 设置水印 ID。
+                     * @param WatermarkId 水印 ID。
                      */
                     void SetWatermarkId(const int64_t& _watermarkId);
 
@@ -66,14 +65,14 @@ namespace TencentCloud
                     bool WatermarkIdHasBeenSet() const;
 
                     /**
-                     * 获取水印图片url。
-                     * @return PictureUrl 水印图片url。
+                     * 获取水印图片 URL。
+                     * @return PictureUrl 水印图片 URL。
                      */
                     std::string GetPictureUrl() const;
 
                     /**
-                     * 设置水印图片url。
-                     * @param PictureUrl 水印图片url。
+                     * 设置水印图片 URL。
+                     * @param PictureUrl 水印图片 URL。
                      */
                     void SetPictureUrl(const std::string& _pictureUrl);
 
@@ -84,14 +83,14 @@ namespace TencentCloud
                     bool PictureUrlHasBeenSet() const;
 
                     /**
-                     * 获取显示位置，X轴偏移。
-                     * @return XPosition 显示位置，X轴偏移。
+                     * 获取显示位置，X 轴偏移。
+                     * @return XPosition 显示位置，X 轴偏移。
                      */
                     int64_t GetXPosition() const;
 
                     /**
-                     * 设置显示位置，X轴偏移。
-                     * @param XPosition 显示位置，X轴偏移。
+                     * 设置显示位置，X 轴偏移。
+                     * @param XPosition 显示位置，X 轴偏移。
                      */
                     void SetXPosition(const int64_t& _xPosition);
 
@@ -102,14 +101,14 @@ namespace TencentCloud
                     bool XPositionHasBeenSet() const;
 
                     /**
-                     * 获取显示位置，Y轴偏移。
-                     * @return YPosition 显示位置，Y轴偏移。
+                     * 获取显示位置，Y 轴偏移。
+                     * @return YPosition 显示位置，Y 轴偏移。
                      */
                     int64_t GetYPosition() const;
 
                     /**
-                     * 设置显示位置，Y轴偏移。
-                     * @param YPosition 显示位置，Y轴偏移。
+                     * 设置显示位置，Y 轴偏移。
+                     * @param YPosition 显示位置，Y 轴偏移。
                      */
                     void SetYPosition(const int64_t& _yPosition);
 
@@ -174,14 +173,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取水印宽
-                     * @return Width 水印宽
+                     * 获取水印宽。
+                     * @return Width 水印宽。
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置水印宽
-                     * @param Width 水印宽
+                     * 设置水印宽。
+                     * @param Width 水印宽。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -192,14 +191,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取水印高
-                     * @return Height 水印高
+                     * 获取水印高。
+                     * @return Height 水印高。
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置水印高
-                     * @param Height 水印高
+                     * 设置水印高。
+                     * @param Height 水印高。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -212,25 +211,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 水印ID。
+                     * 水印 ID。
                      */
                     int64_t m_watermarkId;
                     bool m_watermarkIdHasBeenSet;
 
                     /**
-                     * 水印图片url。
+                     * 水印图片 URL。
                      */
                     std::string m_pictureUrl;
                     bool m_pictureUrlHasBeenSet;
 
                     /**
-                     * 显示位置，X轴偏移。
+                     * 显示位置，X 轴偏移。
                      */
                     int64_t m_xPosition;
                     bool m_xPositionHasBeenSet;
 
                     /**
-                     * 显示位置，Y轴偏移。
+                     * 显示位置，Y 轴偏移。
                      */
                     int64_t m_yPosition;
                     bool m_yPositionHasBeenSet;
@@ -254,13 +253,13 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 水印宽
+                     * 水印宽。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 水印高
+                     * 水印高。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

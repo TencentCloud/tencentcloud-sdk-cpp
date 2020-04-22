@@ -33,8 +33,6 @@
 #include <tencentcloud/cam/v20190116/model/AttachRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/AttachUserPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h>
-#include <tencentcloud/cam/v20190116/model/CheckRequest.h>
-#include <tencentcloud/cam/v20190116/model/CheckResponse.h>
 #include <tencentcloud/cam/v20190116/model/CheckNewMfaCodeRequest.h>
 #include <tencentcloud/cam/v20190116/model/CheckNewMfaCodeResponse.h>
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenRequest.h>
@@ -57,10 +55,6 @@
 #include <tencentcloud/cam/v20190116/model/DeleteSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserResponse.h>
-#include <tencentcloud/cam/v20190116/model/DescribeMFADeviceCollRequest.h>
-#include <tencentcloud/cam/v20190116/model/DescribeMFADeviceCollResponse.h>
-#include <tencentcloud/cam/v20190116/model/DescribeMfaCodeStatusRequest.h>
-#include <tencentcloud/cam/v20190116/model/DescribeMfaCodeStatusResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h>
@@ -69,12 +63,6 @@
 #include <tencentcloud/cam/v20190116/model/DetachRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DetachUserPolicyResponse.h>
-#include <tencentcloud/cam/v20190116/model/DetectAuthRequest.h>
-#include <tencentcloud/cam/v20190116/model/DetectAuthResponse.h>
-#include <tencentcloud/cam/v20190116/model/DetectMaskAuthRequest.h>
-#include <tencentcloud/cam/v20190116/model/DetectMaskAuthResponse.h>
-#include <tencentcloud/cam/v20190116/model/DetectStateRequest.h>
-#include <tencentcloud/cam/v20190116/model/DetectStateResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetGroupRequest.h>
@@ -154,9 +142,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AttachUserPolicyResponse> AttachUserPolicyOutcome;
                 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::AttachUserPolicyRequest&, AttachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachUserPolicyAsyncHandler;
-                typedef Outcome<Error, Model::CheckResponse> CheckOutcome;
-                typedef std::future<CheckOutcome> CheckOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::CheckRequest&, CheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAsyncHandler;
                 typedef Outcome<Error, Model::CheckNewMfaCodeResponse> CheckNewMfaCodeOutcome;
                 typedef std::future<CheckNewMfaCodeOutcome> CheckNewMfaCodeOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CheckNewMfaCodeRequest&, CheckNewMfaCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNewMfaCodeAsyncHandler;
@@ -190,12 +175,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteUserResponse> DeleteUserOutcome;
                 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
-                typedef Outcome<Error, Model::DescribeMFADeviceCollResponse> DescribeMFADeviceCollOutcome;
-                typedef std::future<DescribeMFADeviceCollOutcome> DescribeMFADeviceCollOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::DescribeMFADeviceCollRequest&, DescribeMFADeviceCollOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMFADeviceCollAsyncHandler;
-                typedef Outcome<Error, Model::DescribeMfaCodeStatusResponse> DescribeMfaCodeStatusOutcome;
-                typedef std::future<DescribeMfaCodeStatusOutcome> DescribeMfaCodeStatusOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::DescribeMfaCodeStatusRequest&, DescribeMfaCodeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMfaCodeStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
@@ -208,15 +187,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetachUserPolicyResponse> DetachUserPolicyOutcome;
                 typedef std::future<DetachUserPolicyOutcome> DetachUserPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DetachUserPolicyRequest&, DetachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachUserPolicyAsyncHandler;
-                typedef Outcome<Error, Model::DetectAuthResponse> DetectAuthOutcome;
-                typedef std::future<DetectAuthOutcome> DetectAuthOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::DetectAuthRequest&, DetectAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAuthAsyncHandler;
-                typedef Outcome<Error, Model::DetectMaskAuthResponse> DetectMaskAuthOutcome;
-                typedef std::future<DetectMaskAuthOutcome> DetectMaskAuthOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::DetectMaskAuthRequest&, DetectMaskAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectMaskAuthAsyncHandler;
-                typedef Outcome<Error, Model::DetectStateResponse> DetectStateOutcome;
-                typedef std::future<DetectStateOutcome> DetectStateOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::DetectStateRequest&, DetectStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectStateAsyncHandler;
                 typedef Outcome<Error, Model::GetCustomMFATokenInfoResponse> GetCustomMFATokenInfoOutcome;
                 typedef std::future<GetCustomMFATokenInfoOutcome> GetCustomMFATokenInfoOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetCustomMFATokenInfoRequest&, GetCustomMFATokenInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomMFATokenInfoAsyncHandler;
@@ -341,15 +311,6 @@ namespace TencentCloud
                 AttachUserPolicyOutcomeCallable AttachUserPolicyCallable(const Model::AttachUserPolicyRequest& request);
 
                 /**
-                 *mfa校验
-                 * @param req CheckRequest
-                 * @return CheckOutcome
-                 */
-                CheckOutcome Check(const Model::CheckRequest &request);
-                void CheckAsync(const Model::CheckRequest& request, const CheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CheckOutcomeCallable CheckCallable(const Model::CheckRequest& request);
-
-                /**
                  *校验新手机新邮箱接口
                  * @param req CheckNewMfaCodeRequest
                  * @return CheckNewMfaCodeOutcome
@@ -449,24 +410,6 @@ namespace TencentCloud
                 DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
 
                 /**
-                 *查询mfa设备
-                 * @param req DescribeMFADeviceCollRequest
-                 * @return DescribeMFADeviceCollOutcome
-                 */
-                DescribeMFADeviceCollOutcome DescribeMFADeviceColl(const Model::DescribeMFADeviceCollRequest &request);
-                void DescribeMFADeviceCollAsync(const Model::DescribeMFADeviceCollRequest& request, const DescribeMFADeviceCollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeMFADeviceCollOutcomeCallable DescribeMFADeviceCollCallable(const Model::DescribeMFADeviceCollRequest& request);
-
-                /**
-                 *查询微信code状态
-                 * @param req DescribeMfaCodeStatusRequest
-                 * @return DescribeMfaCodeStatusOutcome
-                 */
-                DescribeMfaCodeStatusOutcome DescribeMfaCodeStatus(const Model::DescribeMfaCodeStatusRequest &request);
-                void DescribeMfaCodeStatusAsync(const Model::DescribeMfaCodeStatusRequest& request, const DescribeMfaCodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeMfaCodeStatusOutcomeCallable DescribeMfaCodeStatusCallable(const Model::DescribeMfaCodeStatusRequest& request);
-
-                /**
                  *本接口（DescribeRoleList）用于获取账号下的角色列表。
                  * @param req DescribeRoleListRequest
                  * @return DescribeRoleListOutcome
@@ -501,33 +444,6 @@ namespace TencentCloud
                 DetachUserPolicyOutcome DetachUserPolicy(const Model::DetachUserPolicyRequest &request);
                 void DetachUserPolicyAsync(const Model::DetachUserPolicyRequest& request, const DetachUserPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachUserPolicyOutcomeCallable DetachUserPolicyCallable(const Model::DetachUserPolicyRequest& request);
-
-                /**
-                 *发起人脸核身
-                 * @param req DetectAuthRequest
-                 * @return DetectAuthOutcome
-                 */
-                DetectAuthOutcome DetectAuth(const Model::DetectAuthRequest &request);
-                void DetectAuthAsync(const Model::DetectAuthRequest& request, const DetectAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectAuthOutcomeCallable DetectAuthCallable(const Model::DetectAuthRequest& request);
-
-                /**
-                 *获取并更新人脸核身校验状态实名传递参数比对
-                 * @param req DetectMaskAuthRequest
-                 * @return DetectMaskAuthOutcome
-                 */
-                DetectMaskAuthOutcome DetectMaskAuth(const Model::DetectMaskAuthRequest &request);
-                void DetectMaskAuthAsync(const Model::DetectMaskAuthRequest& request, const DetectMaskAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectMaskAuthOutcomeCallable DetectMaskAuthCallable(const Model::DetectMaskAuthRequest& request);
-
-                /**
-                 *获取并且更新人联合身状态
-                 * @param req DetectStateRequest
-                 * @return DetectStateOutcome
-                 */
-                DetectStateOutcome DetectState(const Model::DetectStateRequest &request);
-                void DetectStateAsync(const Model::DetectStateRequest& request, const DetectStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectStateOutcomeCallable DetectStateCallable(const Model::DetectStateRequest& request);
 
                 /**
                  *获取自定义多因子Token关联信息

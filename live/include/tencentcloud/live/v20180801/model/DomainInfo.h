@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取直播域名
-                     * @return Name 直播域名
+                     * 获取直播域名。
+                     * @return Name 直播域名。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置直播域名
-                     * @param Name 直播域名
+                     * 设置直播域名。
+                     * @param Name 直播域名。
                      */
                     void SetName(const std::string& _name);
 
@@ -65,14 +65,22 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取域名类型。0-推流，1-播放
-                     * @return Type 域名类型。0-推流，1-播放
+                     * 获取域名类型:
+0: 推流。
+1: 播放。
+                     * @return Type 域名类型:
+0: 推流。
+1: 播放。
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置域名类型。0-推流，1-播放
-                     * @param Type 域名类型。0-推流，1-播放
+                     * 设置域名类型:
+0: 推流。
+1: 播放。
+                     * @param Type 域名类型:
+0: 推流。
+1: 播放。
                      */
                     void SetType(const uint64_t& _type);
 
@@ -83,14 +91,22 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取域名状态。0-停用，1-启用
-                     * @return Status 域名状态。0-停用，1-启用
+                     * 获取域名状态:
+0: 停用。
+1: 启用。
+                     * @return Status 域名状态:
+0: 停用。
+1: 启用。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置域名状态。0-停用，1-启用
-                     * @param Status 域名状态。0-停用，1-启用
+                     * 设置域名状态:
+0: 停用。
+1: 启用。
+                     * @param Status 域名状态:
+0: 停用。
+1: 启用。
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -101,14 +117,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取添加时间
-                     * @return CreateTime 添加时间
+                     * 获取添加时间。
+                     * @return CreateTime 添加时间。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置添加时间
-                     * @param CreateTime 添加时间
+                     * 设置添加时间。
+                     * @param CreateTime 添加时间。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -119,14 +135,22 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否有CName到固定规则域名。0-否，1-是
-                     * @return BCName 是否有CName到固定规则域名。0-否，1-是
+                     * 获取是否有 CName 到固定规则域名:
+0: 否。
+1: 是。
+                     * @return BCName 是否有 CName 到固定规则域名:
+0: 否。
+1: 是。
                      */
                     uint64_t GetBCName() const;
 
                     /**
-                     * 设置是否有CName到固定规则域名。0-否，1-是
-                     * @param BCName 是否有CName到固定规则域名。0-否，1-是
+                     * 设置是否有 CName 到固定规则域名:
+0: 否。
+1: 是。
+                     * @param BCName 是否有 CName 到固定规则域名:
+0: 否。
+1: 是。
                      */
                     void SetBCName(const uint64_t& _bCName);
 
@@ -137,14 +161,14 @@ namespace TencentCloud
                     bool BCNameHasBeenSet() const;
 
                     /**
-                     * 获取cname对应的域名
-                     * @return TargetDomain cname对应的域名
+                     * 获取cname 对应的域名。
+                     * @return TargetDomain cname 对应的域名。
                      */
                     std::string GetTargetDomain() const;
 
                     /**
-                     * 设置cname对应的域名
-                     * @param TargetDomain cname对应的域名
+                     * 设置cname 对应的域名。
+                     * @param TargetDomain cname 对应的域名。
                      */
                     void SetTargetDomain(const std::string& _targetDomain);
 
@@ -155,18 +179,26 @@ namespace TencentCloud
                     bool TargetDomainHasBeenSet() const;
 
                     /**
-                     * 获取播放区域，只在Type=1时该参数有意义。
-1-国内，2-全球，3-海外。
-                     * @return PlayType 播放区域，只在Type=1时该参数有意义。
-1-国内，2-全球，3-海外。
+                     * 获取播放区域，只在 Type=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
+                     * @return PlayType 播放区域，只在 Type=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
                      */
                     int64_t GetPlayType() const;
 
                     /**
-                     * 设置播放区域，只在Type=1时该参数有意义。
-1-国内，2-全球，3-海外。
-                     * @param PlayType 播放区域，只在Type=1时该参数有意义。
-1-国内，2-全球，3-海外。
+                     * 设置播放区域，只在 Type=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
+                     * @param PlayType 播放区域，只在 Type=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
                      */
                     void SetPlayType(const int64_t& _playType);
 
@@ -177,18 +209,22 @@ namespace TencentCloud
                     bool PlayTypeHasBeenSet() const;
 
                     /**
-                     * 获取0：普通直播，
-1：慢直播。
-                     * @return IsDelayLive 0：普通直播，
-1：慢直播。
+                     * 获取是否慢直播:
+0: 普通直播。
+1: 慢直播。
+                     * @return IsDelayLive 是否慢直播:
+0: 普通直播。
+1: 慢直播。
                      */
                     int64_t GetIsDelayLive() const;
 
                     /**
-                     * 设置0：普通直播，
-1：慢直播。
-                     * @param IsDelayLive 0：普通直播，
-1：慢直播。
+                     * 设置是否慢直播:
+0: 普通直播。
+1: 慢直播。
+                     * @param IsDelayLive 是否慢直播:
+0: 普通直播。
+1: 慢直播。
                      */
                     void SetIsDelayLive(const int64_t& _isDelayLive);
 
@@ -199,14 +235,14 @@ namespace TencentCloud
                     bool IsDelayLiveHasBeenSet() const;
 
                     /**
-                     * 获取当前客户使用的cname信息
-                     * @return CurrentCName 当前客户使用的cname信息
+                     * 获取当前客户使用的 cname 信息。
+                     * @return CurrentCName 当前客户使用的 cname 信息。
                      */
                     std::string GetCurrentCName() const;
 
                     /**
-                     * 设置当前客户使用的cname信息
-                     * @param CurrentCName 当前客户使用的cname信息
+                     * 设置当前客户使用的 cname 信息。
+                     * @param CurrentCName 当前客户使用的 cname 信息。
                      */
                     void SetCurrentCName(const std::string& _currentCName);
 
@@ -217,14 +253,14 @@ namespace TencentCloud
                     bool CurrentCNameHasBeenSet() const;
 
                     /**
-                     * 获取已无效，可忽略。
-                     * @return RentTag 已无效，可忽略。
+                     * 获取失效参数，可忽略。
+                     * @return RentTag 失效参数，可忽略。
                      */
                     int64_t GetRentTag() const;
 
                     /**
-                     * 设置已无效，可忽略。
-                     * @param RentTag 已无效，可忽略。
+                     * 设置失效参数，可忽略。
+                     * @param RentTag 失效参数，可忽略。
                      */
                     void SetRentTag(const int64_t& _rentTag);
 
@@ -235,14 +271,14 @@ namespace TencentCloud
                     bool RentTagHasBeenSet() const;
 
                     /**
-                     * 获取已无效，可忽略。
-                     * @return RentExpireTime 已无效，可忽略。
+                     * 获取失效参数，可忽略。
+                     * @return RentExpireTime 失效参数，可忽略。
                      */
                     std::string GetRentExpireTime() const;
 
                     /**
-                     * 设置已无效，可忽略。
-                     * @param RentExpireTime 已无效，可忽略。
+                     * 设置失效参数，可忽略。
+                     * @param RentExpireTime 失效参数，可忽略。
                      */
                     void SetRentExpireTime(const std::string& _rentExpireTime);
 
@@ -253,21 +289,21 @@ namespace TencentCloud
                     bool RentExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取0：标准直播，
-1：小程序直播。
+                     * 获取0: 标准直播。
+1: 小程序直播。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsMiniProgramLive 0：标准直播，
-1：小程序直播。
+                     * @return IsMiniProgramLive 0: 标准直播。
+1: 小程序直播。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetIsMiniProgramLive() const;
 
                     /**
-                     * 设置0：标准直播，
-1：小程序直播。
+                     * 设置0: 标准直播。
+1: 小程序直播。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsMiniProgramLive 0：标准直播，
-1：小程序直播。
+                     * @param IsMiniProgramLive 0: 标准直播。
+1: 小程序直播。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsMiniProgramLive(const int64_t& _isMiniProgramLive);
@@ -281,76 +317,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 直播域名
+                     * 直播域名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 域名类型。0-推流，1-播放
+                     * 域名类型:
+0: 推流。
+1: 播放。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 域名状态。0-停用，1-启用
+                     * 域名状态:
+0: 停用。
+1: 启用。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 添加时间
+                     * 添加时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 是否有CName到固定规则域名。0-否，1-是
+                     * 是否有 CName 到固定规则域名:
+0: 否。
+1: 是。
                      */
                     uint64_t m_bCName;
                     bool m_bCNameHasBeenSet;
 
                     /**
-                     * cname对应的域名
+                     * cname 对应的域名。
                      */
                     std::string m_targetDomain;
                     bool m_targetDomainHasBeenSet;
 
                     /**
-                     * 播放区域，只在Type=1时该参数有意义。
-1-国内，2-全球，3-海外。
+                     * 播放区域，只在 Type=1 时该参数有意义。
+1: 国内。
+2: 全球。
+3: 海外。
                      */
                     int64_t m_playType;
                     bool m_playTypeHasBeenSet;
 
                     /**
-                     * 0：普通直播，
-1：慢直播。
+                     * 是否慢直播:
+0: 普通直播。
+1: 慢直播。
                      */
                     int64_t m_isDelayLive;
                     bool m_isDelayLiveHasBeenSet;
 
                     /**
-                     * 当前客户使用的cname信息
+                     * 当前客户使用的 cname 信息。
                      */
                     std::string m_currentCName;
                     bool m_currentCNameHasBeenSet;
 
                     /**
-                     * 已无效，可忽略。
+                     * 失效参数，可忽略。
                      */
                     int64_t m_rentTag;
                     bool m_rentTagHasBeenSet;
 
                     /**
-                     * 已无效，可忽略。
+                     * 失效参数，可忽略。
                      */
                     std::string m_rentExpireTime;
                     bool m_rentExpireTimeHasBeenSet;
 
                     /**
-                     * 0：标准直播，
-1：小程序直播。
+                     * 0: 标准直播。
+1: 小程序直播。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isMiniProgramLive;

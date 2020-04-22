@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 日志url信息
+                * 日志url信息。
                 */
                 class LogInfo : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LogNameHasBeenSet() const;
 
                     /**
-                     * 获取日志Url。
-                     * @return LogUrl 日志Url。
+                     * 获取日志 URL。
+                     * @return LogUrl 日志 URL。
                      */
                     std::string GetLogUrl() const;
 
                     /**
-                     * 设置日志Url。
-                     * @param LogUrl 日志Url。
+                     * 设置日志 URL。
+                     * @param LogUrl 日志 URL。
                      */
                     void SetLogUrl(const std::string& _logUrl);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool LogUrlHasBeenSet() const;
 
                     /**
-                     * 获取日志生成时间
-                     * @return LogTime 日志生成时间
+                     * 获取日志生成时间。
+                     * @return LogTime 日志生成时间。
                      */
                     std::string GetLogTime() const;
 
                     /**
-                     * 设置日志生成时间
-                     * @param LogTime 日志生成时间
+                     * 设置日志生成时间。
+                     * @param LogTime 日志生成时间。
                      */
                     void SetLogTime(const std::string& _logTime);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool LogTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件大小
-                     * @return FileSize 文件大小
+                     * 获取文件大小。
+                     * @return FileSize 文件大小。
                      */
                     int64_t GetFileSize() const;
 
                     /**
-                     * 设置文件大小
-                     * @param FileSize 文件大小
+                     * 设置文件大小。
+                     * @param FileSize 文件大小。
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
@@ -127,19 +127,19 @@ namespace TencentCloud
                     bool m_logNameHasBeenSet;
 
                     /**
-                     * 日志Url。
+                     * 日志 URL。
                      */
                     std::string m_logUrl;
                     bool m_logUrlHasBeenSet;
 
                     /**
-                     * 日志生成时间
+                     * 日志生成时间。
                      */
                     std::string m_logTime;
                     bool m_logTimeHasBeenSet;
 
                     /**
-                     * 文件大小
+                     * 文件大小。
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;

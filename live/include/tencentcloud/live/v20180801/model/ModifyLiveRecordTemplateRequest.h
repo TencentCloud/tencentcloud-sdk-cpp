@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板 ID。
+                     * @return TemplateId 模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param TemplateId 模板Id。
+                     * 设置模板 ID。
+                     * @param TemplateId 模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Flv录制参数，开启Flv录制时设置。
-                     * @return FlvParam Flv录制参数，开启Flv录制时设置。
+                     * 获取FLV 录制参数，开启 FLV 录制时设置。
+                     * @return FlvParam FLV 录制参数，开启 FLV 录制时设置。
                      */
                     RecordParam GetFlvParam() const;
 
                     /**
-                     * 设置Flv录制参数，开启Flv录制时设置。
-                     * @param FlvParam Flv录制参数，开启Flv录制时设置。
+                     * 设置FLV 录制参数，开启 FLV 录制时设置。
+                     * @param FlvParam FLV 录制参数，开启 FLV 录制时设置。
                      */
                     void SetFlvParam(const RecordParam& _flvParam);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool FlvParamHasBeenSet() const;
 
                     /**
-                     * 获取Hls录制参数，开启hls录制时设置。
-                     * @return HlsParam Hls录制参数，开启hls录制时设置。
+                     * 获取HLS 录制参数，开启 HLS 录制时设置。
+                     * @return HlsParam HLS 录制参数，开启 HLS 录制时设置。
                      */
                     RecordParam GetHlsParam() const;
 
                     /**
-                     * 设置Hls录制参数，开启hls录制时设置。
-                     * @param HlsParam Hls录制参数，开启hls录制时设置。
+                     * 设置HLS 录制参数，开启 HLS 录制时设置。
+                     * @param HlsParam HLS 录制参数，开启 HLS 录制时设置。
                      */
                     void SetHlsParam(const RecordParam& _hlsParam);
 
@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool HlsParamHasBeenSet() const;
 
                     /**
-                     * 获取Mp4录制参数，开启Mp4录制时设置。
-                     * @return Mp4Param Mp4录制参数，开启Mp4录制时设置。
+                     * 获取MP4 录制参数，开启 MP4 录制时设置。
+                     * @return Mp4Param MP4 录制参数，开启 MP4 录制时设置。
                      */
                     RecordParam GetMp4Param() const;
 
                     /**
-                     * 设置Mp4录制参数，开启Mp4录制时设置。
-                     * @param Mp4Param Mp4录制参数，开启Mp4录制时设置。
+                     * 设置MP4 录制参数，开启 MP4 录制时设置。
+                     * @param Mp4Param MP4 录制参数，开启 MP4 录制时设置。
                      */
                     void SetMp4Param(const RecordParam& _mp4Param);
 
@@ -153,14 +153,14 @@ namespace TencentCloud
                     bool Mp4ParamHasBeenSet() const;
 
                     /**
-                     * 获取Aac录制参数，开启Aac录制时设置。
-                     * @return AacParam Aac录制参数，开启Aac录制时设置。
+                     * 获取AAC 录制参数，开启 AAC 录制时设置。
+                     * @return AacParam AAC 录制参数，开启 AAC 录制时设置。
                      */
                     RecordParam GetAacParam() const;
 
                     /**
-                     * 设置Aac录制参数，开启Aac录制时设置。
-                     * @param AacParam Aac录制参数，开启Aac录制时设置。
+                     * 设置AAC 录制参数，开启 AAC 录制时设置。
+                     * @param AacParam AAC 录制参数，开启 AAC 录制时设置。
                      */
                     void SetAacParam(const RecordParam& _aacParam);
 
@@ -171,14 +171,14 @@ namespace TencentCloud
                     bool AacParamHasBeenSet() const;
 
                     /**
-                     * 获取HLS录制定制参数
-                     * @return HlsSpecialParam HLS录制定制参数
+                     * 获取HLS 录制定制参数。
+                     * @return HlsSpecialParam HLS 录制定制参数。
                      */
                     HlsSpecialParam GetHlsSpecialParam() const;
 
                     /**
-                     * 设置HLS录制定制参数
-                     * @param HlsSpecialParam HLS录制定制参数
+                     * 设置HLS 录制定制参数。
+                     * @param HlsSpecialParam HLS 录制定制参数。
                      */
                     void SetHlsSpecialParam(const HlsSpecialParam& _hlsSpecialParam);
 
@@ -189,14 +189,14 @@ namespace TencentCloud
                     bool HlsSpecialParamHasBeenSet() const;
 
                     /**
-                     * 获取Mp3录制参数，开启Mp3录制时设置。
-                     * @return Mp3Param Mp3录制参数，开启Mp3录制时设置。
+                     * 获取MP3 录制参数，开启 MP3 录制时设置。
+                     * @return Mp3Param MP3 录制参数，开启 MP3 录制时设置。
                      */
                     RecordParam GetMp3Param() const;
 
                     /**
-                     * 设置Mp3录制参数，开启Mp3录制时设置。
-                     * @param Mp3Param Mp3录制参数，开启Mp3录制时设置。
+                     * 设置MP3 录制参数，开启 MP3 录制时设置。
+                     * @param Mp3Param MP3 录制参数，开启 MP3 录制时设置。
                      */
                     void SetMp3Param(const RecordParam& _mp3Param);
 
@@ -209,7 +209,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板Id。
+                     * 模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -227,37 +227,37 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Flv录制参数，开启Flv录制时设置。
+                     * FLV 录制参数，开启 FLV 录制时设置。
                      */
                     RecordParam m_flvParam;
                     bool m_flvParamHasBeenSet;
 
                     /**
-                     * Hls录制参数，开启hls录制时设置。
+                     * HLS 录制参数，开启 HLS 录制时设置。
                      */
                     RecordParam m_hlsParam;
                     bool m_hlsParamHasBeenSet;
 
                     /**
-                     * Mp4录制参数，开启Mp4录制时设置。
+                     * MP4 录制参数，开启 MP4 录制时设置。
                      */
                     RecordParam m_mp4Param;
                     bool m_mp4ParamHasBeenSet;
 
                     /**
-                     * Aac录制参数，开启Aac录制时设置。
+                     * AAC 录制参数，开启 AAC 录制时设置。
                      */
                     RecordParam m_aacParam;
                     bool m_aacParamHasBeenSet;
 
                     /**
-                     * HLS录制定制参数
+                     * HLS 录制定制参数。
                      */
                     HlsSpecialParam m_hlsSpecialParam;
                     bool m_hlsSpecialParamHasBeenSet;
 
                     /**
-                     * Mp3录制参数，开启Mp3录制时设置。
+                     * MP3 录制参数，开启 MP3 录制时设置。
                      */
                     RecordParam m_mp3Param;
                     bool m_mp3ParamHasBeenSet;

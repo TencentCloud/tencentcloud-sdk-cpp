@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteAdaptiveDynamicStreamingTemplateRequest::DeleteAdaptiveDynamicStreamingTemplateRequest() :
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DeleteAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DeleteAdaptiveDynamicStreamingTemplateRequest::SetDefinition(const uint64_t
 bool DeleteAdaptiveDynamicStreamingTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t DeleteAdaptiveDynamicStreamingTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DeleteAdaptiveDynamicStreamingTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DeleteAdaptiveDynamicStreamingTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 

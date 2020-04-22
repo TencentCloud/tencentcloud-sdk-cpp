@@ -43,18 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称，非空的字符串。
+                     * 获取模板名称。
 长度上限：255字节。
-                     * @return TemplateName 模板名称，非空的字符串。
+仅支持中文、英文、数字、_、-。
+                     * @return TemplateName 模板名称。
 长度上限：255字节。
+仅支持中文、英文、数字、_、-。
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称，非空的字符串。
+                     * 设置模板名称。
 长度上限：255字节。
-                     * @param TemplateName 模板名称，非空的字符串。
+仅支持中文、英文、数字、_、-。
+                     * @param TemplateName 模板名称。
 长度上限：255字节。
+仅支持中文、英文、数字、_、-。
                      */
                     void SetTemplateName(const std::string& _templateName);
 
@@ -65,14 +69,14 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取Cos AppId。
-                     * @return CosAppId Cos AppId。
+                     * 获取Cos 应用 ID。
+                     * @return CosAppId Cos 应用 ID。
                      */
                     int64_t GetCosAppId() const;
 
                     /**
-                     * 设置Cos AppId。
-                     * @param CosAppId Cos AppId。
+                     * 设置Cos 应用 ID。
+                     * @param CosAppId Cos 应用 ID。
                      */
                     void SetCosAppId(const int64_t& _cosAppId);
 
@@ -121,16 +125,20 @@ namespace TencentCloud
                     /**
                      * 获取描述信息。
 长度上限：1024字节。
+仅支持中文、英文、数字、_、-。
                      * @return Description 描述信息。
 长度上限：1024字节。
+仅支持中文、英文、数字、_、-。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
 长度上限：1024字节。
+仅支持中文、英文、数字、_、-。
                      * @param Description 描述信息。
 长度上限：1024字节。
+仅支持中文、英文、数字、_、-。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -219,14 +227,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称，非空的字符串。
+                     * 模板名称。
 长度上限：255字节。
+仅支持中文、英文、数字、_、-。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * Cos AppId。
+                     * Cos 应用 ID。
                      */
                     int64_t m_cosAppId;
                     bool m_cosAppIdHasBeenSet;
@@ -246,6 +255,7 @@ namespace TencentCloud
                     /**
                      * 描述信息。
 长度上限：1024字节。
+仅支持中文、英文、数字、_、-。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

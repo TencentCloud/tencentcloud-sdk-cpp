@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板 ID。
+                     * @return TemplateId 模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param TemplateId 模板Id。
+                     * 设置模板 ID。
+                     * @param TemplateId 模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -163,14 +163,22 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取是否开启鉴黄，0：不开启，1：开启。
-                     * @return PornFlag 是否开启鉴黄，0：不开启，1：开启。
+                     * 获取是否开启鉴黄，默认 0 。
+0：不开启。
+1：开启。
+                     * @return PornFlag 是否开启鉴黄，默认 0 。
+0：不开启。
+1：开启。
                      */
                     int64_t GetPornFlag() const;
 
                     /**
-                     * 设置是否开启鉴黄，0：不开启，1：开启。
-                     * @param PornFlag 是否开启鉴黄，0：不开启，1：开启。
+                     * 设置是否开启鉴黄，默认 0 。
+0：不开启。
+1：开启。
+                     * @param PornFlag 是否开启鉴黄，默认 0 。
+0：不开启。
+1：开启。
                      */
                     void SetPornFlag(const int64_t& _pornFlag);
 
@@ -181,14 +189,14 @@ namespace TencentCloud
                     bool PornFlagHasBeenSet() const;
 
                     /**
-                     * 获取Cos AppId。
-                     * @return CosAppId Cos AppId。
+                     * 获取Cos 应用 ID。
+                     * @return CosAppId Cos 应用 ID。
                      */
                     int64_t GetCosAppId() const;
 
                     /**
-                     * 设置Cos AppId。
-                     * @param CosAppId Cos AppId。
+                     * 设置Cos 应用 ID。
+                     * @param CosAppId Cos 应用 ID。
                      */
                     void SetCosAppId(const int64_t& _cosAppId);
 
@@ -237,7 +245,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板Id。
+                     * 模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -276,13 +284,15 @@ namespace TencentCloud
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 是否开启鉴黄，0：不开启，1：开启。
+                     * 是否开启鉴黄，默认 0 。
+0：不开启。
+1：开启。
                      */
                     int64_t m_pornFlag;
                     bool m_pornFlagHasBeenSet;
 
                     /**
-                     * Cos AppId。
+                     * Cos 应用 ID。
                      */
                     int64_t m_cosAppId;
                     bool m_cosAppIdHasBeenSet;

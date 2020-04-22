@@ -14,26 +14,25 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/DescribeMfaCodeStatusResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cam::V20190116::Model;
+using namespace TencentCloud::Mongodb::V20190725::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeMfaCodeStatusResponse::DescribeMfaCodeStatusResponse() :
+DescribeDBInstanceDealResponse::DescribeDBInstanceDealResponse() :
     m_statusHasBeenSet(false),
-    m_rmDeviceHasBeenSet(false),
-    m_tmpcodeHasBeenSet(false),
-    m_nicknameHasBeenSet(false),
-    m_hasOpenIdHasBeenSet(false)
+    m_originalPriceHasBeenSet(false),
+    m_discountPriceHasBeenSet(false),
+    m_actionHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeMfaCodeStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDBInstanceDealResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -77,44 +76,34 @@ CoreInternalOutcome DescribeMfaCodeStatusResponse::Deserialize(const string &pay
         m_statusHasBeenSet = true;
     }
 
-    if (rsp.HasMember("RmDevice") && !rsp["RmDevice"].IsNull())
+    if (rsp.HasMember("OriginalPrice") && !rsp["OriginalPrice"].IsNull())
     {
-        if (!rsp["RmDevice"].IsUint64())
+        if (!rsp["OriginalPrice"].IsDouble())
         {
-            return CoreInternalOutcome(Error("response `RmDevice` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `OriginalPrice` IsDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_rmDevice = rsp["RmDevice"].GetUint64();
-        m_rmDeviceHasBeenSet = true;
+        m_originalPrice = rsp["OriginalPrice"].GetDouble();
+        m_originalPriceHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Tmpcode") && !rsp["Tmpcode"].IsNull())
+    if (rsp.HasMember("DiscountPrice") && !rsp["DiscountPrice"].IsNull())
     {
-        if (!rsp["Tmpcode"].IsString())
+        if (!rsp["DiscountPrice"].IsDouble())
         {
-            return CoreInternalOutcome(Error("response `Tmpcode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DiscountPrice` IsDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_tmpcode = string(rsp["Tmpcode"].GetString());
-        m_tmpcodeHasBeenSet = true;
+        m_discountPrice = rsp["DiscountPrice"].GetDouble();
+        m_discountPriceHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Nickname") && !rsp["Nickname"].IsNull())
+    if (rsp.HasMember("Action") && !rsp["Action"].IsNull())
     {
-        if (!rsp["Nickname"].IsString())
+        if (!rsp["Action"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Nickname` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Action` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_nickname = string(rsp["Nickname"].GetString());
-        m_nicknameHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("HasOpenId") && !rsp["HasOpenId"].IsNull())
-    {
-        if (!rsp["HasOpenId"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `HasOpenId` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_hasOpenId = rsp["HasOpenId"].GetUint64();
-        m_hasOpenIdHasBeenSet = true;
+        m_action = string(rsp["Action"].GetString());
+        m_actionHasBeenSet = true;
     }
 
 
@@ -122,54 +111,44 @@ CoreInternalOutcome DescribeMfaCodeStatusResponse::Deserialize(const string &pay
 }
 
 
-int64_t DescribeMfaCodeStatusResponse::GetStatus() const
+int64_t DescribeDBInstanceDealResponse::GetStatus() const
 {
     return m_status;
 }
 
-bool DescribeMfaCodeStatusResponse::StatusHasBeenSet() const
+bool DescribeDBInstanceDealResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
 }
 
-uint64_t DescribeMfaCodeStatusResponse::GetRmDevice() const
+double DescribeDBInstanceDealResponse::GetOriginalPrice() const
 {
-    return m_rmDevice;
+    return m_originalPrice;
 }
 
-bool DescribeMfaCodeStatusResponse::RmDeviceHasBeenSet() const
+bool DescribeDBInstanceDealResponse::OriginalPriceHasBeenSet() const
 {
-    return m_rmDeviceHasBeenSet;
+    return m_originalPriceHasBeenSet;
 }
 
-string DescribeMfaCodeStatusResponse::GetTmpcode() const
+double DescribeDBInstanceDealResponse::GetDiscountPrice() const
 {
-    return m_tmpcode;
+    return m_discountPrice;
 }
 
-bool DescribeMfaCodeStatusResponse::TmpcodeHasBeenSet() const
+bool DescribeDBInstanceDealResponse::DiscountPriceHasBeenSet() const
 {
-    return m_tmpcodeHasBeenSet;
+    return m_discountPriceHasBeenSet;
 }
 
-string DescribeMfaCodeStatusResponse::GetNickname() const
+string DescribeDBInstanceDealResponse::GetAction() const
 {
-    return m_nickname;
+    return m_action;
 }
 
-bool DescribeMfaCodeStatusResponse::NicknameHasBeenSet() const
+bool DescribeDBInstanceDealResponse::ActionHasBeenSet() const
 {
-    return m_nicknameHasBeenSet;
-}
-
-uint64_t DescribeMfaCodeStatusResponse::GetHasOpenId() const
-{
-    return m_hasOpenId;
-}
-
-bool DescribeMfaCodeStatusResponse::HasOpenIdHasBeenSet() const
-{
-    return m_hasOpenIdHasBeenSet;
+    return m_actionHasBeenSet;
 }
 
 

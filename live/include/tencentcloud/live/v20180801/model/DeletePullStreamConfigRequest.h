@@ -43,14 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置id。
-                     * @return ConfigId 配置id。
+                     * 获取配置 ID。
+1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
+2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
+                     * @return ConfigId 配置 ID。
+1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
+2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置配置id。
-                     * @param ConfigId 配置id。
+                     * 设置配置 ID。
+1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
+2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
+                     * @param ConfigId 配置 ID。
+1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
+2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
                      */
                     void SetConfigId(const std::string& _configId);
 
@@ -63,7 +71,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置id。
+                     * 配置 ID。
+1. 在添加拉流配置接口 [CreatePullStreamConfig](/document/api/267/30159) 调用返回值中获取配置 ID。
+2. 可以从接口 [DescribePullStreamConfigs](/document/api/267/30158) 中查询已创建过的拉流配置列表。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

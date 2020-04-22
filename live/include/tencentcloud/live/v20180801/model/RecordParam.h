@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 录制模板参数
+                * 录制模板参数。
                 */
                 class RecordParam : public AbstractModel
                 {
@@ -48,24 +48,24 @@ namespace TencentCloud
 
                     /**
                      * 获取录制间隔。
-单位秒，默认值1800。
-取值范围:300-7200。
+单位秒，默认：1800。
+取值范围：300-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * @return RecordInterval 录制间隔。
-单位秒，默认值1800。
-取值范围:300-7200。
+单位秒，默认：1800。
+取值范围：300-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      */
                     int64_t GetRecordInterval() const;
 
                     /**
                      * 设置录制间隔。
-单位秒，默认值1800。
-取值范围:300-7200。
+单位秒，默认：1800。
+取值范围：300-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * @param RecordInterval 录制间隔。
-单位秒，默认值1800。
-取值范围:300-7200。
+单位秒，默认：1800。
+取值范围：300-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      */
                     void SetRecordInterval(const int64_t& _recordInterval);
@@ -78,21 +78,21 @@ namespace TencentCloud
 
                     /**
                      * 获取录制存储时长。
-单位秒，取值范围： 0-93312000。
-0表示永久存储。
+单位秒，取值范围： 0 - 93312000。
+0：表示永久存储。
                      * @return StorageTime 录制存储时长。
-单位秒，取值范围： 0-93312000。
-0表示永久存储。
+单位秒，取值范围： 0 - 93312000。
+0：表示永久存储。
                      */
                     int64_t GetStorageTime() const;
 
                     /**
                      * 设置录制存储时长。
-单位秒，取值范围： 0-93312000。
-0表示永久存储。
+单位秒，取值范围： 0 - 93312000。
+0：表示永久存储。
                      * @param StorageTime 录制存储时长。
-单位秒，取值范围： 0-93312000。
-0表示永久存储。
+单位秒，取值范围： 0 - 93312000。
+0：表示永久存储。
                      */
                     void SetStorageTime(const int64_t& _storageTime);
 
@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool StorageTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启当前格式录制，0 否 1是。默认值0。
-                     * @return Enable 是否开启当前格式录制，0 否 1是。默认值0。
+                     * 获取是否开启当前格式录制，默认值为0，0：否， 1：是。
+                     * @return Enable 是否开启当前格式录制，默认值为0，0：否， 1：是。
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置是否开启当前格式录制，0 否 1是。默认值0。
-                     * @param Enable 是否开启当前格式录制，0 否 1是。默认值0。
+                     * 设置是否开启当前格式录制，默认值为0，0：否， 1：是。
+                     * @param Enable 是否开启当前格式录制，默认值为0，0：否， 1：是。
                      */
                     void SetEnable(const int64_t& _enable);
 
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取点播子应用ID。
-                     * @return VodSubAppId 点播子应用ID。
+                     * 获取点播子应用 ID。
+                     * @return VodSubAppId 点播子应用 ID。
                      */
                     int64_t GetVodSubAppId() const;
 
                     /**
-                     * 设置点播子应用ID。
-                     * @param VodSubAppId 点播子应用ID。
+                     * 设置点播子应用 ID。
+                     * @param VodSubAppId 点播子应用 ID。
                      */
                     void SetVodSubAppId(const int64_t& _vodSubAppId);
 
@@ -142,8 +142,8 @@ namespace TencentCloud
 
                     /**
                      * 录制间隔。
-单位秒，默认值1800。
-取值范围:300-7200。
+单位秒，默认：1800。
+取值范围：300-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      */
                     int64_t m_recordInterval;
@@ -151,20 +151,20 @@ namespace TencentCloud
 
                     /**
                      * 录制存储时长。
-单位秒，取值范围： 0-93312000。
-0表示永久存储。
+单位秒，取值范围： 0 - 93312000。
+0：表示永久存储。
                      */
                     int64_t m_storageTime;
                     bool m_storageTimeHasBeenSet;
 
                     /**
-                     * 是否开启当前格式录制，0 否 1是。默认值0。
+                     * 是否开启当前格式录制，默认值为0，0：否， 1：是。
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 点播子应用ID。
+                     * 点播子应用 ID。
                      */
                     int64_t m_vodSubAppId;
                     bool m_vodSubAppIdHasBeenSet;

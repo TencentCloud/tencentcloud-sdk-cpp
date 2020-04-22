@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 转码详细信息
+                * 转码详细信息。
                 */
                 class TranscodeDetailInfo : public AbstractModel
                 {
@@ -65,18 +65,14 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
-                     * @return StartTime 开始时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
+                     * 获取开始时间（北京时间），格式：yyyy-mm-dd HH:MM。
+                     * @return StartTime 开始时间（北京时间），格式：yyyy-mm-dd HH:MM。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
-                     * @param StartTime 开始时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
+                     * 设置开始时间（北京时间），格式：yyyy-mm-dd HH:MM。
+                     * @param StartTime 开始时间（北京时间），格式：yyyy-mm-dd HH:MM。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -87,18 +83,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
-                     * @return EndTime 结束时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
+                     * 获取结束时间（北京时间），格式：yyyy-mm-dd HH:MM。
+                     * @return EndTime 结束时间（北京时间），格式：yyyy-mm-dd HH:MM。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
-                     * @param EndTime 结束时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
+                     * 设置结束时间（北京时间），格式：yyyy-mm-dd HH:MM。
+                     * @param EndTime 结束时间（北京时间），格式：yyyy-mm-dd HH:MM。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -133,32 +125,32 @@ namespace TencentCloud
                     /**
                      * 获取编码方式，带模块，
 示例：
-liveprocessor_H264 =》直播转码-H264，
-liveprocessor_H265 =》 直播转码-H265，
-topspeed_H264 =》极速高清-H264，
-topspeed_H265 =》极速高清-H265。
+liveprocessor_H264：直播转码-H264，
+liveprocessor_H265： 直播转码-H265，
+topspeed_H264：极速高清-H264，
+topspeed_H265：极速高清-H265。
                      * @return ModuleCodec 编码方式，带模块，
 示例：
-liveprocessor_H264 =》直播转码-H264，
-liveprocessor_H265 =》 直播转码-H265，
-topspeed_H264 =》极速高清-H264，
-topspeed_H265 =》极速高清-H265。
+liveprocessor_H264：直播转码-H264，
+liveprocessor_H265： 直播转码-H265，
+topspeed_H264：极速高清-H264，
+topspeed_H265：极速高清-H265。
                      */
                     std::string GetModuleCodec() const;
 
                     /**
                      * 设置编码方式，带模块，
 示例：
-liveprocessor_H264 =》直播转码-H264，
-liveprocessor_H265 =》 直播转码-H265，
-topspeed_H264 =》极速高清-H264，
-topspeed_H265 =》极速高清-H265。
+liveprocessor_H264：直播转码-H264，
+liveprocessor_H265： 直播转码-H265，
+topspeed_H264：极速高清-H264，
+topspeed_H265：极速高清-H265。
                      * @param ModuleCodec 编码方式，带模块，
 示例：
-liveprocessor_H264 =》直播转码-H264，
-liveprocessor_H265 =》 直播转码-H265，
-topspeed_H264 =》极速高清-H264，
-topspeed_H265 =》极速高清-H265。
+liveprocessor_H264：直播转码-H264，
+liveprocessor_H265： 直播转码-H265，
+topspeed_H264：极速高清-H264，
+topspeed_H265：极速高清-H265。
                      */
                     void SetModuleCodec(const std::string& _moduleCodec);
 
@@ -187,14 +179,14 @@ topspeed_H265 =》极速高清-H265。
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取类型，包含：转码(Transcode)，混流(MixStream)，水印(WaterMark)。
-                     * @return Type 类型，包含：转码(Transcode)，混流(MixStream)，水印(WaterMark)。
+                     * 获取类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
+                     * @return Type 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型，包含：转码(Transcode)，混流(MixStream)，水印(WaterMark)。
-                     * @param Type 类型，包含：转码(Transcode)，混流(MixStream)，水印(WaterMark)。
+                     * 设置类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
+                     * @param Type 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
                      */
                     void SetType(const std::string& _type);
 
@@ -249,15 +241,13 @@ topspeed_H265 =》极速高清-H265。
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 开始时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
+                     * 开始时间（北京时间），格式：yyyy-mm-dd HH:MM。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，北京时间，
-格式：yyyy-mm-dd HH:MM。
+                     * 结束时间（北京时间），格式：yyyy-mm-dd HH:MM。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -272,10 +262,10 @@ topspeed_H265 =》极速高清-H265。
                     /**
                      * 编码方式，带模块，
 示例：
-liveprocessor_H264 =》直播转码-H264，
-liveprocessor_H265 =》 直播转码-H265，
-topspeed_H264 =》极速高清-H264，
-topspeed_H265 =》极速高清-H265。
+liveprocessor_H264：直播转码-H264，
+liveprocessor_H265： 直播转码-H265，
+topspeed_H264：极速高清-H264，
+topspeed_H265：极速高清-H265。
                      */
                     std::string m_moduleCodec;
                     bool m_moduleCodecHasBeenSet;
@@ -287,7 +277,7 @@ topspeed_H265 =》极速高清-H265。
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 类型，包含：转码(Transcode)，混流(MixStream)，水印(WaterMark)。
+                     * 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

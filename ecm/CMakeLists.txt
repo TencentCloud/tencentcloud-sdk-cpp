@@ -88,6 +88,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceResponse.h
   include/tencentcloud/ecm/v20190719/model/InstanceFamilyConfig.h
   include/tencentcloud/ecm/v20190719/model/DeleteModuleRequest.h
+  include/tencentcloud/ecm/v20190719/model/DescribeVpcsRequest.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesMaxBandwidthRequest.h
   include/tencentcloud/ecm/v20190719/model/PeakBase.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNetworkRequest.h
@@ -163,6 +164,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ModifyModuleImageRequest.h
   include/tencentcloud/ecm/v20190719/model/RunMonitorServiceEnabled.h
   include/tencentcloud/ecm/v20190719/model/MigrateNetworkInterfaceResponse.h
+  include/tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h
   include/tencentcloud/ecm/v20190719/model/InstanceOperator.h
   include/tencentcloud/ecm/v20190719/model/Module.h
   include/tencentcloud/ecm/v20190719/model/DescribeBaseOverviewResponse.h
@@ -239,6 +241,7 @@ set(ecm_src
   src/v20190719/model/DetachNetworkInterfaceResponse.cpp
   src/v20190719/model/InstanceFamilyConfig.cpp
   src/v20190719/model/DeleteModuleRequest.cpp
+  src/v20190719/model/DescribeVpcsRequest.cpp
   src/v20190719/model/ResetInstancesMaxBandwidthRequest.cpp
   src/v20190719/model/PeakBase.cpp
   src/v20190719/model/ModifyModuleNetworkRequest.cpp
@@ -314,6 +317,7 @@ set(ecm_src
   src/v20190719/model/ModifyModuleImageRequest.cpp
   src/v20190719/model/RunMonitorServiceEnabled.cpp
   src/v20190719/model/MigrateNetworkInterfaceResponse.cpp
+  src/v20190719/model/DescribeVpcsResponse.cpp
   src/v20190719/model/InstanceOperator.cpp
   src/v20190719/model/Module.cpp
   src/v20190719/model/DescribeBaseOverviewResponse.cpp

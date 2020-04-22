@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 每个域名的统计信息
+                * 每个域名的统计信息。
                 */
                 class DomainDetailInfo : public AbstractModel
                 {
@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取国内还是国外，可选值包括Mainland和Oversea，如果为“Mainland”，表示国内数据；如果为“Oversea”，表示国外数据。
-                     * @return MainlandOrOversea 国内还是国外，可选值包括Mainland和Oversea，如果为“Mainland”，表示国内数据；如果为“Oversea”，表示国外数据。
+                     * 获取国内还是国外:
+Mainland: 表示国内数据。
+Oversea: 表示国外数据。
+                     * @return MainlandOrOversea 国内还是国外:
+Mainland: 表示国内数据。
+Oversea: 表示国外数据。
                      */
                     std::string GetMainlandOrOversea() const;
 
                     /**
-                     * 设置国内还是国外，可选值包括Mainland和Oversea，如果为“Mainland”，表示国内数据；如果为“Oversea”，表示国外数据。
-                     * @param MainlandOrOversea 国内还是国外，可选值包括Mainland和Oversea，如果为“Mainland”，表示国内数据；如果为“Oversea”，表示国外数据。
+                     * 设置国内还是国外:
+Mainland: 表示国内数据。
+Oversea: 表示国外数据。
+                     * @param MainlandOrOversea 国内还是国外:
+Mainland: 表示国内数据。
+Oversea: 表示国外数据。
                      */
                     void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
 
@@ -65,14 +73,14 @@ namespace TencentCloud
                     bool MainlandOrOverseaHasBeenSet() const;
 
                     /**
-                     * 获取带宽，单位是Mbps。
-                     * @return Bandwidth 带宽，单位是Mbps。
+                     * 获取带宽，单位: Mbps。
+                     * @return Bandwidth 带宽，单位: Mbps。
                      */
                     double GetBandwidth() const;
 
                     /**
-                     * 设置带宽，单位是Mbps。
-                     * @param Bandwidth 带宽，单位是Mbps。
+                     * 设置带宽，单位: Mbps。
+                     * @param Bandwidth 带宽，单位: Mbps。
                      */
                     void SetBandwidth(const double& _bandwidth);
 
@@ -83,14 +91,14 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取流量，单位是MB。
-                     * @return Flux 流量，单位是MB。
+                     * 获取流量，单位: MB。
+                     * @return Flux 流量，单位: MB。
                      */
                     double GetFlux() const;
 
                     /**
-                     * 设置流量，单位是MB。
-                     * @param Flux 流量，单位是MB。
+                     * 设置流量，单位: MB。
+                     * @param Flux 流量，单位: MB。
                      */
                     void SetFlux(const double& _flux);
 
@@ -139,19 +147,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 国内还是国外，可选值包括Mainland和Oversea，如果为“Mainland”，表示国内数据；如果为“Oversea”，表示国外数据。
+                     * 国内还是国外:
+Mainland: 表示国内数据。
+Oversea: 表示国外数据。
                      */
                     std::string m_mainlandOrOversea;
                     bool m_mainlandOrOverseaHasBeenSet;
 
                     /**
-                     * 带宽，单位是Mbps。
+                     * 带宽，单位: Mbps。
                      */
                     double m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 流量，单位是MB。
+                     * 流量，单位: MB。
                      */
                     double m_flux;
                     bool m_fluxHasBeenSet;

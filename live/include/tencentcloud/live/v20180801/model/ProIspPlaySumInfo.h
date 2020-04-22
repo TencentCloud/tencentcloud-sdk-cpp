@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取省份/运营商的播放信息
+                * 获取省份/运营商的播放信息。
                 */
                 class ProIspPlaySumInfo : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取总流量，单位：MB。
-                     * @return TotalFlux 总流量，单位：MB。
+                     * 获取总流量，单位: MB。
+                     * @return TotalFlux 总流量，单位: MB。
                      */
                     double GetTotalFlux() const;
 
                     /**
-                     * 设置总流量，单位：MB。
-                     * @param TotalFlux 总流量，单位：MB。
+                     * 设置总流量，单位: MB。
+                     * @param TotalFlux 总流量，单位: MB。
                      */
                     void SetTotalFlux(const double& _totalFlux);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool TotalRequestHasBeenSet() const;
 
                     /**
-                     * 获取平均下载流量，单位：MB/s
-                     * @return AvgFluxPerSecond 平均下载流量，单位：MB/s
+                     * 获取平均下载流量，单位: MB/s。
+                     * @return AvgFluxPerSecond 平均下载流量，单位: MB/s。
                      */
                     double GetAvgFluxPerSecond() const;
 
                     /**
-                     * 设置平均下载流量，单位：MB/s
-                     * @param AvgFluxPerSecond 平均下载流量，单位：MB/s
+                     * 设置平均下载流量，单位: MB/s。
+                     * @param AvgFluxPerSecond 平均下载流量，单位: MB/s。
                      */
                     void SetAvgFluxPerSecond(const double& _avgFluxPerSecond);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 总流量，单位：MB。
+                     * 总流量，单位: MB。
                      */
                     double m_totalFlux;
                     bool m_totalFluxHasBeenSet;
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_totalRequestHasBeenSet;
 
                     /**
-                     * 平均下载流量，单位：MB/s
+                     * 平均下载流量，单位: MB/s。
                      */
                     double m_avgFluxPerSecond;
                     bool m_avgFluxPerSecondHasBeenSet;

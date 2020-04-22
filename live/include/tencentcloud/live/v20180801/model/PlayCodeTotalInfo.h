@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 各状态码的总次数，支持大多数的http协议返回码
+                * 各状态码的总次数，支持大多数的 HTTP 协议返回码。
                 */
                 class PlayCodeTotalInfo : public AbstractModel
                 {
@@ -47,14 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HTTP code，可选值包括400,403,404,500,502,503,504
-                     * @return Code HTTP code，可选值包括400,403,404,500,502,503,504
+                     * 获取HTTP code，可选值包括:
+400，403，404，500，502，503，504。
+                     * @return Code HTTP code，可选值包括:
+400，403，404，500，502，503，504。
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置HTTP code，可选值包括400,403,404,500,502,503,504
-                     * @param Code HTTP code，可选值包括400,403,404,500,502,503,504
+                     * 设置HTTP code，可选值包括:
+400，403，404，500，502，503，504。
+                     * @param Code HTTP code，可选值包括:
+400，403，404，500，502，503，504。
                      */
                     void SetCode(const std::string& _code);
 
@@ -65,14 +69,14 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取总次数
-                     * @return Num 总次数
+                     * 获取总次数。
+                     * @return Num 总次数。
                      */
                     uint64_t GetNum() const;
 
                     /**
-                     * 设置总次数
-                     * @param Num 总次数
+                     * 设置总次数。
+                     * @param Num 总次数。
                      */
                     void SetNum(const uint64_t& _num);
 
@@ -85,13 +89,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HTTP code，可选值包括400,403,404,500,502,503,504
+                     * HTTP code，可选值包括:
+400，403，404，500，502，503，504。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 总次数
+                     * 总次数。
                      */
                     uint64_t m_num;
                     bool m_numHasBeenSet;

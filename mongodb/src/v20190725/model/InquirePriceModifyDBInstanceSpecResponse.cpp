@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/CheckResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cam::V20190116::Model;
+using namespace TencentCloud::Mongodb::V20190725::Model;
 using namespace rapidjson;
 using namespace std;
 
-CheckResponse::CheckResponse()
+InquirePriceModifyDBInstanceSpecResponse::InquirePriceModifyDBInstanceSpecResponse() :
+    m_priceHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CheckResponse::Deserialize(const string &payload)
+CoreInternalOutcome InquirePriceModifyDBInstanceSpecResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +63,36 @@ CoreInternalOutcome CheckResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Price") && !rsp["Price"].IsNull())
+    {
+        if (!rsp["Price"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Price` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_price.Deserialize(rsp["Price"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_priceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+DBInstancePrice InquirePriceModifyDBInstanceSpecResponse::GetPrice() const
+{
+    return m_price;
+}
+
+bool InquirePriceModifyDBInstanceSpecResponse::PriceHasBeenSet() const
+{
+    return m_priceHasBeenSet;
+}
 
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 客户端ip播放汇总信息
+                * 客户端ip播放汇总信息。
                 */
                 class ClientIpPlaySumInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端ip，点分型。
-                     * @return ClientIp 客户端ip，点分型。
+                     * 获取客户端 IP，点分型。
+                     * @return ClientIp 客户端 IP，点分型。
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置客户端ip，点分型。
-                     * @param ClientIp 客户端ip，点分型。
+                     * 设置客户端 IP，点分型。
+                     * @param ClientIp 客户端 IP，点分型。
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -157,7 +157,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户端ip，点分型。
+                     * 客户端 IP，点分型。
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;

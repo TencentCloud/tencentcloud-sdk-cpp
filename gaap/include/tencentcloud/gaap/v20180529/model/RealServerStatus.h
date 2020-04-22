@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RealServerIdHasBeenSet() const;
 
                     /**
-                     * 获取0: 未被绑定 1：被规则或者监听器绑定。
-                     * @return BindStatus 0: 未被绑定 1：被规则或者监听器绑定。
+                     * 获取0表示未被绑定 1表示被规则或者监听器绑定。
+                     * @return BindStatus 0表示未被绑定 1表示被规则或者监听器绑定。
                      */
                     int64_t GetBindStatus() const;
 
                     /**
-                     * 设置0: 未被绑定 1：被规则或者监听器绑定。
-                     * @param BindStatus 0: 未被绑定 1：被规则或者监听器绑定。
+                     * 设置0表示未被绑定 1表示被规则或者监听器绑定。
+                     * @param BindStatus 0表示未被绑定 1表示被规则或者监听器绑定。
                      */
                     void SetBindStatus(const int64_t& _bindStatus);
 
@@ -109,7 +109,7 @@ namespace TencentCloud
                     bool m_realServerIdHasBeenSet;
 
                     /**
-                     * 0: 未被绑定 1：被规则或者监听器绑定。
+                     * 0表示未被绑定 1表示被规则或者监听器绑定。
                      */
                     int64_t m_bindStatus;
                     bool m_bindStatusHasBeenSet;

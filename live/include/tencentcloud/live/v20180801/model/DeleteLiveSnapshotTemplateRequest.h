@@ -43,14 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板 ID。
+1. 在创建截图模板接口 [CreateLiveSnapshotTemplate](/document/product/267/32624) 调用的返回值中获取。
+2. 可以从接口 [DescribeLiveSnapshotTemplates](/document/product/267/32619) 中查询已创建的截图模板列表。
+                     * @return TemplateId 模板 ID。
+1. 在创建截图模板接口 [CreateLiveSnapshotTemplate](/document/product/267/32624) 调用的返回值中获取。
+2. 可以从接口 [DescribeLiveSnapshotTemplates](/document/product/267/32619) 中查询已创建的截图模板列表。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param TemplateId 模板Id。
+                     * 设置模板 ID。
+1. 在创建截图模板接口 [CreateLiveSnapshotTemplate](/document/product/267/32624) 调用的返回值中获取。
+2. 可以从接口 [DescribeLiveSnapshotTemplates](/document/product/267/32619) 中查询已创建的截图模板列表。
+                     * @param TemplateId 模板 ID。
+1. 在创建截图模板接口 [CreateLiveSnapshotTemplate](/document/product/267/32624) 调用的返回值中获取。
+2. 可以从接口 [DescribeLiveSnapshotTemplates](/document/product/267/32619) 中查询已创建的截图模板列表。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -63,7 +71,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板Id。
+                     * 模板 ID。
+1. 在创建截图模板接口 [CreateLiveSnapshotTemplate](/document/product/267/32624) 调用的返回值中获取。
+2. 可以从接口 [DescribeLiveSnapshotTemplates](/document/product/267/32619) 中查询已创建的截图模板列表。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

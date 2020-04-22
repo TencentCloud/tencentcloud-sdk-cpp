@@ -43,14 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板 ID。
+调用 [CreateLiveSnapshotTemplate](/document/product/267/32624) 时返回的模板 ID。
+                     * @return TemplateId 模板 ID。
+调用 [CreateLiveSnapshotTemplate](/document/product/267/32624) 时返回的模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param TemplateId 模板Id。
+                     * 设置模板 ID。
+调用 [CreateLiveSnapshotTemplate](/document/product/267/32624) 时返回的模板 ID。
+                     * @param TemplateId 模板 ID。
+调用 [CreateLiveSnapshotTemplate](/document/product/267/32624) 时返回的模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -63,7 +67,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板Id。
+                     * 模板 ID。
+调用 [CreateLiveSnapshotTemplate](/document/product/267/32624) 时返回的模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

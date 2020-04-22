@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 播放汇总统计信息
+                * 播放汇总统计信息。
                 */
                 class PlaySumStatInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名或流id。
-                     * @return Name 域名或流id。
+                     * 获取域名或流 ID。
+                     * @return Name 域名或流 ID。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置域名或流id。
-                     * @param Name 域名或流id。
+                     * 设置域名或流 ID。
+                     * @param Name 域名或流 ID。
                      */
                     void SetName(const std::string& _name);
 
@@ -65,14 +65,22 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取平均下载速度，单位是MB/s，计算公式是每分钟的下载速度求平均值。
-                     * @return AvgFluxPerSecond 平均下载速度，单位是MB/s，计算公式是每分钟的下载速度求平均值。
+                     * 获取平均下载速度，
+单位: MB/s。
+计算公式: 每分钟的下载速度求平均值。
+                     * @return AvgFluxPerSecond 平均下载速度，
+单位: MB/s。
+计算公式: 每分钟的下载速度求平均值。
                      */
                     double GetAvgFluxPerSecond() const;
 
                     /**
-                     * 设置平均下载速度，单位是MB/s，计算公式是每分钟的下载速度求平均值。
-                     * @param AvgFluxPerSecond 平均下载速度，单位是MB/s，计算公式是每分钟的下载速度求平均值。
+                     * 设置平均下载速度，
+单位: MB/s。
+计算公式: 每分钟的下载速度求平均值。
+                     * @param AvgFluxPerSecond 平均下载速度，
+单位: MB/s。
+计算公式: 每分钟的下载速度求平均值。
                      */
                     void SetAvgFluxPerSecond(const double& _avgFluxPerSecond);
 
@@ -83,14 +91,14 @@ namespace TencentCloud
                     bool AvgFluxPerSecondHasBeenSet() const;
 
                     /**
-                     * 获取总流量，单位是MB。
-                     * @return TotalFlux 总流量，单位是MB。
+                     * 获取总流量，单位: MB。
+                     * @return TotalFlux 总流量，单位: MB。
                      */
                     double GetTotalFlux() const;
 
                     /**
-                     * 设置总流量，单位是MB。
-                     * @param TotalFlux 总流量，单位是MB。
+                     * 设置总流量，单位: MB。
+                     * @param TotalFlux 总流量，单位: MB。
                      */
                     void SetTotalFlux(const double& _totalFlux);
 
@@ -121,19 +129,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名或流id。
+                     * 域名或流 ID。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 平均下载速度，单位是MB/s，计算公式是每分钟的下载速度求平均值。
+                     * 平均下载速度，
+单位: MB/s。
+计算公式: 每分钟的下载速度求平均值。
                      */
                     double m_avgFluxPerSecond;
                     bool m_avgFluxPerSecondHasBeenSet;
 
                     /**
-                     * 总流量，单位是MB。
+                     * 总流量，单位: MB。
                      */
                     double m_totalFlux;
                     bool m_totalFluxHasBeenSet;

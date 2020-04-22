@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板 ID。
+                     * @return TemplateId 模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param TemplateId 模板Id。
+                     * 设置模板 ID。
+                     * @param TemplateId 模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 获取推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。
+                     * @return AppName 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 设置推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。
+                     * @param AppName 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -127,13 +127,13 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 模板Id。
+                     * 模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

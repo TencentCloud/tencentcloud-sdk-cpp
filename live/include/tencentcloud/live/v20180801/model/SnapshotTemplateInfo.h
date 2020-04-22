@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 截图模板信息
+                * 截图模板信息。
                 */
                 class SnapshotTemplateInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板 ID。
+                     * @return TemplateId 模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param TemplateId 模板Id。
+                     * 设置模板 ID。
+                     * @param TemplateId 模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取截图时间间隔。5-300秒。
-                     * @return SnapshotInterval 截图时间间隔。5-300秒。
+                     * 获取截图时间间隔，5-300秒。
+                     * @return SnapshotInterval 截图时间间隔，5-300秒。
                      */
                     int64_t GetSnapshotInterval() const;
 
                     /**
-                     * 设置截图时间间隔。5-300秒。
-                     * @param SnapshotInterval 截图时间间隔。5-300秒。
+                     * 设置截图时间间隔，5-300秒。
+                     * @param SnapshotInterval 截图时间间隔，5-300秒。
                      */
                     void SetSnapshotInterval(const int64_t& _snapshotInterval);
 
@@ -101,14 +101,18 @@ namespace TencentCloud
                     bool SnapshotIntervalHasBeenSet() const;
 
                     /**
-                     * 获取截图宽度。0-3000 0原始宽度并适配原始比例
-                     * @return Width 截图宽度。0-3000 0原始宽度并适配原始比例
+                     * 获取截图宽度，范围：0-3000。 
+0：原始宽度并适配原始比例。
+                     * @return Width 截图宽度，范围：0-3000。 
+0：原始宽度并适配原始比例。
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置截图宽度。0-3000 0原始宽度并适配原始比例
-                     * @param Width 截图宽度。0-3000 0原始宽度并适配原始比例
+                     * 设置截图宽度，范围：0-3000。 
+0：原始宽度并适配原始比例。
+                     * @param Width 截图宽度，范围：0-3000。 
+0：原始宽度并适配原始比例。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -119,14 +123,18 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取截图高度。0-2000 0原始高度并适配原始比例
-                     * @return Height 截图高度。0-2000 0原始高度并适配原始比例
+                     * 获取截图高度，范围：0-2000。
+0：原始高度并适配原始比例。
+                     * @return Height 截图高度，范围：0-2000。
+0：原始高度并适配原始比例。
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置截图高度。0-2000 0原始高度并适配原始比例
-                     * @param Height 截图高度。0-2000 0原始高度并适配原始比例
+                     * 设置截图高度，范围：0-2000。
+0：原始高度并适配原始比例。
+                     * @param Height 截图高度，范围：0-2000。
+0：原始高度并适配原始比例。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -155,14 +163,14 @@ namespace TencentCloud
                     bool PornFlagHasBeenSet() const;
 
                     /**
-                     * 获取Cos AppId。
-                     * @return CosAppId Cos AppId。
+                     * 获取Cos 应用 ID。
+                     * @return CosAppId Cos 应用 ID。
                      */
                     int64_t GetCosAppId() const;
 
                     /**
-                     * 设置Cos AppId。
-                     * @param CosAppId Cos AppId。
+                     * 设置Cos 应用 ID。
+                     * @param CosAppId Cos 应用 ID。
                      */
                     void SetCosAppId(const int64_t& _cosAppId);
 
@@ -209,14 +217,14 @@ namespace TencentCloud
                     bool CosRegionHasBeenSet() const;
 
                     /**
-                     * 获取模板描述
-                     * @return Description 模板描述
+                     * 获取模板描述。
+                     * @return Description 模板描述。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置模板描述
-                     * @param Description 模板描述
+                     * 设置模板描述。
+                     * @param Description 模板描述。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -229,7 +237,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板Id。
+                     * 模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -241,19 +249,21 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 截图时间间隔。5-300秒。
+                     * 截图时间间隔，5-300秒。
                      */
                     int64_t m_snapshotInterval;
                     bool m_snapshotIntervalHasBeenSet;
 
                     /**
-                     * 截图宽度。0-3000 0原始宽度并适配原始比例
+                     * 截图宽度，范围：0-3000。 
+0：原始宽度并适配原始比例。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 截图高度。0-2000 0原始高度并适配原始比例
+                     * 截图高度，范围：0-2000。
+0：原始高度并适配原始比例。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
@@ -265,7 +275,7 @@ namespace TencentCloud
                     bool m_pornFlagHasBeenSet;
 
                     /**
-                     * Cos AppId。
+                     * Cos 应用 ID。
                      */
                     int64_t m_cosAppId;
                     bool m_cosAppIdHasBeenSet;
@@ -283,7 +293,7 @@ namespace TencentCloud
                     bool m_cosRegionHasBeenSet;
 
                     /**
-                     * 模板描述
+                     * 模板描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

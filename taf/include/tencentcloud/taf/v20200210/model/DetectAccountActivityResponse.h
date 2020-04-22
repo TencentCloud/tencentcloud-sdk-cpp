@@ -14,53 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CAM_V20190116_MODEL_DETECTAUTHRESPONSE_H_
-#define TENCENTCLOUD_CAM_V20190116_MODEL_DETECTAUTHRESPONSE_H_
+#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_DETECTACCOUNTACTIVITYRESPONSE_H_
+#define TENCENTCLOUD_TAF_V20200210_MODEL_DETECTACCOUNTACTIVITYRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/taf/v20200210/model/OutputDetectAccountActivity.h>
 
 
 namespace TencentCloud
 {
-    namespace Cam
+    namespace Taf
     {
-        namespace V20190116
+        namespace V20200210
         {
             namespace Model
             {
                 /**
-                * DetectAuth返回参数结构体
+                * DetectAccountActivity返回参数结构体
                 */
-                class DetectAuthResponse : public AbstractModel
+                class DetectAccountActivityResponse : public AbstractModel
                 {
                 public:
-                    DetectAuthResponse();
-                    ~DetectAuthResponse() = default;
+                    DetectAccountActivityResponse();
+                    ~DetectAccountActivityResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取人脸核身token
-                     * @return Token 人脸核身token
+                     * 获取回包数据
+                     * @return Data 回包数据
                      */
-                    std::string GetToken() const;
+                    OutputDetectAccountActivity GetData() const;
 
                     /**
-                     * 判断参数 Token 是否已赋值
-                     * @return Token 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      */
-                    bool TokenHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 人脸核身token
+                     * 回包数据
                      */
-                    std::string m_token;
-                    bool m_tokenHasBeenSet;
+                    OutputDetectAccountActivity m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -68,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CAM_V20190116_MODEL_DETECTAUTHRESPONSE_H_
+#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_DETECTACCOUNTACTIVITYRESPONSE_H_

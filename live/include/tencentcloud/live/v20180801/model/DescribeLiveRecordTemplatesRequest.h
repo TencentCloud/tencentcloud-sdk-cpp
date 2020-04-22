@@ -43,26 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否属于慢直播模板。默认：0。
-示例：
-0 - 标准直播。
-1 - 慢直播。
-                     * @return IsDelayLive 是否属于慢直播模板。默认：0。
-示例：
-0 - 标准直播。
-1 - 慢直播。
+                     * 获取是否属于慢直播模板，默认：0。
+0： 标准直播。
+1：慢直播。
+                     * @return IsDelayLive 是否属于慢直播模板，默认：0。
+0： 标准直播。
+1：慢直播。
                      */
                     int64_t GetIsDelayLive() const;
 
                     /**
-                     * 设置是否属于慢直播模板。默认：0。
-示例：
-0 - 标准直播。
-1 - 慢直播。
-                     * @param IsDelayLive 是否属于慢直播模板。默认：0。
-示例：
-0 - 标准直播。
-1 - 慢直播。
+                     * 设置是否属于慢直播模板，默认：0。
+0： 标准直播。
+1：慢直播。
+                     * @param IsDelayLive 是否属于慢直播模板，默认：0。
+0： 标准直播。
+1：慢直播。
                      */
                     void SetIsDelayLive(const int64_t& _isDelayLive);
 
@@ -75,10 +71,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否属于慢直播模板。默认：0。
-示例：
-0 - 标准直播。
-1 - 慢直播。
+                     * 是否属于慢直播模板，默认：0。
+0： 标准直播。
+1：慢直播。
                      */
                     int64_t m_isDelayLive;
                     bool m_isDelayLiveHasBeenSet;

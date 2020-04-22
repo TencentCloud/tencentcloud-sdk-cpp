@@ -68,17 +68,13 @@ namespace TencentCloud
 
                     /**
                      * 获取输入的视频文件信息，当 InputType 为 File 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileInfoSet 输入的视频文件信息，当 InputType 为 File 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EditMediaFileInfo> GetFileInfoSet() const;
 
                     /**
                      * 设置输入的视频文件信息，当 InputType 为 File 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileInfoSet 输入的视频文件信息，当 InputType 为 File 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileInfoSet(const std::vector<EditMediaFileInfo>& _fileInfoSet);
 
@@ -90,17 +86,13 @@ namespace TencentCloud
 
                     /**
                      * 获取输入的流信息，当 InputType 为 Stream 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamInfoSet 输入的流信息，当 InputType 为 Stream 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EditMediaStreamInfo> GetStreamInfoSet() const;
 
                     /**
                      * 设置输入的流信息，当 InputType 为 Stream 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param StreamInfoSet 输入的流信息，当 InputType 为 Stream 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStreamInfoSet(const std::vector<EditMediaStreamInfo>& _streamInfoSet);
 
@@ -120,14 +112,12 @@ namespace TencentCloud
 
                     /**
                      * 输入的视频文件信息，当 InputType 为 File 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EditMediaFileInfo> m_fileInfoSet;
                     bool m_fileInfoSetHasBeenSet;
 
                     /**
                      * 输入的流信息，当 InputType 为 Stream 时，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EditMediaStreamInfo> m_streamInfoSet;
                     bool m_streamInfoSetHasBeenSet;

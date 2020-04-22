@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
-                     * @return Time 数据时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 获取数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * @return Time 数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置数据时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
-                     * @param Time 数据时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 设置数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * @param Time 数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      */
                     void SetTime(const std::string& _time);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取推流客户端ip。
-                     * @return ClientIp 推流客户端ip。
+                     * 获取推流客户端 IP。
+                     * @return ClientIp 推流客户端 IP。
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置推流客户端ip。
-                     * @param ClientIp 推流客户端ip。
+                     * 设置推流客户端 IP。
+                     * @param ClientIp 推流客户端 IP。
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ClientIpHasBeenSet() const;
 
                     /**
-                     * 获取开始推流时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
-                     * @return BeginPushTime 开始推流时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 获取开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * @return BeginPushTime 开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      */
                     std::string GetBeginPushTime() const;
 
                     /**
-                     * 设置开始推流时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
-                     * @param BeginPushTime 开始推流时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 设置开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * @param BeginPushTime 开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      */
                     void SetBeginPushTime(const std::string& _beginPushTime);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool VideoFpsHasBeenSet() const;
 
                     /**
-                     * 获取视频码率，单位是bps。
-                     * @return VideoRate 视频码率，单位是bps。
+                     * 获取视频码率，单位: bps。
+                     * @return VideoRate 视频码率，单位: bps。
                      */
                     uint64_t GetVideoRate() const;
 
                     /**
-                     * 设置视频码率，单位是bps。
-                     * @param VideoRate 视频码率，单位是bps。
+                     * 设置视频码率，单位: bps。
+                     * @param VideoRate 视频码率，单位: bps。
                      */
                     void SetVideoRate(const uint64_t& _videoRate);
 
@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool AudioFpsHasBeenSet() const;
 
                     /**
-                     * 获取音频码率，单位是bps。
-                     * @return AudioRate 音频码率，单位是bps。
+                     * 获取音频码率，单位: bps。
+                     * @return AudioRate 音频码率，单位: bps。
                      */
                     uint64_t GetAudioRate() const;
 
                     /**
-                     * 设置音频码率，单位是bps。
-                     * @param AudioRate 音频码率，单位是bps。
+                     * 设置音频码率，单位: bps。
+                     * @param AudioRate 音频码率，单位: bps。
                      */
                     void SetAudioRate(const uint64_t& _audioRate);
 
@@ -281,14 +281,14 @@ namespace TencentCloud
                     bool AudioRateHasBeenSet() const;
 
                     /**
-                     * 获取本地流逝时间，单位是ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
-                     * @return LocalTs 本地流逝时间，单位是ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * 获取本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * @return LocalTs 本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
                      */
                     uint64_t GetLocalTs() const;
 
                     /**
-                     * 设置本地流逝时间，单位是ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
-                     * @param LocalTs 本地流逝时间，单位是ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * 设置本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * @param LocalTs 本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
                      */
                     void SetLocalTs(const uint64_t& _localTs);
 
@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool LocalTsHasBeenSet() const;
 
                     /**
-                     * 获取视频流逝时间，单位是ms。
-                     * @return VideoTs 视频流逝时间，单位是ms。
+                     * 获取视频流逝时间，单位: ms。
+                     * @return VideoTs 视频流逝时间，单位: ms。
                      */
                     uint64_t GetVideoTs() const;
 
                     /**
-                     * 设置视频流逝时间，单位是ms。
-                     * @param VideoTs 视频流逝时间，单位是ms。
+                     * 设置视频流逝时间，单位: ms。
+                     * @param VideoTs 视频流逝时间，单位: ms。
                      */
                     void SetVideoTs(const uint64_t& _videoTs);
 
@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool VideoTsHasBeenSet() const;
 
                     /**
-                     * 获取音频流逝时间，单位是ms。
-                     * @return AudioTs 音频流逝时间，单位是ms。
+                     * 获取音频流逝时间，单位: ms。
+                     * @return AudioTs 音频流逝时间，单位: ms。
                      */
                     uint64_t GetAudioTs() const;
 
                     /**
-                     * 设置音频流逝时间，单位是ms。
-                     * @param AudioTs 音频流逝时间，单位是ms。
+                     * 设置音频流逝时间，单位: ms。
+                     * @param AudioTs 音频流逝时间，单位: ms。
                      */
                     void SetAudioTs(const uint64_t& _audioTs);
 
@@ -335,14 +335,14 @@ namespace TencentCloud
                     bool AudioTsHasBeenSet() const;
 
                     /**
-                     * 获取metadata中的视频码率，单位是kbps。
-                     * @return MetaVideoRate metadata中的视频码率，单位是kbps。
+                     * 获取metadata 中的视频码率，单位: kbps。
+                     * @return MetaVideoRate metadata 中的视频码率，单位: kbps。
                      */
                     uint64_t GetMetaVideoRate() const;
 
                     /**
-                     * 设置metadata中的视频码率，单位是kbps。
-                     * @param MetaVideoRate metadata中的视频码率，单位是kbps。
+                     * 设置metadata 中的视频码率，单位: kbps。
+                     * @param MetaVideoRate metadata 中的视频码率，单位: kbps。
                      */
                     void SetMetaVideoRate(const uint64_t& _metaVideoRate);
 
@@ -353,14 +353,14 @@ namespace TencentCloud
                     bool MetaVideoRateHasBeenSet() const;
 
                     /**
-                     * 获取metadata中的音频码率，单位是kbps。
-                     * @return MetaAudioRate metadata中的音频码率，单位是kbps。
+                     * 获取metadata 中的音频码率，单位: kbps。
+                     * @return MetaAudioRate metadata 中的音频码率，单位: kbps。
                      */
                     uint64_t GetMetaAudioRate() const;
 
                     /**
-                     * 设置metadata中的音频码率，单位是kbps。
-                     * @param MetaAudioRate metadata中的音频码率，单位是kbps。
+                     * 设置metadata 中的音频码率，单位: kbps。
+                     * @param MetaAudioRate metadata 中的音频码率，单位: kbps。
                      */
                     void SetMetaAudioRate(const uint64_t& _metaAudioRate);
 
@@ -371,14 +371,14 @@ namespace TencentCloud
                     bool MetaAudioRateHasBeenSet() const;
 
                     /**
-                     * 获取metadata中的帧率。
-                     * @return MateFps metadata中的帧率。
+                     * 获取metadata 中的帧率。
+                     * @return MateFps metadata 中的帧率。
                      */
                     uint64_t GetMateFps() const;
 
                     /**
-                     * 设置metadata中的帧率。
-                     * @param MateFps metadata中的帧率。
+                     * 设置metadata 中的帧率。
+                     * @param MateFps metadata 中的帧率。
                      */
                     void SetMateFps(const uint64_t& _mateFps);
 
@@ -391,7 +391,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 数据时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
@@ -409,13 +409,13 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 推流客户端ip。
+                     * 推流客户端 IP。
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
-                     * 开始推流时间，格式是%Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
+                     * 开始推流时间，格式: %Y-%m-%d %H:%M:%S.%ms，精确到毫秒级。
                      */
                     std::string m_beginPushTime;
                     bool m_beginPushTimeHasBeenSet;
@@ -451,7 +451,7 @@ namespace TencentCloud
                     bool m_videoFpsHasBeenSet;
 
                     /**
-                     * 视频码率，单位是bps。
+                     * 视频码率，单位: bps。
                      */
                     uint64_t m_videoRate;
                     bool m_videoRateHasBeenSet;
@@ -463,43 +463,43 @@ namespace TencentCloud
                     bool m_audioFpsHasBeenSet;
 
                     /**
-                     * 音频码率，单位是bps。
+                     * 音频码率，单位: bps。
                      */
                     uint64_t m_audioRate;
                     bool m_audioRateHasBeenSet;
 
                     /**
-                     * 本地流逝时间，单位是ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
+                     * 本地流逝时间，单位: ms，音视频流逝时间与本地流逝时间的差距越大表示推流质量越差，上行卡顿越严重。
                      */
                     uint64_t m_localTs;
                     bool m_localTsHasBeenSet;
 
                     /**
-                     * 视频流逝时间，单位是ms。
+                     * 视频流逝时间，单位: ms。
                      */
                     uint64_t m_videoTs;
                     bool m_videoTsHasBeenSet;
 
                     /**
-                     * 音频流逝时间，单位是ms。
+                     * 音频流逝时间，单位: ms。
                      */
                     uint64_t m_audioTs;
                     bool m_audioTsHasBeenSet;
 
                     /**
-                     * metadata中的视频码率，单位是kbps。
+                     * metadata 中的视频码率，单位: kbps。
                      */
                     uint64_t m_metaVideoRate;
                     bool m_metaVideoRateHasBeenSet;
 
                     /**
-                     * metadata中的音频码率，单位是kbps。
+                     * metadata 中的音频码率，单位: kbps。
                      */
                     uint64_t m_metaAudioRate;
                     bool m_metaAudioRateHasBeenSet;
 
                     /**
-                     * metadata中的帧率。
+                     * metadata 中的帧率。
                      */
                     uint64_t m_mateFps;
                     bool m_mateFpsHasBeenSet;

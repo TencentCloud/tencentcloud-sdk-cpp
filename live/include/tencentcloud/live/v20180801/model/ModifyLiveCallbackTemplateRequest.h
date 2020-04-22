@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板Id。
-                     * @return TemplateId 模板Id。
+                     * 获取模板 ID。
+                     * @return TemplateId 模板 ID。
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板Id。
-                     * @param TemplateId 模板Id。
+                     * 设置模板 ID。
+                     * @param TemplateId 模板 ID。
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取开播回调URL。
-                     * @return StreamBeginNotifyUrl 开播回调URL。
+                     * 获取开播回调 URL。
+                     * @return StreamBeginNotifyUrl 开播回调 URL。
                      */
                     std::string GetStreamBeginNotifyUrl() const;
 
                     /**
-                     * 设置开播回调URL。
-                     * @param StreamBeginNotifyUrl 开播回调URL。
+                     * 设置开播回调 URL。
+                     * @param StreamBeginNotifyUrl 开播回调 URL。
                      */
                     void SetStreamBeginNotifyUrl(const std::string& _streamBeginNotifyUrl);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool StreamBeginNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取断流回调URL。
-                     * @return StreamEndNotifyUrl 断流回调URL。
+                     * 获取断流回调 URL。
+                     * @return StreamEndNotifyUrl 断流回调 URL。
                      */
                     std::string GetStreamEndNotifyUrl() const;
 
                     /**
-                     * 设置断流回调URL。
-                     * @param StreamEndNotifyUrl 断流回调URL。
+                     * 设置断流回调 URL。
+                     * @param StreamEndNotifyUrl 断流回调 URL。
                      */
                     void SetStreamEndNotifyUrl(const std::string& _streamEndNotifyUrl);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool StreamEndNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取录制回调URL。
-                     * @return RecordNotifyUrl 录制回调URL。
+                     * 获取录制回调 URL。
+                     * @return RecordNotifyUrl 录制回调 URL。
                      */
                     std::string GetRecordNotifyUrl() const;
 
                     /**
-                     * 设置录制回调URL。
-                     * @param RecordNotifyUrl 录制回调URL。
+                     * 设置录制回调 URL。
+                     * @param RecordNotifyUrl 录制回调 URL。
                      */
                     void SetRecordNotifyUrl(const std::string& _recordNotifyUrl);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool RecordNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取截图回调URL。
-                     * @return SnapshotNotifyUrl 截图回调URL。
+                     * 获取截图回调 URL。
+                     * @return SnapshotNotifyUrl 截图回调 URL。
                      */
                     std::string GetSnapshotNotifyUrl() const;
 
                     /**
-                     * 设置截图回调URL。
-                     * @param SnapshotNotifyUrl 截图回调URL。
+                     * 设置截图回调 URL。
+                     * @param SnapshotNotifyUrl 截图回调 URL。
                      */
                     void SetSnapshotNotifyUrl(const std::string& _snapshotNotifyUrl);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool SnapshotNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取鉴黄回调URL。
-                     * @return PornCensorshipNotifyUrl 鉴黄回调URL。
+                     * 获取鉴黄回调 URL。
+                     * @return PornCensorshipNotifyUrl 鉴黄回调 URL。
                      */
                     std::string GetPornCensorshipNotifyUrl() const;
 
                     /**
-                     * 设置鉴黄回调URL。
-                     * @param PornCensorshipNotifyUrl 鉴黄回调URL。
+                     * 设置鉴黄回调 URL。
+                     * @param PornCensorshipNotifyUrl 鉴黄回调 URL。
                      */
                     void SetPornCensorshipNotifyUrl(const std::string& _pornCensorshipNotifyUrl);
 
@@ -187,14 +187,18 @@ namespace TencentCloud
                     bool PornCensorshipNotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取回调key，回调URL公用，鉴权回调说明详见回调格式文档。
-                     * @return CallbackKey 回调key，回调URL公用，鉴权回调说明详见回调格式文档。
+                     * 获取回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
+[事件消息通知](/document/product/267/32744)。
+                     * @return CallbackKey 回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
+[事件消息通知](/document/product/267/32744)。
                      */
                     std::string GetCallbackKey() const;
 
                     /**
-                     * 设置回调key，回调URL公用，鉴权回调说明详见回调格式文档。
-                     * @param CallbackKey 回调key，回调URL公用，鉴权回调说明详见回调格式文档。
+                     * 设置回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
+[事件消息通知](/document/product/267/32744)。
+                     * @param CallbackKey 回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
+[事件消息通知](/document/product/267/32744)。
                      */
                     void SetCallbackKey(const std::string& _callbackKey);
 
@@ -207,7 +211,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板Id。
+                     * 模板 ID。
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -225,37 +229,38 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 开播回调URL。
+                     * 开播回调 URL。
                      */
                     std::string m_streamBeginNotifyUrl;
                     bool m_streamBeginNotifyUrlHasBeenSet;
 
                     /**
-                     * 断流回调URL。
+                     * 断流回调 URL。
                      */
                     std::string m_streamEndNotifyUrl;
                     bool m_streamEndNotifyUrlHasBeenSet;
 
                     /**
-                     * 录制回调URL。
+                     * 录制回调 URL。
                      */
                     std::string m_recordNotifyUrl;
                     bool m_recordNotifyUrlHasBeenSet;
 
                     /**
-                     * 截图回调URL。
+                     * 截图回调 URL。
                      */
                     std::string m_snapshotNotifyUrl;
                     bool m_snapshotNotifyUrlHasBeenSet;
 
                     /**
-                     * 鉴黄回调URL。
+                     * 鉴黄回调 URL。
                      */
                     std::string m_pornCensorshipNotifyUrl;
                     bool m_pornCensorshipNotifyUrlHasBeenSet;
 
                     /**
-                     * 回调key，回调URL公用，鉴权回调说明详见回调格式文档。
+                     * 回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。
+[事件消息通知](/document/product/267/32744)。
                      */
                     std::string m_callbackKey;
                     bool m_callbackKeyHasBeenSet;

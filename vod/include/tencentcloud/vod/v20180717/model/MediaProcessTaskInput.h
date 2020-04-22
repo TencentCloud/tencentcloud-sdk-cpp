@@ -55,17 +55,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频转码任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTaskSet 视频转码任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TranscodeTaskInput> GetTranscodeTaskSet() const;
 
                     /**
                      * 设置视频转码任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TranscodeTaskSet 视频转码任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTranscodeTaskSet(const std::vector<TranscodeTaskInput>& _transcodeTaskSet);
 
@@ -77,17 +73,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频转动图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnimatedGraphicTaskSet 视频转动图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnimatedGraphicTaskInput> GetAnimatedGraphicTaskSet() const;
 
                     /**
                      * 设置视频转动图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AnimatedGraphicTaskSet 视频转动图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAnimatedGraphicTaskSet(const std::vector<AnimatedGraphicTaskInput>& _animatedGraphicTaskSet);
 
@@ -99,17 +91,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频按时间点截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotByTimeOffsetTaskSet 对视频按时间点截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SnapshotByTimeOffsetTaskInput> GetSnapshotByTimeOffsetTaskSet() const;
 
                     /**
                      * 设置对视频按时间点截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SnapshotByTimeOffsetTaskSet 对视频按时间点截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSnapshotByTimeOffsetTaskSet(const std::vector<SnapshotByTimeOffsetTaskInput>& _snapshotByTimeOffsetTaskSet);
 
@@ -121,17 +109,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频采样截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleSnapshotTaskSet 对视频采样截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SampleSnapshotTaskInput> GetSampleSnapshotTaskSet() const;
 
                     /**
                      * 设置对视频采样截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SampleSnapshotTaskSet 对视频采样截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSampleSnapshotTaskSet(const std::vector<SampleSnapshotTaskInput>& _sampleSnapshotTaskSet);
 
@@ -143,17 +127,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频截雪碧图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSpriteTaskSet 对视频截雪碧图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSpriteTaskInput> GetImageSpriteTaskSet() const;
 
                     /**
                      * 设置对视频截雪碧图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageSpriteTaskSet 对视频截雪碧图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageSpriteTaskSet(const std::vector<ImageSpriteTaskInput>& _imageSpriteTaskSet);
 
@@ -165,17 +145,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频截图做封面任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverBySnapshotTaskSet 对视频截图做封面任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CoverBySnapshotTaskInput> GetCoverBySnapshotTaskSet() const;
 
                     /**
                      * 设置对视频截图做封面任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CoverBySnapshotTaskSet 对视频截图做封面任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCoverBySnapshotTaskSet(const std::vector<CoverBySnapshotTaskInput>& _coverBySnapshotTaskSet);
 
@@ -187,17 +163,13 @@ namespace TencentCloud
 
                     /**
                      * 获取对视频转自适应码流任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdaptiveDynamicStreamingTaskSet 对视频转自适应码流任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdaptiveDynamicStreamingTaskInput> GetAdaptiveDynamicStreamingTaskSet() const;
 
                     /**
                      * 设置对视频转自适应码流任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AdaptiveDynamicStreamingTaskSet 对视频转自适应码流任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAdaptiveDynamicStreamingTaskSet(const std::vector<AdaptiveDynamicStreamingTaskInput>& _adaptiveDynamicStreamingTaskSet);
 
@@ -211,49 +183,42 @@ namespace TencentCloud
 
                     /**
                      * 视频转码任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TranscodeTaskInput> m_transcodeTaskSet;
                     bool m_transcodeTaskSetHasBeenSet;
 
                     /**
                      * 视频转动图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnimatedGraphicTaskInput> m_animatedGraphicTaskSet;
                     bool m_animatedGraphicTaskSetHasBeenSet;
 
                     /**
                      * 对视频按时间点截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SnapshotByTimeOffsetTaskInput> m_snapshotByTimeOffsetTaskSet;
                     bool m_snapshotByTimeOffsetTaskSetHasBeenSet;
 
                     /**
                      * 对视频采样截图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SampleSnapshotTaskInput> m_sampleSnapshotTaskSet;
                     bool m_sampleSnapshotTaskSetHasBeenSet;
 
                     /**
                      * 对视频截雪碧图任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSpriteTaskInput> m_imageSpriteTaskSet;
                     bool m_imageSpriteTaskSetHasBeenSet;
 
                     /**
                      * 对视频截图做封面任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CoverBySnapshotTaskInput> m_coverBySnapshotTaskSet;
                     bool m_coverBySnapshotTaskSetHasBeenSet;
 
                     /**
                      * 对视频转自适应码流任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdaptiveDynamicStreamingTaskInput> m_adaptiveDynamicStreamingTaskSet;
                     bool m_adaptiveDynamicStreamingTaskSetHasBeenSet;

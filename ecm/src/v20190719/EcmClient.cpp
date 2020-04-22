@@ -1287,6 +1287,49 @@ EcmClient::DescribeTaskResultOutcomeCallable EcmClient::DescribeTaskResultCallab
     return task->get_future();
 }
 
+EcmClient::DescribeVpcsOutcome EcmClient::DescribeVpcs(const DescribeVpcsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcsResponse rsp = DescribeVpcsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcsOutcome(rsp);
+        else
+            return DescribeVpcsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeVpcsAsync(const DescribeVpcsRequest& request, const DescribeVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpcs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeVpcsOutcomeCallable EcmClient::DescribeVpcsCallable(const DescribeVpcsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpcsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpcs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DetachNetworkInterfaceOutcome EcmClient::DetachNetworkInterface(const DetachNetworkInterfaceRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachNetworkInterface");

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 拉流配置
+                * 拉流配置。
                 */
                 class PullStreamConfig : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拉流配置Id。
-                     * @return ConfigId 拉流配置Id。
+                     * 获取拉流配置 ID。
+                     * @return ConfigId 拉流配置 ID。
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置拉流配置Id。
-                     * @param ConfigId 拉流配置Id。
+                     * 设置拉流配置 ID。
+                     * @param ConfigId 拉流配置 ID。
                      */
                     void SetConfigId(const std::string& _configId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取源Url。
-                     * @return FromUrl 源Url。
+                     * 获取源 URL。
+                     * @return FromUrl 源 URL。
                      */
                     std::string GetFromUrl() const;
 
                     /**
-                     * 设置源Url。
-                     * @param FromUrl 源Url。
+                     * 设置源 URL。
+                     * @param FromUrl 源 URL。
                      */
                     void SetFromUrl(const std::string& _fromUrl);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool FromUrlHasBeenSet() const;
 
                     /**
-                     * 获取目的Url。
-                     * @return ToUrl 目的Url。
+                     * 获取目的 URL。
+                     * @return ToUrl 目的 URL。
                      */
                     std::string GetToUrl() const;
 
                     /**
-                     * 设置目的Url。
-                     * @param ToUrl 目的Url。
+                     * 设置目的 URL。
+                     * @param ToUrl 目的 URL。
                      */
                     void SetToUrl(const std::string& _toUrl);
 
@@ -138,24 +138,20 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间。
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return StartTime 开始时间。
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @param StartTime 开始时间。
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -169,13 +165,11 @@ UTC格式时间，
                     /**
                      * 获取结束时间。
 
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return EndTime 结束时间。
 
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string GetEndTime() const;
@@ -183,13 +177,11 @@ UTC格式时间，
                     /**
                      * 设置结束时间。
 
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @param EndTime 结束时间。
 
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -201,14 +193,34 @@ UTC格式时间，
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取0无效，1初始状态，2正在运行，3拉起失败，4暂停。
-                     * @return Status 0无效，1初始状态，2正在运行，3拉起失败，4暂停。
+                     * 获取状态:
+0: 无效。
+1: 初始状态。
+2: 正在运行。
+3: 拉起失败。
+4: 暂停。
+                     * @return Status 状态:
+0: 无效。
+1: 初始状态。
+2: 正在运行。
+3: 拉起失败。
+4: 暂停。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置0无效，1初始状态，2正在运行，3拉起失败，4暂停。
-                     * @param Status 0无效，1初始状态，2正在运行，3拉起失败，4暂停。
+                     * 设置状态:
+0: 无效。
+1: 初始状态。
+2: 正在运行。
+3: 拉起失败。
+4: 暂停。
+                     * @param Status 状态:
+0: 无效。
+1: 初始状态。
+2: 正在运行。
+3: 拉起失败。
+4: 暂停。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -221,19 +233,19 @@ UTC格式时间，
                 private:
 
                     /**
-                     * 拉流配置Id。
+                     * 拉流配置 ID。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
-                     * 源Url。
+                     * 源 URL。
                      */
                     std::string m_fromUrl;
                     bool m_fromUrlHasBeenSet;
 
                     /**
-                     * 目的Url。
+                     * 目的 URL。
                      */
                     std::string m_toUrl;
                     bool m_toUrlHasBeenSet;
@@ -252,8 +264,7 @@ UTC格式时间，
 
                     /**
                      * 开始时间。
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如: 2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string m_startTime;
@@ -262,15 +273,19 @@ UTC格式时间，
                     /**
                      * 结束时间。
 
-UTC格式时间，
-例如：2019-01-08T10:00:00Z。
+UTC格式时间，例如：2019-01-08T10:00:00Z。
 注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 0无效，1初始状态，2正在运行，3拉起失败，4暂停。
+                     * 状态:
+0: 无效。
+1: 初始状态。
+2: 正在运行。
+3: 拉起失败。
+4: 暂停。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

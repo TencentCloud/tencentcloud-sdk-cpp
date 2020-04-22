@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @return Time 时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 获取时间点，格式: yyyy-mm-dd HH:MM:SS。
+                     * @return Time 时间点，格式: yyyy-mm-dd HH:MM:SS。
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @param Time 时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 设置时间点，格式: yyyy-mm-dd HH:MM:SS。
+                     * @param Time 时间点，格式: yyyy-mm-dd HH:MM:SS。
                      */
                     void SetTime(const std::string& _time);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取带宽，（单位Mbps）。
-                     * @return Bandwidth 带宽，（单位Mbps）。
+                     * 获取带宽，单位: Mbps。
+                     * @return Bandwidth 带宽，单位: Mbps。
                      */
                     double GetBandwidth() const;
 
                     /**
-                     * 设置带宽，（单位Mbps）。
-                     * @param Bandwidth 带宽，（单位Mbps）。
+                     * 设置带宽，单位: Mbps。
+                     * @param Bandwidth 带宽，单位: Mbps。
                      */
                     void SetBandwidth(const double& _bandwidth);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取流量，（单位MB）。
-                     * @return Flux 流量，（单位MB）。
+                     * 获取流量，单位: MB。
+                     * @return Flux 流量，单位: MB。
                      */
                     double GetFlux() const;
 
                     /**
-                     * 设置流量，（单位MB）。
-                     * @param Flux 流量，（单位MB）。
+                     * 设置流量，单位: MB。
+                     * @param Flux 流量，单位: MB。
                      */
                     void SetFlux(const double& _flux);
 
@@ -139,19 +139,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 时间点，格式: yyyy-mm-dd HH:MM:SS。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 带宽，（单位Mbps）。
+                     * 带宽，单位: Mbps。
                      */
                     double m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 流量，（单位MB）。
+                     * 流量，单位: MB。
                      */
                     double m_flux;
                     bool m_fluxHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 按省份运营商查询的播放信息
+                * 按省份运营商查询的播放信息。
                 */
                 class PlayStatInfo : public AbstractModel
                 {
@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0
+                     * 获取带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0
+                     * @return Value 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetValue() const;
 
                     /**
-                     * 设置带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0
+                     * 设置带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0
+                     * @param Value 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const double& _value);
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0
+                     * 带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;

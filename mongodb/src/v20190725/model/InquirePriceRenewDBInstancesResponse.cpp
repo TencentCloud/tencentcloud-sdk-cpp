@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/DetectAuthResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cam::V20190116::Model;
+using namespace TencentCloud::Mongodb::V20190725::Model;
 using namespace rapidjson;
 using namespace std;
 
-DetectAuthResponse::DetectAuthResponse() :
-    m_tokenHasBeenSet(false)
+InquirePriceRenewDBInstancesResponse::InquirePriceRenewDBInstancesResponse() :
+    m_priceHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DetectAuthResponse::Deserialize(const string &payload)
+CoreInternalOutcome InquirePriceRenewDBInstancesResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,14 +63,21 @@ CoreInternalOutcome DetectAuthResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Token") && !rsp["Token"].IsNull())
+    if (rsp.HasMember("Price") && !rsp["Price"].IsNull())
     {
-        if (!rsp["Token"].IsString())
+        if (!rsp["Price"].IsObject())
         {
-            return CoreInternalOutcome(Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Price` is not object type").SetRequestId(requestId));
         }
-        m_token = string(rsp["Token"].GetString());
-        m_tokenHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_price.Deserialize(rsp["Price"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_priceHasBeenSet = true;
     }
 
 
@@ -78,14 +85,14 @@ CoreInternalOutcome DetectAuthResponse::Deserialize(const string &payload)
 }
 
 
-string DetectAuthResponse::GetToken() const
+DBInstancePrice InquirePriceRenewDBInstancesResponse::GetPrice() const
 {
-    return m_token;
+    return m_price;
 }
 
-bool DetectAuthResponse::TokenHasBeenSet() const
+bool InquirePriceRenewDBInstancesResponse::PriceHasBeenSet() const
 {
-    return m_tokenHasBeenSet;
+    return m_priceHasBeenSet;
 }
 
 

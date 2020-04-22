@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置id。
-                     * @return ConfigId 配置id。
+                     * 获取配置 ID。
+                     * @return ConfigId 配置 ID。
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置配置id。
-                     * @param ConfigId 配置id。
+                     * 设置配置 ID。
+                     * @param ConfigId 配置 ID。
                      */
                     void SetConfigId(const std::string& _configId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置id。
+                     * 配置 ID。
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

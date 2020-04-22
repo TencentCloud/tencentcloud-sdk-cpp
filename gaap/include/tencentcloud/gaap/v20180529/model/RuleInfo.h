@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启健康检查标志，1开启，0关闭
-                     * @return HealthCheck 是否开启健康检查标志，1开启，0关闭
+                     * 获取是否开启健康检查标志，1表示开启，0表示关闭
+                     * @return HealthCheck 是否开启健康检查标志，1表示开启，0表示关闭
                      */
                     uint64_t GetHealthCheck() const;
 
                     /**
-                     * 设置是否开启健康检查标志，1开启，0关闭
-                     * @param HealthCheck 是否开启健康检查标志，1开启，0关闭
+                     * 设置是否开启健康检查标志，1表示开启，0表示关闭
+                     * @param HealthCheck 是否开启健康检查标志，1表示开启，0表示关闭
                      */
                     void SetHealthCheck(const uint64_t& _healthCheck);
 
@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取规则状态，0运行中，1创建中，2销毁中，3绑定解绑源站中，4配置更新中
-                     * @return RuleStatus 规则状态，0运行中，1创建中，2销毁中，3绑定解绑源站中，4配置更新中
+                     * 获取规则状态，0表示运行中，1表示创建中，2表示销毁中，3表示绑定解绑源站中，4表示配置更新中
+                     * @return RuleStatus 规则状态，0表示运行中，1表示创建中，2表示销毁中，3表示绑定解绑源站中，4表示配置更新中
                      */
                     uint64_t GetRuleStatus() const;
 
                     /**
-                     * 设置规则状态，0运行中，1创建中，2销毁中，3绑定解绑源站中，4配置更新中
-                     * @param RuleStatus 规则状态，0运行中，1创建中，2销毁中，3绑定解绑源站中，4配置更新中
+                     * 设置规则状态，0表示运行中，1表示创建中，2表示销毁中，3表示绑定解绑源站中，4表示配置更新中
+                     * @param RuleStatus 规则状态，0表示运行中，1表示创建中，2表示销毁中，3表示绑定解绑源站中，4表示配置更新中
                      */
                     void SetRuleStatus(const uint64_t& _ruleStatus);
 
@@ -229,20 +229,20 @@ namespace TencentCloud
                     bool RealServerSetHasBeenSet() const;
 
                     /**
-                     * 获取源站的服务状态，0：异常，1：正常。
+                     * 获取源站的服务状态，0表示异常，1表示正常。
 未开启健康检查时，该状态始终未正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
-                     * @return BindStatus 源站的服务状态，0：异常，1：正常。
+                     * @return BindStatus 源站的服务状态，0表示异常，1表示正常。
 未开启健康检查时，该状态始终未正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      */
                     uint64_t GetBindStatus() const;
 
                     /**
-                     * 设置源站的服务状态，0：异常，1：正常。
+                     * 设置源站的服务状态，0表示异常，1表示正常。
 未开启健康检查时，该状态始终未正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
-                     * @param BindStatus 源站的服务状态，0：异常，1：正常。
+                     * @param BindStatus 源站的服务状态，0表示异常，1表示正常。
 未开启健康检查时，该状态始终未正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      */
@@ -315,13 +315,13 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 是否开启健康检查标志，1开启，0关闭
+                     * 是否开启健康检查标志，1表示开启，0表示关闭
                      */
                     uint64_t m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 规则状态，0运行中，1创建中，2销毁中，3绑定解绑源站中，4配置更新中
+                     * 规则状态，0表示运行中，1表示创建中，2表示销毁中，3表示绑定解绑源站中，4表示配置更新中
                      */
                     uint64_t m_ruleStatus;
                     bool m_ruleStatusHasBeenSet;
@@ -339,7 +339,7 @@ namespace TencentCloud
                     bool m_realServerSetHasBeenSet;
 
                     /**
-                     * 源站的服务状态，0：异常，1：正常。
+                     * 源站的服务状态，0表示异常，1表示正常。
 未开启健康检查时，该状态始终未正常。
 只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。
                      */

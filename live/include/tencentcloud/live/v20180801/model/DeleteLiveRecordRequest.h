@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID，全局唯一标识录制任务。
+从接口 [CreateLiveRecord](/document/product/267/30148) 的返回值中获取TaskId。
                      * @return TaskId 任务ID，全局唯一标识录制任务。
+从接口 [CreateLiveRecord](/document/product/267/30148) 的返回值中获取TaskId。
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID，全局唯一标识录制任务。
+从接口 [CreateLiveRecord](/document/product/267/30148) 的返回值中获取TaskId。
                      * @param TaskId 任务ID，全局唯一标识录制任务。
+从接口 [CreateLiveRecord](/document/product/267/30148) 的返回值中获取TaskId。
                      */
                     void SetTaskId(const int64_t& _taskId);
 
@@ -88,6 +92,7 @@ namespace TencentCloud
 
                     /**
                      * 任务ID，全局唯一标识录制任务。
+从接口 [CreateLiveRecord](/document/product/267/30148) 的返回值中获取TaskId。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

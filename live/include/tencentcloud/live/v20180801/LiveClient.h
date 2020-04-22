@@ -610,7 +610,7 @@ namespace TencentCloud
                 CreateLiveCallbackRuleOutcomeCallable CreateLiveCallbackRuleCallable(const Model::CreateLiveCallbackRuleRequest& request);
 
                 /**
-                 *创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板id绑定到域名/路径使用。
+                 *创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。
 <br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。
                  * @param req CreateLiveCallbackTemplateRequest
                  * @return CreateLiveCallbackTemplateOutcome
@@ -672,8 +672,9 @@ namespace TencentCloud
                 CreateLiveRecordTemplateOutcomeCallable CreateLiveRecordTemplateCallable(const Model::CreateLiveRecordTemplateRequest& request);
 
                 /**
-                 *创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板id绑定到流进行使用。
+                 *创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板 ID 绑定到流进行使用。
 <br>截图相关文档：[直播截图](/document/product/267/32737)。
+注意：单个域名仅支持关联一个截图模板。
                  * @param req CreateLiveSnapshotRuleRequest
                  * @return CreateLiveSnapshotRuleOutcome
                  */
@@ -734,7 +735,7 @@ namespace TencentCloud
                 CreatePullStreamConfigOutcomeCallable CreatePullStreamConfigCallable(const Model::CreatePullStreamConfigRequest& request);
 
                 /**
-                 *删除回调规则
+                 *删除回调规则。
                  * @param req DeleteLiveCallbackRuleRequest
                  * @return DeleteLiveCallbackRuleOutcome
                  */
@@ -743,7 +744,7 @@ namespace TencentCloud
                 DeleteLiveCallbackRuleOutcomeCallable DeleteLiveCallbackRuleCallable(const Model::DeleteLiveCallbackRuleRequest& request);
 
                 /**
-                 *删除回调模板
+                 *删除回调模板。
                  * @param req DeleteLiveCallbackTemplateRequest
                  * @return DeleteLiveCallbackTemplateOutcome
                  */
@@ -779,7 +780,7 @@ namespace TencentCloud
                 DeleteLiveRecordOutcomeCallable DeleteLiveRecordCallable(const Model::DeleteLiveRecordRequest& request);
 
                 /**
-                 *删除录制规则
+                 *删除录制规则。
                  * @param req DeleteLiveRecordRuleRequest
                  * @return DeleteLiveRecordRuleOutcome
                  */
@@ -788,7 +789,7 @@ namespace TencentCloud
                 DeleteLiveRecordRuleOutcomeCallable DeleteLiveRecordRuleCallable(const Model::DeleteLiveRecordRuleRequest& request);
 
                 /**
-                 *删除录制模板
+                 *删除录制模板。
                  * @param req DeleteLiveRecordTemplateRequest
                  * @return DeleteLiveRecordTemplateOutcome
                  */
@@ -797,7 +798,7 @@ namespace TencentCloud
                 DeleteLiveRecordTemplateOutcomeCallable DeleteLiveRecordTemplateCallable(const Model::DeleteLiveRecordTemplateRequest& request);
 
                 /**
-                 *删除截图规则
+                 *删除截图规则。
                  * @param req DeleteLiveSnapshotRuleRequest
                  * @return DeleteLiveSnapshotRuleOutcome
                  */
@@ -833,7 +834,7 @@ namespace TencentCloud
                 DeleteLiveTranscodeTemplateOutcomeCallable DeleteLiveTranscodeTemplateCallable(const Model::DeleteLiveTranscodeTemplateRequest& request);
 
                 /**
-                 *删除水印
+                 *删除水印。
                  * @param req DeleteLiveWatermarkRequest
                  * @return DeleteLiveWatermarkOutcome
                  */
@@ -851,7 +852,7 @@ namespace TencentCloud
                 DeleteLiveWatermarkRuleOutcomeCallable DeleteLiveWatermarkRuleCallable(const Model::DeleteLiveWatermarkRuleRequest& request);
 
                 /**
-                 *删除直播拉流配置
+                 *删除直播拉流配置。
                  * @param req DeletePullStreamConfigRequest
                  * @return DeletePullStreamConfigOutcome
                  */
@@ -906,7 +907,7 @@ namespace TencentCloud
                 DescribeLiveCallbackRulesOutcomeCallable DescribeLiveCallbackRulesCallable(const Model::DescribeLiveCallbackRulesRequest& request);
 
                 /**
-                 *获取单个回调模板
+                 *获取单个回调模板。
                  * @param req DescribeLiveCallbackTemplateRequest
                  * @return DescribeLiveCallbackTemplateOutcome
                  */
@@ -987,7 +988,7 @@ namespace TencentCloud
                 DescribeLiveDomainsOutcomeCallable DescribeLiveDomainsCallable(const Model::DescribeLiveDomainsRequest& request);
 
                 /**
-                 *获取禁推流列表
+                 *获取禁推流列表。
                  * @param req DescribeLiveForbidStreamListRequest
                  * @return DescribeLiveForbidStreamListOutcome
                  */
@@ -1032,7 +1033,7 @@ namespace TencentCloud
                 DescribeLiveRecordRulesOutcomeCallable DescribeLiveRecordRulesCallable(const Model::DescribeLiveRecordRulesRequest& request);
 
                 /**
-                 *获取单个录制模板
+                 *获取单个录制模板。
                  * @param req DescribeLiveRecordTemplateRequest
                  * @return DescribeLiveRecordTemplateOutcome
                  */
@@ -1041,7 +1042,7 @@ namespace TencentCloud
                 DescribeLiveRecordTemplateOutcomeCallable DescribeLiveRecordTemplateCallable(const Model::DescribeLiveRecordTemplateRequest& request);
 
                 /**
-                 *获取录制模板列表
+                 *获取录制模板列表。
                  * @param req DescribeLiveRecordTemplatesRequest
                  * @return DescribeLiveRecordTemplatesOutcome
                  */
@@ -1059,7 +1060,7 @@ namespace TencentCloud
                 DescribeLiveSnapshotRulesOutcomeCallable DescribeLiveSnapshotRulesCallable(const Model::DescribeLiveSnapshotRulesRequest& request);
 
                 /**
-                 *获取单个截图模板
+                 *获取单个截图模板。
                  * @param req DescribeLiveSnapshotTemplateRequest
                  * @return DescribeLiveSnapshotTemplateOutcome
                  */
@@ -1068,7 +1069,7 @@ namespace TencentCloud
                 DescribeLiveSnapshotTemplateOutcomeCallable DescribeLiveSnapshotTemplateCallable(const Model::DescribeLiveSnapshotTemplateRequest& request);
 
                 /**
-                 *获取截图模板列表
+                 *获取截图模板列表。
                  * @param req DescribeLiveSnapshotTemplatesRequest
                  * @return DescribeLiveSnapshotTemplatesOutcome
                  */
@@ -1088,7 +1089,7 @@ namespace TencentCloud
                 DescribeLiveStreamEventListOutcomeCallable DescribeLiveStreamEventListCallable(const Model::DescribeLiveStreamEventListRequest& request);
 
                 /**
-                 *返回正在直播中的流列表
+                 *返回正在直播中的流列表。
                  * @param req DescribeLiveStreamOnlineListRequest
                  * @return DescribeLiveStreamOnlineListOutcome
                  */
@@ -1161,7 +1162,7 @@ namespace TencentCloud
                 DescribeLiveTranscodeTemplatesOutcomeCallable DescribeLiveTranscodeTemplatesCallable(const Model::DescribeLiveTranscodeTemplatesRequest& request);
 
                 /**
-                 *获取单个水印信息
+                 *获取单个水印信息。
                  * @param req DescribeLiveWatermarkRequest
                  * @return DescribeLiveWatermarkOutcome
                  */
@@ -1170,7 +1171,7 @@ namespace TencentCloud
                 DescribeLiveWatermarkOutcomeCallable DescribeLiveWatermarkCallable(const Model::DescribeLiveWatermarkRequest& request);
 
                 /**
-                 *获取水印规则列表
+                 *获取水印规则列表。
                  * @param req DescribeLiveWatermarkRulesRequest
                  * @return DescribeLiveWatermarkRulesOutcome
                  */
@@ -1179,7 +1180,7 @@ namespace TencentCloud
                 DescribeLiveWatermarkRulesOutcomeCallable DescribeLiveWatermarkRulesCallable(const Model::DescribeLiveWatermarkRulesRequest& request);
 
                 /**
-                 *查询水印列表
+                 *查询水印列表。
                  * @param req DescribeLiveWatermarksRequest
                  * @return DescribeLiveWatermarksOutcome
                  */
@@ -1389,7 +1390,7 @@ namespace TencentCloud
                 ModifyLivePushAuthKeyOutcomeCallable ModifyLivePushAuthKeyCallable(const Model::ModifyLivePushAuthKeyRequest& request);
 
                 /**
-                 *修改录制模板配置
+                 *修改录制模板配置。
                  * @param req ModifyLiveRecordTemplateRequest
                  * @return ModifyLiveRecordTemplateOutcome
                  */
@@ -1398,7 +1399,7 @@ namespace TencentCloud
                 ModifyLiveRecordTemplateOutcomeCallable ModifyLiveRecordTemplateCallable(const Model::ModifyLiveRecordTemplateRequest& request);
 
                 /**
-                 *修改截图模板配置
+                 *修改截图模板配置。
                  * @param req ModifyLiveSnapshotTemplateRequest
                  * @return ModifyLiveSnapshotTemplateOutcome
                  */
@@ -1407,7 +1408,7 @@ namespace TencentCloud
                 ModifyLiveSnapshotTemplateOutcomeCallable ModifyLiveSnapshotTemplateCallable(const Model::ModifyLiveSnapshotTemplateRequest& request);
 
                 /**
-                 *修改转码模板配置
+                 *修改转码模板配置。
                  * @param req ModifyLiveTranscodeTemplateRequest
                  * @return ModifyLiveTranscodeTemplateOutcome
                  */
@@ -1470,7 +1471,7 @@ namespace TencentCloud
                 UnBindLiveDomainCertOutcomeCallable UnBindLiveDomainCertCallable(const Model::UnBindLiveDomainCertRequest& request);
 
                 /**
-                 *更新水印
+                 *更新水印。
                  * @param req UpdateLiveWatermarkRequest
                  * @return UpdateLiveWatermarkOutcome
                  */

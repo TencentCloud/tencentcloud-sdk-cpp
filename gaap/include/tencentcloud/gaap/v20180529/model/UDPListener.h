@@ -161,33 +161,33 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      * @return ListenerStatus 监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      */
                     uint64_t GetListenerStatus() const;
 
                     /**
                      * 设置监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      * @param ListenerStatus 监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      */
                     void SetListenerStatus(const uint64_t& _listenerStatus);
 
@@ -216,14 +216,14 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取监听器绑定源站状态， 0正常，1IP异常，2域名解析异常
-                     * @return BindStatus 监听器绑定源站状态， 0正常，1IP异常，2域名解析异常
+                     * 获取监听器绑定源站状态， 0表示正常，1表示IP异常，2表示域名解析异常
+                     * @return BindStatus 监听器绑定源站状态， 0表示正常，1表示IP异常，2表示域名解析异常
                      */
                     uint64_t GetBindStatus() const;
 
                     /**
-                     * 设置监听器绑定源站状态， 0正常，1IP异常，2域名解析异常
-                     * @param BindStatus 监听器绑定源站状态， 0正常，1IP异常，2域名解析异常
+                     * 设置监听器绑定源站状态， 0表示正常，1表示IP异常，2表示域名解析异常
+                     * @param BindStatus 监听器绑定源站状态， 0表示正常，1表示IP异常，2表示域名解析异常
                      */
                     void SetBindStatus(const uint64_t& _bindStatus);
 
@@ -310,11 +310,11 @@ namespace TencentCloud
 
                     /**
                      * 监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      */
                     uint64_t m_listenerStatus;
                     bool m_listenerStatusHasBeenSet;
@@ -326,7 +326,7 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 监听器绑定源站状态， 0正常，1IP异常，2域名解析异常
+                     * 监听器绑定源站状态， 0表示正常，1表示IP异常，2表示域名解析异常
                      */
                     uint64_t m_bindStatus;
                     bool m_bindStatusHasBeenSet;

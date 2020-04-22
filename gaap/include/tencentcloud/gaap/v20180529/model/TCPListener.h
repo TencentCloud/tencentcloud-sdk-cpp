@@ -161,33 +161,33 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      * @return ListenerStatus 监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      */
                     uint64_t GetListenerStatus() const;
 
                     /**
                      * 设置监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      * @param ListenerStatus 监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      */
                     void SetListenerStatus(const uint64_t& _listenerStatus);
 
@@ -199,25 +199,25 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器源站访问策略，其中：
-rr，轮询；
-wrr，加权轮询；
-lc，最小连接数。
+rr表示轮询；
+wrr表示加权轮询；
+lc表示最小连接数。
                      * @return Scheduler 监听器源站访问策略，其中：
-rr，轮询；
-wrr，加权轮询；
-lc，最小连接数。
+rr表示轮询；
+wrr表示加权轮询；
+lc表示最小连接数。
                      */
                     std::string GetScheduler() const;
 
                     /**
                      * 设置监听器源站访问策略，其中：
-rr，轮询；
-wrr，加权轮询；
-lc，最小连接数。
+rr表示轮询；
+wrr表示加权轮询；
+lc表示最小连接数。
                      * @param Scheduler 监听器源站访问策略，其中：
-rr，轮询；
-wrr，加权轮询；
-lc，最小连接数。
+rr表示轮询；
+wrr表示加权轮询；
+lc表示最小连接数。
                      */
                     void SetScheduler(const std::string& _scheduler);
 
@@ -265,21 +265,21 @@ lc，最小连接数。
 
                     /**
                      * 获取监听器是否开启健康检查，其中：
-0，关闭；
-1，开启
+0表示关闭；
+1表示开启
                      * @return HealthCheck 监听器是否开启健康检查，其中：
-0，关闭；
-1，开启
+0表示关闭；
+1表示开启
                      */
                     uint64_t GetHealthCheck() const;
 
                     /**
                      * 设置监听器是否开启健康检查，其中：
-0，关闭；
-1，开启
+0表示关闭；
+1表示开启
                      * @param HealthCheck 监听器是否开启健康检查，其中：
-0，关闭；
-1，开启
+0表示关闭；
+1表示开启
                      */
                     void SetHealthCheck(const uint64_t& _healthCheck);
 
@@ -291,21 +291,21 @@ lc，最小连接数。
 
                     /**
                      * 获取监听器绑定的源站状态， 其中：
-0，异常；
-1，正常。
+0表示异常；
+1表示正常。
                      * @return BindStatus 监听器绑定的源站状态， 其中：
-0，异常；
-1，正常。
+0表示异常；
+1表示正常。
                      */
                     uint64_t GetBindStatus() const;
 
                     /**
                      * 设置监听器绑定的源站状态， 其中：
-0，异常；
-1，正常。
+0表示异常；
+1表示正常。
                      * @param BindStatus 监听器绑定的源站状态， 其中：
-0，异常；
-1，正常。
+0表示异常；
+1表示正常。
                      */
                     void SetBindStatus(const uint64_t& _bindStatus);
 
@@ -396,20 +396,20 @@ lc，最小连接数。
 
                     /**
                      * 监听器状态，其中：
-0， 运行中；
-1， 创建中；
-2，销毁中；
-3，源站调整中；
-4，配置变更中。
+0表示运行中；
+1表示创建中；
+2表示销毁中；
+3表示源站调整中；
+4表示配置变更中。
                      */
                     uint64_t m_listenerStatus;
                     bool m_listenerStatusHasBeenSet;
 
                     /**
                      * 监听器源站访问策略，其中：
-rr，轮询；
-wrr，加权轮询；
-lc，最小连接数。
+rr表示轮询；
+wrr表示加权轮询；
+lc表示最小连接数。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
@@ -428,16 +428,16 @@ lc，最小连接数。
 
                     /**
                      * 监听器是否开启健康检查，其中：
-0，关闭；
-1，开启
+0表示关闭；
+1表示开启
                      */
                     uint64_t m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
                      * 监听器绑定的源站状态， 其中：
-0，异常；
-1，正常。
+0表示异常；
+1表示正常。
                      */
                     uint64_t m_bindStatus;
                     bool m_bindStatusHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 延播信息
+                * 延播信息。
                 */
                 class DelayInfo : public AbstractModel
                 {
@@ -65,14 +65,18 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 获取推流路径，与推流和播放地址中的 
+ AppName 保持一致，默认为 live。
+                     * @return AppName 推流路径，与推流和播放地址中的 
+ AppName 保持一致，默认为 live。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 设置推流路径，与推流和播放地址中的 
+ AppName 保持一致，默认为 live。
+                     * @param AppName 推流路径，与推流和播放地址中的 
+ AppName 保持一致，默认为 live。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -119,20 +123,20 @@ namespace TencentCloud
                     bool DelayIntervalHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，UTC时间。
+                     * 获取创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
-                     * @return CreateTime 创建时间，UTC时间。
+                     * @return CreateTime 创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，UTC时间。
+                     * 设置创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
-                     * @param CreateTime 创建时间，UTC时间。
+                     * @param CreateTime 创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
                      */
@@ -145,20 +149,20 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取过期时间，UTC时间。
+                     * 获取过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
-                     * @return ExpireTime 过期时间，UTC时间。
+                     * @return ExpireTime 过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间，UTC时间。
+                     * 设置过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
-                     * @param ExpireTime 过期时间，UTC时间。
+                     * @param ExpireTime 过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
                      */
@@ -171,21 +175,21 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取当前状态，
--1：已过期，
+                     * 获取当前状态:
+-1：已过期。
 1： 生效中。
-                     * @return Status 当前状态，
--1：已过期，
+                     * @return Status 当前状态:
+-1：已过期。
 1： 生效中。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置当前状态，
--1：已过期，
+                     * 设置当前状态:
+-1：已过期。
 1： 生效中。
-                     * @param Status 当前状态，
--1：已过期，
+                     * @param Status 当前状态:
+-1：已过期。
 1： 生效中。
                      */
                     void SetStatus(const int64_t& _status);
@@ -205,7 +209,8 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 推流路径，与推流和播放地址中的 
+ AppName 保持一致，默认为 live。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
@@ -223,7 +228,7 @@ namespace TencentCloud
                     bool m_delayIntervalHasBeenSet;
 
                     /**
-                     * 创建时间，UTC时间。
+                     * 创建时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
                      */
@@ -231,7 +236,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 过期时间，UTC时间。
+                     * 过期时间，UTC 时间。
 注意：UTC时间和北京时间相差8小时。
 例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。
                      */
@@ -239,8 +244,8 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 当前状态，
--1：已过期，
+                     * 当前状态:
+-1：已过期。
 1： 生效中。
                      */
                     int64_t m_status;

@@ -117,14 +117,14 @@ UTC 格式，例如：2016-06-29T19:00:00Z。
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
+                     * 获取推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。不支持模糊匹配。
+                     * @return AppName 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。不支持模糊匹配。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
+                     * 设置推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。不支持模糊匹配。
+                     * @param AppName 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。不支持模糊匹配。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -230,7 +230,7 @@ UTC 格式，例如：2016-06-29T19:00:00Z。
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。不支持模糊匹配。
+                     * 推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。不支持模糊匹配。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

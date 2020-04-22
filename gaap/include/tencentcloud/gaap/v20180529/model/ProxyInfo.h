@@ -198,57 +198,57 @@ namespace TencentCloud
 
                     /**
                      * 获取通道状态。其中：
-RUNNING，运行中；
-CREATING，创建中；
-DESTROYING，销毁中；
-OPENING，开启中；
-CLOSING，关闭中；
-CLOSED，已关闭；
-ADJUSTING，配置变更中；
-ISOLATING，隔离中（欠费触发）；
-ISOLATED，已隔离（欠费触发）；
-CLONING，复制中；
-UNKNOWN，未知状态。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+OPENING表示开启中；
+CLOSING表示关闭中；
+CLOSED表示已关闭；
+ADJUSTING表示配置变更中；
+ISOLATING表示隔离中（欠费触发）；
+ISOLATED表示已隔离（欠费触发）；
+CLONING表示复制中；
+UNKNOWN表示未知状态。
                      * @return Status 通道状态。其中：
-RUNNING，运行中；
-CREATING，创建中；
-DESTROYING，销毁中；
-OPENING，开启中；
-CLOSING，关闭中；
-CLOSED，已关闭；
-ADJUSTING，配置变更中；
-ISOLATING，隔离中（欠费触发）；
-ISOLATED，已隔离（欠费触发）；
-CLONING，复制中；
-UNKNOWN，未知状态。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+OPENING表示开启中；
+CLOSING表示关闭中；
+CLOSED表示已关闭；
+ADJUSTING表示配置变更中；
+ISOLATING表示隔离中（欠费触发）；
+ISOLATED表示已隔离（欠费触发）；
+CLONING表示复制中；
+UNKNOWN表示未知状态。
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置通道状态。其中：
-RUNNING，运行中；
-CREATING，创建中；
-DESTROYING，销毁中；
-OPENING，开启中；
-CLOSING，关闭中；
-CLOSED，已关闭；
-ADJUSTING，配置变更中；
-ISOLATING，隔离中（欠费触发）；
-ISOLATED，已隔离（欠费触发）；
-CLONING，复制中；
-UNKNOWN，未知状态。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+OPENING表示开启中；
+CLOSING表示关闭中；
+CLOSED表示已关闭；
+ADJUSTING表示配置变更中；
+ISOLATING表示隔离中（欠费触发）；
+ISOLATED表示已隔离（欠费触发）；
+CLONING表示复制中；
+UNKNOWN表示未知状态。
                      * @param Status 通道状态。其中：
-RUNNING，运行中；
-CREATING，创建中；
-DESTROYING，销毁中；
-OPENING，开启中；
-CLOSING，关闭中；
-CLOSED，已关闭；
-ADJUSTING，配置变更中；
-ISOLATING，隔离中（欠费触发）；
-ISOLATED，已隔离（欠费触发）；
-CLONING，复制中；
-UNKNOWN，未知状态。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+OPENING表示开启中；
+CLOSING表示关闭中；
+CLOSED表示已关闭；
+ADJUSTING表示配置变更中；
+ISOLATING表示隔离中（欠费触发）；
+ISOLATED表示已隔离（欠费触发）；
+CLONING表示复制中；
+UNKNOWN表示未知状态。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -595,17 +595,17 @@ UNKNOWN，未知状态。
 
                     /**
                      * 通道状态。其中：
-RUNNING，运行中；
-CREATING，创建中；
-DESTROYING，销毁中；
-OPENING，开启中；
-CLOSING，关闭中；
-CLOSED，已关闭；
-ADJUSTING，配置变更中；
-ISOLATING，隔离中（欠费触发）；
-ISOLATED，已隔离（欠费触发）；
-CLONING，复制中；
-UNKNOWN，未知状态。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+OPENING表示开启中；
+CLOSING表示关闭中；
+CLOSED表示已关闭；
+ADJUSTING表示配置变更中；
+ISOLATING表示隔离中（欠费触发）；
+ISOLATED表示已隔离（欠费触发）；
+CLONING表示复制中；
+UNKNOWN表示未知状态。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
