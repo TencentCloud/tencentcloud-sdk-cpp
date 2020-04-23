@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ResetInstancesPasswordResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tiia::V20190529::Model;
+using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace rapidjson;
 using namespace std;
 
-DetectCelebrityResponse::DetectCelebrityResponse() :
-    m_facesHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
+ResetInstancesPasswordResponse::ResetInstancesPasswordResponse()
 {
 }
 
-CoreInternalOutcome DetectCelebrityResponse::Deserialize(const string &payload)
+CoreInternalOutcome ResetInstancesPasswordResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,66 +62,9 @@ CoreInternalOutcome DetectCelebrityResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Faces") && !rsp["Faces"].IsNull())
-    {
-        if (!rsp["Faces"].IsArray())
-            return CoreInternalOutcome(Error("response `Faces` is not array type"));
-
-        const Value &tmpValue = rsp["Faces"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Face item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_faces.push_back(item);
-        }
-        m_facesHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Threshold") && !rsp["Threshold"].IsNull())
-    {
-        if (!rsp["Threshold"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `Threshold` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_threshold.Deserialize(rsp["Threshold"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_thresholdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<Face> DetectCelebrityResponse::GetFaces() const
-{
-    return m_faces;
-}
-
-bool DetectCelebrityResponse::FacesHasBeenSet() const
-{
-    return m_facesHasBeenSet;
-}
-
-Threshold DetectCelebrityResponse::GetThreshold() const
-{
-    return m_threshold;
-}
-
-bool DetectCelebrityResponse::ThresholdHasBeenSet() const
-{
-    return m_thresholdHasBeenSet;
-}
 
 

@@ -38,6 +38,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeSubnetsResponse.h
   include/tencentcloud/ecm/v20190719/model/RunInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesResponse.h
+  include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h
   include/tencentcloud/ecm/v20190719/model/DescribeNodeResponse.h
   include/tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h
@@ -61,10 +62,12 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ZoneInfo.h
   include/tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateSubnetResponse.h
+  include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/ecm/v20190719/model/Area.h
   include/tencentcloud/ecm/v20190719/model/DescribeConfigRequest.h
   include/tencentcloud/ecm/v20190719/model/NetworkInterfaceAttachment.h
   include/tencentcloud/ecm/v20190719/model/NetworkStorageRange.h
+  include/tencentcloud/ecm/v20190719/model/StartInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateVpcResponse.h
   include/tencentcloud/ecm/v20190719/model/AssistantCidr.h
   include/tencentcloud/ecm/v20190719/model/NetworkInterface.h
@@ -75,6 +78,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h
   include/tencentcloud/ecm/v20190719/model/ModuleCounter.h
   include/tencentcloud/ecm/v20190719/model/ZoneInstanceCountISP.h
+  include/tencentcloud/ecm/v20190719/model/StartInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/Tag.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesMaxBandwidthResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteVpcRequest.h
@@ -97,6 +101,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeConfigResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleDetailResponse.h
+  include/tencentcloud/ecm/v20190719/model/StopInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/Subnet.h
   include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteVpcResponse.h
@@ -116,6 +121,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeBaseOverviewRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNetworkResponse.h
   include/tencentcloud/ecm/v20190719/model/ImportImageRequest.h
+  include/tencentcloud/ecm/v20190719/model/StopInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNameRequest.h
   include/tencentcloud/ecm/v20190719/model/SimpleModule.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesRequest.h
@@ -191,6 +197,7 @@ set(ecm_src
   src/v20190719/model/DescribeSubnetsResponse.cpp
   src/v20190719/model/RunInstancesRequest.cpp
   src/v20190719/model/DescribeInstancesResponse.cpp
+  src/v20190719/model/ResetInstancesPasswordResponse.cpp
   src/v20190719/model/InstanceTypeConfig.cpp
   src/v20190719/model/DescribeNodeResponse.cpp
   src/v20190719/model/RemovePrivateIpAddressesResponse.cpp
@@ -214,10 +221,12 @@ set(ecm_src
   src/v20190719/model/ZoneInfo.cpp
   src/v20190719/model/DescribeNodeRequest.cpp
   src/v20190719/model/CreateSubnetResponse.cpp
+  src/v20190719/model/ResetInstancesPasswordRequest.cpp
   src/v20190719/model/Area.cpp
   src/v20190719/model/DescribeConfigRequest.cpp
   src/v20190719/model/NetworkInterfaceAttachment.cpp
   src/v20190719/model/NetworkStorageRange.cpp
+  src/v20190719/model/StartInstancesResponse.cpp
   src/v20190719/model/CreateVpcResponse.cpp
   src/v20190719/model/AssistantCidr.cpp
   src/v20190719/model/NetworkInterface.cpp
@@ -228,6 +237,7 @@ set(ecm_src
   src/v20190719/model/DisassociateAddressRequest.cpp
   src/v20190719/model/ModuleCounter.cpp
   src/v20190719/model/ZoneInstanceCountISP.cpp
+  src/v20190719/model/StartInstancesRequest.cpp
   src/v20190719/model/Tag.cpp
   src/v20190719/model/ResetInstancesMaxBandwidthResponse.cpp
   src/v20190719/model/DeleteVpcRequest.cpp
@@ -250,6 +260,7 @@ set(ecm_src
   src/v20190719/model/DetachNetworkInterfaceRequest.cpp
   src/v20190719/model/DescribeConfigResponse.cpp
   src/v20190719/model/DescribeModuleDetailResponse.cpp
+  src/v20190719/model/StopInstancesRequest.cpp
   src/v20190719/model/Subnet.cpp
   src/v20190719/model/ModifyVpcAttributeResponse.cpp
   src/v20190719/model/DeleteVpcResponse.cpp
@@ -269,6 +280,7 @@ set(ecm_src
   src/v20190719/model/DescribeBaseOverviewRequest.cpp
   src/v20190719/model/ModifyModuleNetworkResponse.cpp
   src/v20190719/model/ImportImageRequest.cpp
+  src/v20190719/model/StopInstancesResponse.cpp
   src/v20190719/model/ModifyModuleNameRequest.cpp
   src/v20190719/model/SimpleModule.cpp
   src/v20190719/model/DescribeInstancesRequest.cpp

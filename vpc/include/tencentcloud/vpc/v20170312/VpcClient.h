@@ -2337,7 +2337,7 @@ LimitTypes取值范围：
                 DescribeVpcPrivateIpAddressesOutcomeCallable DescribeVpcPrivateIpAddressesCallable(const Model::DescribeVpcPrivateIpAddressesRequest& request);
 
                 /**
-                 *查看VPC资源
+                 *本接口(DescribeVpcResourceDashboard)用于查看VPC资源信息。
                  * @param req DescribeVpcResourceDashboardRequest
                  * @return DescribeVpcResourceDashboardOutcome
                  */

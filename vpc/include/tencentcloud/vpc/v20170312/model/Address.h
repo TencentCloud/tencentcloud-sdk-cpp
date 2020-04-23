@@ -299,6 +299,24 @@ namespace TencentCloud
                      */
                     bool EipAlgTypeHasBeenSet() const;
 
+                    /**
+                     * 获取弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     * @return InternetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     */
+                    std::string GetInternetServiceProvider() const;
+
+                    /**
+                     * 设置弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     * @param InternetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     */
+                    void SetInternetServiceProvider(const std::string& _internetServiceProvider);
+
+                    /**
+                     * 判断参数 InternetServiceProvider 是否已赋值
+                     * @return InternetServiceProvider 是否已赋值
+                     */
+                    bool InternetServiceProviderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +402,12 @@ namespace TencentCloud
                      */
                     AlgType m_eipAlgType;
                     bool m_eipAlgTypeHasBeenSet;
+
+                    /**
+                     * 弹性公网IP的运营商信息，当前可能返回值包括"CMCC","CTCC","CUCC","BGP"
+                     */
+                    std::string m_internetServiceProvider;
+                    bool m_internetServiceProviderHasBeenSet;
 
                 };
             }

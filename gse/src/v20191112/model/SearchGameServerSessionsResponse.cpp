@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/CheckNewMfaCodeResponse.h>
+#include <tencentcloud/gse/v20191112/model/SearchGameServerSessionsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cam::V20190116::Model;
+using namespace TencentCloud::Gse::V20191112::Model;
 using namespace rapidjson;
 using namespace std;
 
-CheckNewMfaCodeResponse::CheckNewMfaCodeResponse()
+SearchGameServerSessionsResponse::SearchGameServerSessionsResponse() :
+    m_gameServerSessionsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CheckNewMfaCodeResponse::Deserialize(const string &payload)
+CoreInternalOutcome SearchGameServerSessionsResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +64,59 @@ CoreInternalOutcome CheckNewMfaCodeResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("GameServerSessions") && !rsp["GameServerSessions"].IsNull())
+    {
+        if (!rsp["GameServerSessions"].IsArray())
+            return CoreInternalOutcome(Error("response `GameServerSessions` is not array type"));
+
+        const Value &tmpValue = rsp["GameServerSessions"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GameServerSession item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gameServerSessions.push_back(item);
+        }
+        m_gameServerSessionsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NextToken") && !rsp["NextToken"].IsNull())
+    {
+        if (!rsp["NextToken"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NextToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextToken = string(rsp["NextToken"].GetString());
+        m_nextTokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<GameServerSession> SearchGameServerSessionsResponse::GetGameServerSessions() const
+{
+    return m_gameServerSessions;
+}
+
+bool SearchGameServerSessionsResponse::GameServerSessionsHasBeenSet() const
+{
+    return m_gameServerSessionsHasBeenSet;
+}
+
+string SearchGameServerSessionsResponse::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+bool SearchGameServerSessionsResponse::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
+}
 
 

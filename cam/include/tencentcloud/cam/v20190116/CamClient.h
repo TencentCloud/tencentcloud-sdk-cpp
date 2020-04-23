@@ -33,8 +33,6 @@
 #include <tencentcloud/cam/v20190116/model/AttachRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/AttachUserPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h>
-#include <tencentcloud/cam/v20190116/model/CheckNewMfaCodeRequest.h>
-#include <tencentcloud/cam/v20190116/model/CheckNewMfaCodeResponse.h>
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenRequest.h>
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateGroupRequest.h>
@@ -45,6 +43,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateSAMLProviderResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyRequest.h>
@@ -53,6 +53,8 @@
 #include <tencentcloud/cam/v20190116/model/DeleteRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteSAMLProviderResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteUserResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeRoleListRequest.h>
@@ -73,6 +75,8 @@
 #include <tencentcloud/cam/v20190116/model/GetRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetSAMLProviderResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetUserRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetUserResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListAttachedGroupPoliciesRequest.h>
@@ -99,8 +103,6 @@
 #include <tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/RemoveUserFromGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/RemoveUserFromGroupResponse.h>
-#include <tencentcloud/cam/v20190116/model/SetFlagRequest.h>
-#include <tencentcloud/cam/v20190116/model/SetFlagResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupRequest.h>
@@ -142,9 +144,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AttachUserPolicyResponse> AttachUserPolicyOutcome;
                 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::AttachUserPolicyRequest&, AttachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachUserPolicyAsyncHandler;
-                typedef Outcome<Error, Model::CheckNewMfaCodeResponse> CheckNewMfaCodeOutcome;
-                typedef std::future<CheckNewMfaCodeOutcome> CheckNewMfaCodeOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::CheckNewMfaCodeRequest&, CheckNewMfaCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNewMfaCodeAsyncHandler;
                 typedef Outcome<Error, Model::ConsumeCustomMFATokenResponse> ConsumeCustomMFATokenOutcome;
                 typedef std::future<ConsumeCustomMFATokenOutcome> ConsumeCustomMFATokenOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ConsumeCustomMFATokenRequest&, ConsumeCustomMFATokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConsumeCustomMFATokenAsyncHandler;
@@ -160,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSAMLProviderResponse> CreateSAMLProviderOutcome;
                 typedef std::future<CreateSAMLProviderOutcome> CreateSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateSAMLProviderRequest&, CreateSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSAMLProviderAsyncHandler;
+                typedef Outcome<Error, Model::CreateServiceLinkedRoleResponse> CreateServiceLinkedRoleOutcome;
+                typedef std::future<CreateServiceLinkedRoleOutcome> CreateServiceLinkedRoleOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreateServiceLinkedRoleRequest&, CreateServiceLinkedRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceLinkedRoleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
@@ -172,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteSAMLProviderResponse> DeleteSAMLProviderOutcome;
                 typedef std::future<DeleteSAMLProviderOutcome> DeleteSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteSAMLProviderRequest&, DeleteSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSAMLProviderAsyncHandler;
+                typedef Outcome<Error, Model::DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleOutcome;
+                typedef std::future<DeleteServiceLinkedRoleOutcome> DeleteServiceLinkedRoleOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DeleteServiceLinkedRoleRequest&, DeleteServiceLinkedRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceLinkedRoleAsyncHandler;
                 typedef Outcome<Error, Model::DeleteUserResponse> DeleteUserOutcome;
                 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
@@ -202,6 +207,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetSAMLProviderResponse> GetSAMLProviderOutcome;
                 typedef std::future<GetSAMLProviderOutcome> GetSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetSAMLProviderRequest&, GetSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSAMLProviderAsyncHandler;
+                typedef Outcome<Error, Model::GetServiceLinkedRoleDeletionStatusResponse> GetServiceLinkedRoleDeletionStatusOutcome;
+                typedef std::future<GetServiceLinkedRoleDeletionStatusOutcome> GetServiceLinkedRoleDeletionStatusOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetServiceLinkedRoleDeletionStatusRequest&, GetServiceLinkedRoleDeletionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceLinkedRoleDeletionStatusAsyncHandler;
                 typedef Outcome<Error, Model::GetUserResponse> GetUserOutcome;
                 typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetUserRequest&, GetUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
@@ -241,9 +249,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RemoveUserFromGroupResponse> RemoveUserFromGroupOutcome;
                 typedef std::future<RemoveUserFromGroupOutcome> RemoveUserFromGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::RemoveUserFromGroupRequest&, RemoveUserFromGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromGroupAsyncHandler;
-                typedef Outcome<Error, Model::SetFlagResponse> SetFlagOutcome;
-                typedef std::future<SetFlagOutcome> SetFlagOutcomeCallable;
-                typedef std::function<void(const CamClient*, const Model::SetFlagRequest&, SetFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetFlagAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyOutcome;
                 typedef std::future<UpdateAssumeRolePolicyOutcome> UpdateAssumeRolePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateAssumeRolePolicyRequest&, UpdateAssumeRolePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAssumeRolePolicyAsyncHandler;
@@ -311,15 +316,6 @@ namespace TencentCloud
                 AttachUserPolicyOutcomeCallable AttachUserPolicyCallable(const Model::AttachUserPolicyRequest& request);
 
                 /**
-                 *校验新手机新邮箱接口
-                 * @param req CheckNewMfaCodeRequest
-                 * @return CheckNewMfaCodeOutcome
-                 */
-                CheckNewMfaCodeOutcome CheckNewMfaCode(const Model::CheckNewMfaCodeRequest &request);
-                void CheckNewMfaCodeAsync(const Model::CheckNewMfaCodeRequest& request, const CheckNewMfaCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CheckNewMfaCodeOutcomeCallable CheckNewMfaCodeCallable(const Model::CheckNewMfaCodeRequest& request);
-
-                /**
                  *验证自定义多因子Token
                  * @param req ConsumeCustomMFATokenRequest
                  * @return ConsumeCustomMFATokenOutcome
@@ -365,6 +361,15 @@ namespace TencentCloud
                 CreateSAMLProviderOutcomeCallable CreateSAMLProviderCallable(const Model::CreateSAMLProviderRequest& request);
 
                 /**
+                 *创建服务相关角色
+                 * @param req CreateServiceLinkedRoleRequest
+                 * @return CreateServiceLinkedRoleOutcome
+                 */
+                CreateServiceLinkedRoleOutcome CreateServiceLinkedRole(const Model::CreateServiceLinkedRoleRequest &request);
+                void CreateServiceLinkedRoleAsync(const Model::CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServiceLinkedRoleOutcomeCallable CreateServiceLinkedRoleCallable(const Model::CreateServiceLinkedRoleRequest& request);
+
+                /**
                  *删除用户组
                  * @param req DeleteGroupRequest
                  * @return DeleteGroupOutcome
@@ -399,6 +404,15 @@ namespace TencentCloud
                 DeleteSAMLProviderOutcome DeleteSAMLProvider(const Model::DeleteSAMLProviderRequest &request);
                 void DeleteSAMLProviderAsync(const Model::DeleteSAMLProviderRequest& request, const DeleteSAMLProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSAMLProviderOutcomeCallable DeleteSAMLProviderCallable(const Model::DeleteSAMLProviderRequest& request);
+
+                /**
+                 *删除服务相关角色
+                 * @param req DeleteServiceLinkedRoleRequest
+                 * @return DeleteServiceLinkedRoleOutcome
+                 */
+                DeleteServiceLinkedRoleOutcome DeleteServiceLinkedRole(const Model::DeleteServiceLinkedRoleRequest &request);
+                void DeleteServiceLinkedRoleAsync(const Model::DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServiceLinkedRoleOutcomeCallable DeleteServiceLinkedRoleCallable(const Model::DeleteServiceLinkedRoleRequest& request);
 
                 /**
                  *删除子用户
@@ -491,6 +505,15 @@ namespace TencentCloud
                 GetSAMLProviderOutcomeCallable GetSAMLProviderCallable(const Model::GetSAMLProviderRequest& request);
 
                 /**
+                 *根据删除TaskId获取服务相关角色删除状态
+                 * @param req GetServiceLinkedRoleDeletionStatusRequest
+                 * @return GetServiceLinkedRoleDeletionStatusOutcome
+                 */
+                GetServiceLinkedRoleDeletionStatusOutcome GetServiceLinkedRoleDeletionStatus(const Model::GetServiceLinkedRoleDeletionStatusRequest &request);
+                void GetServiceLinkedRoleDeletionStatusAsync(const Model::GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetServiceLinkedRoleDeletionStatusOutcomeCallable GetServiceLinkedRoleDeletionStatusCallable(const Model::GetServiceLinkedRoleDeletionStatusRequest& request);
+
+                /**
                  *查询子用户
                  * @param req GetUserRequest
                  * @return GetUserOutcome
@@ -563,7 +586,7 @@ namespace TencentCloud
                 ListGroupsForUserOutcomeCallable ListGroupsForUserCallable(const Model::ListGroupsForUserRequest& request);
 
                 /**
-                 *本接口（ListPolicies）可用于查询策略列表
+                 *本接口（ListPolicies）可用于查询策略列表。
                  * @param req ListPoliciesRequest
                  * @return ListPoliciesOutcome
                  */
@@ -606,15 +629,6 @@ namespace TencentCloud
                 RemoveUserFromGroupOutcome RemoveUserFromGroup(const Model::RemoveUserFromGroupRequest &request);
                 void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveUserFromGroupOutcomeCallable RemoveUserFromGroupCallable(const Model::RemoveUserFromGroupRequest& request);
-
-                /**
-                 *设置用户的登录保护和敏感操作校验方式
-                 * @param req SetFlagRequest
-                 * @return SetFlagOutcome
-                 */
-                SetFlagOutcome SetFlag(const Model::SetFlagRequest &request);
-                void SetFlagAsync(const Model::SetFlagRequest& request, const SetFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SetFlagOutcomeCallable SetFlagCallable(const Model::SetFlagRequest& request);
 
                 /**
                  *本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。

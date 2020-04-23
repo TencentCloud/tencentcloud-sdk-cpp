@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tiia::V20190529::Model;
+using namespace TencentCloud::Cam::V20190116::Model;
 using namespace rapidjson;
 using namespace std;
 
-DetectCelebrityResponse::DetectCelebrityResponse() :
-    m_facesHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
+CreateServiceLinkedRoleResponse::CreateServiceLinkedRoleResponse() :
+    m_roleIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DetectCelebrityResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateServiceLinkedRoleResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,41 +63,14 @@ CoreInternalOutcome DetectCelebrityResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Faces") && !rsp["Faces"].IsNull())
+    if (rsp.HasMember("RoleId") && !rsp["RoleId"].IsNull())
     {
-        if (!rsp["Faces"].IsArray())
-            return CoreInternalOutcome(Error("response `Faces` is not array type"));
-
-        const Value &tmpValue = rsp["Faces"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["RoleId"].IsString())
         {
-            Face item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_faces.push_back(item);
+            return CoreInternalOutcome(Error("response `RoleId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_facesHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Threshold") && !rsp["Threshold"].IsNull())
-    {
-        if (!rsp["Threshold"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `Threshold` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_threshold.Deserialize(rsp["Threshold"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_thresholdHasBeenSet = true;
+        m_roleId = string(rsp["RoleId"].GetString());
+        m_roleIdHasBeenSet = true;
     }
 
 
@@ -106,24 +78,14 @@ CoreInternalOutcome DetectCelebrityResponse::Deserialize(const string &payload)
 }
 
 
-vector<Face> DetectCelebrityResponse::GetFaces() const
+string CreateServiceLinkedRoleResponse::GetRoleId() const
 {
-    return m_faces;
+    return m_roleId;
 }
 
-bool DetectCelebrityResponse::FacesHasBeenSet() const
+bool CreateServiceLinkedRoleResponse::RoleIdHasBeenSet() const
 {
-    return m_facesHasBeenSet;
-}
-
-Threshold DetectCelebrityResponse::GetThreshold() const
-{
-    return m_threshold;
-}
-
-bool DetectCelebrityResponse::ThresholdHasBeenSet() const
-{
-    return m_thresholdHasBeenSet;
+    return m_roleIdHasBeenSet;
 }
 
 

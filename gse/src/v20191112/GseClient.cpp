@@ -427,6 +427,49 @@ GseClient::JoinGameServerSessionOutcomeCallable GseClient::JoinGameServerSession
     return task->get_future();
 }
 
+GseClient::SearchGameServerSessionsOutcome GseClient::SearchGameServerSessions(const SearchGameServerSessionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchGameServerSessions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchGameServerSessionsResponse rsp = SearchGameServerSessionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchGameServerSessionsOutcome(rsp);
+        else
+            return SearchGameServerSessionsOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchGameServerSessionsOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::SearchGameServerSessionsAsync(const SearchGameServerSessionsRequest& request, const SearchGameServerSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchGameServerSessions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::SearchGameServerSessionsOutcomeCallable GseClient::SearchGameServerSessionsCallable(const SearchGameServerSessionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchGameServerSessionsOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchGameServerSessions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::StartGameServerSessionPlacementOutcome GseClient::StartGameServerSessionPlacement(const StartGameServerSessionPlacementRequest &request)
 {
     auto outcome = MakeRequest(request, "StartGameServerSessionPlacement");

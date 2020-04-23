@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Url刷新用量及配额。
-                     * @return UrlPurge Url刷新用量及配额。
+                     * 获取URL刷新用量及配额。
+                     * @return UrlPurge URL刷新用量及配额。
                      */
                     std::vector<Quota> GetUrlPurge() const;
 
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Url刷新用量及配额。
+                     * URL刷新用量及配额。
                      */
                     std::vector<Quota> m_urlPurge;
                     bool m_urlPurgeHasBeenSet;

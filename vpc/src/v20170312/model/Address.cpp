@@ -35,7 +35,8 @@ Address::Address() :
     m_isEipDirectConnectionHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
     m_cascadeReleaseHasBeenSet(false),
-    m_eipAlgTypeHasBeenSet(false)
+    m_eipAlgTypeHasBeenSet(false),
+    m_internetServiceProviderHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,16 @@ CoreInternalOutcome Address::Deserialize(const Value &value)
         m_eipAlgTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("InternetServiceProvider") && !value["InternetServiceProvider"].IsNull())
+    {
+        if (!value["InternetServiceProvider"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Address.InternetServiceProvider` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetServiceProvider = string(value["InternetServiceProvider"].GetString());
+        m_internetServiceProviderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -309,6 +320,14 @@ void Address::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_eipAlgType.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_internetServiceProviderHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetServiceProvider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_internetServiceProvider.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -536,5 +555,21 @@ void Address::SetEipAlgType(const AlgType& _eipAlgType)
 bool Address::EipAlgTypeHasBeenSet() const
 {
     return m_eipAlgTypeHasBeenSet;
+}
+
+string Address::GetInternetServiceProvider() const
+{
+    return m_internetServiceProvider;
+}
+
+void Address::SetInternetServiceProvider(const string& _internetServiceProvider)
+{
+    m_internetServiceProvider = _internetServiceProvider;
+    m_internetServiceProviderHasBeenSet = true;
+}
+
+bool Address::InternetServiceProviderHasBeenSet() const
+{
+    return m_internetServiceProviderHasBeenSet;
 }
 

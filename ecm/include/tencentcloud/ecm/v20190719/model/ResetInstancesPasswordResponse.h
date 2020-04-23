@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CAM_V20190116_MODEL_SETFLAGRESPONSE_H_
-#define TENCENTCLOUD_CAM_V20190116_MODEL_SETFLAGRESPONSE_H_
+#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_RESETINSTANCESPASSWORDRESPONSE_H_
+#define TENCENTCLOUD_ECM_V20190719_MODEL_RESETINSTANCESPASSWORDRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Cam
+    namespace Ecm
     {
-        namespace V20190116
+        namespace V20190719
         {
             namespace Model
             {
                 /**
-                * SetFlag返回参数结构体
+                * ResetInstancesPassword返回参数结构体
                 */
-                class SetFlagResponse : public AbstractModel
+                class ResetInstancesPasswordResponse : public AbstractModel
                 {
                 public:
-                    SetFlagResponse();
-                    ~SetFlagResponse() = default;
+                    ResetInstancesPasswordResponse();
+                    ~ResetInstancesPasswordResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
@@ -50,4 +50,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CAM_V20190116_MODEL_SETFLAGRESPONSE_H_
+#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_RESETINSTANCESPASSWORDRESPONSE_H_

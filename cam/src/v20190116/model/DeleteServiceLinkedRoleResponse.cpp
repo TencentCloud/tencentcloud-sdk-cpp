@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cam/v20190116/model/SetFlagResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeleteServiceLinkedRoleResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -24,11 +24,12 @@ using namespace TencentCloud::Cam::V20190116::Model;
 using namespace rapidjson;
 using namespace std;
 
-SetFlagResponse::SetFlagResponse()
+DeleteServiceLinkedRoleResponse::DeleteServiceLinkedRoleResponse() :
+    m_deletionTaskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SetFlagResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteServiceLinkedRoleResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -62,9 +63,29 @@ CoreInternalOutcome SetFlagResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("DeletionTaskId") && !rsp["DeletionTaskId"].IsNull())
+    {
+        if (!rsp["DeletionTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeletionTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionTaskId = string(rsp["DeletionTaskId"].GetString());
+        m_deletionTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string DeleteServiceLinkedRoleResponse::GetDeletionTaskId() const
+{
+    return m_deletionTaskId;
+}
+
+bool DeleteServiceLinkedRoleResponse::DeletionTaskIdHasBeenSet() const
+{
+    return m_deletionTaskIdHasBeenSet;
+}
 
 

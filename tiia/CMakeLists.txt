@@ -46,6 +46,7 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/Product.h
   include/tencentcloud/tiia/v20190529/model/RegionDetected.h
   include/tencentcloud/tiia/v20190529/model/CarTagItem.h
+  include/tencentcloud/tiia/v20190529/model/Threshold.h
   include/tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h
   )
@@ -79,6 +80,7 @@ set(tiia_src
   src/v20190529/model/Product.cpp
   src/v20190529/model/RegionDetected.cpp
   src/v20190529/model/CarTagItem.cpp
+  src/v20190529/model/Threshold.cpp
   src/v20190529/model/RecognizeCarResponse.cpp
   src/v20190529/model/DetectMisbehaviorRequest.cpp
   )

@@ -119,8 +119,14 @@
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesMaxBandwidthRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ResetInstancesMaxBandwidthResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ResetInstancesPasswordResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RunInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RunInstancesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/StartInstancesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/StartInstancesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/StopInstancesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/StopInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/TerminateInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/TerminateInstancesResponse.h>
 
@@ -281,9 +287,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResetInstancesMaxBandwidthResponse> ResetInstancesMaxBandwidthOutcome;
                 typedef std::future<ResetInstancesMaxBandwidthOutcome> ResetInstancesMaxBandwidthOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ResetInstancesMaxBandwidthRequest&, ResetInstancesMaxBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesMaxBandwidthAsyncHandler;
+                typedef Outcome<Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
+                typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
                 typedef Outcome<Error, Model::RunInstancesResponse> RunInstancesOutcome;
                 typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RunInstancesRequest&, RunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
+                typedef Outcome<Error, Model::StartInstancesResponse> StartInstancesOutcome;
+                typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::StartInstancesRequest&, StartInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
+                typedef Outcome<Error, Model::StopInstancesResponse> StopInstancesOutcome;
+                typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
                 typedef Outcome<Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
                 typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
@@ -737,6 +752,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ResetInstancesMaxBandwidthOutcomeCallable ResetInstancesMaxBandwidthCallable(const Model::ResetInstancesMaxBandwidthRequest& request);
 
                 /**
+                 *重置处于运行中状态的实例的密码，需要显式指定强制关机参数ForceStop。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。
+                 * @param req ResetInstancesPasswordRequest
+                 * @return ResetInstancesPasswordOutcome
+                 */
+                ResetInstancesPasswordOutcome ResetInstancesPassword(const Model::ResetInstancesPasswordRequest &request);
+                void ResetInstancesPasswordAsync(const Model::ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
+
+                /**
                  *创建ECM实例
                  * @param req RunInstancesRequest
                  * @return RunInstancesOutcome
@@ -744,6 +768,26 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 RunInstancesOutcome RunInstances(const Model::RunInstancesRequest &request);
                 void RunInstancesAsync(const Model::RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunInstancesOutcomeCallable RunInstancesCallable(const Model::RunInstancesRequest& request);
+
+                /**
+                 *只有状态为STOPPED的实例才可以进行此操作；接口调用成功时，实例会进入STARTING状态；启动实例成功时，实例会进入RUNNING状态。
+                 * @param req StartInstancesRequest
+                 * @return StartInstancesOutcome
+                 */
+                StartInstancesOutcome StartInstances(const Model::StartInstancesRequest &request);
+                void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartInstancesOutcomeCallable StartInstancesCallable(const Model::StartInstancesRequest& request);
+
+                /**
+                 *只有处于"RUNNING"状态的实例才能够进行关机操作；
+调用成功时，实例会进入STOPPING状态；关闭实例成功时，实例会进入STOPPED状态；
+支持强制关闭，强制关机的效果等同于关闭物理计算机的电源开关，强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。
+                 * @param req StopInstancesRequest
+                 * @return StopInstancesOutcome
+                 */
+                StopInstancesOutcome StopInstances(const Model::StopInstancesRequest &request);
+                void StopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request);
 
                 /**
                  *销毁实例

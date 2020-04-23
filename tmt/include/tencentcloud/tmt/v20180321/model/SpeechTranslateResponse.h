@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool RecognizeStatusHasBeenSet() const;
 
                     /**
-                     * 获取识别出的源文
-                     * @return SourceText 识别出的源文
+                     * 获取识别出的原文
+                     * @return SourceText 识别出的原文
                      */
                     std::string GetSourceText() const;
 
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool SeqHasBeenSet() const;
 
                     /**
-                     * 获取源语言
-                     * @return Source 源语言
+                     * 获取原语言
+                     * @return Source 原语言
                      */
                     std::string GetSource() const;
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                     bool m_recognizeStatusHasBeenSet;
 
                     /**
-                     * 识别出的源文
+                     * 识别出的原文
                      */
                     std::string m_sourceText;
                     bool m_sourceTextHasBeenSet;
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_seqHasBeenSet;
 
                     /**
-                     * 源语言
+                     * 原语言
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;

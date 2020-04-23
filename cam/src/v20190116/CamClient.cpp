@@ -255,49 +255,6 @@ CamClient::AttachUserPolicyOutcomeCallable CamClient::AttachUserPolicyCallable(c
     return task->get_future();
 }
 
-CamClient::CheckNewMfaCodeOutcome CamClient::CheckNewMfaCode(const CheckNewMfaCodeRequest &request)
-{
-    auto outcome = MakeRequest(request, "CheckNewMfaCode");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CheckNewMfaCodeResponse rsp = CheckNewMfaCodeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CheckNewMfaCodeOutcome(rsp);
-        else
-            return CheckNewMfaCodeOutcome(o.GetError());
-    }
-    else
-    {
-        return CheckNewMfaCodeOutcome(outcome.GetError());
-    }
-}
-
-void CamClient::CheckNewMfaCodeAsync(const CheckNewMfaCodeRequest& request, const CheckNewMfaCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckNewMfaCode(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CamClient::CheckNewMfaCodeOutcomeCallable CamClient::CheckNewMfaCodeCallable(const CheckNewMfaCodeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CheckNewMfaCodeOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckNewMfaCode(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CamClient::ConsumeCustomMFATokenOutcome CamClient::ConsumeCustomMFAToken(const ConsumeCustomMFATokenRequest &request)
 {
     auto outcome = MakeRequest(request, "ConsumeCustomMFAToken");
@@ -513,6 +470,49 @@ CamClient::CreateSAMLProviderOutcomeCallable CamClient::CreateSAMLProviderCallab
     return task->get_future();
 }
 
+CamClient::CreateServiceLinkedRoleOutcome CamClient::CreateServiceLinkedRole(const CreateServiceLinkedRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateServiceLinkedRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServiceLinkedRoleResponse rsp = CreateServiceLinkedRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServiceLinkedRoleOutcome(rsp);
+        else
+            return CreateServiceLinkedRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateServiceLinkedRoleOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CreateServiceLinkedRoleAsync(const CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateServiceLinkedRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CreateServiceLinkedRoleOutcomeCallable CamClient::CreateServiceLinkedRoleCallable(const CreateServiceLinkedRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateServiceLinkedRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateServiceLinkedRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DeleteGroupOutcome CamClient::DeleteGroup(const DeleteGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteGroup");
@@ -678,6 +678,49 @@ CamClient::DeleteSAMLProviderOutcomeCallable CamClient::DeleteSAMLProviderCallab
         [this, request]()
         {
             return this->DeleteSAMLProvider(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DeleteServiceLinkedRoleOutcome CamClient::DeleteServiceLinkedRole(const DeleteServiceLinkedRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteServiceLinkedRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteServiceLinkedRoleResponse rsp = DeleteServiceLinkedRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteServiceLinkedRoleOutcome(rsp);
+        else
+            return DeleteServiceLinkedRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteServiceLinkedRoleOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DeleteServiceLinkedRoleAsync(const DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteServiceLinkedRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DeleteServiceLinkedRoleOutcomeCallable CamClient::DeleteServiceLinkedRoleCallable(const DeleteServiceLinkedRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteServiceLinkedRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteServiceLinkedRole(request);
         }
     );
 
@@ -1108,6 +1151,49 @@ CamClient::GetSAMLProviderOutcomeCallable CamClient::GetSAMLProviderCallable(con
         [this, request]()
         {
             return this->GetSAMLProvider(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::GetServiceLinkedRoleDeletionStatusOutcome CamClient::GetServiceLinkedRoleDeletionStatus(const GetServiceLinkedRoleDeletionStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetServiceLinkedRoleDeletionStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetServiceLinkedRoleDeletionStatusResponse rsp = GetServiceLinkedRoleDeletionStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetServiceLinkedRoleDeletionStatusOutcome(rsp);
+        else
+            return GetServiceLinkedRoleDeletionStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetServiceLinkedRoleDeletionStatusOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetServiceLinkedRoleDeletionStatusAsync(const GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetServiceLinkedRoleDeletionStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetServiceLinkedRoleDeletionStatusOutcomeCallable CamClient::GetServiceLinkedRoleDeletionStatusCallable(const GetServiceLinkedRoleDeletionStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetServiceLinkedRoleDeletionStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->GetServiceLinkedRoleDeletionStatus(request);
         }
     );
 
@@ -1667,49 +1753,6 @@ CamClient::RemoveUserFromGroupOutcomeCallable CamClient::RemoveUserFromGroupCall
         [this, request]()
         {
             return this->RemoveUserFromGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CamClient::SetFlagOutcome CamClient::SetFlag(const SetFlagRequest &request)
-{
-    auto outcome = MakeRequest(request, "SetFlag");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SetFlagResponse rsp = SetFlagResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SetFlagOutcome(rsp);
-        else
-            return SetFlagOutcome(o.GetError());
-    }
-    else
-    {
-        return SetFlagOutcome(outcome.GetError());
-    }
-}
-
-void CamClient::SetFlagAsync(const SetFlagRequest& request, const SetFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SetFlag(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CamClient::SetFlagOutcomeCallable CamClient::SetFlagCallable(const SetFlagRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SetFlagOutcome()>>(
-        [this, request]()
-        {
-            return this->SetFlag(request);
         }
     );
 

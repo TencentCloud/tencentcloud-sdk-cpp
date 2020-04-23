@@ -49,7 +49,8 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_tagsHasBeenSet(false),
     m_hiveMetaDbHasBeenSet(false),
     m_serviceClassHasBeenSet(false),
-    m_aliasInfoHasBeenSet(false)
+    m_aliasInfoHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -355,6 +356,16 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const Value &value)
         m_aliasInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
+    {
+        if (!value["ProductId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.ProductId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_productId = value["ProductId"].GetInt64();
+        m_productIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -592,6 +603,14 @@ void ClusterInstancesInfo::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "AliasInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_aliasInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_productId, allocator);
     }
 
 }
@@ -1043,5 +1062,21 @@ void ClusterInstancesInfo::SetAliasInfo(const string& _aliasInfo)
 bool ClusterInstancesInfo::AliasInfoHasBeenSet() const
 {
     return m_aliasInfoHasBeenSet;
+}
+
+int64_t ClusterInstancesInfo::GetProductId() const
+{
+    return m_productId;
+}
+
+void ClusterInstancesInfo::SetProductId(const int64_t& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 

@@ -41,6 +41,8 @@
 #include <tencentcloud/gse/v20191112/model/GetInstanceAccessResponse.h>
 #include <tencentcloud/gse/v20191112/model/JoinGameServerSessionRequest.h>
 #include <tencentcloud/gse/v20191112/model/JoinGameServerSessionResponse.h>
+#include <tencentcloud/gse/v20191112/model/SearchGameServerSessionsRequest.h>
+#include <tencentcloud/gse/v20191112/model/SearchGameServerSessionsResponse.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementRequest.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementResponse.h>
 #include <tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementRequest.h>
@@ -88,6 +90,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::JoinGameServerSessionResponse> JoinGameServerSessionOutcome;
                 typedef std::future<JoinGameServerSessionOutcome> JoinGameServerSessionOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::JoinGameServerSessionRequest&, JoinGameServerSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> JoinGameServerSessionAsyncHandler;
+                typedef Outcome<Error, Model::SearchGameServerSessionsResponse> SearchGameServerSessionsOutcome;
+                typedef std::future<SearchGameServerSessionsOutcome> SearchGameServerSessionsOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::SearchGameServerSessionsRequest&, SearchGameServerSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchGameServerSessionsAsyncHandler;
                 typedef Outcome<Error, Model::StartGameServerSessionPlacementResponse> StartGameServerSessionPlacementOutcome;
                 typedef std::future<StartGameServerSessionPlacementOutcome> StartGameServerSessionPlacementOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::StartGameServerSessionPlacementRequest&, StartGameServerSessionPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartGameServerSessionPlacementAsyncHandler;
@@ -180,6 +185,15 @@ namespace TencentCloud
                 JoinGameServerSessionOutcome JoinGameServerSession(const Model::JoinGameServerSessionRequest &request);
                 void JoinGameServerSessionAsync(const Model::JoinGameServerSessionRequest& request, const JoinGameServerSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 JoinGameServerSessionOutcomeCallable JoinGameServerSessionCallable(const Model::JoinGameServerSessionRequest& request);
+
+                /**
+                 *本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表
+                 * @param req SearchGameServerSessionsRequest
+                 * @return SearchGameServerSessionsOutcome
+                 */
+                SearchGameServerSessionsOutcome SearchGameServerSessions(const Model::SearchGameServerSessionsRequest &request);
+                void SearchGameServerSessionsAsync(const Model::SearchGameServerSessionsRequest& request, const SearchGameServerSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchGameServerSessionsOutcomeCallable SearchGameServerSessionsCallable(const Model::SearchGameServerSessionsRequest& request);
 
                 /**
                  *本接口（StartGameServerSessionPlacement）用于开始放置游戏服务器会话

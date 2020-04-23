@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TargetHasBeenSet() const;
 
                     /**
-                     * 获取pcm : 146   amr : 33554432   mp3 : 83886080
-                     * @return AudioFormat pcm : 146   amr : 33554432   mp3 : 83886080
+                     * 获取pcm : 146   speex : 16779154   mp3 : 83886080
+                     * @return AudioFormat pcm : 146   speex : 16779154   mp3 : 83886080
                      */
                     int64_t GetAudioFormat() const;
 
                     /**
-                     * 设置pcm : 146   amr : 33554432   mp3 : 83886080
-                     * @param AudioFormat pcm : 146   amr : 33554432   mp3 : 83886080
+                     * 设置pcm : 146   speex : 16779154   mp3 : 83886080
+                     * @param AudioFormat pcm : 146   speex : 16779154   mp3 : 83886080
                      */
                     void SetAudioFormat(const int64_t& _audioFormat);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_targetHasBeenSet;
 
                     /**
-                     * pcm : 146   amr : 33554432   mp3 : 83886080
+                     * pcm : 146   speex : 16779154   mp3 : 83886080
                      */
                     int64_t m_audioFormat;
                     bool m_audioFormatHasBeenSet;

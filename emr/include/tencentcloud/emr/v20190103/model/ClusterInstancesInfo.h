@@ -49,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID
+                     * 获取ID号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id ID
+                     * @return Id ID号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置ID
+                     * 设置ID号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id ID
+                     * @param Id ID号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetId(const int64_t& _id);
@@ -772,10 +772,32 @@ namespace TencentCloud
                      */
                     bool AliasInfoHasBeenSet() const;
 
+                    /**
+                     * 获取集群版本Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductId 集群版本Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProductId() const;
+
+                    /**
+                     * 设置集群版本Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductId 集群版本Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductId(const int64_t& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ID
+                     * ID号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
@@ -996,6 +1018,13 @@ namespace TencentCloud
                      */
                     std::string m_aliasInfo;
                     bool m_aliasInfoHasBeenSet;
+
+                    /**
+                     * 集群版本Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

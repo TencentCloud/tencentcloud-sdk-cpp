@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CAM_V20190116_MODEL_CHECKNEWMFACODERESPONSE_H_
-#define TENCENTCLOUD_CAM_V20190116_MODEL_CHECKNEWMFACODERESPONSE_H_
+#ifndef TENCENTCLOUD_CAM_V20190116_MODEL_CREATESERVICELINKEDROLERESPONSE_H_
+#define TENCENTCLOUD_CAM_V20190116_MODEL_CREATESERVICELINKEDROLERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -32,17 +32,35 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CheckNewMfaCode返回参数结构体
+                * CreateServiceLinkedRole返回参数结构体
                 */
-                class CheckNewMfaCodeResponse : public AbstractModel
+                class CreateServiceLinkedRoleResponse : public AbstractModel
                 {
                 public:
-                    CheckNewMfaCodeResponse();
-                    ~CheckNewMfaCodeResponse() = default;
+                    CreateServiceLinkedRoleResponse();
+                    ~CreateServiceLinkedRoleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取角色ID
+                     * @return RoleId 角色ID
+                     */
+                    std::string GetRoleId() const;
+
+                    /**
+                     * 判断参数 RoleId 是否已赋值
+                     * @return RoleId 是否已赋值
+                     */
+                    bool RoleIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 角色ID
+                     */
+                    std::string m_roleId;
+                    bool m_roleIdHasBeenSet;
 
                 };
             }
@@ -50,4 +68,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CAM_V20190116_MODEL_CHECKNEWMFACODERESPONSE_H_
+#endif // !TENCENTCLOUD_CAM_V20190116_MODEL_CREATESERVICELINKEDROLERESPONSE_H_
