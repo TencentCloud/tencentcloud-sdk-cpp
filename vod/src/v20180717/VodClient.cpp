@@ -685,6 +685,49 @@ VodClient::CreateSnapshotByTimeOffsetTemplateOutcomeCallable VodClient::CreateSn
     return task->get_future();
 }
 
+VodClient::CreateSubAppIdOutcome VodClient::CreateSubAppId(const CreateSubAppIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubAppId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubAppIdResponse rsp = CreateSubAppIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubAppIdOutcome(rsp);
+        else
+            return CreateSubAppIdOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubAppIdOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateSubAppIdAsync(const CreateSubAppIdRequest& request, const CreateSubAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSubAppId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateSubAppIdOutcomeCallable VodClient::CreateSubAppIdCallable(const CreateSubAppIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSubAppIdOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSubAppId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateSuperPlayerConfigOutcome VodClient::CreateSuperPlayerConfig(const CreateSuperPlayerConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSuperPlayerConfig");

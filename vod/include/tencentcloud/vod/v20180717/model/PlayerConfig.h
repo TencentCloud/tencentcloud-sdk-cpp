@@ -230,6 +230,24 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取模板描述信息。
+                     * @return Comment 模板描述信息。
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置模板描述信息。
+                     * @param Comment 模板描述信息。
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     */
+                    bool CommentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 模板描述信息。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
 
                 };
             }

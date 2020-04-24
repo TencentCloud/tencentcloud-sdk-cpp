@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MARIADB_V20170312_MODEL_MODIFYDBINSTANCENAMERESPONSE_H_
-#define TENCENTCLOUD_MARIADB_V20170312_MODEL_MODIFYDBINSTANCENAMERESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_CREATESUBAPPIDRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_CREATESUBAPPIDRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,42 +25,42 @@
 
 namespace TencentCloud
 {
-    namespace Mariadb
+    namespace Vod
     {
-        namespace V20170312
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * ModifyDBInstanceName返回参数结构体
+                * CreateSubAppId返回参数结构体
                 */
-                class ModifyDBInstanceNameResponse : public AbstractModel
+                class CreateSubAppIdResponse : public AbstractModel
                 {
                 public:
-                    ModifyDBInstanceNameResponse();
-                    ~ModifyDBInstanceNameResponse() = default;
+                    CreateSubAppIdResponse();
+                    ~CreateSubAppIdResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取新创建的子应用 ID。
+                     * @return SubAppId 新创建的子应用 ID。
                      */
-                    std::string GetInstanceId() const;
+                    uint64_t GetSubAppId() const;
 
                     /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
                      */
-                    bool InstanceIdHasBeenSet() const;
+                    bool SubAppIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 实例ID
+                     * 新创建的子应用 ID。
                      */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
 
                 };
             }
@@ -68,4 +68,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MARIADB_V20170312_MODEL_MODIFYDBINSTANCENAMERESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_CREATESUBAPPIDRESPONSE_H_

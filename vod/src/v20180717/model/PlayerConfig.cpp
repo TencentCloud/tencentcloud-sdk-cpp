@@ -30,7 +30,8 @@ PlayerConfig::PlayerConfig() :
     m_imageSpriteDefinitionHasBeenSet(false),
     m_resolutionNameSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome PlayerConfig::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PlayerConfig.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -231,6 +242,14 @@ void PlayerConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -378,5 +397,21 @@ void PlayerConfig::SetUpdateTime(const string& _updateTime)
 bool PlayerConfig::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string PlayerConfig::GetComment() const
+{
+    return m_comment;
+}
+
+void PlayerConfig::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool PlayerConfig::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 

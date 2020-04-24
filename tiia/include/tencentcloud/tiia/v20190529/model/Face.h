@@ -103,17 +103,13 @@ namespace TencentCloud
 
                     /**
                      * 获取算法对于Name的置信度（图像中人脸与公众人物的相似度），0-100之间，值越高，表示对于Name越确定。
-当Confidence低于70分时，Name仅供参考。您可以根据业务实际情况调整阈值。
                      * @return Confidence 算法对于Name的置信度（图像中人脸与公众人物的相似度），0-100之间，值越高，表示对于Name越确定。
-当Confidence低于70分时，Name仅供参考。您可以根据业务实际情况调整阈值。
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置算法对于Name的置信度（图像中人脸与公众人物的相似度），0-100之间，值越高，表示对于Name越确定。
-当Confidence低于70分时，Name仅供参考。您可以根据业务实际情况调整阈值。
                      * @param Confidence 算法对于Name的置信度（图像中人脸与公众人物的相似度），0-100之间，值越高，表示对于Name越确定。
-当Confidence低于70分时，Name仅供参考。您可以根据业务实际情况调整阈值。
                      */
                     void SetConfidence(const int64_t& _confidence);
 
@@ -239,7 +235,6 @@ namespace TencentCloud
 
                     /**
                      * 算法对于Name的置信度（图像中人脸与公众人物的相似度），0-100之间，值越高，表示对于Name越确定。
-当Confidence低于70分时，Name仅供参考。您可以根据业务实际情况调整阈值。
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;

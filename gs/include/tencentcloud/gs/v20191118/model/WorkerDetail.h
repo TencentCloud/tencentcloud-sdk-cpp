@@ -212,6 +212,50 @@ UNAVAILABLE-不可用
                      */
                     bool ServiceStateHasBeenSet() const;
 
+                    /**
+                     * 获取用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserId 用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserId 用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
+                    /**
+                     * 获取游戏ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GameId 游戏ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGameId() const;
+
+                    /**
+                     * 设置游戏ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GameId 游戏ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGameId(const std::string& _gameId);
+
+                    /**
+                     * 判断参数 GameId 是否已赋值
+                     * @return GameId 是否已赋值
+                     */
+                    bool GameIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +309,20 @@ UNAVAILABLE-不可用
                      */
                     std::string m_serviceState;
                     bool m_serviceStateHasBeenSet;
+
+                    /**
+                     * 用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
+
+                    /**
+                     * 游戏ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gameId;
+                    bool m_gameIdHasBeenSet;
 
                 };
             }

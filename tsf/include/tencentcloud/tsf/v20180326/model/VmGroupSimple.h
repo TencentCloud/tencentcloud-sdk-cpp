@@ -355,17 +355,17 @@ namespace TencentCloud
                     bool MicroserviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取GroupResourceType
+                     * 获取部署组资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupResourceType GroupResourceType
+                     * @return GroupResourceType 部署组资源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGroupResourceType() const;
 
                     /**
-                     * 设置GroupResourceType
+                     * 设置部署组资源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupResourceType GroupResourceType
+                     * @param GroupResourceType 部署组资源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGroupResourceType(const std::string& _groupResourceType);
@@ -375,6 +375,28 @@ namespace TencentCloud
                      * @return GroupResourceType 是否已赋值
                      */
                     bool GroupResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedTime 部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUpdatedTime() const;
+
+                    /**
+                     * 设置部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdatedTime 部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdatedTime(const int64_t& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
 
                 private:
 
@@ -477,11 +499,18 @@ namespace TencentCloud
                     bool m_microserviceTypeHasBeenSet;
 
                     /**
-                     * GroupResourceType
+                     * 部署组资源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupResourceType;
                     bool m_groupResourceTypeHasBeenSet;
+
+                    /**
+                     * 部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }

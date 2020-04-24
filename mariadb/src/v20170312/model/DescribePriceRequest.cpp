@@ -29,7 +29,8 @@ DescribePriceRequest::DescribePriceRequest() :
     m_memoryHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_paymodeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribePriceRequest::ToJsonString() const
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_paymodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Paymode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_paymode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DescribePriceRequest::SetCount(const int64_t& _count)
 bool DescribePriceRequest::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+string DescribePriceRequest::GetPaymode() const
+{
+    return m_paymode;
+}
+
+void DescribePriceRequest::SetPaymode(const string& _paymode)
+{
+    m_paymode = _paymode;
+    m_paymodeHasBeenSet = true;
+}
+
+bool DescribePriceRequest::PaymodeHasBeenSet() const
+{
+    return m_paymodeHasBeenSet;
 }
 
 

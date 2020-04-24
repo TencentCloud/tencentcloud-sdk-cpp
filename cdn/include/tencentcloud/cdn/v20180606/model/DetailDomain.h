@@ -53,6 +53,7 @@
 #include <tencentcloud/cdn/v20180606/model/OriginPullTimeout.h>
 #include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/SecurityConfig.h>
+#include <tencentcloud/cdn/v20180606/model/ImageOptimization.h>
 
 
 namespace TencentCloud
@@ -1029,6 +1030,28 @@ global：全球锁定
                      */
                     bool SecurityConfigHasBeenSet() const;
 
+                    /**
+                     * 获取ImageOptimization配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageOptimization ImageOptimization配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageOptimization GetImageOptimization() const;
+
+                    /**
+                     * 设置ImageOptimization配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageOptimization ImageOptimization配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageOptimization(const ImageOptimization& _imageOptimization);
+
+                    /**
+                     * 判断参数 ImageOptimization 是否已赋值
+                     * @return ImageOptimization 是否已赋值
+                     */
+                    bool ImageOptimizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1330,6 +1353,13 @@ global：全球锁定
                      */
                     SecurityConfig m_securityConfig;
                     bool m_securityConfigHasBeenSet;
+
+                    /**
+                     * ImageOptimization配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageOptimization m_imageOptimization;
+                    bool m_imageOptimizationHasBeenSet;
 
                 };
             }

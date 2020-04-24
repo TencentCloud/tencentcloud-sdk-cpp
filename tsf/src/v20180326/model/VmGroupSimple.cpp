@@ -36,7 +36,8 @@ VmGroupSimple::VmGroupSimple() :
     m_applicationNameHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_microserviceTypeHasBeenSet(false),
-    m_groupResourceTypeHasBeenSet(false)
+    m_groupResourceTypeHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,16 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const Value &value)
         m_groupResourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `VmGroupSimple.UpdatedTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = value["UpdatedTime"].GetInt64();
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +331,14 @@ void VmGroupSimple::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "GroupResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_groupResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updatedTime, allocator);
     }
 
 }
@@ -563,5 +582,21 @@ void VmGroupSimple::SetGroupResourceType(const string& _groupResourceType)
 bool VmGroupSimple::GroupResourceTypeHasBeenSet() const
 {
     return m_groupResourceTypeHasBeenSet;
+}
+
+int64_t VmGroupSimple::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void VmGroupSimple::SetUpdatedTime(const int64_t& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool VmGroupSimple::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

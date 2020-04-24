@@ -170,7 +170,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TranscodeTask2017.h
   include/tencentcloud/vod/v20180717/model/CreatePersonSampleResponse.h
   include/tencentcloud/vod/v20180717/model/CreateContentReviewTemplateResponse.h
-  include/tencentcloud/vod/v20180717/model/HighlightsConfigureInfo.h
+  include/tencentcloud/vod/v20180717/model/ModifyAnimatedGraphicsTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesRequest.h
   include/tencentcloud/vod/v20180717/model/ProhibitedConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/TagConfigureInfoForUpdate.h
@@ -254,6 +254,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ConfirmEventsRequest.h
   include/tencentcloud/vod/v20180717/model/CreateAIRecognitionTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ModifySubAppIdStatusRequest.h
+  include/tencentcloud/vod/v20180717/model/CreateSubAppIdResponse.h
   include/tencentcloud/vod/v20180717/model/CreateWatermarkTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/AiReviewTerrorismTaskOutput.h
   include/tencentcloud/vod/v20180717/model/ResetProcedureTemplateResponse.h
@@ -355,7 +356,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ModifyAIRecognitionTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/PoliticalImgReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/PoliticalConfigureInfo.h
-  include/tencentcloud/vod/v20180717/model/ModifyAnimatedGraphicsTemplateRequest.h
+  include/tencentcloud/vod/v20180717/model/HighlightsConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsSegmentItem.h
   include/tencentcloud/vod/v20180717/model/MediaProcessTaskResult.h
   include/tencentcloud/vod/v20180717/model/DeleteWordSamplesResponse.h
@@ -452,6 +453,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeAIAnalysisTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrWordsResult.h
+  include/tencentcloud/vod/v20180717/model/CreateSubAppIdRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/SearchMediaRequest.h
   include/tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateRequest.h
@@ -655,7 +657,7 @@ set(vod_src
   src/v20180717/model/TranscodeTask2017.cpp
   src/v20180717/model/CreatePersonSampleResponse.cpp
   src/v20180717/model/CreateContentReviewTemplateResponse.cpp
-  src/v20180717/model/HighlightsConfigureInfo.cpp
+  src/v20180717/model/ModifyAnimatedGraphicsTemplateRequest.cpp
   src/v20180717/model/DescribeProcedureTemplatesRequest.cpp
   src/v20180717/model/ProhibitedConfigureInfoForUpdate.cpp
   src/v20180717/model/TagConfigureInfoForUpdate.cpp
@@ -739,6 +741,7 @@ set(vod_src
   src/v20180717/model/ConfirmEventsRequest.cpp
   src/v20180717/model/CreateAIRecognitionTemplateResponse.cpp
   src/v20180717/model/ModifySubAppIdStatusRequest.cpp
+  src/v20180717/model/CreateSubAppIdResponse.cpp
   src/v20180717/model/CreateWatermarkTemplateResponse.cpp
   src/v20180717/model/AiReviewTerrorismTaskOutput.cpp
   src/v20180717/model/ResetProcedureTemplateResponse.cpp
@@ -840,7 +843,7 @@ set(vod_src
   src/v20180717/model/ModifyAIRecognitionTemplateResponse.cpp
   src/v20180717/model/PoliticalImgReviewTemplateInfo.cpp
   src/v20180717/model/PoliticalConfigureInfo.cpp
-  src/v20180717/model/ModifyAnimatedGraphicsTemplateRequest.cpp
+  src/v20180717/model/HighlightsConfigureInfo.cpp
   src/v20180717/model/AiRecognitionTaskOcrWordsSegmentItem.cpp
   src/v20180717/model/MediaProcessTaskResult.cpp
   src/v20180717/model/DeleteWordSamplesResponse.cpp
@@ -937,6 +940,7 @@ set(vod_src
   src/v20180717/model/DescribeAIAnalysisTemplatesResponse.cpp
   src/v20180717/model/CreateSnapshotByTimeOffsetTemplateRequest.cpp
   src/v20180717/model/AiRecognitionTaskAsrWordsResult.cpp
+  src/v20180717/model/CreateSubAppIdRequest.cpp
   src/v20180717/model/DescribeProcedureTemplatesResponse.cpp
   src/v20180717/model/SearchMediaRequest.cpp
   src/v20180717/model/CreateSampleSnapshotTemplateRequest.cpp

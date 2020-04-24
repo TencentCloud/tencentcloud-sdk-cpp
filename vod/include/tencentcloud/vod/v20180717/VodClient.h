@@ -53,6 +53,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateSubAppIdRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateSubAppIdResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSuperPlayerConfigRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateSuperPlayerConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateTranscodeTemplateRequest.h>
@@ -268,6 +270,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateSnapshotByTimeOffsetTemplateResponse> CreateSnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<CreateSnapshotByTimeOffsetTemplateOutcome> CreateSnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateSnapshotByTimeOffsetTemplateRequest&, CreateSnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotByTimeOffsetTemplateAsyncHandler;
+                typedef Outcome<Error, Model::CreateSubAppIdResponse> CreateSubAppIdOutcome;
+                typedef std::future<CreateSubAppIdOutcome> CreateSubAppIdOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateSubAppIdRequest&, CreateSubAppIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubAppIdAsyncHandler;
                 typedef Outcome<Error, Model::CreateSuperPlayerConfigResponse> CreateSuperPlayerConfigOutcome;
                 typedef std::future<CreateSuperPlayerConfigOutcome> CreateSuperPlayerConfigOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateSuperPlayerConfigRequest&, CreateSuperPlayerConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSuperPlayerConfigAsyncHandler;
@@ -651,6 +656,15 @@ namespace TencentCloud
                 CreateSnapshotByTimeOffsetTemplateOutcome CreateSnapshotByTimeOffsetTemplate(const Model::CreateSnapshotByTimeOffsetTemplateRequest &request);
                 void CreateSnapshotByTimeOffsetTemplateAsync(const Model::CreateSnapshotByTimeOffsetTemplateRequest& request, const CreateSnapshotByTimeOffsetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSnapshotByTimeOffsetTemplateOutcomeCallable CreateSnapshotByTimeOffsetTemplateCallable(const Model::CreateSnapshotByTimeOffsetTemplateRequest& request);
+
+                /**
+                 *该接口用于创建点播子应用。
+                 * @param req CreateSubAppIdRequest
+                 * @return CreateSubAppIdOutcome
+                 */
+                CreateSubAppIdOutcome CreateSubAppId(const Model::CreateSubAppIdRequest &request);
+                void CreateSubAppIdAsync(const Model::CreateSubAppIdRequest& request, const CreateSubAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSubAppIdOutcomeCallable CreateSubAppIdCallable(const Model::CreateSubAppIdRequest& request);
 
                 /**
                  *创建超级播放器配置，数量上限：100。

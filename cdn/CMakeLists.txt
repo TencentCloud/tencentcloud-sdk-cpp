@@ -27,6 +27,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribePushQuotaResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeQuotaResponse.h
   include/tencentcloud/cdn/v20180606/model/Authentication.h
+  include/tencentcloud/cdn/v20180606/model/ImageOptimization.h
   include/tencentcloud/cdn/v20180606/model/Https.h
   include/tencentcloud/cdn/v20180606/model/ReportData.h
   include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h
@@ -47,6 +48,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/CreateClsLogTopicRequest.h
   include/tencentcloud/cdn/v20180606/model/CompressionRule.h
+  include/tencentcloud/cdn/v20180606/model/GuetzliAdapter.h
   include/tencentcloud/cdn/v20180606/model/Origin.h
   include/tencentcloud/cdn/v20180606/model/EnableCachesRequest.h
   include/tencentcloud/cdn/v20180606/model/Quota.h
@@ -58,6 +60,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/BriefDomain.h
   include/tencentcloud/cdn/v20180606/model/UpdatePayTypeRequest.h
+  include/tencentcloud/cdn/v20180606/model/TpgAdapter.h
   include/tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h
   include/tencentcloud/cdn/v20180606/model/DisableClsLogTopicRequest.h
   include/tencentcloud/cdn/v20180606/model/ListClsTopicDomainsResponse.h
@@ -77,6 +80,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeCertDomainsRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/AdvancedCache.h
+  include/tencentcloud/cdn/v20180606/model/WebpAdapter.h
   include/tencentcloud/cdn/v20180606/model/StartCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/MapInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h
@@ -190,6 +194,7 @@ set(cdn_src
   src/v20180606/model/DescribePushQuotaResponse.cpp
   src/v20180606/model/DescribePurgeQuotaResponse.cpp
   src/v20180606/model/Authentication.cpp
+  src/v20180606/model/ImageOptimization.cpp
   src/v20180606/model/Https.cpp
   src/v20180606/model/ReportData.cpp
   src/v20180606/model/DescribeTrafficPackagesRequest.cpp
@@ -210,6 +215,7 @@ set(cdn_src
   src/v20180606/model/DescribeDomainsResponse.cpp
   src/v20180606/model/CreateClsLogTopicRequest.cpp
   src/v20180606/model/CompressionRule.cpp
+  src/v20180606/model/GuetzliAdapter.cpp
   src/v20180606/model/Origin.cpp
   src/v20180606/model/EnableCachesRequest.cpp
   src/v20180606/model/Quota.cpp
@@ -221,6 +227,7 @@ set(cdn_src
   src/v20180606/model/DescribeDomainsConfigResponse.cpp
   src/v20180606/model/BriefDomain.cpp
   src/v20180606/model/UpdatePayTypeRequest.cpp
+  src/v20180606/model/TpgAdapter.cpp
   src/v20180606/model/DescribeReportDataResponse.cpp
   src/v20180606/model/DisableClsLogTopicRequest.cpp
   src/v20180606/model/ListClsTopicDomainsResponse.cpp
@@ -240,6 +247,7 @@ set(cdn_src
   src/v20180606/model/DescribeCertDomainsRequest.cpp
   src/v20180606/model/DescribeDomainsConfigRequest.cpp
   src/v20180606/model/AdvancedCache.cpp
+  src/v20180606/model/WebpAdapter.cpp
   src/v20180606/model/StartCdnDomainRequest.cpp
   src/v20180606/model/MapInfo.cpp
   src/v20180606/model/DescribeCertDomainsResponse.cpp

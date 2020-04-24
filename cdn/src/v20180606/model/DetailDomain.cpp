@@ -62,7 +62,8 @@ DetailDomain::DetailDomain() :
     m_readonlyHasBeenSet(false),
     m_originPullTimeoutHasBeenSet(false),
     m_awsPrivateAccessHasBeenSet(false),
-    m_securityConfigHasBeenSet(false)
+    m_securityConfigHasBeenSet(false),
+    m_imageOptimizationHasBeenSet(false)
 {
 }
 
@@ -684,6 +685,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_securityConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageOptimization") && !value["ImageOptimization"].IsNull())
+    {
+        if (!value["ImageOptimization"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.ImageOptimization` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageOptimization.Deserialize(value["ImageOptimization"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageOptimizationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1046,6 +1064,15 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_securityConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageOptimizationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ImageOptimization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_imageOptimization.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1705,5 +1732,21 @@ void DetailDomain::SetSecurityConfig(const SecurityConfig& _securityConfig)
 bool DetailDomain::SecurityConfigHasBeenSet() const
 {
     return m_securityConfigHasBeenSet;
+}
+
+ImageOptimization DetailDomain::GetImageOptimization() const
+{
+    return m_imageOptimization;
+}
+
+void DetailDomain::SetImageOptimization(const ImageOptimization& _imageOptimization)
+{
+    m_imageOptimization = _imageOptimization;
+    m_imageOptimizationHasBeenSet = true;
+}
+
+bool DetailDomain::ImageOptimizationHasBeenSet() const
+{
+    return m_imageOptimizationHasBeenSet;
 }
 

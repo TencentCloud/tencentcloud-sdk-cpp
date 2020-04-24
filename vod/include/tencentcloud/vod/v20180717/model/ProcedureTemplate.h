@@ -96,6 +96,24 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取模板描述信息，长度限制：256 个字符。
+                     * @return Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置模板描述信息，长度限制：256 个字符。
+                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     */
+                    bool CommentHasBeenSet() const;
+
+                    /**
                      * 获取视频处理类型任务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaProcessTask 视频处理类型任务参数。
@@ -256,6 +274,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
 
                     /**
                      * 视频处理类型任务参数。

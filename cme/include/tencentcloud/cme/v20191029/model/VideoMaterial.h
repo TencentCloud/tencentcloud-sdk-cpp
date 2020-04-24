@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool CoverUrlHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件分辨率。
-                     * @return Resolution 媒体文件分辨率。
+                     * 获取媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。
+                     * @return Resolution 媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置媒体文件分辨率。
-                     * @param Resolution 媒体文件分辨率。
+                     * 设置媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。
+                     * @param Resolution 媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。
                      */
                     void SetResolution(const std::string& _resolution);
 
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_coverUrlHasBeenSet;
 
                     /**
-                     * 媒体文件分辨率。
+                     * 媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;

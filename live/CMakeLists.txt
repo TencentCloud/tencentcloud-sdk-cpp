@@ -168,6 +168,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DeleteLiveWatermarkRuleResponse.h
   include/tencentcloud/live/v20180801/model/PublishTime.h
   include/tencentcloud/live/v20180801/model/ModifyLiveCertResponse.h
+  include/tencentcloud/live/v20180801/model/MonitorStreamPlayInfo.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTranscodeDetailInfoRequest.h
   include/tencentcloud/live/v20180801/model/ProIspPlayCodeDataInfo.h
   include/tencentcloud/live/v20180801/model/DeleteLiveWatermarkRequest.h
@@ -217,6 +218,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/ModifyLiveDomainCertResponse.h
   include/tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateResponse.h
   include/tencentcloud/live/v20180801/model/EnableLiveDomainRequest.h
+  include/tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h
   include/tencentcloud/live/v20180801/model/ForbidLiveDomainResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveSnapshotRulesRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveTranscodeRuleResponse.h
@@ -250,6 +252,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLivePushAuthKeyResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveWatermarkRuleRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveRecordTemplatesRequest.h
+  include/tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveDomainResponse.h
   include/tencentcloud/live/v20180801/model/PlayDataInfoByStream.h
   include/tencentcloud/live/v20180801/model/StopLiveRecordResponse.h
@@ -422,6 +425,7 @@ set(live_src
   src/v20180801/model/DeleteLiveWatermarkRuleResponse.cpp
   src/v20180801/model/PublishTime.cpp
   src/v20180801/model/ModifyLiveCertResponse.cpp
+  src/v20180801/model/MonitorStreamPlayInfo.cpp
   src/v20180801/model/DescribeLiveTranscodeDetailInfoRequest.cpp
   src/v20180801/model/ProIspPlayCodeDataInfo.cpp
   src/v20180801/model/DeleteLiveWatermarkRequest.cpp
@@ -471,6 +475,7 @@ set(live_src
   src/v20180801/model/ModifyLiveDomainCertResponse.cpp
   src/v20180801/model/ModifyLiveCallbackTemplateResponse.cpp
   src/v20180801/model/EnableLiveDomainRequest.cpp
+  src/v20180801/model/DescribeAllStreamPlayInfoListResponse.cpp
   src/v20180801/model/ForbidLiveDomainResponse.cpp
   src/v20180801/model/DescribeLiveSnapshotRulesRequest.cpp
   src/v20180801/model/CreateLiveTranscodeRuleResponse.cpp
@@ -504,6 +509,7 @@ set(live_src
   src/v20180801/model/DescribeLivePushAuthKeyResponse.cpp
   src/v20180801/model/CreateLiveWatermarkRuleRequest.cpp
   src/v20180801/model/DescribeLiveRecordTemplatesRequest.cpp
+  src/v20180801/model/DescribeAllStreamPlayInfoListRequest.cpp
   src/v20180801/model/DescribeLiveDomainResponse.cpp
   src/v20180801/model/PlayDataInfoByStream.cpp
   src/v20180801/model/StopLiveRecordResponse.cpp

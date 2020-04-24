@@ -1416,6 +1416,49 @@ LiveClient::DeletePullStreamConfigOutcomeCallable LiveClient::DeletePullStreamCo
     return task->get_future();
 }
 
+LiveClient::DescribeAllStreamPlayInfoListOutcome LiveClient::DescribeAllStreamPlayInfoList(const DescribeAllStreamPlayInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllStreamPlayInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllStreamPlayInfoListResponse rsp = DescribeAllStreamPlayInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllStreamPlayInfoListOutcome(rsp);
+        else
+            return DescribeAllStreamPlayInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllStreamPlayInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAllStreamPlayInfoListAsync(const DescribeAllStreamPlayInfoListRequest& request, const DescribeAllStreamPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllStreamPlayInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeAllStreamPlayInfoListOutcomeCallable LiveClient::DescribeAllStreamPlayInfoListCallable(const DescribeAllStreamPlayInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllStreamPlayInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllStreamPlayInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeBillBandwidthAndFluxListOutcome LiveClient::DescribeBillBandwidthAndFluxList(const DescribeBillBandwidthAndFluxListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillBandwidthAndFluxList");

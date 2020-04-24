@@ -28,7 +28,9 @@ WorkerDetail::WorkerDetail() :
     m_instanceIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_serviceStateHasBeenSet(false)
+    m_serviceStateHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_gameIdHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,26 @@ CoreInternalOutcome WorkerDetail::Deserialize(const Value &value)
         m_serviceStateHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WorkerDetail.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GameId") && !value["GameId"].IsNull())
+    {
+        if (!value["GameId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WorkerDetail.GameId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gameId = string(value["GameId"].GetString());
+        m_gameIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +190,22 @@ void WorkerDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "ServiceState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_serviceState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gameIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GameId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gameId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +321,37 @@ void WorkerDetail::SetServiceState(const string& _serviceState)
 bool WorkerDetail::ServiceStateHasBeenSet() const
 {
     return m_serviceStateHasBeenSet;
+}
+
+string WorkerDetail::GetUserId() const
+{
+    return m_userId;
+}
+
+void WorkerDetail::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool WorkerDetail::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
+}
+
+string WorkerDetail::GetGameId() const
+{
+    return m_gameId;
+}
+
+void WorkerDetail::SetGameId(const string& _gameId)
+{
+    m_gameId = _gameId;
+    m_gameIdHasBeenSet = true;
+}
+
+bool WorkerDetail::GameIdHasBeenSet() const
+{
+    return m_gameIdHasBeenSet;
 }
 

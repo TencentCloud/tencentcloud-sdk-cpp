@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Mariadb::V20170312::Model;
+using namespace TencentCloud::Live::V20180801::Model;
 using namespace rapidjson;
 using namespace std;
 
-ModifyDBInstanceNameResponse::ModifyDBInstanceNameResponse() :
-    m_instanceIdHasBeenSet(false)
+DescribeAllStreamPlayInfoListResponse::DescribeAllStreamPlayInfoListResponse() :
+    m_queryTimeHasBeenSet(false),
+    m_dataInfoListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyDBInstanceNameResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeAllStreamPlayInfoListResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,14 +64,34 @@ CoreInternalOutcome ModifyDBInstanceNameResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    if (rsp.HasMember("QueryTime") && !rsp["QueryTime"].IsNull())
     {
-        if (!rsp["InstanceId"].IsString())
+        if (!rsp["QueryTime"].IsString())
         {
-            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `QueryTime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_instanceId = string(rsp["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
+        m_queryTime = string(rsp["QueryTime"].GetString());
+        m_queryTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DataInfoList") && !rsp["DataInfoList"].IsNull())
+    {
+        if (!rsp["DataInfoList"].IsArray())
+            return CoreInternalOutcome(Error("response `DataInfoList` is not array type"));
+
+        const Value &tmpValue = rsp["DataInfoList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MonitorStreamPlayInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataInfoList.push_back(item);
+        }
+        m_dataInfoListHasBeenSet = true;
     }
 
 
@@ -78,14 +99,24 @@ CoreInternalOutcome ModifyDBInstanceNameResponse::Deserialize(const string &payl
 }
 
 
-string ModifyDBInstanceNameResponse::GetInstanceId() const
+string DescribeAllStreamPlayInfoListResponse::GetQueryTime() const
 {
-    return m_instanceId;
+    return m_queryTime;
 }
 
-bool ModifyDBInstanceNameResponse::InstanceIdHasBeenSet() const
+bool DescribeAllStreamPlayInfoListResponse::QueryTimeHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_queryTimeHasBeenSet;
+}
+
+vector<MonitorStreamPlayInfo> DescribeAllStreamPlayInfoListResponse::GetDataInfoList() const
+{
+    return m_dataInfoList;
+}
+
+bool DescribeAllStreamPlayInfoListResponse::DataInfoListHasBeenSet() const
+{
+    return m_dataInfoListHasBeenSet;
 }
 
 

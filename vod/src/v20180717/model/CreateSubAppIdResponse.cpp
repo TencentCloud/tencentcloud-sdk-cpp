@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateSubAppIdResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Mariadb::V20170312::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace rapidjson;
 using namespace std;
 
-ModifyDBInstanceNameResponse::ModifyDBInstanceNameResponse() :
-    m_instanceIdHasBeenSet(false)
+CreateSubAppIdResponse::CreateSubAppIdResponse() :
+    m_subAppIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyDBInstanceNameResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateSubAppIdResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -63,14 +63,14 @@ CoreInternalOutcome ModifyDBInstanceNameResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    if (rsp.HasMember("SubAppId") && !rsp["SubAppId"].IsNull())
     {
-        if (!rsp["InstanceId"].IsString())
+        if (!rsp["SubAppId"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `SubAppId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_instanceId = string(rsp["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
+        m_subAppId = rsp["SubAppId"].GetUint64();
+        m_subAppIdHasBeenSet = true;
     }
 
 
@@ -78,14 +78,14 @@ CoreInternalOutcome ModifyDBInstanceNameResponse::Deserialize(const string &payl
 }
 
 
-string ModifyDBInstanceNameResponse::GetInstanceId() const
+uint64_t CreateSubAppIdResponse::GetSubAppId() const
 {
-    return m_instanceId;
+    return m_subAppId;
 }
 
-bool ModifyDBInstanceNameResponse::InstanceIdHasBeenSet() const
+bool CreateSubAppIdResponse::SubAppIdHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_subAppIdHasBeenSet;
 }
 
 

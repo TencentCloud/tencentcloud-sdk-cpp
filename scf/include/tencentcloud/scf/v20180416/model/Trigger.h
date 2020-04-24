@@ -172,6 +172,24 @@ namespace TencentCloud
                      */
                     bool CustomArgumentHasBeenSet() const;
 
+                    /**
+                     * 获取触发器状态
+                     * @return AvailableStatus 触发器状态
+                     */
+                    std::string GetAvailableStatus() const;
+
+                    /**
+                     * 设置触发器状态
+                     * @param AvailableStatus 触发器状态
+                     */
+                    void SetAvailableStatus(const std::string& _availableStatus);
+
+                    /**
+                     * 判断参数 AvailableStatus 是否已赋值
+                     * @return AvailableStatus 是否已赋值
+                     */
+                    bool AvailableStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +233,12 @@ namespace TencentCloud
                      */
                     std::string m_customArgument;
                     bool m_customArgumentHasBeenSet;
+
+                    /**
+                     * 触发器状态
+                     */
+                    std::string m_availableStatus;
+                    bool m_availableStatusHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ Trigger::Trigger() :
     m_triggerNameHasBeenSet(false),
     m_addTimeHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_customArgumentHasBeenSet(false)
+    m_customArgumentHasBeenSet(false),
+    m_availableStatusHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome Trigger::Deserialize(const Value &value)
         m_customArgumentHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailableStatus") && !value["AvailableStatus"].IsNull())
+    {
+        if (!value["AvailableStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Trigger.AvailableStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_availableStatus = string(value["AvailableStatus"].GetString());
+        m_availableStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void Trigger::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "CustomArgument";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_customArgument.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AvailableStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_availableStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void Trigger::SetCustomArgument(const string& _customArgument)
 bool Trigger::CustomArgumentHasBeenSet() const
 {
     return m_customArgumentHasBeenSet;
+}
+
+string Trigger::GetAvailableStatus() const
+{
+    return m_availableStatus;
+}
+
+void Trigger::SetAvailableStatus(const string& _availableStatus)
+{
+    m_availableStatus = _availableStatus;
+    m_availableStatusHasBeenSet = true;
+}
+
+bool Trigger::AvailableStatusHasBeenSet() const
+{
+    return m_availableStatusHasBeenSet;
 }
 

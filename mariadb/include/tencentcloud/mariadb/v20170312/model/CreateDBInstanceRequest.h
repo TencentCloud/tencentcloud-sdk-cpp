@@ -270,6 +270,60 @@ namespace TencentCloud
                      */
                     bool DbVersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例名称， 可以通过该字段自主的设置实例的名字
+                     * @return InstanceName 实例名称， 可以通过该字段自主的设置实例的名字
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称， 可以通过该字段自主的设置实例的名字
+                     * @param InstanceName 实例名称， 可以通过该字段自主的设置实例的名字
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取安全组ID列表
+                     * @return SecurityGroupIds 安全组ID列表
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组ID列表
+                     * @param SecurityGroupIds 安全组ID列表
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费标志，1:自动续费，2:不自动续费
+                     * @return AutoRenewFlag 自动续费标志，1:自动续费，2:不自动续费
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标志，1:自动续费，2:不自动续费
+                     * @param AutoRenewFlag 自动续费标志，1:自动续费，2:不自动续费
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +400,24 @@ namespace TencentCloud
                      */
                     std::string m_dbVersionId;
                     bool m_dbVersionIdHasBeenSet;
+
+                    /**
+                     * 实例名称， 可以通过该字段自主的设置实例的名字
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 安全组ID列表
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 自动续费标志，1:自动续费，2:不自动续费
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
 
                 };
             }

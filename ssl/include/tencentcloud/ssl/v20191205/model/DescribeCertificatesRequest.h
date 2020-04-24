@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词。
-                     * @return SearchKey 搜索关键词。
+                     * 获取搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * @return SearchKey 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索关键词。
-                     * @param SearchKey 搜索关键词。
+                     * 设置搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * @param SearchKey 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键词。
+                     * 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

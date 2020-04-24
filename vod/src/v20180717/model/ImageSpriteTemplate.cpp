@@ -34,7 +34,8 @@ ImageSpriteTemplate::ImageSpriteTemplate() :
     m_columnCountHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_fillTypeHasBeenSet(false)
+    m_fillTypeHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const Value &value)
         m_fillTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ImageSpriteTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +293,14 @@ void ImageSpriteTemplate::ToJsonObject(Value &value, Document::AllocatorType& al
         string key = "FillType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -493,5 +512,21 @@ void ImageSpriteTemplate::SetFillType(const string& _fillType)
 bool ImageSpriteTemplate::FillTypeHasBeenSet() const
 {
     return m_fillTypeHasBeenSet;
+}
+
+string ImageSpriteTemplate::GetComment() const
+{
+    return m_comment;
+}
+
+void ImageSpriteTemplate::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool ImageSpriteTemplate::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 

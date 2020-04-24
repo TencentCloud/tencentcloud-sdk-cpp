@@ -35,7 +35,10 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_dbVersionIdHasBeenSet(false)
+    m_dbVersionIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,35 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "DbVersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_dbVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 
@@ -350,6 +382,54 @@ void CreateDBInstanceRequest::SetDbVersionId(const string& _dbVersionId)
 bool CreateDBInstanceRequest::DbVersionIdHasBeenSet() const
 {
     return m_dbVersionIdHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void CreateDBInstanceRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+vector<string> CreateDBInstanceRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateDBInstanceRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+int64_t CreateDBInstanceRequest::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void CreateDBInstanceRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 
 

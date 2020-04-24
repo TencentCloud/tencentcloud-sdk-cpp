@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
-                     * @return MemorySize 函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     * 获取函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯
+                     * @return MemorySize 函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯
                      */
                     int64_t GetMemorySize() const;
 
                     /**
-                     * 设置函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
-                     * @param MemorySize 函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     * 设置函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯
+                     * @param MemorySize 函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯
                      */
                     void SetMemorySize(const int64_t& _memorySize);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool MemorySizeHasBeenSet() const;
 
                     /**
-                     * 获取函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
-                     * @return Timeout 函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     * 获取函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒
+                     * @return Timeout 函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒
                      */
                     int64_t GetTimeout() const;
 
                     /**
-                     * 设置函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
-                     * @param Timeout 函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     * 设置函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒
+                     * @param Timeout 函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒
                      */
                     void SetTimeout(const int64_t& _timeout);
 
@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool EnvironmentHasBeenSet() const;
 
                     /**
-                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
-                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
                      */
                     std::string GetRuntime() const;
 
                     /**
-                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
-                     * @param Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     * @param Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
                      */
                     void SetRuntime(const std::string& _runtime);
 
@@ -380,13 +380,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯
+                     * 函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯
                      */
                     int64_t m_memorySize;
                     bool m_memorySizeHasBeenSet;
 
                     /**
-                     * 函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒
+                     * 函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒
                      */
                     int64_t m_timeout;
                     bool m_timeoutHasBeenSet;
@@ -398,7 +398,7 @@ namespace TencentCloud
                     bool m_environmentHasBeenSet;
 
                     /**
-                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
+                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15， PHP5， PHP7，Golang1 和 Java8，默认Python2.7
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;

@@ -24,6 +24,7 @@ using namespace std;
 ProcedureTemplate::ProcedureTemplate() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_commentHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
@@ -57,6 +58,16 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProcedureTemplate.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
     }
 
     if (value.HasMember("MediaProcessTask") && !value["MediaProcessTask"].IsNull())
@@ -187,6 +198,14 @@ void ProcedureTemplate::ToJsonObject(Value &value, Document::AllocatorType& allo
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_mediaProcessTaskHasBeenSet)
     {
         Value iKey(kStringType);
@@ -281,6 +300,22 @@ void ProcedureTemplate::SetType(const string& _type)
 bool ProcedureTemplate::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string ProcedureTemplate::GetComment() const
+{
+    return m_comment;
+}
+
+void ProcedureTemplate::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool ProcedureTemplate::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 
 MediaProcessTaskInput ProcedureTemplate::GetMediaProcessTask() const

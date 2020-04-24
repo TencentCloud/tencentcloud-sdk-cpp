@@ -87,6 +87,8 @@
 #include <tencentcloud/live/v20180801/model/DeleteLiveWatermarkRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeletePullStreamConfigRequest.h>
 #include <tencentcloud/live/v20180801/model/DeletePullStreamConfigResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumRequest.h>
@@ -333,6 +335,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeletePullStreamConfigResponse> DeletePullStreamConfigOutcome;
                 typedef std::future<DeletePullStreamConfigOutcome> DeletePullStreamConfigOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeletePullStreamConfigRequest&, DeletePullStreamConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePullStreamConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAllStreamPlayInfoListResponse> DescribeAllStreamPlayInfoListOutcome;
+                typedef std::future<DescribeAllStreamPlayInfoListOutcome> DescribeAllStreamPlayInfoListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAllStreamPlayInfoListRequest&, DescribeAllStreamPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllStreamPlayInfoListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBillBandwidthAndFluxListResponse> DescribeBillBandwidthAndFluxListOutcome;
                 typedef std::future<DescribeBillBandwidthAndFluxListOutcome> DescribeBillBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBillBandwidthAndFluxListRequest&, DescribeBillBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillBandwidthAndFluxListAsyncHandler;
@@ -859,6 +864,15 @@ namespace TencentCloud
                 DeletePullStreamConfigOutcome DeletePullStreamConfig(const Model::DeletePullStreamConfigRequest &request);
                 void DeletePullStreamConfigAsync(const Model::DeletePullStreamConfigRequest& request, const DeletePullStreamConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePullStreamConfigOutcomeCallable DeletePullStreamConfigCallable(const Model::DeletePullStreamConfigRequest& request);
+
+                /**
+                 *输入某个时间点（1分钟维度），查询该时间点所有流的下行信息。
+                 * @param req DescribeAllStreamPlayInfoListRequest
+                 * @return DescribeAllStreamPlayInfoListOutcome
+                 */
+                DescribeAllStreamPlayInfoListOutcome DescribeAllStreamPlayInfoList(const Model::DescribeAllStreamPlayInfoListRequest &request);
+                void DescribeAllStreamPlayInfoListAsync(const Model::DescribeAllStreamPlayInfoListRequest& request, const DescribeAllStreamPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllStreamPlayInfoListOutcomeCallable DescribeAllStreamPlayInfoListCallable(const Model::DescribeAllStreamPlayInfoListRequest& request);
 
                 /**
                  *直播计费带宽和流量数据查询。

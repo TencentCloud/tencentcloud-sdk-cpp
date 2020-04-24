@@ -162,6 +162,24 @@ namespace TencentCloud
                      */
                     bool CountHasBeenSet() const;
 
+                    /**
+                     * 获取付费类型。postpaid：按量付费   prepaid：预付费
+                     * @return Paymode 付费类型。postpaid：按量付费   prepaid：预付费
+                     */
+                    std::string GetPaymode() const;
+
+                    /**
+                     * 设置付费类型。postpaid：按量付费   prepaid：预付费
+                     * @param Paymode 付费类型。postpaid：按量付费   prepaid：预付费
+                     */
+                    void SetPaymode(const std::string& _paymode);
+
+                    /**
+                     * 判断参数 Paymode 是否已赋值
+                     * @return Paymode 是否已赋值
+                     */
+                    bool PaymodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +220,12 @@ namespace TencentCloud
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 付费类型。postpaid：按量付费   prepaid：预付费
+                     */
+                    std::string m_paymode;
+                    bool m_paymodeHasBeenSet;
 
                 };
             }
