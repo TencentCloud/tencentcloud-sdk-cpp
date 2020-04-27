@@ -32,7 +32,9 @@ CreateLiveSnapshotTemplateRequest::CreateLiveSnapshotTemplateRequest() :
     m_snapshotIntervalHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_pornFlagHasBeenSet(false)
+    m_pornFlagHasBeenSet(false),
+    m_cosPrefixHasBeenSet(false),
+    m_cosFileNameHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,22 @@ string CreateLiveSnapshotTemplateRequest::ToJsonString() const
         string key = "PornFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pornFlag, allocator);
+    }
+
+    if (m_cosPrefixHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cosPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosFileNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosFileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cosFileName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +283,38 @@ void CreateLiveSnapshotTemplateRequest::SetPornFlag(const int64_t& _pornFlag)
 bool CreateLiveSnapshotTemplateRequest::PornFlagHasBeenSet() const
 {
     return m_pornFlagHasBeenSet;
+}
+
+string CreateLiveSnapshotTemplateRequest::GetCosPrefix() const
+{
+    return m_cosPrefix;
+}
+
+void CreateLiveSnapshotTemplateRequest::SetCosPrefix(const string& _cosPrefix)
+{
+    m_cosPrefix = _cosPrefix;
+    m_cosPrefixHasBeenSet = true;
+}
+
+bool CreateLiveSnapshotTemplateRequest::CosPrefixHasBeenSet() const
+{
+    return m_cosPrefixHasBeenSet;
+}
+
+string CreateLiveSnapshotTemplateRequest::GetCosFileName() const
+{
+    return m_cosFileName;
+}
+
+void CreateLiveSnapshotTemplateRequest::SetCosFileName(const string& _cosFileName)
+{
+    m_cosFileName = _cosFileName;
+    m_cosFileNameHasBeenSet = true;
+}
+
+bool CreateLiveSnapshotTemplateRequest::CosFileNameHasBeenSet() const
+{
+    return m_cosFileNameHasBeenSet;
 }
 
 

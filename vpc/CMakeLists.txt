@@ -93,6 +93,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/NetDetectState.h
   include/tencentcloud/vpc/v20170312/model/HaVipDisassociateAddressIpResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeTaskResultRequest.h
+  include/tencentcloud/vpc/v20170312/model/ModifyAddressInternetChargeTypeResponse.h
   include/tencentcloud/vpc/v20170312/model/UnassignIpv6SubnetCidrBlockRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyVpcAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/AssignIpv6CidrBlockRequest.h
@@ -113,6 +114,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/AddBandwidthPackageResourcesResponse.h
   include/tencentcloud/vpc/v20170312/model/DisassociateNetworkAclSubnetsResponse.h
   include/tencentcloud/vpc/v20170312/model/SetCcnRegionBandwidthLimitsRequest.h
+  include/tencentcloud/vpc/v20170312/model/ModifyAddressInternetChargeTypeRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyIp6AddressesBandwidthRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeDirectConnectGatewaysResponse.h
   include/tencentcloud/vpc/v20170312/model/Ip6RuleInfo.h
@@ -311,6 +313,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsRequest.h
   include/tencentcloud/vpc/v20170312/model/DisableRoutesResponse.h
   include/tencentcloud/vpc/v20170312/model/ResetVpnGatewayInternetMaxBandwidthResponse.h
+  include/tencentcloud/vpc/v20170312/model/AddressChargePrepaid.h
   include/tencentcloud/vpc/v20170312/model/DescribeNetworkAclsResponse.h
   include/tencentcloud/vpc/v20170312/model/DeleteFlowLogResponse.h
   include/tencentcloud/vpc/v20170312/model/AttachCcnInstancesResponse.h
@@ -589,6 +592,7 @@ set(vpc_src
   src/v20170312/model/NetDetectState.cpp
   src/v20170312/model/HaVipDisassociateAddressIpResponse.cpp
   src/v20170312/model/DescribeTaskResultRequest.cpp
+  src/v20170312/model/ModifyAddressInternetChargeTypeResponse.cpp
   src/v20170312/model/UnassignIpv6SubnetCidrBlockRequest.cpp
   src/v20170312/model/ModifyVpcAttributeRequest.cpp
   src/v20170312/model/AssignIpv6CidrBlockRequest.cpp
@@ -609,6 +613,7 @@ set(vpc_src
   src/v20170312/model/AddBandwidthPackageResourcesResponse.cpp
   src/v20170312/model/DisassociateNetworkAclSubnetsResponse.cpp
   src/v20170312/model/SetCcnRegionBandwidthLimitsRequest.cpp
+  src/v20170312/model/ModifyAddressInternetChargeTypeRequest.cpp
   src/v20170312/model/ModifyIp6AddressesBandwidthRequest.cpp
   src/v20170312/model/DescribeDirectConnectGatewaysResponse.cpp
   src/v20170312/model/Ip6RuleInfo.cpp
@@ -807,6 +812,7 @@ set(vpc_src
   src/v20170312/model/DescribeCustomerGatewayVendorsRequest.cpp
   src/v20170312/model/DisableRoutesResponse.cpp
   src/v20170312/model/ResetVpnGatewayInternetMaxBandwidthResponse.cpp
+  src/v20170312/model/AddressChargePrepaid.cpp
   src/v20170312/model/DescribeNetworkAclsResponse.cpp
   src/v20170312/model/DeleteFlowLogResponse.cpp
   src/v20170312/model/AttachCcnInstancesResponse.cpp

@@ -774,6 +774,28 @@ namespace TencentCloud
                      */
                     bool InstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedTime 部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUpdatedTime() const;
+
+                    /**
+                     * 设置部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdatedTime 部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdatedTime(const int64_t& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1006,6 +1028,13 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
+
+                    /**
+                     * 部署组更新时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }

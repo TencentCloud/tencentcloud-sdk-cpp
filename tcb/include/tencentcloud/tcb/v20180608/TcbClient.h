@@ -41,6 +41,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUsersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h>
@@ -98,6 +100,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEndUsersResponse> DescribeEndUsersOutcome;
                 typedef std::future<DescribeEndUsersOutcome> DescribeEndUsersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEndUsersRequest&, DescribeEndUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndUsersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEnvFreeQuotaResponse> DescribeEnvFreeQuotaOutcome;
+                typedef std::future<DescribeEnvFreeQuotaOutcome> DescribeEnvFreeQuotaOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvFreeQuotaRequest&, DescribeEnvFreeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvFreeQuotaAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEnvLimitResponse> DescribeEnvLimitOutcome;
                 typedef std::future<DescribeEnvLimitOutcome> DescribeEnvLimitOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvLimitRequest&, DescribeEnvLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvLimitAsyncHandler;
@@ -205,6 +210,15 @@ namespace TencentCloud
                 DescribeEndUsersOutcome DescribeEndUsers(const Model::DescribeEndUsersRequest &request);
                 void DescribeEndUsersAsync(const Model::DescribeEndUsersRequest& request, const DescribeEndUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEndUsersOutcomeCallable DescribeEndUsersCallable(const Model::DescribeEndUsersRequest& request);
+
+                /**
+                 *查询后付费免费配额信息
+                 * @param req DescribeEnvFreeQuotaRequest
+                 * @return DescribeEnvFreeQuotaOutcome
+                 */
+                DescribeEnvFreeQuotaOutcome DescribeEnvFreeQuota(const Model::DescribeEnvFreeQuotaRequest &request);
+                void DescribeEnvFreeQuotaAsync(const Model::DescribeEnvFreeQuotaRequest& request, const DescribeEnvFreeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvFreeQuotaOutcomeCallable DescribeEnvFreeQuotaCallable(const Model::DescribeEnvFreeQuotaRequest& request);
 
                 /**
                  *查询环境个数上限

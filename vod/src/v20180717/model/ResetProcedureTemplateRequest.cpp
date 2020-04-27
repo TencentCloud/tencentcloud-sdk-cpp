@@ -25,6 +25,7 @@ using namespace std;
 
 ResetProcedureTemplateRequest::ResetProcedureTemplateRequest() :
     m_nameHasBeenSet(false),
+    m_commentHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
@@ -46,6 +47,14 @@ string ResetProcedureTemplateRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mediaProcessTaskHasBeenSet)
@@ -114,6 +123,22 @@ void ResetProcedureTemplateRequest::SetName(const string& _name)
 bool ResetProcedureTemplateRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string ResetProcedureTemplateRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void ResetProcedureTemplateRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool ResetProcedureTemplateRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 
 MediaProcessTaskInput ResetProcedureTemplateRequest::GetMediaProcessTask() const

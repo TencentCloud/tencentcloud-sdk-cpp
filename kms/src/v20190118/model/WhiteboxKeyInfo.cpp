@@ -31,7 +31,8 @@ WhiteboxKeyInfo::WhiteboxKeyInfo() :
     m_ownerUinHasBeenSet(false),
     m_algorithmHasBeenSet(false),
     m_encryptKeyHasBeenSet(false),
-    m_decryptKeyHasBeenSet(false)
+    m_decryptKeyHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome WhiteboxKeyInfo::Deserialize(const Value &value)
         m_decryptKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WhiteboxKeyInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void WhiteboxKeyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "DecryptKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_decryptKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void WhiteboxKeyInfo::SetDecryptKey(const string& _decryptKey)
 bool WhiteboxKeyInfo::DecryptKeyHasBeenSet() const
 {
     return m_decryptKeyHasBeenSet;
+}
+
+string WhiteboxKeyInfo::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void WhiteboxKeyInfo::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool WhiteboxKeyInfo::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 

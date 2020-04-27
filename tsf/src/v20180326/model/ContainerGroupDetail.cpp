@@ -54,7 +54,8 @@ ContainerGroupDetail::ContainerGroupDetail() :
     m_memRequestHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
-    m_instanceCountHasBeenSet(false)
+    m_instanceCountHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -413,6 +414,16 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const Value &value)
         m_instanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ContainerGroupDetail.UpdatedTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = value["UpdatedTime"].GetInt64();
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -696,6 +707,14 @@ void ContainerGroupDetail::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updatedTime, allocator);
     }
 
 }
@@ -1227,5 +1246,21 @@ void ContainerGroupDetail::SetInstanceCount(const uint64_t& _instanceCount)
 bool ContainerGroupDetail::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
+}
+
+int64_t ContainerGroupDetail::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void ContainerGroupDetail::SetUpdatedTime(const int64_t& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

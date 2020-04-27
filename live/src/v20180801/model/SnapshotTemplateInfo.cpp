@@ -31,7 +31,9 @@ SnapshotTemplateInfo::SnapshotTemplateInfo() :
     m_cosAppIdHasBeenSet(false),
     m_cosBucketHasBeenSet(false),
     m_cosRegionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_cosPrefixHasBeenSet(false),
+    m_cosFileNameHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,26 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("CosPrefix") && !value["CosPrefix"].IsNull())
+    {
+        if (!value["CosPrefix"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.CosPrefix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosPrefix = string(value["CosPrefix"].GetString());
+        m_cosPrefixHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosFileName") && !value["CosFileName"].IsNull())
+    {
+        if (!value["CosFileName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SnapshotTemplateInfo.CosFileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosFileName = string(value["CosFileName"].GetString());
+        m_cosFileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +247,22 @@ void SnapshotTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosPrefixHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cosPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosFileNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosFileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cosFileName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +426,37 @@ void SnapshotTemplateInfo::SetDescription(const string& _description)
 bool SnapshotTemplateInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string SnapshotTemplateInfo::GetCosPrefix() const
+{
+    return m_cosPrefix;
+}
+
+void SnapshotTemplateInfo::SetCosPrefix(const string& _cosPrefix)
+{
+    m_cosPrefix = _cosPrefix;
+    m_cosPrefixHasBeenSet = true;
+}
+
+bool SnapshotTemplateInfo::CosPrefixHasBeenSet() const
+{
+    return m_cosPrefixHasBeenSet;
+}
+
+string SnapshotTemplateInfo::GetCosFileName() const
+{
+    return m_cosFileName;
+}
+
+void SnapshotTemplateInfo::SetCosFileName(const string& _cosFileName)
+{
+    m_cosFileName = _cosFileName;
+    m_cosFileNameHasBeenSet = true;
+}
+
+bool SnapshotTemplateInfo::CosFileNameHasBeenSet() const
+{
+    return m_cosFileNameHasBeenSet;
 }
 

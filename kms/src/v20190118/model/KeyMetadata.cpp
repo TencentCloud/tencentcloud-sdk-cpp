@@ -35,7 +35,8 @@ KeyMetadata::KeyMetadata() :
     m_nextRotateTimeHasBeenSet(false),
     m_deletionDateHasBeenSet(false),
     m_originHasBeenSet(false),
-    m_validToHasBeenSet(false)
+    m_validToHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome KeyMetadata::Deserialize(const Value &value)
         m_validToHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `KeyMetadata.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "ValidTo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_validTo, allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +547,21 @@ void KeyMetadata::SetValidTo(const uint64_t& _validTo)
 bool KeyMetadata::ValidToHasBeenSet() const
 {
     return m_validToHasBeenSet;
+}
+
+string KeyMetadata::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void KeyMetadata::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool KeyMetadata::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 

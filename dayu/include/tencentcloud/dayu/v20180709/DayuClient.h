@@ -53,6 +53,10 @@
 #include <tencentcloud/dayu/v20180709/model/CreateL7RulesUploadResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateNetReturnRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateNetReturnResponse.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNewL4RulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNewL4RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNewL7RulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/CreateNewL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpRequest.h>
 #include <tencentcloud/dayu/v20180709/model/CreateUnblockIpResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteCCFrequencyRulesRequest.h>
@@ -67,6 +71,10 @@
 #include <tencentcloud/dayu/v20180709/model/DeleteL4RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteL7RulesRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DeleteL7RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DeleteNewL4RulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DeleteNewL4RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DeleteNewL7RulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DeleteNewL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeActionLogRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeActionLogResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeBGPIPL7RuleMaxCntRequest.h>
@@ -137,6 +145,12 @@
 #include <tencentcloud/dayu/v20180709/model/DescribeL4RulesErrHealthResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeL7HealthConfigRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribeL7HealthConfigResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeNewL4RulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeNewL4RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeNewL4RulesErrHealthRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeNewL4RulesErrHealthResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeNewL7RulesErrHealthRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribeNewL7RulesErrHealthResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribePackIndexRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribePackIndexResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribePcapRequest.h>
@@ -163,6 +177,8 @@
 #include <tencentcloud/dayu/v20180709/model/DescribleL4RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribleL7RulesRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribleL7RulesResponse.h>
+#include <tencentcloud/dayu/v20180709/model/DescribleNewL7RulesRequest.h>
+#include <tencentcloud/dayu/v20180709/model/DescribleNewL7RulesResponse.h>
 #include <tencentcloud/dayu/v20180709/model/DescribleRegionCountRequest.h>
 #include <tencentcloud/dayu/v20180709/model/DescribleRegionCountResponse.h>
 #include <tencentcloud/dayu/v20180709/model/ModifyCCAlarmThresholdRequest.h>
@@ -280,6 +296,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNetReturnResponse> CreateNetReturnOutcome;
                 typedef std::future<CreateNetReturnOutcome> CreateNetReturnOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateNetReturnRequest&, CreateNetReturnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetReturnAsyncHandler;
+                typedef Outcome<Error, Model::CreateNewL4RulesResponse> CreateNewL4RulesOutcome;
+                typedef std::future<CreateNewL4RulesOutcome> CreateNewL4RulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateNewL4RulesRequest&, CreateNewL4RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNewL4RulesAsyncHandler;
+                typedef Outcome<Error, Model::CreateNewL7RulesResponse> CreateNewL7RulesOutcome;
+                typedef std::future<CreateNewL7RulesOutcome> CreateNewL7RulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::CreateNewL7RulesRequest&, CreateNewL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNewL7RulesAsyncHandler;
                 typedef Outcome<Error, Model::CreateUnblockIpResponse> CreateUnblockIpOutcome;
                 typedef std::future<CreateUnblockIpOutcome> CreateUnblockIpOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::CreateUnblockIpRequest&, CreateUnblockIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnblockIpAsyncHandler;
@@ -301,6 +323,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteL7RulesResponse> DeleteL7RulesOutcome;
                 typedef std::future<DeleteL7RulesOutcome> DeleteL7RulesOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DeleteL7RulesRequest&, DeleteL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL7RulesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteNewL4RulesResponse> DeleteNewL4RulesOutcome;
+                typedef std::future<DeleteNewL4RulesOutcome> DeleteNewL4RulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DeleteNewL4RulesRequest&, DeleteNewL4RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNewL4RulesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteNewL7RulesResponse> DeleteNewL7RulesOutcome;
+                typedef std::future<DeleteNewL7RulesOutcome> DeleteNewL7RulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DeleteNewL7RulesRequest&, DeleteNewL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNewL7RulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeActionLogResponse> DescribeActionLogOutcome;
                 typedef std::future<DescribeActionLogOutcome> DescribeActionLogOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeActionLogRequest&, DescribeActionLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionLogAsyncHandler;
@@ -406,6 +434,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeL7HealthConfigResponse> DescribeL7HealthConfigOutcome;
                 typedef std::future<DescribeL7HealthConfigOutcome> DescribeL7HealthConfigOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribeL7HealthConfigRequest&, DescribeL7HealthConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL7HealthConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNewL4RulesResponse> DescribeNewL4RulesOutcome;
+                typedef std::future<DescribeNewL4RulesOutcome> DescribeNewL4RulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeNewL4RulesRequest&, DescribeNewL4RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewL4RulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNewL4RulesErrHealthResponse> DescribeNewL4RulesErrHealthOutcome;
+                typedef std::future<DescribeNewL4RulesErrHealthOutcome> DescribeNewL4RulesErrHealthOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeNewL4RulesErrHealthRequest&, DescribeNewL4RulesErrHealthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewL4RulesErrHealthAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNewL7RulesErrHealthResponse> DescribeNewL7RulesErrHealthOutcome;
+                typedef std::future<DescribeNewL7RulesErrHealthOutcome> DescribeNewL7RulesErrHealthOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribeNewL7RulesErrHealthRequest&, DescribeNewL7RulesErrHealthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewL7RulesErrHealthAsyncHandler;
                 typedef Outcome<Error, Model::DescribePackIndexResponse> DescribePackIndexOutcome;
                 typedef std::future<DescribePackIndexOutcome> DescribePackIndexOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribePackIndexRequest&, DescribePackIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackIndexAsyncHandler;
@@ -445,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribleL7RulesResponse> DescribleL7RulesOutcome;
                 typedef std::future<DescribleL7RulesOutcome> DescribleL7RulesOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribleL7RulesRequest&, DescribleL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribleL7RulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribleNewL7RulesResponse> DescribleNewL7RulesOutcome;
+                typedef std::future<DescribleNewL7RulesOutcome> DescribleNewL7RulesOutcomeCallable;
+                typedef std::function<void(const DayuClient*, const Model::DescribleNewL7RulesRequest&, DescribleNewL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribleNewL7RulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribleRegionCountResponse> DescribleRegionCountOutcome;
                 typedef std::future<DescribleRegionCountOutcome> DescribleRegionCountOutcomeCallable;
                 typedef std::function<void(const DayuClient*, const Model::DescribleRegionCountRequest&, DescribleRegionCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribleRegionCountAsyncHandler;
@@ -671,6 +711,24 @@ namespace TencentCloud
                 CreateNetReturnOutcomeCallable CreateNetReturnCallable(const Model::CreateNetReturnRequest& request);
 
                 /**
+                 *添加L4转发规则
+                 * @param req CreateNewL4RulesRequest
+                 * @return CreateNewL4RulesOutcome
+                 */
+                CreateNewL4RulesOutcome CreateNewL4Rules(const Model::CreateNewL4RulesRequest &request);
+                void CreateNewL4RulesAsync(const Model::CreateNewL4RulesRequest& request, const CreateNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNewL4RulesOutcomeCallable CreateNewL4RulesCallable(const Model::CreateNewL4RulesRequest& request);
+
+                /**
+                 *添加7层转发规则
+                 * @param req CreateNewL7RulesRequest
+                 * @return CreateNewL7RulesOutcome
+                 */
+                CreateNewL7RulesOutcome CreateNewL7Rules(const Model::CreateNewL7RulesRequest &request);
+                void CreateNewL7RulesAsync(const Model::CreateNewL7RulesRequest& request, const CreateNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNewL7RulesOutcomeCallable CreateNewL7RulesCallable(const Model::CreateNewL7RulesRequest& request);
+
+                /**
                  *IP解封操作
                  * @param req CreateUnblockIpRequest
                  * @return CreateUnblockIpOutcome
@@ -732,6 +790,24 @@ namespace TencentCloud
                 DeleteL7RulesOutcome DeleteL7Rules(const Model::DeleteL7RulesRequest &request);
                 void DeleteL7RulesAsync(const Model::DeleteL7RulesRequest& request, const DeleteL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteL7RulesOutcomeCallable DeleteL7RulesCallable(const Model::DeleteL7RulesRequest& request);
+
+                /**
+                 *删除L4转发规则
+                 * @param req DeleteNewL4RulesRequest
+                 * @return DeleteNewL4RulesOutcome
+                 */
+                DeleteNewL4RulesOutcome DeleteNewL4Rules(const Model::DeleteNewL4RulesRequest &request);
+                void DeleteNewL4RulesAsync(const Model::DeleteNewL4RulesRequest& request, const DeleteNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNewL4RulesOutcomeCallable DeleteNewL4RulesCallable(const Model::DeleteNewL4RulesRequest& request);
+
+                /**
+                 *删除L7转发规则
+                 * @param req DeleteNewL7RulesRequest
+                 * @return DeleteNewL7RulesOutcome
+                 */
+                DeleteNewL7RulesOutcome DeleteNewL7Rules(const Model::DeleteNewL7RulesRequest &request);
+                void DeleteNewL7RulesAsync(const Model::DeleteNewL7RulesRequest& request, const DeleteNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNewL7RulesOutcomeCallable DeleteNewL7RulesCallable(const Model::DeleteNewL7RulesRequest& request);
 
                 /**
                  *获取操作日志
@@ -1050,6 +1126,33 @@ namespace TencentCloud
                 DescribeL7HealthConfigOutcomeCallable DescribeL7HealthConfigCallable(const Model::DescribeL7HealthConfigRequest& request);
 
                 /**
+                 *获取L4转发规则
+                 * @param req DescribeNewL4RulesRequest
+                 * @return DescribeNewL4RulesOutcome
+                 */
+                DescribeNewL4RulesOutcome DescribeNewL4Rules(const Model::DescribeNewL4RulesRequest &request);
+                void DescribeNewL4RulesAsync(const Model::DescribeNewL4RulesRequest& request, const DescribeNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNewL4RulesOutcomeCallable DescribeNewL4RulesCallable(const Model::DescribeNewL4RulesRequest& request);
+
+                /**
+                 *获取L4转发规则健康检查异常结果
+                 * @param req DescribeNewL4RulesErrHealthRequest
+                 * @return DescribeNewL4RulesErrHealthOutcome
+                 */
+                DescribeNewL4RulesErrHealthOutcome DescribeNewL4RulesErrHealth(const Model::DescribeNewL4RulesErrHealthRequest &request);
+                void DescribeNewL4RulesErrHealthAsync(const Model::DescribeNewL4RulesErrHealthRequest& request, const DescribeNewL4RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNewL4RulesErrHealthOutcomeCallable DescribeNewL4RulesErrHealthCallable(const Model::DescribeNewL4RulesErrHealthRequest& request);
+
+                /**
+                 *获取L7转发规则健康检查异常结果
+                 * @param req DescribeNewL7RulesErrHealthRequest
+                 * @return DescribeNewL7RulesErrHealthOutcome
+                 */
+                DescribeNewL7RulesErrHealthOutcome DescribeNewL7RulesErrHealth(const Model::DescribeNewL7RulesErrHealthRequest &request);
+                void DescribeNewL7RulesErrHealthAsync(const Model::DescribeNewL7RulesErrHealthRequest& request, const DescribeNewL7RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNewL7RulesErrHealthOutcomeCallable DescribeNewL7RulesErrHealthCallable(const Model::DescribeNewL7RulesErrHealthRequest& request);
+
+                /**
                  *获取产品总览统计，支持高防包、高防IP、高防IP专业版；
                  * @param req DescribePackIndexRequest
                  * @return DescribePackIndexOutcome
@@ -1165,6 +1268,15 @@ namespace TencentCloud
                 DescribleL7RulesOutcome DescribleL7Rules(const Model::DescribleL7RulesRequest &request);
                 void DescribleL7RulesAsync(const Model::DescribleL7RulesRequest& request, const DescribleL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribleL7RulesOutcomeCallable DescribleL7RulesCallable(const Model::DescribleL7RulesRequest& request);
+
+                /**
+                 *获取7层规则
+                 * @param req DescribleNewL7RulesRequest
+                 * @return DescribleNewL7RulesOutcome
+                 */
+                DescribleNewL7RulesOutcome DescribleNewL7Rules(const Model::DescribleNewL7RulesRequest &request);
+                void DescribleNewL7RulesAsync(const Model::DescribleNewL7RulesRequest& request, const DescribleNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribleNewL7RulesOutcomeCallable DescribleNewL7RulesCallable(const Model::DescribleNewL7RulesRequest& request);
 
                 /**
                  *获取地域的资源实例数

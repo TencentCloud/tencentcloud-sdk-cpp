@@ -32,7 +32,8 @@ CreateImageSpriteTemplateRequest::CreateImageSpriteTemplateRequest() :
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_resolutionAdaptiveHasBeenSet(false),
-    m_fillTypeHasBeenSet(false)
+    m_fillTypeHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         string key = "FillType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -265,6 +274,22 @@ void CreateImageSpriteTemplateRequest::SetFillType(const string& _fillType)
 bool CreateImageSpriteTemplateRequest::FillTypeHasBeenSet() const
 {
     return m_fillTypeHasBeenSet;
+}
+
+string CreateImageSpriteTemplateRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void CreateImageSpriteTemplateRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 
 

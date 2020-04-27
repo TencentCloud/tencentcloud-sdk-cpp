@@ -6533,6 +6533,49 @@ VpcClient::ModifyAddressAttributeOutcomeCallable VpcClient::ModifyAddressAttribu
     return task->get_future();
 }
 
+VpcClient::ModifyAddressInternetChargeTypeOutcome VpcClient::ModifyAddressInternetChargeType(const ModifyAddressInternetChargeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAddressInternetChargeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAddressInternetChargeTypeResponse rsp = ModifyAddressInternetChargeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAddressInternetChargeTypeOutcome(rsp);
+        else
+            return ModifyAddressInternetChargeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAddressInternetChargeTypeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyAddressInternetChargeTypeAsync(const ModifyAddressInternetChargeTypeRequest& request, const ModifyAddressInternetChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAddressInternetChargeType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyAddressInternetChargeTypeOutcomeCallable VpcClient::ModifyAddressInternetChargeTypeCallable(const ModifyAddressInternetChargeTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAddressInternetChargeTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAddressInternetChargeType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyAddressTemplateAttributeOutcome VpcClient::ModifyAddressTemplateAttribute(const ModifyAddressTemplateAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAddressTemplateAttribute");

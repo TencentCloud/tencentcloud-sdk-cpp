@@ -233,24 +233,6 @@ namespace TencentCloud
                     bool ColumnCountHasBeenSet() const;
 
                     /**
-                     * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t GetSubAppId() const;
-
-                    /**
-                     * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    void SetSubAppId(const uint64_t& _subAppId);
-
-                    /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
-                     */
-                    bool SubAppIdHasBeenSet() const;
-
-                    /**
                      * 获取填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
 <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
@@ -279,6 +261,42 @@ namespace TencentCloud
                      * @return FillType 是否已赋值
                      */
                     bool FillTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模板描述信息，长度限制：256 个字符。
+                     * @return Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置模板描述信息，长度限制：256 个字符。
+                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     */
+                    bool CommentHasBeenSet() const;
+
+                    /**
+                     * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     */
+                    bool SubAppIdHasBeenSet() const;
 
                 private:
 
@@ -344,12 +362,6 @@ namespace TencentCloud
                     bool m_columnCountHasBeenSet;
 
                     /**
-                     * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
-
-                    /**
                      * 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
 <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
@@ -357,6 +369,18 @@ namespace TencentCloud
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;
+
+                    /**
+                     * 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
+
+                    /**
+                     * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
 
                 };
             }

@@ -50,13 +50,17 @@ namespace TencentCloud
 
                     /**
                      * 获取云数据库实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 云数据库实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置云数据库实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param InstanceId 云数据库实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -104,13 +108,17 @@ namespace TencentCloud
 
                     /**
                      * 获取待回档的数据库信息，表示整库回档
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Databases 待回档的数据库信息，表示整库回档
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RollbackDBName> GetDatabases() const;
 
                     /**
                      * 设置待回档的数据库信息，表示整库回档
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Databases 待回档的数据库信息，表示整库回档
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDatabases(const std::vector<RollbackDBName>& _databases);
 
@@ -122,13 +130,17 @@ namespace TencentCloud
 
                     /**
                      * 获取待回档的数据库表信息，表示按表回档
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 待回档的数据库表信息，表示按表回档
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RollbackTables> GetTables() const;
 
                     /**
                      * 设置待回档的数据库表信息，表示按表回档
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Tables 待回档的数据库表信息，表示按表回档
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTables(const std::vector<RollbackTables>& _tables);
 
@@ -142,6 +154,7 @@ namespace TencentCloud
 
                     /**
                      * 云数据库实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -160,12 +173,14 @@ namespace TencentCloud
 
                     /**
                      * 待回档的数据库信息，表示整库回档
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RollbackDBName> m_databases;
                     bool m_databasesHasBeenSet;
 
                     /**
                      * 待回档的数据库表信息，表示按表回档
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RollbackTables> m_tables;
                     bool m_tablesHasBeenSet;

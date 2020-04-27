@@ -291,17 +291,17 @@ BindType==2时必填
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取超级网银行号和大小额行号
+                     * 获取大小额行号，超级网银行号和大小额行号
 二选一
-                     * @return CnapsBranchId 超级网银行号和大小额行号
+                     * @return CnapsBranchId 大小额行号，超级网银行号和大小额行号
 二选一
                      */
                     std::string GetCnapsBranchId() const;
 
                     /**
-                     * 设置超级网银行号和大小额行号
+                     * 设置大小额行号，超级网银行号和大小额行号
 二选一
-                     * @param CnapsBranchId 超级网银行号和大小额行号
+                     * @param CnapsBranchId 大小额行号，超级网银行号和大小额行号
 二选一
                      */
                     void SetCnapsBranchId(const std::string& _cnapsBranchId);
@@ -313,17 +313,17 @@ BindType==2时必填
                     bool CnapsBranchIdHasBeenSet() const;
 
                     /**
-                     * 获取超级网银行号和大小额行号
+                     * 获取超级网银行号，超级网银行号和大小额行号
 二选一
-                     * @return EiconBankBranchId 超级网银行号和大小额行号
+                     * @return EiconBankBranchId 超级网银行号，超级网银行号和大小额行号
 二选一
                      */
                     std::string GetEiconBankBranchId() const;
 
                     /**
-                     * 设置超级网银行号和大小额行号
+                     * 设置超级网银行号，超级网银行号和大小额行号
 二选一
-                     * @param EiconBankBranchId 超级网银行号和大小额行号
+                     * @param EiconBankBranchId 超级网银行号，超级网银行号和大小额行号
 二选一
                      */
                     void SetEiconBankBranchId(const std::string& _eiconBankBranchId);
@@ -417,14 +417,14 @@ BindType==2时必填
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 超级网银行号和大小额行号
+                     * 大小额行号，超级网银行号和大小额行号
 二选一
                      */
                     std::string m_cnapsBranchId;
                     bool m_cnapsBranchIdHasBeenSet;
 
                     /**
-                     * 超级网银行号和大小额行号
+                     * 超级网银行号，超级网银行号和大小额行号
 二选一
                      */
                     std::string m_eiconBankBranchId;

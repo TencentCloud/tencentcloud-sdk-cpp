@@ -173,6 +173,24 @@ namespace TencentCloud
                      */
                     bool InstanceStatisticsHasBeenSet() const;
 
+                    /**
+                     * 获取所有资源的总计数。
+                     * @return TotalCount 所有资源的总计数。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 设置所有资源的总计数。
+                     * @param TotalCount 所有资源的总计数。
+                     */
+                    void SetTotalCount(const uint64_t& _totalCount);
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +234,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceStatistic> m_instanceStatistics;
                     bool m_instanceStatisticsHasBeenSet;
+
+                    /**
+                     * 所有资源的总计数。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

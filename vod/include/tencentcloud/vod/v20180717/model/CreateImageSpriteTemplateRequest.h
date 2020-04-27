@@ -149,6 +149,54 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取模板描述信息，长度限制：256 个字符。
+                     * @return Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置模板描述信息，长度限制：256 个字符。
+                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     */
+                    bool CommentHasBeenSet() const;
+
+                    /**
+                     * 获取填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
+<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
+<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
+默认值：black 。
+                     * @return FillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
+<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
+<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
+默认值：black 。
+                     */
+                    std::string GetFillType() const;
+
+                    /**
+                     * 设置填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
+<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
+<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
+默认值：black 。
+                     * @param FillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
+<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
+<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
+默认值：black 。
+                     */
+                    void SetFillType(const std::string& _fillType);
+
+                    /**
+                     * 判断参数 FillType 是否已赋值
+                     * @return FillType 是否已赋值
+                     */
+                    bool FillTypeHasBeenSet() const;
+
+                    /**
                      * 获取雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。
 <li>当 Width、Height 均为 0，则分辨率同源；</li>
 <li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>
@@ -272,36 +320,6 @@ namespace TencentCloud
                      */
                     bool SubAppIdHasBeenSet() const;
 
-                    /**
-                     * 获取填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
-                     * @return FillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
-                     */
-                    std::string GetFillType() const;
-
-                    /**
-                     * 设置填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
-                     * @param FillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
-                     */
-                    void SetFillType(const std::string& _fillType);
-
-                    /**
-                     * 判断参数 FillType 是否已赋值
-                     * @return FillType 是否已赋值
-                     */
-                    bool FillTypeHasBeenSet() const;
-
                 private:
 
                     /**
@@ -339,6 +357,21 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
+                     * 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
+
+                    /**
+                     * 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
+<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
+<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
+默认值：black 。
+                     */
+                    std::string m_fillType;
+                    bool m_fillTypeHasBeenSet;
+
+                    /**
                      * 雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。
 <li>当 Width、Height 均为 0，则分辨率同源；</li>
 <li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>
@@ -374,15 +407,6 @@ namespace TencentCloud
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
-
-                    /**
-                     * 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
-<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
-<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
-默认值：black 。
-                     */
-                    std::string m_fillType;
-                    bool m_fillTypeHasBeenSet;
 
                 };
             }

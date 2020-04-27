@@ -39,7 +39,8 @@ ServerlessGroup::ServerlessGroup() :
     m_instanceRequestHasBeenSet(false),
     m_startupParametersHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_instanceCountHasBeenSet(false)
+    m_instanceCountHasBeenSet(false),
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,19 @@ CoreInternalOutcome ServerlessGroup::Deserialize(const Value &value)
         m_instanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationName") && !value["ApplicationName"].IsNull())
+    {
+        if (!value["ApplicationName"].IsArray())
+            return CoreInternalOutcome(Error("response `ServerlessGroup.ApplicationName` is not array type"));
+
+        const Value &tmpValue = value["ApplicationName"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_applicationName.push_back((*itr).GetString());
+        }
+        m_applicationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +391,19 @@ void ServerlessGroup::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_applicationNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_applicationName.begin(); itr != m_applicationName.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -668,5 +695,21 @@ void ServerlessGroup::SetInstanceCount(const uint64_t& _instanceCount)
 bool ServerlessGroup::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
+}
+
+vector<string> ServerlessGroup::GetApplicationName() const
+{
+    return m_applicationName;
+}
+
+void ServerlessGroup::SetApplicationName(const vector<string>& _applicationName)
+{
+    m_applicationName = _applicationName;
+    m_applicationNameHasBeenSet = true;
+}
+
+bool ServerlessGroup::ApplicationNameHasBeenSet() const
+{
+    return m_applicationNameHasBeenSet;
 }
 

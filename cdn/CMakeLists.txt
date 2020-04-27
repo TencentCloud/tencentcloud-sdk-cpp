@@ -41,11 +41,13 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/Referer.h
   include/tencentcloud/cdn/v20180606/model/AdvanceCacheRule.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpStatusResponse.h
+  include/tencentcloud/cdn/v20180606/model/UpdateImageConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/DeleteCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribePayTypeResponse.h
   include/tencentcloud/cdn/v20180606/model/ListTopDataRequest.h
   include/tencentcloud/cdn/v20180606/model/ListClsTopicDomainsRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h
+  include/tencentcloud/cdn/v20180606/model/UpdateImageConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/CreateClsLogTopicRequest.h
   include/tencentcloud/cdn/v20180606/model/CompressionRule.h
   include/tencentcloud/cdn/v20180606/model/GuetzliAdapter.h
@@ -134,6 +136,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DeleteClsLogTopicResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeBillingDataResponse.h
   include/tencentcloud/cdn/v20180606/model/DisableCachesResponse.h
+  include/tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnDataResponse.h
   include/tencentcloud/cdn/v20180606/model/EnableClsLogTopicRequest.h
@@ -181,6 +184,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DeleteCdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/CdnIp.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnDataRequest.h
+  include/tencentcloud/cdn/v20180606/model/DescribeImageConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsRequest.h
   )
 
@@ -208,11 +212,13 @@ set(cdn_src
   src/v20180606/model/Referer.cpp
   src/v20180606/model/AdvanceCacheRule.cpp
   src/v20180606/model/DescribeIpStatusResponse.cpp
+  src/v20180606/model/UpdateImageConfigResponse.cpp
   src/v20180606/model/DeleteCdnDomainRequest.cpp
   src/v20180606/model/DescribePayTypeResponse.cpp
   src/v20180606/model/ListTopDataRequest.cpp
   src/v20180606/model/ListClsTopicDomainsRequest.cpp
   src/v20180606/model/DescribeDomainsResponse.cpp
+  src/v20180606/model/UpdateImageConfigRequest.cpp
   src/v20180606/model/CreateClsLogTopicRequest.cpp
   src/v20180606/model/CompressionRule.cpp
   src/v20180606/model/GuetzliAdapter.cpp
@@ -301,6 +307,7 @@ set(cdn_src
   src/v20180606/model/DeleteClsLogTopicResponse.cpp
   src/v20180606/model/DescribeBillingDataResponse.cpp
   src/v20180606/model/DisableCachesResponse.cpp
+  src/v20180606/model/DescribeImageConfigRequest.cpp
   src/v20180606/model/DescribeCdnIpResponse.cpp
   src/v20180606/model/DescribeCdnDataResponse.cpp
   src/v20180606/model/EnableClsLogTopicRequest.cpp
@@ -348,6 +355,7 @@ set(cdn_src
   src/v20180606/model/DeleteCdnDomainResponse.cpp
   src/v20180606/model/CdnIp.cpp
   src/v20180606/model/DescribeCdnDataRequest.cpp
+  src/v20180606/model/DescribeImageConfigResponse.cpp
   src/v20180606/model/DescribeDomainsRequest.cpp
   )
 

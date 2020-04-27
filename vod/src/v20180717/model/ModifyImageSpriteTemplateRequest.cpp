@@ -33,8 +33,9 @@ ModifyImageSpriteTemplateRequest::ModifyImageSpriteTemplateRequest() :
     m_sampleIntervalHasBeenSet(false),
     m_rowCountHasBeenSet(false),
     m_columnCountHasBeenSet(false),
-    m_subAppIdHasBeenSet(false),
-    m_fillTypeHasBeenSet(false)
+    m_fillTypeHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -117,20 +118,28 @@ string ModifyImageSpriteTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_columnCount, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
     if (m_fillTypeHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "FillType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -285,22 +294,6 @@ bool ModifyImageSpriteTemplateRequest::ColumnCountHasBeenSet() const
     return m_columnCountHasBeenSet;
 }
 
-uint64_t ModifyImageSpriteTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyImageSpriteTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyImageSpriteTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
-}
-
 string ModifyImageSpriteTemplateRequest::GetFillType() const
 {
     return m_fillType;
@@ -315,6 +308,38 @@ void ModifyImageSpriteTemplateRequest::SetFillType(const string& _fillType)
 bool ModifyImageSpriteTemplateRequest::FillTypeHasBeenSet() const
 {
     return m_fillTypeHasBeenSet;
+}
+
+string ModifyImageSpriteTemplateRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void ModifyImageSpriteTemplateRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool ModifyImageSpriteTemplateRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+
+uint64_t ModifyImageSpriteTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyImageSpriteTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyImageSpriteTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 

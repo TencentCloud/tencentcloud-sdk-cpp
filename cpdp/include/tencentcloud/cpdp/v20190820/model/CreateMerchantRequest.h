@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TaxpayerNumHasBeenSet() const;
 
                     /**
-                     * 获取注册企业法人代表名称
-                     * @return LegalPersonName 注册企业法人代表名称
+                     * 获取注册企业法定代表人名称
+                     * @return LegalPersonName 注册企业法定代表人名称
                      */
                     std::string GetLegalPersonName() const;
 
                     /**
-                     * 设置注册企业法人代表名称
-                     * @param LegalPersonName 注册企业法人代表名称
+                     * 设置注册企业法定代表人名称
+                     * @param LegalPersonName 注册企业法定代表人名称
                      */
                     void SetLegalPersonName(const std::string& _legalPersonName);
 
@@ -457,7 +457,7 @@ namespace TencentCloud
                     bool m_taxpayerNumHasBeenSet;
 
                     /**
-                     * 注册企业法人代表名称
+                     * 注册企业法定代表人名称
                      */
                     std::string m_legalPersonName;
                     bool m_legalPersonNameHasBeenSet;

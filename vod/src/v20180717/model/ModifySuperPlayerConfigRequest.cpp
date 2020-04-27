@@ -30,6 +30,7 @@ ModifySuperPlayerConfigRequest::ModifySuperPlayerConfigRequest() :
     m_drmStreamingsInfoHasBeenSet(false),
     m_imageSpriteDefinitionHasBeenSet(false),
     m_resolutionNamesHasBeenSet(false),
+    m_commentHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -95,6 +96,14 @@ string ModifySuperPlayerConfigRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -207,6 +216,22 @@ void ModifySuperPlayerConfigRequest::SetResolutionNames(const vector<ResolutionN
 bool ModifySuperPlayerConfigRequest::ResolutionNamesHasBeenSet() const
 {
     return m_resolutionNamesHasBeenSet;
+}
+
+string ModifySuperPlayerConfigRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void ModifySuperPlayerConfigRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool ModifySuperPlayerConfigRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 
 uint64_t ModifySuperPlayerConfigRequest::GetSubAppId() const

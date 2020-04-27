@@ -29,11 +29,12 @@ CreateImageSpriteTemplateRequest::CreateImageSpriteTemplateRequest() :
     m_rowCountHasBeenSet(false),
     m_columnCountHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_commentHasBeenSet(false),
+    m_fillTypeHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_resolutionAdaptiveHasBeenSet(false),
-    m_subAppIdHasBeenSet(false),
-    m_fillTypeHasBeenSet(false)
+    m_subAppIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,22 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fillTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FillType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_widthHasBeenSet)
     {
         Value iKey(kStringType);
@@ -114,14 +131,6 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
-    }
-
-    if (m_fillTypeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "FillType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fillType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -212,6 +221,38 @@ bool CreateImageSpriteTemplateRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+string CreateImageSpriteTemplateRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void CreateImageSpriteTemplateRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+
+string CreateImageSpriteTemplateRequest::GetFillType() const
+{
+    return m_fillType;
+}
+
+void CreateImageSpriteTemplateRequest::SetFillType(const string& _fillType)
+{
+    m_fillType = _fillType;
+    m_fillTypeHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::FillTypeHasBeenSet() const
+{
+    return m_fillTypeHasBeenSet;
+}
+
 uint64_t CreateImageSpriteTemplateRequest::GetWidth() const
 {
     return m_width;
@@ -274,22 +315,6 @@ void CreateImageSpriteTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
 bool CreateImageSpriteTemplateRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
-}
-
-string CreateImageSpriteTemplateRequest::GetFillType() const
-{
-    return m_fillType;
-}
-
-void CreateImageSpriteTemplateRequest::SetFillType(const string& _fillType)
-{
-    m_fillType = _fillType;
-    m_fillTypeHasBeenSet = true;
-}
-
-bool CreateImageSpriteTemplateRequest::FillTypeHasBeenSet() const
-{
-    return m_fillTypeHasBeenSet;
 }
 
 

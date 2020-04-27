@@ -45,6 +45,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeImageConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeIpStatusRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeIpStatusResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/cdn/v20180606/model/StopCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateDomainConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdateDomainConfigResponse.h>
+#include <tencentcloud/cdn/v20180606/model/UpdateImageConfigRequest.h>
+#include <tencentcloud/cdn/v20180606/model/UpdateImageConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeRequest.h>
 #include <tencentcloud/cdn/v20180606/model/UpdatePayTypeResponse.h>
 
@@ -150,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDomainsConfigResponse> DescribeDomainsConfigOutcome;
                 typedef std::future<DescribeDomainsConfigOutcome> DescribeDomainsConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeDomainsConfigRequest&, DescribeDomainsConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImageConfigResponse> DescribeImageConfigOutcome;
+                typedef std::future<DescribeImageConfigOutcome> DescribeImageConfigOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeImageConfigRequest&, DescribeImageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeIpStatusResponse> DescribeIpStatusOutcome;
                 typedef std::future<DescribeIpStatusOutcome> DescribeIpStatusOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeIpStatusRequest&, DescribeIpStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpStatusAsyncHandler;
@@ -234,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateDomainConfigResponse> UpdateDomainConfigOutcome;
                 typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::UpdateDomainConfigRequest&, UpdateDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainConfigAsyncHandler;
+                typedef Outcome<Error, Model::UpdateImageConfigResponse> UpdateImageConfigOutcome;
+                typedef std::future<UpdateImageConfigOutcome> UpdateImageConfigOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::UpdateImageConfigRequest&, UpdateImageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageConfigAsyncHandler;
                 typedef Outcome<Error, Model::UpdatePayTypeResponse> UpdatePayTypeOutcome;
                 typedef std::future<UpdatePayTypeOutcome> UpdatePayTypeOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::UpdatePayTypeRequest&, UpdatePayTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePayTypeAsyncHandler;
@@ -347,6 +357,15 @@ namespace TencentCloud
                 DescribeDomainsConfigOutcome DescribeDomainsConfig(const Model::DescribeDomainsConfigRequest &request);
                 void DescribeDomainsConfigAsync(const Model::DescribeDomainsConfigRequest& request, const DescribeDomainsConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainsConfigOutcomeCallable DescribeDomainsConfigCallable(const Model::DescribeDomainsConfigRequest& request);
+
+                /**
+                 *获取域名图片优化的当前配置，支持Webp、TPG、Guetzli 
+                 * @param req DescribeImageConfigRequest
+                 * @return DescribeImageConfigOutcome
+                 */
+                DescribeImageConfigOutcome DescribeImageConfig(const Model::DescribeImageConfigRequest &request);
+                void DescribeImageConfigAsync(const Model::DescribeImageConfigRequest& request, const DescribeImageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageConfigOutcomeCallable DescribeImageConfigCallable(const Model::DescribeImageConfigRequest& request);
 
                 /**
                  *DescribeIpStatus 用于查询域名所在加速平台的边缘节点、回源节点明细
@@ -630,6 +649,15 @@ namespace TencentCloud
                 UpdateDomainConfigOutcome UpdateDomainConfig(const Model::UpdateDomainConfigRequest &request);
                 void UpdateDomainConfigAsync(const Model::UpdateDomainConfigRequest& request, const UpdateDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDomainConfigOutcomeCallable UpdateDomainConfigCallable(const Model::UpdateDomainConfigRequest& request);
+
+                /**
+                 *更新控制台图片优化的相关配置，支持Webp、TPG、Guetzli 
+                 * @param req UpdateImageConfigRequest
+                 * @return UpdateImageConfigOutcome
+                 */
+                UpdateImageConfigOutcome UpdateImageConfig(const Model::UpdateImageConfigRequest &request);
+                void UpdateImageConfigAsync(const Model::UpdateImageConfigRequest& request, const UpdateImageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateImageConfigOutcomeCallable UpdateImageConfigCallable(const Model::UpdateImageConfigRequest& request);
 
                 /**
                  *本接口(UpdatePayType)用于修改账号计费类型，暂不支持月结用户或子账号修改。

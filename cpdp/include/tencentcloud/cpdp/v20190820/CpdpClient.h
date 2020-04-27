@@ -87,16 +87,12 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceResponse.h>
-#include <tencentcloud/cpdp/v20190820/model/QueryInvoiceForManagementRequest.h>
-#include <tencentcloud/cpdp/v20190820/model/QueryInvoiceForManagementResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceResponse.h>
-#include <tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementRequest.h>
-#include <tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOutwardOrderRequest.h>
@@ -245,9 +241,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryInvoiceResponse> QueryInvoiceOutcome;
                 typedef std::future<QueryInvoiceOutcome> QueryInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryInvoiceRequest&, QueryInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoiceAsyncHandler;
-                typedef Outcome<Error, Model::QueryInvoiceForManagementResponse> QueryInvoiceForManagementOutcome;
-                typedef std::future<QueryInvoiceForManagementOutcome> QueryInvoiceForManagementOutcomeCallable;
-                typedef std::function<void(const CpdpClient*, const Model::QueryInvoiceForManagementRequest&, QueryInvoiceForManagementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoiceForManagementAsyncHandler;
                 typedef Outcome<Error, Model::QueryMemberBindResponse> QueryMemberBindOutcome;
                 typedef std::future<QueryMemberBindOutcome> QueryMemberBindOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMemberBindRequest&, QueryMemberBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberBindAsyncHandler;
@@ -257,9 +250,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryMerchantBalanceResponse> QueryMerchantBalanceOutcome;
                 typedef std::future<QueryMerchantBalanceOutcome> QueryMerchantBalanceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantBalanceRequest&, QueryMerchantBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantBalanceAsyncHandler;
-                typedef Outcome<Error, Model::QueryMerchantInfoForManagementResponse> QueryMerchantInfoForManagementOutcome;
-                typedef std::future<QueryMerchantInfoForManagementOutcome> QueryMerchantInfoForManagementOutcomeCallable;
-                typedef std::function<void(const CpdpClient*, const Model::QueryMerchantInfoForManagementRequest&, QueryMerchantInfoForManagementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantInfoForManagementAsyncHandler;
                 typedef Outcome<Error, Model::QueryOrderResponse> QueryOrderOutcome;
                 typedef std::future<QueryOrderOutcome> QueryOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOrderRequest&, QueryOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrderAsyncHandler;
@@ -617,15 +607,6 @@ namespace TencentCloud
                 QueryInvoiceOutcomeCallable QueryInvoiceCallable(const Model::QueryInvoiceRequest& request);
 
                 /**
-                 *智慧零售-查询管理端发票
-                 * @param req QueryInvoiceForManagementRequest
-                 * @return QueryInvoiceForManagementOutcome
-                 */
-                QueryInvoiceForManagementOutcome QueryInvoiceForManagement(const Model::QueryInvoiceForManagementRequest &request);
-                void QueryInvoiceForManagementAsync(const Model::QueryInvoiceForManagementRequest& request, const QueryInvoiceForManagementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryInvoiceForManagementOutcomeCallable QueryInvoiceForManagementCallable(const Model::QueryInvoiceForManagementRequest& request);
-
-                /**
                  *会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。
 查询标志为“全部会员”的情况下，返回市场下的全部的有效的绑定账户信息。查询标志为“单个会员的证件信息”的情况下，返回市场下的指定的会员的留存在电商见证宝系统的证件信息。
                  * @param req QueryMemberBindRequest
@@ -652,15 +633,6 @@ namespace TencentCloud
                 QueryMerchantBalanceOutcome QueryMerchantBalance(const Model::QueryMerchantBalanceRequest &request);
                 void QueryMerchantBalanceAsync(const Model::QueryMerchantBalanceRequest& request, const QueryMerchantBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryMerchantBalanceOutcomeCallable QueryMerchantBalanceCallable(const Model::QueryMerchantBalanceRequest& request);
-
-                /**
-                 *智慧零售-查询管理端商户
-                 * @param req QueryMerchantInfoForManagementRequest
-                 * @return QueryMerchantInfoForManagementOutcome
-                 */
-                QueryMerchantInfoForManagementOutcome QueryMerchantInfoForManagement(const Model::QueryMerchantInfoForManagementRequest &request);
-                void QueryMerchantInfoForManagementAsync(const Model::QueryMerchantInfoForManagementRequest& request, const QueryMerchantInfoForManagementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryMerchantInfoForManagementOutcomeCallable QueryMerchantInfoForManagementCallable(const Model::QueryMerchantInfoForManagementRequest& request);
 
                 /**
                  *根据订单号，或者用户Id，查询支付订单状态 

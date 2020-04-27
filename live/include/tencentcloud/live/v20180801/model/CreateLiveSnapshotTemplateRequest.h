@@ -224,6 +224,42 @@ namespace TencentCloud
                      */
                     bool PornFlagHasBeenSet() const;
 
+                    /**
+                     * 获取Cos Bucket文件夹前缀。
+                     * @return CosPrefix Cos Bucket文件夹前缀。
+                     */
+                    std::string GetCosPrefix() const;
+
+                    /**
+                     * 设置Cos Bucket文件夹前缀。
+                     * @param CosPrefix Cos Bucket文件夹前缀。
+                     */
+                    void SetCosPrefix(const std::string& _cosPrefix);
+
+                    /**
+                     * 判断参数 CosPrefix 是否已赋值
+                     * @return CosPrefix 是否已赋值
+                     */
+                    bool CosPrefixHasBeenSet() const;
+
+                    /**
+                     * 获取Cos 文件名称。
+                     * @return CosFileName Cos 文件名称。
+                     */
+                    std::string GetCosFileName() const;
+
+                    /**
+                     * 设置Cos 文件名称。
+                     * @param CosFileName Cos 文件名称。
+                     */
+                    void SetCosFileName(const std::string& _cosFileName);
+
+                    /**
+                     * 判断参数 CosFileName 是否已赋值
+                     * @return CosFileName 是否已赋值
+                     */
+                    bool CosFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +320,18 @@ namespace TencentCloud
                      */
                     int64_t m_pornFlag;
                     bool m_pornFlagHasBeenSet;
+
+                    /**
+                     * Cos Bucket文件夹前缀。
+                     */
+                    std::string m_cosPrefix;
+                    bool m_cosPrefixHasBeenSet;
+
+                    /**
+                     * Cos 文件名称。
+                     */
+                    std::string m_cosFileName;
+                    bool m_cosFileNameHasBeenSet;
 
                 };
             }

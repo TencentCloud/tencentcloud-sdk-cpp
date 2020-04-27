@@ -513,6 +513,49 @@ CdnClient::DescribeDomainsConfigOutcomeCallable CdnClient::DescribeDomainsConfig
     return task->get_future();
 }
 
+CdnClient::DescribeImageConfigOutcome CdnClient::DescribeImageConfig(const DescribeImageConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageConfigResponse rsp = DescribeImageConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageConfigOutcome(rsp);
+        else
+            return DescribeImageConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeImageConfigAsync(const DescribeImageConfigRequest& request, const DescribeImageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeImageConfigOutcomeCallable CdnClient::DescribeImageConfigCallable(const DescribeImageConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeIpStatusOutcome CdnClient::DescribeIpStatus(const DescribeIpStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIpStatus");
@@ -1710,6 +1753,49 @@ CdnClient::UpdateDomainConfigOutcomeCallable CdnClient::UpdateDomainConfigCallab
         [this, request]()
         {
             return this->UpdateDomainConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdnClient::UpdateImageConfigOutcome CdnClient::UpdateImageConfig(const UpdateImageConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateImageConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateImageConfigResponse rsp = UpdateImageConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateImageConfigOutcome(rsp);
+        else
+            return UpdateImageConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateImageConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::UpdateImageConfigAsync(const UpdateImageConfigRequest& request, const UpdateImageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateImageConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::UpdateImageConfigOutcomeCallable CdnClient::UpdateImageConfigCallable(const UpdateImageConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateImageConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateImageConfig(request);
         }
     );
 

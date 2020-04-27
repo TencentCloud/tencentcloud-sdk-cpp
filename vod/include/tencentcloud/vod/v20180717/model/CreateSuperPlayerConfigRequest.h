@@ -63,6 +63,24 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取模板描述信息，长度限制：256 个字符。
+                     * @return Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置模板描述信息，长度限制：256 个字符。
+                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     */
+                    bool CommentHasBeenSet() const;
+
+                    /**
                      * 获取播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
@@ -217,6 +235,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 模板描述信息，长度限制：256 个字符。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
 
                     /**
                      * 播放 DRM 保护的自适应码流开关：

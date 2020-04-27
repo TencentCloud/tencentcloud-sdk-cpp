@@ -33,7 +33,9 @@ ModifyLiveSnapshotTemplateRequest::ModifyLiveSnapshotTemplateRequest() :
     m_pornFlagHasBeenSet(false),
     m_cosAppIdHasBeenSet(false),
     m_cosBucketHasBeenSet(false),
-    m_cosRegionHasBeenSet(false)
+    m_cosRegionHasBeenSet(false),
+    m_cosPrefixHasBeenSet(false),
+    m_cosFileNameHasBeenSet(false)
 {
 }
 
@@ -122,6 +124,22 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
         string key = "CosRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_cosRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosPrefixHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cosPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosFileNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosFileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_cosFileName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -290,6 +308,38 @@ void ModifyLiveSnapshotTemplateRequest::SetCosRegion(const string& _cosRegion)
 bool ModifyLiveSnapshotTemplateRequest::CosRegionHasBeenSet() const
 {
     return m_cosRegionHasBeenSet;
+}
+
+string ModifyLiveSnapshotTemplateRequest::GetCosPrefix() const
+{
+    return m_cosPrefix;
+}
+
+void ModifyLiveSnapshotTemplateRequest::SetCosPrefix(const string& _cosPrefix)
+{
+    m_cosPrefix = _cosPrefix;
+    m_cosPrefixHasBeenSet = true;
+}
+
+bool ModifyLiveSnapshotTemplateRequest::CosPrefixHasBeenSet() const
+{
+    return m_cosPrefixHasBeenSet;
+}
+
+string ModifyLiveSnapshotTemplateRequest::GetCosFileName() const
+{
+    return m_cosFileName;
+}
+
+void ModifyLiveSnapshotTemplateRequest::SetCosFileName(const string& _cosFileName)
+{
+    m_cosFileName = _cosFileName;
+    m_cosFileNameHasBeenSet = true;
+}
+
+bool ModifyLiveSnapshotTemplateRequest::CosFileNameHasBeenSet() const
+{
+    return m_cosFileNameHasBeenSet;
 }
 
 

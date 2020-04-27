@@ -169,6 +169,49 @@ GsClient::DescribeWorkersInfoOutcomeCallable GsClient::DescribeWorkersInfoCallab
     return task->get_future();
 }
 
+GsClient::EnterQueueOutcome GsClient::EnterQueue(const EnterQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnterQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnterQueueResponse rsp = EnterQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnterQueueOutcome(rsp);
+        else
+            return EnterQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return EnterQueueOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::EnterQueueAsync(const EnterQueueRequest& request, const EnterQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnterQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::EnterQueueOutcomeCallable GsClient::EnterQueueCallable(const EnterQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnterQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->EnterQueue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::ModifyWorkersOutcome GsClient::ModifyWorkers(const ModifyWorkersRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWorkers");
@@ -205,6 +248,49 @@ GsClient::ModifyWorkersOutcomeCallable GsClient::ModifyWorkersCallable(const Mod
         [this, request]()
         {
             return this->ModifyWorkers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::QuitQueueOutcome GsClient::QuitQueue(const QuitQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "QuitQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QuitQueueResponse rsp = QuitQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QuitQueueOutcome(rsp);
+        else
+            return QuitQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return QuitQueueOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::QuitQueueAsync(const QuitQueueRequest& request, const QuitQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QuitQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::QuitQueueOutcomeCallable GsClient::QuitQueueCallable(const QuitQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QuitQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->QuitQueue(request);
         }
     );
 

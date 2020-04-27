@@ -384,6 +384,49 @@ CamClient::CreatePolicyOutcomeCallable CamClient::CreatePolicyCallable(const Cre
     return task->get_future();
 }
 
+CamClient::CreatePolicyVersionOutcome CamClient::CreatePolicyVersion(const CreatePolicyVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePolicyVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePolicyVersionResponse rsp = CreatePolicyVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePolicyVersionOutcome(rsp);
+        else
+            return CreatePolicyVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePolicyVersionOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CreatePolicyVersionAsync(const CreatePolicyVersionRequest& request, const CreatePolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePolicyVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CreatePolicyVersionOutcomeCallable CamClient::CreatePolicyVersionCallable(const CreatePolicyVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePolicyVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePolicyVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::CreateRoleOutcome CamClient::CreateRole(const CreateRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRole");
@@ -592,6 +635,49 @@ CamClient::DeletePolicyOutcomeCallable CamClient::DeletePolicyCallable(const Del
         [this, request]()
         {
             return this->DeletePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DeletePolicyVersionOutcome CamClient::DeletePolicyVersion(const DeletePolicyVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePolicyVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePolicyVersionResponse rsp = DeletePolicyVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePolicyVersionOutcome(rsp);
+        else
+            return DeletePolicyVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePolicyVersionOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DeletePolicyVersionAsync(const DeletePolicyVersionRequest& request, const DeletePolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePolicyVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DeletePolicyVersionOutcomeCallable CamClient::DeletePolicyVersionCallable(const DeletePolicyVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePolicyVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePolicyVersion(request);
         }
     );
 
@@ -1065,6 +1151,49 @@ CamClient::GetPolicyOutcomeCallable CamClient::GetPolicyCallable(const GetPolicy
         [this, request]()
         {
             return this->GetPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::GetPolicyVersionOutcome CamClient::GetPolicyVersion(const GetPolicyVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPolicyVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPolicyVersionResponse rsp = GetPolicyVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPolicyVersionOutcome(rsp);
+        else
+            return GetPolicyVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPolicyVersionOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetPolicyVersionAsync(const GetPolicyVersionRequest& request, const GetPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPolicyVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetPolicyVersionOutcomeCallable CamClient::GetPolicyVersionCallable(const GetPolicyVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPolicyVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPolicyVersion(request);
         }
     );
 
@@ -1588,6 +1717,49 @@ CamClient::ListPoliciesOutcomeCallable CamClient::ListPoliciesCallable(const Lis
     return task->get_future();
 }
 
+CamClient::ListPolicyVersionsOutcome CamClient::ListPolicyVersions(const ListPolicyVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPolicyVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPolicyVersionsResponse rsp = ListPolicyVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPolicyVersionsOutcome(rsp);
+        else
+            return ListPolicyVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPolicyVersionsOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListPolicyVersionsAsync(const ListPolicyVersionsRequest& request, const ListPolicyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListPolicyVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListPolicyVersionsOutcomeCallable CamClient::ListPolicyVersionsCallable(const ListPolicyVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListPolicyVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListPolicyVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::ListSAMLProvidersOutcome CamClient::ListSAMLProviders(const ListSAMLProvidersRequest &request)
 {
     auto outcome = MakeRequest(request, "ListSAMLProviders");
@@ -1753,6 +1925,49 @@ CamClient::RemoveUserFromGroupOutcomeCallable CamClient::RemoveUserFromGroupCall
         [this, request]()
         {
             return this->RemoveUserFromGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::SetDefaultPolicyVersionOutcome CamClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetDefaultPolicyVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetDefaultPolicyVersionResponse rsp = SetDefaultPolicyVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetDefaultPolicyVersionOutcome(rsp);
+        else
+            return SetDefaultPolicyVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return SetDefaultPolicyVersionOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetDefaultPolicyVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::SetDefaultPolicyVersionOutcomeCallable CamClient::SetDefaultPolicyVersionCallable(const SetDefaultPolicyVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetDefaultPolicyVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->SetDefaultPolicyVersion(request);
         }
     );
 

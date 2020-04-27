@@ -685,6 +685,92 @@ DayuClient::CreateNetReturnOutcomeCallable DayuClient::CreateNetReturnCallable(c
     return task->get_future();
 }
 
+DayuClient::CreateNewL4RulesOutcome DayuClient::CreateNewL4Rules(const CreateNewL4RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNewL4Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNewL4RulesResponse rsp = CreateNewL4RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNewL4RulesOutcome(rsp);
+        else
+            return CreateNewL4RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNewL4RulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateNewL4RulesAsync(const CreateNewL4RulesRequest& request, const CreateNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNewL4Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateNewL4RulesOutcomeCallable DayuClient::CreateNewL4RulesCallable(const CreateNewL4RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNewL4RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNewL4Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::CreateNewL7RulesOutcome DayuClient::CreateNewL7Rules(const CreateNewL7RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNewL7Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNewL7RulesResponse rsp = CreateNewL7RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNewL7RulesOutcome(rsp);
+        else
+            return CreateNewL7RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNewL7RulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::CreateNewL7RulesAsync(const CreateNewL7RulesRequest& request, const CreateNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNewL7Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::CreateNewL7RulesOutcomeCallable DayuClient::CreateNewL7RulesCallable(const CreateNewL7RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNewL7RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNewL7Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::CreateUnblockIpOutcome DayuClient::CreateUnblockIp(const CreateUnblockIpRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUnblockIp");
@@ -979,6 +1065,92 @@ DayuClient::DeleteL7RulesOutcomeCallable DayuClient::DeleteL7RulesCallable(const
         [this, request]()
         {
             return this->DeleteL7Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DeleteNewL4RulesOutcome DayuClient::DeleteNewL4Rules(const DeleteNewL4RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNewL4Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNewL4RulesResponse rsp = DeleteNewL4RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNewL4RulesOutcome(rsp);
+        else
+            return DeleteNewL4RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNewL4RulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DeleteNewL4RulesAsync(const DeleteNewL4RulesRequest& request, const DeleteNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNewL4Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DeleteNewL4RulesOutcomeCallable DayuClient::DeleteNewL4RulesCallable(const DeleteNewL4RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNewL4RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNewL4Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DeleteNewL7RulesOutcome DayuClient::DeleteNewL7Rules(const DeleteNewL7RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNewL7Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNewL7RulesResponse rsp = DeleteNewL7RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNewL7RulesOutcome(rsp);
+        else
+            return DeleteNewL7RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNewL7RulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DeleteNewL7RulesAsync(const DeleteNewL7RulesRequest& request, const DeleteNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNewL7Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DeleteNewL7RulesOutcomeCallable DayuClient::DeleteNewL7RulesCallable(const DeleteNewL7RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNewL7RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNewL7Rules(request);
         }
     );
 
@@ -2491,6 +2663,135 @@ DayuClient::DescribeL7HealthConfigOutcomeCallable DayuClient::DescribeL7HealthCo
     return task->get_future();
 }
 
+DayuClient::DescribeNewL4RulesOutcome DayuClient::DescribeNewL4Rules(const DescribeNewL4RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNewL4Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNewL4RulesResponse rsp = DescribeNewL4RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNewL4RulesOutcome(rsp);
+        else
+            return DescribeNewL4RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNewL4RulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeNewL4RulesAsync(const DescribeNewL4RulesRequest& request, const DescribeNewL4RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNewL4Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeNewL4RulesOutcomeCallable DayuClient::DescribeNewL4RulesCallable(const DescribeNewL4RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNewL4RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNewL4Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeNewL4RulesErrHealthOutcome DayuClient::DescribeNewL4RulesErrHealth(const DescribeNewL4RulesErrHealthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNewL4RulesErrHealth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNewL4RulesErrHealthResponse rsp = DescribeNewL4RulesErrHealthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNewL4RulesErrHealthOutcome(rsp);
+        else
+            return DescribeNewL4RulesErrHealthOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNewL4RulesErrHealthOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeNewL4RulesErrHealthAsync(const DescribeNewL4RulesErrHealthRequest& request, const DescribeNewL4RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNewL4RulesErrHealth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeNewL4RulesErrHealthOutcomeCallable DayuClient::DescribeNewL4RulesErrHealthCallable(const DescribeNewL4RulesErrHealthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNewL4RulesErrHealthOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNewL4RulesErrHealth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribeNewL7RulesErrHealthOutcome DayuClient::DescribeNewL7RulesErrHealth(const DescribeNewL7RulesErrHealthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNewL7RulesErrHealth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNewL7RulesErrHealthResponse rsp = DescribeNewL7RulesErrHealthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNewL7RulesErrHealthOutcome(rsp);
+        else
+            return DescribeNewL7RulesErrHealthOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNewL7RulesErrHealthOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribeNewL7RulesErrHealthAsync(const DescribeNewL7RulesErrHealthRequest& request, const DescribeNewL7RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNewL7RulesErrHealth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribeNewL7RulesErrHealthOutcomeCallable DayuClient::DescribeNewL7RulesErrHealthCallable(const DescribeNewL7RulesErrHealthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNewL7RulesErrHealthOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNewL7RulesErrHealth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DayuClient::DescribePackIndexOutcome DayuClient::DescribePackIndex(const DescribePackIndexRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePackIndex");
@@ -3043,6 +3344,49 @@ DayuClient::DescribleL7RulesOutcomeCallable DayuClient::DescribleL7RulesCallable
         [this, request]()
         {
             return this->DescribleL7Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DayuClient::DescribleNewL7RulesOutcome DayuClient::DescribleNewL7Rules(const DescribleNewL7RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribleNewL7Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribleNewL7RulesResponse rsp = DescribleNewL7RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribleNewL7RulesOutcome(rsp);
+        else
+            return DescribleNewL7RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribleNewL7RulesOutcome(outcome.GetError());
+    }
+}
+
+void DayuClient::DescribleNewL7RulesAsync(const DescribleNewL7RulesRequest& request, const DescribleNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribleNewL7Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DayuClient::DescribleNewL7RulesOutcomeCallable DayuClient::DescribleNewL7RulesCallable(const DescribleNewL7RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribleNewL7RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribleNewL7Rules(request);
         }
     );
 

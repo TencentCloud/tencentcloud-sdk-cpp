@@ -325,6 +325,8 @@
 #include <tencentcloud/vpc/v20170312/model/MigratePrivateIpAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyAddressAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyAddressAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyAddressInternetChargeTypeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyAddressInternetChargeTypeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyAddressTemplateAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyAddressTemplateAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyAddressTemplateGroupAttributeRequest.h>
@@ -900,6 +902,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAddressAttributeResponse> ModifyAddressAttributeOutcome;
                 typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyAddressAttributeRequest&, ModifyAddressAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAddressAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAddressInternetChargeTypeResponse> ModifyAddressInternetChargeTypeOutcome;
+                typedef std::future<ModifyAddressInternetChargeTypeOutcome> ModifyAddressInternetChargeTypeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyAddressInternetChargeTypeRequest&, ModifyAddressInternetChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAddressInternetChargeTypeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAddressTemplateAttributeResponse> ModifyAddressTemplateAttributeOutcome;
                 typedef std::future<ModifyAddressTemplateAttributeOutcome> ModifyAddressTemplateAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyAddressTemplateAttributeRequest&, ModifyAddressTemplateAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAddressTemplateAttributeAsyncHandler;
@@ -2590,6 +2595,17 @@ LimitTypes取值范围：
                 ModifyAddressAttributeOutcome ModifyAddressAttribute(const Model::ModifyAddressAttributeRequest &request);
                 void ModifyAddressAttributeAsync(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAddressAttributeOutcomeCallable ModifyAddressAttributeCallable(const Model::ModifyAddressAttributeRequest& request);
+
+                /**
+                 *该接口用于调整具有带宽属性弹性公网IP的网络计费模式
+* 支持BANDWIDTH_PREPAID_BY_MONTH和TRAFFIC_POSTPAID_BY_HOUR两种网络计费模式之间的切换。
+* 每个弹性公网IP支持调整两次，次数超出则无法调整。
+                 * @param req ModifyAddressInternetChargeTypeRequest
+                 * @return ModifyAddressInternetChargeTypeOutcome
+                 */
+                ModifyAddressInternetChargeTypeOutcome ModifyAddressInternetChargeType(const Model::ModifyAddressInternetChargeTypeRequest &request);
+                void ModifyAddressInternetChargeTypeAsync(const Model::ModifyAddressInternetChargeTypeRequest& request, const ModifyAddressInternetChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAddressInternetChargeTypeOutcomeCallable ModifyAddressInternetChargeTypeCallable(const Model::ModifyAddressInternetChargeTypeRequest& request);
 
                 /**
                  *本接口（ModifyAddressTemplateAttribute）用于修改IP地址模板

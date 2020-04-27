@@ -28,7 +28,8 @@ SecurityGroupAssociationStatistics::SecurityGroupAssociationStatistics() :
     m_eNIHasBeenSet(false),
     m_sGHasBeenSet(false),
     m_cLBHasBeenSet(false),
-    m_instanceStatisticsHasBeenSet(false)
+    m_instanceStatisticsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const Value 
         m_instanceStatisticsHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCount") && !value["TotalCount"].IsNull())
+    {
+        if (!value["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = value["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -185,6 +196,14 @@ void SecurityGroupAssociationStatistics::ToJsonObject(Value &value, Document::Al
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
 }
@@ -300,5 +319,21 @@ void SecurityGroupAssociationStatistics::SetInstanceStatistics(const vector<Inst
 bool SecurityGroupAssociationStatistics::InstanceStatisticsHasBeenSet() const
 {
     return m_instanceStatisticsHasBeenSet;
+}
+
+uint64_t SecurityGroupAssociationStatistics::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+void SecurityGroupAssociationStatistics::SetTotalCount(const uint64_t& _totalCount)
+{
+    m_totalCount = _totalCount;
+    m_totalCountHasBeenSet = true;
+}
+
+bool SecurityGroupAssociationStatistics::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 

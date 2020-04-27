@@ -321,6 +321,36 @@ namespace TencentCloud
                      */
                     bool VidHasBeenSet() const;
 
+                    /**
+                     * 获取文件类型：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     * @return Category 文件类型：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     */
+                    std::string GetCategory() const;
+
+                    /**
+                     * 设置文件类型：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     * @param Category 文件类型：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     */
+                    void SetCategory(const std::string& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     */
+                    bool CategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -413,6 +443,15 @@ namespace TencentCloud
                      */
                     std::string m_vid;
                     bool m_vidHasBeenSet;
+
+                    /**
+                     * 文件类型：
+<li>Video: 视频文件</li>
+<li>Audio: 音频文件</li>
+<li>Image: 图片文件</li>
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                 };
             }

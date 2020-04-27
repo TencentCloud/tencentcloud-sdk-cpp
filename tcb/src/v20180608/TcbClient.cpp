@@ -427,6 +427,49 @@ TcbClient::DescribeEndUsersOutcomeCallable TcbClient::DescribeEndUsersCallable(c
     return task->get_future();
 }
 
+TcbClient::DescribeEnvFreeQuotaOutcome TcbClient::DescribeEnvFreeQuota(const DescribeEnvFreeQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvFreeQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvFreeQuotaResponse rsp = DescribeEnvFreeQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvFreeQuotaOutcome(rsp);
+        else
+            return DescribeEnvFreeQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvFreeQuotaOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEnvFreeQuotaAsync(const DescribeEnvFreeQuotaRequest& request, const DescribeEnvFreeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvFreeQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeEnvFreeQuotaOutcomeCallable TcbClient::DescribeEnvFreeQuotaCallable(const DescribeEnvFreeQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvFreeQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvFreeQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeEnvLimitOutcome TcbClient::DescribeEnvLimit(const DescribeEnvLimitRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvLimit");

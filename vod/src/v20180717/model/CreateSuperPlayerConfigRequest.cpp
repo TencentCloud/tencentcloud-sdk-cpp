@@ -25,6 +25,7 @@ using namespace std;
 
 CreateSuperPlayerConfigRequest::CreateSuperPlayerConfigRequest() :
     m_nameHasBeenSet(false),
+    m_commentHasBeenSet(false),
     m_drmSwitchHasBeenSet(false),
     m_adaptiveDynamicStreamingDefinitionHasBeenSet(false),
     m_drmStreamingsInfoHasBeenSet(false),
@@ -47,6 +48,14 @@ string CreateSuperPlayerConfigRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_drmSwitchHasBeenSet)
@@ -127,6 +136,22 @@ void CreateSuperPlayerConfigRequest::SetName(const string& _name)
 bool CreateSuperPlayerConfigRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string CreateSuperPlayerConfigRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void CreateSuperPlayerConfigRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool CreateSuperPlayerConfigRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 
 string CreateSuperPlayerConfigRequest::GetDrmSwitch() const

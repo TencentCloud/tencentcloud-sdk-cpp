@@ -234,6 +234,50 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取Cos Bucket文件夹前缀。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosPrefix Cos Bucket文件夹前缀。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCosPrefix() const;
+
+                    /**
+                     * 设置Cos Bucket文件夹前缀。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CosPrefix Cos Bucket文件夹前缀。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCosPrefix(const std::string& _cosPrefix);
+
+                    /**
+                     * 判断参数 CosPrefix 是否已赋值
+                     * @return CosPrefix 是否已赋值
+                     */
+                    bool CosPrefixHasBeenSet() const;
+
+                    /**
+                     * 获取Cos 文件名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosFileName Cos 文件名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCosFileName() const;
+
+                    /**
+                     * 设置Cos 文件名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CosFileName Cos 文件名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCosFileName(const std::string& _cosFileName);
+
+                    /**
+                     * 判断参数 CosFileName 是否已赋值
+                     * @return CosFileName 是否已赋值
+                     */
+                    bool CosFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +341,20 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * Cos Bucket文件夹前缀。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cosPrefix;
+                    bool m_cosPrefixHasBeenSet;
+
+                    /**
+                     * Cos 文件名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cosFileName;
+                    bool m_cosFileNameHasBeenSet;
 
                 };
             }

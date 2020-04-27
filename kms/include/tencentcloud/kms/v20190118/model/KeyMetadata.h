@@ -310,6 +310,24 @@ namespace TencentCloud
                      */
                     bool ValidToHasBeenSet() const;
 
+                    /**
+                     * 获取资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * @return ResourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * @param ResourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +416,12 @@ namespace TencentCloud
                      */
                     uint64_t m_validTo;
                     bool m_validToHasBeenSet;
+
+                    /**
+                     * 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

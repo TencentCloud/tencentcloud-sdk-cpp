@@ -39,6 +39,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreatePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreatePolicyResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreatePolicyVersionRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreatePolicyVersionResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateSAMLProviderRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/cam/v20190116/model/DeleteGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeletePolicyVersionRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeletePolicyVersionResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteSAMLProviderRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/cam/v20190116/model/GetGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetPolicyVersionRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetPolicyVersionResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetSAMLProviderRequest.h>
@@ -95,6 +101,8 @@
 #include <tencentcloud/cam/v20190116/model/ListGroupsForUserResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListPoliciesRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListPoliciesResponse.h>
+#include <tencentcloud/cam/v20190116/model/ListPolicyVersionsRequest.h>
+#include <tencentcloud/cam/v20190116/model/ListPolicyVersionsResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListSAMLProvidersResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListUsersRequest.h>
@@ -103,6 +111,8 @@
 #include <tencentcloud/cam/v20190116/model/ListUsersForGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/RemoveUserFromGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/RemoveUserFromGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/SetDefaultPolicyVersionRequest.h>
+#include <tencentcloud/cam/v20190116/model/SetDefaultPolicyVersionResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupRequest.h>
@@ -153,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreatePolicyResponse> CreatePolicyOutcome;
                 typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreatePolicyRequest&, CreatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyAsyncHandler;
+                typedef Outcome<Error, Model::CreatePolicyVersionResponse> CreatePolicyVersionOutcome;
+                typedef std::future<CreatePolicyVersionOutcome> CreatePolicyVersionOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreatePolicyVersionRequest&, CreatePolicyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyVersionAsyncHandler;
                 typedef Outcome<Error, Model::CreateRoleResponse> CreateRoleOutcome;
                 typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateRoleRequest&, CreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAsyncHandler;
@@ -168,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeletePolicyResponse> DeletePolicyOutcome;
                 typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeletePolicyRequest&, DeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyAsyncHandler;
+                typedef Outcome<Error, Model::DeletePolicyVersionResponse> DeletePolicyVersionOutcome;
+                typedef std::future<DeletePolicyVersionOutcome> DeletePolicyVersionOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DeletePolicyVersionRequest&, DeletePolicyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyVersionAsyncHandler;
                 typedef Outcome<Error, Model::DeleteRoleResponse> DeleteRoleOutcome;
                 typedef std::future<DeleteRoleOutcome> DeleteRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteRoleRequest&, DeleteRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleAsyncHandler;
@@ -201,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetPolicyResponse> GetPolicyOutcome;
                 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetPolicyRequest&, GetPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPolicyAsyncHandler;
+                typedef Outcome<Error, Model::GetPolicyVersionResponse> GetPolicyVersionOutcome;
+                typedef std::future<GetPolicyVersionOutcome> GetPolicyVersionOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetPolicyVersionRequest&, GetPolicyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPolicyVersionAsyncHandler;
                 typedef Outcome<Error, Model::GetRoleResponse> GetRoleOutcome;
                 typedef std::future<GetRoleOutcome> GetRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetRoleRequest&, GetRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRoleAsyncHandler;
@@ -237,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListPoliciesResponse> ListPoliciesOutcome;
                 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListPoliciesRequest&, ListPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesAsyncHandler;
+                typedef Outcome<Error, Model::ListPolicyVersionsResponse> ListPolicyVersionsOutcome;
+                typedef std::future<ListPolicyVersionsOutcome> ListPolicyVersionsOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::ListPolicyVersionsRequest&, ListPolicyVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPolicyVersionsAsyncHandler;
                 typedef Outcome<Error, Model::ListSAMLProvidersResponse> ListSAMLProvidersOutcome;
                 typedef std::future<ListSAMLProvidersOutcome> ListSAMLProvidersOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListSAMLProvidersRequest&, ListSAMLProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSAMLProvidersAsyncHandler;
@@ -249,6 +271,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RemoveUserFromGroupResponse> RemoveUserFromGroupOutcome;
                 typedef std::future<RemoveUserFromGroupOutcome> RemoveUserFromGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::RemoveUserFromGroupRequest&, RemoveUserFromGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromGroupAsyncHandler;
+                typedef Outcome<Error, Model::SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionOutcome;
+                typedef std::future<SetDefaultPolicyVersionOutcome> SetDefaultPolicyVersionOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::SetDefaultPolicyVersionRequest&, SetDefaultPolicyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultPolicyVersionAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyOutcome;
                 typedef std::future<UpdateAssumeRolePolicyOutcome> UpdateAssumeRolePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateAssumeRolePolicyRequest&, UpdateAssumeRolePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAssumeRolePolicyAsyncHandler;
@@ -343,6 +368,15 @@ namespace TencentCloud
                 CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request);
 
                 /**
+                 *该接口（CreatePolicyVersion）用于新增策略版本，用户创建了一个策略版本之后可以方便的通过变更策略版本的方式来变更策略。
+                 * @param req CreatePolicyVersionRequest
+                 * @return CreatePolicyVersionOutcome
+                 */
+                CreatePolicyVersionOutcome CreatePolicyVersion(const Model::CreatePolicyVersionRequest &request);
+                void CreatePolicyVersionAsync(const Model::CreatePolicyVersionRequest& request, const CreatePolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePolicyVersionOutcomeCallable CreatePolicyVersionCallable(const Model::CreatePolicyVersionRequest& request);
+
+                /**
                  *本接口（CreateRole）用于创建角色。
                  * @param req CreateRoleRequest
                  * @return CreateRoleOutcome
@@ -386,6 +420,15 @@ namespace TencentCloud
                 DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest &request);
                 void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request);
+
+                /**
+                 *本接口（DeletePolicyVersion）可用于删除一个策略的策略版本。
+                 * @param req DeletePolicyVersionRequest
+                 * @return DeletePolicyVersionOutcome
+                 */
+                DeletePolicyVersionOutcome DeletePolicyVersion(const Model::DeletePolicyVersionRequest &request);
+                void DeletePolicyVersionAsync(const Model::DeletePolicyVersionRequest& request, const DeletePolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePolicyVersionOutcomeCallable DeletePolicyVersionCallable(const Model::DeletePolicyVersionRequest& request);
 
                 /**
                  *本接口（DeleteRole）用于删除指定角色。
@@ -485,6 +528,15 @@ namespace TencentCloud
                 GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest &request);
                 void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request);
+
+                /**
+                 *该接口（GetPolicyVersion）用于查询策略版本详情
+                 * @param req GetPolicyVersionRequest
+                 * @return GetPolicyVersionOutcome
+                 */
+                GetPolicyVersionOutcome GetPolicyVersion(const Model::GetPolicyVersionRequest &request);
+                void GetPolicyVersionAsync(const Model::GetPolicyVersionRequest& request, const GetPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPolicyVersionOutcomeCallable GetPolicyVersionCallable(const Model::GetPolicyVersionRequest& request);
 
                 /**
                  *本接口（GetRole）用于获取指定角色的详细信息。
@@ -595,6 +647,15 @@ namespace TencentCloud
                 ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request);
 
                 /**
+                 *该接口（ListPolicyVersions）用于获取策略版本列表
+                 * @param req ListPolicyVersionsRequest
+                 * @return ListPolicyVersionsOutcome
+                 */
+                ListPolicyVersionsOutcome ListPolicyVersions(const Model::ListPolicyVersionsRequest &request);
+                void ListPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPolicyVersionsOutcomeCallable ListPolicyVersionsCallable(const Model::ListPolicyVersionsRequest& request);
+
+                /**
                  *查询SAML身份提供商列表
                  * @param req ListSAMLProvidersRequest
                  * @return ListSAMLProvidersOutcome
@@ -629,6 +690,15 @@ namespace TencentCloud
                 RemoveUserFromGroupOutcome RemoveUserFromGroup(const Model::RemoveUserFromGroupRequest &request);
                 void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveUserFromGroupOutcomeCallable RemoveUserFromGroupCallable(const Model::RemoveUserFromGroupRequest& request);
+
+                /**
+                 *本接口（SetDefaultPolicyVersion）可用于设置生效的策略版本。
+                 * @param req SetDefaultPolicyVersionRequest
+                 * @return SetDefaultPolicyVersionOutcome
+                 */
+                SetDefaultPolicyVersionOutcome SetDefaultPolicyVersion(const Model::SetDefaultPolicyVersionRequest &request);
+                void SetDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetDefaultPolicyVersionOutcomeCallable SetDefaultPolicyVersionCallable(const Model::SetDefaultPolicyVersionRequest& request);
 
                 /**
                  *本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。

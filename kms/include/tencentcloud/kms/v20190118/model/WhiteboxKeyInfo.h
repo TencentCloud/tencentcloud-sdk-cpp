@@ -226,6 +226,24 @@ namespace TencentCloud
                      */
                     bool DecryptKeyHasBeenSet() const;
 
+                    /**
+                     * 获取资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * @return ResourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * @param ResourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +305,12 @@ namespace TencentCloud
                      */
                     std::string m_decryptKey;
                     bool m_decryptKeyHasBeenSet;
+
+                    /**
+                     * 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }
