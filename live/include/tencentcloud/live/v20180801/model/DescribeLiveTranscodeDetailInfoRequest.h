@@ -81,20 +81,20 @@ namespace TencentCloud
                     /**
                      * 获取查询时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内某天的详细数据。
+注意：支持查询近1个月内某天的详细数据。
                      * @return DayTime 查询时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内某天的详细数据。
+注意：支持查询近1个月内某天的详细数据。
                      */
                     std::string GetDayTime() const;
 
                     /**
                      * 设置查询时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内某天的详细数据。
+注意：支持查询近1个月内某天的详细数据。
                      * @param DayTime 查询时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内某天的详细数据。
+注意：支持查询近1个月内某天的详细数据。
                      */
                     void SetDayTime(const std::string& _dayTime);
 
@@ -151,20 +151,20 @@ namespace TencentCloud
                     /**
                      * 获取起始天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据。
+注意：支持查询近1个月内的详细数据。
                      * @return StartDayTime 起始天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据。
+注意：支持查询近1个月内的详细数据。
                      */
                     std::string GetStartDayTime() const;
 
                     /**
                      * 设置起始天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据。
+注意：支持查询近1个月内的详细数据。
                      * @param StartDayTime 起始天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据。
+注意：支持查询近1个月内的详细数据。
                      */
                     void SetStartDayTime(const std::string& _startDayTime);
 
@@ -177,20 +177,20 @@ namespace TencentCloud
                     /**
                      * 获取结束天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
+注意：支持查询近1个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
                      * @return EndDayTime 结束天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
+注意：支持查询近1个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
                      */
                     std::string GetEndDayTime() const;
 
                     /**
                      * 设置结束天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
+注意：支持查询近1个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
                      * @param EndDayTime 结束天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
+注意：支持查询近1个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
                      */
                     void SetEndDayTime(const std::string& _endDayTime);
 
@@ -217,7 +217,7 @@ namespace TencentCloud
                     /**
                      * 查询时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内某天的详细数据。
+注意：支持查询近1个月内某天的详细数据。
                      */
                     std::string m_dayTime;
                     bool m_dayTimeHasBeenSet;
@@ -239,7 +239,7 @@ namespace TencentCloud
                     /**
                      * 起始天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据。
+注意：支持查询近1个月内的详细数据。
                      */
                     std::string m_startDayTime;
                     bool m_startDayTimeHasBeenSet;
@@ -247,7 +247,7 @@ namespace TencentCloud
                     /**
                      * 结束天时间，北京时间，
 格式：yyyymmdd。
-注意：支持查询近3个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
+注意：支持查询近1个月内的详细数据，注意DayTime 与（StartDayTime，EndDayTime）必须要传一个，如果都传，会以DayTime为准 。
                      */
                     std::string m_endDayTime;
                     bool m_endDayTimeHasBeenSet;

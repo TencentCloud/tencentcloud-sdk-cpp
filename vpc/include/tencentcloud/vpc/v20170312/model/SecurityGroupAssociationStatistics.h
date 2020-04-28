@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool InstanceStatisticsHasBeenSet() const;
 
                     /**
-                     * 获取所有资源的总计数。
-                     * @return TotalCount 所有资源的总计数。
+                     * 获取所有资源的总计数（不包含被安全组引用数）。
+                     * @return TotalCount 所有资源的总计数（不包含被安全组引用数）。
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
-                     * 设置所有资源的总计数。
-                     * @param TotalCount 所有资源的总计数。
+                     * 设置所有资源的总计数（不包含被安全组引用数）。
+                     * @param TotalCount 所有资源的总计数（不包含被安全组引用数）。
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
@@ -236,7 +236,7 @@ namespace TencentCloud
                     bool m_instanceStatisticsHasBeenSet;
 
                     /**
-                     * 所有资源的总计数。
+                     * 所有资源的总计数（不包含被安全组引用数）。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

@@ -1803,49 +1803,6 @@ VodClient::DescribeAnimatedGraphicsTemplatesOutcomeCallable VodClient::DescribeA
     return task->get_future();
 }
 
-VodClient::DescribeAudioTrackTemplatesOutcome VodClient::DescribeAudioTrackTemplates(const DescribeAudioTrackTemplatesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAudioTrackTemplates");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAudioTrackTemplatesResponse rsp = DescribeAudioTrackTemplatesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAudioTrackTemplatesOutcome(rsp);
-        else
-            return DescribeAudioTrackTemplatesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAudioTrackTemplatesOutcome(outcome.GetError());
-    }
-}
-
-void VodClient::DescribeAudioTrackTemplatesAsync(const DescribeAudioTrackTemplatesRequest& request, const DescribeAudioTrackTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAudioTrackTemplates(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-VodClient::DescribeAudioTrackTemplatesOutcomeCallable VodClient::DescribeAudioTrackTemplatesCallable(const DescribeAudioTrackTemplatesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAudioTrackTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAudioTrackTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 VodClient::DescribeCDNUsageDataOutcome VodClient::DescribeCDNUsageData(const DescribeCDNUsageDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCDNUsageData");
@@ -2570,49 +2527,6 @@ VodClient::DescribeTranscodeTemplatesOutcomeCallable VodClient::DescribeTranscod
         [this, request]()
         {
             return this->DescribeTranscodeTemplates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-VodClient::DescribeVideoTrackTemplatesOutcome VodClient::DescribeVideoTrackTemplates(const DescribeVideoTrackTemplatesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeVideoTrackTemplates");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeVideoTrackTemplatesResponse rsp = DescribeVideoTrackTemplatesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeVideoTrackTemplatesOutcome(rsp);
-        else
-            return DescribeVideoTrackTemplatesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeVideoTrackTemplatesOutcome(outcome.GetError());
-    }
-}
-
-void VodClient::DescribeVideoTrackTemplatesAsync(const DescribeVideoTrackTemplatesRequest& request, const DescribeVideoTrackTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVideoTrackTemplates(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-VodClient::DescribeVideoTrackTemplatesOutcomeCallable VodClient::DescribeVideoTrackTemplatesCallable(const DescribeVideoTrackTemplatesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeVideoTrackTemplatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVideoTrackTemplates(request);
         }
     );
 

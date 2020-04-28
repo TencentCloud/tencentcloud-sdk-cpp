@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取请求类型：1——string类型，2——所有类型
-                     * @return SpanType 请求类型：1——string类型，2——所有类型
+                     * 获取时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * @return SpanType 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
                      */
                     int64_t GetSpanType() const;
 
                     /**
-                     * 设置请求类型：1——string类型，2——所有类型
-                     * @param SpanType 请求类型：1——string类型，2——所有类型
+                     * 设置时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * @param SpanType 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
                      */
                     void SetSpanType(const int64_t& _spanType);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 请求类型：1——string类型，2——所有类型
+                     * 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
                      */
                     int64_t m_spanType;
                     bool m_spanTypeHasBeenSet;

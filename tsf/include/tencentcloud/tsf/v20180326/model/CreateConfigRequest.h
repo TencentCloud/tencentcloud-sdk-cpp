@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool ConfigTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Base64编码的配置项
+                     * @return EncodeWithBase64 Base64编码的配置项
+                     */
+                    bool GetEncodeWithBase64() const;
+
+                    /**
+                     * 设置Base64编码的配置项
+                     * @param EncodeWithBase64 Base64编码的配置项
+                     */
+                    void SetEncodeWithBase64(const bool& _encodeWithBase64);
+
+                    /**
+                     * 判断参数 EncodeWithBase64 是否已赋值
+                     * @return EncodeWithBase64 是否已赋值
+                     */
+                    bool EncodeWithBase64HasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_configType;
                     bool m_configTypeHasBeenSet;
+
+                    /**
+                     * Base64编码的配置项
+                     */
+                    bool m_encodeWithBase64;
+                    bool m_encodeWithBase64HasBeenSet;
 
                 };
             }

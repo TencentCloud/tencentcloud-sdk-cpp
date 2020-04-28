@@ -69,11 +69,9 @@ namespace TencentCloud
                      * 获取错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
@@ -81,11 +79,9 @@ namespace TencentCloud
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -97,17 +93,13 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -119,17 +111,13 @@ namespace TencentCloud
 
                     /**
                      * 获取被转码文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 被转码文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置被转码文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileId 被转码文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -141,17 +129,13 @@ namespace TencentCloud
 
                     /**
                      * 获取被转码文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 被转码文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置被转码文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileName 被转码文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -163,17 +147,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Duration 视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDuration(const uint64_t& _duration);
 
@@ -185,17 +165,13 @@ namespace TencentCloud
 
                     /**
                      * 获取封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverUrl 封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCoverUrl() const;
 
                     /**
                      * 设置封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CoverUrl 封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
 
@@ -207,17 +183,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频转码后生成的播放信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayInfoSet 视频转码后生成的播放信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TranscodePlayInfo2017> GetPlayInfoSet() const;
 
                     /**
                      * 设置视频转码后生成的播放信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param PlayInfoSet 视频转码后生成的播放信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPlayInfoSet(const std::vector<TranscodePlayInfo2017>& _playInfoSet);
 
@@ -239,49 +211,42 @@ namespace TencentCloud
                      * 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 被转码文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 被转码文件名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 视频时长，单位：秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 封面地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;
 
                     /**
                      * 视频转码后生成的播放信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TranscodePlayInfo2017> m_playInfoSet;
                     bool m_playInfoSetHasBeenSet;

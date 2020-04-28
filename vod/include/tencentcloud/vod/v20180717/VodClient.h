@@ -105,8 +105,6 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesResponse.h>
-#include <tencentcloud/vod/v20180717/model/DescribeAudioTrackTemplatesRequest.h>
-#include <tencentcloud/vod/v20180717/model/DescribeAudioTrackTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesRequest.h>
@@ -141,8 +139,6 @@
 #include <tencentcloud/vod/v20180717/model/DescribeTasksResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesResponse.h>
-#include <tencentcloud/vod/v20180717/model/DescribeVideoTrackTemplatesRequest.h>
-#include <tencentcloud/vod/v20180717/model/DescribeVideoTrackTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesRequest.h>
@@ -348,9 +344,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAnimatedGraphicsTemplatesResponse> DescribeAnimatedGraphicsTemplatesOutcome;
                 typedef std::future<DescribeAnimatedGraphicsTemplatesOutcome> DescribeAnimatedGraphicsTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAnimatedGraphicsTemplatesRequest&, DescribeAnimatedGraphicsTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnimatedGraphicsTemplatesAsyncHandler;
-                typedef Outcome<Error, Model::DescribeAudioTrackTemplatesResponse> DescribeAudioTrackTemplatesOutcome;
-                typedef std::future<DescribeAudioTrackTemplatesOutcome> DescribeAudioTrackTemplatesOutcomeCallable;
-                typedef std::function<void(const VodClient*, const Model::DescribeAudioTrackTemplatesRequest&, DescribeAudioTrackTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAudioTrackTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCDNUsageDataResponse> DescribeCDNUsageDataOutcome;
                 typedef std::future<DescribeCDNUsageDataOutcome> DescribeCDNUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCDNUsageDataRequest&, DescribeCDNUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDNUsageDataAsyncHandler;
@@ -402,9 +395,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTranscodeTemplatesResponse> DescribeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeTranscodeTemplatesOutcome> DescribeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeTranscodeTemplatesRequest&, DescribeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeTemplatesAsyncHandler;
-                typedef Outcome<Error, Model::DescribeVideoTrackTemplatesResponse> DescribeVideoTrackTemplatesOutcome;
-                typedef std::future<DescribeVideoTrackTemplatesOutcome> DescribeVideoTrackTemplatesOutcomeCallable;
-                typedef std::function<void(const VodClient*, const Model::DescribeVideoTrackTemplatesRequest&, DescribeVideoTrackTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoTrackTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeWatermarkTemplatesResponse> DescribeWatermarkTemplatesOutcome;
                 typedef std::future<DescribeWatermarkTemplatesOutcome> DescribeWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeWatermarkTemplatesRequest&, DescribeWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWatermarkTemplatesAsyncHandler;
@@ -897,15 +887,6 @@ namespace TencentCloud
                 DescribeAnimatedGraphicsTemplatesOutcomeCallable DescribeAnimatedGraphicsTemplatesCallable(const Model::DescribeAnimatedGraphicsTemplatesRequest& request);
 
                 /**
-                 *获取转自适应码流音频轨模板列表，支持根据条件，分页查询。
-                 * @param req DescribeAudioTrackTemplatesRequest
-                 * @return DescribeAudioTrackTemplatesOutcome
-                 */
-                DescribeAudioTrackTemplatesOutcome DescribeAudioTrackTemplates(const Model::DescribeAudioTrackTemplatesRequest &request);
-                void DescribeAudioTrackTemplatesAsync(const Model::DescribeAudioTrackTemplatesRequest& request, const DescribeAudioTrackTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAudioTrackTemplatesOutcomeCallable DescribeAudioTrackTemplatesCallable(const Model::DescribeAudioTrackTemplatesRequest& request);
-
-                /**
                  *该接口用于查询点播 CDN 的流量、带宽等统计数据。
    1. 可以查询最近365天内的 CDN 用量数据。
    2.  查询时间跨度不超过90天。
@@ -1083,15 +1064,6 @@ namespace TencentCloud
                 DescribeTranscodeTemplatesOutcome DescribeTranscodeTemplates(const Model::DescribeTranscodeTemplatesRequest &request);
                 void DescribeTranscodeTemplatesAsync(const Model::DescribeTranscodeTemplatesRequest& request, const DescribeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTranscodeTemplatesOutcomeCallable DescribeTranscodeTemplatesCallable(const Model::DescribeTranscodeTemplatesRequest& request);
-
-                /**
-                 *获取转自适应码流视频轨模板列表，支持根据条件，分页查询。
-                 * @param req DescribeVideoTrackTemplatesRequest
-                 * @return DescribeVideoTrackTemplatesOutcome
-                 */
-                DescribeVideoTrackTemplatesOutcome DescribeVideoTrackTemplates(const Model::DescribeVideoTrackTemplatesRequest &request);
-                void DescribeVideoTrackTemplatesAsync(const Model::DescribeVideoTrackTemplatesRequest& request, const DescribeVideoTrackTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeVideoTrackTemplatesOutcomeCallable DescribeVideoTrackTemplatesCallable(const Model::DescribeVideoTrackTemplatesRequest& request);
 
                 /**
                  *查询用户自定义水印模板，支持根据条件，分页查询。

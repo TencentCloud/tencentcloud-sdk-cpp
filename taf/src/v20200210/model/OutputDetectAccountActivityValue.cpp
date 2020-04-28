@@ -25,7 +25,8 @@ OutputDetectAccountActivityValue::OutputDetectAccountActivityValue() :
     m_uidHasBeenSet(false),
     m_postTimeHasBeenSet(false),
     m_userIpHasBeenSet(false),
-    m_levelHasBeenSet(false)
+    m_levelHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome OutputDetectAccountActivityValue::Deserialize(const Value &v
         m_levelHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `OutputDetectAccountActivityValue.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetInt64();
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void OutputDetectAccountActivityValue::ToJsonObject(Value &value, Document::Allo
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void OutputDetectAccountActivityValue::SetLevel(const int64_t& _level)
 bool OutputDetectAccountActivityValue::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+int64_t OutputDetectAccountActivityValue::GetType() const
+{
+    return m_type;
+}
+
+void OutputDetectAccountActivityValue::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool OutputDetectAccountActivityValue::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

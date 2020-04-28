@@ -29,7 +29,8 @@ CreateConfigRequest::CreateConfigRequest() :
     m_configValueHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_configVersionDescHasBeenSet(false),
-    m_configTypeHasBeenSet(false)
+    m_configTypeHasBeenSet(false),
+    m_encodeWithBase64HasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string CreateConfigRequest::ToJsonString() const
         string key = "ConfigType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_configType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encodeWithBase64HasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncodeWithBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encodeWithBase64, allocator);
     }
 
 
@@ -190,6 +199,22 @@ void CreateConfigRequest::SetConfigType(const string& _configType)
 bool CreateConfigRequest::ConfigTypeHasBeenSet() const
 {
     return m_configTypeHasBeenSet;
+}
+
+bool CreateConfigRequest::GetEncodeWithBase64() const
+{
+    return m_encodeWithBase64;
+}
+
+void CreateConfigRequest::SetEncodeWithBase64(const bool& _encodeWithBase64)
+{
+    m_encodeWithBase64 = _encodeWithBase64;
+    m_encodeWithBase64HasBeenSet = true;
+}
+
+bool CreateConfigRequest::EncodeWithBase64HasBeenSet() const
+{
+    return m_encodeWithBase64HasBeenSet;
 }
 
 

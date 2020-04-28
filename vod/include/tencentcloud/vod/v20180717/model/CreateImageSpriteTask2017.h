@@ -68,11 +68,9 @@ namespace TencentCloud
                      * 获取错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
@@ -80,11 +78,9 @@ namespace TencentCloud
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -96,17 +92,13 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -118,17 +110,13 @@ namespace TencentCloud
 
                     /**
                      * 获取截取雪碧图文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 截取雪碧图文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置截取雪碧图文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileId 截取雪碧图文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -140,17 +128,13 @@ namespace TencentCloud
 
                     /**
                      * 获取雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Definition 雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Definition 雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -162,17 +146,13 @@ namespace TencentCloud
 
                     /**
                      * 获取雪碧图小图总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 雪碧图小图总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置雪碧图小图总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TotalCount 雪碧图小图总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
@@ -184,17 +164,13 @@ namespace TencentCloud
 
                     /**
                      * 获取截取雪碧图输出的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSpriteUrlSet 截取雪碧图输出的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetImageSpriteUrlSet() const;
 
                     /**
                      * 设置截取雪碧图输出的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageSpriteUrlSet 截取雪碧图输出的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageSpriteUrlSet(const std::vector<std::string>& _imageSpriteUrlSet);
 
@@ -206,17 +182,13 @@ namespace TencentCloud
 
                     /**
                      * 获取雪碧图子图位置与时间关系 WebVtt 文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebVttUrl 雪碧图子图位置与时间关系 WebVtt 文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWebVttUrl() const;
 
                     /**
                      * 设置雪碧图子图位置与时间关系 WebVtt 文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WebVttUrl 雪碧图子图位置与时间关系 WebVtt 文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWebVttUrl(const std::string& _webVttUrl);
 
@@ -238,49 +210,42 @@ namespace TencentCloud
                      * 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 截取雪碧图文件 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 雪碧图规格，参见[雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
                      * 雪碧图小图总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 截取雪碧图输出的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_imageSpriteUrlSet;
                     bool m_imageSpriteUrlSetHasBeenSet;
 
                     /**
                      * 雪碧图子图位置与时间关系 WebVtt 文件地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webVttUrl;
                     bool m_webVttUrlHasBeenSet;

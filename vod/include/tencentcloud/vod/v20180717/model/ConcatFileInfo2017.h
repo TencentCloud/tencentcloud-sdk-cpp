@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetErrCode() const;
 
@@ -62,11 +60,9 @@ namespace TencentCloud
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -78,17 +74,13 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Message 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -100,17 +92,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频拼接源文件的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 视频拼接源文件的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置视频拼接源文件的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileId 视频拼接源文件的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -122,17 +110,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频拼接源文件的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileUrl 视频拼接源文件的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 设置视频拼接源文件的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileUrl 视频拼接源文件的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
@@ -144,17 +128,13 @@ namespace TencentCloud
 
                     /**
                      * 获取视频拼接源文件的格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileType 视频拼接源文件的格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置视频拼接源文件的格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileType 视频拼接源文件的格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileType(const std::string& _fileType);
 
@@ -170,35 +150,30 @@ namespace TencentCloud
                      * 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 视频拼接源文件的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 视频拼接源文件的地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
                      * 视频拼接源文件的格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;

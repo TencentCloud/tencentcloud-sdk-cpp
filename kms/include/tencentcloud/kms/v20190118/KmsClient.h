@@ -439,7 +439,7 @@ namespace TencentCloud
                 EnableKeysOutcomeCallable EnableKeysCallable(const Model::EnableKeysRequest& request);
 
                 /**
-                 *批量启用白盒密钥
+                 *启用白盒密钥
                  * @param req EnableWhiteBoxKeyRequest
                  * @return EnableWhiteBoxKeyOutcome
                  */
