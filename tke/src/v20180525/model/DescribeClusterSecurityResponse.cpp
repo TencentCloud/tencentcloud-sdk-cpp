@@ -31,7 +31,8 @@ DescribeClusterSecurityResponse::DescribeClusterSecurityResponse() :
     m_clusterExternalEndpointHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_pgwEndpointHasBeenSet(false),
-    m_securityPolicyHasBeenSet(false)
+    m_securityPolicyHasBeenSet(false),
+    m_kubeconfigHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome DescribeClusterSecurityResponse::Deserialize(const string &p
         m_securityPolicyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Kubeconfig") && !rsp["Kubeconfig"].IsNull())
+    {
+        if (!rsp["Kubeconfig"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Kubeconfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kubeconfig = string(rsp["Kubeconfig"].GetString());
+        m_kubeconfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -215,6 +226,16 @@ vector<string> DescribeClusterSecurityResponse::GetSecurityPolicy() const
 bool DescribeClusterSecurityResponse::SecurityPolicyHasBeenSet() const
 {
     return m_securityPolicyHasBeenSet;
+}
+
+string DescribeClusterSecurityResponse::GetKubeconfig() const
+{
+    return m_kubeconfig;
+}
+
+bool DescribeClusterSecurityResponse::KubeconfigHasBeenSet() const
+{
+    return m_kubeconfigHasBeenSet;
 }
 
 

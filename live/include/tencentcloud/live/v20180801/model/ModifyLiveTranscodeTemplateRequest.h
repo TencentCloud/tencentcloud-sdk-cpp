@@ -145,18 +145,18 @@ aac/mp3。
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取视频码率。
-范围：100-8000。
-                     * @return VideoBitrate 视频码率。
-范围：100-8000。
+                     * 获取视频码率。范围：100kbps - 8000kbps。
+注意：码率必须是100的倍数。
+                     * @return VideoBitrate 视频码率。范围：100kbps - 8000kbps。
+注意：码率必须是100的倍数。
                      */
                     int64_t GetVideoBitrate() const;
 
                     /**
-                     * 设置视频码率。
-范围：100-8000。
-                     * @param VideoBitrate 视频码率。
-范围：100-8000。
+                     * 设置视频码率。范围：100kbps - 8000kbps。
+注意：码率必须是100的倍数。
+                     * @param VideoBitrate 视频码率。范围：100kbps - 8000kbps。
+注意：码率必须是100的倍数。
                      */
                     void SetVideoBitrate(const int64_t& _videoBitrate);
 
@@ -426,8 +426,8 @@ aac/mp3。
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 视频码率。
-范围：100-8000。
+                     * 视频码率。范围：100kbps - 8000kbps。
+注意：码率必须是100的倍数。
                      */
                     int64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;

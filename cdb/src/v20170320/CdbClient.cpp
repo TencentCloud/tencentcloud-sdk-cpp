@@ -2190,6 +2190,49 @@ CdbClient::DescribeRollbackRangeTimeOutcomeCallable CdbClient::DescribeRollbackR
     return task->get_future();
 }
 
+CdbClient::DescribeRollbackTaskDetailOutcome CdbClient::DescribeRollbackTaskDetail(const DescribeRollbackTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRollbackTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRollbackTaskDetailResponse rsp = DescribeRollbackTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRollbackTaskDetailOutcome(rsp);
+        else
+            return DescribeRollbackTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRollbackTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeRollbackTaskDetailAsync(const DescribeRollbackTaskDetailRequest& request, const DescribeRollbackTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRollbackTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeRollbackTaskDetailOutcomeCallable CdbClient::DescribeRollbackTaskDetailCallable(const DescribeRollbackTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRollbackTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRollbackTaskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeSlowLogDataOutcome CdbClient::DescribeSlowLogData(const DescribeSlowLogDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSlowLogData");

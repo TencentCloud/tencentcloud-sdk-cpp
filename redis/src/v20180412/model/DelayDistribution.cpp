@@ -23,7 +23,8 @@ using namespace std;
 
 DelayDistribution::DelayDistribution() :
     m_ladderHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_updatetimeHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome DelayDistribution::Deserialize(const Value &value)
         m_sizeHasBeenSet = true;
     }
 
+    if (value.HasMember("Updatetime") && !value["Updatetime"].IsNull())
+    {
+        if (!value["Updatetime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DelayDistribution.Updatetime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatetime = value["Updatetime"].GetInt64();
+        m_updatetimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void DelayDistribution::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_updatetimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Updatetime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updatetime, allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void DelayDistribution::SetSize(const int64_t& _size)
 bool DelayDistribution::SizeHasBeenSet() const
 {
     return m_sizeHasBeenSet;
+}
+
+int64_t DelayDistribution::GetUpdatetime() const
+{
+    return m_updatetime;
+}
+
+void DelayDistribution::SetUpdatetime(const int64_t& _updatetime)
+{
+    m_updatetime = _updatetime;
+    m_updatetimeHasBeenSet = true;
+}
+
+bool DelayDistribution::UpdatetimeHasBeenSet() const
+{
+    return m_updatetimeHasBeenSet;
 }
 

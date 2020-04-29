@@ -50,7 +50,6 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/TimeRange.h
   include/tencentcloud/cme/v20191029/model/DescribeLoginStatusRequest.h
   include/tencentcloud/cme/v20191029/model/DeleteLoginStatusResponse.h
-  include/tencentcloud/cme/v20191029/model/MaterialBaseInfo.h
   include/tencentcloud/cme/v20191029/model/Resource.h
   include/tencentcloud/cme/v20191029/model/CreateLinkResponse.h
   include/tencentcloud/cme/v20191029/model/ListMediaResponse.h
@@ -102,6 +101,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/TeamMemberInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeJoinTeamsResponse.h
   include/tencentcloud/cme/v20191029/model/DescribeTeamMembersRequest.h
+  include/tencentcloud/cme/v20191029/model/MaterialStatus.h
   include/tencentcloud/cme/v20191029/model/MediaImageSpriteInfo.h
   include/tencentcloud/cme/v20191029/model/AuthorizationInfo.h
   include/tencentcloud/cme/v20191029/model/ModifyProjectResponse.h
@@ -155,7 +155,6 @@ set(cme_src
   src/v20191029/model/TimeRange.cpp
   src/v20191029/model/DescribeLoginStatusRequest.cpp
   src/v20191029/model/DeleteLoginStatusResponse.cpp
-  src/v20191029/model/MaterialBaseInfo.cpp
   src/v20191029/model/Resource.cpp
   src/v20191029/model/CreateLinkResponse.cpp
   src/v20191029/model/ListMediaResponse.cpp
@@ -207,6 +206,7 @@ set(cme_src
   src/v20191029/model/TeamMemberInfo.cpp
   src/v20191029/model/DescribeJoinTeamsResponse.cpp
   src/v20191029/model/DescribeTeamMembersRequest.cpp
+  src/v20191029/model/MaterialStatus.cpp
   src/v20191029/model/MediaImageSpriteInfo.cpp
   src/v20191029/model/AuthorizationInfo.cpp
   src/v20191029/model/ModifyProjectResponse.cpp

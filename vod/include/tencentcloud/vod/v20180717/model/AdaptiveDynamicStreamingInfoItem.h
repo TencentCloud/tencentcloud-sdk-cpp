@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取打包格式，可能为 hls 和 dash 两种。
-                     * @return Package 打包格式，可能为 hls 和 dash 两种。
+                     * 获取打包格式，只能为 HLS。
+                     * @return Package 打包格式，只能为 HLS。
                      */
                     std::string GetPackage() const;
 
                     /**
-                     * 设置打包格式，可能为 hls 和 dash 两种。
-                     * @param Package 打包格式，可能为 hls 和 dash 两种。
+                     * 设置打包格式，只能为 HLS。
+                     * @param Package 打包格式，只能为 HLS。
                      */
                     void SetPackage(const std::string& _package);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 打包格式，可能为 hls 和 dash 两种。
+                     * 打包格式，只能为 HLS。
                      */
                     std::string m_package;
                     bool m_packageHasBeenSet;

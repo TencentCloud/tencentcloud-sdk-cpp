@@ -26,7 +26,9 @@ DstInfo::DstInfo() :
     m_regionHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_readOnlyHasBeenSet(false)
+    m_readOnlyHasBeenSet(false),
+    m_userHasBeenSet(false),
+    m_passwordHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,26 @@ CoreInternalOutcome DstInfo::Deserialize(const Value &value)
         m_readOnlyHasBeenSet = true;
     }
 
+    if (value.HasMember("User") && !value["User"].IsNull())
+    {
+        if (!value["User"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DstInfo.User` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_user = string(value["User"].GetString());
+        m_userHasBeenSet = true;
+    }
+
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DstInfo.Password` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_password = string(value["Password"].GetString());
+        m_passwordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +152,22 @@ void DstInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnly, allocator);
+    }
+
+    if (m_userHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "User";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_user.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +251,37 @@ void DstInfo::SetReadOnly(const int64_t& _readOnly)
 bool DstInfo::ReadOnlyHasBeenSet() const
 {
     return m_readOnlyHasBeenSet;
+}
+
+string DstInfo::GetUser() const
+{
+    return m_user;
+}
+
+void DstInfo::SetUser(const string& _user)
+{
+    m_user = _user;
+    m_userHasBeenSet = true;
+}
+
+bool DstInfo::UserHasBeenSet() const
+{
+    return m_userHasBeenSet;
+}
+
+string DstInfo::GetPassword() const
+{
+    return m_password;
+}
+
+void DstInfo::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool DstInfo::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
 }
 

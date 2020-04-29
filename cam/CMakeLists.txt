@@ -92,6 +92,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/CreateServiceLinkedRoleResponse.h
   include/tencentcloud/cam/v20190116/model/ListUsersRequest.h
   include/tencentcloud/cam/v20190116/model/ListCollaboratorsRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdatePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/CreateGroupRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateGroupResponse.h
   include/tencentcloud/cam/v20190116/model/ListEntitiesForPolicyRequest.h
@@ -131,6 +132,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/ListCollaboratorsResponse.h
   include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/GroupMemberInfo.h
   include/tencentcloud/cam/v20190116/model/CreateGroupResponse.h
   )
@@ -210,6 +212,7 @@ set(cam_src
   src/v20190116/model/CreateServiceLinkedRoleResponse.cpp
   src/v20190116/model/ListUsersRequest.cpp
   src/v20190116/model/ListCollaboratorsRequest.cpp
+  src/v20190116/model/UpdatePolicyResponse.cpp
   src/v20190116/model/CreateGroupRequest.cpp
   src/v20190116/model/UpdateGroupResponse.cpp
   src/v20190116/model/ListEntitiesForPolicyRequest.cpp
@@ -249,6 +252,7 @@ set(cam_src
   src/v20190116/model/AttachUserPolicyResponse.cpp
   src/v20190116/model/ListCollaboratorsResponse.cpp
   src/v20190116/model/ListAttachedUserPoliciesRequest.cpp
+  src/v20190116/model/UpdatePolicyRequest.cpp
   src/v20190116/model/GroupMemberInfo.cpp
   src/v20190116/model/CreateGroupResponse.cpp
   )

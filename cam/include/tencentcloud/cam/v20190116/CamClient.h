@@ -117,6 +117,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdatePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleDescriptionRequest.h>
@@ -280,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UpdateGroupResponse> UpdateGroupOutcome;
                 typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateGroupRequest&, UpdateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGroupAsyncHandler;
+                typedef Outcome<Error, Model::UpdatePolicyResponse> UpdatePolicyOutcome;
+                typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdatePolicyRequest&, UpdatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyAsyncHandler;
                 typedef Outcome<Error, Model::UpdateRoleConsoleLoginResponse> UpdateRoleConsoleLoginOutcome;
                 typedef std::future<UpdateRoleConsoleLoginOutcome> UpdateRoleConsoleLoginOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateRoleConsoleLoginRequest&, UpdateRoleConsoleLoginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleConsoleLoginAsyncHandler;
@@ -717,6 +722,16 @@ namespace TencentCloud
                 UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest &request);
                 void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request);
+
+                /**
+                 *本接口（UpdatePolicy ）可用于更新策略。
+如果已存在策略版本，本接口会直接更新策略的默认版本，不会创建新版本，如果不存在任何策略版本，则直接创建一个默认版本。
+                 * @param req UpdatePolicyRequest
+                 * @return UpdatePolicyOutcome
+                 */
+                UpdatePolicyOutcome UpdatePolicy(const Model::UpdatePolicyRequest &request);
+                void UpdatePolicyAsync(const Model::UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePolicyOutcomeCallable UpdatePolicyCallable(const Model::UpdatePolicyRequest& request);
 
                 /**
                  *本接口（UpdateRoleConsoleLogin）用于修改角色是否可登录。

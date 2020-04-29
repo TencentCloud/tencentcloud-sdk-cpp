@@ -23,7 +23,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/AccessInfo.h
   include/tencentcloud/scf/v20180416/model/LayerVersionInfo.h
   include/tencentcloud/scf/v20180416/model/ListLayerVersionsResponse.h
-  include/tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h
+  include/tencentcloud/scf/v20180416/model/DeleteAliasResponse.h
   include/tencentcloud/scf/v20180416/model/CopyFunctionResponse.h
   include/tencentcloud/scf/v20180416/model/ListVersionByFunctionResponse.h
   include/tencentcloud/scf/v20180416/model/Namespace.h
@@ -32,6 +32,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/Environment.h
   include/tencentcloud/scf/v20180416/model/ListNamespacesRequest.h
   include/tencentcloud/scf/v20180416/model/FunctionVersion.h
+  include/tencentcloud/scf/v20180416/model/DeleteAliasRequest.h
   include/tencentcloud/scf/v20180416/model/GetFunctionAddressRequest.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/InvokeResponse.h
@@ -45,7 +46,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/PublicNetConfigOut.h
   include/tencentcloud/scf/v20180416/model/ListFunctionsResponse.h
   include/tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h
-  include/tencentcloud/scf/v20180416/model/ListLayerVersionsRequest.h
+  include/tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/CreateTriggerResponse.h
   include/tencentcloud/scf/v20180416/model/PublishLayerVersionRequest.h
   include/tencentcloud/scf/v20180416/model/CreateNamespaceRequest.h
@@ -59,6 +60,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/PublishLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/PublishVersionResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionRequest.h
+  include/tencentcloud/scf/v20180416/model/ListLayerVersionsRequest.h
   include/tencentcloud/scf/v20180416/model/CreateFunctionResponse.h
   include/tencentcloud/scf/v20180416/model/LayerVersionSimple.h
   include/tencentcloud/scf/v20180416/model/Trigger.h
@@ -94,7 +96,7 @@ set(scf_src
   src/v20180416/model/AccessInfo.cpp
   src/v20180416/model/LayerVersionInfo.cpp
   src/v20180416/model/ListLayerVersionsResponse.cpp
-  src/v20180416/model/DeleteFunctionRequest.cpp
+  src/v20180416/model/DeleteAliasResponse.cpp
   src/v20180416/model/CopyFunctionResponse.cpp
   src/v20180416/model/ListVersionByFunctionResponse.cpp
   src/v20180416/model/Namespace.cpp
@@ -103,6 +105,7 @@ set(scf_src
   src/v20180416/model/Environment.cpp
   src/v20180416/model/ListNamespacesRequest.cpp
   src/v20180416/model/FunctionVersion.cpp
+  src/v20180416/model/DeleteAliasRequest.cpp
   src/v20180416/model/GetFunctionAddressRequest.cpp
   src/v20180416/model/DeleteLayerVersionResponse.cpp
   src/v20180416/model/InvokeResponse.cpp
@@ -116,7 +119,7 @@ set(scf_src
   src/v20180416/model/PublicNetConfigOut.cpp
   src/v20180416/model/ListFunctionsResponse.cpp
   src/v20180416/model/UpdateNamespaceResponse.cpp
-  src/v20180416/model/ListLayerVersionsRequest.cpp
+  src/v20180416/model/DeleteFunctionRequest.cpp
   src/v20180416/model/CreateTriggerResponse.cpp
   src/v20180416/model/PublishLayerVersionRequest.cpp
   src/v20180416/model/CreateNamespaceRequest.cpp
@@ -130,6 +133,7 @@ set(scf_src
   src/v20180416/model/PublishLayerVersionResponse.cpp
   src/v20180416/model/PublishVersionResponse.cpp
   src/v20180416/model/DeleteLayerVersionRequest.cpp
+  src/v20180416/model/ListLayerVersionsRequest.cpp
   src/v20180416/model/CreateFunctionResponse.cpp
   src/v20180416/model/LayerVersionSimple.cpp
   src/v20180416/model/Trigger.cpp

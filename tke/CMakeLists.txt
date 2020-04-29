@@ -68,6 +68,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ClusterExtraArgs.h
   include/tencentcloud/tke/v20180525/model/DataDisk.h
   include/tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/ResourceDeleteOption.h
   include/tencentcloud/tke/v20180525/model/LoginSettings.h
   include/tencentcloud/tke/v20180525/model/Instance.h
   include/tencentcloud/tke/v20180525/model/EnhancedService.h
@@ -166,6 +167,7 @@ set(tke_src
   src/v20180525/model/ClusterExtraArgs.cpp
   src/v20180525/model/DataDisk.cpp
   src/v20180525/model/DescribeExistedInstancesResponse.cpp
+  src/v20180525/model/ResourceDeleteOption.cpp
   src/v20180525/model/LoginSettings.cpp
   src/v20180525/model/Instance.cpp
   src/v20180525/model/EnhancedService.cpp

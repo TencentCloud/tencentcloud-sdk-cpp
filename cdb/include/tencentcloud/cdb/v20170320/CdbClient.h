@@ -123,6 +123,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogDataRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogDataResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogsRequest.h>
@@ -365,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRollbackRangeTimeResponse> DescribeRollbackRangeTimeOutcome;
                 typedef std::future<DescribeRollbackRangeTimeOutcome> DescribeRollbackRangeTimeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRollbackRangeTimeRequest&, DescribeRollbackRangeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackRangeTimeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRollbackTaskDetailResponse> DescribeRollbackTaskDetailOutcome;
+                typedef std::future<DescribeRollbackTaskDetailOutcome> DescribeRollbackTaskDetailOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeRollbackTaskDetailRequest&, DescribeRollbackTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTaskDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSlowLogDataResponse> DescribeSlowLogDataOutcome;
                 typedef std::future<DescribeSlowLogDataOutcome> DescribeSlowLogDataOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeSlowLogDataRequest&, DescribeSlowLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogDataAsyncHandler;
@@ -958,6 +963,15 @@ namespace TencentCloud
                 DescribeRollbackRangeTimeOutcome DescribeRollbackRangeTime(const Model::DescribeRollbackRangeTimeRequest &request);
                 void DescribeRollbackRangeTimeAsync(const Model::DescribeRollbackRangeTimeRequest& request, const DescribeRollbackRangeTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRollbackRangeTimeOutcomeCallable DescribeRollbackRangeTimeCallable(const Model::DescribeRollbackRangeTimeRequest& request);
+
+                /**
+                 *本接口(DescribeRollbackTaskDetail)用于查询云数据库实例回档任务详情。
+                 * @param req DescribeRollbackTaskDetailRequest
+                 * @return DescribeRollbackTaskDetailOutcome
+                 */
+                DescribeRollbackTaskDetailOutcome DescribeRollbackTaskDetail(const Model::DescribeRollbackTaskDetailRequest &request);
+                void DescribeRollbackTaskDetailAsync(const Model::DescribeRollbackTaskDetailRequest& request, const DescribeRollbackTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRollbackTaskDetailOutcomeCallable DescribeRollbackTaskDetailCallable(const Model::DescribeRollbackTaskDetailRequest& request);
 
                 /**
                  *条件检索实例的慢日志。只允许查看一个月之内的慢日志

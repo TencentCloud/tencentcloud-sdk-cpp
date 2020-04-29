@@ -25,7 +25,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/MediaMetaData.h>
-#include <tencentcloud/cme/v20191029/model/MaterialBaseInfo.h>
 
 
 namespace TencentCloud
@@ -102,28 +101,6 @@ namespace TencentCloud
                      */
                     bool MetaDataHasBeenSet() const;
 
-                    /**
-                     * 获取素材基础信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaterialBaseInfo 素材基础信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    MaterialBaseInfo GetMaterialBaseInfo() const;
-
-                    /**
-                     * 设置素材基础信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaterialBaseInfo 素材基础信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetMaterialBaseInfo(const MaterialBaseInfo& _materialBaseInfo);
-
-                    /**
-                     * 判断参数 MaterialBaseInfo 是否已赋值
-                     * @return MaterialBaseInfo 是否已赋值
-                     */
-                    bool MaterialBaseInfoHasBeenSet() const;
-
                 private:
 
                     /**
@@ -143,13 +120,6 @@ namespace TencentCloud
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
-
-                    /**
-                     * 素材基础信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    MaterialBaseInfo m_materialBaseInfo;
-                    bool m_materialBaseInfoHasBeenSet;
 
                 };
             }

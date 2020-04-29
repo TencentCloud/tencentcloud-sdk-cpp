@@ -31,7 +31,8 @@ Registry::Registry() :
     m_regionNameHasBeenSet(false),
     m_regionIdHasBeenSet(false),
     m_enableAnonymousHasBeenSet(false),
-    m_tokenValidTimeHasBeenSet(false)
+    m_tokenValidTimeHasBeenSet(false),
+    m_internalEndpointHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome Registry::Deserialize(const Value &value)
         m_tokenValidTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalEndpoint") && !value["InternalEndpoint"].IsNull())
+    {
+        if (!value["InternalEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Registry.InternalEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalEndpoint = string(value["InternalEndpoint"].GetString());
+        m_internalEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "TokenValidTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tokenValidTime, allocator);
+    }
+
+    if (m_internalEndpointHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternalEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_internalEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void Registry::SetTokenValidTime(const uint64_t& _tokenValidTime)
 bool Registry::TokenValidTimeHasBeenSet() const
 {
     return m_tokenValidTimeHasBeenSet;
+}
+
+string Registry::GetInternalEndpoint() const
+{
+    return m_internalEndpoint;
+}
+
+void Registry::SetInternalEndpoint(const string& _internalEndpoint)
+{
+    m_internalEndpoint = _internalEndpoint;
+    m_internalEndpointHasBeenSet = true;
+}
+
+bool Registry::InternalEndpointHasBeenSet() const
+{
+    return m_internalEndpointHasBeenSet;
 }
 

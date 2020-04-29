@@ -36,10 +36,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
     m_publishHasBeenSet(false),
-    m_l5EnableHasBeenSet(false),
     m_layersHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_onsEnableHasBeenSet(false)
+    m_deadLetterConfigHasBeenSet(false)
 {
 }
 
@@ -148,14 +146,6 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_publish.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_l5EnableHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "L5Enable";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_l5Enable.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_layersHasBeenSet)
     {
         Value iKey(kStringType);
@@ -178,14 +168,6 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_deadLetterConfig.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_onsEnableHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "OnsEnable";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_onsEnable.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -388,22 +370,6 @@ bool UpdateFunctionConfigurationRequest::PublishHasBeenSet() const
     return m_publishHasBeenSet;
 }
 
-string UpdateFunctionConfigurationRequest::GetL5Enable() const
-{
-    return m_l5Enable;
-}
-
-void UpdateFunctionConfigurationRequest::SetL5Enable(const string& _l5Enable)
-{
-    m_l5Enable = _l5Enable;
-    m_l5EnableHasBeenSet = true;
-}
-
-bool UpdateFunctionConfigurationRequest::L5EnableHasBeenSet() const
-{
-    return m_l5EnableHasBeenSet;
-}
-
 vector<LayerVersionSimple> UpdateFunctionConfigurationRequest::GetLayers() const
 {
     return m_layers;
@@ -434,22 +400,6 @@ void UpdateFunctionConfigurationRequest::SetDeadLetterConfig(const DeadLetterCon
 bool UpdateFunctionConfigurationRequest::DeadLetterConfigHasBeenSet() const
 {
     return m_deadLetterConfigHasBeenSet;
-}
-
-string UpdateFunctionConfigurationRequest::GetOnsEnable() const
-{
-    return m_onsEnable;
-}
-
-void UpdateFunctionConfigurationRequest::SetOnsEnable(const string& _onsEnable)
-{
-    m_onsEnable = _onsEnable;
-    m_onsEnableHasBeenSet = true;
-}
-
-bool UpdateFunctionConfigurationRequest::OnsEnableHasBeenSet() const
-{
-    return m_onsEnableHasBeenSet;
 }
 
 

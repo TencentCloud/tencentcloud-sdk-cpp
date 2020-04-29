@@ -24,7 +24,8 @@ using namespace std;
 AudioMaterial::AudioMaterial() :
     m_metaDataHasBeenSet(false),
     m_materialUrlHasBeenSet(false),
-    m_coverUrlHasBeenSet(false)
+    m_coverUrlHasBeenSet(false),
+    m_materialStatusHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,23 @@ CoreInternalOutcome AudioMaterial::Deserialize(const Value &value)
         m_coverUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("MaterialStatus") && !value["MaterialStatus"].IsNull())
+    {
+        if (!value["MaterialStatus"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AudioMaterial.MaterialStatus` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_materialStatus.Deserialize(value["MaterialStatus"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_materialStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +118,15 @@ void AudioMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "CoverUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_coverUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_materialStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaterialStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_materialStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -151,5 +178,21 @@ void AudioMaterial::SetCoverUrl(const string& _coverUrl)
 bool AudioMaterial::CoverUrlHasBeenSet() const
 {
     return m_coverUrlHasBeenSet;
+}
+
+MaterialStatus AudioMaterial::GetMaterialStatus() const
+{
+    return m_materialStatus;
+}
+
+void AudioMaterial::SetMaterialStatus(const MaterialStatus& _materialStatus)
+{
+    m_materialStatus = _materialStatus;
+    m_materialStatusHasBeenSet = true;
+}
+
+bool AudioMaterial::MaterialStatusHasBeenSet() const
+{
+    return m_materialStatusHasBeenSet;
 }
 

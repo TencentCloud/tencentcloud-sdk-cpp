@@ -136,6 +136,42 @@ namespace TencentCloud
                      */
                     bool ReadOnlyHasBeenSet() const;
 
+                    /**
+                     * 获取目标数据库账号
+                     * @return User 目标数据库账号
+                     */
+                    std::string GetUser() const;
+
+                    /**
+                     * 设置目标数据库账号
+                     * @param User 目标数据库账号
+                     */
+                    void SetUser(const std::string& _user);
+
+                    /**
+                     * 判断参数 User 是否已赋值
+                     * @return User 是否已赋值
+                     */
+                    bool UserHasBeenSet() const;
+
+                    /**
+                     * 获取目标数据库密码
+                     * @return Password 目标数据库密码
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置目标数据库密码
+                     * @param Password 目标数据库密码
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     */
+                    bool PasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +203,18 @@ namespace TencentCloud
                      */
                     int64_t m_readOnly;
                     bool m_readOnlyHasBeenSet;
+
+                    /**
+                     * 目标数据库账号
+                     */
+                    std::string m_user;
+                    bool m_userHasBeenSet;
+
+                    /**
+                     * 目标数据库密码
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
 
                 };
             }

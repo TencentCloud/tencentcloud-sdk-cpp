@@ -85,6 +85,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeErrorLogDataResponse.h
   include/tencentcloud/cdb/v20170320/model/AddTimeWindowRequest.h
   include/tencentcloud/cdb/v20170320/model/ImportRecord.h
+  include/tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAccountsRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateDBInstanceHourRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDeployGroupListRequest.h
@@ -122,6 +123,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyAutoRenewFlagResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteTimeWindowResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h
+  include/tencentcloud/cdb/v20170320/model/RollbackTask.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeTimeWindowRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h
@@ -130,6 +132,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/BackupItem.h
   include/tencentcloud/cdb/v20170320/model/DatabaseName.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupConfigResponse.h
+  include/tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplatesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupTablesResponse.h
@@ -329,6 +332,7 @@ set(cdb_src
   src/v20170320/model/DescribeErrorLogDataResponse.cpp
   src/v20170320/model/AddTimeWindowRequest.cpp
   src/v20170320/model/ImportRecord.cpp
+  src/v20170320/model/DescribeRollbackTaskDetailResponse.cpp
   src/v20170320/model/CreateAccountsRequest.cpp
   src/v20170320/model/CreateDBInstanceHourRequest.cpp
   src/v20170320/model/DescribeDeployGroupListRequest.cpp
@@ -366,6 +370,7 @@ set(cdb_src
   src/v20170320/model/ModifyAutoRenewFlagResponse.cpp
   src/v20170320/model/DeleteTimeWindowResponse.cpp
   src/v20170320/model/DescribeBinlogBackupOverviewRequest.cpp
+  src/v20170320/model/RollbackTask.cpp
   src/v20170320/model/DescribeBackupsResponse.cpp
   src/v20170320/model/DescribeTimeWindowRequest.cpp
   src/v20170320/model/ModifyInstanceParamResponse.cpp
@@ -374,6 +379,7 @@ set(cdb_src
   src/v20170320/model/BackupItem.cpp
   src/v20170320/model/DatabaseName.cpp
   src/v20170320/model/DescribeBackupConfigResponse.cpp
+  src/v20170320/model/DescribeRollbackTaskDetailRequest.cpp
   src/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20170320/model/DescribeParamTemplatesResponse.cpp
   src/v20170320/model/DescribeBackupTablesResponse.cpp

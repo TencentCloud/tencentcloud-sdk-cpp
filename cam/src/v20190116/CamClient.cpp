@@ -2061,6 +2061,49 @@ CamClient::UpdateGroupOutcomeCallable CamClient::UpdateGroupCallable(const Updat
     return task->get_future();
 }
 
+CamClient::UpdatePolicyOutcome CamClient::UpdatePolicy(const UpdatePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePolicyResponse rsp = UpdatePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePolicyOutcome(rsp);
+        else
+            return UpdatePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UpdatePolicyAsync(const UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::UpdatePolicyOutcomeCallable CamClient::UpdatePolicyCallable(const UpdatePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::UpdateRoleConsoleLoginOutcome CamClient::UpdateRoleConsoleLogin(const UpdateRoleConsoleLoginRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateRoleConsoleLogin");

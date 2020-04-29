@@ -77,11 +77,14 @@ CoreInternalOutcome OutputDetectAccountActivityValue::Deserialize(const Value &v
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
     {
-        if (!value["Type"].IsInt64())
+        if (!value["Type"].IsArray())
+            return CoreInternalOutcome(Error("response `OutputDetectAccountActivityValue.Type` is not array type"));
+
+        const Value &tmpValue = value["Type"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Error("response `OutputDetectAccountActivityValue.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+            m_type.push_back((*itr).GetInt64());
         }
-        m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
     }
 
@@ -129,7 +132,12 @@ void OutputDetectAccountActivityValue::ToJsonObject(Value &value, Document::Allo
         Value iKey(kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_type, allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_type.begin(); itr != m_type.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -199,12 +207,12 @@ bool OutputDetectAccountActivityValue::LevelHasBeenSet() const
     return m_levelHasBeenSet;
 }
 
-int64_t OutputDetectAccountActivityValue::GetType() const
+vector<int64_t> OutputDetectAccountActivityValue::GetType() const
 {
     return m_type;
 }
 
-void OutputDetectAccountActivityValue::SetType(const int64_t& _type)
+void OutputDetectAccountActivityValue::SetType(const vector<int64_t>& _type)
 {
     m_type = _type;
     m_typeHasBeenSet = true;

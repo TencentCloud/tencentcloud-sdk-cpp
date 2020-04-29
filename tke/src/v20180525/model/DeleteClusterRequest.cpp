@@ -25,7 +25,8 @@ using namespace std;
 
 DeleteClusterRequest::DeleteClusterRequest() :
     m_clusterIdHasBeenSet(false),
-    m_instanceDeleteModeHasBeenSet(false)
+    m_instanceDeleteModeHasBeenSet(false),
+    m_resourceDeleteOptionsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,21 @@ string DeleteClusterRequest::ToJsonString() const
         string key = "InstanceDeleteMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceDeleteMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceDeleteOptionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceDeleteOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceDeleteOptions.begin(); itr != m_resourceDeleteOptions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -90,6 +106,22 @@ void DeleteClusterRequest::SetInstanceDeleteMode(const string& _instanceDeleteMo
 bool DeleteClusterRequest::InstanceDeleteModeHasBeenSet() const
 {
     return m_instanceDeleteModeHasBeenSet;
+}
+
+vector<ResourceDeleteOption> DeleteClusterRequest::GetResourceDeleteOptions() const
+{
+    return m_resourceDeleteOptions;
+}
+
+void DeleteClusterRequest::SetResourceDeleteOptions(const vector<ResourceDeleteOption>& _resourceDeleteOptions)
+{
+    m_resourceDeleteOptions = _resourceDeleteOptions;
+    m_resourceDeleteOptionsHasBeenSet = true;
+}
+
+bool DeleteClusterRequest::ResourceDeleteOptionsHasBeenSet() const
+{
+    return m_resourceDeleteOptionsHasBeenSet;
 }
 
 

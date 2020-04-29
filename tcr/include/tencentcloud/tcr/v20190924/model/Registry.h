@@ -226,6 +226,24 @@ namespace TencentCloud
                      */
                     bool TokenValidTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例内部访问地址
+                     * @return InternalEndpoint 实例内部访问地址
+                     */
+                    std::string GetInternalEndpoint() const;
+
+                    /**
+                     * 设置实例内部访问地址
+                     * @param InternalEndpoint 实例内部访问地址
+                     */
+                    void SetInternalEndpoint(const std::string& _internalEndpoint);
+
+                    /**
+                     * 判断参数 InternalEndpoint 是否已赋值
+                     * @return InternalEndpoint 是否已赋值
+                     */
+                    bool InternalEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +305,12 @@ namespace TencentCloud
                      */
                     uint64_t m_tokenValidTime;
                     bool m_tokenValidTimeHasBeenSet;
+
+                    /**
+                     * 实例内部访问地址
+                     */
+                    std::string m_internalEndpoint;
+                    bool m_internalEndpointHasBeenSet;
 
                 };
             }

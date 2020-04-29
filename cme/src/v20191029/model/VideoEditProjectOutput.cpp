@@ -24,8 +24,7 @@ using namespace std;
 VideoEditProjectOutput::VideoEditProjectOutput() :
     m_vodFileIdHasBeenSet(false),
     m_uRLHasBeenSet(false),
-    m_metaDataHasBeenSet(false),
-    m_materialBaseInfoHasBeenSet(false)
+    m_metaDataHasBeenSet(false)
 {
 }
 
@@ -71,23 +70,6 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const Value &value)
         m_metaDataHasBeenSet = true;
     }
 
-    if (value.HasMember("MaterialBaseInfo") && !value["MaterialBaseInfo"].IsNull())
-    {
-        if (!value["MaterialBaseInfo"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `VideoEditProjectOutput.MaterialBaseInfo` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_materialBaseInfo.Deserialize(value["MaterialBaseInfo"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_materialBaseInfoHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -118,15 +100,6 @@ void VideoEditProjectOutput::ToJsonObject(Value &value, Document::AllocatorType&
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_metaData.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_materialBaseInfoHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "MaterialBaseInfo";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_materialBaseInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -178,21 +151,5 @@ void VideoEditProjectOutput::SetMetaData(const MediaMetaData& _metaData)
 bool VideoEditProjectOutput::MetaDataHasBeenSet() const
 {
     return m_metaDataHasBeenSet;
-}
-
-MaterialBaseInfo VideoEditProjectOutput::GetMaterialBaseInfo() const
-{
-    return m_materialBaseInfo;
-}
-
-void VideoEditProjectOutput::SetMaterialBaseInfo(const MaterialBaseInfo& _materialBaseInfo)
-{
-    m_materialBaseInfo = _materialBaseInfo;
-    m_materialBaseInfoHasBeenSet = true;
-}
-
-bool VideoEditProjectOutput::MaterialBaseInfoHasBeenSet() const
-{
-    return m_materialBaseInfoHasBeenSet;
 }
 

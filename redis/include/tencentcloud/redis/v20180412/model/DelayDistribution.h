@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool SizeHasBeenSet() const;
 
+                    /**
+                     * 获取修改时间
+                     * @return Updatetime 修改时间
+                     */
+                    int64_t GetUpdatetime() const;
+
+                    /**
+                     * 设置修改时间
+                     * @param Updatetime 修改时间
+                     */
+                    void SetUpdatetime(const int64_t& _updatetime);
+
+                    /**
+                     * 判断参数 Updatetime 是否已赋值
+                     * @return Updatetime 是否已赋值
+                     */
+                    bool UpdatetimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
+
+                    /**
+                     * 修改时间
+                     */
+                    int64_t m_updatetime;
+                    bool m_updatetimeHasBeenSet;
 
                 };
             }

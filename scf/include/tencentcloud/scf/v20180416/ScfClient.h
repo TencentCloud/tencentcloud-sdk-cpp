@@ -31,6 +31,8 @@
 #include <tencentcloud/scf/v20180416/model/CreateNamespaceResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateTriggerRequest.h>
 #include <tencentcloud/scf/v20180416/model/CreateTriggerResponse.h>
+#include <tencentcloud/scf/v20180416/model/DeleteAliasRequest.h>
+#include <tencentcloud/scf/v20180416/model/DeleteAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteLayerVersionRequest.h>
@@ -95,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTriggerResponse> CreateTriggerOutcome;
                 typedef std::future<CreateTriggerOutcome> CreateTriggerOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::CreateTriggerRequest&, CreateTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTriggerAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAliasResponse> DeleteAliasOutcome;
+                typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::DeleteAliasRequest&, DeleteAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAliasAsyncHandler;
                 typedef Outcome<Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
@@ -196,6 +201,15 @@ namespace TencentCloud
                 CreateTriggerOutcome CreateTrigger(const Model::CreateTriggerRequest &request);
                 void CreateTriggerAsync(const Model::CreateTriggerRequest& request, const CreateTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTriggerOutcomeCallable CreateTriggerCallable(const Model::CreateTriggerRequest& request);
+
+                /**
+                 *删除一个函数版本的别名
+                 * @param req DeleteAliasRequest
+                 * @return DeleteAliasOutcome
+                 */
+                DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest &request);
+                void DeleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAliasOutcomeCallable DeleteAliasCallable(const Model::DeleteAliasRequest& request);
 
                 /**
                  *该接口根据传入参数删除函数。

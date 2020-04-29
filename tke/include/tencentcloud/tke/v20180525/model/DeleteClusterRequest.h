@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/ResourceDeleteOption.h>
 
 
 namespace TencentCloud
@@ -78,6 +79,24 @@ namespace TencentCloud
                      */
                     bool InstanceDeleteModeHasBeenSet() const;
 
+                    /**
+                     * 获取集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * @return ResourceDeleteOptions 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     */
+                    std::vector<ResourceDeleteOption> GetResourceDeleteOptions() const;
+
+                    /**
+                     * 设置集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * @param ResourceDeleteOptions 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     */
+                    void SetResourceDeleteOptions(const std::vector<ResourceDeleteOption>& _resourceDeleteOptions);
+
+                    /**
+                     * 判断参数 ResourceDeleteOptions 是否已赋值
+                     * @return ResourceDeleteOptions 是否已赋值
+                     */
+                    bool ResourceDeleteOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +110,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceDeleteMode;
                     bool m_instanceDeleteModeHasBeenSet;
+
+                    /**
+                     * 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     */
+                    std::vector<ResourceDeleteOption> m_resourceDeleteOptions;
+                    bool m_resourceDeleteOptionsHasBeenSet;
 
                 };
             }

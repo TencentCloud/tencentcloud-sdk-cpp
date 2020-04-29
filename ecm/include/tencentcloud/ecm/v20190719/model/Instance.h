@@ -424,17 +424,17 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                     bool DataDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取UUID
+                     * 获取实例UUID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UUID UUID
+                     * @return UUID 实例UUID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUUID() const;
 
                     /**
-                     * 设置UUID
+                     * 设置实例UUID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UUID UUID
+                     * @param UUID 实例UUID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUUID(const std::string& _uUID);
@@ -627,6 +627,28 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     bool DataDisksHasBeenSet() const;
 
+                    /**
+                     * 获取新实例标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewFlag 新实例标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNewFlag() const;
+
+                    /**
+                     * 设置新实例标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NewFlag 新实例标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNewFlag(const int64_t& _newFlag);
+
+                    /**
+                     * 判断参数 NewFlag 是否已赋值
+                     * @return NewFlag 是否已赋值
+                     */
+                    bool NewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -745,7 +767,7 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                     bool m_dataDiskSizeHasBeenSet;
 
                     /**
-                     * UUID
+                     * 实例UUID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uUID;
@@ -806,6 +828,13 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     std::vector<DiskInfo> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
+
+                    /**
+                     * 新实例标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_newFlag;
+                    bool m_newFlagHasBeenSet;
 
                 };
             }

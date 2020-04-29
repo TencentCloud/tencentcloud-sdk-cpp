@@ -212,6 +212,49 @@ ScfClient::CreateTriggerOutcomeCallable ScfClient::CreateTriggerCallable(const C
     return task->get_future();
 }
 
+ScfClient::DeleteAliasOutcome ScfClient::DeleteAlias(const DeleteAliasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlias");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAliasResponse rsp = DeleteAliasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAliasOutcome(rsp);
+        else
+            return DeleteAliasOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAliasOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAlias(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::DeleteAliasOutcomeCallable ScfClient::DeleteAliasCallable(const DeleteAliasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAliasOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAlias(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::DeleteFunctionOutcome ScfClient::DeleteFunction(const DeleteFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteFunction");

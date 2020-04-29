@@ -126,6 +126,20 @@ namespace TencentCloud
                      */
                     bool SecurityPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取集群Kubeconfig文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Kubeconfig 集群Kubeconfig文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKubeconfig() const;
+
+                    /**
+                     * 判断参数 Kubeconfig 是否已赋值
+                     * @return Kubeconfig 是否已赋值
+                     */
+                    bool KubeconfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +183,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityPolicy;
                     bool m_securityPolicyHasBeenSet;
+
+                    /**
+                     * 集群Kubeconfig文件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kubeconfig;
+                    bool m_kubeconfigHasBeenSet;
 
                 };
             }

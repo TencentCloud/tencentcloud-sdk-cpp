@@ -44,7 +44,8 @@ Instance::Instance() :
     m_renewFlagHasBeenSet(false),
     m_expireStateHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
-    m_dataDisksHasBeenSet(false)
+    m_dataDisksHasBeenSet(false),
+    m_newFlagHasBeenSet(false)
 {
 }
 
@@ -345,6 +346,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_dataDisksHasBeenSet = true;
     }
 
+    if (value.HasMember("NewFlag") && !value["NewFlag"].IsNull())
+    {
+        if (!value["NewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Instance.NewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_newFlag = value["NewFlag"].GetInt64();
+        m_newFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -554,6 +565,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_newFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_newFlag, allocator);
     }
 
 }
@@ -925,5 +944,21 @@ void Instance::SetDataDisks(const vector<DiskInfo>& _dataDisks)
 bool Instance::DataDisksHasBeenSet() const
 {
     return m_dataDisksHasBeenSet;
+}
+
+int64_t Instance::GetNewFlag() const
+{
+    return m_newFlag;
+}
+
+void Instance::SetNewFlag(const int64_t& _newFlag)
+{
+    m_newFlag = _newFlag;
+    m_newFlagHasBeenSet = true;
+}
+
+bool Instance::NewFlagHasBeenSet() const
+{
+    return m_newFlagHasBeenSet;
 }
 

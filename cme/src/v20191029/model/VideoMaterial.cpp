@@ -26,7 +26,8 @@ VideoMaterial::VideoMaterial() :
     m_imageSpriteInfoHasBeenSet(false),
     m_materialUrlHasBeenSet(false),
     m_coverUrlHasBeenSet(false),
-    m_resolutionHasBeenSet(false)
+    m_resolutionHasBeenSet(false),
+    m_materialStatusHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,23 @@ CoreInternalOutcome VideoMaterial::Deserialize(const Value &value)
         m_resolutionHasBeenSet = true;
     }
 
+    if (value.HasMember("MaterialStatus") && !value["MaterialStatus"].IsNull())
+    {
+        if (!value["MaterialStatus"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `VideoMaterial.MaterialStatus` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_materialStatus.Deserialize(value["MaterialStatus"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_materialStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +164,15 @@ void VideoMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_materialStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaterialStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_materialStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -229,5 +256,21 @@ void VideoMaterial::SetResolution(const string& _resolution)
 bool VideoMaterial::ResolutionHasBeenSet() const
 {
     return m_resolutionHasBeenSet;
+}
+
+MaterialStatus VideoMaterial::GetMaterialStatus() const
+{
+    return m_materialStatus;
+}
+
+void VideoMaterial::SetMaterialStatus(const MaterialStatus& _materialStatus)
+{
+    m_materialStatus = _materialStatus;
+    m_materialStatusHasBeenSet = true;
+}
+
+bool VideoMaterial::MaterialStatusHasBeenSet() const
+{
+    return m_materialStatusHasBeenSet;
 }
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/MediaMetaData.h>
 #include <tencentcloud/cme/v20191029/model/MediaImageSpriteInfo.h>
+#include <tencentcloud/cme/v20191029/model/MaterialStatus.h>
 
 
 namespace TencentCloud
@@ -138,6 +139,28 @@ namespace TencentCloud
                      */
                     bool ResolutionHasBeenSet() const;
 
+                    /**
+                     * 获取素材状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaterialStatus 素材状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MaterialStatus GetMaterialStatus() const;
+
+                    /**
+                     * 设置素材状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaterialStatus 素材状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaterialStatus(const MaterialStatus& _materialStatus);
+
+                    /**
+                     * 判断参数 MaterialStatus 是否已赋值
+                     * @return MaterialStatus 是否已赋值
+                     */
+                    bool MaterialStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +192,13 @@ namespace TencentCloud
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
+
+                    /**
+                     * 素材状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MaterialStatus m_materialStatus;
+                    bool m_materialStatusHasBeenSet;
 
                 };
             }

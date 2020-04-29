@@ -821,7 +821,8 @@ namespace TencentCloud
                 DeleteLiveSnapshotTemplateOutcomeCallable DeleteLiveSnapshotTemplateCallable(const Model::DeleteLiveSnapshotTemplateRequest& request);
 
                 /**
-                 *删除转码规则
+                 *删除转码规则。
+DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配。其中TemplateId必填，其余参数为空时也需要传空字符串进行强匹配。
                  * @param req DeleteLiveTranscodeRuleRequest
                  * @return DeleteLiveTranscodeRuleOutcome
                  */
@@ -830,7 +831,7 @@ namespace TencentCloud
                 DeleteLiveTranscodeRuleOutcomeCallable DeleteLiveTranscodeRuleCallable(const Model::DeleteLiveTranscodeRuleRequest& request);
 
                 /**
-                 *删除转码模板
+                 *删除转码模板。
                  * @param req DeleteLiveTranscodeTemplateRequest
                  * @return DeleteLiveTranscodeTemplateOutcome
                  */
@@ -1158,7 +1159,7 @@ namespace TencentCloud
                 DescribeLiveTranscodeRulesOutcomeCallable DescribeLiveTranscodeRulesCallable(const Model::DescribeLiveTranscodeRulesRequest& request);
 
                 /**
-                 *获取单个转码模板
+                 *获取单个转码模板。
                  * @param req DescribeLiveTranscodeTemplateRequest
                  * @return DescribeLiveTranscodeTemplateOutcome
                  */
@@ -1167,7 +1168,7 @@ namespace TencentCloud
                 DescribeLiveTranscodeTemplateOutcomeCallable DescribeLiveTranscodeTemplateCallable(const Model::DescribeLiveTranscodeTemplateRequest& request);
 
                 /**
-                 *获取转码模板列表
+                 *获取转码模板列表。
                  * @param req DescribeLiveTranscodeTemplatesRequest
                  * @return DescribeLiveTranscodeTemplatesOutcome
                  */

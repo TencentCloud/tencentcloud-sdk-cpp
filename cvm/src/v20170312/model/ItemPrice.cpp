@@ -82,11 +82,11 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
 
     if (value.HasMember("Discount") && !value["Discount"].IsNull())
     {
-        if (!value["Discount"].IsUint64())
+        if (!value["Discount"].IsDouble())
         {
-            return CoreInternalOutcome(Error("response `ItemPrice.Discount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ItemPrice.Discount` IsDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_discount = value["Discount"].GetUint64();
+        m_discount = value["Discount"].GetDouble();
         m_discountHasBeenSet = true;
     }
 
@@ -294,12 +294,12 @@ bool ItemPrice::DiscountPriceHasBeenSet() const
     return m_discountPriceHasBeenSet;
 }
 
-uint64_t ItemPrice::GetDiscount() const
+double ItemPrice::GetDiscount() const
 {
     return m_discount;
 }
 
-void ItemPrice::SetDiscount(const uint64_t& _discount)
+void ItemPrice::SetDiscount(const double& _discount)
 {
     m_discount = _discount;
     m_discountHasBeenSet = true;

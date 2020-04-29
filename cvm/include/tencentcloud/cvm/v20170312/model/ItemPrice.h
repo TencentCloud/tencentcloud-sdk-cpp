@@ -135,20 +135,20 @@ namespace TencentCloud
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣，如20代表2折
+                     * 获取折扣，如20.0代表2折
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Discount 折扣，如20代表2折
+                     * @return Discount 折扣，如20.0代表2折
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t GetDiscount() const;
+                    double GetDiscount() const;
 
                     /**
-                     * 设置折扣，如20代表2折
+                     * 设置折扣，如20.0代表2折
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Discount 折扣，如20代表2折
+                     * @param Discount 折扣，如20.0代表2折
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetDiscount(const uint64_t& _discount);
+                    void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
@@ -297,10 +297,10 @@ namespace TencentCloud
                     bool m_discountPriceHasBeenSet;
 
                     /**
-                     * 折扣，如20代表2折
+                     * 折扣，如20.0代表2折
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_discount;
+                    double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
