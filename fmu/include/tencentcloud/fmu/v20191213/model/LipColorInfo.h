@@ -110,6 +110,24 @@ ModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId�
                      */
                     bool FaceRectHasBeenSet() const;
 
+                    /**
+                     * 获取涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     * @return ModelAlpha 涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     */
+                    int64_t GetModelAlpha() const;
+
+                    /**
+                     * 设置涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     * @param ModelAlpha 涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     */
+                    void SetModelAlpha(const int64_t& _modelAlpha);
+
+                    /**
+                     * 判断参数 ModelAlpha 是否已赋值
+                     * @return ModelAlpha 是否已赋值
+                     */
+                    bool ModelAlphaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +149,12 @@ ModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId�
                      */
                     FaceRect m_faceRect;
                     bool m_faceRectHasBeenSet;
+
+                    /**
+                     * 涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     */
+                    int64_t m_modelAlpha;
+                    bool m_modelAlphaHasBeenSet;
 
                 };
             }

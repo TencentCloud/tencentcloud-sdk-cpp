@@ -138,6 +138,24 @@ namespace TencentCloud
                      */
                     bool VodSubAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取录制文件名。
+                     * @return VodFileName 录制文件名。
+                     */
+                    std::string GetVodFileName() const;
+
+                    /**
+                     * 设置录制文件名。
+                     * @param VodFileName 录制文件名。
+                     */
+                    void SetVodFileName(const std::string& _vodFileName);
+
+                    /**
+                     * 判断参数 VodFileName 是否已赋值
+                     * @return VodFileName 是否已赋值
+                     */
+                    bool VodFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +186,12 @@ namespace TencentCloud
                      */
                     int64_t m_vodSubAppId;
                     bool m_vodSubAppIdHasBeenSet;
+
+                    /**
+                     * 录制文件名。
+                     */
+                    std::string m_vodFileName;
+                    bool m_vodFileNameHasBeenSet;
 
                 };
             }

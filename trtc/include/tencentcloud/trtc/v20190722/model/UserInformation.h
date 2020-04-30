@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户进房事件
-                     * @return JoinTs 用户进房事件
+                     * 获取用户进房时间
+                     * @return JoinTs 用户进房时间
                      */
                     uint64_t GetJoinTs() const;
 
                     /**
-                     * 设置用户进房事件
-                     * @param JoinTs 用户进房事件
+                     * 设置用户进房时间
+                     * @param JoinTs 用户进房时间
                      */
                     void SetJoinTs(const uint64_t& _joinTs);
 
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户进房事件
+                     * 用户进房时间
                      */
                     uint64_t m_joinTs;
                     bool m_joinTsHasBeenSet;

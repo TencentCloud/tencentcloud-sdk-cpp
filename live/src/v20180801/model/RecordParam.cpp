@@ -25,7 +25,8 @@ RecordParam::RecordParam() :
     m_recordIntervalHasBeenSet(false),
     m_storageTimeHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_vodSubAppIdHasBeenSet(false)
+    m_vodSubAppIdHasBeenSet(false),
+    m_vodFileNameHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome RecordParam::Deserialize(const Value &value)
         m_vodSubAppIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VodFileName") && !value["VodFileName"].IsNull())
+    {
+        if (!value["VodFileName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RecordParam.VodFileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodFileName = string(value["VodFileName"].GetString());
+        m_vodFileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void RecordParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "VodSubAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vodSubAppId, allocator);
+    }
+
+    if (m_vodFileNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VodFileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vodFileName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void RecordParam::SetVodSubAppId(const int64_t& _vodSubAppId)
 bool RecordParam::VodSubAppIdHasBeenSet() const
 {
     return m_vodSubAppIdHasBeenSet;
+}
+
+string RecordParam::GetVodFileName() const
+{
+    return m_vodFileName;
+}
+
+void RecordParam::SetVodFileName(const string& _vodFileName)
+{
+    m_vodFileName = _vodFileName;
+    m_vodFileNameHasBeenSet = true;
+}
+
+bool RecordParam::VodFileNameHasBeenSet() const
+{
+    return m_vodFileNameHasBeenSet;
 }
 

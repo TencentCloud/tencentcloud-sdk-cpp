@@ -72,6 +72,28 @@ off：关闭全路径缓存（即开启参数过滤）
                      */
                     bool FullUrlCacheHasBeenSet() const;
 
+                    /**
+                     * 获取缓存是否忽略大小写
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CaseSensitive 缓存是否忽略大小写
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCaseSensitive() const;
+
+                    /**
+                     * 设置缓存是否忽略大小写
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CaseSensitive 缓存是否忽略大小写
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCaseSensitive(const std::string& _caseSensitive);
+
+                    /**
+                     * 判断参数 CaseSensitive 是否已赋值
+                     * @return CaseSensitive 是否已赋值
+                     */
+                    bool CaseSensitiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +103,13 @@ off：关闭全路径缓存（即开启参数过滤）
                      */
                     std::string m_fullUrlCache;
                     bool m_fullUrlCacheHasBeenSet;
+
+                    /**
+                     * 缓存是否忽略大小写
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_caseSensitive;
+                    bool m_caseSensitiveHasBeenSet;
 
                 };
             }

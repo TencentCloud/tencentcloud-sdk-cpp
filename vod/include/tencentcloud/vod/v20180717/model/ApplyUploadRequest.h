@@ -209,6 +209,24 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
+                     * 获取保留字段，特殊用途时使用。
+                     * @return ExtInfo 保留字段，特殊用途时使用。
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置保留字段，特殊用途时使用。
+                     * @param ExtInfo 保留字段，特殊用途时使用。
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
+                    /**
                      * 获取点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      */
@@ -282,6 +300,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * 保留字段，特殊用途时使用。
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                     /**
                      * 点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。

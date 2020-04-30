@@ -85,13 +85,17 @@ namespace TencentCloud
 
                     /**
                      * 获取元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param MetaData 元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
@@ -117,6 +121,7 @@ namespace TencentCloud
 
                     /**
                      * 元信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

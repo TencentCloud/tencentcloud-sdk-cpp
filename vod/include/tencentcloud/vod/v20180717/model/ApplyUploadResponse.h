@@ -81,9 +81,7 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体存储路径，用于上传接口存储媒体的对象键（Key）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaStoragePath 媒体存储路径，用于上传接口存储媒体的对象键（Key）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMediaStoragePath() const;
 
@@ -95,9 +93,7 @@ namespace TencentCloud
 
                     /**
                      * 获取封面存储路径，用于上传接口存储封面的对象键（Key）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverStoragePath 封面存储路径，用于上传接口存储封面的对象键（Key）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCoverStoragePath() const;
 
@@ -141,14 +137,12 @@ namespace TencentCloud
 
                     /**
                      * 媒体存储路径，用于上传接口存储媒体的对象键（Key）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mediaStoragePath;
                     bool m_mediaStoragePathHasBeenSet;
 
                     /**
                      * 封面存储路径，用于上传接口存储封面的对象键（Key）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coverStoragePath;
                     bool m_coverStoragePathHasBeenSet;

@@ -85,6 +85,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceGTIDRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceGTIDResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceRebootTimeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceRebootTimeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstancesRequest.h>
@@ -310,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBInstanceGTIDResponse> DescribeDBInstanceGTIDOutcome;
                 typedef std::future<DescribeDBInstanceGTIDOutcome> DescribeDBInstanceGTIDOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBInstanceGTIDRequest&, DescribeDBInstanceGTIDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceGTIDAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBInstanceInfoResponse> DescribeDBInstanceInfoOutcome;
+                typedef std::future<DescribeDBInstanceInfoOutcome> DescribeDBInstanceInfoOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeDBInstanceInfoRequest&, DescribeDBInstanceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDBInstanceRebootTimeResponse> DescribeDBInstanceRebootTimeOutcome;
                 typedef std::future<DescribeDBInstanceRebootTimeOutcome> DescribeDBInstanceRebootTimeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBInstanceRebootTimeRequest&, DescribeDBInstanceRebootTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceRebootTimeAsyncHandler;
@@ -790,6 +795,15 @@ namespace TencentCloud
                 DescribeDBInstanceGTIDOutcome DescribeDBInstanceGTID(const Model::DescribeDBInstanceGTIDRequest &request);
                 void DescribeDBInstanceGTIDAsync(const Model::DescribeDBInstanceGTIDRequest& request, const DescribeDBInstanceGTIDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBInstanceGTIDOutcomeCallable DescribeDBInstanceGTIDCallable(const Model::DescribeDBInstanceGTIDRequest& request);
+
+                /**
+                 *查询实例基本信息（实例 ID ，实例名称，是否开通加密 ）
+                 * @param req DescribeDBInstanceInfoRequest
+                 * @return DescribeDBInstanceInfoOutcome
+                 */
+                DescribeDBInstanceInfoOutcome DescribeDBInstanceInfo(const Model::DescribeDBInstanceInfoRequest &request);
+                void DescribeDBInstanceInfoAsync(const Model::DescribeDBInstanceInfoRequest& request, const DescribeDBInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceInfoOutcomeCallable DescribeDBInstanceInfoCallable(const Model::DescribeDBInstanceInfoRequest& request);
 
                 /**
                  *本接口(DescribeDBInstanceRebootTime)用于查询云数据库实例重启预计所需的时间。

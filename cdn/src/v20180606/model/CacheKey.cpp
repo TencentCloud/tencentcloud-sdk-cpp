@@ -22,7 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 CacheKey::CacheKey() :
-    m_fullUrlCacheHasBeenSet(false)
+    m_fullUrlCacheHasBeenSet(false),
+    m_caseSensitiveHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ CoreInternalOutcome CacheKey::Deserialize(const Value &value)
         m_fullUrlCacheHasBeenSet = true;
     }
 
+    if (value.HasMember("CaseSensitive") && !value["CaseSensitive"].IsNull())
+    {
+        if (!value["CaseSensitive"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CacheKey.CaseSensitive` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_caseSensitive = string(value["CaseSensitive"].GetString());
+        m_caseSensitiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -54,6 +65,14 @@ void CacheKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "FullUrlCache";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_fullUrlCache.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_caseSensitiveHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CaseSensitive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_caseSensitive.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -73,5 +92,21 @@ void CacheKey::SetFullUrlCache(const string& _fullUrlCache)
 bool CacheKey::FullUrlCacheHasBeenSet() const
 {
     return m_fullUrlCacheHasBeenSet;
+}
+
+string CacheKey::GetCaseSensitive() const
+{
+    return m_caseSensitive;
+}
+
+void CacheKey::SetCaseSensitive(const string& _caseSensitive)
+{
+    m_caseSensitive = _caseSensitive;
+    m_caseSensitiveHasBeenSet = true;
+}
+
+bool CacheKey::CaseSensitiveHasBeenSet() const
+{
+    return m_caseSensitiveHasBeenSet;
 }
 

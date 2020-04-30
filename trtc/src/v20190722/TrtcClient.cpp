@@ -83,6 +83,49 @@ TrtcClient::DescribeCallDetailOutcomeCallable TrtcClient::DescribeCallDetailCall
     return task->get_future();
 }
 
+TrtcClient::DescribeHistoryScaleOutcome TrtcClient::DescribeHistoryScale(const DescribeHistoryScaleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHistoryScale");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHistoryScaleResponse rsp = DescribeHistoryScaleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHistoryScaleOutcome(rsp);
+        else
+            return DescribeHistoryScaleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHistoryScaleOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeHistoryScaleAsync(const DescribeHistoryScaleRequest& request, const DescribeHistoryScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHistoryScale(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeHistoryScaleOutcomeCallable TrtcClient::DescribeHistoryScaleCallable(const DescribeHistoryScaleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHistoryScaleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHistoryScale(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeRealtimeNetworkOutcome TrtcClient::DescribeRealtimeNetwork(const DescribeRealtimeNetworkRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRealtimeNetwork");

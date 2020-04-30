@@ -19,48 +19,54 @@ set(trtc_public_header
   )
 
 set(trtc_public_header_model
-  include/tencentcloud/trtc/v20190722/model/QualityData.h
-  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleRequest.h
-  include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
-  include/tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h
-  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h
-  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityResponse.h
-  include/tencentcloud/trtc/v20190722/model/TimeValue.h
-  include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h
-  include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h
-  include/tencentcloud/trtc/v20190722/model/UserInformation.h
-  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h
   include/tencentcloud/trtc/v20190722/model/RealtimeData.h
-  include/tencentcloud/trtc/v20190722/model/RoomState.h
+  include/tencentcloud/trtc/v20190722/model/TimeValue.h
+  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomResponse.h
-  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h
-  include/tencentcloud/trtc/v20190722/model/RemoveUserResponse.h
+  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h
   include/tencentcloud/trtc/v20190722/model/RemoveUserRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkRequest.h
+  include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
+  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityResponse.h
+  include/tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h
+  include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h
+  include/tencentcloud/trtc/v20190722/model/QualityData.h
+  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h
+  include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
+  include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleRequest.h
+  include/tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h
+  include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h
+  include/tencentcloud/trtc/v20190722/model/UserInformation.h
+  include/tencentcloud/trtc/v20190722/model/RoomState.h
+  include/tencentcloud/trtc/v20190722/model/RemoveUserResponse.h
+  include/tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h
   )
 
 set(trtc_src
   src/v20190722/TrtcClient.cpp
-  src/v20190722/model/QualityData.cpp
-  src/v20190722/model/DescribeRealtimeScaleRequest.cpp
-  src/v20190722/model/DismissRoomRequest.cpp
-  src/v20190722/model/DescribeCallDetailResponse.cpp
-  src/v20190722/model/DescribeRealtimeQualityRequest.cpp
-  src/v20190722/model/DescribeRealtimeQualityResponse.cpp
-  src/v20190722/model/TimeValue.cpp
-  src/v20190722/model/DescribeRoomInformationRequest.cpp
-  src/v20190722/model/DescribeRoomInformationResponse.cpp
-  src/v20190722/model/UserInformation.cpp
-  src/v20190722/model/DescribeRealtimeScaleResponse.cpp
   src/v20190722/model/RealtimeData.cpp
-  src/v20190722/model/RoomState.cpp
+  src/v20190722/model/TimeValue.cpp
+  src/v20190722/model/DescribeRealtimeScaleResponse.cpp
   src/v20190722/model/DismissRoomResponse.cpp
-  src/v20190722/model/DescribeRealtimeNetworkResponse.cpp
-  src/v20190722/model/RemoveUserResponse.cpp
+  src/v20190722/model/DescribeRealtimeQualityRequest.cpp
   src/v20190722/model/RemoveUserRequest.cpp
   src/v20190722/model/DescribeCallDetailRequest.cpp
   src/v20190722/model/DescribeRealtimeNetworkRequest.cpp
+  src/v20190722/model/DismissRoomRequest.cpp
+  src/v20190722/model/DescribeRealtimeQualityResponse.cpp
+  src/v20190722/model/DescribeHistoryScaleRequest.cpp
+  src/v20190722/model/DescribeRoomInformationResponse.cpp
+  src/v20190722/model/QualityData.cpp
+  src/v20190722/model/DescribeRealtimeNetworkResponse.cpp
+  src/v20190722/model/ScaleInfomation.cpp
+  src/v20190722/model/DescribeRealtimeScaleRequest.cpp
+  src/v20190722/model/DescribeCallDetailResponse.cpp
+  src/v20190722/model/DescribeRoomInformationRequest.cpp
+  src/v20190722/model/UserInformation.cpp
+  src/v20190722/model/RoomState.cpp
+  src/v20190722/model/RemoveUserResponse.cpp
+  src/v20190722/model/DescribeHistoryScaleResponse.cpp
   )
 
 set(trtc_include

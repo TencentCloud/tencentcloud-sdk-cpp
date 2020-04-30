@@ -24,7 +24,8 @@ using namespace std;
 LipColorInfo::LipColorInfo() :
     m_rGBAHasBeenSet(false),
     m_modelIdHasBeenSet(false),
-    m_faceRectHasBeenSet(false)
+    m_faceRectHasBeenSet(false),
+    m_modelAlphaHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,16 @@ CoreInternalOutcome LipColorInfo::Deserialize(const Value &value)
         m_faceRectHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelAlpha") && !value["ModelAlpha"].IsNull())
+    {
+        if (!value["ModelAlpha"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `LipColorInfo.ModelAlpha` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelAlpha = value["ModelAlpha"].GetInt64();
+        m_modelAlphaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void LipColorInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_faceRect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_modelAlphaHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModelAlpha";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modelAlpha, allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void LipColorInfo::SetFaceRect(const FaceRect& _faceRect)
 bool LipColorInfo::FaceRectHasBeenSet() const
 {
     return m_faceRectHasBeenSet;
+}
+
+int64_t LipColorInfo::GetModelAlpha() const
+{
+    return m_modelAlpha;
+}
+
+void LipColorInfo::SetModelAlpha(const int64_t& _modelAlpha)
+{
+    m_modelAlpha = _modelAlpha;
+    m_modelAlphaHasBeenSet = true;
+}
+
+bool LipColorInfo::ModelAlphaHasBeenSet() const
+{
+    return m_modelAlphaHasBeenSet;
 }
 

@@ -33,6 +33,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/RoWeightValue.h
   include/tencentcloud/cdb/v20170320/model/DescribeSlowLogDataResponse.h
   include/tencentcloud/cdb/v20170320/model/StopDBImportJobResponse.h
+  include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeErrorLogDataRequest.h
   include/tencentcloud/cdb/v20170320/model/Parameter.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceRebootTimeRequest.h
@@ -235,6 +236,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplateInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/ParamRecord.h
   include/tencentcloud/cdb/v20170320/model/RestartDBInstancesRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateDeployGroupRequest.h
@@ -280,6 +282,7 @@ set(cdb_src
   src/v20170320/model/RoWeightValue.cpp
   src/v20170320/model/DescribeSlowLogDataResponse.cpp
   src/v20170320/model/StopDBImportJobResponse.cpp
+  src/v20170320/model/DescribeDBInstanceInfoResponse.cpp
   src/v20170320/model/DescribeErrorLogDataRequest.cpp
   src/v20170320/model/Parameter.cpp
   src/v20170320/model/DescribeDBInstanceRebootTimeRequest.cpp
@@ -482,6 +485,7 @@ set(cdb_src
   src/v20170320/model/DescribeParamTemplateInfoResponse.cpp
   src/v20170320/model/ParamRecord.cpp
   src/v20170320/model/RestartDBInstancesRequest.cpp
+  src/v20170320/model/DescribeDBInstanceInfoRequest.cpp
   src/v20170320/model/DescribeInstanceParamsResponse.cpp
   src/v20170320/model/DescribeDBZoneConfigResponse.cpp
   src/v20170320/model/CreateDeployGroupRequest.cpp

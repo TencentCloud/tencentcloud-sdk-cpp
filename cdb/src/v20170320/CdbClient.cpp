@@ -1373,6 +1373,49 @@ CdbClient::DescribeDBInstanceGTIDOutcomeCallable CdbClient::DescribeDBInstanceGT
     return task->get_future();
 }
 
+CdbClient::DescribeDBInstanceInfoOutcome CdbClient::DescribeDBInstanceInfo(const DescribeDBInstanceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceInfoResponse rsp = DescribeDBInstanceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceInfoOutcome(rsp);
+        else
+            return DescribeDBInstanceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceInfoOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeDBInstanceInfoAsync(const DescribeDBInstanceInfoRequest& request, const DescribeDBInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeDBInstanceInfoOutcomeCallable CdbClient::DescribeDBInstanceInfoCallable(const DescribeDBInstanceInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeDBInstanceRebootTimeOutcome CdbClient::DescribeDBInstanceRebootTime(const DescribeDBInstanceRebootTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstanceRebootTime");

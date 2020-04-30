@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/scf/v20180416/model/CopyFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/CopyFunctionResponse.h>
+#include <tencentcloud/scf/v20180416/model/CreateAliasRequest.h>
+#include <tencentcloud/scf/v20180416/model/CreateAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/CreateFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateNamespaceRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/scf/v20180416/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteTriggerResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetAliasRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionAddressRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/scf/v20180416/model/InvokeResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListAliasesRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListAliasesResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListLayerVersionsRequest.h>
@@ -65,6 +71,8 @@
 #include <tencentcloud/scf/v20180416/model/PublishLayerVersionResponse.h>
 #include <tencentcloud/scf/v20180416/model/PublishVersionRequest.h>
 #include <tencentcloud/scf/v20180416/model/PublishVersionResponse.h>
+#include <tencentcloud/scf/v20180416/model/UpdateAliasRequest.h>
+#include <tencentcloud/scf/v20180416/model/UpdateAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationRequest.h>
@@ -88,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CopyFunctionResponse> CopyFunctionOutcome;
                 typedef std::future<CopyFunctionOutcome> CopyFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::CopyFunctionRequest&, CopyFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyFunctionAsyncHandler;
+                typedef Outcome<Error, Model::CreateAliasResponse> CreateAliasOutcome;
+                typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::CreateAliasRequest&, CreateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAliasAsyncHandler;
                 typedef Outcome<Error, Model::CreateFunctionResponse> CreateFunctionOutcome;
                 typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::CreateFunctionRequest&, CreateFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionAsyncHandler;
@@ -112,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTriggerResponse> DeleteTriggerOutcome;
                 typedef std::future<DeleteTriggerOutcome> DeleteTriggerOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteTriggerRequest&, DeleteTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTriggerAsyncHandler;
+                typedef Outcome<Error, Model::GetAliasResponse> GetAliasOutcome;
+                typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetAliasRequest&, GetAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAliasAsyncHandler;
                 typedef Outcome<Error, Model::GetFunctionResponse> GetFunctionOutcome;
                 typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionRequest&, GetFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAsyncHandler;
@@ -127,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
+                typedef Outcome<Error, Model::ListAliasesResponse> ListAliasesOutcome;
+                typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListAliasesRequest&, ListAliasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAliasesAsyncHandler;
                 typedef Outcome<Error, Model::ListFunctionsResponse> ListFunctionsOutcome;
                 typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListFunctionsRequest&, ListFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionsAsyncHandler;
@@ -148,6 +165,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PublishVersionResponse> PublishVersionOutcome;
                 typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::PublishVersionRequest&, PublishVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishVersionAsyncHandler;
+                typedef Outcome<Error, Model::UpdateAliasResponse> UpdateAliasOutcome;
+                typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::UpdateAliasRequest&, UpdateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
                 typedef Outcome<Error, Model::UpdateFunctionCodeResponse> UpdateFunctionCodeOutcome;
                 typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateFunctionCodeRequest&, UpdateFunctionCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionCodeAsyncHandler;
@@ -174,6 +194,16 @@ namespace TencentCloud
                 CopyFunctionOutcome CopyFunction(const Model::CopyFunctionRequest &request);
                 void CopyFunctionAsync(const Model::CopyFunctionRequest& request, const CopyFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CopyFunctionOutcomeCallable CopyFunctionCallable(const Model::CopyFunctionRequest& request);
+
+                /**
+                 *为某个函数版本创建一个别名，您可以使用别名来标记特定的函数版本，如DEV/RELEASE版本，也可以随时修改别名指向的版本。
+一个别名必须指向一个主版本，此外还可以同时指向一个附加版本。调用函数时指定特定的别名，则请求会被发送到别名指向的版本上，您可以配置请求发送到主版本和附加版本的比例。
+                 * @param req CreateAliasRequest
+                 * @return CreateAliasOutcome
+                 */
+                CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest &request);
+                void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request);
 
                 /**
                  *该接口根据传入参数创建新的函数。
@@ -248,6 +278,15 @@ namespace TencentCloud
                 DeleteTriggerOutcomeCallable DeleteTriggerCallable(const Model::DeleteTriggerRequest& request);
 
                 /**
+                 *获取别名的详细信息，包括名称、描述、版本、路由信息等。
+                 * @param req GetAliasRequest
+                 * @return GetAliasOutcome
+                 */
+                GetAliasOutcome GetAlias(const Model::GetAliasRequest &request);
+                void GetAliasAsync(const Model::GetAliasRequest& request, const GetAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAliasOutcomeCallable GetAliasCallable(const Model::GetAliasRequest& request);
+
+                /**
                  *该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。
                  * @param req GetFunctionRequest
                  * @return GetFunctionOutcome
@@ -291,6 +330,15 @@ namespace TencentCloud
                 InvokeOutcome Invoke(const Model::InvokeRequest &request);
                 void InvokeAsync(const Model::InvokeRequest& request, const InvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request);
+
+                /**
+                 *返回一个函数下的全部别名，可以根据特定函数版本过滤。
+                 * @param req ListAliasesRequest
+                 * @return ListAliasesOutcome
+                 */
+                ListAliasesOutcome ListAliases(const Model::ListAliasesRequest &request);
+                void ListAliasesAsync(const Model::ListAliasesRequest& request, const ListAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request);
 
                 /**
                  *该接口根据传入的查询参数返回相关函数信息。
@@ -354,6 +402,15 @@ namespace TencentCloud
                 PublishVersionOutcome PublishVersion(const Model::PublishVersionRequest &request);
                 void PublishVersionAsync(const Model::PublishVersionRequest& request, const PublishVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishVersionOutcomeCallable PublishVersionCallable(const Model::PublishVersionRequest& request);
+
+                /**
+                 *更新别名的配置
+                 * @param req UpdateAliasRequest
+                 * @return UpdateAliasOutcome
+                 */
+                UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest &request);
+                void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request);
 
                 /**
                  *该接口根据传入参数更新函数代码。

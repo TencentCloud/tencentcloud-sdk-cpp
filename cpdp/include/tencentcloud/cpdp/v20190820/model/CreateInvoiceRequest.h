@@ -625,6 +625,24 @@ namespace TencentCloud
                      */
                     bool ProfileHasBeenSet() const;
 
+                    /**
+                     * 获取撤销部分商品。0-不撤销，1-撤销
+                     * @return UndoPart 撤销部分商品。0-不撤销，1-撤销
+                     */
+                    int64_t GetUndoPart() const;
+
+                    /**
+                     * 设置撤销部分商品。0-不撤销，1-撤销
+                     * @param UndoPart 撤销部分商品。0-不撤销，1-撤销
+                     */
+                    void SetUndoPart(const int64_t& _undoPart);
+
+                    /**
+                     * 判断参数 UndoPart 是否已赋值
+                     * @return UndoPart 是否已赋值
+                     */
+                    bool UndoPartHasBeenSet() const;
+
                 private:
 
                     /**
@@ -818,6 +836,12 @@ namespace TencentCloud
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
+
+                    /**
+                     * 撤销部分商品。0-不撤销，1-撤销
+                     */
+                    int64_t m_undoPart;
+                    bool m_undoPartHasBeenSet;
 
                 };
             }

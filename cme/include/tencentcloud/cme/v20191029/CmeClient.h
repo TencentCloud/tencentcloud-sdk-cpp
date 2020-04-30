@@ -67,6 +67,8 @@
 #include <tencentcloud/cme/v20191029/model/DescribeTeamMembersResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeTeamsRequest.h>
 #include <tencentcloud/cme/v20191029/model/DescribeTeamsResponse.h>
+#include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataRequest.h>
+#include <tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataResponse.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoEditProjectRequest.h>
 #include <tencentcloud/cme/v20191029/model/ExportVideoEditProjectResponse.h>
 #include <tencentcloud/cme/v20191029/model/FlattenListMediaRequest.h>
@@ -173,6 +175,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTeamsResponse> DescribeTeamsOutcome;
                 typedef std::future<DescribeTeamsOutcome> DescribeTeamsOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DescribeTeamsRequest&, DescribeTeamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTeamsAsyncHandler;
+                typedef Outcome<Error, Model::ExportVideoByEditorTrackDataResponse> ExportVideoByEditorTrackDataOutcome;
+                typedef std::future<ExportVideoByEditorTrackDataOutcome> ExportVideoByEditorTrackDataOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::ExportVideoByEditorTrackDataRequest&, ExportVideoByEditorTrackDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoByEditorTrackDataAsyncHandler;
                 typedef Outcome<Error, Model::ExportVideoEditProjectResponse> ExportVideoEditProjectOutcome;
                 typedef std::future<ExportVideoEditProjectOutcome> ExportVideoEditProjectOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::ExportVideoEditProjectRequest&, ExportVideoEditProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVideoEditProjectAsyncHandler;
@@ -421,6 +426,15 @@ namespace TencentCloud
                 DescribeTeamsOutcome DescribeTeams(const Model::DescribeTeamsRequest &request);
                 void DescribeTeamsAsync(const Model::DescribeTeamsRequest& request, const DescribeTeamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTeamsOutcomeCallable DescribeTeamsCallable(const Model::DescribeTeamsRequest& request);
+
+                /**
+                 *使用在线编辑轨道数据直接导出视频。
+                 * @param req ExportVideoByEditorTrackDataRequest
+                 * @return ExportVideoByEditorTrackDataOutcome
+                 */
+                ExportVideoByEditorTrackDataOutcome ExportVideoByEditorTrackData(const Model::ExportVideoByEditorTrackDataRequest &request);
+                void ExportVideoByEditorTrackDataAsync(const Model::ExportVideoByEditorTrackDataRequest& request, const ExportVideoByEditorTrackDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportVideoByEditorTrackDataOutcomeCallable ExportVideoByEditorTrackDataCallable(const Model::ExportVideoByEditorTrackDataRequest& request);
 
                 /**
                  *导出视频编辑项目，支持指定输出的模板。

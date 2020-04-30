@@ -292,6 +292,24 @@ namespace TencentCloud
                      */
                     bool FilterPuncHasBeenSet() const;
 
+                    /**
+                     * 获取是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1
+                     * @return ConvertNumMode 是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1
+                     */
+                    int64_t GetConvertNumMode() const;
+
+                    /**
+                     * 设置是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1
+                     * @param ConvertNumMode 是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1
+                     */
+                    void SetConvertNumMode(const int64_t& _convertNumMode);
+
+                    /**
+                     * 判断参数 ConvertNumMode 是否已赋值
+                     * @return ConvertNumMode 是否已赋值
+                     */
+                    bool ConvertNumModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -375,6 +393,12 @@ namespace TencentCloud
                      */
                     int64_t m_filterPunc;
                     bool m_filterPuncHasBeenSet;
+
+                    /**
+                     * 是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1
+                     */
+                    int64_t m_convertNumMode;
+                    bool m_convertNumModeHasBeenSet;
 
                 };
             }

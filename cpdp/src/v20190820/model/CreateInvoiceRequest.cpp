@@ -54,7 +54,8 @@ CreateInvoiceRequest::CreateInvoiceRequest() :
     m_deductionHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_profileHasBeenSet(false)
+    m_profileHasBeenSet(false),
+    m_undoPartHasBeenSet(false)
 {
 }
 
@@ -318,6 +319,14 @@ string CreateInvoiceRequest::ToJsonString() const
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_undoPartHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UndoPart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_undoPart, allocator);
     }
 
 
@@ -822,6 +831,22 @@ void CreateInvoiceRequest::SetProfile(const string& _profile)
 bool CreateInvoiceRequest::ProfileHasBeenSet() const
 {
     return m_profileHasBeenSet;
+}
+
+int64_t CreateInvoiceRequest::GetUndoPart() const
+{
+    return m_undoPart;
+}
+
+void CreateInvoiceRequest::SetUndoPart(const int64_t& _undoPart)
+{
+    m_undoPart = _undoPart;
+    m_undoPartHasBeenSet = true;
+}
+
+bool CreateInvoiceRequest::UndoPartHasBeenSet() const
+{
+    return m_undoPartHasBeenSet;
 }
 
 

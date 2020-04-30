@@ -61,6 +61,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstanceTypeConfigRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstanceTypeConfigResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstancesDeniedActionsRequest.h>
@@ -200,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstanceTypeConfigResponse> DescribeInstanceTypeConfigOutcome;
                 typedef std::future<DescribeInstanceTypeConfigOutcome> DescribeInstanceTypeConfigOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeInstanceTypeConfigRequest&, DescribeInstanceTypeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTypeConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceVncUrlResponse> DescribeInstanceVncUrlOutcome;
+                typedef std::future<DescribeInstanceVncUrlOutcome> DescribeInstanceVncUrlOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeInstanceVncUrlRequest&, DescribeInstanceVncUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncUrlAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -481,6 +486,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DescribeInstanceTypeConfigOutcome DescribeInstanceTypeConfig(const Model::DescribeInstanceTypeConfigRequest &request);
                 void DescribeInstanceTypeConfigAsync(const Model::DescribeInstanceTypeConfigRequest& request, const DescribeInstanceTypeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceTypeConfigOutcomeCallable DescribeInstanceTypeConfigCallable(const Model::DescribeInstanceTypeConfigRequest& request);
+
+                /**
+                 *查询实例管理终端地址
+                 * @param req DescribeInstanceVncUrlRequest
+                 * @return DescribeInstanceVncUrlOutcome
+                 */
+                DescribeInstanceVncUrlOutcome DescribeInstanceVncUrl(const Model::DescribeInstanceVncUrlRequest &request);
+                void DescribeInstanceVncUrlAsync(const Model::DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceVncUrlOutcomeCallable DescribeInstanceVncUrlCallable(const Model::DescribeInstanceVncUrlRequest& request);
 
                 /**
                  *获取实例的相关信息。

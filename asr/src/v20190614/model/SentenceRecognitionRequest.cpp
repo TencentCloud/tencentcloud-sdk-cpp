@@ -36,7 +36,8 @@ SentenceRecognitionRequest::SentenceRecognitionRequest() :
     m_hotwordIdHasBeenSet(false),
     m_filterDirtyHasBeenSet(false),
     m_filterModalHasBeenSet(false),
-    m_filterPuncHasBeenSet(false)
+    m_filterPuncHasBeenSet(false),
+    m_convertNumModeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string SentenceRecognitionRequest::ToJsonString() const
         string key = "FilterPunc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterPunc, allocator);
+    }
+
+    if (m_convertNumModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConvertNumMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_convertNumMode, allocator);
     }
 
 
@@ -365,6 +374,22 @@ void SentenceRecognitionRequest::SetFilterPunc(const int64_t& _filterPunc)
 bool SentenceRecognitionRequest::FilterPuncHasBeenSet() const
 {
     return m_filterPuncHasBeenSet;
+}
+
+int64_t SentenceRecognitionRequest::GetConvertNumMode() const
+{
+    return m_convertNumMode;
+}
+
+void SentenceRecognitionRequest::SetConvertNumMode(const int64_t& _convertNumMode)
+{
+    m_convertNumMode = _convertNumMode;
+    m_convertNumModeHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::ConvertNumModeHasBeenSet() const
+{
+    return m_convertNumModeHasBeenSet;
 }
 
 

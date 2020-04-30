@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为owner时，可以不填
-                     * @return ForceBind 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为owner时，可以不填
+                     * 获取是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
+                     * @return ForceBind 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
                      */
                     bool GetForceBind() const;
 
                     /**
-                     * 设置是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为owner时，可以不填
-                     * @param ForceBind 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为owner时，可以不填
+                     * 设置是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
+                     * @param ForceBind 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
                      */
                     void SetForceBind(const bool& _forceBind);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为owner时，可以不填
+                     * 是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填
                      */
                     bool m_forceBind;
                     bool m_forceBindHasBeenSet;

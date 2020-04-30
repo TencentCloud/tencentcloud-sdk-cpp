@@ -1010,6 +1010,28 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool IsBlockTimeHasBeenSet() const;
 
+                    /**
+                     * 获取IP类型是否是本地BGP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalBgp IP类型是否是本地BGP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLocalBgp() const;
+
+                    /**
+                     * 设置IP类型是否是本地BGP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocalBgp IP类型是否是本地BGP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocalBgp(const bool& _localBgp);
+
+                    /**
+                     * 判断参数 LocalBgp 是否已赋值
+                     * @return LocalBgp 是否已赋值
+                     */
+                    bool LocalBgpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1316,6 +1338,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_isBlockTime;
                     bool m_isBlockTimeHasBeenSet;
+
+                    /**
+                     * IP类型是否是本地BGP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_localBgp;
+                    bool m_localBgpHasBeenSet;
 
                 };
             }

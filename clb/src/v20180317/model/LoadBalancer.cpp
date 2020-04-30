@@ -65,7 +65,8 @@ LoadBalancer::LoadBalancer() :
     m_snatIpsHasBeenSet(false),
     m_slaTypeHasBeenSet(false),
     m_isBlockHasBeenSet(false),
-    m_isBlockTimeHasBeenSet(false)
+    m_isBlockTimeHasBeenSet(false),
+    m_localBgpHasBeenSet(false)
 {
 }
 
@@ -592,6 +593,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const Value &value)
         m_isBlockTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalBgp") && !value["LocalBgp"].IsNull())
+    {
+        if (!value["LocalBgp"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancer.LocalBgp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_localBgp = value["LocalBgp"].GetBool();
+        m_localBgpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -986,6 +997,14 @@ void LoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "IsBlockTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_isBlockTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localBgpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalBgp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_localBgp, allocator);
     }
 
 }
@@ -1693,5 +1712,21 @@ void LoadBalancer::SetIsBlockTime(const string& _isBlockTime)
 bool LoadBalancer::IsBlockTimeHasBeenSet() const
 {
     return m_isBlockTimeHasBeenSet;
+}
+
+bool LoadBalancer::GetLocalBgp() const
+{
+    return m_localBgp;
+}
+
+void LoadBalancer::SetLocalBgp(const bool& _localBgp)
+{
+    m_localBgp = _localBgp;
+    m_localBgpHasBeenSet = true;
+}
+
+bool LoadBalancer::LocalBgpHasBeenSet() const
+{
+    return m_localBgpHasBeenSet;
 }
 

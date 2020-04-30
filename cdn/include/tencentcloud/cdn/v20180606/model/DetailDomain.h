@@ -54,6 +54,7 @@
 #include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/SecurityConfig.h>
 #include <tencentcloud/cdn/v20180606/model/ImageOptimization.h>
+#include <tencentcloud/cdn/v20180606/model/UserAgentFilter.h>
 
 
 namespace TencentCloud
@@ -1052,6 +1053,28 @@ global：全球锁定
                      */
                     bool ImageOptimizationHasBeenSet() const;
 
+                    /**
+                     * 获取UA黑白名单配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserAgentFilter UA黑白名单配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UserAgentFilter GetUserAgentFilter() const;
+
+                    /**
+                     * 设置UA黑白名单配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserAgentFilter UA黑白名单配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserAgentFilter(const UserAgentFilter& _userAgentFilter);
+
+                    /**
+                     * 判断参数 UserAgentFilter 是否已赋值
+                     * @return UserAgentFilter 是否已赋值
+                     */
+                    bool UserAgentFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1360,6 +1383,13 @@ global：全球锁定
                      */
                     ImageOptimization m_imageOptimization;
                     bool m_imageOptimizationHasBeenSet;
+
+                    /**
+                     * UA黑白名单配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UserAgentFilter m_userAgentFilter;
+                    bool m_userAgentFilterHasBeenSet;
 
                 };
             }

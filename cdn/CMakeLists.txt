@@ -39,6 +39,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/RequestHeader.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeQuotaRequest.h
   include/tencentcloud/cdn/v20180606/model/Referer.h
+  include/tencentcloud/cdn/v20180606/model/UserAgentFilter.h
   include/tencentcloud/cdn/v20180606/model/AdvanceCacheRule.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpStatusResponse.h
   include/tencentcloud/cdn/v20180606/model/UpdateImageConfigResponse.h
@@ -75,6 +76,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ListClsLogTopicsResponse.h
   include/tencentcloud/cdn/v20180606/model/OverseaConfig.h
   include/tencentcloud/cdn/v20180606/model/AddCdnDomainRequest.h
+  include/tencentcloud/cdn/v20180606/model/UserAgentFilterRule.h
   include/tencentcloud/cdn/v20180606/model/TopDetailData.h
   include/tencentcloud/cdn/v20180606/model/ErrorPage.h
   include/tencentcloud/cdn/v20180606/model/MaxAgeRule.h
@@ -100,6 +102,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DisableCachesRequest.h
   include/tencentcloud/cdn/v20180606/model/SimpleCacheRule.h
   include/tencentcloud/cdn/v20180606/model/DisableClsLogTopicResponse.h
+  include/tencentcloud/cdn/v20180606/model/Hsts.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpStatusRequest.h
   include/tencentcloud/cdn/v20180606/model/DetailDomain.h
   include/tencentcloud/cdn/v20180606/model/GetDisableRecordsResponse.h
@@ -210,6 +213,7 @@ set(cdn_src
   src/v20180606/model/RequestHeader.cpp
   src/v20180606/model/DescribePurgeQuotaRequest.cpp
   src/v20180606/model/Referer.cpp
+  src/v20180606/model/UserAgentFilter.cpp
   src/v20180606/model/AdvanceCacheRule.cpp
   src/v20180606/model/DescribeIpStatusResponse.cpp
   src/v20180606/model/UpdateImageConfigResponse.cpp
@@ -246,6 +250,7 @@ set(cdn_src
   src/v20180606/model/ListClsLogTopicsResponse.cpp
   src/v20180606/model/OverseaConfig.cpp
   src/v20180606/model/AddCdnDomainRequest.cpp
+  src/v20180606/model/UserAgentFilterRule.cpp
   src/v20180606/model/TopDetailData.cpp
   src/v20180606/model/ErrorPage.cpp
   src/v20180606/model/MaxAgeRule.cpp
@@ -271,6 +276,7 @@ set(cdn_src
   src/v20180606/model/DisableCachesRequest.cpp
   src/v20180606/model/SimpleCacheRule.cpp
   src/v20180606/model/DisableClsLogTopicResponse.cpp
+  src/v20180606/model/Hsts.cpp
   src/v20180606/model/DescribeIpStatusRequest.cpp
   src/v20180606/model/DetailDomain.cpp
   src/v20180606/model/GetDisableRecordsResponse.cpp

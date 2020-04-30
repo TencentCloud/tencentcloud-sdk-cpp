@@ -34,7 +34,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_dataLenHasBeenSet(false),
     m_hotwordIdHasBeenSet(false),
     m_filterDirtyHasBeenSet(false),
-    m_filterModalHasBeenSet(false)
+    m_filterModalHasBeenSet(false),
+    m_convertNumModeHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "FilterModal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterModal, allocator);
+    }
+
+    if (m_convertNumModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConvertNumMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_convertNumMode, allocator);
     }
 
 
@@ -315,6 +324,22 @@ void CreateRecTaskRequest::SetFilterModal(const int64_t& _filterModal)
 bool CreateRecTaskRequest::FilterModalHasBeenSet() const
 {
     return m_filterModalHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetConvertNumMode() const
+{
+    return m_convertNumMode;
+}
+
+void CreateRecTaskRequest::SetConvertNumMode(const int64_t& _convertNumMode)
+{
+    m_convertNumMode = _convertNumMode;
+    m_convertNumModeHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::ConvertNumModeHasBeenSet() const
+{
+    return m_convertNumModeHasBeenSet;
 }
 
 

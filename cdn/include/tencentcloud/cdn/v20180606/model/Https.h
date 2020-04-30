@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/ServerCert.h>
 #include <tencentcloud/cdn/v20180606/model/ClientCert.h>
+#include <tencentcloud/cdn/v20180606/model/Hsts.h>
 
 
 namespace TencentCloud
@@ -296,6 +297,54 @@ failed：部署失败
                      */
                     bool SslStatusHasBeenSet() const;
 
+                    /**
+                     * 获取TLS版本列表，支持填写以下值：
+TLSv1.0, TLSv1.1, TLSv1.2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TlsVersion TLS版本列表，支持填写以下值：
+TLSv1.0, TLSv1.1, TLSv1.2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTlsVersion() const;
+
+                    /**
+                     * 设置TLS版本列表，支持填写以下值：
+TLSv1.0, TLSv1.1, TLSv1.2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TlsVersion TLS版本列表，支持填写以下值：
+TLSv1.0, TLSv1.1, TLSv1.2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTlsVersion(const std::vector<std::string>& _tlsVersion);
+
+                    /**
+                     * 判断参数 TlsVersion 是否已赋值
+                     * @return TlsVersion 是否已赋值
+                     */
+                    bool TlsVersionHasBeenSet() const;
+
+                    /**
+                     * 获取Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Hsts Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Hsts GetHsts() const;
+
+                    /**
+                     * 设置Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Hsts Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHsts(const Hsts& _hsts);
+
+                    /**
+                     * 判断参数 Hsts 是否已赋值
+                     * @return Hsts 是否已赋值
+                     */
+                    bool HstsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +420,21 @@ failed：部署失败
                      */
                     std::string m_sslStatus;
                     bool m_sslStatusHasBeenSet;
+
+                    /**
+                     * TLS版本列表，支持填写以下值：
+TLSv1.0, TLSv1.1, TLSv1.2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tlsVersion;
+                    bool m_tlsVersionHasBeenSet;
+
+                    /**
+                     * Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Hsts m_hsts;
+                    bool m_hstsHasBeenSet;
 
                 };
             }

@@ -83,6 +83,49 @@ ScfClient::CopyFunctionOutcomeCallable ScfClient::CopyFunctionCallable(const Cop
     return task->get_future();
 }
 
+ScfClient::CreateAliasOutcome ScfClient::CreateAlias(const CreateAliasRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlias");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAliasResponse rsp = CreateAliasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAliasOutcome(rsp);
+        else
+            return CreateAliasOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAliasOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlias(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::CreateAliasOutcomeCallable ScfClient::CreateAliasCallable(const CreateAliasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAliasOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlias(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::CreateFunctionOutcome ScfClient::CreateFunction(const CreateFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFunction");
@@ -427,6 +470,49 @@ ScfClient::DeleteTriggerOutcomeCallable ScfClient::DeleteTriggerCallable(const D
     return task->get_future();
 }
 
+ScfClient::GetAliasOutcome ScfClient::GetAlias(const GetAliasRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAlias");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAliasResponse rsp = GetAliasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAliasOutcome(rsp);
+        else
+            return GetAliasOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAliasOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetAliasAsync(const GetAliasRequest& request, const GetAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAlias(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetAliasOutcomeCallable ScfClient::GetAliasCallable(const GetAliasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAliasOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAlias(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::GetFunctionOutcome ScfClient::GetFunction(const GetFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFunction");
@@ -635,6 +721,49 @@ ScfClient::InvokeOutcomeCallable ScfClient::InvokeCallable(const InvokeRequest &
         [this, request]()
         {
             return this->Invoke(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::ListAliasesOutcome ScfClient::ListAliases(const ListAliasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAliases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAliasesResponse rsp = ListAliasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAliasesOutcome(rsp);
+        else
+            return ListAliasesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAliasesOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAliases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListAliasesOutcomeCallable ScfClient::ListAliasesCallable(const ListAliasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAliasesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAliases(request);
         }
     );
 
@@ -936,6 +1065,49 @@ ScfClient::PublishVersionOutcomeCallable ScfClient::PublishVersionCallable(const
         [this, request]()
         {
             return this->PublishVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::UpdateAliasOutcome ScfClient::UpdateAlias(const UpdateAliasRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAlias");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAliasResponse rsp = UpdateAliasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAliasOutcome(rsp);
+        else
+            return UpdateAliasOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAliasOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAlias(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::UpdateAliasOutcomeCallable ScfClient::UpdateAliasCallable(const UpdateAliasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAliasOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAlias(request);
         }
     );
 

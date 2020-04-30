@@ -986,6 +986,49 @@ CmeClient::DescribeTeamsOutcomeCallable CmeClient::DescribeTeamsCallable(const D
     return task->get_future();
 }
 
+CmeClient::ExportVideoByEditorTrackDataOutcome CmeClient::ExportVideoByEditorTrackData(const ExportVideoByEditorTrackDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportVideoByEditorTrackData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportVideoByEditorTrackDataResponse rsp = ExportVideoByEditorTrackDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportVideoByEditorTrackDataOutcome(rsp);
+        else
+            return ExportVideoByEditorTrackDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportVideoByEditorTrackDataOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::ExportVideoByEditorTrackDataAsync(const ExportVideoByEditorTrackDataRequest& request, const ExportVideoByEditorTrackDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportVideoByEditorTrackData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::ExportVideoByEditorTrackDataOutcomeCallable CmeClient::ExportVideoByEditorTrackDataCallable(const ExportVideoByEditorTrackDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportVideoByEditorTrackDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportVideoByEditorTrackData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::ExportVideoEditProjectOutcome CmeClient::ExportVideoEditProject(const ExportVideoEditProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportVideoEditProject");

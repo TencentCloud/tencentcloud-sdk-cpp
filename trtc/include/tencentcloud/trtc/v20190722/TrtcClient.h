@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h>
@@ -54,6 +56,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCallDetailResponse> DescribeCallDetailOutcome;
                 typedef std::future<DescribeCallDetailOutcome> DescribeCallDetailOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailRequest&, DescribeCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeHistoryScaleResponse> DescribeHistoryScaleOutcome;
+                typedef std::future<DescribeHistoryScaleOutcome> DescribeHistoryScaleOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeHistoryScaleRequest&, DescribeHistoryScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryScaleAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRealtimeNetworkResponse> DescribeRealtimeNetworkOutcome;
                 typedef std::future<DescribeRealtimeNetworkOutcome> DescribeRealtimeNetworkOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRealtimeNetworkRequest&, DescribeRealtimeNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeNetworkAsyncHandler;
@@ -83,6 +88,15 @@ namespace TencentCloud
                 DescribeCallDetailOutcome DescribeCallDetail(const Model::DescribeCallDetailRequest &request);
                 void DescribeCallDetailAsync(const Model::DescribeCallDetailRequest& request, const DescribeCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCallDetailOutcomeCallable DescribeCallDetailCallable(const Model::DescribeCallDetailRequest& request);
+
+                /**
+                 *查询历史房间和用户数，每分钟1次，可查询最近5天的数据
+                 * @param req DescribeHistoryScaleRequest
+                 * @return DescribeHistoryScaleOutcome
+                 */
+                DescribeHistoryScaleOutcome DescribeHistoryScale(const Model::DescribeHistoryScaleRequest &request);
+                void DescribeHistoryScaleAsync(const Model::DescribeHistoryScaleRequest& request, const DescribeHistoryScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHistoryScaleOutcomeCallable DescribeHistoryScaleCallable(const Model::DescribeHistoryScaleRequest& request);
 
                 /**
                  *查询sdkappid维度下实时网络状态，包括上行丢包与下行丢包。可查询24小时内数据，查询起止时间不超过1个小时。

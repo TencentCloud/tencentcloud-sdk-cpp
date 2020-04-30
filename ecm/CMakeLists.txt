@@ -65,7 +65,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/ecm/v20190719/model/Area.h
   include/tencentcloud/ecm/v20190719/model/DescribeConfigRequest.h
-  include/tencentcloud/ecm/v20190719/model/NetworkInterfaceAttachment.h
+  include/tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlRequest.h
   include/tencentcloud/ecm/v20190719/model/NetworkStorageRange.h
   include/tencentcloud/ecm/v20190719/model/StartInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateVpcResponse.h
@@ -111,6 +111,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/MigratePrivateIpAddressResponse.h
   include/tencentcloud/ecm/v20190719/model/Instance.h
   include/tencentcloud/ecm/v20190719/model/EnhancedService.h
+  include/tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlResponse.h
   include/tencentcloud/ecm/v20190719/model/DisassociateAddressResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstanceTypeConfigRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleDetailRequest.h
@@ -121,6 +122,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeBaseOverviewRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNetworkResponse.h
   include/tencentcloud/ecm/v20190719/model/ImportImageRequest.h
+  include/tencentcloud/ecm/v20190719/model/NetworkInterfaceAttachment.h
   include/tencentcloud/ecm/v20190719/model/StopInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNameRequest.h
   include/tencentcloud/ecm/v20190719/model/SimpleModule.h
@@ -224,7 +226,7 @@ set(ecm_src
   src/v20190719/model/ResetInstancesPasswordRequest.cpp
   src/v20190719/model/Area.cpp
   src/v20190719/model/DescribeConfigRequest.cpp
-  src/v20190719/model/NetworkInterfaceAttachment.cpp
+  src/v20190719/model/DescribeInstanceVncUrlRequest.cpp
   src/v20190719/model/NetworkStorageRange.cpp
   src/v20190719/model/StartInstancesResponse.cpp
   src/v20190719/model/CreateVpcResponse.cpp
@@ -270,6 +272,7 @@ set(ecm_src
   src/v20190719/model/MigratePrivateIpAddressResponse.cpp
   src/v20190719/model/Instance.cpp
   src/v20190719/model/EnhancedService.cpp
+  src/v20190719/model/DescribeInstanceVncUrlResponse.cpp
   src/v20190719/model/DisassociateAddressResponse.cpp
   src/v20190719/model/DescribeInstanceTypeConfigRequest.cpp
   src/v20190719/model/DescribeModuleDetailRequest.cpp
@@ -280,6 +283,7 @@ set(ecm_src
   src/v20190719/model/DescribeBaseOverviewRequest.cpp
   src/v20190719/model/ModifyModuleNetworkResponse.cpp
   src/v20190719/model/ImportImageRequest.cpp
+  src/v20190719/model/NetworkInterfaceAttachment.cpp
   src/v20190719/model/StopInstancesResponse.cpp
   src/v20190719/model/ModifyModuleNameRequest.cpp
   src/v20190719/model/SimpleModule.cpp

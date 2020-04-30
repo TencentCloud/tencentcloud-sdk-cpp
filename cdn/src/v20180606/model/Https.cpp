@@ -29,7 +29,9 @@ Https::Https() :
     m_certInfoHasBeenSet(false),
     m_clientCertInfoHasBeenSet(false),
     m_spdyHasBeenSet(false),
-    m_sslStatusHasBeenSet(false)
+    m_sslStatusHasBeenSet(false),
+    m_tlsVersionHasBeenSet(false),
+    m_hstsHasBeenSet(false)
 {
 }
 
@@ -132,6 +134,36 @@ CoreInternalOutcome Https::Deserialize(const Value &value)
         m_sslStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TlsVersion") && !value["TlsVersion"].IsNull())
+    {
+        if (!value["TlsVersion"].IsArray())
+            return CoreInternalOutcome(Error("response `Https.TlsVersion` is not array type"));
+
+        const Value &tmpValue = value["TlsVersion"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tlsVersion.push_back((*itr).GetString());
+        }
+        m_tlsVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Hsts") && !value["Hsts"].IsNull())
+    {
+        if (!value["Hsts"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Https.Hsts` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hsts.Deserialize(value["Hsts"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hstsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +235,28 @@ void Https::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "SslStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_sslStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tlsVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TlsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tlsVersion.begin(); itr != m_tlsVersion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_hstsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Hsts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_hsts.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -334,5 +388,37 @@ void Https::SetSslStatus(const string& _sslStatus)
 bool Https::SslStatusHasBeenSet() const
 {
     return m_sslStatusHasBeenSet;
+}
+
+vector<string> Https::GetTlsVersion() const
+{
+    return m_tlsVersion;
+}
+
+void Https::SetTlsVersion(const vector<string>& _tlsVersion)
+{
+    m_tlsVersion = _tlsVersion;
+    m_tlsVersionHasBeenSet = true;
+}
+
+bool Https::TlsVersionHasBeenSet() const
+{
+    return m_tlsVersionHasBeenSet;
+}
+
+Hsts Https::GetHsts() const
+{
+    return m_hsts;
+}
+
+void Https::SetHsts(const Hsts& _hsts)
+{
+    m_hsts = _hsts;
+    m_hstsHasBeenSet = true;
+}
+
+bool Https::HstsHasBeenSet() const
+{
+    return m_hstsHasBeenSet;
 }
 

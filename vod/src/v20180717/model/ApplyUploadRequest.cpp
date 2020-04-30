@@ -33,6 +33,7 @@ ApplyUploadRequest::ApplyUploadRequest() :
     m_classIdHasBeenSet(false),
     m_sourceContextHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
+    m_extInfoHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -114,6 +115,14 @@ string ApplyUploadRequest::ToJsonString() const
         string key = "SessionContext";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -274,6 +283,22 @@ void ApplyUploadRequest::SetSessionContext(const string& _sessionContext)
 bool ApplyUploadRequest::SessionContextHasBeenSet() const
 {
     return m_sessionContextHasBeenSet;
+}
+
+string ApplyUploadRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void ApplyUploadRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool ApplyUploadRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 uint64_t ApplyUploadRequest::GetSubAppId() const

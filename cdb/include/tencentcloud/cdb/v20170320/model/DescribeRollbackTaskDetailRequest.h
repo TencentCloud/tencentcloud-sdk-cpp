@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表] (https://cloud.tencent.com/document/api/236/15872)。
-                     * @return InstanceId 实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表] (https://cloud.tencent.com/document/api/236/15872)。
+                     * 获取实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
+                     * @return InstanceId 实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表] (https://cloud.tencent.com/document/api/236/15872)。
-                     * @param InstanceId 实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表] (https://cloud.tencent.com/document/api/236/15872)。
+                     * 设置实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
+                     * @param InstanceId 实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表] (https://cloud.tencent.com/document/api/236/15872)。
+                     * 实例 ID。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872)。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -63,7 +63,8 @@ DetailDomain::DetailDomain() :
     m_originPullTimeoutHasBeenSet(false),
     m_awsPrivateAccessHasBeenSet(false),
     m_securityConfigHasBeenSet(false),
-    m_imageOptimizationHasBeenSet(false)
+    m_imageOptimizationHasBeenSet(false),
+    m_userAgentFilterHasBeenSet(false)
 {
 }
 
@@ -702,6 +703,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const Value &value)
         m_imageOptimizationHasBeenSet = true;
     }
 
+    if (value.HasMember("UserAgentFilter") && !value["UserAgentFilter"].IsNull())
+    {
+        if (!value["UserAgentFilter"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.UserAgentFilter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_userAgentFilter.Deserialize(value["UserAgentFilter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_userAgentFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1073,6 +1091,15 @@ void DetailDomain::ToJsonObject(Value &value, Document::AllocatorType& allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_imageOptimization.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_userAgentFilterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserAgentFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_userAgentFilter.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1748,5 +1775,21 @@ void DetailDomain::SetImageOptimization(const ImageOptimization& _imageOptimizat
 bool DetailDomain::ImageOptimizationHasBeenSet() const
 {
     return m_imageOptimizationHasBeenSet;
+}
+
+UserAgentFilter DetailDomain::GetUserAgentFilter() const
+{
+    return m_userAgentFilter;
+}
+
+void DetailDomain::SetUserAgentFilter(const UserAgentFilter& _userAgentFilter)
+{
+    m_userAgentFilter = _userAgentFilter;
+    m_userAgentFilterHasBeenSet = true;
+}
+
+bool DetailDomain::UserAgentFilterHasBeenSet() const
+{
+    return m_userAgentFilterHasBeenSet;
 }
 

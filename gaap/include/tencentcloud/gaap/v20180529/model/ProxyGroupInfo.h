@@ -149,32 +149,32 @@ namespace TencentCloud
                     /**
                      * 获取通道组状态。
 其中，
-0表示运行中；
-1表示创建中；
-4表示销毁中；
-11表示通道迁移中。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+MOVING表示通道迁移中。
                      * @return Status 通道组状态。
 其中，
-0表示运行中；
-1表示创建中；
-4表示销毁中；
-11表示通道迁移中。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+MOVING表示通道迁移中。
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置通道组状态。
 其中，
-0表示运行中；
-1表示创建中；
-4表示销毁中；
-11表示通道迁移中。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+MOVING表示通道迁移中。
                      * @param Status 通道组状态。
 其中，
-0表示运行中；
-1表示创建中；
-4表示销毁中；
-11表示通道迁移中。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+MOVING表示通道迁移中。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -239,10 +239,10 @@ namespace TencentCloud
                     /**
                      * 通道组状态。
 其中，
-0表示运行中；
-1表示创建中；
-4表示销毁中；
-11表示通道迁移中。
+RUNNING表示运行中；
+CREATING表示创建中；
+DESTROYING表示销毁中；
+MOVING表示通道迁移中。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

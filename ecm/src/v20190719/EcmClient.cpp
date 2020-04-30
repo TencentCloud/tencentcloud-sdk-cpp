@@ -857,6 +857,49 @@ EcmClient::DescribeInstanceTypeConfigOutcomeCallable EcmClient::DescribeInstance
     return task->get_future();
 }
 
+EcmClient::DescribeInstanceVncUrlOutcome EcmClient::DescribeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceVncUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceVncUrlResponse rsp = DescribeInstanceVncUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceVncUrlOutcome(rsp);
+        else
+            return DescribeInstanceVncUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceVncUrlOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeInstanceVncUrlAsync(const DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceVncUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeInstanceVncUrlOutcomeCallable EcmClient::DescribeInstanceVncUrlCallable(const DescribeInstanceVncUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceVncUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceVncUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeInstancesOutcome EcmClient::DescribeInstances(const DescribeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstances");
