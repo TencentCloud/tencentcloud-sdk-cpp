@@ -65,6 +65,8 @@
 #include <tencentcloud/scf/v20180416/model/ListLayersResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListNamespacesRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListNamespacesResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListTriggersRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListTriggersResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListVersionByFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListVersionByFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/PublishLayerVersionRequest.h>
@@ -156,6 +158,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListNamespacesResponse> ListNamespacesOutcome;
                 typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListNamespacesRequest&, ListNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListNamespacesAsyncHandler;
+                typedef Outcome<Error, Model::ListTriggersResponse> ListTriggersOutcome;
+                typedef std::future<ListTriggersOutcome> ListTriggersOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListTriggersRequest&, ListTriggersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTriggersAsyncHandler;
                 typedef Outcome<Error, Model::ListVersionByFunctionResponse> ListVersionByFunctionOutcome;
                 typedef std::future<ListVersionByFunctionOutcome> ListVersionByFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListVersionByFunctionRequest&, ListVersionByFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVersionByFunctionAsyncHandler;
@@ -375,6 +380,15 @@ namespace TencentCloud
                 ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest &request);
                 void ListNamespacesAsync(const Model::ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListNamespacesOutcomeCallable ListNamespacesCallable(const Model::ListNamespacesRequest& request);
+
+                /**
+                 *获取函数触发器列表
+                 * @param req ListTriggersRequest
+                 * @return ListTriggersOutcome
+                 */
+                ListTriggersOutcome ListTriggers(const Model::ListTriggersRequest &request);
+                void ListTriggersAsync(const Model::ListTriggersRequest& request, const ListTriggersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTriggersOutcomeCallable ListTriggersCallable(const Model::ListTriggersRequest& request);
 
                 /**
                  *该接口根据传入的参数查询函数的版本。

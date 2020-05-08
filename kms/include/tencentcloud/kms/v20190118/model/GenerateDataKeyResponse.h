@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取生成的DataKey的明文，该明文使用base64编码，用户需要使用base64解码得到明文
-                     * @return Plaintext 生成的DataKey的明文，该明文使用base64编码，用户需要使用base64解码得到明文
+                     * 获取生成的数据密钥DataKey的明文，该明文使用base64进行了编码，需base64解码后作为数据密钥本地使用
+                     * @return Plaintext 生成的数据密钥DataKey的明文，该明文使用base64进行了编码，需base64解码后作为数据密钥本地使用
                      */
                     std::string GetPlaintext() const;
 
@@ -67,8 +67,8 @@ namespace TencentCloud
                     bool PlaintextHasBeenSet() const;
 
                     /**
-                     * 获取DataKey加密后经过base64编码的密文，用户需要自行保存密文
-                     * @return CiphertextBlob DataKey加密后经过base64编码的密文，用户需要自行保存密文
+                     * 获取数据密钥DataKey加密后的密文，用户需要自行保存该密文，KMS不托管用户的数据密钥。可以通过Decrypt接口从CiphertextBlob中获取数据密钥DataKey明文
+                     * @return CiphertextBlob 数据密钥DataKey加密后的密文，用户需要自行保存该密文，KMS不托管用户的数据密钥。可以通过Decrypt接口从CiphertextBlob中获取数据密钥DataKey明文
                      */
                     std::string GetCiphertextBlob() const;
 
@@ -87,13 +87,13 @@ namespace TencentCloud
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 生成的DataKey的明文，该明文使用base64编码，用户需要使用base64解码得到明文
+                     * 生成的数据密钥DataKey的明文，该明文使用base64进行了编码，需base64解码后作为数据密钥本地使用
                      */
                     std::string m_plaintext;
                     bool m_plaintextHasBeenSet;
 
                     /**
-                     * DataKey加密后经过base64编码的密文，用户需要自行保存密文
+                     * 数据密钥DataKey加密后的密文，用户需要自行保存该密文，KMS不托管用户的数据密钥。可以通过Decrypt接口从CiphertextBlob中获取数据密钥DataKey明文
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取裁剪的宽度。取值范围[0，3000]。
-                     * @return CropWidth 裁剪的宽度。取值范围[0，3000]。
+                     * 获取裁剪的宽度。取值范围[0，2000]。
+                     * @return CropWidth 裁剪的宽度。取值范围[0，2000]。
                      */
                     double GetCropWidth() const;
 
                     /**
-                     * 设置裁剪的宽度。取值范围[0，3000]。
-                     * @param CropWidth 裁剪的宽度。取值范围[0，3000]。
+                     * 设置裁剪的宽度。取值范围[0，2000]。
+                     * @param CropWidth 裁剪的宽度。取值范围[0，2000]。
                      */
                     void SetCropWidth(const double& _cropWidth);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool CropWidthHasBeenSet() const;
 
                     /**
-                     * 获取裁剪的高度。取值范围[0，3000]。
-                     * @return CropHeight 裁剪的高度。取值范围[0，3000]。
+                     * 获取裁剪的高度。取值范围[0，2000]。
+                     * @return CropHeight 裁剪的高度。取值范围[0，2000]。
                      */
                     double GetCropHeight() const;
 
                     /**
-                     * 设置裁剪的高度。取值范围[0，3000]。
-                     * @param CropHeight 裁剪的高度。取值范围[0，3000]。
+                     * 设置裁剪的高度。取值范围[0，2000]。
+                     * @param CropHeight 裁剪的高度。取值范围[0，2000]。
                      */
                     void SetCropHeight(const double& _cropHeight);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool CropHeightHasBeenSet() const;
 
                     /**
-                     * 获取裁剪的起始X坐标。取值范围[0，3000]。
-                     * @return CropStartLocationX 裁剪的起始X坐标。取值范围[0，3000]。
+                     * 获取裁剪的起始X坐标。取值范围[0，2000]。
+                     * @return CropStartLocationX 裁剪的起始X坐标。取值范围[0，2000]。
                      */
                     double GetCropStartLocationX() const;
 
                     /**
-                     * 设置裁剪的起始X坐标。取值范围[0，3000]。
-                     * @param CropStartLocationX 裁剪的起始X坐标。取值范围[0，3000]。
+                     * 设置裁剪的起始X坐标。取值范围[0，2000]。
+                     * @param CropStartLocationX 裁剪的起始X坐标。取值范围[0，2000]。
                      */
                     void SetCropStartLocationX(const double& _cropStartLocationX);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool CropStartLocationXHasBeenSet() const;
 
                     /**
-                     * 获取裁剪的起始Y坐标。取值范围[0，3000]。
-                     * @return CropStartLocationY 裁剪的起始Y坐标。取值范围[0，3000]。
+                     * 获取裁剪的起始Y坐标。取值范围[0，2000]。
+                     * @return CropStartLocationY 裁剪的起始Y坐标。取值范围[0，2000]。
                      */
                     double GetCropStartLocationY() const;
 
                     /**
-                     * 设置裁剪的起始Y坐标。取值范围[0，3000]。
-                     * @param CropStartLocationY 裁剪的起始Y坐标。取值范围[0，3000]。
+                     * 设置裁剪的起始Y坐标。取值范围[0，2000]。
+                     * @param CropStartLocationY 裁剪的起始Y坐标。取值范围[0，2000]。
                      */
                     void SetCropStartLocationY(const double& _cropStartLocationY);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 裁剪的宽度。取值范围[0，3000]。
+                     * 裁剪的宽度。取值范围[0，2000]。
                      */
                     double m_cropWidth;
                     bool m_cropWidthHasBeenSet;
 
                     /**
-                     * 裁剪的高度。取值范围[0，3000]。
+                     * 裁剪的高度。取值范围[0，2000]。
                      */
                     double m_cropHeight;
                     bool m_cropHeightHasBeenSet;
 
                     /**
-                     * 裁剪的起始X坐标。取值范围[0，3000]。
+                     * 裁剪的起始X坐标。取值范围[0，2000]。
                      */
                     double m_cropStartLocationX;
                     bool m_cropStartLocationXHasBeenSet;
 
                     /**
-                     * 裁剪的起始Y坐标。取值范围[0，3000]。
+                     * 裁剪的起始Y坐标。取值范围[0，2000]。
                      */
                     double m_cropStartLocationY;
                     bool m_cropStartLocationYHasBeenSet;

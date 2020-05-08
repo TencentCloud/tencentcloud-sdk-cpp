@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通话ID
-                     * @return CommId 通话ID
+                     * 获取通话ID（唯一标识一次通话）= sdkappid+roomgString（房间号）+房间创建时间（unix时间戳，s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
+                     * @return CommId 通话ID（唯一标识一次通话）= sdkappid+roomgString（房间号）+房间创建时间（unix时间戳，s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
                      */
                     std::string GetCommId() const;
 
                     /**
-                     * 设置通话ID
-                     * @param CommId 通话ID
+                     * 设置通话ID（唯一标识一次通话）= sdkappid+roomgString（房间号）+房间创建时间（unix时间戳，s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
+                     * @param CommId 通话ID（唯一标识一次通话）= sdkappid+roomgString（房间号）+房间创建时间（unix时间戳，s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
                      */
                     void SetCommId(const std::string& _commId);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需查询的用户数组，不填默认返回6个用户
-                     * @return UserIds 需查询的用户数组，不填默认返回6个用户
+                     * 获取需查询的用户数组，不填默认返回6个用户,最多可填6个用户
+                     * @return UserIds 需查询的用户数组，不填默认返回6个用户,最多可填6个用户
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置需查询的用户数组，不填默认返回6个用户
-                     * @param UserIds 需查询的用户数组，不填默认返回6个用户
+                     * 设置需查询的用户数组，不填默认返回6个用户,最多可填6个用户
+                     * @param UserIds 需查询的用户数组，不填默认返回6个用户,最多可填6个用户
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -205,7 +205,7 @@ vHeight：上/下行分辨率高
                 private:
 
                     /**
-                     * 通话ID
+                     * 通话ID（唯一标识一次通话）= sdkappid+roomgString（房间号）+房间创建时间（unix时间戳，s）。通过 DescribeRoomInformation（查询房间列表）接口获取。
                      */
                     std::string m_commId;
                     bool m_commIdHasBeenSet;
@@ -229,7 +229,7 @@ vHeight：上/下行分辨率高
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 需查询的用户数组，不填默认返回6个用户
+                     * 需查询的用户数组，不填默认返回6个用户,最多可填6个用户
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;

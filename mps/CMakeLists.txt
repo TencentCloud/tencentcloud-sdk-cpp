@@ -35,7 +35,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaAiAnalysisTagItem.h
   include/tencentcloud/mps/v20190612/model/AnimatedGraphicTaskInput.h
   include/tencentcloud/mps/v20190612/model/PoliticalAsrReviewTemplateInfoForUpdate.h
-  include/tencentcloud/mps/v20190612/model/TaskSimpleInfo.h
+  include/tencentcloud/mps/v20190612/model/MosaicInput.h
   include/tencentcloud/mps/v20190612/model/DescribeTaskDetailResponse.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAiRecognitionResultItem.h
   include/tencentcloud/mps/v20190612/model/AiSampleFaceOperation.h
@@ -336,6 +336,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ProhibitedOcrReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/LiveStreamOcrFullTextRecognitionResult.h
   include/tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateResponse.h
+  include/tencentcloud/mps/v20190612/model/TaskSimpleInfo.h
   include/tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskAsrFullTextResultInput.h
   include/tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateResponse.h
@@ -377,7 +378,7 @@ set(mps_src
   src/v20190612/model/MediaAiAnalysisTagItem.cpp
   src/v20190612/model/AnimatedGraphicTaskInput.cpp
   src/v20190612/model/PoliticalAsrReviewTemplateInfoForUpdate.cpp
-  src/v20190612/model/TaskSimpleInfo.cpp
+  src/v20190612/model/MosaicInput.cpp
   src/v20190612/model/DescribeTaskDetailResponse.cpp
   src/v20190612/model/LiveStreamAiRecognitionResultItem.cpp
   src/v20190612/model/AiSampleFaceOperation.cpp
@@ -678,6 +679,7 @@ set(mps_src
   src/v20190612/model/ProhibitedOcrReviewTemplateInfo.cpp
   src/v20190612/model/LiveStreamOcrFullTextRecognitionResult.cpp
   src/v20190612/model/DeleteWatermarkTemplateResponse.cpp
+  src/v20190612/model/TaskSimpleInfo.cpp
   src/v20190612/model/DeleteWatermarkTemplateRequest.cpp
   src/v20190612/model/AiRecognitionTaskAsrFullTextResultInput.cpp
   src/v20190612/model/ModifyTranscodeTemplateResponse.cpp

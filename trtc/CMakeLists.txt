@@ -20,7 +20,9 @@ set(trtc_public_header
 
 set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/RealtimeData.h
+  include/tencentcloud/trtc/v20190722/model/LayoutParams.h
   include/tencentcloud/trtc/v20190722/model/TimeValue.h
+  include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h
@@ -28,12 +30,17 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkRequest.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
+  include/tencentcloud/trtc/v20190722/model/EncodeParams.h
+  include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityResponse.h
+  include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h
+  include/tencentcloud/trtc/v20190722/model/OutputParams.h
   include/tencentcloud/trtc/v20190722/model/QualityData.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
+  include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h
@@ -46,7 +53,9 @@ set(trtc_public_header_model
 set(trtc_src
   src/v20190722/TrtcClient.cpp
   src/v20190722/model/RealtimeData.cpp
+  src/v20190722/model/LayoutParams.cpp
   src/v20190722/model/TimeValue.cpp
+  src/v20190722/model/StopMCUMixTranscodeResponse.cpp
   src/v20190722/model/DescribeRealtimeScaleResponse.cpp
   src/v20190722/model/DismissRoomResponse.cpp
   src/v20190722/model/DescribeRealtimeQualityRequest.cpp
@@ -54,12 +63,17 @@ set(trtc_src
   src/v20190722/model/DescribeCallDetailRequest.cpp
   src/v20190722/model/DescribeRealtimeNetworkRequest.cpp
   src/v20190722/model/DismissRoomRequest.cpp
+  src/v20190722/model/EncodeParams.cpp
+  src/v20190722/model/StartMCUMixTranscodeRequest.cpp
   src/v20190722/model/DescribeRealtimeQualityResponse.cpp
+  src/v20190722/model/StopMCUMixTranscodeRequest.cpp
   src/v20190722/model/DescribeHistoryScaleRequest.cpp
   src/v20190722/model/DescribeRoomInformationResponse.cpp
+  src/v20190722/model/OutputParams.cpp
   src/v20190722/model/QualityData.cpp
   src/v20190722/model/DescribeRealtimeNetworkResponse.cpp
   src/v20190722/model/ScaleInfomation.cpp
+  src/v20190722/model/StartMCUMixTranscodeResponse.cpp
   src/v20190722/model/DescribeRealtimeScaleRequest.cpp
   src/v20190722/model/DescribeCallDetailResponse.cpp
   src/v20190722/model/DescribeRoomInformationRequest.cpp

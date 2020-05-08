@@ -56,8 +56,10 @@ namespace TencentCloud
                     bool FileSystemHasBeenSet() const;
 
                     /**
-                     * 获取文件系统已使用大小（byte）
-                     * @return FileSystemCapacityUsed 文件系统已使用大小（byte）
+                     * 获取文件系统已使用容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileSystemCapacityUsed 文件系统已使用容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetFileSystemCapacityUsed() const;
 
@@ -66,6 +68,20 @@ namespace TencentCloud
                      * @return FileSystemCapacityUsed 是否已赋值
                      */
                     bool FileSystemCapacityUsedHasBeenSet() const;
+
+                    /**
+                     * 获取已使用容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CapacityUsed 已使用容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCapacityUsed() const;
+
+                    /**
+                     * 判断参数 CapacityUsed 是否已赋值
+                     * @return CapacityUsed 是否已赋值
+                     */
+                    bool CapacityUsedHasBeenSet() const;
 
                 private:
 
@@ -76,10 +92,18 @@ namespace TencentCloud
                     bool m_fileSystemHasBeenSet;
 
                     /**
-                     * 文件系统已使用大小（byte）
+                     * 文件系统已使用容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileSystemCapacityUsed;
                     bool m_fileSystemCapacityUsedHasBeenSet;
+
+                    /**
+                     * 已使用容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_capacityUsed;
+                    bool m_capacityUsedHasBeenSet;
 
                 };
             }

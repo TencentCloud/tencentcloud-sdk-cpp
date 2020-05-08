@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取注册号
-                     * @return RegNum 注册号
+                     * 获取统一社会信用代码（三合一之前为注册号）
+                     * @return RegNum 统一社会信用代码（三合一之前为注册号）
                      */
                     std::string GetRegNum() const;
 
@@ -165,7 +165,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 注册号
+                     * 统一社会信用代码（三合一之前为注册号）
                      */
                     std::string m_regNum;
                     bool m_regNumHasBeenSet;

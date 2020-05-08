@@ -80,14 +80,11 @@ CoreInternalOutcome ReceiverInfo::Deserialize(const Value &value)
 
     if (value.HasMember("ReceiverType") && !value["ReceiverType"].IsNull())
     {
-        if (!value["ReceiverType"].IsArray())
-            return CoreInternalOutcome(Error("response `ReceiverInfo.ReceiverType` is not array type"));
-
-        const Value &tmpValue = value["ReceiverType"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["ReceiverType"].IsString())
         {
-            m_receiverType.push_back((*itr).GetString());
+            return CoreInternalOutcome(Error("response `ReceiverInfo.ReceiverType` IsString=false incorrectly").SetRequestId(requestId));
         }
+        m_receiverType = string(value["ReceiverType"].GetString());
         m_receiverTypeHasBeenSet = true;
     }
 
@@ -257,12 +254,7 @@ void ReceiverInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         Value iKey(kStringType);
         string key = "ReceiverType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_receiverType.begin(); itr != m_receiverType.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, Value(m_receiverType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
@@ -429,12 +421,12 @@ bool ReceiverInfo::NotifyWayHasBeenSet() const
     return m_notifyWayHasBeenSet;
 }
 
-vector<string> ReceiverInfo::GetReceiverType() const
+string ReceiverInfo::GetReceiverType() const
 {
     return m_receiverType;
 }
 
-void ReceiverInfo::SetReceiverType(const vector<string>& _receiverType)
+void ReceiverInfo::SetReceiverType(const string& _receiverType)
 {
     m_receiverType = _receiverType;
     m_receiverTypeHasBeenSet = true;

@@ -943,6 +943,49 @@ ScfClient::ListNamespacesOutcomeCallable ScfClient::ListNamespacesCallable(const
     return task->get_future();
 }
 
+ScfClient::ListTriggersOutcome ScfClient::ListTriggers(const ListTriggersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTriggers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTriggersResponse rsp = ListTriggersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTriggersOutcome(rsp);
+        else
+            return ListTriggersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTriggersOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListTriggersAsync(const ListTriggersRequest& request, const ListTriggersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTriggers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListTriggersOutcomeCallable ScfClient::ListTriggersCallable(const ListTriggersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTriggersOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTriggers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::ListVersionByFunctionOutcome ScfClient::ListVersionByFunction(const ListVersionByFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "ListVersionByFunction");

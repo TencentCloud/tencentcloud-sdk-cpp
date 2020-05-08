@@ -34,7 +34,8 @@ DescribeBasicAlarmListRequest::DescribeBasicAlarmListRequest() :
     m_viewNamesHasBeenSet(false),
     m_alarmStatusHasBeenSet(false),
     m_objLikeHasBeenSet(false),
-    m_instanceGroupIdsHasBeenSet(false)
+    m_instanceGroupIdsHasBeenSet(false),
+    m_metricNamesHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,19 @@ string DescribeBasicAlarmListRequest::ToJsonString() const
         for (auto itr = m_instanceGroupIds.begin(); itr != m_instanceGroupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_metricNamesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetricNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_metricNames.begin(); itr != m_metricNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -335,6 +349,22 @@ void DescribeBasicAlarmListRequest::SetInstanceGroupIds(const vector<int64_t>& _
 bool DescribeBasicAlarmListRequest::InstanceGroupIdsHasBeenSet() const
 {
     return m_instanceGroupIdsHasBeenSet;
+}
+
+vector<string> DescribeBasicAlarmListRequest::GetMetricNames() const
+{
+    return m_metricNames;
+}
+
+void DescribeBasicAlarmListRequest::SetMetricNames(const vector<string>& _metricNames)
+{
+    m_metricNames = _metricNames;
+    m_metricNamesHasBeenSet = true;
+}
+
+bool DescribeBasicAlarmListRequest::MetricNamesHasBeenSet() const
+{
+    return m_metricNamesHasBeenSet;
 }
 
 

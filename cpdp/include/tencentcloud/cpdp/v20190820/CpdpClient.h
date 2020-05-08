@@ -51,6 +51,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CloseOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAcctResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceRequest.h>
@@ -59,8 +61,14 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfoResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/DownloadBillResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAcctBindingRequest.h>
@@ -69,6 +77,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryAcctInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAcctInfoListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAcctInfoListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryBalanceRequest.h>
@@ -187,6 +197,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAcctResponse> CreateAcctOutcome;
                 typedef std::future<CreateAcctOutcome> CreateAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateAcctRequest&, CreateAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcctAsyncHandler;
+                typedef Outcome<Error, Model::CreateAgentTaxPaymentInfosResponse> CreateAgentTaxPaymentInfosOutcome;
+                typedef std::future<CreateAgentTaxPaymentInfosOutcome> CreateAgentTaxPaymentInfosOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateAgentTaxPaymentInfosRequest&, CreateAgentTaxPaymentInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentTaxPaymentInfosAsyncHandler;
                 typedef Outcome<Error, Model::CreateCustAcctIdResponse> CreateCustAcctIdOutcome;
                 typedef std::future<CreateCustAcctIdOutcome> CreateCustAcctIdOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateCustAcctIdRequest&, CreateCustAcctIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustAcctIdAsyncHandler;
@@ -199,9 +212,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateRedInvoiceResponse> CreateRedInvoiceOutcome;
                 typedef std::future<CreateRedInvoiceOutcome> CreateRedInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateRedInvoiceRequest&, CreateRedInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRedInvoiceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAgentTaxPaymentInfoResponse> DeleteAgentTaxPaymentInfoOutcome;
+                typedef std::future<DeleteAgentTaxPaymentInfoOutcome> DeleteAgentTaxPaymentInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DeleteAgentTaxPaymentInfoRequest&, DeleteAgentTaxPaymentInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentTaxPaymentInfoAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAgentTaxPaymentInfosResponse> DeleteAgentTaxPaymentInfosOutcome;
+                typedef std::future<DeleteAgentTaxPaymentInfosOutcome> DeleteAgentTaxPaymentInfosOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::DeleteAgentTaxPaymentInfosRequest&, DeleteAgentTaxPaymentInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentTaxPaymentInfosAsyncHandler;
                 typedef Outcome<Error, Model::DownloadBillResponse> DownloadBillOutcome;
                 typedef std::future<DownloadBillOutcome> DownloadBillOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::DownloadBillRequest&, DownloadBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadBillAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAgentTaxPaymentInfoResponse> ModifyAgentTaxPaymentInfoOutcome;
+                typedef std::future<ModifyAgentTaxPaymentInfoOutcome> ModifyAgentTaxPaymentInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ModifyAgentTaxPaymentInfoRequest&, ModifyAgentTaxPaymentInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentTaxPaymentInfoAsyncHandler;
                 typedef Outcome<Error, Model::ModifyMntMbrBindRelateAcctBankCodeResponse> ModifyMntMbrBindRelateAcctBankCodeOutcome;
                 typedef std::future<ModifyMntMbrBindRelateAcctBankCodeOutcome> ModifyMntMbrBindRelateAcctBankCodeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ModifyMntMbrBindRelateAcctBankCodeRequest&, ModifyMntMbrBindRelateAcctBankCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMntMbrBindRelateAcctBankCodeAsyncHandler;
@@ -214,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryAcctInfoListResponse> QueryAcctInfoListOutcome;
                 typedef std::future<QueryAcctInfoListOutcome> QueryAcctInfoListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryAcctInfoListRequest&, QueryAcctInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAcctInfoListAsyncHandler;
+                typedef Outcome<Error, Model::QueryAgentTaxPaymentBatchResponse> QueryAgentTaxPaymentBatchOutcome;
+                typedef std::future<QueryAgentTaxPaymentBatchOutcome> QueryAgentTaxPaymentBatchOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryAgentTaxPaymentBatchRequest&, QueryAgentTaxPaymentBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAgentTaxPaymentBatchAsyncHandler;
                 typedef Outcome<Error, Model::QueryApplicationMaterialResponse> QueryApplicationMaterialOutcome;
                 typedef std::future<QueryApplicationMaterialOutcome> QueryApplicationMaterialOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryApplicationMaterialRequest&, QueryApplicationMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryApplicationMaterialAsyncHandler;
@@ -444,6 +469,15 @@ namespace TencentCloud
                 CreateAcctOutcomeCallable CreateAcctCallable(const Model::CreateAcctRequest& request);
 
                 /**
+                 *直播平台-代理商完税信息录入
+                 * @param req CreateAgentTaxPaymentInfosRequest
+                 * @return CreateAgentTaxPaymentInfosOutcome
+                 */
+                CreateAgentTaxPaymentInfosOutcome CreateAgentTaxPaymentInfos(const Model::CreateAgentTaxPaymentInfosRequest &request);
+                void CreateAgentTaxPaymentInfosAsync(const Model::CreateAgentTaxPaymentInfosRequest& request, const CreateAgentTaxPaymentInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAgentTaxPaymentInfosOutcomeCallable CreateAgentTaxPaymentInfosCallable(const Model::CreateAgentTaxPaymentInfosRequest& request);
+
+                /**
                  *会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。
 平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。
                  * @param req CreateCustAcctIdRequest
@@ -481,6 +515,24 @@ namespace TencentCloud
                 CreateRedInvoiceOutcomeCallable CreateRedInvoiceCallable(const Model::CreateRedInvoiceRequest& request);
 
                 /**
+                 *直播平台-删除代理商完税信息
+                 * @param req DeleteAgentTaxPaymentInfoRequest
+                 * @return DeleteAgentTaxPaymentInfoOutcome
+                 */
+                DeleteAgentTaxPaymentInfoOutcome DeleteAgentTaxPaymentInfo(const Model::DeleteAgentTaxPaymentInfoRequest &request);
+                void DeleteAgentTaxPaymentInfoAsync(const Model::DeleteAgentTaxPaymentInfoRequest& request, const DeleteAgentTaxPaymentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAgentTaxPaymentInfoOutcomeCallable DeleteAgentTaxPaymentInfoCallable(const Model::DeleteAgentTaxPaymentInfoRequest& request);
+
+                /**
+                 *直播平台-删除代理商完税信息
+                 * @param req DeleteAgentTaxPaymentInfosRequest
+                 * @return DeleteAgentTaxPaymentInfosOutcome
+                 */
+                DeleteAgentTaxPaymentInfosOutcome DeleteAgentTaxPaymentInfos(const Model::DeleteAgentTaxPaymentInfosRequest &request);
+                void DeleteAgentTaxPaymentInfosAsync(const Model::DeleteAgentTaxPaymentInfosRequest& request, const DeleteAgentTaxPaymentInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAgentTaxPaymentInfosOutcomeCallable DeleteAgentTaxPaymentInfosCallable(const Model::DeleteAgentTaxPaymentInfosRequest& request);
+
+                /**
                  *账单下载接口，根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。
                  * @param req DownloadBillRequest
                  * @return DownloadBillOutcome
@@ -488,6 +540,15 @@ namespace TencentCloud
                 DownloadBillOutcome DownloadBill(const Model::DownloadBillRequest &request);
                 void DownloadBillAsync(const Model::DownloadBillRequest& request, const DownloadBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadBillOutcomeCallable DownloadBillCallable(const Model::DownloadBillRequest& request);
+
+                /**
+                 *直播平台-修改代理商完税信息
+                 * @param req ModifyAgentTaxPaymentInfoRequest
+                 * @return ModifyAgentTaxPaymentInfoOutcome
+                 */
+                ModifyAgentTaxPaymentInfoOutcome ModifyAgentTaxPaymentInfo(const Model::ModifyAgentTaxPaymentInfoRequest &request);
+                void ModifyAgentTaxPaymentInfoAsync(const Model::ModifyAgentTaxPaymentInfoRequest& request, const ModifyAgentTaxPaymentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAgentTaxPaymentInfoOutcomeCallable ModifyAgentTaxPaymentInfoCallable(const Model::ModifyAgentTaxPaymentInfoRequest& request);
 
                 /**
                  *维护会员绑定提现账户联行号。此接口可以支持市场修改会员的提现账户的开户行信息，具体包括开户行行名、开户行的银行联行号（大小额联行号）和超级网银行号。
@@ -524,6 +585,15 @@ namespace TencentCloud
                 QueryAcctInfoListOutcome QueryAcctInfoList(const Model::QueryAcctInfoListRequest &request);
                 void QueryAcctInfoListAsync(const Model::QueryAcctInfoListRequest& request, const QueryAcctInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryAcctInfoListOutcomeCallable QueryAcctInfoListCallable(const Model::QueryAcctInfoListRequest& request);
+
+                /**
+                 *直播平台-查询批次信息
+                 * @param req QueryAgentTaxPaymentBatchRequest
+                 * @return QueryAgentTaxPaymentBatchOutcome
+                 */
+                QueryAgentTaxPaymentBatchOutcome QueryAgentTaxPaymentBatch(const Model::QueryAgentTaxPaymentBatchRequest &request);
+                void QueryAgentTaxPaymentBatchAsync(const Model::QueryAgentTaxPaymentBatchRequest& request, const QueryAgentTaxPaymentBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryAgentTaxPaymentBatchOutcomeCallable QueryAgentTaxPaymentBatchCallable(const Model::QueryAgentTaxPaymentBatchRequest& request);
 
                 /**
                  *跨境-成功申报材料查询

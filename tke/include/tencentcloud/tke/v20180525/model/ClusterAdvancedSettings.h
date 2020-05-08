@@ -173,6 +173,24 @@ namespace TencentCloud
                      */
                     bool IsNonStaticIpModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用集群删除保护
+                     * @return DeletionProtection 是否启用集群删除保护
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置是否启用集群删除保护
+                     * @param DeletionProtection 是否启用集群删除保护
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +234,12 @@ namespace TencentCloud
                      */
                     bool m_isNonStaticIpMode;
                     bool m_isNonStaticIpModeHasBeenSet;
+
+                    /**
+                     * 是否启用集群删除保护
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

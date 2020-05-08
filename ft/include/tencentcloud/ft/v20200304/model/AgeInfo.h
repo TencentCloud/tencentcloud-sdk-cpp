@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前只支持设置为10且不可调整（后续放开后再知会）。
-                     * @return Age 当前只支持设置为10且不可调整（后续放开后再知会）。
+                     * 获取变化到的人脸年龄 [10,80]。
+                     * @return Age 变化到的人脸年龄 [10,80]。
                      */
                     int64_t GetAge() const;
 
                     /**
-                     * 设置当前只支持设置为10且不可调整（后续放开后再知会）。
-                     * @param Age 当前只支持设置为10且不可调整（后续放开后再知会）。
+                     * 设置变化到的人脸年龄 [10,80]。
+                     * @param Age 变化到的人脸年龄 [10,80]。
                      */
                     void SetAge(const int64_t& _age);
 
@@ -90,7 +90,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前只支持设置为10且不可调整（后续放开后再知会）。
+                     * 变化到的人脸年龄 [10,80]。
                      */
                     int64_t m_age;
                     bool m_ageHasBeenSet;

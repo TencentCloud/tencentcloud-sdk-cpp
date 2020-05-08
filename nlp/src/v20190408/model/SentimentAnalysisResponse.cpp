@@ -26,6 +26,7 @@ using namespace std;
 
 SentimentAnalysisResponse::SentimentAnalysisResponse() :
     m_negativeHasBeenSet(false),
+    m_neutralHasBeenSet(false),
     m_positiveHasBeenSet(false),
     m_sentimentHasBeenSet(false)
 {
@@ -75,6 +76,16 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
         m_negativeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Neutral") && !rsp["Neutral"].IsNull())
+    {
+        if (!rsp["Neutral"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `Neutral` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_neutral = rsp["Neutral"].GetDouble();
+        m_neutralHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Positive") && !rsp["Positive"].IsNull())
     {
         if (!rsp["Positive"].IsDouble())
@@ -108,6 +119,16 @@ double SentimentAnalysisResponse::GetNegative() const
 bool SentimentAnalysisResponse::NegativeHasBeenSet() const
 {
     return m_negativeHasBeenSet;
+}
+
+double SentimentAnalysisResponse::GetNeutral() const
+{
+    return m_neutral;
+}
+
+bool SentimentAnalysisResponse::NeutralHasBeenSet() const
+{
+    return m_neutralHasBeenSet;
 }
 
 double SentimentAnalysisResponse::GetPositive() const

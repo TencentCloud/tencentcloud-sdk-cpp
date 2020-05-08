@@ -28,7 +28,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_nodeNameTypeHasBeenSet(false),
     m_extraArgsHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
-    m_isNonStaticIpModeHasBeenSet(false)
+    m_isNonStaticIpModeHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_isNonStaticIpModeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtection") && !value["DeletionProtection"].IsNull())
+    {
+        if (!value["DeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtection = value["DeletionProtection"].GetBool();
+        m_deletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -176,6 +187,14 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "IsNonStaticIpMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNonStaticIpMode, allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 }
@@ -291,5 +310,21 @@ void ClusterAdvancedSettings::SetIsNonStaticIpMode(const bool& _isNonStaticIpMod
 bool ClusterAdvancedSettings::IsNonStaticIpModeHasBeenSet() const
 {
     return m_isNonStaticIpModeHasBeenSet;
+}
+
+bool ClusterAdvancedSettings::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void ClusterAdvancedSettings::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 

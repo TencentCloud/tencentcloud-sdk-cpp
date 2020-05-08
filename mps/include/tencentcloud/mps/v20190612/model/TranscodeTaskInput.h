@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/RawTranscodeParameter.h>
 #include <tencentcloud/mps/v20190612/model/WatermarkInput.h>
+#include <tencentcloud/mps/v20190612/model/MosaicInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/NumberFormat.h>
 
@@ -115,6 +116,24 @@ namespace TencentCloud
                      * @return WatermarkSet 是否已赋值
                      */
                     bool WatermarkSetHasBeenSet() const;
+
+                    /**
+                     * 获取马赛克列表，最大可支持 10 张。
+                     * @return MosaicSet 马赛克列表，最大可支持 10 张。
+                     */
+                    std::vector<MosaicInput> GetMosaicSet() const;
+
+                    /**
+                     * 设置马赛克列表，最大可支持 10 张。
+                     * @param MosaicSet 马赛克列表，最大可支持 10 张。
+                     */
+                    void SetMosaicSet(const std::vector<MosaicInput>& _mosaicSet);
+
+                    /**
+                     * 判断参数 MosaicSet 是否已赋值
+                     * @return MosaicSet 是否已赋值
+                     */
+                    bool MosaicSetHasBeenSet() const;
 
                     /**
                      * 获取转码后文件的目标存储，不填则继承上层的 OutputStorage 值。
@@ -218,6 +237,12 @@ namespace TencentCloud
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
+
+                    /**
+                     * 马赛克列表，最大可支持 10 张。
+                     */
+                    std::vector<MosaicInput> m_mosaicSet;
+                    bool m_mosaicSetHasBeenSet;
 
                     /**
                      * 转码后文件的目标存储，不填则继承上层的 OutputStorage 值。

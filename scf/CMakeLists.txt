@@ -36,6 +36,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/DeleteAliasRequest.h
   include/tencentcloud/scf/v20180416/model/GetFunctionAddressRequest.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h
+  include/tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h
   include/tencentcloud/scf/v20180416/model/InvokeResponse.h
   include/tencentcloud/scf/v20180416/model/GetAliasRequest.h
   include/tencentcloud/scf/v20180416/model/CreateNamespaceResponse.h
@@ -46,10 +47,12 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/CreateAliasRequest.h
   include/tencentcloud/scf/v20180416/model/ListVersionByFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/VersionMatch.h
+  include/tencentcloud/scf/v20180416/model/ListTriggersResponse.h
   include/tencentcloud/scf/v20180416/model/RoutingConfig.h
   include/tencentcloud/scf/v20180416/model/PublicNetConfigOut.h
   include/tencentcloud/scf/v20180416/model/ListFunctionsResponse.h
-  include/tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h
+  include/tencentcloud/scf/v20180416/model/ListTriggersRequest.h
+  include/tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteAliasResponse.h
   include/tencentcloud/scf/v20180416/model/CreateTriggerResponse.h
   include/tencentcloud/scf/v20180416/model/PublishLayerVersionRequest.h
@@ -96,7 +99,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/CreateAliasResponse.h
   include/tencentcloud/scf/v20180416/model/LogSearchContext.h
   include/tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h
-  include/tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h
+  include/tencentcloud/scf/v20180416/model/TriggerInfo.h
   include/tencentcloud/scf/v20180416/model/Variable.h
   include/tencentcloud/scf/v20180416/model/LogFilter.h
   include/tencentcloud/scf/v20180416/model/PublishVersionResponse.h
@@ -121,6 +124,7 @@ set(scf_src
   src/v20180416/model/DeleteAliasRequest.cpp
   src/v20180416/model/GetFunctionAddressRequest.cpp
   src/v20180416/model/DeleteLayerVersionResponse.cpp
+  src/v20180416/model/UpdateNamespaceResponse.cpp
   src/v20180416/model/InvokeResponse.cpp
   src/v20180416/model/GetAliasRequest.cpp
   src/v20180416/model/CreateNamespaceResponse.cpp
@@ -131,10 +135,12 @@ set(scf_src
   src/v20180416/model/CreateAliasRequest.cpp
   src/v20180416/model/ListVersionByFunctionRequest.cpp
   src/v20180416/model/VersionMatch.cpp
+  src/v20180416/model/ListTriggersResponse.cpp
   src/v20180416/model/RoutingConfig.cpp
   src/v20180416/model/PublicNetConfigOut.cpp
   src/v20180416/model/ListFunctionsResponse.cpp
-  src/v20180416/model/UpdateNamespaceResponse.cpp
+  src/v20180416/model/ListTriggersRequest.cpp
+  src/v20180416/model/UpdateFunctionCodeResponse.cpp
   src/v20180416/model/DeleteAliasResponse.cpp
   src/v20180416/model/CreateTriggerResponse.cpp
   src/v20180416/model/PublishLayerVersionRequest.cpp
@@ -181,7 +187,7 @@ set(scf_src
   src/v20180416/model/CreateAliasResponse.cpp
   src/v20180416/model/LogSearchContext.cpp
   src/v20180416/model/GetLayerVersionResponse.cpp
-  src/v20180416/model/UpdateFunctionCodeResponse.cpp
+  src/v20180416/model/TriggerInfo.cpp
   src/v20180416/model/Variable.cpp
   src/v20180416/model/LogFilter.cpp
   src/v20180416/model/PublishVersionResponse.cpp

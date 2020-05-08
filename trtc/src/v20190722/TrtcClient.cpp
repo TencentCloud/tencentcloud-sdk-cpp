@@ -384,3 +384,89 @@ TrtcClient::RemoveUserOutcomeCallable TrtcClient::RemoveUserCallable(const Remov
     return task->get_future();
 }
 
+TrtcClient::StartMCUMixTranscodeOutcome TrtcClient::StartMCUMixTranscode(const StartMCUMixTranscodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMCUMixTranscode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMCUMixTranscodeResponse rsp = StartMCUMixTranscodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMCUMixTranscodeOutcome(rsp);
+        else
+            return StartMCUMixTranscodeOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMCUMixTranscodeOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StartMCUMixTranscodeAsync(const StartMCUMixTranscodeRequest& request, const StartMCUMixTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartMCUMixTranscode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StartMCUMixTranscodeOutcomeCallable TrtcClient::StartMCUMixTranscodeCallable(const StartMCUMixTranscodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartMCUMixTranscodeOutcome()>>(
+        [this, request]()
+        {
+            return this->StartMCUMixTranscode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::StopMCUMixTranscodeOutcome TrtcClient::StopMCUMixTranscode(const StopMCUMixTranscodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopMCUMixTranscode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopMCUMixTranscodeResponse rsp = StopMCUMixTranscodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopMCUMixTranscodeOutcome(rsp);
+        else
+            return StopMCUMixTranscodeOutcome(o.GetError());
+    }
+    else
+    {
+        return StopMCUMixTranscodeOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StopMCUMixTranscodeAsync(const StopMCUMixTranscodeRequest& request, const StopMCUMixTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopMCUMixTranscode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StopMCUMixTranscodeOutcomeCallable TrtcClient::StopMCUMixTranscodeCallable(const StopMCUMixTranscodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopMCUMixTranscodeOutcome()>>(
+        [this, request]()
+        {
+            return this->StopMCUMixTranscode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

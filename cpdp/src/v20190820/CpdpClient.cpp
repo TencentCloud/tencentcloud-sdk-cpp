@@ -642,6 +642,49 @@ CpdpClient::CreateAcctOutcomeCallable CpdpClient::CreateAcctCallable(const Creat
     return task->get_future();
 }
 
+CpdpClient::CreateAgentTaxPaymentInfosOutcome CpdpClient::CreateAgentTaxPaymentInfos(const CreateAgentTaxPaymentInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAgentTaxPaymentInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAgentTaxPaymentInfosResponse rsp = CreateAgentTaxPaymentInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAgentTaxPaymentInfosOutcome(rsp);
+        else
+            return CreateAgentTaxPaymentInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAgentTaxPaymentInfosOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateAgentTaxPaymentInfosAsync(const CreateAgentTaxPaymentInfosRequest& request, const CreateAgentTaxPaymentInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAgentTaxPaymentInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateAgentTaxPaymentInfosOutcomeCallable CpdpClient::CreateAgentTaxPaymentInfosCallable(const CreateAgentTaxPaymentInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAgentTaxPaymentInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAgentTaxPaymentInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateCustAcctIdOutcome CpdpClient::CreateCustAcctId(const CreateCustAcctIdRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustAcctId");
@@ -814,6 +857,92 @@ CpdpClient::CreateRedInvoiceOutcomeCallable CpdpClient::CreateRedInvoiceCallable
     return task->get_future();
 }
 
+CpdpClient::DeleteAgentTaxPaymentInfoOutcome CpdpClient::DeleteAgentTaxPaymentInfo(const DeleteAgentTaxPaymentInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAgentTaxPaymentInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAgentTaxPaymentInfoResponse rsp = DeleteAgentTaxPaymentInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAgentTaxPaymentInfoOutcome(rsp);
+        else
+            return DeleteAgentTaxPaymentInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAgentTaxPaymentInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::DeleteAgentTaxPaymentInfoAsync(const DeleteAgentTaxPaymentInfoRequest& request, const DeleteAgentTaxPaymentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAgentTaxPaymentInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::DeleteAgentTaxPaymentInfoOutcomeCallable CpdpClient::DeleteAgentTaxPaymentInfoCallable(const DeleteAgentTaxPaymentInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAgentTaxPaymentInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAgentTaxPaymentInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::DeleteAgentTaxPaymentInfosOutcome CpdpClient::DeleteAgentTaxPaymentInfos(const DeleteAgentTaxPaymentInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAgentTaxPaymentInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAgentTaxPaymentInfosResponse rsp = DeleteAgentTaxPaymentInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAgentTaxPaymentInfosOutcome(rsp);
+        else
+            return DeleteAgentTaxPaymentInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAgentTaxPaymentInfosOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::DeleteAgentTaxPaymentInfosAsync(const DeleteAgentTaxPaymentInfosRequest& request, const DeleteAgentTaxPaymentInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAgentTaxPaymentInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::DeleteAgentTaxPaymentInfosOutcomeCallable CpdpClient::DeleteAgentTaxPaymentInfosCallable(const DeleteAgentTaxPaymentInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAgentTaxPaymentInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAgentTaxPaymentInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::DownloadBillOutcome CpdpClient::DownloadBill(const DownloadBillRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadBill");
@@ -850,6 +979,49 @@ CpdpClient::DownloadBillOutcomeCallable CpdpClient::DownloadBillCallable(const D
         [this, request]()
         {
             return this->DownloadBill(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::ModifyAgentTaxPaymentInfoOutcome CpdpClient::ModifyAgentTaxPaymentInfo(const ModifyAgentTaxPaymentInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAgentTaxPaymentInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAgentTaxPaymentInfoResponse rsp = ModifyAgentTaxPaymentInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAgentTaxPaymentInfoOutcome(rsp);
+        else
+            return ModifyAgentTaxPaymentInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAgentTaxPaymentInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ModifyAgentTaxPaymentInfoAsync(const ModifyAgentTaxPaymentInfoRequest& request, const ModifyAgentTaxPaymentInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAgentTaxPaymentInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ModifyAgentTaxPaymentInfoOutcomeCallable CpdpClient::ModifyAgentTaxPaymentInfoCallable(const ModifyAgentTaxPaymentInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAgentTaxPaymentInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAgentTaxPaymentInfo(request);
         }
     );
 
@@ -1022,6 +1194,49 @@ CpdpClient::QueryAcctInfoListOutcomeCallable CpdpClient::QueryAcctInfoListCallab
         [this, request]()
         {
             return this->QueryAcctInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryAgentTaxPaymentBatchOutcome CpdpClient::QueryAgentTaxPaymentBatch(const QueryAgentTaxPaymentBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryAgentTaxPaymentBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryAgentTaxPaymentBatchResponse rsp = QueryAgentTaxPaymentBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryAgentTaxPaymentBatchOutcome(rsp);
+        else
+            return QueryAgentTaxPaymentBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryAgentTaxPaymentBatchOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryAgentTaxPaymentBatchAsync(const QueryAgentTaxPaymentBatchRequest& request, const QueryAgentTaxPaymentBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryAgentTaxPaymentBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryAgentTaxPaymentBatchOutcomeCallable CpdpClient::QueryAgentTaxPaymentBatchCallable(const QueryAgentTaxPaymentBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryAgentTaxPaymentBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryAgentTaxPaymentBatch(request);
         }
     );
 

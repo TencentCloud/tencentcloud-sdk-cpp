@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeFileSystemResponse::DescribeFileSystemResponse() :
     m_fileSystemHasBeenSet(false),
-    m_fileSystemCapacityUsedHasBeenSet(false)
+    m_fileSystemCapacityUsedHasBeenSet(false),
+    m_capacityUsedHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome DescribeFileSystemResponse::Deserialize(const string &payloa
         m_fileSystemCapacityUsedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CapacityUsed") && !rsp["CapacityUsed"].IsNull())
+    {
+        if (!rsp["CapacityUsed"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `CapacityUsed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_capacityUsed = rsp["CapacityUsed"].GetUint64();
+        m_capacityUsedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -114,6 +125,16 @@ uint64_t DescribeFileSystemResponse::GetFileSystemCapacityUsed() const
 bool DescribeFileSystemResponse::FileSystemCapacityUsedHasBeenSet() const
 {
     return m_fileSystemCapacityUsedHasBeenSet;
+}
+
+uint64_t DescribeFileSystemResponse::GetCapacityUsed() const
+{
+    return m_capacityUsed;
+}
+
+bool DescribeFileSystemResponse::CapacityUsedHasBeenSet() const
+{
+    return m_capacityUsedHasBeenSet;
 }
 
 

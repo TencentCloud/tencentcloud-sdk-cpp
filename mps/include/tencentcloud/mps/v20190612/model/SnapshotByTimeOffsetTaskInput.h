@@ -68,14 +68,40 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取截图时间点列表，单位为<font color=red>秒</font>。
-                     * @return TimeOffsetSet 截图时间点列表，单位为<font color=red>秒</font>。
+                     * 获取截图时间点列表，时间点支持 s、% 两种格式：
+<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
+<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
+                     * @return ExtTimeOffsetSet 截图时间点列表，时间点支持 s、% 两种格式：
+<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
+<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
+                     */
+                    std::vector<std::string> GetExtTimeOffsetSet() const;
+
+                    /**
+                     * 设置截图时间点列表，时间点支持 s、% 两种格式：
+<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
+<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
+                     * @param ExtTimeOffsetSet 截图时间点列表，时间点支持 s、% 两种格式：
+<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
+<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
+                     */
+                    void SetExtTimeOffsetSet(const std::vector<std::string>& _extTimeOffsetSet);
+
+                    /**
+                     * 判断参数 ExtTimeOffsetSet 是否已赋值
+                     * @return ExtTimeOffsetSet 是否已赋值
+                     */
+                    bool ExtTimeOffsetSetHasBeenSet() const;
+
+                    /**
+                     * 获取截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
+                     * @return TimeOffsetSet 截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
                      */
                     std::vector<double> GetTimeOffsetSet() const;
 
                     /**
-                     * 设置截图时间点列表，单位为<font color=red>秒</font>。
-                     * @param TimeOffsetSet 截图时间点列表，单位为<font color=red>秒</font>。
+                     * 设置截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
+                     * @param TimeOffsetSet 截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
                      */
                     void SetTimeOffsetSet(const std::vector<double>& _timeOffsetSet);
 
@@ -174,7 +200,15 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 截图时间点列表，单位为<font color=red>秒</font>。
+                     * 截图时间点列表，时间点支持 s、% 两种格式：
+<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>
+<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>
+                     */
+                    std::vector<std::string> m_extTimeOffsetSet;
+                    bool m_extTimeOffsetSetHasBeenSet;
+
+                    /**
+                     * 截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。
                      */
                     std::vector<double> m_timeOffsetSet;
                     bool m_timeOffsetSetHasBeenSet;

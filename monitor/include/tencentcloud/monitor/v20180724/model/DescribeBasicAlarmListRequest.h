@@ -240,6 +240,24 @@ namespace TencentCloud
                      */
                     bool InstanceGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取根据指标名过滤
+                     * @return MetricNames 根据指标名过滤
+                     */
+                    std::vector<std::string> GetMetricNames() const;
+
+                    /**
+                     * 设置根据指标名过滤
+                     * @param MetricNames 根据指标名过滤
+                     */
+                    void SetMetricNames(const std::vector<std::string>& _metricNames);
+
+                    /**
+                     * 判断参数 MetricNames 是否已赋值
+                     * @return MetricNames 是否已赋值
+                     */
+                    bool MetricNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_instanceGroupIds;
                     bool m_instanceGroupIdsHasBeenSet;
+
+                    /**
+                     * 根据指标名过滤
+                     */
+                    std::vector<std::string> m_metricNames;
+                    bool m_metricNamesHasBeenSet;
 
                 };
             }

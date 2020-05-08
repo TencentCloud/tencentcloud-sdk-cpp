@@ -412,6 +412,24 @@ namespace TencentCloud
                      */
                     bool BasicSecurityTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Kibana内网端口
+                     * @return KibanaPrivatePort Kibana内网端口
+                     */
+                    uint64_t GetKibanaPrivatePort() const;
+
+                    /**
+                     * 设置Kibana内网端口
+                     * @param KibanaPrivatePort Kibana内网端口
+                     */
+                    void SetKibanaPrivatePort(const uint64_t& _kibanaPrivatePort);
+
+                    /**
+                     * 判断参数 KibanaPrivatePort 是否已赋值
+                     * @return KibanaPrivatePort 是否已赋值
+                     */
+                    bool KibanaPrivatePortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +551,12 @@ namespace TencentCloud
                      */
                     int64_t m_basicSecurityType;
                     bool m_basicSecurityTypeHasBeenSet;
+
+                    /**
+                     * Kibana内网端口
+                     */
+                    uint64_t m_kibanaPrivatePort;
+                    bool m_kibanaPrivatePortHasBeenSet;
 
                 };
             }

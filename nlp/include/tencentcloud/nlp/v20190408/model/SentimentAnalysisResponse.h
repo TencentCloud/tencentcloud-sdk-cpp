@@ -55,6 +55,18 @@ namespace TencentCloud
                     bool NegativeHasBeenSet() const;
 
                     /**
+                     * 获取中性情感概率，当输入参数Mode取值为3class时有效，否则值为空
+                     * @return Neutral 中性情感概率，当输入参数Mode取值为3class时有效，否则值为空
+                     */
+                    double GetNeutral() const;
+
+                    /**
+                     * 判断参数 Neutral 是否已赋值
+                     * @return Neutral 是否已赋值
+                     */
+                    bool NeutralHasBeenSet() const;
+
+                    /**
                      * 获取正面情感概率
                      * @return Positive 正面情感概率
                      */
@@ -85,6 +97,12 @@ namespace TencentCloud
                      */
                     double m_negative;
                     bool m_negativeHasBeenSet;
+
+                    /**
+                     * 中性情感概率，当输入参数Mode取值为3class时有效，否则值为空
+                     */
+                    double m_neutral;
+                    bool m_neutralHasBeenSet;
 
                     /**
                      * 正面情感概率

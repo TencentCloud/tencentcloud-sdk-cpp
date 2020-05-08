@@ -61,12 +61,12 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取文本所属类型（默认取4值）：
+                     * 获取待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：
 1、商品评论类
 2、社交类
 3、美食酒店类
 4、通用领域类
-                     * @return Flag 文本所属类型（默认取4值）：
+                     * @return Flag 待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：
 1、商品评论类
 2、社交类
 3、美食酒店类
@@ -75,12 +75,12 @@ namespace TencentCloud
                     uint64_t GetFlag() const;
 
                     /**
-                     * 设置文本所属类型（默认取4值）：
+                     * 设置待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：
 1、商品评论类
 2、社交类
 3、美食酒店类
 4、通用领域类
-                     * @param Flag 文本所属类型（默认取4值）：
+                     * @param Flag 待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：
 1、商品评论类
 2、社交类
 3、美食酒店类
@@ -94,6 +94,32 @@ namespace TencentCloud
                      */
                     bool FlagHasBeenSet() const;
 
+                    /**
+                     * 获取情感分类模式选项，可取2class或3class（默认值为2class）
+1、2class：返回正负面二分类情感结果
+2、3class：返回正负面及中性三分类情感结果
+                     * @return Mode 情感分类模式选项，可取2class或3class（默认值为2class）
+1、2class：返回正负面二分类情感结果
+2、3class：返回正负面及中性三分类情感结果
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置情感分类模式选项，可取2class或3class（默认值为2class）
+1、2class：返回正负面二分类情感结果
+2、3class：返回正负面及中性三分类情感结果
+                     * @param Mode 情感分类模式选项，可取2class或3class（默认值为2class）
+1、2class：返回正负面二分类情感结果
+2、3class：返回正负面及中性三分类情感结果
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     */
+                    bool ModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,7 +129,7 @@ namespace TencentCloud
                     bool m_textHasBeenSet;
 
                     /**
-                     * 文本所属类型（默认取4值）：
+                     * 待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：
 1、商品评论类
 2、社交类
 3、美食酒店类
@@ -111,6 +137,14 @@ namespace TencentCloud
                      */
                     uint64_t m_flag;
                     bool m_flagHasBeenSet;
+
+                    /**
+                     * 情感分类模式选项，可取2class或3class（默认值为2class）
+1、2class：返回正负面二分类情感结果
+2、3class：返回正负面及中性三分类情感结果
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                 };
             }

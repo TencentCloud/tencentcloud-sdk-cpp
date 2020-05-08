@@ -25,7 +25,8 @@ using namespace std;
 
 SentimentAnalysisRequest::SentimentAnalysisRequest() :
     m_textHasBeenSet(false),
-    m_flagHasBeenSet(false)
+    m_flagHasBeenSet(false),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string SentimentAnalysisRequest::ToJsonString() const
         string key = "Flag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_flag, allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void SentimentAnalysisRequest::SetFlag(const uint64_t& _flag)
 bool SentimentAnalysisRequest::FlagHasBeenSet() const
 {
     return m_flagHasBeenSet;
+}
+
+string SentimentAnalysisRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void SentimentAnalysisRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool SentimentAnalysisRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 

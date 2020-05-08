@@ -25,6 +25,7 @@ TranscodeTaskInput::TranscodeTaskInput() :
     m_definitionHasBeenSet(false),
     m_rawParameterHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
+    m_mosaicSetHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
     m_segmentObjectNameHasBeenSet(false),
@@ -82,6 +83,26 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
             m_watermarkSet.push_back(item);
         }
         m_watermarkSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("MosaicSet") && !value["MosaicSet"].IsNull())
+    {
+        if (!value["MosaicSet"].IsArray())
+            return CoreInternalOutcome(Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
+
+        const Value &tmpValue = value["MosaicSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MosaicInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mosaicSet.push_back(item);
+        }
+        m_mosaicSetHasBeenSet = true;
     }
 
     if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
@@ -177,6 +198,21 @@ void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& all
         }
     }
 
+    if (m_mosaicSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MosaicSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mosaicSet.begin(); itr != m_mosaicSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_outputStorageHasBeenSet)
     {
         Value iKey(kStringType);
@@ -260,6 +296,22 @@ void TranscodeTaskInput::SetWatermarkSet(const vector<WatermarkInput>& _watermar
 bool TranscodeTaskInput::WatermarkSetHasBeenSet() const
 {
     return m_watermarkSetHasBeenSet;
+}
+
+vector<MosaicInput> TranscodeTaskInput::GetMosaicSet() const
+{
+    return m_mosaicSet;
+}
+
+void TranscodeTaskInput::SetMosaicSet(const vector<MosaicInput>& _mosaicSet)
+{
+    m_mosaicSet = _mosaicSet;
+    m_mosaicSetHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::MosaicSetHasBeenSet() const
+{
+    return m_mosaicSetHasBeenSet;
 }
 
 TaskOutputStorage TranscodeTaskInput::GetOutputStorage() const

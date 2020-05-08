@@ -104,13 +104,13 @@ namespace TencentCloud
                      * 获取接收人类型。“group” 或 “user”
                      * @return ReceiverType 接收人类型。“group” 或 “user”
                      */
-                    std::vector<std::string> GetReceiverType() const;
+                    std::string GetReceiverType() const;
 
                     /**
                      * 设置接收人类型。“group” 或 “user”
                      * @param ReceiverType 接收人类型。“group” 或 “user”
                      */
-                    void SetReceiverType(const std::vector<std::string>& _receiverType);
+                    void SetReceiverType(const std::string& _receiverType);
 
                     /**
                      * 判断参数 ReceiverType 是否已赋值
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ReceiverTypeHasBeenSet() const;
 
                     /**
-                     * 获取Id
-                     * @return Id Id
+                     * 获取ReceiverId
+                     * @return Id ReceiverId
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置Id
-                     * @param Id Id
+                     * 设置ReceiverId
+                     * @param Id ReceiverId
                      */
                     void SetId(const int64_t& _id);
 
@@ -339,11 +339,11 @@ namespace TencentCloud
                     /**
                      * 接收人类型。“group” 或 “user”
                      */
-                    std::vector<std::string> m_receiverType;
+                    std::string m_receiverType;
                     bool m_receiverTypeHasBeenSet;
 
                     /**
-                     * Id
+                     * ReceiverId
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;

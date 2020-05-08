@@ -39,6 +39,10 @@
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserRequest.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h>
 
 
 namespace TencentCloud
@@ -77,6 +81,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RemoveUserResponse> RemoveUserOutcome;
                 typedef std::future<RemoveUserOutcome> RemoveUserOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::RemoveUserRequest&, RemoveUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserAsyncHandler;
+                typedef Outcome<Error, Model::StartMCUMixTranscodeResponse> StartMCUMixTranscodeOutcome;
+                typedef std::future<StartMCUMixTranscodeOutcome> StartMCUMixTranscodeOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StartMCUMixTranscodeRequest&, StartMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMCUMixTranscodeAsyncHandler;
+                typedef Outcome<Error, Model::StopMCUMixTranscodeResponse> StopMCUMixTranscodeOutcome;
+                typedef std::future<StopMCUMixTranscodeOutcome> StopMCUMixTranscodeOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StopMCUMixTranscodeRequest&, StopMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMCUMixTranscodeAsyncHandler;
 
 
 
@@ -151,6 +161,37 @@ namespace TencentCloud
                 RemoveUserOutcome RemoveUser(const Model::RemoveUserRequest &request);
                 void RemoveUserAsync(const Model::RemoveUserRequest& request, const RemoveUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveUserOutcomeCallable RemoveUserCallable(const Model::RemoveUserRequest& request);
+
+                /**
+                 *接口说明：启动云端混流，并指定混流画面中各路画面的布局位置。
+
+TRTC 的一个房间中可能会同时存在多路音视频流，您可以通过此 API 接口，通知腾讯云服务端将多路视频画面合成一路，并指定每一路画面的位置，同时将多路声音进行混音，最终形成一路音视频流，以便用于录制和直播观看。
+
+您可以通过此接口实现如下目标：
+- 设置最终直播流的画质和音质，包括视频分辨率、视频码率、视频帧率、以及声音质量等。
+- 设置各路画面的位置和布局，您只需要在启动时设置一次，排版引擎会自动完成后续的画面排布。
+- 设置录制文件名，用于二次回放。
+- 设置 CDN 直播流 ID，用于在 CDN 进行直播观看。
+
+目前已经支持了如下几种布局模板：
+- 悬浮模板：第一个进入房间的用户的视频画面会铺满整个屏幕，其他用户的视频画面从左下角依次水平排列，悬浮于大画面之上。
+- 九宫格模板：所有用户的视频画面大小一致，平分整个屏幕，人数越多，每个画面的尺寸越小。
+- 屏幕分享模板：适合视频会议和在线教育场景的布局，屏幕分享（或者主讲的摄像头）始终占据屏幕左侧的大画面位置，其他用户依次垂直排列于右侧。
+                 * @param req StartMCUMixTranscodeRequest
+                 * @return StartMCUMixTranscodeOutcome
+                 */
+                StartMCUMixTranscodeOutcome StartMCUMixTranscode(const Model::StartMCUMixTranscodeRequest &request);
+                void StartMCUMixTranscodeAsync(const Model::StartMCUMixTranscodeRequest& request, const StartMCUMixTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartMCUMixTranscodeOutcomeCallable StartMCUMixTranscodeCallable(const Model::StartMCUMixTranscodeRequest& request);
+
+                /**
+                 *接口说明：结束云端混流
+                 * @param req StopMCUMixTranscodeRequest
+                 * @return StopMCUMixTranscodeOutcome
+                 */
+                StopMCUMixTranscodeOutcome StopMCUMixTranscode(const Model::StopMCUMixTranscodeRequest &request);
+                void StopMCUMixTranscodeAsync(const Model::StopMCUMixTranscodeRequest& request, const StopMCUMixTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopMCUMixTranscodeOutcomeCallable StopMCUMixTranscodeCallable(const Model::StopMCUMixTranscodeRequest& request);
 
             };
         }

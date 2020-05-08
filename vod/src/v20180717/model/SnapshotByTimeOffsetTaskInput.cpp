@@ -23,6 +23,7 @@ using namespace std;
 
 SnapshotByTimeOffsetTaskInput::SnapshotByTimeOffsetTaskInput() :
     m_definitionHasBeenSet(false),
+    m_extTimeOffsetSetHasBeenSet(false),
     m_timeOffsetSetHasBeenSet(false),
     m_watermarkSetHasBeenSet(false)
 {
@@ -41,6 +42,19 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const Value &valu
         }
         m_definition = value["Definition"].GetUint64();
         m_definitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtTimeOffsetSet") && !value["ExtTimeOffsetSet"].IsNull())
+    {
+        if (!value["ExtTimeOffsetSet"].IsArray())
+            return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.ExtTimeOffsetSet` is not array type"));
+
+        const Value &tmpValue = value["ExtTimeOffsetSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_extTimeOffsetSet.push_back((*itr).GetString());
+        }
+        m_extTimeOffsetSetHasBeenSet = true;
     }
 
     if (value.HasMember("TimeOffsetSet") && !value["TimeOffsetSet"].IsNull())
@@ -91,6 +105,19 @@ void SnapshotByTimeOffsetTaskInput::ToJsonObject(Value &value, Document::Allocat
         value.AddMember(iKey, m_definition, allocator);
     }
 
+    if (m_extTimeOffsetSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtTimeOffsetSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_extTimeOffsetSet.begin(); itr != m_extTimeOffsetSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_timeOffsetSetHasBeenSet)
     {
         Value iKey(kStringType);
@@ -136,6 +163,22 @@ void SnapshotByTimeOffsetTaskInput::SetDefinition(const uint64_t& _definition)
 bool SnapshotByTimeOffsetTaskInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+vector<string> SnapshotByTimeOffsetTaskInput::GetExtTimeOffsetSet() const
+{
+    return m_extTimeOffsetSet;
+}
+
+void SnapshotByTimeOffsetTaskInput::SetExtTimeOffsetSet(const vector<string>& _extTimeOffsetSet)
+{
+    m_extTimeOffsetSet = _extTimeOffsetSet;
+    m_extTimeOffsetSetHasBeenSet = true;
+}
+
+bool SnapshotByTimeOffsetTaskInput::ExtTimeOffsetSetHasBeenSet() const
+{
+    return m_extTimeOffsetSetHasBeenSet;
 }
 
 vector<double> SnapshotByTimeOffsetTaskInput::GetTimeOffsetSet() const

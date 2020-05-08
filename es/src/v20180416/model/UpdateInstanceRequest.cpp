@@ -42,7 +42,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_esPublicAclHasBeenSet(false),
     m_kibanaPublicAccessHasBeenSet(false),
     m_kibanaPrivateAccessHasBeenSet(false),
-    m_basicSecurityTypeHasBeenSet(false)
+    m_basicSecurityTypeHasBeenSet(false),
+    m_kibanaPrivatePortHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,14 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "BasicSecurityType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_basicSecurityType, allocator);
+    }
+
+    if (m_kibanaPrivatePortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KibanaPrivatePort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_kibanaPrivatePort, allocator);
     }
 
 
@@ -525,6 +534,22 @@ void UpdateInstanceRequest::SetBasicSecurityType(const int64_t& _basicSecurityTy
 bool UpdateInstanceRequest::BasicSecurityTypeHasBeenSet() const
 {
     return m_basicSecurityTypeHasBeenSet;
+}
+
+uint64_t UpdateInstanceRequest::GetKibanaPrivatePort() const
+{
+    return m_kibanaPrivatePort;
+}
+
+void UpdateInstanceRequest::SetKibanaPrivatePort(const uint64_t& _kibanaPrivatePort)
+{
+    m_kibanaPrivatePort = _kibanaPrivatePort;
+    m_kibanaPrivatePortHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::KibanaPrivatePortHasBeenSet() const
+{
+    return m_kibanaPrivatePortHasBeenSet;
 }
 
 
