@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace rapidjson;
 using namespace std;
 
-VatInvoiceOCRResponse::VatInvoiceOCRResponse() :
-    m_vatInvoiceInfosHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+DescribeProductListResponse::DescribeProductListResponse() :
+    m_productListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome VatInvoiceOCRResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeProductListResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,44 +64,34 @@ CoreInternalOutcome VatInvoiceOCRResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("VatInvoiceInfos") && !rsp["VatInvoiceInfos"].IsNull())
+    if (rsp.HasMember("ProductList") && !rsp["ProductList"].IsNull())
     {
-        if (!rsp["VatInvoiceInfos"].IsArray())
-            return CoreInternalOutcome(Error("response `VatInvoiceInfos` is not array type"));
+        if (!rsp["ProductList"].IsArray())
+            return CoreInternalOutcome(Error("response `ProductList` is not array type"));
 
-        const Value &tmpValue = rsp["VatInvoiceInfos"];
+        const Value &tmpValue = rsp["ProductList"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TextVatInvoice item;
+            ProductSimple item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_vatInvoiceInfos.push_back(item);
+            m_productList.push_back(item);
         }
-        m_vatInvoiceInfosHasBeenSet = true;
+        m_productListHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Items"].IsArray())
-            return CoreInternalOutcome(Error("response `Items` is not array type"));
-
-        const Value &tmpValue = rsp["Items"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["TotalCount"].IsUint64())
         {
-            VatInvoiceItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_items.push_back(item);
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_itemsHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
 
@@ -109,24 +99,24 @@ CoreInternalOutcome VatInvoiceOCRResponse::Deserialize(const string &payload)
 }
 
 
-vector<TextVatInvoice> VatInvoiceOCRResponse::GetVatInvoiceInfos() const
+vector<ProductSimple> DescribeProductListResponse::GetProductList() const
 {
-    return m_vatInvoiceInfos;
+    return m_productList;
 }
 
-bool VatInvoiceOCRResponse::VatInvoiceInfosHasBeenSet() const
+bool DescribeProductListResponse::ProductListHasBeenSet() const
 {
-    return m_vatInvoiceInfosHasBeenSet;
+    return m_productListHasBeenSet;
 }
 
-vector<VatInvoiceItem> VatInvoiceOCRResponse::GetItems() const
+uint64_t DescribeProductListResponse::GetTotalCount() const
 {
-    return m_items;
+    return m_totalCount;
 }
 
-bool VatInvoiceOCRResponse::ItemsHasBeenSet() const
+bool DescribeProductListResponse::TotalCountHasBeenSet() const
 {
-    return m_itemsHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
 

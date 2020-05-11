@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool BatchNumHasBeenSet() const;
 
+                    /**
+                     * 获取接入环境。沙箱环境填sandbox
+                     * @return Profile 接入环境。沙箱环境填sandbox
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置接入环境。沙箱环境填sandbox
+                     * @param Profile 接入环境。沙箱环境填sandbox
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     int64_t m_batchNum;
                     bool m_batchNumHasBeenSet;
+
+                    /**
+                     * 接入环境。沙箱环境填sandbox
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

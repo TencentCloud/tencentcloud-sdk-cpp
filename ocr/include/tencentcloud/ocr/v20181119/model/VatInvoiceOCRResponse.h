@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/TextVatInvoice.h>
+#include <tencentcloud/ocr/v20181119/model/VatInvoiceItem.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,18 @@ namespace TencentCloud
                      */
                     bool VatInvoiceInfosHasBeenSet() const;
 
+                    /**
+                     * 获取明细条目。VatInvoiceInfos中关于明细项的具体条目。
+                     * @return Items 明细条目。VatInvoiceInfos中关于明细项的具体条目。
+                     */
+                    std::vector<VatInvoiceItem> GetItems() const;
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     */
+                    bool ItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +75,12 @@ namespace TencentCloud
                      */
                     std::vector<TextVatInvoice> m_vatInvoiceInfos;
                     bool m_vatInvoiceInfosHasBeenSet;
+
+                    /**
+                     * 明细条目。VatInvoiceInfos中关于明细项的具体条目。
+                     */
+                    std::vector<VatInvoiceItem> m_items;
+                    bool m_itemsHasBeenSet;
 
                 };
             }

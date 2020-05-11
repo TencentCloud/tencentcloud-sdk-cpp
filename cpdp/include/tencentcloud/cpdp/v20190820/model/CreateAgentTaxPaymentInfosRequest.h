@@ -151,6 +151,24 @@ namespace TencentCloud
                      */
                     bool AgentTaxPaymentInfosHasBeenSet() const;
 
+                    /**
+                     * 获取接入环境。沙箱环境填sandbox
+                     * @return Profile 接入环境。沙箱环境填sandbox
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置接入环境。沙箱环境填sandbox
+                     * @param Profile 接入环境。沙箱环境填sandbox
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::vector<AgentTaxPayment> m_agentTaxPaymentInfos;
                     bool m_agentTaxPaymentInfosHasBeenSet;
+
+                    /**
+                     * 接入环境。沙箱环境填sandbox
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

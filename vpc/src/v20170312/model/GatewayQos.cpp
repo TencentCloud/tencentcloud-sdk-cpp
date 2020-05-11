@@ -56,11 +56,11 @@ CoreInternalOutcome GatewayQos::Deserialize(const Value &value)
 
     if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
     {
-        if (!value["Bandwidth"].IsUint64())
+        if (!value["Bandwidth"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `GatewayQos.Bandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `GatewayQos.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_bandwidth = value["Bandwidth"].GetUint64();
+        m_bandwidth = value["Bandwidth"].GetInt64();
         m_bandwidthHasBeenSet = true;
     }
 
@@ -148,12 +148,12 @@ bool GatewayQos::IpAddressHasBeenSet() const
     return m_ipAddressHasBeenSet;
 }
 
-uint64_t GatewayQos::GetBandwidth() const
+int64_t GatewayQos::GetBandwidth() const
 {
     return m_bandwidth;
 }
 
-void GatewayQos::SetBandwidth(const uint64_t& _bandwidth)
+void GatewayQos::SetBandwidth(const int64_t& _bandwidth)
 {
     m_bandwidth = _bandwidth;
     m_bandwidthHasBeenSet = true;

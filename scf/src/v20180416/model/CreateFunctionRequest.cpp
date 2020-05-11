@@ -40,7 +40,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_typeHasBeenSet(false),
     m_codeSourceHasBeenSet(false),
     m_layersHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false)
+    m_deadLetterConfigHasBeenSet(false),
+    m_publicNetConfigHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,15 @@ string CreateFunctionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_deadLetterConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_publicNetConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PublicNetConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_publicNetConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -476,6 +486,22 @@ void CreateFunctionRequest::SetDeadLetterConfig(const DeadLetterConfig& _deadLet
 bool CreateFunctionRequest::DeadLetterConfigHasBeenSet() const
 {
     return m_deadLetterConfigHasBeenSet;
+}
+
+PublicNetConfigIn CreateFunctionRequest::GetPublicNetConfig() const
+{
+    return m_publicNetConfig;
+}
+
+void CreateFunctionRequest::SetPublicNetConfig(const PublicNetConfigIn& _publicNetConfig)
+{
+    m_publicNetConfig = _publicNetConfig;
+    m_publicNetConfigHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::PublicNetConfigHasBeenSet() const
+{
+    return m_publicNetConfigHasBeenSet;
 }
 
 

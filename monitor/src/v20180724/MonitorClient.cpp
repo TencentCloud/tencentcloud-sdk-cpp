@@ -513,6 +513,49 @@ MonitorClient::DescribeProductEventListOutcomeCallable MonitorClient::DescribePr
     return task->get_future();
 }
 
+MonitorClient::DescribeProductListOutcome MonitorClient::DescribeProductList(const DescribeProductListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProductList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProductListResponse rsp = DescribeProductListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProductListOutcome(rsp);
+        else
+            return DescribeProductListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProductListOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeProductListAsync(const DescribeProductListRequest& request, const DescribeProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProductList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeProductListOutcomeCallable MonitorClient::DescribeProductListCallable(const DescribeProductListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProductListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProductList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMonitorData");

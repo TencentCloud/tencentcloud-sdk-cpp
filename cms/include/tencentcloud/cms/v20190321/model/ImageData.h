@@ -29,6 +29,7 @@
 #include <tencentcloud/cms/v20190321/model/ImageIllegalDetect.h>
 #include <tencentcloud/cms/v20190321/model/LogoDetail.h>
 #include <tencentcloud/cms/v20190321/model/OCRDetect.h>
+#include <tencentcloud/cms/v20190321/model/PhoneDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePolityDetect.h>
 #include <tencentcloud/cms/v20190321/model/ImagePornDetect.h>
 #include <tencentcloud/cms/v20190321/model/Similar.h>
@@ -210,6 +211,24 @@ namespace TencentCloud
                     bool OCRDetectHasBeenSet() const;
 
                     /**
+                     * 获取手机检测详情
+                     * @return PhoneDetect 手机检测详情
+                     */
+                    PhoneDetect GetPhoneDetect() const;
+
+                    /**
+                     * 设置手机检测详情
+                     * @param PhoneDetect 手机检测详情
+                     */
+                    void SetPhoneDetect(const PhoneDetect& _phoneDetect);
+
+                    /**
+                     * 判断参数 PhoneDetect 是否已赋值
+                     * @return PhoneDetect 是否已赋值
+                     */
+                    bool PhoneDetectHasBeenSet() const;
+
+                    /**
                      * 获取图片涉政详情
                      * @return PolityDetect 图片涉政详情
                      */
@@ -331,6 +350,12 @@ namespace TencentCloud
                      */
                     OCRDetect m_oCRDetect;
                     bool m_oCRDetectHasBeenSet;
+
+                    /**
+                     * 手机检测详情
+                     */
+                    PhoneDetect m_phoneDetect;
+                    bool m_phoneDetectHasBeenSet;
 
                     /**
                      * 图片涉政详情

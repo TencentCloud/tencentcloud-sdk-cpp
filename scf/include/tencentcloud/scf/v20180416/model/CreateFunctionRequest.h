@@ -26,6 +26,7 @@
 #include <tencentcloud/scf/v20180416/model/VpcConfig.h>
 #include <tencentcloud/scf/v20180416/model/LayerVersionSimple.h>
 #include <tencentcloud/scf/v20180416/model/DeadLetterConfig.h>
+#include <tencentcloud/scf/v20180416/model/PublicNetConfigIn.h>
 
 
 namespace TencentCloud
@@ -353,6 +354,24 @@ namespace TencentCloud
                      */
                     bool DeadLetterConfigHasBeenSet() const;
 
+                    /**
+                     * 获取公网访问配置
+                     * @return PublicNetConfig 公网访问配置
+                     */
+                    PublicNetConfigIn GetPublicNetConfig() const;
+
+                    /**
+                     * 设置公网访问配置
+                     * @param PublicNetConfig 公网访问配置
+                     */
+                    void SetPublicNetConfig(const PublicNetConfigIn& _publicNetConfig);
+
+                    /**
+                     * 判断参数 PublicNetConfig 是否已赋值
+                     * @return PublicNetConfig 是否已赋值
+                     */
+                    bool PublicNetConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -456,6 +475,12 @@ namespace TencentCloud
                      */
                     DeadLetterConfig m_deadLetterConfig;
                     bool m_deadLetterConfigHasBeenSet;
+
+                    /**
+                     * 公网访问配置
+                     */
+                    PublicNetConfigIn m_publicNetConfig;
+                    bool m_publicNetConfigHasBeenSet;
 
                 };
             }

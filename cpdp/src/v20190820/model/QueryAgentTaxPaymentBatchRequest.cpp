@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 QueryAgentTaxPaymentBatchRequest::QueryAgentTaxPaymentBatchRequest() :
-    m_batchNumHasBeenSet(false)
+    m_batchNumHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string QueryAgentTaxPaymentBatchRequest::ToJsonString() const
         string key = "BatchNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_batchNum, allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void QueryAgentTaxPaymentBatchRequest::SetBatchNum(const int64_t& _batchNum)
 bool QueryAgentTaxPaymentBatchRequest::BatchNumHasBeenSet() const
 {
     return m_batchNumHasBeenSet;
+}
+
+string QueryAgentTaxPaymentBatchRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void QueryAgentTaxPaymentBatchRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool QueryAgentTaxPaymentBatchRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

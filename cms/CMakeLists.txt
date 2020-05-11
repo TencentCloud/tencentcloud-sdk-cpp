@@ -56,6 +56,7 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/CreateFileSampleResponse.h
   include/tencentcloud/cms/v20190321/model/LogoDetail.h
   include/tencentcloud/cms/v20190321/model/Logo.h
+  include/tencentcloud/cms/v20190321/model/PhoneDetect.h
   include/tencentcloud/cms/v20190321/model/DeleteTextSampleRequest.h
   )
 
@@ -98,6 +99,7 @@ set(cms_src
   src/v20190321/model/CreateFileSampleResponse.cpp
   src/v20190321/model/LogoDetail.cpp
   src/v20190321/model/Logo.cpp
+  src/v20190321/model/PhoneDetect.cpp
   src/v20190321/model/DeleteTextSampleRequest.cpp
   )
 

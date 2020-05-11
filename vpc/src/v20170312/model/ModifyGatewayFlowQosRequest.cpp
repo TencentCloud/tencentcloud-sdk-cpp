@@ -90,12 +90,12 @@ bool ModifyGatewayFlowQosRequest::GatewayIdHasBeenSet() const
     return m_gatewayIdHasBeenSet;
 }
 
-uint64_t ModifyGatewayFlowQosRequest::GetBandwidth() const
+int64_t ModifyGatewayFlowQosRequest::GetBandwidth() const
 {
     return m_bandwidth;
 }
 
-void ModifyGatewayFlowQosRequest::SetBandwidth(const uint64_t& _bandwidth)
+void ModifyGatewayFlowQosRequest::SetBandwidth(const int64_t& _bandwidth)
 {
     m_bandwidth = _bandwidth;
     m_bandwidthHasBeenSet = true;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模块ID。如：es-qn46snq8
-                     * @return ModuleId 模块ID。如：es-qn46snq8
+                     * 获取模块ID。如：em-qn46snq8
+                     * @return ModuleId 模块ID。如：em-qn46snq8
                      */
                     std::string GetModuleId() const;
 
                     /**
-                     * 设置模块ID。如：es-qn46snq8
-                     * @param ModuleId 模块ID。如：es-qn46snq8
+                     * 设置模块ID。如：em-qn46snq8
+                     * @param ModuleId 模块ID。如：em-qn46snq8
                      */
                     void SetModuleId(const std::string& _moduleId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模块ID。如：es-qn46snq8
+                     * 模块ID。如：em-qn46snq8
                      */
                     std::string m_moduleId;
                     bool m_moduleIdHasBeenSet;

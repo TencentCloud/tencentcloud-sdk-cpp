@@ -29,7 +29,8 @@ CreateAgentTaxPaymentInfosRequest::CreateAgentTaxPaymentInfosRequest() :
     m_typeHasBeenSet(false),
     m_rawElectronicCertUrlHasBeenSet(false),
     m_fileNameHasBeenSet(false),
-    m_agentTaxPaymentInfosHasBeenSet(false)
+    m_agentTaxPaymentInfosHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string CreateAgentTaxPaymentInfosRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -197,6 +206,22 @@ void CreateAgentTaxPaymentInfosRequest::SetAgentTaxPaymentInfos(const vector<Age
 bool CreateAgentTaxPaymentInfosRequest::AgentTaxPaymentInfosHasBeenSet() const
 {
     return m_agentTaxPaymentInfosHasBeenSet;
+}
+
+string CreateAgentTaxPaymentInfosRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void CreateAgentTaxPaymentInfosRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool CreateAgentTaxPaymentInfosRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteAgentTaxPaymentInfoRequest::DeleteAgentTaxPaymentInfoRequest() :
-    m_batchNumHasBeenSet(false)
+    m_batchNumHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DeleteAgentTaxPaymentInfoRequest::ToJsonString() const
         string key = "BatchNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_batchNum, allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DeleteAgentTaxPaymentInfoRequest::SetBatchNum(const int64_t& _batchNum)
 bool DeleteAgentTaxPaymentInfoRequest::BatchNumHasBeenSet() const
 {
     return m_batchNumHasBeenSet;
+}
+
+string DeleteAgentTaxPaymentInfoRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void DeleteAgentTaxPaymentInfoRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool DeleteAgentTaxPaymentInfoRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

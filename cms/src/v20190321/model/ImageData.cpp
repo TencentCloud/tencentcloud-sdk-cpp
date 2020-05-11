@@ -29,6 +29,7 @@ ImageData::ImageData() :
     m_illegalDetectHasBeenSet(false),
     m_logoDetectHasBeenSet(false),
     m_oCRDetectHasBeenSet(false),
+    m_phoneDetectHasBeenSet(false),
     m_polityDetectHasBeenSet(false),
     m_pornDetectHasBeenSet(false),
     m_similarHasBeenSet(false),
@@ -144,6 +145,23 @@ CoreInternalOutcome ImageData::Deserialize(const Value &value)
         }
 
         m_oCRDetectHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhoneDetect") && !value["PhoneDetect"].IsNull())
+    {
+        if (!value["PhoneDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ImageData.PhoneDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_phoneDetect.Deserialize(value["PhoneDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_phoneDetectHasBeenSet = true;
     }
 
     if (value.HasMember("PolityDetect") && !value["PolityDetect"].IsNull())
@@ -280,6 +298,15 @@ void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_oCRDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_phoneDetectHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PhoneDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_phoneDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_polityDetectHasBeenSet)
@@ -431,6 +458,22 @@ void ImageData::SetOCRDetect(const OCRDetect& _oCRDetect)
 bool ImageData::OCRDetectHasBeenSet() const
 {
     return m_oCRDetectHasBeenSet;
+}
+
+PhoneDetect ImageData::GetPhoneDetect() const
+{
+    return m_phoneDetect;
+}
+
+void ImageData::SetPhoneDetect(const PhoneDetect& _phoneDetect)
+{
+    m_phoneDetect = _phoneDetect;
+    m_phoneDetectHasBeenSet = true;
+}
+
+bool ImageData::PhoneDetectHasBeenSet() const
+{
+    return m_phoneDetectHasBeenSet;
 }
 
 ImagePolityDetect ImageData::GetPolityDetect() const

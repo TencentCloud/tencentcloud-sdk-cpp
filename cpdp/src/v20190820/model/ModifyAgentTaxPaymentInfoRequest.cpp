@@ -26,7 +26,8 @@ using namespace std;
 ModifyAgentTaxPaymentInfoRequest::ModifyAgentTaxPaymentInfoRequest() :
     m_batchNumHasBeenSet(false),
     m_rawElectronicCertUrlHasBeenSet(false),
-    m_fileNameHasBeenSet(false)
+    m_fileNameHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string ModifyAgentTaxPaymentInfoRequest::ToJsonString() const
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void ModifyAgentTaxPaymentInfoRequest::SetFileName(const string& _fileName)
 bool ModifyAgentTaxPaymentInfoRequest::FileNameHasBeenSet() const
 {
     return m_fileNameHasBeenSet;
+}
+
+string ModifyAgentTaxPaymentInfoRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void ModifyAgentTaxPaymentInfoRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool ModifyAgentTaxPaymentInfoRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

@@ -86,13 +86,13 @@ namespace TencentCloud
                      * 获取流控带宽值。
                      * @return Bandwidth 流控带宽值。
                      */
-                    uint64_t GetBandwidth() const;
+                    int64_t GetBandwidth() const;
 
                     /**
                      * 设置流控带宽值。
                      * @param Bandwidth 流控带宽值。
                      */
-                    void SetBandwidth(const uint64_t& _bandwidth);
+                    void SetBandwidth(const int64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
@@ -135,7 +135,7 @@ namespace TencentCloud
                     /**
                      * 流控带宽值。
                      */
-                    uint64_t m_bandwidth;
+                    int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**

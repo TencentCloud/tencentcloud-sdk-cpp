@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取短信签名信息响应
-                     * @return DescribeTemplateStatusSet 获取短信签名信息响应
+                     * 获取获取短信模板信息响应
+                     * @return DescribeTemplateStatusSet 获取短信模板信息响应
                      */
                     std::vector<DescribeTemplateListStatus> GetDescribeTemplateStatusSet() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取短信签名信息响应
+                     * 获取短信模板信息响应
                      */
                     std::vector<DescribeTemplateListStatus> m_describeTemplateStatusSet;
                     bool m_describeTemplateStatusSetHasBeenSet;

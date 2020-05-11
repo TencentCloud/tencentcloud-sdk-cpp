@@ -87,14 +87,14 @@ Windows实例密码必须12~30位，不能以“/”开头且不包括用户名�
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取待重置密码的实例操作系统的管理员账户。不得超过64个字符。
-                     * @return UserName 待重置密码的实例操作系统的管理员账户。不得超过64个字符。
+                     * 获取待重置密码的实例操作系统的用户名。不得超过64个字符。
+                     * @return UserName 待重置密码的实例操作系统的用户名。不得超过64个字符。
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置待重置密码的实例操作系统的管理员账户。不得超过64个字符。
-                     * @param UserName 待重置密码的实例操作系统的管理员账户。不得超过64个字符。
+                     * 设置待重置密码的实例操作系统的用户名。不得超过64个字符。
+                     * @param UserName 待重置密码的实例操作系统的用户名。不得超过64个字符。
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -139,7 +139,7 @@ Windows实例密码必须12~30位，不能以“/”开头且不包括用户名�
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 待重置密码的实例操作系统的管理员账户。不得超过64个字符。
+                     * 待重置密码的实例操作系统的用户名。不得超过64个字符。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

@@ -45,6 +45,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyGroupListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductEventListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeProductListRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h>
@@ -104,6 +106,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProductEventListResponse> DescribeProductEventListOutcome;
                 typedef std::future<DescribeProductEventListOutcome> DescribeProductEventListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeProductEventListRequest&, DescribeProductEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductEventListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProductListResponse> DescribeProductListOutcome;
+                typedef std::future<DescribeProductListOutcome> DescribeProductListOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeProductListRequest&, DescribeProductListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductListAsyncHandler;
                 typedef Outcome<Error, Model::GetMonitorDataResponse> GetMonitorDataOutcome;
                 typedef std::future<GetMonitorDataOutcome> GetMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetMonitorDataRequest&, GetMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorDataAsyncHandler;
@@ -223,6 +228,15 @@ namespace TencentCloud
                 DescribeProductEventListOutcome DescribeProductEventList(const Model::DescribeProductEventListRequest &request);
                 void DescribeProductEventListAsync(const Model::DescribeProductEventListRequest& request, const DescribeProductEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductEventListOutcomeCallable DescribeProductEventListCallable(const Model::DescribeProductEventListRequest& request);
+
+                /**
+                 *查询云监控产品列表
+                 * @param req DescribeProductListRequest
+                 * @return DescribeProductListOutcome
+                 */
+                DescribeProductListOutcome DescribeProductList(const Model::DescribeProductListRequest &request);
+                void DescribeProductListAsync(const Model::DescribeProductListRequest& request, const DescribeProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductListOutcomeCallable DescribeProductListCallable(const Model::DescribeProductListRequest& request);
 
                 /**
                  *获取云产品的监控数据。传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。

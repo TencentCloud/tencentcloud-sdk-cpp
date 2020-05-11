@@ -39,6 +39,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/SingleInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/TextFormula.h
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertInfo.h
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
@@ -182,6 +183,7 @@ set(ocr_src
   src/v20181119/model/SingleInvoiceInfo.cpp
   src/v20181119/model/TextFormula.cpp
   src/v20181119/model/MLIDCardOCRRequest.cpp
+  src/v20181119/model/VatInvoiceItem.cpp
   src/v20181119/model/VehicleRegCertInfo.cpp
   src/v20181119/model/VehicleLicenseOCRRequest.cpp
   src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
