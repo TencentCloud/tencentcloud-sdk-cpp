@@ -51,6 +51,8 @@
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPolicyGroupRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h>
@@ -115,6 +117,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAlarmReceiversResponse> ModifyAlarmReceiversOutcome;
                 typedef std::future<ModifyAlarmReceiversOutcome> ModifyAlarmReceiversOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmReceiversRequest&, ModifyAlarmReceiversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmReceiversAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPolicyGroupResponse> ModifyPolicyGroupOutcome;
+                typedef std::future<ModifyPolicyGroupOutcome> ModifyPolicyGroupOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyPolicyGroupRequest&, ModifyPolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPolicyGroupAsyncHandler;
                 typedef Outcome<Error, Model::PutMonitorDataResponse> PutMonitorDataOutcome;
                 typedef std::future<PutMonitorDataOutcome> PutMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::PutMonitorDataRequest&, PutMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutMonitorDataAsyncHandler;
@@ -257,6 +262,15 @@ namespace TencentCloud
                 ModifyAlarmReceiversOutcome ModifyAlarmReceivers(const Model::ModifyAlarmReceiversRequest &request);
                 void ModifyAlarmReceiversAsync(const Model::ModifyAlarmReceiversRequest& request, const ModifyAlarmReceiversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAlarmReceiversOutcomeCallable ModifyAlarmReceiversCallable(const Model::ModifyAlarmReceiversRequest& request);
+
+                /**
+                 *更新策略组
+                 * @param req ModifyPolicyGroupRequest
+                 * @return ModifyPolicyGroupOutcome
+                 */
+                ModifyPolicyGroupOutcome ModifyPolicyGroup(const Model::ModifyPolicyGroupRequest &request);
+                void ModifyPolicyGroupAsync(const Model::ModifyPolicyGroupRequest& request, const ModifyPolicyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPolicyGroupOutcomeCallable ModifyPolicyGroupCallable(const Model::ModifyPolicyGroupRequest& request);
 
                 /**
                  *默认接口请求频率限制：50次/秒。

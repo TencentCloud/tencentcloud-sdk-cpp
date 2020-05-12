@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeOnlineRecordCallbackResponse::DescribeOnlineRecordCallbackResponse() :
-    m_callbackHasBeenSet(false)
+    m_callbackHasBeenSet(false),
+    m_callbackKeyHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome DescribeOnlineRecordCallbackResponse::Deserialize(const stri
         m_callbackHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CallbackKey") && !rsp["CallbackKey"].IsNull())
+    {
+        if (!rsp["CallbackKey"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CallbackKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackKey = string(rsp["CallbackKey"].GetString());
+        m_callbackKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string DescribeOnlineRecordCallbackResponse::GetCallback() const
 bool DescribeOnlineRecordCallbackResponse::CallbackHasBeenSet() const
 {
     return m_callbackHasBeenSet;
+}
+
+string DescribeOnlineRecordCallbackResponse::GetCallbackKey() const
+{
+    return m_callbackKey;
+}
+
+bool DescribeOnlineRecordCallbackResponse::CallbackKeyHasBeenSet() const
+{
+    return m_callbackKeyHasBeenSet;
 }
 
 

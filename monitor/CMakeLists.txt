@@ -27,6 +27,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupEventCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h
+  include/tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h
   include/tencentcloud/monitor/v20180724/model/Instance.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListEvents.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectDimension.h
@@ -36,7 +37,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoReceiverInfo.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListEventsGroupInfo.h
-  include/tencentcloud/monitor/v20180724/model/PutMonitorDataRequest.h
+  include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualPeriod.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListEventMetric.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListCondition.h
@@ -57,7 +58,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualCalcType.h
-  include/tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h
+  include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupResponse.h
   include/tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h
   include/tencentcloud/monitor/v20180724/model/ReceiverInfo.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h
@@ -74,6 +75,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoConditionTpl.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListRequest.h
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h
+  include/tencentcloud/monitor/v20180724/model/PutMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/InstanceGroup.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoEventCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribeBaseMetricsResponse.h
@@ -81,7 +83,8 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualPeriodNum.h
   include/tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListInstance.h
-  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h
+  include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupCondition.h
+  include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupEventCondition.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupListRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeAccidentEventListResponse.h
@@ -91,6 +94,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DataPoint.h
   include/tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualStatType.h
+  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListEventsDimensions.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualCalcValue.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversResponse.h
@@ -108,6 +112,7 @@ set(monitor_src
   src/v20180724/model/CreatePolicyGroupEventCondition.cpp
   src/v20180724/model/DescribeProductEventListRequest.cpp
   src/v20180724/model/DescribeProductListResponse.cpp
+  src/v20180724/model/UnBindingAllPolicyObjectRequest.cpp
   src/v20180724/model/Instance.cpp
   src/v20180724/model/DescribeProductEventListEvents.cpp
   src/v20180724/model/BindingPolicyObjectDimension.cpp
@@ -117,7 +122,7 @@ set(monitor_src
   src/v20180724/model/DescribePolicyGroupInfoReceiverInfo.cpp
   src/v20180724/model/BindingPolicyObjectRequest.cpp
   src/v20180724/model/DescribeProductEventListEventsGroupInfo.cpp
-  src/v20180724/model/PutMonitorDataRequest.cpp
+  src/v20180724/model/ModifyPolicyGroupRequest.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualPeriod.cpp
   src/v20180724/model/DescribePolicyConditionListEventMetric.cpp
   src/v20180724/model/DescribePolicyConditionListCondition.cpp
@@ -138,7 +143,7 @@ set(monitor_src
   src/v20180724/model/DescribeBindingPolicyObjectListInstanceGroup.cpp
   src/v20180724/model/DescribePolicyConditionListResponse.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualCalcType.cpp
-  src/v20180724/model/UnBindingAllPolicyObjectRequest.cpp
+  src/v20180724/model/ModifyPolicyGroupResponse.cpp
   src/v20180724/model/PutMonitorDataResponse.cpp
   src/v20180724/model/ReceiverInfo.cpp
   src/v20180724/model/ModifyAlarmReceiversRequest.cpp
@@ -155,6 +160,7 @@ set(monitor_src
   src/v20180724/model/DescribePolicyGroupInfoConditionTpl.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListRequest.cpp
   src/v20180724/model/CreatePolicyGroupResponse.cpp
+  src/v20180724/model/PutMonitorDataRequest.cpp
   src/v20180724/model/InstanceGroup.cpp
   src/v20180724/model/DescribePolicyGroupInfoEventCondition.cpp
   src/v20180724/model/DescribeBaseMetricsResponse.cpp
@@ -162,7 +168,8 @@ set(monitor_src
   src/v20180724/model/GetMonitorDataRequest.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualPeriodNum.cpp
   src/v20180724/model/DescribeBindingPolicyObjectListInstance.cpp
-  src/v20180724/model/SendCustomAlarmMsgRequest.cpp
+  src/v20180724/model/ModifyPolicyGroupCondition.cpp
+  src/v20180724/model/ModifyPolicyGroupEventCondition.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.cpp
   src/v20180724/model/DescribePolicyGroupListRequest.cpp
   src/v20180724/model/DescribeAccidentEventListResponse.cpp
@@ -172,6 +179,7 @@ set(monitor_src
   src/v20180724/model/DataPoint.cpp
   src/v20180724/model/UnBindingAllPolicyObjectResponse.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualStatType.cpp
+  src/v20180724/model/SendCustomAlarmMsgRequest.cpp
   src/v20180724/model/DescribeProductEventListEventsDimensions.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualCalcValue.cpp
   src/v20180724/model/ModifyAlarmReceiversResponse.cpp

@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RegisterBillResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tiw::V20190919::Model;
+using namespace TencentCloud::Cpdp::V20190820::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeTranscodeCallbackResponse::DescribeTranscodeCallbackResponse() :
-    m_callbackHasBeenSet(false),
-    m_callbackKeyHasBeenSet(false)
+RegisterBillResponse::RegisterBillResponse() :
+    m_frontSeqNoHasBeenSet(false),
+    m_reservedMessageHasBeenSet(false),
+    m_requestTypeHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeTranscodeCallbackResponse::Deserialize(const string &payload)
+CoreInternalOutcome RegisterBillResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +65,34 @@ CoreInternalOutcome DescribeTranscodeCallbackResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("Callback") && !rsp["Callback"].IsNull())
+    if (rsp.HasMember("FrontSeqNo") && !rsp["FrontSeqNo"].IsNull())
     {
-        if (!rsp["Callback"].IsString())
+        if (!rsp["FrontSeqNo"].IsString())
         {
-            return CoreInternalOutcome(Error("response `Callback` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `FrontSeqNo` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_callback = string(rsp["Callback"].GetString());
-        m_callbackHasBeenSet = true;
+        m_frontSeqNo = string(rsp["FrontSeqNo"].GetString());
+        m_frontSeqNoHasBeenSet = true;
     }
 
-    if (rsp.HasMember("CallbackKey") && !rsp["CallbackKey"].IsNull())
+    if (rsp.HasMember("ReservedMessage") && !rsp["ReservedMessage"].IsNull())
     {
-        if (!rsp["CallbackKey"].IsString())
+        if (!rsp["ReservedMessage"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CallbackKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `ReservedMessage` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_callbackKey = string(rsp["CallbackKey"].GetString());
-        m_callbackKeyHasBeenSet = true;
+        m_reservedMessage = string(rsp["ReservedMessage"].GetString());
+        m_reservedMessageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RequestType") && !rsp["RequestType"].IsNull())
+    {
+        if (!rsp["RequestType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RequestType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestType = string(rsp["RequestType"].GetString());
+        m_requestTypeHasBeenSet = true;
     }
 
 
@@ -89,24 +100,34 @@ CoreInternalOutcome DescribeTranscodeCallbackResponse::Deserialize(const string 
 }
 
 
-string DescribeTranscodeCallbackResponse::GetCallback() const
+string RegisterBillResponse::GetFrontSeqNo() const
 {
-    return m_callback;
+    return m_frontSeqNo;
 }
 
-bool DescribeTranscodeCallbackResponse::CallbackHasBeenSet() const
+bool RegisterBillResponse::FrontSeqNoHasBeenSet() const
 {
-    return m_callbackHasBeenSet;
+    return m_frontSeqNoHasBeenSet;
 }
 
-string DescribeTranscodeCallbackResponse::GetCallbackKey() const
+string RegisterBillResponse::GetReservedMessage() const
 {
-    return m_callbackKey;
+    return m_reservedMessage;
 }
 
-bool DescribeTranscodeCallbackResponse::CallbackKeyHasBeenSet() const
+bool RegisterBillResponse::ReservedMessageHasBeenSet() const
 {
-    return m_callbackKeyHasBeenSet;
+    return m_reservedMessageHasBeenSet;
+}
+
+string RegisterBillResponse::GetRequestType() const
+{
+    return m_requestType;
+}
+
+bool RegisterBillResponse::RequestTypeHasBeenSet() const
+{
+    return m_requestTypeHasBeenSet;
 }
 
 

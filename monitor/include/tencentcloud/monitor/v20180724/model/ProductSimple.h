@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取产品名称
-                     * @return ProductName 产品名称
+                     * 获取产品中文名称
+                     * @return ProductName 产品中文名称
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置产品名称
-                     * @param ProductName 产品名称
+                     * 设置产品中文名称
+                     * @param ProductName 产品中文名称
                      */
                     void SetProductName(const std::string& _productName);
 
@@ -81,6 +81,28 @@ namespace TencentCloud
                      * @return ProductName 是否已赋值
                      */
                     bool ProductNameHasBeenSet() const;
+
+                    /**
+                     * 获取产品英文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductEnName 产品英文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductEnName() const;
+
+                    /**
+                     * 设置产品英文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductEnName 产品英文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductEnName(const std::string& _productEnName);
+
+                    /**
+                     * 判断参数 ProductEnName 是否已赋值
+                     * @return ProductEnName 是否已赋值
+                     */
+                    bool ProductEnNameHasBeenSet() const;
 
                 private:
 
@@ -91,10 +113,17 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 产品名称
+                     * 产品中文名称
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
+
+                    /**
+                     * 产品英文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productEnName;
+                    bool m_productEnNameHasBeenSet;
 
                 };
             }

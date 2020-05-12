@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool IsEndHasBeenSet() const;
 
                     /**
-                     * 获取语音分片内容的base64字符串，音频内容应含有效并可识别的文本
-                     * @return Data 语音分片内容的base64字符串，音频内容应含有效并可识别的文本
+                     * 获取语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。
+                     * @return Data 语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。
                      */
                     std::string GetData() const;
 
                     /**
-                     * 设置语音分片内容的base64字符串，音频内容应含有效并可识别的文本
-                     * @param Data 语音分片内容的base64字符串，音频内容应含有效并可识别的文本
+                     * 设置语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。
+                     * @param Data 语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。
                      */
                     void SetData(const std::string& _data);
 
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_isEndHasBeenSet;
 
                     /**
-                     * 语音分片内容的base64字符串，音频内容应含有效并可识别的文本
+                     * 语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

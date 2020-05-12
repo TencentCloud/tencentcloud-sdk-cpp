@@ -23,7 +23,8 @@ using namespace std;
 
 ProductSimple::ProductSimple() :
     m_namespaceHasBeenSet(false),
-    m_productNameHasBeenSet(false)
+    m_productNameHasBeenSet(false),
+    m_productEnNameHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome ProductSimple::Deserialize(const Value &value)
         m_productNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductEnName") && !value["ProductEnName"].IsNull())
+    {
+        if (!value["ProductEnName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductSimple.ProductEnName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productEnName = string(value["ProductEnName"].GetString());
+        m_productEnNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +84,14 @@ void ProductSimple::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productEnNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProductEnName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_productEnName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -108,5 +127,21 @@ void ProductSimple::SetProductName(const string& _productName)
 bool ProductSimple::ProductNameHasBeenSet() const
 {
     return m_productNameHasBeenSet;
+}
+
+string ProductSimple::GetProductEnName() const
+{
+    return m_productEnName;
+}
+
+void ProductSimple::SetProductEnName(const string& _productEnName)
+{
+    m_productEnName = _productEnName;
+    m_productEnNameHasBeenSet = true;
+}
+
+bool ProductSimple::ProductEnNameHasBeenSet() const
+{
+    return m_productEnNameHasBeenSet;
 }
 

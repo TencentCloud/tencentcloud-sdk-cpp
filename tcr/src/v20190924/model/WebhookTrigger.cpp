@@ -28,7 +28,8 @@ WebhookTrigger::WebhookTrigger() :
     m_conditionHasBeenSet(false),
     m_enabledHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,16 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("NamespaceId") && !value["NamespaceId"].IsNull())
+    {
+        if (!value["NamespaceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `WebhookTrigger.NamespaceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceId = value["NamespaceId"].GetInt64();
+        m_namespaceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -193,6 +204,14 @@ void WebhookTrigger::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NamespaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_namespaceId, allocator);
     }
 
 }
@@ -308,5 +327,21 @@ void WebhookTrigger::SetDescription(const string& _description)
 bool WebhookTrigger::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t WebhookTrigger::GetNamespaceId() const
+{
+    return m_namespaceId;
+}
+
+void WebhookTrigger::SetNamespaceId(const int64_t& _namespaceId)
+{
+    m_namespaceId = _namespaceId;
+    m_namespaceIdHasBeenSet = true;
+}
+
+bool WebhookTrigger::NamespaceIdHasBeenSet() const
+{
+    return m_namespaceIdHasBeenSet;
 }
 

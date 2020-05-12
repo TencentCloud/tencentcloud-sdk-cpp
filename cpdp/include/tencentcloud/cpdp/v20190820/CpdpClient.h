@@ -123,6 +123,8 @@
 #include <tencentcloud/cpdp/v20190820/model/RechargeMemberThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RegisterBillRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RegisterBillResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RevRegisterBillSupportWithdrawRequest.h>
@@ -305,6 +307,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RefundResponse> RefundOutcome;
                 typedef std::future<RefundOutcome> RefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundRequest&, RefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundAsyncHandler;
+                typedef Outcome<Error, Model::RegisterBillResponse> RegisterBillOutcome;
+                typedef std::future<RegisterBillOutcome> RegisterBillOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RegisterBillRequest&, RegisterBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBillAsyncHandler;
                 typedef Outcome<Error, Model::RegisterBillSupportWithdrawResponse> RegisterBillSupportWithdrawOutcome;
                 typedef std::future<RegisterBillSupportWithdrawOutcome> RegisterBillSupportWithdrawOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RegisterBillSupportWithdrawRequest&, RegisterBillSupportWithdrawOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBillSupportWithdrawAsyncHandler;
@@ -793,6 +798,15 @@ namespace TencentCloud
                 RefundOutcome Refund(const Model::RefundRequest &request);
                 void RefundAsync(const Model::RefundRequest& request, const RefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RefundOutcomeCallable RefundCallable(const Model::RefundRequest& request);
+
+                /**
+                 *登记挂账(支持撤销)
+                 * @param req RegisterBillRequest
+                 * @return RegisterBillOutcome
+                 */
+                RegisterBillOutcome RegisterBill(const Model::RegisterBillRequest &request);
+                void RegisterBillAsync(const Model::RegisterBillRequest& request, const RegisterBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterBillOutcomeCallable RegisterBillCallable(const Model::RegisterBillRequest& request);
 
                 /**
                  *登记挂账(支持撤销)。此接口可实现把不明来账或自有资金等已登记在挂账子账户下的资金调整到普通会员子账户。即通过申请调用此接口，将会减少挂账子账户的资金，调增指定的普通会员子账户的可提现余额及可用余额。此接口不支持把挂账子账户资金清分到功能子账户。

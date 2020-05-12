@@ -57,6 +57,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyReWithdrawalResponse.h
   include/tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h
+  include/tencentcloud/cpdp/v20190820/model/RegisterBillRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateInvoiceItem.h
   include/tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderData.h
   include/tencentcloud/cpdp/v20190820/model/ReviseMbrPropertyResponse.h
@@ -119,6 +120,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/TransferItem.h
   include/tencentcloud/cpdp/v20190820/model/QueryInvoiceResultData.h
   include/tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawResponse.h
+  include/tencentcloud/cpdp/v20190820/model/RegisterBillResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyReWithdrawalRequest.h
   include/tencentcloud/cpdp/v20190820/model/UnbindRelateAcctResponse.h
   include/tencentcloud/cpdp/v20190820/model/CheckAmountRequest.h
@@ -226,6 +228,7 @@ set(cpdp_src
   src/v20190820/model/QueryCommonTransferRechargeResponse.cpp
   src/v20190820/model/ApplyReWithdrawalResponse.cpp
   src/v20190820/model/ModifyAgentTaxPaymentInfoResponse.cpp
+  src/v20190820/model/RegisterBillRequest.cpp
   src/v20190820/model/CreateInvoiceItem.cpp
   src/v20190820/model/ApplyOutwardOrderData.cpp
   src/v20190820/model/ReviseMbrPropertyResponse.cpp
@@ -288,6 +291,7 @@ set(cpdp_src
   src/v20190820/model/TransferItem.cpp
   src/v20190820/model/QueryInvoiceResultData.cpp
   src/v20190820/model/RegisterBillSupportWithdrawResponse.cpp
+  src/v20190820/model/RegisterBillResponse.cpp
   src/v20190820/model/ApplyReWithdrawalRequest.cpp
   src/v20190820/model/UnbindRelateAcctResponse.cpp
   src/v20190820/model/CheckAmountRequest.cpp

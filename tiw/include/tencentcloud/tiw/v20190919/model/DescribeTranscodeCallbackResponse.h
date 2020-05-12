@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool CallbackHasBeenSet() const;
 
+                    /**
+                     * 获取文档转码回调鉴权密钥
+                     * @return CallbackKey 文档转码回调鉴权密钥
+                     */
+                    std::string GetCallbackKey() const;
+
+                    /**
+                     * 判断参数 CallbackKey 是否已赋值
+                     * @return CallbackKey 是否已赋值
+                     */
+                    bool CallbackKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_callback;
                     bool m_callbackHasBeenSet;
+
+                    /**
+                     * 文档转码回调鉴权密钥
+                     */
+                    std::string m_callbackKey;
+                    bool m_callbackKeyHasBeenSet;
 
                 };
             }

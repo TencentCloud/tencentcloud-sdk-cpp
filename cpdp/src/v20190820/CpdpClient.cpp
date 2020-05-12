@@ -2190,6 +2190,49 @@ CpdpClient::RefundOutcomeCallable CpdpClient::RefundCallable(const RefundRequest
     return task->get_future();
 }
 
+CpdpClient::RegisterBillOutcome CpdpClient::RegisterBill(const RegisterBillRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterBill");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterBillResponse rsp = RegisterBillResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterBillOutcome(rsp);
+        else
+            return RegisterBillOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterBillOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RegisterBillAsync(const RegisterBillRequest& request, const RegisterBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterBill(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RegisterBillOutcomeCallable CpdpClient::RegisterBillCallable(const RegisterBillRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterBillOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterBill(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RegisterBillSupportWithdrawOutcome CpdpClient::RegisterBillSupportWithdraw(const RegisterBillSupportWithdrawRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterBillSupportWithdraw");

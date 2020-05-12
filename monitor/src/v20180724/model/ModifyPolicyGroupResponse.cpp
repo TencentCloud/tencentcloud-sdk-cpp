@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPolicyGroupResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tiw::V20190919::Model;
+using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeTranscodeCallbackResponse::DescribeTranscodeCallbackResponse() :
-    m_callbackHasBeenSet(false),
-    m_callbackKeyHasBeenSet(false)
+ModifyPolicyGroupResponse::ModifyPolicyGroupResponse() :
+    m_groupIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeTranscodeCallbackResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyPolicyGroupResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,24 +63,14 @@ CoreInternalOutcome DescribeTranscodeCallbackResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("Callback") && !rsp["Callback"].IsNull())
+    if (rsp.HasMember("GroupId") && !rsp["GroupId"].IsNull())
     {
-        if (!rsp["Callback"].IsString())
+        if (!rsp["GroupId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `Callback` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `GroupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_callback = string(rsp["Callback"].GetString());
-        m_callbackHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("CallbackKey") && !rsp["CallbackKey"].IsNull())
-    {
-        if (!rsp["CallbackKey"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `CallbackKey` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_callbackKey = string(rsp["CallbackKey"].GetString());
-        m_callbackKeyHasBeenSet = true;
+        m_groupId = rsp["GroupId"].GetInt64();
+        m_groupIdHasBeenSet = true;
     }
 
 
@@ -89,24 +78,14 @@ CoreInternalOutcome DescribeTranscodeCallbackResponse::Deserialize(const string 
 }
 
 
-string DescribeTranscodeCallbackResponse::GetCallback() const
+int64_t ModifyPolicyGroupResponse::GetGroupId() const
 {
-    return m_callback;
+    return m_groupId;
 }
 
-bool DescribeTranscodeCallbackResponse::CallbackHasBeenSet() const
+bool ModifyPolicyGroupResponse::GroupIdHasBeenSet() const
 {
-    return m_callbackHasBeenSet;
-}
-
-string DescribeTranscodeCallbackResponse::GetCallbackKey() const
-{
-    return m_callbackKey;
-}
-
-bool DescribeTranscodeCallbackResponse::CallbackKeyHasBeenSet() const
-{
-    return m_callbackKeyHasBeenSet;
+    return m_groupIdHasBeenSet;
 }
 
 

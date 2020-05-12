@@ -642,6 +642,49 @@ MonitorClient::ModifyAlarmReceiversOutcomeCallable MonitorClient::ModifyAlarmRec
     return task->get_future();
 }
 
+MonitorClient::ModifyPolicyGroupOutcome MonitorClient::ModifyPolicyGroup(const ModifyPolicyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPolicyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPolicyGroupResponse rsp = ModifyPolicyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPolicyGroupOutcome(rsp);
+        else
+            return ModifyPolicyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPolicyGroupOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyPolicyGroupAsync(const ModifyPolicyGroupRequest& request, const ModifyPolicyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPolicyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyPolicyGroupOutcomeCallable MonitorClient::ModifyPolicyGroupCallable(const ModifyPolicyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPolicyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPolicyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::PutMonitorDataOutcome MonitorClient::PutMonitorData(const PutMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "PutMonitorData");

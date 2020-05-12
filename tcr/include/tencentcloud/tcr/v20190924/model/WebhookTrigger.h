@@ -173,6 +173,24 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取触发器所属命名空间 Id
+                     * @return NamespaceId 触发器所属命名空间 Id
+                     */
+                    int64_t GetNamespaceId() const;
+
+                    /**
+                     * 设置触发器所属命名空间 Id
+                     * @param NamespaceId 触发器所属命名空间 Id
+                     */
+                    void SetNamespaceId(const int64_t& _namespaceId);
+
+                    /**
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
+                     */
+                    bool NamespaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +234,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 触发器所属命名空间 Id
+                     */
+                    int64_t m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
 
                 };
             }
