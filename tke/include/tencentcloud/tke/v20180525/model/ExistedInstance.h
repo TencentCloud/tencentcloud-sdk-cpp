@@ -223,40 +223,6 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式。取值范围：
-PREPAID：表示预付费，即包年包月
-POSTPAID_BY_HOUR：表示后付费，即按量计费
-CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceChargeType 实例计费模式。取值范围：
-PREPAID：表示预付费，即包年包月
-POSTPAID_BY_HOUR：表示后付费，即按量计费
-CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetInstanceChargeType() const;
-
-                    /**
-                     * 设置实例计费模式。取值范围：
-PREPAID：表示预付费，即包年包月
-POSTPAID_BY_HOUR：表示后付费，即按量计费
-CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceChargeType 实例计费模式。取值范围：
-PREPAID：表示预付费，即包年包月
-POSTPAID_BY_HOUR：表示后付费，即按量计费
-CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetInstanceChargeType(const std::string& _instanceChargeType);
-
-                    /**
-                     * 判断参数 InstanceChargeType 是否已赋值
-                     * @return InstanceChargeType 是否已赋值
-                     */
-                    bool InstanceChargeTypeHasBeenSet() const;
-
-                    /**
                      * 获取实例的CPU核数，单位：核。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPU 实例的CPU核数，单位：核。
@@ -344,6 +310,50 @@ CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoscalingGroupId 伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAutoscalingGroupId() const;
+
+                    /**
+                     * 设置伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoscalingGroupId 伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoscalingGroupId(const std::string& _autoscalingGroupId);
+
+                    /**
+                     * 判断参数 AutoscalingGroupId 是否已赋值
+                     * @return AutoscalingGroupId 是否已赋值
+                     */
+                    bool AutoscalingGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例计费模式。取值范围： PREPAID：表示预付费，即包年包月 POSTPAID_BY_HOUR：表示后付费，即按量计费 CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceChargeType 实例计费模式。取值范围： PREPAID：表示预付费，即包年包月 POSTPAID_BY_HOUR：表示后付费，即按量计费 CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置实例计费模式。取值范围： PREPAID：表示预付费，即包年包月 POSTPAID_BY_HOUR：表示后付费，即按量计费 CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceChargeType 实例计费模式。取值范围： PREPAID：表示预付费，即包年包月 POSTPAID_BY_HOUR：表示后付费，即按量计费 CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,16 +413,6 @@ CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 实例计费模式。取值范围：
-PREPAID：表示预付费，即包年包月
-POSTPAID_BY_HOUR：表示后付费，即按量计费
-CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_instanceChargeType;
-                    bool m_instanceChargeTypeHasBeenSet;
-
-                    /**
                      * 实例的CPU核数，单位：核。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -439,6 +439,20 @@ CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_autoscalingGroupId;
+                    bool m_autoscalingGroupIdHasBeenSet;
+
+                    /**
+                     * 实例计费模式。取值范围： PREPAID：表示预付费，即包年包月 POSTPAID_BY_HOUR：表示后付费，即按量计费 CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
 
                 };
             }

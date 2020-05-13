@@ -30,11 +30,12 @@ ExistedInstance::ExistedInstance() :
     m_privateIpAddressesHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_instanceChargeTypeHasBeenSet(false),
     m_cPUHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_osNameHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_autoscalingGroupIdHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false)
 {
 }
 
@@ -129,16 +130,6 @@ CoreInternalOutcome ExistedInstance::Deserialize(const Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("InstanceChargeType") && !value["InstanceChargeType"].IsNull())
-    {
-        if (!value["InstanceChargeType"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `ExistedInstance.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_instanceChargeType = string(value["InstanceChargeType"].GetString());
-        m_instanceChargeTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("CPU") && !value["CPU"].IsNull())
     {
         if (!value["CPU"].IsUint64())
@@ -177,6 +168,26 @@ CoreInternalOutcome ExistedInstance::Deserialize(const Value &value)
         }
         m_instanceType = string(value["InstanceType"].GetString());
         m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoscalingGroupId") && !value["AutoscalingGroupId"].IsNull())
+    {
+        if (!value["AutoscalingGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExistedInstance.AutoscalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoscalingGroupId = string(value["AutoscalingGroupId"].GetString());
+        m_autoscalingGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceChargeType") && !value["InstanceChargeType"].IsNull())
+    {
+        if (!value["InstanceChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExistedInstance.InstanceChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceChargeType = string(value["InstanceChargeType"].GetString());
+        m_instanceChargeTypeHasBeenSet = true;
     }
 
 
@@ -260,14 +271,6 @@ void ExistedInstance::ToJsonObject(Value &value, Document::AllocatorType& alloca
         value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceChargeTypeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "InstanceChargeType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_cPUHasBeenSet)
     {
         Value iKey(kStringType);
@@ -298,6 +301,22 @@ void ExistedInstance::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoscalingGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoscalingGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_autoscalingGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -431,22 +450,6 @@ bool ExistedInstance::CreatedTimeHasBeenSet() const
     return m_createdTimeHasBeenSet;
 }
 
-string ExistedInstance::GetInstanceChargeType() const
-{
-    return m_instanceChargeType;
-}
-
-void ExistedInstance::SetInstanceChargeType(const string& _instanceChargeType)
-{
-    m_instanceChargeType = _instanceChargeType;
-    m_instanceChargeTypeHasBeenSet = true;
-}
-
-bool ExistedInstance::InstanceChargeTypeHasBeenSet() const
-{
-    return m_instanceChargeTypeHasBeenSet;
-}
-
 uint64_t ExistedInstance::GetCPU() const
 {
     return m_cPU;
@@ -509,5 +512,37 @@ void ExistedInstance::SetInstanceType(const string& _instanceType)
 bool ExistedInstance::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string ExistedInstance::GetAutoscalingGroupId() const
+{
+    return m_autoscalingGroupId;
+}
+
+void ExistedInstance::SetAutoscalingGroupId(const string& _autoscalingGroupId)
+{
+    m_autoscalingGroupId = _autoscalingGroupId;
+    m_autoscalingGroupIdHasBeenSet = true;
+}
+
+bool ExistedInstance::AutoscalingGroupIdHasBeenSet() const
+{
+    return m_autoscalingGroupIdHasBeenSet;
+}
+
+string ExistedInstance::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void ExistedInstance::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool ExistedInstance::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
 }
 

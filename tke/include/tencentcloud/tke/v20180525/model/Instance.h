@@ -203,6 +203,50 @@ namespace TencentCloud
                      */
                     bool LanIPHasBeenSet() const;
 
+                    /**
+                     * 获取资源池ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodePoolId 资源池ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNodePoolId() const;
+
+                    /**
+                     * 设置资源池ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodePoolId 资源池ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodePoolId(const std::string& _nodePoolId);
+
+                    /**
+                     * 判断参数 NodePoolId 是否已赋值
+                     * @return NodePoolId 是否已赋值
+                     */
+                    bool NodePoolIdHasBeenSet() const;
+
+                    /**
+                     * 获取自动伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoscalingGroupId 自动伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAutoscalingGroupId() const;
+
+                    /**
+                     * 设置自动伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoscalingGroupId 自动伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoscalingGroupId(const std::string& _autoscalingGroupId);
+
+                    /**
+                     * 判断参数 AutoscalingGroupId 是否已赋值
+                     * @return AutoscalingGroupId 是否已赋值
+                     */
+                    bool AutoscalingGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -255,6 +299,20 @@ namespace TencentCloud
                      */
                     std::string m_lanIP;
                     bool m_lanIPHasBeenSet;
+
+                    /**
+                     * 资源池ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodePoolId;
+                    bool m_nodePoolIdHasBeenSet;
+
+                    /**
+                     * 自动伸缩组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_autoscalingGroupId;
+                    bool m_autoscalingGroupIdHasBeenSet;
 
                 };
             }

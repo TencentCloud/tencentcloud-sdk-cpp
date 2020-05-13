@@ -25,7 +25,8 @@ ClusterAsGroup::ClusterAsGroup() :
     m_autoScalingGroupIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_isUnschedulableHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ClusterAsGroup::Deserialize(const Value &value)
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAsGroup.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +139,14 @@ void ClusterAsGroup::ToJsonObject(Value &value, Document::AllocatorType& allocat
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -195,5 +214,21 @@ void ClusterAsGroup::SetLabels(const vector<Label>& _labels)
 bool ClusterAsGroup::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+string ClusterAsGroup::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void ClusterAsGroup::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool ClusterAsGroup::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
 }
 

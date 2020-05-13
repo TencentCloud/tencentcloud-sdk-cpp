@@ -32,7 +32,8 @@ DescribeClusterSecurityResponse::DescribeClusterSecurityResponse() :
     m_domainHasBeenSet(false),
     m_pgwEndpointHasBeenSet(false),
     m_securityPolicyHasBeenSet(false),
-    m_kubeconfigHasBeenSet(false)
+    m_kubeconfigHasBeenSet(false),
+    m_jnsGwEndpointHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome DescribeClusterSecurityResponse::Deserialize(const string &p
         m_kubeconfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JnsGwEndpoint") && !rsp["JnsGwEndpoint"].IsNull())
+    {
+        if (!rsp["JnsGwEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `JnsGwEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jnsGwEndpoint = string(rsp["JnsGwEndpoint"].GetString());
+        m_jnsGwEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +247,16 @@ string DescribeClusterSecurityResponse::GetKubeconfig() const
 bool DescribeClusterSecurityResponse::KubeconfigHasBeenSet() const
 {
     return m_kubeconfigHasBeenSet;
+}
+
+string DescribeClusterSecurityResponse::GetJnsGwEndpoint() const
+{
+    return m_jnsGwEndpoint;
+}
+
+bool DescribeClusterSecurityResponse::JnsGwEndpointHasBeenSet() const
+{
+    return m_jnsGwEndpointHasBeenSet;
 }
 
 

@@ -199,14 +199,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取证书状态
-                     * @return Status 证书状态
+                     * 获取证书状态。
+                     * @return Status 证书状态。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置证书状态
-                     * @param Status 证书状态
+                     * 设置证书状态。
+                     * @param Status 证书状态。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -269,7 +269,7 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 证书状态
+                     * 证书状态。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

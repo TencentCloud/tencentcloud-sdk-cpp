@@ -127,6 +127,24 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+                     * @return CreatedTime 创建时间
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param CreatedTime 创建时间
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +172,12 @@ namespace TencentCloud
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
 
                 };
             }

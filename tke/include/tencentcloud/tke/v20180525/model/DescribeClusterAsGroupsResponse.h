@@ -59,7 +59,7 @@ namespace TencentCloud
                      * 获取集群关联的伸缩组列表
                      * @return ClusterAsGroupSet 集群关联的伸缩组列表
                      */
-                    ClusterAsGroup GetClusterAsGroupSet() const;
+                    std::vector<ClusterAsGroup> GetClusterAsGroupSet() const;
 
                     /**
                      * 判断参数 ClusterAsGroupSet 是否已赋值
@@ -78,7 +78,7 @@ namespace TencentCloud
                     /**
                      * 集群关联的伸缩组列表
                      */
-                    ClusterAsGroup m_clusterAsGroupSet;
+                    std::vector<ClusterAsGroup> m_clusterAsGroupSet;
                     bool m_clusterAsGroupSetHasBeenSet;
 
                 };

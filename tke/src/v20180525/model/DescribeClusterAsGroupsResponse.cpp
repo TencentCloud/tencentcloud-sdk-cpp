@@ -76,18 +76,21 @@ CoreInternalOutcome DescribeClusterAsGroupsResponse::Deserialize(const string &p
 
     if (rsp.HasMember("ClusterAsGroupSet") && !rsp["ClusterAsGroupSet"].IsNull())
     {
-        if (!rsp["ClusterAsGroupSet"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `ClusterAsGroupSet` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["ClusterAsGroupSet"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterAsGroupSet` is not array type"));
 
-        CoreInternalOutcome outcome = m_clusterAsGroupSet.Deserialize(rsp["ClusterAsGroupSet"]);
-        if (!outcome.IsSuccess())
+        const Value &tmpValue = rsp["ClusterAsGroupSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            ClusterAsGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterAsGroupSet.push_back(item);
         }
-
         m_clusterAsGroupSetHasBeenSet = true;
     }
 
@@ -106,7 +109,7 @@ bool DescribeClusterAsGroupsResponse::TotalCountHasBeenSet() const
     return m_totalCountHasBeenSet;
 }
 
-ClusterAsGroup DescribeClusterAsGroupsResponse::GetClusterAsGroupSet() const
+vector<ClusterAsGroup> DescribeClusterAsGroupsResponse::GetClusterAsGroupSet() const
 {
     return m_clusterAsGroupSet;
 }

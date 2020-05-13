@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcr::V20190924::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateWebhookTriggerResponse::CreateWebhookTriggerResponse()
+CreateWebhookTriggerResponse::CreateWebhookTriggerResponse() :
+    m_triggerHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,36 @@ CoreInternalOutcome CreateWebhookTriggerResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("Trigger") && !rsp["Trigger"].IsNull())
+    {
+        if (!rsp["Trigger"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Trigger` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_trigger.Deserialize(rsp["Trigger"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_triggerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+WebhookTrigger CreateWebhookTriggerResponse::GetTrigger() const
+{
+    return m_trigger;
+}
+
+bool CreateWebhookTriggerResponse::TriggerHasBeenSet() const
+{
+    return m_triggerHasBeenSet;
+}
 
 

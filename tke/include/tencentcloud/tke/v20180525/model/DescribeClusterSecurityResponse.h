@@ -116,7 +116,9 @@ namespace TencentCloud
 
                     /**
                      * 获取集群访问策略组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityPolicy 集群访问策略组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetSecurityPolicy() const;
 
@@ -139,6 +141,20 @@ namespace TencentCloud
                      * @return Kubeconfig 是否已赋值
                      */
                     bool KubeconfigHasBeenSet() const;
+
+                    /**
+                     * 获取集群JnsGw的访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JnsGwEndpoint 集群JnsGw的访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetJnsGwEndpoint() const;
+
+                    /**
+                     * 判断参数 JnsGwEndpoint 是否已赋值
+                     * @return JnsGwEndpoint 是否已赋值
+                     */
+                    bool JnsGwEndpointHasBeenSet() const;
 
                 private:
 
@@ -180,6 +196,7 @@ namespace TencentCloud
 
                     /**
                      * 集群访问策略组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityPolicy;
                     bool m_securityPolicyHasBeenSet;
@@ -190,6 +207,13 @@ namespace TencentCloud
                      */
                     std::string m_kubeconfig;
                     bool m_kubeconfigHasBeenSet;
+
+                    /**
+                     * 集群JnsGw的访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jnsGwEndpoint;
+                    bool m_jnsGwEndpointHasBeenSet;
 
                 };
             }

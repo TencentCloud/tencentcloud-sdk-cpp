@@ -30,7 +30,11 @@ ClusterAsGroupOption::ClusterAsGroupOption() :
     m_scaleDownUtilizationThresholdHasBeenSet(false),
     m_skipNodesWithLocalStorageHasBeenSet(false),
     m_skipNodesWithSystemPodsHasBeenSet(false),
-    m_ignoreDaemonSetsUtilizationHasBeenSet(false)
+    m_ignoreDaemonSetsUtilizationHasBeenSet(false),
+    m_okTotalUnreadyCountHasBeenSet(false),
+    m_maxTotalUnreadyPercentageHasBeenSet(false),
+    m_scaleDownUnreadyTimeHasBeenSet(false),
+    m_unregisteredNodeRemovalTimeHasBeenSet(false)
 {
 }
 
@@ -129,6 +133,46 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const Value &value)
         m_ignoreDaemonSetsUtilizationHasBeenSet = true;
     }
 
+    if (value.HasMember("OkTotalUnreadyCount") && !value["OkTotalUnreadyCount"].IsNull())
+    {
+        if (!value["OkTotalUnreadyCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.OkTotalUnreadyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_okTotalUnreadyCount = value["OkTotalUnreadyCount"].GetInt64();
+        m_okTotalUnreadyCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxTotalUnreadyPercentage") && !value["MaxTotalUnreadyPercentage"].IsNull())
+    {
+        if (!value["MaxTotalUnreadyPercentage"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.MaxTotalUnreadyPercentage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTotalUnreadyPercentage = value["MaxTotalUnreadyPercentage"].GetInt64();
+        m_maxTotalUnreadyPercentageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScaleDownUnreadyTime") && !value["ScaleDownUnreadyTime"].IsNull())
+    {
+        if (!value["ScaleDownUnreadyTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.ScaleDownUnreadyTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleDownUnreadyTime = value["ScaleDownUnreadyTime"].GetInt64();
+        m_scaleDownUnreadyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnregisteredNodeRemovalTime") && !value["UnregisteredNodeRemovalTime"].IsNull())
+    {
+        if (!value["UnregisteredNodeRemovalTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAsGroupOption.UnregisteredNodeRemovalTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unregisteredNodeRemovalTime = value["UnregisteredNodeRemovalTime"].GetInt64();
+        m_unregisteredNodeRemovalTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +250,38 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "IgnoreDaemonSetsUtilization";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreDaemonSetsUtilization, allocator);
+    }
+
+    if (m_okTotalUnreadyCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OkTotalUnreadyCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_okTotalUnreadyCount, allocator);
+    }
+
+    if (m_maxTotalUnreadyPercentageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxTotalUnreadyPercentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTotalUnreadyPercentage, allocator);
+    }
+
+    if (m_scaleDownUnreadyTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ScaleDownUnreadyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleDownUnreadyTime, allocator);
+    }
+
+    if (m_unregisteredNodeRemovalTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UnregisteredNodeRemovalTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unregisteredNodeRemovalTime, allocator);
     }
 
 }
@@ -353,5 +429,69 @@ void ClusterAsGroupOption::SetIgnoreDaemonSetsUtilization(const bool& _ignoreDae
 bool ClusterAsGroupOption::IgnoreDaemonSetsUtilizationHasBeenSet() const
 {
     return m_ignoreDaemonSetsUtilizationHasBeenSet;
+}
+
+int64_t ClusterAsGroupOption::GetOkTotalUnreadyCount() const
+{
+    return m_okTotalUnreadyCount;
+}
+
+void ClusterAsGroupOption::SetOkTotalUnreadyCount(const int64_t& _okTotalUnreadyCount)
+{
+    m_okTotalUnreadyCount = _okTotalUnreadyCount;
+    m_okTotalUnreadyCountHasBeenSet = true;
+}
+
+bool ClusterAsGroupOption::OkTotalUnreadyCountHasBeenSet() const
+{
+    return m_okTotalUnreadyCountHasBeenSet;
+}
+
+int64_t ClusterAsGroupOption::GetMaxTotalUnreadyPercentage() const
+{
+    return m_maxTotalUnreadyPercentage;
+}
+
+void ClusterAsGroupOption::SetMaxTotalUnreadyPercentage(const int64_t& _maxTotalUnreadyPercentage)
+{
+    m_maxTotalUnreadyPercentage = _maxTotalUnreadyPercentage;
+    m_maxTotalUnreadyPercentageHasBeenSet = true;
+}
+
+bool ClusterAsGroupOption::MaxTotalUnreadyPercentageHasBeenSet() const
+{
+    return m_maxTotalUnreadyPercentageHasBeenSet;
+}
+
+int64_t ClusterAsGroupOption::GetScaleDownUnreadyTime() const
+{
+    return m_scaleDownUnreadyTime;
+}
+
+void ClusterAsGroupOption::SetScaleDownUnreadyTime(const int64_t& _scaleDownUnreadyTime)
+{
+    m_scaleDownUnreadyTime = _scaleDownUnreadyTime;
+    m_scaleDownUnreadyTimeHasBeenSet = true;
+}
+
+bool ClusterAsGroupOption::ScaleDownUnreadyTimeHasBeenSet() const
+{
+    return m_scaleDownUnreadyTimeHasBeenSet;
+}
+
+int64_t ClusterAsGroupOption::GetUnregisteredNodeRemovalTime() const
+{
+    return m_unregisteredNodeRemovalTime;
+}
+
+void ClusterAsGroupOption::SetUnregisteredNodeRemovalTime(const int64_t& _unregisteredNodeRemovalTime)
+{
+    m_unregisteredNodeRemovalTime = _unregisteredNodeRemovalTime;
+    m_unregisteredNodeRemovalTimeHasBeenSet = true;
+}
+
+bool ClusterAsGroupOption::UnregisteredNodeRemovalTimeHasBeenSet() const
+{
+    return m_unregisteredNodeRemovalTimeHasBeenSet;
 }
 

@@ -244,6 +244,94 @@ namespace TencentCloud
                      */
                     bool IgnoreDaemonSetsUtilizationHasBeenSet() const;
 
+                    /**
+                     * 获取CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OkTotalUnreadyCount CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetOkTotalUnreadyCount() const;
+
+                    /**
+                     * 设置CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OkTotalUnreadyCount CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOkTotalUnreadyCount(const int64_t& _okTotalUnreadyCount);
+
+                    /**
+                     * 判断参数 OkTotalUnreadyCount 是否已赋值
+                     * @return OkTotalUnreadyCount 是否已赋值
+                     */
+                    bool OkTotalUnreadyCountHasBeenSet() const;
+
+                    /**
+                     * 获取未就绪节点的最大百分比，此后CA会停止操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxTotalUnreadyPercentage 未就绪节点的最大百分比，此后CA会停止操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxTotalUnreadyPercentage() const;
+
+                    /**
+                     * 设置未就绪节点的最大百分比，此后CA会停止操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxTotalUnreadyPercentage 未就绪节点的最大百分比，此后CA会停止操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxTotalUnreadyPercentage(const int64_t& _maxTotalUnreadyPercentage);
+
+                    /**
+                     * 判断参数 MaxTotalUnreadyPercentage 是否已赋值
+                     * @return MaxTotalUnreadyPercentage 是否已赋值
+                     */
+                    bool MaxTotalUnreadyPercentageHasBeenSet() const;
+
+                    /**
+                     * 获取表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetScaleDownUnreadyTime() const;
+
+                    /**
+                     * 设置表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ScaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetScaleDownUnreadyTime(const int64_t& _scaleDownUnreadyTime);
+
+                    /**
+                     * 判断参数 ScaleDownUnreadyTime 是否已赋值
+                     * @return ScaleDownUnreadyTime 是否已赋值
+                     */
+                    bool ScaleDownUnreadyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取CA删除未在Kubernetes中注册的节点之前等待的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUnregisteredNodeRemovalTime() const;
+
+                    /**
+                     * 设置CA删除未在Kubernetes中注册的节点之前等待的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UnregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnregisteredNodeRemovalTime(const int64_t& _unregisteredNodeRemovalTime);
+
+                    /**
+                     * 判断参数 UnregisteredNodeRemovalTime 是否已赋值
+                     * @return UnregisteredNodeRemovalTime 是否已赋值
+                     */
+                    bool UnregisteredNodeRemovalTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +396,34 @@ namespace TencentCloud
                      */
                     bool m_ignoreDaemonSetsUtilization;
                     bool m_ignoreDaemonSetsUtilizationHasBeenSet;
+
+                    /**
+                     * CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_okTotalUnreadyCount;
+                    bool m_okTotalUnreadyCountHasBeenSet;
+
+                    /**
+                     * 未就绪节点的最大百分比，此后CA会停止操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxTotalUnreadyPercentage;
+                    bool m_maxTotalUnreadyPercentageHasBeenSet;
+
+                    /**
+                     * 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scaleDownUnreadyTime;
+                    bool m_scaleDownUnreadyTimeHasBeenSet;
+
+                    /**
+                     * CA删除未在Kubernetes中注册的节点之前等待的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_unregisteredNodeRemovalTime;
+                    bool m_unregisteredNodeRemovalTimeHasBeenSet;
 
                 };
             }

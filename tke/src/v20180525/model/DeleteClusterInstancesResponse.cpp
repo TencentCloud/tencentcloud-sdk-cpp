@@ -24,7 +24,10 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace rapidjson;
 using namespace std;
 
-DeleteClusterInstancesResponse::DeleteClusterInstancesResponse()
+DeleteClusterInstancesResponse::DeleteClusterInstancesResponse() :
+    m_succInstanceIdsHasBeenSet(false),
+    m_failedInstanceIdsHasBeenSet(false),
+    m_notFoundInstanceIdsHasBeenSet(false)
 {
 }
 
@@ -62,9 +65,78 @@ CoreInternalOutcome DeleteClusterInstancesResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("SuccInstanceIds") && !rsp["SuccInstanceIds"].IsNull())
+    {
+        if (!rsp["SuccInstanceIds"].IsArray())
+            return CoreInternalOutcome(Error("response `SuccInstanceIds` is not array type"));
+
+        const Value &tmpValue = rsp["SuccInstanceIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_succInstanceIds.push_back((*itr).GetString());
+        }
+        m_succInstanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FailedInstanceIds") && !rsp["FailedInstanceIds"].IsNull())
+    {
+        if (!rsp["FailedInstanceIds"].IsArray())
+            return CoreInternalOutcome(Error("response `FailedInstanceIds` is not array type"));
+
+        const Value &tmpValue = rsp["FailedInstanceIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failedInstanceIds.push_back((*itr).GetString());
+        }
+        m_failedInstanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NotFoundInstanceIds") && !rsp["NotFoundInstanceIds"].IsNull())
+    {
+        if (!rsp["NotFoundInstanceIds"].IsArray())
+            return CoreInternalOutcome(Error("response `NotFoundInstanceIds` is not array type"));
+
+        const Value &tmpValue = rsp["NotFoundInstanceIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_notFoundInstanceIds.push_back((*itr).GetString());
+        }
+        m_notFoundInstanceIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<string> DeleteClusterInstancesResponse::GetSuccInstanceIds() const
+{
+    return m_succInstanceIds;
+}
+
+bool DeleteClusterInstancesResponse::SuccInstanceIdsHasBeenSet() const
+{
+    return m_succInstanceIdsHasBeenSet;
+}
+
+vector<string> DeleteClusterInstancesResponse::GetFailedInstanceIds() const
+{
+    return m_failedInstanceIds;
+}
+
+bool DeleteClusterInstancesResponse::FailedInstanceIdsHasBeenSet() const
+{
+    return m_failedInstanceIdsHasBeenSet;
+}
+
+vector<string> DeleteClusterInstancesResponse::GetNotFoundInstanceIds() const
+{
+    return m_notFoundInstanceIds;
+}
+
+bool DeleteClusterInstancesResponse::NotFoundInstanceIdsHasBeenSet() const
+{
+    return m_notFoundInstanceIdsHasBeenSet;
+}
 
 

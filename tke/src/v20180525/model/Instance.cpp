@@ -29,7 +29,9 @@ Instance::Instance() :
     m_drainStatusHasBeenSet(false),
     m_instanceAdvancedSettingsHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_lanIPHasBeenSet(false)
+    m_lanIPHasBeenSet(false),
+    m_nodePoolIdHasBeenSet(false),
+    m_autoscalingGroupIdHasBeenSet(false)
 {
 }
 
@@ -125,6 +127,26 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_lanIPHasBeenSet = true;
     }
 
+    if (value.HasMember("NodePoolId") && !value["NodePoolId"].IsNull())
+    {
+        if (!value["NodePoolId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.NodePoolId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodePoolId = string(value["NodePoolId"].GetString());
+        m_nodePoolIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoscalingGroupId") && !value["AutoscalingGroupId"].IsNull())
+    {
+        if (!value["AutoscalingGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.AutoscalingGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoscalingGroupId = string(value["AutoscalingGroupId"].GetString());
+        m_autoscalingGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -195,6 +217,22 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "LanIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_lanIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodePoolIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodePoolId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_nodePoolId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoscalingGroupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoscalingGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_autoscalingGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -326,5 +364,37 @@ void Instance::SetLanIP(const string& _lanIP)
 bool Instance::LanIPHasBeenSet() const
 {
     return m_lanIPHasBeenSet;
+}
+
+string Instance::GetNodePoolId() const
+{
+    return m_nodePoolId;
+}
+
+void Instance::SetNodePoolId(const string& _nodePoolId)
+{
+    m_nodePoolId = _nodePoolId;
+    m_nodePoolIdHasBeenSet = true;
+}
+
+bool Instance::NodePoolIdHasBeenSet() const
+{
+    return m_nodePoolIdHasBeenSet;
+}
+
+string Instance::GetAutoscalingGroupId() const
+{
+    return m_autoscalingGroupId;
+}
+
+void Instance::SetAutoscalingGroupId(const string& _autoscalingGroupId)
+{
+    m_autoscalingGroupId = _autoscalingGroupId;
+    m_autoscalingGroupIdHasBeenSet = true;
+}
+
+bool Instance::AutoscalingGroupIdHasBeenSet() const
+{
+    return m_autoscalingGroupIdHasBeenSet;
 }
 
