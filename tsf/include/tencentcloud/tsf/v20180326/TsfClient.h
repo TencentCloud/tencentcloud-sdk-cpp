@@ -37,6 +37,10 @@
 #include <tencentcloud/tsf/v20180326/model/CreateContainGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateLaneRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateLaneResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateLaneRuleRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateLaneRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateNamespaceRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeleteGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteImageTagsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteImageTagsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteLaneRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteLaneResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteNamespaceRequest.h>
@@ -103,6 +109,10 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeGroupsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLaneRulesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLaneRulesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLanesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeLanesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesRequest.h>
@@ -143,6 +153,10 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyContainerReplicasRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyContainerReplicasResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyLaneRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyLaneResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyLaneRuleRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyLaneRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
@@ -206,6 +220,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateGroupResponse> CreateGroupOutcome;
                 typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateGroupRequest&, CreateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateLaneResponse> CreateLaneOutcome;
+                typedef std::future<CreateLaneOutcome> CreateLaneOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateLaneRequest&, CreateLaneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLaneAsyncHandler;
+                typedef Outcome<Error, Model::CreateLaneRuleResponse> CreateLaneRuleOutcome;
+                typedef std::future<CreateLaneRuleOutcome> CreateLaneRuleOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateLaneRuleRequest&, CreateLaneRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLaneRuleAsyncHandler;
                 typedef Outcome<Error, Model::CreateMicroserviceResponse> CreateMicroserviceOutcome;
                 typedef std::future<CreateMicroserviceOutcome> CreateMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateMicroserviceRequest&, CreateMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMicroserviceAsyncHandler;
@@ -233,6 +253,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteImageTagsResponse> DeleteImageTagsOutcome;
                 typedef std::future<DeleteImageTagsOutcome> DeleteImageTagsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteImageTagsRequest&, DeleteImageTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageTagsAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLaneResponse> DeleteLaneOutcome;
+                typedef std::future<DeleteLaneOutcome> DeleteLaneOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeleteLaneRequest&, DeleteLaneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLaneAsyncHandler;
                 typedef Outcome<Error, Model::DeleteMicroserviceResponse> DeleteMicroserviceOutcome;
                 typedef std::future<DeleteMicroserviceOutcome> DeleteMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteMicroserviceRequest&, DeleteMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMicroserviceAsyncHandler;
@@ -305,6 +328,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeImageTagsResponse> DescribeImageTagsOutcome;
                 typedef std::future<DescribeImageTagsOutcome> DescribeImageTagsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeImageTagsRequest&, DescribeImageTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageTagsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLaneRulesResponse> DescribeLaneRulesOutcome;
+                typedef std::future<DescribeLaneRulesOutcome> DescribeLaneRulesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeLaneRulesRequest&, DescribeLaneRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLaneRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLanesResponse> DescribeLanesOutcome;
+                typedef std::future<DescribeLanesOutcome> DescribeLanesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeLanesRequest&, DescribeLanesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLanesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMicroserviceResponse> DescribeMicroserviceOutcome;
                 typedef std::future<DescribeMicroserviceOutcome> DescribeMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeMicroserviceRequest&, DescribeMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMicroserviceAsyncHandler;
@@ -365,6 +394,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyContainerReplicasResponse> ModifyContainerReplicasOutcome;
                 typedef std::future<ModifyContainerReplicasOutcome> ModifyContainerReplicasOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyContainerReplicasRequest&, ModifyContainerReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyContainerReplicasAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLaneResponse> ModifyLaneOutcome;
+                typedef std::future<ModifyLaneOutcome> ModifyLaneOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ModifyLaneRequest&, ModifyLaneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaneAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLaneRuleResponse> ModifyLaneRuleOutcome;
+                typedef std::future<ModifyLaneRuleOutcome> ModifyLaneRuleOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ModifyLaneRuleRequest&, ModifyLaneRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaneRuleAsyncHandler;
                 typedef Outcome<Error, Model::ModifyMicroserviceResponse> ModifyMicroserviceOutcome;
                 typedef std::future<ModifyMicroserviceOutcome> ModifyMicroserviceOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyMicroserviceRequest&, ModifyMicroserviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMicroserviceAsyncHandler;
@@ -474,6 +509,24 @@ namespace TencentCloud
                 CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request);
 
                 /**
+                 *创建泳道
+                 * @param req CreateLaneRequest
+                 * @return CreateLaneOutcome
+                 */
+                CreateLaneOutcome CreateLane(const Model::CreateLaneRequest &request);
+                void CreateLaneAsync(const Model::CreateLaneRequest& request, const CreateLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLaneOutcomeCallable CreateLaneCallable(const Model::CreateLaneRequest& request);
+
+                /**
+                 *创建泳道规则
+                 * @param req CreateLaneRuleRequest
+                 * @return CreateLaneRuleOutcome
+                 */
+                CreateLaneRuleOutcome CreateLaneRule(const Model::CreateLaneRuleRequest &request);
+                void CreateLaneRuleAsync(const Model::CreateLaneRuleRequest& request, const CreateLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLaneRuleOutcomeCallable CreateLaneRuleCallable(const Model::CreateLaneRuleRequest& request);
+
+                /**
                  *新增微服务
                  * @param req CreateMicroserviceRequest
                  * @return CreateMicroserviceOutcome
@@ -553,6 +606,15 @@ namespace TencentCloud
                 DeleteImageTagsOutcome DeleteImageTags(const Model::DeleteImageTagsRequest &request);
                 void DeleteImageTagsAsync(const Model::DeleteImageTagsRequest& request, const DeleteImageTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImageTagsOutcomeCallable DeleteImageTagsCallable(const Model::DeleteImageTagsRequest& request);
+
+                /**
+                 *删除泳道
+                 * @param req DeleteLaneRequest
+                 * @return DeleteLaneOutcome
+                 */
+                DeleteLaneOutcome DeleteLane(const Model::DeleteLaneRequest &request);
+                void DeleteLaneAsync(const Model::DeleteLaneRequest& request, const DeleteLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLaneOutcomeCallable DeleteLaneCallable(const Model::DeleteLaneRequest& request);
 
                 /**
                  *删除微服务
@@ -773,6 +835,24 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeImageTagsOutcomeCallable DescribeImageTagsCallable(const Model::DescribeImageTagsRequest& request);
 
                 /**
+                 *查询泳道规则列表
+                 * @param req DescribeLaneRulesRequest
+                 * @return DescribeLaneRulesOutcome
+                 */
+                DescribeLaneRulesOutcome DescribeLaneRules(const Model::DescribeLaneRulesRequest &request);
+                void DescribeLaneRulesAsync(const Model::DescribeLaneRulesRequest& request, const DescribeLaneRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLaneRulesOutcomeCallable DescribeLaneRulesCallable(const Model::DescribeLaneRulesRequest& request);
+
+                /**
+                 *查询泳道列表
+                 * @param req DescribeLanesRequest
+                 * @return DescribeLanesOutcome
+                 */
+                DescribeLanesOutcome DescribeLanes(const Model::DescribeLanesRequest &request);
+                void DescribeLanesAsync(const Model::DescribeLanesRequest& request, const DescribeLanesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLanesOutcomeCallable DescribeLanesCallable(const Model::DescribeLanesRequest& request);
+
+                /**
                  *查询微服务详情
                  * @param req DescribeMicroserviceRequest
                  * @return DescribeMicroserviceOutcome
@@ -952,6 +1032,24 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyContainerReplicasOutcome ModifyContainerReplicas(const Model::ModifyContainerReplicasRequest &request);
                 void ModifyContainerReplicasAsync(const Model::ModifyContainerReplicasRequest& request, const ModifyContainerReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyContainerReplicasOutcomeCallable ModifyContainerReplicasCallable(const Model::ModifyContainerReplicasRequest& request);
+
+                /**
+                 *更新泳道信息
+                 * @param req ModifyLaneRequest
+                 * @return ModifyLaneOutcome
+                 */
+                ModifyLaneOutcome ModifyLane(const Model::ModifyLaneRequest &request);
+                void ModifyLaneAsync(const Model::ModifyLaneRequest& request, const ModifyLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLaneOutcomeCallable ModifyLaneCallable(const Model::ModifyLaneRequest& request);
+
+                /**
+                 *更新泳道规则
+                 * @param req ModifyLaneRuleRequest
+                 * @return ModifyLaneRuleOutcome
+                 */
+                ModifyLaneRuleOutcome ModifyLaneRule(const Model::ModifyLaneRuleRequest &request);
+                void ModifyLaneRuleAsync(const Model::ModifyLaneRuleRequest& request, const ModifyLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLaneRuleOutcomeCallable ModifyLaneRuleCallable(const Model::ModifyLaneRuleRequest& request);
 
                 /**
                  *修改微服务详情

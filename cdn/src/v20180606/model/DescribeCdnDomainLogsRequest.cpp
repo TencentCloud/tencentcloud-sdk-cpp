@@ -29,7 +29,8 @@ DescribeCdnDomainLogsRequest::DescribeCdnDomainLogsRequest() :
     m_endTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_logTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribeCdnDomainLogsRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_logType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DescribeCdnDomainLogsRequest::SetArea(const string& _area)
 bool DescribeCdnDomainLogsRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string DescribeCdnDomainLogsRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void DescribeCdnDomainLogsRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool DescribeCdnDomainLogsRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
 }
 
 

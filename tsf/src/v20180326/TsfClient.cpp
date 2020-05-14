@@ -341,6 +341,92 @@ TsfClient::CreateGroupOutcomeCallable TsfClient::CreateGroupCallable(const Creat
     return task->get_future();
 }
 
+TsfClient::CreateLaneOutcome TsfClient::CreateLane(const CreateLaneRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLane");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLaneResponse rsp = CreateLaneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLaneOutcome(rsp);
+        else
+            return CreateLaneOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLaneOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateLaneAsync(const CreateLaneRequest& request, const CreateLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLane(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateLaneOutcomeCallable TsfClient::CreateLaneCallable(const CreateLaneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLaneOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLane(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateLaneRuleOutcome TsfClient::CreateLaneRule(const CreateLaneRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLaneRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLaneRuleResponse rsp = CreateLaneRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLaneRuleOutcome(rsp);
+        else
+            return CreateLaneRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLaneRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateLaneRuleAsync(const CreateLaneRuleRequest& request, const CreateLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLaneRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateLaneRuleOutcomeCallable TsfClient::CreateLaneRuleCallable(const CreateLaneRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLaneRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLaneRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateMicroserviceOutcome TsfClient::CreateMicroservice(const CreateMicroserviceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMicroservice");
@@ -721,6 +807,49 @@ TsfClient::DeleteImageTagsOutcomeCallable TsfClient::DeleteImageTagsCallable(con
         [this, request]()
         {
             return this->DeleteImageTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeleteLaneOutcome TsfClient::DeleteLane(const DeleteLaneRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLane");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLaneResponse rsp = DeleteLaneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLaneOutcome(rsp);
+        else
+            return DeleteLaneOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLaneOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteLaneAsync(const DeleteLaneRequest& request, const DeleteLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLane(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteLaneOutcomeCallable TsfClient::DeleteLaneCallable(const DeleteLaneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLaneOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLane(request);
         }
     );
 
@@ -1760,6 +1889,92 @@ TsfClient::DescribeImageTagsOutcomeCallable TsfClient::DescribeImageTagsCallable
     return task->get_future();
 }
 
+TsfClient::DescribeLaneRulesOutcome TsfClient::DescribeLaneRules(const DescribeLaneRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLaneRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLaneRulesResponse rsp = DescribeLaneRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLaneRulesOutcome(rsp);
+        else
+            return DescribeLaneRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLaneRulesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeLaneRulesAsync(const DescribeLaneRulesRequest& request, const DescribeLaneRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLaneRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeLaneRulesOutcomeCallable TsfClient::DescribeLaneRulesCallable(const DescribeLaneRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLaneRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLaneRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeLanesOutcome TsfClient::DescribeLanes(const DescribeLanesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLanes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLanesResponse rsp = DescribeLanesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLanesOutcome(rsp);
+        else
+            return DescribeLanesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLanesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeLanesAsync(const DescribeLanesRequest& request, const DescribeLanesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLanes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeLanesOutcomeCallable TsfClient::DescribeLanesCallable(const DescribeLanesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLanesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLanes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeMicroserviceOutcome TsfClient::DescribeMicroservice(const DescribeMicroserviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMicroservice");
@@ -2613,6 +2828,92 @@ TsfClient::ModifyContainerReplicasOutcomeCallable TsfClient::ModifyContainerRepl
         [this, request]()
         {
             return this->ModifyContainerReplicas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ModifyLaneOutcome TsfClient::ModifyLane(const ModifyLaneRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLane");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLaneResponse rsp = ModifyLaneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLaneOutcome(rsp);
+        else
+            return ModifyLaneOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLaneOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyLaneAsync(const ModifyLaneRequest& request, const ModifyLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLane(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyLaneOutcomeCallable TsfClient::ModifyLaneCallable(const ModifyLaneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLaneOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLane(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ModifyLaneRuleOutcome TsfClient::ModifyLaneRule(const ModifyLaneRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLaneRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLaneRuleResponse rsp = ModifyLaneRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLaneRuleOutcome(rsp);
+        else
+            return ModifyLaneRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLaneRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyLaneRuleAsync(const ModifyLaneRuleRequest& request, const ModifyLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLaneRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyLaneRuleOutcomeCallable TsfClient::ModifyLaneRuleCallable(const ModifyLaneRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLaneRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLaneRule(request);
         }
     );
 

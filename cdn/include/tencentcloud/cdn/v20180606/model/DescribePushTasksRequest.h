@@ -119,14 +119,14 @@ TaskId 和起始时间必须指定一项
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取分页查询偏移量，默认为 0 （第一页）
-                     * @return Offset 分页查询偏移量，默认为 0 （第一页）
+                     * 获取分页查询偏移量，默认为 0
+                     * @return Offset 分页查询偏移量，默认为 0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询偏移量，默认为 0 （第一页）
-                     * @param Offset 分页查询偏移量，默认为 0 （第一页）
+                     * 设置分页查询偏移量，默认为 0
+                     * @param Offset 分页查询偏移量，默认为 0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -242,7 +242,7 @@ TaskId 和起始时间必须指定一项
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 分页查询偏移量，默认为 0 （第一页）
+                     * 分页查询偏移量，默认为 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

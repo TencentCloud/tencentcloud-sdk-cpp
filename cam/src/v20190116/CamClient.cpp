@@ -1975,6 +1975,49 @@ CamClient::SetDefaultPolicyVersionOutcomeCallable CamClient::SetDefaultPolicyVer
     return task->get_future();
 }
 
+CamClient::SetMfaFlagOutcome CamClient::SetMfaFlag(const SetMfaFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetMfaFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetMfaFlagResponse rsp = SetMfaFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetMfaFlagOutcome(rsp);
+        else
+            return SetMfaFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return SetMfaFlagOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::SetMfaFlagAsync(const SetMfaFlagRequest& request, const SetMfaFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetMfaFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::SetMfaFlagOutcomeCallable CamClient::SetMfaFlagCallable(const SetMfaFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetMfaFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->SetMfaFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::UpdateAssumeRolePolicyOutcome CamClient::UpdateAssumeRolePolicy(const UpdateAssumeRolePolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateAssumeRolePolicy");

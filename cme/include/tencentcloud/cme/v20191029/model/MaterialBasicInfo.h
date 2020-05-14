@@ -174,28 +174,6 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取素材标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagSet 素材标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> GetTagSet() const;
-
-                    /**
-                     * 设置素材标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSet 素材标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetTagSet(const std::vector<std::string>& _tagSet);
-
-                    /**
-                     * 判断参数 TagSet 是否已赋值
-                     * @return TagSet 是否已赋值
-                     */
-                    bool TagSetHasBeenSet() const;
-
-                    /**
                      * 获取素材媒体文件的预览图。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 素材媒体文件的预览图。
@@ -260,13 +238,6 @@ namespace TencentCloud
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
-
-                    /**
-                     * 素材标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> m_tagSet;
-                    bool m_tagSetHasBeenSet;
 
                     /**
                      * 素材媒体文件的预览图。

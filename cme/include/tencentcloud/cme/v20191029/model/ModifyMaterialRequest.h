@@ -116,24 +116,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取素材标签，单个标签长度不能超过10个字符，数组长度不能超过10。
-                     * @return Tags 素材标签，单个标签长度不能超过10个字符，数组长度不能超过10。
-                     */
-                    std::vector<std::string> GetTags() const;
-
-                    /**
-                     * 设置素材标签，单个标签长度不能超过10个字符，数组长度不能超过10。
-                     * @param Tags 素材标签，单个标签长度不能超过10个字符，数组长度不能超过10。
-                     */
-                    void SetTags(const std::vector<std::string>& _tags);
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     */
-                    bool TagsHasBeenSet() const;
-
-                    /**
                      * 获取素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。
                      * @return ClassPath 素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。
                      */
@@ -194,12 +176,6 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
-
-                    /**
-                     * 素材标签，单个标签长度不能超过10个字符，数组长度不能超过10。
-                     */
-                    std::vector<std::string> m_tags;
-                    bool m_tagsHasBeenSet;
 
                     /**
                      * 素材分类路径，例如填写"/a/b"，则代表该素材存储的路径为"/a/b"。

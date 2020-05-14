@@ -29,7 +29,6 @@ MaterialBasicInfo::MaterialBasicInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_classPathHasBeenSet(false),
-    m_tagSetHasBeenSet(false),
     m_previewUrlHasBeenSet(false)
 {
 }
@@ -116,19 +115,6 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const Value &value)
         m_classPathHasBeenSet = true;
     }
 
-    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
-    {
-        if (!value["TagSet"].IsArray())
-            return CoreInternalOutcome(Error("response `MaterialBasicInfo.TagSet` is not array type"));
-
-        const Value &tmpValue = value["TagSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_tagSet.push_back((*itr).GetString());
-        }
-        m_tagSetHasBeenSet = true;
-    }
-
     if (value.HasMember("PreviewUrl") && !value["PreviewUrl"].IsNull())
     {
         if (!value["PreviewUrl"].IsString())
@@ -201,19 +187,6 @@ void MaterialBasicInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "ClassPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tagSetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "TagSet";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_previewUrlHasBeenSet)
@@ -337,22 +310,6 @@ void MaterialBasicInfo::SetClassPath(const string& _classPath)
 bool MaterialBasicInfo::ClassPathHasBeenSet() const
 {
     return m_classPathHasBeenSet;
-}
-
-vector<string> MaterialBasicInfo::GetTagSet() const
-{
-    return m_tagSet;
-}
-
-void MaterialBasicInfo::SetTagSet(const vector<string>& _tagSet)
-{
-    m_tagSet = _tagSet;
-    m_tagSetHasBeenSet = true;
-}
-
-bool MaterialBasicInfo::TagSetHasBeenSet() const
-{
-    return m_tagSetHasBeenSet;
 }
 
 string MaterialBasicInfo::GetPreviewUrl() const

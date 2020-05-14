@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页查询起始地址，默认 0（第一页）
-                     * @return Offset 分页查询起始地址，默认 0（第一页）
+                     * 获取分页查询起始地址，默认 0
+                     * @return Offset 分页查询起始地址，默认 0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询起始地址，默认 0（第一页）
-                     * @param Offset 分页查询起始地址，默认 0（第一页）
+                     * 设置分页查询起始地址，默认 0
+                     * @param Offset 分页查询起始地址，默认 0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页查询起始地址，默认 0（第一页）
+                     * 分页查询起始地址，默认 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

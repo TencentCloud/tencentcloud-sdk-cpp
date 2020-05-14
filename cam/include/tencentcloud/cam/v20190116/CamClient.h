@@ -113,6 +113,8 @@
 #include <tencentcloud/cam/v20190116/model/RemoveUserFromGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/SetDefaultPolicyVersionRequest.h>
 #include <tencentcloud/cam/v20190116/model/SetDefaultPolicyVersionResponse.h>
+#include <tencentcloud/cam/v20190116/model/SetMfaFlagRequest.h>
+#include <tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupRequest.h>
@@ -276,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionOutcome;
                 typedef std::future<SetDefaultPolicyVersionOutcome> SetDefaultPolicyVersionOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::SetDefaultPolicyVersionRequest&, SetDefaultPolicyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultPolicyVersionAsyncHandler;
+                typedef Outcome<Error, Model::SetMfaFlagResponse> SetMfaFlagOutcome;
+                typedef std::future<SetMfaFlagOutcome> SetMfaFlagOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::SetMfaFlagRequest&, SetMfaFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetMfaFlagAsyncHandler;
                 typedef Outcome<Error, Model::UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyOutcome;
                 typedef std::future<UpdateAssumeRolePolicyOutcome> UpdateAssumeRolePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateAssumeRolePolicyRequest&, UpdateAssumeRolePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAssumeRolePolicyAsyncHandler;
@@ -704,6 +709,15 @@ namespace TencentCloud
                 SetDefaultPolicyVersionOutcome SetDefaultPolicyVersion(const Model::SetDefaultPolicyVersionRequest &request);
                 void SetDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetDefaultPolicyVersionOutcomeCallable SetDefaultPolicyVersionCallable(const Model::SetDefaultPolicyVersionRequest& request);
+
+                /**
+                 *设置用户的登录保护和敏感操作校验方式
+                 * @param req SetMfaFlagRequest
+                 * @return SetMfaFlagOutcome
+                 */
+                SetMfaFlagOutcome SetMfaFlag(const Model::SetMfaFlagRequest &request);
+                void SetMfaFlagAsync(const Model::SetMfaFlagRequest& request, const SetMfaFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetMfaFlagOutcomeCallable SetMfaFlagCallable(const Model::SetMfaFlagRequest& request);
 
                 /**
                  *本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。

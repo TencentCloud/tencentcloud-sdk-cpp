@@ -134,24 +134,6 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取素材标签，单个标签长度不能超过10，数组长度不能超过10。
-                     * @return Tags 素材标签，单个标签长度不能超过10，数组长度不能超过10。
-                     */
-                    std::vector<std::string> GetTags() const;
-
-                    /**
-                     * 设置素材标签，单个标签长度不能超过10，数组长度不能超过10。
-                     * @param Tags 素材标签，单个标签长度不能超过10，数组长度不能超过10。
-                     */
-                    void SetTags(const std::vector<std::string>& _tags);
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     */
-                    bool TagsHasBeenSet() const;
-
-                    /**
                      * 获取素材预处理任务模板 ID。取值：
 <li>10：进行编辑预处理。</li>
                      * @return PreProcessDefinition 素材预处理任务模板 ID。取值：
@@ -222,12 +204,6 @@ namespace TencentCloud
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
-
-                    /**
-                     * 素材标签，单个标签长度不能超过10，数组长度不能超过10。
-                     */
-                    std::vector<std::string> m_tags;
-                    bool m_tagsHasBeenSet;
 
                     /**
                      * 素材预处理任务模板 ID。取值：

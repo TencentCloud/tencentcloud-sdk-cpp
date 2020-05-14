@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MaxMsgSizeHasBeenSet() const;
 
                     /**
-                     * 获取用于指定主题的消息匹配策略。
-                     * @return FilterType 用于指定主题的消息匹配策略。
+                     * 获取用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。
+                     * @return FilterType 用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。
                      */
                     uint64_t GetFilterType() const;
 
                     /**
-                     * 设置用于指定主题的消息匹配策略。
-                     * @param FilterType 用于指定主题的消息匹配策略。
+                     * 设置用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。
+                     * @param FilterType 用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。
                      */
                     void SetFilterType(const uint64_t& _filterType);
 
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_maxMsgSizeHasBeenSet;
 
                     /**
-                     * 用于指定主题的消息匹配策略。
+                     * 用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。
                      */
                     uint64_t m_filterType;
                     bool m_filterTypeHasBeenSet;

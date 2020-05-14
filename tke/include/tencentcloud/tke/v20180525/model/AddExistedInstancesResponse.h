@@ -44,7 +44,9 @@ namespace TencentCloud
 
                     /**
                      * 获取失败的节点ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedInstanceIds 失败的节点ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetFailedInstanceIds() const;
 
@@ -56,7 +58,9 @@ namespace TencentCloud
 
                     /**
                      * 获取成功的节点ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccInstanceIds 成功的节点ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetSuccInstanceIds() const;
 
@@ -68,7 +72,9 @@ namespace TencentCloud
 
                     /**
                      * 获取超时未返回出来节点的ID(可能失败，也可能成功)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeoutInstanceIds 超时未返回出来节点的ID(可能失败，也可能成功)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetTimeoutInstanceIds() const;
 
@@ -82,18 +88,21 @@ namespace TencentCloud
 
                     /**
                      * 失败的节点ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failedInstanceIds;
                     bool m_failedInstanceIdsHasBeenSet;
 
                     /**
                      * 成功的节点ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_succInstanceIds;
                     bool m_succInstanceIdsHasBeenSet;
 
                     /**
                      * 超时未返回出来节点的ID(可能失败，也可能成功)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_timeoutInstanceIds;
                     bool m_timeoutInstanceIdsHasBeenSet;

@@ -20,6 +20,7 @@ set(cam_public_header
 
 set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesResponse.h
+  include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteUserRequest.h
   include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeRoleListResponse.h
@@ -71,6 +72,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesResponse.h
   include/tencentcloud/cam/v20190116/model/CreateSAMLProviderResponse.h
   include/tencentcloud/cam/v20190116/model/GetUserRequest.h
+  include/tencentcloud/cam/v20190116/model/LoginActionMfaFlag.h
   include/tencentcloud/cam/v20190116/model/SubAccountInfo.h
   include/tencentcloud/cam/v20190116/model/SAMLProviderInfo.h
   include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h
@@ -130,6 +132,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListEntitiesForPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/AddUserToGroupResponse.h
   include/tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h
+  include/tencentcloud/cam/v20190116/model/SetMfaFlagRequest.h
   include/tencentcloud/cam/v20190116/model/ListCollaboratorsResponse.h
   include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h
@@ -140,6 +143,7 @@ set(cam_public_header_model
 set(cam_src
   src/v20190116/CamClient.cpp
   src/v20190116/model/ListAttachedRolePoliciesResponse.cpp
+  src/v20190116/model/SetMfaFlagResponse.cpp
   src/v20190116/model/DeleteUserRequest.cpp
   src/v20190116/model/DetachGroupPolicyRequest.cpp
   src/v20190116/model/DescribeRoleListResponse.cpp
@@ -191,6 +195,7 @@ set(cam_src
   src/v20190116/model/ListAttachedUserPoliciesResponse.cpp
   src/v20190116/model/CreateSAMLProviderResponse.cpp
   src/v20190116/model/GetUserRequest.cpp
+  src/v20190116/model/LoginActionMfaFlag.cpp
   src/v20190116/model/SubAccountInfo.cpp
   src/v20190116/model/SAMLProviderInfo.cpp
   src/v20190116/model/UpdateSAMLProviderResponse.cpp
@@ -250,6 +255,7 @@ set(cam_src
   src/v20190116/model/ListEntitiesForPolicyResponse.cpp
   src/v20190116/model/AddUserToGroupResponse.cpp
   src/v20190116/model/AttachUserPolicyResponse.cpp
+  src/v20190116/model/SetMfaFlagRequest.cpp
   src/v20190116/model/ListCollaboratorsResponse.cpp
   src/v20190116/model/ListAttachedUserPoliciesRequest.cpp
   src/v20190116/model/UpdatePolicyRequest.cpp

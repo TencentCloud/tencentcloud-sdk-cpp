@@ -29,7 +29,6 @@ ImportMaterialRequest::ImportMaterialRequest() :
     m_ownerHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_classPathHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_preProcessDefinitionHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
@@ -81,19 +80,6 @@ string ImportMaterialRequest::ToJsonString() const
         string key = "ClassPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_preProcessDefinitionHasBeenSet)
@@ -198,22 +184,6 @@ void ImportMaterialRequest::SetClassPath(const string& _classPath)
 bool ImportMaterialRequest::ClassPathHasBeenSet() const
 {
     return m_classPathHasBeenSet;
-}
-
-vector<string> ImportMaterialRequest::GetTags() const
-{
-    return m_tags;
-}
-
-void ImportMaterialRequest::SetTags(const vector<string>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool ImportMaterialRequest::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
 }
 
 int64_t ImportMaterialRequest::GetPreProcessDefinition() const

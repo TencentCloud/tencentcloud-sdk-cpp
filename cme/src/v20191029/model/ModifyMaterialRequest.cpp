@@ -28,7 +28,6 @@ ModifyMaterialRequest::ModifyMaterialRequest() :
     m_materialIdHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_classPathHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
@@ -72,19 +71,6 @@ string ModifyMaterialRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_classPathHasBeenSet)
@@ -173,22 +159,6 @@ void ModifyMaterialRequest::SetName(const string& _name)
 bool ModifyMaterialRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
-}
-
-vector<string> ModifyMaterialRequest::GetTags() const
-{
-    return m_tags;
-}
-
-void ModifyMaterialRequest::SetTags(const vector<string>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool ModifyMaterialRequest::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
 }
 
 string ModifyMaterialRequest::GetClassPath() const
