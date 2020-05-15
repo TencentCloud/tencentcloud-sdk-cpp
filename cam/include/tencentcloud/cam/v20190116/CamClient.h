@@ -711,7 +711,7 @@ namespace TencentCloud
                 SetDefaultPolicyVersionOutcomeCallable SetDefaultPolicyVersionCallable(const Model::SetDefaultPolicyVersionRequest& request);
 
                 /**
-                 *设置用户的登录保护和敏感操作校验方式
+                 *设置子用户的登录保护和敏感操作校验方式
                  * @param req SetMfaFlagRequest
                  * @return SetMfaFlagOutcome
                  */

@@ -34,7 +34,8 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_defaultCodeRepositoryHasBeenSet(false),
     m_additionalCodeRepositoriesHasBeenSet(false),
     m_disassociateDefaultCodeRepositoryHasBeenSet(false),
-    m_disassociateAdditionalCodeRepositoriesHasBeenSet(false)
+    m_disassociateAdditionalCodeRepositoriesHasBeenSet(false),
+    m_clsAccessHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,14 @@ string UpdateNotebookInstanceRequest::ToJsonString() const
         string key = "DisassociateAdditionalCodeRepositories";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disassociateAdditionalCodeRepositories, allocator);
+    }
+
+    if (m_clsAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clsAccess.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -320,6 +329,22 @@ void UpdateNotebookInstanceRequest::SetDisassociateAdditionalCodeRepositories(co
 bool UpdateNotebookInstanceRequest::DisassociateAdditionalCodeRepositoriesHasBeenSet() const
 {
     return m_disassociateAdditionalCodeRepositoriesHasBeenSet;
+}
+
+string UpdateNotebookInstanceRequest::GetClsAccess() const
+{
+    return m_clsAccess;
+}
+
+void UpdateNotebookInstanceRequest::SetClsAccess(const string& _clsAccess)
+{
+    m_clsAccess = _clsAccess;
+    m_clsAccessHasBeenSet = true;
+}
+
+bool UpdateNotebookInstanceRequest::ClsAccessHasBeenSet() const
+{
+    return m_clsAccessHasBeenSet;
 }
 
 

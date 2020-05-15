@@ -42,7 +42,28 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicId 主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     */
+                    bool TopicIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
 
                 };
             }

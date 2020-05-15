@@ -32,7 +32,8 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_subnetIdHasBeenSet(false),
     m_lifecycleScriptsNameHasBeenSet(false),
     m_defaultCodeRepositoryHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false)
+    m_additionalCodeRepositoriesHasBeenSet(false),
+    m_clsAccessHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string CreateNotebookInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_clsAccessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clsAccess.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -270,6 +279,22 @@ void CreateNotebookInstanceRequest::SetAdditionalCodeRepositories(const vector<s
 bool CreateNotebookInstanceRequest::AdditionalCodeRepositoriesHasBeenSet() const
 {
     return m_additionalCodeRepositoriesHasBeenSet;
+}
+
+string CreateNotebookInstanceRequest::GetClsAccess() const
+{
+    return m_clsAccess;
+}
+
+void CreateNotebookInstanceRequest::SetClsAccess(const string& _clsAccess)
+{
+    m_clsAccess = _clsAccess;
+    m_clsAccessHasBeenSet = true;
+}
+
+bool CreateNotebookInstanceRequest::ClsAccessHasBeenSet() const
+{
+    return m_clsAccessHasBeenSet;
 }
 
 

@@ -80,17 +80,17 @@ namespace TencentCloud
 
                     /**
                      * 获取用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过5M，支持mp4、avi、flv格式。
+BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      * @return VideoBase64 用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过5M，支持mp4、avi、flv格式。
+BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      */
                     std::string GetVideoBase64() const;
 
                     /**
                      * 设置用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过5M，支持mp4、avi、flv格式。
+BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      * @param VideoBase64 用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过5M，支持mp4、avi、flv格式。
+BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      */
                     void SetVideoBase64(const std::string& _videoBase64);
 
@@ -149,14 +149,14 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     bool ValidateDataHasBeenSet() const;
 
                     /**
-                     * 获取本接口不需要传递此参数。
-                     * @return Optional 本接口不需要传递此参数。
+                     * 获取额外配置，传入JSON字符串。
+                     * @return Optional 额外配置，传入JSON字符串。
                      */
                     std::string GetOptional() const;
 
                     /**
-                     * 设置本接口不需要传递此参数。
-                     * @param Optional 本接口不需要传递此参数。
+                     * 设置额外配置，传入JSON字符串。
+                     * @param Optional 额外配置，传入JSON字符串。
                      */
                     void SetOptional(const std::string& _optional);
 
@@ -182,7 +182,7 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
 
                     /**
                      * 用于活体检测的视频，视频的BASE64值；
-BASE64编码后的大小不超过5M，支持mp4、avi、flv格式。
+BASE64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      */
                     std::string m_videoBase64;
                     bool m_videoBase64HasBeenSet;
@@ -203,7 +203,7 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     bool m_validateDataHasBeenSet;
 
                     /**
-                     * 本接口不需要传递此参数。
+                     * 额外配置，传入JSON字符串。
                      */
                     std::string m_optional;
                     bool m_optionalHasBeenSet;

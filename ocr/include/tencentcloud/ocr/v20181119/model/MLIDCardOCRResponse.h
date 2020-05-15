@@ -94,9 +94,11 @@ namespace TencentCloud
                      * 获取告警码
 -9103	证照翻拍告警
 -9102	证照复印件告警
+-9106       证件遮挡告警
                      * @return Warn 告警码
 -9103	证照翻拍告警
 -9102	证照复印件告警
+-9106       证件遮挡告警
                      */
                     std::vector<int64_t> GetWarn() const;
 
@@ -146,6 +148,30 @@ namespace TencentCloud
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取证件类型
+MyKad  身份证
+MyPR    永居证
+MyTentera   军官证
+MyKAS    临时身份证
+POLIS  警察
+IKAD   劳工证
+                     * @return Type 证件类型
+MyKad  身份证
+MyPR    永居证
+MyTentera   军官证
+MyKAS    临时身份证
+POLIS  警察
+IKAD   劳工证
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +202,7 @@ namespace TencentCloud
                      * 告警码
 -9103	证照翻拍告警
 -9102	证照复印件告警
+-9106       证件遮挡告警
                      */
                     std::vector<int64_t> m_warn;
                     bool m_warnHasBeenSet;
@@ -199,6 +226,18 @@ namespace TencentCloud
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 证件类型
+MyKad  身份证
+MyPR    永居证
+MyTentera   军官证
+MyKAS    临时身份证
+POLIS  警察
+IKAD   劳工证
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateClsLogTopicResponse::CreateClsLogTopicResponse()
+CreateClsLogTopicResponse::CreateClsLogTopicResponse() :
+    m_topicIdHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,29 @@ CoreInternalOutcome CreateClsLogTopicResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("TopicId") && !rsp["TopicId"].IsNull())
+    {
+        if (!rsp["TopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicId = string(rsp["TopicId"].GetString());
+        m_topicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string CreateClsLogTopicResponse::GetTopicId() const
+{
+    return m_topicId;
+}
+
+bool CreateClsLogTopicResponse::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
+}
 
 

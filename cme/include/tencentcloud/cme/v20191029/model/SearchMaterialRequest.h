@@ -113,14 +113,14 @@ namespace TencentCloud
                     bool MaterialTypesHasBeenSet() const;
 
                     /**
-                     * 获取搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
-                     * @return Text 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
+                     * 获取搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
+                     * @return Text 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
-                     * @param Text 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
+                     * 设置搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
+                     * @param Text 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
                      */
                     void SetText(const std::string& _text);
 
@@ -183,24 +183,6 @@ namespace TencentCloud
                      * @return CreateTimeRange 是否已赋值
                      */
                     bool CreateTimeRangeHasBeenSet() const;
-
-                    /**
-                     * 获取标签集合，匹配集合中任意元素。单个标签长度限制：10 个字符。数组长度限制：10。
-                     * @return Tags 标签集合，匹配集合中任意元素。单个标签长度限制：10 个字符。数组长度限制：10。
-                     */
-                    std::vector<std::string> GetTags() const;
-
-                    /**
-                     * 设置标签集合，匹配集合中任意元素。单个标签长度限制：10 个字符。数组长度限制：10。
-                     * @param Tags 标签集合，匹配集合中任意元素。单个标签长度限制：10 个字符。数组长度限制：10。
-                     */
-                    void SetTags(const std::vector<std::string>& _tags);
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     */
-                    bool TagsHasBeenSet() const;
 
                     /**
                      * 获取排序方式。Sort.Field 可选值：CreateTime。指定 Text 搜索时，将根据匹配度排序，该字段无效。
@@ -298,7 +280,7 @@ namespace TencentCloud
                     bool m_materialTypesHasBeenSet;
 
                     /**
-                     * 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64 个字符。
+                     * 搜索文本，模糊匹配素材名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
@@ -320,12 +302,6 @@ namespace TencentCloud
                      */
                     TimeRange m_createTimeRange;
                     bool m_createTimeRangeHasBeenSet;
-
-                    /**
-                     * 标签集合，匹配集合中任意元素。单个标签长度限制：10 个字符。数组长度限制：10。
-                     */
-                    std::vector<std::string> m_tags;
-                    bool m_tagsHasBeenSet;
 
                     /**
                      * 排序方式。Sort.Field 可选值：CreateTime。指定 Text 搜索时，将根据匹配度排序，该字段无效。

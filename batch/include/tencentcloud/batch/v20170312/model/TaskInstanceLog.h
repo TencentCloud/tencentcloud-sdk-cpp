@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool TaskInstanceIndexHasBeenSet() const;
 
                     /**
-                     * 获取标准输出日志（Base64编码）
+                     * 获取标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StdoutLog 标准输出日志（Base64编码）
+                     * @return StdoutLog 标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStdoutLog() const;
 
                     /**
-                     * 设置标准输出日志（Base64编码）
+                     * 设置标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StdoutLog 标准输出日志（Base64编码）
+                     * @param StdoutLog 标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStdoutLog(const std::string& _stdoutLog);
@@ -87,17 +87,17 @@ namespace TencentCloud
                     bool StdoutLogHasBeenSet() const;
 
                     /**
-                     * 获取标准错误日志（Base64编码）
+                     * 获取标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StderrLog 标准错误日志（Base64编码）
+                     * @return StderrLog 标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStderrLog() const;
 
                     /**
-                     * 设置标准错误日志（Base64编码）
+                     * 设置标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StderrLog 标准错误日志（Base64编码）
+                     * @param StderrLog 标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStderrLog(const std::string& _stderrLog);
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool m_taskInstanceIndexHasBeenSet;
 
                     /**
-                     * 标准输出日志（Base64编码）
+                     * 标准输出日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdoutLog;
                     bool m_stdoutLogHasBeenSet;
 
                     /**
-                     * 标准错误日志（Base64编码）
+                     * 标准错误日志（Base64编码，解码后最大日志长度2048字节）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stderrLog;

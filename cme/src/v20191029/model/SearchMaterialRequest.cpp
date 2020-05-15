@@ -31,7 +31,6 @@ SearchMaterialRequest::SearchMaterialRequest() :
     m_resolutionHasBeenSet(false),
     m_durationRangeHasBeenSet(false),
     m_createTimeRangeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
@@ -114,19 +113,6 @@ string SearchMaterialRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_createTimeRange.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_sortHasBeenSet)
@@ -280,22 +266,6 @@ void SearchMaterialRequest::SetCreateTimeRange(const TimeRange& _createTimeRange
 bool SearchMaterialRequest::CreateTimeRangeHasBeenSet() const
 {
     return m_createTimeRangeHasBeenSet;
-}
-
-vector<string> SearchMaterialRequest::GetTags() const
-{
-    return m_tags;
-}
-
-void SearchMaterialRequest::SetTags(const vector<string>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool SearchMaterialRequest::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
 }
 
 SortBy SearchMaterialRequest::GetSort() const

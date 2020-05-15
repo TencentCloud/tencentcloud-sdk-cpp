@@ -186,24 +186,6 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
-                     * 获取链接标签，单个标签长度不能超过10，数组长度不能超过10。
-                     * @return Tags 链接标签，单个标签长度不能超过10，数组长度不能超过10。
-                     */
-                    std::vector<std::string> GetTags() const;
-
-                    /**
-                     * 设置链接标签，单个标签长度不能超过10，数组长度不能超过10。
-                     * @param Tags 链接标签，单个标签长度不能超过10，数组长度不能超过10。
-                     */
-                    void SetTags(const std::vector<std::string>& _tags);
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     */
-                    bool TagsHasBeenSet() const;
-
-                    /**
                      * 获取操作者。填写用户的 Id，用于标识调用者及校验操作权限。
                      * @return Operator 操作者。填写用户的 Id，用于标识调用者及校验操作权限。
                      */
@@ -268,12 +250,6 @@ namespace TencentCloud
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
-
-                    /**
-                     * 链接标签，单个标签长度不能超过10，数组长度不能超过10。
-                     */
-                    std::vector<std::string> m_tags;
-                    bool m_tagsHasBeenSet;
 
                     /**
                      * 操作者。填写用户的 Id，用于标识调用者及校验操作权限。

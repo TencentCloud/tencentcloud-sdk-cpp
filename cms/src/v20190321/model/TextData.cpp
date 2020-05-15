@@ -25,9 +25,15 @@ TextData::TextData() :
     m_evilFlagHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
     m_commonHasBeenSet(false),
+    m_customResultHasBeenSet(false),
+    m_detailResultHasBeenSet(false),
     m_iDHasBeenSet(false),
     m_resHasBeenSet(false),
-    m_keywordsHasBeenSet(false)
+    m_bizTypeHasBeenSet(false),
+    m_evilLabelHasBeenSet(false),
+    m_keywordsHasBeenSet(false),
+    m_scoreHasBeenSet(false),
+    m_suggestionHasBeenSet(false)
 {
 }
 
@@ -73,6 +79,46 @@ CoreInternalOutcome TextData::Deserialize(const Value &value)
         m_commonHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomResult") && !value["CustomResult"].IsNull())
+    {
+        if (!value["CustomResult"].IsArray())
+            return CoreInternalOutcome(Error("response `TextData.CustomResult` is not array type"));
+
+        const Value &tmpValue = value["CustomResult"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CustomResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customResult.push_back(item);
+        }
+        m_customResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("DetailResult") && !value["DetailResult"].IsNull())
+    {
+        if (!value["DetailResult"].IsArray())
+            return CoreInternalOutcome(Error("response `TextData.DetailResult` is not array type"));
+
+        const Value &tmpValue = value["DetailResult"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetailResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detailResult.push_back(item);
+        }
+        m_detailResultHasBeenSet = true;
+    }
+
     if (value.HasMember("ID") && !value["ID"].IsNull())
     {
         if (!value["ID"].IsObject())
@@ -107,6 +153,26 @@ CoreInternalOutcome TextData::Deserialize(const Value &value)
         m_resHasBeenSet = true;
     }
 
+    if (value.HasMember("BizType") && !value["BizType"].IsNull())
+    {
+        if (!value["BizType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TextData.BizType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bizType = value["BizType"].GetUint64();
+        m_bizTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
+    {
+        if (!value["EvilLabel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TextData.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_evilLabel = string(value["EvilLabel"].GetString());
+        m_evilLabelHasBeenSet = true;
+    }
+
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
         if (!value["Keywords"].IsArray())
@@ -118,6 +184,26 @@ CoreInternalOutcome TextData::Deserialize(const Value &value)
             m_keywords.push_back((*itr).GetString());
         }
         m_keywordsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Score") && !value["Score"].IsNull())
+    {
+        if (!value["Score"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TextData.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_score = value["Score"].GetUint64();
+        m_scoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
+    {
+        if (!value["Suggestion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TextData.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_suggestion = string(value["Suggestion"].GetString());
+        m_suggestionHasBeenSet = true;
     }
 
 
@@ -152,6 +238,36 @@ void TextData::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         m_common.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_customResultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CustomResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customResult.begin(); itr != m_customResult.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_detailResultHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DetailResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailResult.begin(); itr != m_detailResult.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_iDHasBeenSet)
     {
         Value iKey(kStringType);
@@ -170,6 +286,22 @@ void TextData::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         m_res.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_bizTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bizType, allocator);
+    }
+
+    if (m_evilLabelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EvilLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_evilLabel.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_keywordsHasBeenSet)
     {
         Value iKey(kStringType);
@@ -181,6 +313,22 @@ void TextData::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scoreHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Score";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_suggestionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Suggestion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -234,6 +382,38 @@ bool TextData::CommonHasBeenSet() const
     return m_commonHasBeenSet;
 }
 
+vector<CustomResult> TextData::GetCustomResult() const
+{
+    return m_customResult;
+}
+
+void TextData::SetCustomResult(const vector<CustomResult>& _customResult)
+{
+    m_customResult = _customResult;
+    m_customResultHasBeenSet = true;
+}
+
+bool TextData::CustomResultHasBeenSet() const
+{
+    return m_customResultHasBeenSet;
+}
+
+vector<DetailResult> TextData::GetDetailResult() const
+{
+    return m_detailResult;
+}
+
+void TextData::SetDetailResult(const vector<DetailResult>& _detailResult)
+{
+    m_detailResult = _detailResult;
+    m_detailResultHasBeenSet = true;
+}
+
+bool TextData::DetailResultHasBeenSet() const
+{
+    return m_detailResultHasBeenSet;
+}
+
 TextOutputID TextData::GetID() const
 {
     return m_iD;
@@ -266,6 +446,38 @@ bool TextData::ResHasBeenSet() const
     return m_resHasBeenSet;
 }
 
+uint64_t TextData::GetBizType() const
+{
+    return m_bizType;
+}
+
+void TextData::SetBizType(const uint64_t& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool TextData::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
+}
+
+string TextData::GetEvilLabel() const
+{
+    return m_evilLabel;
+}
+
+void TextData::SetEvilLabel(const string& _evilLabel)
+{
+    m_evilLabel = _evilLabel;
+    m_evilLabelHasBeenSet = true;
+}
+
+bool TextData::EvilLabelHasBeenSet() const
+{
+    return m_evilLabelHasBeenSet;
+}
+
 vector<string> TextData::GetKeywords() const
 {
     return m_keywords;
@@ -280,5 +492,37 @@ void TextData::SetKeywords(const vector<string>& _keywords)
 bool TextData::KeywordsHasBeenSet() const
 {
     return m_keywordsHasBeenSet;
+}
+
+uint64_t TextData::GetScore() const
+{
+    return m_score;
+}
+
+void TextData::SetScore(const uint64_t& _score)
+{
+    m_score = _score;
+    m_scoreHasBeenSet = true;
+}
+
+bool TextData::ScoreHasBeenSet() const
+{
+    return m_scoreHasBeenSet;
+}
+
+string TextData::GetSuggestion() const
+{
+    return m_suggestion;
+}
+
+void TextData::SetSuggestion(const string& _suggestion)
+{
+    m_suggestion = _suggestion;
+    m_suggestionHasBeenSet = true;
+}
+
+bool TextData::SuggestionHasBeenSet() const
+{
+    return m_suggestionHasBeenSet;
 }
 

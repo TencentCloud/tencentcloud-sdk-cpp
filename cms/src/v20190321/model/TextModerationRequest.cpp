@@ -24,7 +24,10 @@ using namespace rapidjson;
 using namespace std;
 
 TextModerationRequest::TextModerationRequest() :
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_bizTypeHasBeenSet(false),
+    m_dataIdHasBeenSet(false),
+    m_sdkAppIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +44,30 @@ string TextModerationRequest::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bizType, allocator);
+    }
+
+    if (m_dataIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dataId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sdkAppIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SdkAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sdkAppId, allocator);
     }
 
 
@@ -65,6 +92,54 @@ void TextModerationRequest::SetContent(const string& _content)
 bool TextModerationRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+uint64_t TextModerationRequest::GetBizType() const
+{
+    return m_bizType;
+}
+
+void TextModerationRequest::SetBizType(const uint64_t& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool TextModerationRequest::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
+}
+
+string TextModerationRequest::GetDataId() const
+{
+    return m_dataId;
+}
+
+void TextModerationRequest::SetDataId(const string& _dataId)
+{
+    m_dataId = _dataId;
+    m_dataIdHasBeenSet = true;
+}
+
+bool TextModerationRequest::DataIdHasBeenSet() const
+{
+    return m_dataIdHasBeenSet;
+}
+
+uint64_t TextModerationRequest::GetSdkAppId() const
+{
+    return m_sdkAppId;
+}
+
+void TextModerationRequest::SetSdkAppId(const uint64_t& _sdkAppId)
+{
+    m_sdkAppId = _sdkAppId;
+    m_sdkAppIdHasBeenSet = true;
+}
+
+bool TextModerationRequest::SdkAppIdHasBeenSet() const
+{
+    return m_sdkAppIdHasBeenSet;
 }
 
 

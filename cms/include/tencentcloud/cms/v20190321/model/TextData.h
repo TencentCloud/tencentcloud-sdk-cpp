@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cms/v20190321/model/TextOutputComm.h>
+#include <tencentcloud/cms/v20190321/model/CustomResult.h>
+#include <tencentcloud/cms/v20190321/model/DetailResult.h>
 #include <tencentcloud/cms/v20190321/model/TextOutputID.h>
 #include <tencentcloud/cms/v20190321/model/TextOutputRes.h>
 
@@ -132,6 +134,42 @@ namespace TencentCloud
                     bool CommonHasBeenSet() const;
 
                     /**
+                     * 获取返回的自定义词库结果
+                     * @return CustomResult 返回的自定义词库结果
+                     */
+                    std::vector<CustomResult> GetCustomResult() const;
+
+                    /**
+                     * 设置返回的自定义词库结果
+                     * @param CustomResult 返回的自定义词库结果
+                     */
+                    void SetCustomResult(const std::vector<CustomResult>& _customResult);
+
+                    /**
+                     * 判断参数 CustomResult 是否已赋值
+                     * @return CustomResult 是否已赋值
+                     */
+                    bool CustomResultHasBeenSet() const;
+
+                    /**
+                     * 获取返回的详细结果
+                     * @return DetailResult 返回的详细结果
+                     */
+                    std::vector<DetailResult> GetDetailResult() const;
+
+                    /**
+                     * 设置返回的详细结果
+                     * @param DetailResult 返回的详细结果
+                     */
+                    void SetDetailResult(const std::vector<DetailResult>& _detailResult);
+
+                    /**
+                     * 判断参数 DetailResult 是否已赋值
+                     * @return DetailResult 是否已赋值
+                     */
+                    bool DetailResultHasBeenSet() const;
+
+                    /**
                      * 获取消息类ID信息
                      * @return ID 消息类ID信息
                      */
@@ -168,6 +206,42 @@ namespace TencentCloud
                     bool ResHasBeenSet() const;
 
                     /**
+                     * 获取最终使用的BizType
+                     * @return BizType 最终使用的BizType
+                     */
+                    uint64_t GetBizType() const;
+
+                    /**
+                     * 设置最终使用的BizType
+                     * @param BizType 最终使用的BizType
+                     */
+                    void SetBizType(const uint64_t& _bizType);
+
+                    /**
+                     * 判断参数 BizType 是否已赋值
+                     * @return BizType 是否已赋值
+                     */
+                    bool BizTypeHasBeenSet() const;
+
+                    /**
+                     * 获取恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * @return EvilLabel 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     */
+                    std::string GetEvilLabel() const;
+
+                    /**
+                     * 设置恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     * @param EvilLabel 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     */
+                    void SetEvilLabel(const std::string& _evilLabel);
+
+                    /**
+                     * 判断参数 EvilLabel 是否已赋值
+                     * @return EvilLabel 是否已赋值
+                     */
+                    bool EvilLabelHasBeenSet() const;
+
+                    /**
                      * 获取命中的关键词
                      * @return Keywords 命中的关键词
                      */
@@ -184,6 +258,42 @@ namespace TencentCloud
                      * @return Keywords 是否已赋值
                      */
                     bool KeywordsHasBeenSet() const;
+
+                    /**
+                     * 获取命中的模型分值
+                     * @return Score 命中的模型分值
+                     */
+                    uint64_t GetScore() const;
+
+                    /**
+                     * 设置命中的模型分值
+                     * @param Score 命中的模型分值
+                     */
+                    void SetScore(const uint64_t& _score);
+
+                    /**
+                     * 判断参数 Score 是否已赋值
+                     * @return Score 是否已赋值
+                     */
+                    bool ScoreHasBeenSet() const;
+
+                    /**
+                     * 获取建议值,Block：打击,Review：待复审,Normal：正常
+                     * @return Suggestion 建议值,Block：打击,Review：待复审,Normal：正常
+                     */
+                    std::string GetSuggestion() const;
+
+                    /**
+                     * 设置建议值,Block：打击,Review：待复审,Normal：正常
+                     * @param Suggestion 建议值,Block：打击,Review：待复审,Normal：正常
+                     */
+                    void SetSuggestion(const std::string& _suggestion);
+
+                    /**
+                     * 判断参数 Suggestion 是否已赋值
+                     * @return Suggestion 是否已赋值
+                     */
+                    bool SuggestionHasBeenSet() const;
 
                 private:
 
@@ -213,6 +323,18 @@ namespace TencentCloud
                     bool m_commonHasBeenSet;
 
                     /**
+                     * 返回的自定义词库结果
+                     */
+                    std::vector<CustomResult> m_customResult;
+                    bool m_customResultHasBeenSet;
+
+                    /**
+                     * 返回的详细结果
+                     */
+                    std::vector<DetailResult> m_detailResult;
+                    bool m_detailResultHasBeenSet;
+
+                    /**
                      * 消息类ID信息
                      */
                     TextOutputID m_iD;
@@ -225,10 +347,34 @@ namespace TencentCloud
                     bool m_resHasBeenSet;
 
                     /**
+                     * 最终使用的BizType
+                     */
+                    uint64_t m_bizType;
+                    bool m_bizTypeHasBeenSet;
+
+                    /**
+                     * 恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词
+                     */
+                    std::string m_evilLabel;
+                    bool m_evilLabelHasBeenSet;
+
+                    /**
                      * 命中的关键词
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
+
+                    /**
+                     * 命中的模型分值
+                     */
+                    uint64_t m_score;
+                    bool m_scoreHasBeenSet;
+
+                    /**
+                     * 建议值,Block：打击,Review：待复审,Normal：正常
+                     */
+                    std::string m_suggestion;
+                    bool m_suggestionHasBeenSet;
 
                 };
             }

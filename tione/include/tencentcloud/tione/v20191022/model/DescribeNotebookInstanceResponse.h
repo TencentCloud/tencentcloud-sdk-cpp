@@ -268,6 +268,20 @@ namespace TencentCloud
                      */
                     bool AdditionalCodeRepositoriesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启CLS日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClsAccess 是否开启CLS日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClsAccess() const;
+
+                    /**
+                     * 判断参数 ClsAccess 是否已赋值
+                     * @return ClsAccess 是否已赋值
+                     */
+                    bool ClsAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +396,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_additionalCodeRepositories;
                     bool m_additionalCodeRepositoriesHasBeenSet;
+
+                    /**
+                     * 是否开启CLS日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clsAccess;
+                    bool m_clsAccessHasBeenSet;
 
                 };
             }

@@ -31,7 +31,6 @@ CreateLinkRequest::CreateLinkRequest() :
     m_destinationIdHasBeenSet(false),
     m_destinationOwnerHasBeenSet(false),
     m_classPathHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -99,19 +98,6 @@ string CreateLinkRequest::ToJsonString() const
         string key = "ClassPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_operatorHasBeenSet)
@@ -240,22 +226,6 @@ void CreateLinkRequest::SetClassPath(const string& _classPath)
 bool CreateLinkRequest::ClassPathHasBeenSet() const
 {
     return m_classPathHasBeenSet;
-}
-
-vector<string> CreateLinkRequest::GetTags() const
-{
-    return m_tags;
-}
-
-void CreateLinkRequest::SetTags(const vector<string>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool CreateLinkRequest::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
 }
 
 string CreateLinkRequest::GetOperator() const

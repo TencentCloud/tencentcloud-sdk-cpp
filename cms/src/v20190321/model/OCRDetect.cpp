@@ -22,6 +22,7 @@ using namespace rapidjson;
 using namespace std;
 
 OCRDetect::OCRDetect() :
+    m_itemHasBeenSet(false),
     m_textInfoHasBeenSet(false)
 {
 }
@@ -30,6 +31,26 @@ CoreInternalOutcome OCRDetect::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Item") && !value["Item"].IsNull())
+    {
+        if (!value["Item"].IsArray())
+            return CoreInternalOutcome(Error("response `OCRDetect.Item` is not array type"));
+
+        const Value &tmpValue = value["Item"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OCRItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_item.push_back(item);
+        }
+        m_itemHasBeenSet = true;
+    }
 
     if (value.HasMember("TextInfo") && !value["TextInfo"].IsNull())
     {
@@ -48,6 +69,21 @@ CoreInternalOutcome OCRDetect::Deserialize(const Value &value)
 void OCRDetect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_itemHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Item";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_item.begin(); itr != m_item.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_textInfoHasBeenSet)
     {
         Value iKey(kStringType);
@@ -58,6 +94,22 @@ void OCRDetect::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
 }
 
+
+vector<OCRItem> OCRDetect::GetItem() const
+{
+    return m_item;
+}
+
+void OCRDetect::SetItem(const vector<OCRItem>& _item)
+{
+    m_item = _item;
+    m_itemHasBeenSet = true;
+}
+
+bool OCRDetect::ItemHasBeenSet() const
+{
+    return m_itemHasBeenSet;
+}
 
 string OCRDetect::GetTextInfo() const
 {

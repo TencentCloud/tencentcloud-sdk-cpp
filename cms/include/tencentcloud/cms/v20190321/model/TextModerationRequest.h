@@ -60,6 +60,60 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
+                     * @return BizType 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
+                     */
+                    uint64_t GetBizType() const;
+
+                    /**
+                     * 设置该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
+                     * @param BizType 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
+                     */
+                    void SetBizType(const uint64_t& _bizType);
+
+                    /**
+                     * 判断参数 BizType 是否已赋值
+                     * @return BizType 是否已赋值
+                     */
+                    bool BizTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * @return DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     */
+                    std::string GetDataId() const;
+
+                    /**
+                     * 设置数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * @param DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     */
+                    void SetDataId(const std::string& _dataId);
+
+                    /**
+                     * 判断参数 DataId 是否已赋值
+                     * @return DataId 是否已赋值
+                     */
+                    bool DataIdHasBeenSet() const;
+
+                    /**
+                     * 获取业务应用ID
+                     * @return SdkAppId 业务应用ID
+                     */
+                    uint64_t GetSdkAppId() const;
+
+                    /**
+                     * 设置业务应用ID
+                     * @param SdkAppId 业务应用ID
+                     */
+                    void SetSdkAppId(const uint64_t& _sdkAppId);
+
+                    /**
+                     * 判断参数 SdkAppId 是否已赋值
+                     * @return SdkAppId 是否已赋值
+                     */
+                    bool SdkAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +121,24 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
+                     */
+                    uint64_t m_bizType;
+                    bool m_bizTypeHasBeenSet;
+
+                    /**
+                     * 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     */
+                    std::string m_dataId;
+                    bool m_dataIdHasBeenSet;
+
+                    /**
+                     * 业务应用ID
+                     */
+                    uint64_t m_sdkAppId;
+                    bool m_sdkAppIdHasBeenSet;
 
                 };
             }

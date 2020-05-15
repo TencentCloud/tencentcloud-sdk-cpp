@@ -212,6 +212,24 @@ namespace TencentCloud
                      */
                     bool AdditionalCodeRepositoriesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     * @return ClsAccess 是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     */
+                    std::string GetClsAccess() const;
+
+                    /**
+                     * 设置是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     * @param ClsAccess 是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     */
+                    void SetClsAccess(const std::string& _clsAccess);
+
+                    /**
+                     * 判断参数 ClsAccess 是否已赋值
+                     * @return ClsAccess 是否已赋值
+                     */
+                    bool ClsAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +287,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_additionalCodeRepositories;
                     bool m_additionalCodeRepositoriesHasBeenSet;
+
+                    /**
+                     * 是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled
+                     */
+                    std::string m_clsAccess;
+                    bool m_clsAccessHasBeenSet;
 
                 };
             }

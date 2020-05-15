@@ -27,11 +27,11 @@ RegisterMigrationTaskRequest::RegisterMigrationTaskRequest() :
     m_taskTypeHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_serviceSupplierHasBeenSet(false),
-    m_srcInfoHasBeenSet(false),
-    m_dstInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_migrateClassHasBeenSet(false),
+    m_srcInfoHasBeenSet(false),
+    m_dstInfoHasBeenSet(false),
     m_srcAccessTypeHasBeenSet(false),
     m_srcDatabaseTypeHasBeenSet(false),
     m_dstAccessTypeHasBeenSet(false),
@@ -70,24 +70,6 @@ string RegisterMigrationTaskRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_serviceSupplier.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_srcInfoHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "SrcInfo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_srcInfo.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_dstInfoHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "DstInfo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
-        m_dstInfo.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_createTimeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -110,6 +92,24 @@ string RegisterMigrationTaskRequest::ToJsonString() const
         string key = "MigrateClass";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_migrateClass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SrcInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_srcInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dstInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DstInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_dstInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_srcAccessTypeHasBeenSet)
@@ -200,38 +200,6 @@ bool RegisterMigrationTaskRequest::ServiceSupplierHasBeenSet() const
     return m_serviceSupplierHasBeenSet;
 }
 
-SrcInfo RegisterMigrationTaskRequest::GetSrcInfo() const
-{
-    return m_srcInfo;
-}
-
-void RegisterMigrationTaskRequest::SetSrcInfo(const SrcInfo& _srcInfo)
-{
-    m_srcInfo = _srcInfo;
-    m_srcInfoHasBeenSet = true;
-}
-
-bool RegisterMigrationTaskRequest::SrcInfoHasBeenSet() const
-{
-    return m_srcInfoHasBeenSet;
-}
-
-DstInfo RegisterMigrationTaskRequest::GetDstInfo() const
-{
-    return m_dstInfo;
-}
-
-void RegisterMigrationTaskRequest::SetDstInfo(const DstInfo& _dstInfo)
-{
-    m_dstInfo = _dstInfo;
-    m_dstInfoHasBeenSet = true;
-}
-
-bool RegisterMigrationTaskRequest::DstInfoHasBeenSet() const
-{
-    return m_dstInfoHasBeenSet;
-}
-
 string RegisterMigrationTaskRequest::GetCreateTime() const
 {
     return m_createTime;
@@ -278,6 +246,38 @@ void RegisterMigrationTaskRequest::SetMigrateClass(const string& _migrateClass)
 bool RegisterMigrationTaskRequest::MigrateClassHasBeenSet() const
 {
     return m_migrateClassHasBeenSet;
+}
+
+SrcInfo RegisterMigrationTaskRequest::GetSrcInfo() const
+{
+    return m_srcInfo;
+}
+
+void RegisterMigrationTaskRequest::SetSrcInfo(const SrcInfo& _srcInfo)
+{
+    m_srcInfo = _srcInfo;
+    m_srcInfoHasBeenSet = true;
+}
+
+bool RegisterMigrationTaskRequest::SrcInfoHasBeenSet() const
+{
+    return m_srcInfoHasBeenSet;
+}
+
+DstInfo RegisterMigrationTaskRequest::GetDstInfo() const
+{
+    return m_dstInfo;
+}
+
+void RegisterMigrationTaskRequest::SetDstInfo(const DstInfo& _dstInfo)
+{
+    m_dstInfo = _dstInfo;
+    m_dstInfoHasBeenSet = true;
+}
+
+bool RegisterMigrationTaskRequest::DstInfoHasBeenSet() const
+{
+    return m_dstInfoHasBeenSet;
 }
 
 string RegisterMigrationTaskRequest::GetSrcAccessType() const

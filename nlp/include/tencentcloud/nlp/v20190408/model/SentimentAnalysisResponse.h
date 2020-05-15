@@ -79,8 +79,14 @@ namespace TencentCloud
                     bool PositiveHasBeenSet() const;
 
                     /**
-                     * 获取情感属性
-                     * @return Sentiment 情感属性
+                     * 获取情感分类结果：
+1、positive，表示正面情感
+2、negative，表示负面情感
+3、neutral，表示中性、无情感
+                     * @return Sentiment 情感分类结果：
+1、positive，表示正面情感
+2、negative，表示负面情感
+3、neutral，表示中性、无情感
                      */
                     std::string GetSentiment() const;
 
@@ -111,7 +117,10 @@ namespace TencentCloud
                     bool m_positiveHasBeenSet;
 
                     /**
-                     * 情感属性
+                     * 情感分类结果：
+1、positive，表示正面情感
+2、negative，表示负面情感
+3、neutral，表示中性、无情感
                      */
                     std::string m_sentiment;
                     bool m_sentimentHasBeenSet;

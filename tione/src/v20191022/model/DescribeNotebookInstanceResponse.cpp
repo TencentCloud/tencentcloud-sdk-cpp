@@ -40,7 +40,8 @@ DescribeNotebookInstanceResponse::DescribeNotebookInstanceResponse() :
     m_instanceIdHasBeenSet(false),
     m_lifecycleScriptsNameHasBeenSet(false),
     m_defaultCodeRepositoryHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false)
+    m_additionalCodeRepositoriesHasBeenSet(false),
+    m_clsAccessHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,16 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
         m_additionalCodeRepositoriesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClsAccess") && !rsp["ClsAccess"].IsNull())
+    {
+        if (!rsp["ClsAccess"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClsAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsAccess = string(rsp["ClsAccess"].GetString());
+        m_clsAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -404,6 +415,16 @@ vector<string> DescribeNotebookInstanceResponse::GetAdditionalCodeRepositories()
 bool DescribeNotebookInstanceResponse::AdditionalCodeRepositoriesHasBeenSet() const
 {
     return m_additionalCodeRepositoriesHasBeenSet;
+}
+
+string DescribeNotebookInstanceResponse::GetClsAccess() const
+{
+    return m_clsAccess;
+}
+
+bool DescribeNotebookInstanceResponse::ClsAccessHasBeenSet() const
+{
+    return m_clsAccessHasBeenSet;
 }
 
 

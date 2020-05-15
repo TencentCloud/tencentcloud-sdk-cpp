@@ -19,10 +19,12 @@ set(cms_public_header
   )
 
 set(cms_public_header_model
-  include/tencentcloud/cms/v20190321/model/TextModerationResponse.h
+  include/tencentcloud/cms/v20190321/model/CustomResult.h
   include/tencentcloud/cms/v20190321/model/TextData.h
   include/tencentcloud/cms/v20190321/model/TextModerationRequest.h
+  include/tencentcloud/cms/v20190321/model/DetailResult.h
   include/tencentcloud/cms/v20190321/model/ImageModerationResponse.h
+  include/tencentcloud/cms/v20190321/model/TextModerationResponse.h
   include/tencentcloud/cms/v20190321/model/ImageModerationRequest.h
   include/tencentcloud/cms/v20190321/model/CreateFileSampleRequest.h
   include/tencentcloud/cms/v20190321/model/ImageData.h
@@ -45,12 +47,14 @@ set(cms_public_header_model
   include/tencentcloud/cms/v20190321/model/DeleteFileSampleRequest.h
   include/tencentcloud/cms/v20190321/model/Filter.h
   include/tencentcloud/cms/v20190321/model/OCRDetect.h
+  include/tencentcloud/cms/v20190321/model/Coordinate.h
   include/tencentcloud/cms/v20190321/model/Similar.h
   include/tencentcloud/cms/v20190321/model/ImageHotDetect.h
   include/tencentcloud/cms/v20190321/model/TextOutputComm.h
   include/tencentcloud/cms/v20190321/model/DescribeTextSampleRequest.h
   include/tencentcloud/cms/v20190321/model/CodeDetail.h
   include/tencentcloud/cms/v20190321/model/ImagePolityDetect.h
+  include/tencentcloud/cms/v20190321/model/OCRItem.h
   include/tencentcloud/cms/v20190321/model/ImageIllegalDetect.h
   include/tencentcloud/cms/v20190321/model/RrectF.h
   include/tencentcloud/cms/v20190321/model/CreateFileSampleResponse.h
@@ -62,10 +66,12 @@ set(cms_public_header_model
 
 set(cms_src
   src/v20190321/CmsClient.cpp
-  src/v20190321/model/TextModerationResponse.cpp
+  src/v20190321/model/CustomResult.cpp
   src/v20190321/model/TextData.cpp
   src/v20190321/model/TextModerationRequest.cpp
+  src/v20190321/model/DetailResult.cpp
   src/v20190321/model/ImageModerationResponse.cpp
+  src/v20190321/model/TextModerationResponse.cpp
   src/v20190321/model/ImageModerationRequest.cpp
   src/v20190321/model/CreateFileSampleRequest.cpp
   src/v20190321/model/ImageData.cpp
@@ -88,12 +94,14 @@ set(cms_src
   src/v20190321/model/DeleteFileSampleRequest.cpp
   src/v20190321/model/Filter.cpp
   src/v20190321/model/OCRDetect.cpp
+  src/v20190321/model/Coordinate.cpp
   src/v20190321/model/Similar.cpp
   src/v20190321/model/ImageHotDetect.cpp
   src/v20190321/model/TextOutputComm.cpp
   src/v20190321/model/DescribeTextSampleRequest.cpp
   src/v20190321/model/CodeDetail.cpp
   src/v20190321/model/ImagePolityDetect.cpp
+  src/v20190321/model/OCRItem.cpp
   src/v20190321/model/ImageIllegalDetect.cpp
   src/v20190321/model/RrectF.cpp
   src/v20190321/model/CreateFileSampleResponse.cpp

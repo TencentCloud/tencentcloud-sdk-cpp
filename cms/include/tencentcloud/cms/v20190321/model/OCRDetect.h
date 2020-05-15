@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cms/v20190321/model/OCRItem.h>
 
 
 namespace TencentCloud
@@ -47,6 +48,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取识别到的详细信息
+                     * @return Item 识别到的详细信息
+                     */
+                    std::vector<OCRItem> GetItem() const;
+
+                    /**
+                     * 设置识别到的详细信息
+                     * @param Item 识别到的详细信息
+                     */
+                    void SetItem(const std::vector<OCRItem>& _item);
+
+                    /**
+                     * 判断参数 Item 是否已赋值
+                     * @return Item 是否已赋值
+                     */
+                    bool ItemHasBeenSet() const;
+
+                    /**
                      * 获取识别到的文本信息
                      * @return TextInfo 识别到的文本信息
                      */
@@ -65,6 +84,12 @@ namespace TencentCloud
                     bool TextInfoHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 识别到的详细信息
+                     */
+                    std::vector<OCRItem> m_item;
+                    bool m_itemHasBeenSet;
 
                     /**
                      * 识别到的文本信息

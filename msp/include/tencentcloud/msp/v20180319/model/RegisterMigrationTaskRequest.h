@@ -99,42 +99,6 @@ namespace TencentCloud
                     bool ServiceSupplierHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务源信息
-                     * @return SrcInfo 迁移任务源信息
-                     */
-                    SrcInfo GetSrcInfo() const;
-
-                    /**
-                     * 设置迁移任务源信息
-                     * @param SrcInfo 迁移任务源信息
-                     */
-                    void SetSrcInfo(const SrcInfo& _srcInfo);
-
-                    /**
-                     * 判断参数 SrcInfo 是否已赋值
-                     * @return SrcInfo 是否已赋值
-                     */
-                    bool SrcInfoHasBeenSet() const;
-
-                    /**
-                     * 获取迁移任务目的信息
-                     * @return DstInfo 迁移任务目的信息
-                     */
-                    DstInfo GetDstInfo() const;
-
-                    /**
-                     * 设置迁移任务目的信息
-                     * @param DstInfo 迁移任务目的信息
-                     */
-                    void SetDstInfo(const DstInfo& _dstInfo);
-
-                    /**
-                     * 判断参数 DstInfo 是否已赋值
-                     * @return DstInfo 是否已赋值
-                     */
-                    bool DstInfoHasBeenSet() const;
-
-                    /**
                      * 获取迁移任务创建时间
                      * @return CreateTime 迁移任务创建时间
                      */
@@ -187,6 +151,42 @@ namespace TencentCloud
                      * @return MigrateClass 是否已赋值
                      */
                     bool MigrateClassHasBeenSet() const;
+
+                    /**
+                     * 获取迁移任务源信息
+                     * @return SrcInfo 迁移任务源信息
+                     */
+                    SrcInfo GetSrcInfo() const;
+
+                    /**
+                     * 设置迁移任务源信息
+                     * @param SrcInfo 迁移任务源信息
+                     */
+                    void SetSrcInfo(const SrcInfo& _srcInfo);
+
+                    /**
+                     * 判断参数 SrcInfo 是否已赋值
+                     * @return SrcInfo 是否已赋值
+                     */
+                    bool SrcInfoHasBeenSet() const;
+
+                    /**
+                     * 获取迁移任务目的信息
+                     * @return DstInfo 迁移任务目的信息
+                     */
+                    DstInfo GetDstInfo() const;
+
+                    /**
+                     * 设置迁移任务目的信息
+                     * @param DstInfo 迁移任务目的信息
+                     */
+                    void SetDstInfo(const DstInfo& _dstInfo);
+
+                    /**
+                     * 判断参数 DstInfo 是否已赋值
+                     * @return DstInfo 是否已赋值
+                     */
+                    bool DstInfoHasBeenSet() const;
 
                     /**
                      * 获取源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
@@ -281,18 +281,6 @@ namespace TencentCloud
                     bool m_serviceSupplierHasBeenSet;
 
                     /**
-                     * 迁移任务源信息
-                     */
-                    SrcInfo m_srcInfo;
-                    bool m_srcInfoHasBeenSet;
-
-                    /**
-                     * 迁移任务目的信息
-                     */
-                    DstInfo m_dstInfo;
-                    bool m_dstInfoHasBeenSet;
-
-                    /**
                      * 迁移任务创建时间
                      */
                     std::string m_createTime;
@@ -309,6 +297,18 @@ namespace TencentCloud
                      */
                     std::string m_migrateClass;
                     bool m_migrateClassHasBeenSet;
+
+                    /**
+                     * 迁移任务源信息
+                     */
+                    SrcInfo m_srcInfo;
+                    bool m_srcInfoHasBeenSet;
+
+                    /**
+                     * 迁移任务目的信息
+                     */
+                    DstInfo m_dstInfo;
+                    bool m_dstInfoHasBeenSet;
 
                     /**
                      * 源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)
