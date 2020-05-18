@@ -25,24 +25,34 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/gse/v20191112/model/CreateGameServerSessionRequest.h>
 #include <tencentcloud/gse/v20191112/model/CreateGameServerSessionResponse.h>
+#include <tencentcloud/gse/v20191112/model/DeleteScalingPolicyRequest.h>
+#include <tencentcloud/gse/v20191112/model/DeleteScalingPolicyResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionDetailsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionDetailsResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionPlacementRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionPlacementResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionQueuesRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionQueuesResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeGameServerSessionsResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribeInstancesRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribeInstancesResponse.h>
 #include <tencentcloud/gse/v20191112/model/DescribePlayerSessionsRequest.h>
 #include <tencentcloud/gse/v20191112/model/DescribePlayerSessionsResponse.h>
+#include <tencentcloud/gse/v20191112/model/DescribeScalingPoliciesRequest.h>
+#include <tencentcloud/gse/v20191112/model/DescribeScalingPoliciesResponse.h>
 #include <tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlRequest.h>
 #include <tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlResponse.h>
 #include <tencentcloud/gse/v20191112/model/GetInstanceAccessRequest.h>
 #include <tencentcloud/gse/v20191112/model/GetInstanceAccessResponse.h>
 #include <tencentcloud/gse/v20191112/model/JoinGameServerSessionRequest.h>
 #include <tencentcloud/gse/v20191112/model/JoinGameServerSessionResponse.h>
+#include <tencentcloud/gse/v20191112/model/PutScalingPolicyRequest.h>
+#include <tencentcloud/gse/v20191112/model/PutScalingPolicyResponse.h>
 #include <tencentcloud/gse/v20191112/model/SearchGameServerSessionsRequest.h>
 #include <tencentcloud/gse/v20191112/model/SearchGameServerSessionsResponse.h>
+#include <tencentcloud/gse/v20191112/model/SetServerWeightRequest.h>
+#include <tencentcloud/gse/v20191112/model/SetServerWeightResponse.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementRequest.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementResponse.h>
 #include <tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementRequest.h>
@@ -66,12 +76,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateGameServerSessionResponse> CreateGameServerSessionOutcome;
                 typedef std::future<CreateGameServerSessionOutcome> CreateGameServerSessionOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::CreateGameServerSessionRequest&, CreateGameServerSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGameServerSessionAsyncHandler;
+                typedef Outcome<Error, Model::DeleteScalingPolicyResponse> DeleteScalingPolicyOutcome;
+                typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DeleteScalingPolicyRequest&, DeleteScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScalingPolicyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGameServerSessionDetailsResponse> DescribeGameServerSessionDetailsOutcome;
                 typedef std::future<DescribeGameServerSessionDetailsOutcome> DescribeGameServerSessionDetailsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeGameServerSessionDetailsRequest&, DescribeGameServerSessionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGameServerSessionDetailsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGameServerSessionPlacementResponse> DescribeGameServerSessionPlacementOutcome;
                 typedef std::future<DescribeGameServerSessionPlacementOutcome> DescribeGameServerSessionPlacementOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeGameServerSessionPlacementRequest&, DescribeGameServerSessionPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGameServerSessionPlacementAsyncHandler;
+                typedef Outcome<Error, Model::DescribeGameServerSessionQueuesResponse> DescribeGameServerSessionQueuesOutcome;
+                typedef std::future<DescribeGameServerSessionQueuesOutcome> DescribeGameServerSessionQueuesOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeGameServerSessionQueuesRequest&, DescribeGameServerSessionQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGameServerSessionQueuesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeGameServerSessionsResponse> DescribeGameServerSessionsOutcome;
                 typedef std::future<DescribeGameServerSessionsOutcome> DescribeGameServerSessionsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribeGameServerSessionsRequest&, DescribeGameServerSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGameServerSessionsAsyncHandler;
@@ -81,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePlayerSessionsResponse> DescribePlayerSessionsOutcome;
                 typedef std::future<DescribePlayerSessionsOutcome> DescribePlayerSessionsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DescribePlayerSessionsRequest&, DescribePlayerSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayerSessionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeScalingPoliciesResponse> DescribeScalingPoliciesOutcome;
+                typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::DescribeScalingPoliciesRequest&, DescribeScalingPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingPoliciesAsyncHandler;
                 typedef Outcome<Error, Model::GetGameServerSessionLogUrlResponse> GetGameServerSessionLogUrlOutcome;
                 typedef std::future<GetGameServerSessionLogUrlOutcome> GetGameServerSessionLogUrlOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::GetGameServerSessionLogUrlRequest&, GetGameServerSessionLogUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGameServerSessionLogUrlAsyncHandler;
@@ -90,9 +109,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::JoinGameServerSessionResponse> JoinGameServerSessionOutcome;
                 typedef std::future<JoinGameServerSessionOutcome> JoinGameServerSessionOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::JoinGameServerSessionRequest&, JoinGameServerSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> JoinGameServerSessionAsyncHandler;
+                typedef Outcome<Error, Model::PutScalingPolicyResponse> PutScalingPolicyOutcome;
+                typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::PutScalingPolicyRequest&, PutScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutScalingPolicyAsyncHandler;
                 typedef Outcome<Error, Model::SearchGameServerSessionsResponse> SearchGameServerSessionsOutcome;
                 typedef std::future<SearchGameServerSessionsOutcome> SearchGameServerSessionsOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::SearchGameServerSessionsRequest&, SearchGameServerSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchGameServerSessionsAsyncHandler;
+                typedef Outcome<Error, Model::SetServerWeightResponse> SetServerWeightOutcome;
+                typedef std::future<SetServerWeightOutcome> SetServerWeightOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::SetServerWeightRequest&, SetServerWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetServerWeightAsyncHandler;
                 typedef Outcome<Error, Model::StartGameServerSessionPlacementResponse> StartGameServerSessionPlacementOutcome;
                 typedef std::future<StartGameServerSessionPlacementOutcome> StartGameServerSessionPlacementOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::StartGameServerSessionPlacementRequest&, StartGameServerSessionPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartGameServerSessionPlacementAsyncHandler;
@@ -115,6 +140,15 @@ namespace TencentCloud
                 CreateGameServerSessionOutcomeCallable CreateGameServerSessionCallable(const Model::CreateGameServerSessionRequest& request);
 
                 /**
+                 *用于删除扩缩容配置
+                 * @param req DeleteScalingPolicyRequest
+                 * @return DeleteScalingPolicyOutcome
+                 */
+                DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest &request);
+                void DeleteScalingPolicyAsync(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScalingPolicyOutcomeCallable DeleteScalingPolicyCallable(const Model::DeleteScalingPolicyRequest& request);
+
+                /**
                  *本接口（DescribeGameServerSessionDetails）用于查询游戏服务器会话详情列表
                  * @param req DescribeGameServerSessionDetailsRequest
                  * @return DescribeGameServerSessionDetailsOutcome
@@ -131,6 +165,15 @@ namespace TencentCloud
                 DescribeGameServerSessionPlacementOutcome DescribeGameServerSessionPlacement(const Model::DescribeGameServerSessionPlacementRequest &request);
                 void DescribeGameServerSessionPlacementAsync(const Model::DescribeGameServerSessionPlacementRequest& request, const DescribeGameServerSessionPlacementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGameServerSessionPlacementOutcomeCallable DescribeGameServerSessionPlacementCallable(const Model::DescribeGameServerSessionPlacementRequest& request);
+
+                /**
+                 *本接口（DescribeGameServerSessionQueues）用于查询游戏服务器会话队列
+                 * @param req DescribeGameServerSessionQueuesRequest
+                 * @return DescribeGameServerSessionQueuesOutcome
+                 */
+                DescribeGameServerSessionQueuesOutcome DescribeGameServerSessionQueues(const Model::DescribeGameServerSessionQueuesRequest &request);
+                void DescribeGameServerSessionQueuesAsync(const Model::DescribeGameServerSessionQueuesRequest& request, const DescribeGameServerSessionQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGameServerSessionQueuesOutcomeCallable DescribeGameServerSessionQueuesCallable(const Model::DescribeGameServerSessionQueuesRequest& request);
 
                 /**
                  *本接口（DescribeGameServerSessions）用于查询游戏服务器会话列表
@@ -160,6 +203,15 @@ namespace TencentCloud
                 DescribePlayerSessionsOutcomeCallable DescribePlayerSessionsCallable(const Model::DescribePlayerSessionsRequest& request);
 
                 /**
+                 *用于查询服务部署的动态扩缩容配置
+                 * @param req DescribeScalingPoliciesRequest
+                 * @return DescribeScalingPoliciesOutcome
+                 */
+                DescribeScalingPoliciesOutcome DescribeScalingPolicies(const Model::DescribeScalingPoliciesRequest &request);
+                void DescribeScalingPoliciesAsync(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScalingPoliciesOutcomeCallable DescribeScalingPoliciesCallable(const Model::DescribeScalingPoliciesRequest& request);
+
+                /**
                  *本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL
                  * @param req GetGameServerSessionLogUrlRequest
                  * @return GetGameServerSessionLogUrlOutcome
@@ -187,6 +239,15 @@ namespace TencentCloud
                 JoinGameServerSessionOutcomeCallable JoinGameServerSessionCallable(const Model::JoinGameServerSessionRequest& request);
 
                 /**
+                 *用于设置动态扩缩容配置
+                 * @param req PutScalingPolicyRequest
+                 * @return PutScalingPolicyOutcome
+                 */
+                PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest &request);
+                void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request);
+
+                /**
                  *本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表
                  * @param req SearchGameServerSessionsRequest
                  * @return SearchGameServerSessionsOutcome
@@ -194,6 +255,15 @@ namespace TencentCloud
                 SearchGameServerSessionsOutcome SearchGameServerSessions(const Model::SearchGameServerSessionsRequest &request);
                 void SearchGameServerSessionsAsync(const Model::SearchGameServerSessionsRequest& request, const SearchGameServerSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchGameServerSessionsOutcomeCallable SearchGameServerSessionsCallable(const Model::SearchGameServerSessionsRequest& request);
+
+                /**
+                 *设置服务器权重
+                 * @param req SetServerWeightRequest
+                 * @return SetServerWeightOutcome
+                 */
+                SetServerWeightOutcome SetServerWeight(const Model::SetServerWeightRequest &request);
+                void SetServerWeightAsync(const Model::SetServerWeightRequest& request, const SetServerWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetServerWeightOutcomeCallable SetServerWeightCallable(const Model::SetServerWeightRequest& request);
 
                 /**
                  *本接口（StartGameServerSessionPlacement）用于开始放置游戏服务器会话

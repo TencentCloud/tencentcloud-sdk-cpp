@@ -28,7 +28,8 @@ DeleteRuleRequest::DeleteRuleRequest() :
     m_listenerIdHasBeenSet(false),
     m_locationIdsHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_newDefaultServerDomainHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string DeleteRuleRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newDefaultServerDomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NewDefaultServerDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_newDefaultServerDomain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void DeleteRuleRequest::SetUrl(const string& _url)
 bool DeleteRuleRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string DeleteRuleRequest::GetNewDefaultServerDomain() const
+{
+    return m_newDefaultServerDomain;
+}
+
+void DeleteRuleRequest::SetNewDefaultServerDomain(const string& _newDefaultServerDomain)
+{
+    m_newDefaultServerDomain = _newDefaultServerDomain;
+    m_newDefaultServerDomainHasBeenSet = true;
+}
+
+bool DeleteRuleRequest::NewDefaultServerDomainHasBeenSet() const
+{
+    return m_newDefaultServerDomainHasBeenSet;
 }
 
 

@@ -20,14 +20,20 @@ set(gse_public_header
 
 set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/GameProperty.h
-  include/tencentcloud/gse/v20191112/model/UpdateGameServerSessionResponse.h
+  include/tencentcloud/gse/v20191112/model/TargetConfiguration.h
+  include/tencentcloud/gse/v20191112/model/DeleteScalingPolicyRequest.h
+  include/tencentcloud/gse/v20191112/model/PlacedPlayerSession.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionsResponse.h
   include/tencentcloud/gse/v20191112/model/Instance.h
+  include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionQueuesResponse.h
   include/tencentcloud/gse/v20191112/model/GetInstanceAccessResponse.h
   include/tencentcloud/gse/v20191112/model/JoinGameServerSessionRequest.h
   include/tencentcloud/gse/v20191112/model/DescribePlayerSessionsResponse.h
+  include/tencentcloud/gse/v20191112/model/SetServerWeightResponse.h
   include/tencentcloud/gse/v20191112/model/PlayerLatency.h
   include/tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementRequest.h
+  include/tencentcloud/gse/v20191112/model/UpdateGameServerSessionResponse.h
+  include/tencentcloud/gse/v20191112/model/ScalingPolicy.h
   include/tencentcloud/gse/v20191112/model/GetInstanceAccessRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionsRequest.h
   include/tencentcloud/gse/v20191112/model/UpdateGameServerSessionRequest.h
@@ -38,13 +44,19 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlRequest.h
   include/tencentcloud/gse/v20191112/model/CreateGameServerSessionResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeInstancesRequest.h
+  include/tencentcloud/gse/v20191112/model/DescribeScalingPoliciesRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionDetailsResponse.h
+  include/tencentcloud/gse/v20191112/model/PlayerLatencyPolicy.h
+  include/tencentcloud/gse/v20191112/model/PutScalingPolicyResponse.h
   include/tencentcloud/gse/v20191112/model/JoinGameServerSessionResponse.h
   include/tencentcloud/gse/v20191112/model/DesiredPlayerSession.h
   include/tencentcloud/gse/v20191112/model/SearchGameServerSessionsResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionPlacementRequest.h
-  include/tencentcloud/gse/v20191112/model/PlacedPlayerSession.h
+  include/tencentcloud/gse/v20191112/model/DescribeScalingPoliciesResponse.h
+  include/tencentcloud/gse/v20191112/model/GameServerSessionQueueDestination.h
   include/tencentcloud/gse/v20191112/model/GameServerSessionPlacement.h
+  include/tencentcloud/gse/v20191112/model/GameServerSessionQueue.h
+  include/tencentcloud/gse/v20191112/model/SetServerWeightRequest.h
   include/tencentcloud/gse/v20191112/model/PlayerSession.h
   include/tencentcloud/gse/v20191112/model/CreateGameServerSessionRequest.h
   include/tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlResponse.h
@@ -52,8 +64,11 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionDetailsRequest.h
   include/tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementRequest.h
   include/tencentcloud/gse/v20191112/model/GameServerSession.h
+  include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionQueuesRequest.h
+  include/tencentcloud/gse/v20191112/model/DeleteScalingPolicyResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionPlacementResponse.h
   include/tencentcloud/gse/v20191112/model/SearchGameServerSessionsRequest.h
+  include/tencentcloud/gse/v20191112/model/PutScalingPolicyRequest.h
   include/tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementResponse.h
   include/tencentcloud/gse/v20191112/model/InstanceAccess.h
   )
@@ -61,14 +76,20 @@ set(gse_public_header_model
 set(gse_src
   src/v20191112/GseClient.cpp
   src/v20191112/model/GameProperty.cpp
-  src/v20191112/model/UpdateGameServerSessionResponse.cpp
+  src/v20191112/model/TargetConfiguration.cpp
+  src/v20191112/model/DeleteScalingPolicyRequest.cpp
+  src/v20191112/model/PlacedPlayerSession.cpp
   src/v20191112/model/DescribeGameServerSessionsResponse.cpp
   src/v20191112/model/Instance.cpp
+  src/v20191112/model/DescribeGameServerSessionQueuesResponse.cpp
   src/v20191112/model/GetInstanceAccessResponse.cpp
   src/v20191112/model/JoinGameServerSessionRequest.cpp
   src/v20191112/model/DescribePlayerSessionsResponse.cpp
+  src/v20191112/model/SetServerWeightResponse.cpp
   src/v20191112/model/PlayerLatency.cpp
   src/v20191112/model/StopGameServerSessionPlacementRequest.cpp
+  src/v20191112/model/UpdateGameServerSessionResponse.cpp
+  src/v20191112/model/ScalingPolicy.cpp
   src/v20191112/model/GetInstanceAccessRequest.cpp
   src/v20191112/model/DescribeGameServerSessionsRequest.cpp
   src/v20191112/model/UpdateGameServerSessionRequest.cpp
@@ -79,13 +100,19 @@ set(gse_src
   src/v20191112/model/GetGameServerSessionLogUrlRequest.cpp
   src/v20191112/model/CreateGameServerSessionResponse.cpp
   src/v20191112/model/DescribeInstancesRequest.cpp
+  src/v20191112/model/DescribeScalingPoliciesRequest.cpp
   src/v20191112/model/DescribeGameServerSessionDetailsResponse.cpp
+  src/v20191112/model/PlayerLatencyPolicy.cpp
+  src/v20191112/model/PutScalingPolicyResponse.cpp
   src/v20191112/model/JoinGameServerSessionResponse.cpp
   src/v20191112/model/DesiredPlayerSession.cpp
   src/v20191112/model/SearchGameServerSessionsResponse.cpp
   src/v20191112/model/DescribeGameServerSessionPlacementRequest.cpp
-  src/v20191112/model/PlacedPlayerSession.cpp
+  src/v20191112/model/DescribeScalingPoliciesResponse.cpp
+  src/v20191112/model/GameServerSessionQueueDestination.cpp
   src/v20191112/model/GameServerSessionPlacement.cpp
+  src/v20191112/model/GameServerSessionQueue.cpp
+  src/v20191112/model/SetServerWeightRequest.cpp
   src/v20191112/model/PlayerSession.cpp
   src/v20191112/model/CreateGameServerSessionRequest.cpp
   src/v20191112/model/GetGameServerSessionLogUrlResponse.cpp
@@ -93,8 +120,11 @@ set(gse_src
   src/v20191112/model/DescribeGameServerSessionDetailsRequest.cpp
   src/v20191112/model/StartGameServerSessionPlacementRequest.cpp
   src/v20191112/model/GameServerSession.cpp
+  src/v20191112/model/DescribeGameServerSessionQueuesRequest.cpp
+  src/v20191112/model/DeleteScalingPolicyResponse.cpp
   src/v20191112/model/DescribeGameServerSessionPlacementResponse.cpp
   src/v20191112/model/SearchGameServerSessionsRequest.cpp
+  src/v20191112/model/PutScalingPolicyRequest.cpp
   src/v20191112/model/StopGameServerSessionPlacementResponse.cpp
   src/v20191112/model/InstanceAccess.cpp
   )

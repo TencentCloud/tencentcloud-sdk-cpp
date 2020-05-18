@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool DefaultServerHasBeenSet() const;
 
+                    /**
+                     * 获取监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     * @return NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     */
+                    std::string GetNewDefaultServerDomain() const;
+
+                    /**
+                     * 设置监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     * @param NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     */
+                    void SetNewDefaultServerDomain(const std::string& _newDefaultServerDomain);
+
+                    /**
+                     * 判断参数 NewDefaultServerDomain 是否已赋值
+                     * @return NewDefaultServerDomain 是否已赋值
+                     */
+                    bool NewDefaultServerDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     bool m_defaultServer;
                     bool m_defaultServerHasBeenSet;
+
+                    /**
+                     * 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     */
+                    std::string m_newDefaultServerDomain;
+                    bool m_newDefaultServerDomainHasBeenSet;
 
                 };
             }

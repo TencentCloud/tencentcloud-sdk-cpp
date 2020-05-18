@@ -30,7 +30,8 @@ ModifyDomainAttributesRequest::ModifyDomainAttributesRequest() :
     m_newDomainHasBeenSet(false),
     m_certificateHasBeenSet(false),
     m_http2HasBeenSet(false),
-    m_defaultServerHasBeenSet(false)
+    m_defaultServerHasBeenSet(false),
+    m_newDefaultServerDomainHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string ModifyDomainAttributesRequest::ToJsonString() const
         string key = "DefaultServer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultServer, allocator);
+    }
+
+    if (m_newDefaultServerDomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NewDefaultServerDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_newDefaultServerDomain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -216,6 +225,22 @@ void ModifyDomainAttributesRequest::SetDefaultServer(const bool& _defaultServer)
 bool ModifyDomainAttributesRequest::DefaultServerHasBeenSet() const
 {
     return m_defaultServerHasBeenSet;
+}
+
+string ModifyDomainAttributesRequest::GetNewDefaultServerDomain() const
+{
+    return m_newDefaultServerDomain;
+}
+
+void ModifyDomainAttributesRequest::SetNewDefaultServerDomain(const string& _newDefaultServerDomain)
+{
+    m_newDefaultServerDomain = _newDefaultServerDomain;
+    m_newDefaultServerDomainHasBeenSet = true;
+}
+
+bool ModifyDomainAttributesRequest::NewDefaultServerDomainHasBeenSet() const
+{
+    return m_newDefaultServerDomainHasBeenSet;
 }
 
 

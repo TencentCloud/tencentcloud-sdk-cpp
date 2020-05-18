@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool NextTokenHasBeenSet() const;
 
                     /**
-                     * 获取游戏服务器会话状态
-                     * @return StatusFilter 游戏服务器会话状态
+                     * 获取游戏服务器会话状态(ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR)
+                     * @return StatusFilter 游戏服务器会话状态(ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR)
                      */
                     std::string GetStatusFilter() const;
 
                     /**
-                     * 设置游戏服务器会话状态
-                     * @param StatusFilter 游戏服务器会话状态
+                     * 设置游戏服务器会话状态(ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR)
+                     * @param StatusFilter 游戏服务器会话状态(ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR)
                      */
                     void SetStatusFilter(const std::string& _statusFilter);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_nextTokenHasBeenSet;
 
                     /**
-                     * 游戏服务器会话状态
+                     * 游戏服务器会话状态(ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR)
                      */
                     std::string m_statusFilter;
                     bool m_statusFilterHasBeenSet;

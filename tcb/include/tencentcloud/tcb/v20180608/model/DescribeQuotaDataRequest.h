@@ -83,6 +83,8 @@ namespace TencentCloud
 <li> StaticFsFluxPkgDay: 当日静态托管流量 </li>
 <li> StaticFsFluxPkg: 当月静态托管流量</li>
 <li> StaticFsSizePkg: 当月静态托管容量 </li>
+<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核 </li>
+<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB </li>
                      * @return MetricName <li> 指标名: </li>
 <li> StorageSizepkg: 当月存储空间容量, 单位MB </li>
 <li> StorageReadpkg: 当月存储读请求次数 </li>
@@ -105,6 +107,8 @@ namespace TencentCloud
 <li> StaticFsFluxPkgDay: 当日静态托管流量 </li>
 <li> StaticFsFluxPkg: 当月静态托管流量</li>
 <li> StaticFsSizePkg: 当月静态托管容量 </li>
+<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核 </li>
+<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB </li>
                      */
                     std::string GetMetricName() const;
 
@@ -131,6 +135,8 @@ namespace TencentCloud
 <li> StaticFsFluxPkgDay: 当日静态托管流量 </li>
 <li> StaticFsFluxPkg: 当月静态托管流量</li>
 <li> StaticFsSizePkg: 当月静态托管容量 </li>
+<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核 </li>
+<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB </li>
                      * @param MetricName <li> 指标名: </li>
 <li> StorageSizepkg: 当月存储空间容量, 单位MB </li>
 <li> StorageReadpkg: 当月存储读请求次数 </li>
@@ -153,6 +159,8 @@ namespace TencentCloud
 <li> StaticFsFluxPkgDay: 当日静态托管流量 </li>
 <li> StaticFsFluxPkg: 当月静态托管流量</li>
 <li> StaticFsSizePkg: 当月静态托管容量 </li>
+<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核 </li>
+<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB </li>
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -163,14 +171,14 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取资源ID, 目前仅对云函数相关的指标(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)有意义, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.
-                     * @return ResourceID 资源ID, 目前仅对云函数相关的指标(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)有意义, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.
+                     * 获取资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。
+                     * @return ResourceID 资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。
                      */
                     std::string GetResourceID() const;
 
                     /**
-                     * 设置资源ID, 目前仅对云函数相关的指标(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)有意义, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.
-                     * @param ResourceID 资源ID, 目前仅对云函数相关的指标(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)有意义, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.
+                     * 设置资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。
+                     * @param ResourceID 资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。
                      */
                     void SetResourceID(const std::string& _resourceID);
 
@@ -211,12 +219,14 @@ namespace TencentCloud
 <li> StaticFsFluxPkgDay: 当日静态托管流量 </li>
 <li> StaticFsFluxPkg: 当月静态托管流量</li>
 <li> StaticFsSizePkg: 当月静态托管容量 </li>
+<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核 </li>
+<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB </li>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 资源ID, 目前仅对云函数相关的指标(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)有意义, 如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传.
+                     * 资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。
                      */
                     std::string m_resourceID;
                     bool m_resourceIDHasBeenSet;

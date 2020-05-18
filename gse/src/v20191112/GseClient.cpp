@@ -83,6 +83,49 @@ GseClient::CreateGameServerSessionOutcomeCallable GseClient::CreateGameServerSes
     return task->get_future();
 }
 
+GseClient::DeleteScalingPolicyOutcome GseClient::DeleteScalingPolicy(const DeleteScalingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScalingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScalingPolicyResponse rsp = DeleteScalingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScalingPolicyOutcome(rsp);
+        else
+            return DeleteScalingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScalingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DeleteScalingPolicyAsync(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteScalingPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DeleteScalingPolicyOutcomeCallable GseClient::DeleteScalingPolicyCallable(const DeleteScalingPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScalingPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteScalingPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::DescribeGameServerSessionDetailsOutcome GseClient::DescribeGameServerSessionDetails(const DescribeGameServerSessionDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGameServerSessionDetails");
@@ -162,6 +205,49 @@ GseClient::DescribeGameServerSessionPlacementOutcomeCallable GseClient::Describe
         [this, request]()
         {
             return this->DescribeGameServerSessionPlacement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::DescribeGameServerSessionQueuesOutcome GseClient::DescribeGameServerSessionQueues(const DescribeGameServerSessionQueuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGameServerSessionQueues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGameServerSessionQueuesResponse rsp = DescribeGameServerSessionQueuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGameServerSessionQueuesOutcome(rsp);
+        else
+            return DescribeGameServerSessionQueuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGameServerSessionQueuesOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeGameServerSessionQueuesAsync(const DescribeGameServerSessionQueuesRequest& request, const DescribeGameServerSessionQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGameServerSessionQueues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeGameServerSessionQueuesOutcomeCallable GseClient::DescribeGameServerSessionQueuesCallable(const DescribeGameServerSessionQueuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGameServerSessionQueuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGameServerSessionQueues(request);
         }
     );
 
@@ -298,6 +384,49 @@ GseClient::DescribePlayerSessionsOutcomeCallable GseClient::DescribePlayerSessio
     return task->get_future();
 }
 
+GseClient::DescribeScalingPoliciesOutcome GseClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScalingPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScalingPoliciesResponse rsp = DescribeScalingPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScalingPoliciesOutcome(rsp);
+        else
+            return DescribeScalingPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScalingPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::DescribeScalingPoliciesAsync(const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScalingPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::DescribeScalingPoliciesOutcomeCallable GseClient::DescribeScalingPoliciesCallable(const DescribeScalingPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScalingPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScalingPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::GetGameServerSessionLogUrlOutcome GseClient::GetGameServerSessionLogUrl(const GetGameServerSessionLogUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "GetGameServerSessionLogUrl");
@@ -427,6 +556,49 @@ GseClient::JoinGameServerSessionOutcomeCallable GseClient::JoinGameServerSession
     return task->get_future();
 }
 
+GseClient::PutScalingPolicyOutcome GseClient::PutScalingPolicy(const PutScalingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutScalingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutScalingPolicyResponse rsp = PutScalingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutScalingPolicyOutcome(rsp);
+        else
+            return PutScalingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return PutScalingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& request, const PutScalingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutScalingPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::PutScalingPolicyOutcomeCallable GseClient::PutScalingPolicyCallable(const PutScalingPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutScalingPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->PutScalingPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::SearchGameServerSessionsOutcome GseClient::SearchGameServerSessions(const SearchGameServerSessionsRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchGameServerSessions");
@@ -463,6 +635,49 @@ GseClient::SearchGameServerSessionsOutcomeCallable GseClient::SearchGameServerSe
         [this, request]()
         {
             return this->SearchGameServerSessions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GseClient::SetServerWeightOutcome GseClient::SetServerWeight(const SetServerWeightRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetServerWeight");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetServerWeightResponse rsp = SetServerWeightResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetServerWeightOutcome(rsp);
+        else
+            return SetServerWeightOutcome(o.GetError());
+    }
+    else
+    {
+        return SetServerWeightOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::SetServerWeightAsync(const SetServerWeightRequest& request, const SetServerWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetServerWeight(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::SetServerWeightOutcomeCallable GseClient::SetServerWeightCallable(const SetServerWeightRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetServerWeightOutcome()>>(
+        [this, request]()
+        {
+            return this->SetServerWeight(request);
         }
     );
 
