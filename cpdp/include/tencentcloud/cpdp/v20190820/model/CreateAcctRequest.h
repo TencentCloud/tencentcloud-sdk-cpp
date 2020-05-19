@@ -266,25 +266,25 @@ namespace TencentCloud
 
                     /**
                      * 获取子商户会员类型：
-general:普通子账户
-merchant:商户子账户
-缺省： general
+general: 普通子账户
+merchant: 商户子账户
+缺省: general
                      * @return SubMerchantMemberType 子商户会员类型：
-general:普通子账户
-merchant:商户子账户
-缺省： general
+general: 普通子账户
+merchant: 商户子账户
+缺省: general
                      */
                     std::string GetSubMerchantMemberType() const;
 
                     /**
                      * 设置子商户会员类型：
-general:普通子账户
-merchant:商户子账户
-缺省： general
+general: 普通子账户
+merchant: 商户子账户
+缺省: general
                      * @param SubMerchantMemberType 子商户会员类型：
-general:普通子账户
-merchant:商户子账户
-缺省： general
+general: 普通子账户
+merchant: 商户子账户
+缺省: general
                      */
                     void SetSubMerchantMemberType(const std::string& _subMerchantMemberType);
 
@@ -293,6 +293,98 @@ merchant:商户子账户
                      * @return SubMerchantMemberType 是否已赋值
                      */
                     bool SubMerchantMemberTypeHasBeenSet() const;
+
+                    /**
+                     * 获取子商户密钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     * @return SubMerchantKey 子商户密钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     */
+                    std::string GetSubMerchantKey() const;
+
+                    /**
+                     * 设置子商户密钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     * @param SubMerchantKey 子商户密钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     */
+                    void SetSubMerchantKey(const std::string& _subMerchantKey);
+
+                    /**
+                     * 判断参数 SubMerchantKey 是否已赋值
+                     * @return SubMerchantKey 是否已赋值
+                     */
+                    bool SubMerchantKeyHasBeenSet() const;
+
+                    /**
+                     * 获取子商户私钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     * @return SubMerchantPrivateKey 子商户私钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     */
+                    std::string GetSubMerchantPrivateKey() const;
+
+                    /**
+                     * 设置子商户私钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     * @param SubMerchantPrivateKey 子商户私钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     */
+                    void SetSubMerchantPrivateKey(const std::string& _subMerchantPrivateKey);
+
+                    /**
+                     * 判断参数 SubMerchantPrivateKey 是否已赋值
+                     * @return SubMerchantPrivateKey 是否已赋值
+                     */
+                    bool SubMerchantPrivateKeyHasBeenSet() const;
+
+                    /**
+                     * 获取敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     * @return EncryptType 敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     */
+                    std::string GetEncryptType() const;
+
+                    /**
+                     * 设置敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     * @param EncryptType 敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     */
+                    void SetEncryptType(const std::string& _encryptType);
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
+                    /**
+                     * 获取银行生成的子商户账户，已开户的场景需要录入
+                     * @return SubAcctNo 银行生成的子商户账户，已开户的场景需要录入
+                     */
+                    std::string GetSubAcctNo() const;
+
+                    /**
+                     * 设置银行生成的子商户账户，已开户的场景需要录入
+                     * @param SubAcctNo 银行生成的子商户账户，已开户的场景需要录入
+                     */
+                    void SetSubAcctNo(const std::string& _subAcctNo);
+
+                    /**
+                     * 判断参数 SubAcctNo 是否已赋值
+                     * @return SubAcctNo 是否已赋值
+                     */
+                    bool SubAcctNoHasBeenSet() const;
 
                 private:
 
@@ -370,12 +462,41 @@ merchant:商户子账户
 
                     /**
                      * 子商户会员类型：
-general:普通子账户
-merchant:商户子账户
-缺省： general
+general: 普通子账户
+merchant: 商户子账户
+缺省: general
                      */
                     std::string m_subMerchantMemberType;
                     bool m_subMerchantMemberTypeHasBeenSet;
+
+                    /**
+                     * 子商户密钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     */
+                    std::string m_subMerchantKey;
+                    bool m_subMerchantKeyHasBeenSet;
+
+                    /**
+                     * 子商户私钥
+<敏感信息>加密详见《商户端接口敏感信息加密说明》
+                     */
+                    std::string m_subMerchantPrivateKey;
+                    bool m_subMerchantPrivateKeyHasBeenSet;
+
+                    /**
+                     * 敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     */
+                    std::string m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
+
+                    /**
+                     * 银行生成的子商户账户，已开户的场景需要录入
+                     */
+                    std::string m_subAcctNo;
+                    bool m_subAcctNoHasBeenSet;
 
                 };
             }

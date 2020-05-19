@@ -115,6 +115,24 @@ namespace TencentCloud
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
+                    /**
+                     * 获取是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     * @return KeepData 是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     */
+                    std::string GetKeepData() const;
+
+                    /**
+                     * 设置是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     * @param KeepData 是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     */
+                    void SetKeepData(const std::string& _keepData);
+
+                    /**
+                     * 判断参数 KeepData 是否已赋值
+                     * @return KeepData 是否已赋值
+                     */
+                    bool KeepDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     EnhancedService m_enhancedService;
                     bool m_enhancedServiceHasBeenSet;
+
+                    /**
+                     * 是否保留数据盘数据，取值"true"/"false"。默认为"true"
+                     */
+                    std::string m_keepData;
+                    bool m_keepDataHasBeenSet;
 
                 };
             }

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CaptchaTypeHasBeenSet() const;
 
                     /**
-                     * 获取验证码返回给用户的票据
-                     * @return Ticket 验证码返回给用户的票据
+                     * 获取前端回调函数返回的用户验证票据
+                     * @return Ticket 前端回调函数返回的用户验证票据
                      */
                     std::string GetTicket() const;
 
                     /**
-                     * 设置验证码返回给用户的票据
-                     * @param Ticket 验证码返回给用户的票据
+                     * 设置前端回调函数返回的用户验证票据
+                     * @param Ticket 前端回调函数返回的用户验证票据
                      */
                     void SetTicket(const std::string& _ticket);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取验证票据需要的随机字符串
-                     * @return Randstr 验证票据需要的随机字符串
+                     * 获取前端回调函数返回的随机字符串
+                     * @return Randstr 前端回调函数返回的随机字符串
                      */
                     std::string GetRandstr() const;
 
                     /**
-                     * 设置验证票据需要的随机字符串
-                     * @param Randstr 验证票据需要的随机字符串
+                     * 设置前端回调函数返回的随机字符串
+                     * @param Randstr 前端回调函数返回的随机字符串
                      */
                     void SetRandstr(const std::string& _randstr);
 
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_captchaTypeHasBeenSet;
 
                     /**
-                     * 验证码返回给用户的票据
+                     * 前端回调函数返回的用户验证票据
                      */
                     std::string m_ticket;
                     bool m_ticketHasBeenSet;
@@ -261,7 +261,7 @@ namespace TencentCloud
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 验证票据需要的随机字符串
+                     * 前端回调函数返回的随机字符串
                      */
                     std::string m_randstr;
                     bool m_randstrHasBeenSet;

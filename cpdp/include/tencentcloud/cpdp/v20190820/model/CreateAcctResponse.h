@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取平安银行生成的子商户账户
-                     * @return SubAcctNo 平安银行生成的子商户账户
+                     * 获取银行生成的子商户账户
+                     * @return SubAcctNo 银行生成的子商户账户
                      */
                     std::string GetSubAcctNo() const;
 
@@ -75,7 +75,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 平安银行生成的子商户账户
+                     * 银行生成的子商户账户
                      */
                     std::string m_subAcctNo;
                     bool m_subAcctNoHasBeenSet;

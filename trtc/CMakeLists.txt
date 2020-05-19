@@ -37,9 +37,11 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h
   include/tencentcloud/trtc/v20190722/model/OutputParams.h
+  include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h
   include/tencentcloud/trtc/v20190722/model/QualityData.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
+  include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h
   include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h
@@ -70,9 +72,11 @@ set(trtc_src
   src/v20190722/model/DescribeHistoryScaleRequest.cpp
   src/v20190722/model/DescribeRoomInformationResponse.cpp
   src/v20190722/model/OutputParams.cpp
+  src/v20190722/model/CreateTroubleInfoResponse.cpp
   src/v20190722/model/QualityData.cpp
   src/v20190722/model/DescribeRealtimeNetworkResponse.cpp
   src/v20190722/model/ScaleInfomation.cpp
+  src/v20190722/model/CreateTroubleInfoRequest.cpp
   src/v20190722/model/StartMCUMixTranscodeResponse.cpp
   src/v20190722/model/DescribeRealtimeScaleRequest.cpp
   src/v20190722/model/DescribeCallDetailResponse.cpp

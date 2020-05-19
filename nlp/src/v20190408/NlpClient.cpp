@@ -642,6 +642,49 @@ NlpClient::TextCorrectionOutcomeCallable NlpClient::TextCorrectionCallable(const
     return task->get_future();
 }
 
+NlpClient::TextSimilarityOutcome NlpClient::TextSimilarity(const TextSimilarityRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextSimilarity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextSimilarityResponse rsp = TextSimilarityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextSimilarityOutcome(rsp);
+        else
+            return TextSimilarityOutcome(o.GetError());
+    }
+    else
+    {
+        return TextSimilarityOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::TextSimilarityAsync(const TextSimilarityRequest& request, const TextSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextSimilarity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::TextSimilarityOutcomeCallable NlpClient::TextSimilarityCallable(const TextSimilarityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextSimilarityOutcome()>>(
+        [this, request]()
+        {
+            return this->TextSimilarity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::WordEmbeddingOutcome NlpClient::WordEmbedding(const WordEmbeddingRequest &request)
 {
     auto outcome = MakeRequest(request, "WordEmbedding");

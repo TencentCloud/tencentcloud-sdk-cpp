@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h>
+#include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
@@ -57,6 +59,9 @@ namespace TencentCloud
                 TrtcClient(const Credential &credential, const std::string &region);
                 TrtcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateTroubleInfoResponse> CreateTroubleInfoOutcome;
+                typedef std::future<CreateTroubleInfoOutcome> CreateTroubleInfoOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreateTroubleInfoRequest&, CreateTroubleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTroubleInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCallDetailResponse> DescribeCallDetailOutcome;
                 typedef std::future<DescribeCallDetailOutcome> DescribeCallDetailOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailRequest&, DescribeCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailAsyncHandler;
@@ -89,6 +94,15 @@ namespace TencentCloud
                 typedef std::function<void(const TrtcClient*, const Model::StopMCUMixTranscodeRequest&, StopMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMCUMixTranscodeAsyncHandler;
 
 
+
+                /**
+                 *创建异常信息
+                 * @param req CreateTroubleInfoRequest
+                 * @return CreateTroubleInfoOutcome
+                 */
+                CreateTroubleInfoOutcome CreateTroubleInfo(const Model::CreateTroubleInfoRequest &request);
+                void CreateTroubleInfoAsync(const Model::CreateTroubleInfoRequest& request, const CreateTroubleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTroubleInfoOutcomeCallable CreateTroubleInfoCallable(const Model::CreateTroubleInfoRequest& request);
 
                 /**
                  *查询指定时间内的用户列表及用户通话质量数据。可查询5天内数据，查询起止时间不超过1个小时，查询用户不超过6个

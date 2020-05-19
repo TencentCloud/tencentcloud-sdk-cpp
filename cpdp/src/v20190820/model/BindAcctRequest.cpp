@@ -37,7 +37,8 @@ BindAcctRequest::BindAcctRequest() :
     m_midasSignatureHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_cnapsBranchIdHasBeenSet(false),
-    m_eiconBankBranchIdHasBeenSet(false)
+    m_eiconBankBranchIdHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string BindAcctRequest::ToJsonString() const
         string key = "EiconBankBranchId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_eiconBankBranchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_encryptType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -390,6 +399,22 @@ void BindAcctRequest::SetEiconBankBranchId(const string& _eiconBankBranchId)
 bool BindAcctRequest::EiconBankBranchIdHasBeenSet() const
 {
     return m_eiconBankBranchIdHasBeenSet;
+}
+
+string BindAcctRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void BindAcctRequest::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool BindAcctRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
 }
 
 

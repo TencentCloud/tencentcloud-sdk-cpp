@@ -35,7 +35,11 @@ CreateAcctRequest::CreateAcctRequest() :
     m_midasSignatureHasBeenSet(false),
     m_subMchTypeHasBeenSet(false),
     m_shortNameHasBeenSet(false),
-    m_subMerchantMemberTypeHasBeenSet(false)
+    m_subMerchantMemberTypeHasBeenSet(false),
+    m_subMerchantKeyHasBeenSet(false),
+    m_subMerchantPrivateKeyHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false),
+    m_subAcctNoHasBeenSet(false)
 {
 }
 
@@ -140,6 +144,38 @@ string CreateAcctRequest::ToJsonString() const
         string key = "SubMerchantMemberType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subMerchantMemberType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subMerchantKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubMerchantKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subMerchantKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subMerchantPrivateKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubMerchantPrivateKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subMerchantPrivateKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_encryptType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAcctNoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubAcctNo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subAcctNo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -340,6 +376,70 @@ void CreateAcctRequest::SetSubMerchantMemberType(const string& _subMerchantMembe
 bool CreateAcctRequest::SubMerchantMemberTypeHasBeenSet() const
 {
     return m_subMerchantMemberTypeHasBeenSet;
+}
+
+string CreateAcctRequest::GetSubMerchantKey() const
+{
+    return m_subMerchantKey;
+}
+
+void CreateAcctRequest::SetSubMerchantKey(const string& _subMerchantKey)
+{
+    m_subMerchantKey = _subMerchantKey;
+    m_subMerchantKeyHasBeenSet = true;
+}
+
+bool CreateAcctRequest::SubMerchantKeyHasBeenSet() const
+{
+    return m_subMerchantKeyHasBeenSet;
+}
+
+string CreateAcctRequest::GetSubMerchantPrivateKey() const
+{
+    return m_subMerchantPrivateKey;
+}
+
+void CreateAcctRequest::SetSubMerchantPrivateKey(const string& _subMerchantPrivateKey)
+{
+    m_subMerchantPrivateKey = _subMerchantPrivateKey;
+    m_subMerchantPrivateKeyHasBeenSet = true;
+}
+
+bool CreateAcctRequest::SubMerchantPrivateKeyHasBeenSet() const
+{
+    return m_subMerchantPrivateKeyHasBeenSet;
+}
+
+string CreateAcctRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void CreateAcctRequest::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool CreateAcctRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
+}
+
+string CreateAcctRequest::GetSubAcctNo() const
+{
+    return m_subAcctNo;
+}
+
+void CreateAcctRequest::SetSubAcctNo(const string& _subAcctNo)
+{
+    m_subAcctNo = _subAcctNo;
+    m_subAcctNoHasBeenSet = true;
+}
+
+bool CreateAcctRequest::SubAcctNoHasBeenSet() const
+{
+    return m_subAcctNoHasBeenSet;
 }
 
 

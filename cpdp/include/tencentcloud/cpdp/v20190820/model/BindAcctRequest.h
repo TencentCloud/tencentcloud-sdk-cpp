@@ -81,9 +81,13 @@ namespace TencentCloud
                     /**
                      * 获取1 – 小额转账验证
 2 – 短信验证
+3 - 一分钱转账验证，无需再调CheckAcct验证绑卡
+4 - 银行四要素验证，无需再调CheckAcct验证绑卡
 每个结算账户每天只能使用一次小额转账验证
                      * @return BindType 1 – 小额转账验证
 2 – 短信验证
+3 - 一分钱转账验证，无需再调CheckAcct验证绑卡
+4 - 银行四要素验证，无需再调CheckAcct验证绑卡
 每个结算账户每天只能使用一次小额转账验证
                      */
                     int64_t GetBindType() const;
@@ -91,9 +95,13 @@ namespace TencentCloud
                     /**
                      * 设置1 – 小额转账验证
 2 – 短信验证
+3 - 一分钱转账验证，无需再调CheckAcct验证绑卡
+4 - 银行四要素验证，无需再调CheckAcct验证绑卡
 每个结算账户每天只能使用一次小额转账验证
                      * @param BindType 1 – 小额转账验证
 2 – 短信验证
+3 - 一分钱转账验证，无需再调CheckAcct验证绑卡
+4 - 银行四要素验证，无需再调CheckAcct验证绑卡
 每个结算账户每天只能使用一次小额转账验证
                      */
                     void SetBindType(const int64_t& _bindType);
@@ -334,6 +342,36 @@ BindType==2时必填
                      */
                     bool EiconBankBranchIdHasBeenSet() const;
 
+                    /**
+                     * 获取敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     * @return EncryptType 敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     */
+                    std::string GetEncryptType() const;
+
+                    /**
+                     * 设置敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     * @param EncryptType 敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     */
+                    void SetEncryptType(const std::string& _encryptType);
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -351,6 +389,8 @@ BindType==2时必填
                     /**
                      * 1 – 小额转账验证
 2 – 短信验证
+3 - 一分钱转账验证，无需再调CheckAcct验证绑卡
+4 - 银行四要素验证，无需再调CheckAcct验证绑卡
 每个结算账户每天只能使用一次小额转账验证
                      */
                     int64_t m_bindType;
@@ -429,6 +469,15 @@ BindType==2时必填
                      */
                     std::string m_eiconBankBranchId;
                     bool m_eiconBankBranchIdHasBeenSet;
+
+                    /**
+                     * 敏感信息加密类型:
+RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
+AES,  aes对称加密，使用AES256-CBC-PCKS7padding
+默认RSA
+                     */
+                    std::string m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
 
                 };
             }

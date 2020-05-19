@@ -27,7 +27,8 @@ ResetInstancesRequest::ResetInstancesRequest() :
     m_instanceIdSetHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_enhancedServiceHasBeenSet(false)
+    m_enhancedServiceHasBeenSet(false),
+    m_keepDataHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string ResetInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_enhancedService.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_keepDataHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KeepData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_keepData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void ResetInstancesRequest::SetEnhancedService(const EnhancedService& _enhancedS
 bool ResetInstancesRequest::EnhancedServiceHasBeenSet() const
 {
     return m_enhancedServiceHasBeenSet;
+}
+
+string ResetInstancesRequest::GetKeepData() const
+{
+    return m_keepData;
+}
+
+void ResetInstancesRequest::SetKeepData(const string& _keepData)
+{
+    m_keepData = _keepData;
+    m_keepDataHasBeenSet = true;
+}
+
+bool ResetInstancesRequest::KeepDataHasBeenSet() const
+{
+    return m_keepDataHasBeenSet;
 }
 
 

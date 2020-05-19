@@ -26,7 +26,8 @@ using namespace std;
 InquiryPriceResizeInstanceDisksRequest::InquiryPriceResizeInstanceDisksRequest() :
     m_instanceIdHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_forceStopHasBeenSet(false)
+    m_forceStopHasBeenSet(false),
+    m_systemDiskHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,15 @@ string InquiryPriceResizeInstanceDisksRequest::ToJsonString() const
         string key = "ForceStop";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceStop, allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -122,6 +132,22 @@ void InquiryPriceResizeInstanceDisksRequest::SetForceStop(const bool& _forceStop
 bool InquiryPriceResizeInstanceDisksRequest::ForceStopHasBeenSet() const
 {
     return m_forceStopHasBeenSet;
+}
+
+SystemDisk InquiryPriceResizeInstanceDisksRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void InquiryPriceResizeInstanceDisksRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool InquiryPriceResizeInstanceDisksRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
 }
 
 

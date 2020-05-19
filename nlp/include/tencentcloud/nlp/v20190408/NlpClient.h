@@ -51,6 +51,8 @@
 #include <tencentcloud/nlp/v20190408/model/TextClassificationResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionResponse.h>
+#include <tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h>
+#include <tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h>
 #include <tencentcloud/nlp/v20190408/model/WordEmbeddingRequest.h>
 #include <tencentcloud/nlp/v20190408/model/WordEmbeddingResponse.h>
 #include <tencentcloud/nlp/v20190408/model/WordSimilarityRequest.h>
@@ -111,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::TextCorrectionResponse> TextCorrectionOutcome;
                 typedef std::future<TextCorrectionOutcome> TextCorrectionOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextCorrectionRequest&, TextCorrectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextCorrectionAsyncHandler;
+                typedef Outcome<Error, Model::TextSimilarityResponse> TextSimilarityOutcome;
+                typedef std::future<TextSimilarityOutcome> TextSimilarityOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::TextSimilarityRequest&, TextSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextSimilarityAsyncHandler;
                 typedef Outcome<Error, Model::WordEmbeddingResponse> WordEmbeddingOutcome;
                 typedef std::future<WordEmbeddingOutcome> WordEmbeddingOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::WordEmbeddingRequest&, WordEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WordEmbeddingAsyncHandler;
@@ -205,7 +210,7 @@ namespace TencentCloud
                 /**
                  *句向量接口能够将输入的句子映射成一个固定维度的向量，用来表示这个句子的语义特征，可用于文本聚类、文本相似度、文本分类等任务，能够显著提高它们的效果。
 
-该句向量服务由腾讯知文自然语言处理团队联合腾讯AI Lab共同打造，基于千亿级大规模互联网语料并采用AI Lab自研的DSG算法训练而成，在腾讯内部诸多业务的NLP任务上实测效果显著。
+该句向量服务由腾讯云自然语言处理团队联合微信智言团队共同打造，基于千亿级大规模互联网语料并采用Bert等领先的深度神经网络模型训练而成，在腾讯内部诸多业务的NLP任务上实测效果显著。
                  * @param req SentenceEmbeddingRequest
                  * @return SentenceEmbeddingOutcome
                  */
@@ -273,6 +278,17 @@ namespace TencentCloud
                 TextCorrectionOutcome TextCorrection(const Model::TextCorrectionRequest &request);
                 void TextCorrectionAsync(const Model::TextCorrectionRequest& request, const TextCorrectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextCorrectionOutcomeCallable TextCorrectionCallable(const Model::TextCorrectionRequest& request);
+
+                /**
+                 *句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本的相似度计算，长文本的相似度计算也即将推出。
+
+鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。
+                 * @param req TextSimilarityRequest
+                 * @return TextSimilarityOutcome
+                 */
+                TextSimilarityOutcome TextSimilarity(const Model::TextSimilarityRequest &request);
+                void TextSimilarityAsync(const Model::TextSimilarityRequest& request, const TextSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextSimilarityOutcomeCallable TextSimilarityCallable(const Model::TextSimilarityRequest& request);
 
                 /**
                  *词向量接口能够将输入的词语映射成一个固定维度的词向量，用来表示这个词语的语义特征。词向量是很多自然语言处理技术的基础，能够显著提高它们的效果。

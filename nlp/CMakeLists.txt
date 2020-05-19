@@ -41,9 +41,11 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/SimilarWordsRequest.h
   include/tencentcloud/nlp/v20190408/model/TextClassificationResponse.h
   include/tencentcloud/nlp/v20190408/model/TextClassificationRequest.h
+  include/tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h
   include/tencentcloud/nlp/v20190408/model/Keyword.h
   include/tencentcloud/nlp/v20190408/model/WordEmbeddingResponse.h
   include/tencentcloud/nlp/v20190408/model/DescribeTripleResponse.h
+  include/tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h
   include/tencentcloud/nlp/v20190408/model/PosToken.h
   include/tencentcloud/nlp/v20190408/model/SentimentAnalysisResponse.h
   include/tencentcloud/nlp/v20190408/model/KeywordsExtractionResponse.h
@@ -54,6 +56,7 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/NerToken.h
   include/tencentcloud/nlp/v20190408/model/SimilarWordsResponse.h
   include/tencentcloud/nlp/v20190408/model/DependencyParsingResponse.h
+  include/tencentcloud/nlp/v20190408/model/Similarity.h
   include/tencentcloud/nlp/v20190408/model/CCIToken.h
   include/tencentcloud/nlp/v20190408/model/LexicalAnalysisRequest.h
   include/tencentcloud/nlp/v20190408/model/SentimentAnalysisRequest.h
@@ -87,9 +90,11 @@ set(nlp_src
   src/v20190408/model/SimilarWordsRequest.cpp
   src/v20190408/model/TextClassificationResponse.cpp
   src/v20190408/model/TextClassificationRequest.cpp
+  src/v20190408/model/TextSimilarityRequest.cpp
   src/v20190408/model/Keyword.cpp
   src/v20190408/model/WordEmbeddingResponse.cpp
   src/v20190408/model/DescribeTripleResponse.cpp
+  src/v20190408/model/TextSimilarityResponse.cpp
   src/v20190408/model/PosToken.cpp
   src/v20190408/model/SentimentAnalysisResponse.cpp
   src/v20190408/model/KeywordsExtractionResponse.cpp
@@ -100,6 +105,7 @@ set(nlp_src
   src/v20190408/model/NerToken.cpp
   src/v20190408/model/SimilarWordsResponse.cpp
   src/v20190408/model/DependencyParsingResponse.cpp
+  src/v20190408/model/Similarity.cpp
   src/v20190408/model/CCIToken.cpp
   src/v20190408/model/LexicalAnalysisRequest.cpp
   src/v20190408/model/SentimentAnalysisRequest.cpp
