@@ -40,6 +40,49 @@ FacefusionClient::FacefusionClient(const Credential &credential, const string &r
 }
 
 
+FacefusionClient::DescribeMaterialListOutcome FacefusionClient::DescribeMaterialList(const DescribeMaterialListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMaterialList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMaterialListResponse rsp = DescribeMaterialListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMaterialListOutcome(rsp);
+        else
+            return DescribeMaterialListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMaterialListOutcome(outcome.GetError());
+    }
+}
+
+void FacefusionClient::DescribeMaterialListAsync(const DescribeMaterialListRequest& request, const DescribeMaterialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMaterialList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FacefusionClient::DescribeMaterialListOutcomeCallable FacefusionClient::DescribeMaterialListCallable(const DescribeMaterialListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMaterialListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMaterialList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FacefusionClient::FaceFusionOutcome FacefusionClient::FaceFusion(const FaceFusionRequest &request)
 {
     auto outcome = MakeRequest(request, "FaceFusion");

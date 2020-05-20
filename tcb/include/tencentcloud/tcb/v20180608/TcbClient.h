@@ -39,6 +39,10 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEndUsersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h>
@@ -47,6 +51,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
@@ -97,6 +103,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDatabaseACLResponse> DescribeDatabaseACLOutcome;
                 typedef std::future<DescribeDatabaseACLOutcome> DescribeDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeDatabaseACLRequest&, DescribeDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseACLAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEndUserLoginStatisticResponse> DescribeEndUserLoginStatisticOutcome;
+                typedef std::future<DescribeEndUserLoginStatisticOutcome> DescribeEndUserLoginStatisticOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEndUserLoginStatisticRequest&, DescribeEndUserLoginStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndUserLoginStatisticAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEndUserStatisticResponse> DescribeEndUserStatisticOutcome;
+                typedef std::future<DescribeEndUserStatisticOutcome> DescribeEndUserStatisticOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEndUserStatisticRequest&, DescribeEndUserStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndUserStatisticAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEndUsersResponse> DescribeEndUsersOutcome;
                 typedef std::future<DescribeEndUsersOutcome> DescribeEndUsersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEndUsersRequest&, DescribeEndUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndUsersAsyncHandler;
@@ -109,6 +121,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEnvsResponse> DescribeEnvsOutcome;
                 typedef std::future<DescribeEnvsOutcome> DescribeEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvsRequest&, DescribeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeExtraPkgBillingInfoResponse> DescribeExtraPkgBillingInfoOutcome;
+                typedef std::future<DescribeExtraPkgBillingInfoOutcome> DescribeExtraPkgBillingInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeExtraPkgBillingInfoRequest&, DescribeExtraPkgBillingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtraPkgBillingInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeQuotaDataResponse> DescribeQuotaDataOutcome;
                 typedef std::future<DescribeQuotaDataOutcome> DescribeQuotaDataOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeQuotaDataRequest&, DescribeQuotaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaDataAsyncHandler;
@@ -203,6 +218,24 @@ namespace TencentCloud
                 DescribeDatabaseACLOutcomeCallable DescribeDatabaseACLCallable(const Model::DescribeDatabaseACLRequest& request);
 
                 /**
+                 *获取环境终端用户新增与登录信息
+                 * @param req DescribeEndUserLoginStatisticRequest
+                 * @return DescribeEndUserLoginStatisticOutcome
+                 */
+                DescribeEndUserLoginStatisticOutcome DescribeEndUserLoginStatistic(const Model::DescribeEndUserLoginStatisticRequest &request);
+                void DescribeEndUserLoginStatisticAsync(const Model::DescribeEndUserLoginStatisticRequest& request, const DescribeEndUserLoginStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEndUserLoginStatisticOutcomeCallable DescribeEndUserLoginStatisticCallable(const Model::DescribeEndUserLoginStatisticRequest& request);
+
+                /**
+                 *获取终端用户总量与平台分布情况
+                 * @param req DescribeEndUserStatisticRequest
+                 * @return DescribeEndUserStatisticOutcome
+                 */
+                DescribeEndUserStatisticOutcome DescribeEndUserStatistic(const Model::DescribeEndUserStatisticRequest &request);
+                void DescribeEndUserStatisticAsync(const Model::DescribeEndUserStatisticRequest& request, const DescribeEndUserStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEndUserStatisticOutcomeCallable DescribeEndUserStatisticCallable(const Model::DescribeEndUserStatisticRequest& request);
+
+                /**
                  *获取终端用户列表
                  * @param req DescribeEndUsersRequest
                  * @return DescribeEndUsersOutcome
@@ -237,6 +270,15 @@ namespace TencentCloud
                 DescribeEnvsOutcome DescribeEnvs(const Model::DescribeEnvsRequest &request);
                 void DescribeEnvsAsync(const Model::DescribeEnvsRequest& request, const DescribeEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvsOutcomeCallable DescribeEnvsCallable(const Model::DescribeEnvsRequest& request);
+
+                /**
+                 *获取增值包计费相关信息
+                 * @param req DescribeExtraPkgBillingInfoRequest
+                 * @return DescribeExtraPkgBillingInfoOutcome
+                 */
+                DescribeExtraPkgBillingInfoOutcome DescribeExtraPkgBillingInfo(const Model::DescribeExtraPkgBillingInfoRequest &request);
+                void DescribeExtraPkgBillingInfoAsync(const Model::DescribeExtraPkgBillingInfoRequest& request, const DescribeExtraPkgBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtraPkgBillingInfoOutcomeCallable DescribeExtraPkgBillingInfoCallable(const Model::DescribeExtraPkgBillingInfoRequest& request);
 
                 /**
                  *查询指定指标的配额使用量

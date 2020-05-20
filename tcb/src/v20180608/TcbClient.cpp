@@ -384,6 +384,92 @@ TcbClient::DescribeDatabaseACLOutcomeCallable TcbClient::DescribeDatabaseACLCall
     return task->get_future();
 }
 
+TcbClient::DescribeEndUserLoginStatisticOutcome TcbClient::DescribeEndUserLoginStatistic(const DescribeEndUserLoginStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEndUserLoginStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEndUserLoginStatisticResponse rsp = DescribeEndUserLoginStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEndUserLoginStatisticOutcome(rsp);
+        else
+            return DescribeEndUserLoginStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEndUserLoginStatisticOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEndUserLoginStatisticAsync(const DescribeEndUserLoginStatisticRequest& request, const DescribeEndUserLoginStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEndUserLoginStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeEndUserLoginStatisticOutcomeCallable TcbClient::DescribeEndUserLoginStatisticCallable(const DescribeEndUserLoginStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEndUserLoginStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEndUserLoginStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeEndUserStatisticOutcome TcbClient::DescribeEndUserStatistic(const DescribeEndUserStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEndUserStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEndUserStatisticResponse rsp = DescribeEndUserStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEndUserStatisticOutcome(rsp);
+        else
+            return DescribeEndUserStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEndUserStatisticOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEndUserStatisticAsync(const DescribeEndUserStatisticRequest& request, const DescribeEndUserStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEndUserStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeEndUserStatisticOutcomeCallable TcbClient::DescribeEndUserStatisticCallable(const DescribeEndUserStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEndUserStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEndUserStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeEndUsersOutcome TcbClient::DescribeEndUsers(const DescribeEndUsersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEndUsers");
@@ -549,6 +635,49 @@ TcbClient::DescribeEnvsOutcomeCallable TcbClient::DescribeEnvsCallable(const Des
         [this, request]()
         {
             return this->DescribeEnvs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeExtraPkgBillingInfoOutcome TcbClient::DescribeExtraPkgBillingInfo(const DescribeExtraPkgBillingInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtraPkgBillingInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtraPkgBillingInfoResponse rsp = DescribeExtraPkgBillingInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtraPkgBillingInfoOutcome(rsp);
+        else
+            return DescribeExtraPkgBillingInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtraPkgBillingInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeExtraPkgBillingInfoAsync(const DescribeExtraPkgBillingInfoRequest& request, const DescribeExtraPkgBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtraPkgBillingInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeExtraPkgBillingInfoOutcomeCallable TcbClient::DescribeExtraPkgBillingInfoCallable(const DescribeExtraPkgBillingInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtraPkgBillingInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtraPkgBillingInfo(request);
         }
     );
 

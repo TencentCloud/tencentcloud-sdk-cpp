@@ -1760,6 +1760,49 @@ CpdpClient::QueryMerchantBalanceOutcomeCallable CpdpClient::QueryMerchantBalance
     return task->get_future();
 }
 
+CpdpClient::QueryMerchantInfoForManagementOutcome CpdpClient::QueryMerchantInfoForManagement(const QueryMerchantInfoForManagementRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMerchantInfoForManagement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMerchantInfoForManagementResponse rsp = QueryMerchantInfoForManagementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMerchantInfoForManagementOutcome(rsp);
+        else
+            return QueryMerchantInfoForManagementOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMerchantInfoForManagementOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryMerchantInfoForManagementAsync(const QueryMerchantInfoForManagementRequest& request, const QueryMerchantInfoForManagementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMerchantInfoForManagement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryMerchantInfoForManagementOutcomeCallable CpdpClient::QueryMerchantInfoForManagementCallable(const QueryMerchantInfoForManagementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMerchantInfoForManagementOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMerchantInfoForManagement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryOrderOutcome CpdpClient::QueryOrder(const QueryOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryOrder");

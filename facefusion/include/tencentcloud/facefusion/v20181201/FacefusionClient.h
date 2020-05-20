@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/facefusion/v20181201/model/DescribeMaterialListRequest.h>
+#include <tencentcloud/facefusion/v20181201/model/DescribeMaterialListResponse.h>
 #include <tencentcloud/facefusion/v20181201/model/FaceFusionRequest.h>
 #include <tencentcloud/facefusion/v20181201/model/FaceFusionResponse.h>
 #include <tencentcloud/facefusion/v20181201/model/FuseFaceRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 FacefusionClient(const Credential &credential, const std::string &region);
                 FacefusionClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeMaterialListResponse> DescribeMaterialListOutcome;
+                typedef std::future<DescribeMaterialListOutcome> DescribeMaterialListOutcomeCallable;
+                typedef std::function<void(const FacefusionClient*, const Model::DescribeMaterialListRequest&, DescribeMaterialListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaterialListAsyncHandler;
                 typedef Outcome<Error, Model::FaceFusionResponse> FaceFusionOutcome;
                 typedef std::future<FaceFusionOutcome> FaceFusionOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FaceFusionRequest&, FaceFusionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FaceFusionAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const FacefusionClient*, const Model::FuseFaceRequest&, FuseFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FuseFaceAsyncHandler;
 
 
+
+                /**
+                 *通常通过腾讯云人脸融合的控制台可以查看到素材相关的参数数据，可以满足使用。本接口返回活动的素材数据，包括素材状态等。用于用户通过Api查看素材相关数据，方便使用。
+                 * @param req DescribeMaterialListRequest
+                 * @return DescribeMaterialListOutcome
+                 */
+                DescribeMaterialListOutcome DescribeMaterialList(const Model::DescribeMaterialListRequest &request);
+                void DescribeMaterialListAsync(const Model::DescribeMaterialListRequest& request, const DescribeMaterialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMaterialListOutcomeCallable DescribeMaterialListCallable(const Model::DescribeMaterialListRequest& request);
 
                 /**
                  *本接口用于人脸融合，用户上传人脸图片，获取与模板融合后的人脸图片。未发布的活动请求频率限制为1次/秒，已发布的活动请求频率限制50次/秒。如有需要提高活动的请求频率限制，请在控制台中申请。
