@@ -50,9 +50,11 @@ namespace TencentCloud
                      * 获取排序字段，当前支持：
 createTime，域名创建时间
 certExpireTime，证书过期时间
+默认createTime。
                      * @return Key 排序字段，当前支持：
 createTime，域名创建时间
 certExpireTime，证书过期时间
+默认createTime。
                      */
                     std::string GetKey() const;
 
@@ -60,9 +62,11 @@ certExpireTime，证书过期时间
                      * 设置排序字段，当前支持：
 createTime，域名创建时间
 certExpireTime，证书过期时间
+默认createTime。
                      * @param Key 排序字段，当前支持：
 createTime，域名创建时间
 certExpireTime，证书过期时间
+默认createTime。
                      */
                     void SetKey(const std::string& _key);
 
@@ -96,6 +100,7 @@ certExpireTime，证书过期时间
                      * 排序字段，当前支持：
 createTime，域名创建时间
 certExpireTime，证书过期时间
+默认createTime。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

@@ -582,6 +582,28 @@ namespace TencentCloud
                      */
                     bool ProviderHasBeenSet() const;
 
+                    /**
+                     * 获取实名验证(浙江联通)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertificationState 实名验证(浙江联通)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCertificationState() const;
+
+                    /**
+                     * 设置实名验证(浙江联通)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CertificationState 实名验证(浙江联通)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCertificationState(const int64_t& _certificationState);
+
+                    /**
+                     * 判断参数 CertificationState 是否已赋值
+                     * @return CertificationState 是否已赋值
+                     */
+                    bool CertificationStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -756,6 +778,13 @@ namespace TencentCloud
                      */
                     int64_t m_provider;
                     bool m_providerHasBeenSet;
+
+                    /**
+                     * 实名验证(浙江联通)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_certificationState;
+                    bool m_certificationStateHasBeenSet;
 
                 };
             }

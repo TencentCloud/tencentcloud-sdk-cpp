@@ -47,7 +47,8 @@ CardInfo::CardInfo() :
     m_remarkHasBeenSet(false),
     m_allowArrearsHasBeenSet(false),
     m_needSmsHasBeenSet(false),
-    m_providerHasBeenSet(false)
+    m_providerHasBeenSet(false),
+    m_certificationStateHasBeenSet(false)
 {
 }
 
@@ -316,6 +317,16 @@ CoreInternalOutcome CardInfo::Deserialize(const Value &value)
         m_providerHasBeenSet = true;
     }
 
+    if (value.HasMember("CertificationState") && !value["CertificationState"].IsNull())
+    {
+        if (!value["CertificationState"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CardInfo.CertificationState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certificationState = value["CertificationState"].GetInt64();
+        m_certificationStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -529,6 +540,14 @@ void CardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Provider";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_provider, allocator);
+    }
+
+    if (m_certificationStateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CertificationState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certificationState, allocator);
     }
 
 }
@@ -948,5 +967,21 @@ void CardInfo::SetProvider(const int64_t& _provider)
 bool CardInfo::ProviderHasBeenSet() const
 {
     return m_providerHasBeenSet;
+}
+
+int64_t CardInfo::GetCertificationState() const
+{
+    return m_certificationState;
+}
+
+void CardInfo::SetCertificationState(const int64_t& _certificationState)
+{
+    m_certificationState = _certificationState;
+    m_certificationStateHasBeenSet = true;
+}
+
+bool CardInfo::CertificationStateHasBeenSet() const
+{
+    return m_certificationStateHasBeenSet;
 }
 

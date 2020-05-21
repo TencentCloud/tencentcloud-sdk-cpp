@@ -284,6 +284,24 @@ namespace TencentCloud
                      */
                     bool BasicIspCodeHasBeenSet() const;
 
+                    /**
+                     * 获取可选字段，当协议取值HTTPS时，必填
+                     * @return Domain 可选字段，当协议取值HTTPS时，必填
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置可选字段，当协议取值HTTPS时，必填
+                     * @param Domain 可选字段，当协议取值HTTPS时，必填
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -362,6 +380,12 @@ namespace TencentCloud
                      */
                     uint64_t m_basicIspCode;
                     bool m_basicIspCodeHasBeenSet;
+
+                    /**
+                     * 可选字段，当协议取值HTTPS时，必填
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取当前时间取值
-                     * @return Value 当前时间取值
+                     * 获取当前时间取值，unix时间戳
+                     * @return Value 当前时间取值，unix时间戳
                      */
                     double GetValue() const;
 
                     /**
-                     * 设置当前时间取值
-                     * @param Value 当前时间取值
+                     * 设置当前时间取值，unix时间戳
+                     * @param Value 当前时间取值，unix时间戳
                      */
                     void SetValue(const double& _value);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 当前时间取值
+                     * 当前时间取值，unix时间戳
                      */
                     double m_value;
                     bool m_valueHasBeenSet;

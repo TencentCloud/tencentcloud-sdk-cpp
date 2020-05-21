@@ -34,7 +34,8 @@ ModifyCCThresholdRequest::ModifyCCThresholdRequest() :
     m_basicBizTypeHasBeenSet(false),
     m_basicDeviceTypeHasBeenSet(false),
     m_basicIpInstanceHasBeenSet(false),
-    m_basicIspCodeHasBeenSet(false)
+    m_basicIspCodeHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string ModifyCCThresholdRequest::ToJsonString() const
         string key = "BasicIspCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_basicIspCode, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void ModifyCCThresholdRequest::SetBasicIspCode(const uint64_t& _basicIspCode)
 bool ModifyCCThresholdRequest::BasicIspCodeHasBeenSet() const
 {
     return m_basicIspCodeHasBeenSet;
+}
+
+string ModifyCCThresholdRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void ModifyCCThresholdRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool ModifyCCThresholdRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 
