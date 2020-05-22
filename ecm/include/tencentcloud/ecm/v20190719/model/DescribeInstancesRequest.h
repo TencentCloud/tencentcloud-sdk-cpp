@@ -45,7 +45,8 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-zone      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
+zone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。
+zone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
 module-id      String      是否必填：否     （过滤条件）按照模块ID过滤。
 instance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。
 instance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。
@@ -55,10 +56,15 @@ instance-state  string  是否必填：否 （过滤条件）按照实例状态�
 internet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。
 tag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。
 tag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+module-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。
+image-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。
+
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
                      * @return Filters 过滤条件。
-zone      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
+zone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。
+zone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
 module-id      String      是否必填：否     （过滤条件）按照模块ID过滤。
 instance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。
 instance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。
@@ -68,6 +74,10 @@ instance-state  string  是否必填：否 （过滤条件）按照实例状态�
 internet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。
 tag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。
 tag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+module-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。
+image-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。
+
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
                      */
@@ -75,7 +85,8 @@ tag:tag-key      String      是否必填：否      （过滤条件）按照标
 
                     /**
                      * 设置过滤条件。
-zone      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
+zone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。
+zone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
 module-id      String      是否必填：否     （过滤条件）按照模块ID过滤。
 instance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。
 instance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。
@@ -85,10 +96,15 @@ instance-state  string  是否必填：否 （过滤条件）按照实例状态�
 internet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。
 tag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。
 tag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+module-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。
+image-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。
+
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
                      * @param Filters 过滤条件。
-zone      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
+zone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。
+zone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
 module-id      String      是否必填：否     （过滤条件）按照模块ID过滤。
 instance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。
 instance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。
@@ -98,6 +114,10 @@ instance-state  string  是否必填：否 （过滤条件）按照实例状态�
 internet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。
 tag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。
 tag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+module-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。
+image-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。
+
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
                      */
@@ -145,11 +165,60 @@ tag:tag-key      String      是否必填：否      （过滤条件）按照标
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取指定排序字段。目前支持的可选值如下
+timestamp 按实例创建时间排序。
+注意：目前仅支持按创建时间排序，后续可能会有扩展。
+如果不传，默认按实例创建时间排序
+                     * @return OrderByField 指定排序字段。目前支持的可选值如下
+timestamp 按实例创建时间排序。
+注意：目前仅支持按创建时间排序，后续可能会有扩展。
+如果不传，默认按实例创建时间排序
+                     */
+                    std::string GetOrderByField() const;
+
+                    /**
+                     * 设置指定排序字段。目前支持的可选值如下
+timestamp 按实例创建时间排序。
+注意：目前仅支持按创建时间排序，后续可能会有扩展。
+如果不传，默认按实例创建时间排序
+                     * @param OrderByField 指定排序字段。目前支持的可选值如下
+timestamp 按实例创建时间排序。
+注意：目前仅支持按创建时间排序，后续可能会有扩展。
+如果不传，默认按实例创建时间排序
+                     */
+                    void SetOrderByField(const std::string& _orderByField);
+
+                    /**
+                     * 判断参数 OrderByField 是否已赋值
+                     * @return OrderByField 是否已赋值
+                     */
+                    bool OrderByFieldHasBeenSet() const;
+
+                    /**
+                     * 获取指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * @return OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     */
+                    int64_t GetOrderDirection() const;
+
+                    /**
+                     * 设置指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * @param OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     */
+                    void SetOrderDirection(const int64_t& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
                 private:
 
                     /**
                      * 过滤条件。
-zone      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
+zone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。
+zone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。
 module-id      String      是否必填：否     （过滤条件）按照模块ID过滤。
 instance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。
 instance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。
@@ -159,6 +228,10 @@ instance-state  string  是否必填：否 （过滤条件）按照实例状态�
 internet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。
 tag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。
 tag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+module-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。
+image-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。
+
 若不传Filters参数则表示查询所有相关的实例信息。
 单次请求的Filter.Values的上限为5。
                      */
@@ -176,6 +249,21 @@ tag:tag-key      String      是否必填：否      （过滤条件）按照标
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 指定排序字段。目前支持的可选值如下
+timestamp 按实例创建时间排序。
+注意：目前仅支持按创建时间排序，后续可能会有扩展。
+如果不传，默认按实例创建时间排序
+                     */
+                    std::string m_orderByField;
+                    bool m_orderByFieldHasBeenSet;
+
+                    /**
+                     * 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     */
+                    int64_t m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
 
                 };
             }

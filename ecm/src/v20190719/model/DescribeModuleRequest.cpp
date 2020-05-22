@@ -26,7 +26,9 @@ using namespace std;
 DescribeModuleRequest::DescribeModuleRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_orderByFieldHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,22 @@ string DescribeModuleRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderByFieldHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderByField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderByField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_orderDirection, allocator);
     }
 
 
@@ -122,6 +140,38 @@ void DescribeModuleRequest::SetLimit(const int64_t& _limit)
 bool DescribeModuleRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeModuleRequest::GetOrderByField() const
+{
+    return m_orderByField;
+}
+
+void DescribeModuleRequest::SetOrderByField(const string& _orderByField)
+{
+    m_orderByField = _orderByField;
+    m_orderByFieldHasBeenSet = true;
+}
+
+bool DescribeModuleRequest::OrderByFieldHasBeenSet() const
+{
+    return m_orderByFieldHasBeenSet;
+}
+
+int64_t DescribeModuleRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeModuleRequest::SetOrderDirection(const int64_t& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeModuleRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
 }
 
 

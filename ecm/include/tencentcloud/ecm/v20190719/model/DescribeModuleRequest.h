@@ -47,10 +47,16 @@ namespace TencentCloud
                      * 获取过滤条件。
 module-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。
 module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。
+image-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * @return Filters 过滤条件。
 module-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。
 module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。
+image-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
                     std::vector<Filter> GetFilters() const;
@@ -59,10 +65,16 @@ module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤
                      * 设置过滤条件。
 module-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。
 module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。
+image-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * @param Filters 过滤条件。
 module-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。
 module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。
+image-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,12 +121,67 @@ module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取指定排序字段。目前支持的可选值如下
+instance-num 按实例数量排序。
+node-num 按节点数量排序。
+timestamp 按实例创建时间排序。
+如果不传，默认按实例创建时间排序
+                     * @return OrderByField 指定排序字段。目前支持的可选值如下
+instance-num 按实例数量排序。
+node-num 按节点数量排序。
+timestamp 按实例创建时间排序。
+如果不传，默认按实例创建时间排序
+                     */
+                    std::string GetOrderByField() const;
+
+                    /**
+                     * 设置指定排序字段。目前支持的可选值如下
+instance-num 按实例数量排序。
+node-num 按节点数量排序。
+timestamp 按实例创建时间排序。
+如果不传，默认按实例创建时间排序
+                     * @param OrderByField 指定排序字段。目前支持的可选值如下
+instance-num 按实例数量排序。
+node-num 按节点数量排序。
+timestamp 按实例创建时间排序。
+如果不传，默认按实例创建时间排序
+                     */
+                    void SetOrderByField(const std::string& _orderByField);
+
+                    /**
+                     * 判断参数 OrderByField 是否已赋值
+                     * @return OrderByField 是否已赋值
+                     */
+                    bool OrderByFieldHasBeenSet() const;
+
+                    /**
+                     * 获取指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * @return OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     */
+                    int64_t GetOrderDirection() const;
+
+                    /**
+                     * 设置指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     * @param OrderDirection 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     */
+                    void SetOrderDirection(const int64_t& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
                 private:
 
                     /**
                      * 过滤条件。
 module-name - string - 是否必填：否 - （过滤条件）按照模块名称过滤。
 module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤。
+image-id      String      是否必填：否      （过滤条件）按照镜像ID过滤。
+instance-family      String      是否必填：否      （过滤条件）按照机型family过滤。
+
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
                     std::vector<Filter> m_filters;
@@ -131,6 +198,22 @@ module-id - string - 是否必填：否 - （过滤条件）按照模块ID过滤
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 指定排序字段。目前支持的可选值如下
+instance-num 按实例数量排序。
+node-num 按节点数量排序。
+timestamp 按实例创建时间排序。
+如果不传，默认按实例创建时间排序
+                     */
+                    std::string m_orderByField;
+                    bool m_orderByFieldHasBeenSet;
+
+                    /**
+                     * 指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序
+                     */
+                    int64_t m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
 
                 };
             }
