@@ -1104,7 +1104,7 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveStreamEventListOutcomeCallable DescribeLiveStreamEventListCallable(const Model::DescribeLiveStreamEventListRequest& request);
 
                 /**
-                 *返回正在直播中的流列表。
+                 *返回正在直播中的流列表。适用于推流成功后查询在线流信息。
                  * @param req DescribeLiveStreamOnlineListRequest
                  * @return DescribeLiveStreamOnlineListOutcome
                  */

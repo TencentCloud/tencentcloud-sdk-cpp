@@ -25,6 +25,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleResponse.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomResponse.h
+  include/tencentcloud/trtc/v20190722/model/EventMessage.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeQualityRequest.h
   include/tencentcloud/trtc/v20190722/model/RemoveUserRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h
@@ -42,10 +43,13 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkResponse.h
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
   include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h
+  include/tencentcloud/trtc/v20190722/model/EventList.h
+  include/tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h
   include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRealtimeScaleRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h
+  include/tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h
   include/tencentcloud/trtc/v20190722/model/UserInformation.h
   include/tencentcloud/trtc/v20190722/model/RoomState.h
   include/tencentcloud/trtc/v20190722/model/RemoveUserResponse.h
@@ -60,6 +64,7 @@ set(trtc_src
   src/v20190722/model/StopMCUMixTranscodeResponse.cpp
   src/v20190722/model/DescribeRealtimeScaleResponse.cpp
   src/v20190722/model/DismissRoomResponse.cpp
+  src/v20190722/model/EventMessage.cpp
   src/v20190722/model/DescribeRealtimeQualityRequest.cpp
   src/v20190722/model/RemoveUserRequest.cpp
   src/v20190722/model/DescribeCallDetailRequest.cpp
@@ -77,10 +82,13 @@ set(trtc_src
   src/v20190722/model/DescribeRealtimeNetworkResponse.cpp
   src/v20190722/model/ScaleInfomation.cpp
   src/v20190722/model/CreateTroubleInfoRequest.cpp
+  src/v20190722/model/EventList.cpp
+  src/v20190722/model/DescribeDetailEventResponse.cpp
   src/v20190722/model/StartMCUMixTranscodeResponse.cpp
   src/v20190722/model/DescribeRealtimeScaleRequest.cpp
   src/v20190722/model/DescribeCallDetailResponse.cpp
   src/v20190722/model/DescribeRoomInformationRequest.cpp
+  src/v20190722/model/DescribeDetailEventRequest.cpp
   src/v20190722/model/UserInformation.cpp
   src/v20190722/model/RoomState.cpp
   src/v20190722/model/RemoveUserResponse.cpp

@@ -29,6 +29,7 @@ MaterialBasicInfo::MaterialBasicInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_classPathHasBeenSet(false),
+    m_tagInfoSetHasBeenSet(false),
     m_previewUrlHasBeenSet(false)
 {
 }
@@ -115,6 +116,26 @@ CoreInternalOutcome MaterialBasicInfo::Deserialize(const Value &value)
         m_classPathHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfoSet") && !value["TagInfoSet"].IsNull())
+    {
+        if (!value["TagInfoSet"].IsArray())
+            return CoreInternalOutcome(Error("response `MaterialBasicInfo.TagInfoSet` is not array type"));
+
+        const Value &tmpValue = value["TagInfoSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MaterialTagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfoSet.push_back(item);
+        }
+        m_tagInfoSetHasBeenSet = true;
+    }
+
     if (value.HasMember("PreviewUrl") && !value["PreviewUrl"].IsNull())
     {
         if (!value["PreviewUrl"].IsString())
@@ -187,6 +208,21 @@ void MaterialBasicInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
         string key = "ClassPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagInfoSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfoSet.begin(); itr != m_tagInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_previewUrlHasBeenSet)
@@ -310,6 +346,22 @@ void MaterialBasicInfo::SetClassPath(const string& _classPath)
 bool MaterialBasicInfo::ClassPathHasBeenSet() const
 {
     return m_classPathHasBeenSet;
+}
+
+vector<MaterialTagInfo> MaterialBasicInfo::GetTagInfoSet() const
+{
+    return m_tagInfoSet;
+}
+
+void MaterialBasicInfo::SetTagInfoSet(const vector<MaterialTagInfo>& _tagInfoSet)
+{
+    m_tagInfoSet = _tagInfoSet;
+    m_tagInfoSetHasBeenSet = true;
+}
+
+bool MaterialBasicInfo::TagInfoSetHasBeenSet() const
+{
+    return m_tagInfoSetHasBeenSet;
 }
 
 string MaterialBasicInfo::GetPreviewUrl() const

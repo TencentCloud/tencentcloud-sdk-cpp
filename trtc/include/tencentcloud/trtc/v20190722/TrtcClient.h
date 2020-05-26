@@ -27,6 +27,8 @@
 #include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRealtimeNetworkRequest.h>
@@ -65,6 +67,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCallDetailResponse> DescribeCallDetailOutcome;
                 typedef std::future<DescribeCallDetailOutcome> DescribeCallDetailOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailRequest&, DescribeCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDetailEventResponse> DescribeDetailEventOutcome;
+                typedef std::future<DescribeDetailEventOutcome> DescribeDetailEventOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeDetailEventRequest&, DescribeDetailEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailEventAsyncHandler;
                 typedef Outcome<Error, Model::DescribeHistoryScaleResponse> DescribeHistoryScaleOutcome;
                 typedef std::future<DescribeHistoryScaleOutcome> DescribeHistoryScaleOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeHistoryScaleRequest&, DescribeHistoryScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryScaleAsyncHandler;
@@ -112,6 +117,15 @@ namespace TencentCloud
                 DescribeCallDetailOutcome DescribeCallDetail(const Model::DescribeCallDetailRequest &request);
                 void DescribeCallDetailAsync(const Model::DescribeCallDetailRequest& request, const DescribeCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCallDetailOutcomeCallable DescribeCallDetailCallable(const Model::DescribeCallDetailRequest& request);
+
+                /**
+                 *查询用户某次通话内的进退房，视频开关等详细事件。可查询5天内数据。
+                 * @param req DescribeDetailEventRequest
+                 * @return DescribeDetailEventOutcome
+                 */
+                DescribeDetailEventOutcome DescribeDetailEvent(const Model::DescribeDetailEventRequest &request);
+                void DescribeDetailEventAsync(const Model::DescribeDetailEventRequest& request, const DescribeDetailEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDetailEventOutcomeCallable DescribeDetailEventCallable(const Model::DescribeDetailEventRequest& request);
 
                 /**
                  *查询历史房间和用户数，每分钟1次，可查询最近5天的数据

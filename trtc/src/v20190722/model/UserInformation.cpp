@@ -28,7 +28,8 @@ UserInformation::UserInformation() :
     m_leaveTsHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
     m_sdkVersionHasBeenSet(false),
-    m_clientIpHasBeenSet(false)
+    m_clientIpHasBeenSet(false),
+    m_finishedHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome UserInformation::Deserialize(const Value &value)
         m_clientIpHasBeenSet = true;
     }
 
+    if (value.HasMember("Finished") && !value["Finished"].IsNull())
+    {
+        if (!value["Finished"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `UserInformation.Finished` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_finished = value["Finished"].GetBool();
+        m_finishedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +179,14 @@ void UserInformation::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "ClientIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_clientIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Finished";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_finished, allocator);
     }
 
 }
@@ -283,5 +302,21 @@ void UserInformation::SetClientIp(const string& _clientIp)
 bool UserInformation::ClientIpHasBeenSet() const
 {
     return m_clientIpHasBeenSet;
+}
+
+bool UserInformation::GetFinished() const
+{
+    return m_finished;
+}
+
+void UserInformation::SetFinished(const bool& _finished)
+{
+    m_finished = _finished;
+    m_finishedHasBeenSet = true;
+}
+
+bool UserInformation::FinishedHasBeenSet() const
+{
+    return m_finishedHasBeenSet;
 }
 

@@ -14,40 +14,40 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_DETECTACCOUNTACTIVITYRESPONSE_H_
-#define TENCENTCLOUD_TAF_V20200210_MODEL_DETECTACCOUNTACTIVITYRESPONSE_H_
+#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEDETAILEVENTRESPONSE_H_
+#define TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEDETAILEVENTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/taf/v20200210/model/OutputDetectAccountActivity.h>
+#include <tencentcloud/trtc/v20190722/model/EventList.h>
 
 
 namespace TencentCloud
 {
-    namespace Taf
+    namespace Trtc
     {
-        namespace V20200210
+        namespace V20190722
         {
             namespace Model
             {
                 /**
-                * DetectAccountActivity返回参数结构体
+                * DescribeDetailEvent返回参数结构体
                 */
-                class DetectAccountActivityResponse : public AbstractModel
+                class DescribeDetailEventResponse : public AbstractModel
                 {
                 public:
-                    DetectAccountActivityResponse();
-                    ~DetectAccountActivityResponse() = default;
+                    DescribeDetailEventResponse();
+                    ~DescribeDetailEventResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取回包数据
-                     * @return Data 回包数据
+                     * 获取返回的事件列表
+                     * @return Data 返回的事件列表
                      */
-                    OutputDetectAccountActivity GetData() const;
+                    std::vector<EventList> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -58,9 +58,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回包数据
+                     * 返回的事件列表
                      */
-                    OutputDetectAccountActivity m_data;
+                    std::vector<EventList> m_data;
                     bool m_dataHasBeenSet;
 
                 };
@@ -69,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_DETECTACCOUNTACTIVITYRESPONSE_H_
+#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEDETAILEVENTRESPONSE_H_

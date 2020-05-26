@@ -133,14 +133,46 @@ namespace TencentCloud
                     bool TroubleUserIdHasBeenSet() const;
 
                     /**
-                     * 获取异常类型
-                     * @return TroubleType 异常类型
+                     * 获取异常类型。
+1. 仅视频异常
+2. 仅声音异常
+3. 音视频都异常
+5. 进房异常
+4. 切课
+6. 求助
+7. 问题反馈
+8. 投诉
+                     * @return TroubleType 异常类型。
+1. 仅视频异常
+2. 仅声音异常
+3. 音视频都异常
+5. 进房异常
+4. 切课
+6. 求助
+7. 问题反馈
+8. 投诉
                      */
                     uint64_t GetTroubleType() const;
 
                     /**
-                     * 设置异常类型
-                     * @param TroubleType 异常类型
+                     * 设置异常类型。
+1. 仅视频异常
+2. 仅声音异常
+3. 音视频都异常
+5. 进房异常
+4. 切课
+6. 求助
+7. 问题反馈
+8. 投诉
+                     * @param TroubleType 异常类型。
+1. 仅视频异常
+2. 仅声音异常
+3. 音视频都异常
+5. 进房异常
+4. 切课
+6. 求助
+7. 问题反馈
+8. 投诉
                      */
                     void SetTroubleType(const uint64_t& _troubleType);
 
@@ -219,7 +251,15 @@ namespace TencentCloud
                     bool m_troubleUserIdHasBeenSet;
 
                     /**
-                     * 异常类型
+                     * 异常类型。
+1. 仅视频异常
+2. 仅声音异常
+3. 音视频都异常
+5. 进房异常
+4. 切课
+6. 求助
+7. 问题反馈
+8. 投诉
                      */
                     uint64_t m_troubleType;
                     bool m_troubleTypeHasBeenSet;

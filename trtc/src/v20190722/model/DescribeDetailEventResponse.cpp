@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/taf/v20200210/model/DetectAccountActivityResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Taf::V20200210::Model;
+using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace rapidjson;
 using namespace std;
 
-DetectAccountActivityResponse::DetectAccountActivityResponse() :
+DescribeDetailEventResponse::DescribeDetailEventResponse() :
     m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DetectAccountActivityResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDetailEventResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -65,18 +65,21 @@ CoreInternalOutcome DetectAccountActivityResponse::Deserialize(const string &pay
 
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Data"].IsObject())
-        {
-            return CoreInternalOutcome(Error("response `Data` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Error("response `Data` is not array type"));
 
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
+        const Value &tmpValue = rsp["Data"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            EventList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-
         m_dataHasBeenSet = true;
     }
 
@@ -85,12 +88,12 @@ CoreInternalOutcome DetectAccountActivityResponse::Deserialize(const string &pay
 }
 
 
-OutputDetectAccountActivity DetectAccountActivityResponse::GetData() const
+vector<EventList> DescribeDetailEventResponse::GetData() const
 {
     return m_data;
 }
 
-bool DetectAccountActivityResponse::DataHasBeenSet() const
+bool DescribeDetailEventResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
 }

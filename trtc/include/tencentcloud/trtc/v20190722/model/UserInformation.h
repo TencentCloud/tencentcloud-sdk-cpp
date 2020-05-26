@@ -172,6 +172,24 @@ namespace TencentCloud
                      */
                     bool ClientIpHasBeenSet() const;
 
+                    /**
+                     * 获取判断用户是否已经离开房间
+                     * @return Finished 判断用户是否已经离开房间
+                     */
+                    bool GetFinished() const;
+
+                    /**
+                     * 设置判断用户是否已经离开房间
+                     * @param Finished 判断用户是否已经离开房间
+                     */
+                    void SetFinished(const bool& _finished);
+
+                    /**
+                     * 判断参数 Finished 是否已赋值
+                     * @return Finished 是否已赋值
+                     */
+                    bool FinishedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +233,12 @@ namespace TencentCloud
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
+
+                    /**
+                     * 判断用户是否已经离开房间
+                     */
+                    bool m_finished;
+                    bool m_finishedHasBeenSet;
 
                 };
             }

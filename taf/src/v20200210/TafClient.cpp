@@ -40,49 +40,6 @@ TafClient::TafClient(const Credential &credential, const string &region, const C
 }
 
 
-TafClient::DetectAccountActivityOutcome TafClient::DetectAccountActivity(const DetectAccountActivityRequest &request)
-{
-    auto outcome = MakeRequest(request, "DetectAccountActivity");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DetectAccountActivityResponse rsp = DetectAccountActivityResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DetectAccountActivityOutcome(rsp);
-        else
-            return DetectAccountActivityOutcome(o.GetError());
-    }
-    else
-    {
-        return DetectAccountActivityOutcome(outcome.GetError());
-    }
-}
-
-void TafClient::DetectAccountActivityAsync(const DetectAccountActivityRequest& request, const DetectAccountActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectAccountActivity(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TafClient::DetectAccountActivityOutcomeCallable TafClient::DetectAccountActivityCallable(const DetectAccountActivityRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DetectAccountActivityOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectAccountActivity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TafClient::DetectFraudKOLOutcome TafClient::DetectFraudKOL(const DetectFraudKOLRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectFraudKOL");

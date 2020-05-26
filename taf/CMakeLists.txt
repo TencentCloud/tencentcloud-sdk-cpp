@@ -19,7 +19,7 @@ set(taf_public_header
   )
 
 set(taf_public_header_model
-  include/tencentcloud/taf/v20200210/model/OutputDetectAccountActivity.h
+  include/tencentcloud/taf/v20200210/model/InputKolDataList.h
   include/tencentcloud/taf/v20200210/model/OutputKolData.h
   include/tencentcloud/taf/v20200210/model/InputKolBspData.h
   include/tencentcloud/taf/v20200210/model/EnhanceTaDegreeRequest.h
@@ -30,9 +30,7 @@ set(taf_public_header_model
   include/tencentcloud/taf/v20200210/model/OutputKolValue.h
   include/tencentcloud/taf/v20200210/model/EnhanceTaDegreeResponse.h
   include/tencentcloud/taf/v20200210/model/InputTaBspData.h
-  include/tencentcloud/taf/v20200210/model/OutputDetectAccountActivityValue.h
   include/tencentcloud/taf/v20200210/model/OutputSendTrafficSecuritySmsMsg.h
-  include/tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h
   include/tencentcloud/taf/v20200210/model/SendTrafficSecuritySmsMessageResponse.h
   include/tencentcloud/taf/v20200210/model/DetectFraudKOLRequest.h
   include/tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h
@@ -41,18 +39,15 @@ set(taf_public_header_model
   include/tencentcloud/taf/v20200210/model/OutputTaData.h
   include/tencentcloud/taf/v20200210/model/OutputTaValue.h
   include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceRequest.h
-  include/tencentcloud/taf/v20200210/model/InputKolDataList.h
-  include/tencentcloud/taf/v20200210/model/DetectAccountActivityResponse.h
-  include/tencentcloud/taf/v20200210/model/DetectAccountActivityRequest.h
+  include/tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h
   include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h
   include/tencentcloud/taf/v20200210/model/OutputRecognizeTargetAudience.h
-  include/tencentcloud/taf/v20200210/model/InputDetectAccountActivity.h
   include/tencentcloud/taf/v20200210/model/InputSendTrafficSecuritySmsMsg.h
   )
 
 set(taf_src
   src/v20200210/TafClient.cpp
-  src/v20200210/model/OutputDetectAccountActivity.cpp
+  src/v20200210/model/InputKolDataList.cpp
   src/v20200210/model/OutputKolData.cpp
   src/v20200210/model/InputKolBspData.cpp
   src/v20200210/model/EnhanceTaDegreeRequest.cpp
@@ -63,9 +58,7 @@ set(taf_src
   src/v20200210/model/OutputKolValue.cpp
   src/v20200210/model/EnhanceTaDegreeResponse.cpp
   src/v20200210/model/InputTaBspData.cpp
-  src/v20200210/model/OutputDetectAccountActivityValue.cpp
   src/v20200210/model/OutputSendTrafficSecuritySmsMsg.cpp
-  src/v20200210/model/RecognizeTargetAudienceRequest.cpp
   src/v20200210/model/SendTrafficSecuritySmsMessageResponse.cpp
   src/v20200210/model/DetectFraudKOLRequest.cpp
   src/v20200210/model/RecognizeCustomizedAudienceRequest.cpp
@@ -74,12 +67,9 @@ set(taf_src
   src/v20200210/model/OutputTaData.cpp
   src/v20200210/model/OutputTaValue.cpp
   src/v20200210/model/RecognizePreciseTargetAudienceRequest.cpp
-  src/v20200210/model/InputKolDataList.cpp
-  src/v20200210/model/DetectAccountActivityResponse.cpp
-  src/v20200210/model/DetectAccountActivityRequest.cpp
+  src/v20200210/model/RecognizeTargetAudienceRequest.cpp
   src/v20200210/model/RecognizePreciseTargetAudienceResponse.cpp
   src/v20200210/model/OutputRecognizeTargetAudience.cpp
-  src/v20200210/model/InputDetectAccountActivity.cpp
   src/v20200210/model/InputSendTrafficSecuritySmsMsg.cpp
   )
 

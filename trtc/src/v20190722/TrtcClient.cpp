@@ -126,6 +126,49 @@ TrtcClient::DescribeCallDetailOutcomeCallable TrtcClient::DescribeCallDetailCall
     return task->get_future();
 }
 
+TrtcClient::DescribeDetailEventOutcome TrtcClient::DescribeDetailEvent(const DescribeDetailEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDetailEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDetailEventResponse rsp = DescribeDetailEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDetailEventOutcome(rsp);
+        else
+            return DescribeDetailEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDetailEventOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeDetailEventAsync(const DescribeDetailEventRequest& request, const DescribeDetailEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDetailEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeDetailEventOutcomeCallable TrtcClient::DescribeDetailEventCallable(const DescribeDetailEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDetailEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDetailEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeHistoryScaleOutcome TrtcClient::DescribeHistoryScale(const DescribeHistoryScaleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHistoryScale");

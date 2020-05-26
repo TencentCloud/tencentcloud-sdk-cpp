@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
+#include <tencentcloud/cme/v20191029/model/MaterialTagInfo.h>
 
 
 namespace TencentCloud
@@ -174,6 +175,24 @@ namespace TencentCloud
                     bool ClassPathHasBeenSet() const;
 
                     /**
+                     * 获取素材绑定的标签信息列表。
+                     * @return TagInfoSet 素材绑定的标签信息列表。
+                     */
+                    std::vector<MaterialTagInfo> GetTagInfoSet() const;
+
+                    /**
+                     * 设置素材绑定的标签信息列表。
+                     * @param TagInfoSet 素材绑定的标签信息列表。
+                     */
+                    void SetTagInfoSet(const std::vector<MaterialTagInfo>& _tagInfoSet);
+
+                    /**
+                     * 判断参数 TagInfoSet 是否已赋值
+                     * @return TagInfoSet 是否已赋值
+                     */
+                    bool TagInfoSetHasBeenSet() const;
+
+                    /**
                      * 获取素材媒体文件的预览图。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 素材媒体文件的预览图。
@@ -238,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
+
+                    /**
+                     * 素材绑定的标签信息列表。
+                     */
+                    std::vector<MaterialTagInfo> m_tagInfoSet;
+                    bool m_tagInfoSetHasBeenSet;
 
                     /**
                      * 素材媒体文件的预览图。
