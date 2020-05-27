@@ -40,49 +40,6 @@ CmsClient::CmsClient(const Credential &credential, const string &region, const C
 }
 
 
-CmsClient::CommonMediaRecognitionOutcome CmsClient::CommonMediaRecognition(const CommonMediaRecognitionRequest &request)
-{
-    auto outcome = MakeRequest(request, "CommonMediaRecognition");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CommonMediaRecognitionResponse rsp = CommonMediaRecognitionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CommonMediaRecognitionOutcome(rsp);
-        else
-            return CommonMediaRecognitionOutcome(o.GetError());
-    }
-    else
-    {
-        return CommonMediaRecognitionOutcome(outcome.GetError());
-    }
-}
-
-void CmsClient::CommonMediaRecognitionAsync(const CommonMediaRecognitionRequest& request, const CommonMediaRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CommonMediaRecognition(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CmsClient::CommonMediaRecognitionOutcomeCallable CmsClient::CommonMediaRecognitionCallable(const CommonMediaRecognitionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CommonMediaRecognitionOutcome()>>(
-        [this, request]()
-        {
-            return this->CommonMediaRecognition(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CmsClient::CreateFileSampleOutcome CmsClient::CreateFileSample(const CreateFileSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFileSample");

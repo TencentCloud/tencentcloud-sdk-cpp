@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/cms/v20190321/model/CommonMediaRecognitionRequest.h>
-#include <tencentcloud/cms/v20190321/model/CommonMediaRecognitionResponse.h>
 #include <tencentcloud/cms/v20190321/model/CreateFileSampleRequest.h>
 #include <tencentcloud/cms/v20190321/model/CreateFileSampleResponse.h>
 #include <tencentcloud/cms/v20190321/model/CreateTextSampleRequest.h>
@@ -55,9 +53,6 @@ namespace TencentCloud
                 CmsClient(const Credential &credential, const std::string &region);
                 CmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::CommonMediaRecognitionResponse> CommonMediaRecognitionOutcome;
-                typedef std::future<CommonMediaRecognitionOutcome> CommonMediaRecognitionOutcomeCallable;
-                typedef std::function<void(const CmsClient*, const Model::CommonMediaRecognitionRequest&, CommonMediaRecognitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommonMediaRecognitionAsyncHandler;
                 typedef Outcome<Error, Model::CreateFileSampleResponse> CreateFileSampleOutcome;
                 typedef std::future<CreateFileSampleOutcome> CreateFileSampleOutcomeCallable;
                 typedef std::function<void(const CmsClient*, const Model::CreateFileSampleRequest&, CreateFileSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileSampleAsyncHandler;
@@ -84,15 +79,6 @@ namespace TencentCloud
                 typedef std::function<void(const CmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
 
 
-
-                /**
-                 *广交会商品企业信息发布内容审核
-                 * @param req CommonMediaRecognitionRequest
-                 * @return CommonMediaRecognitionOutcome
-                 */
-                CommonMediaRecognitionOutcome CommonMediaRecognition(const Model::CommonMediaRecognitionRequest &request);
-                void CommonMediaRecognitionAsync(const Model::CommonMediaRecognitionRequest& request, const CommonMediaRecognitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CommonMediaRecognitionOutcomeCallable CommonMediaRecognitionCallable(const Model::CommonMediaRecognitionRequest& request);
 
                 /**
                  *本文档适用于图片内容安全、视频内容安全自定义识别库的管理。
