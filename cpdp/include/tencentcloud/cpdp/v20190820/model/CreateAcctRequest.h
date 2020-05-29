@@ -219,24 +219,24 @@ namespace TencentCloud
                     /**
                      * 获取子商户类型：
 个人: personal
-企业：enterprise
-缺省： enterprise
+企业: enterprise
+缺省: enterprise
                      * @return SubMchType 子商户类型：
 个人: personal
-企业：enterprise
-缺省： enterprise
+企业: enterprise
+缺省: enterprise
                      */
                     std::string GetSubMchType() const;
 
                     /**
                      * 设置子商户类型：
 个人: personal
-企业：enterprise
-缺省： enterprise
+企业: enterprise
+缺省: enterprise
                      * @param SubMchType 子商户类型：
 个人: personal
-企业：enterprise
-缺省： enterprise
+企业: enterprise
+缺省: enterprise
                      */
                     void SetSubMchType(const std::string& _subMchType);
 
@@ -340,25 +340,25 @@ merchant: 商户子账户
 
                     /**
                      * 获取敏感信息加密类型:
-RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
-AES,  aes对称加密，使用AES256-CBC-PCKS7padding
-默认RSA
+RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
+AES: aes对称加密，使用AES256-CBC-PCKS7padding
+缺省: RSA
                      * @return EncryptType 敏感信息加密类型:
-RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
-AES,  aes对称加密，使用AES256-CBC-PCKS7padding
-默认RSA
+RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
+AES: aes对称加密，使用AES256-CBC-PCKS7padding
+缺省: RSA
                      */
                     std::string GetEncryptType() const;
 
                     /**
                      * 设置敏感信息加密类型:
-RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
-AES,  aes对称加密，使用AES256-CBC-PCKS7padding
-默认RSA
+RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
+AES: aes对称加密，使用AES256-CBC-PCKS7padding
+缺省: RSA
                      * @param EncryptType 敏感信息加密类型:
-RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
-AES,  aes对称加密，使用AES256-CBC-PCKS7padding
-默认RSA
+RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
+AES: aes对称加密，使用AES256-CBC-PCKS7padding
+缺省: RSA
                      */
                     void SetEncryptType(const std::string& _encryptType);
 
@@ -385,6 +385,40 @@ AES,  aes对称加密，使用AES256-CBC-PCKS7padding
                      * @return SubAcctNo 是否已赋值
                      */
                     bool SubAcctNoHasBeenSet() const;
+
+                    /**
+                     * 获取环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     * @return MidasEnvironment 环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     */
+                    std::string GetMidasEnvironment() const;
+
+                    /**
+                     * 设置环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     * @param MidasEnvironment 环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     */
+                    void SetMidasEnvironment(const std::string& _midasEnvironment);
+
+                    /**
+                     * 判断参数 MidasEnvironment 是否已赋值
+                     * @return MidasEnvironment 是否已赋值
+                     */
+                    bool MidasEnvironmentHasBeenSet() const;
 
                 private:
 
@@ -448,8 +482,8 @@ AES,  aes对称加密，使用AES256-CBC-PCKS7padding
                     /**
                      * 子商户类型：
 个人: personal
-企业：enterprise
-缺省： enterprise
+企业: enterprise
+缺省: enterprise
                      */
                     std::string m_subMchType;
                     bool m_subMchTypeHasBeenSet;
@@ -485,9 +519,9 @@ merchant: 商户子账户
 
                     /**
                      * 敏感信息加密类型:
-RSA, rsa非对称加密，使用RSA-PKCS1-v1_5
-AES,  aes对称加密，使用AES256-CBC-PCKS7padding
-默认RSA
+RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
+AES: aes对称加密，使用AES256-CBC-PCKS7padding
+缺省: RSA
                      */
                     std::string m_encryptType;
                     bool m_encryptTypeHasBeenSet;
@@ -497,6 +531,16 @@ AES,  aes对称加密，使用AES256-CBC-PCKS7padding
                      */
                     std::string m_subAcctNo;
                     bool m_subAcctNoHasBeenSet;
+
+                    /**
+                     * 环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     */
+                    std::string m_midasEnvironment;
+                    bool m_midasEnvironmentHasBeenSet;
 
                 };
             }

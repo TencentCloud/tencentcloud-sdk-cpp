@@ -33,7 +33,9 @@ CheckAcctRequest::CheckAcctRequest() :
     m_checkCodeHasBeenSet(false),
     m_currencyTypeHasBeenSet(false),
     m_currencyUnitHasBeenSet(false),
-    m_currencyAmtHasBeenSet(false)
+    m_currencyAmtHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -122,6 +124,22 @@ string CheckAcctRequest::ToJsonString() const
         string key = "CurrencyAmt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_currencyAmt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_encryptType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -290,6 +308,38 @@ void CheckAcctRequest::SetCurrencyAmt(const string& _currencyAmt)
 bool CheckAcctRequest::CurrencyAmtHasBeenSet() const
 {
     return m_currencyAmtHasBeenSet;
+}
+
+string CheckAcctRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void CheckAcctRequest::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool CheckAcctRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
+}
+
+string CheckAcctRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void CheckAcctRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool CheckAcctRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

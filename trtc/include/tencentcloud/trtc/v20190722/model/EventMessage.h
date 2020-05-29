@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取事件Id：分为sdk的事件和webrtc的事件，具体映射，查看：事件ID映射表
-                     * @return EventId 事件Id：分为sdk的事件和webrtc的事件，具体映射，查看：事件ID映射表
+                     * 获取事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916
+                     * @return EventId 事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916
                      */
                     uint64_t GetEventId() const;
 
                     /**
-                     * 设置事件Id：分为sdk的事件和webrtc的事件，具体映射，查看：事件ID映射表
-                     * @param EventId 事件Id：分为sdk的事件和webrtc的事件，具体映射，查看：事件ID映射表
+                     * 设置事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916
+                     * @param EventId 事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916
                      */
                     void SetEventId(const uint64_t& _eventId);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 事件Id：分为sdk的事件和webrtc的事件，具体映射，查看：事件ID映射表
+                     * 事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916
                      */
                     uint64_t m_eventId;
                     bool m_eventIdHasBeenSet;

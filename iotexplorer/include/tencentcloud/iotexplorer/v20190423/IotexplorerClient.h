@@ -161,7 +161,7 @@ namespace TencentCloud
 
 
                 /**
-                 *提供给用户异步调用设备动作的能力
+                 *提供给用户异步调用设备行为的能力
                  * @param req CallDeviceActionAsyncRequest
                  * @return CallDeviceActionAsyncOutcome
                  */
@@ -170,7 +170,7 @@ namespace TencentCloud
                 CallDeviceActionAsyncOutcomeCallable CallDeviceActionAsyncCallable(const Model::CallDeviceActionAsyncRequest& request);
 
                 /**
-                 *为用户提供同步调用设备动作的能力。
+                 *为用户提供同步调用设备行为的能力。
                  * @param req CallDeviceActionSyncRequest
                  * @return CallDeviceActionSyncOutcome
                  */

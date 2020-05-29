@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取动作Id
-                     * @return ActionId 动作Id
+                     * 获取产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
+                     * @return ActionId 产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
                      */
                     std::string GetActionId() const;
 
                     /**
-                     * 设置动作Id
-                     * @param ActionId 动作Id
+                     * 设置产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
+                     * @param ActionId 产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
                      */
                     void SetActionId(const std::string& _actionId);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 动作Id
+                     * 产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义
                      */
                     std::string m_actionId;
                     bool m_actionIdHasBeenSet;

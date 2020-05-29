@@ -39,7 +39,8 @@ CreateAcctRequest::CreateAcctRequest() :
     m_subMerchantKeyHasBeenSet(false),
     m_subMerchantPrivateKeyHasBeenSet(false),
     m_encryptTypeHasBeenSet(false),
-    m_subAcctNoHasBeenSet(false)
+    m_subAcctNoHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,14 @@ string CreateAcctRequest::ToJsonString() const
         string key = "SubAcctNo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subAcctNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -440,6 +449,22 @@ void CreateAcctRequest::SetSubAcctNo(const string& _subAcctNo)
 bool CreateAcctRequest::SubAcctNoHasBeenSet() const
 {
     return m_subAcctNoHasBeenSet;
+}
+
+string CreateAcctRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void CreateAcctRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool CreateAcctRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

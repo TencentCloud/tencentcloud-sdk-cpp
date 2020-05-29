@@ -38,7 +38,8 @@ BindAcctRequest::BindAcctRequest() :
     m_mobileHasBeenSet(false),
     m_cnapsBranchIdHasBeenSet(false),
     m_eiconBankBranchIdHasBeenSet(false),
-    m_encryptTypeHasBeenSet(false)
+    m_encryptTypeHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string BindAcctRequest::ToJsonString() const
         string key = "EncryptType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_encryptType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -415,6 +424,22 @@ void BindAcctRequest::SetEncryptType(const string& _encryptType)
 bool BindAcctRequest::EncryptTypeHasBeenSet() const
 {
     return m_encryptTypeHasBeenSet;
+}
+
+string BindAcctRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void BindAcctRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool BindAcctRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

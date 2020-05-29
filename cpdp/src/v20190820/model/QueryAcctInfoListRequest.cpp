@@ -29,7 +29,9 @@ QueryAcctInfoListRequest::QueryAcctInfoListRequest() :
     m_queryAcctEndTimeHasBeenSet(false),
     m_pageOffsetHasBeenSet(false),
     m_midasSecretIdHasBeenSet(false),
-    m_midasSignatureHasBeenSet(false)
+    m_midasSignatureHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string QueryAcctInfoListRequest::ToJsonString() const
         string key = "MidasSignature";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_midasSignature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_encryptType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +208,38 @@ void QueryAcctInfoListRequest::SetMidasSignature(const string& _midasSignature)
 bool QueryAcctInfoListRequest::MidasSignatureHasBeenSet() const
 {
     return m_midasSignatureHasBeenSet;
+}
+
+string QueryAcctInfoListRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void QueryAcctInfoListRequest::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool QueryAcctInfoListRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
+}
+
+string QueryAcctInfoListRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void QueryAcctInfoListRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool QueryAcctInfoListRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

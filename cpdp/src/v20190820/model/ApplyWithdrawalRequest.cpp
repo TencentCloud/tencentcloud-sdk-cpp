@@ -35,7 +35,9 @@ ApplyWithdrawalRequest::ApplyWithdrawalRequest() :
     m_idTypeHasBeenSet(false),
     m_idCodeHasBeenSet(false),
     m_midasSecretIdHasBeenSet(false),
-    m_midasSignatureHasBeenSet(false)
+    m_midasSignatureHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,22 @@ string ApplyWithdrawalRequest::ToJsonString() const
         string key = "MidasSignature";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_midasSignature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_encryptType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -340,6 +358,38 @@ void ApplyWithdrawalRequest::SetMidasSignature(const string& _midasSignature)
 bool ApplyWithdrawalRequest::MidasSignatureHasBeenSet() const
 {
     return m_midasSignatureHasBeenSet;
+}
+
+string ApplyWithdrawalRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void ApplyWithdrawalRequest::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool ApplyWithdrawalRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
+}
+
+string ApplyWithdrawalRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void ApplyWithdrawalRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool ApplyWithdrawalRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

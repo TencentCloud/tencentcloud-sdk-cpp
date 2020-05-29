@@ -1201,6 +1201,49 @@ CpdpClient::QueryAcctInfoListOutcomeCallable CpdpClient::QueryAcctInfoListCallab
     return task->get_future();
 }
 
+CpdpClient::QueryAgentStatementsOutcome CpdpClient::QueryAgentStatements(const QueryAgentStatementsRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryAgentStatements");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryAgentStatementsResponse rsp = QueryAgentStatementsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryAgentStatementsOutcome(rsp);
+        else
+            return QueryAgentStatementsOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryAgentStatementsOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryAgentStatementsAsync(const QueryAgentStatementsRequest& request, const QueryAgentStatementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryAgentStatements(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryAgentStatementsOutcomeCallable CpdpClient::QueryAgentStatementsCallable(const QueryAgentStatementsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryAgentStatementsOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryAgentStatements(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryAgentTaxPaymentBatchOutcome CpdpClient::QueryAgentTaxPaymentBatch(const QueryAgentTaxPaymentBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryAgentTaxPaymentBatch");

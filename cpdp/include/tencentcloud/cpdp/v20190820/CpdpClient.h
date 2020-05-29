@@ -77,6 +77,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryAcctInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAcctInfoListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAcctInfoListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAgentStatementsRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryAgentStatementsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryApplicationMaterialRequest.h>
@@ -240,6 +242,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryAcctInfoListResponse> QueryAcctInfoListOutcome;
                 typedef std::future<QueryAcctInfoListOutcome> QueryAcctInfoListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryAcctInfoListRequest&, QueryAcctInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAcctInfoListAsyncHandler;
+                typedef Outcome<Error, Model::QueryAgentStatementsResponse> QueryAgentStatementsOutcome;
+                typedef std::future<QueryAgentStatementsOutcome> QueryAgentStatementsOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryAgentStatementsRequest&, QueryAgentStatementsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAgentStatementsAsyncHandler;
                 typedef Outcome<Error, Model::QueryAgentTaxPaymentBatchResponse> QueryAgentTaxPaymentBatchOutcome;
                 typedef std::future<QueryAgentTaxPaymentBatchOutcome> QueryAgentTaxPaymentBatchOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryAgentTaxPaymentBatchRequest&, QueryAgentTaxPaymentBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAgentTaxPaymentBatchAsyncHandler;
@@ -595,6 +600,15 @@ namespace TencentCloud
                 QueryAcctInfoListOutcome QueryAcctInfoList(const Model::QueryAcctInfoListRequest &request);
                 void QueryAcctInfoListAsync(const Model::QueryAcctInfoListRequest& request, const QueryAcctInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryAcctInfoListOutcomeCallable QueryAcctInfoListCallable(const Model::QueryAcctInfoListRequest& request);
+
+                /**
+                 *直播平台-查询代理商结算单链接
+                 * @param req QueryAgentStatementsRequest
+                 * @return QueryAgentStatementsOutcome
+                 */
+                QueryAgentStatementsOutcome QueryAgentStatements(const Model::QueryAgentStatementsRequest &request);
+                void QueryAgentStatementsAsync(const Model::QueryAgentStatementsRequest& request, const QueryAgentStatementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryAgentStatementsOutcomeCallable QueryAgentStatementsCallable(const Model::QueryAgentStatementsRequest& request);
 
                 /**
                  *直播平台-查询批次信息
