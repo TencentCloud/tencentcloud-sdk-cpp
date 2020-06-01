@@ -685,6 +685,49 @@ TcbClient::DescribeExtraPkgBillingInfoOutcomeCallable TcbClient::DescribeExtraPk
     return task->get_future();
 }
 
+TcbClient::DescribePostpayPackageFreeQuotasOutcome TcbClient::DescribePostpayPackageFreeQuotas(const DescribePostpayPackageFreeQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostpayPackageFreeQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostpayPackageFreeQuotasResponse rsp = DescribePostpayPackageFreeQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostpayPackageFreeQuotasOutcome(rsp);
+        else
+            return DescribePostpayPackageFreeQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostpayPackageFreeQuotasOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePostpayPackageFreeQuotasAsync(const DescribePostpayPackageFreeQuotasRequest& request, const DescribePostpayPackageFreeQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostpayPackageFreeQuotas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribePostpayPackageFreeQuotasOutcomeCallable TcbClient::DescribePostpayPackageFreeQuotasCallable(const DescribePostpayPackageFreeQuotasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostpayPackageFreeQuotasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostpayPackageFreeQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeQuotaDataOutcome TcbClient::DescribeQuotaData(const DescribeQuotaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuotaData");

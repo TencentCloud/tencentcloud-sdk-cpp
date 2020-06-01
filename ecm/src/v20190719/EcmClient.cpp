@@ -771,6 +771,49 @@ EcmClient::DescribeConfigOutcomeCallable EcmClient::DescribeConfigCallable(const
     return task->get_future();
 }
 
+EcmClient::DescribeDefaultSubnetOutcome EcmClient::DescribeDefaultSubnet(const DescribeDefaultSubnetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDefaultSubnet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDefaultSubnetResponse rsp = DescribeDefaultSubnetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDefaultSubnetOutcome(rsp);
+        else
+            return DescribeDefaultSubnetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDefaultSubnetOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeDefaultSubnetAsync(const DescribeDefaultSubnetRequest& request, const DescribeDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDefaultSubnet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeDefaultSubnetOutcomeCallable EcmClient::DescribeDefaultSubnetCallable(const DescribeDefaultSubnetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDefaultSubnetOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDefaultSubnet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeImageOutcome EcmClient::DescribeImage(const DescribeImageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImage");
@@ -1667,6 +1710,49 @@ EcmClient::ModifyAddressesBandwidthOutcomeCallable EcmClient::ModifyAddressesBan
         [this, request]()
         {
             return this->ModifyAddressesBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ModifyDefaultSubnetOutcome EcmClient::ModifyDefaultSubnet(const ModifyDefaultSubnetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDefaultSubnet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDefaultSubnetResponse rsp = ModifyDefaultSubnetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDefaultSubnetOutcome(rsp);
+        else
+            return ModifyDefaultSubnetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDefaultSubnetOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyDefaultSubnetAsync(const ModifyDefaultSubnetRequest& request, const ModifyDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDefaultSubnet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyDefaultSubnetOutcomeCallable EcmClient::ModifyDefaultSubnetCallable(const ModifyDefaultSubnetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDefaultSubnetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDefaultSubnet(request);
         }
     );
 

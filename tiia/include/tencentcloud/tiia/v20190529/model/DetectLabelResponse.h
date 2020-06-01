@@ -85,6 +85,22 @@ namespace TencentCloud
                      */
                     bool AlbumLabelsHasBeenSet() const;
 
+                    /**
+                     * 获取News新闻版标签结果数组。如未选择NEWS场景，则为空。
+新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewsLabels News新闻版标签结果数组。如未选择NEWS场景，则为空。
+新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetectLabelItem> GetNewsLabels() const;
+
+                    /**
+                     * 判断参数 NewsLabels 是否已赋值
+                     * @return NewsLabels 是否已赋值
+                     */
+                    bool NewsLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +123,14 @@ namespace TencentCloud
                      */
                     std::vector<DetectLabelItem> m_albumLabels;
                     bool m_albumLabelsHasBeenSet;
+
+                    /**
+                     * News新闻版标签结果数组。如未选择NEWS场景，则为空。
+新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetectLabelItem> m_newsLabels;
+                    bool m_newsLabelsHasBeenSet;
 
                 };
             }

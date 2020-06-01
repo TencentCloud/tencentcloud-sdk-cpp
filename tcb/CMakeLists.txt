@@ -35,6 +35,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h
@@ -42,6 +43,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticRequest.h
+  include/tencentcloud/tcb/v20180608/model/PackageFreeQuotaInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaResponse.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h
@@ -69,6 +71,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/PostpayEnvQuota.h
   include/tencentcloud/tcb/v20180608/model/EndUserInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
@@ -94,6 +97,7 @@ set(tcb_src
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/CommonServiceAPIResponse.cpp
   src/v20180608/model/DescribeEndUserStatisticResponse.cpp
+  src/v20180608/model/DescribePostpayPackageFreeQuotasRequest.cpp
   src/v20180608/model/CreateAuthDomainResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp
   src/v20180608/model/DescribeEndUsersRequest.cpp
@@ -101,6 +105,7 @@ set(tcb_src
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/ReinstateEnvResponse.cpp
   src/v20180608/model/DescribeEndUserStatisticRequest.cpp
+  src/v20180608/model/PackageFreeQuotaInfo.cpp
   src/v20180608/model/DescribeEnvFreeQuotaResponse.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
   src/v20180608/model/ModifyDatabaseACLResponse.cpp
@@ -128,6 +133,7 @@ set(tcb_src
   src/v20180608/model/PostpayEnvQuota.cpp
   src/v20180608/model/EndUserInfo.cpp
   src/v20180608/model/DescribeEnvLimitResponse.cpp
+  src/v20180608/model/DescribePostpayPackageFreeQuotasResponse.cpp
   src/v20180608/model/DescribeEndUserLoginStatisticResponse.cpp
   src/v20180608/model/DescribeEnvsResponse.cpp
   src/v20180608/model/ModifyEnvResponse.cpp

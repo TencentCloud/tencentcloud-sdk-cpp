@@ -29,7 +29,8 @@ DescribeDealsByCondRequest::DescribeDealsByCondRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_orderIdHasBeenSet(false)
+    m_orderIdHasBeenSet(false),
+    m_bigDealIdHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribeDealsByCondRequest::ToJsonString() const
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_orderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bigDealIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BigDealId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_bigDealId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void DescribeDealsByCondRequest::SetOrderId(const string& _orderId)
 bool DescribeDealsByCondRequest::OrderIdHasBeenSet() const
 {
     return m_orderIdHasBeenSet;
+}
+
+string DescribeDealsByCondRequest::GetBigDealId() const
+{
+    return m_bigDealId;
+}
+
+void DescribeDealsByCondRequest::SetBigDealId(const string& _bigDealId)
+{
+    m_bigDealId = _bigDealId;
+    m_bigDealIdHasBeenSet = true;
+}
+
+bool DescribeDealsByCondRequest::BigDealIdHasBeenSet() const
+{
+    return m_bigDealIdHasBeenSet;
 }
 
 

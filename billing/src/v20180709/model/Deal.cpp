@@ -39,7 +39,8 @@ Deal::Deal() :
     m_priceHasBeenSet(false),
     m_totalCostHasBeenSet(false),
     m_productCodeHasBeenSet(false),
-    m_subProductCodeHasBeenSet(false)
+    m_subProductCodeHasBeenSet(false),
+    m_bigDealIdHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome Deal::Deserialize(const Value &value)
         m_subProductCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("BigDealId") && !value["BigDealId"].IsNull())
+    {
+        if (!value["BigDealId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Deal.BigDealId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bigDealId = string(value["BigDealId"].GetString());
+        m_bigDealIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -394,6 +405,14 @@ void Deal::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "SubProductCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_subProductCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bigDealIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BigDealId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_bigDealId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -685,5 +704,21 @@ void Deal::SetSubProductCode(const string& _subProductCode)
 bool Deal::SubProductCodeHasBeenSet() const
 {
     return m_subProductCodeHasBeenSet;
+}
+
+string Deal::GetBigDealId() const
+{
+    return m_bigDealId;
+}
+
+void Deal::SetBigDealId(const string& _bigDealId)
+{
+    m_bigDealId = _bigDealId;
+    m_bigDealIdHasBeenSet = true;
+}
+
+bool Deal::BigDealIdHasBeenSet() const
+{
+    return m_bigDealIdHasBeenSet;
 }
 

@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取此次操作支付成功的订单号数组
-                     * @return OrderIds 此次操作支付成功的订单号数组
+                     * 获取此次操作支付成功的子订单号数组
+                     * @return OrderIds 此次操作支付成功的子订单号数组
                      */
                     std::vector<std::string> GetOrderIds() const;
 
@@ -66,10 +66,22 @@ namespace TencentCloud
                      */
                     bool ResourceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取此次操作支付成功的大订单号数组
+                     * @return BigDealIds 此次操作支付成功的大订单号数组
+                     */
+                    std::vector<std::string> GetBigDealIds() const;
+
+                    /**
+                     * 判断参数 BigDealIds 是否已赋值
+                     * @return BigDealIds 是否已赋值
+                     */
+                    bool BigDealIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 此次操作支付成功的订单号数组
+                     * 此次操作支付成功的子订单号数组
                      */
                     std::vector<std::string> m_orderIds;
                     bool m_orderIdsHasBeenSet;
@@ -79,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
+
+                    /**
+                     * 此次操作支付成功的大订单号数组
+                     */
+                    std::vector<std::string> m_bigDealIds;
+                    bool m_bigDealIdsHasBeenSet;
 
                 };
             }

@@ -57,6 +57,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeBaseOverviewResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeConfigRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeConfigResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstanceTypeConfigRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyAddressAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyAddressesBandwidthRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyAddressesBandwidthResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyModuleImageRequest.h>
@@ -196,6 +200,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeConfigResponse> DescribeConfigOutcome;
                 typedef std::future<DescribeConfigOutcome> DescribeConfigOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeConfigRequest&, DescribeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDefaultSubnetResponse> DescribeDefaultSubnetOutcome;
+                typedef std::future<DescribeDefaultSubnetOutcome> DescribeDefaultSubnetOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeDefaultSubnetRequest&, DescribeDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultSubnetAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageResponse> DescribeImageOutcome;
                 typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeImageRequest&, DescribeImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
@@ -259,6 +266,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAddressesBandwidthResponse> ModifyAddressesBandwidthOutcome;
                 typedef std::future<ModifyAddressesBandwidthOutcome> ModifyAddressesBandwidthOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyAddressesBandwidthRequest&, ModifyAddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAddressesBandwidthAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDefaultSubnetResponse> ModifyDefaultSubnetOutcome;
+                typedef std::future<ModifyDefaultSubnetOutcome> ModifyDefaultSubnetOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyDefaultSubnetRequest&, ModifyDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultSubnetAsyncHandler;
                 typedef Outcome<Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
                 typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
@@ -371,7 +381,7 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 CreateNetworkInterfaceOutcomeCallable CreateNetworkInterfaceCallable(const Model::CreateNetworkInterfaceRequest& request);
 
                 /**
-                 *创建子网
+                 *创建子网，若创建成功，则此子网会成为此可用区的默认子网。
                  * @param req CreateSubnetRequest
                  * @return CreateSubnetOutcome
                  */
@@ -416,7 +426,7 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DeleteNetworkInterfaceOutcomeCallable DeleteNetworkInterfaceCallable(const Model::DeleteNetworkInterfaceRequest& request);
 
                 /**
-                 *删除子网
+                 *删除子网，若子网为可用区下的默认子网，则默认子网会回退到系统自动创建的默认子网，非用户最新创建的子网。若默认子网不满足需求，可调用设置默认子网接口设置。
                  * @param req DeleteSubnetRequest
                  * @return DeleteSubnetOutcome
                  */
@@ -468,6 +478,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DescribeConfigOutcome DescribeConfig(const Model::DescribeConfigRequest &request);
                 void DescribeConfigAsync(const Model::DescribeConfigRequest& request, const DescribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConfigOutcomeCallable DescribeConfigCallable(const Model::DescribeConfigRequest& request);
+
+                /**
+                 *查询可用区的默认子网
+                 * @param req DescribeDefaultSubnetRequest
+                 * @return DescribeDefaultSubnetOutcome
+                 */
+                DescribeDefaultSubnetOutcome DescribeDefaultSubnet(const Model::DescribeDefaultSubnetRequest &request);
+                void DescribeDefaultSubnetAsync(const Model::DescribeDefaultSubnetRequest& request, const DescribeDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDefaultSubnetOutcomeCallable DescribeDefaultSubnetCallable(const Model::DescribeDefaultSubnetRequest& request);
 
                 /**
                  *展示镜像列表
@@ -662,6 +681,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyAddressesBandwidthOutcome ModifyAddressesBandwidth(const Model::ModifyAddressesBandwidthRequest &request);
                 void ModifyAddressesBandwidthAsync(const Model::ModifyAddressesBandwidthRequest& request, const ModifyAddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAddressesBandwidthOutcomeCallable ModifyAddressesBandwidthCallable(const Model::ModifyAddressesBandwidthRequest& request);
+
+                /**
+                 *修改在一个可用区下创建实例时使用的默认子网（创建实例时，未填写VPC参数时使用的sunbetId）
+                 * @param req ModifyDefaultSubnetRequest
+                 * @return ModifyDefaultSubnetOutcome
+                 */
+                ModifyDefaultSubnetOutcome ModifyDefaultSubnet(const Model::ModifyDefaultSubnetRequest &request);
+                void ModifyDefaultSubnetAsync(const Model::ModifyDefaultSubnetRequest& request, const ModifyDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDefaultSubnetOutcomeCallable ModifyDefaultSubnetCallable(const Model::ModifyDefaultSubnetRequest& request);
 
                 /**
                  *修改实例的属性。

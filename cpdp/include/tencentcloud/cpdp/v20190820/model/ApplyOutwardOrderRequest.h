@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool TargetCurrencyHasBeenSet() const;
 
                     /**
-                     * 获取收款人类型
-                     * @return PayeeType 收款人类型
+                     * 获取收款人类型（银行卡填"BANK_ACCOUNT"）
+                     * @return PayeeType 收款人类型（银行卡填"BANK_ACCOUNT"）
                      */
                     std::string GetPayeeType() const;
 
                     /**
-                     * 设置收款人类型
-                     * @param PayeeType 收款人类型
+                     * 设置收款人类型（银行卡填"BANK_ACCOUNT"）
+                     * @param PayeeType 收款人类型（银行卡填"BANK_ACCOUNT"）
                      */
                     void SetPayeeType(const std::string& _payeeType);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool TargetAmountHasBeenSet() const;
 
                     /**
-                     * 获取收款人姓名
-                     * @return PayeeName 收款人姓名
+                     * 获取收款人姓名（PayeeType为"BANK_COUNT"时必填）
+                     * @return PayeeName 收款人姓名（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string GetPayeeName() const;
 
                     /**
-                     * 设置收款人姓名
-                     * @param PayeeName 收款人姓名
+                     * 设置收款人姓名（PayeeType为"BANK_COUNT"时必填）
+                     * @param PayeeName 收款人姓名（PayeeType为"BANK_COUNT"时必填）
                      */
                     void SetPayeeName(const std::string& _payeeName);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool PayeeNameHasBeenSet() const;
 
                     /**
-                     * 获取收款人地址
-                     * @return PayeeAddress 收款人地址
+                     * 获取收款人地址（PayeeType为"BANK_COUNT"时必填）
+                     * @return PayeeAddress 收款人地址（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string GetPayeeAddress() const;
 
                     /**
-                     * 设置收款人地址
-                     * @param PayeeAddress 收款人地址
+                     * 设置收款人地址（PayeeType为"BANK_COUNT"时必填）
+                     * @param PayeeAddress 收款人地址（PayeeType为"BANK_COUNT"时必填）
                      */
                     void SetPayeeAddress(const std::string& _payeeAddress);
 
@@ -223,14 +223,22 @@ namespace TencentCloud
                     bool PayeeAddressHasBeenSet() const;
 
                     /**
-                     * 获取收款人银行账号类型
-                     * @return PayeeBankAccountType 收款人银行账号类型
+                     * 获取收款人银行账号类型（PayeeType为"BANK_COUNT"时必填）
+个人填"INDIVIDUAL"
+企业填"CORPORATE"
+                     * @return PayeeBankAccountType 收款人银行账号类型（PayeeType为"BANK_COUNT"时必填）
+个人填"INDIVIDUAL"
+企业填"CORPORATE"
                      */
                     std::string GetPayeeBankAccountType() const;
 
                     /**
-                     * 设置收款人银行账号类型
-                     * @param PayeeBankAccountType 收款人银行账号类型
+                     * 设置收款人银行账号类型（PayeeType为"BANK_COUNT"时必填）
+个人填"INDIVIDUAL"
+企业填"CORPORATE"
+                     * @param PayeeBankAccountType 收款人银行账号类型（PayeeType为"BANK_COUNT"时必填）
+个人填"INDIVIDUAL"
+企业填"CORPORATE"
                      */
                     void SetPayeeBankAccountType(const std::string& _payeeBankAccountType);
 
@@ -241,14 +249,14 @@ namespace TencentCloud
                     bool PayeeBankAccountTypeHasBeenSet() const;
 
                     /**
-                     * 获取收款人国家或地区编码
-                     * @return PayeeCountryCode 收款人国家或地区编码
+                     * 获取收款人国家或地区编码（PayeeType为"BANK_COUNT"时必填）
+                     * @return PayeeCountryCode 收款人国家或地区编码（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string GetPayeeCountryCode() const;
 
                     /**
-                     * 设置收款人国家或地区编码
-                     * @param PayeeCountryCode 收款人国家或地区编码
+                     * 设置收款人国家或地区编码（PayeeType为"BANK_COUNT"时必填）
+                     * @param PayeeCountryCode 收款人国家或地区编码（PayeeType为"BANK_COUNT"时必填）
                      */
                     void SetPayeeCountryCode(const std::string& _payeeCountryCode);
 
@@ -259,14 +267,14 @@ namespace TencentCloud
                     bool PayeeCountryCodeHasBeenSet() const;
 
                     /**
-                     * 获取收款人开户银行名称
-                     * @return PayeeBankName 收款人开户银行名称
+                     * 获取收款人开户银行名称（PayeeType为"BANK_COUNT"时必填）
+                     * @return PayeeBankName 收款人开户银行名称（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string GetPayeeBankName() const;
 
                     /**
-                     * 设置收款人开户银行名称
-                     * @param PayeeBankName 收款人开户银行名称
+                     * 设置收款人开户银行名称（PayeeType为"BANK_COUNT"时必填）
+                     * @param PayeeBankName 收款人开户银行名称（PayeeType为"BANK_COUNT"时必填）
                      */
                     void SetPayeeBankName(const std::string& _payeeBankName);
 
@@ -277,14 +285,14 @@ namespace TencentCloud
                     bool PayeeBankNameHasBeenSet() const;
 
                     /**
-                     * 获取收款人开户银行地址
-                     * @return PayeeBankAddress 收款人开户银行地址
+                     * 获取收款人开户银行地址（PayeeType为"BANK_COUNT"时必填）
+                     * @return PayeeBankAddress 收款人开户银行地址（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string GetPayeeBankAddress() const;
 
                     /**
-                     * 设置收款人开户银行地址
-                     * @param PayeeBankAddress 收款人开户银行地址
+                     * 设置收款人开户银行地址（PayeeType为"BANK_COUNT"时必填）
+                     * @param PayeeBankAddress 收款人开户银行地址（PayeeType为"BANK_COUNT"时必填）
                      */
                     void SetPayeeBankAddress(const std::string& _payeeBankAddress);
 
@@ -295,14 +303,14 @@ namespace TencentCloud
                     bool PayeeBankAddressHasBeenSet() const;
 
                     /**
-                     * 获取收款人开户银行所在国家或地区编码
-                     * @return PayeeBankDistrict 收款人开户银行所在国家或地区编码
+                     * 获取收款人开户银行所在国家或地区编码（PayeeType为"BANK_COUNT"时必填）
+                     * @return PayeeBankDistrict 收款人开户银行所在国家或地区编码（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string GetPayeeBankDistrict() const;
 
                     /**
-                     * 设置收款人开户银行所在国家或地区编码
-                     * @param PayeeBankDistrict 收款人开户银行所在国家或地区编码
+                     * 设置收款人开户银行所在国家或地区编码（PayeeType为"BANK_COUNT"时必填）
+                     * @param PayeeBankDistrict 收款人开户银行所在国家或地区编码（PayeeType为"BANK_COUNT"时必填）
                      */
                     void SetPayeeBankDistrict(const std::string& _payeeBankDistrict);
 
@@ -313,14 +321,14 @@ namespace TencentCloud
                     bool PayeeBankDistrictHasBeenSet() const;
 
                     /**
-                     * 获取收款银行SwiftCode
-                     * @return PayeeBankSwiftCode 收款银行SwiftCode
+                     * 获取收款银行SwiftCode（PayeeType为"BANK_COUNT"时必填）
+                     * @return PayeeBankSwiftCode 收款银行SwiftCode（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string GetPayeeBankSwiftCode() const;
 
                     /**
-                     * 设置收款银行SwiftCode
-                     * @param PayeeBankSwiftCode 收款银行SwiftCode
+                     * 设置收款银行SwiftCode（PayeeType为"BANK_COUNT"时必填）
+                     * @param PayeeBankSwiftCode 收款银行SwiftCode（PayeeType为"BANK_COUNT"时必填）
                      */
                     void SetPayeeBankSwiftCode(const std::string& _payeeBankSwiftCode);
 
@@ -429,7 +437,7 @@ namespace TencentCloud
                     bool m_targetCurrencyHasBeenSet;
 
                     /**
-                     * 收款人类型
+                     * 收款人类型（银行卡填"BANK_ACCOUNT"）
                      */
                     std::string m_payeeType;
                     bool m_payeeTypeHasBeenSet;
@@ -453,49 +461,51 @@ namespace TencentCloud
                     bool m_targetAmountHasBeenSet;
 
                     /**
-                     * 收款人姓名
+                     * 收款人姓名（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string m_payeeName;
                     bool m_payeeNameHasBeenSet;
 
                     /**
-                     * 收款人地址
+                     * 收款人地址（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string m_payeeAddress;
                     bool m_payeeAddressHasBeenSet;
 
                     /**
-                     * 收款人银行账号类型
+                     * 收款人银行账号类型（PayeeType为"BANK_COUNT"时必填）
+个人填"INDIVIDUAL"
+企业填"CORPORATE"
                      */
                     std::string m_payeeBankAccountType;
                     bool m_payeeBankAccountTypeHasBeenSet;
 
                     /**
-                     * 收款人国家或地区编码
+                     * 收款人国家或地区编码（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string m_payeeCountryCode;
                     bool m_payeeCountryCodeHasBeenSet;
 
                     /**
-                     * 收款人开户银行名称
+                     * 收款人开户银行名称（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string m_payeeBankName;
                     bool m_payeeBankNameHasBeenSet;
 
                     /**
-                     * 收款人开户银行地址
+                     * 收款人开户银行地址（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string m_payeeBankAddress;
                     bool m_payeeBankAddressHasBeenSet;
 
                     /**
-                     * 收款人开户银行所在国家或地区编码
+                     * 收款人开户银行所在国家或地区编码（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string m_payeeBankDistrict;
                     bool m_payeeBankDistrictHasBeenSet;
 
                     /**
-                     * 收款银行SwiftCode
+                     * 收款银行SwiftCode（PayeeType为"BANK_COUNT"时必填）
                      */
                     std::string m_payeeBankSwiftCode;
                     bool m_payeeBankSwiftCodeHasBeenSet;

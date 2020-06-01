@@ -339,6 +339,28 @@ namespace TencentCloud
                      */
                     bool IsAutoDegradeHasBeenSet() const;
 
+                    /**
+                     * 获取环境渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvChannel 环境渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEnvChannel() const;
+
+                    /**
+                     * 设置环境渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnvChannel 环境渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnvChannel(const std::string& _envChannel);
+
+                    /**
+                     * 判断参数 EnvChannel 是否已赋值
+                     * @return EnvChannel 是否已赋值
+                     */
+                    bool EnvChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -433,6 +455,13 @@ namespace TencentCloud
                      */
                     bool m_isAutoDegrade;
                     bool m_isAutoDegradeHasBeenSet;
+
+                    /**
+                     * 环境渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_envChannel;
+                    bool m_envChannelHasBeenSet;
 
                 };
             }

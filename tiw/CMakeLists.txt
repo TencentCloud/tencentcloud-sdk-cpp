@@ -31,16 +31,20 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/CreateTranscodeResponse.h
   include/tencentcloud/tiw/v20190919/model/VideoInfo.h
   include/tencentcloud/tiw/v20190919/model/CustomLayout.h
+  include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyResponse.h
   include/tencentcloud/tiw/v20190919/model/Concat.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/Whiteboard.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/CreateTranscodeRequest.h
-  include/tencentcloud/tiw/v20190919/model/Whiteboard.h
+  include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyResponse.h
   include/tencentcloud/tiw/v20190919/model/PauseOnlineRecordResponse.h
+  include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackResponse.h
+  include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/StopOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordRequest.h
@@ -66,16 +70,20 @@ set(tiw_src
   src/v20190919/model/CreateTranscodeResponse.cpp
   src/v20190919/model/VideoInfo.cpp
   src/v20190919/model/CustomLayout.cpp
+  src/v20190919/model/SetTranscodeCallbackKeyResponse.cpp
   src/v20190919/model/Concat.cpp
   src/v20190919/model/DescribeOnlineRecordRequest.cpp
   src/v20190919/model/StartOnlineRecordResponse.cpp
+  src/v20190919/model/Whiteboard.cpp
   src/v20190919/model/DescribeOnlineRecordResponse.cpp
   src/v20190919/model/CreateTranscodeRequest.cpp
-  src/v20190919/model/Whiteboard.cpp
+  src/v20190919/model/SetOnlineRecordCallbackKeyResponse.cpp
   src/v20190919/model/PauseOnlineRecordResponse.cpp
+  src/v20190919/model/SetTranscodeCallbackKeyRequest.cpp
   src/v20190919/model/DescribeTranscodeRequest.cpp
   src/v20190919/model/DescribeTranscodeResponse.cpp
   src/v20190919/model/SetOnlineRecordCallbackResponse.cpp
+  src/v20190919/model/SetOnlineRecordCallbackKeyRequest.cpp
   src/v20190919/model/StopOnlineRecordResponse.cpp
   src/v20190919/model/DescribeTranscodeCallbackRequest.cpp
   src/v20190919/model/ResumeOnlineRecordRequest.cpp

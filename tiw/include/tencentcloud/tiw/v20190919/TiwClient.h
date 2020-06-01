@@ -39,8 +39,12 @@
 #include <tencentcloud/tiw/v20190919/model/ResumeOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/StartOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/StopOnlineRecordRequest.h>
@@ -83,9 +87,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SetOnlineRecordCallbackResponse> SetOnlineRecordCallbackOutcome;
                 typedef std::future<SetOnlineRecordCallbackOutcome> SetOnlineRecordCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetOnlineRecordCallbackRequest&, SetOnlineRecordCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetOnlineRecordCallbackAsyncHandler;
+                typedef Outcome<Error, Model::SetOnlineRecordCallbackKeyResponse> SetOnlineRecordCallbackKeyOutcome;
+                typedef std::future<SetOnlineRecordCallbackKeyOutcome> SetOnlineRecordCallbackKeyOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetOnlineRecordCallbackKeyRequest&, SetOnlineRecordCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetOnlineRecordCallbackKeyAsyncHandler;
                 typedef Outcome<Error, Model::SetTranscodeCallbackResponse> SetTranscodeCallbackOutcome;
                 typedef std::future<SetTranscodeCallbackOutcome> SetTranscodeCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetTranscodeCallbackRequest&, SetTranscodeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTranscodeCallbackAsyncHandler;
+                typedef Outcome<Error, Model::SetTranscodeCallbackKeyResponse> SetTranscodeCallbackKeyOutcome;
+                typedef std::future<SetTranscodeCallbackKeyOutcome> SetTranscodeCallbackKeyOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetTranscodeCallbackKeyRequest&, SetTranscodeCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTranscodeCallbackKeyAsyncHandler;
                 typedef Outcome<Error, Model::StartOnlineRecordResponse> StartOnlineRecordOutcome;
                 typedef std::future<StartOnlineRecordOutcome> StartOnlineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::StartOnlineRecordRequest&, StartOnlineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartOnlineRecordAsyncHandler;
@@ -168,6 +178,15 @@ namespace TencentCloud
                 SetOnlineRecordCallbackOutcomeCallable SetOnlineRecordCallbackCallable(const Model::SetOnlineRecordCallbackRequest& request);
 
                 /**
+                 *设置实时录制回调鉴权密钥
+                 * @param req SetOnlineRecordCallbackKeyRequest
+                 * @return SetOnlineRecordCallbackKeyOutcome
+                 */
+                SetOnlineRecordCallbackKeyOutcome SetOnlineRecordCallbackKey(const Model::SetOnlineRecordCallbackKeyRequest &request);
+                void SetOnlineRecordCallbackKeyAsync(const Model::SetOnlineRecordCallbackKeyRequest& request, const SetOnlineRecordCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetOnlineRecordCallbackKeyOutcomeCallable SetOnlineRecordCallbackKeyCallable(const Model::SetOnlineRecordCallbackKeyRequest& request);
+
+                /**
                  *设置文档转码回调地址
                  * @param req SetTranscodeCallbackRequest
                  * @return SetTranscodeCallbackOutcome
@@ -175,6 +194,15 @@ namespace TencentCloud
                 SetTranscodeCallbackOutcome SetTranscodeCallback(const Model::SetTranscodeCallbackRequest &request);
                 void SetTranscodeCallbackAsync(const Model::SetTranscodeCallbackRequest& request, const SetTranscodeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetTranscodeCallbackOutcomeCallable SetTranscodeCallbackCallable(const Model::SetTranscodeCallbackRequest& request);
+
+                /**
+                 *设置文档转码回调鉴权密钥
+                 * @param req SetTranscodeCallbackKeyRequest
+                 * @return SetTranscodeCallbackKeyOutcome
+                 */
+                SetTranscodeCallbackKeyOutcome SetTranscodeCallbackKey(const Model::SetTranscodeCallbackKeyRequest &request);
+                void SetTranscodeCallbackKeyAsync(const Model::SetTranscodeCallbackKeyRequest& request, const SetTranscodeCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetTranscodeCallbackKeyOutcomeCallable SetTranscodeCallbackKeyCallable(const Model::SetTranscodeCallbackKeyRequest& request);
 
                 /**
                  *发起一个实时录制任务

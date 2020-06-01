@@ -26,7 +26,8 @@ using namespace std;
 
 PayDealsResponse::PayDealsResponse() :
     m_orderIdsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+    m_resourceIdsHasBeenSet(false),
+    m_bigDealIdsHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,19 @@ CoreInternalOutcome PayDealsResponse::Deserialize(const string &payload)
         m_resourceIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BigDealIds") && !rsp["BigDealIds"].IsNull())
+    {
+        if (!rsp["BigDealIds"].IsArray())
+            return CoreInternalOutcome(Error("response `BigDealIds` is not array type"));
+
+        const Value &tmpValue = rsp["BigDealIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bigDealIds.push_back((*itr).GetString());
+        }
+        m_bigDealIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -113,6 +127,16 @@ vector<string> PayDealsResponse::GetResourceIds() const
 bool PayDealsResponse::ResourceIdsHasBeenSet() const
 {
     return m_resourceIdsHasBeenSet;
+}
+
+vector<string> PayDealsResponse::GetBigDealIds() const
+{
+    return m_bigDealIds;
+}
+
+bool PayDealsResponse::BigDealIdsHasBeenSet() const
+{
+    return m_bigDealIdsHasBeenSet;
 }
 
 

@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PayerIdHasBeenSet() const;
 
                     /**
-                     * 获取付款人姓名
-                     * @return PayeeName 付款人姓名
+                     * 获取收款人姓名
+                     * @return PayeeName 收款人姓名
                      */
                     std::string GetPayeeName() const;
 
                     /**
-                     * 设置付款人姓名
-                     * @param PayeeName 付款人姓名
+                     * 设置收款人姓名
+                     * @param PayeeName 收款人姓名
                      */
                     void SetPayeeName(const std::string& _payeeName);
 
@@ -341,7 +341,7 @@ TradeType=SERVICE时填写贸易类别，见常见问题-贸易类别)
                     bool m_payerIdHasBeenSet;
 
                     /**
-                     * 付款人姓名
+                     * 收款人姓名
                      */
                     std::string m_payeeName;
                     bool m_payeeNameHasBeenSet;

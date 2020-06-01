@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool PayerContactNameHasBeenSet() const;
 
                     /**
-                     * 获取付款人联系电话 (PayerType=CORPORATE 必填)
-                     * @return PayerContactNumber 付款人联系电话 (PayerType=CORPORATE 必填)
+                     * 获取付款人联系电话
+                     * @return PayerContactNumber 付款人联系电话
                      */
                     std::string GetPayerContactNumber() const;
 
                     /**
-                     * 设置付款人联系电话 (PayerType=CORPORATE 必填)
-                     * @param PayerContactNumber 付款人联系电话 (PayerType=CORPORATE 必填)
+                     * 设置付款人联系电话
+                     * @param PayerContactNumber 付款人联系电话
                      */
                     void SetPayerContactNumber(const std::string& _payerContactNumber);
 
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_payerContactNameHasBeenSet;
 
                     /**
-                     * 付款人联系电话 (PayerType=CORPORATE 必填)
+                     * 付款人联系电话
                      */
                     std::string m_payerContactNumber;
                     bool m_payerContactNumberHasBeenSet;

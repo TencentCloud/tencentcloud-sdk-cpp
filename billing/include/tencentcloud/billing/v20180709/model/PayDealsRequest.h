@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要支付的一个或者多个订单号
-                     * @return OrderIds 需要支付的一个或者多个订单号
+                     * 获取需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数
+                     * @return OrderIds 需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数
                      */
                     std::vector<std::string> GetOrderIds() const;
 
                     /**
-                     * 设置需要支付的一个或者多个订单号
-                     * @param OrderIds 需要支付的一个或者多个订单号
+                     * 设置需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数
+                     * @param OrderIds 需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数
                      */
                     void SetOrderIds(const std::vector<std::string>& _orderIds);
 
@@ -96,10 +96,28 @@ namespace TencentCloud
                      */
                     bool VoucherIdsHasBeenSet() const;
 
+                    /**
+                     * 获取需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数
+                     * @return BigDealIds 需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数
+                     */
+                    std::vector<std::string> GetBigDealIds() const;
+
+                    /**
+                     * 设置需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数
+                     * @param BigDealIds 需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数
+                     */
+                    void SetBigDealIds(const std::vector<std::string>& _bigDealIds);
+
+                    /**
+                     * 判断参数 BigDealIds 是否已赋值
+                     * @return BigDealIds 是否已赋值
+                     */
+                    bool BigDealIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要支付的一个或者多个订单号
+                     * 需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数
                      */
                     std::vector<std::string> m_orderIds;
                     bool m_orderIdsHasBeenSet;
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
+
+                    /**
+                     * 需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数
+                     */
+                    std::vector<std::string> m_bigDealIds;
+                    bool m_bigDealIdsHasBeenSet;
 
                 };
             }

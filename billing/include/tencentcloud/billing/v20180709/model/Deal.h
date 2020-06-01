@@ -375,6 +375,24 @@ namespace TencentCloud
                      */
                     bool SubProductCodeHasBeenSet() const;
 
+                    /**
+                     * 获取大订单号
+                     * @return BigDealId 大订单号
+                     */
+                    std::string GetBigDealId() const;
+
+                    /**
+                     * 设置大订单号
+                     * @param BigDealId 大订单号
+                     */
+                    void SetBigDealId(const std::string& _bigDealId);
+
+                    /**
+                     * 判断参数 BigDealId 是否已赋值
+                     * @return BigDealId 是否已赋值
+                     */
+                    bool BigDealIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +503,12 @@ namespace TencentCloud
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
+
+                    /**
+                     * 大订单号
+                     */
+                    std::string m_bigDealId;
+                    bool m_bigDealIdHasBeenSet;
 
                 };
             }

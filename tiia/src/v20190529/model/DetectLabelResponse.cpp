@@ -27,7 +27,8 @@ using namespace std;
 DetectLabelResponse::DetectLabelResponse() :
     m_labelsHasBeenSet(false),
     m_cameraLabelsHasBeenSet(false),
-    m_albumLabelsHasBeenSet(false)
+    m_albumLabelsHasBeenSet(false),
+    m_newsLabelsHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,26 @@ CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
         m_albumLabelsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NewsLabels") && !rsp["NewsLabels"].IsNull())
+    {
+        if (!rsp["NewsLabels"].IsArray())
+            return CoreInternalOutcome(Error("response `NewsLabels` is not array type"));
+
+        const Value &tmpValue = rsp["NewsLabels"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetectLabelItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_newsLabels.push_back(item);
+        }
+        m_newsLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -158,6 +179,16 @@ vector<DetectLabelItem> DetectLabelResponse::GetAlbumLabels() const
 bool DetectLabelResponse::AlbumLabelsHasBeenSet() const
 {
     return m_albumLabelsHasBeenSet;
+}
+
+vector<DetectLabelItem> DetectLabelResponse::GetNewsLabels() const
+{
+    return m_newsLabels;
+}
+
+bool DetectLabelResponse::NewsLabelsHasBeenSet() const
+{
+    return m_newsLabelsHasBeenSet;
 }
 
 

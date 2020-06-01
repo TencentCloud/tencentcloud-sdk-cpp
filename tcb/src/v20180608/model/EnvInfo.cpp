@@ -35,7 +35,8 @@ EnvInfo::EnvInfo() :
     m_packageNameHasBeenSet(false),
     m_logServicesHasBeenSet(false),
     m_staticStoragesHasBeenSet(false),
-    m_isAutoDegradeHasBeenSet(false)
+    m_isAutoDegradeHasBeenSet(false),
+    m_envChannelHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,16 @@ CoreInternalOutcome EnvInfo::Deserialize(const Value &value)
         m_isAutoDegradeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvChannel") && !value["EnvChannel"].IsNull())
+    {
+        if (!value["EnvChannel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EnvInfo.EnvChannel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envChannel = string(value["EnvChannel"].GetString());
+        m_envChannelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -386,6 +397,14 @@ void EnvInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "IsAutoDegrade";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAutoDegrade, allocator);
+    }
+
+    if (m_envChannelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnvChannel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_envChannel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -613,5 +632,21 @@ void EnvInfo::SetIsAutoDegrade(const bool& _isAutoDegrade)
 bool EnvInfo::IsAutoDegradeHasBeenSet() const
 {
     return m_isAutoDegradeHasBeenSet;
+}
+
+string EnvInfo::GetEnvChannel() const
+{
+    return m_envChannel;
+}
+
+void EnvInfo::SetEnvChannel(const string& _envChannel)
+{
+    m_envChannel = _envChannel;
+    m_envChannelHasBeenSet = true;
+}
+
+bool EnvInfo::EnvChannelHasBeenSet() const
+{
+    return m_envChannelHasBeenSet;
 }
 

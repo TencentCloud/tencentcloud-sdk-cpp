@@ -26,7 +26,8 @@ using namespace std;
 PayDealsRequest::PayDealsRequest() :
     m_orderIdsHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false)
+    m_voucherIdsHasBeenSet(false),
+    m_bigDealIdsHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,19 @@ string PayDealsRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_voucherIds.begin(); itr != m_voucherIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_bigDealIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BigDealIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_bigDealIds.begin(); itr != m_bigDealIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -125,6 +139,22 @@ void PayDealsRequest::SetVoucherIds(const vector<string>& _voucherIds)
 bool PayDealsRequest::VoucherIdsHasBeenSet() const
 {
     return m_voucherIdsHasBeenSet;
+}
+
+vector<string> PayDealsRequest::GetBigDealIds() const
+{
+    return m_bigDealIds;
+}
+
+void PayDealsRequest::SetBigDealIds(const vector<string>& _bigDealIds)
+{
+    m_bigDealIds = _bigDealIds;
+    m_bigDealIdsHasBeenSet = true;
+}
+
+bool PayDealsRequest::BigDealIdsHasBeenSet() const
+{
+    return m_bigDealIdsHasBeenSet;
 }
 
 

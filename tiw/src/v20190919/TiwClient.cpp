@@ -384,6 +384,49 @@ TiwClient::SetOnlineRecordCallbackOutcomeCallable TiwClient::SetOnlineRecordCall
     return task->get_future();
 }
 
+TiwClient::SetOnlineRecordCallbackKeyOutcome TiwClient::SetOnlineRecordCallbackKey(const SetOnlineRecordCallbackKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetOnlineRecordCallbackKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetOnlineRecordCallbackKeyResponse rsp = SetOnlineRecordCallbackKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetOnlineRecordCallbackKeyOutcome(rsp);
+        else
+            return SetOnlineRecordCallbackKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return SetOnlineRecordCallbackKeyOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetOnlineRecordCallbackKeyAsync(const SetOnlineRecordCallbackKeyRequest& request, const SetOnlineRecordCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetOnlineRecordCallbackKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetOnlineRecordCallbackKeyOutcomeCallable TiwClient::SetOnlineRecordCallbackKeyCallable(const SetOnlineRecordCallbackKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetOnlineRecordCallbackKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->SetOnlineRecordCallbackKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::SetTranscodeCallbackOutcome TiwClient::SetTranscodeCallback(const SetTranscodeCallbackRequest &request)
 {
     auto outcome = MakeRequest(request, "SetTranscodeCallback");
@@ -420,6 +463,49 @@ TiwClient::SetTranscodeCallbackOutcomeCallable TiwClient::SetTranscodeCallbackCa
         [this, request]()
         {
             return this->SetTranscodeCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetTranscodeCallbackKeyOutcome TiwClient::SetTranscodeCallbackKey(const SetTranscodeCallbackKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetTranscodeCallbackKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetTranscodeCallbackKeyResponse rsp = SetTranscodeCallbackKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetTranscodeCallbackKeyOutcome(rsp);
+        else
+            return SetTranscodeCallbackKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return SetTranscodeCallbackKeyOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetTranscodeCallbackKeyAsync(const SetTranscodeCallbackKeyRequest& request, const SetTranscodeCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetTranscodeCallbackKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetTranscodeCallbackKeyOutcomeCallable TiwClient::SetTranscodeCallbackKeyCallable(const SetTranscodeCallbackKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetTranscodeCallbackKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->SetTranscodeCallbackKey(request);
         }
     );
 
