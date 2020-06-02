@@ -513,6 +513,49 @@ MongodbClient::DescribeSpecInfoOutcomeCallable MongodbClient::DescribeSpecInfoCa
     return task->get_future();
 }
 
+MongodbClient::FlushInstanceRouterConfigOutcome MongodbClient::FlushInstanceRouterConfig(const FlushInstanceRouterConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "FlushInstanceRouterConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FlushInstanceRouterConfigResponse rsp = FlushInstanceRouterConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FlushInstanceRouterConfigOutcome(rsp);
+        else
+            return FlushInstanceRouterConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return FlushInstanceRouterConfigOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::FlushInstanceRouterConfigAsync(const FlushInstanceRouterConfigRequest& request, const FlushInstanceRouterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FlushInstanceRouterConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::FlushInstanceRouterConfigOutcomeCallable MongodbClient::FlushInstanceRouterConfigCallable(const FlushInstanceRouterConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FlushInstanceRouterConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->FlushInstanceRouterConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::InquirePriceCreateDBInstancesOutcome MongodbClient::InquirePriceCreateDBInstances(const InquirePriceCreateDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceCreateDBInstances");

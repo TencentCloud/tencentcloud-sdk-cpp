@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取取值FourAction时 返回四种动作的动作序列
+                     * @return ActionType 取值FourAction时 返回四种动作的动作序列
+                     */
+                    std::string GetActionType() const;
+
+                    /**
+                     * 设置取值FourAction时 返回四种动作的动作序列
+                     * @param ActionType 取值FourAction时 返回四种动作的动作序列
+                     */
+                    void SetActionType(const std::string& _actionType);
+
+                    /**
+                     * 判断参数 ActionType 是否已赋值
+                     * @return ActionType 是否已赋值
+                     */
+                    bool ActionTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 取值FourAction时 返回四种动作的动作序列
+                     */
+                    std::string m_actionType;
+                    bool m_actionTypeHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 CreateTableGroupRequest::CreateTableGroupRequest() :
     m_clusterIdHasBeenSet(false),
     m_tableGroupNameHasBeenSet(false),
-    m_tableGroupIdHasBeenSet(false)
+    m_tableGroupIdHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,21 @@ string CreateTableGroupRequest::ToJsonString() const
         string key = "TableGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_tableGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -115,6 +131,22 @@ void CreateTableGroupRequest::SetTableGroupId(const string& _tableGroupId)
 bool CreateTableGroupRequest::TableGroupIdHasBeenSet() const
 {
     return m_tableGroupIdHasBeenSet;
+}
+
+vector<TagInfoUnit> CreateTableGroupRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateTableGroupRequest::SetResourceTags(const vector<TagInfoUnit>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateTableGroupRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

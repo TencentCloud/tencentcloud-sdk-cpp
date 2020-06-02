@@ -23,7 +23,8 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace rapidjson;
 using namespace std;
 
-GetActionSequenceRequest::GetActionSequenceRequest()
+GetActionSequenceRequest::GetActionSequenceRequest() :
+    m_actionTypeHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,14 @@ string GetActionSequenceRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_actionTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ActionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +50,21 @@ string GetActionSequenceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string GetActionSequenceRequest::GetActionType() const
+{
+    return m_actionType;
+}
+
+void GetActionSequenceRequest::SetActionType(const string& _actionType)
+{
+    m_actionType = _actionType;
+    m_actionTypeHasBeenSet = true;
+}
+
+bool GetActionSequenceRequest::ActionTypeHasBeenSet() const
+{
+    return m_actionTypeHasBeenSet;
+}
 
 

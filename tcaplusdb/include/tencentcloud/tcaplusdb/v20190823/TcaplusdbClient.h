@@ -43,14 +43,20 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableGroupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTablesResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeClusterTagsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeClusterTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClustersRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClustersResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeIdlFileInfosResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeRegionsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupTagsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableGroupsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableTagsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeTableTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeTablesInRecycleRequest.h>
@@ -63,12 +69,18 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterTagsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupNameResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupTagsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableGroupTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableMemosResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableQuotasRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableQuotasResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableTagsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyTableTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesRequest.h>
@@ -121,6 +133,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTablesResponse> DeleteTablesOutcome;
                 typedef std::future<DeleteTablesOutcome> DeleteTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteTablesRequest&, DeleteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTablesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterTagsResponse> DescribeClusterTagsOutcome;
+                typedef std::future<DescribeClusterTagsOutcome> DescribeClusterTagsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeClusterTagsRequest&, DescribeClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterTagsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
@@ -130,9 +145,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTableGroupTagsResponse> DescribeTableGroupTagsOutcome;
+                typedef std::future<DescribeTableGroupTagsOutcome> DescribeTableGroupTagsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeTableGroupTagsRequest&, DescribeTableGroupTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableGroupTagsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTableGroupsResponse> DescribeTableGroupsOutcome;
                 typedef std::future<DescribeTableGroupsOutcome> DescribeTableGroupsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeTableGroupsRequest&, DescribeTableGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTableTagsResponse> DescribeTableTagsOutcome;
+                typedef std::future<DescribeTableTagsOutcome> DescribeTableTagsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeTableTagsRequest&, DescribeTableTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableTagsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
                 typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
@@ -151,15 +172,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyClusterPasswordResponse> ModifyClusterPasswordOutcome;
                 typedef std::future<ModifyClusterPasswordOutcome> ModifyClusterPasswordOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterPasswordRequest&, ModifyClusterPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterPasswordAsyncHandler;
+                typedef Outcome<Error, Model::ModifyClusterTagsResponse> ModifyClusterTagsOutcome;
+                typedef std::future<ModifyClusterTagsOutcome> ModifyClusterTagsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterTagsRequest&, ModifyClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterTagsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTableGroupNameResponse> ModifyTableGroupNameOutcome;
                 typedef std::future<ModifyTableGroupNameOutcome> ModifyTableGroupNameOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableGroupNameRequest&, ModifyTableGroupNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableGroupNameAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTableGroupTagsResponse> ModifyTableGroupTagsOutcome;
+                typedef std::future<ModifyTableGroupTagsOutcome> ModifyTableGroupTagsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableGroupTagsRequest&, ModifyTableGroupTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableGroupTagsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTableMemosResponse> ModifyTableMemosOutcome;
                 typedef std::future<ModifyTableMemosOutcome> ModifyTableMemosOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableMemosRequest&, ModifyTableMemosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableMemosAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTableQuotasResponse> ModifyTableQuotasOutcome;
                 typedef std::future<ModifyTableQuotasOutcome> ModifyTableQuotasOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableQuotasRequest&, ModifyTableQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableQuotasAsyncHandler;
+                typedef Outcome<Error, Model::ModifyTableTagsResponse> ModifyTableTagsOutcome;
+                typedef std::future<ModifyTableTagsOutcome> ModifyTableTagsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTableTagsRequest&, ModifyTableTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableTagsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTablesResponse> ModifyTablesOutcome;
                 typedef std::future<ModifyTablesOutcome> ModifyTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyTablesRequest&, ModifyTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTablesAsyncHandler;
@@ -266,6 +296,15 @@ namespace TencentCloud
                 DeleteTablesOutcomeCallable DeleteTablesCallable(const Model::DeleteTablesRequest& request);
 
                 /**
+                 *获取集群关联的标签列表
+                 * @param req DescribeClusterTagsRequest
+                 * @return DescribeClusterTagsOutcome
+                 */
+                DescribeClusterTagsOutcome DescribeClusterTags(const Model::DescribeClusterTagsRequest &request);
+                void DescribeClusterTagsAsync(const Model::DescribeClusterTagsRequest& request, const DescribeClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterTagsOutcomeCallable DescribeClusterTagsCallable(const Model::DescribeClusterTagsRequest& request);
+
+                /**
                  *查询TcaplusDB集群列表，包含集群详细信息。
                  * @param req DescribeClustersRequest
                  * @return DescribeClustersOutcome
@@ -293,6 +332,15 @@ namespace TencentCloud
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
+                 *获取表格组关联的标签列表
+                 * @param req DescribeTableGroupTagsRequest
+                 * @return DescribeTableGroupTagsOutcome
+                 */
+                DescribeTableGroupTagsOutcome DescribeTableGroupTags(const Model::DescribeTableGroupTagsRequest &request);
+                void DescribeTableGroupTagsAsync(const Model::DescribeTableGroupTagsRequest& request, const DescribeTableGroupTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableGroupTagsOutcomeCallable DescribeTableGroupTagsCallable(const Model::DescribeTableGroupTagsRequest& request);
+
+                /**
                  *查询表格组列表
                  * @param req DescribeTableGroupsRequest
                  * @return DescribeTableGroupsOutcome
@@ -300,6 +348,15 @@ namespace TencentCloud
                 DescribeTableGroupsOutcome DescribeTableGroups(const Model::DescribeTableGroupsRequest &request);
                 void DescribeTableGroupsAsync(const Model::DescribeTableGroupsRequest& request, const DescribeTableGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTableGroupsOutcomeCallable DescribeTableGroupsCallable(const Model::DescribeTableGroupsRequest& request);
+
+                /**
+                 *获取表格标签
+                 * @param req DescribeTableTagsRequest
+                 * @return DescribeTableTagsOutcome
+                 */
+                DescribeTableTagsOutcome DescribeTableTags(const Model::DescribeTableTagsRequest &request);
+                void DescribeTableTagsAsync(const Model::DescribeTableTagsRequest& request, const DescribeTableTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableTagsOutcomeCallable DescribeTableTagsCallable(const Model::DescribeTableTagsRequest& request);
 
                 /**
                  *查询表详情
@@ -356,6 +413,15 @@ namespace TencentCloud
                 ModifyClusterPasswordOutcomeCallable ModifyClusterPasswordCallable(const Model::ModifyClusterPasswordRequest& request);
 
                 /**
+                 *修改集群标签
+                 * @param req ModifyClusterTagsRequest
+                 * @return ModifyClusterTagsOutcome
+                 */
+                ModifyClusterTagsOutcome ModifyClusterTags(const Model::ModifyClusterTagsRequest &request);
+                void ModifyClusterTagsAsync(const Model::ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterTagsOutcomeCallable ModifyClusterTagsCallable(const Model::ModifyClusterTagsRequest& request);
+
+                /**
                  *修改TcaplusDB表格组名称
                  * @param req ModifyTableGroupNameRequest
                  * @return ModifyTableGroupNameOutcome
@@ -363,6 +429,15 @@ namespace TencentCloud
                 ModifyTableGroupNameOutcome ModifyTableGroupName(const Model::ModifyTableGroupNameRequest &request);
                 void ModifyTableGroupNameAsync(const Model::ModifyTableGroupNameRequest& request, const ModifyTableGroupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTableGroupNameOutcomeCallable ModifyTableGroupNameCallable(const Model::ModifyTableGroupNameRequest& request);
+
+                /**
+                 *修改表格组标签
+                 * @param req ModifyTableGroupTagsRequest
+                 * @return ModifyTableGroupTagsOutcome
+                 */
+                ModifyTableGroupTagsOutcome ModifyTableGroupTags(const Model::ModifyTableGroupTagsRequest &request);
+                void ModifyTableGroupTagsAsync(const Model::ModifyTableGroupTagsRequest& request, const ModifyTableGroupTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTableGroupTagsOutcomeCallable ModifyTableGroupTagsCallable(const Model::ModifyTableGroupTagsRequest& request);
 
                 /**
                  *修改表备注信息
@@ -381,6 +456,15 @@ namespace TencentCloud
                 ModifyTableQuotasOutcome ModifyTableQuotas(const Model::ModifyTableQuotasRequest &request);
                 void ModifyTableQuotasAsync(const Model::ModifyTableQuotasRequest& request, const ModifyTableQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTableQuotasOutcomeCallable ModifyTableQuotasCallable(const Model::ModifyTableQuotasRequest& request);
+
+                /**
+                 *修改表格标签
+                 * @param req ModifyTableTagsRequest
+                 * @return ModifyTableTagsOutcome
+                 */
+                ModifyTableTagsOutcome ModifyTableTags(const Model::ModifyTableTagsRequest &request);
+                void ModifyTableTagsAsync(const Model::ModifyTableTagsRequest& request, const ModifyTableTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTableTagsOutcomeCallable ModifyTableTagsCallable(const Model::ModifyTableTagsRequest& request);
 
                 /**
                  *根据用户选定的表定义IDL文件，批量修改指定的表

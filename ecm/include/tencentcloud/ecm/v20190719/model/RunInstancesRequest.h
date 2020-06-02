@@ -64,24 +64,6 @@ namespace TencentCloud
                     bool ZoneInstanceCountISPSetHasBeenSet() const;
 
                     /**
-                     * 获取模块ID
-                     * @return ModuleId 模块ID
-                     */
-                    std::string GetModuleId() const;
-
-                    /**
-                     * 设置模块ID
-                     * @param ModuleId 模块ID
-                     */
-                    void SetModuleId(const std::string& _moduleId);
-
-                    /**
-                     * 判断参数 ModuleId 是否已赋值
-                     * @return ModuleId 是否已赋值
-                     */
-                    bool ModuleIdHasBeenSet() const;
-
-                    /**
                      * 获取实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：
 Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? / ]中的特殊符。Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? /]中的特殊符号。
                      * @return Password 实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：
@@ -104,14 +86,14 @@ Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取公网出带宽上限，单位：Mbps
-                     * @return InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps
+                     * 获取公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * @return InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置公网出带宽上限，单位：Mbps
-                     * @param InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps
+                     * 设置公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * @param InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
@@ -122,14 +104,32 @@ Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取镜像ID，不传则使用模块下的默认值
-                     * @return ImageId 镜像ID，不传则使用模块下的默认值
+                     * 获取模块ID。如果未传该参数，则必须传ImageId，InstanceType，DataDiskSize，InternetMaxBandwidthOut参数
+                     * @return ModuleId 模块ID。如果未传该参数，则必须传ImageId，InstanceType，DataDiskSize，InternetMaxBandwidthOut参数
+                     */
+                    std::string GetModuleId() const;
+
+                    /**
+                     * 设置模块ID。如果未传该参数，则必须传ImageId，InstanceType，DataDiskSize，InternetMaxBandwidthOut参数
+                     * @param ModuleId 模块ID。如果未传该参数，则必须传ImageId，InstanceType，DataDiskSize，InternetMaxBandwidthOut参数
+                     */
+                    void SetModuleId(const std::string& _moduleId);
+
+                    /**
+                     * 判断参数 ModuleId 是否已赋值
+                     * @return ModuleId 是否已赋值
+                     */
+                    bool ModuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取镜像ID。如果未传该参数或者传的值为空，则使用模块下的默认值
+                     * @return ImageId 镜像ID。如果未传该参数或者传的值为空，则使用模块下的默认值
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置镜像ID，不传则使用模块下的默认值
-                     * @param ImageId 镜像ID，不传则使用模块下的默认值
+                     * 设置镜像ID。如果未传该参数或者传的值为空，则使用模块下的默认值
+                     * @param ImageId 镜像ID。如果未传该参数或者传的值为空，则使用模块下的默认值
                      */
                     void SetImageId(const std::string& _imageId);
 
@@ -283,6 +283,42 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取机型。如果未传该参数或者传的值为空，则使用模块下的默认值
+                     * @return InstanceType 机型。如果未传该参数或者传的值为空，则使用模块下的默认值
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置机型。如果未传该参数或者传的值为空，则使用模块下的默认值
+                     * @param InstanceType 机型。如果未传该参数或者传的值为空，则使用模块下的默认值
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * @return DataDiskSize 数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     */
+                    int64_t GetDataDiskSize() const;
+
+                    /**
+                     * 设置数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     * @param DataDiskSize 数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     */
+                    void SetDataDiskSize(const int64_t& _dataDiskSize);
+
+                    /**
+                     * 判断参数 DataDiskSize 是否已赋值
+                     * @return DataDiskSize 是否已赋值
+                     */
+                    bool DataDiskSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,12 +328,6 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                     bool m_zoneInstanceCountISPSetHasBeenSet;
 
                     /**
-                     * 模块ID
-                     */
-                    std::string m_moduleId;
-                    bool m_moduleIdHasBeenSet;
-
-                    /**
                      * 实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：
 Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? / ]中的特殊符。Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? /]中的特殊符号。
                      */
@@ -305,13 +335,19 @@ Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 公网出带宽上限，单位：Mbps
+                     * 公网出带宽上限，单位：Mbps。如果未传该参数或者传的值为0，则使用模块下的默认值
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * 镜像ID，不传则使用模块下的默认值
+                     * 模块ID。如果未传该参数，则必须传ImageId，InstanceType，DataDiskSize，InternetMaxBandwidthOut参数
+                     */
+                    std::string m_moduleId;
+                    bool m_moduleIdHasBeenSet;
+
+                    /**
+                     * 镜像ID。如果未传该参数或者传的值为空，则使用模块下的默认值
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
@@ -360,6 +396,18 @@ Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写�
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 机型。如果未传该参数或者传的值为空，则使用模块下的默认值
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值
+                     */
+                    int64_t m_dataDiskSize;
+                    bool m_dataDiskSizeHasBeenSet;
 
                 };
             }

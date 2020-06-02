@@ -238,6 +238,28 @@ namespace TencentCloud
                      */
                     bool ContinueTimeHasBeenSet() const;
 
+                    /**
+                     * 获取告警指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricName 告警指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMetricName() const;
+
+                    /**
+                     * 设置告警指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetricName 告警指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetricName(const std::string& _metricName);
+
+                    /**
+                     * 判断参数 MetricName 是否已赋值
+                     * @return MetricName 是否已赋值
+                     */
+                    bool MetricNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -302,6 +324,13 @@ namespace TencentCloud
                      */
                     int64_t m_continueTime;
                     bool m_continueTimeHasBeenSet;
+
+                    /**
+                     * 告警指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metricName;
+                    bool m_metricNameHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 CreateTablesRequest::CreateTablesRequest() :
     m_clusterIdHasBeenSet(false),
     m_idlFilesHasBeenSet(false),
-    m_selectedTablesHasBeenSet(false)
+    m_selectedTablesHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,21 @@ string CreateTablesRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_selectedTables.begin(); itr != m_selectedTables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -129,6 +145,22 @@ void CreateTablesRequest::SetSelectedTables(const vector<SelectedTableInfoNew>& 
 bool CreateTablesRequest::SelectedTablesHasBeenSet() const
 {
     return m_selectedTablesHasBeenSet;
+}
+
+vector<TagInfoUnit> CreateTablesRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateTablesRequest::SetResourceTags(const vector<TagInfoUnit>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateTablesRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

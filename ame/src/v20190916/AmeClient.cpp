@@ -40,6 +40,49 @@ AmeClient::AmeClient(const Credential &credential, const string &region, const C
 }
 
 
+AmeClient::DescribeItemByIdOutcome AmeClient::DescribeItemById(const DescribeItemByIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeItemById");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeItemByIdResponse rsp = DescribeItemByIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeItemByIdOutcome(rsp);
+        else
+            return DescribeItemByIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeItemByIdOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeItemByIdAsync(const DescribeItemByIdRequest& request, const DescribeItemByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeItemById(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeItemByIdOutcomeCallable AmeClient::DescribeItemByIdCallable(const DescribeItemByIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeItemByIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeItemById(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeItemsOutcome AmeClient::DescribeItems(const DescribeItemsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeItems");

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/TagInfoUnit.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,24 @@ namespace TencentCloud
                      */
                     bool TableGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取表格组标签列表
+                     * @return ResourceTags 表格组标签列表
+                     */
+                    std::vector<TagInfoUnit> GetResourceTags() const;
+
+                    /**
+                     * 设置表格组标签列表
+                     * @param ResourceTags 表格组标签列表
+                     */
+                    void SetResourceTags(const std::vector<TagInfoUnit>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +134,12 @@ namespace TencentCloud
                      */
                     std::string m_tableGroupId;
                     bool m_tableGroupIdHasBeenSet;
+
+                    /**
+                     * 表格组标签列表
+                     */
+                    std::vector<TagInfoUnit> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

@@ -291,6 +291,78 @@ namespace TencentCloud
                      */
                     bool SoldOutReasonHasBeenSet() const;
 
+                    /**
+                     * 获取内网带宽，单位Gbps。
+                     * @return InstanceBandwidth 内网带宽，单位Gbps。
+                     */
+                    double GetInstanceBandwidth() const;
+
+                    /**
+                     * 设置内网带宽，单位Gbps。
+                     * @param InstanceBandwidth 内网带宽，单位Gbps。
+                     */
+                    void SetInstanceBandwidth(const double& _instanceBandwidth);
+
+                    /**
+                     * 判断参数 InstanceBandwidth 是否已赋值
+                     * @return InstanceBandwidth 是否已赋值
+                     */
+                    bool InstanceBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取网络收发包能力，单位万PPS。
+                     * @return InstancePps 网络收发包能力，单位万PPS。
+                     */
+                    int64_t GetInstancePps() const;
+
+                    /**
+                     * 设置网络收发包能力，单位万PPS。
+                     * @param InstancePps 网络收发包能力，单位万PPS。
+                     */
+                    void SetInstancePps(const int64_t& _instancePps);
+
+                    /**
+                     * 判断参数 InstancePps 是否已赋值
+                     * @return InstancePps 是否已赋值
+                     */
+                    bool InstancePpsHasBeenSet() const;
+
+                    /**
+                     * 获取本地存储块数量。
+                     * @return StorageBlockAmount 本地存储块数量。
+                     */
+                    int64_t GetStorageBlockAmount() const;
+
+                    /**
+                     * 设置本地存储块数量。
+                     * @param StorageBlockAmount 本地存储块数量。
+                     */
+                    void SetStorageBlockAmount(const int64_t& _storageBlockAmount);
+
+                    /**
+                     * 判断参数 StorageBlockAmount 是否已赋值
+                     * @return StorageBlockAmount 是否已赋值
+                     */
+                    bool StorageBlockAmountHasBeenSet() const;
+
+                    /**
+                     * 获取处理器型号。
+                     * @return CpuType 处理器型号。
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 设置处理器型号。
+                     * @param CpuType 处理器型号。
+                     */
+                    void SetCpuType(const std::string& _cpuType);
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -372,6 +444,30 @@ namespace TencentCloud
                      */
                     std::string m_soldOutReason;
                     bool m_soldOutReasonHasBeenSet;
+
+                    /**
+                     * 内网带宽，单位Gbps。
+                     */
+                    double m_instanceBandwidth;
+                    bool m_instanceBandwidthHasBeenSet;
+
+                    /**
+                     * 网络收发包能力，单位万PPS。
+                     */
+                    int64_t m_instancePps;
+                    bool m_instancePpsHasBeenSet;
+
+                    /**
+                     * 本地存储块数量。
+                     */
+                    int64_t m_storageBlockAmount;
+                    bool m_storageBlockAmountHasBeenSet;
+
+                    /**
+                     * 处理器型号。
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
 
                 };
             }

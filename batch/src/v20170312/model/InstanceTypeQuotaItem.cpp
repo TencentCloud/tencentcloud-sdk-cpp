@@ -34,7 +34,11 @@ InstanceTypeQuotaItem::InstanceTypeQuotaItem() :
     m_localDiskTypeListHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_priceHasBeenSet(false),
-    m_soldOutReasonHasBeenSet(false)
+    m_soldOutReasonHasBeenSet(false),
+    m_instanceBandwidthHasBeenSet(false),
+    m_instancePpsHasBeenSet(false),
+    m_storageBlockAmountHasBeenSet(false),
+    m_cpuTypeHasBeenSet(false)
 {
 }
 
@@ -197,6 +201,46 @@ CoreInternalOutcome InstanceTypeQuotaItem::Deserialize(const Value &value)
         m_soldOutReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceBandwidth") && !value["InstanceBandwidth"].IsNull())
+    {
+        if (!value["InstanceBandwidth"].IsDouble())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstanceBandwidth` IsDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceBandwidth = value["InstanceBandwidth"].GetDouble();
+        m_instanceBandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstancePps") && !value["InstancePps"].IsNull())
+    {
+        if (!value["InstancePps"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.InstancePps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instancePps = value["InstancePps"].GetInt64();
+        m_instancePpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageBlockAmount") && !value["StorageBlockAmount"].IsNull())
+    {
+        if (!value["StorageBlockAmount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.StorageBlockAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageBlockAmount = value["StorageBlockAmount"].GetInt64();
+        m_storageBlockAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuType") && !value["CpuType"].IsNull())
+    {
+        if (!value["CpuType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceTypeQuotaItem.CpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuType = string(value["CpuType"].GetString());
+        m_cpuTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -315,6 +359,38 @@ void InstanceTypeQuotaItem::ToJsonObject(Value &value, Document::AllocatorType& 
         string key = "SoldOutReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_soldOutReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceBandwidthHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceBandwidth, allocator);
+    }
+
+    if (m_instancePpsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstancePps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instancePps, allocator);
+    }
+
+    if (m_storageBlockAmountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StorageBlockAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageBlockAmount, allocator);
+    }
+
+    if (m_cpuTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CpuType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_cpuType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -526,5 +602,69 @@ void InstanceTypeQuotaItem::SetSoldOutReason(const string& _soldOutReason)
 bool InstanceTypeQuotaItem::SoldOutReasonHasBeenSet() const
 {
     return m_soldOutReasonHasBeenSet;
+}
+
+double InstanceTypeQuotaItem::GetInstanceBandwidth() const
+{
+    return m_instanceBandwidth;
+}
+
+void InstanceTypeQuotaItem::SetInstanceBandwidth(const double& _instanceBandwidth)
+{
+    m_instanceBandwidth = _instanceBandwidth;
+    m_instanceBandwidthHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::InstanceBandwidthHasBeenSet() const
+{
+    return m_instanceBandwidthHasBeenSet;
+}
+
+int64_t InstanceTypeQuotaItem::GetInstancePps() const
+{
+    return m_instancePps;
+}
+
+void InstanceTypeQuotaItem::SetInstancePps(const int64_t& _instancePps)
+{
+    m_instancePps = _instancePps;
+    m_instancePpsHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::InstancePpsHasBeenSet() const
+{
+    return m_instancePpsHasBeenSet;
+}
+
+int64_t InstanceTypeQuotaItem::GetStorageBlockAmount() const
+{
+    return m_storageBlockAmount;
+}
+
+void InstanceTypeQuotaItem::SetStorageBlockAmount(const int64_t& _storageBlockAmount)
+{
+    m_storageBlockAmount = _storageBlockAmount;
+    m_storageBlockAmountHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::StorageBlockAmountHasBeenSet() const
+{
+    return m_storageBlockAmountHasBeenSet;
+}
+
+string InstanceTypeQuotaItem::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+void InstanceTypeQuotaItem::SetCpuType(const string& _cpuType)
+{
+    m_cpuType = _cpuType;
+    m_cpuTypeHasBeenSet = true;
+}
+
+bool InstanceTypeQuotaItem::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
 }
 

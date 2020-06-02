@@ -28,7 +28,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterNameHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,21 @@ string CreateClusterRequest::ToJsonString() const
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -165,6 +181,22 @@ void CreateClusterRequest::SetPassword(const string& _password)
 bool CreateClusterRequest::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+vector<TagInfoUnit> CreateClusterRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateClusterRequest::SetResourceTags(const vector<TagInfoUnit>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateClusterRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

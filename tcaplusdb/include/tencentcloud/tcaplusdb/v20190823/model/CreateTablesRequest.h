@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/IdlFileInfo.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SelectedTableInfoNew.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/TagInfoUnit.h>
 
 
 namespace TencentCloud
@@ -98,6 +99,24 @@ namespace TencentCloud
                      */
                     bool SelectedTablesHasBeenSet() const;
 
+                    /**
+                     * 获取表格标签列表
+                     * @return ResourceTags 表格标签列表
+                     */
+                    std::vector<TagInfoUnit> GetResourceTags() const;
+
+                    /**
+                     * 设置表格标签列表
+                     * @param ResourceTags 表格标签列表
+                     */
+                    void SetResourceTags(const std::vector<TagInfoUnit>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +136,12 @@ namespace TencentCloud
                      */
                     std::vector<SelectedTableInfoNew> m_selectedTables;
                     bool m_selectedTablesHasBeenSet;
+
+                    /**
+                     * 表格标签列表
+                     */
+                    std::vector<TagInfoUnit> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

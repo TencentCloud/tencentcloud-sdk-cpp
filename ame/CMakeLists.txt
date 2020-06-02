@@ -27,6 +27,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/Music.h
   include/tencentcloud/ame/v20190916/model/Artist.h
   include/tencentcloud/ame/v20190916/model/DescribeLyricResponse.h
+  include/tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h
   include/tencentcloud/ame/v20190916/model/ReportDataResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeItemsRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeStationsRequest.h
@@ -36,6 +37,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeLyricRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeStationsResponse.h
   include/tencentcloud/ame/v20190916/model/ReportDataRequest.h
+  include/tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeMusicRequest.h
   )
 
@@ -49,6 +51,7 @@ set(ame_src
   src/v20190916/model/Music.cpp
   src/v20190916/model/Artist.cpp
   src/v20190916/model/DescribeLyricResponse.cpp
+  src/v20190916/model/DescribeItemByIdResponse.cpp
   src/v20190916/model/ReportDataResponse.cpp
   src/v20190916/model/DescribeItemsRequest.cpp
   src/v20190916/model/DescribeStationsRequest.cpp
@@ -58,6 +61,7 @@ set(ame_src
   src/v20190916/model/DescribeLyricRequest.cpp
   src/v20190916/model/DescribeStationsResponse.cpp
   src/v20190916/model/ReportDataRequest.cpp
+  src/v20190916/model/DescribeItemByIdRequest.cpp
   src/v20190916/model/DescribeMusicRequest.cpp
   )
 

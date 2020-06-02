@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeItemsRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeItemsResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricRequest.h>
@@ -47,6 +49,9 @@ namespace TencentCloud
                 AmeClient(const Credential &credential, const std::string &region);
                 AmeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::DescribeItemByIdResponse> DescribeItemByIdOutcome;
+                typedef std::future<DescribeItemByIdOutcome> DescribeItemByIdOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeItemByIdRequest&, DescribeItemByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeItemByIdAsyncHandler;
                 typedef Outcome<Error, Model::DescribeItemsResponse> DescribeItemsOutcome;
                 typedef std::future<DescribeItemsOutcome> DescribeItemsOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeItemsRequest&, DescribeItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeItemsAsyncHandler;
@@ -64,6 +69,15 @@ namespace TencentCloud
                 typedef std::function<void(const AmeClient*, const Model::ReportDataRequest&, ReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportDataAsyncHandler;
 
 
+
+                /**
+                 *根据歌曲ID查询歌曲信息
+                 * @param req DescribeItemByIdRequest
+                 * @return DescribeItemByIdOutcome
+                 */
+                DescribeItemByIdOutcome DescribeItemById(const Model::DescribeItemByIdRequest &request);
+                void DescribeItemByIdAsync(const Model::DescribeItemByIdRequest& request, const DescribeItemByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeItemByIdOutcomeCallable DescribeItemByIdCallable(const Model::DescribeItemByIdRequest& request);
 
                 /**
                  *分类内容下歌曲列表获取，根据CategoryID或CategoryCode

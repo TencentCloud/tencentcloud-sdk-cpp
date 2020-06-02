@@ -31,7 +31,8 @@ DescribePolicyGroupInfoCondition::DescribePolicyGroupInfoCondition() :
     m_alarmNotifyPeriodHasBeenSet(false),
     m_calcTypeHasBeenSet(false),
     m_calcValueHasBeenSet(false),
-    m_continueTimeHasBeenSet(false)
+    m_continueTimeHasBeenSet(false),
+    m_metricNameHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome DescribePolicyGroupInfoCondition::Deserialize(const Value &v
         m_continueTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricName") && !value["MetricName"].IsNull())
+    {
+        if (!value["MetricName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DescribePolicyGroupInfoCondition.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricName = string(value["MetricName"].GetString());
+        m_metricNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void DescribePolicyGroupInfoCondition::ToJsonObject(Value &value, Document::Allo
         string key = "ContinueTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_continueTime, allocator);
+    }
+
+    if (m_metricNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MetricName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void DescribePolicyGroupInfoCondition::SetContinueTime(const int64_t& _continueT
 bool DescribePolicyGroupInfoCondition::ContinueTimeHasBeenSet() const
 {
     return m_continueTimeHasBeenSet;
+}
+
+string DescribePolicyGroupInfoCondition::GetMetricName() const
+{
+    return m_metricName;
+}
+
+void DescribePolicyGroupInfoCondition::SetMetricName(const string& _metricName)
+{
+    m_metricName = _metricName;
+    m_metricNameHasBeenSet = true;
+}
+
+bool DescribePolicyGroupInfoCondition::MetricNameHasBeenSet() const
+{
+    return m_metricNameHasBeenSet;
 }
 

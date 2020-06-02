@@ -25,16 +25,18 @@ using namespace std;
 
 RunInstancesRequest::RunInstancesRequest() :
     m_zoneInstanceCountISPSetHasBeenSet(false),
-    m_moduleIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
+    m_moduleIdHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_enhancedServiceHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_dataDiskSizeHasBeenSet(false)
 {
 }
 
@@ -60,14 +62,6 @@ string RunInstancesRequest::ToJsonString() const
         }
     }
 
-    if (m_moduleIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "ModuleId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_moduleId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_passwordHasBeenSet)
     {
         Value iKey(kStringType);
@@ -82,6 +76,14 @@ string RunInstancesRequest::ToJsonString() const
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
+    }
+
+    if (m_moduleIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_moduleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageIdHasBeenSet)
@@ -148,6 +150,22 @@ string RunInstancesRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_instanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataDiskSizeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DataDiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataDiskSize, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -170,22 +188,6 @@ void RunInstancesRequest::SetZoneInstanceCountISPSet(const vector<ZoneInstanceCo
 bool RunInstancesRequest::ZoneInstanceCountISPSetHasBeenSet() const
 {
     return m_zoneInstanceCountISPSetHasBeenSet;
-}
-
-string RunInstancesRequest::GetModuleId() const
-{
-    return m_moduleId;
-}
-
-void RunInstancesRequest::SetModuleId(const string& _moduleId)
-{
-    m_moduleId = _moduleId;
-    m_moduleIdHasBeenSet = true;
-}
-
-bool RunInstancesRequest::ModuleIdHasBeenSet() const
-{
-    return m_moduleIdHasBeenSet;
 }
 
 string RunInstancesRequest::GetPassword() const
@@ -218,6 +220,22 @@ void RunInstancesRequest::SetInternetMaxBandwidthOut(const int64_t& _internetMax
 bool RunInstancesRequest::InternetMaxBandwidthOutHasBeenSet() const
 {
     return m_internetMaxBandwidthOutHasBeenSet;
+}
+
+string RunInstancesRequest::GetModuleId() const
+{
+    return m_moduleId;
+}
+
+void RunInstancesRequest::SetModuleId(const string& _moduleId)
+{
+    m_moduleId = _moduleId;
+    m_moduleIdHasBeenSet = true;
+}
+
+bool RunInstancesRequest::ModuleIdHasBeenSet() const
+{
+    return m_moduleIdHasBeenSet;
 }
 
 string RunInstancesRequest::GetImageId() const
@@ -330,6 +348,38 @@ void RunInstancesRequest::SetUserData(const string& _userData)
 bool RunInstancesRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+string RunInstancesRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void RunInstancesRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool RunInstancesRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+int64_t RunInstancesRequest::GetDataDiskSize() const
+{
+    return m_dataDiskSize;
+}
+
+void RunInstancesRequest::SetDataDiskSize(const int64_t& _dataDiskSize)
+{
+    m_dataDiskSize = _dataDiskSize;
+    m_dataDiskSizeHasBeenSet = true;
+}
+
+bool RunInstancesRequest::DataDiskSizeHasBeenSet() const
+{
+    return m_dataDiskSizeHasBeenSet;
 }
 
 

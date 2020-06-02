@@ -27,7 +27,8 @@ using namespace std;
 LivenessResponse::LivenessResponse() :
     m_bestFrameBase64HasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_bestFrameListHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,19 @@ CoreInternalOutcome LivenessResponse::Deserialize(const string &payload)
         m_descriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BestFrameList") && !rsp["BestFrameList"].IsNull())
+    {
+        if (!rsp["BestFrameList"].IsArray())
+            return CoreInternalOutcome(Error("response `BestFrameList` is not array type"));
+
+        const Value &tmpValue = rsp["BestFrameList"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bestFrameList.push_back((*itr).GetString());
+        }
+        m_bestFrameListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +142,16 @@ string LivenessResponse::GetDescription() const
 bool LivenessResponse::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<string> LivenessResponse::GetBestFrameList() const
+{
+    return m_bestFrameList;
+}
+
+bool LivenessResponse::BestFrameListHasBeenSet() const
+{
+    return m_bestFrameListHasBeenSet;
 }
 
 

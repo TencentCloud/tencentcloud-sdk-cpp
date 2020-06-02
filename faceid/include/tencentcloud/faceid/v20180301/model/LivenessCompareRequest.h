@@ -136,13 +136,25 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
 
                     /**
                      * 获取额外配置，传入JSON字符串。
+{
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+}
                      * @return Optional 额外配置，传入JSON字符串。
+{
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+}
                      */
                     std::string GetOptional() const;
 
                     /**
                      * 设置额外配置，传入JSON字符串。
+{
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+}
                      * @param Optional 额外配置，传入JSON字符串。
+{
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+}
                      */
                     void SetOptional(const std::string& _optional);
 
@@ -185,6 +197,9 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
 
                     /**
                      * 额外配置，传入JSON字符串。
+{
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+}
                      */
                     std::string m_optional;
                     bool m_optionalHasBeenSet;

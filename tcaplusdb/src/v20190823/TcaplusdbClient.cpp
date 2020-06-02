@@ -470,6 +470,49 @@ TcaplusdbClient::DeleteTablesOutcomeCallable TcaplusdbClient::DeleteTablesCallab
     return task->get_future();
 }
 
+TcaplusdbClient::DescribeClusterTagsOutcome TcaplusdbClient::DescribeClusterTags(const DescribeClusterTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterTagsResponse rsp = DescribeClusterTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterTagsOutcome(rsp);
+        else
+            return DescribeClusterTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterTagsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DescribeClusterTagsAsync(const DescribeClusterTagsRequest& request, const DescribeClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DescribeClusterTagsOutcomeCallable TcaplusdbClient::DescribeClusterTagsCallable(const DescribeClusterTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::DescribeClustersOutcome TcaplusdbClient::DescribeClusters(const DescribeClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusters");
@@ -599,6 +642,49 @@ TcaplusdbClient::DescribeRegionsOutcomeCallable TcaplusdbClient::DescribeRegions
     return task->get_future();
 }
 
+TcaplusdbClient::DescribeTableGroupTagsOutcome TcaplusdbClient::DescribeTableGroupTags(const DescribeTableGroupTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableGroupTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableGroupTagsResponse rsp = DescribeTableGroupTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableGroupTagsOutcome(rsp);
+        else
+            return DescribeTableGroupTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableGroupTagsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DescribeTableGroupTagsAsync(const DescribeTableGroupTagsRequest& request, const DescribeTableGroupTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableGroupTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DescribeTableGroupTagsOutcomeCallable TcaplusdbClient::DescribeTableGroupTagsCallable(const DescribeTableGroupTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableGroupTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableGroupTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::DescribeTableGroupsOutcome TcaplusdbClient::DescribeTableGroups(const DescribeTableGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTableGroups");
@@ -635,6 +721,49 @@ TcaplusdbClient::DescribeTableGroupsOutcomeCallable TcaplusdbClient::DescribeTab
         [this, request]()
         {
             return this->DescribeTableGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::DescribeTableTagsOutcome TcaplusdbClient::DescribeTableTags(const DescribeTableTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableTagsResponse rsp = DescribeTableTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableTagsOutcome(rsp);
+        else
+            return DescribeTableTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableTagsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DescribeTableTagsAsync(const DescribeTableTagsRequest& request, const DescribeTableTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DescribeTableTagsOutcomeCallable TcaplusdbClient::DescribeTableTagsCallable(const DescribeTableTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableTags(request);
         }
     );
 
@@ -900,6 +1029,49 @@ TcaplusdbClient::ModifyClusterPasswordOutcomeCallable TcaplusdbClient::ModifyClu
     return task->get_future();
 }
 
+TcaplusdbClient::ModifyClusterTagsOutcome TcaplusdbClient::ModifyClusterTags(const ModifyClusterTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterTagsResponse rsp = ModifyClusterTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterTagsOutcome(rsp);
+        else
+            return ModifyClusterTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterTagsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::ModifyClusterTagsAsync(const ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::ModifyClusterTagsOutcomeCallable TcaplusdbClient::ModifyClusterTagsCallable(const ModifyClusterTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::ModifyTableGroupNameOutcome TcaplusdbClient::ModifyTableGroupName(const ModifyTableGroupNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTableGroupName");
@@ -936,6 +1108,49 @@ TcaplusdbClient::ModifyTableGroupNameOutcomeCallable TcaplusdbClient::ModifyTabl
         [this, request]()
         {
             return this->ModifyTableGroupName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::ModifyTableGroupTagsOutcome TcaplusdbClient::ModifyTableGroupTags(const ModifyTableGroupTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTableGroupTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTableGroupTagsResponse rsp = ModifyTableGroupTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTableGroupTagsOutcome(rsp);
+        else
+            return ModifyTableGroupTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTableGroupTagsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::ModifyTableGroupTagsAsync(const ModifyTableGroupTagsRequest& request, const ModifyTableGroupTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTableGroupTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::ModifyTableGroupTagsOutcomeCallable TcaplusdbClient::ModifyTableGroupTagsCallable(const ModifyTableGroupTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTableGroupTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTableGroupTags(request);
         }
     );
 
@@ -1022,6 +1237,49 @@ TcaplusdbClient::ModifyTableQuotasOutcomeCallable TcaplusdbClient::ModifyTableQu
         [this, request]()
         {
             return this->ModifyTableQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::ModifyTableTagsOutcome TcaplusdbClient::ModifyTableTags(const ModifyTableTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTableTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTableTagsResponse rsp = ModifyTableTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTableTagsOutcome(rsp);
+        else
+            return ModifyTableTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTableTagsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::ModifyTableTagsAsync(const ModifyTableTagsRequest& request, const ModifyTableTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTableTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::ModifyTableTagsOutcomeCallable TcaplusdbClient::ModifyTableTagsCallable(const ModifyTableTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTableTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTableTags(request);
         }
     );
 

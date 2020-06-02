@@ -44,7 +44,9 @@ namespace TencentCloud
 
                     /**
                      * 获取验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BestFrameBase64 验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBestFrameBase64() const;
 
@@ -78,10 +80,25 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取最佳最佳截图列表，仅在配置了返回多张最佳截图时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BestFrameList 最佳最佳截图列表，仅在配置了返回多张最佳截图时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetBestFrameList() const;
+
+                    /**
+                     * 判断参数 BestFrameList 是否已赋值
+                     * @return BestFrameList 是否已赋值
+                     */
+                    bool BestFrameListHasBeenSet() const;
+
                 private:
 
                     /**
                      * 验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bestFrameBase64;
                     bool m_bestFrameBase64HasBeenSet;
@@ -97,6 +114,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 最佳最佳截图列表，仅在配置了返回多张最佳截图时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_bestFrameList;
+                    bool m_bestFrameListHasBeenSet;
 
                 };
             }

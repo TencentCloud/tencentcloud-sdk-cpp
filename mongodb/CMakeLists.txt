@@ -71,6 +71,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/SpecificationInfo.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogsRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsRequest.h
+  include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h
   include/tencentcloud/mongodb/v20190725/model/SpecItem.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h
@@ -94,6 +95,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/RenewDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/RenameInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h
+  include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h
   include/tencentcloud/mongodb/v20190725/model/DBInstanceInfo.h
   include/tencentcloud/mongodb/v20190725/model/BackupFile.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h
@@ -159,6 +161,7 @@ set(mongodb_src
   src/v20190725/model/SpecificationInfo.cpp
   src/v20190725/model/DescribeSlowLogsRequest.cpp
   src/v20190725/model/DescribeSlowLogPatternsRequest.cpp
+  src/v20190725/model/FlushInstanceRouterConfigResponse.cpp
   src/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.cpp
   src/v20190725/model/SpecItem.cpp
   src/v20190725/model/DescribeSpecInfoResponse.cpp
@@ -182,6 +185,7 @@ set(mongodb_src
   src/v20190725/model/RenewDBInstancesResponse.cpp
   src/v20190725/model/RenameInstanceResponse.cpp
   src/v20190725/model/DescribeClientConnectionsResponse.cpp
+  src/v20190725/model/FlushInstanceRouterConfigRequest.cpp
   src/v20190725/model/DBInstanceInfo.cpp
   src/v20190725/model/BackupFile.cpp
   src/v20190725/model/DescribeDBBackupsResponse.cpp

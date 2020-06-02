@@ -45,6 +45,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeSlowLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecRequest.h>
@@ -108,6 +110,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSpecInfoResponse> DescribeSpecInfoOutcome;
                 typedef std::future<DescribeSpecInfoOutcome> DescribeSpecInfoOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeSpecInfoRequest&, DescribeSpecInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecInfoAsyncHandler;
+                typedef Outcome<Error, Model::FlushInstanceRouterConfigResponse> FlushInstanceRouterConfigOutcome;
+                typedef std::future<FlushInstanceRouterConfigOutcome> FlushInstanceRouterConfigOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::FlushInstanceRouterConfigRequest&, FlushInstanceRouterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushInstanceRouterConfigAsyncHandler;
                 typedef Outcome<Error, Model::InquirePriceCreateDBInstancesResponse> InquirePriceCreateDBInstancesOutcome;
                 typedef std::future<InquirePriceCreateDBInstancesOutcome> InquirePriceCreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::InquirePriceCreateDBInstancesRequest&, InquirePriceCreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateDBInstancesAsyncHandler;
@@ -234,6 +239,15 @@ namespace TencentCloud
                 DescribeSpecInfoOutcome DescribeSpecInfo(const Model::DescribeSpecInfoRequest &request);
                 void DescribeSpecInfoAsync(const Model::DescribeSpecInfoRequest& request, const DescribeSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpecInfoOutcomeCallable DescribeSpecInfoCallable(const Model::DescribeSpecInfoRequest& request);
+
+                /**
+                 *在所有mongos上执行FlushRouterConfig命令
+                 * @param req FlushInstanceRouterConfigRequest
+                 * @return FlushInstanceRouterConfigOutcome
+                 */
+                FlushInstanceRouterConfigOutcome FlushInstanceRouterConfig(const Model::FlushInstanceRouterConfigRequest &request);
+                void FlushInstanceRouterConfigAsync(const Model::FlushInstanceRouterConfigRequest& request, const FlushInstanceRouterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FlushInstanceRouterConfigOutcomeCallable FlushInstanceRouterConfigCallable(const Model::FlushInstanceRouterConfigRequest& request);
 
                 /**
                  *本接口用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。

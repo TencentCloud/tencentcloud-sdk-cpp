@@ -470,6 +470,49 @@ VpcClient::AssociateAddressOutcomeCallable VpcClient::AssociateAddressCallable(c
     return task->get_future();
 }
 
+VpcClient::AssociateDhcpIpWithAddressIpOutcome VpcClient::AssociateDhcpIpWithAddressIp(const AssociateDhcpIpWithAddressIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateDhcpIpWithAddressIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateDhcpIpWithAddressIpResponse rsp = AssociateDhcpIpWithAddressIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateDhcpIpWithAddressIpOutcome(rsp);
+        else
+            return AssociateDhcpIpWithAddressIpOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateDhcpIpWithAddressIpOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AssociateDhcpIpWithAddressIpAsync(const AssociateDhcpIpWithAddressIpRequest& request, const AssociateDhcpIpWithAddressIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateDhcpIpWithAddressIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AssociateDhcpIpWithAddressIpOutcomeCallable VpcClient::AssociateDhcpIpWithAddressIpCallable(const AssociateDhcpIpWithAddressIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateDhcpIpWithAddressIpOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateDhcpIpWithAddressIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AssociateNatGatewayAddressOutcome VpcClient::AssociateNatGatewayAddress(const AssociateNatGatewayAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateNatGatewayAddress");
@@ -1237,6 +1280,49 @@ VpcClient::CreateDefaultVpcOutcomeCallable VpcClient::CreateDefaultVpcCallable(c
         [this, request]()
         {
             return this->CreateDefaultVpc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateDhcpIpOutcome VpcClient::CreateDhcpIp(const CreateDhcpIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDhcpIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDhcpIpResponse rsp = CreateDhcpIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDhcpIpOutcome(rsp);
+        else
+            return CreateDhcpIpOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDhcpIpOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateDhcpIpAsync(const CreateDhcpIpRequest& request, const CreateDhcpIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDhcpIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateDhcpIpOutcomeCallable VpcClient::CreateDhcpIpCallable(const CreateDhcpIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDhcpIpOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDhcpIp(request);
         }
     );
 
@@ -2441,6 +2527,49 @@ VpcClient::DeleteCustomerGatewayOutcomeCallable VpcClient::DeleteCustomerGateway
         [this, request]()
         {
             return this->DeleteCustomerGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteDhcpIpOutcome VpcClient::DeleteDhcpIp(const DeleteDhcpIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDhcpIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDhcpIpResponse rsp = DeleteDhcpIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDhcpIpOutcome(rsp);
+        else
+            return DeleteDhcpIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDhcpIpOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteDhcpIpAsync(const DeleteDhcpIpRequest& request, const DeleteDhcpIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDhcpIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteDhcpIpOutcomeCallable VpcClient::DeleteDhcpIpCallable(const DeleteDhcpIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDhcpIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDhcpIp(request);
         }
     );
 
@@ -3946,6 +4075,49 @@ VpcClient::DescribeCustomerGatewaysOutcomeCallable VpcClient::DescribeCustomerGa
         [this, request]()
         {
             return this->DescribeCustomerGateways(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeDhcpIpsOutcome VpcClient::DescribeDhcpIps(const DescribeDhcpIpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDhcpIps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDhcpIpsResponse rsp = DescribeDhcpIpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDhcpIpsOutcome(rsp);
+        else
+            return DescribeDhcpIpsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDhcpIpsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeDhcpIpsAsync(const DescribeDhcpIpsRequest& request, const DescribeDhcpIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDhcpIps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeDhcpIpsOutcomeCallable VpcClient::DescribeDhcpIpsCallable(const DescribeDhcpIpsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDhcpIpsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDhcpIps(request);
         }
     );
 
@@ -5888,6 +6060,49 @@ VpcClient::DisassociateAddressOutcomeCallable VpcClient::DisassociateAddressCall
     return task->get_future();
 }
 
+VpcClient::DisassociateDhcpIpWithAddressIpOutcome VpcClient::DisassociateDhcpIpWithAddressIp(const DisassociateDhcpIpWithAddressIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateDhcpIpWithAddressIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateDhcpIpWithAddressIpResponse rsp = DisassociateDhcpIpWithAddressIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateDhcpIpWithAddressIpOutcome(rsp);
+        else
+            return DisassociateDhcpIpWithAddressIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateDhcpIpWithAddressIpOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisassociateDhcpIpWithAddressIpAsync(const DisassociateDhcpIpWithAddressIpRequest& request, const DisassociateDhcpIpWithAddressIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateDhcpIpWithAddressIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisassociateDhcpIpWithAddressIpOutcomeCallable VpcClient::DisassociateDhcpIpWithAddressIpCallable(const DisassociateDhcpIpWithAddressIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateDhcpIpWithAddressIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateDhcpIpWithAddressIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DisassociateNatGatewayAddressOutcome VpcClient::DisassociateNatGatewayAddress(const DisassociateNatGatewayAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateNatGatewayAddress");
@@ -6913,6 +7128,49 @@ VpcClient::ModifyCustomerGatewayAttributeOutcomeCallable VpcClient::ModifyCustom
         [this, request]()
         {
             return this->ModifyCustomerGatewayAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyDhcpIpAttributeOutcome VpcClient::ModifyDhcpIpAttribute(const ModifyDhcpIpAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDhcpIpAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDhcpIpAttributeResponse rsp = ModifyDhcpIpAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDhcpIpAttributeOutcome(rsp);
+        else
+            return ModifyDhcpIpAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDhcpIpAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyDhcpIpAttributeAsync(const ModifyDhcpIpAttributeRequest& request, const ModifyDhcpIpAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDhcpIpAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyDhcpIpAttributeOutcomeCallable VpcClient::ModifyDhcpIpAttributeCallable(const ModifyDhcpIpAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDhcpIpAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDhcpIpAttribute(request);
         }
     );
 
