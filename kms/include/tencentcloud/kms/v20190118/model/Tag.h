@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CLOUDAUDIT_V20190319_MODEL_COSREGIONINFO_H_
-#define TENCENTCLOUD_CLOUDAUDIT_V20190319_MODEL_COSREGIONINFO_H_
+#ifndef TENCENTCLOUD_KMS_V20190118_MODEL_TAG_H_
+#define TENCENTCLOUD_KMS_V20190118_MODEL_TAG_H_
 
 #include <string>
 #include <vector>
@@ -28,73 +28,73 @@
 
 namespace TencentCloud
 {
-    namespace Cloudaudit
+    namespace Kms
     {
-        namespace V20190319
+        namespace V20190118
         {
             namespace Model
             {
                 /**
-                * cos地域信息
+                * 标签键和标签值
                 */
-                class CosRegionInfo : public AbstractModel
+                class Tag : public AbstractModel
                 {
                 public:
-                    CosRegionInfo();
-                    ~CosRegionInfo() = default;
+                    Tag();
+                    ~Tag() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取cos地域
-                     * @return CosRegion cos地域
+                     * 获取标签键
+                     * @return TagKey 标签键
                      */
-                    std::string GetCosRegion() const;
+                    std::string GetTagKey() const;
 
                     /**
-                     * 设置cos地域
-                     * @param CosRegion cos地域
+                     * 设置标签键
+                     * @param TagKey 标签键
                      */
-                    void SetCosRegion(const std::string& _cosRegion);
+                    void SetTagKey(const std::string& _tagKey);
 
                     /**
-                     * 判断参数 CosRegion 是否已赋值
-                     * @return CosRegion 是否已赋值
+                     * 判断参数 TagKey 是否已赋值
+                     * @return TagKey 是否已赋值
                      */
-                    bool CosRegionHasBeenSet() const;
+                    bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取地域描述
-                     * @return CosRegionName 地域描述
+                     * 获取标签值
+                     * @return TagValue 标签值
                      */
-                    std::string GetCosRegionName() const;
+                    std::string GetTagValue() const;
 
                     /**
-                     * 设置地域描述
-                     * @param CosRegionName 地域描述
+                     * 设置标签值
+                     * @param TagValue 标签值
                      */
-                    void SetCosRegionName(const std::string& _cosRegionName);
+                    void SetTagValue(const std::string& _tagValue);
 
                     /**
-                     * 判断参数 CosRegionName 是否已赋值
-                     * @return CosRegionName 是否已赋值
+                     * 判断参数 TagValue 是否已赋值
+                     * @return TagValue 是否已赋值
                      */
-                    bool CosRegionNameHasBeenSet() const;
+                    bool TagValueHasBeenSet() const;
 
                 private:
 
                     /**
-                     * cos地域
+                     * 标签键
                      */
-                    std::string m_cosRegion;
-                    bool m_cosRegionHasBeenSet;
+                    std::string m_tagKey;
+                    bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 地域描述
+                     * 标签值
                      */
-                    std::string m_cosRegionName;
-                    bool m_cosRegionNameHasBeenSet;
+                    std::string m_tagValue;
+                    bool m_tagValueHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CLOUDAUDIT_V20190319_MODEL_COSREGIONINFO_H_
+#endif // !TENCENTCLOUD_KMS_V20190118_MODEL_TAG_H_

@@ -226,7 +226,7 @@ namespace TencentCloud
                 DescribeSubscriptionDetailOutcomeCallable DescribeSubscriptionDetailCallable(const Model::DescribeSubscriptionDetailRequest& request);
 
                 /**
-                 *查询主题详情
+                 *查询主题详情 
                  * @param req DescribeTopicDetailRequest
                  * @return DescribeTopicDetailOutcome
                  */

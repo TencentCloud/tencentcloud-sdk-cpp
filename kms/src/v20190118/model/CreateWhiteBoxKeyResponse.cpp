@@ -27,7 +27,9 @@ using namespace std;
 CreateWhiteBoxKeyResponse::CreateWhiteBoxKeyResponse() :
     m_encryptKeyHasBeenSet(false),
     m_decryptKeyHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
+    m_keyIdHasBeenSet(false),
+    m_tagCodeHasBeenSet(false),
+    m_tagMsgHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome CreateWhiteBoxKeyResponse::Deserialize(const string &payload
         m_keyIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TagCode") && !rsp["TagCode"].IsNull())
+    {
+        if (!rsp["TagCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TagCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagCode = rsp["TagCode"].GetUint64();
+        m_tagCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TagMsg") && !rsp["TagMsg"].IsNull())
+    {
+        if (!rsp["TagMsg"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TagMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagMsg = string(rsp["TagMsg"].GetString());
+        m_tagMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +150,26 @@ string CreateWhiteBoxKeyResponse::GetKeyId() const
 bool CreateWhiteBoxKeyResponse::KeyIdHasBeenSet() const
 {
     return m_keyIdHasBeenSet;
+}
+
+uint64_t CreateWhiteBoxKeyResponse::GetTagCode() const
+{
+    return m_tagCode;
+}
+
+bool CreateWhiteBoxKeyResponse::TagCodeHasBeenSet() const
+{
+    return m_tagCodeHasBeenSet;
+}
+
+string CreateWhiteBoxKeyResponse::GetTagMsg() const
+{
+    return m_tagMsg;
+}
+
+bool CreateWhiteBoxKeyResponse::TagMsgHasBeenSet() const
+{
+    return m_tagMsgHasBeenSet;
 }
 
 

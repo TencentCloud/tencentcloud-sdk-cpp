@@ -28,7 +28,8 @@ PullSmsSendStatusByPhoneNumberRequest::PullSmsSendStatusByPhoneNumberRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
-    m_smsSdkAppidHasBeenSet(false)
+    m_smsSdkAppidHasBeenSet(false),
+    m_endDateTimeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string PullSmsSendStatusByPhoneNumberRequest::ToJsonString() const
         string key = "SmsSdkAppid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_smsSdkAppid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endDateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endDateTime, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void PullSmsSendStatusByPhoneNumberRequest::SetSmsSdkAppid(const string& _smsSdk
 bool PullSmsSendStatusByPhoneNumberRequest::SmsSdkAppidHasBeenSet() const
 {
     return m_smsSdkAppidHasBeenSet;
+}
+
+uint64_t PullSmsSendStatusByPhoneNumberRequest::GetEndDateTime() const
+{
+    return m_endDateTime;
+}
+
+void PullSmsSendStatusByPhoneNumberRequest::SetEndDateTime(const uint64_t& _endDateTime)
+{
+    m_endDateTime = _endDateTime;
+    m_endDateTimeHasBeenSet = true;
+}
+
+bool PullSmsSendStatusByPhoneNumberRequest::EndDateTimeHasBeenSet() const
+{
+    return m_endDateTimeHasBeenSet;
 }
 
 

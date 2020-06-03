@@ -20,6 +20,7 @@ set(cam_public_header
 
 set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesResponse.h
+  include/tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteUserRequest.h
   include/tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h
@@ -87,6 +88,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/GetPolicyVersionRequest.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenRequest.h
+  include/tencentcloud/cam/v20190116/model/AccessKey.h
   include/tencentcloud/cam/v20190116/model/GetGroupResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteSAMLProviderRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteSAMLProviderResponse.h
@@ -134,6 +136,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagRequest.h
   include/tencentcloud/cam/v20190116/model/ListCollaboratorsResponse.h
+  include/tencentcloud/cam/v20190116/model/ListAccessKeysResponse.h
   include/tencentcloud/cam/v20190116/model/ListAttachedUserPoliciesRequest.h
   include/tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h
   include/tencentcloud/cam/v20190116/model/GroupMemberInfo.h
@@ -143,6 +146,7 @@ set(cam_public_header_model
 set(cam_src
   src/v20190116/CamClient.cpp
   src/v20190116/model/ListAttachedRolePoliciesResponse.cpp
+  src/v20190116/model/ListAccessKeysRequest.cpp
   src/v20190116/model/SetMfaFlagResponse.cpp
   src/v20190116/model/DeleteUserRequest.cpp
   src/v20190116/model/DetachGroupPolicyRequest.cpp
@@ -210,6 +214,7 @@ set(cam_src
   src/v20190116/model/GetPolicyVersionRequest.cpp
   src/v20190116/model/DeletePolicyResponse.cpp
   src/v20190116/model/ConsumeCustomMFATokenRequest.cpp
+  src/v20190116/model/AccessKey.cpp
   src/v20190116/model/GetGroupResponse.cpp
   src/v20190116/model/DeleteSAMLProviderRequest.cpp
   src/v20190116/model/DeleteSAMLProviderResponse.cpp
@@ -257,6 +262,7 @@ set(cam_src
   src/v20190116/model/AttachUserPolicyResponse.cpp
   src/v20190116/model/SetMfaFlagRequest.cpp
   src/v20190116/model/ListCollaboratorsResponse.cpp
+  src/v20190116/model/ListAccessKeysResponse.cpp
   src/v20190116/model/ListAttachedUserPoliciesRequest.cpp
   src/v20190116/model/UpdatePolicyRequest.cpp
   src/v20190116/model/GroupMemberInfo.cpp

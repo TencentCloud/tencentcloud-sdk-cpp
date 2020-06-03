@@ -27,7 +27,8 @@ CreateKeyRequest::CreateKeyRequest() :
     m_aliasHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_keyUsageHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,21 @@ string CreateKeyRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -140,6 +156,22 @@ void CreateKeyRequest::SetType(const uint64_t& _type)
 bool CreateKeyRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+vector<Tag> CreateKeyRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateKeyRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateKeyRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

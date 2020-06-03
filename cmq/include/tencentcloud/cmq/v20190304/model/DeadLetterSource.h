@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取QueueId
+                     * 获取消息队列ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueueId QueueId
+                     * @return QueueId 消息队列ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetQueueId() const;
 
                     /**
-                     * 设置QueueId
+                     * 设置消息队列ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueId QueueId
+                     * @param QueueId 消息队列ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQueueId(const std::string& _queueId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool QueueIdHasBeenSet() const;
 
                     /**
-                     * 获取QueueName
+                     * 获取消息队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueueName QueueName
+                     * @return QueueName 消息队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置QueueName
+                     * 设置消息队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueueName QueueName
+                     * @param QueueName 消息队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -93,14 +93,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * QueueId
+                     * 消息队列ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queueId;
                     bool m_queueIdHasBeenSet;
 
                     /**
-                     * QueueName
+                     * 消息队列名字。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queueName;

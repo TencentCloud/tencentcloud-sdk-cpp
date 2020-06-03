@@ -1,0 +1,147 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cam/v20190116/model/AccessKey.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cam::V20190116::Model;
+using namespace rapidjson;
+using namespace std;
+
+AccessKey::AccessKey() :
+    m_accessKeyIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome AccessKey::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("AccessKeyId") && !value["AccessKeyId"].IsNull())
+    {
+        if (!value["AccessKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AccessKey.AccessKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessKeyId = string(value["AccessKeyId"].GetString());
+        m_accessKeyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AccessKey.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AccessKey.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void AccessKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_accessKeyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_accessKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string AccessKey::GetAccessKeyId() const
+{
+    return m_accessKeyId;
+}
+
+void AccessKey::SetAccessKeyId(const string& _accessKeyId)
+{
+    m_accessKeyId = _accessKeyId;
+    m_accessKeyIdHasBeenSet = true;
+}
+
+bool AccessKey::AccessKeyIdHasBeenSet() const
+{
+    return m_accessKeyIdHasBeenSet;
+}
+
+string AccessKey::GetStatus() const
+{
+    return m_status;
+}
+
+void AccessKey::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AccessKey::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string AccessKey::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void AccessKey::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool AccessKey::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+

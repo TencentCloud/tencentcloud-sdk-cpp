@@ -51,14 +51,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取QueueId
-                     * @return QueueId QueueId
+                     * 获取消息队列ID。
+                     * @return QueueId 消息队列ID。
                      */
                     std::string GetQueueId() const;
 
                     /**
-                     * 设置QueueId
-                     * @param QueueId QueueId
+                     * 设置消息队列ID。
+                     * @param QueueId 消息队列ID。
                      */
                     void SetQueueId(const std::string& _queueId);
 
@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool QueueIdHasBeenSet() const;
 
                     /**
-                     * 获取QueueName
-                     * @return QueueName QueueName
+                     * 获取消息队列名字。
+                     * @return QueueName 消息队列名字。
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置QueueName
-                     * @param QueueName QueueName
+                     * 设置消息队列名字。
+                     * @param QueueName 消息队列名字。
                      */
                     void SetQueueName(const std::string& _queueName);
 
@@ -87,17 +87,17 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取Qps
+                     * 获取每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Qps Qps
+                     * @return Qps 每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetQps() const;
 
                     /**
-                     * 设置Qps
+                     * 设置每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Qps Qps
+                     * @param Qps 每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQps(const uint64_t& _qps);
@@ -109,17 +109,17 @@ namespace TencentCloud
                     bool QpsHasBeenSet() const;
 
                     /**
-                     * 获取Bps
+                     * 获取带宽限制。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Bps Bps
+                     * @return Bps 带宽限制。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetBps() const;
 
                     /**
-                     * 设置Bps
+                     * 设置带宽限制。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bps Bps
+                     * @param Bps 带宽限制。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBps(const uint64_t& _bps);
@@ -131,17 +131,17 @@ namespace TencentCloud
                     bool BpsHasBeenSet() const;
 
                     /**
-                     * 获取MaxDelaySeconds
+                     * 获取飞行消息最大保留时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxDelaySeconds MaxDelaySeconds
+                     * @return MaxDelaySeconds 飞行消息最大保留时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMaxDelaySeconds() const;
 
                     /**
-                     * 设置MaxDelaySeconds
+                     * 设置飞行消息最大保留时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxDelaySeconds MaxDelaySeconds
+                     * @param MaxDelaySeconds 飞行消息最大保留时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxDelaySeconds(const uint64_t& _maxDelaySeconds);
@@ -153,17 +153,17 @@ namespace TencentCloud
                     bool MaxDelaySecondsHasBeenSet() const;
 
                     /**
-                     * 获取MaxMsgHeapNum
+                     * 获取最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxMsgHeapNum MaxMsgHeapNum
+                     * @return MaxMsgHeapNum 最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMaxMsgHeapNum() const;
 
                     /**
-                     * 设置MaxMsgHeapNum
+                     * 设置最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxMsgHeapNum MaxMsgHeapNum
+                     * @param MaxMsgHeapNum 最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxMsgHeapNum(const uint64_t& _maxMsgHeapNum);
@@ -175,17 +175,17 @@ namespace TencentCloud
                     bool MaxMsgHeapNumHasBeenSet() const;
 
                     /**
-                     * 获取PollingWaitSeconds
+                     * 获取消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PollingWaitSeconds PollingWaitSeconds
+                     * @return PollingWaitSeconds 消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetPollingWaitSeconds() const;
 
                     /**
-                     * 设置PollingWaitSeconds
+                     * 设置消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PollingWaitSeconds PollingWaitSeconds
+                     * @param PollingWaitSeconds 消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPollingWaitSeconds(const uint64_t& _pollingWaitSeconds);
@@ -197,17 +197,17 @@ namespace TencentCloud
                     bool PollingWaitSecondsHasBeenSet() const;
 
                     /**
-                     * 获取MsgRetentionSeconds
+                     * 获取消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MsgRetentionSeconds MsgRetentionSeconds
+                     * @return MsgRetentionSeconds 消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMsgRetentionSeconds() const;
 
                     /**
-                     * 设置MsgRetentionSeconds
+                     * 设置消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgRetentionSeconds MsgRetentionSeconds
+                     * @param MsgRetentionSeconds 消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMsgRetentionSeconds(const uint64_t& _msgRetentionSeconds);
@@ -219,17 +219,17 @@ namespace TencentCloud
                     bool MsgRetentionSecondsHasBeenSet() const;
 
                     /**
-                     * 获取VisibilityTimeout
+                     * 获取消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VisibilityTimeout VisibilityTimeout
+                     * @return VisibilityTimeout 消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetVisibilityTimeout() const;
 
                     /**
-                     * 设置VisibilityTimeout
+                     * 设置消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VisibilityTimeout VisibilityTimeout
+                     * @param VisibilityTimeout 消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVisibilityTimeout(const uint64_t& _visibilityTimeout);
@@ -241,17 +241,17 @@ namespace TencentCloud
                     bool VisibilityTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取MaxMsgSize
+                     * 获取消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxMsgSize MaxMsgSize
+                     * @return MaxMsgSize 消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMaxMsgSize() const;
 
                     /**
-                     * 设置MaxMsgSize
+                     * 设置消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxMsgSize MaxMsgSize
+                     * @param MaxMsgSize 消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxMsgSize(const uint64_t& _maxMsgSize);
@@ -263,17 +263,17 @@ namespace TencentCloud
                     bool MaxMsgSizeHasBeenSet() const;
 
                     /**
-                     * 获取RewindSeconds
+                     * 获取回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RewindSeconds RewindSeconds
+                     * @return RewindSeconds 回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetRewindSeconds() const;
 
                     /**
-                     * 设置RewindSeconds
+                     * 设置回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RewindSeconds RewindSeconds
+                     * @param RewindSeconds 回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRewindSeconds(const uint64_t& _rewindSeconds);
@@ -285,17 +285,17 @@ namespace TencentCloud
                     bool RewindSecondsHasBeenSet() const;
 
                     /**
-                     * 获取CreateTime
+                     * 获取队列的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime CreateTime
+                     * @return CreateTime 队列的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置CreateTime
+                     * 设置队列的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime CreateTime
+                     * @param CreateTime 队列的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -307,17 +307,17 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取LastModifyTime
+                     * 获取最后一次修改队列属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastModifyTime LastModifyTime
+                     * @return LastModifyTime 最后一次修改队列属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetLastModifyTime() const;
 
                     /**
-                     * 设置LastModifyTime
+                     * 设置最后一次修改队列属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifyTime LastModifyTime
+                     * @param LastModifyTime 最后一次修改队列属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLastModifyTime(const uint64_t& _lastModifyTime);
@@ -329,17 +329,17 @@ namespace TencentCloud
                     bool LastModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取ActiveMsgNum
+                     * 获取在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActiveMsgNum ActiveMsgNum
+                     * @return ActiveMsgNum 在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetActiveMsgNum() const;
 
                     /**
-                     * 设置ActiveMsgNum
+                     * 设置在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveMsgNum ActiveMsgNum
+                     * @param ActiveMsgNum 在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetActiveMsgNum(const uint64_t& _activeMsgNum);
@@ -351,17 +351,17 @@ namespace TencentCloud
                     bool ActiveMsgNumHasBeenSet() const;
 
                     /**
-                     * 获取InactiveMsgNum
+                     * 获取在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InactiveMsgNum InactiveMsgNum
+                     * @return InactiveMsgNum 在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetInactiveMsgNum() const;
 
                     /**
-                     * 设置InactiveMsgNum
+                     * 设置在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InactiveMsgNum InactiveMsgNum
+                     * @param InactiveMsgNum 在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInactiveMsgNum(const uint64_t& _inactiveMsgNum);
@@ -373,17 +373,17 @@ namespace TencentCloud
                     bool InactiveMsgNumHasBeenSet() const;
 
                     /**
-                     * 获取DelayMsgNum
+                     * 获取延迟消息数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DelayMsgNum DelayMsgNum
+                     * @return DelayMsgNum 延迟消息数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDelayMsgNum() const;
 
                     /**
-                     * 设置DelayMsgNum
+                     * 设置延迟消息数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DelayMsgNum DelayMsgNum
+                     * @param DelayMsgNum 延迟消息数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDelayMsgNum(const uint64_t& _delayMsgNum);
@@ -395,17 +395,17 @@ namespace TencentCloud
                     bool DelayMsgNumHasBeenSet() const;
 
                     /**
-                     * 获取RewindMsgNum
+                     * 获取已调用 DelMsg 接口删除，但还在回溯保留时间内的消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RewindMsgNum RewindMsgNum
+                     * @return RewindMsgNum 已调用 DelMsg 接口删除，但还在回溯保留时间内的消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetRewindMsgNum() const;
 
                     /**
-                     * 设置RewindMsgNum
+                     * 设置已调用 DelMsg 接口删除，但还在回溯保留时间内的消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RewindMsgNum RewindMsgNum
+                     * @param RewindMsgNum 已调用 DelMsg 接口删除，但还在回溯保留时间内的消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRewindMsgNum(const uint64_t& _rewindMsgNum);
@@ -417,17 +417,17 @@ namespace TencentCloud
                     bool RewindMsgNumHasBeenSet() const;
 
                     /**
-                     * 获取MinMsgTime
+                     * 获取消息最小未消费时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MinMsgTime MinMsgTime
+                     * @return MinMsgTime 消息最小未消费时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMinMsgTime() const;
 
                     /**
-                     * 设置MinMsgTime
+                     * 设置消息最小未消费时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinMsgTime MinMsgTime
+                     * @param MinMsgTime 消息最小未消费时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMinMsgTime(const uint64_t& _minMsgTime);
@@ -439,17 +439,17 @@ namespace TencentCloud
                     bool MinMsgTimeHasBeenSet() const;
 
                     /**
-                     * 获取Transaction
+                     * 获取事务消息队列。true表示是事务消息，false表示不是事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Transaction Transaction
+                     * @return Transaction 事务消息队列。true表示是事务消息，false表示不是事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetTransaction() const;
 
                     /**
-                     * 设置Transaction
+                     * 设置事务消息队列。true表示是事务消息，false表示不是事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Transaction Transaction
+                     * @param Transaction 事务消息队列。true表示是事务消息，false表示不是事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTransaction(const bool& _transaction);
@@ -461,17 +461,17 @@ namespace TencentCloud
                     bool TransactionHasBeenSet() const;
 
                     /**
-                     * 获取DeadLetterSource
+                     * 获取死信队列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadLetterSource DeadLetterSource
+                     * @return DeadLetterSource 死信队列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeadLetterSource> GetDeadLetterSource() const;
 
                     /**
-                     * 设置DeadLetterSource
+                     * 设置死信队列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeadLetterSource DeadLetterSource
+                     * @param DeadLetterSource 死信队列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeadLetterSource(const std::vector<DeadLetterSource>& _deadLetterSource);
@@ -483,17 +483,17 @@ namespace TencentCloud
                     bool DeadLetterSourceHasBeenSet() const;
 
                     /**
-                     * 获取DeadLetterPolicy
+                     * 获取死信队列策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadLetterPolicy DeadLetterPolicy
+                     * @return DeadLetterPolicy 死信队列策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeadLetterPolicy GetDeadLetterPolicy() const;
 
                     /**
-                     * 设置DeadLetterPolicy
+                     * 设置死信队列策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeadLetterPolicy DeadLetterPolicy
+                     * @param DeadLetterPolicy 死信队列策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeadLetterPolicy(const DeadLetterPolicy& _deadLetterPolicy);
@@ -505,17 +505,17 @@ namespace TencentCloud
                     bool DeadLetterPolicyHasBeenSet() const;
 
                     /**
-                     * 获取TransactionPolicy
+                     * 获取事务消息策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TransactionPolicy TransactionPolicy
+                     * @return TransactionPolicy 事务消息策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TransactionPolicy GetTransactionPolicy() const;
 
                     /**
-                     * 设置TransactionPolicy
+                     * 设置事务消息策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransactionPolicy TransactionPolicy
+                     * @param TransactionPolicy 事务消息策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTransactionPolicy(const TransactionPolicy& _transactionPolicy);
@@ -527,17 +527,17 @@ namespace TencentCloud
                     bool TransactionPolicyHasBeenSet() const;
 
                     /**
-                     * 获取创建者uin
+                     * 获取创建者Uin。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUin 创建者uin
+                     * @return CreateUin 创建者Uin。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
-                     * 设置创建者uin
+                     * 设置创建者Uin。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateUin 创建者uin
+                     * @param CreateUin 创建者Uin。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateUin(const uint64_t& _createUin);
@@ -549,17 +549,17 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取标签
+                     * 获取关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 标签
+                     * @return Tags 关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签
+                     * 设置关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签
+                     * @param Tags 关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -571,17 +571,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取消息轨迹表示，true表示开启，false表示不开启
+                     * 获取消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Trace 消息轨迹表示，true表示开启，false表示不开启
+                     * @return Trace 消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetTrace() const;
 
                     /**
-                     * 设置消息轨迹表示，true表示开启，false表示不开启
+                     * 设置消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Trace 消息轨迹表示，true表示开启，false表示不开启
+                     * @param Trace 消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTrace(const bool& _trace);
@@ -595,173 +595,173 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * QueueId
+                     * 消息队列ID。
                      */
                     std::string m_queueId;
                     bool m_queueIdHasBeenSet;
 
                     /**
-                     * QueueName
+                     * 消息队列名字。
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * Qps
+                     * 每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
-                     * Bps
+                     * 带宽限制。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bps;
                     bool m_bpsHasBeenSet;
 
                     /**
-                     * MaxDelaySeconds
+                     * 飞行消息最大保留时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxDelaySeconds;
                     bool m_maxDelaySecondsHasBeenSet;
 
                     /**
-                     * MaxMsgHeapNum
+                     * 最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMsgHeapNum;
                     bool m_maxMsgHeapNumHasBeenSet;
 
                     /**
-                     * PollingWaitSeconds
+                     * 消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pollingWaitSeconds;
                     bool m_pollingWaitSecondsHasBeenSet;
 
                     /**
-                     * MsgRetentionSeconds
+                     * 消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_msgRetentionSeconds;
                     bool m_msgRetentionSecondsHasBeenSet;
 
                     /**
-                     * VisibilityTimeout
+                     * 消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_visibilityTimeout;
                     bool m_visibilityTimeoutHasBeenSet;
 
                     /**
-                     * MaxMsgSize
+                     * 消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMsgSize;
                     bool m_maxMsgSizeHasBeenSet;
 
                     /**
-                     * RewindSeconds
+                     * 回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_rewindSeconds;
                     bool m_rewindSecondsHasBeenSet;
 
                     /**
-                     * CreateTime
+                     * 队列的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * LastModifyTime
+                     * 最后一次修改队列属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lastModifyTime;
                     bool m_lastModifyTimeHasBeenSet;
 
                     /**
-                     * ActiveMsgNum
+                     * 在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activeMsgNum;
                     bool m_activeMsgNumHasBeenSet;
 
                     /**
-                     * InactiveMsgNum
+                     * 在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_inactiveMsgNum;
                     bool m_inactiveMsgNumHasBeenSet;
 
                     /**
-                     * DelayMsgNum
+                     * 延迟消息数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_delayMsgNum;
                     bool m_delayMsgNumHasBeenSet;
 
                     /**
-                     * RewindMsgNum
+                     * 已调用 DelMsg 接口删除，但还在回溯保留时间内的消息数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_rewindMsgNum;
                     bool m_rewindMsgNumHasBeenSet;
 
                     /**
-                     * MinMsgTime
+                     * 消息最小未消费时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minMsgTime;
                     bool m_minMsgTimeHasBeenSet;
 
                     /**
-                     * Transaction
+                     * 事务消息队列。true表示是事务消息，false表示不是事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_transaction;
                     bool m_transactionHasBeenSet;
 
                     /**
-                     * DeadLetterSource
+                     * 死信队列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeadLetterSource> m_deadLetterSource;
                     bool m_deadLetterSourceHasBeenSet;
 
                     /**
-                     * DeadLetterPolicy
+                     * 死信队列策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeadLetterPolicy m_deadLetterPolicy;
                     bool m_deadLetterPolicyHasBeenSet;
 
                     /**
-                     * TransactionPolicy
+                     * 事务消息策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TransactionPolicy m_transactionPolicy;
                     bool m_transactionPolicyHasBeenSet;
 
                     /**
-                     * 创建者uin
+                     * 创建者Uin。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 标签
+                     * 关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 消息轨迹表示，true表示开启，false表示不开启
+                     * 消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_trace;

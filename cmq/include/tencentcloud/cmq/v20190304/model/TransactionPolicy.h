@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取FirstQueryInterval
+                     * 获取第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirstQueryInterval FirstQueryInterval
+                     * @return FirstQueryInterval 第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetFirstQueryInterval() const;
 
                     /**
-                     * 设置FirstQueryInterval
+                     * 设置第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstQueryInterval FirstQueryInterval
+                     * @param FirstQueryInterval 第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFirstQueryInterval(const uint64_t& _firstQueryInterval);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool FirstQueryIntervalHasBeenSet() const;
 
                     /**
-                     * 获取MaxQueryCount
+                     * 获取最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxQueryCount MaxQueryCount
+                     * @return MaxQueryCount 最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMaxQueryCount() const;
 
                     /**
-                     * 设置MaxQueryCount
+                     * 设置最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxQueryCount MaxQueryCount
+                     * @param MaxQueryCount 最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxQueryCount(const uint64_t& _maxQueryCount);
@@ -93,14 +93,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * FirstQueryInterval
+                     * 第一次回查时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_firstQueryInterval;
                     bool m_firstQueryIntervalHasBeenSet;
 
                     /**
-                     * MaxQueryCount
+                     * 最大查询次数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxQueryCount;

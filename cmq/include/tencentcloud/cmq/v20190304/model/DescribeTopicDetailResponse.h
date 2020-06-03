@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TotalCount
-                     * @return TotalCount TotalCount
+                     * 获取主题列表总数。
+                     * @return TotalCount 主题列表总数。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取TopicSet
-                     * @return TopicSet TopicSet
+                     * 获取主题详情列表。
+                     * @return TopicSet 主题详情列表。
                      */
                     std::vector<TopicSet> GetTopicSet() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TotalCount
+                     * 主题列表总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * TopicSet
+                     * 主题详情列表。
                      */
                     std::vector<TopicSet> m_topicSet;
                     bool m_topicSetHasBeenSet;

@@ -44,13 +44,17 @@ namespace TencentCloud
 
                     /**
                      * 获取拉取起始时间，UNIX 时间戳（时间：秒）。
+注：最大可拉取当前时期7天前的数据。
                      * @return SendDateTime 拉取起始时间，UNIX 时间戳（时间：秒）。
+注：最大可拉取当前时期7天前的数据。
                      */
                     uint64_t GetSendDateTime() const;
 
                     /**
                      * 设置拉取起始时间，UNIX 时间戳（时间：秒）。
+注：最大可拉取当前时期7天前的数据。
                      * @param SendDateTime 拉取起始时间，UNIX 时间戳（时间：秒）。
+注：最大可拉取当前时期7天前的数据。
                      */
                     void SetSendDateTime(const uint64_t& _sendDateTime);
 
@@ -136,10 +140,29 @@ namespace TencentCloud
                      */
                     bool SmsSdkAppidHasBeenSet() const;
 
+                    /**
+                     * 获取拉取截止时间，UNIX 时间戳（时间：秒）。
+                     * @return EndDateTime 拉取截止时间，UNIX 时间戳（时间：秒）。
+                     */
+                    uint64_t GetEndDateTime() const;
+
+                    /**
+                     * 设置拉取截止时间，UNIX 时间戳（时间：秒）。
+                     * @param EndDateTime 拉取截止时间，UNIX 时间戳（时间：秒）。
+                     */
+                    void SetEndDateTime(const uint64_t& _endDateTime);
+
+                    /**
+                     * 判断参数 EndDateTime 是否已赋值
+                     * @return EndDateTime 是否已赋值
+                     */
+                    bool EndDateTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 拉取起始时间，UNIX 时间戳（时间：秒）。
+注：最大可拉取当前时期7天前的数据。
                      */
                     uint64_t m_sendDateTime;
                     bool m_sendDateTimeHasBeenSet;
@@ -168,6 +191,12 @@ namespace TencentCloud
                      */
                     std::string m_smsSdkAppid;
                     bool m_smsSdkAppidHasBeenSet;
+
+                    /**
+                     * 拉取截止时间，UNIX 时间戳（时间：秒）。
+                     */
+                    uint64_t m_endDateTime;
+                    bool m_endDateTimeHasBeenSet;
 
                 };
             }

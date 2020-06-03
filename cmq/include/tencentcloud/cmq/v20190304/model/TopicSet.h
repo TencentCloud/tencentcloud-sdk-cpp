@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TopicId
+                     * 获取主题的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicId TopicId
+                     * @return TopicId 主题的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置TopicId
+                     * 设置主题的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicId TopicId
+                     * @param TopicId 主题的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取TopicName
+                     * 获取主题名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicName TopicName
+                     * @return TopicName 主题名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置TopicName
+                     * 设置主题名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicName TopicName
+                     * @param TopicName 主题名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取MsgRetentionSeconds
+                     * 获取消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MsgRetentionSeconds MsgRetentionSeconds
+                     * @return MsgRetentionSeconds 消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMsgRetentionSeconds() const;
 
                     /**
-                     * 设置MsgRetentionSeconds
+                     * 设置消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgRetentionSeconds MsgRetentionSeconds
+                     * @param MsgRetentionSeconds 消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMsgRetentionSeconds(const uint64_t& _msgRetentionSeconds);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool MsgRetentionSecondsHasBeenSet() const;
 
                     /**
-                     * 获取MaxMsgSize
+                     * 获取消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxMsgSize MaxMsgSize
+                     * @return MaxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMaxMsgSize() const;
 
                     /**
-                     * 设置MaxMsgSize
+                     * 设置消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxMsgSize MaxMsgSize
+                     * @param MaxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxMsgSize(const uint64_t& _maxMsgSize);
@@ -136,17 +136,17 @@ namespace TencentCloud
                     bool MaxMsgSizeHasBeenSet() const;
 
                     /**
-                     * 获取Qps
+                     * 获取每秒钟发布消息的条数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Qps Qps
+                     * @return Qps 每秒钟发布消息的条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetQps() const;
 
                     /**
-                     * 设置Qps
+                     * 设置每秒钟发布消息的条数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Qps Qps
+                     * @param Qps 每秒钟发布消息的条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQps(const uint64_t& _qps);
@@ -158,17 +158,25 @@ namespace TencentCloud
                     bool QpsHasBeenSet() const;
 
                     /**
-                     * 获取FilterType
+                     * 获取描述用户创建订阅时选择的过滤策略：
+FilterType = 1表示用户使用 FilterTag 标签过滤;
+FilterType = 2表示用户使用 BindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FilterType FilterType
+                     * @return FilterType 描述用户创建订阅时选择的过滤策略：
+FilterType = 1表示用户使用 FilterTag 标签过滤;
+FilterType = 2表示用户使用 BindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetFilterType() const;
 
                     /**
-                     * 设置FilterType
+                     * 设置描述用户创建订阅时选择的过滤策略：
+FilterType = 1表示用户使用 FilterTag 标签过滤;
+FilterType = 2表示用户使用 BindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterType FilterType
+                     * @param FilterType 描述用户创建订阅时选择的过滤策略：
+FilterType = 1表示用户使用 FilterTag 标签过滤;
+FilterType = 2表示用户使用 BindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFilterType(const uint64_t& _filterType);
@@ -180,17 +188,17 @@ namespace TencentCloud
                     bool FilterTypeHasBeenSet() const;
 
                     /**
-                     * 获取CreateTime
+                     * 获取主题的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime CreateTime
+                     * @return CreateTime 主题的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置CreateTime
+                     * 设置主题的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime CreateTime
+                     * @param CreateTime 主题的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -202,17 +210,17 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取LastModifyTime
+                     * 获取最后一次修改主题属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastModifyTime LastModifyTime
+                     * @return LastModifyTime 最后一次修改主题属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetLastModifyTime() const;
 
                     /**
-                     * 设置LastModifyTime
+                     * 设置最后一次修改主题属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifyTime LastModifyTime
+                     * @param LastModifyTime 最后一次修改主题属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLastModifyTime(const uint64_t& _lastModifyTime);
@@ -224,17 +232,17 @@ namespace TencentCloud
                     bool LastModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取MsgCount
+                     * 获取当前该主题中消息数目（消息堆积数）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MsgCount MsgCount
+                     * @return MsgCount 当前该主题中消息数目（消息堆积数）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMsgCount() const;
 
                     /**
-                     * 设置MsgCount
+                     * 设置当前该主题中消息数目（消息堆积数）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgCount MsgCount
+                     * @param MsgCount 当前该主题中消息数目（消息堆积数）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMsgCount(const uint64_t& _msgCount);
@@ -246,17 +254,17 @@ namespace TencentCloud
                     bool MsgCountHasBeenSet() const;
 
                     /**
-                     * 获取CreateUin
+                     * 获取创建者 Uin，CAM 鉴权 resource 由该字段组合而成。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUin CreateUin
+                     * @return CreateUin 创建者 Uin，CAM 鉴权 resource 由该字段组合而成。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
-                     * 设置CreateUin
+                     * 设置创建者 Uin，CAM 鉴权 resource 由该字段组合而成。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateUin CreateUin
+                     * @param CreateUin 创建者 Uin，CAM 鉴权 resource 由该字段组合而成。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateUin(const uint64_t& _createUin);
@@ -268,17 +276,17 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取Tags
+                     * 获取关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags Tags
+                     * @return Tags 关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置Tags
+                     * 设置关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags Tags
+                     * @param Tags 关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -290,17 +298,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取主题是否开启消息轨迹，true表示开启，false表示不开启
+                     * 获取主题是否开启消息轨迹。true表示开启，false表示不开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Trace 主题是否开启消息轨迹，true表示开启，false表示不开启
+                     * @return Trace 主题是否开启消息轨迹。true表示开启，false表示不开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetTrace() const;
 
                     /**
-                     * 设置主题是否开启消息轨迹，true表示开启，false表示不开启
+                     * 设置主题是否开启消息轨迹。true表示开启，false表示不开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Trace 主题是否开启消息轨迹，true表示开启，false表示不开启
+                     * @param Trace 主题是否开启消息轨迹。true表示开启，false表示不开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTrace(const bool& _trace);
@@ -314,84 +322,86 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TopicId
+                     * 主题的 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * TopicName
+                     * 主题名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * MsgRetentionSeconds
+                     * 消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_msgRetentionSeconds;
                     bool m_msgRetentionSecondsHasBeenSet;
 
                     /**
-                     * MaxMsgSize
+                     * 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMsgSize;
                     bool m_maxMsgSizeHasBeenSet;
 
                     /**
-                     * Qps
+                     * 每秒钟发布消息的条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
-                     * FilterType
+                     * 描述用户创建订阅时选择的过滤策略：
+FilterType = 1表示用户使用 FilterTag 标签过滤;
+FilterType = 2表示用户使用 BindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_filterType;
                     bool m_filterTypeHasBeenSet;
 
                     /**
-                     * CreateTime
+                     * 主题的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * LastModifyTime
+                     * 最后一次修改主题属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lastModifyTime;
                     bool m_lastModifyTimeHasBeenSet;
 
                     /**
-                     * MsgCount
+                     * 当前该主题中消息数目（消息堆积数）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_msgCount;
                     bool m_msgCountHasBeenSet;
 
                     /**
-                     * CreateUin
+                     * 创建者 Uin，CAM 鉴权 resource 由该字段组合而成。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * Tags
+                     * 关联的标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 主题是否开启消息轨迹，true表示开启，false表示不开启
+                     * 主题是否开启消息轨迹。true表示开启，false表示不开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_trace;

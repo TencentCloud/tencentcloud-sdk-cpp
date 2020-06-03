@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取目前只支持过滤TopicName ， 且只能填一个过滤值
-                     * @return Filters 目前只支持过滤TopicName ， 且只能填一个过滤值
+                     * 获取目前只支持过滤TopicName ， 且只能填一个过滤值。
+                     * @return Filters 目前只支持过滤TopicName ， 且只能填一个过滤值。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置目前只支持过滤TopicName ， 且只能填一个过滤值
-                     * @param Filters 目前只支持过滤TopicName ， 且只能填一个过滤值
+                     * 设置目前只支持过滤TopicName ， 且只能填一个过滤值。
+                     * @param Filters 目前只支持过滤TopicName ， 且只能填一个过滤值。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取标签匹配
-                     * @return TagKey 标签匹配
+                     * 获取标签匹配。
+                     * @return TagKey 标签匹配。
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置标签匹配
-                     * @param TagKey 标签匹配
+                     * 设置标签匹配。
+                     * @param TagKey 标签匹配。
                      */
                     void SetTagKey(const std::string& _tagKey);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取精确匹配TopicName
-                     * @return TopicName 精确匹配TopicName
+                     * 获取精确匹配TopicName。
+                     * @return TopicName 精确匹配TopicName。
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置精确匹配TopicName
-                     * @param TopicName 精确匹配TopicName
+                     * 设置精确匹配TopicName。
+                     * @param TopicName 精确匹配TopicName。
                      */
                     void SetTopicName(const std::string& _topicName);
 
@@ -148,19 +148,19 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 目前只支持过滤TopicName ， 且只能填一个过滤值
+                     * 目前只支持过滤TopicName ， 且只能填一个过滤值。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 标签匹配
+                     * 标签匹配。
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 精确匹配TopicName
+                     * 精确匹配TopicName。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

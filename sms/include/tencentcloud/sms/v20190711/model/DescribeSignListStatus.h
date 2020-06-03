@@ -93,9 +93,11 @@ namespace TencentCloud
                     /**
                      * 获取申请签名状态。其中：
 0：表示审核通过。
+1：表示审核中。
 -1：表示审核未通过或审核失败。
                      * @return StatusCode 申请签名状态。其中：
 0：表示审核通过。
+1：表示审核中。
 -1：表示审核未通过或审核失败。
                      */
                     int64_t GetStatusCode() const;
@@ -103,9 +105,11 @@ namespace TencentCloud
                     /**
                      * 设置申请签名状态。其中：
 0：表示审核通过。
+1：表示审核中。
 -1：表示审核未通过或审核失败。
                      * @param StatusCode 申请签名状态。其中：
 0：表示审核通过。
+1：表示审核中。
 -1：表示审核未通过或审核失败。
                      */
                     void SetStatusCode(const int64_t& _statusCode);
@@ -189,6 +193,7 @@ namespace TencentCloud
                     /**
                      * 申请签名状态。其中：
 0：表示审核通过。
+1：表示审核中。
 -1：表示审核未通过或审核失败。
                      */
                     int64_t m_statusCode;

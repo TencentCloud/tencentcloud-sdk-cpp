@@ -1373,6 +1373,49 @@ CamClient::GetUserOutcomeCallable CamClient::GetUserCallable(const GetUserReques
     return task->get_future();
 }
 
+CamClient::ListAccessKeysOutcome CamClient::ListAccessKeys(const ListAccessKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAccessKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAccessKeysResponse rsp = ListAccessKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAccessKeysOutcome(rsp);
+        else
+            return ListAccessKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAccessKeysOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListAccessKeysAsync(const ListAccessKeysRequest& request, const ListAccessKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAccessKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListAccessKeysOutcomeCallable CamClient::ListAccessKeysCallable(const ListAccessKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAccessKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAccessKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::ListAttachedGroupPoliciesOutcome CamClient::ListAttachedGroupPolicies(const ListAttachedGroupPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAttachedGroupPolicies");

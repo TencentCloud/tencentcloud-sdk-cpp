@@ -30,7 +30,9 @@ CreateKeyResponse::CreateKeyResponse() :
     m_createTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_keyStateHasBeenSet(false),
-    m_keyUsageHasBeenSet(false)
+    m_keyUsageHasBeenSet(false),
+    m_tagCodeHasBeenSet(false),
+    m_tagMsgHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
         m_keyUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TagCode") && !rsp["TagCode"].IsNull())
+    {
+        if (!rsp["TagCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TagCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagCode = rsp["TagCode"].GetUint64();
+        m_tagCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TagMsg") && !rsp["TagMsg"].IsNull())
+    {
+        if (!rsp["TagMsg"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TagMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagMsg = string(rsp["TagMsg"].GetString());
+        m_tagMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -191,6 +213,26 @@ string CreateKeyResponse::GetKeyUsage() const
 bool CreateKeyResponse::KeyUsageHasBeenSet() const
 {
     return m_keyUsageHasBeenSet;
+}
+
+uint64_t CreateKeyResponse::GetTagCode() const
+{
+    return m_tagCode;
+}
+
+bool CreateKeyResponse::TagCodeHasBeenSet() const
+{
+    return m_tagCodeHasBeenSet;
+}
+
+string CreateKeyResponse::GetTagMsg() const
+{
+    return m_tagMsg;
+}
+
+bool CreateKeyResponse::TagMsgHasBeenSet() const
+{
+    return m_tagMsgHasBeenSet;
 }
 
 

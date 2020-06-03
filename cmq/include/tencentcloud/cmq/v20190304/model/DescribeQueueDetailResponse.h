@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取queue总数量
-                     * @return TotalCount queue总数量
+                     * 获取总队列数。
+                     * @return TotalCount 总队列数。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取queue列表
-                     * @return QueueSet queue列表
+                     * 获取队列详情列表。
+                     * @return QueueSet 队列详情列表。
                      */
                     std::vector<QueueSet> GetQueueSet() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * queue总数量
+                     * 总队列数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * queue列表
+                     * 队列详情列表。
                      */
                     std::vector<QueueSet> m_queueSet;
                     bool m_queueSetHasBeenSet;

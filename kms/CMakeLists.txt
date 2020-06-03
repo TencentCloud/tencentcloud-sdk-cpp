@@ -102,6 +102,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/ReEncryptRequest.h
   include/tencentcloud/kms/v20190118/model/GetPublicKeyRequest.h
   include/tencentcloud/kms/v20190118/model/GetServiceStatusRequest.h
+  include/tencentcloud/kms/v20190118/model/Tag.h
   include/tencentcloud/kms/v20190118/model/DisableKeyRotationRequest.h
   )
 
@@ -190,6 +191,7 @@ set(kms_src
   src/v20190118/model/ReEncryptRequest.cpp
   src/v20190118/model/GetPublicKeyRequest.cpp
   src/v20190118/model/GetServiceStatusRequest.cpp
+  src/v20190118/model/Tag.cpp
   src/v20190118/model/DisableKeyRotationRequest.cpp
   )
 
