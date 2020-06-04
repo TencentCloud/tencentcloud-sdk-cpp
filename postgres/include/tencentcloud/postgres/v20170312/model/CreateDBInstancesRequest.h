@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return Name 实例名
+                     * 获取实例名(后续支持)
+                     * @return Name 实例名(后续支持)
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名
-                     * @param Name 实例名
+                     * 设置实例名(后续支持)
+                     * @param Name 实例名(后续支持)
                      */
                     void SetName(const std::string& _name);
 
@@ -399,7 +399,7 @@ namespace TencentCloud
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 实例名
+                     * 实例名(后续支持)
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

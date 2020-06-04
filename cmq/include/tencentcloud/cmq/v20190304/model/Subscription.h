@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SubscriptionName
+                     * 获取订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubscriptionName SubscriptionName
+                     * @return SubscriptionName 订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSubscriptionName() const;
 
                     /**
-                     * 设置SubscriptionName
+                     * 设置订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubscriptionName SubscriptionName
+                     * @param SubscriptionName 订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubscriptionName(const std::string& _subscriptionName);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool SubscriptionNameHasBeenSet() const;
 
                     /**
-                     * 获取SubscriptionId
+                     * 获取订阅 ID。订阅 ID 在拉取监控数据时会用到。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubscriptionId SubscriptionId
+                     * @return SubscriptionId 订阅 ID。订阅 ID 在拉取监控数据时会用到。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSubscriptionId() const;
 
                     /**
-                     * 设置SubscriptionId
+                     * 设置订阅 ID。订阅 ID 在拉取监控数据时会用到。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubscriptionId SubscriptionId
+                     * @param SubscriptionId 订阅 ID。订阅 ID 在拉取监控数据时会用到。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubscriptionId(const std::string& _subscriptionId);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool SubscriptionIdHasBeenSet() const;
 
                     /**
-                     * 获取TopicOwner
+                     * 获取订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicOwner TopicOwner
+                     * @return TopicOwner 订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTopicOwner() const;
 
                     /**
-                     * 设置TopicOwner
+                     * 设置订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicOwner TopicOwner
+                     * @param TopicOwner 订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTopicOwner(const uint64_t& _topicOwner);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool TopicOwnerHasBeenSet() const;
 
                     /**
-                     * 获取MsgCount
+                     * 获取该订阅待投递的消息数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MsgCount MsgCount
+                     * @return MsgCount 该订阅待投递的消息数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetMsgCount() const;
 
                     /**
-                     * 设置MsgCount
+                     * 设置该订阅待投递的消息数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgCount MsgCount
+                     * @param MsgCount 该订阅待投递的消息数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMsgCount(const uint64_t& _msgCount);
@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool MsgCountHasBeenSet() const;
 
                     /**
-                     * 获取LastModifyTime
+                     * 获取最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastModifyTime LastModifyTime
+                     * @return LastModifyTime 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetLastModifyTime() const;
 
                     /**
-                     * 设置LastModifyTime
+                     * 设置最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastModifyTime LastModifyTime
+                     * @param LastModifyTime 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLastModifyTime(const uint64_t& _lastModifyTime);
@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool LastModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取CreateTime
+                     * 获取订阅的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime CreateTime
+                     * @return CreateTime 订阅的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置CreateTime
+                     * 设置订阅的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime CreateTime
+                     * @param CreateTime 订阅的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -179,17 +179,17 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取BindingKey
+                     * 获取表示订阅接收消息的过滤策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BindingKey BindingKey
+                     * @return BindingKey 表示订阅接收消息的过滤策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetBindingKey() const;
 
                     /**
-                     * 设置BindingKey
+                     * 设置表示订阅接收消息的过滤策略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindingKey BindingKey
+                     * @param BindingKey 表示订阅接收消息的过滤策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBindingKey(const std::vector<std::string>& _bindingKey);
@@ -201,17 +201,17 @@ namespace TencentCloud
                     bool BindingKeyHasBeenSet() const;
 
                     /**
-                     * 获取Endpoint
+                     * 获取接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Endpoint Endpoint
+                     * @return Endpoint 接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置Endpoint
+                     * 设置接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Endpoint Endpoint
+                     * @param Endpoint 接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -223,17 +223,25 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取FilterTags
+                     * 获取描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FilterTags FilterTags
+                     * @return FilterTags 描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetFilterTags() const;
 
                     /**
-                     * 设置FilterTags
+                     * 设置描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterTags FilterTags
+                     * @param FilterTags 描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFilterTags(const std::vector<std::string>& _filterTags);
@@ -245,17 +253,17 @@ namespace TencentCloud
                     bool FilterTagsHasBeenSet() const;
 
                     /**
-                     * 获取Protocol
+                     * 获取订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol Protocol
+                     * @return Protocol 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置Protocol
+                     * 设置订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol Protocol
+                     * @param Protocol 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -267,17 +275,25 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取NotifyStrategy
+                     * 获取向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：
+（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；
+（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotifyStrategy NotifyStrategy
+                     * @return NotifyStrategy 向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：
+（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；
+（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNotifyStrategy() const;
 
                     /**
-                     * 设置NotifyStrategy
+                     * 设置向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：
+（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；
+（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotifyStrategy NotifyStrategy
+                     * @param NotifyStrategy 向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：
+（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；
+（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNotifyStrategy(const std::string& _notifyStrategy);
@@ -289,17 +305,17 @@ namespace TencentCloud
                     bool NotifyStrategyHasBeenSet() const;
 
                     /**
-                     * 获取NotifyContentFormat
+                     * 获取推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotifyContentFormat NotifyContentFormat
+                     * @return NotifyContentFormat 推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNotifyContentFormat() const;
 
                     /**
-                     * 设置NotifyContentFormat
+                     * 设置推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotifyContentFormat NotifyContentFormat
+                     * @param NotifyContentFormat 推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNotifyContentFormat(const std::string& _notifyContentFormat);
@@ -313,84 +329,88 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SubscriptionName
+                     * 订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subscriptionName;
                     bool m_subscriptionNameHasBeenSet;
 
                     /**
-                     * SubscriptionId
+                     * 订阅 ID。订阅 ID 在拉取监控数据时会用到。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subscriptionId;
                     bool m_subscriptionIdHasBeenSet;
 
                     /**
-                     * TopicOwner
+                     * 订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_topicOwner;
                     bool m_topicOwnerHasBeenSet;
 
                     /**
-                     * MsgCount
+                     * 该订阅待投递的消息数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_msgCount;
                     bool m_msgCountHasBeenSet;
 
                     /**
-                     * LastModifyTime
+                     * 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lastModifyTime;
                     bool m_lastModifyTimeHasBeenSet;
 
                     /**
-                     * CreateTime
+                     * 订阅的创建时间。返回 Unix 时间戳，精确到秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * BindingKey
+                     * 表示订阅接收消息的过滤策略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bindingKey;
                     bool m_bindingKeyHasBeenSet;
 
                     /**
-                     * Endpoint
+                     * 接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * FilterTags
+                     * 描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_filterTags;
                     bool m_filterTagsHasBeenSet;
 
                     /**
-                     * Protocol
+                     * 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * NotifyStrategy
+                     * 向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：
+（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；
+（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_notifyStrategy;
                     bool m_notifyStrategyHasBeenSet;
 
                     /**
-                     * NotifyContentFormat
+                     * 推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_notifyContentFormat;

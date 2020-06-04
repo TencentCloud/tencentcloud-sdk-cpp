@@ -298,17 +298,17 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取主题是否开启消息轨迹。true表示开启，false表示不开启
+                     * 获取消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Trace 主题是否开启消息轨迹。true表示开启，false表示不开启
+                     * @return Trace 消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetTrace() const;
 
                     /**
-                     * 设置主题是否开启消息轨迹。true表示开启，false表示不开启
+                     * 设置消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Trace 主题是否开启消息轨迹。true表示开启，false表示不开启
+                     * @param Trace 消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTrace(const bool& _trace);
@@ -401,7 +401,7 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 主题是否开启消息轨迹。true表示开启，false表示不开启
+                     * 消息轨迹。true表示开启，false表示不开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_trace;

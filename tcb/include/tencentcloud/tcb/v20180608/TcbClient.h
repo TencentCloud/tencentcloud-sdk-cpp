@@ -31,6 +31,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h>
@@ -93,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateHostingDomainResponse> CreateHostingDomainOutcome;
                 typedef std::future<CreateHostingDomainOutcome> CreateHostingDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateHostingDomainRequest&, CreateHostingDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostingDomainAsyncHandler;
+                typedef Outcome<Error, Model::CreatePostpayPackageResponse> CreatePostpayPackageOutcome;
+                typedef std::future<CreatePostpayPackageOutcome> CreatePostpayPackageOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreatePostpayPackageRequest&, CreatePostpayPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostpayPackageAsyncHandler;
                 typedef Outcome<Error, Model::CreateStaticStoreResponse> CreateStaticStoreOutcome;
                 typedef std::future<CreateStaticStoreOutcome> CreateStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateStaticStoreRequest&, CreateStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaticStoreAsyncHandler;
@@ -185,6 +190,15 @@ namespace TencentCloud
                 CreateHostingDomainOutcome CreateHostingDomain(const Model::CreateHostingDomainRequest &request);
                 void CreateHostingDomainAsync(const Model::CreateHostingDomainRequest& request, const CreateHostingDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateHostingDomainOutcomeCallable CreateHostingDomainCallable(const Model::CreateHostingDomainRequest& request);
+
+                /**
+                 *开通后付费资源
+                 * @param req CreatePostpayPackageRequest
+                 * @return CreatePostpayPackageOutcome
+                 */
+                CreatePostpayPackageOutcome CreatePostpayPackage(const Model::CreatePostpayPackageRequest &request);
+                void CreatePostpayPackageAsync(const Model::CreatePostpayPackageRequest& request, const CreatePostpayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePostpayPackageOutcomeCallable CreatePostpayPackageCallable(const Model::CreatePostpayPackageRequest& request);
 
                 /**
                  *创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看

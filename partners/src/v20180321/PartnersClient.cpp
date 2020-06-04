@@ -298,6 +298,49 @@ PartnersClient::DescribeAgentBillsOutcomeCallable PartnersClient::DescribeAgentB
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentClientGradeOutcome PartnersClient::DescribeAgentClientGrade(const DescribeAgentClientGradeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentClientGrade");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentClientGradeResponse rsp = DescribeAgentClientGradeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentClientGradeOutcome(rsp);
+        else
+            return DescribeAgentClientGradeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentClientGradeOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentClientGradeAsync(const DescribeAgentClientGradeRequest& request, const DescribeAgentClientGradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentClientGrade(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentClientGradeOutcomeCallable PartnersClient::DescribeAgentClientGradeCallable(const DescribeAgentClientGradeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentClientGradeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentClientGrade(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeAgentClientsOutcome PartnersClient::DescribeAgentClients(const DescribeAgentClientsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentClients");

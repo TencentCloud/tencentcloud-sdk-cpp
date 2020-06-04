@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取集群数据描述语言类型，如：`PROTO`,`TDR`或`MIX`
-                     * @return IdlType 集群数据描述语言类型，如：`PROTO`,`TDR`或`MIX`
+                     * 获取集群数据描述语言类型，如：`PROTO`,`TDR`
+                     * @return IdlType 集群数据描述语言类型，如：`PROTO`,`TDR`
                      */
                     std::string GetIdlType() const;
 
                     /**
-                     * 设置集群数据描述语言类型，如：`PROTO`,`TDR`或`MIX`
-                     * @param IdlType 集群数据描述语言类型，如：`PROTO`,`TDR`或`MIX`
+                     * 设置集群数据描述语言类型，如：`PROTO`,`TDR`
+                     * @param IdlType 集群数据描述语言类型，如：`PROTO`,`TDR`
                      */
                     void SetIdlType(const std::string& _idlType);
 
@@ -323,7 +323,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 集群数据描述语言类型，如：`PROTO`,`TDR`或`MIX`
+                     * 集群数据描述语言类型，如：`PROTO`,`TDR`
                      */
                     std::string m_idlType;
                     bool m_idlTypeHasBeenSet;

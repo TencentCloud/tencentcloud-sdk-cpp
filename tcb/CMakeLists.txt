@@ -28,6 +28,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
   include/tencentcloud/tcb/v20180608/model/LoginStatistic.h
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
+  include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUsersResponse.h
   include/tencentcloud/tcb/v20180608/model/AuthDomain.h
@@ -50,6 +51,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/StaticStorageInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h
+  include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h
   include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
@@ -90,6 +92,7 @@ set(tcb_src
   src/v20180608/model/StorageInfo.cpp
   src/v20180608/model/LoginStatistic.cpp
   src/v20180608/model/FunctionInfo.cpp
+  src/v20180608/model/CreatePostpayPackageResponse.cpp
   src/v20180608/model/CommonServiceAPIRequest.cpp
   src/v20180608/model/DescribeEndUsersResponse.cpp
   src/v20180608/model/AuthDomain.cpp
@@ -112,6 +115,7 @@ set(tcb_src
   src/v20180608/model/StaticStorageInfo.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoResponse.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoRequest.cpp
+  src/v20180608/model/CreatePostpayPackageRequest.cpp
   src/v20180608/model/DescribeEnvFreeQuotaRequest.cpp
   src/v20180608/model/DatabasesInfo.cpp
   src/v20180608/model/DescribeAuthDomainsRequest.cpp

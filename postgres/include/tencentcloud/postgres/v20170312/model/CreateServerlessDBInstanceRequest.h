@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
-                     * @return Zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 获取可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.
+                     * @return Zone 可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
-                     * @param Zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 设置可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.
+                     * @param Zone 可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.
                      */
                     void SetZone(const std::string& _zone);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DBInstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本，目前只支持：9.3.5、9.5.4、10.4三种版本。
-                     * @return DBVersion PostgreSQL内核版本，目前只支持：9.3.5、9.5.4、10.4三种版本。
+                     * 获取PostgreSQL内核版本，目前只支持：10.4。
+                     * @return DBVersion PostgreSQL内核版本，目前只支持：10.4。
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL内核版本，目前只支持：9.3.5、9.5.4、10.4三种版本。
-                     * @param DBVersion PostgreSQL内核版本，目前只支持：9.3.5、9.5.4、10.4三种版本。
+                     * 设置PostgreSQL内核版本，目前只支持：10.4。
+                     * @param DBVersion PostgreSQL内核版本，目前只支持：10.4。
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DBVersionHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL数据库字符集，目前支持UTF8、LATIN1两种。
-                     * @return DBCharset PostgreSQL数据库字符集，目前支持UTF8、LATIN1两种。
+                     * 获取PostgreSQL数据库字符集，目前支持UTF8。
+                     * @return DBCharset PostgreSQL数据库字符集，目前支持UTF8。
                      */
                     std::string GetDBCharset() const;
 
                     /**
-                     * 设置PostgreSQL数据库字符集，目前支持UTF8、LATIN1两种。
-                     * @param DBCharset PostgreSQL数据库字符集，目前支持UTF8、LATIN1两种。
+                     * 设置PostgreSQL数据库字符集，目前支持UTF8。
+                     * @param DBCharset PostgreSQL数据库字符集，目前支持UTF8。
                      */
                     void SetDBCharset(const std::string& _dBCharset);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_dBInstanceNameHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本，目前只支持：9.3.5、9.5.4、10.4三种版本。
+                     * PostgreSQL内核版本，目前只支持：10.4。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
 
                     /**
-                     * PostgreSQL数据库字符集，目前支持UTF8、LATIN1两种。
+                     * PostgreSQL数据库字符集，目前支持UTF8。
                      */
                     std::string m_dBCharset;
                     bool m_dBCharsetHasBeenSet;

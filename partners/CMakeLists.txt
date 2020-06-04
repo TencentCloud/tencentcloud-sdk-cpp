@@ -25,6 +25,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsRequest.h
   include/tencentcloud/partners/v20180321/model/RemovePayRelationForClientRequest.h
   include/tencentcloud/partners/v20180321/model/AgentPayDealsRequest.h
+  include/tencentcloud/partners/v20180321/model/DescribeAgentClientGradeResponse.h
   include/tencentcloud/partners/v20180321/model/RebateInfoElem.h
   include/tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h
   include/tencentcloud/partners/v20180321/model/AgentTransferMoneyRequest.h
@@ -54,6 +55,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/AgentDealElem.h
   include/tencentcloud/partners/v20180321/model/AgentSalesmanElem.h
   include/tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h
+  include/tencentcloud/partners/v20180321/model/DescribeAgentClientGradeRequest.h
   )
 
 set(partners_src
@@ -64,6 +66,7 @@ set(partners_src
   src/v20180321/model/DescribeAgentAuditedClientsRequest.cpp
   src/v20180321/model/RemovePayRelationForClientRequest.cpp
   src/v20180321/model/AgentPayDealsRequest.cpp
+  src/v20180321/model/DescribeAgentClientGradeResponse.cpp
   src/v20180321/model/RebateInfoElem.cpp
   src/v20180321/model/DescribeClientBalanceResponse.cpp
   src/v20180321/model/AgentTransferMoneyRequest.cpp
@@ -93,6 +96,7 @@ set(partners_src
   src/v20180321/model/AgentDealElem.cpp
   src/v20180321/model/AgentSalesmanElem.cpp
   src/v20180321/model/DescribeRebateInfosResponse.cpp
+  src/v20180321/model/DescribeAgentClientGradeRequest.cpp
   )
 
 set(partners_include

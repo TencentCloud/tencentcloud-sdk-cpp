@@ -35,6 +35,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentBillsRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentBillsResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentClientGradeRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentClientGradeResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentClientsRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentClientsResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheRequest.h>
@@ -83,6 +85,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAgentBillsResponse> DescribeAgentBillsOutcome;
                 typedef std::future<DescribeAgentBillsOutcome> DescribeAgentBillsOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentBillsRequest&, DescribeAgentBillsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentBillsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAgentClientGradeResponse> DescribeAgentClientGradeOutcome;
+                typedef std::future<DescribeAgentClientGradeOutcome> DescribeAgentClientGradeOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentClientGradeRequest&, DescribeAgentClientGradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentClientGradeAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAgentClientsResponse> DescribeAgentClientsOutcome;
                 typedef std::future<DescribeAgentClientsOutcome> DescribeAgentClientsOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentClientsRequest&, DescribeAgentClientsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentClientsAsyncHandler;
@@ -163,6 +168,15 @@ namespace TencentCloud
                 DescribeAgentBillsOutcome DescribeAgentBills(const Model::DescribeAgentBillsRequest &request);
                 void DescribeAgentBillsAsync(const Model::DescribeAgentBillsRequest& request, const DescribeAgentBillsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAgentBillsOutcomeCallable DescribeAgentBillsCallable(const Model::DescribeAgentBillsRequest& request);
+
+                /**
+                 *传入代客uin，查客户级别，客户审核状态，客户实名认证状态
+                 * @param req DescribeAgentClientGradeRequest
+                 * @return DescribeAgentClientGradeOutcome
+                 */
+                DescribeAgentClientGradeOutcome DescribeAgentClientGrade(const Model::DescribeAgentClientGradeRequest &request);
+                void DescribeAgentClientGradeAsync(const Model::DescribeAgentClientGradeRequest& request, const DescribeAgentClientGradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentClientGradeOutcomeCallable DescribeAgentClientGradeCallable(const Model::DescribeAgentClientGradeRequest& request);
 
                 /**
                  *代理商可查询自己名下待审核客户列表

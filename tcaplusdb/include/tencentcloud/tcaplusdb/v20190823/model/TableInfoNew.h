@@ -379,17 +379,17 @@ namespace TencentCloud
                     bool ReservedVolumeHasBeenSet() const;
 
                     /**
-                     * 获取表格预留读QPS
+                     * 获取表格预留读CU
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReservedReadQps 表格预留读QPS
+                     * @return ReservedReadQps 表格预留读CU
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetReservedReadQps() const;
 
                     /**
-                     * 设置表格预留读QPS
+                     * 设置表格预留读CU
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReservedReadQps 表格预留读QPS
+                     * @param ReservedReadQps 表格预留读CU
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReservedReadQps(const int64_t& _reservedReadQps);
@@ -401,17 +401,17 @@ namespace TencentCloud
                     bool ReservedReadQpsHasBeenSet() const;
 
                     /**
-                     * 获取表格预留写QPS
+                     * 获取表格预留写CU
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReservedWriteQps 表格预留写QPS
+                     * @return ReservedWriteQps 表格预留写CU
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetReservedWriteQps() const;
 
                     /**
-                     * 设置表格预留写QPS
+                     * 设置表格预留写CU
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReservedWriteQps 表格预留写QPS
+                     * @param ReservedWriteQps 表格预留写CU
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReservedWriteQps(const int64_t& _reservedWriteQps);
@@ -750,14 +750,14 @@ namespace TencentCloud
                     bool m_reservedVolumeHasBeenSet;
 
                     /**
-                     * 表格预留读QPS
+                     * 表格预留读CU
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_reservedReadQps;
                     bool m_reservedReadQpsHasBeenSet;
 
                     /**
-                     * 表格预留写QPS
+                     * 表格预留写CU
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_reservedWriteQps;

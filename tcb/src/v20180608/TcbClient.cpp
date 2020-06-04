@@ -212,6 +212,49 @@ TcbClient::CreateHostingDomainOutcomeCallable TcbClient::CreateHostingDomainCall
     return task->get_future();
 }
 
+TcbClient::CreatePostpayPackageOutcome TcbClient::CreatePostpayPackage(const CreatePostpayPackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePostpayPackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePostpayPackageResponse rsp = CreatePostpayPackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePostpayPackageOutcome(rsp);
+        else
+            return CreatePostpayPackageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePostpayPackageOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreatePostpayPackageAsync(const CreatePostpayPackageRequest& request, const CreatePostpayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePostpayPackage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreatePostpayPackageOutcomeCallable TcbClient::CreatePostpayPackageCallable(const CreatePostpayPackageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePostpayPackageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePostpayPackage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::CreateStaticStoreOutcome TcbClient::CreateStaticStore(const CreateStaticStoreRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStaticStore");
