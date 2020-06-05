@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductTasksResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -24,13 +24,13 @@ using namespace TencentCloud::Iotcloud::V20180614::Model;
 using namespace rapidjson;
 using namespace std;
 
-ResetDeviceStateResponse::ResetDeviceStateResponse() :
-    m_successCountHasBeenSet(false),
-    m_resetDeviceResultsHasBeenSet(false)
+DescribeProductTasksResponse::DescribeProductTasksResponse() :
+    m_totalCountHasBeenSet(false),
+    m_taskInfosHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ResetDeviceStateResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeProductTasksResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,34 +64,34 @@ CoreInternalOutcome ResetDeviceStateResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["SuccessCount"].IsUint64())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Error("response `SuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_successCount = rsp["SuccessCount"].GetUint64();
-        m_successCountHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ResetDeviceResults") && !rsp["ResetDeviceResults"].IsNull())
+    if (rsp.HasMember("TaskInfos") && !rsp["TaskInfos"].IsNull())
     {
-        if (!rsp["ResetDeviceResults"].IsArray())
-            return CoreInternalOutcome(Error("response `ResetDeviceResults` is not array type"));
+        if (!rsp["TaskInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `TaskInfos` is not array type"));
 
-        const Value &tmpValue = rsp["ResetDeviceResults"];
+        const Value &tmpValue = rsp["TaskInfos"];
         for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ResetDeviceResult item;
+            ProductTaskInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_resetDeviceResults.push_back(item);
+            m_taskInfos.push_back(item);
         }
-        m_resetDeviceResultsHasBeenSet = true;
+        m_taskInfosHasBeenSet = true;
     }
 
 
@@ -99,24 +99,24 @@ CoreInternalOutcome ResetDeviceStateResponse::Deserialize(const string &payload)
 }
 
 
-uint64_t ResetDeviceStateResponse::GetSuccessCount() const
+uint64_t DescribeProductTasksResponse::GetTotalCount() const
 {
-    return m_successCount;
+    return m_totalCount;
 }
 
-bool ResetDeviceStateResponse::SuccessCountHasBeenSet() const
+bool DescribeProductTasksResponse::TotalCountHasBeenSet() const
 {
-    return m_successCountHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-vector<ResetDeviceResult> ResetDeviceStateResponse::GetResetDeviceResults() const
+vector<ProductTaskInfo> DescribeProductTasksResponse::GetTaskInfos() const
 {
-    return m_resetDeviceResults;
+    return m_taskInfos;
 }
 
-bool ResetDeviceStateResponse::ResetDeviceResultsHasBeenSet() const
+bool DescribeProductTasksResponse::TaskInfosHasBeenSet() const
 {
-    return m_resetDeviceResultsHasBeenSet;
+    return m_taskInfosHasBeenSet;
 }
 
 

@@ -153,8 +153,8 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取IMEI
-                     * @return Imei IMEI
+                     * 获取国际移动设备识别码 IMEI
+                     * @return Imei 国际移动设备识别码 IMEI
                      */
                     std::string GetImei() const;
 
@@ -322,6 +322,20 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientIP MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClientIP() const;
+
+                    /**
+                     * 判断参数 ClientIP 是否已赋值
+                     * @return ClientIP 是否已赋值
+                     */
+                    bool ClientIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -379,7 +393,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * IMEI
+                     * 国际移动设备识别码 IMEI
                      */
                     std::string m_imei;
                     bool m_imeiHasBeenSet;
@@ -462,6 +476,13 @@ namespace TencentCloud
                      */
                     std::vector<DeviceLabel> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clientIP;
+                    bool m_clientIPHasBeenSet;
 
                 };
             }

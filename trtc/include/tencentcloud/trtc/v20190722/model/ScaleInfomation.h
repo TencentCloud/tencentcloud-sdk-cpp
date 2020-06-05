@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取房间人数
+                     * 获取房间人数，用户重复进入同一个房间为1次
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserNumber 房间人数
+                     * @return UserNumber 房间人数，用户重复进入同一个房间为1次
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetUserNumber() const;
 
                     /**
-                     * 设置房间人数
+                     * 设置房间人数，用户重复进入同一个房间为1次
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserNumber 房间人数
+                     * @param UserNumber 房间人数，用户重复进入同一个房间为1次
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUserNumber(const uint64_t& _userNumber);
@@ -87,17 +87,17 @@ namespace TencentCloud
                     bool UserNumberHasBeenSet() const;
 
                     /**
-                     * 获取房间人次
+                     * 获取房间人次，用户每次进入房间为一次
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserCount 房间人次
+                     * @return UserCount 房间人次，用户每次进入房间为一次
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetUserCount() const;
 
                     /**
-                     * 设置房间人次
+                     * 设置房间人次，用户每次进入房间为一次
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserCount 房间人次
+                     * @param UserCount 房间人次，用户每次进入房间为一次
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUserCount(const uint64_t& _userCount);
@@ -109,17 +109,17 @@ namespace TencentCloud
                     bool UserCountHasBeenSet() const;
 
                     /**
-                     * 获取房间数
+                     * 获取sdkappid下一天内的房间数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoomNumbers 房间数
+                     * @return RoomNumbers sdkappid下一天内的房间数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetRoomNumbers() const;
 
                     /**
-                     * 设置房间数
+                     * 设置sdkappid下一天内的房间数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoomNumbers 房间数
+                     * @param RoomNumbers sdkappid下一天内的房间数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRoomNumbers(const uint64_t& _roomNumbers);
@@ -139,21 +139,21 @@ namespace TencentCloud
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 房间人数
+                     * 房间人数，用户重复进入同一个房间为1次
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_userNumber;
                     bool m_userNumberHasBeenSet;
 
                     /**
-                     * 房间人次
+                     * 房间人次，用户每次进入房间为一次
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_userCount;
                     bool m_userCountHasBeenSet;
 
                     /**
-                     * 房间数
+                     * sdkappid下一天内的房间数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_roomNumbers;

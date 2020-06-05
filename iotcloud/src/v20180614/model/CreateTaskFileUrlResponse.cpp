@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iotcloud/v20180614/model/ResetDeviceStateResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/CreateTaskFileUrlResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -24,13 +24,13 @@ using namespace TencentCloud::Iotcloud::V20180614::Model;
 using namespace rapidjson;
 using namespace std;
 
-ResetDeviceStateResponse::ResetDeviceStateResponse() :
-    m_successCountHasBeenSet(false),
-    m_resetDeviceResultsHasBeenSet(false)
+CreateTaskFileUrlResponse::CreateTaskFileUrlResponse() :
+    m_urlHasBeenSet(false),
+    m_fileNameHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ResetDeviceStateResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateTaskFileUrlResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,34 +64,24 @@ CoreInternalOutcome ResetDeviceStateResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    if (rsp.HasMember("Url") && !rsp["Url"].IsNull())
     {
-        if (!rsp["SuccessCount"].IsUint64())
+        if (!rsp["Url"].IsString())
         {
-            return CoreInternalOutcome(Error("response `SuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Url` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_successCount = rsp["SuccessCount"].GetUint64();
-        m_successCountHasBeenSet = true;
+        m_url = string(rsp["Url"].GetString());
+        m_urlHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ResetDeviceResults") && !rsp["ResetDeviceResults"].IsNull())
+    if (rsp.HasMember("FileName") && !rsp["FileName"].IsNull())
     {
-        if (!rsp["ResetDeviceResults"].IsArray())
-            return CoreInternalOutcome(Error("response `ResetDeviceResults` is not array type"));
-
-        const Value &tmpValue = rsp["ResetDeviceResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["FileName"].IsString())
         {
-            ResetDeviceResult item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_resetDeviceResults.push_back(item);
+            return CoreInternalOutcome(Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_resetDeviceResultsHasBeenSet = true;
+        m_fileName = string(rsp["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
     }
 
 
@@ -99,24 +89,24 @@ CoreInternalOutcome ResetDeviceStateResponse::Deserialize(const string &payload)
 }
 
 
-uint64_t ResetDeviceStateResponse::GetSuccessCount() const
+string CreateTaskFileUrlResponse::GetUrl() const
 {
-    return m_successCount;
+    return m_url;
 }
 
-bool ResetDeviceStateResponse::SuccessCountHasBeenSet() const
+bool CreateTaskFileUrlResponse::UrlHasBeenSet() const
 {
-    return m_successCountHasBeenSet;
+    return m_urlHasBeenSet;
 }
 
-vector<ResetDeviceResult> ResetDeviceStateResponse::GetResetDeviceResults() const
+string CreateTaskFileUrlResponse::GetFileName() const
 {
-    return m_resetDeviceResults;
+    return m_fileName;
 }
 
-bool ResetDeviceStateResponse::ResetDeviceResultsHasBeenSet() const
+bool CreateTaskFileUrlResponse::FileNameHasBeenSet() const
 {
-    return m_resetDeviceResultsHasBeenSet;
+    return m_fileNameHasBeenSet;
 }
 
 

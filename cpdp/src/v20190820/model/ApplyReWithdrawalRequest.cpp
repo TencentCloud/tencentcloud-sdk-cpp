@@ -28,7 +28,8 @@ ApplyReWithdrawalRequest::ApplyReWithdrawalRequest() :
     m_midasSecretIdHasBeenSet(false),
     m_midasSignatureHasBeenSet(false),
     m_bodyHasBeenSet(false),
-    m_midasAppIdHasBeenSet(false)
+    m_midasAppIdHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string ApplyReWithdrawalRequest::ToJsonString() const
         string key = "MidasAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_midasAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +175,22 @@ void ApplyReWithdrawalRequest::SetMidasAppId(const string& _midasAppId)
 bool ApplyReWithdrawalRequest::MidasAppIdHasBeenSet() const
 {
     return m_midasAppIdHasBeenSet;
+}
+
+string ApplyReWithdrawalRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void ApplyReWithdrawalRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool ApplyReWithdrawalRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

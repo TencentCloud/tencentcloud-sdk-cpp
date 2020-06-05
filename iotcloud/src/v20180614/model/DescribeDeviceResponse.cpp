@@ -46,7 +46,8 @@ DescribeDeviceResponse::DescribeDeviceResponse() :
     m_createTimeHasBeenSet(false),
     m_certStateHasBeenSet(false),
     m_enableStateHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_clientIPHasBeenSet(false)
 {
 }
 
@@ -324,6 +325,16 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         m_labelsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClientIP") && !rsp["ClientIP"].IsNull())
+    {
+        if (!rsp["ClientIP"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClientIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIP = string(rsp["ClientIP"].GetString());
+        m_clientIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,16 @@ vector<DeviceLabel> DescribeDeviceResponse::GetLabels() const
 bool DescribeDeviceResponse::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+string DescribeDeviceResponse::GetClientIP() const
+{
+    return m_clientIP;
+}
+
+bool DescribeDeviceResponse::ClientIPHasBeenSet() const
+{
+    return m_clientIPHasBeenSet;
 }
 
 

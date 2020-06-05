@@ -33,10 +33,14 @@
 #include <tencentcloud/iotcloud/v20180614/model/CreateLoraDeviceResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateMultiDeviceRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateMultiDeviceResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/CreateMultiDevicesTaskRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/CreateMultiDevicesTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateProductRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateProductResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateTaskRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateTaskResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/CreateTaskFileUrlRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/CreateTaskFileUrlResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateTopicPolicyRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateTopicPolicyResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CreateTopicRuleRequest.h>
@@ -63,6 +67,10 @@
 #include <tencentcloud/iotcloud/v20180614/model/DescribeMultiDevTaskResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeMultiDevicesRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeMultiDevicesResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductTaskRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductTaskResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductTasksRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/DescribeProductTasksResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductsRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeProductsResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/DescribeTaskRequest.h>
@@ -120,12 +128,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateMultiDeviceResponse> CreateMultiDeviceOutcome;
                 typedef std::future<CreateMultiDeviceOutcome> CreateMultiDeviceOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::CreateMultiDeviceRequest&, CreateMultiDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiDeviceAsyncHandler;
+                typedef Outcome<Error, Model::CreateMultiDevicesTaskResponse> CreateMultiDevicesTaskOutcome;
+                typedef std::future<CreateMultiDevicesTaskOutcome> CreateMultiDevicesTaskOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::CreateMultiDevicesTaskRequest&, CreateMultiDevicesTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiDevicesTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateProductResponse> CreateProductOutcome;
                 typedef std::future<CreateProductOutcome> CreateProductOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::CreateProductRequest&, CreateProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductAsyncHandler;
                 typedef Outcome<Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateTaskFileUrlResponse> CreateTaskFileUrlOutcome;
+                typedef std::future<CreateTaskFileUrlOutcome> CreateTaskFileUrlOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::CreateTaskFileUrlRequest&, CreateTaskFileUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFileUrlAsyncHandler;
                 typedef Outcome<Error, Model::CreateTopicPolicyResponse> CreateTopicPolicyOutcome;
                 typedef std::future<CreateTopicPolicyOutcome> CreateTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::CreateTopicPolicyRequest&, CreateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicPolicyAsyncHandler;
@@ -165,6 +179,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMultiDevicesResponse> DescribeMultiDevicesOutcome;
                 typedef std::future<DescribeMultiDevicesOutcome> DescribeMultiDevicesOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeMultiDevicesRequest&, DescribeMultiDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiDevicesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProductTaskResponse> DescribeProductTaskOutcome;
+                typedef std::future<DescribeProductTaskOutcome> DescribeProductTaskOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeProductTaskRequest&, DescribeProductTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductTaskAsyncHandler;
+                typedef Outcome<Error, Model::DescribeProductTasksResponse> DescribeProductTasksOutcome;
+                typedef std::future<DescribeProductTasksOutcome> DescribeProductTasksOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::DescribeProductTasksRequest&, DescribeProductTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
                 typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
@@ -256,6 +276,15 @@ namespace TencentCloud
                 CreateMultiDeviceOutcomeCallable CreateMultiDeviceCallable(const Model::CreateMultiDeviceRequest& request);
 
                 /**
+                 *本接口（CreateMultiDevicesTask）用于创建产品级别的批量创建设备任务
+                 * @param req CreateMultiDevicesTaskRequest
+                 * @return CreateMultiDevicesTaskOutcome
+                 */
+                CreateMultiDevicesTaskOutcome CreateMultiDevicesTask(const Model::CreateMultiDevicesTaskRequest &request);
+                void CreateMultiDevicesTaskAsync(const Model::CreateMultiDevicesTaskRequest& request, const CreateMultiDevicesTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMultiDevicesTaskOutcomeCallable CreateMultiDevicesTaskCallable(const Model::CreateMultiDevicesTaskRequest& request);
+
+                /**
                  *本接口（CreateProduct）用于创建一个新的物联网通信产品 
                  * @param req CreateProductRequest
                  * @return CreateProductOutcome
@@ -272,6 +301,15 @@ namespace TencentCloud
                 CreateTaskOutcome CreateTask(const Model::CreateTaskRequest &request);
                 void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
+
+                /**
+                 *本接口（CreateTaskFileUrl）用于获取产品级任务文件上传链接
+                 * @param req CreateTaskFileUrlRequest
+                 * @return CreateTaskFileUrlOutcome
+                 */
+                CreateTaskFileUrlOutcome CreateTaskFileUrl(const Model::CreateTaskFileUrlRequest &request);
+                void CreateTaskFileUrlAsync(const Model::CreateTaskFileUrlRequest& request, const CreateTaskFileUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTaskFileUrlOutcomeCallable CreateTaskFileUrlCallable(const Model::CreateTaskFileUrlRequest& request);
 
                 /**
                  *本接口（CreateTopicPolicy）用于创建一个Topic 
@@ -328,7 +366,7 @@ namespace TencentCloud
                 DeleteTopicRuleOutcomeCallable DeleteTopicRuleCallable(const Model::DeleteTopicRuleRequest& request);
 
                 /**
-                 *本接口（DescribeDevice）用于查看设备信息 
+                 *本接口（DescribeDevice）用于查看设备信息
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
                  */
@@ -389,6 +427,24 @@ namespace TencentCloud
                 DescribeMultiDevicesOutcome DescribeMultiDevices(const Model::DescribeMultiDevicesRequest &request);
                 void DescribeMultiDevicesAsync(const Model::DescribeMultiDevicesRequest& request, const DescribeMultiDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMultiDevicesOutcomeCallable DescribeMultiDevicesCallable(const Model::DescribeMultiDevicesRequest& request);
+
+                /**
+                 *本接口（DescribeProductTask）用于查看产品级别的任务信息
+                 * @param req DescribeProductTaskRequest
+                 * @return DescribeProductTaskOutcome
+                 */
+                DescribeProductTaskOutcome DescribeProductTask(const Model::DescribeProductTaskRequest &request);
+                void DescribeProductTaskAsync(const Model::DescribeProductTaskRequest& request, const DescribeProductTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductTaskOutcomeCallable DescribeProductTaskCallable(const Model::DescribeProductTaskRequest& request);
+
+                /**
+                 *本接口（DescribeProductTasks）用于查看产品级别的任务列表
+                 * @param req DescribeProductTasksRequest
+                 * @return DescribeProductTasksOutcome
+                 */
+                DescribeProductTasksOutcome DescribeProductTasks(const Model::DescribeProductTasksRequest &request);
+                void DescribeProductTasksAsync(const Model::DescribeProductTasksRequest& request, const DescribeProductTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductTasksOutcomeCallable DescribeProductTasksCallable(const Model::DescribeProductTasksRequest& request);
 
                 /**
                  *本接口（DescribeProducts）用于列出产品列表。 

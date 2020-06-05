@@ -35,6 +35,7 @@ SearchMediaRequest::SearchMediaRequest() :
     m_sortHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_categoriesHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -143,6 +144,19 @@ string SearchMediaRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_categoriesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Categories";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_categories.begin(); itr != m_categories.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_subAppIdHasBeenSet)
@@ -335,6 +349,22 @@ void SearchMediaRequest::SetLimit(const uint64_t& _limit)
 bool SearchMediaRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetCategories() const
+{
+    return m_categories;
+}
+
+void SearchMediaRequest::SetCategories(const vector<string>& _categories)
+{
+    m_categories = _categories;
+    m_categoriesHasBeenSet = true;
+}
+
+bool SearchMediaRequest::CategoriesHasBeenSet() const
+{
+    return m_categoriesHasBeenSet;
 }
 
 uint64_t SearchMediaRequest::GetSubAppId() const

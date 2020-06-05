@@ -145,10 +145,12 @@ namespace TencentCloud
 <li>miniapp</li>
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
+和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
                      * @return EnvSource 环境创建来源，取值：
 <li>miniapp</li>
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
+和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     std::string GetEnvSource() const;
 
@@ -157,10 +159,12 @@ namespace TencentCloud
 <li>miniapp</li>
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
+和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
                      * @param EnvSource 环境创建来源，取值：
 <li>miniapp</li>
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
+和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     void SetEnvSource(const std::string& _envSource);
 
@@ -173,16 +177,20 @@ namespace TencentCloud
                     /**
                      * 获取如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      * @return Channel 如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      * @param Channel 如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     void SetChannel(const std::string& _channel);
 
@@ -231,6 +239,7 @@ namespace TencentCloud
 <li>miniapp</li>
 <li>qcloud</li>
 用法同CreateEnv接口的Source参数
+和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     std::string m_envSource;
                     bool m_envSourceHasBeenSet;
@@ -238,6 +247,7 @@ namespace TencentCloud
                     /**
                      * 如果envsource为miniapp, channel可以为ide或api;
 如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud
+和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;

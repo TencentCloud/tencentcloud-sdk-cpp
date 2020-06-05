@@ -24,7 +24,8 @@ using namespace std;
 DeviceTag::DeviceTag() :
     m_tagHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome DeviceTag::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceTag.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void DeviceTag::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void DeviceTag::SetValue(const string& _value)
 bool DeviceTag::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string DeviceTag::GetName() const
+{
+    return m_name;
+}
+
+void DeviceTag::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DeviceTag::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
