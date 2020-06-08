@@ -313,17 +313,17 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取OsCustomizeType
+                     * 获取OsCustomizeType 系统定制类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OsCustomizeType OsCustomizeType
+                     * @return OsCustomizeType OsCustomizeType 系统定制类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
-                     * 设置OsCustomizeType
+                     * 设置OsCustomizeType 系统定制类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OsCustomizeType OsCustomizeType
+                     * @param OsCustomizeType OsCustomizeType 系统定制类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
@@ -377,6 +377,28 @@ namespace TencentCloud
                      * @return CreatedTime 是否已赋值
                      */
                     bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeletionProtection 删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeletionProtection 删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
 
                 private:
 
@@ -468,7 +490,7 @@ namespace TencentCloud
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * OsCustomizeType
+                     * OsCustomizeType 系统定制类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osCustomizeType;
@@ -487,6 +509,13 @@ namespace TencentCloud
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }
