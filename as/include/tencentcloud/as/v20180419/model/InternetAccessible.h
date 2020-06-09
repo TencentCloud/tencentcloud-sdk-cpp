@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool PublicIpAssignedHasBeenSet() const;
 
+                    /**
+                     * 获取带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BandwidthPackageId 带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBandwidthPackageId() const;
+
+                    /**
+                     * 设置带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BandwidthPackageId 带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
+
+                    /**
+                     * 判断参数 BandwidthPackageId 是否已赋值
+                     * @return BandwidthPackageId 是否已赋值
+                     */
+                    bool BandwidthPackageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     bool m_publicIpAssigned;
                     bool m_publicIpAssignedHasBeenSet;
+
+                    /**
+                     * 带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bandwidthPackageId;
+                    bool m_bandwidthPackageIdHasBeenSet;
 
                 };
             }

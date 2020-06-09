@@ -331,14 +331,14 @@ namespace TencentCloud
                     bool VerifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取管理人姓。
-                     * @return AdminFirstName 管理人姓。
+                     * 获取管理人名。
+                     * @return AdminFirstName 管理人名。
                      */
                     std::string GetAdminFirstName() const;
 
                     /**
-                     * 设置管理人姓。
-                     * @param AdminFirstName 管理人姓。
+                     * 设置管理人名。
+                     * @param AdminFirstName 管理人名。
                      */
                     void SetAdminFirstName(const std::string& _adminFirstName);
 
@@ -349,14 +349,14 @@ namespace TencentCloud
                     bool AdminFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取管理人名。
-                     * @return AdminLastName 管理人名。
+                     * 获取管理人姓。
+                     * @return AdminLastName 管理人姓。
                      */
                     std::string GetAdminLastName() const;
 
                     /**
-                     * 设置管理人名。
-                     * @param AdminLastName 管理人名。
+                     * 设置管理人姓。
+                     * @param AdminLastName 管理人姓。
                      */
                     void SetAdminLastName(const std::string& _adminLastName);
 
@@ -421,14 +421,14 @@ namespace TencentCloud
                     bool AdminPositionHasBeenSet() const;
 
                     /**
-                     * 获取联系人姓。
-                     * @return ContactFirstName 联系人姓。
+                     * 获取联系人名。
+                     * @return ContactFirstName 联系人名。
                      */
                     std::string GetContactFirstName() const;
 
                     /**
-                     * 设置联系人姓。
-                     * @param ContactFirstName 联系人姓。
+                     * 设置联系人名。
+                     * @param ContactFirstName 联系人名。
                      */
                     void SetContactFirstName(const std::string& _contactFirstName);
 
@@ -439,14 +439,14 @@ namespace TencentCloud
                     bool ContactFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取联系人名。
-                     * @return ContactLastName 联系人名。
+                     * 获取联系人姓。
+                     * @return ContactLastName 联系人姓。
                      */
                     std::string GetContactLastName() const;
 
                     /**
-                     * 设置联系人名。
-                     * @param ContactLastName 联系人名。
+                     * 设置联系人姓。
+                     * @param ContactLastName 联系人姓。
                      */
                     void SetContactLastName(const std::string& _contactLastName);
 
@@ -609,13 +609,13 @@ namespace TencentCloud
                     bool m_verifyTypeHasBeenSet;
 
                     /**
-                     * 管理人姓。
+                     * 管理人名。
                      */
                     std::string m_adminFirstName;
                     bool m_adminFirstNameHasBeenSet;
 
                     /**
-                     * 管理人名。
+                     * 管理人姓。
                      */
                     std::string m_adminLastName;
                     bool m_adminLastNameHasBeenSet;
@@ -639,13 +639,13 @@ namespace TencentCloud
                     bool m_adminPositionHasBeenSet;
 
                     /**
-                     * 联系人姓。
+                     * 联系人名。
                      */
                     std::string m_contactFirstName;
                     bool m_contactFirstNameHasBeenSet;
 
                     /**
-                     * 联系人名。
+                     * 联系人姓。
                      */
                     std::string m_contactLastName;
                     bool m_contactLastNameHasBeenSet;

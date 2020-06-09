@@ -24,7 +24,8 @@ using namespace std;
 InternetAccessible::InternetAccessible() :
     m_internetChargeTypeHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
-    m_publicIpAssignedHasBeenSet(false)
+    m_publicIpAssignedHasBeenSet(false),
+    m_bandwidthPackageIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ CoreInternalOutcome InternetAccessible::Deserialize(const Value &value)
         m_publicIpAssignedHasBeenSet = true;
     }
 
+    if (value.HasMember("BandwidthPackageId") && !value["BandwidthPackageId"].IsNull())
+    {
+        if (!value["BandwidthPackageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InternetAccessible.BandwidthPackageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidthPackageId = string(value["BandwidthPackageId"].GetString());
+        m_bandwidthPackageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,14 @@ void InternetAccessible::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "PublicIpAssigned";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicIpAssigned, allocator);
+    }
+
+    if (m_bandwidthPackageIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BandwidthPackageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +162,21 @@ void InternetAccessible::SetPublicIpAssigned(const bool& _publicIpAssigned)
 bool InternetAccessible::PublicIpAssignedHasBeenSet() const
 {
     return m_publicIpAssignedHasBeenSet;
+}
+
+string InternetAccessible::GetBandwidthPackageId() const
+{
+    return m_bandwidthPackageId;
+}
+
+void InternetAccessible::SetBandwidthPackageId(const string& _bandwidthPackageId)
+{
+    m_bandwidthPackageId = _bandwidthPackageId;
+    m_bandwidthPackageIdHasBeenSet = true;
+}
+
+bool InternetAccessible::BandwidthPackageIdHasBeenSet() const
+{
+    return m_bandwidthPackageIdHasBeenSet;
 }
 

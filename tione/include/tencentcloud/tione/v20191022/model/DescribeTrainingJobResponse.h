@@ -221,8 +221,26 @@ namespace TencentCloud
                     bool ModelArtifactsHasBeenSet() const;
 
                     /**
-                     * 获取详细状态
-                     * @return SecondaryStatus 详细状态
+                     * 获取详细状态，取值范围
+Starting：启动中
+Downloading: 准备训练数据
+Training: 正在训练
+Uploading: 上传训练结果
+Completed：已完成
+Failed: 失败
+MaxRuntimeExceeded: 任务超过最大运行时间
+Stopping: 停止中
+Stopped：已停止
+                     * @return SecondaryStatus 详细状态，取值范围
+Starting：启动中
+Downloading: 准备训练数据
+Training: 正在训练
+Uploading: 上传训练结果
+Completed：已完成
+Failed: 失败
+MaxRuntimeExceeded: 任务超过最大运行时间
+Stopping: 停止中
+Stopped：已停止
                      */
                     std::string GetSecondaryStatus() const;
 
@@ -261,8 +279,18 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return TrainingJobStatus 任务状态
+                     * 获取训练任务状态，取值范围
+InProgress：运行中
+Completed: 已完成
+Failed: 失败
+Stopping: 停止中
+Stopped：已停止
+                     * @return TrainingJobStatus 训练任务状态，取值范围
+InProgress：运行中
+Completed: 已完成
+Failed: 失败
+Stopping: 停止中
+Stopped：已停止
                      */
                     std::string GetTrainingJobStatus() const;
 
@@ -360,7 +388,16 @@ namespace TencentCloud
                     bool m_modelArtifactsHasBeenSet;
 
                     /**
-                     * 详细状态
+                     * 详细状态，取值范围
+Starting：启动中
+Downloading: 准备训练数据
+Training: 正在训练
+Uploading: 上传训练结果
+Completed：已完成
+Failed: 失败
+MaxRuntimeExceeded: 任务超过最大运行时间
+Stopping: 停止中
+Stopped：已停止
                      */
                     std::string m_secondaryStatus;
                     bool m_secondaryStatusHasBeenSet;
@@ -380,7 +417,12 @@ namespace TencentCloud
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 训练任务状态，取值范围
+InProgress：运行中
+Completed: 已完成
+Failed: 失败
+Stopping: 停止中
+Stopped：已停止
                      */
                     std::string m_trainingJobStatus;
                     bool m_trainingJobStatusHasBeenSet;

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 使用计划详情（由于yunapi对复杂类型的修改会直接同步到现网，且不能查询到复杂类型被拿哪个接口所引用，因为新建一个区别于之前UsagePlan的复杂类型）
+                * 使用计划详情。
                 */
                 class UsagePlanInfo : public AbstractModel
                 {

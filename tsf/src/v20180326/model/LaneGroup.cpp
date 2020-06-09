@@ -22,10 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 LaneGroup::LaneGroup() :
-    m_laneIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_entranceHasBeenSet(false),
     m_laneGroupIdHasBeenSet(false),
+    m_laneIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
@@ -41,16 +41,6 @@ CoreInternalOutcome LaneGroup::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("LaneId") && !value["LaneId"].IsNull())
-    {
-        if (!value["LaneId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `LaneGroup.LaneId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_laneId = string(value["LaneId"].GetString());
-        m_laneIdHasBeenSet = true;
-    }
 
     if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
     {
@@ -80,6 +70,16 @@ CoreInternalOutcome LaneGroup::Deserialize(const Value &value)
         }
         m_laneGroupId = string(value["LaneGroupId"].GetString());
         m_laneGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LaneId") && !value["LaneId"].IsNull())
+    {
+        if (!value["LaneId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LaneGroup.LaneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_laneId = string(value["LaneId"].GetString());
+        m_laneIdHasBeenSet = true;
     }
 
     if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
@@ -169,14 +169,6 @@ CoreInternalOutcome LaneGroup::Deserialize(const Value &value)
 void LaneGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_laneIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "LaneId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_laneId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_groupIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -199,6 +191,14 @@ void LaneGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "LaneGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_laneGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_laneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LaneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_laneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupNameHasBeenSet)
@@ -268,22 +268,6 @@ void LaneGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 }
 
 
-string LaneGroup::GetLaneId() const
-{
-    return m_laneId;
-}
-
-void LaneGroup::SetLaneId(const string& _laneId)
-{
-    m_laneId = _laneId;
-    m_laneIdHasBeenSet = true;
-}
-
-bool LaneGroup::LaneIdHasBeenSet() const
-{
-    return m_laneIdHasBeenSet;
-}
-
 string LaneGroup::GetGroupId() const
 {
     return m_groupId;
@@ -330,6 +314,22 @@ void LaneGroup::SetLaneGroupId(const string& _laneGroupId)
 bool LaneGroup::LaneGroupIdHasBeenSet() const
 {
     return m_laneGroupIdHasBeenSet;
+}
+
+string LaneGroup::GetLaneId() const
+{
+    return m_laneId;
+}
+
+void LaneGroup::SetLaneId(const string& _laneId)
+{
+    m_laneId = _laneId;
+    m_laneIdHasBeenSet = true;
+}
+
+bool LaneGroup::LaneIdHasBeenSet() const
+{
+    return m_laneIdHasBeenSet;
 }
 
 string LaneGroup::GetGroupName() const

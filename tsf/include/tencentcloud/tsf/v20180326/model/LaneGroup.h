@@ -47,28 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LaneId 泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetLaneId() const;
-
-                    /**
-                     * 设置泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LaneId 泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetLaneId(const std::string& _laneId);
-
-                    /**
-                     * 判断参数 LaneId 是否已赋值
-                     * @return LaneId 是否已赋值
-                     */
-                    bool LaneIdHasBeenSet() const;
-
-                    /**
                      * 获取部署组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组ID
@@ -133,6 +111,28 @@ namespace TencentCloud
                      * @return LaneGroupId 是否已赋值
                      */
                     bool LaneGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LaneId 泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLaneId() const;
+
+                    /**
+                     * 设置泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LaneId 泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLaneId(const std::string& _laneId);
+
+                    /**
+                     * 判断参数 LaneId 是否已赋值
+                     * @return LaneId 是否已赋值
+                     */
+                    bool LaneIdHasBeenSet() const;
 
                     /**
                      * 获取部署组名
@@ -313,13 +313,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_laneId;
-                    bool m_laneIdHasBeenSet;
-
-                    /**
                      * 部署组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -339,6 +332,13 @@ namespace TencentCloud
                      */
                     std::string m_laneGroupId;
                     bool m_laneGroupIdHasBeenSet;
+
+                    /**
+                     * 泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_laneId;
+                    bool m_laneIdHasBeenSet;
 
                     /**
                      * 部署组名

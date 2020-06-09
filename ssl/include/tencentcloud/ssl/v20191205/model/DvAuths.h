@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取证书列表（Certificate）返回参数键为 DvAuths 的内容。
+                * 返回参数键为 DvAuths 的内容。
                 */
                 class DvAuths : public AbstractModel
                 {
