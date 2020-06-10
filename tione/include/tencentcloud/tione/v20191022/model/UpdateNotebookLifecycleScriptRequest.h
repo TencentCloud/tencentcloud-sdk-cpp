@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool NotebookLifecycleScriptsNameHasBeenSet() const;
 
                     /**
-                     * 获取创建脚本
-                     * @return CreateScript 创建脚本
+                     * 获取创建脚本，base64编码
+base64后的脚本长度不能超过16384个字符
+                     * @return CreateScript 创建脚本，base64编码
+base64后的脚本长度不能超过16384个字符
                      */
                     std::string GetCreateScript() const;
 
                     /**
-                     * 设置创建脚本
-                     * @param CreateScript 创建脚本
+                     * 设置创建脚本，base64编码
+base64后的脚本长度不能超过16384个字符
+                     * @param CreateScript 创建脚本，base64编码
+base64后的脚本长度不能超过16384个字符
                      */
                     void SetCreateScript(const std::string& _createScript);
 
@@ -79,14 +83,18 @@ namespace TencentCloud
                     bool CreateScriptHasBeenSet() const;
 
                     /**
-                     * 获取启动脚本
-                     * @return StartScript 启动脚本
+                     * 获取启动脚本，base64编码
+base64后的脚本长度不能超过16384个字符
+                     * @return StartScript 启动脚本，base64编码
+base64后的脚本长度不能超过16384个字符
                      */
                     std::string GetStartScript() const;
 
                     /**
-                     * 设置启动脚本
-                     * @param StartScript 启动脚本
+                     * 设置启动脚本，base64编码
+base64后的脚本长度不能超过16384个字符
+                     * @param StartScript 启动脚本，base64编码
+base64后的脚本长度不能超过16384个字符
                      */
                     void SetStartScript(const std::string& _startScript);
 
@@ -105,13 +113,15 @@ namespace TencentCloud
                     bool m_notebookLifecycleScriptsNameHasBeenSet;
 
                     /**
-                     * 创建脚本
+                     * 创建脚本，base64编码
+base64后的脚本长度不能超过16384个字符
                      */
                     std::string m_createScript;
                     bool m_createScriptHasBeenSet;
 
                     /**
-                     * 启动脚本
+                     * 启动脚本，base64编码
+base64后的脚本长度不能超过16384个字符
                      */
                     std::string m_startScript;
                     bool m_startScriptHasBeenSet;

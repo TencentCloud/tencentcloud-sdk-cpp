@@ -37,7 +37,8 @@ RechargeMemberThirdPayRequest::RechargeMemberThirdPayRequest() :
     m_remarkHasBeenSet(false),
     m_reservedMsgOneHasBeenSet(false),
     m_reservedMsgTwoHasBeenSet(false),
-    m_reservedMsgThreeHasBeenSet(false)
+    m_reservedMsgThreeHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string RechargeMemberThirdPayRequest::ToJsonString() const
         string key = "ReservedMsgThree";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsgThree.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -390,6 +399,22 @@ void RechargeMemberThirdPayRequest::SetReservedMsgThree(const string& _reservedM
 bool RechargeMemberThirdPayRequest::ReservedMsgThreeHasBeenSet() const
 {
     return m_reservedMsgThreeHasBeenSet;
+}
+
+string RechargeMemberThirdPayRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void RechargeMemberThirdPayRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool RechargeMemberThirdPayRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

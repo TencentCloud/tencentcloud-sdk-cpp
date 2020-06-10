@@ -31,7 +31,8 @@ QueryBankTransactionDetailsRequest::QueryBankTransactionDetailsRequest() :
     m_pageNumHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string QueryBankTransactionDetailsRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +249,22 @@ void QueryBankTransactionDetailsRequest::SetReservedMsg(const string& _reservedM
 bool QueryBankTransactionDetailsRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string QueryBankTransactionDetailsRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void QueryBankTransactionDetailsRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool QueryBankTransactionDetailsRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取重试次数
+                     * @return RetryNum 重试次数
+                     */
+                    uint64_t GetRetryNum() const;
+
+                    /**
+                     * 设置重试次数
+                     * @param RetryNum 重试次数
+                     */
+                    void SetRetryNum(const uint64_t& _retryNum);
+
+                    /**
+                     * 判断参数 RetryNum 是否已赋值
+                     * @return RetryNum 是否已赋值
+                     */
+                    bool RetryNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +353,12 @@ namespace TencentCloud
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * 重试次数
+                     */
+                    uint64_t m_retryNum;
+                    bool m_retryNumHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ FunctionLog::FunctionLog() :
     m_memUsageHasBeenSet(false),
     m_logHasBeenSet(false),
     m_levelHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_retryNumHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome FunctionLog::Deserialize(const Value &value)
         m_sourceHasBeenSet = true;
     }
 
+    if (value.HasMember("RetryNum") && !value["RetryNum"].IsNull())
+    {
+        if (!value["RetryNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FunctionLog.RetryNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryNum = value["RetryNum"].GetUint64();
+        m_retryNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void FunctionLog::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RetryNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retryNum, allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void FunctionLog::SetSource(const string& _source)
 bool FunctionLog::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+uint64_t FunctionLog::GetRetryNum() const
+{
+    return m_retryNum;
+}
+
+void FunctionLog::SetRetryNum(const uint64_t& _retryNum)
+{
+    m_retryNum = _retryNum;
+    m_retryNumHasBeenSet = true;
+}
+
+bool FunctionLog::RetryNumHasBeenSet() const
+{
+    return m_retryNumHasBeenSet;
 }
 

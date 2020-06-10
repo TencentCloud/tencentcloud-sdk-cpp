@@ -29,7 +29,8 @@ QueryCommonTransferRechargeRequest::QueryCommonTransferRechargeRequest() :
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string QueryCommonTransferRechargeRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void QueryCommonTransferRechargeRequest::SetReservedMsg(const string& _reservedM
 bool QueryCommonTransferRechargeRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string QueryCommonTransferRechargeRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void QueryCommonTransferRechargeRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool QueryCommonTransferRechargeRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

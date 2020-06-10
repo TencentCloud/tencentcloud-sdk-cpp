@@ -29,7 +29,8 @@ CheckAmountRequest::CheckAmountRequest() :
     m_takeCashAcctNoHasBeenSet(false),
     m_authAmtHasBeenSet(false),
     m_ccyHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string CheckAmountRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void CheckAmountRequest::SetReservedMsg(const string& _reservedMsg)
 bool CheckAmountRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string CheckAmountRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void CheckAmountRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool CheckAmountRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

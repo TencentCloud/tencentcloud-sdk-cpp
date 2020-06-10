@@ -27,7 +27,8 @@ QuerySmallAmountTransferRequest::QuerySmallAmountTransferRequest() :
     m_mrchCodeHasBeenSet(false),
     m_oldTranSeqNoHasBeenSet(false),
     m_tranDateHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string QuerySmallAmountTransferRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void QuerySmallAmountTransferRequest::SetReservedMsg(const string& _reservedMsg)
 bool QuerySmallAmountTransferRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string QuerySmallAmountTransferRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void QuerySmallAmountTransferRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool QuerySmallAmountTransferRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

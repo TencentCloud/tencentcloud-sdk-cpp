@@ -603,6 +603,28 @@ namespace TencentCloud
                      */
                     bool ChargeStateHasBeenSet() const;
 
+                    /**
+                     * 获取物理专线开通时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime 物理专线开通时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置物理专线开通时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartTime 物理专线开通时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -782,6 +804,13 @@ namespace TencentCloud
                      */
                     std::string m_chargeState;
                     bool m_chargeStateHasBeenSet;
+
+                    /**
+                     * 物理专线开通时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

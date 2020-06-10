@@ -35,7 +35,8 @@ BindRelateAcctUnionPayRequest::BindRelateAcctUnionPayRequest() :
     m_mrchCodeHasBeenSet(false),
     m_cnapsBranchIdHasBeenSet(false),
     m_eiconBankBranchIdHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string BindRelateAcctUnionPayRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -340,6 +349,22 @@ void BindRelateAcctUnionPayRequest::SetReservedMsg(const string& _reservedMsg)
 bool BindRelateAcctUnionPayRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string BindRelateAcctUnionPayRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void BindRelateAcctUnionPayRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool BindRelateAcctUnionPayRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

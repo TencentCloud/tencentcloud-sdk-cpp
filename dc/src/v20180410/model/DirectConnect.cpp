@@ -47,7 +47,8 @@ DirectConnect::DirectConnect() :
     m_tagSetHasBeenSet(false),
     m_accessPointTypeHasBeenSet(false),
     m_idcCityHasBeenSet(false),
-    m_chargeStateHasBeenSet(false)
+    m_chargeStateHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome DirectConnect::Deserialize(const Value &value)
         m_chargeStateHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnect.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -546,6 +557,14 @@ void DirectConnect::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ChargeState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_chargeState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -965,5 +984,21 @@ void DirectConnect::SetChargeState(const string& _chargeState)
 bool DirectConnect::ChargeStateHasBeenSet() const
 {
     return m_chargeStateHasBeenSet;
+}
+
+string DirectConnect::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DirectConnect::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DirectConnect::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 

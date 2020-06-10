@@ -25,7 +25,8 @@ using namespace std;
 
 ExecuteScalingPolicyRequest::ExecuteScalingPolicyRequest() :
     m_autoScalingPolicyIdHasBeenSet(false),
-    m_honorCooldownHasBeenSet(false)
+    m_honorCooldownHasBeenSet(false),
+    m_triggerSourceHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ExecuteScalingPolicyRequest::ToJsonString() const
         string key = "HonorCooldown";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_honorCooldown, allocator);
+    }
+
+    if (m_triggerSourceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TriggerSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_triggerSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ExecuteScalingPolicyRequest::SetHonorCooldown(const bool& _honorCooldown)
 bool ExecuteScalingPolicyRequest::HonorCooldownHasBeenSet() const
 {
     return m_honorCooldownHasBeenSet;
+}
+
+string ExecuteScalingPolicyRequest::GetTriggerSource() const
+{
+    return m_triggerSource;
+}
+
+void ExecuteScalingPolicyRequest::SetTriggerSource(const string& _triggerSource)
+{
+    m_triggerSource = _triggerSource;
+    m_triggerSourceHasBeenSet = true;
+}
+
+bool ExecuteScalingPolicyRequest::TriggerSourceHasBeenSet() const
+{
+    return m_triggerSourceHasBeenSet;
 }
 
 

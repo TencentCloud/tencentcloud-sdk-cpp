@@ -37,7 +37,8 @@ CreateCustAcctIdRequest::CreateCustAcctIdRequest() :
     m_subAcctTypeHasBeenSet(false),
     m_userNicknameHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string CreateCustAcctIdRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -390,6 +399,22 @@ void CreateCustAcctIdRequest::SetReservedMsg(const string& _reservedMsg)
 bool CreateCustAcctIdRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string CreateCustAcctIdRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void CreateCustAcctIdRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool CreateCustAcctIdRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

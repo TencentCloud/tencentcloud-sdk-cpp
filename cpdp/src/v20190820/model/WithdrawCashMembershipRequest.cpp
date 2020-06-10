@@ -36,7 +36,8 @@ WithdrawCashMembershipRequest::WithdrawCashMembershipRequest() :
     m_cashAmtHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_reservedMsgHasBeenSet(false),
-    m_webSignHasBeenSet(false)
+    m_webSignHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string WithdrawCashMembershipRequest::ToJsonString() const
         string key = "WebSign";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_webSign.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -365,6 +374,22 @@ void WithdrawCashMembershipRequest::SetWebSign(const string& _webSign)
 bool WithdrawCashMembershipRequest::WebSignHasBeenSet() const
 {
     return m_webSignHasBeenSet;
+}
+
+string WithdrawCashMembershipRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void WithdrawCashMembershipRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool WithdrawCashMembershipRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

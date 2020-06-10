@@ -27,7 +27,8 @@ ReviseMbrPropertyRequest::ReviseMbrPropertyRequest() :
     m_mrchCodeHasBeenSet(false),
     m_subAcctNoHasBeenSet(false),
     m_memberPropertyHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ReviseMbrPropertyRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void ReviseMbrPropertyRequest::SetReservedMsg(const string& _reservedMsg)
 bool ReviseMbrPropertyRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string ReviseMbrPropertyRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void ReviseMbrPropertyRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool ReviseMbrPropertyRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

@@ -35,7 +35,8 @@ BindRelateAcctSmallAmountRequest::BindRelateAcctSmallAmountRequest() :
     m_mobileHasBeenSet(false),
     m_cnapsBranchIdHasBeenSet(false),
     m_eiconBankBranchIdHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string BindRelateAcctSmallAmountRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -340,6 +349,22 @@ void BindRelateAcctSmallAmountRequest::SetReservedMsg(const string& _reservedMsg
 bool BindRelateAcctSmallAmountRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string BindRelateAcctSmallAmountRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void BindRelateAcctSmallAmountRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool BindRelateAcctSmallAmountRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

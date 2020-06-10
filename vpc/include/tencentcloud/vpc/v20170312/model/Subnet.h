@@ -210,14 +210,14 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取可用`IP`数。
-                     * @return AvailableIpAddressCount 可用`IP`数。
+                     * 获取可用`IPv4`数。
+                     * @return AvailableIpAddressCount 可用`IPv4`数。
                      */
                     uint64_t GetAvailableIpAddressCount() const;
 
                     /**
-                     * 设置可用`IP`数。
-                     * @param AvailableIpAddressCount 可用`IP`数。
+                     * 设置可用`IPv4`数。
+                     * @param AvailableIpAddressCount 可用`IPv4`数。
                      */
                     void SetAvailableIpAddressCount(const uint64_t& _availableIpAddressCount);
 
@@ -282,14 +282,14 @@ namespace TencentCloud
                     bool IsRemoteVpcSnatHasBeenSet() const;
 
                     /**
-                     * 获取子网`IP`总数。
-                     * @return TotalIpAddressCount 子网`IP`总数。
+                     * 获取子网`IPv4`总数。
+                     * @return TotalIpAddressCount 子网`IPv4`总数。
                      */
                     uint64_t GetTotalIpAddressCount() const;
 
                     /**
-                     * 设置子网`IP`总数。
-                     * @param TotalIpAddressCount 子网`IP`总数。
+                     * 设置子网`IPv4`总数。
+                     * @param TotalIpAddressCount 子网`IPv4`总数。
                      */
                     void SetTotalIpAddressCount(const uint64_t& _totalIpAddressCount);
 
@@ -374,7 +374,7 @@ namespace TencentCloud
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 可用`IP`数。
+                     * 可用`IPv4`数。
                      */
                     uint64_t m_availableIpAddressCount;
                     bool m_availableIpAddressCountHasBeenSet;
@@ -398,7 +398,7 @@ namespace TencentCloud
                     bool m_isRemoteVpcSnatHasBeenSet;
 
                     /**
-                     * 子网`IP`总数。
+                     * 子网`IPv4`总数。
                      */
                     uint64_t m_totalIpAddressCount;
                     bool m_totalIpAddressCountHasBeenSet;

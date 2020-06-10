@@ -348,6 +348,24 @@ namespace TencentCloud
                      */
                     bool WebSignHasBeenSet() const;
 
+                    /**
+                     * 获取STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * @return Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * @param Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -451,6 +469,12 @@ namespace TencentCloud
                      */
                     std::string m_webSign;
                     bool m_webSignHasBeenSet;
+
+                    /**
+                     * STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

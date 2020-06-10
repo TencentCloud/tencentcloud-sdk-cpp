@@ -28,7 +28,8 @@ UnbindRelateAcctRequest::UnbindRelateAcctRequest() :
     m_functionFlagHasBeenSet(false),
     m_tranNetMemberCodeHasBeenSet(false),
     m_memberAcctNoHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string UnbindRelateAcctRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void UnbindRelateAcctRequest::SetReservedMsg(const string& _reservedMsg)
 bool UnbindRelateAcctRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string UnbindRelateAcctRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void UnbindRelateAcctRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool UnbindRelateAcctRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

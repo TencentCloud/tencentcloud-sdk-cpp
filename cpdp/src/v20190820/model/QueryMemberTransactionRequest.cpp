@@ -40,7 +40,8 @@ QueryMemberTransactionRequest::QueryMemberTransactionRequest() :
     m_orderContentHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_reservedMsgHasBeenSet(false),
-    m_webSignHasBeenSet(false)
+    m_webSignHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,14 @@ string QueryMemberTransactionRequest::ToJsonString() const
         string key = "WebSign";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_webSign.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -465,6 +474,22 @@ void QueryMemberTransactionRequest::SetWebSign(const string& _webSign)
 bool QueryMemberTransactionRequest::WebSignHasBeenSet() const
 {
     return m_webSignHasBeenSet;
+}
+
+string QueryMemberTransactionRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void QueryMemberTransactionRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool QueryMemberTransactionRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

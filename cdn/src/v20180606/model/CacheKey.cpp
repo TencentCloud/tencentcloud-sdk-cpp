@@ -27,8 +27,7 @@ CacheKey::CacheKey() :
     m_headerHasBeenSet(false),
     m_cookieHasBeenSet(false),
     m_schemeHasBeenSet(false),
-    m_cacheTagHasBeenSet(false),
-    m_caseSensitiveHasBeenSet(false)
+    m_cacheTagHasBeenSet(false)
 {
 }
 
@@ -132,16 +131,6 @@ CoreInternalOutcome CacheKey::Deserialize(const Value &value)
         m_cacheTagHasBeenSet = true;
     }
 
-    if (value.HasMember("CaseSensitive") && !value["CaseSensitive"].IsNull())
-    {
-        if (!value["CaseSensitive"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `CacheKey.CaseSensitive` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_caseSensitive = string(value["CaseSensitive"].GetString());
-        m_caseSensitiveHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -200,14 +189,6 @@ void CacheKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_cacheTag.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_caseSensitiveHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "CaseSensitive";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_caseSensitive.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -307,21 +288,5 @@ void CacheKey::SetCacheTag(const CacheTagKey& _cacheTag)
 bool CacheKey::CacheTagHasBeenSet() const
 {
     return m_cacheTagHasBeenSet;
-}
-
-string CacheKey::GetCaseSensitive() const
-{
-    return m_caseSensitive;
-}
-
-void CacheKey::SetCaseSensitive(const string& _caseSensitive)
-{
-    m_caseSensitive = _caseSensitive;
-    m_caseSensitiveHasBeenSet = true;
-}
-
-bool CacheKey::CaseSensitiveHasBeenSet() const
-{
-    return m_caseSensitiveHasBeenSet;
 }
 

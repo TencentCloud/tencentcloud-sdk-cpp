@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool HonorCooldownHasBeenSet() const;
 
+                    /**
+                     * 获取执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     * @return TriggerSource 执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     */
+                    std::string GetTriggerSource() const;
+
+                    /**
+                     * 设置执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     * @param TriggerSource 执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     */
+                    void SetTriggerSource(const std::string& _triggerSource);
+
+                    /**
+                     * 判断参数 TriggerSource 是否已赋值
+                     * @return TriggerSource 是否已赋值
+                     */
+                    bool TriggerSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     bool m_honorCooldown;
                     bool m_honorCooldownHasBeenSet;
+
+                    /**
+                     * 执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     */
+                    std::string m_triggerSource;
+                    bool m_triggerSourceHasBeenSet;
 
                 };
             }

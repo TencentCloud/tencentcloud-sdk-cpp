@@ -483,7 +483,7 @@ namespace TencentCloud
                 DisableTopicRuleOutcomeCallable DisableTopicRuleCallable(const Model::DisableTopicRuleRequest& request);
 
                 /**
-                 *本接口（EnableTopicRule）用于启用规则
+                 *本接口（EnableTopicRule）用于启用规则 
                  * @param req EnableTopicRuleRequest
                  * @return EnableTopicRuleOutcome
                  */

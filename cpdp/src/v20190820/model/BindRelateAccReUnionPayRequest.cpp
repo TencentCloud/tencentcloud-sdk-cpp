@@ -28,7 +28,8 @@ BindRelateAccReUnionPayRequest::BindRelateAccReUnionPayRequest() :
     m_tranNetMemberCodeHasBeenSet(false),
     m_memberAcctNoHasBeenSet(false),
     m_messageCheckCodeHasBeenSet(false),
-    m_reservedMsgHasBeenSet(false)
+    m_reservedMsgHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string BindRelateAccReUnionPayRequest::ToJsonString() const
         string key = "ReservedMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_reservedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void BindRelateAccReUnionPayRequest::SetReservedMsg(const string& _reservedMsg)
 bool BindRelateAccReUnionPayRequest::ReservedMsgHasBeenSet() const
 {
     return m_reservedMsgHasBeenSet;
+}
+
+string BindRelateAccReUnionPayRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void BindRelateAccReUnionPayRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool BindRelateAccReUnionPayRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 
