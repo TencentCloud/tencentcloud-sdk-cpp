@@ -298,6 +298,49 @@ EcmClient::CreateNetworkInterfaceOutcomeCallable EcmClient::CreateNetworkInterfa
     return task->get_future();
 }
 
+EcmClient::CreateSecurityGroupOutcome EcmClient::CreateSecurityGroup(const CreateSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSecurityGroupResponse rsp = CreateSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSecurityGroupOutcome(rsp);
+        else
+            return CreateSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::CreateSecurityGroupAsync(const CreateSecurityGroupRequest& request, const CreateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::CreateSecurityGroupOutcomeCallable EcmClient::CreateSecurityGroupCallable(const CreateSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::CreateSubnetOutcome EcmClient::CreateSubnet(const CreateSubnetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSubnet");

@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 OpenSecurityPolicyRequest::OpenSecurityPolicyRequest() :
-    m_proxyIdHasBeenSet(false)
+    m_proxyIdHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string OpenSecurityPolicyRequest::ToJsonString() const
         string key = "ProxyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_proxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void OpenSecurityPolicyRequest::SetProxyId(const string& _proxyId)
 bool OpenSecurityPolicyRequest::ProxyIdHasBeenSet() const
 {
     return m_proxyIdHasBeenSet;
+}
+
+string OpenSecurityPolicyRequest::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void OpenSecurityPolicyRequest::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool OpenSecurityPolicyRequest::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 
 

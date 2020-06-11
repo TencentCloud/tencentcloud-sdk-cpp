@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DeleteProxyGroupRequest::DeleteProxyGroupRequest() :
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DeleteProxyGroupRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Force";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_force, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DeleteProxyGroupRequest::SetGroupId(const string& _groupId)
 bool DeleteProxyGroupRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+uint64_t DeleteProxyGroupRequest::GetForce() const
+{
+    return m_force;
+}
+
+void DeleteProxyGroupRequest::SetForce(const uint64_t& _force)
+{
+    m_force = _force;
+    m_forceHasBeenSet = true;
+}
+
+bool DeleteProxyGroupRequest::ForceHasBeenSet() const
+{
+    return m_forceHasBeenSet;
 }
 
 

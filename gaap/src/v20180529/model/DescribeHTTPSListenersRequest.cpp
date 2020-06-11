@@ -30,7 +30,8 @@ DescribeHTTPSListenersRequest::DescribeHTTPSListenersRequest() :
     m_portHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_searchValueHasBeenSet(false)
+    m_searchValueHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string DescribeHTTPSListenersRequest::ToJsonString() const
         string key = "SearchValue";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_searchValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void DescribeHTTPSListenersRequest::SetSearchValue(const string& _searchValue)
 bool DescribeHTTPSListenersRequest::SearchValueHasBeenSet() const
 {
     return m_searchValueHasBeenSet;
+}
+
+string DescribeHTTPSListenersRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void DescribeHTTPSListenersRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool DescribeHTTPSListenersRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

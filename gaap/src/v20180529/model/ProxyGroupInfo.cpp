@@ -28,7 +28,9 @@ ProxyGroupInfo::ProxyGroupInfo() :
     m_projectIdHasBeenSet(false),
     m_realServerRegionInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,26 @@ CoreInternalOutcome ProxyGroupInfo::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProxyGroupInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProxyGroupInfo.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -193,6 +215,22 @@ void ProxyGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -308,5 +346,37 @@ void ProxyGroupInfo::SetTagSet(const vector<TagPair>& _tagSet)
 bool ProxyGroupInfo::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+string ProxyGroupInfo::GetVersion() const
+{
+    return m_version;
+}
+
+void ProxyGroupInfo::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool ProxyGroupInfo::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+uint64_t ProxyGroupInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ProxyGroupInfo::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ProxyGroupInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

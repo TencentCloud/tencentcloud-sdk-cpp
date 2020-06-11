@@ -6404,6 +6404,49 @@ VpcClient::EnableRoutesOutcomeCallable VpcClient::EnableRoutesCallable(const Ena
     return task->get_future();
 }
 
+VpcClient::GetCcnRegionBandwidthLimitsOutcome VpcClient::GetCcnRegionBandwidthLimits(const GetCcnRegionBandwidthLimitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCcnRegionBandwidthLimits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCcnRegionBandwidthLimitsResponse rsp = GetCcnRegionBandwidthLimitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCcnRegionBandwidthLimitsOutcome(rsp);
+        else
+            return GetCcnRegionBandwidthLimitsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCcnRegionBandwidthLimitsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::GetCcnRegionBandwidthLimitsAsync(const GetCcnRegionBandwidthLimitsRequest& request, const GetCcnRegionBandwidthLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCcnRegionBandwidthLimits(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::GetCcnRegionBandwidthLimitsOutcomeCallable VpcClient::GetCcnRegionBandwidthLimitsCallable(const GetCcnRegionBandwidthLimitsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCcnRegionBandwidthLimitsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCcnRegionBandwidthLimits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::HaVipAssociateAddressIpOutcome VpcClient::HaVipAssociateAddressIp(const HaVipAssociateAddressIpRequest &request)
 {
     auto outcome = MakeRequest(request, "HaVipAssociateAddressIp");

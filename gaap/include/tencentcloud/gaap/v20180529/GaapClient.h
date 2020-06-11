@@ -33,6 +33,8 @@
 #include <tencentcloud/gaap/v20180529/model/CheckProxyCreateResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CloseProxiesRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CloseProxiesResponse.h>
+#include <tencentcloud/gaap/v20180529/model/CloseProxyGroupRequest.h>
+#include <tencentcloud/gaap/v20180529/model/CloseProxyGroupResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CloseSecurityPolicyRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CloseSecurityPolicyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateCertificateRequest.h>
@@ -181,6 +183,8 @@
 #include <tencentcloud/gaap/v20180529/model/ModifyUDPListenerAttributeResponse.h>
 #include <tencentcloud/gaap/v20180529/model/OpenProxiesRequest.h>
 #include <tencentcloud/gaap/v20180529/model/OpenProxiesResponse.h>
+#include <tencentcloud/gaap/v20180529/model/OpenProxyGroupRequest.h>
+#include <tencentcloud/gaap/v20180529/model/OpenProxyGroupResponse.h>
 #include <tencentcloud/gaap/v20180529/model/OpenSecurityPolicyRequest.h>
 #include <tencentcloud/gaap/v20180529/model/OpenSecurityPolicyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/RemoveRealServersRequest.h>
@@ -216,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CloseProxiesResponse> CloseProxiesOutcome;
                 typedef std::future<CloseProxiesOutcome> CloseProxiesOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CloseProxiesRequest&, CloseProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseProxiesAsyncHandler;
+                typedef Outcome<Error, Model::CloseProxyGroupResponse> CloseProxyGroupOutcome;
+                typedef std::future<CloseProxyGroupOutcome> CloseProxyGroupOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::CloseProxyGroupRequest&, CloseProxyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseProxyGroupAsyncHandler;
                 typedef Outcome<Error, Model::CloseSecurityPolicyResponse> CloseSecurityPolicyOutcome;
                 typedef std::future<CloseSecurityPolicyOutcome> CloseSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CloseSecurityPolicyRequest&, CloseSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseSecurityPolicyAsyncHandler;
@@ -438,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::OpenProxiesResponse> OpenProxiesOutcome;
                 typedef std::future<OpenProxiesOutcome> OpenProxiesOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::OpenProxiesRequest&, OpenProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenProxiesAsyncHandler;
+                typedef Outcome<Error, Model::OpenProxyGroupResponse> OpenProxyGroupOutcome;
+                typedef std::future<OpenProxyGroupOutcome> OpenProxyGroupOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::OpenProxyGroupRequest&, OpenProxyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenProxyGroupAsyncHandler;
                 typedef Outcome<Error, Model::OpenSecurityPolicyResponse> OpenSecurityPolicyOutcome;
                 typedef std::future<OpenSecurityPolicyOutcome> OpenSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::OpenSecurityPolicyRequest&, OpenSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenSecurityPolicyAsyncHandler;
@@ -495,6 +505,15 @@ namespace TencentCloud
                 CloseProxiesOutcome CloseProxies(const Model::CloseProxiesRequest &request);
                 void CloseProxiesAsync(const Model::CloseProxiesRequest& request, const CloseProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseProxiesOutcomeCallable CloseProxiesCallable(const Model::CloseProxiesRequest& request);
+
+                /**
+                 *本接口（CloseProxyGroup）用于关闭通道组。通道组关闭后，不再产生流量，但每天仍然收取通道基础配置费用。
+                 * @param req CloseProxyGroupRequest
+                 * @return CloseProxyGroupOutcome
+                 */
+                CloseProxyGroupOutcome CloseProxyGroup(const Model::CloseProxyGroupRequest &request);
+                void CloseProxyGroupAsync(const Model::CloseProxyGroupRequest& request, const CloseProxyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseProxyGroupOutcomeCallable CloseProxyGroupCallable(const Model::CloseProxyGroupRequest& request);
 
                 /**
                  *关闭安全策略
@@ -1163,6 +1182,15 @@ namespace TencentCloud
                 OpenProxiesOutcome OpenProxies(const Model::OpenProxiesRequest &request);
                 void OpenProxiesAsync(const Model::OpenProxiesRequest& request, const OpenProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenProxiesOutcomeCallable OpenProxiesCallable(const Model::OpenProxiesRequest& request);
+
+                /**
+                 *该接口（OpenProxyGroup）用于开启一条通道组中的所有通道
+                 * @param req OpenProxyGroupRequest
+                 * @return OpenProxyGroupOutcome
+                 */
+                OpenProxyGroupOutcome OpenProxyGroup(const Model::OpenProxyGroupRequest &request);
+                void OpenProxyGroupAsync(const Model::OpenProxyGroupRequest& request, const OpenProxyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenProxyGroupOutcomeCallable OpenProxyGroupCallable(const Model::OpenProxyGroupRequest& request);
 
                 /**
                  *开启安全策略

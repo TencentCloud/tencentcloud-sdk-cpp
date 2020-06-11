@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取统计信息列表。
-                     * @return DataInfoList 统计信息列表。
+                     * 获取统计信息列表，时间粒度是1分钟。
+                     * @return DataInfoList 统计信息列表，时间粒度是1分钟。
                      */
                     std::vector<DayStreamPlayInfo> GetDataInfoList() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 统计信息列表。
+                     * 统计信息列表，时间粒度是1分钟。
                      */
                     std::vector<DayStreamPlayInfo> m_dataInfoList;
                     bool m_dataInfoListHasBeenSet;

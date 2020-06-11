@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool SearchValueHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件，通道组ID
+                     * @return GroupId 过滤条件，通道组ID
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置过滤条件，通道组ID
+                     * @param GroupId 过滤条件，通道组ID
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_searchValue;
                     bool m_searchValueHasBeenSet;
+
+                    /**
+                     * 过滤条件，通道组ID
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

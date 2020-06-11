@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议， 值为：HTTP
-                     * @return Protocol 监听器协议， 值为：HTTP
+                     * 获取监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTPS
+                     * @return Protocol 监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTPS
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议， 值为：HTTP
-                     * @param Protocol 监听器协议， 值为：HTTP
+                     * 设置监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTPS
+                     * @param Protocol 监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTPS
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -257,24 +257,24 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器认证方式。其中，
-0，单向认证；
-1，双向认证。
+0表示单向认证；
+1表示双向认证。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthType 监听器认证方式。其中，
-0，单向认证；
-1，双向认证。
+0表示单向认证；
+1表示双向认证。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetAuthType() const;
 
                     /**
                      * 设置监听器认证方式。其中，
-0，单向认证；
-1，双向认证。
+0表示单向认证；
+1表示双向认证。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param AuthType 监听器认证方式。其中，
-0，单向认证；
-1，双向认证。
+0表示单向认证；
+1表示双向认证。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAuthType(const int64_t& _authType);
@@ -350,7 +350,7 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 监听器协议， 值为：HTTP
+                     * 监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTPS
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -400,8 +400,8 @@ namespace TencentCloud
 
                     /**
                      * 监听器认证方式。其中，
-0，单向认证；
-1，双向认证。
+0表示单向认证；
+1表示双向认证。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authType;

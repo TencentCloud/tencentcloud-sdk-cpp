@@ -31,7 +31,8 @@ DescribeLogSearchRequest::DescribeLogSearchRequest() :
     m_limitHasBeenSet(false),
     m_conTextHasBeenSet(false),
     m_sortHasBeenSet(false),
-    m_queryHasBeenSet(false)
+    m_queryHasBeenSet(false),
+    m_logQuerysHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,21 @@ string DescribeLogSearchRequest::ToJsonString() const
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logQuerysHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LogQuerys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_logQuerys.begin(); itr != m_logQuerys.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -247,6 +263,22 @@ void DescribeLogSearchRequest::SetQuery(const string& _query)
 bool DescribeLogSearchRequest::QueryHasBeenSet() const
 {
     return m_queryHasBeenSet;
+}
+
+vector<LogQuery> DescribeLogSearchRequest::GetLogQuerys() const
+{
+    return m_logQuerys;
+}
+
+void DescribeLogSearchRequest::SetLogQuerys(const vector<LogQuery>& _logQuerys)
+{
+    m_logQuerys = _logQuerys;
+    m_logQuerysHasBeenSet = true;
+}
+
+bool DescribeLogSearchRequest::LogQuerysHasBeenSet() const
+{
+    return m_logQuerysHasBeenSet;
 }
 
 

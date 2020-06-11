@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取通道ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 通道ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyId() const;
 
@@ -115,6 +117,7 @@ UNBINDING，安全策略关闭中。
 
                     /**
                      * 通道ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyProxyGroupAttributeRequest::ModifyProxyGroupAttributeRequest() :
     m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ModifyProxyGroupAttributeRequest::ToJsonString() const
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ModifyProxyGroupAttributeRequest::SetGroupName(const string& _groupName)
 bool ModifyProxyGroupAttributeRequest::GroupNameHasBeenSet() const
 {
     return m_groupNameHasBeenSet;
+}
+
+uint64_t ModifyProxyGroupAttributeRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ModifyProxyGroupAttributeRequest::SetProjectId(const uint64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ModifyProxyGroupAttributeRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

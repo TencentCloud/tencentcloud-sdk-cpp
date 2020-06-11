@@ -26,7 +26,8 @@ using namespace std;
 CreateHTTPListenerRequest::CreateHTTPListenerRequest() :
     m_listenerNameHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_proxyIdHasBeenSet(false)
+    m_proxyIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateHTTPListenerRequest::ToJsonString() const
         string key = "ProxyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_proxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateHTTPListenerRequest::SetProxyId(const string& _proxyId)
 bool CreateHTTPListenerRequest::ProxyIdHasBeenSet() const
 {
     return m_proxyIdHasBeenSet;
+}
+
+string CreateHTTPListenerRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void CreateHTTPListenerRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool CreateHTTPListenerRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

@@ -24,8 +24,9 @@ using namespace rapidjson;
 using namespace std;
 
 CreateSecurityPolicyRequest::CreateSecurityPolicyRequest() :
+    m_defaultActionHasBeenSet(false),
     m_proxyIdHasBeenSet(false),
-    m_defaultActionHasBeenSet(false)
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,14 @@ string CreateSecurityPolicyRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_defaultActionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DefaultAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_defaultAction.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_proxyIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -44,12 +53,12 @@ string CreateSecurityPolicyRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_proxyId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_defaultActionHasBeenSet)
+    if (m_groupIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "DefaultAction";
+        string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_defaultAction.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,6 +68,22 @@ string CreateSecurityPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateSecurityPolicyRequest::GetDefaultAction() const
+{
+    return m_defaultAction;
+}
+
+void CreateSecurityPolicyRequest::SetDefaultAction(const string& _defaultAction)
+{
+    m_defaultAction = _defaultAction;
+    m_defaultActionHasBeenSet = true;
+}
+
+bool CreateSecurityPolicyRequest::DefaultActionHasBeenSet() const
+{
+    return m_defaultActionHasBeenSet;
+}
 
 string CreateSecurityPolicyRequest::GetProxyId() const
 {
@@ -76,20 +101,20 @@ bool CreateSecurityPolicyRequest::ProxyIdHasBeenSet() const
     return m_proxyIdHasBeenSet;
 }
 
-string CreateSecurityPolicyRequest::GetDefaultAction() const
+string CreateSecurityPolicyRequest::GetGroupId() const
 {
-    return m_defaultAction;
+    return m_groupId;
 }
 
-void CreateSecurityPolicyRequest::SetDefaultAction(const string& _defaultAction)
+void CreateSecurityPolicyRequest::SetGroupId(const string& _groupId)
 {
-    m_defaultAction = _defaultAction;
-    m_defaultActionHasBeenSet = true;
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
 }
 
-bool CreateSecurityPolicyRequest::DefaultActionHasBeenSet() const
+bool CreateSecurityPolicyRequest::GroupIdHasBeenSet() const
 {
-    return m_defaultActionHasBeenSet;
+    return m_groupIdHasBeenSet;
 }
 
 

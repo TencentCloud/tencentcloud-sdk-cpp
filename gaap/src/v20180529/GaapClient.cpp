@@ -255,6 +255,49 @@ GaapClient::CloseProxiesOutcomeCallable GaapClient::CloseProxiesCallable(const C
     return task->get_future();
 }
 
+GaapClient::CloseProxyGroupOutcome GaapClient::CloseProxyGroup(const CloseProxyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseProxyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseProxyGroupResponse rsp = CloseProxyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseProxyGroupOutcome(rsp);
+        else
+            return CloseProxyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseProxyGroupOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::CloseProxyGroupAsync(const CloseProxyGroupRequest& request, const CloseProxyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseProxyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::CloseProxyGroupOutcomeCallable GaapClient::CloseProxyGroupCallable(const CloseProxyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseProxyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseProxyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::CloseSecurityPolicyOutcome GaapClient::CloseSecurityPolicy(const CloseSecurityPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseSecurityPolicy");
@@ -3430,6 +3473,49 @@ GaapClient::OpenProxiesOutcomeCallable GaapClient::OpenProxiesCallable(const Ope
         [this, request]()
         {
             return this->OpenProxies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::OpenProxyGroupOutcome GaapClient::OpenProxyGroup(const OpenProxyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenProxyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenProxyGroupResponse rsp = OpenProxyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenProxyGroupOutcome(rsp);
+        else
+            return OpenProxyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenProxyGroupOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::OpenProxyGroupAsync(const OpenProxyGroupRequest& request, const OpenProxyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenProxyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::OpenProxyGroupOutcomeCallable GaapClient::OpenProxyGroupCallable(const OpenProxyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenProxyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenProxyGroup(request);
         }
     );
 

@@ -568,7 +568,7 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeIPStrategysStatusOutcomeCallable DescribeIPStrategysStatusCallable(const Model::DescribeIPStrategysStatusRequest& request);
 
                 /**
-                 *用于搜索日志
+                 *本接口DescribeLogSearch用于搜索日志
                  * @param req DescribeLogSearchRequest
                  * @return DescribeLogSearchOutcome
                  */

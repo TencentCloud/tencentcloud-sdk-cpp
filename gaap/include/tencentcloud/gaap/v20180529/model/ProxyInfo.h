@@ -521,17 +521,17 @@ UNKNOWN表示未知状态。
                     bool SupportSecurityHasBeenSet() const;
 
                     /**
-                     * 获取计费类型:(0:按带宽计费  1:按流量计费）
+                     * 获取计费类型: 0表示按带宽计费  1表示按流量计费。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingType 计费类型:(0:按带宽计费  1:按流量计费）
+                     * @return BillingType 计费类型: 0表示按带宽计费  1表示按流量计费。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBillingType() const;
 
                     /**
-                     * 设置计费类型:(0:按带宽计费  1:按流量计费）
+                     * 设置计费类型: 0表示按带宽计费  1表示按流量计费。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BillingType 计费类型:(0:按带宽计费  1:按流量计费）
+                     * @param BillingType 计费类型: 0表示按带宽计费  1表示按流量计费。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBillingType(const int64_t& _billingType);
@@ -541,6 +541,50 @@ UNKNOWN表示未知状态。
                      * @return BillingType 是否已赋值
                      */
                     bool BillingTypeHasBeenSet() const;
+
+                    /**
+                     * 获取关联了解析的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RelatedGlobalDomains 关联了解析的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetRelatedGlobalDomains() const;
+
+                    /**
+                     * 设置关联了解析的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RelatedGlobalDomains 关联了解析的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRelatedGlobalDomains(const std::vector<std::string>& _relatedGlobalDomains);
+
+                    /**
+                     * 判断参数 RelatedGlobalDomains 是否已赋值
+                     * @return RelatedGlobalDomains 是否已赋值
+                     */
+                    bool RelatedGlobalDomainsHasBeenSet() const;
+
+                    /**
+                     * 获取配置变更时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifyConfigTime 配置变更时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetModifyConfigTime() const;
+
+                    /**
+                     * 设置配置变更时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModifyConfigTime 配置变更时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModifyConfigTime(const uint64_t& _modifyConfigTime);
+
+                    /**
+                     * 判断参数 ModifyConfigTime 是否已赋值
+                     * @return ModifyConfigTime 是否已赋值
+                     */
+                    bool ModifyConfigTimeHasBeenSet() const;
 
                 private:
 
@@ -696,11 +740,25 @@ UNKNOWN表示未知状态。
                     bool m_supportSecurityHasBeenSet;
 
                     /**
-                     * 计费类型:(0:按带宽计费  1:按流量计费）
+                     * 计费类型: 0表示按带宽计费  1表示按流量计费。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_billingType;
                     bool m_billingTypeHasBeenSet;
+
+                    /**
+                     * 关联了解析的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_relatedGlobalDomains;
+                    bool m_relatedGlobalDomainsHasBeenSet;
+
+                    /**
+                     * 配置变更时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_modifyConfigTime;
+                    bool m_modifyConfigTimeHasBeenSet;
 
                 };
             }

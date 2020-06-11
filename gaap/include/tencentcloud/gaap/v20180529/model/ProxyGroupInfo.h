@@ -202,6 +202,50 @@ MOVING表示通道迁移中。
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version 通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Version 通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const uint64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,6 +296,20 @@ MOVING表示通道迁移中。
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 通道组版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

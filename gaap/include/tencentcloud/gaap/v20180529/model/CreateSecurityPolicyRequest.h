@@ -43,6 +43,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取默认策略：ACCEPT或DROP
+                     * @return DefaultAction 默认策略：ACCEPT或DROP
+                     */
+                    std::string GetDefaultAction() const;
+
+                    /**
+                     * 设置默认策略：ACCEPT或DROP
+                     * @param DefaultAction 默认策略：ACCEPT或DROP
+                     */
+                    void SetDefaultAction(const std::string& _defaultAction);
+
+                    /**
+                     * 判断参数 DefaultAction 是否已赋值
+                     * @return DefaultAction 是否已赋值
+                     */
+                    bool DefaultActionHasBeenSet() const;
+
+                    /**
                      * 获取加速通道ID
                      * @return ProxyId 加速通道ID
                      */
@@ -61,24 +79,30 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取默认策略：ACCEPT或DROP
-                     * @return DefaultAction 默认策略：ACCEPT或DROP
+                     * 获取通道组ID
+                     * @return GroupId 通道组ID
                      */
-                    std::string GetDefaultAction() const;
+                    std::string GetGroupId() const;
 
                     /**
-                     * 设置默认策略：ACCEPT或DROP
-                     * @param DefaultAction 默认策略：ACCEPT或DROP
+                     * 设置通道组ID
+                     * @param GroupId 通道组ID
                      */
-                    void SetDefaultAction(const std::string& _defaultAction);
+                    void SetGroupId(const std::string& _groupId);
 
                     /**
-                     * 判断参数 DefaultAction 是否已赋值
-                     * @return DefaultAction 是否已赋值
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
                      */
-                    bool DefaultActionHasBeenSet() const;
+                    bool GroupIdHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 默认策略：ACCEPT或DROP
+                     */
+                    std::string m_defaultAction;
+                    bool m_defaultActionHasBeenSet;
 
                     /**
                      * 加速通道ID
@@ -87,10 +111,10 @@ namespace TencentCloud
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 默认策略：ACCEPT或DROP
+                     * 通道组ID
                      */
-                    std::string m_defaultAction;
-                    bool m_defaultActionHasBeenSet;
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

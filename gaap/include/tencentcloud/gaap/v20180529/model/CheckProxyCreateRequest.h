@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ConcurrentHasBeenSet() const;
 
+                    /**
+                     * 获取如果在通道组下创建通道，需要填写通道组的ID
+                     * @return GroupId 如果在通道组下创建通道，需要填写通道组的ID
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置如果在通道组下创建通道，需要填写通道组的ID
+                     * @param GroupId 如果在通道组下创建通道，需要填写通道组的ID
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_concurrent;
                     bool m_concurrentHasBeenSet;
+
+                    /**
+                     * 如果在通道组下创建通道，需要填写通道组的ID
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

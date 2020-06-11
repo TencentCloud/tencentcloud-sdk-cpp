@@ -319,6 +319,8 @@
 #include <tencentcloud/vpc/v20170312/model/EnableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/HaVipAssociateAddressIpRequest.h>
 #include <tencentcloud/vpc/v20170312/model/HaVipAssociateAddressIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/HaVipDisassociateAddressIpRequest.h>
@@ -905,6 +907,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableRoutesResponse> EnableRoutesOutcome;
                 typedef std::future<EnableRoutesOutcome> EnableRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableRoutesRequest&, EnableRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRoutesAsyncHandler;
+                typedef Outcome<Error, Model::GetCcnRegionBandwidthLimitsResponse> GetCcnRegionBandwidthLimitsOutcome;
+                typedef std::future<GetCcnRegionBandwidthLimitsOutcome> GetCcnRegionBandwidthLimitsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::GetCcnRegionBandwidthLimitsRequest&, GetCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCcnRegionBandwidthLimitsAsyncHandler;
                 typedef Outcome<Error, Model::HaVipAssociateAddressIpResponse> HaVipAssociateAddressIpOutcome;
                 typedef std::future<HaVipAssociateAddressIpOutcome> HaVipAssociateAddressIpOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::HaVipAssociateAddressIpRequest&, HaVipAssociateAddressIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HaVipAssociateAddressIpAsyncHandler;
@@ -2597,6 +2602,15 @@ LimitTypes取值范围：
                 EnableRoutesOutcome EnableRoutes(const Model::EnableRoutesRequest &request);
                 void EnableRoutesAsync(const Model::EnableRoutesRequest& request, const EnableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableRoutesOutcomeCallable EnableRoutesCallable(const Model::EnableRoutesRequest& request);
+
+                /**
+                 *本接口（GetCcnRegionBandwidthLimits）用于查询云联网相关地域带宽信息，其中预付费模式的云联网仅支持地域间限速，后付费模式的云联网支持地域间限速和地域出口限速。
+                 * @param req GetCcnRegionBandwidthLimitsRequest
+                 * @return GetCcnRegionBandwidthLimitsOutcome
+                 */
+                GetCcnRegionBandwidthLimitsOutcome GetCcnRegionBandwidthLimits(const Model::GetCcnRegionBandwidthLimitsRequest &request);
+                void GetCcnRegionBandwidthLimitsAsync(const Model::GetCcnRegionBandwidthLimitsRequest& request, const GetCcnRegionBandwidthLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCcnRegionBandwidthLimitsOutcomeCallable GetCcnRegionBandwidthLimitsCallable(const Model::GetCcnRegionBandwidthLimitsRequest& request);
 
                 /**
                  *本接口（HaVipAssociateAddressIp）用于高可用虚拟IP（HAVIP）绑定弹性公网IP（EIP）<br />

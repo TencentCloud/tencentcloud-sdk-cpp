@@ -58,6 +58,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/ConstantParameter.h
   include/tencentcloud/apigateway/v20180808/model/UsagePlansStatus.h
   include/tencentcloud/apigateway/v20180808/model/ModifySubDomainResponse.h
+  include/tencentcloud/apigateway/v20180808/model/LogQuery.h
   include/tencentcloud/apigateway/v20180808/model/ServiceParameter.h
   include/tencentcloud/apigateway/v20180808/model/ModifyServiceResponse.h
   include/tencentcloud/apigateway/v20180808/model/DisableApiKeyRequest.h
@@ -236,6 +237,7 @@ set(apigateway_src
   src/v20180808/model/ConstantParameter.cpp
   src/v20180808/model/UsagePlansStatus.cpp
   src/v20180808/model/ModifySubDomainResponse.cpp
+  src/v20180808/model/LogQuery.cpp
   src/v20180808/model/ServiceParameter.cpp
   src/v20180808/model/ModifyServiceResponse.cpp
   src/v20180808/model/DisableApiKeyRequest.cpp

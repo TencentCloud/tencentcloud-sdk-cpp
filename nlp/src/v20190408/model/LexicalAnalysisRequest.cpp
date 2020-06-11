@@ -25,6 +25,7 @@ using namespace std;
 
 LexicalAnalysisRequest::LexicalAnalysisRequest() :
     m_textHasBeenSet(false),
+    m_dictIdHasBeenSet(false),
     m_flagHasBeenSet(false)
 {
 }
@@ -42,6 +43,14 @@ string LexicalAnalysisRequest::ToJsonString() const
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dictIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DictId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dictId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flagHasBeenSet)
@@ -74,6 +83,22 @@ void LexicalAnalysisRequest::SetText(const string& _text)
 bool LexicalAnalysisRequest::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+string LexicalAnalysisRequest::GetDictId() const
+{
+    return m_dictId;
+}
+
+void LexicalAnalysisRequest::SetDictId(const string& _dictId)
+{
+    m_dictId = _dictId;
+    m_dictIdHasBeenSet = true;
+}
+
+bool LexicalAnalysisRequest::DictIdHasBeenSet() const
+{
+    return m_dictIdHasBeenSet;
 }
 
 uint64_t LexicalAnalysisRequest::GetFlag() const

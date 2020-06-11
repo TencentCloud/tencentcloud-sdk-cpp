@@ -35,6 +35,8 @@
 #include <tencentcloud/ecm/v20190719/model/CreateModuleResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupRequest.h>
+#include <tencentcloud/ecm/v20190719/model/CreateSecurityGroupResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/CreateSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/CreateVpcRequest.h>
@@ -167,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateNetworkInterfaceResponse> CreateNetworkInterfaceOutcome;
                 typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateNetworkInterfaceRequest&, CreateNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfaceAsyncHandler;
+                typedef Outcome<Error, Model::CreateSecurityGroupResponse> CreateSecurityGroupOutcome;
+                typedef std::future<CreateSecurityGroupOutcome> CreateSecurityGroupOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::CreateSecurityGroupRequest&, CreateSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupAsyncHandler;
                 typedef Outcome<Error, Model::CreateSubnetResponse> CreateSubnetOutcome;
                 typedef std::future<CreateSubnetOutcome> CreateSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::CreateSubnetRequest&, CreateSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubnetAsyncHandler;
@@ -379,6 +384,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 CreateNetworkInterfaceOutcome CreateNetworkInterface(const Model::CreateNetworkInterfaceRequest &request);
                 void CreateNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNetworkInterfaceOutcomeCallable CreateNetworkInterfaceCallable(const Model::CreateNetworkInterfaceRequest& request);
+
+                /**
+                 *创建安全组
+                 * @param req CreateSecurityGroupRequest
+                 * @return CreateSecurityGroupOutcome
+                 */
+                CreateSecurityGroupOutcome CreateSecurityGroup(const Model::CreateSecurityGroupRequest &request);
+                void CreateSecurityGroupAsync(const Model::CreateSecurityGroupRequest& request, const CreateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityGroupOutcomeCallable CreateSecurityGroupCallable(const Model::CreateSecurityGroupRequest& request);
 
                 /**
                  *创建子网，若创建成功，则此子网会成为此可用区的默认子网。

@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool MainVideoUserIdHasBeenSet() const;
 
                     /**
-                     * 获取屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享
-                     * @return MainVideoStreamType 屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享
+                     * 获取屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享。左侧大画面为web用户时此值填0
+                     * @return MainVideoStreamType 屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享。左侧大画面为web用户时此值填0
                      */
                     uint64_t GetMainVideoStreamType() const;
 
                     /**
-                     * 设置屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享
-                     * @param MainVideoStreamType 屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享
+                     * 设置屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享。左侧大画面为web用户时此值填0
+                     * @param MainVideoStreamType 屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享。左侧大画面为web用户时此值填0
                      */
                     void SetMainVideoStreamType(const uint64_t& _mainVideoStreamType);
 
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_mainVideoUserIdHasBeenSet;
 
                     /**
-                     * 屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享
+                     * 屏幕分享模板中有效，代表左侧大画面对应的流类型，0为摄像头，1为屏幕分享。左侧大画面为web用户时此值填0
                      */
                     uint64_t m_mainVideoStreamType;
                     bool m_mainVideoStreamTypeHasBeenSet;

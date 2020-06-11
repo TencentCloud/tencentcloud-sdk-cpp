@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ConcurrentHasBeenSet() const;
 
                     /**
-                     * 获取计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
-                     * @return BillingType 计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     * 获取计费方式，0表示按带宽计费，1表示按流量计费。默认按带宽计费
+                     * @return BillingType 计费方式，0表示按带宽计费，1表示按流量计费。默认按带宽计费
                      */
                     int64_t GetBillingType() const;
 
                     /**
-                     * 设置计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
-                     * @param BillingType 计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     * 设置计费方式，0表示按带宽计费，1表示按流量计费。默认按带宽计费
+                     * @param BillingType 计费方式，0表示按带宽计费，1表示按流量计费。默认按带宽计费
                      */
                     void SetBillingType(const int64_t& _billingType);
 
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_concurrentHasBeenSet;
 
                     /**
-                     * 计费方式 (0:按带宽计费，1:按流量计费 默认按带宽计费）
+                     * 计费方式，0表示按带宽计费，1表示按流量计费。默认按带宽计费
                      */
                     int64_t m_billingType;
                     bool m_billingTypeHasBeenSet;

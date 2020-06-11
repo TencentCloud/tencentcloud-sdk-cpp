@@ -27,7 +27,8 @@ CreateProxyGroupRequest::CreateProxyGroupRequest() :
     m_projectIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_realServerRegionHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_accessRegionSetHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,21 @@ string CreateProxyGroupRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_accessRegionSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AccessRegionSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accessRegionSet.begin(); itr != m_accessRegionSet.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -147,6 +163,22 @@ void CreateProxyGroupRequest::SetTagSet(const vector<TagPair>& _tagSet)
 bool CreateProxyGroupRequest::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+vector<AccessConfiguration> CreateProxyGroupRequest::GetAccessRegionSet() const
+{
+    return m_accessRegionSet;
+}
+
+void CreateProxyGroupRequest::SetAccessRegionSet(const vector<AccessConfiguration>& _accessRegionSet)
+{
+    m_accessRegionSet = _accessRegionSet;
+    m_accessRegionSetHasBeenSet = true;
+}
+
+bool CreateProxyGroupRequest::AccessRegionSetHasBeenSet() const
+{
+    return m_accessRegionSetHasBeenSet;
 }
 
 

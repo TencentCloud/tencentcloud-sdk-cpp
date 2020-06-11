@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ForwardProtocolHasBeenSet() const;
 
                     /**
-                     * 获取通道ID
-                     * @return ProxyId 通道ID
+                     * 获取通道ID，与GroupId之间只能设置一个。表示创建通道的监听器。
+                     * @return ProxyId 通道ID，与GroupId之间只能设置一个。表示创建通道的监听器。
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置通道ID
-                     * @param ProxyId 通道ID
+                     * 设置通道ID，与GroupId之间只能设置一个。表示创建通道的监听器。
+                     * @param ProxyId 通道ID，与GroupId之间只能设置一个。表示创建通道的监听器。
                      */
                     void SetProxyId(const std::string& _proxyId);
 
@@ -198,6 +198,24 @@ namespace TencentCloud
                      */
                     bool PolyClientCertificateIdsHasBeenSet() const;
 
+                    /**
+                     * 获取通道组ID，与ProxyId之间只能设置一个。表示创建通道组的监听器。
+                     * @return GroupId 通道组ID，与ProxyId之间只能设置一个。表示创建通道组的监听器。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置通道组ID，与ProxyId之间只能设置一个。表示创建通道组的监听器。
+                     * @param GroupId 通道组ID，与ProxyId之间只能设置一个。表示创建通道组的监听器。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,7 +243,7 @@ namespace TencentCloud
                     bool m_forwardProtocolHasBeenSet;
 
                     /**
-                     * 通道ID
+                     * 通道ID，与GroupId之间只能设置一个。表示创建通道的监听器。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
@@ -250,6 +268,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_polyClientCertificateIds;
                     bool m_polyClientCertificateIdsHasBeenSet;
+
+                    /**
+                     * 通道组ID，与ProxyId之间只能设置一个。表示创建通道组的监听器。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

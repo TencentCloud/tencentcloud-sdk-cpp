@@ -814,6 +814,49 @@ CkafkaClient::DescribeInstancesDetailOutcomeCallable CkafkaClient::DescribeInsta
     return task->get_future();
 }
 
+CkafkaClient::DescribeRouteOutcome CkafkaClient::DescribeRoute(const DescribeRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRouteResponse rsp = DescribeRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRouteOutcome(rsp);
+        else
+            return DescribeRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRouteOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeRouteAsync(const DescribeRouteRequest& request, const DescribeRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeRouteOutcomeCallable CkafkaClient::DescribeRouteCallable(const DescribeRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeTopicOutcome CkafkaClient::DescribeTopic(const DescribeTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopic");

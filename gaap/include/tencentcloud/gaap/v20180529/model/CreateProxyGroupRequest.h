@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gaap/v20180529/model/TagPair.h>
+#include <tencentcloud/gaap/v20180529/model/AccessConfiguration.h>
 
 
 namespace TencentCloud
@@ -115,6 +116,24 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     * @return AccessRegionSet 加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     */
+                    std::vector<AccessConfiguration> GetAccessRegionSet() const;
+
+                    /**
+                     * 设置加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     * @param AccessRegionSet 加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     */
+                    void SetAccessRegionSet(const std::vector<AccessConfiguration>& _accessRegionSet);
+
+                    /**
+                     * 判断参数 AccessRegionSet 是否已赋值
+                     * @return AccessRegionSet 是否已赋值
+                     */
+                    bool AccessRegionSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +159,12 @@ namespace TencentCloud
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     */
+                    std::vector<AccessConfiguration> m_accessRegionSet;
+                    bool m_accessRegionSetHasBeenSet;
 
                 };
             }

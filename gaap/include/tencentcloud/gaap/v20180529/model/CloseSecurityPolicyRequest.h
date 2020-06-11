@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool ProxyIdHasBeenSet() const;
 
+                    /**
+                     * 获取安全组策略ID
+                     * @return PolicyId 安全组策略ID
+                     */
+                    std::string GetPolicyId() const;
+
+                    /**
+                     * 设置安全组策略ID
+                     * @param PolicyId 安全组策略ID
+                     */
+                    void SetPolicyId(const std::string& _policyId);
+
+                    /**
+                     * 判断参数 PolicyId 是否已赋值
+                     * @return PolicyId 是否已赋值
+                     */
+                    bool PolicyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
+
+                    /**
+                     * 安全组策略ID
+                     */
+                    std::string m_policyId;
+                    bool m_policyIdHasBeenSet;
 
                 };
             }

@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议
-                     * @return Protocol 监听器协议
+                     * 获取监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTP
+                     * @return Protocol 监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTP
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议
-                     * @param Protocol 监听器协议
+                     * 设置监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTP
+                     * @param Protocol 监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTP
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 监听器协议
+                     * 监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTP
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

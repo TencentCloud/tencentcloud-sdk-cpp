@@ -39,11 +39,13 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/RunInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordResponse.h
+  include/tencentcloud/ecm/v20190719/model/SrcImage.h
   include/tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h
   include/tencentcloud/ecm/v20190719/model/DescribeNodeResponse.h
   include/tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetResponse.h
   include/tencentcloud/ecm/v20190719/model/VpcInfo.h
+  include/tencentcloud/ecm/v20190719/model/SecurityGroup.h
   include/tencentcloud/ecm/v20190719/model/DeleteSubnetRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleRequest.h
   include/tencentcloud/ecm/v20190719/model/Position.h
@@ -137,15 +139,16 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/MigrateNetworkInterfaceRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeAddressQuotaResponse.h
-  include/tencentcloud/ecm/v20190719/model/SrcImage.h
+  include/tencentcloud/ecm/v20190719/model/CreateSecurityGroupResponse.h
   include/tencentcloud/ecm/v20190719/model/ZoneInstanceInfo.h
   include/tencentcloud/ecm/v20190719/model/ModifyAddressAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleImageResponse.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/PeakNetwork.h
-  include/tencentcloud/ecm/v20190719/model/DeleteImageRequest.h
+  include/tencentcloud/ecm/v20190719/model/InstanceOperator.h
   include/tencentcloud/ecm/v20190719/model/ModifyAddressAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/ImportImageResponse.h
+  include/tencentcloud/ecm/v20190719/model/CreateSecurityGroupRequest.h
   include/tencentcloud/ecm/v20190719/model/City.h
   include/tencentcloud/ecm/v20190719/model/PrivateIPAddressInfo.h
   include/tencentcloud/ecm/v20190719/model/TerminateInstancesRequest.h
@@ -177,7 +180,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/RunMonitorServiceEnabled.h
   include/tencentcloud/ecm/v20190719/model/MigrateNetworkInterfaceResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h
-  include/tencentcloud/ecm/v20190719/model/InstanceOperator.h
+  include/tencentcloud/ecm/v20190719/model/DeleteImageRequest.h
   include/tencentcloud/ecm/v20190719/model/Module.h
   include/tencentcloud/ecm/v20190719/model/DescribeBaseOverviewResponse.h
   )
@@ -204,11 +207,13 @@ set(ecm_src
   src/v20190719/model/RunInstancesRequest.cpp
   src/v20190719/model/DescribeInstancesResponse.cpp
   src/v20190719/model/ResetInstancesPasswordResponse.cpp
+  src/v20190719/model/SrcImage.cpp
   src/v20190719/model/InstanceTypeConfig.cpp
   src/v20190719/model/DescribeNodeResponse.cpp
   src/v20190719/model/RemovePrivateIpAddressesResponse.cpp
   src/v20190719/model/DescribeDefaultSubnetResponse.cpp
   src/v20190719/model/VpcInfo.cpp
+  src/v20190719/model/SecurityGroup.cpp
   src/v20190719/model/DeleteSubnetRequest.cpp
   src/v20190719/model/DescribeModuleRequest.cpp
   src/v20190719/model/Position.cpp
@@ -302,15 +307,16 @@ set(ecm_src
   src/v20190719/model/DescribeAddressesRequest.cpp
   src/v20190719/model/MigrateNetworkInterfaceRequest.cpp
   src/v20190719/model/DescribeAddressQuotaResponse.cpp
-  src/v20190719/model/SrcImage.cpp
+  src/v20190719/model/CreateSecurityGroupResponse.cpp
   src/v20190719/model/ZoneInstanceInfo.cpp
   src/v20190719/model/ModifyAddressAttributeRequest.cpp
   src/v20190719/model/ModifyModuleImageResponse.cpp
   src/v20190719/model/ResetInstancesRequest.cpp
   src/v20190719/model/PeakNetwork.cpp
-  src/v20190719/model/DeleteImageRequest.cpp
+  src/v20190719/model/InstanceOperator.cpp
   src/v20190719/model/ModifyAddressAttributeResponse.cpp
   src/v20190719/model/ImportImageResponse.cpp
+  src/v20190719/model/CreateSecurityGroupRequest.cpp
   src/v20190719/model/City.cpp
   src/v20190719/model/PrivateIPAddressInfo.cpp
   src/v20190719/model/TerminateInstancesRequest.cpp
@@ -342,7 +348,7 @@ set(ecm_src
   src/v20190719/model/RunMonitorServiceEnabled.cpp
   src/v20190719/model/MigrateNetworkInterfaceResponse.cpp
   src/v20190719/model/DescribeVpcsResponse.cpp
-  src/v20190719/model/InstanceOperator.cpp
+  src/v20190719/model/DeleteImageRequest.cpp
   src/v20190719/model/Module.cpp
   src/v20190719/model/DescribeBaseOverviewResponse.cpp
   )

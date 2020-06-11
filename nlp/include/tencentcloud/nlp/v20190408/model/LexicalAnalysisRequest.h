@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
+                     * 获取指定要加载的自定义词库ID。
+                     * @return DictId 指定要加载的自定义词库ID。
+                     */
+                    std::string GetDictId() const;
+
+                    /**
+                     * 设置指定要加载的自定义词库ID。
+                     * @param DictId 指定要加载的自定义词库ID。
+                     */
+                    void SetDictId(const std::string& _dictId);
+
+                    /**
+                     * 判断参数 DictId 是否已赋值
+                     * @return DictId 是否已赋值
+                     */
+                    bool DictIdHasBeenSet() const;
+
+                    /**
                      * 获取词法分析模式（默认取2值）：
 1、高精度（混合粒度分词能力）；
 2、高性能（单粒度分词能力）；
@@ -93,6 +111,12 @@ namespace TencentCloud
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
+
+                    /**
+                     * 指定要加载的自定义词库ID。
+                     */
+                    std::string m_dictId;
+                    bool m_dictIdHasBeenSet;
 
                     /**
                      * 词法分析模式（默认取2值）：

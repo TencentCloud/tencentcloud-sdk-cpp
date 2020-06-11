@@ -44,7 +44,9 @@ ProxyInfo::ProxyInfo() :
     m_forwardIPHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_supportSecurityHasBeenSet(false),
-    m_billingTypeHasBeenSet(false)
+    m_billingTypeHasBeenSet(false),
+    m_relatedGlobalDomainsHasBeenSet(false),
+    m_modifyConfigTimeHasBeenSet(false)
 {
 }
 
@@ -310,6 +312,29 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         m_billingTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RelatedGlobalDomains") && !value["RelatedGlobalDomains"].IsNull())
+    {
+        if (!value["RelatedGlobalDomains"].IsArray())
+            return CoreInternalOutcome(Error("response `ProxyInfo.RelatedGlobalDomains` is not array type"));
+
+        const Value &tmpValue = value["RelatedGlobalDomains"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_relatedGlobalDomains.push_back((*itr).GetString());
+        }
+        m_relatedGlobalDomainsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyConfigTime") && !value["ModifyConfigTime"].IsNull())
+    {
+        if (!value["ModifyConfigTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProxyInfo.ModifyConfigTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyConfigTime = value["ModifyConfigTime"].GetUint64();
+        m_modifyConfigTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -513,6 +538,27 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "BillingType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_billingType, allocator);
+    }
+
+    if (m_relatedGlobalDomainsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RelatedGlobalDomains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_relatedGlobalDomains.begin(); itr != m_relatedGlobalDomains.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_modifyConfigTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModifyConfigTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifyConfigTime, allocator);
     }
 
 }
@@ -884,5 +930,37 @@ void ProxyInfo::SetBillingType(const int64_t& _billingType)
 bool ProxyInfo::BillingTypeHasBeenSet() const
 {
     return m_billingTypeHasBeenSet;
+}
+
+vector<string> ProxyInfo::GetRelatedGlobalDomains() const
+{
+    return m_relatedGlobalDomains;
+}
+
+void ProxyInfo::SetRelatedGlobalDomains(const vector<string>& _relatedGlobalDomains)
+{
+    m_relatedGlobalDomains = _relatedGlobalDomains;
+    m_relatedGlobalDomainsHasBeenSet = true;
+}
+
+bool ProxyInfo::RelatedGlobalDomainsHasBeenSet() const
+{
+    return m_relatedGlobalDomainsHasBeenSet;
+}
+
+uint64_t ProxyInfo::GetModifyConfigTime() const
+{
+    return m_modifyConfigTime;
+}
+
+void ProxyInfo::SetModifyConfigTime(const uint64_t& _modifyConfigTime)
+{
+    m_modifyConfigTime = _modifyConfigTime;
+    m_modifyConfigTimeHasBeenSet = true;
+}
+
+bool ProxyInfo::ModifyConfigTimeHasBeenSet() const
+{
+    return m_modifyConfigTimeHasBeenSet;
 }
 

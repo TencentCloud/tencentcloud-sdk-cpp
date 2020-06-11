@@ -45,7 +45,8 @@ Instance::Instance() :
     m_expireStateHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_newFlagHasBeenSet(false)
+    m_newFlagHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -356,6 +357,19 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_newFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Error("response `Instance.SecurityGroupIds` is not array type"));
+
+        const Value &tmpValue = value["SecurityGroupIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -573,6 +587,19 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "NewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_newFlag, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -960,5 +987,21 @@ void Instance::SetNewFlag(const int64_t& _newFlag)
 bool Instance::NewFlagHasBeenSet() const
 {
     return m_newFlagHasBeenSet;
+}
+
+vector<string> Instance::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void Instance::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool Instance::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 

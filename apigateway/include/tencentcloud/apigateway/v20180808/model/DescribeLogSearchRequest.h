@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apigateway/v20180808/model/Filter.h>
+#include <tencentcloud/apigateway/v20180808/model/LogQuery.h>
 
 
 namespace TencentCloud
@@ -98,14 +99,14 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取精确查询，支持apiid/reqid搜索
-                     * @return Filters 精确查询，支持apiid/reqid搜索
+                     * 获取保留字段
+                     * @return Filters 保留字段
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置精确查询，支持apiid/reqid搜索
-                     * @param Filters 精确查询，支持apiid/reqid搜索
+                     * 设置保留字段
+                     * @param Filters 保留字段
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -170,14 +171,14 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取模糊查询，根据关键字检索日志
-                     * @return Query 模糊查询，根据关键字检索日志
+                     * 获取保留字段
+                     * @return Query 保留字段
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置模糊查询，根据关键字检索日志
-                     * @param Query 模糊查询，根据关键字检索日志
+                     * 设置保留字段
+                     * @param Query 保留字段
                      */
                     void SetQuery(const std::string& _query);
 
@@ -186,6 +187,64 @@ namespace TencentCloud
                      * @return Query 是否已赋值
                      */
                     bool QueryHasBeenSet() const;
+
+                    /**
+                     * 获取检索条件,支持的检索条件如下：
+req_id：“=”
+api_id：“=”
+cip：“=”
+uip：“:”
+err_msg：“:”
+rsp_st：“=” 、“!=” 、 “:” 、 “>” 、 “<”
+req_t：”>=“ 、 ”<=“
+
+说明：
+“:”表示包含，“!=”表示不等于，字段含义见输出参数的LogSet说明
+                     * @return LogQuerys 检索条件,支持的检索条件如下：
+req_id：“=”
+api_id：“=”
+cip：“=”
+uip：“:”
+err_msg：“:”
+rsp_st：“=” 、“!=” 、 “:” 、 “>” 、 “<”
+req_t：”>=“ 、 ”<=“
+
+说明：
+“:”表示包含，“!=”表示不等于，字段含义见输出参数的LogSet说明
+                     */
+                    std::vector<LogQuery> GetLogQuerys() const;
+
+                    /**
+                     * 设置检索条件,支持的检索条件如下：
+req_id：“=”
+api_id：“=”
+cip：“=”
+uip：“:”
+err_msg：“:”
+rsp_st：“=” 、“!=” 、 “:” 、 “>” 、 “<”
+req_t：”>=“ 、 ”<=“
+
+说明：
+“:”表示包含，“!=”表示不等于，字段含义见输出参数的LogSet说明
+                     * @param LogQuerys 检索条件,支持的检索条件如下：
+req_id：“=”
+api_id：“=”
+cip：“=”
+uip：“:”
+err_msg：“:”
+rsp_st：“=” 、“!=” 、 “:” 、 “>” 、 “<”
+req_t：”>=“ 、 ”<=“
+
+说明：
+“:”表示包含，“!=”表示不等于，字段含义见输出参数的LogSet说明
+                     */
+                    void SetLogQuerys(const std::vector<LogQuery>& _logQuerys);
+
+                    /**
+                     * 判断参数 LogQuerys 是否已赋值
+                     * @return LogQuerys 是否已赋值
+                     */
+                    bool LogQuerysHasBeenSet() const;
 
                 private:
 
@@ -208,7 +267,7 @@ namespace TencentCloud
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * 精确查询，支持apiid/reqid搜索
+                     * 保留字段
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -232,10 +291,26 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 模糊查询，根据关键字检索日志
+                     * 保留字段
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
+
+                    /**
+                     * 检索条件,支持的检索条件如下：
+req_id：“=”
+api_id：“=”
+cip：“=”
+uip：“:”
+err_msg：“:”
+rsp_st：“=” 、“!=” 、 “:” 、 “>” 、 “<”
+req_t：”>=“ 、 ”<=“
+
+说明：
+“:”表示包含，“!=”表示不等于，字段含义见输出参数的LogSet说明
+                     */
+                    std::vector<LogQuery> m_logQuerys;
+                    bool m_logQuerysHasBeenSet;
 
                 };
             }

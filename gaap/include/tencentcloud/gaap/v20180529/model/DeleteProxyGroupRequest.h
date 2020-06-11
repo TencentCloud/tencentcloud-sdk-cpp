@@ -60,6 +60,36 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取强制删除标识。其中：
+0，不强制删除，
+1，强制删除。
+默认为0，当通道组中存在通道或通道组中存在监听器/规则绑定了源站时，且Force为0时，该操作会返回失败。
+                     * @return Force 强制删除标识。其中：
+0，不强制删除，
+1，强制删除。
+默认为0，当通道组中存在通道或通道组中存在监听器/规则绑定了源站时，且Force为0时，该操作会返回失败。
+                     */
+                    uint64_t GetForce() const;
+
+                    /**
+                     * 设置强制删除标识。其中：
+0，不强制删除，
+1，强制删除。
+默认为0，当通道组中存在通道或通道组中存在监听器/规则绑定了源站时，且Force为0时，该操作会返回失败。
+                     * @param Force 强制删除标识。其中：
+0，不强制删除，
+1，强制删除。
+默认为0，当通道组中存在通道或通道组中存在监听器/规则绑定了源站时，且Force为0时，该操作会返回失败。
+                     */
+                    void SetForce(const uint64_t& _force);
+
+                    /**
+                     * 判断参数 Force 是否已赋值
+                     * @return Force 是否已赋值
+                     */
+                    bool ForceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +97,15 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 强制删除标识。其中：
+0，不强制删除，
+1，强制删除。
+默认为0，当通道组中存在通道或通道组中存在监听器/规则绑定了源站时，且Force为0时，该操作会返回失败。
+                     */
+                    uint64_t m_force;
+                    bool m_forceHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ CreateHTTPSListenerRequest::CreateHTTPSListenerRequest() :
     m_proxyIdHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
-    m_polyClientCertificateIdsHasBeenSet(false)
+    m_polyClientCertificateIdsHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string CreateHTTPSListenerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -245,6 +254,22 @@ void CreateHTTPSListenerRequest::SetPolyClientCertificateIds(const vector<string
 bool CreateHTTPSListenerRequest::PolyClientCertificateIdsHasBeenSet() const
 {
     return m_polyClientCertificateIdsHasBeenSet;
+}
+
+string CreateHTTPSListenerRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void CreateHTTPSListenerRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool CreateHTTPSListenerRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

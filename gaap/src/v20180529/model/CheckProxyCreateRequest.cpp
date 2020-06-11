@@ -27,7 +27,8 @@ CheckProxyCreateRequest::CheckProxyCreateRequest() :
     m_accessRegionHasBeenSet(false),
     m_realServerRegionHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_concurrentHasBeenSet(false)
+    m_concurrentHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CheckProxyCreateRequest::ToJsonString() const
         string key = "Concurrent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_concurrent, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CheckProxyCreateRequest::SetConcurrent(const uint64_t& _concurrent)
 bool CheckProxyCreateRequest::ConcurrentHasBeenSet() const
 {
     return m_concurrentHasBeenSet;
+}
+
+string CheckProxyCreateRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void CheckProxyCreateRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool CheckProxyCreateRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 
