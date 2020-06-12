@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool WaitSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     * @return UpgradeSubversion 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     */
+                    int64_t GetUpgradeSubversion() const;
+
+                    /**
+                     * 设置是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     * @param UpgradeSubversion 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     */
+                    void SetUpgradeSubversion(const int64_t& _upgradeSubversion);
+
+                    /**
+                     * 判断参数 UpgradeSubversion 是否已赋值
+                     * @return UpgradeSubversion 是否已赋值
+                     */
+                    bool UpgradeSubversionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_waitSwitch;
                     bool m_waitSwitchHasBeenSet;
+
+                    /**
+                     * 是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。
+                     */
+                    int64_t m_upgradeSubversion;
+                    bool m_upgradeSubversionHasBeenSet;
 
                 };
             }

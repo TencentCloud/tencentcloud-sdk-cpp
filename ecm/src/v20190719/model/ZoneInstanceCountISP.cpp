@@ -24,7 +24,10 @@ using namespace std;
 ZoneInstanceCountISP::ZoneInstanceCountISP() :
     m_zoneHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
-    m_iSPHasBeenSet(false)
+    m_iSPHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_privateIpAddressesHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,39 @@ CoreInternalOutcome ZoneInstanceCountISP::Deserialize(const Value &value)
         m_iSPHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
+    {
+        if (!value["PrivateIpAddresses"].IsArray())
+            return CoreInternalOutcome(Error("response `ZoneInstanceCountISP.PrivateIpAddresses` is not array type"));
+
+        const Value &tmpValue = value["PrivateIpAddresses"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_privateIpAddresses.push_back((*itr).GetString());
+        }
+        m_privateIpAddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +128,35 @@ void ZoneInstanceCountISP::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "ISP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_iSP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateIpAddressesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PrivateIpAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_privateIpAddresses.begin(); itr != m_privateIpAddresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -143,5 +208,53 @@ void ZoneInstanceCountISP::SetISP(const string& _iSP)
 bool ZoneInstanceCountISP::ISPHasBeenSet() const
 {
     return m_iSPHasBeenSet;
+}
+
+string ZoneInstanceCountISP::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void ZoneInstanceCountISP::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool ZoneInstanceCountISP::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string ZoneInstanceCountISP::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void ZoneInstanceCountISP::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool ZoneInstanceCountISP::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+vector<string> ZoneInstanceCountISP::GetPrivateIpAddresses() const
+{
+    return m_privateIpAddresses;
+}
+
+void ZoneInstanceCountISP::SetPrivateIpAddresses(const vector<string>& _privateIpAddresses)
+{
+    m_privateIpAddresses = _privateIpAddresses;
+    m_privateIpAddressesHasBeenSet = true;
+}
+
+bool ZoneInstanceCountISP::PrivateIpAddressesHasBeenSet() const
+{
+    return m_privateIpAddressesHasBeenSet;
 }
 

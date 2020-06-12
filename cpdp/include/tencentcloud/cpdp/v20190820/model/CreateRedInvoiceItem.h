@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool RedSerialNoHasBeenSet() const;
 
+                    /**
+                     * 获取门店编号
+                     * @return StoreNo 门店编号
+                     */
+                    std::string GetStoreNo() const;
+
+                    /**
+                     * 设置门店编号
+                     * @param StoreNo 门店编号
+                     */
+                    void SetStoreNo(const std::string& _storeNo);
+
+                    /**
+                     * 判断参数 StoreNo 是否已赋值
+                     * @return StoreNo 是否已赋值
+                     */
+                    bool StoreNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_redSerialNo;
                     bool m_redSerialNoHasBeenSet;
+
+                    /**
+                     * 门店编号
+                     */
+                    std::string m_storeNo;
+                    bool m_storeNoHasBeenSet;
 
                 };
             }

@@ -97,6 +97,8 @@
 #include <tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/QueryBarCodeRequest.h>
+#include <tencentcloud/ocr/v20181119/model/QueryBarCodeResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
@@ -250,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QrcodeOCRResponse> QrcodeOCROutcome;
                 typedef std::future<QrcodeOCROutcome> QrcodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QrcodeOCRRequest&, QrcodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QrcodeOCRAsyncHandler;
+                typedef Outcome<Error, Model::QueryBarCodeResponse> QueryBarCodeOutcome;
+                typedef std::future<QueryBarCodeOutcome> QueryBarCodeOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::QueryBarCodeRequest&, QueryBarCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBarCodeAsyncHandler;
                 typedef Outcome<Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
@@ -878,6 +883,19 @@ namespace TencentCloud
                 QrcodeOCROutcome QrcodeOCR(const Model::QrcodeOCRRequest &request);
                 void QrcodeOCRAsync(const Model::QrcodeOCRRequest& request, const QrcodeOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QrcodeOCROutcomeCallable QrcodeOCRCallable(const Model::QrcodeOCRRequest& request);
+
+                /**
+                 *本接口支持条形码备案信息查询，返回条形码查询结果的相关信息，包括产品名称、产品英文名称、品牌名称、规格型号、宽度、高度、深度、关键字、产品描述、厂家名称、厂家地址、企业社会信用代码13个字段信息。
+
+产品优势：直联中国物品编码中心，查询结果更加准确、可靠。
+
+本接口目前为内测阶段，如需使用服务，请<a href="https://cloud.tencent.com/act/event/connect-service" target="_blank">联系商务</a>开通。
+                 * @param req QueryBarCodeRequest
+                 * @return QueryBarCodeOutcome
+                 */
+                QueryBarCodeOutcome QueryBarCode(const Model::QueryBarCodeRequest &request);
+                void QueryBarCodeAsync(const Model::QueryBarCodeRequest& request, const QueryBarCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryBarCodeOutcomeCallable QueryBarCodeCallable(const Model::QueryBarCodeRequest& request);
 
                 /**
                  *本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取密钥类型，支持 auto 和 manunal（自定义密钥），默认为 auto。
-                     * @return AccessKeyType 密钥类型，支持 auto 和 manunal（自定义密钥），默认为 auto。
+                     * 获取密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。
+                     * @return AccessKeyType 密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。
                      */
                     std::string GetAccessKeyType() const;
 
                     /**
-                     * 设置密钥类型，支持 auto 和 manunal（自定义密钥），默认为 auto。
-                     * @param AccessKeyType 密钥类型，支持 auto 和 manunal（自定义密钥），默认为 auto。
+                     * 设置密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。
+                     * @param AccessKeyType 密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。
                      */
                     void SetAccessKeyType(const std::string& _accessKeyType);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 密钥类型，支持 auto 和 manunal（自定义密钥），默认为 auto。
+                     * 密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。
                      */
                     std::string m_accessKeyType;
                     bool m_accessKeyTypeHasBeenSet;

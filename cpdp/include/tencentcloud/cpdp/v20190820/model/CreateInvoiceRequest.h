@@ -643,6 +643,60 @@ namespace TencentCloud
                      */
                     bool UndoPartHasBeenSet() const;
 
+                    /**
+                     * 获取订单下单时间（格式 YYYMMDD）
+                     * @return OrderDate 订单下单时间（格式 YYYMMDD）
+                     */
+                    std::string GetOrderDate() const;
+
+                    /**
+                     * 设置订单下单时间（格式 YYYMMDD）
+                     * @param OrderDate 订单下单时间（格式 YYYMMDD）
+                     */
+                    void SetOrderDate(const std::string& _orderDate);
+
+                    /**
+                     * 判断参数 OrderDate 是否已赋值
+                     * @return OrderDate 是否已赋值
+                     */
+                    bool OrderDateHasBeenSet() const;
+
+                    /**
+                     * 获取订单级别（单位为分）
+                     * @return Discount 订单级别（单位为分）
+                     */
+                    int64_t GetDiscount() const;
+
+                    /**
+                     * 设置订单级别（单位为分）
+                     * @param Discount 订单级别（单位为分）
+                     */
+                    void SetDiscount(const int64_t& _discount);
+
+                    /**
+                     * 判断参数 Discount 是否已赋值
+                     * @return Discount 是否已赋值
+                     */
+                    bool DiscountHasBeenSet() const;
+
+                    /**
+                     * 获取门店编码
+                     * @return StoreNo 门店编码
+                     */
+                    std::string GetStoreNo() const;
+
+                    /**
+                     * 设置门店编码
+                     * @param StoreNo 门店编码
+                     */
+                    void SetStoreNo(const std::string& _storeNo);
+
+                    /**
+                     * 判断参数 StoreNo 是否已赋值
+                     * @return StoreNo 是否已赋值
+                     */
+                    bool StoreNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -842,6 +896,24 @@ namespace TencentCloud
                      */
                     int64_t m_undoPart;
                     bool m_undoPartHasBeenSet;
+
+                    /**
+                     * 订单下单时间（格式 YYYMMDD）
+                     */
+                    std::string m_orderDate;
+                    bool m_orderDateHasBeenSet;
+
+                    /**
+                     * 订单级别（单位为分）
+                     */
+                    int64_t m_discount;
+                    bool m_discountHasBeenSet;
+
+                    /**
+                     * 门店编码
+                     */
+                    std::string m_storeNo;
+                    bool m_storeNoHasBeenSet;
 
                 };
             }

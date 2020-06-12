@@ -150,6 +150,40 @@ namespace TencentCloud
                      */
                     bool TransactionIdHasBeenSet() const;
 
+                    /**
+                     * 获取环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     * @return MidasEnvironment 环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     */
+                    std::string GetMidasEnvironment() const;
+
+                    /**
+                     * 设置环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     * @param MidasEnvironment 环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     */
+                    void SetMidasEnvironment(const std::string& _midasEnvironment);
+
+                    /**
+                     * 判断参数 MidasEnvironment 是否已赋值
+                     * @return MidasEnvironment 是否已赋值
+                     */
+                    bool MidasEnvironmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +221,16 @@ namespace TencentCloud
                      */
                     std::string m_transactionId;
                     bool m_transactionIdHasBeenSet;
+
+                    /**
+                     * 环境名:
+release: 现网环境
+sandbox: 沙箱环境
+development: 开发环境
+缺省: release
+                     */
+                    std::string m_midasEnvironment;
+                    bool m_midasEnvironmentHasBeenSet;
 
                 };
             }

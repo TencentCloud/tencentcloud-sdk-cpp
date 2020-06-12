@@ -36,7 +36,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_tagSpecificationHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_dataDiskSizeHasBeenSet(false)
+    m_dataDiskSizeHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,19 @@ string RunInstancesRequest::ToJsonString() const
         string key = "DataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataDiskSize, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -380,6 +394,22 @@ void RunInstancesRequest::SetDataDiskSize(const int64_t& _dataDiskSize)
 bool RunInstancesRequest::DataDiskSizeHasBeenSet() const
 {
     return m_dataDiskSizeHasBeenSet;
+}
+
+vector<string> RunInstancesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void RunInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool RunInstancesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

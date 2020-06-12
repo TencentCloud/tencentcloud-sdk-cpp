@@ -28,7 +28,8 @@ QueryRefundRequest::QueryRefundRequest() :
     m_refundIdHasBeenSet(false),
     m_midasAppIdHasBeenSet(false),
     m_midasSecretIdHasBeenSet(false),
-    m_midasSignatureHasBeenSet(false)
+    m_midasSignatureHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string QueryRefundRequest::ToJsonString() const
         string key = "MidasSignature";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_midasSignature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void QueryRefundRequest::SetMidasSignature(const string& _midasSignature)
 bool QueryRefundRequest::MidasSignatureHasBeenSet() const
 {
     return m_midasSignatureHasBeenSet;
+}
+
+string QueryRefundRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void QueryRefundRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool QueryRefundRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

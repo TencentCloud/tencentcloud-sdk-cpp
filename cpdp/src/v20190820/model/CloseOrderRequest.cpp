@@ -29,7 +29,8 @@ CloseOrderRequest::CloseOrderRequest() :
     m_midasSecretIdHasBeenSet(false),
     m_midasSignatureHasBeenSet(false),
     m_outTradeNoHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
+    m_transactionIdHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string CloseOrderRequest::ToJsonString() const
         string key = "TransactionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_transactionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void CloseOrderRequest::SetTransactionId(const string& _transactionId)
 bool CloseOrderRequest::TransactionIdHasBeenSet() const
 {
     return m_transactionIdHasBeenSet;
+}
+
+string CloseOrderRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void CloseOrderRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool CloseOrderRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

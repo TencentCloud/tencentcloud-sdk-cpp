@@ -34,7 +34,8 @@ Subnet::Subnet() :
     m_ipv6CidrBlockHasBeenSet(false),
     m_networkAclIdHasBeenSet(false),
     m_isRemoteVpcSnatHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome Subnet::Deserialize(const Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Subnet.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -299,6 +310,14 @@ void Subnet::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -510,5 +529,21 @@ void Subnet::SetTagSet(const vector<Tag>& _tagSet)
 bool Subnet::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+string Subnet::GetZone() const
+{
+    return m_zone;
+}
+
+void Subnet::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool Subnet::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

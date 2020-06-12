@@ -26,7 +26,8 @@ using namespace std;
 UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest() :
     m_instanceIdHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_waitSwitchHasBeenSet(false)
+    m_waitSwitchHasBeenSet(false),
+    m_upgradeSubversionHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string UpgradeDBInstanceEngineVersionRequest::ToJsonString() const
         string key = "WaitSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_waitSwitch, allocator);
+    }
+
+    if (m_upgradeSubversionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpgradeSubversion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upgradeSubversion, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void UpgradeDBInstanceEngineVersionRequest::SetWaitSwitch(const int64_t& _waitSw
 bool UpgradeDBInstanceEngineVersionRequest::WaitSwitchHasBeenSet() const
 {
     return m_waitSwitchHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceEngineVersionRequest::GetUpgradeSubversion() const
+{
+    return m_upgradeSubversion;
+}
+
+void UpgradeDBInstanceEngineVersionRequest::SetUpgradeSubversion(const int64_t& _upgradeSubversion)
+{
+    m_upgradeSubversion = _upgradeSubversion;
+    m_upgradeSubversionHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceEngineVersionRequest::UpgradeSubversionHasBeenSet() const
+{
+    return m_upgradeSubversionHasBeenSet;
 }
 
 

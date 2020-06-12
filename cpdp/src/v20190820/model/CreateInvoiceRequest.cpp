@@ -55,7 +55,10 @@ CreateInvoiceRequest::CreateInvoiceRequest() :
     m_remarkHasBeenSet(false),
     m_itemsHasBeenSet(false),
     m_profileHasBeenSet(false),
-    m_undoPartHasBeenSet(false)
+    m_undoPartHasBeenSet(false),
+    m_orderDateHasBeenSet(false),
+    m_discountHasBeenSet(false),
+    m_storeNoHasBeenSet(false)
 {
 }
 
@@ -327,6 +330,30 @@ string CreateInvoiceRequest::ToJsonString() const
         string key = "UndoPart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_undoPart, allocator);
+    }
+
+    if (m_orderDateHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrderDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_orderDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Discount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_discount, allocator);
+    }
+
+    if (m_storeNoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StoreNo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_storeNo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -847,6 +874,54 @@ void CreateInvoiceRequest::SetUndoPart(const int64_t& _undoPart)
 bool CreateInvoiceRequest::UndoPartHasBeenSet() const
 {
     return m_undoPartHasBeenSet;
+}
+
+string CreateInvoiceRequest::GetOrderDate() const
+{
+    return m_orderDate;
+}
+
+void CreateInvoiceRequest::SetOrderDate(const string& _orderDate)
+{
+    m_orderDate = _orderDate;
+    m_orderDateHasBeenSet = true;
+}
+
+bool CreateInvoiceRequest::OrderDateHasBeenSet() const
+{
+    return m_orderDateHasBeenSet;
+}
+
+int64_t CreateInvoiceRequest::GetDiscount() const
+{
+    return m_discount;
+}
+
+void CreateInvoiceRequest::SetDiscount(const int64_t& _discount)
+{
+    m_discount = _discount;
+    m_discountHasBeenSet = true;
+}
+
+bool CreateInvoiceRequest::DiscountHasBeenSet() const
+{
+    return m_discountHasBeenSet;
+}
+
+string CreateInvoiceRequest::GetStoreNo() const
+{
+    return m_storeNo;
+}
+
+void CreateInvoiceRequest::SetStoreNo(const string& _storeNo)
+{
+    m_storeNo = _storeNo;
+    m_storeNoHasBeenSet = true;
+}
+
+bool CreateInvoiceRequest::StoreNoHasBeenSet() const
+{
+    return m_storeNoHasBeenSet;
 }
 
 

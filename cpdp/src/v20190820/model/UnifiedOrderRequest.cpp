@@ -45,7 +45,8 @@ UnifiedOrderRequest::UnifiedOrderRequest() :
     m_totalMchIncomeHasBeenSet(false),
     m_totalPlatformIncomeHasBeenSet(false),
     m_wxOpenIdHasBeenSet(false),
-    m_wxSubOpenIdHasBeenSet(false)
+    m_wxSubOpenIdHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,14 @@ string UnifiedOrderRequest::ToJsonString() const
         string key = "WxSubOpenId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_wxSubOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -597,6 +606,22 @@ void UnifiedOrderRequest::SetWxSubOpenId(const string& _wxSubOpenId)
 bool UnifiedOrderRequest::WxSubOpenIdHasBeenSet() const
 {
     return m_wxSubOpenIdHasBeenSet;
+}
+
+string UnifiedOrderRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void UnifiedOrderRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool UnifiedOrderRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

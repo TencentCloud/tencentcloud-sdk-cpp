@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 使用计划绑定详情
+                * 使用计划绑定环境的列表。
                 */
                 class UsagePlanEnvironmentStatus : public AbstractModel
                 {

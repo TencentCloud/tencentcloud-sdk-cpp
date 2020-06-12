@@ -34,7 +34,8 @@ RefundRequest::RefundRequest() :
     m_mchRefundAmtHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
     m_platformRefundAmtHasBeenSet(false),
-    m_subOrderRefundListHasBeenSet(false)
+    m_subOrderRefundListHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,14 @@ string RefundRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -322,6 +331,22 @@ void RefundRequest::SetSubOrderRefundList(const vector<RefundOutSubOrderRefundLi
 bool RefundRequest::SubOrderRefundListHasBeenSet() const
 {
     return m_subOrderRefundListHasBeenSet;
+}
+
+string RefundRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void RefundRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool RefundRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

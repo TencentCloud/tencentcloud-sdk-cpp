@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取运营商。
-                     * @return ISP 运营商。
+                     * 获取运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
+                     * @return ISP 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
                      */
                     std::string GetISP() const;
 
                     /**
-                     * 设置运营商。
-                     * @param ISP 运营商。
+                     * 设置运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
+                     * @param ISP 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
                      */
                     void SetISP(const std::string& _iSP);
 
@@ -99,6 +99,60 @@ namespace TencentCloud
                      * @return ISP 是否已赋值
                      */
                     bool ISPHasBeenSet() const;
+
+                    /**
+                     * 获取指定私有网络编号，SubnetId与VpcId必须同时指定或不指定
+                     * @return VpcId 指定私有网络编号，SubnetId与VpcId必须同时指定或不指定
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置指定私有网络编号，SubnetId与VpcId必须同时指定或不指定
+                     * @param VpcId 指定私有网络编号，SubnetId与VpcId必须同时指定或不指定
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取指定子网编号，SubnetId与VpcId必须同时指定或不指定
+                     * @return SubnetId 指定子网编号，SubnetId与VpcId必须同时指定或不指定
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置指定子网编号，SubnetId与VpcId必须同时指定或不指定
+                     * @param SubnetId 指定子网编号，SubnetId与VpcId必须同时指定或不指定
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取指定主网卡内网IP。条件：SubnetId与VpcId必须同时指定，并且IP数量与InstanceCount相同，多IP主机副网卡内网IP在相同子网内通过DHCP获取。
+                     * @return PrivateIpAddresses 指定主网卡内网IP。条件：SubnetId与VpcId必须同时指定，并且IP数量与InstanceCount相同，多IP主机副网卡内网IP在相同子网内通过DHCP获取。
+                     */
+                    std::vector<std::string> GetPrivateIpAddresses() const;
+
+                    /**
+                     * 设置指定主网卡内网IP。条件：SubnetId与VpcId必须同时指定，并且IP数量与InstanceCount相同，多IP主机副网卡内网IP在相同子网内通过DHCP获取。
+                     * @param PrivateIpAddresses 指定主网卡内网IP。条件：SubnetId与VpcId必须同时指定，并且IP数量与InstanceCount相同，多IP主机副网卡内网IP在相同子网内通过DHCP获取。
+                     */
+                    void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
+
+                    /**
+                     * 判断参数 PrivateIpAddresses 是否已赋值
+                     * @return PrivateIpAddresses 是否已赋值
+                     */
+                    bool PrivateIpAddressesHasBeenSet() const;
 
                 private:
 
@@ -115,10 +169,28 @@ namespace TencentCloud
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 运营商。
+                     * 运营商，CTCC电信，CUCC联通，CMCC移动，多个运营商用英文分号连接";"。
                      */
                     std::string m_iSP;
                     bool m_iSPHasBeenSet;
+
+                    /**
+                     * 指定私有网络编号，SubnetId与VpcId必须同时指定或不指定
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 指定子网编号，SubnetId与VpcId必须同时指定或不指定
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 指定主网卡内网IP。条件：SubnetId与VpcId必须同时指定，并且IP数量与InstanceCount相同，多IP主机副网卡内网IP在相同子网内通过DHCP获取。
+                     */
+                    std::vector<std::string> m_privateIpAddresses;
+                    bool m_privateIpAddressesHasBeenSet;
 
                 };
             }

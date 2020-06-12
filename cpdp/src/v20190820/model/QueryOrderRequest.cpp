@@ -34,7 +34,8 @@ QueryOrderRequest::QueryOrderRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_outTradeNoHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
+    m_transactionIdHasBeenSet(false),
+    m_midasEnvironmentHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string QueryOrderRequest::ToJsonString() const
         string key = "TransactionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_transactionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_midasEnvironmentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MidasEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void QueryOrderRequest::SetTransactionId(const string& _transactionId)
 bool QueryOrderRequest::TransactionIdHasBeenSet() const
 {
     return m_transactionIdHasBeenSet;
+}
+
+string QueryOrderRequest::GetMidasEnvironment() const
+{
+    return m_midasEnvironment;
+}
+
+void QueryOrderRequest::SetMidasEnvironment(const string& _midasEnvironment)
+{
+    m_midasEnvironment = _midasEnvironment;
+    m_midasEnvironmentHasBeenSet = true;
+}
+
+bool QueryOrderRequest::MidasEnvironmentHasBeenSet() const
+{
+    return m_midasEnvironmentHasBeenSet;
 }
 
 

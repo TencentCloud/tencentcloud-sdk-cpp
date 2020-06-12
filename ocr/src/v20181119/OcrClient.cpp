@@ -1631,6 +1631,49 @@ OcrClient::QrcodeOCROutcomeCallable OcrClient::QrcodeOCRCallable(const QrcodeOCR
     return task->get_future();
 }
 
+OcrClient::QueryBarCodeOutcome OcrClient::QueryBarCode(const QueryBarCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryBarCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryBarCodeResponse rsp = QueryBarCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryBarCodeOutcome(rsp);
+        else
+            return QueryBarCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryBarCodeOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::QueryBarCodeAsync(const QueryBarCodeRequest& request, const QueryBarCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryBarCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::QueryBarCodeOutcomeCallable OcrClient::QueryBarCodeCallable(const QueryBarCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryBarCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryBarCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::QuotaInvoiceOCROutcome OcrClient::QuotaInvoiceOCR(const QuotaInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "QuotaInvoiceOCR");

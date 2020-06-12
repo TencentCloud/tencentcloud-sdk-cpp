@@ -25,7 +25,8 @@ CreateRedInvoiceItem::CreateRedInvoiceItem() :
     m_orderIdHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_orderSnHasBeenSet(false),
-    m_redSerialNoHasBeenSet(false)
+    m_redSerialNoHasBeenSet(false),
+    m_storeNoHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,16 @@ CoreInternalOutcome CreateRedInvoiceItem::Deserialize(const Value &value)
         m_redSerialNoHasBeenSet = true;
     }
 
+    if (value.HasMember("StoreNo") && !value["StoreNo"].IsNull())
+    {
+        if (!value["StoreNo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CreateRedInvoiceItem.StoreNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storeNo = string(value["StoreNo"].GetString());
+        m_storeNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +122,14 @@ void CreateRedInvoiceItem::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "RedSerialNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_redSerialNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storeNoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StoreNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_storeNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +197,21 @@ void CreateRedInvoiceItem::SetRedSerialNo(const string& _redSerialNo)
 bool CreateRedInvoiceItem::RedSerialNoHasBeenSet() const
 {
     return m_redSerialNoHasBeenSet;
+}
+
+string CreateRedInvoiceItem::GetStoreNo() const
+{
+    return m_storeNo;
+}
+
+void CreateRedInvoiceItem::SetStoreNo(const string& _storeNo)
+{
+    m_storeNo = _storeNo;
+    m_storeNoHasBeenSet = true;
+}
+
+bool CreateRedInvoiceItem::StoreNoHasBeenSet() const
+{
+    return m_storeNoHasBeenSet;
 }
 
