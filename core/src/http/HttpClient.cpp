@@ -176,7 +176,7 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
     {
     case CURLE_OK:
     {
-        int64_t response_code;
+        int64_t response_code = 0;
         curl_easy_getinfo(m_curlHandle, CURLINFO_RESPONSE_CODE, &response_code);
         response.SetStatusCode(response_code);
         response.SetBody(out.str());
