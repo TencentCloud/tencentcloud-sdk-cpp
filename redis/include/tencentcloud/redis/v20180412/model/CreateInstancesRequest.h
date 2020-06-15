@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，8 – Redis5.0主从版，9 – Redis5.0集群版，
-                     * @return TypeId 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，8 – Redis5.0主从版，9 – Redis5.0集群版，
+                     * 获取实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
+                     * @return TypeId 实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
                      */
                     uint64_t GetTypeId() const;
 
                     /**
-                     * 设置实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，8 – Redis5.0主从版，9 – Redis5.0集群版，
-                     * @param TypeId 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，8 – Redis5.0主从版，9 – Redis5.0集群版，
+                     * 设置实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
+                     * @param TypeId 实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
                      */
                     void SetTypeId(const uint64_t& _typeId);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool BillingModeHasBeenSet() const;
 
                     /**
-                     * 获取实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
-                     * @return Password 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     * 获取实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
+                     * @return Password 实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
-                     * @param Password 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     * 设置实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
+                     * @param Password 实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
                      */
                     void SetPassword(const std::string& _password);
 
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool VPortHasBeenSet() const;
 
                     /**
-                     * 获取实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
-                     * @return RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
+                     * 获取实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
+                     * @return RedisShardNum 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
-                     * @param RedisShardNum 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
+                     * 设置实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
+                     * @param RedisShardNum 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
 
@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool RedisShardNumHasBeenSet() const;
 
                     /**
-                     * 获取实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @return RedisReplicasNum 实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 获取实例副本数量，Redis 2.8标准版、CKV标准版只支持1副本，4.0、5.0标准版和集群版支持1-5个副本。
+                     * @return RedisReplicasNum 实例副本数量，Redis 2.8标准版、CKV标准版只支持1副本，4.0、5.0标准版和集群版支持1-5个副本。
                      */
                     int64_t GetRedisReplicasNum() const;
 
                     /**
-                     * 设置实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @param RedisReplicasNum 实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 设置实例副本数量，Redis 2.8标准版、CKV标准版只支持1副本，4.0、5.0标准版和集群版支持1-5个副本。
+                     * @param RedisReplicasNum 实例副本数量，Redis 2.8标准版、CKV标准版只支持1副本，4.0、5.0标准版和集群版支持1-5个副本。
                      */
                     void SetRedisReplicasNum(const int64_t& _redisReplicasNum);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool RedisReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @return ReplicasReadonly 是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 获取是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
+                     * @return ReplicasReadonly 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
                      */
                     bool GetReplicasReadonly() const;
 
                     /**
-                     * 设置是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @param ReplicasReadonly 是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 设置是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
+                     * @param ReplicasReadonly 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
                      */
                     void SetReplicasReadonly(const bool& _replicasReadonly);
 
@@ -331,14 +331,14 @@ namespace TencentCloud
                     bool ReplicasReadonlyHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取实例名称，长度小于60的中文/英文/数字/"-"/"_"
+                     * @return InstanceName 实例名称，长度小于60的中文/英文/数字/"-"/"_"
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * 设置实例名称，长度小于60的中文/英文/数字/"-"/"_"
+                     * @param InstanceName 实例名称，长度小于60的中文/英文/数字/"-"/"_"
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -349,14 +349,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
-                     * @return NoAuth 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     * 获取是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。
+                     * @return NoAuth 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
-                     * @param NoAuth 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     * 设置是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。
+                     * @param NoAuth 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。
                      */
                     void SetNoAuth(const bool& _noAuth);
 
@@ -375,7 +375,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，8 – Redis5.0主从版，9 – Redis5.0集群版，
+                     * 实例类型：2 – Redis2.8内存版（标准架构），3 – Redis3.2内存版（标准架构），4 – CKV 3.2内存版(标准架构)，6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构），
                      */
                     uint64_t m_typeId;
                     bool m_typeIdHasBeenSet;
@@ -405,7 +405,7 @@ namespace TencentCloud
                     bool m_billingModeHasBeenSet;
 
                     /**
-                     * 实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）
+                     * 实例密码，8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以"/"开头。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
@@ -447,31 +447,31 @@ namespace TencentCloud
                     bool m_vPortHasBeenSet;
 
                     /**
-                     * 实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写
+                     * 实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
 
                     /**
-                     * 实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 实例副本数量，Redis 2.8标准版、CKV标准版只支持1副本，4.0、5.0标准版和集群版支持1-5个副本。
                      */
                     int64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;
 
                     /**
-                     * 是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2.
                      */
                     bool m_replicasReadonly;
                     bool m_replicasReadonlyHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称，长度小于60的中文/英文/数字/"-"/"_"
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例
+                     * 是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;

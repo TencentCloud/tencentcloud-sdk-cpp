@@ -35,7 +35,9 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_additionalCodeRepositoriesHasBeenSet(false),
     m_disassociateDefaultCodeRepositoryHasBeenSet(false),
     m_disassociateAdditionalCodeRepositoriesHasBeenSet(false),
-    m_clsAccessHasBeenSet(false)
+    m_clsAccessHasBeenSet(false),
+    m_autoStoppingHasBeenSet(false),
+    m_stoppingConditionHasBeenSet(false)
 {
 }
 
@@ -145,6 +147,23 @@ string UpdateNotebookInstanceRequest::ToJsonString() const
         string key = "ClsAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clsAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoStoppingHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoStopping";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_autoStopping.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stoppingConditionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StoppingCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_stoppingCondition.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -345,6 +364,38 @@ void UpdateNotebookInstanceRequest::SetClsAccess(const string& _clsAccess)
 bool UpdateNotebookInstanceRequest::ClsAccessHasBeenSet() const
 {
     return m_clsAccessHasBeenSet;
+}
+
+string UpdateNotebookInstanceRequest::GetAutoStopping() const
+{
+    return m_autoStopping;
+}
+
+void UpdateNotebookInstanceRequest::SetAutoStopping(const string& _autoStopping)
+{
+    m_autoStopping = _autoStopping;
+    m_autoStoppingHasBeenSet = true;
+}
+
+bool UpdateNotebookInstanceRequest::AutoStoppingHasBeenSet() const
+{
+    return m_autoStoppingHasBeenSet;
+}
+
+StoppingCondition UpdateNotebookInstanceRequest::GetStoppingCondition() const
+{
+    return m_stoppingCondition;
+}
+
+void UpdateNotebookInstanceRequest::SetStoppingCondition(const StoppingCondition& _stoppingCondition)
+{
+    m_stoppingCondition = _stoppingCondition;
+    m_stoppingConditionHasBeenSet = true;
+}
+
+bool UpdateNotebookInstanceRequest::StoppingConditionHasBeenSet() const
+{
+    return m_stoppingConditionHasBeenSet;
 }
 
 

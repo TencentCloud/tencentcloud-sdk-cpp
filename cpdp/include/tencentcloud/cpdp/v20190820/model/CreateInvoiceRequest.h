@@ -644,14 +644,14 @@ namespace TencentCloud
                     bool UndoPartHasBeenSet() const;
 
                     /**
-                     * 获取订单下单时间（格式 YYYMMDD）
-                     * @return OrderDate 订单下单时间（格式 YYYMMDD）
+                     * 获取订单下单时间（格式 YYYYMMDD）
+                     * @return OrderDate 订单下单时间（格式 YYYYMMDD）
                      */
                     std::string GetOrderDate() const;
 
                     /**
-                     * 设置订单下单时间（格式 YYYMMDD）
-                     * @param OrderDate 订单下单时间（格式 YYYMMDD）
+                     * 设置订单下单时间（格式 YYYYMMDD）
+                     * @param OrderDate 订单下单时间（格式 YYYYMMDD）
                      */
                     void SetOrderDate(const std::string& _orderDate);
 
@@ -662,14 +662,14 @@ namespace TencentCloud
                     bool OrderDateHasBeenSet() const;
 
                     /**
-                     * 获取订单级别（单位为分）
-                     * @return Discount 订单级别（单位为分）
+                     * 获取订单级别折扣（单位为分）
+                     * @return Discount 订单级别折扣（单位为分）
                      */
                     int64_t GetDiscount() const;
 
                     /**
-                     * 设置订单级别（单位为分）
-                     * @param Discount 订单级别（单位为分）
+                     * 设置订单级别折扣（单位为分）
+                     * @param Discount 订单级别折扣（单位为分）
                      */
                     void SetDiscount(const int64_t& _discount);
 
@@ -898,13 +898,13 @@ namespace TencentCloud
                     bool m_undoPartHasBeenSet;
 
                     /**
-                     * 订单下单时间（格式 YYYMMDD）
+                     * 订单下单时间（格式 YYYYMMDD）
                      */
                     std::string m_orderDate;
                     bool m_orderDateHasBeenSet;
 
                     /**
-                     * 订单级别（单位为分）
+                     * 订单级别折扣（单位为分）
                      */
                     int64_t m_discount;
                     bool m_discountHasBeenSet;

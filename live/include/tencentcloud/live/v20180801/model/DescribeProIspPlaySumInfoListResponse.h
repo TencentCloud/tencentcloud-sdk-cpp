@@ -140,8 +140,8 @@ namespace TencentCloud
                     bool DataInfoListHasBeenSet() const;
 
                     /**
-                     * 获取平均带宽。
-                     * @return AvgFluxPerSecond 平均带宽。
+                     * 获取下载速度，单位：MB/s，计算方式：总流量/总时长。
+                     * @return AvgFluxPerSecond 下载速度，单位：MB/s，计算方式：总流量/总时长。
                      */
                     double GetAvgFluxPerSecond() const;
 
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_dataInfoListHasBeenSet;
 
                     /**
-                     * 平均带宽。
+                     * 下载速度，单位：MB/s，计算方式：总流量/总时长。
                      */
                     double m_avgFluxPerSecond;
                     bool m_avgFluxPerSecondHasBeenSet;

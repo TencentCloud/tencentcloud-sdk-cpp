@@ -21,13 +21,14 @@ set(tione_public_header
 set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/OutputDataConfig.h
   include/tencentcloud/tione/v20191022/model/StopTrainingJobResponse.h
-  include/tencentcloud/tione/v20191022/model/StoppingCondition.h
+  include/tencentcloud/tione/v20191022/model/BillingLabel.h
   include/tencentcloud/tione/v20191022/model/EnvConfig.h
   include/tencentcloud/tione/v20191022/model/CreateNotebookInstanceRequest.h
-  include/tencentcloud/tione/v20191022/model/NotebookInstanceSummary.h
+  include/tencentcloud/tione/v20191022/model/DescribeNotebookSummaryRequest.h
   include/tencentcloud/tione/v20191022/model/SecondaryStatusTransition.h
   include/tencentcloud/tione/v20191022/model/DescribeNotebookInstanceRequest.h
   include/tencentcloud/tione/v20191022/model/DeleteNotebookInstanceResponse.h
+  include/tencentcloud/tione/v20191022/model/NotebookInstanceSummary.h
   include/tencentcloud/tione/v20191022/model/GitConfig.h
   include/tencentcloud/tione/v20191022/model/CodeRepoSummary.h
   include/tencentcloud/tione/v20191022/model/ResourceConfig.h
@@ -50,7 +51,8 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/CreateNotebookLifecycleScriptRequest.h
   include/tencentcloud/tione/v20191022/model/CreateCodeRepositoryRequest.h
   include/tencentcloud/tione/v20191022/model/DescribeNotebookInstancesRequest.h
-  include/tencentcloud/tione/v20191022/model/DataSource.h
+  include/tencentcloud/tione/v20191022/model/StoppingCondition.h
+  include/tencentcloud/tione/v20191022/model/DescribeCodeRepositoriesResponse.h
   include/tencentcloud/tione/v20191022/model/DescribeNotebookInstancesResponse.h
   include/tencentcloud/tione/v20191022/model/DescribeCodeRepositoryRequest.h
   include/tencentcloud/tione/v20191022/model/CreateTrainingJobResponse.h
@@ -59,6 +61,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/AlgorithmSpecification.h
   include/tencentcloud/tione/v20191022/model/CosDataSource.h
   include/tencentcloud/tione/v20191022/model/DescribeNotebookLifecycleScriptsResponse.h
+  include/tencentcloud/tione/v20191022/model/DescribeNotebookSummaryResponse.h
   include/tencentcloud/tione/v20191022/model/Filter.h
   include/tencentcloud/tione/v20191022/model/StopNotebookInstanceRequest.h
   include/tencentcloud/tione/v20191022/model/DeleteNotebookLifecycleScriptRequest.h
@@ -76,7 +79,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/StartNotebookInstanceRequest.h
   include/tencentcloud/tione/v20191022/model/CreateCodeRepositoryResponse.h
   include/tencentcloud/tione/v20191022/model/DescribeCodeRepositoriesRequest.h
-  include/tencentcloud/tione/v20191022/model/DescribeCodeRepositoriesResponse.h
+  include/tencentcloud/tione/v20191022/model/DataSource.h
   include/tencentcloud/tione/v20191022/model/ModelArtifacts.h
   include/tencentcloud/tione/v20191022/model/DeleteCodeRepositoryResponse.h
   )
@@ -85,13 +88,14 @@ set(tione_src
   src/v20191022/TioneClient.cpp
   src/v20191022/model/OutputDataConfig.cpp
   src/v20191022/model/StopTrainingJobResponse.cpp
-  src/v20191022/model/StoppingCondition.cpp
+  src/v20191022/model/BillingLabel.cpp
   src/v20191022/model/EnvConfig.cpp
   src/v20191022/model/CreateNotebookInstanceRequest.cpp
-  src/v20191022/model/NotebookInstanceSummary.cpp
+  src/v20191022/model/DescribeNotebookSummaryRequest.cpp
   src/v20191022/model/SecondaryStatusTransition.cpp
   src/v20191022/model/DescribeNotebookInstanceRequest.cpp
   src/v20191022/model/DeleteNotebookInstanceResponse.cpp
+  src/v20191022/model/NotebookInstanceSummary.cpp
   src/v20191022/model/GitConfig.cpp
   src/v20191022/model/CodeRepoSummary.cpp
   src/v20191022/model/ResourceConfig.cpp
@@ -114,7 +118,8 @@ set(tione_src
   src/v20191022/model/CreateNotebookLifecycleScriptRequest.cpp
   src/v20191022/model/CreateCodeRepositoryRequest.cpp
   src/v20191022/model/DescribeNotebookInstancesRequest.cpp
-  src/v20191022/model/DataSource.cpp
+  src/v20191022/model/StoppingCondition.cpp
+  src/v20191022/model/DescribeCodeRepositoriesResponse.cpp
   src/v20191022/model/DescribeNotebookInstancesResponse.cpp
   src/v20191022/model/DescribeCodeRepositoryRequest.cpp
   src/v20191022/model/CreateTrainingJobResponse.cpp
@@ -123,6 +128,7 @@ set(tione_src
   src/v20191022/model/AlgorithmSpecification.cpp
   src/v20191022/model/CosDataSource.cpp
   src/v20191022/model/DescribeNotebookLifecycleScriptsResponse.cpp
+  src/v20191022/model/DescribeNotebookSummaryResponse.cpp
   src/v20191022/model/Filter.cpp
   src/v20191022/model/StopNotebookInstanceRequest.cpp
   src/v20191022/model/DeleteNotebookLifecycleScriptRequest.cpp
@@ -140,7 +146,7 @@ set(tione_src
   src/v20191022/model/StartNotebookInstanceRequest.cpp
   src/v20191022/model/CreateCodeRepositoryResponse.cpp
   src/v20191022/model/DescribeCodeRepositoriesRequest.cpp
-  src/v20191022/model/DescribeCodeRepositoriesResponse.cpp
+  src/v20191022/model/DataSource.cpp
   src/v20191022/model/ModelArtifacts.cpp
   src/v20191022/model/DeleteCodeRepositoryResponse.cpp
   )

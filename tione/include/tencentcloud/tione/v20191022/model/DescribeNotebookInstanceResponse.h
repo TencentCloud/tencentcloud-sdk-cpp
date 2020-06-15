@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20191022/model/StoppingCondition.h>
 
 
 namespace TencentCloud
@@ -196,8 +197,20 @@ namespace TencentCloud
 
                     /**
                      * 获取Notebook实例状态
+
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotebookInstanceStatus Notebook实例状态
+
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNotebookInstanceStatus() const;
@@ -282,6 +295,48 @@ namespace TencentCloud
                      */
                     bool ClsAccessHasBeenSet() const;
 
+                    /**
+                     * 获取是否预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Prepay 是否预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPrepay() const;
+
+                    /**
+                     * 判断参数 Prepay 是否已赋值
+                     * @return Prepay 是否已赋值
+                     */
+                    bool PrepayHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Deadline 实例运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeadline() const;
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     */
+                    bool DeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StoppingCondition 自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StoppingCondition GetStoppingCondition() const;
+
+                    /**
+                     * 判断参数 StoppingCondition 是否已赋值
+                     * @return StoppingCondition 是否已赋值
+                     */
+                    bool StoppingConditionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -362,6 +417,12 @@ namespace TencentCloud
 
                     /**
                      * Notebook实例状态
+
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_notebookInstanceStatus;
@@ -403,6 +464,27 @@ namespace TencentCloud
                      */
                     std::string m_clsAccess;
                     bool m_clsAccessHasBeenSet;
+
+                    /**
+                     * 是否预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_prepay;
+                    bool m_prepayHasBeenSet;
+
+                    /**
+                     * 实例运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deadline;
+                    bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StoppingCondition m_stoppingCondition;
+                    bool m_stoppingConditionHasBeenSet;
 
                 };
             }

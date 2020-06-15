@@ -77,6 +77,10 @@
 #include <tencentcloud/tsf/v20180326/model/DeployGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeployServerlessGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeployServerlessGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeApiDetailRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeApiDetailResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeApiVersionsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeApiVersionsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeRequest.h>
@@ -117,6 +121,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeMsApiListRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeMsApiListResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePkgsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribePodInstancesRequest.h>
@@ -280,6 +286,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeployServerlessGroupResponse> DeployServerlessGroupOutcome;
                 typedef std::future<DeployServerlessGroupOutcome> DeployServerlessGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeployServerlessGroupRequest&, DeployServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployServerlessGroupAsyncHandler;
+                typedef Outcome<Error, Model::DescribeApiDetailResponse> DescribeApiDetailOutcome;
+                typedef std::future<DescribeApiDetailOutcome> DescribeApiDetailOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeApiDetailRequest&, DescribeApiDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeApiVersionsResponse> DescribeApiVersionsOutcome;
+                typedef std::future<DescribeApiVersionsOutcome> DescribeApiVersionsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeApiVersionsRequest&, DescribeApiVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiVersionsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeApplicationResponse> DescribeApplicationOutcome;
                 typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeApplicationRequest&, DescribeApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationAsyncHandler;
@@ -340,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMicroservicesResponse> DescribeMicroservicesOutcome;
                 typedef std::future<DescribeMicroservicesOutcome> DescribeMicroservicesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeMicroservicesRequest&, DescribeMicroservicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMicroservicesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMsApiListResponse> DescribeMsApiListOutcome;
+                typedef std::future<DescribeMsApiListOutcome> DescribeMsApiListOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeMsApiListRequest&, DescribeMsApiListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsApiListAsyncHandler;
                 typedef Outcome<Error, Model::DescribePkgsResponse> DescribePkgsOutcome;
                 typedef std::future<DescribePkgsOutcome> DescribePkgsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribePkgsRequest&, DescribePkgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePkgsAsyncHandler;
@@ -690,6 +705,24 @@ namespace TencentCloud
                 DeployServerlessGroupOutcomeCallable DeployServerlessGroupCallable(const Model::DeployServerlessGroupRequest& request);
 
                 /**
+                 *查询API详情
+                 * @param req DescribeApiDetailRequest
+                 * @return DescribeApiDetailOutcome
+                 */
+                DescribeApiDetailOutcome DescribeApiDetail(const Model::DescribeApiDetailRequest &request);
+                void DescribeApiDetailAsync(const Model::DescribeApiDetailRequest& request, const DescribeApiDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiDetailOutcomeCallable DescribeApiDetailCallable(const Model::DescribeApiDetailRequest& request);
+
+                /**
+                 *查询API 版本
+                 * @param req DescribeApiVersionsRequest
+                 * @return DescribeApiVersionsOutcome
+                 */
+                DescribeApiVersionsOutcome DescribeApiVersions(const Model::DescribeApiVersionsRequest &request);
+                void DescribeApiVersionsAsync(const Model::DescribeApiVersionsRequest& request, const DescribeApiVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiVersionsOutcomeCallable DescribeApiVersionsCallable(const Model::DescribeApiVersionsRequest& request);
+
+                /**
                  *获取应用详情
                  * @param req DescribeApplicationRequest
                  * @return DescribeApplicationOutcome
@@ -869,6 +902,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeMicroservicesOutcome DescribeMicroservices(const Model::DescribeMicroservicesRequest &request);
                 void DescribeMicroservicesAsync(const Model::DescribeMicroservicesRequest& request, const DescribeMicroservicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMicroservicesOutcomeCallable DescribeMicroservicesCallable(const Model::DescribeMicroservicesRequest& request);
+
+                /**
+                 *查询服务API列表
+                 * @param req DescribeMsApiListRequest
+                 * @return DescribeMsApiListOutcome
+                 */
+                DescribeMsApiListOutcome DescribeMsApiList(const Model::DescribeMsApiListRequest &request);
+                void DescribeMsApiListAsync(const Model::DescribeMsApiListRequest& request, const DescribeMsApiListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMsApiListOutcomeCallable DescribeMsApiListCallable(const Model::DescribeMsApiListRequest& request);
 
                 /**
                  *无

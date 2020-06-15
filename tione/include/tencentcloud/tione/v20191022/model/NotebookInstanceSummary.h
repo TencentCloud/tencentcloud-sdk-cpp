@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20191022/model/StoppingCondition.h>
+#include <tencentcloud/tione/v20191022/model/BillingLabel.h>
 
 
 namespace TencentCloud
@@ -113,17 +115,37 @@ namespace TencentCloud
                     bool NotebookInstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取notebook实例状态
+                     * 获取notebook实例状态，取值范围：
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotebookInstanceStatus notebook实例状态
+                     * @return NotebookInstanceStatus notebook实例状态，取值范围：
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNotebookInstanceStatus() const;
 
                     /**
-                     * 设置notebook实例状态
+                     * 设置notebook实例状态，取值范围：
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotebookInstanceStatus notebook实例状态
+                     * @param NotebookInstanceStatus notebook实例状态，取值范围：
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNotebookInstanceStatus(const std::string& _notebookInstanceStatus);
@@ -157,17 +179,17 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取算力Id
+                     * 获取实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 算力Id
+                     * @return InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置算力Id
+                     * 设置实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 算力Id
+                     * @param InstanceId 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -177,6 +199,116 @@ namespace TencentCloud
                      * @return InstanceId 是否已赋值
                      */
                     bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartupTime 启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartupTime() const;
+
+                    /**
+                     * 设置启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartupTime 启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartupTime(const std::string& _startupTime);
+
+                    /**
+                     * 判断参数 StartupTime 是否已赋值
+                     * @return StartupTime 是否已赋值
+                     */
+                    bool StartupTimeHasBeenSet() const;
+
+                    /**
+                     * 获取运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Deadline 运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeadline() const;
+
+                    /**
+                     * 设置运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Deadline 运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeadline(const std::string& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     */
+                    bool DeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StoppingCondition 自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StoppingCondition GetStoppingCondition() const;
+
+                    /**
+                     * 设置自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StoppingCondition 自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStoppingCondition(const StoppingCondition& _stoppingCondition);
+
+                    /**
+                     * 判断参数 StoppingCondition 是否已赋值
+                     * @return StoppingCondition 是否已赋值
+                     */
+                    bool StoppingConditionHasBeenSet() const;
+
+                    /**
+                     * 获取是否是预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Prepay 是否是预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPrepay() const;
+
+                    /**
+                     * 设置是否是预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Prepay 是否是预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrepay(const bool& _prepay);
+
+                    /**
+                     * 判断参数 Prepay 是否已赋值
+                     * @return Prepay 是否已赋值
+                     */
+                    bool PrepayHasBeenSet() const;
+
+                    /**
+                     * 获取计费标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingLabel 计费标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BillingLabel GetBillingLabel() const;
+
+                    /**
+                     * 设置计费标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BillingLabel 计费标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBillingLabel(const BillingLabel& _billingLabel);
+
+                    /**
+                     * 判断参数 BillingLabel 是否已赋值
+                     * @return BillingLabel 是否已赋值
+                     */
+                    bool BillingLabelHasBeenSet() const;
 
                 private:
 
@@ -202,7 +334,12 @@ namespace TencentCloud
                     bool m_notebookInstanceNameHasBeenSet;
 
                     /**
-                     * notebook实例状态
+                     * notebook实例状态，取值范围：
+Pending: 创建中
+Inservice: 运行中
+Stopping: 停止中
+Stopped: 已停止
+Failed: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_notebookInstanceStatus;
@@ -216,11 +353,46 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 算力Id
+                     * 实例ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startupTime;
+                    bool m_startupTimeHasBeenSet;
+
+                    /**
+                     * 运行截止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deadline;
+                    bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 自动停止配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StoppingCondition m_stoppingCondition;
+                    bool m_stoppingConditionHasBeenSet;
+
+                    /**
+                     * 是否是预付费实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_prepay;
+                    bool m_prepayHasBeenSet;
+
+                    /**
+                     * 计费标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BillingLabel m_billingLabel;
+                    bool m_billingLabelHasBeenSet;
 
                 };
             }

@@ -27,7 +27,12 @@ NotebookInstanceSummary::NotebookInstanceSummary() :
     m_notebookInstanceNameHasBeenSet(false),
     m_notebookInstanceStatusHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_startupTimeHasBeenSet(false),
+    m_deadlineHasBeenSet(false),
+    m_stoppingConditionHasBeenSet(false),
+    m_prepayHasBeenSet(false),
+    m_billingLabelHasBeenSet(false)
 {
 }
 
@@ -96,6 +101,70 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("StartupTime") && !value["StartupTime"].IsNull())
+    {
+        if (!value["StartupTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.StartupTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startupTime = string(value["StartupTime"].GetString());
+        m_startupTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
+    {
+        if (!value["Deadline"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.Deadline` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = string(value["Deadline"].GetString());
+        m_deadlineHasBeenSet = true;
+    }
+
+    if (value.HasMember("StoppingCondition") && !value["StoppingCondition"].IsNull())
+    {
+        if (!value["StoppingCondition"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.StoppingCondition` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_stoppingCondition.Deserialize(value["StoppingCondition"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_stoppingConditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Prepay") && !value["Prepay"].IsNull())
+    {
+        if (!value["Prepay"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.Prepay` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_prepay = value["Prepay"].GetBool();
+        m_prepayHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillingLabel") && !value["BillingLabel"].IsNull())
+    {
+        if (!value["BillingLabel"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.BillingLabel` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_billingLabel.Deserialize(value["BillingLabel"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_billingLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +218,48 @@ void NotebookInstanceSummary::ToJsonObject(Value &value, Document::AllocatorType
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startupTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartupTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startupTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deadline.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stoppingConditionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StoppingCondition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_stoppingCondition.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_prepayHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Prepay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_prepay, allocator);
+    }
+
+    if (m_billingLabelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BillingLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_billingLabel.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -248,5 +359,85 @@ void NotebookInstanceSummary::SetInstanceId(const string& _instanceId)
 bool NotebookInstanceSummary::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string NotebookInstanceSummary::GetStartupTime() const
+{
+    return m_startupTime;
+}
+
+void NotebookInstanceSummary::SetStartupTime(const string& _startupTime)
+{
+    m_startupTime = _startupTime;
+    m_startupTimeHasBeenSet = true;
+}
+
+bool NotebookInstanceSummary::StartupTimeHasBeenSet() const
+{
+    return m_startupTimeHasBeenSet;
+}
+
+string NotebookInstanceSummary::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void NotebookInstanceSummary::SetDeadline(const string& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool NotebookInstanceSummary::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
+}
+
+StoppingCondition NotebookInstanceSummary::GetStoppingCondition() const
+{
+    return m_stoppingCondition;
+}
+
+void NotebookInstanceSummary::SetStoppingCondition(const StoppingCondition& _stoppingCondition)
+{
+    m_stoppingCondition = _stoppingCondition;
+    m_stoppingConditionHasBeenSet = true;
+}
+
+bool NotebookInstanceSummary::StoppingConditionHasBeenSet() const
+{
+    return m_stoppingConditionHasBeenSet;
+}
+
+bool NotebookInstanceSummary::GetPrepay() const
+{
+    return m_prepay;
+}
+
+void NotebookInstanceSummary::SetPrepay(const bool& _prepay)
+{
+    m_prepay = _prepay;
+    m_prepayHasBeenSet = true;
+}
+
+bool NotebookInstanceSummary::PrepayHasBeenSet() const
+{
+    return m_prepayHasBeenSet;
+}
+
+BillingLabel NotebookInstanceSummary::GetBillingLabel() const
+{
+    return m_billingLabel;
+}
+
+void NotebookInstanceSummary::SetBillingLabel(const BillingLabel& _billingLabel)
+{
+    m_billingLabel = _billingLabel;
+    m_billingLabelHasBeenSet = true;
+}
+
+bool NotebookInstanceSummary::BillingLabelHasBeenSet() const
+{
+    return m_billingLabelHasBeenSet;
 }
 

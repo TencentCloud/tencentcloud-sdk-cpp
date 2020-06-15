@@ -1278,7 +1278,7 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeStreamDayPlayInfoListOutcomeCallable DescribeStreamDayPlayInfoListCallable(const Model::DescribeStreamDayPlayInfoListRequest& request);
 
                 /**
-                 *查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。
+                 *查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据，数据延迟4分钟左右。
 注意：按AppName查询，需要联系客服同学提单支持。
                  * @param req DescribeStreamPlayInfoListRequest
                  * @return DescribeStreamPlayInfoListOutcome

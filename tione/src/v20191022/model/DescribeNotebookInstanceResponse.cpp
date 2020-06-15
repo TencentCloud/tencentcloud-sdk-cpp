@@ -41,7 +41,10 @@ DescribeNotebookInstanceResponse::DescribeNotebookInstanceResponse() :
     m_lifecycleScriptsNameHasBeenSet(false),
     m_defaultCodeRepositoryHasBeenSet(false),
     m_additionalCodeRepositoriesHasBeenSet(false),
-    m_clsAccessHasBeenSet(false)
+    m_clsAccessHasBeenSet(false),
+    m_prepayHasBeenSet(false),
+    m_deadlineHasBeenSet(false),
+    m_stoppingConditionHasBeenSet(false)
 {
 }
 
@@ -252,6 +255,43 @@ CoreInternalOutcome DescribeNotebookInstanceResponse::Deserialize(const string &
         m_clsAccessHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Prepay") && !rsp["Prepay"].IsNull())
+    {
+        if (!rsp["Prepay"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Prepay` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_prepay = rsp["Prepay"].GetBool();
+        m_prepayHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Deadline") && !rsp["Deadline"].IsNull())
+    {
+        if (!rsp["Deadline"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Deadline` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = string(rsp["Deadline"].GetString());
+        m_deadlineHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("StoppingCondition") && !rsp["StoppingCondition"].IsNull())
+    {
+        if (!rsp["StoppingCondition"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `StoppingCondition` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_stoppingCondition.Deserialize(rsp["StoppingCondition"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_stoppingConditionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -425,6 +465,36 @@ string DescribeNotebookInstanceResponse::GetClsAccess() const
 bool DescribeNotebookInstanceResponse::ClsAccessHasBeenSet() const
 {
     return m_clsAccessHasBeenSet;
+}
+
+bool DescribeNotebookInstanceResponse::GetPrepay() const
+{
+    return m_prepay;
+}
+
+bool DescribeNotebookInstanceResponse::PrepayHasBeenSet() const
+{
+    return m_prepayHasBeenSet;
+}
+
+string DescribeNotebookInstanceResponse::GetDeadline() const
+{
+    return m_deadline;
+}
+
+bool DescribeNotebookInstanceResponse::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
+}
+
+StoppingCondition DescribeNotebookInstanceResponse::GetStoppingCondition() const
+{
+    return m_stoppingCondition;
+}
+
+bool DescribeNotebookInstanceResponse::StoppingConditionHasBeenSet() const
+{
+    return m_stoppingConditionHasBeenSet;
 }
 
 

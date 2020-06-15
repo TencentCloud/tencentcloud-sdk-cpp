@@ -33,7 +33,9 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_lifecycleScriptsNameHasBeenSet(false),
     m_defaultCodeRepositoryHasBeenSet(false),
     m_additionalCodeRepositoriesHasBeenSet(false),
-    m_clsAccessHasBeenSet(false)
+    m_clsAccessHasBeenSet(false),
+    m_stoppingConditionHasBeenSet(false),
+    m_autoStoppingHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,23 @@ string CreateNotebookInstanceRequest::ToJsonString() const
         string key = "ClsAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_clsAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stoppingConditionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StoppingCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_stoppingCondition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoStoppingHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AutoStopping";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_autoStopping.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -295,6 +314,38 @@ void CreateNotebookInstanceRequest::SetClsAccess(const string& _clsAccess)
 bool CreateNotebookInstanceRequest::ClsAccessHasBeenSet() const
 {
     return m_clsAccessHasBeenSet;
+}
+
+StoppingCondition CreateNotebookInstanceRequest::GetStoppingCondition() const
+{
+    return m_stoppingCondition;
+}
+
+void CreateNotebookInstanceRequest::SetStoppingCondition(const StoppingCondition& _stoppingCondition)
+{
+    m_stoppingCondition = _stoppingCondition;
+    m_stoppingConditionHasBeenSet = true;
+}
+
+bool CreateNotebookInstanceRequest::StoppingConditionHasBeenSet() const
+{
+    return m_stoppingConditionHasBeenSet;
+}
+
+string CreateNotebookInstanceRequest::GetAutoStopping() const
+{
+    return m_autoStopping;
+}
+
+void CreateNotebookInstanceRequest::SetAutoStopping(const string& _autoStopping)
+{
+    m_autoStopping = _autoStopping;
+    m_autoStoppingHasBeenSet = true;
+}
+
+bool CreateNotebookInstanceRequest::AutoStoppingHasBeenSet() const
+{
+    return m_autoStoppingHasBeenSet;
 }
 
 

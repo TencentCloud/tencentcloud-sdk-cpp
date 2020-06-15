@@ -642,6 +642,49 @@ TioneClient::DescribeNotebookLifecycleScriptsOutcomeCallable TioneClient::Descri
     return task->get_future();
 }
 
+TioneClient::DescribeNotebookSummaryOutcome TioneClient::DescribeNotebookSummary(const DescribeNotebookSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookSummaryResponse rsp = DescribeNotebookSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookSummaryOutcome(rsp);
+        else
+            return DescribeNotebookSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeNotebookSummaryAsync(const DescribeNotebookSummaryRequest& request, const DescribeNotebookSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeNotebookSummaryOutcomeCallable TioneClient::DescribeNotebookSummaryCallable(const DescribeNotebookSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeTrainingJobOutcome TioneClient::DescribeTrainingJob(const DescribeTrainingJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrainingJob");

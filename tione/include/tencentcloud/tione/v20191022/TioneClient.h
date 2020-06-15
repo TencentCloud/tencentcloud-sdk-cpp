@@ -51,6 +51,8 @@
 #include <tencentcloud/tione/v20191022/model/DescribeNotebookLifecycleScriptResponse.h>
 #include <tencentcloud/tione/v20191022/model/DescribeNotebookLifecycleScriptsRequest.h>
 #include <tencentcloud/tione/v20191022/model/DescribeNotebookLifecycleScriptsResponse.h>
+#include <tencentcloud/tione/v20191022/model/DescribeNotebookSummaryRequest.h>
+#include <tencentcloud/tione/v20191022/model/DescribeNotebookSummaryResponse.h>
 #include <tencentcloud/tione/v20191022/model/DescribeTrainingJobRequest.h>
 #include <tencentcloud/tione/v20191022/model/DescribeTrainingJobResponse.h>
 #include <tencentcloud/tione/v20191022/model/StartNotebookInstanceRequest.h>
@@ -121,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeNotebookLifecycleScriptsResponse> DescribeNotebookLifecycleScriptsOutcome;
                 typedef std::future<DescribeNotebookLifecycleScriptsOutcome> DescribeNotebookLifecycleScriptsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeNotebookLifecycleScriptsRequest&, DescribeNotebookLifecycleScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookLifecycleScriptsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNotebookSummaryResponse> DescribeNotebookSummaryOutcome;
+                typedef std::future<DescribeNotebookSummaryOutcome> DescribeNotebookSummaryOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeNotebookSummaryRequest&, DescribeNotebookSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSummaryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTrainingJobResponse> DescribeTrainingJobOutcome;
                 typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingJobRequest&, DescribeTrainingJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingJobAsyncHandler;
@@ -270,6 +275,15 @@ namespace TencentCloud
                 DescribeNotebookLifecycleScriptsOutcome DescribeNotebookLifecycleScripts(const Model::DescribeNotebookLifecycleScriptsRequest &request);
                 void DescribeNotebookLifecycleScriptsAsync(const Model::DescribeNotebookLifecycleScriptsRequest& request, const DescribeNotebookLifecycleScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNotebookLifecycleScriptsOutcomeCallable DescribeNotebookLifecycleScriptsCallable(const Model::DescribeNotebookLifecycleScriptsRequest& request);
+
+                /**
+                 *查询Notebook概览数据
+                 * @param req DescribeNotebookSummaryRequest
+                 * @return DescribeNotebookSummaryOutcome
+                 */
+                DescribeNotebookSummaryOutcome DescribeNotebookSummary(const Model::DescribeNotebookSummaryRequest &request);
+                void DescribeNotebookSummaryAsync(const Model::DescribeNotebookSummaryRequest& request, const DescribeNotebookSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookSummaryOutcomeCallable DescribeNotebookSummaryCallable(const Model::DescribeNotebookSummaryRequest& request);
 
                 /**
                  *查询训练任务

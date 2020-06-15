@@ -1201,6 +1201,92 @@ TsfClient::DeployServerlessGroupOutcomeCallable TsfClient::DeployServerlessGroup
     return task->get_future();
 }
 
+TsfClient::DescribeApiDetailOutcome TsfClient::DescribeApiDetail(const DescribeApiDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiDetailResponse rsp = DescribeApiDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiDetailOutcome(rsp);
+        else
+            return DescribeApiDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiDetailOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeApiDetailAsync(const DescribeApiDetailRequest& request, const DescribeApiDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeApiDetailOutcomeCallable TsfClient::DescribeApiDetailCallable(const DescribeApiDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeApiVersionsOutcome TsfClient::DescribeApiVersions(const DescribeApiVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiVersionsResponse rsp = DescribeApiVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiVersionsOutcome(rsp);
+        else
+            return DescribeApiVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeApiVersionsAsync(const DescribeApiVersionsRequest& request, const DescribeApiVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeApiVersionsOutcomeCallable TsfClient::DescribeApiVersionsCallable(const DescribeApiVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeApplicationOutcome TsfClient::DescribeApplication(const DescribeApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApplication");
@@ -2054,6 +2140,49 @@ TsfClient::DescribeMicroservicesOutcomeCallable TsfClient::DescribeMicroservices
         [this, request]()
         {
             return this->DescribeMicroservices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeMsApiListOutcome TsfClient::DescribeMsApiList(const DescribeMsApiListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMsApiList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMsApiListResponse rsp = DescribeMsApiListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMsApiListOutcome(rsp);
+        else
+            return DescribeMsApiListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMsApiListOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeMsApiListAsync(const DescribeMsApiListRequest& request, const DescribeMsApiListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMsApiList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeMsApiListOutcomeCallable TsfClient::DescribeMsApiListCallable(const DescribeMsApiListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMsApiListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMsApiList(request);
         }
     );
 
