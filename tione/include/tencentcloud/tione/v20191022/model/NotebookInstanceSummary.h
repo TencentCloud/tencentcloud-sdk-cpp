@@ -310,6 +310,50 @@ Failed: 失败
                      */
                     bool BillingLabelHasBeenSet() const;
 
+                    /**
+                     * 获取运行时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuntimeInSeconds 运行时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRuntimeInSeconds() const;
+
+                    /**
+                     * 设置运行时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuntimeInSeconds 运行时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuntimeInSeconds(const int64_t& _runtimeInSeconds);
+
+                    /**
+                     * 判断参数 RuntimeInSeconds 是否已赋值
+                     * @return RuntimeInSeconds 是否已赋值
+                     */
+                    bool RuntimeInSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取剩余时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemainTimeInSeconds 剩余时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRemainTimeInSeconds() const;
+
+                    /**
+                     * 设置剩余时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemainTimeInSeconds 剩余时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemainTimeInSeconds(const int64_t& _remainTimeInSeconds);
+
+                    /**
+                     * 判断参数 RemainTimeInSeconds 是否已赋值
+                     * @return RemainTimeInSeconds 是否已赋值
+                     */
+                    bool RemainTimeInSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -393,6 +437,20 @@ Failed: 失败
                      */
                     BillingLabel m_billingLabel;
                     bool m_billingLabelHasBeenSet;
+
+                    /**
+                     * 运行时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_runtimeInSeconds;
+                    bool m_runtimeInSecondsHasBeenSet;
+
+                    /**
+                     * 剩余时长，秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_remainTimeInSeconds;
+                    bool m_remainTimeInSecondsHasBeenSet;
 
                 };
             }

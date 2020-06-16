@@ -32,7 +32,9 @@ NotebookInstanceSummary::NotebookInstanceSummary() :
     m_deadlineHasBeenSet(false),
     m_stoppingConditionHasBeenSet(false),
     m_prepayHasBeenSet(false),
-    m_billingLabelHasBeenSet(false)
+    m_billingLabelHasBeenSet(false),
+    m_runtimeInSecondsHasBeenSet(false),
+    m_remainTimeInSecondsHasBeenSet(false)
 {
 }
 
@@ -165,6 +167,26 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const Value &value)
         m_billingLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("RuntimeInSeconds") && !value["RuntimeInSeconds"].IsNull())
+    {
+        if (!value["RuntimeInSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.RuntimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtimeInSeconds = value["RuntimeInSeconds"].GetInt64();
+        m_runtimeInSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemainTimeInSeconds") && !value["RemainTimeInSeconds"].IsNull())
+    {
+        if (!value["RemainTimeInSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NotebookInstanceSummary.RemainTimeInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remainTimeInSeconds = value["RemainTimeInSeconds"].GetInt64();
+        m_remainTimeInSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +282,22 @@ void NotebookInstanceSummary::ToJsonObject(Value &value, Document::AllocatorType
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_billingLabel.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_runtimeInSecondsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RuntimeInSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runtimeInSeconds, allocator);
+    }
+
+    if (m_remainTimeInSecondsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RemainTimeInSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainTimeInSeconds, allocator);
     }
 
 }
@@ -439,5 +477,37 @@ void NotebookInstanceSummary::SetBillingLabel(const BillingLabel& _billingLabel)
 bool NotebookInstanceSummary::BillingLabelHasBeenSet() const
 {
     return m_billingLabelHasBeenSet;
+}
+
+int64_t NotebookInstanceSummary::GetRuntimeInSeconds() const
+{
+    return m_runtimeInSeconds;
+}
+
+void NotebookInstanceSummary::SetRuntimeInSeconds(const int64_t& _runtimeInSeconds)
+{
+    m_runtimeInSeconds = _runtimeInSeconds;
+    m_runtimeInSecondsHasBeenSet = true;
+}
+
+bool NotebookInstanceSummary::RuntimeInSecondsHasBeenSet() const
+{
+    return m_runtimeInSecondsHasBeenSet;
+}
+
+int64_t NotebookInstanceSummary::GetRemainTimeInSeconds() const
+{
+    return m_remainTimeInSeconds;
+}
+
+void NotebookInstanceSummary::SetRemainTimeInSeconds(const int64_t& _remainTimeInSeconds)
+{
+    m_remainTimeInSeconds = _remainTimeInSeconds;
+    m_remainTimeInSecondsHasBeenSet = true;
+}
+
+bool NotebookInstanceSummary::RemainTimeInSecondsHasBeenSet() const
+{
+    return m_remainTimeInSecondsHasBeenSet;
 }
 
