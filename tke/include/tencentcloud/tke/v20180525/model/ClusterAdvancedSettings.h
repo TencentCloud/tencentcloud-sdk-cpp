@@ -191,6 +191,24 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取集群的网络代理模型
+                     * @return KubeProxyMode 集群的网络代理模型
+                     */
+                    std::string GetKubeProxyMode() const;
+
+                    /**
+                     * 设置集群的网络代理模型
+                     * @param KubeProxyMode 集群的网络代理模型
+                     */
+                    void SetKubeProxyMode(const std::string& _kubeProxyMode);
+
+                    /**
+                     * 判断参数 KubeProxyMode 是否已赋值
+                     * @return KubeProxyMode 是否已赋值
+                     */
+                    bool KubeProxyModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +258,12 @@ namespace TencentCloud
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * 集群的网络代理模型
+                     */
+                    std::string m_kubeProxyMode;
+                    bool m_kubeProxyModeHasBeenSet;
 
                 };
             }

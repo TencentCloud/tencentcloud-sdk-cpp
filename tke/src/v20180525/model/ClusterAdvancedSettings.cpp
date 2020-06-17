@@ -29,7 +29,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_extraArgsHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_isNonStaticIpModeHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_kubeProxyModeHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
         m_deletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("KubeProxyMode") && !value["KubeProxyMode"].IsNull())
+    {
+        if (!value["KubeProxyMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.KubeProxyMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kubeProxyMode = string(value["KubeProxyMode"].GetString());
+        m_kubeProxyModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -195,6 +206,14 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_kubeProxyModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KubeProxyMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_kubeProxyMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -326,5 +345,21 @@ void ClusterAdvancedSettings::SetDeletionProtection(const bool& _deletionProtect
 bool ClusterAdvancedSettings::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetKubeProxyMode() const
+{
+    return m_kubeProxyMode;
+}
+
+void ClusterAdvancedSettings::SetKubeProxyMode(const string& _kubeProxyMode)
+{
+    m_kubeProxyMode = _kubeProxyMode;
+    m_kubeProxyModeHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::KubeProxyModeHasBeenSet() const
+{
+    return m_kubeProxyModeHasBeenSet;
 }
 

@@ -44,6 +44,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取地域
+                     * @return EcmRegion 地域
+                     */
+                    std::string GetEcmRegion() const;
+
+                    /**
+                     * 设置地域
+                     * @param EcmRegion 地域
+                     */
+                    void SetEcmRegion(const std::string& _ecmRegion);
+
+                    /**
+                     * 判断参数 EcmRegion 是否已赋值
+                     * @return EcmRegion 是否已赋值
+                     */
+                    bool EcmRegionHasBeenSet() const;
+
+                    /**
                      * 获取VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
                      * @return VpcIds VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
                      */
@@ -139,25 +157,13 @@ tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值
                      */
                     bool LimitHasBeenSet() const;
 
-                    /**
-                     * 获取地域
-                     * @return EcmRegion 地域
-                     */
-                    std::string GetEcmRegion() const;
-
-                    /**
-                     * 设置地域
-                     * @param EcmRegion 地域
-                     */
-                    void SetEcmRegion(const std::string& _ecmRegion);
-
-                    /**
-                     * 判断参数 EcmRegion 是否已赋值
-                     * @return EcmRegion 是否已赋值
-                     */
-                    bool EcmRegionHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_ecmRegion;
+                    bool m_ecmRegionHasBeenSet;
 
                     /**
                      * VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
@@ -188,12 +194,6 @@ tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 地域
-                     */
-                    std::string m_ecmRegion;
-                    bool m_ecmRegionHasBeenSet;
 
                 };
             }

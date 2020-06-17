@@ -814,6 +814,49 @@ EcmClient::DescribeConfigOutcomeCallable EcmClient::DescribeConfigCallable(const
     return task->get_future();
 }
 
+EcmClient::DescribeCustomImageTaskOutcome EcmClient::DescribeCustomImageTask(const DescribeCustomImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomImageTaskResponse rsp = DescribeCustomImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomImageTaskOutcome(rsp);
+        else
+            return DescribeCustomImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeCustomImageTaskAsync(const DescribeCustomImageTaskRequest& request, const DescribeCustomImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomImageTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeCustomImageTaskOutcomeCallable EcmClient::DescribeCustomImageTaskCallable(const DescribeCustomImageTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomImageTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomImageTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeDefaultSubnetOutcome EcmClient::DescribeDefaultSubnet(const DescribeDefaultSubnetRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDefaultSubnet");
@@ -893,6 +936,49 @@ EcmClient::DescribeImageOutcomeCallable EcmClient::DescribeImageCallable(const D
         [this, request]()
         {
             return this->DescribeImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::DescribeImportImageOsOutcome EcmClient::DescribeImportImageOs(const DescribeImportImageOsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImportImageOs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImportImageOsResponse rsp = DescribeImportImageOsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImportImageOsOutcome(rsp);
+        else
+            return DescribeImportImageOsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImportImageOsOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeImportImageOsAsync(const DescribeImportImageOsRequest& request, const DescribeImportImageOsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImportImageOs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeImportImageOsOutcomeCallable EcmClient::DescribeImportImageOsCallable(const DescribeImportImageOsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImportImageOsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImportImageOs(request);
         }
     );
 
@@ -1538,6 +1624,49 @@ EcmClient::DisassociateAddressOutcomeCallable EcmClient::DisassociateAddressCall
         [this, request]()
         {
             return this->DisassociateAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ImportCustomImageOutcome EcmClient::ImportCustomImage(const ImportCustomImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportCustomImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportCustomImageResponse rsp = ImportCustomImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportCustomImageOutcome(rsp);
+        else
+            return ImportCustomImageOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportCustomImageOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ImportCustomImageAsync(const ImportCustomImageRequest& request, const ImportCustomImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportCustomImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ImportCustomImageOutcomeCallable EcmClient::ImportCustomImageCallable(const ImportCustomImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportCustomImageOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportCustomImage(request);
         }
     );
 

@@ -24,11 +24,11 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeVpcsRequest::DescribeVpcsRequest() :
+    m_ecmRegionHasBeenSet(false),
     m_vpcIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_ecmRegionHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,14 @@ string DescribeVpcsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_ecmRegionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EcmRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_vpcIdsHasBeenSet)
     {
@@ -83,14 +91,6 @@ string DescribeVpcsRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_ecmRegionHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "EcmRegion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
-    }
-
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -98,6 +98,22 @@ string DescribeVpcsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeVpcsRequest::GetEcmRegion() const
+{
+    return m_ecmRegion;
+}
+
+void DescribeVpcsRequest::SetEcmRegion(const string& _ecmRegion)
+{
+    m_ecmRegion = _ecmRegion;
+    m_ecmRegionHasBeenSet = true;
+}
+
+bool DescribeVpcsRequest::EcmRegionHasBeenSet() const
+{
+    return m_ecmRegionHasBeenSet;
+}
 
 vector<string> DescribeVpcsRequest::GetVpcIds() const
 {
@@ -161,22 +177,6 @@ void DescribeVpcsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeVpcsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-string DescribeVpcsRequest::GetEcmRegion() const
-{
-    return m_ecmRegion;
-}
-
-void DescribeVpcsRequest::SetEcmRegion(const string& _ecmRegion)
-{
-    m_ecmRegion = _ecmRegion;
-    m_ecmRegionHasBeenSet = true;
-}
-
-bool DescribeVpcsRequest::EcmRegionHasBeenSet() const
-{
-    return m_ecmRegionHasBeenSet;
 }
 
 

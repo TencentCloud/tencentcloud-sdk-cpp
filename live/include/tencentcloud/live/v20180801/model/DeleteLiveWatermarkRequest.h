@@ -45,16 +45,20 @@ namespace TencentCloud
                     /**
                      * 获取水印 ID。
 在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。
+或DescribeLiveWatermarks接口返回的水印ID。
                      * @return WatermarkId 水印 ID。
 在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。
+或DescribeLiveWatermarks接口返回的水印ID。
                      */
                     int64_t GetWatermarkId() const;
 
                     /**
                      * 设置水印 ID。
 在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。
+或DescribeLiveWatermarks接口返回的水印ID。
                      * @param WatermarkId 水印 ID。
 在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。
+或DescribeLiveWatermarks接口返回的水印ID。
                      */
                     void SetWatermarkId(const int64_t& _watermarkId);
 
@@ -69,6 +73,7 @@ namespace TencentCloud
                     /**
                      * 水印 ID。
 在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。
+或DescribeLiveWatermarks接口返回的水印ID。
                      */
                     int64_t m_watermarkId;
                     bool m_watermarkIdHasBeenSet;

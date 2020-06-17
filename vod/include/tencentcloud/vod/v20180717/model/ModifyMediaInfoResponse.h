@@ -45,10 +45,8 @@ namespace TencentCloud
                     /**
                      * 获取新的视频封面 URL。
 * 注意：仅当请求携带 CoverData 时此返回值有效。 *
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoverUrl 新的视频封面 URL。
 * 注意：仅当请求携带 CoverData 时此返回值有效。 *
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCoverUrl() const;
 
@@ -63,7 +61,6 @@ namespace TencentCloud
                     /**
                      * 新的视频封面 URL。
 * 注意：仅当请求携带 CoverData 时此返回值有效。 *
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略ID
-                     * @return PolicyId 策略ID
+                     * 获取策略ID，与PolicyName二选一必填
+                     * @return PolicyId 策略ID，与PolicyName二选一必填
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * 设置策略ID，与PolicyName二选一必填
+                     * @param PolicyId 策略ID，与PolicyName二选一必填
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取策略名
-                     * @return PolicyName 策略名
+                     * 获取策略名，与PolicyId二选一必填
+                     * @return PolicyName 策略名，与PolicyId二选一必填
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名
-                     * @param PolicyName 策略名
+                     * 设置策略名，与PolicyId二选一必填
+                     * @param PolicyName 策略名，与PolicyId二选一必填
                      */
                     void SetPolicyName(const std::string& _policyName);
 
@@ -135,13 +135,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略ID
+                     * 策略ID，与PolicyName二选一必填
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 策略名
+                     * 策略名，与PolicyId二选一必填
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;

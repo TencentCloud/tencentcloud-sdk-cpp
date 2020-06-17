@@ -43,9 +43,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略id
+                     * 获取策略id，入参是PolicyName时，才会返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolicyId 策略id
+                     * @return PolicyId 策略id，入参是PolicyName时，才会返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetPolicyId() const;
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略id
+                     * 策略id，入参是PolicyName时，才会返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_policyId;

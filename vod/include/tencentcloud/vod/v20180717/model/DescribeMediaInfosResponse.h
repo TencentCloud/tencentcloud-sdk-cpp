@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体文件信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaInfoSet 媒体文件信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaInfo> GetMediaInfoSet() const;
 
@@ -59,9 +57,7 @@ namespace TencentCloud
 
                     /**
                      * 获取不存在的文件 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotExistFileIdSet 不存在的文件 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetNotExistFileIdSet() const;
 
@@ -75,14 +71,12 @@ namespace TencentCloud
 
                     /**
                      * 媒体文件信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaInfo> m_mediaInfoSet;
                     bool m_mediaInfoSetHasBeenSet;
 
                     /**
                      * 不存在的文件 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_notExistFileIdSet;
                     bool m_notExistFileIdSetHasBeenSet;

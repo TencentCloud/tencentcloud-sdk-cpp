@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名。
-                     * @return DomainName 域名。
+                     * 获取播放域名。
+                     * @return DomainName 播放域名。
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置域名。
-                     * @param DomainName 域名。
+                     * 设置播放域名。
+                     * @param DomainName 播放域名。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      * @return Enable 是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      * @param Enable 是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      */
                     void SetEnable(const int64_t& _enable);
 
@@ -80,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取鉴权key。
+不传表示不修改当前值。
                      * @return AuthKey 鉴权key。
+不传表示不修改当前值。
                      */
                     std::string GetAuthKey() const;
 
                     /**
                      * 设置鉴权key。
+不传表示不修改当前值。
                      * @param AuthKey 鉴权key。
+不传表示不修改当前值。
                      */
                     void SetAuthKey(const std::string& _authKey);
 
@@ -98,13 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取有效时间，单位：秒。
+不传表示不修改当前值。
                      * @return AuthDelta 有效时间，单位：秒。
+不传表示不修改当前值。
                      */
                     uint64_t GetAuthDelta() const;
 
                     /**
                      * 设置有效时间，单位：秒。
+不传表示不修改当前值。
                      * @param AuthDelta 有效时间，单位：秒。
+不传表示不修改当前值。
                      */
                     void SetAuthDelta(const uint64_t& _authDelta);
 
@@ -115,14 +127,18 @@ namespace TencentCloud
                     bool AuthDeltaHasBeenSet() const;
 
                     /**
-                     * 获取鉴权backkey。
-                     * @return AuthBackKey 鉴权backkey。
+                     * 获取鉴权备用key。
+不传表示不修改当前值。
+                     * @return AuthBackKey 鉴权备用key。
+不传表示不修改当前值。
                      */
                     std::string GetAuthBackKey() const;
 
                     /**
-                     * 设置鉴权backkey。
-                     * @param AuthBackKey 鉴权backkey。
+                     * 设置鉴权备用key。
+不传表示不修改当前值。
+                     * @param AuthBackKey 鉴权备用key。
+不传表示不修改当前值。
                      */
                     void SetAuthBackKey(const std::string& _authBackKey);
 
@@ -135,31 +151,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名。
+                     * 播放域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
                      * 是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
                      * 鉴权key。
+不传表示不修改当前值。
                      */
                     std::string m_authKey;
                     bool m_authKeyHasBeenSet;
 
                     /**
                      * 有效时间，单位：秒。
+不传表示不修改当前值。
                      */
                     uint64_t m_authDelta;
                     bool m_authDeltaHasBeenSet;
 
                     /**
-                     * 鉴权backkey。
+                     * 鉴权备用key。
+不传表示不修改当前值。
                      */
                     std::string m_authBackKey;
                     bool m_authBackKeyHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书Id。
-                     * @return CertId 证书Id。
+                     * 获取DescribeLiveCerts接口获取到的证书Id。
+                     * @return CertId DescribeLiveCerts接口获取到的证书Id。
                      */
                     int64_t GetCertId() const;
 
                     /**
-                     * 设置证书Id。
-                     * @param CertId 证书Id。
+                     * 设置DescribeLiveCerts接口获取到的证书Id。
+                     * @param CertId DescribeLiveCerts接口获取到的证书Id。
                      */
                     void SetCertId(const int64_t& _certId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书Id。
+                     * DescribeLiveCerts接口获取到的证书Id。
                      */
                     int64_t m_certId;
                     bool m_certIdHasBeenSet;

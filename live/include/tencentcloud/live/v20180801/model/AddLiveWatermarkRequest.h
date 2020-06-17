@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取水印名称。
+最长16字节。
                      * @return WatermarkName 水印名称。
+最长16字节。
                      */
                     std::string GetWatermarkName() const;
 
                     /**
                      * 设置水印名称。
+最长16字节。
                      * @param WatermarkName 水印名称。
+最长16字节。
                      */
                     void SetWatermarkName(const std::string& _watermarkName);
 
@@ -79,14 +83,14 @@ namespace TencentCloud
                     bool WatermarkNameHasBeenSet() const;
 
                     /**
-                     * 获取显示位置，X轴偏移，默认 0。
-                     * @return XPosition 显示位置，X轴偏移，默认 0。
+                     * 获取显示位置，X轴偏移，单位是百分比，默认 0。
+                     * @return XPosition 显示位置，X轴偏移，单位是百分比，默认 0。
                      */
                     int64_t GetXPosition() const;
 
                     /**
-                     * 设置显示位置，X轴偏移，默认 0。
-                     * @param XPosition 显示位置，X轴偏移，默认 0。
+                     * 设置显示位置，X轴偏移，单位是百分比，默认 0。
+                     * @param XPosition 显示位置，X轴偏移，单位是百分比，默认 0。
                      */
                     void SetXPosition(const int64_t& _xPosition);
 
@@ -97,14 +101,14 @@ namespace TencentCloud
                     bool XPositionHasBeenSet() const;
 
                     /**
-                     * 获取显示位置，Y轴偏移，默认 0。
-                     * @return YPosition 显示位置，Y轴偏移，默认 0。
+                     * 获取显示位置，Y轴偏移，单位是百分比，默认 0。
+                     * @return YPosition 显示位置，Y轴偏移，单位是百分比，默认 0。
                      */
                     int64_t GetYPosition() const;
 
                     /**
-                     * 设置显示位置，Y轴偏移，默认 0。
-                     * @param YPosition 显示位置，Y轴偏移，默认 0。
+                     * 设置显示位置，Y轴偏移，单位是百分比，默认 0。
+                     * @param YPosition 显示位置，Y轴偏移，单位是百分比，默认 0。
                      */
                     void SetYPosition(const int64_t& _yPosition);
 
@@ -160,18 +164,19 @@ namespace TencentCloud
 
                     /**
                      * 水印名称。
+最长16字节。
                      */
                     std::string m_watermarkName;
                     bool m_watermarkNameHasBeenSet;
 
                     /**
-                     * 显示位置，X轴偏移，默认 0。
+                     * 显示位置，X轴偏移，单位是百分比，默认 0。
                      */
                     int64_t m_xPosition;
                     bool m_xPositionHasBeenSet;
 
                     /**
-                     * 显示位置，Y轴偏移，默认 0。
+                     * 显示位置，Y轴偏移，单位是百分比，默认 0。
                      */
                     int64_t m_yPosition;
                     bool m_yPositionHasBeenSet;

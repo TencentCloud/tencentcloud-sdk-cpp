@@ -59,10 +59,14 @@
 #include <tencentcloud/ecm/v20190719/model/DescribeBaseOverviewResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeConfigRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeConfigResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeDefaultSubnetResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeImageResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeImportImageOsRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeImportImageOsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstanceTypeConfigRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstanceTypeConfigResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DisassociateAddressResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ImportCustomImageRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ImportCustomImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ImportImageRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ImportImageResponse.h>
 #include <tencentcloud/ecm/v20190719/model/MigrateNetworkInterfaceRequest.h>
@@ -205,12 +211,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeConfigResponse> DescribeConfigOutcome;
                 typedef std::future<DescribeConfigOutcome> DescribeConfigOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeConfigRequest&, DescribeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCustomImageTaskResponse> DescribeCustomImageTaskOutcome;
+                typedef std::future<DescribeCustomImageTaskOutcome> DescribeCustomImageTaskOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeCustomImageTaskRequest&, DescribeCustomImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomImageTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDefaultSubnetResponse> DescribeDefaultSubnetOutcome;
                 typedef std::future<DescribeDefaultSubnetOutcome> DescribeDefaultSubnetOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeDefaultSubnetRequest&, DescribeDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultSubnetAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImageResponse> DescribeImageOutcome;
                 typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeImageRequest&, DescribeImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImportImageOsResponse> DescribeImportImageOsOutcome;
+                typedef std::future<DescribeImportImageOsOutcome> DescribeImportImageOsOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeImportImageOsRequest&, DescribeImportImageOsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportImageOsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceTypeConfigResponse> DescribeInstanceTypeConfigOutcome;
                 typedef std::future<DescribeInstanceTypeConfigOutcome> DescribeInstanceTypeConfigOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeInstanceTypeConfigRequest&, DescribeInstanceTypeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTypeConfigAsyncHandler;
@@ -256,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DisassociateAddressResponse> DisassociateAddressOutcome;
                 typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DisassociateAddressRequest&, DisassociateAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateAddressAsyncHandler;
+                typedef Outcome<Error, Model::ImportCustomImageResponse> ImportCustomImageOutcome;
+                typedef std::future<ImportCustomImageOutcome> ImportCustomImageOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ImportCustomImageRequest&, ImportCustomImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportCustomImageAsyncHandler;
                 typedef Outcome<Error, Model::ImportImageResponse> ImportImageOutcome;
                 typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ImportImageRequest&, ImportImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportImageAsyncHandler;
@@ -494,6 +509,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DescribeConfigOutcomeCallable DescribeConfigCallable(const Model::DescribeConfigRequest& request);
 
                 /**
+                 *查询导入镜像任务
+                 * @param req DescribeCustomImageTaskRequest
+                 * @return DescribeCustomImageTaskOutcome
+                 */
+                DescribeCustomImageTaskOutcome DescribeCustomImageTask(const Model::DescribeCustomImageTaskRequest &request);
+                void DescribeCustomImageTaskAsync(const Model::DescribeCustomImageTaskRequest& request, const DescribeCustomImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomImageTaskOutcomeCallable DescribeCustomImageTaskCallable(const Model::DescribeCustomImageTaskRequest& request);
+
+                /**
                  *查询可用区的默认子网
                  * @param req DescribeDefaultSubnetRequest
                  * @return DescribeDefaultSubnetOutcome
@@ -510,6 +534,15 @@ EIP 如果欠费或被封堵，则不能被绑定。
                 DescribeImageOutcome DescribeImage(const Model::DescribeImageRequest &request);
                 void DescribeImageAsync(const Model::DescribeImageRequest& request, const DescribeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageOutcomeCallable DescribeImageCallable(const Model::DescribeImageRequest& request);
+
+                /**
+                 *查询外部导入镜像支持的OS列表
+                 * @param req DescribeImportImageOsRequest
+                 * @return DescribeImportImageOsOutcome
+                 */
+                DescribeImportImageOsOutcome DescribeImportImageOs(const Model::DescribeImportImageOsRequest &request);
+                void DescribeImportImageOsAsync(const Model::DescribeImportImageOsRequest& request, const DescribeImportImageOsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImportImageOsOutcomeCallable DescribeImportImageOsCallable(const Model::DescribeImportImageOsRequest& request);
 
                 /**
                  *获取机型配置列表
@@ -647,6 +680,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 DisassociateAddressOutcome DisassociateAddress(const Model::DisassociateAddressRequest &request);
                 void DisassociateAddressAsync(const Model::DisassociateAddressRequest& request, const DisassociateAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateAddressOutcomeCallable DisassociateAddressCallable(const Model::DisassociateAddressRequest& request);
+
+                /**
+                 *从腾讯云COS导入自定义镜像
+                 * @param req ImportCustomImageRequest
+                 * @return ImportCustomImageOutcome
+                 */
+                ImportCustomImageOutcome ImportCustomImage(const Model::ImportCustomImageRequest &request);
+                void ImportCustomImageAsync(const Model::ImportCustomImageRequest& request, const ImportCustomImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportCustomImageOutcomeCallable ImportCustomImageCallable(const Model::ImportCustomImageRequest& request);
 
                 /**
                  *从CVM产品导入镜像到ECM

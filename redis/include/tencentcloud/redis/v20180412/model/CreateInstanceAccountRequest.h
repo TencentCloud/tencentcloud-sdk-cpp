@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
-                     * 获取读写策略：填写r、w、rw，表示只读、只写、读写
-                     * @return Privilege 读写策略：填写r、w、rw，表示只读、只写、读写
+                     * 获取读写策略：填写r、rw，表示只读、读写
+                     * @return Privilege 读写策略：填写r、rw，表示只读、读写
                      */
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置读写策略：填写r、w、rw，表示只读、只写、读写
-                     * @param Privilege 读写策略：填写r、w、rw，表示只读、只写、读写
+                     * 设置读写策略：填写r、rw，表示只读、读写
+                     * @param Privilege 读写策略：填写r、rw，表示只读、读写
                      */
                     void SetPrivilege(const std::string& _privilege);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_readonlyPolicyHasBeenSet;
 
                     /**
-                     * 读写策略：填写r、w、rw，表示只读、只写、读写
+                     * 读写策略：填写r、rw，表示只读、读写
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;

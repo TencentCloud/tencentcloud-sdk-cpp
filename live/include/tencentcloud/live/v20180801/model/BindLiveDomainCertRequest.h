@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取状态，0： 关闭  1：打开。
-                     * @return Status 状态，0： 关闭  1：打开。
+                     * 获取HTTPS开启状态，0： 关闭  1：打开。
+                     * @return Status HTTPS开启状态，0： 关闭  1：打开。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态，0： 关闭  1：打开。
-                     * @param Status 状态，0： 关闭  1：打开。
+                     * 设置HTTPS开启状态，0： 关闭  1：打开。
+                     * @param Status HTTPS开启状态，0： 关闭  1：打开。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 状态，0： 关闭  1：打开。
+                     * HTTPS开启状态，0： 关闭  1：打开。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

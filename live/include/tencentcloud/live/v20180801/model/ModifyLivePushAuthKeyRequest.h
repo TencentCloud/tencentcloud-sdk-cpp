@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      * @return Enable 是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      * @param Enable 是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      */
                     void SetEnable(const int64_t& _enable);
 
@@ -80,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取主鉴权key。
+不传表示不修改当前值。
                      * @return MasterAuthKey 主鉴权key。
+不传表示不修改当前值。
                      */
                     std::string GetMasterAuthKey() const;
 
                     /**
                      * 设置主鉴权key。
+不传表示不修改当前值。
                      * @param MasterAuthKey 主鉴权key。
+不传表示不修改当前值。
                      */
                     void SetMasterAuthKey(const std::string& _masterAuthKey);
 
@@ -98,13 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取备鉴权key。
+不传表示不修改当前值。
                      * @return BackupAuthKey 备鉴权key。
+不传表示不修改当前值。
                      */
                     std::string GetBackupAuthKey() const;
 
                     /**
                      * 设置备鉴权key。
+不传表示不修改当前值。
                      * @param BackupAuthKey 备鉴权key。
+不传表示不修改当前值。
                      */
                     void SetBackupAuthKey(const std::string& _backupAuthKey);
 
@@ -142,18 +154,21 @@ namespace TencentCloud
 
                     /**
                      * 是否启用，0：关闭，1：启用。
+不传表示不修改当前值。
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
                      * 主鉴权key。
+不传表示不修改当前值。
                      */
                     std::string m_masterAuthKey;
                     bool m_masterAuthKeyHasBeenSet;
 
                     /**
                      * 备鉴权key。
+不传表示不修改当前值。
                      */
                     std::string m_backupAuthKey;
                     bool m_backupAuthKeyHasBeenSet;
