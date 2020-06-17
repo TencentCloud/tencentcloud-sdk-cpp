@@ -31,6 +31,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TextDetectResponse.h
   include/tencentcloud/ocr/v20181119/model/FinanBillSliceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/Words.h
   include/tencentcloud/ocr/v20181119/model/TextDetectionEn.h
   include/tencentcloud/ocr/v20181119/model/PermitOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRRequest.h
@@ -44,6 +45,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralInfo.h
+  include/tencentcloud/ocr/v20181119/model/WordCoordPoint.h
   include/tencentcloud/ocr/v20181119/model/InstitutionOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextDetection.h
@@ -108,7 +110,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TextVehicleFront.h
   include/tencentcloud/ocr/v20181119/model/FinanBillSliceInfo.h
   include/tencentcloud/ocr/v20181119/model/QueryBarCodeResponse.h
-  include/tencentcloud/ocr/v20181119/model/EduPaperOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ArithmeticOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FinanBillSliceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRRequest.h
@@ -118,7 +120,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TextWaybill.h
   include/tencentcloud/ocr/v20181119/model/QuestionObj.h
   include/tencentcloud/ocr/v20181119/model/VinOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ArithmeticOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/EduPaperOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h
@@ -142,6 +144,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/EnglishOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/BusInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/CandWord.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseInfo.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRResponse.h
@@ -178,6 +181,7 @@ set(ocr_src
   src/v20181119/model/TextDetectResponse.cpp
   src/v20181119/model/FinanBillSliceOCRResponse.cpp
   src/v20181119/model/DriverLicenseOCRResponse.cpp
+  src/v20181119/model/Words.cpp
   src/v20181119/model/TextDetectionEn.cpp
   src/v20181119/model/PermitOCRResponse.cpp
   src/v20181119/model/InvoiceGeneralOCRRequest.cpp
@@ -191,6 +195,7 @@ set(ocr_src
   src/v20181119/model/VehicleLicenseOCRRequest.cpp
   src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
   src/v20181119/model/InvoiceGeneralInfo.cpp
+  src/v20181119/model/WordCoordPoint.cpp
   src/v20181119/model/InstitutionOCRResponse.cpp
   src/v20181119/model/DriverLicenseOCRRequest.cpp
   src/v20181119/model/TextDetection.cpp
@@ -255,7 +260,7 @@ set(ocr_src
   src/v20181119/model/TextVehicleFront.cpp
   src/v20181119/model/FinanBillSliceInfo.cpp
   src/v20181119/model/QueryBarCodeResponse.cpp
-  src/v20181119/model/EduPaperOCRRequest.cpp
+  src/v20181119/model/ArithmeticOCRRequest.cpp
   src/v20181119/model/FinanBillSliceOCRRequest.cpp
   src/v20181119/model/MLIDPassportOCRResponse.cpp
   src/v20181119/model/VatRollInvoiceOCRRequest.cpp
@@ -265,7 +270,7 @@ set(ocr_src
   src/v20181119/model/TextWaybill.cpp
   src/v20181119/model/QuestionObj.cpp
   src/v20181119/model/VinOCRResponse.cpp
-  src/v20181119/model/ArithmeticOCRRequest.cpp
+  src/v20181119/model/EduPaperOCRRequest.cpp
   src/v20181119/model/FormulaOCRRequest.cpp
   src/v20181119/model/PassportOCRRequest.cpp
   src/v20181119/model/DutyPaidProofOCRRequest.cpp
@@ -289,6 +294,7 @@ set(ocr_src
   src/v20181119/model/EnglishOCRResponse.cpp
   src/v20181119/model/BusInvoiceOCRRequest.cpp
   src/v20181119/model/QuotaInvoiceOCRResponse.cpp
+  src/v20181119/model/CandWord.cpp
   src/v20181119/model/EnterpriseLicenseInfo.cpp
   src/v20181119/model/InsuranceBillOCRRequest.cpp
   src/v20181119/model/GeneralHandwritingOCRResponse.cpp

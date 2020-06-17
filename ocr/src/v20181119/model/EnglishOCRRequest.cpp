@@ -25,7 +25,9 @@ using namespace std;
 
 EnglishOCRRequest::EnglishOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_enableCoordPointHasBeenSet(false),
+    m_enableCandWordHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,22 @@ string EnglishOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCoordPointHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableCoordPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCoordPoint, allocator);
+    }
+
+    if (m_enableCandWordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableCandWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCandWord, allocator);
     }
 
 
@@ -90,6 +108,38 @@ void EnglishOCRRequest::SetImageUrl(const string& _imageUrl)
 bool EnglishOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool EnglishOCRRequest::GetEnableCoordPoint() const
+{
+    return m_enableCoordPoint;
+}
+
+void EnglishOCRRequest::SetEnableCoordPoint(const bool& _enableCoordPoint)
+{
+    m_enableCoordPoint = _enableCoordPoint;
+    m_enableCoordPointHasBeenSet = true;
+}
+
+bool EnglishOCRRequest::EnableCoordPointHasBeenSet() const
+{
+    return m_enableCoordPointHasBeenSet;
+}
+
+bool EnglishOCRRequest::GetEnableCandWord() const
+{
+    return m_enableCandWord;
+}
+
+void EnglishOCRRequest::SetEnableCandWord(const bool& _enableCandWord)
+{
+    m_enableCandWord = _enableCandWord;
+    m_enableCandWordHasBeenSet = true;
+}
+
+bool EnglishOCRRequest::EnableCandWordHasBeenSet() const
+{
+    return m_enableCandWordHasBeenSet;
 }
 
 

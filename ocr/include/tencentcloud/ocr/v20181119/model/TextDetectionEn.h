@@ -25,6 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Coord.h>
+#include <tencentcloud/ocr/v20181119/model/WordCoordPoint.h>
+#include <tencentcloud/ocr/v20181119/model/CandWord.h>
+#include <tencentcloud/ocr/v20181119/model/Words.h>
 
 
 namespace TencentCloud
@@ -48,14 +51,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别出的文本行内容
-                     * @return DetectedText 识别出的文本行内容
+                     * 获取识别出的文本行内容。
+                     * @return DetectedText 识别出的文本行内容。
                      */
                     std::string GetDetectedText() const;
 
                     /**
-                     * 设置识别出的文本行内容
-                     * @param DetectedText 识别出的文本行内容
+                     * 设置识别出的文本行内容。
+                     * @param DetectedText 识别出的文本行内容。
                      */
                     void SetDetectedText(const std::string& _detectedText);
 
@@ -66,14 +69,14 @@ namespace TencentCloud
                     bool DetectedTextHasBeenSet() const;
 
                     /**
-                     * 获取置信度 0 ~100
-                     * @return Confidence 置信度 0 ~100
+                     * 获取置信度 0 ~100。
+                     * @return Confidence 置信度 0 ~100。
                      */
                     int64_t GetConfidence() const;
 
                     /**
-                     * 设置置信度 0 ~100
-                     * @param Confidence 置信度 0 ~100
+                     * 设置置信度 0 ~100。
+                     * @param Confidence 置信度 0 ~100。
                      */
                     void SetConfidence(const int64_t& _confidence);
 
@@ -84,17 +87,17 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取文本行坐标，以四个顶点坐标表示
+                     * 获取文本行坐标，以四个顶点坐标表示。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Polygon 文本行坐标，以四个顶点坐标表示
+                     * @return Polygon 文本行坐标，以四个顶点坐标表示。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
-                     * 设置文本行坐标，以四个顶点坐标表示
+                     * 设置文本行坐标，以四个顶点坐标表示。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Polygon 文本行坐标，以四个顶点坐标表示
+                     * @param Polygon 文本行坐标，以四个顶点坐标表示。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPolygon(const std::vector<Coord>& _polygon);
@@ -123,22 +126,76 @@ namespace TencentCloud
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取单词在原图中的四点坐标。
+                     * @return WordCoordPoint 单词在原图中的四点坐标。
+                     */
+                    std::vector<WordCoordPoint> GetWordCoordPoint() const;
+
+                    /**
+                     * 设置单词在原图中的四点坐标。
+                     * @param WordCoordPoint 单词在原图中的四点坐标。
+                     */
+                    void SetWordCoordPoint(const std::vector<WordCoordPoint>& _wordCoordPoint);
+
+                    /**
+                     * 判断参数 WordCoordPoint 是否已赋值
+                     * @return WordCoordPoint 是否已赋值
+                     */
+                    bool WordCoordPointHasBeenSet() const;
+
+                    /**
+                     * 获取候选字符集(包含候选字Character以及置信度Confidence)。
+                     * @return CandWord 候选字符集(包含候选字Character以及置信度Confidence)。
+                     */
+                    std::vector<CandWord> GetCandWord() const;
+
+                    /**
+                     * 设置候选字符集(包含候选字Character以及置信度Confidence)。
+                     * @param CandWord 候选字符集(包含候选字Character以及置信度Confidence)。
+                     */
+                    void SetCandWord(const std::vector<CandWord>& _candWord);
+
+                    /**
+                     * 判断参数 CandWord 是否已赋值
+                     * @return CandWord 是否已赋值
+                     */
+                    bool CandWordHasBeenSet() const;
+
+                    /**
+                     * 获取识别出来的单词信息（包括单词Character和单词置信度confidence）
+                     * @return Words 识别出来的单词信息（包括单词Character和单词置信度confidence）
+                     */
+                    std::vector<Words> GetWords() const;
+
+                    /**
+                     * 设置识别出来的单词信息（包括单词Character和单词置信度confidence）
+                     * @param Words 识别出来的单词信息（包括单词Character和单词置信度confidence）
+                     */
+                    void SetWords(const std::vector<Words>& _words);
+
+                    /**
+                     * 判断参数 Words 是否已赋值
+                     * @return Words 是否已赋值
+                     */
+                    bool WordsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 识别出的文本行内容
+                     * 识别出的文本行内容。
                      */
                     std::string m_detectedText;
                     bool m_detectedTextHasBeenSet;
 
                     /**
-                     * 置信度 0 ~100
+                     * 置信度 0 ~100。
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 文本行坐标，以四个顶点坐标表示
+                     * 文本行坐标，以四个顶点坐标表示。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_polygon;
@@ -149,6 +206,24 @@ namespace TencentCloud
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
+
+                    /**
+                     * 单词在原图中的四点坐标。
+                     */
+                    std::vector<WordCoordPoint> m_wordCoordPoint;
+                    bool m_wordCoordPointHasBeenSet;
+
+                    /**
+                     * 候选字符集(包含候选字Character以及置信度Confidence)。
+                     */
+                    std::vector<CandWord> m_candWord;
+                    bool m_candWordHasBeenSet;
+
+                    /**
+                     * 识别出来的单词信息（包括单词Character和单词置信度confidence）
+                     */
+                    std::vector<Words> m_words;
+                    bool m_wordsHasBeenSet;
 
                 };
             }

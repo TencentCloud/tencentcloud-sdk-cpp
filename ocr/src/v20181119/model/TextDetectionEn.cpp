@@ -25,7 +25,10 @@ TextDetectionEn::TextDetectionEn() :
     m_detectedTextHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_polygonHasBeenSet(false),
-    m_advancedInfoHasBeenSet(false)
+    m_advancedInfoHasBeenSet(false),
+    m_wordCoordPointHasBeenSet(false),
+    m_candWordHasBeenSet(false),
+    m_wordsHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,66 @@ CoreInternalOutcome TextDetectionEn::Deserialize(const Value &value)
         m_advancedInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("WordCoordPoint") && !value["WordCoordPoint"].IsNull())
+    {
+        if (!value["WordCoordPoint"].IsArray())
+            return CoreInternalOutcome(Error("response `TextDetectionEn.WordCoordPoint` is not array type"));
+
+        const Value &tmpValue = value["WordCoordPoint"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WordCoordPoint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_wordCoordPoint.push_back(item);
+        }
+        m_wordCoordPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("CandWord") && !value["CandWord"].IsNull())
+    {
+        if (!value["CandWord"].IsArray())
+            return CoreInternalOutcome(Error("response `TextDetectionEn.CandWord` is not array type"));
+
+        const Value &tmpValue = value["CandWord"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CandWord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_candWord.push_back(item);
+        }
+        m_candWordHasBeenSet = true;
+    }
+
+    if (value.HasMember("Words") && !value["Words"].IsNull())
+    {
+        if (!value["Words"].IsArray())
+            return CoreInternalOutcome(Error("response `TextDetectionEn.Words` is not array type"));
+
+        const Value &tmpValue = value["Words"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Words item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_words.push_back(item);
+        }
+        m_wordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +191,51 @@ void TextDetectionEn::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wordCoordPointHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WordCoordPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_wordCoordPoint.begin(); itr != m_wordCoordPoint.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_candWordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CandWord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_candWord.begin(); itr != m_candWord.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_wordsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Words";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_words.begin(); itr != m_words.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -195,5 +303,53 @@ void TextDetectionEn::SetAdvancedInfo(const string& _advancedInfo)
 bool TextDetectionEn::AdvancedInfoHasBeenSet() const
 {
     return m_advancedInfoHasBeenSet;
+}
+
+vector<WordCoordPoint> TextDetectionEn::GetWordCoordPoint() const
+{
+    return m_wordCoordPoint;
+}
+
+void TextDetectionEn::SetWordCoordPoint(const vector<WordCoordPoint>& _wordCoordPoint)
+{
+    m_wordCoordPoint = _wordCoordPoint;
+    m_wordCoordPointHasBeenSet = true;
+}
+
+bool TextDetectionEn::WordCoordPointHasBeenSet() const
+{
+    return m_wordCoordPointHasBeenSet;
+}
+
+vector<CandWord> TextDetectionEn::GetCandWord() const
+{
+    return m_candWord;
+}
+
+void TextDetectionEn::SetCandWord(const vector<CandWord>& _candWord)
+{
+    m_candWord = _candWord;
+    m_candWordHasBeenSet = true;
+}
+
+bool TextDetectionEn::CandWordHasBeenSet() const
+{
+    return m_candWordHasBeenSet;
+}
+
+vector<Words> TextDetectionEn::GetWords() const
+{
+    return m_words;
+}
+
+void TextDetectionEn::SetWords(const vector<Words>& _words)
+{
+    m_words = _words;
+    m_wordsHasBeenSet = true;
+}
+
+bool TextDetectionEn::WordsHasBeenSet() const
+{
+    return m_wordsHasBeenSet;
 }
 

@@ -106,6 +106,50 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取单词四点坐标开关，开启可返回图片中单词的四点坐标。
+该参数默认值为false。
+                     * @return EnableCoordPoint 单词四点坐标开关，开启可返回图片中单词的四点坐标。
+该参数默认值为false。
+                     */
+                    bool GetEnableCoordPoint() const;
+
+                    /**
+                     * 设置单词四点坐标开关，开启可返回图片中单词的四点坐标。
+该参数默认值为false。
+                     * @param EnableCoordPoint 单词四点坐标开关，开启可返回图片中单词的四点坐标。
+该参数默认值为false。
+                     */
+                    void SetEnableCoordPoint(const bool& _enableCoordPoint);
+
+                    /**
+                     * 判断参数 EnableCoordPoint 是否已赋值
+                     * @return EnableCoordPoint 是否已赋值
+                     */
+                    bool EnableCoordPointHasBeenSet() const;
+
+                    /**
+                     * 获取候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
+该参数默认值为false。
+                     * @return EnableCandWord 候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
+该参数默认值为false。
+                     */
+                    bool GetEnableCandWord() const;
+
+                    /**
+                     * 设置候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
+该参数默认值为false。
+                     * @param EnableCandWord 候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
+该参数默认值为false。
+                     */
+                    void SetEnableCandWord(const bool& _enableCandWord);
+
+                    /**
+                     * 判断参数 EnableCandWord 是否已赋值
+                     * @return EnableCandWord 是否已赋值
+                     */
+                    bool EnableCandWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +170,20 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 单词四点坐标开关，开启可返回图片中单词的四点坐标。
+该参数默认值为false。
+                     */
+                    bool m_enableCoordPoint;
+                    bool m_enableCoordPointHasBeenSet;
+
+                    /**
+                     * 候选字开关，开启可返回识别时多个可能的候选字（每个候选字对应其置信度）。
+该参数默认值为false。
+                     */
+                    bool m_enableCandWord;
+                    bool m_enableCandWordHasBeenSet;
 
                 };
             }
