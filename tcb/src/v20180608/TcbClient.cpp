@@ -943,6 +943,49 @@ TcbClient::ModifyDatabaseACLOutcomeCallable TcbClient::ModifyDatabaseACLCallable
     return task->get_future();
 }
 
+TcbClient::ModifyEndUserOutcome TcbClient::ModifyEndUser(const ModifyEndUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEndUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEndUserResponse rsp = ModifyEndUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEndUserOutcome(rsp);
+        else
+            return ModifyEndUserOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEndUserOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyEndUserAsync(const ModifyEndUserRequest& request, const ModifyEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEndUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::ModifyEndUserOutcomeCallable TcbClient::ModifyEndUserCallable(const ModifyEndUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEndUserOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEndUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::ModifyEnvOutcome TcbClient::ModifyEnv(const ModifyEnvRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEnv");

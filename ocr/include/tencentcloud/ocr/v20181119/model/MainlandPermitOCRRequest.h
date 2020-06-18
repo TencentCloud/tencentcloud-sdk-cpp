@@ -107,14 +107,14 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取是非返回头像。默认不返回。
-                     * @return RetProfile 是非返回头像。默认不返回。
+                     * 获取是否返回头像。默认不返回。
+                     * @return RetProfile 是否返回头像。默认不返回。
                      */
                     bool GetRetProfile() const;
 
                     /**
-                     * 设置是非返回头像。默认不返回。
-                     * @param RetProfile 是非返回头像。默认不返回。
+                     * 设置是否返回头像。默认不返回。
+                     * @param RetProfile 是否返回头像。默认不返回。
                      */
                     void SetRetProfile(const bool& _retProfile);
 
@@ -146,7 +146,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 是非返回头像。默认不返回。
+                     * 是否返回头像。默认不返回。
                      */
                     bool m_retProfile;
                     bool m_retProfileHasBeenSet;

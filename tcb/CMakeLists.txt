@@ -27,6 +27,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserLoginStatisticRequest.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
   include/tencentcloud/tcb/v20180608/model/LoginStatistic.h
+  include/tencentcloud/tcb/v20180608/model/PostpayEnvQuota.h
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
   include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
@@ -64,13 +65,14 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/EnvBillingInfoItem.h
   include/tencentcloud/tcb/v20180608/model/PlatformStatistic.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/EnvInfo.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h
-  include/tencentcloud/tcb/v20180608/model/PostpayEnvQuota.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/EndUserInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h
@@ -91,6 +93,7 @@ set(tcb_src
   src/v20180608/model/DescribeEndUserLoginStatisticRequest.cpp
   src/v20180608/model/StorageInfo.cpp
   src/v20180608/model/LoginStatistic.cpp
+  src/v20180608/model/PostpayEnvQuota.cpp
   src/v20180608/model/FunctionInfo.cpp
   src/v20180608/model/CreatePostpayPackageResponse.cpp
   src/v20180608/model/CommonServiceAPIRequest.cpp
@@ -128,13 +131,14 @@ set(tcb_src
   src/v20180608/model/DeleteEndUserResponse.cpp
   src/v20180608/model/EnvBillingInfoItem.cpp
   src/v20180608/model/PlatformStatistic.cpp
+  src/v20180608/model/ModifyEndUserRequest.cpp
   src/v20180608/model/DescribeDatabaseACLResponse.cpp
   src/v20180608/model/EnvInfo.cpp
   src/v20180608/model/DestroyEnvRequest.cpp
   src/v20180608/model/DestroyEnvResponse.cpp
   src/v20180608/model/ModifyDatabaseACLRequest.cpp
   src/v20180608/model/DestroyStaticStoreRequest.cpp
-  src/v20180608/model/PostpayEnvQuota.cpp
+  src/v20180608/model/ModifyEndUserResponse.cpp
   src/v20180608/model/EndUserInfo.cpp
   src/v20180608/model/DescribeEnvLimitResponse.cpp
   src/v20180608/model/DescribePostpayPackageFreeQuotasResponse.cpp

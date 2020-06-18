@@ -65,6 +65,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEndUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h>
@@ -146,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDatabaseACLResponse> ModifyDatabaseACLOutcome;
                 typedef std::future<ModifyDatabaseACLOutcome> ModifyDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyDatabaseACLRequest&, ModifyDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseACLAsyncHandler;
+                typedef Outcome<Error, Model::ModifyEndUserResponse> ModifyEndUserOutcome;
+                typedef std::future<ModifyEndUserOutcome> ModifyEndUserOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyEndUserRequest&, ModifyEndUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEndUserAsyncHandler;
                 typedef Outcome<Error, Model::ModifyEnvResponse> ModifyEnvOutcome;
                 typedef std::future<ModifyEnvOutcome> ModifyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvRequest&, ModifyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvAsyncHandler;
@@ -343,6 +348,15 @@ namespace TencentCloud
                 ModifyDatabaseACLOutcome ModifyDatabaseACL(const Model::ModifyDatabaseACLRequest &request);
                 void ModifyDatabaseACLAsync(const Model::ModifyDatabaseACLRequest& request, const ModifyDatabaseACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDatabaseACLOutcomeCallable ModifyDatabaseACLCallable(const Model::ModifyDatabaseACLRequest& request);
+
+                /**
+                 *管理终端用户
+                 * @param req ModifyEndUserRequest
+                 * @return ModifyEndUserOutcome
+                 */
+                ModifyEndUserOutcome ModifyEndUser(const Model::ModifyEndUserRequest &request);
+                void ModifyEndUserAsync(const Model::ModifyEndUserRequest& request, const ModifyEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEndUserOutcomeCallable ModifyEndUserCallable(const Model::ModifyEndUserRequest& request);
 
                 /**
                  *更新环境信息

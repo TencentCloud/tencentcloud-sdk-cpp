@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取任务ID，全局唯一标识录制任务。
-                     * @return TaskId 任务ID，全局唯一标识录制任务。
+                     * 获取任务ID，由CreateLiveRecord接口返回。
+                     * @return TaskId 任务ID，由CreateLiveRecord接口返回。
                      */
                     int64_t GetTaskId() const;
 
                     /**
-                     * 设置任务ID，全局唯一标识录制任务。
-                     * @param TaskId 任务ID，全局唯一标识录制任务。
+                     * 设置任务ID，由CreateLiveRecord接口返回。
+                     * @param TaskId 任务ID，由CreateLiveRecord接口返回。
                      */
                     void SetTaskId(const int64_t& _taskId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 任务ID，全局唯一标识录制任务。
+                     * 任务ID，由CreateLiveRecord接口返回。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
