@@ -23,7 +23,8 @@ using namespace std;
 
 BodyDetectResult::BodyDetectResult() :
     m_confidenceHasBeenSet(false),
-    m_bodyRectHasBeenSet(false)
+    m_bodyRectHasBeenSet(false),
+    m_bodyAttributeInfoHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,23 @@ CoreInternalOutcome BodyDetectResult::Deserialize(const Value &value)
         m_bodyRectHasBeenSet = true;
     }
 
+    if (value.HasMember("BodyAttributeInfo") && !value["BodyAttributeInfo"].IsNull())
+    {
+        if (!value["BodyAttributeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BodyDetectResult.BodyAttributeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bodyAttributeInfo.Deserialize(value["BodyAttributeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bodyAttributeInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,6 +99,15 @@ void BodyDetectResult::ToJsonObject(Value &value, Document::AllocatorType& alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_bodyRect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bodyAttributeInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BodyAttributeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_bodyAttributeInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -116,5 +143,21 @@ void BodyDetectResult::SetBodyRect(const BodyRect& _bodyRect)
 bool BodyDetectResult::BodyRectHasBeenSet() const
 {
     return m_bodyRectHasBeenSet;
+}
+
+BodyAttributeInfo BodyDetectResult::GetBodyAttributeInfo() const
+{
+    return m_bodyAttributeInfo;
+}
+
+void BodyDetectResult::SetBodyAttributeInfo(const BodyAttributeInfo& _bodyAttributeInfo)
+{
+    m_bodyAttributeInfo = _bodyAttributeInfo;
+    m_bodyAttributeInfoHasBeenSet = true;
+}
+
+bool BodyDetectResult::BodyAttributeInfoHasBeenSet() const
+{
+    return m_bodyAttributeInfoHasBeenSet;
 }
 

@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool UpdateIvlHasBeenSet() const;
 
+                    /**
+                     * 获取子网ID
+                     * @return SubnetId 子网ID
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网ID
+                     * @param SubnetId 子网ID
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     int64_t m_updateIvl;
                     bool m_updateIvlHasBeenSet;
+
+                    /**
+                     * 子网ID
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

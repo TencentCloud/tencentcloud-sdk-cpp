@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bda/v20200324/model/BodyRect.h>
+#include <tencentcloud/bda/v20200324/model/BodyAttributeInfo.h>
 
 
 namespace TencentCloud
@@ -91,6 +92,24 @@ namespace TencentCloud
                      */
                     bool BodyRectHasBeenSet() const;
 
+                    /**
+                     * 获取图中检测出的人体属性信息。
+                     * @return BodyAttributeInfo 图中检测出的人体属性信息。
+                     */
+                    BodyAttributeInfo GetBodyAttributeInfo() const;
+
+                    /**
+                     * 设置图中检测出的人体属性信息。
+                     * @param BodyAttributeInfo 图中检测出的人体属性信息。
+                     */
+                    void SetBodyAttributeInfo(const BodyAttributeInfo& _bodyAttributeInfo);
+
+                    /**
+                     * 判断参数 BodyAttributeInfo 是否已赋值
+                     * @return BodyAttributeInfo 是否已赋值
+                     */
+                    bool BodyAttributeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +125,12 @@ namespace TencentCloud
                      */
                     BodyRect m_bodyRect;
                     bool m_bodyRectHasBeenSet;
+
+                    /**
+                     * 图中检测出的人体属性信息。
+                     */
+                    BodyAttributeInfo m_bodyAttributeInfo;
+                    bool m_bodyAttributeInfoHasBeenSet;
 
                 };
             }

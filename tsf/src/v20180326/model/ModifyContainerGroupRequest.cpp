@@ -28,7 +28,8 @@ ModifyContainerGroupRequest::ModifyContainerGroupRequest() :
     m_accessTypeHasBeenSet(false),
     m_protocolPortsHasBeenSet(false),
     m_updateTypeHasBeenSet(false),
-    m_updateIvlHasBeenSet(false)
+    m_updateIvlHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,14 @@ string ModifyContainerGroupRequest::ToJsonString() const
         string key = "UpdateIvl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_updateIvl, allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -172,6 +181,22 @@ void ModifyContainerGroupRequest::SetUpdateIvl(const int64_t& _updateIvl)
 bool ModifyContainerGroupRequest::UpdateIvlHasBeenSet() const
 {
     return m_updateIvlHasBeenSet;
+}
+
+string ModifyContainerGroupRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void ModifyContainerGroupRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool ModifyContainerGroupRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 
 

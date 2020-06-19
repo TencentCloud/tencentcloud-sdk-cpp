@@ -32,7 +32,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_certificateHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
     m_schedulerHasBeenSet(false),
-    m_sniSwitchHasBeenSet(false)
+    m_sniSwitchHasBeenSet(false),
+    m_targetTypeHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "SniSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sniSwitch, allocator);
+    }
+
+    if (m_targetTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TargetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_targetType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -277,6 +286,22 @@ void CreateListenerRequest::SetSniSwitch(const int64_t& _sniSwitch)
 bool CreateListenerRequest::SniSwitchHasBeenSet() const
 {
     return m_sniSwitchHasBeenSet;
+}
+
+string CreateListenerRequest::GetTargetType() const
+{
+    return m_targetType;
+}
+
+void CreateListenerRequest::SetTargetType(const string& _targetType)
+{
+    m_targetType = _targetType;
+    m_targetTypeHasBeenSet = true;
+}
+
+bool CreateListenerRequest::TargetTypeHasBeenSet() const
+{
+    return m_targetTypeHasBeenSet;
 }
 
 

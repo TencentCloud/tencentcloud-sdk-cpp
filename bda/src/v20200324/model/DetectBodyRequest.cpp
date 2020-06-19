@@ -26,7 +26,8 @@ using namespace std;
 DetectBodyRequest::DetectBodyRequest() :
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_maxBodyNumHasBeenSet(false)
+    m_maxBodyNumHasBeenSet(false),
+    m_attributesOptionsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,15 @@ string DetectBodyRequest::ToJsonString() const
         string key = "MaxBodyNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxBodyNum, allocator);
+    }
+
+    if (m_attributesOptionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttributesOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_attributesOptions.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -115,6 +125,22 @@ void DetectBodyRequest::SetMaxBodyNum(const uint64_t& _maxBodyNum)
 bool DetectBodyRequest::MaxBodyNumHasBeenSet() const
 {
     return m_maxBodyNumHasBeenSet;
+}
+
+AttributesOptions DetectBodyRequest::GetAttributesOptions() const
+{
+    return m_attributesOptions;
+}
+
+void DetectBodyRequest::SetAttributesOptions(const AttributesOptions& _attributesOptions)
+{
+    m_attributesOptions = _attributesOptions;
+    m_attributesOptionsHasBeenSet = true;
+}
+
+bool DetectBodyRequest::AttributesOptionsHasBeenSet() const
+{
+    return m_attributesOptionsHasBeenSet;
 }
 
 

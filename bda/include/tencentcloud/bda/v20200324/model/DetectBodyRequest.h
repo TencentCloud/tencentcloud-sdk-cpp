@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bda/v20200324/model/AttributesOptions.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,44 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     bool MaxBodyNumHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回年龄、性别、朝向等属性。 
+可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  
+如果此参数为空则为不需要返回。 
+需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
+关于各属性的详细描述，参见下文出参。 
+最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
+                     * @return AttributesOptions 是否返回年龄、性别、朝向等属性。 
+可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  
+如果此参数为空则为不需要返回。 
+需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
+关于各属性的详细描述，参见下文出参。 
+最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
+                     */
+                    AttributesOptions GetAttributesOptions() const;
+
+                    /**
+                     * 设置是否返回年龄、性别、朝向等属性。 
+可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  
+如果此参数为空则为不需要返回。 
+需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
+关于各属性的详细描述，参见下文出参。 
+最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
+                     * @param AttributesOptions 是否返回年龄、性别、朝向等属性。 
+可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  
+如果此参数为空则为不需要返回。 
+需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
+关于各属性的详细描述，参见下文出参。 
+最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
+                     */
+                    void SetAttributesOptions(const AttributesOptions& _attributesOptions);
+
+                    /**
+                     * 判断参数 AttributesOptions 是否已赋值
+                     * @return AttributesOptions 是否已赋值
+                     */
+                    bool AttributesOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +199,17 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     uint64_t m_maxBodyNum;
                     bool m_maxBodyNumHasBeenSet;
+
+                    /**
+                     * 是否返回年龄、性别、朝向等属性。 
+可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  
+如果此参数为空则为不需要返回。 
+需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 
+关于各属性的详细描述，参见下文出参。 
+最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。
+                     */
+                    AttributesOptions m_attributesOptions;
+                    bool m_attributesOptionsHasBeenSet;
 
                 };
             }
