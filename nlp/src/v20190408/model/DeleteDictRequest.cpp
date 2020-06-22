@@ -14,40 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DeleteDictRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Ecm::V20190719::Model;
+using namespace TencentCloud::Nlp::V20190408::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeNodeRequest::DescribeNodeRequest() :
-    m_filtersHasBeenSet(false)
+DeleteDictRequest::DeleteDictRequest() :
+    m_dictIdHasBeenSet(false)
 {
 }
 
-string DescribeNodeRequest::ToJsonString() const
+string DeleteDictRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_filtersHasBeenSet)
+    if (m_dictIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Filters";
+        string key = "DictId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+        d.AddMember(iKey, Value(m_dictId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,20 +51,20 @@ string DescribeNodeRequest::ToJsonString() const
 }
 
 
-vector<Filter> DescribeNodeRequest::GetFilters() const
+string DeleteDictRequest::GetDictId() const
 {
-    return m_filters;
+    return m_dictId;
 }
 
-void DescribeNodeRequest::SetFilters(const vector<Filter>& _filters)
+void DeleteDictRequest::SetDictId(const string& _dictId)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_dictId = _dictId;
+    m_dictIdHasBeenSet = true;
 }
 
-bool DescribeNodeRequest::FiltersHasBeenSet() const
+bool DeleteDictRequest::DictIdHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_dictIdHasBeenSet;
 }
 
 

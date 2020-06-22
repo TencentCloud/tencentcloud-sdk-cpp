@@ -27,7 +27,8 @@ EnterQueueRequest::EnterQueueRequest() :
     m_firstHasBeenSet(false),
     m_gameIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_setNumberHasBeenSet(false)
+    m_setNumberHasBeenSet(false),
+    m_userIpHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string EnterQueueRequest::ToJsonString() const
         string key = "SetNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_setNumber, allocator);
+    }
+
+    if (m_userIpHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_userIp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void EnterQueueRequest::SetSetNumber(const uint64_t& _setNumber)
 bool EnterQueueRequest::SetNumberHasBeenSet() const
 {
     return m_setNumberHasBeenSet;
+}
+
+string EnterQueueRequest::GetUserIp() const
+{
+    return m_userIp;
+}
+
+void EnterQueueRequest::SetUserIp(const string& _userIp)
+{
+    m_userIp = _userIp;
+    m_userIpHasBeenSet = true;
+}
+
+bool EnterQueueRequest::UserIpHasBeenSet() const
+{
+    return m_userIpHasBeenSet;
 }
 
 

@@ -126,6 +126,178 @@ NlpClient::ChatBotOutcomeCallable NlpClient::ChatBotCallable(const ChatBotReques
     return task->get_future();
 }
 
+NlpClient::CreateDictOutcome NlpClient::CreateDict(const CreateDictRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDict");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDictResponse rsp = CreateDictResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDictOutcome(rsp);
+        else
+            return CreateDictOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDictOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::CreateDictAsync(const CreateDictRequest& request, const CreateDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDict(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::CreateDictOutcomeCallable NlpClient::CreateDictCallable(const CreateDictRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDictOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDict(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::CreateWordItemsOutcome NlpClient::CreateWordItems(const CreateWordItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWordItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWordItemsResponse rsp = CreateWordItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWordItemsOutcome(rsp);
+        else
+            return CreateWordItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWordItemsOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::CreateWordItemsAsync(const CreateWordItemsRequest& request, const CreateWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWordItems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::CreateWordItemsOutcomeCallable NlpClient::CreateWordItemsCallable(const CreateWordItemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWordItemsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWordItems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::DeleteDictOutcome NlpClient::DeleteDict(const DeleteDictRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDict");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDictResponse rsp = DeleteDictResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDictOutcome(rsp);
+        else
+            return DeleteDictOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDictOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DeleteDictAsync(const DeleteDictRequest& request, const DeleteDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDict(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DeleteDictOutcomeCallable NlpClient::DeleteDictCallable(const DeleteDictRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDictOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDict(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::DeleteWordItemsOutcome NlpClient::DeleteWordItems(const DeleteWordItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWordItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWordItemsResponse rsp = DeleteWordItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWordItemsOutcome(rsp);
+        else
+            return DeleteWordItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWordItemsOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DeleteWordItemsAsync(const DeleteWordItemsRequest& request, const DeleteWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWordItems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DeleteWordItemsOutcomeCallable NlpClient::DeleteWordItemsCallable(const DeleteWordItemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWordItemsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWordItems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::DependencyParsingOutcome NlpClient::DependencyParsing(const DependencyParsingRequest &request)
 {
     auto outcome = MakeRequest(request, "DependencyParsing");
@@ -162,6 +334,92 @@ NlpClient::DependencyParsingOutcomeCallable NlpClient::DependencyParsingCallable
         [this, request]()
         {
             return this->DependencyParsing(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::DescribeDictOutcome NlpClient::DescribeDict(const DescribeDictRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDict");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDictResponse rsp = DescribeDictResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDictOutcome(rsp);
+        else
+            return DescribeDictOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDictOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DescribeDictAsync(const DescribeDictRequest& request, const DescribeDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDict(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DescribeDictOutcomeCallable NlpClient::DescribeDictCallable(const DescribeDictRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDictOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDict(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::DescribeDictsOutcome NlpClient::DescribeDicts(const DescribeDictsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDicts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDictsResponse rsp = DescribeDictsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDictsOutcome(rsp);
+        else
+            return DescribeDictsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDictsOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DescribeDictsAsync(const DescribeDictsRequest& request, const DescribeDictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDicts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DescribeDictsOutcomeCallable NlpClient::DescribeDictsCallable(const DescribeDictsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDictsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDicts(request);
         }
     );
 
@@ -298,6 +556,49 @@ NlpClient::DescribeTripleOutcomeCallable NlpClient::DescribeTripleCallable(const
     return task->get_future();
 }
 
+NlpClient::DescribeWordItemsOutcome NlpClient::DescribeWordItems(const DescribeWordItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWordItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWordItemsResponse rsp = DescribeWordItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWordItemsOutcome(rsp);
+        else
+            return DescribeWordItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWordItemsOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::DescribeWordItemsAsync(const DescribeWordItemsRequest& request, const DescribeWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWordItems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::DescribeWordItemsOutcomeCallable NlpClient::DescribeWordItemsCallable(const DescribeWordItemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWordItemsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWordItems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::KeywordsExtractionOutcome NlpClient::KeywordsExtraction(const KeywordsExtractionRequest &request)
 {
     auto outcome = MakeRequest(request, "KeywordsExtraction");
@@ -377,6 +678,49 @@ NlpClient::LexicalAnalysisOutcomeCallable NlpClient::LexicalAnalysisCallable(con
         [this, request]()
         {
             return this->LexicalAnalysis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::SearchWordItemsOutcome NlpClient::SearchWordItems(const SearchWordItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchWordItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchWordItemsResponse rsp = SearchWordItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchWordItemsOutcome(rsp);
+        else
+            return SearchWordItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchWordItemsOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::SearchWordItemsAsync(const SearchWordItemsRequest& request, const SearchWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchWordItems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::SearchWordItemsOutcomeCallable NlpClient::SearchWordItemsCallable(const SearchWordItemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchWordItemsOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchWordItems(request);
         }
     );
 
@@ -678,6 +1022,49 @@ NlpClient::TextSimilarityOutcomeCallable NlpClient::TextSimilarityCallable(const
         [this, request]()
         {
             return this->TextSimilarity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::UpdateDictOutcome NlpClient::UpdateDict(const UpdateDictRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDict");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDictResponse rsp = UpdateDictResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDictOutcome(rsp);
+        else
+            return UpdateDictOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDictOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::UpdateDictAsync(const UpdateDictRequest& request, const UpdateDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDict(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::UpdateDictOutcomeCallable NlpClient::UpdateDictCallable(const UpdateDictRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDictOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDict(request);
         }
     );
 

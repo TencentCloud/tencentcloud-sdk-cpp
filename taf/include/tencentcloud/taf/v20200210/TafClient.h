@@ -80,7 +80,7 @@ namespace TencentCloud
                 DetectFraudKOLOutcomeCallable DetectFraudKOLCallable(const Model::DetectFraudKOLRequest& request);
 
                 /**
-                 *EnhanceTaDegree
+                 *流量反欺诈-虚假TA识别
                  * @param req EnhanceTaDegreeRequest
                  * @return EnhanceTaDegreeOutcome
                  */
@@ -98,7 +98,7 @@ namespace TencentCloud
                 RecognizeCustomizedAudienceOutcomeCallable RecognizeCustomizedAudienceCallable(const Model::RecognizeCustomizedAudienceRequest& request);
 
                 /**
-                 *RecognizePreciseTargetAudience
+                 *流量反欺诈-流量验准高级版
                  * @param req RecognizePreciseTargetAudienceRequest
                  * @return RecognizePreciseTargetAudienceOutcome
                  */

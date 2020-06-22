@@ -27,18 +27,34 @@
 #include <tencentcloud/nlp/v20190408/model/AutoSummarizationResponse.h>
 #include <tencentcloud/nlp/v20190408/model/ChatBotRequest.h>
 #include <tencentcloud/nlp/v20190408/model/ChatBotResponse.h>
+#include <tencentcloud/nlp/v20190408/model/CreateDictRequest.h>
+#include <tencentcloud/nlp/v20190408/model/CreateDictResponse.h>
+#include <tencentcloud/nlp/v20190408/model/CreateWordItemsRequest.h>
+#include <tencentcloud/nlp/v20190408/model/CreateWordItemsResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DeleteDictRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DeleteDictResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DeleteWordItemsRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DeleteWordItemsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DependencyParsingRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DependencyParsingResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeDictRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeDictResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeDictsRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeDictsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeEntityRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeEntityResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeRelationRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeRelationResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeTripleRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeTripleResponse.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeWordItemsRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeWordItemsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionRequest.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionResponse.h>
 #include <tencentcloud/nlp/v20190408/model/LexicalAnalysisRequest.h>
 #include <tencentcloud/nlp/v20190408/model/LexicalAnalysisResponse.h>
+#include <tencentcloud/nlp/v20190408/model/SearchWordItemsRequest.h>
+#include <tencentcloud/nlp/v20190408/model/SearchWordItemsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceEmbeddingRequest.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceEmbeddingResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceSimilarityRequest.h>
@@ -53,6 +69,8 @@
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h>
+#include <tencentcloud/nlp/v20190408/model/UpdateDictRequest.h>
+#include <tencentcloud/nlp/v20190408/model/UpdateDictResponse.h>
 #include <tencentcloud/nlp/v20190408/model/WordEmbeddingRequest.h>
 #include <tencentcloud/nlp/v20190408/model/WordEmbeddingResponse.h>
 #include <tencentcloud/nlp/v20190408/model/WordSimilarityRequest.h>
@@ -77,9 +95,27 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ChatBotResponse> ChatBotOutcome;
                 typedef std::future<ChatBotOutcome> ChatBotOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::ChatBotRequest&, ChatBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatBotAsyncHandler;
+                typedef Outcome<Error, Model::CreateDictResponse> CreateDictOutcome;
+                typedef std::future<CreateDictOutcome> CreateDictOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::CreateDictRequest&, CreateDictOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDictAsyncHandler;
+                typedef Outcome<Error, Model::CreateWordItemsResponse> CreateWordItemsOutcome;
+                typedef std::future<CreateWordItemsOutcome> CreateWordItemsOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::CreateWordItemsRequest&, CreateWordItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWordItemsAsyncHandler;
+                typedef Outcome<Error, Model::DeleteDictResponse> DeleteDictOutcome;
+                typedef std::future<DeleteDictOutcome> DeleteDictOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DeleteDictRequest&, DeleteDictOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDictAsyncHandler;
+                typedef Outcome<Error, Model::DeleteWordItemsResponse> DeleteWordItemsOutcome;
+                typedef std::future<DeleteWordItemsOutcome> DeleteWordItemsOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DeleteWordItemsRequest&, DeleteWordItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWordItemsAsyncHandler;
                 typedef Outcome<Error, Model::DependencyParsingResponse> DependencyParsingOutcome;
                 typedef std::future<DependencyParsingOutcome> DependencyParsingOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DependencyParsingRequest&, DependencyParsingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DependencyParsingAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDictResponse> DescribeDictOutcome;
+                typedef std::future<DescribeDictOutcome> DescribeDictOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DescribeDictRequest&, DescribeDictOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDictAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDictsResponse> DescribeDictsOutcome;
+                typedef std::future<DescribeDictsOutcome> DescribeDictsOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DescribeDictsRequest&, DescribeDictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDictsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEntityResponse> DescribeEntityOutcome;
                 typedef std::future<DescribeEntityOutcome> DescribeEntityOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DescribeEntityRequest&, DescribeEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEntityAsyncHandler;
@@ -89,12 +125,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTripleResponse> DescribeTripleOutcome;
                 typedef std::future<DescribeTripleOutcome> DescribeTripleOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DescribeTripleRequest&, DescribeTripleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTripleAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWordItemsResponse> DescribeWordItemsOutcome;
+                typedef std::future<DescribeWordItemsOutcome> DescribeWordItemsOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::DescribeWordItemsRequest&, DescribeWordItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWordItemsAsyncHandler;
                 typedef Outcome<Error, Model::KeywordsExtractionResponse> KeywordsExtractionOutcome;
                 typedef std::future<KeywordsExtractionOutcome> KeywordsExtractionOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::KeywordsExtractionRequest&, KeywordsExtractionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KeywordsExtractionAsyncHandler;
                 typedef Outcome<Error, Model::LexicalAnalysisResponse> LexicalAnalysisOutcome;
                 typedef std::future<LexicalAnalysisOutcome> LexicalAnalysisOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::LexicalAnalysisRequest&, LexicalAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LexicalAnalysisAsyncHandler;
+                typedef Outcome<Error, Model::SearchWordItemsResponse> SearchWordItemsOutcome;
+                typedef std::future<SearchWordItemsOutcome> SearchWordItemsOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::SearchWordItemsRequest&, SearchWordItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchWordItemsAsyncHandler;
                 typedef Outcome<Error, Model::SentenceEmbeddingResponse> SentenceEmbeddingOutcome;
                 typedef std::future<SentenceEmbeddingOutcome> SentenceEmbeddingOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::SentenceEmbeddingRequest&, SentenceEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SentenceEmbeddingAsyncHandler;
@@ -116,6 +158,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::TextSimilarityResponse> TextSimilarityOutcome;
                 typedef std::future<TextSimilarityOutcome> TextSimilarityOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextSimilarityRequest&, TextSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextSimilarityAsyncHandler;
+                typedef Outcome<Error, Model::UpdateDictResponse> UpdateDictOutcome;
+                typedef std::future<UpdateDictOutcome> UpdateDictOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::UpdateDictRequest&, UpdateDictOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDictAsyncHandler;
                 typedef Outcome<Error, Model::WordEmbeddingResponse> WordEmbeddingOutcome;
                 typedef std::future<WordEmbeddingOutcome> WordEmbeddingOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::WordEmbeddingRequest&, WordEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WordEmbeddingAsyncHandler;
@@ -146,6 +191,42 @@ namespace TencentCloud
                 ChatBotOutcomeCallable ChatBotCallable(const Model::ChatBotRequest& request);
 
                 /**
+                 *根据指定的名称、描述创建自定义词库。
+                 * @param req CreateDictRequest
+                 * @return CreateDictOutcome
+                 */
+                CreateDictOutcome CreateDict(const Model::CreateDictRequest &request);
+                void CreateDictAsync(const Model::CreateDictRequest& request, const CreateDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDictOutcomeCallable CreateDictCallable(const Model::CreateDictRequest& request);
+
+                /**
+                 *向指定的词库中添加词条。
+                 * @param req CreateWordItemsRequest
+                 * @return CreateWordItemsOutcome
+                 */
+                CreateWordItemsOutcome CreateWordItems(const Model::CreateWordItemsRequest &request);
+                void CreateWordItemsAsync(const Model::CreateWordItemsRequest& request, const CreateWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWordItemsOutcomeCallable CreateWordItemsCallable(const Model::CreateWordItemsRequest& request);
+
+                /**
+                 *删除自定义词库，会附带相应删除词库包含的所有词条。
+                 * @param req DeleteDictRequest
+                 * @return DeleteDictOutcome
+                 */
+                DeleteDictOutcome DeleteDict(const Model::DeleteDictRequest &request);
+                void DeleteDictAsync(const Model::DeleteDictRequest& request, const DeleteDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDictOutcomeCallable DeleteDictCallable(const Model::DeleteDictRequest& request);
+
+                /**
+                 *用于删除自定义词库中的词条。
+                 * @param req DeleteWordItemsRequest
+                 * @return DeleteWordItemsOutcome
+                 */
+                DeleteWordItemsOutcome DeleteWordItems(const Model::DeleteWordItemsRequest &request);
+                void DeleteWordItemsAsync(const Model::DeleteWordItemsRequest& request, const DeleteWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWordItemsOutcomeCallable DeleteWordItemsCallable(const Model::DeleteWordItemsRequest& request);
+
+                /**
                  *句法依存分析接口能够分析出句子中词与词之间的相互依存关系，并揭示其句法结构，包括主谓关系、动宾关系、核心关系等等，可用于提取句子主干、提取句子核心词等，在机器翻译、自动问答、知识抽取等领域都有很好的应用。
                  * @param req DependencyParsingRequest
                  * @return DependencyParsingOutcome
@@ -153,6 +234,24 @@ namespace TencentCloud
                 DependencyParsingOutcome DependencyParsing(const Model::DependencyParsingRequest &request);
                 void DependencyParsingAsync(const Model::DependencyParsingRequest& request, const DependencyParsingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DependencyParsingOutcomeCallable DependencyParsingCallable(const Model::DependencyParsingRequest& request);
+
+                /**
+                 *根据id或名称查询自定义词库信息。
+                 * @param req DescribeDictRequest
+                 * @return DescribeDictOutcome
+                 */
+                DescribeDictOutcome DescribeDict(const Model::DescribeDictRequest &request);
+                void DescribeDictAsync(const Model::DescribeDictRequest& request, const DescribeDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDictOutcomeCallable DescribeDictCallable(const Model::DescribeDictRequest& request);
+
+                /**
+                 *返回属于当前用户的所有自定义词库列表。
+                 * @param req DescribeDictsRequest
+                 * @return DescribeDictsOutcome
+                 */
+                DescribeDictsOutcome DescribeDicts(const Model::DescribeDictsRequest &request);
+                void DescribeDictsAsync(const Model::DescribeDictsRequest& request, const DescribeDictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDictsOutcomeCallable DescribeDictsCallable(const Model::DescribeDictsRequest& request);
 
                 /**
                  *输入实体名称，返回实体相关的信息如实体别名、实体英文名、实体详细信息、相关实体等。
@@ -182,6 +281,15 @@ namespace TencentCloud
                 DescribeTripleOutcomeCallable DescribeTripleCallable(const Model::DescribeTripleRequest& request);
 
                 /**
+                 *依据自定义词库的ID，查询对应的词条信息。
+                 * @param req DescribeWordItemsRequest
+                 * @return DescribeWordItemsOutcome
+                 */
+                DescribeWordItemsOutcome DescribeWordItems(const Model::DescribeWordItemsRequest &request);
+                void DescribeWordItemsAsync(const Model::DescribeWordItemsRequest& request, const DescribeWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWordItemsOutcomeCallable DescribeWordItemsCallable(const Model::DescribeWordItemsRequest& request);
+
+                /**
                  *基于关键词提取平台，通过对文本内容进行深度分析，提取出文本内容中的关键信息，为用户实现诸如新闻内容关键词自动提取、评论关键词提取等提供基础服务。
                  * @param req KeywordsExtractionRequest
                  * @return KeywordsExtractionOutcome
@@ -206,6 +314,15 @@ namespace TencentCloud
                 LexicalAnalysisOutcome LexicalAnalysis(const Model::LexicalAnalysisRequest &request);
                 void LexicalAnalysisAsync(const Model::LexicalAnalysisRequest& request, const LexicalAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LexicalAnalysisOutcomeCallable LexicalAnalysisCallable(const Model::LexicalAnalysisRequest& request);
+
+                /**
+                 *查询指定自定义词库中的词条是否存在。
+                 * @param req SearchWordItemsRequest
+                 * @return SearchWordItemsOutcome
+                 */
+                SearchWordItemsOutcome SearchWordItems(const Model::SearchWordItemsRequest &request);
+                void SearchWordItemsAsync(const Model::SearchWordItemsRequest& request, const SearchWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchWordItemsOutcomeCallable SearchWordItemsCallable(const Model::SearchWordItemsRequest& request);
 
                 /**
                  *句向量接口能够将输入的句子映射成一个固定维度的向量，用来表示这个句子的语义特征，可用于文本聚类、文本相似度、文本分类等任务，能够显著提高它们的效果。
@@ -289,6 +406,15 @@ namespace TencentCloud
                 TextSimilarityOutcome TextSimilarity(const Model::TextSimilarityRequest &request);
                 void TextSimilarityAsync(const Model::TextSimilarityRequest& request, const TextSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextSimilarityOutcomeCallable TextSimilarityCallable(const Model::TextSimilarityRequest& request);
+
+                /**
+                 *修改自定义词库元数据信息，包括名称、描述。
+                 * @param req UpdateDictRequest
+                 * @return UpdateDictOutcome
+                 */
+                UpdateDictOutcome UpdateDict(const Model::UpdateDictRequest &request);
+                void UpdateDictAsync(const Model::UpdateDictRequest& request, const UpdateDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDictOutcomeCallable UpdateDictCallable(const Model::UpdateDictRequest& request);
 
                 /**
                  *词向量接口能够将输入的词语映射成一个固定维度的词向量，用来表示这个词语的语义特征。词向量是很多自然语言处理技术的基础，能够显著提高它们的效果。

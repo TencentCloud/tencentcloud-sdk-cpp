@@ -46,13 +46,15 @@ namespace TencentCloud
 
                     /**
                      * 获取命名实体识别结果。取值范围：
-<li>PER：表示人名</li>
-<li>LOC：表示地名</li>
-<li>ORG：表示机构团体名</li>
+<li>PER：表示人名，如刘德华、贝克汉姆</li>
+<li>LOC：表示地名，如北京、华山</li>
+<li>ORG：表示机构团体名，如腾讯、最高人民法院、人大附中</li>
+<li>PRODUCTION：表示产品名，如QQ、微信、iPhone</li>
                      * @return NerTokens 命名实体识别结果。取值范围：
-<li>PER：表示人名</li>
-<li>LOC：表示地名</li>
-<li>ORG：表示机构团体名</li>
+<li>PER：表示人名，如刘德华、贝克汉姆</li>
+<li>LOC：表示地名，如北京、华山</li>
+<li>ORG：表示机构团体名，如腾讯、最高人民法院、人大附中</li>
+<li>PRODUCTION：表示产品名，如QQ、微信、iPhone</li>
                      */
                     std::vector<NerToken> GetNerTokens() const;
 
@@ -78,9 +80,10 @@ namespace TencentCloud
 
                     /**
                      * 命名实体识别结果。取值范围：
-<li>PER：表示人名</li>
-<li>LOC：表示地名</li>
-<li>ORG：表示机构团体名</li>
+<li>PER：表示人名，如刘德华、贝克汉姆</li>
+<li>LOC：表示地名，如北京、华山</li>
+<li>ORG：表示机构团体名，如腾讯、最高人民法院、人大附中</li>
+<li>PRODUCTION：表示产品名，如QQ、微信、iPhone</li>
                      */
                     std::vector<NerToken> m_nerTokens;
                     bool m_nerTokensHasBeenSet;

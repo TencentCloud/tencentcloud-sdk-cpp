@@ -22,48 +22,69 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/LexicalAnalysisResponse.h
   include/tencentcloud/nlp/v20190408/model/SentenceEmbeddingRequest.h
   include/tencentcloud/nlp/v20190408/model/DescribeTripleRequest.h
+  include/tencentcloud/nlp/v20190408/model/WordSimilarityRequest.h
+  include/tencentcloud/nlp/v20190408/model/SearchWordItemsResponse.h
   include/tencentcloud/nlp/v20190408/model/DpToken.h
+  include/tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h
+  include/tencentcloud/nlp/v20190408/model/WordEmbeddingRequest.h
   include/tencentcloud/nlp/v20190408/model/ChatBotResponse.h
+  include/tencentcloud/nlp/v20190408/model/KeywordsExtractionResponse.h
   include/tencentcloud/nlp/v20190408/model/AutoSummarizationRequest.h
   include/tencentcloud/nlp/v20190408/model/ChatBotRequest.h
   include/tencentcloud/nlp/v20190408/model/DescribeRelationRequest.h
   include/tencentcloud/nlp/v20190408/model/KeywordsExtractionRequest.h
+  include/tencentcloud/nlp/v20190408/model/DictInfo.h
   include/tencentcloud/nlp/v20190408/model/DescribeEntityResponse.h
+  include/tencentcloud/nlp/v20190408/model/WordItem.h
   include/tencentcloud/nlp/v20190408/model/ClassificationResult.h
   include/tencentcloud/nlp/v20190408/model/DescribeEntityRequest.h
-  include/tencentcloud/nlp/v20190408/model/AutoSummarizationResponse.h
-  include/tencentcloud/nlp/v20190408/model/DependencyParsingRequest.h
-  include/tencentcloud/nlp/v20190408/model/DescribeRelationResponse.h
-  include/tencentcloud/nlp/v20190408/model/WordSimilarityRequest.h
-  include/tencentcloud/nlp/v20190408/model/TextCorrectionRequest.h
-  include/tencentcloud/nlp/v20190408/model/SentenceEmbeddingResponse.h
-  include/tencentcloud/nlp/v20190408/model/SentenceSimilarityRequest.h
-  include/tencentcloud/nlp/v20190408/model/SimilarWordsRequest.h
-  include/tencentcloud/nlp/v20190408/model/TextClassificationResponse.h
-  include/tencentcloud/nlp/v20190408/model/TextClassificationRequest.h
-  include/tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h
   include/tencentcloud/nlp/v20190408/model/Keyword.h
+  include/tencentcloud/nlp/v20190408/model/UpdateDictResponse.h
+  include/tencentcloud/nlp/v20190408/model/DescribeDictsRequest.h
+  include/tencentcloud/nlp/v20190408/model/DescribeRelationResponse.h
+  include/tencentcloud/nlp/v20190408/model/SearchResult.h
+  include/tencentcloud/nlp/v20190408/model/CreateWordItemsRequest.h
+  include/tencentcloud/nlp/v20190408/model/TextCorrectionRequest.h
+  include/tencentcloud/nlp/v20190408/model/DeleteWordItemsResponse.h
+  include/tencentcloud/nlp/v20190408/model/SentenceEmbeddingResponse.h
+  include/tencentcloud/nlp/v20190408/model/UpdateDictRequest.h
+  include/tencentcloud/nlp/v20190408/model/SentenceSimilarityRequest.h
+  include/tencentcloud/nlp/v20190408/model/TextClassificationResponse.h
+  include/tencentcloud/nlp/v20190408/model/DeleteDictResponse.h
+  include/tencentcloud/nlp/v20190408/model/DescribeWordItemsRequest.h
+  include/tencentcloud/nlp/v20190408/model/SearchWordItemsRequest.h
+  include/tencentcloud/nlp/v20190408/model/TextClassificationRequest.h
+  include/tencentcloud/nlp/v20190408/model/CreateDictResponse.h
+  include/tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h
+  include/tencentcloud/nlp/v20190408/model/AutoSummarizationResponse.h
   include/tencentcloud/nlp/v20190408/model/WordEmbeddingResponse.h
   include/tencentcloud/nlp/v20190408/model/DescribeTripleResponse.h
-  include/tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h
+  include/tencentcloud/nlp/v20190408/model/DescribeWordItemsResponse.h
+  include/tencentcloud/nlp/v20190408/model/SimilarWordsRequest.h
+  include/tencentcloud/nlp/v20190408/model/DescribeDictRequest.h
   include/tencentcloud/nlp/v20190408/model/PosToken.h
   include/tencentcloud/nlp/v20190408/model/SentimentAnalysisResponse.h
-  include/tencentcloud/nlp/v20190408/model/KeywordsExtractionResponse.h
+  include/tencentcloud/nlp/v20190408/model/DeleteWordItemsRequest.h
+  include/tencentcloud/nlp/v20190408/model/DescribeDictResponse.h
   include/tencentcloud/nlp/v20190408/model/TextCorrectionResponse.h
-  include/tencentcloud/nlp/v20190408/model/EntityRelationObject.h
-  include/tencentcloud/nlp/v20190408/model/WordEmbeddingRequest.h
+  include/tencentcloud/nlp/v20190408/model/DescribeDictsResponse.h
+  include/tencentcloud/nlp/v20190408/model/DependencyParsingRequest.h
+  include/tencentcloud/nlp/v20190408/model/DeleteDictRequest.h
   include/tencentcloud/nlp/v20190408/model/SentenceSimilarityResponse.h
   include/tencentcloud/nlp/v20190408/model/NerToken.h
   include/tencentcloud/nlp/v20190408/model/SimilarWordsResponse.h
+  include/tencentcloud/nlp/v20190408/model/EntityRelationObject.h
   include/tencentcloud/nlp/v20190408/model/DependencyParsingResponse.h
   include/tencentcloud/nlp/v20190408/model/Similarity.h
   include/tencentcloud/nlp/v20190408/model/CCIToken.h
   include/tencentcloud/nlp/v20190408/model/LexicalAnalysisRequest.h
+  include/tencentcloud/nlp/v20190408/model/CreateWordItemsResponse.h
   include/tencentcloud/nlp/v20190408/model/SentimentAnalysisRequest.h
+  include/tencentcloud/nlp/v20190408/model/EntityRelationSubject.h
   include/tencentcloud/nlp/v20190408/model/EntityRelationContent.h
   include/tencentcloud/nlp/v20190408/model/WordSimilarityResponse.h
   include/tencentcloud/nlp/v20190408/model/TripleContent.h
-  include/tencentcloud/nlp/v20190408/model/EntityRelationSubject.h
+  include/tencentcloud/nlp/v20190408/model/CreateDictRequest.h
   )
 
 set(nlp_src
@@ -71,48 +92,69 @@ set(nlp_src
   src/v20190408/model/LexicalAnalysisResponse.cpp
   src/v20190408/model/SentenceEmbeddingRequest.cpp
   src/v20190408/model/DescribeTripleRequest.cpp
+  src/v20190408/model/WordSimilarityRequest.cpp
+  src/v20190408/model/SearchWordItemsResponse.cpp
   src/v20190408/model/DpToken.cpp
+  src/v20190408/model/TextSimilarityResponse.cpp
+  src/v20190408/model/WordEmbeddingRequest.cpp
   src/v20190408/model/ChatBotResponse.cpp
+  src/v20190408/model/KeywordsExtractionResponse.cpp
   src/v20190408/model/AutoSummarizationRequest.cpp
   src/v20190408/model/ChatBotRequest.cpp
   src/v20190408/model/DescribeRelationRequest.cpp
   src/v20190408/model/KeywordsExtractionRequest.cpp
+  src/v20190408/model/DictInfo.cpp
   src/v20190408/model/DescribeEntityResponse.cpp
+  src/v20190408/model/WordItem.cpp
   src/v20190408/model/ClassificationResult.cpp
   src/v20190408/model/DescribeEntityRequest.cpp
-  src/v20190408/model/AutoSummarizationResponse.cpp
-  src/v20190408/model/DependencyParsingRequest.cpp
-  src/v20190408/model/DescribeRelationResponse.cpp
-  src/v20190408/model/WordSimilarityRequest.cpp
-  src/v20190408/model/TextCorrectionRequest.cpp
-  src/v20190408/model/SentenceEmbeddingResponse.cpp
-  src/v20190408/model/SentenceSimilarityRequest.cpp
-  src/v20190408/model/SimilarWordsRequest.cpp
-  src/v20190408/model/TextClassificationResponse.cpp
-  src/v20190408/model/TextClassificationRequest.cpp
-  src/v20190408/model/TextSimilarityRequest.cpp
   src/v20190408/model/Keyword.cpp
+  src/v20190408/model/UpdateDictResponse.cpp
+  src/v20190408/model/DescribeDictsRequest.cpp
+  src/v20190408/model/DescribeRelationResponse.cpp
+  src/v20190408/model/SearchResult.cpp
+  src/v20190408/model/CreateWordItemsRequest.cpp
+  src/v20190408/model/TextCorrectionRequest.cpp
+  src/v20190408/model/DeleteWordItemsResponse.cpp
+  src/v20190408/model/SentenceEmbeddingResponse.cpp
+  src/v20190408/model/UpdateDictRequest.cpp
+  src/v20190408/model/SentenceSimilarityRequest.cpp
+  src/v20190408/model/TextClassificationResponse.cpp
+  src/v20190408/model/DeleteDictResponse.cpp
+  src/v20190408/model/DescribeWordItemsRequest.cpp
+  src/v20190408/model/SearchWordItemsRequest.cpp
+  src/v20190408/model/TextClassificationRequest.cpp
+  src/v20190408/model/CreateDictResponse.cpp
+  src/v20190408/model/TextSimilarityRequest.cpp
+  src/v20190408/model/AutoSummarizationResponse.cpp
   src/v20190408/model/WordEmbeddingResponse.cpp
   src/v20190408/model/DescribeTripleResponse.cpp
-  src/v20190408/model/TextSimilarityResponse.cpp
+  src/v20190408/model/DescribeWordItemsResponse.cpp
+  src/v20190408/model/SimilarWordsRequest.cpp
+  src/v20190408/model/DescribeDictRequest.cpp
   src/v20190408/model/PosToken.cpp
   src/v20190408/model/SentimentAnalysisResponse.cpp
-  src/v20190408/model/KeywordsExtractionResponse.cpp
+  src/v20190408/model/DeleteWordItemsRequest.cpp
+  src/v20190408/model/DescribeDictResponse.cpp
   src/v20190408/model/TextCorrectionResponse.cpp
-  src/v20190408/model/EntityRelationObject.cpp
-  src/v20190408/model/WordEmbeddingRequest.cpp
+  src/v20190408/model/DescribeDictsResponse.cpp
+  src/v20190408/model/DependencyParsingRequest.cpp
+  src/v20190408/model/DeleteDictRequest.cpp
   src/v20190408/model/SentenceSimilarityResponse.cpp
   src/v20190408/model/NerToken.cpp
   src/v20190408/model/SimilarWordsResponse.cpp
+  src/v20190408/model/EntityRelationObject.cpp
   src/v20190408/model/DependencyParsingResponse.cpp
   src/v20190408/model/Similarity.cpp
   src/v20190408/model/CCIToken.cpp
   src/v20190408/model/LexicalAnalysisRequest.cpp
+  src/v20190408/model/CreateWordItemsResponse.cpp
   src/v20190408/model/SentimentAnalysisRequest.cpp
+  src/v20190408/model/EntityRelationSubject.cpp
   src/v20190408/model/EntityRelationContent.cpp
   src/v20190408/model/WordSimilarityResponse.cpp
   src/v20190408/model/TripleContent.cpp
-  src/v20190408/model/EntityRelationSubject.cpp
+  src/v20190408/model/CreateDictRequest.cpp
   )
 
 set(nlp_include

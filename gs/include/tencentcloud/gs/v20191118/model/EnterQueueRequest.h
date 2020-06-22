@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool SetNumberHasBeenSet() const;
 
+                    /**
+                     * 获取游戏用户IP，用于就近调度，例如125.127.178.228
+                     * @return UserIp 游戏用户IP，用于就近调度，例如125.127.178.228
+                     */
+                    std::string GetUserIp() const;
+
+                    /**
+                     * 设置游戏用户IP，用于就近调度，例如125.127.178.228
+                     * @param UserIp 游戏用户IP，用于就近调度，例如125.127.178.228
+                     */
+                    void SetUserIp(const std::string& _userIp);
+
+                    /**
+                     * 判断参数 UserIp 是否已赋值
+                     * @return UserIp 是否已赋值
+                     */
+                    bool UserIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_setNumber;
                     bool m_setNumberHasBeenSet;
+
+                    /**
+                     * 游戏用户IP，用于就近调度，例如125.127.178.228
+                     */
+                    std::string m_userIp;
+                    bool m_userIpHasBeenSet;
 
                 };
             }

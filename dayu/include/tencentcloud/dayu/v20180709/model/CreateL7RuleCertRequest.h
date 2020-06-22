@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取资源实例ID，比如高防IP实例的ID，高防IP专业版实例的ID
-                     * @return Id 资源实例ID，比如高防IP实例的ID，高防IP专业版实例的ID
+                     * 获取资源实例ID，例如高防IP实例的ID，高防IP专业版实例的ID
+                     * @return Id 资源实例ID，例如高防IP实例的ID，高防IP专业版实例的ID
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置资源实例ID，比如高防IP实例的ID，高防IP专业版实例的ID
-                     * @param Id 资源实例ID，比如高防IP实例的ID，高防IP专业版实例的ID
+                     * 设置资源实例ID，例如高防IP实例的ID，高防IP专业版实例的ID
+                     * @param Id 资源实例ID，例如高防IP实例的ID，高防IP专业版实例的ID
                      */
                     void SetId(const std::string& _id);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 资源实例ID，比如高防IP实例的ID，高防IP专业版实例的ID
+                     * 资源实例ID，例如高防IP实例的ID，高防IP专业版实例的ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

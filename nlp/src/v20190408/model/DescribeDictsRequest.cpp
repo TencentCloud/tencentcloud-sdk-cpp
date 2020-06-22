@@ -14,40 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h>
+#include <tencentcloud/nlp/v20190408/model/DescribeDictsRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Ecm::V20190719::Model;
+using namespace TencentCloud::Nlp::V20190408::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeNodeRequest::DescribeNodeRequest() :
-    m_filtersHasBeenSet(false)
+DescribeDictsRequest::DescribeDictsRequest() :
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
-string DescribeNodeRequest::ToJsonString() const
+string DescribeDictsRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_filtersHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Filters";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
 
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -58,20 +60,36 @@ string DescribeNodeRequest::ToJsonString() const
 }
 
 
-vector<Filter> DescribeNodeRequest::GetFilters() const
+uint64_t DescribeDictsRequest::GetLimit() const
 {
-    return m_filters;
+    return m_limit;
 }
 
-void DescribeNodeRequest::SetFilters(const vector<Filter>& _filters)
+void DescribeDictsRequest::SetLimit(const uint64_t& _limit)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeNodeRequest::FiltersHasBeenSet() const
+bool DescribeDictsRequest::LimitHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeDictsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDictsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDictsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

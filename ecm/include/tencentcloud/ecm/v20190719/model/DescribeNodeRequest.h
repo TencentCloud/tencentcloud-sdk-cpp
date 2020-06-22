@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ecm/v20190719/model/Filter.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取过滤条件，name取值为： InstanceFamily-实例系列
+                     * @return Filters 过滤条件，name取值为： InstanceFamily-实例系列
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件，name取值为： InstanceFamily-实例系列
+                     * @param Filters 过滤条件，name取值为： InstanceFamily-实例系列
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 过滤条件，name取值为： InstanceFamily-实例系列
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

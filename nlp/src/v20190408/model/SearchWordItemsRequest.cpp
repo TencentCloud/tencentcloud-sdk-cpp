@@ -14,40 +14,49 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h>
+#include <tencentcloud/nlp/v20190408/model/SearchWordItemsRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Ecm::V20190719::Model;
+using namespace TencentCloud::Nlp::V20190408::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeNodeRequest::DescribeNodeRequest() :
-    m_filtersHasBeenSet(false)
+SearchWordItemsRequest::SearchWordItemsRequest() :
+    m_wordItemsHasBeenSet(false),
+    m_dictIdHasBeenSet(false)
 {
 }
 
-string DescribeNodeRequest::ToJsonString() const
+string SearchWordItemsRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_filtersHasBeenSet)
+    if (m_wordItemsHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Filters";
+        string key = "WordItems";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        for (auto itr = m_wordItems.begin(); itr != m_wordItems.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dictIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DictId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dictId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,20 +67,36 @@ string DescribeNodeRequest::ToJsonString() const
 }
 
 
-vector<Filter> DescribeNodeRequest::GetFilters() const
+vector<WordItem> SearchWordItemsRequest::GetWordItems() const
 {
-    return m_filters;
+    return m_wordItems;
 }
 
-void DescribeNodeRequest::SetFilters(const vector<Filter>& _filters)
+void SearchWordItemsRequest::SetWordItems(const vector<WordItem>& _wordItems)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_wordItems = _wordItems;
+    m_wordItemsHasBeenSet = true;
 }
 
-bool DescribeNodeRequest::FiltersHasBeenSet() const
+bool SearchWordItemsRequest::WordItemsHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_wordItemsHasBeenSet;
+}
+
+string SearchWordItemsRequest::GetDictId() const
+{
+    return m_dictId;
+}
+
+void SearchWordItemsRequest::SetDictId(const string& _dictId)
+{
+    m_dictId = _dictId;
+    m_dictIdHasBeenSet = true;
+}
+
+bool SearchWordItemsRequest::DictIdHasBeenSet() const
+{
+    return m_dictIdHasBeenSet;
 }
 
 
