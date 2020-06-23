@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h>
@@ -64,6 +66,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTroubleInfoResponse> CreateTroubleInfoOutcome;
                 typedef std::future<CreateTroubleInfoOutcome> CreateTroubleInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateTroubleInfoRequest&, CreateTroubleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTroubleInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAbnormalEventResponse> DescribeAbnormalEventOutcome;
+                typedef std::future<DescribeAbnormalEventOutcome> DescribeAbnormalEventOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeAbnormalEventRequest&, DescribeAbnormalEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalEventAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCallDetailResponse> DescribeCallDetailOutcome;
                 typedef std::future<DescribeCallDetailOutcome> DescribeCallDetailOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailRequest&, DescribeCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailAsyncHandler;
@@ -108,6 +113,15 @@ namespace TencentCloud
                 CreateTroubleInfoOutcome CreateTroubleInfo(const Model::CreateTroubleInfoRequest &request);
                 void CreateTroubleInfoAsync(const Model::CreateTroubleInfoRequest& request, const CreateTroubleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTroubleInfoOutcomeCallable CreateTroubleInfoCallable(const Model::CreateTroubleInfoRequest& request);
+
+                /**
+                 *查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询24小时内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916
+                 * @param req DescribeAbnormalEventRequest
+                 * @return DescribeAbnormalEventOutcome
+                 */
+                DescribeAbnormalEventOutcome DescribeAbnormalEvent(const Model::DescribeAbnormalEventRequest &request);
+                void DescribeAbnormalEventAsync(const Model::DescribeAbnormalEventRequest& request, const DescribeAbnormalEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAbnormalEventOutcomeCallable DescribeAbnormalEventCallable(const Model::DescribeAbnormalEventRequest& request);
 
                 /**
                  *查询指定时间内的用户列表及用户通话质量数据。可查询5天内数据，查询起止时间不超过1个小时，查询用户不超过6个，不支持跨天查询。

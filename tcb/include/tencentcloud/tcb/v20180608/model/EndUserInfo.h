@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool IsDisabledHasBeenSet() const;
 
+                    /**
+                     * 获取是否设置过密码
+                     * @return HasPassword 是否设置过密码
+                     */
+                    bool GetHasPassword() const;
+
+                    /**
+                     * 设置是否设置过密码
+                     * @param HasPassword 是否设置过密码
+                     */
+                    void SetHasPassword(const bool& _hasPassword);
+
+                    /**
+                     * 判断参数 HasPassword 是否已赋值
+                     * @return HasPassword 是否已赋值
+                     */
+                    bool HasPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +353,12 @@ namespace TencentCloud
                      */
                     bool m_isDisabled;
                     bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 是否设置过密码
+                     */
+                    bool m_hasPassword;
+                    bool m_hasPasswordHasBeenSet;
 
                 };
             }

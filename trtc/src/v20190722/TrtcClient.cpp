@@ -83,6 +83,49 @@ TrtcClient::CreateTroubleInfoOutcomeCallable TrtcClient::CreateTroubleInfoCallab
     return task->get_future();
 }
 
+TrtcClient::DescribeAbnormalEventOutcome TrtcClient::DescribeAbnormalEvent(const DescribeAbnormalEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAbnormalEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAbnormalEventResponse rsp = DescribeAbnormalEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAbnormalEventOutcome(rsp);
+        else
+            return DescribeAbnormalEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAbnormalEventOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeAbnormalEventAsync(const DescribeAbnormalEventRequest& request, const DescribeAbnormalEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAbnormalEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeAbnormalEventOutcomeCallable TrtcClient::DescribeAbnormalEventCallable(const DescribeAbnormalEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAbnormalEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAbnormalEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeCallDetailOutcome TrtcClient::DescribeCallDetail(const DescribeCallDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCallDetail");
