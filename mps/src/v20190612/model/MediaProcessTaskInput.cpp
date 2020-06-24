@@ -26,7 +26,8 @@ MediaProcessTaskInput::MediaProcessTaskInput() :
     m_animatedGraphicTaskSetHasBeenSet(false),
     m_snapshotByTimeOffsetTaskSetHasBeenSet(false),
     m_sampleSnapshotTaskSetHasBeenSet(false),
-    m_imageSpriteTaskSetHasBeenSet(false)
+    m_imageSpriteTaskSetHasBeenSet(false),
+    m_adaptiveDynamicStreamingTaskSetHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,26 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         m_imageSpriteTaskSetHasBeenSet = true;
     }
 
+    if (value.HasMember("AdaptiveDynamicStreamingTaskSet") && !value["AdaptiveDynamicStreamingTaskSet"].IsNull())
+    {
+        if (!value["AdaptiveDynamicStreamingTaskSet"].IsArray())
+            return CoreInternalOutcome(Error("response `MediaProcessTaskInput.AdaptiveDynamicStreamingTaskSet` is not array type"));
+
+        const Value &tmpValue = value["AdaptiveDynamicStreamingTaskSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdaptiveDynamicStreamingTaskInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_adaptiveDynamicStreamingTaskSet.push_back(item);
+        }
+        m_adaptiveDynamicStreamingTaskSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +232,21 @@ void MediaProcessTaskInput::ToJsonObject(Value &value, Document::AllocatorType& 
 
         int i=0;
         for (auto itr = m_imageSpriteTaskSet.begin(); itr != m_imageSpriteTaskSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_adaptiveDynamicStreamingTaskSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdaptiveDynamicStreamingTaskSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_adaptiveDynamicStreamingTaskSet.begin(); itr != m_adaptiveDynamicStreamingTaskSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -298,5 +334,21 @@ void MediaProcessTaskInput::SetImageSpriteTaskSet(const vector<ImageSpriteTaskIn
 bool MediaProcessTaskInput::ImageSpriteTaskSetHasBeenSet() const
 {
     return m_imageSpriteTaskSetHasBeenSet;
+}
+
+vector<AdaptiveDynamicStreamingTaskInput> MediaProcessTaskInput::GetAdaptiveDynamicStreamingTaskSet() const
+{
+    return m_adaptiveDynamicStreamingTaskSet;
+}
+
+void MediaProcessTaskInput::SetAdaptiveDynamicStreamingTaskSet(const vector<AdaptiveDynamicStreamingTaskInput>& _adaptiveDynamicStreamingTaskSet)
+{
+    m_adaptiveDynamicStreamingTaskSet = _adaptiveDynamicStreamingTaskSet;
+    m_adaptiveDynamicStreamingTaskSetHasBeenSet = true;
+}
+
+bool MediaProcessTaskInput::AdaptiveDynamicStreamingTaskSetHasBeenSet() const
+{
+    return m_adaptiveDynamicStreamingTaskSetHasBeenSet;
 }
 

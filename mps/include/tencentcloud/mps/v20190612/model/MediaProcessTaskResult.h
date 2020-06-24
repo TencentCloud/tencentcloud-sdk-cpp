@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskSnapshotByTimeOffsetResult.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskSampleSnapshotResult.h>
 #include <tencentcloud/mps/v20190612/model/MediaProcessTaskImageSpriteResult.h>
+#include <tencentcloud/mps/v20190612/model/MediaProcessTaskAdaptiveDynamicStreamingResult.h>
 
 
 namespace TencentCloud
@@ -207,6 +208,28 @@ namespace TencentCloud
                      */
                     bool ImageSpriteTaskHasBeenSet() const;
 
+                    /**
+                     * 获取转自适应码流任务查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdaptiveDynamicStreamingTask 转自适应码流任务查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaProcessTaskAdaptiveDynamicStreamingResult GetAdaptiveDynamicStreamingTask() const;
+
+                    /**
+                     * 设置转自适应码流任务查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdaptiveDynamicStreamingTask 转自适应码流任务查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdaptiveDynamicStreamingTask(const MediaProcessTaskAdaptiveDynamicStreamingResult& _adaptiveDynamicStreamingTask);
+
+                    /**
+                     * 判断参数 AdaptiveDynamicStreamingTask 是否已赋值
+                     * @return AdaptiveDynamicStreamingTask 是否已赋值
+                     */
+                    bool AdaptiveDynamicStreamingTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +279,13 @@ namespace TencentCloud
                      */
                     MediaProcessTaskImageSpriteResult m_imageSpriteTask;
                     bool m_imageSpriteTaskHasBeenSet;
+
+                    /**
+                     * 转自适应码流任务查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaProcessTaskAdaptiveDynamicStreamingResult m_adaptiveDynamicStreamingTask;
+                    bool m_adaptiveDynamicStreamingTaskHasBeenSet;
 
                 };
             }

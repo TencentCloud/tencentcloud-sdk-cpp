@@ -31,6 +31,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetProjectListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetProjectListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListRequest.h>
@@ -97,6 +101,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
+                typedef Outcome<Error, Model::CreateLoRaGatewayResponse> CreateLoRaGatewayOutcome;
+                typedef std::future<CreateLoRaGatewayOutcome> CreateLoRaGatewayOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaGatewayRequest&, CreateLoRaGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaGatewayAsyncHandler;
                 typedef Outcome<Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
@@ -133,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetDeviceListResponse> GetDeviceListOutcome;
                 typedef std::future<GetDeviceListOutcome> GetDeviceListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetDeviceListRequest&, GetDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceListAsyncHandler;
+                typedef Outcome<Error, Model::GetLoRaGatewayListResponse> GetLoRaGatewayListOutcome;
+                typedef std::future<GetLoRaGatewayListOutcome> GetLoRaGatewayListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetLoRaGatewayListRequest&, GetLoRaGatewayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLoRaGatewayListAsyncHandler;
                 typedef Outcome<Error, Model::GetProjectListResponse> GetProjectListOutcome;
                 typedef std::future<GetProjectListOutcome> GetProjectListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetProjectListRequest&, GetProjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectListAsyncHandler;
@@ -195,6 +205,15 @@ namespace TencentCloud
                 CreateDeviceOutcome CreateDevice(const Model::CreateDeviceRequest &request);
                 void CreateDeviceAsync(const Model::CreateDeviceRequest& request, const CreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request);
+
+                /**
+                 *创建新 LoRa 网关设备接口
+                 * @param req CreateLoRaGatewayRequest
+                 * @return CreateLoRaGatewayOutcome
+                 */
+                CreateLoRaGatewayOutcome CreateLoRaGateway(const Model::CreateLoRaGatewayRequest &request);
+                void CreateLoRaGatewayAsync(const Model::CreateLoRaGatewayRequest& request, const CreateLoRaGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLoRaGatewayOutcomeCallable CreateLoRaGatewayCallable(const Model::CreateLoRaGatewayRequest& request);
 
                 /**
                  *为用户提供新建项目的能力，用于集中管理产品和应用。
@@ -303,6 +322,15 @@ namespace TencentCloud
                 GetDeviceListOutcome GetDeviceList(const Model::GetDeviceListRequest &request);
                 void GetDeviceListAsync(const Model::GetDeviceListRequest& request, const GetDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDeviceListOutcomeCallable GetDeviceListCallable(const Model::GetDeviceListRequest& request);
+
+                /**
+                 *获取 LoRa 网关列表接口
+                 * @param req GetLoRaGatewayListRequest
+                 * @return GetLoRaGatewayListOutcome
+                 */
+                GetLoRaGatewayListOutcome GetLoRaGatewayList(const Model::GetLoRaGatewayListRequest &request);
+                void GetLoRaGatewayListAsync(const Model::GetLoRaGatewayListRequest& request, const GetLoRaGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLoRaGatewayListOutcomeCallable GetLoRaGatewayListCallable(const Model::GetLoRaGatewayListRequest& request);
 
                 /**
                  *提供查询用户所创建的项目列表查询功能。

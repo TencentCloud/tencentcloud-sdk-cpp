@@ -212,6 +212,49 @@ IotexplorerClient::CreateDeviceOutcomeCallable IotexplorerClient::CreateDeviceCa
     return task->get_future();
 }
 
+IotexplorerClient::CreateLoRaGatewayOutcome IotexplorerClient::CreateLoRaGateway(const CreateLoRaGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLoRaGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLoRaGatewayResponse rsp = CreateLoRaGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLoRaGatewayOutcome(rsp);
+        else
+            return CreateLoRaGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLoRaGatewayOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateLoRaGatewayAsync(const CreateLoRaGatewayRequest& request, const CreateLoRaGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLoRaGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateLoRaGatewayOutcomeCallable IotexplorerClient::CreateLoRaGatewayCallable(const CreateLoRaGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLoRaGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLoRaGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateProjectOutcome IotexplorerClient::CreateProject(const CreateProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProject");
@@ -721,6 +764,49 @@ IotexplorerClient::GetDeviceListOutcomeCallable IotexplorerClient::GetDeviceList
         [this, request]()
         {
             return this->GetDeviceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::GetLoRaGatewayListOutcome IotexplorerClient::GetLoRaGatewayList(const GetLoRaGatewayListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetLoRaGatewayList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetLoRaGatewayListResponse rsp = GetLoRaGatewayListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetLoRaGatewayListOutcome(rsp);
+        else
+            return GetLoRaGatewayListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetLoRaGatewayListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetLoRaGatewayListAsync(const GetLoRaGatewayListRequest& request, const GetLoRaGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetLoRaGatewayList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetLoRaGatewayListOutcomeCallable IotexplorerClient::GetLoRaGatewayListCallable(const GetLoRaGatewayListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetLoRaGatewayListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetLoRaGatewayList(request);
         }
     );
 

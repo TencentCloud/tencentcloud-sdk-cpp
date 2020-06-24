@@ -27,7 +27,8 @@ MediaProcessTaskResult::MediaProcessTaskResult() :
     m_animatedGraphicTaskHasBeenSet(false),
     m_snapshotByTimeOffsetTaskHasBeenSet(false),
     m_sampleSnapshotTaskHasBeenSet(false),
-    m_imageSpriteTaskHasBeenSet(false)
+    m_imageSpriteTaskHasBeenSet(false),
+    m_adaptiveDynamicStreamingTaskHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,23 @@ CoreInternalOutcome MediaProcessTaskResult::Deserialize(const Value &value)
         m_imageSpriteTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("AdaptiveDynamicStreamingTask") && !value["AdaptiveDynamicStreamingTask"].IsNull())
+    {
+        if (!value["AdaptiveDynamicStreamingTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `MediaProcessTaskResult.AdaptiveDynamicStreamingTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_adaptiveDynamicStreamingTask.Deserialize(value["AdaptiveDynamicStreamingTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_adaptiveDynamicStreamingTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -189,6 +207,15 @@ void MediaProcessTaskResult::ToJsonObject(Value &value, Document::AllocatorType&
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_imageSpriteTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_adaptiveDynamicStreamingTaskHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AdaptiveDynamicStreamingTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_adaptiveDynamicStreamingTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -288,5 +315,21 @@ void MediaProcessTaskResult::SetImageSpriteTask(const MediaProcessTaskImageSprit
 bool MediaProcessTaskResult::ImageSpriteTaskHasBeenSet() const
 {
     return m_imageSpriteTaskHasBeenSet;
+}
+
+MediaProcessTaskAdaptiveDynamicStreamingResult MediaProcessTaskResult::GetAdaptiveDynamicStreamingTask() const
+{
+    return m_adaptiveDynamicStreamingTask;
+}
+
+void MediaProcessTaskResult::SetAdaptiveDynamicStreamingTask(const MediaProcessTaskAdaptiveDynamicStreamingResult& _adaptiveDynamicStreamingTask)
+{
+    m_adaptiveDynamicStreamingTask = _adaptiveDynamicStreamingTask;
+    m_adaptiveDynamicStreamingTaskHasBeenSet = true;
+}
+
+bool MediaProcessTaskResult::AdaptiveDynamicStreamingTaskHasBeenSet() const
+{
+    return m_adaptiveDynamicStreamingTaskHasBeenSet;
 }
 

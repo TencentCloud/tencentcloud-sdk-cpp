@@ -126,6 +126,49 @@ MpsClient::CreateAIRecognitionTemplateOutcomeCallable MpsClient::CreateAIRecogni
     return task->get_future();
 }
 
+MpsClient::CreateAdaptiveDynamicStreamingTemplateOutcome MpsClient::CreateAdaptiveDynamicStreamingTemplate(const CreateAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAdaptiveDynamicStreamingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAdaptiveDynamicStreamingTemplateResponse rsp = CreateAdaptiveDynamicStreamingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAdaptiveDynamicStreamingTemplateOutcome(rsp);
+        else
+            return CreateAdaptiveDynamicStreamingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAdaptiveDynamicStreamingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAdaptiveDynamicStreamingTemplateAsync(const CreateAdaptiveDynamicStreamingTemplateRequest& request, const CreateAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAdaptiveDynamicStreamingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable MpsClient::CreateAdaptiveDynamicStreamingTemplateCallable(const CreateAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAdaptiveDynamicStreamingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAdaptiveDynamicStreamingTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateAnimatedGraphicsTemplateOutcome MpsClient::CreateAnimatedGraphicsTemplate(const CreateAnimatedGraphicsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAnimatedGraphicsTemplate");
@@ -642,6 +685,49 @@ MpsClient::DeleteAIRecognitionTemplateOutcomeCallable MpsClient::DeleteAIRecogni
     return task->get_future();
 }
 
+MpsClient::DeleteAdaptiveDynamicStreamingTemplateOutcome MpsClient::DeleteAdaptiveDynamicStreamingTemplate(const DeleteAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAdaptiveDynamicStreamingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAdaptiveDynamicStreamingTemplateResponse rsp = DeleteAdaptiveDynamicStreamingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAdaptiveDynamicStreamingTemplateOutcome(rsp);
+        else
+            return DeleteAdaptiveDynamicStreamingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAdaptiveDynamicStreamingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteAdaptiveDynamicStreamingTemplateAsync(const DeleteAdaptiveDynamicStreamingTemplateRequest& request, const DeleteAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAdaptiveDynamicStreamingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable MpsClient::DeleteAdaptiveDynamicStreamingTemplateCallable(const DeleteAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAdaptiveDynamicStreamingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAdaptiveDynamicStreamingTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DeleteAnimatedGraphicsTemplateOutcome MpsClient::DeleteAnimatedGraphicsTemplate(const DeleteAnimatedGraphicsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAnimatedGraphicsTemplate");
@@ -1151,6 +1237,49 @@ MpsClient::DescribeAIRecognitionTemplatesOutcomeCallable MpsClient::DescribeAIRe
         [this, request]()
         {
             return this->DescribeAIRecognitionTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeAdaptiveDynamicStreamingTemplatesOutcome MpsClient::DescribeAdaptiveDynamicStreamingTemplates(const DescribeAdaptiveDynamicStreamingTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAdaptiveDynamicStreamingTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAdaptiveDynamicStreamingTemplatesResponse rsp = DescribeAdaptiveDynamicStreamingTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAdaptiveDynamicStreamingTemplatesOutcome(rsp);
+        else
+            return DescribeAdaptiveDynamicStreamingTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAdaptiveDynamicStreamingTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAdaptiveDynamicStreamingTemplatesAsync(const DescribeAdaptiveDynamicStreamingTemplatesRequest& request, const DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAdaptiveDynamicStreamingTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable MpsClient::DescribeAdaptiveDynamicStreamingTemplatesCallable(const DescribeAdaptiveDynamicStreamingTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAdaptiveDynamicStreamingTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAdaptiveDynamicStreamingTemplates(request);
         }
     );
 
@@ -1968,6 +2097,49 @@ MpsClient::ModifyAIRecognitionTemplateOutcomeCallable MpsClient::ModifyAIRecogni
         [this, request]()
         {
             return this->ModifyAIRecognitionTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyAdaptiveDynamicStreamingTemplateOutcome MpsClient::ModifyAdaptiveDynamicStreamingTemplate(const ModifyAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAdaptiveDynamicStreamingTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAdaptiveDynamicStreamingTemplateResponse rsp = ModifyAdaptiveDynamicStreamingTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAdaptiveDynamicStreamingTemplateOutcome(rsp);
+        else
+            return ModifyAdaptiveDynamicStreamingTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAdaptiveDynamicStreamingTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyAdaptiveDynamicStreamingTemplateAsync(const ModifyAdaptiveDynamicStreamingTemplateRequest& request, const ModifyAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAdaptiveDynamicStreamingTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyAdaptiveDynamicStreamingTemplateOutcomeCallable MpsClient::ModifyAdaptiveDynamicStreamingTemplateCallable(const ModifyAdaptiveDynamicStreamingTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAdaptiveDynamicStreamingTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAdaptiveDynamicStreamingTemplate(request);
         }
     );
 
