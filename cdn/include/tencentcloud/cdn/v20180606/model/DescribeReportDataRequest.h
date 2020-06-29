@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询起始时间
-                     * @return StartTime 查询起始时间
+                     * 获取查询起始时间：yyyy-MM-dd
+                     * @return StartTime 查询起始时间：yyyy-MM-dd
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始时间
-                     * @param StartTime 查询起始时间
+                     * 设置查询起始时间：yyyy-MM-dd
+                     * @param StartTime 查询起始时间：yyyy-MM-dd
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间
-                     * @return EndTime 查询结束时间
+                     * 获取查询结束时间：yyyy-MM-dd
+                     * @return EndTime 查询结束时间：yyyy-MM-dd
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间
-                     * @param EndTime 查询结束时间
+                     * 设置查询结束时间：yyyy-MM-dd
+                     * @param EndTime 查询结束时间：yyyy-MM-dd
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -81,24 +81,24 @@ namespace TencentCloud
                     /**
                      * 获取报表类型
 daily：日报表
-weekly：周报表
-monthly：月报表
+weekly：周报表（周一至周日）
+monthly：月报表（自然月）
                      * @return ReportType 报表类型
 daily：日报表
-weekly：周报表
-monthly：月报表
+weekly：周报表（周一至周日）
+monthly：月报表（自然月）
                      */
                     std::string GetReportType() const;
 
                     /**
                      * 设置报表类型
 daily：日报表
-weekly：周报表
-monthly：月报表
+weekly：周报表（周一至周日）
+monthly：月报表（自然月）
                      * @param ReportType 报表类型
 daily：日报表
-weekly：周报表
-monthly：月报表
+weekly：周报表（周一至周日）
+monthly：月报表（自然月）
                      */
                     void SetReportType(const std::string& _reportType);
 
@@ -191,13 +191,13 @@ overseas：中国境外
                 private:
 
                     /**
-                     * 查询起始时间
+                     * 查询起始时间：yyyy-MM-dd
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间
+                     * 查询结束时间：yyyy-MM-dd
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -205,8 +205,8 @@ overseas：中国境外
                     /**
                      * 报表类型
 daily：日报表
-weekly：周报表
-monthly：月报表
+weekly：周报表（周一至周日）
+monthly：月报表（自然月）
                      */
                     std::string m_reportType;
                     bool m_reportTypeHasBeenSet;

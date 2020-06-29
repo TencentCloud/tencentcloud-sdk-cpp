@@ -37,11 +37,13 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/GetInstanceAccessRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeGameServerSessionsRequest.h
   include/tencentcloud/gse/v20191112/model/UpdateGameServerSessionRequest.h
+  include/tencentcloud/gse/v20191112/model/StartMatchPlacementResponse.h
   include/tencentcloud/gse/v20191112/model/DescribePlayerSessionsRequest.h
   include/tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementResponse.h
   include/tencentcloud/gse/v20191112/model/Credentials.h
   include/tencentcloud/gse/v20191112/model/DescribeInstancesResponse.h
   include/tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlRequest.h
+  include/tencentcloud/gse/v20191112/model/StartMatchPlacementRequest.h
   include/tencentcloud/gse/v20191112/model/CreateGameServerSessionResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeInstancesRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeScalingPoliciesRequest.h
@@ -93,11 +95,13 @@ set(gse_src
   src/v20191112/model/GetInstanceAccessRequest.cpp
   src/v20191112/model/DescribeGameServerSessionsRequest.cpp
   src/v20191112/model/UpdateGameServerSessionRequest.cpp
+  src/v20191112/model/StartMatchPlacementResponse.cpp
   src/v20191112/model/DescribePlayerSessionsRequest.cpp
   src/v20191112/model/StartGameServerSessionPlacementResponse.cpp
   src/v20191112/model/Credentials.cpp
   src/v20191112/model/DescribeInstancesResponse.cpp
   src/v20191112/model/GetGameServerSessionLogUrlRequest.cpp
+  src/v20191112/model/StartMatchPlacementRequest.cpp
   src/v20191112/model/CreateGameServerSessionResponse.cpp
   src/v20191112/model/DescribeInstancesRequest.cpp
   src/v20191112/model/DescribeScalingPoliciesRequest.cpp

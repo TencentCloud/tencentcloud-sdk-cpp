@@ -115,6 +115,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/Coord.h
+  include/tencentcloud/ocr/v20181119/model/SealOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofInfo.h
   include/tencentcloud/ocr/v20181119/model/FinanBillOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TextWaybill.h
@@ -135,6 +136,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/InsuranceBillInfo.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/SealOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextTable.h
   include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BusInvoiceOCRResponse.h
@@ -265,6 +267,7 @@ set(ocr_src
   src/v20181119/model/MLIDPassportOCRResponse.cpp
   src/v20181119/model/VatRollInvoiceOCRRequest.cpp
   src/v20181119/model/Coord.cpp
+  src/v20181119/model/SealOCRResponse.cpp
   src/v20181119/model/DutyPaidProofInfo.cpp
   src/v20181119/model/FinanBillOCRResponse.cpp
   src/v20181119/model/TextWaybill.cpp
@@ -285,6 +288,7 @@ set(ocr_src
   src/v20181119/model/InsuranceBillInfo.cpp
   src/v20181119/model/VehicleRegCertOCRResponse.cpp
   src/v20181119/model/GeneralAccurateOCRResponse.cpp
+  src/v20181119/model/SealOCRRequest.cpp
   src/v20181119/model/TextTable.cpp
   src/v20181119/model/ResidenceBookletOCRRequest.cpp
   src/v20181119/model/BusInvoiceOCRResponse.cpp

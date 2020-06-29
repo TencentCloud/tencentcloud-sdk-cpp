@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool StreamIdHasBeenSet() const;
 
                     /**
-                     * 获取填0：直播流为音视频(默认); 填1：直播流为纯音频
-                     * @return PureAudioStream 填0：直播流为音视频(默认); 填1：直播流为纯音频
+                     * 获取取值范围[0,1]， 填0：直播流为音视频(默认); 填1：直播流为纯音频
+                     * @return PureAudioStream 取值范围[0,1]， 填0：直播流为音视频(默认); 填1：直播流为纯音频
                      */
                     uint64_t GetPureAudioStream() const;
 
                     /**
-                     * 设置填0：直播流为音视频(默认); 填1：直播流为纯音频
-                     * @param PureAudioStream 填0：直播流为音视频(默认); 填1：直播流为纯音频
+                     * 设置取值范围[0,1]， 填0：直播流为音视频(默认); 填1：直播流为纯音频
+                     * @param PureAudioStream 取值范围[0,1]， 填0：直播流为音视频(默认); 填1：直播流为纯音频
                      */
                     void SetPureAudioStream(const uint64_t& _pureAudioStream);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取填1：纯音频录制为mp3
-                     * @return RecordAudioOnly 填1：纯音频录制为mp3
+                     * 获取取值范围[0,1]，填1：指定录制文件格式为mp3
+                     * @return RecordAudioOnly 取值范围[0,1]，填1：指定录制文件格式为mp3
                      */
                     uint64_t GetRecordAudioOnly() const;
 
                     /**
-                     * 设置填1：纯音频录制为mp3
-                     * @param RecordAudioOnly 填1：纯音频录制为mp3
+                     * 设置取值范围[0,1]，填1：指定录制文件格式为mp3
+                     * @param RecordAudioOnly 取值范围[0,1]，填1：指定录制文件格式为mp3
                      */
                     void SetRecordAudioOnly(const uint64_t& _recordAudioOnly);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_streamIdHasBeenSet;
 
                     /**
-                     * 填0：直播流为音视频(默认); 填1：直播流为纯音频
+                     * 取值范围[0,1]， 填0：直播流为音视频(默认); 填1：直播流为纯音频
                      */
                     uint64_t m_pureAudioStream;
                     bool m_pureAudioStreamHasBeenSet;
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 填1：纯音频录制为mp3
+                     * 取值范围[0,1]，填1：指定录制文件格式为mp3
                      */
                     uint64_t m_recordAudioOnly;
                     bool m_recordAudioOnlyHasBeenSet;

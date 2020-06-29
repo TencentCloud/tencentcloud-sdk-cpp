@@ -103,6 +103,8 @@
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SealOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/SealOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
@@ -261,6 +263,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResidenceBookletOCRResponse> ResidenceBookletOCROutcome;
                 typedef std::future<ResidenceBookletOCROutcome> ResidenceBookletOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ResidenceBookletOCRRequest&, ResidenceBookletOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResidenceBookletOCRAsyncHandler;
+                typedef Outcome<Error, Model::SealOCRResponse> SealOCROutcome;
+                typedef std::future<SealOCROutcome> SealOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::SealOCRRequest&, SealOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SealOCRAsyncHandler;
                 typedef Outcome<Error, Model::ShipInvoiceOCRResponse> ShipInvoiceOCROutcome;
                 typedef std::future<ShipInvoiceOCROutcome> ShipInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ShipInvoiceOCRRequest&, ShipInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShipInvoiceOCRAsyncHandler;
@@ -914,6 +919,15 @@ namespace TencentCloud
                 ResidenceBookletOCROutcome ResidenceBookletOCR(const Model::ResidenceBookletOCRRequest &request);
                 void ResidenceBookletOCRAsync(const Model::ResidenceBookletOCRRequest& request, const ResidenceBookletOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResidenceBookletOCROutcomeCallable ResidenceBookletOCRCallable(const Model::ResidenceBookletOCRRequest& request);
+
+                /**
+                 *印章识别已支持各类印章，包括发票章，财务章等，适用于公文，票据等场景。
+                 * @param req SealOCRRequest
+                 * @return SealOCROutcome
+                 */
+                SealOCROutcome SealOCR(const Model::SealOCRRequest &request);
+                void SealOCRAsync(const Model::SealOCRRequest& request, const SealOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SealOCROutcomeCallable SealOCRCallable(const Model::SealOCRRequest& request);
 
                 /**
                  *本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价等字段。

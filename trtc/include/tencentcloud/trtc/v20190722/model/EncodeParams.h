@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取混流-输出流音频采样率
-                     * @return AudioSampleRate 混流-输出流音频采样率
+                     * 获取混流-输出流音频采样率。取值为[96000, 88200, 64000, 48000, 44100, 32000,24000, 22050, 16000, 12000, 11025, 8000]。
+                     * @return AudioSampleRate 混流-输出流音频采样率。取值为[96000, 88200, 64000, 48000, 44100, 32000,24000, 22050, 16000, 12000, 11025, 8000]。
                      */
                     uint64_t GetAudioSampleRate() const;
 
                     /**
-                     * 设置混流-输出流音频采样率
-                     * @param AudioSampleRate 混流-输出流音频采样率
+                     * 设置混流-输出流音频采样率。取值为[96000, 88200, 64000, 48000, 44100, 32000,24000, 22050, 16000, 12000, 11025, 8000]。
+                     * @param AudioSampleRate 混流-输出流音频采样率。取值为[96000, 88200, 64000, 48000, 44100, 32000,24000, 22050, 16000, 12000, 11025, 8000]。
                      */
                     void SetAudioSampleRate(const uint64_t& _audioSampleRate);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AudioSampleRateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流音频码率，单位Kbps
-                     * @return AudioBitrate 混流-输出流音频码率，单位Kbps
+                     * 获取混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
+                     * @return AudioBitrate 混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
                      */
                     uint64_t GetAudioBitrate() const;
 
                     /**
-                     * 设置混流-输出流音频码率，单位Kbps
-                     * @param AudioBitrate 混流-输出流音频码率，单位Kbps
+                     * 设置混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
+                     * @param AudioBitrate 混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
                      */
                     void SetAudioBitrate(const uint64_t& _audioBitrate);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AudioBitrateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流音频声道数
-                     * @return AudioChannels 混流-输出流音频声道数
+                     * 获取混流-输出流音频声道数，取值范围[1,2]。
+                     * @return AudioChannels 混流-输出流音频声道数，取值范围[1,2]。
                      */
                     uint64_t GetAudioChannels() const;
 
                     /**
-                     * 设置混流-输出流音频声道数
-                     * @param AudioChannels 混流-输出流音频声道数
+                     * 设置混流-输出流音频声道数，取值范围[1,2]。
+                     * @param AudioChannels 混流-输出流音频声道数，取值范围[1,2]。
                      */
                     void SetAudioChannels(const uint64_t& _audioChannels);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool AudioChannelsHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流宽，音视频输出时必填
-                     * @return VideoWidth 混流-输出流宽，音视频输出时必填
+                     * 获取混流-输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
+                     * @return VideoWidth 混流-输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
                      */
                     uint64_t GetVideoWidth() const;
 
                     /**
-                     * 设置混流-输出流宽，音视频输出时必填
-                     * @param VideoWidth 混流-输出流宽，音视频输出时必填
+                     * 设置混流-输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
+                     * @param VideoWidth 混流-输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
                      */
                     void SetVideoWidth(const uint64_t& _videoWidth);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool VideoWidthHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流高，音视频输出时必填
-                     * @return VideoHeight 混流-输出流高，音视频输出时必填
+                     * 获取混流-输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * @return VideoHeight 混流-输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
                      */
                     uint64_t GetVideoHeight() const;
 
                     /**
-                     * 设置混流-输出流高，音视频输出时必填
-                     * @param VideoHeight 混流-输出流高，音视频输出时必填
+                     * 设置混流-输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * @param VideoHeight 混流-输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
                      */
                     void SetVideoHeight(const uint64_t& _videoHeight);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool VideoHeightHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流码率，单位Kbps，音视频输出时必填
-                     * @return VideoBitrate 混流-输出流码率，单位Kbps，音视频输出时必填
+                     * 获取混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
+                     * @return VideoBitrate 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
                      */
                     uint64_t GetVideoBitrate() const;
 
                     /**
-                     * 设置混流-输出流码率，单位Kbps，音视频输出时必填
-                     * @param VideoBitrate 混流-输出流码率，单位Kbps，音视频输出时必填
+                     * 设置混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
+                     * @param VideoBitrate 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
                      */
                     void SetVideoBitrate(const uint64_t& _videoBitrate);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool VideoBitrateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流帧率，音视频输出时必填
-                     * @return VideoFramerate 混流-输出流帧率，音视频输出时必填
+                     * 获取混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
+                     * @return VideoFramerate 混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
                      */
                     uint64_t GetVideoFramerate() const;
 
                     /**
-                     * 设置混流-输出流帧率，音视频输出时必填
-                     * @param VideoFramerate 混流-输出流帧率，音视频输出时必填
+                     * 设置混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
+                     * @param VideoFramerate 混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
                      */
                     void SetVideoFramerate(const uint64_t& _videoFramerate);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool VideoFramerateHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流gop，音视频输出时必填
-                     * @return VideoGop 混流-输出流gop，音视频输出时必填
+                     * 获取混流-输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
+                     * @return VideoGop 混流-输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
                      */
                     uint64_t GetVideoGop() const;
 
                     /**
-                     * 设置混流-输出流gop，音视频输出时必填
-                     * @param VideoGop 混流-输出流gop，音视频输出时必填
+                     * 设置混流-输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
+                     * @param VideoGop 混流-输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
                      */
                     void SetVideoGop(const uint64_t& _videoGop);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool VideoGopHasBeenSet() const;
 
                     /**
-                     * 获取混流-输出流背景色
-                     * @return BackgroundColor 混流-输出流背景色
+                     * 获取混流-输出流背景色。
+                     * @return BackgroundColor 混流-输出流背景色。
                      */
                     uint64_t GetBackgroundColor() const;
 
                     /**
-                     * 设置混流-输出流背景色
-                     * @param BackgroundColor 混流-输出流背景色
+                     * 设置混流-输出流背景色。
+                     * @param BackgroundColor 混流-输出流背景色。
                      */
                     void SetBackgroundColor(const uint64_t& _backgroundColor);
 
@@ -211,55 +211,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 混流-输出流音频采样率
+                     * 混流-输出流音频采样率。取值为[96000, 88200, 64000, 48000, 44100, 32000,24000, 22050, 16000, 12000, 11025, 8000]。
                      */
                     uint64_t m_audioSampleRate;
                     bool m_audioSampleRateHasBeenSet;
 
                     /**
-                     * 混流-输出流音频码率，单位Kbps
+                     * 混流-输出流音频码率。取值范围[8,500]，单位为Kbps。
                      */
                     uint64_t m_audioBitrate;
                     bool m_audioBitrateHasBeenSet;
 
                     /**
-                     * 混流-输出流音频声道数
+                     * 混流-输出流音频声道数，取值范围[1,2]。
                      */
                     uint64_t m_audioChannels;
                     bool m_audioChannelsHasBeenSet;
 
                     /**
-                     * 混流-输出流宽，音视频输出时必填
+                     * 混流-输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。
                      */
                     uint64_t m_videoWidth;
                     bool m_videoWidthHasBeenSet;
 
                     /**
-                     * 混流-输出流高，音视频输出时必填
+                     * 混流-输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
                      */
                     uint64_t m_videoHeight;
                     bool m_videoHeightHasBeenSet;
 
                     /**
-                     * 混流-输出流码率，单位Kbps，音视频输出时必填
+                     * 混流-输出流码率，音视频输出时必填。取值范围[1,10000]，单位为Kbps。
                      */
                     uint64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;
 
                     /**
-                     * 混流-输出流帧率，音视频输出时必填
+                     * 混流-输出流帧率，音视频输出时必填。取值为[6,12,15,24,30,48,60]，不在上述帧率值内系统会自动调整。
                      */
                     uint64_t m_videoFramerate;
                     bool m_videoFramerateHasBeenSet;
 
                     /**
-                     * 混流-输出流gop，音视频输出时必填
+                     * 混流-输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。
                      */
                     uint64_t m_videoGop;
                     bool m_videoGopHasBeenSet;
 
                     /**
-                     * 混流-输出流背景色
+                     * 混流-输出流背景色。
                      */
                     uint64_t m_backgroundColor;
                     bool m_backgroundColorHasBeenSet;

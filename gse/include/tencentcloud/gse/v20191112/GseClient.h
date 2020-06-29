@@ -55,6 +55,8 @@
 #include <tencentcloud/gse/v20191112/model/SetServerWeightResponse.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementRequest.h>
 #include <tencentcloud/gse/v20191112/model/StartGameServerSessionPlacementResponse.h>
+#include <tencentcloud/gse/v20191112/model/StartMatchPlacementRequest.h>
+#include <tencentcloud/gse/v20191112/model/StartMatchPlacementResponse.h>
 #include <tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementRequest.h>
 #include <tencentcloud/gse/v20191112/model/StopGameServerSessionPlacementResponse.h>
 #include <tencentcloud/gse/v20191112/model/UpdateGameServerSessionRequest.h>
@@ -121,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StartGameServerSessionPlacementResponse> StartGameServerSessionPlacementOutcome;
                 typedef std::future<StartGameServerSessionPlacementOutcome> StartGameServerSessionPlacementOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::StartGameServerSessionPlacementRequest&, StartGameServerSessionPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartGameServerSessionPlacementAsyncHandler;
+                typedef Outcome<Error, Model::StartMatchPlacementResponse> StartMatchPlacementOutcome;
+                typedef std::future<StartMatchPlacementOutcome> StartMatchPlacementOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::StartMatchPlacementRequest&, StartMatchPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMatchPlacementAsyncHandler;
                 typedef Outcome<Error, Model::StopGameServerSessionPlacementResponse> StopGameServerSessionPlacementOutcome;
                 typedef std::future<StopGameServerSessionPlacementOutcome> StopGameServerSessionPlacementOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::StopGameServerSessionPlacementRequest&, StopGameServerSessionPlacementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameServerSessionPlacementAsyncHandler;
@@ -273,6 +278,15 @@ namespace TencentCloud
                 StartGameServerSessionPlacementOutcome StartGameServerSessionPlacement(const Model::StartGameServerSessionPlacementRequest &request);
                 void StartGameServerSessionPlacementAsync(const Model::StartGameServerSessionPlacementRequest& request, const StartGameServerSessionPlacementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartGameServerSessionPlacementOutcomeCallable StartGameServerSessionPlacementCallable(const Model::StartGameServerSessionPlacementRequest& request);
+
+                /**
+                 *本接口（StartMatchPlacement）用于开始匹配放置游戏服务器会话
+                 * @param req StartMatchPlacementRequest
+                 * @return StartMatchPlacementOutcome
+                 */
+                StartMatchPlacementOutcome StartMatchPlacement(const Model::StartMatchPlacementRequest &request);
+                void StartMatchPlacementAsync(const Model::StartMatchPlacementRequest& request, const StartMatchPlacementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartMatchPlacementOutcomeCallable StartMatchPlacementCallable(const Model::StartMatchPlacementRequest& request);
 
                 /**
                  *本接口（StopGameServerSessionPlacement）用于停止放置游戏服务器会话

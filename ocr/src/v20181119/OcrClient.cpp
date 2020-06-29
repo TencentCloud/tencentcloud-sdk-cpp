@@ -1760,6 +1760,49 @@ OcrClient::ResidenceBookletOCROutcomeCallable OcrClient::ResidenceBookletOCRCall
     return task->get_future();
 }
 
+OcrClient::SealOCROutcome OcrClient::SealOCR(const SealOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "SealOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SealOCRResponse rsp = SealOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SealOCROutcome(rsp);
+        else
+            return SealOCROutcome(o.GetError());
+    }
+    else
+    {
+        return SealOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::SealOCRAsync(const SealOCRRequest& request, const SealOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SealOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::SealOCROutcomeCallable OcrClient::SealOCRCallable(const SealOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SealOCROutcome()>>(
+        [this, request]()
+        {
+            return this->SealOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::ShipInvoiceOCROutcome OcrClient::ShipInvoiceOCR(const ShipInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "ShipInvoiceOCR");

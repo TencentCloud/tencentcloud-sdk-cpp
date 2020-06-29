@@ -43,11 +43,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询起始日期，如：2018-09-09
+                     * 获取查询起始日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
 返回大于等于起始日期当天 00:00:00 点产生的数据
 仅支持 90 天内数据查询
-                     * @return StartTime 查询起始日期，如：2018-09-09
+                     * @return StartTime 查询起始日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
 返回大于等于起始日期当天 00:00:00 点产生的数据
 仅支持 90 天内数据查询
@@ -55,11 +55,11 @@ namespace TencentCloud
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始日期，如：2018-09-09
+                     * 设置查询起始日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
 返回大于等于起始日期当天 00:00:00 点产生的数据
 仅支持 90 天内数据查询
-                     * @param StartTime 查询起始日期，如：2018-09-09
+                     * @param StartTime 查询起始日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
 返回大于等于起始日期当天 00:00:00 点产生的数据
 仅支持 90 天内数据查询
@@ -73,11 +73,11 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束日期，如：2018-09-10
+                     * 获取查询结束日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
 返回小于等于结束日期当天 23:59:59 产生的数据
 EndTime 需要大于等于 StartTime
-                     * @return EndTime 查询结束日期，如：2018-09-10
+                     * @return EndTime 查询结束日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
 返回小于等于结束日期当天 23:59:59 产生的数据
 EndTime 需要大于等于 StartTime
@@ -85,11 +85,11 @@ EndTime 需要大于等于 StartTime
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束日期，如：2018-09-10
+                     * 设置查询结束日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
 返回小于等于结束日期当天 23:59:59 产生的数据
 EndTime 需要大于等于 StartTime
-                     * @param EndTime 查询结束日期，如：2018-09-10
+                     * @param EndTime 查询结束日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
 返回小于等于结束日期当天 23:59:59 产生的数据
 EndTime 需要大于等于 StartTime
@@ -353,7 +353,7 @@ client：指定查询客户端地区（用户请求终端所在地区）数据�
                 private:
 
                     /**
-                     * 查询起始日期，如：2018-09-09
+                     * 查询起始日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
 返回大于等于起始日期当天 00:00:00 点产生的数据
 仅支持 90 天内数据查询
@@ -362,7 +362,7 @@ client：指定查询客户端地区（用户请求终端所在地区）数据�
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束日期，如：2018-09-10
+                     * 查询结束日期：yyyy-MM-dd HH:mm:ss
 仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
 返回小于等于结束日期当天 23:59:59 产生的数据
 EndTime 需要大于等于 StartTime

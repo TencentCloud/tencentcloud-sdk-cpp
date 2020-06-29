@@ -427,6 +427,49 @@ TcaplusdbClient::DeleteTableGroupOutcomeCallable TcaplusdbClient::DeleteTableGro
     return task->get_future();
 }
 
+TcaplusdbClient::DeleteTableIndexOutcome TcaplusdbClient::DeleteTableIndex(const DeleteTableIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTableIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTableIndexResponse rsp = DeleteTableIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTableIndexOutcome(rsp);
+        else
+            return DeleteTableIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTableIndexOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DeleteTableIndexAsync(const DeleteTableIndexRequest& request, const DeleteTableIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTableIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DeleteTableIndexOutcomeCallable TcaplusdbClient::DeleteTableIndexCallable(const DeleteTableIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTableIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTableIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::DeleteTablesOutcome TcaplusdbClient::DeleteTables(const DeleteTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTables");
@@ -1409,6 +1452,49 @@ TcaplusdbClient::RollbackTablesOutcomeCallable TcaplusdbClient::RollbackTablesCa
         [this, request]()
         {
             return this->RollbackTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::SetTableIndexOutcome TcaplusdbClient::SetTableIndex(const SetTableIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetTableIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetTableIndexResponse rsp = SetTableIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetTableIndexOutcome(rsp);
+        else
+            return SetTableIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return SetTableIndexOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::SetTableIndexAsync(const SetTableIndexRequest& request, const SetTableIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetTableIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::SetTableIndexOutcomeCallable TcaplusdbClient::SetTableIndexCallable(const SetTableIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetTableIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->SetTableIndex(request);
         }
     );
 

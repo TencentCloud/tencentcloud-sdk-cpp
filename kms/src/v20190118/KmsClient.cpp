@@ -513,6 +513,49 @@ KmsClient::DescribeWhiteBoxDecryptKeyOutcomeCallable KmsClient::DescribeWhiteBox
     return task->get_future();
 }
 
+KmsClient::DescribeWhiteBoxDeviceFingerprintsOutcome KmsClient::DescribeWhiteBoxDeviceFingerprints(const DescribeWhiteBoxDeviceFingerprintsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteBoxDeviceFingerprints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteBoxDeviceFingerprintsResponse rsp = DescribeWhiteBoxDeviceFingerprintsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteBoxDeviceFingerprintsOutcome(rsp);
+        else
+            return DescribeWhiteBoxDeviceFingerprintsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteBoxDeviceFingerprintsOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::DescribeWhiteBoxDeviceFingerprintsAsync(const DescribeWhiteBoxDeviceFingerprintsRequest& request, const DescribeWhiteBoxDeviceFingerprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteBoxDeviceFingerprints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::DescribeWhiteBoxDeviceFingerprintsOutcomeCallable KmsClient::DescribeWhiteBoxDeviceFingerprintsCallable(const DescribeWhiteBoxDeviceFingerprintsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteBoxDeviceFingerprintsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteBoxDeviceFingerprints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::DescribeWhiteBoxKeyOutcome KmsClient::DescribeWhiteBoxKey(const DescribeWhiteBoxKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWhiteBoxKey");
@@ -1581,6 +1624,49 @@ KmsClient::ListKeysOutcomeCallable KmsClient::ListKeysCallable(const ListKeysReq
         [this, request]()
         {
             return this->ListKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::OverwriteWhiteBoxDeviceFingerprintsOutcome KmsClient::OverwriteWhiteBoxDeviceFingerprints(const OverwriteWhiteBoxDeviceFingerprintsRequest &request)
+{
+    auto outcome = MakeRequest(request, "OverwriteWhiteBoxDeviceFingerprints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OverwriteWhiteBoxDeviceFingerprintsResponse rsp = OverwriteWhiteBoxDeviceFingerprintsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OverwriteWhiteBoxDeviceFingerprintsOutcome(rsp);
+        else
+            return OverwriteWhiteBoxDeviceFingerprintsOutcome(o.GetError());
+    }
+    else
+    {
+        return OverwriteWhiteBoxDeviceFingerprintsOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::OverwriteWhiteBoxDeviceFingerprintsAsync(const OverwriteWhiteBoxDeviceFingerprintsRequest& request, const OverwriteWhiteBoxDeviceFingerprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OverwriteWhiteBoxDeviceFingerprints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::OverwriteWhiteBoxDeviceFingerprintsOutcomeCallable KmsClient::OverwriteWhiteBoxDeviceFingerprintsCallable(const OverwriteWhiteBoxDeviceFingerprintsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OverwriteWhiteBoxDeviceFingerprintsOutcome()>>(
+        [this, request]()
+        {
+            return this->OverwriteWhiteBoxDeviceFingerprints(request);
         }
     );
 

@@ -45,17 +45,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Notebook实例名称
-规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$
                      * @return NotebookInstanceName Notebook实例名称
-规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$
                      */
                     std::string GetNotebookInstanceName() const;
 
                     /**
                      * 设置Notebook实例名称
-规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$
                      * @param NotebookInstanceName Notebook实例名称
-规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$
                      */
                     void SetNotebookInstanceName(const std::string& _notebookInstanceName);
 
@@ -113,7 +109,6 @@ namespace TencentCloud
 
                     /**
                      * Notebook实例名称
-规则：^[a-zA-Z0-9](-*[a-zA-Z0-9])*$
                      */
                     std::string m_notebookInstanceName;
                     bool m_notebookInstanceNameHasBeenSet;

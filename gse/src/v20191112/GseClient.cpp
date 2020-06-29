@@ -728,6 +728,49 @@ GseClient::StartGameServerSessionPlacementOutcomeCallable GseClient::StartGameSe
     return task->get_future();
 }
 
+GseClient::StartMatchPlacementOutcome GseClient::StartMatchPlacement(const StartMatchPlacementRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMatchPlacement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMatchPlacementResponse rsp = StartMatchPlacementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMatchPlacementOutcome(rsp);
+        else
+            return StartMatchPlacementOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMatchPlacementOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::StartMatchPlacementAsync(const StartMatchPlacementRequest& request, const StartMatchPlacementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartMatchPlacement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::StartMatchPlacementOutcomeCallable GseClient::StartMatchPlacementCallable(const StartMatchPlacementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartMatchPlacementOutcome()>>(
+        [this, request]()
+        {
+            return this->StartMatchPlacement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::StopGameServerSessionPlacementOutcome GseClient::StopGameServerSessionPlacement(const StopGameServerSessionPlacementRequest &request)
 {
     auto outcome = MakeRequest(request, "StopGameServerSessionPlacement");

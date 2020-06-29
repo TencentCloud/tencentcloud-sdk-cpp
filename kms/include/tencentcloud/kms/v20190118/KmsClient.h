@@ -45,6 +45,8 @@
 #include <tencentcloud/kms/v20190118/model/DescribeKeysResponse.h>
 #include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsRequest.h>
+#include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.h>
 #include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/kms/v20190118/model/ListKeyDetailResponse.h>
 #include <tencentcloud/kms/v20190118/model/ListKeysRequest.h>
 #include <tencentcloud/kms/v20190118/model/ListKeysResponse.h>
+#include <tencentcloud/kms/v20190118/model/OverwriteWhiteBoxDeviceFingerprintsRequest.h>
+#include <tencentcloud/kms/v20190118/model/OverwriteWhiteBoxDeviceFingerprintsResponse.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h>
@@ -150,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeWhiteBoxDecryptKeyResponse> DescribeWhiteBoxDecryptKeyOutcome;
                 typedef std::future<DescribeWhiteBoxDecryptKeyOutcome> DescribeWhiteBoxDecryptKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DescribeWhiteBoxDecryptKeyRequest&, DescribeWhiteBoxDecryptKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoxDecryptKeyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWhiteBoxDeviceFingerprintsResponse> DescribeWhiteBoxDeviceFingerprintsOutcome;
+                typedef std::future<DescribeWhiteBoxDeviceFingerprintsOutcome> DescribeWhiteBoxDeviceFingerprintsOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::DescribeWhiteBoxDeviceFingerprintsRequest&, DescribeWhiteBoxDeviceFingerprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoxDeviceFingerprintsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeWhiteBoxKeyResponse> DescribeWhiteBoxKeyOutcome;
                 typedef std::future<DescribeWhiteBoxKeyOutcome> DescribeWhiteBoxKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::DescribeWhiteBoxKeyRequest&, DescribeWhiteBoxKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoxKeyAsyncHandler;
@@ -225,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListKeysResponse> ListKeysOutcome;
                 typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ListKeysRequest&, ListKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListKeysAsyncHandler;
+                typedef Outcome<Error, Model::OverwriteWhiteBoxDeviceFingerprintsResponse> OverwriteWhiteBoxDeviceFingerprintsOutcome;
+                typedef std::future<OverwriteWhiteBoxDeviceFingerprintsOutcome> OverwriteWhiteBoxDeviceFingerprintsOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::OverwriteWhiteBoxDeviceFingerprintsRequest&, OverwriteWhiteBoxDeviceFingerprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OverwriteWhiteBoxDeviceFingerprintsAsyncHandler;
                 typedef Outcome<Error, Model::ReEncryptResponse> ReEncryptOutcome;
                 typedef std::future<ReEncryptOutcome> ReEncryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ReEncryptRequest&, ReEncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReEncryptAsyncHandler;
@@ -338,6 +348,15 @@ namespace TencentCloud
                 DescribeWhiteBoxDecryptKeyOutcome DescribeWhiteBoxDecryptKey(const Model::DescribeWhiteBoxDecryptKeyRequest &request);
                 void DescribeWhiteBoxDecryptKeyAsync(const Model::DescribeWhiteBoxDecryptKeyRequest& request, const DescribeWhiteBoxDecryptKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWhiteBoxDecryptKeyOutcomeCallable DescribeWhiteBoxDecryptKeyCallable(const Model::DescribeWhiteBoxDecryptKeyRequest& request);
+
+                /**
+                 *获取指定密钥的设备指纹列表
+                 * @param req DescribeWhiteBoxDeviceFingerprintsRequest
+                 * @return DescribeWhiteBoxDeviceFingerprintsOutcome
+                 */
+                DescribeWhiteBoxDeviceFingerprintsOutcome DescribeWhiteBoxDeviceFingerprints(const Model::DescribeWhiteBoxDeviceFingerprintsRequest &request);
+                void DescribeWhiteBoxDeviceFingerprintsAsync(const Model::DescribeWhiteBoxDeviceFingerprintsRequest& request, const DescribeWhiteBoxDeviceFingerprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteBoxDeviceFingerprintsOutcomeCallable DescribeWhiteBoxDeviceFingerprintsCallable(const Model::DescribeWhiteBoxDeviceFingerprintsRequest& request);
 
                 /**
                  *展示白盒密钥的信息
@@ -564,6 +583,15 @@ namespace TencentCloud
                 ListKeysOutcome ListKeys(const Model::ListKeysRequest &request);
                 void ListKeysAsync(const Model::ListKeysRequest& request, const ListKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListKeysOutcomeCallable ListKeysCallable(const Model::ListKeysRequest& request);
+
+                /**
+                 *覆盖指定密钥的设备指纹信息
+                 * @param req OverwriteWhiteBoxDeviceFingerprintsRequest
+                 * @return OverwriteWhiteBoxDeviceFingerprintsOutcome
+                 */
+                OverwriteWhiteBoxDeviceFingerprintsOutcome OverwriteWhiteBoxDeviceFingerprints(const Model::OverwriteWhiteBoxDeviceFingerprintsRequest &request);
+                void OverwriteWhiteBoxDeviceFingerprintsAsync(const Model::OverwriteWhiteBoxDeviceFingerprintsRequest& request, const OverwriteWhiteBoxDeviceFingerprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OverwriteWhiteBoxDeviceFingerprintsOutcomeCallable OverwriteWhiteBoxDeviceFingerprintsCallable(const Model::OverwriteWhiteBoxDeviceFingerprintsRequest& request);
 
                 /**
                  *使用指定CMK对密文重新加密。
