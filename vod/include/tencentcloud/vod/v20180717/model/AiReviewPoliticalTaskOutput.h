@@ -96,22 +96,30 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * 获取视频鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+violation_photo：
 <li>violation_photo：违规图标。</li>
-                     * @return Label 视频鉴政结果标签，取值范围：
+其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
 <li>politician：政治人物。</li>
+                     * @return Label 视频鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+violation_photo：
 <li>violation_photo：违规图标。</li>
+其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
+<li>politician：政治人物。</li>
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * 设置视频鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+violation_photo：
 <li>violation_photo：违规图标。</li>
-                     * @param Label 视频鉴政结果标签，取值范围：
+其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
 <li>politician：政治人物。</li>
+                     * @param Label 视频鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+violation_photo：
 <li>violation_photo：违规图标。</li>
+其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
+<li>politician：政治人物。</li>
                      */
                     void SetLabel(const std::string& _label);
 
@@ -157,9 +165,11 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 视频鉴政结果标签，取值范围：
-<li>politician：政治人物。</li>
+                     * 视频鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：
+violation_photo：
 <li>violation_photo：违规图标。</li>
+其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：
+<li>politician：政治人物。</li>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

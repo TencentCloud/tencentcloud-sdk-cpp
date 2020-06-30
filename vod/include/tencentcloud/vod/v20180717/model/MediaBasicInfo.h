@@ -304,14 +304,14 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取直播录制文件的唯一标识
-                     * @return Vid 直播录制文件的唯一标识
+                     * 获取直播录制文件的唯一标识。
+                     * @return Vid 直播录制文件的唯一标识。
                      */
                     std::string GetVid() const;
 
                     /**
-                     * 设置直播录制文件的唯一标识
-                     * @param Vid 直播录制文件的唯一标识
+                     * 设置直播录制文件的唯一标识。
+                     * @param Vid 直播录制文件的唯一标识。
                      */
                     void SetVid(const std::string& _vid);
 
@@ -350,6 +350,24 @@ namespace TencentCloud
                      * @return Category 是否已赋值
                      */
                     bool CategoryHasBeenSet() const;
+
+                    /**
+                     * 获取文件状态：Normal：正常，Forbidden：封禁。
+                     * @return Status 文件状态：Normal：正常，Forbidden：封禁。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置文件状态：Normal：正常，Forbidden：封禁。
+                     * @param Status 文件状态：Normal：正常，Forbidden：封禁。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
 
                 private:
 
@@ -439,7 +457,7 @@ namespace TencentCloud
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 直播录制文件的唯一标识
+                     * 直播录制文件的唯一标识。
                      */
                     std::string m_vid;
                     bool m_vidHasBeenSet;
@@ -452,6 +470,12 @@ namespace TencentCloud
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
+
+                    /**
+                     * 文件状态：Normal：正常，Forbidden：封禁。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

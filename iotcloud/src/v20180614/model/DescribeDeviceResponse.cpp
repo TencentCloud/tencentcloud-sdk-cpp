@@ -47,7 +47,8 @@ DescribeDeviceResponse::DescribeDeviceResponse() :
     m_certStateHasBeenSet(false),
     m_enableStateHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_clientIPHasBeenSet(false)
+    m_clientIPHasBeenSet(false),
+    m_firmwareUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -335,6 +336,16 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         m_clientIPHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FirmwareUpdateTime") && !rsp["FirmwareUpdateTime"].IsNull())
+    {
+        if (!rsp["FirmwareUpdateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `FirmwareUpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_firmwareUpdateTime = rsp["FirmwareUpdateTime"].GetUint64();
+        m_firmwareUpdateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -568,6 +579,16 @@ string DescribeDeviceResponse::GetClientIP() const
 bool DescribeDeviceResponse::ClientIPHasBeenSet() const
 {
     return m_clientIPHasBeenSet;
+}
+
+uint64_t DescribeDeviceResponse::GetFirmwareUpdateTime() const
+{
+    return m_firmwareUpdateTime;
+}
+
+bool DescribeDeviceResponse::FirmwareUpdateTimeHasBeenSet() const
+{
+    return m_firmwareUpdateTimeHasBeenSet;
 }
 
 

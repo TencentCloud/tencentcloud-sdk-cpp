@@ -43,7 +43,9 @@ DeviceInfo::DeviceInfo() :
     m_logLevelHasBeenSet(false),
     m_certStateHasBeenSet(false),
     m_enableStateHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_clientIPHasBeenSet(false),
+    m_firmwareUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,26 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientIP") && !value["ClientIP"].IsNull())
+    {
+        if (!value["ClientIP"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.ClientIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIP = string(value["ClientIP"].GetString());
+        m_clientIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirmwareUpdateTime") && !value["FirmwareUpdateTime"].IsNull())
+    {
+        if (!value["FirmwareUpdateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.FirmwareUpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_firmwareUpdateTime = value["FirmwareUpdateTime"].GetUint64();
+        m_firmwareUpdateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -487,6 +509,22 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clientIPHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClientIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clientIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firmwareUpdateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FirmwareUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_firmwareUpdateTime, allocator);
     }
 
 }
@@ -842,5 +880,37 @@ void DeviceInfo::SetLabels(const vector<DeviceLabel>& _labels)
 bool DeviceInfo::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+string DeviceInfo::GetClientIP() const
+{
+    return m_clientIP;
+}
+
+void DeviceInfo::SetClientIP(const string& _clientIP)
+{
+    m_clientIP = _clientIP;
+    m_clientIPHasBeenSet = true;
+}
+
+bool DeviceInfo::ClientIPHasBeenSet() const
+{
+    return m_clientIPHasBeenSet;
+}
+
+uint64_t DeviceInfo::GetFirmwareUpdateTime() const
+{
+    return m_firmwareUpdateTime;
+}
+
+void DeviceInfo::SetFirmwareUpdateTime(const uint64_t& _firmwareUpdateTime)
+{
+    m_firmwareUpdateTime = _firmwareUpdateTime;
+    m_firmwareUpdateTimeHasBeenSet = true;
+}
+
+bool DeviceInfo::FirmwareUpdateTimeHasBeenSet() const
+{
+    return m_firmwareUpdateTimeHasBeenSet;
 }
 

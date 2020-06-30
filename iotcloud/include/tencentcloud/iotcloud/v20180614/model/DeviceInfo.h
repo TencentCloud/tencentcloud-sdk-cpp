@@ -193,14 +193,14 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取IMEI
-                     * @return Imei IMEI
+                     * 获取国际移动设备识别码 IMEI
+                     * @return Imei 国际移动设备识别码 IMEI
                      */
                     std::string GetImei() const;
 
                     /**
-                     * 设置IMEI
-                     * @param Imei IMEI
+                     * 设置国际移动设备识别码 IMEI
+                     * @param Imei 国际移动设备识别码 IMEI
                      */
                     void SetImei(const std::string& _imei);
 
@@ -472,6 +472,50 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientIP MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClientIP() const;
+
+                    /**
+                     * 设置MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientIP MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientIP(const std::string& _clientIP);
+
+                    /**
+                     * 判断参数 ClientIP 是否已赋值
+                     * @return ClientIP 是否已赋值
+                     */
+                    bool ClientIPHasBeenSet() const;
+
+                    /**
+                     * 获取ota最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirmwareUpdateTime ota最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFirmwareUpdateTime() const;
+
+                    /**
+                     * 设置ota最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FirmwareUpdateTime ota最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFirmwareUpdateTime(const uint64_t& _firmwareUpdateTime);
+
+                    /**
+                     * 判断参数 FirmwareUpdateTime 是否已赋值
+                     * @return FirmwareUpdateTime 是否已赋值
+                     */
+                    bool FirmwareUpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,7 +567,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * IMEI
+                     * 国际移动设备识别码 IMEI
                      */
                     std::string m_imei;
                     bool m_imeiHasBeenSet;
@@ -612,6 +656,20 @@ namespace TencentCloud
                      */
                     std::vector<DeviceLabel> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * MQTT客户端IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clientIP;
+                    bool m_clientIPHasBeenSet;
+
+                    /**
+                     * ota最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_firmwareUpdateTime;
+                    bool m_firmwareUpdateTimeHasBeenSet;
 
                 };
             }

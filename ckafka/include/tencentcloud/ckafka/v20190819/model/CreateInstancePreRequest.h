@@ -1,0 +1,269 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CKAFKA_V20190819_MODEL_CREATEINSTANCEPREREQUEST_H_
+#define TENCENTCLOUD_CKAFKA_V20190819_MODEL_CREATEINSTANCEPREREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Ckafka
+    {
+        namespace V20190819
+        {
+            namespace Model
+            {
+                /**
+                * CreateInstancePre请求参数结构体
+                */
+                class CreateInstancePreRequest : public AbstractModel
+                {
+                public:
+                    CreateInstancePreRequest();
+                    ~CreateInstancePreRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * @return InstanceName 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * @param InstanceName 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取可用区
+                     * @return ZoneId 可用区
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置可用区
+                     * @param ZoneId 可用区
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取预付费购买时长，例如 "1m",就是一个月
+                     * @return Period 预付费购买时长，例如 "1m",就是一个月
+                     */
+                    std::string GetPeriod() const;
+
+                    /**
+                     * 设置预付费购买时长，例如 "1m",就是一个月
+                     * @param Period 预付费购买时长，例如 "1m",就是一个月
+                     */
+                    void SetPeriod(const std::string& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
+
+                    /**
+                     * 获取实例规格，1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     * @return InstanceType 实例规格，1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     */
+                    int64_t GetInstanceType() const;
+
+                    /**
+                     * 设置实例规格，1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     * @param InstanceType 实例规格，1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     */
+                    void SetInstanceType(const int64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取vpcId，不填默认基础网络
+                     * @return VpcId vpcId，不填默认基础网络
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置vpcId，不填默认基础网络
+                     * @param VpcId vpcId，不填默认基础网络
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网id，vpc网络需要传该参数，基础网络可以不传
+                     * @return SubnetId 子网id，vpc网络需要传该参数，基础网络可以不传
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网id，vpc网络需要传该参数，基础网络可以不传
+                     * @param SubnetId 子网id，vpc网络需要传该参数，基础网络可以不传
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     * @return MsgRetentionTime 可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     */
+                    int64_t GetMsgRetentionTime() const;
+
+                    /**
+                     * 设置可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     * @param MsgRetentionTime 可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     */
+                    void SetMsgRetentionTime(const int64_t& _msgRetentionTime);
+
+                    /**
+                     * 判断参数 MsgRetentionTime 是否已赋值
+                     * @return MsgRetentionTime 是否已赋值
+                     */
+                    bool MsgRetentionTimeHasBeenSet() const;
+
+                    /**
+                     * 获取创建实例时可以选择集群Id, 该入参表示集群Id
+                     * @return ClusterId 创建实例时可以选择集群Id, 该入参表示集群Id
+                     */
+                    int64_t GetClusterId() const;
+
+                    /**
+                     * 设置创建实例时可以选择集群Id, 该入参表示集群Id
+                     * @param ClusterId 创建实例时可以选择集群Id, 该入参表示集群Id
+                     */
+                    void SetClusterId(const int64_t& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * @return RenewFlag 预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 设置预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * @param RenewFlag 预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     */
+                    void SetRenewFlag(const int64_t& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 可用区
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 预付费购买时长，例如 "1m",就是一个月
+                     */
+                    std::string m_period;
+                    bool m_periodHasBeenSet;
+
+                    /**
+                     * 实例规格，1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     */
+                    int64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * vpcId，不填默认基础网络
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 子网id，vpc网络需要传该参数，基础网络可以不传
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略
+                     */
+                    int64_t m_msgRetentionTime;
+                    bool m_msgRetentionTimeHasBeenSet;
+
+                    /**
+                     * 创建实例时可以选择集群Id, 该入参表示集群Id
+                     */
+                    int64_t m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CKAFKA_V20190819_MODEL_CREATEINSTANCEPREREQUEST_H_

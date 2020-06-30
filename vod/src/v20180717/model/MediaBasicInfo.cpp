@@ -37,7 +37,8 @@ MediaBasicInfo::MediaBasicInfo() :
     m_storageRegionHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_vidHasBeenSet(false),
-    m_categoryHasBeenSet(false)
+    m_categoryHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const Value &value)
         m_categoryHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaBasicInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ void MediaBasicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Category";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_category.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +633,21 @@ void MediaBasicInfo::SetCategory(const string& _category)
 bool MediaBasicInfo::CategoryHasBeenSet() const
 {
     return m_categoryHasBeenSet;
+}
+
+string MediaBasicInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void MediaBasicInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool MediaBasicInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

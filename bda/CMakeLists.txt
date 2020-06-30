@@ -20,6 +20,7 @@ set(bda_public_header
 
 set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/SegmentPortraitPicResponse.h
+  include/tencentcloud/bda/v20200324/model/DetectBodyJointsResponse.h
   include/tencentcloud/bda/v20200324/model/Candidate.h
   include/tencentcloud/bda/v20200324/model/DeletePersonRequest.h
   include/tencentcloud/bda/v20200324/model/ModifyGroupResponse.h
@@ -35,27 +36,31 @@ set(bda_public_header_model
   include/tencentcloud/bda/v20200324/model/ModifyPersonInfoRequest.h
   include/tencentcloud/bda/v20200324/model/Gender.h
   include/tencentcloud/bda/v20200324/model/CreateGroupRequest.h
+  include/tencentcloud/bda/v20200324/model/LowerBodyCloth.h
+  include/tencentcloud/bda/v20200324/model/UpperBodyClothTexture.h
   include/tencentcloud/bda/v20200324/model/TraceInfo.h
   include/tencentcloud/bda/v20200324/model/DeleteGroupResponse.h
   include/tencentcloud/bda/v20200324/model/BodyRect.h
   include/tencentcloud/bda/v20200324/model/DetectBodyRequest.h
   include/tencentcloud/bda/v20200324/model/Age.h
   include/tencentcloud/bda/v20200324/model/SearchTraceRequest.h
-  include/tencentcloud/bda/v20200324/model/PersonInfo.h
+  include/tencentcloud/bda/v20200324/model/KeyPointInfo.h
   include/tencentcloud/bda/v20200324/model/DetectBodyResponse.h
+  include/tencentcloud/bda/v20200324/model/PersonInfo.h
   include/tencentcloud/bda/v20200324/model/Bag.h
+  include/tencentcloud/bda/v20200324/model/DetectBodyJointsRequest.h
   include/tencentcloud/bda/v20200324/model/SegmentPortraitPicRequest.h
   include/tencentcloud/bda/v20200324/model/UpperBodyClothColor.h
   include/tencentcloud/bda/v20200324/model/GetGroupListRequest.h
   include/tencentcloud/bda/v20200324/model/BodyDetectResult.h
   include/tencentcloud/bda/v20200324/model/Orientation.h
-  include/tencentcloud/bda/v20200324/model/UpperBodyClothTexture.h
+  include/tencentcloud/bda/v20200324/model/BodyJointsResult.h
   include/tencentcloud/bda/v20200324/model/UpperBodyCloth.h
   include/tencentcloud/bda/v20200324/model/LowerBodyClothLength.h
   include/tencentcloud/bda/v20200324/model/SearchTraceResponse.h
   include/tencentcloud/bda/v20200324/model/CreateTraceResponse.h
   include/tencentcloud/bda/v20200324/model/CreatePersonResponse.h
-  include/tencentcloud/bda/v20200324/model/LowerBodyCloth.h
+  include/tencentcloud/bda/v20200324/model/BoundRect.h
   include/tencentcloud/bda/v20200324/model/LowerBodyClothColor.h
   include/tencentcloud/bda/v20200324/model/GetPersonListResponse.h
   include/tencentcloud/bda/v20200324/model/GetPersonListRequest.h
@@ -69,6 +74,7 @@ set(bda_public_header_model
 set(bda_src
   src/v20200324/BdaClient.cpp
   src/v20200324/model/SegmentPortraitPicResponse.cpp
+  src/v20200324/model/DetectBodyJointsResponse.cpp
   src/v20200324/model/Candidate.cpp
   src/v20200324/model/DeletePersonRequest.cpp
   src/v20200324/model/ModifyGroupResponse.cpp
@@ -84,27 +90,31 @@ set(bda_src
   src/v20200324/model/ModifyPersonInfoRequest.cpp
   src/v20200324/model/Gender.cpp
   src/v20200324/model/CreateGroupRequest.cpp
+  src/v20200324/model/LowerBodyCloth.cpp
+  src/v20200324/model/UpperBodyClothTexture.cpp
   src/v20200324/model/TraceInfo.cpp
   src/v20200324/model/DeleteGroupResponse.cpp
   src/v20200324/model/BodyRect.cpp
   src/v20200324/model/DetectBodyRequest.cpp
   src/v20200324/model/Age.cpp
   src/v20200324/model/SearchTraceRequest.cpp
-  src/v20200324/model/PersonInfo.cpp
+  src/v20200324/model/KeyPointInfo.cpp
   src/v20200324/model/DetectBodyResponse.cpp
+  src/v20200324/model/PersonInfo.cpp
   src/v20200324/model/Bag.cpp
+  src/v20200324/model/DetectBodyJointsRequest.cpp
   src/v20200324/model/SegmentPortraitPicRequest.cpp
   src/v20200324/model/UpperBodyClothColor.cpp
   src/v20200324/model/GetGroupListRequest.cpp
   src/v20200324/model/BodyDetectResult.cpp
   src/v20200324/model/Orientation.cpp
-  src/v20200324/model/UpperBodyClothTexture.cpp
+  src/v20200324/model/BodyJointsResult.cpp
   src/v20200324/model/UpperBodyCloth.cpp
   src/v20200324/model/LowerBodyClothLength.cpp
   src/v20200324/model/SearchTraceResponse.cpp
   src/v20200324/model/CreateTraceResponse.cpp
   src/v20200324/model/CreatePersonResponse.cpp
-  src/v20200324/model/LowerBodyCloth.cpp
+  src/v20200324/model/BoundRect.cpp
   src/v20200324/model/LowerBodyClothColor.cpp
   src/v20200324/model/GetPersonListResponse.cpp
   src/v20200324/model/GetPersonListRequest.cpp

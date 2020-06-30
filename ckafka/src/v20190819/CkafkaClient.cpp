@@ -83,6 +83,49 @@ CkafkaClient::CreateAclOutcomeCallable CkafkaClient::CreateAclCallable(const Cre
     return task->get_future();
 }
 
+CkafkaClient::CreateInstancePreOutcome CkafkaClient::CreateInstancePre(const CreateInstancePreRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstancePre");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstancePreResponse rsp = CreateInstancePreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstancePreOutcome(rsp);
+        else
+            return CreateInstancePreOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstancePreOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateInstancePreAsync(const CreateInstancePreRequest& request, const CreateInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstancePre(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateInstancePreOutcomeCallable CkafkaClient::CreateInstancePreCallable(const CreateInstancePreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstancePreOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstancePre(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreatePartitionOutcome CkafkaClient::CreatePartition(const CreatePartitionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePartition");

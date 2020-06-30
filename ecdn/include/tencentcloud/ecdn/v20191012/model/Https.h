@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecdn/v20191012/model/ServerCert.h>
 #include <tencentcloud/ecdn/v20191012/model/ClientCert.h>
+#include <tencentcloud/ecdn/v20191012/model/Hsts.h>
 
 
 namespace TencentCloud
@@ -224,6 +225,28 @@ namespace TencentCloud
                      */
                     bool SslStatusHasBeenSet() const;
 
+                    /**
+                     * 获取Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Hsts Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Hsts GetHsts() const;
+
+                    /**
+                     * 设置Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Hsts Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHsts(const Hsts& _hsts);
+
+                    /**
+                     * 判断参数 Hsts 是否已赋值
+                     * @return Hsts 是否已赋值
+                     */
+                    bool HstsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -281,6 +304,13 @@ namespace TencentCloud
                      */
                     std::string m_sslStatus;
                     bool m_sslStatusHasBeenSet;
+
+                    /**
+                     * Hsts配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Hsts m_hsts;
+                    bool m_hstsHasBeenSet;
 
                 };
             }

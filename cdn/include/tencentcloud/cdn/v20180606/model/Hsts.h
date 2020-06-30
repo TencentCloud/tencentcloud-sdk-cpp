@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_HEADERKEY_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_HEADERKEY_H_
+#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_HSTS_H_
+#define TENCENTCLOUD_CDN_V20180606_MODEL_HSTS_H_
 
 #include <string>
 #include <vector>
@@ -35,30 +35,26 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 组成CacheKey
+                * HSTS 配置。
                 */
-                class HeaderKey : public AbstractModel
+                class Hsts : public AbstractModel
                 {
                 public:
-                    HeaderKey();
-                    ~HeaderKey() = default;
+                    Hsts();
+                    ~Hsts() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取是否组成Cachekey
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 是否组成Cachekey
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否开启，on或off。
+                     * @return Switch 是否开启，on或off。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否组成Cachekey
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 是否组成Cachekey
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否开启，on或off。
+                     * @param Switch 是否开启，on或off。
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -69,42 +65,70 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取组成CacheKey的header 逗号分隔
+                     * 获取MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 组成CacheKey的header 逗号分隔
+                     * @return MaxAge MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetValue() const;
+                    int64_t GetMaxAge() const;
 
                     /**
-                     * 设置组成CacheKey的header 逗号分隔
+                     * 设置MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 组成CacheKey的header 逗号分隔
+                     * @param MaxAge MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetValue(const std::string& _value);
+                    void SetMaxAge(const int64_t& _maxAge);
 
                     /**
-                     * 判断参数 Value 是否已赋值
-                     * @return Value 是否已赋值
+                     * 判断参数 MaxAge 是否已赋值
+                     * @return MaxAge 是否已赋值
                      */
-                    bool ValueHasBeenSet() const;
+                    bool MaxAgeHasBeenSet() const;
+
+                    /**
+                     * 获取是否包含子域名，on或off。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IncludeSubDomains 是否包含子域名，on或off。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIncludeSubDomains() const;
+
+                    /**
+                     * 设置是否包含子域名，on或off。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IncludeSubDomains 是否包含子域名，on或off。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIncludeSubDomains(const std::string& _includeSubDomains);
+
+                    /**
+                     * 判断参数 IncludeSubDomains 是否已赋值
+                     * @return IncludeSubDomains 是否已赋值
+                     */
+                    bool IncludeSubDomainsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 是否组成Cachekey
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否开启，on或off。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 组成CacheKey的header 逗号分隔
+                     * MaxAge数值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_value;
-                    bool m_valueHasBeenSet;
+                    int64_t m_maxAge;
+                    bool m_maxAgeHasBeenSet;
+
+                    /**
+                     * 是否包含子域名，on或off。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_includeSubDomains;
+                    bool m_includeSubDomainsHasBeenSet;
 
                 };
             }
@@ -112,4 +136,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_HEADERKEY_H_
+#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_HSTS_H_

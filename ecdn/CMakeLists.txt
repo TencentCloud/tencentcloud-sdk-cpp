@@ -38,6 +38,7 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DescribePurgeTasksRequest.h
   include/tencentcloud/ecdn/v20191012/model/DomainFilter.h
   include/tencentcloud/ecdn/v20191012/model/DomainLogs.h
+  include/tencentcloud/ecdn/v20191012/model/Hsts.h
   include/tencentcloud/ecdn/v20191012/model/HttpHeaderPathRule.h
   include/tencentcloud/ecdn/v20191012/model/UpdateDomainConfigResponse.h
   include/tencentcloud/ecdn/v20191012/model/DetailData.h
@@ -94,6 +95,7 @@ set(ecdn_src
   src/v20191012/model/DescribePurgeTasksRequest.cpp
   src/v20191012/model/DomainFilter.cpp
   src/v20191012/model/DomainLogs.cpp
+  src/v20191012/model/Hsts.cpp
   src/v20191012/model/HttpHeaderPathRule.cpp
   src/v20191012/model/UpdateDomainConfigResponse.cpp
   src/v20191012/model/DetailData.cpp

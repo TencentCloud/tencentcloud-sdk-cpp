@@ -35,6 +35,8 @@
 #include <tencentcloud/bda/v20200324/model/DeletePersonResponse.h>
 #include <tencentcloud/bda/v20200324/model/DetectBodyRequest.h>
 #include <tencentcloud/bda/v20200324/model/DetectBodyResponse.h>
+#include <tencentcloud/bda/v20200324/model/DetectBodyJointsRequest.h>
+#include <tencentcloud/bda/v20200324/model/DetectBodyJointsResponse.h>
 #include <tencentcloud/bda/v20200324/model/GetGroupListRequest.h>
 #include <tencentcloud/bda/v20200324/model/GetGroupListResponse.h>
 #include <tencentcloud/bda/v20200324/model/GetPersonListRequest.h>
@@ -79,6 +81,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetectBodyResponse> DetectBodyOutcome;
                 typedef std::future<DetectBodyOutcome> DetectBodyOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::DetectBodyRequest&, DetectBodyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectBodyAsyncHandler;
+                typedef Outcome<Error, Model::DetectBodyJointsResponse> DetectBodyJointsOutcome;
+                typedef std::future<DetectBodyJointsOutcome> DetectBodyJointsOutcomeCallable;
+                typedef std::function<void(const BdaClient*, const Model::DetectBodyJointsRequest&, DetectBodyJointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectBodyJointsAsyncHandler;
                 typedef Outcome<Error, Model::GetGroupListResponse> GetGroupListOutcome;
                 typedef std::future<GetGroupListOutcome> GetGroupListOutcomeCallable;
                 typedef std::function<void(const BdaClient*, const Model::GetGroupListRequest&, GetGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupListAsyncHandler;
@@ -174,6 +179,16 @@ namespace TencentCloud
                 DetectBodyOutcome DetectBody(const Model::DetectBodyRequest &request);
                 void DetectBodyAsync(const Model::DetectBodyRequest& request, const DetectBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectBodyOutcomeCallable DetectBodyCallable(const Model::DetectBodyRequest& request);
+
+                /**
+                 *检测图片中人体的14个关键点。建议用于人体图像清晰、无遮挡的场景。支持一张图片中存在多个人体的识别。
+
+                 * @param req DetectBodyJointsRequest
+                 * @return DetectBodyJointsOutcome
+                 */
+                DetectBodyJointsOutcome DetectBodyJoints(const Model::DetectBodyJointsRequest &request);
+                void DetectBodyJointsAsync(const Model::DetectBodyJointsRequest& request, const DetectBodyJointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectBodyJointsOutcomeCallable DetectBodyJointsCallable(const Model::DetectBodyJointsRequest& request);
 
                 /**
                  *获取人体库列表。

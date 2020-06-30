@@ -53,7 +53,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_specificConfigHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_originPullTimeoutHasBeenSet(false),
-    m_awsPrivateAccessHasBeenSet(false)
+    m_awsPrivateAccessHasBeenSet(false),
+    m_userAgentFilterHasBeenSet(false)
 {
 }
 
@@ -328,6 +329,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_awsPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userAgentFilterHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UserAgentFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_userAgentFilter.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -816,6 +826,22 @@ void UpdateDomainConfigRequest::SetAwsPrivateAccess(const AwsPrivateAccess& _aws
 bool UpdateDomainConfigRequest::AwsPrivateAccessHasBeenSet() const
 {
     return m_awsPrivateAccessHasBeenSet;
+}
+
+UserAgentFilter UpdateDomainConfigRequest::GetUserAgentFilter() const
+{
+    return m_userAgentFilter;
+}
+
+void UpdateDomainConfigRequest::SetUserAgentFilter(const UserAgentFilter& _userAgentFilter)
+{
+    m_userAgentFilter = _userAgentFilter;
+    m_userAgentFilterHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::UserAgentFilterHasBeenSet() const
+{
+    return m_userAgentFilterHasBeenSet;
 }
 
 

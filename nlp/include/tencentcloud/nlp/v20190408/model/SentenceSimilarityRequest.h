@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算相似度的源句子（仅支持UTF-8格式，不超过500字）
-                     * @return SrcText 计算相似度的源句子（仅支持UTF-8格式，不超过500字）
+                     * 获取计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
+                     * @return SrcText 计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
                      */
                     std::string GetSrcText() const;
 
                     /**
-                     * 设置计算相似度的源句子（仅支持UTF-8格式，不超过500字）
-                     * @param SrcText 计算相似度的源句子（仅支持UTF-8格式，不超过500字）
+                     * 设置计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
+                     * @param SrcText 计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
                      */
                     void SetSrcText(const std::string& _srcText);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SrcTextHasBeenSet() const;
 
                     /**
-                     * 获取计算相似度的目标句子（仅支持UTF-8格式，不超过500字）
-                     * @return TargetText 计算相似度的目标句子（仅支持UTF-8格式，不超过500字）
+                     * 获取计算相似度的目标句子（仅支持UTF-8格式，不超过500字符）
+                     * @return TargetText 计算相似度的目标句子（仅支持UTF-8格式，不超过500字符）
                      */
                     std::string GetTargetText() const;
 
                     /**
-                     * 设置计算相似度的目标句子（仅支持UTF-8格式，不超过500字）
-                     * @param TargetText 计算相似度的目标句子（仅支持UTF-8格式，不超过500字）
+                     * 设置计算相似度的目标句子（仅支持UTF-8格式，不超过500字符）
+                     * @param TargetText 计算相似度的目标句子（仅支持UTF-8格式，不超过500字符）
                      */
                     void SetTargetText(const std::string& _targetText);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算相似度的源句子（仅支持UTF-8格式，不超过500字）
+                     * 计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
                      */
                     std::string m_srcText;
                     bool m_srcTextHasBeenSet;
 
                     /**
-                     * 计算相似度的目标句子（仅支持UTF-8格式，不超过500字）
+                     * 计算相似度的目标句子（仅支持UTF-8格式，不超过500字符）
                      */
                     std::string m_targetText;
                     bool m_targetTextHasBeenSet;

@@ -336,6 +336,20 @@ namespace TencentCloud
                      */
                     bool ClientIPHasBeenSet() const;
 
+                    /**
+                     * 获取设备固件更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirmwareUpdateTime 设备固件更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFirmwareUpdateTime() const;
+
+                    /**
+                     * 判断参数 FirmwareUpdateTime 是否已赋值
+                     * @return FirmwareUpdateTime 是否已赋值
+                     */
+                    bool FirmwareUpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -483,6 +497,13 @@ namespace TencentCloud
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
+
+                    /**
+                     * 设备固件更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_firmwareUpdateTime;
+                    bool m_firmwareUpdateTimeHasBeenSet;
 
                 };
             }

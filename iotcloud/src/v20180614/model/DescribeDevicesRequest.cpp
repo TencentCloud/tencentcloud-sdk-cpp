@@ -27,7 +27,8 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_productIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_firmwareVersionHasBeenSet(false)
+    m_firmwareVersionHasBeenSet(false),
+    m_deviceNameHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DescribeDevicesRequest::ToJsonString() const
         string key = "FirmwareVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_firmwareVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DescribeDevicesRequest::SetFirmwareVersion(const string& _firmwareVersion)
 bool DescribeDevicesRequest::FirmwareVersionHasBeenSet() const
 {
     return m_firmwareVersionHasBeenSet;
+}
+
+string DescribeDevicesRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void DescribeDevicesRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
 }
 
 

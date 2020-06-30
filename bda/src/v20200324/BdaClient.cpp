@@ -298,6 +298,49 @@ BdaClient::DetectBodyOutcomeCallable BdaClient::DetectBodyCallable(const DetectB
     return task->get_future();
 }
 
+BdaClient::DetectBodyJointsOutcome BdaClient::DetectBodyJoints(const DetectBodyJointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectBodyJoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectBodyJointsResponse rsp = DetectBodyJointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectBodyJointsOutcome(rsp);
+        else
+            return DetectBodyJointsOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectBodyJointsOutcome(outcome.GetError());
+    }
+}
+
+void BdaClient::DetectBodyJointsAsync(const DetectBodyJointsRequest& request, const DetectBodyJointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectBodyJoints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BdaClient::DetectBodyJointsOutcomeCallable BdaClient::DetectBodyJointsCallable(const DetectBodyJointsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectBodyJointsOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectBodyJoints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BdaClient::GetGroupListOutcome BdaClient::GetGroupList(const GetGroupListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetGroupList");

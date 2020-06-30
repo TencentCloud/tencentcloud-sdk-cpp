@@ -175,12 +175,10 @@ namespace TencentCloud
                      * 获取违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此参数尚未支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProhibitedConfigure 违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此参数尚未支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProhibitedConfigureInfo GetProhibitedConfigure() const;
@@ -189,12 +187,10 @@ namespace TencentCloud
                      * 设置违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此参数尚未支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProhibitedConfigure 违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此参数尚未支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProhibitedConfigure(const ProhibitedConfigureInfo& _prohibitedConfigure);
@@ -308,7 +304,6 @@ namespace TencentCloud
                      * 违禁控制参数。违禁内容包括：
 <li>谩骂；</li>
 <li>涉毒违法。</li>
-注意：此参数尚未支持。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProhibitedConfigureInfo m_prohibitedConfigure;

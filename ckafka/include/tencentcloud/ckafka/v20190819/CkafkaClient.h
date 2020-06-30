@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicRequest.h>
@@ -94,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
+                typedef Outcome<Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
+                typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
                 typedef Outcome<Error, Model::CreatePartitionResponse> CreatePartitionOutcome;
                 typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreatePartitionRequest&, CreatePartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartitionAsyncHandler;
@@ -183,6 +188,15 @@ namespace TencentCloud
                 CreateAclOutcome CreateAcl(const Model::CreateAclRequest &request);
                 void CreateAclAsync(const Model::CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAclOutcomeCallable CreateAclCallable(const Model::CreateAclRequest& request);
+
+                /**
+                 *创建实例(预付费包年包月)
+                 * @param req CreateInstancePreRequest
+                 * @return CreateInstancePreOutcome
+                 */
+                CreateInstancePreOutcome CreateInstancePre(const Model::CreateInstancePreRequest &request);
+                void CreateInstancePreAsync(const Model::CreateInstancePreRequest& request, const CreateInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstancePreOutcomeCallable CreateInstancePreCallable(const Model::CreateInstancePreRequest& request);
 
                 /**
                  *本接口用于增加主题中的分区

@@ -24,11 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cdn/v20180606/model/QueryStringKey.h>
-#include <tencentcloud/cdn/v20180606/model/HeaderKey.h>
-#include <tencentcloud/cdn/v20180606/model/CookieKey.h>
-#include <tencentcloud/cdn/v20180606/model/SchemeKey.h>
-#include <tencentcloud/cdn/v20180606/model/CacheTagKey.h>
 
 
 namespace TencentCloud
@@ -78,114 +73,26 @@ off：关闭全路径缓存（即开启参数过滤）
                     bool FullUrlCacheHasBeenSet() const;
 
                     /**
-                     * 获取是否使用请求参数作为CacheKey的一部分
+                     * 获取是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueryString 是否使用请求参数作为CacheKey的一部分
+                     * @return IgnoreCase 是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    QueryStringKey GetQueryString() const;
+                    std::string GetIgnoreCase() const;
 
                     /**
-                     * 设置是否使用请求参数作为CacheKey的一部分
+                     * 设置是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueryString 是否使用请求参数作为CacheKey的一部分
+                     * @param IgnoreCase 是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetQueryString(const QueryStringKey& _queryString);
+                    void SetIgnoreCase(const std::string& _ignoreCase);
 
                     /**
-                     * 判断参数 QueryString 是否已赋值
-                     * @return QueryString 是否已赋值
+                     * 判断参数 IgnoreCase 是否已赋值
+                     * @return IgnoreCase 是否已赋值
                      */
-                    bool QueryStringHasBeenSet() const;
-
-                    /**
-                     * 获取是否使用请求头部作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Header 是否使用请求头部作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    HeaderKey GetHeader() const;
-
-                    /**
-                     * 设置是否使用请求头部作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Header 是否使用请求头部作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetHeader(const HeaderKey& _header);
-
-                    /**
-                     * 判断参数 Header 是否已赋值
-                     * @return Header 是否已赋值
-                     */
-                    bool HeaderHasBeenSet() const;
-
-                    /**
-                     * 获取是否使用Cookie作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cookie 是否使用Cookie作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CookieKey GetCookie() const;
-
-                    /**
-                     * 设置是否使用Cookie作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cookie 是否使用Cookie作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetCookie(const CookieKey& _cookie);
-
-                    /**
-                     * 判断参数 Cookie 是否已赋值
-                     * @return Cookie 是否已赋值
-                     */
-                    bool CookieHasBeenSet() const;
-
-                    /**
-                     * 获取是否使用请求协议作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Scheme 是否使用请求协议作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    SchemeKey GetScheme() const;
-
-                    /**
-                     * 设置是否使用请求协议作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scheme 是否使用请求协议作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetScheme(const SchemeKey& _scheme);
-
-                    /**
-                     * 判断参数 Scheme 是否已赋值
-                     * @return Scheme 是否已赋值
-                     */
-                    bool SchemeHasBeenSet() const;
-
-                    /**
-                     * 获取是否使用自定义字符串作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CacheTag 是否使用自定义字符串作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CacheTagKey GetCacheTag() const;
-
-                    /**
-                     * 设置是否使用自定义字符串作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheTag 是否使用自定义字符串作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetCacheTag(const CacheTagKey& _cacheTag);
-
-                    /**
-                     * 判断参数 CacheTag 是否已赋值
-                     * @return CacheTag 是否已赋值
-                     */
-                    bool CacheTagHasBeenSet() const;
+                    bool IgnoreCaseHasBeenSet() const;
 
                 private:
 
@@ -198,39 +105,11 @@ off：关闭全路径缓存（即开启参数过滤）
                     bool m_fullUrlCacheHasBeenSet;
 
                     /**
-                     * 是否使用请求参数作为CacheKey的一部分
+                     * 是否忽略大小写缓存
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    QueryStringKey m_queryString;
-                    bool m_queryStringHasBeenSet;
-
-                    /**
-                     * 是否使用请求头部作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    HeaderKey m_header;
-                    bool m_headerHasBeenSet;
-
-                    /**
-                     * 是否使用Cookie作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CookieKey m_cookie;
-                    bool m_cookieHasBeenSet;
-
-                    /**
-                     * 是否使用请求协议作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    SchemeKey m_scheme;
-                    bool m_schemeHasBeenSet;
-
-                    /**
-                     * 是否使用自定义字符串作为CacheKey的一部分
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    CacheTagKey m_cacheTag;
-                    bool m_cacheTagHasBeenSet;
+                    std::string m_ignoreCase;
+                    bool m_ignoreCaseHasBeenSet;
 
                 };
             }

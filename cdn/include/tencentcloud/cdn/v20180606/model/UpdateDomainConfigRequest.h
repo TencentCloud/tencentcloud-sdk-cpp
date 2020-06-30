@@ -47,6 +47,7 @@
 #include <tencentcloud/cdn/v20180606/model/SpecificConfig.h>
 #include <tencentcloud/cdn/v20180606/model/OriginPullTimeout.h>
 #include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/UserAgentFilter.h>
 
 
 namespace TencentCloud
@@ -87,14 +88,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID
-                     * @return ProjectId 项目 ID
+                     * 获取项目 ID
+                     * @return ProjectId 项目 ID
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID
-                     * @param ProjectId 项目 ID
+                     * 设置项目 ID
+                     * @param ProjectId 项目 ID
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -636,6 +637,24 @@ global：全球加速
                      */
                     bool AwsPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取UA黑白名单配置
+                     * @return UserAgentFilter UA黑白名单配置
+                     */
+                    UserAgentFilter GetUserAgentFilter() const;
+
+                    /**
+                     * 设置UA黑白名单配置
+                     * @param UserAgentFilter UA黑白名单配置
+                     */
+                    void SetUserAgentFilter(const UserAgentFilter& _userAgentFilter);
+
+                    /**
+                     * 判断参数 UserAgentFilter 是否已赋值
+                     * @return UserAgentFilter 是否已赋值
+                     */
+                    bool UserAgentFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -645,7 +664,7 @@ global：全球加速
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 项目 ID
+                     * 项目 ID
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -824,6 +843,12 @@ global：全球加速
                      */
                     AwsPrivateAccess m_awsPrivateAccess;
                     bool m_awsPrivateAccessHasBeenSet;
+
+                    /**
+                     * UA黑白名单配置
+                     */
+                    UserAgentFilter m_userAgentFilter;
+                    bool m_userAgentFilterHasBeenSet;
 
                 };
             }
